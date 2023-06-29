@@ -1038,7 +1038,6 @@ mixin _$City {
   String get id => throw _privateConstructorUsedError;
 
   /// [name] represents the name of the city
-// ignore: invalid_annotation_target
   @JsonKey(name: 'nativeName')
   String get name => throw _privateConstructorUsedError;
 
@@ -1168,7 +1167,6 @@ class _$_City implements _City {
   final String id;
 
   /// [name] represents the name of the city
-// ignore: invalid_annotation_target
   @override
   @JsonKey(name: 'nativeName')
   final String name;
@@ -1232,7 +1230,6 @@ abstract class _City implements City {
   @override
 
   /// [name] represents the name of the city
-// ignore: invalid_annotation_target
   @JsonKey(name: 'nativeName')
   String get name;
   @override
@@ -1258,7 +1255,6 @@ mixin _$CountryState {
   String get id => throw _privateConstructorUsedError;
 
   /// [name] represents the name of the CountryState
-// ignore: invalid_annotation_target
   @JsonKey(name: 'nativeName')
   String get name => throw _privateConstructorUsedError;
 
@@ -1373,7 +1369,6 @@ class _$_CountryState implements _CountryState {
   final String id;
 
   /// [name] represents the name of the CountryState
-// ignore: invalid_annotation_target
   @override
   @JsonKey(name: 'nativeName')
   final String name;
@@ -1431,7 +1426,6 @@ abstract class _CountryState implements CountryState {
   @override
 
   /// [name] represents the name of the CountryState
-// ignore: invalid_annotation_target
   @JsonKey(name: 'nativeName')
   String get name;
   @override
@@ -23534,8 +23528,7 @@ mixin _$LintError {
   String get code => throw _privateConstructorUsedError;
   int? get line => throw _privateConstructorUsedError;
   String? get function => throw _privateConstructorUsedError;
-  int? get given =>
-      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
+  int? get given => throw _privateConstructorUsedError;
   @JsonKey(name: 'required')
   int? get req => throw _privateConstructorUsedError;
   String? get element => throw _privateConstructorUsedError;
@@ -23694,7 +23687,6 @@ class _$_LintError implements _LintError {
   final String? function;
   @override
   final int? given;
-// ignore: invalid_annotation_target
   @override
   @JsonKey(name: 'required')
   final int? req;
@@ -23759,7 +23751,7 @@ abstract class _LintError implements LintError {
   String? get function;
   @override
   int? get given;
-  @override // ignore: invalid_annotation_target
+  @override
   @JsonKey(name: 'required')
   int? get req;
   @override
@@ -45337,7 +45329,6 @@ mixin _$AtsNsLicense {
   List<AtsNsAddress>? get addresses => throw _privateConstructorUsedError;
 
   /// [expirationDate] represents the expiration date of the license
-// ignore: invalid_annotation_target
   @JsonKey(name: 'expirationDateUnix')
   @TimestampOrNullConverter()
   DateTime? get expirationDate => throw _privateConstructorUsedError;
@@ -45718,7 +45709,6 @@ class _$_AtsNsLicense implements _AtsNsLicense {
   }
 
   /// [expirationDate] represents the expiration date of the license
-// ignore: invalid_annotation_target
   @override
   @JsonKey(name: 'expirationDateUnix')
   @TimestampOrNullConverter()
@@ -45890,7 +45880,6 @@ abstract class _AtsNsLicense implements AtsNsLicense {
   @override
 
   /// [expirationDate] represents the expiration date of the license
-// ignore: invalid_annotation_target
   @JsonKey(name: 'expirationDateUnix')
   @TimestampOrNullConverter()
   DateTime? get expirationDate;
