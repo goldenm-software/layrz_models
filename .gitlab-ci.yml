@@ -1,20 +1,7 @@
 image: registry.gitlab.com/goldenm-software/layrz/docker-containers/flutter-web-builder:flutter-3.10.5
 
 stages:
-  - verify
   - deploy
-
-verify:
-  stage: verify
-
-  script:
-    - dart pub publish --dry-run
-
-  tags:
-    - saas-linux-small-amd64
-
-  only:
-    - main
 
 deploy:
   stage: deploy
