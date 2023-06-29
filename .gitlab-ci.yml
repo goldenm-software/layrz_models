@@ -8,7 +8,7 @@ deploy:
 
   before_script:
     - gcloud auth activate-service-account --key-file=$PUB_TOKEN
-    - gcloud auth print-identity-token --audiences=https://pub.dev | dart pub token add stdin https://pub.dev
+    - gcloud auth print-identity-token --audiences=https://pub.dev | dart pub token add https://pub.dev
 
   script:
     - dart pub publish -f
