@@ -7,14 +7,7 @@ deploy:
   stage: deploy
 
   before_script:
-    - export PUB_PROJECT_ID=$PUB_PROJECT_ID
-    - export PUB_PRIVATE_KEY_ID=$PUB_PRIVATE_KEY_ID
-    - export PUB_PRIVATE_KEY=$PUB_PRIVATE_KEY
-    - export PUB_CLIENT_EMAIL=$PUB_CLIENT_EMAIL
-    - export PUB_CLIENT_ID=$PUB_CLIENT_ID
-    - export PUB_CLIENT_EMAIL_CLIENT=$PUB_CLIENT_EMAIL_CLIENT
-    - python3 /usr/bin/key_gen
-    - gcloud auth activate-service-account --key-file=/tmp/gcloud-key.json
+    - gcloud auth activate-service-account --key-file=$PUB_TOKEN
     - gcloud auth print-identity-token --audiences=https://pub.dev | dart pub token add stdin https://pub.dev
 
   script:
