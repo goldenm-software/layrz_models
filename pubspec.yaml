@@ -1,0 +1,24 @@
+name: layrz_models
+description: Layrz API models
+version: "2.0.1"
+repository: https://gitlab.com/layrz-software/components/layrz_models
+
+environment:
+  sdk: ">=2.18.0 <4.0.0"
+  flutter: ">=3.7.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  freezed_annotation: ">=2.2.0 <3.0.0"
+  json_annotation: ">=4.8.0 <5.0.0"
+  material_design_icons_flutter: ">=7.0.7296"
+  recase: ">=4.1.0 <5.0.0"
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ">=1.0.0 <2.0.0"
+  build_runner: ">=2.3.0 <2.4.0"
+  freezed: ">=2.3.5 <3.0.0"
+  json_serializable: ">=6.3.0 <6.7.0"

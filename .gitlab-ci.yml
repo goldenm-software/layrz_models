@@ -1,0 +1,37 @@
+image: registry.gitlab.com/goldenm-software/layrz/docker-containers/flutter-web-builder:flutter-3.10.5
+
+stages:
+  - verify
+  - deploy
+
+verify:
+  stage: verify
+
+  script:
+    - dart pub publish --dry-run
+
+  tags:
+    - saas-linux-small-amd64
+
+  only:
+    - main
+
+deploy:
+  stage: deploy
+
+  before_script:
+    - python3 /usr/bin/key_gen
+    - gcloud auth activate-service-account --key-file=/tmp/gcloud-key.json
+    - gcloud auth print-identity-token --audiences=https://pub.dev | dart pub token add stdin https://pub.dev
+
+  script:
+    - dart pub publish -f
+
+  after_script:
+    - dart pub token remove https://pub.dev
+
+  tags:
+    - saas-linux-small-amd64
+
+  only:
+    - main
