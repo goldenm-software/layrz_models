@@ -1,5 +1,7 @@
 # Changelog
 
+## 2.0.3
+- TimestampConverter and TimestampConverterOrNull now can recive any type of num 
 ## 2.0.2
 - Some linting issues fixed
 
@@ -8,3 +10,4 @@
 
 ## 2.0.0
 - Initial public release
+
