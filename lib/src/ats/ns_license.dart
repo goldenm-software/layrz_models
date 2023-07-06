@@ -235,7 +235,6 @@ class AtsNsLicense with _$AtsNsLicense {
     List<AtsNsAddress>? addresses,
 
     /// [expirationDate] represents the expiration date of the license
-    // ignore: invalid_annotation_target
     @JsonKey(name: 'expirationDateUnix') @TimestampOrNullConverter() DateTime? expirationDate,
   }) = _AtsNsLicense;
 

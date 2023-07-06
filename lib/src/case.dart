@@ -1,5 +1,3 @@
-// ignore_for_file: invalid_annotation_target
-
 part of layrz_models;
 
 @freezed

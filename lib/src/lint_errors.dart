@@ -7,7 +7,6 @@ class LintError with _$LintError {
     int? line,
     String? function,
     int? given,
-    // ignore: invalid_annotation_target
     @JsonKey(name: 'required') int? req,
     String? element,
   }) = _LintError;

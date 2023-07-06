@@ -50,7 +50,6 @@ class City with _$City {
     required String id,
 
     /// [name] represents the name of the city
-    // ignore: invalid_annotation_target
     @JsonKey(name: 'nativeName') required String name,
 
     /// [code] represents the code of the city
@@ -70,7 +69,6 @@ class CountryState with _$CountryState {
     required String id,
 
     /// [name] represents the name of the CountryState
-    // ignore: invalid_annotation_target
     @JsonKey(name: 'nativeName') required String name,
 
     /// [code] represents the code of the CountryState
