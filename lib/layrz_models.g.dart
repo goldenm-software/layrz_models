@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of layrz_models;
+part of 'layrz_models.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -444,7 +444,7 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
 _$_Token _$$_TokenFromJson(Map<String, dynamic> json) => _$_Token(
       token: json['token'] as String,
       validBefore:
-          const TimestampConverter().fromJson(json['validBefore'] as double),
+          const TimestampConverter().fromJson(json['validBefore'] as num),
     );
 
 Map<String, dynamic> _$$_TokenToJson(_$_Token instance) => <String, dynamic>{
@@ -486,9 +486,8 @@ _$_DbPartition _$$_DbPartitionFromJson(Map<String, dynamic> json) =>
       isCompleted: json['isCompleted'] as bool? ?? false,
       isDefault: json['isDefault'] as bool? ?? false,
       startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as double?),
-      endAt:
-          const TimestampOrNullConverter().fromJson(json['endAt'] as double?),
+          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
+      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
       numOfRecords: json['numOfRecords'] as int?,
       totalSize: (json['totalSize'] as num?)?.toDouble(),
       sizePerRecord: (json['sizePerRecord'] as num?)?.toDouble(),
@@ -875,7 +874,7 @@ _$_SuspendedService _$$_SuspendedServiceFromJson(Map<String, dynamic> json) =>
       protocol:
           OutboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
       suspendedAt:
-          const TimestampConverter().fromJson(json['suspendedAt'] as double),
+          const TimestampConverter().fromJson(json['suspendedAt'] as num),
     );
 
 Map<String, dynamic> _$$_SuspendedServiceToJson(_$_SuspendedService instance) =>
@@ -1282,8 +1281,8 @@ _$_CustomField _$$_CustomFieldFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       value: json['value'] as String,
       isFixed: json['isFixed'] as bool?,
-      updatedAt: const TimestampOrNullConverter()
-          .fromJson(json['updatedAt'] as double?),
+      updatedAt:
+          const TimestampOrNullConverter().fromJson(json['updatedAt'] as num?),
     );
 
 Map<String, dynamic> _$$_CustomFieldToJson(_$_CustomField instance) =>
@@ -1413,7 +1412,7 @@ _$_Guide _$$_GuideFromJson(Map<String, dynamic> json) => _$_Guide(
       description: json['description'] as String,
       youtubeUrl: json['youtubeUrl'] as String,
       publishedAt:
-          const TimestampConverter().fromJson(json['publishedAt'] as double),
+          const TimestampConverter().fromJson(json['publishedAt'] as num),
     );
 
 Map<String, dynamic> _$$_GuideToJson(_$_Guide instance) => <String, dynamic>{
@@ -1443,7 +1442,7 @@ _$_DeviceTelemetry _$$_DeviceTelemetryFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       deviceId: json['deviceId'] as String?,
       receivedAt:
-          const TimestampConverter().fromJson(json['receivedAt'] as double),
+          const TimestampConverter().fromJson(json['receivedAt'] as num),
       position: json['position'] == null
           ? null
           : TelemetryPosition.fromJson(
@@ -1467,7 +1466,7 @@ _$_AssetTelemetry _$$_AssetTelemetryFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       assetId: json['assetId'] as String?,
       receivedAt:
-          const TimestampConverter().fromJson(json['receivedAt'] as double),
+          const TimestampConverter().fromJson(json['receivedAt'] as num),
       geofenceIds: (json['geofenceIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -1550,7 +1549,7 @@ _$_Point _$$_PointFromJson(Map<String, dynamic> json) => _$_Point(
       triggerId: json['triggerId'] as String?,
       triggerName: json['triggerName'] as String?,
       receivedAt:
-          const TimestampConverter().fromJson(json['receivedAt'] as double),
+          const TimestampConverter().fromJson(json['receivedAt'] as num),
     );
 
 Map<String, dynamic> _$$_PointToJson(_$_Point instance) => <String, dynamic>{
@@ -1682,7 +1681,7 @@ _$_TriggerActivation _$$_TriggerActivationFromJson(Map<String, dynamic> json) =>
           ? null
           : TelemetryPosition.fromJson(
               json['position'] as Map<String, dynamic>),
-      date: const TimestampConverter().fromJson(json['date'] as double),
+      date: const TimestampConverter().fromJson(json['date'] as num),
     );
 
 Map<String, dynamic> _$$_TriggerActivationToJson(
@@ -2396,7 +2395,7 @@ _$_CloudEntry _$$_CloudEntryFromJson(Map<String, dynamic> json) =>
       fileId: json['fileId'] as String?,
       size: json['size'] as int?,
       lastModified: const TimestampOrNullConverter()
-          .fromJson(json['lastModified'] as double?),
+          .fromJson(json['lastModified'] as num?),
       contentType: json['contentType'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
@@ -2479,7 +2478,7 @@ _$_Preset _$$_PresetFromJson(Map<String, dynamic> json) => _$_Preset(
       id: json['id'] as String,
       name: json['name'] as String,
       validBefore: const TimestampOrNullConverter()
-          .fromJson(json['validBefore'] as double?),
+          .fromJson(json['validBefore'] as num?),
       isExpired: json['isExpired'] as bool? ?? true,
       triggers: (json['triggers'] as List<dynamic>?)
           ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
@@ -2652,7 +2651,7 @@ Map<String, dynamic> _$$_CommentOwnerToJson(_$_CommentOwner instance) =>
 _$_CaseComment _$$_CaseCommentFromJson(Map<String, dynamic> json) =>
     _$_CaseComment(
       id: json['id'] as String,
-      at: const TimestampConverter().fromJson(json['at'] as double),
+      at: const TimestampConverter().fromJson(json['at'] as num),
       owner: json['owner'] == null
           ? null
           : CommentOwner.fromJson(json['owner'] as Map<String, dynamic>),
@@ -2670,7 +2669,7 @@ Map<String, dynamic> _$$_CaseCommentToJson(_$_CaseComment instance) =>
 _$_Case _$$_CaseFromJson(Map<String, dynamic> json) => _$_Case(
       id: json['id'] as String,
       receivedAt:
-          const TimestampConverter().fromJson(json['dateReceived'] as double),
+          const TimestampConverter().fromJson(json['dateReceived'] as num),
       status: const CaseStatusConverter().fromJson(json['status'] as String),
       ignoredStatus: const CaseIgnoredStatusOrNullConverter()
           .fromJson(json['ignoredStatus'] as String?),
@@ -3120,7 +3119,7 @@ Map<String, dynamic> _$$_SensorGridItemToJson(_$_SensorGridItem instance) =>
 
 _$_WorkspaceAlert _$$_WorkspaceAlertFromJson(Map<String, dynamic> json) =>
     _$_WorkspaceAlert(
-      at: const TimestampConverter().fromJson(json['at'] as double),
+      at: const TimestampConverter().fromJson(json['at'] as num),
       assetId: json['assetId'] as String,
       position:
           TelemetryPosition.fromJson(json['position'] as Map<String, dynamic>),
@@ -3140,10 +3139,11 @@ _$_WorkspaceTripPoint _$$_WorkspaceTripPointFromJson(
     _$_WorkspaceTripPoint(
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
+      speed: (json['speed'] as num?)?.toDouble(),
       triggerName: json['triggerName'] as String?,
       triggerId: json['triggerId'] as String?,
       receivedAt:
-          const TimestampConverter().fromJson(json['receivedAt'] as double),
+          const TimestampConverter().fromJson(json['receivedAt'] as num),
     );
 
 Map<String, dynamic> _$$_WorkspaceTripPointToJson(
@@ -3151,6 +3151,7 @@ Map<String, dynamic> _$$_WorkspaceTripPointToJson(
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
+      'speed': instance.speed,
       'triggerName': instance.triggerName,
       'triggerId': instance.triggerId,
       'receivedAt': const TimestampConverter().toJson(instance.receivedAt),
@@ -3409,9 +3410,8 @@ _$_AppBuild _$$_AppBuildFromJson(Map<String, dynamic> json) => _$_AppBuild(
       status:
           const AppBuildStatusConverter().fromJson(json['status'] as String),
       startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as double?),
-      endAt:
-          const TimestampOrNullConverter().fromJson(json['endAt'] as double?),
+          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
+      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
       isNext: json['isNext'] as bool?,
     );
 
@@ -3613,7 +3613,7 @@ _$_AppVersion _$$_AppVersionFromJson(Map<String, dynamic> json) =>
       buildNumber: json['buildNumber'] as int,
       buildName: json['buildName'] as String,
       releasedAt:
-          const TimestampConverter().fromJson(json['releasedAt'] as double),
+          const TimestampConverter().fromJson(json['releasedAt'] as num),
     );
 
 Map<String, dynamic> _$$_AppVersionToJson(_$_AppVersion instance) =>
@@ -3655,9 +3655,8 @@ _$_AtsEntry _$$_AtsEntryFromJson(Map<String, dynamic> json) => _$_AtsEntry(
       oldTankLevel: (json['oldTankLevel'] as num?)?.toDouble(),
       newTankLevel: (json['newTankLevel'] as num?)?.toDouble(),
       startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as double?),
-      endAt:
-          const TimestampOrNullConverter().fromJson(json['endAt'] as double?),
+          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
+      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
       errorPercent: (json['errorPercent'] as num?)?.toDouble(),
       reception: json['reception'] == null
           ? null
@@ -3692,8 +3691,8 @@ _$_AtsReceptionProduct _$$_AtsReceptionProductFromJson(
           .fromJson(json['fuelType'] as String?),
       volumeBought: (json['volumeBought'] as num?)?.toDouble(),
       realVolume: (json['realVolume'] as num?)?.toDouble(),
-      receivedAt: const TimestampOrNullConverter()
-          .fromJson(json['receivedAt'] as double?),
+      receivedAt:
+          const TimestampOrNullConverter().fromJson(json['receivedAt'] as num?),
     );
 
 Map<String, dynamic> _$$_AtsReceptionProductToJson(
@@ -3794,8 +3793,8 @@ _$_AtsAuthenticationCard _$$_AtsAuthenticationCardFromJson(
           ?.map((e) =>
               AtsHistoryAuthenticationCard.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: const TimestampOrNullConverter()
-          .fromJson(json['createdAt'] as double?),
+      createdAt:
+          const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
     );
 
 Map<String, dynamic> _$$_AtsAuthenticationCardToJson(
@@ -3825,8 +3824,7 @@ _$_AtsHistoryAuthenticationCard _$$_AtsHistoryAuthenticationCardFromJson(
           ? null
           : User.fromJson(json['owner'] as Map<String, dynamic>),
       createdBy: User.fromJson(json['createdBy'] as Map<String, dynamic>),
-      createdAt:
-          const TimestampConverter().fromJson(json['createdAt'] as double),
+      createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
     );
 
 Map<String, dynamic> _$$_AtsHistoryAuthenticationCardToJson(
@@ -3895,7 +3893,7 @@ _$_AtsEvent _$$_AtsEventFromJson(Map<String, dynamic> json) => _$_AtsEvent(
       sensors: (json['sensors'] as List<dynamic>?)
           ?.map((e) => Sensor.fromJson(e as Map<String, dynamic>))
           .toList(),
-      at: const TimestampOrNullConverter().fromJson(json['at'] as double?),
+      at: const TimestampOrNullConverter().fromJson(json['at'] as num?),
       isCheck: json['isCheck'] as bool?,
       comment: json['comment'] as String?,
     );
@@ -3962,7 +3960,7 @@ _$_AtsNsLicense _$$_AtsNsLicenseFromJson(Map<String, dynamic> json) =>
           ?.map((e) => AtsNsAddress.fromJson(e as Map<String, dynamic>))
           .toList(),
       expirationDate: const TimestampOrNullConverter()
-          .fromJson(json['expirationDateUnix'] as double?),
+          .fromJson(json['expirationDateUnix'] as num?),
     );
 
 Map<String, dynamic> _$$_AtsNsLicenseToJson(_$_AtsNsLicense instance) =>
@@ -4061,9 +4059,9 @@ _$_AtsPurchaseOrder _$$_AtsPurchaseOrderFromJson(Map<String, dynamic> json) =>
       orderId: json['orderId'] as String?,
       assetId: json['assetId'] as String?,
       purchasedAt: const TimestampOrNullConverter()
-          .fromJson(json['purchasedAt'] as double?),
-      receivedAt: const TimestampOrNullConverter()
-          .fromJson(json['receivedAt'] as double?),
+          .fromJson(json['purchasedAt'] as num?),
+      receivedAt:
+          const TimestampOrNullConverter().fromJson(json['receivedAt'] as num?),
       asset: json['asset'] == null
           ? null
           : Asset.fromJson(json['asset'] as Map<String, dynamic>),
@@ -4164,7 +4162,7 @@ Map<String, dynamic> _$$_AtsEntryUnloadInputToJson(
 
 _$_AtsExitStatus _$$_AtsExitStatusFromJson(Map<String, dynamic> json) =>
     _$_AtsExitStatus(
-      date: const TimestampOrNullConverter().fromJson(json['date'] as double?),
+      date: const TimestampOrNullConverter().fromJson(json['date'] as num?),
       status: json['status'] as bool?,
     );
 
@@ -4187,9 +4185,8 @@ _$_AtsExit _$$_AtsExitFromJson(Map<String, dynamic> json) => _$_AtsExit(
       errorPercent: (json['errorPercent'] as num?)?.toDouble(),
       totalLiters: (json['totalLiters'] as num?)?.toDouble(),
       startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as double?),
-      endAt:
-          const TimestampOrNullConverter().fromJson(json['endAt'] as double?),
+          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
+      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
       totalTime: json['totalTime'] as String?,
       totalTimeDuration: const DurationOrNullConverter()
           .fromJson(json['totalTimeDuration'] as int?),
@@ -4238,9 +4235,8 @@ _$_AtsPossibleExit _$$_AtsPossibleExitFromJson(Map<String, dynamic> json) =>
           : Asset.fromJson(json['toAsset'] as Map<String, dynamic>),
       totalLiters: (json['totalLiters'] as num?)?.toDouble(),
       startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as double?),
-      endAt:
-          const TimestampOrNullConverter().fromJson(json['endAt'] as double?),
+          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
+      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
       isReady: json['isReady'] as bool?,
       inProgress: json['inProgress'] as bool?,
       isValidated: json['isValidated'] as bool?,
@@ -4602,9 +4598,8 @@ _$_MonitorRealWaypoint _$$_MonitorRealWaypointFromJson(
       sequenceReal: json['sequenceReal'] as int?,
       sequenceIdeal: json['sequenceIdeal'] as int,
       startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as double?),
-      endAt:
-          const TimestampOrNullConverter().fromJson(json['endAt'] as double?),
+          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
+      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
     );
 
 Map<String, dynamic> _$$_MonitorRealWaypointToJson(
@@ -4628,11 +4623,10 @@ _$_MonitorActiveCheckpoint _$$_MonitorActiveCheckpointFromJson(
           Checkpoint.fromJson(json['checkpoint'] as Map<String, dynamic>),
       asset: Asset.fromJson(json['asset'] as Map<String, dynamic>),
       startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as double?),
-      endAt:
-          const TimestampOrNullConverter().fromJson(json['endAt'] as double?),
-      updatedAt: const TimestampOrNullConverter()
-          .fromJson(json['updatedAt'] as double?),
+          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
+      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
+      updatedAt:
+          const TimestampOrNullConverter().fromJson(json['updatedAt'] as num?),
       checkpointState: const CheckpointStateConverter()
           .fromJson(json['checkpointState'] as String),
       waypoints: (json['waypoints'] as List<dynamic>?)
@@ -4668,7 +4662,7 @@ _$_MappitRouteLinkingHistory _$$_MappitRouteLinkingHistoryFromJson(
       performedBy: User.fromJson(json['performedBy'] as Map<String, dynamic>),
       performedById: json['performedById'] as String,
       performedAt:
-          const TimestampConverter().fromJson(json['performedAt'] as double),
+          const TimestampConverter().fromJson(json['performedAt'] as num),
     );
 
 Map<String, dynamic> _$$_MappitRouteLinkingHistoryToJson(

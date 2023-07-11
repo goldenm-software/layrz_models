@@ -5,6 +5,7 @@ class WorkspaceTripPoint with _$WorkspaceTripPoint {
   const factory WorkspaceTripPoint({
     double? latitude,
     double? longitude,
+    double? speed,
     String? triggerName,
     String? triggerId,
     @TimestampConverter() required DateTime receivedAt,
