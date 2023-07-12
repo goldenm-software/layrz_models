@@ -91,6 +91,10 @@ class InboundProtocol with _$InboundProtocol {
     /// Currently only works for Layrz Link protocol.
     bool? hasAck,
     String? ackTopicFormat,
+
+    /// [dynamicIcon] is the icon of the inbound protocol.
+    /// This is the new schema of the icon
+    Avatar? dynamicIcon,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);

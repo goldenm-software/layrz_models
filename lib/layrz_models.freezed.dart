@@ -7783,6 +7783,10 @@ mixin _$InboundProtocol {
   bool? get hasAck => throw _privateConstructorUsedError;
   String? get ackTopicFormat => throw _privateConstructorUsedError;
 
+  /// [dynamicIcon] is the icon of the asset.
+  /// This is the new schema of the icon
+  Avatar? get dynamicIcon => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
@@ -7816,10 +7820,12 @@ abstract class $InboundProtocolCopyWith<$Res> {
       bool? canFota,
       List<Model>? models,
       bool? hasAck,
-      String? ackTopicFormat});
+      String? ackTopicFormat,
+      Avatar? dynamicIcon});
 
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
   $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
+  $AvatarCopyWith<$Res>? get dynamicIcon;
 }
 
 /// @nodoc
@@ -7856,6 +7862,7 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? models = freezed,
     Object? hasAck = freezed,
     Object? ackTopicFormat = freezed,
+    Object? dynamicIcon = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -7942,6 +7949,10 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.ackTopicFormat
           : ackTopicFormat // ignore: cast_nullable_to_non_nullable
               as String?,
+      dynamicIcon: freezed == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
     ) as $Val);
   }
 
@@ -7967,6 +7978,18 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     return $RealtimeVariantEndpointCopyWith<$Res>(
         _value.realtimeVariantEndpoint!, (value) {
       return _then(_value.copyWith(realtimeVariantEndpoint: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AvatarCopyWith<$Res>? get dynamicIcon {
+    if (_value.dynamicIcon == null) {
+      return null;
+    }
+
+    return $AvatarCopyWith<$Res>(_value.dynamicIcon!, (value) {
+      return _then(_value.copyWith(dynamicIcon: value) as $Val);
     });
   }
 }
@@ -8000,12 +8023,15 @@ abstract class _$$_InboundProtocolCopyWith<$Res>
       bool? canFota,
       List<Model>? models,
       bool? hasAck,
-      String? ackTopicFormat});
+      String? ackTopicFormat,
+      Avatar? dynamicIcon});
 
   @override
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
   @override
   $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
+  @override
+  $AvatarCopyWith<$Res>? get dynamicIcon;
 }
 
 /// @nodoc
@@ -8040,6 +8066,7 @@ class __$$_InboundProtocolCopyWithImpl<$Res>
     Object? models = freezed,
     Object? hasAck = freezed,
     Object? ackTopicFormat = freezed,
+    Object? dynamicIcon = freezed,
   }) {
     return _then(_$_InboundProtocol(
       id: null == id
@@ -8126,6 +8153,10 @@ class __$$_InboundProtocolCopyWithImpl<$Res>
           ? _value.ackTopicFormat
           : ackTopicFormat // ignore: cast_nullable_to_non_nullable
               as String?,
+      dynamicIcon: freezed == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
     ));
   }
 }
@@ -8154,7 +8185,8 @@ class _$_InboundProtocol implements _InboundProtocol {
       this.canFota,
       final List<Model>? models,
       this.hasAck,
-      this.ackTopicFormat})
+      this.ackTopicFormat,
+      this.dynamicIcon})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models;
@@ -8279,9 +8311,14 @@ class _$_InboundProtocol implements _InboundProtocol {
   @override
   final String? ackTopicFormat;
 
+  /// [dynamicIcon] is the icon of the asset.
+  /// This is the new schema of the icon
+  @override
+  final Avatar? dynamicIcon;
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon)';
   }
 
   @override
@@ -8325,7 +8362,9 @@ class _$_InboundProtocol implements _InboundProtocol {
             const DeepCollectionEquality().equals(other._models, _models) &&
             (identical(other.hasAck, hasAck) || other.hasAck == hasAck) &&
             (identical(other.ackTopicFormat, ackTopicFormat) ||
-                other.ackTopicFormat == ackTopicFormat));
+                other.ackTopicFormat == ackTopicFormat) &&
+            (identical(other.dynamicIcon, dynamicIcon) ||
+                other.dynamicIcon == dynamicIcon));
   }
 
   @JsonKey(ignore: true)
@@ -8352,7 +8391,8 @@ class _$_InboundProtocol implements _InboundProtocol {
         canFota,
         const DeepCollectionEquality().hash(_models),
         hasAck,
-        ackTopicFormat
+        ackTopicFormat,
+        dynamicIcon
       ]);
 
   @JsonKey(ignore: true)
@@ -8391,7 +8431,8 @@ abstract class _InboundProtocol implements InboundProtocol {
       final bool? canFota,
       final List<Model>? models,
       final bool? hasAck,
-      final String? ackTopicFormat}) = _$_InboundProtocol;
+      final String? ackTopicFormat,
+      final Avatar? dynamicIcon}) = _$_InboundProtocol;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$_InboundProtocol.fromJson;
@@ -8486,6 +8527,11 @@ abstract class _InboundProtocol implements InboundProtocol {
   bool? get hasAck;
   @override
   String? get ackTopicFormat;
+  @override
+
+  /// [dynamicIcon] is the icon of the asset.
+  /// This is the new schema of the icon
+  Avatar? get dynamicIcon;
   @override
   @JsonKey(ignore: true)
   _$$_InboundProtocolCopyWith<_$_InboundProtocol> get copyWith =>

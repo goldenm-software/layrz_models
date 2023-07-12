@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.6
+- Added `dynamicIcon` of type `Avatar` to `InboundProtocol`
+
 ## 2.0.5
 - Modified `Model` entity to support more fields.
 

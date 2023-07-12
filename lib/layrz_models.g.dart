@@ -738,6 +738,9 @@ _$_InboundProtocol _$$_InboundProtocolFromJson(Map<String, dynamic> json) =>
           .toList(),
       hasAck: json['hasAck'] as bool?,
       ackTopicFormat: json['ackTopicFormat'] as String?,
+      dynamicIcon: json['dynamicIcon'] == null
+          ? null
+          : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_InboundProtocolToJson(_$_InboundProtocol instance) =>
@@ -765,6 +768,7 @@ Map<String, dynamic> _$$_InboundProtocolToJson(_$_InboundProtocol instance) =>
       'models': instance.models?.map((e) => e.toJson()).toList(),
       'hasAck': instance.hasAck,
       'ackTopicFormat': instance.ackTopicFormat,
+      'dynamicIcon': instance.dynamicIcon?.toJson(),
     };
 
 _$_OutboundProtocol _$$_OutboundProtocolFromJson(Map<String, dynamic> json) =>
