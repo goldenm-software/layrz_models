@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'layrz_models.dart';
+part of layrz_models;
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -1564,11 +1564,21 @@ Map<String, dynamic> _$$_PointToJson(_$_Point instance) => <String, dynamic>{
 _$_Model _$$_ModelFromJson(Map<String, dynamic> json) => _$_Model(
       id: json['id'] as String,
       name: json['name'] as String,
+      flespiId: json['flespiId'] as String?,
+      protocol: json['protocol'] == null
+          ? null
+          : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
+      protocolId: json['protocolId'] as String?,
+      isGeneric: json['isGeneric'] as bool?,
     );
 
 Map<String, dynamic> _$$_ModelToJson(_$_Model instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'flespiId': instance.flespiId,
+      'protocol': instance.protocol?.toJson(),
+      'protocolId': instance.protocolId,
+      'isGeneric': instance.isGeneric,
     };
 
 _$_Trigger _$$_TriggerFromJson(Map<String, dynamic> json) => _$_Trigger(
