@@ -738,6 +738,9 @@ _$_InboundProtocol _$$_InboundProtocolFromJson(Map<String, dynamic> json) =>
           .toList(),
       hasAck: json['hasAck'] as bool?,
       ackTopicFormat: json['ackTopicFormat'] as String?,
+      dynamicIcon: json['dynamicIcon'] == null
+          ? null
+          : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_InboundProtocolToJson(_$_InboundProtocol instance) =>
@@ -765,6 +768,7 @@ Map<String, dynamic> _$$_InboundProtocolToJson(_$_InboundProtocol instance) =>
       'models': instance.models?.map((e) => e.toJson()).toList(),
       'hasAck': instance.hasAck,
       'ackTopicFormat': instance.ackTopicFormat,
+      'dynamicIcon': instance.dynamicIcon?.toJson(),
     };
 
 _$_OutboundProtocol _$$_OutboundProtocolFromJson(Map<String, dynamic> json) =>
@@ -1564,11 +1568,21 @@ Map<String, dynamic> _$$_PointToJson(_$_Point instance) => <String, dynamic>{
 _$_Model _$$_ModelFromJson(Map<String, dynamic> json) => _$_Model(
       id: json['id'] as String,
       name: json['name'] as String,
+      flespiId: json['flespiId'] as String?,
+      protocol: json['protocol'] == null
+          ? null
+          : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
+      protocolId: json['protocolId'] as String?,
+      isGeneric: json['isGeneric'] as bool?,
     );
 
 Map<String, dynamic> _$$_ModelToJson(_$_Model instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
+      'flespiId': instance.flespiId,
+      'protocol': instance.protocol?.toJson(),
+      'protocolId': instance.protocolId,
+      'isGeneric': instance.isGeneric,
     };
 
 _$_Trigger _$$_TriggerFromJson(Map<String, dynamic> json) => _$_Trigger(
@@ -3710,10 +3724,6 @@ Map<String, dynamic> _$$_AtsReceptionProductToJson(
 _$_AtsReceptionProductInput _$$_AtsReceptionProductInputFromJson(
         Map<String, dynamic> json) =>
     _$_AtsReceptionProductInput(
-      assetId: json['assetId'] as String?,
-      fuelType: const AtsFuelTypeOrNullConverter()
-          .fromJson(json['fuelType'] as String?),
-      volumeBought: (json['volumeBought'] as num?)?.toDouble(),
       fuelAnp: json['fuelAnp'] as String?,
       tanksImages: (json['tanksImages'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -3723,9 +3733,6 @@ _$_AtsReceptionProductInput _$$_AtsReceptionProductInputFromJson(
 Map<String, dynamic> _$$_AtsReceptionProductInputToJson(
         _$_AtsReceptionProductInput instance) =>
     <String, dynamic>{
-      'assetId': instance.assetId,
-      'fuelType': const AtsFuelTypeOrNullConverter().toJson(instance.fuelType),
-      'volumeBought': instance.volumeBought,
       'fuelAnp': instance.fuelAnp,
       'tanksImages': instance.tanksImages,
     };
@@ -3739,6 +3746,10 @@ _$_AtsReceptionInput _$$_AtsReceptionInputFromJson(Map<String, dynamic> json) =>
               AtsReceptionProductInput.fromJson(e as Map<String, dynamic>))
           .toList(),
       assetId: json['assetId'] as String?,
+      operationTime: const DurationOrNullConverter()
+          .fromJson(json['operationTime'] as int?),
+      fromApp: const AtsFromAppOrNullConverter()
+          .fromJson(json['fromApp'] as String?),
     );
 
 Map<String, dynamic> _$$_AtsReceptionInputToJson(
@@ -3748,6 +3759,9 @@ Map<String, dynamic> _$$_AtsReceptionInputToJson(
       'orderId': instance.orderId,
       'products': instance.products?.map((e) => e.toJson()).toList(),
       'assetId': instance.assetId,
+      'operationTime':
+          const DurationOrNullConverter().toJson(instance.operationTime),
+      'fromApp': const AtsFromAppOrNullConverter().toJson(instance.fromApp),
     };
 
 _$_AtsAuthenticationIdentifier _$$_AtsAuthenticationIdentifierFromJson(
@@ -4132,6 +4146,9 @@ _$_AtsReception _$$_AtsReceptionFromJson(Map<String, dynamic> json) =>
           : AtsPurchaseOrder.fromJson(json['order'] as Map<String, dynamic>),
       ordersIds:
           (json['ordersIds'] as List<dynamic>?)?.map((e) => e as int).toList(),
+      entry: json['entry'] == null
+          ? null
+          : AtsEntry.fromJson(json['entry'] as Map<String, dynamic>),
       products: (json['products'] as List<dynamic>?)
           ?.map((e) => AtsReceptionProduct.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -4143,6 +4160,7 @@ Map<String, dynamic> _$$_AtsReceptionToJson(_$_AtsReception instance) =>
       'orderId': instance.orderId,
       'order': instance.order?.toJson(),
       'ordersIds': instance.ordersIds,
+      'entry': instance.entry?.toJson(),
       'products': instance.products?.map((e) => e.toJson()).toList(),
     };
 

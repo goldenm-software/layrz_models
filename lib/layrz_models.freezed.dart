@@ -7780,6 +7780,10 @@ mixin _$InboundProtocol {
   bool? get hasAck => throw _privateConstructorUsedError;
   String? get ackTopicFormat => throw _privateConstructorUsedError;
 
+  /// [dynamicIcon] is the icon of the inbound protocol.
+  /// This is the new schema of the icon
+  Avatar? get dynamicIcon => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
@@ -7813,10 +7817,12 @@ abstract class $InboundProtocolCopyWith<$Res> {
       bool? canFota,
       List<Model>? models,
       bool? hasAck,
-      String? ackTopicFormat});
+      String? ackTopicFormat,
+      Avatar? dynamicIcon});
 
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
   $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
+  $AvatarCopyWith<$Res>? get dynamicIcon;
 }
 
 /// @nodoc
@@ -7853,6 +7859,7 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? models = freezed,
     Object? hasAck = freezed,
     Object? ackTopicFormat = freezed,
+    Object? dynamicIcon = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -7939,6 +7946,10 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.ackTopicFormat
           : ackTopicFormat // ignore: cast_nullable_to_non_nullable
               as String?,
+      dynamicIcon: freezed == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
     ) as $Val);
   }
 
@@ -7964,6 +7975,18 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     return $RealtimeVariantEndpointCopyWith<$Res>(
         _value.realtimeVariantEndpoint!, (value) {
       return _then(_value.copyWith(realtimeVariantEndpoint: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AvatarCopyWith<$Res>? get dynamicIcon {
+    if (_value.dynamicIcon == null) {
+      return null;
+    }
+
+    return $AvatarCopyWith<$Res>(_value.dynamicIcon!, (value) {
+      return _then(_value.copyWith(dynamicIcon: value) as $Val);
     });
   }
 }
@@ -7997,12 +8020,15 @@ abstract class _$$_InboundProtocolCopyWith<$Res>
       bool? canFota,
       List<Model>? models,
       bool? hasAck,
-      String? ackTopicFormat});
+      String? ackTopicFormat,
+      Avatar? dynamicIcon});
 
   @override
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
   @override
   $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
+  @override
+  $AvatarCopyWith<$Res>? get dynamicIcon;
 }
 
 /// @nodoc
@@ -8037,6 +8063,7 @@ class __$$_InboundProtocolCopyWithImpl<$Res>
     Object? models = freezed,
     Object? hasAck = freezed,
     Object? ackTopicFormat = freezed,
+    Object? dynamicIcon = freezed,
   }) {
     return _then(_$_InboundProtocol(
       id: null == id
@@ -8123,6 +8150,10 @@ class __$$_InboundProtocolCopyWithImpl<$Res>
           ? _value.ackTopicFormat
           : ackTopicFormat // ignore: cast_nullable_to_non_nullable
               as String?,
+      dynamicIcon: freezed == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
     ));
   }
 }
@@ -8151,7 +8182,8 @@ class _$_InboundProtocol implements _InboundProtocol {
       this.canFota,
       final List<Model>? models,
       this.hasAck,
-      this.ackTopicFormat})
+      this.ackTopicFormat,
+      this.dynamicIcon})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models;
@@ -8276,9 +8308,14 @@ class _$_InboundProtocol implements _InboundProtocol {
   @override
   final String? ackTopicFormat;
 
+  /// [dynamicIcon] is the icon of the inbound protocol.
+  /// This is the new schema of the icon
+  @override
+  final Avatar? dynamicIcon;
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon)';
   }
 
   @override
@@ -8322,7 +8359,9 @@ class _$_InboundProtocol implements _InboundProtocol {
             const DeepCollectionEquality().equals(other._models, _models) &&
             (identical(other.hasAck, hasAck) || other.hasAck == hasAck) &&
             (identical(other.ackTopicFormat, ackTopicFormat) ||
-                other.ackTopicFormat == ackTopicFormat));
+                other.ackTopicFormat == ackTopicFormat) &&
+            (identical(other.dynamicIcon, dynamicIcon) ||
+                other.dynamicIcon == dynamicIcon));
   }
 
   @JsonKey(ignore: true)
@@ -8349,7 +8388,8 @@ class _$_InboundProtocol implements _InboundProtocol {
         canFota,
         const DeepCollectionEquality().hash(_models),
         hasAck,
-        ackTopicFormat
+        ackTopicFormat,
+        dynamicIcon
       ]);
 
   @JsonKey(ignore: true)
@@ -8388,7 +8428,8 @@ abstract class _InboundProtocol implements InboundProtocol {
       final bool? canFota,
       final List<Model>? models,
       final bool? hasAck,
-      final String? ackTopicFormat}) = _$_InboundProtocol;
+      final String? ackTopicFormat,
+      final Avatar? dynamicIcon}) = _$_InboundProtocol;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$_InboundProtocol.fromJson;
@@ -8483,6 +8524,11 @@ abstract class _InboundProtocol implements InboundProtocol {
   bool? get hasAck;
   @override
   String? get ackTopicFormat;
+  @override
+
+  /// [dynamicIcon] is the icon of the inbound protocol.
+  /// This is the new schema of the icon
+  Avatar? get dynamicIcon;
   @override
   @JsonKey(ignore: true)
   _$$_InboundProtocolCopyWith<_$_InboundProtocol> get copyWith =>
@@ -17882,8 +17928,24 @@ Model _$ModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Model {
+  /// [id] is the unique identifier of the model.
   String get id => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the model.
   String get name => throw _privateConstructorUsedError;
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  String? get flespiId => throw _privateConstructorUsedError;
+
+  /// [protocol] is the protocol of the model.
+  InboundProtocol? get protocol => throw _privateConstructorUsedError;
+
+  /// [protocolId] is the ID of the protocol
+  String? get protocolId => throw _privateConstructorUsedError;
+
+  /// [isGeneric] is true if the model is generic.
+  bool? get isGeneric => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -17895,7 +17957,15 @@ abstract class $ModelCopyWith<$Res> {
   factory $ModelCopyWith(Model value, $Res Function(Model) then) =
       _$ModelCopyWithImpl<$Res, Model>;
   @useResult
-  $Res call({String id, String name});
+  $Res call(
+      {String id,
+      String name,
+      String? flespiId,
+      InboundProtocol? protocol,
+      String? protocolId,
+      bool? isGeneric});
+
+  $InboundProtocolCopyWith<$Res>? get protocol;
 }
 
 /// @nodoc
@@ -17913,6 +17983,10 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? flespiId = freezed,
+    Object? protocol = freezed,
+    Object? protocolId = freezed,
+    Object? isGeneric = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -17923,7 +17997,35 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      flespiId: freezed == flespiId
+          ? _value.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      protocol: freezed == protocol
+          ? _value.protocol
+          : protocol // ignore: cast_nullable_to_non_nullable
+              as InboundProtocol?,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isGeneric: freezed == isGeneric
+          ? _value.isGeneric
+          : isGeneric // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $InboundProtocolCopyWith<$Res>? get protocol {
+    if (_value.protocol == null) {
+      return null;
+    }
+
+    return $InboundProtocolCopyWith<$Res>(_value.protocol!, (value) {
+      return _then(_value.copyWith(protocol: value) as $Val);
+    });
   }
 }
 
@@ -17933,7 +18035,16 @@ abstract class _$$_ModelCopyWith<$Res> implements $ModelCopyWith<$Res> {
       __$$_ModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name});
+  $Res call(
+      {String id,
+      String name,
+      String? flespiId,
+      InboundProtocol? protocol,
+      String? protocolId,
+      bool? isGeneric});
+
+  @override
+  $InboundProtocolCopyWith<$Res>? get protocol;
 }
 
 /// @nodoc
@@ -17947,6 +18058,10 @@ class __$$_ModelCopyWithImpl<$Res> extends _$ModelCopyWithImpl<$Res, _$_Model>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? flespiId = freezed,
+    Object? protocol = freezed,
+    Object? protocolId = freezed,
+    Object? isGeneric = freezed,
   }) {
     return _then(_$_Model(
       id: null == id
@@ -17957,6 +18072,22 @@ class __$$_ModelCopyWithImpl<$Res> extends _$ModelCopyWithImpl<$Res, _$_Model>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      flespiId: freezed == flespiId
+          ? _value.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      protocol: freezed == protocol
+          ? _value.protocol
+          : protocol // ignore: cast_nullable_to_non_nullable
+              as InboundProtocol?,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isGeneric: freezed == isGeneric
+          ? _value.isGeneric
+          : isGeneric // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -17964,19 +18095,45 @@ class __$$_ModelCopyWithImpl<$Res> extends _$ModelCopyWithImpl<$Res, _$_Model>
 /// @nodoc
 @JsonSerializable()
 class _$_Model implements _Model {
-  const _$_Model({required this.id, required this.name});
+  const _$_Model(
+      {required this.id,
+      required this.name,
+      this.flespiId,
+      this.protocol,
+      this.protocolId,
+      this.isGeneric});
 
   factory _$_Model.fromJson(Map<String, dynamic> json) =>
       _$$_ModelFromJson(json);
 
+  /// [id] is the unique identifier of the model.
   @override
   final String id;
+
+  /// [name] is the name of the model.
   @override
   final String name;
 
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  @override
+  final String? flespiId;
+
+  /// [protocol] is the protocol of the model.
+  @override
+  final InboundProtocol? protocol;
+
+  /// [protocolId] is the ID of the protocol
+  @override
+  final String? protocolId;
+
+  /// [isGeneric] is true if the model is generic.
+  @override
+  final bool? isGeneric;
+
   @override
   String toString() {
-    return 'Model(id: $id, name: $name)';
+    return 'Model(id: $id, name: $name, flespiId: $flespiId, protocol: $protocol, protocolId: $protocolId, isGeneric: $isGeneric)';
   }
 
   @override
@@ -17985,12 +18142,21 @@ class _$_Model implements _Model {
         (other.runtimeType == runtimeType &&
             other is _$_Model &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.flespiId, flespiId) ||
+                other.flespiId == flespiId) &&
+            (identical(other.protocol, protocol) ||
+                other.protocol == protocol) &&
+            (identical(other.protocolId, protocolId) ||
+                other.protocolId == protocolId) &&
+            (identical(other.isGeneric, isGeneric) ||
+                other.isGeneric == isGeneric));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, flespiId, protocol, protocolId, isGeneric);
 
   @JsonKey(ignore: true)
   @override
@@ -18007,15 +18173,41 @@ class _$_Model implements _Model {
 }
 
 abstract class _Model implements Model {
-  const factory _Model({required final String id, required final String name}) =
-      _$_Model;
+  const factory _Model(
+      {required final String id,
+      required final String name,
+      final String? flespiId,
+      final InboundProtocol? protocol,
+      final String? protocolId,
+      final bool? isGeneric}) = _$_Model;
 
   factory _Model.fromJson(Map<String, dynamic> json) = _$_Model.fromJson;
 
   @override
+
+  /// [id] is the unique identifier of the model.
   String get id;
   @override
+
+  /// [name] is the name of the model.
   String get name;
+  @override
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  String? get flespiId;
+  @override
+
+  /// [protocol] is the protocol of the model.
+  InboundProtocol? get protocol;
+  @override
+
+  /// [protocolId] is the ID of the protocol
+  String? get protocolId;
+  @override
+
+  /// [isGeneric] is true if the model is generic.
+  bool? get isGeneric;
   @override
   @JsonKey(ignore: true)
   _$$_ModelCopyWith<_$_Model> get copyWith =>
@@ -42502,26 +42694,6 @@ AtsReceptionProductInput _$AtsReceptionProductInputFromJson(
 
 /// @nodoc
 mixin _$AtsReceptionProductInput {
-  /// ID of the asset.
-  String? get assetId => throw _privateConstructorUsedError;
-
-  /// ID of the asset.
-  set assetId(String? value) => throw _privateConstructorUsedError;
-
-  /// Fuel type enum. Check its possible values in the enum documentation.
-  @AtsFuelTypeOrNullConverter()
-  AtsFuelType? get fuelType => throw _privateConstructorUsedError;
-
-  /// Fuel type enum. Check its possible values in the enum documentation.
-  @AtsFuelTypeOrNullConverter()
-  set fuelType(AtsFuelType? value) => throw _privateConstructorUsedError;
-
-  /// Volume received in purchased order (Expressed in Litters).
-  double? get volumeBought => throw _privateConstructorUsedError;
-
-  /// Volume received in purchased order (Expressed in Litters).
-  set volumeBought(double? value) => throw _privateConstructorUsedError;
-
   /// Fuel ANP category code
   String? get fuelAnp => throw _privateConstructorUsedError;
 
@@ -42546,12 +42718,7 @@ abstract class $AtsReceptionProductInputCopyWith<$Res> {
           $Res Function(AtsReceptionProductInput) then) =
       _$AtsReceptionProductInputCopyWithImpl<$Res, AtsReceptionProductInput>;
   @useResult
-  $Res call(
-      {String? assetId,
-      @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
-      double? volumeBought,
-      String? fuelAnp,
-      List<String>? tanksImages});
+  $Res call({String? fuelAnp, List<String>? tanksImages});
 }
 
 /// @nodoc
@@ -42568,25 +42735,10 @@ class _$AtsReceptionProductInputCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assetId = freezed,
-    Object? fuelType = freezed,
-    Object? volumeBought = freezed,
     Object? fuelAnp = freezed,
     Object? tanksImages = freezed,
   }) {
     return _then(_value.copyWith(
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fuelType: freezed == fuelType
-          ? _value.fuelType
-          : fuelType // ignore: cast_nullable_to_non_nullable
-              as AtsFuelType?,
-      volumeBought: freezed == volumeBought
-          ? _value.volumeBought
-          : volumeBought // ignore: cast_nullable_to_non_nullable
-              as double?,
       fuelAnp: freezed == fuelAnp
           ? _value.fuelAnp
           : fuelAnp // ignore: cast_nullable_to_non_nullable
@@ -42608,12 +42760,7 @@ abstract class _$$_AtsReceptionProductInputCopyWith<$Res>
       __$$_AtsReceptionProductInputCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? assetId,
-      @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
-      double? volumeBought,
-      String? fuelAnp,
-      List<String>? tanksImages});
+  $Res call({String? fuelAnp, List<String>? tanksImages});
 }
 
 /// @nodoc
@@ -42628,25 +42775,10 @@ class __$$_AtsReceptionProductInputCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assetId = freezed,
-    Object? fuelType = freezed,
-    Object? volumeBought = freezed,
     Object? fuelAnp = freezed,
     Object? tanksImages = freezed,
   }) {
     return _then(_$_AtsReceptionProductInput(
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      fuelType: freezed == fuelType
-          ? _value.fuelType
-          : fuelType // ignore: cast_nullable_to_non_nullable
-              as AtsFuelType?,
-      volumeBought: freezed == volumeBought
-          ? _value.volumeBought
-          : volumeBought // ignore: cast_nullable_to_non_nullable
-              as double?,
       fuelAnp: freezed == fuelAnp
           ? _value.fuelAnp
           : fuelAnp // ignore: cast_nullable_to_non_nullable
@@ -42662,28 +42794,10 @@ class __$$_AtsReceptionProductInputCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AtsReceptionProductInput implements _AtsReceptionProductInput {
-  _$_AtsReceptionProductInput(
-      {this.assetId,
-      @AtsFuelTypeOrNullConverter() this.fuelType,
-      this.volumeBought,
-      this.fuelAnp,
-      this.tanksImages});
+  _$_AtsReceptionProductInput({this.fuelAnp, this.tanksImages});
 
   factory _$_AtsReceptionProductInput.fromJson(Map<String, dynamic> json) =>
       _$$_AtsReceptionProductInputFromJson(json);
-
-  /// ID of the asset.
-  @override
-  String? assetId;
-
-  /// Fuel type enum. Check its possible values in the enum documentation.
-  @override
-  @AtsFuelTypeOrNullConverter()
-  AtsFuelType? fuelType;
-
-  /// Volume received in purchased order (Expressed in Litters).
-  @override
-  double? volumeBought;
 
   /// Fuel ANP category code
   @override
@@ -42695,7 +42809,7 @@ class _$_AtsReceptionProductInput implements _AtsReceptionProductInput {
 
   @override
   String toString() {
-    return 'AtsReceptionProductInput(assetId: $assetId, fuelType: $fuelType, volumeBought: $volumeBought, fuelAnp: $fuelAnp, tanksImages: $tanksImages)';
+    return 'AtsReceptionProductInput(fuelAnp: $fuelAnp, tanksImages: $tanksImages)';
   }
 
   @JsonKey(ignore: true)
@@ -42715,38 +42829,12 @@ class _$_AtsReceptionProductInput implements _AtsReceptionProductInput {
 
 abstract class _AtsReceptionProductInput implements AtsReceptionProductInput {
   factory _AtsReceptionProductInput(
-      {String? assetId,
-      @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
-      double? volumeBought,
-      String? fuelAnp,
+      {String? fuelAnp,
       List<String>? tanksImages}) = _$_AtsReceptionProductInput;
 
   factory _AtsReceptionProductInput.fromJson(Map<String, dynamic> json) =
       _$_AtsReceptionProductInput.fromJson;
 
-  @override
-
-  /// ID of the asset.
-  String? get assetId;
-
-  /// ID of the asset.
-  set assetId(String? value);
-  @override
-
-  /// Fuel type enum. Check its possible values in the enum documentation.
-  @AtsFuelTypeOrNullConverter()
-  AtsFuelType? get fuelType;
-
-  /// Fuel type enum. Check its possible values in the enum documentation.
-  @AtsFuelTypeOrNullConverter()
-  set fuelType(AtsFuelType? value);
-  @override
-
-  /// Volume received in purchased order (Expressed in Litters).
-  double? get volumeBought;
-
-  /// Volume received in purchased order (Expressed in Litters).
-  set volumeBought(double? value);
   @override
 
   /// Fuel ANP category code
@@ -42773,10 +42861,10 @@ AtsReceptionInput _$AtsReceptionInputFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AtsReceptionInput {
-  ///ID of the reception. This ID is unique.
+  ///ID of the [AtsReception]. This ID is unique.
   String? get id => throw _privateConstructorUsedError;
 
-  ///ID of the reception. This ID is unique.
+  ///ID of the [AtsReception]. This ID is unique.
   set id(String? value) => throw _privateConstructorUsedError;
 
   /// ID of the purchase order.
@@ -42785,19 +42873,35 @@ mixin _$AtsReceptionInput {
   /// ID of the purchase order.
   set orderId(int? value) => throw _privateConstructorUsedError;
 
-  /// Diferent products obtained of the purchase order
+  /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
   List<AtsReceptionProductInput>? get products =>
       throw _privateConstructorUsedError;
 
-  /// Diferent products obtained of the purchase order
+  /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
   set products(List<AtsReceptionProductInput>? value) =>
       throw _privateConstructorUsedError;
 
-  /// ID of the asset.
+  /// ID of the [Asset] supply point
   String? get assetId => throw _privateConstructorUsedError;
 
-  /// ID of the asset.
+  /// ID of the [Asset] supply point
   set assetId(String? value) => throw _privateConstructorUsedError;
+
+  /// [AtsReception] operation time
+  @DurationOrNullConverter()
+  Duration? get operationTime => throw _privateConstructorUsedError;
+
+  /// [AtsReception] operation time
+  @DurationOrNullConverter()
+  set operationTime(Duration? value) => throw _privateConstructorUsedError;
+
+  /// App used to create the [AtsReception].
+  @AtsFromAppOrNullConverter()
+  AtsFromApp? get fromApp => throw _privateConstructorUsedError;
+
+  /// App used to create the [AtsReception].
+  @AtsFromAppOrNullConverter()
+  set fromApp(AtsFromApp? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42815,7 +42919,9 @@ abstract class $AtsReceptionInputCopyWith<$Res> {
       {String? id,
       int? orderId,
       List<AtsReceptionProductInput>? products,
-      String? assetId});
+      String? assetId,
+      @DurationOrNullConverter() Duration? operationTime,
+      @AtsFromAppOrNullConverter() AtsFromApp? fromApp});
 }
 
 /// @nodoc
@@ -42835,6 +42941,8 @@ class _$AtsReceptionInputCopyWithImpl<$Res, $Val extends AtsReceptionInput>
     Object? orderId = freezed,
     Object? products = freezed,
     Object? assetId = freezed,
+    Object? operationTime = freezed,
+    Object? fromApp = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -42853,6 +42961,14 @@ class _$AtsReceptionInputCopyWithImpl<$Res, $Val extends AtsReceptionInput>
           ? _value.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
+      operationTime: freezed == operationTime
+          ? _value.operationTime
+          : operationTime // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      fromApp: freezed == fromApp
+          ? _value.fromApp
+          : fromApp // ignore: cast_nullable_to_non_nullable
+              as AtsFromApp?,
     ) as $Val);
   }
 }
@@ -42869,7 +42985,9 @@ abstract class _$$_AtsReceptionInputCopyWith<$Res>
       {String? id,
       int? orderId,
       List<AtsReceptionProductInput>? products,
-      String? assetId});
+      String? assetId,
+      @DurationOrNullConverter() Duration? operationTime,
+      @AtsFromAppOrNullConverter() AtsFromApp? fromApp});
 }
 
 /// @nodoc
@@ -42887,6 +43005,8 @@ class __$$_AtsReceptionInputCopyWithImpl<$Res>
     Object? orderId = freezed,
     Object? products = freezed,
     Object? assetId = freezed,
+    Object? operationTime = freezed,
+    Object? fromApp = freezed,
   }) {
     return _then(_$_AtsReceptionInput(
       id: freezed == id
@@ -42905,6 +43025,14 @@ class __$$_AtsReceptionInputCopyWithImpl<$Res>
           ? _value.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
+      operationTime: freezed == operationTime
+          ? _value.operationTime
+          : operationTime // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      fromApp: freezed == fromApp
+          ? _value.fromApp
+          : fromApp // ignore: cast_nullable_to_non_nullable
+              as AtsFromApp?,
     ));
   }
 }
@@ -42912,12 +43040,18 @@ class __$$_AtsReceptionInputCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AtsReceptionInput implements _AtsReceptionInput {
-  _$_AtsReceptionInput({this.id, this.orderId, this.products, this.assetId});
+  _$_AtsReceptionInput(
+      {this.id,
+      this.orderId,
+      this.products,
+      this.assetId,
+      @DurationOrNullConverter() this.operationTime,
+      @AtsFromAppOrNullConverter() this.fromApp});
 
   factory _$_AtsReceptionInput.fromJson(Map<String, dynamic> json) =>
       _$$_AtsReceptionInputFromJson(json);
 
-  ///ID of the reception. This ID is unique.
+  ///ID of the [AtsReception]. This ID is unique.
   @override
   String? id;
 
@@ -42925,17 +43059,27 @@ class _$_AtsReceptionInput implements _AtsReceptionInput {
   @override
   int? orderId;
 
-  /// Diferent products obtained of the purchase order
+  /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
   @override
   List<AtsReceptionProductInput>? products;
 
-  /// ID of the asset.
+  /// ID of the [Asset] supply point
   @override
   String? assetId;
 
+  /// [AtsReception] operation time
+  @override
+  @DurationOrNullConverter()
+  Duration? operationTime;
+
+  /// App used to create the [AtsReception].
+  @override
+  @AtsFromAppOrNullConverter()
+  AtsFromApp? fromApp;
+
   @override
   String toString() {
-    return 'AtsReceptionInput(id: $id, orderId: $orderId, products: $products, assetId: $assetId)';
+    return 'AtsReceptionInput(id: $id, orderId: $orderId, products: $products, assetId: $assetId, operationTime: $operationTime, fromApp: $fromApp)';
   }
 
   @JsonKey(ignore: true)
@@ -42958,17 +43102,19 @@ abstract class _AtsReceptionInput implements AtsReceptionInput {
       {String? id,
       int? orderId,
       List<AtsReceptionProductInput>? products,
-      String? assetId}) = _$_AtsReceptionInput;
+      String? assetId,
+      @DurationOrNullConverter() Duration? operationTime,
+      @AtsFromAppOrNullConverter() AtsFromApp? fromApp}) = _$_AtsReceptionInput;
 
   factory _AtsReceptionInput.fromJson(Map<String, dynamic> json) =
       _$_AtsReceptionInput.fromJson;
 
   @override
 
-  ///ID of the reception. This ID is unique.
+  ///ID of the [AtsReception]. This ID is unique.
   String? get id;
 
-  ///ID of the reception. This ID is unique.
+  ///ID of the [AtsReception]. This ID is unique.
   set id(String? value);
   @override
 
@@ -42979,18 +43125,36 @@ abstract class _AtsReceptionInput implements AtsReceptionInput {
   set orderId(int? value);
   @override
 
-  /// Diferent products obtained of the purchase order
+  /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
   List<AtsReceptionProductInput>? get products;
 
-  /// Diferent products obtained of the purchase order
+  /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
   set products(List<AtsReceptionProductInput>? value);
   @override
 
-  /// ID of the asset.
+  /// ID of the [Asset] supply point
   String? get assetId;
 
-  /// ID of the asset.
+  /// ID of the [Asset] supply point
   set assetId(String? value);
+  @override
+
+  /// [AtsReception] operation time
+  @DurationOrNullConverter()
+  Duration? get operationTime;
+
+  /// [AtsReception] operation time
+  @DurationOrNullConverter()
+  set operationTime(Duration? value);
+  @override
+
+  /// App used to create the [AtsReception].
+  @AtsFromAppOrNullConverter()
+  AtsFromApp? get fromApp;
+
+  /// App used to create the [AtsReception].
+  @AtsFromAppOrNullConverter()
+  set fromApp(AtsFromApp? value);
   @override
   @JsonKey(ignore: true)
   _$$_AtsReceptionInputCopyWith<_$_AtsReceptionInput> get copyWith =>
@@ -47537,6 +47701,9 @@ mixin _$AtsReception {
   /// List of [AtsPurchaseOrder] IDs.
   List<int>? get ordersIds => throw _privateConstructorUsedError;
 
+  /// [AtsEntry] linked to the [AtsReception].
+  AtsEntry? get entry => throw _privateConstructorUsedError;
+
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   List<AtsReceptionProduct>? get products => throw _privateConstructorUsedError;
 
@@ -47557,9 +47724,11 @@ abstract class $AtsReceptionCopyWith<$Res> {
       int? orderId,
       AtsPurchaseOrder? order,
       List<int>? ordersIds,
+      AtsEntry? entry,
       List<AtsReceptionProduct>? products});
 
   $AtsPurchaseOrderCopyWith<$Res>? get order;
+  $AtsEntryCopyWith<$Res>? get entry;
 }
 
 /// @nodoc
@@ -47579,6 +47748,7 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
     Object? orderId = freezed,
     Object? order = freezed,
     Object? ordersIds = freezed,
+    Object? entry = freezed,
     Object? products = freezed,
   }) {
     return _then(_value.copyWith(
@@ -47598,6 +47768,10 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
           ? _value.ordersIds
           : ordersIds // ignore: cast_nullable_to_non_nullable
               as List<int>?,
+      entry: freezed == entry
+          ? _value.entry
+          : entry // ignore: cast_nullable_to_non_nullable
+              as AtsEntry?,
       products: freezed == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
@@ -47616,6 +47790,18 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
       return _then(_value.copyWith(order: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsEntryCopyWith<$Res>? get entry {
+    if (_value.entry == null) {
+      return null;
+    }
+
+    return $AtsEntryCopyWith<$Res>(_value.entry!, (value) {
+      return _then(_value.copyWith(entry: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -47631,10 +47817,13 @@ abstract class _$$_AtsReceptionCopyWith<$Res>
       int? orderId,
       AtsPurchaseOrder? order,
       List<int>? ordersIds,
+      AtsEntry? entry,
       List<AtsReceptionProduct>? products});
 
   @override
   $AtsPurchaseOrderCopyWith<$Res>? get order;
+  @override
+  $AtsEntryCopyWith<$Res>? get entry;
 }
 
 /// @nodoc
@@ -47652,6 +47841,7 @@ class __$$_AtsReceptionCopyWithImpl<$Res>
     Object? orderId = freezed,
     Object? order = freezed,
     Object? ordersIds = freezed,
+    Object? entry = freezed,
     Object? products = freezed,
   }) {
     return _then(_$_AtsReception(
@@ -47671,6 +47861,10 @@ class __$$_AtsReceptionCopyWithImpl<$Res>
           ? _value._ordersIds
           : ordersIds // ignore: cast_nullable_to_non_nullable
               as List<int>?,
+      entry: freezed == entry
+          ? _value.entry
+          : entry // ignore: cast_nullable_to_non_nullable
+              as AtsEntry?,
       products: freezed == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
@@ -47687,6 +47881,7 @@ class _$_AtsReception implements _AtsReception {
       this.orderId,
       this.order,
       final List<int>? ordersIds,
+      this.entry,
       final List<AtsReceptionProduct>? products})
       : _ordersIds = ordersIds,
         _products = products;
@@ -47719,6 +47914,10 @@ class _$_AtsReception implements _AtsReception {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [AtsEntry] linked to the [AtsReception].
+  @override
+  final AtsEntry? entry;
+
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   final List<AtsReceptionProduct>? _products;
 
@@ -47734,7 +47933,7 @@ class _$_AtsReception implements _AtsReception {
 
   @override
   String toString() {
-    return 'AtsReception(id: $id, orderId: $orderId, order: $order, ordersIds: $ordersIds, products: $products)';
+    return 'AtsReception(id: $id, orderId: $orderId, order: $order, ordersIds: $ordersIds, entry: $entry, products: $products)';
   }
 
   @override
@@ -47747,6 +47946,7 @@ class _$_AtsReception implements _AtsReception {
             (identical(other.order, order) || other.order == order) &&
             const DeepCollectionEquality()
                 .equals(other._ordersIds, _ordersIds) &&
+            (identical(other.entry, entry) || other.entry == entry) &&
             const DeepCollectionEquality().equals(other._products, _products));
   }
 
@@ -47758,6 +47958,7 @@ class _$_AtsReception implements _AtsReception {
       orderId,
       order,
       const DeepCollectionEquality().hash(_ordersIds),
+      entry,
       const DeepCollectionEquality().hash(_products));
 
   @JsonKey(ignore: true)
@@ -47780,6 +47981,7 @@ abstract class _AtsReception implements AtsReception {
       final int? orderId,
       final AtsPurchaseOrder? order,
       final List<int>? ordersIds,
+      final AtsEntry? entry,
       final List<AtsReceptionProduct>? products}) = _$_AtsReception;
 
   factory _AtsReception.fromJson(Map<String, dynamic> json) =
@@ -47801,6 +48003,10 @@ abstract class _AtsReception implements AtsReception {
 
   /// List of [AtsPurchaseOrder] IDs.
   List<int>? get ordersIds;
+  @override
+
+  /// [AtsEntry] linked to the [AtsReception].
+  AtsEntry? get entry;
   @override
 
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]

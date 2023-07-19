@@ -15,6 +15,9 @@ class AtsReception with _$AtsReception {
     /// List of [AtsPurchaseOrder] IDs.
     List<int>? ordersIds,
 
+    /// [AtsEntry] linked to the [AtsReception].
+    AtsEntry? entry,
+
     /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
     List<AtsReceptionProduct>? products,
   }) = _AtsReception;

@@ -90,11 +90,8 @@ class AtsReceptionProduct with _$AtsReceptionProduct {
     /// ID of the asset.
     String? assetId,
 
-
     /// Fuel type enum. Check its possible values in the enum documentation.
     @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
-
-
 
     /// Volume received in purchased order (Expressed in Litters).
     double? volumeBought,
@@ -113,17 +110,6 @@ class AtsReceptionProduct with _$AtsReceptionProduct {
 @unfreezed
 class AtsReceptionProductInput with _$AtsReceptionProductInput {
   factory AtsReceptionProductInput({
-    /// ID of the asset.
-    String? assetId,
-
-
-    /// Fuel type enum. Check its possible values in the enum documentation.
-    @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
-
-    /// Volume received in purchased order (Expressed in Litters).
-    double? volumeBought,
-
-
     /// Fuel ANP category code
     String? fuelAnp,
 
@@ -138,17 +124,23 @@ class AtsReceptionProductInput with _$AtsReceptionProductInput {
 @unfreezed
 class AtsReceptionInput with _$AtsReceptionInput {
   factory AtsReceptionInput({
-    ///ID of the reception. This ID is unique.
+    ///ID of the [AtsReception]. This ID is unique.
     String? id,
 
     /// ID of the purchase order.
     int? orderId,
 
-    /// Diferent products obtained of the purchase order
+    /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
     List<AtsReceptionProductInput>? products,
 
-    /// ID of the asset.
+    /// ID of the [Asset] supply point
     String? assetId,
+
+    /// [AtsReception] operation time
+    @DurationOrNullConverter() Duration? operationTime,
+
+    /// App used to create the [AtsReception].
+    @AtsFromAppOrNullConverter() AtsFromApp? fromApp,
   }) = _AtsReceptionInput;
 
   factory AtsReceptionInput.fromJson(Map<String, dynamic> json) => _$AtsReceptionInputFromJson(json);
