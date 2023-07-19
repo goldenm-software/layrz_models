@@ -1,4 +1,7 @@
 # Changelog
+## 2.0.8
+- AtsReceptionInput changes:
+    - var fromApp was changed for app
 ## 2.0.7
 - AtsReception changes:
     - Added [AtsEntry] linked to the [AtsReception].

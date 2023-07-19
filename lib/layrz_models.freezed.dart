@@ -42897,11 +42897,11 @@ mixin _$AtsReceptionInput {
 
   /// App used to create the [AtsReception].
   @AtsFromAppOrNullConverter()
-  AtsFromApp? get fromApp => throw _privateConstructorUsedError;
+  AtsFromApp? get app => throw _privateConstructorUsedError;
 
   /// App used to create the [AtsReception].
   @AtsFromAppOrNullConverter()
-  set fromApp(AtsFromApp? value) => throw _privateConstructorUsedError;
+  set app(AtsFromApp? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42921,7 +42921,7 @@ abstract class $AtsReceptionInputCopyWith<$Res> {
       List<AtsReceptionProductInput>? products,
       String? assetId,
       @DurationOrNullConverter() Duration? operationTime,
-      @AtsFromAppOrNullConverter() AtsFromApp? fromApp});
+      @AtsFromAppOrNullConverter() AtsFromApp? app});
 }
 
 /// @nodoc
@@ -42942,7 +42942,7 @@ class _$AtsReceptionInputCopyWithImpl<$Res, $Val extends AtsReceptionInput>
     Object? products = freezed,
     Object? assetId = freezed,
     Object? operationTime = freezed,
-    Object? fromApp = freezed,
+    Object? app = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -42965,9 +42965,9 @@ class _$AtsReceptionInputCopyWithImpl<$Res, $Val extends AtsReceptionInput>
           ? _value.operationTime
           : operationTime // ignore: cast_nullable_to_non_nullable
               as Duration?,
-      fromApp: freezed == fromApp
-          ? _value.fromApp
-          : fromApp // ignore: cast_nullable_to_non_nullable
+      app: freezed == app
+          ? _value.app
+          : app // ignore: cast_nullable_to_non_nullable
               as AtsFromApp?,
     ) as $Val);
   }
@@ -42987,7 +42987,7 @@ abstract class _$$_AtsReceptionInputCopyWith<$Res>
       List<AtsReceptionProductInput>? products,
       String? assetId,
       @DurationOrNullConverter() Duration? operationTime,
-      @AtsFromAppOrNullConverter() AtsFromApp? fromApp});
+      @AtsFromAppOrNullConverter() AtsFromApp? app});
 }
 
 /// @nodoc
@@ -43006,7 +43006,7 @@ class __$$_AtsReceptionInputCopyWithImpl<$Res>
     Object? products = freezed,
     Object? assetId = freezed,
     Object? operationTime = freezed,
-    Object? fromApp = freezed,
+    Object? app = freezed,
   }) {
     return _then(_$_AtsReceptionInput(
       id: freezed == id
@@ -43029,9 +43029,9 @@ class __$$_AtsReceptionInputCopyWithImpl<$Res>
           ? _value.operationTime
           : operationTime // ignore: cast_nullable_to_non_nullable
               as Duration?,
-      fromApp: freezed == fromApp
-          ? _value.fromApp
-          : fromApp // ignore: cast_nullable_to_non_nullable
+      app: freezed == app
+          ? _value.app
+          : app // ignore: cast_nullable_to_non_nullable
               as AtsFromApp?,
     ));
   }
@@ -43046,7 +43046,7 @@ class _$_AtsReceptionInput implements _AtsReceptionInput {
       this.products,
       this.assetId,
       @DurationOrNullConverter() this.operationTime,
-      @AtsFromAppOrNullConverter() this.fromApp});
+      @AtsFromAppOrNullConverter() this.app});
 
   factory _$_AtsReceptionInput.fromJson(Map<String, dynamic> json) =>
       _$$_AtsReceptionInputFromJson(json);
@@ -43075,11 +43075,11 @@ class _$_AtsReceptionInput implements _AtsReceptionInput {
   /// App used to create the [AtsReception].
   @override
   @AtsFromAppOrNullConverter()
-  AtsFromApp? fromApp;
+  AtsFromApp? app;
 
   @override
   String toString() {
-    return 'AtsReceptionInput(id: $id, orderId: $orderId, products: $products, assetId: $assetId, operationTime: $operationTime, fromApp: $fromApp)';
+    return 'AtsReceptionInput(id: $id, orderId: $orderId, products: $products, assetId: $assetId, operationTime: $operationTime, app: $app)';
   }
 
   @JsonKey(ignore: true)
@@ -43104,7 +43104,7 @@ abstract class _AtsReceptionInput implements AtsReceptionInput {
       List<AtsReceptionProductInput>? products,
       String? assetId,
       @DurationOrNullConverter() Duration? operationTime,
-      @AtsFromAppOrNullConverter() AtsFromApp? fromApp}) = _$_AtsReceptionInput;
+      @AtsFromAppOrNullConverter() AtsFromApp? app}) = _$_AtsReceptionInput;
 
   factory _AtsReceptionInput.fromJson(Map<String, dynamic> json) =
       _$_AtsReceptionInput.fromJson;
@@ -43150,11 +43150,11 @@ abstract class _AtsReceptionInput implements AtsReceptionInput {
 
   /// App used to create the [AtsReception].
   @AtsFromAppOrNullConverter()
-  AtsFromApp? get fromApp;
+  AtsFromApp? get app;
 
   /// App used to create the [AtsReception].
   @AtsFromAppOrNullConverter()
-  set fromApp(AtsFromApp? value);
+  set app(AtsFromApp? value);
   @override
   @JsonKey(ignore: true)
   _$$_AtsReceptionInputCopyWith<_$_AtsReceptionInput> get copyWith =>
