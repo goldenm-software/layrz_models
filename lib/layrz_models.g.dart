@@ -3748,8 +3748,7 @@ _$_AtsReceptionInput _$$_AtsReceptionInputFromJson(Map<String, dynamic> json) =>
       assetId: json['assetId'] as String?,
       operationTime: const DurationOrNullConverter()
           .fromJson(json['operationTime'] as int?),
-      fromApp: const AtsFromAppOrNullConverter()
-          .fromJson(json['fromApp'] as String?),
+      app: const AtsFromAppOrNullConverter().fromJson(json['app'] as String?),
     );
 
 Map<String, dynamic> _$$_AtsReceptionInputToJson(
@@ -3761,7 +3760,7 @@ Map<String, dynamic> _$$_AtsReceptionInputToJson(
       'assetId': instance.assetId,
       'operationTime':
           const DurationOrNullConverter().toJson(instance.operationTime),
-      'fromApp': const AtsFromAppOrNullConverter().toJson(instance.fromApp),
+      'app': const AtsFromAppOrNullConverter().toJson(instance.app),
     };
 
 _$_AtsAuthenticationIdentifier _$$_AtsAuthenticationIdentifierFromJson(

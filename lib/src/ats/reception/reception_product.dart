@@ -140,7 +140,7 @@ class AtsReceptionInput with _$AtsReceptionInput {
     @DurationOrNullConverter() Duration? operationTime,
 
     /// App used to create the [AtsReception].
-    @AtsFromAppOrNullConverter() AtsFromApp? fromApp,
+    @AtsFromAppOrNullConverter() AtsFromApp? app,
   }) = _AtsReceptionInput;
 
   factory AtsReceptionInput.fromJson(Map<String, dynamic> json) => _$AtsReceptionInputFromJson(json);
