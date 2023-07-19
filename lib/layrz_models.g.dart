@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of layrz_models;
+part of 'layrz_models.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -3724,10 +3724,6 @@ Map<String, dynamic> _$$_AtsReceptionProductToJson(
 _$_AtsReceptionProductInput _$$_AtsReceptionProductInputFromJson(
         Map<String, dynamic> json) =>
     _$_AtsReceptionProductInput(
-      assetId: json['assetId'] as String?,
-      fuelType: const AtsFuelTypeOrNullConverter()
-          .fromJson(json['fuelType'] as String?),
-      volumeBought: (json['volumeBought'] as num?)?.toDouble(),
       fuelAnp: json['fuelAnp'] as String?,
       tanksImages: (json['tanksImages'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -3737,9 +3733,6 @@ _$_AtsReceptionProductInput _$$_AtsReceptionProductInputFromJson(
 Map<String, dynamic> _$$_AtsReceptionProductInputToJson(
         _$_AtsReceptionProductInput instance) =>
     <String, dynamic>{
-      'assetId': instance.assetId,
-      'fuelType': const AtsFuelTypeOrNullConverter().toJson(instance.fuelType),
-      'volumeBought': instance.volumeBought,
       'fuelAnp': instance.fuelAnp,
       'tanksImages': instance.tanksImages,
     };
@@ -3753,6 +3746,10 @@ _$_AtsReceptionInput _$$_AtsReceptionInputFromJson(Map<String, dynamic> json) =>
               AtsReceptionProductInput.fromJson(e as Map<String, dynamic>))
           .toList(),
       assetId: json['assetId'] as String?,
+      operationTime: const DurationOrNullConverter()
+          .fromJson(json['operationTime'] as int?),
+      fromApp: const AtsFromAppOrNullConverter()
+          .fromJson(json['fromApp'] as String?),
     );
 
 Map<String, dynamic> _$$_AtsReceptionInputToJson(
@@ -3762,6 +3759,9 @@ Map<String, dynamic> _$$_AtsReceptionInputToJson(
       'orderId': instance.orderId,
       'products': instance.products?.map((e) => e.toJson()).toList(),
       'assetId': instance.assetId,
+      'operationTime':
+          const DurationOrNullConverter().toJson(instance.operationTime),
+      'fromApp': const AtsFromAppOrNullConverter().toJson(instance.fromApp),
     };
 
 _$_AtsAuthenticationIdentifier _$$_AtsAuthenticationIdentifierFromJson(
@@ -4146,6 +4146,9 @@ _$_AtsReception _$$_AtsReceptionFromJson(Map<String, dynamic> json) =>
           : AtsPurchaseOrder.fromJson(json['order'] as Map<String, dynamic>),
       ordersIds:
           (json['ordersIds'] as List<dynamic>?)?.map((e) => e as int).toList(),
+      entry: json['entry'] == null
+          ? null
+          : AtsEntry.fromJson(json['entry'] as Map<String, dynamic>),
       products: (json['products'] as List<dynamic>?)
           ?.map((e) => AtsReceptionProduct.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -4157,6 +4160,7 @@ Map<String, dynamic> _$$_AtsReceptionToJson(_$_AtsReception instance) =>
       'orderId': instance.orderId,
       'order': instance.order?.toJson(),
       'ordersIds': instance.ordersIds,
+      'entry': instance.entry?.toJson(),
       'products': instance.products?.map((e) => e.toJson()).toList(),
     };
 

@@ -1,5 +1,12 @@
 # Changelog
-
+## 2.0.7
+- AtsReception changes:
+    - Added [AtsEntry] linked to the [AtsReception].
+- AtsReceptionInput changes:
+    - Added [AtsReception] operation time
+    - Added App used to create the [AtsReception]
+- AtsReceptionProductInput changes:
+    - Removed assetId, fuelType and volumeBought
 ## 2.0.6
 - Added `dynamicIcon` of type `Avatar` to `InboundProtocol`
 
