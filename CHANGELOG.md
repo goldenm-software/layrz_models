@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.10
+- Fixed `LayrzFunction.credentials` from `List<CredentialField>` to `Map<String, dynamic>`
+
 ## 2.0.9
 - Registered model `LayrzFunction` and `FtpAccount` for Layrz Functions.
 

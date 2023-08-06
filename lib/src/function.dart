@@ -35,10 +35,10 @@ class LayrzFunction with _$LayrzFunction {
     Algorithm? algorithm,
 
     /// [maximumTime] is the minimum time of the function.
-    Duration? maximumTime,
+    @DurationOrNullConverter() Duration? maximumTime,
 
     /// [minutesDelta] is the minutes delta of the function.
-    Duration? minutesDelta,
+    @DurationOrNullConverter() Duration? minutesDelta,
 
     /// [externalIdentifiers] is the external identifiers of the function.
     List<String>? externalIdentifiers,
@@ -47,7 +47,7 @@ class LayrzFunction with _$LayrzFunction {
     String? token,
 
     /// [credentials] is the credentials of the function.
-    List<CredentialField>? credentials,
+    Map<String, dynamic>? credentials,
 
     /// [ftp] is the ftp of the function.
     FtpAccount? ftp,

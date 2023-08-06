@@ -31971,9 +31971,11 @@ mixin _$LayrzFunction {
   Algorithm? get algorithm => throw _privateConstructorUsedError;
 
   /// [maximumTime] is the minimum time of the function.
+  @DurationOrNullConverter()
   Duration? get maximumTime => throw _privateConstructorUsedError;
 
   /// [minutesDelta] is the minutes delta of the function.
+  @DurationOrNullConverter()
   Duration? get minutesDelta => throw _privateConstructorUsedError;
 
   /// [externalIdentifiers] is the external identifiers of the function.
@@ -31983,7 +31985,7 @@ mixin _$LayrzFunction {
   String? get token => throw _privateConstructorUsedError;
 
   /// [credentials] is the credentials of the function.
-  List<CredentialField>? get credentials => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get credentials => throw _privateConstructorUsedError;
 
   /// [ftp] is the ftp of the function.
   FtpAccount? get ftp => throw _privateConstructorUsedError;
@@ -32020,11 +32022,11 @@ abstract class $LayrzFunctionCopyWith<$Res> {
       String name,
       String? algorithmId,
       Algorithm? algorithm,
-      Duration? maximumTime,
-      Duration? minutesDelta,
+      @DurationOrNullConverter() Duration? maximumTime,
+      @DurationOrNullConverter() Duration? minutesDelta,
       List<String>? externalIdentifiers,
       String? token,
-      List<CredentialField>? credentials,
+      Map<String, dynamic>? credentials,
       FtpAccount? ftp,
       List<String>? groupsIds,
       List<Tag>? groups,
@@ -32101,7 +32103,7 @@ class _$LayrzFunctionCopyWithImpl<$Res, $Val extends LayrzFunction>
       credentials: freezed == credentials
           ? _value.credentials
           : credentials // ignore: cast_nullable_to_non_nullable
-              as List<CredentialField>?,
+              as Map<String, dynamic>?,
       ftp: freezed == ftp
           ? _value.ftp
           : ftp // ignore: cast_nullable_to_non_nullable
@@ -32167,11 +32169,11 @@ abstract class _$$_LayrzFunctionCopyWith<$Res>
       String name,
       String? algorithmId,
       Algorithm? algorithm,
-      Duration? maximumTime,
-      Duration? minutesDelta,
+      @DurationOrNullConverter() Duration? maximumTime,
+      @DurationOrNullConverter() Duration? minutesDelta,
       List<String>? externalIdentifiers,
       String? token,
-      List<CredentialField>? credentials,
+      Map<String, dynamic>? credentials,
       FtpAccount? ftp,
       List<String>? groupsIds,
       List<Tag>? groups,
@@ -32248,7 +32250,7 @@ class __$$_LayrzFunctionCopyWithImpl<$Res>
       credentials: freezed == credentials
           ? _value._credentials
           : credentials // ignore: cast_nullable_to_non_nullable
-              as List<CredentialField>?,
+              as Map<String, dynamic>?,
       ftp: freezed == ftp
           ? _value.ftp
           : ftp // ignore: cast_nullable_to_non_nullable
@@ -32285,11 +32287,11 @@ class _$_LayrzFunction implements _LayrzFunction {
       required this.name,
       this.algorithmId,
       this.algorithm,
-      this.maximumTime,
-      this.minutesDelta,
+      @DurationOrNullConverter() this.maximumTime,
+      @DurationOrNullConverter() this.minutesDelta,
       final List<String>? externalIdentifiers,
       this.token,
-      final List<CredentialField>? credentials,
+      final Map<String, dynamic>? credentials,
       this.ftp,
       final List<String>? groupsIds,
       final List<Tag>? groups,
@@ -32325,10 +32327,12 @@ class _$_LayrzFunction implements _LayrzFunction {
 
   /// [maximumTime] is the minimum time of the function.
   @override
+  @DurationOrNullConverter()
   final Duration? maximumTime;
 
   /// [minutesDelta] is the minutes delta of the function.
   @override
+  @DurationOrNullConverter()
   final Duration? minutesDelta;
 
   /// [externalIdentifiers] is the external identifiers of the function.
@@ -32350,16 +32354,16 @@ class _$_LayrzFunction implements _LayrzFunction {
   final String? token;
 
   /// [credentials] is the credentials of the function.
-  final List<CredentialField>? _credentials;
+  final Map<String, dynamic>? _credentials;
 
   /// [credentials] is the credentials of the function.
   @override
-  List<CredentialField>? get credentials {
+  Map<String, dynamic>? get credentials {
     final value = _credentials;
     if (value == null) return null;
-    if (_credentials is EqualUnmodifiableListView) return _credentials;
+    if (_credentials is EqualUnmodifiableMapView) return _credentials;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableMapView(value);
   }
 
   /// [ftp] is the ftp of the function.
@@ -32506,11 +32510,11 @@ abstract class _LayrzFunction implements LayrzFunction {
       required final String name,
       final String? algorithmId,
       final Algorithm? algorithm,
-      final Duration? maximumTime,
-      final Duration? minutesDelta,
+      @DurationOrNullConverter() final Duration? maximumTime,
+      @DurationOrNullConverter() final Duration? minutesDelta,
       final List<String>? externalIdentifiers,
       final String? token,
-      final List<CredentialField>? credentials,
+      final Map<String, dynamic>? credentials,
       final FtpAccount? ftp,
       final List<String>? groupsIds,
       final List<Tag>? groups,
@@ -32540,10 +32544,12 @@ abstract class _LayrzFunction implements LayrzFunction {
   @override
 
   /// [maximumTime] is the minimum time of the function.
+  @DurationOrNullConverter()
   Duration? get maximumTime;
   @override
 
   /// [minutesDelta] is the minutes delta of the function.
+  @DurationOrNullConverter()
   Duration? get minutesDelta;
   @override
 
@@ -32556,7 +32562,7 @@ abstract class _LayrzFunction implements LayrzFunction {
   @override
 
   /// [credentials] is the credentials of the function.
-  List<CredentialField>? get credentials;
+  Map<String, dynamic>? get credentials;
   @override
 
   /// [ftp] is the ftp of the function.

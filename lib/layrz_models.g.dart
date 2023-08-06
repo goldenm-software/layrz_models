@@ -2793,19 +2793,15 @@ _$_LayrzFunction _$$_LayrzFunctionFromJson(Map<String, dynamic> json) =>
       algorithm: json['algorithm'] == null
           ? null
           : Algorithm.fromJson(json['algorithm'] as Map<String, dynamic>),
-      maximumTime: json['maximumTime'] == null
-          ? null
-          : Duration(microseconds: json['maximumTime'] as int),
-      minutesDelta: json['minutesDelta'] == null
-          ? null
-          : Duration(microseconds: json['minutesDelta'] as int),
+      maximumTime:
+          const DurationOrNullConverter().fromJson(json['maximumTime'] as int?),
+      minutesDelta: const DurationOrNullConverter()
+          .fromJson(json['minutesDelta'] as int?),
       externalIdentifiers: (json['externalIdentifiers'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
       token: json['token'] as String?,
-      credentials: (json['credentials'] as List<dynamic>?)
-          ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      credentials: json['credentials'] as Map<String, dynamic>?,
       ftp: json['ftp'] == null
           ? null
           : FtpAccount.fromJson(json['ftp'] as Map<String, dynamic>),
@@ -2832,11 +2828,13 @@ Map<String, dynamic> _$$_LayrzFunctionToJson(_$_LayrzFunction instance) =>
       'name': instance.name,
       'algorithmId': instance.algorithmId,
       'algorithm': instance.algorithm?.toJson(),
-      'maximumTime': instance.maximumTime?.inMicroseconds,
-      'minutesDelta': instance.minutesDelta?.inMicroseconds,
+      'maximumTime':
+          const DurationOrNullConverter().toJson(instance.maximumTime),
+      'minutesDelta':
+          const DurationOrNullConverter().toJson(instance.minutesDelta),
       'externalIdentifiers': instance.externalIdentifiers,
       'token': instance.token,
-      'credentials': instance.credentials?.map((e) => e.toJson()).toList(),
+      'credentials': instance.credentials,
       'ftp': instance.ftp?.toJson(),
       'groupsIds': instance.groupsIds,
       'groups': instance.groups?.map((e) => e.toJson()).toList(),
