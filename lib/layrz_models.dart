@@ -74,6 +74,7 @@ part 'src/chart.dart';
 part 'src/case.dart';
 part 'src/avatar.dart';
 part 'src/email_template.dart';
+part 'src/function.dart';
 
 // External account and related models
 part 'src/external/source.dart';

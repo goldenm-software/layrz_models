@@ -1,7 +1,12 @@
 # Changelog
+
+## 2.0.9
+- Registered model `LayrzFunction` and `FtpAccount` for Layrz Functions.
+
 ## 2.0.8
 - AtsReceptionInput changes:
     - var fromApp was changed for app
+
 ## 2.0.7
 - AtsReception changes:
     - Added [AtsEntry] linked to the [AtsReception].
@@ -10,6 +15,7 @@
     - Added App used to create the [AtsReception]
 - AtsReceptionProductInput changes:
     - Removed assetId, fuelType and volumeBought
+
 ## 2.0.6
 - Added `dynamicIcon` of type `Avatar` to `InboundProtocol`
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'layrz_models.dart';
+part of layrz_models;
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -1878,18 +1878,6 @@ Map<String, dynamic> _$$_ConciergeFormToJson(_$_ConciergeForm instance) =>
       'name': instance.name,
     };
 
-_$_LayrzFunction _$$_LayrzFunctionFromJson(Map<String, dynamic> json) =>
-    _$_LayrzFunction(
-      id: json['id'] as String,
-      name: json['name'] as String,
-    );
-
-Map<String, dynamic> _$$_LayrzFunctionToJson(_$_LayrzFunction instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-    };
-
 _$_OutboundService _$$_OutboundServiceFromJson(Map<String, dynamic> json) =>
     _$_OutboundService(
       id: json['id'] as String,
@@ -2778,6 +2766,82 @@ Map<String, dynamic> _$$_EmailTemplateToJson(_$_EmailTemplate instance) =>
       'name': instance.name,
       'contentMjml': instance.contentMjml,
       'contentTxt': instance.contentTxt,
+      'access': instance.access?.map((e) => e.toJson()).toList(),
+    };
+
+_$_FtpAccount _$$_FtpAccountFromJson(Map<String, dynamic> json) =>
+    _$_FtpAccount(
+      host: json['host'] as String?,
+      port: json['port'] as int?,
+      username: json['username'] as String?,
+      password: json['password'] as String?,
+    );
+
+Map<String, dynamic> _$$_FtpAccountToJson(_$_FtpAccount instance) =>
+    <String, dynamic>{
+      'host': instance.host,
+      'port': instance.port,
+      'username': instance.username,
+      'password': instance.password,
+    };
+
+_$_LayrzFunction _$$_LayrzFunctionFromJson(Map<String, dynamic> json) =>
+    _$_LayrzFunction(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      algorithmId: json['algorithmId'] as String?,
+      algorithm: json['algorithm'] == null
+          ? null
+          : Algorithm.fromJson(json['algorithm'] as Map<String, dynamic>),
+      maximumTime: json['maximumTime'] == null
+          ? null
+          : Duration(microseconds: json['maximumTime'] as int),
+      minutesDelta: json['minutesDelta'] == null
+          ? null
+          : Duration(microseconds: json['minutesDelta'] as int),
+      externalIdentifiers: (json['externalIdentifiers'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      token: json['token'] as String?,
+      credentials: (json['credentials'] as List<dynamic>?)
+          ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      ftp: json['ftp'] == null
+          ? null
+          : FtpAccount.fromJson(json['ftp'] as Map<String, dynamic>),
+      groupsIds: (json['groupsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      groups: (json['groups'] as List<dynamic>?)
+          ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      assetsIds: (json['assetsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      assets: (json['assets'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      access: (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_LayrzFunctionToJson(_$_LayrzFunction instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'algorithmId': instance.algorithmId,
+      'algorithm': instance.algorithm?.toJson(),
+      'maximumTime': instance.maximumTime?.inMicroseconds,
+      'minutesDelta': instance.minutesDelta?.inMicroseconds,
+      'externalIdentifiers': instance.externalIdentifiers,
+      'token': instance.token,
+      'credentials': instance.credentials?.map((e) => e.toJson()).toList(),
+      'ftp': instance.ftp?.toJson(),
+      'groupsIds': instance.groupsIds,
+      'groups': instance.groups?.map((e) => e.toJson()).toList(),
+      'assetsIds': instance.assetsIds,
+      'assets': instance.assets?.map((e) => e.toJson()).toList(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 

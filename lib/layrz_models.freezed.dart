@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'layrz_models.dart';
+part of layrz_models;
 
 // **************************************************************************
 // FreezedGenerator
@@ -2144,10 +2144,11 @@ abstract class $TagCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @ColorConverter() Color color,
+      @ColorConverter()
+          Color color,
       @Deprecated('Use `dynamicIcon` instead')
       @IconOrNullConverter()
-      IconData? icon,
+          IconData? icon,
       Avatar? dynamicIcon,
       List<User>? users,
       List<String>? usersIds,
@@ -2463,10 +2464,11 @@ abstract class _$$_TagCopyWith<$Res> implements $TagCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @ColorConverter() Color color,
+      @ColorConverter()
+          Color color,
       @Deprecated('Use `dynamicIcon` instead')
       @IconOrNullConverter()
-      IconData? icon,
+          IconData? icon,
       Avatar? dynamicIcon,
       List<User>? users,
       List<String>? usersIds,
@@ -3579,10 +3581,11 @@ abstract class _Tag implements Tag {
   const factory _Tag(
       {required final String id,
       required final String name,
-      @ColorConverter() required final Color color,
+      @ColorConverter()
+          required final Color color,
       @Deprecated('Use `dynamicIcon` instead')
       @IconOrNullConverter()
-      final IconData? icon,
+          final IconData? icon,
       final Avatar? dynamicIcon,
       final List<User>? users,
       final List<String>? usersIds,
@@ -18356,26 +18359,32 @@ abstract class $TriggerCopyWith<$Res> {
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeConverter() TriggerType kind,
+      @TriggerTypeConverter()
+          TriggerType kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
+          TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
       String? crontabFormat,
-      @WeekdayConverter() List<Weekday>? weekdays,
+      @WeekdayConverter()
+          List<Weekday>? weekdays,
       bool? isPlainCrontab,
       String? timezoneId,
       int? priority,
-      @ColorOrNullConverter() Color? color,
-      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
+      @ColorOrNullConverter()
+          Color? color,
+      @CaseEventEffectOrNullConverter()
+          CaseEventEffect? visualEventEffect,
       String? careProtocolId,
       CareProtocol? careProtocol,
-      @CaseTypeOrNullConverter() CaseType? caseKind,
+      @CaseTypeOrNullConverter()
+          CaseType? caseKind,
       @CaseCommentPatternOrNullConverter()
-      CaseCommentPattern? caseCommentPattern,
+          CaseCommentPattern? caseCommentPattern,
       String? caseCommentPatternValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
+      @DurationOrNullConverter()
+          Duration? cooldownTime,
       List<Access>? access});
 
   $CareProtocolCopyWith<$Res>? get careProtocol;
@@ -18581,26 +18590,32 @@ abstract class _$$_TriggerCopyWith<$Res> implements $TriggerCopyWith<$Res> {
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeConverter() TriggerType kind,
+      @TriggerTypeConverter()
+          TriggerType kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
+          TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
       String? crontabFormat,
-      @WeekdayConverter() List<Weekday>? weekdays,
+      @WeekdayConverter()
+          List<Weekday>? weekdays,
       bool? isPlainCrontab,
       String? timezoneId,
       int? priority,
-      @ColorOrNullConverter() Color? color,
-      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
+      @ColorOrNullConverter()
+          Color? color,
+      @CaseEventEffectOrNullConverter()
+          CaseEventEffect? visualEventEffect,
       String? careProtocolId,
       CareProtocol? careProtocol,
-      @CaseTypeOrNullConverter() CaseType? caseKind,
+      @CaseTypeOrNullConverter()
+          CaseType? caseKind,
       @CaseCommentPatternOrNullConverter()
-      CaseCommentPattern? caseCommentPattern,
+          CaseCommentPattern? caseCommentPattern,
       String? caseCommentPatternValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
+      @DurationOrNullConverter()
+          Duration? cooldownTime,
       List<Access>? access});
 
   @override
@@ -19182,27 +19197,32 @@ abstract class _Trigger implements Trigger {
       final List<String>? authAssetsIds,
       final List<String>? authUsersIds,
       final List<String>? authTagsIds,
-      @TriggerTypeConverter() required final TriggerType kind,
+      @TriggerTypeConverter()
+          required final TriggerType kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-      final TriggerGeofenceDetectionMode? geofenceKind,
+          final TriggerGeofenceDetectionMode? geofenceKind,
       final String? formula,
       final String? script,
       final String? exactHour,
       final String? crontabFormat,
-      @WeekdayConverter() final List<Weekday>? weekdays,
+      @WeekdayConverter()
+          final List<Weekday>? weekdays,
       final bool? isPlainCrontab,
       final String? timezoneId,
       final int? priority,
-      @ColorOrNullConverter() final Color? color,
+      @ColorOrNullConverter()
+          final Color? color,
       @CaseEventEffectOrNullConverter()
-      final CaseEventEffect? visualEventEffect,
+          final CaseEventEffect? visualEventEffect,
       final String? careProtocolId,
       final CareProtocol? careProtocol,
-      @CaseTypeOrNullConverter() final CaseType? caseKind,
+      @CaseTypeOrNullConverter()
+          final CaseType? caseKind,
       @CaseCommentPatternOrNullConverter()
-      final CaseCommentPattern? caseCommentPattern,
+          final CaseCommentPattern? caseCommentPattern,
       final String? caseCommentPatternValue,
-      @DurationOrNullConverter() final Duration? cooldownTime,
+      @DurationOrNullConverter()
+          final Duration? cooldownTime,
       final List<Access>? access}) = _$_Trigger;
 
   factory _Trigger.fromJson(Map<String, dynamic> json) = _$_Trigger.fromJson;
@@ -19841,19 +19861,23 @@ abstract class $TriggerInputCopyWith<$Res> {
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeOrNullConverter() TriggerType? kind,
+      @TriggerTypeOrNullConverter()
+          TriggerType? kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
+          TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
       String? crontabFormat,
-      @WeekdayConverter() List<Weekday>? weekdays,
+      @WeekdayConverter()
+          List<Weekday>? weekdays,
       bool? isPlainCrontab,
       String? timezoneId,
       int? priority,
-      @ColorOrNullConverter() Color? color,
-      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
+      @ColorOrNullConverter()
+          Color? color,
+      @CaseEventEffectOrNullConverter()
+          CaseEventEffect? visualEventEffect,
       String? careProtocolId});
 }
 
@@ -20016,19 +20040,23 @@ abstract class _$$_TriggerInputCopyWith<$Res>
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeOrNullConverter() TriggerType? kind,
+      @TriggerTypeOrNullConverter()
+          TriggerType? kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
+          TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
       String? crontabFormat,
-      @WeekdayConverter() List<Weekday>? weekdays,
+      @WeekdayConverter()
+          List<Weekday>? weekdays,
       bool? isPlainCrontab,
       String? timezoneId,
       int? priority,
-      @ColorOrNullConverter() Color? color,
-      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
+      @ColorOrNullConverter()
+          Color? color,
+      @CaseEventEffectOrNullConverter()
+          CaseEventEffect? visualEventEffect,
       String? careProtocolId});
 }
 
@@ -20352,19 +20380,23 @@ abstract class _TriggerInput implements TriggerInput {
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeOrNullConverter() TriggerType? kind,
+      @TriggerTypeOrNullConverter()
+          TriggerType? kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
+          TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
       String? crontabFormat,
-      @WeekdayConverter() List<Weekday>? weekdays,
+      @WeekdayConverter()
+          List<Weekday>? weekdays,
       bool? isPlainCrontab,
       String? timezoneId,
       int? priority,
-      @ColorOrNullConverter() Color? color,
-      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
+      @ColorOrNullConverter()
+          Color? color,
+      @CaseEventEffectOrNullConverter()
+          CaseEventEffect? visualEventEffect,
       String? careProtocolId}) = _$_TriggerInput;
 
   factory _TriggerInput.fromJson(Map<String, dynamic> json) =
@@ -21405,160 +21437,6 @@ abstract class _ConciergeForm implements ConciergeForm {
   @override
   @JsonKey(ignore: true)
   _$$_ConciergeFormCopyWith<_$_ConciergeForm> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-LayrzFunction _$LayrzFunctionFromJson(Map<String, dynamic> json) {
-  return _LayrzFunction.fromJson(json);
-}
-
-/// @nodoc
-mixin _$LayrzFunction {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LayrzFunctionCopyWith<LayrzFunction> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LayrzFunctionCopyWith<$Res> {
-  factory $LayrzFunctionCopyWith(
-          LayrzFunction value, $Res Function(LayrzFunction) then) =
-      _$LayrzFunctionCopyWithImpl<$Res, LayrzFunction>;
-  @useResult
-  $Res call({String id, String name});
-}
-
-/// @nodoc
-class _$LayrzFunctionCopyWithImpl<$Res, $Val extends LayrzFunction>
-    implements $LayrzFunctionCopyWith<$Res> {
-  _$LayrzFunctionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_LayrzFunctionCopyWith<$Res>
-    implements $LayrzFunctionCopyWith<$Res> {
-  factory _$$_LayrzFunctionCopyWith(
-          _$_LayrzFunction value, $Res Function(_$_LayrzFunction) then) =
-      __$$_LayrzFunctionCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String id, String name});
-}
-
-/// @nodoc
-class __$$_LayrzFunctionCopyWithImpl<$Res>
-    extends _$LayrzFunctionCopyWithImpl<$Res, _$_LayrzFunction>
-    implements _$$_LayrzFunctionCopyWith<$Res> {
-  __$$_LayrzFunctionCopyWithImpl(
-      _$_LayrzFunction _value, $Res Function(_$_LayrzFunction) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-  }) {
-    return _then(_$_LayrzFunction(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_LayrzFunction implements _LayrzFunction {
-  const _$_LayrzFunction({required this.id, required this.name});
-
-  factory _$_LayrzFunction.fromJson(Map<String, dynamic> json) =>
-      _$$_LayrzFunctionFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String name;
-
-  @override
-  String toString() {
-    return 'LayrzFunction(id: $id, name: $name)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_LayrzFunction &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_LayrzFunctionCopyWith<_$_LayrzFunction> get copyWith =>
-      __$$_LayrzFunctionCopyWithImpl<_$_LayrzFunction>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_LayrzFunctionToJson(
-      this,
-    );
-  }
-}
-
-abstract class _LayrzFunction implements LayrzFunction {
-  const factory _LayrzFunction(
-      {required final String id,
-      required final String name}) = _$_LayrzFunction;
-
-  factory _LayrzFunction.fromJson(Map<String, dynamic> json) =
-      _$_LayrzFunction.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  @JsonKey(ignore: true)
-  _$$_LayrzFunctionCopyWith<_$_LayrzFunction> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -23299,7 +23177,7 @@ abstract class $InboundPayloadStructureCopyWith<$Res> {
   $Res call(
       {String field,
       @InboundPayloadStructureTypeConverter()
-      InboundPayloadStructureType type});
+          InboundPayloadStructureType type});
 }
 
 /// @nodoc
@@ -23343,7 +23221,7 @@ abstract class _$$_InboundPayloadStructureCopyWith<$Res>
   $Res call(
       {String field,
       @InboundPayloadStructureTypeConverter()
-      InboundPayloadStructureType type});
+          InboundPayloadStructureType type});
 }
 
 /// @nodoc
@@ -23428,7 +23306,7 @@ abstract class _InboundPayloadStructure implements InboundPayloadStructure {
   const factory _InboundPayloadStructure(
           {required final String field,
           @InboundPayloadStructureTypeConverter()
-          required final InboundPayloadStructureType type}) =
+              required final InboundPayloadStructureType type}) =
       _$_InboundPayloadStructure;
 
   factory _InboundPayloadStructure.fromJson(Map<String, dynamic> json) =
@@ -24612,8 +24490,10 @@ abstract class _Operation implements Operation {
   const factory _Operation(
       {required final String id,
       required final String name,
-      @OperationTypeConverter() required final OperationType operationType,
-      @HttpRequestTypeOrNullConverter() final HttpRequestType? requestType,
+      @OperationTypeConverter()
+          required final OperationType operationType,
+      @HttpRequestTypeOrNullConverter()
+          final HttpRequestType? requestType,
       final String? url,
       final List<HttpHeader>? headers,
       final String? payload,
@@ -24622,11 +24502,13 @@ abstract class _Operation implements Operation {
       final String? timezoneId,
       final List<String>? receptionEmails,
       final String? emailSubject,
-      @ColorOrNullConverter() final Color? color,
-      @ColorOrNullConverter() final Color? textColor,
+      @ColorOrNullConverter()
+          final Color? color,
+      @ColorOrNullConverter()
+          final Color? textColor,
       final List<PhoneNumber>? destinationPhones,
       @NotificationTypeOrNullConverter()
-      final NotificationType? notificationType,
+          final NotificationType? notificationType,
       final String? externalAccountId,
       final List<Access>? access,
       final List<Trigger>? triggers,
@@ -25266,16 +25148,18 @@ class _$_OperationInput implements _OperationInput {
       this.id,
       this.languageId,
       this.name,
-      @OperationTypeOrNullConverter() this.operationType,
+      @OperationTypeOrNullConverter()
+          this.operationType,
       this.payload,
       this.receptionEmails,
-      @HttpRequestTypeOrNullConverter() this.requestType,
+      @HttpRequestTypeOrNullConverter()
+          this.requestType,
       this.textColor,
       this.timezoneId,
       this.url,
       this.destinationPhones = const [],
       @NotificationTypeOrNullConverter()
-      this.notificationType = NotificationType.sms,
+          this.notificationType = NotificationType.sms,
       this.externalAccountId});
 
   factory _$_OperationInput.fromJson(Map<String, dynamic> json) =>
@@ -26985,9 +26869,10 @@ class __$$_ReportTemplatePageCopyWithImpl<$Res>
 class _$_ReportTemplatePage implements _ReportTemplatePage {
   const _$_ReportTemplatePage(
       {required this.title,
-      @ReportTemplateSourceConverter() required this.source,
+      @ReportTemplateSourceConverter()
+          required this.source,
       @ReportTemplateAlgorithmConverter()
-      this.algorithm = ReportTemplateAlgorithm.auto,
+          this.algorithm = ReportTemplateAlgorithm.auto,
       final List<ReportTemplateCol>? cols,
       this.script})
       : _cols = cols;
@@ -27069,9 +26954,9 @@ abstract class _ReportTemplatePage implements ReportTemplatePage {
   const factory _ReportTemplatePage(
       {required final String title,
       @ReportTemplateSourceConverter()
-      required final ReportTemplateSource source,
+          required final ReportTemplateSource source,
       @ReportTemplateAlgorithmConverter()
-      final ReportTemplateAlgorithm algorithm,
+          final ReportTemplateAlgorithm algorithm,
       final List<ReportTemplateCol>? cols,
       final String? script}) = _$_ReportTemplatePage;
 
@@ -29556,9 +29441,10 @@ class _$_LinkedAssetToCheckpointId implements _LinkedAssetToCheckpointId {
 
 abstract class _LinkedAssetToCheckpointId implements LinkedAssetToCheckpointId {
   const factory _LinkedAssetToCheckpointId(
-      {required final String itemId,
-      @LinkedAssetEntityConverter()
-      required final LinkedAssetEntity entity}) = _$_LinkedAssetToCheckpointId;
+          {required final String itemId,
+          @LinkedAssetEntityConverter()
+              required final LinkedAssetEntity entity}) =
+      _$_LinkedAssetToCheckpointId;
 
   factory _LinkedAssetToCheckpointId.fromJson(Map<String, dynamic> json) =
       _$_LinkedAssetToCheckpointId.fromJson;
@@ -30920,9 +30806,11 @@ class _$_Case implements _Case {
       {required this.id,
       @JsonKey(name: 'dateReceived')
       @TimestampConverter()
-      required this.receivedAt,
-      @CaseStatusConverter() required this.status,
-      @CaseIgnoredStatusOrNullConverter() this.ignoredStatus,
+          required this.receivedAt,
+      @CaseStatusConverter()
+          required this.status,
+      @CaseIgnoredStatusOrNullConverter()
+          this.ignoredStatus,
       required this.asset,
       required this.trigger,
       this.sequence,
@@ -31053,10 +30941,11 @@ abstract class _Case implements Case {
       {required final String id,
       @JsonKey(name: 'dateReceived')
       @TimestampConverter()
-      required final DateTime receivedAt,
-      @CaseStatusConverter() required final CaseStatus status,
+          required final DateTime receivedAt,
+      @CaseStatusConverter()
+          required final CaseStatus status,
       @CaseIgnoredStatusOrNullConverter()
-      final CaseIgnoredStatus? ignoredStatus,
+          final CaseIgnoredStatus? ignoredStatus,
       required final Asset asset,
       required final Trigger trigger,
       final int? sequence,
@@ -31848,6 +31737,853 @@ abstract class _EmailTemplate implements EmailTemplate {
   @override
   @JsonKey(ignore: true)
   _$$_EmailTemplateCopyWith<_$_EmailTemplate> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+FtpAccount _$FtpAccountFromJson(Map<String, dynamic> json) {
+  return _FtpAccount.fromJson(json);
+}
+
+/// @nodoc
+mixin _$FtpAccount {
+  /// [host] is the host of the ftp account.
+  String? get host => throw _privateConstructorUsedError;
+
+  /// [port] is the port of the ftp account.
+  int? get port => throw _privateConstructorUsedError;
+
+  /// [username] is the username of the ftp account.
+  String? get username => throw _privateConstructorUsedError;
+
+  /// [password] is the password of the ftp account.
+  String? get password => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FtpAccountCopyWith<FtpAccount> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FtpAccountCopyWith<$Res> {
+  factory $FtpAccountCopyWith(
+          FtpAccount value, $Res Function(FtpAccount) then) =
+      _$FtpAccountCopyWithImpl<$Res, FtpAccount>;
+  @useResult
+  $Res call({String? host, int? port, String? username, String? password});
+}
+
+/// @nodoc
+class _$FtpAccountCopyWithImpl<$Res, $Val extends FtpAccount>
+    implements $FtpAccountCopyWith<$Res> {
+  _$FtpAccountCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? host = freezed,
+    Object? port = freezed,
+    Object? username = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_value.copyWith(
+      host: freezed == host
+          ? _value.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      port: freezed == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int?,
+      username: freezed == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_FtpAccountCopyWith<$Res>
+    implements $FtpAccountCopyWith<$Res> {
+  factory _$$_FtpAccountCopyWith(
+          _$_FtpAccount value, $Res Function(_$_FtpAccount) then) =
+      __$$_FtpAccountCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? host, int? port, String? username, String? password});
+}
+
+/// @nodoc
+class __$$_FtpAccountCopyWithImpl<$Res>
+    extends _$FtpAccountCopyWithImpl<$Res, _$_FtpAccount>
+    implements _$$_FtpAccountCopyWith<$Res> {
+  __$$_FtpAccountCopyWithImpl(
+      _$_FtpAccount _value, $Res Function(_$_FtpAccount) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? host = freezed,
+    Object? port = freezed,
+    Object? username = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_$_FtpAccount(
+      host: freezed == host
+          ? _value.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      port: freezed == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int?,
+      username: freezed == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_FtpAccount implements _FtpAccount {
+  const _$_FtpAccount({this.host, this.port, this.username, this.password});
+
+  factory _$_FtpAccount.fromJson(Map<String, dynamic> json) =>
+      _$$_FtpAccountFromJson(json);
+
+  /// [host] is the host of the ftp account.
+  @override
+  final String? host;
+
+  /// [port] is the port of the ftp account.
+  @override
+  final int? port;
+
+  /// [username] is the username of the ftp account.
+  @override
+  final String? username;
+
+  /// [password] is the password of the ftp account.
+  @override
+  final String? password;
+
+  @override
+  String toString() {
+    return 'FtpAccount(host: $host, port: $port, username: $username, password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_FtpAccount &&
+            (identical(other.host, host) || other.host == host) &&
+            (identical(other.port, port) || other.port == port) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, host, port, username, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_FtpAccountCopyWith<_$_FtpAccount> get copyWith =>
+      __$$_FtpAccountCopyWithImpl<_$_FtpAccount>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_FtpAccountToJson(
+      this,
+    );
+  }
+}
+
+abstract class _FtpAccount implements FtpAccount {
+  const factory _FtpAccount(
+      {final String? host,
+      final int? port,
+      final String? username,
+      final String? password}) = _$_FtpAccount;
+
+  factory _FtpAccount.fromJson(Map<String, dynamic> json) =
+      _$_FtpAccount.fromJson;
+
+  @override
+
+  /// [host] is the host of the ftp account.
+  String? get host;
+  @override
+
+  /// [port] is the port of the ftp account.
+  int? get port;
+  @override
+
+  /// [username] is the username of the ftp account.
+  String? get username;
+  @override
+
+  /// [password] is the password of the ftp account.
+  String? get password;
+  @override
+  @JsonKey(ignore: true)
+  _$$_FtpAccountCopyWith<_$_FtpAccount> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+LayrzFunction _$LayrzFunctionFromJson(Map<String, dynamic> json) {
+  return _LayrzFunction.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LayrzFunction {
+  /// [id] is the unique identifier of the function.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the function.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [algorithmId] is the unique identifier of the algorithm.
+  String? get algorithmId => throw _privateConstructorUsedError;
+
+  /// [algorithm] is the algorithm of the function.
+  Algorithm? get algorithm => throw _privateConstructorUsedError;
+
+  /// [maximumTime] is the minimum time of the function.
+  Duration? get maximumTime => throw _privateConstructorUsedError;
+
+  /// [minutesDelta] is the minutes delta of the function.
+  Duration? get minutesDelta => throw _privateConstructorUsedError;
+
+  /// [externalIdentifiers] is the external identifiers of the function.
+  List<String>? get externalIdentifiers => throw _privateConstructorUsedError;
+
+  /// [token] is the token of the function.
+  String? get token => throw _privateConstructorUsedError;
+
+  /// [credentials] is the credentials of the function.
+  List<CredentialField>? get credentials => throw _privateConstructorUsedError;
+
+  /// [ftp] is the ftp of the function.
+  FtpAccount? get ftp => throw _privateConstructorUsedError;
+
+  /// [groupsIds] is the groups ids of the function.
+  List<String>? get groupsIds => throw _privateConstructorUsedError;
+
+  /// [groups] is the groups of the function.
+  List<Tag>? get groups => throw _privateConstructorUsedError;
+
+  /// [assetsIds] is the assets ids of the function.
+  List<String>? get assetsIds => throw _privateConstructorUsedError;
+
+  /// [assets] is the assets of the function.
+  List<Asset>? get assets => throw _privateConstructorUsedError;
+
+  /// [access] is the access of the function.
+  List<Access>? get access => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LayrzFunctionCopyWith<LayrzFunction> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LayrzFunctionCopyWith<$Res> {
+  factory $LayrzFunctionCopyWith(
+          LayrzFunction value, $Res Function(LayrzFunction) then) =
+      _$LayrzFunctionCopyWithImpl<$Res, LayrzFunction>;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String? algorithmId,
+      Algorithm? algorithm,
+      Duration? maximumTime,
+      Duration? minutesDelta,
+      List<String>? externalIdentifiers,
+      String? token,
+      List<CredentialField>? credentials,
+      FtpAccount? ftp,
+      List<String>? groupsIds,
+      List<Tag>? groups,
+      List<String>? assetsIds,
+      List<Asset>? assets,
+      List<Access>? access});
+
+  $AlgorithmCopyWith<$Res>? get algorithm;
+  $FtpAccountCopyWith<$Res>? get ftp;
+}
+
+/// @nodoc
+class _$LayrzFunctionCopyWithImpl<$Res, $Val extends LayrzFunction>
+    implements $LayrzFunctionCopyWith<$Res> {
+  _$LayrzFunctionCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? algorithmId = freezed,
+    Object? algorithm = freezed,
+    Object? maximumTime = freezed,
+    Object? minutesDelta = freezed,
+    Object? externalIdentifiers = freezed,
+    Object? token = freezed,
+    Object? credentials = freezed,
+    Object? ftp = freezed,
+    Object? groupsIds = freezed,
+    Object? groups = freezed,
+    Object? assetsIds = freezed,
+    Object? assets = freezed,
+    Object? access = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      algorithmId: freezed == algorithmId
+          ? _value.algorithmId
+          : algorithmId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      algorithm: freezed == algorithm
+          ? _value.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as Algorithm?,
+      maximumTime: freezed == maximumTime
+          ? _value.maximumTime
+          : maximumTime // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      minutesDelta: freezed == minutesDelta
+          ? _value.minutesDelta
+          : minutesDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      externalIdentifiers: freezed == externalIdentifiers
+          ? _value.externalIdentifiers
+          : externalIdentifiers // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      credentials: freezed == credentials
+          ? _value.credentials
+          : credentials // ignore: cast_nullable_to_non_nullable
+              as List<CredentialField>?,
+      ftp: freezed == ftp
+          ? _value.ftp
+          : ftp // ignore: cast_nullable_to_non_nullable
+              as FtpAccount?,
+      groupsIds: freezed == groupsIds
+          ? _value.groupsIds
+          : groupsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      groups: freezed == groups
+          ? _value.groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Tag>?,
+      assetsIds: freezed == assetsIds
+          ? _value.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      assets: freezed == assets
+          ? _value.assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      access: freezed == access
+          ? _value.access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AlgorithmCopyWith<$Res>? get algorithm {
+    if (_value.algorithm == null) {
+      return null;
+    }
+
+    return $AlgorithmCopyWith<$Res>(_value.algorithm!, (value) {
+      return _then(_value.copyWith(algorithm: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $FtpAccountCopyWith<$Res>? get ftp {
+    if (_value.ftp == null) {
+      return null;
+    }
+
+    return $FtpAccountCopyWith<$Res>(_value.ftp!, (value) {
+      return _then(_value.copyWith(ftp: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_LayrzFunctionCopyWith<$Res>
+    implements $LayrzFunctionCopyWith<$Res> {
+  factory _$$_LayrzFunctionCopyWith(
+          _$_LayrzFunction value, $Res Function(_$_LayrzFunction) then) =
+      __$$_LayrzFunctionCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String? algorithmId,
+      Algorithm? algorithm,
+      Duration? maximumTime,
+      Duration? minutesDelta,
+      List<String>? externalIdentifiers,
+      String? token,
+      List<CredentialField>? credentials,
+      FtpAccount? ftp,
+      List<String>? groupsIds,
+      List<Tag>? groups,
+      List<String>? assetsIds,
+      List<Asset>? assets,
+      List<Access>? access});
+
+  @override
+  $AlgorithmCopyWith<$Res>? get algorithm;
+  @override
+  $FtpAccountCopyWith<$Res>? get ftp;
+}
+
+/// @nodoc
+class __$$_LayrzFunctionCopyWithImpl<$Res>
+    extends _$LayrzFunctionCopyWithImpl<$Res, _$_LayrzFunction>
+    implements _$$_LayrzFunctionCopyWith<$Res> {
+  __$$_LayrzFunctionCopyWithImpl(
+      _$_LayrzFunction _value, $Res Function(_$_LayrzFunction) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? algorithmId = freezed,
+    Object? algorithm = freezed,
+    Object? maximumTime = freezed,
+    Object? minutesDelta = freezed,
+    Object? externalIdentifiers = freezed,
+    Object? token = freezed,
+    Object? credentials = freezed,
+    Object? ftp = freezed,
+    Object? groupsIds = freezed,
+    Object? groups = freezed,
+    Object? assetsIds = freezed,
+    Object? assets = freezed,
+    Object? access = freezed,
+  }) {
+    return _then(_$_LayrzFunction(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      algorithmId: freezed == algorithmId
+          ? _value.algorithmId
+          : algorithmId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      algorithm: freezed == algorithm
+          ? _value.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as Algorithm?,
+      maximumTime: freezed == maximumTime
+          ? _value.maximumTime
+          : maximumTime // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      minutesDelta: freezed == minutesDelta
+          ? _value.minutesDelta
+          : minutesDelta // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      externalIdentifiers: freezed == externalIdentifiers
+          ? _value._externalIdentifiers
+          : externalIdentifiers // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      credentials: freezed == credentials
+          ? _value._credentials
+          : credentials // ignore: cast_nullable_to_non_nullable
+              as List<CredentialField>?,
+      ftp: freezed == ftp
+          ? _value.ftp
+          : ftp // ignore: cast_nullable_to_non_nullable
+              as FtpAccount?,
+      groupsIds: freezed == groupsIds
+          ? _value._groupsIds
+          : groupsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      groups: freezed == groups
+          ? _value._groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Tag>?,
+      assetsIds: freezed == assetsIds
+          ? _value._assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      assets: freezed == assets
+          ? _value._assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      access: freezed == access
+          ? _value._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_LayrzFunction implements _LayrzFunction {
+  const _$_LayrzFunction(
+      {required this.id,
+      required this.name,
+      this.algorithmId,
+      this.algorithm,
+      this.maximumTime,
+      this.minutesDelta,
+      final List<String>? externalIdentifiers,
+      this.token,
+      final List<CredentialField>? credentials,
+      this.ftp,
+      final List<String>? groupsIds,
+      final List<Tag>? groups,
+      final List<String>? assetsIds,
+      final List<Asset>? assets,
+      final List<Access>? access})
+      : _externalIdentifiers = externalIdentifiers,
+        _credentials = credentials,
+        _groupsIds = groupsIds,
+        _groups = groups,
+        _assetsIds = assetsIds,
+        _assets = assets,
+        _access = access;
+
+  factory _$_LayrzFunction.fromJson(Map<String, dynamic> json) =>
+      _$$_LayrzFunctionFromJson(json);
+
+  /// [id] is the unique identifier of the function.
+  @override
+  final String id;
+
+  /// [name] is the name of the function.
+  @override
+  final String name;
+
+  /// [algorithmId] is the unique identifier of the algorithm.
+  @override
+  final String? algorithmId;
+
+  /// [algorithm] is the algorithm of the function.
+  @override
+  final Algorithm? algorithm;
+
+  /// [maximumTime] is the minimum time of the function.
+  @override
+  final Duration? maximumTime;
+
+  /// [minutesDelta] is the minutes delta of the function.
+  @override
+  final Duration? minutesDelta;
+
+  /// [externalIdentifiers] is the external identifiers of the function.
+  final List<String>? _externalIdentifiers;
+
+  /// [externalIdentifiers] is the external identifiers of the function.
+  @override
+  List<String>? get externalIdentifiers {
+    final value = _externalIdentifiers;
+    if (value == null) return null;
+    if (_externalIdentifiers is EqualUnmodifiableListView)
+      return _externalIdentifiers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [token] is the token of the function.
+  @override
+  final String? token;
+
+  /// [credentials] is the credentials of the function.
+  final List<CredentialField>? _credentials;
+
+  /// [credentials] is the credentials of the function.
+  @override
+  List<CredentialField>? get credentials {
+    final value = _credentials;
+    if (value == null) return null;
+    if (_credentials is EqualUnmodifiableListView) return _credentials;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [ftp] is the ftp of the function.
+  @override
+  final FtpAccount? ftp;
+
+  /// [groupsIds] is the groups ids of the function.
+  final List<String>? _groupsIds;
+
+  /// [groupsIds] is the groups ids of the function.
+  @override
+  List<String>? get groupsIds {
+    final value = _groupsIds;
+    if (value == null) return null;
+    if (_groupsIds is EqualUnmodifiableListView) return _groupsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [groups] is the groups of the function.
+  final List<Tag>? _groups;
+
+  /// [groups] is the groups of the function.
+  @override
+  List<Tag>? get groups {
+    final value = _groups;
+    if (value == null) return null;
+    if (_groups is EqualUnmodifiableListView) return _groups;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [assetsIds] is the assets ids of the function.
+  final List<String>? _assetsIds;
+
+  /// [assetsIds] is the assets ids of the function.
+  @override
+  List<String>? get assetsIds {
+    final value = _assetsIds;
+    if (value == null) return null;
+    if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [assets] is the assets of the function.
+  final List<Asset>? _assets;
+
+  /// [assets] is the assets of the function.
+  @override
+  List<Asset>? get assets {
+    final value = _assets;
+    if (value == null) return null;
+    if (_assets is EqualUnmodifiableListView) return _assets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [access] is the access of the function.
+  final List<Access>? _access;
+
+  /// [access] is the access of the function.
+  @override
+  List<Access>? get access {
+    final value = _access;
+    if (value == null) return null;
+    if (_access is EqualUnmodifiableListView) return _access;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'LayrzFunction(id: $id, name: $name, algorithmId: $algorithmId, algorithm: $algorithm, maximumTime: $maximumTime, minutesDelta: $minutesDelta, externalIdentifiers: $externalIdentifiers, token: $token, credentials: $credentials, ftp: $ftp, groupsIds: $groupsIds, groups: $groups, assetsIds: $assetsIds, assets: $assets, access: $access)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_LayrzFunction &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.algorithmId, algorithmId) ||
+                other.algorithmId == algorithmId) &&
+            (identical(other.algorithm, algorithm) ||
+                other.algorithm == algorithm) &&
+            (identical(other.maximumTime, maximumTime) ||
+                other.maximumTime == maximumTime) &&
+            (identical(other.minutesDelta, minutesDelta) ||
+                other.minutesDelta == minutesDelta) &&
+            const DeepCollectionEquality()
+                .equals(other._externalIdentifiers, _externalIdentifiers) &&
+            (identical(other.token, token) || other.token == token) &&
+            const DeepCollectionEquality()
+                .equals(other._credentials, _credentials) &&
+            (identical(other.ftp, ftp) || other.ftp == ftp) &&
+            const DeepCollectionEquality()
+                .equals(other._groupsIds, _groupsIds) &&
+            const DeepCollectionEquality().equals(other._groups, _groups) &&
+            const DeepCollectionEquality()
+                .equals(other._assetsIds, _assetsIds) &&
+            const DeepCollectionEquality().equals(other._assets, _assets) &&
+            const DeepCollectionEquality().equals(other._access, _access));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      algorithmId,
+      algorithm,
+      maximumTime,
+      minutesDelta,
+      const DeepCollectionEquality().hash(_externalIdentifiers),
+      token,
+      const DeepCollectionEquality().hash(_credentials),
+      ftp,
+      const DeepCollectionEquality().hash(_groupsIds),
+      const DeepCollectionEquality().hash(_groups),
+      const DeepCollectionEquality().hash(_assetsIds),
+      const DeepCollectionEquality().hash(_assets),
+      const DeepCollectionEquality().hash(_access));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LayrzFunctionCopyWith<_$_LayrzFunction> get copyWith =>
+      __$$_LayrzFunctionCopyWithImpl<_$_LayrzFunction>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_LayrzFunctionToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LayrzFunction implements LayrzFunction {
+  const factory _LayrzFunction(
+      {required final String id,
+      required final String name,
+      final String? algorithmId,
+      final Algorithm? algorithm,
+      final Duration? maximumTime,
+      final Duration? minutesDelta,
+      final List<String>? externalIdentifiers,
+      final String? token,
+      final List<CredentialField>? credentials,
+      final FtpAccount? ftp,
+      final List<String>? groupsIds,
+      final List<Tag>? groups,
+      final List<String>? assetsIds,
+      final List<Asset>? assets,
+      final List<Access>? access}) = _$_LayrzFunction;
+
+  factory _LayrzFunction.fromJson(Map<String, dynamic> json) =
+      _$_LayrzFunction.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier of the function.
+  String get id;
+  @override
+
+  /// [name] is the name of the function.
+  String get name;
+  @override
+
+  /// [algorithmId] is the unique identifier of the algorithm.
+  String? get algorithmId;
+  @override
+
+  /// [algorithm] is the algorithm of the function.
+  Algorithm? get algorithm;
+  @override
+
+  /// [maximumTime] is the minimum time of the function.
+  Duration? get maximumTime;
+  @override
+
+  /// [minutesDelta] is the minutes delta of the function.
+  Duration? get minutesDelta;
+  @override
+
+  /// [externalIdentifiers] is the external identifiers of the function.
+  List<String>? get externalIdentifiers;
+  @override
+
+  /// [token] is the token of the function.
+  String? get token;
+  @override
+
+  /// [credentials] is the credentials of the function.
+  List<CredentialField>? get credentials;
+  @override
+
+  /// [ftp] is the ftp of the function.
+  FtpAccount? get ftp;
+  @override
+
+  /// [groupsIds] is the groups ids of the function.
+  List<String>? get groupsIds;
+  @override
+
+  /// [groups] is the groups of the function.
+  List<Tag>? get groups;
+  @override
+
+  /// [assetsIds] is the assets ids of the function.
+  List<String>? get assetsIds;
+  @override
+
+  /// [assets] is the assets of the function.
+  List<Asset>? get assets;
+  @override
+
+  /// [access] is the access of the function.
+  List<Access>? get access;
+  @override
+  @JsonKey(ignore: true)
+  _$$_LayrzFunctionCopyWith<_$_LayrzFunction> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -33996,12 +34732,15 @@ abstract class _Workspace implements Workspace {
       {required final String id,
       required final String name,
       @AppInternalIdentifierOrNullConverter()
-      final AppInternalIdentifier? typeApp,
-      @ColorOrNullConverter() final Color? color,
-      @IconOrNullConverter() final IconData? icon,
+          final AppInternalIdentifier? typeApp,
+      @ColorOrNullConverter()
+          final Color? color,
+      @IconOrNullConverter()
+          final IconData? icon,
       final String? background,
       final bool? isFavorite,
-      @WorkspaceMainViewOrNullConverter() final WorkspaceMainView? mainView,
+      @WorkspaceMainViewOrNullConverter()
+          final WorkspaceMainView? mainView,
       final List<Asset>? assets,
       final List<String>? assetsIds,
       final bool? casesEnabled,
@@ -34016,14 +34755,16 @@ abstract class _Workspace implements Workspace {
       final List<String>? geofencesIds,
       final List<MapCardSensors> mapCardCustomization,
       final GeoPoint? mapCenterCoordinates,
-      @MapCenterModeOrNullConverter() final MapCenterMode? mapCenterMode,
+      @MapCenterModeOrNullConverter()
+          final MapCenterMode? mapCenterMode,
       final bool? analyticsEnabled,
       final List<LayrzChart>? charts,
       final List<String>? chartsIds,
       final List<AnalyticsGridItem> analyticsGridStructure,
       final bool? sensorsEnabled,
       final List<SensorGridItem> sensorsGridStructure,
-      @MetricSystemOrNullConverter() final MetricSystem? metricSystem,
+      @MetricSystemOrNullConverter()
+          final MetricSystem? metricSystem,
       final Timezone? timezone,
       final List<Access>? access}) = _$_Workspace;
 
@@ -36729,7 +37470,8 @@ abstract class $VisionProfileCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @VisionProfileVariantConverter() VisionProfileVariant variant,
+      @VisionProfileVariantConverter()
+          VisionProfileVariant variant,
       double? maskRadius,
       int? threshold,
       int? maxThValue,
@@ -36745,9 +37487,9 @@ abstract class $VisionProfileCopyWith<$Res> {
       double? centerDisplacement,
       int? decimals,
       @VisionProfileGaugeShapeOrNullConverter()
-      VisionProfileGaugeShape? gaugeShape,
+          VisionProfileGaugeShape? gaugeShape,
       @VisionProfileGaugeModelOrNullConverter()
-      VisionProfileGaugeModel? gaugeModel,
+          VisionProfileGaugeModel? gaugeModel,
       List<Access>? access});
 }
 
@@ -36881,7 +37623,8 @@ abstract class _$$_VisionProfileCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      @VisionProfileVariantConverter() VisionProfileVariant variant,
+      @VisionProfileVariantConverter()
+          VisionProfileVariant variant,
       double? maskRadius,
       int? threshold,
       int? maxThValue,
@@ -36897,9 +37640,9 @@ abstract class _$$_VisionProfileCopyWith<$Res>
       double? centerDisplacement,
       int? decimals,
       @VisionProfileGaugeShapeOrNullConverter()
-      VisionProfileGaugeShape? gaugeShape,
+          VisionProfileGaugeShape? gaugeShape,
       @VisionProfileGaugeModelOrNullConverter()
-      VisionProfileGaugeModel? gaugeModel,
+          VisionProfileGaugeModel? gaugeModel,
       List<Access>? access});
 }
 
@@ -37205,7 +37948,7 @@ abstract class _VisionProfile implements VisionProfile {
       {required final String id,
       required final String name,
       @VisionProfileVariantConverter()
-      required final VisionProfileVariant variant,
+          required final VisionProfileVariant variant,
       final double? maskRadius,
       final int? threshold,
       final int? maxThValue,
@@ -37221,9 +37964,9 @@ abstract class _VisionProfile implements VisionProfile {
       final double? centerDisplacement,
       final int? decimals,
       @VisionProfileGaugeShapeOrNullConverter()
-      final VisionProfileGaugeShape? gaugeShape,
+          final VisionProfileGaugeShape? gaugeShape,
       @VisionProfileGaugeModelOrNullConverter()
-      final VisionProfileGaugeModel? gaugeModel,
+          final VisionProfileGaugeModel? gaugeModel,
       final List<Access>? access}) = _$_VisionProfile;
 
   factory _VisionProfile.fromJson(Map<String, dynamic> json) =
@@ -41631,15 +42374,16 @@ class _$_AppVersion implements _AppVersion {
 
 abstract class _AppVersion implements AppVersion {
   const factory _AppVersion(
-          {required final String id,
-          @AppInternalIdentifierConverter()
+      {required final String id,
+      @AppInternalIdentifierConverter()
           required final AppInternalIdentifier app,
-          @AppPlatformConverter() required final AppPlatform platform,
-          final String? fileUri,
-          required final int buildNumber,
-          required final String buildName,
-          @TimestampConverter() required final DateTime releasedAt}) =
-      _$_AppVersion;
+      @AppPlatformConverter()
+          required final AppPlatform platform,
+      final String? fileUri,
+      required final int buildNumber,
+      required final String buildName,
+      @TimestampConverter()
+          required final DateTime releasedAt}) = _$_AppVersion;
 
   factory _AppVersion.fromJson(Map<String, dynamic> json) =
       _$_AppVersion.fromJson;
@@ -43201,7 +43945,7 @@ abstract class $AtsAuthenticationIdentifierCopyWith<$Res> {
   $Res call(
       {String? id,
       @AtsAuthenticationCategoryOrNullConverter()
-      AtsAuthenticationCategory? category,
+          AtsAuthenticationCategory? category,
       String? cardId,
       AtsAuthenticationCard? card,
       String? nfcIdentifier});
@@ -43278,7 +44022,7 @@ abstract class _$$_AtsAuthenticationIdentifierCopyWith<$Res>
   $Res call(
       {String? id,
       @AtsAuthenticationCategoryOrNullConverter()
-      AtsAuthenticationCategory? category,
+          AtsAuthenticationCategory? category,
       String? cardId,
       AtsAuthenticationCard? card,
       String? nfcIdentifier});
@@ -43409,7 +44153,7 @@ abstract class _AtsAuthenticationIdentifier
   const factory _AtsAuthenticationIdentifier(
       {final String? id,
       @AtsAuthenticationCategoryOrNullConverter()
-      final AtsAuthenticationCategory? category,
+          final AtsAuthenticationCategory? category,
       final String? cardId,
       final AtsAuthenticationCard? card,
       final String? nfcIdentifier}) = _$_AtsAuthenticationIdentifier;
@@ -43905,11 +44649,12 @@ abstract class $AtsHistoryAuthenticationCardCopyWith<$Res> {
   $Res call(
       {String id,
       @AtsHistoryAuthenticationCardOperationConverter()
-      AtsHistoryAuthenticationCardOperation operation,
+          AtsHistoryAuthenticationCardOperation operation,
       Asset? asset,
       User? owner,
       User createdBy,
-      @TimestampConverter() DateTime createdAt});
+      @TimestampConverter()
+          DateTime createdAt});
 
   $AssetCopyWith<$Res>? get asset;
   $UserCopyWith<$Res>? get owner;
@@ -44010,11 +44755,12 @@ abstract class _$$_AtsHistoryAuthenticationCardCopyWith<$Res>
   $Res call(
       {String id,
       @AtsHistoryAuthenticationCardOperationConverter()
-      AtsHistoryAuthenticationCardOperation operation,
+          AtsHistoryAuthenticationCardOperation operation,
       Asset? asset,
       User? owner,
       User createdBy,
-      @TimestampConverter() DateTime createdAt});
+      @TimestampConverter()
+          DateTime createdAt});
 
   @override
   $AssetCopyWith<$Res>? get asset;
@@ -44157,14 +44903,14 @@ class _$_AtsHistoryAuthenticationCard implements _AtsHistoryAuthenticationCard {
 abstract class _AtsHistoryAuthenticationCard
     implements AtsHistoryAuthenticationCard {
   const factory _AtsHistoryAuthenticationCard(
-          {required final String id,
-          @AtsHistoryAuthenticationCardOperationConverter()
+      {required final String id,
+      @AtsHistoryAuthenticationCardOperationConverter()
           required final AtsHistoryAuthenticationCardOperation operation,
-          final Asset? asset,
-          final User? owner,
-          required final User createdBy,
-          @TimestampConverter() required final DateTime createdAt}) =
-      _$_AtsHistoryAuthenticationCard;
+      final Asset? asset,
+      final User? owner,
+      required final User createdBy,
+      @TimestampConverter()
+          required final DateTime createdAt}) = _$_AtsHistoryAuthenticationCard;
 
   factory _AtsHistoryAuthenticationCard.fromJson(Map<String, dynamic> json) =
       _$_AtsHistoryAuthenticationCard.fromJson;
@@ -45478,22 +46224,25 @@ abstract class $AtsNsLicenseCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      @AtsNsStatusConverter() AtsNsStatus status,
+      @AtsNsStatusConverter()
+          AtsNsStatus status,
       bool? receive90Days,
-      @AtsNsProjectIdOrNullConverter() AtsNsProjectId? projectId,
+      @AtsNsProjectIdOrNullConverter()
+          AtsNsProjectId? projectId,
       String? certificate,
       String? certificatePassword,
       String cnpj,
       String? inscriptionId,
       String? businessName,
       String? companyName,
-      @AtsIcmsTypeOrNullConverter() AtsIcmsType? icmsType,
+      @AtsIcmsTypeOrNullConverter()
+          AtsIcmsType? icmsType,
       List<String>? emails,
       List<String>? phoneNumbers,
       List<AtsNsAddress>? addresses,
       @JsonKey(name: 'expirationDateUnix')
       @TimestampOrNullConverter()
-      DateTime? expirationDate});
+          DateTime? expirationDate});
 }
 
 /// @nodoc
@@ -45600,22 +46349,25 @@ abstract class _$$_AtsNsLicenseCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      @AtsNsStatusConverter() AtsNsStatus status,
+      @AtsNsStatusConverter()
+          AtsNsStatus status,
       bool? receive90Days,
-      @AtsNsProjectIdOrNullConverter() AtsNsProjectId? projectId,
+      @AtsNsProjectIdOrNullConverter()
+          AtsNsProjectId? projectId,
       String? certificate,
       String? certificatePassword,
       String cnpj,
       String? inscriptionId,
       String? businessName,
       String? companyName,
-      @AtsIcmsTypeOrNullConverter() AtsIcmsType? icmsType,
+      @AtsIcmsTypeOrNullConverter()
+          AtsIcmsType? icmsType,
       List<String>? emails,
       List<String>? phoneNumbers,
       List<AtsNsAddress>? addresses,
       @JsonKey(name: 'expirationDateUnix')
       @TimestampOrNullConverter()
-      DateTime? expirationDate});
+          DateTime? expirationDate});
 }
 
 /// @nodoc
@@ -45715,22 +46467,25 @@ class __$$_AtsNsLicenseCopyWithImpl<$Res>
 class _$_AtsNsLicense implements _AtsNsLicense {
   const _$_AtsNsLicense(
       {required this.id,
-      @AtsNsStatusConverter() required this.status,
+      @AtsNsStatusConverter()
+          required this.status,
       this.receive90Days,
-      @AtsNsProjectIdOrNullConverter() this.projectId,
+      @AtsNsProjectIdOrNullConverter()
+          this.projectId,
       this.certificate,
       this.certificatePassword,
       required this.cnpj,
       this.inscriptionId,
       this.businessName,
       this.companyName,
-      @AtsIcmsTypeOrNullConverter() this.icmsType,
+      @AtsIcmsTypeOrNullConverter()
+          this.icmsType,
       final List<String>? emails,
       final List<String>? phoneNumbers,
       final List<AtsNsAddress>? addresses,
       @JsonKey(name: 'expirationDateUnix')
       @TimestampOrNullConverter()
-      this.expirationDate})
+          this.expirationDate})
       : _emails = emails,
         _phoneNumbers = phoneNumbers,
         _addresses = addresses;
@@ -45911,22 +46666,25 @@ class _$_AtsNsLicense implements _AtsNsLicense {
 abstract class _AtsNsLicense implements AtsNsLicense {
   const factory _AtsNsLicense(
       {required final String id,
-      @AtsNsStatusConverter() required final AtsNsStatus status,
+      @AtsNsStatusConverter()
+          required final AtsNsStatus status,
       final bool? receive90Days,
-      @AtsNsProjectIdOrNullConverter() final AtsNsProjectId? projectId,
+      @AtsNsProjectIdOrNullConverter()
+          final AtsNsProjectId? projectId,
       final String? certificate,
       final String? certificatePassword,
       required final String cnpj,
       final String? inscriptionId,
       final String? businessName,
       final String? companyName,
-      @AtsIcmsTypeOrNullConverter() final AtsIcmsType? icmsType,
+      @AtsIcmsTypeOrNullConverter()
+          final AtsIcmsType? icmsType,
       final List<String>? emails,
       final List<String>? phoneNumbers,
       final List<AtsNsAddress>? addresses,
       @JsonKey(name: 'expirationDateUnix')
       @TimestampOrNullConverter()
-      final DateTime? expirationDate}) = _$_AtsNsLicense;
+          final DateTime? expirationDate}) = _$_AtsNsLicense;
 
   factory _AtsNsLicense.fromJson(Map<String, dynamic> json) =
       _$_AtsNsLicense.fromJson;
@@ -49840,7 +50598,8 @@ abstract class $BrickhouseAlertCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter()
+          BrickhouseAlertType type,
       List<Asset>? assets,
       List<String>? assetsIds,
       List<String>? email,
@@ -49850,18 +50609,24 @@ abstract class $BrickhouseAlertCopyWith<$Res> {
       bool? hasEmail,
       bool? hasPhone,
       int? batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          TimeOfDay? curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          TimeOfDay? curfewEndHour,
       String? curfewTimezone,
-      @WeekdayConverter() List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter() Color? geofenceColor,
-      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+      @WeekdayConverter()
+          List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter()
+          Color? geofenceColor,
+      @GeofenceModeOrNullConverter()
+          GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-      BrickhouseGeofenceTrigger? geofenceTrigger,
+          BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
+      @DurationOrNullConverter()
+          Duration? cooldownTime,
       bool? isMuted});
 }
 
@@ -50015,7 +50780,8 @@ abstract class _$$_BrickhouseAlertCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter()
+          BrickhouseAlertType type,
       List<Asset>? assets,
       List<String>? assetsIds,
       List<String>? email,
@@ -50025,18 +50791,24 @@ abstract class _$$_BrickhouseAlertCopyWith<$Res>
       bool? hasEmail,
       bool? hasPhone,
       int? batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          TimeOfDay? curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          TimeOfDay? curfewEndHour,
       String? curfewTimezone,
-      @WeekdayConverter() List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter() Color? geofenceColor,
-      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+      @WeekdayConverter()
+          List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter()
+          Color? geofenceColor,
+      @GeofenceModeOrNullConverter()
+          GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-      BrickhouseGeofenceTrigger? geofenceTrigger,
+          BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
+      @DurationOrNullConverter()
+          Duration? cooldownTime,
       bool? isMuted});
 }
 
@@ -50477,7 +51249,8 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
   const factory _BrickhouseAlert(
       {required final String id,
       required final String name,
-      @BrickhouseAlertTypeConverter() required final BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter()
+          required final BrickhouseAlertType type,
       final List<Asset>? assets,
       final List<String>? assetsIds,
       final List<String>? email,
@@ -50488,19 +51261,23 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
       final bool? hasPhone,
       final int? batteryMinLevel,
       @BrickhouseTimeOfDayMinuteOrNullConverter()
-      final TimeOfDay? curfewStartHour,
+          final TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter()
-      final TimeOfDay? curfewEndHour,
+          final TimeOfDay? curfewEndHour,
       final String? curfewTimezone,
-      @WeekdayConverter() final List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter() final Color? geofenceColor,
-      @GeofenceModeOrNullConverter() final GeofenceMode? geofenceMode,
+      @WeekdayConverter()
+          final List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter()
+          final Color? geofenceColor,
+      @GeofenceModeOrNullConverter()
+          final GeofenceMode? geofenceMode,
       final double? geofenceRadius,
       final List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-      final BrickhouseGeofenceTrigger? geofenceTrigger,
+          final BrickhouseGeofenceTrigger? geofenceTrigger,
       final double? maxSpeedMaxValue,
-      @DurationOrNullConverter() final Duration? cooldownTime,
+      @DurationOrNullConverter()
+          final Duration? cooldownTime,
       final bool? isMuted}) = _$_BrickhouseAlert;
 
   factory _BrickhouseAlert.fromJson(Map<String, dynamic> json) =
@@ -50802,7 +51579,8 @@ abstract class $BrickhouseAlertInputCopyWith<$Res> {
   $Res call(
       {String? id,
       String name,
-      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter()
+          BrickhouseAlertType type,
       List<String> assetsIds,
       List<String>? email,
       List<NullablePhoneNumber?>? phone,
@@ -50811,18 +51589,24 @@ abstract class $BrickhouseAlertInputCopyWith<$Res> {
       bool? hasEmail,
       bool? hasPhone,
       int? batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          TimeOfDay? curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          TimeOfDay? curfewEndHour,
       String? curfewTimezone,
-      @WeekdayConverter() List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter() Color? geofenceColor,
-      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+      @WeekdayConverter()
+          List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter()
+          Color? geofenceColor,
+      @GeofenceModeOrNullConverter()
+          GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-      BrickhouseGeofenceTrigger? geofenceTrigger,
+          BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
+      @DurationOrNullConverter()
+          Duration? cooldownTime,
       bool? isMuted});
 }
 
@@ -50972,7 +51756,8 @@ abstract class _$$_BrickhouseAlertInputCopyWith<$Res>
   $Res call(
       {String? id,
       String name,
-      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter()
+          BrickhouseAlertType type,
       List<String> assetsIds,
       List<String>? email,
       List<NullablePhoneNumber?>? phone,
@@ -50981,18 +51766,24 @@ abstract class _$$_BrickhouseAlertInputCopyWith<$Res>
       bool? hasEmail,
       bool? hasPhone,
       int? batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          TimeOfDay? curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          TimeOfDay? curfewEndHour,
       String? curfewTimezone,
-      @WeekdayConverter() List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter() Color? geofenceColor,
-      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+      @WeekdayConverter()
+          List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter()
+          Color? geofenceColor,
+      @GeofenceModeOrNullConverter()
+          GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-      BrickhouseGeofenceTrigger? geofenceTrigger,
+          BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
+      @DurationOrNullConverter()
+          Duration? cooldownTime,
       bool? isMuted});
 }
 
@@ -51134,7 +51925,8 @@ class _$_BrickhouseAlertInput implements _BrickhouseAlertInput {
   _$_BrickhouseAlertInput(
       {this.id,
       required this.name,
-      @BrickhouseAlertTypeConverter() required this.type,
+      @BrickhouseAlertTypeConverter()
+          required this.type,
       required this.assetsIds,
       this.email = const [],
       this.phone = const [],
@@ -51143,10 +51935,13 @@ class _$_BrickhouseAlertInput implements _BrickhouseAlertInput {
       this.hasEmail = false,
       this.hasPhone = false,
       this.batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewEndHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          this.curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          this.curfewEndHour,
       this.curfewTimezone,
-      @WeekdayConverter() this.curfewWeekdays = const [
+      @WeekdayConverter()
+          this.curfewWeekdays = const [
         Weekday.monday,
         Weekday.tuesday,
         Weekday.wednesday,
@@ -51155,14 +51950,17 @@ class _$_BrickhouseAlertInput implements _BrickhouseAlertInput {
         Weekday.saturday,
         Weekday.sunday
       ],
-      @ColorOrNullConverter() this.geofenceColor,
-      @GeofenceModeOrNullConverter() this.geofenceMode,
+      @ColorOrNullConverter()
+          this.geofenceColor,
+      @GeofenceModeOrNullConverter()
+          this.geofenceMode,
       this.geofenceRadius,
       this.geofenceShape = const [],
       @BrickhouseGeofenceTriggerOrNullConverter()
-      this.geofenceTrigger = BrickhouseGeofenceTrigger.both,
+          this.geofenceTrigger = BrickhouseGeofenceTrigger.both,
       this.maxSpeedMaxValue,
-      @DurationOrNullConverter() this.cooldownTime,
+      @DurationOrNullConverter()
+          this.cooldownTime,
       this.isMuted = false});
 
   factory _$_BrickhouseAlertInput.fromJson(Map<String, dynamic> json) =>
@@ -51304,7 +52102,8 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
   factory _BrickhouseAlertInput(
       {String? id,
       required String name,
-      @BrickhouseAlertTypeConverter() required BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter()
+          required BrickhouseAlertType type,
       required List<String> assetsIds,
       List<String>? email,
       List<NullablePhoneNumber?>? phone,
@@ -51313,18 +52112,24 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
       bool? hasEmail,
       bool? hasPhone,
       int? batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          TimeOfDay? curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter()
+          TimeOfDay? curfewEndHour,
       String? curfewTimezone,
-      @WeekdayConverter() List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter() Color? geofenceColor,
-      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
+      @WeekdayConverter()
+          List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter()
+          Color? geofenceColor,
+      @GeofenceModeOrNullConverter()
+          GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-      BrickhouseGeofenceTrigger? geofenceTrigger,
+          BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
+      @DurationOrNullConverter()
+          Duration? cooldownTime,
       bool? isMuted}) = _$_BrickhouseAlertInput;
 
   factory _BrickhouseAlertInput.fromJson(Map<String, dynamic> json) =
@@ -51692,9 +52497,10 @@ class _$_BrickHouseWorkspaceInput extends _BrickHouseWorkspaceInput {
       {this.id,
       required this.appId,
       required this.name,
-      @MetricSystemConverter() required this.metricSystem,
+      @MetricSystemConverter()
+          required this.metricSystem,
       @AppInternalIdentifierOrNullConverter()
-      this.typeApp = AppInternalIdentifier.brickhouseTracking,
+          this.typeApp = AppInternalIdentifier.brickhouseTracking,
       required this.timezoneId,
       final List<String>? assetsIds = const []})
       : _assetsIds = assetsIds,
@@ -51778,9 +52584,10 @@ abstract class _BrickHouseWorkspaceInput extends BrickHouseWorkspaceInput {
       {final String? id,
       required final String appId,
       required final String name,
-      @MetricSystemConverter() required final MetricSystem metricSystem,
+      @MetricSystemConverter()
+          required final MetricSystem metricSystem,
       @AppInternalIdentifierOrNullConverter()
-      final AppInternalIdentifier? typeApp,
+          final AppInternalIdentifier? typeApp,
       required final String timezoneId,
       final List<String>? assetsIds}) = _$_BrickHouseWorkspaceInput;
   const _BrickHouseWorkspaceInput._() : super._();
@@ -52225,7 +53032,7 @@ class _$_ConciergeFormBlock implements _ConciergeFormBlock {
 abstract class _ConciergeFormBlock implements ConciergeFormBlock {
   const factory _ConciergeFormBlock(
       {@ConciergeFormBlockTypeConverter()
-      required final ConciergeFormBlockType blockType,
+          required final ConciergeFormBlockType blockType,
       required final String name,
       final ConciergeFormBlockConfiguration? configuration,
       final ConciergeFormBlockValidator? showWhen}) = _$_ConciergeFormBlock;
@@ -52596,9 +53403,9 @@ abstract class $ConciergeFormBlockValidatorCopyWith<$Res> {
       double? min,
       String? value,
       @ConciergeFormDisplayConditionValidatorConverter()
-      ConciergeFormDisplayConditionValidator validator,
+          ConciergeFormDisplayConditionValidator validator,
       @ConciergeFormDisplayConditionOperatorOrNullConverter()
-      ConciergeFormDisplayConditionOperator? validatorOperator});
+          ConciergeFormDisplayConditionOperator? validatorOperator});
 }
 
 /// @nodoc
@@ -52666,9 +53473,9 @@ abstract class _$$_ConciergeFormBlockValidatorCopyWith<$Res>
       double? min,
       String? value,
       @ConciergeFormDisplayConditionValidatorConverter()
-      ConciergeFormDisplayConditionValidator validator,
+          ConciergeFormDisplayConditionValidator validator,
       @ConciergeFormDisplayConditionOperatorOrNullConverter()
-      ConciergeFormDisplayConditionOperator? validatorOperator});
+          ConciergeFormDisplayConditionOperator? validatorOperator});
 }
 
 /// @nodoc
@@ -52729,9 +53536,9 @@ class _$_ConciergeFormBlockValidator implements _ConciergeFormBlockValidator {
       this.min,
       this.value,
       @ConciergeFormDisplayConditionValidatorConverter()
-      required this.validator,
+          required this.validator,
       @ConciergeFormDisplayConditionOperatorOrNullConverter()
-      this.validatorOperator});
+          this.validatorOperator});
 
   factory _$_ConciergeFormBlockValidator.fromJson(Map<String, dynamic> json) =>
       _$$_ConciergeFormBlockValidatorFromJson(json);
@@ -52808,9 +53615,9 @@ abstract class _ConciergeFormBlockValidator
           final double? min,
           final String? value,
           @ConciergeFormDisplayConditionValidatorConverter()
-          required final ConciergeFormDisplayConditionValidator validator,
+              required final ConciergeFormDisplayConditionValidator validator,
           @ConciergeFormDisplayConditionOperatorOrNullConverter()
-          final ConciergeFormDisplayConditionOperator? validatorOperator}) =
+              final ConciergeFormDisplayConditionOperator? validatorOperator}) =
       _$_ConciergeFormBlockValidator;
 
   factory _ConciergeFormBlockValidator.fromJson(Map<String, dynamic> json) =
@@ -53136,13 +53943,17 @@ abstract class $MonitorActiveCheckpointCopyWith<$Res> {
   $Res call(
       {String id,
       @MonitorActiveCheckpointStateConverter()
-      MonitorActiveCheckpointState state,
+          MonitorActiveCheckpointState state,
       Checkpoint checkpoint,
       Asset asset,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
-      @TimestampOrNullConverter() DateTime? updatedAt,
-      @CheckpointStateConverter() CheckpointState checkpointState,
+      @TimestampOrNullConverter()
+          DateTime? startAt,
+      @TimestampOrNullConverter()
+          DateTime? endAt,
+      @TimestampOrNullConverter()
+          DateTime? updatedAt,
+      @CheckpointStateConverter()
+          CheckpointState checkpointState,
       List<MonitorRealWaypoint> waypoints});
 
   $CheckpointCopyWith<$Res> get checkpoint;
@@ -53241,13 +54052,17 @@ abstract class _$$_MonitorActiveCheckpointCopyWith<$Res>
   $Res call(
       {String id,
       @MonitorActiveCheckpointStateConverter()
-      MonitorActiveCheckpointState state,
+          MonitorActiveCheckpointState state,
       Checkpoint checkpoint,
       Asset asset,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
-      @TimestampOrNullConverter() DateTime? updatedAt,
-      @CheckpointStateConverter() CheckpointState checkpointState,
+      @TimestampOrNullConverter()
+          DateTime? startAt,
+      @TimestampOrNullConverter()
+          DateTime? endAt,
+      @TimestampOrNullConverter()
+          DateTime? updatedAt,
+      @CheckpointStateConverter()
+          CheckpointState checkpointState,
       List<MonitorRealWaypoint> waypoints});
 
   @override
@@ -53426,14 +54241,17 @@ abstract class _MonitorActiveCheckpoint implements MonitorActiveCheckpoint {
   const factory _MonitorActiveCheckpoint(
       {required final String id,
       @MonitorActiveCheckpointStateConverter()
-      required final MonitorActiveCheckpointState state,
+          required final MonitorActiveCheckpointState state,
       required final Checkpoint checkpoint,
       required final Asset asset,
-      @TimestampOrNullConverter() final DateTime? startAt,
-      @TimestampOrNullConverter() final DateTime? endAt,
-      @TimestampOrNullConverter() final DateTime? updatedAt,
+      @TimestampOrNullConverter()
+          final DateTime? startAt,
+      @TimestampOrNullConverter()
+          final DateTime? endAt,
+      @TimestampOrNullConverter()
+          final DateTime? updatedAt,
       @CheckpointStateConverter()
-      required final CheckpointState checkpointState,
+          required final CheckpointState checkpointState,
       final List<MonitorRealWaypoint> waypoints}) = _$_MonitorActiveCheckpoint;
 
   factory _MonitorActiveCheckpoint.fromJson(Map<String, dynamic> json) =
