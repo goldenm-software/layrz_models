@@ -1,15 +1,15 @@
 part of layrz_models;
 
-class DurationOrNullConverter implements JsonConverter<Duration?, int?> {
+class DurationOrNullConverter implements JsonConverter<Duration?, num?> {
   const DurationOrNullConverter();
 
   @override
-  Duration? fromJson(int? json) {
-    return json == null ? null : Duration(seconds: json);
+  Duration? fromJson(num? json) {
+    return json == null ? null : Duration(seconds: json.toInt());
   }
 
   @override
-  int? toJson(Duration? object) {
+  num? toJson(Duration? object) {
     if (object == null) {
       return null;
     }
@@ -17,16 +17,16 @@ class DurationOrNullConverter implements JsonConverter<Duration?, int?> {
   }
 }
 
-class DurationConverter implements JsonConverter<Duration, int> {
+class DurationConverter implements JsonConverter<Duration, num> {
   const DurationConverter();
 
   @override
-  Duration fromJson(int json) {
-    return Duration(seconds: json);
+  Duration fromJson(num json) {
+    return Duration(seconds: json.toInt());
   }
 
   @override
-  int toJson(Duration object) {
+  num toJson(Duration object) {
     return object.inSeconds;
   }
 }

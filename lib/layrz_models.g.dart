@@ -1429,9 +1429,9 @@ Map<String, dynamic> _$$_GuideToJson(_$_Guide instance) => <String, dynamic>{
 
 _$_Connection _$$_ConnectionFromJson(Map<String, dynamic> json) =>
     _$_Connection(
-      online: const DurationOrNullConverter().fromJson(json['online'] as int?),
+      online: const DurationOrNullConverter().fromJson(json['online'] as num?),
       hibernation:
-          const DurationOrNullConverter().fromJson(json['hibernation'] as int?),
+          const DurationOrNullConverter().fromJson(json['hibernation'] as num?),
     );
 
 Map<String, dynamic> _$$_ConnectionToJson(_$_Connection instance) =>
@@ -1639,7 +1639,7 @@ _$_Trigger _$$_TriggerFromJson(Map<String, dynamic> json) => _$_Trigger(
           .fromJson(json['caseCommentPattern'] as String?),
       caseCommentPatternValue: json['caseCommentPatternValue'] as String?,
       cooldownTime: const DurationOrNullConverter()
-          .fromJson(json['cooldownTime'] as int?),
+          .fromJson(json['cooldownTime'] as num?),
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -1948,7 +1948,7 @@ _$_InboundService _$$_InboundServiceFromJson(Map<String, dynamic> json) =>
       credentials: json['credentials'] as Map<String, dynamic>?,
       accountId: json['accountId'] as String?,
       updateTime:
-          const DurationOrNullConverter().fromJson(json['updateTime'] as int?),
+          const DurationOrNullConverter().fromJson(json['updateTime'] as num?),
       protocol: json['protocol'] == null
           ? null
           : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
@@ -2794,9 +2794,9 @@ _$_LayrzFunction _$$_LayrzFunctionFromJson(Map<String, dynamic> json) =>
           ? null
           : Algorithm.fromJson(json['algorithm'] as Map<String, dynamic>),
       maximumTime:
-          const DurationOrNullConverter().fromJson(json['maximumTime'] as int?),
+          const DurationOrNullConverter().fromJson(json['maximumTime'] as num?),
       minutesDelta: const DurationOrNullConverter()
-          .fromJson(json['minutesDelta'] as int?),
+          .fromJson(json['minutesDelta'] as num?),
       externalIdentifiers: (json['externalIdentifiers'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -3809,7 +3809,7 @@ _$_AtsReceptionInput _$$_AtsReceptionInputFromJson(Map<String, dynamic> json) =>
           .toList(),
       assetId: json['assetId'] as String?,
       operationTime: const DurationOrNullConverter()
-          .fromJson(json['operationTime'] as int?),
+          .fromJson(json['operationTime'] as num?),
       app: const AtsFromAppOrNullConverter().fromJson(json['app'] as String?),
     );
 
@@ -4268,7 +4268,7 @@ _$_AtsExit _$$_AtsExitFromJson(Map<String, dynamic> json) => _$_AtsExit(
       endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
       totalTime: json['totalTime'] as String?,
       totalTimeDuration: const DurationOrNullConverter()
-          .fromJson(json['totalTimeDuration'] as int?),
+          .fromJson(json['totalTimeDuration'] as num?),
       sensorId: json['sensorId'] as String?,
       sensor: json['sensor'] == null
           ? null
@@ -4404,7 +4404,7 @@ _$_BrickhouseAlert _$$_BrickhouseAlertFromJson(Map<String, dynamic> json) =>
           .fromJson(json['geofenceTrigger'] as String?),
       maxSpeedMaxValue: (json['maxSpeedMaxValue'] as num?)?.toDouble(),
       cooldownTime: const DurationOrNullConverter()
-          .fromJson(json['cooldownTime'] as int?),
+          .fromJson(json['cooldownTime'] as num?),
       isMuted: json['isMuted'] as bool? ?? false,
     );
 
@@ -4500,7 +4500,7 @@ _$_BrickhouseAlertInput _$$_BrickhouseAlertInputFromJson(
               .fromJson(json['geofenceTrigger'] as String?),
       maxSpeedMaxValue: (json['maxSpeedMaxValue'] as num?)?.toDouble(),
       cooldownTime: const DurationOrNullConverter()
-          .fromJson(json['cooldownTime'] as int?),
+          .fromJson(json['cooldownTime'] as num?),
       isMuted: json['isMuted'] as bool? ?? false,
     );
 
@@ -4791,9 +4791,9 @@ _$_MappitLaborHour _$$_MappitLaborHourFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       weekday: const WeekdayConverter().fromJson(json['weekday'] as String),
       administrative:
-          const DurationConverter().fromJson(json['administrative'] as int),
-      f2f: const DurationConverter().fromJson(json['f2f'] as int),
-      other: const DurationConverter().fromJson(json['other'] as int),
+          const DurationConverter().fromJson(json['administrative'] as num),
+      f2f: const DurationConverter().fromJson(json['f2f'] as num),
+      other: const DurationConverter().fromJson(json['other'] as num),
     );
 
 Map<String, dynamic> _$$_MappitLaborHourToJson(_$_MappitLaborHour instance) =>
@@ -4845,10 +4845,10 @@ _$_MappitDurationRange _$$_MappitDurationRangeFromJson(
     _$_MappitDurationRange(
       min: json['min'] == null
           ? Duration.zero
-          : const DurationConverter().fromJson(json['min'] as int),
+          : const DurationConverter().fromJson(json['min'] as num),
       max: json['max'] == null
           ? Duration.zero
-          : const DurationConverter().fromJson(json['max'] as int),
+          : const DurationConverter().fromJson(json['max'] as num),
       color: json['color'] == null
           ? Colors.blue
           : const ColorConverter().fromJson(json['color'] as String),

@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.11
+- Updated `DurationConverter()` and `DurationConverterOrNull()` to support `int` and `double` values. (Basically any `num` type)
+
 ## 2.0.10
 - Fixed `LayrzFunction.credentials` from `List<CredentialField>` to `Map<String, dynamic>`
 
