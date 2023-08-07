@@ -31971,12 +31971,12 @@ mixin _$LayrzFunction {
   Algorithm? get algorithm => throw _privateConstructorUsedError;
 
   /// [maximumTime] is the minimum time of the function.
-  @DurationOrNullConverter()
-  Duration? get maximumTime => throw _privateConstructorUsedError;
+  /// Defined in minutes.
+  double? get maximumTime => throw _privateConstructorUsedError;
 
   /// [minutesDelta] is the minutes delta of the function.
-  @DurationOrNullConverter()
-  Duration? get minutesDelta => throw _privateConstructorUsedError;
+  /// Defined in minutes.
+  double? get minutesDelta => throw _privateConstructorUsedError;
 
   /// [externalIdentifiers] is the external identifiers of the function.
   List<String>? get externalIdentifiers => throw _privateConstructorUsedError;
@@ -32022,8 +32022,8 @@ abstract class $LayrzFunctionCopyWith<$Res> {
       String name,
       String? algorithmId,
       Algorithm? algorithm,
-      @DurationOrNullConverter() Duration? maximumTime,
-      @DurationOrNullConverter() Duration? minutesDelta,
+      double? maximumTime,
+      double? minutesDelta,
       List<String>? externalIdentifiers,
       String? token,
       Map<String, dynamic>? credentials,
@@ -32087,11 +32087,11 @@ class _$LayrzFunctionCopyWithImpl<$Res, $Val extends LayrzFunction>
       maximumTime: freezed == maximumTime
           ? _value.maximumTime
           : maximumTime // ignore: cast_nullable_to_non_nullable
-              as Duration?,
+              as double?,
       minutesDelta: freezed == minutesDelta
           ? _value.minutesDelta
           : minutesDelta // ignore: cast_nullable_to_non_nullable
-              as Duration?,
+              as double?,
       externalIdentifiers: freezed == externalIdentifiers
           ? _value.externalIdentifiers
           : externalIdentifiers // ignore: cast_nullable_to_non_nullable
@@ -32169,8 +32169,8 @@ abstract class _$$_LayrzFunctionCopyWith<$Res>
       String name,
       String? algorithmId,
       Algorithm? algorithm,
-      @DurationOrNullConverter() Duration? maximumTime,
-      @DurationOrNullConverter() Duration? minutesDelta,
+      double? maximumTime,
+      double? minutesDelta,
       List<String>? externalIdentifiers,
       String? token,
       Map<String, dynamic>? credentials,
@@ -32234,11 +32234,11 @@ class __$$_LayrzFunctionCopyWithImpl<$Res>
       maximumTime: freezed == maximumTime
           ? _value.maximumTime
           : maximumTime // ignore: cast_nullable_to_non_nullable
-              as Duration?,
+              as double?,
       minutesDelta: freezed == minutesDelta
           ? _value.minutesDelta
           : minutesDelta // ignore: cast_nullable_to_non_nullable
-              as Duration?,
+              as double?,
       externalIdentifiers: freezed == externalIdentifiers
           ? _value._externalIdentifiers
           : externalIdentifiers // ignore: cast_nullable_to_non_nullable
@@ -32287,8 +32287,8 @@ class _$_LayrzFunction implements _LayrzFunction {
       required this.name,
       this.algorithmId,
       this.algorithm,
-      @DurationOrNullConverter() this.maximumTime,
-      @DurationOrNullConverter() this.minutesDelta,
+      this.maximumTime,
+      this.minutesDelta,
       final List<String>? externalIdentifiers,
       this.token,
       final Map<String, dynamic>? credentials,
@@ -32326,14 +32326,14 @@ class _$_LayrzFunction implements _LayrzFunction {
   final Algorithm? algorithm;
 
   /// [maximumTime] is the minimum time of the function.
+  /// Defined in minutes.
   @override
-  @DurationOrNullConverter()
-  final Duration? maximumTime;
+  final double? maximumTime;
 
   /// [minutesDelta] is the minutes delta of the function.
+  /// Defined in minutes.
   @override
-  @DurationOrNullConverter()
-  final Duration? minutesDelta;
+  final double? minutesDelta;
 
   /// [externalIdentifiers] is the external identifiers of the function.
   final List<String>? _externalIdentifiers;
@@ -32510,8 +32510,8 @@ abstract class _LayrzFunction implements LayrzFunction {
       required final String name,
       final String? algorithmId,
       final Algorithm? algorithm,
-      @DurationOrNullConverter() final Duration? maximumTime,
-      @DurationOrNullConverter() final Duration? minutesDelta,
+      final double? maximumTime,
+      final double? minutesDelta,
       final List<String>? externalIdentifiers,
       final String? token,
       final Map<String, dynamic>? credentials,
@@ -32544,13 +32544,13 @@ abstract class _LayrzFunction implements LayrzFunction {
   @override
 
   /// [maximumTime] is the minimum time of the function.
-  @DurationOrNullConverter()
-  Duration? get maximumTime;
+  /// Defined in minutes.
+  double? get maximumTime;
   @override
 
   /// [minutesDelta] is the minutes delta of the function.
-  @DurationOrNullConverter()
-  Duration? get minutesDelta;
+  /// Defined in minutes.
+  double? get minutesDelta;
   @override
 
   /// [externalIdentifiers] is the external identifiers of the function.

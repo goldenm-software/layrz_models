@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.12
+- Changed `LayrzFunction.maximumTime` from `Duration` to `double`
+- Changed `LayrzFunction.minutesDelta` from `Duration` to `double`
+
 ## 2.0.11
 - Updated `DurationConverter()` and `DurationConverterOrNull()` to support `int` and `double` values. (Basically any `num` type)
 

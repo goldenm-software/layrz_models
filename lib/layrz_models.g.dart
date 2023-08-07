@@ -2793,10 +2793,8 @@ _$_LayrzFunction _$$_LayrzFunctionFromJson(Map<String, dynamic> json) =>
       algorithm: json['algorithm'] == null
           ? null
           : Algorithm.fromJson(json['algorithm'] as Map<String, dynamic>),
-      maximumTime:
-          const DurationOrNullConverter().fromJson(json['maximumTime'] as num?),
-      minutesDelta: const DurationOrNullConverter()
-          .fromJson(json['minutesDelta'] as num?),
+      maximumTime: (json['maximumTime'] as num?)?.toDouble(),
+      minutesDelta: (json['minutesDelta'] as num?)?.toDouble(),
       externalIdentifiers: (json['externalIdentifiers'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -2828,10 +2826,8 @@ Map<String, dynamic> _$$_LayrzFunctionToJson(_$_LayrzFunction instance) =>
       'name': instance.name,
       'algorithmId': instance.algorithmId,
       'algorithm': instance.algorithm?.toJson(),
-      'maximumTime':
-          const DurationOrNullConverter().toJson(instance.maximumTime),
-      'minutesDelta':
-          const DurationOrNullConverter().toJson(instance.minutesDelta),
+      'maximumTime': instance.maximumTime,
+      'minutesDelta': instance.minutesDelta,
       'externalIdentifiers': instance.externalIdentifiers,
       'token': instance.token,
       'credentials': instance.credentials,

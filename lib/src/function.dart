@@ -35,10 +35,12 @@ class LayrzFunction with _$LayrzFunction {
     Algorithm? algorithm,
 
     /// [maximumTime] is the minimum time of the function.
-    @DurationOrNullConverter() Duration? maximumTime,
+    /// Defined in minutes.
+    double? maximumTime,
 
     /// [minutesDelta] is the minutes delta of the function.
-    @DurationOrNullConverter() Duration? minutesDelta,
+    /// Defined in minutes.
+    double? minutesDelta,
 
     /// [externalIdentifiers] is the external identifiers of the function.
     List<String>? externalIdentifiers,
