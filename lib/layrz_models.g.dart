@@ -1429,9 +1429,9 @@ Map<String, dynamic> _$$_GuideToJson(_$_Guide instance) => <String, dynamic>{
 
 _$_Connection _$$_ConnectionFromJson(Map<String, dynamic> json) =>
     _$_Connection(
-      online: const DurationOrNullConverter().fromJson(json['online'] as int?),
+      online: const DurationOrNullConverter().fromJson(json['online'] as num?),
       hibernation:
-          const DurationOrNullConverter().fromJson(json['hibernation'] as int?),
+          const DurationOrNullConverter().fromJson(json['hibernation'] as num?),
     );
 
 Map<String, dynamic> _$$_ConnectionToJson(_$_Connection instance) =>
@@ -1639,7 +1639,7 @@ _$_Trigger _$$_TriggerFromJson(Map<String, dynamic> json) => _$_Trigger(
           .fromJson(json['caseCommentPattern'] as String?),
       caseCommentPatternValue: json['caseCommentPatternValue'] as String?,
       cooldownTime: const DurationOrNullConverter()
-          .fromJson(json['cooldownTime'] as int?),
+          .fromJson(json['cooldownTime'] as num?),
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -1878,18 +1878,6 @@ Map<String, dynamic> _$$_ConciergeFormToJson(_$_ConciergeForm instance) =>
       'name': instance.name,
     };
 
-_$_LayrzFunction _$$_LayrzFunctionFromJson(Map<String, dynamic> json) =>
-    _$_LayrzFunction(
-      id: json['id'] as String,
-      name: json['name'] as String,
-    );
-
-Map<String, dynamic> _$$_LayrzFunctionToJson(_$_LayrzFunction instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-    };
-
 _$_OutboundService _$$_OutboundServiceFromJson(Map<String, dynamic> json) =>
     _$_OutboundService(
       id: json['id'] as String,
@@ -1960,7 +1948,7 @@ _$_InboundService _$$_InboundServiceFromJson(Map<String, dynamic> json) =>
       credentials: json['credentials'] as Map<String, dynamic>?,
       accountId: json['accountId'] as String?,
       updateTime:
-          const DurationOrNullConverter().fromJson(json['updateTime'] as int?),
+          const DurationOrNullConverter().fromJson(json['updateTime'] as num?),
       protocol: json['protocol'] == null
           ? null
           : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
@@ -2778,6 +2766,76 @@ Map<String, dynamic> _$$_EmailTemplateToJson(_$_EmailTemplate instance) =>
       'name': instance.name,
       'contentMjml': instance.contentMjml,
       'contentTxt': instance.contentTxt,
+      'access': instance.access?.map((e) => e.toJson()).toList(),
+    };
+
+_$_FtpAccount _$$_FtpAccountFromJson(Map<String, dynamic> json) =>
+    _$_FtpAccount(
+      host: json['host'] as String?,
+      port: json['port'] as int?,
+      username: json['username'] as String?,
+      password: json['password'] as String?,
+    );
+
+Map<String, dynamic> _$$_FtpAccountToJson(_$_FtpAccount instance) =>
+    <String, dynamic>{
+      'host': instance.host,
+      'port': instance.port,
+      'username': instance.username,
+      'password': instance.password,
+    };
+
+_$_LayrzFunction _$$_LayrzFunctionFromJson(Map<String, dynamic> json) =>
+    _$_LayrzFunction(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      algorithmId: json['algorithmId'] as String?,
+      algorithm: json['algorithm'] == null
+          ? null
+          : Algorithm.fromJson(json['algorithm'] as Map<String, dynamic>),
+      maximumTime: (json['maximumTime'] as num?)?.toDouble(),
+      minutesDelta: (json['minutesDelta'] as num?)?.toDouble(),
+      externalIdentifiers: (json['externalIdentifiers'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      token: json['token'] as String?,
+      credentials: json['credentials'] as Map<String, dynamic>?,
+      ftp: json['ftp'] == null
+          ? null
+          : FtpAccount.fromJson(json['ftp'] as Map<String, dynamic>),
+      groupsIds: (json['groupsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      groups: (json['groups'] as List<dynamic>?)
+          ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      assetsIds: (json['assetsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      assets: (json['assets'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      access: (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_LayrzFunctionToJson(_$_LayrzFunction instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'algorithmId': instance.algorithmId,
+      'algorithm': instance.algorithm?.toJson(),
+      'maximumTime': instance.maximumTime,
+      'minutesDelta': instance.minutesDelta,
+      'externalIdentifiers': instance.externalIdentifiers,
+      'token': instance.token,
+      'credentials': instance.credentials,
+      'ftp': instance.ftp?.toJson(),
+      'groupsIds': instance.groupsIds,
+      'groups': instance.groups?.map((e) => e.toJson()).toList(),
+      'assetsIds': instance.assetsIds,
+      'assets': instance.assets?.map((e) => e.toJson()).toList(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
@@ -3747,7 +3805,7 @@ _$_AtsReceptionInput _$$_AtsReceptionInputFromJson(Map<String, dynamic> json) =>
           .toList(),
       assetId: json['assetId'] as String?,
       operationTime: const DurationOrNullConverter()
-          .fromJson(json['operationTime'] as int?),
+          .fromJson(json['operationTime'] as num?),
       app: const AtsFromAppOrNullConverter().fromJson(json['app'] as String?),
     );
 
@@ -3860,7 +3918,7 @@ _$_AtsFeedbackMessege _$$_AtsFeedbackMessegeFromJson(
       creator: json['creator'] == null
           ? null
           : User.fromJson(json['creator'] as Map<String, dynamic>),
-      at: json['at'] == null ? null : DateTime.parse(json['at'] as String),
+      at: const TimestampOrNullConverter().fromJson(json['at'] as num?),
       app: json['app'] == null
           ? null
           : RegisteredApp.fromJson(json['app'] as Map<String, dynamic>),
@@ -3875,7 +3933,7 @@ Map<String, dynamic> _$$_AtsFeedbackMessegeToJson(
       'id': instance.id,
       'content': instance.content,
       'creator': instance.creator?.toJson(),
-      'at': instance.at?.toIso8601String(),
+      'at': const TimestampOrNullConverter().toJson(instance.at),
       'app': instance.app?.toJson(),
       'source': const FeedbackSourceOrNullConverter().toJson(instance.source),
       'isRead': instance.isRead,
@@ -4206,7 +4264,7 @@ _$_AtsExit _$$_AtsExitFromJson(Map<String, dynamic> json) => _$_AtsExit(
       endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
       totalTime: json['totalTime'] as String?,
       totalTimeDuration: const DurationOrNullConverter()
-          .fromJson(json['totalTimeDuration'] as int?),
+          .fromJson(json['totalTimeDuration'] as num?),
       sensorId: json['sensorId'] as String?,
       sensor: json['sensor'] == null
           ? null
@@ -4342,7 +4400,7 @@ _$_BrickhouseAlert _$$_BrickhouseAlertFromJson(Map<String, dynamic> json) =>
           .fromJson(json['geofenceTrigger'] as String?),
       maxSpeedMaxValue: (json['maxSpeedMaxValue'] as num?)?.toDouble(),
       cooldownTime: const DurationOrNullConverter()
-          .fromJson(json['cooldownTime'] as int?),
+          .fromJson(json['cooldownTime'] as num?),
       isMuted: json['isMuted'] as bool? ?? false,
     );
 
@@ -4438,7 +4496,7 @@ _$_BrickhouseAlertInput _$$_BrickhouseAlertInputFromJson(
               .fromJson(json['geofenceTrigger'] as String?),
       maxSpeedMaxValue: (json['maxSpeedMaxValue'] as num?)?.toDouble(),
       cooldownTime: const DurationOrNullConverter()
-          .fromJson(json['cooldownTime'] as int?),
+          .fromJson(json['cooldownTime'] as num?),
       isMuted: json['isMuted'] as bool? ?? false,
     );
 
@@ -4729,9 +4787,9 @@ _$_MappitLaborHour _$$_MappitLaborHourFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       weekday: const WeekdayConverter().fromJson(json['weekday'] as String),
       administrative:
-          const DurationConverter().fromJson(json['administrative'] as int),
-      f2f: const DurationConverter().fromJson(json['f2f'] as int),
-      other: const DurationConverter().fromJson(json['other'] as int),
+          const DurationConverter().fromJson(json['administrative'] as num),
+      f2f: const DurationConverter().fromJson(json['f2f'] as num),
+      other: const DurationConverter().fromJson(json['other'] as num),
     );
 
 Map<String, dynamic> _$$_MappitLaborHourToJson(_$_MappitLaborHour instance) =>
@@ -4783,10 +4841,10 @@ _$_MappitDurationRange _$$_MappitDurationRangeFromJson(
     _$_MappitDurationRange(
       min: json['min'] == null
           ? Duration.zero
-          : const DurationConverter().fromJson(json['min'] as int),
+          : const DurationConverter().fromJson(json['min'] as num),
       max: json['max'] == null
           ? Duration.zero
-          : const DurationConverter().fromJson(json['max'] as int),
+          : const DurationConverter().fromJson(json['max'] as num),
       color: json['color'] == null
           ? Colors.blue
           : const ColorConverter().fromJson(json['color'] as String),

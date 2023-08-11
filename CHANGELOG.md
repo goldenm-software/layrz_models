@@ -1,7 +1,24 @@
 # Changelog
+## 2.0.13
+- Changed `[AtsFeedbackMessege]` from `TimeStampConverter` to `at`
+
+## 2.0.12
+- Changed `LayrzFunction.maximumTime` from `Duration` to `double`
+- Changed `LayrzFunction.minutesDelta` from `Duration` to `double`
+
+## 2.0.11
+- Updated `DurationConverter()` and `DurationConverterOrNull()` to support `int` and `double` values. (Basically any `num` type)
+
+## 2.0.10
+- Fixed `LayrzFunction.credentials` from `List<CredentialField>` to `Map<String, dynamic>`
+
+## 2.0.9
+- Registered model `LayrzFunction` and `FtpAccount` for Layrz Functions.
+
 ## 2.0.8
 - AtsReceptionInput changes:
     - var fromApp was changed for app
+
 ## 2.0.7
 - AtsReception changes:
     - Added [AtsEntry] linked to the [AtsReception].
@@ -10,6 +27,7 @@
     - Added App used to create the [AtsReception]
 - AtsReceptionProductInput changes:
     - Removed assetId, fuelType and volumeBought
+
 ## 2.0.6
 - Added `dynamicIcon` of type `Avatar` to `InboundProtocol`
 

@@ -21408,160 +21408,6 @@ abstract class _ConciergeForm implements ConciergeForm {
       throw _privateConstructorUsedError;
 }
 
-LayrzFunction _$LayrzFunctionFromJson(Map<String, dynamic> json) {
-  return _LayrzFunction.fromJson(json);
-}
-
-/// @nodoc
-mixin _$LayrzFunction {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LayrzFunctionCopyWith<LayrzFunction> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LayrzFunctionCopyWith<$Res> {
-  factory $LayrzFunctionCopyWith(
-          LayrzFunction value, $Res Function(LayrzFunction) then) =
-      _$LayrzFunctionCopyWithImpl<$Res, LayrzFunction>;
-  @useResult
-  $Res call({String id, String name});
-}
-
-/// @nodoc
-class _$LayrzFunctionCopyWithImpl<$Res, $Val extends LayrzFunction>
-    implements $LayrzFunctionCopyWith<$Res> {
-  _$LayrzFunctionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$_LayrzFunctionCopyWith<$Res>
-    implements $LayrzFunctionCopyWith<$Res> {
-  factory _$$_LayrzFunctionCopyWith(
-          _$_LayrzFunction value, $Res Function(_$_LayrzFunction) then) =
-      __$$_LayrzFunctionCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String id, String name});
-}
-
-/// @nodoc
-class __$$_LayrzFunctionCopyWithImpl<$Res>
-    extends _$LayrzFunctionCopyWithImpl<$Res, _$_LayrzFunction>
-    implements _$$_LayrzFunctionCopyWith<$Res> {
-  __$$_LayrzFunctionCopyWithImpl(
-      _$_LayrzFunction _value, $Res Function(_$_LayrzFunction) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-  }) {
-    return _then(_$_LayrzFunction(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$_LayrzFunction implements _LayrzFunction {
-  const _$_LayrzFunction({required this.id, required this.name});
-
-  factory _$_LayrzFunction.fromJson(Map<String, dynamic> json) =>
-      _$$_LayrzFunctionFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String name;
-
-  @override
-  String toString() {
-    return 'LayrzFunction(id: $id, name: $name)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_LayrzFunction &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_LayrzFunctionCopyWith<_$_LayrzFunction> get copyWith =>
-      __$$_LayrzFunctionCopyWithImpl<_$_LayrzFunction>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_LayrzFunctionToJson(
-      this,
-    );
-  }
-}
-
-abstract class _LayrzFunction implements LayrzFunction {
-  const factory _LayrzFunction(
-      {required final String id,
-      required final String name}) = _$_LayrzFunction;
-
-  factory _LayrzFunction.fromJson(Map<String, dynamic> json) =
-      _$_LayrzFunction.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  @JsonKey(ignore: true)
-  _$$_LayrzFunctionCopyWith<_$_LayrzFunction> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 OutboundService _$OutboundServiceFromJson(Map<String, dynamic> json) {
   return _OutboundService.fromJson(json);
 }
@@ -31848,6 +31694,859 @@ abstract class _EmailTemplate implements EmailTemplate {
   @override
   @JsonKey(ignore: true)
   _$$_EmailTemplateCopyWith<_$_EmailTemplate> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+FtpAccount _$FtpAccountFromJson(Map<String, dynamic> json) {
+  return _FtpAccount.fromJson(json);
+}
+
+/// @nodoc
+mixin _$FtpAccount {
+  /// [host] is the host of the ftp account.
+  String? get host => throw _privateConstructorUsedError;
+
+  /// [port] is the port of the ftp account.
+  int? get port => throw _privateConstructorUsedError;
+
+  /// [username] is the username of the ftp account.
+  String? get username => throw _privateConstructorUsedError;
+
+  /// [password] is the password of the ftp account.
+  String? get password => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FtpAccountCopyWith<FtpAccount> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FtpAccountCopyWith<$Res> {
+  factory $FtpAccountCopyWith(
+          FtpAccount value, $Res Function(FtpAccount) then) =
+      _$FtpAccountCopyWithImpl<$Res, FtpAccount>;
+  @useResult
+  $Res call({String? host, int? port, String? username, String? password});
+}
+
+/// @nodoc
+class _$FtpAccountCopyWithImpl<$Res, $Val extends FtpAccount>
+    implements $FtpAccountCopyWith<$Res> {
+  _$FtpAccountCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? host = freezed,
+    Object? port = freezed,
+    Object? username = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_value.copyWith(
+      host: freezed == host
+          ? _value.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      port: freezed == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int?,
+      username: freezed == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_FtpAccountCopyWith<$Res>
+    implements $FtpAccountCopyWith<$Res> {
+  factory _$$_FtpAccountCopyWith(
+          _$_FtpAccount value, $Res Function(_$_FtpAccount) then) =
+      __$$_FtpAccountCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? host, int? port, String? username, String? password});
+}
+
+/// @nodoc
+class __$$_FtpAccountCopyWithImpl<$Res>
+    extends _$FtpAccountCopyWithImpl<$Res, _$_FtpAccount>
+    implements _$$_FtpAccountCopyWith<$Res> {
+  __$$_FtpAccountCopyWithImpl(
+      _$_FtpAccount _value, $Res Function(_$_FtpAccount) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? host = freezed,
+    Object? port = freezed,
+    Object? username = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_$_FtpAccount(
+      host: freezed == host
+          ? _value.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      port: freezed == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int?,
+      username: freezed == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_FtpAccount implements _FtpAccount {
+  const _$_FtpAccount({this.host, this.port, this.username, this.password});
+
+  factory _$_FtpAccount.fromJson(Map<String, dynamic> json) =>
+      _$$_FtpAccountFromJson(json);
+
+  /// [host] is the host of the ftp account.
+  @override
+  final String? host;
+
+  /// [port] is the port of the ftp account.
+  @override
+  final int? port;
+
+  /// [username] is the username of the ftp account.
+  @override
+  final String? username;
+
+  /// [password] is the password of the ftp account.
+  @override
+  final String? password;
+
+  @override
+  String toString() {
+    return 'FtpAccount(host: $host, port: $port, username: $username, password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_FtpAccount &&
+            (identical(other.host, host) || other.host == host) &&
+            (identical(other.port, port) || other.port == port) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.password, password) ||
+                other.password == password));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, host, port, username, password);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_FtpAccountCopyWith<_$_FtpAccount> get copyWith =>
+      __$$_FtpAccountCopyWithImpl<_$_FtpAccount>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_FtpAccountToJson(
+      this,
+    );
+  }
+}
+
+abstract class _FtpAccount implements FtpAccount {
+  const factory _FtpAccount(
+      {final String? host,
+      final int? port,
+      final String? username,
+      final String? password}) = _$_FtpAccount;
+
+  factory _FtpAccount.fromJson(Map<String, dynamic> json) =
+      _$_FtpAccount.fromJson;
+
+  @override
+
+  /// [host] is the host of the ftp account.
+  String? get host;
+  @override
+
+  /// [port] is the port of the ftp account.
+  int? get port;
+  @override
+
+  /// [username] is the username of the ftp account.
+  String? get username;
+  @override
+
+  /// [password] is the password of the ftp account.
+  String? get password;
+  @override
+  @JsonKey(ignore: true)
+  _$$_FtpAccountCopyWith<_$_FtpAccount> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+LayrzFunction _$LayrzFunctionFromJson(Map<String, dynamic> json) {
+  return _LayrzFunction.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LayrzFunction {
+  /// [id] is the unique identifier of the function.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the function.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [algorithmId] is the unique identifier of the algorithm.
+  String? get algorithmId => throw _privateConstructorUsedError;
+
+  /// [algorithm] is the algorithm of the function.
+  Algorithm? get algorithm => throw _privateConstructorUsedError;
+
+  /// [maximumTime] is the minimum time of the function.
+  /// Defined in minutes.
+  double? get maximumTime => throw _privateConstructorUsedError;
+
+  /// [minutesDelta] is the minutes delta of the function.
+  /// Defined in minutes.
+  double? get minutesDelta => throw _privateConstructorUsedError;
+
+  /// [externalIdentifiers] is the external identifiers of the function.
+  List<String>? get externalIdentifiers => throw _privateConstructorUsedError;
+
+  /// [token] is the token of the function.
+  String? get token => throw _privateConstructorUsedError;
+
+  /// [credentials] is the credentials of the function.
+  Map<String, dynamic>? get credentials => throw _privateConstructorUsedError;
+
+  /// [ftp] is the ftp of the function.
+  FtpAccount? get ftp => throw _privateConstructorUsedError;
+
+  /// [groupsIds] is the groups ids of the function.
+  List<String>? get groupsIds => throw _privateConstructorUsedError;
+
+  /// [groups] is the groups of the function.
+  List<Tag>? get groups => throw _privateConstructorUsedError;
+
+  /// [assetsIds] is the assets ids of the function.
+  List<String>? get assetsIds => throw _privateConstructorUsedError;
+
+  /// [assets] is the assets of the function.
+  List<Asset>? get assets => throw _privateConstructorUsedError;
+
+  /// [access] is the access of the function.
+  List<Access>? get access => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LayrzFunctionCopyWith<LayrzFunction> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LayrzFunctionCopyWith<$Res> {
+  factory $LayrzFunctionCopyWith(
+          LayrzFunction value, $Res Function(LayrzFunction) then) =
+      _$LayrzFunctionCopyWithImpl<$Res, LayrzFunction>;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String? algorithmId,
+      Algorithm? algorithm,
+      double? maximumTime,
+      double? minutesDelta,
+      List<String>? externalIdentifiers,
+      String? token,
+      Map<String, dynamic>? credentials,
+      FtpAccount? ftp,
+      List<String>? groupsIds,
+      List<Tag>? groups,
+      List<String>? assetsIds,
+      List<Asset>? assets,
+      List<Access>? access});
+
+  $AlgorithmCopyWith<$Res>? get algorithm;
+  $FtpAccountCopyWith<$Res>? get ftp;
+}
+
+/// @nodoc
+class _$LayrzFunctionCopyWithImpl<$Res, $Val extends LayrzFunction>
+    implements $LayrzFunctionCopyWith<$Res> {
+  _$LayrzFunctionCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? algorithmId = freezed,
+    Object? algorithm = freezed,
+    Object? maximumTime = freezed,
+    Object? minutesDelta = freezed,
+    Object? externalIdentifiers = freezed,
+    Object? token = freezed,
+    Object? credentials = freezed,
+    Object? ftp = freezed,
+    Object? groupsIds = freezed,
+    Object? groups = freezed,
+    Object? assetsIds = freezed,
+    Object? assets = freezed,
+    Object? access = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      algorithmId: freezed == algorithmId
+          ? _value.algorithmId
+          : algorithmId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      algorithm: freezed == algorithm
+          ? _value.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as Algorithm?,
+      maximumTime: freezed == maximumTime
+          ? _value.maximumTime
+          : maximumTime // ignore: cast_nullable_to_non_nullable
+              as double?,
+      minutesDelta: freezed == minutesDelta
+          ? _value.minutesDelta
+          : minutesDelta // ignore: cast_nullable_to_non_nullable
+              as double?,
+      externalIdentifiers: freezed == externalIdentifiers
+          ? _value.externalIdentifiers
+          : externalIdentifiers // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      credentials: freezed == credentials
+          ? _value.credentials
+          : credentials // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      ftp: freezed == ftp
+          ? _value.ftp
+          : ftp // ignore: cast_nullable_to_non_nullable
+              as FtpAccount?,
+      groupsIds: freezed == groupsIds
+          ? _value.groupsIds
+          : groupsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      groups: freezed == groups
+          ? _value.groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Tag>?,
+      assetsIds: freezed == assetsIds
+          ? _value.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      assets: freezed == assets
+          ? _value.assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      access: freezed == access
+          ? _value.access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AlgorithmCopyWith<$Res>? get algorithm {
+    if (_value.algorithm == null) {
+      return null;
+    }
+
+    return $AlgorithmCopyWith<$Res>(_value.algorithm!, (value) {
+      return _then(_value.copyWith(algorithm: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $FtpAccountCopyWith<$Res>? get ftp {
+    if (_value.ftp == null) {
+      return null;
+    }
+
+    return $FtpAccountCopyWith<$Res>(_value.ftp!, (value) {
+      return _then(_value.copyWith(ftp: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_LayrzFunctionCopyWith<$Res>
+    implements $LayrzFunctionCopyWith<$Res> {
+  factory _$$_LayrzFunctionCopyWith(
+          _$_LayrzFunction value, $Res Function(_$_LayrzFunction) then) =
+      __$$_LayrzFunctionCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String? algorithmId,
+      Algorithm? algorithm,
+      double? maximumTime,
+      double? minutesDelta,
+      List<String>? externalIdentifiers,
+      String? token,
+      Map<String, dynamic>? credentials,
+      FtpAccount? ftp,
+      List<String>? groupsIds,
+      List<Tag>? groups,
+      List<String>? assetsIds,
+      List<Asset>? assets,
+      List<Access>? access});
+
+  @override
+  $AlgorithmCopyWith<$Res>? get algorithm;
+  @override
+  $FtpAccountCopyWith<$Res>? get ftp;
+}
+
+/// @nodoc
+class __$$_LayrzFunctionCopyWithImpl<$Res>
+    extends _$LayrzFunctionCopyWithImpl<$Res, _$_LayrzFunction>
+    implements _$$_LayrzFunctionCopyWith<$Res> {
+  __$$_LayrzFunctionCopyWithImpl(
+      _$_LayrzFunction _value, $Res Function(_$_LayrzFunction) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? algorithmId = freezed,
+    Object? algorithm = freezed,
+    Object? maximumTime = freezed,
+    Object? minutesDelta = freezed,
+    Object? externalIdentifiers = freezed,
+    Object? token = freezed,
+    Object? credentials = freezed,
+    Object? ftp = freezed,
+    Object? groupsIds = freezed,
+    Object? groups = freezed,
+    Object? assetsIds = freezed,
+    Object? assets = freezed,
+    Object? access = freezed,
+  }) {
+    return _then(_$_LayrzFunction(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      algorithmId: freezed == algorithmId
+          ? _value.algorithmId
+          : algorithmId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      algorithm: freezed == algorithm
+          ? _value.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as Algorithm?,
+      maximumTime: freezed == maximumTime
+          ? _value.maximumTime
+          : maximumTime // ignore: cast_nullable_to_non_nullable
+              as double?,
+      minutesDelta: freezed == minutesDelta
+          ? _value.minutesDelta
+          : minutesDelta // ignore: cast_nullable_to_non_nullable
+              as double?,
+      externalIdentifiers: freezed == externalIdentifiers
+          ? _value._externalIdentifiers
+          : externalIdentifiers // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      credentials: freezed == credentials
+          ? _value._credentials
+          : credentials // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      ftp: freezed == ftp
+          ? _value.ftp
+          : ftp // ignore: cast_nullable_to_non_nullable
+              as FtpAccount?,
+      groupsIds: freezed == groupsIds
+          ? _value._groupsIds
+          : groupsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      groups: freezed == groups
+          ? _value._groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Tag>?,
+      assetsIds: freezed == assetsIds
+          ? _value._assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      assets: freezed == assets
+          ? _value._assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      access: freezed == access
+          ? _value._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_LayrzFunction implements _LayrzFunction {
+  const _$_LayrzFunction(
+      {required this.id,
+      required this.name,
+      this.algorithmId,
+      this.algorithm,
+      this.maximumTime,
+      this.minutesDelta,
+      final List<String>? externalIdentifiers,
+      this.token,
+      final Map<String, dynamic>? credentials,
+      this.ftp,
+      final List<String>? groupsIds,
+      final List<Tag>? groups,
+      final List<String>? assetsIds,
+      final List<Asset>? assets,
+      final List<Access>? access})
+      : _externalIdentifiers = externalIdentifiers,
+        _credentials = credentials,
+        _groupsIds = groupsIds,
+        _groups = groups,
+        _assetsIds = assetsIds,
+        _assets = assets,
+        _access = access;
+
+  factory _$_LayrzFunction.fromJson(Map<String, dynamic> json) =>
+      _$$_LayrzFunctionFromJson(json);
+
+  /// [id] is the unique identifier of the function.
+  @override
+  final String id;
+
+  /// [name] is the name of the function.
+  @override
+  final String name;
+
+  /// [algorithmId] is the unique identifier of the algorithm.
+  @override
+  final String? algorithmId;
+
+  /// [algorithm] is the algorithm of the function.
+  @override
+  final Algorithm? algorithm;
+
+  /// [maximumTime] is the minimum time of the function.
+  /// Defined in minutes.
+  @override
+  final double? maximumTime;
+
+  /// [minutesDelta] is the minutes delta of the function.
+  /// Defined in minutes.
+  @override
+  final double? minutesDelta;
+
+  /// [externalIdentifiers] is the external identifiers of the function.
+  final List<String>? _externalIdentifiers;
+
+  /// [externalIdentifiers] is the external identifiers of the function.
+  @override
+  List<String>? get externalIdentifiers {
+    final value = _externalIdentifiers;
+    if (value == null) return null;
+    if (_externalIdentifiers is EqualUnmodifiableListView)
+      return _externalIdentifiers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [token] is the token of the function.
+  @override
+  final String? token;
+
+  /// [credentials] is the credentials of the function.
+  final Map<String, dynamic>? _credentials;
+
+  /// [credentials] is the credentials of the function.
+  @override
+  Map<String, dynamic>? get credentials {
+    final value = _credentials;
+    if (value == null) return null;
+    if (_credentials is EqualUnmodifiableMapView) return _credentials;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  /// [ftp] is the ftp of the function.
+  @override
+  final FtpAccount? ftp;
+
+  /// [groupsIds] is the groups ids of the function.
+  final List<String>? _groupsIds;
+
+  /// [groupsIds] is the groups ids of the function.
+  @override
+  List<String>? get groupsIds {
+    final value = _groupsIds;
+    if (value == null) return null;
+    if (_groupsIds is EqualUnmodifiableListView) return _groupsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [groups] is the groups of the function.
+  final List<Tag>? _groups;
+
+  /// [groups] is the groups of the function.
+  @override
+  List<Tag>? get groups {
+    final value = _groups;
+    if (value == null) return null;
+    if (_groups is EqualUnmodifiableListView) return _groups;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [assetsIds] is the assets ids of the function.
+  final List<String>? _assetsIds;
+
+  /// [assetsIds] is the assets ids of the function.
+  @override
+  List<String>? get assetsIds {
+    final value = _assetsIds;
+    if (value == null) return null;
+    if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [assets] is the assets of the function.
+  final List<Asset>? _assets;
+
+  /// [assets] is the assets of the function.
+  @override
+  List<Asset>? get assets {
+    final value = _assets;
+    if (value == null) return null;
+    if (_assets is EqualUnmodifiableListView) return _assets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [access] is the access of the function.
+  final List<Access>? _access;
+
+  /// [access] is the access of the function.
+  @override
+  List<Access>? get access {
+    final value = _access;
+    if (value == null) return null;
+    if (_access is EqualUnmodifiableListView) return _access;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'LayrzFunction(id: $id, name: $name, algorithmId: $algorithmId, algorithm: $algorithm, maximumTime: $maximumTime, minutesDelta: $minutesDelta, externalIdentifiers: $externalIdentifiers, token: $token, credentials: $credentials, ftp: $ftp, groupsIds: $groupsIds, groups: $groups, assetsIds: $assetsIds, assets: $assets, access: $access)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_LayrzFunction &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.algorithmId, algorithmId) ||
+                other.algorithmId == algorithmId) &&
+            (identical(other.algorithm, algorithm) ||
+                other.algorithm == algorithm) &&
+            (identical(other.maximumTime, maximumTime) ||
+                other.maximumTime == maximumTime) &&
+            (identical(other.minutesDelta, minutesDelta) ||
+                other.minutesDelta == minutesDelta) &&
+            const DeepCollectionEquality()
+                .equals(other._externalIdentifiers, _externalIdentifiers) &&
+            (identical(other.token, token) || other.token == token) &&
+            const DeepCollectionEquality()
+                .equals(other._credentials, _credentials) &&
+            (identical(other.ftp, ftp) || other.ftp == ftp) &&
+            const DeepCollectionEquality()
+                .equals(other._groupsIds, _groupsIds) &&
+            const DeepCollectionEquality().equals(other._groups, _groups) &&
+            const DeepCollectionEquality()
+                .equals(other._assetsIds, _assetsIds) &&
+            const DeepCollectionEquality().equals(other._assets, _assets) &&
+            const DeepCollectionEquality().equals(other._access, _access));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      algorithmId,
+      algorithm,
+      maximumTime,
+      minutesDelta,
+      const DeepCollectionEquality().hash(_externalIdentifiers),
+      token,
+      const DeepCollectionEquality().hash(_credentials),
+      ftp,
+      const DeepCollectionEquality().hash(_groupsIds),
+      const DeepCollectionEquality().hash(_groups),
+      const DeepCollectionEquality().hash(_assetsIds),
+      const DeepCollectionEquality().hash(_assets),
+      const DeepCollectionEquality().hash(_access));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_LayrzFunctionCopyWith<_$_LayrzFunction> get copyWith =>
+      __$$_LayrzFunctionCopyWithImpl<_$_LayrzFunction>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_LayrzFunctionToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LayrzFunction implements LayrzFunction {
+  const factory _LayrzFunction(
+      {required final String id,
+      required final String name,
+      final String? algorithmId,
+      final Algorithm? algorithm,
+      final double? maximumTime,
+      final double? minutesDelta,
+      final List<String>? externalIdentifiers,
+      final String? token,
+      final Map<String, dynamic>? credentials,
+      final FtpAccount? ftp,
+      final List<String>? groupsIds,
+      final List<Tag>? groups,
+      final List<String>? assetsIds,
+      final List<Asset>? assets,
+      final List<Access>? access}) = _$_LayrzFunction;
+
+  factory _LayrzFunction.fromJson(Map<String, dynamic> json) =
+      _$_LayrzFunction.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier of the function.
+  String get id;
+  @override
+
+  /// [name] is the name of the function.
+  String get name;
+  @override
+
+  /// [algorithmId] is the unique identifier of the algorithm.
+  String? get algorithmId;
+  @override
+
+  /// [algorithm] is the algorithm of the function.
+  Algorithm? get algorithm;
+  @override
+
+  /// [maximumTime] is the minimum time of the function.
+  /// Defined in minutes.
+  double? get maximumTime;
+  @override
+
+  /// [minutesDelta] is the minutes delta of the function.
+  /// Defined in minutes.
+  double? get minutesDelta;
+  @override
+
+  /// [externalIdentifiers] is the external identifiers of the function.
+  List<String>? get externalIdentifiers;
+  @override
+
+  /// [token] is the token of the function.
+  String? get token;
+  @override
+
+  /// [credentials] is the credentials of the function.
+  Map<String, dynamic>? get credentials;
+  @override
+
+  /// [ftp] is the ftp of the function.
+  FtpAccount? get ftp;
+  @override
+
+  /// [groupsIds] is the groups ids of the function.
+  List<String>? get groupsIds;
+  @override
+
+  /// [groups] is the groups of the function.
+  List<Tag>? get groups;
+  @override
+
+  /// [assetsIds] is the assets ids of the function.
+  List<String>? get assetsIds;
+  @override
+
+  /// [assets] is the assets of the function.
+  List<Asset>? get assets;
+  @override
+
+  /// [access] is the access of the function.
+  List<Access>? get access;
+  @override
+  @JsonKey(ignore: true)
+  _$$_LayrzFunctionCopyWith<_$_LayrzFunction> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -44217,6 +44916,7 @@ mixin _$AtsFeedbackMessege {
   User? get creator => throw _privateConstructorUsedError;
 
   /// [at] Date of creation in UNIX Timestamp.
+  @TimestampOrNullConverter()
   DateTime? get at => throw _privateConstructorUsedError;
 
   /// [app] object from comming feedback message, only will return when FeedbackMessage.source = FeedbackSource.APP
@@ -44245,7 +44945,7 @@ abstract class $AtsFeedbackMessegeCopyWith<$Res> {
       {String? id,
       String? content,
       User? creator,
-      DateTime? at,
+      @TimestampOrNullConverter() DateTime? at,
       RegisteredApp? app,
       @FeedbackSourceOrNullConverter() FeedbackSource? source,
       bool? isRead});
@@ -44344,7 +45044,7 @@ abstract class _$$_AtsFeedbackMessegeCopyWith<$Res>
       {String? id,
       String? content,
       User? creator,
-      DateTime? at,
+      @TimestampOrNullConverter() DateTime? at,
       RegisteredApp? app,
       @FeedbackSourceOrNullConverter() FeedbackSource? source,
       bool? isRead});
@@ -44414,7 +45114,7 @@ class _$_AtsFeedbackMessege implements _AtsFeedbackMessege {
       {this.id,
       this.content,
       this.creator,
-      this.at,
+      @TimestampOrNullConverter() this.at,
       this.app,
       @FeedbackSourceOrNullConverter() this.source,
       this.isRead});
@@ -44436,6 +45136,7 @@ class _$_AtsFeedbackMessege implements _AtsFeedbackMessege {
 
   /// [at] Date of creation in UNIX Timestamp.
   @override
+  @TimestampOrNullConverter()
   final DateTime? at;
 
   /// [app] object from comming feedback message, only will return when FeedbackMessage.source = FeedbackSource.APP
@@ -44495,7 +45196,7 @@ abstract class _AtsFeedbackMessege implements AtsFeedbackMessege {
       {final String? id,
       final String? content,
       final User? creator,
-      final DateTime? at,
+      @TimestampOrNullConverter() final DateTime? at,
       final RegisteredApp? app,
       @FeedbackSourceOrNullConverter() final FeedbackSource? source,
       final bool? isRead}) = _$_AtsFeedbackMessege;
@@ -44518,6 +45219,7 @@ abstract class _AtsFeedbackMessege implements AtsFeedbackMessege {
   @override
 
   /// [at] Date of creation in UNIX Timestamp.
+  @TimestampOrNullConverter()
   DateTime? get at;
   @override
 

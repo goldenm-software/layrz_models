@@ -13,7 +13,7 @@ class AtsFeedbackMessege with _$AtsFeedbackMessege {
     User? creator,
 
     /// [at] Date of creation in UNIX Timestamp.
-    DateTime? at,
+    @TimestampOrNullConverter() DateTime? at,
 
     /// [app] object from comming feedback message, only will return when FeedbackMessage.source = FeedbackSource.APP
     RegisteredApp? app,
