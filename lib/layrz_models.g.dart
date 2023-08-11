@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of layrz_models;
+part of 'layrz_models.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -3918,7 +3918,7 @@ _$_AtsFeedbackMessege _$$_AtsFeedbackMessegeFromJson(
       creator: json['creator'] == null
           ? null
           : User.fromJson(json['creator'] as Map<String, dynamic>),
-      at: json['at'] == null ? null : DateTime.parse(json['at'] as String),
+      at: const TimestampOrNullConverter().fromJson(json['at'] as num?),
       app: json['app'] == null
           ? null
           : RegisteredApp.fromJson(json['app'] as Map<String, dynamic>),
@@ -3933,7 +3933,7 @@ Map<String, dynamic> _$$_AtsFeedbackMessegeToJson(
       'id': instance.id,
       'content': instance.content,
       'creator': instance.creator?.toJson(),
-      'at': instance.at?.toIso8601String(),
+      'at': const TimestampOrNullConverter().toJson(instance.at),
       'app': instance.app?.toJson(),
       'source': const FeedbackSourceOrNullConverter().toJson(instance.source),
       'isRead': instance.isRead,
