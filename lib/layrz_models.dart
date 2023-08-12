@@ -22,6 +22,7 @@ part 'src/converters/duration.dart';
 part 'src/converters/ats_authentication_category.dart';
 part 'src/converters/ats_from_app_.dart';
 part 'src/converters/ats_feedback_source.dart';
+part 'src/converters/ats_exit_execute_status.dart';
 
 // Models
 part 'src/i18n/i18n.dart';
@@ -136,6 +137,7 @@ part 'src/ats/exits/exit_status.dart';
 part 'src/ats/exits/exit.dart';
 part 'src/ats/exits/possible_exit.dart';
 part 'src/ats/exits/execute_exit_input.dart';
+part 'src/ats/exits/execute_exit_history.dart';
 
 // Brickhouse models
 part 'src/brickhouse/alert.dart';

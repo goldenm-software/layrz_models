@@ -50438,6 +50438,322 @@ abstract class _AtsExecuteExitInput implements AtsExecuteExitInput {
       throw _privateConstructorUsedError;
 }
 
+AtsExecuteExitHistory _$AtsExecuteExitHistoryFromJson(
+    Map<String, dynamic> json) {
+  return _AtsExecuteExitHistory.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AtsExecuteExitHistory {
+  /// ID of the recalculation entity. This ID is unique.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// User NAME who execute the exit
+  String? get generateBy => throw _privateConstructorUsedError;
+
+  /// Pump asset name
+  String? get fromAsset => throw _privateConstructorUsedError;
+
+  /// Vehicle asset name
+  String? get toAssetId => throw _privateConstructorUsedError;
+
+  /// Date of execution
+  @TimestampOrNullConverter()
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+
+  /// Reason of any error in execution
+  String? get errorResponse => throw _privateConstructorUsedError;
+
+  /// Execution status to know the process
+  @AtsExitExecuteStatusOrNullConverter()
+  AtsExitExecuteStatus? get status => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AtsExecuteExitHistoryCopyWith<AtsExecuteExitHistory> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AtsExecuteExitHistoryCopyWith<$Res> {
+  factory $AtsExecuteExitHistoryCopyWith(AtsExecuteExitHistory value,
+          $Res Function(AtsExecuteExitHistory) then) =
+      _$AtsExecuteExitHistoryCopyWithImpl<$Res, AtsExecuteExitHistory>;
+  @useResult
+  $Res call(
+      {String? id,
+      String? generateBy,
+      String? fromAsset,
+      String? toAssetId,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      String? errorResponse,
+      @AtsExitExecuteStatusOrNullConverter() AtsExitExecuteStatus? status});
+}
+
+/// @nodoc
+class _$AtsExecuteExitHistoryCopyWithImpl<$Res,
+        $Val extends AtsExecuteExitHistory>
+    implements $AtsExecuteExitHistoryCopyWith<$Res> {
+  _$AtsExecuteExitHistoryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? generateBy = freezed,
+    Object? fromAsset = freezed,
+    Object? toAssetId = freezed,
+    Object? createdAt = freezed,
+    Object? errorResponse = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      generateBy: freezed == generateBy
+          ? _value.generateBy
+          : generateBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromAsset: freezed == fromAsset
+          ? _value.fromAsset
+          : fromAsset // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toAssetId: freezed == toAssetId
+          ? _value.toAssetId
+          : toAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      errorResponse: freezed == errorResponse
+          ? _value.errorResponse
+          : errorResponse // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as AtsExitExecuteStatus?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_AtsExecuteExitHistoryCopyWith<$Res>
+    implements $AtsExecuteExitHistoryCopyWith<$Res> {
+  factory _$$_AtsExecuteExitHistoryCopyWith(_$_AtsExecuteExitHistory value,
+          $Res Function(_$_AtsExecuteExitHistory) then) =
+      __$$_AtsExecuteExitHistoryCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? generateBy,
+      String? fromAsset,
+      String? toAssetId,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      String? errorResponse,
+      @AtsExitExecuteStatusOrNullConverter() AtsExitExecuteStatus? status});
+}
+
+/// @nodoc
+class __$$_AtsExecuteExitHistoryCopyWithImpl<$Res>
+    extends _$AtsExecuteExitHistoryCopyWithImpl<$Res, _$_AtsExecuteExitHistory>
+    implements _$$_AtsExecuteExitHistoryCopyWith<$Res> {
+  __$$_AtsExecuteExitHistoryCopyWithImpl(_$_AtsExecuteExitHistory _value,
+      $Res Function(_$_AtsExecuteExitHistory) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? generateBy = freezed,
+    Object? fromAsset = freezed,
+    Object? toAssetId = freezed,
+    Object? createdAt = freezed,
+    Object? errorResponse = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_$_AtsExecuteExitHistory(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      generateBy: freezed == generateBy
+          ? _value.generateBy
+          : generateBy // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fromAsset: freezed == fromAsset
+          ? _value.fromAsset
+          : fromAsset // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toAssetId: freezed == toAssetId
+          ? _value.toAssetId
+          : toAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      errorResponse: freezed == errorResponse
+          ? _value.errorResponse
+          : errorResponse // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as AtsExitExecuteStatus?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
+  _$_AtsExecuteExitHistory(
+      {this.id,
+      this.generateBy,
+      this.fromAsset,
+      this.toAssetId,
+      @TimestampOrNullConverter() this.createdAt,
+      this.errorResponse,
+      @AtsExitExecuteStatusOrNullConverter() this.status});
+
+  factory _$_AtsExecuteExitHistory.fromJson(Map<String, dynamic> json) =>
+      _$$_AtsExecuteExitHistoryFromJson(json);
+
+  /// ID of the recalculation entity. This ID is unique.
+  @override
+  final String? id;
+
+  /// User NAME who execute the exit
+  @override
+  final String? generateBy;
+
+  /// Pump asset name
+  @override
+  final String? fromAsset;
+
+  /// Vehicle asset name
+  @override
+  final String? toAssetId;
+
+  /// Date of execution
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? createdAt;
+
+  /// Reason of any error in execution
+  @override
+  final String? errorResponse;
+
+  /// Execution status to know the process
+  @override
+  @AtsExitExecuteStatusOrNullConverter()
+  final AtsExitExecuteStatus? status;
+
+  @override
+  String toString() {
+    return 'AtsExecuteExitHistory(id: $id, generateBy: $generateBy, fromAsset: $fromAsset, toAssetId: $toAssetId, createdAt: $createdAt, errorResponse: $errorResponse, status: $status)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AtsExecuteExitHistory &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.generateBy, generateBy) ||
+                other.generateBy == generateBy) &&
+            (identical(other.fromAsset, fromAsset) ||
+                other.fromAsset == fromAsset) &&
+            (identical(other.toAssetId, toAssetId) ||
+                other.toAssetId == toAssetId) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.errorResponse, errorResponse) ||
+                other.errorResponse == errorResponse) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, generateBy, fromAsset,
+      toAssetId, createdAt, errorResponse, status);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AtsExecuteExitHistoryCopyWith<_$_AtsExecuteExitHistory> get copyWith =>
+      __$$_AtsExecuteExitHistoryCopyWithImpl<_$_AtsExecuteExitHistory>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AtsExecuteExitHistoryToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
+  factory _AtsExecuteExitHistory(
+      {final String? id,
+      final String? generateBy,
+      final String? fromAsset,
+      final String? toAssetId,
+      @TimestampOrNullConverter() final DateTime? createdAt,
+      final String? errorResponse,
+      @AtsExitExecuteStatusOrNullConverter()
+      final AtsExitExecuteStatus? status}) = _$_AtsExecuteExitHistory;
+
+  factory _AtsExecuteExitHistory.fromJson(Map<String, dynamic> json) =
+      _$_AtsExecuteExitHistory.fromJson;
+
+  @override
+
+  /// ID of the recalculation entity. This ID is unique.
+  String? get id;
+  @override
+
+  /// User NAME who execute the exit
+  String? get generateBy;
+  @override
+
+  /// Pump asset name
+  String? get fromAsset;
+  @override
+
+  /// Vehicle asset name
+  String? get toAssetId;
+  @override
+
+  /// Date of execution
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+  @override
+
+  /// Reason of any error in execution
+  String? get errorResponse;
+  @override
+
+  /// Execution status to know the process
+  @AtsExitExecuteStatusOrNullConverter()
+  AtsExitExecuteStatus? get status;
+  @override
+  @JsonKey(ignore: true)
+  _$$_AtsExecuteExitHistoryCopyWith<_$_AtsExecuteExitHistory> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 BrickhouseAlert _$BrickhouseAlertFromJson(Map<String, dynamic> json) {
   return _BrickhouseAlert.fromJson(json);
 }
