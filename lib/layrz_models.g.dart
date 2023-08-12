@@ -4355,6 +4355,33 @@ Map<String, dynamic> _$$_AtsExecuteExitInputToJson(
       'fromApp': const AtsFromAppOrNullConverter().toJson(instance.fromApp),
     };
 
+_$_AtsExecuteExitHistory _$$_AtsExecuteExitHistoryFromJson(
+        Map<String, dynamic> json) =>
+    _$_AtsExecuteExitHistory(
+      id: json['id'] as String?,
+      generateBy: json['generateBy'] as String?,
+      fromAsset: json['fromAsset'] as String?,
+      toAssetId: json['toAssetId'] as String?,
+      createdAt:
+          const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
+      errorResponse: json['errorResponse'] as String?,
+      status: const AtsExitExecuteStatusOrNullConverter()
+          .fromJson(json['status'] as String?),
+    );
+
+Map<String, dynamic> _$$_AtsExecuteExitHistoryToJson(
+        _$_AtsExecuteExitHistory instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'generateBy': instance.generateBy,
+      'fromAsset': instance.fromAsset,
+      'toAssetId': instance.toAssetId,
+      'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+      'errorResponse': instance.errorResponse,
+      'status':
+          const AtsExitExecuteStatusOrNullConverter().toJson(instance.status),
+    };
+
 _$_BrickhouseAlert _$$_BrickhouseAlertFromJson(Map<String, dynamic> json) =>
     _$_BrickhouseAlert(
       id: json['id'] as String,

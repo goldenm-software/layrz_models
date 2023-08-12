@@ -1,19 +1,22 @@
 # Changelog
+
+## 2.0.14
+- Implemented '[AtsExecuteExitHistory]' and '[AtsExitExecuteStatusOrNullConverter]' 
 ## 2.0.13
-- Changed `[AtsFeedbackMessege]` from `TimeStampConverter` to `at`
+- Changed '[AtsFeedbackMessege]' from 'TimeStampConverter' to 'at'
 
 ## 2.0.12
-- Changed `LayrzFunction.maximumTime` from `Duration` to `double`
-- Changed `LayrzFunction.minutesDelta` from `Duration` to `double`
+- Changed 'LayrzFunction.maximumTime' from 'Duration' to 'double'
+- Changed 'LayrzFunction.minutesDelta' from 'Duration' to 'double'
 
 ## 2.0.11
-- Updated `DurationConverter()` and `DurationConverterOrNull()` to support `int` and `double` values. (Basically any `num` type)
+- Updated 'DurationConverter()' and 'DurationConverterOrNull()' to support 'int' and 'double' values. (Basically any 'num' type)
 
 ## 2.0.10
-- Fixed `LayrzFunction.credentials` from `List<CredentialField>` to `Map<String, dynamic>`
+- Fixed 'LayrzFunction.credentials' from 'List<CredentialField>' to 'Map<String, dynamic>'
 
 ## 2.0.9
-- Registered model `LayrzFunction` and `FtpAccount` for Layrz Functions.
+- Registered model 'LayrzFunction' and 'FtpAccount' for Layrz Functions.
 
 ## 2.0.8
 - AtsReceptionInput changes:
