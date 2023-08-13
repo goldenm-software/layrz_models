@@ -4361,7 +4361,7 @@ _$_AtsExecuteExitHistory _$$_AtsExecuteExitHistoryFromJson(
       id: json['id'] as String?,
       generateBy: json['generateBy'] as String?,
       fromAsset: json['fromAsset'] as String?,
-      toAssetId: json['toAssetId'] as String?,
+      toAsset: json['toAsset'] as String?,
       createdAt:
           const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
       errorResponse: json['errorResponse'] as String?,
@@ -4375,7 +4375,7 @@ Map<String, dynamic> _$$_AtsExecuteExitHistoryToJson(
       'id': instance.id,
       'generateBy': instance.generateBy,
       'fromAsset': instance.fromAsset,
-      'toAssetId': instance.toAssetId,
+      'toAsset': instance.toAsset,
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
       'errorResponse': instance.errorResponse,
       'status':
