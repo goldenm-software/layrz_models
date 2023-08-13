@@ -7,7 +7,7 @@ class AtsExecuteExitHistory with _$AtsExecuteExitHistory {
     String? id,
 
     /// User NAME who execute the exit
-    String? generateBy,
+    String? generatedBy,
 
     /// Pump asset name
     String? fromAsset,
