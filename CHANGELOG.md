@@ -1,4 +1,6 @@
 # Changelog
+## 2.0.16
+- Change from [AtsExecuteExitHistory] generateBy to generatedBy
 ## 2.0.15
 - Change from [AtsExecuteExitHistory] fromAssetId to fromAsset
 ## 2.0.14

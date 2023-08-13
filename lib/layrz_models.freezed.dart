@@ -50449,7 +50449,7 @@ mixin _$AtsExecuteExitHistory {
   String? get id => throw _privateConstructorUsedError;
 
   /// User NAME who execute the exit
-  String? get generateBy => throw _privateConstructorUsedError;
+  String? get generatedBy => throw _privateConstructorUsedError;
 
   /// Pump asset name
   String? get fromAsset => throw _privateConstructorUsedError;
@@ -50482,7 +50482,7 @@ abstract class $AtsExecuteExitHistoryCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
-      String? generateBy,
+      String? generatedBy,
       String? fromAsset,
       String? toAsset,
       @TimestampOrNullConverter() DateTime? createdAt,
@@ -50505,7 +50505,7 @@ class _$AtsExecuteExitHistoryCopyWithImpl<$Res,
   @override
   $Res call({
     Object? id = freezed,
-    Object? generateBy = freezed,
+    Object? generatedBy = freezed,
     Object? fromAsset = freezed,
     Object? toAsset = freezed,
     Object? createdAt = freezed,
@@ -50517,9 +50517,9 @@ class _$AtsExecuteExitHistoryCopyWithImpl<$Res,
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      generateBy: freezed == generateBy
-          ? _value.generateBy
-          : generateBy // ignore: cast_nullable_to_non_nullable
+      generatedBy: freezed == generatedBy
+          ? _value.generatedBy
+          : generatedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       fromAsset: freezed == fromAsset
           ? _value.fromAsset
@@ -50555,7 +50555,7 @@ abstract class _$$_AtsExecuteExitHistoryCopyWith<$Res>
   @useResult
   $Res call(
       {String? id,
-      String? generateBy,
+      String? generatedBy,
       String? fromAsset,
       String? toAsset,
       @TimestampOrNullConverter() DateTime? createdAt,
@@ -50575,7 +50575,7 @@ class __$$_AtsExecuteExitHistoryCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? generateBy = freezed,
+    Object? generatedBy = freezed,
     Object? fromAsset = freezed,
     Object? toAsset = freezed,
     Object? createdAt = freezed,
@@ -50587,9 +50587,9 @@ class __$$_AtsExecuteExitHistoryCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      generateBy: freezed == generateBy
-          ? _value.generateBy
-          : generateBy // ignore: cast_nullable_to_non_nullable
+      generatedBy: freezed == generatedBy
+          ? _value.generatedBy
+          : generatedBy // ignore: cast_nullable_to_non_nullable
               as String?,
       fromAsset: freezed == fromAsset
           ? _value.fromAsset
@@ -50620,7 +50620,7 @@ class __$$_AtsExecuteExitHistoryCopyWithImpl<$Res>
 class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
   _$_AtsExecuteExitHistory(
       {this.id,
-      this.generateBy,
+      this.generatedBy,
       this.fromAsset,
       this.toAsset,
       @TimestampOrNullConverter() this.createdAt,
@@ -50636,7 +50636,7 @@ class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
 
   /// User NAME who execute the exit
   @override
-  final String? generateBy;
+  final String? generatedBy;
 
   /// Pump asset name
   @override
@@ -50662,7 +50662,7 @@ class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
 
   @override
   String toString() {
-    return 'AtsExecuteExitHistory(id: $id, generateBy: $generateBy, fromAsset: $fromAsset, toAsset: $toAsset, createdAt: $createdAt, errorResponse: $errorResponse, status: $status)';
+    return 'AtsExecuteExitHistory(id: $id, generatedBy: $generatedBy, fromAsset: $fromAsset, toAsset: $toAsset, createdAt: $createdAt, errorResponse: $errorResponse, status: $status)';
   }
 
   @override
@@ -50671,8 +50671,8 @@ class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
         (other.runtimeType == runtimeType &&
             other is _$_AtsExecuteExitHistory &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.generateBy, generateBy) ||
-                other.generateBy == generateBy) &&
+            (identical(other.generatedBy, generatedBy) ||
+                other.generatedBy == generatedBy) &&
             (identical(other.fromAsset, fromAsset) ||
                 other.fromAsset == fromAsset) &&
             (identical(other.toAsset, toAsset) || other.toAsset == toAsset) &&
@@ -50685,7 +50685,7 @@ class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, generateBy, fromAsset,
+  int get hashCode => Object.hash(runtimeType, id, generatedBy, fromAsset,
       toAsset, createdAt, errorResponse, status);
 
   @JsonKey(ignore: true)
@@ -50706,7 +50706,7 @@ class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
 abstract class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
   factory _AtsExecuteExitHistory(
       {final String? id,
-      final String? generateBy,
+      final String? generatedBy,
       final String? fromAsset,
       final String? toAsset,
       @TimestampOrNullConverter() final DateTime? createdAt,
@@ -50724,7 +50724,7 @@ abstract class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
   @override
 
   /// User NAME who execute the exit
-  String? get generateBy;
+  String? get generatedBy;
   @override
 
   /// Pump asset name
