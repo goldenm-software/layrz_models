@@ -1,5 +1,6 @@
 # Changelog
-
+## 2.0.15
+- Change from [AtsExecuteExitHistory] fromAssetId to fromAsset
 ## 2.0.14
 - Implemented '[AtsExecuteExitHistory]' and '[AtsExitExecuteStatusOrNullConverter]' 
 ## 2.0.13

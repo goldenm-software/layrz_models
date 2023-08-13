@@ -13,7 +13,7 @@ class AtsExecuteExitHistory with _$AtsExecuteExitHistory {
     String? fromAsset,
 
     /// Vehicle asset name
-    String? toAssetId,
+    String? toAsset,
 
     /// Date of execution
     @TimestampOrNullConverter() DateTime? createdAt,

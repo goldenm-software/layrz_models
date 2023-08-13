@@ -50455,7 +50455,7 @@ mixin _$AtsExecuteExitHistory {
   String? get fromAsset => throw _privateConstructorUsedError;
 
   /// Vehicle asset name
-  String? get toAssetId => throw _privateConstructorUsedError;
+  String? get toAsset => throw _privateConstructorUsedError;
 
   /// Date of execution
   @TimestampOrNullConverter()
@@ -50484,7 +50484,7 @@ abstract class $AtsExecuteExitHistoryCopyWith<$Res> {
       {String? id,
       String? generateBy,
       String? fromAsset,
-      String? toAssetId,
+      String? toAsset,
       @TimestampOrNullConverter() DateTime? createdAt,
       String? errorResponse,
       @AtsExitExecuteStatusOrNullConverter() AtsExitExecuteStatus? status});
@@ -50507,7 +50507,7 @@ class _$AtsExecuteExitHistoryCopyWithImpl<$Res,
     Object? id = freezed,
     Object? generateBy = freezed,
     Object? fromAsset = freezed,
-    Object? toAssetId = freezed,
+    Object? toAsset = freezed,
     Object? createdAt = freezed,
     Object? errorResponse = freezed,
     Object? status = freezed,
@@ -50525,9 +50525,9 @@ class _$AtsExecuteExitHistoryCopyWithImpl<$Res,
           ? _value.fromAsset
           : fromAsset // ignore: cast_nullable_to_non_nullable
               as String?,
-      toAssetId: freezed == toAssetId
-          ? _value.toAssetId
-          : toAssetId // ignore: cast_nullable_to_non_nullable
+      toAsset: freezed == toAsset
+          ? _value.toAsset
+          : toAsset // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -50557,7 +50557,7 @@ abstract class _$$_AtsExecuteExitHistoryCopyWith<$Res>
       {String? id,
       String? generateBy,
       String? fromAsset,
-      String? toAssetId,
+      String? toAsset,
       @TimestampOrNullConverter() DateTime? createdAt,
       String? errorResponse,
       @AtsExitExecuteStatusOrNullConverter() AtsExitExecuteStatus? status});
@@ -50577,7 +50577,7 @@ class __$$_AtsExecuteExitHistoryCopyWithImpl<$Res>
     Object? id = freezed,
     Object? generateBy = freezed,
     Object? fromAsset = freezed,
-    Object? toAssetId = freezed,
+    Object? toAsset = freezed,
     Object? createdAt = freezed,
     Object? errorResponse = freezed,
     Object? status = freezed,
@@ -50595,9 +50595,9 @@ class __$$_AtsExecuteExitHistoryCopyWithImpl<$Res>
           ? _value.fromAsset
           : fromAsset // ignore: cast_nullable_to_non_nullable
               as String?,
-      toAssetId: freezed == toAssetId
-          ? _value.toAssetId
-          : toAssetId // ignore: cast_nullable_to_non_nullable
+      toAsset: freezed == toAsset
+          ? _value.toAsset
+          : toAsset // ignore: cast_nullable_to_non_nullable
               as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
@@ -50622,7 +50622,7 @@ class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
       {this.id,
       this.generateBy,
       this.fromAsset,
-      this.toAssetId,
+      this.toAsset,
       @TimestampOrNullConverter() this.createdAt,
       this.errorResponse,
       @AtsExitExecuteStatusOrNullConverter() this.status});
@@ -50644,7 +50644,7 @@ class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
 
   /// Vehicle asset name
   @override
-  final String? toAssetId;
+  final String? toAsset;
 
   /// Date of execution
   @override
@@ -50662,7 +50662,7 @@ class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
 
   @override
   String toString() {
-    return 'AtsExecuteExitHistory(id: $id, generateBy: $generateBy, fromAsset: $fromAsset, toAssetId: $toAssetId, createdAt: $createdAt, errorResponse: $errorResponse, status: $status)';
+    return 'AtsExecuteExitHistory(id: $id, generateBy: $generateBy, fromAsset: $fromAsset, toAsset: $toAsset, createdAt: $createdAt, errorResponse: $errorResponse, status: $status)';
   }
 
   @override
@@ -50675,8 +50675,7 @@ class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
                 other.generateBy == generateBy) &&
             (identical(other.fromAsset, fromAsset) ||
                 other.fromAsset == fromAsset) &&
-            (identical(other.toAssetId, toAssetId) ||
-                other.toAssetId == toAssetId) &&
+            (identical(other.toAsset, toAsset) || other.toAsset == toAsset) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.errorResponse, errorResponse) ||
@@ -50687,7 +50686,7 @@ class _$_AtsExecuteExitHistory implements _AtsExecuteExitHistory {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, generateBy, fromAsset,
-      toAssetId, createdAt, errorResponse, status);
+      toAsset, createdAt, errorResponse, status);
 
   @JsonKey(ignore: true)
   @override
@@ -50709,7 +50708,7 @@ abstract class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
       {final String? id,
       final String? generateBy,
       final String? fromAsset,
-      final String? toAssetId,
+      final String? toAsset,
       @TimestampOrNullConverter() final DateTime? createdAt,
       final String? errorResponse,
       @AtsExitExecuteStatusOrNullConverter()
@@ -50733,7 +50732,7 @@ abstract class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
   @override
 
   /// Vehicle asset name
-  String? get toAssetId;
+  String? get toAsset;
   @override
 
   /// Date of execution
