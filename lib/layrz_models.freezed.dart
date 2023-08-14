@@ -47073,6 +47073,208 @@ abstract class _AtsTransportInformation implements AtsTransportInformation {
       get copyWith => throw _privateConstructorUsedError;
 }
 
+AtsCommandResult _$AtsCommandResultFromJson(Map<String, dynamic> json) {
+  return _AtsCommandResult.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AtsCommandResult {
+  /// [String] Command sent to the device.
+  String? get request => throw _privateConstructorUsedError;
+
+  /// [String] Command response.
+  String? get response => throw _privateConstructorUsedError;
+
+  /// [DateTime] Command execution date.
+  @TimestampOrNullConverter()
+  DateTime? get executedAt => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AtsCommandResultCopyWith<AtsCommandResult> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AtsCommandResultCopyWith<$Res> {
+  factory $AtsCommandResultCopyWith(
+          AtsCommandResult value, $Res Function(AtsCommandResult) then) =
+      _$AtsCommandResultCopyWithImpl<$Res, AtsCommandResult>;
+  @useResult
+  $Res call(
+      {String? request,
+      String? response,
+      @TimestampOrNullConverter() DateTime? executedAt});
+}
+
+/// @nodoc
+class _$AtsCommandResultCopyWithImpl<$Res, $Val extends AtsCommandResult>
+    implements $AtsCommandResultCopyWith<$Res> {
+  _$AtsCommandResultCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? request = freezed,
+    Object? response = freezed,
+    Object? executedAt = freezed,
+  }) {
+    return _then(_value.copyWith(
+      request: freezed == request
+          ? _value.request
+          : request // ignore: cast_nullable_to_non_nullable
+              as String?,
+      response: freezed == response
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as String?,
+      executedAt: freezed == executedAt
+          ? _value.executedAt
+          : executedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_AtsCommandResultCopyWith<$Res>
+    implements $AtsCommandResultCopyWith<$Res> {
+  factory _$$_AtsCommandResultCopyWith(
+          _$_AtsCommandResult value, $Res Function(_$_AtsCommandResult) then) =
+      __$$_AtsCommandResultCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? request,
+      String? response,
+      @TimestampOrNullConverter() DateTime? executedAt});
+}
+
+/// @nodoc
+class __$$_AtsCommandResultCopyWithImpl<$Res>
+    extends _$AtsCommandResultCopyWithImpl<$Res, _$_AtsCommandResult>
+    implements _$$_AtsCommandResultCopyWith<$Res> {
+  __$$_AtsCommandResultCopyWithImpl(
+      _$_AtsCommandResult _value, $Res Function(_$_AtsCommandResult) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? request = freezed,
+    Object? response = freezed,
+    Object? executedAt = freezed,
+  }) {
+    return _then(_$_AtsCommandResult(
+      request: freezed == request
+          ? _value.request
+          : request // ignore: cast_nullable_to_non_nullable
+              as String?,
+      response: freezed == response
+          ? _value.response
+          : response // ignore: cast_nullable_to_non_nullable
+              as String?,
+      executedAt: freezed == executedAt
+          ? _value.executedAt
+          : executedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_AtsCommandResult implements _AtsCommandResult {
+  const _$_AtsCommandResult(
+      {this.request,
+      this.response,
+      @TimestampOrNullConverter() this.executedAt});
+
+  factory _$_AtsCommandResult.fromJson(Map<String, dynamic> json) =>
+      _$$_AtsCommandResultFromJson(json);
+
+  /// [String] Command sent to the device.
+  @override
+  final String? request;
+
+  /// [String] Command response.
+  @override
+  final String? response;
+
+  /// [DateTime] Command execution date.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? executedAt;
+
+  @override
+  String toString() {
+    return 'AtsCommandResult(request: $request, response: $response, executedAt: $executedAt)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AtsCommandResult &&
+            (identical(other.request, request) || other.request == request) &&
+            (identical(other.response, response) ||
+                other.response == response) &&
+            (identical(other.executedAt, executedAt) ||
+                other.executedAt == executedAt));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, request, response, executedAt);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AtsCommandResultCopyWith<_$_AtsCommandResult> get copyWith =>
+      __$$_AtsCommandResultCopyWithImpl<_$_AtsCommandResult>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AtsCommandResultToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AtsCommandResult implements AtsCommandResult {
+  const factory _AtsCommandResult(
+          {final String? request,
+          final String? response,
+          @TimestampOrNullConverter() final DateTime? executedAt}) =
+      _$_AtsCommandResult;
+
+  factory _AtsCommandResult.fromJson(Map<String, dynamic> json) =
+      _$_AtsCommandResult.fromJson;
+
+  @override
+
+  /// [String] Command sent to the device.
+  String? get request;
+  @override
+
+  /// [String] Command response.
+  String? get response;
+  @override
+
+  /// [DateTime] Command execution date.
+  @TimestampOrNullConverter()
+  DateTime? get executedAt;
+  @override
+  @JsonKey(ignore: true)
+  _$$_AtsCommandResultCopyWith<_$_AtsCommandResult> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 AtsCompanyInformation _$AtsCompanyInformationFromJson(
     Map<String, dynamic> json) {
   return _AtsCompanyInformation.fromJson(json);

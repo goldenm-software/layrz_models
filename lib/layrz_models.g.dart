@@ -4083,6 +4083,22 @@ Map<String, dynamic> _$$_AtsTransportInformationToJson(
       'vehicleUf': instance.vehicleUf,
     };
 
+_$_AtsCommandResult _$$_AtsCommandResultFromJson(Map<String, dynamic> json) =>
+    _$_AtsCommandResult(
+      request: json['request'] as String?,
+      response: json['response'] as String?,
+      executedAt:
+          const TimestampOrNullConverter().fromJson(json['executedAt'] as num?),
+    );
+
+Map<String, dynamic> _$$_AtsCommandResultToJson(_$_AtsCommandResult instance) =>
+    <String, dynamic>{
+      'request': instance.request,
+      'response': instance.response,
+      'executedAt':
+          const TimestampOrNullConverter().toJson(instance.executedAt),
+    };
+
 _$_AtsCompanyInformation _$$_AtsCompanyInformationFromJson(
         Map<String, dynamic> json) =>
     _$_AtsCompanyInformation(
