@@ -123,6 +123,7 @@ part 'src/ats/feedback_messege.dart';
 part 'src/ats/event.dart';
 part 'src/ats/ns_license.dart';
 part 'src/ats/transport_information.dart';
+part 'src/ats/command_result.dart';
 
 // ATS Reception Models
 part 'src/ats/reception/company_information.dart';
