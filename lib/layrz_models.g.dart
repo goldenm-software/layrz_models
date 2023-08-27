@@ -4817,6 +4817,10 @@ _$_MappitRoute _$$_MappitRouteFromJson(Map<String, dynamic> json) =>
           ?.map((e) =>
               MappitRouteLinkingHistory.fromJson(e as Map<String, dynamic>))
           .toList(),
+      ownerId: json['ownerId'] as String?,
+      owner: json['owner'] == null
+          ? null
+          : User.fromJson(json['owner'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_MappitRouteToJson(_$_MappitRoute instance) =>
@@ -4829,6 +4833,8 @@ Map<String, dynamic> _$$_MappitRouteToJson(_$_MappitRoute instance) =>
       'geofencesIds': instance.geofencesIds,
       'assignmentsHistory':
           instance.assignmentsHistory?.map((e) => e.toJson()).toList(),
+      'ownerId': instance.ownerId,
+      'owner': instance.owner?.toJson(),
     };
 
 _$_MappitLaborHour _$$_MappitLaborHourFromJson(Map<String, dynamic> json) =>

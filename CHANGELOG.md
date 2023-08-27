@@ -1,4 +1,7 @@
 # Changelog
+## 2.0.19
+- Added `owner` and `ownerId` to [MappitRoute] model
+
 ## 2.0.18
 - Added `owner` and `ownerId` to [Geofence] model
 
