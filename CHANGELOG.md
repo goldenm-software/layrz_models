@@ -1,12 +1,19 @@
 # Changelog
+## 2.0.18
+- Added `owner` and `ownerId` to [Geofence] model
+
 ## 2.0.17
 - Create [AtsCommandResult]
+
 ## 2.0.16
 - Change from [AtsExecuteExitHistory] generateBy to generatedBy
+
 ## 2.0.15
 - Change from [AtsExecuteExitHistory] fromAssetId to fromAsset
+
 ## 2.0.14
 - Implemented '[AtsExecuteExitHistory]' and '[AtsExitExecuteStatusOrNullConverter]' 
+
 ## 2.0.13
 - Changed '[AtsFeedbackMessege]' from 'TimeStampConverter' to 'at'
 

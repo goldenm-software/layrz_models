@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'layrz_models.dart';
+part of layrz_models;
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -979,6 +979,10 @@ _$_Geofence _$$_GeofenceFromJson(Map<String, dynamic> json) => _$_Geofence(
       customFields: (json['customFields'] as List<dynamic>?)
           ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
           .toList(),
+      ownerId: json['ownerId'] as String?,
+      owner: json['owner'] == null
+          ? null
+          : User.fromJson(json['owner'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_GeofenceToJson(_$_Geofence instance) =>
@@ -997,6 +1001,8 @@ Map<String, dynamic> _$$_GeofenceToJson(_$_Geofence instance) =>
       'children': instance.children?.map((e) => e.toJson()).toList(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'customFields': instance.customFields?.map((e) => e.toJson()).toList(),
+      'ownerId': instance.ownerId,
+      'owner': instance.owner?.toJson(),
     };
 
 _$_GeofenceInput _$$_GeofenceInputFromJson(Map<String, dynamic> json) =>

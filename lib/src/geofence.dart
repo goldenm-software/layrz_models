@@ -191,6 +191,12 @@ class Geofence with _$Geofence {
     /// List of [customFields] linked to the geofence. Please read the documentation for [CustomField]
     /// for more details about the fields.
     List<CustomField>? customFields,
+
+    /// [ownerId] refers to the owner of the geofence.
+    String? ownerId,
+
+    /// [owner] refers to the owner of the geofence.
+    User? owner,
   }) = _Geofence;
 
   factory Geofence.fromJson(Map<String, dynamic> json) => _$GeofenceFromJson(json);
