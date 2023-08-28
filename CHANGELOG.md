@@ -1,4 +1,7 @@
 # Changelog
+## 2.0.20
+- Added `owner` and `ownerId` to [Tag] model
+
 ## 2.0.19
 - Added `owner` and `ownerId` to [MappitRoute] model
 

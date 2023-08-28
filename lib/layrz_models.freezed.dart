@@ -2131,6 +2131,12 @@ mixin _$Tag {
   /// Is a list of granted access to this entity.
   List<Access>? get access => throw _privateConstructorUsedError;
 
+  /// [owner] is the owner of this entity.
+  User? get owner => throw _privateConstructorUsedError;
+
+  /// [ownerId] is the ID of the owner of this entity.
+  String? get ownerId => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TagCopyWith<Tag> get copyWith => throw _privateConstructorUsedError;
@@ -2190,9 +2196,12 @@ abstract class $TagCopyWith<$Res> {
       List<String>? workspacesIds,
       List<VisionProfile>? visionProfiles,
       List<String>? visionProfilesIds,
-      List<Access>? access});
+      List<Access>? access,
+      User? owner,
+      String? ownerId});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
+  $UserCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
@@ -2253,6 +2262,8 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? visionProfiles = freezed,
     Object? visionProfilesIds = freezed,
     Object? access = freezed,
+    Object? owner = freezed,
+    Object? ownerId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -2439,6 +2450,14 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      owner: freezed == owner
+          ? _value.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
+      ownerId: freezed == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -2451,6 +2470,18 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
 
     return $AvatarCopyWith<$Res>(_value.dynamicIcon!, (value) {
       return _then(_value.copyWith(dynamicIcon: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get owner {
+    if (_value.owner == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.owner!, (value) {
+      return _then(_value.copyWith(owner: value) as $Val);
     });
   }
 }
@@ -2510,10 +2541,14 @@ abstract class _$$_TagCopyWith<$Res> implements $TagCopyWith<$Res> {
       List<String>? workspacesIds,
       List<VisionProfile>? visionProfiles,
       List<String>? visionProfilesIds,
-      List<Access>? access});
+      List<Access>? access,
+      User? owner,
+      String? ownerId});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
+  @override
+  $UserCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
@@ -2571,6 +2606,8 @@ class __$$_TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$_Tag>
     Object? visionProfiles = freezed,
     Object? visionProfilesIds = freezed,
     Object? access = freezed,
+    Object? owner = freezed,
+    Object? ownerId = freezed,
   }) {
     return _then(_$_Tag(
       id: null == id
@@ -2757,6 +2794,14 @@ class __$$_TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$_Tag>
           ? _value._access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      owner: freezed == owner
+          ? _value.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
+      ownerId: freezed == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -2810,7 +2855,9 @@ class _$_Tag implements _Tag {
       final List<String>? workspacesIds,
       final List<VisionProfile>? visionProfiles,
       final List<String>? visionProfilesIds,
-      final List<Access>? access})
+      final List<Access>? access,
+      this.owner,
+      this.ownerId})
       : _users = users,
         _usersIds = usersIds,
         _outboundServices = outboundServices,
@@ -3420,9 +3467,17 @@ class _$_Tag implements _Tag {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [owner] is the owner of this entity.
+  @override
+  final User? owner;
+
+  /// [ownerId] is the ID of the owner of this entity.
+  @override
+  final String? ownerId;
+
   @override
   String toString() {
-    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, access: $access)';
+    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, access: $access, owner: $owner, ownerId: $ownerId)';
   }
 
   @override
@@ -3508,7 +3563,9 @@ class _$_Tag implements _Tag {
                 .equals(other._visionProfiles, _visionProfiles) &&
             const DeepCollectionEquality()
                 .equals(other._visionProfilesIds, _visionProfilesIds) &&
-            const DeepCollectionEquality().equals(other._access, _access));
+            const DeepCollectionEquality().equals(other._access, _access) &&
+            (identical(other.owner, owner) || other.owner == owner) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId));
   }
 
   @JsonKey(ignore: true)
@@ -3560,7 +3617,9 @@ class _$_Tag implements _Tag {
         const DeepCollectionEquality().hash(_workspacesIds),
         const DeepCollectionEquality().hash(_visionProfiles),
         const DeepCollectionEquality().hash(_visionProfilesIds),
-        const DeepCollectionEquality().hash(_access)
+        const DeepCollectionEquality().hash(_access),
+        owner,
+        ownerId
       ]);
 
   @JsonKey(ignore: true)
@@ -3627,7 +3686,9 @@ abstract class _Tag implements Tag {
       final List<String>? workspacesIds,
       final List<VisionProfile>? visionProfiles,
       final List<String>? visionProfilesIds,
-      final List<Access>? access}) = _$_Tag;
+      final List<Access>? access,
+      final User? owner,
+      final String? ownerId}) = _$_Tag;
 
   factory _Tag.fromJson(Map<String, dynamic> json) = _$_Tag.fromJson;
 
@@ -3818,6 +3879,14 @@ abstract class _Tag implements Tag {
 
   /// Is a list of granted access to this entity.
   List<Access>? get access;
+  @override
+
+  /// [owner] is the owner of this entity.
+  User? get owner;
+  @override
+
+  /// [ownerId] is the ID of the owner of this entity.
+  String? get ownerId;
   @override
   @JsonKey(ignore: true)
   _$$_TagCopyWith<_$_Tag> get copyWith => throw _privateConstructorUsedError;
