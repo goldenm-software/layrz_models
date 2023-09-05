@@ -45,6 +45,12 @@ class MappitRoute with _$MappitRoute {
 
     /// [assignmentsHistory] is the history of the link and unlink operations of this route
     List<MappitRouteLinkingHistory>? assignmentsHistory,
+
+    /// [ownerId] refers to the owner of the geofence.
+    String? ownerId,
+
+    /// [owner] refers to the owner of the geofence.
+    User? owner,
   }) = _MappitRoute;
 
   factory MappitRoute.fromJson(Map<String, dynamic> json) => _$MappitRouteFromJson(json);

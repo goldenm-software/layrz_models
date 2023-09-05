@@ -291,6 +291,10 @@ _$_Tag _$$_TagFromJson(Map<String, dynamic> json) => _$_Tag(
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
+      owner: json['owner'] == null
+          ? null
+          : User.fromJson(json['owner'] as Map<String, dynamic>),
+      ownerId: json['ownerId'] as String?,
     );
 
 Map<String, dynamic> _$$_TagToJson(_$_Tag instance) => <String, dynamic>{
@@ -346,6 +350,8 @@ Map<String, dynamic> _$$_TagToJson(_$_Tag instance) => <String, dynamic>{
           instance.visionProfiles?.map((e) => e.toJson()).toList(),
       'visionProfilesIds': instance.visionProfilesIds,
       'access': instance.access?.map((e) => e.toJson()).toList(),
+      'owner': instance.owner?.toJson(),
+      'ownerId': instance.ownerId,
     };
 
 _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
@@ -979,6 +985,10 @@ _$_Geofence _$$_GeofenceFromJson(Map<String, dynamic> json) => _$_Geofence(
       customFields: (json['customFields'] as List<dynamic>?)
           ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
           .toList(),
+      ownerId: json['ownerId'] as String?,
+      owner: json['owner'] == null
+          ? null
+          : User.fromJson(json['owner'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_GeofenceToJson(_$_Geofence instance) =>
@@ -997,6 +1007,8 @@ Map<String, dynamic> _$$_GeofenceToJson(_$_Geofence instance) =>
       'children': instance.children?.map((e) => e.toJson()).toList(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'customFields': instance.customFields?.map((e) => e.toJson()).toList(),
+      'ownerId': instance.ownerId,
+      'owner': instance.owner?.toJson(),
     };
 
 _$_GeofenceInput _$$_GeofenceInputFromJson(Map<String, dynamic> json) =>
@@ -4427,7 +4439,7 @@ _$_BrickhouseAlert _$$_BrickhouseAlertFromJson(Map<String, dynamic> json) =>
           .fromJson(json['curfewStartHour'] as int?),
       curfewEndHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
           .fromJson(json['curfewEndHour'] as int?),
-      curfewTimezone: json['curfewTimezone'] as String?,
+      timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
           ?.map((e) => const WeekdayConverter().fromJson(e as String))
           .toList(),
@@ -4465,7 +4477,7 @@ Map<String, dynamic> _$$_BrickhouseAlertToJson(_$_BrickhouseAlert instance) =>
           .toJson(instance.curfewStartHour),
       'curfewEndHour': const BrickhouseTimeOfDayMinuteOrNullConverter()
           .toJson(instance.curfewEndHour),
-      'curfewTimezone': instance.curfewTimezone,
+      'timezone': instance.timezone,
       'curfewWeekdays': instance.curfewWeekdays
           ?.map(const WeekdayConverter().toJson)
           .toList(),
@@ -4511,7 +4523,7 @@ _$_BrickhouseAlertInput _$$_BrickhouseAlertInputFromJson(
           .fromJson(json['curfewStartHour'] as int?),
       curfewEndHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
           .fromJson(json['curfewEndHour'] as int?),
-      curfewTimezone: json['curfewTimezone'] as String?,
+      timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
               ?.map((e) => const WeekdayConverter().fromJson(e as String))
               .toList() ??
@@ -4561,7 +4573,7 @@ Map<String, dynamic> _$$_BrickhouseAlertInputToJson(
           .toJson(instance.curfewStartHour),
       'curfewEndHour': const BrickhouseTimeOfDayMinuteOrNullConverter()
           .toJson(instance.curfewEndHour),
-      'curfewTimezone': instance.curfewTimezone,
+      'timezone': instance.timezone,
       'curfewWeekdays': instance.curfewWeekdays
           ?.map(const WeekdayConverter().toJson)
           .toList(),
@@ -4811,6 +4823,10 @@ _$_MappitRoute _$$_MappitRouteFromJson(Map<String, dynamic> json) =>
           ?.map((e) =>
               MappitRouteLinkingHistory.fromJson(e as Map<String, dynamic>))
           .toList(),
+      ownerId: json['ownerId'] as String?,
+      owner: json['owner'] == null
+          ? null
+          : User.fromJson(json['owner'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_MappitRouteToJson(_$_MappitRoute instance) =>
@@ -4823,6 +4839,8 @@ Map<String, dynamic> _$$_MappitRouteToJson(_$_MappitRoute instance) =>
       'geofencesIds': instance.geofencesIds,
       'assignmentsHistory':
           instance.assignmentsHistory?.map((e) => e.toJson()).toList(),
+      'ownerId': instance.ownerId,
+      'owner': instance.owner?.toJson(),
     };
 
 _$_MappitLaborHour _$$_MappitLaborHourFromJson(Map<String, dynamic> json) =>

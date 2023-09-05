@@ -140,6 +140,12 @@ class Tag with _$Tag {
 
     /// Is a list of granted access to this entity.
     List<Access>? access,
+
+    /// [owner] is the owner of this entity.
+    User? owner,
+
+    /// [ownerId] is the ID of the owner of this entity.
+    String? ownerId,
   }) = _Tag;
 
   /// Is a list of associated exchange services to this module.

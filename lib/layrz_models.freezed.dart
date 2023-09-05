@@ -2131,6 +2131,12 @@ mixin _$Tag {
   /// Is a list of granted access to this entity.
   List<Access>? get access => throw _privateConstructorUsedError;
 
+  /// [owner] is the owner of this entity.
+  User? get owner => throw _privateConstructorUsedError;
+
+  /// [ownerId] is the ID of the owner of this entity.
+  String? get ownerId => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TagCopyWith<Tag> get copyWith => throw _privateConstructorUsedError;
@@ -2189,9 +2195,12 @@ abstract class $TagCopyWith<$Res> {
       List<String>? workspacesIds,
       List<VisionProfile>? visionProfiles,
       List<String>? visionProfilesIds,
-      List<Access>? access});
+      List<Access>? access,
+      User? owner,
+      String? ownerId});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
+  $UserCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
@@ -2252,6 +2261,8 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? visionProfiles = freezed,
     Object? visionProfilesIds = freezed,
     Object? access = freezed,
+    Object? owner = freezed,
+    Object? ownerId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -2438,6 +2449,14 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      owner: freezed == owner
+          ? _value.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
+      ownerId: freezed == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -2450,6 +2469,18 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
 
     return $AvatarCopyWith<$Res>(_value.dynamicIcon!, (value) {
       return _then(_value.copyWith(dynamicIcon: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get owner {
+    if (_value.owner == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.owner!, (value) {
+      return _then(_value.copyWith(owner: value) as $Val);
     });
   }
 }
@@ -2508,10 +2539,14 @@ abstract class _$$_TagCopyWith<$Res> implements $TagCopyWith<$Res> {
       List<String>? workspacesIds,
       List<VisionProfile>? visionProfiles,
       List<String>? visionProfilesIds,
-      List<Access>? access});
+      List<Access>? access,
+      User? owner,
+      String? ownerId});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
+  @override
+  $UserCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
@@ -2569,6 +2604,8 @@ class __$$_TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$_Tag>
     Object? visionProfiles = freezed,
     Object? visionProfilesIds = freezed,
     Object? access = freezed,
+    Object? owner = freezed,
+    Object? ownerId = freezed,
   }) {
     return _then(_$_Tag(
       id: null == id
@@ -2755,6 +2792,14 @@ class __$$_TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$_Tag>
           ? _value._access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      owner: freezed == owner
+          ? _value.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
+      ownerId: freezed == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -2808,7 +2853,9 @@ class _$_Tag implements _Tag {
       final List<String>? workspacesIds,
       final List<VisionProfile>? visionProfiles,
       final List<String>? visionProfilesIds,
-      final List<Access>? access})
+      final List<Access>? access,
+      this.owner,
+      this.ownerId})
       : _users = users,
         _usersIds = usersIds,
         _outboundServices = outboundServices,
@@ -3418,9 +3465,17 @@ class _$_Tag implements _Tag {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [owner] is the owner of this entity.
+  @override
+  final User? owner;
+
+  /// [ownerId] is the ID of the owner of this entity.
+  @override
+  final String? ownerId;
+
   @override
   String toString() {
-    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, access: $access)';
+    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, access: $access, owner: $owner, ownerId: $ownerId)';
   }
 
   @override
@@ -3506,7 +3561,9 @@ class _$_Tag implements _Tag {
                 .equals(other._visionProfiles, _visionProfiles) &&
             const DeepCollectionEquality()
                 .equals(other._visionProfilesIds, _visionProfilesIds) &&
-            const DeepCollectionEquality().equals(other._access, _access));
+            const DeepCollectionEquality().equals(other._access, _access) &&
+            (identical(other.owner, owner) || other.owner == owner) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId));
   }
 
   @JsonKey(ignore: true)
@@ -3558,7 +3615,9 @@ class _$_Tag implements _Tag {
         const DeepCollectionEquality().hash(_workspacesIds),
         const DeepCollectionEquality().hash(_visionProfiles),
         const DeepCollectionEquality().hash(_visionProfilesIds),
-        const DeepCollectionEquality().hash(_access)
+        const DeepCollectionEquality().hash(_access),
+        owner,
+        ownerId
       ]);
 
   @JsonKey(ignore: true)
@@ -3624,7 +3683,9 @@ abstract class _Tag implements Tag {
       final List<String>? workspacesIds,
       final List<VisionProfile>? visionProfiles,
       final List<String>? visionProfilesIds,
-      final List<Access>? access}) = _$_Tag;
+      final List<Access>? access,
+      final User? owner,
+      final String? ownerId}) = _$_Tag;
 
   factory _Tag.fromJson(Map<String, dynamic> json) = _$_Tag.fromJson;
 
@@ -3815,6 +3876,14 @@ abstract class _Tag implements Tag {
 
   /// Is a list of granted access to this entity.
   List<Access>? get access;
+  @override
+
+  /// [owner] is the owner of this entity.
+  User? get owner;
+  @override
+
+  /// [ownerId] is the ID of the owner of this entity.
+  String? get ownerId;
   @override
   @JsonKey(ignore: true)
   _$$_TagCopyWith<_$_Tag> get copyWith => throw _privateConstructorUsedError;
@@ -10479,6 +10548,12 @@ mixin _$Geofence {
   /// for more details about the fields.
   List<CustomField>? get customFields => throw _privateConstructorUsedError;
 
+  /// [ownerId] refers to the owner of the geofence.
+  String? get ownerId => throw _privateConstructorUsedError;
+
+  /// [owner] refers to the owner of the geofence.
+  User? get owner => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GeofenceCopyWith<Geofence> get copyWith =>
@@ -10504,7 +10579,11 @@ abstract class $GeofenceCopyWith<$Res> {
       List<String>? childrenIds,
       List<Geofence>? children,
       List<Access>? access,
-      List<CustomField>? customFields});
+      List<CustomField>? customFields,
+      String? ownerId,
+      User? owner});
+
+  $UserCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
@@ -10534,6 +10613,8 @@ class _$GeofenceCopyWithImpl<$Res, $Val extends Geofence>
     Object? children = freezed,
     Object? access = freezed,
     Object? customFields = freezed,
+    Object? ownerId = freezed,
+    Object? owner = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -10592,7 +10673,27 @@ class _$GeofenceCopyWithImpl<$Res, $Val extends Geofence>
           ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as List<CustomField>?,
+      ownerId: freezed == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      owner: freezed == owner
+          ? _value.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get owner {
+    if (_value.owner == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.owner!, (value) {
+      return _then(_value.copyWith(owner: value) as $Val);
+    });
   }
 }
 
@@ -10617,7 +10718,12 @@ abstract class _$$_GeofenceCopyWith<$Res> implements $GeofenceCopyWith<$Res> {
       List<String>? childrenIds,
       List<Geofence>? children,
       List<Access>? access,
-      List<CustomField>? customFields});
+      List<CustomField>? customFields,
+      String? ownerId,
+      User? owner});
+
+  @override
+  $UserCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
@@ -10645,6 +10751,8 @@ class __$$_GeofenceCopyWithImpl<$Res>
     Object? children = freezed,
     Object? access = freezed,
     Object? customFields = freezed,
+    Object? ownerId = freezed,
+    Object? owner = freezed,
   }) {
     return _then(_$_Geofence(
       id: null == id
@@ -10703,6 +10811,14 @@ class __$$_GeofenceCopyWithImpl<$Res>
           ? _value._customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as List<CustomField>?,
+      ownerId: freezed == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      owner: freezed == owner
+          ? _value.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 }
@@ -10724,7 +10840,9 @@ class _$_Geofence implements _Geofence {
       final List<String>? childrenIds,
       final List<Geofence>? children,
       final List<Access>? access,
-      final List<CustomField>? customFields})
+      final List<CustomField>? customFields,
+      this.ownerId,
+      this.owner})
       : _path = path,
         _assetsInside = assetsInside,
         _childrenIds = childrenIds,
@@ -10852,9 +10970,17 @@ class _$_Geofence implements _Geofence {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [ownerId] refers to the owner of the geofence.
+  @override
+  final String? ownerId;
+
+  /// [owner] refers to the owner of the geofence.
+  @override
+  final User? owner;
+
   @override
   String toString() {
-    return 'Geofence(id: $id, name: $name, mode: $mode, description: $description, color: $color, path: $path, radius: $radius, resourceId: $resourceId, assetsInside: $assetsInside, category: $category, childrenIds: $childrenIds, children: $children, access: $access, customFields: $customFields)';
+    return 'Geofence(id: $id, name: $name, mode: $mode, description: $description, color: $color, path: $path, radius: $radius, resourceId: $resourceId, assetsInside: $assetsInside, category: $category, childrenIds: $childrenIds, children: $children, access: $access, customFields: $customFields, ownerId: $ownerId, owner: $owner)';
   }
 
   @override
@@ -10881,7 +11007,9 @@ class _$_Geofence implements _Geofence {
             const DeepCollectionEquality().equals(other._children, _children) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
             const DeepCollectionEquality()
-                .equals(other._customFields, _customFields));
+                .equals(other._customFields, _customFields) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.owner, owner) || other.owner == owner));
   }
 
   @JsonKey(ignore: true)
@@ -10901,7 +11029,9 @@ class _$_Geofence implements _Geofence {
       const DeepCollectionEquality().hash(_childrenIds),
       const DeepCollectionEquality().hash(_children),
       const DeepCollectionEquality().hash(_access),
-      const DeepCollectionEquality().hash(_customFields));
+      const DeepCollectionEquality().hash(_customFields),
+      ownerId,
+      owner);
 
   @JsonKey(ignore: true)
   @override
@@ -10932,7 +11062,9 @@ abstract class _Geofence implements Geofence {
       final List<String>? childrenIds,
       final List<Geofence>? children,
       final List<Access>? access,
-      final List<CustomField>? customFields}) = _$_Geofence;
+      final List<CustomField>? customFields,
+      final String? ownerId,
+      final User? owner}) = _$_Geofence;
 
   factory _Geofence.fromJson(Map<String, dynamic> json) = _$_Geofence.fromJson;
 
@@ -10997,6 +11129,14 @@ abstract class _Geofence implements Geofence {
   /// List of [customFields] linked to the geofence. Please read the documentation for [CustomField]
   /// for more details about the fields.
   List<CustomField>? get customFields;
+  @override
+
+  /// [ownerId] refers to the owner of the geofence.
+  String? get ownerId;
+  @override
+
+  /// [owner] refers to the owner of the geofence.
+  User? get owner;
   @override
   @JsonKey(ignore: true)
   _$$_GeofenceCopyWith<_$_Geofence> get copyWith =>
@@ -51007,7 +51147,7 @@ mixin _$BrickhouseAlert {
   TimeOfDay? get curfewEndHour => throw _privateConstructorUsedError;
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  String? get curfewTimezone => throw _privateConstructorUsedError;
+  String? get timezone => throw _privateConstructorUsedError;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
   @WeekdayConverter()
@@ -51071,7 +51211,7 @@ abstract class $BrickhouseAlertCopyWith<$Res> {
       int? batteryMinLevel,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
-      String? curfewTimezone,
+      String? timezone,
       @WeekdayConverter() List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
@@ -51111,7 +51251,7 @@ class _$BrickhouseAlertCopyWithImpl<$Res, $Val extends BrickhouseAlert>
     Object? batteryMinLevel = freezed,
     Object? curfewStartHour = freezed,
     Object? curfewEndHour = freezed,
-    Object? curfewTimezone = freezed,
+    Object? timezone = freezed,
     Object? curfewWeekdays = freezed,
     Object? geofenceColor = freezed,
     Object? geofenceMode = freezed,
@@ -51179,9 +51319,9 @@ class _$BrickhouseAlertCopyWithImpl<$Res, $Val extends BrickhouseAlert>
           ? _value.curfewEndHour
           : curfewEndHour // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
-      curfewTimezone: freezed == curfewTimezone
-          ? _value.curfewTimezone
-          : curfewTimezone // ignore: cast_nullable_to_non_nullable
+      timezone: freezed == timezone
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
       curfewWeekdays: freezed == curfewWeekdays
           ? _value.curfewWeekdays
@@ -51246,7 +51386,7 @@ abstract class _$$_BrickhouseAlertCopyWith<$Res>
       int? batteryMinLevel,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
-      String? curfewTimezone,
+      String? timezone,
       @WeekdayConverter() List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
@@ -51284,7 +51424,7 @@ class __$$_BrickhouseAlertCopyWithImpl<$Res>
     Object? batteryMinLevel = freezed,
     Object? curfewStartHour = freezed,
     Object? curfewEndHour = freezed,
-    Object? curfewTimezone = freezed,
+    Object? timezone = freezed,
     Object? curfewWeekdays = freezed,
     Object? geofenceColor = freezed,
     Object? geofenceMode = freezed,
@@ -51352,9 +51492,9 @@ class __$$_BrickhouseAlertCopyWithImpl<$Res>
           ? _value.curfewEndHour
           : curfewEndHour // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
-      curfewTimezone: freezed == curfewTimezone
-          ? _value.curfewTimezone
-          : curfewTimezone // ignore: cast_nullable_to_non_nullable
+      timezone: freezed == timezone
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
       curfewWeekdays: freezed == curfewWeekdays
           ? _value._curfewWeekdays
@@ -51414,7 +51554,7 @@ class _$_BrickhouseAlert implements _BrickhouseAlert {
       this.batteryMinLevel,
       @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewEndHour,
-      this.curfewTimezone,
+      this.timezone,
       @WeekdayConverter() final List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() this.geofenceColor,
       @GeofenceModeOrNullConverter() this.geofenceMode,
@@ -51531,7 +51671,7 @@ class _$_BrickhouseAlert implements _BrickhouseAlert {
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
   @override
-  final String? curfewTimezone;
+  final String? timezone;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
   final List<Weekday>? _curfewWeekdays;
@@ -51597,7 +51737,7 @@ class _$_BrickhouseAlert implements _BrickhouseAlert {
 
   @override
   String toString() {
-    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, curfewTimezone: $curfewTimezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted)';
+    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted)';
   }
 
   @override
@@ -51627,8 +51767,8 @@ class _$_BrickhouseAlert implements _BrickhouseAlert {
                 other.curfewStartHour == curfewStartHour) &&
             (identical(other.curfewEndHour, curfewEndHour) ||
                 other.curfewEndHour == curfewEndHour) &&
-            (identical(other.curfewTimezone, curfewTimezone) ||
-                other.curfewTimezone == curfewTimezone) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone) &&
             const DeepCollectionEquality()
                 .equals(other._curfewWeekdays, _curfewWeekdays) &&
             (identical(other.geofenceColor, geofenceColor) ||
@@ -51666,7 +51806,7 @@ class _$_BrickhouseAlert implements _BrickhouseAlert {
         batteryMinLevel,
         curfewStartHour,
         curfewEndHour,
-        curfewTimezone,
+        timezone,
         const DeepCollectionEquality().hash(_curfewWeekdays),
         geofenceColor,
         geofenceMode,
@@ -51710,7 +51850,7 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
       final TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter()
       final TimeOfDay? curfewEndHour,
-      final String? curfewTimezone,
+      final String? timezone,
       @WeekdayConverter() final List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() final Color? geofenceColor,
       @GeofenceModeOrNullConverter() final GeofenceMode? geofenceMode,
@@ -51787,7 +51927,7 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
   @override
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  String? get curfewTimezone;
+  String? get timezone;
   @override
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
@@ -51929,10 +52069,10 @@ mixin _$BrickhouseAlertInput {
   set curfewEndHour(TimeOfDay? value) => throw _privateConstructorUsedError;
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  String? get curfewTimezone => throw _privateConstructorUsedError;
+  String? get timezone => throw _privateConstructorUsedError;
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  set curfewTimezone(String? value) => throw _privateConstructorUsedError;
+  set timezone(String? value) => throw _privateConstructorUsedError;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
   @WeekdayConverter()
@@ -52032,7 +52172,7 @@ abstract class $BrickhouseAlertInputCopyWith<$Res> {
       int? batteryMinLevel,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
-      String? curfewTimezone,
+      String? timezone,
       @WeekdayConverter() List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
@@ -52072,7 +52212,7 @@ class _$BrickhouseAlertInputCopyWithImpl<$Res,
     Object? batteryMinLevel = freezed,
     Object? curfewStartHour = freezed,
     Object? curfewEndHour = freezed,
-    Object? curfewTimezone = freezed,
+    Object? timezone = freezed,
     Object? curfewWeekdays = freezed,
     Object? geofenceColor = freezed,
     Object? geofenceMode = freezed,
@@ -52136,9 +52276,9 @@ class _$BrickhouseAlertInputCopyWithImpl<$Res,
           ? _value.curfewEndHour
           : curfewEndHour // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
-      curfewTimezone: freezed == curfewTimezone
-          ? _value.curfewTimezone
-          : curfewTimezone // ignore: cast_nullable_to_non_nullable
+      timezone: freezed == timezone
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
       curfewWeekdays: freezed == curfewWeekdays
           ? _value.curfewWeekdays
@@ -52202,7 +52342,7 @@ abstract class _$$_BrickhouseAlertInputCopyWith<$Res>
       int? batteryMinLevel,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
-      String? curfewTimezone,
+      String? timezone,
       @WeekdayConverter() List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
@@ -52239,7 +52379,7 @@ class __$$_BrickhouseAlertInputCopyWithImpl<$Res>
     Object? batteryMinLevel = freezed,
     Object? curfewStartHour = freezed,
     Object? curfewEndHour = freezed,
-    Object? curfewTimezone = freezed,
+    Object? timezone = freezed,
     Object? curfewWeekdays = freezed,
     Object? geofenceColor = freezed,
     Object? geofenceMode = freezed,
@@ -52303,9 +52443,9 @@ class __$$_BrickhouseAlertInputCopyWithImpl<$Res>
           ? _value.curfewEndHour
           : curfewEndHour // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
-      curfewTimezone: freezed == curfewTimezone
-          ? _value.curfewTimezone
-          : curfewTimezone // ignore: cast_nullable_to_non_nullable
+      timezone: freezed == timezone
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
       curfewWeekdays: freezed == curfewWeekdays
           ? _value.curfewWeekdays
@@ -52364,7 +52504,7 @@ class _$_BrickhouseAlertInput implements _BrickhouseAlertInput {
       this.batteryMinLevel,
       @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewEndHour,
-      this.curfewTimezone,
+      this.timezone,
       @WeekdayConverter() this.curfewWeekdays = const [
         Weekday.monday,
         Weekday.tuesday,
@@ -52450,7 +52590,7 @@ class _$_BrickhouseAlertInput implements _BrickhouseAlertInput {
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
   @override
-  String? curfewTimezone;
+  String? timezone;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
   @override
@@ -52501,7 +52641,7 @@ class _$_BrickhouseAlertInput implements _BrickhouseAlertInput {
 
   @override
   String toString() {
-    return 'BrickhouseAlertInput(id: $id, name: $name, type: $type, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, curfewTimezone: $curfewTimezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted)';
+    return 'BrickhouseAlertInput(id: $id, name: $name, type: $type, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted)';
   }
 
   @JsonKey(ignore: true)
@@ -52534,7 +52674,7 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
       int? batteryMinLevel,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
-      String? curfewTimezone,
+      String? timezone,
       @WeekdayConverter() List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
@@ -52649,10 +52789,10 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
   @override
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  String? get curfewTimezone;
+  String? get timezone;
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  set curfewTimezone(String? value);
+  set timezone(String? value);
   @override
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
@@ -55007,6 +55147,12 @@ mixin _$MappitRoute {
   List<MappitRouteLinkingHistory>? get assignmentsHistory =>
       throw _privateConstructorUsedError;
 
+  /// [ownerId] refers to the owner of the geofence.
+  String? get ownerId => throw _privateConstructorUsedError;
+
+  /// [owner] refers to the owner of the geofence.
+  User? get owner => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MappitRouteCopyWith<MappitRoute> get copyWith =>
@@ -55026,9 +55172,12 @@ abstract class $MappitRouteCopyWith<$Res> {
       String? currentSellerId,
       List<Geofence>? geofences,
       List<String>? geofencesIds,
-      List<MappitRouteLinkingHistory>? assignmentsHistory});
+      List<MappitRouteLinkingHistory>? assignmentsHistory,
+      String? ownerId,
+      User? owner});
 
   $AssetCopyWith<$Res>? get currentSeller;
+  $UserCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
@@ -55051,6 +55200,8 @@ class _$MappitRouteCopyWithImpl<$Res, $Val extends MappitRoute>
     Object? geofences = freezed,
     Object? geofencesIds = freezed,
     Object? assignmentsHistory = freezed,
+    Object? ownerId = freezed,
+    Object? owner = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -55081,6 +55232,14 @@ class _$MappitRouteCopyWithImpl<$Res, $Val extends MappitRoute>
           ? _value.assignmentsHistory
           : assignmentsHistory // ignore: cast_nullable_to_non_nullable
               as List<MappitRouteLinkingHistory>?,
+      ownerId: freezed == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      owner: freezed == owner
+          ? _value.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
     ) as $Val);
   }
 
@@ -55093,6 +55252,18 @@ class _$MappitRouteCopyWithImpl<$Res, $Val extends MappitRoute>
 
     return $AssetCopyWith<$Res>(_value.currentSeller!, (value) {
       return _then(_value.copyWith(currentSeller: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get owner {
+    if (_value.owner == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.owner!, (value) {
+      return _then(_value.copyWith(owner: value) as $Val);
     });
   }
 }
@@ -55112,10 +55283,14 @@ abstract class _$$_MappitRouteCopyWith<$Res>
       String? currentSellerId,
       List<Geofence>? geofences,
       List<String>? geofencesIds,
-      List<MappitRouteLinkingHistory>? assignmentsHistory});
+      List<MappitRouteLinkingHistory>? assignmentsHistory,
+      String? ownerId,
+      User? owner});
 
   @override
   $AssetCopyWith<$Res>? get currentSeller;
+  @override
+  $UserCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
@@ -55136,6 +55311,8 @@ class __$$_MappitRouteCopyWithImpl<$Res>
     Object? geofences = freezed,
     Object? geofencesIds = freezed,
     Object? assignmentsHistory = freezed,
+    Object? ownerId = freezed,
+    Object? owner = freezed,
   }) {
     return _then(_$_MappitRoute(
       id: null == id
@@ -55166,6 +55343,14 @@ class __$$_MappitRouteCopyWithImpl<$Res>
           ? _value._assignmentsHistory
           : assignmentsHistory // ignore: cast_nullable_to_non_nullable
               as List<MappitRouteLinkingHistory>?,
+      ownerId: freezed == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      owner: freezed == owner
+          ? _value.owner
+          : owner // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 }
@@ -55180,7 +55365,9 @@ class _$_MappitRoute implements _MappitRoute {
       this.currentSellerId,
       final List<Geofence>? geofences,
       final List<String>? geofencesIds,
-      final List<MappitRouteLinkingHistory>? assignmentsHistory})
+      final List<MappitRouteLinkingHistory>? assignmentsHistory,
+      this.ownerId,
+      this.owner})
       : _geofences = geofences,
         _geofencesIds = geofencesIds,
         _assignmentsHistory = assignmentsHistory;
@@ -55244,9 +55431,17 @@ class _$_MappitRoute implements _MappitRoute {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [ownerId] refers to the owner of the geofence.
+  @override
+  final String? ownerId;
+
+  /// [owner] refers to the owner of the geofence.
+  @override
+  final User? owner;
+
   @override
   String toString() {
-    return 'MappitRoute(id: $id, name: $name, currentSeller: $currentSeller, currentSellerId: $currentSellerId, geofences: $geofences, geofencesIds: $geofencesIds, assignmentsHistory: $assignmentsHistory)';
+    return 'MappitRoute(id: $id, name: $name, currentSeller: $currentSeller, currentSellerId: $currentSellerId, geofences: $geofences, geofencesIds: $geofencesIds, assignmentsHistory: $assignmentsHistory, ownerId: $ownerId, owner: $owner)';
   }
 
   @override
@@ -55265,7 +55460,9 @@ class _$_MappitRoute implements _MappitRoute {
             const DeepCollectionEquality()
                 .equals(other._geofencesIds, _geofencesIds) &&
             const DeepCollectionEquality()
-                .equals(other._assignmentsHistory, _assignmentsHistory));
+                .equals(other._assignmentsHistory, _assignmentsHistory) &&
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            (identical(other.owner, owner) || other.owner == owner));
   }
 
   @JsonKey(ignore: true)
@@ -55278,7 +55475,9 @@ class _$_MappitRoute implements _MappitRoute {
       currentSellerId,
       const DeepCollectionEquality().hash(_geofences),
       const DeepCollectionEquality().hash(_geofencesIds),
-      const DeepCollectionEquality().hash(_assignmentsHistory));
+      const DeepCollectionEquality().hash(_assignmentsHistory),
+      ownerId,
+      owner);
 
   @JsonKey(ignore: true)
   @override
@@ -55296,14 +55495,15 @@ class _$_MappitRoute implements _MappitRoute {
 
 abstract class _MappitRoute implements MappitRoute {
   const factory _MappitRoute(
-          {required final String id,
-          required final String name,
-          final Asset? currentSeller,
-          final String? currentSellerId,
-          final List<Geofence>? geofences,
-          final List<String>? geofencesIds,
-          final List<MappitRouteLinkingHistory>? assignmentsHistory}) =
-      _$_MappitRoute;
+      {required final String id,
+      required final String name,
+      final Asset? currentSeller,
+      final String? currentSellerId,
+      final List<Geofence>? geofences,
+      final List<String>? geofencesIds,
+      final List<MappitRouteLinkingHistory>? assignmentsHistory,
+      final String? ownerId,
+      final User? owner}) = _$_MappitRoute;
 
   factory _MappitRoute.fromJson(Map<String, dynamic> json) =
       _$_MappitRoute.fromJson;
@@ -55336,6 +55536,14 @@ abstract class _MappitRoute implements MappitRoute {
 
   /// [assignmentsHistory] is the history of the link and unlink operations of this route
   List<MappitRouteLinkingHistory>? get assignmentsHistory;
+  @override
+
+  /// [ownerId] refers to the owner of the geofence.
+  String? get ownerId;
+  @override
+
+  /// [owner] refers to the owner of the geofence.
+  User? get owner;
   @override
   @JsonKey(ignore: true)
   _$$_MappitRouteCopyWith<_$_MappitRoute> get copyWith =>

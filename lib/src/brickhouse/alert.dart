@@ -253,7 +253,7 @@ class BrickhouseAlert with _$BrickhouseAlert {
     @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
 
     /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-    String? curfewTimezone,
+    String? timezone,
 
     /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
     @WeekdayConverter() List<Weekday>? curfewWeekdays,
@@ -409,7 +409,7 @@ class BrickhouseAlertInput with _$BrickhouseAlertInput {
         TimeOfDay? curfewEndHour,
 
     /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-    String? curfewTimezone,
+    String? timezone,
 
     /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
     @WeekdayConverter()
