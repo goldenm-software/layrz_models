@@ -1,4 +1,6 @@
 # Changelog
+## 2.0.21
+- Renamed [BrickhouseAlertInput] `curfewTimezone` to `timezone`
 ## 2.0.20
 - Added `owner` and `ownerId` to [Tag] model
 

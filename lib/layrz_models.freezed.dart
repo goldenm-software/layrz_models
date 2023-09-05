@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of layrz_models;
+part of 'layrz_models.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -2150,11 +2150,10 @@ abstract class $TagCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @ColorConverter()
-          Color color,
+      @ColorConverter() Color color,
       @Deprecated('Use `dynamicIcon` instead')
       @IconOrNullConverter()
-          IconData? icon,
+      IconData? icon,
       Avatar? dynamicIcon,
       List<User>? users,
       List<String>? usersIds,
@@ -2495,11 +2494,10 @@ abstract class _$$_TagCopyWith<$Res> implements $TagCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @ColorConverter()
-          Color color,
+      @ColorConverter() Color color,
       @Deprecated('Use `dynamicIcon` instead')
       @IconOrNullConverter()
-          IconData? icon,
+      IconData? icon,
       Avatar? dynamicIcon,
       List<User>? users,
       List<String>? usersIds,
@@ -3640,11 +3638,10 @@ abstract class _Tag implements Tag {
   const factory _Tag(
       {required final String id,
       required final String name,
-      @ColorConverter()
-          required final Color color,
+      @ColorConverter() required final Color color,
       @Deprecated('Use `dynamicIcon` instead')
       @IconOrNullConverter()
-          final IconData? icon,
+      final IconData? icon,
       final Avatar? dynamicIcon,
       final List<User>? users,
       final List<String>? usersIds,
@@ -18499,32 +18496,26 @@ abstract class $TriggerCopyWith<$Res> {
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeConverter()
-          TriggerType kind,
+      @TriggerTypeConverter() TriggerType kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-          TriggerGeofenceDetectionMode? geofenceKind,
+      TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
       String? crontabFormat,
-      @WeekdayConverter()
-          List<Weekday>? weekdays,
+      @WeekdayConverter() List<Weekday>? weekdays,
       bool? isPlainCrontab,
       String? timezoneId,
       int? priority,
-      @ColorOrNullConverter()
-          Color? color,
-      @CaseEventEffectOrNullConverter()
-          CaseEventEffect? visualEventEffect,
+      @ColorOrNullConverter() Color? color,
+      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
       String? careProtocolId,
       CareProtocol? careProtocol,
-      @CaseTypeOrNullConverter()
-          CaseType? caseKind,
+      @CaseTypeOrNullConverter() CaseType? caseKind,
       @CaseCommentPatternOrNullConverter()
-          CaseCommentPattern? caseCommentPattern,
+      CaseCommentPattern? caseCommentPattern,
       String? caseCommentPatternValue,
-      @DurationOrNullConverter()
-          Duration? cooldownTime,
+      @DurationOrNullConverter() Duration? cooldownTime,
       List<Access>? access});
 
   $CareProtocolCopyWith<$Res>? get careProtocol;
@@ -18730,32 +18721,26 @@ abstract class _$$_TriggerCopyWith<$Res> implements $TriggerCopyWith<$Res> {
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeConverter()
-          TriggerType kind,
+      @TriggerTypeConverter() TriggerType kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-          TriggerGeofenceDetectionMode? geofenceKind,
+      TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
       String? crontabFormat,
-      @WeekdayConverter()
-          List<Weekday>? weekdays,
+      @WeekdayConverter() List<Weekday>? weekdays,
       bool? isPlainCrontab,
       String? timezoneId,
       int? priority,
-      @ColorOrNullConverter()
-          Color? color,
-      @CaseEventEffectOrNullConverter()
-          CaseEventEffect? visualEventEffect,
+      @ColorOrNullConverter() Color? color,
+      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
       String? careProtocolId,
       CareProtocol? careProtocol,
-      @CaseTypeOrNullConverter()
-          CaseType? caseKind,
+      @CaseTypeOrNullConverter() CaseType? caseKind,
       @CaseCommentPatternOrNullConverter()
-          CaseCommentPattern? caseCommentPattern,
+      CaseCommentPattern? caseCommentPattern,
       String? caseCommentPatternValue,
-      @DurationOrNullConverter()
-          Duration? cooldownTime,
+      @DurationOrNullConverter() Duration? cooldownTime,
       List<Access>? access});
 
   @override
@@ -19337,32 +19322,27 @@ abstract class _Trigger implements Trigger {
       final List<String>? authAssetsIds,
       final List<String>? authUsersIds,
       final List<String>? authTagsIds,
-      @TriggerTypeConverter()
-          required final TriggerType kind,
+      @TriggerTypeConverter() required final TriggerType kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-          final TriggerGeofenceDetectionMode? geofenceKind,
+      final TriggerGeofenceDetectionMode? geofenceKind,
       final String? formula,
       final String? script,
       final String? exactHour,
       final String? crontabFormat,
-      @WeekdayConverter()
-          final List<Weekday>? weekdays,
+      @WeekdayConverter() final List<Weekday>? weekdays,
       final bool? isPlainCrontab,
       final String? timezoneId,
       final int? priority,
-      @ColorOrNullConverter()
-          final Color? color,
+      @ColorOrNullConverter() final Color? color,
       @CaseEventEffectOrNullConverter()
-          final CaseEventEffect? visualEventEffect,
+      final CaseEventEffect? visualEventEffect,
       final String? careProtocolId,
       final CareProtocol? careProtocol,
-      @CaseTypeOrNullConverter()
-          final CaseType? caseKind,
+      @CaseTypeOrNullConverter() final CaseType? caseKind,
       @CaseCommentPatternOrNullConverter()
-          final CaseCommentPattern? caseCommentPattern,
+      final CaseCommentPattern? caseCommentPattern,
       final String? caseCommentPatternValue,
-      @DurationOrNullConverter()
-          final Duration? cooldownTime,
+      @DurationOrNullConverter() final Duration? cooldownTime,
       final List<Access>? access}) = _$_Trigger;
 
   factory _Trigger.fromJson(Map<String, dynamic> json) = _$_Trigger.fromJson;
@@ -20001,23 +19981,19 @@ abstract class $TriggerInputCopyWith<$Res> {
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeOrNullConverter()
-          TriggerType? kind,
+      @TriggerTypeOrNullConverter() TriggerType? kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-          TriggerGeofenceDetectionMode? geofenceKind,
+      TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
       String? crontabFormat,
-      @WeekdayConverter()
-          List<Weekday>? weekdays,
+      @WeekdayConverter() List<Weekday>? weekdays,
       bool? isPlainCrontab,
       String? timezoneId,
       int? priority,
-      @ColorOrNullConverter()
-          Color? color,
-      @CaseEventEffectOrNullConverter()
-          CaseEventEffect? visualEventEffect,
+      @ColorOrNullConverter() Color? color,
+      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
       String? careProtocolId});
 }
 
@@ -20180,23 +20156,19 @@ abstract class _$$_TriggerInputCopyWith<$Res>
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeOrNullConverter()
-          TriggerType? kind,
+      @TriggerTypeOrNullConverter() TriggerType? kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-          TriggerGeofenceDetectionMode? geofenceKind,
+      TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
       String? crontabFormat,
-      @WeekdayConverter()
-          List<Weekday>? weekdays,
+      @WeekdayConverter() List<Weekday>? weekdays,
       bool? isPlainCrontab,
       String? timezoneId,
       int? priority,
-      @ColorOrNullConverter()
-          Color? color,
-      @CaseEventEffectOrNullConverter()
-          CaseEventEffect? visualEventEffect,
+      @ColorOrNullConverter() Color? color,
+      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
       String? careProtocolId});
 }
 
@@ -20520,23 +20492,19 @@ abstract class _TriggerInput implements TriggerInput {
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeOrNullConverter()
-          TriggerType? kind,
+      @TriggerTypeOrNullConverter() TriggerType? kind,
       @TriggerGeofenceDetectionModeOrNullConverter()
-          TriggerGeofenceDetectionMode? geofenceKind,
+      TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
       String? crontabFormat,
-      @WeekdayConverter()
-          List<Weekday>? weekdays,
+      @WeekdayConverter() List<Weekday>? weekdays,
       bool? isPlainCrontab,
       String? timezoneId,
       int? priority,
-      @ColorOrNullConverter()
-          Color? color,
-      @CaseEventEffectOrNullConverter()
-          CaseEventEffect? visualEventEffect,
+      @ColorOrNullConverter() Color? color,
+      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
       String? careProtocolId}) = _$_TriggerInput;
 
   factory _TriggerInput.fromJson(Map<String, dynamic> json) =
@@ -23317,7 +23285,7 @@ abstract class $InboundPayloadStructureCopyWith<$Res> {
   $Res call(
       {String field,
       @InboundPayloadStructureTypeConverter()
-          InboundPayloadStructureType type});
+      InboundPayloadStructureType type});
 }
 
 /// @nodoc
@@ -23361,7 +23329,7 @@ abstract class _$$_InboundPayloadStructureCopyWith<$Res>
   $Res call(
       {String field,
       @InboundPayloadStructureTypeConverter()
-          InboundPayloadStructureType type});
+      InboundPayloadStructureType type});
 }
 
 /// @nodoc
@@ -23446,7 +23414,7 @@ abstract class _InboundPayloadStructure implements InboundPayloadStructure {
   const factory _InboundPayloadStructure(
           {required final String field,
           @InboundPayloadStructureTypeConverter()
-              required final InboundPayloadStructureType type}) =
+          required final InboundPayloadStructureType type}) =
       _$_InboundPayloadStructure;
 
   factory _InboundPayloadStructure.fromJson(Map<String, dynamic> json) =
@@ -24630,10 +24598,8 @@ abstract class _Operation implements Operation {
   const factory _Operation(
       {required final String id,
       required final String name,
-      @OperationTypeConverter()
-          required final OperationType operationType,
-      @HttpRequestTypeOrNullConverter()
-          final HttpRequestType? requestType,
+      @OperationTypeConverter() required final OperationType operationType,
+      @HttpRequestTypeOrNullConverter() final HttpRequestType? requestType,
       final String? url,
       final List<HttpHeader>? headers,
       final String? payload,
@@ -24642,13 +24608,11 @@ abstract class _Operation implements Operation {
       final String? timezoneId,
       final List<String>? receptionEmails,
       final String? emailSubject,
-      @ColorOrNullConverter()
-          final Color? color,
-      @ColorOrNullConverter()
-          final Color? textColor,
+      @ColorOrNullConverter() final Color? color,
+      @ColorOrNullConverter() final Color? textColor,
       final List<PhoneNumber>? destinationPhones,
       @NotificationTypeOrNullConverter()
-          final NotificationType? notificationType,
+      final NotificationType? notificationType,
       final String? externalAccountId,
       final List<Access>? access,
       final List<Trigger>? triggers,
@@ -25288,18 +25252,16 @@ class _$_OperationInput implements _OperationInput {
       this.id,
       this.languageId,
       this.name,
-      @OperationTypeOrNullConverter()
-          this.operationType,
+      @OperationTypeOrNullConverter() this.operationType,
       this.payload,
       this.receptionEmails,
-      @HttpRequestTypeOrNullConverter()
-          this.requestType,
+      @HttpRequestTypeOrNullConverter() this.requestType,
       this.textColor,
       this.timezoneId,
       this.url,
       this.destinationPhones = const [],
       @NotificationTypeOrNullConverter()
-          this.notificationType = NotificationType.sms,
+      this.notificationType = NotificationType.sms,
       this.externalAccountId});
 
   factory _$_OperationInput.fromJson(Map<String, dynamic> json) =>
@@ -27009,10 +26971,9 @@ class __$$_ReportTemplatePageCopyWithImpl<$Res>
 class _$_ReportTemplatePage implements _ReportTemplatePage {
   const _$_ReportTemplatePage(
       {required this.title,
-      @ReportTemplateSourceConverter()
-          required this.source,
+      @ReportTemplateSourceConverter() required this.source,
       @ReportTemplateAlgorithmConverter()
-          this.algorithm = ReportTemplateAlgorithm.auto,
+      this.algorithm = ReportTemplateAlgorithm.auto,
       final List<ReportTemplateCol>? cols,
       this.script})
       : _cols = cols;
@@ -27094,9 +27055,9 @@ abstract class _ReportTemplatePage implements ReportTemplatePage {
   const factory _ReportTemplatePage(
       {required final String title,
       @ReportTemplateSourceConverter()
-          required final ReportTemplateSource source,
+      required final ReportTemplateSource source,
       @ReportTemplateAlgorithmConverter()
-          final ReportTemplateAlgorithm algorithm,
+      final ReportTemplateAlgorithm algorithm,
       final List<ReportTemplateCol>? cols,
       final String? script}) = _$_ReportTemplatePage;
 
@@ -29581,10 +29542,9 @@ class _$_LinkedAssetToCheckpointId implements _LinkedAssetToCheckpointId {
 
 abstract class _LinkedAssetToCheckpointId implements LinkedAssetToCheckpointId {
   const factory _LinkedAssetToCheckpointId(
-          {required final String itemId,
-          @LinkedAssetEntityConverter()
-              required final LinkedAssetEntity entity}) =
-      _$_LinkedAssetToCheckpointId;
+      {required final String itemId,
+      @LinkedAssetEntityConverter()
+      required final LinkedAssetEntity entity}) = _$_LinkedAssetToCheckpointId;
 
   factory _LinkedAssetToCheckpointId.fromJson(Map<String, dynamic> json) =
       _$_LinkedAssetToCheckpointId.fromJson;
@@ -30946,11 +30906,9 @@ class _$_Case implements _Case {
       {required this.id,
       @JsonKey(name: 'dateReceived')
       @TimestampConverter()
-          required this.receivedAt,
-      @CaseStatusConverter()
-          required this.status,
-      @CaseIgnoredStatusOrNullConverter()
-          this.ignoredStatus,
+      required this.receivedAt,
+      @CaseStatusConverter() required this.status,
+      @CaseIgnoredStatusOrNullConverter() this.ignoredStatus,
       required this.asset,
       required this.trigger,
       this.sequence,
@@ -31081,11 +31039,10 @@ abstract class _Case implements Case {
       {required final String id,
       @JsonKey(name: 'dateReceived')
       @TimestampConverter()
-          required final DateTime receivedAt,
-      @CaseStatusConverter()
-          required final CaseStatus status,
+      required final DateTime receivedAt,
+      @CaseStatusConverter() required final CaseStatus status,
       @CaseIgnoredStatusOrNullConverter()
-          final CaseIgnoredStatus? ignoredStatus,
+      final CaseIgnoredStatus? ignoredStatus,
       required final Asset asset,
       required final Trigger trigger,
       final int? sequence,
@@ -34878,15 +34835,12 @@ abstract class _Workspace implements Workspace {
       {required final String id,
       required final String name,
       @AppInternalIdentifierOrNullConverter()
-          final AppInternalIdentifier? typeApp,
-      @ColorOrNullConverter()
-          final Color? color,
-      @IconOrNullConverter()
-          final IconData? icon,
+      final AppInternalIdentifier? typeApp,
+      @ColorOrNullConverter() final Color? color,
+      @IconOrNullConverter() final IconData? icon,
       final String? background,
       final bool? isFavorite,
-      @WorkspaceMainViewOrNullConverter()
-          final WorkspaceMainView? mainView,
+      @WorkspaceMainViewOrNullConverter() final WorkspaceMainView? mainView,
       final List<Asset>? assets,
       final List<String>? assetsIds,
       final bool? casesEnabled,
@@ -34901,16 +34855,14 @@ abstract class _Workspace implements Workspace {
       final List<String>? geofencesIds,
       final List<MapCardSensors> mapCardCustomization,
       final GeoPoint? mapCenterCoordinates,
-      @MapCenterModeOrNullConverter()
-          final MapCenterMode? mapCenterMode,
+      @MapCenterModeOrNullConverter() final MapCenterMode? mapCenterMode,
       final bool? analyticsEnabled,
       final List<LayrzChart>? charts,
       final List<String>? chartsIds,
       final List<AnalyticsGridItem> analyticsGridStructure,
       final bool? sensorsEnabled,
       final List<SensorGridItem> sensorsGridStructure,
-      @MetricSystemOrNullConverter()
-          final MetricSystem? metricSystem,
+      @MetricSystemOrNullConverter() final MetricSystem? metricSystem,
       final Timezone? timezone,
       final List<Access>? access}) = _$_Workspace;
 
@@ -37616,8 +37568,7 @@ abstract class $VisionProfileCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @VisionProfileVariantConverter()
-          VisionProfileVariant variant,
+      @VisionProfileVariantConverter() VisionProfileVariant variant,
       double? maskRadius,
       int? threshold,
       int? maxThValue,
@@ -37633,9 +37584,9 @@ abstract class $VisionProfileCopyWith<$Res> {
       double? centerDisplacement,
       int? decimals,
       @VisionProfileGaugeShapeOrNullConverter()
-          VisionProfileGaugeShape? gaugeShape,
+      VisionProfileGaugeShape? gaugeShape,
       @VisionProfileGaugeModelOrNullConverter()
-          VisionProfileGaugeModel? gaugeModel,
+      VisionProfileGaugeModel? gaugeModel,
       List<Access>? access});
 }
 
@@ -37769,8 +37720,7 @@ abstract class _$$_VisionProfileCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      @VisionProfileVariantConverter()
-          VisionProfileVariant variant,
+      @VisionProfileVariantConverter() VisionProfileVariant variant,
       double? maskRadius,
       int? threshold,
       int? maxThValue,
@@ -37786,9 +37736,9 @@ abstract class _$$_VisionProfileCopyWith<$Res>
       double? centerDisplacement,
       int? decimals,
       @VisionProfileGaugeShapeOrNullConverter()
-          VisionProfileGaugeShape? gaugeShape,
+      VisionProfileGaugeShape? gaugeShape,
       @VisionProfileGaugeModelOrNullConverter()
-          VisionProfileGaugeModel? gaugeModel,
+      VisionProfileGaugeModel? gaugeModel,
       List<Access>? access});
 }
 
@@ -38094,7 +38044,7 @@ abstract class _VisionProfile implements VisionProfile {
       {required final String id,
       required final String name,
       @VisionProfileVariantConverter()
-          required final VisionProfileVariant variant,
+      required final VisionProfileVariant variant,
       final double? maskRadius,
       final int? threshold,
       final int? maxThValue,
@@ -38110,9 +38060,9 @@ abstract class _VisionProfile implements VisionProfile {
       final double? centerDisplacement,
       final int? decimals,
       @VisionProfileGaugeShapeOrNullConverter()
-          final VisionProfileGaugeShape? gaugeShape,
+      final VisionProfileGaugeShape? gaugeShape,
       @VisionProfileGaugeModelOrNullConverter()
-          final VisionProfileGaugeModel? gaugeModel,
+      final VisionProfileGaugeModel? gaugeModel,
       final List<Access>? access}) = _$_VisionProfile;
 
   factory _VisionProfile.fromJson(Map<String, dynamic> json) =
@@ -42520,16 +42470,15 @@ class _$_AppVersion implements _AppVersion {
 
 abstract class _AppVersion implements AppVersion {
   const factory _AppVersion(
-      {required final String id,
-      @AppInternalIdentifierConverter()
+          {required final String id,
+          @AppInternalIdentifierConverter()
           required final AppInternalIdentifier app,
-      @AppPlatformConverter()
-          required final AppPlatform platform,
-      final String? fileUri,
-      required final int buildNumber,
-      required final String buildName,
-      @TimestampConverter()
-          required final DateTime releasedAt}) = _$_AppVersion;
+          @AppPlatformConverter() required final AppPlatform platform,
+          final String? fileUri,
+          required final int buildNumber,
+          required final String buildName,
+          @TimestampConverter() required final DateTime releasedAt}) =
+      _$_AppVersion;
 
   factory _AppVersion.fromJson(Map<String, dynamic> json) =
       _$_AppVersion.fromJson;
@@ -44091,7 +44040,7 @@ abstract class $AtsAuthenticationIdentifierCopyWith<$Res> {
   $Res call(
       {String? id,
       @AtsAuthenticationCategoryOrNullConverter()
-          AtsAuthenticationCategory? category,
+      AtsAuthenticationCategory? category,
       String? cardId,
       AtsAuthenticationCard? card,
       String? nfcIdentifier});
@@ -44168,7 +44117,7 @@ abstract class _$$_AtsAuthenticationIdentifierCopyWith<$Res>
   $Res call(
       {String? id,
       @AtsAuthenticationCategoryOrNullConverter()
-          AtsAuthenticationCategory? category,
+      AtsAuthenticationCategory? category,
       String? cardId,
       AtsAuthenticationCard? card,
       String? nfcIdentifier});
@@ -44299,7 +44248,7 @@ abstract class _AtsAuthenticationIdentifier
   const factory _AtsAuthenticationIdentifier(
       {final String? id,
       @AtsAuthenticationCategoryOrNullConverter()
-          final AtsAuthenticationCategory? category,
+      final AtsAuthenticationCategory? category,
       final String? cardId,
       final AtsAuthenticationCard? card,
       final String? nfcIdentifier}) = _$_AtsAuthenticationIdentifier;
@@ -44795,12 +44744,11 @@ abstract class $AtsHistoryAuthenticationCardCopyWith<$Res> {
   $Res call(
       {String id,
       @AtsHistoryAuthenticationCardOperationConverter()
-          AtsHistoryAuthenticationCardOperation operation,
+      AtsHistoryAuthenticationCardOperation operation,
       Asset? asset,
       User? owner,
       User createdBy,
-      @TimestampConverter()
-          DateTime createdAt});
+      @TimestampConverter() DateTime createdAt});
 
   $AssetCopyWith<$Res>? get asset;
   $UserCopyWith<$Res>? get owner;
@@ -44901,12 +44849,11 @@ abstract class _$$_AtsHistoryAuthenticationCardCopyWith<$Res>
   $Res call(
       {String id,
       @AtsHistoryAuthenticationCardOperationConverter()
-          AtsHistoryAuthenticationCardOperation operation,
+      AtsHistoryAuthenticationCardOperation operation,
       Asset? asset,
       User? owner,
       User createdBy,
-      @TimestampConverter()
-          DateTime createdAt});
+      @TimestampConverter() DateTime createdAt});
 
   @override
   $AssetCopyWith<$Res>? get asset;
@@ -45049,14 +44996,14 @@ class _$_AtsHistoryAuthenticationCard implements _AtsHistoryAuthenticationCard {
 abstract class _AtsHistoryAuthenticationCard
     implements AtsHistoryAuthenticationCard {
   const factory _AtsHistoryAuthenticationCard(
-      {required final String id,
-      @AtsHistoryAuthenticationCardOperationConverter()
+          {required final String id,
+          @AtsHistoryAuthenticationCardOperationConverter()
           required final AtsHistoryAuthenticationCardOperation operation,
-      final Asset? asset,
-      final User? owner,
-      required final User createdBy,
-      @TimestampConverter()
-          required final DateTime createdAt}) = _$_AtsHistoryAuthenticationCard;
+          final Asset? asset,
+          final User? owner,
+          required final User createdBy,
+          @TimestampConverter() required final DateTime createdAt}) =
+      _$_AtsHistoryAuthenticationCard;
 
   factory _AtsHistoryAuthenticationCard.fromJson(Map<String, dynamic> json) =
       _$_AtsHistoryAuthenticationCard.fromJson;
@@ -46373,25 +46320,22 @@ abstract class $AtsNsLicenseCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      @AtsNsStatusConverter()
-          AtsNsStatus status,
+      @AtsNsStatusConverter() AtsNsStatus status,
       bool? receive90Days,
-      @AtsNsProjectIdOrNullConverter()
-          AtsNsProjectId? projectId,
+      @AtsNsProjectIdOrNullConverter() AtsNsProjectId? projectId,
       String? certificate,
       String? certificatePassword,
       String cnpj,
       String? inscriptionId,
       String? businessName,
       String? companyName,
-      @AtsIcmsTypeOrNullConverter()
-          AtsIcmsType? icmsType,
+      @AtsIcmsTypeOrNullConverter() AtsIcmsType? icmsType,
       List<String>? emails,
       List<String>? phoneNumbers,
       List<AtsNsAddress>? addresses,
       @JsonKey(name: 'expirationDateUnix')
       @TimestampOrNullConverter()
-          DateTime? expirationDate});
+      DateTime? expirationDate});
 }
 
 /// @nodoc
@@ -46498,25 +46442,22 @@ abstract class _$$_AtsNsLicenseCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      @AtsNsStatusConverter()
-          AtsNsStatus status,
+      @AtsNsStatusConverter() AtsNsStatus status,
       bool? receive90Days,
-      @AtsNsProjectIdOrNullConverter()
-          AtsNsProjectId? projectId,
+      @AtsNsProjectIdOrNullConverter() AtsNsProjectId? projectId,
       String? certificate,
       String? certificatePassword,
       String cnpj,
       String? inscriptionId,
       String? businessName,
       String? companyName,
-      @AtsIcmsTypeOrNullConverter()
-          AtsIcmsType? icmsType,
+      @AtsIcmsTypeOrNullConverter() AtsIcmsType? icmsType,
       List<String>? emails,
       List<String>? phoneNumbers,
       List<AtsNsAddress>? addresses,
       @JsonKey(name: 'expirationDateUnix')
       @TimestampOrNullConverter()
-          DateTime? expirationDate});
+      DateTime? expirationDate});
 }
 
 /// @nodoc
@@ -46616,25 +46557,22 @@ class __$$_AtsNsLicenseCopyWithImpl<$Res>
 class _$_AtsNsLicense implements _AtsNsLicense {
   const _$_AtsNsLicense(
       {required this.id,
-      @AtsNsStatusConverter()
-          required this.status,
+      @AtsNsStatusConverter() required this.status,
       this.receive90Days,
-      @AtsNsProjectIdOrNullConverter()
-          this.projectId,
+      @AtsNsProjectIdOrNullConverter() this.projectId,
       this.certificate,
       this.certificatePassword,
       required this.cnpj,
       this.inscriptionId,
       this.businessName,
       this.companyName,
-      @AtsIcmsTypeOrNullConverter()
-          this.icmsType,
+      @AtsIcmsTypeOrNullConverter() this.icmsType,
       final List<String>? emails,
       final List<String>? phoneNumbers,
       final List<AtsNsAddress>? addresses,
       @JsonKey(name: 'expirationDateUnix')
       @TimestampOrNullConverter()
-          this.expirationDate})
+      this.expirationDate})
       : _emails = emails,
         _phoneNumbers = phoneNumbers,
         _addresses = addresses;
@@ -46815,25 +46753,22 @@ class _$_AtsNsLicense implements _AtsNsLicense {
 abstract class _AtsNsLicense implements AtsNsLicense {
   const factory _AtsNsLicense(
       {required final String id,
-      @AtsNsStatusConverter()
-          required final AtsNsStatus status,
+      @AtsNsStatusConverter() required final AtsNsStatus status,
       final bool? receive90Days,
-      @AtsNsProjectIdOrNullConverter()
-          final AtsNsProjectId? projectId,
+      @AtsNsProjectIdOrNullConverter() final AtsNsProjectId? projectId,
       final String? certificate,
       final String? certificatePassword,
       required final String cnpj,
       final String? inscriptionId,
       final String? businessName,
       final String? companyName,
-      @AtsIcmsTypeOrNullConverter()
-          final AtsIcmsType? icmsType,
+      @AtsIcmsTypeOrNullConverter() final AtsIcmsType? icmsType,
       final List<String>? emails,
       final List<String>? phoneNumbers,
       final List<AtsNsAddress>? addresses,
       @JsonKey(name: 'expirationDateUnix')
       @TimestampOrNullConverter()
-          final DateTime? expirationDate}) = _$_AtsNsLicense;
+      final DateTime? expirationDate}) = _$_AtsNsLicense;
 
   factory _AtsNsLicense.fromJson(Map<String, dynamic> json) =
       _$_AtsNsLicense.fromJson;
@@ -51116,11 +51051,10 @@ abstract class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
       final String? generatedBy,
       final String? fromAsset,
       final String? toAsset,
-      @TimestampOrNullConverter()
-          final DateTime? createdAt,
+      @TimestampOrNullConverter() final DateTime? createdAt,
       final String? errorResponse,
       @AtsExitExecuteStatusOrNullConverter()
-          final AtsExitExecuteStatus? status}) = _$_AtsExecuteExitHistory;
+      final AtsExitExecuteStatus? status}) = _$_AtsExecuteExitHistory;
 
   factory _AtsExecuteExitHistory.fromJson(Map<String, dynamic> json) =
       _$_AtsExecuteExitHistory.fromJson;
@@ -51213,7 +51147,7 @@ mixin _$BrickhouseAlert {
   TimeOfDay? get curfewEndHour => throw _privateConstructorUsedError;
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  String? get curfewTimezone => throw _privateConstructorUsedError;
+  String? get timezone => throw _privateConstructorUsedError;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
   @WeekdayConverter()
@@ -51265,8 +51199,7 @@ abstract class $BrickhouseAlertCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @BrickhouseAlertTypeConverter()
-          BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
       List<Asset>? assets,
       List<String>? assetsIds,
       List<String>? email,
@@ -51276,24 +51209,18 @@ abstract class $BrickhouseAlertCopyWith<$Res> {
       bool? hasEmail,
       bool? hasPhone,
       int? batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          TimeOfDay? curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          TimeOfDay? curfewEndHour,
-      String? curfewTimezone,
-      @WeekdayConverter()
-          List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter()
-          Color? geofenceColor,
-      @GeofenceModeOrNullConverter()
-          GeofenceMode? geofenceMode,
+      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
+      String? timezone,
+      @WeekdayConverter() List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter() Color? geofenceColor,
+      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-          BrickhouseGeofenceTrigger? geofenceTrigger,
+      BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter()
-          Duration? cooldownTime,
+      @DurationOrNullConverter() Duration? cooldownTime,
       bool? isMuted});
 }
 
@@ -51324,7 +51251,7 @@ class _$BrickhouseAlertCopyWithImpl<$Res, $Val extends BrickhouseAlert>
     Object? batteryMinLevel = freezed,
     Object? curfewStartHour = freezed,
     Object? curfewEndHour = freezed,
-    Object? curfewTimezone = freezed,
+    Object? timezone = freezed,
     Object? curfewWeekdays = freezed,
     Object? geofenceColor = freezed,
     Object? geofenceMode = freezed,
@@ -51392,9 +51319,9 @@ class _$BrickhouseAlertCopyWithImpl<$Res, $Val extends BrickhouseAlert>
           ? _value.curfewEndHour
           : curfewEndHour // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
-      curfewTimezone: freezed == curfewTimezone
-          ? _value.curfewTimezone
-          : curfewTimezone // ignore: cast_nullable_to_non_nullable
+      timezone: freezed == timezone
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
       curfewWeekdays: freezed == curfewWeekdays
           ? _value.curfewWeekdays
@@ -51447,8 +51374,7 @@ abstract class _$$_BrickhouseAlertCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      @BrickhouseAlertTypeConverter()
-          BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
       List<Asset>? assets,
       List<String>? assetsIds,
       List<String>? email,
@@ -51458,24 +51384,18 @@ abstract class _$$_BrickhouseAlertCopyWith<$Res>
       bool? hasEmail,
       bool? hasPhone,
       int? batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          TimeOfDay? curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          TimeOfDay? curfewEndHour,
-      String? curfewTimezone,
-      @WeekdayConverter()
-          List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter()
-          Color? geofenceColor,
-      @GeofenceModeOrNullConverter()
-          GeofenceMode? geofenceMode,
+      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
+      String? timezone,
+      @WeekdayConverter() List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter() Color? geofenceColor,
+      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-          BrickhouseGeofenceTrigger? geofenceTrigger,
+      BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter()
-          Duration? cooldownTime,
+      @DurationOrNullConverter() Duration? cooldownTime,
       bool? isMuted});
 }
 
@@ -51504,7 +51424,7 @@ class __$$_BrickhouseAlertCopyWithImpl<$Res>
     Object? batteryMinLevel = freezed,
     Object? curfewStartHour = freezed,
     Object? curfewEndHour = freezed,
-    Object? curfewTimezone = freezed,
+    Object? timezone = freezed,
     Object? curfewWeekdays = freezed,
     Object? geofenceColor = freezed,
     Object? geofenceMode = freezed,
@@ -51572,9 +51492,9 @@ class __$$_BrickhouseAlertCopyWithImpl<$Res>
           ? _value.curfewEndHour
           : curfewEndHour // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
-      curfewTimezone: freezed == curfewTimezone
-          ? _value.curfewTimezone
-          : curfewTimezone // ignore: cast_nullable_to_non_nullable
+      timezone: freezed == timezone
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
       curfewWeekdays: freezed == curfewWeekdays
           ? _value._curfewWeekdays
@@ -51634,7 +51554,7 @@ class _$_BrickhouseAlert implements _BrickhouseAlert {
       this.batteryMinLevel,
       @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewEndHour,
-      this.curfewTimezone,
+      this.timezone,
       @WeekdayConverter() final List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() this.geofenceColor,
       @GeofenceModeOrNullConverter() this.geofenceMode,
@@ -51751,7 +51671,7 @@ class _$_BrickhouseAlert implements _BrickhouseAlert {
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
   @override
-  final String? curfewTimezone;
+  final String? timezone;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
   final List<Weekday>? _curfewWeekdays;
@@ -51817,7 +51737,7 @@ class _$_BrickhouseAlert implements _BrickhouseAlert {
 
   @override
   String toString() {
-    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, curfewTimezone: $curfewTimezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted)';
+    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted)';
   }
 
   @override
@@ -51847,8 +51767,8 @@ class _$_BrickhouseAlert implements _BrickhouseAlert {
                 other.curfewStartHour == curfewStartHour) &&
             (identical(other.curfewEndHour, curfewEndHour) ||
                 other.curfewEndHour == curfewEndHour) &&
-            (identical(other.curfewTimezone, curfewTimezone) ||
-                other.curfewTimezone == curfewTimezone) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone) &&
             const DeepCollectionEquality()
                 .equals(other._curfewWeekdays, _curfewWeekdays) &&
             (identical(other.geofenceColor, geofenceColor) ||
@@ -51886,7 +51806,7 @@ class _$_BrickhouseAlert implements _BrickhouseAlert {
         batteryMinLevel,
         curfewStartHour,
         curfewEndHour,
-        curfewTimezone,
+        timezone,
         const DeepCollectionEquality().hash(_curfewWeekdays),
         geofenceColor,
         geofenceMode,
@@ -51916,8 +51836,7 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
   const factory _BrickhouseAlert(
       {required final String id,
       required final String name,
-      @BrickhouseAlertTypeConverter()
-          required final BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter() required final BrickhouseAlertType type,
       final List<Asset>? assets,
       final List<String>? assetsIds,
       final List<String>? email,
@@ -51928,23 +51847,19 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
       final bool? hasPhone,
       final int? batteryMinLevel,
       @BrickhouseTimeOfDayMinuteOrNullConverter()
-          final TimeOfDay? curfewStartHour,
+      final TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter()
-          final TimeOfDay? curfewEndHour,
-      final String? curfewTimezone,
-      @WeekdayConverter()
-          final List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter()
-          final Color? geofenceColor,
-      @GeofenceModeOrNullConverter()
-          final GeofenceMode? geofenceMode,
+      final TimeOfDay? curfewEndHour,
+      final String? timezone,
+      @WeekdayConverter() final List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter() final Color? geofenceColor,
+      @GeofenceModeOrNullConverter() final GeofenceMode? geofenceMode,
       final double? geofenceRadius,
       final List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-          final BrickhouseGeofenceTrigger? geofenceTrigger,
+      final BrickhouseGeofenceTrigger? geofenceTrigger,
       final double? maxSpeedMaxValue,
-      @DurationOrNullConverter()
-          final Duration? cooldownTime,
+      @DurationOrNullConverter() final Duration? cooldownTime,
       final bool? isMuted}) = _$_BrickhouseAlert;
 
   factory _BrickhouseAlert.fromJson(Map<String, dynamic> json) =
@@ -52012,7 +51927,7 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
   @override
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  String? get curfewTimezone;
+  String? get timezone;
   @override
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
@@ -52154,10 +52069,10 @@ mixin _$BrickhouseAlertInput {
   set curfewEndHour(TimeOfDay? value) => throw _privateConstructorUsedError;
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  String? get curfewTimezone => throw _privateConstructorUsedError;
+  String? get timezone => throw _privateConstructorUsedError;
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  set curfewTimezone(String? value) => throw _privateConstructorUsedError;
+  set timezone(String? value) => throw _privateConstructorUsedError;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
   @WeekdayConverter()
@@ -52246,8 +52161,7 @@ abstract class $BrickhouseAlertInputCopyWith<$Res> {
   $Res call(
       {String? id,
       String name,
-      @BrickhouseAlertTypeConverter()
-          BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
       List<String> assetsIds,
       List<String>? email,
       List<NullablePhoneNumber?>? phone,
@@ -52256,24 +52170,18 @@ abstract class $BrickhouseAlertInputCopyWith<$Res> {
       bool? hasEmail,
       bool? hasPhone,
       int? batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          TimeOfDay? curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          TimeOfDay? curfewEndHour,
-      String? curfewTimezone,
-      @WeekdayConverter()
-          List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter()
-          Color? geofenceColor,
-      @GeofenceModeOrNullConverter()
-          GeofenceMode? geofenceMode,
+      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
+      String? timezone,
+      @WeekdayConverter() List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter() Color? geofenceColor,
+      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-          BrickhouseGeofenceTrigger? geofenceTrigger,
+      BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter()
-          Duration? cooldownTime,
+      @DurationOrNullConverter() Duration? cooldownTime,
       bool? isMuted});
 }
 
@@ -52304,7 +52212,7 @@ class _$BrickhouseAlertInputCopyWithImpl<$Res,
     Object? batteryMinLevel = freezed,
     Object? curfewStartHour = freezed,
     Object? curfewEndHour = freezed,
-    Object? curfewTimezone = freezed,
+    Object? timezone = freezed,
     Object? curfewWeekdays = freezed,
     Object? geofenceColor = freezed,
     Object? geofenceMode = freezed,
@@ -52368,9 +52276,9 @@ class _$BrickhouseAlertInputCopyWithImpl<$Res,
           ? _value.curfewEndHour
           : curfewEndHour // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
-      curfewTimezone: freezed == curfewTimezone
-          ? _value.curfewTimezone
-          : curfewTimezone // ignore: cast_nullable_to_non_nullable
+      timezone: freezed == timezone
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
       curfewWeekdays: freezed == curfewWeekdays
           ? _value.curfewWeekdays
@@ -52423,8 +52331,7 @@ abstract class _$$_BrickhouseAlertInputCopyWith<$Res>
   $Res call(
       {String? id,
       String name,
-      @BrickhouseAlertTypeConverter()
-          BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
       List<String> assetsIds,
       List<String>? email,
       List<NullablePhoneNumber?>? phone,
@@ -52433,24 +52340,18 @@ abstract class _$$_BrickhouseAlertInputCopyWith<$Res>
       bool? hasEmail,
       bool? hasPhone,
       int? batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          TimeOfDay? curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          TimeOfDay? curfewEndHour,
-      String? curfewTimezone,
-      @WeekdayConverter()
-          List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter()
-          Color? geofenceColor,
-      @GeofenceModeOrNullConverter()
-          GeofenceMode? geofenceMode,
+      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
+      String? timezone,
+      @WeekdayConverter() List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter() Color? geofenceColor,
+      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-          BrickhouseGeofenceTrigger? geofenceTrigger,
+      BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter()
-          Duration? cooldownTime,
+      @DurationOrNullConverter() Duration? cooldownTime,
       bool? isMuted});
 }
 
@@ -52478,7 +52379,7 @@ class __$$_BrickhouseAlertInputCopyWithImpl<$Res>
     Object? batteryMinLevel = freezed,
     Object? curfewStartHour = freezed,
     Object? curfewEndHour = freezed,
-    Object? curfewTimezone = freezed,
+    Object? timezone = freezed,
     Object? curfewWeekdays = freezed,
     Object? geofenceColor = freezed,
     Object? geofenceMode = freezed,
@@ -52542,9 +52443,9 @@ class __$$_BrickhouseAlertInputCopyWithImpl<$Res>
           ? _value.curfewEndHour
           : curfewEndHour // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
-      curfewTimezone: freezed == curfewTimezone
-          ? _value.curfewTimezone
-          : curfewTimezone // ignore: cast_nullable_to_non_nullable
+      timezone: freezed == timezone
+          ? _value.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
               as String?,
       curfewWeekdays: freezed == curfewWeekdays
           ? _value.curfewWeekdays
@@ -52592,8 +52493,7 @@ class _$_BrickhouseAlertInput implements _BrickhouseAlertInput {
   _$_BrickhouseAlertInput(
       {this.id,
       required this.name,
-      @BrickhouseAlertTypeConverter()
-          required this.type,
+      @BrickhouseAlertTypeConverter() required this.type,
       required this.assetsIds,
       this.email = const [],
       this.phone = const [],
@@ -52602,13 +52502,10 @@ class _$_BrickhouseAlertInput implements _BrickhouseAlertInput {
       this.hasEmail = false,
       this.hasPhone = false,
       this.batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          this.curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          this.curfewEndHour,
-      this.curfewTimezone,
-      @WeekdayConverter()
-          this.curfewWeekdays = const [
+      @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewEndHour,
+      this.timezone,
+      @WeekdayConverter() this.curfewWeekdays = const [
         Weekday.monday,
         Weekday.tuesday,
         Weekday.wednesday,
@@ -52617,17 +52514,14 @@ class _$_BrickhouseAlertInput implements _BrickhouseAlertInput {
         Weekday.saturday,
         Weekday.sunday
       ],
-      @ColorOrNullConverter()
-          this.geofenceColor,
-      @GeofenceModeOrNullConverter()
-          this.geofenceMode,
+      @ColorOrNullConverter() this.geofenceColor,
+      @GeofenceModeOrNullConverter() this.geofenceMode,
       this.geofenceRadius,
       this.geofenceShape = const [],
       @BrickhouseGeofenceTriggerOrNullConverter()
-          this.geofenceTrigger = BrickhouseGeofenceTrigger.both,
+      this.geofenceTrigger = BrickhouseGeofenceTrigger.both,
       this.maxSpeedMaxValue,
-      @DurationOrNullConverter()
-          this.cooldownTime,
+      @DurationOrNullConverter() this.cooldownTime,
       this.isMuted = false});
 
   factory _$_BrickhouseAlertInput.fromJson(Map<String, dynamic> json) =>
@@ -52696,7 +52590,7 @@ class _$_BrickhouseAlertInput implements _BrickhouseAlertInput {
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
   @override
-  String? curfewTimezone;
+  String? timezone;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
   @override
@@ -52747,7 +52641,7 @@ class _$_BrickhouseAlertInput implements _BrickhouseAlertInput {
 
   @override
   String toString() {
-    return 'BrickhouseAlertInput(id: $id, name: $name, type: $type, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, curfewTimezone: $curfewTimezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted)';
+    return 'BrickhouseAlertInput(id: $id, name: $name, type: $type, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted)';
   }
 
   @JsonKey(ignore: true)
@@ -52769,8 +52663,7 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
   factory _BrickhouseAlertInput(
       {String? id,
       required String name,
-      @BrickhouseAlertTypeConverter()
-          required BrickhouseAlertType type,
+      @BrickhouseAlertTypeConverter() required BrickhouseAlertType type,
       required List<String> assetsIds,
       List<String>? email,
       List<NullablePhoneNumber?>? phone,
@@ -52779,24 +52672,18 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
       bool? hasEmail,
       bool? hasPhone,
       int? batteryMinLevel,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          TimeOfDay? curfewStartHour,
-      @BrickhouseTimeOfDayMinuteOrNullConverter()
-          TimeOfDay? curfewEndHour,
-      String? curfewTimezone,
-      @WeekdayConverter()
-          List<Weekday>? curfewWeekdays,
-      @ColorOrNullConverter()
-          Color? geofenceColor,
-      @GeofenceModeOrNullConverter()
-          GeofenceMode? geofenceMode,
+      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
+      @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
+      String? timezone,
+      @WeekdayConverter() List<Weekday>? curfewWeekdays,
+      @ColorOrNullConverter() Color? geofenceColor,
+      @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter()
-          BrickhouseGeofenceTrigger? geofenceTrigger,
+      BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter()
-          Duration? cooldownTime,
+      @DurationOrNullConverter() Duration? cooldownTime,
       bool? isMuted}) = _$_BrickhouseAlertInput;
 
   factory _BrickhouseAlertInput.fromJson(Map<String, dynamic> json) =
@@ -52902,10 +52789,10 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
   @override
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  String? get curfewTimezone;
+  String? get timezone;
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  set curfewTimezone(String? value);
+  set timezone(String? value);
   @override
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
@@ -53164,10 +53051,9 @@ class _$_BrickHouseWorkspaceInput extends _BrickHouseWorkspaceInput {
       {this.id,
       required this.appId,
       required this.name,
-      @MetricSystemConverter()
-          required this.metricSystem,
+      @MetricSystemConverter() required this.metricSystem,
       @AppInternalIdentifierOrNullConverter()
-          this.typeApp = AppInternalIdentifier.brickhouseTracking,
+      this.typeApp = AppInternalIdentifier.brickhouseTracking,
       required this.timezoneId,
       final List<String>? assetsIds = const []})
       : _assetsIds = assetsIds,
@@ -53251,10 +53137,9 @@ abstract class _BrickHouseWorkspaceInput extends BrickHouseWorkspaceInput {
       {final String? id,
       required final String appId,
       required final String name,
-      @MetricSystemConverter()
-          required final MetricSystem metricSystem,
+      @MetricSystemConverter() required final MetricSystem metricSystem,
       @AppInternalIdentifierOrNullConverter()
-          final AppInternalIdentifier? typeApp,
+      final AppInternalIdentifier? typeApp,
       required final String timezoneId,
       final List<String>? assetsIds}) = _$_BrickHouseWorkspaceInput;
   const _BrickHouseWorkspaceInput._() : super._();
@@ -53699,7 +53584,7 @@ class _$_ConciergeFormBlock implements _ConciergeFormBlock {
 abstract class _ConciergeFormBlock implements ConciergeFormBlock {
   const factory _ConciergeFormBlock(
       {@ConciergeFormBlockTypeConverter()
-          required final ConciergeFormBlockType blockType,
+      required final ConciergeFormBlockType blockType,
       required final String name,
       final ConciergeFormBlockConfiguration? configuration,
       final ConciergeFormBlockValidator? showWhen}) = _$_ConciergeFormBlock;
@@ -54070,9 +53955,9 @@ abstract class $ConciergeFormBlockValidatorCopyWith<$Res> {
       double? min,
       String? value,
       @ConciergeFormDisplayConditionValidatorConverter()
-          ConciergeFormDisplayConditionValidator validator,
+      ConciergeFormDisplayConditionValidator validator,
       @ConciergeFormDisplayConditionOperatorOrNullConverter()
-          ConciergeFormDisplayConditionOperator? validatorOperator});
+      ConciergeFormDisplayConditionOperator? validatorOperator});
 }
 
 /// @nodoc
@@ -54140,9 +54025,9 @@ abstract class _$$_ConciergeFormBlockValidatorCopyWith<$Res>
       double? min,
       String? value,
       @ConciergeFormDisplayConditionValidatorConverter()
-          ConciergeFormDisplayConditionValidator validator,
+      ConciergeFormDisplayConditionValidator validator,
       @ConciergeFormDisplayConditionOperatorOrNullConverter()
-          ConciergeFormDisplayConditionOperator? validatorOperator});
+      ConciergeFormDisplayConditionOperator? validatorOperator});
 }
 
 /// @nodoc
@@ -54203,9 +54088,9 @@ class _$_ConciergeFormBlockValidator implements _ConciergeFormBlockValidator {
       this.min,
       this.value,
       @ConciergeFormDisplayConditionValidatorConverter()
-          required this.validator,
+      required this.validator,
       @ConciergeFormDisplayConditionOperatorOrNullConverter()
-          this.validatorOperator});
+      this.validatorOperator});
 
   factory _$_ConciergeFormBlockValidator.fromJson(Map<String, dynamic> json) =>
       _$$_ConciergeFormBlockValidatorFromJson(json);
@@ -54282,9 +54167,9 @@ abstract class _ConciergeFormBlockValidator
           final double? min,
           final String? value,
           @ConciergeFormDisplayConditionValidatorConverter()
-              required final ConciergeFormDisplayConditionValidator validator,
+          required final ConciergeFormDisplayConditionValidator validator,
           @ConciergeFormDisplayConditionOperatorOrNullConverter()
-              final ConciergeFormDisplayConditionOperator? validatorOperator}) =
+          final ConciergeFormDisplayConditionOperator? validatorOperator}) =
       _$_ConciergeFormBlockValidator;
 
   factory _ConciergeFormBlockValidator.fromJson(Map<String, dynamic> json) =
@@ -54610,17 +54495,13 @@ abstract class $MonitorActiveCheckpointCopyWith<$Res> {
   $Res call(
       {String id,
       @MonitorActiveCheckpointStateConverter()
-          MonitorActiveCheckpointState state,
+      MonitorActiveCheckpointState state,
       Checkpoint checkpoint,
       Asset asset,
-      @TimestampOrNullConverter()
-          DateTime? startAt,
-      @TimestampOrNullConverter()
-          DateTime? endAt,
-      @TimestampOrNullConverter()
-          DateTime? updatedAt,
-      @CheckpointStateConverter()
-          CheckpointState checkpointState,
+      @TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      @CheckpointStateConverter() CheckpointState checkpointState,
       List<MonitorRealWaypoint> waypoints});
 
   $CheckpointCopyWith<$Res> get checkpoint;
@@ -54719,17 +54600,13 @@ abstract class _$$_MonitorActiveCheckpointCopyWith<$Res>
   $Res call(
       {String id,
       @MonitorActiveCheckpointStateConverter()
-          MonitorActiveCheckpointState state,
+      MonitorActiveCheckpointState state,
       Checkpoint checkpoint,
       Asset asset,
-      @TimestampOrNullConverter()
-          DateTime? startAt,
-      @TimestampOrNullConverter()
-          DateTime? endAt,
-      @TimestampOrNullConverter()
-          DateTime? updatedAt,
-      @CheckpointStateConverter()
-          CheckpointState checkpointState,
+      @TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      @CheckpointStateConverter() CheckpointState checkpointState,
       List<MonitorRealWaypoint> waypoints});
 
   @override
@@ -54908,17 +54785,14 @@ abstract class _MonitorActiveCheckpoint implements MonitorActiveCheckpoint {
   const factory _MonitorActiveCheckpoint(
       {required final String id,
       @MonitorActiveCheckpointStateConverter()
-          required final MonitorActiveCheckpointState state,
+      required final MonitorActiveCheckpointState state,
       required final Checkpoint checkpoint,
       required final Asset asset,
-      @TimestampOrNullConverter()
-          final DateTime? startAt,
-      @TimestampOrNullConverter()
-          final DateTime? endAt,
-      @TimestampOrNullConverter()
-          final DateTime? updatedAt,
+      @TimestampOrNullConverter() final DateTime? startAt,
+      @TimestampOrNullConverter() final DateTime? endAt,
+      @TimestampOrNullConverter() final DateTime? updatedAt,
       @CheckpointStateConverter()
-          required final CheckpointState checkpointState,
+      required final CheckpointState checkpointState,
       final List<MonitorRealWaypoint> waypoints}) = _$_MonitorActiveCheckpoint;
 
   factory _MonitorActiveCheckpoint.fromJson(Map<String, dynamic> json) =

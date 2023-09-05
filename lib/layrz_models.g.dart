@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of layrz_models;
+part of 'layrz_models.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -4439,7 +4439,7 @@ _$_BrickhouseAlert _$$_BrickhouseAlertFromJson(Map<String, dynamic> json) =>
           .fromJson(json['curfewStartHour'] as int?),
       curfewEndHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
           .fromJson(json['curfewEndHour'] as int?),
-      curfewTimezone: json['curfewTimezone'] as String?,
+      timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
           ?.map((e) => const WeekdayConverter().fromJson(e as String))
           .toList(),
@@ -4477,7 +4477,7 @@ Map<String, dynamic> _$$_BrickhouseAlertToJson(_$_BrickhouseAlert instance) =>
           .toJson(instance.curfewStartHour),
       'curfewEndHour': const BrickhouseTimeOfDayMinuteOrNullConverter()
           .toJson(instance.curfewEndHour),
-      'curfewTimezone': instance.curfewTimezone,
+      'timezone': instance.timezone,
       'curfewWeekdays': instance.curfewWeekdays
           ?.map(const WeekdayConverter().toJson)
           .toList(),
@@ -4523,7 +4523,7 @@ _$_BrickhouseAlertInput _$$_BrickhouseAlertInputFromJson(
           .fromJson(json['curfewStartHour'] as int?),
       curfewEndHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
           .fromJson(json['curfewEndHour'] as int?),
-      curfewTimezone: json['curfewTimezone'] as String?,
+      timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
               ?.map((e) => const WeekdayConverter().fromJson(e as String))
               .toList() ??
@@ -4573,7 +4573,7 @@ Map<String, dynamic> _$$_BrickhouseAlertInputToJson(
           .toJson(instance.curfewStartHour),
       'curfewEndHour': const BrickhouseTimeOfDayMinuteOrNullConverter()
           .toJson(instance.curfewEndHour),
-      'curfewTimezone': instance.curfewTimezone,
+      'timezone': instance.timezone,
       'curfewWeekdays': instance.curfewWeekdays
           ?.map(const WeekdayConverter().toJson)
           .toList(),
