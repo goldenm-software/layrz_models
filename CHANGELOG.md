@@ -1,4 +1,8 @@
 # Changelog
+
+## 2.0.22
+- Updated `LayrzAppLocalizations` to support `setDeveloperMode` and documented some parts of this class
+
 ## 2.0.21
 - Renamed [BrickhouseAlertInput] `curfewTimezone` to `timezone`
 ## 2.0.20
