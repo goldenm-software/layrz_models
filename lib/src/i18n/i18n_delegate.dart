@@ -51,16 +51,10 @@ class LayrzAppLocalizations {
     return _localizedStrings?.containsKey(key) ?? false;
   }
 
-  /// [toggleDeveloperMode] is used to toggle the developer mode on or off
-  /// To get the current value of the developer mode, use [developerMode]
-  void toggleDeveloperMode() {
-    LayrzAppLocalizations._developerMode = !LayrzAppLocalizations._developerMode;
-  }
-
   /// [setDeveloperMode] is used to set the developer mode to a specific value
   /// [value] is the value to set the developer mode to
   /// To get the current value of the developer mode, use [developerMode]
-  void setDeveloperMode(bool value) {
+  static void setDeveloperMode(bool value) {
     LayrzAppLocalizations._developerMode = value;
   }
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.23
+- Deprecated `toggleDeveloperMode` on `LayrzAppLocalizations` in favor of `setDeveloperMode`
+- Changed `setDeveloper` to a static method on `LayrzAppLocalizations`
+
 ## 2.0.22
 - Updated `LayrzAppLocalizations` to support `setDeveloperMode` and documented some parts of this class
 
