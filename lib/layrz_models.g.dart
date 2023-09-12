@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'layrz_models.dart';
+part of layrz_models;
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -617,7 +617,9 @@ _$_Employee _$$_EmployeeFromJson(Map<String, dynamic> json) => _$_Employee(
           ? null
           : Department.fromJson(json['department'] as Map<String, dynamic>),
       departmentId: json['departmentId'] as String?,
-      avatar: json['avatar'] as String?,
+      dynamicAvatar: json['dynamicAvatar'] == null
+          ? null
+          : Avatar.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
       token: json['token'] == null
           ? null
           : Token.fromJson(json['token'] as Map<String, dynamic>),
@@ -639,7 +641,7 @@ Map<String, dynamic> _$$_EmployeeToJson(_$_Employee instance) =>
       'username': instance.username,
       'department': instance.department?.toJson(),
       'departmentId': instance.departmentId,
-      'avatar': instance.avatar,
+      'dynamicAvatar': instance.dynamicAvatar?.toJson(),
       'token': instance.token?.toJson(),
       'permissions': instance.permissions?.toJson(),
       'customPermissions': instance.customPermissions?.toJson(),

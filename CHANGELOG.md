@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.24
+- Replaced `avatar` with `dynamicAvatar` on [Employee]
+
 ## 2.0.23
 - Deprecated `toggleDeveloperMode` on `LayrzAppLocalizations` in favor of `setDeveloperMode`
 - Changed `setDeveloper` to a static method on `LayrzAppLocalizations`
