@@ -57316,3 +57316,281 @@ abstract class _MappitHomeConfig implements MappitHomeConfig {
   _$$_MappitHomeConfigCopyWith<_$_MappitHomeConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+MappitFreeDay _$MappitFreeDayFromJson(Map<String, dynamic> json) {
+  return _MappitFreeDay.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MappitFreeDay {
+  /// [id] represents the free day ID.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [name] represents the free day name.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [date] represents the free day date.
+  @TimestampConverter()
+  DateTime get date => throw _privateConstructorUsedError;
+
+  /// [assets] represents the assets assigned to this free day.
+  List<Asset>? get assets => throw _privateConstructorUsedError;
+
+  /// [assetsIds] represents the assets IDs assigned to this free day.
+  List<String>? get assetsIds => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MappitFreeDayCopyWith<MappitFreeDay> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MappitFreeDayCopyWith<$Res> {
+  factory $MappitFreeDayCopyWith(
+          MappitFreeDay value, $Res Function(MappitFreeDay) then) =
+      _$MappitFreeDayCopyWithImpl<$Res, MappitFreeDay>;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      @TimestampConverter() DateTime date,
+      List<Asset>? assets,
+      List<String>? assetsIds});
+}
+
+/// @nodoc
+class _$MappitFreeDayCopyWithImpl<$Res, $Val extends MappitFreeDay>
+    implements $MappitFreeDayCopyWith<$Res> {
+  _$MappitFreeDayCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? date = null,
+    Object? assets = freezed,
+    Object? assetsIds = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      assets: freezed == assets
+          ? _value.assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      assetsIds: freezed == assetsIds
+          ? _value.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_MappitFreeDayCopyWith<$Res>
+    implements $MappitFreeDayCopyWith<$Res> {
+  factory _$$_MappitFreeDayCopyWith(
+          _$_MappitFreeDay value, $Res Function(_$_MappitFreeDay) then) =
+      __$$_MappitFreeDayCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      @TimestampConverter() DateTime date,
+      List<Asset>? assets,
+      List<String>? assetsIds});
+}
+
+/// @nodoc
+class __$$_MappitFreeDayCopyWithImpl<$Res>
+    extends _$MappitFreeDayCopyWithImpl<$Res, _$_MappitFreeDay>
+    implements _$$_MappitFreeDayCopyWith<$Res> {
+  __$$_MappitFreeDayCopyWithImpl(
+      _$_MappitFreeDay _value, $Res Function(_$_MappitFreeDay) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? date = null,
+    Object? assets = freezed,
+    Object? assetsIds = freezed,
+  }) {
+    return _then(_$_MappitFreeDay(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      assets: freezed == assets
+          ? _value._assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      assetsIds: freezed == assetsIds
+          ? _value._assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_MappitFreeDay implements _MappitFreeDay {
+  const _$_MappitFreeDay(
+      {required this.id,
+      required this.name,
+      @TimestampConverter() required this.date,
+      final List<Asset>? assets,
+      final List<String>? assetsIds})
+      : _assets = assets,
+        _assetsIds = assetsIds;
+
+  factory _$_MappitFreeDay.fromJson(Map<String, dynamic> json) =>
+      _$$_MappitFreeDayFromJson(json);
+
+  /// [id] represents the free day ID.
+  @override
+  final String id;
+
+  /// [name] represents the free day name.
+  @override
+  final String name;
+
+  /// [date] represents the free day date.
+  @override
+  @TimestampConverter()
+  final DateTime date;
+
+  /// [assets] represents the assets assigned to this free day.
+  final List<Asset>? _assets;
+
+  /// [assets] represents the assets assigned to this free day.
+  @override
+  List<Asset>? get assets {
+    final value = _assets;
+    if (value == null) return null;
+    if (_assets is EqualUnmodifiableListView) return _assets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [assetsIds] represents the assets IDs assigned to this free day.
+  final List<String>? _assetsIds;
+
+  /// [assetsIds] represents the assets IDs assigned to this free day.
+  @override
+  List<String>? get assetsIds {
+    final value = _assetsIds;
+    if (value == null) return null;
+    if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'MappitFreeDay(id: $id, name: $name, date: $date, assets: $assets, assetsIds: $assetsIds)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MappitFreeDay &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.date, date) || other.date == date) &&
+            const DeepCollectionEquality().equals(other._assets, _assets) &&
+            const DeepCollectionEquality()
+                .equals(other._assetsIds, _assetsIds));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      date,
+      const DeepCollectionEquality().hash(_assets),
+      const DeepCollectionEquality().hash(_assetsIds));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MappitFreeDayCopyWith<_$_MappitFreeDay> get copyWith =>
+      __$$_MappitFreeDayCopyWithImpl<_$_MappitFreeDay>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_MappitFreeDayToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MappitFreeDay implements MappitFreeDay {
+  const factory _MappitFreeDay(
+      {required final String id,
+      required final String name,
+      @TimestampConverter() required final DateTime date,
+      final List<Asset>? assets,
+      final List<String>? assetsIds}) = _$_MappitFreeDay;
+
+  factory _MappitFreeDay.fromJson(Map<String, dynamic> json) =
+      _$_MappitFreeDay.fromJson;
+
+  @override
+
+  /// [id] represents the free day ID.
+  String get id;
+  @override
+
+  /// [name] represents the free day name.
+  String get name;
+  @override
+
+  /// [date] represents the free day date.
+  @TimestampConverter()
+  DateTime get date;
+  @override
+
+  /// [assets] represents the assets assigned to this free day.
+  List<Asset>? get assets;
+  @override
+
+  /// [assetsIds] represents the assets IDs assigned to this free day.
+  List<String>? get assetsIds;
+  @override
+  @JsonKey(ignore: true)
+  _$$_MappitFreeDayCopyWith<_$_MappitFreeDay> get copyWith =>
+      throw _privateConstructorUsedError;
+}

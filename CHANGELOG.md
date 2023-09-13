@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.25
+- Added [MappitFreeDay] model
+
 ## 2.0.24
 - Replaced `avatar` with `dynamicAvatar` on [Employee]
 

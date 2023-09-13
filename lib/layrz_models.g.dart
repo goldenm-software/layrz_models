@@ -4986,3 +4986,25 @@ Map<String, dynamic> _$$_MappitHomeConfigToJson(_$_MappitHomeConfig instance) =>
           instance.customersVisited.map((e) => e.toJson()).toList(),
       'dailyDistance': instance.dailyDistance.map((e) => e.toJson()).toList(),
     };
+
+_$_MappitFreeDay _$$_MappitFreeDayFromJson(Map<String, dynamic> json) =>
+    _$_MappitFreeDay(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      date: const TimestampConverter().fromJson(json['date'] as num),
+      assets: (json['assets'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      assetsIds: (json['assetsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_MappitFreeDayToJson(_$_MappitFreeDay instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'date': const TimestampConverter().toJson(instance.date),
+      'assets': instance.assets?.map((e) => e.toJson()).toList(),
+      'assetsIds': instance.assetsIds,
+    };

@@ -159,6 +159,7 @@ part 'src/mappit/route.dart';
 part 'src/mappit/labor_hour.dart';
 part 'src/mappit/profile.dart';
 part 'src/mappit/home_config.dart';
+part 'src/mappit/fee_day.dart';
 
 // Helper enums
 enum LayrzListingFormat {

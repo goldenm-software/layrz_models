@@ -129,6 +129,12 @@ enum ReferenceCategory {
 
   /// Layrz API Reference: MAPPIT_PERM_PROFILES_FULL
   mappitPermProfilesFull,
+  
+  /// Layrz API Reference: MAPPIT_PERM_FREEDAYS_READ
+  mappitPermFreeDaysRead,
+
+  /// Layrz API Reference: MAPPIT_PERM_FREEDAYS_FULL
+  mappitPermFreeDaysFull,
   ;
 
   @override
@@ -204,6 +210,10 @@ enum ReferenceCategory {
         return 'MAPPIT_PERM_PROFILES_READ';
       case ReferenceCategory.mappitPermProfilesFull:
         return 'MAPPIT_PERM_PROFILES_FULL';
+      case ReferenceCategory.mappitPermFreeDaysRead:
+        return 'MAPPIT_PERM_FREEDAYS_READ';
+      case ReferenceCategory.mappitPermFreeDaysFull:
+        return 'MAPPIT_PERM_FREEDAYS_FULL';
       default:
         return 'UNIVERSAL';
     }
@@ -279,6 +289,10 @@ enum ReferenceCategory {
         return ReferenceCategory.mappitPermProfilesRead;
       case 'MAPPIT_PERM_PROFILES_FULL':
         return ReferenceCategory.mappitPermProfilesFull;
+      case 'MAPPIT_PERM_FREEDAYS_READ':
+        return ReferenceCategory.mappitPermFreeDaysRead;
+      case 'MAPPIT_PERM_FREEDAYS_FULL':
+        return ReferenceCategory.mappitPermFreeDaysFull;
       default:
         return ReferenceCategory.universal;
     }
