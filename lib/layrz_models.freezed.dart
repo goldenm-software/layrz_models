@@ -25663,8 +25663,13 @@ mixin _$Action {
   /// Is a list of granted access to this entity.
   List<Access>? get access => throw _privateConstructorUsedError;
 
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
+  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
+  /// data need image convertion.
   bool? get watchImage => throw _privateConstructorUsedError;
+
+  /// Is the geofence settings. Only for `ActionType.createGeofence`
+  ActionGeofenceSettings? get geofenceSettings =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -25689,7 +25694,10 @@ abstract class $ActionCopyWith<$Res> {
       List<Operation>? operations,
       List<String>? operationsIds,
       List<Access>? access,
-      bool? watchImage});
+      bool? watchImage,
+      ActionGeofenceSettings? geofenceSettings});
+
+  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;
 }
 
 /// @nodoc
@@ -25718,6 +25726,7 @@ class _$ActionCopyWithImpl<$Res, $Val extends Action>
     Object? operationsIds = freezed,
     Object? access = freezed,
     Object? watchImage = freezed,
+    Object? geofenceSettings = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -25772,7 +25781,24 @@ class _$ActionCopyWithImpl<$Res, $Val extends Action>
           ? _value.watchImage
           : watchImage // ignore: cast_nullable_to_non_nullable
               as bool?,
+      geofenceSettings: freezed == geofenceSettings
+          ? _value.geofenceSettings
+          : geofenceSettings // ignore: cast_nullable_to_non_nullable
+              as ActionGeofenceSettings?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings {
+    if (_value.geofenceSettings == null) {
+      return null;
+    }
+
+    return $ActionGeofenceSettingsCopyWith<$Res>(_value.geofenceSettings!,
+        (value) {
+      return _then(_value.copyWith(geofenceSettings: value) as $Val);
+    });
   }
 }
 
@@ -25795,7 +25821,11 @@ abstract class _$$_ActionCopyWith<$Res> implements $ActionCopyWith<$Res> {
       List<Operation>? operations,
       List<String>? operationsIds,
       List<Access>? access,
-      bool? watchImage});
+      bool? watchImage,
+      ActionGeofenceSettings? geofenceSettings});
+
+  @override
+  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;
 }
 
 /// @nodoc
@@ -25821,6 +25851,7 @@ class __$$_ActionCopyWithImpl<$Res>
     Object? operationsIds = freezed,
     Object? access = freezed,
     Object? watchImage = freezed,
+    Object? geofenceSettings = freezed,
   }) {
     return _then(_$_Action(
       id: null == id
@@ -25875,6 +25906,10 @@ class __$$_ActionCopyWithImpl<$Res>
           ? _value.watchImage
           : watchImage // ignore: cast_nullable_to_non_nullable
               as bool?,
+      geofenceSettings: freezed == geofenceSettings
+          ? _value.geofenceSettings
+          : geofenceSettings // ignore: cast_nullable_to_non_nullable
+              as ActionGeofenceSettings?,
     ));
   }
 }
@@ -25895,7 +25930,8 @@ class _$_Action implements _Action {
       final List<Operation>? operations,
       final List<String>? operationsIds,
       final List<Access>? access,
-      this.watchImage})
+      this.watchImage,
+      this.geofenceSettings})
       : _triggers = triggers,
         _triggersIds = triggersIds,
         _outboundServices = outboundServices,
@@ -26014,13 +26050,18 @@ class _$_Action implements _Action {
     return EqualUnmodifiableListView(value);
   }
 
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
+  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
+  /// data need image convertion.
   @override
   final bool? watchImage;
 
+  /// Is the geofence settings. Only for `ActionType.createGeofence`
+  @override
+  final ActionGeofenceSettings? geofenceSettings;
+
   @override
   String toString() {
-    return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage)';
+    return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
   }
 
   @override
@@ -26047,7 +26088,9 @@ class _$_Action implements _Action {
                 .equals(other._operationsIds, _operationsIds) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
             (identical(other.watchImage, watchImage) ||
-                other.watchImage == watchImage));
+                other.watchImage == watchImage) &&
+            (identical(other.geofenceSettings, geofenceSettings) ||
+                other.geofenceSettings == geofenceSettings));
   }
 
   @JsonKey(ignore: true)
@@ -26066,7 +26109,8 @@ class _$_Action implements _Action {
       const DeepCollectionEquality().hash(_operations),
       const DeepCollectionEquality().hash(_operationsIds),
       const DeepCollectionEquality().hash(_access),
-      watchImage);
+      watchImage,
+      geofenceSettings);
 
   @JsonKey(ignore: true)
   @override
@@ -26096,7 +26140,8 @@ abstract class _Action implements Action {
       final List<Operation>? operations,
       final List<String>? operationsIds,
       final List<Access>? access,
-      final bool? watchImage}) = _$_Action;
+      final bool? watchImage,
+      final ActionGeofenceSettings? geofenceSettings}) = _$_Action;
 
   factory _Action.fromJson(Map<String, dynamic> json) = _$_Action.fromJson;
 
@@ -26146,11 +26191,326 @@ abstract class _Action implements Action {
   List<Access>? get access;
   @override
 
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
+  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
+  /// data need image convertion.
   bool? get watchImage;
+  @override
+
+  /// Is the geofence settings. Only for `ActionType.createGeofence`
+  ActionGeofenceSettings? get geofenceSettings;
   @override
   @JsonKey(ignore: true)
   _$$_ActionCopyWith<_$_Action> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ActionGeofenceSettings _$ActionGeofenceSettingsFromJson(
+    Map<String, dynamic> json) {
+  return _ActionGeofenceSettings.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ActionGeofenceSettings {
+  /// [whoOwner] defines who is the owner of the geofence to create.
+  @ActionPropertyConverter()
+  ActionProperty get whoOwner => throw _privateConstructorUsedError;
+
+  /// [name] defines the name of the geofence to create.
+  /// This property is a LCL formula
+  String? get name => throw _privateConstructorUsedError;
+
+  /// [category] defines the category of the geofence to create.
+  @GeofenceCategoryOrNullConverter()
+  GeofenceCategory? get category => throw _privateConstructorUsedError;
+
+  /// [radius] defines the radius of the geofence to create.
+  double? get radius => throw _privateConstructorUsedError;
+
+  /// [mappitRouteId] defines the route ID of the geofence to create.
+  String? get mappitRouteId => throw _privateConstructorUsedError;
+
+  /// [mappitRoute] defines the route of the geofence to create.
+  MappitRoute? get mappitRoute => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ActionGeofenceSettingsCopyWith<ActionGeofenceSettings> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ActionGeofenceSettingsCopyWith<$Res> {
+  factory $ActionGeofenceSettingsCopyWith(ActionGeofenceSettings value,
+          $Res Function(ActionGeofenceSettings) then) =
+      _$ActionGeofenceSettingsCopyWithImpl<$Res, ActionGeofenceSettings>;
+  @useResult
+  $Res call(
+      {@ActionPropertyConverter() ActionProperty whoOwner,
+      String? name,
+      @GeofenceCategoryOrNullConverter() GeofenceCategory? category,
+      double? radius,
+      String? mappitRouteId,
+      MappitRoute? mappitRoute});
+
+  $MappitRouteCopyWith<$Res>? get mappitRoute;
+}
+
+/// @nodoc
+class _$ActionGeofenceSettingsCopyWithImpl<$Res,
+        $Val extends ActionGeofenceSettings>
+    implements $ActionGeofenceSettingsCopyWith<$Res> {
+  _$ActionGeofenceSettingsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? whoOwner = null,
+    Object? name = freezed,
+    Object? category = freezed,
+    Object? radius = freezed,
+    Object? mappitRouteId = freezed,
+    Object? mappitRoute = freezed,
+  }) {
+    return _then(_value.copyWith(
+      whoOwner: null == whoOwner
+          ? _value.whoOwner
+          : whoOwner // ignore: cast_nullable_to_non_nullable
+              as ActionProperty,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as GeofenceCategory?,
+      radius: freezed == radius
+          ? _value.radius
+          : radius // ignore: cast_nullable_to_non_nullable
+              as double?,
+      mappitRouteId: freezed == mappitRouteId
+          ? _value.mappitRouteId
+          : mappitRouteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mappitRoute: freezed == mappitRoute
+          ? _value.mappitRoute
+          : mappitRoute // ignore: cast_nullable_to_non_nullable
+              as MappitRoute?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MappitRouteCopyWith<$Res>? get mappitRoute {
+    if (_value.mappitRoute == null) {
+      return null;
+    }
+
+    return $MappitRouteCopyWith<$Res>(_value.mappitRoute!, (value) {
+      return _then(_value.copyWith(mappitRoute: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_ActionGeofenceSettingsCopyWith<$Res>
+    implements $ActionGeofenceSettingsCopyWith<$Res> {
+  factory _$$_ActionGeofenceSettingsCopyWith(_$_ActionGeofenceSettings value,
+          $Res Function(_$_ActionGeofenceSettings) then) =
+      __$$_ActionGeofenceSettingsCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@ActionPropertyConverter() ActionProperty whoOwner,
+      String? name,
+      @GeofenceCategoryOrNullConverter() GeofenceCategory? category,
+      double? radius,
+      String? mappitRouteId,
+      MappitRoute? mappitRoute});
+
+  @override
+  $MappitRouteCopyWith<$Res>? get mappitRoute;
+}
+
+/// @nodoc
+class __$$_ActionGeofenceSettingsCopyWithImpl<$Res>
+    extends _$ActionGeofenceSettingsCopyWithImpl<$Res,
+        _$_ActionGeofenceSettings>
+    implements _$$_ActionGeofenceSettingsCopyWith<$Res> {
+  __$$_ActionGeofenceSettingsCopyWithImpl(_$_ActionGeofenceSettings _value,
+      $Res Function(_$_ActionGeofenceSettings) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? whoOwner = null,
+    Object? name = freezed,
+    Object? category = freezed,
+    Object? radius = freezed,
+    Object? mappitRouteId = freezed,
+    Object? mappitRoute = freezed,
+  }) {
+    return _then(_$_ActionGeofenceSettings(
+      whoOwner: null == whoOwner
+          ? _value.whoOwner
+          : whoOwner // ignore: cast_nullable_to_non_nullable
+              as ActionProperty,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as GeofenceCategory?,
+      radius: freezed == radius
+          ? _value.radius
+          : radius // ignore: cast_nullable_to_non_nullable
+              as double?,
+      mappitRouteId: freezed == mappitRouteId
+          ? _value.mappitRouteId
+          : mappitRouteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mappitRoute: freezed == mappitRoute
+          ? _value.mappitRoute
+          : mappitRoute // ignore: cast_nullable_to_non_nullable
+              as MappitRoute?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ActionGeofenceSettings implements _ActionGeofenceSettings {
+  const _$_ActionGeofenceSettings(
+      {@ActionPropertyConverter() this.whoOwner = ActionProperty.none,
+      this.name,
+      @GeofenceCategoryOrNullConverter() this.category,
+      this.radius,
+      this.mappitRouteId,
+      this.mappitRoute});
+
+  factory _$_ActionGeofenceSettings.fromJson(Map<String, dynamic> json) =>
+      _$$_ActionGeofenceSettingsFromJson(json);
+
+  /// [whoOwner] defines who is the owner of the geofence to create.
+  @override
+  @JsonKey()
+  @ActionPropertyConverter()
+  final ActionProperty whoOwner;
+
+  /// [name] defines the name of the geofence to create.
+  /// This property is a LCL formula
+  @override
+  final String? name;
+
+  /// [category] defines the category of the geofence to create.
+  @override
+  @GeofenceCategoryOrNullConverter()
+  final GeofenceCategory? category;
+
+  /// [radius] defines the radius of the geofence to create.
+  @override
+  final double? radius;
+
+  /// [mappitRouteId] defines the route ID of the geofence to create.
+  @override
+  final String? mappitRouteId;
+
+  /// [mappitRoute] defines the route of the geofence to create.
+  @override
+  final MappitRoute? mappitRoute;
+
+  @override
+  String toString() {
+    return 'ActionGeofenceSettings(whoOwner: $whoOwner, name: $name, category: $category, radius: $radius, mappitRouteId: $mappitRouteId, mappitRoute: $mappitRoute)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ActionGeofenceSettings &&
+            (identical(other.whoOwner, whoOwner) ||
+                other.whoOwner == whoOwner) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.radius, radius) || other.radius == radius) &&
+            (identical(other.mappitRouteId, mappitRouteId) ||
+                other.mappitRouteId == mappitRouteId) &&
+            (identical(other.mappitRoute, mappitRoute) ||
+                other.mappitRoute == mappitRoute));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, whoOwner, name, category, radius,
+      mappitRouteId, mappitRoute);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ActionGeofenceSettingsCopyWith<_$_ActionGeofenceSettings> get copyWith =>
+      __$$_ActionGeofenceSettingsCopyWithImpl<_$_ActionGeofenceSettings>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ActionGeofenceSettingsToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ActionGeofenceSettings implements ActionGeofenceSettings {
+  const factory _ActionGeofenceSettings(
+      {@ActionPropertyConverter() final ActionProperty whoOwner,
+      final String? name,
+      @GeofenceCategoryOrNullConverter() final GeofenceCategory? category,
+      final double? radius,
+      final String? mappitRouteId,
+      final MappitRoute? mappitRoute}) = _$_ActionGeofenceSettings;
+
+  factory _ActionGeofenceSettings.fromJson(Map<String, dynamic> json) =
+      _$_ActionGeofenceSettings.fromJson;
+
+  @override
+
+  /// [whoOwner] defines who is the owner of the geofence to create.
+  @ActionPropertyConverter()
+  ActionProperty get whoOwner;
+  @override
+
+  /// [name] defines the name of the geofence to create.
+  /// This property is a LCL formula
+  String? get name;
+  @override
+
+  /// [category] defines the category of the geofence to create.
+  @GeofenceCategoryOrNullConverter()
+  GeofenceCategory? get category;
+  @override
+
+  /// [radius] defines the radius of the geofence to create.
+  double? get radius;
+  @override
+
+  /// [mappitRouteId] defines the route ID of the geofence to create.
+  String? get mappitRouteId;
+  @override
+
+  /// [mappitRoute] defines the route of the geofence to create.
+  MappitRoute? get mappitRoute;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ActionGeofenceSettingsCopyWith<_$_ActionGeofenceSettings> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

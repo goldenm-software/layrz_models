@@ -2266,6 +2266,10 @@ _$_Action _$$_ActionFromJson(Map<String, dynamic> json) => _$_Action(
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
       watchImage: json['watchImage'] as bool?,
+      geofenceSettings: json['geofenceSettings'] == null
+          ? null
+          : ActionGeofenceSettings.fromJson(
+              json['geofenceSettings'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_ActionToJson(_$_Action instance) => <String, dynamic>{
@@ -2283,6 +2287,36 @@ Map<String, dynamic> _$$_ActionToJson(_$_Action instance) => <String, dynamic>{
       'operationsIds': instance.operationsIds,
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'watchImage': instance.watchImage,
+      'geofenceSettings': instance.geofenceSettings?.toJson(),
+    };
+
+_$_ActionGeofenceSettings _$$_ActionGeofenceSettingsFromJson(
+        Map<String, dynamic> json) =>
+    _$_ActionGeofenceSettings(
+      whoOwner: json['whoOwner'] == null
+          ? ActionProperty.none
+          : const ActionPropertyConverter()
+              .fromJson(json['whoOwner'] as String),
+      name: json['name'] as String?,
+      category: const GeofenceCategoryOrNullConverter()
+          .fromJson(json['category'] as String?),
+      radius: (json['radius'] as num?)?.toDouble(),
+      mappitRouteId: json['mappitRouteId'] as String?,
+      mappitRoute: json['mappitRoute'] == null
+          ? null
+          : MappitRoute.fromJson(json['mappitRoute'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_ActionGeofenceSettingsToJson(
+        _$_ActionGeofenceSettings instance) =>
+    <String, dynamic>{
+      'whoOwner': const ActionPropertyConverter().toJson(instance.whoOwner),
+      'name': instance.name,
+      'category':
+          const GeofenceCategoryOrNullConverter().toJson(instance.category),
+      'radius': instance.radius,
+      'mappitRouteId': instance.mappitRouteId,
+      'mappitRoute': instance.mappitRoute?.toJson(),
     };
 
 _$_ActionInput _$$_ActionInputFromJson(Map<String, dynamic> json) =>

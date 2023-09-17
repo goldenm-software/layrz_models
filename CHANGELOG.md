@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.26
+- Updated [Action] to handle [ActionGeofenceSettings] property.
+
 ## 2.0.25
 - Added [MappitFreeDay] model
 
