@@ -1,5 +1,7 @@
 # Changelog
 
+## 2.0.27
+- Update [AtsExecuteExitInput] to add [toAssetMileage]
 ## 2.0.26
 - Updated [Action] to handle [ActionGeofenceSettings] property.
 

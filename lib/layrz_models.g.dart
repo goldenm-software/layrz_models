@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of layrz_models;
+part of 'layrz_models.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -4405,6 +4405,7 @@ _$_AtsExecuteExitInput _$$_AtsExecuteExitInputFromJson(
       sensorId: json['sensorId'] as String?,
       presetValue: json['presetValue'] as int?,
       toAssetId: json['toAssetId'] as String?,
+      toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
       fromApp: const AtsFromAppOrNullConverter()
           .fromJson(json['fromApp'] as String?),
     );
@@ -4416,6 +4417,7 @@ Map<String, dynamic> _$$_AtsExecuteExitInputToJson(
       'sensorId': instance.sensorId,
       'presetValue': instance.presetValue,
       'toAssetId': instance.toAssetId,
+      'toAssetMileage': instance.toAssetMileage,
       'fromApp': const AtsFromAppOrNullConverter().toJson(instance.fromApp),
     };
 
