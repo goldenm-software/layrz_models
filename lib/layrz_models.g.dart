@@ -617,7 +617,9 @@ _$_Employee _$$_EmployeeFromJson(Map<String, dynamic> json) => _$_Employee(
           ? null
           : Department.fromJson(json['department'] as Map<String, dynamic>),
       departmentId: json['departmentId'] as String?,
-      avatar: json['avatar'] as String?,
+      dynamicAvatar: json['dynamicAvatar'] == null
+          ? null
+          : Avatar.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
       token: json['token'] == null
           ? null
           : Token.fromJson(json['token'] as Map<String, dynamic>),
@@ -639,7 +641,7 @@ Map<String, dynamic> _$$_EmployeeToJson(_$_Employee instance) =>
       'username': instance.username,
       'department': instance.department?.toJson(),
       'departmentId': instance.departmentId,
-      'avatar': instance.avatar,
+      'dynamicAvatar': instance.dynamicAvatar?.toJson(),
       'token': instance.token?.toJson(),
       'permissions': instance.permissions?.toJson(),
       'customPermissions': instance.customPermissions?.toJson(),
@@ -2264,6 +2266,10 @@ _$_Action _$$_ActionFromJson(Map<String, dynamic> json) => _$_Action(
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
       watchImage: json['watchImage'] as bool?,
+      geofenceSettings: json['geofenceSettings'] == null
+          ? null
+          : ActionGeofenceSettings.fromJson(
+              json['geofenceSettings'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_ActionToJson(_$_Action instance) => <String, dynamic>{
@@ -2281,6 +2287,36 @@ Map<String, dynamic> _$$_ActionToJson(_$_Action instance) => <String, dynamic>{
       'operationsIds': instance.operationsIds,
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'watchImage': instance.watchImage,
+      'geofenceSettings': instance.geofenceSettings?.toJson(),
+    };
+
+_$_ActionGeofenceSettings _$$_ActionGeofenceSettingsFromJson(
+        Map<String, dynamic> json) =>
+    _$_ActionGeofenceSettings(
+      whoOwner: json['whoOwner'] == null
+          ? ActionProperty.none
+          : const ActionPropertyConverter()
+              .fromJson(json['whoOwner'] as String),
+      name: json['name'] as String?,
+      category: const GeofenceCategoryOrNullConverter()
+          .fromJson(json['category'] as String?),
+      radius: (json['radius'] as num?)?.toDouble(),
+      mappitRouteId: json['mappitRouteId'] as String?,
+      mappitRoute: json['mappitRoute'] == null
+          ? null
+          : MappitRoute.fromJson(json['mappitRoute'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$_ActionGeofenceSettingsToJson(
+        _$_ActionGeofenceSettings instance) =>
+    <String, dynamic>{
+      'whoOwner': const ActionPropertyConverter().toJson(instance.whoOwner),
+      'name': instance.name,
+      'category':
+          const GeofenceCategoryOrNullConverter().toJson(instance.category),
+      'radius': instance.radius,
+      'mappitRouteId': instance.mappitRouteId,
+      'mappitRoute': instance.mappitRoute?.toJson(),
     };
 
 _$_ActionInput _$$_ActionInputFromJson(Map<String, dynamic> json) =>
@@ -4369,6 +4405,7 @@ _$_AtsExecuteExitInput _$$_AtsExecuteExitInputFromJson(
       sensorId: json['sensorId'] as String?,
       presetValue: json['presetValue'] as int?,
       toAssetId: json['toAssetId'] as String?,
+      toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
       fromApp: const AtsFromAppOrNullConverter()
           .fromJson(json['fromApp'] as String?),
     );
@@ -4380,6 +4417,7 @@ Map<String, dynamic> _$$_AtsExecuteExitInputToJson(
       'sensorId': instance.sensorId,
       'presetValue': instance.presetValue,
       'toAssetId': instance.toAssetId,
+      'toAssetMileage': instance.toAssetMileage,
       'fromApp': const AtsFromAppOrNullConverter().toJson(instance.fromApp),
     };
 
@@ -4983,4 +5021,26 @@ Map<String, dynamic> _$$_MappitHomeConfigToJson(_$_MappitHomeConfig instance) =>
       'customersVisited':
           instance.customersVisited.map((e) => e.toJson()).toList(),
       'dailyDistance': instance.dailyDistance.map((e) => e.toJson()).toList(),
+    };
+
+_$_MappitFreeDay _$$_MappitFreeDayFromJson(Map<String, dynamic> json) =>
+    _$_MappitFreeDay(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      date: const TimestampConverter().fromJson(json['date'] as num),
+      assets: (json['assets'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      assetsIds: (json['assetsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_MappitFreeDayToJson(_$_MappitFreeDay instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'date': const TimestampConverter().toJson(instance.date),
+      'assets': instance.assets?.map((e) => e.toJson()).toList(),
+      'assetsIds': instance.assetsIds,
     };

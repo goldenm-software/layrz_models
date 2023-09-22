@@ -23,7 +23,11 @@ class AvailableLanguage with _$AvailableLanguage {
   }) = _AvailableLanguage;
 
   Locale getLocale() {
-    List<String> codes = code?.split('-') ?? ['en', 'US'];
+    if (code == null) return const Locale('en');
+    if (!code!.contains('-')) {
+      return Locale(code!);
+    }
+    List<String> codes = code!.split('-');
     return Locale(codes.first, codes.last);
   }
 
@@ -46,7 +50,11 @@ class SavedLanguage {
   });
 
   Locale getLocale() {
-    List<String> codes = code?.split('-') ?? ['en', 'US'];
+    if (code == null) return const Locale('en');
+    if (!code!.contains('-')) {
+      return Locale(code!);
+    }
+    List<String> codes = code!.split('-');
     return Locale(codes.first, codes.last);
   }
 

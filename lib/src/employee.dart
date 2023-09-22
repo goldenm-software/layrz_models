@@ -2,16 +2,36 @@ part of layrz_models;
 
 @freezed
 class Employee with _$Employee {
+  /// [Employee] represents the user model.
   const factory Employee({
+    /// [id] represents the user id.
     required String id,
+
+    /// [name] represents the user name.
     required String name,
+
+    /// [email] represents the user email.
     String? email,
+
+    /// [username] represents the user username.
     String? username,
+
+    /// [department] represents the user department.
     Department? department,
+
+    /// [departmentId] represents the user department id.
     String? departmentId,
-    String? avatar,
+
+    /// [dynamicAvatar] represents the user avatar.
+    Avatar? dynamicAvatar,
+
+    /// [token] represents the user token.
     Token? token,
+
+    /// [permissions] represents the user permissions.
     GenericPermission? permissions,
+
+    /// [customPermissions] represents the user custom permissions.
     GenericPermission? customPermissions,
   }) = _Employee;
 

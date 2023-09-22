@@ -6671,15 +6671,34 @@ Employee _$EmployeeFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Employee {
+  /// [id] represents the user id.
   String get id => throw _privateConstructorUsedError;
+
+  /// [name] represents the user name.
   String get name => throw _privateConstructorUsedError;
+
+  /// [email] represents the user email.
   String? get email => throw _privateConstructorUsedError;
+
+  /// [username] represents the user username.
   String? get username => throw _privateConstructorUsedError;
+
+  /// [department] represents the user department.
   Department? get department => throw _privateConstructorUsedError;
+
+  /// [departmentId] represents the user department id.
   String? get departmentId => throw _privateConstructorUsedError;
-  String? get avatar => throw _privateConstructorUsedError;
+
+  /// [dynamicAvatar] represents the user avatar.
+  Avatar? get dynamicAvatar => throw _privateConstructorUsedError;
+
+  /// [token] represents the user token.
   Token? get token => throw _privateConstructorUsedError;
+
+  /// [permissions] represents the user permissions.
   GenericPermission? get permissions => throw _privateConstructorUsedError;
+
+  /// [customPermissions] represents the user custom permissions.
   GenericPermission? get customPermissions =>
       throw _privateConstructorUsedError;
 
@@ -6701,12 +6720,13 @@ abstract class $EmployeeCopyWith<$Res> {
       String? username,
       Department? department,
       String? departmentId,
-      String? avatar,
+      Avatar? dynamicAvatar,
       Token? token,
       GenericPermission? permissions,
       GenericPermission? customPermissions});
 
   $DepartmentCopyWith<$Res>? get department;
+  $AvatarCopyWith<$Res>? get dynamicAvatar;
   $TokenCopyWith<$Res>? get token;
   $GenericPermissionCopyWith<$Res>? get permissions;
   $GenericPermissionCopyWith<$Res>? get customPermissions;
@@ -6731,7 +6751,7 @@ class _$EmployeeCopyWithImpl<$Res, $Val extends Employee>
     Object? username = freezed,
     Object? department = freezed,
     Object? departmentId = freezed,
-    Object? avatar = freezed,
+    Object? dynamicAvatar = freezed,
     Object? token = freezed,
     Object? permissions = freezed,
     Object? customPermissions = freezed,
@@ -6761,10 +6781,10 @@ class _$EmployeeCopyWithImpl<$Res, $Val extends Employee>
           ? _value.departmentId
           : departmentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      avatar: freezed == avatar
-          ? _value.avatar
-          : avatar // ignore: cast_nullable_to_non_nullable
-              as String?,
+      dynamicAvatar: freezed == dynamicAvatar
+          ? _value.dynamicAvatar
+          : dynamicAvatar // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
       token: freezed == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -6789,6 +6809,18 @@ class _$EmployeeCopyWithImpl<$Res, $Val extends Employee>
 
     return $DepartmentCopyWith<$Res>(_value.department!, (value) {
       return _then(_value.copyWith(department: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AvatarCopyWith<$Res>? get dynamicAvatar {
+    if (_value.dynamicAvatar == null) {
+      return null;
+    }
+
+    return $AvatarCopyWith<$Res>(_value.dynamicAvatar!, (value) {
+      return _then(_value.copyWith(dynamicAvatar: value) as $Val);
     });
   }
 
@@ -6843,13 +6875,15 @@ abstract class _$$_EmployeeCopyWith<$Res> implements $EmployeeCopyWith<$Res> {
       String? username,
       Department? department,
       String? departmentId,
-      String? avatar,
+      Avatar? dynamicAvatar,
       Token? token,
       GenericPermission? permissions,
       GenericPermission? customPermissions});
 
   @override
   $DepartmentCopyWith<$Res>? get department;
+  @override
+  $AvatarCopyWith<$Res>? get dynamicAvatar;
   @override
   $TokenCopyWith<$Res>? get token;
   @override
@@ -6875,7 +6909,7 @@ class __$$_EmployeeCopyWithImpl<$Res>
     Object? username = freezed,
     Object? department = freezed,
     Object? departmentId = freezed,
-    Object? avatar = freezed,
+    Object? dynamicAvatar = freezed,
     Object? token = freezed,
     Object? permissions = freezed,
     Object? customPermissions = freezed,
@@ -6905,10 +6939,10 @@ class __$$_EmployeeCopyWithImpl<$Res>
           ? _value.departmentId
           : departmentId // ignore: cast_nullable_to_non_nullable
               as String?,
-      avatar: freezed == avatar
-          ? _value.avatar
-          : avatar // ignore: cast_nullable_to_non_nullable
-              as String?,
+      dynamicAvatar: freezed == dynamicAvatar
+          ? _value.dynamicAvatar
+          : dynamicAvatar // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
       token: freezed == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
@@ -6935,7 +6969,7 @@ class _$_Employee implements _Employee {
       this.username,
       this.department,
       this.departmentId,
-      this.avatar,
+      this.dynamicAvatar,
       this.token,
       this.permissions,
       this.customPermissions});
@@ -6943,30 +6977,49 @@ class _$_Employee implements _Employee {
   factory _$_Employee.fromJson(Map<String, dynamic> json) =>
       _$$_EmployeeFromJson(json);
 
+  /// [id] represents the user id.
   @override
   final String id;
+
+  /// [name] represents the user name.
   @override
   final String name;
+
+  /// [email] represents the user email.
   @override
   final String? email;
+
+  /// [username] represents the user username.
   @override
   final String? username;
+
+  /// [department] represents the user department.
   @override
   final Department? department;
+
+  /// [departmentId] represents the user department id.
   @override
   final String? departmentId;
+
+  /// [dynamicAvatar] represents the user avatar.
   @override
-  final String? avatar;
+  final Avatar? dynamicAvatar;
+
+  /// [token] represents the user token.
   @override
   final Token? token;
+
+  /// [permissions] represents the user permissions.
   @override
   final GenericPermission? permissions;
+
+  /// [customPermissions] represents the user custom permissions.
   @override
   final GenericPermission? customPermissions;
 
   @override
   String toString() {
-    return 'Employee(id: $id, name: $name, email: $email, username: $username, department: $department, departmentId: $departmentId, avatar: $avatar, token: $token, permissions: $permissions, customPermissions: $customPermissions)';
+    return 'Employee(id: $id, name: $name, email: $email, username: $username, department: $department, departmentId: $departmentId, dynamicAvatar: $dynamicAvatar, token: $token, permissions: $permissions, customPermissions: $customPermissions)';
   }
 
   @override
@@ -6983,7 +7036,8 @@ class _$_Employee implements _Employee {
                 other.department == department) &&
             (identical(other.departmentId, departmentId) ||
                 other.departmentId == departmentId) &&
-            (identical(other.avatar, avatar) || other.avatar == avatar) &&
+            (identical(other.dynamicAvatar, dynamicAvatar) ||
+                other.dynamicAvatar == dynamicAvatar) &&
             (identical(other.token, token) || other.token == token) &&
             (identical(other.permissions, permissions) ||
                 other.permissions == permissions) &&
@@ -6993,8 +7047,18 @@ class _$_Employee implements _Employee {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, email, username,
-      department, departmentId, avatar, token, permissions, customPermissions);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      email,
+      username,
+      department,
+      departmentId,
+      dynamicAvatar,
+      token,
+      permissions,
+      customPermissions);
 
   @JsonKey(ignore: true)
   @override
@@ -7018,7 +7082,7 @@ abstract class _Employee implements Employee {
       final String? username,
       final Department? department,
       final String? departmentId,
-      final String? avatar,
+      final Avatar? dynamicAvatar,
       final Token? token,
       final GenericPermission? permissions,
       final GenericPermission? customPermissions}) = _$_Employee;
@@ -7026,24 +7090,44 @@ abstract class _Employee implements Employee {
   factory _Employee.fromJson(Map<String, dynamic> json) = _$_Employee.fromJson;
 
   @override
+
+  /// [id] represents the user id.
   String get id;
   @override
+
+  /// [name] represents the user name.
   String get name;
   @override
+
+  /// [email] represents the user email.
   String? get email;
   @override
+
+  /// [username] represents the user username.
   String? get username;
   @override
+
+  /// [department] represents the user department.
   Department? get department;
   @override
+
+  /// [departmentId] represents the user department id.
   String? get departmentId;
   @override
-  String? get avatar;
+
+  /// [dynamicAvatar] represents the user avatar.
+  Avatar? get dynamicAvatar;
   @override
+
+  /// [token] represents the user token.
   Token? get token;
   @override
+
+  /// [permissions] represents the user permissions.
   GenericPermission? get permissions;
   @override
+
+  /// [customPermissions] represents the user custom permissions.
   GenericPermission? get customPermissions;
   @override
   @JsonKey(ignore: true)
@@ -25541,8 +25625,13 @@ mixin _$Action {
   /// Is a list of granted access to this entity.
   List<Access>? get access => throw _privateConstructorUsedError;
 
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
+  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
+  /// data need image convertion.
   bool? get watchImage => throw _privateConstructorUsedError;
+
+  /// Is the geofence settings. Only for `ActionType.createGeofence`
+  ActionGeofenceSettings? get geofenceSettings =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -25567,7 +25656,10 @@ abstract class $ActionCopyWith<$Res> {
       List<Operation>? operations,
       List<String>? operationsIds,
       List<Access>? access,
-      bool? watchImage});
+      bool? watchImage,
+      ActionGeofenceSettings? geofenceSettings});
+
+  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;
 }
 
 /// @nodoc
@@ -25596,6 +25688,7 @@ class _$ActionCopyWithImpl<$Res, $Val extends Action>
     Object? operationsIds = freezed,
     Object? access = freezed,
     Object? watchImage = freezed,
+    Object? geofenceSettings = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -25650,7 +25743,24 @@ class _$ActionCopyWithImpl<$Res, $Val extends Action>
           ? _value.watchImage
           : watchImage // ignore: cast_nullable_to_non_nullable
               as bool?,
+      geofenceSettings: freezed == geofenceSettings
+          ? _value.geofenceSettings
+          : geofenceSettings // ignore: cast_nullable_to_non_nullable
+              as ActionGeofenceSettings?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings {
+    if (_value.geofenceSettings == null) {
+      return null;
+    }
+
+    return $ActionGeofenceSettingsCopyWith<$Res>(_value.geofenceSettings!,
+        (value) {
+      return _then(_value.copyWith(geofenceSettings: value) as $Val);
+    });
   }
 }
 
@@ -25673,7 +25783,11 @@ abstract class _$$_ActionCopyWith<$Res> implements $ActionCopyWith<$Res> {
       List<Operation>? operations,
       List<String>? operationsIds,
       List<Access>? access,
-      bool? watchImage});
+      bool? watchImage,
+      ActionGeofenceSettings? geofenceSettings});
+
+  @override
+  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;
 }
 
 /// @nodoc
@@ -25699,6 +25813,7 @@ class __$$_ActionCopyWithImpl<$Res>
     Object? operationsIds = freezed,
     Object? access = freezed,
     Object? watchImage = freezed,
+    Object? geofenceSettings = freezed,
   }) {
     return _then(_$_Action(
       id: null == id
@@ -25753,6 +25868,10 @@ class __$$_ActionCopyWithImpl<$Res>
           ? _value.watchImage
           : watchImage // ignore: cast_nullable_to_non_nullable
               as bool?,
+      geofenceSettings: freezed == geofenceSettings
+          ? _value.geofenceSettings
+          : geofenceSettings // ignore: cast_nullable_to_non_nullable
+              as ActionGeofenceSettings?,
     ));
   }
 }
@@ -25773,7 +25892,8 @@ class _$_Action implements _Action {
       final List<Operation>? operations,
       final List<String>? operationsIds,
       final List<Access>? access,
-      this.watchImage})
+      this.watchImage,
+      this.geofenceSettings})
       : _triggers = triggers,
         _triggersIds = triggersIds,
         _outboundServices = outboundServices,
@@ -25892,13 +26012,18 @@ class _$_Action implements _Action {
     return EqualUnmodifiableListView(value);
   }
 
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
+  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
+  /// data need image convertion.
   @override
   final bool? watchImage;
 
+  /// Is the geofence settings. Only for `ActionType.createGeofence`
+  @override
+  final ActionGeofenceSettings? geofenceSettings;
+
   @override
   String toString() {
-    return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage)';
+    return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
   }
 
   @override
@@ -25925,7 +26050,9 @@ class _$_Action implements _Action {
                 .equals(other._operationsIds, _operationsIds) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
             (identical(other.watchImage, watchImage) ||
-                other.watchImage == watchImage));
+                other.watchImage == watchImage) &&
+            (identical(other.geofenceSettings, geofenceSettings) ||
+                other.geofenceSettings == geofenceSettings));
   }
 
   @JsonKey(ignore: true)
@@ -25944,7 +26071,8 @@ class _$_Action implements _Action {
       const DeepCollectionEquality().hash(_operations),
       const DeepCollectionEquality().hash(_operationsIds),
       const DeepCollectionEquality().hash(_access),
-      watchImage);
+      watchImage,
+      geofenceSettings);
 
   @JsonKey(ignore: true)
   @override
@@ -25974,7 +26102,8 @@ abstract class _Action implements Action {
       final List<Operation>? operations,
       final List<String>? operationsIds,
       final List<Access>? access,
-      final bool? watchImage}) = _$_Action;
+      final bool? watchImage,
+      final ActionGeofenceSettings? geofenceSettings}) = _$_Action;
 
   factory _Action.fromJson(Map<String, dynamic> json) = _$_Action.fromJson;
 
@@ -26024,11 +26153,326 @@ abstract class _Action implements Action {
   List<Access>? get access;
   @override
 
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
+  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
+  /// data need image convertion.
   bool? get watchImage;
+  @override
+
+  /// Is the geofence settings. Only for `ActionType.createGeofence`
+  ActionGeofenceSettings? get geofenceSettings;
   @override
   @JsonKey(ignore: true)
   _$$_ActionCopyWith<_$_Action> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ActionGeofenceSettings _$ActionGeofenceSettingsFromJson(
+    Map<String, dynamic> json) {
+  return _ActionGeofenceSettings.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ActionGeofenceSettings {
+  /// [whoOwner] defines who is the owner of the geofence to create.
+  @ActionPropertyConverter()
+  ActionProperty get whoOwner => throw _privateConstructorUsedError;
+
+  /// [name] defines the name of the geofence to create.
+  /// This property is a LCL formula
+  String? get name => throw _privateConstructorUsedError;
+
+  /// [category] defines the category of the geofence to create.
+  @GeofenceCategoryOrNullConverter()
+  GeofenceCategory? get category => throw _privateConstructorUsedError;
+
+  /// [radius] defines the radius of the geofence to create.
+  double? get radius => throw _privateConstructorUsedError;
+
+  /// [mappitRouteId] defines the route ID of the geofence to create.
+  String? get mappitRouteId => throw _privateConstructorUsedError;
+
+  /// [mappitRoute] defines the route of the geofence to create.
+  MappitRoute? get mappitRoute => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ActionGeofenceSettingsCopyWith<ActionGeofenceSettings> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ActionGeofenceSettingsCopyWith<$Res> {
+  factory $ActionGeofenceSettingsCopyWith(ActionGeofenceSettings value,
+          $Res Function(ActionGeofenceSettings) then) =
+      _$ActionGeofenceSettingsCopyWithImpl<$Res, ActionGeofenceSettings>;
+  @useResult
+  $Res call(
+      {@ActionPropertyConverter() ActionProperty whoOwner,
+      String? name,
+      @GeofenceCategoryOrNullConverter() GeofenceCategory? category,
+      double? radius,
+      String? mappitRouteId,
+      MappitRoute? mappitRoute});
+
+  $MappitRouteCopyWith<$Res>? get mappitRoute;
+}
+
+/// @nodoc
+class _$ActionGeofenceSettingsCopyWithImpl<$Res,
+        $Val extends ActionGeofenceSettings>
+    implements $ActionGeofenceSettingsCopyWith<$Res> {
+  _$ActionGeofenceSettingsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? whoOwner = null,
+    Object? name = freezed,
+    Object? category = freezed,
+    Object? radius = freezed,
+    Object? mappitRouteId = freezed,
+    Object? mappitRoute = freezed,
+  }) {
+    return _then(_value.copyWith(
+      whoOwner: null == whoOwner
+          ? _value.whoOwner
+          : whoOwner // ignore: cast_nullable_to_non_nullable
+              as ActionProperty,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as GeofenceCategory?,
+      radius: freezed == radius
+          ? _value.radius
+          : radius // ignore: cast_nullable_to_non_nullable
+              as double?,
+      mappitRouteId: freezed == mappitRouteId
+          ? _value.mappitRouteId
+          : mappitRouteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mappitRoute: freezed == mappitRoute
+          ? _value.mappitRoute
+          : mappitRoute // ignore: cast_nullable_to_non_nullable
+              as MappitRoute?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $MappitRouteCopyWith<$Res>? get mappitRoute {
+    if (_value.mappitRoute == null) {
+      return null;
+    }
+
+    return $MappitRouteCopyWith<$Res>(_value.mappitRoute!, (value) {
+      return _then(_value.copyWith(mappitRoute: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_ActionGeofenceSettingsCopyWith<$Res>
+    implements $ActionGeofenceSettingsCopyWith<$Res> {
+  factory _$$_ActionGeofenceSettingsCopyWith(_$_ActionGeofenceSettings value,
+          $Res Function(_$_ActionGeofenceSettings) then) =
+      __$$_ActionGeofenceSettingsCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@ActionPropertyConverter() ActionProperty whoOwner,
+      String? name,
+      @GeofenceCategoryOrNullConverter() GeofenceCategory? category,
+      double? radius,
+      String? mappitRouteId,
+      MappitRoute? mappitRoute});
+
+  @override
+  $MappitRouteCopyWith<$Res>? get mappitRoute;
+}
+
+/// @nodoc
+class __$$_ActionGeofenceSettingsCopyWithImpl<$Res>
+    extends _$ActionGeofenceSettingsCopyWithImpl<$Res,
+        _$_ActionGeofenceSettings>
+    implements _$$_ActionGeofenceSettingsCopyWith<$Res> {
+  __$$_ActionGeofenceSettingsCopyWithImpl(_$_ActionGeofenceSettings _value,
+      $Res Function(_$_ActionGeofenceSettings) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? whoOwner = null,
+    Object? name = freezed,
+    Object? category = freezed,
+    Object? radius = freezed,
+    Object? mappitRouteId = freezed,
+    Object? mappitRoute = freezed,
+  }) {
+    return _then(_$_ActionGeofenceSettings(
+      whoOwner: null == whoOwner
+          ? _value.whoOwner
+          : whoOwner // ignore: cast_nullable_to_non_nullable
+              as ActionProperty,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as GeofenceCategory?,
+      radius: freezed == radius
+          ? _value.radius
+          : radius // ignore: cast_nullable_to_non_nullable
+              as double?,
+      mappitRouteId: freezed == mappitRouteId
+          ? _value.mappitRouteId
+          : mappitRouteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mappitRoute: freezed == mappitRoute
+          ? _value.mappitRoute
+          : mappitRoute // ignore: cast_nullable_to_non_nullable
+              as MappitRoute?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ActionGeofenceSettings implements _ActionGeofenceSettings {
+  const _$_ActionGeofenceSettings(
+      {@ActionPropertyConverter() this.whoOwner = ActionProperty.none,
+      this.name,
+      @GeofenceCategoryOrNullConverter() this.category,
+      this.radius,
+      this.mappitRouteId,
+      this.mappitRoute});
+
+  factory _$_ActionGeofenceSettings.fromJson(Map<String, dynamic> json) =>
+      _$$_ActionGeofenceSettingsFromJson(json);
+
+  /// [whoOwner] defines who is the owner of the geofence to create.
+  @override
+  @JsonKey()
+  @ActionPropertyConverter()
+  final ActionProperty whoOwner;
+
+  /// [name] defines the name of the geofence to create.
+  /// This property is a LCL formula
+  @override
+  final String? name;
+
+  /// [category] defines the category of the geofence to create.
+  @override
+  @GeofenceCategoryOrNullConverter()
+  final GeofenceCategory? category;
+
+  /// [radius] defines the radius of the geofence to create.
+  @override
+  final double? radius;
+
+  /// [mappitRouteId] defines the route ID of the geofence to create.
+  @override
+  final String? mappitRouteId;
+
+  /// [mappitRoute] defines the route of the geofence to create.
+  @override
+  final MappitRoute? mappitRoute;
+
+  @override
+  String toString() {
+    return 'ActionGeofenceSettings(whoOwner: $whoOwner, name: $name, category: $category, radius: $radius, mappitRouteId: $mappitRouteId, mappitRoute: $mappitRoute)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ActionGeofenceSettings &&
+            (identical(other.whoOwner, whoOwner) ||
+                other.whoOwner == whoOwner) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.radius, radius) || other.radius == radius) &&
+            (identical(other.mappitRouteId, mappitRouteId) ||
+                other.mappitRouteId == mappitRouteId) &&
+            (identical(other.mappitRoute, mappitRoute) ||
+                other.mappitRoute == mappitRoute));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, whoOwner, name, category, radius,
+      mappitRouteId, mappitRoute);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ActionGeofenceSettingsCopyWith<_$_ActionGeofenceSettings> get copyWith =>
+      __$$_ActionGeofenceSettingsCopyWithImpl<_$_ActionGeofenceSettings>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ActionGeofenceSettingsToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ActionGeofenceSettings implements ActionGeofenceSettings {
+  const factory _ActionGeofenceSettings(
+      {@ActionPropertyConverter() final ActionProperty whoOwner,
+      final String? name,
+      @GeofenceCategoryOrNullConverter() final GeofenceCategory? category,
+      final double? radius,
+      final String? mappitRouteId,
+      final MappitRoute? mappitRoute}) = _$_ActionGeofenceSettings;
+
+  factory _ActionGeofenceSettings.fromJson(Map<String, dynamic> json) =
+      _$_ActionGeofenceSettings.fromJson;
+
+  @override
+
+  /// [whoOwner] defines who is the owner of the geofence to create.
+  @ActionPropertyConverter()
+  ActionProperty get whoOwner;
+  @override
+
+  /// [name] defines the name of the geofence to create.
+  /// This property is a LCL formula
+  String? get name;
+  @override
+
+  /// [category] defines the category of the geofence to create.
+  @GeofenceCategoryOrNullConverter()
+  GeofenceCategory? get category;
+  @override
+
+  /// [radius] defines the radius of the geofence to create.
+  double? get radius;
+  @override
+
+  /// [mappitRouteId] defines the route ID of the geofence to create.
+  String? get mappitRouteId;
+  @override
+
+  /// [mappitRoute] defines the route of the geofence to create.
+  MappitRoute? get mappitRoute;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ActionGeofenceSettingsCopyWith<_$_ActionGeofenceSettings> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -50541,6 +50985,12 @@ mixin _$AtsExecuteExitInput {
   /// [toAssetID] ID of the [Asset] validated.
   set toAssetId(String? value) => throw _privateConstructorUsedError;
 
+  /// [toAssetMileage] Mileage of the [Asset]
+  double? get toAssetMileage => throw _privateConstructorUsedError;
+
+  /// [toAssetMileage] Mileage of the [Asset]
+  set toAssetMileage(double? value) => throw _privateConstructorUsedError;
+
   /// [fromApp] Exit execution enum definition
   @AtsFromAppOrNullConverter()
   AtsFromApp? get fromApp => throw _privateConstructorUsedError;
@@ -50566,6 +51016,7 @@ abstract class $AtsExecuteExitInputCopyWith<$Res> {
       String? sensorId,
       int? presetValue,
       String? toAssetId,
+      double? toAssetMileage,
       @AtsFromAppOrNullConverter() AtsFromApp? fromApp});
 }
 
@@ -50586,6 +51037,7 @@ class _$AtsExecuteExitInputCopyWithImpl<$Res, $Val extends AtsExecuteExitInput>
     Object? sensorId = freezed,
     Object? presetValue = freezed,
     Object? toAssetId = freezed,
+    Object? toAssetMileage = freezed,
     Object? fromApp = freezed,
   }) {
     return _then(_value.copyWith(
@@ -50605,6 +51057,10 @@ class _$AtsExecuteExitInputCopyWithImpl<$Res, $Val extends AtsExecuteExitInput>
           ? _value.toAssetId
           : toAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
+      toAssetMileage: freezed == toAssetMileage
+          ? _value.toAssetMileage
+          : toAssetMileage // ignore: cast_nullable_to_non_nullable
+              as double?,
       fromApp: freezed == fromApp
           ? _value.fromApp
           : fromApp // ignore: cast_nullable_to_non_nullable
@@ -50626,6 +51082,7 @@ abstract class _$$_AtsExecuteExitInputCopyWith<$Res>
       String? sensorId,
       int? presetValue,
       String? toAssetId,
+      double? toAssetMileage,
       @AtsFromAppOrNullConverter() AtsFromApp? fromApp});
 }
 
@@ -50644,6 +51101,7 @@ class __$$_AtsExecuteExitInputCopyWithImpl<$Res>
     Object? sensorId = freezed,
     Object? presetValue = freezed,
     Object? toAssetId = freezed,
+    Object? toAssetMileage = freezed,
     Object? fromApp = freezed,
   }) {
     return _then(_$_AtsExecuteExitInput(
@@ -50663,6 +51121,10 @@ class __$$_AtsExecuteExitInputCopyWithImpl<$Res>
           ? _value.toAssetId
           : toAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
+      toAssetMileage: freezed == toAssetMileage
+          ? _value.toAssetMileage
+          : toAssetMileage // ignore: cast_nullable_to_non_nullable
+              as double?,
       fromApp: freezed == fromApp
           ? _value.fromApp
           : fromApp // ignore: cast_nullable_to_non_nullable
@@ -50679,6 +51141,7 @@ class _$_AtsExecuteExitInput implements _AtsExecuteExitInput {
       this.sensorId,
       this.presetValue,
       this.toAssetId,
+      this.toAssetMileage,
       @AtsFromAppOrNullConverter() this.fromApp});
 
   factory _$_AtsExecuteExitInput.fromJson(Map<String, dynamic> json) =>
@@ -50700,6 +51163,10 @@ class _$_AtsExecuteExitInput implements _AtsExecuteExitInput {
   @override
   String? toAssetId;
 
+  /// [toAssetMileage] Mileage of the [Asset]
+  @override
+  double? toAssetMileage;
+
   /// [fromApp] Exit execution enum definition
   @override
   @AtsFromAppOrNullConverter()
@@ -50707,7 +51174,7 @@ class _$_AtsExecuteExitInput implements _AtsExecuteExitInput {
 
   @override
   String toString() {
-    return 'AtsExecuteExitInput(fromAssetId: $fromAssetId, sensorId: $sensorId, presetValue: $presetValue, toAssetId: $toAssetId, fromApp: $fromApp)';
+    return 'AtsExecuteExitInput(fromAssetId: $fromAssetId, sensorId: $sensorId, presetValue: $presetValue, toAssetId: $toAssetId, toAssetMileage: $toAssetMileage, fromApp: $fromApp)';
   }
 
   @JsonKey(ignore: true)
@@ -50731,6 +51198,7 @@ abstract class _AtsExecuteExitInput implements AtsExecuteExitInput {
           String? sensorId,
           int? presetValue,
           String? toAssetId,
+          double? toAssetMileage,
           @AtsFromAppOrNullConverter() AtsFromApp? fromApp}) =
       _$_AtsExecuteExitInput;
 
@@ -50765,6 +51233,13 @@ abstract class _AtsExecuteExitInput implements AtsExecuteExitInput {
 
   /// [toAssetID] ID of the [Asset] validated.
   set toAssetId(String? value);
+  @override
+
+  /// [toAssetMileage] Mileage of the [Asset]
+  double? get toAssetMileage;
+
+  /// [toAssetMileage] Mileage of the [Asset]
+  set toAssetMileage(double? value);
   @override
 
   /// [fromApp] Exit execution enum definition
@@ -57104,5 +57579,283 @@ abstract class _MappitHomeConfig implements MappitHomeConfig {
   @override
   @JsonKey(ignore: true)
   _$$_MappitHomeConfigCopyWith<_$_MappitHomeConfig> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+MappitFreeDay _$MappitFreeDayFromJson(Map<String, dynamic> json) {
+  return _MappitFreeDay.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MappitFreeDay {
+  /// [id] represents the free day ID.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [name] represents the free day name.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [date] represents the free day date.
+  @TimestampConverter()
+  DateTime get date => throw _privateConstructorUsedError;
+
+  /// [assets] represents the assets assigned to this free day.
+  List<Asset>? get assets => throw _privateConstructorUsedError;
+
+  /// [assetsIds] represents the assets IDs assigned to this free day.
+  List<String>? get assetsIds => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MappitFreeDayCopyWith<MappitFreeDay> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MappitFreeDayCopyWith<$Res> {
+  factory $MappitFreeDayCopyWith(
+          MappitFreeDay value, $Res Function(MappitFreeDay) then) =
+      _$MappitFreeDayCopyWithImpl<$Res, MappitFreeDay>;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      @TimestampConverter() DateTime date,
+      List<Asset>? assets,
+      List<String>? assetsIds});
+}
+
+/// @nodoc
+class _$MappitFreeDayCopyWithImpl<$Res, $Val extends MappitFreeDay>
+    implements $MappitFreeDayCopyWith<$Res> {
+  _$MappitFreeDayCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? date = null,
+    Object? assets = freezed,
+    Object? assetsIds = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      assets: freezed == assets
+          ? _value.assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      assetsIds: freezed == assetsIds
+          ? _value.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_MappitFreeDayCopyWith<$Res>
+    implements $MappitFreeDayCopyWith<$Res> {
+  factory _$$_MappitFreeDayCopyWith(
+          _$_MappitFreeDay value, $Res Function(_$_MappitFreeDay) then) =
+      __$$_MappitFreeDayCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      @TimestampConverter() DateTime date,
+      List<Asset>? assets,
+      List<String>? assetsIds});
+}
+
+/// @nodoc
+class __$$_MappitFreeDayCopyWithImpl<$Res>
+    extends _$MappitFreeDayCopyWithImpl<$Res, _$_MappitFreeDay>
+    implements _$$_MappitFreeDayCopyWith<$Res> {
+  __$$_MappitFreeDayCopyWithImpl(
+      _$_MappitFreeDay _value, $Res Function(_$_MappitFreeDay) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? date = null,
+    Object? assets = freezed,
+    Object? assetsIds = freezed,
+  }) {
+    return _then(_$_MappitFreeDay(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      assets: freezed == assets
+          ? _value._assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      assetsIds: freezed == assetsIds
+          ? _value._assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_MappitFreeDay implements _MappitFreeDay {
+  const _$_MappitFreeDay(
+      {required this.id,
+      required this.name,
+      @TimestampConverter() required this.date,
+      final List<Asset>? assets,
+      final List<String>? assetsIds})
+      : _assets = assets,
+        _assetsIds = assetsIds;
+
+  factory _$_MappitFreeDay.fromJson(Map<String, dynamic> json) =>
+      _$$_MappitFreeDayFromJson(json);
+
+  /// [id] represents the free day ID.
+  @override
+  final String id;
+
+  /// [name] represents the free day name.
+  @override
+  final String name;
+
+  /// [date] represents the free day date.
+  @override
+  @TimestampConverter()
+  final DateTime date;
+
+  /// [assets] represents the assets assigned to this free day.
+  final List<Asset>? _assets;
+
+  /// [assets] represents the assets assigned to this free day.
+  @override
+  List<Asset>? get assets {
+    final value = _assets;
+    if (value == null) return null;
+    if (_assets is EqualUnmodifiableListView) return _assets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [assetsIds] represents the assets IDs assigned to this free day.
+  final List<String>? _assetsIds;
+
+  /// [assetsIds] represents the assets IDs assigned to this free day.
+  @override
+  List<String>? get assetsIds {
+    final value = _assetsIds;
+    if (value == null) return null;
+    if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'MappitFreeDay(id: $id, name: $name, date: $date, assets: $assets, assetsIds: $assetsIds)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MappitFreeDay &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.date, date) || other.date == date) &&
+            const DeepCollectionEquality().equals(other._assets, _assets) &&
+            const DeepCollectionEquality()
+                .equals(other._assetsIds, _assetsIds));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      date,
+      const DeepCollectionEquality().hash(_assets),
+      const DeepCollectionEquality().hash(_assetsIds));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_MappitFreeDayCopyWith<_$_MappitFreeDay> get copyWith =>
+      __$$_MappitFreeDayCopyWithImpl<_$_MappitFreeDay>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_MappitFreeDayToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MappitFreeDay implements MappitFreeDay {
+  const factory _MappitFreeDay(
+      {required final String id,
+      required final String name,
+      @TimestampConverter() required final DateTime date,
+      final List<Asset>? assets,
+      final List<String>? assetsIds}) = _$_MappitFreeDay;
+
+  factory _MappitFreeDay.fromJson(Map<String, dynamic> json) =
+      _$_MappitFreeDay.fromJson;
+
+  @override
+
+  /// [id] represents the free day ID.
+  String get id;
+  @override
+
+  /// [name] represents the free day name.
+  String get name;
+  @override
+
+  /// [date] represents the free day date.
+  @TimestampConverter()
+  DateTime get date;
+  @override
+
+  /// [assets] represents the assets assigned to this free day.
+  List<Asset>? get assets;
+  @override
+
+  /// [assetsIds] represents the assets IDs assigned to this free day.
+  List<String>? get assetsIds;
+  @override
+  @JsonKey(ignore: true)
+  _$$_MappitFreeDayCopyWith<_$_MappitFreeDay> get copyWith =>
       throw _privateConstructorUsedError;
 }

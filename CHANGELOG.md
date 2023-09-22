@@ -1,4 +1,23 @@
 # Changelog
+
+## 2.0.27
+- Update [AtsExecuteExitInput] to add [toAssetMileage]
+## 2.0.26
+- Updated [Action] to handle [ActionGeofenceSettings] property.
+
+## 2.0.25
+- Added [MappitFreeDay] model
+
+## 2.0.24
+- Replaced `avatar` with `dynamicAvatar` on [Employee]
+
+## 2.0.23
+- Deprecated `toggleDeveloperMode` on `LayrzAppLocalizations` in favor of `setDeveloperMode`
+- Changed `setDeveloper` to a static method on `LayrzAppLocalizations`
+
+## 2.0.22
+- Updated `LayrzAppLocalizations` to support `setDeveloperMode` and documented some parts of this class
+
 ## 2.0.21
 - Renamed [BrickhouseAlertInput] `curfewTimezone` to `timezone`
 ## 2.0.20
