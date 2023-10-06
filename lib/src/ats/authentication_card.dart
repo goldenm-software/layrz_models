@@ -1,5 +1,46 @@
 part of layrz_models;
 
+enum AtsSelectCard {
+  /// Api reference: CARDBOARD
+  cardboard,
+
+  /// Api reference: NFC
+  nfc,
+
+  /// Api reference: TAG
+  tag;
+
+  @override
+  String toString() => toJson();
+
+  String toJson() {
+    switch (this) {
+      case AtsSelectCard.cardboard:
+        return 'CARDBOARD';
+
+      case AtsSelectCard.nfc:
+        return 'NFC';
+
+      case AtsSelectCard.tag:
+        return 'TAG';
+    }
+  }
+
+  static AtsSelectCard fromJson(String json) {
+    switch (json) {
+      case 'NFC':
+        return AtsSelectCard.nfc;
+
+      case 'TAG':
+        return AtsSelectCard.tag;
+
+      case 'CARDBOARD':
+      default:
+        return AtsSelectCard.cardboard;
+    }
+  }
+}
+
 @freezed
 class AtsAuthenticationCard with _$AtsAuthenticationCard {
   const factory AtsAuthenticationCard({
@@ -24,6 +65,9 @@ class AtsAuthenticationCard with _$AtsAuthenticationCard {
     /// [isSuspended] is true if the card is suspended.
     bool? isSuspended,
 
+    /// [typeId] type id of the card.
+    @AtsSelectCardConverter() required AtsSelectCard typeId,
+
     /// [history] is the history of this card.
     List<AtsHistoryAuthenticationCard>? history,
 
@@ -33,4 +77,29 @@ class AtsAuthenticationCard with _$AtsAuthenticationCard {
 
   /// from json
   factory AtsAuthenticationCard.fromJson(Map<String, dynamic> json) => _$AtsAuthenticationCardFromJson(json);
+}
+
+class AtsSelectCardConverter implements JsonConverter<AtsSelectCard, String> {
+  const AtsSelectCardConverter();
+
+  @override
+  AtsSelectCard fromJson(String json) => AtsSelectCard.fromJson(json);
+
+  @override
+  String toJson(AtsSelectCard object) => object.toJson();
+}
+
+class AtsSelectCardOrNullConverter implements JsonConverter<AtsSelectCard?, String?> {
+  const AtsSelectCardOrNullConverter();
+
+  @override
+  AtsSelectCard? fromJson(String? json) {
+    if (json == null) {
+      return null;
+    }
+    return AtsSelectCard.fromJson(json);
+  }
+
+  @override
+  String? toJson(AtsSelectCard? object) => object?.toJson();
 }
