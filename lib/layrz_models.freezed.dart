@@ -44755,6 +44755,10 @@ mixin _$AtsAuthenticationCard {
   /// [isSuspended] is true if the card is suspended.
   bool? get isSuspended => throw _privateConstructorUsedError;
 
+  /// [typeId] type id of the card.
+  @AtsSelectCardConverter()
+  AtsSelectCard get typeId => throw _privateConstructorUsedError;
+
   /// [history] is the history of this card.
   List<AtsHistoryAuthenticationCard>? get history =>
       throw _privateConstructorUsedError;
@@ -44783,6 +44787,7 @@ abstract class $AtsAuthenticationCardCopyWith<$Res> {
       Asset? asset,
       User? owner,
       bool? isSuspended,
+      @AtsSelectCardConverter() AtsSelectCard typeId,
       List<AtsHistoryAuthenticationCard>? history,
       @TimestampOrNullConverter() DateTime? createdAt});
 
@@ -44811,6 +44816,7 @@ class _$AtsAuthenticationCardCopyWithImpl<$Res,
     Object? asset = freezed,
     Object? owner = freezed,
     Object? isSuspended = freezed,
+    Object? typeId = null,
     Object? history = freezed,
     Object? createdAt = freezed,
   }) {
@@ -44843,6 +44849,10 @@ class _$AtsAuthenticationCardCopyWithImpl<$Res,
           ? _value.isSuspended
           : isSuspended // ignore: cast_nullable_to_non_nullable
               as bool?,
+      typeId: null == typeId
+          ? _value.typeId
+          : typeId // ignore: cast_nullable_to_non_nullable
+              as AtsSelectCard,
       history: freezed == history
           ? _value.history
           : history // ignore: cast_nullable_to_non_nullable
@@ -44895,6 +44905,7 @@ abstract class _$$_AtsAuthenticationCardCopyWith<$Res>
       Asset? asset,
       User? owner,
       bool? isSuspended,
+      @AtsSelectCardConverter() AtsSelectCard typeId,
       List<AtsHistoryAuthenticationCard>? history,
       @TimestampOrNullConverter() DateTime? createdAt});
 
@@ -44922,6 +44933,7 @@ class __$$_AtsAuthenticationCardCopyWithImpl<$Res>
     Object? asset = freezed,
     Object? owner = freezed,
     Object? isSuspended = freezed,
+    Object? typeId = null,
     Object? history = freezed,
     Object? createdAt = freezed,
   }) {
@@ -44954,6 +44966,10 @@ class __$$_AtsAuthenticationCardCopyWithImpl<$Res>
           ? _value.isSuspended
           : isSuspended // ignore: cast_nullable_to_non_nullable
               as bool?,
+      typeId: null == typeId
+          ? _value.typeId
+          : typeId // ignore: cast_nullable_to_non_nullable
+              as AtsSelectCard,
       history: freezed == history
           ? _value._history
           : history // ignore: cast_nullable_to_non_nullable
@@ -44977,6 +44993,7 @@ class _$_AtsAuthenticationCard implements _AtsAuthenticationCard {
       this.asset,
       this.owner,
       this.isSuspended,
+      @AtsSelectCardConverter() required this.typeId,
       final List<AtsHistoryAuthenticationCard>? history,
       @TimestampOrNullConverter() this.createdAt})
       : _history = history;
@@ -45012,6 +45029,11 @@ class _$_AtsAuthenticationCard implements _AtsAuthenticationCard {
   @override
   final bool? isSuspended;
 
+  /// [typeId] type id of the card.
+  @override
+  @AtsSelectCardConverter()
+  final AtsSelectCard typeId;
+
   /// [history] is the history of this card.
   final List<AtsHistoryAuthenticationCard>? _history;
 
@@ -45032,7 +45054,7 @@ class _$_AtsAuthenticationCard implements _AtsAuthenticationCard {
 
   @override
   String toString() {
-    return 'AtsAuthenticationCard(id: $id, number: $number, externalIdentifier: $externalIdentifier, externalIdentifierHex: $externalIdentifierHex, asset: $asset, owner: $owner, isSuspended: $isSuspended, history: $history, createdAt: $createdAt)';
+    return 'AtsAuthenticationCard(id: $id, number: $number, externalIdentifier: $externalIdentifier, externalIdentifierHex: $externalIdentifierHex, asset: $asset, owner: $owner, isSuspended: $isSuspended, typeId: $typeId, history: $history, createdAt: $createdAt)';
   }
 
   @override
@@ -45050,6 +45072,7 @@ class _$_AtsAuthenticationCard implements _AtsAuthenticationCard {
             (identical(other.owner, owner) || other.owner == owner) &&
             (identical(other.isSuspended, isSuspended) ||
                 other.isSuspended == isSuspended) &&
+            (identical(other.typeId, typeId) || other.typeId == typeId) &&
             const DeepCollectionEquality().equals(other._history, _history) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt));
@@ -45066,6 +45089,7 @@ class _$_AtsAuthenticationCard implements _AtsAuthenticationCard {
       asset,
       owner,
       isSuspended,
+      typeId,
       const DeepCollectionEquality().hash(_history),
       createdAt);
 
@@ -45093,6 +45117,7 @@ abstract class _AtsAuthenticationCard implements AtsAuthenticationCard {
           final Asset? asset,
           final User? owner,
           final bool? isSuspended,
+          @AtsSelectCardConverter() required final AtsSelectCard typeId,
           final List<AtsHistoryAuthenticationCard>? history,
           @TimestampOrNullConverter() final DateTime? createdAt}) =
       _$_AtsAuthenticationCard;
@@ -45128,6 +45153,11 @@ abstract class _AtsAuthenticationCard implements AtsAuthenticationCard {
 
   /// [isSuspended] is true if the card is suspended.
   bool? get isSuspended;
+  @override
+
+  /// [typeId] type id of the card.
+  @AtsSelectCardConverter()
+  AtsSelectCard get typeId;
   @override
 
   /// [history] is the history of this card.

@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.28
+- New enum [AtsSelectCard] in [AtsAuthenticationCard]
+- Update [AtsAuthenticationCard] to add [typeId]
 ## 2.0.27
 - Update [AtsExecuteExitInput] to add [toAssetMileage]
 ## 2.0.26

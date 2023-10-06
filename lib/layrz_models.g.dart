@@ -3908,6 +3908,7 @@ _$_AtsAuthenticationCard _$$_AtsAuthenticationCardFromJson(
           ? null
           : User.fromJson(json['owner'] as Map<String, dynamic>),
       isSuspended: json['isSuspended'] as bool?,
+      typeId: const AtsSelectCardConverter().fromJson(json['typeId'] as String),
       history: (json['history'] as List<dynamic>?)
           ?.map((e) =>
               AtsHistoryAuthenticationCard.fromJson(e as Map<String, dynamic>))
@@ -3926,6 +3927,7 @@ Map<String, dynamic> _$$_AtsAuthenticationCardToJson(
       'asset': instance.asset?.toJson(),
       'owner': instance.owner?.toJson(),
       'isSuspended': instance.isSuspended,
+      'typeId': const AtsSelectCardConverter().toJson(instance.typeId),
       'history': instance.history?.map((e) => e.toJson()).toList(),
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
     };
