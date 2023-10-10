@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.29
+- Updated [AppInstance] to handle new HA configuration.
+
 ## 2.0.28
 - New enum [AtsSelectCard] in [AtsAuthenticationCard]
 - Update [AtsAuthenticationCard] to add [typeId]

@@ -3526,12 +3526,6 @@ _$_AppBuild _$$_AppBuildFromJson(Map<String, dynamic> json) => _$_AppBuild(
       buildName: json['buildName'] as String,
       buildNumber: json['buildNumber'] as int,
       fileUri: json['fileUri'] as String?,
-      comments: json['comments'] as String?,
-      status:
-          const AppBuildStatusConverter().fromJson(json['status'] as String),
-      startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
-      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
       isNext: json['isNext'] as bool?,
     );
 
@@ -3541,10 +3535,6 @@ Map<String, dynamic> _$$_AppBuildToJson(_$_AppBuild instance) =>
       'buildName': instance.buildName,
       'buildNumber': instance.buildNumber,
       'fileUri': instance.fileUri,
-      'comments': instance.comments,
-      'status': const AppBuildStatusConverter().toJson(instance.status),
-      'startAt': const TimestampOrNullConverter().toJson(instance.startAt),
-      'endAt': const TimestampOrNullConverter().toJson(instance.endAt),
       'isNext': instance.isNext,
     };
 
@@ -3648,7 +3638,6 @@ _$_AppInstance _$$_AppInstanceFromJson(Map<String, dynamic> json) =>
       platform:
           const AppPlatformConverter().fromJson(json['platform'] as String),
       host: json['host'] as String?,
-      isDeployed: json['isDeployed'] as bool?,
       appIdentifier: json['appIdentifier'] as String?,
       developerName: json['developerName'] as String?,
       developerIdentifier: json['developerIdentifier'] as String?,
@@ -3656,6 +3645,18 @@ _$_AppInstance _$$_AppInstanceFromJson(Map<String, dynamic> json) =>
               ?.map((e) => AppBuild.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      status:
+          const InstanceStatusConverter().fromJson(json['status'] as String),
+      cloudfront: json['cloudfront'] == null
+          ? null
+          : DnsConfiguration.fromJson(
+              json['cloudfront'] as Map<String, dynamic>),
+      certificate: json['certificate'] == null
+          ? null
+          : DnsConfiguration.fromJson(
+              json['certificate'] as Map<String, dynamic>),
+      migrationStatus: const InstanceMigrationStatusConverter()
+          .fromJson(json['migrationStatus'] as String),
     );
 
 Map<String, dynamic> _$$_AppInstanceToJson(_$_AppInstance instance) =>
@@ -3664,11 +3665,27 @@ Map<String, dynamic> _$$_AppInstanceToJson(_$_AppInstance instance) =>
       'appId': instance.appId,
       'platform': const AppPlatformConverter().toJson(instance.platform),
       'host': instance.host,
-      'isDeployed': instance.isDeployed,
       'appIdentifier': instance.appIdentifier,
       'developerName': instance.developerName,
       'developerIdentifier': instance.developerIdentifier,
       'builds': instance.builds.map((e) => e.toJson()).toList(),
+      'status': const InstanceStatusConverter().toJson(instance.status),
+      'cloudfront': instance.cloudfront?.toJson(),
+      'certificate': instance.certificate?.toJson(),
+      'migrationStatus': const InstanceMigrationStatusConverter()
+          .toJson(instance.migrationStatus),
+    };
+
+_$_DnsConfiguration _$$_DnsConfigurationFromJson(Map<String, dynamic> json) =>
+    _$_DnsConfiguration(
+      name: json['name'] as String?,
+      value: json['value'] as String?,
+    );
+
+Map<String, dynamic> _$$_DnsConfigurationToJson(_$_DnsConfiguration instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'value': instance.value,
     };
 
 _$_AppLegal _$$_AppLegalFromJson(Map<String, dynamic> json) => _$_AppLegal(

@@ -18,6 +18,7 @@ part 'src/converters/timestamp.dart';
 part 'src/converters/icon.dart';
 part 'src/converters/color.dart';
 part 'src/converters/duration.dart';
+
 // Ats Converters
 part 'src/converters/ats_authentication_category.dart';
 part 'src/converters/ats_from_app_.dart';

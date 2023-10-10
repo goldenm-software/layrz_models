@@ -40298,17 +40298,19 @@ AppBuild _$AppBuildFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppBuild {
+  /// [id] is the ID of the build
   String get id => throw _privateConstructorUsedError;
+
+  /// [buildName] is the semantic name of the build
   String get buildName => throw _privateConstructorUsedError;
+
+  /// [buildNumber] is the semantic number of the build
   int get buildNumber => throw _privateConstructorUsedError;
+
+  /// [fileUri] is the URI of the file, only used when the platform is distinct to `AppPlatform.web`
   String? get fileUri => throw _privateConstructorUsedError;
-  String? get comments => throw _privateConstructorUsedError;
-  @AppBuildStatusConverter()
-  AppBuildStatus get status => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get startAt => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get endAt => throw _privateConstructorUsedError;
+
+  /// [isNext] is the flag to indicate if the build is the indev environment
   bool? get isNext => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40327,10 +40329,6 @@ abstract class $AppBuildCopyWith<$Res> {
       String buildName,
       int buildNumber,
       String? fileUri,
-      String? comments,
-      @AppBuildStatusConverter() AppBuildStatus status,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
       bool? isNext});
 }
 
@@ -40351,10 +40349,6 @@ class _$AppBuildCopyWithImpl<$Res, $Val extends AppBuild>
     Object? buildName = null,
     Object? buildNumber = null,
     Object? fileUri = freezed,
-    Object? comments = freezed,
-    Object? status = null,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
     Object? isNext = freezed,
   }) {
     return _then(_value.copyWith(
@@ -40374,22 +40368,6 @@ class _$AppBuildCopyWithImpl<$Res, $Val extends AppBuild>
           ? _value.fileUri
           : fileUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      comments: freezed == comments
-          ? _value.comments
-          : comments // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AppBuildStatus,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
       isNext: freezed == isNext
           ? _value.isNext
           : isNext // ignore: cast_nullable_to_non_nullable
@@ -40410,10 +40388,6 @@ abstract class _$$_AppBuildCopyWith<$Res> implements $AppBuildCopyWith<$Res> {
       String buildName,
       int buildNumber,
       String? fileUri,
-      String? comments,
-      @AppBuildStatusConverter() AppBuildStatus status,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
       bool? isNext});
 }
 
@@ -40432,10 +40406,6 @@ class __$$_AppBuildCopyWithImpl<$Res>
     Object? buildName = null,
     Object? buildNumber = null,
     Object? fileUri = freezed,
-    Object? comments = freezed,
-    Object? status = null,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
     Object? isNext = freezed,
   }) {
     return _then(_$_AppBuild(
@@ -40455,22 +40425,6 @@ class __$$_AppBuildCopyWithImpl<$Res>
           ? _value.fileUri
           : fileUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      comments: freezed == comments
-          ? _value.comments
-          : comments // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AppBuildStatus,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
       isNext: freezed == isNext
           ? _value.isNext
           : isNext // ignore: cast_nullable_to_non_nullable
@@ -40487,40 +40441,34 @@ class _$_AppBuild implements _AppBuild {
       required this.buildName,
       required this.buildNumber,
       this.fileUri,
-      this.comments,
-      @AppBuildStatusConverter() required this.status,
-      @TimestampOrNullConverter() this.startAt,
-      @TimestampOrNullConverter() this.endAt,
       this.isNext});
 
   factory _$_AppBuild.fromJson(Map<String, dynamic> json) =>
       _$$_AppBuildFromJson(json);
 
+  /// [id] is the ID of the build
   @override
   final String id;
+
+  /// [buildName] is the semantic name of the build
   @override
   final String buildName;
+
+  /// [buildNumber] is the semantic number of the build
   @override
   final int buildNumber;
+
+  /// [fileUri] is the URI of the file, only used when the platform is distinct to `AppPlatform.web`
   @override
   final String? fileUri;
-  @override
-  final String? comments;
-  @override
-  @AppBuildStatusConverter()
-  final AppBuildStatus status;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? startAt;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? endAt;
+
+  /// [isNext] is the flag to indicate if the build is the indev environment
   @override
   final bool? isNext;
 
   @override
   String toString() {
-    return 'AppBuild(id: $id, buildName: $buildName, buildNumber: $buildNumber, fileUri: $fileUri, comments: $comments, status: $status, startAt: $startAt, endAt: $endAt, isNext: $isNext)';
+    return 'AppBuild(id: $id, buildName: $buildName, buildNumber: $buildNumber, fileUri: $fileUri, isNext: $isNext)';
   }
 
   @override
@@ -40534,18 +40482,13 @@ class _$_AppBuild implements _AppBuild {
             (identical(other.buildNumber, buildNumber) ||
                 other.buildNumber == buildNumber) &&
             (identical(other.fileUri, fileUri) || other.fileUri == fileUri) &&
-            (identical(other.comments, comments) ||
-                other.comments == comments) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.startAt, startAt) || other.startAt == startAt) &&
-            (identical(other.endAt, endAt) || other.endAt == endAt) &&
             (identical(other.isNext, isNext) || other.isNext == isNext));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, buildName, buildNumber,
-      fileUri, comments, status, startAt, endAt, isNext);
+  int get hashCode =>
+      Object.hash(runtimeType, id, buildName, buildNumber, fileUri, isNext);
 
   @JsonKey(ignore: true)
   @override
@@ -40567,34 +40510,29 @@ abstract class _AppBuild implements AppBuild {
       required final String buildName,
       required final int buildNumber,
       final String? fileUri,
-      final String? comments,
-      @AppBuildStatusConverter() required final AppBuildStatus status,
-      @TimestampOrNullConverter() final DateTime? startAt,
-      @TimestampOrNullConverter() final DateTime? endAt,
       final bool? isNext}) = _$_AppBuild;
 
   factory _AppBuild.fromJson(Map<String, dynamic> json) = _$_AppBuild.fromJson;
 
   @override
+
+  /// [id] is the ID of the build
   String get id;
   @override
+
+  /// [buildName] is the semantic name of the build
   String get buildName;
   @override
+
+  /// [buildNumber] is the semantic number of the build
   int get buildNumber;
   @override
+
+  /// [fileUri] is the URI of the file, only used when the platform is distinct to `AppPlatform.web`
   String? get fileUri;
   @override
-  String? get comments;
-  @override
-  @AppBuildStatusConverter()
-  AppBuildStatus get status;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get startAt;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get endAt;
-  @override
+
+  /// [isNext] is the flag to indicate if the build is the indev environment
   bool? get isNext;
   @override
   @JsonKey(ignore: true)
@@ -41696,16 +41634,52 @@ AppInstance _$AppInstanceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppInstance {
+  /// [id] is the ID of the instance
   String get id => throw _privateConstructorUsedError;
+
+  /// [appId] is the ID of the app
   String get appId => throw _privateConstructorUsedError;
+
+  /// [platform] is the platform of the instance
   @AppPlatformConverter()
   AppPlatform get platform => throw _privateConstructorUsedError;
+
+  /// [host] is the host of the instance. It is only used when the platform is `AppPlatform.web`
   String? get host => throw _privateConstructorUsedError;
-  bool? get isDeployed => throw _privateConstructorUsedError;
+
+  /// [appIdentifier] is the identifier of the app. It is only used when the platform is not `AppPlatform.web`
   String? get appIdentifier => throw _privateConstructorUsedError;
+
+  /// [developerName] is the name of the developer. It is only used when the platform is not `AppPlatform.web`
   String? get developerName => throw _privateConstructorUsedError;
+
+  /// [developerIdentifier] is the identifier of the developer. It is only used when the platform is
+  /// not `AppPlatform.web`
   String? get developerIdentifier => throw _privateConstructorUsedError;
+
+  /// [builds] is the list of builds
   List<AppBuild> get builds => throw _privateConstructorUsedError;
+
+  /// [status] is the status of the instance. It is only used when the platform is `AppPlatform.web`
+  /// For other platforms, this value is only `InstanceStatus.pending` and `InstanceStatus.ready`
+  @InstanceStatusConverter()
+  InstanceStatus get status => throw _privateConstructorUsedError;
+
+  /// [cloudfront] is the DNS of the instance for CloudFront
+  /// It is only used when the platform is `AppPlatform.web`
+  DnsConfiguration? get cloudfront => throw _privateConstructorUsedError;
+
+  /// [certificate] is the DNS of the instance for SSL
+  /// It is only used when the platform is `AppPlatform.web`
+  DnsConfiguration? get certificate => throw _privateConstructorUsedError;
+
+  /// [migrationStatus] is the status of the migration
+  /// It is only used when the platform is `AppPlatform.web`
+  /// Why this field? Simple, we're migrating to a new High Availability architecture, so,
+  /// for web instances, we require some changes about the configuration of the DNS.
+  @InstanceMigrationStatusConverter()
+  InstanceMigrationStatus get migrationStatus =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41724,11 +41698,18 @@ abstract class $AppInstanceCopyWith<$Res> {
       String appId,
       @AppPlatformConverter() AppPlatform platform,
       String? host,
-      bool? isDeployed,
       String? appIdentifier,
       String? developerName,
       String? developerIdentifier,
-      List<AppBuild> builds});
+      List<AppBuild> builds,
+      @InstanceStatusConverter() InstanceStatus status,
+      DnsConfiguration? cloudfront,
+      DnsConfiguration? certificate,
+      @InstanceMigrationStatusConverter()
+      InstanceMigrationStatus migrationStatus});
+
+  $DnsConfigurationCopyWith<$Res>? get cloudfront;
+  $DnsConfigurationCopyWith<$Res>? get certificate;
 }
 
 /// @nodoc
@@ -41748,11 +41729,14 @@ class _$AppInstanceCopyWithImpl<$Res, $Val extends AppInstance>
     Object? appId = null,
     Object? platform = null,
     Object? host = freezed,
-    Object? isDeployed = freezed,
     Object? appIdentifier = freezed,
     Object? developerName = freezed,
     Object? developerIdentifier = freezed,
     Object? builds = null,
+    Object? status = null,
+    Object? cloudfront = freezed,
+    Object? certificate = freezed,
+    Object? migrationStatus = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -41771,10 +41755,6 @@ class _$AppInstanceCopyWithImpl<$Res, $Val extends AppInstance>
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String?,
-      isDeployed: freezed == isDeployed
-          ? _value.isDeployed
-          : isDeployed // ignore: cast_nullable_to_non_nullable
-              as bool?,
       appIdentifier: freezed == appIdentifier
           ? _value.appIdentifier
           : appIdentifier // ignore: cast_nullable_to_non_nullable
@@ -41791,7 +41771,47 @@ class _$AppInstanceCopyWithImpl<$Res, $Val extends AppInstance>
           ? _value.builds
           : builds // ignore: cast_nullable_to_non_nullable
               as List<AppBuild>,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as InstanceStatus,
+      cloudfront: freezed == cloudfront
+          ? _value.cloudfront
+          : cloudfront // ignore: cast_nullable_to_non_nullable
+              as DnsConfiguration?,
+      certificate: freezed == certificate
+          ? _value.certificate
+          : certificate // ignore: cast_nullable_to_non_nullable
+              as DnsConfiguration?,
+      migrationStatus: null == migrationStatus
+          ? _value.migrationStatus
+          : migrationStatus // ignore: cast_nullable_to_non_nullable
+              as InstanceMigrationStatus,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DnsConfigurationCopyWith<$Res>? get cloudfront {
+    if (_value.cloudfront == null) {
+      return null;
+    }
+
+    return $DnsConfigurationCopyWith<$Res>(_value.cloudfront!, (value) {
+      return _then(_value.copyWith(cloudfront: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DnsConfigurationCopyWith<$Res>? get certificate {
+    if (_value.certificate == null) {
+      return null;
+    }
+
+    return $DnsConfigurationCopyWith<$Res>(_value.certificate!, (value) {
+      return _then(_value.copyWith(certificate: value) as $Val);
+    });
   }
 }
 
@@ -41808,11 +41828,20 @@ abstract class _$$_AppInstanceCopyWith<$Res>
       String appId,
       @AppPlatformConverter() AppPlatform platform,
       String? host,
-      bool? isDeployed,
       String? appIdentifier,
       String? developerName,
       String? developerIdentifier,
-      List<AppBuild> builds});
+      List<AppBuild> builds,
+      @InstanceStatusConverter() InstanceStatus status,
+      DnsConfiguration? cloudfront,
+      DnsConfiguration? certificate,
+      @InstanceMigrationStatusConverter()
+      InstanceMigrationStatus migrationStatus});
+
+  @override
+  $DnsConfigurationCopyWith<$Res>? get cloudfront;
+  @override
+  $DnsConfigurationCopyWith<$Res>? get certificate;
 }
 
 /// @nodoc
@@ -41830,11 +41859,14 @@ class __$$_AppInstanceCopyWithImpl<$Res>
     Object? appId = null,
     Object? platform = null,
     Object? host = freezed,
-    Object? isDeployed = freezed,
     Object? appIdentifier = freezed,
     Object? developerName = freezed,
     Object? developerIdentifier = freezed,
     Object? builds = null,
+    Object? status = null,
+    Object? cloudfront = freezed,
+    Object? certificate = freezed,
+    Object? migrationStatus = null,
   }) {
     return _then(_$_AppInstance(
       id: null == id
@@ -41853,10 +41885,6 @@ class __$$_AppInstanceCopyWithImpl<$Res>
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String?,
-      isDeployed: freezed == isDeployed
-          ? _value.isDeployed
-          : isDeployed // ignore: cast_nullable_to_non_nullable
-              as bool?,
       appIdentifier: freezed == appIdentifier
           ? _value.appIdentifier
           : appIdentifier // ignore: cast_nullable_to_non_nullable
@@ -41873,6 +41901,22 @@ class __$$_AppInstanceCopyWithImpl<$Res>
           ? _value._builds
           : builds // ignore: cast_nullable_to_non_nullable
               as List<AppBuild>,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as InstanceStatus,
+      cloudfront: freezed == cloudfront
+          ? _value.cloudfront
+          : cloudfront // ignore: cast_nullable_to_non_nullable
+              as DnsConfiguration?,
+      certificate: freezed == certificate
+          ? _value.certificate
+          : certificate // ignore: cast_nullable_to_non_nullable
+              as DnsConfiguration?,
+      migrationStatus: null == migrationStatus
+          ? _value.migrationStatus
+          : migrationStatus // ignore: cast_nullable_to_non_nullable
+              as InstanceMigrationStatus,
     ));
   }
 }
@@ -41885,34 +41929,53 @@ class _$_AppInstance implements _AppInstance {
       required this.appId,
       @AppPlatformConverter() required this.platform,
       this.host,
-      this.isDeployed,
       this.appIdentifier,
       this.developerName,
       this.developerIdentifier,
-      final List<AppBuild> builds = const []})
+      final List<AppBuild> builds = const [],
+      @InstanceStatusConverter() required this.status,
+      this.cloudfront,
+      this.certificate,
+      @InstanceMigrationStatusConverter() required this.migrationStatus})
       : _builds = builds;
 
   factory _$_AppInstance.fromJson(Map<String, dynamic> json) =>
       _$$_AppInstanceFromJson(json);
 
+  /// [id] is the ID of the instance
   @override
   final String id;
+
+  /// [appId] is the ID of the app
   @override
   final String appId;
+
+  /// [platform] is the platform of the instance
   @override
   @AppPlatformConverter()
   final AppPlatform platform;
+
+  /// [host] is the host of the instance. It is only used when the platform is `AppPlatform.web`
   @override
   final String? host;
-  @override
-  final bool? isDeployed;
+
+  /// [appIdentifier] is the identifier of the app. It is only used when the platform is not `AppPlatform.web`
   @override
   final String? appIdentifier;
+
+  /// [developerName] is the name of the developer. It is only used when the platform is not `AppPlatform.web`
   @override
   final String? developerName;
+
+  /// [developerIdentifier] is the identifier of the developer. It is only used when the platform is
+  /// not `AppPlatform.web`
   @override
   final String? developerIdentifier;
+
+  /// [builds] is the list of builds
   final List<AppBuild> _builds;
+
+  /// [builds] is the list of builds
   @override
   @JsonKey()
   List<AppBuild> get builds {
@@ -41921,9 +41984,33 @@ class _$_AppInstance implements _AppInstance {
     return EqualUnmodifiableListView(_builds);
   }
 
+  /// [status] is the status of the instance. It is only used when the platform is `AppPlatform.web`
+  /// For other platforms, this value is only `InstanceStatus.pending` and `InstanceStatus.ready`
+  @override
+  @InstanceStatusConverter()
+  final InstanceStatus status;
+
+  /// [cloudfront] is the DNS of the instance for CloudFront
+  /// It is only used when the platform is `AppPlatform.web`
+  @override
+  final DnsConfiguration? cloudfront;
+
+  /// [certificate] is the DNS of the instance for SSL
+  /// It is only used when the platform is `AppPlatform.web`
+  @override
+  final DnsConfiguration? certificate;
+
+  /// [migrationStatus] is the status of the migration
+  /// It is only used when the platform is `AppPlatform.web`
+  /// Why this field? Simple, we're migrating to a new High Availability architecture, so,
+  /// for web instances, we require some changes about the configuration of the DNS.
+  @override
+  @InstanceMigrationStatusConverter()
+  final InstanceMigrationStatus migrationStatus;
+
   @override
   String toString() {
-    return 'AppInstance(id: $id, appId: $appId, platform: $platform, host: $host, isDeployed: $isDeployed, appIdentifier: $appIdentifier, developerName: $developerName, developerIdentifier: $developerIdentifier, builds: $builds)';
+    return 'AppInstance(id: $id, appId: $appId, platform: $platform, host: $host, appIdentifier: $appIdentifier, developerName: $developerName, developerIdentifier: $developerIdentifier, builds: $builds, status: $status, cloudfront: $cloudfront, certificate: $certificate, migrationStatus: $migrationStatus)';
   }
 
   @override
@@ -41936,15 +42023,20 @@ class _$_AppInstance implements _AppInstance {
             (identical(other.platform, platform) ||
                 other.platform == platform) &&
             (identical(other.host, host) || other.host == host) &&
-            (identical(other.isDeployed, isDeployed) ||
-                other.isDeployed == isDeployed) &&
             (identical(other.appIdentifier, appIdentifier) ||
                 other.appIdentifier == appIdentifier) &&
             (identical(other.developerName, developerName) ||
                 other.developerName == developerName) &&
             (identical(other.developerIdentifier, developerIdentifier) ||
                 other.developerIdentifier == developerIdentifier) &&
-            const DeepCollectionEquality().equals(other._builds, _builds));
+            const DeepCollectionEquality().equals(other._builds, _builds) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.cloudfront, cloudfront) ||
+                other.cloudfront == cloudfront) &&
+            (identical(other.certificate, certificate) ||
+                other.certificate == certificate) &&
+            (identical(other.migrationStatus, migrationStatus) ||
+                other.migrationStatus == migrationStatus));
   }
 
   @JsonKey(ignore: true)
@@ -41955,11 +42047,14 @@ class _$_AppInstance implements _AppInstance {
       appId,
       platform,
       host,
-      isDeployed,
       appIdentifier,
       developerName,
       developerIdentifier,
-      const DeepCollectionEquality().hash(_builds));
+      const DeepCollectionEquality().hash(_builds),
+      status,
+      cloudfront,
+      certificate,
+      migrationStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -41981,37 +42076,243 @@ abstract class _AppInstance implements AppInstance {
       required final String appId,
       @AppPlatformConverter() required final AppPlatform platform,
       final String? host,
-      final bool? isDeployed,
       final String? appIdentifier,
       final String? developerName,
       final String? developerIdentifier,
-      final List<AppBuild> builds}) = _$_AppInstance;
+      final List<AppBuild> builds,
+      @InstanceStatusConverter() required final InstanceStatus status,
+      final DnsConfiguration? cloudfront,
+      final DnsConfiguration? certificate,
+      @InstanceMigrationStatusConverter()
+      required final InstanceMigrationStatus migrationStatus}) = _$_AppInstance;
 
   factory _AppInstance.fromJson(Map<String, dynamic> json) =
       _$_AppInstance.fromJson;
 
   @override
+
+  /// [id] is the ID of the instance
   String get id;
   @override
+
+  /// [appId] is the ID of the app
   String get appId;
   @override
+
+  /// [platform] is the platform of the instance
   @AppPlatformConverter()
   AppPlatform get platform;
   @override
+
+  /// [host] is the host of the instance. It is only used when the platform is `AppPlatform.web`
   String? get host;
   @override
-  bool? get isDeployed;
-  @override
+
+  /// [appIdentifier] is the identifier of the app. It is only used when the platform is not `AppPlatform.web`
   String? get appIdentifier;
   @override
+
+  /// [developerName] is the name of the developer. It is only used when the platform is not `AppPlatform.web`
   String? get developerName;
   @override
+
+  /// [developerIdentifier] is the identifier of the developer. It is only used when the platform is
+  /// not `AppPlatform.web`
   String? get developerIdentifier;
   @override
+
+  /// [builds] is the list of builds
   List<AppBuild> get builds;
+  @override
+
+  /// [status] is the status of the instance. It is only used when the platform is `AppPlatform.web`
+  /// For other platforms, this value is only `InstanceStatus.pending` and `InstanceStatus.ready`
+  @InstanceStatusConverter()
+  InstanceStatus get status;
+  @override
+
+  /// [cloudfront] is the DNS of the instance for CloudFront
+  /// It is only used when the platform is `AppPlatform.web`
+  DnsConfiguration? get cloudfront;
+  @override
+
+  /// [certificate] is the DNS of the instance for SSL
+  /// It is only used when the platform is `AppPlatform.web`
+  DnsConfiguration? get certificate;
+  @override
+
+  /// [migrationStatus] is the status of the migration
+  /// It is only used when the platform is `AppPlatform.web`
+  /// Why this field? Simple, we're migrating to a new High Availability architecture, so,
+  /// for web instances, we require some changes about the configuration of the DNS.
+  @InstanceMigrationStatusConverter()
+  InstanceMigrationStatus get migrationStatus;
   @override
   @JsonKey(ignore: true)
   _$$_AppInstanceCopyWith<_$_AppInstance> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+DnsConfiguration _$DnsConfigurationFromJson(Map<String, dynamic> json) {
+  return _DnsConfiguration.fromJson(json);
+}
+
+/// @nodoc
+mixin _$DnsConfiguration {
+  /// [name] is the name of the DNS
+  String? get name => throw _privateConstructorUsedError;
+
+  /// [value] is the value of the DNS
+  String? get value => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DnsConfigurationCopyWith<DnsConfiguration> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DnsConfigurationCopyWith<$Res> {
+  factory $DnsConfigurationCopyWith(
+          DnsConfiguration value, $Res Function(DnsConfiguration) then) =
+      _$DnsConfigurationCopyWithImpl<$Res, DnsConfiguration>;
+  @useResult
+  $Res call({String? name, String? value});
+}
+
+/// @nodoc
+class _$DnsConfigurationCopyWithImpl<$Res, $Val extends DnsConfiguration>
+    implements $DnsConfigurationCopyWith<$Res> {
+  _$DnsConfigurationCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? value = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_DnsConfigurationCopyWith<$Res>
+    implements $DnsConfigurationCopyWith<$Res> {
+  factory _$$_DnsConfigurationCopyWith(
+          _$_DnsConfiguration value, $Res Function(_$_DnsConfiguration) then) =
+      __$$_DnsConfigurationCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? name, String? value});
+}
+
+/// @nodoc
+class __$$_DnsConfigurationCopyWithImpl<$Res>
+    extends _$DnsConfigurationCopyWithImpl<$Res, _$_DnsConfiguration>
+    implements _$$_DnsConfigurationCopyWith<$Res> {
+  __$$_DnsConfigurationCopyWithImpl(
+      _$_DnsConfiguration _value, $Res Function(_$_DnsConfiguration) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? value = freezed,
+  }) {
+    return _then(_$_DnsConfiguration(
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_DnsConfiguration implements _DnsConfiguration {
+  const _$_DnsConfiguration({this.name, this.value});
+
+  factory _$_DnsConfiguration.fromJson(Map<String, dynamic> json) =>
+      _$$_DnsConfigurationFromJson(json);
+
+  /// [name] is the name of the DNS
+  @override
+  final String? name;
+
+  /// [value] is the value of the DNS
+  @override
+  final String? value;
+
+  @override
+  String toString() {
+    return 'DnsConfiguration(name: $name, value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_DnsConfiguration &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DnsConfigurationCopyWith<_$_DnsConfiguration> get copyWith =>
+      __$$_DnsConfigurationCopyWithImpl<_$_DnsConfiguration>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_DnsConfigurationToJson(
+      this,
+    );
+  }
+}
+
+abstract class _DnsConfiguration implements DnsConfiguration {
+  const factory _DnsConfiguration({final String? name, final String? value}) =
+      _$_DnsConfiguration;
+
+  factory _DnsConfiguration.fromJson(Map<String, dynamic> json) =
+      _$_DnsConfiguration.fromJson;
+
+  @override
+
+  /// [name] is the name of the DNS
+  String? get name;
+  @override
+
+  /// [value] is the value of the DNS
+  String? get value;
+  @override
+  @JsonKey(ignore: true)
+  _$$_DnsConfigurationCopyWith<_$_DnsConfiguration> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
