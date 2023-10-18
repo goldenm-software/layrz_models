@@ -58584,8 +58584,8 @@ ReportRow _$ReportRowFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ReportRow {
-  /// [cells] is the cells of the report row.
-  List<ReportCell> get cells => throw _privateConstructorUsedError;
+  /// [content] is the cells of the report row.
+  List<ReportCell> get content => throw _privateConstructorUsedError;
 
   /// [compact] indicates if the row is compact.
   bool get compact => throw _privateConstructorUsedError;
@@ -58601,7 +58601,7 @@ abstract class $ReportRowCopyWith<$Res> {
   factory $ReportRowCopyWith(ReportRow value, $Res Function(ReportRow) then) =
       _$ReportRowCopyWithImpl<$Res, ReportRow>;
   @useResult
-  $Res call({List<ReportCell> cells, bool compact});
+  $Res call({List<ReportCell> content, bool compact});
 }
 
 /// @nodoc
@@ -58617,13 +58617,13 @@ class _$ReportRowCopyWithImpl<$Res, $Val extends ReportRow>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cells = null,
+    Object? content = null,
     Object? compact = null,
   }) {
     return _then(_value.copyWith(
-      cells: null == cells
-          ? _value.cells
-          : cells // ignore: cast_nullable_to_non_nullable
+      content: null == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
               as List<ReportCell>,
       compact: null == compact
           ? _value.compact
@@ -58640,7 +58640,7 @@ abstract class _$$_ReportRowCopyWith<$Res> implements $ReportRowCopyWith<$Res> {
       __$$_ReportRowCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<ReportCell> cells, bool compact});
+  $Res call({List<ReportCell> content, bool compact});
 }
 
 /// @nodoc
@@ -58654,13 +58654,13 @@ class __$$_ReportRowCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cells = null,
+    Object? content = null,
     Object? compact = null,
   }) {
     return _then(_$_ReportRow(
-      cells: null == cells
-          ? _value._cells
-          : cells // ignore: cast_nullable_to_non_nullable
+      content: null == content
+          ? _value._content
+          : content // ignore: cast_nullable_to_non_nullable
               as List<ReportCell>,
       compact: null == compact
           ? _value.compact
@@ -58674,22 +58674,22 @@ class __$$_ReportRowCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ReportRow implements _ReportRow {
   const _$_ReportRow(
-      {final List<ReportCell> cells = const [], this.compact = false})
-      : _cells = cells;
+      {final List<ReportCell> content = const [], this.compact = false})
+      : _content = content;
 
   factory _$_ReportRow.fromJson(Map<String, dynamic> json) =>
       _$$_ReportRowFromJson(json);
 
-  /// [cells] is the cells of the report row.
-  final List<ReportCell> _cells;
+  /// [content] is the cells of the report row.
+  final List<ReportCell> _content;
 
-  /// [cells] is the cells of the report row.
+  /// [content] is the cells of the report row.
   @override
   @JsonKey()
-  List<ReportCell> get cells {
-    if (_cells is EqualUnmodifiableListView) return _cells;
+  List<ReportCell> get content {
+    if (_content is EqualUnmodifiableListView) return _content;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_cells);
+    return EqualUnmodifiableListView(_content);
   }
 
   /// [compact] indicates if the row is compact.
@@ -58699,7 +58699,7 @@ class _$_ReportRow implements _ReportRow {
 
   @override
   String toString() {
-    return 'ReportRow(cells: $cells, compact: $compact)';
+    return 'ReportRow(content: $content, compact: $compact)';
   }
 
   @override
@@ -58707,14 +58707,14 @@ class _$_ReportRow implements _ReportRow {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ReportRow &&
-            const DeepCollectionEquality().equals(other._cells, _cells) &&
+            const DeepCollectionEquality().equals(other._content, _content) &&
             (identical(other.compact, compact) || other.compact == compact));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_cells), compact);
+      runtimeType, const DeepCollectionEquality().hash(_content), compact);
 
   @JsonKey(ignore: true)
   @override
@@ -58731,16 +58731,16 @@ class _$_ReportRow implements _ReportRow {
 }
 
 abstract class _ReportRow implements ReportRow {
-  const factory _ReportRow({final List<ReportCell> cells, final bool compact}) =
-      _$_ReportRow;
+  const factory _ReportRow(
+      {final List<ReportCell> content, final bool compact}) = _$_ReportRow;
 
   factory _ReportRow.fromJson(Map<String, dynamic> json) =
       _$_ReportRow.fromJson;
 
   @override
 
-  /// [cells] is the cells of the report row.
-  List<ReportCell> get cells;
+  /// [content] is the cells of the report row.
+  List<ReportCell> get content;
   @override
 
   /// [compact] indicates if the row is compact.

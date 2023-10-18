@@ -5100,7 +5100,7 @@ Map<String, dynamic> _$$_ReportPageToJson(_$_ReportPage instance) =>
     };
 
 _$_ReportRow _$$_ReportRowFromJson(Map<String, dynamic> json) => _$_ReportRow(
-      cells: (json['cells'] as List<dynamic>?)
+      content: (json['content'] as List<dynamic>?)
               ?.map((e) => ReportCell.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
@@ -5109,7 +5109,7 @@ _$_ReportRow _$$_ReportRowFromJson(Map<String, dynamic> json) => _$_ReportRow(
 
 Map<String, dynamic> _$$_ReportRowToJson(_$_ReportRow instance) =>
     <String, dynamic>{
-      'cells': instance.cells.map((e) => e.toJson()).toList(),
+      'content': instance.content.map((e) => e.toJson()).toList(),
       'compact': instance.compact,
     };
 

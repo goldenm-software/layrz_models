@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.31
+- Changed `cells` to `content` in [ReportRow]
+
 ## 2.0.30
 - New entities [ReportPreview], [ReportRow], [ReportCell], [ReportHeader] and [ReportPage] to handle reports' previews in the app.
 
