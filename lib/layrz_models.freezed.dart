@@ -58190,3 +58190,1032 @@ abstract class _MappitFreeDay implements MappitFreeDay {
   _$$_MappitFreeDayCopyWith<_$_MappitFreeDay> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+ReportPreview _$ReportPreviewFromJson(Map<String, dynamic> json) {
+  return _ReportPreview.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReportPreview {
+  /// [name] is the name of the report preview.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [pages] is the pages inside of the report
+  List<ReportPage> get pages => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ReportPreviewCopyWith<ReportPreview> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReportPreviewCopyWith<$Res> {
+  factory $ReportPreviewCopyWith(
+          ReportPreview value, $Res Function(ReportPreview) then) =
+      _$ReportPreviewCopyWithImpl<$Res, ReportPreview>;
+  @useResult
+  $Res call({String name, List<ReportPage> pages});
+}
+
+/// @nodoc
+class _$ReportPreviewCopyWithImpl<$Res, $Val extends ReportPreview>
+    implements $ReportPreviewCopyWith<$Res> {
+  _$ReportPreviewCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? pages = null,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      pages: null == pages
+          ? _value.pages
+          : pages // ignore: cast_nullable_to_non_nullable
+              as List<ReportPage>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ReportPreviewCopyWith<$Res>
+    implements $ReportPreviewCopyWith<$Res> {
+  factory _$$_ReportPreviewCopyWith(
+          _$_ReportPreview value, $Res Function(_$_ReportPreview) then) =
+      __$$_ReportPreviewCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, List<ReportPage> pages});
+}
+
+/// @nodoc
+class __$$_ReportPreviewCopyWithImpl<$Res>
+    extends _$ReportPreviewCopyWithImpl<$Res, _$_ReportPreview>
+    implements _$$_ReportPreviewCopyWith<$Res> {
+  __$$_ReportPreviewCopyWithImpl(
+      _$_ReportPreview _value, $Res Function(_$_ReportPreview) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? pages = null,
+  }) {
+    return _then(_$_ReportPreview(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      pages: null == pages
+          ? _value._pages
+          : pages // ignore: cast_nullable_to_non_nullable
+              as List<ReportPage>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ReportPreview implements _ReportPreview {
+  const _$_ReportPreview(
+      {required this.name, final List<ReportPage> pages = const []})
+      : _pages = pages;
+
+  factory _$_ReportPreview.fromJson(Map<String, dynamic> json) =>
+      _$$_ReportPreviewFromJson(json);
+
+  /// [name] is the name of the report preview.
+  @override
+  final String name;
+
+  /// [pages] is the pages inside of the report
+  final List<ReportPage> _pages;
+
+  /// [pages] is the pages inside of the report
+  @override
+  @JsonKey()
+  List<ReportPage> get pages {
+    if (_pages is EqualUnmodifiableListView) return _pages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_pages);
+  }
+
+  @override
+  String toString() {
+    return 'ReportPreview(name: $name, pages: $pages)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ReportPreview &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other._pages, _pages));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, name, const DeepCollectionEquality().hash(_pages));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ReportPreviewCopyWith<_$_ReportPreview> get copyWith =>
+      __$$_ReportPreviewCopyWithImpl<_$_ReportPreview>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ReportPreviewToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ReportPreview implements ReportPreview {
+  const factory _ReportPreview(
+      {required final String name,
+      final List<ReportPage> pages}) = _$_ReportPreview;
+
+  factory _ReportPreview.fromJson(Map<String, dynamic> json) =
+      _$_ReportPreview.fromJson;
+
+  @override
+
+  /// [name] is the name of the report preview.
+  String get name;
+  @override
+
+  /// [pages] is the pages inside of the report
+  List<ReportPage> get pages;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ReportPreviewCopyWith<_$_ReportPreview> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ReportPage _$ReportPageFromJson(Map<String, dynamic> json) {
+  return _ReportPage.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReportPage {
+  /// [name] is the name of the report page.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [rows] is the rows inside of the report
+  List<ReportRow> get rows => throw _privateConstructorUsedError;
+
+  /// [headers] is the headers of the report
+  List<ReportHeader> get headers => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ReportPageCopyWith<ReportPage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReportPageCopyWith<$Res> {
+  factory $ReportPageCopyWith(
+          ReportPage value, $Res Function(ReportPage) then) =
+      _$ReportPageCopyWithImpl<$Res, ReportPage>;
+  @useResult
+  $Res call({String name, List<ReportRow> rows, List<ReportHeader> headers});
+}
+
+/// @nodoc
+class _$ReportPageCopyWithImpl<$Res, $Val extends ReportPage>
+    implements $ReportPageCopyWith<$Res> {
+  _$ReportPageCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? rows = null,
+    Object? headers = null,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      rows: null == rows
+          ? _value.rows
+          : rows // ignore: cast_nullable_to_non_nullable
+              as List<ReportRow>,
+      headers: null == headers
+          ? _value.headers
+          : headers // ignore: cast_nullable_to_non_nullable
+              as List<ReportHeader>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ReportPageCopyWith<$Res>
+    implements $ReportPageCopyWith<$Res> {
+  factory _$$_ReportPageCopyWith(
+          _$_ReportPage value, $Res Function(_$_ReportPage) then) =
+      __$$_ReportPageCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, List<ReportRow> rows, List<ReportHeader> headers});
+}
+
+/// @nodoc
+class __$$_ReportPageCopyWithImpl<$Res>
+    extends _$ReportPageCopyWithImpl<$Res, _$_ReportPage>
+    implements _$$_ReportPageCopyWith<$Res> {
+  __$$_ReportPageCopyWithImpl(
+      _$_ReportPage _value, $Res Function(_$_ReportPage) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? rows = null,
+    Object? headers = null,
+  }) {
+    return _then(_$_ReportPage(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      rows: null == rows
+          ? _value._rows
+          : rows // ignore: cast_nullable_to_non_nullable
+              as List<ReportRow>,
+      headers: null == headers
+          ? _value._headers
+          : headers // ignore: cast_nullable_to_non_nullable
+              as List<ReportHeader>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ReportPage implements _ReportPage {
+  const _$_ReportPage(
+      {required this.name,
+      final List<ReportRow> rows = const [],
+      final List<ReportHeader> headers = const []})
+      : _rows = rows,
+        _headers = headers;
+
+  factory _$_ReportPage.fromJson(Map<String, dynamic> json) =>
+      _$$_ReportPageFromJson(json);
+
+  /// [name] is the name of the report page.
+  @override
+  final String name;
+
+  /// [rows] is the rows inside of the report
+  final List<ReportRow> _rows;
+
+  /// [rows] is the rows inside of the report
+  @override
+  @JsonKey()
+  List<ReportRow> get rows {
+    if (_rows is EqualUnmodifiableListView) return _rows;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_rows);
+  }
+
+  /// [headers] is the headers of the report
+  final List<ReportHeader> _headers;
+
+  /// [headers] is the headers of the report
+  @override
+  @JsonKey()
+  List<ReportHeader> get headers {
+    if (_headers is EqualUnmodifiableListView) return _headers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_headers);
+  }
+
+  @override
+  String toString() {
+    return 'ReportPage(name: $name, rows: $rows, headers: $headers)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ReportPage &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other._rows, _rows) &&
+            const DeepCollectionEquality().equals(other._headers, _headers));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      const DeepCollectionEquality().hash(_rows),
+      const DeepCollectionEquality().hash(_headers));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ReportPageCopyWith<_$_ReportPage> get copyWith =>
+      __$$_ReportPageCopyWithImpl<_$_ReportPage>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ReportPageToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ReportPage implements ReportPage {
+  const factory _ReportPage(
+      {required final String name,
+      final List<ReportRow> rows,
+      final List<ReportHeader> headers}) = _$_ReportPage;
+
+  factory _ReportPage.fromJson(Map<String, dynamic> json) =
+      _$_ReportPage.fromJson;
+
+  @override
+
+  /// [name] is the name of the report page.
+  String get name;
+  @override
+
+  /// [rows] is the rows inside of the report
+  List<ReportRow> get rows;
+  @override
+
+  /// [headers] is the headers of the report
+  List<ReportHeader> get headers;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ReportPageCopyWith<_$_ReportPage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ReportRow _$ReportRowFromJson(Map<String, dynamic> json) {
+  return _ReportRow.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReportRow {
+  /// [cells] is the cells of the report row.
+  List<ReportCell> get cells => throw _privateConstructorUsedError;
+
+  /// [compact] indicates if the row is compact.
+  bool get compact => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ReportRowCopyWith<ReportRow> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReportRowCopyWith<$Res> {
+  factory $ReportRowCopyWith(ReportRow value, $Res Function(ReportRow) then) =
+      _$ReportRowCopyWithImpl<$Res, ReportRow>;
+  @useResult
+  $Res call({List<ReportCell> cells, bool compact});
+}
+
+/// @nodoc
+class _$ReportRowCopyWithImpl<$Res, $Val extends ReportRow>
+    implements $ReportRowCopyWith<$Res> {
+  _$ReportRowCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cells = null,
+    Object? compact = null,
+  }) {
+    return _then(_value.copyWith(
+      cells: null == cells
+          ? _value.cells
+          : cells // ignore: cast_nullable_to_non_nullable
+              as List<ReportCell>,
+      compact: null == compact
+          ? _value.compact
+          : compact // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ReportRowCopyWith<$Res> implements $ReportRowCopyWith<$Res> {
+  factory _$$_ReportRowCopyWith(
+          _$_ReportRow value, $Res Function(_$_ReportRow) then) =
+      __$$_ReportRowCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<ReportCell> cells, bool compact});
+}
+
+/// @nodoc
+class __$$_ReportRowCopyWithImpl<$Res>
+    extends _$ReportRowCopyWithImpl<$Res, _$_ReportRow>
+    implements _$$_ReportRowCopyWith<$Res> {
+  __$$_ReportRowCopyWithImpl(
+      _$_ReportRow _value, $Res Function(_$_ReportRow) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cells = null,
+    Object? compact = null,
+  }) {
+    return _then(_$_ReportRow(
+      cells: null == cells
+          ? _value._cells
+          : cells // ignore: cast_nullable_to_non_nullable
+              as List<ReportCell>,
+      compact: null == compact
+          ? _value.compact
+          : compact // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ReportRow implements _ReportRow {
+  const _$_ReportRow(
+      {final List<ReportCell> cells = const [], this.compact = false})
+      : _cells = cells;
+
+  factory _$_ReportRow.fromJson(Map<String, dynamic> json) =>
+      _$$_ReportRowFromJson(json);
+
+  /// [cells] is the cells of the report row.
+  final List<ReportCell> _cells;
+
+  /// [cells] is the cells of the report row.
+  @override
+  @JsonKey()
+  List<ReportCell> get cells {
+    if (_cells is EqualUnmodifiableListView) return _cells;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_cells);
+  }
+
+  /// [compact] indicates if the row is compact.
+  @override
+  @JsonKey()
+  final bool compact;
+
+  @override
+  String toString() {
+    return 'ReportRow(cells: $cells, compact: $compact)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ReportRow &&
+            const DeepCollectionEquality().equals(other._cells, _cells) &&
+            (identical(other.compact, compact) || other.compact == compact));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_cells), compact);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ReportRowCopyWith<_$_ReportRow> get copyWith =>
+      __$$_ReportRowCopyWithImpl<_$_ReportRow>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ReportRowToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ReportRow implements ReportRow {
+  const factory _ReportRow({final List<ReportCell> cells, final bool compact}) =
+      _$_ReportRow;
+
+  factory _ReportRow.fromJson(Map<String, dynamic> json) =
+      _$_ReportRow.fromJson;
+
+  @override
+
+  /// [cells] is the cells of the report row.
+  List<ReportCell> get cells;
+  @override
+
+  /// [compact] indicates if the row is compact.
+  bool get compact;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ReportRowCopyWith<_$_ReportRow> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ReportHeader _$ReportHeaderFromJson(Map<String, dynamic> json) {
+  return _ReportHeader.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReportHeader {
+  /// [content] is the content of the report header.
+  String get content => throw _privateConstructorUsedError;
+
+  /// [textColor] is the text color of the report header.
+  @ColorOrNullConverter()
+  Color? get textColor => throw _privateConstructorUsedError;
+
+  /// [color] is the color of the report header.
+  @ColorOrNullConverter()
+  Color? get color => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ReportHeaderCopyWith<ReportHeader> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReportHeaderCopyWith<$Res> {
+  factory $ReportHeaderCopyWith(
+          ReportHeader value, $Res Function(ReportHeader) then) =
+      _$ReportHeaderCopyWithImpl<$Res, ReportHeader>;
+  @useResult
+  $Res call(
+      {String content,
+      @ColorOrNullConverter() Color? textColor,
+      @ColorOrNullConverter() Color? color});
+}
+
+/// @nodoc
+class _$ReportHeaderCopyWithImpl<$Res, $Val extends ReportHeader>
+    implements $ReportHeaderCopyWith<$Res> {
+  _$ReportHeaderCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = null,
+    Object? textColor = freezed,
+    Object? color = freezed,
+  }) {
+    return _then(_value.copyWith(
+      content: null == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
+      textColor: freezed == textColor
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ReportHeaderCopyWith<$Res>
+    implements $ReportHeaderCopyWith<$Res> {
+  factory _$$_ReportHeaderCopyWith(
+          _$_ReportHeader value, $Res Function(_$_ReportHeader) then) =
+      __$$_ReportHeaderCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String content,
+      @ColorOrNullConverter() Color? textColor,
+      @ColorOrNullConverter() Color? color});
+}
+
+/// @nodoc
+class __$$_ReportHeaderCopyWithImpl<$Res>
+    extends _$ReportHeaderCopyWithImpl<$Res, _$_ReportHeader>
+    implements _$$_ReportHeaderCopyWith<$Res> {
+  __$$_ReportHeaderCopyWithImpl(
+      _$_ReportHeader _value, $Res Function(_$_ReportHeader) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = null,
+    Object? textColor = freezed,
+    Object? color = freezed,
+  }) {
+    return _then(_$_ReportHeader(
+      content: null == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
+      textColor: freezed == textColor
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ReportHeader implements _ReportHeader {
+  const _$_ReportHeader(
+      {required this.content,
+      @ColorOrNullConverter() this.textColor,
+      @ColorOrNullConverter() this.color});
+
+  factory _$_ReportHeader.fromJson(Map<String, dynamic> json) =>
+      _$$_ReportHeaderFromJson(json);
+
+  /// [content] is the content of the report header.
+  @override
+  final String content;
+
+  /// [textColor] is the text color of the report header.
+  @override
+  @ColorOrNullConverter()
+  final Color? textColor;
+
+  /// [color] is the color of the report header.
+  @override
+  @ColorOrNullConverter()
+  final Color? color;
+
+  @override
+  String toString() {
+    return 'ReportHeader(content: $content, textColor: $textColor, color: $color)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ReportHeader &&
+            (identical(other.content, content) || other.content == content) &&
+            (identical(other.textColor, textColor) ||
+                other.textColor == textColor) &&
+            (identical(other.color, color) || other.color == color));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, content, textColor, color);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ReportHeaderCopyWith<_$_ReportHeader> get copyWith =>
+      __$$_ReportHeaderCopyWithImpl<_$_ReportHeader>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ReportHeaderToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ReportHeader implements ReportHeader {
+  const factory _ReportHeader(
+      {required final String content,
+      @ColorOrNullConverter() final Color? textColor,
+      @ColorOrNullConverter() final Color? color}) = _$_ReportHeader;
+
+  factory _ReportHeader.fromJson(Map<String, dynamic> json) =
+      _$_ReportHeader.fromJson;
+
+  @override
+
+  /// [content] is the content of the report header.
+  String get content;
+  @override
+
+  /// [textColor] is the text color of the report header.
+  @ColorOrNullConverter()
+  Color? get textColor;
+  @override
+
+  /// [color] is the color of the report header.
+  @ColorOrNullConverter()
+  Color? get color;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ReportHeaderCopyWith<_$_ReportHeader> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ReportCell _$ReportCellFromJson(Map<String, dynamic> json) {
+  return _ReportCell.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReportCell {
+  /// [content] is the content of the report header.
+  dynamic get content => throw _privateConstructorUsedError;
+
+  /// [textColor] is the text color of the report header.
+  @ColorOrNullConverter()
+  Color? get textColor => throw _privateConstructorUsedError;
+
+  /// [color] is the color of the report header.
+  @ColorOrNullConverter()
+  Color? get color => throw _privateConstructorUsedError;
+
+  /// [dataType] is the data type of the report cell.
+  @ReportDataTypeOrNullConverter()
+  ReportDataType? get dataType => throw _privateConstructorUsedError;
+
+  /// [currencySymbol] is the currency symbol of the report cell.
+  String? get currencySymbol => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ReportCellCopyWith<ReportCell> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReportCellCopyWith<$Res> {
+  factory $ReportCellCopyWith(
+          ReportCell value, $Res Function(ReportCell) then) =
+      _$ReportCellCopyWithImpl<$Res, ReportCell>;
+  @useResult
+  $Res call(
+      {dynamic content,
+      @ColorOrNullConverter() Color? textColor,
+      @ColorOrNullConverter() Color? color,
+      @ReportDataTypeOrNullConverter() ReportDataType? dataType,
+      String? currencySymbol});
+}
+
+/// @nodoc
+class _$ReportCellCopyWithImpl<$Res, $Val extends ReportCell>
+    implements $ReportCellCopyWith<$Res> {
+  _$ReportCellCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = freezed,
+    Object? textColor = freezed,
+    Object? color = freezed,
+    Object? dataType = freezed,
+    Object? currencySymbol = freezed,
+  }) {
+    return _then(_value.copyWith(
+      content: freezed == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      textColor: freezed == textColor
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      dataType: freezed == dataType
+          ? _value.dataType
+          : dataType // ignore: cast_nullable_to_non_nullable
+              as ReportDataType?,
+      currencySymbol: freezed == currencySymbol
+          ? _value.currencySymbol
+          : currencySymbol // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ReportCellCopyWith<$Res>
+    implements $ReportCellCopyWith<$Res> {
+  factory _$$_ReportCellCopyWith(
+          _$_ReportCell value, $Res Function(_$_ReportCell) then) =
+      __$$_ReportCellCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {dynamic content,
+      @ColorOrNullConverter() Color? textColor,
+      @ColorOrNullConverter() Color? color,
+      @ReportDataTypeOrNullConverter() ReportDataType? dataType,
+      String? currencySymbol});
+}
+
+/// @nodoc
+class __$$_ReportCellCopyWithImpl<$Res>
+    extends _$ReportCellCopyWithImpl<$Res, _$_ReportCell>
+    implements _$$_ReportCellCopyWith<$Res> {
+  __$$_ReportCellCopyWithImpl(
+      _$_ReportCell _value, $Res Function(_$_ReportCell) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = freezed,
+    Object? textColor = freezed,
+    Object? color = freezed,
+    Object? dataType = freezed,
+    Object? currencySymbol = freezed,
+  }) {
+    return _then(_$_ReportCell(
+      content: freezed == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      textColor: freezed == textColor
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      dataType: freezed == dataType
+          ? _value.dataType
+          : dataType // ignore: cast_nullable_to_non_nullable
+              as ReportDataType?,
+      currencySymbol: freezed == currencySymbol
+          ? _value.currencySymbol
+          : currencySymbol // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ReportCell implements _ReportCell {
+  const _$_ReportCell(
+      {required this.content,
+      @ColorOrNullConverter() this.textColor,
+      @ColorOrNullConverter() this.color,
+      @ReportDataTypeOrNullConverter() this.dataType,
+      this.currencySymbol});
+
+  factory _$_ReportCell.fromJson(Map<String, dynamic> json) =>
+      _$$_ReportCellFromJson(json);
+
+  /// [content] is the content of the report header.
+  @override
+  final dynamic content;
+
+  /// [textColor] is the text color of the report header.
+  @override
+  @ColorOrNullConverter()
+  final Color? textColor;
+
+  /// [color] is the color of the report header.
+  @override
+  @ColorOrNullConverter()
+  final Color? color;
+
+  /// [dataType] is the data type of the report cell.
+  @override
+  @ReportDataTypeOrNullConverter()
+  final ReportDataType? dataType;
+
+  /// [currencySymbol] is the currency symbol of the report cell.
+  @override
+  final String? currencySymbol;
+
+  @override
+  String toString() {
+    return 'ReportCell(content: $content, textColor: $textColor, color: $color, dataType: $dataType, currencySymbol: $currencySymbol)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ReportCell &&
+            const DeepCollectionEquality().equals(other.content, content) &&
+            (identical(other.textColor, textColor) ||
+                other.textColor == textColor) &&
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.dataType, dataType) ||
+                other.dataType == dataType) &&
+            (identical(other.currencySymbol, currencySymbol) ||
+                other.currencySymbol == currencySymbol));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(content),
+      textColor,
+      color,
+      dataType,
+      currencySymbol);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ReportCellCopyWith<_$_ReportCell> get copyWith =>
+      __$$_ReportCellCopyWithImpl<_$_ReportCell>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ReportCellToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ReportCell implements ReportCell {
+  const factory _ReportCell(
+      {required final dynamic content,
+      @ColorOrNullConverter() final Color? textColor,
+      @ColorOrNullConverter() final Color? color,
+      @ReportDataTypeOrNullConverter() final ReportDataType? dataType,
+      final String? currencySymbol}) = _$_ReportCell;
+
+  factory _ReportCell.fromJson(Map<String, dynamic> json) =
+      _$_ReportCell.fromJson;
+
+  @override
+
+  /// [content] is the content of the report header.
+  dynamic get content;
+  @override
+
+  /// [textColor] is the text color of the report header.
+  @ColorOrNullConverter()
+  Color? get textColor;
+  @override
+
+  /// [color] is the color of the report header.
+  @ColorOrNullConverter()
+  Color? get color;
+  @override
+
+  /// [dataType] is the data type of the report cell.
+  @ReportDataTypeOrNullConverter()
+  ReportDataType? get dataType;
+  @override
+
+  /// [currencySymbol] is the currency symbol of the report cell.
+  String? get currencySymbol;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ReportCellCopyWith<_$_ReportCell> get copyWith =>
+      throw _privateConstructorUsedError;
+}

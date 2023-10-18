@@ -162,6 +162,13 @@ part 'src/mappit/profile.dart';
 part 'src/mappit/home_config.dart';
 part 'src/mappit/fee_day.dart';
 
+// Reports
+part 'src/reports/preview.dart';
+part 'src/reports/page.dart';
+part 'src/reports/row.dart';
+part 'src/reports/header.dart';
+part 'src/reports/cell.dart';
+
 // Helper enums
 enum LayrzListingFormat {
   card,

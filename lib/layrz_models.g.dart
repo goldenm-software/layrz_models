@@ -5063,3 +5063,88 @@ Map<String, dynamic> _$$_MappitFreeDayToJson(_$_MappitFreeDay instance) =>
       'assets': instance.assets?.map((e) => e.toJson()).toList(),
       'assetsIds': instance.assetsIds,
     };
+
+_$_ReportPreview _$$_ReportPreviewFromJson(Map<String, dynamic> json) =>
+    _$_ReportPreview(
+      name: json['name'] as String,
+      pages: (json['pages'] as List<dynamic>?)
+              ?.map((e) => ReportPage.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$_ReportPreviewToJson(_$_ReportPreview instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'pages': instance.pages.map((e) => e.toJson()).toList(),
+    };
+
+_$_ReportPage _$$_ReportPageFromJson(Map<String, dynamic> json) =>
+    _$_ReportPage(
+      name: json['name'] as String,
+      rows: (json['rows'] as List<dynamic>?)
+              ?.map((e) => ReportRow.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      headers: (json['headers'] as List<dynamic>?)
+              ?.map((e) => ReportHeader.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$_ReportPageToJson(_$_ReportPage instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'rows': instance.rows.map((e) => e.toJson()).toList(),
+      'headers': instance.headers.map((e) => e.toJson()).toList(),
+    };
+
+_$_ReportRow _$$_ReportRowFromJson(Map<String, dynamic> json) => _$_ReportRow(
+      cells: (json['cells'] as List<dynamic>?)
+              ?.map((e) => ReportCell.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      compact: json['compact'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$$_ReportRowToJson(_$_ReportRow instance) =>
+    <String, dynamic>{
+      'cells': instance.cells.map((e) => e.toJson()).toList(),
+      'compact': instance.compact,
+    };
+
+_$_ReportHeader _$$_ReportHeaderFromJson(Map<String, dynamic> json) =>
+    _$_ReportHeader(
+      content: json['content'] as String,
+      textColor:
+          const ColorOrNullConverter().fromJson(json['textColor'] as String?),
+      color: const ColorOrNullConverter().fromJson(json['color'] as String?),
+    );
+
+Map<String, dynamic> _$$_ReportHeaderToJson(_$_ReportHeader instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'textColor': const ColorOrNullConverter().toJson(instance.textColor),
+      'color': const ColorOrNullConverter().toJson(instance.color),
+    };
+
+_$_ReportCell _$$_ReportCellFromJson(Map<String, dynamic> json) =>
+    _$_ReportCell(
+      content: json['content'],
+      textColor:
+          const ColorOrNullConverter().fromJson(json['textColor'] as String?),
+      color: const ColorOrNullConverter().fromJson(json['color'] as String?),
+      dataType: const ReportDataTypeOrNullConverter()
+          .fromJson(json['dataType'] as String?),
+      currencySymbol: json['currencySymbol'] as String?,
+    );
+
+Map<String, dynamic> _$$_ReportCellToJson(_$_ReportCell instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'textColor': const ColorOrNullConverter().toJson(instance.textColor),
+      'color': const ColorOrNullConverter().toJson(instance.color),
+      'dataType':
+          const ReportDataTypeOrNullConverter().toJson(instance.dataType),
+      'currencySymbol': instance.currencySymbol,
+    };
