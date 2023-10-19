@@ -68,6 +68,22 @@ class ReportTemplateCol with _$ReportTemplateCol {
   factory ReportTemplateCol.fromJson(Map<String, dynamic> json) => _$ReportTemplateColFromJson(json);
 }
 
+@freezed
+class AllowedReport with _$AllowedReport {
+  const factory AllowedReport({
+    /// [id] is the report ID
+    required String id,
+
+    /// [code] is the report code
+    required String code,
+
+    /// [allowedApps] is the list of allowed apps
+    List<RegisteredApp>? allowedApps,
+  }) = _AllowedReport;
+
+  factory AllowedReport.fromJson(Map<String, dynamic> json) => _$AllowedReportFromJson(json);
+}
+
 enum ReportTemplateSource {
   /// Is the report template source for messages
   messages,

@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.32
+- Added [AllowedReport] model, and added `allowedReports` to [RegisteredApp] model.
+
 ## 2.0.31
 - Changed `cells` to `content` in [ReportRow]
 

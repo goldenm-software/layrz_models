@@ -27752,6 +27752,208 @@ abstract class _ReportTemplateCol implements ReportTemplateCol {
       throw _privateConstructorUsedError;
 }
 
+AllowedReport _$AllowedReportFromJson(Map<String, dynamic> json) {
+  return _AllowedReport.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AllowedReport {
+  /// [id] is the report ID
+  String get id => throw _privateConstructorUsedError;
+
+  /// [code] is the report code
+  String get code => throw _privateConstructorUsedError;
+
+  /// [allowedApps] is the list of allowed apps
+  List<RegisteredApp>? get allowedApps => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AllowedReportCopyWith<AllowedReport> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AllowedReportCopyWith<$Res> {
+  factory $AllowedReportCopyWith(
+          AllowedReport value, $Res Function(AllowedReport) then) =
+      _$AllowedReportCopyWithImpl<$Res, AllowedReport>;
+  @useResult
+  $Res call({String id, String code, List<RegisteredApp>? allowedApps});
+}
+
+/// @nodoc
+class _$AllowedReportCopyWithImpl<$Res, $Val extends AllowedReport>
+    implements $AllowedReportCopyWith<$Res> {
+  _$AllowedReportCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? allowedApps = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      allowedApps: freezed == allowedApps
+          ? _value.allowedApps
+          : allowedApps // ignore: cast_nullable_to_non_nullable
+              as List<RegisteredApp>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_AllowedReportCopyWith<$Res>
+    implements $AllowedReportCopyWith<$Res> {
+  factory _$$_AllowedReportCopyWith(
+          _$_AllowedReport value, $Res Function(_$_AllowedReport) then) =
+      __$$_AllowedReportCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String code, List<RegisteredApp>? allowedApps});
+}
+
+/// @nodoc
+class __$$_AllowedReportCopyWithImpl<$Res>
+    extends _$AllowedReportCopyWithImpl<$Res, _$_AllowedReport>
+    implements _$$_AllowedReportCopyWith<$Res> {
+  __$$_AllowedReportCopyWithImpl(
+      _$_AllowedReport _value, $Res Function(_$_AllowedReport) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? allowedApps = freezed,
+  }) {
+    return _then(_$_AllowedReport(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      allowedApps: freezed == allowedApps
+          ? _value._allowedApps
+          : allowedApps // ignore: cast_nullable_to_non_nullable
+              as List<RegisteredApp>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_AllowedReport implements _AllowedReport {
+  const _$_AllowedReport(
+      {required this.id,
+      required this.code,
+      final List<RegisteredApp>? allowedApps})
+      : _allowedApps = allowedApps;
+
+  factory _$_AllowedReport.fromJson(Map<String, dynamic> json) =>
+      _$$_AllowedReportFromJson(json);
+
+  /// [id] is the report ID
+  @override
+  final String id;
+
+  /// [code] is the report code
+  @override
+  final String code;
+
+  /// [allowedApps] is the list of allowed apps
+  final List<RegisteredApp>? _allowedApps;
+
+  /// [allowedApps] is the list of allowed apps
+  @override
+  List<RegisteredApp>? get allowedApps {
+    final value = _allowedApps;
+    if (value == null) return null;
+    if (_allowedApps is EqualUnmodifiableListView) return _allowedApps;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'AllowedReport(id: $id, code: $code, allowedApps: $allowedApps)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_AllowedReport &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
+            const DeepCollectionEquality()
+                .equals(other._allowedApps, _allowedApps));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, code, const DeepCollectionEquality().hash(_allowedApps));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_AllowedReportCopyWith<_$_AllowedReport> get copyWith =>
+      __$$_AllowedReportCopyWithImpl<_$_AllowedReport>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AllowedReportToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AllowedReport implements AllowedReport {
+  const factory _AllowedReport(
+      {required final String id,
+      required final String code,
+      final List<RegisteredApp>? allowedApps}) = _$_AllowedReport;
+
+  factory _AllowedReport.fromJson(Map<String, dynamic> json) =
+      _$_AllowedReport.fromJson;
+
+  @override
+
+  /// [id] is the report ID
+  String get id;
+  @override
+
+  /// [code] is the report code
+  String get code;
+  @override
+
+  /// [allowedApps] is the list of allowed apps
+  List<RegisteredApp>? get allowedApps;
+  @override
+  @JsonKey(ignore: true)
+  _$$_AllowedReportCopyWith<_$_AllowedReport> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 CloudEntry _$CloudEntryFromJson(Map<String, dynamic> json) {
   return _CloudEntry.fromJson(json);
 }
@@ -39412,6 +39614,9 @@ mixin _$RegisteredApp {
   /// !Important: This field is only available when the query is from `/goldenm/graphql`
   User? get owner => throw _privateConstructorUsedError;
 
+  /// [allowedReports] is the list of reports allowed to be generated by the app.
+  List<AllowedReport>? get allowedReports => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RegisteredAppCopyWith<RegisteredApp> get copyWith =>
@@ -39439,7 +39644,8 @@ abstract class $RegisteredAppCopyWith<$Res> {
       List<User>? keychain,
       String sourceId,
       List<MapLayer> mapLayers,
-      User? owner});
+      User? owner,
+      List<AllowedReport>? allowedReports});
 
   $AppLegalCopyWith<$Res>? get legalInformation;
   $AppDesignCopyWith<$Res>? get designInformation;
@@ -39474,6 +39680,7 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
     Object? sourceId = null,
     Object? mapLayers = null,
     Object? owner = freezed,
+    Object? allowedReports = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -39536,6 +39743,10 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
+      allowedReports: freezed == allowedReports
+          ? _value.allowedReports
+          : allowedReports // ignore: cast_nullable_to_non_nullable
+              as List<AllowedReport>?,
     ) as $Val);
   }
 
@@ -39599,7 +39810,8 @@ abstract class _$$_RegisteredAppCopyWith<$Res>
       List<User>? keychain,
       String sourceId,
       List<MapLayer> mapLayers,
-      User? owner});
+      User? owner,
+      List<AllowedReport>? allowedReports});
 
   @override
   $AppLegalCopyWith<$Res>? get legalInformation;
@@ -39635,6 +39847,7 @@ class __$$_RegisteredAppCopyWithImpl<$Res>
     Object? sourceId = null,
     Object? mapLayers = null,
     Object? owner = freezed,
+    Object? allowedReports = freezed,
   }) {
     return _then(_$_RegisteredApp(
       id: null == id
@@ -39697,6 +39910,10 @@ class __$$_RegisteredAppCopyWithImpl<$Res>
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
+      allowedReports: freezed == allowedReports
+          ? _value._allowedReports
+          : allowedReports // ignore: cast_nullable_to_non_nullable
+              as List<AllowedReport>?,
     ));
   }
 }
@@ -39719,13 +39936,15 @@ class _$_RegisteredApp implements _RegisteredApp {
       final List<User>? keychain,
       required this.sourceId,
       final List<MapLayer> mapLayers = const [],
-      this.owner})
+      this.owner,
+      final List<AllowedReport>? allowedReports})
       : _instances = instances,
         _importedAssets = importedAssets,
         _importedDevices = importedDevices,
         _importedUsers = importedUsers,
         _keychain = keychain,
-        _mapLayers = mapLayers;
+        _mapLayers = mapLayers,
+        _allowedReports = allowedReports;
 
   factory _$_RegisteredApp.fromJson(Map<String, dynamic> json) =>
       _$$_RegisteredAppFromJson(json);
@@ -39815,9 +40034,22 @@ class _$_RegisteredApp implements _RegisteredApp {
   @override
   final User? owner;
 
+  /// [allowedReports] is the list of reports allowed to be generated by the app.
+  final List<AllowedReport>? _allowedReports;
+
+  /// [allowedReports] is the list of reports allowed to be generated by the app.
+  @override
+  List<AllowedReport>? get allowedReports {
+    final value = _allowedReports;
+    if (value == null) return null;
+    if (_allowedReports is EqualUnmodifiableListView) return _allowedReports;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'RegisteredApp(id: $id, name: $name, nickname: $nickname, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, mapLayers: $mapLayers, owner: $owner)';
+    return 'RegisteredApp(id: $id, name: $name, nickname: $nickname, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, mapLayers: $mapLayers, owner: $owner, allowedReports: $allowedReports)';
   }
 
   @override
@@ -39850,7 +40082,9 @@ class _$_RegisteredApp implements _RegisteredApp {
                 other.sourceId == sourceId) &&
             const DeepCollectionEquality()
                 .equals(other._mapLayers, _mapLayers) &&
-            (identical(other.owner, owner) || other.owner == owner));
+            (identical(other.owner, owner) || other.owner == owner) &&
+            const DeepCollectionEquality()
+                .equals(other._allowedReports, _allowedReports));
   }
 
   @JsonKey(ignore: true)
@@ -39871,7 +40105,8 @@ class _$_RegisteredApp implements _RegisteredApp {
       const DeepCollectionEquality().hash(_keychain),
       sourceId,
       const DeepCollectionEquality().hash(_mapLayers),
-      owner);
+      owner,
+      const DeepCollectionEquality().hash(_allowedReports));
 
   @JsonKey(ignore: true)
   @override
@@ -39903,7 +40138,8 @@ abstract class _RegisteredApp implements RegisteredApp {
       final List<User>? keychain,
       required final String sourceId,
       final List<MapLayer> mapLayers,
-      final User? owner}) = _$_RegisteredApp;
+      final User? owner,
+      final List<AllowedReport>? allowedReports}) = _$_RegisteredApp;
 
   factory _RegisteredApp.fromJson(Map<String, dynamic> json) =
       _$_RegisteredApp.fromJson;
@@ -39944,6 +40180,10 @@ abstract class _RegisteredApp implements RegisteredApp {
   /// [owner] is the owner of the app.
   /// !Important: This field is only available when the query is from `/goldenm/graphql`
   User? get owner;
+  @override
+
+  /// [allowedReports] is the list of reports allowed to be generated by the app.
+  List<AllowedReport>? get allowedReports;
   @override
   @JsonKey(ignore: true)
   _$$_RegisteredAppCopyWith<_$_RegisteredApp> get copyWith =>

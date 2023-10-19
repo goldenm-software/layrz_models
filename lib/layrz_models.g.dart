@@ -2436,6 +2436,22 @@ Map<String, dynamic> _$$_ReportTemplateColToJson(
       'isCustom': instance.isCustom,
     };
 
+_$_AllowedReport _$$_AllowedReportFromJson(Map<String, dynamic> json) =>
+    _$_AllowedReport(
+      id: json['id'] as String,
+      code: json['code'] as String,
+      allowedApps: (json['allowedApps'] as List<dynamic>?)
+          ?.map((e) => RegisteredApp.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_AllowedReportToJson(_$_AllowedReport instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'code': instance.code,
+      'allowedApps': instance.allowedApps?.map((e) => e.toJson()).toList(),
+    };
+
 _$_CloudEntry _$$_CloudEntryFromJson(Map<String, dynamic> json) =>
     _$_CloudEntry(
       name: json['name'] as String,
@@ -3470,6 +3486,9 @@ _$_RegisteredApp _$$_RegisteredAppFromJson(Map<String, dynamic> json) =>
       owner: json['owner'] == null
           ? null
           : User.fromJson(json['owner'] as Map<String, dynamic>),
+      allowedReports: (json['allowedReports'] as List<dynamic>?)
+          ?.map((e) => AllowedReport.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$_RegisteredAppToJson(_$_RegisteredApp instance) =>
@@ -3491,6 +3510,8 @@ Map<String, dynamic> _$$_RegisteredAppToJson(_$_RegisteredApp instance) =>
       'sourceId': instance.sourceId,
       'mapLayers': instance.mapLayers.map((e) => e.toJson()).toList(),
       'owner': instance.owner?.toJson(),
+      'allowedReports':
+          instance.allowedReports?.map((e) => e.toJson()).toList(),
     };
 
 _$_AppThemedAsset _$$_AppThemedAssetFromJson(Map<String, dynamic> json) =>
