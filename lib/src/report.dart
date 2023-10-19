@@ -69,8 +69,8 @@ class ReportTemplateCol with _$ReportTemplateCol {
 }
 
 @freezed
-class AllowedReport with _$AllowedReport {
-  const factory AllowedReport({
+class CustomReport with _$CustomReport {
+  const factory CustomReport({
     /// [id] is the report ID
     required String id,
 
@@ -79,9 +79,9 @@ class AllowedReport with _$AllowedReport {
 
     /// [allowedApps] is the list of allowed apps
     List<RegisteredApp>? allowedApps,
-  }) = _AllowedReport;
+  }) = _CustomReport;
 
-  factory AllowedReport.fromJson(Map<String, dynamic> json) => _$AllowedReportFromJson(json);
+  factory CustomReport.fromJson(Map<String, dynamic> json) => _$CustomReportFromJson(json);
 }
 
 enum ReportTemplateSource {

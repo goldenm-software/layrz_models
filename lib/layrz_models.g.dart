@@ -2436,8 +2436,8 @@ Map<String, dynamic> _$$_ReportTemplateColToJson(
       'isCustom': instance.isCustom,
     };
 
-_$_AllowedReport _$$_AllowedReportFromJson(Map<String, dynamic> json) =>
-    _$_AllowedReport(
+_$_CustomReport _$$_CustomReportFromJson(Map<String, dynamic> json) =>
+    _$_CustomReport(
       id: json['id'] as String,
       code: json['code'] as String,
       allowedApps: (json['allowedApps'] as List<dynamic>?)
@@ -2445,7 +2445,7 @@ _$_AllowedReport _$$_AllowedReportFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_AllowedReportToJson(_$_AllowedReport instance) =>
+Map<String, dynamic> _$$_CustomReportToJson(_$_CustomReport instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
@@ -3487,7 +3487,7 @@ _$_RegisteredApp _$$_RegisteredAppFromJson(Map<String, dynamic> json) =>
           ? null
           : User.fromJson(json['owner'] as Map<String, dynamic>),
       allowedReports: (json['allowedReports'] as List<dynamic>?)
-          ?.map((e) => AllowedReport.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => CustomReport.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

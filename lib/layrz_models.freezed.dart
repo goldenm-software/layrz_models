@@ -27752,12 +27752,12 @@ abstract class _ReportTemplateCol implements ReportTemplateCol {
       throw _privateConstructorUsedError;
 }
 
-AllowedReport _$AllowedReportFromJson(Map<String, dynamic> json) {
-  return _AllowedReport.fromJson(json);
+CustomReport _$CustomReportFromJson(Map<String, dynamic> json) {
+  return _CustomReport.fromJson(json);
 }
 
 /// @nodoc
-mixin _$AllowedReport {
+mixin _$CustomReport {
   /// [id] is the report ID
   String get id => throw _privateConstructorUsedError;
 
@@ -27769,23 +27769,23 @@ mixin _$AllowedReport {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AllowedReportCopyWith<AllowedReport> get copyWith =>
+  $CustomReportCopyWith<CustomReport> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AllowedReportCopyWith<$Res> {
-  factory $AllowedReportCopyWith(
-          AllowedReport value, $Res Function(AllowedReport) then) =
-      _$AllowedReportCopyWithImpl<$Res, AllowedReport>;
+abstract class $CustomReportCopyWith<$Res> {
+  factory $CustomReportCopyWith(
+          CustomReport value, $Res Function(CustomReport) then) =
+      _$CustomReportCopyWithImpl<$Res, CustomReport>;
   @useResult
   $Res call({String id, String code, List<RegisteredApp>? allowedApps});
 }
 
 /// @nodoc
-class _$AllowedReportCopyWithImpl<$Res, $Val extends AllowedReport>
-    implements $AllowedReportCopyWith<$Res> {
-  _$AllowedReportCopyWithImpl(this._value, this._then);
+class _$CustomReportCopyWithImpl<$Res, $Val extends CustomReport>
+    implements $CustomReportCopyWith<$Res> {
+  _$CustomReportCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -27817,22 +27817,22 @@ class _$AllowedReportCopyWithImpl<$Res, $Val extends AllowedReport>
 }
 
 /// @nodoc
-abstract class _$$_AllowedReportCopyWith<$Res>
-    implements $AllowedReportCopyWith<$Res> {
-  factory _$$_AllowedReportCopyWith(
-          _$_AllowedReport value, $Res Function(_$_AllowedReport) then) =
-      __$$_AllowedReportCopyWithImpl<$Res>;
+abstract class _$$_CustomReportCopyWith<$Res>
+    implements $CustomReportCopyWith<$Res> {
+  factory _$$_CustomReportCopyWith(
+          _$_CustomReport value, $Res Function(_$_CustomReport) then) =
+      __$$_CustomReportCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, String code, List<RegisteredApp>? allowedApps});
 }
 
 /// @nodoc
-class __$$_AllowedReportCopyWithImpl<$Res>
-    extends _$AllowedReportCopyWithImpl<$Res, _$_AllowedReport>
-    implements _$$_AllowedReportCopyWith<$Res> {
-  __$$_AllowedReportCopyWithImpl(
-      _$_AllowedReport _value, $Res Function(_$_AllowedReport) _then)
+class __$$_CustomReportCopyWithImpl<$Res>
+    extends _$CustomReportCopyWithImpl<$Res, _$_CustomReport>
+    implements _$$_CustomReportCopyWith<$Res> {
+  __$$_CustomReportCopyWithImpl(
+      _$_CustomReport _value, $Res Function(_$_CustomReport) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -27842,7 +27842,7 @@ class __$$_AllowedReportCopyWithImpl<$Res>
     Object? code = null,
     Object? allowedApps = freezed,
   }) {
-    return _then(_$_AllowedReport(
+    return _then(_$_CustomReport(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -27861,15 +27861,15 @@ class __$$_AllowedReportCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_AllowedReport implements _AllowedReport {
-  const _$_AllowedReport(
+class _$_CustomReport implements _CustomReport {
+  const _$_CustomReport(
       {required this.id,
       required this.code,
       final List<RegisteredApp>? allowedApps})
       : _allowedApps = allowedApps;
 
-  factory _$_AllowedReport.fromJson(Map<String, dynamic> json) =>
-      _$$_AllowedReportFromJson(json);
+  factory _$_CustomReport.fromJson(Map<String, dynamic> json) =>
+      _$$_CustomReportFromJson(json);
 
   /// [id] is the report ID
   @override
@@ -27894,14 +27894,14 @@ class _$_AllowedReport implements _AllowedReport {
 
   @override
   String toString() {
-    return 'AllowedReport(id: $id, code: $code, allowedApps: $allowedApps)';
+    return 'CustomReport(id: $id, code: $code, allowedApps: $allowedApps)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AllowedReport &&
+            other is _$_CustomReport &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.code, code) || other.code == code) &&
             const DeepCollectionEquality()
@@ -27916,25 +27916,25 @@ class _$_AllowedReport implements _AllowedReport {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AllowedReportCopyWith<_$_AllowedReport> get copyWith =>
-      __$$_AllowedReportCopyWithImpl<_$_AllowedReport>(this, _$identity);
+  _$$_CustomReportCopyWith<_$_CustomReport> get copyWith =>
+      __$$_CustomReportCopyWithImpl<_$_CustomReport>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AllowedReportToJson(
+    return _$$_CustomReportToJson(
       this,
     );
   }
 }
 
-abstract class _AllowedReport implements AllowedReport {
-  const factory _AllowedReport(
+abstract class _CustomReport implements CustomReport {
+  const factory _CustomReport(
       {required final String id,
       required final String code,
-      final List<RegisteredApp>? allowedApps}) = _$_AllowedReport;
+      final List<RegisteredApp>? allowedApps}) = _$_CustomReport;
 
-  factory _AllowedReport.fromJson(Map<String, dynamic> json) =
-      _$_AllowedReport.fromJson;
+  factory _CustomReport.fromJson(Map<String, dynamic> json) =
+      _$_CustomReport.fromJson;
 
   @override
 
@@ -27950,7 +27950,7 @@ abstract class _AllowedReport implements AllowedReport {
   List<RegisteredApp>? get allowedApps;
   @override
   @JsonKey(ignore: true)
-  _$$_AllowedReportCopyWith<_$_AllowedReport> get copyWith =>
+  _$$_CustomReportCopyWith<_$_CustomReport> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -39615,7 +39615,7 @@ mixin _$RegisteredApp {
   User? get owner => throw _privateConstructorUsedError;
 
   /// [allowedReports] is the list of reports allowed to be generated by the app.
-  List<AllowedReport>? get allowedReports => throw _privateConstructorUsedError;
+  List<CustomReport>? get allowedReports => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39645,7 +39645,7 @@ abstract class $RegisteredAppCopyWith<$Res> {
       String sourceId,
       List<MapLayer> mapLayers,
       User? owner,
-      List<AllowedReport>? allowedReports});
+      List<CustomReport>? allowedReports});
 
   $AppLegalCopyWith<$Res>? get legalInformation;
   $AppDesignCopyWith<$Res>? get designInformation;
@@ -39746,7 +39746,7 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
       allowedReports: freezed == allowedReports
           ? _value.allowedReports
           : allowedReports // ignore: cast_nullable_to_non_nullable
-              as List<AllowedReport>?,
+              as List<CustomReport>?,
     ) as $Val);
   }
 
@@ -39811,7 +39811,7 @@ abstract class _$$_RegisteredAppCopyWith<$Res>
       String sourceId,
       List<MapLayer> mapLayers,
       User? owner,
-      List<AllowedReport>? allowedReports});
+      List<CustomReport>? allowedReports});
 
   @override
   $AppLegalCopyWith<$Res>? get legalInformation;
@@ -39913,7 +39913,7 @@ class __$$_RegisteredAppCopyWithImpl<$Res>
       allowedReports: freezed == allowedReports
           ? _value._allowedReports
           : allowedReports // ignore: cast_nullable_to_non_nullable
-              as List<AllowedReport>?,
+              as List<CustomReport>?,
     ));
   }
 }
@@ -39937,7 +39937,7 @@ class _$_RegisteredApp implements _RegisteredApp {
       required this.sourceId,
       final List<MapLayer> mapLayers = const [],
       this.owner,
-      final List<AllowedReport>? allowedReports})
+      final List<CustomReport>? allowedReports})
       : _instances = instances,
         _importedAssets = importedAssets,
         _importedDevices = importedDevices,
@@ -40035,11 +40035,11 @@ class _$_RegisteredApp implements _RegisteredApp {
   final User? owner;
 
   /// [allowedReports] is the list of reports allowed to be generated by the app.
-  final List<AllowedReport>? _allowedReports;
+  final List<CustomReport>? _allowedReports;
 
   /// [allowedReports] is the list of reports allowed to be generated by the app.
   @override
-  List<AllowedReport>? get allowedReports {
+  List<CustomReport>? get allowedReports {
     final value = _allowedReports;
     if (value == null) return null;
     if (_allowedReports is EqualUnmodifiableListView) return _allowedReports;
@@ -40139,7 +40139,7 @@ abstract class _RegisteredApp implements RegisteredApp {
       required final String sourceId,
       final List<MapLayer> mapLayers,
       final User? owner,
-      final List<AllowedReport>? allowedReports}) = _$_RegisteredApp;
+      final List<CustomReport>? allowedReports}) = _$_RegisteredApp;
 
   factory _RegisteredApp.fromJson(Map<String, dynamic> json) =
       _$_RegisteredApp.fromJson;
@@ -40183,7 +40183,7 @@ abstract class _RegisteredApp implements RegisteredApp {
   @override
 
   /// [allowedReports] is the list of reports allowed to be generated by the app.
-  List<AllowedReport>? get allowedReports;
+  List<CustomReport>? get allowedReports;
   @override
   @JsonKey(ignore: true)
   _$$_RegisteredAppCopyWith<_$_RegisteredApp> get copyWith =>
