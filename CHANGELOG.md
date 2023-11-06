@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.34
+- Migrated to from GitLab to GitHub
+
 ## 2.0.33
 - Renamed [AllowedReport] to [CustomReport]
 
