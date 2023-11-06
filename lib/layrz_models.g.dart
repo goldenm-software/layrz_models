@@ -2436,6 +2436,22 @@ Map<String, dynamic> _$$_ReportTemplateColToJson(
       'isCustom': instance.isCustom,
     };
 
+_$_CustomReport _$$_CustomReportFromJson(Map<String, dynamic> json) =>
+    _$_CustomReport(
+      id: json['id'] as String,
+      code: json['code'] as String,
+      allowedApps: (json['allowedApps'] as List<dynamic>?)
+          ?.map((e) => RegisteredApp.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_CustomReportToJson(_$_CustomReport instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'code': instance.code,
+      'allowedApps': instance.allowedApps?.map((e) => e.toJson()).toList(),
+    };
+
 _$_CloudEntry _$$_CloudEntryFromJson(Map<String, dynamic> json) =>
     _$_CloudEntry(
       name: json['name'] as String,
@@ -3470,6 +3486,9 @@ _$_RegisteredApp _$$_RegisteredAppFromJson(Map<String, dynamic> json) =>
       owner: json['owner'] == null
           ? null
           : User.fromJson(json['owner'] as Map<String, dynamic>),
+      allowedReports: (json['allowedReports'] as List<dynamic>?)
+          ?.map((e) => CustomReport.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$_RegisteredAppToJson(_$_RegisteredApp instance) =>
@@ -3491,6 +3510,8 @@ Map<String, dynamic> _$$_RegisteredAppToJson(_$_RegisteredApp instance) =>
       'sourceId': instance.sourceId,
       'mapLayers': instance.mapLayers.map((e) => e.toJson()).toList(),
       'owner': instance.owner?.toJson(),
+      'allowedReports':
+          instance.allowedReports?.map((e) => e.toJson()).toList(),
     };
 
 _$_AppThemedAsset _$$_AppThemedAssetFromJson(Map<String, dynamic> json) =>
@@ -3526,12 +3547,6 @@ _$_AppBuild _$$_AppBuildFromJson(Map<String, dynamic> json) => _$_AppBuild(
       buildName: json['buildName'] as String,
       buildNumber: json['buildNumber'] as int,
       fileUri: json['fileUri'] as String?,
-      comments: json['comments'] as String?,
-      status:
-          const AppBuildStatusConverter().fromJson(json['status'] as String),
-      startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
-      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
       isNext: json['isNext'] as bool?,
     );
 
@@ -3541,10 +3556,6 @@ Map<String, dynamic> _$$_AppBuildToJson(_$_AppBuild instance) =>
       'buildName': instance.buildName,
       'buildNumber': instance.buildNumber,
       'fileUri': instance.fileUri,
-      'comments': instance.comments,
-      'status': const AppBuildStatusConverter().toJson(instance.status),
-      'startAt': const TimestampOrNullConverter().toJson(instance.startAt),
-      'endAt': const TimestampOrNullConverter().toJson(instance.endAt),
       'isNext': instance.isNext,
     };
 
@@ -3648,7 +3659,6 @@ _$_AppInstance _$$_AppInstanceFromJson(Map<String, dynamic> json) =>
       platform:
           const AppPlatformConverter().fromJson(json['platform'] as String),
       host: json['host'] as String?,
-      isDeployed: json['isDeployed'] as bool?,
       appIdentifier: json['appIdentifier'] as String?,
       developerName: json['developerName'] as String?,
       developerIdentifier: json['developerIdentifier'] as String?,
@@ -3656,6 +3666,18 @@ _$_AppInstance _$$_AppInstanceFromJson(Map<String, dynamic> json) =>
               ?.map((e) => AppBuild.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      status:
+          const InstanceStatusConverter().fromJson(json['status'] as String),
+      cloudfront: json['cloudfront'] == null
+          ? null
+          : DnsConfiguration.fromJson(
+              json['cloudfront'] as Map<String, dynamic>),
+      certificate: json['certificate'] == null
+          ? null
+          : DnsConfiguration.fromJson(
+              json['certificate'] as Map<String, dynamic>),
+      migrationStatus: const InstanceMigrationStatusConverter()
+          .fromJson(json['migrationStatus'] as String),
     );
 
 Map<String, dynamic> _$$_AppInstanceToJson(_$_AppInstance instance) =>
@@ -3664,11 +3686,27 @@ Map<String, dynamic> _$$_AppInstanceToJson(_$_AppInstance instance) =>
       'appId': instance.appId,
       'platform': const AppPlatformConverter().toJson(instance.platform),
       'host': instance.host,
-      'isDeployed': instance.isDeployed,
       'appIdentifier': instance.appIdentifier,
       'developerName': instance.developerName,
       'developerIdentifier': instance.developerIdentifier,
       'builds': instance.builds.map((e) => e.toJson()).toList(),
+      'status': const InstanceStatusConverter().toJson(instance.status),
+      'cloudfront': instance.cloudfront?.toJson(),
+      'certificate': instance.certificate?.toJson(),
+      'migrationStatus': const InstanceMigrationStatusConverter()
+          .toJson(instance.migrationStatus),
+    };
+
+_$_DnsConfiguration _$$_DnsConfigurationFromJson(Map<String, dynamic> json) =>
+    _$_DnsConfiguration(
+      name: json['name'] as String?,
+      value: json['value'] as String?,
+    );
+
+Map<String, dynamic> _$$_DnsConfigurationToJson(_$_DnsConfiguration instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'value': instance.value,
     };
 
 _$_AppLegal _$$_AppLegalFromJson(Map<String, dynamic> json) => _$_AppLegal(
@@ -5045,4 +5083,89 @@ Map<String, dynamic> _$$_MappitFreeDayToJson(_$_MappitFreeDay instance) =>
       'date': const TimestampConverter().toJson(instance.date),
       'assets': instance.assets?.map((e) => e.toJson()).toList(),
       'assetsIds': instance.assetsIds,
+    };
+
+_$_ReportPreview _$$_ReportPreviewFromJson(Map<String, dynamic> json) =>
+    _$_ReportPreview(
+      name: json['name'] as String,
+      pages: (json['pages'] as List<dynamic>?)
+              ?.map((e) => ReportPage.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$_ReportPreviewToJson(_$_ReportPreview instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'pages': instance.pages.map((e) => e.toJson()).toList(),
+    };
+
+_$_ReportPage _$$_ReportPageFromJson(Map<String, dynamic> json) =>
+    _$_ReportPage(
+      name: json['name'] as String,
+      rows: (json['rows'] as List<dynamic>?)
+              ?.map((e) => ReportRow.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      headers: (json['headers'] as List<dynamic>?)
+              ?.map((e) => ReportHeader.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$_ReportPageToJson(_$_ReportPage instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'rows': instance.rows.map((e) => e.toJson()).toList(),
+      'headers': instance.headers.map((e) => e.toJson()).toList(),
+    };
+
+_$_ReportRow _$$_ReportRowFromJson(Map<String, dynamic> json) => _$_ReportRow(
+      content: (json['content'] as List<dynamic>?)
+              ?.map((e) => ReportCell.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      compact: json['compact'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$$_ReportRowToJson(_$_ReportRow instance) =>
+    <String, dynamic>{
+      'content': instance.content.map((e) => e.toJson()).toList(),
+      'compact': instance.compact,
+    };
+
+_$_ReportHeader _$$_ReportHeaderFromJson(Map<String, dynamic> json) =>
+    _$_ReportHeader(
+      content: json['content'] as String,
+      textColor:
+          const ColorOrNullConverter().fromJson(json['textColor'] as String?),
+      color: const ColorOrNullConverter().fromJson(json['color'] as String?),
+    );
+
+Map<String, dynamic> _$$_ReportHeaderToJson(_$_ReportHeader instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'textColor': const ColorOrNullConverter().toJson(instance.textColor),
+      'color': const ColorOrNullConverter().toJson(instance.color),
+    };
+
+_$_ReportCell _$$_ReportCellFromJson(Map<String, dynamic> json) =>
+    _$_ReportCell(
+      content: json['content'],
+      textColor:
+          const ColorOrNullConverter().fromJson(json['textColor'] as String?),
+      color: const ColorOrNullConverter().fromJson(json['color'] as String?),
+      dataType: const ReportDataTypeOrNullConverter()
+          .fromJson(json['dataType'] as String?),
+      currencySymbol: json['currencySymbol'] as String?,
+    );
+
+Map<String, dynamic> _$$_ReportCellToJson(_$_ReportCell instance) =>
+    <String, dynamic>{
+      'content': instance.content,
+      'textColor': const ColorOrNullConverter().toJson(instance.textColor),
+      'color': const ColorOrNullConverter().toJson(instance.color),
+      'dataType':
+          const ReportDataTypeOrNullConverter().toJson(instance.dataType),
+      'currencySymbol': instance.currencySymbol,
     };

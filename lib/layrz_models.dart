@@ -18,6 +18,7 @@ part 'src/converters/timestamp.dart';
 part 'src/converters/icon.dart';
 part 'src/converters/color.dart';
 part 'src/converters/duration.dart';
+
 // Ats Converters
 part 'src/converters/ats_authentication_category.dart';
 part 'src/converters/ats_from_app_.dart';
@@ -160,6 +161,13 @@ part 'src/mappit/labor_hour.dart';
 part 'src/mappit/profile.dart';
 part 'src/mappit/home_config.dart';
 part 'src/mappit/fee_day.dart';
+
+// Reports
+part 'src/reports/preview.dart';
+part 'src/reports/page.dart';
+part 'src/reports/row.dart';
+part 'src/reports/header.dart';
+part 'src/reports/cell.dart';
 
 // Helper enums
 enum LayrzListingFormat {

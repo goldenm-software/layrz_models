@@ -29,3 +29,5 @@
 build/
 .fvm/flutter_sdk
 .metadata
+
+credentials.json

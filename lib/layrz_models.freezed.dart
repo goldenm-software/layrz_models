@@ -27752,6 +27752,208 @@ abstract class _ReportTemplateCol implements ReportTemplateCol {
       throw _privateConstructorUsedError;
 }
 
+CustomReport _$CustomReportFromJson(Map<String, dynamic> json) {
+  return _CustomReport.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CustomReport {
+  /// [id] is the report ID
+  String get id => throw _privateConstructorUsedError;
+
+  /// [code] is the report code
+  String get code => throw _privateConstructorUsedError;
+
+  /// [allowedApps] is the list of allowed apps
+  List<RegisteredApp>? get allowedApps => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CustomReportCopyWith<CustomReport> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CustomReportCopyWith<$Res> {
+  factory $CustomReportCopyWith(
+          CustomReport value, $Res Function(CustomReport) then) =
+      _$CustomReportCopyWithImpl<$Res, CustomReport>;
+  @useResult
+  $Res call({String id, String code, List<RegisteredApp>? allowedApps});
+}
+
+/// @nodoc
+class _$CustomReportCopyWithImpl<$Res, $Val extends CustomReport>
+    implements $CustomReportCopyWith<$Res> {
+  _$CustomReportCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? allowedApps = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      allowedApps: freezed == allowedApps
+          ? _value.allowedApps
+          : allowedApps // ignore: cast_nullable_to_non_nullable
+              as List<RegisteredApp>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_CustomReportCopyWith<$Res>
+    implements $CustomReportCopyWith<$Res> {
+  factory _$$_CustomReportCopyWith(
+          _$_CustomReport value, $Res Function(_$_CustomReport) then) =
+      __$$_CustomReportCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String code, List<RegisteredApp>? allowedApps});
+}
+
+/// @nodoc
+class __$$_CustomReportCopyWithImpl<$Res>
+    extends _$CustomReportCopyWithImpl<$Res, _$_CustomReport>
+    implements _$$_CustomReportCopyWith<$Res> {
+  __$$_CustomReportCopyWithImpl(
+      _$_CustomReport _value, $Res Function(_$_CustomReport) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? allowedApps = freezed,
+  }) {
+    return _then(_$_CustomReport(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      allowedApps: freezed == allowedApps
+          ? _value._allowedApps
+          : allowedApps // ignore: cast_nullable_to_non_nullable
+              as List<RegisteredApp>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_CustomReport implements _CustomReport {
+  const _$_CustomReport(
+      {required this.id,
+      required this.code,
+      final List<RegisteredApp>? allowedApps})
+      : _allowedApps = allowedApps;
+
+  factory _$_CustomReport.fromJson(Map<String, dynamic> json) =>
+      _$$_CustomReportFromJson(json);
+
+  /// [id] is the report ID
+  @override
+  final String id;
+
+  /// [code] is the report code
+  @override
+  final String code;
+
+  /// [allowedApps] is the list of allowed apps
+  final List<RegisteredApp>? _allowedApps;
+
+  /// [allowedApps] is the list of allowed apps
+  @override
+  List<RegisteredApp>? get allowedApps {
+    final value = _allowedApps;
+    if (value == null) return null;
+    if (_allowedApps is EqualUnmodifiableListView) return _allowedApps;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'CustomReport(id: $id, code: $code, allowedApps: $allowedApps)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CustomReport &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
+            const DeepCollectionEquality()
+                .equals(other._allowedApps, _allowedApps));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, code, const DeepCollectionEquality().hash(_allowedApps));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CustomReportCopyWith<_$_CustomReport> get copyWith =>
+      __$$_CustomReportCopyWithImpl<_$_CustomReport>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_CustomReportToJson(
+      this,
+    );
+  }
+}
+
+abstract class _CustomReport implements CustomReport {
+  const factory _CustomReport(
+      {required final String id,
+      required final String code,
+      final List<RegisteredApp>? allowedApps}) = _$_CustomReport;
+
+  factory _CustomReport.fromJson(Map<String, dynamic> json) =
+      _$_CustomReport.fromJson;
+
+  @override
+
+  /// [id] is the report ID
+  String get id;
+  @override
+
+  /// [code] is the report code
+  String get code;
+  @override
+
+  /// [allowedApps] is the list of allowed apps
+  List<RegisteredApp>? get allowedApps;
+  @override
+  @JsonKey(ignore: true)
+  _$$_CustomReportCopyWith<_$_CustomReport> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 CloudEntry _$CloudEntryFromJson(Map<String, dynamic> json) {
   return _CloudEntry.fromJson(json);
 }
@@ -39412,6 +39614,9 @@ mixin _$RegisteredApp {
   /// !Important: This field is only available when the query is from `/goldenm/graphql`
   User? get owner => throw _privateConstructorUsedError;
 
+  /// [allowedReports] is the list of reports allowed to be generated by the app.
+  List<CustomReport>? get allowedReports => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RegisteredAppCopyWith<RegisteredApp> get copyWith =>
@@ -39439,7 +39644,8 @@ abstract class $RegisteredAppCopyWith<$Res> {
       List<User>? keychain,
       String sourceId,
       List<MapLayer> mapLayers,
-      User? owner});
+      User? owner,
+      List<CustomReport>? allowedReports});
 
   $AppLegalCopyWith<$Res>? get legalInformation;
   $AppDesignCopyWith<$Res>? get designInformation;
@@ -39474,6 +39680,7 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
     Object? sourceId = null,
     Object? mapLayers = null,
     Object? owner = freezed,
+    Object? allowedReports = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -39536,6 +39743,10 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
+      allowedReports: freezed == allowedReports
+          ? _value.allowedReports
+          : allowedReports // ignore: cast_nullable_to_non_nullable
+              as List<CustomReport>?,
     ) as $Val);
   }
 
@@ -39599,7 +39810,8 @@ abstract class _$$_RegisteredAppCopyWith<$Res>
       List<User>? keychain,
       String sourceId,
       List<MapLayer> mapLayers,
-      User? owner});
+      User? owner,
+      List<CustomReport>? allowedReports});
 
   @override
   $AppLegalCopyWith<$Res>? get legalInformation;
@@ -39635,6 +39847,7 @@ class __$$_RegisteredAppCopyWithImpl<$Res>
     Object? sourceId = null,
     Object? mapLayers = null,
     Object? owner = freezed,
+    Object? allowedReports = freezed,
   }) {
     return _then(_$_RegisteredApp(
       id: null == id
@@ -39697,6 +39910,10 @@ class __$$_RegisteredAppCopyWithImpl<$Res>
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
+      allowedReports: freezed == allowedReports
+          ? _value._allowedReports
+          : allowedReports // ignore: cast_nullable_to_non_nullable
+              as List<CustomReport>?,
     ));
   }
 }
@@ -39719,13 +39936,15 @@ class _$_RegisteredApp implements _RegisteredApp {
       final List<User>? keychain,
       required this.sourceId,
       final List<MapLayer> mapLayers = const [],
-      this.owner})
+      this.owner,
+      final List<CustomReport>? allowedReports})
       : _instances = instances,
         _importedAssets = importedAssets,
         _importedDevices = importedDevices,
         _importedUsers = importedUsers,
         _keychain = keychain,
-        _mapLayers = mapLayers;
+        _mapLayers = mapLayers,
+        _allowedReports = allowedReports;
 
   factory _$_RegisteredApp.fromJson(Map<String, dynamic> json) =>
       _$$_RegisteredAppFromJson(json);
@@ -39815,9 +40034,22 @@ class _$_RegisteredApp implements _RegisteredApp {
   @override
   final User? owner;
 
+  /// [allowedReports] is the list of reports allowed to be generated by the app.
+  final List<CustomReport>? _allowedReports;
+
+  /// [allowedReports] is the list of reports allowed to be generated by the app.
+  @override
+  List<CustomReport>? get allowedReports {
+    final value = _allowedReports;
+    if (value == null) return null;
+    if (_allowedReports is EqualUnmodifiableListView) return _allowedReports;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'RegisteredApp(id: $id, name: $name, nickname: $nickname, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, mapLayers: $mapLayers, owner: $owner)';
+    return 'RegisteredApp(id: $id, name: $name, nickname: $nickname, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, mapLayers: $mapLayers, owner: $owner, allowedReports: $allowedReports)';
   }
 
   @override
@@ -39850,7 +40082,9 @@ class _$_RegisteredApp implements _RegisteredApp {
                 other.sourceId == sourceId) &&
             const DeepCollectionEquality()
                 .equals(other._mapLayers, _mapLayers) &&
-            (identical(other.owner, owner) || other.owner == owner));
+            (identical(other.owner, owner) || other.owner == owner) &&
+            const DeepCollectionEquality()
+                .equals(other._allowedReports, _allowedReports));
   }
 
   @JsonKey(ignore: true)
@@ -39871,7 +40105,8 @@ class _$_RegisteredApp implements _RegisteredApp {
       const DeepCollectionEquality().hash(_keychain),
       sourceId,
       const DeepCollectionEquality().hash(_mapLayers),
-      owner);
+      owner,
+      const DeepCollectionEquality().hash(_allowedReports));
 
   @JsonKey(ignore: true)
   @override
@@ -39903,7 +40138,8 @@ abstract class _RegisteredApp implements RegisteredApp {
       final List<User>? keychain,
       required final String sourceId,
       final List<MapLayer> mapLayers,
-      final User? owner}) = _$_RegisteredApp;
+      final User? owner,
+      final List<CustomReport>? allowedReports}) = _$_RegisteredApp;
 
   factory _RegisteredApp.fromJson(Map<String, dynamic> json) =
       _$_RegisteredApp.fromJson;
@@ -39944,6 +40180,10 @@ abstract class _RegisteredApp implements RegisteredApp {
   /// [owner] is the owner of the app.
   /// !Important: This field is only available when the query is from `/goldenm/graphql`
   User? get owner;
+  @override
+
+  /// [allowedReports] is the list of reports allowed to be generated by the app.
+  List<CustomReport>? get allowedReports;
   @override
   @JsonKey(ignore: true)
   _$$_RegisteredAppCopyWith<_$_RegisteredApp> get copyWith =>
@@ -40298,17 +40538,19 @@ AppBuild _$AppBuildFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppBuild {
+  /// [id] is the ID of the build
   String get id => throw _privateConstructorUsedError;
+
+  /// [buildName] is the semantic name of the build
   String get buildName => throw _privateConstructorUsedError;
+
+  /// [buildNumber] is the semantic number of the build
   int get buildNumber => throw _privateConstructorUsedError;
+
+  /// [fileUri] is the URI of the file, only used when the platform is distinct to `AppPlatform.web`
   String? get fileUri => throw _privateConstructorUsedError;
-  String? get comments => throw _privateConstructorUsedError;
-  @AppBuildStatusConverter()
-  AppBuildStatus get status => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get startAt => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get endAt => throw _privateConstructorUsedError;
+
+  /// [isNext] is the flag to indicate if the build is the indev environment
   bool? get isNext => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40327,10 +40569,6 @@ abstract class $AppBuildCopyWith<$Res> {
       String buildName,
       int buildNumber,
       String? fileUri,
-      String? comments,
-      @AppBuildStatusConverter() AppBuildStatus status,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
       bool? isNext});
 }
 
@@ -40351,10 +40589,6 @@ class _$AppBuildCopyWithImpl<$Res, $Val extends AppBuild>
     Object? buildName = null,
     Object? buildNumber = null,
     Object? fileUri = freezed,
-    Object? comments = freezed,
-    Object? status = null,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
     Object? isNext = freezed,
   }) {
     return _then(_value.copyWith(
@@ -40374,22 +40608,6 @@ class _$AppBuildCopyWithImpl<$Res, $Val extends AppBuild>
           ? _value.fileUri
           : fileUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      comments: freezed == comments
-          ? _value.comments
-          : comments // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AppBuildStatus,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
       isNext: freezed == isNext
           ? _value.isNext
           : isNext // ignore: cast_nullable_to_non_nullable
@@ -40410,10 +40628,6 @@ abstract class _$$_AppBuildCopyWith<$Res> implements $AppBuildCopyWith<$Res> {
       String buildName,
       int buildNumber,
       String? fileUri,
-      String? comments,
-      @AppBuildStatusConverter() AppBuildStatus status,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
       bool? isNext});
 }
 
@@ -40432,10 +40646,6 @@ class __$$_AppBuildCopyWithImpl<$Res>
     Object? buildName = null,
     Object? buildNumber = null,
     Object? fileUri = freezed,
-    Object? comments = freezed,
-    Object? status = null,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
     Object? isNext = freezed,
   }) {
     return _then(_$_AppBuild(
@@ -40455,22 +40665,6 @@ class __$$_AppBuildCopyWithImpl<$Res>
           ? _value.fileUri
           : fileUri // ignore: cast_nullable_to_non_nullable
               as String?,
-      comments: freezed == comments
-          ? _value.comments
-          : comments // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as AppBuildStatus,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
       isNext: freezed == isNext
           ? _value.isNext
           : isNext // ignore: cast_nullable_to_non_nullable
@@ -40487,40 +40681,34 @@ class _$_AppBuild implements _AppBuild {
       required this.buildName,
       required this.buildNumber,
       this.fileUri,
-      this.comments,
-      @AppBuildStatusConverter() required this.status,
-      @TimestampOrNullConverter() this.startAt,
-      @TimestampOrNullConverter() this.endAt,
       this.isNext});
 
   factory _$_AppBuild.fromJson(Map<String, dynamic> json) =>
       _$$_AppBuildFromJson(json);
 
+  /// [id] is the ID of the build
   @override
   final String id;
+
+  /// [buildName] is the semantic name of the build
   @override
   final String buildName;
+
+  /// [buildNumber] is the semantic number of the build
   @override
   final int buildNumber;
+
+  /// [fileUri] is the URI of the file, only used when the platform is distinct to `AppPlatform.web`
   @override
   final String? fileUri;
-  @override
-  final String? comments;
-  @override
-  @AppBuildStatusConverter()
-  final AppBuildStatus status;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? startAt;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? endAt;
+
+  /// [isNext] is the flag to indicate if the build is the indev environment
   @override
   final bool? isNext;
 
   @override
   String toString() {
-    return 'AppBuild(id: $id, buildName: $buildName, buildNumber: $buildNumber, fileUri: $fileUri, comments: $comments, status: $status, startAt: $startAt, endAt: $endAt, isNext: $isNext)';
+    return 'AppBuild(id: $id, buildName: $buildName, buildNumber: $buildNumber, fileUri: $fileUri, isNext: $isNext)';
   }
 
   @override
@@ -40534,18 +40722,13 @@ class _$_AppBuild implements _AppBuild {
             (identical(other.buildNumber, buildNumber) ||
                 other.buildNumber == buildNumber) &&
             (identical(other.fileUri, fileUri) || other.fileUri == fileUri) &&
-            (identical(other.comments, comments) ||
-                other.comments == comments) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.startAt, startAt) || other.startAt == startAt) &&
-            (identical(other.endAt, endAt) || other.endAt == endAt) &&
             (identical(other.isNext, isNext) || other.isNext == isNext));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, buildName, buildNumber,
-      fileUri, comments, status, startAt, endAt, isNext);
+  int get hashCode =>
+      Object.hash(runtimeType, id, buildName, buildNumber, fileUri, isNext);
 
   @JsonKey(ignore: true)
   @override
@@ -40567,34 +40750,29 @@ abstract class _AppBuild implements AppBuild {
       required final String buildName,
       required final int buildNumber,
       final String? fileUri,
-      final String? comments,
-      @AppBuildStatusConverter() required final AppBuildStatus status,
-      @TimestampOrNullConverter() final DateTime? startAt,
-      @TimestampOrNullConverter() final DateTime? endAt,
       final bool? isNext}) = _$_AppBuild;
 
   factory _AppBuild.fromJson(Map<String, dynamic> json) = _$_AppBuild.fromJson;
 
   @override
+
+  /// [id] is the ID of the build
   String get id;
   @override
+
+  /// [buildName] is the semantic name of the build
   String get buildName;
   @override
+
+  /// [buildNumber] is the semantic number of the build
   int get buildNumber;
   @override
+
+  /// [fileUri] is the URI of the file, only used when the platform is distinct to `AppPlatform.web`
   String? get fileUri;
   @override
-  String? get comments;
-  @override
-  @AppBuildStatusConverter()
-  AppBuildStatus get status;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get startAt;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get endAt;
-  @override
+
+  /// [isNext] is the flag to indicate if the build is the indev environment
   bool? get isNext;
   @override
   @JsonKey(ignore: true)
@@ -41696,16 +41874,52 @@ AppInstance _$AppInstanceFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppInstance {
+  /// [id] is the ID of the instance
   String get id => throw _privateConstructorUsedError;
+
+  /// [appId] is the ID of the app
   String get appId => throw _privateConstructorUsedError;
+
+  /// [platform] is the platform of the instance
   @AppPlatformConverter()
   AppPlatform get platform => throw _privateConstructorUsedError;
+
+  /// [host] is the host of the instance. It is only used when the platform is `AppPlatform.web`
   String? get host => throw _privateConstructorUsedError;
-  bool? get isDeployed => throw _privateConstructorUsedError;
+
+  /// [appIdentifier] is the identifier of the app. It is only used when the platform is not `AppPlatform.web`
   String? get appIdentifier => throw _privateConstructorUsedError;
+
+  /// [developerName] is the name of the developer. It is only used when the platform is not `AppPlatform.web`
   String? get developerName => throw _privateConstructorUsedError;
+
+  /// [developerIdentifier] is the identifier of the developer. It is only used when the platform is
+  /// not `AppPlatform.web`
   String? get developerIdentifier => throw _privateConstructorUsedError;
+
+  /// [builds] is the list of builds
   List<AppBuild> get builds => throw _privateConstructorUsedError;
+
+  /// [status] is the status of the instance. It is only used when the platform is `AppPlatform.web`
+  /// For other platforms, this value is only `InstanceStatus.pending` and `InstanceStatus.ready`
+  @InstanceStatusConverter()
+  InstanceStatus get status => throw _privateConstructorUsedError;
+
+  /// [cloudfront] is the DNS of the instance for CloudFront
+  /// It is only used when the platform is `AppPlatform.web`
+  DnsConfiguration? get cloudfront => throw _privateConstructorUsedError;
+
+  /// [certificate] is the DNS of the instance for SSL
+  /// It is only used when the platform is `AppPlatform.web`
+  DnsConfiguration? get certificate => throw _privateConstructorUsedError;
+
+  /// [migrationStatus] is the status of the migration
+  /// It is only used when the platform is `AppPlatform.web`
+  /// Why this field? Simple, we're migrating to a new High Availability architecture, so,
+  /// for web instances, we require some changes about the configuration of the DNS.
+  @InstanceMigrationStatusConverter()
+  InstanceMigrationStatus get migrationStatus =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41724,11 +41938,18 @@ abstract class $AppInstanceCopyWith<$Res> {
       String appId,
       @AppPlatformConverter() AppPlatform platform,
       String? host,
-      bool? isDeployed,
       String? appIdentifier,
       String? developerName,
       String? developerIdentifier,
-      List<AppBuild> builds});
+      List<AppBuild> builds,
+      @InstanceStatusConverter() InstanceStatus status,
+      DnsConfiguration? cloudfront,
+      DnsConfiguration? certificate,
+      @InstanceMigrationStatusConverter()
+      InstanceMigrationStatus migrationStatus});
+
+  $DnsConfigurationCopyWith<$Res>? get cloudfront;
+  $DnsConfigurationCopyWith<$Res>? get certificate;
 }
 
 /// @nodoc
@@ -41748,11 +41969,14 @@ class _$AppInstanceCopyWithImpl<$Res, $Val extends AppInstance>
     Object? appId = null,
     Object? platform = null,
     Object? host = freezed,
-    Object? isDeployed = freezed,
     Object? appIdentifier = freezed,
     Object? developerName = freezed,
     Object? developerIdentifier = freezed,
     Object? builds = null,
+    Object? status = null,
+    Object? cloudfront = freezed,
+    Object? certificate = freezed,
+    Object? migrationStatus = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -41771,10 +41995,6 @@ class _$AppInstanceCopyWithImpl<$Res, $Val extends AppInstance>
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String?,
-      isDeployed: freezed == isDeployed
-          ? _value.isDeployed
-          : isDeployed // ignore: cast_nullable_to_non_nullable
-              as bool?,
       appIdentifier: freezed == appIdentifier
           ? _value.appIdentifier
           : appIdentifier // ignore: cast_nullable_to_non_nullable
@@ -41791,7 +42011,47 @@ class _$AppInstanceCopyWithImpl<$Res, $Val extends AppInstance>
           ? _value.builds
           : builds // ignore: cast_nullable_to_non_nullable
               as List<AppBuild>,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as InstanceStatus,
+      cloudfront: freezed == cloudfront
+          ? _value.cloudfront
+          : cloudfront // ignore: cast_nullable_to_non_nullable
+              as DnsConfiguration?,
+      certificate: freezed == certificate
+          ? _value.certificate
+          : certificate // ignore: cast_nullable_to_non_nullable
+              as DnsConfiguration?,
+      migrationStatus: null == migrationStatus
+          ? _value.migrationStatus
+          : migrationStatus // ignore: cast_nullable_to_non_nullable
+              as InstanceMigrationStatus,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DnsConfigurationCopyWith<$Res>? get cloudfront {
+    if (_value.cloudfront == null) {
+      return null;
+    }
+
+    return $DnsConfigurationCopyWith<$Res>(_value.cloudfront!, (value) {
+      return _then(_value.copyWith(cloudfront: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DnsConfigurationCopyWith<$Res>? get certificate {
+    if (_value.certificate == null) {
+      return null;
+    }
+
+    return $DnsConfigurationCopyWith<$Res>(_value.certificate!, (value) {
+      return _then(_value.copyWith(certificate: value) as $Val);
+    });
   }
 }
 
@@ -41808,11 +42068,20 @@ abstract class _$$_AppInstanceCopyWith<$Res>
       String appId,
       @AppPlatformConverter() AppPlatform platform,
       String? host,
-      bool? isDeployed,
       String? appIdentifier,
       String? developerName,
       String? developerIdentifier,
-      List<AppBuild> builds});
+      List<AppBuild> builds,
+      @InstanceStatusConverter() InstanceStatus status,
+      DnsConfiguration? cloudfront,
+      DnsConfiguration? certificate,
+      @InstanceMigrationStatusConverter()
+      InstanceMigrationStatus migrationStatus});
+
+  @override
+  $DnsConfigurationCopyWith<$Res>? get cloudfront;
+  @override
+  $DnsConfigurationCopyWith<$Res>? get certificate;
 }
 
 /// @nodoc
@@ -41830,11 +42099,14 @@ class __$$_AppInstanceCopyWithImpl<$Res>
     Object? appId = null,
     Object? platform = null,
     Object? host = freezed,
-    Object? isDeployed = freezed,
     Object? appIdentifier = freezed,
     Object? developerName = freezed,
     Object? developerIdentifier = freezed,
     Object? builds = null,
+    Object? status = null,
+    Object? cloudfront = freezed,
+    Object? certificate = freezed,
+    Object? migrationStatus = null,
   }) {
     return _then(_$_AppInstance(
       id: null == id
@@ -41853,10 +42125,6 @@ class __$$_AppInstanceCopyWithImpl<$Res>
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
               as String?,
-      isDeployed: freezed == isDeployed
-          ? _value.isDeployed
-          : isDeployed // ignore: cast_nullable_to_non_nullable
-              as bool?,
       appIdentifier: freezed == appIdentifier
           ? _value.appIdentifier
           : appIdentifier // ignore: cast_nullable_to_non_nullable
@@ -41873,6 +42141,22 @@ class __$$_AppInstanceCopyWithImpl<$Res>
           ? _value._builds
           : builds // ignore: cast_nullable_to_non_nullable
               as List<AppBuild>,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as InstanceStatus,
+      cloudfront: freezed == cloudfront
+          ? _value.cloudfront
+          : cloudfront // ignore: cast_nullable_to_non_nullable
+              as DnsConfiguration?,
+      certificate: freezed == certificate
+          ? _value.certificate
+          : certificate // ignore: cast_nullable_to_non_nullable
+              as DnsConfiguration?,
+      migrationStatus: null == migrationStatus
+          ? _value.migrationStatus
+          : migrationStatus // ignore: cast_nullable_to_non_nullable
+              as InstanceMigrationStatus,
     ));
   }
 }
@@ -41885,34 +42169,53 @@ class _$_AppInstance implements _AppInstance {
       required this.appId,
       @AppPlatformConverter() required this.platform,
       this.host,
-      this.isDeployed,
       this.appIdentifier,
       this.developerName,
       this.developerIdentifier,
-      final List<AppBuild> builds = const []})
+      final List<AppBuild> builds = const [],
+      @InstanceStatusConverter() required this.status,
+      this.cloudfront,
+      this.certificate,
+      @InstanceMigrationStatusConverter() required this.migrationStatus})
       : _builds = builds;
 
   factory _$_AppInstance.fromJson(Map<String, dynamic> json) =>
       _$$_AppInstanceFromJson(json);
 
+  /// [id] is the ID of the instance
   @override
   final String id;
+
+  /// [appId] is the ID of the app
   @override
   final String appId;
+
+  /// [platform] is the platform of the instance
   @override
   @AppPlatformConverter()
   final AppPlatform platform;
+
+  /// [host] is the host of the instance. It is only used when the platform is `AppPlatform.web`
   @override
   final String? host;
-  @override
-  final bool? isDeployed;
+
+  /// [appIdentifier] is the identifier of the app. It is only used when the platform is not `AppPlatform.web`
   @override
   final String? appIdentifier;
+
+  /// [developerName] is the name of the developer. It is only used when the platform is not `AppPlatform.web`
   @override
   final String? developerName;
+
+  /// [developerIdentifier] is the identifier of the developer. It is only used when the platform is
+  /// not `AppPlatform.web`
   @override
   final String? developerIdentifier;
+
+  /// [builds] is the list of builds
   final List<AppBuild> _builds;
+
+  /// [builds] is the list of builds
   @override
   @JsonKey()
   List<AppBuild> get builds {
@@ -41921,9 +42224,33 @@ class _$_AppInstance implements _AppInstance {
     return EqualUnmodifiableListView(_builds);
   }
 
+  /// [status] is the status of the instance. It is only used when the platform is `AppPlatform.web`
+  /// For other platforms, this value is only `InstanceStatus.pending` and `InstanceStatus.ready`
+  @override
+  @InstanceStatusConverter()
+  final InstanceStatus status;
+
+  /// [cloudfront] is the DNS of the instance for CloudFront
+  /// It is only used when the platform is `AppPlatform.web`
+  @override
+  final DnsConfiguration? cloudfront;
+
+  /// [certificate] is the DNS of the instance for SSL
+  /// It is only used when the platform is `AppPlatform.web`
+  @override
+  final DnsConfiguration? certificate;
+
+  /// [migrationStatus] is the status of the migration
+  /// It is only used when the platform is `AppPlatform.web`
+  /// Why this field? Simple, we're migrating to a new High Availability architecture, so,
+  /// for web instances, we require some changes about the configuration of the DNS.
+  @override
+  @InstanceMigrationStatusConverter()
+  final InstanceMigrationStatus migrationStatus;
+
   @override
   String toString() {
-    return 'AppInstance(id: $id, appId: $appId, platform: $platform, host: $host, isDeployed: $isDeployed, appIdentifier: $appIdentifier, developerName: $developerName, developerIdentifier: $developerIdentifier, builds: $builds)';
+    return 'AppInstance(id: $id, appId: $appId, platform: $platform, host: $host, appIdentifier: $appIdentifier, developerName: $developerName, developerIdentifier: $developerIdentifier, builds: $builds, status: $status, cloudfront: $cloudfront, certificate: $certificate, migrationStatus: $migrationStatus)';
   }
 
   @override
@@ -41936,15 +42263,20 @@ class _$_AppInstance implements _AppInstance {
             (identical(other.platform, platform) ||
                 other.platform == platform) &&
             (identical(other.host, host) || other.host == host) &&
-            (identical(other.isDeployed, isDeployed) ||
-                other.isDeployed == isDeployed) &&
             (identical(other.appIdentifier, appIdentifier) ||
                 other.appIdentifier == appIdentifier) &&
             (identical(other.developerName, developerName) ||
                 other.developerName == developerName) &&
             (identical(other.developerIdentifier, developerIdentifier) ||
                 other.developerIdentifier == developerIdentifier) &&
-            const DeepCollectionEquality().equals(other._builds, _builds));
+            const DeepCollectionEquality().equals(other._builds, _builds) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.cloudfront, cloudfront) ||
+                other.cloudfront == cloudfront) &&
+            (identical(other.certificate, certificate) ||
+                other.certificate == certificate) &&
+            (identical(other.migrationStatus, migrationStatus) ||
+                other.migrationStatus == migrationStatus));
   }
 
   @JsonKey(ignore: true)
@@ -41955,11 +42287,14 @@ class _$_AppInstance implements _AppInstance {
       appId,
       platform,
       host,
-      isDeployed,
       appIdentifier,
       developerName,
       developerIdentifier,
-      const DeepCollectionEquality().hash(_builds));
+      const DeepCollectionEquality().hash(_builds),
+      status,
+      cloudfront,
+      certificate,
+      migrationStatus);
 
   @JsonKey(ignore: true)
   @override
@@ -41981,37 +42316,243 @@ abstract class _AppInstance implements AppInstance {
       required final String appId,
       @AppPlatformConverter() required final AppPlatform platform,
       final String? host,
-      final bool? isDeployed,
       final String? appIdentifier,
       final String? developerName,
       final String? developerIdentifier,
-      final List<AppBuild> builds}) = _$_AppInstance;
+      final List<AppBuild> builds,
+      @InstanceStatusConverter() required final InstanceStatus status,
+      final DnsConfiguration? cloudfront,
+      final DnsConfiguration? certificate,
+      @InstanceMigrationStatusConverter()
+      required final InstanceMigrationStatus migrationStatus}) = _$_AppInstance;
 
   factory _AppInstance.fromJson(Map<String, dynamic> json) =
       _$_AppInstance.fromJson;
 
   @override
+
+  /// [id] is the ID of the instance
   String get id;
   @override
+
+  /// [appId] is the ID of the app
   String get appId;
   @override
+
+  /// [platform] is the platform of the instance
   @AppPlatformConverter()
   AppPlatform get platform;
   @override
+
+  /// [host] is the host of the instance. It is only used when the platform is `AppPlatform.web`
   String? get host;
   @override
-  bool? get isDeployed;
-  @override
+
+  /// [appIdentifier] is the identifier of the app. It is only used when the platform is not `AppPlatform.web`
   String? get appIdentifier;
   @override
+
+  /// [developerName] is the name of the developer. It is only used when the platform is not `AppPlatform.web`
   String? get developerName;
   @override
+
+  /// [developerIdentifier] is the identifier of the developer. It is only used when the platform is
+  /// not `AppPlatform.web`
   String? get developerIdentifier;
   @override
+
+  /// [builds] is the list of builds
   List<AppBuild> get builds;
+  @override
+
+  /// [status] is the status of the instance. It is only used when the platform is `AppPlatform.web`
+  /// For other platforms, this value is only `InstanceStatus.pending` and `InstanceStatus.ready`
+  @InstanceStatusConverter()
+  InstanceStatus get status;
+  @override
+
+  /// [cloudfront] is the DNS of the instance for CloudFront
+  /// It is only used when the platform is `AppPlatform.web`
+  DnsConfiguration? get cloudfront;
+  @override
+
+  /// [certificate] is the DNS of the instance for SSL
+  /// It is only used when the platform is `AppPlatform.web`
+  DnsConfiguration? get certificate;
+  @override
+
+  /// [migrationStatus] is the status of the migration
+  /// It is only used when the platform is `AppPlatform.web`
+  /// Why this field? Simple, we're migrating to a new High Availability architecture, so,
+  /// for web instances, we require some changes about the configuration of the DNS.
+  @InstanceMigrationStatusConverter()
+  InstanceMigrationStatus get migrationStatus;
   @override
   @JsonKey(ignore: true)
   _$$_AppInstanceCopyWith<_$_AppInstance> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+DnsConfiguration _$DnsConfigurationFromJson(Map<String, dynamic> json) {
+  return _DnsConfiguration.fromJson(json);
+}
+
+/// @nodoc
+mixin _$DnsConfiguration {
+  /// [name] is the name of the DNS
+  String? get name => throw _privateConstructorUsedError;
+
+  /// [value] is the value of the DNS
+  String? get value => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DnsConfigurationCopyWith<DnsConfiguration> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DnsConfigurationCopyWith<$Res> {
+  factory $DnsConfigurationCopyWith(
+          DnsConfiguration value, $Res Function(DnsConfiguration) then) =
+      _$DnsConfigurationCopyWithImpl<$Res, DnsConfiguration>;
+  @useResult
+  $Res call({String? name, String? value});
+}
+
+/// @nodoc
+class _$DnsConfigurationCopyWithImpl<$Res, $Val extends DnsConfiguration>
+    implements $DnsConfigurationCopyWith<$Res> {
+  _$DnsConfigurationCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? value = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_DnsConfigurationCopyWith<$Res>
+    implements $DnsConfigurationCopyWith<$Res> {
+  factory _$$_DnsConfigurationCopyWith(
+          _$_DnsConfiguration value, $Res Function(_$_DnsConfiguration) then) =
+      __$$_DnsConfigurationCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? name, String? value});
+}
+
+/// @nodoc
+class __$$_DnsConfigurationCopyWithImpl<$Res>
+    extends _$DnsConfigurationCopyWithImpl<$Res, _$_DnsConfiguration>
+    implements _$$_DnsConfigurationCopyWith<$Res> {
+  __$$_DnsConfigurationCopyWithImpl(
+      _$_DnsConfiguration _value, $Res Function(_$_DnsConfiguration) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? value = freezed,
+  }) {
+    return _then(_$_DnsConfiguration(
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_DnsConfiguration implements _DnsConfiguration {
+  const _$_DnsConfiguration({this.name, this.value});
+
+  factory _$_DnsConfiguration.fromJson(Map<String, dynamic> json) =>
+      _$$_DnsConfigurationFromJson(json);
+
+  /// [name] is the name of the DNS
+  @override
+  final String? name;
+
+  /// [value] is the value of the DNS
+  @override
+  final String? value;
+
+  @override
+  String toString() {
+    return 'DnsConfiguration(name: $name, value: $value)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_DnsConfiguration &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DnsConfigurationCopyWith<_$_DnsConfiguration> get copyWith =>
+      __$$_DnsConfigurationCopyWithImpl<_$_DnsConfiguration>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_DnsConfigurationToJson(
+      this,
+    );
+  }
+}
+
+abstract class _DnsConfiguration implements DnsConfiguration {
+  const factory _DnsConfiguration({final String? name, final String? value}) =
+      _$_DnsConfiguration;
+
+  factory _DnsConfiguration.fromJson(Map<String, dynamic> json) =
+      _$_DnsConfiguration.fromJson;
+
+  @override
+
+  /// [name] is the name of the DNS
+  String? get name;
+  @override
+
+  /// [value] is the value of the DNS
+  String? get value;
+  @override
+  @JsonKey(ignore: true)
+  _$$_DnsConfigurationCopyWith<_$_DnsConfiguration> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -57887,5 +58428,1034 @@ abstract class _MappitFreeDay implements MappitFreeDay {
   @override
   @JsonKey(ignore: true)
   _$$_MappitFreeDayCopyWith<_$_MappitFreeDay> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ReportPreview _$ReportPreviewFromJson(Map<String, dynamic> json) {
+  return _ReportPreview.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReportPreview {
+  /// [name] is the name of the report preview.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [pages] is the pages inside of the report
+  List<ReportPage> get pages => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ReportPreviewCopyWith<ReportPreview> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReportPreviewCopyWith<$Res> {
+  factory $ReportPreviewCopyWith(
+          ReportPreview value, $Res Function(ReportPreview) then) =
+      _$ReportPreviewCopyWithImpl<$Res, ReportPreview>;
+  @useResult
+  $Res call({String name, List<ReportPage> pages});
+}
+
+/// @nodoc
+class _$ReportPreviewCopyWithImpl<$Res, $Val extends ReportPreview>
+    implements $ReportPreviewCopyWith<$Res> {
+  _$ReportPreviewCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? pages = null,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      pages: null == pages
+          ? _value.pages
+          : pages // ignore: cast_nullable_to_non_nullable
+              as List<ReportPage>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ReportPreviewCopyWith<$Res>
+    implements $ReportPreviewCopyWith<$Res> {
+  factory _$$_ReportPreviewCopyWith(
+          _$_ReportPreview value, $Res Function(_$_ReportPreview) then) =
+      __$$_ReportPreviewCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, List<ReportPage> pages});
+}
+
+/// @nodoc
+class __$$_ReportPreviewCopyWithImpl<$Res>
+    extends _$ReportPreviewCopyWithImpl<$Res, _$_ReportPreview>
+    implements _$$_ReportPreviewCopyWith<$Res> {
+  __$$_ReportPreviewCopyWithImpl(
+      _$_ReportPreview _value, $Res Function(_$_ReportPreview) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? pages = null,
+  }) {
+    return _then(_$_ReportPreview(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      pages: null == pages
+          ? _value._pages
+          : pages // ignore: cast_nullable_to_non_nullable
+              as List<ReportPage>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ReportPreview implements _ReportPreview {
+  const _$_ReportPreview(
+      {required this.name, final List<ReportPage> pages = const []})
+      : _pages = pages;
+
+  factory _$_ReportPreview.fromJson(Map<String, dynamic> json) =>
+      _$$_ReportPreviewFromJson(json);
+
+  /// [name] is the name of the report preview.
+  @override
+  final String name;
+
+  /// [pages] is the pages inside of the report
+  final List<ReportPage> _pages;
+
+  /// [pages] is the pages inside of the report
+  @override
+  @JsonKey()
+  List<ReportPage> get pages {
+    if (_pages is EqualUnmodifiableListView) return _pages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_pages);
+  }
+
+  @override
+  String toString() {
+    return 'ReportPreview(name: $name, pages: $pages)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ReportPreview &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other._pages, _pages));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, name, const DeepCollectionEquality().hash(_pages));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ReportPreviewCopyWith<_$_ReportPreview> get copyWith =>
+      __$$_ReportPreviewCopyWithImpl<_$_ReportPreview>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ReportPreviewToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ReportPreview implements ReportPreview {
+  const factory _ReportPreview(
+      {required final String name,
+      final List<ReportPage> pages}) = _$_ReportPreview;
+
+  factory _ReportPreview.fromJson(Map<String, dynamic> json) =
+      _$_ReportPreview.fromJson;
+
+  @override
+
+  /// [name] is the name of the report preview.
+  String get name;
+  @override
+
+  /// [pages] is the pages inside of the report
+  List<ReportPage> get pages;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ReportPreviewCopyWith<_$_ReportPreview> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ReportPage _$ReportPageFromJson(Map<String, dynamic> json) {
+  return _ReportPage.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReportPage {
+  /// [name] is the name of the report page.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [rows] is the rows inside of the report
+  List<ReportRow> get rows => throw _privateConstructorUsedError;
+
+  /// [headers] is the headers of the report
+  List<ReportHeader> get headers => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ReportPageCopyWith<ReportPage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReportPageCopyWith<$Res> {
+  factory $ReportPageCopyWith(
+          ReportPage value, $Res Function(ReportPage) then) =
+      _$ReportPageCopyWithImpl<$Res, ReportPage>;
+  @useResult
+  $Res call({String name, List<ReportRow> rows, List<ReportHeader> headers});
+}
+
+/// @nodoc
+class _$ReportPageCopyWithImpl<$Res, $Val extends ReportPage>
+    implements $ReportPageCopyWith<$Res> {
+  _$ReportPageCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? rows = null,
+    Object? headers = null,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      rows: null == rows
+          ? _value.rows
+          : rows // ignore: cast_nullable_to_non_nullable
+              as List<ReportRow>,
+      headers: null == headers
+          ? _value.headers
+          : headers // ignore: cast_nullable_to_non_nullable
+              as List<ReportHeader>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ReportPageCopyWith<$Res>
+    implements $ReportPageCopyWith<$Res> {
+  factory _$$_ReportPageCopyWith(
+          _$_ReportPage value, $Res Function(_$_ReportPage) then) =
+      __$$_ReportPageCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, List<ReportRow> rows, List<ReportHeader> headers});
+}
+
+/// @nodoc
+class __$$_ReportPageCopyWithImpl<$Res>
+    extends _$ReportPageCopyWithImpl<$Res, _$_ReportPage>
+    implements _$$_ReportPageCopyWith<$Res> {
+  __$$_ReportPageCopyWithImpl(
+      _$_ReportPage _value, $Res Function(_$_ReportPage) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? rows = null,
+    Object? headers = null,
+  }) {
+    return _then(_$_ReportPage(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      rows: null == rows
+          ? _value._rows
+          : rows // ignore: cast_nullable_to_non_nullable
+              as List<ReportRow>,
+      headers: null == headers
+          ? _value._headers
+          : headers // ignore: cast_nullable_to_non_nullable
+              as List<ReportHeader>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ReportPage implements _ReportPage {
+  const _$_ReportPage(
+      {required this.name,
+      final List<ReportRow> rows = const [],
+      final List<ReportHeader> headers = const []})
+      : _rows = rows,
+        _headers = headers;
+
+  factory _$_ReportPage.fromJson(Map<String, dynamic> json) =>
+      _$$_ReportPageFromJson(json);
+
+  /// [name] is the name of the report page.
+  @override
+  final String name;
+
+  /// [rows] is the rows inside of the report
+  final List<ReportRow> _rows;
+
+  /// [rows] is the rows inside of the report
+  @override
+  @JsonKey()
+  List<ReportRow> get rows {
+    if (_rows is EqualUnmodifiableListView) return _rows;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_rows);
+  }
+
+  /// [headers] is the headers of the report
+  final List<ReportHeader> _headers;
+
+  /// [headers] is the headers of the report
+  @override
+  @JsonKey()
+  List<ReportHeader> get headers {
+    if (_headers is EqualUnmodifiableListView) return _headers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_headers);
+  }
+
+  @override
+  String toString() {
+    return 'ReportPage(name: $name, rows: $rows, headers: $headers)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ReportPage &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other._rows, _rows) &&
+            const DeepCollectionEquality().equals(other._headers, _headers));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      const DeepCollectionEquality().hash(_rows),
+      const DeepCollectionEquality().hash(_headers));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ReportPageCopyWith<_$_ReportPage> get copyWith =>
+      __$$_ReportPageCopyWithImpl<_$_ReportPage>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ReportPageToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ReportPage implements ReportPage {
+  const factory _ReportPage(
+      {required final String name,
+      final List<ReportRow> rows,
+      final List<ReportHeader> headers}) = _$_ReportPage;
+
+  factory _ReportPage.fromJson(Map<String, dynamic> json) =
+      _$_ReportPage.fromJson;
+
+  @override
+
+  /// [name] is the name of the report page.
+  String get name;
+  @override
+
+  /// [rows] is the rows inside of the report
+  List<ReportRow> get rows;
+  @override
+
+  /// [headers] is the headers of the report
+  List<ReportHeader> get headers;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ReportPageCopyWith<_$_ReportPage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ReportRow _$ReportRowFromJson(Map<String, dynamic> json) {
+  return _ReportRow.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReportRow {
+  /// [content] is the cells of the report row.
+  List<ReportCell> get content => throw _privateConstructorUsedError;
+
+  /// [compact] indicates if the row is compact.
+  bool get compact => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ReportRowCopyWith<ReportRow> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReportRowCopyWith<$Res> {
+  factory $ReportRowCopyWith(ReportRow value, $Res Function(ReportRow) then) =
+      _$ReportRowCopyWithImpl<$Res, ReportRow>;
+  @useResult
+  $Res call({List<ReportCell> content, bool compact});
+}
+
+/// @nodoc
+class _$ReportRowCopyWithImpl<$Res, $Val extends ReportRow>
+    implements $ReportRowCopyWith<$Res> {
+  _$ReportRowCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = null,
+    Object? compact = null,
+  }) {
+    return _then(_value.copyWith(
+      content: null == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as List<ReportCell>,
+      compact: null == compact
+          ? _value.compact
+          : compact // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ReportRowCopyWith<$Res> implements $ReportRowCopyWith<$Res> {
+  factory _$$_ReportRowCopyWith(
+          _$_ReportRow value, $Res Function(_$_ReportRow) then) =
+      __$$_ReportRowCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<ReportCell> content, bool compact});
+}
+
+/// @nodoc
+class __$$_ReportRowCopyWithImpl<$Res>
+    extends _$ReportRowCopyWithImpl<$Res, _$_ReportRow>
+    implements _$$_ReportRowCopyWith<$Res> {
+  __$$_ReportRowCopyWithImpl(
+      _$_ReportRow _value, $Res Function(_$_ReportRow) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = null,
+    Object? compact = null,
+  }) {
+    return _then(_$_ReportRow(
+      content: null == content
+          ? _value._content
+          : content // ignore: cast_nullable_to_non_nullable
+              as List<ReportCell>,
+      compact: null == compact
+          ? _value.compact
+          : compact // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ReportRow implements _ReportRow {
+  const _$_ReportRow(
+      {final List<ReportCell> content = const [], this.compact = false})
+      : _content = content;
+
+  factory _$_ReportRow.fromJson(Map<String, dynamic> json) =>
+      _$$_ReportRowFromJson(json);
+
+  /// [content] is the cells of the report row.
+  final List<ReportCell> _content;
+
+  /// [content] is the cells of the report row.
+  @override
+  @JsonKey()
+  List<ReportCell> get content {
+    if (_content is EqualUnmodifiableListView) return _content;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_content);
+  }
+
+  /// [compact] indicates if the row is compact.
+  @override
+  @JsonKey()
+  final bool compact;
+
+  @override
+  String toString() {
+    return 'ReportRow(content: $content, compact: $compact)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ReportRow &&
+            const DeepCollectionEquality().equals(other._content, _content) &&
+            (identical(other.compact, compact) || other.compact == compact));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_content), compact);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ReportRowCopyWith<_$_ReportRow> get copyWith =>
+      __$$_ReportRowCopyWithImpl<_$_ReportRow>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ReportRowToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ReportRow implements ReportRow {
+  const factory _ReportRow(
+      {final List<ReportCell> content, final bool compact}) = _$_ReportRow;
+
+  factory _ReportRow.fromJson(Map<String, dynamic> json) =
+      _$_ReportRow.fromJson;
+
+  @override
+
+  /// [content] is the cells of the report row.
+  List<ReportCell> get content;
+  @override
+
+  /// [compact] indicates if the row is compact.
+  bool get compact;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ReportRowCopyWith<_$_ReportRow> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ReportHeader _$ReportHeaderFromJson(Map<String, dynamic> json) {
+  return _ReportHeader.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReportHeader {
+  /// [content] is the content of the report header.
+  String get content => throw _privateConstructorUsedError;
+
+  /// [textColor] is the text color of the report header.
+  @ColorOrNullConverter()
+  Color? get textColor => throw _privateConstructorUsedError;
+
+  /// [color] is the color of the report header.
+  @ColorOrNullConverter()
+  Color? get color => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ReportHeaderCopyWith<ReportHeader> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReportHeaderCopyWith<$Res> {
+  factory $ReportHeaderCopyWith(
+          ReportHeader value, $Res Function(ReportHeader) then) =
+      _$ReportHeaderCopyWithImpl<$Res, ReportHeader>;
+  @useResult
+  $Res call(
+      {String content,
+      @ColorOrNullConverter() Color? textColor,
+      @ColorOrNullConverter() Color? color});
+}
+
+/// @nodoc
+class _$ReportHeaderCopyWithImpl<$Res, $Val extends ReportHeader>
+    implements $ReportHeaderCopyWith<$Res> {
+  _$ReportHeaderCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = null,
+    Object? textColor = freezed,
+    Object? color = freezed,
+  }) {
+    return _then(_value.copyWith(
+      content: null == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
+      textColor: freezed == textColor
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ReportHeaderCopyWith<$Res>
+    implements $ReportHeaderCopyWith<$Res> {
+  factory _$$_ReportHeaderCopyWith(
+          _$_ReportHeader value, $Res Function(_$_ReportHeader) then) =
+      __$$_ReportHeaderCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String content,
+      @ColorOrNullConverter() Color? textColor,
+      @ColorOrNullConverter() Color? color});
+}
+
+/// @nodoc
+class __$$_ReportHeaderCopyWithImpl<$Res>
+    extends _$ReportHeaderCopyWithImpl<$Res, _$_ReportHeader>
+    implements _$$_ReportHeaderCopyWith<$Res> {
+  __$$_ReportHeaderCopyWithImpl(
+      _$_ReportHeader _value, $Res Function(_$_ReportHeader) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = null,
+    Object? textColor = freezed,
+    Object? color = freezed,
+  }) {
+    return _then(_$_ReportHeader(
+      content: null == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as String,
+      textColor: freezed == textColor
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ReportHeader implements _ReportHeader {
+  const _$_ReportHeader(
+      {required this.content,
+      @ColorOrNullConverter() this.textColor,
+      @ColorOrNullConverter() this.color});
+
+  factory _$_ReportHeader.fromJson(Map<String, dynamic> json) =>
+      _$$_ReportHeaderFromJson(json);
+
+  /// [content] is the content of the report header.
+  @override
+  final String content;
+
+  /// [textColor] is the text color of the report header.
+  @override
+  @ColorOrNullConverter()
+  final Color? textColor;
+
+  /// [color] is the color of the report header.
+  @override
+  @ColorOrNullConverter()
+  final Color? color;
+
+  @override
+  String toString() {
+    return 'ReportHeader(content: $content, textColor: $textColor, color: $color)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ReportHeader &&
+            (identical(other.content, content) || other.content == content) &&
+            (identical(other.textColor, textColor) ||
+                other.textColor == textColor) &&
+            (identical(other.color, color) || other.color == color));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, content, textColor, color);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ReportHeaderCopyWith<_$_ReportHeader> get copyWith =>
+      __$$_ReportHeaderCopyWithImpl<_$_ReportHeader>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ReportHeaderToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ReportHeader implements ReportHeader {
+  const factory _ReportHeader(
+      {required final String content,
+      @ColorOrNullConverter() final Color? textColor,
+      @ColorOrNullConverter() final Color? color}) = _$_ReportHeader;
+
+  factory _ReportHeader.fromJson(Map<String, dynamic> json) =
+      _$_ReportHeader.fromJson;
+
+  @override
+
+  /// [content] is the content of the report header.
+  String get content;
+  @override
+
+  /// [textColor] is the text color of the report header.
+  @ColorOrNullConverter()
+  Color? get textColor;
+  @override
+
+  /// [color] is the color of the report header.
+  @ColorOrNullConverter()
+  Color? get color;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ReportHeaderCopyWith<_$_ReportHeader> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ReportCell _$ReportCellFromJson(Map<String, dynamic> json) {
+  return _ReportCell.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ReportCell {
+  /// [content] is the content of the report header.
+  dynamic get content => throw _privateConstructorUsedError;
+
+  /// [textColor] is the text color of the report header.
+  @ColorOrNullConverter()
+  Color? get textColor => throw _privateConstructorUsedError;
+
+  /// [color] is the color of the report header.
+  @ColorOrNullConverter()
+  Color? get color => throw _privateConstructorUsedError;
+
+  /// [dataType] is the data type of the report cell.
+  @ReportDataTypeOrNullConverter()
+  ReportDataType? get dataType => throw _privateConstructorUsedError;
+
+  /// [currencySymbol] is the currency symbol of the report cell.
+  String? get currencySymbol => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ReportCellCopyWith<ReportCell> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ReportCellCopyWith<$Res> {
+  factory $ReportCellCopyWith(
+          ReportCell value, $Res Function(ReportCell) then) =
+      _$ReportCellCopyWithImpl<$Res, ReportCell>;
+  @useResult
+  $Res call(
+      {dynamic content,
+      @ColorOrNullConverter() Color? textColor,
+      @ColorOrNullConverter() Color? color,
+      @ReportDataTypeOrNullConverter() ReportDataType? dataType,
+      String? currencySymbol});
+}
+
+/// @nodoc
+class _$ReportCellCopyWithImpl<$Res, $Val extends ReportCell>
+    implements $ReportCellCopyWith<$Res> {
+  _$ReportCellCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = freezed,
+    Object? textColor = freezed,
+    Object? color = freezed,
+    Object? dataType = freezed,
+    Object? currencySymbol = freezed,
+  }) {
+    return _then(_value.copyWith(
+      content: freezed == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      textColor: freezed == textColor
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      dataType: freezed == dataType
+          ? _value.dataType
+          : dataType // ignore: cast_nullable_to_non_nullable
+              as ReportDataType?,
+      currencySymbol: freezed == currencySymbol
+          ? _value.currencySymbol
+          : currencySymbol // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$_ReportCellCopyWith<$Res>
+    implements $ReportCellCopyWith<$Res> {
+  factory _$$_ReportCellCopyWith(
+          _$_ReportCell value, $Res Function(_$_ReportCell) then) =
+      __$$_ReportCellCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {dynamic content,
+      @ColorOrNullConverter() Color? textColor,
+      @ColorOrNullConverter() Color? color,
+      @ReportDataTypeOrNullConverter() ReportDataType? dataType,
+      String? currencySymbol});
+}
+
+/// @nodoc
+class __$$_ReportCellCopyWithImpl<$Res>
+    extends _$ReportCellCopyWithImpl<$Res, _$_ReportCell>
+    implements _$$_ReportCellCopyWith<$Res> {
+  __$$_ReportCellCopyWithImpl(
+      _$_ReportCell _value, $Res Function(_$_ReportCell) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? content = freezed,
+    Object? textColor = freezed,
+    Object? color = freezed,
+    Object? dataType = freezed,
+    Object? currencySymbol = freezed,
+  }) {
+    return _then(_$_ReportCell(
+      content: freezed == content
+          ? _value.content
+          : content // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      textColor: freezed == textColor
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      dataType: freezed == dataType
+          ? _value.dataType
+          : dataType // ignore: cast_nullable_to_non_nullable
+              as ReportDataType?,
+      currencySymbol: freezed == currencySymbol
+          ? _value.currencySymbol
+          : currencySymbol // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_ReportCell implements _ReportCell {
+  const _$_ReportCell(
+      {required this.content,
+      @ColorOrNullConverter() this.textColor,
+      @ColorOrNullConverter() this.color,
+      @ReportDataTypeOrNullConverter() this.dataType,
+      this.currencySymbol});
+
+  factory _$_ReportCell.fromJson(Map<String, dynamic> json) =>
+      _$$_ReportCellFromJson(json);
+
+  /// [content] is the content of the report header.
+  @override
+  final dynamic content;
+
+  /// [textColor] is the text color of the report header.
+  @override
+  @ColorOrNullConverter()
+  final Color? textColor;
+
+  /// [color] is the color of the report header.
+  @override
+  @ColorOrNullConverter()
+  final Color? color;
+
+  /// [dataType] is the data type of the report cell.
+  @override
+  @ReportDataTypeOrNullConverter()
+  final ReportDataType? dataType;
+
+  /// [currencySymbol] is the currency symbol of the report cell.
+  @override
+  final String? currencySymbol;
+
+  @override
+  String toString() {
+    return 'ReportCell(content: $content, textColor: $textColor, color: $color, dataType: $dataType, currencySymbol: $currencySymbol)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ReportCell &&
+            const DeepCollectionEquality().equals(other.content, content) &&
+            (identical(other.textColor, textColor) ||
+                other.textColor == textColor) &&
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.dataType, dataType) ||
+                other.dataType == dataType) &&
+            (identical(other.currencySymbol, currencySymbol) ||
+                other.currencySymbol == currencySymbol));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(content),
+      textColor,
+      color,
+      dataType,
+      currencySymbol);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_ReportCellCopyWith<_$_ReportCell> get copyWith =>
+      __$$_ReportCellCopyWithImpl<_$_ReportCell>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ReportCellToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ReportCell implements ReportCell {
+  const factory _ReportCell(
+      {required final dynamic content,
+      @ColorOrNullConverter() final Color? textColor,
+      @ColorOrNullConverter() final Color? color,
+      @ReportDataTypeOrNullConverter() final ReportDataType? dataType,
+      final String? currencySymbol}) = _$_ReportCell;
+
+  factory _ReportCell.fromJson(Map<String, dynamic> json) =
+      _$_ReportCell.fromJson;
+
+  @override
+
+  /// [content] is the content of the report header.
+  dynamic get content;
+  @override
+
+  /// [textColor] is the text color of the report header.
+  @ColorOrNullConverter()
+  Color? get textColor;
+  @override
+
+  /// [color] is the color of the report header.
+  @ColorOrNullConverter()
+  Color? get color;
+  @override
+
+  /// [dataType] is the data type of the report cell.
+  @ReportDataTypeOrNullConverter()
+  ReportDataType? get dataType;
+  @override
+
+  /// [currencySymbol] is the currency symbol of the report cell.
+  String? get currencySymbol;
+  @override
+  @JsonKey(ignore: true)
+  _$$_ReportCellCopyWith<_$_ReportCell> get copyWith =>
       throw _privateConstructorUsedError;
 }

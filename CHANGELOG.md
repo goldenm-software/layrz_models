@@ -1,5 +1,23 @@
 # Changelog
 
+## 2.0.34
+- Migrated to from GitLab to GitHub
+
+## 2.0.33
+- Renamed [AllowedReport] to [CustomReport]
+
+## 2.0.32
+- Added [AllowedReport] model, and added `allowedReports` to [RegisteredApp] model.
+
+## 2.0.31
+- Changed `cells` to `content` in [ReportRow]
+
+## 2.0.30
+- New entities [ReportPreview], [ReportRow], [ReportCell], [ReportHeader] and [ReportPage] to handle reports' previews in the app.
+
+## 2.0.29
+- Updated [AppInstance] to handle new HA configuration.
+
 ## 2.0.28
 - New enum [AtsSelectCard] in [AtsAuthenticationCard]
 - Update [AtsAuthenticationCard] to add [typeId]

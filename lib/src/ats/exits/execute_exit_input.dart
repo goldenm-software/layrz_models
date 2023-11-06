@@ -14,7 +14,7 @@ class AtsExecuteExitInput with _$AtsExecuteExitInput {
 
     /// [toAssetID] ID of the [Asset] validated.
     String? toAssetId,
-        /// [toAssetMileage] Mileage of the [Asset]
+    /// [toAssetMileage] Mileage of the [Asset]
     double? toAssetMileage,
 
     /// [fromApp] Exit execution enum definition

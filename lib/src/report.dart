@@ -68,6 +68,22 @@ class ReportTemplateCol with _$ReportTemplateCol {
   factory ReportTemplateCol.fromJson(Map<String, dynamic> json) => _$ReportTemplateColFromJson(json);
 }
 
+@freezed
+class CustomReport with _$CustomReport {
+  const factory CustomReport({
+    /// [id] is the report ID
+    required String id,
+
+    /// [code] is the report code
+    required String code,
+
+    /// [allowedApps] is the list of allowed apps
+    List<RegisteredApp>? allowedApps,
+  }) = _CustomReport;
+
+  factory CustomReport.fromJson(Map<String, dynamic> json) => _$CustomReportFromJson(json);
+}
+
 enum ReportTemplateSource {
   /// Is the report template source for messages
   messages,

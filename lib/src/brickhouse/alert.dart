@@ -2,19 +2,19 @@ part of layrz_models;
 
 /// Brickhouse  alert type enum
 ///
-/// PRESENCE_GEOFENCE PRESENCE_GEOFENCE
+/// PRESENCE_GEOFENCE
 /// Presence in geofence
 ///
-/// MAX_SPEED MAX_SPEED
+/// MAX_SPEED
 /// Max Speed
 ///
-/// SOS SOS
+/// SOS
 /// SOS alert
 ///
-/// BATTERY BATTERY
+/// BATTERY
 /// Low battery alert
 ///
-/// CURFEW CURFEW
+/// CURFEW
 /// Curfew
 enum BrickhouseAlertType {
   presenceGeofence,
@@ -367,46 +367,37 @@ class BrickhouseAlertInput with _$BrickhouseAlertInput {
     required String name,
 
     /// Type of the alert.
-    @BrickhouseAlertTypeConverter()
-        required BrickhouseAlertType type,
+    @BrickhouseAlertTypeConverter() required BrickhouseAlertType type,
 
     /// List of assets IDs.
     required List<String> assetsIds,
 
     /// Email to send the alert to.
-    @Default([])
-        List<String>? email,
+    @Default([]) List<String>? email,
 
     /// Phone number to send the alert to.
-    @Default([])
-        List<NullablePhoneNumber?>? phone,
+    @Default([]) List<NullablePhoneNumber?>? phone,
 
     /// If the alert should be shown in the mobile app.
-    @Default(false)
-        bool? hasMobilePopup,
+    @Default(false) bool? hasMobilePopup,
 
     /// If the alert should be shown in the web app.
-    @Default(false)
-        bool? hasWebPopup,
+    @Default(false) bool? hasWebPopup,
 
     /// Email to send the alert to.
-    @Default(false)
-        bool? hasEmail,
+    @Default(false) bool? hasEmail,
 
     /// Phone number to send the alert to.
-    @Default(false)
-        bool? hasPhone,
+    @Default(false) bool? hasPhone,
 
     /// Minimum battery level to trigger the alert, in percentage (%). Only for BrickhouseAlertType.BATTERY
     int? batteryMinLevel,
 
     /// Start hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
-    @BrickhouseTimeOfDayMinuteOrNullConverter()
-        TimeOfDay? curfewStartHour,
+    @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
 
     /// End hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
-    @BrickhouseTimeOfDayMinuteOrNullConverter()
-        TimeOfDay? curfewEndHour,
+    @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
 
     /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
     String? timezone,
@@ -422,27 +413,24 @@ class BrickhouseAlertInput with _$BrickhouseAlertInput {
       Weekday.saturday,
       Weekday.sunday,
     ])
-        List<Weekday>? curfewWeekdays,
+    List<Weekday>? curfewWeekdays,
 
     /// Geofence color, in hex mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-    @ColorOrNullConverter()
-        Color? geofenceColor,
+    @ColorOrNullConverter() Color? geofenceColor,
 
     /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-    @GeofenceModeOrNullConverter()
-        GeofenceMode? geofenceMode,
+    @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
 
     /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
     double? geofenceRadius,
 
     /// geofenceShape [GeofencePointInput]
-    @Default([])
-        List<GeofencePoint>? geofenceShape,
+    @Default([]) List<GeofencePoint>? geofenceShape,
 
     /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
     @Default(BrickhouseGeofenceTrigger.both)
     @BrickhouseGeofenceTriggerOrNullConverter()
-        BrickhouseGeofenceTrigger? geofenceTrigger,
+    BrickhouseGeofenceTrigger? geofenceTrigger,
 
     /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
     double? maxSpeedMaxValue,
@@ -451,12 +439,10 @@ class BrickhouseAlertInput with _$BrickhouseAlertInput {
     // String? sosMessage,
 
     /// [cooldownTime] represents the cooldown time of the trigger.
-    @DurationOrNullConverter()
-        Duration? cooldownTime,
+    @DurationOrNullConverter() Duration? cooldownTime,
 
     /// [isMuted] represents if the alert is muted or not.
-    @Default(false)
-        bool? isMuted,
+    @Default(false) bool? isMuted,
   }) = _BrickhouseAlertInput;
 
   /// from json
