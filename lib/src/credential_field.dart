@@ -17,11 +17,11 @@ class CredentialField with _$CredentialField {
 
     /// [maxValue] is the maximum value of the field, only used in [type] = [CredentialFieldType.integer]
     /// or [CredentialFieldType.float].
-    int? maxValue,
+    num? maxValue,
 
     /// [minValue] is the minimum value of the field, only used in [type] = [CredentialFieldType.integer]
     /// or [CredentialFieldType.float].
-    int? minValue,
+    num? minValue,
 
     /// [choices] is the list of possible choices for the field, only used in [type] = [CredentialFieldType.choices].
     List<String>? choices,
