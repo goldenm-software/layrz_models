@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.36
+- Added new [VisionProtocol] model
+- Updated [VisionProfile] to support new [VisionProtocol] model and removed migrated fields
+
 ## 2.0.34
 - Migrated to from GitLab to GitHub
 
