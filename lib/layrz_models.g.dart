@@ -6,8 +6,9 @@ part of 'layrz_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AvailableLanguage _$$_AvailableLanguageFromJson(Map<String, dynamic> json) =>
-    _$_AvailableLanguage(
+_$AvailableLanguageImpl _$$AvailableLanguageImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AvailableLanguageImpl(
       id: json['id'] as String?,
       name: json['name'] as String?,
       code: json['code'] as String?,
@@ -18,8 +19,8 @@ _$_AvailableLanguage _$$_AvailableLanguageFromJson(Map<String, dynamic> json) =>
       ),
     );
 
-Map<String, dynamic> _$$_AvailableLanguageToJson(
-        _$_AvailableLanguage instance) =>
+Map<String, dynamic> _$$AvailableLanguageImplToJson(
+        _$AvailableLanguageImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -29,7 +30,8 @@ Map<String, dynamic> _$$_AvailableLanguageToJson(
       'messages': instance.messages,
     };
 
-_$_Category _$$_CategoryFromJson(Map<String, dynamic> json) => _$_Category(
+_$CategoryImpl _$$CategoryImplFromJson(Map<String, dynamic> json) =>
+    _$CategoryImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       kind: const CategoryKindConverter().fromJson(json['kind'] as String),
@@ -37,7 +39,7 @@ _$_Category _$$_CategoryFromJson(Map<String, dynamic> json) => _$_Category(
           .fromJson(json['assetKind'] as String?),
     );
 
-Map<String, dynamic> _$$_CategoryToJson(_$_Category instance) =>
+Map<String, dynamic> _$$CategoryImplToJson(_$CategoryImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -45,7 +47,8 @@ Map<String, dynamic> _$$_CategoryToJson(_$_Category instance) =>
       'assetKind': const AssetKindOrNullConverter().toJson(instance.assetKind),
     };
 
-_$_Country _$$_CountryFromJson(Map<String, dynamic> json) => _$_Country(
+_$CountryImpl _$$CountryImplFromJson(Map<String, dynamic> json) =>
+    _$CountryImpl(
       id: json['id'] as String,
       commonName: json['commonName'] as String,
       flagEmoji: json['flagEmoji'] as String,
@@ -53,7 +56,7 @@ _$_Country _$$_CountryFromJson(Map<String, dynamic> json) => _$_Country(
       code: json['code'] as String?,
     );
 
-Map<String, dynamic> _$$_CountryToJson(_$_Country instance) =>
+Map<String, dynamic> _$$CountryImplToJson(_$CountryImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'commonName': instance.commonName,
@@ -62,61 +65,63 @@ Map<String, dynamic> _$$_CountryToJson(_$_Country instance) =>
       'code': instance.code,
     };
 
-_$_PhoneNumber _$$_PhoneNumberFromJson(Map<String, dynamic> json) =>
-    _$_PhoneNumber(
+_$PhoneNumberImpl _$$PhoneNumberImplFromJson(Map<String, dynamic> json) =>
+    _$PhoneNumberImpl(
       countryCode: json['countryCode'] as String,
       phoneNumber: json['phoneNumber'] as String,
     );
 
-Map<String, dynamic> _$$_PhoneNumberToJson(_$_PhoneNumber instance) =>
+Map<String, dynamic> _$$PhoneNumberImplToJson(_$PhoneNumberImpl instance) =>
     <String, dynamic>{
       'countryCode': instance.countryCode,
       'phoneNumber': instance.phoneNumber,
     };
 
-_$_NullablePhoneNumber _$$_NullablePhoneNumberFromJson(
+_$NullablePhoneNumberImpl _$$NullablePhoneNumberImplFromJson(
         Map<String, dynamic> json) =>
-    _$_NullablePhoneNumber(
+    _$NullablePhoneNumberImpl(
       countryCode: json['countryCode'] as String?,
       phoneNumber: json['phoneNumber'] as String?,
     );
 
-Map<String, dynamic> _$$_NullablePhoneNumberToJson(
-        _$_NullablePhoneNumber instance) =>
+Map<String, dynamic> _$$NullablePhoneNumberImplToJson(
+        _$NullablePhoneNumberImpl instance) =>
     <String, dynamic>{
       'countryCode': instance.countryCode,
       'phoneNumber': instance.phoneNumber,
     };
 
-_$_City _$$_CityFromJson(Map<String, dynamic> json) => _$_City(
+_$CityImpl _$$CityImplFromJson(Map<String, dynamic> json) => _$CityImpl(
       id: json['id'] as String,
       name: json['nativeName'] as String,
       code: json['code'] as String?,
       countryStateId: json['countryStateId'] as String,
     );
 
-Map<String, dynamic> _$$_CityToJson(_$_City instance) => <String, dynamic>{
+Map<String, dynamic> _$$CityImplToJson(_$CityImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'nativeName': instance.name,
       'code': instance.code,
       'countryStateId': instance.countryStateId,
     };
 
-_$_CountryState _$$_CountryStateFromJson(Map<String, dynamic> json) =>
-    _$_CountryState(
+_$CountryStateImpl _$$CountryStateImplFromJson(Map<String, dynamic> json) =>
+    _$CountryStateImpl(
       id: json['id'] as String,
       name: json['nativeName'] as String,
       code: json['code'] as String,
     );
 
-Map<String, dynamic> _$$_CountryStateToJson(_$_CountryState instance) =>
+Map<String, dynamic> _$$CountryStateImplToJson(_$CountryStateImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'nativeName': instance.name,
       'code': instance.code,
     };
 
-_$_Profile _$$_ProfileFromJson(Map<String, dynamic> json) => _$_Profile(
+_$ProfileImpl _$$ProfileImplFromJson(Map<String, dynamic> json) =>
+    _$ProfileImpl(
       companyName: json['companyName'] as String?,
       billingAddress: json['billingAddress'] as String?,
       fiscalId: json['fiscalId'] as String?,
@@ -126,7 +131,7 @@ _$_Profile _$$_ProfileFromJson(Map<String, dynamic> json) => _$_Profile(
           : Country.fromJson(json['headquarters'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ProfileToJson(_$_Profile instance) =>
+Map<String, dynamic> _$$ProfileImplToJson(_$ProfileImpl instance) =>
     <String, dynamic>{
       'companyName': instance.companyName,
       'billingAddress': instance.billingAddress,
@@ -135,7 +140,8 @@ Map<String, dynamic> _$$_ProfileToJson(_$_Profile instance) =>
       'headquarters': instance.headquarters?.toJson(),
     };
 
-_$_Reference _$$_ReferenceFromJson(Map<String, dynamic> json) => _$_Reference(
+_$ReferenceImpl _$$ReferenceImplFromJson(Map<String, dynamic> json) =>
+    _$ReferenceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       category: const ReferenceCategoryOrNullConverter()
@@ -149,7 +155,7 @@ _$_Reference _$$_ReferenceFromJson(Map<String, dynamic> json) => _$_Reference(
           .toList(),
     );
 
-Map<String, dynamic> _$$_ReferenceToJson(_$_Reference instance) =>
+Map<String, dynamic> _$$ReferenceImplToJson(_$ReferenceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -160,7 +166,7 @@ Map<String, dynamic> _$$_ReferenceToJson(_$_Reference instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_$_Tag _$$_TagFromJson(Map<String, dynamic> json) => _$_Tag(
+_$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
@@ -297,7 +303,7 @@ _$_Tag _$$_TagFromJson(Map<String, dynamic> json) => _$_Tag(
       ownerId: json['ownerId'] as String?,
     );
 
-Map<String, dynamic> _$$_TagToJson(_$_Tag instance) => <String, dynamic>{
+Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'color': const ColorConverter().toJson(instance.color),
@@ -354,7 +360,7 @@ Map<String, dynamic> _$$_TagToJson(_$_Tag instance) => <String, dynamic>{
       'ownerId': instance.ownerId,
     };
 
-_$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
+_$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       token: json['token'] == null
@@ -416,7 +422,8 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
               json['mappitExternalAccount'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
+Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'token': instance.token?.toJson(),
@@ -447,18 +454,19 @@ Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
       'mappitExternalAccount': instance.mappitExternalAccount?.toJson(),
     };
 
-_$_Token _$$_TokenFromJson(Map<String, dynamic> json) => _$_Token(
+_$TokenImpl _$$TokenImplFromJson(Map<String, dynamic> json) => _$TokenImpl(
       token: json['token'] as String,
       validBefore:
           const TimestampConverter().fromJson(json['validBefore'] as num),
     );
 
-Map<String, dynamic> _$$_TokenToJson(_$_Token instance) => <String, dynamic>{
+Map<String, dynamic> _$$TokenImplToJson(_$TokenImpl instance) =>
+    <String, dynamic>{
       'token': instance.token,
       'validBefore': const TimestampConverter().toJson(instance.validBefore),
     };
 
-_$_Access _$$_AccessFromJson(Map<String, dynamic> json) => _$_Access(
+_$AccessImpl _$$AccessImplFromJson(Map<String, dynamic> json) => _$AccessImpl(
       id: json['id'] as String,
       label: json['label'] as String?,
       read: json['read'] as bool?,
@@ -472,7 +480,8 @@ _$_Access _$$_AccessFromJson(Map<String, dynamic> json) => _$_Access(
       module: const AccessModuleConverter().fromJson(json['module'] as String),
     );
 
-Map<String, dynamic> _$$_AccessToJson(_$_Access instance) => <String, dynamic>{
+Map<String, dynamic> _$$AccessImplToJson(_$AccessImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'label': instance.label,
       'read': instance.read,
@@ -484,8 +493,8 @@ Map<String, dynamic> _$$_AccessToJson(_$_Access instance) => <String, dynamic>{
       'module': const AccessModuleConverter().toJson(instance.module),
     };
 
-_$_DbPartition _$$_DbPartitionFromJson(Map<String, dynamic> json) =>
-    _$_DbPartition(
+_$DbPartitionImpl _$$DbPartitionImplFromJson(Map<String, dynamic> json) =>
+    _$DbPartitionImpl(
       id: json['id'] as String,
       parentTable: json['parentTable'] as String,
       tableName: json['tableName'] as String,
@@ -499,7 +508,7 @@ _$_DbPartition _$$_DbPartitionFromJson(Map<String, dynamic> json) =>
       sizePerRecord: (json['sizePerRecord'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$_DbPartitionToJson(_$_DbPartition instance) =>
+Map<String, dynamic> _$$DbPartitionImplToJson(_$DbPartitionImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'parentTable': instance.parentTable,
@@ -513,9 +522,9 @@ Map<String, dynamic> _$$_DbPartitionToJson(_$_DbPartition instance) =>
       'sizePerRecord': instance.sizePerRecord,
     };
 
-_$_GenericPermissionItem _$$_GenericPermissionItemFromJson(
+_$GenericPermissionItemImpl _$$GenericPermissionItemImplFromJson(
         Map<String, dynamic> json) =>
-    _$_GenericPermissionItem(
+    _$GenericPermissionItemImpl(
       read: json['read'] as bool? ?? false,
       write: json['write'] as bool? ?? false,
       create: json['create'] as bool? ?? false,
@@ -525,8 +534,8 @@ _$_GenericPermissionItem _$$_GenericPermissionItemFromJson(
       suspend: json['suspend'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_GenericPermissionItemToJson(
-        _$_GenericPermissionItem instance) =>
+Map<String, dynamic> _$$GenericPermissionItemImplToJson(
+        _$GenericPermissionItemImpl instance) =>
     <String, dynamic>{
       'read': instance.read,
       'write': instance.write,
@@ -537,8 +546,9 @@ Map<String, dynamic> _$$_GenericPermissionItemToJson(
       'suspend': instance.suspend,
     };
 
-_$_GenericPermission _$$_GenericPermissionFromJson(Map<String, dynamic> json) =>
-    _$_GenericPermission(
+_$GenericPermissionImpl _$$GenericPermissionImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GenericPermissionImpl(
       apps: json['apps'] == null
           ? null
           : GenericPermissionItem.fromJson(
@@ -577,8 +587,8 @@ _$_GenericPermission _$$_GenericPermissionFromJson(Map<String, dynamic> json) =>
               json['billing'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_GenericPermissionToJson(
-        _$_GenericPermission instance) =>
+Map<String, dynamic> _$$GenericPermissionImplToJson(
+        _$GenericPermissionImpl instance) =>
     <String, dynamic>{
       'apps': instance.apps?.toJson(),
       'users': instance.users?.toJson(),
@@ -591,8 +601,8 @@ Map<String, dynamic> _$$_GenericPermissionToJson(
       'billing': instance.billing?.toJson(),
     };
 
-_$_Department _$$_DepartmentFromJson(Map<String, dynamic> json) =>
-    _$_Department(
+_$DepartmentImpl _$$DepartmentImplFromJson(Map<String, dynamic> json) =>
+    _$DepartmentImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       permissions: json['permissions'] == null
@@ -601,14 +611,15 @@ _$_Department _$$_DepartmentFromJson(Map<String, dynamic> json) =>
               json['permissions'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_DepartmentToJson(_$_Department instance) =>
+Map<String, dynamic> _$$DepartmentImplToJson(_$DepartmentImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'permissions': instance.permissions?.toJson(),
     };
 
-_$_Employee _$$_EmployeeFromJson(Map<String, dynamic> json) => _$_Employee(
+_$EmployeeImpl _$$EmployeeImplFromJson(Map<String, dynamic> json) =>
+    _$EmployeeImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       email: json['email'] as String?,
@@ -633,7 +644,7 @@ _$_Employee _$$_EmployeeFromJson(Map<String, dynamic> json) => _$_Employee(
               json['customPermissions'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_EmployeeToJson(_$_Employee instance) =>
+Map<String, dynamic> _$$EmployeeImplToJson(_$EmployeeImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -647,7 +658,8 @@ Map<String, dynamic> _$$_EmployeeToJson(_$_Employee instance) =>
       'customPermissions': instance.customPermissions?.toJson(),
     };
 
-_$_Algorithm _$$_AlgorithmFromJson(Map<String, dynamic> json) => _$_Algorithm(
+_$AlgorithmImpl _$$AlgorithmImplFromJson(Map<String, dynamic> json) =>
+    _$AlgorithmImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
@@ -666,7 +678,7 @@ _$_Algorithm _$$_AlgorithmFromJson(Map<String, dynamic> json) => _$_Algorithm(
           const [],
     );
 
-Map<String, dynamic> _$$_AlgorithmToJson(_$_Algorithm instance) =>
+Map<String, dynamic> _$$AlgorithmImplToJson(_$AlgorithmImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -680,161 +692,30 @@ Map<String, dynamic> _$$_AlgorithmToJson(_$_Algorithm instance) =>
       'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
     };
 
-_$_RealtimeEndpoint _$$_RealtimeEndpointFromJson(Map<String, dynamic> json) =>
-    _$_RealtimeEndpoint(
-      host: json['host'] as String?,
-      port: json['port'] as int?,
-    );
-
-Map<String, dynamic> _$$_RealtimeEndpointToJson(_$_RealtimeEndpoint instance) =>
-    <String, dynamic>{
-      'host': instance.host,
-      'port': instance.port,
-    };
-
-_$_RealtimeVariantEndpoint _$$_RealtimeVariantEndpointFromJson(
-        Map<String, dynamic> json) =>
-    _$_RealtimeVariantEndpoint(
-      dataTopic: json['dataTopic'] as String?,
-      eventsTopic: json['eventsTopic'] as String?,
-      realtimeTopic: json['realtimeTopic'] as String?,
-      commandTopic: json['commandTopic'] as String?,
-    );
-
-Map<String, dynamic> _$$_RealtimeVariantEndpointToJson(
-        _$_RealtimeVariantEndpoint instance) =>
-    <String, dynamic>{
-      'dataTopic': instance.dataTopic,
-      'eventsTopic': instance.eventsTopic,
-      'realtimeTopic': instance.realtimeTopic,
-      'commandTopic': instance.commandTopic,
-    };
-
-_$_InboundProtocol _$$_InboundProtocolFromJson(Map<String, dynamic> json) =>
-    _$_InboundProtocol(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      color: const ColorConverter().fromJson(json['color'] as String),
-      isEnabled: json['isEnabled'] as bool,
-      operationMode: const OperationModeConverter()
-          .fromJson(json['operationMode'] as String),
-      realtimeEndpoint: json['realtimeEndpoint'] == null
-          ? null
-          : RealtimeEndpoint.fromJson(
-              json['realtimeEndpoint'] as Map<String, dynamic>),
-      realtimeVariantEndpoint: json['realtimeVariantEndpoint'] == null
-          ? null
-          : RealtimeVariantEndpoint.fromJson(
-              json['realtimeVariantEndpoint'] as Map<String, dynamic>),
-      hasNativeCommands: json['hasNativeCommands'] as bool?,
-      hasSmsCommands: json['hasSmsCommands'] as bool?,
-      hasCommandsResult: json['hasCommandsResult'] as bool?,
-      isFlespi: json['isFlespi'] as bool?,
-      channelId: json['channelId'] as int?,
-      maxPerReceptor: json['maxPerReceptor'] as int?,
-      flespiId: json['flespiId'] as String?,
-      requiredFields: (json['requiredFields'] as List<dynamic>?)
-          ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      isImported: json['isImported'] as bool?,
-      categoriesIds: (json['categoriesIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      canFota: json['canFota'] as bool?,
-      models: (json['models'] as List<dynamic>?)
-          ?.map((e) => Model.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      hasAck: json['hasAck'] as bool?,
-      ackTopicFormat: json['ackTopicFormat'] as String?,
-      dynamicIcon: json['dynamicIcon'] == null
-          ? null
-          : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$_InboundProtocolToJson(_$_InboundProtocol instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'color': const ColorConverter().toJson(instance.color),
-      'isEnabled': instance.isEnabled,
-      'operationMode':
-          const OperationModeConverter().toJson(instance.operationMode),
-      'realtimeEndpoint': instance.realtimeEndpoint?.toJson(),
-      'realtimeVariantEndpoint': instance.realtimeVariantEndpoint?.toJson(),
-      'hasNativeCommands': instance.hasNativeCommands,
-      'hasSmsCommands': instance.hasSmsCommands,
-      'hasCommandsResult': instance.hasCommandsResult,
-      'isFlespi': instance.isFlespi,
-      'channelId': instance.channelId,
-      'maxPerReceptor': instance.maxPerReceptor,
-      'flespiId': instance.flespiId,
-      'requiredFields':
-          instance.requiredFields?.map((e) => e.toJson()).toList(),
-      'isImported': instance.isImported,
-      'categoriesIds': instance.categoriesIds,
-      'canFota': instance.canFota,
-      'models': instance.models?.map((e) => e.toJson()).toList(),
-      'hasAck': instance.hasAck,
-      'ackTopicFormat': instance.ackTopicFormat,
-      'dynamicIcon': instance.dynamicIcon?.toJson(),
-    };
-
-_$_OutboundProtocol _$$_OutboundProtocolFromJson(Map<String, dynamic> json) =>
-    _$_OutboundProtocol(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      color: const ColorConverter().fromJson(json['color'] as String),
-      isEnabled: json['isEnabled'] as bool,
-      categoriesIds: (json['categoriesIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      hasFtp: json['hasFtp'] as bool?,
-      isConsumpted: json['isConsumpted'] as bool?,
-      mqttTopic: json['mqttTopic'] as String?,
-      isAsync: json['isAsync'] as bool?,
-      requiredFields: (json['requiredFields'] as List<dynamic>?)
-              ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-    );
-
-Map<String, dynamic> _$$_OutboundProtocolToJson(_$_OutboundProtocol instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'color': const ColorConverter().toJson(instance.color),
-      'isEnabled': instance.isEnabled,
-      'categoriesIds': instance.categoriesIds,
-      'hasFtp': instance.hasFtp,
-      'isConsumpted': instance.isConsumpted,
-      'mqttTopic': instance.mqttTopic,
-      'isAsync': instance.isAsync,
-      'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
-    };
-
-_$_Language _$$_LanguageFromJson(Map<String, dynamic> json) => _$_Language(
+_$LanguageImpl _$$LanguageImplFromJson(Map<String, dynamic> json) =>
+    _$LanguageImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       code: json['code'] as String,
     );
 
-Map<String, dynamic> _$$_LanguageToJson(_$_Language instance) =>
+Map<String, dynamic> _$$LanguageImplToJson(_$LanguageImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'code': instance.code,
     };
 
-_$_CredentialField _$$_CredentialFieldFromJson(Map<String, dynamic> json) =>
-    _$_CredentialField(
+_$CredentialFieldImpl _$$CredentialFieldImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CredentialFieldImpl(
       field: json['field'] as String,
       type:
           const CredentialFieldTypeConverter().fromJson(json['type'] as String),
       maxLength: json['maxLength'] as int?,
       minLength: json['minLength'] as int?,
-      maxValue: json['maxValue'] as int?,
-      minValue: json['minValue'] as int?,
+      maxValue: json['maxValue'] as num?,
+      minValue: json['minValue'] as num?,
       choices:
           (json['choices'] as List<dynamic>?)?.map((e) => e as String).toList(),
       onlyField: json['onlyField'] as String?,
@@ -848,7 +729,8 @@ _$_CredentialField _$$_CredentialFieldFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_CredentialFieldToJson(_$_CredentialField instance) =>
+Map<String, dynamic> _$$CredentialFieldImplToJson(
+        _$CredentialFieldImpl instance) =>
     <String, dynamic>{
       'field': instance.field,
       'type': const CredentialFieldTypeConverter().toJson(instance.type),
@@ -877,8 +759,9 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-_$_SuspendedService _$$_SuspendedServiceFromJson(Map<String, dynamic> json) =>
-    _$_SuspendedService(
+_$SuspendedServiceImpl _$$SuspendedServiceImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SuspendedServiceImpl(
       incidentId: json['incidentId'] as String,
       serviceId: json['serviceId'] as String,
       name: json['name'] as String,
@@ -889,7 +772,8 @@ _$_SuspendedService _$$_SuspendedServiceFromJson(Map<String, dynamic> json) =>
           const TimestampConverter().fromJson(json['suspendedAt'] as num),
     );
 
-Map<String, dynamic> _$$_SuspendedServiceToJson(_$_SuspendedService instance) =>
+Map<String, dynamic> _$$SuspendedServiceImplToJson(
+        _$SuspendedServiceImpl instance) =>
     <String, dynamic>{
       'incidentId': instance.incidentId,
       'serviceId': instance.serviceId,
@@ -899,8 +783,8 @@ Map<String, dynamic> _$$_SuspendedServiceToJson(_$_SuspendedService instance) =>
       'suspendedAt': const TimestampConverter().toJson(instance.suspendedAt),
     };
 
-_$_BillingPlan _$$_BillingPlanFromJson(Map<String, dynamic> json) =>
-    _$_BillingPlan(
+_$BillingPlanImpl _$$BillingPlanImplFromJson(Map<String, dynamic> json) =>
+    _$BillingPlanImpl(
       id: json['id'] as String,
       reconnectionPercent: (json['reconnectionPercent'] as num).toDouble(),
       reconnectionMaximum: json['reconnectionMaximum'] as int,
@@ -925,9 +809,13 @@ _$_BillingPlan _$$_BillingPlanFromJson(Map<String, dynamic> json) =>
           (json['allowedOutboundProtocolsIds'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
+      allowedVisionProtocolsIds:
+          (json['allowedVisionProtocolsIds'] as List<dynamic>)
+              .map((e) => e as String)
+              .toList(),
     );
 
-Map<String, dynamic> _$$_BillingPlanToJson(_$_BillingPlan instance) =>
+Map<String, dynamic> _$$BillingPlanImplToJson(_$BillingPlanImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'reconnectionPercent': instance.reconnectionPercent,
@@ -943,21 +831,23 @@ Map<String, dynamic> _$$_BillingPlanToJson(_$_BillingPlan instance) =>
       'allowedAlgorithmsIds': instance.allowedAlgorithmsIds,
       'allowedInboundProtocolsIds': instance.allowedInboundProtocolsIds,
       'allowedOutboundProtocolsIds': instance.allowedOutboundProtocolsIds,
+      'allowedVisionProtocolsIds': instance.allowedVisionProtocolsIds,
     };
 
-_$_GeofencePoint _$$_GeofencePointFromJson(Map<String, dynamic> json) =>
-    _$_GeofencePoint(
+_$GeofencePointImpl _$$GeofencePointImplFromJson(Map<String, dynamic> json) =>
+    _$GeofencePointImpl(
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_GeofencePointToJson(_$_GeofencePoint instance) =>
+Map<String, dynamic> _$$GeofencePointImplToJson(_$GeofencePointImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
     };
 
-_$_Geofence _$$_GeofenceFromJson(Map<String, dynamic> json) => _$_Geofence(
+_$GeofenceImpl _$$GeofenceImplFromJson(Map<String, dynamic> json) =>
+    _$GeofenceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       mode: const GeofenceModeConverter().fromJson(json['mode'] as String),
@@ -993,7 +883,7 @@ _$_Geofence _$$_GeofenceFromJson(Map<String, dynamic> json) => _$_Geofence(
           : User.fromJson(json['owner'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_GeofenceToJson(_$_Geofence instance) =>
+Map<String, dynamic> _$$GeofenceImplToJson(_$GeofenceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -1013,8 +903,8 @@ Map<String, dynamic> _$$_GeofenceToJson(_$_Geofence instance) =>
       'owner': instance.owner?.toJson(),
     };
 
-_$_GeofenceInput _$$_GeofenceInputFromJson(Map<String, dynamic> json) =>
-    _$_GeofenceInput(
+_$GeofenceInputImpl _$$GeofenceInputImplFromJson(Map<String, dynamic> json) =>
+    _$GeofenceInputImpl(
       id: json['id'] as String?,
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       description: json['description'] as String?,
@@ -1027,7 +917,7 @@ _$_GeofenceInput _$$_GeofenceInputFromJson(Map<String, dynamic> json) =>
       radius: (json['radius'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$_GeofenceInputToJson(_$_GeofenceInput instance) =>
+Map<String, dynamic> _$$GeofenceInputImplToJson(_$GeofenceInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'color': const ColorOrNullConverter().toJson(instance.color),
@@ -1039,46 +929,48 @@ Map<String, dynamic> _$$_GeofenceInputToJson(_$_GeofenceInput instance) =>
       'radius': instance.radius,
     };
 
-_$_GeoPoint _$$_GeoPointFromJson(Map<String, dynamic> json) => _$_GeoPoint(
+_$GeoPointImpl _$$GeoPointImplFromJson(Map<String, dynamic> json) =>
+    _$GeoPointImpl(
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$_GeoPointToJson(_$_GeoPoint instance) =>
+Map<String, dynamic> _$$GeoPointImplToJson(_$GeoPointImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
     };
 
-_$_ContactInfo _$$_ContactInfoFromJson(Map<String, dynamic> json) =>
-    _$_ContactInfo(
+_$ContactInfoImpl _$$ContactInfoImplFromJson(Map<String, dynamic> json) =>
+    _$ContactInfoImpl(
       name: json['name'] as String? ?? '',
       email: json['email'] as String? ?? '',
       phone: json['phone'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$_ContactInfoToJson(_$_ContactInfo instance) =>
+Map<String, dynamic> _$$ContactInfoImplToJson(_$ContactInfoImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'email': instance.email,
       'phone': instance.phone,
     };
 
-_$_AssetLoginInfo _$$_AssetLoginInfoFromJson(Map<String, dynamic> json) =>
-    _$_AssetLoginInfo(
+_$AssetLoginInfoImpl _$$AssetLoginInfoImplFromJson(Map<String, dynamic> json) =>
+    _$AssetLoginInfoImpl(
       enabled: json['enabled'] as bool,
       email: json['email'] as String?,
       username: json['username'] as String?,
     );
 
-Map<String, dynamic> _$$_AssetLoginInfoToJson(_$_AssetLoginInfo instance) =>
+Map<String, dynamic> _$$AssetLoginInfoImplToJson(
+        _$AssetLoginInfoImpl instance) =>
     <String, dynamic>{
       'enabled': instance.enabled,
       'email': instance.email,
       'username': instance.username,
     };
 
-_$_Asset _$$_AssetFromJson(Map<String, dynamic> json) => _$_Asset(
+_$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       plate: json['plate'] as String?,
@@ -1187,7 +1079,8 @@ _$_Asset _$$_AssetFromJson(Map<String, dynamic> json) => _$_Asset(
               .toList(),
     );
 
-Map<String, dynamic> _$$_AssetToJson(_$_Asset instance) => <String, dynamic>{
+Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'plate': instance.plate,
@@ -1237,7 +1130,7 @@ Map<String, dynamic> _$$_AssetToJson(_$_Asset instance) => <String, dynamic>{
       'linkedSupplyPointAssetsIds': instance.linkedSupplyPointAssetsIds,
     };
 
-_$_Device _$$_DeviceFromJson(Map<String, dynamic> json) => _$_Device(
+_$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       ident: json['ident'] as String,
@@ -1273,7 +1166,8 @@ _$_Device _$$_DeviceFromJson(Map<String, dynamic> json) => _$_Device(
               Map<String, String>.from(json['phone'] as Map)),
     );
 
-Map<String, dynamic> _$$_DeviceToJson(_$_Device instance) => <String, dynamic>{
+Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'ident': instance.ident,
@@ -1293,8 +1187,8 @@ Map<String, dynamic> _$$_DeviceToJson(_$_Device instance) => <String, dynamic>{
       'phone': instance.phone?.toJson(),
     };
 
-_$_CustomField _$$_CustomFieldFromJson(Map<String, dynamic> json) =>
-    _$_CustomField(
+_$CustomFieldImpl _$$CustomFieldImplFromJson(Map<String, dynamic> json) =>
+    _$CustomFieldImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       value: json['value'] as String,
@@ -1303,7 +1197,7 @@ _$_CustomField _$$_CustomFieldFromJson(Map<String, dynamic> json) =>
           const TimestampOrNullConverter().fromJson(json['updatedAt'] as num?),
     );
 
-Map<String, dynamic> _$$_CustomFieldToJson(_$_CustomField instance) =>
+Map<String, dynamic> _$$CustomFieldImplToJson(_$CustomFieldImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -1312,21 +1206,23 @@ Map<String, dynamic> _$$_CustomFieldToJson(_$_CustomField instance) =>
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
     };
 
-_$_CustomFieldInput _$$_CustomFieldInputFromJson(Map<String, dynamic> json) =>
-    _$_CustomFieldInput(
+_$CustomFieldInputImpl _$$CustomFieldInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CustomFieldInputImpl(
       name: json['name'] as String,
       value: json['value'] as String,
       isFixed: json['isFixed'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_CustomFieldInputToJson(_$_CustomFieldInput instance) =>
+Map<String, dynamic> _$$CustomFieldInputImplToJson(
+        _$CustomFieldInputImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'value': instance.value,
       'isFixed': instance.isFixed,
     };
 
-_$_Sensor _$$_SensorFromJson(Map<String, dynamic> json) => _$_Sensor(
+_$SensorImpl _$$SensorImplFromJson(Map<String, dynamic> json) => _$SensorImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       iterationCycle: json['iterationCycle'] as int,
@@ -1369,7 +1265,8 @@ _$_Sensor _$$_SensorFromJson(Map<String, dynamic> json) => _$_Sensor(
       qrCode: json['qrCode'] as String?,
     );
 
-Map<String, dynamic> _$$_SensorToJson(_$_Sensor instance) => <String, dynamic>{
+Map<String, dynamic> _$$SensorImplToJson(_$SensorImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'iterationCycle': instance.iterationCycle,
@@ -1399,32 +1296,33 @@ Map<String, dynamic> _$$_SensorToJson(_$_Sensor instance) => <String, dynamic>{
       'qrCode': instance.qrCode,
     };
 
-_$_MaskPoint _$$_MaskPointFromJson(Map<String, dynamic> json) => _$_MaskPoint(
+_$MaskPointImpl _$$MaskPointImplFromJson(Map<String, dynamic> json) =>
+    _$MaskPointImpl(
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       text: json['text'] as String?,
       value: json['value'] as String,
     );
 
-Map<String, dynamic> _$$_MaskPointToJson(_$_MaskPoint instance) =>
+Map<String, dynamic> _$$MaskPointImplToJson(_$MaskPointImpl instance) =>
     <String, dynamic>{
       'color': const ColorOrNullConverter().toJson(instance.color),
       'text': instance.text,
       'value': instance.value,
     };
 
-_$_SensorPair _$$_SensorPairFromJson(Map<String, dynamic> json) =>
-    _$_SensorPair(
+_$SensorPairImpl _$$SensorPairImplFromJson(Map<String, dynamic> json) =>
+    _$SensorPairImpl(
       x: (json['x'] as num).toDouble(),
       y: (json['y'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$_SensorPairToJson(_$_SensorPair instance) =>
+Map<String, dynamic> _$$SensorPairImplToJson(_$SensorPairImpl instance) =>
     <String, dynamic>{
       'x': instance.x,
       'y': instance.y,
     };
 
-_$_Guide _$$_GuideFromJson(Map<String, dynamic> json) => _$_Guide(
+_$GuideImpl _$$GuideImplFromJson(Map<String, dynamic> json) => _$GuideImpl(
       thumbnail: json['thumbnail'] as String,
       title: json['title'] as String,
       description: json['description'] as String,
@@ -1433,7 +1331,8 @@ _$_Guide _$$_GuideFromJson(Map<String, dynamic> json) => _$_Guide(
           const TimestampConverter().fromJson(json['publishedAt'] as num),
     );
 
-Map<String, dynamic> _$$_GuideToJson(_$_Guide instance) => <String, dynamic>{
+Map<String, dynamic> _$$GuideImplToJson(_$GuideImpl instance) =>
+    <String, dynamic>{
       'thumbnail': instance.thumbnail,
       'title': instance.title,
       'description': instance.description,
@@ -1441,22 +1340,23 @@ Map<String, dynamic> _$$_GuideToJson(_$_Guide instance) => <String, dynamic>{
       'publishedAt': const TimestampConverter().toJson(instance.publishedAt),
     };
 
-_$_Connection _$$_ConnectionFromJson(Map<String, dynamic> json) =>
-    _$_Connection(
+_$ConnectionImpl _$$ConnectionImplFromJson(Map<String, dynamic> json) =>
+    _$ConnectionImpl(
       online: const DurationOrNullConverter().fromJson(json['online'] as num?),
       hibernation:
           const DurationOrNullConverter().fromJson(json['hibernation'] as num?),
     );
 
-Map<String, dynamic> _$$_ConnectionToJson(_$_Connection instance) =>
+Map<String, dynamic> _$$ConnectionImplToJson(_$ConnectionImpl instance) =>
     <String, dynamic>{
       'online': const DurationOrNullConverter().toJson(instance.online),
       'hibernation':
           const DurationOrNullConverter().toJson(instance.hibernation),
     };
 
-_$_DeviceTelemetry _$$_DeviceTelemetryFromJson(Map<String, dynamic> json) =>
-    _$_DeviceTelemetry(
+_$DeviceTelemetryImpl _$$DeviceTelemetryImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DeviceTelemetryImpl(
       id: json['id'] as String,
       deviceId: json['deviceId'] as String?,
       receivedAt:
@@ -1470,7 +1370,8 @@ _$_DeviceTelemetry _$$_DeviceTelemetryFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_DeviceTelemetryToJson(_$_DeviceTelemetry instance) =>
+Map<String, dynamic> _$$DeviceTelemetryImplToJson(
+        _$DeviceTelemetryImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'deviceId': instance.deviceId,
@@ -1479,8 +1380,8 @@ Map<String, dynamic> _$$_DeviceTelemetryToJson(_$_DeviceTelemetry instance) =>
       'payload': instance.payload?.map((e) => e.toJson()).toList(),
     };
 
-_$_AssetTelemetry _$$_AssetTelemetryFromJson(Map<String, dynamic> json) =>
-    _$_AssetTelemetry(
+_$AssetTelemetryImpl _$$AssetTelemetryImplFromJson(Map<String, dynamic> json) =>
+    _$AssetTelemetryImpl(
       id: json['id'] as String,
       assetId: json['assetId'] as String?,
       receivedAt:
@@ -1500,7 +1401,8 @@ _$_AssetTelemetry _$$_AssetTelemetryFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_AssetTelemetryToJson(_$_AssetTelemetry instance) =>
+Map<String, dynamic> _$$AssetTelemetryImplToJson(
+        _$AssetTelemetryImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -1511,8 +1413,9 @@ Map<String, dynamic> _$$_AssetTelemetryToJson(_$_AssetTelemetry instance) =>
       'sensors': instance.sensors?.map((e) => e.toJson()).toList(),
     };
 
-_$_TelemetryPosition _$$_TelemetryPositionFromJson(Map<String, dynamic> json) =>
-    _$_TelemetryPosition(
+_$TelemetryPositionImpl _$$TelemetryPositionImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TelemetryPositionImpl(
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       altitude: (json['altitude'] as num?)?.toDouble(),
@@ -1522,8 +1425,8 @@ _$_TelemetryPosition _$$_TelemetryPositionFromJson(Map<String, dynamic> json) =>
       hdop: (json['hdop'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$_TelemetryPositionToJson(
-        _$_TelemetryPosition instance) =>
+Map<String, dynamic> _$$TelemetryPositionImplToJson(
+        _$TelemetryPositionImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
@@ -1534,19 +1437,21 @@ Map<String, dynamic> _$$_TelemetryPositionToJson(
       'hdop': instance.hdop,
     };
 
-_$_TelemetrySensor _$$_TelemetrySensorFromJson(Map<String, dynamic> json) =>
-    _$_TelemetrySensor(
+_$TelemetrySensorImpl _$$TelemetrySensorImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TelemetrySensorImpl(
       value: json['value'],
       parameter: json['parameter'] as String,
     );
 
-Map<String, dynamic> _$$_TelemetrySensorToJson(_$_TelemetrySensor instance) =>
+Map<String, dynamic> _$$TelemetrySensorImplToJson(
+        _$TelemetrySensorImpl instance) =>
     <String, dynamic>{
       'value': instance.value,
       'parameter': instance.parameter,
     };
 
-_$_Trip _$$_TripFromJson(Map<String, dynamic> json) => _$_Trip(
+_$TripImpl _$$TripImplFromJson(Map<String, dynamic> json) => _$TripImpl(
       assetId: json['assetId'] as String,
       assetName: json['assetName'] as String?,
       points: (json['points'] as List<dynamic>)
@@ -1554,13 +1459,14 @@ _$_Trip _$$_TripFromJson(Map<String, dynamic> json) => _$_Trip(
           .toList(),
     );
 
-Map<String, dynamic> _$$_TripToJson(_$_Trip instance) => <String, dynamic>{
+Map<String, dynamic> _$$TripImplToJson(_$TripImpl instance) =>
+    <String, dynamic>{
       'assetId': instance.assetId,
       'assetName': instance.assetName,
       'points': instance.points.map((e) => e.toJson()).toList(),
     };
 
-_$_Point _$$_PointFromJson(Map<String, dynamic> json) => _$_Point(
+_$PointImpl _$$PointImplFromJson(Map<String, dynamic> json) => _$PointImpl(
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
       direction: (json['direction'] as num?)?.toDouble(),
@@ -1570,7 +1476,8 @@ _$_Point _$$_PointFromJson(Map<String, dynamic> json) => _$_Point(
           const TimestampConverter().fromJson(json['receivedAt'] as num),
     );
 
-Map<String, dynamic> _$$_PointToJson(_$_Point instance) => <String, dynamic>{
+Map<String, dynamic> _$$PointImplToJson(_$PointImpl instance) =>
+    <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
       'direction': instance.direction,
@@ -1579,7 +1486,7 @@ Map<String, dynamic> _$$_PointToJson(_$_Point instance) => <String, dynamic>{
       'receivedAt': const TimestampConverter().toJson(instance.receivedAt),
     };
 
-_$_Model _$$_ModelFromJson(Map<String, dynamic> json) => _$_Model(
+_$ModelImpl _$$ModelImplFromJson(Map<String, dynamic> json) => _$ModelImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       flespiId: json['flespiId'] as String?,
@@ -1590,7 +1497,8 @@ _$_Model _$$_ModelFromJson(Map<String, dynamic> json) => _$_Model(
       isGeneric: json['isGeneric'] as bool?,
     );
 
-Map<String, dynamic> _$$_ModelToJson(_$_Model instance) => <String, dynamic>{
+Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'flespiId': instance.flespiId,
@@ -1599,7 +1507,8 @@ Map<String, dynamic> _$$_ModelToJson(_$_Model instance) => <String, dynamic>{
       'isGeneric': instance.isGeneric,
     };
 
-_$_Trigger _$$_TriggerFromJson(Map<String, dynamic> json) => _$_Trigger(
+_$TriggerImpl _$$TriggerImplFromJson(Map<String, dynamic> json) =>
+    _$TriggerImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       code: json['code'] as String,
@@ -1659,7 +1568,7 @@ _$_Trigger _$$_TriggerFromJson(Map<String, dynamic> json) => _$_Trigger(
           .toList(),
     );
 
-Map<String, dynamic> _$$_TriggerToJson(_$_Trigger instance) =>
+Map<String, dynamic> _$$TriggerImplToJson(_$TriggerImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -1698,8 +1607,9 @@ Map<String, dynamic> _$$_TriggerToJson(_$_Trigger instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_$_TriggerActivation _$$_TriggerActivationFromJson(Map<String, dynamic> json) =>
-    _$_TriggerActivation(
+_$TriggerActivationImpl _$$TriggerActivationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TriggerActivationImpl(
       id: json['id'] as String,
       asset: Asset.fromJson(json['asset'] as Map<String, dynamic>),
       trigger: json['trigger'] == null
@@ -1712,8 +1622,8 @@ _$_TriggerActivation _$$_TriggerActivationFromJson(Map<String, dynamic> json) =>
       date: const TimestampConverter().fromJson(json['date'] as num),
     );
 
-Map<String, dynamic> _$$_TriggerActivationToJson(
-        _$_TriggerActivation instance) =>
+Map<String, dynamic> _$$TriggerActivationImplToJson(
+        _$TriggerActivationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'asset': instance.asset.toJson(),
@@ -1722,8 +1632,8 @@ Map<String, dynamic> _$$_TriggerActivationToJson(
       'date': const TimestampConverter().toJson(instance.date),
     };
 
-_$_TriggerInput _$$_TriggerInputFromJson(Map<String, dynamic> json) =>
-    _$_TriggerInput(
+_$TriggerInputImpl _$$TriggerInputImplFromJson(Map<String, dynamic> json) =>
+    _$TriggerInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String?,
       code: json['code'] as String?,
@@ -1788,7 +1698,7 @@ _$_TriggerInput _$$_TriggerInputFromJson(Map<String, dynamic> json) =>
       careProtocolId: json['careProtocolId'] as String?,
     );
 
-Map<String, dynamic> _$$_TriggerInputToJson(_$_TriggerInput instance) =>
+Map<String, dynamic> _$$TriggerInputImplToJson(_$TriggerInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -1819,8 +1729,8 @@ Map<String, dynamic> _$$_TriggerInputToJson(_$_TriggerInput instance) =>
       'careProtocolId': instance.careProtocolId,
     };
 
-_$_CareProtocol _$$_CareProtocolFromJson(Map<String, dynamic> json) =>
-    _$_CareProtocol(
+_$CareProtocolImpl _$$CareProtocolImplFromJson(Map<String, dynamic> json) =>
+    _$CareProtocolImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       mode: const CareProtocolModeOrNullConverter()
@@ -1845,7 +1755,7 @@ _$_CareProtocol _$$_CareProtocolFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_CareProtocolToJson(_$_CareProtocol instance) =>
+Map<String, dynamic> _$$CareProtocolImplToJson(_$CareProtocolImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -1860,7 +1770,8 @@ Map<String, dynamic> _$$_CareProtocolToJson(_$_CareProtocol instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_$_CareTask _$$_CareTaskFromJson(Map<String, dynamic> json) => _$_CareTask(
+_$CareTaskImpl _$$CareTaskImplFromJson(Map<String, dynamic> json) =>
+    _$CareTaskImpl(
       question: json['question'] as String,
       answer: const AnswerKindConverter().fromJson(json['answer'] as String),
       choices: (json['choices'] as List<dynamic>?)
@@ -1871,7 +1782,7 @@ _$_CareTask _$$_CareTaskFromJson(Map<String, dynamic> json) => _$_CareTask(
       maxValue: json['maxValue'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_CareTaskToJson(_$_CareTask instance) =>
+Map<String, dynamic> _$$CareTaskImplToJson(_$CareTaskImpl instance) =>
     <String, dynamic>{
       'question': instance.question,
       'answer': const AnswerKindConverter().toJson(instance.answer),
@@ -1880,180 +1791,20 @@ Map<String, dynamic> _$$_CareTaskToJson(_$_CareTask instance) =>
       'maxValue': instance.maxValue,
     };
 
-_$_ConciergeForm _$$_ConciergeFormFromJson(Map<String, dynamic> json) =>
-    _$_ConciergeForm(
+_$ConciergeFormImpl _$$ConciergeFormImplFromJson(Map<String, dynamic> json) =>
+    _$ConciergeFormImpl(
       id: json['id'] as String,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$_ConciergeFormToJson(_$_ConciergeForm instance) =>
+Map<String, dynamic> _$$ConciergeFormImplToJson(_$ConciergeFormImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
     };
 
-_$_OutboundService _$$_OutboundServiceFromJson(Map<String, dynamic> json) =>
-    _$_OutboundService(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      credentials: json['credentials'] as Map<String, dynamic>?,
-      protocol: json['protocol'] == null
-          ? null
-          : OutboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
-      protocolId: json['protocolId'] as String?,
-      isEnabled: json['isEnabled'] as bool?,
-      structure: (json['structure'] as List<dynamic>?)
-          ?.map((e) => OutboundStructure.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      token: json['token'] as String?,
-      assetsIds: (json['assetsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      assets: (json['assets'] as List<dynamic>?)
-          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      groupsIds: (json['groupsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      groups: (json['groups'] as List<dynamic>?)
-          ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$_OutboundServiceToJson(_$_OutboundService instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'credentials': instance.credentials,
-      'protocol': instance.protocol?.toJson(),
-      'protocolId': instance.protocolId,
-      'isEnabled': instance.isEnabled,
-      'structure': instance.structure?.map((e) => e.toJson()).toList(),
-      'token': instance.token,
-      'assetsIds': instance.assetsIds,
-      'assets': instance.assets?.map((e) => e.toJson()).toList(),
-      'groupsIds': instance.groupsIds,
-      'groups': instance.groups?.map((e) => e.toJson()).toList(),
-      'access': instance.access?.map((e) => e.toJson()).toList(),
-    };
-
-_$_OutboundStructure _$$_OutboundStructureFromJson(Map<String, dynamic> json) =>
-    _$_OutboundStructure(
-      field: json['field'] as String,
-      type: json['type'] as String,
-      value: json['value'] as String,
-    );
-
-Map<String, dynamic> _$$_OutboundStructureToJson(
-        _$_OutboundStructure instance) =>
-    <String, dynamic>{
-      'field': instance.field,
-      'type': instance.type,
-      'value': instance.value,
-    };
-
-_$_InboundService _$$_InboundServiceFromJson(Map<String, dynamic> json) =>
-    _$_InboundService(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      credentials: json['credentials'] as Map<String, dynamic>?,
-      accountId: json['accountId'] as String?,
-      updateTime:
-          const DurationOrNullConverter().fromJson(json['updateTime'] as num?),
-      protocol: json['protocol'] == null
-          ? null
-          : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
-      protocolId: json['protocolId'] as String?,
-      isEnabled: json['isEnabled'] as bool?,
-      token: json['token'] as String?,
-      structure: json['structure'] == null
-          ? null
-          : InboundStructure.fromJson(
-              json['structure'] as Map<String, dynamic>),
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$_InboundServiceToJson(_$_InboundService instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'credentials': instance.credentials,
-      'accountId': instance.accountId,
-      'updateTime': const DurationOrNullConverter().toJson(instance.updateTime),
-      'protocol': instance.protocol?.toJson(),
-      'protocolId': instance.protocolId,
-      'isEnabled': instance.isEnabled,
-      'token': instance.token,
-      'structure': instance.structure?.toJson(),
-      'access': instance.access?.map((e) => e.toJson()).toList(),
-    };
-
-_$_InboundStructure _$$_InboundStructureFromJson(Map<String, dynamic> json) =>
-    _$_InboundStructure(
-      hasPosition: json['hasPosition'] as bool,
-      position: InboundPositionStructure.fromJson(
-          json['position'] as Map<String, dynamic>),
-      hasPayload: json['hasPayload'] as bool,
-      payload: (json['payload'] as List<dynamic>)
-          .map((e) =>
-              InboundPayloadStructure.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$_InboundStructureToJson(_$_InboundStructure instance) =>
-    <String, dynamic>{
-      'hasPosition': instance.hasPosition,
-      'position': instance.position.toJson(),
-      'hasPayload': instance.hasPayload,
-      'payload': instance.payload.map((e) => e.toJson()).toList(),
-    };
-
-_$_InboundPositionStructure _$$_InboundPositionStructureFromJson(
-        Map<String, dynamic> json) =>
-    _$_InboundPositionStructure(
-      latitude: json['latitude'] as bool,
-      longitude: json['longitude'] as bool,
-      altitude: json['altitude'] as bool,
-      speed: json['speed'] as bool,
-      direction: json['direction'] as bool,
-      hdop: json['hdop'] as bool,
-      satellites: json['satellites'] as bool,
-    );
-
-Map<String, dynamic> _$$_InboundPositionStructureToJson(
-        _$_InboundPositionStructure instance) =>
-    <String, dynamic>{
-      'latitude': instance.latitude,
-      'longitude': instance.longitude,
-      'altitude': instance.altitude,
-      'speed': instance.speed,
-      'direction': instance.direction,
-      'hdop': instance.hdop,
-      'satellites': instance.satellites,
-    };
-
-_$_InboundPayloadStructure _$$_InboundPayloadStructureFromJson(
-        Map<String, dynamic> json) =>
-    _$_InboundPayloadStructure(
-      field: json['field'] as String,
-      type: const InboundPayloadStructureTypeConverter()
-          .fromJson(json['type'] as String),
-    );
-
-Map<String, dynamic> _$$_InboundPayloadStructureToJson(
-        _$_InboundPayloadStructure instance) =>
-    <String, dynamic>{
-      'field': instance.field,
-      'type':
-          const InboundPayloadStructureTypeConverter().toJson(instance.type),
-    };
-
-_$_Timezone _$$_TimezoneFromJson(Map<String, dynamic> json) => _$_Timezone(
+_$TimezoneImpl _$$TimezoneImplFromJson(Map<String, dynamic> json) =>
+    _$TimezoneImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       offset: json['offset'] as String,
@@ -2062,7 +1813,7 @@ _$_Timezone _$$_TimezoneFromJson(Map<String, dynamic> json) => _$_Timezone(
           : Country.fromJson(json['country'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_TimezoneToJson(_$_Timezone instance) =>
+Map<String, dynamic> _$$TimezoneImplToJson(_$TimezoneImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2070,7 +1821,8 @@ Map<String, dynamic> _$$_TimezoneToJson(_$_Timezone instance) =>
       'country': instance.country?.toJson(),
     };
 
-_$_LintError _$$_LintErrorFromJson(Map<String, dynamic> json) => _$_LintError(
+_$LintErrorImpl _$$LintErrorImplFromJson(Map<String, dynamic> json) =>
+    _$LintErrorImpl(
       code: json['code'] as String,
       line: json['line'] as int?,
       function: json['function'] as String?,
@@ -2079,7 +1831,7 @@ _$_LintError _$$_LintErrorFromJson(Map<String, dynamic> json) => _$_LintError(
       element: json['element'] as String?,
     );
 
-Map<String, dynamic> _$$_LintErrorToJson(_$_LintError instance) =>
+Map<String, dynamic> _$$LintErrorImplToJson(_$LintErrorImpl instance) =>
     <String, dynamic>{
       'code': instance.code,
       'line': instance.line,
@@ -2089,7 +1841,8 @@ Map<String, dynamic> _$$_LintErrorToJson(_$_LintError instance) =>
       'element': instance.element,
     };
 
-_$_Operation _$$_OperationFromJson(Map<String, dynamic> json) => _$_Operation(
+_$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>
+    _$OperationImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       operationType: const OperationTypeConverter()
@@ -2132,7 +1885,7 @@ _$_Operation _$$_OperationFromJson(Map<String, dynamic> json) => _$_Operation(
       emailTemplateId: json['emailTemplateId'] as String?,
     );
 
-Map<String, dynamic> _$$_OperationToJson(_$_Operation instance) =>
+Map<String, dynamic> _$$OperationImplToJson(_$OperationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2162,20 +1915,20 @@ Map<String, dynamic> _$$_OperationToJson(_$_Operation instance) =>
       'emailTemplateId': instance.emailTemplateId,
     };
 
-_$_HttpHeader _$$_HttpHeaderFromJson(Map<String, dynamic> json) =>
-    _$_HttpHeader(
+_$HttpHeaderImpl _$$HttpHeaderImplFromJson(Map<String, dynamic> json) =>
+    _$HttpHeaderImpl(
       name: json['name'] as String,
       value: json['value'] as String,
     );
 
-Map<String, dynamic> _$$_HttpHeaderToJson(_$_HttpHeader instance) =>
+Map<String, dynamic> _$$HttpHeaderImplToJson(_$HttpHeaderImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'value': instance.value,
     };
 
-_$_OperationInput _$$_OperationInputFromJson(Map<String, dynamic> json) =>
-    _$_OperationInput(
+_$OperationInputImpl _$$OperationInputImplFromJson(Map<String, dynamic> json) =>
+    _$OperationInputImpl(
       color: json['color'] as String?,
       emailSubject: json['emailSubject'] as String?,
       headers: (json['headers'] as List<dynamic>?)
@@ -2207,7 +1960,8 @@ _$_OperationInput _$$_OperationInputFromJson(Map<String, dynamic> json) =>
       externalAccountId: json['externalAccountId'] as String?,
     );
 
-Map<String, dynamic> _$$_OperationInputToJson(_$_OperationInput instance) =>
+Map<String, dynamic> _$$OperationInputImplToJson(
+        _$OperationInputImpl instance) =>
     <String, dynamic>{
       'color': instance.color,
       'emailSubject': instance.emailSubject,
@@ -2236,7 +1990,7 @@ const _$NotificationTypeEnumMap = {
   NotificationType.voice: 'voice',
 };
 
-_$_Action _$$_ActionFromJson(Map<String, dynamic> json) => _$_Action(
+_$ActionImpl _$$ActionImplFromJson(Map<String, dynamic> json) => _$ActionImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       kind: const ActionTypeConverter().fromJson(json['kind'] as String),
@@ -2272,7 +2026,8 @@ _$_Action _$$_ActionFromJson(Map<String, dynamic> json) => _$_Action(
               json['geofenceSettings'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ActionToJson(_$_Action instance) => <String, dynamic>{
+Map<String, dynamic> _$$ActionImplToJson(_$ActionImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'kind': const ActionTypeConverter().toJson(instance.kind),
@@ -2290,9 +2045,9 @@ Map<String, dynamic> _$$_ActionToJson(_$_Action instance) => <String, dynamic>{
       'geofenceSettings': instance.geofenceSettings?.toJson(),
     };
 
-_$_ActionGeofenceSettings _$$_ActionGeofenceSettingsFromJson(
+_$ActionGeofenceSettingsImpl _$$ActionGeofenceSettingsImplFromJson(
         Map<String, dynamic> json) =>
-    _$_ActionGeofenceSettings(
+    _$ActionGeofenceSettingsImpl(
       whoOwner: json['whoOwner'] == null
           ? ActionProperty.none
           : const ActionPropertyConverter()
@@ -2307,8 +2062,8 @@ _$_ActionGeofenceSettings _$$_ActionGeofenceSettingsFromJson(
           : MappitRoute.fromJson(json['mappitRoute'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ActionGeofenceSettingsToJson(
-        _$_ActionGeofenceSettings instance) =>
+Map<String, dynamic> _$$ActionGeofenceSettingsImplToJson(
+        _$ActionGeofenceSettingsImpl instance) =>
     <String, dynamic>{
       'whoOwner': const ActionPropertyConverter().toJson(instance.whoOwner),
       'name': instance.name,
@@ -2319,8 +2074,8 @@ Map<String, dynamic> _$$_ActionGeofenceSettingsToJson(
       'mappitRoute': instance.mappitRoute?.toJson(),
     };
 
-_$_ActionInput _$$_ActionInputFromJson(Map<String, dynamic> json) =>
-    _$_ActionInput(
+_$ActionInputImpl _$$ActionInputImplFromJson(Map<String, dynamic> json) =>
+    _$ActionInputImpl(
       id: json['id'] as String?,
       commandId: json['commandId'] as String?,
       kind: const ActionTypeOrNullConverter().fromJson(json['kind'] as String?),
@@ -2342,7 +2097,7 @@ _$_ActionInput _$$_ActionInputFromJson(Map<String, dynamic> json) =>
       watchImage: json['watchImage'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_ActionInputToJson(_$_ActionInput instance) =>
+Map<String, dynamic> _$$ActionInputImplToJson(_$ActionInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'commandId': instance.commandId,
@@ -2355,8 +2110,8 @@ Map<String, dynamic> _$$_ActionInputToJson(_$_ActionInput instance) =>
       'watchImage': instance.watchImage,
     };
 
-_$_ReportTemplate _$$_ReportTemplateFromJson(Map<String, dynamic> json) =>
-    _$_ReportTemplate(
+_$ReportTemplateImpl _$$ReportTemplateImplFromJson(Map<String, dynamic> json) =>
+    _$ReportTemplateImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       structure: (json['structure'] as List<dynamic>?)
@@ -2379,7 +2134,8 @@ _$_ReportTemplate _$$_ReportTemplateFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_ReportTemplateToJson(_$_ReportTemplate instance) =>
+Map<String, dynamic> _$$ReportTemplateImplToJson(
+        _$ReportTemplateImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2392,9 +2148,9 @@ Map<String, dynamic> _$$_ReportTemplateToJson(_$_ReportTemplate instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_$_ReportTemplatePage _$$_ReportTemplatePageFromJson(
+_$ReportTemplatePageImpl _$$ReportTemplatePageImplFromJson(
         Map<String, dynamic> json) =>
-    _$_ReportTemplatePage(
+    _$ReportTemplatePageImpl(
       title: json['title'] as String,
       source: const ReportTemplateSourceConverter()
           .fromJson(json['source'] as String),
@@ -2408,8 +2164,8 @@ _$_ReportTemplatePage _$$_ReportTemplatePageFromJson(
       script: json['script'] as String?,
     );
 
-Map<String, dynamic> _$$_ReportTemplatePageToJson(
-        _$_ReportTemplatePage instance) =>
+Map<String, dynamic> _$$ReportTemplatePageImplToJson(
+        _$ReportTemplatePageImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'source': const ReportTemplateSourceConverter().toJson(instance.source),
@@ -2419,16 +2175,17 @@ Map<String, dynamic> _$$_ReportTemplatePageToJson(
       'script': instance.script,
     };
 
-_$_ReportTemplateCol _$$_ReportTemplateColFromJson(Map<String, dynamic> json) =>
-    _$_ReportTemplateCol(
+_$ReportTemplateColImpl _$$ReportTemplateColImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ReportTemplateColImpl(
       name: json['name'] as String,
       field: json['field'] as String,
       visible: json['visible'] as bool,
       isCustom: json['isCustom'] as bool,
     );
 
-Map<String, dynamic> _$$_ReportTemplateColToJson(
-        _$_ReportTemplateCol instance) =>
+Map<String, dynamic> _$$ReportTemplateColImplToJson(
+        _$ReportTemplateColImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'field': instance.field,
@@ -2436,8 +2193,8 @@ Map<String, dynamic> _$$_ReportTemplateColToJson(
       'isCustom': instance.isCustom,
     };
 
-_$_CustomReport _$$_CustomReportFromJson(Map<String, dynamic> json) =>
-    _$_CustomReport(
+_$CustomReportImpl _$$CustomReportImplFromJson(Map<String, dynamic> json) =>
+    _$CustomReportImpl(
       id: json['id'] as String,
       code: json['code'] as String,
       allowedApps: (json['allowedApps'] as List<dynamic>?)
@@ -2445,15 +2202,15 @@ _$_CustomReport _$$_CustomReportFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_CustomReportToJson(_$_CustomReport instance) =>
+Map<String, dynamic> _$$CustomReportImplToJson(_$CustomReportImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'allowedApps': instance.allowedApps?.map((e) => e.toJson()).toList(),
     };
 
-_$_CloudEntry _$$_CloudEntryFromJson(Map<String, dynamic> json) =>
-    _$_CloudEntry(
+_$CloudEntryImpl _$$CloudEntryImplFromJson(Map<String, dynamic> json) =>
+    _$CloudEntryImpl(
       name: json['name'] as String,
       type: const CloudEntryTypeConverter().fromJson(json['type'] as String),
       path: json['path'] as String,
@@ -2466,7 +2223,7 @@ _$_CloudEntry _$$_CloudEntryFromJson(Map<String, dynamic> json) =>
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$_CloudEntryToJson(_$_CloudEntry instance) =>
+Map<String, dynamic> _$$CloudEntryImplToJson(_$CloudEntryImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'type': const CloudEntryTypeConverter().toJson(instance.type),
@@ -2480,8 +2237,8 @@ Map<String, dynamic> _$$_CloudEntryToJson(_$_CloudEntry instance) =>
       'metadata': instance.metadata,
     };
 
-_$_DeviceCommand _$$_DeviceCommandFromJson(Map<String, dynamic> json) =>
-    _$_DeviceCommand(
+_$DeviceCommandImpl _$$DeviceCommandImplFromJson(Map<String, dynamic> json) =>
+    _$DeviceCommandImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       source: const CommandSourceConverter().fromJson(json['source'] as String),
@@ -2515,7 +2272,7 @@ _$_DeviceCommand _$$_DeviceCommandFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_DeviceCommandToJson(_$_DeviceCommand instance) =>
+Map<String, dynamic> _$$DeviceCommandImplToJson(_$DeviceCommandImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2540,7 +2297,7 @@ Map<String, dynamic> _$$_DeviceCommandToJson(_$_DeviceCommand instance) =>
           instance.possibleDevices?.map((e) => e.toJson()).toList(),
     };
 
-_$_Preset _$$_PresetFromJson(Map<String, dynamic> json) => _$_Preset(
+_$PresetImpl _$$PresetImplFromJson(Map<String, dynamic> json) => _$PresetImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       validBefore: const TimestampOrNullConverter()
@@ -2558,7 +2315,8 @@ _$_Preset _$$_PresetFromJson(Map<String, dynamic> json) => _$_Preset(
           .toList(),
     );
 
-Map<String, dynamic> _$$_PresetToJson(_$_Preset instance) => <String, dynamic>{
+Map<String, dynamic> _$$PresetImplToJson(_$PresetImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'validBefore':
@@ -2570,8 +2328,8 @@ Map<String, dynamic> _$$_PresetToJson(_$_Preset instance) => <String, dynamic>{
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_$_Checkpoint _$$_CheckpointFromJson(Map<String, dynamic> json) =>
-    _$_Checkpoint(
+_$CheckpointImpl _$$CheckpointImplFromJson(Map<String, dynamic> json) =>
+    _$CheckpointImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       assetId: json['assetId'] as String?,
@@ -2588,7 +2346,7 @@ _$_Checkpoint _$$_CheckpointFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_CheckpointToJson(_$_Checkpoint instance) =>
+Map<String, dynamic> _$$CheckpointImplToJson(_$CheckpointImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2600,7 +2358,8 @@ Map<String, dynamic> _$$_CheckpointToJson(_$_Checkpoint instance) =>
           instance.linkedAssetsIds?.map((e) => e.toJson()).toList(),
     };
 
-_$_Waypoint _$$_WaypointFromJson(Map<String, dynamic> json) => _$_Waypoint(
+_$WaypointImpl _$$WaypointImplFromJson(Map<String, dynamic> json) =>
+    _$WaypointImpl(
       id: json['id'] as String,
       geofenceId: json['geofenceId'] as String?,
       geofence: json['geofence'] == null
@@ -2611,7 +2370,7 @@ _$_Waypoint _$$_WaypointFromJson(Map<String, dynamic> json) => _$_Waypoint(
           const WaypointKindOrNullConverter().fromJson(json['kind'] as String?),
     );
 
-Map<String, dynamic> _$$_WaypointToJson(_$_Waypoint instance) =>
+Map<String, dynamic> _$$WaypointImplToJson(_$WaypointImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'geofenceId': instance.geofenceId,
@@ -2620,23 +2379,24 @@ Map<String, dynamic> _$$_WaypointToJson(_$_Waypoint instance) =>
       'kind': const WaypointKindOrNullConverter().toJson(instance.kind),
     };
 
-_$_LinkedAssetToCheckpointId _$$_LinkedAssetToCheckpointIdFromJson(
+_$LinkedAssetToCheckpointIdImpl _$$LinkedAssetToCheckpointIdImplFromJson(
         Map<String, dynamic> json) =>
-    _$_LinkedAssetToCheckpointId(
+    _$LinkedAssetToCheckpointIdImpl(
       itemId: json['itemId'] as String,
       entity:
           const LinkedAssetEntityConverter().fromJson(json['entity'] as String),
     );
 
-Map<String, dynamic> _$$_LinkedAssetToCheckpointIdToJson(
-        _$_LinkedAssetToCheckpointId instance) =>
+Map<String, dynamic> _$$LinkedAssetToCheckpointIdImplToJson(
+        _$LinkedAssetToCheckpointIdImpl instance) =>
     <String, dynamic>{
       'itemId': instance.itemId,
       'entity': const LinkedAssetEntityConverter().toJson(instance.entity),
     };
 
-_$_CheckpointInput _$$_CheckpointInputFromJson(Map<String, dynamic> json) =>
-    _$_CheckpointInput(
+_$CheckpointInputImpl _$$CheckpointInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CheckpointInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String?,
       assetId: json['assetId'] as String?,
@@ -2651,7 +2411,8 @@ _$_CheckpointInput _$$_CheckpointInputFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$_CheckpointInputToJson(_$_CheckpointInput instance) =>
+Map<String, dynamic> _$$CheckpointInputImplToJson(
+        _$CheckpointInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2661,8 +2422,8 @@ Map<String, dynamic> _$$_CheckpointInputToJson(_$_CheckpointInput instance) =>
           instance.linkedAssetsIds?.map((e) => e.toJson()).toList(),
     };
 
-_$_LayrzChart _$$_LayrzChartFromJson(Map<String, dynamic> json) =>
-    _$_LayrzChart(
+_$LayrzChartImpl _$$LayrzChartImplFromJson(Map<String, dynamic> json) =>
+    _$LayrzChartImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String?,
@@ -2680,7 +2441,7 @@ _$_LayrzChart _$$_LayrzChartFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_LayrzChartToJson(_$_LayrzChart instance) =>
+Map<String, dynamic> _$$LayrzChartImplToJson(_$LayrzChartImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2696,8 +2457,8 @@ Map<String, dynamic> _$$_LayrzChartToJson(_$_LayrzChart instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_$_CommentOwner _$$_CommentOwnerFromJson(Map<String, dynamic> json) =>
-    _$_CommentOwner(
+_$CommentOwnerImpl _$$CommentOwnerImplFromJson(Map<String, dynamic> json) =>
+    _$CommentOwnerImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       avatar: json['avatar'] as String?,
@@ -2706,7 +2467,7 @@ _$_CommentOwner _$$_CommentOwnerFromJson(Map<String, dynamic> json) =>
           : Avatar.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_CommentOwnerToJson(_$_CommentOwner instance) =>
+Map<String, dynamic> _$$CommentOwnerImplToJson(_$CommentOwnerImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2714,8 +2475,8 @@ Map<String, dynamic> _$$_CommentOwnerToJson(_$_CommentOwner instance) =>
       'dynamicAvatar': instance.dynamicAvatar?.toJson(),
     };
 
-_$_CaseComment _$$_CaseCommentFromJson(Map<String, dynamic> json) =>
-    _$_CaseComment(
+_$CaseCommentImpl _$$CaseCommentImplFromJson(Map<String, dynamic> json) =>
+    _$CaseCommentImpl(
       id: json['id'] as String,
       at: const TimestampConverter().fromJson(json['at'] as num),
       owner: json['owner'] == null
@@ -2724,7 +2485,7 @@ _$_CaseComment _$$_CaseCommentFromJson(Map<String, dynamic> json) =>
       comment: json['comment'] as String,
     );
 
-Map<String, dynamic> _$$_CaseCommentToJson(_$_CaseComment instance) =>
+Map<String, dynamic> _$$CaseCommentImplToJson(_$CaseCommentImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'at': const TimestampConverter().toJson(instance.at),
@@ -2732,7 +2493,7 @@ Map<String, dynamic> _$$_CaseCommentToJson(_$_CaseComment instance) =>
       'comment': instance.comment,
     };
 
-_$_Case _$$_CaseFromJson(Map<String, dynamic> json) => _$_Case(
+_$CaseImpl _$$CaseImplFromJson(Map<String, dynamic> json) => _$CaseImpl(
       id: json['id'] as String,
       receivedAt:
           const TimestampConverter().fromJson(json['dateReceived'] as num),
@@ -2761,7 +2522,8 @@ _$_Case _$$_CaseFromJson(Map<String, dynamic> json) => _$_Case(
           : CloudEntry.fromJson(json['file'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_CaseToJson(_$_Case instance) => <String, dynamic>{
+Map<String, dynamic> _$$CaseImplToJson(_$CaseImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'dateReceived': const TimestampConverter().toJson(instance.receivedAt),
       'status': const CaseStatusConverter().toJson(instance.status),
@@ -2777,7 +2539,7 @@ Map<String, dynamic> _$$_CaseToJson(_$_Case instance) => <String, dynamic>{
       'file': instance.file?.toJson(),
     };
 
-_$_Avatar _$$_AvatarFromJson(Map<String, dynamic> json) => _$_Avatar(
+_$AvatarImpl _$$AvatarImplFromJson(Map<String, dynamic> json) => _$AvatarImpl(
       type: const AvatarTypeConverter().fromJson(json['type'] as String),
       emoji: json['emoji'] as String?,
       icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
@@ -2785,7 +2547,8 @@ _$_Avatar _$$_AvatarFromJson(Map<String, dynamic> json) => _$_Avatar(
       base64: json['base64'] as String?,
     );
 
-Map<String, dynamic> _$$_AvatarToJson(_$_Avatar instance) => <String, dynamic>{
+Map<String, dynamic> _$$AvatarImplToJson(_$AvatarImpl instance) =>
+    <String, dynamic>{
       'type': const AvatarTypeConverter().toJson(instance.type),
       'emoji': instance.emoji,
       'icon': const IconOrNullConverter().toJson(instance.icon),
@@ -2793,8 +2556,8 @@ Map<String, dynamic> _$$_AvatarToJson(_$_Avatar instance) => <String, dynamic>{
       'base64': instance.base64,
     };
 
-_$_AvatarInput _$$_AvatarInputFromJson(Map<String, dynamic> json) =>
-    _$_AvatarInput(
+_$AvatarInputImpl _$$AvatarInputImplFromJson(Map<String, dynamic> json) =>
+    _$AvatarInputImpl(
       type: json['type'] == null
           ? AvatarType.none
           : const AvatarTypeConverter().fromJson(json['type'] as String),
@@ -2804,7 +2567,7 @@ _$_AvatarInput _$$_AvatarInputFromJson(Map<String, dynamic> json) =>
       base64: json['base64'] as String?,
     );
 
-Map<String, dynamic> _$$_AvatarInputToJson(_$_AvatarInput instance) =>
+Map<String, dynamic> _$$AvatarInputImplToJson(_$AvatarInputImpl instance) =>
     <String, dynamic>{
       'type': const AvatarTypeConverter().toJson(instance.type),
       'emoji': instance.emoji,
@@ -2813,8 +2576,8 @@ Map<String, dynamic> _$$_AvatarInputToJson(_$_AvatarInput instance) =>
       'base64': instance.base64,
     };
 
-_$_EmailTemplate _$$_EmailTemplateFromJson(Map<String, dynamic> json) =>
-    _$_EmailTemplate(
+_$EmailTemplateImpl _$$EmailTemplateImplFromJson(Map<String, dynamic> json) =>
+    _$EmailTemplateImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       contentMjml: json['contentMjml'] as String?,
@@ -2824,7 +2587,7 @@ _$_EmailTemplate _$$_EmailTemplateFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_EmailTemplateToJson(_$_EmailTemplate instance) =>
+Map<String, dynamic> _$$EmailTemplateImplToJson(_$EmailTemplateImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2833,15 +2596,15 @@ Map<String, dynamic> _$$_EmailTemplateToJson(_$_EmailTemplate instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_$_FtpAccount _$$_FtpAccountFromJson(Map<String, dynamic> json) =>
-    _$_FtpAccount(
+_$FtpAccountImpl _$$FtpAccountImplFromJson(Map<String, dynamic> json) =>
+    _$FtpAccountImpl(
       host: json['host'] as String?,
       port: json['port'] as int?,
       username: json['username'] as String?,
       password: json['password'] as String?,
     );
 
-Map<String, dynamic> _$$_FtpAccountToJson(_$_FtpAccount instance) =>
+Map<String, dynamic> _$$FtpAccountImplToJson(_$FtpAccountImpl instance) =>
     <String, dynamic>{
       'host': instance.host,
       'port': instance.port,
@@ -2849,8 +2612,8 @@ Map<String, dynamic> _$$_FtpAccountToJson(_$_FtpAccount instance) =>
       'password': instance.password,
     };
 
-_$_LayrzFunction _$$_LayrzFunctionFromJson(Map<String, dynamic> json) =>
-    _$_LayrzFunction(
+_$LayrzFunctionImpl _$$LayrzFunctionImplFromJson(Map<String, dynamic> json) =>
+    _$LayrzFunctionImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       algorithmId: json['algorithmId'] as String?,
@@ -2884,7 +2647,7 @@ _$_LayrzFunction _$$_LayrzFunctionFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_LayrzFunctionToJson(_$_LayrzFunction instance) =>
+Map<String, dynamic> _$$LayrzFunctionImplToJson(_$LayrzFunctionImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2903,8 +2666,314 @@ Map<String, dynamic> _$$_LayrzFunctionToJson(_$_LayrzFunction instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_$_ExternalSource _$$_ExternalSourceFromJson(Map<String, dynamic> json) =>
-    _$_ExternalSource(
+_$RealtimeEndpointImpl _$$RealtimeEndpointImplFromJson(
+        Map<String, dynamic> json) =>
+    _$RealtimeEndpointImpl(
+      host: json['host'] as String?,
+      port: json['port'] as int?,
+    );
+
+Map<String, dynamic> _$$RealtimeEndpointImplToJson(
+        _$RealtimeEndpointImpl instance) =>
+    <String, dynamic>{
+      'host': instance.host,
+      'port': instance.port,
+    };
+
+_$RealtimeVariantEndpointImpl _$$RealtimeVariantEndpointImplFromJson(
+        Map<String, dynamic> json) =>
+    _$RealtimeVariantEndpointImpl(
+      dataTopic: json['dataTopic'] as String?,
+      eventsTopic: json['eventsTopic'] as String?,
+      realtimeTopic: json['realtimeTopic'] as String?,
+      commandTopic: json['commandTopic'] as String?,
+    );
+
+Map<String, dynamic> _$$RealtimeVariantEndpointImplToJson(
+        _$RealtimeVariantEndpointImpl instance) =>
+    <String, dynamic>{
+      'dataTopic': instance.dataTopic,
+      'eventsTopic': instance.eventsTopic,
+      'realtimeTopic': instance.realtimeTopic,
+      'commandTopic': instance.commandTopic,
+    };
+
+_$InboundProtocolImpl _$$InboundProtocolImplFromJson(
+        Map<String, dynamic> json) =>
+    _$InboundProtocolImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      color: const ColorConverter().fromJson(json['color'] as String),
+      isEnabled: json['isEnabled'] as bool,
+      operationMode: const OperationModeConverter()
+          .fromJson(json['operationMode'] as String),
+      realtimeEndpoint: json['realtimeEndpoint'] == null
+          ? null
+          : RealtimeEndpoint.fromJson(
+              json['realtimeEndpoint'] as Map<String, dynamic>),
+      realtimeVariantEndpoint: json['realtimeVariantEndpoint'] == null
+          ? null
+          : RealtimeVariantEndpoint.fromJson(
+              json['realtimeVariantEndpoint'] as Map<String, dynamic>),
+      hasNativeCommands: json['hasNativeCommands'] as bool?,
+      hasSmsCommands: json['hasSmsCommands'] as bool?,
+      hasCommandsResult: json['hasCommandsResult'] as bool?,
+      isFlespi: json['isFlespi'] as bool?,
+      channelId: json['channelId'] as int?,
+      maxPerReceptor: json['maxPerReceptor'] as int?,
+      flespiId: json['flespiId'] as String?,
+      requiredFields: (json['requiredFields'] as List<dynamic>?)
+          ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      isImported: json['isImported'] as bool?,
+      categoriesIds: (json['categoriesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      canFota: json['canFota'] as bool?,
+      models: (json['models'] as List<dynamic>?)
+          ?.map((e) => Model.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      hasAck: json['hasAck'] as bool?,
+      ackTopicFormat: json['ackTopicFormat'] as String?,
+      dynamicIcon: json['dynamicIcon'] == null
+          ? null
+          : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$InboundProtocolImplToJson(
+        _$InboundProtocolImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'color': const ColorConverter().toJson(instance.color),
+      'isEnabled': instance.isEnabled,
+      'operationMode':
+          const OperationModeConverter().toJson(instance.operationMode),
+      'realtimeEndpoint': instance.realtimeEndpoint?.toJson(),
+      'realtimeVariantEndpoint': instance.realtimeVariantEndpoint?.toJson(),
+      'hasNativeCommands': instance.hasNativeCommands,
+      'hasSmsCommands': instance.hasSmsCommands,
+      'hasCommandsResult': instance.hasCommandsResult,
+      'isFlespi': instance.isFlespi,
+      'channelId': instance.channelId,
+      'maxPerReceptor': instance.maxPerReceptor,
+      'flespiId': instance.flespiId,
+      'requiredFields':
+          instance.requiredFields?.map((e) => e.toJson()).toList(),
+      'isImported': instance.isImported,
+      'categoriesIds': instance.categoriesIds,
+      'canFota': instance.canFota,
+      'models': instance.models?.map((e) => e.toJson()).toList(),
+      'hasAck': instance.hasAck,
+      'ackTopicFormat': instance.ackTopicFormat,
+      'dynamicIcon': instance.dynamicIcon?.toJson(),
+    };
+
+_$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
+    _$InboundServiceImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      credentials: json['credentials'] as Map<String, dynamic>?,
+      accountId: json['accountId'] as String?,
+      updateTime:
+          const DurationOrNullConverter().fromJson(json['updateTime'] as num?),
+      protocol: json['protocol'] == null
+          ? null
+          : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
+      protocolId: json['protocolId'] as String?,
+      isEnabled: json['isEnabled'] as bool?,
+      token: json['token'] as String?,
+      structure: json['structure'] == null
+          ? null
+          : InboundStructure.fromJson(
+              json['structure'] as Map<String, dynamic>),
+      access: (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$InboundServiceImplToJson(
+        _$InboundServiceImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'credentials': instance.credentials,
+      'accountId': instance.accountId,
+      'updateTime': const DurationOrNullConverter().toJson(instance.updateTime),
+      'protocol': instance.protocol?.toJson(),
+      'protocolId': instance.protocolId,
+      'isEnabled': instance.isEnabled,
+      'token': instance.token,
+      'structure': instance.structure?.toJson(),
+      'access': instance.access?.map((e) => e.toJson()).toList(),
+    };
+
+_$InboundStructureImpl _$$InboundStructureImplFromJson(
+        Map<String, dynamic> json) =>
+    _$InboundStructureImpl(
+      hasPosition: json['hasPosition'] as bool,
+      position: InboundPositionStructure.fromJson(
+          json['position'] as Map<String, dynamic>),
+      hasPayload: json['hasPayload'] as bool,
+      payload: (json['payload'] as List<dynamic>)
+          .map((e) =>
+              InboundPayloadStructure.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$InboundStructureImplToJson(
+        _$InboundStructureImpl instance) =>
+    <String, dynamic>{
+      'hasPosition': instance.hasPosition,
+      'position': instance.position.toJson(),
+      'hasPayload': instance.hasPayload,
+      'payload': instance.payload.map((e) => e.toJson()).toList(),
+    };
+
+_$InboundPositionStructureImpl _$$InboundPositionStructureImplFromJson(
+        Map<String, dynamic> json) =>
+    _$InboundPositionStructureImpl(
+      latitude: json['latitude'] as bool,
+      longitude: json['longitude'] as bool,
+      altitude: json['altitude'] as bool,
+      speed: json['speed'] as bool,
+      direction: json['direction'] as bool,
+      hdop: json['hdop'] as bool,
+      satellites: json['satellites'] as bool,
+    );
+
+Map<String, dynamic> _$$InboundPositionStructureImplToJson(
+        _$InboundPositionStructureImpl instance) =>
+    <String, dynamic>{
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+      'altitude': instance.altitude,
+      'speed': instance.speed,
+      'direction': instance.direction,
+      'hdop': instance.hdop,
+      'satellites': instance.satellites,
+    };
+
+_$InboundPayloadStructureImpl _$$InboundPayloadStructureImplFromJson(
+        Map<String, dynamic> json) =>
+    _$InboundPayloadStructureImpl(
+      field: json['field'] as String,
+      type: const InboundPayloadStructureTypeConverter()
+          .fromJson(json['type'] as String),
+    );
+
+Map<String, dynamic> _$$InboundPayloadStructureImplToJson(
+        _$InboundPayloadStructureImpl instance) =>
+    <String, dynamic>{
+      'field': instance.field,
+      'type':
+          const InboundPayloadStructureTypeConverter().toJson(instance.type),
+    };
+
+_$OutboundProtocolImpl _$$OutboundProtocolImplFromJson(
+        Map<String, dynamic> json) =>
+    _$OutboundProtocolImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      color: const ColorConverter().fromJson(json['color'] as String),
+      isEnabled: json['isEnabled'] as bool,
+      categoriesIds: (json['categoriesIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      hasFtp: json['hasFtp'] as bool?,
+      isConsumpted: json['isConsumpted'] as bool?,
+      mqttTopic: json['mqttTopic'] as String?,
+      isAsync: json['isAsync'] as bool?,
+      requiredFields: (json['requiredFields'] as List<dynamic>?)
+              ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$OutboundProtocolImplToJson(
+        _$OutboundProtocolImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'color': const ColorConverter().toJson(instance.color),
+      'isEnabled': instance.isEnabled,
+      'categoriesIds': instance.categoriesIds,
+      'hasFtp': instance.hasFtp,
+      'isConsumpted': instance.isConsumpted,
+      'mqttTopic': instance.mqttTopic,
+      'isAsync': instance.isAsync,
+      'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
+    };
+
+_$OutboundServiceImpl _$$OutboundServiceImplFromJson(
+        Map<String, dynamic> json) =>
+    _$OutboundServiceImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      credentials: json['credentials'] as Map<String, dynamic>?,
+      protocol: json['protocol'] == null
+          ? null
+          : OutboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
+      protocolId: json['protocolId'] as String?,
+      isEnabled: json['isEnabled'] as bool?,
+      structure: (json['structure'] as List<dynamic>?)
+          ?.map((e) => OutboundStructure.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      token: json['token'] as String?,
+      assetsIds: (json['assetsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      assets: (json['assets'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      groupsIds: (json['groupsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      groups: (json['groups'] as List<dynamic>?)
+          ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      access: (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$OutboundServiceImplToJson(
+        _$OutboundServiceImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'credentials': instance.credentials,
+      'protocol': instance.protocol?.toJson(),
+      'protocolId': instance.protocolId,
+      'isEnabled': instance.isEnabled,
+      'structure': instance.structure?.map((e) => e.toJson()).toList(),
+      'token': instance.token,
+      'assetsIds': instance.assetsIds,
+      'assets': instance.assets?.map((e) => e.toJson()).toList(),
+      'groupsIds': instance.groupsIds,
+      'groups': instance.groups?.map((e) => e.toJson()).toList(),
+      'access': instance.access?.map((e) => e.toJson()).toList(),
+    };
+
+_$OutboundStructureImpl _$$OutboundStructureImplFromJson(
+        Map<String, dynamic> json) =>
+    _$OutboundStructureImpl(
+      field: json['field'] as String,
+      type: json['type'] as String,
+      value: json['value'] as String,
+    );
+
+Map<String, dynamic> _$$OutboundStructureImplToJson(
+        _$OutboundStructureImpl instance) =>
+    <String, dynamic>{
+      'field': instance.field,
+      'type': instance.type,
+      'value': instance.value,
+    };
+
+_$ExternalSourceImpl _$$ExternalSourceImplFromJson(Map<String, dynamic> json) =>
+    _$ExternalSourceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
@@ -2915,7 +2984,8 @@ _$_ExternalSource _$$_ExternalSourceFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$_ExternalSourceToJson(_$_ExternalSource instance) =>
+Map<String, dynamic> _$$ExternalSourceImplToJson(
+        _$ExternalSourceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2924,8 +2994,9 @@ Map<String, dynamic> _$$_ExternalSourceToJson(_$_ExternalSource instance) =>
       'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
     };
 
-_$_ExternalAccount _$$_ExternalAccountFromJson(Map<String, dynamic> json) =>
-    _$_ExternalAccount(
+_$ExternalAccountImpl _$$ExternalAccountImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ExternalAccountImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       credentials: json['credentials'] as Map<String, dynamic>?,
@@ -2941,7 +3012,8 @@ _$_ExternalAccount _$$_ExternalAccountFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_ExternalAccountToJson(_$_ExternalAccount instance) =>
+Map<String, dynamic> _$$ExternalAccountImplToJson(
+        _$ExternalAccountImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -2952,15 +3024,15 @@ Map<String, dynamic> _$$_ExternalAccountToJson(_$_ExternalAccount instance) =>
       'devices': instance.devices?.map((e) => e.toJson()).toList(),
     };
 
-_$_ExternalUnit _$$_ExternalUnitFromJson(Map<String, dynamic> json) =>
-    _$_ExternalUnit(
+_$ExternalUnitImpl _$$ExternalUnitImplFromJson(Map<String, dynamic> json) =>
+    _$ExternalUnitImpl(
       externalId: json['externalId'] as String?,
       name: json['name'] as String,
       ident: json['ident'] as String,
       additionalFields: json['additionalFields'] as Map<String, dynamic>,
     );
 
-Map<String, dynamic> _$$_ExternalUnitToJson(_$_ExternalUnit instance) =>
+Map<String, dynamic> _$$ExternalUnitImplToJson(_$ExternalUnitImpl instance) =>
     <String, dynamic>{
       'externalId': instance.externalId,
       'name': instance.name,
@@ -2968,31 +3040,36 @@ Map<String, dynamic> _$$_ExternalUnitToJson(_$_ExternalUnit instance) =>
       'additionalFields': instance.additionalFields,
     };
 
-_$_ExternalResource _$$_ExternalResourceFromJson(Map<String, dynamic> json) =>
-    _$_ExternalResource(
+_$ExternalResourceImpl _$$ExternalResourceImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ExternalResourceImpl(
       wialonId: json['wialonId'] as String,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$_ExternalResourceToJson(_$_ExternalResource instance) =>
+Map<String, dynamic> _$$ExternalResourceImplToJson(
+        _$ExternalResourceImpl instance) =>
     <String, dynamic>{
       'wialonId': instance.wialonId,
       'name': instance.name,
     };
 
-_$_ExternalGeofence _$$_ExternalGeofenceFromJson(Map<String, dynamic> json) =>
-    _$_ExternalGeofence(
+_$ExternalGeofenceImpl _$$ExternalGeofenceImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ExternalGeofenceImpl(
       wialonId: json['wialonId'] as String,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$_ExternalGeofenceToJson(_$_ExternalGeofence instance) =>
+Map<String, dynamic> _$$ExternalGeofenceImplToJson(
+        _$ExternalGeofenceImpl instance) =>
     <String, dynamic>{
       'wialonId': instance.wialonId,
       'name': instance.name,
     };
 
-_$_Workspace _$$_WorkspaceFromJson(Map<String, dynamic> json) => _$_Workspace(
+_$WorkspaceImpl _$$WorkspaceImplFromJson(Map<String, dynamic> json) =>
+    _$WorkspaceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       typeApp: const AppInternalIdentifierOrNullConverter()
@@ -3072,7 +3149,7 @@ _$_Workspace _$$_WorkspaceFromJson(Map<String, dynamic> json) => _$_Workspace(
           .toList(),
     );
 
-Map<String, dynamic> _$$_WorkspaceToJson(_$_Workspace instance) =>
+Map<String, dynamic> _$$WorkspaceImplToJson(_$WorkspaceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -3116,23 +3193,24 @@ Map<String, dynamic> _$$_WorkspaceToJson(_$_Workspace instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_$_AnalyticsGridItem _$$_AnalyticsGridItemFromJson(Map<String, dynamic> json) =>
-    _$_AnalyticsGridItem(
+_$AnalyticsGridItemImpl _$$AnalyticsGridItemImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AnalyticsGridItemImpl(
       chartId: json['chartId'] as String?,
       dimensions:
           GridDimension.fromJson(json['dimensions'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_AnalyticsGridItemToJson(
-        _$_AnalyticsGridItem instance) =>
+Map<String, dynamic> _$$AnalyticsGridItemImplToJson(
+        _$AnalyticsGridItemImpl instance) =>
     <String, dynamic>{
       'chartId': instance.chartId,
       'dimensions': instance.dimensions.toJson(),
     };
 
-_$_MapCardAlertConfiguration _$$_MapCardAlertConfigurationFromJson(
+_$MapCardAlertConfigurationImpl _$$MapCardAlertConfigurationImplFromJson(
         Map<String, dynamic> json) =>
-    _$_MapCardAlertConfiguration(
+    _$MapCardAlertConfigurationImpl(
       range: json['range'] == null
           ? MapCardMode.lastDay
           : const MapCardModeConverter().fromJson(json['range'] as String),
@@ -3140,33 +3218,33 @@ _$_MapCardAlertConfiguration _$$_MapCardAlertConfigurationFromJson(
       enabled: json['enabled'] as bool? ?? true,
     );
 
-Map<String, dynamic> _$$_MapCardAlertConfigurationToJson(
-        _$_MapCardAlertConfiguration instance) =>
+Map<String, dynamic> _$$MapCardAlertConfigurationImplToJson(
+        _$MapCardAlertConfigurationImpl instance) =>
     <String, dynamic>{
       'range': const MapCardModeConverter().toJson(instance.range),
       'count': instance.count,
       'enabled': instance.enabled,
     };
 
-_$_MapCardConnectionConfiguration _$$_MapCardConnectionConfigurationFromJson(
-        Map<String, dynamic> json) =>
-    _$_MapCardConnectionConfiguration(
-      indicator: json['indicator'] as bool? ?? true,
-      address: json['address'] as bool? ?? false,
-      time: json['time'] as bool? ?? false,
-    );
+_$MapCardConnectionConfigurationImpl
+    _$$MapCardConnectionConfigurationImplFromJson(Map<String, dynamic> json) =>
+        _$MapCardConnectionConfigurationImpl(
+          indicator: json['indicator'] as bool? ?? true,
+          address: json['address'] as bool? ?? false,
+          time: json['time'] as bool? ?? false,
+        );
 
-Map<String, dynamic> _$$_MapCardConnectionConfigurationToJson(
-        _$_MapCardConnectionConfiguration instance) =>
+Map<String, dynamic> _$$MapCardConnectionConfigurationImplToJson(
+        _$MapCardConnectionConfigurationImpl instance) =>
     <String, dynamic>{
       'indicator': instance.indicator,
       'address': instance.address,
       'time': instance.time,
     };
 
-_$_MapCardSensorsConfiguration _$$_MapCardSensorsConfigurationFromJson(
+_$MapCardSensorsConfigurationImpl _$$MapCardSensorsConfigurationImplFromJson(
         Map<String, dynamic> json) =>
-    _$_MapCardSensorsConfiguration(
+    _$MapCardSensorsConfigurationImpl(
       enabled: json['enabled'] as bool? ?? true,
       mode: json['mode'] == null
           ? MapSensorMode.grid
@@ -3177,16 +3255,16 @@ _$_MapCardSensorsConfiguration _$$_MapCardSensorsConfigurationFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$_MapCardSensorsConfigurationToJson(
-        _$_MapCardSensorsConfiguration instance) =>
+Map<String, dynamic> _$$MapCardSensorsConfigurationImplToJson(
+        _$MapCardSensorsConfigurationImpl instance) =>
     <String, dynamic>{
       'enabled': instance.enabled,
       'mode': const MapSensorModeConverter().toJson(instance.mode),
       'values': instance.values,
     };
 
-_$_MapCardSensors _$$_MapCardSensorsFromJson(Map<String, dynamic> json) =>
-    _$_MapCardSensors(
+_$MapCardSensorsImpl _$$MapCardSensorsImplFromJson(Map<String, dynamic> json) =>
+    _$MapCardSensorsImpl(
       assetId: json['assetId'] as String,
       alerts: MapCardAlertConfiguration.fromJson(
           json['alerts'] as Map<String, dynamic>),
@@ -3196,7 +3274,8 @@ _$_MapCardSensors _$$_MapCardSensorsFromJson(Map<String, dynamic> json) =>
           json['sensors'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_MapCardSensorsToJson(_$_MapCardSensors instance) =>
+Map<String, dynamic> _$$MapCardSensorsImplToJson(
+        _$MapCardSensorsImpl instance) =>
     <String, dynamic>{
       'assetId': instance.assetId,
       'alerts': instance.alerts.toJson(),
@@ -3204,36 +3283,37 @@ Map<String, dynamic> _$$_MapCardSensorsToJson(_$_MapCardSensors instance) =>
       'sensors': instance.sensors.toJson(),
     };
 
-_$_GridDimension _$$_GridDimensionFromJson(Map<String, dynamic> json) =>
-    _$_GridDimension(
+_$GridDimensionImpl _$$GridDimensionImplFromJson(Map<String, dynamic> json) =>
+    _$GridDimensionImpl(
       width: json['width'] as int,
       height: json['height'] as int,
     );
 
-Map<String, dynamic> _$$_GridDimensionToJson(_$_GridDimension instance) =>
+Map<String, dynamic> _$$GridDimensionImplToJson(_$GridDimensionImpl instance) =>
     <String, dynamic>{
       'width': instance.width,
       'height': instance.height,
     };
 
-_$_SensorGridContent _$$_SensorGridContentFromJson(Map<String, dynamic> json) =>
-    _$_SensorGridContent(
+_$SensorGridContentImpl _$$SensorGridContentImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SensorGridContentImpl(
       sensorId: json['sensorId'] as String?,
       dimensions:
           GridDimension.fromJson(json['dimensions'] as Map<String, dynamic>),
       maskEnabled: json['maskEnabled'] as bool? ?? true,
     );
 
-Map<String, dynamic> _$$_SensorGridContentToJson(
-        _$_SensorGridContent instance) =>
+Map<String, dynamic> _$$SensorGridContentImplToJson(
+        _$SensorGridContentImpl instance) =>
     <String, dynamic>{
       'sensorId': instance.sensorId,
       'dimensions': instance.dimensions.toJson(),
       'maskEnabled': instance.maskEnabled,
     };
 
-_$_SensorGridItem _$$_SensorGridItemFromJson(Map<String, dynamic> json) =>
-    _$_SensorGridItem(
+_$SensorGridItemImpl _$$SensorGridItemImplFromJson(Map<String, dynamic> json) =>
+    _$SensorGridItemImpl(
       assetId: json['assetId'] as String?,
       dimensions:
           GridDimension.fromJson(json['dimensions'] as Map<String, dynamic>),
@@ -3245,7 +3325,8 @@ _$_SensorGridItem _$$_SensorGridItemFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_SensorGridItemToJson(_$_SensorGridItem instance) =>
+Map<String, dynamic> _$$SensorGridItemImplToJson(
+        _$SensorGridItemImpl instance) =>
     <String, dynamic>{
       'assetId': instance.assetId,
       'dimensions': instance.dimensions.toJson(),
@@ -3253,8 +3334,8 @@ Map<String, dynamic> _$$_SensorGridItemToJson(_$_SensorGridItem instance) =>
       'sensors': instance.sensors.map((e) => e.toJson()).toList(),
     };
 
-_$_WorkspaceAlert _$$_WorkspaceAlertFromJson(Map<String, dynamic> json) =>
-    _$_WorkspaceAlert(
+_$WorkspaceAlertImpl _$$WorkspaceAlertImplFromJson(Map<String, dynamic> json) =>
+    _$WorkspaceAlertImpl(
       at: const TimestampConverter().fromJson(json['at'] as num),
       assetId: json['assetId'] as String,
       position:
@@ -3262,7 +3343,8 @@ _$_WorkspaceAlert _$$_WorkspaceAlertFromJson(Map<String, dynamic> json) =>
       trigger: Trigger.fromJson(json['trigger'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_WorkspaceAlertToJson(_$_WorkspaceAlert instance) =>
+Map<String, dynamic> _$$WorkspaceAlertImplToJson(
+        _$WorkspaceAlertImpl instance) =>
     <String, dynamic>{
       'at': const TimestampConverter().toJson(instance.at),
       'assetId': instance.assetId,
@@ -3270,9 +3352,9 @@ Map<String, dynamic> _$$_WorkspaceAlertToJson(_$_WorkspaceAlert instance) =>
       'trigger': instance.trigger.toJson(),
     };
 
-_$_WorkspaceTripPoint _$$_WorkspaceTripPointFromJson(
+_$WorkspaceTripPointImpl _$$WorkspaceTripPointImplFromJson(
         Map<String, dynamic> json) =>
-    _$_WorkspaceTripPoint(
+    _$WorkspaceTripPointImpl(
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       speed: (json['speed'] as num?)?.toDouble(),
@@ -3282,8 +3364,8 @@ _$_WorkspaceTripPoint _$$_WorkspaceTripPointFromJson(
           const TimestampConverter().fromJson(json['receivedAt'] as num),
     );
 
-Map<String, dynamic> _$$_WorkspaceTripPointToJson(
-        _$_WorkspaceTripPoint instance) =>
+Map<String, dynamic> _$$WorkspaceTripPointImplToJson(
+        _$WorkspaceTripPointImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
@@ -3293,8 +3375,8 @@ Map<String, dynamic> _$$_WorkspaceTripPointToJson(
       'receivedAt': const TimestampConverter().toJson(instance.receivedAt),
     };
 
-_$_WorkspaceTrip _$$_WorkspaceTripFromJson(Map<String, dynamic> json) =>
-    _$_WorkspaceTrip(
+_$WorkspaceTripImpl _$$WorkspaceTripImplFromJson(Map<String, dynamic> json) =>
+    _$WorkspaceTripImpl(
       assetId: json['assetId'] as String,
       assetName: json['assetName'] as String,
       points: (json['points'] as List<dynamic>?)
@@ -3304,97 +3386,92 @@ _$_WorkspaceTrip _$$_WorkspaceTripFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$_WorkspaceTripToJson(_$_WorkspaceTrip instance) =>
+Map<String, dynamic> _$$WorkspaceTripImplToJson(_$WorkspaceTripImpl instance) =>
     <String, dynamic>{
       'assetId': instance.assetId,
       'assetName': instance.assetName,
       'points': instance.points.map((e) => e.toJson()).toList(),
     };
 
-_$_CaseMonitorCard _$$_CaseMonitorCardFromJson(Map<String, dynamic> json) =>
-    _$_CaseMonitorCard(
+_$CaseMonitorCardImpl _$$CaseMonitorCardImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CaseMonitorCardImpl(
       type:
           const CaseMonitorCardTypeConverter().fromJson(json['type'] as String),
       assetId: json['assetId'] as String?,
     );
 
-Map<String, dynamic> _$$_CaseMonitorCardToJson(_$_CaseMonitorCard instance) =>
+Map<String, dynamic> _$$CaseMonitorCardImplToJson(
+        _$CaseMonitorCardImpl instance) =>
     <String, dynamic>{
       'type': const CaseMonitorCardTypeConverter().toJson(instance.type),
       'assetId': instance.assetId,
     };
 
-_$_VisionProfile _$$_VisionProfileFromJson(Map<String, dynamic> json) =>
-    _$_VisionProfile(
+_$VisionProtocolImpl _$$VisionProtocolImplFromJson(Map<String, dynamic> json) =>
+    _$VisionProtocolImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      variant: const VisionProfileVariantConverter()
-          .fromJson(json['variant'] as String),
-      maskRadius: (json['maskRadius'] as num?)?.toDouble(),
-      threshold: json['threshold'] as int?,
-      maxThValue: json['maxThValue'] as int?,
-      minLineLength: json['minLineLength'] as int?,
-      maxLineGap: json['maxLineGap'] as int?,
-      maxValue: (json['maxValue'] as num?)?.toDouble(),
-      minValue: (json['minValue'] as num?)?.toDouble(),
-      maxAngle: (json['maxAngle'] as num?)?.toDouble(),
-      minAngle: (json['minAngle'] as num?)?.toDouble(),
-      precision: (json['precision'] as num?)?.toDouble(),
-      minRRatio: (json['minRRatio'] as num?)?.toDouble(),
-      maxRRatio: (json['maxRRatio'] as num?)?.toDouble(),
-      centerDisplacement: (json['centerDisplacement'] as num?)?.toDouble(),
-      decimals: json['decimals'] as int?,
-      gaugeShape: const VisionProfileGaugeShapeOrNullConverter()
-          .fromJson(json['gaugeShape'] as String?),
-      gaugeModel: const VisionProfileGaugeModelOrNullConverter()
-          .fromJson(json['gaugeModel'] as String?),
+      color: const ColorConverter().fromJson(json['color'] as String),
+      isEnabled: json['isEnabled'] as bool,
+      requiredFields: (json['requiredFields'] as List<dynamic>?)
+              ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$VisionProtocolImplToJson(
+        _$VisionProtocolImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'color': const ColorConverter().toJson(instance.color),
+      'isEnabled': instance.isEnabled,
+      'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
+    };
+
+_$VisionProfileImpl _$$VisionProfileImplFromJson(Map<String, dynamic> json) =>
+    _$VisionProfileImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      protocolId: json['protocolId'] as String?,
+      protocol: json['protocol'] == null
+          ? null
+          : VisionProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
+      config: json['config'] as Map<String, dynamic>?,
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_VisionProfileToJson(_$_VisionProfile instance) =>
+Map<String, dynamic> _$$VisionProfileImplToJson(_$VisionProfileImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'variant': const VisionProfileVariantConverter().toJson(instance.variant),
-      'maskRadius': instance.maskRadius,
-      'threshold': instance.threshold,
-      'maxThValue': instance.maxThValue,
-      'minLineLength': instance.minLineLength,
-      'maxLineGap': instance.maxLineGap,
-      'maxValue': instance.maxValue,
-      'minValue': instance.minValue,
-      'maxAngle': instance.maxAngle,
-      'minAngle': instance.minAngle,
-      'precision': instance.precision,
-      'minRRatio': instance.minRRatio,
-      'maxRRatio': instance.maxRRatio,
-      'centerDisplacement': instance.centerDisplacement,
-      'decimals': instance.decimals,
-      'gaugeShape': const VisionProfileGaugeShapeOrNullConverter()
-          .toJson(instance.gaugeShape),
-      'gaugeModel': const VisionProfileGaugeModelOrNullConverter()
-          .toJson(instance.gaugeModel),
+      'protocolId': instance.protocolId,
+      'protocol': instance.protocol?.toJson(),
+      'config': instance.config,
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_$_AppAccessibility _$$_AppAccessibilityFromJson(Map<String, dynamic> json) =>
-    _$_AppAccessibility(
+_$AppAccessibilityImpl _$$AppAccessibilityImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AppAccessibilityImpl(
       host: json['host'] as String,
       isDeployed: json['isDeployed'] as bool,
       isSuspended: json['isSuspended'] as bool,
     );
 
-Map<String, dynamic> _$$_AppAccessibilityToJson(_$_AppAccessibility instance) =>
+Map<String, dynamic> _$$AppAccessibilityImplToJson(
+        _$AppAccessibilityImpl instance) =>
     <String, dynamic>{
       'host': instance.host,
       'isDeployed': instance.isDeployed,
       'isSuspended': instance.isSuspended,
     };
 
-_$_AvailableApp _$$_AvailableAppFromJson(Map<String, dynamic> json) =>
-    _$_AvailableApp(
+_$AvailableAppImpl _$$AvailableAppImplFromJson(Map<String, dynamic> json) =>
+    _$AvailableAppImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       appId: json['appId'] as String,
@@ -3425,7 +3502,7 @@ _$_AvailableApp _$$_AvailableAppFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_AvailableAppToJson(_$_AvailableApp instance) =>
+Map<String, dynamic> _$$AvailableAppImplToJson(_$AvailableAppImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -3448,8 +3525,8 @@ Map<String, dynamic> _$$_AvailableAppToJson(_$_AvailableApp instance) =>
           instance.implementations?.map((e) => e.toJson()).toList(),
     };
 
-_$_RegisteredApp _$$_RegisteredAppFromJson(Map<String, dynamic> json) =>
-    _$_RegisteredApp(
+_$RegisteredAppImpl _$$RegisteredAppImplFromJson(Map<String, dynamic> json) =>
+    _$RegisteredAppImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       nickname: json['nickname'] as String,
@@ -3491,7 +3568,7 @@ _$_RegisteredApp _$$_RegisteredAppFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_RegisteredAppToJson(_$_RegisteredApp instance) =>
+Map<String, dynamic> _$$RegisteredAppImplToJson(_$RegisteredAppImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -3514,35 +3591,37 @@ Map<String, dynamic> _$$_RegisteredAppToJson(_$_RegisteredApp instance) =>
           instance.allowedReports?.map((e) => e.toJson()).toList(),
     };
 
-_$_AppThemedAsset _$$_AppThemedAssetFromJson(Map<String, dynamic> json) =>
-    _$_AppThemedAsset(
+_$AppThemedAssetImpl _$$AppThemedAssetImplFromJson(Map<String, dynamic> json) =>
+    _$AppThemedAssetImpl(
       normal: json['normal'] as String,
       white: json['white'] as String,
     );
 
-Map<String, dynamic> _$$_AppThemedAssetToJson(_$_AppThemedAsset instance) =>
+Map<String, dynamic> _$$AppThemedAssetImplToJson(
+        _$AppThemedAssetImpl instance) =>
     <String, dynamic>{
       'normal': instance.normal,
       'white': instance.white,
     };
 
-_$_AppBackgroundDesign _$$_AppBackgroundDesignFromJson(
+_$AppBackgroundDesignImpl _$$AppBackgroundDesignImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AppBackgroundDesign(
+    _$AppBackgroundDesignImpl(
       image: json['image'] as String?,
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       mode: const BackgroundModeConverter().fromJson(json['mode'] as String),
     );
 
-Map<String, dynamic> _$$_AppBackgroundDesignToJson(
-        _$_AppBackgroundDesign instance) =>
+Map<String, dynamic> _$$AppBackgroundDesignImplToJson(
+        _$AppBackgroundDesignImpl instance) =>
     <String, dynamic>{
       'image': instance.image,
       'color': const ColorOrNullConverter().toJson(instance.color),
       'mode': const BackgroundModeConverter().toJson(instance.mode),
     };
 
-_$_AppBuild _$$_AppBuildFromJson(Map<String, dynamic> json) => _$_AppBuild(
+_$AppBuildImpl _$$AppBuildImplFromJson(Map<String, dynamic> json) =>
+    _$AppBuildImpl(
       id: json['id'] as String,
       buildName: json['buildName'] as String,
       buildNumber: json['buildNumber'] as int,
@@ -3550,7 +3629,7 @@ _$_AppBuild _$$_AppBuildFromJson(Map<String, dynamic> json) => _$_AppBuild(
       isNext: json['isNext'] as bool?,
     );
 
-Map<String, dynamic> _$$_AppBuildToJson(_$_AppBuild instance) =>
+Map<String, dynamic> _$$AppBuildImplToJson(_$AppBuildImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'buildName': instance.buildName,
@@ -3559,8 +3638,9 @@ Map<String, dynamic> _$$_AppBuildToJson(_$_AppBuild instance) =>
       'isNext': instance.isNext,
     };
 
-_$_AppThemedColors _$$_AppThemedColorsFromJson(Map<String, dynamic> json) =>
-    _$_AppThemedColors(
+_$AppThemedColorsImpl _$$AppThemedColorsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AppThemedColorsImpl(
       theme: const AppThemeOrNullConverter().fromJson(json['theme'] as String?),
       mainColor:
           const ColorOrNullConverter().fromJson(json['mainColor'] as String?),
@@ -3571,7 +3651,8 @@ _$_AppThemedColors _$$_AppThemedColorsFromJson(Map<String, dynamic> json) =>
       accent: const ColorOrNullConverter().fromJson(json['accent'] as String?),
     );
 
-Map<String, dynamic> _$$_AppThemedColorsToJson(_$_AppThemedColors instance) =>
+Map<String, dynamic> _$$AppThemedColorsImplToJson(
+        _$AppThemedColorsImpl instance) =>
     <String, dynamic>{
       'theme': const AppThemeOrNullConverter().toJson(instance.theme),
       'mainColor': const ColorOrNullConverter().toJson(instance.mainColor),
@@ -3580,8 +3661,9 @@ Map<String, dynamic> _$$_AppThemedColorsToJson(_$_AppThemedColors instance) =>
       'accent': const ColorOrNullConverter().toJson(instance.accent),
     };
 
-_$_LegacyAppDesign _$$_LegacyAppDesignFromJson(Map<String, dynamic> json) =>
-    _$_LegacyAppDesign(
+_$LegacyAppDesignImpl _$$LegacyAppDesignImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LegacyAppDesignImpl(
       colors: AppThemedColors.fromJson(json['colors'] as Map<String, dynamic>),
       favicons:
           AppThemedAsset.fromJson(json['favicons'] as Map<String, dynamic>),
@@ -3603,7 +3685,8 @@ _$_LegacyAppDesign _$$_LegacyAppDesignFromJson(Map<String, dynamic> json) =>
           .fromJson(json['footerFormat'] as String?),
     );
 
-Map<String, dynamic> _$$_LegacyAppDesignToJson(_$_LegacyAppDesign instance) =>
+Map<String, dynamic> _$$LegacyAppDesignImplToJson(
+        _$LegacyAppDesignImpl instance) =>
     <String, dynamic>{
       'colors': instance.colors.toJson(),
       'favicons': instance.favicons.toJson(),
@@ -3617,7 +3700,8 @@ Map<String, dynamic> _$$_LegacyAppDesignToJson(_$_LegacyAppDesign instance) =>
           const FooterFormatOrNullConverter().toJson(instance.footerFormat),
     };
 
-_$_AppDesign _$$_AppDesignFromJson(Map<String, dynamic> json) => _$_AppDesign(
+_$AppDesignImpl _$$AppDesignImplFromJson(Map<String, dynamic> json) =>
+    _$AppDesignImpl(
       colors: AppThemedColors.fromJson(json['colors'] as Map<String, dynamic>),
       favicons:
           AppThemedAsset.fromJson(json['favicons'] as Map<String, dynamic>),
@@ -3630,7 +3714,7 @@ _$_AppDesign _$$_AppDesignFromJson(Map<String, dynamic> json) => _$_AppDesign(
           .fromJson(json['footerFormat'] as String?),
     );
 
-Map<String, dynamic> _$$_AppDesignToJson(_$_AppDesign instance) =>
+Map<String, dynamic> _$$AppDesignImplToJson(_$AppDesignImpl instance) =>
     <String, dynamic>{
       'colors': instance.colors.toJson(),
       'favicons': instance.favicons.toJson(),
@@ -3641,19 +3725,20 @@ Map<String, dynamic> _$$_AppDesignToJson(_$_AppDesign instance) =>
           const FooterFormatOrNullConverter().toJson(instance.footerFormat),
     };
 
-_$_AppFooter _$$_AppFooterFromJson(Map<String, dynamic> json) => _$_AppFooter(
+_$AppFooterImpl _$$AppFooterImplFromJson(Map<String, dynamic> json) =>
+    _$AppFooterImpl(
       mode: const FooterFormatConverter().fromJson(json['mode'] as String),
       custom: json['custom'] as String?,
     );
 
-Map<String, dynamic> _$$_AppFooterToJson(_$_AppFooter instance) =>
+Map<String, dynamic> _$$AppFooterImplToJson(_$AppFooterImpl instance) =>
     <String, dynamic>{
       'mode': const FooterFormatConverter().toJson(instance.mode),
       'custom': instance.custom,
     };
 
-_$_AppInstance _$$_AppInstanceFromJson(Map<String, dynamic> json) =>
-    _$_AppInstance(
+_$AppInstanceImpl _$$AppInstanceImplFromJson(Map<String, dynamic> json) =>
+    _$AppInstanceImpl(
       id: json['id'] as String,
       appId: json['appId'] as String,
       platform:
@@ -3680,7 +3765,7 @@ _$_AppInstance _$$_AppInstanceFromJson(Map<String, dynamic> json) =>
           .fromJson(json['migrationStatus'] as String),
     );
 
-Map<String, dynamic> _$$_AppInstanceToJson(_$_AppInstance instance) =>
+Map<String, dynamic> _$$AppInstanceImplToJson(_$AppInstanceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'appId': instance.appId,
@@ -3697,33 +3782,36 @@ Map<String, dynamic> _$$_AppInstanceToJson(_$_AppInstance instance) =>
           .toJson(instance.migrationStatus),
     };
 
-_$_DnsConfiguration _$$_DnsConfigurationFromJson(Map<String, dynamic> json) =>
-    _$_DnsConfiguration(
+_$DnsConfigurationImpl _$$DnsConfigurationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DnsConfigurationImpl(
       name: json['name'] as String?,
       value: json['value'] as String?,
     );
 
-Map<String, dynamic> _$$_DnsConfigurationToJson(_$_DnsConfiguration instance) =>
+Map<String, dynamic> _$$DnsConfigurationImplToJson(
+        _$DnsConfigurationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'value': instance.value,
     };
 
-_$_AppLegal _$$_AppLegalFromJson(Map<String, dynamic> json) => _$_AppLegal(
+_$AppLegalImpl _$$AppLegalImplFromJson(Map<String, dynamic> json) =>
+    _$AppLegalImpl(
       companyName: json['companyName'] as String,
       companyUrl: json['companyUrl'] as String,
       privacyPolicy: json['privacyPolicy'] as String,
     );
 
-Map<String, dynamic> _$$_AppLegalToJson(_$_AppLegal instance) =>
+Map<String, dynamic> _$$AppLegalImplToJson(_$AppLegalImpl instance) =>
     <String, dynamic>{
       'companyName': instance.companyName,
       'companyUrl': instance.companyUrl,
       'privacyPolicy': instance.privacyPolicy,
     };
 
-_$_AppLoginDesign _$$_AppLoginDesignFromJson(Map<String, dynamic> json) =>
-    _$_AppLoginDesign(
+_$AppLoginDesignImpl _$$AppLoginDesignImplFromJson(Map<String, dynamic> json) =>
+    _$AppLoginDesignImpl(
       layout:
           const LoginLayoutModeConverter().fromJson(json['layout'] as String),
       title: const TitleModeConverter().fromJson(json['title'] as String),
@@ -3731,37 +3819,38 @@ _$_AppLoginDesign _$$_AppLoginDesignFromJson(Map<String, dynamic> json) =>
           json['background'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_AppLoginDesignToJson(_$_AppLoginDesign instance) =>
+Map<String, dynamic> _$$AppLoginDesignImplToJson(
+        _$AppLoginDesignImpl instance) =>
     <String, dynamic>{
       'layout': const LoginLayoutModeConverter().toJson(instance.layout),
       'title': const TitleModeConverter().toJson(instance.title),
       'background': instance.background.toJson(),
     };
 
-_$_LegacyAppLoginDesign _$$_LegacyAppLoginDesignFromJson(
+_$LegacyAppLoginDesignImpl _$$LegacyAppLoginDesignImplFromJson(
         Map<String, dynamic> json) =>
-    _$_LegacyAppLoginDesign(
+    _$LegacyAppLoginDesignImpl(
       mode: const LoginLayoutModeConverter().fromJson(json['mode'] as String),
     );
 
-Map<String, dynamic> _$$_LegacyAppLoginDesignToJson(
-        _$_LegacyAppLoginDesign instance) =>
+Map<String, dynamic> _$$LegacyAppLoginDesignImplToJson(
+        _$LegacyAppLoginDesignImpl instance) =>
     <String, dynamic>{
       'mode': const LoginLayoutModeConverter().toJson(instance.mode),
     };
 
-_$_AppTitleMode _$$_AppTitleModeFromJson(Map<String, dynamic> json) =>
-    _$_AppTitleMode(
+_$AppTitleModeImpl _$$AppTitleModeImplFromJson(Map<String, dynamic> json) =>
+    _$AppTitleModeImpl(
       mode: const TitleModeConverter().fromJson(json['mode'] as String),
     );
 
-Map<String, dynamic> _$$_AppTitleModeToJson(_$_AppTitleMode instance) =>
+Map<String, dynamic> _$$AppTitleModeImplToJson(_$AppTitleModeImpl instance) =>
     <String, dynamic>{
       'mode': const TitleModeConverter().toJson(instance.mode),
     };
 
-_$_AppVersion _$$_AppVersionFromJson(Map<String, dynamic> json) =>
-    _$_AppVersion(
+_$AppVersionImpl _$$AppVersionImplFromJson(Map<String, dynamic> json) =>
+    _$AppVersionImpl(
       id: json['id'] as String,
       app: const AppInternalIdentifierConverter()
           .fromJson(json['app'] as String),
@@ -3774,7 +3863,7 @@ _$_AppVersion _$$_AppVersionFromJson(Map<String, dynamic> json) =>
           const TimestampConverter().fromJson(json['releasedAt'] as num),
     );
 
-Map<String, dynamic> _$$_AppVersionToJson(_$_AppVersion instance) =>
+Map<String, dynamic> _$$AppVersionImplToJson(_$AppVersionImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'app': const AppInternalIdentifierConverter().toJson(instance.app),
@@ -3785,7 +3874,8 @@ Map<String, dynamic> _$$_AppVersionToJson(_$_AppVersion instance) =>
       'releasedAt': const TimestampConverter().toJson(instance.releasedAt),
     };
 
-_$_MapLayer _$$_MapLayerFromJson(Map<String, dynamic> json) => _$_MapLayer(
+_$MapLayerImpl _$$MapLayerImplFromJson(Map<String, dynamic> json) =>
+    _$MapLayerImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       server: json['server'] as String,
@@ -3795,7 +3885,7 @@ _$_MapLayer _$$_MapLayerFromJson(Map<String, dynamic> json) => _$_MapLayer(
           : const MapLayerTypeConverter().fromJson(json['type'] as String),
     );
 
-Map<String, dynamic> _$$_MapLayerToJson(_$_MapLayer instance) =>
+Map<String, dynamic> _$$MapLayerImplToJson(_$MapLayerImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -3804,7 +3894,8 @@ Map<String, dynamic> _$$_MapLayerToJson(_$_MapLayer instance) =>
       'type': const MapLayerTypeConverter().toJson(instance.type),
     };
 
-_$_AtsEntry _$$_AtsEntryFromJson(Map<String, dynamic> json) => _$_AtsEntry(
+_$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>
+    _$AtsEntryImpl(
       id: json['id'] as String,
       assetId: json['assetId'] as String?,
       asset: json['asset'] == null
@@ -3825,7 +3916,7 @@ _$_AtsEntry _$$_AtsEntryFromJson(Map<String, dynamic> json) => _$_AtsEntry(
       isLinked: json['isLinked'] as bool?,
     );
 
-Map<String, dynamic> _$$_AtsEntryToJson(_$_AtsEntry instance) =>
+Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -3840,9 +3931,9 @@ Map<String, dynamic> _$$_AtsEntryToJson(_$_AtsEntry instance) =>
       'isLinked': instance.isLinked,
     };
 
-_$_AtsReceptionProduct _$$_AtsReceptionProductFromJson(
+_$AtsReceptionProductImpl _$$AtsReceptionProductImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsReceptionProduct(
+    _$AtsReceptionProductImpl(
       id: json['id'] as String?,
       assetId: json['assetId'] as String?,
       fuelType: const AtsFuelTypeOrNullConverter()
@@ -3853,8 +3944,8 @@ _$_AtsReceptionProduct _$$_AtsReceptionProductFromJson(
           const TimestampOrNullConverter().fromJson(json['receivedAt'] as num?),
     );
 
-Map<String, dynamic> _$$_AtsReceptionProductToJson(
-        _$_AtsReceptionProduct instance) =>
+Map<String, dynamic> _$$AtsReceptionProductImplToJson(
+        _$AtsReceptionProductImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -3865,24 +3956,25 @@ Map<String, dynamic> _$$_AtsReceptionProductToJson(
           const TimestampOrNullConverter().toJson(instance.receivedAt),
     };
 
-_$_AtsReceptionProductInput _$$_AtsReceptionProductInputFromJson(
+_$AtsReceptionProductInputImpl _$$AtsReceptionProductInputImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsReceptionProductInput(
+    _$AtsReceptionProductInputImpl(
       fuelAnp: json['fuelAnp'] as String?,
       tanksImages: (json['tanksImages'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
     );
 
-Map<String, dynamic> _$$_AtsReceptionProductInputToJson(
-        _$_AtsReceptionProductInput instance) =>
+Map<String, dynamic> _$$AtsReceptionProductInputImplToJson(
+        _$AtsReceptionProductInputImpl instance) =>
     <String, dynamic>{
       'fuelAnp': instance.fuelAnp,
       'tanksImages': instance.tanksImages,
     };
 
-_$_AtsReceptionInput _$$_AtsReceptionInputFromJson(Map<String, dynamic> json) =>
-    _$_AtsReceptionInput(
+_$AtsReceptionInputImpl _$$AtsReceptionInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsReceptionInputImpl(
       id: json['id'] as String?,
       orderId: json['orderId'] as int?,
       products: (json['products'] as List<dynamic>?)
@@ -3895,8 +3987,8 @@ _$_AtsReceptionInput _$$_AtsReceptionInputFromJson(Map<String, dynamic> json) =>
       app: const AtsFromAppOrNullConverter().fromJson(json['app'] as String?),
     );
 
-Map<String, dynamic> _$$_AtsReceptionInputToJson(
-        _$_AtsReceptionInput instance) =>
+Map<String, dynamic> _$$AtsReceptionInputImplToJson(
+        _$AtsReceptionInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'orderId': instance.orderId,
@@ -3907,9 +3999,9 @@ Map<String, dynamic> _$$_AtsReceptionInputToJson(
       'app': const AtsFromAppOrNullConverter().toJson(instance.app),
     };
 
-_$_AtsAuthenticationIdentifier _$$_AtsAuthenticationIdentifierFromJson(
+_$AtsAuthenticationIdentifierImpl _$$AtsAuthenticationIdentifierImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsAuthenticationIdentifier(
+    _$AtsAuthenticationIdentifierImpl(
       id: json['id'] as String?,
       category: const AtsAuthenticationCategoryOrNullConverter()
           .fromJson(json['category'] as String?),
@@ -3921,8 +4013,8 @@ _$_AtsAuthenticationIdentifier _$$_AtsAuthenticationIdentifierFromJson(
       nfcIdentifier: json['nfcIdentifier'] as String?,
     );
 
-Map<String, dynamic> _$$_AtsAuthenticationIdentifierToJson(
-        _$_AtsAuthenticationIdentifier instance) =>
+Map<String, dynamic> _$$AtsAuthenticationIdentifierImplToJson(
+        _$AtsAuthenticationIdentifierImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'category': const AtsAuthenticationCategoryOrNullConverter()
@@ -3932,9 +4024,9 @@ Map<String, dynamic> _$$_AtsAuthenticationIdentifierToJson(
       'nfcIdentifier': instance.nfcIdentifier,
     };
 
-_$_AtsAuthenticationCard _$$_AtsAuthenticationCardFromJson(
+_$AtsAuthenticationCardImpl _$$AtsAuthenticationCardImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsAuthenticationCard(
+    _$AtsAuthenticationCardImpl(
       id: json['id'] as String,
       number: json['number'] as int,
       externalIdentifier: json['externalIdentifier'] as int,
@@ -3955,8 +4047,8 @@ _$_AtsAuthenticationCard _$$_AtsAuthenticationCardFromJson(
           const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
     );
 
-Map<String, dynamic> _$$_AtsAuthenticationCardToJson(
-        _$_AtsAuthenticationCard instance) =>
+Map<String, dynamic> _$$AtsAuthenticationCardImplToJson(
+        _$AtsAuthenticationCardImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'number': instance.number,
@@ -3970,9 +4062,9 @@ Map<String, dynamic> _$$_AtsAuthenticationCardToJson(
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
     };
 
-_$_AtsHistoryAuthenticationCard _$$_AtsHistoryAuthenticationCardFromJson(
+_$AtsHistoryAuthenticationCardImpl _$$AtsHistoryAuthenticationCardImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsHistoryAuthenticationCard(
+    _$AtsHistoryAuthenticationCardImpl(
       id: json['id'] as String,
       operation: const AtsHistoryAuthenticationCardOperationConverter()
           .fromJson(json['operation'] as String),
@@ -3986,8 +4078,8 @@ _$_AtsHistoryAuthenticationCard _$$_AtsHistoryAuthenticationCardFromJson(
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
     );
 
-Map<String, dynamic> _$$_AtsHistoryAuthenticationCardToJson(
-        _$_AtsHistoryAuthenticationCard instance) =>
+Map<String, dynamic> _$$AtsHistoryAuthenticationCardImplToJson(
+        _$AtsHistoryAuthenticationCardImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'operation': const AtsHistoryAuthenticationCardOperationConverter()
@@ -3998,9 +4090,9 @@ Map<String, dynamic> _$$_AtsHistoryAuthenticationCardToJson(
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
     };
 
-_$_AtsFeedbackMessege _$$_AtsFeedbackMessegeFromJson(
+_$AtsFeedbackMessegeImpl _$$AtsFeedbackMessegeImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsFeedbackMessege(
+    _$AtsFeedbackMessegeImpl(
       id: json['id'] as String?,
       content: json['content'] as String?,
       creator: json['creator'] == null
@@ -4015,8 +4107,8 @@ _$_AtsFeedbackMessege _$$_AtsFeedbackMessegeFromJson(
       isRead: json['isRead'] as bool?,
     );
 
-Map<String, dynamic> _$$_AtsFeedbackMessegeToJson(
-        _$_AtsFeedbackMessege instance) =>
+Map<String, dynamic> _$$AtsFeedbackMessegeImplToJson(
+        _$AtsFeedbackMessegeImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'content': instance.content,
@@ -4027,7 +4119,8 @@ Map<String, dynamic> _$$_AtsFeedbackMessegeToJson(
       'isRead': instance.isRead,
     };
 
-_$_AtsEvent _$$_AtsEventFromJson(Map<String, dynamic> json) => _$_AtsEvent(
+_$AtsEventImpl _$$AtsEventImplFromJson(Map<String, dynamic> json) =>
+    _$AtsEventImpl(
       id: json['id'] as String?,
       operation: json['operation'] == null
           ? null
@@ -4057,7 +4150,7 @@ _$_AtsEvent _$$_AtsEventFromJson(Map<String, dynamic> json) => _$_AtsEvent(
       comment: json['comment'] as String?,
     );
 
-Map<String, dynamic> _$$_AtsEventToJson(_$_AtsEvent instance) =>
+Map<String, dynamic> _$$AtsEventImplToJson(_$AtsEventImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'operation': instance.operation?.toJson(),
@@ -4075,8 +4168,8 @@ Map<String, dynamic> _$$_AtsEventToJson(_$_AtsEvent instance) =>
       'comment': instance.comment,
     };
 
-_$_AtsNsAddress _$$_AtsNsAddressFromJson(Map<String, dynamic> json) =>
-    _$_AtsNsAddress(
+_$AtsNsAddressImpl _$$AtsNsAddressImplFromJson(Map<String, dynamic> json) =>
+    _$AtsNsAddressImpl(
       address: json['address'] as String,
       number: json['number'] as String,
       district: json['district'] as String,
@@ -4085,7 +4178,7 @@ _$_AtsNsAddress _$$_AtsNsAddressFromJson(Map<String, dynamic> json) =>
       cityName: json['cityName'] as String,
     );
 
-Map<String, dynamic> _$$_AtsNsAddressToJson(_$_AtsNsAddress instance) =>
+Map<String, dynamic> _$$AtsNsAddressImplToJson(_$AtsNsAddressImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
       'number': instance.number,
@@ -4095,8 +4188,8 @@ Map<String, dynamic> _$$_AtsNsAddressToJson(_$_AtsNsAddress instance) =>
       'cityName': instance.cityName,
     };
 
-_$_AtsNsLicense _$$_AtsNsLicenseFromJson(Map<String, dynamic> json) =>
-    _$_AtsNsLicense(
+_$AtsNsLicenseImpl _$$AtsNsLicenseImplFromJson(Map<String, dynamic> json) =>
+    _$AtsNsLicenseImpl(
       id: json['id'] as String,
       status: const AtsNsStatusConverter().fromJson(json['status'] as String),
       receive90Days: json['receive90Days'] as bool?,
@@ -4122,7 +4215,7 @@ _$_AtsNsLicense _$$_AtsNsLicenseFromJson(Map<String, dynamic> json) =>
           .fromJson(json['expirationDateUnix'] as num?),
     );
 
-Map<String, dynamic> _$$_AtsNsLicenseToJson(_$_AtsNsLicense instance) =>
+Map<String, dynamic> _$$AtsNsLicenseImplToJson(_$AtsNsLicenseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'status': const AtsNsStatusConverter().toJson(instance.status),
@@ -4143,9 +4236,9 @@ Map<String, dynamic> _$$_AtsNsLicenseToJson(_$_AtsNsLicense instance) =>
           const TimestampOrNullConverter().toJson(instance.expirationDate),
     };
 
-_$_AtsTransportInformation _$$_AtsTransportInformationFromJson(
+_$AtsTransportInformationImpl _$$AtsTransportInformationImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsTransportInformation(
+    _$AtsTransportInformationImpl(
       cnpj: json['cnpj'] as String?,
       name: json['name'] as String?,
       address: json['address'] as String?,
@@ -4157,8 +4250,8 @@ _$_AtsTransportInformation _$$_AtsTransportInformationFromJson(
       vehicleUf: json['vehicleUf'] as String?,
     );
 
-Map<String, dynamic> _$$_AtsTransportInformationToJson(
-        _$_AtsTransportInformation instance) =>
+Map<String, dynamic> _$$AtsTransportInformationImplToJson(
+        _$AtsTransportInformationImpl instance) =>
     <String, dynamic>{
       'cnpj': instance.cnpj,
       'name': instance.name,
@@ -4171,15 +4264,17 @@ Map<String, dynamic> _$$_AtsTransportInformationToJson(
       'vehicleUf': instance.vehicleUf,
     };
 
-_$_AtsCommandResult _$$_AtsCommandResultFromJson(Map<String, dynamic> json) =>
-    _$_AtsCommandResult(
+_$AtsCommandResultImpl _$$AtsCommandResultImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsCommandResultImpl(
       request: json['request'] as String?,
       response: json['response'] as String?,
       executedAt:
           const TimestampOrNullConverter().fromJson(json['executedAt'] as num?),
     );
 
-Map<String, dynamic> _$$_AtsCommandResultToJson(_$_AtsCommandResult instance) =>
+Map<String, dynamic> _$$AtsCommandResultImplToJson(
+        _$AtsCommandResultImpl instance) =>
     <String, dynamic>{
       'request': instance.request,
       'response': instance.response,
@@ -4187,25 +4282,25 @@ Map<String, dynamic> _$$_AtsCommandResultToJson(_$_AtsCommandResult instance) =>
           const TimestampOrNullConverter().toJson(instance.executedAt),
     };
 
-_$_AtsCompanyInformation _$$_AtsCompanyInformationFromJson(
+_$AtsCompanyInformationImpl _$$AtsCompanyInformationImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsCompanyInformation(
+    _$AtsCompanyInformationImpl(
       name: json['name'] as String?,
       cnpj: json['cnpj'] as String?,
       address: json['address'] as String?,
     );
 
-Map<String, dynamic> _$$_AtsCompanyInformationToJson(
-        _$_AtsCompanyInformation instance) =>
+Map<String, dynamic> _$$AtsCompanyInformationImplToJson(
+        _$AtsCompanyInformationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'cnpj': instance.cnpj,
       'address': instance.address,
     };
 
-_$_AtsProductInformation _$$_AtsProductInformationFromJson(
+_$AtsProductInformationImpl _$$AtsProductInformationImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsProductInformation(
+    _$AtsProductInformationImpl(
       ncm: json['ncm'] as String?,
       name: json['name'] as String?,
       measureUnit: json['measureUnit'] as String?,
@@ -4215,8 +4310,8 @@ _$_AtsProductInformation _$$_AtsProductInformationFromJson(
       subcategory: json['subcategory'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$_AtsProductInformationToJson(
-        _$_AtsProductInformation instance) =>
+Map<String, dynamic> _$$AtsProductInformationImplToJson(
+        _$AtsProductInformationImpl instance) =>
     <String, dynamic>{
       'ncm': instance.ncm,
       'name': instance.name,
@@ -4227,8 +4322,9 @@ Map<String, dynamic> _$$_AtsProductInformationToJson(
       'subcategory': instance.subcategory,
     };
 
-_$_AtsPurchaseOrder _$$_AtsPurchaseOrderFromJson(Map<String, dynamic> json) =>
-    _$_AtsPurchaseOrder(
+_$AtsPurchaseOrderImpl _$$AtsPurchaseOrderImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsPurchaseOrderImpl(
       id: json['id'] as String?,
       ownerId: json['ownerId'] as String?,
       orderId: json['orderId'] as String?,
@@ -4263,7 +4359,8 @@ _$_AtsPurchaseOrder _$$_AtsPurchaseOrderFromJson(Map<String, dynamic> json) =>
               json['transportInformation'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_AtsPurchaseOrderToJson(_$_AtsPurchaseOrder instance) =>
+Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
+        _$AtsPurchaseOrderImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'ownerId': instance.ownerId,
@@ -4284,22 +4381,24 @@ Map<String, dynamic> _$$_AtsPurchaseOrderToJson(_$_AtsPurchaseOrder instance) =>
       'transportInformation': instance.transportInformation?.toJson(),
     };
 
-_$_AtsPurchaseTotal _$$_AtsPurchaseTotalFromJson(Map<String, dynamic> json) =>
-    _$_AtsPurchaseTotal(
+_$AtsPurchaseTotalImpl _$$AtsPurchaseTotalImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsPurchaseTotalImpl(
       subtotal: (json['subtotal'] as num?)?.toDouble(),
       discountValue: (json['discountValue'] as num?)?.toDouble(),
       total: (json['total'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$_AtsPurchaseTotalToJson(_$_AtsPurchaseTotal instance) =>
+Map<String, dynamic> _$$AtsPurchaseTotalImplToJson(
+        _$AtsPurchaseTotalImpl instance) =>
     <String, dynamic>{
       'subtotal': instance.subtotal,
       'discountValue': instance.discountValue,
       'total': instance.total,
     };
 
-_$_AtsReception _$$_AtsReceptionFromJson(Map<String, dynamic> json) =>
-    _$_AtsReception(
+_$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
+    _$AtsReceptionImpl(
       id: json['id'] as String,
       orderId: json['orderId'] as int?,
       order: json['order'] == null
@@ -4315,7 +4414,7 @@ _$_AtsReception _$$_AtsReceptionFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_AtsReceptionToJson(_$_AtsReception instance) =>
+Map<String, dynamic> _$$AtsReceptionImplToJson(_$AtsReceptionImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'orderId': instance.orderId,
@@ -4325,33 +4424,34 @@ Map<String, dynamic> _$$_AtsReceptionToJson(_$_AtsReception instance) =>
       'products': instance.products?.map((e) => e.toJson()).toList(),
     };
 
-_$_AtsEntryUnloadInput _$$_AtsEntryUnloadInputFromJson(
+_$AtsEntryUnloadInputImpl _$$AtsEntryUnloadInputImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsEntryUnloadInput(
+    _$AtsEntryUnloadInputImpl(
       id: json['id'] as String?,
       fromAssetId: json['fromAssetId'] as String?,
     );
 
-Map<String, dynamic> _$$_AtsEntryUnloadInputToJson(
-        _$_AtsEntryUnloadInput instance) =>
+Map<String, dynamic> _$$AtsEntryUnloadInputImplToJson(
+        _$AtsEntryUnloadInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'fromAssetId': instance.fromAssetId,
     };
 
-_$_AtsExitStatus _$$_AtsExitStatusFromJson(Map<String, dynamic> json) =>
-    _$_AtsExitStatus(
+_$AtsExitStatusImpl _$$AtsExitStatusImplFromJson(Map<String, dynamic> json) =>
+    _$AtsExitStatusImpl(
       date: const TimestampOrNullConverter().fromJson(json['date'] as num?),
       status: json['status'] as bool?,
     );
 
-Map<String, dynamic> _$$_AtsExitStatusToJson(_$_AtsExitStatus instance) =>
+Map<String, dynamic> _$$AtsExitStatusImplToJson(_$AtsExitStatusImpl instance) =>
     <String, dynamic>{
       'date': const TimestampOrNullConverter().toJson(instance.date),
       'status': instance.status,
     };
 
-_$_AtsExit _$$_AtsExitFromJson(Map<String, dynamic> json) => _$_AtsExit(
+_$AtsExitImpl _$$AtsExitImplFromJson(Map<String, dynamic> json) =>
+    _$AtsExitImpl(
       id: json['id'] as String,
       fromAssetId: json['fromAssetId'] as String,
       fromAsset: json['fromAsset'] == null
@@ -4377,7 +4477,7 @@ _$_AtsExit _$$_AtsExitFromJson(Map<String, dynamic> json) => _$_AtsExit(
       finalFluxometer: (json['finalFluxometer'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$$_AtsExitToJson(_$_AtsExit instance) =>
+Map<String, dynamic> _$$AtsExitImplToJson(_$AtsExitImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'fromAssetId': instance.fromAssetId,
@@ -4397,8 +4497,9 @@ Map<String, dynamic> _$$_AtsExitToJson(_$_AtsExit instance) =>
       'finalFluxometer': instance.finalFluxometer,
     };
 
-_$_AtsPossibleExit _$$_AtsPossibleExitFromJson(Map<String, dynamic> json) =>
-    _$_AtsPossibleExit(
+_$AtsPossibleExitImpl _$$AtsPossibleExitImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsPossibleExitImpl(
       id: json['id'] as String?,
       fromAssetId: json['fromAssetId'] as String?,
       fromAsset: json['fromAsset'] == null
@@ -4421,7 +4522,8 @@ _$_AtsPossibleExit _$$_AtsPossibleExitFromJson(Map<String, dynamic> json) =>
       isValidated: json['isValidated'] as bool?,
     );
 
-Map<String, dynamic> _$$_AtsPossibleExitToJson(_$_AtsPossibleExit instance) =>
+Map<String, dynamic> _$$AtsPossibleExitImplToJson(
+        _$AtsPossibleExitImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'fromAssetId': instance.fromAssetId,
@@ -4438,9 +4540,9 @@ Map<String, dynamic> _$$_AtsPossibleExitToJson(_$_AtsPossibleExit instance) =>
       'isValidated': instance.isValidated,
     };
 
-_$_AtsExecuteExitInput _$$_AtsExecuteExitInputFromJson(
+_$AtsExecuteExitInputImpl _$$AtsExecuteExitInputImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsExecuteExitInput(
+    _$AtsExecuteExitInputImpl(
       fromAssetId: json['fromAssetId'] as String?,
       sensorId: json['sensorId'] as String?,
       presetValue: json['presetValue'] as int?,
@@ -4450,8 +4552,8 @@ _$_AtsExecuteExitInput _$$_AtsExecuteExitInputFromJson(
           .fromJson(json['fromApp'] as String?),
     );
 
-Map<String, dynamic> _$$_AtsExecuteExitInputToJson(
-        _$_AtsExecuteExitInput instance) =>
+Map<String, dynamic> _$$AtsExecuteExitInputImplToJson(
+        _$AtsExecuteExitInputImpl instance) =>
     <String, dynamic>{
       'fromAssetId': instance.fromAssetId,
       'sensorId': instance.sensorId,
@@ -4461,9 +4563,9 @@ Map<String, dynamic> _$$_AtsExecuteExitInputToJson(
       'fromApp': const AtsFromAppOrNullConverter().toJson(instance.fromApp),
     };
 
-_$_AtsExecuteExitHistory _$$_AtsExecuteExitHistoryFromJson(
+_$AtsExecuteExitHistoryImpl _$$AtsExecuteExitHistoryImplFromJson(
         Map<String, dynamic> json) =>
-    _$_AtsExecuteExitHistory(
+    _$AtsExecuteExitHistoryImpl(
       id: json['id'] as String?,
       generatedBy: json['generatedBy'] as String?,
       fromAsset: json['fromAsset'] as String?,
@@ -4475,8 +4577,8 @@ _$_AtsExecuteExitHistory _$$_AtsExecuteExitHistoryFromJson(
           .fromJson(json['status'] as String?),
     );
 
-Map<String, dynamic> _$$_AtsExecuteExitHistoryToJson(
-        _$_AtsExecuteExitHistory instance) =>
+Map<String, dynamic> _$$AtsExecuteExitHistoryImplToJson(
+        _$AtsExecuteExitHistoryImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'generatedBy': instance.generatedBy,
@@ -4488,8 +4590,9 @@ Map<String, dynamic> _$$_AtsExecuteExitHistoryToJson(
           const AtsExitExecuteStatusOrNullConverter().toJson(instance.status),
     };
 
-_$_BrickhouseAlert _$$_BrickhouseAlertFromJson(Map<String, dynamic> json) =>
-    _$_BrickhouseAlert(
+_$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BrickhouseAlertImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       type:
@@ -4537,7 +4640,8 @@ _$_BrickhouseAlert _$$_BrickhouseAlertFromJson(Map<String, dynamic> json) =>
       isMuted: json['isMuted'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_BrickhouseAlertToJson(_$_BrickhouseAlert instance) =>
+Map<String, dynamic> _$$BrickhouseAlertImplToJson(
+        _$BrickhouseAlertImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -4573,9 +4677,9 @@ Map<String, dynamic> _$$_BrickhouseAlertToJson(_$_BrickhouseAlert instance) =>
       'isMuted': instance.isMuted,
     };
 
-_$_BrickhouseAlertInput _$$_BrickhouseAlertInputFromJson(
+_$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
         Map<String, dynamic> json) =>
-    _$_BrickhouseAlertInput(
+    _$BrickhouseAlertInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String,
       type:
@@ -4633,8 +4737,8 @@ _$_BrickhouseAlertInput _$$_BrickhouseAlertInputFromJson(
       isMuted: json['isMuted'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_BrickhouseAlertInputToJson(
-        _$_BrickhouseAlertInput instance) =>
+Map<String, dynamic> _$$BrickhouseAlertInputImplToJson(
+        _$BrickhouseAlertInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -4669,9 +4773,9 @@ Map<String, dynamic> _$$_BrickhouseAlertInputToJson(
       'isMuted': instance.isMuted,
     };
 
-_$_BrickHouseWorkspaceInput _$$_BrickHouseWorkspaceInputFromJson(
+_$BrickHouseWorkspaceInputImpl _$$BrickHouseWorkspaceInputImplFromJson(
         Map<String, dynamic> json) =>
-    _$_BrickHouseWorkspaceInput(
+    _$BrickHouseWorkspaceInputImpl(
       id: json['id'] as String?,
       appId: json['appId'] as String,
       name: json['name'] as String,
@@ -4688,8 +4792,8 @@ _$_BrickHouseWorkspaceInput _$$_BrickHouseWorkspaceInputFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$_BrickHouseWorkspaceInputToJson(
-        _$_BrickHouseWorkspaceInput instance) =>
+Map<String, dynamic> _$$BrickHouseWorkspaceInputImplToJson(
+        _$BrickHouseWorkspaceInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'appId': instance.appId,
@@ -4702,8 +4806,9 @@ Map<String, dynamic> _$$_BrickHouseWorkspaceInputToJson(
       'assetsIds': instance.assetsIds,
     };
 
-_$_ConciergeFormPage _$$_ConciergeFormPageFromJson(Map<String, dynamic> json) =>
-    _$_ConciergeFormPage(
+_$ConciergeFormPageImpl _$$ConciergeFormPageImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ConciergeFormPageImpl(
       title: json['title'] as String,
       blocks: (json['blocks'] as List<dynamic>?)
               ?.map(
@@ -4712,16 +4817,16 @@ _$_ConciergeFormPage _$$_ConciergeFormPageFromJson(Map<String, dynamic> json) =>
           const <ConciergeFormBlock>[],
     );
 
-Map<String, dynamic> _$$_ConciergeFormPageToJson(
-        _$_ConciergeFormPage instance) =>
+Map<String, dynamic> _$$ConciergeFormPageImplToJson(
+        _$ConciergeFormPageImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'blocks': instance.blocks.map((e) => e.toJson()).toList(),
     };
 
-_$_ConciergeFormBlock _$$_ConciergeFormBlockFromJson(
+_$ConciergeFormBlockImpl _$$ConciergeFormBlockImplFromJson(
         Map<String, dynamic> json) =>
-    _$_ConciergeFormBlock(
+    _$ConciergeFormBlockImpl(
       blockType: const ConciergeFormBlockTypeConverter()
           .fromJson(json['blockType'] as String),
       name: json['name'] as String,
@@ -4735,8 +4840,8 @@ _$_ConciergeFormBlock _$$_ConciergeFormBlockFromJson(
               json['showWhen'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ConciergeFormBlockToJson(
-        _$_ConciergeFormBlock instance) =>
+Map<String, dynamic> _$$ConciergeFormBlockImplToJson(
+        _$ConciergeFormBlockImpl instance) =>
     <String, dynamic>{
       'blockType':
           const ConciergeFormBlockTypeConverter().toJson(instance.blockType),
@@ -4745,22 +4850,22 @@ Map<String, dynamic> _$$_ConciergeFormBlockToJson(
       'showWhen': instance.showWhen?.toJson(),
     };
 
-_$_ConciergeFormBlockConfiguration _$$_ConciergeFormBlockConfigurationFromJson(
-        Map<String, dynamic> json) =>
-    _$_ConciergeFormBlockConfiguration(
-      allowEmpty: json['allowEmpty'] as bool,
-      isInt: json['isInt'] as bool?,
-      isMultiple: json['isMultiple'] as bool?,
-      max: (json['max'] as num?)?.toDouble(),
-      min: (json['min'] as num?)?.toDouble(),
-      choices: (json['choices'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const <String>[],
-    );
+_$ConciergeFormBlockConfigurationImpl
+    _$$ConciergeFormBlockConfigurationImplFromJson(Map<String, dynamic> json) =>
+        _$ConciergeFormBlockConfigurationImpl(
+          allowEmpty: json['allowEmpty'] as bool,
+          isInt: json['isInt'] as bool?,
+          isMultiple: json['isMultiple'] as bool?,
+          max: (json['max'] as num?)?.toDouble(),
+          min: (json['min'] as num?)?.toDouble(),
+          choices: (json['choices'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const <String>[],
+        );
 
-Map<String, dynamic> _$$_ConciergeFormBlockConfigurationToJson(
-        _$_ConciergeFormBlockConfiguration instance) =>
+Map<String, dynamic> _$$ConciergeFormBlockConfigurationImplToJson(
+        _$ConciergeFormBlockConfigurationImpl instance) =>
     <String, dynamic>{
       'allowEmpty': instance.allowEmpty,
       'isInt': instance.isInt,
@@ -4770,9 +4875,9 @@ Map<String, dynamic> _$$_ConciergeFormBlockConfigurationToJson(
       'choices': instance.choices,
     };
 
-_$_ConciergeFormBlockValidator _$$_ConciergeFormBlockValidatorFromJson(
+_$ConciergeFormBlockValidatorImpl _$$ConciergeFormBlockValidatorImplFromJson(
         Map<String, dynamic> json) =>
-    _$_ConciergeFormBlockValidator(
+    _$ConciergeFormBlockValidatorImpl(
       blockId: json['blockId'] as int?,
       max: (json['max'] as num?)?.toDouble(),
       min: (json['min'] as num?)?.toDouble(),
@@ -4784,8 +4889,8 @@ _$_ConciergeFormBlockValidator _$$_ConciergeFormBlockValidatorFromJson(
               .fromJson(json['validatorOperator'] as String?),
     );
 
-Map<String, dynamic> _$$_ConciergeFormBlockValidatorToJson(
-        _$_ConciergeFormBlockValidator instance) =>
+Map<String, dynamic> _$$ConciergeFormBlockValidatorImplToJson(
+        _$ConciergeFormBlockValidatorImpl instance) =>
     <String, dynamic>{
       'blockId': instance.blockId,
       'max': instance.max,
@@ -4798,9 +4903,9 @@ Map<String, dynamic> _$$_ConciergeFormBlockValidatorToJson(
               .toJson(instance.validatorOperator),
     };
 
-_$_MonitorRealWaypoint _$$_MonitorRealWaypointFromJson(
+_$MonitorRealWaypointImpl _$$MonitorRealWaypointImplFromJson(
         Map<String, dynamic> json) =>
-    _$_MonitorRealWaypoint(
+    _$MonitorRealWaypointImpl(
       activationId: json['activationId'] as String,
       geofenceId: json['geofenceId'] as String,
       sequenceReal: json['sequenceReal'] as int?,
@@ -4810,8 +4915,8 @@ _$_MonitorRealWaypoint _$$_MonitorRealWaypointFromJson(
       endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
     );
 
-Map<String, dynamic> _$$_MonitorRealWaypointToJson(
-        _$_MonitorRealWaypoint instance) =>
+Map<String, dynamic> _$$MonitorRealWaypointImplToJson(
+        _$MonitorRealWaypointImpl instance) =>
     <String, dynamic>{
       'activationId': instance.activationId,
       'geofenceId': instance.geofenceId,
@@ -4821,9 +4926,9 @@ Map<String, dynamic> _$$_MonitorRealWaypointToJson(
       'endAt': const TimestampOrNullConverter().toJson(instance.endAt),
     };
 
-_$_MonitorActiveCheckpoint _$$_MonitorActiveCheckpointFromJson(
+_$MonitorActiveCheckpointImpl _$$MonitorActiveCheckpointImplFromJson(
         Map<String, dynamic> json) =>
-    _$_MonitorActiveCheckpoint(
+    _$MonitorActiveCheckpointImpl(
       id: json['id'] as String,
       state: const MonitorActiveCheckpointStateConverter()
           .fromJson(json['state'] as String),
@@ -4844,8 +4949,8 @@ _$_MonitorActiveCheckpoint _$$_MonitorActiveCheckpointFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$_MonitorActiveCheckpointToJson(
-        _$_MonitorActiveCheckpoint instance) =>
+Map<String, dynamic> _$$MonitorActiveCheckpointImplToJson(
+        _$MonitorActiveCheckpointImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'state':
@@ -4860,9 +4965,9 @@ Map<String, dynamic> _$$_MonitorActiveCheckpointToJson(
       'waypoints': instance.waypoints.map((e) => e.toJson()).toList(),
     };
 
-_$_MappitRouteLinkingHistory _$$_MappitRouteLinkingHistoryFromJson(
+_$MappitRouteLinkingHistoryImpl _$$MappitRouteLinkingHistoryImplFromJson(
         Map<String, dynamic> json) =>
-    _$_MappitRouteLinkingHistory(
+    _$MappitRouteLinkingHistoryImpl(
       currentSeller: json['currentSeller'] == null
           ? null
           : Asset.fromJson(json['currentSeller'] as Map<String, dynamic>),
@@ -4873,8 +4978,8 @@ _$_MappitRouteLinkingHistory _$$_MappitRouteLinkingHistoryFromJson(
           const TimestampConverter().fromJson(json['performedAt'] as num),
     );
 
-Map<String, dynamic> _$$_MappitRouteLinkingHistoryToJson(
-        _$_MappitRouteLinkingHistory instance) =>
+Map<String, dynamic> _$$MappitRouteLinkingHistoryImplToJson(
+        _$MappitRouteLinkingHistoryImpl instance) =>
     <String, dynamic>{
       'currentSeller': instance.currentSeller?.toJson(),
       'currentSellerId': instance.currentSellerId,
@@ -4883,8 +4988,8 @@ Map<String, dynamic> _$$_MappitRouteLinkingHistoryToJson(
       'performedAt': const TimestampConverter().toJson(instance.performedAt),
     };
 
-_$_MappitRoute _$$_MappitRouteFromJson(Map<String, dynamic> json) =>
-    _$_MappitRoute(
+_$MappitRouteImpl _$$MappitRouteImplFromJson(Map<String, dynamic> json) =>
+    _$MappitRouteImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       currentSeller: json['currentSeller'] == null
@@ -4907,7 +5012,7 @@ _$_MappitRoute _$$_MappitRouteFromJson(Map<String, dynamic> json) =>
           : User.fromJson(json['owner'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_MappitRouteToJson(_$_MappitRoute instance) =>
+Map<String, dynamic> _$$MappitRouteImplToJson(_$MappitRouteImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -4921,8 +5026,9 @@ Map<String, dynamic> _$$_MappitRouteToJson(_$_MappitRoute instance) =>
       'owner': instance.owner?.toJson(),
     };
 
-_$_MappitLaborHour _$$_MappitLaborHourFromJson(Map<String, dynamic> json) =>
-    _$_MappitLaborHour(
+_$MappitLaborHourImpl _$$MappitLaborHourImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MappitLaborHourImpl(
       id: json['id'] as String,
       weekday: const WeekdayConverter().fromJson(json['weekday'] as String),
       administrative:
@@ -4931,7 +5037,8 @@ _$_MappitLaborHour _$$_MappitLaborHourFromJson(Map<String, dynamic> json) =>
       other: const DurationConverter().fromJson(json['other'] as num),
     );
 
-Map<String, dynamic> _$$_MappitLaborHourToJson(_$_MappitLaborHour instance) =>
+Map<String, dynamic> _$$MappitLaborHourImplToJson(
+        _$MappitLaborHourImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'weekday': const WeekdayConverter().toJson(instance.weekday),
@@ -4941,9 +5048,9 @@ Map<String, dynamic> _$$_MappitLaborHourToJson(_$_MappitLaborHour instance) =>
       'other': const DurationConverter().toJson(instance.other),
     };
 
-_$_MappitProfileGeofence _$$_MappitProfileGeofenceFromJson(
+_$MappitProfileGeofenceImpl _$$MappitProfileGeofenceImplFromJson(
         Map<String, dynamic> json) =>
-    _$_MappitProfileGeofence(
+    _$MappitProfileGeofenceImpl(
       geofenceId: json['geofenceId'] as String,
       geofence: json['geofence'] == null
           ? null
@@ -4951,16 +5058,16 @@ _$_MappitProfileGeofence _$$_MappitProfileGeofenceFromJson(
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
     );
 
-Map<String, dynamic> _$$_MappitProfileGeofenceToJson(
-        _$_MappitProfileGeofence instance) =>
+Map<String, dynamic> _$$MappitProfileGeofenceImplToJson(
+        _$MappitProfileGeofenceImpl instance) =>
     <String, dynamic>{
       'geofenceId': instance.geofenceId,
       'geofence': instance.geofence?.toJson(),
       'color': const ColorOrNullConverter().toJson(instance.color),
     };
 
-_$_MappitProfile _$$_MappitProfileFromJson(Map<String, dynamic> json) =>
-    _$_MappitProfile(
+_$MappitProfileImpl _$$MappitProfileImplFromJson(Map<String, dynamic> json) =>
+    _$MappitProfileImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       geofences: (json['geofences'] as List<dynamic>)
@@ -4968,16 +5075,16 @@ _$_MappitProfile _$$_MappitProfileFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_MappitProfileToJson(_$_MappitProfile instance) =>
+Map<String, dynamic> _$$MappitProfileImplToJson(_$MappitProfileImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'geofences': instance.geofences.map((e) => e.toJson()).toList(),
     };
 
-_$_MappitDurationRange _$$_MappitDurationRangeFromJson(
+_$MappitDurationRangeImpl _$$MappitDurationRangeImplFromJson(
         Map<String, dynamic> json) =>
-    _$_MappitDurationRange(
+    _$MappitDurationRangeImpl(
       min: json['min'] == null
           ? Duration.zero
           : const DurationConverter().fromJson(json['min'] as num),
@@ -4989,16 +5096,16 @@ _$_MappitDurationRange _$$_MappitDurationRangeFromJson(
           : const ColorConverter().fromJson(json['color'] as String),
     );
 
-Map<String, dynamic> _$$_MappitDurationRangeToJson(
-        _$_MappitDurationRange instance) =>
+Map<String, dynamic> _$$MappitDurationRangeImplToJson(
+        _$MappitDurationRangeImpl instance) =>
     <String, dynamic>{
       'min': const DurationConverter().toJson(instance.min),
       'max': const DurationConverter().toJson(instance.max),
       'color': const ColorConverter().toJson(instance.color),
     };
 
-_$_MappitIntRange _$$_MappitIntRangeFromJson(Map<String, dynamic> json) =>
-    _$_MappitIntRange(
+_$MappitIntRangeImpl _$$MappitIntRangeImplFromJson(Map<String, dynamic> json) =>
+    _$MappitIntRangeImpl(
       min: json['min'] as int? ?? 0,
       max: json['max'] as int? ?? 0,
       color: json['color'] == null
@@ -5006,15 +5113,17 @@ _$_MappitIntRange _$$_MappitIntRangeFromJson(Map<String, dynamic> json) =>
           : const ColorConverter().fromJson(json['color'] as String),
     );
 
-Map<String, dynamic> _$$_MappitIntRangeToJson(_$_MappitIntRange instance) =>
+Map<String, dynamic> _$$MappitIntRangeImplToJson(
+        _$MappitIntRangeImpl instance) =>
     <String, dynamic>{
       'min': instance.min,
       'max': instance.max,
       'color': const ColorConverter().toJson(instance.color),
     };
 
-_$_MappitDoubleRange _$$_MappitDoubleRangeFromJson(Map<String, dynamic> json) =>
-    _$_MappitDoubleRange(
+_$MappitDoubleRangeImpl _$$MappitDoubleRangeImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MappitDoubleRangeImpl(
       min: (json['min'] as num?)?.toDouble() ?? 0,
       max: (json['max'] as num?)?.toDouble() ?? 0,
       color: json['color'] == null
@@ -5022,16 +5131,17 @@ _$_MappitDoubleRange _$$_MappitDoubleRangeFromJson(Map<String, dynamic> json) =>
           : const ColorConverter().fromJson(json['color'] as String),
     );
 
-Map<String, dynamic> _$$_MappitDoubleRangeToJson(
-        _$_MappitDoubleRange instance) =>
+Map<String, dynamic> _$$MappitDoubleRangeImplToJson(
+        _$MappitDoubleRangeImpl instance) =>
     <String, dynamic>{
       'min': instance.min,
       'max': instance.max,
       'color': const ColorConverter().toJson(instance.color),
     };
 
-_$_MappitHomeConfig _$$_MappitHomeConfigFromJson(Map<String, dynamic> json) =>
-    _$_MappitHomeConfig(
+_$MappitHomeConfigImpl _$$MappitHomeConfigImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MappitHomeConfigImpl(
       firstVisit: (json['firstVisit'] as List<dynamic>?)
               ?.map((e) =>
                   MappitDurationRange.fromJson(e as Map<String, dynamic>))
@@ -5053,7 +5163,8 @@ _$_MappitHomeConfig _$$_MappitHomeConfigFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$_MappitHomeConfigToJson(_$_MappitHomeConfig instance) =>
+Map<String, dynamic> _$$MappitHomeConfigImplToJson(
+        _$MappitHomeConfigImpl instance) =>
     <String, dynamic>{
       'firstVisit': instance.firstVisit.map((e) => e.toJson()).toList(),
       'avgTimePerVisit':
@@ -5063,8 +5174,8 @@ Map<String, dynamic> _$$_MappitHomeConfigToJson(_$_MappitHomeConfig instance) =>
       'dailyDistance': instance.dailyDistance.map((e) => e.toJson()).toList(),
     };
 
-_$_MappitFreeDay _$$_MappitFreeDayFromJson(Map<String, dynamic> json) =>
-    _$_MappitFreeDay(
+_$MappitFreeDayImpl _$$MappitFreeDayImplFromJson(Map<String, dynamic> json) =>
+    _$MappitFreeDayImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       date: const TimestampConverter().fromJson(json['date'] as num),
@@ -5076,7 +5187,7 @@ _$_MappitFreeDay _$$_MappitFreeDayFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_MappitFreeDayToJson(_$_MappitFreeDay instance) =>
+Map<String, dynamic> _$$MappitFreeDayImplToJson(_$MappitFreeDayImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -5085,8 +5196,8 @@ Map<String, dynamic> _$$_MappitFreeDayToJson(_$_MappitFreeDay instance) =>
       'assetsIds': instance.assetsIds,
     };
 
-_$_ReportPreview _$$_ReportPreviewFromJson(Map<String, dynamic> json) =>
-    _$_ReportPreview(
+_$ReportPreviewImpl _$$ReportPreviewImplFromJson(Map<String, dynamic> json) =>
+    _$ReportPreviewImpl(
       name: json['name'] as String,
       pages: (json['pages'] as List<dynamic>?)
               ?.map((e) => ReportPage.fromJson(e as Map<String, dynamic>))
@@ -5094,14 +5205,14 @@ _$_ReportPreview _$$_ReportPreviewFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$_ReportPreviewToJson(_$_ReportPreview instance) =>
+Map<String, dynamic> _$$ReportPreviewImplToJson(_$ReportPreviewImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'pages': instance.pages.map((e) => e.toJson()).toList(),
     };
 
-_$_ReportPage _$$_ReportPageFromJson(Map<String, dynamic> json) =>
-    _$_ReportPage(
+_$ReportPageImpl _$$ReportPageImplFromJson(Map<String, dynamic> json) =>
+    _$ReportPageImpl(
       name: json['name'] as String,
       rows: (json['rows'] as List<dynamic>?)
               ?.map((e) => ReportRow.fromJson(e as Map<String, dynamic>))
@@ -5113,14 +5224,15 @@ _$_ReportPage _$$_ReportPageFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$_ReportPageToJson(_$_ReportPage instance) =>
+Map<String, dynamic> _$$ReportPageImplToJson(_$ReportPageImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'rows': instance.rows.map((e) => e.toJson()).toList(),
       'headers': instance.headers.map((e) => e.toJson()).toList(),
     };
 
-_$_ReportRow _$$_ReportRowFromJson(Map<String, dynamic> json) => _$_ReportRow(
+_$ReportRowImpl _$$ReportRowImplFromJson(Map<String, dynamic> json) =>
+    _$ReportRowImpl(
       content: (json['content'] as List<dynamic>?)
               ?.map((e) => ReportCell.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -5128,29 +5240,29 @@ _$_ReportRow _$$_ReportRowFromJson(Map<String, dynamic> json) => _$_ReportRow(
       compact: json['compact'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_ReportRowToJson(_$_ReportRow instance) =>
+Map<String, dynamic> _$$ReportRowImplToJson(_$ReportRowImpl instance) =>
     <String, dynamic>{
       'content': instance.content.map((e) => e.toJson()).toList(),
       'compact': instance.compact,
     };
 
-_$_ReportHeader _$$_ReportHeaderFromJson(Map<String, dynamic> json) =>
-    _$_ReportHeader(
+_$ReportHeaderImpl _$$ReportHeaderImplFromJson(Map<String, dynamic> json) =>
+    _$ReportHeaderImpl(
       content: json['content'] as String,
       textColor:
           const ColorOrNullConverter().fromJson(json['textColor'] as String?),
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
     );
 
-Map<String, dynamic> _$$_ReportHeaderToJson(_$_ReportHeader instance) =>
+Map<String, dynamic> _$$ReportHeaderImplToJson(_$ReportHeaderImpl instance) =>
     <String, dynamic>{
       'content': instance.content,
       'textColor': const ColorOrNullConverter().toJson(instance.textColor),
       'color': const ColorOrNullConverter().toJson(instance.color),
     };
 
-_$_ReportCell _$$_ReportCellFromJson(Map<String, dynamic> json) =>
-    _$_ReportCell(
+_$ReportCellImpl _$$ReportCellImplFromJson(Map<String, dynamic> json) =>
+    _$ReportCellImpl(
       content: json['content'],
       textColor:
           const ColorOrNullConverter().fromJson(json['textColor'] as String?),
@@ -5160,7 +5272,7 @@ _$_ReportCell _$$_ReportCellFromJson(Map<String, dynamic> json) =>
       currencySymbol: json['currencySymbol'] as String?,
     );
 
-Map<String, dynamic> _$$_ReportCellToJson(_$_ReportCell instance) =>
+Map<String, dynamic> _$$ReportCellImplToJson(_$ReportCellImpl instance) =>
     <String, dynamic>{
       'content': instance.content,
       'textColor': const ColorOrNullConverter().toJson(instance.textColor),

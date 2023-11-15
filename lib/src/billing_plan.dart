@@ -17,6 +17,7 @@ class BillingPlan with _$BillingPlan {
     required List<String> allowedAlgorithmsIds,
     required List<String> allowedInboundProtocolsIds,
     required List<String> allowedOutboundProtocolsIds,
+    required List<String> allowedVisionProtocolsIds,
   }) = _BillingPlan;
 
   factory BillingPlan.fromJson(Map<String, dynamic> json) => _$BillingPlanFromJson(json);

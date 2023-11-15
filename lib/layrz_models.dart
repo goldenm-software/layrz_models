@@ -41,8 +41,6 @@ part 'src/generic_permission.dart';
 part 'src/department.dart';
 part 'src/employee.dart';
 part 'src/algorithm.dart';
-part 'src/inbound_protocol.dart';
-part 'src/outbound_protocol.dart';
 part 'src/language.dart';
 part 'src/credential_field.dart';
 part 'src/suspended_service.dart';
@@ -60,8 +58,6 @@ part 'src/model.dart';
 part 'src/trigger.dart';
 part 'src/care_protocol.dart';
 part 'src/undeclarated_models.dart';
-part 'src/outbound_service.dart';
-part 'src/inbound_service.dart';
 part 'src/weekdays.dart';
 part 'src/timezone.dart';
 part 'src/lint_errors.dart';
@@ -77,6 +73,14 @@ part 'src/case.dart';
 part 'src/avatar.dart';
 part 'src/email_template.dart';
 part 'src/function.dart';
+
+// Inbound models
+part 'src/inbound/protocol.dart';
+part 'src/inbound/service.dart';
+
+// Outbound models
+part 'src/outbound/protocol.dart';
+part 'src/outbound/service.dart';
 
 // External account and related models
 part 'src/external/source.dart';
@@ -95,6 +99,7 @@ part 'src/workspace/trip.dart';
 part 'src/workspace/case_monitor_config.dart';
 
 // Vision models
+part 'src/vision/protocol.dart';
 part 'src/vision/profile.dart';
 
 // App models
