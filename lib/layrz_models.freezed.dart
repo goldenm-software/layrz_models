@@ -43900,40 +43900,20 @@ AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AtsEntry {
-  /// ID of the volume. This ID is unique.
   String get id => throw _privateConstructorUsedError;
-
-  /// ID of the Asset
   String? get assetId => throw _privateConstructorUsedError;
-
-  /// Asset linked to entry.
   Asset? get asset => throw _privateConstructorUsedError;
-
-  /// Tank level at start of entry
   double? get oldTankLevel => throw _privateConstructorUsedError;
-
-  /// Tank level at the end of the entry.
   double? get newTankLevel => throw _privateConstructorUsedError;
-
-  /// Start entry date
   @TimestampOrNullConverter()
   DateTime? get startAt => throw _privateConstructorUsedError;
-
-  /// End entry date
   @TimestampOrNullConverter()
   DateTime? get endAt => throw _privateConstructorUsedError;
-
-  /// Represents error percent between reception and sensor entry.
   double? get errorPercent => throw _privateConstructorUsedError;
-
-  /// Reception linked to entry.
   AtsReception? get reception => throw _privateConstructorUsedError;
-
-  /// List of receptions linked to the entry. Please read the documentation for Reception for more details about the fields.
   List<AtsReception>? get receptions => throw _privateConstructorUsedError;
-
-  /// True if the entry is linked to a purchase order.
   bool? get isLinked => throw _privateConstructorUsedError;
+  String? get fuelType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43957,7 +43937,8 @@ abstract class $AtsEntryCopyWith<$Res> {
       double? errorPercent,
       AtsReception? reception,
       List<AtsReception>? receptions,
-      bool? isLinked});
+      bool? isLinked,
+      String? fuelType});
 
   $AssetCopyWith<$Res>? get asset;
   $AtsReceptionCopyWith<$Res>? get reception;
@@ -43987,6 +43968,7 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
     Object? reception = freezed,
     Object? receptions = freezed,
     Object? isLinked = freezed,
+    Object? fuelType = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -44033,6 +44015,10 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
           ? _value.isLinked
           : isLinked // ignore: cast_nullable_to_non_nullable
               as bool?,
+      fuelType: freezed == fuelType
+          ? _value.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -44080,7 +44066,8 @@ abstract class _$$AtsEntryImplCopyWith<$Res>
       double? errorPercent,
       AtsReception? reception,
       List<AtsReception>? receptions,
-      bool? isLinked});
+      bool? isLinked,
+      String? fuelType});
 
   @override
   $AssetCopyWith<$Res>? get asset;
@@ -44110,6 +44097,7 @@ class __$$AtsEntryImplCopyWithImpl<$Res>
     Object? reception = freezed,
     Object? receptions = freezed,
     Object? isLinked = freezed,
+    Object? fuelType = freezed,
   }) {
     return _then(_$AtsEntryImpl(
       id: null == id
@@ -44156,6 +44144,10 @@ class __$$AtsEntryImplCopyWithImpl<$Res>
           ? _value.isLinked
           : isLinked // ignore: cast_nullable_to_non_nullable
               as bool?,
+      fuelType: freezed == fuelType
+          ? _value.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -44174,54 +44166,34 @@ class _$AtsEntryImpl implements _AtsEntry {
       this.errorPercent,
       this.reception,
       final List<AtsReception>? receptions,
-      this.isLinked})
+      this.isLinked,
+      this.fuelType})
       : _receptions = receptions;
 
   factory _$AtsEntryImpl.fromJson(Map<String, dynamic> json) =>
       _$$AtsEntryImplFromJson(json);
 
-  /// ID of the volume. This ID is unique.
   @override
   final String id;
-
-  /// ID of the Asset
   @override
   final String? assetId;
-
-  /// Asset linked to entry.
   @override
   final Asset? asset;
-
-  /// Tank level at start of entry
   @override
   final double? oldTankLevel;
-
-  /// Tank level at the end of the entry.
   @override
   final double? newTankLevel;
-
-  /// Start entry date
   @override
   @TimestampOrNullConverter()
   final DateTime? startAt;
-
-  /// End entry date
   @override
   @TimestampOrNullConverter()
   final DateTime? endAt;
-
-  /// Represents error percent between reception and sensor entry.
   @override
   final double? errorPercent;
-
-  /// Reception linked to entry.
   @override
   final AtsReception? reception;
-
-  /// List of receptions linked to the entry. Please read the documentation for Reception for more details about the fields.
   final List<AtsReception>? _receptions;
-
-  /// List of receptions linked to the entry. Please read the documentation for Reception for more details about the fields.
   @override
   List<AtsReception>? get receptions {
     final value = _receptions;
@@ -44231,13 +44203,14 @@ class _$AtsEntryImpl implements _AtsEntry {
     return EqualUnmodifiableListView(value);
   }
 
-  /// True if the entry is linked to a purchase order.
   @override
   final bool? isLinked;
+  @override
+  final String? fuelType;
 
   @override
   String toString() {
-    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked)';
+    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType)';
   }
 
   @override
@@ -44261,7 +44234,9 @@ class _$AtsEntryImpl implements _AtsEntry {
             const DeepCollectionEquality()
                 .equals(other._receptions, _receptions) &&
             (identical(other.isLinked, isLinked) ||
-                other.isLinked == isLinked));
+                other.isLinked == isLinked) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType));
   }
 
   @JsonKey(ignore: true)
@@ -44278,7 +44253,8 @@ class _$AtsEntryImpl implements _AtsEntry {
       errorPercent,
       reception,
       const DeepCollectionEquality().hash(_receptions),
-      isLinked);
+      isLinked,
+      fuelType);
 
   @JsonKey(ignore: true)
   @override
@@ -44306,57 +44282,38 @@ abstract class _AtsEntry implements AtsEntry {
       final double? errorPercent,
       final AtsReception? reception,
       final List<AtsReception>? receptions,
-      final bool? isLinked}) = _$AtsEntryImpl;
+      final bool? isLinked,
+      final String? fuelType}) = _$AtsEntryImpl;
 
   factory _AtsEntry.fromJson(Map<String, dynamic> json) =
       _$AtsEntryImpl.fromJson;
 
   @override
-
-  /// ID of the volume. This ID is unique.
   String get id;
   @override
-
-  /// ID of the Asset
   String? get assetId;
   @override
-
-  /// Asset linked to entry.
   Asset? get asset;
   @override
-
-  /// Tank level at start of entry
   double? get oldTankLevel;
   @override
-
-  /// Tank level at the end of the entry.
   double? get newTankLevel;
   @override
-
-  /// Start entry date
   @TimestampOrNullConverter()
   DateTime? get startAt;
   @override
-
-  /// End entry date
   @TimestampOrNullConverter()
   DateTime? get endAt;
   @override
-
-  /// Represents error percent between reception and sensor entry.
   double? get errorPercent;
   @override
-
-  /// Reception linked to entry.
   AtsReception? get reception;
   @override
-
-  /// List of receptions linked to the entry. Please read the documentation for Reception for more details about the fields.
   List<AtsReception>? get receptions;
   @override
-
-  /// True if the entry is linked to a purchase order.
   bool? get isLinked;
+  @override
+  String? get fuelType;
   @override
   @JsonKey(ignore: true)
   _$$AtsEntryImplCopyWith<_$AtsEntryImpl> get copyWith =>
