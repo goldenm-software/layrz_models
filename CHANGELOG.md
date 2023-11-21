@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.37
+- added a fuel type prop in [AtsEntry] model
+
 ## 2.0.36
 - Added new [VisionProtocol] model
 - Updated [VisionProfile] to support new [VisionProtocol] model and removed migrated fields

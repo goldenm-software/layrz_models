@@ -3914,6 +3914,7 @@ _$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>
           ?.map((e) => AtsReception.fromJson(e as Map<String, dynamic>))
           .toList(),
       isLinked: json['isLinked'] as bool?,
+      fuelType: json['fuelType'] as String?,
     );
 
 Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
@@ -3929,6 +3930,7 @@ Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
       'reception': instance.reception?.toJson(),
       'receptions': instance.receptions?.map((e) => e.toJson()).toList(),
       'isLinked': instance.isLinked,
+      'fuelType': instance.fuelType,
     };
 
 _$AtsReceptionProductImpl _$$AtsReceptionProductImplFromJson(
