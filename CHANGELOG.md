@@ -1,4 +1,6 @@
 # Changelog
+## 2.0.38
+- added a density and temperature pros in [AtsEntry] model
 
 ## 2.0.37
 - added a fuel type prop in [AtsEntry] model

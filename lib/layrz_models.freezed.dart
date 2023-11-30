@@ -43914,6 +43914,8 @@ mixin _$AtsEntry {
   List<AtsReception>? get receptions => throw _privateConstructorUsedError;
   bool? get isLinked => throw _privateConstructorUsedError;
   String? get fuelType => throw _privateConstructorUsedError;
+  double? get temperature => throw _privateConstructorUsedError;
+  double? get density => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43938,7 +43940,9 @@ abstract class $AtsEntryCopyWith<$Res> {
       AtsReception? reception,
       List<AtsReception>? receptions,
       bool? isLinked,
-      String? fuelType});
+      String? fuelType,
+      double? temperature,
+      double? density});
 
   $AssetCopyWith<$Res>? get asset;
   $AtsReceptionCopyWith<$Res>? get reception;
@@ -43969,6 +43973,8 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
     Object? receptions = freezed,
     Object? isLinked = freezed,
     Object? fuelType = freezed,
+    Object? temperature = freezed,
+    Object? density = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -44019,6 +44025,14 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
               as String?,
+      temperature: freezed == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      density: freezed == density
+          ? _value.density
+          : density // ignore: cast_nullable_to_non_nullable
+              as double?,
     ) as $Val);
   }
 
@@ -44067,7 +44081,9 @@ abstract class _$$AtsEntryImplCopyWith<$Res>
       AtsReception? reception,
       List<AtsReception>? receptions,
       bool? isLinked,
-      String? fuelType});
+      String? fuelType,
+      double? temperature,
+      double? density});
 
   @override
   $AssetCopyWith<$Res>? get asset;
@@ -44098,6 +44114,8 @@ class __$$AtsEntryImplCopyWithImpl<$Res>
     Object? receptions = freezed,
     Object? isLinked = freezed,
     Object? fuelType = freezed,
+    Object? temperature = freezed,
+    Object? density = freezed,
   }) {
     return _then(_$AtsEntryImpl(
       id: null == id
@@ -44148,6 +44166,14 @@ class __$$AtsEntryImplCopyWithImpl<$Res>
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
               as String?,
+      temperature: freezed == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      density: freezed == density
+          ? _value.density
+          : density // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 }
@@ -44167,7 +44193,9 @@ class _$AtsEntryImpl implements _AtsEntry {
       this.reception,
       final List<AtsReception>? receptions,
       this.isLinked,
-      this.fuelType})
+      this.fuelType,
+      this.temperature,
+      this.density})
       : _receptions = receptions;
 
   factory _$AtsEntryImpl.fromJson(Map<String, dynamic> json) =>
@@ -44207,10 +44235,14 @@ class _$AtsEntryImpl implements _AtsEntry {
   final bool? isLinked;
   @override
   final String? fuelType;
+  @override
+  final double? temperature;
+  @override
+  final double? density;
 
   @override
   String toString() {
-    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType)';
+    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, temperature: $temperature, density: $density)';
   }
 
   @override
@@ -44236,7 +44268,10 @@ class _$AtsEntryImpl implements _AtsEntry {
             (identical(other.isLinked, isLinked) ||
                 other.isLinked == isLinked) &&
             (identical(other.fuelType, fuelType) ||
-                other.fuelType == fuelType));
+                other.fuelType == fuelType) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.density, density) || other.density == density));
   }
 
   @JsonKey(ignore: true)
@@ -44254,7 +44289,9 @@ class _$AtsEntryImpl implements _AtsEntry {
       reception,
       const DeepCollectionEquality().hash(_receptions),
       isLinked,
-      fuelType);
+      fuelType,
+      temperature,
+      density);
 
   @JsonKey(ignore: true)
   @override
@@ -44283,7 +44320,9 @@ abstract class _AtsEntry implements AtsEntry {
       final AtsReception? reception,
       final List<AtsReception>? receptions,
       final bool? isLinked,
-      final String? fuelType}) = _$AtsEntryImpl;
+      final String? fuelType,
+      final double? temperature,
+      final double? density}) = _$AtsEntryImpl;
 
   factory _AtsEntry.fromJson(Map<String, dynamic> json) =
       _$AtsEntryImpl.fromJson;
@@ -44314,6 +44353,10 @@ abstract class _AtsEntry implements AtsEntry {
   bool? get isLinked;
   @override
   String? get fuelType;
+  @override
+  double? get temperature;
+  @override
+  double? get density;
   @override
   @JsonKey(ignore: true)
   _$$AtsEntryImplCopyWith<_$AtsEntryImpl> get copyWith =>
