@@ -2,9 +2,9 @@ part of layrz_models;
 
 /// `AtsEntry` is a class that represents an entry in the system.
 ///
-/// Each entry is associated with a unique volume ID, an asset, and a reception. 
-/// It also contains information about the tank level at the start and end of the entry, 
-/// the start and end dates of the entry, the error percent between reception and sensor entry, 
+/// Each entry is associated with a unique volume ID, an asset, and a reception.
+/// It also contains information about the tank level at the start and end of the entry,
+/// the start and end dates of the entry, the error percent between reception and sensor entry,
 /// and whether the entry is linked to a purchase order.
 
 @freezed
@@ -23,6 +23,9 @@ class AtsEntry with _$AtsEntry {
   /// The [receptions] parameter is a list of receptions associated with the entry.
   /// The [isLinked] parameter indicates whether the entry is linked to a purchase order.
   /// The [fuelType] parameter is the fuel type of the entry.
+  /// The [temperature] parameter is the temperature of the entry.
+  /// The [density] parameter is the density of the entry.
+
   const factory AtsEntry({
     required String id,
     String? assetId,
@@ -36,6 +39,8 @@ class AtsEntry with _$AtsEntry {
     List<AtsReception>? receptions,
     bool? isLinked,
     String? fuelType,
+    double? temperature,
+    double? density,
   }) = _AtsEntry;
 
   /// fromJson creates a new `AtsEntry` from a JSON object.
