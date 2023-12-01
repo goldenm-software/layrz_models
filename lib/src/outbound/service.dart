@@ -114,7 +114,19 @@ enum OutboundStructureType {
   primaryDeviceName,
 
   /// Layrz API equivalence: `primary.device.ident`. Means the primary device ident
-  primaryDeviceIdent;
+  primaryDeviceIdent,
+
+  /// Layrz API equivalence: `trigger.name`. Means the trigger name
+  triggerName,
+
+  /// Layrz API equivalence: `trigger.code`. Means the trigger code
+  triggerCode,
+
+  /// Layrz API equivalence: `trigger.geofence.name`. Means the trigger geofence name
+  triggerGeofenceName,
+
+  /// Layrz API equivalence: `trigger.geofence.type`. Means the trigger geofence type, aka, if is entrance or exit
+  triggerGeofenceType;
 
   /// Validates if the [search] is a custom value or not.
   static bool isCustom(String search) {
@@ -163,8 +175,16 @@ enum OutboundStructureType {
         return 'primary.device.name';
       case OutboundStructureType.primaryDeviceIdent:
         return 'primary.device.ident';
+      case OutboundStructureType.triggerName:
+        return 'trigger.name';
+      case OutboundStructureType.triggerCode:
+        return 'trigger.code';
+      case OutboundStructureType.triggerGeofenceName:
+        return 'trigger.geofence.name';
+      case OutboundStructureType.triggerGeofenceType:
+        return 'trigger.geofence.type';
       default:
-        throw Exception('Invalid OutboundStructureType');
+        return 'constant';
     }
   }
 
@@ -206,8 +226,16 @@ enum OutboundStructureType {
         return OutboundStructureType.primaryDeviceName;
       case 'primary.device.ident':
         return OutboundStructureType.primaryDeviceIdent;
+      case 'trigger.name':
+        return OutboundStructureType.triggerName;
+      case 'trigger.code':
+        return OutboundStructureType.triggerCode;
+      case 'trigger.geofence.name':
+        return OutboundStructureType.triggerGeofenceName;
+      case 'trigger.geofence.type':
+        return OutboundStructureType.triggerGeofenceType;
       default:
-        throw Exception('Invalid OutboundStructureType');
+        return OutboundStructureType.constant;
     }
   }
 }
