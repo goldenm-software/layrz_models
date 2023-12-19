@@ -80,6 +80,9 @@ class TelemetryPosition with _$TelemetryPosition {
 
     /// Horizontal dilution of precision registered for.
     double? hdop,
+
+    /// Unix of last reception date.
+    @TimestampOrNullConverter() DateTime? timestamp,
   }) = _TelemetryPosition;
 
   /// From json
