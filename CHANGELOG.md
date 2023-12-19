@@ -1,4 +1,8 @@
 # Changelog
+
+## 2.0.40
+- Added optional parameter `timestamp` to `TelemetryPosition`
+
 ## 2.0.39
 - Added `triggerName`, `triggerCode`, `triggerGeofenceName` and `triggerGeofenceType` to `OutboundStructureType` enum.
 

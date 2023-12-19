@@ -1423,6 +1423,8 @@ _$TelemetryPositionImpl _$$TelemetryPositionImplFromJson(
       direction: (json['direction'] as num?)?.toDouble(),
       satellites: json['satellites'] as int?,
       hdop: (json['hdop'] as num?)?.toDouble(),
+      timestamp:
+          const TimestampOrNullConverter().fromJson(json['timestamp'] as num?),
     );
 
 Map<String, dynamic> _$$TelemetryPositionImplToJson(
@@ -1435,6 +1437,7 @@ Map<String, dynamic> _$$TelemetryPositionImplToJson(
       'direction': instance.direction,
       'satellites': instance.satellites,
       'hdop': instance.hdop,
+      'timestamp': const TimestampOrNullConverter().toJson(instance.timestamp),
     };
 
 _$TelemetrySensorImpl _$$TelemetrySensorImplFromJson(

@@ -15760,6 +15760,10 @@ mixin _$TelemetryPosition {
   /// Horizontal dilution of precision registered for.
   double? get hdop => throw _privateConstructorUsedError;
 
+  /// Unix of last reception date.
+  @TimestampOrNullConverter()
+  DateTime? get timestamp => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TelemetryPositionCopyWith<TelemetryPosition> get copyWith =>
@@ -15779,7 +15783,8 @@ abstract class $TelemetryPositionCopyWith<$Res> {
       double? speed,
       double? direction,
       int? satellites,
-      double? hdop});
+      double? hdop,
+      @TimestampOrNullConverter() DateTime? timestamp});
 }
 
 /// @nodoc
@@ -15802,6 +15807,7 @@ class _$TelemetryPositionCopyWithImpl<$Res, $Val extends TelemetryPosition>
     Object? direction = freezed,
     Object? satellites = freezed,
     Object? hdop = freezed,
+    Object? timestamp = freezed,
   }) {
     return _then(_value.copyWith(
       latitude: freezed == latitude
@@ -15832,6 +15838,10 @@ class _$TelemetryPositionCopyWithImpl<$Res, $Val extends TelemetryPosition>
           ? _value.hdop
           : hdop // ignore: cast_nullable_to_non_nullable
               as double?,
+      timestamp: freezed == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -15851,7 +15861,8 @@ abstract class _$$TelemetryPositionImplCopyWith<$Res>
       double? speed,
       double? direction,
       int? satellites,
-      double? hdop});
+      double? hdop,
+      @TimestampOrNullConverter() DateTime? timestamp});
 }
 
 /// @nodoc
@@ -15872,6 +15883,7 @@ class __$$TelemetryPositionImplCopyWithImpl<$Res>
     Object? direction = freezed,
     Object? satellites = freezed,
     Object? hdop = freezed,
+    Object? timestamp = freezed,
   }) {
     return _then(_$TelemetryPositionImpl(
       latitude: freezed == latitude
@@ -15902,6 +15914,10 @@ class __$$TelemetryPositionImplCopyWithImpl<$Res>
           ? _value.hdop
           : hdop // ignore: cast_nullable_to_non_nullable
               as double?,
+      timestamp: freezed == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -15916,7 +15932,8 @@ class _$TelemetryPositionImpl extends _TelemetryPosition {
       this.speed,
       this.direction,
       this.satellites,
-      this.hdop})
+      this.hdop,
+      @TimestampOrNullConverter() this.timestamp})
       : super._();
 
   factory _$TelemetryPositionImpl.fromJson(Map<String, dynamic> json) =>
@@ -15950,9 +15967,14 @@ class _$TelemetryPositionImpl extends _TelemetryPosition {
   @override
   final double? hdop;
 
+  /// Unix of last reception date.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? timestamp;
+
   @override
   String toString() {
-    return 'TelemetryPosition(latitude: $latitude, longitude: $longitude, altitude: $altitude, speed: $speed, direction: $direction, satellites: $satellites, hdop: $hdop)';
+    return 'TelemetryPosition(latitude: $latitude, longitude: $longitude, altitude: $altitude, speed: $speed, direction: $direction, satellites: $satellites, hdop: $hdop, timestamp: $timestamp)';
   }
 
   @override
@@ -15971,13 +15993,15 @@ class _$TelemetryPositionImpl extends _TelemetryPosition {
                 other.direction == direction) &&
             (identical(other.satellites, satellites) ||
                 other.satellites == satellites) &&
-            (identical(other.hdop, hdop) || other.hdop == hdop));
+            (identical(other.hdop, hdop) || other.hdop == hdop) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude, altitude,
-      speed, direction, satellites, hdop);
+      speed, direction, satellites, hdop, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -15996,13 +16020,15 @@ class _$TelemetryPositionImpl extends _TelemetryPosition {
 
 abstract class _TelemetryPosition extends TelemetryPosition {
   const factory _TelemetryPosition(
-      {final double? latitude,
-      final double? longitude,
-      final double? altitude,
-      final double? speed,
-      final double? direction,
-      final int? satellites,
-      final double? hdop}) = _$TelemetryPositionImpl;
+          {final double? latitude,
+          final double? longitude,
+          final double? altitude,
+          final double? speed,
+          final double? direction,
+          final int? satellites,
+          final double? hdop,
+          @TimestampOrNullConverter() final DateTime? timestamp}) =
+      _$TelemetryPositionImpl;
   const _TelemetryPosition._() : super._();
 
   factory _TelemetryPosition.fromJson(Map<String, dynamic> json) =
@@ -16036,6 +16062,11 @@ abstract class _TelemetryPosition extends TelemetryPosition {
 
   /// Horizontal dilution of precision registered for.
   double? get hdop;
+  @override
+
+  /// Unix of last reception date.
+  @TimestampOrNullConverter()
+  DateTime? get timestamp;
   @override
   @JsonKey(ignore: true)
   _$$TelemetryPositionImplCopyWith<_$TelemetryPositionImpl> get copyWith =>
