@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.41
+- Added `MfaMethod` enum
+- Added `mfaEnabled` and `mfaMethods` to `Employee` and `User` model
+
 ## 2.0.40
 - Added optional parameter `timestamp` to `TelemetryPosition`
 

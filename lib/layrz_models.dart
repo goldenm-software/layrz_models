@@ -73,6 +73,7 @@ part 'src/case.dart';
 part 'src/avatar.dart';
 part 'src/email_template.dart';
 part 'src/function.dart';
+part 'src/mfa.dart';
 
 // Inbound models
 part 'src/inbound/protocol.dart';

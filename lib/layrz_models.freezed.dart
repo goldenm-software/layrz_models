@@ -3995,6 +3995,13 @@ mixin _$User {
   ExternalAccount? get mappitExternalAccount =>
       throw _privateConstructorUsedError;
 
+  /// [mfaEnabled] represents the MFA enabled flag.
+  bool get mfaEnabled => throw _privateConstructorUsedError;
+
+  /// [mfaMethods] represents the list of MFA methods.
+  @MfaMethodConverter()
+  List<MfaMethod> get mfaMethods => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -4032,7 +4039,9 @@ abstract class $UserCopyWith<$Res> {
       List<Asset>? mappitAssets,
       int? historicalDaysAllowed,
       String? mappitExternalAccountId,
-      ExternalAccount? mappitExternalAccount});
+      ExternalAccount? mappitExternalAccount,
+      bool mfaEnabled,
+      @MfaMethodConverter() List<MfaMethod> mfaMethods});
 
   $TokenCopyWith<$Res>? get token;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
@@ -4081,6 +4090,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? historicalDaysAllowed = freezed,
     Object? mappitExternalAccountId = freezed,
     Object? mappitExternalAccount = freezed,
+    Object? mfaEnabled = null,
+    Object? mfaMethods = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -4191,6 +4202,14 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.mappitExternalAccount
           : mappitExternalAccount // ignore: cast_nullable_to_non_nullable
               as ExternalAccount?,
+      mfaEnabled: null == mfaEnabled
+          ? _value.mfaEnabled
+          : mfaEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      mfaMethods: null == mfaMethods
+          ? _value.mfaMethods
+          : mfaMethods // ignore: cast_nullable_to_non_nullable
+              as List<MfaMethod>,
     ) as $Val);
   }
 
@@ -4290,7 +4309,9 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       List<Asset>? mappitAssets,
       int? historicalDaysAllowed,
       String? mappitExternalAccountId,
-      ExternalAccount? mappitExternalAccount});
+      ExternalAccount? mappitExternalAccount,
+      bool mfaEnabled,
+      @MfaMethodConverter() List<MfaMethod> mfaMethods});
 
   @override
   $TokenCopyWith<$Res>? get token;
@@ -4341,6 +4362,8 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? historicalDaysAllowed = freezed,
     Object? mappitExternalAccountId = freezed,
     Object? mappitExternalAccount = freezed,
+    Object? mfaEnabled = null,
+    Object? mfaMethods = null,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -4451,6 +4474,14 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.mappitExternalAccount
           : mappitExternalAccount // ignore: cast_nullable_to_non_nullable
               as ExternalAccount?,
+      mfaEnabled: null == mfaEnabled
+          ? _value.mfaEnabled
+          : mfaEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      mfaMethods: null == mfaMethods
+          ? _value._mfaMethods
+          : mfaMethods // ignore: cast_nullable_to_non_nullable
+              as List<MfaMethod>,
     ));
   }
 }
@@ -4485,7 +4516,9 @@ class _$UserImpl implements _User {
       final List<Asset>? mappitAssets,
       this.historicalDaysAllowed,
       this.mappitExternalAccountId,
-      this.mappitExternalAccount})
+      this.mappitExternalAccount,
+      this.mfaEnabled = false,
+      @MfaMethodConverter() final List<MfaMethod> mfaMethods = const []})
       : _referencesIds = referencesIds,
         _references = references,
         _access = access,
@@ -4495,7 +4528,8 @@ class _$UserImpl implements _User {
         _tags = tags,
         _allowedApps = allowedApps,
         _mappitAssetsIds = mappitAssetsIds,
-        _mappitAssets = mappitAssets;
+        _mappitAssets = mappitAssets,
+        _mfaMethods = mfaMethods;
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -4706,9 +4740,27 @@ class _$UserImpl implements _User {
   @override
   final ExternalAccount? mappitExternalAccount;
 
+  /// [mfaEnabled] represents the MFA enabled flag.
+  @override
+  @JsonKey()
+  final bool mfaEnabled;
+
+  /// [mfaMethods] represents the list of MFA methods.
+  final List<MfaMethod> _mfaMethods;
+
+  /// [mfaMethods] represents the list of MFA methods.
+  @override
+  @JsonKey()
+  @MfaMethodConverter()
+  List<MfaMethod> get mfaMethods {
+    if (_mfaMethods is EqualUnmodifiableListView) return _mfaMethods;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_mfaMethods);
+  }
+
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods)';
   }
 
   @override
@@ -4760,7 +4812,11 @@ class _$UserImpl implements _User {
                     other.mappitExternalAccountId, mappitExternalAccountId) ||
                 other.mappitExternalAccountId == mappitExternalAccountId) &&
             (identical(other.mappitExternalAccount, mappitExternalAccount) ||
-                other.mappitExternalAccount == mappitExternalAccount));
+                other.mappitExternalAccount == mappitExternalAccount) &&
+            (identical(other.mfaEnabled, mfaEnabled) ||
+                other.mfaEnabled == mfaEnabled) &&
+            const DeepCollectionEquality()
+                .equals(other._mfaMethods, _mfaMethods));
   }
 
   @JsonKey(ignore: true)
@@ -4793,7 +4849,9 @@ class _$UserImpl implements _User {
         const DeepCollectionEquality().hash(_mappitAssets),
         historicalDaysAllowed,
         mappitExternalAccountId,
-        mappitExternalAccount
+        mappitExternalAccount,
+        mfaEnabled,
+        const DeepCollectionEquality().hash(_mfaMethods)
       ]);
 
   @JsonKey(ignore: true)
@@ -4838,7 +4896,9 @@ abstract class _User implements User {
       final List<Asset>? mappitAssets,
       final int? historicalDaysAllowed,
       final String? mappitExternalAccountId,
-      final ExternalAccount? mappitExternalAccount}) = _$UserImpl;
+      final ExternalAccount? mappitExternalAccount,
+      final bool mfaEnabled,
+      @MfaMethodConverter() final List<MfaMethod> mfaMethods}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -4956,6 +5016,15 @@ abstract class _User implements User {
   /// [mappitExternalAccount] represents the Mappit external account.
   /// This field is only for `Mappit` use.
   ExternalAccount? get mappitExternalAccount;
+  @override
+
+  /// [mfaEnabled] represents the MFA enabled flag.
+  bool get mfaEnabled;
+  @override
+
+  /// [mfaMethods] represents the list of MFA methods.
+  @MfaMethodConverter()
+  List<MfaMethod> get mfaMethods;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
@@ -6727,6 +6796,13 @@ mixin _$Employee {
   GenericPermission? get customPermissions =>
       throw _privateConstructorUsedError;
 
+  /// [mfaEnabled] represents the MFA enabled flag.
+  bool get mfaEnabled => throw _privateConstructorUsedError;
+
+  /// [mfaMethods] represents the list of MFA methods.
+  @MfaMethodConverter()
+  List<MfaMethod> get mfaMethods => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $EmployeeCopyWith<Employee> get copyWith =>
@@ -6748,7 +6824,9 @@ abstract class $EmployeeCopyWith<$Res> {
       Avatar? dynamicAvatar,
       Token? token,
       GenericPermission? permissions,
-      GenericPermission? customPermissions});
+      GenericPermission? customPermissions,
+      bool mfaEnabled,
+      @MfaMethodConverter() List<MfaMethod> mfaMethods});
 
   $DepartmentCopyWith<$Res>? get department;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
@@ -6780,6 +6858,8 @@ class _$EmployeeCopyWithImpl<$Res, $Val extends Employee>
     Object? token = freezed,
     Object? permissions = freezed,
     Object? customPermissions = freezed,
+    Object? mfaEnabled = null,
+    Object? mfaMethods = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -6822,6 +6902,14 @@ class _$EmployeeCopyWithImpl<$Res, $Val extends Employee>
           ? _value.customPermissions
           : customPermissions // ignore: cast_nullable_to_non_nullable
               as GenericPermission?,
+      mfaEnabled: null == mfaEnabled
+          ? _value.mfaEnabled
+          : mfaEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      mfaMethods: null == mfaMethods
+          ? _value.mfaMethods
+          : mfaMethods // ignore: cast_nullable_to_non_nullable
+              as List<MfaMethod>,
     ) as $Val);
   }
 
@@ -6904,7 +6992,9 @@ abstract class _$$EmployeeImplCopyWith<$Res>
       Avatar? dynamicAvatar,
       Token? token,
       GenericPermission? permissions,
-      GenericPermission? customPermissions});
+      GenericPermission? customPermissions,
+      bool mfaEnabled,
+      @MfaMethodConverter() List<MfaMethod> mfaMethods});
 
   @override
   $DepartmentCopyWith<$Res>? get department;
@@ -6939,6 +7029,8 @@ class __$$EmployeeImplCopyWithImpl<$Res>
     Object? token = freezed,
     Object? permissions = freezed,
     Object? customPermissions = freezed,
+    Object? mfaEnabled = null,
+    Object? mfaMethods = null,
   }) {
     return _then(_$EmployeeImpl(
       id: null == id
@@ -6981,6 +7073,14 @@ class __$$EmployeeImplCopyWithImpl<$Res>
           ? _value.customPermissions
           : customPermissions // ignore: cast_nullable_to_non_nullable
               as GenericPermission?,
+      mfaEnabled: null == mfaEnabled
+          ? _value.mfaEnabled
+          : mfaEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      mfaMethods: null == mfaMethods
+          ? _value._mfaMethods
+          : mfaMethods // ignore: cast_nullable_to_non_nullable
+              as List<MfaMethod>,
     ));
   }
 }
@@ -6998,7 +7098,10 @@ class _$EmployeeImpl implements _Employee {
       this.dynamicAvatar,
       this.token,
       this.permissions,
-      this.customPermissions});
+      this.customPermissions,
+      this.mfaEnabled = false,
+      @MfaMethodConverter() final List<MfaMethod> mfaMethods = const []})
+      : _mfaMethods = mfaMethods;
 
   factory _$EmployeeImpl.fromJson(Map<String, dynamic> json) =>
       _$$EmployeeImplFromJson(json);
@@ -7043,9 +7146,27 @@ class _$EmployeeImpl implements _Employee {
   @override
   final GenericPermission? customPermissions;
 
+  /// [mfaEnabled] represents the MFA enabled flag.
+  @override
+  @JsonKey()
+  final bool mfaEnabled;
+
+  /// [mfaMethods] represents the list of MFA methods.
+  final List<MfaMethod> _mfaMethods;
+
+  /// [mfaMethods] represents the list of MFA methods.
+  @override
+  @JsonKey()
+  @MfaMethodConverter()
+  List<MfaMethod> get mfaMethods {
+    if (_mfaMethods is EqualUnmodifiableListView) return _mfaMethods;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_mfaMethods);
+  }
+
   @override
   String toString() {
-    return 'Employee(id: $id, name: $name, email: $email, username: $username, department: $department, departmentId: $departmentId, dynamicAvatar: $dynamicAvatar, token: $token, permissions: $permissions, customPermissions: $customPermissions)';
+    return 'Employee(id: $id, name: $name, email: $email, username: $username, department: $department, departmentId: $departmentId, dynamicAvatar: $dynamicAvatar, token: $token, permissions: $permissions, customPermissions: $customPermissions, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods)';
   }
 
   @override
@@ -7068,7 +7189,11 @@ class _$EmployeeImpl implements _Employee {
             (identical(other.permissions, permissions) ||
                 other.permissions == permissions) &&
             (identical(other.customPermissions, customPermissions) ||
-                other.customPermissions == customPermissions));
+                other.customPermissions == customPermissions) &&
+            (identical(other.mfaEnabled, mfaEnabled) ||
+                other.mfaEnabled == mfaEnabled) &&
+            const DeepCollectionEquality()
+                .equals(other._mfaMethods, _mfaMethods));
   }
 
   @JsonKey(ignore: true)
@@ -7084,7 +7209,9 @@ class _$EmployeeImpl implements _Employee {
       dynamicAvatar,
       token,
       permissions,
-      customPermissions);
+      customPermissions,
+      mfaEnabled,
+      const DeepCollectionEquality().hash(_mfaMethods));
 
   @JsonKey(ignore: true)
   @override
@@ -7111,7 +7238,9 @@ abstract class _Employee implements Employee {
       final Avatar? dynamicAvatar,
       final Token? token,
       final GenericPermission? permissions,
-      final GenericPermission? customPermissions}) = _$EmployeeImpl;
+      final GenericPermission? customPermissions,
+      final bool mfaEnabled,
+      @MfaMethodConverter() final List<MfaMethod> mfaMethods}) = _$EmployeeImpl;
 
   factory _Employee.fromJson(Map<String, dynamic> json) =
       _$EmployeeImpl.fromJson;
@@ -7156,6 +7285,15 @@ abstract class _Employee implements Employee {
 
   /// [customPermissions] represents the user custom permissions.
   GenericPermission? get customPermissions;
+  @override
+
+  /// [mfaEnabled] represents the MFA enabled flag.
+  bool get mfaEnabled;
+  @override
+
+  /// [mfaMethods] represents the list of MFA methods.
+  @MfaMethodConverter()
+  List<MfaMethod> get mfaMethods;
   @override
   @JsonKey(ignore: true)
   _$$EmployeeImplCopyWith<_$EmployeeImpl> get copyWith =>

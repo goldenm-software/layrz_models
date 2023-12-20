@@ -420,6 +420,11 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
           ? null
           : ExternalAccount.fromJson(
               json['mappitExternalAccount'] as Map<String, dynamic>),
+      mfaEnabled: json['mfaEnabled'] as bool? ?? false,
+      mfaMethods: (json['mfaMethods'] as List<dynamic>?)
+              ?.map((e) => const MfaMethodConverter().fromJson(e as String))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
@@ -452,6 +457,9 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'historicalDaysAllowed': instance.historicalDaysAllowed,
       'mappitExternalAccountId': instance.mappitExternalAccountId,
       'mappitExternalAccount': instance.mappitExternalAccount?.toJson(),
+      'mfaEnabled': instance.mfaEnabled,
+      'mfaMethods':
+          instance.mfaMethods.map(const MfaMethodConverter().toJson).toList(),
     };
 
 _$TokenImpl _$$TokenImplFromJson(Map<String, dynamic> json) => _$TokenImpl(
@@ -642,6 +650,11 @@ _$EmployeeImpl _$$EmployeeImplFromJson(Map<String, dynamic> json) =>
           ? null
           : GenericPermission.fromJson(
               json['customPermissions'] as Map<String, dynamic>),
+      mfaEnabled: json['mfaEnabled'] as bool? ?? false,
+      mfaMethods: (json['mfaMethods'] as List<dynamic>?)
+              ?.map((e) => const MfaMethodConverter().fromJson(e as String))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$EmployeeImplToJson(_$EmployeeImpl instance) =>
@@ -656,6 +669,9 @@ Map<String, dynamic> _$$EmployeeImplToJson(_$EmployeeImpl instance) =>
       'token': instance.token?.toJson(),
       'permissions': instance.permissions?.toJson(),
       'customPermissions': instance.customPermissions?.toJson(),
+      'mfaEnabled': instance.mfaEnabled,
+      'mfaMethods':
+          instance.mfaMethods.map(const MfaMethodConverter().toJson).toList(),
     };
 
 _$AlgorithmImpl _$$AlgorithmImplFromJson(Map<String, dynamic> json) =>
