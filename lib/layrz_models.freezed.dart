@@ -58513,7 +58513,7 @@ mixin _$MappitFreeDay {
   String get name => throw _privateConstructorUsedError;
 
   /// [date] represents the free day date.
-  @TimestampConverter()
+  @DateConverter()
   DateTime get date => throw _privateConstructorUsedError;
 
   /// [assets] represents the assets assigned to this free day.
@@ -58537,7 +58537,7 @@ abstract class $MappitFreeDayCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @TimestampConverter() DateTime date,
+      @DateConverter() DateTime date,
       List<Asset>? assets,
       List<String>? assetsIds});
 }
@@ -58597,7 +58597,7 @@ abstract class _$$MappitFreeDayImplCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      @TimestampConverter() DateTime date,
+      @DateConverter() DateTime date,
       List<Asset>? assets,
       List<String>? assetsIds});
 }
@@ -58650,7 +58650,7 @@ class _$MappitFreeDayImpl implements _MappitFreeDay {
   const _$MappitFreeDayImpl(
       {required this.id,
       required this.name,
-      @TimestampConverter() required this.date,
+      @DateConverter() required this.date,
       final List<Asset>? assets,
       final List<String>? assetsIds})
       : _assets = assets,
@@ -58669,7 +58669,7 @@ class _$MappitFreeDayImpl implements _MappitFreeDay {
 
   /// [date] represents the free day date.
   @override
-  @TimestampConverter()
+  @DateConverter()
   final DateTime date;
 
   /// [assets] represents the assets assigned to this free day.
@@ -58744,7 +58744,7 @@ abstract class _MappitFreeDay implements MappitFreeDay {
   const factory _MappitFreeDay(
       {required final String id,
       required final String name,
-      @TimestampConverter() required final DateTime date,
+      @DateConverter() required final DateTime date,
       final List<Asset>? assets,
       final List<String>? assetsIds}) = _$MappitFreeDayImpl;
 
@@ -58762,7 +58762,7 @@ abstract class _MappitFreeDay implements MappitFreeDay {
   @override
 
   /// [date] represents the free day date.
-  @TimestampConverter()
+  @DateConverter()
   DateTime get date;
   @override
 

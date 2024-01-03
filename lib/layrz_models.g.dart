@@ -5203,7 +5203,7 @@ _$MappitFreeDayImpl _$$MappitFreeDayImplFromJson(Map<String, dynamic> json) =>
     _$MappitFreeDayImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      date: const TimestampConverter().fromJson(json['date'] as num),
+      date: const DateConverter().fromJson(json['date'] as String),
       assets: (json['assets'] as List<dynamic>?)
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -5216,7 +5216,7 @@ Map<String, dynamic> _$$MappitFreeDayImplToJson(_$MappitFreeDayImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'date': const TimestampConverter().toJson(instance.date),
+      'date': const DateConverter().toJson(instance.date),
       'assets': instance.assets?.map((e) => e.toJson()).toList(),
       'assetsIds': instance.assetsIds,
     };
