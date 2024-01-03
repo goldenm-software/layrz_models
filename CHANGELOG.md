@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.42
+- Added extension `DateExtension` with `toDate` method, this will return a `String` with the date in the format `yyyy-MM-dd`
+- Added `DateConverter` and `DateOrNullConverter` to convert a `String` to a `DateTime` and vice versa
+
 ## 2.0.41
 - Added `MfaMethod` enum
 - Added `mfaEnabled` and `mfaMethods` to `Employee` and `User` model
