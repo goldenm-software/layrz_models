@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 /// `AtsEntry` is a class that represents an entry in the system.
 ///

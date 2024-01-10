@@ -1,11 +1,17 @@
 # Changelog
 
-## 2.0.44
+## 2.0.45
 
 - Added `parentInvoice` field in `AtsPurchaseOrder`
 - Added `invoiceType` field in `AtsPurchaseOrder`
 - Added `ideInformation` field in `AtsPurchaseOrder`
 - Added `hasRawXml` field in `AtsPurchaseOrder`
+
+## 2.0.44
+
+- Replaced all `part of` to use a relative path instead of an absolute one
+- Added `SimulationCycle` model
+- Updated `environment` constraints of `sdk` and `flutter`
 
 ## 2.0.43
 

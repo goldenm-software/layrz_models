@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 /// [AtsNsProjectId] represents the project id of the license
 enum AtsNsProjectId {

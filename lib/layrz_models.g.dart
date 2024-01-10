@@ -5366,3 +5366,21 @@ Map<String, dynamic> _$$ReportCellImplToJson(_$ReportCellImpl instance) =>
           const ReportDataTypeOrNullConverter().toJson(instance.dataType),
       'currencySymbol': instance.currencySymbol,
     };
+
+_$SimulationCycleImpl _$$SimulationCycleImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SimulationCycleImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      steps: json['steps'] as int,
+      fileUri: json['fileUri'] as String?,
+    );
+
+Map<String, dynamic> _$$SimulationCycleImplToJson(
+        _$SimulationCycleImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'steps': instance.steps,
+      'fileUri': instance.fileUri,
+    };

@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../layrz_models.dart';
 
 enum CommandSource {
   /// The command was sent from the server through the protocol channel.

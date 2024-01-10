@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 @freezed
 class AppLoginDesign with _$AppLoginDesign {
@@ -28,7 +28,6 @@ class AppTitleMode with _$AppTitleMode {
 
   factory AppTitleMode.fromJson(Map<String, dynamic> json) => _$AppTitleModeFromJson(json);
 }
-
 
 class LoginLayoutModeConverter implements JsonConverter<LoginLayoutMode, String> {
   const LoginLayoutModeConverter();

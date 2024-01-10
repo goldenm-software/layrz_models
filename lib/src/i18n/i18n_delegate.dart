@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 class LayrzAppLocalizations {
   /// [locale] is the current locale of the app
