@@ -60729,7 +60729,7 @@ class _$SimulationCycleImpl implements _SimulationCycle {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SimulationCycleImpl &&
