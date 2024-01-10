@@ -203,7 +203,7 @@ class _$AvailableLanguageImpl extends _AvailableLanguage {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AvailableLanguageImpl &&
@@ -419,7 +419,7 @@ class _$CategoryImpl implements _Category {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CategoryImpl &&
@@ -635,7 +635,7 @@ class _$CountryImpl implements _Country {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CountryImpl &&
@@ -812,7 +812,7 @@ class _$PhoneNumberImpl extends _PhoneNumber {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PhoneNumberImpl &&
@@ -980,7 +980,7 @@ class _$NullablePhoneNumberImpl extends _NullablePhoneNumber {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NullablePhoneNumberImpl &&
@@ -1192,7 +1192,7 @@ class _$CityImpl implements _City {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CityImpl &&
@@ -1391,7 +1391,7 @@ class _$CountryStateImpl implements _CountryState {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CountryStateImpl &&
@@ -1624,7 +1624,7 @@ class _$ProfileImpl implements _Profile {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ProfileImpl &&
@@ -1908,7 +1908,7 @@ class _$ReferenceImpl implements _Reference {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReferenceImpl &&
@@ -3490,7 +3490,7 @@ class _$TagImpl implements _Tag {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TagImpl &&
@@ -4764,7 +4764,7 @@ class _$UserImpl implements _User {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$UserImpl &&
@@ -5141,7 +5141,7 @@ class _$TokenImpl implements _Token {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TokenImpl &&
@@ -5430,7 +5430,7 @@ class _$AccessImpl implements _Access {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AccessImpl &&
@@ -5755,7 +5755,7 @@ class _$DbPartitionImpl implements _DbPartition {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DbPartitionImpl &&
@@ -6058,7 +6058,7 @@ class _$GenericPermissionItemImpl implements _GenericPermissionItem {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GenericPermissionItemImpl &&
@@ -6520,7 +6520,7 @@ class _$GenericPermissionImpl implements _GenericPermission {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GenericPermissionImpl &&
@@ -6755,7 +6755,7 @@ class _$DepartmentImpl implements _Department {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DepartmentImpl &&
@@ -7215,7 +7215,7 @@ class _$EmployeeImpl implements _Employee {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmployeeImpl &&
@@ -7611,7 +7611,7 @@ class _$AlgorithmImpl implements _Algorithm {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AlgorithmImpl &&
@@ -7827,7 +7827,7 @@ class _$LanguageImpl implements _Language {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LanguageImpl &&
@@ -8224,7 +8224,7 @@ class _$CredentialFieldImpl implements _CredentialField {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CredentialFieldImpl &&
@@ -8559,7 +8559,7 @@ class _$SuspendedServiceImpl implements _SuspendedService {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuspendedServiceImpl &&
@@ -8992,7 +8992,7 @@ class _$BillingPlanImpl implements _BillingPlan {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BillingPlanImpl &&
@@ -9230,7 +9230,7 @@ class _$GeofencePointImpl implements _GeofencePoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GeofencePointImpl &&
@@ -9766,7 +9766,7 @@ class _$GeofenceImpl implements _Geofence {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GeofenceImpl &&
@@ -10369,7 +10369,7 @@ class _$GeoPointImpl implements _GeoPoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GeoPointImpl &&
@@ -10540,7 +10540,7 @@ class _$ContactInfoImpl implements _ContactInfo {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ContactInfoImpl &&
@@ -10722,7 +10722,7 @@ class _$AssetLoginInfoImpl implements _AssetLoginInfo {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AssetLoginInfoImpl &&
@@ -12103,7 +12103,7 @@ class _$AssetImpl implements _Asset {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AssetImpl &&
@@ -13005,7 +13005,7 @@ class _$DeviceImpl implements _Device {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DeviceImpl &&
@@ -13331,7 +13331,7 @@ class _$CustomFieldImpl implements _CustomField {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomFieldImpl &&
@@ -13516,7 +13516,7 @@ class _$CustomFieldInputImpl implements _CustomFieldInput {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomFieldInputImpl &&
@@ -14267,7 +14267,7 @@ class _$SensorImpl implements _Sensor {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SensorImpl &&
@@ -14647,7 +14647,7 @@ class _$MaskPointImpl implements _MaskPoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MaskPointImpl &&
@@ -14818,7 +14818,7 @@ class _$SensorPairImpl implements _SensorPair {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SensorPairImpl &&
@@ -15028,7 +15028,7 @@ class _$GuideImpl implements _Guide {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GuideImpl &&
@@ -15215,7 +15215,7 @@ class _$ConnectionImpl implements _Connection {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConnectionImpl &&
@@ -15479,7 +15479,7 @@ class _$DeviceTelemetryImpl extends _DeviceTelemetry {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DeviceTelemetryImpl &&
@@ -15824,7 +15824,7 @@ class _$AssetTelemetryImpl extends _AssetTelemetry {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AssetTelemetryImpl &&
@@ -16161,7 +16161,7 @@ class _$TelemetryPositionImpl extends _TelemetryPosition {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TelemetryPositionImpl &&
@@ -16373,7 +16373,7 @@ class _$TelemetrySensorImpl extends _TelemetrySensor {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TelemetrySensorImpl &&
@@ -16566,7 +16566,7 @@ class _$TripImpl extends _Trip {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TripImpl &&
@@ -16824,7 +16824,7 @@ class _$PointImpl extends _Point {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PointImpl &&
@@ -17122,7 +17122,7 @@ class _$ModelImpl implements _Model {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ModelImpl &&
@@ -18047,7 +18047,7 @@ class _$TriggerImpl implements _Trigger {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TriggerImpl &&
@@ -18568,7 +18568,7 @@ class _$TriggerActivationImpl implements _TriggerActivation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TriggerActivationImpl &&
@@ -19869,7 +19869,7 @@ class _$CareProtocolImpl implements _CareProtocol {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CareProtocolImpl &&
@@ -20173,7 +20173,7 @@ class _$CareTaskImpl implements _CareTask {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CareTaskImpl &&
@@ -20352,7 +20352,7 @@ class _$ConciergeFormImpl implements _ConciergeForm {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormImpl &&
@@ -20570,7 +20570,7 @@ class _$TimezoneImpl implements _Timezone {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TimezoneImpl &&
@@ -20813,7 +20813,7 @@ class _$LintErrorImpl implements _LintError {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LintErrorImpl &&
@@ -21478,7 +21478,7 @@ class _$OperationImpl implements _Operation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OperationImpl &&
@@ -21801,7 +21801,7 @@ class _$HttpHeaderImpl implements _HttpHeader {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HttpHeaderImpl &&
@@ -22915,7 +22915,7 @@ class _$ActionImpl implements _Action {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ActionImpl &&
@@ -23285,7 +23285,7 @@ class _$ActionGeofenceSettingsImpl implements _ActionGeofenceSettings {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ActionGeofenceSettingsImpl &&
@@ -24062,7 +24062,7 @@ class _$ReportTemplateImpl implements _ReportTemplate {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportTemplateImpl &&
@@ -24354,7 +24354,7 @@ class _$ReportTemplatePageImpl implements _ReportTemplatePage {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportTemplatePageImpl &&
@@ -24581,7 +24581,7 @@ class _$ReportTemplateColImpl implements _ReportTemplateCol {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportTemplateColImpl &&
@@ -24789,7 +24789,7 @@ class _$CustomReportImpl implements _CustomReport {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomReportImpl &&
@@ -25128,7 +25128,7 @@ class _$CloudEntryImpl implements _CloudEntry {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CloudEntryImpl &&
@@ -25780,7 +25780,7 @@ class _$DeviceCommandImpl implements _DeviceCommand {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DeviceCommandImpl &&
@@ -26233,7 +26233,7 @@ class _$PresetImpl implements _Preset {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PresetImpl &&
@@ -26580,7 +26580,7 @@ class _$CheckpointImpl implements _Checkpoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CheckpointImpl &&
@@ -26866,7 +26866,7 @@ class _$WaypointImpl implements _Waypoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WaypointImpl &&
@@ -27056,7 +27056,7 @@ class _$LinkedAssetToCheckpointIdImpl implements _LinkedAssetToCheckpointId {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LinkedAssetToCheckpointIdImpl &&
@@ -27646,7 +27646,7 @@ class _$LayrzChartImpl implements _LayrzChart {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LayrzChartImpl &&
@@ -27895,7 +27895,7 @@ class _$CommentOwnerImpl implements _CommentOwner {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CommentOwnerImpl &&
@@ -28115,7 +28115,7 @@ class _$CaseCommentImpl implements _CaseComment {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CaseCommentImpl &&
@@ -28530,7 +28530,7 @@ class _$CaseImpl implements _Case {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CaseImpl &&
@@ -28812,7 +28812,7 @@ class _$AvatarImpl implements _Avatar {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AvatarImpl &&
@@ -29320,7 +29320,7 @@ class _$EmailTemplateImpl implements _EmailTemplate {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$EmailTemplateImpl &&
@@ -29539,7 +29539,7 @@ class _$FtpAccountImpl implements _FtpAccount {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FtpAccountImpl &&
@@ -30090,7 +30090,7 @@ class _$LayrzFunctionImpl implements _LayrzFunction {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LayrzFunctionImpl &&
@@ -30352,7 +30352,7 @@ class _$RealtimeEndpointImpl implements _RealtimeEndpoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RealtimeEndpointImpl &&
@@ -30549,7 +30549,7 @@ class _$RealtimeVariantEndpointImpl implements _RealtimeVariantEndpoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RealtimeVariantEndpointImpl &&
@@ -31278,7 +31278,7 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundProtocolImpl &&
@@ -31865,7 +31865,7 @@ class _$InboundServiceImpl implements _InboundService {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundServiceImpl &&
@@ -32156,7 +32156,7 @@ class _$InboundStructureImpl implements _InboundStructure {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundStructureImpl &&
@@ -32415,7 +32415,7 @@ class _$InboundPositionStructureImpl implements _InboundPositionStructure {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundPositionStructureImpl &&
@@ -32611,7 +32611,7 @@ class _$InboundPayloadStructureImpl implements _InboundPayloadStructure {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundPayloadStructureImpl &&
@@ -32921,7 +32921,7 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutboundProtocolImpl &&
@@ -33444,7 +33444,7 @@ class _$OutboundServiceImpl implements _OutboundService {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutboundServiceImpl &&
@@ -33704,7 +33704,7 @@ class _$OutboundStructureImpl implements _OutboundStructure {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutboundStructureImpl &&
@@ -33947,7 +33947,7 @@ class _$ExternalSourceImpl implements _ExternalSource {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExternalSourceImpl &&
@@ -34287,7 +34287,7 @@ class _$ExternalAccountImpl implements _ExternalAccount {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExternalAccountImpl &&
@@ -34531,7 +34531,7 @@ class _$ExternalUnitImpl implements _ExternalUnit {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExternalUnitImpl &&
@@ -34703,7 +34703,7 @@ class _$ExternalResourceImpl implements _ExternalResource {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExternalResourceImpl &&
@@ -34869,7 +34869,7 @@ class _$ExternalGeofenceImpl implements _ExternalGeofence {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExternalGeofenceImpl &&
@@ -35786,7 +35786,7 @@ class _$WorkspaceImpl implements _Workspace {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WorkspaceImpl &&
@@ -36189,7 +36189,7 @@ class _$AnalyticsGridItemImpl implements _AnalyticsGridItem {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AnalyticsGridItemImpl &&
@@ -36387,7 +36387,7 @@ class _$MapCardAlertConfigurationImpl implements _MapCardAlertConfiguration {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapCardAlertConfigurationImpl &&
@@ -36589,7 +36589,7 @@ class _$MapCardConnectionConfigurationImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapCardConnectionConfigurationImpl &&
@@ -36812,7 +36812,7 @@ class _$MapCardSensorsConfigurationImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapCardSensorsConfigurationImpl &&
@@ -37069,7 +37069,7 @@ class _$MapCardSensorsImpl implements _MapCardSensors {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapCardSensorsImpl &&
@@ -37249,7 +37249,7 @@ class _$GridDimensionImpl implements _GridDimension {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GridDimensionImpl &&
@@ -37445,7 +37445,7 @@ class _$SensorGridContentImpl implements _SensorGridContent {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SensorGridContentImpl &&
@@ -37690,7 +37690,7 @@ class _$SensorGridItemImpl implements _SensorGridItem {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SensorGridItemImpl &&
@@ -37928,7 +37928,7 @@ class _$WorkspaceAlertImpl implements _WorkspaceAlert {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WorkspaceAlertImpl &&
@@ -38165,7 +38165,7 @@ class _$WorkspaceTripPointImpl implements _WorkspaceTripPoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WorkspaceTripPointImpl &&
@@ -38369,7 +38369,7 @@ class _$WorkspaceTripImpl implements _WorkspaceTrip {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WorkspaceTripImpl &&
@@ -38542,7 +38542,7 @@ class _$CaseMonitorCardImpl implements _CaseMonitorCard {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CaseMonitorCardImpl &&
@@ -38786,7 +38786,7 @@ class _$VisionProtocolImpl implements _VisionProtocol {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VisionProtocolImpl &&
@@ -39096,7 +39096,7 @@ class _$VisionProfileImpl implements _VisionProfile {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VisionProfileImpl &&
@@ -39303,7 +39303,7 @@ class _$AppAccessibilityImpl implements _AppAccessibility {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppAccessibilityImpl &&
@@ -39827,7 +39827,7 @@ class _$AvailableAppImpl implements _AvailableApp {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AvailableAppImpl &&
@@ -40457,7 +40457,7 @@ class _$RegisteredAppImpl implements _RegisteredApp {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisteredAppImpl &&
@@ -40704,7 +40704,7 @@ class _$AppThemedAssetImpl implements _AppThemedAsset {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppThemedAssetImpl &&
@@ -40885,7 +40885,7 @@ class _$AppBackgroundDesignImpl implements _AppBackgroundDesign {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppBackgroundDesignImpl &&
@@ -41118,7 +41118,7 @@ class _$AppBuildImpl implements _AppBuild {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppBuildImpl &&
@@ -41361,7 +41361,7 @@ class _$AppThemedColorsImpl implements _AppThemedColors {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppThemedColorsImpl &&
@@ -41747,7 +41747,7 @@ class _$LegacyAppDesignImpl implements _LegacyAppDesign {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LegacyAppDesignImpl &&
@@ -42057,7 +42057,7 @@ class _$AppDesignImpl implements _AppDesign {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppDesignImpl &&
@@ -42234,7 +42234,7 @@ class _$AppFooterImpl implements _AppFooter {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppFooterImpl &&
@@ -42665,7 +42665,7 @@ class _$AppInstanceImpl implements _AppInstance {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppInstanceImpl &&
@@ -42921,7 +42921,7 @@ class _$DnsConfigurationImpl implements _DnsConfiguration {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DnsConfigurationImpl &&
@@ -43094,7 +43094,7 @@ class _$AppLegalImpl implements _AppLegal {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppLegalImpl &&
@@ -43295,7 +43295,7 @@ class _$AppLoginDesignImpl implements _AppLoginDesign {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppLoginDesignImpl &&
@@ -43448,7 +43448,7 @@ class _$LegacyAppLoginDesignImpl implements _LegacyAppLoginDesign {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LegacyAppLoginDesignImpl &&
@@ -43591,7 +43591,7 @@ class _$AppTitleModeImpl implements _AppTitleMode {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppTitleModeImpl &&
@@ -43835,7 +43835,7 @@ class _$AppVersionImpl implements _AppVersion {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppVersionImpl &&
@@ -44103,7 +44103,7 @@ class _$MapLayerImpl implements _MapLayer {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapLayerImpl &&
@@ -44529,7 +44529,7 @@ class _$AtsEntryImpl implements _AtsEntry {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsEntryImpl &&
@@ -44852,7 +44852,7 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsReceptionProductImpl &&
@@ -45620,7 +45620,7 @@ class _$AtsAuthenticationIdentifierImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsAuthenticationIdentifierImpl &&
@@ -46026,7 +46026,7 @@ class _$AtsAuthenticationCardImpl implements _AtsAuthenticationCard {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsAuthenticationCardImpl &&
@@ -46402,7 +46402,7 @@ class _$AtsHistoryAuthenticationCardImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsHistoryAuthenticationCardImpl &&
@@ -46744,7 +46744,7 @@ class _$AtsFeedbackMessegeImpl implements _AtsFeedbackMessege {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsFeedbackMessegeImpl &&
@@ -47273,7 +47273,7 @@ class _$AtsEventImpl implements _AtsEvent {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsEventImpl &&
@@ -47616,7 +47616,7 @@ class _$AtsNsAddressImpl implements _AtsNsAddress {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsNsAddressImpl &&
@@ -48132,7 +48132,7 @@ class _$AtsNsLicenseImpl implements _AtsNsLicense {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsNsLicenseImpl &&
@@ -48645,7 +48645,7 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsTransportInformationImpl &&
@@ -48925,7 +48925,7 @@ class _$AtsCommandResultImpl implements _AtsCommandResult {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsCommandResultImpl &&
@@ -49121,7 +49121,7 @@ class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsCompanyInformationImpl &&
@@ -49412,7 +49412,7 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsProductInformationImpl &&
@@ -50115,7 +50115,7 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPurchaseOrderImpl &&
@@ -50592,7 +50592,7 @@ class _$AtsPurchaseTotalImpl implements _AtsPurchaseTotal {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPurchaseTotalImpl &&
@@ -50963,7 +50963,7 @@ class _$AtsReceptionImpl implements _AtsReception {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsReceptionImpl &&
@@ -51380,7 +51380,7 @@ class _$AtsIdeInformationImpl implements _AtsIdeInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsIdeInformationImpl &&
@@ -51566,7 +51566,7 @@ class _$AtsExitStatusImpl implements _AtsExitStatus {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExitStatusImpl &&
@@ -52051,7 +52051,7 @@ class _$AtsExitImpl implements _AtsExit {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExitImpl &&
@@ -52599,7 +52599,7 @@ class _$AtsPossibleExitImpl implements _AtsPossibleExit {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPossibleExitImpl &&
@@ -53267,7 +53267,7 @@ class _$AtsExecuteExitHistoryImpl implements _AtsExecuteExitHistory {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExecuteExitHistoryImpl &&
@@ -54000,7 +54000,7 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BrickhouseAlertImpl &&
@@ -55358,7 +55358,7 @@ class _$BrickHouseWorkspaceInputImpl extends _BrickHouseWorkspaceInput {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BrickHouseWorkspaceInputImpl &&
@@ -55560,7 +55560,7 @@ class _$ConciergeFormPageImpl implements _ConciergeFormPage {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormPageImpl &&
@@ -55810,7 +55810,7 @@ class _$ConciergeFormBlockImpl implements _ConciergeFormBlock {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormBlockImpl &&
@@ -56093,7 +56093,7 @@ class _$ConciergeFormBlockConfigurationImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormBlockConfigurationImpl &&
@@ -56389,7 +56389,7 @@ class _$ConciergeFormBlockValidatorImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormBlockValidatorImpl &&
@@ -56653,7 +56653,7 @@ class _$MonitorRealWaypointImpl implements _MonitorRealWaypoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MonitorRealWaypointImpl &&
@@ -56998,7 +56998,7 @@ class _$MonitorActiveCheckpointImpl implements _MonitorActiveCheckpoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MonitorActiveCheckpointImpl &&
@@ -57310,7 +57310,7 @@ class _$MappitRouteLinkingHistoryImpl implements _MappitRouteLinkingHistory {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitRouteLinkingHistoryImpl &&
@@ -57711,7 +57711,7 @@ class _$MappitRouteImpl implements _MappitRoute {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitRouteImpl &&
@@ -58006,7 +58006,7 @@ class _$MappitLaborHourImpl implements _MappitLaborHour {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitLaborHourImpl &&
@@ -58247,7 +58247,7 @@ class _$MappitProfileGeofenceImpl implements _MappitProfileGeofence {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitProfileGeofenceImpl &&
@@ -58452,7 +58452,7 @@ class _$MappitProfileImpl implements _MappitProfile {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitProfileImpl &&
@@ -58660,7 +58660,7 @@ class _$MappitDurationRangeImpl implements _MappitDurationRange {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitDurationRangeImpl &&
@@ -58857,7 +58857,7 @@ class _$MappitIntRangeImpl implements _MappitIntRange {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitIntRangeImpl &&
@@ -59052,7 +59052,7 @@ class _$MappitDoubleRangeImpl implements _MappitDoubleRange {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitDoubleRangeImpl &&
@@ -59311,7 +59311,7 @@ class _$MappitHomeConfigImpl implements _MappitHomeConfig {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitHomeConfigImpl &&
@@ -59585,7 +59585,7 @@ class _$MappitFreeDayImpl implements _MappitFreeDay {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitFreeDayImpl &&
@@ -59785,7 +59785,7 @@ class _$ReportPreviewImpl implements _ReportPreview {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportPreviewImpl &&
@@ -59988,7 +59988,7 @@ class _$ReportPageImpl implements _ReportPage {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportPageImpl &&
@@ -60172,7 +60172,7 @@ class _$ReportRowImpl implements _ReportRow {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportRowImpl &&
@@ -60366,7 +60366,7 @@ class _$ReportHeaderImpl implements _ReportHeader {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportHeaderImpl &&
@@ -60611,7 +60611,7 @@ class _$ReportCellImpl implements _ReportCell {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportCellImpl &&
@@ -60843,7 +60843,7 @@ class _$SimulationCycleImpl implements _SimulationCycle {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SimulationCycleImpl &&

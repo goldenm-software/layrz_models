@@ -2,7 +2,11 @@
 
 ## 2.0.46
 
+- Added `cycleId` to `InboundProtocol` model
+- Added `cycles` permission to `GenericPermission` model
+
 ## 2.0.45
+
 - Added `parentInvoice` field in `AtsPurchaseOrder`
 - Added `invoiceType` field in `AtsPurchaseOrder`
 - Added `ideInformation` field in `AtsPurchaseOrder`
