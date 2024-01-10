@@ -50733,6 +50733,9 @@ mixin _$AtsReception {
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   List<AtsReceptionProduct>? get products => throw _privateConstructorUsedError;
 
+  /// `errorRate` represents error percent between reception and sensor entry raw.
+  double? get errorRate => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AtsReceptionCopyWith<AtsReception> get copyWith =>
@@ -50751,7 +50754,8 @@ abstract class $AtsReceptionCopyWith<$Res> {
       AtsPurchaseOrder? order,
       List<int>? ordersIds,
       AtsEntry? entry,
-      List<AtsReceptionProduct>? products});
+      List<AtsReceptionProduct>? products,
+      double? errorRate});
 
   $AtsPurchaseOrderCopyWith<$Res>? get order;
   $AtsEntryCopyWith<$Res>? get entry;
@@ -50776,6 +50780,7 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
     Object? ordersIds = freezed,
     Object? entry = freezed,
     Object? products = freezed,
+    Object? errorRate = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -50802,6 +50807,10 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<AtsReceptionProduct>?,
+      errorRate: freezed == errorRate
+          ? _value.errorRate
+          : errorRate // ignore: cast_nullable_to_non_nullable
+              as double?,
     ) as $Val);
   }
 
@@ -50844,7 +50853,8 @@ abstract class _$$AtsReceptionImplCopyWith<$Res>
       AtsPurchaseOrder? order,
       List<int>? ordersIds,
       AtsEntry? entry,
-      List<AtsReceptionProduct>? products});
+      List<AtsReceptionProduct>? products,
+      double? errorRate});
 
   @override
   $AtsPurchaseOrderCopyWith<$Res>? get order;
@@ -50869,6 +50879,7 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
     Object? ordersIds = freezed,
     Object? entry = freezed,
     Object? products = freezed,
+    Object? errorRate = freezed,
   }) {
     return _then(_$AtsReceptionImpl(
       id: null == id
@@ -50895,6 +50906,10 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
               as List<AtsReceptionProduct>?,
+      errorRate: freezed == errorRate
+          ? _value.errorRate
+          : errorRate // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 }
@@ -50908,7 +50923,8 @@ class _$AtsReceptionImpl implements _AtsReception {
       this.order,
       final List<int>? ordersIds,
       this.entry,
-      final List<AtsReceptionProduct>? products})
+      final List<AtsReceptionProduct>? products,
+      this.errorRate})
       : _ordersIds = ordersIds,
         _products = products;
 
@@ -50957,9 +50973,13 @@ class _$AtsReceptionImpl implements _AtsReception {
     return EqualUnmodifiableListView(value);
   }
 
+  /// `errorRate` represents error percent between reception and sensor entry raw.
+  @override
+  final double? errorRate;
+
   @override
   String toString() {
-    return 'AtsReception(id: $id, orderId: $orderId, order: $order, ordersIds: $ordersIds, entry: $entry, products: $products)';
+    return 'AtsReception(id: $id, orderId: $orderId, order: $order, ordersIds: $ordersIds, entry: $entry, products: $products, errorRate: $errorRate)';
   }
 
   @override
@@ -50973,7 +50993,9 @@ class _$AtsReceptionImpl implements _AtsReception {
             const DeepCollectionEquality()
                 .equals(other._ordersIds, _ordersIds) &&
             (identical(other.entry, entry) || other.entry == entry) &&
-            const DeepCollectionEquality().equals(other._products, _products));
+            const DeepCollectionEquality().equals(other._products, _products) &&
+            (identical(other.errorRate, errorRate) ||
+                other.errorRate == errorRate));
   }
 
   @JsonKey(ignore: true)
@@ -50985,7 +51007,8 @@ class _$AtsReceptionImpl implements _AtsReception {
       order,
       const DeepCollectionEquality().hash(_ordersIds),
       entry,
-      const DeepCollectionEquality().hash(_products));
+      const DeepCollectionEquality().hash(_products),
+      errorRate);
 
   @JsonKey(ignore: true)
   @override
@@ -51008,7 +51031,8 @@ abstract class _AtsReception implements AtsReception {
       final AtsPurchaseOrder? order,
       final List<int>? ordersIds,
       final AtsEntry? entry,
-      final List<AtsReceptionProduct>? products}) = _$AtsReceptionImpl;
+      final List<AtsReceptionProduct>? products,
+      final double? errorRate}) = _$AtsReceptionImpl;
 
   factory _AtsReception.fromJson(Map<String, dynamic> json) =
       _$AtsReceptionImpl.fromJson;
@@ -51038,6 +51062,10 @@ abstract class _AtsReception implements AtsReception {
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   List<AtsReceptionProduct>? get products;
   @override
+
+  /// `errorRate` represents error percent between reception and sensor entry raw.
+  double? get errorRate;
+  @override
   @JsonKey(ignore: true)
   _$$AtsReceptionImplCopyWith<_$AtsReceptionImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -51049,17 +51077,23 @@ AtsEntryUnloadInput _$AtsEntryUnloadInputFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AtsEntryUnloadInput {
-  /// ID of the [AtsEntryUnloadInput], ignore it if you are using "addLicense" mutation.
+  /// `id` of the [AtsEntry] entity. This ID is unique.
   String? get id => throw _privateConstructorUsedError;
 
-  /// ID of the [AtsEntryUnloadInput], ignore it if you are using "addLicense" mutation.
+  /// `id` of the [AtsEntry] entity. This ID is unique.
   set id(String? value) => throw _privateConstructorUsedError;
 
-  /// ID of the tank [Asset].
+  /// `fromAssetId` of the [Asset] entity. This ID is unique.
   String? get fromAssetId => throw _privateConstructorUsedError;
 
-  /// ID of the tank [Asset].
+  /// `fromAssetId` of the [Asset] entity. This ID is unique.
   set fromAssetId(String? value) => throw _privateConstructorUsedError;
+
+  /// `receptionId` of the [AtsReception] entity. This ID is unique.
+  String? get receptionId => throw _privateConstructorUsedError;
+
+  /// `receptionId` of the [AtsReception] entity. This ID is unique.
+  set receptionId(String? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51073,7 +51107,7 @@ abstract class $AtsEntryUnloadInputCopyWith<$Res> {
           AtsEntryUnloadInput value, $Res Function(AtsEntryUnloadInput) then) =
       _$AtsEntryUnloadInputCopyWithImpl<$Res, AtsEntryUnloadInput>;
   @useResult
-  $Res call({String? id, String? fromAssetId});
+  $Res call({String? id, String? fromAssetId, String? receptionId});
 }
 
 /// @nodoc
@@ -51091,6 +51125,7 @@ class _$AtsEntryUnloadInputCopyWithImpl<$Res, $Val extends AtsEntryUnloadInput>
   $Res call({
     Object? id = freezed,
     Object? fromAssetId = freezed,
+    Object? receptionId = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -51100,6 +51135,10 @@ class _$AtsEntryUnloadInputCopyWithImpl<$Res, $Val extends AtsEntryUnloadInput>
       fromAssetId: freezed == fromAssetId
           ? _value.fromAssetId
           : fromAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receptionId: freezed == receptionId
+          ? _value.receptionId
+          : receptionId // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -51113,7 +51152,7 @@ abstract class _$$AtsEntryUnloadInputImplCopyWith<$Res>
       __$$AtsEntryUnloadInputImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? id, String? fromAssetId});
+  $Res call({String? id, String? fromAssetId, String? receptionId});
 }
 
 /// @nodoc
@@ -51129,6 +51168,7 @@ class __$$AtsEntryUnloadInputImplCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? fromAssetId = freezed,
+    Object? receptionId = freezed,
   }) {
     return _then(_$AtsEntryUnloadInputImpl(
       id: freezed == id
@@ -51139,6 +51179,10 @@ class __$$AtsEntryUnloadInputImplCopyWithImpl<$Res>
           ? _value.fromAssetId
           : fromAssetId // ignore: cast_nullable_to_non_nullable
               as String?,
+      receptionId: freezed == receptionId
+          ? _value.receptionId
+          : receptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -51146,22 +51190,26 @@ class __$$AtsEntryUnloadInputImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AtsEntryUnloadInputImpl implements _AtsEntryUnloadInput {
-  _$AtsEntryUnloadInputImpl({this.id, this.fromAssetId});
+  _$AtsEntryUnloadInputImpl({this.id, this.fromAssetId, this.receptionId});
 
   factory _$AtsEntryUnloadInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$AtsEntryUnloadInputImplFromJson(json);
 
-  /// ID of the [AtsEntryUnloadInput], ignore it if you are using "addLicense" mutation.
+  /// `id` of the [AtsEntry] entity. This ID is unique.
   @override
   String? id;
 
-  /// ID of the tank [Asset].
+  /// `fromAssetId` of the [Asset] entity. This ID is unique.
   @override
   String? fromAssetId;
 
+  /// `receptionId` of the [AtsReception] entity. This ID is unique.
+  @override
+  String? receptionId;
+
   @override
   String toString() {
-    return 'AtsEntryUnloadInput(id: $id, fromAssetId: $fromAssetId)';
+    return 'AtsEntryUnloadInput(id: $id, fromAssetId: $fromAssetId, receptionId: $receptionId)';
   }
 
   @JsonKey(ignore: true)
@@ -51180,26 +51228,35 @@ class _$AtsEntryUnloadInputImpl implements _AtsEntryUnloadInput {
 }
 
 abstract class _AtsEntryUnloadInput implements AtsEntryUnloadInput {
-  factory _AtsEntryUnloadInput({String? id, String? fromAssetId}) =
-      _$AtsEntryUnloadInputImpl;
+  factory _AtsEntryUnloadInput(
+      {String? id,
+      String? fromAssetId,
+      String? receptionId}) = _$AtsEntryUnloadInputImpl;
 
   factory _AtsEntryUnloadInput.fromJson(Map<String, dynamic> json) =
       _$AtsEntryUnloadInputImpl.fromJson;
 
   @override
 
-  /// ID of the [AtsEntryUnloadInput], ignore it if you are using "addLicense" mutation.
+  /// `id` of the [AtsEntry] entity. This ID is unique.
   String? get id;
 
-  /// ID of the [AtsEntryUnloadInput], ignore it if you are using "addLicense" mutation.
+  /// `id` of the [AtsEntry] entity. This ID is unique.
   set id(String? value);
   @override
 
-  /// ID of the tank [Asset].
+  /// `fromAssetId` of the [Asset] entity. This ID is unique.
   String? get fromAssetId;
 
-  /// ID of the tank [Asset].
+  /// `fromAssetId` of the [Asset] entity. This ID is unique.
   set fromAssetId(String? value);
+  @override
+
+  /// `receptionId` of the [AtsReception] entity. This ID is unique.
+  String? get receptionId;
+
+  /// `receptionId` of the [AtsReception] entity. This ID is unique.
+  set receptionId(String? value);
   @override
   @JsonKey(ignore: true)
   _$$AtsEntryUnloadInputImplCopyWith<_$AtsEntryUnloadInputImpl> get copyWith =>

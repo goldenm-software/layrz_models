@@ -20,6 +20,11 @@ class AtsReception with _$AtsReception {
 
     /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
     List<AtsReceptionProduct>? products,
+
+    /// `errorRate` represents error percent between reception and sensor entry raw.
+    double? errorRate,
+
+
   }) = _AtsReception;
 
   factory AtsReception.fromJson(Map<String, dynamic> json) => _$AtsReceptionFromJson(json);

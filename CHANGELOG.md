@@ -1,5 +1,10 @@
 # Changelog
 
+## 
+- Added `receptionId` to [AtsEntryUnloadInput] model
+- Added `errorRate` to [AtsReception] model
+
+
 ## 2.0.46
 
 - Added `cycleId` to `InboundProtocol` model

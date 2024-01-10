@@ -4488,6 +4488,7 @@ _$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
       products: (json['products'] as List<dynamic>?)
           ?.map((e) => AtsReceptionProduct.fromJson(e as Map<String, dynamic>))
           .toList(),
+      errorRate: (json['errorRate'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$AtsReceptionImplToJson(_$AtsReceptionImpl instance) =>
@@ -4498,6 +4499,7 @@ Map<String, dynamic> _$$AtsReceptionImplToJson(_$AtsReceptionImpl instance) =>
       'ordersIds': instance.ordersIds,
       'entry': instance.entry?.toJson(),
       'products': instance.products?.map((e) => e.toJson()).toList(),
+      'errorRate': instance.errorRate,
     };
 
 _$AtsEntryUnloadInputImpl _$$AtsEntryUnloadInputImplFromJson(
@@ -4505,6 +4507,7 @@ _$AtsEntryUnloadInputImpl _$$AtsEntryUnloadInputImplFromJson(
     _$AtsEntryUnloadInputImpl(
       id: json['id'] as String?,
       fromAssetId: json['fromAssetId'] as String?,
+      receptionId: json['receptionId'] as String?,
     );
 
 Map<String, dynamic> _$$AtsEntryUnloadInputImplToJson(
@@ -4512,6 +4515,7 @@ Map<String, dynamic> _$$AtsEntryUnloadInputImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'fromAssetId': instance.fromAssetId,
+      'receptionId': instance.receptionId,
     };
 
 _$AtsIdeInformationImpl _$$AtsIdeInformationImplFromJson(

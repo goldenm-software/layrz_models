@@ -1,13 +1,18 @@
 part of '../../../layrz_models.dart';
 
+/// `AtsEntryUnloadInput` is a class that represents the input for unloading an entry in the ATS system.
+
 @unfreezed
 class AtsEntryUnloadInput with _$AtsEntryUnloadInput {
   factory AtsEntryUnloadInput({
-    /// ID of the [AtsEntryUnloadInput], ignore it if you are using "addLicense" mutation.
+    /// `id` of the [AtsEntry] entity. This ID is unique.
     String? id,
 
-    /// ID of the tank [Asset].
+    /// `fromAssetId` of the [Asset] entity. This ID is unique.
     String? fromAssetId,
+
+    /// `receptionId` of the [AtsReception] entity. This ID is unique.
+    String? receptionId,
   }) = _AtsEntryUnloadInput;
 
   factory AtsEntryUnloadInput.fromJson(Map<String, dynamic> json) => _$AtsEntryUnloadInputFromJson(json);
