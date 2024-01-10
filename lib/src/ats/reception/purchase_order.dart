@@ -15,6 +15,12 @@ class AtsPurchaseOrder with _$AtsPurchaseOrder {
     /// ID of the asset.
     String? assetId,
 
+    /// ID of the seller asset.
+    String? sellerAssetId,
+
+    /// ID of the transport asset.
+    String? transportAssetId,
+
     /// Unix of last [AtsReception] date.
     @TimestampOrNullConverter() DateTime? purchasedAt,
 
@@ -44,6 +50,18 @@ class AtsPurchaseOrder with _$AtsPurchaseOrder {
 
     /// Legal information about the transport. Please read the comments of TransportInformation definition for more information.
     AtsTransportInformation? transportInformation,
+
+    /// True if the purchase order has a raw xml
+    bool? hasRawXml,
+
+    /// Invoice type (NFe, CTe)
+    String? invoiceType,
+
+    /// Parent invoice
+    AtsPurchaseOrder? parentInvoice,
+
+    /// Ide information
+    AtsIdeInformation? ideInformation,
   }) = _AtsPurchaseOrder;
 
   /// from json factory

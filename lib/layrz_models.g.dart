@@ -4273,6 +4273,10 @@ _$AtsTransportInformationImpl _$$AtsTransportInformationImplFromJson(
       businessNumber: json['businessNumber'] as String?,
       vehiclePlate: json['vehiclePlate'] as String?,
       vehicleUf: json['vehicleUf'] as String?,
+      vehicleName: json['vehicleName'] as String?,
+      destination: json['destination'] as String?,
+      driver: json['driver'] as String?,
+      origin: json['origin'] as String?,
     );
 
 Map<String, dynamic> _$$AtsTransportInformationImplToJson(
@@ -4287,6 +4291,10 @@ Map<String, dynamic> _$$AtsTransportInformationImplToJson(
       'businessNumber': instance.businessNumber,
       'vehiclePlate': instance.vehiclePlate,
       'vehicleUf': instance.vehicleUf,
+      'vehicleName': instance.vehicleName,
+      'destination': instance.destination,
+      'driver': instance.driver,
+      'origin': instance.origin,
     };
 
 _$AtsCommandResultImpl _$$AtsCommandResultImplFromJson(
@@ -4354,6 +4362,8 @@ _$AtsPurchaseOrderImpl _$$AtsPurchaseOrderImplFromJson(
       ownerId: json['ownerId'] as String?,
       orderId: json['orderId'] as String?,
       assetId: json['assetId'] as String?,
+      sellerAssetId: json['sellerAssetId'] as String?,
+      transportAssetId: json['transportAssetId'] as String?,
       purchasedAt: const TimestampOrNullConverter()
           .fromJson(json['purchasedAt'] as num?),
       receivedAt:
@@ -4382,6 +4392,16 @@ _$AtsPurchaseOrderImpl _$$AtsPurchaseOrderImplFromJson(
           ? null
           : AtsTransportInformation.fromJson(
               json['transportInformation'] as Map<String, dynamic>),
+      hasRawXml: json['hasRawXml'] as bool?,
+      invoiceType: json['invoiceType'] as String?,
+      parentInvoice: json['parentInvoice'] == null
+          ? null
+          : AtsPurchaseOrder.fromJson(
+              json['parentInvoice'] as Map<String, dynamic>),
+      ideInformation: json['ideInformation'] == null
+          ? null
+          : AtsIdeInformation.fromJson(
+              json['ideInformation'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
@@ -4391,6 +4411,8 @@ Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
       'ownerId': instance.ownerId,
       'orderId': instance.orderId,
       'assetId': instance.assetId,
+      'sellerAssetId': instance.sellerAssetId,
+      'transportAssetId': instance.transportAssetId,
       'purchasedAt':
           const TimestampOrNullConverter().toJson(instance.purchasedAt),
       'receivedAt':
@@ -4404,6 +4426,10 @@ Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
       'isReceived': instance.isReceived,
       'hasReception': instance.hasReception,
       'transportInformation': instance.transportInformation?.toJson(),
+      'hasRawXml': instance.hasRawXml,
+      'invoiceType': instance.invoiceType,
+      'parentInvoice': instance.parentInvoice?.toJson(),
+      'ideInformation': instance.ideInformation?.toJson(),
     };
 
 _$AtsPurchaseTotalImpl _$$AtsPurchaseTotalImplFromJson(
@@ -4412,6 +4438,13 @@ _$AtsPurchaseTotalImpl _$$AtsPurchaseTotalImplFromJson(
       subtotal: (json['subtotal'] as num?)?.toDouble(),
       discountValue: (json['discountValue'] as num?)?.toDouble(),
       total: (json['total'] as num?)?.toDouble(),
+      totalLoad: (json['totalLoad'] as num?)?.toDouble(),
+      predominantProduct: json['predominantProduct'] as String?,
+      totalFreight: (json['totalFreight'] as num?)?.toDouble(),
+      totalReceived: (json['totalReceived'] as num?)?.toDouble(),
+      loadQuantity: (json['loadQuantity'] as num?)?.toDouble(),
+      loadQuantityMeasure: json['loadQuantityMeasure'] as String?,
+      freightWeight: (json['freightWeight'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$AtsPurchaseTotalImplToJson(
@@ -4420,6 +4453,13 @@ Map<String, dynamic> _$$AtsPurchaseTotalImplToJson(
       'subtotal': instance.subtotal,
       'discountValue': instance.discountValue,
       'total': instance.total,
+      'totalLoad': instance.totalLoad,
+      'predominantProduct': instance.predominantProduct,
+      'totalFreight': instance.totalFreight,
+      'totalReceived': instance.totalReceived,
+      'loadQuantity': instance.loadQuantity,
+      'loadQuantityMeasure': instance.loadQuantityMeasure,
+      'freightWeight': instance.freightWeight,
     };
 
 _$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
@@ -4461,6 +4501,26 @@ Map<String, dynamic> _$$AtsEntryUnloadInputImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'fromAssetId': instance.fromAssetId,
+    };
+
+_$AtsIdeInformationImpl _$$AtsIdeInformationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsIdeInformationImpl(
+      ideType: json['ideType'] as String?,
+      serie: json['serie'] as String?,
+      model: json['model'] as String?,
+      cfop: json['cfop'] as String?,
+      operationType: json['operationType'] as String?,
+    );
+
+Map<String, dynamic> _$$AtsIdeInformationImplToJson(
+        _$AtsIdeInformationImpl instance) =>
+    <String, dynamic>{
+      'ideType': instance.ideType,
+      'serie': instance.serie,
+      'model': instance.model,
+      'cfop': instance.cfop,
+      'operationType': instance.operationType,
     };
 
 _$AtsExitStatusImpl _$$AtsExitStatusImplFromJson(Map<String, dynamic> json) =>

@@ -1,4 +1,5 @@
 part of layrz_models;
+
 @freezed
 class AtsTransportInformation with _$AtsTransportInformation {
   factory AtsTransportInformation({
@@ -28,6 +29,18 @@ class AtsTransportInformation with _$AtsTransportInformation {
 
     /// Vehicle federal unit.
     String? vehicleUf,
+
+    /// Vehicle name.
+    String? vehicleName,
+
+    /// destination
+    String? destination,
+
+    /// Driver
+    String? driver,
+
+    /// Origin
+    String? origin,
   }) = _AtsTransportInformation;
 
   /// from json factory
