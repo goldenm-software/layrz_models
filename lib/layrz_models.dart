@@ -139,6 +139,7 @@ part 'src/ats/reception/purchase_order.dart';
 part 'src/ats/reception/purchase_total.dart';
 part 'src/ats/reception/reception.dart';
 part 'src/ats/reception/entry_unload_input.dart';
+part 'src/ats/reception/ide_information.dart';
 
 // ATS Exit Models
 part 'src/ats/exits/exit_status.dart';
