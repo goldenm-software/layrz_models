@@ -1,6 +1,9 @@
 # Changelog
 
-## 
+## 2.0.48
+- Added `atsAutomaticReception` to [ReferenceCategory]
+
+## 2.0.47
 - Added `receptionId` to [AtsEntryUnloadInput] model
 - Added `errorRate` to [AtsReception] model
 

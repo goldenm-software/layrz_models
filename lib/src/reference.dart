@@ -63,6 +63,8 @@ enum ReferenceCategory {
 
   /// Layrz API Reference: ATSEXITS
   atsExits,
+  /// Layrz API Reference: ATS_AUTOMATIC_RECEPTION
+  atsAutomaticReception,
 
   /// Layrz API Reference: MAPPIT_OPERATOR
   mappitOperator,
@@ -166,6 +168,8 @@ enum ReferenceCategory {
         return 'ATSFLEETQR';
       case ReferenceCategory.atsExits:
         return 'ATSEXITS';
+      case ReferenceCategory.atsAutomaticReception:
+        return 'ATS_AUTOMATIC_RECEPTION';
       case ReferenceCategory.mappitOperator:
         return 'MAPPIT_OPERATOR';
       case ReferenceCategory.mappitCustomer:
@@ -245,6 +249,8 @@ enum ReferenceCategory {
         return ReferenceCategory.atsFleetQr;
       case 'ATSEXITS':
         return ReferenceCategory.atsExits;
+      case 'ATS_AUTOMATIC_RECEPTION':
+        return ReferenceCategory.atsAutomaticReception;
       case 'MAPPIT_OPERATOR':
         return ReferenceCategory.mappitOperator;
       case 'MAPPIT_CUSTOMER':
