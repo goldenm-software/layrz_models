@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 @freezed
 class AppBackgroundDesign with _$AppBackgroundDesign {
@@ -10,7 +10,6 @@ class AppBackgroundDesign with _$AppBackgroundDesign {
 
   factory AppBackgroundDesign.fromJson(Map<String, dynamic> json) => _$AppBackgroundDesignFromJson(json);
 }
-
 
 class BackgroundModeConverter implements JsonConverter<BackgroundMode, String> {
   const BackgroundModeConverter();

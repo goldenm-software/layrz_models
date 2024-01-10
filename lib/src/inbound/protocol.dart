@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 @freezed
 class RealtimeEndpoint with _$RealtimeEndpoint {
@@ -101,11 +101,29 @@ class InboundProtocol with _$InboundProtocol {
 }
 
 enum OperationMode {
+  /// Layrz API Reference: REALTIME
+  /// The protocol is in realtime mode, this means that the protocol is connected to the Layrz platform
   realtime,
+
+  /// Layrz API Reference: REALTIMEVARIANT
+  /// The protocol is in realtime variant mode, this means that the protocol is connected to the Layrz platform
   realtimeVariant,
+
+  /// Layrz API Reference: REALTIMECLIENT
+  /// The protocol is in realtime client mode, this means that the protocol is connected to the Layrz platform
+  realtimeClient,
+
+  /// Layrz API Reference: ASYNC
+  /// The protocol is in asyncronus mode, this means that the protocol is not connected to the Layrz platform
   asyncronus,
+
+  /// Layrz API Reference: WEBHOOK
+  /// The protocol is in webhook mode, this means that the protocol is not connected to the Layrz platform
   webhook,
-  realtimeClient;
+
+  /// Layrz API Reference: SIMULATION
+  /// The protocol is in simulation mode, this means that the protocol is not connected to the Layrz platform
+  simulation;
 
   @override
   String toString() => toJson();
@@ -120,6 +138,8 @@ enum OperationMode {
         return "REALTIMECLIENT";
       case OperationMode.realtimeVariant:
         return "REALTIMEVARIANT";
+      case OperationMode.simulation:
+        return "SIMULATION";
       case OperationMode.realtime:
       default:
         return "REALTIME";
@@ -136,6 +156,8 @@ enum OperationMode {
         return OperationMode.realtimeClient;
       case "REALTIMEVARIANT":
         return OperationMode.realtimeVariant;
+      case "SIMULATION":
+        return OperationMode.simulation;
       case "REALTIME":
       default:
         return OperationMode.realtime;
@@ -147,12 +169,21 @@ class OperationModeConverter implements JsonConverter<OperationMode, String> {
   const OperationModeConverter();
 
   @override
-  OperationMode fromJson(String json) {
+  OperationMode fromJson(String json) => OperationMode.fromJson(json);
+
+  @override
+  String toJson(OperationMode object) => object.toJson();
+}
+
+class OperationModeOrNullConverter implements JsonConverter<OperationMode?, String?> {
+  const OperationModeOrNullConverter();
+
+  @override
+  OperationMode? fromJson(String? json) {
+    if (json == null) return null;
     return OperationMode.fromJson(json);
   }
 
   @override
-  String toJson(OperationMode object) {
-    return object.toJson();
-  }
+  String? toJson(OperationMode? object) => object?.toJson();
 }

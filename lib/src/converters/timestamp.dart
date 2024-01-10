@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 class TimestampOrNullConverter implements JsonConverter<DateTime?, num?> {
   const TimestampOrNullConverter();

@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../../layrz_models.dart';
 
 /// Possible exit
 ///
@@ -79,6 +79,5 @@ class AtsPossibleExit with _$AtsPossibleExit {
     bool? isValidated,
   }) = _AtsPossibleExit;
 
-  factory AtsPossibleExit.fromJson(Map<String, dynamic> json) =>
-      _$AtsPossibleExitFromJson(json);
+  factory AtsPossibleExit.fromJson(Map<String, dynamic> json) => _$AtsPossibleExitFromJson(json);
 }

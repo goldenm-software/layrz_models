@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../layrz_models.dart';
 
 @freezed
 class Preset with _$Preset {

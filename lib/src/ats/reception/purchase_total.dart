@@ -1,4 +1,5 @@
-part of layrz_models;
+part of '../../../layrz_models.dart';
+
 @freezed
 class AtsPurchaseTotal with _$AtsPurchaseTotal {
   factory AtsPurchaseTotal({

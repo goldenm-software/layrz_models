@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 class FeedbackSourceOrNullConverter implements JsonConverter<FeedbackSource?, String?> {
   const FeedbackSourceOrNullConverter();

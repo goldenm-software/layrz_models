@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.44
+- Replaced all `part of` to use a relative path instead of an absolute one
+- Added `SimulationCycle` model
+- Updated `environment` constraints of `sdk` and `flutter`
+
 ## 2.0.43
 - Changed `MappitFreeDay` field `date` converter from `TimestampConverter` to `DateConverter`
 

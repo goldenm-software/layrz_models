@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../layrz_models.dart';
 
 enum TriggerGeofenceDetectionMode {
   entrance,
@@ -464,44 +464,34 @@ class TriggerInput with _$TriggerInput {
     String? code,
 
     /// List of ID's of the linked geofences
-    @Default([])
-        List<String>? geofencesIds,
+    @Default([]) List<String>? geofencesIds,
 
     /// List of ID's of the linked geofences through tags
-    @Default([])
-        List<String>? tagsGeofencesIds,
+    @Default([]) List<String>? tagsGeofencesIds,
 
     ///List of ID's of the linked assets
-    @Default([])
-        List<String>? assetsIds,
+    @Default([]) List<String>? assetsIds,
 
     /// List of ID's of the linked assets through tags
-    @Default([])
-        List<String>? tagsAssetsIds,
+    @Default([]) List<String>? tagsAssetsIds,
 
     /// List of parameters to consider in the authentication procedure
-    @Default([])
-        List<String>? parameters,
+    @Default([]) List<String>? parameters,
 
     /// List of ID's of the assets for authentication
-    @Default([])
-        List<String>? authAssetsIds,
+    @Default([]) List<String>? authAssetsIds,
 
     /// List of ID's of the users for authentication
-    @Default([])
-        List<String>? authUsersIds,
+    @Default([]) List<String>? authUsersIds,
 
     /// List of ID's of the users or assets through tags for authentication
-    @Default([])
-        List<String>? authTagsIds,
+    @Default([]) List<String>? authTagsIds,
 
     /// Mode of activation.
-    @TriggerTypeOrNullConverter()
-        TriggerType? kind,
+    @TriggerTypeOrNullConverter() TriggerType? kind,
 
     /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
-    @TriggerGeofenceDetectionModeOrNullConverter()
-        TriggerGeofenceDetectionMode? geofenceKind,
+    @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? geofenceKind,
 
     /// Layrz Language formula
     String? formula,
@@ -526,11 +516,10 @@ class TriggerInput with _$TriggerInput {
       Weekday.sunday,
     ])
     @WeekdayConverter()
-        List<Weekday>? weekdays,
+    List<Weekday>? weekdays,
 
     ///Indicates if the EXACTIME is in Crontab format or assisted format
-    @Default(false)
-        bool? isPlainCrontab,
+    @Default(false) bool? isPlainCrontab,
 
     /// Timezone associated to disparator [TriggerType.exactTime].
     String? timezoneId,
@@ -539,12 +528,10 @@ class TriggerInput with _$TriggerInput {
     int? priority,
 
     /// Color of the trigger case
-    @ColorOrNullConverter()
-        Color? color,
+    @ColorOrNullConverter() Color? color,
 
     /// Visual event effects to use in Monitor Center events received.
-    @CaseEventEffectOrNullConverter()
-        CaseEventEffect? visualEventEffect,
+    @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
 
     /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
     String? careProtocolId,

@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 @freezed
 class OutboundService with _$OutboundService {
