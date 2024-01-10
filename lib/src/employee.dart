@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../layrz_models.dart';
 
 @freezed
 class Employee with _$Employee {
@@ -33,6 +33,12 @@ class Employee with _$Employee {
 
     /// [customPermissions] represents the user custom permissions.
     GenericPermission? customPermissions,
+
+    /// [mfaEnabled] represents the MFA enabled flag.
+    @Default(false) bool mfaEnabled,
+
+    /// [mfaMethods] represents the list of MFA methods.
+    @MfaMethodConverter() @Default([]) List<MfaMethod> mfaMethods,
   }) = _Employee;
 
   factory Employee.fromJson(Map<String, dynamic> json) => _$EmployeeFromJson(json);

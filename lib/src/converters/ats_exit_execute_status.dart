@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 class AtsExitExecuteStatusOrNullConverter implements JsonConverter<AtsExitExecuteStatus?, String?> {
   const AtsExitExecuteStatusOrNullConverter();

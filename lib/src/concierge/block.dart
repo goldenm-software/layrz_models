@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 @freezed
 class ConciergeFormBlock with _$ConciergeFormBlock {
@@ -16,8 +16,7 @@ class ConciergeFormBlock with _$ConciergeFormBlock {
     ConciergeFormBlockValidator? showWhen,
   }) = _ConciergeFormBlock;
 
-  factory ConciergeFormBlock.fromJson(Map<String, dynamic> json) =>
-      _$ConciergeFormBlockFromJson(json);
+  factory ConciergeFormBlock.fromJson(Map<String, dynamic> json) => _$ConciergeFormBlockFromJson(json);
 }
 
 /// Is the type of the block, values [header], [body] or [separator] are only for design purposes, does not

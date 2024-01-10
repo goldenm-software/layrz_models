@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../layrz_models.dart';
 
 @freezed
 class User with _$User {
@@ -88,6 +88,12 @@ class User with _$User {
     /// [mappitExternalAccount] represents the Mappit external account.
     /// This field is only for `Mappit` use.
     ExternalAccount? mappitExternalAccount,
+
+    /// [mfaEnabled] represents the MFA enabled flag.
+    @Default(false) bool mfaEnabled,
+
+    /// [mfaMethods] represents the list of MFA methods.
+    @MfaMethodConverter() @Default([]) List<MfaMethod> mfaMethods,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

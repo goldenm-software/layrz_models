@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../layrz_models.dart';
 
 @freezed
 class Reference with _$Reference {
@@ -129,7 +129,7 @@ enum ReferenceCategory {
 
   /// Layrz API Reference: MAPPIT_PERM_PROFILES_FULL
   mappitPermProfilesFull,
-  
+
   /// Layrz API Reference: MAPPIT_PERM_FREEDAYS_READ
   mappitPermFreeDaysRead,
 

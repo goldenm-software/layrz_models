@@ -1,10 +1,11 @@
-part of layrz_models;
+part of '../../../layrz_models.dart';
 
 @freezed
 class AtsExitStatus with _$AtsExitStatus {
   const factory AtsExitStatus({
     /// Date of the [AtsExit]
     @TimestampOrNullConverter() DateTime? date,
+
     /// Validation between total liters by fluxometers and to total liters by exits records..
     bool? status,
   }) = _AtsExitStatus;

@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 @freezed
 class BrickHouseWorkspaceInput with _$BrickHouseWorkspaceInput {
@@ -9,12 +9,13 @@ class BrickHouseWorkspaceInput with _$BrickHouseWorkspaceInput {
     required String appId,
     required String name,
     @MetricSystemConverter() required MetricSystem metricSystem,
+
     /// Is the type of the App
     @Default(AppInternalIdentifier.brickhouseTracking)
     @AppInternalIdentifierOrNullConverter()
-        AppInternalIdentifier? typeApp,
+    AppInternalIdentifier? typeApp,
     required String timezoneId,
-    @Default([])List<String>? assetsIds,
+    @Default([]) List<String>? assetsIds,
   }) = _BrickHouseWorkspaceInput;
 
   /// from json

@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../layrz_models.dart';
 
 /// Checkpoint
 /// Checkpoint entity definition, it define the differents checkpoints for the asset tracking.

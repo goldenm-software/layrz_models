@@ -73,6 +73,7 @@ part 'src/case.dart';
 part 'src/avatar.dart';
 part 'src/email_template.dart';
 part 'src/function.dart';
+part 'src/mfa.dart';
 
 // Inbound models
 part 'src/inbound/protocol.dart';
@@ -138,6 +139,7 @@ part 'src/ats/reception/purchase_order.dart';
 part 'src/ats/reception/purchase_total.dart';
 part 'src/ats/reception/reception.dart';
 part 'src/ats/reception/entry_unload_input.dart';
+part 'src/ats/reception/ide_information.dart';
 
 // ATS Exit Models
 part 'src/ats/exits/exit_status.dart';
@@ -173,6 +175,9 @@ part 'src/reports/page.dart';
 part 'src/reports/row.dart';
 part 'src/reports/header.dart';
 part 'src/reports/cell.dart';
+
+// Simulation
+part 'src/simulation/cycle.dart';
 
 // Helper enums
 enum LayrzListingFormat {

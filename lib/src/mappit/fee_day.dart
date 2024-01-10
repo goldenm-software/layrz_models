@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../layrz_models.dart';
 
 @freezed
 class MappitFreeDay with _$MappitFreeDay {
@@ -10,7 +10,7 @@ class MappitFreeDay with _$MappitFreeDay {
     required String name,
 
     /// [date] represents the free day date.
-    @TimestampConverter() required DateTime date,
+    @DateConverter() required DateTime date,
 
     /// [assets] represents the assets assigned to this free day.
     List<Asset>? assets,

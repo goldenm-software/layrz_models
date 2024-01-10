@@ -1,4 +1,4 @@
-part of layrz_models;
+part of '../../../layrz_models.dart';
 
 @unfreezed
 class AtsExecuteExitInput with _$AtsExecuteExitInput {
@@ -14,13 +14,12 @@ class AtsExecuteExitInput with _$AtsExecuteExitInput {
 
     /// [toAssetID] ID of the [Asset] validated.
     String? toAssetId,
+
     /// [toAssetMileage] Mileage of the [Asset]
     double? toAssetMileage,
 
     /// [fromApp] Exit execution enum definition
     @AtsFromAppOrNullConverter() AtsFromApp? fromApp,
-
-
   }) = _AtsExecuteExitInput;
 
   factory AtsExecuteExitInput.fromJson(Map<String, dynamic> json) => _$AtsExecuteExitInputFromJson(json);
