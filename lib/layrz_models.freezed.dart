@@ -6139,6 +6139,7 @@ mixin _$GenericPermission {
   GenericPermissionItem? get departments => throw _privateConstructorUsedError;
   GenericPermissionItem? get protocols => throw _privateConstructorUsedError;
   GenericPermissionItem? get billing => throw _privateConstructorUsedError;
+  GenericPermissionItem? get cycles => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -6161,7 +6162,8 @@ abstract class $GenericPermissionCopyWith<$Res> {
       GenericPermissionItem? categories,
       GenericPermissionItem? departments,
       GenericPermissionItem? protocols,
-      GenericPermissionItem? billing});
+      GenericPermissionItem? billing,
+      GenericPermissionItem? cycles});
 
   $GenericPermissionItemCopyWith<$Res>? get apps;
   $GenericPermissionItemCopyWith<$Res>? get users;
@@ -6172,6 +6174,7 @@ abstract class $GenericPermissionCopyWith<$Res> {
   $GenericPermissionItemCopyWith<$Res>? get departments;
   $GenericPermissionItemCopyWith<$Res>? get protocols;
   $GenericPermissionItemCopyWith<$Res>? get billing;
+  $GenericPermissionItemCopyWith<$Res>? get cycles;
 }
 
 /// @nodoc
@@ -6196,6 +6199,7 @@ class _$GenericPermissionCopyWithImpl<$Res, $Val extends GenericPermission>
     Object? departments = freezed,
     Object? protocols = freezed,
     Object? billing = freezed,
+    Object? cycles = freezed,
   }) {
     return _then(_value.copyWith(
       apps: freezed == apps
@@ -6233,6 +6237,10 @@ class _$GenericPermissionCopyWithImpl<$Res, $Val extends GenericPermission>
       billing: freezed == billing
           ? _value.billing
           : billing // ignore: cast_nullable_to_non_nullable
+              as GenericPermissionItem?,
+      cycles: freezed == cycles
+          ? _value.cycles
+          : cycles // ignore: cast_nullable_to_non_nullable
               as GenericPermissionItem?,
     ) as $Val);
   }
@@ -6344,6 +6352,18 @@ class _$GenericPermissionCopyWithImpl<$Res, $Val extends GenericPermission>
       return _then(_value.copyWith(billing: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GenericPermissionItemCopyWith<$Res>? get cycles {
+    if (_value.cycles == null) {
+      return null;
+    }
+
+    return $GenericPermissionItemCopyWith<$Res>(_value.cycles!, (value) {
+      return _then(_value.copyWith(cycles: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -6363,7 +6383,8 @@ abstract class _$$GenericPermissionImplCopyWith<$Res>
       GenericPermissionItem? categories,
       GenericPermissionItem? departments,
       GenericPermissionItem? protocols,
-      GenericPermissionItem? billing});
+      GenericPermissionItem? billing,
+      GenericPermissionItem? cycles});
 
   @override
   $GenericPermissionItemCopyWith<$Res>? get apps;
@@ -6383,6 +6404,8 @@ abstract class _$$GenericPermissionImplCopyWith<$Res>
   $GenericPermissionItemCopyWith<$Res>? get protocols;
   @override
   $GenericPermissionItemCopyWith<$Res>? get billing;
+  @override
+  $GenericPermissionItemCopyWith<$Res>? get cycles;
 }
 
 /// @nodoc
@@ -6405,6 +6428,7 @@ class __$$GenericPermissionImplCopyWithImpl<$Res>
     Object? departments = freezed,
     Object? protocols = freezed,
     Object? billing = freezed,
+    Object? cycles = freezed,
   }) {
     return _then(_$GenericPermissionImpl(
       apps: freezed == apps
@@ -6443,6 +6467,10 @@ class __$$GenericPermissionImplCopyWithImpl<$Res>
           ? _value.billing
           : billing // ignore: cast_nullable_to_non_nullable
               as GenericPermissionItem?,
+      cycles: freezed == cycles
+          ? _value.cycles
+          : cycles // ignore: cast_nullable_to_non_nullable
+              as GenericPermissionItem?,
     ));
   }
 }
@@ -6459,7 +6487,8 @@ class _$GenericPermissionImpl implements _GenericPermission {
       this.categories,
       this.departments,
       this.protocols,
-      this.billing});
+      this.billing,
+      this.cycles});
 
   factory _$GenericPermissionImpl.fromJson(Map<String, dynamic> json) =>
       _$$GenericPermissionImplFromJson(json);
@@ -6482,10 +6511,12 @@ class _$GenericPermissionImpl implements _GenericPermission {
   final GenericPermissionItem? protocols;
   @override
   final GenericPermissionItem? billing;
+  @override
+  final GenericPermissionItem? cycles;
 
   @override
   String toString() {
-    return 'GenericPermission(apps: $apps, users: $users, firmwares: $firmwares, employees: $employees, languages: $languages, categories: $categories, departments: $departments, protocols: $protocols, billing: $billing)';
+    return 'GenericPermission(apps: $apps, users: $users, firmwares: $firmwares, employees: $employees, languages: $languages, categories: $categories, departments: $departments, protocols: $protocols, billing: $billing, cycles: $cycles)';
   }
 
   @override
@@ -6507,13 +6538,24 @@ class _$GenericPermissionImpl implements _GenericPermission {
                 other.departments == departments) &&
             (identical(other.protocols, protocols) ||
                 other.protocols == protocols) &&
-            (identical(other.billing, billing) || other.billing == billing));
+            (identical(other.billing, billing) || other.billing == billing) &&
+            (identical(other.cycles, cycles) || other.cycles == cycles));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, apps, users, firmwares,
-      employees, languages, categories, departments, protocols, billing);
+  int get hashCode => Object.hash(
+      runtimeType,
+      apps,
+      users,
+      firmwares,
+      employees,
+      languages,
+      categories,
+      departments,
+      protocols,
+      billing,
+      cycles);
 
   @JsonKey(ignore: true)
   @override
@@ -6540,7 +6582,8 @@ abstract class _GenericPermission implements GenericPermission {
       final GenericPermissionItem? categories,
       final GenericPermissionItem? departments,
       final GenericPermissionItem? protocols,
-      final GenericPermissionItem? billing}) = _$GenericPermissionImpl;
+      final GenericPermissionItem? billing,
+      final GenericPermissionItem? cycles}) = _$GenericPermissionImpl;
 
   factory _GenericPermission.fromJson(Map<String, dynamic> json) =
       _$GenericPermissionImpl.fromJson;
@@ -6563,6 +6606,8 @@ abstract class _GenericPermission implements GenericPermission {
   GenericPermissionItem? get protocols;
   @override
   GenericPermissionItem? get billing;
+  @override
+  GenericPermissionItem? get cycles;
   @override
   @JsonKey(ignore: true)
   _$$GenericPermissionImplCopyWith<_$GenericPermissionImpl> get copyWith =>
@@ -30643,6 +30688,12 @@ mixin _$InboundProtocol {
   /// This is the new schema of the icon
   Avatar? get dynamicIcon => throw _privateConstructorUsedError;
 
+  /// [cycleId] is the ID of the cycle that the protocol belongs to.
+  String? get cycleId => throw _privateConstructorUsedError;
+
+  /// [cycle] is the cycle that the protocol belongs to.
+  SimulationCycle? get cycle => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
@@ -30677,11 +30728,14 @@ abstract class $InboundProtocolCopyWith<$Res> {
       List<Model>? models,
       bool? hasAck,
       String? ackTopicFormat,
-      Avatar? dynamicIcon});
+      Avatar? dynamicIcon,
+      String? cycleId,
+      SimulationCycle? cycle});
 
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
   $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
   $AvatarCopyWith<$Res>? get dynamicIcon;
+  $SimulationCycleCopyWith<$Res>? get cycle;
 }
 
 /// @nodoc
@@ -30719,6 +30773,8 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? hasAck = freezed,
     Object? ackTopicFormat = freezed,
     Object? dynamicIcon = freezed,
+    Object? cycleId = freezed,
+    Object? cycle = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -30809,6 +30865,14 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
               as Avatar?,
+      cycleId: freezed == cycleId
+          ? _value.cycleId
+          : cycleId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cycle: freezed == cycle
+          ? _value.cycle
+          : cycle // ignore: cast_nullable_to_non_nullable
+              as SimulationCycle?,
     ) as $Val);
   }
 
@@ -30848,6 +30912,18 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
       return _then(_value.copyWith(dynamicIcon: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $SimulationCycleCopyWith<$Res>? get cycle {
+    if (_value.cycle == null) {
+      return null;
+    }
+
+    return $SimulationCycleCopyWith<$Res>(_value.cycle!, (value) {
+      return _then(_value.copyWith(cycle: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -30880,7 +30956,9 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       List<Model>? models,
       bool? hasAck,
       String? ackTopicFormat,
-      Avatar? dynamicIcon});
+      Avatar? dynamicIcon,
+      String? cycleId,
+      SimulationCycle? cycle});
 
   @override
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
@@ -30888,6 +30966,8 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
   $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
+  @override
+  $SimulationCycleCopyWith<$Res>? get cycle;
 }
 
 /// @nodoc
@@ -30923,6 +31003,8 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? hasAck = freezed,
     Object? ackTopicFormat = freezed,
     Object? dynamicIcon = freezed,
+    Object? cycleId = freezed,
+    Object? cycle = freezed,
   }) {
     return _then(_$InboundProtocolImpl(
       id: null == id
@@ -31013,6 +31095,14 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
               as Avatar?,
+      cycleId: freezed == cycleId
+          ? _value.cycleId
+          : cycleId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      cycle: freezed == cycle
+          ? _value.cycle
+          : cycle // ignore: cast_nullable_to_non_nullable
+              as SimulationCycle?,
     ));
   }
 }
@@ -31042,7 +31132,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       final List<Model>? models,
       this.hasAck,
       this.ackTopicFormat,
-      this.dynamicIcon})
+      this.dynamicIcon,
+      this.cycleId,
+      this.cycle})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models;
@@ -31172,9 +31264,17 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   @override
   final Avatar? dynamicIcon;
 
+  /// [cycleId] is the ID of the cycle that the protocol belongs to.
+  @override
+  final String? cycleId;
+
+  /// [cycle] is the cycle that the protocol belongs to.
+  @override
+  final SimulationCycle? cycle;
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle)';
   }
 
   @override
@@ -31220,7 +31320,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
             (identical(other.ackTopicFormat, ackTopicFormat) ||
                 other.ackTopicFormat == ackTopicFormat) &&
             (identical(other.dynamicIcon, dynamicIcon) ||
-                other.dynamicIcon == dynamicIcon));
+                other.dynamicIcon == dynamicIcon) &&
+            (identical(other.cycleId, cycleId) || other.cycleId == cycleId) &&
+            (identical(other.cycle, cycle) || other.cycle == cycle));
   }
 
   @JsonKey(ignore: true)
@@ -31248,7 +31350,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         const DeepCollectionEquality().hash(_models),
         hasAck,
         ackTopicFormat,
-        dynamicIcon
+        dynamicIcon,
+        cycleId,
+        cycle
       ]);
 
   @JsonKey(ignore: true)
@@ -31289,7 +31393,9 @@ abstract class _InboundProtocol implements InboundProtocol {
       final List<Model>? models,
       final bool? hasAck,
       final String? ackTopicFormat,
-      final Avatar? dynamicIcon}) = _$InboundProtocolImpl;
+      final Avatar? dynamicIcon,
+      final String? cycleId,
+      final SimulationCycle? cycle}) = _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
@@ -31389,6 +31495,14 @@ abstract class _InboundProtocol implements InboundProtocol {
   /// [dynamicIcon] is the icon of the inbound protocol.
   /// This is the new schema of the icon
   Avatar? get dynamicIcon;
+  @override
+
+  /// [cycleId] is the ID of the cycle that the protocol belongs to.
+  String? get cycleId;
+  @override
+
+  /// [cycle] is the cycle that the protocol belongs to.
+  SimulationCycle? get cycle;
   @override
   @JsonKey(ignore: true)
   _$$InboundProtocolImplCopyWith<_$InboundProtocolImpl> get copyWith =>

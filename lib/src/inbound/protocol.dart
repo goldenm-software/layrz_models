@@ -95,6 +95,12 @@ class InboundProtocol with _$InboundProtocol {
     /// [dynamicIcon] is the icon of the inbound protocol.
     /// This is the new schema of the icon
     Avatar? dynamicIcon,
+
+    /// [cycleId] is the ID of the cycle that the protocol belongs to.
+    String? cycleId,
+
+    /// [cycle] is the cycle that the protocol belongs to.
+    SimulationCycle? cycle,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);

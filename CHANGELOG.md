@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.45
+- Added `cycleId` to `InboundProtocol` model
+- Added `cycles` permission to `GenericPermission` model
+
 ## 2.0.44
 - Replaced all `part of` to use a relative path instead of an absolute one
 - Added `SimulationCycle` model

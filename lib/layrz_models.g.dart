@@ -593,6 +593,10 @@ _$GenericPermissionImpl _$$GenericPermissionImplFromJson(
           ? null
           : GenericPermissionItem.fromJson(
               json['billing'] as Map<String, dynamic>),
+      cycles: json['cycles'] == null
+          ? null
+          : GenericPermissionItem.fromJson(
+              json['cycles'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$GenericPermissionImplToJson(
@@ -607,6 +611,7 @@ Map<String, dynamic> _$$GenericPermissionImplToJson(
       'departments': instance.departments?.toJson(),
       'protocols': instance.protocols?.toJson(),
       'billing': instance.billing?.toJson(),
+      'cycles': instance.cycles?.toJson(),
     };
 
 _$DepartmentImpl _$$DepartmentImplFromJson(Map<String, dynamic> json) =>
@@ -2757,6 +2762,10 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
       dynamicIcon: json['dynamicIcon'] == null
           ? null
           : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
+      cycleId: json['cycleId'] as String?,
+      cycle: json['cycle'] == null
+          ? null
+          : SimulationCycle.fromJson(json['cycle'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$InboundProtocolImplToJson(
@@ -2786,6 +2795,8 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'hasAck': instance.hasAck,
       'ackTopicFormat': instance.ackTopicFormat,
       'dynamicIcon': instance.dynamicIcon?.toJson(),
+      'cycleId': instance.cycleId,
+      'cycle': instance.cycle?.toJson(),
     };
 
 _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
