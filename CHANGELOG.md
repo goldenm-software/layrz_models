@@ -1,12 +1,17 @@
 # Changelog
 
+## 2.0.49
+
+- Added `email` to [AtsCompanyInformation]
+
 ## 2.0.48
+
 - Added `atsAutomaticReception` to [ReferenceCategory]
 
 ## 2.0.47
+
 - Added `receptionId` to [AtsEntryUnloadInput] model
 - Added `errorRate` to [AtsReception] model
-
 
 ## 2.0.46
 
