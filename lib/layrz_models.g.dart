@@ -4332,6 +4332,7 @@ _$AtsCompanyInformationImpl _$$AtsCompanyInformationImplFromJson(
       name: json['name'] as String?,
       cnpj: json['cnpj'] as String?,
       address: json['address'] as String?,
+      email: json['email'] as String?,
     );
 
 Map<String, dynamic> _$$AtsCompanyInformationImplToJson(
@@ -4340,6 +4341,7 @@ Map<String, dynamic> _$$AtsCompanyInformationImplToJson(
       'name': instance.name,
       'cnpj': instance.cnpj,
       'address': instance.address,
+      'email': instance.email,
     };
 
 _$AtsProductInformationImpl _$$AtsProductInformationImplFromJson(
