@@ -14,6 +14,9 @@ class AtsCompanyInformation with _$AtsCompanyInformation {
 
     /// Email Address
     String? email,
+
+    /// State registration
+    String? stateRegistration,
   }) = _AtsCompanyInformation;
 
   factory AtsCompanyInformation.fromJson(Map<String, dynamic> json) => _$AtsCompanyInformationFromJson(json);

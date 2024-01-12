@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.50
+
+- Added `stateRegistration` to [AtsCompanyInformation]
+
 ## 2.0.49
 
 - Added `email` to [AtsCompanyInformation]

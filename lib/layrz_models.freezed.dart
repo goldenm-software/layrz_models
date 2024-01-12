@@ -49003,6 +49003,9 @@ mixin _$AtsCompanyInformation {
   /// Email Address
   String? get email => throw _privateConstructorUsedError;
 
+  /// State registration
+  String? get stateRegistration => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AtsCompanyInformationCopyWith<AtsCompanyInformation> get copyWith =>
@@ -49015,7 +49018,12 @@ abstract class $AtsCompanyInformationCopyWith<$Res> {
           $Res Function(AtsCompanyInformation) then) =
       _$AtsCompanyInformationCopyWithImpl<$Res, AtsCompanyInformation>;
   @useResult
-  $Res call({String? name, String? cnpj, String? address, String? email});
+  $Res call(
+      {String? name,
+      String? cnpj,
+      String? address,
+      String? email,
+      String? stateRegistration});
 }
 
 /// @nodoc
@@ -49036,6 +49044,7 @@ class _$AtsCompanyInformationCopyWithImpl<$Res,
     Object? cnpj = freezed,
     Object? address = freezed,
     Object? email = freezed,
+    Object? stateRegistration = freezed,
   }) {
     return _then(_value.copyWith(
       name: freezed == name
@@ -49054,6 +49063,10 @@ class _$AtsCompanyInformationCopyWithImpl<$Res,
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
+      stateRegistration: freezed == stateRegistration
+          ? _value.stateRegistration
+          : stateRegistration // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -49067,7 +49080,12 @@ abstract class _$$AtsCompanyInformationImplCopyWith<$Res>
       __$$AtsCompanyInformationImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? name, String? cnpj, String? address, String? email});
+  $Res call(
+      {String? name,
+      String? cnpj,
+      String? address,
+      String? email,
+      String? stateRegistration});
 }
 
 /// @nodoc
@@ -49086,6 +49104,7 @@ class __$$AtsCompanyInformationImplCopyWithImpl<$Res>
     Object? cnpj = freezed,
     Object? address = freezed,
     Object? email = freezed,
+    Object? stateRegistration = freezed,
   }) {
     return _then(_$AtsCompanyInformationImpl(
       name: freezed == name
@@ -49104,6 +49123,10 @@ class __$$AtsCompanyInformationImplCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
+      stateRegistration: freezed == stateRegistration
+          ? _value.stateRegistration
+          : stateRegistration // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -49111,7 +49134,8 @@ class __$$AtsCompanyInformationImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
-  _$AtsCompanyInformationImpl({this.name, this.cnpj, this.address, this.email});
+  _$AtsCompanyInformationImpl(
+      {this.name, this.cnpj, this.address, this.email, this.stateRegistration});
 
   factory _$AtsCompanyInformationImpl.fromJson(Map<String, dynamic> json) =>
       _$$AtsCompanyInformationImplFromJson(json);
@@ -49132,9 +49156,13 @@ class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
   @override
   final String? email;
 
+  /// State registration
+  @override
+  final String? stateRegistration;
+
   @override
   String toString() {
-    return 'AtsCompanyInformation(name: $name, cnpj: $cnpj, address: $address, email: $email)';
+    return 'AtsCompanyInformation(name: $name, cnpj: $cnpj, address: $address, email: $email, stateRegistration: $stateRegistration)';
   }
 
   @override
@@ -49145,12 +49173,15 @@ class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.cnpj, cnpj) || other.cnpj == cnpj) &&
             (identical(other.address, address) || other.address == address) &&
-            (identical(other.email, email) || other.email == email));
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.stateRegistration, stateRegistration) ||
+                other.stateRegistration == stateRegistration));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, cnpj, address, email);
+  int get hashCode =>
+      Object.hash(runtimeType, name, cnpj, address, email, stateRegistration);
 
   @JsonKey(ignore: true)
   @override
@@ -49172,7 +49203,8 @@ abstract class _AtsCompanyInformation implements AtsCompanyInformation {
       {final String? name,
       final String? cnpj,
       final String? address,
-      final String? email}) = _$AtsCompanyInformationImpl;
+      final String? email,
+      final String? stateRegistration}) = _$AtsCompanyInformationImpl;
 
   factory _AtsCompanyInformation.fromJson(Map<String, dynamic> json) =
       _$AtsCompanyInformationImpl.fromJson;
@@ -49193,6 +49225,10 @@ abstract class _AtsCompanyInformation implements AtsCompanyInformation {
 
   /// Email Address
   String? get email;
+  @override
+
+  /// State registration
+  String? get stateRegistration;
   @override
   @JsonKey(ignore: true)
   _$$AtsCompanyInformationImplCopyWith<_$AtsCompanyInformationImpl>
