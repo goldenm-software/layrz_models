@@ -3596,6 +3596,10 @@ _$RegisteredAppImpl _$$RegisteredAppImplFromJson(Map<String, dynamic> json) =>
       allowedReports: (json['allowedReports'] as List<dynamic>?)
           ?.map((e) => CustomReport.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fixedWorkspaceId: json['fixedWorkspaceId'] as String?,
+      fixedWorkspace: json['fixedWorkspace'] == null
+          ? null
+          : Workspace.fromJson(json['fixedWorkspace'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$RegisteredAppImplToJson(_$RegisteredAppImpl instance) =>
@@ -3619,6 +3623,8 @@ Map<String, dynamic> _$$RegisteredAppImplToJson(_$RegisteredAppImpl instance) =>
       'owner': instance.owner?.toJson(),
       'allowedReports':
           instance.allowedReports?.map((e) => e.toJson()).toList(),
+      'fixedWorkspaceId': instance.fixedWorkspaceId,
+      'fixedWorkspace': instance.fixedWorkspace?.toJson(),
     };
 
 _$AppThemedAssetImpl _$$AppThemedAssetImplFromJson(Map<String, dynamic> json) =>
