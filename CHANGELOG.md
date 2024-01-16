@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.51
+
+- added `fixedWorkspaceId` and `fixedWorkspace` parameters to [RegisteredApp]
+
 ## 2.0.50
 
 - Added `stateRegistration` to [AtsCompanyInformation]
