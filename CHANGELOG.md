@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.53
+
+- Added `shortcuts` to `GenericPermission` model
+
 ## 2.0.52
 
 - Added `LinkShortcut` entity

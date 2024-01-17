@@ -6140,6 +6140,7 @@ mixin _$GenericPermission {
   GenericPermissionItem? get protocols => throw _privateConstructorUsedError;
   GenericPermissionItem? get billing => throw _privateConstructorUsedError;
   GenericPermissionItem? get cycles => throw _privateConstructorUsedError;
+  GenericPermissionItem? get shortcuts => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -6163,7 +6164,8 @@ abstract class $GenericPermissionCopyWith<$Res> {
       GenericPermissionItem? departments,
       GenericPermissionItem? protocols,
       GenericPermissionItem? billing,
-      GenericPermissionItem? cycles});
+      GenericPermissionItem? cycles,
+      GenericPermissionItem? shortcuts});
 
   $GenericPermissionItemCopyWith<$Res>? get apps;
   $GenericPermissionItemCopyWith<$Res>? get users;
@@ -6175,6 +6177,7 @@ abstract class $GenericPermissionCopyWith<$Res> {
   $GenericPermissionItemCopyWith<$Res>? get protocols;
   $GenericPermissionItemCopyWith<$Res>? get billing;
   $GenericPermissionItemCopyWith<$Res>? get cycles;
+  $GenericPermissionItemCopyWith<$Res>? get shortcuts;
 }
 
 /// @nodoc
@@ -6200,6 +6203,7 @@ class _$GenericPermissionCopyWithImpl<$Res, $Val extends GenericPermission>
     Object? protocols = freezed,
     Object? billing = freezed,
     Object? cycles = freezed,
+    Object? shortcuts = freezed,
   }) {
     return _then(_value.copyWith(
       apps: freezed == apps
@@ -6241,6 +6245,10 @@ class _$GenericPermissionCopyWithImpl<$Res, $Val extends GenericPermission>
       cycles: freezed == cycles
           ? _value.cycles
           : cycles // ignore: cast_nullable_to_non_nullable
+              as GenericPermissionItem?,
+      shortcuts: freezed == shortcuts
+          ? _value.shortcuts
+          : shortcuts // ignore: cast_nullable_to_non_nullable
               as GenericPermissionItem?,
     ) as $Val);
   }
@@ -6364,6 +6372,18 @@ class _$GenericPermissionCopyWithImpl<$Res, $Val extends GenericPermission>
       return _then(_value.copyWith(cycles: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GenericPermissionItemCopyWith<$Res>? get shortcuts {
+    if (_value.shortcuts == null) {
+      return null;
+    }
+
+    return $GenericPermissionItemCopyWith<$Res>(_value.shortcuts!, (value) {
+      return _then(_value.copyWith(shortcuts: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -6384,7 +6404,8 @@ abstract class _$$GenericPermissionImplCopyWith<$Res>
       GenericPermissionItem? departments,
       GenericPermissionItem? protocols,
       GenericPermissionItem? billing,
-      GenericPermissionItem? cycles});
+      GenericPermissionItem? cycles,
+      GenericPermissionItem? shortcuts});
 
   @override
   $GenericPermissionItemCopyWith<$Res>? get apps;
@@ -6406,6 +6427,8 @@ abstract class _$$GenericPermissionImplCopyWith<$Res>
   $GenericPermissionItemCopyWith<$Res>? get billing;
   @override
   $GenericPermissionItemCopyWith<$Res>? get cycles;
+  @override
+  $GenericPermissionItemCopyWith<$Res>? get shortcuts;
 }
 
 /// @nodoc
@@ -6429,6 +6452,7 @@ class __$$GenericPermissionImplCopyWithImpl<$Res>
     Object? protocols = freezed,
     Object? billing = freezed,
     Object? cycles = freezed,
+    Object? shortcuts = freezed,
   }) {
     return _then(_$GenericPermissionImpl(
       apps: freezed == apps
@@ -6471,6 +6495,10 @@ class __$$GenericPermissionImplCopyWithImpl<$Res>
           ? _value.cycles
           : cycles // ignore: cast_nullable_to_non_nullable
               as GenericPermissionItem?,
+      shortcuts: freezed == shortcuts
+          ? _value.shortcuts
+          : shortcuts // ignore: cast_nullable_to_non_nullable
+              as GenericPermissionItem?,
     ));
   }
 }
@@ -6488,7 +6516,8 @@ class _$GenericPermissionImpl implements _GenericPermission {
       this.departments,
       this.protocols,
       this.billing,
-      this.cycles});
+      this.cycles,
+      this.shortcuts});
 
   factory _$GenericPermissionImpl.fromJson(Map<String, dynamic> json) =>
       _$$GenericPermissionImplFromJson(json);
@@ -6513,10 +6542,12 @@ class _$GenericPermissionImpl implements _GenericPermission {
   final GenericPermissionItem? billing;
   @override
   final GenericPermissionItem? cycles;
+  @override
+  final GenericPermissionItem? shortcuts;
 
   @override
   String toString() {
-    return 'GenericPermission(apps: $apps, users: $users, firmwares: $firmwares, employees: $employees, languages: $languages, categories: $categories, departments: $departments, protocols: $protocols, billing: $billing, cycles: $cycles)';
+    return 'GenericPermission(apps: $apps, users: $users, firmwares: $firmwares, employees: $employees, languages: $languages, categories: $categories, departments: $departments, protocols: $protocols, billing: $billing, cycles: $cycles, shortcuts: $shortcuts)';
   }
 
   @override
@@ -6539,7 +6570,9 @@ class _$GenericPermissionImpl implements _GenericPermission {
             (identical(other.protocols, protocols) ||
                 other.protocols == protocols) &&
             (identical(other.billing, billing) || other.billing == billing) &&
-            (identical(other.cycles, cycles) || other.cycles == cycles));
+            (identical(other.cycles, cycles) || other.cycles == cycles) &&
+            (identical(other.shortcuts, shortcuts) ||
+                other.shortcuts == shortcuts));
   }
 
   @JsonKey(ignore: true)
@@ -6555,7 +6588,8 @@ class _$GenericPermissionImpl implements _GenericPermission {
       departments,
       protocols,
       billing,
-      cycles);
+      cycles,
+      shortcuts);
 
   @JsonKey(ignore: true)
   @override
@@ -6583,7 +6617,8 @@ abstract class _GenericPermission implements GenericPermission {
       final GenericPermissionItem? departments,
       final GenericPermissionItem? protocols,
       final GenericPermissionItem? billing,
-      final GenericPermissionItem? cycles}) = _$GenericPermissionImpl;
+      final GenericPermissionItem? cycles,
+      final GenericPermissionItem? shortcuts}) = _$GenericPermissionImpl;
 
   factory _GenericPermission.fromJson(Map<String, dynamic> json) =
       _$GenericPermissionImpl.fromJson;
@@ -6608,6 +6643,8 @@ abstract class _GenericPermission implements GenericPermission {
   GenericPermissionItem? get billing;
   @override
   GenericPermissionItem? get cycles;
+  @override
+  GenericPermissionItem? get shortcuts;
   @override
   @JsonKey(ignore: true)
   _$$GenericPermissionImplCopyWith<_$GenericPermissionImpl> get copyWith =>
