@@ -179,6 +179,9 @@ part 'src/reports/cell.dart';
 // Simulation
 part 'src/simulation/cycle.dart';
 
+// Accessibility
+part 'src/accessibility/shortcut.dart';
+
 // Helper enums
 enum LayrzListingFormat {
   card,

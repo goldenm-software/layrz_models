@@ -61090,3 +61090,271 @@ abstract class _SimulationCycle implements SimulationCycle {
   _$$SimulationCycleImplCopyWith<_$SimulationCycleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+LinkShortcut _$LinkShortcutFromJson(Map<String, dynamic> json) {
+  return _LinkShortcut.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LinkShortcut {
+  /// [id] is the unique identifier for the shortcut.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [code] is the code for the shortcut.
+  String get code => throw _privateConstructorUsedError;
+
+  /// [redirectTo] is the URL to redirect to.
+  String? get redirectTo => throw _privateConstructorUsedError;
+
+  /// [creator] is the user who created the shortcut.
+  Employee? get creator => throw _privateConstructorUsedError;
+
+  /// [creatorId] is the ID of the user who created the shortcut.
+  String? get creatorId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LinkShortcutCopyWith<LinkShortcut> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LinkShortcutCopyWith<$Res> {
+  factory $LinkShortcutCopyWith(
+          LinkShortcut value, $Res Function(LinkShortcut) then) =
+      _$LinkShortcutCopyWithImpl<$Res, LinkShortcut>;
+  @useResult
+  $Res call(
+      {String id,
+      String code,
+      String? redirectTo,
+      Employee? creator,
+      String? creatorId});
+
+  $EmployeeCopyWith<$Res>? get creator;
+}
+
+/// @nodoc
+class _$LinkShortcutCopyWithImpl<$Res, $Val extends LinkShortcut>
+    implements $LinkShortcutCopyWith<$Res> {
+  _$LinkShortcutCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? redirectTo = freezed,
+    Object? creator = freezed,
+    Object? creatorId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      redirectTo: freezed == redirectTo
+          ? _value.redirectTo
+          : redirectTo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      creator: freezed == creator
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as Employee?,
+      creatorId: freezed == creatorId
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $EmployeeCopyWith<$Res>? get creator {
+    if (_value.creator == null) {
+      return null;
+    }
+
+    return $EmployeeCopyWith<$Res>(_value.creator!, (value) {
+      return _then(_value.copyWith(creator: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$LinkShortcutImplCopyWith<$Res>
+    implements $LinkShortcutCopyWith<$Res> {
+  factory _$$LinkShortcutImplCopyWith(
+          _$LinkShortcutImpl value, $Res Function(_$LinkShortcutImpl) then) =
+      __$$LinkShortcutImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String code,
+      String? redirectTo,
+      Employee? creator,
+      String? creatorId});
+
+  @override
+  $EmployeeCopyWith<$Res>? get creator;
+}
+
+/// @nodoc
+class __$$LinkShortcutImplCopyWithImpl<$Res>
+    extends _$LinkShortcutCopyWithImpl<$Res, _$LinkShortcutImpl>
+    implements _$$LinkShortcutImplCopyWith<$Res> {
+  __$$LinkShortcutImplCopyWithImpl(
+      _$LinkShortcutImpl _value, $Res Function(_$LinkShortcutImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? redirectTo = freezed,
+    Object? creator = freezed,
+    Object? creatorId = freezed,
+  }) {
+    return _then(_$LinkShortcutImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      redirectTo: freezed == redirectTo
+          ? _value.redirectTo
+          : redirectTo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      creator: freezed == creator
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as Employee?,
+      creatorId: freezed == creatorId
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LinkShortcutImpl implements _LinkShortcut {
+  const _$LinkShortcutImpl(
+      {required this.id,
+      required this.code,
+      this.redirectTo,
+      this.creator,
+      this.creatorId});
+
+  factory _$LinkShortcutImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LinkShortcutImplFromJson(json);
+
+  /// [id] is the unique identifier for the shortcut.
+  @override
+  final String id;
+
+  /// [code] is the code for the shortcut.
+  @override
+  final String code;
+
+  /// [redirectTo] is the URL to redirect to.
+  @override
+  final String? redirectTo;
+
+  /// [creator] is the user who created the shortcut.
+  @override
+  final Employee? creator;
+
+  /// [creatorId] is the ID of the user who created the shortcut.
+  @override
+  final String? creatorId;
+
+  @override
+  String toString() {
+    return 'LinkShortcut(id: $id, code: $code, redirectTo: $redirectTo, creator: $creator, creatorId: $creatorId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LinkShortcutImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.redirectTo, redirectTo) ||
+                other.redirectTo == redirectTo) &&
+            (identical(other.creator, creator) || other.creator == creator) &&
+            (identical(other.creatorId, creatorId) ||
+                other.creatorId == creatorId));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, code, redirectTo, creator, creatorId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LinkShortcutImplCopyWith<_$LinkShortcutImpl> get copyWith =>
+      __$$LinkShortcutImplCopyWithImpl<_$LinkShortcutImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LinkShortcutImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LinkShortcut implements LinkShortcut {
+  const factory _LinkShortcut(
+      {required final String id,
+      required final String code,
+      final String? redirectTo,
+      final Employee? creator,
+      final String? creatorId}) = _$LinkShortcutImpl;
+
+  factory _LinkShortcut.fromJson(Map<String, dynamic> json) =
+      _$LinkShortcutImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier for the shortcut.
+  String get id;
+  @override
+
+  /// [code] is the code for the shortcut.
+  String get code;
+  @override
+
+  /// [redirectTo] is the URL to redirect to.
+  String? get redirectTo;
+  @override
+
+  /// [creator] is the user who created the shortcut.
+  Employee? get creator;
+  @override
+
+  /// [creatorId] is the ID of the user who created the shortcut.
+  String? get creatorId;
+  @override
+  @JsonKey(ignore: true)
+  _$$LinkShortcutImplCopyWith<_$LinkShortcutImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

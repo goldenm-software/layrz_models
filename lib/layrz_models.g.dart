@@ -5409,3 +5409,23 @@ Map<String, dynamic> _$$SimulationCycleImplToJson(
       'steps': instance.steps,
       'fileUri': instance.fileUri,
     };
+
+_$LinkShortcutImpl _$$LinkShortcutImplFromJson(Map<String, dynamic> json) =>
+    _$LinkShortcutImpl(
+      id: json['id'] as String,
+      code: json['code'] as String,
+      redirectTo: json['redirectTo'] as String?,
+      creator: json['creator'] == null
+          ? null
+          : Employee.fromJson(json['creator'] as Map<String, dynamic>),
+      creatorId: json['creatorId'] as String?,
+    );
+
+Map<String, dynamic> _$$LinkShortcutImplToJson(_$LinkShortcutImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'code': instance.code,
+      'redirectTo': instance.redirectTo,
+      'creator': instance.creator?.toJson(),
+      'creatorId': instance.creatorId,
+    };
