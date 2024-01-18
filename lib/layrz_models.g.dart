@@ -597,6 +597,10 @@ _$GenericPermissionImpl _$$GenericPermissionImplFromJson(
           ? null
           : GenericPermissionItem.fromJson(
               json['cycles'] as Map<String, dynamic>),
+      shortcuts: json['shortcuts'] == null
+          ? null
+          : GenericPermissionItem.fromJson(
+              json['shortcuts'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$GenericPermissionImplToJson(
@@ -612,6 +616,7 @@ Map<String, dynamic> _$$GenericPermissionImplToJson(
       'protocols': instance.protocols?.toJson(),
       'billing': instance.billing?.toJson(),
       'cycles': instance.cycles?.toJson(),
+      'shortcuts': instance.shortcuts?.toJson(),
     };
 
 _$DepartmentImpl _$$DepartmentImplFromJson(Map<String, dynamic> json) =>
@@ -4562,8 +4567,9 @@ Map<String, dynamic> _$$AtsExitStatusImplToJson(_$AtsExitStatusImpl instance) =>
 
 _$AtsExitImpl _$$AtsExitImplFromJson(Map<String, dynamic> json) =>
     _$AtsExitImpl(
-      id: json['id'] as String,
-      fromAssetId: json['fromAssetId'] as String,
+      id: json['id'] as String?,
+      identifier: json['identifier'] as int?,
+      fromAssetId: json['fromAssetId'] as String?,
       fromAsset: json['fromAsset'] == null
           ? null
           : Asset.fromJson(json['fromAsset'] as Map<String, dynamic>),
@@ -4573,38 +4579,43 @@ _$AtsExitImpl _$$AtsExitImplFromJson(Map<String, dynamic> json) =>
           : Asset.fromJson(json['toAsset'] as Map<String, dynamic>),
       errorPercent: (json['errorPercent'] as num?)?.toDouble(),
       totalLiters: (json['totalLiters'] as num?)?.toDouble(),
+      toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
       startAt:
           const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
       endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
       totalTime: json['totalTime'] as String?,
       totalTimeDuration: const DurationOrNullConverter()
           .fromJson(json['totalTimeDuration'] as num?),
-      sensorId: json['sensorId'] as String?,
-      sensor: json['sensor'] == null
-          ? null
-          : Sensor.fromJson(json['sensor'] as Map<String, dynamic>),
       initialFluxometer: (json['initialFluxometer'] as num?)?.toDouble(),
       finalFluxometer: (json['finalFluxometer'] as num?)?.toDouble(),
+      initialTankVolume: (json['initialTankVolume'] as num?)?.toDouble(),
+      finalTankVolume: (json['finalTankVolume'] as num?)?.toDouble(),
+      price: (json['price'] as num?)?.toDouble(),
+      attendantName: json['attendantName'] as String?,
     );
 
 Map<String, dynamic> _$$AtsExitImplToJson(_$AtsExitImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'identifier': instance.identifier,
       'fromAssetId': instance.fromAssetId,
       'fromAsset': instance.fromAsset?.toJson(),
       'toAssetId': instance.toAssetId,
       'toAsset': instance.toAsset?.toJson(),
       'errorPercent': instance.errorPercent,
       'totalLiters': instance.totalLiters,
+      'toAssetMileage': instance.toAssetMileage,
       'startAt': const TimestampOrNullConverter().toJson(instance.startAt),
       'endAt': const TimestampOrNullConverter().toJson(instance.endAt),
       'totalTime': instance.totalTime,
       'totalTimeDuration':
           const DurationOrNullConverter().toJson(instance.totalTimeDuration),
-      'sensorId': instance.sensorId,
-      'sensor': instance.sensor?.toJson(),
       'initialFluxometer': instance.initialFluxometer,
       'finalFluxometer': instance.finalFluxometer,
+      'initialTankVolume': instance.initialTankVolume,
+      'finalTankVolume': instance.finalTankVolume,
+      'price': instance.price,
+      'attendantName': instance.attendantName,
     };
 
 _$AtsPossibleExitImpl _$$AtsPossibleExitImplFromJson(
@@ -5408,4 +5419,24 @@ Map<String, dynamic> _$$SimulationCycleImplToJson(
       'name': instance.name,
       'steps': instance.steps,
       'fileUri': instance.fileUri,
+    };
+
+_$LinkShortcutImpl _$$LinkShortcutImplFromJson(Map<String, dynamic> json) =>
+    _$LinkShortcutImpl(
+      id: json['id'] as String,
+      code: json['code'] as String,
+      redirectTo: json['redirectTo'] as String?,
+      creator: json['creator'] == null
+          ? null
+          : Employee.fromJson(json['creator'] as Map<String, dynamic>),
+      creatorId: json['creatorId'] as String?,
+    );
+
+Map<String, dynamic> _$$LinkShortcutImplToJson(_$LinkShortcutImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'code': instance.code,
+      'redirectTo': instance.redirectTo,
+      'creator': instance.creator?.toJson(),
+      'creatorId': instance.creatorId,
     };

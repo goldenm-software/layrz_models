@@ -6140,6 +6140,7 @@ mixin _$GenericPermission {
   GenericPermissionItem? get protocols => throw _privateConstructorUsedError;
   GenericPermissionItem? get billing => throw _privateConstructorUsedError;
   GenericPermissionItem? get cycles => throw _privateConstructorUsedError;
+  GenericPermissionItem? get shortcuts => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -6163,7 +6164,8 @@ abstract class $GenericPermissionCopyWith<$Res> {
       GenericPermissionItem? departments,
       GenericPermissionItem? protocols,
       GenericPermissionItem? billing,
-      GenericPermissionItem? cycles});
+      GenericPermissionItem? cycles,
+      GenericPermissionItem? shortcuts});
 
   $GenericPermissionItemCopyWith<$Res>? get apps;
   $GenericPermissionItemCopyWith<$Res>? get users;
@@ -6175,6 +6177,7 @@ abstract class $GenericPermissionCopyWith<$Res> {
   $GenericPermissionItemCopyWith<$Res>? get protocols;
   $GenericPermissionItemCopyWith<$Res>? get billing;
   $GenericPermissionItemCopyWith<$Res>? get cycles;
+  $GenericPermissionItemCopyWith<$Res>? get shortcuts;
 }
 
 /// @nodoc
@@ -6200,6 +6203,7 @@ class _$GenericPermissionCopyWithImpl<$Res, $Val extends GenericPermission>
     Object? protocols = freezed,
     Object? billing = freezed,
     Object? cycles = freezed,
+    Object? shortcuts = freezed,
   }) {
     return _then(_value.copyWith(
       apps: freezed == apps
@@ -6241,6 +6245,10 @@ class _$GenericPermissionCopyWithImpl<$Res, $Val extends GenericPermission>
       cycles: freezed == cycles
           ? _value.cycles
           : cycles // ignore: cast_nullable_to_non_nullable
+              as GenericPermissionItem?,
+      shortcuts: freezed == shortcuts
+          ? _value.shortcuts
+          : shortcuts // ignore: cast_nullable_to_non_nullable
               as GenericPermissionItem?,
     ) as $Val);
   }
@@ -6364,6 +6372,18 @@ class _$GenericPermissionCopyWithImpl<$Res, $Val extends GenericPermission>
       return _then(_value.copyWith(cycles: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GenericPermissionItemCopyWith<$Res>? get shortcuts {
+    if (_value.shortcuts == null) {
+      return null;
+    }
+
+    return $GenericPermissionItemCopyWith<$Res>(_value.shortcuts!, (value) {
+      return _then(_value.copyWith(shortcuts: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -6384,7 +6404,8 @@ abstract class _$$GenericPermissionImplCopyWith<$Res>
       GenericPermissionItem? departments,
       GenericPermissionItem? protocols,
       GenericPermissionItem? billing,
-      GenericPermissionItem? cycles});
+      GenericPermissionItem? cycles,
+      GenericPermissionItem? shortcuts});
 
   @override
   $GenericPermissionItemCopyWith<$Res>? get apps;
@@ -6406,6 +6427,8 @@ abstract class _$$GenericPermissionImplCopyWith<$Res>
   $GenericPermissionItemCopyWith<$Res>? get billing;
   @override
   $GenericPermissionItemCopyWith<$Res>? get cycles;
+  @override
+  $GenericPermissionItemCopyWith<$Res>? get shortcuts;
 }
 
 /// @nodoc
@@ -6429,6 +6452,7 @@ class __$$GenericPermissionImplCopyWithImpl<$Res>
     Object? protocols = freezed,
     Object? billing = freezed,
     Object? cycles = freezed,
+    Object? shortcuts = freezed,
   }) {
     return _then(_$GenericPermissionImpl(
       apps: freezed == apps
@@ -6471,6 +6495,10 @@ class __$$GenericPermissionImplCopyWithImpl<$Res>
           ? _value.cycles
           : cycles // ignore: cast_nullable_to_non_nullable
               as GenericPermissionItem?,
+      shortcuts: freezed == shortcuts
+          ? _value.shortcuts
+          : shortcuts // ignore: cast_nullable_to_non_nullable
+              as GenericPermissionItem?,
     ));
   }
 }
@@ -6488,7 +6516,8 @@ class _$GenericPermissionImpl implements _GenericPermission {
       this.departments,
       this.protocols,
       this.billing,
-      this.cycles});
+      this.cycles,
+      this.shortcuts});
 
   factory _$GenericPermissionImpl.fromJson(Map<String, dynamic> json) =>
       _$$GenericPermissionImplFromJson(json);
@@ -6513,10 +6542,12 @@ class _$GenericPermissionImpl implements _GenericPermission {
   final GenericPermissionItem? billing;
   @override
   final GenericPermissionItem? cycles;
+  @override
+  final GenericPermissionItem? shortcuts;
 
   @override
   String toString() {
-    return 'GenericPermission(apps: $apps, users: $users, firmwares: $firmwares, employees: $employees, languages: $languages, categories: $categories, departments: $departments, protocols: $protocols, billing: $billing, cycles: $cycles)';
+    return 'GenericPermission(apps: $apps, users: $users, firmwares: $firmwares, employees: $employees, languages: $languages, categories: $categories, departments: $departments, protocols: $protocols, billing: $billing, cycles: $cycles, shortcuts: $shortcuts)';
   }
 
   @override
@@ -6539,7 +6570,9 @@ class _$GenericPermissionImpl implements _GenericPermission {
             (identical(other.protocols, protocols) ||
                 other.protocols == protocols) &&
             (identical(other.billing, billing) || other.billing == billing) &&
-            (identical(other.cycles, cycles) || other.cycles == cycles));
+            (identical(other.cycles, cycles) || other.cycles == cycles) &&
+            (identical(other.shortcuts, shortcuts) ||
+                other.shortcuts == shortcuts));
   }
 
   @JsonKey(ignore: true)
@@ -6555,7 +6588,8 @@ class _$GenericPermissionImpl implements _GenericPermission {
       departments,
       protocols,
       billing,
-      cycles);
+      cycles,
+      shortcuts);
 
   @JsonKey(ignore: true)
   @override
@@ -6583,7 +6617,8 @@ abstract class _GenericPermission implements GenericPermission {
       final GenericPermissionItem? departments,
       final GenericPermissionItem? protocols,
       final GenericPermissionItem? billing,
-      final GenericPermissionItem? cycles}) = _$GenericPermissionImpl;
+      final GenericPermissionItem? cycles,
+      final GenericPermissionItem? shortcuts}) = _$GenericPermissionImpl;
 
   factory _GenericPermission.fromJson(Map<String, dynamic> json) =
       _$GenericPermissionImpl.fromJson;
@@ -6608,6 +6643,8 @@ abstract class _GenericPermission implements GenericPermission {
   GenericPermissionItem? get billing;
   @override
   GenericPermissionItem? get cycles;
+  @override
+  GenericPermissionItem? get shortcuts;
   @override
   @JsonKey(ignore: true)
   _$$GenericPermissionImplCopyWith<_$GenericPermissionImpl> get copyWith =>
@@ -51808,55 +51845,65 @@ AtsExit _$AtsExitFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AtsExit {
-  /// ID of the volume. This ID is unique.
-  String get id => throw _privateConstructorUsedError;
+  /// `id` of the volume. This ID is unique.
+  String? get id => throw _privateConstructorUsedError;
 
-  /// [fromAssetId] and [fromAsset] means the asset that the asset that generate the exit.
-  String get fromAssetId => throw _privateConstructorUsedError;
+  /// `identifier` is the exit identifier.
+  int? get identifier => throw _privateConstructorUsedError;
 
-  /// [fromAsset] is an instance of [Asset] means the asset that the asset that generate the exit.
+  /// `fromAssetId` is the [Asset] kind pump to generate the exit.
+  String? get fromAssetId => throw _privateConstructorUsedError;
+
+  /// `fromAsset` is the id [Asset] kind pump to generate the exit.
   Asset? get fromAsset => throw _privateConstructorUsedError;
 
-  /// [toAssetId] and [toAsset] means the asset that the asset that receive the fuel (Receive the exit).
+  /// `toAssetId` is the id [Asset] that receive the fuel (Receive the exit).
   String? get toAssetId => throw _privateConstructorUsedError;
 
-  /// [toAsset] means the asset that the asset that receive the fuel (Receive the exit).
+  /// `toAsset` is the [Asset] that receive the fuel (Receive the exit).
   Asset? get toAsset => throw _privateConstructorUsedError;
 
-  /// [errorPercent] is the percentage of error of the exit.
+  /// `errorPercent` is the errror percent between reception and sensor entry.
   double? get errorPercent => throw _privateConstructorUsedError;
 
-  /// [totalLiters] is the total liters dispatched to [toAssetId] and [toAsset].
+  /// `totalLiters` is the total liters of the exit.
   double? get totalLiters => throw _privateConstructorUsedError;
 
-  /// [startAt] is the date and time of the start of the exit.
+  /// `toAssetMileage` is the Odometer of the asset mileage registered.
+  double? get toAssetMileage => throw _privateConstructorUsedError;
+
+  /// `startAt` is the start exit date.
   @TimestampOrNullConverter()
   DateTime? get startAt => throw _privateConstructorUsedError;
 
-  /// [endAt] is the date and time of the end of the exit.
-  /// [endAt] is null if the exit is not finished.
+  /// `endAt` is the end exit date.
   @TimestampOrNullConverter()
   DateTime? get endAt => throw _privateConstructorUsedError;
 
-  /// [totalTime] is the total time of the exit
-  /// [totalTime] is null if the exit is not finished.
+  /// `totalTime` is the total exit time.
   String? get totalTime => throw _privateConstructorUsedError;
 
-  /// [totalTimeDuration] is null if the exit is not finished.
+  /// `totalTimeDuration` is the duration in seconds of the exit.
   @DurationOrNullConverter()
-  Duration? get totalTimeDuration =>
-      throw _privateConstructorUsedError; // Asset ATS Last exit fields
-  /// ID of the Sensor
-  String? get sensorId => throw _privateConstructorUsedError;
+  Duration? get totalTimeDuration => throw _privateConstructorUsedError;
 
-  /// [sensor] Sensor linked to exit.
-  Sensor? get sensor => throw _privateConstructorUsedError;
-
-  /// Initial fluxometer of the day
+  /// `initialFluxometer` is the initial fluxometer of the day.
   double? get initialFluxometer => throw _privateConstructorUsedError;
 
-  /// Final fluxometer of the day
+  /// `finalFluxometer` is the final fluxometer of the day.
   double? get finalFluxometer => throw _privateConstructorUsedError;
+
+  /// `initialTankVolume` is the initial tank volume of the day.
+  double? get initialTankVolume => throw _privateConstructorUsedError;
+
+  /// `finalTankVolume` is the final tank volume of the day.
+  double? get finalTankVolume => throw _privateConstructorUsedError;
+
+  /// `price` is the unit price per liter of exit.
+  double? get price => throw _privateConstructorUsedError;
+
+  /// `attendantName` is the attendant name.
+  String? get attendantName => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -51869,25 +51916,28 @@ abstract class $AtsExitCopyWith<$Res> {
       _$AtsExitCopyWithImpl<$Res, AtsExit>;
   @useResult
   $Res call(
-      {String id,
-      String fromAssetId,
+      {String? id,
+      int? identifier,
+      String? fromAssetId,
       Asset? fromAsset,
       String? toAssetId,
       Asset? toAsset,
       double? errorPercent,
       double? totalLiters,
+      double? toAssetMileage,
       @TimestampOrNullConverter() DateTime? startAt,
       @TimestampOrNullConverter() DateTime? endAt,
       String? totalTime,
       @DurationOrNullConverter() Duration? totalTimeDuration,
-      String? sensorId,
-      Sensor? sensor,
       double? initialFluxometer,
-      double? finalFluxometer});
+      double? finalFluxometer,
+      double? initialTankVolume,
+      double? finalTankVolume,
+      double? price,
+      String? attendantName});
 
   $AssetCopyWith<$Res>? get fromAsset;
   $AssetCopyWith<$Res>? get toAsset;
-  $SensorCopyWith<$Res>? get sensor;
 }
 
 /// @nodoc
@@ -51903,31 +51953,39 @@ class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? fromAssetId = null,
+    Object? id = freezed,
+    Object? identifier = freezed,
+    Object? fromAssetId = freezed,
     Object? fromAsset = freezed,
     Object? toAssetId = freezed,
     Object? toAsset = freezed,
     Object? errorPercent = freezed,
     Object? totalLiters = freezed,
+    Object? toAssetMileage = freezed,
     Object? startAt = freezed,
     Object? endAt = freezed,
     Object? totalTime = freezed,
     Object? totalTimeDuration = freezed,
-    Object? sensorId = freezed,
-    Object? sensor = freezed,
     Object? initialFluxometer = freezed,
     Object? finalFluxometer = freezed,
+    Object? initialTankVolume = freezed,
+    Object? finalTankVolume = freezed,
+    Object? price = freezed,
+    Object? attendantName = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      fromAssetId: null == fromAssetId
+              as String?,
+      identifier: freezed == identifier
+          ? _value.identifier
+          : identifier // ignore: cast_nullable_to_non_nullable
+              as int?,
+      fromAssetId: freezed == fromAssetId
           ? _value.fromAssetId
           : fromAssetId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       fromAsset: freezed == fromAsset
           ? _value.fromAsset
           : fromAsset // ignore: cast_nullable_to_non_nullable
@@ -51948,6 +52006,10 @@ class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
           ? _value.totalLiters
           : totalLiters // ignore: cast_nullable_to_non_nullable
               as double?,
+      toAssetMileage: freezed == toAssetMileage
+          ? _value.toAssetMileage
+          : toAssetMileage // ignore: cast_nullable_to_non_nullable
+              as double?,
       startAt: freezed == startAt
           ? _value.startAt
           : startAt // ignore: cast_nullable_to_non_nullable
@@ -51964,14 +52026,6 @@ class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
           ? _value.totalTimeDuration
           : totalTimeDuration // ignore: cast_nullable_to_non_nullable
               as Duration?,
-      sensorId: freezed == sensorId
-          ? _value.sensorId
-          : sensorId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sensor: freezed == sensor
-          ? _value.sensor
-          : sensor // ignore: cast_nullable_to_non_nullable
-              as Sensor?,
       initialFluxometer: freezed == initialFluxometer
           ? _value.initialFluxometer
           : initialFluxometer // ignore: cast_nullable_to_non_nullable
@@ -51980,6 +52034,22 @@ class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
           ? _value.finalFluxometer
           : finalFluxometer // ignore: cast_nullable_to_non_nullable
               as double?,
+      initialTankVolume: freezed == initialTankVolume
+          ? _value.initialTankVolume
+          : initialTankVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      finalTankVolume: freezed == finalTankVolume
+          ? _value.finalTankVolume
+          : finalTankVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      price: freezed == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double?,
+      attendantName: freezed == attendantName
+          ? _value.attendantName
+          : attendantName // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -52006,18 +52076,6 @@ class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
       return _then(_value.copyWith(toAsset: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $SensorCopyWith<$Res>? get sensor {
-    if (_value.sensor == null) {
-      return null;
-    }
-
-    return $SensorCopyWith<$Res>(_value.sensor!, (value) {
-      return _then(_value.copyWith(sensor: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -52028,28 +52086,30 @@ abstract class _$$AtsExitImplCopyWith<$Res> implements $AtsExitCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String id,
-      String fromAssetId,
+      {String? id,
+      int? identifier,
+      String? fromAssetId,
       Asset? fromAsset,
       String? toAssetId,
       Asset? toAsset,
       double? errorPercent,
       double? totalLiters,
+      double? toAssetMileage,
       @TimestampOrNullConverter() DateTime? startAt,
       @TimestampOrNullConverter() DateTime? endAt,
       String? totalTime,
       @DurationOrNullConverter() Duration? totalTimeDuration,
-      String? sensorId,
-      Sensor? sensor,
       double? initialFluxometer,
-      double? finalFluxometer});
+      double? finalFluxometer,
+      double? initialTankVolume,
+      double? finalTankVolume,
+      double? price,
+      String? attendantName});
 
   @override
   $AssetCopyWith<$Res>? get fromAsset;
   @override
   $AssetCopyWith<$Res>? get toAsset;
-  @override
-  $SensorCopyWith<$Res>? get sensor;
 }
 
 /// @nodoc
@@ -52063,31 +52123,39 @@ class __$$AtsExitImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? fromAssetId = null,
+    Object? id = freezed,
+    Object? identifier = freezed,
+    Object? fromAssetId = freezed,
     Object? fromAsset = freezed,
     Object? toAssetId = freezed,
     Object? toAsset = freezed,
     Object? errorPercent = freezed,
     Object? totalLiters = freezed,
+    Object? toAssetMileage = freezed,
     Object? startAt = freezed,
     Object? endAt = freezed,
     Object? totalTime = freezed,
     Object? totalTimeDuration = freezed,
-    Object? sensorId = freezed,
-    Object? sensor = freezed,
     Object? initialFluxometer = freezed,
     Object? finalFluxometer = freezed,
+    Object? initialTankVolume = freezed,
+    Object? finalTankVolume = freezed,
+    Object? price = freezed,
+    Object? attendantName = freezed,
   }) {
     return _then(_$AtsExitImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      fromAssetId: null == fromAssetId
+              as String?,
+      identifier: freezed == identifier
+          ? _value.identifier
+          : identifier // ignore: cast_nullable_to_non_nullable
+              as int?,
+      fromAssetId: freezed == fromAssetId
           ? _value.fromAssetId
           : fromAssetId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       fromAsset: freezed == fromAsset
           ? _value.fromAsset
           : fromAsset // ignore: cast_nullable_to_non_nullable
@@ -52108,6 +52176,10 @@ class __$$AtsExitImplCopyWithImpl<$Res>
           ? _value.totalLiters
           : totalLiters // ignore: cast_nullable_to_non_nullable
               as double?,
+      toAssetMileage: freezed == toAssetMileage
+          ? _value.toAssetMileage
+          : toAssetMileage // ignore: cast_nullable_to_non_nullable
+              as double?,
       startAt: freezed == startAt
           ? _value.startAt
           : startAt // ignore: cast_nullable_to_non_nullable
@@ -52124,14 +52196,6 @@ class __$$AtsExitImplCopyWithImpl<$Res>
           ? _value.totalTimeDuration
           : totalTimeDuration // ignore: cast_nullable_to_non_nullable
               as Duration?,
-      sensorId: freezed == sensorId
-          ? _value.sensorId
-          : sensorId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sensor: freezed == sensor
-          ? _value.sensor
-          : sensor // ignore: cast_nullable_to_non_nullable
-              as Sensor?,
       initialFluxometer: freezed == initialFluxometer
           ? _value.initialFluxometer
           : initialFluxometer // ignore: cast_nullable_to_non_nullable
@@ -52140,6 +52204,22 @@ class __$$AtsExitImplCopyWithImpl<$Res>
           ? _value.finalFluxometer
           : finalFluxometer // ignore: cast_nullable_to_non_nullable
               as double?,
+      initialTankVolume: freezed == initialTankVolume
+          ? _value.initialTankVolume
+          : initialTankVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      finalTankVolume: freezed == finalTankVolume
+          ? _value.finalTankVolume
+          : finalTankVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      price: freezed == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double?,
+      attendantName: freezed == attendantName
+          ? _value.attendantName
+          : attendantName // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -52148,93 +52228,111 @@ class __$$AtsExitImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AtsExitImpl implements _AtsExit {
   const _$AtsExitImpl(
-      {required this.id,
-      required this.fromAssetId,
+      {this.id,
+      this.identifier,
+      this.fromAssetId,
       this.fromAsset,
       this.toAssetId,
       this.toAsset,
       this.errorPercent,
       this.totalLiters,
+      this.toAssetMileage,
       @TimestampOrNullConverter() this.startAt,
       @TimestampOrNullConverter() this.endAt,
       this.totalTime,
       @DurationOrNullConverter() this.totalTimeDuration,
-      this.sensorId,
-      this.sensor,
       this.initialFluxometer,
-      this.finalFluxometer});
+      this.finalFluxometer,
+      this.initialTankVolume,
+      this.finalTankVolume,
+      this.price,
+      this.attendantName});
 
   factory _$AtsExitImpl.fromJson(Map<String, dynamic> json) =>
       _$$AtsExitImplFromJson(json);
 
-  /// ID of the volume. This ID is unique.
+  /// `id` of the volume. This ID is unique.
   @override
-  final String id;
+  final String? id;
 
-  /// [fromAssetId] and [fromAsset] means the asset that the asset that generate the exit.
+  /// `identifier` is the exit identifier.
   @override
-  final String fromAssetId;
+  final int? identifier;
 
-  /// [fromAsset] is an instance of [Asset] means the asset that the asset that generate the exit.
+  /// `fromAssetId` is the [Asset] kind pump to generate the exit.
+  @override
+  final String? fromAssetId;
+
+  /// `fromAsset` is the id [Asset] kind pump to generate the exit.
   @override
   final Asset? fromAsset;
 
-  /// [toAssetId] and [toAsset] means the asset that the asset that receive the fuel (Receive the exit).
+  /// `toAssetId` is the id [Asset] that receive the fuel (Receive the exit).
   @override
   final String? toAssetId;
 
-  /// [toAsset] means the asset that the asset that receive the fuel (Receive the exit).
+  /// `toAsset` is the [Asset] that receive the fuel (Receive the exit).
   @override
   final Asset? toAsset;
 
-  /// [errorPercent] is the percentage of error of the exit.
+  /// `errorPercent` is the errror percent between reception and sensor entry.
   @override
   final double? errorPercent;
 
-  /// [totalLiters] is the total liters dispatched to [toAssetId] and [toAsset].
+  /// `totalLiters` is the total liters of the exit.
   @override
   final double? totalLiters;
 
-  /// [startAt] is the date and time of the start of the exit.
+  /// `toAssetMileage` is the Odometer of the asset mileage registered.
+  @override
+  final double? toAssetMileage;
+
+  /// `startAt` is the start exit date.
   @override
   @TimestampOrNullConverter()
   final DateTime? startAt;
 
-  /// [endAt] is the date and time of the end of the exit.
-  /// [endAt] is null if the exit is not finished.
+  /// `endAt` is the end exit date.
   @override
   @TimestampOrNullConverter()
   final DateTime? endAt;
 
-  /// [totalTime] is the total time of the exit
-  /// [totalTime] is null if the exit is not finished.
+  /// `totalTime` is the total exit time.
   @override
   final String? totalTime;
 
-  /// [totalTimeDuration] is null if the exit is not finished.
+  /// `totalTimeDuration` is the duration in seconds of the exit.
   @override
   @DurationOrNullConverter()
   final Duration? totalTimeDuration;
-// Asset ATS Last exit fields
-  /// ID of the Sensor
-  @override
-  final String? sensorId;
 
-  /// [sensor] Sensor linked to exit.
-  @override
-  final Sensor? sensor;
-
-  /// Initial fluxometer of the day
+  /// `initialFluxometer` is the initial fluxometer of the day.
   @override
   final double? initialFluxometer;
 
-  /// Final fluxometer of the day
+  /// `finalFluxometer` is the final fluxometer of the day.
   @override
   final double? finalFluxometer;
 
+  /// `initialTankVolume` is the initial tank volume of the day.
+  @override
+  final double? initialTankVolume;
+
+  /// `finalTankVolume` is the final tank volume of the day.
+  @override
+  final double? finalTankVolume;
+
+  /// `price` is the unit price per liter of exit.
+  @override
+  final double? price;
+
+  /// `attendantName` is the attendant name.
+  @override
+  final String? attendantName;
+
   @override
   String toString() {
-    return 'AtsExit(id: $id, fromAssetId: $fromAssetId, fromAsset: $fromAsset, toAssetId: $toAssetId, toAsset: $toAsset, errorPercent: $errorPercent, totalLiters: $totalLiters, startAt: $startAt, endAt: $endAt, totalTime: $totalTime, totalTimeDuration: $totalTimeDuration, sensorId: $sensorId, sensor: $sensor, initialFluxometer: $initialFluxometer, finalFluxometer: $finalFluxometer)';
+    return 'AtsExit(id: $id, identifier: $identifier, fromAssetId: $fromAssetId, fromAsset: $fromAsset, toAssetId: $toAssetId, toAsset: $toAsset, errorPercent: $errorPercent, totalLiters: $totalLiters, toAssetMileage: $toAssetMileage, startAt: $startAt, endAt: $endAt, totalTime: $totalTime, totalTimeDuration: $totalTimeDuration, initialFluxometer: $initialFluxometer, finalFluxometer: $finalFluxometer, initialTankVolume: $initialTankVolume, finalTankVolume: $finalTankVolume, price: $price, attendantName: $attendantName)';
   }
 
   @override
@@ -52243,6 +52341,8 @@ class _$AtsExitImpl implements _AtsExit {
         (other.runtimeType == runtimeType &&
             other is _$AtsExitImpl &&
             (identical(other.id, id) || other.id == id) &&
+            (identical(other.identifier, identifier) ||
+                other.identifier == identifier) &&
             (identical(other.fromAssetId, fromAssetId) ||
                 other.fromAssetId == fromAssetId) &&
             (identical(other.fromAsset, fromAsset) ||
@@ -52254,40 +52354,51 @@ class _$AtsExitImpl implements _AtsExit {
                 other.errorPercent == errorPercent) &&
             (identical(other.totalLiters, totalLiters) ||
                 other.totalLiters == totalLiters) &&
+            (identical(other.toAssetMileage, toAssetMileage) ||
+                other.toAssetMileage == toAssetMileage) &&
             (identical(other.startAt, startAt) || other.startAt == startAt) &&
             (identical(other.endAt, endAt) || other.endAt == endAt) &&
             (identical(other.totalTime, totalTime) ||
                 other.totalTime == totalTime) &&
             (identical(other.totalTimeDuration, totalTimeDuration) ||
                 other.totalTimeDuration == totalTimeDuration) &&
-            (identical(other.sensorId, sensorId) ||
-                other.sensorId == sensorId) &&
-            (identical(other.sensor, sensor) || other.sensor == sensor) &&
             (identical(other.initialFluxometer, initialFluxometer) ||
                 other.initialFluxometer == initialFluxometer) &&
             (identical(other.finalFluxometer, finalFluxometer) ||
-                other.finalFluxometer == finalFluxometer));
+                other.finalFluxometer == finalFluxometer) &&
+            (identical(other.initialTankVolume, initialTankVolume) ||
+                other.initialTankVolume == initialTankVolume) &&
+            (identical(other.finalTankVolume, finalTankVolume) ||
+                other.finalTankVolume == finalTankVolume) &&
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.attendantName, attendantName) ||
+                other.attendantName == attendantName));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      fromAssetId,
-      fromAsset,
-      toAssetId,
-      toAsset,
-      errorPercent,
-      totalLiters,
-      startAt,
-      endAt,
-      totalTime,
-      totalTimeDuration,
-      sensorId,
-      sensor,
-      initialFluxometer,
-      finalFluxometer);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        identifier,
+        fromAssetId,
+        fromAsset,
+        toAssetId,
+        toAsset,
+        errorPercent,
+        totalLiters,
+        toAssetMileage,
+        startAt,
+        endAt,
+        totalTime,
+        totalTimeDuration,
+        initialFluxometer,
+        finalFluxometer,
+        initialTankVolume,
+        finalTankVolume,
+        price,
+        attendantName
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -52305,88 +52416,107 @@ class _$AtsExitImpl implements _AtsExit {
 
 abstract class _AtsExit implements AtsExit {
   const factory _AtsExit(
-      {required final String id,
-      required final String fromAssetId,
+      {final String? id,
+      final int? identifier,
+      final String? fromAssetId,
       final Asset? fromAsset,
       final String? toAssetId,
       final Asset? toAsset,
       final double? errorPercent,
       final double? totalLiters,
+      final double? toAssetMileage,
       @TimestampOrNullConverter() final DateTime? startAt,
       @TimestampOrNullConverter() final DateTime? endAt,
       final String? totalTime,
       @DurationOrNullConverter() final Duration? totalTimeDuration,
-      final String? sensorId,
-      final Sensor? sensor,
       final double? initialFluxometer,
-      final double? finalFluxometer}) = _$AtsExitImpl;
+      final double? finalFluxometer,
+      final double? initialTankVolume,
+      final double? finalTankVolume,
+      final double? price,
+      final String? attendantName}) = _$AtsExitImpl;
 
   factory _AtsExit.fromJson(Map<String, dynamic> json) = _$AtsExitImpl.fromJson;
 
   @override
 
-  /// ID of the volume. This ID is unique.
-  String get id;
+  /// `id` of the volume. This ID is unique.
+  String? get id;
   @override
 
-  /// [fromAssetId] and [fromAsset] means the asset that the asset that generate the exit.
-  String get fromAssetId;
+  /// `identifier` is the exit identifier.
+  int? get identifier;
   @override
 
-  /// [fromAsset] is an instance of [Asset] means the asset that the asset that generate the exit.
+  /// `fromAssetId` is the [Asset] kind pump to generate the exit.
+  String? get fromAssetId;
+  @override
+
+  /// `fromAsset` is the id [Asset] kind pump to generate the exit.
   Asset? get fromAsset;
   @override
 
-  /// [toAssetId] and [toAsset] means the asset that the asset that receive the fuel (Receive the exit).
+  /// `toAssetId` is the id [Asset] that receive the fuel (Receive the exit).
   String? get toAssetId;
   @override
 
-  /// [toAsset] means the asset that the asset that receive the fuel (Receive the exit).
+  /// `toAsset` is the [Asset] that receive the fuel (Receive the exit).
   Asset? get toAsset;
   @override
 
-  /// [errorPercent] is the percentage of error of the exit.
+  /// `errorPercent` is the errror percent between reception and sensor entry.
   double? get errorPercent;
   @override
 
-  /// [totalLiters] is the total liters dispatched to [toAssetId] and [toAsset].
+  /// `totalLiters` is the total liters of the exit.
   double? get totalLiters;
   @override
 
-  /// [startAt] is the date and time of the start of the exit.
+  /// `toAssetMileage` is the Odometer of the asset mileage registered.
+  double? get toAssetMileage;
+  @override
+
+  /// `startAt` is the start exit date.
   @TimestampOrNullConverter()
   DateTime? get startAt;
   @override
 
-  /// [endAt] is the date and time of the end of the exit.
-  /// [endAt] is null if the exit is not finished.
+  /// `endAt` is the end exit date.
   @TimestampOrNullConverter()
   DateTime? get endAt;
   @override
 
-  /// [totalTime] is the total time of the exit
-  /// [totalTime] is null if the exit is not finished.
+  /// `totalTime` is the total exit time.
   String? get totalTime;
   @override
 
-  /// [totalTimeDuration] is null if the exit is not finished.
+  /// `totalTimeDuration` is the duration in seconds of the exit.
   @DurationOrNullConverter()
   Duration? get totalTimeDuration;
-  @override // Asset ATS Last exit fields
-  /// ID of the Sensor
-  String? get sensorId;
   @override
 
-  /// [sensor] Sensor linked to exit.
-  Sensor? get sensor;
-  @override
-
-  /// Initial fluxometer of the day
+  /// `initialFluxometer` is the initial fluxometer of the day.
   double? get initialFluxometer;
   @override
 
-  /// Final fluxometer of the day
+  /// `finalFluxometer` is the final fluxometer of the day.
   double? get finalFluxometer;
+  @override
+
+  /// `initialTankVolume` is the initial tank volume of the day.
+  double? get initialTankVolume;
+  @override
+
+  /// `finalTankVolume` is the final tank volume of the day.
+  double? get finalTankVolume;
+  @override
+
+  /// `price` is the unit price per liter of exit.
+  double? get price;
+  @override
+
+  /// `attendantName` is the attendant name.
+  String? get attendantName;
   @override
   @JsonKey(ignore: true)
   _$$AtsExitImplCopyWith<_$AtsExitImpl> get copyWith =>
@@ -61088,5 +61218,273 @@ abstract class _SimulationCycle implements SimulationCycle {
   @override
   @JsonKey(ignore: true)
   _$$SimulationCycleImplCopyWith<_$SimulationCycleImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+LinkShortcut _$LinkShortcutFromJson(Map<String, dynamic> json) {
+  return _LinkShortcut.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LinkShortcut {
+  /// [id] is the unique identifier for the shortcut.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [code] is the code for the shortcut.
+  String get code => throw _privateConstructorUsedError;
+
+  /// [redirectTo] is the URL to redirect to.
+  String? get redirectTo => throw _privateConstructorUsedError;
+
+  /// [creator] is the user who created the shortcut.
+  Employee? get creator => throw _privateConstructorUsedError;
+
+  /// [creatorId] is the ID of the user who created the shortcut.
+  String? get creatorId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LinkShortcutCopyWith<LinkShortcut> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LinkShortcutCopyWith<$Res> {
+  factory $LinkShortcutCopyWith(
+          LinkShortcut value, $Res Function(LinkShortcut) then) =
+      _$LinkShortcutCopyWithImpl<$Res, LinkShortcut>;
+  @useResult
+  $Res call(
+      {String id,
+      String code,
+      String? redirectTo,
+      Employee? creator,
+      String? creatorId});
+
+  $EmployeeCopyWith<$Res>? get creator;
+}
+
+/// @nodoc
+class _$LinkShortcutCopyWithImpl<$Res, $Val extends LinkShortcut>
+    implements $LinkShortcutCopyWith<$Res> {
+  _$LinkShortcutCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? redirectTo = freezed,
+    Object? creator = freezed,
+    Object? creatorId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      redirectTo: freezed == redirectTo
+          ? _value.redirectTo
+          : redirectTo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      creator: freezed == creator
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as Employee?,
+      creatorId: freezed == creatorId
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $EmployeeCopyWith<$Res>? get creator {
+    if (_value.creator == null) {
+      return null;
+    }
+
+    return $EmployeeCopyWith<$Res>(_value.creator!, (value) {
+      return _then(_value.copyWith(creator: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$LinkShortcutImplCopyWith<$Res>
+    implements $LinkShortcutCopyWith<$Res> {
+  factory _$$LinkShortcutImplCopyWith(
+          _$LinkShortcutImpl value, $Res Function(_$LinkShortcutImpl) then) =
+      __$$LinkShortcutImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String code,
+      String? redirectTo,
+      Employee? creator,
+      String? creatorId});
+
+  @override
+  $EmployeeCopyWith<$Res>? get creator;
+}
+
+/// @nodoc
+class __$$LinkShortcutImplCopyWithImpl<$Res>
+    extends _$LinkShortcutCopyWithImpl<$Res, _$LinkShortcutImpl>
+    implements _$$LinkShortcutImplCopyWith<$Res> {
+  __$$LinkShortcutImplCopyWithImpl(
+      _$LinkShortcutImpl _value, $Res Function(_$LinkShortcutImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? redirectTo = freezed,
+    Object? creator = freezed,
+    Object? creatorId = freezed,
+  }) {
+    return _then(_$LinkShortcutImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      redirectTo: freezed == redirectTo
+          ? _value.redirectTo
+          : redirectTo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      creator: freezed == creator
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as Employee?,
+      creatorId: freezed == creatorId
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LinkShortcutImpl implements _LinkShortcut {
+  const _$LinkShortcutImpl(
+      {required this.id,
+      required this.code,
+      this.redirectTo,
+      this.creator,
+      this.creatorId});
+
+  factory _$LinkShortcutImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LinkShortcutImplFromJson(json);
+
+  /// [id] is the unique identifier for the shortcut.
+  @override
+  final String id;
+
+  /// [code] is the code for the shortcut.
+  @override
+  final String code;
+
+  /// [redirectTo] is the URL to redirect to.
+  @override
+  final String? redirectTo;
+
+  /// [creator] is the user who created the shortcut.
+  @override
+  final Employee? creator;
+
+  /// [creatorId] is the ID of the user who created the shortcut.
+  @override
+  final String? creatorId;
+
+  @override
+  String toString() {
+    return 'LinkShortcut(id: $id, code: $code, redirectTo: $redirectTo, creator: $creator, creatorId: $creatorId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LinkShortcutImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.redirectTo, redirectTo) ||
+                other.redirectTo == redirectTo) &&
+            (identical(other.creator, creator) || other.creator == creator) &&
+            (identical(other.creatorId, creatorId) ||
+                other.creatorId == creatorId));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, code, redirectTo, creator, creatorId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LinkShortcutImplCopyWith<_$LinkShortcutImpl> get copyWith =>
+      __$$LinkShortcutImplCopyWithImpl<_$LinkShortcutImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LinkShortcutImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LinkShortcut implements LinkShortcut {
+  const factory _LinkShortcut(
+      {required final String id,
+      required final String code,
+      final String? redirectTo,
+      final Employee? creator,
+      final String? creatorId}) = _$LinkShortcutImpl;
+
+  factory _LinkShortcut.fromJson(Map<String, dynamic> json) =
+      _$LinkShortcutImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier for the shortcut.
+  String get id;
+  @override
+
+  /// [code] is the code for the shortcut.
+  String get code;
+  @override
+
+  /// [redirectTo] is the URL to redirect to.
+  String? get redirectTo;
+  @override
+
+  /// [creator] is the user who created the shortcut.
+  Employee? get creator;
+  @override
+
+  /// [creatorId] is the ID of the user who created the shortcut.
+  String? get creatorId;
+  @override
+  @JsonKey(ignore: true)
+  _$$LinkShortcutImplCopyWith<_$LinkShortcutImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

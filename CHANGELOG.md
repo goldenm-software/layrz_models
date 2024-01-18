@@ -1,25 +1,36 @@
 # Changelog
 
+## 2.0.54
+- rebuild `AtsExit` with news props
+
+## 2.0.53
+
+- Added `shortcuts` to `GenericPermission` model
+
+## 2.0.52
+
+- Added `LinkShortcut` entity
+
 ## 2.0.51
 
-- added `fixedWorkspaceId` and `fixedWorkspace` parameters to [RegisteredApp]
+- added `fixedWorkspaceId` and `fixedWorkspace` parameters to `RegisteredApp`
 
 ## 2.0.50
 
-- Added `stateRegistration` to [AtsCompanyInformation]
+- Added `stateRegistration` to `AtsCompanyInformation`
 
 ## 2.0.49
 
-- Added `email` to [AtsCompanyInformation]
+- Added `email` to `AtsCompanyInformation`
 
 ## 2.0.48
 
-- Added `atsAutomaticReception` to [ReferenceCategory]
+- Added `atsAutomaticReception` to `ReferenceCategory`
 
 ## 2.0.47
 
-- Added `receptionId` to [AtsEntryUnloadInput] model
-- Added `errorRate` to [AtsReception] model
+- Added `receptionId` to `AtsEntryUnloadInput` model
+- Added `errorRate` to `AtsReception` model
 
 ## 2.0.46
 
