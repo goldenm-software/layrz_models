@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0.54
+- rebuild `AtsExit` with news props
+
 ## 2.0.53
 
 - Added `shortcuts` to `GenericPermission` model
