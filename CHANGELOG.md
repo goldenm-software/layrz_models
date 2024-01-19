@@ -1,6 +1,14 @@
 # Changelog
 
+## 2.0.55
+
+- Added `parameters` on `Asset` model
+- Added `FIXED` as a new `AssetMode` enum (Previously was `FIXED`)
+- Deprecated `FAILOVER` on `AssetMode` enum
+- New entity `StaticPosition` to represent the static position of an `Asset`
+
 ## 2.0.54
+
 - rebuild `AtsExit` with news props
 
 ## 2.0.53

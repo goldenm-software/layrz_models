@@ -1,50 +1,57 @@
 part of '../layrz_models.dart';
 
 enum AssetMode {
+  /// [AssetMode.single] is the default mode for an asset. It means that the asset is a single device.
+  /// Layrz API definition: SINGLE
   single,
+
+  /// [AssetMode.multiple] means that the asset is a cluster of devices.
+  /// Layrz API definition: MULTIPLE
   multiple,
-  failover,
-  fixed,
+
+  /// [AssetMode.assetmultiple] means that the asset is a cluster of assets.
+  /// Layrz API definition: ASSETMULTIPLE
   assetmultiple,
-  disconnected;
+
+  /// [AssetMode.disconnected] means that the asset is a disconnected device.
+  /// Layrz API definition: DISCONNECTED
+  disconnected,
+
+  /// [AssetMode.fixed] means that the asset is a static asset.
+  /// Layrz API definition: STATIC
+  fixed;
 
   @override
-  String toString() => name.toUpperCase();
+  String toString() => toJson();
   String toJson() {
     switch (this) {
-      case AssetMode.single:
-        return 'SINGLE';
       case AssetMode.multiple:
         return 'MULTIPLE';
-      case AssetMode.failover:
-        return 'FAILOVER';
-      case AssetMode.fixed:
-        return 'FIXED';
       case AssetMode.assetmultiple:
         return 'ASSETMULTIPLE';
       case AssetMode.disconnected:
         return 'DISCONNECTED';
+      case AssetMode.fixed:
+        return 'STATIC';
+      case AssetMode.single:
       default:
-        throw Exception('Unknown AssetMode');
+        return 'SINGLE';
     }
   }
 
   static AssetMode fromJson(String json) {
     switch (json) {
-      case 'SINGLE':
-        return AssetMode.single;
       case 'MULTIPLE':
         return AssetMode.multiple;
-      case 'FAILOVER':
-        return AssetMode.failover;
-      case 'FIXED':
-        return AssetMode.fixed;
       case 'ASSETMULTIPLE':
         return AssetMode.assetmultiple;
       case 'DISCONNECTED':
         return AssetMode.disconnected;
+      case 'STATIC':
+        return AssetMode.fixed;
+      case 'SINGLE':
       default:
-        throw Exception('Unknown AssetMode');
+        return AssetMode.single;
     }
   }
 }
@@ -107,9 +114,6 @@ class Asset with _$Asset {
     /// Is the list of device [commands] available for this asset.
     List<DeviceCommand>? commands,
 
-    /// Is the list of available [parameters] for this asset.
-    List<String?>? parameters,
-
     /// Is the list of [references] ids associated to the asset
     List<String>? referencesIds,
 
@@ -147,12 +151,6 @@ class Asset with _$Asset {
 
     /// [primary] is the primary device.
     Device? primary,
-
-    /// [secondaryId] is the secondary device id.
-    String? secondaryId,
-
-    /// [secondary] is the secondary device.
-    Device? secondary,
 
     /// [devicesIds] is the list of devices ids associated to the asset.
     List<String>? devicesIds,
@@ -218,10 +216,34 @@ class Asset with _$Asset {
     /// [linkedSupplyPointAssetsIds] refers to the list of supply points assets IDs linked to this asset.
     /// Only used in ATS apps.
     List<String>? linkedSupplyPointAssetsIds,
+
+    /// [staticPosition] refers to the static position of the asset.
+    /// Only used when mode is [AssetMode.fixed].
+    StaticPosition? staticPosition,
+
+
+    /// [parameters] refers to the list of parameters of the asset.
+    /// Is only a list of strings.
+    @Default([]) List<String> parameters,
   }) = _Asset;
 
-  // From json
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
+}
+
+@freezed
+class StaticPosition with _$StaticPosition {
+  const factory StaticPosition({
+    /// [latitude] is the latitude of the asset.
+    double? latitude,
+
+    /// [longitude] is the longitude of the asset.
+    double? longitude,
+
+    /// [altitude] is the altitude of the asset.
+    double? altitude,
+  }) = _StaticPosition;
+
+  factory StaticPosition.fromJson(Map<String, dynamic> json) => _$StaticPositionFromJson(json);
 }
 
 class AssetModeOrNullConverter implements JsonConverter<AssetMode?, String?> {

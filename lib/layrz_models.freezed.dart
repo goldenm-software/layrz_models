@@ -10850,9 +10850,6 @@ mixin _$Asset {
   /// Is the list of device [commands] available for this asset.
   List<DeviceCommand>? get commands => throw _privateConstructorUsedError;
 
-  /// Is the list of available [parameters] for this asset.
-  List<String?>? get parameters => throw _privateConstructorUsedError;
-
   /// Is the list of [references] ids associated to the asset
   List<String>? get referencesIds => throw _privateConstructorUsedError;
 
@@ -10891,12 +10888,6 @@ mixin _$Asset {
 
   /// [primary] is the primary device.
   Device? get primary => throw _privateConstructorUsedError;
-
-  /// [secondaryId] is the secondary device id.
-  String? get secondaryId => throw _privateConstructorUsedError;
-
-  /// [secondary] is the secondary device.
-  Device? get secondary => throw _privateConstructorUsedError;
 
   /// [devicesIds] is the list of devices ids associated to the asset.
   List<String>? get devicesIds => throw _privateConstructorUsedError;
@@ -10967,6 +10958,14 @@ mixin _$Asset {
   List<String>? get linkedSupplyPointAssetsIds =>
       throw _privateConstructorUsedError;
 
+  /// [staticPosition] refers to the static position of the asset.
+  /// Only used when mode is [AssetMode.fixed].
+  StaticPosition? get staticPosition => throw _privateConstructorUsedError;
+
+  /// [parameters] refers to the list of parameters of the asset.
+  /// Is only a list of strings.
+  List<String> get parameters => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AssetCopyWith<Asset> get copyWith => throw _privateConstructorUsedError;
@@ -10987,7 +10986,6 @@ abstract class $AssetCopyWith<$Res> {
       List<String>? childrenIds,
       List<Asset>? children,
       List<DeviceCommand>? commands,
-      List<String?>? parameters,
       List<String>? referencesIds,
       List<Reference>? references,
       List<String>? authenticatedAssetsIds,
@@ -11000,8 +10998,6 @@ abstract class $AssetCopyWith<$Res> {
       List<Sensor>? sensors,
       String? primaryId,
       Device? primary,
-      String? secondaryId,
-      Device? secondary,
       List<String>? devicesIds,
       List<Device>? devices,
       String? qrCode,
@@ -11020,16 +11016,18 @@ abstract class $AssetCopyWith<$Res> {
       String? authenticationCardId,
       String? nfcIdentifier,
       List<Asset>? linkedSupplyPointAssets,
-      List<String>? linkedSupplyPointAssetsIds});
+      List<String>? linkedSupplyPointAssetsIds,
+      StaticPosition? staticPosition,
+      List<String> parameters});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $CategoryCopyWith<$Res>? get kind;
   $DeviceCopyWith<$Res>? get primary;
-  $DeviceCopyWith<$Res>? get secondary;
   $ConnectionCopyWith<$Res>? get connection;
   $AssetTelemetryCopyWith<$Res>? get telemetry;
   $AssetLoginInfoCopyWith<$Res>? get loginInfo;
   $AtsAuthenticationCardCopyWith<$Res>? get authenticationCard;
+  $StaticPositionCopyWith<$Res>? get staticPosition;
 }
 
 /// @nodoc
@@ -11054,7 +11052,6 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     Object? childrenIds = freezed,
     Object? children = freezed,
     Object? commands = freezed,
-    Object? parameters = freezed,
     Object? referencesIds = freezed,
     Object? references = freezed,
     Object? authenticatedAssetsIds = freezed,
@@ -11067,8 +11064,6 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     Object? sensors = freezed,
     Object? primaryId = freezed,
     Object? primary = freezed,
-    Object? secondaryId = freezed,
-    Object? secondary = freezed,
     Object? devicesIds = freezed,
     Object? devices = freezed,
     Object? qrCode = freezed,
@@ -11088,6 +11083,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     Object? nfcIdentifier = freezed,
     Object? linkedSupplyPointAssets = freezed,
     Object? linkedSupplyPointAssetsIds = freezed,
+    Object? staticPosition = freezed,
+    Object? parameters = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -11126,10 +11123,6 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
           ? _value.commands
           : commands // ignore: cast_nullable_to_non_nullable
               as List<DeviceCommand>?,
-      parameters: freezed == parameters
-          ? _value.parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
       referencesIds: freezed == referencesIds
           ? _value.referencesIds
           : referencesIds // ignore: cast_nullable_to_non_nullable
@@ -11177,14 +11170,6 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
       primary: freezed == primary
           ? _value.primary
           : primary // ignore: cast_nullable_to_non_nullable
-              as Device?,
-      secondaryId: freezed == secondaryId
-          ? _value.secondaryId
-          : secondaryId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      secondary: freezed == secondary
-          ? _value.secondary
-          : secondary // ignore: cast_nullable_to_non_nullable
               as Device?,
       devicesIds: freezed == devicesIds
           ? _value.devicesIds
@@ -11262,6 +11247,14 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
           ? _value.linkedSupplyPointAssetsIds
           : linkedSupplyPointAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      staticPosition: freezed == staticPosition
+          ? _value.staticPosition
+          : staticPosition // ignore: cast_nullable_to_non_nullable
+              as StaticPosition?,
+      parameters: null == parameters
+          ? _value.parameters
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 
@@ -11298,18 +11291,6 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
 
     return $DeviceCopyWith<$Res>(_value.primary!, (value) {
       return _then(_value.copyWith(primary: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $DeviceCopyWith<$Res>? get secondary {
-    if (_value.secondary == null) {
-      return null;
-    }
-
-    return $DeviceCopyWith<$Res>(_value.secondary!, (value) {
-      return _then(_value.copyWith(secondary: value) as $Val);
     });
   }
 
@@ -11361,6 +11342,18 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
       return _then(_value.copyWith(authenticationCard: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $StaticPositionCopyWith<$Res>? get staticPosition {
+    if (_value.staticPosition == null) {
+      return null;
+    }
+
+    return $StaticPositionCopyWith<$Res>(_value.staticPosition!, (value) {
+      return _then(_value.copyWith(staticPosition: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -11380,7 +11373,6 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
       List<String>? childrenIds,
       List<Asset>? children,
       List<DeviceCommand>? commands,
-      List<String?>? parameters,
       List<String>? referencesIds,
       List<Reference>? references,
       List<String>? authenticatedAssetsIds,
@@ -11393,8 +11385,6 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
       List<Sensor>? sensors,
       String? primaryId,
       Device? primary,
-      String? secondaryId,
-      Device? secondary,
       List<String>? devicesIds,
       List<Device>? devices,
       String? qrCode,
@@ -11413,7 +11403,9 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
       String? authenticationCardId,
       String? nfcIdentifier,
       List<Asset>? linkedSupplyPointAssets,
-      List<String>? linkedSupplyPointAssetsIds});
+      List<String>? linkedSupplyPointAssetsIds,
+      StaticPosition? staticPosition,
+      List<String> parameters});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -11422,8 +11414,6 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
   @override
   $DeviceCopyWith<$Res>? get primary;
   @override
-  $DeviceCopyWith<$Res>? get secondary;
-  @override
   $ConnectionCopyWith<$Res>? get connection;
   @override
   $AssetTelemetryCopyWith<$Res>? get telemetry;
@@ -11431,6 +11421,8 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
   $AssetLoginInfoCopyWith<$Res>? get loginInfo;
   @override
   $AtsAuthenticationCardCopyWith<$Res>? get authenticationCard;
+  @override
+  $StaticPositionCopyWith<$Res>? get staticPosition;
 }
 
 /// @nodoc
@@ -11453,7 +11445,6 @@ class __$$AssetImplCopyWithImpl<$Res>
     Object? childrenIds = freezed,
     Object? children = freezed,
     Object? commands = freezed,
-    Object? parameters = freezed,
     Object? referencesIds = freezed,
     Object? references = freezed,
     Object? authenticatedAssetsIds = freezed,
@@ -11466,8 +11457,6 @@ class __$$AssetImplCopyWithImpl<$Res>
     Object? sensors = freezed,
     Object? primaryId = freezed,
     Object? primary = freezed,
-    Object? secondaryId = freezed,
-    Object? secondary = freezed,
     Object? devicesIds = freezed,
     Object? devices = freezed,
     Object? qrCode = freezed,
@@ -11487,6 +11476,8 @@ class __$$AssetImplCopyWithImpl<$Res>
     Object? nfcIdentifier = freezed,
     Object? linkedSupplyPointAssets = freezed,
     Object? linkedSupplyPointAssetsIds = freezed,
+    Object? staticPosition = freezed,
+    Object? parameters = null,
   }) {
     return _then(_$AssetImpl(
       id: null == id
@@ -11525,10 +11516,6 @@ class __$$AssetImplCopyWithImpl<$Res>
           ? _value._commands
           : commands // ignore: cast_nullable_to_non_nullable
               as List<DeviceCommand>?,
-      parameters: freezed == parameters
-          ? _value._parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as List<String?>?,
       referencesIds: freezed == referencesIds
           ? _value._referencesIds
           : referencesIds // ignore: cast_nullable_to_non_nullable
@@ -11576,14 +11563,6 @@ class __$$AssetImplCopyWithImpl<$Res>
       primary: freezed == primary
           ? _value.primary
           : primary // ignore: cast_nullable_to_non_nullable
-              as Device?,
-      secondaryId: freezed == secondaryId
-          ? _value.secondaryId
-          : secondaryId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      secondary: freezed == secondary
-          ? _value.secondary
-          : secondary // ignore: cast_nullable_to_non_nullable
               as Device?,
       devicesIds: freezed == devicesIds
           ? _value._devicesIds
@@ -11661,6 +11640,14 @@ class __$$AssetImplCopyWithImpl<$Res>
           ? _value._linkedSupplyPointAssetsIds
           : linkedSupplyPointAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      staticPosition: freezed == staticPosition
+          ? _value.staticPosition
+          : staticPosition // ignore: cast_nullable_to_non_nullable
+              as StaticPosition?,
+      parameters: null == parameters
+          ? _value._parameters
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -11678,7 +11665,6 @@ class _$AssetImpl implements _Asset {
       final List<String>? childrenIds,
       final List<Asset>? children,
       final List<DeviceCommand>? commands,
-      final List<String?>? parameters,
       final List<String>? referencesIds,
       final List<Reference>? references,
       final List<String>? authenticatedAssetsIds,
@@ -11691,8 +11677,6 @@ class _$AssetImpl implements _Asset {
       final List<Sensor>? sensors,
       this.primaryId,
       this.primary,
-      this.secondaryId,
-      this.secondary,
       final List<String>? devicesIds,
       final List<Device>? devices,
       this.qrCode,
@@ -11711,11 +11695,12 @@ class _$AssetImpl implements _Asset {
       this.authenticationCardId,
       this.nfcIdentifier,
       final List<Asset>? linkedSupplyPointAssets,
-      final List<String>? linkedSupplyPointAssetsIds})
+      final List<String>? linkedSupplyPointAssetsIds,
+      this.staticPosition,
+      final List<String> parameters = const []})
       : _childrenIds = childrenIds,
         _children = children,
         _commands = commands,
-        _parameters = parameters,
         _referencesIds = referencesIds,
         _references = references,
         _authenticatedAssetsIds = authenticatedAssetsIds,
@@ -11733,7 +11718,8 @@ class _$AssetImpl implements _Asset {
         _contacts = contacts,
         _mappitLaborHours = mappitLaborHours,
         _linkedSupplyPointAssets = linkedSupplyPointAssets,
-        _linkedSupplyPointAssetsIds = linkedSupplyPointAssetsIds;
+        _linkedSupplyPointAssetsIds = linkedSupplyPointAssetsIds,
+        _parameters = parameters;
 
   factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
       _$$AssetImplFromJson(json);
@@ -11799,19 +11785,6 @@ class _$AssetImpl implements _Asset {
     final value = _commands;
     if (value == null) return null;
     if (_commands is EqualUnmodifiableListView) return _commands;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// Is the list of available [parameters] for this asset.
-  final List<String?>? _parameters;
-
-  /// Is the list of available [parameters] for this asset.
-  @override
-  List<String?>? get parameters {
-    final value = _parameters;
-    if (value == null) return null;
-    if (_parameters is EqualUnmodifiableListView) return _parameters;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -11943,14 +11916,6 @@ class _$AssetImpl implements _Asset {
   /// [primary] is the primary device.
   @override
   final Device? primary;
-
-  /// [secondaryId] is the secondary device id.
-  @override
-  final String? secondaryId;
-
-  /// [secondary] is the secondary device.
-  @override
-  final Device? secondary;
 
   /// [devicesIds] is the list of devices ids associated to the asset.
   final List<String>? _devicesIds;
@@ -12134,9 +12099,28 @@ class _$AssetImpl implements _Asset {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [staticPosition] refers to the static position of the asset.
+  /// Only used when mode is [AssetMode.fixed].
+  @override
+  final StaticPosition? staticPosition;
+
+  /// [parameters] refers to the list of parameters of the asset.
+  /// Is only a list of strings.
+  final List<String> _parameters;
+
+  /// [parameters] refers to the list of parameters of the asset.
+  /// Is only a list of strings.
+  @override
+  @JsonKey()
+  List<String> get parameters {
+    if (_parameters is EqualUnmodifiableListView) return _parameters;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_parameters);
+  }
+
   @override
   String toString() {
-    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, parameters: $parameters, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, secondaryId: $secondaryId, secondary: $secondary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds)';
+    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, parameters: $parameters)';
   }
 
   @override
@@ -12155,8 +12139,6 @@ class _$AssetImpl implements _Asset {
                 .equals(other._childrenIds, _childrenIds) &&
             const DeepCollectionEquality().equals(other._children, _children) &&
             const DeepCollectionEquality().equals(other._commands, _commands) &&
-            const DeepCollectionEquality()
-                .equals(other._parameters, _parameters) &&
             const DeepCollectionEquality()
                 .equals(other._referencesIds, _referencesIds) &&
             const DeepCollectionEquality()
@@ -12177,10 +12159,6 @@ class _$AssetImpl implements _Asset {
             (identical(other.primaryId, primaryId) ||
                 other.primaryId == primaryId) &&
             (identical(other.primary, primary) || other.primary == primary) &&
-            (identical(other.secondaryId, secondaryId) ||
-                other.secondaryId == secondaryId) &&
-            (identical(other.secondary, secondary) ||
-                other.secondary == secondary) &&
             const DeepCollectionEquality()
                 .equals(other._devicesIds, _devicesIds) &&
             const DeepCollectionEquality().equals(other._devices, _devices) &&
@@ -12213,7 +12191,11 @@ class _$AssetImpl implements _Asset {
                 other._linkedSupplyPointAssets, _linkedSupplyPointAssets) &&
             const DeepCollectionEquality().equals(
                 other._linkedSupplyPointAssetsIds,
-                _linkedSupplyPointAssetsIds));
+                _linkedSupplyPointAssetsIds) &&
+            (identical(other.staticPosition, staticPosition) ||
+                other.staticPosition == staticPosition) &&
+            const DeepCollectionEquality()
+                .equals(other._parameters, _parameters));
   }
 
   @JsonKey(ignore: true)
@@ -12229,7 +12211,6 @@ class _$AssetImpl implements _Asset {
         const DeepCollectionEquality().hash(_childrenIds),
         const DeepCollectionEquality().hash(_children),
         const DeepCollectionEquality().hash(_commands),
-        const DeepCollectionEquality().hash(_parameters),
         const DeepCollectionEquality().hash(_referencesIds),
         const DeepCollectionEquality().hash(_references),
         const DeepCollectionEquality().hash(_authenticatedAssetsIds),
@@ -12242,8 +12223,6 @@ class _$AssetImpl implements _Asset {
         const DeepCollectionEquality().hash(_sensors),
         primaryId,
         primary,
-        secondaryId,
-        secondary,
         const DeepCollectionEquality().hash(_devicesIds),
         const DeepCollectionEquality().hash(_devices),
         qrCode,
@@ -12262,7 +12241,9 @@ class _$AssetImpl implements _Asset {
         authenticationCardId,
         nfcIdentifier,
         const DeepCollectionEquality().hash(_linkedSupplyPointAssets),
-        const DeepCollectionEquality().hash(_linkedSupplyPointAssetsIds)
+        const DeepCollectionEquality().hash(_linkedSupplyPointAssetsIds),
+        staticPosition,
+        const DeepCollectionEquality().hash(_parameters)
       ]);
 
   @JsonKey(ignore: true)
@@ -12290,7 +12271,6 @@ abstract class _Asset implements Asset {
       final List<String>? childrenIds,
       final List<Asset>? children,
       final List<DeviceCommand>? commands,
-      final List<String?>? parameters,
       final List<String>? referencesIds,
       final List<Reference>? references,
       final List<String>? authenticatedAssetsIds,
@@ -12303,8 +12283,6 @@ abstract class _Asset implements Asset {
       final List<Sensor>? sensors,
       final String? primaryId,
       final Device? primary,
-      final String? secondaryId,
-      final Device? secondary,
       final List<String>? devicesIds,
       final List<Device>? devices,
       final String? qrCode,
@@ -12323,7 +12301,9 @@ abstract class _Asset implements Asset {
       final String? authenticationCardId,
       final String? nfcIdentifier,
       final List<Asset>? linkedSupplyPointAssets,
-      final List<String>? linkedSupplyPointAssetsIds}) = _$AssetImpl;
+      final List<String>? linkedSupplyPointAssetsIds,
+      final StaticPosition? staticPosition,
+      final List<String> parameters}) = _$AssetImpl;
 
   factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
 
@@ -12365,10 +12345,6 @@ abstract class _Asset implements Asset {
 
   /// Is the list of device [commands] available for this asset.
   List<DeviceCommand>? get commands;
-  @override
-
-  /// Is the list of available [parameters] for this asset.
-  List<String?>? get parameters;
   @override
 
   /// Is the list of [references] ids associated to the asset
@@ -12419,14 +12395,6 @@ abstract class _Asset implements Asset {
 
   /// [primary] is the primary device.
   Device? get primary;
-  @override
-
-  /// [secondaryId] is the secondary device id.
-  String? get secondaryId;
-  @override
-
-  /// [secondary] is the secondary device.
-  Device? get secondary;
   @override
 
   /// [devicesIds] is the list of devices ids associated to the asset.
@@ -12512,8 +12480,209 @@ abstract class _Asset implements Asset {
   /// Only used in ATS apps.
   List<String>? get linkedSupplyPointAssetsIds;
   @override
+
+  /// [staticPosition] refers to the static position of the asset.
+  /// Only used when mode is [AssetMode.fixed].
+  StaticPosition? get staticPosition;
+  @override
+
+  /// [parameters] refers to the list of parameters of the asset.
+  /// Is only a list of strings.
+  List<String> get parameters;
+  @override
   @JsonKey(ignore: true)
   _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+StaticPosition _$StaticPositionFromJson(Map<String, dynamic> json) {
+  return _StaticPosition.fromJson(json);
+}
+
+/// @nodoc
+mixin _$StaticPosition {
+  /// [latitude] is the latitude of the asset.
+  double? get latitude => throw _privateConstructorUsedError;
+
+  /// [longitude] is the longitude of the asset.
+  double? get longitude => throw _privateConstructorUsedError;
+
+  /// [altitude] is the altitude of the asset.
+  double? get altitude => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StaticPositionCopyWith<StaticPosition> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StaticPositionCopyWith<$Res> {
+  factory $StaticPositionCopyWith(
+          StaticPosition value, $Res Function(StaticPosition) then) =
+      _$StaticPositionCopyWithImpl<$Res, StaticPosition>;
+  @useResult
+  $Res call({double? latitude, double? longitude, double? altitude});
+}
+
+/// @nodoc
+class _$StaticPositionCopyWithImpl<$Res, $Val extends StaticPosition>
+    implements $StaticPositionCopyWith<$Res> {
+  _$StaticPositionCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? altitude = freezed,
+  }) {
+    return _then(_value.copyWith(
+      latitude: freezed == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      altitude: freezed == altitude
+          ? _value.altitude
+          : altitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$StaticPositionImplCopyWith<$Res>
+    implements $StaticPositionCopyWith<$Res> {
+  factory _$$StaticPositionImplCopyWith(_$StaticPositionImpl value,
+          $Res Function(_$StaticPositionImpl) then) =
+      __$$StaticPositionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double? latitude, double? longitude, double? altitude});
+}
+
+/// @nodoc
+class __$$StaticPositionImplCopyWithImpl<$Res>
+    extends _$StaticPositionCopyWithImpl<$Res, _$StaticPositionImpl>
+    implements _$$StaticPositionImplCopyWith<$Res> {
+  __$$StaticPositionImplCopyWithImpl(
+      _$StaticPositionImpl _value, $Res Function(_$StaticPositionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? altitude = freezed,
+  }) {
+    return _then(_$StaticPositionImpl(
+      latitude: freezed == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      altitude: freezed == altitude
+          ? _value.altitude
+          : altitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$StaticPositionImpl implements _StaticPosition {
+  const _$StaticPositionImpl({this.latitude, this.longitude, this.altitude});
+
+  factory _$StaticPositionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StaticPositionImplFromJson(json);
+
+  /// [latitude] is the latitude of the asset.
+  @override
+  final double? latitude;
+
+  /// [longitude] is the longitude of the asset.
+  @override
+  final double? longitude;
+
+  /// [altitude] is the altitude of the asset.
+  @override
+  final double? altitude;
+
+  @override
+  String toString() {
+    return 'StaticPosition(latitude: $latitude, longitude: $longitude, altitude: $altitude)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StaticPositionImpl &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
+            (identical(other.altitude, altitude) ||
+                other.altitude == altitude));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, latitude, longitude, altitude);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StaticPositionImplCopyWith<_$StaticPositionImpl> get copyWith =>
+      __$$StaticPositionImplCopyWithImpl<_$StaticPositionImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$StaticPositionImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _StaticPosition implements StaticPosition {
+  const factory _StaticPosition(
+      {final double? latitude,
+      final double? longitude,
+      final double? altitude}) = _$StaticPositionImpl;
+
+  factory _StaticPosition.fromJson(Map<String, dynamic> json) =
+      _$StaticPositionImpl.fromJson;
+
+  @override
+
+  /// [latitude] is the latitude of the asset.
+  double? get latitude;
+  @override
+
+  /// [longitude] is the longitude of the asset.
+  double? get longitude;
+  @override
+
+  /// [altitude] is the altitude of the asset.
+  double? get altitude;
+  @override
+  @JsonKey(ignore: true)
+  _$$StaticPositionImplCopyWith<_$StaticPositionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

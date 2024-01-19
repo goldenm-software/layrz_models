@@ -1014,9 +1014,6 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
       commands: (json['commands'] as List<dynamic>?)
           ?.map((e) => DeviceCommand.fromJson(e as Map<String, dynamic>))
           .toList(),
-      parameters: (json['parameters'] as List<dynamic>?)
-          ?.map((e) => e as String?)
-          .toList(),
       referencesIds: (json['referencesIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -1049,10 +1046,6 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
       primary: json['primary'] == null
           ? null
           : Device.fromJson(json['primary'] as Map<String, dynamic>),
-      secondaryId: json['secondaryId'] as String?,
-      secondary: json['secondary'] == null
-          ? null
-          : Device.fromJson(json['secondary'] as Map<String, dynamic>),
       devicesIds: (json['devicesIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -1103,6 +1096,14 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
           (json['linkedSupplyPointAssetsIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
+      staticPosition: json['staticPosition'] == null
+          ? null
+          : StaticPosition.fromJson(
+              json['staticPosition'] as Map<String, dynamic>),
+      parameters: (json['parameters'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
@@ -1116,7 +1117,6 @@ Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
       'childrenIds': instance.childrenIds,
       'children': instance.children?.map((e) => e.toJson()).toList(),
       'commands': instance.commands?.map((e) => e.toJson()).toList(),
-      'parameters': instance.parameters,
       'referencesIds': instance.referencesIds,
       'references': instance.references?.map((e) => e.toJson()).toList(),
       'authenticatedAssetsIds': instance.authenticatedAssetsIds,
@@ -1131,8 +1131,6 @@ Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
       'sensors': instance.sensors?.map((e) => e.toJson()).toList(),
       'primaryId': instance.primaryId,
       'primary': instance.primary?.toJson(),
-      'secondaryId': instance.secondaryId,
-      'secondary': instance.secondary?.toJson(),
       'devicesIds': instance.devicesIds,
       'devices': instance.devices?.map((e) => e.toJson()).toList(),
       'qrCode': instance.qrCode,
@@ -1154,6 +1152,23 @@ Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
       'linkedSupplyPointAssets':
           instance.linkedSupplyPointAssets?.map((e) => e.toJson()).toList(),
       'linkedSupplyPointAssetsIds': instance.linkedSupplyPointAssetsIds,
+      'staticPosition': instance.staticPosition?.toJson(),
+      'parameters': instance.parameters,
+    };
+
+_$StaticPositionImpl _$$StaticPositionImplFromJson(Map<String, dynamic> json) =>
+    _$StaticPositionImpl(
+      latitude: (json['latitude'] as num?)?.toDouble(),
+      longitude: (json['longitude'] as num?)?.toDouble(),
+      altitude: (json['altitude'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$$StaticPositionImplToJson(
+        _$StaticPositionImpl instance) =>
+    <String, dynamic>{
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+      'altitude': instance.altitude,
     };
 
 _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
