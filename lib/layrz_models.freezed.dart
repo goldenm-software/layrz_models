@@ -39609,9 +39609,6 @@ mixin _$AvailableApp {
   /// [s3Folder] is the s3 folder of the app.
   String? get s3Folder => throw _privateConstructorUsedError;
 
-  /// [canMapLayers] is true if the app can have more than the default map layer.
-  bool? get canMapLayers => throw _privateConstructorUsedError;
-
   /// [versions] is the list of versions of the app.
   List<AppVersion>? get versions => throw _privateConstructorUsedError;
 
@@ -39645,7 +39642,6 @@ abstract class $AvailableAppCopyWith<$Res> {
       bool? hasKeychain,
       String? serverFolder,
       String? s3Folder,
-      bool? canMapLayers,
       List<AppVersion>? versions,
       List<RegisteredApp>? implementations});
 
@@ -39679,7 +39675,6 @@ class _$AvailableAppCopyWithImpl<$Res, $Val extends AvailableApp>
     Object? hasKeychain = freezed,
     Object? serverFolder = freezed,
     Object? s3Folder = freezed,
-    Object? canMapLayers = freezed,
     Object? versions = freezed,
     Object? implementations = freezed,
   }) {
@@ -39736,10 +39731,6 @@ class _$AvailableAppCopyWithImpl<$Res, $Val extends AvailableApp>
           ? _value.s3Folder
           : s3Folder // ignore: cast_nullable_to_non_nullable
               as String?,
-      canMapLayers: freezed == canMapLayers
-          ? _value.canMapLayers
-          : canMapLayers // ignore: cast_nullable_to_non_nullable
-              as bool?,
       versions: freezed == versions
           ? _value.versions
           : versions // ignore: cast_nullable_to_non_nullable
@@ -39798,7 +39789,6 @@ abstract class _$$AvailableAppImplCopyWith<$Res>
       bool? hasKeychain,
       String? serverFolder,
       String? s3Folder,
-      bool? canMapLayers,
       List<AppVersion>? versions,
       List<RegisteredApp>? implementations});
 
@@ -39832,7 +39822,6 @@ class __$$AvailableAppImplCopyWithImpl<$Res>
     Object? hasKeychain = freezed,
     Object? serverFolder = freezed,
     Object? s3Folder = freezed,
-    Object? canMapLayers = freezed,
     Object? versions = freezed,
     Object? implementations = freezed,
   }) {
@@ -39889,10 +39878,6 @@ class __$$AvailableAppImplCopyWithImpl<$Res>
           ? _value.s3Folder
           : s3Folder // ignore: cast_nullable_to_non_nullable
               as String?,
-      canMapLayers: freezed == canMapLayers
-          ? _value.canMapLayers
-          : canMapLayers // ignore: cast_nullable_to_non_nullable
-              as bool?,
       versions: freezed == versions
           ? _value._versions
           : versions // ignore: cast_nullable_to_non_nullable
@@ -39922,7 +39907,6 @@ class _$AvailableAppImpl implements _AvailableApp {
       this.hasKeychain,
       this.serverFolder,
       this.s3Folder,
-      this.canMapLayers,
       final List<AppVersion>? versions,
       final List<RegisteredApp>? implementations})
       : _supportedPlatforms = supportedPlatforms,
@@ -39997,10 +39981,6 @@ class _$AvailableAppImpl implements _AvailableApp {
   @override
   final String? s3Folder;
 
-  /// [canMapLayers] is true if the app can have more than the default map layer.
-  @override
-  final bool? canMapLayers;
-
   /// [versions] is the list of versions of the app.
   final List<AppVersion>? _versions;
 
@@ -40029,7 +40009,7 @@ class _$AvailableAppImpl implements _AvailableApp {
 
   @override
   String toString() {
-    return 'AvailableApp(id: $id, name: $name, appId: $appId, appType: $appType, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, supportedPlatforms: $supportedPlatforms, onlyCustomized: $onlyCustomized, hasImport: $hasImport, hasKeychain: $hasKeychain, serverFolder: $serverFolder, s3Folder: $s3Folder, canMapLayers: $canMapLayers, versions: $versions, implementations: $implementations)';
+    return 'AvailableApp(id: $id, name: $name, appId: $appId, appType: $appType, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, supportedPlatforms: $supportedPlatforms, onlyCustomized: $onlyCustomized, hasImport: $hasImport, hasKeychain: $hasKeychain, serverFolder: $serverFolder, s3Folder: $s3Folder, versions: $versions, implementations: $implementations)';
   }
 
   @override
@@ -40059,8 +40039,6 @@ class _$AvailableAppImpl implements _AvailableApp {
                 other.serverFolder == serverFolder) &&
             (identical(other.s3Folder, s3Folder) ||
                 other.s3Folder == s3Folder) &&
-            (identical(other.canMapLayers, canMapLayers) ||
-                other.canMapLayers == canMapLayers) &&
             const DeepCollectionEquality().equals(other._versions, _versions) &&
             const DeepCollectionEquality()
                 .equals(other._implementations, _implementations));
@@ -40083,7 +40061,6 @@ class _$AvailableAppImpl implements _AvailableApp {
       hasKeychain,
       serverFolder,
       s3Folder,
-      canMapLayers,
       const DeepCollectionEquality().hash(_versions),
       const DeepCollectionEquality().hash(_implementations));
 
@@ -40116,7 +40093,6 @@ abstract class _AvailableApp implements AvailableApp {
       final bool? hasKeychain,
       final String? serverFolder,
       final String? s3Folder,
-      final bool? canMapLayers,
       final List<AppVersion>? versions,
       final List<RegisteredApp>? implementations}) = _$AvailableAppImpl;
 
@@ -40180,10 +40156,6 @@ abstract class _AvailableApp implements AvailableApp {
   String? get s3Folder;
   @override
 
-  /// [canMapLayers] is true if the app can have more than the default map layer.
-  bool? get canMapLayers;
-  @override
-
   /// [versions] is the list of versions of the app.
   List<AppVersion>? get versions;
   @override
@@ -40216,9 +40188,6 @@ mixin _$RegisteredApp {
   List<User>? get importedUsers => throw _privateConstructorUsedError;
   List<User>? get keychain => throw _privateConstructorUsedError;
   String get sourceId => throw _privateConstructorUsedError;
-
-  /// [mapLayers] is the list of map layers of the app.
-  List<MapLayer> get mapLayers => throw _privateConstructorUsedError;
 
   /// [owner] is the owner of the app.
   /// !Important: This field is only available when the query is from `/goldenm/graphql`
@@ -40259,7 +40228,6 @@ abstract class $RegisteredAppCopyWith<$Res> {
       List<User>? importedUsers,
       List<User>? keychain,
       String sourceId,
-      List<MapLayer> mapLayers,
       User? owner,
       List<CustomReport>? allowedReports,
       String? fixedWorkspaceId,
@@ -40297,7 +40265,6 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
     Object? importedUsers = freezed,
     Object? keychain = freezed,
     Object? sourceId = null,
-    Object? mapLayers = null,
     Object? owner = freezed,
     Object? allowedReports = freezed,
     Object? fixedWorkspaceId = freezed,
@@ -40356,10 +40323,6 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
           ? _value.sourceId
           : sourceId // ignore: cast_nullable_to_non_nullable
               as String,
-      mapLayers: null == mapLayers
-          ? _value.mapLayers
-          : mapLayers // ignore: cast_nullable_to_non_nullable
-              as List<MapLayer>,
       owner: freezed == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
@@ -40450,7 +40413,6 @@ abstract class _$$RegisteredAppImplCopyWith<$Res>
       List<User>? importedUsers,
       List<User>? keychain,
       String sourceId,
-      List<MapLayer> mapLayers,
       User? owner,
       List<CustomReport>? allowedReports,
       String? fixedWorkspaceId,
@@ -40490,7 +40452,6 @@ class __$$RegisteredAppImplCopyWithImpl<$Res>
     Object? importedUsers = freezed,
     Object? keychain = freezed,
     Object? sourceId = null,
-    Object? mapLayers = null,
     Object? owner = freezed,
     Object? allowedReports = freezed,
     Object? fixedWorkspaceId = freezed,
@@ -40549,10 +40510,6 @@ class __$$RegisteredAppImplCopyWithImpl<$Res>
           ? _value.sourceId
           : sourceId // ignore: cast_nullable_to_non_nullable
               as String,
-      mapLayers: null == mapLayers
-          ? _value._mapLayers
-          : mapLayers // ignore: cast_nullable_to_non_nullable
-              as List<MapLayer>,
       owner: freezed == owner
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
@@ -40590,7 +40547,6 @@ class _$RegisteredAppImpl implements _RegisteredApp {
       final List<User>? importedUsers,
       final List<User>? keychain,
       required this.sourceId,
-      final List<MapLayer> mapLayers = const [],
       this.owner,
       final List<CustomReport>? allowedReports,
       this.fixedWorkspaceId,
@@ -40600,7 +40556,6 @@ class _$RegisteredAppImpl implements _RegisteredApp {
         _importedDevices = importedDevices,
         _importedUsers = importedUsers,
         _keychain = keychain,
-        _mapLayers = mapLayers,
         _allowedReports = allowedReports;
 
   factory _$RegisteredAppImpl.fromJson(Map<String, dynamic> json) =>
@@ -40674,18 +40629,6 @@ class _$RegisteredAppImpl implements _RegisteredApp {
   @override
   final String sourceId;
 
-  /// [mapLayers] is the list of map layers of the app.
-  final List<MapLayer> _mapLayers;
-
-  /// [mapLayers] is the list of map layers of the app.
-  @override
-  @JsonKey()
-  List<MapLayer> get mapLayers {
-    if (_mapLayers is EqualUnmodifiableListView) return _mapLayers;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_mapLayers);
-  }
-
   /// [owner] is the owner of the app.
   /// !Important: This field is only available when the query is from `/goldenm/graphql`
   @override
@@ -40714,7 +40657,7 @@ class _$RegisteredAppImpl implements _RegisteredApp {
 
   @override
   String toString() {
-    return 'RegisteredApp(id: $id, name: $name, nickname: $nickname, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, mapLayers: $mapLayers, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace)';
+    return 'RegisteredApp(id: $id, name: $name, nickname: $nickname, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace)';
   }
 
   @override
@@ -40745,8 +40688,6 @@ class _$RegisteredAppImpl implements _RegisteredApp {
             const DeepCollectionEquality().equals(other._keychain, _keychain) &&
             (identical(other.sourceId, sourceId) ||
                 other.sourceId == sourceId) &&
-            const DeepCollectionEquality()
-                .equals(other._mapLayers, _mapLayers) &&
             (identical(other.owner, owner) || other.owner == owner) &&
             const DeepCollectionEquality()
                 .equals(other._allowedReports, _allowedReports) &&
@@ -40773,7 +40714,6 @@ class _$RegisteredAppImpl implements _RegisteredApp {
       const DeepCollectionEquality().hash(_importedUsers),
       const DeepCollectionEquality().hash(_keychain),
       sourceId,
-      const DeepCollectionEquality().hash(_mapLayers),
       owner,
       const DeepCollectionEquality().hash(_allowedReports),
       fixedWorkspaceId,
@@ -40808,7 +40748,6 @@ abstract class _RegisteredApp implements RegisteredApp {
       final List<User>? importedUsers,
       final List<User>? keychain,
       required final String sourceId,
-      final List<MapLayer> mapLayers,
       final User? owner,
       final List<CustomReport>? allowedReports,
       final String? fixedWorkspaceId,
@@ -40844,10 +40783,6 @@ abstract class _RegisteredApp implements RegisteredApp {
   List<User>? get keychain;
   @override
   String get sourceId;
-  @override
-
-  /// [mapLayers] is the list of map layers of the app.
-  List<MapLayer> get mapLayers;
   @override
 
   /// [owner] is the owner of the app.
@@ -44198,20 +44133,64 @@ mixin _$MapLayer {
   /// [name] is the name of the layer.
   String get name => throw _privateConstructorUsedError;
 
-  /// [server] is the server that hosts the layer.
-  /// Should be a valid URL with `{x}`, `{y}`, and `{z}` placeholders.
-  String get server => throw _privateConstructorUsedError;
+  /// [source] is the source of the layer.
+  @MapSourceConverter()
+  MapSource get source => throw _privateConstructorUsedError;
 
-  /// [serverDark] is the server that hosts the layer for dark mode.
-  /// Should be a valid URL with `{x}`, `{y}`, and `{z}` placeholders.
-  /// If it is null, the [server] will be used.
-  String? get serverDark => throw _privateConstructorUsedError;
+  /// [rasterServerLight] is the raster server for light mode and default.
+  /// Only used when the [source] is [MapSource.custom].
+  String? get rasterServerLight => throw _privateConstructorUsedError;
 
-  /// [type] is the type of the layer.
-  /// It can be [MapLayerType.raster] or [MapLayerType.vector].
-  /// By default, it is [MapLayerType.raster].
-  @MapLayerTypeConverter()
-  MapLayerType get type => throw _privateConstructorUsedError;
+  /// [rasterServerDark] is the raster server for dark mode.
+  /// Only used when the [source] is [MapSource.custom].
+  String? get rasterServerDark => throw _privateConstructorUsedError;
+
+  /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
+  /// Only used when the [source] is [MapSource.google].
+  String? get googleToken => throw _privateConstructorUsedError;
+
+  /// [googleLayers] is the list of enabled layers for the Google Maps.
+  /// Only used when the [source] is [MapSource.google].
+  @GoogleMapLayerConverter()
+  List<GoogleMapLayer>? get googleLayers => throw _privateConstructorUsedError;
+
+  /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
+  /// Only used when the [source] is [MapSource.mapbox].
+  String? get mapboxToken => throw _privateConstructorUsedError;
+
+  /// [mapboxStyle] is the Mapbox style for the layer.
+  /// Only used when the [source] is [MapSource.mapbox].
+  @MapboxStyleConverter()
+  List<MapboxStyle>? get mapboxLayers => throw _privateConstructorUsedError;
+
+  /// [mapboxCustomUsername] is the Mapbox custom username.
+  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
+  String? get mapboxCustomUsername => throw _privateConstructorUsedError;
+
+  /// [mapboxCustomStyleId] is the Mapbox custom style id.
+  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
+  String? get mapboxCustomStyleId => throw _privateConstructorUsedError;
+
+  /// [hereToken] is the HERE token with Map Tiles API capabilities.
+  /// Only used when the [source] is [MapSource.here].
+  String? get hereToken => throw _privateConstructorUsedError;
+
+  /// [hereLayers] is the list of enabled layers for the HERE Maps.
+  /// Only used when the [source] is [MapSource.here].
+  @HereStyleConverter()
+  List<HereStyle>? get hereLayers => throw _privateConstructorUsedError;
+
+  /// [attributionUrl] is the URI for the attribution of the layer.
+  String get attributionUrl => throw _privateConstructorUsedError;
+
+  /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
+  String? get attributionUrlDark => throw _privateConstructorUsedError;
+
+  /// [attributionWidth] is the width of the attribution of the layer.
+  double get attributionWidth => throw _privateConstructorUsedError;
+
+  /// [attributionHeight] is the height of the attribution of the layer.
+  double get attributionHeight => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44227,9 +44206,21 @@ abstract class $MapLayerCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      String server,
-      String? serverDark,
-      @MapLayerTypeConverter() MapLayerType type});
+      @MapSourceConverter() MapSource source,
+      String? rasterServerLight,
+      String? rasterServerDark,
+      String? googleToken,
+      @GoogleMapLayerConverter() List<GoogleMapLayer>? googleLayers,
+      String? mapboxToken,
+      @MapboxStyleConverter() List<MapboxStyle>? mapboxLayers,
+      String? mapboxCustomUsername,
+      String? mapboxCustomStyleId,
+      String? hereToken,
+      @HereStyleConverter() List<HereStyle>? hereLayers,
+      String attributionUrl,
+      String? attributionUrlDark,
+      double attributionWidth,
+      double attributionHeight});
 }
 
 /// @nodoc
@@ -44247,9 +44238,21 @@ class _$MapLayerCopyWithImpl<$Res, $Val extends MapLayer>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? server = null,
-    Object? serverDark = freezed,
-    Object? type = null,
+    Object? source = null,
+    Object? rasterServerLight = freezed,
+    Object? rasterServerDark = freezed,
+    Object? googleToken = freezed,
+    Object? googleLayers = freezed,
+    Object? mapboxToken = freezed,
+    Object? mapboxLayers = freezed,
+    Object? mapboxCustomUsername = freezed,
+    Object? mapboxCustomStyleId = freezed,
+    Object? hereToken = freezed,
+    Object? hereLayers = freezed,
+    Object? attributionUrl = null,
+    Object? attributionUrlDark = freezed,
+    Object? attributionWidth = null,
+    Object? attributionHeight = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -44260,18 +44263,66 @@ class _$MapLayerCopyWithImpl<$Res, $Val extends MapLayer>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      server: null == server
-          ? _value.server
-          : server // ignore: cast_nullable_to_non_nullable
-              as String,
-      serverDark: freezed == serverDark
-          ? _value.serverDark
-          : serverDark // ignore: cast_nullable_to_non_nullable
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as MapSource,
+      rasterServerLight: freezed == rasterServerLight
+          ? _value.rasterServerLight
+          : rasterServerLight // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as MapLayerType,
+      rasterServerDark: freezed == rasterServerDark
+          ? _value.rasterServerDark
+          : rasterServerDark // ignore: cast_nullable_to_non_nullable
+              as String?,
+      googleToken: freezed == googleToken
+          ? _value.googleToken
+          : googleToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      googleLayers: freezed == googleLayers
+          ? _value.googleLayers
+          : googleLayers // ignore: cast_nullable_to_non_nullable
+              as List<GoogleMapLayer>?,
+      mapboxToken: freezed == mapboxToken
+          ? _value.mapboxToken
+          : mapboxToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mapboxLayers: freezed == mapboxLayers
+          ? _value.mapboxLayers
+          : mapboxLayers // ignore: cast_nullable_to_non_nullable
+              as List<MapboxStyle>?,
+      mapboxCustomUsername: freezed == mapboxCustomUsername
+          ? _value.mapboxCustomUsername
+          : mapboxCustomUsername // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mapboxCustomStyleId: freezed == mapboxCustomStyleId
+          ? _value.mapboxCustomStyleId
+          : mapboxCustomStyleId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hereToken: freezed == hereToken
+          ? _value.hereToken
+          : hereToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hereLayers: freezed == hereLayers
+          ? _value.hereLayers
+          : hereLayers // ignore: cast_nullable_to_non_nullable
+              as List<HereStyle>?,
+      attributionUrl: null == attributionUrl
+          ? _value.attributionUrl
+          : attributionUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      attributionUrlDark: freezed == attributionUrlDark
+          ? _value.attributionUrlDark
+          : attributionUrlDark // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributionWidth: null == attributionWidth
+          ? _value.attributionWidth
+          : attributionWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      attributionHeight: null == attributionHeight
+          ? _value.attributionHeight
+          : attributionHeight // ignore: cast_nullable_to_non_nullable
+              as double,
     ) as $Val);
   }
 }
@@ -44287,9 +44338,21 @@ abstract class _$$MapLayerImplCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      String server,
-      String? serverDark,
-      @MapLayerTypeConverter() MapLayerType type});
+      @MapSourceConverter() MapSource source,
+      String? rasterServerLight,
+      String? rasterServerDark,
+      String? googleToken,
+      @GoogleMapLayerConverter() List<GoogleMapLayer>? googleLayers,
+      String? mapboxToken,
+      @MapboxStyleConverter() List<MapboxStyle>? mapboxLayers,
+      String? mapboxCustomUsername,
+      String? mapboxCustomStyleId,
+      String? hereToken,
+      @HereStyleConverter() List<HereStyle>? hereLayers,
+      String attributionUrl,
+      String? attributionUrlDark,
+      double attributionWidth,
+      double attributionHeight});
 }
 
 /// @nodoc
@@ -44305,9 +44368,21 @@ class __$$MapLayerImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? server = null,
-    Object? serverDark = freezed,
-    Object? type = null,
+    Object? source = null,
+    Object? rasterServerLight = freezed,
+    Object? rasterServerDark = freezed,
+    Object? googleToken = freezed,
+    Object? googleLayers = freezed,
+    Object? mapboxToken = freezed,
+    Object? mapboxLayers = freezed,
+    Object? mapboxCustomUsername = freezed,
+    Object? mapboxCustomStyleId = freezed,
+    Object? hereToken = freezed,
+    Object? hereLayers = freezed,
+    Object? attributionUrl = null,
+    Object? attributionUrlDark = freezed,
+    Object? attributionWidth = null,
+    Object? attributionHeight = null,
   }) {
     return _then(_$MapLayerImpl(
       id: null == id
@@ -44318,18 +44393,66 @@ class __$$MapLayerImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      server: null == server
-          ? _value.server
-          : server // ignore: cast_nullable_to_non_nullable
-              as String,
-      serverDark: freezed == serverDark
-          ? _value.serverDark
-          : serverDark // ignore: cast_nullable_to_non_nullable
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as MapSource,
+      rasterServerLight: freezed == rasterServerLight
+          ? _value.rasterServerLight
+          : rasterServerLight // ignore: cast_nullable_to_non_nullable
               as String?,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as MapLayerType,
+      rasterServerDark: freezed == rasterServerDark
+          ? _value.rasterServerDark
+          : rasterServerDark // ignore: cast_nullable_to_non_nullable
+              as String?,
+      googleToken: freezed == googleToken
+          ? _value.googleToken
+          : googleToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      googleLayers: freezed == googleLayers
+          ? _value._googleLayers
+          : googleLayers // ignore: cast_nullable_to_non_nullable
+              as List<GoogleMapLayer>?,
+      mapboxToken: freezed == mapboxToken
+          ? _value.mapboxToken
+          : mapboxToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mapboxLayers: freezed == mapboxLayers
+          ? _value._mapboxLayers
+          : mapboxLayers // ignore: cast_nullable_to_non_nullable
+              as List<MapboxStyle>?,
+      mapboxCustomUsername: freezed == mapboxCustomUsername
+          ? _value.mapboxCustomUsername
+          : mapboxCustomUsername // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mapboxCustomStyleId: freezed == mapboxCustomStyleId
+          ? _value.mapboxCustomStyleId
+          : mapboxCustomStyleId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hereToken: freezed == hereToken
+          ? _value.hereToken
+          : hereToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hereLayers: freezed == hereLayers
+          ? _value._hereLayers
+          : hereLayers // ignore: cast_nullable_to_non_nullable
+              as List<HereStyle>?,
+      attributionUrl: null == attributionUrl
+          ? _value.attributionUrl
+          : attributionUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      attributionUrlDark: freezed == attributionUrlDark
+          ? _value.attributionUrlDark
+          : attributionUrlDark // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributionWidth: null == attributionWidth
+          ? _value.attributionWidth
+          : attributionWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      attributionHeight: null == attributionHeight
+          ? _value.attributionHeight
+          : attributionHeight // ignore: cast_nullable_to_non_nullable
+              as double,
     ));
   }
 }
@@ -44340,9 +44463,25 @@ class _$MapLayerImpl implements _MapLayer {
   const _$MapLayerImpl(
       {required this.id,
       required this.name,
-      required this.server,
-      this.serverDark,
-      @MapLayerTypeConverter() this.type = MapLayerType.raster});
+      @MapSourceConverter() required this.source,
+      this.rasterServerLight,
+      this.rasterServerDark,
+      this.googleToken,
+      @GoogleMapLayerConverter() final List<GoogleMapLayer>? googleLayers,
+      this.mapboxToken,
+      @MapboxStyleConverter() final List<MapboxStyle>? mapboxLayers,
+      this.mapboxCustomUsername,
+      this.mapboxCustomStyleId,
+      this.hereToken,
+      @HereStyleConverter() final List<HereStyle>? hereLayers,
+      this.attributionUrl =
+          'https://cdn.layrz.com/resources/layrz/logo/normal.png',
+      this.attributionUrlDark,
+      this.attributionWidth = 100,
+      this.attributionHeight = 30})
+      : _googleLayers = googleLayers,
+        _mapboxLayers = mapboxLayers,
+        _hereLayers = hereLayers;
 
   factory _$MapLayerImpl.fromJson(Map<String, dynamic> json) =>
       _$$MapLayerImplFromJson(json);
@@ -44355,28 +44494,116 @@ class _$MapLayerImpl implements _MapLayer {
   @override
   final String name;
 
-  /// [server] is the server that hosts the layer.
-  /// Should be a valid URL with `{x}`, `{y}`, and `{z}` placeholders.
+  /// [source] is the source of the layer.
   @override
-  final String server;
+  @MapSourceConverter()
+  final MapSource source;
 
-  /// [serverDark] is the server that hosts the layer for dark mode.
-  /// Should be a valid URL with `{x}`, `{y}`, and `{z}` placeholders.
-  /// If it is null, the [server] will be used.
+  /// [rasterServerLight] is the raster server for light mode and default.
+  /// Only used when the [source] is [MapSource.custom].
   @override
-  final String? serverDark;
+  final String? rasterServerLight;
 
-  /// [type] is the type of the layer.
-  /// It can be [MapLayerType.raster] or [MapLayerType.vector].
-  /// By default, it is [MapLayerType.raster].
+  /// [rasterServerDark] is the raster server for dark mode.
+  /// Only used when the [source] is [MapSource.custom].
+  @override
+  final String? rasterServerDark;
+
+  /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
+  /// Only used when the [source] is [MapSource.google].
+  @override
+  final String? googleToken;
+
+  /// [googleLayers] is the list of enabled layers for the Google Maps.
+  /// Only used when the [source] is [MapSource.google].
+  final List<GoogleMapLayer>? _googleLayers;
+
+  /// [googleLayers] is the list of enabled layers for the Google Maps.
+  /// Only used when the [source] is [MapSource.google].
+  @override
+  @GoogleMapLayerConverter()
+  List<GoogleMapLayer>? get googleLayers {
+    final value = _googleLayers;
+    if (value == null) return null;
+    if (_googleLayers is EqualUnmodifiableListView) return _googleLayers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
+  /// Only used when the [source] is [MapSource.mapbox].
+  @override
+  final String? mapboxToken;
+
+  /// [mapboxStyle] is the Mapbox style for the layer.
+  /// Only used when the [source] is [MapSource.mapbox].
+  final List<MapboxStyle>? _mapboxLayers;
+
+  /// [mapboxStyle] is the Mapbox style for the layer.
+  /// Only used when the [source] is [MapSource.mapbox].
+  @override
+  @MapboxStyleConverter()
+  List<MapboxStyle>? get mapboxLayers {
+    final value = _mapboxLayers;
+    if (value == null) return null;
+    if (_mapboxLayers is EqualUnmodifiableListView) return _mapboxLayers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [mapboxCustomUsername] is the Mapbox custom username.
+  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
+  @override
+  final String? mapboxCustomUsername;
+
+  /// [mapboxCustomStyleId] is the Mapbox custom style id.
+  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
+  @override
+  final String? mapboxCustomStyleId;
+
+  /// [hereToken] is the HERE token with Map Tiles API capabilities.
+  /// Only used when the [source] is [MapSource.here].
+  @override
+  final String? hereToken;
+
+  /// [hereLayers] is the list of enabled layers for the HERE Maps.
+  /// Only used when the [source] is [MapSource.here].
+  final List<HereStyle>? _hereLayers;
+
+  /// [hereLayers] is the list of enabled layers for the HERE Maps.
+  /// Only used when the [source] is [MapSource.here].
+  @override
+  @HereStyleConverter()
+  List<HereStyle>? get hereLayers {
+    final value = _hereLayers;
+    if (value == null) return null;
+    if (_hereLayers is EqualUnmodifiableListView) return _hereLayers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [attributionUrl] is the URI for the attribution of the layer.
   @override
   @JsonKey()
-  @MapLayerTypeConverter()
-  final MapLayerType type;
+  final String attributionUrl;
+
+  /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
+  @override
+  final String? attributionUrlDark;
+
+  /// [attributionWidth] is the width of the attribution of the layer.
+  @override
+  @JsonKey()
+  final double attributionWidth;
+
+  /// [attributionHeight] is the height of the attribution of the layer.
+  @override
+  @JsonKey()
+  final double attributionHeight;
 
   @override
   String toString() {
-    return 'MapLayer(id: $id, name: $name, server: $server, serverDark: $serverDark, type: $type)';
+    return 'MapLayer(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight)';
   }
 
   @override
@@ -44386,16 +44613,58 @@ class _$MapLayerImpl implements _MapLayer {
             other is _$MapLayerImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.server, server) || other.server == server) &&
-            (identical(other.serverDark, serverDark) ||
-                other.serverDark == serverDark) &&
-            (identical(other.type, type) || other.type == type));
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.rasterServerLight, rasterServerLight) ||
+                other.rasterServerLight == rasterServerLight) &&
+            (identical(other.rasterServerDark, rasterServerDark) ||
+                other.rasterServerDark == rasterServerDark) &&
+            (identical(other.googleToken, googleToken) ||
+                other.googleToken == googleToken) &&
+            const DeepCollectionEquality()
+                .equals(other._googleLayers, _googleLayers) &&
+            (identical(other.mapboxToken, mapboxToken) ||
+                other.mapboxToken == mapboxToken) &&
+            const DeepCollectionEquality()
+                .equals(other._mapboxLayers, _mapboxLayers) &&
+            (identical(other.mapboxCustomUsername, mapboxCustomUsername) ||
+                other.mapboxCustomUsername == mapboxCustomUsername) &&
+            (identical(other.mapboxCustomStyleId, mapboxCustomStyleId) ||
+                other.mapboxCustomStyleId == mapboxCustomStyleId) &&
+            (identical(other.hereToken, hereToken) ||
+                other.hereToken == hereToken) &&
+            const DeepCollectionEquality()
+                .equals(other._hereLayers, _hereLayers) &&
+            (identical(other.attributionUrl, attributionUrl) ||
+                other.attributionUrl == attributionUrl) &&
+            (identical(other.attributionUrlDark, attributionUrlDark) ||
+                other.attributionUrlDark == attributionUrlDark) &&
+            (identical(other.attributionWidth, attributionWidth) ||
+                other.attributionWidth == attributionWidth) &&
+            (identical(other.attributionHeight, attributionHeight) ||
+                other.attributionHeight == attributionHeight));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, server, serverDark, type);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      source,
+      rasterServerLight,
+      rasterServerDark,
+      googleToken,
+      const DeepCollectionEquality().hash(_googleLayers),
+      mapboxToken,
+      const DeepCollectionEquality().hash(_mapboxLayers),
+      mapboxCustomUsername,
+      mapboxCustomStyleId,
+      hereToken,
+      const DeepCollectionEquality().hash(_hereLayers),
+      attributionUrl,
+      attributionUrlDark,
+      attributionWidth,
+      attributionHeight);
 
   @JsonKey(ignore: true)
   @override
@@ -44415,9 +44684,21 @@ abstract class _MapLayer implements MapLayer {
   const factory _MapLayer(
       {required final String id,
       required final String name,
-      required final String server,
-      final String? serverDark,
-      @MapLayerTypeConverter() final MapLayerType type}) = _$MapLayerImpl;
+      @MapSourceConverter() required final MapSource source,
+      final String? rasterServerLight,
+      final String? rasterServerDark,
+      final String? googleToken,
+      @GoogleMapLayerConverter() final List<GoogleMapLayer>? googleLayers,
+      final String? mapboxToken,
+      @MapboxStyleConverter() final List<MapboxStyle>? mapboxLayers,
+      final String? mapboxCustomUsername,
+      final String? mapboxCustomStyleId,
+      final String? hereToken,
+      @HereStyleConverter() final List<HereStyle>? hereLayers,
+      final String attributionUrl,
+      final String? attributionUrlDark,
+      final double attributionWidth,
+      final double attributionHeight}) = _$MapLayerImpl;
 
   factory _MapLayer.fromJson(Map<String, dynamic> json) =
       _$MapLayerImpl.fromJson;
@@ -44432,22 +44713,78 @@ abstract class _MapLayer implements MapLayer {
   String get name;
   @override
 
-  /// [server] is the server that hosts the layer.
-  /// Should be a valid URL with `{x}`, `{y}`, and `{z}` placeholders.
-  String get server;
+  /// [source] is the source of the layer.
+  @MapSourceConverter()
+  MapSource get source;
   @override
 
-  /// [serverDark] is the server that hosts the layer for dark mode.
-  /// Should be a valid URL with `{x}`, `{y}`, and `{z}` placeholders.
-  /// If it is null, the [server] will be used.
-  String? get serverDark;
+  /// [rasterServerLight] is the raster server for light mode and default.
+  /// Only used when the [source] is [MapSource.custom].
+  String? get rasterServerLight;
   @override
 
-  /// [type] is the type of the layer.
-  /// It can be [MapLayerType.raster] or [MapLayerType.vector].
-  /// By default, it is [MapLayerType.raster].
-  @MapLayerTypeConverter()
-  MapLayerType get type;
+  /// [rasterServerDark] is the raster server for dark mode.
+  /// Only used when the [source] is [MapSource.custom].
+  String? get rasterServerDark;
+  @override
+
+  /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
+  /// Only used when the [source] is [MapSource.google].
+  String? get googleToken;
+  @override
+
+  /// [googleLayers] is the list of enabled layers for the Google Maps.
+  /// Only used when the [source] is [MapSource.google].
+  @GoogleMapLayerConverter()
+  List<GoogleMapLayer>? get googleLayers;
+  @override
+
+  /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
+  /// Only used when the [source] is [MapSource.mapbox].
+  String? get mapboxToken;
+  @override
+
+  /// [mapboxStyle] is the Mapbox style for the layer.
+  /// Only used when the [source] is [MapSource.mapbox].
+  @MapboxStyleConverter()
+  List<MapboxStyle>? get mapboxLayers;
+  @override
+
+  /// [mapboxCustomUsername] is the Mapbox custom username.
+  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
+  String? get mapboxCustomUsername;
+  @override
+
+  /// [mapboxCustomStyleId] is the Mapbox custom style id.
+  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
+  String? get mapboxCustomStyleId;
+  @override
+
+  /// [hereToken] is the HERE token with Map Tiles API capabilities.
+  /// Only used when the [source] is [MapSource.here].
+  String? get hereToken;
+  @override
+
+  /// [hereLayers] is the list of enabled layers for the HERE Maps.
+  /// Only used when the [source] is [MapSource.here].
+  @HereStyleConverter()
+  List<HereStyle>? get hereLayers;
+  @override
+
+  /// [attributionUrl] is the URI for the attribution of the layer.
+  String get attributionUrl;
+  @override
+
+  /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
+  String? get attributionUrlDark;
+  @override
+
+  /// [attributionWidth] is the width of the attribution of the layer.
+  double get attributionWidth;
+  @override
+
+  /// [attributionHeight] is the height of the attribution of the layer.
+  double get attributionHeight;
   @override
   @JsonKey(ignore: true)
   _$$MapLayerImplCopyWith<_$MapLayerImpl> get copyWith =>

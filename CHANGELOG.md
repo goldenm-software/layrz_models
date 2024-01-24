@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0.56-preview1
+
+- Redesigned `MapLayer` model to support new sources.
+- Removed support of vector tiles on `MapLayer` model.
+- Removed `MapLayer` list in `RegisteredApp` model in favor global source support (App-less schema).
+
 ## 2.0.55
 
 - Added `parameters` on `Asset` model

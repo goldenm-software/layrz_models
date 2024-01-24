@@ -118,7 +118,10 @@ part 'src/app/legal.dart';
 part 'src/app/login.dart';
 part 'src/app/title.dart';
 part 'src/app/version.dart';
-part 'src/app/map_layer.dart';
+
+// Map models
+part 'src/map/enums.dart';
+part 'src/map/layer.dart';
 
 // ATS Models
 part 'src/ats/entries.dart';
