@@ -42,9 +42,6 @@ class AvailableApp with _$AvailableApp {
     /// [s3Folder] is the s3 folder of the app.
     String? s3Folder,
 
-    /// [canMapLayers] is true if the app can have more than the default map layer.
-    bool? canMapLayers,
-
     /// [versions] is the list of versions of the app.
     List<AppVersion>? versions,
 

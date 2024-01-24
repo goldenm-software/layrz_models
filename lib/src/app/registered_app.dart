@@ -17,9 +17,6 @@ class RegisteredApp with _$RegisteredApp {
     List<User>? keychain,
     required String sourceId,
 
-    /// [mapLayers] is the list of map layers of the app.
-    @Default([]) List<MapLayer> mapLayers,
-
     /// [owner] is the owner of the app.
     /// !Important: This field is only available when the query is from `/goldenm/graphql`
     User? owner,

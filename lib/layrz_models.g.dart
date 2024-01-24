@@ -3543,7 +3543,6 @@ _$AvailableAppImpl _$$AvailableAppImplFromJson(Map<String, dynamic> json) =>
       hasKeychain: json['hasKeychain'] as bool?,
       serverFolder: json['serverFolder'] as String?,
       s3Folder: json['s3Folder'] as String?,
-      canMapLayers: json['canMapLayers'] as bool?,
       versions: (json['versions'] as List<dynamic>?)
           ?.map((e) => AppVersion.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -3569,7 +3568,6 @@ Map<String, dynamic> _$$AvailableAppImplToJson(_$AvailableAppImpl instance) =>
       'hasKeychain': instance.hasKeychain,
       'serverFolder': instance.serverFolder,
       's3Folder': instance.s3Folder,
-      'canMapLayers': instance.canMapLayers,
       'versions': instance.versions?.map((e) => e.toJson()).toList(),
       'implementations':
           instance.implementations?.map((e) => e.toJson()).toList(),
@@ -3606,10 +3604,6 @@ _$RegisteredAppImpl _$$RegisteredAppImplFromJson(Map<String, dynamic> json) =>
           ?.map((e) => User.fromJson(e as Map<String, dynamic>))
           .toList(),
       sourceId: json['sourceId'] as String,
-      mapLayers: (json['mapLayers'] as List<dynamic>?)
-              ?.map((e) => MapLayer.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
       owner: json['owner'] == null
           ? null
           : User.fromJson(json['owner'] as Map<String, dynamic>),
@@ -3639,7 +3633,6 @@ Map<String, dynamic> _$$RegisteredAppImplToJson(_$RegisteredAppImpl instance) =>
       'importedUsers': instance.importedUsers?.map((e) => e.toJson()).toList(),
       'keychain': instance.keychain?.map((e) => e.toJson()).toList(),
       'sourceId': instance.sourceId,
-      'mapLayers': instance.mapLayers.map((e) => e.toJson()).toList(),
       'owner': instance.owner?.toJson(),
       'allowedReports':
           instance.allowedReports?.map((e) => e.toJson()).toList(),
@@ -3934,20 +3927,54 @@ _$MapLayerImpl _$$MapLayerImplFromJson(Map<String, dynamic> json) =>
     _$MapLayerImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      server: json['server'] as String,
-      serverDark: json['serverDark'] as String?,
-      type: json['type'] == null
-          ? MapLayerType.raster
-          : const MapLayerTypeConverter().fromJson(json['type'] as String),
+      source: const MapSourceConverter().fromJson(json['source'] as String),
+      rasterServerLight: json['rasterServerLight'] as String?,
+      rasterServerDark: json['rasterServerDark'] as String?,
+      googleToken: json['googleToken'] as String?,
+      googleLayers: (json['googleLayers'] as List<dynamic>?)
+          ?.map((e) => const GoogleMapLayerConverter().fromJson(e as String))
+          .toList(),
+      mapboxToken: json['mapboxToken'] as String?,
+      mapboxLayers: (json['mapboxLayers'] as List<dynamic>?)
+          ?.map((e) => const MapboxStyleConverter().fromJson(e as String))
+          .toList(),
+      mapboxCustomUsername: json['mapboxCustomUsername'] as String?,
+      mapboxCustomStyleId: json['mapboxCustomStyleId'] as String?,
+      hereToken: json['hereToken'] as String?,
+      hereLayers: (json['hereLayers'] as List<dynamic>?)
+          ?.map((e) => const HereStyleConverter().fromJson(e as String))
+          .toList(),
+      attributionUrl: json['attributionUrl'] as String? ??
+          'https://cdn.layrz.com/resources/layrz/logo/normal.png',
+      attributionUrlDark: json['attributionUrlDark'] as String?,
+      attributionWidth: (json['attributionWidth'] as num?)?.toDouble() ?? 100,
+      attributionHeight: (json['attributionHeight'] as num?)?.toDouble() ?? 30,
     );
 
 Map<String, dynamic> _$$MapLayerImplToJson(_$MapLayerImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'server': instance.server,
-      'serverDark': instance.serverDark,
-      'type': const MapLayerTypeConverter().toJson(instance.type),
+      'source': const MapSourceConverter().toJson(instance.source),
+      'rasterServerLight': instance.rasterServerLight,
+      'rasterServerDark': instance.rasterServerDark,
+      'googleToken': instance.googleToken,
+      'googleLayers': instance.googleLayers
+          ?.map(const GoogleMapLayerConverter().toJson)
+          .toList(),
+      'mapboxToken': instance.mapboxToken,
+      'mapboxLayers': instance.mapboxLayers
+          ?.map(const MapboxStyleConverter().toJson)
+          .toList(),
+      'mapboxCustomUsername': instance.mapboxCustomUsername,
+      'mapboxCustomStyleId': instance.mapboxCustomStyleId,
+      'hereToken': instance.hereToken,
+      'hereLayers':
+          instance.hereLayers?.map(const HereStyleConverter().toJson).toList(),
+      'attributionUrl': instance.attributionUrl,
+      'attributionUrlDark': instance.attributionUrlDark,
+      'attributionWidth': instance.attributionWidth,
+      'attributionHeight': instance.attributionHeight,
     };
 
 _$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>
