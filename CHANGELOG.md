@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.56
+
+- Inclues changes defined in `2.0.56-preview1`
+
 ## 2.0.56-preview1
 
 - Redesigned `MapLayer` model to support new sources.
