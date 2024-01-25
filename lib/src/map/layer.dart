@@ -66,6 +66,9 @@ class MapLayer with _$MapLayer {
 
     /// [attributionHeight] is the height of the attribution of the layer.
     @Default(30) double attributionHeight,
+
+    /// [appsIds] is the list of [App]s that are associated with the layer.
+    @Default([]) List<String> appsIds,
   }) = _MapLayer;
 
   factory MapLayer.fromJson(Map<String, dynamic> json) => _$MapLayerFromJson(json);

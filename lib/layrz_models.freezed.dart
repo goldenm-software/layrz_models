@@ -44228,6 +44228,9 @@ mixin _$MapLayer {
   /// [attributionHeight] is the height of the attribution of the layer.
   double get attributionHeight => throw _privateConstructorUsedError;
 
+  /// [appsIds] is the list of [App]s that are associated with the layer.
+  List<String> get appsIds => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MapLayerCopyWith<MapLayer> get copyWith =>
@@ -44256,7 +44259,8 @@ abstract class $MapLayerCopyWith<$Res> {
       String attributionUrl,
       String? attributionUrlDark,
       double attributionWidth,
-      double attributionHeight});
+      double attributionHeight,
+      List<String> appsIds});
 }
 
 /// @nodoc
@@ -44289,6 +44293,7 @@ class _$MapLayerCopyWithImpl<$Res, $Val extends MapLayer>
     Object? attributionUrlDark = freezed,
     Object? attributionWidth = null,
     Object? attributionHeight = null,
+    Object? appsIds = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -44359,6 +44364,10 @@ class _$MapLayerCopyWithImpl<$Res, $Val extends MapLayer>
           ? _value.attributionHeight
           : attributionHeight // ignore: cast_nullable_to_non_nullable
               as double,
+      appsIds: null == appsIds
+          ? _value.appsIds
+          : appsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -44388,7 +44397,8 @@ abstract class _$$MapLayerImplCopyWith<$Res>
       String attributionUrl,
       String? attributionUrlDark,
       double attributionWidth,
-      double attributionHeight});
+      double attributionHeight,
+      List<String> appsIds});
 }
 
 /// @nodoc
@@ -44419,6 +44429,7 @@ class __$$MapLayerImplCopyWithImpl<$Res>
     Object? attributionUrlDark = freezed,
     Object? attributionWidth = null,
     Object? attributionHeight = null,
+    Object? appsIds = null,
   }) {
     return _then(_$MapLayerImpl(
       id: null == id
@@ -44489,6 +44500,10 @@ class __$$MapLayerImplCopyWithImpl<$Res>
           ? _value.attributionHeight
           : attributionHeight // ignore: cast_nullable_to_non_nullable
               as double,
+      appsIds: null == appsIds
+          ? _value._appsIds
+          : appsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -44514,10 +44529,12 @@ class _$MapLayerImpl implements _MapLayer {
           'https://cdn.layrz.com/resources/layrz/logo/normal.png',
       this.attributionUrlDark,
       this.attributionWidth = 100,
-      this.attributionHeight = 30})
+      this.attributionHeight = 30,
+      final List<String> appsIds = const []})
       : _googleLayers = googleLayers,
         _mapboxLayers = mapboxLayers,
-        _hereLayers = hereLayers;
+        _hereLayers = hereLayers,
+        _appsIds = appsIds;
 
   factory _$MapLayerImpl.fromJson(Map<String, dynamic> json) =>
       _$$MapLayerImplFromJson(json);
@@ -44637,9 +44654,21 @@ class _$MapLayerImpl implements _MapLayer {
   @JsonKey()
   final double attributionHeight;
 
+  /// [appsIds] is the list of [App]s that are associated with the layer.
+  final List<String> _appsIds;
+
+  /// [appsIds] is the list of [App]s that are associated with the layer.
+  @override
+  @JsonKey()
+  List<String> get appsIds {
+    if (_appsIds is EqualUnmodifiableListView) return _appsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_appsIds);
+  }
+
   @override
   String toString() {
-    return 'MapLayer(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight)';
+    return 'MapLayer(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight, appsIds: $appsIds)';
   }
 
   @override
@@ -44677,7 +44706,8 @@ class _$MapLayerImpl implements _MapLayer {
             (identical(other.attributionWidth, attributionWidth) ||
                 other.attributionWidth == attributionWidth) &&
             (identical(other.attributionHeight, attributionHeight) ||
-                other.attributionHeight == attributionHeight));
+                other.attributionHeight == attributionHeight) &&
+            const DeepCollectionEquality().equals(other._appsIds, _appsIds));
   }
 
   @JsonKey(ignore: true)
@@ -44700,7 +44730,8 @@ class _$MapLayerImpl implements _MapLayer {
       attributionUrl,
       attributionUrlDark,
       attributionWidth,
-      attributionHeight);
+      attributionHeight,
+      const DeepCollectionEquality().hash(_appsIds));
 
   @JsonKey(ignore: true)
   @override
@@ -44734,7 +44765,8 @@ abstract class _MapLayer implements MapLayer {
       final String attributionUrl,
       final String? attributionUrlDark,
       final double attributionWidth,
-      final double attributionHeight}) = _$MapLayerImpl;
+      final double attributionHeight,
+      final List<String> appsIds}) = _$MapLayerImpl;
 
   factory _MapLayer.fromJson(Map<String, dynamic> json) =
       _$MapLayerImpl.fromJson;
@@ -44821,6 +44853,10 @@ abstract class _MapLayer implements MapLayer {
 
   /// [attributionHeight] is the height of the attribution of the layer.
   double get attributionHeight;
+  @override
+
+  /// [appsIds] is the list of [App]s that are associated with the layer.
+  List<String> get appsIds;
   @override
   @JsonKey(ignore: true)
   _$$MapLayerImplCopyWith<_$MapLayerImpl> get copyWith =>

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.58
+
+- Added `appsIds` to `MapLayer`
+
 ## 2.0.57
 
 - Registered new permission to handle `layers` CRUD operations on `Employee` and their `Department`.

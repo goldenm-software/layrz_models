@@ -3954,6 +3954,10 @@ _$MapLayerImpl _$$MapLayerImplFromJson(Map<String, dynamic> json) =>
       attributionUrlDark: json['attributionUrlDark'] as String?,
       attributionWidth: (json['attributionWidth'] as num?)?.toDouble() ?? 100,
       attributionHeight: (json['attributionHeight'] as num?)?.toDouble() ?? 30,
+      appsIds: (json['appsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$MapLayerImplToJson(_$MapLayerImpl instance) =>
@@ -3980,6 +3984,7 @@ Map<String, dynamic> _$$MapLayerImplToJson(_$MapLayerImpl instance) =>
       'attributionUrlDark': instance.attributionUrlDark,
       'attributionWidth': instance.attributionWidth,
       'attributionHeight': instance.attributionHeight,
+      'appsIds': instance.appsIds,
     };
 
 _$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>
