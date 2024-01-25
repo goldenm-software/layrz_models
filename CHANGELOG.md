@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.57
+
+- Registered new permission to handle `layers` CRUD operations on `Employee` and their `Department`.
+
 ## 2.0.56
 
 - Inclues changes defined in `2.0.56-preview1`

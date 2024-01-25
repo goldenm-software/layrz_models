@@ -601,6 +601,10 @@ _$GenericPermissionImpl _$$GenericPermissionImplFromJson(
           ? null
           : GenericPermissionItem.fromJson(
               json['shortcuts'] as Map<String, dynamic>),
+      layers: json['layers'] == null
+          ? null
+          : GenericPermissionItem.fromJson(
+              json['layers'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$GenericPermissionImplToJson(
@@ -617,6 +621,7 @@ Map<String, dynamic> _$$GenericPermissionImplToJson(
       'billing': instance.billing?.toJson(),
       'cycles': instance.cycles?.toJson(),
       'shortcuts': instance.shortcuts?.toJson(),
+      'layers': instance.layers?.toJson(),
     };
 
 _$DepartmentImpl _$$DepartmentImplFromJson(Map<String, dynamic> json) =>
