@@ -3619,6 +3619,9 @@ _$RegisteredAppImpl _$$RegisteredAppImplFromJson(Map<String, dynamic> json) =>
       fixedWorkspace: json['fixedWorkspace'] == null
           ? null
           : Workspace.fromJson(json['fixedWorkspace'] as Map<String, dynamic>),
+      authorizedLayers: (json['authorizedLayers'] as List<dynamic>?)
+          ?.map((e) => MapLayer.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$RegisteredAppImplToJson(_$RegisteredAppImpl instance) =>
@@ -3643,6 +3646,8 @@ Map<String, dynamic> _$$RegisteredAppImplToJson(_$RegisteredAppImpl instance) =>
           instance.allowedReports?.map((e) => e.toJson()).toList(),
       'fixedWorkspaceId': instance.fixedWorkspaceId,
       'fixedWorkspace': instance.fixedWorkspace?.toJson(),
+      'authorizedLayers':
+          instance.authorizedLayers?.map((e) => e.toJson()).toList(),
     };
 
 _$AppThemedAssetImpl _$$AppThemedAssetImplFromJson(Map<String, dynamic> json) =>

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.59
+
+- Added `authorizedLayers` in `RegisteredApp` model
+
 ## 2.0.58
 
 - Added `appsIds` to `MapLayer`

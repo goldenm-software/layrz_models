@@ -40238,6 +40238,9 @@ mixin _$RegisteredApp {
   /// [fixedWorkspace] is the fixed workspace of the app.
   Workspace? get fixedWorkspace => throw _privateConstructorUsedError;
 
+  /// [authorizedLayers] is the list of layers authorized to be used by the app.
+  List<MapLayer>? get authorizedLayers => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RegisteredAppCopyWith<RegisteredApp> get copyWith =>
@@ -40267,7 +40270,8 @@ abstract class $RegisteredAppCopyWith<$Res> {
       User? owner,
       List<CustomReport>? allowedReports,
       String? fixedWorkspaceId,
-      Workspace? fixedWorkspace});
+      Workspace? fixedWorkspace,
+      List<MapLayer>? authorizedLayers});
 
   $AppLegalCopyWith<$Res>? get legalInformation;
   $AppDesignCopyWith<$Res>? get designInformation;
@@ -40305,6 +40309,7 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
     Object? allowedReports = freezed,
     Object? fixedWorkspaceId = freezed,
     Object? fixedWorkspace = freezed,
+    Object? authorizedLayers = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -40375,6 +40380,10 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
           ? _value.fixedWorkspace
           : fixedWorkspace // ignore: cast_nullable_to_non_nullable
               as Workspace?,
+      authorizedLayers: freezed == authorizedLayers
+          ? _value.authorizedLayers
+          : authorizedLayers // ignore: cast_nullable_to_non_nullable
+              as List<MapLayer>?,
     ) as $Val);
   }
 
@@ -40452,7 +40461,8 @@ abstract class _$$RegisteredAppImplCopyWith<$Res>
       User? owner,
       List<CustomReport>? allowedReports,
       String? fixedWorkspaceId,
-      Workspace? fixedWorkspace});
+      Workspace? fixedWorkspace,
+      List<MapLayer>? authorizedLayers});
 
   @override
   $AppLegalCopyWith<$Res>? get legalInformation;
@@ -40492,6 +40502,7 @@ class __$$RegisteredAppImplCopyWithImpl<$Res>
     Object? allowedReports = freezed,
     Object? fixedWorkspaceId = freezed,
     Object? fixedWorkspace = freezed,
+    Object? authorizedLayers = freezed,
   }) {
     return _then(_$RegisteredAppImpl(
       id: null == id
@@ -40562,6 +40573,10 @@ class __$$RegisteredAppImplCopyWithImpl<$Res>
           ? _value.fixedWorkspace
           : fixedWorkspace // ignore: cast_nullable_to_non_nullable
               as Workspace?,
+      authorizedLayers: freezed == authorizedLayers
+          ? _value._authorizedLayers
+          : authorizedLayers // ignore: cast_nullable_to_non_nullable
+              as List<MapLayer>?,
     ));
   }
 }
@@ -40586,13 +40601,15 @@ class _$RegisteredAppImpl implements _RegisteredApp {
       this.owner,
       final List<CustomReport>? allowedReports,
       this.fixedWorkspaceId,
-      this.fixedWorkspace})
+      this.fixedWorkspace,
+      final List<MapLayer>? authorizedLayers})
       : _instances = instances,
         _importedAssets = importedAssets,
         _importedDevices = importedDevices,
         _importedUsers = importedUsers,
         _keychain = keychain,
-        _allowedReports = allowedReports;
+        _allowedReports = allowedReports,
+        _authorizedLayers = authorizedLayers;
 
   factory _$RegisteredAppImpl.fromJson(Map<String, dynamic> json) =>
       _$$RegisteredAppImplFromJson(json);
@@ -40691,9 +40708,23 @@ class _$RegisteredAppImpl implements _RegisteredApp {
   @override
   final Workspace? fixedWorkspace;
 
+  /// [authorizedLayers] is the list of layers authorized to be used by the app.
+  final List<MapLayer>? _authorizedLayers;
+
+  /// [authorizedLayers] is the list of layers authorized to be used by the app.
+  @override
+  List<MapLayer>? get authorizedLayers {
+    final value = _authorizedLayers;
+    if (value == null) return null;
+    if (_authorizedLayers is EqualUnmodifiableListView)
+      return _authorizedLayers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'RegisteredApp(id: $id, name: $name, nickname: $nickname, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace)';
+    return 'RegisteredApp(id: $id, name: $name, nickname: $nickname, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers)';
   }
 
   @override
@@ -40730,7 +40761,9 @@ class _$RegisteredAppImpl implements _RegisteredApp {
             (identical(other.fixedWorkspaceId, fixedWorkspaceId) ||
                 other.fixedWorkspaceId == fixedWorkspaceId) &&
             (identical(other.fixedWorkspace, fixedWorkspace) ||
-                other.fixedWorkspace == fixedWorkspace));
+                other.fixedWorkspace == fixedWorkspace) &&
+            const DeepCollectionEquality()
+                .equals(other._authorizedLayers, _authorizedLayers));
   }
 
   @JsonKey(ignore: true)
@@ -40753,7 +40786,8 @@ class _$RegisteredAppImpl implements _RegisteredApp {
       owner,
       const DeepCollectionEquality().hash(_allowedReports),
       fixedWorkspaceId,
-      fixedWorkspace);
+      fixedWorkspace,
+      const DeepCollectionEquality().hash(_authorizedLayers));
 
   @JsonKey(ignore: true)
   @override
@@ -40787,7 +40821,8 @@ abstract class _RegisteredApp implements RegisteredApp {
       final User? owner,
       final List<CustomReport>? allowedReports,
       final String? fixedWorkspaceId,
-      final Workspace? fixedWorkspace}) = _$RegisteredAppImpl;
+      final Workspace? fixedWorkspace,
+      final List<MapLayer>? authorizedLayers}) = _$RegisteredAppImpl;
 
   factory _RegisteredApp.fromJson(Map<String, dynamic> json) =
       _$RegisteredAppImpl.fromJson;
@@ -40836,6 +40871,10 @@ abstract class _RegisteredApp implements RegisteredApp {
 
   /// [fixedWorkspace] is the fixed workspace of the app.
   Workspace? get fixedWorkspace;
+  @override
+
+  /// [authorizedLayers] is the list of layers authorized to be used by the app.
+  List<MapLayer>? get authorizedLayers;
   @override
   @JsonKey(ignore: true)
   _$$RegisteredAppImplCopyWith<_$RegisteredAppImpl> get copyWith =>

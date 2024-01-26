@@ -29,6 +29,9 @@ class RegisteredApp with _$RegisteredApp {
 
     /// [fixedWorkspace] is the fixed workspace of the app.
     Workspace? fixedWorkspace,
+
+    /// [authorizedLayers] is the list of layers authorized to be used by the app.
+    @Default([]) List<MapLayer> authorizedLayers,
   }) = _RegisteredApp;
 
   factory RegisteredApp.fromJson(Map<String, dynamic> json) => _$RegisteredAppFromJson(json);
