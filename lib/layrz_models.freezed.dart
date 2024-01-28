@@ -20880,13 +20880,20 @@ LintError _$LintErrorFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LintError {
+  /// [code] defines the error code.
   String get code => throw _privateConstructorUsedError;
-  int? get line => throw _privateConstructorUsedError;
-  String? get function => throw _privateConstructorUsedError;
-  int? get given => throw _privateConstructorUsedError;
-  @JsonKey(name: 'required')
-  int? get req => throw _privateConstructorUsedError;
-  String? get element => throw _privateConstructorUsedError;
+
+  /// [line] defines the line number where the error occurred.
+  int get line => throw _privateConstructorUsedError;
+
+  /// [name] defines the name of the error.
+  String? get name => throw _privateConstructorUsedError;
+
+  /// [expected] defines the dynamic value to receive
+  dynamic get expected => throw _privateConstructorUsedError;
+
+  /// [received] defines the dynamic value received
+  dynamic get received => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -20901,11 +20908,10 @@ abstract class $LintErrorCopyWith<$Res> {
   @useResult
   $Res call(
       {String code,
-      int? line,
-      String? function,
-      int? given,
-      @JsonKey(name: 'required') int? req,
-      String? element});
+      int line,
+      String? name,
+      dynamic expected,
+      dynamic received});
 }
 
 /// @nodoc
@@ -20922,37 +20928,32 @@ class _$LintErrorCopyWithImpl<$Res, $Val extends LintError>
   @override
   $Res call({
     Object? code = null,
-    Object? line = freezed,
-    Object? function = freezed,
-    Object? given = freezed,
-    Object? req = freezed,
-    Object? element = freezed,
+    Object? line = null,
+    Object? name = freezed,
+    Object? expected = freezed,
+    Object? received = freezed,
   }) {
     return _then(_value.copyWith(
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      line: freezed == line
+      line: null == line
           ? _value.line
           : line // ignore: cast_nullable_to_non_nullable
-              as int?,
-      function: freezed == function
-          ? _value.function
-          : function // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      given: freezed == given
-          ? _value.given
-          : given // ignore: cast_nullable_to_non_nullable
-              as int?,
-      req: freezed == req
-          ? _value.req
-          : req // ignore: cast_nullable_to_non_nullable
-              as int?,
-      element: freezed == element
-          ? _value.element
-          : element // ignore: cast_nullable_to_non_nullable
-              as String?,
+      expected: freezed == expected
+          ? _value.expected
+          : expected // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      received: freezed == received
+          ? _value.received
+          : received // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ) as $Val);
   }
 }
@@ -20967,11 +20968,10 @@ abstract class _$$LintErrorImplCopyWith<$Res>
   @useResult
   $Res call(
       {String code,
-      int? line,
-      String? function,
-      int? given,
-      @JsonKey(name: 'required') int? req,
-      String? element});
+      int line,
+      String? name,
+      dynamic expected,
+      dynamic received});
 }
 
 /// @nodoc
@@ -20986,37 +20986,32 @@ class __$$LintErrorImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? code = null,
-    Object? line = freezed,
-    Object? function = freezed,
-    Object? given = freezed,
-    Object? req = freezed,
-    Object? element = freezed,
+    Object? line = null,
+    Object? name = freezed,
+    Object? expected = freezed,
+    Object? received = freezed,
   }) {
     return _then(_$LintErrorImpl(
       code: null == code
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      line: freezed == line
+      line: null == line
           ? _value.line
           : line // ignore: cast_nullable_to_non_nullable
-              as int?,
-      function: freezed == function
-          ? _value.function
-          : function // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String?,
-      given: freezed == given
-          ? _value.given
-          : given // ignore: cast_nullable_to_non_nullable
-              as int?,
-      req: freezed == req
-          ? _value.req
-          : req // ignore: cast_nullable_to_non_nullable
-              as int?,
-      element: freezed == element
-          ? _value.element
-          : element // ignore: cast_nullable_to_non_nullable
-              as String?,
+      expected: freezed == expected
+          ? _value.expected
+          : expected // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      received: freezed == received
+          ? _value.received
+          : received // ignore: cast_nullable_to_non_nullable
+              as dynamic,
     ));
   }
 }
@@ -21026,32 +21021,38 @@ class __$$LintErrorImplCopyWithImpl<$Res>
 class _$LintErrorImpl implements _LintError {
   const _$LintErrorImpl(
       {required this.code,
-      this.line,
-      this.function,
-      this.given,
-      @JsonKey(name: 'required') this.req,
-      this.element});
+      this.line = 1,
+      this.name,
+      this.expected,
+      this.received});
 
   factory _$LintErrorImpl.fromJson(Map<String, dynamic> json) =>
       _$$LintErrorImplFromJson(json);
 
+  /// [code] defines the error code.
   @override
   final String code;
+
+  /// [line] defines the line number where the error occurred.
   @override
-  final int? line;
+  @JsonKey()
+  final int line;
+
+  /// [name] defines the name of the error.
   @override
-  final String? function;
+  final String? name;
+
+  /// [expected] defines the dynamic value to receive
   @override
-  final int? given;
+  final dynamic expected;
+
+  /// [received] defines the dynamic value received
   @override
-  @JsonKey(name: 'required')
-  final int? req;
-  @override
-  final String? element;
+  final dynamic received;
 
   @override
   String toString() {
-    return 'LintError(code: $code, line: $line, function: $function, given: $given, req: $req, element: $element)';
+    return 'LintError(code: $code, line: $line, name: $name, expected: $expected, received: $received)';
   }
 
   @override
@@ -21061,17 +21062,20 @@ class _$LintErrorImpl implements _LintError {
             other is _$LintErrorImpl &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.line, line) || other.line == line) &&
-            (identical(other.function, function) ||
-                other.function == function) &&
-            (identical(other.given, given) || other.given == given) &&
-            (identical(other.req, req) || other.req == req) &&
-            (identical(other.element, element) || other.element == element));
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other.expected, expected) &&
+            const DeepCollectionEquality().equals(other.received, received));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, code, line, function, given, req, element);
+  int get hashCode => Object.hash(
+      runtimeType,
+      code,
+      line,
+      name,
+      const DeepCollectionEquality().hash(expected),
+      const DeepCollectionEquality().hash(received));
 
   @JsonKey(ignore: true)
   @override
@@ -21090,28 +21094,34 @@ class _$LintErrorImpl implements _LintError {
 abstract class _LintError implements LintError {
   const factory _LintError(
       {required final String code,
-      final int? line,
-      final String? function,
-      final int? given,
-      @JsonKey(name: 'required') final int? req,
-      final String? element}) = _$LintErrorImpl;
+      final int line,
+      final String? name,
+      final dynamic expected,
+      final dynamic received}) = _$LintErrorImpl;
 
   factory _LintError.fromJson(Map<String, dynamic> json) =
       _$LintErrorImpl.fromJson;
 
   @override
+
+  /// [code] defines the error code.
   String get code;
   @override
-  int? get line;
+
+  /// [line] defines the line number where the error occurred.
+  int get line;
   @override
-  String? get function;
+
+  /// [name] defines the name of the error.
+  String? get name;
   @override
-  int? get given;
+
+  /// [expected] defines the dynamic value to receive
+  dynamic get expected;
   @override
-  @JsonKey(name: 'required')
-  int? get req;
-  @override
-  String? get element;
+
+  /// [received] defines the dynamic value received
+  dynamic get received;
   @override
   @JsonKey(ignore: true)
   _$$LintErrorImplCopyWith<_$LintErrorImpl> get copyWith =>
@@ -40239,7 +40249,7 @@ mixin _$RegisteredApp {
   Workspace? get fixedWorkspace => throw _privateConstructorUsedError;
 
   /// [authorizedLayers] is the list of layers authorized to be used by the app.
-  List<MapLayer>? get authorizedLayers => throw _privateConstructorUsedError;
+  List<MapLayer> get authorizedLayers => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40271,7 +40281,7 @@ abstract class $RegisteredAppCopyWith<$Res> {
       List<CustomReport>? allowedReports,
       String? fixedWorkspaceId,
       Workspace? fixedWorkspace,
-      List<MapLayer>? authorizedLayers});
+      List<MapLayer> authorizedLayers});
 
   $AppLegalCopyWith<$Res>? get legalInformation;
   $AppDesignCopyWith<$Res>? get designInformation;
@@ -40309,7 +40319,7 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
     Object? allowedReports = freezed,
     Object? fixedWorkspaceId = freezed,
     Object? fixedWorkspace = freezed,
-    Object? authorizedLayers = freezed,
+    Object? authorizedLayers = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -40380,10 +40390,10 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
           ? _value.fixedWorkspace
           : fixedWorkspace // ignore: cast_nullable_to_non_nullable
               as Workspace?,
-      authorizedLayers: freezed == authorizedLayers
+      authorizedLayers: null == authorizedLayers
           ? _value.authorizedLayers
           : authorizedLayers // ignore: cast_nullable_to_non_nullable
-              as List<MapLayer>?,
+              as List<MapLayer>,
     ) as $Val);
   }
 
@@ -40462,7 +40472,7 @@ abstract class _$$RegisteredAppImplCopyWith<$Res>
       List<CustomReport>? allowedReports,
       String? fixedWorkspaceId,
       Workspace? fixedWorkspace,
-      List<MapLayer>? authorizedLayers});
+      List<MapLayer> authorizedLayers});
 
   @override
   $AppLegalCopyWith<$Res>? get legalInformation;
@@ -40502,7 +40512,7 @@ class __$$RegisteredAppImplCopyWithImpl<$Res>
     Object? allowedReports = freezed,
     Object? fixedWorkspaceId = freezed,
     Object? fixedWorkspace = freezed,
-    Object? authorizedLayers = freezed,
+    Object? authorizedLayers = null,
   }) {
     return _then(_$RegisteredAppImpl(
       id: null == id
@@ -40573,10 +40583,10 @@ class __$$RegisteredAppImplCopyWithImpl<$Res>
           ? _value.fixedWorkspace
           : fixedWorkspace // ignore: cast_nullable_to_non_nullable
               as Workspace?,
-      authorizedLayers: freezed == authorizedLayers
+      authorizedLayers: null == authorizedLayers
           ? _value._authorizedLayers
           : authorizedLayers // ignore: cast_nullable_to_non_nullable
-              as List<MapLayer>?,
+              as List<MapLayer>,
     ));
   }
 }
@@ -40602,7 +40612,7 @@ class _$RegisteredAppImpl implements _RegisteredApp {
       final List<CustomReport>? allowedReports,
       this.fixedWorkspaceId,
       this.fixedWorkspace,
-      final List<MapLayer>? authorizedLayers})
+      final List<MapLayer> authorizedLayers = const []})
       : _instances = instances,
         _importedAssets = importedAssets,
         _importedDevices = importedDevices,
@@ -40709,17 +40719,16 @@ class _$RegisteredAppImpl implements _RegisteredApp {
   final Workspace? fixedWorkspace;
 
   /// [authorizedLayers] is the list of layers authorized to be used by the app.
-  final List<MapLayer>? _authorizedLayers;
+  final List<MapLayer> _authorizedLayers;
 
   /// [authorizedLayers] is the list of layers authorized to be used by the app.
   @override
-  List<MapLayer>? get authorizedLayers {
-    final value = _authorizedLayers;
-    if (value == null) return null;
+  @JsonKey()
+  List<MapLayer> get authorizedLayers {
     if (_authorizedLayers is EqualUnmodifiableListView)
       return _authorizedLayers;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_authorizedLayers);
   }
 
   @override
@@ -40822,7 +40831,7 @@ abstract class _RegisteredApp implements RegisteredApp {
       final List<CustomReport>? allowedReports,
       final String? fixedWorkspaceId,
       final Workspace? fixedWorkspace,
-      final List<MapLayer>? authorizedLayers}) = _$RegisteredAppImpl;
+      final List<MapLayer> authorizedLayers}) = _$RegisteredAppImpl;
 
   factory _RegisteredApp.fromJson(Map<String, dynamic> json) =
       _$RegisteredAppImpl.fromJson;
@@ -40874,7 +40883,7 @@ abstract class _RegisteredApp implements RegisteredApp {
   @override
 
   /// [authorizedLayers] is the list of layers authorized to be used by the app.
-  List<MapLayer>? get authorizedLayers;
+  List<MapLayer> get authorizedLayers;
   @override
   @JsonKey(ignore: true)
   _$$RegisteredAppImplCopyWith<_$RegisteredAppImpl> get copyWith =>

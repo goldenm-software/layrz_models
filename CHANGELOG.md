@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.60
+
+- Redefined `LintError`
+
 ## 2.0.59
 
 - Added `authorizedLayers` in `RegisteredApp` model

@@ -1873,21 +1873,19 @@ Map<String, dynamic> _$$TimezoneImplToJson(_$TimezoneImpl instance) =>
 _$LintErrorImpl _$$LintErrorImplFromJson(Map<String, dynamic> json) =>
     _$LintErrorImpl(
       code: json['code'] as String,
-      line: json['line'] as int?,
-      function: json['function'] as String?,
-      given: json['given'] as int?,
-      req: json['required'] as int?,
-      element: json['element'] as String?,
+      line: json['line'] as int? ?? 1,
+      name: json['name'] as String?,
+      expected: json['expected'],
+      received: json['received'],
     );
 
 Map<String, dynamic> _$$LintErrorImplToJson(_$LintErrorImpl instance) =>
     <String, dynamic>{
       'code': instance.code,
       'line': instance.line,
-      'function': instance.function,
-      'given': instance.given,
-      'required': instance.req,
-      'element': instance.element,
+      'name': instance.name,
+      'expected': instance.expected,
+      'received': instance.received,
     };
 
 _$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>
@@ -3620,8 +3618,9 @@ _$RegisteredAppImpl _$$RegisteredAppImplFromJson(Map<String, dynamic> json) =>
           ? null
           : Workspace.fromJson(json['fixedWorkspace'] as Map<String, dynamic>),
       authorizedLayers: (json['authorizedLayers'] as List<dynamic>?)
-          ?.map((e) => MapLayer.fromJson(e as Map<String, dynamic>))
-          .toList(),
+              ?.map((e) => MapLayer.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$RegisteredAppImplToJson(_$RegisteredAppImpl instance) =>
@@ -3647,7 +3646,7 @@ Map<String, dynamic> _$$RegisteredAppImplToJson(_$RegisteredAppImpl instance) =>
       'fixedWorkspaceId': instance.fixedWorkspaceId,
       'fixedWorkspace': instance.fixedWorkspace?.toJson(),
       'authorizedLayers':
-          instance.authorizedLayers?.map((e) => e.toJson()).toList(),
+          instance.authorizedLayers.map((e) => e.toJson()).toList(),
     };
 
 _$AppThemedAssetImpl _$$AppThemedAssetImplFromJson(Map<String, dynamic> json) =>
