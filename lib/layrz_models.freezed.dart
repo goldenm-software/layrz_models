@@ -13813,11 +13813,14 @@ Sensor _$SensorFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Sensor {
+  /// [id] of the sensor. Must be unique along of all sensors of the asset.
   String get id => throw _privateConstructorUsedError;
+
+  /// [name] of the sensor. Must be unique along of all sensors of the asset.
   String get name => throw _privateConstructorUsedError;
 
   /// [iterationCycle] of the sensor. Only will accept positive values
-  int get iterationCycle => throw _privateConstructorUsedError;
+  int? get iterationCycle => throw _privateConstructorUsedError;
 
   /// [slug] of the sensor. Must be unique along of all sensors of the asset.
   String get slug => throw _privateConstructorUsedError;
@@ -13825,7 +13828,7 @@ mixin _$Sensor {
   /// [isInstant] is a boolean to indicate if the sensor is an instant sensor. Means what the sensor execution
   /// returns [null], if it's [true], the sensor is will "disappear" from the calculated sensors, otherwise it will be
   /// take the previous value of the sensor.
-  bool get isInstant => throw _privateConstructorUsedError;
+  bool? get isInstant => throw _privateConstructorUsedError;
 
   /// [icon] of the sensor. To send it to API, will convert to javascript codename, but from Flutter execution
   /// will convert to IconData entity.
@@ -13846,7 +13849,11 @@ mixin _$Sensor {
   /// [parameter] of the sensor.
   String? get parameter => throw _privateConstructorUsedError;
   List<String>? get externalIdentifiers => throw _privateConstructorUsedError;
+
+  /// [formula] is the LCL formula to execute.
   String? get formula => throw _privateConstructorUsedError;
+
+  /// [script] is the script to execute.
   String? get script => throw _privateConstructorUsedError;
 
   /// Only for [SensorType.unpack] and [SensorSubType.csv], [hasHeaders], [csvHeaders] and [csvSeparator] means the configuration
@@ -13899,6 +13906,19 @@ mixin _$Sensor {
   /// [qrCode] is a string to indicate the QR code URI of the sensor.
   String? get qrCode => throw _privateConstructorUsedError;
 
+  /// [assignedAssetsIds] is the list of assets ids assigned to this sensor.
+  List<String>? get assignedAssetsIds => throw _privateConstructorUsedError;
+
+  /// [assignedAssets] is the list of assets assigned to this sensor.
+  List<Asset>? get assignedAssets => throw _privateConstructorUsedError;
+
+  /// [isTemplate] is a boolean to indicate if the sensor is a template.
+  /// So, this sensor was created from the Golden M, and their authorized you to use it.
+  bool? get isTemplate => throw _privateConstructorUsedError;
+
+  /// Is the list of granted access
+  List<Access>? get access => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $SensorCopyWith<Sensor> get copyWith => throw _privateConstructorUsedError;
@@ -13912,9 +13932,9 @@ abstract class $SensorCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      int iterationCycle,
+      int? iterationCycle,
       String slug,
-      bool isInstant,
+      bool? isInstant,
       @IconOrNullConverter() IconData? icon,
       String? measuringUnit,
       @SensorTypeOrNullConverter() SensorType? type,
@@ -13936,7 +13956,11 @@ abstract class $SensorCopyWith<$Res> {
       Sensor? parent,
       String? functionId,
       AtsExit? lastExit,
-      String? qrCode});
+      String? qrCode,
+      List<String>? assignedAssetsIds,
+      List<Asset>? assignedAssets,
+      bool? isTemplate,
+      List<Access>? access});
 
   $SensorCopyWith<$Res>? get parent;
   $AtsExitCopyWith<$Res>? get lastExit;
@@ -13957,9 +13981,9 @@ class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? iterationCycle = null,
+    Object? iterationCycle = freezed,
     Object? slug = null,
-    Object? isInstant = null,
+    Object? isInstant = freezed,
     Object? icon = freezed,
     Object? measuringUnit = freezed,
     Object? type = freezed,
@@ -13982,6 +14006,10 @@ class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
     Object? functionId = freezed,
     Object? lastExit = freezed,
     Object? qrCode = freezed,
+    Object? assignedAssetsIds = freezed,
+    Object? assignedAssets = freezed,
+    Object? isTemplate = freezed,
+    Object? access = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -13992,18 +14020,18 @@ class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      iterationCycle: null == iterationCycle
+      iterationCycle: freezed == iterationCycle
           ? _value.iterationCycle
           : iterationCycle // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String,
-      isInstant: null == isInstant
+      isInstant: freezed == isInstant
           ? _value.isInstant
           : isInstant // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -14092,6 +14120,22 @@ class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
+      assignedAssetsIds: freezed == assignedAssetsIds
+          ? _value.assignedAssetsIds
+          : assignedAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      assignedAssets: freezed == assignedAssets
+          ? _value.assignedAssets
+          : assignedAssets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      isTemplate: freezed == isTemplate
+          ? _value.isTemplate
+          : isTemplate // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      access: freezed == access
+          ? _value.access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
     ) as $Val);
   }
 
@@ -14130,9 +14174,9 @@ abstract class _$$SensorImplCopyWith<$Res> implements $SensorCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      int iterationCycle,
+      int? iterationCycle,
       String slug,
-      bool isInstant,
+      bool? isInstant,
       @IconOrNullConverter() IconData? icon,
       String? measuringUnit,
       @SensorTypeOrNullConverter() SensorType? type,
@@ -14154,7 +14198,11 @@ abstract class _$$SensorImplCopyWith<$Res> implements $SensorCopyWith<$Res> {
       Sensor? parent,
       String? functionId,
       AtsExit? lastExit,
-      String? qrCode});
+      String? qrCode,
+      List<String>? assignedAssetsIds,
+      List<Asset>? assignedAssets,
+      bool? isTemplate,
+      List<Access>? access});
 
   @override
   $SensorCopyWith<$Res>? get parent;
@@ -14175,9 +14223,9 @@ class __$$SensorImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? iterationCycle = null,
+    Object? iterationCycle = freezed,
     Object? slug = null,
-    Object? isInstant = null,
+    Object? isInstant = freezed,
     Object? icon = freezed,
     Object? measuringUnit = freezed,
     Object? type = freezed,
@@ -14200,6 +14248,10 @@ class __$$SensorImplCopyWithImpl<$Res>
     Object? functionId = freezed,
     Object? lastExit = freezed,
     Object? qrCode = freezed,
+    Object? assignedAssetsIds = freezed,
+    Object? assignedAssets = freezed,
+    Object? isTemplate = freezed,
+    Object? access = freezed,
   }) {
     return _then(_$SensorImpl(
       id: null == id
@@ -14210,18 +14262,18 @@ class __$$SensorImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      iterationCycle: null == iterationCycle
+      iterationCycle: freezed == iterationCycle
           ? _value.iterationCycle
           : iterationCycle // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String,
-      isInstant: null == isInstant
+      isInstant: freezed == isInstant
           ? _value.isInstant
           : isInstant // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       icon: freezed == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
@@ -14310,6 +14362,22 @@ class __$$SensorImplCopyWithImpl<$Res>
           ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
+      assignedAssetsIds: freezed == assignedAssetsIds
+          ? _value._assignedAssetsIds
+          : assignedAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      assignedAssets: freezed == assignedAssets
+          ? _value._assignedAssets
+          : assignedAssets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      isTemplate: freezed == isTemplate
+          ? _value.isTemplate
+          : isTemplate // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      access: freezed == access
+          ? _value._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
     ));
   }
 }
@@ -14320,9 +14388,9 @@ class _$SensorImpl implements _Sensor {
   const _$SensorImpl(
       {required this.id,
       required this.name,
-      required this.iterationCycle,
+      this.iterationCycle,
       required this.slug,
-      required this.isInstant,
+      this.isInstant,
       @IconOrNullConverter() this.icon,
       this.measuringUnit,
       @SensorTypeOrNullConverter() this.type,
@@ -14344,23 +14412,33 @@ class _$SensorImpl implements _Sensor {
       this.parent,
       this.functionId,
       this.lastExit,
-      this.qrCode})
+      this.qrCode,
+      final List<String>? assignedAssetsIds,
+      final List<Asset>? assignedAssets,
+      this.isTemplate,
+      final List<Access>? access})
       : _externalIdentifiers = externalIdentifiers,
         _csvHeaders = csvHeaders,
         _ranges = ranges,
-        _mask = mask;
+        _mask = mask,
+        _assignedAssetsIds = assignedAssetsIds,
+        _assignedAssets = assignedAssets,
+        _access = access;
 
   factory _$SensorImpl.fromJson(Map<String, dynamic> json) =>
       _$$SensorImplFromJson(json);
 
+  /// [id] of the sensor. Must be unique along of all sensors of the asset.
   @override
   final String id;
+
+  /// [name] of the sensor. Must be unique along of all sensors of the asset.
   @override
   final String name;
 
   /// [iterationCycle] of the sensor. Only will accept positive values
   @override
-  final int iterationCycle;
+  final int? iterationCycle;
 
   /// [slug] of the sensor. Must be unique along of all sensors of the asset.
   @override
@@ -14370,7 +14448,7 @@ class _$SensorImpl implements _Sensor {
   /// returns [null], if it's [true], the sensor is will "disappear" from the calculated sensors, otherwise it will be
   /// take the previous value of the sensor.
   @override
-  final bool isInstant;
+  final bool? isInstant;
 
   /// [icon] of the sensor. To send it to API, will convert to javascript codename, but from Flutter execution
   /// will convert to IconData entity.
@@ -14406,8 +14484,11 @@ class _$SensorImpl implements _Sensor {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [formula] is the LCL formula to execute.
   @override
   final String? formula;
+
+  /// [script] is the script to execute.
   @override
   final String? script;
 
@@ -14503,9 +14584,54 @@ class _$SensorImpl implements _Sensor {
   @override
   final String? qrCode;
 
+  /// [assignedAssetsIds] is the list of assets ids assigned to this sensor.
+  final List<String>? _assignedAssetsIds;
+
+  /// [assignedAssetsIds] is the list of assets ids assigned to this sensor.
+  @override
+  List<String>? get assignedAssetsIds {
+    final value = _assignedAssetsIds;
+    if (value == null) return null;
+    if (_assignedAssetsIds is EqualUnmodifiableListView)
+      return _assignedAssetsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [assignedAssets] is the list of assets assigned to this sensor.
+  final List<Asset>? _assignedAssets;
+
+  /// [assignedAssets] is the list of assets assigned to this sensor.
+  @override
+  List<Asset>? get assignedAssets {
+    final value = _assignedAssets;
+    if (value == null) return null;
+    if (_assignedAssets is EqualUnmodifiableListView) return _assignedAssets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [isTemplate] is a boolean to indicate if the sensor is a template.
+  /// So, this sensor was created from the Golden M, and their authorized you to use it.
+  @override
+  final bool? isTemplate;
+
+  /// Is the list of granted access
+  final List<Access>? _access;
+
+  /// Is the list of granted access
+  @override
+  List<Access>? get access {
+    final value = _access;
+    if (value == null) return null;
+    if (_access is EqualUnmodifiableListView) return _access;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'Sensor(id: $id, name: $name, iterationCycle: $iterationCycle, slug: $slug, isInstant: $isInstant, icon: $icon, measuringUnit: $measuringUnit, type: $type, subtype: $subtype, parameter: $parameter, externalIdentifiers: $externalIdentifiers, formula: $formula, script: $script, hasHeaders: $hasHeaders, csvHeaders: $csvHeaders, csvSeparator: $csvSeparator, ranges: $ranges, mask: $mask, hasValidator: $hasValidator, minValue: $minValue, maxValue: $maxValue, contentType: $contentType, parentId: $parentId, parent: $parent, functionId: $functionId, lastExit: $lastExit, qrCode: $qrCode)';
+    return 'Sensor(id: $id, name: $name, iterationCycle: $iterationCycle, slug: $slug, isInstant: $isInstant, icon: $icon, measuringUnit: $measuringUnit, type: $type, subtype: $subtype, parameter: $parameter, externalIdentifiers: $externalIdentifiers, formula: $formula, script: $script, hasHeaders: $hasHeaders, csvHeaders: $csvHeaders, csvSeparator: $csvSeparator, ranges: $ranges, mask: $mask, hasValidator: $hasValidator, minValue: $minValue, maxValue: $maxValue, contentType: $contentType, parentId: $parentId, parent: $parent, functionId: $functionId, lastExit: $lastExit, qrCode: $qrCode, assignedAssetsIds: $assignedAssetsIds, assignedAssets: $assignedAssets, isTemplate: $isTemplate, access: $access)';
   }
 
   @override
@@ -14554,7 +14680,14 @@ class _$SensorImpl implements _Sensor {
                 other.functionId == functionId) &&
             (identical(other.lastExit, lastExit) ||
                 other.lastExit == lastExit) &&
-            (identical(other.qrCode, qrCode) || other.qrCode == qrCode));
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
+            const DeepCollectionEquality()
+                .equals(other._assignedAssetsIds, _assignedAssetsIds) &&
+            const DeepCollectionEquality()
+                .equals(other._assignedAssets, _assignedAssets) &&
+            (identical(other.isTemplate, isTemplate) ||
+                other.isTemplate == isTemplate) &&
+            const DeepCollectionEquality().equals(other._access, _access));
   }
 
   @JsonKey(ignore: true)
@@ -14587,7 +14720,11 @@ class _$SensorImpl implements _Sensor {
         parent,
         functionId,
         lastExit,
-        qrCode
+        qrCode,
+        const DeepCollectionEquality().hash(_assignedAssetsIds),
+        const DeepCollectionEquality().hash(_assignedAssets),
+        isTemplate,
+        const DeepCollectionEquality().hash(_access)
       ]);
 
   @JsonKey(ignore: true)
@@ -14608,9 +14745,9 @@ abstract class _Sensor implements Sensor {
   const factory _Sensor(
       {required final String id,
       required final String name,
-      required final int iterationCycle,
+      final int? iterationCycle,
       required final String slug,
-      required final bool isInstant,
+      final bool? isInstant,
       @IconOrNullConverter() final IconData? icon,
       final String? measuringUnit,
       @SensorTypeOrNullConverter() final SensorType? type,
@@ -14632,18 +14769,26 @@ abstract class _Sensor implements Sensor {
       final Sensor? parent,
       final String? functionId,
       final AtsExit? lastExit,
-      final String? qrCode}) = _$SensorImpl;
+      final String? qrCode,
+      final List<String>? assignedAssetsIds,
+      final List<Asset>? assignedAssets,
+      final bool? isTemplate,
+      final List<Access>? access}) = _$SensorImpl;
 
   factory _Sensor.fromJson(Map<String, dynamic> json) = _$SensorImpl.fromJson;
 
   @override
+
+  /// [id] of the sensor. Must be unique along of all sensors of the asset.
   String get id;
   @override
+
+  /// [name] of the sensor. Must be unique along of all sensors of the asset.
   String get name;
   @override
 
   /// [iterationCycle] of the sensor. Only will accept positive values
-  int get iterationCycle;
+  int? get iterationCycle;
   @override
 
   /// [slug] of the sensor. Must be unique along of all sensors of the asset.
@@ -14653,7 +14798,7 @@ abstract class _Sensor implements Sensor {
   /// [isInstant] is a boolean to indicate if the sensor is an instant sensor. Means what the sensor execution
   /// returns [null], if it's [true], the sensor is will "disappear" from the calculated sensors, otherwise it will be
   /// take the previous value of the sensor.
-  bool get isInstant;
+  bool? get isInstant;
   @override
 
   /// [icon] of the sensor. To send it to API, will convert to javascript codename, but from Flutter execution
@@ -14681,8 +14826,12 @@ abstract class _Sensor implements Sensor {
   @override
   List<String>? get externalIdentifiers;
   @override
+
+  /// [formula] is the LCL formula to execute.
   String? get formula;
   @override
+
+  /// [script] is the script to execute.
   String? get script;
   @override
 
@@ -14749,6 +14898,23 @@ abstract class _Sensor implements Sensor {
   /// [qrCode] is a string to indicate the QR code URI of the sensor.
   String? get qrCode;
   @override
+
+  /// [assignedAssetsIds] is the list of assets ids assigned to this sensor.
+  List<String>? get assignedAssetsIds;
+  @override
+
+  /// [assignedAssets] is the list of assets assigned to this sensor.
+  List<Asset>? get assignedAssets;
+  @override
+
+  /// [isTemplate] is a boolean to indicate if the sensor is a template.
+  /// So, this sensor was created from the Golden M, and their authorized you to use it.
+  bool? get isTemplate;
+  @override
+
+  /// Is the list of granted access
+  List<Access>? get access;
+  @override
   @JsonKey(ignore: true)
   _$$SensorImplCopyWith<_$SensorImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -14770,6 +14936,11 @@ mixin _$MaskPoint {
   /// [value] of the mask point.
   String get value => throw _privateConstructorUsedError;
 
+  /// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
+  /// will convert to IconData entity.
+  @IconOrNullConverter()
+  IconData? get icon => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MaskPointCopyWith<MaskPoint> get copyWith =>
@@ -14781,7 +14952,11 @@ abstract class $MaskPointCopyWith<$Res> {
   factory $MaskPointCopyWith(MaskPoint value, $Res Function(MaskPoint) then) =
       _$MaskPointCopyWithImpl<$Res, MaskPoint>;
   @useResult
-  $Res call({@ColorOrNullConverter() Color? color, String? text, String value});
+  $Res call(
+      {@ColorOrNullConverter() Color? color,
+      String? text,
+      String value,
+      @IconOrNullConverter() IconData? icon});
 }
 
 /// @nodoc
@@ -14800,6 +14975,7 @@ class _$MaskPointCopyWithImpl<$Res, $Val extends MaskPoint>
     Object? color = freezed,
     Object? text = freezed,
     Object? value = null,
+    Object? icon = freezed,
   }) {
     return _then(_value.copyWith(
       color: freezed == color
@@ -14814,6 +14990,10 @@ class _$MaskPointCopyWithImpl<$Res, $Val extends MaskPoint>
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as IconData?,
     ) as $Val);
   }
 }
@@ -14826,7 +15006,11 @@ abstract class _$$MaskPointImplCopyWith<$Res>
       __$$MaskPointImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@ColorOrNullConverter() Color? color, String? text, String value});
+  $Res call(
+      {@ColorOrNullConverter() Color? color,
+      String? text,
+      String value,
+      @IconOrNullConverter() IconData? icon});
 }
 
 /// @nodoc
@@ -14843,6 +15027,7 @@ class __$$MaskPointImplCopyWithImpl<$Res>
     Object? color = freezed,
     Object? text = freezed,
     Object? value = null,
+    Object? icon = freezed,
   }) {
     return _then(_$MaskPointImpl(
       color: freezed == color
@@ -14857,6 +15042,10 @@ class __$$MaskPointImplCopyWithImpl<$Res>
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as IconData?,
     ));
   }
 }
@@ -14865,7 +15054,10 @@ class __$$MaskPointImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MaskPointImpl implements _MaskPoint {
   const _$MaskPointImpl(
-      {@ColorOrNullConverter() this.color, this.text, required this.value});
+      {@ColorOrNullConverter() this.color,
+      this.text,
+      required this.value,
+      @IconOrNullConverter() this.icon});
 
   factory _$MaskPointImpl.fromJson(Map<String, dynamic> json) =>
       _$$MaskPointImplFromJson(json);
@@ -14883,9 +15075,15 @@ class _$MaskPointImpl implements _MaskPoint {
   @override
   final String value;
 
+  /// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
+  /// will convert to IconData entity.
+  @override
+  @IconOrNullConverter()
+  final IconData? icon;
+
   @override
   String toString() {
-    return 'MaskPoint(color: $color, text: $text, value: $value)';
+    return 'MaskPoint(color: $color, text: $text, value: $value, icon: $icon)';
   }
 
   @override
@@ -14895,12 +15093,13 @@ class _$MaskPointImpl implements _MaskPoint {
             other is _$MaskPointImpl &&
             (identical(other.color, color) || other.color == color) &&
             (identical(other.text, text) || other.text == text) &&
-            (identical(other.value, value) || other.value == value));
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.icon, icon) || other.icon == icon));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, color, text, value);
+  int get hashCode => Object.hash(runtimeType, color, text, value, icon);
 
   @JsonKey(ignore: true)
   @override
@@ -14920,7 +15119,8 @@ abstract class _MaskPoint implements MaskPoint {
   const factory _MaskPoint(
       {@ColorOrNullConverter() final Color? color,
       final String? text,
-      required final String value}) = _$MaskPointImpl;
+      required final String value,
+      @IconOrNullConverter() final IconData? icon}) = _$MaskPointImpl;
 
   factory _MaskPoint.fromJson(Map<String, dynamic> json) =
       _$MaskPointImpl.fromJson;
@@ -14938,6 +15138,12 @@ abstract class _MaskPoint implements MaskPoint {
 
   /// [value] of the mask point.
   String get value;
+  @override
+
+  /// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
+  /// will convert to IconData entity.
+  @IconOrNullConverter()
+  IconData? get icon;
   @override
   @JsonKey(ignore: true)
   _$$MaskPointImplCopyWith<_$MaskPointImpl> get copyWith =>

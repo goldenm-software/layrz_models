@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.61
+
+- Updated `Sensor` model to support global sensors
+
 ## 2.0.60
 
 - Redefined `LintError`

@@ -1271,9 +1271,9 @@ Map<String, dynamic> _$$CustomFieldInputImplToJson(
 _$SensorImpl _$$SensorImplFromJson(Map<String, dynamic> json) => _$SensorImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      iterationCycle: json['iterationCycle'] as int,
+      iterationCycle: json['iterationCycle'] as int?,
       slug: json['slug'] as String,
-      isInstant: json['isInstant'] as bool,
+      isInstant: json['isInstant'] as bool?,
       icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
       measuringUnit: json['measuringUnit'] as String?,
       type: const SensorTypeOrNullConverter().fromJson(json['type'] as String?),
@@ -1309,6 +1309,16 @@ _$SensorImpl _$$SensorImplFromJson(Map<String, dynamic> json) => _$SensorImpl(
           ? null
           : AtsExit.fromJson(json['lastExit'] as Map<String, dynamic>),
       qrCode: json['qrCode'] as String?,
+      assignedAssetsIds: (json['assignedAssetsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      assignedAssets: (json['assignedAssets'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      isTemplate: json['isTemplate'] as bool?,
+      access: (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$SensorImplToJson(_$SensorImpl instance) =>
@@ -1340,6 +1350,11 @@ Map<String, dynamic> _$$SensorImplToJson(_$SensorImpl instance) =>
       'functionId': instance.functionId,
       'lastExit': instance.lastExit?.toJson(),
       'qrCode': instance.qrCode,
+      'assignedAssetsIds': instance.assignedAssetsIds,
+      'assignedAssets':
+          instance.assignedAssets?.map((e) => e.toJson()).toList(),
+      'isTemplate': instance.isTemplate,
+      'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
 _$MaskPointImpl _$$MaskPointImplFromJson(Map<String, dynamic> json) =>
@@ -1347,6 +1362,7 @@ _$MaskPointImpl _$$MaskPointImplFromJson(Map<String, dynamic> json) =>
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       text: json['text'] as String?,
       value: json['value'] as String,
+      icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
     );
 
 Map<String, dynamic> _$$MaskPointImplToJson(_$MaskPointImpl instance) =>
@@ -1354,6 +1370,7 @@ Map<String, dynamic> _$$MaskPointImplToJson(_$MaskPointImpl instance) =>
       'color': const ColorOrNullConverter().toJson(instance.color),
       'text': instance.text,
       'value': instance.value,
+      'icon': const IconOrNullConverter().toJson(instance.icon),
     };
 
 _$SensorPairImpl _$$SensorPairImplFromJson(Map<String, dynamic> json) =>

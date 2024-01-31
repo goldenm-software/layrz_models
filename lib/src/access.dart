@@ -84,6 +84,9 @@ enum AccessModule {
 
   /// BRICKHOUSE_UNIT
   brickhouseUnit,
+
+  /// SENSORS
+  sensors,
   ;
 
   @override
@@ -147,7 +150,8 @@ enum AccessModule {
         return 'BRICKHOUSE_ALERT';
       case AccessModule.brickhouseUnit:
         return 'BRICKHOUSE_UNIT';
-
+      case AccessModule.sensors:
+        return 'SENSORS';
       default:
         throw Exception('Unknown AccessModule: $this');
     }
@@ -211,7 +215,8 @@ enum AccessModule {
         return AccessModule.brickhouseAlert;
       case 'BRICKHOUSE_UNIT':
         return AccessModule.brickhouseUnit;
-
+      case 'SENSORS':
+        return AccessModule.sensors;
       default:
         throw Exception('Unknown AccessModule: $json');
     }
