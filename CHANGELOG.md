@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.62
+
+- Added `globalSensors` to `Asset` model
+
 ## 2.0.61
 
 - Updated `Sensor` model to support global sensors

@@ -221,10 +221,12 @@ class Asset with _$Asset {
     /// Only used when mode is [AssetMode.fixed].
     StaticPosition? staticPosition,
 
-
     /// [parameters] refers to the list of parameters of the asset.
     /// Is only a list of strings.
     @Default([]) List<String> parameters,
+
+    /// [globalSensors] is the list of global sensors of the asset.
+    List<Sensor>? globalSensors,
   }) = _Asset;
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);

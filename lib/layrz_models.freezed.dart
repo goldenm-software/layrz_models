@@ -11002,6 +11002,9 @@ mixin _$Asset {
   /// Is only a list of strings.
   List<String> get parameters => throw _privateConstructorUsedError;
 
+  /// [globalSensors] is the list of global sensors of the asset.
+  List<Sensor>? get globalSensors => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AssetCopyWith<Asset> get copyWith => throw _privateConstructorUsedError;
@@ -11054,7 +11057,8 @@ abstract class $AssetCopyWith<$Res> {
       List<Asset>? linkedSupplyPointAssets,
       List<String>? linkedSupplyPointAssetsIds,
       StaticPosition? staticPosition,
-      List<String> parameters});
+      List<String> parameters,
+      List<Sensor>? globalSensors});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $CategoryCopyWith<$Res>? get kind;
@@ -11121,6 +11125,7 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     Object? linkedSupplyPointAssetsIds = freezed,
     Object? staticPosition = freezed,
     Object? parameters = null,
+    Object? globalSensors = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -11291,6 +11296,10 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      globalSensors: freezed == globalSensors
+          ? _value.globalSensors
+          : globalSensors // ignore: cast_nullable_to_non_nullable
+              as List<Sensor>?,
     ) as $Val);
   }
 
@@ -11441,7 +11450,8 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
       List<Asset>? linkedSupplyPointAssets,
       List<String>? linkedSupplyPointAssetsIds,
       StaticPosition? staticPosition,
-      List<String> parameters});
+      List<String> parameters,
+      List<Sensor>? globalSensors});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -11514,6 +11524,7 @@ class __$$AssetImplCopyWithImpl<$Res>
     Object? linkedSupplyPointAssetsIds = freezed,
     Object? staticPosition = freezed,
     Object? parameters = null,
+    Object? globalSensors = freezed,
   }) {
     return _then(_$AssetImpl(
       id: null == id
@@ -11684,6 +11695,10 @@ class __$$AssetImplCopyWithImpl<$Res>
           ? _value._parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      globalSensors: freezed == globalSensors
+          ? _value._globalSensors
+          : globalSensors // ignore: cast_nullable_to_non_nullable
+              as List<Sensor>?,
     ));
   }
 }
@@ -11733,7 +11748,8 @@ class _$AssetImpl implements _Asset {
       final List<Asset>? linkedSupplyPointAssets,
       final List<String>? linkedSupplyPointAssetsIds,
       this.staticPosition,
-      final List<String> parameters = const []})
+      final List<String> parameters = const [],
+      final List<Sensor>? globalSensors})
       : _childrenIds = childrenIds,
         _children = children,
         _commands = commands,
@@ -11755,7 +11771,8 @@ class _$AssetImpl implements _Asset {
         _mappitLaborHours = mappitLaborHours,
         _linkedSupplyPointAssets = linkedSupplyPointAssets,
         _linkedSupplyPointAssetsIds = linkedSupplyPointAssetsIds,
-        _parameters = parameters;
+        _parameters = parameters,
+        _globalSensors = globalSensors;
 
   factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
       _$$AssetImplFromJson(json);
@@ -12154,9 +12171,22 @@ class _$AssetImpl implements _Asset {
     return EqualUnmodifiableListView(_parameters);
   }
 
+  /// [globalSensors] is the list of global sensors of the asset.
+  final List<Sensor>? _globalSensors;
+
+  /// [globalSensors] is the list of global sensors of the asset.
+  @override
+  List<Sensor>? get globalSensors {
+    final value = _globalSensors;
+    if (value == null) return null;
+    if (_globalSensors is EqualUnmodifiableListView) return _globalSensors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, parameters: $parameters)';
+    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, parameters: $parameters, globalSensors: $globalSensors)';
   }
 
   @override
@@ -12231,7 +12261,9 @@ class _$AssetImpl implements _Asset {
             (identical(other.staticPosition, staticPosition) ||
                 other.staticPosition == staticPosition) &&
             const DeepCollectionEquality()
-                .equals(other._parameters, _parameters));
+                .equals(other._parameters, _parameters) &&
+            const DeepCollectionEquality()
+                .equals(other._globalSensors, _globalSensors));
   }
 
   @JsonKey(ignore: true)
@@ -12279,7 +12311,8 @@ class _$AssetImpl implements _Asset {
         const DeepCollectionEquality().hash(_linkedSupplyPointAssets),
         const DeepCollectionEquality().hash(_linkedSupplyPointAssetsIds),
         staticPosition,
-        const DeepCollectionEquality().hash(_parameters)
+        const DeepCollectionEquality().hash(_parameters),
+        const DeepCollectionEquality().hash(_globalSensors)
       ]);
 
   @JsonKey(ignore: true)
@@ -12339,7 +12372,8 @@ abstract class _Asset implements Asset {
       final List<Asset>? linkedSupplyPointAssets,
       final List<String>? linkedSupplyPointAssetsIds,
       final StaticPosition? staticPosition,
-      final List<String> parameters}) = _$AssetImpl;
+      final List<String> parameters,
+      final List<Sensor>? globalSensors}) = _$AssetImpl;
 
   factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
 
@@ -12525,6 +12559,10 @@ abstract class _Asset implements Asset {
   /// [parameters] refers to the list of parameters of the asset.
   /// Is only a list of strings.
   List<String> get parameters;
+  @override
+
+  /// [globalSensors] is the list of global sensors of the asset.
+  List<Sensor>? get globalSensors;
   @override
   @JsonKey(ignore: true)
   _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
@@ -13916,6 +13954,9 @@ mixin _$Sensor {
   /// So, this sensor was created from the Golden M, and their authorized you to use it.
   bool? get isTemplate => throw _privateConstructorUsedError;
 
+  /// [isGlobal] defines if the sensor is global or not.
+  bool get isGlobal => throw _privateConstructorUsedError;
+
   /// Is the list of granted access
   List<Access>? get access => throw _privateConstructorUsedError;
 
@@ -13960,6 +14001,7 @@ abstract class $SensorCopyWith<$Res> {
       List<String>? assignedAssetsIds,
       List<Asset>? assignedAssets,
       bool? isTemplate,
+      bool isGlobal,
       List<Access>? access});
 
   $SensorCopyWith<$Res>? get parent;
@@ -14009,6 +14051,7 @@ class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
     Object? assignedAssetsIds = freezed,
     Object? assignedAssets = freezed,
     Object? isTemplate = freezed,
+    Object? isGlobal = null,
     Object? access = freezed,
   }) {
     return _then(_value.copyWith(
@@ -14132,6 +14175,10 @@ class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
           ? _value.isTemplate
           : isTemplate // ignore: cast_nullable_to_non_nullable
               as bool?,
+      isGlobal: null == isGlobal
+          ? _value.isGlobal
+          : isGlobal // ignore: cast_nullable_to_non_nullable
+              as bool,
       access: freezed == access
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
@@ -14202,6 +14249,7 @@ abstract class _$$SensorImplCopyWith<$Res> implements $SensorCopyWith<$Res> {
       List<String>? assignedAssetsIds,
       List<Asset>? assignedAssets,
       bool? isTemplate,
+      bool isGlobal,
       List<Access>? access});
 
   @override
@@ -14251,6 +14299,7 @@ class __$$SensorImplCopyWithImpl<$Res>
     Object? assignedAssetsIds = freezed,
     Object? assignedAssets = freezed,
     Object? isTemplate = freezed,
+    Object? isGlobal = null,
     Object? access = freezed,
   }) {
     return _then(_$SensorImpl(
@@ -14374,6 +14423,10 @@ class __$$SensorImplCopyWithImpl<$Res>
           ? _value.isTemplate
           : isTemplate // ignore: cast_nullable_to_non_nullable
               as bool?,
+      isGlobal: null == isGlobal
+          ? _value.isGlobal
+          : isGlobal // ignore: cast_nullable_to_non_nullable
+              as bool,
       access: freezed == access
           ? _value._access
           : access // ignore: cast_nullable_to_non_nullable
@@ -14416,6 +14469,7 @@ class _$SensorImpl implements _Sensor {
       final List<String>? assignedAssetsIds,
       final List<Asset>? assignedAssets,
       this.isTemplate,
+      this.isGlobal = false,
       final List<Access>? access})
       : _externalIdentifiers = externalIdentifiers,
         _csvHeaders = csvHeaders,
@@ -14616,6 +14670,11 @@ class _$SensorImpl implements _Sensor {
   @override
   final bool? isTemplate;
 
+  /// [isGlobal] defines if the sensor is global or not.
+  @override
+  @JsonKey()
+  final bool isGlobal;
+
   /// Is the list of granted access
   final List<Access>? _access;
 
@@ -14631,7 +14690,7 @@ class _$SensorImpl implements _Sensor {
 
   @override
   String toString() {
-    return 'Sensor(id: $id, name: $name, iterationCycle: $iterationCycle, slug: $slug, isInstant: $isInstant, icon: $icon, measuringUnit: $measuringUnit, type: $type, subtype: $subtype, parameter: $parameter, externalIdentifiers: $externalIdentifiers, formula: $formula, script: $script, hasHeaders: $hasHeaders, csvHeaders: $csvHeaders, csvSeparator: $csvSeparator, ranges: $ranges, mask: $mask, hasValidator: $hasValidator, minValue: $minValue, maxValue: $maxValue, contentType: $contentType, parentId: $parentId, parent: $parent, functionId: $functionId, lastExit: $lastExit, qrCode: $qrCode, assignedAssetsIds: $assignedAssetsIds, assignedAssets: $assignedAssets, isTemplate: $isTemplate, access: $access)';
+    return 'Sensor(id: $id, name: $name, iterationCycle: $iterationCycle, slug: $slug, isInstant: $isInstant, icon: $icon, measuringUnit: $measuringUnit, type: $type, subtype: $subtype, parameter: $parameter, externalIdentifiers: $externalIdentifiers, formula: $formula, script: $script, hasHeaders: $hasHeaders, csvHeaders: $csvHeaders, csvSeparator: $csvSeparator, ranges: $ranges, mask: $mask, hasValidator: $hasValidator, minValue: $minValue, maxValue: $maxValue, contentType: $contentType, parentId: $parentId, parent: $parent, functionId: $functionId, lastExit: $lastExit, qrCode: $qrCode, assignedAssetsIds: $assignedAssetsIds, assignedAssets: $assignedAssets, isTemplate: $isTemplate, isGlobal: $isGlobal, access: $access)';
   }
 
   @override
@@ -14687,6 +14746,8 @@ class _$SensorImpl implements _Sensor {
                 .equals(other._assignedAssets, _assignedAssets) &&
             (identical(other.isTemplate, isTemplate) ||
                 other.isTemplate == isTemplate) &&
+            (identical(other.isGlobal, isGlobal) ||
+                other.isGlobal == isGlobal) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
@@ -14724,6 +14785,7 @@ class _$SensorImpl implements _Sensor {
         const DeepCollectionEquality().hash(_assignedAssetsIds),
         const DeepCollectionEquality().hash(_assignedAssets),
         isTemplate,
+        isGlobal,
         const DeepCollectionEquality().hash(_access)
       ]);
 
@@ -14773,6 +14835,7 @@ abstract class _Sensor implements Sensor {
       final List<String>? assignedAssetsIds,
       final List<Asset>? assignedAssets,
       final bool? isTemplate,
+      final bool isGlobal,
       final List<Access>? access}) = _$SensorImpl;
 
   factory _Sensor.fromJson(Map<String, dynamic> json) = _$SensorImpl.fromJson;
@@ -14910,6 +14973,10 @@ abstract class _Sensor implements Sensor {
   /// [isTemplate] is a boolean to indicate if the sensor is a template.
   /// So, this sensor was created from the Golden M, and their authorized you to use it.
   bool? get isTemplate;
+  @override
+
+  /// [isGlobal] defines if the sensor is global or not.
+  bool get isGlobal;
   @override
 
   /// Is the list of granted access

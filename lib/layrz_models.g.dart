@@ -1109,6 +1109,9 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
               ?.map((e) => e as String)
               .toList() ??
           const [],
+      globalSensors: (json['globalSensors'] as List<dynamic>?)
+          ?.map((e) => Sensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
@@ -1159,6 +1162,7 @@ Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
       'linkedSupplyPointAssetsIds': instance.linkedSupplyPointAssetsIds,
       'staticPosition': instance.staticPosition?.toJson(),
       'parameters': instance.parameters,
+      'globalSensors': instance.globalSensors?.map((e) => e.toJson()).toList(),
     };
 
 _$StaticPositionImpl _$$StaticPositionImplFromJson(Map<String, dynamic> json) =>
@@ -1316,6 +1320,7 @@ _$SensorImpl _$$SensorImplFromJson(Map<String, dynamic> json) => _$SensorImpl(
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
       isTemplate: json['isTemplate'] as bool?,
+      isGlobal: json['isGlobal'] as bool? ?? false,
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -1354,6 +1359,7 @@ Map<String, dynamic> _$$SensorImplToJson(_$SensorImpl instance) =>
       'assignedAssets':
           instance.assignedAssets?.map((e) => e.toJson()).toList(),
       'isTemplate': instance.isTemplate,
+      'isGlobal': instance.isGlobal,
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 

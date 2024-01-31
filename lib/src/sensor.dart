@@ -103,6 +103,9 @@ class Sensor with _$Sensor {
     /// So, this sensor was created from the Golden M, and their authorized you to use it.
     bool? isTemplate,
 
+    /// [isGlobal] defines if the sensor is global or not.
+    @Default(false) bool isGlobal,
+
     /// Is the list of granted access
     List<Access>? access,
   }) = _Sensor;
