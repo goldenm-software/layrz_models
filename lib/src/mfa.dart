@@ -15,7 +15,8 @@ enum MfaMethod {
 
   /// Layrz API Reference: `BACKUP_CODE`
   /// Refers to a Backup Code algorithm.
-  backupCode,;
+  backupCode,
+  ;
 
   @override
   String toString() => toJson();

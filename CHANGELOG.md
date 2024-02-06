@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.0.63
+
+- Reorganized models to work with submodules
+- Defined `AppFont` to handle different fonts in the app
+
 ## 2.0.62
 
 - Added `globalSensors` to `Asset` model

@@ -63,6 +63,7 @@ enum ReferenceCategory {
 
   /// Layrz API Reference: ATSEXITS
   atsExits,
+
   /// Layrz API Reference: ATS_AUTOMATIC_RECEPTION
   atsAutomaticReception,
 
