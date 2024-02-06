@@ -4578,6 +4578,7 @@ AppFont _$AppFontFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppFont {
   /// [source] defines where is stored the font
+  @FontSourceConverter()
   FontSource get source => throw _privateConstructorUsedError;
 
   /// [name] is the name of the font to load
@@ -4599,7 +4600,8 @@ abstract class $AppFontCopyWith<$Res> {
   factory $AppFontCopyWith(AppFont value, $Res Function(AppFont) then) =
       _$AppFontCopyWithImpl<$Res, AppFont>;
   @useResult
-  $Res call({FontSource source, String name, String? uri});
+  $Res call(
+      {@FontSourceConverter() FontSource source, String name, String? uri});
 }
 
 /// @nodoc
@@ -4643,7 +4645,8 @@ abstract class _$$AppFontImplCopyWith<$Res> implements $AppFontCopyWith<$Res> {
       __$$AppFontImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({FontSource source, String name, String? uri});
+  $Res call(
+      {@FontSourceConverter() FontSource source, String name, String? uri});
 }
 
 /// @nodoc
@@ -4682,7 +4685,7 @@ class __$$AppFontImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppFontImpl implements _AppFont {
   const _$AppFontImpl(
-      {this.source = FontSource.google,
+      {@FontSourceConverter() this.source = FontSource.google,
       this.name = 'Fira Sans Condensed',
       this.uri});
 
@@ -4692,6 +4695,7 @@ class _$AppFontImpl implements _AppFont {
   /// [source] defines where is stored the font
   @override
   @JsonKey()
+  @FontSourceConverter()
   final FontSource source;
 
   /// [name] is the name of the font to load
@@ -4741,7 +4745,7 @@ class _$AppFontImpl implements _AppFont {
 
 abstract class _AppFont implements AppFont {
   const factory _AppFont(
-      {final FontSource source,
+      {@FontSourceConverter() final FontSource source,
       final String name,
       final String? uri}) = _$AppFontImpl;
 
@@ -4750,6 +4754,7 @@ abstract class _AppFont implements AppFont {
   @override
 
   /// [source] defines where is stored the font
+  @FontSourceConverter()
   FontSource get source;
   @override
 

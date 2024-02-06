@@ -402,21 +402,16 @@ Map<String, dynamic> _$$AppVersionImplToJson(_$AppVersionImpl instance) =>
 
 _$AppFontImpl _$$AppFontImplFromJson(Map<String, dynamic> json) =>
     _$AppFontImpl(
-      source: $enumDecodeNullable(_$FontSourceEnumMap, json['source']) ??
-          FontSource.google,
+      source: json['source'] == null
+          ? FontSource.google
+          : const FontSourceConverter().fromJson(json['source'] as String),
       name: json['name'] as String? ?? 'Fira Sans Condensed',
       uri: json['uri'] as String?,
     );
 
 Map<String, dynamic> _$$AppFontImplToJson(_$AppFontImpl instance) =>
     <String, dynamic>{
-      'source': instance.source.toJson(),
+      'source': const FontSourceConverter().toJson(instance.source),
       'name': instance.name,
       'uri': instance.uri,
     };
-
-const _$FontSourceEnumMap = {
-  FontSource.google: 'google',
-  FontSource.local: 'local',
-  FontSource.uri: 'uri',
-};

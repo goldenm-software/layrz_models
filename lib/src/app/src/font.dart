@@ -71,7 +71,7 @@ class AppFont with _$AppFont {
   /// [AppFont] is a model that defines the font of the application
   const factory AppFont({
     /// [source] defines where is stored the font
-    @Default(FontSource.google) FontSource source,
+    @Default(FontSource.google) @FontSourceConverter() FontSource source,
 
     /// [name] is the name of the font to load
     /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Fira Sans Condensed`
