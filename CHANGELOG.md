@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.0
+
+- Now, `LayrzAppLocalizations.of(context)` returns `LayrzAppLocalizations` instead of `LayrzAppLocalizations?`
+- New `LayrzAppLocalizations.maybeOf(context)` that returns `LayrzAppLocalizations?`, replacement of the previous behavior of `LayrzAppLocalizations.of(context)`
+
 ## 2.0.63
 
 - Reorganized models to work with submodules

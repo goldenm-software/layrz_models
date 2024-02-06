@@ -22,9 +22,15 @@ class LayrzAppLocalizations {
   /// [developerMode] is used to get the current value of the developer mode
   bool get developerMode => LayrzAppLocalizations._developerMode;
 
-  /// Helper method to keep the code in the widgets concise
-  /// Localizations are accessed using an InheritedWidget "of" syntax
-  static LayrzAppLocalizations? of(BuildContext context) {
+  /// [of] is used to get the current instance of the LayrzAppLocalizations
+  static LayrzAppLocalizations of(BuildContext context) {
+    assert(debugCheckHasLayrzAppLocalizations(context));
+    return Localizations.of<LayrzAppLocalizations>(context, LayrzAppLocalizations)!;
+  }
+
+  /// [maybeOf] is used to get the current instance of the LayrzAppLocalizations
+  /// If the instance is not found, it will return null
+  static LayrzAppLocalizations? maybeOf(BuildContext context) {
     return Localizations.of<LayrzAppLocalizations>(context, LayrzAppLocalizations);
   }
 
@@ -181,4 +187,14 @@ class LayrzAppLocalizationsDelegate extends LocalizationsDelegate<LayrzAppLocali
 
   @override
   bool shouldReload(LayrzAppLocalizationsDelegate old) => old.currentLocale != currentLocale;
+}
+
+bool debugCheckHasLayrzAppLocalizations(BuildContext context) {
+  assert(() {
+    if (Localizations.of<LayrzAppLocalizations>(context, LayrzAppLocalizations) == null) {
+      throw FlutterError('LayrzAppLocalizations was used before it was initialized');
+    }
+    return true;
+  }());
+  return true;
 }
