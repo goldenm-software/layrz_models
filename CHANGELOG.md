@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.1
+
+- Added `mappitRoutes` and `mappitRoutesIds` to `Tag` model
+
 ## 2.1.0
 
 - Now, `LayrzAppLocalizations.of(context)` returns `LayrzAppLocalizations` instead of `LayrzAppLocalizations?`

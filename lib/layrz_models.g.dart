@@ -2227,6 +2227,12 @@ _$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
       visionProfilesIds: (json['visionProfilesIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      mappitRoutes: (json['mappitRoutes'] as List<dynamic>?)
+          ?.map((e) => MappitRoute.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      mappitRoutesIds: (json['mappitRoutesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -2288,6 +2294,8 @@ Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
       'visionProfiles':
           instance.visionProfiles?.map((e) => e.toJson()).toList(),
       'visionProfilesIds': instance.visionProfilesIds,
+      'mappitRoutes': instance.mappitRoutes?.map((e) => e.toJson()).toList(),
+      'mappitRoutesIds': instance.mappitRoutesIds,
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'owner': instance.owner?.toJson(),
       'ownerId': instance.ownerId,

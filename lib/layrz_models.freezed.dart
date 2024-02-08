@@ -23989,6 +23989,12 @@ mixin _$Tag {
   /// Is a list of ID's of associated vision profiles to this module.
   List<String>? get visionProfilesIds => throw _privateConstructorUsedError;
 
+  /// Is a list of associated vision profiles to this module.
+  List<MappitRoute>? get mappitRoutes => throw _privateConstructorUsedError;
+
+  /// Is a list of ID's of associated vision profiles to this module.
+  List<String>? get mappitRoutesIds => throw _privateConstructorUsedError;
+
   /// Is a list of granted access to this entity.
   List<Access>? get access => throw _privateConstructorUsedError;
 
@@ -24056,6 +24062,8 @@ abstract class $TagCopyWith<$Res> {
       List<String>? workspacesIds,
       List<VisionProfile>? visionProfiles,
       List<String>? visionProfilesIds,
+      List<MappitRoute>? mappitRoutes,
+      List<String>? mappitRoutesIds,
       List<Access>? access,
       User? owner,
       String? ownerId});
@@ -24121,6 +24129,8 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? workspacesIds = freezed,
     Object? visionProfiles = freezed,
     Object? visionProfilesIds = freezed,
+    Object? mappitRoutes = freezed,
+    Object? mappitRoutesIds = freezed,
     Object? access = freezed,
     Object? owner = freezed,
     Object? ownerId = freezed,
@@ -24306,6 +24316,14 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.visionProfilesIds
           : visionProfilesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      mappitRoutes: freezed == mappitRoutes
+          ? _value.mappitRoutes
+          : mappitRoutes // ignore: cast_nullable_to_non_nullable
+              as List<MappitRoute>?,
+      mappitRoutesIds: freezed == mappitRoutesIds
+          ? _value.mappitRoutesIds
+          : mappitRoutesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       access: freezed == access
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
@@ -24400,6 +24418,8 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
       List<String>? workspacesIds,
       List<VisionProfile>? visionProfiles,
       List<String>? visionProfilesIds,
+      List<MappitRoute>? mappitRoutes,
+      List<String>? mappitRoutesIds,
       List<Access>? access,
       User? owner,
       String? ownerId});
@@ -24464,6 +24484,8 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
     Object? workspacesIds = freezed,
     Object? visionProfiles = freezed,
     Object? visionProfilesIds = freezed,
+    Object? mappitRoutes = freezed,
+    Object? mappitRoutesIds = freezed,
     Object? access = freezed,
     Object? owner = freezed,
     Object? ownerId = freezed,
@@ -24649,6 +24671,14 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
           ? _value._visionProfilesIds
           : visionProfilesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      mappitRoutes: freezed == mappitRoutes
+          ? _value._mappitRoutes
+          : mappitRoutes // ignore: cast_nullable_to_non_nullable
+              as List<MappitRoute>?,
+      mappitRoutesIds: freezed == mappitRoutesIds
+          ? _value._mappitRoutesIds
+          : mappitRoutesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       access: freezed == access
           ? _value._access
           : access // ignore: cast_nullable_to_non_nullable
@@ -24714,6 +24744,8 @@ class _$TagImpl implements _Tag {
       final List<String>? workspacesIds,
       final List<VisionProfile>? visionProfiles,
       final List<String>? visionProfilesIds,
+      final List<MappitRoute>? mappitRoutes,
+      final List<String>? mappitRoutesIds,
       final List<Access>? access,
       this.owner,
       this.ownerId})
@@ -24757,6 +24789,8 @@ class _$TagImpl implements _Tag {
         _workspacesIds = workspacesIds,
         _visionProfiles = visionProfiles,
         _visionProfilesIds = visionProfilesIds,
+        _mappitRoutes = mappitRoutes,
+        _mappitRoutesIds = mappitRoutesIds,
         _access = access;
 
   factory _$TagImpl.fromJson(Map<String, dynamic> json) =>
@@ -25314,6 +25348,32 @@ class _$TagImpl implements _Tag {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Is a list of associated vision profiles to this module.
+  final List<MappitRoute>? _mappitRoutes;
+
+  /// Is a list of associated vision profiles to this module.
+  @override
+  List<MappitRoute>? get mappitRoutes {
+    final value = _mappitRoutes;
+    if (value == null) return null;
+    if (_mappitRoutes is EqualUnmodifiableListView) return _mappitRoutes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Is a list of ID's of associated vision profiles to this module.
+  final List<String>? _mappitRoutesIds;
+
+  /// Is a list of ID's of associated vision profiles to this module.
+  @override
+  List<String>? get mappitRoutesIds {
+    final value = _mappitRoutesIds;
+    if (value == null) return null;
+    if (_mappitRoutesIds is EqualUnmodifiableListView) return _mappitRoutesIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// Is a list of granted access to this entity.
   final List<Access>? _access;
 
@@ -25337,7 +25397,7 @@ class _$TagImpl implements _Tag {
 
   @override
   String toString() {
-    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, access: $access, owner: $owner, ownerId: $ownerId)';
+    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, mappitRoutes: $mappitRoutes, mappitRoutesIds: $mappitRoutesIds, access: $access, owner: $owner, ownerId: $ownerId)';
   }
 
   @override
@@ -25423,6 +25483,10 @@ class _$TagImpl implements _Tag {
                 .equals(other._visionProfiles, _visionProfiles) &&
             const DeepCollectionEquality()
                 .equals(other._visionProfilesIds, _visionProfilesIds) &&
+            const DeepCollectionEquality()
+                .equals(other._mappitRoutes, _mappitRoutes) &&
+            const DeepCollectionEquality()
+                .equals(other._mappitRoutesIds, _mappitRoutesIds) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
             (identical(other.owner, owner) || other.owner == owner) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId));
@@ -25477,6 +25541,8 @@ class _$TagImpl implements _Tag {
         const DeepCollectionEquality().hash(_workspacesIds),
         const DeepCollectionEquality().hash(_visionProfiles),
         const DeepCollectionEquality().hash(_visionProfilesIds),
+        const DeepCollectionEquality().hash(_mappitRoutes),
+        const DeepCollectionEquality().hash(_mappitRoutesIds),
         const DeepCollectionEquality().hash(_access),
         owner,
         ownerId
@@ -25545,6 +25611,8 @@ abstract class _Tag implements Tag {
       final List<String>? workspacesIds,
       final List<VisionProfile>? visionProfiles,
       final List<String>? visionProfilesIds,
+      final List<MappitRoute>? mappitRoutes,
+      final List<String>? mappitRoutesIds,
       final List<Access>? access,
       final User? owner,
       final String? ownerId}) = _$TagImpl;
@@ -25734,6 +25802,14 @@ abstract class _Tag implements Tag {
 
   /// Is a list of ID's of associated vision profiles to this module.
   List<String>? get visionProfilesIds;
+  @override
+
+  /// Is a list of associated vision profiles to this module.
+  List<MappitRoute>? get mappitRoutes;
+  @override
+
+  /// Is a list of ID's of associated vision profiles to this module.
+  List<String>? get mappitRoutesIds;
   @override
 
   /// Is a list of granted access to this entity.
