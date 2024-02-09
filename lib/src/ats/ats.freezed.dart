@@ -366,7 +366,7 @@ class _$AtsEntryImpl implements _AtsEntry {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsEntryImpl &&
@@ -689,7 +689,7 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsReceptionProductImpl &&
@@ -1457,7 +1457,7 @@ class _$AtsAuthenticationIdentifierImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsAuthenticationIdentifierImpl &&
@@ -1863,7 +1863,7 @@ class _$AtsAuthenticationCardImpl implements _AtsAuthenticationCard {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsAuthenticationCardImpl &&
@@ -2239,7 +2239,7 @@ class _$AtsHistoryAuthenticationCardImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsHistoryAuthenticationCardImpl &&
@@ -2581,7 +2581,7 @@ class _$AtsFeedbackMessegeImpl implements _AtsFeedbackMessege {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsFeedbackMessegeImpl &&
@@ -3110,7 +3110,7 @@ class _$AtsEventImpl implements _AtsEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsEventImpl &&
@@ -3453,7 +3453,7 @@ class _$AtsNsAddressImpl implements _AtsNsAddress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsNsAddressImpl &&
@@ -3969,7 +3969,7 @@ class _$AtsNsLicenseImpl implements _AtsNsLicense {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsNsLicenseImpl &&
@@ -4482,7 +4482,7 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsTransportInformationImpl &&
@@ -4762,7 +4762,7 @@ class _$AtsCommandResultImpl implements _AtsCommandResult {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsCommandResultImpl &&
@@ -5003,7 +5003,7 @@ class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsCompanyInformationImpl &&
@@ -5308,7 +5308,7 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsProductInformationImpl &&
@@ -5472,6 +5472,10 @@ mixin _$AtsPurchaseOrder {
   /// Ide information
   AtsIdeInformation? get ideInformation => throw _privateConstructorUsedError;
 
+  /// Purchase order operation
+  @PurchaseOrderOperationOrNullConverter()
+  PurchaseOrderOperation? get operation => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AtsPurchaseOrderCopyWith<AtsPurchaseOrder> get copyWith =>
@@ -5504,7 +5508,9 @@ abstract class $AtsPurchaseOrderCopyWith<$Res> {
       bool? hasRawXml,
       String? invoiceType,
       AtsPurchaseOrder? parentInvoice,
-      AtsIdeInformation? ideInformation});
+      AtsIdeInformation? ideInformation,
+      @PurchaseOrderOperationOrNullConverter()
+      PurchaseOrderOperation? operation});
 
   $AssetCopyWith<$Res>? get asset;
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
@@ -5548,6 +5554,7 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     Object? invoiceType = freezed,
     Object? parentInvoice = freezed,
     Object? ideInformation = freezed,
+    Object? operation = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -5630,6 +5637,10 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
           ? _value.ideInformation
           : ideInformation // ignore: cast_nullable_to_non_nullable
               as AtsIdeInformation?,
+      operation: freezed == operation
+          ? _value.operation
+          : operation // ignore: cast_nullable_to_non_nullable
+              as PurchaseOrderOperation?,
     ) as $Val);
   }
 
@@ -5749,7 +5760,9 @@ abstract class _$$AtsPurchaseOrderImplCopyWith<$Res>
       bool? hasRawXml,
       String? invoiceType,
       AtsPurchaseOrder? parentInvoice,
-      AtsIdeInformation? ideInformation});
+      AtsIdeInformation? ideInformation,
+      @PurchaseOrderOperationOrNullConverter()
+      PurchaseOrderOperation? operation});
 
   @override
   $AssetCopyWith<$Res>? get asset;
@@ -5798,6 +5811,7 @@ class __$$AtsPurchaseOrderImplCopyWithImpl<$Res>
     Object? invoiceType = freezed,
     Object? parentInvoice = freezed,
     Object? ideInformation = freezed,
+    Object? operation = freezed,
   }) {
     return _then(_$AtsPurchaseOrderImpl(
       id: freezed == id
@@ -5880,6 +5894,10 @@ class __$$AtsPurchaseOrderImplCopyWithImpl<$Res>
           ? _value.ideInformation
           : ideInformation // ignore: cast_nullable_to_non_nullable
               as AtsIdeInformation?,
+      operation: freezed == operation
+          ? _value.operation
+          : operation // ignore: cast_nullable_to_non_nullable
+              as PurchaseOrderOperation?,
     ));
   }
 }
@@ -5907,7 +5925,8 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
       this.hasRawXml,
       this.invoiceType,
       this.parentInvoice,
-      this.ideInformation})
+      this.ideInformation,
+      @PurchaseOrderOperationOrNullConverter() this.operation})
       : _productsInformation = productsInformation;
 
   factory _$AtsPurchaseOrderImpl.fromJson(Map<String, dynamic> json) =>
@@ -6005,13 +6024,18 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
   @override
   final AtsIdeInformation? ideInformation;
 
+  /// Purchase order operation
+  @override
+  @PurchaseOrderOperationOrNullConverter()
+  final PurchaseOrderOperation? operation;
+
   @override
   String toString() {
-    return 'AtsPurchaseOrder(id: $id, ownerId: $ownerId, orderId: $orderId, assetId: $assetId, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, receivedAt: $receivedAt, asset: $asset, sellerInformation: $sellerInformation, receiverInformation: $receiverInformation, productsInformation: $productsInformation, total: $total, isReceived: $isReceived, hasReception: $hasReception, transportInformation: $transportInformation, hasRawXml: $hasRawXml, invoiceType: $invoiceType, parentInvoice: $parentInvoice, ideInformation: $ideInformation)';
+    return 'AtsPurchaseOrder(id: $id, ownerId: $ownerId, orderId: $orderId, assetId: $assetId, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, receivedAt: $receivedAt, asset: $asset, sellerInformation: $sellerInformation, receiverInformation: $receiverInformation, productsInformation: $productsInformation, total: $total, isReceived: $isReceived, hasReception: $hasReception, transportInformation: $transportInformation, hasRawXml: $hasRawXml, invoiceType: $invoiceType, parentInvoice: $parentInvoice, ideInformation: $ideInformation, operation: $operation)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPurchaseOrderImpl &&
@@ -6048,7 +6072,9 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
             (identical(other.parentInvoice, parentInvoice) ||
                 other.parentInvoice == parentInvoice) &&
             (identical(other.ideInformation, ideInformation) ||
-                other.ideInformation == ideInformation));
+                other.ideInformation == ideInformation) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation));
   }
 
   @JsonKey(ignore: true)
@@ -6074,7 +6100,8 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
         hasRawXml,
         invoiceType,
         parentInvoice,
-        ideInformation
+        ideInformation,
+        operation
       ]);
 
   @JsonKey(ignore: true)
@@ -6113,7 +6140,9 @@ abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
       final bool? hasRawXml,
       final String? invoiceType,
       final AtsPurchaseOrder? parentInvoice,
-      final AtsIdeInformation? ideInformation}) = _$AtsPurchaseOrderImpl;
+      final AtsIdeInformation? ideInformation,
+      @PurchaseOrderOperationOrNullConverter()
+      final PurchaseOrderOperation? operation}) = _$AtsPurchaseOrderImpl;
 
   factory _AtsPurchaseOrder.fromJson(Map<String, dynamic> json) =
       _$AtsPurchaseOrderImpl.fromJson;
@@ -6200,6 +6229,11 @@ abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
 
   /// Ide information
   AtsIdeInformation? get ideInformation;
+  @override
+
+  /// Purchase order operation
+  @PurchaseOrderOperationOrNullConverter()
+  PurchaseOrderOperation? get operation;
   @override
   @JsonKey(ignore: true)
   _$$AtsPurchaseOrderImplCopyWith<_$AtsPurchaseOrderImpl> get copyWith =>
@@ -6488,7 +6522,7 @@ class _$AtsPurchaseTotalImpl implements _AtsPurchaseTotal {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPurchaseTotalImpl &&
@@ -6879,7 +6913,7 @@ class _$AtsReceptionImpl implements _AtsReception {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsReceptionImpl &&
@@ -7333,7 +7367,7 @@ class _$AtsIdeInformationImpl implements _AtsIdeInformation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsIdeInformationImpl &&
@@ -7519,7 +7553,7 @@ class _$AtsExitStatusImpl implements _AtsExitStatus {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExitStatusImpl &&
@@ -8065,7 +8099,7 @@ class _$AtsExitImpl implements _AtsExit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExitImpl &&
@@ -8645,7 +8679,7 @@ class _$AtsPossibleExitImpl implements _AtsPossibleExit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPossibleExitImpl &&
@@ -9313,7 +9347,7 @@ class _$AtsExecuteExitHistoryImpl implements _AtsExecuteExitHistory {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExecuteExitHistoryImpl &&

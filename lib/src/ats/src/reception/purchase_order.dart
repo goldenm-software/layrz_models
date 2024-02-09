@@ -1,5 +1,57 @@
 part of '../../ats.dart';
 
+enum PurchaseOrderOperation {
+  purchase,
+  seller,
+  ;
+
+  String toJson() {
+    switch (this) {
+      case PurchaseOrderOperation.purchase:
+        return 'PURCHASE';
+      case PurchaseOrderOperation.seller:
+        return 'SELLER';
+    }
+  }
+
+  static PurchaseOrderOperation fromJson(String value) {
+    switch (value) {
+      case 'PURCHASE':
+        return PurchaseOrderOperation.purchase;
+      case 'SELLER':
+        return PurchaseOrderOperation.seller;
+      default:
+        throw Exception('Unknown PurchaseOrderOperation value: $value');
+    }
+  }
+}
+
+class PurchaseOrderOperationConverter implements JsonConverter<PurchaseOrderOperation, String> {
+  const PurchaseOrderOperationConverter();
+
+  @override
+  PurchaseOrderOperation fromJson(String json) => PurchaseOrderOperation.fromJson(json);
+
+  @override
+  String toJson(PurchaseOrderOperation object) => object.toJson();
+}
+
+class PurchaseOrderOperationOrNullConverter implements JsonConverter<PurchaseOrderOperation?, String?> {
+  const PurchaseOrderOperationOrNullConverter();
+
+  @override
+  PurchaseOrderOperation? fromJson(String? json) {
+    if (json == null) return null;
+    return PurchaseOrderOperation.fromJson(json);
+  }
+
+  @override
+  String? toJson(PurchaseOrderOperation? object) {
+    if (object == null) return null;
+    return object.toJson();
+  }
+}
+
 @freezed
 class AtsPurchaseOrder with _$AtsPurchaseOrder {
   factory AtsPurchaseOrder({
@@ -62,6 +114,9 @@ class AtsPurchaseOrder with _$AtsPurchaseOrder {
 
     /// Ide information
     AtsIdeInformation? ideInformation,
+
+    /// Purchase order operation
+    @PurchaseOrderOperationOrNullConverter() PurchaseOrderOperation? operation,
   }) = _AtsPurchaseOrder;
 
   /// from json factory

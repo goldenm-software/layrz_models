@@ -140,7 +140,7 @@ class _$ReportPreviewImpl implements _ReportPreview {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportPreviewImpl &&
@@ -343,7 +343,7 @@ class _$ReportPageImpl implements _ReportPage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportPageImpl &&
@@ -527,7 +527,7 @@ class _$ReportRowImpl implements _ReportRow {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportRowImpl &&
@@ -721,7 +721,7 @@ class _$ReportHeaderImpl implements _ReportHeader {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportHeaderImpl &&
@@ -966,7 +966,7 @@ class _$ReportCellImpl implements _ReportCell {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ReportCellImpl &&

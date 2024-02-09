@@ -499,6 +499,8 @@ _$AtsPurchaseOrderImpl _$$AtsPurchaseOrderImplFromJson(
           ? null
           : AtsIdeInformation.fromJson(
               json['ideInformation'] as Map<String, dynamic>),
+      operation: const PurchaseOrderOperationOrNullConverter()
+          .fromJson(json['operation'] as String?),
     );
 
 Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
@@ -527,6 +529,8 @@ Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
       'invoiceType': instance.invoiceType,
       'parentInvoice': instance.parentInvoice?.toJson(),
       'ideInformation': instance.ideInformation?.toJson(),
+      'operation': const PurchaseOrderOperationOrNullConverter()
+          .toJson(instance.operation),
     };
 
 _$AtsPurchaseTotalImpl _$$AtsPurchaseTotalImplFromJson(

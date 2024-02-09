@@ -187,7 +187,7 @@ class _$AvailableLanguageImpl extends _AvailableLanguage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AvailableLanguageImpl &&

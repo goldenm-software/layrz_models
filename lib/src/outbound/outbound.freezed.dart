@@ -276,7 +276,7 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutboundProtocolImpl &&
@@ -799,7 +799,7 @@ class _$OutboundServiceImpl implements _OutboundService {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutboundServiceImpl &&
@@ -1059,7 +1059,7 @@ class _$OutboundStructureImpl implements _OutboundStructure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutboundStructureImpl &&

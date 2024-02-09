@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.2
+
+- Added `PurchaseOrderOperation` to `AtsPurchaseOrder` model
+
 ## 2.1.1
 
 - Added `mappitRoutes` and `mappitRoutesIds` to `Tag` model
