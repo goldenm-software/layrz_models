@@ -3,11 +3,14 @@ part of '../layrz_models.dart';
 @freezed
 class Sensor with _$Sensor {
   const factory Sensor({
+    /// [id] of the sensor. Must be unique along of all sensors of the asset.
     required String id,
+
+    /// [name] of the sensor. Must be unique along of all sensors of the asset.
     required String name,
 
     /// [iterationCycle] of the sensor. Only will accept positive values
-    required int iterationCycle,
+    int? iterationCycle,
 
     /// [slug] of the sensor. Must be unique along of all sensors of the asset.
     required String slug,
@@ -15,7 +18,7 @@ class Sensor with _$Sensor {
     /// [isInstant] is a boolean to indicate if the sensor is an instant sensor. Means what the sensor execution
     /// returns [null], if it's [true], the sensor is will "disappear" from the calculated sensors, otherwise it will be
     /// take the previous value of the sensor.
-    required bool isInstant,
+    bool? isInstant,
 
     /// [icon] of the sensor. To send it to API, will convert to javascript codename, but from Flutter execution
     /// will convert to IconData entity.
@@ -33,7 +36,11 @@ class Sensor with _$Sensor {
     /// [parameter] of the sensor.
     String? parameter,
     List<String>? externalIdentifiers,
+
+    /// [formula] is the LCL formula to execute.
     String? formula,
+
+    /// [script] is the script to execute.
     String? script,
 
     /// Only for [SensorType.unpack] and [SensorSubType.csv], [hasHeaders], [csvHeaders] and [csvSeparator] means the configuration
@@ -85,6 +92,22 @@ class Sensor with _$Sensor {
 
     /// [qrCode] is a string to indicate the QR code URI of the sensor.
     String? qrCode,
+
+    /// [assignedAssetsIds] is the list of assets ids assigned to this sensor.
+    List<String>? assignedAssetsIds,
+
+    /// [assignedAssets] is the list of assets assigned to this sensor.
+    List<Asset>? assignedAssets,
+
+    /// [isTemplate] is a boolean to indicate if the sensor is a template.
+    /// So, this sensor was created from the Golden M, and their authorized you to use it.
+    bool? isTemplate,
+
+    /// [isGlobal] defines if the sensor is global or not.
+    @Default(false) bool isGlobal,
+
+    /// Is the list of granted access
+    List<Access>? access,
   }) = _Sensor;
 
   factory Sensor.fromJson(Map<String, dynamic> json) => _$SensorFromJson(json);
@@ -101,6 +124,10 @@ class MaskPoint with _$MaskPoint {
 
     /// [value] of the mask point.
     required String value,
+
+    /// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
+    /// will convert to IconData entity.
+    @IconOrNullConverter() IconData? icon,
   }) = _MaskPoint;
 
   factory MaskPoint.fromJson(Map<String, dynamic> json) => _$MaskPointFromJson(json);
@@ -275,8 +302,6 @@ enum SensorSubType {
         return 'BASE64';
       case SensorSubType.python:
         return 'PYTHON';
-      // case SensorSubType.v8:
-      //   return 'V8';
       case SensorSubType.unused:
         return 'UNUSED';
       default:
@@ -310,8 +335,6 @@ enum SensorSubType {
         return SensorSubType.base64;
       case 'PYTHON':
         return SensorSubType.python;
-      // case 'V8':
-      //   return SensorSubType.v8;
       case 'UNUSED':
         return SensorSubType.unused;
       default:

@@ -1,65 +1,15 @@
-part of '../../layrz_models.dart';
+library i18n;
 
-///
-/// Fields:
-///
-/// id
-/// name
-/// code
-/// fallback
-/// isVerified
-/// messages
-@freezed
-class AvailableLanguage with _$AvailableLanguage {
-  AvailableLanguage._();
+import 'dart:convert';
 
-  factory AvailableLanguage({
-    String? id,
-    String? name,
-    String? code,
-    String? fallback,
-    bool? isVerified,
-    Map<String, String>? messages,
-  }) = _AvailableLanguage;
+import 'package:flutter/widgets.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  Locale getLocale() {
-    if (code == null) return const Locale('en');
-    if (!code!.contains('-')) {
-      return Locale(code!);
-    }
-    List<String> codes = code!.split('-');
-    return Locale(codes.first, codes.last);
-  }
+// Freezed
+part 'i18n.freezed.dart';
+part 'i18n.g.dart';
 
-  /// from json freezed
-  factory AvailableLanguage.fromJson(Map<String, dynamic> json) => _$AvailableLanguageFromJson(json);
-}
-
-/// Language instance without the messages
-class SavedLanguage {
-  final String? id;
-  final String? code;
-  final String? name;
-  final bool? isVerified;
-
-  SavedLanguage({
-    required this.code,
-    required this.name,
-    required this.id,
-    required this.isVerified,
-  });
-
-  Locale getLocale() {
-    if (code == null) return const Locale('en');
-    if (!code!.contains('-')) {
-      return Locale(code!);
-    }
-    List<String> codes = code!.split('-');
-    return Locale(codes.first, codes.last);
-  }
-
-  @override
-  String toString() {
-    return 'SavedLanguages{id: $id, code: $code, name: $name, isVerified: $isVerified}';
-  }
-}
+// Modules
+part 'src/available_language.dart';
+part 'src/saved_language.dart';
+part 'src/delegate.dart';

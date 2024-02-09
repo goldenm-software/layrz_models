@@ -31,3 +31,5 @@ build/
 .metadata
 
 credentials.json
+
+.env

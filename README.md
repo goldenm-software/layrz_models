@@ -14,5 +14,7 @@ For more information, contact us at [sales@goldenm.com](mailto:sales@goldenm.com
 ## License
 This project is under MIT License, for more information, check out the `LICENCE`
 
-## Comand to execute Freeze
-dart run build_runner build --delete-conflicting-outputs
+## How to run the tests using GraphQL tests
+```bash
+flutter test --dart-define=GRAPHQL_URI={layrz_api_endpoint} --dart-define=USERNAME={username} --dart-define=PASSWORD={password}
+```

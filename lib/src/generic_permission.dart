@@ -29,6 +29,7 @@ class GenericPermission with _$GenericPermission {
     GenericPermissionItem? billing,
     GenericPermissionItem? cycles,
     GenericPermissionItem? shortcuts,
+    GenericPermissionItem? layers,
   }) = _GenericPermission;
 
   factory GenericPermission.fromJson(Map<String, dynamic> json) => _$GenericPermissionFromJson(json);

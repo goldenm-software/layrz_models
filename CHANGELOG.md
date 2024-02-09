@@ -1,6 +1,66 @@
 # Changelog
 
+## 2.1.2
+
+- Added `PurchaseOrderOperation` to `AtsPurchaseOrder` model
+
+## 2.1.1
+
+- Added `mappitRoutes` and `mappitRoutesIds` to `Tag` model
+
+## 2.1.0
+
+- Now, `LayrzAppLocalizations.of(context)` returns `LayrzAppLocalizations` instead of `LayrzAppLocalizations?`
+- New `LayrzAppLocalizations.maybeOf(context)` that returns `LayrzAppLocalizations?`, replacement of the previous behavior of `LayrzAppLocalizations.of(context)`
+
+## 2.0.63
+
+- Reorganized models to work with submodules
+- Defined `AppFont` to handle different fonts in the app
+
+## 2.0.62
+
+- Added `globalSensors` to `Asset` model
+
+## 2.0.61
+
+- Updated `Sensor` model to support global sensors
+
+## 2.0.60
+
+- Redefined `LintError`
+
+## 2.0.59
+
+- Added `authorizedLayers` in `RegisteredApp` model
+
+## 2.0.58
+
+- Added `appsIds` to `MapLayer`
+
+## 2.0.57
+
+- Registered new permission to handle `layers` CRUD operations on `Employee` and their `Department`.
+
+## 2.0.56
+
+- Inclues changes defined in `2.0.56-preview1`
+
+## 2.0.56-preview1
+
+- Redesigned `MapLayer` model to support new sources.
+- Removed support of vector tiles on `MapLayer` model.
+- Removed `MapLayer` list in `RegisteredApp` model in favor global source support (App-less schema).
+
+## 2.0.55
+
+- Added `parameters` on `Asset` model
+- Added `FIXED` as a new `AssetMode` enum (Previously was `FIXED`)
+- Deprecated `FAILOVER` on `AssetMode` enum
+- New entity `StaticPosition` to represent the static position of an `Asset`
+
 ## 2.0.54
+
 - rebuild `AtsExit` with news props
 
 ## 2.0.53

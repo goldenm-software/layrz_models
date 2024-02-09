@@ -1,81 +1,5 @@
 part of '../layrz_models.dart';
 
-enum AssetMode {
-  single,
-  multiple,
-  failover,
-  fixed,
-  assetmultiple,
-  disconnected;
-
-  @override
-  String toString() => name.toUpperCase();
-  String toJson() {
-    switch (this) {
-      case AssetMode.single:
-        return 'SINGLE';
-      case AssetMode.multiple:
-        return 'MULTIPLE';
-      case AssetMode.failover:
-        return 'FAILOVER';
-      case AssetMode.fixed:
-        return 'FIXED';
-      case AssetMode.assetmultiple:
-        return 'ASSETMULTIPLE';
-      case AssetMode.disconnected:
-        return 'DISCONNECTED';
-      default:
-        throw Exception('Unknown AssetMode');
-    }
-  }
-
-  static AssetMode fromJson(String json) {
-    switch (json) {
-      case 'SINGLE':
-        return AssetMode.single;
-      case 'MULTIPLE':
-        return AssetMode.multiple;
-      case 'FAILOVER':
-        return AssetMode.failover;
-      case 'FIXED':
-        return AssetMode.fixed;
-      case 'ASSETMULTIPLE':
-        return AssetMode.assetmultiple;
-      case 'DISCONNECTED':
-        return AssetMode.disconnected;
-      default:
-        throw Exception('Unknown AssetMode');
-    }
-  }
-}
-
-@freezed
-class ContactInfo with _$ContactInfo {
-  const factory ContactInfo({
-    @Default('') String name,
-    @Default('') String email,
-    @Default('') String phone,
-  }) = _ContactInfo;
-
-  factory ContactInfo.fromJson(Map<String, dynamic> json) => _$ContactInfoFromJson(json);
-}
-
-@freezed
-class AssetLoginInfo with _$AssetLoginInfo {
-  const factory AssetLoginInfo({
-    /// [enabled] is the login status of the asset.
-    required bool enabled,
-
-    /// [email] is the login email of the asset.
-    String? email,
-
-    /// [username] is the login username of the asset.
-    String? username,
-  }) = _AssetLoginInfo;
-
-  factory AssetLoginInfo.fromJson(Map<String, dynamic> json) => _$AssetLoginInfoFromJson(json);
-}
-
 @freezed
 class Asset with _$Asset {
   const factory Asset({
@@ -106,9 +30,6 @@ class Asset with _$Asset {
 
     /// Is the list of device [commands] available for this asset.
     List<DeviceCommand>? commands,
-
-    /// Is the list of available [parameters] for this asset.
-    List<String?>? parameters,
 
     /// Is the list of [references] ids associated to the asset
     List<String>? referencesIds,
@@ -147,12 +68,6 @@ class Asset with _$Asset {
 
     /// [primary] is the primary device.
     Device? primary,
-
-    /// [secondaryId] is the secondary device id.
-    String? secondaryId,
-
-    /// [secondary] is the secondary device.
-    Device? secondary,
 
     /// [devicesIds] is the list of devices ids associated to the asset.
     List<String>? devicesIds,
@@ -218,10 +133,76 @@ class Asset with _$Asset {
     /// [linkedSupplyPointAssetsIds] refers to the list of supply points assets IDs linked to this asset.
     /// Only used in ATS apps.
     List<String>? linkedSupplyPointAssetsIds,
+
+    /// [staticPosition] refers to the static position of the asset.
+    /// Only used when mode is [AssetMode.fixed].
+    StaticPosition? staticPosition,
+
+    /// [parameters] refers to the list of parameters of the asset.
+    /// Is only a list of strings.
+    @Default([]) List<String> parameters,
+
+    /// [globalSensors] is the list of global sensors of the asset.
+    List<Sensor>? globalSensors,
   }) = _Asset;
 
-  // From json
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
+}
+
+enum AssetMode {
+  /// [AssetMode.single] is the default mode for an asset. It means that the asset is a single device.
+  /// Layrz API definition: SINGLE
+  single,
+
+  /// [AssetMode.multiple] means that the asset is a cluster of devices.
+  /// Layrz API definition: MULTIPLE
+  multiple,
+
+  /// [AssetMode.assetmultiple] means that the asset is a cluster of assets.
+  /// Layrz API definition: ASSETMULTIPLE
+  assetmultiple,
+
+  /// [AssetMode.disconnected] means that the asset is a disconnected device.
+  /// Layrz API definition: DISCONNECTED
+  disconnected,
+
+  /// [AssetMode.fixed] means that the asset is a static asset.
+  /// Layrz API definition: STATIC
+  fixed;
+
+  @override
+  String toString() => toJson();
+  String toJson() {
+    switch (this) {
+      case AssetMode.multiple:
+        return 'MULTIPLE';
+      case AssetMode.assetmultiple:
+        return 'ASSETMULTIPLE';
+      case AssetMode.disconnected:
+        return 'DISCONNECTED';
+      case AssetMode.fixed:
+        return 'STATIC';
+      case AssetMode.single:
+      default:
+        return 'SINGLE';
+    }
+  }
+
+  static AssetMode fromJson(String json) {
+    switch (json) {
+      case 'MULTIPLE':
+        return AssetMode.multiple;
+      case 'ASSETMULTIPLE':
+        return AssetMode.assetmultiple;
+      case 'DISCONNECTED':
+        return AssetMode.disconnected;
+      case 'STATIC':
+        return AssetMode.fixed;
+      case 'SINGLE':
+      default:
+        return AssetMode.single;
+    }
+  }
 }
 
 class AssetModeOrNullConverter implements JsonConverter<AssetMode?, String?> {
@@ -254,4 +235,47 @@ class AssetModeConverter implements JsonConverter<AssetMode, String> {
   String toJson(AssetMode object) {
     return object.toJson();
   }
+}
+
+@freezed
+class ContactInfo with _$ContactInfo {
+  const factory ContactInfo({
+    @Default('') String name,
+    @Default('') String email,
+    @Default('') String phone,
+  }) = _ContactInfo;
+
+  factory ContactInfo.fromJson(Map<String, dynamic> json) => _$ContactInfoFromJson(json);
+}
+
+@freezed
+class AssetLoginInfo with _$AssetLoginInfo {
+  const factory AssetLoginInfo({
+    /// [enabled] is the login status of the asset.
+    required bool enabled,
+
+    /// [email] is the login email of the asset.
+    String? email,
+
+    /// [username] is the login username of the asset.
+    String? username,
+  }) = _AssetLoginInfo;
+
+  factory AssetLoginInfo.fromJson(Map<String, dynamic> json) => _$AssetLoginInfoFromJson(json);
+}
+
+@freezed
+class StaticPosition with _$StaticPosition {
+  const factory StaticPosition({
+    /// [latitude] is the latitude of the asset.
+    double? latitude,
+
+    /// [longitude] is the longitude of the asset.
+    double? longitude,
+
+    /// [altitude] is the altitude of the asset.
+    double? altitude,
+  }) = _StaticPosition;
+
+  factory StaticPosition.fromJson(Map<String, dynamic> json) => _$StaticPositionFromJson(json);
 }
