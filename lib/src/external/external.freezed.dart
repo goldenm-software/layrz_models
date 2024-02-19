@@ -208,7 +208,7 @@ class _$ExternalSourceImpl implements _ExternalSource {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExternalSourceImpl &&
@@ -548,7 +548,7 @@ class _$ExternalAccountImpl implements _ExternalAccount {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExternalAccountImpl &&
@@ -792,7 +792,7 @@ class _$ExternalUnitImpl implements _ExternalUnit {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExternalUnitImpl &&
@@ -964,7 +964,7 @@ class _$ExternalResourceImpl implements _ExternalResource {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExternalResourceImpl &&
@@ -1130,7 +1130,7 @@ class _$ExternalGeofenceImpl implements _ExternalGeofence {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ExternalGeofenceImpl &&
