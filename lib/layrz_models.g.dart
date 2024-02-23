@@ -2547,7 +2547,7 @@ _$TriggerActivationImpl _$$TriggerActivationImplFromJson(
           ? null
           : TelemetryPosition.fromJson(
               json['position'] as Map<String, dynamic>),
-      date: const TimestampConverter().fromJson(json['date'] as num),
+      date: const TimestampConverter().fromJson(json['at'] as num),
     );
 
 Map<String, dynamic> _$$TriggerActivationImplToJson(
@@ -2557,7 +2557,7 @@ Map<String, dynamic> _$$TriggerActivationImplToJson(
       'asset': instance.asset.toJson(),
       'trigger': instance.trigger?.toJson(),
       'position': instance.position?.toJson(),
-      'date': const TimestampConverter().toJson(instance.date),
+      'at': const TimestampConverter().toJson(instance.date),
     };
 
 _$TriggerInputImpl _$$TriggerInputImplFromJson(Map<String, dynamic> json) =>

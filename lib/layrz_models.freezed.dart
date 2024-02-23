@@ -28557,19 +28557,20 @@ TriggerActivation _$TriggerActivationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TriggerActivation {
-  /// ID of the trigger activation entity. This ID is unique.
+  /// `id` of the trigger activation entity. This ID is unique.
   String get id => throw _privateConstructorUsedError;
 
-  /// Is the asset object
+  /// `asset` is the asset that activated the trigger.
   Asset get asset => throw _privateConstructorUsedError;
 
-  /// [trigger] represents the trigger object.
+  /// `trigger` is the trigger that was activated.
   Trigger? get trigger => throw _privateConstructorUsedError;
 
-  /// [position] represents the position object.
+  /// `position` is the position of the asset when the trigger was activated.
   TelemetryPosition? get position => throw _privateConstructorUsedError;
 
-  /// Is the date of the activation
+  /// `date` is the date when the trigger was activated.
+  @JsonKey(name: 'at')
   @TimestampConverter()
   DateTime get date => throw _privateConstructorUsedError;
 
@@ -28590,7 +28591,7 @@ abstract class $TriggerActivationCopyWith<$Res> {
       Asset asset,
       Trigger? trigger,
       TelemetryPosition? position,
-      @TimestampConverter() DateTime date});
+      @JsonKey(name: 'at') @TimestampConverter() DateTime date});
 
   $AssetCopyWith<$Res> get asset;
   $TriggerCopyWith<$Res>? get trigger;
@@ -28686,7 +28687,7 @@ abstract class _$$TriggerActivationImplCopyWith<$Res>
       Asset asset,
       Trigger? trigger,
       TelemetryPosition? position,
-      @TimestampConverter() DateTime date});
+      @JsonKey(name: 'at') @TimestampConverter() DateTime date});
 
   @override
   $AssetCopyWith<$Res> get asset;
@@ -28746,29 +28747,30 @@ class _$TriggerActivationImpl implements _TriggerActivation {
       required this.asset,
       this.trigger,
       this.position,
-      @TimestampConverter() required this.date});
+      @JsonKey(name: 'at') @TimestampConverter() required this.date});
 
   factory _$TriggerActivationImpl.fromJson(Map<String, dynamic> json) =>
       _$$TriggerActivationImplFromJson(json);
 
-  /// ID of the trigger activation entity. This ID is unique.
+  /// `id` of the trigger activation entity. This ID is unique.
   @override
   final String id;
 
-  /// Is the asset object
+  /// `asset` is the asset that activated the trigger.
   @override
   final Asset asset;
 
-  /// [trigger] represents the trigger object.
+  /// `trigger` is the trigger that was activated.
   @override
   final Trigger? trigger;
 
-  /// [position] represents the position object.
+  /// `position` is the position of the asset when the trigger was activated.
   @override
   final TelemetryPosition? position;
 
-  /// Is the date of the activation
+  /// `date` is the date when the trigger was activated.
   @override
+  @JsonKey(name: 'at')
   @TimestampConverter()
   final DateTime date;
 
@@ -28812,35 +28814,37 @@ class _$TriggerActivationImpl implements _TriggerActivation {
 
 abstract class _TriggerActivation implements TriggerActivation {
   const factory _TriggerActivation(
-          {required final String id,
-          required final Asset asset,
-          final Trigger? trigger,
-          final TelemetryPosition? position,
-          @TimestampConverter() required final DateTime date}) =
-      _$TriggerActivationImpl;
+      {required final String id,
+      required final Asset asset,
+      final Trigger? trigger,
+      final TelemetryPosition? position,
+      @JsonKey(name: 'at')
+      @TimestampConverter()
+      required final DateTime date}) = _$TriggerActivationImpl;
 
   factory _TriggerActivation.fromJson(Map<String, dynamic> json) =
       _$TriggerActivationImpl.fromJson;
 
   @override
 
-  /// ID of the trigger activation entity. This ID is unique.
+  /// `id` of the trigger activation entity. This ID is unique.
   String get id;
   @override
 
-  /// Is the asset object
+  /// `asset` is the asset that activated the trigger.
   Asset get asset;
   @override
 
-  /// [trigger] represents the trigger object.
+  /// `trigger` is the trigger that was activated.
   Trigger? get trigger;
   @override
 
-  /// [position] represents the position object.
+  /// `position` is the position of the asset when the trigger was activated.
   TelemetryPosition? get position;
   @override
 
-  /// Is the date of the activation
+  /// `date` is the date when the trigger was activated.
+  @JsonKey(name: 'at')
   @TimestampConverter()
   DateTime get date;
   @override

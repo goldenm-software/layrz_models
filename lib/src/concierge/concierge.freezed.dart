@@ -141,7 +141,7 @@ class _$ConciergeFormPageImpl implements _ConciergeFormPage {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormPageImpl &&
@@ -391,7 +391,7 @@ class _$ConciergeFormBlockImpl implements _ConciergeFormBlock {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormBlockImpl &&
@@ -674,7 +674,7 @@ class _$ConciergeFormBlockConfigurationImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormBlockConfigurationImpl &&
@@ -970,7 +970,7 @@ class _$ConciergeFormBlockValidatorImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormBlockValidatorImpl &&
