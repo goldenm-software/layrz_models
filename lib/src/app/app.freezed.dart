@@ -140,7 +140,7 @@ class _$AppAccessibilityImpl implements _AppAccessibility {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppAccessibilityImpl &&
@@ -644,7 +644,7 @@ class _$AvailableAppImpl implements _AvailableApp {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AvailableAppImpl &&
@@ -1322,7 +1322,7 @@ class _$RegisteredAppImpl implements _RegisteredApp {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisteredAppImpl &&
@@ -1585,7 +1585,7 @@ class _$AppThemedAssetImpl implements _AppThemedAsset {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppThemedAssetImpl &&
@@ -1766,7 +1766,7 @@ class _$AppBackgroundDesignImpl implements _AppBackgroundDesign {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppBackgroundDesignImpl &&
@@ -1999,7 +1999,7 @@ class _$AppBuildImpl implements _AppBuild {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppBuildImpl &&
@@ -2242,7 +2242,7 @@ class _$AppThemedColorsImpl implements _AppThemedColors {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppThemedColorsImpl &&
@@ -2666,7 +2666,7 @@ class _$AppDesignImpl implements _AppDesign {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppDesignImpl &&
@@ -2892,7 +2892,7 @@ class _$AppFooterImpl implements _AppFooter {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppFooterImpl &&
@@ -3327,7 +3327,7 @@ class _$AppInstanceImpl implements _AppInstance {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppInstanceImpl &&
@@ -3583,7 +3583,7 @@ class _$DnsConfigurationImpl implements _DnsConfiguration {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DnsConfigurationImpl &&
@@ -3756,7 +3756,7 @@ class _$AppLegalImpl implements _AppLegal {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppLegalImpl &&
@@ -3957,7 +3957,7 @@ class _$AppLoginDesignImpl implements _AppLoginDesign {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppLoginDesignImpl &&
@@ -4110,7 +4110,7 @@ class _$LegacyAppLoginDesignImpl implements _LegacyAppLoginDesign {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LegacyAppLoginDesignImpl &&
@@ -4253,7 +4253,7 @@ class _$AppTitleModeImpl implements _AppTitleMode {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppTitleModeImpl &&
@@ -4497,7 +4497,7 @@ class _$AppVersionImpl implements _AppVersion {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppVersionImpl &&
@@ -4716,7 +4716,7 @@ class _$AppFontImpl implements _AppFont {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppFontImpl &&

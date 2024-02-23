@@ -2008,6 +2008,8 @@ _$SensorImpl _$$SensorImplFromJson(Map<String, dynamic> json) => _$SensorImpl(
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
+      maxHistorySearch: const DurationOrNullConverter()
+          .fromJson(json['maxHistorySearch'] as num?),
     );
 
 Map<String, dynamic> _$$SensorImplToJson(_$SensorImpl instance) =>
@@ -2045,6 +2047,8 @@ Map<String, dynamic> _$$SensorImplToJson(_$SensorImpl instance) =>
       'isTemplate': instance.isTemplate,
       'isGlobal': instance.isGlobal,
       'access': instance.access?.map((e) => e.toJson()).toList(),
+      'maxHistorySearch':
+          const DurationOrNullConverter().toJson(instance.maxHistorySearch),
     };
 
 _$MaskPointImpl _$$MaskPointImplFromJson(Map<String, dynamic> json) =>
@@ -2543,7 +2547,7 @@ _$TriggerActivationImpl _$$TriggerActivationImplFromJson(
           ? null
           : TelemetryPosition.fromJson(
               json['position'] as Map<String, dynamic>),
-      date: const TimestampConverter().fromJson(json['date'] as num),
+      date: const TimestampConverter().fromJson(json['at'] as num),
     );
 
 Map<String, dynamic> _$$TriggerActivationImplToJson(
@@ -2553,7 +2557,7 @@ Map<String, dynamic> _$$TriggerActivationImplToJson(
       'asset': instance.asset.toJson(),
       'trigger': instance.trigger?.toJson(),
       'position': instance.position?.toJson(),
-      'date': const TimestampConverter().toJson(instance.date),
+      'at': const TimestampConverter().toJson(instance.date),
     };
 
 _$TriggerInputImpl _$$TriggerInputImplFromJson(Map<String, dynamic> json) =>

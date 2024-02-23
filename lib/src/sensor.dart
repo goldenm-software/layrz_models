@@ -108,6 +108,9 @@ class Sensor with _$Sensor {
 
     /// Is the list of granted access
     List<Access>? access,
+
+    /// [maxHistorySearch] defines the maximum search interval for the history of the sensor.
+    @DurationOrNullConverter() Duration? maxHistorySearch,
   }) = _Sensor;
 
   factory Sensor.fromJson(Map<String, dynamic> json) => _$SensorFromJson(json);
@@ -172,7 +175,11 @@ enum SensorType {
   lambda,
 
   /// [SensorType.script] is a sensor that will execute a script.
-  script;
+  script,
+
+  /// [SensorType.dyn] is a sensor that will execute a dynamic script.
+  dyn,
+  ;
 
   @override
   String toString() => toJson();
@@ -197,6 +204,8 @@ enum SensorType {
         return 'LAMBDA';
       case SensorType.script:
         return 'SCRIPT';
+      case SensorType.dyn:
+        return 'DYNAMIC';
       default:
         throw Exception('Unknown SensorType');
     }
@@ -222,6 +231,8 @@ enum SensorType {
         return SensorType.lambda;
       case 'SCRIPT':
         return SensorType.script;
+      case 'DYNAMIC':
+        return SensorType.dyn;
       default:
         throw Exception('Unknown SensorType: $json');
     }

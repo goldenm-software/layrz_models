@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.1.4
+- Add a JsonKey in `TriggerActivation` to find `date` how `at`
+
+## 2.1.3
+
+- Added `SensorType.dynamic` to `SensorType` enum
+- Added `maxHistorySearch` type `Duration` of `Sensor` model
+
 ## 2.1.2
 
 - Added `PurchaseOrderOperation` to `AtsPurchaseOrder` model

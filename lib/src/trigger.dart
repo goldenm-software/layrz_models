@@ -361,20 +361,21 @@ class Trigger with _$Trigger {
 @freezed
 class TriggerActivation with _$TriggerActivation {
   const factory TriggerActivation({
-    /// ID of the trigger activation entity. This ID is unique.
+    /// `id` of the trigger activation entity. This ID is unique.
     required String id,
 
-    /// Is the asset object
+    /// `asset` is the asset that activated the trigger.
     required Asset asset,
 
-    /// [trigger] represents the trigger object.
+    /// `trigger` is the trigger that was activated.
     Trigger? trigger,
 
-    /// [position] represents the position object.
+    /// `position` is the position of the asset when the trigger was activated.
     TelemetryPosition? position,
 
-    /// Is the date of the activation
-    @TimestampConverter() required DateTime date,
+    /// `date` is the date when the trigger was activated.
+  @JsonKey(name: 'at') @TimestampConverter() required DateTime date,
+
   }) = _TriggerActivation;
 
   factory TriggerActivation.fromJson(Map<String, dynamic> json) => _$TriggerActivationFromJson(json);
