@@ -1,6 +1,11 @@
 # Changelog
 
+## 2.1.5
+
+- Add `cfop` to `AtsProductInformation` model
+
 ## 2.1.4
+
 - Add a JsonKey in `TriggerActivation` to find `date` how `at`
 
 ## 2.1.3

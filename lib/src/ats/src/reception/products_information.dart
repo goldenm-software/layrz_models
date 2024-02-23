@@ -21,6 +21,9 @@ class AtsProductInformation with _$AtsProductInformation {
     /// Result of quantity + unit_value (From API)
     double? productValue,
 
+    /// cfop of the product.
+    String? cfop,
+
     /// Product sub category.
     Map<String, dynamic>? subcategory,
   }) = _AtsProductInformation;

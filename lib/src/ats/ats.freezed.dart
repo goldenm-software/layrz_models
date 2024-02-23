@@ -366,7 +366,7 @@ class _$AtsEntryImpl implements _AtsEntry {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsEntryImpl &&
@@ -689,7 +689,7 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsReceptionProductImpl &&
@@ -1457,7 +1457,7 @@ class _$AtsAuthenticationIdentifierImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsAuthenticationIdentifierImpl &&
@@ -1863,7 +1863,7 @@ class _$AtsAuthenticationCardImpl implements _AtsAuthenticationCard {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsAuthenticationCardImpl &&
@@ -2239,7 +2239,7 @@ class _$AtsHistoryAuthenticationCardImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsHistoryAuthenticationCardImpl &&
@@ -2581,7 +2581,7 @@ class _$AtsFeedbackMessegeImpl implements _AtsFeedbackMessege {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsFeedbackMessegeImpl &&
@@ -3110,7 +3110,7 @@ class _$AtsEventImpl implements _AtsEvent {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsEventImpl &&
@@ -3453,7 +3453,7 @@ class _$AtsNsAddressImpl implements _AtsNsAddress {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsNsAddressImpl &&
@@ -3969,7 +3969,7 @@ class _$AtsNsLicenseImpl implements _AtsNsLicense {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsNsLicenseImpl &&
@@ -4482,7 +4482,7 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsTransportInformationImpl &&
@@ -4762,7 +4762,7 @@ class _$AtsCommandResultImpl implements _AtsCommandResult {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsCommandResultImpl &&
@@ -5003,7 +5003,7 @@ class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsCompanyInformationImpl &&
@@ -5097,6 +5097,9 @@ mixin _$AtsProductInformation {
   /// Result of quantity + unit_value (From API)
   double? get productValue => throw _privateConstructorUsedError;
 
+  /// cfop of the product.
+  String? get cfop => throw _privateConstructorUsedError;
+
   /// Product sub category.
   Map<String, dynamic>? get subcategory => throw _privateConstructorUsedError;
 
@@ -5119,6 +5122,7 @@ abstract class $AtsProductInformationCopyWith<$Res> {
       double? quantity,
       double? unitValue,
       double? productValue,
+      String? cfop,
       Map<String, dynamic>? subcategory});
 }
 
@@ -5142,6 +5146,7 @@ class _$AtsProductInformationCopyWithImpl<$Res,
     Object? quantity = freezed,
     Object? unitValue = freezed,
     Object? productValue = freezed,
+    Object? cfop = freezed,
     Object? subcategory = freezed,
   }) {
     return _then(_value.copyWith(
@@ -5169,6 +5174,10 @@ class _$AtsProductInformationCopyWithImpl<$Res,
           ? _value.productValue
           : productValue // ignore: cast_nullable_to_non_nullable
               as double?,
+      cfop: freezed == cfop
+          ? _value.cfop
+          : cfop // ignore: cast_nullable_to_non_nullable
+              as String?,
       subcategory: freezed == subcategory
           ? _value.subcategory
           : subcategory // ignore: cast_nullable_to_non_nullable
@@ -5193,6 +5202,7 @@ abstract class _$$AtsProductInformationImplCopyWith<$Res>
       double? quantity,
       double? unitValue,
       double? productValue,
+      String? cfop,
       Map<String, dynamic>? subcategory});
 }
 
@@ -5214,6 +5224,7 @@ class __$$AtsProductInformationImplCopyWithImpl<$Res>
     Object? quantity = freezed,
     Object? unitValue = freezed,
     Object? productValue = freezed,
+    Object? cfop = freezed,
     Object? subcategory = freezed,
   }) {
     return _then(_$AtsProductInformationImpl(
@@ -5241,6 +5252,10 @@ class __$$AtsProductInformationImplCopyWithImpl<$Res>
           ? _value.productValue
           : productValue // ignore: cast_nullable_to_non_nullable
               as double?,
+      cfop: freezed == cfop
+          ? _value.cfop
+          : cfop // ignore: cast_nullable_to_non_nullable
+              as String?,
       subcategory: freezed == subcategory
           ? _value._subcategory
           : subcategory // ignore: cast_nullable_to_non_nullable
@@ -5259,6 +5274,7 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
       this.quantity,
       this.unitValue,
       this.productValue,
+      this.cfop,
       final Map<String, dynamic>? subcategory})
       : _subcategory = subcategory;
 
@@ -5289,6 +5305,10 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
   @override
   final double? productValue;
 
+  /// cfop of the product.
+  @override
+  final String? cfop;
+
   /// Product sub category.
   final Map<String, dynamic>? _subcategory;
 
@@ -5304,11 +5324,11 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
 
   @override
   String toString() {
-    return 'AtsProductInformation(ncm: $ncm, name: $name, measureUnit: $measureUnit, quantity: $quantity, unitValue: $unitValue, productValue: $productValue, subcategory: $subcategory)';
+    return 'AtsProductInformation(ncm: $ncm, name: $name, measureUnit: $measureUnit, quantity: $quantity, unitValue: $unitValue, productValue: $productValue, cfop: $cfop, subcategory: $subcategory)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsProductInformationImpl &&
@@ -5322,6 +5342,7 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
                 other.unitValue == unitValue) &&
             (identical(other.productValue, productValue) ||
                 other.productValue == productValue) &&
+            (identical(other.cfop, cfop) || other.cfop == cfop) &&
             const DeepCollectionEquality()
                 .equals(other._subcategory, _subcategory));
   }
@@ -5336,6 +5357,7 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
       quantity,
       unitValue,
       productValue,
+      cfop,
       const DeepCollectionEquality().hash(_subcategory));
 
   @JsonKey(ignore: true)
@@ -5361,6 +5383,7 @@ abstract class _AtsProductInformation implements AtsProductInformation {
       final double? quantity,
       final double? unitValue,
       final double? productValue,
+      final String? cfop,
       final Map<String, dynamic>? subcategory}) = _$AtsProductInformationImpl;
 
   factory _AtsProductInformation.fromJson(Map<String, dynamic> json) =
@@ -5390,6 +5413,10 @@ abstract class _AtsProductInformation implements AtsProductInformation {
 
   /// Result of quantity + unit_value (From API)
   double? get productValue;
+  @override
+
+  /// cfop of the product.
+  String? get cfop;
   @override
 
   /// Product sub category.
@@ -6035,7 +6062,7 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPurchaseOrderImpl &&
@@ -6522,7 +6549,7 @@ class _$AtsPurchaseTotalImpl implements _AtsPurchaseTotal {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPurchaseTotalImpl &&
@@ -6913,7 +6940,7 @@ class _$AtsReceptionImpl implements _AtsReception {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsReceptionImpl &&
@@ -7367,7 +7394,7 @@ class _$AtsIdeInformationImpl implements _AtsIdeInformation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsIdeInformationImpl &&
@@ -7553,7 +7580,7 @@ class _$AtsExitStatusImpl implements _AtsExitStatus {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExitStatusImpl &&
@@ -8099,7 +8126,7 @@ class _$AtsExitImpl implements _AtsExit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExitImpl &&
@@ -8679,7 +8706,7 @@ class _$AtsPossibleExitImpl implements _AtsPossibleExit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPossibleExitImpl &&
@@ -9347,7 +9374,7 @@ class _$AtsExecuteExitHistoryImpl implements _AtsExecuteExitHistory {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExecuteExitHistoryImpl &&

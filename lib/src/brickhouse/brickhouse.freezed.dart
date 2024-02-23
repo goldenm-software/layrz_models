@@ -660,7 +660,7 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BrickhouseAlertImpl &&
@@ -2017,7 +2017,7 @@ class _$BrickHouseWorkspaceInputImpl implements _BrickHouseWorkspaceInput {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BrickHouseWorkspaceInputImpl &&
