@@ -437,6 +437,7 @@ _$AtsProductInformationImpl _$$AtsProductInformationImplFromJson(
       quantity: (json['quantity'] as num?)?.toDouble(),
       unitValue: (json['unitValue'] as num?)?.toDouble(),
       productValue: (json['productValue'] as num?)?.toDouble(),
+      cfop: json['cfop'] as String?,
       subcategory: json['subcategory'] as Map<String, dynamic>?,
     );
 
@@ -449,6 +450,7 @@ Map<String, dynamic> _$$AtsProductInformationImplToJson(
       'quantity': instance.quantity,
       'unitValue': instance.unitValue,
       'productValue': instance.productValue,
+      'cfop': instance.cfop,
       'subcategory': instance.subcategory,
     };
 
