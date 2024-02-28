@@ -5499,6 +5499,10 @@ mixin _$AtsPurchaseOrder {
   /// Ide information
   AtsIdeInformation? get ideInformation => throw _privateConstructorUsedError;
 
+  /// Unix of reception at.
+  @TimestampOrNullConverter()
+  DateTime? get receptionAt => throw _privateConstructorUsedError;
+
   /// Purchase order operation
   @PurchaseOrderOperationOrNullConverter()
   PurchaseOrderOperation? get operation => throw _privateConstructorUsedError;
@@ -5536,6 +5540,7 @@ abstract class $AtsPurchaseOrderCopyWith<$Res> {
       String? invoiceType,
       AtsPurchaseOrder? parentInvoice,
       AtsIdeInformation? ideInformation,
+      @TimestampOrNullConverter() DateTime? receptionAt,
       @PurchaseOrderOperationOrNullConverter()
       PurchaseOrderOperation? operation});
 
@@ -5581,6 +5586,7 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     Object? invoiceType = freezed,
     Object? parentInvoice = freezed,
     Object? ideInformation = freezed,
+    Object? receptionAt = freezed,
     Object? operation = freezed,
   }) {
     return _then(_value.copyWith(
@@ -5664,6 +5670,10 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
           ? _value.ideInformation
           : ideInformation // ignore: cast_nullable_to_non_nullable
               as AtsIdeInformation?,
+      receptionAt: freezed == receptionAt
+          ? _value.receptionAt
+          : receptionAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       operation: freezed == operation
           ? _value.operation
           : operation // ignore: cast_nullable_to_non_nullable
@@ -5788,6 +5798,7 @@ abstract class _$$AtsPurchaseOrderImplCopyWith<$Res>
       String? invoiceType,
       AtsPurchaseOrder? parentInvoice,
       AtsIdeInformation? ideInformation,
+      @TimestampOrNullConverter() DateTime? receptionAt,
       @PurchaseOrderOperationOrNullConverter()
       PurchaseOrderOperation? operation});
 
@@ -5838,6 +5849,7 @@ class __$$AtsPurchaseOrderImplCopyWithImpl<$Res>
     Object? invoiceType = freezed,
     Object? parentInvoice = freezed,
     Object? ideInformation = freezed,
+    Object? receptionAt = freezed,
     Object? operation = freezed,
   }) {
     return _then(_$AtsPurchaseOrderImpl(
@@ -5921,6 +5933,10 @@ class __$$AtsPurchaseOrderImplCopyWithImpl<$Res>
           ? _value.ideInformation
           : ideInformation // ignore: cast_nullable_to_non_nullable
               as AtsIdeInformation?,
+      receptionAt: freezed == receptionAt
+          ? _value.receptionAt
+          : receptionAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
       operation: freezed == operation
           ? _value.operation
           : operation // ignore: cast_nullable_to_non_nullable
@@ -5953,6 +5969,7 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
       this.invoiceType,
       this.parentInvoice,
       this.ideInformation,
+      @TimestampOrNullConverter() this.receptionAt,
       @PurchaseOrderOperationOrNullConverter() this.operation})
       : _productsInformation = productsInformation;
 
@@ -6051,6 +6068,11 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
   @override
   final AtsIdeInformation? ideInformation;
 
+  /// Unix of reception at.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? receptionAt;
+
   /// Purchase order operation
   @override
   @PurchaseOrderOperationOrNullConverter()
@@ -6058,7 +6080,7 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
 
   @override
   String toString() {
-    return 'AtsPurchaseOrder(id: $id, ownerId: $ownerId, orderId: $orderId, assetId: $assetId, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, receivedAt: $receivedAt, asset: $asset, sellerInformation: $sellerInformation, receiverInformation: $receiverInformation, productsInformation: $productsInformation, total: $total, isReceived: $isReceived, hasReception: $hasReception, transportInformation: $transportInformation, hasRawXml: $hasRawXml, invoiceType: $invoiceType, parentInvoice: $parentInvoice, ideInformation: $ideInformation, operation: $operation)';
+    return 'AtsPurchaseOrder(id: $id, ownerId: $ownerId, orderId: $orderId, assetId: $assetId, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, receivedAt: $receivedAt, asset: $asset, sellerInformation: $sellerInformation, receiverInformation: $receiverInformation, productsInformation: $productsInformation, total: $total, isReceived: $isReceived, hasReception: $hasReception, transportInformation: $transportInformation, hasRawXml: $hasRawXml, invoiceType: $invoiceType, parentInvoice: $parentInvoice, ideInformation: $ideInformation, receptionAt: $receptionAt, operation: $operation)';
   }
 
   @override
@@ -6100,6 +6122,8 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
                 other.parentInvoice == parentInvoice) &&
             (identical(other.ideInformation, ideInformation) ||
                 other.ideInformation == ideInformation) &&
+            (identical(other.receptionAt, receptionAt) ||
+                other.receptionAt == receptionAt) &&
             (identical(other.operation, operation) ||
                 other.operation == operation));
   }
@@ -6128,6 +6152,7 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
         invoiceType,
         parentInvoice,
         ideInformation,
+        receptionAt,
         operation
       ]);
 
@@ -6168,6 +6193,7 @@ abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
       final String? invoiceType,
       final AtsPurchaseOrder? parentInvoice,
       final AtsIdeInformation? ideInformation,
+      @TimestampOrNullConverter() final DateTime? receptionAt,
       @PurchaseOrderOperationOrNullConverter()
       final PurchaseOrderOperation? operation}) = _$AtsPurchaseOrderImpl;
 
@@ -6256,6 +6282,11 @@ abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
 
   /// Ide information
   AtsIdeInformation? get ideInformation;
+  @override
+
+  /// Unix of reception at.
+  @TimestampOrNullConverter()
+  DateTime? get receptionAt;
   @override
 
   /// Purchase order operation

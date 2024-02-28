@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.6
+
+- Add `receptionAt` to `AtsPurchaseOrder` model
+
 ## 2.1.5
 
 - Add `cfop` to `AtsProductInformation` model
