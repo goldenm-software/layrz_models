@@ -115,6 +115,9 @@ class AtsPurchaseOrder with _$AtsPurchaseOrder {
     /// Ide information
     AtsIdeInformation? ideInformation,
 
+    /// Unix of reception at.
+    @TimestampOrNullConverter() DateTime? receptionAt,
+
     /// Purchase order operation
     @PurchaseOrderOperationOrNullConverter() PurchaseOrderOperation? operation,
   }) = _AtsPurchaseOrder;
