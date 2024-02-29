@@ -144,6 +144,12 @@ class Asset with _$Asset {
 
     /// [globalSensors] is the list of global sensors of the asset.
     List<Sensor>? globalSensors,
+
+    /// [mappitLaborStartTime] is the time of the labor start time.
+    @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,
+
+    /// [mappitLaborEndTime] is the time of the labor end time.
+    @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
   }) = _Asset;
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);

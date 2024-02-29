@@ -231,7 +231,7 @@ class _$MappitRouteLinkingHistoryImpl implements _MappitRouteLinkingHistory {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitRouteLinkingHistoryImpl &&
@@ -632,7 +632,7 @@ class _$MappitRouteImpl implements _MappitRoute {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitRouteImpl &&
@@ -927,7 +927,7 @@ class _$MappitLaborHourImpl implements _MappitLaborHour {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitLaborHourImpl &&
@@ -1168,7 +1168,7 @@ class _$MappitProfileGeofenceImpl implements _MappitProfileGeofence {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitProfileGeofenceImpl &&
@@ -1373,7 +1373,7 @@ class _$MappitProfileImpl implements _MappitProfile {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitProfileImpl &&
@@ -1581,7 +1581,7 @@ class _$MappitDurationRangeImpl implements _MappitDurationRange {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitDurationRangeImpl &&
@@ -1778,7 +1778,7 @@ class _$MappitIntRangeImpl implements _MappitIntRange {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitIntRangeImpl &&
@@ -1973,7 +1973,7 @@ class _$MappitDoubleRangeImpl implements _MappitDoubleRange {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitDoubleRangeImpl &&
@@ -2232,7 +2232,7 @@ class _$MappitHomeConfigImpl implements _MappitHomeConfig {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitHomeConfigImpl &&
@@ -2506,7 +2506,7 @@ class _$MappitFreeDayImpl implements _MappitFreeDay {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitFreeDayImpl &&
