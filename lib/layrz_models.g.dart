@@ -380,6 +380,10 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
       globalSensors: (json['globalSensors'] as List<dynamic>?)
           ?.map((e) => Sensor.fromJson(e as Map<String, dynamic>))
           .toList(),
+      mappitLaborStartTime: const TimeOfDayOrNullConverter()
+          .fromJson(json['mappitLaborStartTime'] as String?),
+      mappitLaborEndTime: const TimeOfDayOrNullConverter()
+          .fromJson(json['mappitLaborEndTime'] as String?),
     );
 
 Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
@@ -431,6 +435,10 @@ Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
       'staticPosition': instance.staticPosition?.toJson(),
       'parameters': instance.parameters,
       'globalSensors': instance.globalSensors?.map((e) => e.toJson()).toList(),
+      'mappitLaborStartTime': const TimeOfDayOrNullConverter()
+          .toJson(instance.mappitLaborStartTime),
+      'mappitLaborEndTime':
+          const TimeOfDayOrNullConverter().toJson(instance.mappitLaborEndTime),
     };
 
 _$ContactInfoImpl _$$ContactInfoImplFromJson(Map<String, dynamic> json) =>

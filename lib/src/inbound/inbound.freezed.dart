@@ -124,7 +124,7 @@ class _$RealtimeEndpointImpl implements _RealtimeEndpoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RealtimeEndpointImpl &&
@@ -321,7 +321,7 @@ class _$RealtimeVariantEndpointImpl implements _RealtimeVariantEndpoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RealtimeVariantEndpointImpl &&
@@ -1050,7 +1050,7 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundProtocolImpl &&
@@ -1637,7 +1637,7 @@ class _$InboundServiceImpl implements _InboundService {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundServiceImpl &&
@@ -1928,7 +1928,7 @@ class _$InboundStructureImpl implements _InboundStructure {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundStructureImpl &&
@@ -2187,7 +2187,7 @@ class _$InboundPositionStructureImpl implements _InboundPositionStructure {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundPositionStructureImpl &&
@@ -2383,7 +2383,7 @@ class _$InboundPayloadStructureImpl implements _InboundPayloadStructure {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundPayloadStructureImpl &&

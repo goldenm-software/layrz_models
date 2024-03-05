@@ -208,7 +208,7 @@ class _$VisionProtocolImpl implements _VisionProtocol {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VisionProtocolImpl &&
@@ -518,7 +518,7 @@ class _$VisionProfileImpl implements _VisionProfile {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VisionProfileImpl &&

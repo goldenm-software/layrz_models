@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.1.8
+- Add new `ReferenceCategory` to ATS ecosystem and Tenvio ecosystem
+
+
+## 2.1.7
+
+- Defined new fields `mappitLaborStartTime` and `mappitLaborEndTime` in `Asset` model
+
 ## 2.1.6
 
 - Add `receptionAt` to `AtsPurchaseOrder` model
