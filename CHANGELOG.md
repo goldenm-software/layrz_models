@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.9
+
+- New model `InviteLink`
+- Added run test in CI
+
 ## 2.1.8
 - Add new `ReferenceCategory` to ATS ecosystem and Tenvio ecosystem
 

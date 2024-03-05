@@ -94,6 +94,18 @@ class User with _$User {
 
     /// [mfaMethods] represents the list of MFA methods.
     @MfaMethodConverter() @Default([]) List<MfaMethod> mfaMethods,
+
+    /// [tenvioAddress] represents the Tenvio address.
+    String? tenvioAddress,
+
+    /// [tenvioPhone] represents the Tenvio phone.
+    String? tenvioPhone,
+
+    /// [tenvioLatitude] represents the Tenvio latitude.
+    double? tenvioLatitude,
+
+    /// [tenvioLongitude] represents the Tenvio longitude.
+    double? tenvioLongitude,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -148,4 +160,21 @@ class EnvironmentConverter implements JsonConverter<Environment, String> {
 
   @override
   String toJson(Environment object) => object.toJson();
+}
+
+@freezed
+class InviteLink with _$InviteLink {
+  const InviteLink._();
+  const factory InviteLink({
+    required String id,
+    required String code,
+    String? sentTo,
+    @TimestampOrNullConverter() DateTime? sentAt,
+    @TimestampConverter() required DateTime expiresAt,
+    @TimestampConverter() required DateTime createdAt,
+  }) = _InviteLink;
+
+  factory InviteLink.fromJson(Map<String, dynamic> json) => _$InviteLinkFromJson(json);
+
+  String get url => "https://invite.layrz.com/$code";
 }

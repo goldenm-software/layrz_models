@@ -20,6 +20,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Test
+        run: |
+          flutter test
+
       - name: Authenticate
         run: |
           python3 authenticate.py
