@@ -2777,6 +2777,10 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
               ?.map((e) => const MfaMethodConverter().fromJson(e as String))
               .toList() ??
           const [],
+      tenvioAddress: json['tenvioAddress'] as String?,
+      tenvioPhone: json['tenvioPhone'] as String?,
+      tenvioLatitude: (json['tenvioLatitude'] as num?)?.toDouble(),
+      tenvioLongitude: (json['tenvioLongitude'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
@@ -2812,4 +2816,28 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'mfaEnabled': instance.mfaEnabled,
       'mfaMethods':
           instance.mfaMethods.map(const MfaMethodConverter().toJson).toList(),
+      'tenvioAddress': instance.tenvioAddress,
+      'tenvioPhone': instance.tenvioPhone,
+      'tenvioLatitude': instance.tenvioLatitude,
+      'tenvioLongitude': instance.tenvioLongitude,
+    };
+
+_$InviteLinkImpl _$$InviteLinkImplFromJson(Map<String, dynamic> json) =>
+    _$InviteLinkImpl(
+      id: json['id'] as String,
+      code: json['code'] as String,
+      sentTo: json['sentTo'] as String?,
+      sentAt: const TimestampOrNullConverter().fromJson(json['sentAt'] as num?),
+      expiresAt: const TimestampConverter().fromJson(json['expiresAt'] as num),
+      createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
+    );
+
+Map<String, dynamic> _$$InviteLinkImplToJson(_$InviteLinkImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'code': instance.code,
+      'sentTo': instance.sentTo,
+      'sentAt': const TimestampOrNullConverter().toJson(instance.sentAt),
+      'expiresAt': const TimestampConverter().toJson(instance.expiresAt),
+      'createdAt': const TimestampConverter().toJson(instance.createdAt),
     };
