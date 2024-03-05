@@ -40,29 +40,65 @@ enum ReferenceCategory {
   /// Layrz API Reference: MONITORIST
   monitorist,
 
-  /// Layrz API Reference: ATSBOMB
-  atsBomb,
+  /// Layrz API Reference: ATS_Mobile
+  atsMobile,
 
-  /// Layrz API Reference: ATSTANK
+  /// Layrz API Reference: ATS_TANK
   atsTank,
 
-  /// Layrz API Reference: ATSFLEET
+  /// Layrz API Reference: ATS_PUMP
+  atsPump,
+
+  /// Layrz API Reference: ATS_FLEET
   atsFleet,
 
-  /// Layrz API Reference: ATSCONVOY
+  /// Layrz API Reference: ATS_CONVOY
   atsConvoy,
 
-  /// Layrz API Reference: ATSFRENTISTA
-  atsFrentista,
+  /// Layrz API Reference: ATS_LUBRICATION
+  atsLubrication,
 
-  /// Layrz API Reference: ATSPURCHASEORDER
-  atsPurchaseOrder,
+  /// Layrz API Reference: ATS_TANK_HISTORY
+  atsTankHistory,
 
-  /// Layrz API Reference: ATSFLEETQR
-  atsFleetQr,
+  /// Layrz API Reference: ATS_ENTRIES,
+  atsEntries,
 
-  /// Layrz API Reference: ATSEXITS
+  /// Layrz API Reference: ATS_PURCHASE_ORDERS
+  atsPurchaseOrders,
+
+  /// Layrz API Reference: ATS_LINK_PURCHASES
+  atsLinkPurchases,
+
+  /// Layrz API Reference: ATS_DASHBOARD_360
+  atsDashboard360,
+
+  /// Layrz API Reference: ATS_REGISTER_PURCHASES
+  atsRegisterPurchases,
+
+  /// Layrz API Reference: ATS_UPLOAD_PURCHASES_XML
+  atsUploadPurchasesXml,
+
+  /// Layrz API Reference: ATS_EXECUTE_EXIT_CONVOY
+  atsExecuteExitConvoy,
+
+  /// Layrz API Reference: ATS_EXITS
   atsExits,
+
+  /// Layrz API Reference: ATS_PUMP_HISTORY
+  atsPumpHistory,
+
+  /// Layrz API Reference: ATS_EXECUTE_EXIT
+  atsExecuteExit,
+
+  /// Layrz API Reference: ATS_TANK_LEVELS
+  atsTankLevels,
+
+  /// Layrz API Reference: ATS_NFC_EXECUTE_EXIT
+  atsNfcExecuteExit,
+
+  /// Layrz API Reference: ATS_SELECTION_MANUAL_EXECUTE_EXIT
+  atsSelectionManualExecuteExit,
 
   /// Layrz API Reference: ATS_AUTOMATIC_RECEPTION
   atsAutomaticReception,
@@ -138,6 +174,21 @@ enum ReferenceCategory {
 
   /// Layrz API Reference: MAPPIT_PERM_FREEDAYS_FULL
   mappitPermFreeDaysFull,
+
+  /// Layrz API Reference: TENVIO_DISPATCHER
+  tenvioDispatcher,
+
+  /// Layrz API Reference: TENVIO_OPERATOR
+  tenvioOperator,
+
+  /// Layrz API Reference: TENVIO_DRIVER
+  tenvioDriver,
+
+  /// Layrz API Reference: TENVIO_CLIENT
+  tenvioClient,
+
+  /// Layrz API Reference: TENVIO_ADMIN
+  tenvioAdmin,
   ;
 
   @override
@@ -153,22 +204,46 @@ enum ReferenceCategory {
         return 'UNIVERSAL';
       case ReferenceCategory.monitorist:
         return 'MONITORIST';
-      case ReferenceCategory.atsBomb:
-        return 'ATSBOMB';
+      case ReferenceCategory.atsMobile:
+        return 'ATS_MOBILE';
       case ReferenceCategory.atsTank:
-        return 'ATSTANK';
+        return 'ATS_TANK';
+      case ReferenceCategory.atsPump:
+        return 'ATS_PUMP';
       case ReferenceCategory.atsFleet:
-        return 'ATSFLEET';
+        return 'ATS_FLEET';
       case ReferenceCategory.atsConvoy:
-        return 'ATSCONVOY';
-      case ReferenceCategory.atsFrentista:
-        return 'ATSFRENTISTA';
-      case ReferenceCategory.atsPurchaseOrder:
-        return 'ATSPURCHASEORDER';
-      case ReferenceCategory.atsFleetQr:
-        return 'ATSFLEETQR';
+        return 'ATS_CONVOY';
+      case ReferenceCategory.atsLubrication:
+        return 'ATS_LUBRICATION';
+      case ReferenceCategory.atsTankHistory:
+        return 'ATS_TANK_HISTORY';
+      case ReferenceCategory.atsEntries:
+        return 'ATS_ENTRIES';
+      case ReferenceCategory.atsPurchaseOrders:
+        return 'ATS_PURCHASE_ORDERS';
+      case ReferenceCategory.atsLinkPurchases:
+        return 'ATS_LINK_PURCHASES';
+      case ReferenceCategory.atsDashboard360:
+        return 'ATS_DASHBOARD_360';
+      case ReferenceCategory.atsRegisterPurchases:
+        return 'ATS_REGISTER_PURCHASES';
+      case ReferenceCategory.atsUploadPurchasesXml:
+        return 'ATS_UPLOAD_PURCHASES_XML';
+      case ReferenceCategory.atsExecuteExitConvoy:
+        return 'ATS_EXECUTE_EXIT_CONVOY';
       case ReferenceCategory.atsExits:
-        return 'ATSEXITS';
+        return 'ATS_EXITS';
+      case ReferenceCategory.atsPumpHistory:
+        return 'ATS_PUMP_HISTORY';
+      case ReferenceCategory.atsExecuteExit:
+        return 'ATS_EXECUTE_EXIT';
+      case ReferenceCategory.atsTankLevels:
+        return 'ATS_TANK_LEVELS';
+      case ReferenceCategory.atsNfcExecuteExit:
+        return 'ATS_NFC_EXECUTE_EXIT';
+      case ReferenceCategory.atsSelectionManualExecuteExit:
+        return 'ATS_SELECTION_MANUAL_EXECUTE_EXIT';
       case ReferenceCategory.atsAutomaticReception:
         return 'ATS_AUTOMATIC_RECEPTION';
       case ReferenceCategory.mappitOperator:
@@ -219,6 +294,16 @@ enum ReferenceCategory {
         return 'MAPPIT_PERM_FREEDAYS_READ';
       case ReferenceCategory.mappitPermFreeDaysFull:
         return 'MAPPIT_PERM_FREEDAYS_FULL';
+      case ReferenceCategory.tenvioDispatcher:
+        return 'TENVIO_DISPATCHER';
+      case ReferenceCategory.tenvioOperator:
+        return 'TENVIO_OPERATOR';
+      case ReferenceCategory.tenvioDriver:
+        return 'TENVIO_DRIVER';
+      case ReferenceCategory.tenvioClient:
+        return 'TENVIO_CLIENT';
+      case ReferenceCategory.tenvioAdmin:
+        return 'TENVIO_ADMIN';
       default:
         return 'UNIVERSAL';
     }
@@ -234,22 +319,46 @@ enum ReferenceCategory {
         return ReferenceCategory.universal;
       case 'MONITORIST':
         return ReferenceCategory.monitorist;
-      case 'ATSBOMB':
-        return ReferenceCategory.atsBomb;
-      case 'ATSTANK':
+      case 'ATS_MOBILE':
+        return ReferenceCategory.atsMobile;
+      case 'ATS_TANK':
         return ReferenceCategory.atsTank;
-      case 'ATSFLEET':
+      case 'ATS_PUMP':
+        return ReferenceCategory.atsPump;
+      case 'ATS_FLEET':
         return ReferenceCategory.atsFleet;
-      case 'ATSCONVOY':
+      case 'ATS_CONVOY':
         return ReferenceCategory.atsConvoy;
-      case 'ATSFRENTISTA':
-        return ReferenceCategory.atsFrentista;
-      case 'ATSPURCHASEORDER':
-        return ReferenceCategory.atsPurchaseOrder;
-      case 'ATSFLEETQR':
-        return ReferenceCategory.atsFleetQr;
-      case 'ATSEXITS':
+      case 'ATS_LUBRICATION':
+        return ReferenceCategory.atsLubrication;
+      case 'ATS_TANK_HISTORY':
+        return ReferenceCategory.atsTankHistory;
+      case 'ATS_ENTRIES':
+        return ReferenceCategory.atsEntries;
+      case 'ATS_PURCHASE_ORDERS':
+        return ReferenceCategory.atsPurchaseOrders;
+      case 'ATS_LINK_PURCHASES':
+        return ReferenceCategory.atsLinkPurchases;
+      case 'ATS_DASHBOARD_360':
+        return ReferenceCategory.atsDashboard360;
+      case 'ATS_REGISTER_PURCHASES':
+        return ReferenceCategory.atsRegisterPurchases;
+      case 'ATS_UPLOAD_PURCHASES_XML':
+        return ReferenceCategory.atsUploadPurchasesXml;
+      case 'ATS_EXECUTE_EXIT_CONVOY':
+        return ReferenceCategory.atsExecuteExitConvoy;
+      case 'ATS_EXITS':
         return ReferenceCategory.atsExits;
+      case 'ATS_PUMP_HISTORY':
+        return ReferenceCategory.atsPumpHistory;
+      case 'ATS_EXECUTE_EXIT':
+        return ReferenceCategory.atsExecuteExit;
+      case 'ATS_TANK_LEVELS':
+        return ReferenceCategory.atsTankLevels;
+      case 'ATS_NFC_EXECUTE_EXIT':
+        return ReferenceCategory.atsNfcExecuteExit;
+      case 'ATS_SELECTION_MANUAL_EXECUTE_EXIT':
+        return ReferenceCategory.atsSelectionManualExecuteExit;
       case 'ATS_AUTOMATIC_RECEPTION':
         return ReferenceCategory.atsAutomaticReception;
       case 'MAPPIT_OPERATOR':
@@ -300,6 +409,16 @@ enum ReferenceCategory {
         return ReferenceCategory.mappitPermFreeDaysRead;
       case 'MAPPIT_PERM_FREEDAYS_FULL':
         return ReferenceCategory.mappitPermFreeDaysFull;
+      case 'TENVIO_DISPATCHER':
+        return ReferenceCategory.tenvioDispatcher;
+      case 'TENVIO_OPERATOR':
+        return ReferenceCategory.tenvioOperator;
+      case 'TENVIO_DRIVER':
+        return ReferenceCategory.tenvioDriver;
+      case 'TENVIO_CLIENT':
+        return ReferenceCategory.tenvioClient;
+      case 'TENVIO_ADMIN':
+        return ReferenceCategory.tenvioAdmin;
       default:
         return ReferenceCategory.universal;
     }

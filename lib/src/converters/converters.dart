@@ -1,7 +1,6 @@
 library converters;
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_models/utils.dart';
 import 'package:material_design_icons_flutter/icon_map.dart';
