@@ -1,6 +1,5 @@
 part of '../i18n.dart';
 
-
 ///
 /// Fields:
 ///
@@ -24,11 +23,27 @@ class AvailableLanguage with _$AvailableLanguage {
 
   Locale getLocale() {
     if (code == null) return const Locale('en');
-    if (!code!.contains('-')) {
-      return Locale(code!);
+    if (code!.contains('-')) {
+      List<String> codes = code!.split('-');
+      if (codes[1].isEmpty) return Locale(codes[0]);
+      return Locale(codes[0], codes[1]);
     }
-    List<String> codes = code!.split('-');
-    return Locale(codes.first, codes.last);
+
+    if (code!.contains('_')) {
+      List<String> codes = code!.split('_');
+      if (codes[1].isEmpty) return Locale(codes[0]);
+      return Locale(codes[0], codes[1]);
+    }
+
+    return Locale(code!);
+  }
+
+  SavedLanguage toSavedLanguage() {
+    return SavedLanguage(
+      id: id,
+      name: name,
+      code: code,
+    );
   }
 
   /// from json freezed
