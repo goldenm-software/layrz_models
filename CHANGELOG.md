@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1.10
+
+- Major change in `LayrzAppLocalizations` to support `fallbackLocale`.
+- Added static getter `LayrzAppLocalizations.detectedLocale` to get the detected locale, from a Browser or a Native device.
+- Added static function `LayrzAppLocalizations.getClosestLocale` to get the closest locale from a list of supported locales.
+- When the language changes, the `LayrzAppLocalizations` will also load the fallback locale to improve the user experience.
+
 ## 2.1.9
 
 - New model `InviteLink`

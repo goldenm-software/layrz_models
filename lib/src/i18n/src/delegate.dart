@@ -1,23 +1,90 @@
 part of '../i18n.dart';
 
 class LayrzAppLocalizations {
-  /// [locale] is the current locale of the app
-  final Locale locale;
+  /// [languages] is the list of languages
+  List<AvailableLanguage?> languages;
 
-  /// [languages] is the list of available languages
-  final List<AvailableLanguage?> languages;
+  /// [locale] is the current locale
+  Locale locale;
 
-  /// [_localizedStrings] is the map of translations for the current locale
-  Map<String, String>? _localizedStrings;
-
-  /// [_developerMode] is used to determine if the developer mode is on or off
+  /// [developerMode] is used to get the current value of the developer mode
   static bool _developerMode = false;
 
+  /// [fallbackLocale] is the locale to use as a fallback
+  Locale fallbackLocale;
+
   /// [LayrzAppLocalizations] is the class that handles the translations
-  LayrzAppLocalizations(
-    this.locale,
-    this.languages,
-  );
+  LayrzAppLocalizations({
+    required this.languages,
+    Locale? currentLocale,
+    this.fallbackLocale = const Locale('en'),
+  }) : locale = currentLocale ?? detectedLocale;
+
+  /// [detectedLocale] helps to you to get the current locale
+  static Locale get detectedLocale => getLanguage();
+
+  /// [getClosestLocale] helps to you to get the closest locale
+  /// considering the previous language, supported locales and fallback locale
+  ///
+  /// For example, you submit "en-US" as the previous language, and the supported locales are `Locale('fr')`,
+  /// `Locale('es', 'ES')` and `Locale('en', 'NZ')`
+  /// First of all, the algorithm will try to find the exact match, if it doesn't find it, it will try to find
+  /// the language code match, if it doesn't find it, it will try to find the language code match with
+  /// the detected locale
+  ///
+  /// If it doesn't find any match, will use the getter [detectedLocale] as the current locale
+  /// And repeat the same process.
+  ///
+  /// If it doesn't find any match, will use the fallback locale
+  static Locale getClosestLocale({
+    String? prevLanguage,
+    required List<Locale> supportedLocales,
+    required Locale fallbackLocale,
+  }) {
+    debugPrint(
+      "layrz_models/i18n/getClosestLocale(): prevLanguage: $prevLanguage - "
+      "supportedLocales: ${supportedLocales.length} - "
+      "fallbackLocale: $fallbackLocale",
+    );
+    Locale? currentLocale;
+    Locale? prevLocale;
+
+    if (prevLanguage != null) {
+      if (prevLanguage.contains('-')) {
+        final split = prevLanguage.split('-');
+        if (split[1].isEmpty) {
+          prevLocale = Locale(split[0]);
+        } else {
+          prevLocale = Locale(split[0], split[1]);
+        }
+      } else if (prevLanguage.contains('_')) {
+        final split = prevLanguage.split('_');
+        if (split[1].isEmpty) {
+          prevLocale = Locale(split[0]);
+        } else {
+          prevLocale = Locale(split[0], split[1]);
+        }
+      } else {
+        prevLocale = Locale(prevLanguage);
+      }
+    }
+
+    if (prevLocale != null) {
+      currentLocale = supportedLocales.firstWhereOrNull((locale) => locale == prevLocale);
+      currentLocale ??= supportedLocales.firstWhereOrNull((locale) {
+        return locale.languageCode == prevLocale!.languageCode;
+      });
+    }
+
+    final detectedLocale = LayrzAppLocalizations.detectedLocale;
+    debugPrint("layrz_models/i18n/getClosestLocale(): detectedLocale: $detectedLocale");
+    currentLocale ??= supportedLocales.firstWhereOrNull((locale) => locale == detectedLocale);
+    currentLocale ??= supportedLocales.firstWhereOrNull((locale) {
+      return locale.languageCode == detectedLocale.languageCode;
+    });
+
+    return currentLocale ?? fallbackLocale;
+  }
 
   /// [developerMode] is used to get the current value of the developer mode
   bool get developerMode => LayrzAppLocalizations._developerMode;
@@ -39,22 +106,23 @@ class LayrzAppLocalizations {
         'errors.not_found': "We are sorry, but the object you are looking for does not exist",
       };
 
+  Map<String, String> _messages = {};
+  Map<String, String> _fallback = {};
+
   /// [load] is used to load the translations for the current locale
   Future<bool> load() async {
-    _localizedStrings = {};
-    for (var language in languages) {
-      if (locale.languageCode == language!.getLocale().languageCode) {
-        _localizedStrings = language.messages;
-        return true;
-      }
-    }
+    final lang = languages.firstWhereOrNull((lang) => lang?.getLocale() == locale);
+    _messages = lang?.messages ?? {};
+
+    final fallbackLang = languages.firstWhereOrNull((lang) => lang?.getLocale() == fallbackLocale);
+    _fallback = fallbackLang?.messages ?? {};
 
     return true;
   }
 
   /// [hasTranslation] is used to check if a translation exists for a specific key
   bool hasTranslation(String key) {
-    return _localizedStrings?.containsKey(key) ?? false;
+    return _messages.containsKey(key);
   }
 
   /// [setDeveloperMode] is used to set the developer mode to a specific value
@@ -75,19 +143,11 @@ class LayrzAppLocalizations {
   /// Note: If the translation is not found, it will return the "Translation missing $key" string
   /// Also, if the developer mode is on, it will return the key and the arguments as a json string
   String translate(String key, [Map<String, dynamic> args = const {}]) {
-    if (LayrzAppLocalizations._developerMode) {
+    if (developerMode) {
       return '$key : ${jsonEncode(args)}';
     }
 
-    Map<String, String>? fallback = _localizedStrings;
-    if (_localizedStrings?[key] == null) {
-      List<AvailableLanguage?> fallbackLang = languages.where((element) => element!.code == "es-MX").toList();
-      if (fallbackLang.isNotEmpty) {
-        fallback = fallbackLang.first!.messages;
-      }
-    }
-
-    String res = _localizedStrings?[key] ?? fallback?[key] ?? _defaultTranslations[key] ?? "Translation missing $key";
+    String res = _messages[key] ?? _fallback[key] ?? _defaultTranslations[key] ?? "Translation missing $key";
 
     args.forEach((key, value) {
       res = res.replaceAll('{$key}', "$value");
@@ -123,7 +183,7 @@ class LayrzAppLocalizations {
   /// Note: If the translation is not found, it will return the "Translation missing $key" string
   /// Also, if the developer mode is on, it will return the key and the arguments as a json string
   String tc(String key, int? val, [Map<String, dynamic> args = const {}]) {
-    if (LayrzAppLocalizations._developerMode) {
+    if (developerMode) {
       return '$key|$val : ${jsonEncode(args)}';
     }
     List<String> rawTranslation = translate(key, args).split(' | ');
@@ -147,15 +207,18 @@ class LayrzAppLocalizations {
     }
   }
 
-  /// localization delegate
+  /// [delegate] helps to you to get the [LocalizationsDelegate]
   static LocalizationsDelegate<LayrzAppLocalizations> delegate({
     required List<AvailableLanguage?> languages,
     required List<Locale> supportedLocales,
-  }) =>
-      LayrzAppLocalizationsDelegate(
-        languages: languages,
-        supportedLocales: supportedLocales,
-      );
+    Locale fallbackLocale = const Locale('en'),
+  }) {
+    return LayrzAppLocalizationsDelegate(
+      languages: languages,
+      supportedLocales: supportedLocales,
+      fallbackLocale: fallbackLocale,
+    );
+  }
 }
 
 // LocalizationsDelegate is a factory for a set of localized resources
@@ -164,10 +227,12 @@ class LayrzAppLocalizationsDelegate extends LocalizationsDelegate<LayrzAppLocali
   Locale? currentLocale;
   final List<AvailableLanguage?> languages;
   final List<Locale> supportedLocales;
+  final Locale fallbackLocale;
 
   LayrzAppLocalizationsDelegate({
     required this.languages,
     required this.supportedLocales,
+    required this.fallbackLocale,
   });
 
   @override
@@ -180,7 +245,11 @@ class LayrzAppLocalizationsDelegate extends LocalizationsDelegate<LayrzAppLocali
   Future<LayrzAppLocalizations> load(Locale locale) async {
     currentLocale = locale;
     // AppLocalizations class is where the JSON loading actually runs
-    LayrzAppLocalizations localizations = LayrzAppLocalizations(locale, languages);
+    LayrzAppLocalizations localizations = LayrzAppLocalizations(
+      languages: languages,
+      currentLocale: locale,
+      fallbackLocale: fallbackLocale,
+    );
     await localizations.load();
     return localizations;
   }
