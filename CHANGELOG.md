@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.11
+
+- Minor changes in `LayrzAppLocalizationsDelegate` to prevent unresolved translation keys when loading.
+
 ## 2.1.10
 
 - Major change in `LayrzAppLocalizations` to support `fallbackLocale`.
