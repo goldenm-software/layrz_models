@@ -20,6 +20,7 @@ import 'src/mappit/mappit.dart';
 // import 'src/reports/reports.dart';
 // import 'src/brickhouse/brickhouse.dart';
 import 'src/vision/vision.dart';
+// import 'src/tenvio/tenvio.dart';
 
 // Internal exports
 export 'src/converters/converters.dart';
@@ -37,6 +38,7 @@ export 'src/mappit/mappit.dart';
 export 'src/reports/reports.dart';
 export 'src/brickhouse/brickhouse.dart';
 export 'src/vision/vision.dart';
+export 'src/tenvio/tenvio.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';

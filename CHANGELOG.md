@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.12
+
+- Added `DeliverLocation`, `DropoffFailedReason`, `TenvioImageSet`, `TenvioItemMovement`, `TenvioItem`, `TenvioMatrixItem`, `TenvioOrder`, `TenvioPackage` models for Tenvio Pick & Pack ecosystem.
+- Added `TenvioItemLocation`, `TenvioOrderStatus`, `TenvioPackageStatus` enums for Tenvio Pick & Pack ecosystem.
+
 ## 2.1.11
 
 - Minor changes in `LayrzAppLocalizationsDelegate` to prevent unresolved translation keys when loading.
