@@ -6,7 +6,15 @@ class AppDesign with _$AppDesign {
   const factory AppDesign({
     /// [colors] defines the colors of the app, depending of the technology,
     /// the [AppThemedColors.mainColor] is the primary color of the app or not.
-    required AppThemedColors colors,
+    @Deprecated("This field was deprecated") AppThemedColors? colors,
+
+    /// [mainColor] defines the main color of the app.
+    ///
+    /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+    ///
+    /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+    /// for the [colors] field and use the [mainColor] field from it.
+    @ColorOrNullConverter() Color? mainColor,
 
     /// [favicons] defines the favicons of the app.
     required AppThemedAsset favicons,

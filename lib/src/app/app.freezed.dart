@@ -2315,7 +2315,17 @@ AppDesign _$AppDesignFromJson(Map<String, dynamic> json) {
 mixin _$AppDesign {
   /// [colors] defines the colors of the app, depending of the technology,
   /// the [AppThemedColors.mainColor] is the primary color of the app or not.
-  AppThemedColors get colors => throw _privateConstructorUsedError;
+  @Deprecated("This field was deprecated")
+  AppThemedColors? get colors => throw _privateConstructorUsedError;
+
+  /// [mainColor] defines the main color of the app.
+  ///
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [mainColor] field from it.
+  @ColorOrNullConverter()
+  Color? get mainColor => throw _privateConstructorUsedError;
 
   /// [favicons] defines the favicons of the app.
   AppThemedAsset get favicons => throw _privateConstructorUsedError;
@@ -2368,7 +2378,8 @@ abstract class $AppDesignCopyWith<$Res> {
       _$AppDesignCopyWithImpl<$Res, AppDesign>;
   @useResult
   $Res call(
-      {AppThemedColors colors,
+      {@Deprecated("This field was deprecated") AppThemedColors? colors,
+      @ColorOrNullConverter() Color? mainColor,
       AppThemedAsset favicons,
       AppThemedAsset logos,
       String appicon,
@@ -2377,7 +2388,7 @@ abstract class $AppDesignCopyWith<$Res> {
       AppFont? titleFont,
       AppFont? bodyFont});
 
-  $AppThemedColorsCopyWith<$Res> get colors;
+  $AppThemedColorsCopyWith<$Res>? get colors;
   $AppThemedAssetCopyWith<$Res> get favicons;
   $AppThemedAssetCopyWith<$Res> get logos;
   $AppLoginDesignCopyWith<$Res>? get login;
@@ -2398,7 +2409,8 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? colors = null,
+    Object? colors = freezed,
+    Object? mainColor = freezed,
     Object? favicons = null,
     Object? logos = null,
     Object? appicon = null,
@@ -2408,10 +2420,14 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
     Object? bodyFont = freezed,
   }) {
     return _then(_value.copyWith(
-      colors: null == colors
+      colors: freezed == colors
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
-              as AppThemedColors,
+              as AppThemedColors?,
+      mainColor: freezed == mainColor
+          ? _value.mainColor
+          : mainColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
       favicons: null == favicons
           ? _value.favicons
           : favicons // ignore: cast_nullable_to_non_nullable
@@ -2445,8 +2461,12 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
 
   @override
   @pragma('vm:prefer-inline')
-  $AppThemedColorsCopyWith<$Res> get colors {
-    return $AppThemedColorsCopyWith<$Res>(_value.colors, (value) {
+  $AppThemedColorsCopyWith<$Res>? get colors {
+    if (_value.colors == null) {
+      return null;
+    }
+
+    return $AppThemedColorsCopyWith<$Res>(_value.colors!, (value) {
       return _then(_value.copyWith(colors: value) as $Val);
     });
   }
@@ -2513,7 +2533,8 @@ abstract class _$$AppDesignImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AppThemedColors colors,
+      {@Deprecated("This field was deprecated") AppThemedColors? colors,
+      @ColorOrNullConverter() Color? mainColor,
       AppThemedAsset favicons,
       AppThemedAsset logos,
       String appicon,
@@ -2523,7 +2544,7 @@ abstract class _$$AppDesignImplCopyWith<$Res>
       AppFont? bodyFont});
 
   @override
-  $AppThemedColorsCopyWith<$Res> get colors;
+  $AppThemedColorsCopyWith<$Res>? get colors;
   @override
   $AppThemedAssetCopyWith<$Res> get favicons;
   @override
@@ -2547,7 +2568,8 @@ class __$$AppDesignImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? colors = null,
+    Object? colors = freezed,
+    Object? mainColor = freezed,
     Object? favicons = null,
     Object? logos = null,
     Object? appicon = null,
@@ -2557,10 +2579,14 @@ class __$$AppDesignImplCopyWithImpl<$Res>
     Object? bodyFont = freezed,
   }) {
     return _then(_$AppDesignImpl(
-      colors: null == colors
+      colors: freezed == colors
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
-              as AppThemedColors,
+              as AppThemedColors?,
+      mainColor: freezed == mainColor
+          ? _value.mainColor
+          : mainColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
       favicons: null == favicons
           ? _value.favicons
           : favicons // ignore: cast_nullable_to_non_nullable
@@ -2597,7 +2623,8 @@ class __$$AppDesignImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppDesignImpl implements _AppDesign {
   const _$AppDesignImpl(
-      {required this.colors,
+      {@Deprecated("This field was deprecated") this.colors,
+      @ColorOrNullConverter() this.mainColor,
       required this.favicons,
       required this.logos,
       required this.appicon,
@@ -2612,7 +2639,18 @@ class _$AppDesignImpl implements _AppDesign {
   /// [colors] defines the colors of the app, depending of the technology,
   /// the [AppThemedColors.mainColor] is the primary color of the app or not.
   @override
-  final AppThemedColors colors;
+  @Deprecated("This field was deprecated")
+  final AppThemedColors? colors;
+
+  /// [mainColor] defines the main color of the app.
+  ///
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [mainColor] field from it.
+  @override
+  @ColorOrNullConverter()
+  final Color? mainColor;
 
   /// [favicons] defines the favicons of the app.
   @override
@@ -2662,7 +2700,7 @@ class _$AppDesignImpl implements _AppDesign {
 
   @override
   String toString() {
-    return 'AppDesign(colors: $colors, favicons: $favicons, logos: $logos, appicon: $appicon, login: $login, footerFormat: $footerFormat, titleFont: $titleFont, bodyFont: $bodyFont)';
+    return 'AppDesign(colors: $colors, mainColor: $mainColor, favicons: $favicons, logos: $logos, appicon: $appicon, login: $login, footerFormat: $footerFormat, titleFont: $titleFont, bodyFont: $bodyFont)';
   }
 
   @override
@@ -2671,6 +2709,8 @@ class _$AppDesignImpl implements _AppDesign {
         (other.runtimeType == runtimeType &&
             other is _$AppDesignImpl &&
             (identical(other.colors, colors) || other.colors == colors) &&
+            (identical(other.mainColor, mainColor) ||
+                other.mainColor == mainColor) &&
             (identical(other.favicons, favicons) ||
                 other.favicons == favicons) &&
             (identical(other.logos, logos) || other.logos == logos) &&
@@ -2686,8 +2726,8 @@ class _$AppDesignImpl implements _AppDesign {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, colors, favicons, logos, appicon,
-      login, footerFormat, titleFont, bodyFont);
+  int get hashCode => Object.hash(runtimeType, colors, mainColor, favicons,
+      logos, appicon, login, footerFormat, titleFont, bodyFont);
 
   @JsonKey(ignore: true)
   @override
@@ -2705,7 +2745,8 @@ class _$AppDesignImpl implements _AppDesign {
 
 abstract class _AppDesign implements AppDesign {
   const factory _AppDesign(
-      {required final AppThemedColors colors,
+      {@Deprecated("This field was deprecated") final AppThemedColors? colors,
+      @ColorOrNullConverter() final Color? mainColor,
       required final AppThemedAsset favicons,
       required final AppThemedAsset logos,
       required final String appicon,
@@ -2721,7 +2762,18 @@ abstract class _AppDesign implements AppDesign {
 
   /// [colors] defines the colors of the app, depending of the technology,
   /// the [AppThemedColors.mainColor] is the primary color of the app or not.
-  AppThemedColors get colors;
+  @Deprecated("This field was deprecated")
+  AppThemedColors? get colors;
+  @override
+
+  /// [mainColor] defines the main color of the app.
+  ///
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [mainColor] field from it.
+  @ColorOrNullConverter()
+  Color? get mainColor;
   @override
 
   /// [favicons] defines the favicons of the app.

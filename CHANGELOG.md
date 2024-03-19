@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.14
+
+- More deprecations related to `RegisteredApp` and `AvailableApp` models to support new app schema.
+
 ## 2.1.13
 
 - Changes related to `RegisteredApp` and `AvailableApp` models to support new app schema.
