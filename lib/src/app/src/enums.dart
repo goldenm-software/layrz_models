@@ -113,6 +113,92 @@ enum AppTheme {
   }
 }
 
+enum LayoutDesign {
+  /// [LayoutDesign.right] defines the layout mode of the login. This value is used
+  /// as default
+  right,
+
+  /// [LayoutDesign.left] defines the layout mode of the login.
+  /// This value is used as default
+  left,
+
+  /// [LayoutDesign.top] defines the layout mode of the login.
+  /// This value is used as default
+  top,
+
+  /// [LayoutDesign.bottom] defines the layout mode of the login.
+  /// This value is used as default
+  bottom,
+  ;
+
+  @override
+  String toString() => toJson();
+
+  static LayoutDesign fromJson(String json) {
+    switch (json) {
+      case 'LEFT':
+        return LayoutDesign.left;
+      case 'RIGHT':
+        return LayoutDesign.right;
+      case 'TOP':
+        return LayoutDesign.top;
+      case 'BOTTOM':
+        return LayoutDesign.bottom;
+      default:
+        return LayoutDesign.right;
+    }
+  }
+
+  String toJson() {
+    switch (this) {
+      case LayoutDesign.left:
+        return 'LEFT';
+      case LayoutDesign.right:
+        return 'RIGHT';
+      case LayoutDesign.top:
+        return 'TOP';
+      case LayoutDesign.bottom:
+        return 'BOTTOM';
+      default:
+        return 'RIGHT';
+    }
+  }
+}
+
+class LayoutDesignConverter implements JsonConverter<LayoutDesign, String> {
+  const LayoutDesignConverter();
+
+  @override
+  LayoutDesign fromJson(String json) {
+    return LayoutDesign.fromJson(json);
+  }
+
+  @override
+  String toJson(LayoutDesign object) {
+    return object.toJson();
+  }
+}
+
+class LayoutDesignOrNullConverter implements JsonConverter<LayoutDesign?, String?> {
+  const LayoutDesignOrNullConverter();
+
+  @override
+  LayoutDesign? fromJson(String? json) {
+    if (json == null) {
+      return null;
+    }
+    return LayoutDesign.fromJson(json);
+  }
+
+  @override
+  String? toJson(LayoutDesign? object) {
+    if (object == null) {
+      return null;
+    }
+    return object.toJson();
+  }
+}
+
 enum AppState {
   development,
   earlyAccess,
@@ -254,6 +340,40 @@ enum BackgroundMode {
   }
 }
 
+class BackgroundModeConverter implements JsonConverter<BackgroundMode, String> {
+  const BackgroundModeConverter();
+
+  @override
+  BackgroundMode fromJson(String json) {
+    return BackgroundMode.fromJson(json);
+  }
+
+  @override
+  String toJson(BackgroundMode object) {
+    return object.toJson();
+  }
+}
+
+class BackgroundModeOrNullConverter implements JsonConverter<BackgroundMode?, String?> {
+  const BackgroundModeOrNullConverter();
+
+  @override
+  BackgroundMode? fromJson(String? json) {
+    if (json == null) {
+      return null;
+    }
+    return BackgroundMode.fromJson(json);
+  }
+
+  @override
+  String? toJson(BackgroundMode? object) {
+    if (object == null) {
+      return null;
+    }
+    return object.toJson();
+  }
+}
+
 enum LoginLayoutMode {
   right,
   left,
@@ -316,6 +436,40 @@ enum LoginLayoutMode {
   }
 }
 
+class LoginLayoutModeConverter implements JsonConverter<LoginLayoutMode, String> {
+  const LoginLayoutModeConverter();
+
+  @override
+  LoginLayoutMode fromJson(String json) {
+    return LoginLayoutMode.fromJson(json);
+  }
+
+  @override
+  String toJson(LoginLayoutMode object) {
+    return object.toJson();
+  }
+}
+
+class LoginLayoutModeOrNullConverter implements JsonConverter<LoginLayoutMode?, String?> {
+  const LoginLayoutModeOrNullConverter();
+
+  @override
+  LoginLayoutMode? fromJson(String? json) {
+    if (json == null) {
+      return null;
+    }
+    return LoginLayoutMode.fromJson(json);
+  }
+
+  @override
+  String? toJson(LoginLayoutMode? object) {
+    if (object == null) {
+      return null;
+    }
+    return object.toJson();
+  }
+}
+
 enum TitleMode {
   logo,
   appName;
@@ -341,6 +495,40 @@ enum TitleMode {
       default:
         return TitleMode.appName;
     }
+  }
+}
+
+class TitleModeConverter implements JsonConverter<TitleMode, String> {
+  const TitleModeConverter();
+
+  @override
+  TitleMode fromJson(String json) {
+    return TitleMode.fromJson(json);
+  }
+
+  @override
+  String toJson(TitleMode object) {
+    return object.toJson();
+  }
+}
+
+class TitleModeOrNullConverter implements JsonConverter<TitleMode?, String?> {
+  const TitleModeOrNullConverter();
+
+  @override
+  TitleMode? fromJson(String? json) {
+    if (json == null) {
+      return null;
+    }
+    return TitleMode.fromJson(json);
+  }
+
+  @override
+  String? toJson(TitleMode? object) {
+    if (object == null) {
+      return null;
+    }
+    return object.toJson();
   }
 }
 

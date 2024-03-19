@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.13
+
+- Changes related to `RegisteredApp` and `AvailableApp` models to support new app schema.
+
 ## 2.1.12
 
 - Added `DeliverLocation`, `DropoffFailedReason`, `TenvioImageSet`, `TenvioItemMovement`, `TenvioItem`, `TenvioMatrixItem`, `TenvioOrder`, `TenvioPackage` models for Tenvio Pick & Pack ecosystem.
