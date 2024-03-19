@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.15
+
+- Reverted `colors` deprecation on `AppDesign` model.
+
 ## 2.1.14
 
 - More deprecations related to `RegisteredApp` and `AvailableApp` models to support new app schema.

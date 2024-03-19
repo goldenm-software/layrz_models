@@ -6,7 +6,7 @@ class AppDesign with _$AppDesign {
   const factory AppDesign({
     /// [colors] defines the colors of the app, depending of the technology,
     /// the [AppThemedColors.mainColor] is the primary color of the app or not.
-    @Deprecated("This field was deprecated") AppThemedColors? colors,
+    @Deprecated("This field was deprecated") required AppThemedColors colors,
 
     /// [mainColor] defines the main color of the app.
     ///
