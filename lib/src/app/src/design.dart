@@ -76,37 +76,3 @@ class AppFooter with _$AppFooter {
 
   factory AppFooter.fromJson(Map<String, dynamic> json) => _$AppFooterFromJson(json);
 }
-
-class FooterFormatConverter implements JsonConverter<FooterFormat, String> {
-  const FooterFormatConverter();
-
-  @override
-  FooterFormat fromJson(String json) {
-    return FooterFormat.fromJson(json);
-  }
-
-  @override
-  String toJson(FooterFormat object) {
-    return object.toJson();
-  }
-}
-
-class FooterFormatOrNullConverter implements JsonConverter<FooterFormat?, String?> {
-  const FooterFormatOrNullConverter();
-
-  @override
-  FooterFormat? fromJson(String? json) {
-    if (json == null) {
-      return null;
-    }
-    return FooterFormat.fromJson(json);
-  }
-
-  @override
-  String? toJson(FooterFormat? object) {
-    if (object == null) {
-      return null;
-    }
-    return object.toJson();
-  }
-}

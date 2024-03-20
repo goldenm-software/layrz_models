@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.17
+
+- Reorganized `app` enums to better support.
+- Registered `tenvioPickAndPack` in the `AppInternalIdentifier` enum.
+
 ## 2.1.16
 
 - Added `theme` field in `AppDesign` model with a deprecation warning for `colors` field.

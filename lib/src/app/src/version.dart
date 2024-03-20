@@ -14,37 +14,3 @@ class AppVersion with _$AppVersion {
 
   factory AppVersion.fromJson(Map<String, dynamic> json) => _$AppVersionFromJson(json);
 }
-
-class AppInternalIdentifierConverter implements JsonConverter<AppInternalIdentifier, String> {
-  const AppInternalIdentifierConverter();
-
-  @override
-  AppInternalIdentifier fromJson(String json) {
-    return AppInternalIdentifier.fromJson(json);
-  }
-
-  @override
-  String toJson(AppInternalIdentifier object) {
-    return object.toJson();
-  }
-}
-
-class AppInternalIdentifierOrNullConverter implements JsonConverter<AppInternalIdentifier?, String?> {
-  const AppInternalIdentifierOrNullConverter();
-
-  @override
-  AppInternalIdentifier? fromJson(String? json) {
-    if (json == null) {
-      return null;
-    }
-    return AppInternalIdentifier.fromJson(json);
-  }
-
-  @override
-  String? toJson(AppInternalIdentifier? object) {
-    if (object == null) {
-      return null;
-    }
-    return object.toJson();
-  }
-}
