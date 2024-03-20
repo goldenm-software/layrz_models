@@ -16,6 +16,12 @@ class AppDesign with _$AppDesign {
     /// for the [colors] field and use the [mainColor] field from it.
     @ColorOrNullConverter() Color? mainColor,
 
+    /// [theme] defines the theme of the app.
+    ///
+    /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+    /// for the [colors] field and use the [theme] field from it.
+    @AppThemeOrNullConverter() AppTheme? theme,
+
     /// [favicons] defines the favicons of the app.
     required AppThemedAsset favicons,
 

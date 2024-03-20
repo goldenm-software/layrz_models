@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.16
+
+- Added `theme` field in `AppDesign` model with a deprecation warning for `colors` field.
+
 ## 2.1.15
 
 - Reverted `colors` deprecation on `AppDesign` model.

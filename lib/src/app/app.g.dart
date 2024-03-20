@@ -223,6 +223,7 @@ _$AppDesignImpl _$$AppDesignImplFromJson(Map<String, dynamic> json) =>
       colors: AppThemedColors.fromJson(json['colors'] as Map<String, dynamic>),
       mainColor:
           const ColorOrNullConverter().fromJson(json['mainColor'] as String?),
+      theme: const AppThemeOrNullConverter().fromJson(json['theme'] as String?),
       favicons:
           AppThemedAsset.fromJson(json['favicons'] as Map<String, dynamic>),
       logos: AppThemedAsset.fromJson(json['logos'] as Map<String, dynamic>),
@@ -244,6 +245,7 @@ Map<String, dynamic> _$$AppDesignImplToJson(_$AppDesignImpl instance) =>
     <String, dynamic>{
       'colors': instance.colors.toJson(),
       'mainColor': const ColorOrNullConverter().toJson(instance.mainColor),
+      'theme': const AppThemeOrNullConverter().toJson(instance.theme),
       'favicons': instance.favicons.toJson(),
       'logos': instance.logos.toJson(),
       'appicon': instance.appicon,

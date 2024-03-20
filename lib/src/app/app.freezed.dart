@@ -2327,6 +2327,13 @@ mixin _$AppDesign {
   @ColorOrNullConverter()
   Color? get mainColor => throw _privateConstructorUsedError;
 
+  /// [theme] defines the theme of the app.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [theme] field from it.
+  @AppThemeOrNullConverter()
+  AppTheme? get theme => throw _privateConstructorUsedError;
+
   /// [favicons] defines the favicons of the app.
   AppThemedAsset get favicons => throw _privateConstructorUsedError;
 
@@ -2380,6 +2387,7 @@ abstract class $AppDesignCopyWith<$Res> {
   $Res call(
       {@Deprecated("This field was deprecated") AppThemedColors colors,
       @ColorOrNullConverter() Color? mainColor,
+      @AppThemeOrNullConverter() AppTheme? theme,
       AppThemedAsset favicons,
       AppThemedAsset logos,
       String appicon,
@@ -2411,6 +2419,7 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
   $Res call({
     Object? colors = null,
     Object? mainColor = freezed,
+    Object? theme = freezed,
     Object? favicons = null,
     Object? logos = null,
     Object? appicon = null,
@@ -2428,6 +2437,10 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
           ? _value.mainColor
           : mainColor // ignore: cast_nullable_to_non_nullable
               as Color?,
+      theme: freezed == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as AppTheme?,
       favicons: null == favicons
           ? _value.favicons
           : favicons // ignore: cast_nullable_to_non_nullable
@@ -2531,6 +2544,7 @@ abstract class _$$AppDesignImplCopyWith<$Res>
   $Res call(
       {@Deprecated("This field was deprecated") AppThemedColors colors,
       @ColorOrNullConverter() Color? mainColor,
+      @AppThemeOrNullConverter() AppTheme? theme,
       AppThemedAsset favicons,
       AppThemedAsset logos,
       String appicon,
@@ -2566,6 +2580,7 @@ class __$$AppDesignImplCopyWithImpl<$Res>
   $Res call({
     Object? colors = null,
     Object? mainColor = freezed,
+    Object? theme = freezed,
     Object? favicons = null,
     Object? logos = null,
     Object? appicon = null,
@@ -2583,6 +2598,10 @@ class __$$AppDesignImplCopyWithImpl<$Res>
           ? _value.mainColor
           : mainColor // ignore: cast_nullable_to_non_nullable
               as Color?,
+      theme: freezed == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as AppTheme?,
       favicons: null == favicons
           ? _value.favicons
           : favicons // ignore: cast_nullable_to_non_nullable
@@ -2621,6 +2640,7 @@ class _$AppDesignImpl implements _AppDesign {
   const _$AppDesignImpl(
       {@Deprecated("This field was deprecated") required this.colors,
       @ColorOrNullConverter() this.mainColor,
+      @AppThemeOrNullConverter() this.theme,
       required this.favicons,
       required this.logos,
       required this.appicon,
@@ -2647,6 +2667,14 @@ class _$AppDesignImpl implements _AppDesign {
   @override
   @ColorOrNullConverter()
   final Color? mainColor;
+
+  /// [theme] defines the theme of the app.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [theme] field from it.
+  @override
+  @AppThemeOrNullConverter()
+  final AppTheme? theme;
 
   /// [favicons] defines the favicons of the app.
   @override
@@ -2696,7 +2724,7 @@ class _$AppDesignImpl implements _AppDesign {
 
   @override
   String toString() {
-    return 'AppDesign(colors: $colors, mainColor: $mainColor, favicons: $favicons, logos: $logos, appicon: $appicon, login: $login, footerFormat: $footerFormat, titleFont: $titleFont, bodyFont: $bodyFont)';
+    return 'AppDesign(colors: $colors, mainColor: $mainColor, theme: $theme, favicons: $favicons, logos: $logos, appicon: $appicon, login: $login, footerFormat: $footerFormat, titleFont: $titleFont, bodyFont: $bodyFont)';
   }
 
   @override
@@ -2707,6 +2735,7 @@ class _$AppDesignImpl implements _AppDesign {
             (identical(other.colors, colors) || other.colors == colors) &&
             (identical(other.mainColor, mainColor) ||
                 other.mainColor == mainColor) &&
+            (identical(other.theme, theme) || other.theme == theme) &&
             (identical(other.favicons, favicons) ||
                 other.favicons == favicons) &&
             (identical(other.logos, logos) || other.logos == logos) &&
@@ -2722,8 +2751,8 @@ class _$AppDesignImpl implements _AppDesign {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, colors, mainColor, favicons,
-      logos, appicon, login, footerFormat, titleFont, bodyFont);
+  int get hashCode => Object.hash(runtimeType, colors, mainColor, theme,
+      favicons, logos, appicon, login, footerFormat, titleFont, bodyFont);
 
   @JsonKey(ignore: true)
   @override
@@ -2744,6 +2773,7 @@ abstract class _AppDesign implements AppDesign {
       {@Deprecated("This field was deprecated")
       required final AppThemedColors colors,
       @ColorOrNullConverter() final Color? mainColor,
+      @AppThemeOrNullConverter() final AppTheme? theme,
       required final AppThemedAsset favicons,
       required final AppThemedAsset logos,
       required final String appicon,
@@ -2771,6 +2801,14 @@ abstract class _AppDesign implements AppDesign {
   /// for the [colors] field and use the [mainColor] field from it.
   @ColorOrNullConverter()
   Color? get mainColor;
+  @override
+
+  /// [theme] defines the theme of the app.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [theme] field from it.
+  @AppThemeOrNullConverter()
+  AppTheme? get theme;
   @override
 
   /// [favicons] defines the favicons of the app.
