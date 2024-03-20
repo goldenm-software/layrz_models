@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.18
+
+- Deprecated `colors` on `AppDesign` model. (Re-Reverted from version 2.1.15)
+
 ## 2.1.17
 
 - Reorganized `app` enums to better support.
