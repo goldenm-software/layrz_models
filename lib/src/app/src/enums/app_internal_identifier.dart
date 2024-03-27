@@ -72,6 +72,9 @@ enum AppInternalIdentifier {
 
   /// API Reference: `TENVIO_PICK_AND_PACK`
   tenvioPickAndPack,
+
+  /// API Reference `DRIVE`
+  drive,
   ;
 
   @override
@@ -127,6 +130,8 @@ enum AppInternalIdentifier {
         return 'TAGON_MANAGER';
       case AppInternalIdentifier.tenvioPickAndPack:
         return 'TENVIO_PICK_AND_PACK';
+      case AppInternalIdentifier.drive:
+        return 'DRIVE';
       default:
         throw Exception('Unknown AppInternalIdentifier: $this');
     }
@@ -182,6 +187,8 @@ enum AppInternalIdentifier {
         return AppInternalIdentifier.tagonManager;
       case 'TENVIO_PICK_AND_PACK':
         return AppInternalIdentifier.tenvioPickAndPack;
+      case 'DRIVE':
+        return AppInternalIdentifier.drive;
       default:
         throw Exception('Unknown AppInternalIdentifier: $value');
     }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.19
+
+- Added / registered Layrz Drive as a new app in the `AppInternalIdentifier` enum.
+
 ## 2.1.18
 
 - Deprecated `colors` on `AppDesign` model. (Re-Reverted from version 2.1.15)
