@@ -40,6 +40,10 @@ _$VisionProfileImpl _$$VisionProfileImplFromJson(Map<String, dynamic> json) =>
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
+      lastMeasurement: json['lastMeasurement'] == null
+          ? null
+          : VisionGaugeResult.fromJson(
+              json['lastMeasurement'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$VisionProfileImplToJson(_$VisionProfileImpl instance) =>
@@ -50,4 +54,22 @@ Map<String, dynamic> _$$VisionProfileImplToJson(_$VisionProfileImpl instance) =>
       'protocol': instance.protocol?.toJson(),
       'config': instance.config,
       'access': instance.access?.map((e) => e.toJson()).toList(),
+      'lastMeasurement': instance.lastMeasurement?.toJson(),
+    };
+
+_$VisionGaugeResultImpl _$$VisionGaugeResultImplFromJson(
+        Map<String, dynamic> json) =>
+    _$VisionGaugeResultImpl(
+      id: json['id'] as String,
+      result: (json['result'] as num).toDouble(),
+      performedAt:
+          const TimestampConverter().fromJson(json['performedAt'] as num),
+    );
+
+Map<String, dynamic> _$$VisionGaugeResultImplToJson(
+        _$VisionGaugeResultImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'result': instance.result,
+      'performedAt': const TimestampConverter().toJson(instance.performedAt),
     };

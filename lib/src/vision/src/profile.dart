@@ -20,6 +20,10 @@ class VisionProfile with _$VisionProfile {
 
     /// [access] is the list of grant access to the vision profile.
     List<Access>? access,
+
+    /// [lastMeasurement] is the last measurement of the profile.
+    /// It is null if there is no measurement.
+    VisionGaugeResult? lastMeasurement,
   }) = _VisionProfile;
 
   /// from json

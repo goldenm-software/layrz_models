@@ -11,3 +11,4 @@ part 'vision.g.dart';
 // Modules
 part 'src/protocol.dart';
 part 'src/profile.dart';
+part 'src/gauge_result.dart';

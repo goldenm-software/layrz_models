@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.20
+
+- Added `VisionGaugeResult` to reference the result of a gauge with Layrz Vision.
+
 ## 2.1.19
 
 - Added / registered Layrz Drive as a new app in the `AppInternalIdentifier` enum.
