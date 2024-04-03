@@ -1,4 +1,6 @@
 # Changelog
+## 2.1.21
+- Added `geofences` that refer to the geofences linked to the `Asset` model
 
 ## 2.1.20
 

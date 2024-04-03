@@ -150,6 +150,9 @@ class Asset with _$Asset {
 
     /// [mappitLaborEndTime] is the time of the labor end time.
     @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
+
+    /// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
+    List<Geofence>? geofences,
   }) = _Asset;
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
