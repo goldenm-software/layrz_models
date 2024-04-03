@@ -220,7 +220,12 @@ Map<String, dynamic> _$$AppThemedColorsImplToJson(
 
 _$AppDesignImpl _$$AppDesignImplFromJson(Map<String, dynamic> json) =>
     _$AppDesignImpl(
-      colors: AppThemedColors.fromJson(json['colors'] as Map<String, dynamic>),
+      colors: json['colors'] == null
+          ? null
+          : AppThemedColors.fromJson(json['colors'] as Map<String, dynamic>),
+      mainColor:
+          const ColorOrNullConverter().fromJson(json['mainColor'] as String?),
+      theme: const AppThemeOrNullConverter().fromJson(json['theme'] as String?),
       favicons:
           AppThemedAsset.fromJson(json['favicons'] as Map<String, dynamic>),
       logos: AppThemedAsset.fromJson(json['logos'] as Map<String, dynamic>),
@@ -240,7 +245,9 @@ _$AppDesignImpl _$$AppDesignImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$AppDesignImplToJson(_$AppDesignImpl instance) =>
     <String, dynamic>{
-      'colors': instance.colors.toJson(),
+      'colors': instance.colors?.toJson(),
+      'mainColor': const ColorOrNullConverter().toJson(instance.mainColor),
+      'theme': const AppThemeOrNullConverter().toJson(instance.theme),
       'favicons': instance.favicons.toJson(),
       'logos': instance.logos.toJson(),
       'appicon': instance.appicon,
@@ -338,31 +345,36 @@ Map<String, dynamic> _$$AppLegalImplToJson(_$AppLegalImpl instance) =>
 
 _$AppLoginDesignImpl _$$AppLoginDesignImplFromJson(Map<String, dynamic> json) =>
     _$AppLoginDesignImpl(
-      layout:
-          const LoginLayoutModeConverter().fromJson(json['layout'] as String),
-      title: const TitleModeConverter().fromJson(json['title'] as String),
-      background: AppBackgroundDesign.fromJson(
-          json['background'] as Map<String, dynamic>),
+      layout: const LoginLayoutModeOrNullConverter()
+          .fromJson(json['layout'] as String?),
+      title:
+          const TitleModeOrNullConverter().fromJson(json['title'] as String?),
+      background: json['background'] == null
+          ? null
+          : AppBackgroundDesign.fromJson(
+              json['background'] as Map<String, dynamic>),
+      backgroundColor: const ColorOrNullConverter()
+          .fromJson(json['backgroundColor'] as String?),
+      backgroundImage: json['backgroundImage'] as String?,
+      mode: const BackgroundModeOrNullConverter()
+          .fromJson(json['mode'] as String?),
+      description: json['description'] as String?,
+      design: const LayoutDesignOrNullConverter()
+          .fromJson(json['design'] as String?),
     );
 
 Map<String, dynamic> _$$AppLoginDesignImplToJson(
         _$AppLoginDesignImpl instance) =>
     <String, dynamic>{
-      'layout': const LoginLayoutModeConverter().toJson(instance.layout),
-      'title': const TitleModeConverter().toJson(instance.title),
-      'background': instance.background.toJson(),
-    };
-
-_$LegacyAppLoginDesignImpl _$$LegacyAppLoginDesignImplFromJson(
-        Map<String, dynamic> json) =>
-    _$LegacyAppLoginDesignImpl(
-      mode: const LoginLayoutModeConverter().fromJson(json['mode'] as String),
-    );
-
-Map<String, dynamic> _$$LegacyAppLoginDesignImplToJson(
-        _$LegacyAppLoginDesignImpl instance) =>
-    <String, dynamic>{
-      'mode': const LoginLayoutModeConverter().toJson(instance.mode),
+      'layout': const LoginLayoutModeOrNullConverter().toJson(instance.layout),
+      'title': const TitleModeOrNullConverter().toJson(instance.title),
+      'background': instance.background?.toJson(),
+      'backgroundColor':
+          const ColorOrNullConverter().toJson(instance.backgroundColor),
+      'backgroundImage': instance.backgroundImage,
+      'mode': const BackgroundModeOrNullConverter().toJson(instance.mode),
+      'description': instance.description,
+      'design': const LayoutDesignOrNullConverter().toJson(instance.design),
     };
 
 _$AppTitleModeImpl _$$AppTitleModeImplFromJson(Map<String, dynamic> json) =>

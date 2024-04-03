@@ -303,6 +303,10 @@ mixin _$VisionProfile {
   /// [access] is the list of grant access to the vision profile.
   List<Access>? get access => throw _privateConstructorUsedError;
 
+  /// [lastMeasurement] is the last measurement of the profile.
+  /// It is null if there is no measurement.
+  VisionGaugeResult? get lastMeasurement => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $VisionProfileCopyWith<VisionProfile> get copyWith =>
@@ -321,9 +325,11 @@ abstract class $VisionProfileCopyWith<$Res> {
       String? protocolId,
       VisionProtocol? protocol,
       Map<String, dynamic>? config,
-      List<Access>? access});
+      List<Access>? access,
+      VisionGaugeResult? lastMeasurement});
 
   $VisionProtocolCopyWith<$Res>? get protocol;
+  $VisionGaugeResultCopyWith<$Res>? get lastMeasurement;
 }
 
 /// @nodoc
@@ -345,6 +351,7 @@ class _$VisionProfileCopyWithImpl<$Res, $Val extends VisionProfile>
     Object? protocol = freezed,
     Object? config = freezed,
     Object? access = freezed,
+    Object? lastMeasurement = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -371,6 +378,10 @@ class _$VisionProfileCopyWithImpl<$Res, $Val extends VisionProfile>
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      lastMeasurement: freezed == lastMeasurement
+          ? _value.lastMeasurement
+          : lastMeasurement // ignore: cast_nullable_to_non_nullable
+              as VisionGaugeResult?,
     ) as $Val);
   }
 
@@ -383,6 +394,18 @@ class _$VisionProfileCopyWithImpl<$Res, $Val extends VisionProfile>
 
     return $VisionProtocolCopyWith<$Res>(_value.protocol!, (value) {
       return _then(_value.copyWith(protocol: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $VisionGaugeResultCopyWith<$Res>? get lastMeasurement {
+    if (_value.lastMeasurement == null) {
+      return null;
+    }
+
+    return $VisionGaugeResultCopyWith<$Res>(_value.lastMeasurement!, (value) {
+      return _then(_value.copyWith(lastMeasurement: value) as $Val);
     });
   }
 }
@@ -401,10 +424,13 @@ abstract class _$$VisionProfileImplCopyWith<$Res>
       String? protocolId,
       VisionProtocol? protocol,
       Map<String, dynamic>? config,
-      List<Access>? access});
+      List<Access>? access,
+      VisionGaugeResult? lastMeasurement});
 
   @override
   $VisionProtocolCopyWith<$Res>? get protocol;
+  @override
+  $VisionGaugeResultCopyWith<$Res>? get lastMeasurement;
 }
 
 /// @nodoc
@@ -424,6 +450,7 @@ class __$$VisionProfileImplCopyWithImpl<$Res>
     Object? protocol = freezed,
     Object? config = freezed,
     Object? access = freezed,
+    Object? lastMeasurement = freezed,
   }) {
     return _then(_$VisionProfileImpl(
       id: null == id
@@ -450,6 +477,10 @@ class __$$VisionProfileImplCopyWithImpl<$Res>
           ? _value._access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      lastMeasurement: freezed == lastMeasurement
+          ? _value.lastMeasurement
+          : lastMeasurement // ignore: cast_nullable_to_non_nullable
+              as VisionGaugeResult?,
     ));
   }
 }
@@ -463,7 +494,8 @@ class _$VisionProfileImpl implements _VisionProfile {
       this.protocolId,
       this.protocol,
       final Map<String, dynamic>? config,
-      final List<Access>? access})
+      final List<Access>? access,
+      this.lastMeasurement})
       : _config = config,
         _access = access;
 
@@ -512,9 +544,14 @@ class _$VisionProfileImpl implements _VisionProfile {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [lastMeasurement] is the last measurement of the profile.
+  /// It is null if there is no measurement.
+  @override
+  final VisionGaugeResult? lastMeasurement;
+
   @override
   String toString() {
-    return 'VisionProfile(id: $id, name: $name, protocolId: $protocolId, protocol: $protocol, config: $config, access: $access)';
+    return 'VisionProfile(id: $id, name: $name, protocolId: $protocolId, protocol: $protocol, config: $config, access: $access, lastMeasurement: $lastMeasurement)';
   }
 
   @override
@@ -529,7 +566,9 @@ class _$VisionProfileImpl implements _VisionProfile {
             (identical(other.protocol, protocol) ||
                 other.protocol == protocol) &&
             const DeepCollectionEquality().equals(other._config, _config) &&
-            const DeepCollectionEquality().equals(other._access, _access));
+            const DeepCollectionEquality().equals(other._access, _access) &&
+            (identical(other.lastMeasurement, lastMeasurement) ||
+                other.lastMeasurement == lastMeasurement));
   }
 
   @JsonKey(ignore: true)
@@ -541,7 +580,8 @@ class _$VisionProfileImpl implements _VisionProfile {
       protocolId,
       protocol,
       const DeepCollectionEquality().hash(_config),
-      const DeepCollectionEquality().hash(_access));
+      const DeepCollectionEquality().hash(_access),
+      lastMeasurement);
 
   @JsonKey(ignore: true)
   @override
@@ -564,7 +604,8 @@ abstract class _VisionProfile implements VisionProfile {
       final String? protocolId,
       final VisionProtocol? protocol,
       final Map<String, dynamic>? config,
-      final List<Access>? access}) = _$VisionProfileImpl;
+      final List<Access>? access,
+      final VisionGaugeResult? lastMeasurement}) = _$VisionProfileImpl;
 
   factory _VisionProfile.fromJson(Map<String, dynamic> json) =
       _$VisionProfileImpl.fromJson;
@@ -594,7 +635,210 @@ abstract class _VisionProfile implements VisionProfile {
   /// [access] is the list of grant access to the vision profile.
   List<Access>? get access;
   @override
+
+  /// [lastMeasurement] is the last measurement of the profile.
+  /// It is null if there is no measurement.
+  VisionGaugeResult? get lastMeasurement;
+  @override
   @JsonKey(ignore: true)
   _$$VisionProfileImplCopyWith<_$VisionProfileImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+VisionGaugeResult _$VisionGaugeResultFromJson(Map<String, dynamic> json) {
+  return _VisionGaugeResult.fromJson(json);
+}
+
+/// @nodoc
+mixin _$VisionGaugeResult {
+  /// [id] is the unique identifier of the measurement.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [result] is the result of the measurement.
+  double get result => throw _privateConstructorUsedError;
+
+  /// [performedAt] is the date and time when the measurement was performed.
+  @TimestampConverter()
+  DateTime get performedAt => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $VisionGaugeResultCopyWith<VisionGaugeResult> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $VisionGaugeResultCopyWith<$Res> {
+  factory $VisionGaugeResultCopyWith(
+          VisionGaugeResult value, $Res Function(VisionGaugeResult) then) =
+      _$VisionGaugeResultCopyWithImpl<$Res, VisionGaugeResult>;
+  @useResult
+  $Res call(
+      {String id, double result, @TimestampConverter() DateTime performedAt});
+}
+
+/// @nodoc
+class _$VisionGaugeResultCopyWithImpl<$Res, $Val extends VisionGaugeResult>
+    implements $VisionGaugeResultCopyWith<$Res> {
+  _$VisionGaugeResultCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? result = null,
+    Object? performedAt = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as double,
+      performedAt: null == performedAt
+          ? _value.performedAt
+          : performedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$VisionGaugeResultImplCopyWith<$Res>
+    implements $VisionGaugeResultCopyWith<$Res> {
+  factory _$$VisionGaugeResultImplCopyWith(_$VisionGaugeResultImpl value,
+          $Res Function(_$VisionGaugeResultImpl) then) =
+      __$$VisionGaugeResultImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id, double result, @TimestampConverter() DateTime performedAt});
+}
+
+/// @nodoc
+class __$$VisionGaugeResultImplCopyWithImpl<$Res>
+    extends _$VisionGaugeResultCopyWithImpl<$Res, _$VisionGaugeResultImpl>
+    implements _$$VisionGaugeResultImplCopyWith<$Res> {
+  __$$VisionGaugeResultImplCopyWithImpl(_$VisionGaugeResultImpl _value,
+      $Res Function(_$VisionGaugeResultImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? result = null,
+    Object? performedAt = null,
+  }) {
+    return _then(_$VisionGaugeResultImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      result: null == result
+          ? _value.result
+          : result // ignore: cast_nullable_to_non_nullable
+              as double,
+      performedAt: null == performedAt
+          ? _value.performedAt
+          : performedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$VisionGaugeResultImpl implements _VisionGaugeResult {
+  const _$VisionGaugeResultImpl(
+      {required this.id,
+      required this.result,
+      @TimestampConverter() required this.performedAt});
+
+  factory _$VisionGaugeResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$VisionGaugeResultImplFromJson(json);
+
+  /// [id] is the unique identifier of the measurement.
+  @override
+  final String id;
+
+  /// [result] is the result of the measurement.
+  @override
+  final double result;
+
+  /// [performedAt] is the date and time when the measurement was performed.
+  @override
+  @TimestampConverter()
+  final DateTime performedAt;
+
+  @override
+  String toString() {
+    return 'VisionGaugeResult(id: $id, result: $result, performedAt: $performedAt)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VisionGaugeResultImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.result, result) || other.result == result) &&
+            (identical(other.performedAt, performedAt) ||
+                other.performedAt == performedAt));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, result, performedAt);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VisionGaugeResultImplCopyWith<_$VisionGaugeResultImpl> get copyWith =>
+      __$$VisionGaugeResultImplCopyWithImpl<_$VisionGaugeResultImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$VisionGaugeResultImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _VisionGaugeResult implements VisionGaugeResult {
+  const factory _VisionGaugeResult(
+          {required final String id,
+          required final double result,
+          @TimestampConverter() required final DateTime performedAt}) =
+      _$VisionGaugeResultImpl;
+
+  factory _VisionGaugeResult.fromJson(Map<String, dynamic> json) =
+      _$VisionGaugeResultImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier of the measurement.
+  String get id;
+  @override
+
+  /// [result] is the result of the measurement.
+  double get result;
+  @override
+
+  /// [performedAt] is the date and time when the measurement was performed.
+  @TimestampConverter()
+  DateTime get performedAt;
+  @override
+  @JsonKey(ignore: true)
+  _$$VisionGaugeResultImplCopyWith<_$VisionGaugeResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

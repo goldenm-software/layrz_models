@@ -6,7 +6,21 @@ class AppDesign with _$AppDesign {
   const factory AppDesign({
     /// [colors] defines the colors of the app, depending of the technology,
     /// the [AppThemedColors.mainColor] is the primary color of the app or not.
-    required AppThemedColors colors,
+    @Deprecated("This field was deprecated") AppThemedColors? colors,
+
+    /// [mainColor] defines the main color of the app.
+    ///
+    /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+    ///
+    /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+    /// for the [colors] field and use the [mainColor] field from it.
+    @ColorOrNullConverter() Color? mainColor,
+
+    /// [theme] defines the theme of the app.
+    ///
+    /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+    /// for the [colors] field and use the [theme] field from it.
+    @AppThemeOrNullConverter() AppTheme? theme,
 
     /// [favicons] defines the favicons of the app.
     required AppThemedAsset favicons,
@@ -61,38 +75,4 @@ class AppFooter with _$AppFooter {
   }) = _AppFooter;
 
   factory AppFooter.fromJson(Map<String, dynamic> json) => _$AppFooterFromJson(json);
-}
-
-class FooterFormatConverter implements JsonConverter<FooterFormat, String> {
-  const FooterFormatConverter();
-
-  @override
-  FooterFormat fromJson(String json) {
-    return FooterFormat.fromJson(json);
-  }
-
-  @override
-  String toJson(FooterFormat object) {
-    return object.toJson();
-  }
-}
-
-class FooterFormatOrNullConverter implements JsonConverter<FooterFormat?, String?> {
-  const FooterFormatOrNullConverter();
-
-  @override
-  FooterFormat? fromJson(String? json) {
-    if (json == null) {
-      return null;
-    }
-    return FooterFormat.fromJson(json);
-  }
-
-  @override
-  String? toJson(FooterFormat? object) {
-    if (object == null) {
-      return null;
-    }
-    return object.toJson();
-  }
 }

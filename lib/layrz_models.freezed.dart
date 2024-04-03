@@ -3041,6 +3041,9 @@ mixin _$Asset {
   @TimeOfDayOrNullConverter()
   TimeOfDay? get mappitLaborEndTime => throw _privateConstructorUsedError;
 
+  /// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
+  List<Geofence>? get geofences => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AssetCopyWith<Asset> get copyWith => throw _privateConstructorUsedError;
@@ -3096,7 +3099,8 @@ abstract class $AssetCopyWith<$Res> {
       List<String> parameters,
       List<Sensor>? globalSensors,
       @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,
-      @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime});
+      @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
+      List<Geofence>? geofences});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $CategoryCopyWith<$Res>? get kind;
@@ -3166,6 +3170,7 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     Object? globalSensors = freezed,
     Object? mappitLaborStartTime = freezed,
     Object? mappitLaborEndTime = freezed,
+    Object? geofences = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -3348,6 +3353,10 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
           ? _value.mappitLaborEndTime
           : mappitLaborEndTime // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
+      geofences: freezed == geofences
+          ? _value.geofences
+          : geofences // ignore: cast_nullable_to_non_nullable
+              as List<Geofence>?,
     ) as $Val);
   }
 
@@ -3501,7 +3510,8 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
       List<String> parameters,
       List<Sensor>? globalSensors,
       @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,
-      @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime});
+      @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
+      List<Geofence>? geofences});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -3577,6 +3587,7 @@ class __$$AssetImplCopyWithImpl<$Res>
     Object? globalSensors = freezed,
     Object? mappitLaborStartTime = freezed,
     Object? mappitLaborEndTime = freezed,
+    Object? geofences = freezed,
   }) {
     return _then(_$AssetImpl(
       id: null == id
@@ -3759,6 +3770,10 @@ class __$$AssetImplCopyWithImpl<$Res>
           ? _value.mappitLaborEndTime
           : mappitLaborEndTime // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
+      geofences: freezed == geofences
+          ? _value._geofences
+          : geofences // ignore: cast_nullable_to_non_nullable
+              as List<Geofence>?,
     ));
   }
 }
@@ -3811,7 +3826,8 @@ class _$AssetImpl implements _Asset {
       final List<String> parameters = const [],
       final List<Sensor>? globalSensors,
       @TimeOfDayOrNullConverter() this.mappitLaborStartTime,
-      @TimeOfDayOrNullConverter() this.mappitLaborEndTime})
+      @TimeOfDayOrNullConverter() this.mappitLaborEndTime,
+      final List<Geofence>? geofences})
       : _childrenIds = childrenIds,
         _children = children,
         _commands = commands,
@@ -3834,7 +3850,8 @@ class _$AssetImpl implements _Asset {
         _linkedSupplyPointAssets = linkedSupplyPointAssets,
         _linkedSupplyPointAssetsIds = linkedSupplyPointAssetsIds,
         _parameters = parameters,
-        _globalSensors = globalSensors;
+        _globalSensors = globalSensors,
+        _geofences = geofences;
 
   factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
       _$$AssetImplFromJson(json);
@@ -4256,9 +4273,22 @@ class _$AssetImpl implements _Asset {
   @TimeOfDayOrNullConverter()
   final TimeOfDay? mappitLaborEndTime;
 
+  /// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
+  final List<Geofence>? _geofences;
+
+  /// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
+  @override
+  List<Geofence>? get geofences {
+    final value = _geofences;
+    if (value == null) return null;
+    if (_geofences is EqualUnmodifiableListView) return _geofences;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime)';
+    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences)';
   }
 
   @override
@@ -4339,7 +4369,9 @@ class _$AssetImpl implements _Asset {
             (identical(other.mappitLaborStartTime, mappitLaborStartTime) ||
                 other.mappitLaborStartTime == mappitLaborStartTime) &&
             (identical(other.mappitLaborEndTime, mappitLaborEndTime) ||
-                other.mappitLaborEndTime == mappitLaborEndTime));
+                other.mappitLaborEndTime == mappitLaborEndTime) &&
+            const DeepCollectionEquality()
+                .equals(other._geofences, _geofences));
   }
 
   @JsonKey(ignore: true)
@@ -4390,7 +4422,8 @@ class _$AssetImpl implements _Asset {
         const DeepCollectionEquality().hash(_parameters),
         const DeepCollectionEquality().hash(_globalSensors),
         mappitLaborStartTime,
-        mappitLaborEndTime
+        mappitLaborEndTime,
+        const DeepCollectionEquality().hash(_geofences)
       ]);
 
   @JsonKey(ignore: true)
@@ -4409,52 +4442,52 @@ class _$AssetImpl implements _Asset {
 
 abstract class _Asset implements Asset {
   const factory _Asset(
-          {required final String id,
-          required final String name,
-          final String? plate,
-          final String? vin,
-          final Avatar? dynamicIcon,
-          @AssetModeOrNullConverter() final AssetMode? mode,
-          final List<String>? childrenIds,
-          final List<Asset>? children,
-          final List<DeviceCommand>? commands,
-          final List<String>? referencesIds,
-          final List<Reference>? references,
-          final List<String>? authenticatedAssetsIds,
-          final List<Asset>? authenticatedAssets,
-          final List<String>? authenticatedUsersIds,
-          final List<User>? authenticatedUsers,
-          final String? kindId,
-          final Category? kind,
-          final List<CustomField>? customFields,
-          final List<Sensor>? sensors,
-          final String? primaryId,
-          final Device? primary,
-          final List<String>? devicesIds,
-          final List<Device>? devices,
-          final String? qrCode,
-          final List<String>? externalIdentifiers,
-          final Connection? connection,
-          final AssetTelemetry? telemetry,
-          final List<Tag>? tags,
-          final List<Access>? access,
-          final List<AtsExit>? lastExits,
-          final String? activeTime,
-          final List<ContactInfo>? contacts,
-          final List<MappitLaborHour>? mappitLaborHours,
-          final String? ownerId,
-          final AssetLoginInfo? loginInfo,
-          final AtsAuthenticationCard? authenticationCard,
-          final String? authenticationCardId,
-          final String? nfcIdentifier,
-          final List<Asset>? linkedSupplyPointAssets,
-          final List<String>? linkedSupplyPointAssetsIds,
-          final StaticPosition? staticPosition,
-          final List<String> parameters,
-          final List<Sensor>? globalSensors,
-          @TimeOfDayOrNullConverter() final TimeOfDay? mappitLaborStartTime,
-          @TimeOfDayOrNullConverter() final TimeOfDay? mappitLaborEndTime}) =
-      _$AssetImpl;
+      {required final String id,
+      required final String name,
+      final String? plate,
+      final String? vin,
+      final Avatar? dynamicIcon,
+      @AssetModeOrNullConverter() final AssetMode? mode,
+      final List<String>? childrenIds,
+      final List<Asset>? children,
+      final List<DeviceCommand>? commands,
+      final List<String>? referencesIds,
+      final List<Reference>? references,
+      final List<String>? authenticatedAssetsIds,
+      final List<Asset>? authenticatedAssets,
+      final List<String>? authenticatedUsersIds,
+      final List<User>? authenticatedUsers,
+      final String? kindId,
+      final Category? kind,
+      final List<CustomField>? customFields,
+      final List<Sensor>? sensors,
+      final String? primaryId,
+      final Device? primary,
+      final List<String>? devicesIds,
+      final List<Device>? devices,
+      final String? qrCode,
+      final List<String>? externalIdentifiers,
+      final Connection? connection,
+      final AssetTelemetry? telemetry,
+      final List<Tag>? tags,
+      final List<Access>? access,
+      final List<AtsExit>? lastExits,
+      final String? activeTime,
+      final List<ContactInfo>? contacts,
+      final List<MappitLaborHour>? mappitLaborHours,
+      final String? ownerId,
+      final AssetLoginInfo? loginInfo,
+      final AtsAuthenticationCard? authenticationCard,
+      final String? authenticationCardId,
+      final String? nfcIdentifier,
+      final List<Asset>? linkedSupplyPointAssets,
+      final List<String>? linkedSupplyPointAssetsIds,
+      final StaticPosition? staticPosition,
+      final List<String> parameters,
+      final List<Sensor>? globalSensors,
+      @TimeOfDayOrNullConverter() final TimeOfDay? mappitLaborStartTime,
+      @TimeOfDayOrNullConverter() final TimeOfDay? mappitLaborEndTime,
+      final List<Geofence>? geofences}) = _$AssetImpl;
 
   factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
 
@@ -4654,6 +4687,10 @@ abstract class _Asset implements Asset {
   /// [mappitLaborEndTime] is the time of the labor end time.
   @TimeOfDayOrNullConverter()
   TimeOfDay? get mappitLaborEndTime;
+  @override
+
+  /// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
+  List<Geofence>? get geofences;
   @override
   @JsonKey(ignore: true)
   _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>

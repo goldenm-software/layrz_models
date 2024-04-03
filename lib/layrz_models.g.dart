@@ -384,6 +384,9 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
           .fromJson(json['mappitLaborStartTime'] as String?),
       mappitLaborEndTime: const TimeOfDayOrNullConverter()
           .fromJson(json['mappitLaborEndTime'] as String?),
+      geofences: (json['geofences'] as List<dynamic>?)
+          ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
@@ -439,6 +442,7 @@ Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
           .toJson(instance.mappitLaborStartTime),
       'mappitLaborEndTime':
           const TimeOfDayOrNullConverter().toJson(instance.mappitLaborEndTime),
+      'geofences': instance.geofences?.map((e) => e.toJson()).toList(),
     };
 
 _$ContactInfoImpl _$$ContactInfoImplFromJson(Map<String, dynamic> json) =>

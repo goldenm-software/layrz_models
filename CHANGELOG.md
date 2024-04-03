@@ -1,4 +1,48 @@
 # Changelog
+## 2.1.21
+- Added `geofences` that refer to the geofences linked to the `Asset` model
+
+## 2.1.20
+
+- Added `VisionGaugeResult` to reference the result of a gauge with Layrz Vision.
+
+## 2.1.19
+
+- Added / registered Layrz Drive as a new app in the `AppInternalIdentifier` enum.
+
+## 2.1.18
+
+- Deprecated `colors` on `AppDesign` model. (Re-Reverted from version 2.1.15)
+
+## 2.1.17
+
+- Reorganized `app` enums to better support.
+- Registered `tenvioPickAndPack` in the `AppInternalIdentifier` enum.
+
+## 2.1.16
+
+- Added `theme` field in `AppDesign` model with a deprecation warning for `colors` field.
+
+## 2.1.15
+
+- Reverted `colors` deprecation on `AppDesign` model.
+
+## 2.1.14
+
+- More deprecations related to `RegisteredApp` and `AvailableApp` models to support new app schema.
+
+## 2.1.13
+
+- Changes related to `RegisteredApp` and `AvailableApp` models to support new app schema.
+
+## 2.1.12
+
+- Added `DeliverLocation`, `DropoffFailedReason`, `TenvioImageSet`, `TenvioItemMovement`, `TenvioItem`, `TenvioMatrixItem`, `TenvioOrder`, `TenvioPackage` models for Tenvio Pick & Pack ecosystem.
+- Added `TenvioItemLocation`, `TenvioOrderStatus`, `TenvioPackageStatus` enums for Tenvio Pick & Pack ecosystem.
+
+## 2.1.11
+
+- Minor changes in `LayrzAppLocalizationsDelegate` to prevent unresolved translation keys when loading.
 
 ## 2.1.10
 

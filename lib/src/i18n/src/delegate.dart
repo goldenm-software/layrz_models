@@ -255,7 +255,7 @@ class LayrzAppLocalizationsDelegate extends LocalizationsDelegate<LayrzAppLocali
   }
 
   @override
-  bool shouldReload(LayrzAppLocalizationsDelegate old) => old.currentLocale != currentLocale;
+  bool shouldReload(LayrzAppLocalizationsDelegate old) => true;
 }
 
 bool debugCheckHasLayrzAppLocalizations(BuildContext context) {

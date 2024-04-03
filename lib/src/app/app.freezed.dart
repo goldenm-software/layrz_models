@@ -2315,7 +2315,24 @@ AppDesign _$AppDesignFromJson(Map<String, dynamic> json) {
 mixin _$AppDesign {
   /// [colors] defines the colors of the app, depending of the technology,
   /// the [AppThemedColors.mainColor] is the primary color of the app or not.
-  AppThemedColors get colors => throw _privateConstructorUsedError;
+  @Deprecated("This field was deprecated")
+  AppThemedColors? get colors => throw _privateConstructorUsedError;
+
+  /// [mainColor] defines the main color of the app.
+  ///
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [mainColor] field from it.
+  @ColorOrNullConverter()
+  Color? get mainColor => throw _privateConstructorUsedError;
+
+  /// [theme] defines the theme of the app.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [theme] field from it.
+  @AppThemeOrNullConverter()
+  AppTheme? get theme => throw _privateConstructorUsedError;
 
   /// [favicons] defines the favicons of the app.
   AppThemedAsset get favicons => throw _privateConstructorUsedError;
@@ -2368,7 +2385,9 @@ abstract class $AppDesignCopyWith<$Res> {
       _$AppDesignCopyWithImpl<$Res, AppDesign>;
   @useResult
   $Res call(
-      {AppThemedColors colors,
+      {@Deprecated("This field was deprecated") AppThemedColors? colors,
+      @ColorOrNullConverter() Color? mainColor,
+      @AppThemeOrNullConverter() AppTheme? theme,
       AppThemedAsset favicons,
       AppThemedAsset logos,
       String appicon,
@@ -2377,7 +2396,7 @@ abstract class $AppDesignCopyWith<$Res> {
       AppFont? titleFont,
       AppFont? bodyFont});
 
-  $AppThemedColorsCopyWith<$Res> get colors;
+  $AppThemedColorsCopyWith<$Res>? get colors;
   $AppThemedAssetCopyWith<$Res> get favicons;
   $AppThemedAssetCopyWith<$Res> get logos;
   $AppLoginDesignCopyWith<$Res>? get login;
@@ -2398,7 +2417,9 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? colors = null,
+    Object? colors = freezed,
+    Object? mainColor = freezed,
+    Object? theme = freezed,
     Object? favicons = null,
     Object? logos = null,
     Object? appicon = null,
@@ -2408,10 +2429,18 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
     Object? bodyFont = freezed,
   }) {
     return _then(_value.copyWith(
-      colors: null == colors
+      colors: freezed == colors
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
-              as AppThemedColors,
+              as AppThemedColors?,
+      mainColor: freezed == mainColor
+          ? _value.mainColor
+          : mainColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      theme: freezed == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as AppTheme?,
       favicons: null == favicons
           ? _value.favicons
           : favicons // ignore: cast_nullable_to_non_nullable
@@ -2445,8 +2474,12 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
 
   @override
   @pragma('vm:prefer-inline')
-  $AppThemedColorsCopyWith<$Res> get colors {
-    return $AppThemedColorsCopyWith<$Res>(_value.colors, (value) {
+  $AppThemedColorsCopyWith<$Res>? get colors {
+    if (_value.colors == null) {
+      return null;
+    }
+
+    return $AppThemedColorsCopyWith<$Res>(_value.colors!, (value) {
       return _then(_value.copyWith(colors: value) as $Val);
     });
   }
@@ -2513,7 +2546,9 @@ abstract class _$$AppDesignImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {AppThemedColors colors,
+      {@Deprecated("This field was deprecated") AppThemedColors? colors,
+      @ColorOrNullConverter() Color? mainColor,
+      @AppThemeOrNullConverter() AppTheme? theme,
       AppThemedAsset favicons,
       AppThemedAsset logos,
       String appicon,
@@ -2523,7 +2558,7 @@ abstract class _$$AppDesignImplCopyWith<$Res>
       AppFont? bodyFont});
 
   @override
-  $AppThemedColorsCopyWith<$Res> get colors;
+  $AppThemedColorsCopyWith<$Res>? get colors;
   @override
   $AppThemedAssetCopyWith<$Res> get favicons;
   @override
@@ -2547,7 +2582,9 @@ class __$$AppDesignImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? colors = null,
+    Object? colors = freezed,
+    Object? mainColor = freezed,
+    Object? theme = freezed,
     Object? favicons = null,
     Object? logos = null,
     Object? appicon = null,
@@ -2557,10 +2594,18 @@ class __$$AppDesignImplCopyWithImpl<$Res>
     Object? bodyFont = freezed,
   }) {
     return _then(_$AppDesignImpl(
-      colors: null == colors
+      colors: freezed == colors
           ? _value.colors
           : colors // ignore: cast_nullable_to_non_nullable
-              as AppThemedColors,
+              as AppThemedColors?,
+      mainColor: freezed == mainColor
+          ? _value.mainColor
+          : mainColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      theme: freezed == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as AppTheme?,
       favicons: null == favicons
           ? _value.favicons
           : favicons // ignore: cast_nullable_to_non_nullable
@@ -2597,7 +2642,9 @@ class __$$AppDesignImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppDesignImpl implements _AppDesign {
   const _$AppDesignImpl(
-      {required this.colors,
+      {@Deprecated("This field was deprecated") this.colors,
+      @ColorOrNullConverter() this.mainColor,
+      @AppThemeOrNullConverter() this.theme,
       required this.favicons,
       required this.logos,
       required this.appicon,
@@ -2612,7 +2659,26 @@ class _$AppDesignImpl implements _AppDesign {
   /// [colors] defines the colors of the app, depending of the technology,
   /// the [AppThemedColors.mainColor] is the primary color of the app or not.
   @override
-  final AppThemedColors colors;
+  @Deprecated("This field was deprecated")
+  final AppThemedColors? colors;
+
+  /// [mainColor] defines the main color of the app.
+  ///
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [mainColor] field from it.
+  @override
+  @ColorOrNullConverter()
+  final Color? mainColor;
+
+  /// [theme] defines the theme of the app.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [theme] field from it.
+  @override
+  @AppThemeOrNullConverter()
+  final AppTheme? theme;
 
   /// [favicons] defines the favicons of the app.
   @override
@@ -2662,7 +2728,7 @@ class _$AppDesignImpl implements _AppDesign {
 
   @override
   String toString() {
-    return 'AppDesign(colors: $colors, favicons: $favicons, logos: $logos, appicon: $appicon, login: $login, footerFormat: $footerFormat, titleFont: $titleFont, bodyFont: $bodyFont)';
+    return 'AppDesign(colors: $colors, mainColor: $mainColor, theme: $theme, favicons: $favicons, logos: $logos, appicon: $appicon, login: $login, footerFormat: $footerFormat, titleFont: $titleFont, bodyFont: $bodyFont)';
   }
 
   @override
@@ -2671,6 +2737,9 @@ class _$AppDesignImpl implements _AppDesign {
         (other.runtimeType == runtimeType &&
             other is _$AppDesignImpl &&
             (identical(other.colors, colors) || other.colors == colors) &&
+            (identical(other.mainColor, mainColor) ||
+                other.mainColor == mainColor) &&
+            (identical(other.theme, theme) || other.theme == theme) &&
             (identical(other.favicons, favicons) ||
                 other.favicons == favicons) &&
             (identical(other.logos, logos) || other.logos == logos) &&
@@ -2686,8 +2755,8 @@ class _$AppDesignImpl implements _AppDesign {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, colors, favicons, logos, appicon,
-      login, footerFormat, titleFont, bodyFont);
+  int get hashCode => Object.hash(runtimeType, colors, mainColor, theme,
+      favicons, logos, appicon, login, footerFormat, titleFont, bodyFont);
 
   @JsonKey(ignore: true)
   @override
@@ -2705,7 +2774,9 @@ class _$AppDesignImpl implements _AppDesign {
 
 abstract class _AppDesign implements AppDesign {
   const factory _AppDesign(
-      {required final AppThemedColors colors,
+      {@Deprecated("This field was deprecated") final AppThemedColors? colors,
+      @ColorOrNullConverter() final Color? mainColor,
+      @AppThemeOrNullConverter() final AppTheme? theme,
       required final AppThemedAsset favicons,
       required final AppThemedAsset logos,
       required final String appicon,
@@ -2721,7 +2792,26 @@ abstract class _AppDesign implements AppDesign {
 
   /// [colors] defines the colors of the app, depending of the technology,
   /// the [AppThemedColors.mainColor] is the primary color of the app or not.
-  AppThemedColors get colors;
+  @Deprecated("This field was deprecated")
+  AppThemedColors? get colors;
+  @override
+
+  /// [mainColor] defines the main color of the app.
+  ///
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [mainColor] field from it.
+  @ColorOrNullConverter()
+  Color? get mainColor;
+  @override
+
+  /// [theme] defines the theme of the app.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [colors] field and use the [theme] field from it.
+  @AppThemeOrNullConverter()
+  AppTheme? get theme;
   @override
 
   /// [favicons] defines the favicons of the app.
@@ -3814,11 +3904,49 @@ AppLoginDesign _$AppLoginDesignFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$AppLoginDesign {
-  @LoginLayoutModeConverter()
-  LoginLayoutMode get layout => throw _privateConstructorUsedError;
-  @TitleModeConverter()
-  TitleMode get title => throw _privateConstructorUsedError;
-  AppBackgroundDesign get background => throw _privateConstructorUsedError;
+  /// [layout] defines the layout of the login.
+  @Deprecated("This field was deprecated")
+  @LoginLayoutModeOrNullConverter()
+  LoginLayoutMode? get layout => throw _privateConstructorUsedError;
+
+  /// [title] defines the title of the login.
+  @Deprecated("This field was deprecated")
+  @TitleModeOrNullConverter()
+  TitleMode? get title => throw _privateConstructorUsedError;
+
+  /// [background] defines the background of the login.
+  @Deprecated("This field was deprecated")
+  AppBackgroundDesign? get background => throw _privateConstructorUsedError;
+
+  /// [backgroundColor] defines the background color of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [color] field from it.
+  @ColorOrNullConverter()
+  Color? get backgroundColor => throw _privateConstructorUsedError;
+
+  /// [backgroundImage] defines the background image of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [image] field from it.
+  String? get backgroundImage => throw _privateConstructorUsedError;
+
+  /// [logo] defines the logo of the login.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [mode] field in the [background] field and use it
+  @BackgroundModeOrNullConverter()
+  BackgroundMode? get mode => throw _privateConstructorUsedError;
+
+  /// [description] defines any additional text that should be displayed below the logo in case that
+  /// the [layout] is [LoginLayout.left] or [LoginLayout.right].
+  String? get description => throw _privateConstructorUsedError;
+
+  /// [design] defines the design of the login.
+  @LayoutDesignOrNullConverter()
+  LayoutDesign? get design => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3833,11 +3961,20 @@ abstract class $AppLoginDesignCopyWith<$Res> {
       _$AppLoginDesignCopyWithImpl<$Res, AppLoginDesign>;
   @useResult
   $Res call(
-      {@LoginLayoutModeConverter() LoginLayoutMode layout,
-      @TitleModeConverter() TitleMode title,
-      AppBackgroundDesign background});
+      {@Deprecated("This field was deprecated")
+      @LoginLayoutModeOrNullConverter()
+      LoginLayoutMode? layout,
+      @Deprecated("This field was deprecated")
+      @TitleModeOrNullConverter()
+      TitleMode? title,
+      @Deprecated("This field was deprecated") AppBackgroundDesign? background,
+      @ColorOrNullConverter() Color? backgroundColor,
+      String? backgroundImage,
+      @BackgroundModeOrNullConverter() BackgroundMode? mode,
+      String? description,
+      @LayoutDesignOrNullConverter() LayoutDesign? design});
 
-  $AppBackgroundDesignCopyWith<$Res> get background;
+  $AppBackgroundDesignCopyWith<$Res>? get background;
 }
 
 /// @nodoc
@@ -3853,30 +3990,59 @@ class _$AppLoginDesignCopyWithImpl<$Res, $Val extends AppLoginDesign>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? layout = null,
-    Object? title = null,
-    Object? background = null,
+    Object? layout = freezed,
+    Object? title = freezed,
+    Object? background = freezed,
+    Object? backgroundColor = freezed,
+    Object? backgroundImage = freezed,
+    Object? mode = freezed,
+    Object? description = freezed,
+    Object? design = freezed,
   }) {
     return _then(_value.copyWith(
-      layout: null == layout
+      layout: freezed == layout
           ? _value.layout
           : layout // ignore: cast_nullable_to_non_nullable
-              as LoginLayoutMode,
-      title: null == title
+              as LoginLayoutMode?,
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as TitleMode,
-      background: null == background
+              as TitleMode?,
+      background: freezed == background
           ? _value.background
           : background // ignore: cast_nullable_to_non_nullable
-              as AppBackgroundDesign,
+              as AppBackgroundDesign?,
+      backgroundColor: freezed == backgroundColor
+          ? _value.backgroundColor
+          : backgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      backgroundImage: freezed == backgroundImage
+          ? _value.backgroundImage
+          : backgroundImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mode: freezed == mode
+          ? _value.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as BackgroundMode?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      design: freezed == design
+          ? _value.design
+          : design // ignore: cast_nullable_to_non_nullable
+              as LayoutDesign?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AppBackgroundDesignCopyWith<$Res> get background {
-    return $AppBackgroundDesignCopyWith<$Res>(_value.background, (value) {
+  $AppBackgroundDesignCopyWith<$Res>? get background {
+    if (_value.background == null) {
+      return null;
+    }
+
+    return $AppBackgroundDesignCopyWith<$Res>(_value.background!, (value) {
       return _then(_value.copyWith(background: value) as $Val);
     });
   }
@@ -3891,12 +4057,21 @@ abstract class _$$AppLoginDesignImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@LoginLayoutModeConverter() LoginLayoutMode layout,
-      @TitleModeConverter() TitleMode title,
-      AppBackgroundDesign background});
+      {@Deprecated("This field was deprecated")
+      @LoginLayoutModeOrNullConverter()
+      LoginLayoutMode? layout,
+      @Deprecated("This field was deprecated")
+      @TitleModeOrNullConverter()
+      TitleMode? title,
+      @Deprecated("This field was deprecated") AppBackgroundDesign? background,
+      @ColorOrNullConverter() Color? backgroundColor,
+      String? backgroundImage,
+      @BackgroundModeOrNullConverter() BackgroundMode? mode,
+      String? description,
+      @LayoutDesignOrNullConverter() LayoutDesign? design});
 
   @override
-  $AppBackgroundDesignCopyWith<$Res> get background;
+  $AppBackgroundDesignCopyWith<$Res>? get background;
 }
 
 /// @nodoc
@@ -3910,23 +4085,48 @@ class __$$AppLoginDesignImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? layout = null,
-    Object? title = null,
-    Object? background = null,
+    Object? layout = freezed,
+    Object? title = freezed,
+    Object? background = freezed,
+    Object? backgroundColor = freezed,
+    Object? backgroundImage = freezed,
+    Object? mode = freezed,
+    Object? description = freezed,
+    Object? design = freezed,
   }) {
     return _then(_$AppLoginDesignImpl(
-      layout: null == layout
+      layout: freezed == layout
           ? _value.layout
           : layout // ignore: cast_nullable_to_non_nullable
-              as LoginLayoutMode,
-      title: null == title
+              as LoginLayoutMode?,
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as TitleMode,
-      background: null == background
+              as TitleMode?,
+      background: freezed == background
           ? _value.background
           : background // ignore: cast_nullable_to_non_nullable
-              as AppBackgroundDesign,
+              as AppBackgroundDesign?,
+      backgroundColor: freezed == backgroundColor
+          ? _value.backgroundColor
+          : backgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      backgroundImage: freezed == backgroundImage
+          ? _value.backgroundImage
+          : backgroundImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mode: freezed == mode
+          ? _value.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as BackgroundMode?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      design: freezed == design
+          ? _value.design
+          : design // ignore: cast_nullable_to_non_nullable
+              as LayoutDesign?,
     ));
   }
 }
@@ -3935,25 +4135,77 @@ class __$$AppLoginDesignImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppLoginDesignImpl implements _AppLoginDesign {
   const _$AppLoginDesignImpl(
-      {@LoginLayoutModeConverter() required this.layout,
-      @TitleModeConverter() required this.title,
-      required this.background});
+      {@Deprecated("This field was deprecated")
+      @LoginLayoutModeOrNullConverter()
+      this.layout,
+      @Deprecated("This field was deprecated")
+      @TitleModeOrNullConverter()
+      this.title,
+      @Deprecated("This field was deprecated") this.background,
+      @ColorOrNullConverter() this.backgroundColor,
+      this.backgroundImage,
+      @BackgroundModeOrNullConverter() this.mode,
+      this.description,
+      @LayoutDesignOrNullConverter() this.design});
 
   factory _$AppLoginDesignImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppLoginDesignImplFromJson(json);
 
+  /// [layout] defines the layout of the login.
   @override
-  @LoginLayoutModeConverter()
-  final LoginLayoutMode layout;
+  @Deprecated("This field was deprecated")
+  @LoginLayoutModeOrNullConverter()
+  final LoginLayoutMode? layout;
+
+  /// [title] defines the title of the login.
   @override
-  @TitleModeConverter()
-  final TitleMode title;
+  @Deprecated("This field was deprecated")
+  @TitleModeOrNullConverter()
+  final TitleMode? title;
+
+  /// [background] defines the background of the login.
   @override
-  final AppBackgroundDesign background;
+  @Deprecated("This field was deprecated")
+  final AppBackgroundDesign? background;
+
+  /// [backgroundColor] defines the background color of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [color] field from it.
+  @override
+  @ColorOrNullConverter()
+  final Color? backgroundColor;
+
+  /// [backgroundImage] defines the background image of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [image] field from it.
+  @override
+  final String? backgroundImage;
+
+  /// [logo] defines the logo of the login.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [mode] field in the [background] field and use it
+  @override
+  @BackgroundModeOrNullConverter()
+  final BackgroundMode? mode;
+
+  /// [description] defines any additional text that should be displayed below the logo in case that
+  /// the [layout] is [LoginLayout.left] or [LoginLayout.right].
+  @override
+  final String? description;
+
+  /// [design] defines the design of the login.
+  @override
+  @LayoutDesignOrNullConverter()
+  final LayoutDesign? design;
 
   @override
   String toString() {
-    return 'AppLoginDesign(layout: $layout, title: $title, background: $background)';
+    return 'AppLoginDesign(layout: $layout, title: $title, background: $background, backgroundColor: $backgroundColor, backgroundImage: $backgroundImage, mode: $mode, description: $description, design: $design)';
   }
 
   @override
@@ -3964,12 +4216,21 @@ class _$AppLoginDesignImpl implements _AppLoginDesign {
             (identical(other.layout, layout) || other.layout == layout) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.background, background) ||
-                other.background == background));
+                other.background == background) &&
+            (identical(other.backgroundColor, backgroundColor) ||
+                other.backgroundColor == backgroundColor) &&
+            (identical(other.backgroundImage, backgroundImage) ||
+                other.backgroundImage == backgroundImage) &&
+            (identical(other.mode, mode) || other.mode == mode) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.design, design) || other.design == design));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, layout, title, background);
+  int get hashCode => Object.hash(runtimeType, layout, title, background,
+      backgroundColor, backgroundImage, mode, description, design);
 
   @JsonKey(ignore: true)
   @override
@@ -3988,170 +4249,80 @@ class _$AppLoginDesignImpl implements _AppLoginDesign {
 
 abstract class _AppLoginDesign implements AppLoginDesign {
   const factory _AppLoginDesign(
-      {@LoginLayoutModeConverter() required final LoginLayoutMode layout,
-      @TitleModeConverter() required final TitleMode title,
-      required final AppBackgroundDesign background}) = _$AppLoginDesignImpl;
+          {@Deprecated("This field was deprecated")
+          @LoginLayoutModeOrNullConverter()
+          final LoginLayoutMode? layout,
+          @Deprecated("This field was deprecated")
+          @TitleModeOrNullConverter()
+          final TitleMode? title,
+          @Deprecated("This field was deprecated")
+          final AppBackgroundDesign? background,
+          @ColorOrNullConverter() final Color? backgroundColor,
+          final String? backgroundImage,
+          @BackgroundModeOrNullConverter() final BackgroundMode? mode,
+          final String? description,
+          @LayoutDesignOrNullConverter() final LayoutDesign? design}) =
+      _$AppLoginDesignImpl;
 
   factory _AppLoginDesign.fromJson(Map<String, dynamic> json) =
       _$AppLoginDesignImpl.fromJson;
 
   @override
-  @LoginLayoutModeConverter()
-  LoginLayoutMode get layout;
+
+  /// [layout] defines the layout of the login.
+  @Deprecated("This field was deprecated")
+  @LoginLayoutModeOrNullConverter()
+  LoginLayoutMode? get layout;
   @override
-  @TitleModeConverter()
-  TitleMode get title;
+
+  /// [title] defines the title of the login.
+  @Deprecated("This field was deprecated")
+  @TitleModeOrNullConverter()
+  TitleMode? get title;
   @override
-  AppBackgroundDesign get background;
+
+  /// [background] defines the background of the login.
+  @Deprecated("This field was deprecated")
+  AppBackgroundDesign? get background;
+  @override
+
+  /// [backgroundColor] defines the background color of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [color] field from it.
+  @ColorOrNullConverter()
+  Color? get backgroundColor;
+  @override
+
+  /// [backgroundImage] defines the background image of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [image] field from it.
+  String? get backgroundImage;
+  @override
+
+  /// [logo] defines the logo of the login.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [mode] field in the [background] field and use it
+  @BackgroundModeOrNullConverter()
+  BackgroundMode? get mode;
+  @override
+
+  /// [description] defines any additional text that should be displayed below the logo in case that
+  /// the [layout] is [LoginLayout.left] or [LoginLayout.right].
+  String? get description;
+  @override
+
+  /// [design] defines the design of the login.
+  @LayoutDesignOrNullConverter()
+  LayoutDesign? get design;
   @override
   @JsonKey(ignore: true)
   _$$AppLoginDesignImplCopyWith<_$AppLoginDesignImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-LegacyAppLoginDesign _$LegacyAppLoginDesignFromJson(Map<String, dynamic> json) {
-  return _LegacyAppLoginDesign.fromJson(json);
-}
-
-/// @nodoc
-mixin _$LegacyAppLoginDesign {
-  @LoginLayoutModeConverter()
-  LoginLayoutMode get mode => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LegacyAppLoginDesignCopyWith<LegacyAppLoginDesign> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LegacyAppLoginDesignCopyWith<$Res> {
-  factory $LegacyAppLoginDesignCopyWith(LegacyAppLoginDesign value,
-          $Res Function(LegacyAppLoginDesign) then) =
-      _$LegacyAppLoginDesignCopyWithImpl<$Res, LegacyAppLoginDesign>;
-  @useResult
-  $Res call({@LoginLayoutModeConverter() LoginLayoutMode mode});
-}
-
-/// @nodoc
-class _$LegacyAppLoginDesignCopyWithImpl<$Res,
-        $Val extends LegacyAppLoginDesign>
-    implements $LegacyAppLoginDesignCopyWith<$Res> {
-  _$LegacyAppLoginDesignCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? mode = null,
-  }) {
-    return _then(_value.copyWith(
-      mode: null == mode
-          ? _value.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as LoginLayoutMode,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$LegacyAppLoginDesignImplCopyWith<$Res>
-    implements $LegacyAppLoginDesignCopyWith<$Res> {
-  factory _$$LegacyAppLoginDesignImplCopyWith(_$LegacyAppLoginDesignImpl value,
-          $Res Function(_$LegacyAppLoginDesignImpl) then) =
-      __$$LegacyAppLoginDesignImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({@LoginLayoutModeConverter() LoginLayoutMode mode});
-}
-
-/// @nodoc
-class __$$LegacyAppLoginDesignImplCopyWithImpl<$Res>
-    extends _$LegacyAppLoginDesignCopyWithImpl<$Res, _$LegacyAppLoginDesignImpl>
-    implements _$$LegacyAppLoginDesignImplCopyWith<$Res> {
-  __$$LegacyAppLoginDesignImplCopyWithImpl(_$LegacyAppLoginDesignImpl _value,
-      $Res Function(_$LegacyAppLoginDesignImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? mode = null,
-  }) {
-    return _then(_$LegacyAppLoginDesignImpl(
-      mode: null == mode
-          ? _value.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as LoginLayoutMode,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$LegacyAppLoginDesignImpl implements _LegacyAppLoginDesign {
-  const _$LegacyAppLoginDesignImpl(
-      {@LoginLayoutModeConverter() required this.mode});
-
-  factory _$LegacyAppLoginDesignImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LegacyAppLoginDesignImplFromJson(json);
-
-  @override
-  @LoginLayoutModeConverter()
-  final LoginLayoutMode mode;
-
-  @override
-  String toString() {
-    return 'LegacyAppLoginDesign(mode: $mode)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LegacyAppLoginDesignImpl &&
-            (identical(other.mode, mode) || other.mode == mode));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, mode);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LegacyAppLoginDesignImplCopyWith<_$LegacyAppLoginDesignImpl>
-      get copyWith =>
-          __$$LegacyAppLoginDesignImplCopyWithImpl<_$LegacyAppLoginDesignImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LegacyAppLoginDesignImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _LegacyAppLoginDesign implements LegacyAppLoginDesign {
-  const factory _LegacyAppLoginDesign(
-          {@LoginLayoutModeConverter() required final LoginLayoutMode mode}) =
-      _$LegacyAppLoginDesignImpl;
-
-  factory _LegacyAppLoginDesign.fromJson(Map<String, dynamic> json) =
-      _$LegacyAppLoginDesignImpl.fromJson;
-
-  @override
-  @LoginLayoutModeConverter()
-  LoginLayoutMode get mode;
-  @override
-  @JsonKey(ignore: true)
-  _$$LegacyAppLoginDesignImplCopyWith<_$LegacyAppLoginDesignImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 AppTitleMode _$AppTitleModeFromJson(Map<String, dynamic> json) {

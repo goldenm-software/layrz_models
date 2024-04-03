@@ -22,17 +22,3 @@ class AppBuild with _$AppBuild {
 
   factory AppBuild.fromJson(Map<String, dynamic> json) => _$AppBuildFromJson(json);
 }
-
-class AppBuildStatusConverter implements JsonConverter<AppBuildStatus, String> {
-  const AppBuildStatusConverter();
-
-  @override
-  AppBuildStatus fromJson(String json) {
-    return AppBuildStatus.fromJson(json);
-  }
-
-  @override
-  String toJson(AppBuildStatus object) {
-    return object.toJson();
-  }
-}
