@@ -373,9 +373,11 @@ class TriggerActivation with _$TriggerActivation {
     /// `position` is the position of the asset when the trigger was activated.
     TelemetryPosition? position,
 
-    /// `date` is the date when the trigger was activated.
-  @JsonKey(name: 'at') @TimestampConverter() required DateTime date,
+    /// `presenceType` is the type of presence in the geofence if the trigger was of a geofence presence.
+    @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? presenceType,
 
+    /// `date` is the date when the trigger was activated.
+    @JsonKey(name: 'at') @TimestampConverter() required DateTime date,
   }) = _TriggerActivation;
 
   factory TriggerActivation.fromJson(Map<String, dynamic> json) => _$TriggerActivationFromJson(json);

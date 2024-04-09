@@ -1,4 +1,8 @@
 # Changelog
+
+## 2.1.22
+- Added `presenceType` for geofence presence on TriggerActivation.
+
 ## 2.1.21
 - Added `geofences` that refer to the geofences linked to the `Asset` model
 
