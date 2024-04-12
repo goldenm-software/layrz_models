@@ -1,4 +1,6 @@
 # Changelog
+## 2.1.24
+- Added `transportAsset` and `sellerAsset` inside  `AtsPurchaseOrder`.
 
 ## 2.1.23
 
