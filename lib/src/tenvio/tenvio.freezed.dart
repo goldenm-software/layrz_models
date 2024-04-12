@@ -12,7 +12,7 @@ part of 'tenvio.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 TenvioItem _$TenvioItemFromJson(Map<String, dynamic> json) {
   return _TenvioItem.fromJson(json);
@@ -383,7 +383,7 @@ class _$TenvioItemImpl implements _TenvioItem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioItemImpl &&
@@ -866,7 +866,7 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioMatrixItemImpl &&
@@ -1298,7 +1298,7 @@ class _$TenvioItemMovementImpl implements _TenvioItemMovement {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioItemMovementImpl &&
@@ -1771,7 +1771,7 @@ class _$TenvioPackageImpl implements _TenvioPackage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioPackageImpl &&
@@ -2079,7 +2079,7 @@ class _$DeliverLocationImpl implements _DeliverLocation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DeliverLocationImpl &&
@@ -2778,7 +2778,7 @@ class _$TenvioOrderImpl implements _TenvioOrder {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioOrderImpl &&
@@ -3112,7 +3112,7 @@ class _$TenvioImageSetImpl implements _TenvioImageSet {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioImageSetImpl &&
@@ -3806,7 +3806,7 @@ class _$DropoffFailedReasonImpl implements _DropoffFailedReason {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DropoffFailedReasonImpl &&
