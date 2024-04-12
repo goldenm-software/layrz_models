@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.23
+
+- New asset mode `ZONE` that converts the asset into a Geofence.
+
 ## 2.1.22
 - Added `presenceType` for geofence presence on TriggerActivation.
 

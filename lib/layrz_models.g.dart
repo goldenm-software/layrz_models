@@ -373,6 +373,9 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
           ? null
           : StaticPosition.fromJson(
               json['staticPosition'] as Map<String, dynamic>),
+      points: (json['points'] as List<dynamic>?)
+          ?.map((e) => ZonePoint.fromJson(e as Map<String, dynamic>))
+          .toList(),
       parameters: (json['parameters'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -436,6 +439,7 @@ Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
           instance.linkedSupplyPointAssets?.map((e) => e.toJson()).toList(),
       'linkedSupplyPointAssetsIds': instance.linkedSupplyPointAssetsIds,
       'staticPosition': instance.staticPosition?.toJson(),
+      'points': instance.points?.map((e) => e.toJson()).toList(),
       'parameters': instance.parameters,
       'globalSensors': instance.globalSensors?.map((e) => e.toJson()).toList(),
       'mappitLaborStartTime': const TimeOfDayOrNullConverter()
@@ -487,6 +491,18 @@ Map<String, dynamic> _$$StaticPositionImplToJson(
       'latitude': instance.latitude,
       'longitude': instance.longitude,
       'altitude': instance.altitude,
+    };
+
+_$ZonePointImpl _$$ZonePointImplFromJson(Map<String, dynamic> json) =>
+    _$ZonePointImpl(
+      latitude: (json['latitude'] as num).toDouble(),
+      longitude: (json['longitude'] as num).toDouble(),
+    );
+
+Map<String, dynamic> _$$ZonePointImplToJson(_$ZonePointImpl instance) =>
+    <String, dynamic>{
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
     };
 
 _$AvatarImpl _$$AvatarImplFromJson(Map<String, dynamic> json) => _$AvatarImpl(

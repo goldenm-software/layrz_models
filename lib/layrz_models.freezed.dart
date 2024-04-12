@@ -3026,6 +3026,10 @@ mixin _$Asset {
   /// Only used when mode is [AssetMode.fixed].
   StaticPosition? get staticPosition => throw _privateConstructorUsedError;
 
+  /// [points] refers to the list of points of the zone.
+  /// Only used when mode is [AssetMode.zone].
+  List<ZonePoint>? get points => throw _privateConstructorUsedError;
+
   /// [parameters] refers to the list of parameters of the asset.
   /// Is only a list of strings.
   List<String> get parameters => throw _privateConstructorUsedError;
@@ -3096,6 +3100,7 @@ abstract class $AssetCopyWith<$Res> {
       List<Asset>? linkedSupplyPointAssets,
       List<String>? linkedSupplyPointAssetsIds,
       StaticPosition? staticPosition,
+      List<ZonePoint>? points,
       List<String> parameters,
       List<Sensor>? globalSensors,
       @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,
@@ -3166,6 +3171,7 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     Object? linkedSupplyPointAssets = freezed,
     Object? linkedSupplyPointAssetsIds = freezed,
     Object? staticPosition = freezed,
+    Object? points = freezed,
     Object? parameters = null,
     Object? globalSensors = freezed,
     Object? mappitLaborStartTime = freezed,
@@ -3337,6 +3343,10 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
           ? _value.staticPosition
           : staticPosition // ignore: cast_nullable_to_non_nullable
               as StaticPosition?,
+      points: freezed == points
+          ? _value.points
+          : points // ignore: cast_nullable_to_non_nullable
+              as List<ZonePoint>?,
       parameters: null == parameters
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -3507,6 +3517,7 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
       List<Asset>? linkedSupplyPointAssets,
       List<String>? linkedSupplyPointAssetsIds,
       StaticPosition? staticPosition,
+      List<ZonePoint>? points,
       List<String> parameters,
       List<Sensor>? globalSensors,
       @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,
@@ -3583,6 +3594,7 @@ class __$$AssetImplCopyWithImpl<$Res>
     Object? linkedSupplyPointAssets = freezed,
     Object? linkedSupplyPointAssetsIds = freezed,
     Object? staticPosition = freezed,
+    Object? points = freezed,
     Object? parameters = null,
     Object? globalSensors = freezed,
     Object? mappitLaborStartTime = freezed,
@@ -3754,6 +3766,10 @@ class __$$AssetImplCopyWithImpl<$Res>
           ? _value.staticPosition
           : staticPosition // ignore: cast_nullable_to_non_nullable
               as StaticPosition?,
+      points: freezed == points
+          ? _value._points
+          : points // ignore: cast_nullable_to_non_nullable
+              as List<ZonePoint>?,
       parameters: null == parameters
           ? _value._parameters
           : parameters // ignore: cast_nullable_to_non_nullable
@@ -3823,6 +3839,7 @@ class _$AssetImpl implements _Asset {
       final List<Asset>? linkedSupplyPointAssets,
       final List<String>? linkedSupplyPointAssetsIds,
       this.staticPosition,
+      final List<ZonePoint>? points,
       final List<String> parameters = const [],
       final List<Sensor>? globalSensors,
       @TimeOfDayOrNullConverter() this.mappitLaborStartTime,
@@ -3849,6 +3866,7 @@ class _$AssetImpl implements _Asset {
         _mappitLaborHours = mappitLaborHours,
         _linkedSupplyPointAssets = linkedSupplyPointAssets,
         _linkedSupplyPointAssetsIds = linkedSupplyPointAssetsIds,
+        _points = points,
         _parameters = parameters,
         _globalSensors = globalSensors,
         _geofences = geofences;
@@ -4236,6 +4254,21 @@ class _$AssetImpl implements _Asset {
   @override
   final StaticPosition? staticPosition;
 
+  /// [points] refers to the list of points of the zone.
+  /// Only used when mode is [AssetMode.zone].
+  final List<ZonePoint>? _points;
+
+  /// [points] refers to the list of points of the zone.
+  /// Only used when mode is [AssetMode.zone].
+  @override
+  List<ZonePoint>? get points {
+    final value = _points;
+    if (value == null) return null;
+    if (_points is EqualUnmodifiableListView) return _points;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// [parameters] refers to the list of parameters of the asset.
   /// Is only a list of strings.
   final List<String> _parameters;
@@ -4288,7 +4321,7 @@ class _$AssetImpl implements _Asset {
 
   @override
   String toString() {
-    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences)';
+    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences)';
   }
 
   @override
@@ -4362,6 +4395,7 @@ class _$AssetImpl implements _Asset {
                 _linkedSupplyPointAssetsIds) &&
             (identical(other.staticPosition, staticPosition) ||
                 other.staticPosition == staticPosition) &&
+            const DeepCollectionEquality().equals(other._points, _points) &&
             const DeepCollectionEquality()
                 .equals(other._parameters, _parameters) &&
             const DeepCollectionEquality()
@@ -4419,6 +4453,7 @@ class _$AssetImpl implements _Asset {
         const DeepCollectionEquality().hash(_linkedSupplyPointAssets),
         const DeepCollectionEquality().hash(_linkedSupplyPointAssetsIds),
         staticPosition,
+        const DeepCollectionEquality().hash(_points),
         const DeepCollectionEquality().hash(_parameters),
         const DeepCollectionEquality().hash(_globalSensors),
         mappitLaborStartTime,
@@ -4483,6 +4518,7 @@ abstract class _Asset implements Asset {
       final List<Asset>? linkedSupplyPointAssets,
       final List<String>? linkedSupplyPointAssetsIds,
       final StaticPosition? staticPosition,
+      final List<ZonePoint>? points,
       final List<String> parameters,
       final List<Sensor>? globalSensors,
       @TimeOfDayOrNullConverter() final TimeOfDay? mappitLaborStartTime,
@@ -4668,6 +4704,11 @@ abstract class _Asset implements Asset {
   /// [staticPosition] refers to the static position of the asset.
   /// Only used when mode is [AssetMode.fixed].
   StaticPosition? get staticPosition;
+  @override
+
+  /// [points] refers to the list of points of the zone.
+  /// Only used when mode is [AssetMode.zone].
+  List<ZonePoint>? get points;
   @override
 
   /// [parameters] refers to the list of parameters of the asset.
@@ -5249,6 +5290,171 @@ abstract class _StaticPosition implements StaticPosition {
   @override
   @JsonKey(ignore: true)
   _$$StaticPositionImplCopyWith<_$StaticPositionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ZonePoint _$ZonePointFromJson(Map<String, dynamic> json) {
+  return _ZonePoint.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ZonePoint {
+  /// [latitude] is the latitude of the point
+  double get latitude => throw _privateConstructorUsedError;
+
+  /// [longitude] is the longitude of the point
+  double get longitude => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ZonePointCopyWith<ZonePoint> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ZonePointCopyWith<$Res> {
+  factory $ZonePointCopyWith(ZonePoint value, $Res Function(ZonePoint) then) =
+      _$ZonePointCopyWithImpl<$Res, ZonePoint>;
+  @useResult
+  $Res call({double latitude, double longitude});
+}
+
+/// @nodoc
+class _$ZonePointCopyWithImpl<$Res, $Val extends ZonePoint>
+    implements $ZonePointCopyWith<$Res> {
+  _$ZonePointCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = null,
+    Object? longitude = null,
+  }) {
+    return _then(_value.copyWith(
+      latitude: null == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude: null == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ZonePointImplCopyWith<$Res>
+    implements $ZonePointCopyWith<$Res> {
+  factory _$$ZonePointImplCopyWith(
+          _$ZonePointImpl value, $Res Function(_$ZonePointImpl) then) =
+      __$$ZonePointImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double latitude, double longitude});
+}
+
+/// @nodoc
+class __$$ZonePointImplCopyWithImpl<$Res>
+    extends _$ZonePointCopyWithImpl<$Res, _$ZonePointImpl>
+    implements _$$ZonePointImplCopyWith<$Res> {
+  __$$ZonePointImplCopyWithImpl(
+      _$ZonePointImpl _value, $Res Function(_$ZonePointImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = null,
+    Object? longitude = null,
+  }) {
+    return _then(_$ZonePointImpl(
+      latitude: null == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude: null == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ZonePointImpl implements _ZonePoint {
+  const _$ZonePointImpl({required this.latitude, required this.longitude});
+
+  factory _$ZonePointImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ZonePointImplFromJson(json);
+
+  /// [latitude] is the latitude of the point
+  @override
+  final double latitude;
+
+  /// [longitude] is the longitude of the point
+  @override
+  final double longitude;
+
+  @override
+  String toString() {
+    return 'ZonePoint(latitude: $latitude, longitude: $longitude)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ZonePointImpl &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, latitude, longitude);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ZonePointImplCopyWith<_$ZonePointImpl> get copyWith =>
+      __$$ZonePointImplCopyWithImpl<_$ZonePointImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ZonePointImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ZonePoint implements ZonePoint {
+  const factory _ZonePoint(
+      {required final double latitude,
+      required final double longitude}) = _$ZonePointImpl;
+
+  factory _ZonePoint.fromJson(Map<String, dynamic> json) =
+      _$ZonePointImpl.fromJson;
+
+  @override
+
+  /// [latitude] is the latitude of the point
+  double get latitude;
+  @override
+
+  /// [longitude] is the longitude of the point
+  double get longitude;
+  @override
+  @JsonKey(ignore: true)
+  _$$ZonePointImplCopyWith<_$ZonePointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
