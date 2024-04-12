@@ -120,6 +120,13 @@ class AtsPurchaseOrder with _$AtsPurchaseOrder {
 
     /// Purchase order operation
     @PurchaseOrderOperationOrNullConverter() PurchaseOrderOperation? operation,
+
+    /// `transportAsset` represet the truck that will transport the product.
+    Asset? transportAsset,
+
+    /// `sellerAsset` represet the terminal that will sell the product.
+    Asset? sellerAsset,
+
   }) = _AtsPurchaseOrder;
 
   /// from json factory

@@ -505,6 +505,12 @@ _$AtsPurchaseOrderImpl _$$AtsPurchaseOrderImplFromJson(
           .fromJson(json['receptionAt'] as num?),
       operation: const PurchaseOrderOperationOrNullConverter()
           .fromJson(json['operation'] as String?),
+      transportAsset: json['transportAsset'] == null
+          ? null
+          : Asset.fromJson(json['transportAsset'] as Map<String, dynamic>),
+      sellerAsset: json['sellerAsset'] == null
+          ? null
+          : Asset.fromJson(json['sellerAsset'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
@@ -537,6 +543,8 @@ Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
           const TimestampOrNullConverter().toJson(instance.receptionAt),
       'operation': const PurchaseOrderOperationOrNullConverter()
           .toJson(instance.operation),
+      'transportAsset': instance.transportAsset?.toJson(),
+      'sellerAsset': instance.sellerAsset?.toJson(),
     };
 
 _$AtsPurchaseTotalImpl _$$AtsPurchaseTotalImplFromJson(
