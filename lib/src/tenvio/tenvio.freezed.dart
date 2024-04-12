@@ -49,6 +49,17 @@ mixin _$TenvioItem {
   /// [movements] is a history of movements of the item.
   List<TenvioItemMovement>? get movements => throw _privateConstructorUsedError;
 
+  /// [warehouse] is the warehouse where the item is located.
+  Asset? get warehouse => throw _privateConstructorUsedError;
+
+  /// [createdAt] is the date when the item was created.
+  @TimestampOrNullConverter()
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+
+  /// [updatedAt] is the date when the item was updated.
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioItemCopyWith<TenvioItem> get copyWith =>
@@ -69,9 +80,13 @@ abstract class $TenvioItemCopyWith<$Res> {
       String? address,
       @TimestampOrNullConverter() DateTime? pickupDate,
       Map<String, dynamic>? customProperties,
-      List<TenvioItemMovement>? movements});
+      List<TenvioItemMovement>? movements,
+      Asset? warehouse,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      @TimestampOrNullConverter() DateTime? updatedAt});
 
   $TenvioMatrixItemCopyWith<$Res>? get matrix;
+  $AssetCopyWith<$Res>? get warehouse;
 }
 
 /// @nodoc
@@ -95,6 +110,9 @@ class _$TenvioItemCopyWithImpl<$Res, $Val extends TenvioItem>
     Object? pickupDate = freezed,
     Object? customProperties = freezed,
     Object? movements = freezed,
+    Object? warehouse = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -129,6 +147,18 @@ class _$TenvioItemCopyWithImpl<$Res, $Val extends TenvioItem>
           ? _value.movements
           : movements // ignore: cast_nullable_to_non_nullable
               as List<TenvioItemMovement>?,
+      warehouse: freezed == warehouse
+          ? _value.warehouse
+          : warehouse // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 
@@ -141,6 +171,18 @@ class _$TenvioItemCopyWithImpl<$Res, $Val extends TenvioItem>
 
     return $TenvioMatrixItemCopyWith<$Res>(_value.matrix!, (value) {
       return _then(_value.copyWith(matrix: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get warehouse {
+    if (_value.warehouse == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_value.warehouse!, (value) {
+      return _then(_value.copyWith(warehouse: value) as $Val);
     });
   }
 }
@@ -161,10 +203,15 @@ abstract class _$$TenvioItemImplCopyWith<$Res>
       String? address,
       @TimestampOrNullConverter() DateTime? pickupDate,
       Map<String, dynamic>? customProperties,
-      List<TenvioItemMovement>? movements});
+      List<TenvioItemMovement>? movements,
+      Asset? warehouse,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      @TimestampOrNullConverter() DateTime? updatedAt});
 
   @override
   $TenvioMatrixItemCopyWith<$Res>? get matrix;
+  @override
+  $AssetCopyWith<$Res>? get warehouse;
 }
 
 /// @nodoc
@@ -186,6 +233,9 @@ class __$$TenvioItemImplCopyWithImpl<$Res>
     Object? pickupDate = freezed,
     Object? customProperties = freezed,
     Object? movements = freezed,
+    Object? warehouse = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
   }) {
     return _then(_$TenvioItemImpl(
       id: null == id
@@ -220,6 +270,18 @@ class __$$TenvioItemImplCopyWithImpl<$Res>
           ? _value._movements
           : movements // ignore: cast_nullable_to_non_nullable
               as List<TenvioItemMovement>?,
+      warehouse: freezed == warehouse
+          ? _value.warehouse
+          : warehouse // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -235,7 +297,10 @@ class _$TenvioItemImpl implements _TenvioItem {
       this.address,
       @TimestampOrNullConverter() this.pickupDate,
       final Map<String, dynamic>? customProperties,
-      final List<TenvioItemMovement>? movements})
+      final List<TenvioItemMovement>? movements,
+      this.warehouse,
+      @TimestampOrNullConverter() this.createdAt,
+      @TimestampOrNullConverter() this.updatedAt})
       : _customProperties = customProperties,
         _movements = movements;
 
@@ -298,9 +363,23 @@ class _$TenvioItemImpl implements _TenvioItem {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [warehouse] is the warehouse where the item is located.
+  @override
+  final Asset? warehouse;
+
+  /// [createdAt] is the date when the item was created.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? createdAt;
+
+  /// [updatedAt] is the date when the item was updated.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? updatedAt;
+
   @override
   String toString() {
-    return 'TenvioItem(id: $id, matrixId: $matrixId, matrix: $matrix, location: $location, address: $address, pickupDate: $pickupDate, customProperties: $customProperties, movements: $movements)';
+    return 'TenvioItem(id: $id, matrixId: $matrixId, matrix: $matrix, location: $location, address: $address, pickupDate: $pickupDate, customProperties: $customProperties, movements: $movements, warehouse: $warehouse, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -320,7 +399,13 @@ class _$TenvioItemImpl implements _TenvioItem {
             const DeepCollectionEquality()
                 .equals(other._customProperties, _customProperties) &&
             const DeepCollectionEquality()
-                .equals(other._movements, _movements));
+                .equals(other._movements, _movements) &&
+            (identical(other.warehouse, warehouse) ||
+                other.warehouse == warehouse) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
   }
 
   @JsonKey(ignore: true)
@@ -334,7 +419,10 @@ class _$TenvioItemImpl implements _TenvioItem {
       address,
       pickupDate,
       const DeepCollectionEquality().hash(_customProperties),
-      const DeepCollectionEquality().hash(_movements));
+      const DeepCollectionEquality().hash(_movements),
+      warehouse,
+      createdAt,
+      updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -359,7 +447,11 @@ abstract class _TenvioItem implements TenvioItem {
       final String? address,
       @TimestampOrNullConverter() final DateTime? pickupDate,
       final Map<String, dynamic>? customProperties,
-      final List<TenvioItemMovement>? movements}) = _$TenvioItemImpl;
+      final List<TenvioItemMovement>? movements,
+      final Asset? warehouse,
+      @TimestampOrNullConverter() final DateTime? createdAt,
+      @TimestampOrNullConverter()
+      final DateTime? updatedAt}) = _$TenvioItemImpl;
 
   factory _TenvioItem.fromJson(Map<String, dynamic> json) =
       _$TenvioItemImpl.fromJson;
@@ -401,6 +493,20 @@ abstract class _TenvioItem implements TenvioItem {
   /// [movements] is a history of movements of the item.
   List<TenvioItemMovement>? get movements;
   @override
+
+  /// [warehouse] is the warehouse where the item is located.
+  Asset? get warehouse;
+  @override
+
+  /// [createdAt] is the date when the item was created.
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+  @override
+
+  /// [updatedAt] is the date when the item was updated.
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt;
+  @override
   @JsonKey(ignore: true)
   _$$TenvioItemImplCopyWith<_$TenvioItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -436,11 +542,22 @@ mixin _$TenvioMatrixItem {
   /// [height] is the height of the item.
   double? get height => throw _privateConstructorUsedError;
 
-  /// [customProperties] is a `Map<String, dynamic>` that contains the custom properties of the item.
+  /// [customProperties] is a `List` that contains the definition of the custom properties of the item
   /// This properties can be used to store additional information about the item and it's up to the
   /// user to define them.
-  Map<String, dynamic>? get customProperties =>
+  List<TenvioCustomProperty>? get customProperties =>
       throw _privateConstructorUsedError;
+
+  /// [createdAt] is the date when the item was created.
+  @TimestampOrNullConverter()
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+
+  /// [updatedAt] is the date when the item was updated.
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
+
+  /// [items] is a list of items that are part of the matrix item.
+  List<TenvioItem>? get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -463,7 +580,10 @@ abstract class $TenvioMatrixItemCopyWith<$Res> {
       double? weight,
       double? width,
       double? height,
-      Map<String, dynamic>? customProperties});
+      List<TenvioCustomProperty>? customProperties,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      List<TenvioItem>? items});
 }
 
 /// @nodoc
@@ -488,6 +608,9 @@ class _$TenvioMatrixItemCopyWithImpl<$Res, $Val extends TenvioMatrixItem>
     Object? width = freezed,
     Object? height = freezed,
     Object? customProperties = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? items = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -525,7 +648,19 @@ class _$TenvioMatrixItemCopyWithImpl<$Res, $Val extends TenvioMatrixItem>
       customProperties: freezed == customProperties
           ? _value.customProperties
           : customProperties // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as List<TenvioCustomProperty>?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      items: freezed == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<TenvioItem>?,
     ) as $Val);
   }
 }
@@ -547,7 +682,10 @@ abstract class _$$TenvioMatrixItemImplCopyWith<$Res>
       double? weight,
       double? width,
       double? height,
-      Map<String, dynamic>? customProperties});
+      List<TenvioCustomProperty>? customProperties,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      List<TenvioItem>? items});
 }
 
 /// @nodoc
@@ -570,6 +708,9 @@ class __$$TenvioMatrixItemImplCopyWithImpl<$Res>
     Object? width = freezed,
     Object? height = freezed,
     Object? customProperties = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? items = freezed,
   }) {
     return _then(_$TenvioMatrixItemImpl(
       id: null == id
@@ -607,7 +748,19 @@ class __$$TenvioMatrixItemImplCopyWithImpl<$Res>
       customProperties: freezed == customProperties
           ? _value._customProperties
           : customProperties // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as List<TenvioCustomProperty>?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      items: freezed == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<TenvioItem>?,
     ));
   }
 }
@@ -624,8 +777,12 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
       this.weight,
       this.width,
       this.height,
-      final Map<String, dynamic>? customProperties})
-      : _customProperties = customProperties;
+      final List<TenvioCustomProperty>? customProperties,
+      @TimestampOrNullConverter() this.createdAt,
+      @TimestampOrNullConverter() this.updatedAt,
+      final List<TenvioItem>? items})
+      : _customProperties = customProperties,
+        _items = items;
 
   factory _$TenvioMatrixItemImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioMatrixItemImplFromJson(json);
@@ -662,26 +819,50 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
   @override
   final double? height;
 
-  /// [customProperties] is a `Map<String, dynamic>` that contains the custom properties of the item.
+  /// [customProperties] is a `List` that contains the definition of the custom properties of the item
   /// This properties can be used to store additional information about the item and it's up to the
   /// user to define them.
-  final Map<String, dynamic>? _customProperties;
+  final List<TenvioCustomProperty>? _customProperties;
 
-  /// [customProperties] is a `Map<String, dynamic>` that contains the custom properties of the item.
+  /// [customProperties] is a `List` that contains the definition of the custom properties of the item
   /// This properties can be used to store additional information about the item and it's up to the
   /// user to define them.
   @override
-  Map<String, dynamic>? get customProperties {
+  List<TenvioCustomProperty>? get customProperties {
     final value = _customProperties;
     if (value == null) return null;
-    if (_customProperties is EqualUnmodifiableMapView) return _customProperties;
+    if (_customProperties is EqualUnmodifiableListView)
+      return _customProperties;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [createdAt] is the date when the item was created.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? createdAt;
+
+  /// [updatedAt] is the date when the item was updated.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? updatedAt;
+
+  /// [items] is a list of items that are part of the matrix item.
+  final List<TenvioItem>? _items;
+
+  /// [items] is a list of items that are part of the matrix item.
+  @override
+  List<TenvioItem>? get items {
+    final value = _items;
+    if (value == null) return null;
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
   }
 
   @override
   String toString() {
-    return 'TenvioMatrixItem(id: $id, name: $name, image: $image, code: $code, qrCode: $qrCode, weight: $weight, width: $width, height: $height, customProperties: $customProperties)';
+    return 'TenvioMatrixItem(id: $id, name: $name, image: $image, code: $code, qrCode: $qrCode, weight: $weight, width: $width, height: $height, customProperties: $customProperties, createdAt: $createdAt, updatedAt: $updatedAt, items: $items)';
   }
 
   @override
@@ -698,7 +879,12 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
             (identical(other.width, width) || other.width == width) &&
             (identical(other.height, height) || other.height == height) &&
             const DeepCollectionEquality()
-                .equals(other._customProperties, _customProperties));
+                .equals(other._customProperties, _customProperties) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            const DeepCollectionEquality().equals(other._items, _items));
   }
 
   @JsonKey(ignore: true)
@@ -713,7 +899,10 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
       weight,
       width,
       height,
-      const DeepCollectionEquality().hash(_customProperties));
+      const DeepCollectionEquality().hash(_customProperties),
+      createdAt,
+      updatedAt,
+      const DeepCollectionEquality().hash(_items));
 
   @JsonKey(ignore: true)
   @override
@@ -740,7 +929,10 @@ abstract class _TenvioMatrixItem implements TenvioMatrixItem {
       final double? weight,
       final double? width,
       final double? height,
-      final Map<String, dynamic>? customProperties}) = _$TenvioMatrixItemImpl;
+      final List<TenvioCustomProperty>? customProperties,
+      @TimestampOrNullConverter() final DateTime? createdAt,
+      @TimestampOrNullConverter() final DateTime? updatedAt,
+      final List<TenvioItem>? items}) = _$TenvioMatrixItemImpl;
 
   factory _TenvioMatrixItem.fromJson(Map<String, dynamic> json) =
       _$TenvioMatrixItemImpl.fromJson;
@@ -779,10 +971,24 @@ abstract class _TenvioMatrixItem implements TenvioMatrixItem {
   double? get height;
   @override
 
-  /// [customProperties] is a `Map<String, dynamic>` that contains the custom properties of the item.
+  /// [customProperties] is a `List` that contains the definition of the custom properties of the item
   /// This properties can be used to store additional information about the item and it's up to the
   /// user to define them.
-  Map<String, dynamic>? get customProperties;
+  List<TenvioCustomProperty>? get customProperties;
+  @override
+
+  /// [createdAt] is the date when the item was created.
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+  @override
+
+  /// [updatedAt] is the date when the item was updated.
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt;
+  @override
+
+  /// [items] is a list of items that are part of the matrix item.
+  List<TenvioItem>? get items;
   @override
   @JsonKey(ignore: true)
   _$$TenvioMatrixItemImplCopyWith<_$TenvioMatrixItemImpl> get copyWith =>
@@ -2960,6 +3166,443 @@ abstract class _TenvioImageSet implements TenvioImageSet {
   @JsonKey(ignore: true)
   _$$TenvioImageSetImplCopyWith<_$TenvioImageSetImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+TenvioCustomProperty _$TenvioCustomPropertyFromJson(Map<String, dynamic> json) {
+  return _TenvioCustomProperty.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioCustomProperty {
+  /// [name] is the name of the item.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [dataType] is the data type of the property.
+  @TenvioPropertyDataTypeConverter()
+  TenvioPropertyDataType get dataType => throw _privateConstructorUsedError;
+
+  /// [isRequired] is a flag that indicates if the property is required.
+  bool get isRequired => throw _privateConstructorUsedError;
+
+  /// [choices] is a list of choices for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.choice] or
+  /// [TenvioPropertyDataType.mutipleChoices].
+  List<String> get choices => throw _privateConstructorUsedError;
+
+  /// [minValue] is the minimum value for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.number].
+  double? get minValue => throw _privateConstructorUsedError;
+
+  /// [maxValue] is the maximum value for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.number].
+  double? get maxValue => throw _privateConstructorUsedError;
+
+  /// [minLength] is the minimum length for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.string].
+  int? get minLength => throw _privateConstructorUsedError;
+
+  /// [maxLength] is the maximum length for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.string].
+  int? get maxLength => throw _privateConstructorUsedError;
+
+  /// [maxFileSize] is the maximum file size for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.file].
+  int? get maxFileSize => throw _privateConstructorUsedError;
+
+  /// [defaultValue] is the default value for the property.
+  dynamic get defaultValue => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioCustomPropertyCopyWith<TenvioCustomProperty> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioCustomPropertyCopyWith<$Res> {
+  factory $TenvioCustomPropertyCopyWith(TenvioCustomProperty value,
+          $Res Function(TenvioCustomProperty) then) =
+      _$TenvioCustomPropertyCopyWithImpl<$Res, TenvioCustomProperty>;
+  @useResult
+  $Res call(
+      {String name,
+      @TenvioPropertyDataTypeConverter() TenvioPropertyDataType dataType,
+      bool isRequired,
+      List<String> choices,
+      double? minValue,
+      double? maxValue,
+      int? minLength,
+      int? maxLength,
+      int? maxFileSize,
+      dynamic defaultValue});
+}
+
+/// @nodoc
+class _$TenvioCustomPropertyCopyWithImpl<$Res,
+        $Val extends TenvioCustomProperty>
+    implements $TenvioCustomPropertyCopyWith<$Res> {
+  _$TenvioCustomPropertyCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? dataType = null,
+    Object? isRequired = null,
+    Object? choices = null,
+    Object? minValue = freezed,
+    Object? maxValue = freezed,
+    Object? minLength = freezed,
+    Object? maxLength = freezed,
+    Object? maxFileSize = freezed,
+    Object? defaultValue = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      dataType: null == dataType
+          ? _value.dataType
+          : dataType // ignore: cast_nullable_to_non_nullable
+              as TenvioPropertyDataType,
+      isRequired: null == isRequired
+          ? _value.isRequired
+          : isRequired // ignore: cast_nullable_to_non_nullable
+              as bool,
+      choices: null == choices
+          ? _value.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      minValue: freezed == minValue
+          ? _value.minValue
+          : minValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      maxValue: freezed == maxValue
+          ? _value.maxValue
+          : maxValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      minLength: freezed == minLength
+          ? _value.minLength
+          : minLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxLength: freezed == maxLength
+          ? _value.maxLength
+          : maxLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxFileSize: freezed == maxFileSize
+          ? _value.maxFileSize
+          : maxFileSize // ignore: cast_nullable_to_non_nullable
+              as int?,
+      defaultValue: freezed == defaultValue
+          ? _value.defaultValue
+          : defaultValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioCustomPropertyImplCopyWith<$Res>
+    implements $TenvioCustomPropertyCopyWith<$Res> {
+  factory _$$TenvioCustomPropertyImplCopyWith(_$TenvioCustomPropertyImpl value,
+          $Res Function(_$TenvioCustomPropertyImpl) then) =
+      __$$TenvioCustomPropertyImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String name,
+      @TenvioPropertyDataTypeConverter() TenvioPropertyDataType dataType,
+      bool isRequired,
+      List<String> choices,
+      double? minValue,
+      double? maxValue,
+      int? minLength,
+      int? maxLength,
+      int? maxFileSize,
+      dynamic defaultValue});
+}
+
+/// @nodoc
+class __$$TenvioCustomPropertyImplCopyWithImpl<$Res>
+    extends _$TenvioCustomPropertyCopyWithImpl<$Res, _$TenvioCustomPropertyImpl>
+    implements _$$TenvioCustomPropertyImplCopyWith<$Res> {
+  __$$TenvioCustomPropertyImplCopyWithImpl(_$TenvioCustomPropertyImpl _value,
+      $Res Function(_$TenvioCustomPropertyImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? dataType = null,
+    Object? isRequired = null,
+    Object? choices = null,
+    Object? minValue = freezed,
+    Object? maxValue = freezed,
+    Object? minLength = freezed,
+    Object? maxLength = freezed,
+    Object? maxFileSize = freezed,
+    Object? defaultValue = freezed,
+  }) {
+    return _then(_$TenvioCustomPropertyImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      dataType: null == dataType
+          ? _value.dataType
+          : dataType // ignore: cast_nullable_to_non_nullable
+              as TenvioPropertyDataType,
+      isRequired: null == isRequired
+          ? _value.isRequired
+          : isRequired // ignore: cast_nullable_to_non_nullable
+              as bool,
+      choices: null == choices
+          ? _value._choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      minValue: freezed == minValue
+          ? _value.minValue
+          : minValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      maxValue: freezed == maxValue
+          ? _value.maxValue
+          : maxValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      minLength: freezed == minLength
+          ? _value.minLength
+          : minLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxLength: freezed == maxLength
+          ? _value.maxLength
+          : maxLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxFileSize: freezed == maxFileSize
+          ? _value.maxFileSize
+          : maxFileSize // ignore: cast_nullable_to_non_nullable
+              as int?,
+      defaultValue: freezed == defaultValue
+          ? _value.defaultValue
+          : defaultValue // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioCustomPropertyImpl implements _TenvioCustomProperty {
+  const _$TenvioCustomPropertyImpl(
+      {required this.name,
+      @TenvioPropertyDataTypeConverter() required this.dataType,
+      this.isRequired = false,
+      final List<String> choices = const [],
+      this.minValue,
+      this.maxValue,
+      this.minLength,
+      this.maxLength,
+      this.maxFileSize,
+      this.defaultValue})
+      : _choices = choices;
+
+  factory _$TenvioCustomPropertyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioCustomPropertyImplFromJson(json);
+
+  /// [name] is the name of the item.
+  @override
+  final String name;
+
+  /// [dataType] is the data type of the property.
+  @override
+  @TenvioPropertyDataTypeConverter()
+  final TenvioPropertyDataType dataType;
+
+  /// [isRequired] is a flag that indicates if the property is required.
+  @override
+  @JsonKey()
+  final bool isRequired;
+
+  /// [choices] is a list of choices for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.choice] or
+  /// [TenvioPropertyDataType.mutipleChoices].
+  final List<String> _choices;
+
+  /// [choices] is a list of choices for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.choice] or
+  /// [TenvioPropertyDataType.mutipleChoices].
+  @override
+  @JsonKey()
+  List<String> get choices {
+    if (_choices is EqualUnmodifiableListView) return _choices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_choices);
+  }
+
+  /// [minValue] is the minimum value for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.number].
+  @override
+  final double? minValue;
+
+  /// [maxValue] is the maximum value for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.number].
+  @override
+  final double? maxValue;
+
+  /// [minLength] is the minimum length for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.string].
+  @override
+  final int? minLength;
+
+  /// [maxLength] is the maximum length for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.string].
+  @override
+  final int? maxLength;
+
+  /// [maxFileSize] is the maximum file size for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.file].
+  @override
+  final int? maxFileSize;
+
+  /// [defaultValue] is the default value for the property.
+  @override
+  final dynamic defaultValue;
+
+  @override
+  String toString() {
+    return 'TenvioCustomProperty(name: $name, dataType: $dataType, isRequired: $isRequired, choices: $choices, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, maxFileSize: $maxFileSize, defaultValue: $defaultValue)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TenvioCustomPropertyImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.dataType, dataType) ||
+                other.dataType == dataType) &&
+            (identical(other.isRequired, isRequired) ||
+                other.isRequired == isRequired) &&
+            const DeepCollectionEquality().equals(other._choices, _choices) &&
+            (identical(other.minValue, minValue) ||
+                other.minValue == minValue) &&
+            (identical(other.maxValue, maxValue) ||
+                other.maxValue == maxValue) &&
+            (identical(other.minLength, minLength) ||
+                other.minLength == minLength) &&
+            (identical(other.maxLength, maxLength) ||
+                other.maxLength == maxLength) &&
+            (identical(other.maxFileSize, maxFileSize) ||
+                other.maxFileSize == maxFileSize) &&
+            const DeepCollectionEquality()
+                .equals(other.defaultValue, defaultValue));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      dataType,
+      isRequired,
+      const DeepCollectionEquality().hash(_choices),
+      minValue,
+      maxValue,
+      minLength,
+      maxLength,
+      maxFileSize,
+      const DeepCollectionEquality().hash(defaultValue));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioCustomPropertyImplCopyWith<_$TenvioCustomPropertyImpl>
+      get copyWith =>
+          __$$TenvioCustomPropertyImplCopyWithImpl<_$TenvioCustomPropertyImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioCustomPropertyImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioCustomProperty implements TenvioCustomProperty {
+  const factory _TenvioCustomProperty(
+      {required final String name,
+      @TenvioPropertyDataTypeConverter()
+      required final TenvioPropertyDataType dataType,
+      final bool isRequired,
+      final List<String> choices,
+      final double? minValue,
+      final double? maxValue,
+      final int? minLength,
+      final int? maxLength,
+      final int? maxFileSize,
+      final dynamic defaultValue}) = _$TenvioCustomPropertyImpl;
+
+  factory _TenvioCustomProperty.fromJson(Map<String, dynamic> json) =
+      _$TenvioCustomPropertyImpl.fromJson;
+
+  @override
+
+  /// [name] is the name of the item.
+  String get name;
+  @override
+
+  /// [dataType] is the data type of the property.
+  @TenvioPropertyDataTypeConverter()
+  TenvioPropertyDataType get dataType;
+  @override
+
+  /// [isRequired] is a flag that indicates if the property is required.
+  bool get isRequired;
+  @override
+
+  /// [choices] is a list of choices for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.choice] or
+  /// [TenvioPropertyDataType.mutipleChoices].
+  List<String> get choices;
+  @override
+
+  /// [minValue] is the minimum value for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.number].
+  double? get minValue;
+  @override
+
+  /// [maxValue] is the maximum value for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.number].
+  double? get maxValue;
+  @override
+
+  /// [minLength] is the minimum length for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.string].
+  int? get minLength;
+  @override
+
+  /// [maxLength] is the maximum length for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.string].
+  int? get maxLength;
+  @override
+
+  /// [maxFileSize] is the maximum file size for the property.
+  /// This property is only available when the data type is [TenvioPropertyDataType.file].
+  int? get maxFileSize;
+  @override
+
+  /// [defaultValue] is the default value for the property.
+  dynamic get defaultValue;
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioCustomPropertyImplCopyWith<_$TenvioCustomPropertyImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 DropoffFailedReason _$DropoffFailedReasonFromJson(Map<String, dynamic> json) {
