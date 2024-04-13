@@ -73,6 +73,9 @@ class User with _$User {
     /// This field is only for `Mappit` use.
     List<String>? mappitAssetsIds,
 
+    /// [mappitSecondaryRoutes]
+    List<String>? mappitSecondaryRoutesIds,
+
     /// [mappitAssets] represents the list of assets.
     /// This field is only for `Mappit` use.
     List<Asset>? mappitAssets,

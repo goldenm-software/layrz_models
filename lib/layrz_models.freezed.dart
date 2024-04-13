@@ -30804,6 +30804,10 @@ mixin _$User {
   /// This field is only for `Mappit` use.
   List<String>? get mappitAssetsIds => throw _privateConstructorUsedError;
 
+  /// [mappitSecondaryRoutes]
+  List<String>? get mappitSecondaryRoutesIds =>
+      throw _privateConstructorUsedError;
+
   /// [mappitAssets] represents the list of assets.
   /// This field is only for `Mappit` use.
   List<Asset>? get mappitAssets => throw _privateConstructorUsedError;
@@ -30874,6 +30878,7 @@ abstract class $UserCopyWith<$Res> {
       @EnvironmentOrNullConverter() Environment? configuration,
       List<RegisteredApp>? allowedApps,
       List<String>? mappitAssetsIds,
+      List<String>? mappitSecondaryRoutesIds,
       List<Asset>? mappitAssets,
       int? historicalDaysAllowed,
       String? mappitExternalAccountId,
@@ -30928,6 +30933,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? configuration = freezed,
     Object? allowedApps = freezed,
     Object? mappitAssetsIds = freezed,
+    Object? mappitSecondaryRoutesIds = freezed,
     Object? mappitAssets = freezed,
     Object? historicalDaysAllowed = freezed,
     Object? mappitExternalAccountId = freezed,
@@ -31031,6 +31037,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       mappitAssetsIds: freezed == mappitAssetsIds
           ? _value.mappitAssetsIds
           : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds
+          ? _value.mappitSecondaryRoutesIds
+          : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       mappitAssets: freezed == mappitAssets
           ? _value.mappitAssets
@@ -31168,6 +31178,7 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       @EnvironmentOrNullConverter() Environment? configuration,
       List<RegisteredApp>? allowedApps,
       List<String>? mappitAssetsIds,
+      List<String>? mappitSecondaryRoutesIds,
       List<Asset>? mappitAssets,
       int? historicalDaysAllowed,
       String? mappitExternalAccountId,
@@ -31224,6 +31235,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? configuration = freezed,
     Object? allowedApps = freezed,
     Object? mappitAssetsIds = freezed,
+    Object? mappitSecondaryRoutesIds = freezed,
     Object? mappitAssets = freezed,
     Object? historicalDaysAllowed = freezed,
     Object? mappitExternalAccountId = freezed,
@@ -31328,6 +31340,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value._mappitAssetsIds
           : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds
+          ? _value._mappitSecondaryRoutesIds
+          : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       mappitAssets: freezed == mappitAssets
           ? _value._mappitAssets
           : mappitAssets // ignore: cast_nullable_to_non_nullable
@@ -31399,6 +31415,7 @@ class _$UserImpl implements _User {
       @EnvironmentOrNullConverter() this.configuration,
       final List<RegisteredApp>? allowedApps,
       final List<String>? mappitAssetsIds,
+      final List<String>? mappitSecondaryRoutesIds,
       final List<Asset>? mappitAssets,
       this.historicalDaysAllowed,
       this.mappitExternalAccountId,
@@ -31418,6 +31435,7 @@ class _$UserImpl implements _User {
         _tags = tags,
         _allowedApps = allowedApps,
         _mappitAssetsIds = mappitAssetsIds,
+        _mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,
         _mappitAssets = mappitAssets,
         _mfaMethods = mfaMethods;
 
@@ -31600,6 +31618,20 @@ class _$UserImpl implements _User {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [mappitSecondaryRoutes]
+  final List<String>? _mappitSecondaryRoutesIds;
+
+  /// [mappitSecondaryRoutes]
+  @override
+  List<String>? get mappitSecondaryRoutesIds {
+    final value = _mappitSecondaryRoutesIds;
+    if (value == null) return null;
+    if (_mappitSecondaryRoutesIds is EqualUnmodifiableListView)
+      return _mappitSecondaryRoutesIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// [mappitAssets] represents the list of assets.
   /// This field is only for `Mappit` use.
   final List<Asset>? _mappitAssets;
@@ -31666,7 +31698,7 @@ class _$UserImpl implements _User {
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude)';
   }
 
   @override
@@ -31710,6 +31742,8 @@ class _$UserImpl implements _User {
                 .equals(other._allowedApps, _allowedApps) &&
             const DeepCollectionEquality()
                 .equals(other._mappitAssetsIds, _mappitAssetsIds) &&
+            const DeepCollectionEquality().equals(
+                other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds) &&
             const DeepCollectionEquality()
                 .equals(other._mappitAssets, _mappitAssets) &&
             (identical(other.historicalDaysAllowed, historicalDaysAllowed) ||
@@ -31760,6 +31794,7 @@ class _$UserImpl implements _User {
         configuration,
         const DeepCollectionEquality().hash(_allowedApps),
         const DeepCollectionEquality().hash(_mappitAssetsIds),
+        const DeepCollectionEquality().hash(_mappitSecondaryRoutesIds),
         const DeepCollectionEquality().hash(_mappitAssets),
         historicalDaysAllowed,
         mappitExternalAccountId,
@@ -31811,6 +31846,7 @@ abstract class _User implements User {
       @EnvironmentOrNullConverter() final Environment? configuration,
       final List<RegisteredApp>? allowedApps,
       final List<String>? mappitAssetsIds,
+      final List<String>? mappitSecondaryRoutesIds,
       final List<Asset>? mappitAssets,
       final int? historicalDaysAllowed,
       final String? mappitExternalAccountId,
@@ -31918,6 +31954,10 @@ abstract class _User implements User {
   /// [mappitAssetsIds] represents the list of assets IDs.
   /// This field is only for `Mappit` use.
   List<String>? get mappitAssetsIds;
+  @override
+
+  /// [mappitSecondaryRoutes]
+  List<String>? get mappitSecondaryRoutesIds;
   @override
 
   /// [mappitAssets] represents the list of assets.
