@@ -20,4 +20,6 @@ part 'src/order_status.dart';
 part 'src/order.dart';
 part 'src/image_set.dart';
 
+part 'src/custom_property.dart';
+
 part 'src/dropoff_failed_reason.dart';

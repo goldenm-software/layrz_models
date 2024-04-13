@@ -28,6 +28,15 @@ class TenvioItem with _$TenvioItem {
 
     /// [movements] is a history of movements of the item.
     List<TenvioItemMovement>? movements,
+
+    /// [warehouse] is the warehouse where the item is located.
+    Asset? warehouse,
+
+    /// [createdAt] is the date when the item was created.
+    @TimestampOrNullConverter() DateTime? createdAt,
+
+    /// [updatedAt] is the date when the item was updated.
+    @TimestampOrNullConverter() DateTime? updatedAt,
   }) = _TenvioItem;
 
   factory TenvioItem.fromJson(Map<String, dynamic> json) => _$TenvioItemFromJson(json);

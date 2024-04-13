@@ -12,7 +12,7 @@ part of 'inbound.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 RealtimeEndpoint _$RealtimeEndpointFromJson(Map<String, dynamic> json) {
   return _RealtimeEndpoint.fromJson(json);
@@ -124,7 +124,7 @@ class _$RealtimeEndpointImpl implements _RealtimeEndpoint {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RealtimeEndpointImpl &&
@@ -321,7 +321,7 @@ class _$RealtimeVariantEndpointImpl implements _RealtimeVariantEndpoint {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RealtimeVariantEndpointImpl &&
@@ -1050,7 +1050,7 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundProtocolImpl &&
@@ -1637,7 +1637,7 @@ class _$InboundServiceImpl implements _InboundService {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundServiceImpl &&
@@ -1928,7 +1928,7 @@ class _$InboundStructureImpl implements _InboundStructure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundStructureImpl &&
@@ -2187,7 +2187,7 @@ class _$InboundPositionStructureImpl implements _InboundPositionStructure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundPositionStructureImpl &&
@@ -2383,7 +2383,7 @@ class _$InboundPayloadStructureImpl implements _InboundPayloadStructure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundPayloadStructureImpl &&

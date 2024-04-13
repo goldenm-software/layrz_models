@@ -2787,6 +2787,10 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       mappitAssetsIds: (json['mappitAssetsIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      mappitSecondaryRoutesIds:
+          (json['mappitSecondaryRoutesIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
       mappitAssets: (json['mappitAssets'] as List<dynamic>?)
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -2833,6 +2837,7 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
           const EnvironmentOrNullConverter().toJson(instance.configuration),
       'allowedApps': instance.allowedApps?.map((e) => e.toJson()).toList(),
       'mappitAssetsIds': instance.mappitAssetsIds,
+      'mappitSecondaryRoutesIds': instance.mappitSecondaryRoutesIds,
       'mappitAssets': instance.mappitAssets?.map((e) => e.toJson()).toList(),
       'historicalDaysAllowed': instance.historicalDaysAllowed,
       'mappitExternalAccountId': instance.mappitExternalAccountId,

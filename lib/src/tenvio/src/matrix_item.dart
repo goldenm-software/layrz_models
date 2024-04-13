@@ -27,10 +27,19 @@ class TenvioMatrixItem with _$TenvioMatrixItem {
     /// [height] is the height of the item.
     double? height,
 
-    /// [customProperties] is a `Map<String, dynamic>` that contains the custom properties of the item.
+    /// [customProperties] is a `List` that contains the definition of the custom properties of the item
     /// This properties can be used to store additional information about the item and it's up to the
     /// user to define them.
-    Map<String, dynamic>? customProperties,
+    List<TenvioCustomProperty>? customProperties,
+
+    /// [createdAt] is the date when the item was created.
+    @TimestampOrNullConverter() DateTime? createdAt,
+
+    /// [updatedAt] is the date when the item was updated.
+    @TimestampOrNullConverter() DateTime? updatedAt,
+
+    /// [items] is a list of items that are part of the matrix item.
+    List<TenvioItem>? items,
   }) = _TenvioMatrixItem;
 
   factory TenvioMatrixItem.fromJson(Map<String, dynamic> json) => _$TenvioMatrixItemFromJson(json);

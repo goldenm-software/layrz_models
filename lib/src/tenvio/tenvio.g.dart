@@ -22,6 +22,13 @@ _$TenvioItemImpl _$$TenvioItemImplFromJson(Map<String, dynamic> json) =>
       movements: (json['movements'] as List<dynamic>?)
           ?.map((e) => TenvioItemMovement.fromJson(e as Map<String, dynamic>))
           .toList(),
+      warehouse: json['warehouse'] == null
+          ? null
+          : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
+      createdAt:
+          const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
+      updatedAt:
+          const TimestampOrNullConverter().fromJson(json['updatedAt'] as num?),
     );
 
 Map<String, dynamic> _$$TenvioItemImplToJson(_$TenvioItemImpl instance) =>
@@ -36,6 +43,9 @@ Map<String, dynamic> _$$TenvioItemImplToJson(_$TenvioItemImpl instance) =>
           const TimestampOrNullConverter().toJson(instance.pickupDate),
       'customProperties': instance.customProperties,
       'movements': instance.movements?.map((e) => e.toJson()).toList(),
+      'warehouse': instance.warehouse?.toJson(),
+      'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+      'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
     };
 
 _$TenvioMatrixItemImpl _$$TenvioMatrixItemImplFromJson(
@@ -49,7 +59,16 @@ _$TenvioMatrixItemImpl _$$TenvioMatrixItemImplFromJson(
       weight: (json['weight'] as num?)?.toDouble(),
       width: (json['width'] as num?)?.toDouble(),
       height: (json['height'] as num?)?.toDouble(),
-      customProperties: json['customProperties'] as Map<String, dynamic>?,
+      customProperties: (json['customProperties'] as List<dynamic>?)
+          ?.map((e) => TenvioCustomProperty.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      createdAt:
+          const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
+      updatedAt:
+          const TimestampOrNullConverter().fromJson(json['updatedAt'] as num?),
+      items: (json['items'] as List<dynamic>?)
+          ?.map((e) => TenvioItem.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$TenvioMatrixItemImplToJson(
@@ -63,7 +82,11 @@ Map<String, dynamic> _$$TenvioMatrixItemImplToJson(
       'weight': instance.weight,
       'width': instance.width,
       'height': instance.height,
-      'customProperties': instance.customProperties,
+      'customProperties':
+          instance.customProperties?.map((e) => e.toJson()).toList(),
+      'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+      'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
+      'items': instance.items?.map((e) => e.toJson()).toList(),
     };
 
 _$TenvioItemMovementImpl _$$TenvioItemMovementImplFromJson(
@@ -240,6 +263,41 @@ Map<String, dynamic> _$$TenvioImageSetImplToJson(
       'signature': instance.signature,
       'pickup': instance.pickup,
       'dropoff': instance.dropoff,
+    };
+
+_$TenvioCustomPropertyImpl _$$TenvioCustomPropertyImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioCustomPropertyImpl(
+      name: json['name'] as String,
+      dataType: const TenvioPropertyDataTypeConverter()
+          .fromJson(json['dataType'] as String),
+      isRequired: json['isRequired'] as bool? ?? false,
+      choices: (json['choices'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      minValue: (json['minValue'] as num?)?.toDouble(),
+      maxValue: (json['maxValue'] as num?)?.toDouble(),
+      minLength: json['minLength'] as int?,
+      maxLength: json['maxLength'] as int?,
+      maxFileSize: json['maxFileSize'] as int?,
+      defaultValue: json['defaultValue'],
+    );
+
+Map<String, dynamic> _$$TenvioCustomPropertyImplToJson(
+        _$TenvioCustomPropertyImpl instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'dataType':
+          const TenvioPropertyDataTypeConverter().toJson(instance.dataType),
+      'isRequired': instance.isRequired,
+      'choices': instance.choices,
+      'minValue': instance.minValue,
+      'maxValue': instance.maxValue,
+      'minLength': instance.minLength,
+      'maxLength': instance.maxLength,
+      'maxFileSize': instance.maxFileSize,
+      'defaultValue': instance.defaultValue,
     };
 
 _$DropoffFailedReasonImpl _$$DropoffFailedReasonImplFromJson(
