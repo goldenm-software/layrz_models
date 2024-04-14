@@ -51,6 +51,10 @@ _$MappitRouteImpl _$$MappitRouteImplFromJson(Map<String, dynamic> json) =>
       owner: json['owner'] == null
           ? null
           : User.fromJson(json['owner'] as Map<String, dynamic>),
+      mappitSecondaryRoutesIds:
+          (json['mappitSecondaryRoutesIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
     );
 
 Map<String, dynamic> _$$MappitRouteImplToJson(_$MappitRouteImpl instance) =>
@@ -65,6 +69,7 @@ Map<String, dynamic> _$$MappitRouteImplToJson(_$MappitRouteImpl instance) =>
           instance.assignmentsHistory?.map((e) => e.toJson()).toList(),
       'ownerId': instance.ownerId,
       'owner': instance.owner?.toJson(),
+      'mappitSecondaryRoutesIds': instance.mappitSecondaryRoutesIds,
     };
 
 _$MappitLaborHourImpl _$$MappitLaborHourImplFromJson(
