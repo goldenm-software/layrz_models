@@ -12,7 +12,7 @@ part of 'mappit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 MappitRouteLinkingHistory _$MappitRouteLinkingHistoryFromJson(
     Map<String, dynamic> json) {
@@ -231,7 +231,7 @@ class _$MappitRouteLinkingHistoryImpl implements _MappitRouteLinkingHistory {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitRouteLinkingHistoryImpl &&
@@ -340,10 +340,6 @@ mixin _$MappitRoute {
   /// [owner] refers to the owner of the geofence.
   User? get owner => throw _privateConstructorUsedError;
 
-  /// [mappitSecondaryRoutes]
-  List<String>? get mappitSecondaryRoutesIds =>
-      throw _privateConstructorUsedError;
-
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MappitRouteCopyWith<MappitRoute> get copyWith =>
@@ -365,8 +361,7 @@ abstract class $MappitRouteCopyWith<$Res> {
       List<String>? geofencesIds,
       List<MappitRouteLinkingHistory>? assignmentsHistory,
       String? ownerId,
-      User? owner,
-      List<String>? mappitSecondaryRoutesIds});
+      User? owner});
 
   $AssetCopyWith<$Res>? get currentSeller;
   $UserCopyWith<$Res>? get owner;
@@ -394,7 +389,6 @@ class _$MappitRouteCopyWithImpl<$Res, $Val extends MappitRoute>
     Object? assignmentsHistory = freezed,
     Object? ownerId = freezed,
     Object? owner = freezed,
-    Object? mappitSecondaryRoutesIds = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -433,10 +427,6 @@ class _$MappitRouteCopyWithImpl<$Res, $Val extends MappitRoute>
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
-      mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds
-          ? _value.mappitSecondaryRoutesIds
-          : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
     ) as $Val);
   }
 
@@ -482,8 +472,7 @@ abstract class _$$MappitRouteImplCopyWith<$Res>
       List<String>? geofencesIds,
       List<MappitRouteLinkingHistory>? assignmentsHistory,
       String? ownerId,
-      User? owner,
-      List<String>? mappitSecondaryRoutesIds});
+      User? owner});
 
   @override
   $AssetCopyWith<$Res>? get currentSeller;
@@ -511,7 +500,6 @@ class __$$MappitRouteImplCopyWithImpl<$Res>
     Object? assignmentsHistory = freezed,
     Object? ownerId = freezed,
     Object? owner = freezed,
-    Object? mappitSecondaryRoutesIds = freezed,
   }) {
     return _then(_$MappitRouteImpl(
       id: null == id
@@ -550,10 +538,6 @@ class __$$MappitRouteImplCopyWithImpl<$Res>
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
-      mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds
-          ? _value._mappitSecondaryRoutesIds
-          : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
     ));
   }
 }
@@ -570,12 +554,10 @@ class _$MappitRouteImpl implements _MappitRoute {
       final List<String>? geofencesIds,
       final List<MappitRouteLinkingHistory>? assignmentsHistory,
       this.ownerId,
-      this.owner,
-      final List<String>? mappitSecondaryRoutesIds})
+      this.owner})
       : _geofences = geofences,
         _geofencesIds = geofencesIds,
-        _assignmentsHistory = assignmentsHistory,
-        _mappitSecondaryRoutesIds = mappitSecondaryRoutesIds;
+        _assignmentsHistory = assignmentsHistory;
 
   factory _$MappitRouteImpl.fromJson(Map<String, dynamic> json) =>
       _$$MappitRouteImplFromJson(json);
@@ -644,27 +626,13 @@ class _$MappitRouteImpl implements _MappitRoute {
   @override
   final User? owner;
 
-  /// [mappitSecondaryRoutes]
-  final List<String>? _mappitSecondaryRoutesIds;
-
-  /// [mappitSecondaryRoutes]
-  @override
-  List<String>? get mappitSecondaryRoutesIds {
-    final value = _mappitSecondaryRoutesIds;
-    if (value == null) return null;
-    if (_mappitSecondaryRoutesIds is EqualUnmodifiableListView)
-      return _mappitSecondaryRoutesIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
   @override
   String toString() {
-    return 'MappitRoute(id: $id, name: $name, currentSeller: $currentSeller, currentSellerId: $currentSellerId, geofences: $geofences, geofencesIds: $geofencesIds, assignmentsHistory: $assignmentsHistory, ownerId: $ownerId, owner: $owner, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds)';
+    return 'MappitRoute(id: $id, name: $name, currentSeller: $currentSeller, currentSellerId: $currentSellerId, geofences: $geofences, geofencesIds: $geofencesIds, assignmentsHistory: $assignmentsHistory, ownerId: $ownerId, owner: $owner)';
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitRouteImpl &&
@@ -681,9 +649,7 @@ class _$MappitRouteImpl implements _MappitRoute {
             const DeepCollectionEquality()
                 .equals(other._assignmentsHistory, _assignmentsHistory) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
-            (identical(other.owner, owner) || other.owner == owner) &&
-            const DeepCollectionEquality().equals(
-                other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds));
+            (identical(other.owner, owner) || other.owner == owner));
   }
 
   @JsonKey(ignore: true)
@@ -698,8 +664,7 @@ class _$MappitRouteImpl implements _MappitRoute {
       const DeepCollectionEquality().hash(_geofencesIds),
       const DeepCollectionEquality().hash(_assignmentsHistory),
       ownerId,
-      owner,
-      const DeepCollectionEquality().hash(_mappitSecondaryRoutesIds));
+      owner);
 
   @JsonKey(ignore: true)
   @override
@@ -725,8 +690,7 @@ abstract class _MappitRoute implements MappitRoute {
       final List<String>? geofencesIds,
       final List<MappitRouteLinkingHistory>? assignmentsHistory,
       final String? ownerId,
-      final User? owner,
-      final List<String>? mappitSecondaryRoutesIds}) = _$MappitRouteImpl;
+      final User? owner}) = _$MappitRouteImpl;
 
   factory _MappitRoute.fromJson(Map<String, dynamic> json) =
       _$MappitRouteImpl.fromJson;
@@ -767,10 +731,6 @@ abstract class _MappitRoute implements MappitRoute {
 
   /// [owner] refers to the owner of the geofence.
   User? get owner;
-  @override
-
-  /// [mappitSecondaryRoutes]
-  List<String>? get mappitSecondaryRoutesIds;
   @override
   @JsonKey(ignore: true)
   _$$MappitRouteImplCopyWith<_$MappitRouteImpl> get copyWith =>
@@ -967,7 +927,7 @@ class _$MappitLaborHourImpl implements _MappitLaborHour {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitLaborHourImpl &&
@@ -1208,7 +1168,7 @@ class _$MappitProfileGeofenceImpl implements _MappitProfileGeofence {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitProfileGeofenceImpl &&
@@ -1413,7 +1373,7 @@ class _$MappitProfileImpl implements _MappitProfile {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitProfileImpl &&
@@ -1621,7 +1581,7 @@ class _$MappitDurationRangeImpl implements _MappitDurationRange {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitDurationRangeImpl &&
@@ -1818,7 +1778,7 @@ class _$MappitIntRangeImpl implements _MappitIntRange {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitIntRangeImpl &&
@@ -2013,7 +1973,7 @@ class _$MappitDoubleRangeImpl implements _MappitDoubleRange {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitDoubleRangeImpl &&
@@ -2272,7 +2232,7 @@ class _$MappitHomeConfigImpl implements _MappitHomeConfig {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitHomeConfigImpl &&
@@ -2546,7 +2506,7 @@ class _$MappitFreeDayImpl implements _MappitFreeDay {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitFreeDayImpl &&

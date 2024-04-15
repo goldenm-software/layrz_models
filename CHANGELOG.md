@@ -1,4 +1,15 @@
 # Changelog
+## 2.1.27
+- Add `mappitSecondaryRoutesIds` inside `Asset`
+- Removed `mappitSecondaryRoutesIds` from `User`
+
+## 2.1.26
+- Removed `mappitSecondaryRoutesIds` from `User`
+- Add `mappitSecondaryRoutesIds` inside `MappitRoute`
+
+## 2.1.25
+- Add `mappitSecondaryRoutesIds` inside `User`
+
 ## 2.1.24
 - Added `transportAsset` and `sellerAsset` inside  `AtsPurchaseOrder`.
 
