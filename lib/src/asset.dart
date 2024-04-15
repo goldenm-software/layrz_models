@@ -157,6 +157,9 @@ class Asset with _$Asset {
 
     /// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
     List<Geofence>? geofences,
+
+    /// `mappitSecondaryRoutesIds` represents the list of secondary routes ids linked to the asset.
+    List<String>? mappitSecondaryRoutesIds,
   }) = _Asset;
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
