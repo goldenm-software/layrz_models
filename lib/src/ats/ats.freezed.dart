@@ -951,11 +951,11 @@ mixin _$AtsReceptionInput {
   ///ID of the [AtsReception]. This ID is unique.
   set id(String? value) => throw _privateConstructorUsedError;
 
-  /// ID of the purchase order.
-  int? get orderId => throw _privateConstructorUsedError;
+  /// List of [AtsPurchaseOrder] IDs.
+  List<String>? get ordersIds => throw _privateConstructorUsedError;
 
-  /// ID of the purchase order.
-  set orderId(int? value) => throw _privateConstructorUsedError;
+  /// List of [AtsPurchaseOrder] IDs.
+  set ordersIds(List<String>? value) => throw _privateConstructorUsedError;
 
   /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
   List<AtsReceptionProductInput>? get products =>
@@ -1001,7 +1001,7 @@ abstract class $AtsReceptionInputCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
-      int? orderId,
+      List<String>? ordersIds,
       List<AtsReceptionProductInput>? products,
       String? assetId,
       @DurationOrNullConverter() Duration? operationTime,
@@ -1022,7 +1022,7 @@ class _$AtsReceptionInputCopyWithImpl<$Res, $Val extends AtsReceptionInput>
   @override
   $Res call({
     Object? id = freezed,
-    Object? orderId = freezed,
+    Object? ordersIds = freezed,
     Object? products = freezed,
     Object? assetId = freezed,
     Object? operationTime = freezed,
@@ -1033,10 +1033,10 @@ class _$AtsReceptionInputCopyWithImpl<$Res, $Val extends AtsReceptionInput>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      orderId: freezed == orderId
-          ? _value.orderId
-          : orderId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      ordersIds: freezed == ordersIds
+          ? _value.ordersIds
+          : ordersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       products: freezed == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
@@ -1067,7 +1067,7 @@ abstract class _$$AtsReceptionInputImplCopyWith<$Res>
   @useResult
   $Res call(
       {String? id,
-      int? orderId,
+      List<String>? ordersIds,
       List<AtsReceptionProductInput>? products,
       String? assetId,
       @DurationOrNullConverter() Duration? operationTime,
@@ -1086,7 +1086,7 @@ class __$$AtsReceptionInputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? orderId = freezed,
+    Object? ordersIds = freezed,
     Object? products = freezed,
     Object? assetId = freezed,
     Object? operationTime = freezed,
@@ -1097,10 +1097,10 @@ class __$$AtsReceptionInputImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      orderId: freezed == orderId
-          ? _value.orderId
-          : orderId // ignore: cast_nullable_to_non_nullable
-              as int?,
+      ordersIds: freezed == ordersIds
+          ? _value.ordersIds
+          : ordersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       products: freezed == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
@@ -1126,7 +1126,7 @@ class __$$AtsReceptionInputImplCopyWithImpl<$Res>
 class _$AtsReceptionInputImpl implements _AtsReceptionInput {
   _$AtsReceptionInputImpl(
       {this.id,
-      this.orderId,
+      this.ordersIds,
       this.products,
       this.assetId,
       @DurationOrNullConverter() this.operationTime,
@@ -1139,9 +1139,9 @@ class _$AtsReceptionInputImpl implements _AtsReceptionInput {
   @override
   String? id;
 
-  /// ID of the purchase order.
+  /// List of [AtsPurchaseOrder] IDs.
   @override
-  int? orderId;
+  List<String>? ordersIds;
 
   /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
   @override
@@ -1163,7 +1163,7 @@ class _$AtsReceptionInputImpl implements _AtsReceptionInput {
 
   @override
   String toString() {
-    return 'AtsReceptionInput(id: $id, orderId: $orderId, products: $products, assetId: $assetId, operationTime: $operationTime, app: $app)';
+    return 'AtsReceptionInput(id: $id, ordersIds: $ordersIds, products: $products, assetId: $assetId, operationTime: $operationTime, app: $app)';
   }
 
   @JsonKey(ignore: true)
@@ -1184,7 +1184,7 @@ class _$AtsReceptionInputImpl implements _AtsReceptionInput {
 abstract class _AtsReceptionInput implements AtsReceptionInput {
   factory _AtsReceptionInput(
       {String? id,
-      int? orderId,
+      List<String>? ordersIds,
       List<AtsReceptionProductInput>? products,
       String? assetId,
       @DurationOrNullConverter() Duration? operationTime,
@@ -1202,11 +1202,11 @@ abstract class _AtsReceptionInput implements AtsReceptionInput {
   set id(String? value);
   @override
 
-  /// ID of the purchase order.
-  int? get orderId;
+  /// List of [AtsPurchaseOrder] IDs.
+  List<String>? get ordersIds;
 
-  /// ID of the purchase order.
-  set orderId(int? value);
+  /// List of [AtsPurchaseOrder] IDs.
+  set ordersIds(List<String>? value);
   @override
 
   /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]

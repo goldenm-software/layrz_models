@@ -127,9 +127,9 @@ class AtsReceptionInput with _$AtsReceptionInput {
     ///ID of the [AtsReception]. This ID is unique.
     String? id,
 
-    /// ID of the purchase order.
-    int? orderId,
-
+    /// List of [AtsPurchaseOrder] IDs.
+    List<String>? ordersIds,
+    
     /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
     List<AtsReceptionProductInput>? products,
 

@@ -94,7 +94,9 @@ _$AtsReceptionInputImpl _$$AtsReceptionInputImplFromJson(
         Map<String, dynamic> json) =>
     _$AtsReceptionInputImpl(
       id: json['id'] as String?,
-      orderId: json['orderId'] as int?,
+      ordersIds: (json['ordersIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       products: (json['products'] as List<dynamic>?)
           ?.map((e) =>
               AtsReceptionProductInput.fromJson(e as Map<String, dynamic>))
@@ -109,7 +111,7 @@ Map<String, dynamic> _$$AtsReceptionInputImplToJson(
         _$AtsReceptionInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'orderId': instance.orderId,
+      'ordersIds': instance.ordersIds,
       'products': instance.products?.map((e) => e.toJson()).toList(),
       'assetId': instance.assetId,
       'operationTime':
