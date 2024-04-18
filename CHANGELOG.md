@@ -1,4 +1,8 @@
 # Changelog
+## 2.1.28
+- Removed `orderId` from `AtsReceptionInput` 
+- Add `ordersIds` from `AtsReceptionInput`
+
 ## 2.1.27
 - Add `mappitSecondaryRoutesIds` inside `Asset`
 - Removed `mappitSecondaryRoutesIds` from `User`
