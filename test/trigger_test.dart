@@ -35,6 +35,15 @@ void main() {
         "satellites": null,
         "hdop": 1
       },
+      "sensors": [
+        {"parameter": "report.code", "value": "GTFRI"},
+        {"parameter": "position.hdop", "value": 0},
+        {"parameter": "vehicle.state", "value": "ignition off rest"},
+        {"parameter": "position.speed", "value": 26.1},
+        {"parameter": "vehicle.mileage", "value": 3750.8},
+        {"parameter": "engine.ignition.status", "value": false},
+        {"parameter": "external.powersource.voltage", "value": 12.766}
+      ],
       "geofenceId": '7389',
       "presenceType": "EXIT"
     };

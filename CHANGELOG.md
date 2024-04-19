@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.30
+- Added `sensors` parameter to `TriggerActivation` model
+
 ## 2.1.29
 
 - New models `SdmPen`, `SdmRecipe` and `SdmIngredient`.

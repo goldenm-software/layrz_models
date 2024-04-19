@@ -28920,6 +28920,9 @@ mixin _$TriggerActivation {
   TriggerGeofenceDetectionMode? get presenceType =>
       throw _privateConstructorUsedError;
 
+  /// `sensors` is the list of sensors that were activated when the trigger was activated.
+  List<TelemetrySensor>? get sensors => throw _privateConstructorUsedError;
+
   /// `date` is the date when the trigger was activated.
   @JsonKey(name: 'at')
   @TimestampConverter()
@@ -28944,6 +28947,7 @@ abstract class $TriggerActivationCopyWith<$Res> {
       TelemetryPosition? position,
       @TriggerGeofenceDetectionModeOrNullConverter()
       TriggerGeofenceDetectionMode? presenceType,
+      List<TelemetrySensor>? sensors,
       @JsonKey(name: 'at') @TimestampConverter() DateTime date});
 
   $AssetCopyWith<$Res> get asset;
@@ -28969,6 +28973,7 @@ class _$TriggerActivationCopyWithImpl<$Res, $Val extends TriggerActivation>
     Object? trigger = freezed,
     Object? position = freezed,
     Object? presenceType = freezed,
+    Object? sensors = freezed,
     Object? date = null,
   }) {
     return _then(_value.copyWith(
@@ -28992,6 +28997,10 @@ class _$TriggerActivationCopyWithImpl<$Res, $Val extends TriggerActivation>
           ? _value.presenceType
           : presenceType // ignore: cast_nullable_to_non_nullable
               as TriggerGeofenceDetectionMode?,
+      sensors: freezed == sensors
+          ? _value.sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<TelemetrySensor>?,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -29047,6 +29056,7 @@ abstract class _$$TriggerActivationImplCopyWith<$Res>
       TelemetryPosition? position,
       @TriggerGeofenceDetectionModeOrNullConverter()
       TriggerGeofenceDetectionMode? presenceType,
+      List<TelemetrySensor>? sensors,
       @JsonKey(name: 'at') @TimestampConverter() DateTime date});
 
   @override
@@ -29073,6 +29083,7 @@ class __$$TriggerActivationImplCopyWithImpl<$Res>
     Object? trigger = freezed,
     Object? position = freezed,
     Object? presenceType = freezed,
+    Object? sensors = freezed,
     Object? date = null,
   }) {
     return _then(_$TriggerActivationImpl(
@@ -29096,6 +29107,10 @@ class __$$TriggerActivationImplCopyWithImpl<$Res>
           ? _value.presenceType
           : presenceType // ignore: cast_nullable_to_non_nullable
               as TriggerGeofenceDetectionMode?,
+      sensors: freezed == sensors
+          ? _value._sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<TelemetrySensor>?,
       date: null == date
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -29113,7 +29128,9 @@ class _$TriggerActivationImpl implements _TriggerActivation {
       this.trigger,
       this.position,
       @TriggerGeofenceDetectionModeOrNullConverter() this.presenceType,
-      @JsonKey(name: 'at') @TimestampConverter() required this.date});
+      final List<TelemetrySensor>? sensors,
+      @JsonKey(name: 'at') @TimestampConverter() required this.date})
+      : _sensors = sensors;
 
   factory _$TriggerActivationImpl.fromJson(Map<String, dynamic> json) =>
       _$$TriggerActivationImplFromJson(json);
@@ -29139,6 +29156,19 @@ class _$TriggerActivationImpl implements _TriggerActivation {
   @TriggerGeofenceDetectionModeOrNullConverter()
   final TriggerGeofenceDetectionMode? presenceType;
 
+  /// `sensors` is the list of sensors that were activated when the trigger was activated.
+  final List<TelemetrySensor>? _sensors;
+
+  /// `sensors` is the list of sensors that were activated when the trigger was activated.
+  @override
+  List<TelemetrySensor>? get sensors {
+    final value = _sensors;
+    if (value == null) return null;
+    if (_sensors is EqualUnmodifiableListView) return _sensors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// `date` is the date when the trigger was activated.
   @override
   @JsonKey(name: 'at')
@@ -29147,7 +29177,7 @@ class _$TriggerActivationImpl implements _TriggerActivation {
 
   @override
   String toString() {
-    return 'TriggerActivation(id: $id, asset: $asset, trigger: $trigger, position: $position, presenceType: $presenceType, date: $date)';
+    return 'TriggerActivation(id: $id, asset: $asset, trigger: $trigger, position: $position, presenceType: $presenceType, sensors: $sensors, date: $date)';
   }
 
   @override
@@ -29162,13 +29192,14 @@ class _$TriggerActivationImpl implements _TriggerActivation {
                 other.position == position) &&
             (identical(other.presenceType, presenceType) ||
                 other.presenceType == presenceType) &&
+            const DeepCollectionEquality().equals(other._sensors, _sensors) &&
             (identical(other.date, date) || other.date == date));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, asset, trigger, position, presenceType, date);
+  int get hashCode => Object.hash(runtimeType, id, asset, trigger, position,
+      presenceType, const DeepCollectionEquality().hash(_sensors), date);
 
   @JsonKey(ignore: true)
   @override
@@ -29193,6 +29224,7 @@ abstract class _TriggerActivation implements TriggerActivation {
       final TelemetryPosition? position,
       @TriggerGeofenceDetectionModeOrNullConverter()
       final TriggerGeofenceDetectionMode? presenceType,
+      final List<TelemetrySensor>? sensors,
       @JsonKey(name: 'at')
       @TimestampConverter()
       required final DateTime date}) = _$TriggerActivationImpl;
@@ -29221,6 +29253,10 @@ abstract class _TriggerActivation implements TriggerActivation {
   /// `presenceType` is the type of presence in the geofence if the trigger was of a geofence presence.
   @TriggerGeofenceDetectionModeOrNullConverter()
   TriggerGeofenceDetectionMode? get presenceType;
+  @override
+
+  /// `sensors` is the list of sensors that were activated when the trigger was activated.
+  List<TelemetrySensor>? get sensors;
   @override
 
   /// `date` is the date when the trigger was activated.

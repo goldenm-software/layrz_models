@@ -12,7 +12,7 @@ part of 'concierge.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 ConciergeFormPage _$ConciergeFormPageFromJson(Map<String, dynamic> json) {
   return _ConciergeFormPage.fromJson(json);
@@ -141,7 +141,7 @@ class _$ConciergeFormPageImpl implements _ConciergeFormPage {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormPageImpl &&
@@ -391,7 +391,7 @@ class _$ConciergeFormBlockImpl implements _ConciergeFormBlock {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormBlockImpl &&
@@ -674,7 +674,7 @@ class _$ConciergeFormBlockConfigurationImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormBlockConfigurationImpl &&
@@ -970,7 +970,7 @@ class _$ConciergeFormBlockValidatorImpl
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConciergeFormBlockValidatorImpl &&
