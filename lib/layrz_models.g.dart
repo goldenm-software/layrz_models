@@ -2582,6 +2582,9 @@ _$TriggerActivationImpl _$$TriggerActivationImplFromJson(
               json['position'] as Map<String, dynamic>),
       presenceType: const TriggerGeofenceDetectionModeOrNullConverter()
           .fromJson(json['presenceType'] as String?),
+      sensors: (json['sensors'] as List<dynamic>?)
+          ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
       date: const TimestampConverter().fromJson(json['at'] as num),
     );
 
@@ -2594,6 +2597,7 @@ Map<String, dynamic> _$$TriggerActivationImplToJson(
       'position': instance.position?.toJson(),
       'presenceType': const TriggerGeofenceDetectionModeOrNullConverter()
           .toJson(instance.presenceType),
+      'sensors': instance.sensors?.map((e) => e.toJson()).toList(),
       'at': const TimestampConverter().toJson(instance.date),
     };
 

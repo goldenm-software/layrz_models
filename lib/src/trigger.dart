@@ -376,6 +376,9 @@ class TriggerActivation with _$TriggerActivation {
     /// `presenceType` is the type of presence in the geofence if the trigger was of a geofence presence.
     @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? presenceType,
 
+    /// `sensors` is the list of sensors that were activated when the trigger was activated.
+    List<TelemetrySensor>? sensors,
+
     /// `date` is the date when the trigger was activated.
     @JsonKey(name: 'at') @TimestampConverter() required DateTime date,
   }) = _TriggerActivation;

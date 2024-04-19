@@ -73,8 +73,11 @@ enum AppInternalIdentifier {
   /// API Reference: `TENVIO_PICK_AND_PACK`
   tenvioPickAndPack,
 
-  /// API Reference `DRIVE`
+  /// API Reference: `DRIVE`
   drive,
+
+  /// API Reference: `SDM_MANAGER`
+  sdmManager,
   ;
 
   @override
@@ -132,6 +135,8 @@ enum AppInternalIdentifier {
         return 'TENVIO_PICK_AND_PACK';
       case AppInternalIdentifier.drive:
         return 'DRIVE';
+      case AppInternalIdentifier.sdmManager:
+        return 'SDM_MANAGER';
       default:
         throw Exception('Unknown AppInternalIdentifier: $this');
     }
@@ -189,6 +194,8 @@ enum AppInternalIdentifier {
         return AppInternalIdentifier.tenvioPickAndPack;
       case 'DRIVE':
         return AppInternalIdentifier.drive;
+      case 'SDM_MANAGER':
+        return AppInternalIdentifier.sdmManager;
       default:
         throw Exception('Unknown AppInternalIdentifier: $value');
     }
