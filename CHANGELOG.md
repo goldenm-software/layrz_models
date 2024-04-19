@@ -1,4 +1,10 @@
 # Changelog
+
+## 2.1.29
+
+- New models `SdmPen`, `SdmRecipe` and `SdmIngredient`.
+- New internal app identifier for `SDM_MANAGER`.
+
 ## 2.1.28
 - Removed `orderId` from `AtsReceptionInput` 
 - Add `ordersIds` from `AtsReceptionInput`
