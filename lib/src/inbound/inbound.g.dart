@@ -82,6 +82,7 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
       cycle: json['cycle'] == null
           ? null
           : SimulationCycle.fromJson(json['cycle'] as Map<String, dynamic>),
+      hasModbus: json['hasModbus'] as bool?,
     );
 
 Map<String, dynamic> _$$InboundProtocolImplToJson(
@@ -113,6 +114,7 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'dynamicIcon': instance.dynamicIcon?.toJson(),
       'cycleId': instance.cycleId,
       'cycle': instance.cycle?.toJson(),
+      'hasModbus': instance.hasModbus,
     };
 
 _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>

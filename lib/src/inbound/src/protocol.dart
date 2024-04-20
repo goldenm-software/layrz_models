@@ -101,6 +101,9 @@ class InboundProtocol with _$InboundProtocol {
 
     /// [cycle] is the cycle that the protocol belongs to.
     SimulationCycle? cycle,
+
+    /// [hasModbus] is the [bool] value that indicates if the protocol has support for Modbus.
+    bool? hasModbus,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);

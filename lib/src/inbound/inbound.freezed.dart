@@ -466,6 +466,9 @@ mixin _$InboundProtocol {
   /// [cycle] is the cycle that the protocol belongs to.
   SimulationCycle? get cycle => throw _privateConstructorUsedError;
 
+  /// [hasModbus] is the [bool] value that indicates if the protocol has support for Modbus.
+  bool? get hasModbus => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
@@ -502,7 +505,8 @@ abstract class $InboundProtocolCopyWith<$Res> {
       String? ackTopicFormat,
       Avatar? dynamicIcon,
       String? cycleId,
-      SimulationCycle? cycle});
+      SimulationCycle? cycle,
+      bool? hasModbus});
 
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
   $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
@@ -547,6 +551,7 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? dynamicIcon = freezed,
     Object? cycleId = freezed,
     Object? cycle = freezed,
+    Object? hasModbus = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -645,6 +650,10 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.cycle
           : cycle // ignore: cast_nullable_to_non_nullable
               as SimulationCycle?,
+      hasModbus: freezed == hasModbus
+          ? _value.hasModbus
+          : hasModbus // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 
@@ -730,7 +739,8 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       String? ackTopicFormat,
       Avatar? dynamicIcon,
       String? cycleId,
-      SimulationCycle? cycle});
+      SimulationCycle? cycle,
+      bool? hasModbus});
 
   @override
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
@@ -777,6 +787,7 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? dynamicIcon = freezed,
     Object? cycleId = freezed,
     Object? cycle = freezed,
+    Object? hasModbus = freezed,
   }) {
     return _then(_$InboundProtocolImpl(
       id: null == id
@@ -875,6 +886,10 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value.cycle
           : cycle // ignore: cast_nullable_to_non_nullable
               as SimulationCycle?,
+      hasModbus: freezed == hasModbus
+          ? _value.hasModbus
+          : hasModbus // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -906,7 +921,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       this.ackTopicFormat,
       this.dynamicIcon,
       this.cycleId,
-      this.cycle})
+      this.cycle,
+      this.hasModbus})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models;
@@ -1044,9 +1060,13 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   @override
   final SimulationCycle? cycle;
 
+  /// [hasModbus] is the [bool] value that indicates if the protocol has support for Modbus.
+  @override
+  final bool? hasModbus;
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus)';
   }
 
   @override
@@ -1094,7 +1114,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
             (identical(other.dynamicIcon, dynamicIcon) ||
                 other.dynamicIcon == dynamicIcon) &&
             (identical(other.cycleId, cycleId) || other.cycleId == cycleId) &&
-            (identical(other.cycle, cycle) || other.cycle == cycle));
+            (identical(other.cycle, cycle) || other.cycle == cycle) &&
+            (identical(other.hasModbus, hasModbus) ||
+                other.hasModbus == hasModbus));
   }
 
   @JsonKey(ignore: true)
@@ -1124,7 +1146,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         ackTopicFormat,
         dynamicIcon,
         cycleId,
-        cycle
+        cycle,
+        hasModbus
       ]);
 
   @JsonKey(ignore: true)
@@ -1167,7 +1190,8 @@ abstract class _InboundProtocol implements InboundProtocol {
       final String? ackTopicFormat,
       final Avatar? dynamicIcon,
       final String? cycleId,
-      final SimulationCycle? cycle}) = _$InboundProtocolImpl;
+      final SimulationCycle? cycle,
+      final bool? hasModbus}) = _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
@@ -1275,6 +1299,10 @@ abstract class _InboundProtocol implements InboundProtocol {
 
   /// [cycle] is the cycle that the protocol belongs to.
   SimulationCycle? get cycle;
+  @override
+
+  /// [hasModbus] is the [bool] value that indicates if the protocol has support for Modbus.
+  bool? get hasModbus;
   @override
   @JsonKey(ignore: true)
   _$$InboundProtocolImplCopyWith<_$InboundProtocolImpl> get copyWith =>

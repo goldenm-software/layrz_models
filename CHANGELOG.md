@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.31
+
+- Added `hasModbus` flag into `InboundProtocol` model
+
 ## 2.1.30
 - Added `sensors` parameter to `TriggerActivation` model
 
