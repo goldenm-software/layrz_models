@@ -52,6 +52,9 @@ class Device with _$Device {
 
     /// Is the phone number information linked to this device, can be null.
     PhoneNumber? phone,
+
+    /// [modbus] is the configuration of the modbus device.
+    ModbusConfig? modbus,
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);

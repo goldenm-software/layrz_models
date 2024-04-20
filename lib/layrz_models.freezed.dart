@@ -13442,6 +13442,9 @@ mixin _$Device {
   /// Is the phone number information linked to this device, can be null.
   PhoneNumber? get phone => throw _privateConstructorUsedError;
 
+  /// [modbus] is the configuration of the modbus device.
+  ModbusConfig? get modbus => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DeviceCopyWith<Device> get copyWith => throw _privateConstructorUsedError;
@@ -13469,13 +13472,15 @@ abstract class $DeviceCopyWith<$Res> {
       DeviceTelemetry? telemetry,
       String? visionProfileId,
       VisionProfile? visionProfile,
-      PhoneNumber? phone});
+      PhoneNumber? phone,
+      ModbusConfig? modbus});
 
   $ModelCopyWith<$Res>? get model;
   $InboundProtocolCopyWith<$Res>? get protocol;
   $DeviceTelemetryCopyWith<$Res>? get telemetry;
   $VisionProfileCopyWith<$Res>? get visionProfile;
   $PhoneNumberCopyWith<$Res>? get phone;
+  $ModbusConfigCopyWith<$Res>? get modbus;
 }
 
 /// @nodoc
@@ -13508,6 +13513,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? visionProfileId = freezed,
     Object? visionProfile = freezed,
     Object? phone = freezed,
+    Object? modbus = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -13578,6 +13584,10 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as PhoneNumber?,
+      modbus: freezed == modbus
+          ? _value.modbus
+          : modbus // ignore: cast_nullable_to_non_nullable
+              as ModbusConfig?,
     ) as $Val);
   }
 
@@ -13640,6 +13650,18 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
       return _then(_value.copyWith(phone: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ModbusConfigCopyWith<$Res>? get modbus {
+    if (_value.modbus == null) {
+      return null;
+    }
+
+    return $ModbusConfigCopyWith<$Res>(_value.modbus!, (value) {
+      return _then(_value.copyWith(modbus: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -13666,7 +13688,8 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       DeviceTelemetry? telemetry,
       String? visionProfileId,
       VisionProfile? visionProfile,
-      PhoneNumber? phone});
+      PhoneNumber? phone,
+      ModbusConfig? modbus});
 
   @override
   $ModelCopyWith<$Res>? get model;
@@ -13678,6 +13701,8 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
   $VisionProfileCopyWith<$Res>? get visionProfile;
   @override
   $PhoneNumberCopyWith<$Res>? get phone;
+  @override
+  $ModbusConfigCopyWith<$Res>? get modbus;
 }
 
 /// @nodoc
@@ -13708,6 +13733,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? visionProfileId = freezed,
     Object? visionProfile = freezed,
     Object? phone = freezed,
+    Object? modbus = freezed,
   }) {
     return _then(_$DeviceImpl(
       id: null == id
@@ -13778,6 +13804,10 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as PhoneNumber?,
+      modbus: freezed == modbus
+          ? _value.modbus
+          : modbus // ignore: cast_nullable_to_non_nullable
+              as ModbusConfig?,
     ));
   }
 }
@@ -13802,7 +13832,8 @@ class _$DeviceImpl implements _Device {
       this.telemetry,
       this.visionProfileId,
       this.visionProfile,
-      this.phone})
+      this.phone,
+      this.modbus})
       : _additionalFields = additionalFields,
         _commands = commands,
         _access = access;
@@ -13904,9 +13935,13 @@ class _$DeviceImpl implements _Device {
   @override
   final PhoneNumber? phone;
 
+  /// [modbus] is the configuration of the modbus device.
+  @override
+  final ModbusConfig? modbus;
+
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, mqttToken: $mqttToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone)';
+    return 'Device(id: $id, name: $name, ident: $ident, mqttToken: $mqttToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus)';
   }
 
   @override
@@ -13937,7 +13972,8 @@ class _$DeviceImpl implements _Device {
                 other.visionProfileId == visionProfileId) &&
             (identical(other.visionProfile, visionProfile) ||
                 other.visionProfile == visionProfile) &&
-            (identical(other.phone, phone) || other.phone == phone));
+            (identical(other.phone, phone) || other.phone == phone) &&
+            (identical(other.modbus, modbus) || other.modbus == modbus));
   }
 
   @JsonKey(ignore: true)
@@ -13960,7 +13996,8 @@ class _$DeviceImpl implements _Device {
       telemetry,
       visionProfileId,
       visionProfile,
-      phone);
+      phone,
+      modbus);
 
   @JsonKey(ignore: true)
   @override
@@ -13994,7 +14031,8 @@ abstract class _Device implements Device {
       final DeviceTelemetry? telemetry,
       final String? visionProfileId,
       final VisionProfile? visionProfile,
-      final PhoneNumber? phone}) = _$DeviceImpl;
+      final PhoneNumber? phone,
+      final ModbusConfig? modbus}) = _$DeviceImpl;
 
   factory _Device.fromJson(Map<String, dynamic> json) = _$DeviceImpl.fromJson;
 
@@ -14064,6 +14102,10 @@ abstract class _Device implements Device {
 
   /// Is the phone number information linked to this device, can be null.
   PhoneNumber? get phone;
+  @override
+
+  /// [modbus] is the configuration of the modbus device.
+  ModbusConfig? get modbus;
   @override
   @JsonKey(ignore: true)
   _$$DeviceImplCopyWith<_$DeviceImpl> get copyWith =>

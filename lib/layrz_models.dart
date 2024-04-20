@@ -22,6 +22,7 @@ import 'src/mappit/mappit.dart';
 import 'src/vision/vision.dart';
 // import 'src/tenvio/tenvio.dart';
 // import 'src/sdm/sdm.dart';
+import 'src/modbus/modbus.dart';
 
 // Internal exports
 export 'src/converters/converters.dart';
@@ -41,6 +42,7 @@ export 'src/brickhouse/brickhouse.dart';
 export 'src/vision/vision.dart';
 export 'src/tenvio/tenvio.dart';
 export 'src/sdm/sdm.dart';
+export 'src/modbus/modbus.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
