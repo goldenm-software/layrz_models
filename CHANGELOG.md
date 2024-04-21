@@ -1,11 +1,14 @@
 # Changelog
 
+## 2.1.33
+
+- Added `dynamicIcon` parameter to `OutboundProtocol` model	
+
 ## 2.1.32
 
 - Added `ModbusConfig` and `ModbusParamter` models
 - Added `modbus` parameter to `Device` model
 - Added `modbusPorts` parameter to `InboundProtocol` model
-- Added `dynamicIcon` parameter to `OutboundProtocol` model	
 
 ## 2.1.31
 
