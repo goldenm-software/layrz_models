@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.34
+
+- Added `warehouseId` in `TenvioItem` model
+
 ## 2.1.33
 
 - Added `dynamicIcon` parameter to `OutboundProtocol` model	
