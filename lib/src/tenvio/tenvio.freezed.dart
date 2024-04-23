@@ -52,6 +52,9 @@ mixin _$TenvioItem {
   /// [warehouse] is the warehouse where the item is located.
   Asset? get warehouse => throw _privateConstructorUsedError;
 
+  /// [warehouseId] is the unique identifier of the warehouse where the item is located.
+  String? get warehouseId => throw _privateConstructorUsedError;
+
   /// [createdAt] is the date when the item was created.
   @TimestampOrNullConverter()
   DateTime? get createdAt => throw _privateConstructorUsedError;
@@ -82,6 +85,7 @@ abstract class $TenvioItemCopyWith<$Res> {
       Map<String, dynamic>? customProperties,
       List<TenvioItemMovement>? movements,
       Asset? warehouse,
+      String? warehouseId,
       @TimestampOrNullConverter() DateTime? createdAt,
       @TimestampOrNullConverter() DateTime? updatedAt});
 
@@ -111,6 +115,7 @@ class _$TenvioItemCopyWithImpl<$Res, $Val extends TenvioItem>
     Object? customProperties = freezed,
     Object? movements = freezed,
     Object? warehouse = freezed,
+    Object? warehouseId = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -151,6 +156,10 @@ class _$TenvioItemCopyWithImpl<$Res, $Val extends TenvioItem>
           ? _value.warehouse
           : warehouse // ignore: cast_nullable_to_non_nullable
               as Asset?,
+      warehouseId: freezed == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -205,6 +214,7 @@ abstract class _$$TenvioItemImplCopyWith<$Res>
       Map<String, dynamic>? customProperties,
       List<TenvioItemMovement>? movements,
       Asset? warehouse,
+      String? warehouseId,
       @TimestampOrNullConverter() DateTime? createdAt,
       @TimestampOrNullConverter() DateTime? updatedAt});
 
@@ -234,6 +244,7 @@ class __$$TenvioItemImplCopyWithImpl<$Res>
     Object? customProperties = freezed,
     Object? movements = freezed,
     Object? warehouse = freezed,
+    Object? warehouseId = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -274,6 +285,10 @@ class __$$TenvioItemImplCopyWithImpl<$Res>
           ? _value.warehouse
           : warehouse // ignore: cast_nullable_to_non_nullable
               as Asset?,
+      warehouseId: freezed == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -299,6 +314,7 @@ class _$TenvioItemImpl implements _TenvioItem {
       final Map<String, dynamic>? customProperties,
       final List<TenvioItemMovement>? movements,
       this.warehouse,
+      this.warehouseId,
       @TimestampOrNullConverter() this.createdAt,
       @TimestampOrNullConverter() this.updatedAt})
       : _customProperties = customProperties,
@@ -367,6 +383,10 @@ class _$TenvioItemImpl implements _TenvioItem {
   @override
   final Asset? warehouse;
 
+  /// [warehouseId] is the unique identifier of the warehouse where the item is located.
+  @override
+  final String? warehouseId;
+
   /// [createdAt] is the date when the item was created.
   @override
   @TimestampOrNullConverter()
@@ -379,7 +399,7 @@ class _$TenvioItemImpl implements _TenvioItem {
 
   @override
   String toString() {
-    return 'TenvioItem(id: $id, matrixId: $matrixId, matrix: $matrix, location: $location, address: $address, pickupDate: $pickupDate, customProperties: $customProperties, movements: $movements, warehouse: $warehouse, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'TenvioItem(id: $id, matrixId: $matrixId, matrix: $matrix, location: $location, address: $address, pickupDate: $pickupDate, customProperties: $customProperties, movements: $movements, warehouse: $warehouse, warehouseId: $warehouseId, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -402,6 +422,8 @@ class _$TenvioItemImpl implements _TenvioItem {
                 .equals(other._movements, _movements) &&
             (identical(other.warehouse, warehouse) ||
                 other.warehouse == warehouse) &&
+            (identical(other.warehouseId, warehouseId) ||
+                other.warehouseId == warehouseId) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -421,6 +443,7 @@ class _$TenvioItemImpl implements _TenvioItem {
       const DeepCollectionEquality().hash(_customProperties),
       const DeepCollectionEquality().hash(_movements),
       warehouse,
+      warehouseId,
       createdAt,
       updatedAt);
 
@@ -449,6 +472,7 @@ abstract class _TenvioItem implements TenvioItem {
       final Map<String, dynamic>? customProperties,
       final List<TenvioItemMovement>? movements,
       final Asset? warehouse,
+      final String? warehouseId,
       @TimestampOrNullConverter() final DateTime? createdAt,
       @TimestampOrNullConverter()
       final DateTime? updatedAt}) = _$TenvioItemImpl;
@@ -496,6 +520,10 @@ abstract class _TenvioItem implements TenvioItem {
 
   /// [warehouse] is the warehouse where the item is located.
   Asset? get warehouse;
+  @override
+
+  /// [warehouseId] is the unique identifier of the warehouse where the item is located.
+  String? get warehouseId;
   @override
 
   /// [createdAt] is the date when the item was created.

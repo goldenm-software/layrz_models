@@ -25,6 +25,7 @@ _$TenvioItemImpl _$$TenvioItemImplFromJson(Map<String, dynamic> json) =>
       warehouse: json['warehouse'] == null
           ? null
           : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
+      warehouseId: json['warehouseId'] as String?,
       createdAt:
           const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
       updatedAt:
@@ -44,6 +45,7 @@ Map<String, dynamic> _$$TenvioItemImplToJson(_$TenvioItemImpl instance) =>
       'customProperties': instance.customProperties,
       'movements': instance.movements?.map((e) => e.toJson()).toList(),
       'warehouse': instance.warehouse?.toJson(),
+      'warehouseId': instance.warehouseId,
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
     };
