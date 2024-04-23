@@ -56,10 +56,17 @@ _$AtsReceptionProductImpl _$$AtsReceptionProductImplFromJson(
       assetId: json['assetId'] as String?,
       fuelType: const AtsFuelTypeOrNullConverter()
           .fromJson(json['fuelType'] as String?),
+      fuelSubType: json['fuelSubType'] as String?,
+      density: (json['density'] as num?)?.toDouble(),
+      temperature: (json['temperature'] as num?)?.toDouble(),
       volumeBought: (json['volumeBought'] as num?)?.toDouble(),
       realVolume: (json['realVolume'] as num?)?.toDouble(),
       receivedAt:
           const TimestampOrNullConverter().fromJson(json['receivedAt'] as num?),
+      provider: json['provider'] as String?,
+      tanksImages: (json['tanksImages'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$$AtsReceptionProductImplToJson(
@@ -68,10 +75,15 @@ Map<String, dynamic> _$$AtsReceptionProductImplToJson(
       'id': instance.id,
       'assetId': instance.assetId,
       'fuelType': const AtsFuelTypeOrNullConverter().toJson(instance.fuelType),
+      'fuelSubType': instance.fuelSubType,
+      'density': instance.density,
+      'temperature': instance.temperature,
       'volumeBought': instance.volumeBought,
       'realVolume': instance.realVolume,
       'receivedAt':
           const TimestampOrNullConverter().toJson(instance.receivedAt),
+      'provider': instance.provider,
+      'tanksImages': instance.tanksImages,
     };
 
 _$AtsReceptionProductInputImpl _$$AtsReceptionProductInputImplFromJson(

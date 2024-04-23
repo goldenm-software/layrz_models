@@ -12,7 +12,7 @@ part of 'ats.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) {
   return _AtsEntry.fromJson(json);
@@ -366,7 +366,7 @@ class _$AtsEntryImpl implements _AtsEntry {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsEntryImpl &&
@@ -499,6 +499,15 @@ mixin _$AtsReceptionProduct {
   @AtsFuelTypeOrNullConverter()
   AtsFuelType? get fuelType => throw _privateConstructorUsedError;
 
+  /// Fuel subTuype represent the fuel subtype of the product
+  String? get fuelSubType => throw _privateConstructorUsedError;
+
+  /// Fuel density expressed in gr/cc.
+  double? get density => throw _privateConstructorUsedError;
+
+  /// Fuel temperature expressed in degrees Celsius.
+  double? get temperature => throw _privateConstructorUsedError;
+
   /// Volume received in purchased order (Expressed in Litters).
   double? get volumeBought => throw _privateConstructorUsedError;
 
@@ -508,6 +517,12 @@ mixin _$AtsReceptionProduct {
   /// Reception date and time expressed in unix timestamp.
   @TimestampOrNullConverter()
   DateTime? get receivedAt => throw _privateConstructorUsedError;
+
+  /// Seller / provider name
+  String? get provider => throw _privateConstructorUsedError;
+
+  /// List of tank images
+  List<String>? get tanksImages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -525,9 +540,14 @@ abstract class $AtsReceptionProductCopyWith<$Res> {
       {String? id,
       String? assetId,
       @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
+      String? fuelSubType,
+      double? density,
+      double? temperature,
       double? volumeBought,
       double? realVolume,
-      @TimestampOrNullConverter() DateTime? receivedAt});
+      @TimestampOrNullConverter() DateTime? receivedAt,
+      String? provider,
+      List<String>? tanksImages});
 }
 
 /// @nodoc
@@ -546,9 +566,14 @@ class _$AtsReceptionProductCopyWithImpl<$Res, $Val extends AtsReceptionProduct>
     Object? id = freezed,
     Object? assetId = freezed,
     Object? fuelType = freezed,
+    Object? fuelSubType = freezed,
+    Object? density = freezed,
+    Object? temperature = freezed,
     Object? volumeBought = freezed,
     Object? realVolume = freezed,
     Object? receivedAt = freezed,
+    Object? provider = freezed,
+    Object? tanksImages = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -563,6 +588,18 @@ class _$AtsReceptionProductCopyWithImpl<$Res, $Val extends AtsReceptionProduct>
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
               as AtsFuelType?,
+      fuelSubType: freezed == fuelSubType
+          ? _value.fuelSubType
+          : fuelSubType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      density: freezed == density
+          ? _value.density
+          : density // ignore: cast_nullable_to_non_nullable
+              as double?,
+      temperature: freezed == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
       volumeBought: freezed == volumeBought
           ? _value.volumeBought
           : volumeBought // ignore: cast_nullable_to_non_nullable
@@ -575,6 +612,14 @@ class _$AtsReceptionProductCopyWithImpl<$Res, $Val extends AtsReceptionProduct>
           ? _value.receivedAt
           : receivedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      provider: freezed == provider
+          ? _value.provider
+          : provider // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tanksImages: freezed == tanksImages
+          ? _value.tanksImages
+          : tanksImages // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ) as $Val);
   }
 }
@@ -591,9 +636,14 @@ abstract class _$$AtsReceptionProductImplCopyWith<$Res>
       {String? id,
       String? assetId,
       @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
+      String? fuelSubType,
+      double? density,
+      double? temperature,
       double? volumeBought,
       double? realVolume,
-      @TimestampOrNullConverter() DateTime? receivedAt});
+      @TimestampOrNullConverter() DateTime? receivedAt,
+      String? provider,
+      List<String>? tanksImages});
 }
 
 /// @nodoc
@@ -610,9 +660,14 @@ class __$$AtsReceptionProductImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? assetId = freezed,
     Object? fuelType = freezed,
+    Object? fuelSubType = freezed,
+    Object? density = freezed,
+    Object? temperature = freezed,
     Object? volumeBought = freezed,
     Object? realVolume = freezed,
     Object? receivedAt = freezed,
+    Object? provider = freezed,
+    Object? tanksImages = freezed,
   }) {
     return _then(_$AtsReceptionProductImpl(
       id: freezed == id
@@ -627,6 +682,18 @@ class __$$AtsReceptionProductImplCopyWithImpl<$Res>
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
               as AtsFuelType?,
+      fuelSubType: freezed == fuelSubType
+          ? _value.fuelSubType
+          : fuelSubType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      density: freezed == density
+          ? _value.density
+          : density // ignore: cast_nullable_to_non_nullable
+              as double?,
+      temperature: freezed == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
       volumeBought: freezed == volumeBought
           ? _value.volumeBought
           : volumeBought // ignore: cast_nullable_to_non_nullable
@@ -639,6 +706,14 @@ class __$$AtsReceptionProductImplCopyWithImpl<$Res>
           ? _value.receivedAt
           : receivedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      provider: freezed == provider
+          ? _value.provider
+          : provider // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tanksImages: freezed == tanksImages
+          ? _value._tanksImages
+          : tanksImages // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -650,9 +725,15 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
       {this.id,
       this.assetId,
       @AtsFuelTypeOrNullConverter() this.fuelType,
+      this.fuelSubType,
+      this.density,
+      this.temperature,
       this.volumeBought,
       this.realVolume,
-      @TimestampOrNullConverter() this.receivedAt});
+      @TimestampOrNullConverter() this.receivedAt,
+      this.provider,
+      final List<String>? tanksImages})
+      : _tanksImages = tanksImages;
 
   factory _$AtsReceptionProductImpl.fromJson(Map<String, dynamic> json) =>
       _$$AtsReceptionProductImplFromJson(json);
@@ -670,6 +751,18 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
   @AtsFuelTypeOrNullConverter()
   final AtsFuelType? fuelType;
 
+  /// Fuel subTuype represent the fuel subtype of the product
+  @override
+  final String? fuelSubType;
+
+  /// Fuel density expressed in gr/cc.
+  @override
+  final double? density;
+
+  /// Fuel temperature expressed in degrees Celsius.
+  @override
+  final double? temperature;
+
   /// Volume received in purchased order (Expressed in Litters).
   @override
   final double? volumeBought;
@@ -683,13 +776,30 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
   @TimestampOrNullConverter()
   final DateTime? receivedAt;
 
+  /// Seller / provider name
   @override
-  String toString() {
-    return 'AtsReceptionProduct(id: $id, assetId: $assetId, fuelType: $fuelType, volumeBought: $volumeBought, realVolume: $realVolume, receivedAt: $receivedAt)';
+  final String? provider;
+
+  /// List of tank images
+  final List<String>? _tanksImages;
+
+  /// List of tank images
+  @override
+  List<String>? get tanksImages {
+    final value = _tanksImages;
+    if (value == null) return null;
+    if (_tanksImages is EqualUnmodifiableListView) return _tanksImages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  bool operator ==(Object other) {
+  String toString() {
+    return 'AtsReceptionProduct(id: $id, assetId: $assetId, fuelType: $fuelType, fuelSubType: $fuelSubType, density: $density, temperature: $temperature, volumeBought: $volumeBought, realVolume: $realVolume, receivedAt: $receivedAt, provider: $provider, tanksImages: $tanksImages)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsReceptionProductImpl &&
@@ -697,18 +807,38 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.fuelType, fuelType) ||
                 other.fuelType == fuelType) &&
+            (identical(other.fuelSubType, fuelSubType) ||
+                other.fuelSubType == fuelSubType) &&
+            (identical(other.density, density) || other.density == density) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
             (identical(other.volumeBought, volumeBought) ||
                 other.volumeBought == volumeBought) &&
             (identical(other.realVolume, realVolume) ||
                 other.realVolume == realVolume) &&
             (identical(other.receivedAt, receivedAt) ||
-                other.receivedAt == receivedAt));
+                other.receivedAt == receivedAt) &&
+            (identical(other.provider, provider) ||
+                other.provider == provider) &&
+            const DeepCollectionEquality()
+                .equals(other._tanksImages, _tanksImages));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, assetId, fuelType, volumeBought, realVolume, receivedAt);
+      runtimeType,
+      id,
+      assetId,
+      fuelType,
+      fuelSubType,
+      density,
+      temperature,
+      volumeBought,
+      realVolume,
+      receivedAt,
+      provider,
+      const DeepCollectionEquality().hash(_tanksImages));
 
   @JsonKey(ignore: true)
   @override
@@ -727,13 +857,17 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
 
 abstract class _AtsReceptionProduct implements AtsReceptionProduct {
   const factory _AtsReceptionProduct(
-          {final String? id,
-          final String? assetId,
-          @AtsFuelTypeOrNullConverter() final AtsFuelType? fuelType,
-          final double? volumeBought,
-          final double? realVolume,
-          @TimestampOrNullConverter() final DateTime? receivedAt}) =
-      _$AtsReceptionProductImpl;
+      {final String? id,
+      final String? assetId,
+      @AtsFuelTypeOrNullConverter() final AtsFuelType? fuelType,
+      final String? fuelSubType,
+      final double? density,
+      final double? temperature,
+      final double? volumeBought,
+      final double? realVolume,
+      @TimestampOrNullConverter() final DateTime? receivedAt,
+      final String? provider,
+      final List<String>? tanksImages}) = _$AtsReceptionProductImpl;
 
   factory _AtsReceptionProduct.fromJson(Map<String, dynamic> json) =
       _$AtsReceptionProductImpl.fromJson;
@@ -753,6 +887,18 @@ abstract class _AtsReceptionProduct implements AtsReceptionProduct {
   AtsFuelType? get fuelType;
   @override
 
+  /// Fuel subTuype represent the fuel subtype of the product
+  String? get fuelSubType;
+  @override
+
+  /// Fuel density expressed in gr/cc.
+  double? get density;
+  @override
+
+  /// Fuel temperature expressed in degrees Celsius.
+  double? get temperature;
+  @override
+
   /// Volume received in purchased order (Expressed in Litters).
   double? get volumeBought;
   @override
@@ -764,6 +910,14 @@ abstract class _AtsReceptionProduct implements AtsReceptionProduct {
   /// Reception date and time expressed in unix timestamp.
   @TimestampOrNullConverter()
   DateTime? get receivedAt;
+  @override
+
+  /// Seller / provider name
+  String? get provider;
+  @override
+
+  /// List of tank images
+  List<String>? get tanksImages;
   @override
   @JsonKey(ignore: true)
   _$$AtsReceptionProductImplCopyWith<_$AtsReceptionProductImpl> get copyWith =>
@@ -1457,7 +1611,7 @@ class _$AtsAuthenticationIdentifierImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsAuthenticationIdentifierImpl &&
@@ -1863,7 +2017,7 @@ class _$AtsAuthenticationCardImpl implements _AtsAuthenticationCard {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsAuthenticationCardImpl &&
@@ -2239,7 +2393,7 @@ class _$AtsHistoryAuthenticationCardImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsHistoryAuthenticationCardImpl &&
@@ -2581,7 +2735,7 @@ class _$AtsFeedbackMessegeImpl implements _AtsFeedbackMessege {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsFeedbackMessegeImpl &&
@@ -3110,7 +3264,7 @@ class _$AtsEventImpl implements _AtsEvent {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsEventImpl &&
@@ -3453,7 +3607,7 @@ class _$AtsNsAddressImpl implements _AtsNsAddress {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsNsAddressImpl &&
@@ -3969,7 +4123,7 @@ class _$AtsNsLicenseImpl implements _AtsNsLicense {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsNsLicenseImpl &&
@@ -4482,7 +4636,7 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsTransportInformationImpl &&
@@ -4762,7 +4916,7 @@ class _$AtsCommandResultImpl implements _AtsCommandResult {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsCommandResultImpl &&
@@ -5003,7 +5157,7 @@ class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsCompanyInformationImpl &&
@@ -5328,7 +5482,7 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsProductInformationImpl &&
@@ -6154,7 +6308,7 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPurchaseOrderImpl &&
@@ -6666,7 +6820,7 @@ class _$AtsPurchaseTotalImpl implements _AtsPurchaseTotal {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPurchaseTotalImpl &&
@@ -7057,7 +7211,7 @@ class _$AtsReceptionImpl implements _AtsReception {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsReceptionImpl &&
@@ -7511,7 +7665,7 @@ class _$AtsIdeInformationImpl implements _AtsIdeInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsIdeInformationImpl &&
@@ -7697,7 +7851,7 @@ class _$AtsExitStatusImpl implements _AtsExitStatus {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExitStatusImpl &&
@@ -8243,7 +8397,7 @@ class _$AtsExitImpl implements _AtsExit {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExitImpl &&
@@ -8823,7 +8977,7 @@ class _$AtsPossibleExitImpl implements _AtsPossibleExit {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPossibleExitImpl &&
@@ -9491,7 +9645,7 @@ class _$AtsExecuteExitHistoryImpl implements _AtsExecuteExitHistory {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExecuteExitHistoryImpl &&
