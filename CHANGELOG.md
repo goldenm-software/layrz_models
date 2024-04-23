@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.35
+- Add `fuelSubtype` - `density` - `temperature` - tanksImages in `AtsReceptionProduct`
+
 ## 2.1.34
 
 - Added `warehouseId` in `TenvioItem` model
