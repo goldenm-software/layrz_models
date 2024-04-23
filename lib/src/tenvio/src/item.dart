@@ -32,6 +32,9 @@ class TenvioItem with _$TenvioItem {
     /// [warehouse] is the warehouse where the item is located.
     Asset? warehouse,
 
+    /// [warehouseId] is the unique identifier of the warehouse where the item is located.
+    String? warehouseId,
+
     /// [createdAt] is the date when the item was created.
     @TimestampOrNullConverter() DateTime? createdAt,
 

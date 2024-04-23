@@ -12,7 +12,7 @@ part of 'outbound.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 OutboundProtocol _$OutboundProtocolFromJson(Map<String, dynamic> json) {
   return _OutboundProtocol.fromJson(json);
@@ -20,18 +20,43 @@ OutboundProtocol _$OutboundProtocolFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OutboundProtocol {
+  /// [id] is the protocol ID, this ID is unique for each protocol.
   String get id => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the protocol.
+  /// This name is a translation key, so, check the translation messages to get the name,
+  /// the key is composed by `protocols.outbound.{name}`.
   String get name => throw _privateConstructorUsedError;
+
+  /// [color] is the color assigned to the protocol.
   @ColorConverter()
   Color get color => throw _privateConstructorUsedError;
+
+  /// [isEnabled] indicates if the protocol is enabled and available for use, or disabled and not available for use.
   bool get isEnabled => throw _privateConstructorUsedError;
+
+  /// [categoriesIds] is the list of categories IDs that the protocol belongs to.
   List<String> get categoriesIds => throw _privateConstructorUsedError;
+
+  /// [hasFtp] indicates if the protocol has support for FTP.
   bool? get hasFtp => throw _privateConstructorUsedError;
+
+  /// [isConsumpted] indicates if the protocol is consumpted.
   bool? get isConsumpted => throw _privateConstructorUsedError;
+
+  /// [mqttTopic] is the MQTT topic of the protocol.
   String? get mqttTopic => throw _privateConstructorUsedError;
+
+  /// [isAsync] indicates if the protocol is asynchronous.
   bool? get isAsync => throw _privateConstructorUsedError;
+
+  /// [requiredFields] is the list of required fields for the protocol.
   List<CredentialField> get requiredFields =>
       throw _privateConstructorUsedError;
+
+  /// [dynamicIcon] is the icon of the inbound protocol.
+  /// This is the new schema of the icon
+  Avatar? get dynamicIcon => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,7 +80,10 @@ abstract class $OutboundProtocolCopyWith<$Res> {
       bool? isConsumpted,
       String? mqttTopic,
       bool? isAsync,
-      List<CredentialField> requiredFields});
+      List<CredentialField> requiredFields,
+      Avatar? dynamicIcon});
+
+  $AvatarCopyWith<$Res>? get dynamicIcon;
 }
 
 /// @nodoc
@@ -81,6 +109,7 @@ class _$OutboundProtocolCopyWithImpl<$Res, $Val extends OutboundProtocol>
     Object? mqttTopic = freezed,
     Object? isAsync = freezed,
     Object? requiredFields = null,
+    Object? dynamicIcon = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -123,7 +152,23 @@ class _$OutboundProtocolCopyWithImpl<$Res, $Val extends OutboundProtocol>
           ? _value.requiredFields
           : requiredFields // ignore: cast_nullable_to_non_nullable
               as List<CredentialField>,
+      dynamicIcon: freezed == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AvatarCopyWith<$Res>? get dynamicIcon {
+    if (_value.dynamicIcon == null) {
+      return null;
+    }
+
+    return $AvatarCopyWith<$Res>(_value.dynamicIcon!, (value) {
+      return _then(_value.copyWith(dynamicIcon: value) as $Val);
+    });
   }
 }
 
@@ -145,7 +190,11 @@ abstract class _$$OutboundProtocolImplCopyWith<$Res>
       bool? isConsumpted,
       String? mqttTopic,
       bool? isAsync,
-      List<CredentialField> requiredFields});
+      List<CredentialField> requiredFields,
+      Avatar? dynamicIcon});
+
+  @override
+  $AvatarCopyWith<$Res>? get dynamicIcon;
 }
 
 /// @nodoc
@@ -169,6 +218,7 @@ class __$$OutboundProtocolImplCopyWithImpl<$Res>
     Object? mqttTopic = freezed,
     Object? isAsync = freezed,
     Object? requiredFields = null,
+    Object? dynamicIcon = freezed,
   }) {
     return _then(_$OutboundProtocolImpl(
       id: null == id
@@ -211,6 +261,10 @@ class __$$OutboundProtocolImplCopyWithImpl<$Res>
           ? _value._requiredFields
           : requiredFields // ignore: cast_nullable_to_non_nullable
               as List<CredentialField>,
+      dynamicIcon: freezed == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
     ));
   }
 }
@@ -228,23 +282,37 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
       this.isConsumpted,
       this.mqttTopic,
       this.isAsync,
-      final List<CredentialField> requiredFields = const []})
+      final List<CredentialField> requiredFields = const [],
+      this.dynamicIcon})
       : _categoriesIds = categoriesIds,
         _requiredFields = requiredFields;
 
   factory _$OutboundProtocolImpl.fromJson(Map<String, dynamic> json) =>
       _$$OutboundProtocolImplFromJson(json);
 
+  /// [id] is the protocol ID, this ID is unique for each protocol.
   @override
   final String id;
+
+  /// [name] is the name of the protocol.
+  /// This name is a translation key, so, check the translation messages to get the name,
+  /// the key is composed by `protocols.outbound.{name}`.
   @override
   final String name;
+
+  /// [color] is the color assigned to the protocol.
   @override
   @ColorConverter()
   final Color color;
+
+  /// [isEnabled] indicates if the protocol is enabled and available for use, or disabled and not available for use.
   @override
   final bool isEnabled;
+
+  /// [categoriesIds] is the list of categories IDs that the protocol belongs to.
   final List<String> _categoriesIds;
+
+  /// [categoriesIds] is the list of categories IDs that the protocol belongs to.
   @override
   @JsonKey()
   List<String> get categoriesIds {
@@ -253,15 +321,26 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
     return EqualUnmodifiableListView(_categoriesIds);
   }
 
+  /// [hasFtp] indicates if the protocol has support for FTP.
   @override
   final bool? hasFtp;
+
+  /// [isConsumpted] indicates if the protocol is consumpted.
   @override
   final bool? isConsumpted;
+
+  /// [mqttTopic] is the MQTT topic of the protocol.
   @override
   final String? mqttTopic;
+
+  /// [isAsync] indicates if the protocol is asynchronous.
   @override
   final bool? isAsync;
+
+  /// [requiredFields] is the list of required fields for the protocol.
   final List<CredentialField> _requiredFields;
+
+  /// [requiredFields] is the list of required fields for the protocol.
   @override
   @JsonKey()
   List<CredentialField> get requiredFields {
@@ -270,13 +349,18 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
     return EqualUnmodifiableListView(_requiredFields);
   }
 
+  /// [dynamicIcon] is the icon of the inbound protocol.
+  /// This is the new schema of the icon
+  @override
+  final Avatar? dynamicIcon;
+
   @override
   String toString() {
-    return 'OutboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, hasFtp: $hasFtp, isConsumpted: $isConsumpted, mqttTopic: $mqttTopic, isAsync: $isAsync, requiredFields: $requiredFields)';
+    return 'OutboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, hasFtp: $hasFtp, isConsumpted: $isConsumpted, mqttTopic: $mqttTopic, isAsync: $isAsync, requiredFields: $requiredFields, dynamicIcon: $dynamicIcon)';
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutboundProtocolImpl &&
@@ -294,7 +378,9 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
                 other.mqttTopic == mqttTopic) &&
             (identical(other.isAsync, isAsync) || other.isAsync == isAsync) &&
             const DeepCollectionEquality()
-                .equals(other._requiredFields, _requiredFields));
+                .equals(other._requiredFields, _requiredFields) &&
+            (identical(other.dynamicIcon, dynamicIcon) ||
+                other.dynamicIcon == dynamicIcon));
   }
 
   @JsonKey(ignore: true)
@@ -310,7 +396,8 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
       isConsumpted,
       mqttTopic,
       isAsync,
-      const DeepCollectionEquality().hash(_requiredFields));
+      const DeepCollectionEquality().hash(_requiredFields),
+      dynamicIcon);
 
   @JsonKey(ignore: true)
   @override
@@ -338,32 +425,60 @@ abstract class _OutboundProtocol implements OutboundProtocol {
       final bool? isConsumpted,
       final String? mqttTopic,
       final bool? isAsync,
-      final List<CredentialField> requiredFields}) = _$OutboundProtocolImpl;
+      final List<CredentialField> requiredFields,
+      final Avatar? dynamicIcon}) = _$OutboundProtocolImpl;
 
   factory _OutboundProtocol.fromJson(Map<String, dynamic> json) =
       _$OutboundProtocolImpl.fromJson;
 
   @override
+
+  /// [id] is the protocol ID, this ID is unique for each protocol.
   String get id;
   @override
+
+  /// [name] is the name of the protocol.
+  /// This name is a translation key, so, check the translation messages to get the name,
+  /// the key is composed by `protocols.outbound.{name}`.
   String get name;
   @override
+
+  /// [color] is the color assigned to the protocol.
   @ColorConverter()
   Color get color;
   @override
+
+  /// [isEnabled] indicates if the protocol is enabled and available for use, or disabled and not available for use.
   bool get isEnabled;
   @override
+
+  /// [categoriesIds] is the list of categories IDs that the protocol belongs to.
   List<String> get categoriesIds;
   @override
+
+  /// [hasFtp] indicates if the protocol has support for FTP.
   bool? get hasFtp;
   @override
+
+  /// [isConsumpted] indicates if the protocol is consumpted.
   bool? get isConsumpted;
   @override
+
+  /// [mqttTopic] is the MQTT topic of the protocol.
   String? get mqttTopic;
   @override
+
+  /// [isAsync] indicates if the protocol is asynchronous.
   bool? get isAsync;
   @override
+
+  /// [requiredFields] is the list of required fields for the protocol.
   List<CredentialField> get requiredFields;
+  @override
+
+  /// [dynamicIcon] is the icon of the inbound protocol.
+  /// This is the new schema of the icon
+  Avatar? get dynamicIcon;
   @override
   @JsonKey(ignore: true)
   _$$OutboundProtocolImplCopyWith<_$OutboundProtocolImpl> get copyWith =>
@@ -799,7 +914,7 @@ class _$OutboundServiceImpl implements _OutboundService {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutboundServiceImpl &&
@@ -1059,7 +1174,7 @@ class _$OutboundStructureImpl implements _OutboundStructure {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OutboundStructureImpl &&

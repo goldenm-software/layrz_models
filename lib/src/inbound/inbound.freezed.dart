@@ -12,7 +12,7 @@ part of 'inbound.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 RealtimeEndpoint _$RealtimeEndpointFromJson(Map<String, dynamic> json) {
   return _RealtimeEndpoint.fromJson(json);
@@ -124,7 +124,7 @@ class _$RealtimeEndpointImpl implements _RealtimeEndpoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RealtimeEndpointImpl &&
@@ -321,7 +321,7 @@ class _$RealtimeVariantEndpointImpl implements _RealtimeVariantEndpoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RealtimeVariantEndpointImpl &&
@@ -466,6 +466,12 @@ mixin _$InboundProtocol {
   /// [cycle] is the cycle that the protocol belongs to.
   SimulationCycle? get cycle => throw _privateConstructorUsedError;
 
+  /// [hasModbus] is the [bool] value that indicates if the protocol has support for Modbus.
+  bool? get hasModbus => throw _privateConstructorUsedError;
+
+  /// [modbusPorts] is the list of Modbus ports that the protocol has.
+  List<String> get modbusPorts => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
@@ -502,7 +508,9 @@ abstract class $InboundProtocolCopyWith<$Res> {
       String? ackTopicFormat,
       Avatar? dynamicIcon,
       String? cycleId,
-      SimulationCycle? cycle});
+      SimulationCycle? cycle,
+      bool? hasModbus,
+      List<String> modbusPorts});
 
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
   $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
@@ -547,6 +555,8 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? dynamicIcon = freezed,
     Object? cycleId = freezed,
     Object? cycle = freezed,
+    Object? hasModbus = freezed,
+    Object? modbusPorts = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -645,6 +655,14 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.cycle
           : cycle // ignore: cast_nullable_to_non_nullable
               as SimulationCycle?,
+      hasModbus: freezed == hasModbus
+          ? _value.hasModbus
+          : hasModbus // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      modbusPorts: null == modbusPorts
+          ? _value.modbusPorts
+          : modbusPorts // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 
@@ -730,7 +748,9 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       String? ackTopicFormat,
       Avatar? dynamicIcon,
       String? cycleId,
-      SimulationCycle? cycle});
+      SimulationCycle? cycle,
+      bool? hasModbus,
+      List<String> modbusPorts});
 
   @override
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
@@ -777,6 +797,8 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? dynamicIcon = freezed,
     Object? cycleId = freezed,
     Object? cycle = freezed,
+    Object? hasModbus = freezed,
+    Object? modbusPorts = null,
   }) {
     return _then(_$InboundProtocolImpl(
       id: null == id
@@ -875,6 +897,14 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value.cycle
           : cycle // ignore: cast_nullable_to_non_nullable
               as SimulationCycle?,
+      hasModbus: freezed == hasModbus
+          ? _value.hasModbus
+          : hasModbus // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      modbusPorts: null == modbusPorts
+          ? _value._modbusPorts
+          : modbusPorts // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -906,10 +936,13 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       this.ackTopicFormat,
       this.dynamicIcon,
       this.cycleId,
-      this.cycle})
+      this.cycle,
+      this.hasModbus,
+      final List<String> modbusPorts = const []})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
-        _models = models;
+        _models = models,
+        _modbusPorts = modbusPorts;
 
   factory _$InboundProtocolImpl.fromJson(Map<String, dynamic> json) =>
       _$$InboundProtocolImplFromJson(json);
@@ -1044,13 +1077,29 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   @override
   final SimulationCycle? cycle;
 
+  /// [hasModbus] is the [bool] value that indicates if the protocol has support for Modbus.
   @override
-  String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle)';
+  final bool? hasModbus;
+
+  /// [modbusPorts] is the list of Modbus ports that the protocol has.
+  final List<String> _modbusPorts;
+
+  /// [modbusPorts] is the list of Modbus ports that the protocol has.
+  @override
+  @JsonKey()
+  List<String> get modbusPorts {
+    if (_modbusPorts is EqualUnmodifiableListView) return _modbusPorts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_modbusPorts);
   }
 
   @override
-  bool operator ==(Object other) {
+  String toString() {
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundProtocolImpl &&
@@ -1094,7 +1143,11 @@ class _$InboundProtocolImpl implements _InboundProtocol {
             (identical(other.dynamicIcon, dynamicIcon) ||
                 other.dynamicIcon == dynamicIcon) &&
             (identical(other.cycleId, cycleId) || other.cycleId == cycleId) &&
-            (identical(other.cycle, cycle) || other.cycle == cycle));
+            (identical(other.cycle, cycle) || other.cycle == cycle) &&
+            (identical(other.hasModbus, hasModbus) ||
+                other.hasModbus == hasModbus) &&
+            const DeepCollectionEquality()
+                .equals(other._modbusPorts, _modbusPorts));
   }
 
   @JsonKey(ignore: true)
@@ -1124,7 +1177,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         ackTopicFormat,
         dynamicIcon,
         cycleId,
-        cycle
+        cycle,
+        hasModbus,
+        const DeepCollectionEquality().hash(_modbusPorts)
       ]);
 
   @JsonKey(ignore: true)
@@ -1167,7 +1222,9 @@ abstract class _InboundProtocol implements InboundProtocol {
       final String? ackTopicFormat,
       final Avatar? dynamicIcon,
       final String? cycleId,
-      final SimulationCycle? cycle}) = _$InboundProtocolImpl;
+      final SimulationCycle? cycle,
+      final bool? hasModbus,
+      final List<String> modbusPorts}) = _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
@@ -1275,6 +1332,14 @@ abstract class _InboundProtocol implements InboundProtocol {
 
   /// [cycle] is the cycle that the protocol belongs to.
   SimulationCycle? get cycle;
+  @override
+
+  /// [hasModbus] is the [bool] value that indicates if the protocol has support for Modbus.
+  bool? get hasModbus;
+  @override
+
+  /// [modbusPorts] is the list of Modbus ports that the protocol has.
+  List<String> get modbusPorts;
   @override
   @JsonKey(ignore: true)
   _$$InboundProtocolImplCopyWith<_$InboundProtocolImpl> get copyWith =>
@@ -1637,7 +1702,7 @@ class _$InboundServiceImpl implements _InboundService {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundServiceImpl &&
@@ -1928,7 +1993,7 @@ class _$InboundStructureImpl implements _InboundStructure {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundStructureImpl &&
@@ -2187,7 +2252,7 @@ class _$InboundPositionStructureImpl implements _InboundPositionStructure {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundPositionStructureImpl &&
@@ -2383,7 +2448,7 @@ class _$InboundPayloadStructureImpl implements _InboundPayloadStructure {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$InboundPayloadStructureImpl &&

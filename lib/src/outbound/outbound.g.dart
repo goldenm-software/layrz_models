@@ -25,6 +25,9 @@ _$OutboundProtocolImpl _$$OutboundProtocolImplFromJson(
               ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      dynamicIcon: json['dynamicIcon'] == null
+          ? null
+          : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$OutboundProtocolImplToJson(
@@ -40,6 +43,7 @@ Map<String, dynamic> _$$OutboundProtocolImplToJson(
       'mqttTopic': instance.mqttTopic,
       'isAsync': instance.isAsync,
       'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
+      'dynamicIcon': instance.dynamicIcon?.toJson(),
     };
 
 _$OutboundServiceImpl _$$OutboundServiceImplFromJson(

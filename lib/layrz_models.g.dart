@@ -1231,6 +1231,9 @@ _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
           ? null
           : PhoneNumber.fromJson(
               Map<String, String>.from(json['phone'] as Map)),
+      modbus: json['modbus'] == null
+          ? null
+          : ModbusConfig.fromJson(json['modbus'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
@@ -1252,6 +1255,7 @@ Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
       'visionProfileId': instance.visionProfileId,
       'visionProfile': instance.visionProfile?.toJson(),
       'phone': instance.phone?.toJson(),
+      'modbus': instance.modbus?.toJson(),
     };
 
 _$EmailTemplateImpl _$$EmailTemplateImplFromJson(Map<String, dynamic> json) =>

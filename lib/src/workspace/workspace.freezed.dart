@@ -12,7 +12,7 @@ part of 'workspace.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 Workspace _$WorkspaceFromJson(Map<String, dynamic> json) {
   return _Workspace.fromJson(json);
@@ -881,7 +881,7 @@ class _$WorkspaceImpl implements _Workspace {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WorkspaceImpl &&
@@ -1284,7 +1284,7 @@ class _$AnalyticsGridItemImpl implements _AnalyticsGridItem {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AnalyticsGridItemImpl &&
@@ -1482,7 +1482,7 @@ class _$MapCardAlertConfigurationImpl implements _MapCardAlertConfiguration {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapCardAlertConfigurationImpl &&
@@ -1684,7 +1684,7 @@ class _$MapCardConnectionConfigurationImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapCardConnectionConfigurationImpl &&
@@ -1907,7 +1907,7 @@ class _$MapCardSensorsConfigurationImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapCardSensorsConfigurationImpl &&
@@ -2164,7 +2164,7 @@ class _$MapCardSensorsImpl implements _MapCardSensors {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MapCardSensorsImpl &&
@@ -2344,7 +2344,7 @@ class _$GridDimensionImpl implements _GridDimension {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GridDimensionImpl &&
@@ -2540,7 +2540,7 @@ class _$SensorGridContentImpl implements _SensorGridContent {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SensorGridContentImpl &&
@@ -2785,7 +2785,7 @@ class _$SensorGridItemImpl implements _SensorGridItem {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SensorGridItemImpl &&
@@ -3023,7 +3023,7 @@ class _$WorkspaceAlertImpl implements _WorkspaceAlert {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WorkspaceAlertImpl &&
@@ -3260,7 +3260,7 @@ class _$WorkspaceTripPointImpl implements _WorkspaceTripPoint {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WorkspaceTripPointImpl &&
@@ -3464,7 +3464,7 @@ class _$WorkspaceTripImpl implements _WorkspaceTrip {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$WorkspaceTripImpl &&
@@ -3637,7 +3637,7 @@ class _$CaseMonitorCardImpl implements _CaseMonitorCard {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CaseMonitorCardImpl &&

@@ -71,16 +71,6 @@ enum AtsFuelType {
   }
 }
 
-///  product {
-///      id
-///      assetId
-///      fuelType
-///      density
-///      temperature
-///      volumeBuyed
-///      realVolume
-///      receivedAt
-///    }
 @freezed
 class AtsReceptionProduct with _$AtsReceptionProduct {
   const factory AtsReceptionProduct({
@@ -93,6 +83,15 @@ class AtsReceptionProduct with _$AtsReceptionProduct {
     /// Fuel type enum. Check its possible values in the enum documentation.
     @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
 
+    /// Fuel subTuype represent the fuel subtype of the product
+    String? fuelSubType,
+
+    /// Fuel density expressed in gr/cc.
+    double? density,
+
+    /// Fuel temperature expressed in degrees Celsius.
+    double? temperature,
+
     /// Volume received in purchased order (Expressed in Litters).
     double? volumeBought,
 
@@ -101,6 +100,12 @@ class AtsReceptionProduct with _$AtsReceptionProduct {
 
     /// Reception date and time expressed in unix timestamp.
     @TimestampOrNullConverter() DateTime? receivedAt,
+
+    /// Seller / provider name
+    String? provider,
+
+    /// List of tank images
+    List<String>? tanksImages,
   }) = _AtsReceptionProduct;
 
   /// from json method
@@ -129,7 +134,7 @@ class AtsReceptionInput with _$AtsReceptionInput {
 
     /// List of [AtsPurchaseOrder] IDs.
     List<String>? ordersIds,
-    
+
     /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
     List<AtsReceptionProductInput>? products,
 
