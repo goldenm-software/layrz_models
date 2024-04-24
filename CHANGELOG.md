@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.36
+
+- Added `modbusParameter` type `ModbusParameter` model in `DeviceCommand` model
+- Added `modbusPort` in `DeviceCommand` model
+
 ## 2.1.35
 - Add `fuelSubtype` - `density` - `temperature` - tanksImages in `AtsReceptionProduct`
 

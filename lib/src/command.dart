@@ -8,7 +8,14 @@ enum CommandSource {
   sms,
 
   /// The command was sent from the server through Portal MT APÏ.
-  psg;
+  psg,
+
+  /// [CommandSource.modbus] refers to the command is a modbus command.
+  /// This command is sent from the server through the protocol channel and uses a modbus protocol.
+  ///
+  /// Layrz API Reference: `MODBUS`
+  modbus,
+  ;
 
   @override
   String toString() => toJson();
@@ -21,6 +28,8 @@ enum CommandSource {
         return 'SMS';
       case CommandSource.psg:
         return 'PSG';
+      case CommandSource.modbus:
+        return 'MODBUS';
     }
   }
 
@@ -32,6 +41,8 @@ enum CommandSource {
         return CommandSource.sms;
       case 'PSG':
         return CommandSource.psg;
+      case 'MODBUS':
+        return CommandSource.modbus;
     }
     throw ArgumentError('Invalid CommandSource: $json');
   }
@@ -58,8 +69,17 @@ class DeviceCommand with _$DeviceCommand {
     /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
     /// Only will comes when the command is a "template"
     String? protocolId,
+
+    /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+    /// Only will comes when the command is a "template"
     InboundProtocol? protocol,
+
+    /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+    /// Only will comes when the command is a "template"
     String? modelId,
+
+    /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+    /// Only will comes when the command is a "template"
     Model? model,
 
     /// Is The command to execute.
@@ -96,6 +116,15 @@ class DeviceCommand with _$DeviceCommand {
 
     /// List of possible devices that can perform this command.
     List<Device>? possibleDevices,
+
+    /// [modbusParameter] refers to the modbus parameter of the command.
+    /// This parameter contains the composition of the modbus command, like the controller address, function code,
+    /// register address, etc.
+    ModbusParameter? modbusParameter,
+
+    /// [modbusPort] refers to the modbus port of the command.
+    /// This parameter contains the port number of the modbus command.
+    String? modbusPort,
   }) = _DeviceCommand;
 
   factory DeviceCommand.fromJson(Map<String, dynamic> json) => _$DeviceCommandFromJson(json);
