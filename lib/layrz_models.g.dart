@@ -949,6 +949,11 @@ _$DeviceCommandImpl _$$DeviceCommandImplFromJson(Map<String, dynamic> json) =>
       possibleDevices: (json['possibleDevices'] as List<dynamic>?)
           ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
           .toList(),
+      modbusParameter: json['modbusParameter'] == null
+          ? null
+          : ModbusParameter.fromJson(
+              json['modbusParameter'] as Map<String, dynamic>),
+      modbusPort: json['modbusPort'] as String?,
     );
 
 Map<String, dynamic> _$$DeviceCommandImplToJson(_$DeviceCommandImpl instance) =>
@@ -974,6 +979,8 @@ Map<String, dynamic> _$$DeviceCommandImplToJson(_$DeviceCommandImpl instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'possibleDevices':
           instance.possibleDevices?.map((e) => e.toJson()).toList(),
+      'modbusParameter': instance.modbusParameter?.toJson(),
+      'modbusPort': instance.modbusPort,
     };
 
 _$ConnectionImpl _$$ConnectionImplFromJson(Map<String, dynamic> json) =>

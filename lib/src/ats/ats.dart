@@ -8,7 +8,6 @@ part 'ats.freezed.dart';
 part 'ats.g.dart';
 
 // ATS Models
-part 'src/entries.dart';
 part 'src/reception/reception_product.dart';
 part 'src/authentication_identifier.dart';
 part 'src/authentication_card.dart';
@@ -34,3 +33,7 @@ part 'src/exits/exit.dart';
 part 'src/exits/possible_exit.dart';
 part 'src/exits/execute_exit_input.dart';
 part 'src/exits/execute_exit_history.dart';
+
+// ATS Entries Models
+part 'src/entries/entry.dart';
+part 'src/entries/volume.dart';

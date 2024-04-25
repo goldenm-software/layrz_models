@@ -10115,8 +10115,17 @@ mixin _$DeviceCommand {
   /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
   /// Only will comes when the command is a "template"
   String? get protocolId => throw _privateConstructorUsedError;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
   InboundProtocol? get protocol => throw _privateConstructorUsedError;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
   String? get modelId => throw _privateConstructorUsedError;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
   Model? get model => throw _privateConstructorUsedError;
 
   /// Is The command to execute.
@@ -10154,6 +10163,15 @@ mixin _$DeviceCommand {
   /// List of possible devices that can perform this command.
   List<Device>? get possibleDevices => throw _privateConstructorUsedError;
 
+  /// [modbusParameter] refers to the modbus parameter of the command.
+  /// This parameter contains the composition of the modbus command, like the controller address, function code,
+  /// register address, etc.
+  ModbusParameter? get modbusParameter => throw _privateConstructorUsedError;
+
+  /// [modbusPort] refers to the modbus port of the command.
+  /// This parameter contains the port number of the modbus command.
+  String? get modbusPort => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DeviceCommandCopyWith<DeviceCommand> get copyWith =>
@@ -10186,11 +10204,14 @@ abstract class $DeviceCommandCopyWith<$Res> {
       ExternalAccount? externalAccount,
       String? externalAccountId,
       List<Access>? access,
-      List<Device>? possibleDevices});
+      List<Device>? possibleDevices,
+      ModbusParameter? modbusParameter,
+      String? modbusPort});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
   $ModelCopyWith<$Res>? get model;
   $ExternalAccountCopyWith<$Res>? get externalAccount;
+  $ModbusParameterCopyWith<$Res>? get modbusParameter;
 }
 
 /// @nodoc
@@ -10226,6 +10247,8 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
     Object? externalAccountId = freezed,
     Object? access = freezed,
     Object? possibleDevices = freezed,
+    Object? modbusParameter = freezed,
+    Object? modbusPort = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -10308,6 +10331,14 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
           ? _value.possibleDevices
           : possibleDevices // ignore: cast_nullable_to_non_nullable
               as List<Device>?,
+      modbusParameter: freezed == modbusParameter
+          ? _value.modbusParameter
+          : modbusParameter // ignore: cast_nullable_to_non_nullable
+              as ModbusParameter?,
+      modbusPort: freezed == modbusPort
+          ? _value.modbusPort
+          : modbusPort // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -10346,6 +10377,18 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
       return _then(_value.copyWith(externalAccount: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ModbusParameterCopyWith<$Res>? get modbusParameter {
+    if (_value.modbusParameter == null) {
+      return null;
+    }
+
+    return $ModbusParameterCopyWith<$Res>(_value.modbusParameter!, (value) {
+      return _then(_value.copyWith(modbusParameter: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -10376,7 +10419,9 @@ abstract class _$$DeviceCommandImplCopyWith<$Res>
       ExternalAccount? externalAccount,
       String? externalAccountId,
       List<Access>? access,
-      List<Device>? possibleDevices});
+      List<Device>? possibleDevices,
+      ModbusParameter? modbusParameter,
+      String? modbusPort});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -10384,6 +10429,8 @@ abstract class _$$DeviceCommandImplCopyWith<$Res>
   $ModelCopyWith<$Res>? get model;
   @override
   $ExternalAccountCopyWith<$Res>? get externalAccount;
+  @override
+  $ModbusParameterCopyWith<$Res>? get modbusParameter;
 }
 
 /// @nodoc
@@ -10417,6 +10464,8 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
     Object? externalAccountId = freezed,
     Object? access = freezed,
     Object? possibleDevices = freezed,
+    Object? modbusParameter = freezed,
+    Object? modbusPort = freezed,
   }) {
     return _then(_$DeviceCommandImpl(
       id: null == id
@@ -10499,6 +10548,14 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
           ? _value._possibleDevices
           : possibleDevices // ignore: cast_nullable_to_non_nullable
               as List<Device>?,
+      modbusParameter: freezed == modbusParameter
+          ? _value.modbusParameter
+          : modbusParameter // ignore: cast_nullable_to_non_nullable
+              as ModbusParameter?,
+      modbusPort: freezed == modbusPort
+          ? _value.modbusPort
+          : modbusPort // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -10526,7 +10583,9 @@ class _$DeviceCommandImpl implements _DeviceCommand {
       this.externalAccount,
       this.externalAccountId,
       final List<Access>? access,
-      final List<Device>? possibleDevices})
+      final List<Device>? possibleDevices,
+      this.modbusParameter,
+      this.modbusPort})
       : _access = access,
         _possibleDevices = possibleDevices;
 
@@ -10558,10 +10617,19 @@ class _$DeviceCommandImpl implements _DeviceCommand {
   /// Only will comes when the command is a "template"
   @override
   final String? protocolId;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
   @override
   final InboundProtocol? protocol;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
   @override
   final String? modelId;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
   @override
   final Model? model;
 
@@ -10629,9 +10697,20 @@ class _$DeviceCommandImpl implements _DeviceCommand {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [modbusParameter] refers to the modbus parameter of the command.
+  /// This parameter contains the composition of the modbus command, like the controller address, function code,
+  /// register address, etc.
+  @override
+  final ModbusParameter? modbusParameter;
+
+  /// [modbusPort] refers to the modbus port of the command.
+  /// This parameter contains the port number of the modbus command.
+  @override
+  final String? modbusPort;
+
   @override
   String toString() {
-    return 'DeviceCommand(id: $id, name: $name, source: $source, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, protocol: $protocol, modelId: $modelId, model: $model, command: $command, devicePassword: $devicePassword, payload: $payload, commandId: $commandId, isHexCoded: $isHexCoded, username: $username, scriptName: $scriptName, externalAccount: $externalAccount, externalAccountId: $externalAccountId, access: $access, possibleDevices: $possibleDevices)';
+    return 'DeviceCommand(id: $id, name: $name, source: $source, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, protocol: $protocol, modelId: $modelId, model: $model, command: $command, devicePassword: $devicePassword, payload: $payload, commandId: $commandId, isHexCoded: $isHexCoded, username: $username, scriptName: $scriptName, externalAccount: $externalAccount, externalAccountId: $externalAccountId, access: $access, possibleDevices: $possibleDevices, modbusParameter: $modbusParameter, modbusPort: $modbusPort)';
   }
 
   @override
@@ -10669,7 +10748,11 @@ class _$DeviceCommandImpl implements _DeviceCommand {
                 other.externalAccountId == externalAccountId) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
             const DeepCollectionEquality()
-                .equals(other._possibleDevices, _possibleDevices));
+                .equals(other._possibleDevices, _possibleDevices) &&
+            (identical(other.modbusParameter, modbusParameter) ||
+                other.modbusParameter == modbusParameter) &&
+            (identical(other.modbusPort, modbusPort) ||
+                other.modbusPort == modbusPort));
   }
 
   @JsonKey(ignore: true)
@@ -10695,7 +10778,9 @@ class _$DeviceCommandImpl implements _DeviceCommand {
         externalAccount,
         externalAccountId,
         const DeepCollectionEquality().hash(_access),
-        const DeepCollectionEquality().hash(_possibleDevices)
+        const DeepCollectionEquality().hash(_possibleDevices),
+        modbusParameter,
+        modbusPort
       ]);
 
   @JsonKey(ignore: true)
@@ -10733,7 +10818,9 @@ abstract class _DeviceCommand implements DeviceCommand {
       final ExternalAccount? externalAccount,
       final String? externalAccountId,
       final List<Access>? access,
-      final List<Device>? possibleDevices}) = _$DeviceCommandImpl;
+      final List<Device>? possibleDevices,
+      final ModbusParameter? modbusParameter,
+      final String? modbusPort}) = _$DeviceCommandImpl;
 
   factory _DeviceCommand.fromJson(Map<String, dynamic> json) =
       _$DeviceCommandImpl.fromJson;
@@ -10764,10 +10851,19 @@ abstract class _DeviceCommand implements DeviceCommand {
   /// Only will comes when the command is a "template"
   String? get protocolId;
   @override
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
   InboundProtocol? get protocol;
   @override
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
   String? get modelId;
   @override
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
   Model? get model;
   @override
 
@@ -10815,6 +10911,17 @@ abstract class _DeviceCommand implements DeviceCommand {
 
   /// List of possible devices that can perform this command.
   List<Device>? get possibleDevices;
+  @override
+
+  /// [modbusParameter] refers to the modbus parameter of the command.
+  /// This parameter contains the composition of the modbus command, like the controller address, function code,
+  /// register address, etc.
+  ModbusParameter? get modbusParameter;
+  @override
+
+  /// [modbusPort] refers to the modbus port of the command.
+  /// This parameter contains the port number of the modbus command.
+  String? get modbusPort;
   @override
   @JsonKey(ignore: true)
   _$$DeviceCommandImplCopyWith<_$DeviceCommandImpl> get copyWith =>
