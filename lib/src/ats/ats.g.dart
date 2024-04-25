@@ -6,49 +6,6 @@ part of 'ats.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>
-    _$AtsEntryImpl(
-      id: json['id'] as String,
-      assetId: json['assetId'] as String?,
-      asset: json['asset'] == null
-          ? null
-          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
-      oldTankLevel: (json['oldTankLevel'] as num?)?.toDouble(),
-      newTankLevel: (json['newTankLevel'] as num?)?.toDouble(),
-      startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
-      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
-      errorPercent: (json['errorPercent'] as num?)?.toDouble(),
-      reception: json['reception'] == null
-          ? null
-          : AtsReception.fromJson(json['reception'] as Map<String, dynamic>),
-      receptions: (json['receptions'] as List<dynamic>?)
-          ?.map((e) => AtsReception.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      isLinked: json['isLinked'] as bool?,
-      fuelType: json['fuelType'] as String?,
-      temperature: (json['temperature'] as num?)?.toDouble(),
-      density: (json['density'] as num?)?.toDouble(),
-    );
-
-Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'assetId': instance.assetId,
-      'asset': instance.asset?.toJson(),
-      'oldTankLevel': instance.oldTankLevel,
-      'newTankLevel': instance.newTankLevel,
-      'startAt': const TimestampOrNullConverter().toJson(instance.startAt),
-      'endAt': const TimestampOrNullConverter().toJson(instance.endAt),
-      'errorPercent': instance.errorPercent,
-      'reception': instance.reception?.toJson(),
-      'receptions': instance.receptions?.map((e) => e.toJson()).toList(),
-      'isLinked': instance.isLinked,
-      'fuelType': instance.fuelType,
-      'temperature': instance.temperature,
-      'density': instance.density,
-    };
-
 _$AtsReceptionProductImpl _$$AtsReceptionProductImplFromJson(
         Map<String, dynamic> json) =>
     _$AtsReceptionProductImpl(
@@ -812,4 +769,66 @@ Map<String, dynamic> _$$AtsExecuteExitHistoryImplToJson(
       'errorResponse': instance.errorResponse,
       'status':
           const AtsExitExecuteStatusOrNullConverter().toJson(instance.status),
+    };
+
+_$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>
+    _$AtsEntryImpl(
+      id: json['id'] as String,
+      assetId: json['assetId'] as String?,
+      asset: json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+      oldTankLevel: (json['oldTankLevel'] as num?)?.toDouble(),
+      newTankLevel: (json['newTankLevel'] as num?)?.toDouble(),
+      startAt:
+          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
+      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
+      errorPercent: (json['errorPercent'] as num?)?.toDouble(),
+      reception: json['reception'] == null
+          ? null
+          : AtsReception.fromJson(json['reception'] as Map<String, dynamic>),
+      receptions: (json['receptions'] as List<dynamic>?)
+          ?.map((e) => AtsReception.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      isLinked: json['isLinked'] as bool?,
+      fuelType: json['fuelType'] as String?,
+      temperature: (json['temperature'] as num?)?.toDouble(),
+      density: (json['density'] as num?)?.toDouble(),
+      volumeHistory: (json['volumeHistory'] as List<dynamic>?)
+              ?.map((e) => AtsVolume.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'assetId': instance.assetId,
+      'asset': instance.asset?.toJson(),
+      'oldTankLevel': instance.oldTankLevel,
+      'newTankLevel': instance.newTankLevel,
+      'startAt': const TimestampOrNullConverter().toJson(instance.startAt),
+      'endAt': const TimestampOrNullConverter().toJson(instance.endAt),
+      'errorPercent': instance.errorPercent,
+      'reception': instance.reception?.toJson(),
+      'receptions': instance.receptions?.map((e) => e.toJson()).toList(),
+      'isLinked': instance.isLinked,
+      'fuelType': instance.fuelType,
+      'temperature': instance.temperature,
+      'density': instance.density,
+      'volumeHistory': instance.volumeHistory.map((e) => e.toJson()).toList(),
+    };
+
+_$AtsVolumeImpl _$$AtsVolumeImplFromJson(Map<String, dynamic> json) =>
+    _$AtsVolumeImpl(
+      assetId: json['assetId'] as String?,
+      procedureResult: (json['procedureResult'] as num?)?.toDouble(),
+      at: const TimestampOrNullConverter().fromJson(json['at'] as num?),
+    );
+
+Map<String, dynamic> _$$AtsVolumeImplToJson(_$AtsVolumeImpl instance) =>
+    <String, dynamic>{
+      'assetId': instance.assetId,
+      'procedureResult': instance.procedureResult,
+      'at': const TimestampOrNullConverter().toJson(instance.at),
     };

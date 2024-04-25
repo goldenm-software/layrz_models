@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.37
+- Move Ats `entries.dart` file to `entry.dart` and create a new folder `entries` to put inside all Models of Ats Entries
+- Create `AtsVolume` model
+- Add `volumeHistory` to `AtsEntry
+
 ## 2.1.36
 
 - Added `modbusParameter` type `ModbusParameter` model in `DeviceCommand` model

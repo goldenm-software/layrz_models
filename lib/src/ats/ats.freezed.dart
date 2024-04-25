@@ -12,476 +12,7 @@ part of 'ats.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) {
-  return _AtsEntry.fromJson(json);
-}
-
-/// @nodoc
-mixin _$AtsEntry {
-  String get id => throw _privateConstructorUsedError;
-  String? get assetId => throw _privateConstructorUsedError;
-  Asset? get asset => throw _privateConstructorUsedError;
-  double? get oldTankLevel => throw _privateConstructorUsedError;
-  double? get newTankLevel => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get startAt => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get endAt => throw _privateConstructorUsedError;
-  double? get errorPercent => throw _privateConstructorUsedError;
-  AtsReception? get reception => throw _privateConstructorUsedError;
-  List<AtsReception>? get receptions => throw _privateConstructorUsedError;
-  bool? get isLinked => throw _privateConstructorUsedError;
-  String? get fuelType => throw _privateConstructorUsedError;
-  double? get temperature => throw _privateConstructorUsedError;
-  double? get density => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $AtsEntryCopyWith<AtsEntry> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AtsEntryCopyWith<$Res> {
-  factory $AtsEntryCopyWith(AtsEntry value, $Res Function(AtsEntry) then) =
-      _$AtsEntryCopyWithImpl<$Res, AtsEntry>;
-  @useResult
-  $Res call(
-      {String id,
-      String? assetId,
-      Asset? asset,
-      double? oldTankLevel,
-      double? newTankLevel,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
-      double? errorPercent,
-      AtsReception? reception,
-      List<AtsReception>? receptions,
-      bool? isLinked,
-      String? fuelType,
-      double? temperature,
-      double? density});
-
-  $AssetCopyWith<$Res>? get asset;
-  $AtsReceptionCopyWith<$Res>? get reception;
-}
-
-/// @nodoc
-class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
-    implements $AtsEntryCopyWith<$Res> {
-  _$AtsEntryCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? assetId = freezed,
-    Object? asset = freezed,
-    Object? oldTankLevel = freezed,
-    Object? newTankLevel = freezed,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
-    Object? errorPercent = freezed,
-    Object? reception = freezed,
-    Object? receptions = freezed,
-    Object? isLinked = freezed,
-    Object? fuelType = freezed,
-    Object? temperature = freezed,
-    Object? density = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      asset: freezed == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      oldTankLevel: freezed == oldTankLevel
-          ? _value.oldTankLevel
-          : oldTankLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      newTankLevel: freezed == newTankLevel
-          ? _value.newTankLevel
-          : newTankLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      errorPercent: freezed == errorPercent
-          ? _value.errorPercent
-          : errorPercent // ignore: cast_nullable_to_non_nullable
-              as double?,
-      reception: freezed == reception
-          ? _value.reception
-          : reception // ignore: cast_nullable_to_non_nullable
-              as AtsReception?,
-      receptions: freezed == receptions
-          ? _value.receptions
-          : receptions // ignore: cast_nullable_to_non_nullable
-              as List<AtsReception>?,
-      isLinked: freezed == isLinked
-          ? _value.isLinked
-          : isLinked // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      fuelType: freezed == fuelType
-          ? _value.fuelType
-          : fuelType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      temperature: freezed == temperature
-          ? _value.temperature
-          : temperature // ignore: cast_nullable_to_non_nullable
-              as double?,
-      density: freezed == density
-          ? _value.density
-          : density // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AssetCopyWith<$Res>? get asset {
-    if (_value.asset == null) {
-      return null;
-    }
-
-    return $AssetCopyWith<$Res>(_value.asset!, (value) {
-      return _then(_value.copyWith(asset: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AtsReceptionCopyWith<$Res>? get reception {
-    if (_value.reception == null) {
-      return null;
-    }
-
-    return $AtsReceptionCopyWith<$Res>(_value.reception!, (value) {
-      return _then(_value.copyWith(reception: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$AtsEntryImplCopyWith<$Res>
-    implements $AtsEntryCopyWith<$Res> {
-  factory _$$AtsEntryImplCopyWith(
-          _$AtsEntryImpl value, $Res Function(_$AtsEntryImpl) then) =
-      __$$AtsEntryImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String? assetId,
-      Asset? asset,
-      double? oldTankLevel,
-      double? newTankLevel,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
-      double? errorPercent,
-      AtsReception? reception,
-      List<AtsReception>? receptions,
-      bool? isLinked,
-      String? fuelType,
-      double? temperature,
-      double? density});
-
-  @override
-  $AssetCopyWith<$Res>? get asset;
-  @override
-  $AtsReceptionCopyWith<$Res>? get reception;
-}
-
-/// @nodoc
-class __$$AtsEntryImplCopyWithImpl<$Res>
-    extends _$AtsEntryCopyWithImpl<$Res, _$AtsEntryImpl>
-    implements _$$AtsEntryImplCopyWith<$Res> {
-  __$$AtsEntryImplCopyWithImpl(
-      _$AtsEntryImpl _value, $Res Function(_$AtsEntryImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? assetId = freezed,
-    Object? asset = freezed,
-    Object? oldTankLevel = freezed,
-    Object? newTankLevel = freezed,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
-    Object? errorPercent = freezed,
-    Object? reception = freezed,
-    Object? receptions = freezed,
-    Object? isLinked = freezed,
-    Object? fuelType = freezed,
-    Object? temperature = freezed,
-    Object? density = freezed,
-  }) {
-    return _then(_$AtsEntryImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      asset: freezed == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      oldTankLevel: freezed == oldTankLevel
-          ? _value.oldTankLevel
-          : oldTankLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      newTankLevel: freezed == newTankLevel
-          ? _value.newTankLevel
-          : newTankLevel // ignore: cast_nullable_to_non_nullable
-              as double?,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      errorPercent: freezed == errorPercent
-          ? _value.errorPercent
-          : errorPercent // ignore: cast_nullable_to_non_nullable
-              as double?,
-      reception: freezed == reception
-          ? _value.reception
-          : reception // ignore: cast_nullable_to_non_nullable
-              as AtsReception?,
-      receptions: freezed == receptions
-          ? _value._receptions
-          : receptions // ignore: cast_nullable_to_non_nullable
-              as List<AtsReception>?,
-      isLinked: freezed == isLinked
-          ? _value.isLinked
-          : isLinked // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      fuelType: freezed == fuelType
-          ? _value.fuelType
-          : fuelType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      temperature: freezed == temperature
-          ? _value.temperature
-          : temperature // ignore: cast_nullable_to_non_nullable
-              as double?,
-      density: freezed == density
-          ? _value.density
-          : density // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$AtsEntryImpl implements _AtsEntry {
-  const _$AtsEntryImpl(
-      {required this.id,
-      this.assetId,
-      this.asset,
-      this.oldTankLevel,
-      this.newTankLevel,
-      @TimestampOrNullConverter() this.startAt,
-      @TimestampOrNullConverter() this.endAt,
-      this.errorPercent,
-      this.reception,
-      final List<AtsReception>? receptions,
-      this.isLinked,
-      this.fuelType,
-      this.temperature,
-      this.density})
-      : _receptions = receptions;
-
-  factory _$AtsEntryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AtsEntryImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String? assetId;
-  @override
-  final Asset? asset;
-  @override
-  final double? oldTankLevel;
-  @override
-  final double? newTankLevel;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? startAt;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? endAt;
-  @override
-  final double? errorPercent;
-  @override
-  final AtsReception? reception;
-  final List<AtsReception>? _receptions;
-  @override
-  List<AtsReception>? get receptions {
-    final value = _receptions;
-    if (value == null) return null;
-    if (_receptions is EqualUnmodifiableListView) return _receptions;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  final bool? isLinked;
-  @override
-  final String? fuelType;
-  @override
-  final double? temperature;
-  @override
-  final double? density;
-
-  @override
-  String toString() {
-    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, temperature: $temperature, density: $density)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AtsEntryImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.oldTankLevel, oldTankLevel) ||
-                other.oldTankLevel == oldTankLevel) &&
-            (identical(other.newTankLevel, newTankLevel) ||
-                other.newTankLevel == newTankLevel) &&
-            (identical(other.startAt, startAt) || other.startAt == startAt) &&
-            (identical(other.endAt, endAt) || other.endAt == endAt) &&
-            (identical(other.errorPercent, errorPercent) ||
-                other.errorPercent == errorPercent) &&
-            (identical(other.reception, reception) ||
-                other.reception == reception) &&
-            const DeepCollectionEquality()
-                .equals(other._receptions, _receptions) &&
-            (identical(other.isLinked, isLinked) ||
-                other.isLinked == isLinked) &&
-            (identical(other.fuelType, fuelType) ||
-                other.fuelType == fuelType) &&
-            (identical(other.temperature, temperature) ||
-                other.temperature == temperature) &&
-            (identical(other.density, density) || other.density == density));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      assetId,
-      asset,
-      oldTankLevel,
-      newTankLevel,
-      startAt,
-      endAt,
-      errorPercent,
-      reception,
-      const DeepCollectionEquality().hash(_receptions),
-      isLinked,
-      fuelType,
-      temperature,
-      density);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AtsEntryImplCopyWith<_$AtsEntryImpl> get copyWith =>
-      __$$AtsEntryImplCopyWithImpl<_$AtsEntryImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AtsEntryImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _AtsEntry implements AtsEntry {
-  const factory _AtsEntry(
-      {required final String id,
-      final String? assetId,
-      final Asset? asset,
-      final double? oldTankLevel,
-      final double? newTankLevel,
-      @TimestampOrNullConverter() final DateTime? startAt,
-      @TimestampOrNullConverter() final DateTime? endAt,
-      final double? errorPercent,
-      final AtsReception? reception,
-      final List<AtsReception>? receptions,
-      final bool? isLinked,
-      final String? fuelType,
-      final double? temperature,
-      final double? density}) = _$AtsEntryImpl;
-
-  factory _AtsEntry.fromJson(Map<String, dynamic> json) =
-      _$AtsEntryImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String? get assetId;
-  @override
-  Asset? get asset;
-  @override
-  double? get oldTankLevel;
-  @override
-  double? get newTankLevel;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get startAt;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get endAt;
-  @override
-  double? get errorPercent;
-  @override
-  AtsReception? get reception;
-  @override
-  List<AtsReception>? get receptions;
-  @override
-  bool? get isLinked;
-  @override
-  String? get fuelType;
-  @override
-  double? get temperature;
-  @override
-  double? get density;
-  @override
-  @JsonKey(ignore: true)
-  _$$AtsEntryImplCopyWith<_$AtsEntryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 AtsReceptionProduct _$AtsReceptionProductFromJson(Map<String, dynamic> json) {
   return _AtsReceptionProduct.fromJson(json);
@@ -799,7 +330,7 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsReceptionProductImpl &&
@@ -1611,7 +1142,7 @@ class _$AtsAuthenticationIdentifierImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsAuthenticationIdentifierImpl &&
@@ -2017,7 +1548,7 @@ class _$AtsAuthenticationCardImpl implements _AtsAuthenticationCard {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsAuthenticationCardImpl &&
@@ -2393,7 +1924,7 @@ class _$AtsHistoryAuthenticationCardImpl
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsHistoryAuthenticationCardImpl &&
@@ -2735,7 +2266,7 @@ class _$AtsFeedbackMessegeImpl implements _AtsFeedbackMessege {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsFeedbackMessegeImpl &&
@@ -3264,7 +2795,7 @@ class _$AtsEventImpl implements _AtsEvent {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsEventImpl &&
@@ -3607,7 +3138,7 @@ class _$AtsNsAddressImpl implements _AtsNsAddress {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsNsAddressImpl &&
@@ -4123,7 +3654,7 @@ class _$AtsNsLicenseImpl implements _AtsNsLicense {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsNsLicenseImpl &&
@@ -4636,7 +4167,7 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsTransportInformationImpl &&
@@ -4916,7 +4447,7 @@ class _$AtsCommandResultImpl implements _AtsCommandResult {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsCommandResultImpl &&
@@ -5157,7 +4688,7 @@ class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsCompanyInformationImpl &&
@@ -5482,7 +5013,7 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsProductInformationImpl &&
@@ -6308,7 +5839,7 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPurchaseOrderImpl &&
@@ -6820,7 +6351,7 @@ class _$AtsPurchaseTotalImpl implements _AtsPurchaseTotal {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPurchaseTotalImpl &&
@@ -7211,7 +6742,7 @@ class _$AtsReceptionImpl implements _AtsReception {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsReceptionImpl &&
@@ -7665,7 +7196,7 @@ class _$AtsIdeInformationImpl implements _AtsIdeInformation {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsIdeInformationImpl &&
@@ -7851,7 +7382,7 @@ class _$AtsExitStatusImpl implements _AtsExitStatus {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExitStatusImpl &&
@@ -8397,7 +7928,7 @@ class _$AtsExitImpl implements _AtsExit {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExitImpl &&
@@ -8977,7 +8508,7 @@ class _$AtsPossibleExitImpl implements _AtsPossibleExit {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsPossibleExitImpl &&
@@ -9645,7 +9176,7 @@ class _$AtsExecuteExitHistoryImpl implements _AtsExecuteExitHistory {
   }
 
   @override
-  bool operator ==(Object other) {
+  bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AtsExecuteExitHistoryImpl &&
@@ -9730,4 +9261,792 @@ abstract class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
   @JsonKey(ignore: true)
   _$$AtsExecuteExitHistoryImplCopyWith<_$AtsExecuteExitHistoryImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) {
+  return _AtsEntry.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AtsEntry {
+  /// `id` is the unique ID of the entry.
+  String get id => throw _privateConstructorUsedError;
+
+  /// `assetId` is the ID of the associated asset.
+  String? get assetId => throw _privateConstructorUsedError;
+
+  /// `asset` is the associated asset.
+  Asset? get asset => throw _privateConstructorUsedError;
+
+  /// `oldTankLevel` is the tank level at the start of the entry.
+  double? get oldTankLevel => throw _privateConstructorUsedError;
+
+  /// `newTankLevel` is the tank level at the end of the entry.
+  double? get newTankLevel => throw _privateConstructorUsedError;
+
+  /// `startAt` is the start date of the entry.
+  @TimestampOrNullConverter()
+  DateTime? get startAt => throw _privateConstructorUsedError;
+
+  /// `endAt` is the end date of the entry.
+  @TimestampOrNullConverter()
+  DateTime? get endAt => throw _privateConstructorUsedError;
+
+  /// `errorPercent` is the error percent between reception and sensor entry.
+  double? get errorPercent => throw _privateConstructorUsedError;
+
+  /// `reception` is the associated reception.
+  AtsReception? get reception => throw _privateConstructorUsedError;
+
+  /// `receptions` is a list of receptions associated with the entry.
+  List<AtsReception>? get receptions => throw _privateConstructorUsedError;
+
+  /// `isLinked` indicates whether the entry is linked to a purchase order.
+  bool? get isLinked => throw _privateConstructorUsedError;
+
+  /// `fuelType` is the fuel type of the entry.
+  String? get fuelType => throw _privateConstructorUsedError;
+
+  /// `temperature` is the temperature of the entry.
+  double? get temperature => throw _privateConstructorUsedError;
+
+  /// `density` is the density of the entry.
+  double? get density => throw _privateConstructorUsedError;
+
+  /// `volumenHistory` is the volumen history of the entry.
+  List<AtsVolume> get volumeHistory => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AtsEntryCopyWith<AtsEntry> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AtsEntryCopyWith<$Res> {
+  factory $AtsEntryCopyWith(AtsEntry value, $Res Function(AtsEntry) then) =
+      _$AtsEntryCopyWithImpl<$Res, AtsEntry>;
+  @useResult
+  $Res call(
+      {String id,
+      String? assetId,
+      Asset? asset,
+      double? oldTankLevel,
+      double? newTankLevel,
+      @TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt,
+      double? errorPercent,
+      AtsReception? reception,
+      List<AtsReception>? receptions,
+      bool? isLinked,
+      String? fuelType,
+      double? temperature,
+      double? density,
+      List<AtsVolume> volumeHistory});
+
+  $AssetCopyWith<$Res>? get asset;
+  $AtsReceptionCopyWith<$Res>? get reception;
+}
+
+/// @nodoc
+class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
+    implements $AtsEntryCopyWith<$Res> {
+  _$AtsEntryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? assetId = freezed,
+    Object? asset = freezed,
+    Object? oldTankLevel = freezed,
+    Object? newTankLevel = freezed,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? errorPercent = freezed,
+    Object? reception = freezed,
+    Object? receptions = freezed,
+    Object? isLinked = freezed,
+    Object? fuelType = freezed,
+    Object? temperature = freezed,
+    Object? density = freezed,
+    Object? volumeHistory = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      asset: freezed == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      oldTankLevel: freezed == oldTankLevel
+          ? _value.oldTankLevel
+          : oldTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      newTankLevel: freezed == newTankLevel
+          ? _value.newTankLevel
+          : newTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      errorPercent: freezed == errorPercent
+          ? _value.errorPercent
+          : errorPercent // ignore: cast_nullable_to_non_nullable
+              as double?,
+      reception: freezed == reception
+          ? _value.reception
+          : reception // ignore: cast_nullable_to_non_nullable
+              as AtsReception?,
+      receptions: freezed == receptions
+          ? _value.receptions
+          : receptions // ignore: cast_nullable_to_non_nullable
+              as List<AtsReception>?,
+      isLinked: freezed == isLinked
+          ? _value.isLinked
+          : isLinked // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      fuelType: freezed == fuelType
+          ? _value.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      temperature: freezed == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      density: freezed == density
+          ? _value.density
+          : density // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volumeHistory: null == volumeHistory
+          ? _value.volumeHistory
+          : volumeHistory // ignore: cast_nullable_to_non_nullable
+              as List<AtsVolume>,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_value.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_value.asset!, (value) {
+      return _then(_value.copyWith(asset: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsReceptionCopyWith<$Res>? get reception {
+    if (_value.reception == null) {
+      return null;
+    }
+
+    return $AtsReceptionCopyWith<$Res>(_value.reception!, (value) {
+      return _then(_value.copyWith(reception: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$AtsEntryImplCopyWith<$Res>
+    implements $AtsEntryCopyWith<$Res> {
+  factory _$$AtsEntryImplCopyWith(
+          _$AtsEntryImpl value, $Res Function(_$AtsEntryImpl) then) =
+      __$$AtsEntryImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String? assetId,
+      Asset? asset,
+      double? oldTankLevel,
+      double? newTankLevel,
+      @TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt,
+      double? errorPercent,
+      AtsReception? reception,
+      List<AtsReception>? receptions,
+      bool? isLinked,
+      String? fuelType,
+      double? temperature,
+      double? density,
+      List<AtsVolume> volumeHistory});
+
+  @override
+  $AssetCopyWith<$Res>? get asset;
+  @override
+  $AtsReceptionCopyWith<$Res>? get reception;
+}
+
+/// @nodoc
+class __$$AtsEntryImplCopyWithImpl<$Res>
+    extends _$AtsEntryCopyWithImpl<$Res, _$AtsEntryImpl>
+    implements _$$AtsEntryImplCopyWith<$Res> {
+  __$$AtsEntryImplCopyWithImpl(
+      _$AtsEntryImpl _value, $Res Function(_$AtsEntryImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? assetId = freezed,
+    Object? asset = freezed,
+    Object? oldTankLevel = freezed,
+    Object? newTankLevel = freezed,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? errorPercent = freezed,
+    Object? reception = freezed,
+    Object? receptions = freezed,
+    Object? isLinked = freezed,
+    Object? fuelType = freezed,
+    Object? temperature = freezed,
+    Object? density = freezed,
+    Object? volumeHistory = null,
+  }) {
+    return _then(_$AtsEntryImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      asset: freezed == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      oldTankLevel: freezed == oldTankLevel
+          ? _value.oldTankLevel
+          : oldTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      newTankLevel: freezed == newTankLevel
+          ? _value.newTankLevel
+          : newTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      errorPercent: freezed == errorPercent
+          ? _value.errorPercent
+          : errorPercent // ignore: cast_nullable_to_non_nullable
+              as double?,
+      reception: freezed == reception
+          ? _value.reception
+          : reception // ignore: cast_nullable_to_non_nullable
+              as AtsReception?,
+      receptions: freezed == receptions
+          ? _value._receptions
+          : receptions // ignore: cast_nullable_to_non_nullable
+              as List<AtsReception>?,
+      isLinked: freezed == isLinked
+          ? _value.isLinked
+          : isLinked // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      fuelType: freezed == fuelType
+          ? _value.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      temperature: freezed == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      density: freezed == density
+          ? _value.density
+          : density // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volumeHistory: null == volumeHistory
+          ? _value._volumeHistory
+          : volumeHistory // ignore: cast_nullable_to_non_nullable
+              as List<AtsVolume>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AtsEntryImpl implements _AtsEntry {
+  const _$AtsEntryImpl(
+      {required this.id,
+      this.assetId,
+      this.asset,
+      this.oldTankLevel,
+      this.newTankLevel,
+      @TimestampOrNullConverter() this.startAt,
+      @TimestampOrNullConverter() this.endAt,
+      this.errorPercent,
+      this.reception,
+      final List<AtsReception>? receptions,
+      this.isLinked,
+      this.fuelType,
+      this.temperature,
+      this.density,
+      final List<AtsVolume> volumeHistory = const []})
+      : _receptions = receptions,
+        _volumeHistory = volumeHistory;
+
+  factory _$AtsEntryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AtsEntryImplFromJson(json);
+
+  /// `id` is the unique ID of the entry.
+  @override
+  final String id;
+
+  /// `assetId` is the ID of the associated asset.
+  @override
+  final String? assetId;
+
+  /// `asset` is the associated asset.
+  @override
+  final Asset? asset;
+
+  /// `oldTankLevel` is the tank level at the start of the entry.
+  @override
+  final double? oldTankLevel;
+
+  /// `newTankLevel` is the tank level at the end of the entry.
+  @override
+  final double? newTankLevel;
+
+  /// `startAt` is the start date of the entry.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? startAt;
+
+  /// `endAt` is the end date of the entry.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? endAt;
+
+  /// `errorPercent` is the error percent between reception and sensor entry.
+  @override
+  final double? errorPercent;
+
+  /// `reception` is the associated reception.
+  @override
+  final AtsReception? reception;
+
+  /// `receptions` is a list of receptions associated with the entry.
+  final List<AtsReception>? _receptions;
+
+  /// `receptions` is a list of receptions associated with the entry.
+  @override
+  List<AtsReception>? get receptions {
+    final value = _receptions;
+    if (value == null) return null;
+    if (_receptions is EqualUnmodifiableListView) return _receptions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// `isLinked` indicates whether the entry is linked to a purchase order.
+  @override
+  final bool? isLinked;
+
+  /// `fuelType` is the fuel type of the entry.
+  @override
+  final String? fuelType;
+
+  /// `temperature` is the temperature of the entry.
+  @override
+  final double? temperature;
+
+  /// `density` is the density of the entry.
+  @override
+  final double? density;
+
+  /// `volumenHistory` is the volumen history of the entry.
+  final List<AtsVolume> _volumeHistory;
+
+  /// `volumenHistory` is the volumen history of the entry.
+  @override
+  @JsonKey()
+  List<AtsVolume> get volumeHistory {
+    if (_volumeHistory is EqualUnmodifiableListView) return _volumeHistory;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_volumeHistory);
+  }
+
+  @override
+  String toString() {
+    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, temperature: $temperature, density: $density, volumeHistory: $volumeHistory)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AtsEntryImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.oldTankLevel, oldTankLevel) ||
+                other.oldTankLevel == oldTankLevel) &&
+            (identical(other.newTankLevel, newTankLevel) ||
+                other.newTankLevel == newTankLevel) &&
+            (identical(other.startAt, startAt) || other.startAt == startAt) &&
+            (identical(other.endAt, endAt) || other.endAt == endAt) &&
+            (identical(other.errorPercent, errorPercent) ||
+                other.errorPercent == errorPercent) &&
+            (identical(other.reception, reception) ||
+                other.reception == reception) &&
+            const DeepCollectionEquality()
+                .equals(other._receptions, _receptions) &&
+            (identical(other.isLinked, isLinked) ||
+                other.isLinked == isLinked) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.density, density) || other.density == density) &&
+            const DeepCollectionEquality()
+                .equals(other._volumeHistory, _volumeHistory));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      asset,
+      oldTankLevel,
+      newTankLevel,
+      startAt,
+      endAt,
+      errorPercent,
+      reception,
+      const DeepCollectionEquality().hash(_receptions),
+      isLinked,
+      fuelType,
+      temperature,
+      density,
+      const DeepCollectionEquality().hash(_volumeHistory));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AtsEntryImplCopyWith<_$AtsEntryImpl> get copyWith =>
+      __$$AtsEntryImplCopyWithImpl<_$AtsEntryImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AtsEntryImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AtsEntry implements AtsEntry {
+  const factory _AtsEntry(
+      {required final String id,
+      final String? assetId,
+      final Asset? asset,
+      final double? oldTankLevel,
+      final double? newTankLevel,
+      @TimestampOrNullConverter() final DateTime? startAt,
+      @TimestampOrNullConverter() final DateTime? endAt,
+      final double? errorPercent,
+      final AtsReception? reception,
+      final List<AtsReception>? receptions,
+      final bool? isLinked,
+      final String? fuelType,
+      final double? temperature,
+      final double? density,
+      final List<AtsVolume> volumeHistory}) = _$AtsEntryImpl;
+
+  factory _AtsEntry.fromJson(Map<String, dynamic> json) =
+      _$AtsEntryImpl.fromJson;
+
+  @override
+
+  /// `id` is the unique ID of the entry.
+  String get id;
+  @override
+
+  /// `assetId` is the ID of the associated asset.
+  String? get assetId;
+  @override
+
+  /// `asset` is the associated asset.
+  Asset? get asset;
+  @override
+
+  /// `oldTankLevel` is the tank level at the start of the entry.
+  double? get oldTankLevel;
+  @override
+
+  /// `newTankLevel` is the tank level at the end of the entry.
+  double? get newTankLevel;
+  @override
+
+  /// `startAt` is the start date of the entry.
+  @TimestampOrNullConverter()
+  DateTime? get startAt;
+  @override
+
+  /// `endAt` is the end date of the entry.
+  @TimestampOrNullConverter()
+  DateTime? get endAt;
+  @override
+
+  /// `errorPercent` is the error percent between reception and sensor entry.
+  double? get errorPercent;
+  @override
+
+  /// `reception` is the associated reception.
+  AtsReception? get reception;
+  @override
+
+  /// `receptions` is a list of receptions associated with the entry.
+  List<AtsReception>? get receptions;
+  @override
+
+  /// `isLinked` indicates whether the entry is linked to a purchase order.
+  bool? get isLinked;
+  @override
+
+  /// `fuelType` is the fuel type of the entry.
+  String? get fuelType;
+  @override
+
+  /// `temperature` is the temperature of the entry.
+  double? get temperature;
+  @override
+
+  /// `density` is the density of the entry.
+  double? get density;
+  @override
+
+  /// `volumenHistory` is the volumen history of the entry.
+  List<AtsVolume> get volumeHistory;
+  @override
+  @JsonKey(ignore: true)
+  _$$AtsEntryImplCopyWith<_$AtsEntryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+AtsVolume _$AtsVolumeFromJson(Map<String, dynamic> json) {
+  return _AtsVolume.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AtsVolume {
+  /// `assetId` is the ID of the associated asset.
+  String? get assetId => throw _privateConstructorUsedError;
+
+  /// `procedureResult` represent the volumen calculated
+  double? get procedureResult => throw _privateConstructorUsedError;
+
+  /// `at` is the date and time of the volumen calculation.
+  @TimestampOrNullConverter()
+  DateTime? get at => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AtsVolumeCopyWith<AtsVolume> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AtsVolumeCopyWith<$Res> {
+  factory $AtsVolumeCopyWith(AtsVolume value, $Res Function(AtsVolume) then) =
+      _$AtsVolumeCopyWithImpl<$Res, AtsVolume>;
+  @useResult
+  $Res call(
+      {String? assetId,
+      double? procedureResult,
+      @TimestampOrNullConverter() DateTime? at});
+}
+
+/// @nodoc
+class _$AtsVolumeCopyWithImpl<$Res, $Val extends AtsVolume>
+    implements $AtsVolumeCopyWith<$Res> {
+  _$AtsVolumeCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? assetId = freezed,
+    Object? procedureResult = freezed,
+    Object? at = freezed,
+  }) {
+    return _then(_value.copyWith(
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      procedureResult: freezed == procedureResult
+          ? _value.procedureResult
+          : procedureResult // ignore: cast_nullable_to_non_nullable
+              as double?,
+      at: freezed == at
+          ? _value.at
+          : at // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AtsVolumeImplCopyWith<$Res>
+    implements $AtsVolumeCopyWith<$Res> {
+  factory _$$AtsVolumeImplCopyWith(
+          _$AtsVolumeImpl value, $Res Function(_$AtsVolumeImpl) then) =
+      __$$AtsVolumeImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? assetId,
+      double? procedureResult,
+      @TimestampOrNullConverter() DateTime? at});
+}
+
+/// @nodoc
+class __$$AtsVolumeImplCopyWithImpl<$Res>
+    extends _$AtsVolumeCopyWithImpl<$Res, _$AtsVolumeImpl>
+    implements _$$AtsVolumeImplCopyWith<$Res> {
+  __$$AtsVolumeImplCopyWithImpl(
+      _$AtsVolumeImpl _value, $Res Function(_$AtsVolumeImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? assetId = freezed,
+    Object? procedureResult = freezed,
+    Object? at = freezed,
+  }) {
+    return _then(_$AtsVolumeImpl(
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      procedureResult: freezed == procedureResult
+          ? _value.procedureResult
+          : procedureResult // ignore: cast_nullable_to_non_nullable
+              as double?,
+      at: freezed == at
+          ? _value.at
+          : at // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AtsVolumeImpl implements _AtsVolume {
+  const _$AtsVolumeImpl(
+      {this.assetId,
+      this.procedureResult,
+      @TimestampOrNullConverter() this.at});
+
+  factory _$AtsVolumeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AtsVolumeImplFromJson(json);
+
+  /// `assetId` is the ID of the associated asset.
+  @override
+  final String? assetId;
+
+  /// `procedureResult` represent the volumen calculated
+  @override
+  final double? procedureResult;
+
+  /// `at` is the date and time of the volumen calculation.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? at;
+
+  @override
+  String toString() {
+    return 'AtsVolume(assetId: $assetId, procedureResult: $procedureResult, at: $at)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AtsVolumeImpl &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.procedureResult, procedureResult) ||
+                other.procedureResult == procedureResult) &&
+            (identical(other.at, at) || other.at == at));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, assetId, procedureResult, at);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AtsVolumeImplCopyWith<_$AtsVolumeImpl> get copyWith =>
+      __$$AtsVolumeImplCopyWithImpl<_$AtsVolumeImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AtsVolumeImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AtsVolume implements AtsVolume {
+  const factory _AtsVolume(
+      {final String? assetId,
+      final double? procedureResult,
+      @TimestampOrNullConverter() final DateTime? at}) = _$AtsVolumeImpl;
+
+  factory _AtsVolume.fromJson(Map<String, dynamic> json) =
+      _$AtsVolumeImpl.fromJson;
+
+  @override
+
+  /// `assetId` is the ID of the associated asset.
+  String? get assetId;
+  @override
+
+  /// `procedureResult` represent the volumen calculated
+  double? get procedureResult;
+  @override
+
+  /// `at` is the date and time of the volumen calculation.
+  @TimestampOrNullConverter()
+  DateTime? get at;
+  @override
+  @JsonKey(ignore: true)
+  _$$AtsVolumeImplCopyWith<_$AtsVolumeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

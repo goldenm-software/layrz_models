@@ -1,4 +1,4 @@
-part of '../ats.dart';
+part of '../../ats.dart';
 
 /// `AtsEntry` is a class that represents an entry in the system.
 ///
@@ -10,37 +10,52 @@ part of '../ats.dart';
 @freezed
 class AtsEntry with _$AtsEntry {
   /// Creates a new `AtsEntry`.
-  ///
-  /// The [id] parameter is required and must be unique.
-  /// The [assetId] parameter is the ID of the associated asset.
-  /// The [asset] parameter is the associated asset.
-  /// The [oldTankLevel] parameter is the tank level at the start of the entry.
-  /// The [newTankLevel] parameter is the tank level at the end of the entry.
-  /// The [startAt] parameter is the start date of the entry.
-  /// The [endAt] parameter is the end date of the entry.
-  /// The [errorPercent] parameter is the error percent between reception and sensor entry.
-  /// The [reception] parameter is the associated reception.
-  /// The [receptions] parameter is a list of receptions associated with the entry.
-  /// The [isLinked] parameter indicates whether the entry is linked to a purchase order.
-  /// The [fuelType] parameter is the fuel type of the entry.
-  /// The [temperature] parameter is the temperature of the entry.
-  /// The [density] parameter is the density of the entry.
 
   const factory AtsEntry({
+    /// `id` is the unique ID of the entry.
     required String id,
+
+    /// `assetId` is the ID of the associated asset.
     String? assetId,
+
+    /// `asset` is the associated asset.
     Asset? asset,
+
+    /// `oldTankLevel` is the tank level at the start of the entry.
     double? oldTankLevel,
+
+    /// `newTankLevel` is the tank level at the end of the entry.
     double? newTankLevel,
+
+    /// `startAt` is the start date of the entry.
     @TimestampOrNullConverter() DateTime? startAt,
+
+    /// `endAt` is the end date of the entry.
     @TimestampOrNullConverter() DateTime? endAt,
+
+    /// `errorPercent` is the error percent between reception and sensor entry.
     double? errorPercent,
+
+    /// `reception` is the associated reception.
     AtsReception? reception,
+
+    /// `receptions` is a list of receptions associated with the entry.
     List<AtsReception>? receptions,
+
+    /// `isLinked` indicates whether the entry is linked to a purchase order.
     bool? isLinked,
+
+    /// `fuelType` is the fuel type of the entry.
     String? fuelType,
+
+    /// `temperature` is the temperature of the entry.
     double? temperature,
+
+    /// `density` is the density of the entry.
     double? density,
+
+    /// `volumenHistory` is the volumen history of the entry.
+    @Default([]) List<AtsVolume> volumeHistory,
   }) = _AtsEntry;
 
   /// fromJson creates a new `AtsEntry` from a JSON object.
