@@ -274,6 +274,9 @@ enum SensorSubType {
   /// [SensorSubType.base64] is image packed/encoded into base64, only used for [SensorType.image]
   base64,
 
+  /// [SensorSubType.flespi] is Flespi protocol
+  flespi,
+
   /// [SensorSubType.unused] is a wildcard subtype.
   unused,
 
@@ -311,6 +314,8 @@ enum SensorSubType {
         return 'XML';
       case SensorSubType.base64:
         return 'BASE64';
+      case SensorSubType.flespi:
+        return 'FLESPI';
       case SensorSubType.python:
         return 'PYTHON';
       case SensorSubType.unused:
@@ -344,6 +349,8 @@ enum SensorSubType {
         return SensorSubType.xml;
       case 'BASE64':
         return SensorSubType.base64;
+      case 'FLESPI':
+        return SensorSubType.flespi;
       case 'PYTHON':
         return SensorSubType.python;
       case 'UNUSED':
