@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.38
+- Added `SensorSubType.flespi` to `SensorSubType` enum
+
 ## 2.1.37
 - Move Ats `entries.dart` file to `entry.dart` and create a new folder `entries` to put inside all Models of Ats Entries
 - Create `AtsVolume` model
