@@ -2090,3 +2090,493 @@ abstract class _BrickHouseWorkspaceInput implements BrickHouseWorkspaceInput {
   _$$BrickHouseWorkspaceInputImplCopyWith<_$BrickHouseWorkspaceInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+BHSDriverSafetyEventScore _$BHSDriverSafetyEventScoreFromJson(
+    Map<String, dynamic> json) {
+  return _BHSDriverSafetyEventScore.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BHSDriverSafetyEventScore {
+  double get score => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+  List<AssetTelemetry>? get messages => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BHSDriverSafetyEventScoreCopyWith<BHSDriverSafetyEventScore> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BHSDriverSafetyEventScoreCopyWith<$Res> {
+  factory $BHSDriverSafetyEventScoreCopyWith(BHSDriverSafetyEventScore value,
+          $Res Function(BHSDriverSafetyEventScore) then) =
+      _$BHSDriverSafetyEventScoreCopyWithImpl<$Res, BHSDriverSafetyEventScore>;
+  @useResult
+  $Res call({double score, String? status, List<AssetTelemetry>? messages});
+}
+
+/// @nodoc
+class _$BHSDriverSafetyEventScoreCopyWithImpl<$Res,
+        $Val extends BHSDriverSafetyEventScore>
+    implements $BHSDriverSafetyEventScoreCopyWith<$Res> {
+  _$BHSDriverSafetyEventScoreCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? score = null,
+    Object? status = freezed,
+    Object? messages = freezed,
+  }) {
+    return _then(_value.copyWith(
+      score: null == score
+          ? _value.score
+          : score // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      messages: freezed == messages
+          ? _value.messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<AssetTelemetry>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BHSDriverSafetyEventScoreImplCopyWith<$Res>
+    implements $BHSDriverSafetyEventScoreCopyWith<$Res> {
+  factory _$$BHSDriverSafetyEventScoreImplCopyWith(
+          _$BHSDriverSafetyEventScoreImpl value,
+          $Res Function(_$BHSDriverSafetyEventScoreImpl) then) =
+      __$$BHSDriverSafetyEventScoreImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double score, String? status, List<AssetTelemetry>? messages});
+}
+
+/// @nodoc
+class __$$BHSDriverSafetyEventScoreImplCopyWithImpl<$Res>
+    extends _$BHSDriverSafetyEventScoreCopyWithImpl<$Res,
+        _$BHSDriverSafetyEventScoreImpl>
+    implements _$$BHSDriverSafetyEventScoreImplCopyWith<$Res> {
+  __$$BHSDriverSafetyEventScoreImplCopyWithImpl(
+      _$BHSDriverSafetyEventScoreImpl _value,
+      $Res Function(_$BHSDriverSafetyEventScoreImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? score = null,
+    Object? status = freezed,
+    Object? messages = freezed,
+  }) {
+    return _then(_$BHSDriverSafetyEventScoreImpl(
+      score: null == score
+          ? _value.score
+          : score // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      messages: freezed == messages
+          ? _value._messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<AssetTelemetry>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BHSDriverSafetyEventScoreImpl implements _BHSDriverSafetyEventScore {
+  const _$BHSDriverSafetyEventScoreImpl(
+      {required this.score, this.status, final List<AssetTelemetry>? messages})
+      : _messages = messages;
+
+  factory _$BHSDriverSafetyEventScoreImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BHSDriverSafetyEventScoreImplFromJson(json);
+
+  @override
+  final double score;
+  @override
+  final String? status;
+  final List<AssetTelemetry>? _messages;
+  @override
+  List<AssetTelemetry>? get messages {
+    final value = _messages;
+    if (value == null) return null;
+    if (_messages is EqualUnmodifiableListView) return _messages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'BHSDriverSafetyEventScore(score: $score, status: $status, messages: $messages)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BHSDriverSafetyEventScoreImpl &&
+            (identical(other.score, score) || other.score == score) &&
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other._messages, _messages));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, score, status,
+      const DeepCollectionEquality().hash(_messages));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BHSDriverSafetyEventScoreImplCopyWith<_$BHSDriverSafetyEventScoreImpl>
+      get copyWith => __$$BHSDriverSafetyEventScoreImplCopyWithImpl<
+          _$BHSDriverSafetyEventScoreImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BHSDriverSafetyEventScoreImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BHSDriverSafetyEventScore implements BHSDriverSafetyEventScore {
+  const factory _BHSDriverSafetyEventScore(
+      {required final double score,
+      final String? status,
+      final List<AssetTelemetry>? messages}) = _$BHSDriverSafetyEventScoreImpl;
+
+  factory _BHSDriverSafetyEventScore.fromJson(Map<String, dynamic> json) =
+      _$BHSDriverSafetyEventScoreImpl.fromJson;
+
+  @override
+  double get score;
+  @override
+  String? get status;
+  @override
+  List<AssetTelemetry>? get messages;
+  @override
+  @JsonKey(ignore: true)
+  _$$BHSDriverSafetyEventScoreImplCopyWith<_$BHSDriverSafetyEventScoreImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+BrickhouseDriverSafety _$BrickhouseDriverSafetyFromJson(
+    Map<String, dynamic> json) {
+  return _BrickhouseDriverSafety.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BrickhouseDriverSafety {
+  double get totalScore => throw _privateConstructorUsedError;
+  BHSDriverSafetyEventScore? get drivingHours =>
+      throw _privateConstructorUsedError;
+  BHSDriverSafetyEventScore? get harshAcceleration =>
+      throw _privateConstructorUsedError;
+  BHSDriverSafetyEventScore? get harshBraking =>
+      throw _privateConstructorUsedError;
+  BHSDriverSafetyEventScore? get harshCornering =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BrickhouseDriverSafetyCopyWith<BrickhouseDriverSafety> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BrickhouseDriverSafetyCopyWith<$Res> {
+  factory $BrickhouseDriverSafetyCopyWith(BrickhouseDriverSafety value,
+          $Res Function(BrickhouseDriverSafety) then) =
+      _$BrickhouseDriverSafetyCopyWithImpl<$Res, BrickhouseDriverSafety>;
+  @useResult
+  $Res call(
+      {double totalScore,
+      BHSDriverSafetyEventScore? drivingHours,
+      BHSDriverSafetyEventScore? harshAcceleration,
+      BHSDriverSafetyEventScore? harshBraking,
+      BHSDriverSafetyEventScore? harshCornering});
+
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get drivingHours;
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshAcceleration;
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshBraking;
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshCornering;
+}
+
+/// @nodoc
+class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
+        $Val extends BrickhouseDriverSafety>
+    implements $BrickhouseDriverSafetyCopyWith<$Res> {
+  _$BrickhouseDriverSafetyCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? totalScore = null,
+    Object? drivingHours = freezed,
+    Object? harshAcceleration = freezed,
+    Object? harshBraking = freezed,
+    Object? harshCornering = freezed,
+  }) {
+    return _then(_value.copyWith(
+      totalScore: null == totalScore
+          ? _value.totalScore
+          : totalScore // ignore: cast_nullable_to_non_nullable
+              as double,
+      drivingHours: freezed == drivingHours
+          ? _value.drivingHours
+          : drivingHours // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetyEventScore?,
+      harshAcceleration: freezed == harshAcceleration
+          ? _value.harshAcceleration
+          : harshAcceleration // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetyEventScore?,
+      harshBraking: freezed == harshBraking
+          ? _value.harshBraking
+          : harshBraking // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetyEventScore?,
+      harshCornering: freezed == harshCornering
+          ? _value.harshCornering
+          : harshCornering // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetyEventScore?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get drivingHours {
+    if (_value.drivingHours == null) {
+      return null;
+    }
+
+    return $BHSDriverSafetyEventScoreCopyWith<$Res>(_value.drivingHours!,
+        (value) {
+      return _then(_value.copyWith(drivingHours: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshAcceleration {
+    if (_value.harshAcceleration == null) {
+      return null;
+    }
+
+    return $BHSDriverSafetyEventScoreCopyWith<$Res>(_value.harshAcceleration!,
+        (value) {
+      return _then(_value.copyWith(harshAcceleration: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshBraking {
+    if (_value.harshBraking == null) {
+      return null;
+    }
+
+    return $BHSDriverSafetyEventScoreCopyWith<$Res>(_value.harshBraking!,
+        (value) {
+      return _then(_value.copyWith(harshBraking: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshCornering {
+    if (_value.harshCornering == null) {
+      return null;
+    }
+
+    return $BHSDriverSafetyEventScoreCopyWith<$Res>(_value.harshCornering!,
+        (value) {
+      return _then(_value.copyWith(harshCornering: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$BrickhouseDriverSafetyImplCopyWith<$Res>
+    implements $BrickhouseDriverSafetyCopyWith<$Res> {
+  factory _$$BrickhouseDriverSafetyImplCopyWith(
+          _$BrickhouseDriverSafetyImpl value,
+          $Res Function(_$BrickhouseDriverSafetyImpl) then) =
+      __$$BrickhouseDriverSafetyImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {double totalScore,
+      BHSDriverSafetyEventScore? drivingHours,
+      BHSDriverSafetyEventScore? harshAcceleration,
+      BHSDriverSafetyEventScore? harshBraking,
+      BHSDriverSafetyEventScore? harshCornering});
+
+  @override
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get drivingHours;
+  @override
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshAcceleration;
+  @override
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshBraking;
+  @override
+  $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshCornering;
+}
+
+/// @nodoc
+class __$$BrickhouseDriverSafetyImplCopyWithImpl<$Res>
+    extends _$BrickhouseDriverSafetyCopyWithImpl<$Res,
+        _$BrickhouseDriverSafetyImpl>
+    implements _$$BrickhouseDriverSafetyImplCopyWith<$Res> {
+  __$$BrickhouseDriverSafetyImplCopyWithImpl(
+      _$BrickhouseDriverSafetyImpl _value,
+      $Res Function(_$BrickhouseDriverSafetyImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? totalScore = null,
+    Object? drivingHours = freezed,
+    Object? harshAcceleration = freezed,
+    Object? harshBraking = freezed,
+    Object? harshCornering = freezed,
+  }) {
+    return _then(_$BrickhouseDriverSafetyImpl(
+      totalScore: null == totalScore
+          ? _value.totalScore
+          : totalScore // ignore: cast_nullable_to_non_nullable
+              as double,
+      drivingHours: freezed == drivingHours
+          ? _value.drivingHours
+          : drivingHours // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetyEventScore?,
+      harshAcceleration: freezed == harshAcceleration
+          ? _value.harshAcceleration
+          : harshAcceleration // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetyEventScore?,
+      harshBraking: freezed == harshBraking
+          ? _value.harshBraking
+          : harshBraking // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetyEventScore?,
+      harshCornering: freezed == harshCornering
+          ? _value.harshCornering
+          : harshCornering // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetyEventScore?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BrickhouseDriverSafetyImpl implements _BrickhouseDriverSafety {
+  const _$BrickhouseDriverSafetyImpl(
+      {required this.totalScore,
+      this.drivingHours,
+      this.harshAcceleration,
+      this.harshBraking,
+      this.harshCornering});
+
+  factory _$BrickhouseDriverSafetyImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BrickhouseDriverSafetyImplFromJson(json);
+
+  @override
+  final double totalScore;
+  @override
+  final BHSDriverSafetyEventScore? drivingHours;
+  @override
+  final BHSDriverSafetyEventScore? harshAcceleration;
+  @override
+  final BHSDriverSafetyEventScore? harshBraking;
+  @override
+  final BHSDriverSafetyEventScore? harshCornering;
+
+  @override
+  String toString() {
+    return 'BrickhouseDriverSafety(totalScore: $totalScore, drivingHours: $drivingHours, harshAcceleration: $harshAcceleration, harshBraking: $harshBraking, harshCornering: $harshCornering)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BrickhouseDriverSafetyImpl &&
+            (identical(other.totalScore, totalScore) ||
+                other.totalScore == totalScore) &&
+            (identical(other.drivingHours, drivingHours) ||
+                other.drivingHours == drivingHours) &&
+            (identical(other.harshAcceleration, harshAcceleration) ||
+                other.harshAcceleration == harshAcceleration) &&
+            (identical(other.harshBraking, harshBraking) ||
+                other.harshBraking == harshBraking) &&
+            (identical(other.harshCornering, harshCornering) ||
+                other.harshCornering == harshCornering));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, totalScore, drivingHours,
+      harshAcceleration, harshBraking, harshCornering);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BrickhouseDriverSafetyImplCopyWith<_$BrickhouseDriverSafetyImpl>
+      get copyWith => __$$BrickhouseDriverSafetyImplCopyWithImpl<
+          _$BrickhouseDriverSafetyImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BrickhouseDriverSafetyImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BrickhouseDriverSafety implements BrickhouseDriverSafety {
+  const factory _BrickhouseDriverSafety(
+          {required final double totalScore,
+          final BHSDriverSafetyEventScore? drivingHours,
+          final BHSDriverSafetyEventScore? harshAcceleration,
+          final BHSDriverSafetyEventScore? harshBraking,
+          final BHSDriverSafetyEventScore? harshCornering}) =
+      _$BrickhouseDriverSafetyImpl;
+
+  factory _BrickhouseDriverSafety.fromJson(Map<String, dynamic> json) =
+      _$BrickhouseDriverSafetyImpl.fromJson;
+
+  @override
+  double get totalScore;
+  @override
+  BHSDriverSafetyEventScore? get drivingHours;
+  @override
+  BHSDriverSafetyEventScore? get harshAcceleration;
+  @override
+  BHSDriverSafetyEventScore? get harshBraking;
+  @override
+  BHSDriverSafetyEventScore? get harshCornering;
+  @override
+  @JsonKey(ignore: true)
+  _$$BrickhouseDriverSafetyImplCopyWith<_$BrickhouseDriverSafetyImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
