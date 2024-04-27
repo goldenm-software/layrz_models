@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.39
+- Created `BrickhouseDriverSafety` entity
+
 ## 2.1.38
 - Added `SensorSubType.flespi` to `SensorSubType` enum
 
