@@ -221,3 +221,53 @@ Map<String, dynamic> _$$BrickHouseWorkspaceInputImplToJson(
       'timezoneId': instance.timezoneId,
       'assetsIds': instance.assetsIds,
     };
+
+_$BHSDriverSafetyEventScoreImpl _$$BHSDriverSafetyEventScoreImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BHSDriverSafetyEventScoreImpl(
+      score: (json['score'] as num).toDouble(),
+      status: json['status'] as String?,
+      messages: (json['messages'] as List<dynamic>?)
+          ?.map((e) => AssetTelemetry.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$BHSDriverSafetyEventScoreImplToJson(
+        _$BHSDriverSafetyEventScoreImpl instance) =>
+    <String, dynamic>{
+      'score': instance.score,
+      'status': instance.status,
+      'messages': instance.messages?.map((e) => e.toJson()).toList(),
+    };
+
+_$BrickhouseDriverSafetyImpl _$$BrickhouseDriverSafetyImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BrickhouseDriverSafetyImpl(
+      totalScore: (json['totalScore'] as num).toDouble(),
+      drivingHours: json['drivingHours'] == null
+          ? null
+          : BHSDriverSafetyEventScore.fromJson(
+              json['drivingHours'] as Map<String, dynamic>),
+      harshAcceleration: json['harshAcceleration'] == null
+          ? null
+          : BHSDriverSafetyEventScore.fromJson(
+              json['harshAcceleration'] as Map<String, dynamic>),
+      harshBraking: json['harshBraking'] == null
+          ? null
+          : BHSDriverSafetyEventScore.fromJson(
+              json['harshBraking'] as Map<String, dynamic>),
+      harshCornering: json['harshCornering'] == null
+          ? null
+          : BHSDriverSafetyEventScore.fromJson(
+              json['harshCornering'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$BrickhouseDriverSafetyImplToJson(
+        _$BrickhouseDriverSafetyImpl instance) =>
+    <String, dynamic>{
+      'totalScore': instance.totalScore,
+      'drivingHours': instance.drivingHours?.toJson(),
+      'harshAcceleration': instance.harshAcceleration?.toJson(),
+      'harshBraking': instance.harshBraking?.toJson(),
+      'harshCornering': instance.harshCornering?.toJson(),
+    };
