@@ -15,13 +15,17 @@ part of '../brickhouse.dart';
 /// Low battery alert
 ///
 /// CURFEW
-/// Curfew
+/// Curfew alert
+///
+/// SPEEDING
+/// Speeding alert
 enum BrickhouseAlertType {
   presenceGeofence,
   maxSpeed,
   sos,
   battery,
   curfew,
+  speeding,
   ;
 
   String toJson() {
@@ -36,6 +40,8 @@ enum BrickhouseAlertType {
         return "BATTERY";
       case BrickhouseAlertType.curfew:
         return "CURFEW";
+      case BrickhouseAlertType.speeding:
+        return "SPEEDING";
       default:
         throw Exception("Unknown BrickhouseAlertType: $this");
     }
@@ -53,6 +59,8 @@ enum BrickhouseAlertType {
         return BrickhouseAlertType.battery;
       case "CURFEW":
         return BrickhouseAlertType.curfew;
+      case "SPEEDING":
+        return BrickhouseAlertType.speeding;
       default:
         throw Exception("Unknown BrickhouseAlertType: $json");
     }

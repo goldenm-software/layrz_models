@@ -60,7 +60,11 @@ enum TriggerType {
 
   /// [casesChanges] is triggered when a user enters or exits a geofence.
   /// API Reference: CASES_CHANGES
-  casesChanges;
+  casesChanges,
+
+  /// BHS_SPEEDING
+  /// API Reference: BHS_SPEEDING
+  bhsSpeeding;
 
   @override
   String toString() => toJson();
@@ -79,6 +83,8 @@ enum TriggerType {
         return 'PYTHONSCRIPT';
       case TriggerType.casesChanges:
         return 'CASES_CHANGES';
+      case TriggerType.bhsSpeeding:
+        return 'BHS_SPEEDING';
       default:
         throw Exception('Unknown TriggerType');
     }
@@ -98,6 +104,8 @@ enum TriggerType {
         return TriggerType.pythonScript;
       case 'CASES_CHANGES':
         return TriggerType.casesChanges;
+      case 'BHS_SPEEDING':
+        return TriggerType.bhsSpeeding;
       default:
         throw Exception('Unknown TriggerType');
     }
