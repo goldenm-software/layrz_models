@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.40
+- Added `speeding` value to `BrickhouseAlertType` enum, and added `bhsSpeeding` value to `TriggerType`
+
 ## 2.1.39
 - Created `BrickhouseDriverSafety` entity
 
