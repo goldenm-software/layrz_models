@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.41
+
+- Added `barcode` to `TenvioPackage` model
+- Changed `qrCode` to `barcode` in `TenvioMatrixItem` model
+
 ## 2.1.40
 - Added `speeding` value to `BrickhouseAlertType` enum, and added `bhsSpeeding` value to `TriggerType`
 

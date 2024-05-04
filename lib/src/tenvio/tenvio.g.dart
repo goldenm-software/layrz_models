@@ -57,7 +57,7 @@ _$TenvioMatrixItemImpl _$$TenvioMatrixItemImplFromJson(
       name: json['name'] as String,
       image: json['image'] as String?,
       code: json['code'] as String,
-      qrCode: json['qrCode'] as String?,
+      barcode: json['barcode'] as String?,
       weight: (json['weight'] as num?)?.toDouble(),
       width: (json['width'] as num?)?.toDouble(),
       height: (json['height'] as num?)?.toDouble(),
@@ -80,7 +80,7 @@ Map<String, dynamic> _$$TenvioMatrixItemImplToJson(
       'name': instance.name,
       'image': instance.image,
       'code': instance.code,
-      'qrCode': instance.qrCode,
+      'barcode': instance.barcode,
       'weight': instance.weight,
       'width': instance.width,
       'height': instance.height,
@@ -146,6 +146,7 @@ _$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
           .fromJson(json['status'] as String),
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
       updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
+      barcode: json['barcode'] as String?,
     );
 
 Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
@@ -161,6 +162,7 @@ Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
       'status': const TenvioPackageStatusConverter().toJson(instance.status),
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
+      'barcode': instance.barcode,
     };
 
 _$DeliverLocationImpl _$$DeliverLocationImplFromJson(
