@@ -127,8 +127,50 @@ class AtsPurchaseOrder with _$AtsPurchaseOrder {
     /// `sellerAsset` represet the terminal that will sell the product.
     Asset? sellerAsset,
 
+    /// `orderStatus` defines the order status.
+    @AtsPurchaseOrderStatusOrNullConverter() AtsPurchaseOrderStatus? orderStatus,
+
+    /// `inTransitAt` defines the in transit date.
+    @TimestampOrNullConverter() DateTime? inTransitAt,
+
+    /// `waitingToDispatchAt` defines the waiting to dispatch date.
+    @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+
+    /// `deliveredAt` defines the delivered date.
+    @TimestampOrNullConverter() DateTime? deliveredAt,
   }) = _AtsPurchaseOrder;
 
   /// from json factory
   factory AtsPurchaseOrder.fromJson(Map<String, dynamic> json) => _$AtsPurchaseOrderFromJson(json);
+}
+
+enum AtsPurchaseOrderStatus {
+  waitingToDispatch,
+  inTransit,
+  delivered,
+  ;
+
+  String toJson() {
+    switch (this) {
+      case AtsPurchaseOrderStatus.waitingToDispatch:
+        return 'WAITING_TO_DISPATCH';
+      case AtsPurchaseOrderStatus.inTransit:
+        return 'IN_TRANSIT';
+      case AtsPurchaseOrderStatus.delivered:
+        return 'DELIVERED';
+    }
+  }
+
+  static AtsPurchaseOrderStatus fromJson(String value) {
+    switch (value) {
+      case 'WAITING_TO_DISPATCH':
+        return AtsPurchaseOrderStatus.waitingToDispatch;
+      case 'IN_TRANSIT':
+        return AtsPurchaseOrderStatus.inTransit;
+      case 'DELIVERED':
+        return AtsPurchaseOrderStatus.delivered;
+      default:
+        throw Exception('Unknown AtsPurchaseOrderStatus value: $value');
+    }
+  }
 }

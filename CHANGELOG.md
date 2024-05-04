@@ -1,4 +1,22 @@
 # Changelog
+## 2.1.43
+- Add `deliveredAt`, `waitingToDispatchAt`, `inTransitAt`,`orderStatus` in `AtsPurchaseOrder`
+- Create a new folder to set ats converters
+
+## 2.1.42
+
+- Removed `barcode` from `TenvioPackage` and `TenvioMatrixItem` models
+
+## 2.1.41
+
+- Added `barcode` to `TenvioPackage` model
+- Changed `qrCode` to `barcode` in `TenvioMatrixItem` model
+
+## 2.1.40
+- Added `speeding` value to `BrickhouseAlertType` enum, and added `bhsSpeeding` value to `TriggerType`
+
+## 2.1.39
+- Created `BrickhouseDriverSafety` entity
 
 ## 2.1.38
 - Added `SensorSubType.flespi` to `SensorSubType` enum
