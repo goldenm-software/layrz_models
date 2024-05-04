@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.42
+
+- Removed `barcode` from `TenvioPackage` and `TenvioMatrixItem` models
+
 ## 2.1.41
 
 - Added `barcode` to `TenvioPackage` model

@@ -37,9 +37,6 @@ class TenvioPackage with _$TenvioPackage {
 
     /// [updatedAt] is the date when the package was last updated.
     @TimestampConverter() required DateTime updatedAt,
-
-    /// [barcode] is the barcode of the package.
-    String? barcode,
   }) = _TenvioPackage;
 
   factory TenvioPackage.fromJson(Map<String, dynamic> json) => _$TenvioPackageFromJson(json);
