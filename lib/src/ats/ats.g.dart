@@ -482,6 +482,14 @@ _$AtsPurchaseOrderImpl _$$AtsPurchaseOrderImplFromJson(
       sellerAsset: json['sellerAsset'] == null
           ? null
           : Asset.fromJson(json['sellerAsset'] as Map<String, dynamic>),
+      orderStatus: const AtsPurchaseOrderStatusOrNullConverter()
+          .fromJson(json['orderStatus'] as String?),
+      inTransitAt: const TimestampOrNullConverter()
+          .fromJson(json['inTransitAt'] as num?),
+      waitingToDispatchAt: const TimestampOrNullConverter()
+          .fromJson(json['waitingToDispatchAt'] as num?),
+      deliveredAt: const TimestampOrNullConverter()
+          .fromJson(json['deliveredAt'] as num?),
     );
 
 Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
@@ -516,6 +524,14 @@ Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
           .toJson(instance.operation),
       'transportAsset': instance.transportAsset?.toJson(),
       'sellerAsset': instance.sellerAsset?.toJson(),
+      'orderStatus': const AtsPurchaseOrderStatusOrNullConverter()
+          .toJson(instance.orderStatus),
+      'inTransitAt':
+          const TimestampOrNullConverter().toJson(instance.inTransitAt),
+      'waitingToDispatchAt':
+          const TimestampOrNullConverter().toJson(instance.waitingToDispatchAt),
+      'deliveredAt':
+          const TimestampOrNullConverter().toJson(instance.deliveredAt),
     };
 
 _$AtsPurchaseTotalImpl _$$AtsPurchaseTotalImplFromJson(

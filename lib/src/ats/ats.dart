@@ -37,3 +37,6 @@ part 'src/exits/execute_exit_history.dart';
 // ATS Entries Models
 part 'src/entries/entry.dart';
 part 'src/entries/volume.dart';
+
+// ATS enums
+part 'src/converters/order_status.dart';
