@@ -24,10 +24,7 @@ class TenvioPackage with _$TenvioPackage {
     Asset? warehouse,
 
     /// [items] is the list of items that are part of the package.
-    List<TenvioItem>? items,
-
-    /// [itemsIds] is the list of items identifiers that are part of the package.
-    List<String>? itemsIds,
+    List<TenvioPackageQuantity>? items,
 
     /// [status] is the status of the package.
     @TenvioPackageStatusConverter() required TenvioPackageStatus status,
@@ -40,4 +37,23 @@ class TenvioPackage with _$TenvioPackage {
   }) = _TenvioPackage;
 
   factory TenvioPackage.fromJson(Map<String, dynamic> json) => _$TenvioPackageFromJson(json);
+}
+
+@freezed
+class TenvioPackageQuantity with _$TenvioPackageQuantity {
+  const factory TenvioPackageQuantity({
+    /// [id] is the unique identifier of the package quantity
+    required String id,
+
+    /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
+    required String matrixId,
+
+    /// [matrix] is the matrix that the package quantity is related.
+    TenvioMatrixItem? matrix,
+
+    /// [quantity] is the quantity of the package.
+    required int quantity,
+  }) = _TenvioPackageQuantity;
+
+  factory TenvioPackageQuantity.fromJson(Map<String, dynamic> json) => _$TenvioPackageQuantityFromJson(json);
 }

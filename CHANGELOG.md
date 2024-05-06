@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.46
+- Removed `items` and `itemsIds` from `TenvioPackage` model
+- Added `TenvioPackageQuantity` model
+- Added `items` of type `List<TenvioPackageQuantity>` to `TenvioPackage` model
+
 ## 2.1.45
 - Added new stauses to `TenvioOrderStatus` enum
 

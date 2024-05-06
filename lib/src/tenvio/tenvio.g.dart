@@ -135,10 +135,8 @@ _$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
           ? null
           : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
       items: (json['items'] as List<dynamic>?)
-          ?.map((e) => TenvioItem.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      itemsIds: (json['itemsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
+          ?.map(
+              (e) => TenvioPackageQuantity.fromJson(e as Map<String, dynamic>))
           .toList(),
       status: const TenvioPackageStatusConverter()
           .fromJson(json['status'] as String),
@@ -155,10 +153,29 @@ Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
       'warehouseId': instance.warehouseId,
       'warehouse': instance.warehouse?.toJson(),
       'items': instance.items?.map((e) => e.toJson()).toList(),
-      'itemsIds': instance.itemsIds,
       'status': const TenvioPackageStatusConverter().toJson(instance.status),
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
+    };
+
+_$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioPackageQuantityImpl(
+      id: json['id'] as String,
+      matrixId: json['matrixId'] as String,
+      matrix: json['matrix'] == null
+          ? null
+          : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
+      quantity: json['quantity'] as int,
+    );
+
+Map<String, dynamic> _$$TenvioPackageQuantityImplToJson(
+        _$TenvioPackageQuantityImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'matrixId': instance.matrixId,
+      'matrix': instance.matrix?.toJson(),
+      'quantity': instance.quantity,
     };
 
 _$DeliverLocationImpl _$$DeliverLocationImplFromJson(
