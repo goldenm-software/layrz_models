@@ -145,6 +145,7 @@ class AtsPurchaseOrder with _$AtsPurchaseOrder {
 }
 
 enum AtsPurchaseOrderStatus {
+  generated,
   waitingToDispatch,
   inTransit,
   delivered,
@@ -152,6 +153,8 @@ enum AtsPurchaseOrderStatus {
 
   String toJson() {
     switch (this) {
+      case AtsPurchaseOrderStatus.generated:
+        return 'GENERATED';
       case AtsPurchaseOrderStatus.waitingToDispatch:
         return 'WAITING_TO_DISPATCH';
       case AtsPurchaseOrderStatus.inTransit:
@@ -163,6 +166,8 @@ enum AtsPurchaseOrderStatus {
 
   static AtsPurchaseOrderStatus fromJson(String value) {
     switch (value) {
+      case 'GENERATED':
+        return AtsPurchaseOrderStatus.generated;
       case 'WAITING_TO_DISPATCH':
         return AtsPurchaseOrderStatus.waitingToDispatch;
       case 'IN_TRANSIT':
