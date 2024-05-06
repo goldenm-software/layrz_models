@@ -5,6 +5,14 @@ enum TenvioOrderStatus {
   /// API Reference: PENDING
   pending,
 
+  /// [processing] refers that the order is being processed or packaging
+  /// API Reference: PROCESSING
+  processing,
+
+  /// [waitingForPickup] refers that the order is waiting for pickup
+  /// API Reference: WAITING_FOR_PICK_UP
+  waitingForPickup,
+
   /// [pickingUp] refers that the order is being picked up
   /// API Reference: PICKING_UP
   pickingUp,
@@ -24,6 +32,9 @@ enum TenvioOrderStatus {
   /// [dropoffFailed] refers that the order failed to be dropped off
   /// API Reference: DROPOFF_FAILED
   dropoffFailed,
+
+  /// [unknown] refers that the order status is unknown
+  unknown,
   ;
 
   @override
@@ -43,6 +54,12 @@ enum TenvioOrderStatus {
         return 'DELIVERED';
       case TenvioOrderStatus.dropoffFailed:
         return 'DROPOFF_FAILED';
+      case TenvioOrderStatus.processing:
+        return 'PROCESSING';
+      case TenvioOrderStatus.waitingForPickup:
+        return 'WAITING_FOR_PICK_UP';
+      default:
+        return 'UNKNOWN';
     }
   }
 
@@ -60,8 +77,12 @@ enum TenvioOrderStatus {
         return TenvioOrderStatus.delivered;
       case 'DROPOFF_FAILED':
         return TenvioOrderStatus.dropoffFailed;
+      case 'PROCESSING':
+        return TenvioOrderStatus.processing;
+      case 'WAITING_FOR_PICK_UP':
+        return TenvioOrderStatus.waitingForPickup;
       default:
-        return TenvioOrderStatus.pending;
+        return TenvioOrderStatus.unknown;
     }
   }
 }

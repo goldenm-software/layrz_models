@@ -12,7 +12,7 @@ part of 'brickhouse.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 BrickhouseAlert _$BrickhouseAlertFromJson(Map<String, dynamic> json) {
   return _BrickhouseAlert.fromJson(json);
@@ -660,7 +660,7 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BrickhouseAlertImpl &&
@@ -2017,7 +2017,7 @@ class _$BrickHouseWorkspaceInputImpl implements _BrickHouseWorkspaceInput {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BrickHouseWorkspaceInputImpl &&
@@ -2228,7 +2228,7 @@ class _$BHSDriverSafetyEventScoreImpl implements _BHSDriverSafetyEventScore {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BHSDriverSafetyEventScoreImpl &&
@@ -2517,7 +2517,7 @@ class _$BrickhouseDriverSafetyImpl implements _BrickhouseDriverSafety {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BrickhouseDriverSafetyImpl &&

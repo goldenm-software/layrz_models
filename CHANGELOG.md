@@ -1,4 +1,8 @@
 # Changelog
+
+## 2.1.45
+- Added new stauses to `TenvioOrderStatus` enum
+
 ## 2.1.44
 - Add `AtsPurchaseOrderStatus` enum `generated` value
 
