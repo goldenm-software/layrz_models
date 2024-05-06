@@ -1,4 +1,7 @@
 # Changelog
+## 2.1.44
+- Add `AtsPurchaseOrderStatus` enum `generated` value
+
 ## 2.1.43
 - Add `deliveredAt`, `waitingToDispatchAt`, `inTransitAt`,`orderStatus` in `AtsPurchaseOrder`
 - Create a new folder to set ats converters
