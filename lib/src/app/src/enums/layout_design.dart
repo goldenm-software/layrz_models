@@ -1,21 +1,21 @@
 part of '../../app.dart';
 
 enum LayoutDesign {
-  /// [LayoutDesign.right] defines the layout mode of the login. This value is used
-  /// as default
+  /// [LayoutDesign.right] defines the layout mode of the login.
+  /// This value is used as default
   right,
 
   /// [LayoutDesign.left] defines the layout mode of the login.
-  /// This value is used as default
   left,
 
   /// [LayoutDesign.top] defines the layout mode of the login.
-  /// This value is used as default
   top,
 
   /// [LayoutDesign.bottom] defines the layout mode of the login.
-  /// This value is used as default
   bottom,
+
+  /// [LayoutDesign.center] defines the layout mode of the login.
+  center,
   ;
 
   @override
@@ -31,6 +31,8 @@ enum LayoutDesign {
         return LayoutDesign.top;
       case 'BOTTOM':
         return LayoutDesign.bottom;
+      case 'CENTER':
+        return LayoutDesign.center;
       default:
         return LayoutDesign.right;
     }
@@ -46,6 +48,8 @@ enum LayoutDesign {
         return 'TOP';
       case LayoutDesign.bottom:
         return 'BOTTOM';
+      case LayoutDesign.center:
+        return 'CENTER';
       default:
         return 'RIGHT';
     }

@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.47
+- Added `LayoutDesign.center` to `LayoutDesign` enum
+
 ## 2.1.46
 - Removed `items` and `itemsIds` from `TenvioPackage` model
 - Added `TenvioPackageQuantity` model
