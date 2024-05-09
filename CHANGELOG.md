@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.48
+- Updated `portId` from `String` to `String?` in `ModbusParameter` model
+
 ## 2.1.47
 - Added `LayoutDesign.center` to `LayoutDesign` enum
 

@@ -28,7 +28,7 @@ mixin _$ModbusConfig {
 
   /// [portId] is the port ID of the modbus device.
   /// This value is refered from the [InboundProtocol] `modbusPorts` list.
-  String get portId => throw _privateConstructorUsedError;
+  String? get portId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,7 +42,7 @@ abstract class $ModbusConfigCopyWith<$Res> {
           ModbusConfig value, $Res Function(ModbusConfig) then) =
       _$ModbusConfigCopyWithImpl<$Res, ModbusConfig>;
   @useResult
-  $Res call({bool isEnabled, List<ModbusParameter> parameters, String portId});
+  $Res call({bool isEnabled, List<ModbusParameter> parameters, String? portId});
 }
 
 /// @nodoc
@@ -60,7 +60,7 @@ class _$ModbusConfigCopyWithImpl<$Res, $Val extends ModbusConfig>
   $Res call({
     Object? isEnabled = null,
     Object? parameters = null,
-    Object? portId = null,
+    Object? portId = freezed,
   }) {
     return _then(_value.copyWith(
       isEnabled: null == isEnabled
@@ -71,10 +71,10 @@ class _$ModbusConfigCopyWithImpl<$Res, $Val extends ModbusConfig>
           ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as List<ModbusParameter>,
-      portId: null == portId
+      portId: freezed == portId
           ? _value.portId
           : portId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -87,7 +87,7 @@ abstract class _$$ModbusConfigImplCopyWith<$Res>
       __$$ModbusConfigImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({bool isEnabled, List<ModbusParameter> parameters, String portId});
+  $Res call({bool isEnabled, List<ModbusParameter> parameters, String? portId});
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ class __$$ModbusConfigImplCopyWithImpl<$Res>
   $Res call({
     Object? isEnabled = null,
     Object? parameters = null,
-    Object? portId = null,
+    Object? portId = freezed,
   }) {
     return _then(_$ModbusConfigImpl(
       isEnabled: null == isEnabled
@@ -114,10 +114,10 @@ class __$$ModbusConfigImplCopyWithImpl<$Res>
           ? _value._parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as List<ModbusParameter>,
-      portId: null == portId
+      portId: freezed == portId
           ? _value.portId
           : portId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -128,7 +128,7 @@ class _$ModbusConfigImpl implements _ModbusConfig {
   const _$ModbusConfigImpl(
       {required this.isEnabled,
       final List<ModbusParameter> parameters = const [],
-      required this.portId})
+      this.portId})
       : _parameters = parameters;
 
   factory _$ModbusConfigImpl.fromJson(Map<String, dynamic> json) =>
@@ -153,7 +153,7 @@ class _$ModbusConfigImpl implements _ModbusConfig {
   /// [portId] is the port ID of the modbus device.
   /// This value is refered from the [InboundProtocol] `modbusPorts` list.
   @override
-  final String portId;
+  final String? portId;
 
   @override
   String toString() {
@@ -195,7 +195,7 @@ abstract class _ModbusConfig implements ModbusConfig {
   const factory _ModbusConfig(
       {required final bool isEnabled,
       final List<ModbusParameter> parameters,
-      required final String portId}) = _$ModbusConfigImpl;
+      final String? portId}) = _$ModbusConfigImpl;
 
   factory _ModbusConfig.fromJson(Map<String, dynamic> json) =
       _$ModbusConfigImpl.fromJson;
@@ -212,7 +212,7 @@ abstract class _ModbusConfig implements ModbusConfig {
 
   /// [portId] is the port ID of the modbus device.
   /// This value is refered from the [InboundProtocol] `modbusPorts` list.
-  String get portId;
+  String? get portId;
   @override
   @JsonKey(ignore: true)
   _$$ModbusConfigImplCopyWith<_$ModbusConfigImpl> get copyWith =>

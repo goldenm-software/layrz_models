@@ -11,7 +11,7 @@ class ModbusConfig with _$ModbusConfig {
 
     /// [portId] is the port ID of the modbus device.
     /// This value is refered from the [InboundProtocol] `modbusPorts` list.
-    required String portId,
+    String? portId,
   }) = _ModbusConfig;
 
   factory ModbusConfig.fromJson(Map<String, dynamic> json) => _$ModbusConfigFromJson(json);
