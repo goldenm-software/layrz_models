@@ -2278,6 +2278,188 @@ abstract class _BHSDriverSafetyEventScore implements BHSDriverSafetyEventScore {
       get copyWith => throw _privateConstructorUsedError;
 }
 
+BHSDriverSafetyDrivenScore _$BHSDriverSafetyDrivenScoreFromJson(
+    Map<String, dynamic> json) {
+  return _BHSDriverSafetyDrivenScore.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BHSDriverSafetyDrivenScore {
+  double get score => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+  double get drivenSeconds => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BHSDriverSafetyDrivenScoreCopyWith<BHSDriverSafetyDrivenScore>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BHSDriverSafetyDrivenScoreCopyWith<$Res> {
+  factory $BHSDriverSafetyDrivenScoreCopyWith(BHSDriverSafetyDrivenScore value,
+          $Res Function(BHSDriverSafetyDrivenScore) then) =
+      _$BHSDriverSafetyDrivenScoreCopyWithImpl<$Res,
+          BHSDriverSafetyDrivenScore>;
+  @useResult
+  $Res call({double score, String? status, double drivenSeconds});
+}
+
+/// @nodoc
+class _$BHSDriverSafetyDrivenScoreCopyWithImpl<$Res,
+        $Val extends BHSDriverSafetyDrivenScore>
+    implements $BHSDriverSafetyDrivenScoreCopyWith<$Res> {
+  _$BHSDriverSafetyDrivenScoreCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? score = null,
+    Object? status = freezed,
+    Object? drivenSeconds = null,
+  }) {
+    return _then(_value.copyWith(
+      score: null == score
+          ? _value.score
+          : score // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      drivenSeconds: null == drivenSeconds
+          ? _value.drivenSeconds
+          : drivenSeconds // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BHSDriverSafetyDrivenScoreImplCopyWith<$Res>
+    implements $BHSDriverSafetyDrivenScoreCopyWith<$Res> {
+  factory _$$BHSDriverSafetyDrivenScoreImplCopyWith(
+          _$BHSDriverSafetyDrivenScoreImpl value,
+          $Res Function(_$BHSDriverSafetyDrivenScoreImpl) then) =
+      __$$BHSDriverSafetyDrivenScoreImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double score, String? status, double drivenSeconds});
+}
+
+/// @nodoc
+class __$$BHSDriverSafetyDrivenScoreImplCopyWithImpl<$Res>
+    extends _$BHSDriverSafetyDrivenScoreCopyWithImpl<$Res,
+        _$BHSDriverSafetyDrivenScoreImpl>
+    implements _$$BHSDriverSafetyDrivenScoreImplCopyWith<$Res> {
+  __$$BHSDriverSafetyDrivenScoreImplCopyWithImpl(
+      _$BHSDriverSafetyDrivenScoreImpl _value,
+      $Res Function(_$BHSDriverSafetyDrivenScoreImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? score = null,
+    Object? status = freezed,
+    Object? drivenSeconds = null,
+  }) {
+    return _then(_$BHSDriverSafetyDrivenScoreImpl(
+      score: null == score
+          ? _value.score
+          : score // ignore: cast_nullable_to_non_nullable
+              as double,
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      drivenSeconds: null == drivenSeconds
+          ? _value.drivenSeconds
+          : drivenSeconds // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BHSDriverSafetyDrivenScoreImpl implements _BHSDriverSafetyDrivenScore {
+  const _$BHSDriverSafetyDrivenScoreImpl(
+      {required this.score, this.status, required this.drivenSeconds});
+
+  factory _$BHSDriverSafetyDrivenScoreImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$BHSDriverSafetyDrivenScoreImplFromJson(json);
+
+  @override
+  final double score;
+  @override
+  final String? status;
+  @override
+  final double drivenSeconds;
+
+  @override
+  String toString() {
+    return 'BHSDriverSafetyDrivenScore(score: $score, status: $status, drivenSeconds: $drivenSeconds)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BHSDriverSafetyDrivenScoreImpl &&
+            (identical(other.score, score) || other.score == score) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.drivenSeconds, drivenSeconds) ||
+                other.drivenSeconds == drivenSeconds));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, score, status, drivenSeconds);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BHSDriverSafetyDrivenScoreImplCopyWith<_$BHSDriverSafetyDrivenScoreImpl>
+      get copyWith => __$$BHSDriverSafetyDrivenScoreImplCopyWithImpl<
+          _$BHSDriverSafetyDrivenScoreImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BHSDriverSafetyDrivenScoreImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BHSDriverSafetyDrivenScore
+    implements BHSDriverSafetyDrivenScore {
+  const factory _BHSDriverSafetyDrivenScore(
+      {required final double score,
+      final String? status,
+      required final double drivenSeconds}) = _$BHSDriverSafetyDrivenScoreImpl;
+
+  factory _BHSDriverSafetyDrivenScore.fromJson(Map<String, dynamic> json) =
+      _$BHSDriverSafetyDrivenScoreImpl.fromJson;
+
+  @override
+  double get score;
+  @override
+  String? get status;
+  @override
+  double get drivenSeconds;
+  @override
+  @JsonKey(ignore: true)
+  _$$BHSDriverSafetyDrivenScoreImplCopyWith<_$BHSDriverSafetyDrivenScoreImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 BrickhouseDriverSafety _$BrickhouseDriverSafetyFromJson(
     Map<String, dynamic> json) {
   return _BrickhouseDriverSafety.fromJson(json);
@@ -2286,7 +2468,7 @@ BrickhouseDriverSafety _$BrickhouseDriverSafetyFromJson(
 /// @nodoc
 mixin _$BrickhouseDriverSafety {
   double get totalScore => throw _privateConstructorUsedError;
-  BHSDriverSafetyEventScore? get drivingHours =>
+  BHSDriverSafetyDrivenScore? get drivingHours =>
       throw _privateConstructorUsedError;
   BHSDriverSafetyEventScore? get harshAcceleration =>
       throw _privateConstructorUsedError;
@@ -2309,12 +2491,12 @@ abstract class $BrickhouseDriverSafetyCopyWith<$Res> {
   @useResult
   $Res call(
       {double totalScore,
-      BHSDriverSafetyEventScore? drivingHours,
+      BHSDriverSafetyDrivenScore? drivingHours,
       BHSDriverSafetyEventScore? harshAcceleration,
       BHSDriverSafetyEventScore? harshBraking,
       BHSDriverSafetyEventScore? harshCornering});
 
-  $BHSDriverSafetyEventScoreCopyWith<$Res>? get drivingHours;
+  $BHSDriverSafetyDrivenScoreCopyWith<$Res>? get drivingHours;
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshAcceleration;
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshBraking;
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshCornering;
@@ -2348,7 +2530,7 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
       drivingHours: freezed == drivingHours
           ? _value.drivingHours
           : drivingHours // ignore: cast_nullable_to_non_nullable
-              as BHSDriverSafetyEventScore?,
+              as BHSDriverSafetyDrivenScore?,
       harshAcceleration: freezed == harshAcceleration
           ? _value.harshAcceleration
           : harshAcceleration // ignore: cast_nullable_to_non_nullable
@@ -2366,12 +2548,12 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
 
   @override
   @pragma('vm:prefer-inline')
-  $BHSDriverSafetyEventScoreCopyWith<$Res>? get drivingHours {
+  $BHSDriverSafetyDrivenScoreCopyWith<$Res>? get drivingHours {
     if (_value.drivingHours == null) {
       return null;
     }
 
-    return $BHSDriverSafetyEventScoreCopyWith<$Res>(_value.drivingHours!,
+    return $BHSDriverSafetyDrivenScoreCopyWith<$Res>(_value.drivingHours!,
         (value) {
       return _then(_value.copyWith(drivingHours: value) as $Val);
     });
@@ -2428,13 +2610,13 @@ abstract class _$$BrickhouseDriverSafetyImplCopyWith<$Res>
   @useResult
   $Res call(
       {double totalScore,
-      BHSDriverSafetyEventScore? drivingHours,
+      BHSDriverSafetyDrivenScore? drivingHours,
       BHSDriverSafetyEventScore? harshAcceleration,
       BHSDriverSafetyEventScore? harshBraking,
       BHSDriverSafetyEventScore? harshCornering});
 
   @override
-  $BHSDriverSafetyEventScoreCopyWith<$Res>? get drivingHours;
+  $BHSDriverSafetyDrivenScoreCopyWith<$Res>? get drivingHours;
   @override
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshAcceleration;
   @override
@@ -2470,7 +2652,7 @@ class __$$BrickhouseDriverSafetyImplCopyWithImpl<$Res>
       drivingHours: freezed == drivingHours
           ? _value.drivingHours
           : drivingHours // ignore: cast_nullable_to_non_nullable
-              as BHSDriverSafetyEventScore?,
+              as BHSDriverSafetyDrivenScore?,
       harshAcceleration: freezed == harshAcceleration
           ? _value.harshAcceleration
           : harshAcceleration // ignore: cast_nullable_to_non_nullable
@@ -2503,7 +2685,7 @@ class _$BrickhouseDriverSafetyImpl implements _BrickhouseDriverSafety {
   @override
   final double totalScore;
   @override
-  final BHSDriverSafetyEventScore? drivingHours;
+  final BHSDriverSafetyDrivenScore? drivingHours;
   @override
   final BHSDriverSafetyEventScore? harshAcceleration;
   @override
@@ -2556,7 +2738,7 @@ class _$BrickhouseDriverSafetyImpl implements _BrickhouseDriverSafety {
 abstract class _BrickhouseDriverSafety implements BrickhouseDriverSafety {
   const factory _BrickhouseDriverSafety(
           {required final double totalScore,
-          final BHSDriverSafetyEventScore? drivingHours,
+          final BHSDriverSafetyDrivenScore? drivingHours,
           final BHSDriverSafetyEventScore? harshAcceleration,
           final BHSDriverSafetyEventScore? harshBraking,
           final BHSDriverSafetyEventScore? harshCornering}) =
@@ -2568,7 +2750,7 @@ abstract class _BrickhouseDriverSafety implements BrickhouseDriverSafety {
   @override
   double get totalScore;
   @override
-  BHSDriverSafetyEventScore? get drivingHours;
+  BHSDriverSafetyDrivenScore? get drivingHours;
   @override
   BHSDriverSafetyEventScore? get harshAcceleration;
   @override

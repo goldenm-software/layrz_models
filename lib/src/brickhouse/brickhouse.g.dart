@@ -240,13 +240,29 @@ Map<String, dynamic> _$$BHSDriverSafetyEventScoreImplToJson(
       'messages': instance.messages?.map((e) => e.toJson()).toList(),
     };
 
+_$BHSDriverSafetyDrivenScoreImpl _$$BHSDriverSafetyDrivenScoreImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BHSDriverSafetyDrivenScoreImpl(
+      score: (json['score'] as num).toDouble(),
+      status: json['status'] as String?,
+      drivenSeconds: (json['drivenSeconds'] as num).toDouble(),
+    );
+
+Map<String, dynamic> _$$BHSDriverSafetyDrivenScoreImplToJson(
+        _$BHSDriverSafetyDrivenScoreImpl instance) =>
+    <String, dynamic>{
+      'score': instance.score,
+      'status': instance.status,
+      'drivenSeconds': instance.drivenSeconds,
+    };
+
 _$BrickhouseDriverSafetyImpl _$$BrickhouseDriverSafetyImplFromJson(
         Map<String, dynamic> json) =>
     _$BrickhouseDriverSafetyImpl(
       totalScore: (json['totalScore'] as num).toDouble(),
       drivingHours: json['drivingHours'] == null
           ? null
-          : BHSDriverSafetyEventScore.fromJson(
+          : BHSDriverSafetyDrivenScore.fromJson(
               json['drivingHours'] as Map<String, dynamic>),
       harshAcceleration: json['harshAcceleration'] == null
           ? null

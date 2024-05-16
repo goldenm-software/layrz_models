@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.49
+- Added `BHSDriverSafetyDrivenScore` model
+
 ## 2.1.48
 - Updated `portId` from `String` to `String?` in `ModbusParameter` model
 
