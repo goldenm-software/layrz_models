@@ -12,7 +12,7 @@ part of 'mappit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 MappitRouteLinkingHistory _$MappitRouteLinkingHistoryFromJson(
     Map<String, dynamic> json) {
@@ -231,7 +231,7 @@ class _$MappitRouteLinkingHistoryImpl implements _MappitRouteLinkingHistory {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitRouteLinkingHistoryImpl &&
@@ -632,7 +632,7 @@ class _$MappitRouteImpl implements _MappitRoute {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitRouteImpl &&
@@ -927,7 +927,7 @@ class _$MappitLaborHourImpl implements _MappitLaborHour {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitLaborHourImpl &&
@@ -1168,7 +1168,7 @@ class _$MappitProfileGeofenceImpl implements _MappitProfileGeofence {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitProfileGeofenceImpl &&
@@ -1373,7 +1373,7 @@ class _$MappitProfileImpl implements _MappitProfile {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitProfileImpl &&
@@ -1581,7 +1581,7 @@ class _$MappitDurationRangeImpl implements _MappitDurationRange {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitDurationRangeImpl &&
@@ -1778,7 +1778,7 @@ class _$MappitIntRangeImpl implements _MappitIntRange {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitIntRangeImpl &&
@@ -1973,7 +1973,7 @@ class _$MappitDoubleRangeImpl implements _MappitDoubleRange {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitDoubleRangeImpl &&
@@ -2232,7 +2232,7 @@ class _$MappitHomeConfigImpl implements _MappitHomeConfig {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitHomeConfigImpl &&
@@ -2506,7 +2506,7 @@ class _$MappitFreeDayImpl implements _MappitFreeDay {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MappitFreeDayImpl &&

@@ -31,11 +31,11 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
       hasWebPopup: json['hasWebPopup'] as bool?,
       hasEmail: json['hasEmail'] as bool?,
       hasPhone: json['hasPhone'] as bool?,
-      batteryMinLevel: json['batteryMinLevel'] as int?,
+      batteryMinLevel: (json['batteryMinLevel'] as num?)?.toInt(),
       curfewStartHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson(json['curfewStartHour'] as int?),
+          .fromJson((json['curfewStartHour'] as num?)?.toInt()),
       curfewEndHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson(json['curfewEndHour'] as int?),
+          .fromJson((json['curfewEndHour'] as num?)?.toInt()),
       timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
           ?.map((e) => const WeekdayConverter().fromJson(e as String))
@@ -116,11 +116,11 @@ _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
       hasWebPopup: json['hasWebPopup'] as bool? ?? false,
       hasEmail: json['hasEmail'] as bool? ?? false,
       hasPhone: json['hasPhone'] as bool? ?? false,
-      batteryMinLevel: json['batteryMinLevel'] as int?,
+      batteryMinLevel: (json['batteryMinLevel'] as num?)?.toInt(),
       curfewStartHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson(json['curfewStartHour'] as int?),
+          .fromJson((json['curfewStartHour'] as num?)?.toInt()),
       curfewEndHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson(json['curfewEndHour'] as int?),
+          .fromJson((json['curfewEndHour'] as num?)?.toInt()),
       timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
               ?.map((e) => const WeekdayConverter().fromJson(e as String))
@@ -240,13 +240,29 @@ Map<String, dynamic> _$$BHSDriverSafetyEventScoreImplToJson(
       'messages': instance.messages?.map((e) => e.toJson()).toList(),
     };
 
+_$BHSDriverSafetyDrivenScoreImpl _$$BHSDriverSafetyDrivenScoreImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BHSDriverSafetyDrivenScoreImpl(
+      score: (json['score'] as num).toDouble(),
+      status: json['status'] as String?,
+      drivenSeconds: (json['drivenSeconds'] as num).toDouble(),
+    );
+
+Map<String, dynamic> _$$BHSDriverSafetyDrivenScoreImplToJson(
+        _$BHSDriverSafetyDrivenScoreImpl instance) =>
+    <String, dynamic>{
+      'score': instance.score,
+      'status': instance.status,
+      'drivenSeconds': instance.drivenSeconds,
+    };
+
 _$BrickhouseDriverSafetyImpl _$$BrickhouseDriverSafetyImplFromJson(
         Map<String, dynamic> json) =>
     _$BrickhouseDriverSafetyImpl(
       totalScore: (json['totalScore'] as num).toDouble(),
       drivingHours: json['drivingHours'] == null
           ? null
-          : BHSDriverSafetyEventScore.fromJson(
+          : BHSDriverSafetyDrivenScore.fromJson(
               json['drivingHours'] as Map<String, dynamic>),
       harshAcceleration: json['harshAcceleration'] == null
           ? null

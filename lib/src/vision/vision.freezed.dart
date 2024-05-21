@@ -12,7 +12,7 @@ part of 'vision.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 VisionProtocol _$VisionProtocolFromJson(Map<String, dynamic> json) {
   return _VisionProtocol.fromJson(json);
@@ -208,7 +208,7 @@ class _$VisionProtocolImpl implements _VisionProtocol {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VisionProtocolImpl &&
@@ -555,7 +555,7 @@ class _$VisionProfileImpl implements _VisionProfile {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VisionProfileImpl &&
@@ -785,7 +785,7 @@ class _$VisionGaugeResultImpl implements _VisionGaugeResult {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$VisionGaugeResultImpl &&

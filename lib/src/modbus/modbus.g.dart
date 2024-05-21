@@ -13,7 +13,7 @@ _$ModbusConfigImpl _$$ModbusConfigImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => ModbusParameter.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      portId: json['portId'] as String,
+      portId: json['portId'] as String?,
     );
 
 Map<String, dynamic> _$$ModbusConfigImplToJson(_$ModbusConfigImpl instance) =>

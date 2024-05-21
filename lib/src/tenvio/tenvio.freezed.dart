@@ -12,7 +12,7 @@ part of 'tenvio.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 TenvioItem _$TenvioItemFromJson(Map<String, dynamic> json) {
   return _TenvioItem.fromJson(json);
@@ -403,7 +403,7 @@ class _$TenvioItemImpl implements _TenvioItem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioItemImpl &&
@@ -874,7 +874,7 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioMatrixItemImpl &&
@@ -1299,7 +1299,7 @@ class _$TenvioItemMovementImpl implements _TenvioItemMovement {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioItemMovementImpl &&
@@ -1435,10 +1435,7 @@ mixin _$TenvioPackage {
   Asset? get warehouse => throw _privateConstructorUsedError;
 
   /// [items] is the list of items that are part of the package.
-  List<TenvioItem>? get items => throw _privateConstructorUsedError;
-
-  /// [itemsIds] is the list of items identifiers that are part of the package.
-  List<String>? get itemsIds => throw _privateConstructorUsedError;
+  List<TenvioPackageQuantity>? get items => throw _privateConstructorUsedError;
 
   /// [status] is the status of the package.
   @TenvioPackageStatusConverter()
@@ -1471,8 +1468,7 @@ abstract class $TenvioPackageCopyWith<$Res> {
       String trackingId,
       String? warehouseId,
       Asset? warehouse,
-      List<TenvioItem>? items,
-      List<String>? itemsIds,
+      List<TenvioPackageQuantity>? items,
       @TenvioPackageStatusConverter() TenvioPackageStatus status,
       @TimestampConverter() DateTime createdAt,
       @TimestampConverter() DateTime updatedAt});
@@ -1501,7 +1497,6 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
     Object? warehouseId = freezed,
     Object? warehouse = freezed,
     Object? items = freezed,
-    Object? itemsIds = freezed,
     Object? status = null,
     Object? createdAt = null,
     Object? updatedAt = null,
@@ -1534,11 +1529,7 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
       items: freezed == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<TenvioItem>?,
-      itemsIds: freezed == itemsIds
-          ? _value.itemsIds
-          : itemsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<TenvioPackageQuantity>?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -1594,8 +1585,7 @@ abstract class _$$TenvioPackageImplCopyWith<$Res>
       String trackingId,
       String? warehouseId,
       Asset? warehouse,
-      List<TenvioItem>? items,
-      List<String>? itemsIds,
+      List<TenvioPackageQuantity>? items,
       @TenvioPackageStatusConverter() TenvioPackageStatus status,
       @TimestampConverter() DateTime createdAt,
       @TimestampConverter() DateTime updatedAt});
@@ -1624,7 +1614,6 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
     Object? warehouseId = freezed,
     Object? warehouse = freezed,
     Object? items = freezed,
-    Object? itemsIds = freezed,
     Object? status = null,
     Object? createdAt = null,
     Object? updatedAt = null,
@@ -1657,11 +1646,7 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
       items: freezed == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<TenvioItem>?,
-      itemsIds: freezed == itemsIds
-          ? _value._itemsIds
-          : itemsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<TenvioPackageQuantity>?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -1688,13 +1673,11 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       required this.trackingId,
       this.warehouseId,
       this.warehouse,
-      final List<TenvioItem>? items,
-      final List<String>? itemsIds,
+      final List<TenvioPackageQuantity>? items,
       @TenvioPackageStatusConverter() required this.status,
       @TimestampConverter() required this.createdAt,
       @TimestampConverter() required this.updatedAt})
-      : _items = items,
-        _itemsIds = itemsIds;
+      : _items = items;
 
   factory _$TenvioPackageImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioPackageImplFromJson(json);
@@ -1726,27 +1709,14 @@ class _$TenvioPackageImpl implements _TenvioPackage {
   final Asset? warehouse;
 
   /// [items] is the list of items that are part of the package.
-  final List<TenvioItem>? _items;
+  final List<TenvioPackageQuantity>? _items;
 
   /// [items] is the list of items that are part of the package.
   @override
-  List<TenvioItem>? get items {
+  List<TenvioPackageQuantity>? get items {
     final value = _items;
     if (value == null) return null;
     if (_items is EqualUnmodifiableListView) return _items;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// [itemsIds] is the list of items identifiers that are part of the package.
-  final List<String>? _itemsIds;
-
-  /// [itemsIds] is the list of items identifiers that are part of the package.
-  @override
-  List<String>? get itemsIds {
-    final value = _itemsIds;
-    if (value == null) return null;
-    if (_itemsIds is EqualUnmodifiableListView) return _itemsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -1768,11 +1738,11 @@ class _$TenvioPackageImpl implements _TenvioPackage {
 
   @override
   String toString() {
-    return 'TenvioPackage(id: $id, packerId: $packerId, packer: $packer, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, items: $items, itemsIds: $itemsIds, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'TenvioPackage(id: $id, packerId: $packerId, packer: $packer, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, items: $items, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioPackageImpl &&
@@ -1787,7 +1757,6 @@ class _$TenvioPackageImpl implements _TenvioPackage {
             (identical(other.warehouse, warehouse) ||
                 other.warehouse == warehouse) &&
             const DeepCollectionEquality().equals(other._items, _items) &&
-            const DeepCollectionEquality().equals(other._itemsIds, _itemsIds) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
@@ -1806,7 +1775,6 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       warehouseId,
       warehouse,
       const DeepCollectionEquality().hash(_items),
-      const DeepCollectionEquality().hash(_itemsIds),
       status,
       createdAt,
       updatedAt);
@@ -1833,8 +1801,7 @@ abstract class _TenvioPackage implements TenvioPackage {
       required final String trackingId,
       final String? warehouseId,
       final Asset? warehouse,
-      final List<TenvioItem>? items,
-      final List<String>? itemsIds,
+      final List<TenvioPackageQuantity>? items,
       @TenvioPackageStatusConverter() required final TenvioPackageStatus status,
       @TimestampConverter() required final DateTime createdAt,
       @TimestampConverter()
@@ -1872,11 +1839,7 @@ abstract class _TenvioPackage implements TenvioPackage {
   @override
 
   /// [items] is the list of items that are part of the package.
-  List<TenvioItem>? get items;
-  @override
-
-  /// [itemsIds] is the list of items identifiers that are part of the package.
-  List<String>? get itemsIds;
+  List<TenvioPackageQuantity>? get items;
   @override
 
   /// [status] is the status of the package.
@@ -1896,6 +1859,246 @@ abstract class _TenvioPackage implements TenvioPackage {
   @JsonKey(ignore: true)
   _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+TenvioPackageQuantity _$TenvioPackageQuantityFromJson(
+    Map<String, dynamic> json) {
+  return _TenvioPackageQuantity.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioPackageQuantity {
+  /// [id] is the unique identifier of the package quantity
+  String get id => throw _privateConstructorUsedError;
+
+  /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
+  String get matrixId => throw _privateConstructorUsedError;
+
+  /// [matrix] is the matrix that the package quantity is related.
+  TenvioMatrixItem? get matrix => throw _privateConstructorUsedError;
+
+  /// [quantity] is the quantity of the package.
+  int get quantity => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioPackageQuantityCopyWith<TenvioPackageQuantity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioPackageQuantityCopyWith<$Res> {
+  factory $TenvioPackageQuantityCopyWith(TenvioPackageQuantity value,
+          $Res Function(TenvioPackageQuantity) then) =
+      _$TenvioPackageQuantityCopyWithImpl<$Res, TenvioPackageQuantity>;
+  @useResult
+  $Res call(
+      {String id, String matrixId, TenvioMatrixItem? matrix, int quantity});
+
+  $TenvioMatrixItemCopyWith<$Res>? get matrix;
+}
+
+/// @nodoc
+class _$TenvioPackageQuantityCopyWithImpl<$Res,
+        $Val extends TenvioPackageQuantity>
+    implements $TenvioPackageQuantityCopyWith<$Res> {
+  _$TenvioPackageQuantityCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? matrixId = null,
+    Object? matrix = freezed,
+    Object? quantity = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      matrixId: null == matrixId
+          ? _value.matrixId
+          : matrixId // ignore: cast_nullable_to_non_nullable
+              as String,
+      matrix: freezed == matrix
+          ? _value.matrix
+          : matrix // ignore: cast_nullable_to_non_nullable
+              as TenvioMatrixItem?,
+      quantity: null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TenvioMatrixItemCopyWith<$Res>? get matrix {
+    if (_value.matrix == null) {
+      return null;
+    }
+
+    return $TenvioMatrixItemCopyWith<$Res>(_value.matrix!, (value) {
+      return _then(_value.copyWith(matrix: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioPackageQuantityImplCopyWith<$Res>
+    implements $TenvioPackageQuantityCopyWith<$Res> {
+  factory _$$TenvioPackageQuantityImplCopyWith(
+          _$TenvioPackageQuantityImpl value,
+          $Res Function(_$TenvioPackageQuantityImpl) then) =
+      __$$TenvioPackageQuantityImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id, String matrixId, TenvioMatrixItem? matrix, int quantity});
+
+  @override
+  $TenvioMatrixItemCopyWith<$Res>? get matrix;
+}
+
+/// @nodoc
+class __$$TenvioPackageQuantityImplCopyWithImpl<$Res>
+    extends _$TenvioPackageQuantityCopyWithImpl<$Res,
+        _$TenvioPackageQuantityImpl>
+    implements _$$TenvioPackageQuantityImplCopyWith<$Res> {
+  __$$TenvioPackageQuantityImplCopyWithImpl(_$TenvioPackageQuantityImpl _value,
+      $Res Function(_$TenvioPackageQuantityImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? matrixId = null,
+    Object? matrix = freezed,
+    Object? quantity = null,
+  }) {
+    return _then(_$TenvioPackageQuantityImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      matrixId: null == matrixId
+          ? _value.matrixId
+          : matrixId // ignore: cast_nullable_to_non_nullable
+              as String,
+      matrix: freezed == matrix
+          ? _value.matrix
+          : matrix // ignore: cast_nullable_to_non_nullable
+              as TenvioMatrixItem?,
+      quantity: null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioPackageQuantityImpl implements _TenvioPackageQuantity {
+  const _$TenvioPackageQuantityImpl(
+      {required this.id,
+      required this.matrixId,
+      this.matrix,
+      required this.quantity});
+
+  factory _$TenvioPackageQuantityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioPackageQuantityImplFromJson(json);
+
+  /// [id] is the unique identifier of the package quantity
+  @override
+  final String id;
+
+  /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
+  @override
+  final String matrixId;
+
+  /// [matrix] is the matrix that the package quantity is related.
+  @override
+  final TenvioMatrixItem? matrix;
+
+  /// [quantity] is the quantity of the package.
+  @override
+  final int quantity;
+
+  @override
+  String toString() {
+    return 'TenvioPackageQuantity(id: $id, matrixId: $matrixId, matrix: $matrix, quantity: $quantity)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TenvioPackageQuantityImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.matrixId, matrixId) ||
+                other.matrixId == matrixId) &&
+            (identical(other.matrix, matrix) || other.matrix == matrix) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, matrixId, matrix, quantity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioPackageQuantityImplCopyWith<_$TenvioPackageQuantityImpl>
+      get copyWith => __$$TenvioPackageQuantityImplCopyWithImpl<
+          _$TenvioPackageQuantityImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioPackageQuantityImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioPackageQuantity implements TenvioPackageQuantity {
+  const factory _TenvioPackageQuantity(
+      {required final String id,
+      required final String matrixId,
+      final TenvioMatrixItem? matrix,
+      required final int quantity}) = _$TenvioPackageQuantityImpl;
+
+  factory _TenvioPackageQuantity.fromJson(Map<String, dynamic> json) =
+      _$TenvioPackageQuantityImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier of the package quantity
+  String get id;
+  @override
+
+  /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
+  String get matrixId;
+  @override
+
+  /// [matrix] is the matrix that the package quantity is related.
+  TenvioMatrixItem? get matrix;
+  @override
+
+  /// [quantity] is the quantity of the package.
+  int get quantity;
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioPackageQuantityImplCopyWith<_$TenvioPackageQuantityImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 DeliverLocation _$DeliverLocationFromJson(Map<String, dynamic> json) {
@@ -2080,7 +2283,7 @@ class _$DeliverLocationImpl implements _DeliverLocation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DeliverLocationImpl &&
@@ -2779,7 +2982,7 @@ class _$TenvioOrderImpl implements _TenvioOrder {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioOrderImpl &&
@@ -3113,7 +3316,7 @@ class _$TenvioImageSetImpl implements _TenvioImageSet {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioImageSetImpl &&
@@ -3480,7 +3683,7 @@ class _$TenvioCustomPropertyImpl implements _TenvioCustomProperty {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioCustomPropertyImpl &&
@@ -3807,7 +4010,7 @@ class _$DropoffFailedReasonImpl implements _DropoffFailedReason {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$DropoffFailedReasonImpl &&

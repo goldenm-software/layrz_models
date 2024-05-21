@@ -21,6 +21,18 @@ class BHSDriverSafetyEventScore with _$BHSDriverSafetyEventScore {
   factory BHSDriverSafetyEventScore.fromJson(Map<String, dynamic> json) => _$BHSDriverSafetyEventScoreFromJson(json);
 }
 
+@freezed
+class BHSDriverSafetyDrivenScore with _$BHSDriverSafetyDrivenScore {
+  const factory BHSDriverSafetyDrivenScore({
+    required double score,
+    String? status,
+    required double drivenSeconds,
+  }) = _BHSDriverSafetyDrivenScore;
+
+  /// from json
+  factory BHSDriverSafetyDrivenScore.fromJson(Map<String, dynamic> json) => _$BHSDriverSafetyDrivenScoreFromJson(json);
+}
+
 /// totalScore Float
 /// Total score of the driver.
 ///
@@ -39,7 +51,7 @@ class BHSDriverSafetyEventScore with _$BHSDriverSafetyEventScore {
 class BrickhouseDriverSafety with _$BrickhouseDriverSafety {
   const factory BrickhouseDriverSafety({
     required double totalScore,
-    BHSDriverSafetyEventScore? drivingHours,
+    BHSDriverSafetyDrivenScore? drivingHours,
     BHSDriverSafetyEventScore? harshAcceleration,
     BHSDriverSafetyEventScore? harshBraking,
     BHSDriverSafetyEventScore? harshCornering,
