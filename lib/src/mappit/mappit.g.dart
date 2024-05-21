@@ -147,8 +147,8 @@ Map<String, dynamic> _$$MappitDurationRangeImplToJson(
 
 _$MappitIntRangeImpl _$$MappitIntRangeImplFromJson(Map<String, dynamic> json) =>
     _$MappitIntRangeImpl(
-      min: json['min'] as int? ?? 0,
-      max: json['max'] as int? ?? 0,
+      min: (json['min'] as num?)?.toInt() ?? 0,
+      max: (json['max'] as num?)?.toInt() ?? 0,
       color: json['color'] == null
           ? Colors.blue
           : const ColorConverter().fromJson(json['color'] as String),

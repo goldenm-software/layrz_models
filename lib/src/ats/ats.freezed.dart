@@ -5214,6 +5214,16 @@ mixin _$AtsPurchaseOrder {
   @TimestampOrNullConverter()
   DateTime? get deliveredAt => throw _privateConstructorUsedError;
 
+  /// `deliverCategory` defines the delivery category.
+  @AtsPurchaseOrderSubCategoriesOrNullConverter()
+  AtsPurchaseOrderSubCategories? get deliverCategory =>
+      throw _privateConstructorUsedError;
+
+  /// `category` defines the category.
+  @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+  AtsPurchaseOrderCategoriesEntity? get category =>
+      throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AtsPurchaseOrderCopyWith<AtsPurchaseOrder> get copyWith =>
@@ -5256,7 +5266,11 @@ abstract class $AtsPurchaseOrderCopyWith<$Res> {
       AtsPurchaseOrderStatus? orderStatus,
       @TimestampOrNullConverter() DateTime? inTransitAt,
       @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
-      @TimestampOrNullConverter() DateTime? deliveredAt});
+      @TimestampOrNullConverter() DateTime? deliveredAt,
+      @AtsPurchaseOrderSubCategoriesOrNullConverter()
+      AtsPurchaseOrderSubCategories? deliverCategory,
+      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+      AtsPurchaseOrderCategoriesEntity? category});
 
   $AssetCopyWith<$Res>? get asset;
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
@@ -5310,6 +5324,8 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     Object? inTransitAt = freezed,
     Object? waitingToDispatchAt = freezed,
     Object? deliveredAt = freezed,
+    Object? deliverCategory = freezed,
+    Object? category = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -5424,6 +5440,14 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
           ? _value.deliveredAt
           : deliveredAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      deliverCategory: freezed == deliverCategory
+          ? _value.deliverCategory
+          : deliverCategory // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderSubCategories?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderCategoriesEntity?,
     ) as $Val);
   }
 
@@ -5577,7 +5601,11 @@ abstract class _$$AtsPurchaseOrderImplCopyWith<$Res>
       AtsPurchaseOrderStatus? orderStatus,
       @TimestampOrNullConverter() DateTime? inTransitAt,
       @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
-      @TimestampOrNullConverter() DateTime? deliveredAt});
+      @TimestampOrNullConverter() DateTime? deliveredAt,
+      @AtsPurchaseOrderSubCategoriesOrNullConverter()
+      AtsPurchaseOrderSubCategories? deliverCategory,
+      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+      AtsPurchaseOrderCategoriesEntity? category});
 
   @override
   $AssetCopyWith<$Res>? get asset;
@@ -5638,6 +5666,8 @@ class __$$AtsPurchaseOrderImplCopyWithImpl<$Res>
     Object? inTransitAt = freezed,
     Object? waitingToDispatchAt = freezed,
     Object? deliveredAt = freezed,
+    Object? deliverCategory = freezed,
+    Object? category = freezed,
   }) {
     return _then(_$AtsPurchaseOrderImpl(
       id: freezed == id
@@ -5752,6 +5782,14 @@ class __$$AtsPurchaseOrderImplCopyWithImpl<$Res>
           ? _value.deliveredAt
           : deliveredAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      deliverCategory: freezed == deliverCategory
+          ? _value.deliverCategory
+          : deliverCategory // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderSubCategories?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderCategoriesEntity?,
     ));
   }
 }
@@ -5787,7 +5825,9 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
       @AtsPurchaseOrderStatusOrNullConverter() this.orderStatus,
       @TimestampOrNullConverter() this.inTransitAt,
       @TimestampOrNullConverter() this.waitingToDispatchAt,
-      @TimestampOrNullConverter() this.deliveredAt})
+      @TimestampOrNullConverter() this.deliveredAt,
+      @AtsPurchaseOrderSubCategoriesOrNullConverter() this.deliverCategory,
+      @AtsPurchaseOrderCategoriesEntityOrNullConverter() this.category})
       : _productsInformation = productsInformation;
 
   factory _$AtsPurchaseOrderImpl.fromJson(Map<String, dynamic> json) =>
@@ -5923,9 +5963,19 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
   @TimestampOrNullConverter()
   final DateTime? deliveredAt;
 
+  /// `deliverCategory` defines the delivery category.
+  @override
+  @AtsPurchaseOrderSubCategoriesOrNullConverter()
+  final AtsPurchaseOrderSubCategories? deliverCategory;
+
+  /// `category` defines the category.
+  @override
+  @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+  final AtsPurchaseOrderCategoriesEntity? category;
+
   @override
   String toString() {
-    return 'AtsPurchaseOrder(id: $id, ownerId: $ownerId, orderId: $orderId, assetId: $assetId, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, receivedAt: $receivedAt, asset: $asset, sellerInformation: $sellerInformation, receiverInformation: $receiverInformation, productsInformation: $productsInformation, total: $total, isReceived: $isReceived, hasReception: $hasReception, transportInformation: $transportInformation, hasRawXml: $hasRawXml, invoiceType: $invoiceType, parentInvoice: $parentInvoice, ideInformation: $ideInformation, receptionAt: $receptionAt, operation: $operation, transportAsset: $transportAsset, sellerAsset: $sellerAsset, orderStatus: $orderStatus, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt)';
+    return 'AtsPurchaseOrder(id: $id, ownerId: $ownerId, orderId: $orderId, assetId: $assetId, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, receivedAt: $receivedAt, asset: $asset, sellerInformation: $sellerInformation, receiverInformation: $receiverInformation, productsInformation: $productsInformation, total: $total, isReceived: $isReceived, hasReception: $hasReception, transportInformation: $transportInformation, hasRawXml: $hasRawXml, invoiceType: $invoiceType, parentInvoice: $parentInvoice, ideInformation: $ideInformation, receptionAt: $receptionAt, operation: $operation, transportAsset: $transportAsset, sellerAsset: $sellerAsset, orderStatus: $orderStatus, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt, deliverCategory: $deliverCategory, category: $category)';
   }
 
   @override
@@ -5982,7 +6032,11 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
             (identical(other.waitingToDispatchAt, waitingToDispatchAt) ||
                 other.waitingToDispatchAt == waitingToDispatchAt) &&
             (identical(other.deliveredAt, deliveredAt) ||
-                other.deliveredAt == deliveredAt));
+                other.deliveredAt == deliveredAt) &&
+            (identical(other.deliverCategory, deliverCategory) ||
+                other.deliverCategory == deliverCategory) &&
+            (identical(other.category, category) ||
+                other.category == category));
   }
 
   @JsonKey(ignore: true)
@@ -6016,7 +6070,9 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
         orderStatus,
         inTransitAt,
         waitingToDispatchAt,
-        deliveredAt
+        deliveredAt,
+        deliverCategory,
+        category
       ]);
 
   @JsonKey(ignore: true)
@@ -6065,7 +6121,11 @@ abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
           final AtsPurchaseOrderStatus? orderStatus,
           @TimestampOrNullConverter() final DateTime? inTransitAt,
           @TimestampOrNullConverter() final DateTime? waitingToDispatchAt,
-          @TimestampOrNullConverter() final DateTime? deliveredAt}) =
+          @TimestampOrNullConverter() final DateTime? deliveredAt,
+          @AtsPurchaseOrderSubCategoriesOrNullConverter()
+          final AtsPurchaseOrderSubCategories? deliverCategory,
+          @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+          final AtsPurchaseOrderCategoriesEntity? category}) =
       _$AtsPurchaseOrderImpl;
 
   factory _AtsPurchaseOrder.fromJson(Map<String, dynamic> json) =
@@ -6191,6 +6251,16 @@ abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
   /// `deliveredAt` defines the delivered date.
   @TimestampOrNullConverter()
   DateTime? get deliveredAt;
+  @override
+
+  /// `deliverCategory` defines the delivery category.
+  @AtsPurchaseOrderSubCategoriesOrNullConverter()
+  AtsPurchaseOrderSubCategories? get deliverCategory;
+  @override
+
+  /// `category` defines the category.
+  @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+  AtsPurchaseOrderCategoriesEntity? get category;
   @override
   @JsonKey(ignore: true)
   _$$AtsPurchaseOrderImplCopyWith<_$AtsPurchaseOrderImpl> get copyWith =>

@@ -11,7 +11,7 @@ _$SimulationCycleImpl _$$SimulationCycleImplFromJson(
     _$SimulationCycleImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      steps: json['steps'] as int,
+      steps: (json['steps'] as num).toInt(),
       fileUri: json['fileUri'] as String?,
     );
 

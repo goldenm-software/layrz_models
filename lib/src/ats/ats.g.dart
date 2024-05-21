@@ -117,8 +117,8 @@ _$AtsAuthenticationCardImpl _$$AtsAuthenticationCardImplFromJson(
         Map<String, dynamic> json) =>
     _$AtsAuthenticationCardImpl(
       id: json['id'] as String,
-      number: json['number'] as int,
-      externalIdentifier: json['externalIdentifier'] as int,
+      number: (json['number'] as num).toInt(),
+      externalIdentifier: (json['externalIdentifier'] as num).toInt(),
       externalIdentifierHex: json['externalIdentifierHex'] as String,
       asset: json['asset'] == null
           ? null
@@ -490,6 +490,10 @@ _$AtsPurchaseOrderImpl _$$AtsPurchaseOrderImplFromJson(
           .fromJson(json['waitingToDispatchAt'] as num?),
       deliveredAt: const TimestampOrNullConverter()
           .fromJson(json['deliveredAt'] as num?),
+      deliverCategory: const AtsPurchaseOrderSubCategoriesOrNullConverter()
+          .fromJson(json['deliverCategory'] as String?),
+      category: const AtsPurchaseOrderCategoriesEntityOrNullConverter()
+          .fromJson(json['category'] as String?),
     );
 
 Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
@@ -532,6 +536,10 @@ Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
           const TimestampOrNullConverter().toJson(instance.waitingToDispatchAt),
       'deliveredAt':
           const TimestampOrNullConverter().toJson(instance.deliveredAt),
+      'deliverCategory': const AtsPurchaseOrderSubCategoriesOrNullConverter()
+          .toJson(instance.deliverCategory),
+      'category': const AtsPurchaseOrderCategoriesEntityOrNullConverter()
+          .toJson(instance.category),
     };
 
 _$AtsPurchaseTotalImpl _$$AtsPurchaseTotalImplFromJson(
@@ -567,12 +575,13 @@ Map<String, dynamic> _$$AtsPurchaseTotalImplToJson(
 _$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
     _$AtsReceptionImpl(
       id: json['id'] as String,
-      orderId: json['orderId'] as int?,
+      orderId: (json['orderId'] as num?)?.toInt(),
       order: json['order'] == null
           ? null
           : AtsPurchaseOrder.fromJson(json['order'] as Map<String, dynamic>),
-      ordersIds:
-          (json['ordersIds'] as List<dynamic>?)?.map((e) => e as int).toList(),
+      ordersIds: (json['ordersIds'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
       entry: json['entry'] == null
           ? null
           : AtsEntry.fromJson(json['entry'] as Map<String, dynamic>),
@@ -644,7 +653,7 @@ Map<String, dynamic> _$$AtsExitStatusImplToJson(_$AtsExitStatusImpl instance) =>
 _$AtsExitImpl _$$AtsExitImplFromJson(Map<String, dynamic> json) =>
     _$AtsExitImpl(
       id: json['id'] as String?,
-      identifier: json['identifier'] as int?,
+      identifier: (json['identifier'] as num?)?.toInt(),
       fromAssetId: json['fromAssetId'] as String?,
       fromAsset: json['fromAsset'] == null
           ? null
@@ -742,7 +751,7 @@ _$AtsExecuteExitInputImpl _$$AtsExecuteExitInputImplFromJson(
     _$AtsExecuteExitInputImpl(
       fromAssetId: json['fromAssetId'] as String?,
       sensorId: json['sensorId'] as String?,
-      presetValue: json['presetValue'] as int?,
+      presetValue: (json['presetValue'] as num?)?.toInt(),
       toAssetId: json['toAssetId'] as String?,
       toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
       fromApp: const AtsFromAppOrNullConverter()

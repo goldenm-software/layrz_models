@@ -1,26 +1,37 @@
 # Changelog
 
+## 2.1.50
+
+- Added `deliverCategory` and `category` properties to `AtsPurchaseOrder` model
+
 ## 2.1.49
+
 - Added `BHSDriverSafetyDrivenScore` model
 
 ## 2.1.48
+
 - Updated `portId` from `String` to `String?` in `ModbusParameter` model
 
 ## 2.1.47
+
 - Added `LayoutDesign.center` to `LayoutDesign` enum
 
 ## 2.1.46
+
 - Removed `items` and `itemsIds` from `TenvioPackage` model
 - Added `TenvioPackageQuantity` model
 - Added `items` of type `List<TenvioPackageQuantity>` to `TenvioPackage` model
 
 ## 2.1.45
+
 - Added new stauses to `TenvioOrderStatus` enum
 
 ## 2.1.44
+
 - Add `AtsPurchaseOrderStatus` enum `generated` value
 
 ## 2.1.43
+
 - Add `deliveredAt`, `waitingToDispatchAt`, `inTransitAt`,`orderStatus` in `AtsPurchaseOrder`
 - Create a new folder to set ats converters
 
@@ -34,15 +45,19 @@
 - Changed `qrCode` to `barcode` in `TenvioMatrixItem` model
 
 ## 2.1.40
+
 - Added `speeding` value to `BrickhouseAlertType` enum, and added `bhsSpeeding` value to `TriggerType`
 
 ## 2.1.39
+
 - Created `BrickhouseDriverSafety` entity
 
 ## 2.1.38
+
 - Added `SensorSubType.flespi` to `SensorSubType` enum
 
 ## 2.1.37
+
 - Move Ats `entries.dart` file to `entry.dart` and create a new folder `entries` to put inside all Models of Ats Entries
 - Create `AtsVolume` model
 - Add `volumeHistory` to `AtsEntry
@@ -53,6 +68,7 @@
 - Added `modbusPort` in `DeviceCommand` model
 
 ## 2.1.35
+
 - Add `fuelSubtype` - `density` - `temperature` - tanksImages in `AtsReceptionProduct`
 
 ## 2.1.34
@@ -61,7 +77,7 @@
 
 ## 2.1.33
 
-- Added `dynamicIcon` parameter to `OutboundProtocol` model	
+- Added `dynamicIcon` parameter to `OutboundProtocol` model
 
 ## 2.1.32
 
@@ -74,6 +90,7 @@
 - Added `hasModbus` flag into `InboundProtocol` model
 
 ## 2.1.30
+
 - Added `sensors` parameter to `TriggerActivation` model
 
 ## 2.1.29
@@ -82,31 +99,38 @@
 - New internal app identifier for `SDM_MANAGER`.
 
 ## 2.1.28
-- Removed `orderId` from `AtsReceptionInput` 
+
+- Removed `orderId` from `AtsReceptionInput`
 - Add `ordersIds` from `AtsReceptionInput`
 
 ## 2.1.27
+
 - Add `mappitSecondaryRoutesIds` inside `Asset`
 - Removed `mappitSecondaryRoutesIds` from `User`
 
 ## 2.1.26
+
 - Removed `mappitSecondaryRoutesIds` from `User`
 - Add `mappitSecondaryRoutesIds` inside `MappitRoute`
 
 ## 2.1.25
+
 - Add `mappitSecondaryRoutesIds` inside `User`
 
 ## 2.1.24
-- Added `transportAsset` and `sellerAsset` inside  `AtsPurchaseOrder`.
+
+- Added `transportAsset` and `sellerAsset` inside `AtsPurchaseOrder`.
 
 ## 2.1.23
 
 - New asset mode `ZONE` that converts the asset into a Geofence.
 
 ## 2.1.22
+
 - Added `presenceType` for geofence presence on TriggerActivation.
 
 ## 2.1.21
+
 - Added `geofences` that refer to the geofences linked to the `Asset` model
 
 ## 2.1.20
@@ -164,8 +188,8 @@
 - Added run test in CI
 
 ## 2.1.8
-- Add new `ReferenceCategory` to ATS ecosystem and Tenvio ecosystem
 
+- Add new `ReferenceCategory` to ATS ecosystem and Tenvio ecosystem
 
 ## 2.1.7
 

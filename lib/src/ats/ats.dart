@@ -40,3 +40,5 @@ part 'src/entries/volume.dart';
 
 // ATS enums
 part 'src/converters/order_status.dart';
+part 'src/converters/deliver_category.dart';
+part 'src/converters/category.dart';
