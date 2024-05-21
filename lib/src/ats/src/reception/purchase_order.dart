@@ -3,7 +3,7 @@ part of '../../ats.dart';
 enum PurchaseOrderOperation {
   purchase,
   seller,
-  ;
+  all;
 
   String toJson() {
     switch (this) {
@@ -11,6 +11,8 @@ enum PurchaseOrderOperation {
         return 'PURCHASE';
       case PurchaseOrderOperation.seller:
         return 'SELLER';
+      case PurchaseOrderOperation.all:
+        return 'ALL';
     }
   }
 
@@ -20,6 +22,8 @@ enum PurchaseOrderOperation {
         return PurchaseOrderOperation.purchase;
       case 'SELLER':
         return PurchaseOrderOperation.seller;
+      case 'ALL':
+        return PurchaseOrderOperation.all;
       default:
         throw Exception('Unknown PurchaseOrderOperation value: $value');
     }

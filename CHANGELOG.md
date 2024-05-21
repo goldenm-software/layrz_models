@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.51
+
+- Added `all` property to enum `PurchaseOrderOperation`
+
 ## 2.1.50
 
 - Added `deliverCategory` and `category` properties to `AtsPurchaseOrder` model
