@@ -117,8 +117,8 @@ _$AtsAuthenticationCardImpl _$$AtsAuthenticationCardImplFromJson(
         Map<String, dynamic> json) =>
     _$AtsAuthenticationCardImpl(
       id: json['id'] as String,
-      number: (json['number'] as num).toInt(),
-      externalIdentifier: (json['externalIdentifier'] as num).toInt(),
+      number: json['number'] as int,
+      externalIdentifier: json['externalIdentifier'] as int,
       externalIdentifierHex: json['externalIdentifierHex'] as String,
       asset: json['asset'] == null
           ? null
@@ -575,13 +575,12 @@ Map<String, dynamic> _$$AtsPurchaseTotalImplToJson(
 _$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
     _$AtsReceptionImpl(
       id: json['id'] as String,
-      orderId: (json['orderId'] as num?)?.toInt(),
+      orderId: json['orderId'] as int?,
       order: json['order'] == null
           ? null
           : AtsPurchaseOrder.fromJson(json['order'] as Map<String, dynamic>),
-      ordersIds: (json['ordersIds'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+      ordersIds:
+          (json['ordersIds'] as List<dynamic>?)?.map((e) => e as int).toList(),
       entry: json['entry'] == null
           ? null
           : AtsEntry.fromJson(json['entry'] as Map<String, dynamic>),
@@ -653,7 +652,7 @@ Map<String, dynamic> _$$AtsExitStatusImplToJson(_$AtsExitStatusImpl instance) =>
 _$AtsExitImpl _$$AtsExitImplFromJson(Map<String, dynamic> json) =>
     _$AtsExitImpl(
       id: json['id'] as String?,
-      identifier: (json['identifier'] as num?)?.toInt(),
+      identifier: json['identifier'] as int?,
       fromAssetId: json['fromAssetId'] as String?,
       fromAsset: json['fromAsset'] == null
           ? null
@@ -751,7 +750,7 @@ _$AtsExecuteExitInputImpl _$$AtsExecuteExitInputImplFromJson(
     _$AtsExecuteExitInputImpl(
       fromAssetId: json['fromAssetId'] as String?,
       sensorId: json['sensorId'] as String?,
-      presetValue: (json['presetValue'] as num?)?.toInt(),
+      presetValue: json['presetValue'] as int?,
       toAssetId: json['toAssetId'] as String?,
       toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
       fromApp: const AtsFromAppOrNullConverter()

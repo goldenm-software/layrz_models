@@ -51,6 +51,12 @@ _$MappitRouteImpl _$$MappitRouteImplFromJson(Map<String, dynamic> json) =>
       owner: json['owner'] == null
           ? null
           : User.fromJson(json['owner'] as Map<String, dynamic>),
+      secondarySellers: (json['secondarySellers'] as List<dynamic>?)
+          ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      secondarySellersIds: (json['secondarySellersIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$$MappitRouteImplToJson(_$MappitRouteImpl instance) =>
@@ -65,6 +71,9 @@ Map<String, dynamic> _$$MappitRouteImplToJson(_$MappitRouteImpl instance) =>
           instance.assignmentsHistory?.map((e) => e.toJson()).toList(),
       'ownerId': instance.ownerId,
       'owner': instance.owner?.toJson(),
+      'secondarySellers':
+          instance.secondarySellers?.map((e) => e.toJson()).toList(),
+      'secondarySellersIds': instance.secondarySellersIds,
     };
 
 _$MappitLaborHourImpl _$$MappitLaborHourImplFromJson(
@@ -147,8 +156,8 @@ Map<String, dynamic> _$$MappitDurationRangeImplToJson(
 
 _$MappitIntRangeImpl _$$MappitIntRangeImplFromJson(Map<String, dynamic> json) =>
     _$MappitIntRangeImpl(
-      min: (json['min'] as num?)?.toInt() ?? 0,
-      max: (json['max'] as num?)?.toInt() ?? 0,
+      min: json['min'] as int? ?? 0,
+      max: json['max'] as int? ?? 0,
       color: json['color'] == null
           ? Colors.blue
           : const ColorConverter().fromJson(json['color'] as String),
