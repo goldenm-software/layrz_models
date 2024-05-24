@@ -1544,6 +1544,12 @@ _$GeofenceImpl _$$GeofenceImplFromJson(Map<String, dynamic> json) =>
       owner: json['owner'] == null
           ? null
           : User.fromJson(json['owner'] as Map<String, dynamic>),
+      mappitRoutes: (json['mappitRoutes'] as List<dynamic>?)
+          ?.map((e) => MappitRoute.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      mappitRouteIds: (json['mappitRouteIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$$GeofenceImplToJson(_$GeofenceImpl instance) =>
@@ -1564,6 +1570,8 @@ Map<String, dynamic> _$$GeofenceImplToJson(_$GeofenceImpl instance) =>
       'customFields': instance.customFields?.map((e) => e.toJson()).toList(),
       'ownerId': instance.ownerId,
       'owner': instance.owner?.toJson(),
+      'mappitRoutes': instance.mappitRoutes?.map((e) => e.toJson()).toList(),
+      'mappitRouteIds': instance.mappitRouteIds,
     };
 
 _$GeofenceInputImpl _$$GeofenceInputImplFromJson(Map<String, dynamic> json) =>

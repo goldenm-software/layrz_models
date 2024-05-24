@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.53
+
+- Added `mappitRoutes` and `mappitRoutesIds` to `Geofence` model
+
 ## 2.1.52
 
 - Added `secondarySellers` and `secondarySellersIds` to `MappitRoute` model

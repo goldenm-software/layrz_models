@@ -16925,6 +16925,12 @@ mixin _$Geofence {
   /// [owner] refers to the owner of the geofence.
   User? get owner => throw _privateConstructorUsedError;
 
+  /// [mappitRoutes] refers to the list of routes that are linked to the geofence.
+  List<MappitRoute>? get mappitRoutes => throw _privateConstructorUsedError;
+
+  /// [mappitRouteIds] refers to the list of routes that are linked to the geofence.
+  List<String>? get mappitRouteIds => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GeofenceCopyWith<Geofence> get copyWith =>
@@ -16952,7 +16958,9 @@ abstract class $GeofenceCopyWith<$Res> {
       List<Access>? access,
       List<CustomField>? customFields,
       String? ownerId,
-      User? owner});
+      User? owner,
+      List<MappitRoute>? mappitRoutes,
+      List<String>? mappitRouteIds});
 
   $UserCopyWith<$Res>? get owner;
 }
@@ -16986,6 +16994,8 @@ class _$GeofenceCopyWithImpl<$Res, $Val extends Geofence>
     Object? customFields = freezed,
     Object? ownerId = freezed,
     Object? owner = freezed,
+    Object? mappitRoutes = freezed,
+    Object? mappitRouteIds = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -17052,6 +17062,14 @@ class _$GeofenceCopyWithImpl<$Res, $Val extends Geofence>
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
+      mappitRoutes: freezed == mappitRoutes
+          ? _value.mappitRoutes
+          : mappitRoutes // ignore: cast_nullable_to_non_nullable
+              as List<MappitRoute>?,
+      mappitRouteIds: freezed == mappitRouteIds
+          ? _value.mappitRouteIds
+          : mappitRouteIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ) as $Val);
   }
 
@@ -17092,7 +17110,9 @@ abstract class _$$GeofenceImplCopyWith<$Res>
       List<Access>? access,
       List<CustomField>? customFields,
       String? ownerId,
-      User? owner});
+      User? owner,
+      List<MappitRoute>? mappitRoutes,
+      List<String>? mappitRouteIds});
 
   @override
   $UserCopyWith<$Res>? get owner;
@@ -17125,6 +17145,8 @@ class __$$GeofenceImplCopyWithImpl<$Res>
     Object? customFields = freezed,
     Object? ownerId = freezed,
     Object? owner = freezed,
+    Object? mappitRoutes = freezed,
+    Object? mappitRouteIds = freezed,
   }) {
     return _then(_$GeofenceImpl(
       id: null == id
@@ -17191,6 +17213,14 @@ class __$$GeofenceImplCopyWithImpl<$Res>
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
+      mappitRoutes: freezed == mappitRoutes
+          ? _value._mappitRoutes
+          : mappitRoutes // ignore: cast_nullable_to_non_nullable
+              as List<MappitRoute>?,
+      mappitRouteIds: freezed == mappitRouteIds
+          ? _value._mappitRouteIds
+          : mappitRouteIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -17214,13 +17244,17 @@ class _$GeofenceImpl implements _Geofence {
       final List<Access>? access,
       final List<CustomField>? customFields,
       this.ownerId,
-      this.owner})
+      this.owner,
+      final List<MappitRoute>? mappitRoutes,
+      final List<String>? mappitRouteIds})
       : _path = path,
         _assetsInside = assetsInside,
         _childrenIds = childrenIds,
         _children = children,
         _access = access,
-        _customFields = customFields;
+        _customFields = customFields,
+        _mappitRoutes = mappitRoutes,
+        _mappitRouteIds = mappitRouteIds;
 
   factory _$GeofenceImpl.fromJson(Map<String, dynamic> json) =>
       _$$GeofenceImplFromJson(json);
@@ -17350,9 +17384,35 @@ class _$GeofenceImpl implements _Geofence {
   @override
   final User? owner;
 
+  /// [mappitRoutes] refers to the list of routes that are linked to the geofence.
+  final List<MappitRoute>? _mappitRoutes;
+
+  /// [mappitRoutes] refers to the list of routes that are linked to the geofence.
+  @override
+  List<MappitRoute>? get mappitRoutes {
+    final value = _mappitRoutes;
+    if (value == null) return null;
+    if (_mappitRoutes is EqualUnmodifiableListView) return _mappitRoutes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [mappitRouteIds] refers to the list of routes that are linked to the geofence.
+  final List<String>? _mappitRouteIds;
+
+  /// [mappitRouteIds] refers to the list of routes that are linked to the geofence.
+  @override
+  List<String>? get mappitRouteIds {
+    final value = _mappitRouteIds;
+    if (value == null) return null;
+    if (_mappitRouteIds is EqualUnmodifiableListView) return _mappitRouteIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'Geofence(id: $id, name: $name, mode: $mode, description: $description, color: $color, path: $path, radius: $radius, resourceId: $resourceId, assetsInside: $assetsInside, category: $category, childrenIds: $childrenIds, children: $children, access: $access, customFields: $customFields, ownerId: $ownerId, owner: $owner)';
+    return 'Geofence(id: $id, name: $name, mode: $mode, description: $description, color: $color, path: $path, radius: $radius, resourceId: $resourceId, assetsInside: $assetsInside, category: $category, childrenIds: $childrenIds, children: $children, access: $access, customFields: $customFields, ownerId: $ownerId, owner: $owner, mappitRoutes: $mappitRoutes, mappitRouteIds: $mappitRouteIds)';
   }
 
   @override
@@ -17381,7 +17441,11 @@ class _$GeofenceImpl implements _Geofence {
             const DeepCollectionEquality()
                 .equals(other._customFields, _customFields) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
-            (identical(other.owner, owner) || other.owner == owner));
+            (identical(other.owner, owner) || other.owner == owner) &&
+            const DeepCollectionEquality()
+                .equals(other._mappitRoutes, _mappitRoutes) &&
+            const DeepCollectionEquality()
+                .equals(other._mappitRouteIds, _mappitRouteIds));
   }
 
   @JsonKey(ignore: true)
@@ -17403,7 +17467,9 @@ class _$GeofenceImpl implements _Geofence {
       const DeepCollectionEquality().hash(_access),
       const DeepCollectionEquality().hash(_customFields),
       ownerId,
-      owner);
+      owner,
+      const DeepCollectionEquality().hash(_mappitRoutes),
+      const DeepCollectionEquality().hash(_mappitRouteIds));
 
   @JsonKey(ignore: true)
   @override
@@ -17436,7 +17502,9 @@ abstract class _Geofence implements Geofence {
       final List<Access>? access,
       final List<CustomField>? customFields,
       final String? ownerId,
-      final User? owner}) = _$GeofenceImpl;
+      final User? owner,
+      final List<MappitRoute>? mappitRoutes,
+      final List<String>? mappitRouteIds}) = _$GeofenceImpl;
 
   factory _Geofence.fromJson(Map<String, dynamic> json) =
       _$GeofenceImpl.fromJson;
@@ -17510,6 +17578,14 @@ abstract class _Geofence implements Geofence {
 
   /// [owner] refers to the owner of the geofence.
   User? get owner;
+  @override
+
+  /// [mappitRoutes] refers to the list of routes that are linked to the geofence.
+  List<MappitRoute>? get mappitRoutes;
+  @override
+
+  /// [mappitRouteIds] refers to the list of routes that are linked to the geofence.
+  List<String>? get mappitRouteIds;
   @override
   @JsonKey(ignore: true)
   _$$GeofenceImplCopyWith<_$GeofenceImpl> get copyWith =>
