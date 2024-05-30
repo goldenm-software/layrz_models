@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.1.54
+
+- Change `fuelSubType` to `fuelSubtype` in `AtsReceptionProduct`
+
+## 2.1.53
+
+- Added `mappitRoutes` and `mappitRoutesIds` to `Geofence` model
+
+## 2.1.52
+
+- Added `secondarySellers` and `secondarySellersIds` to `MappitRoute` model
+
 ## 2.1.51
 
 - Added `all` property to enum `PurchaseOrderOperation`

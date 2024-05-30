@@ -51,6 +51,12 @@ class MappitRoute with _$MappitRoute {
 
     /// [owner] refers to the owner of the geofence.
     User? owner,
+
+    /// [secondarySellers] represents the secondary sellers of the route
+    List<Asset>? secondarySellers,
+
+    /// [secondarySellersIds] represents the secondary sellers IDs of the route
+    List<String>? secondarySellersIds,
   }) = _MappitRoute;
 
   factory MappitRoute.fromJson(Map<String, dynamic> json) => _$MappitRouteFromJson(json);

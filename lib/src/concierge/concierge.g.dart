@@ -78,7 +78,7 @@ Map<String, dynamic> _$$ConciergeFormBlockConfigurationImplToJson(
 _$ConciergeFormBlockValidatorImpl _$$ConciergeFormBlockValidatorImplFromJson(
         Map<String, dynamic> json) =>
     _$ConciergeFormBlockValidatorImpl(
-      blockId: (json['blockId'] as num?)?.toInt(),
+      blockId: json['blockId'] as int?,
       max: (json['max'] as num?)?.toDouble(),
       min: (json['min'] as num?)?.toDouble(),
       value: json['value'] as String?,

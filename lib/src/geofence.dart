@@ -114,37 +114,6 @@ class GeofencePoint with _$GeofencePoint {
   factory GeofencePoint.fromJson(Map<String, dynamic> json) => _$GeofencePointFromJson(json);
 }
 
-/// Geofence model
-/// FIELDS
-/// id ID
-/// ID of the geofence entity. This ID is unique.
-///
-/// name String
-/// Name of the geofence.
-///
-/// color String
-/// Color of the geofence in hexadecimal code.
-///
-/// mode GeofenceMode
-/// Mode of geofence, check the documentation of GeofenceMode for more information.
-///
-/// description String
-/// Description of the geofence.
-///
-/// path [GeofencePoint]
-/// Depending of the Geofence mode, this field may return one or N points. Please check the GeofenceMode definition
-///
-/// radius Float
-/// Radius of the geofence in meters. If mode is GeofenceMode.LINEAR, this field will be the weight of the geofence. For GeofenceMode.POLYGON, this field will be ignored.
-///
-/// resourceId ID
-/// External resource ID, only for external geofences.
-///
-/// assetsInside [Asset]
-/// List of assets inside the geofence.
-///
-/// access [AccessPermission]
-/// List of custom access permissions.
 @freezed
 class Geofence with _$Geofence {
   const factory Geofence({
@@ -197,6 +166,12 @@ class Geofence with _$Geofence {
 
     /// [owner] refers to the owner of the geofence.
     User? owner,
+
+    /// [mappitRoutes] refers to the list of routes that are linked to the geofence.
+    List<MappitRoute>? mappitRoutes,
+
+    /// [mappitRouteIds] refers to the list of routes that are linked to the geofence.
+    List<String>? mappitRouteIds,
   }) = _Geofence;
 
   factory Geofence.fromJson(Map<String, dynamic> json) => _$GeofenceFromJson(json);

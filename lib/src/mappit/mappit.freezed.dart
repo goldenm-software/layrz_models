@@ -340,6 +340,12 @@ mixin _$MappitRoute {
   /// [owner] refers to the owner of the geofence.
   User? get owner => throw _privateConstructorUsedError;
 
+  /// [secondarySellers] represents the secondary sellers of the route
+  List<Asset>? get secondarySellers => throw _privateConstructorUsedError;
+
+  /// [secondarySellersIds] represents the secondary sellers IDs of the route
+  List<String>? get secondarySellersIds => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $MappitRouteCopyWith<MappitRoute> get copyWith =>
@@ -361,7 +367,9 @@ abstract class $MappitRouteCopyWith<$Res> {
       List<String>? geofencesIds,
       List<MappitRouteLinkingHistory>? assignmentsHistory,
       String? ownerId,
-      User? owner});
+      User? owner,
+      List<Asset>? secondarySellers,
+      List<String>? secondarySellersIds});
 
   $AssetCopyWith<$Res>? get currentSeller;
   $UserCopyWith<$Res>? get owner;
@@ -389,6 +397,8 @@ class _$MappitRouteCopyWithImpl<$Res, $Val extends MappitRoute>
     Object? assignmentsHistory = freezed,
     Object? ownerId = freezed,
     Object? owner = freezed,
+    Object? secondarySellers = freezed,
+    Object? secondarySellersIds = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -427,6 +437,14 @@ class _$MappitRouteCopyWithImpl<$Res, $Val extends MappitRoute>
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
+      secondarySellers: freezed == secondarySellers
+          ? _value.secondarySellers
+          : secondarySellers // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      secondarySellersIds: freezed == secondarySellersIds
+          ? _value.secondarySellersIds
+          : secondarySellersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ) as $Val);
   }
 
@@ -472,7 +490,9 @@ abstract class _$$MappitRouteImplCopyWith<$Res>
       List<String>? geofencesIds,
       List<MappitRouteLinkingHistory>? assignmentsHistory,
       String? ownerId,
-      User? owner});
+      User? owner,
+      List<Asset>? secondarySellers,
+      List<String>? secondarySellersIds});
 
   @override
   $AssetCopyWith<$Res>? get currentSeller;
@@ -500,6 +520,8 @@ class __$$MappitRouteImplCopyWithImpl<$Res>
     Object? assignmentsHistory = freezed,
     Object? ownerId = freezed,
     Object? owner = freezed,
+    Object? secondarySellers = freezed,
+    Object? secondarySellersIds = freezed,
   }) {
     return _then(_$MappitRouteImpl(
       id: null == id
@@ -538,6 +560,14 @@ class __$$MappitRouteImplCopyWithImpl<$Res>
           ? _value.owner
           : owner // ignore: cast_nullable_to_non_nullable
               as User?,
+      secondarySellers: freezed == secondarySellers
+          ? _value._secondarySellers
+          : secondarySellers // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      secondarySellersIds: freezed == secondarySellersIds
+          ? _value._secondarySellersIds
+          : secondarySellersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -554,10 +584,14 @@ class _$MappitRouteImpl implements _MappitRoute {
       final List<String>? geofencesIds,
       final List<MappitRouteLinkingHistory>? assignmentsHistory,
       this.ownerId,
-      this.owner})
+      this.owner,
+      final List<Asset>? secondarySellers,
+      final List<String>? secondarySellersIds})
       : _geofences = geofences,
         _geofencesIds = geofencesIds,
-        _assignmentsHistory = assignmentsHistory;
+        _assignmentsHistory = assignmentsHistory,
+        _secondarySellers = secondarySellers,
+        _secondarySellersIds = secondarySellersIds;
 
   factory _$MappitRouteImpl.fromJson(Map<String, dynamic> json) =>
       _$$MappitRouteImplFromJson(json);
@@ -626,9 +660,37 @@ class _$MappitRouteImpl implements _MappitRoute {
   @override
   final User? owner;
 
+  /// [secondarySellers] represents the secondary sellers of the route
+  final List<Asset>? _secondarySellers;
+
+  /// [secondarySellers] represents the secondary sellers of the route
+  @override
+  List<Asset>? get secondarySellers {
+    final value = _secondarySellers;
+    if (value == null) return null;
+    if (_secondarySellers is EqualUnmodifiableListView)
+      return _secondarySellers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [secondarySellersIds] represents the secondary sellers IDs of the route
+  final List<String>? _secondarySellersIds;
+
+  /// [secondarySellersIds] represents the secondary sellers IDs of the route
+  @override
+  List<String>? get secondarySellersIds {
+    final value = _secondarySellersIds;
+    if (value == null) return null;
+    if (_secondarySellersIds is EqualUnmodifiableListView)
+      return _secondarySellersIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'MappitRoute(id: $id, name: $name, currentSeller: $currentSeller, currentSellerId: $currentSellerId, geofences: $geofences, geofencesIds: $geofencesIds, assignmentsHistory: $assignmentsHistory, ownerId: $ownerId, owner: $owner)';
+    return 'MappitRoute(id: $id, name: $name, currentSeller: $currentSeller, currentSellerId: $currentSellerId, geofences: $geofences, geofencesIds: $geofencesIds, assignmentsHistory: $assignmentsHistory, ownerId: $ownerId, owner: $owner, secondarySellers: $secondarySellers, secondarySellersIds: $secondarySellersIds)';
   }
 
   @override
@@ -649,7 +711,11 @@ class _$MappitRouteImpl implements _MappitRoute {
             const DeepCollectionEquality()
                 .equals(other._assignmentsHistory, _assignmentsHistory) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
-            (identical(other.owner, owner) || other.owner == owner));
+            (identical(other.owner, owner) || other.owner == owner) &&
+            const DeepCollectionEquality()
+                .equals(other._secondarySellers, _secondarySellers) &&
+            const DeepCollectionEquality()
+                .equals(other._secondarySellersIds, _secondarySellersIds));
   }
 
   @JsonKey(ignore: true)
@@ -664,7 +730,9 @@ class _$MappitRouteImpl implements _MappitRoute {
       const DeepCollectionEquality().hash(_geofencesIds),
       const DeepCollectionEquality().hash(_assignmentsHistory),
       ownerId,
-      owner);
+      owner,
+      const DeepCollectionEquality().hash(_secondarySellers),
+      const DeepCollectionEquality().hash(_secondarySellersIds));
 
   @JsonKey(ignore: true)
   @override
@@ -690,7 +758,9 @@ abstract class _MappitRoute implements MappitRoute {
       final List<String>? geofencesIds,
       final List<MappitRouteLinkingHistory>? assignmentsHistory,
       final String? ownerId,
-      final User? owner}) = _$MappitRouteImpl;
+      final User? owner,
+      final List<Asset>? secondarySellers,
+      final List<String>? secondarySellersIds}) = _$MappitRouteImpl;
 
   factory _MappitRoute.fromJson(Map<String, dynamic> json) =
       _$MappitRouteImpl.fromJson;
@@ -731,6 +801,14 @@ abstract class _MappitRoute implements MappitRoute {
 
   /// [owner] refers to the owner of the geofence.
   User? get owner;
+  @override
+
+  /// [secondarySellers] represents the secondary sellers of the route
+  List<Asset>? get secondarySellers;
+  @override
+
+  /// [secondarySellersIds] represents the secondary sellers IDs of the route
+  List<String>? get secondarySellersIds;
   @override
   @JsonKey(ignore: true)
   _$$MappitRouteImplCopyWith<_$MappitRouteImpl> get copyWith =>
