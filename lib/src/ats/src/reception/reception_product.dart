@@ -84,7 +84,7 @@ class AtsReceptionProduct with _$AtsReceptionProduct {
     @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
 
     /// Fuel subTuype represent the fuel subtype of the product
-    String? fuelSubType,
+    String? fuelSubtype,
 
     /// Fuel density expressed in gr/cc.
     double? density,

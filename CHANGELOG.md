@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.54
+
+- Change `fuelSubType` to `fuelSubtype` in `AtsReceptionProduct`
+
 ## 2.1.53
 
 - Added `mappitRoutes` and `mappitRoutesIds` to `Geofence` model
