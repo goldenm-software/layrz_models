@@ -11,8 +11,8 @@ _$MonitorRealWaypointImpl _$$MonitorRealWaypointImplFromJson(
     _$MonitorRealWaypointImpl(
       activationId: json['activationId'] as String,
       geofenceId: json['geofenceId'] as String,
-      sequenceReal: (json['sequenceReal'] as num?)?.toInt(),
-      sequenceIdeal: (json['sequenceIdeal'] as num).toInt(),
+      sequenceReal: json['sequenceReal'] as int?,
+      sequenceIdeal: json['sequenceIdeal'] as int,
       startAt:
           const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
       endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
@@ -551,14 +551,14 @@ _$BillingPlanImpl _$$BillingPlanImplFromJson(Map<String, dynamic> json) =>
     _$BillingPlanImpl(
       id: json['id'] as String,
       reconnectionPercent: (json['reconnectionPercent'] as num).toDouble(),
-      reconnectionMaximum: (json['reconnectionMaximum'] as num).toInt(),
-      reconnectionIncidents: (json['reconnectionIncidents'] as num).toInt(),
-      maxAssets: (json['maxAssets'] as num).toInt(),
-      maxDevices: (json['maxDevices'] as num).toInt(),
-      maxUsers: (json['maxUsers'] as num).toInt(),
-      maxOutboundServices: (json['maxOutboundServices'] as num).toInt(),
-      maxFunctions: (json['maxFunctions'] as num).toInt(),
-      maxApps: (json['maxApps'] as num).toInt(),
+      reconnectionMaximum: json['reconnectionMaximum'] as int,
+      reconnectionIncidents: json['reconnectionIncidents'] as int,
+      maxAssets: json['maxAssets'] as int,
+      maxDevices: json['maxDevices'] as int,
+      maxUsers: json['maxUsers'] as int,
+      maxOutboundServices: json['maxOutboundServices'] as int,
+      maxFunctions: json['maxFunctions'] as int,
+      maxApps: json['maxApps'] as int,
       allowedAppsIds: (json['allowedAppsIds'] as List<dynamic>)
           .map((e) => e as String)
           .toList(),
@@ -616,9 +616,9 @@ _$CareProtocolImpl _$$CareProtocolImplFromJson(Map<String, dynamic> json) =>
       associatedTriggers: (json['associatedTriggers'] as List<dynamic>?)
           ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
           .toList(),
-      numOfTasks: (json['numOfTasks'] as num?)?.toInt(),
-      numOfPages: (json['numOfPages'] as num?)?.toInt(),
-      numOfBlocks: (json['numOfBlocks'] as num?)?.toInt(),
+      numOfTasks: json['numOfTasks'] as int?,
+      numOfPages: json['numOfPages'] as int?,
+      numOfBlocks: json['numOfBlocks'] as int?,
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -647,8 +647,8 @@ _$CareTaskImpl _$$CareTaskImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      minValue: (json['minValue'] as num?)?.toInt() ?? 0,
-      maxValue: (json['maxValue'] as num?)?.toInt() ?? 0,
+      minValue: json['minValue'] as int? ?? 0,
+      maxValue: json['maxValue'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$CareTaskImplToJson(_$CareTaskImpl instance) =>
@@ -705,7 +705,7 @@ _$CaseImpl _$$CaseImplFromJson(Map<String, dynamic> json) => _$CaseImpl(
           .fromJson(json['ignoredStatus'] as String?),
       asset: Asset.fromJson(json['asset'] as Map<String, dynamic>),
       trigger: Trigger.fromJson(json['trigger'] as Map<String, dynamic>),
-      sequence: (json['sequence'] as num?)?.toInt(),
+      sequence: json['sequence'] as int?,
       comments: (json['comments'] as List<dynamic>?)
               ?.map((e) => CaseComment.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -757,41 +757,6 @@ Map<String, dynamic> _$$CategoryImplToJson(_$CategoryImpl instance) =>
       'name': instance.name,
       'kind': const CategoryKindConverter().toJson(instance.kind),
       'assetKind': const AssetKindOrNullConverter().toJson(instance.assetKind),
-    };
-
-_$LayrzChartImpl _$$LayrzChartImplFromJson(Map<String, dynamic> json) =>
-    _$LayrzChartImpl(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      description: json['description'] as String?,
-      formula: json['formula'] as String?,
-      script: json['script'] as String?,
-      sensors:
-          (json['sensors'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      type: const ChartTypeOrNullConverter().fromJson(json['type'] as String?),
-      algorithm: const ChartAlgorithmOrNullConverter()
-          .fromJson(json['algorithm'] as String?),
-      dataSource: const ChartDataSourceOrNullConverter()
-          .fromJson(json['dataSource'] as String?),
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$LayrzChartImplToJson(_$LayrzChartImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'description': instance.description,
-      'formula': instance.formula,
-      'script': instance.script,
-      'sensors': instance.sensors,
-      'type': const ChartTypeOrNullConverter().toJson(instance.type),
-      'algorithm':
-          const ChartAlgorithmOrNullConverter().toJson(instance.algorithm),
-      'dataSource':
-          const ChartDataSourceOrNullConverter().toJson(instance.dataSource),
-      'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
 _$CheckpointImpl _$$CheckpointImplFromJson(Map<String, dynamic> json) =>
@@ -895,7 +860,7 @@ _$CloudEntryImpl _$$CloudEntryImplFromJson(Map<String, dynamic> json) =>
       path: json['path'] as String,
       serial: json['serial'] as String?,
       fileId: json['fileId'] as String?,
-      size: (json['size'] as num?)?.toInt(),
+      size: json['size'] as int?,
       lastModified: const TimestampOrNullConverter()
           .fromJson(json['lastModified'] as num?),
       contentType: json['contentType'] as String?,
@@ -1076,8 +1041,8 @@ _$CredentialFieldImpl _$$CredentialFieldImplFromJson(
       field: json['field'] as String,
       type:
           const CredentialFieldTypeConverter().fromJson(json['type'] as String),
-      maxLength: (json['maxLength'] as num?)?.toInt(),
-      minLength: (json['minLength'] as num?)?.toInt(),
+      maxLength: json['maxLength'] as int?,
+      minLength: json['minLength'] as int?,
       maxValue: json['maxValue'] as num?,
       minValue: json['minValue'] as num?,
       choices:
@@ -1168,7 +1133,7 @@ _$DbPartitionImpl _$$DbPartitionImplFromJson(Map<String, dynamic> json) =>
       startAt:
           const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
       endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
-      numOfRecords: (json['numOfRecords'] as num?)?.toInt(),
+      numOfRecords: json['numOfRecords'] as int?,
       totalSize: (json['totalSize'] as num?)?.toDouble(),
       sizePerRecord: (json['sizePerRecord'] as num?)?.toDouble(),
     );
@@ -1336,7 +1301,7 @@ Map<String, dynamic> _$$EmployeeImplToJson(_$EmployeeImpl instance) =>
 _$FtpAccountImpl _$$FtpAccountImplFromJson(Map<String, dynamic> json) =>
     _$FtpAccountImpl(
       host: json['host'] as String?,
-      port: (json['port'] as num?)?.toInt(),
+      port: json['port'] as int?,
       username: json['username'] as String?,
       password: json['password'] as String?,
     );
@@ -1647,7 +1612,7 @@ Map<String, dynamic> _$$LanguageImplToJson(_$LanguageImpl instance) =>
 _$LintErrorImpl _$$LintErrorImplFromJson(Map<String, dynamic> json) =>
     _$LintErrorImpl(
       code: json['code'] as String,
-      line: (json['line'] as num?)?.toInt() ?? 1,
+      line: json['line'] as int? ?? 1,
       name: json['name'] as String?,
       expected: json['expected'],
       received: json['received'],
@@ -2011,7 +1976,7 @@ Map<String, dynamic> _$$CustomReportImplToJson(_$CustomReportImpl instance) =>
 _$SensorImpl _$$SensorImplFromJson(Map<String, dynamic> json) => _$SensorImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      iterationCycle: (json['iterationCycle'] as num?)?.toInt(),
+      iterationCycle: json['iterationCycle'] as int?,
       slug: json['slug'] as String,
       isInstant: json['isInstant'] as bool?,
       icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
@@ -2424,7 +2389,7 @@ _$TelemetryPositionImpl _$$TelemetryPositionImplFromJson(
       altitude: (json['altitude'] as num?)?.toDouble(),
       speed: (json['speed'] as num?)?.toDouble(),
       direction: (json['direction'] as num?)?.toDouble(),
-      satellites: (json['satellites'] as num?)?.toInt(),
+      satellites: json['satellites'] as int?,
       hdop: (json['hdop'] as num?)?.toDouble(),
       timestamp:
           const TimestampOrNullConverter().fromJson(json['timestamp'] as num?),
@@ -2528,7 +2493,7 @@ _$TriggerImpl _$$TriggerImplFromJson(Map<String, dynamic> json) =>
           .toList(),
       isPlainCrontab: json['isPlainCrontab'] as bool?,
       timezoneId: json['timezoneId'] as String?,
-      priority: (json['priority'] as num?)?.toInt(),
+      priority: json['priority'] as int?,
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       visualEventEffect: const CaseEventEffectOrNullConverter()
           .fromJson(json['visualEventEffect'] as String?),
@@ -2679,7 +2644,7 @@ _$TriggerInputImpl _$$TriggerInputImplFromJson(Map<String, dynamic> json) =>
           ],
       isPlainCrontab: json['isPlainCrontab'] as bool? ?? false,
       timezoneId: json['timezoneId'] as String?,
-      priority: (json['priority'] as num?)?.toInt(),
+      priority: json['priority'] as int?,
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       visualEventEffect: const CaseEventEffectOrNullConverter()
           .fromJson(json['visualEventEffect'] as String?),
@@ -2822,7 +2787,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       mappitAssets: (json['mappitAssets'] as List<dynamic>?)
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
-      historicalDaysAllowed: (json['historicalDaysAllowed'] as num?)?.toInt(),
+      historicalDaysAllowed: json['historicalDaysAllowed'] as int?,
       mappitExternalAccountId: json['mappitExternalAccountId'] as String?,
       mappitExternalAccount: json['mappitExternalAccount'] == null
           ? null

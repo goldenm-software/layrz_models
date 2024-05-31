@@ -23,6 +23,7 @@ import 'src/vision/vision.dart';
 // import 'src/tenvio/tenvio.dart';
 // import 'src/sdm/sdm.dart';
 import 'src/modbus/modbus.dart';
+import 'src/charts/charts.dart';
 
 // Internal exports
 export 'src/converters/converters.dart';
@@ -43,6 +44,7 @@ export 'src/vision/vision.dart';
 export 'src/tenvio/tenvio.dart';
 export 'src/sdm/sdm.dart';
 export 'src/modbus/modbus.dart';
+export 'src/charts/charts.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
@@ -64,7 +66,6 @@ part 'src/billing_plan.dart';
 part 'src/care_protocol.dart';
 part 'src/case.dart';
 part 'src/category.dart';
-part 'src/chart.dart';
 part 'src/checkpoint.dart';
 part 'src/cloud_entry.dart';
 part 'src/command.dart';
