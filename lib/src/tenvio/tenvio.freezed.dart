@@ -1449,6 +1449,9 @@ mixin _$TenvioPackage {
   @TimestampConverter()
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
+  /// [totalItems] is the total number of items in the package.
+  int? get totalItems => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioPackageCopyWith<TenvioPackage> get copyWith =>
@@ -1471,7 +1474,8 @@ abstract class $TenvioPackageCopyWith<$Res> {
       List<TenvioPackageQuantity>? items,
       @TenvioPackageStatusConverter() TenvioPackageStatus status,
       @TimestampConverter() DateTime createdAt,
-      @TimestampConverter() DateTime updatedAt});
+      @TimestampConverter() DateTime updatedAt,
+      int? totalItems});
 
   $UserCopyWith<$Res>? get packer;
   $AssetCopyWith<$Res>? get warehouse;
@@ -1500,6 +1504,7 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
     Object? status = null,
     Object? createdAt = null,
     Object? updatedAt = null,
+    Object? totalItems = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1542,6 +1547,10 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      totalItems: freezed == totalItems
+          ? _value.totalItems
+          : totalItems // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -1588,7 +1597,8 @@ abstract class _$$TenvioPackageImplCopyWith<$Res>
       List<TenvioPackageQuantity>? items,
       @TenvioPackageStatusConverter() TenvioPackageStatus status,
       @TimestampConverter() DateTime createdAt,
-      @TimestampConverter() DateTime updatedAt});
+      @TimestampConverter() DateTime updatedAt,
+      int? totalItems});
 
   @override
   $UserCopyWith<$Res>? get packer;
@@ -1617,6 +1627,7 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
     Object? status = null,
     Object? createdAt = null,
     Object? updatedAt = null,
+    Object? totalItems = freezed,
   }) {
     return _then(_$TenvioPackageImpl(
       id: null == id
@@ -1659,6 +1670,10 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      totalItems: freezed == totalItems
+          ? _value.totalItems
+          : totalItems // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -1676,7 +1691,8 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       final List<TenvioPackageQuantity>? items,
       @TenvioPackageStatusConverter() required this.status,
       @TimestampConverter() required this.createdAt,
-      @TimestampConverter() required this.updatedAt})
+      @TimestampConverter() required this.updatedAt,
+      this.totalItems})
       : _items = items;
 
   factory _$TenvioPackageImpl.fromJson(Map<String, dynamic> json) =>
@@ -1736,9 +1752,13 @@ class _$TenvioPackageImpl implements _TenvioPackage {
   @TimestampConverter()
   final DateTime updatedAt;
 
+  /// [totalItems] is the total number of items in the package.
+  @override
+  final int? totalItems;
+
   @override
   String toString() {
-    return 'TenvioPackage(id: $id, packerId: $packerId, packer: $packer, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, items: $items, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'TenvioPackage(id: $id, packerId: $packerId, packer: $packer, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, items: $items, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, totalItems: $totalItems)';
   }
 
   @override
@@ -1761,7 +1781,9 @@ class _$TenvioPackageImpl implements _TenvioPackage {
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+                other.updatedAt == updatedAt) &&
+            (identical(other.totalItems, totalItems) ||
+                other.totalItems == totalItems));
   }
 
   @JsonKey(ignore: true)
@@ -1777,7 +1799,8 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       const DeepCollectionEquality().hash(_items),
       status,
       createdAt,
-      updatedAt);
+      updatedAt,
+      totalItems);
 
   @JsonKey(ignore: true)
   @override
@@ -1804,8 +1827,8 @@ abstract class _TenvioPackage implements TenvioPackage {
       final List<TenvioPackageQuantity>? items,
       @TenvioPackageStatusConverter() required final TenvioPackageStatus status,
       @TimestampConverter() required final DateTime createdAt,
-      @TimestampConverter()
-      required final DateTime updatedAt}) = _$TenvioPackageImpl;
+      @TimestampConverter() required final DateTime updatedAt,
+      final int? totalItems}) = _$TenvioPackageImpl;
 
   factory _TenvioPackage.fromJson(Map<String, dynamic> json) =
       _$TenvioPackageImpl.fromJson;
@@ -1855,6 +1878,10 @@ abstract class _TenvioPackage implements TenvioPackage {
   /// [updatedAt] is the date when the package was last updated.
   @TimestampConverter()
   DateTime get updatedAt;
+  @override
+
+  /// [totalItems] is the total number of items in the package.
+  int? get totalItems;
   @override
   @JsonKey(ignore: true)
   _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>

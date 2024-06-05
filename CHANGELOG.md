@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.61
+
+- Minor changes related to `TenvioPackage` model
+
 ## 2.1.60
 
 - Change `PurchaseOrderAction` to `PurchaseOrderOperation`

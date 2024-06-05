@@ -34,6 +34,9 @@ class TenvioPackage with _$TenvioPackage {
 
     /// [updatedAt] is the date when the package was last updated.
     @TimestampConverter() required DateTime updatedAt,
+
+    /// [totalItems] is the total number of items in the package.
+    int? totalItems,
   }) = _TenvioPackage;
 
   factory TenvioPackage.fromJson(Map<String, dynamic> json) => _$TenvioPackageFromJson(json);
