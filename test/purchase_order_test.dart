@@ -18,7 +18,7 @@ void main() {
       expect(purchaseOrder.id, "1");
       expect(purchaseOrder.assetId, "2");
       expect(purchaseOrder.asset, isA<Asset>());
-      expect(purchaseOrder.action, PurchaseOrderAction.purchase);
+      expect(purchaseOrder.action, PurchaseOrderOperation.purchase);
     },
   );
 }

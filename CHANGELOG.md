@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.60
+
+- Change `PurchaseOrderAction` to `PurchaseOrderOperation`
+
 ## 2.1.59
 
 - Fix `AtsPurchaseOrder` action prop test

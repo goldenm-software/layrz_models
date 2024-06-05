@@ -474,7 +474,7 @@ _$AtsPurchaseOrderImpl _$$AtsPurchaseOrderImplFromJson(
               json['ideInformation'] as Map<String, dynamic>),
       receptionAt: const TimestampOrNullConverter()
           .fromJson(json['receptionAt'] as num?),
-      action: const PurchaseOrderActionOrNullConverter()
+      action: const PurchaseOrderOperationOrNullConverter()
           .fromJson(json['action'] as String?),
       transportAsset: json['transportAsset'] == null
           ? null
@@ -525,7 +525,7 @@ Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
       'receptionAt':
           const TimestampOrNullConverter().toJson(instance.receptionAt),
       'action':
-          const PurchaseOrderActionOrNullConverter().toJson(instance.action),
+          const PurchaseOrderOperationOrNullConverter().toJson(instance.action),
       'transportAsset': instance.transportAsset?.toJson(),
       'sellerAsset': instance.sellerAsset?.toJson(),
       'orderStatus': const AtsPurchaseOrderStatusOrNullConverter()
