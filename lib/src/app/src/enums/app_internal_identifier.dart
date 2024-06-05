@@ -22,26 +22,14 @@ enum AppInternalIdentifier {
   /// API Reference: `CONCIERGE`
   concierge,
 
-  /// API Reference: `ATS_ADMIN`
-  atsAdmin,
-
-  /// API Reference: `ATS_WEB`
-  atsWeb,
-
-  /// API Reference: `GASLP`
-  gaslp,
-
   /// API Reference: `KEYBOARD`
   keyboard,
 
-  /// API Reference: `BRICKHOUSE_TRACKING`
-  brickhouseTracking,
+  /// API Reference: `TENVIO_PICK_AND_PACK`
+  tenvioPickAndPack,
 
-  /// API Reference: `ATS_FROTA`
-  atsFrota,
-
-  /// API Reference: `ATS_MOTORISTA`
-  atsMotorista,
+  /// API Reference: `DRIVE`
+  drive,
 
   /// API Reference: `REPCOM`
   repcom,
@@ -52,14 +40,29 @@ enum AppInternalIdentifier {
   /// API Reference: `CLOUD`
   cloud,
 
+  /// API Reference: `GASLP`
+  gaslp,
+
+  /// API Reference: `BRICKHOUSE_TRACKING`
+  brickhouseTracking,
+
   /// API Reference: `ANALYTICS_ADMIN`
   analyticsAdmin,
 
   /// API Reference: `ANALYTICS_DASHBOARD`
   analyticsDashboard,
 
+  /// API Reference: `ATS_ADMIN`
+  atsAdmin,
+
+  /// API Reference: `ATS_WEB`
+  atsWeb,
+
   /// API Reference: `ATS_FRENTISTA`
   atsFrentista,
+
+  /// API Reference: `ATS_DRIVER`
+  atsDriver,
 
   /// API Reference: `MAP_ONLY`
   mapOnly,
@@ -69,12 +72,6 @@ enum AppInternalIdentifier {
 
   /// API Reference: `TAGON_MANAGER`
   tagonManager,
-
-  /// API Reference: `TENVIO_PICK_AND_PACK`
-  tenvioPickAndPack,
-
-  /// API Reference: `DRIVE`
-  drive,
 
   /// API Reference: `SDM_MANAGER`
   sdmManager,
@@ -99,42 +96,45 @@ enum AppInternalIdentifier {
         return 'FUSION';
       case AppInternalIdentifier.concierge:
         return 'CONCIERGE';
-      case AppInternalIdentifier.atsAdmin:
-        return 'ATS_ADMIN';
-      case AppInternalIdentifier.atsWeb:
-        return 'ATS_WEB';
       case AppInternalIdentifier.gaslp:
         return 'GASLP';
       case AppInternalIdentifier.keyboard:
         return 'KEYBOARD';
-      case AppInternalIdentifier.brickhouseTracking:
-        return 'BRICKHOUSE_TRACKING';
-      case AppInternalIdentifier.atsFrota:
-        return 'ATS_FROTA';
-      case AppInternalIdentifier.atsMotorista:
-        return 'ATS_MOTORISTA';
+      case AppInternalIdentifier.drive:
+        return 'DRIVE';
       case AppInternalIdentifier.repcom:
         return 'REPCOM';
       case AppInternalIdentifier.vision:
         return 'VISION';
       case AppInternalIdentifier.cloud:
         return 'CLOUD';
+      case AppInternalIdentifier.tenvioPickAndPack:
+        return 'TENVIO_PICK_AND_PACK';
+
       case AppInternalIdentifier.analyticsAdmin:
         return 'ANALYTICS_ADMIN';
       case AppInternalIdentifier.analyticsDashboard:
         return 'ANALYTICS_DASHBOARD';
+
+      case AppInternalIdentifier.brickhouseTracking:
+        return 'BRICKHOUSE_TRACKING';
+
+      case AppInternalIdentifier.atsAdmin:
+        return 'ATS_ADMIN';
+      case AppInternalIdentifier.atsWeb:
+        return 'ATS_WEB';
+      case AppInternalIdentifier.atsDriver:
+        return 'ATS_DRIVER';
       case AppInternalIdentifier.atsFrentista:
         return 'ATS_FRENTISTA';
+
       case AppInternalIdentifier.mapOnly:
         return 'MAP_ONLY';
       case AppInternalIdentifier.tagonMap:
         return 'TAGON_MAP';
       case AppInternalIdentifier.tagonManager:
         return 'TAGON_MANAGER';
-      case AppInternalIdentifier.tenvioPickAndPack:
-        return 'TENVIO_PICK_AND_PACK';
-      case AppInternalIdentifier.drive:
-        return 'DRIVE';
+
       case AppInternalIdentifier.sdmManager:
         return 'SDM_MANAGER';
       default:
@@ -158,44 +158,48 @@ enum AppInternalIdentifier {
         return AppInternalIdentifier.fusion;
       case 'CONCIERGE':
         return AppInternalIdentifier.concierge;
-      case 'ATS_ADMIN':
-        return AppInternalIdentifier.atsAdmin;
-      case 'ATS_WEB':
-        return AppInternalIdentifier.atsWeb;
       case 'GASLP':
         return AppInternalIdentifier.gaslp;
       case 'KEYBOARD':
         return AppInternalIdentifier.keyboard;
-      case 'BRICKHOUSE_TRACKING':
-        return AppInternalIdentifier.brickhouseTracking;
-      case 'ATS_FROTA':
-        return AppInternalIdentifier.atsFrota;
-      case 'ATS_MOTORISTA':
-        return AppInternalIdentifier.atsMotorista;
+      case 'DRIVE':
+        return AppInternalIdentifier.drive;
       case 'REPCOM':
         return AppInternalIdentifier.repcom;
       case 'VISION':
         return AppInternalIdentifier.vision;
       case 'CLOUD':
         return AppInternalIdentifier.cloud;
+      case 'TENVIO_PICK_AND_PACK':
+        return AppInternalIdentifier.tenvioPickAndPack;
+
       case 'ANALYTICS_ADMIN':
         return AppInternalIdentifier.analyticsAdmin;
       case 'ANALYTICS_DASHBOARD':
         return AppInternalIdentifier.analyticsDashboard;
+
+      case 'BRICKHOUSE_TRACKING':
+        return AppInternalIdentifier.brickhouseTracking;
+
+      case 'ATS_ADMIN':
+        return AppInternalIdentifier.atsAdmin;
+      case 'ATS_WEB':
+        return AppInternalIdentifier.atsWeb;
+      case 'ATS_DRIVER':
+        return AppInternalIdentifier.atsDriver;
       case 'ATS_FRENTISTA':
         return AppInternalIdentifier.atsFrentista;
+
       case 'MAP_ONLY':
         return AppInternalIdentifier.mapOnly;
       case 'TAGON_MAP':
         return AppInternalIdentifier.tagonMap;
       case 'TAGON_MANAGER':
         return AppInternalIdentifier.tagonManager;
-      case 'TENVIO_PICK_AND_PACK':
-        return AppInternalIdentifier.tenvioPickAndPack;
-      case 'DRIVE':
-        return AppInternalIdentifier.drive;
+
       case 'SDM_MANAGER':
         return AppInternalIdentifier.sdmManager;
+
       default:
         throw Exception('Unknown AppInternalIdentifier: $value');
     }

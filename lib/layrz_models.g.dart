@@ -759,41 +759,6 @@ Map<String, dynamic> _$$CategoryImplToJson(_$CategoryImpl instance) =>
       'assetKind': const AssetKindOrNullConverter().toJson(instance.assetKind),
     };
 
-_$LayrzChartImpl _$$LayrzChartImplFromJson(Map<String, dynamic> json) =>
-    _$LayrzChartImpl(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      description: json['description'] as String?,
-      formula: json['formula'] as String?,
-      script: json['script'] as String?,
-      sensors:
-          (json['sensors'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      type: const ChartTypeOrNullConverter().fromJson(json['type'] as String?),
-      algorithm: const ChartAlgorithmOrNullConverter()
-          .fromJson(json['algorithm'] as String?),
-      dataSource: const ChartDataSourceOrNullConverter()
-          .fromJson(json['dataSource'] as String?),
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$LayrzChartImplToJson(_$LayrzChartImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'description': instance.description,
-      'formula': instance.formula,
-      'script': instance.script,
-      'sensors': instance.sensors,
-      'type': const ChartTypeOrNullConverter().toJson(instance.type),
-      'algorithm':
-          const ChartAlgorithmOrNullConverter().toJson(instance.algorithm),
-      'dataSource':
-          const ChartDataSourceOrNullConverter().toJson(instance.dataSource),
-      'access': instance.access?.map((e) => e.toJson()).toList(),
-    };
-
 _$CheckpointImpl _$$CheckpointImplFromJson(Map<String, dynamic> json) =>
     _$CheckpointImpl(
       id: json['id'] as String,

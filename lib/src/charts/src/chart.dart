@@ -1,4 +1,4 @@
-part of '../layrz_models.dart';
+part of '../charts.dart';
 
 @freezed
 class LayrzChart with _$LayrzChart {

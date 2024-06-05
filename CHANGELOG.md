@@ -1,5 +1,18 @@
 # Changelog
 
+## 2.1.57
+
+- Change `operation` into `AtsPurchaseOrder` to `action`
+
+## 2.1.56
+
+- Added `ATS_MOBILE` into `AppInternalIdentifier` enum
+- Removed unused `AppInternalIdentifier` values
+
+## 2.1.55
+
+- Implemented `Chart*` entities
+
 ## 2.1.54
 
 - Change `fuelSubType` to `fuelSubtype` in `AtsReceptionProduct`
