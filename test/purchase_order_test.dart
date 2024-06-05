@@ -12,7 +12,7 @@ void main() {
           "id": "3",
           "name": "test",
         },
-        "operation": "PURCHASE",
+        "action": "PURCHASE",
       };
       AtsPurchaseOrder purchaseOrder = AtsPurchaseOrder.fromJson(data);
       expect(purchaseOrder.id, "1");

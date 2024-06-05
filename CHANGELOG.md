@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.59
+
+- Fix `AtsPurchaseOrder` action prop test
+
 ## 2.1.58
 
 - Fix `AtsPurchaseOrder` test
