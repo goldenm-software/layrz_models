@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.57
+
+- Change `operation` into `AtsPurchaseOrder` to `action`
+
 ## 2.1.56
 
 - Added `ATS_MOBILE` into `AppInternalIdentifier` enum
