@@ -1,56 +1,56 @@
 part of '../../ats.dart';
 
-enum PurchaseOrderAction {
+enum PurchaseOrderOperation {
   purchase,
   seller,
   all;
 
   String toJson() {
     switch (this) {
-      case PurchaseOrderAction.purchase:
+      case PurchaseOrderOperation.purchase:
         return 'PURCHASE';
-      case PurchaseOrderAction.seller:
+      case PurchaseOrderOperation.seller:
         return 'SELLER';
-      case PurchaseOrderAction.all:
+      case PurchaseOrderOperation.all:
         return 'ALL';
     }
   }
 
-  static PurchaseOrderAction fromJson(String value) {
+  static PurchaseOrderOperation fromJson(String value) {
     switch (value) {
       case 'PURCHASE':
-        return PurchaseOrderAction.purchase;
+        return PurchaseOrderOperation.purchase;
       case 'SELLER':
-        return PurchaseOrderAction.seller;
+        return PurchaseOrderOperation.seller;
       case 'ALL':
-        return PurchaseOrderAction.all;
+        return PurchaseOrderOperation.all;
       default:
-        throw Exception('Unknown PurchaseOrderAction value: $value');
+        throw Exception('Unknown PurchaseOrderOperation value: $value');
     }
   }
 }
 
-class PurchaseOrderActionConverter implements JsonConverter<PurchaseOrderAction, String> {
-  const PurchaseOrderActionConverter();
+class PurchaseOrderOperationConverter implements JsonConverter<PurchaseOrderOperation, String> {
+  const PurchaseOrderOperationConverter();
 
   @override
-  PurchaseOrderAction fromJson(String json) => PurchaseOrderAction.fromJson(json);
+  PurchaseOrderOperation fromJson(String json) => PurchaseOrderOperation.fromJson(json);
 
   @override
-  String toJson(PurchaseOrderAction object) => object.toJson();
+  String toJson(PurchaseOrderOperation object) => object.toJson();
 }
 
-class PurchaseOrderActionOrNullConverter implements JsonConverter<PurchaseOrderAction?, String?> {
-  const PurchaseOrderActionOrNullConverter();
+class PurchaseOrderOperationOrNullConverter implements JsonConverter<PurchaseOrderOperation?, String?> {
+  const PurchaseOrderOperationOrNullConverter();
 
   @override
-  PurchaseOrderAction? fromJson(String? json) {
+  PurchaseOrderOperation? fromJson(String? json) {
     if (json == null) return null;
-    return PurchaseOrderAction.fromJson(json);
+    return PurchaseOrderOperation.fromJson(json);
   }
 
   @override
-  String? toJson(PurchaseOrderAction? object) {
+  String? toJson(PurchaseOrderOperation? object) {
     if (object == null) return null;
     return object.toJson();
   }
@@ -123,7 +123,7 @@ class AtsPurchaseOrder with _$AtsPurchaseOrder {
     @TimestampOrNullConverter() DateTime? receptionAt,
 
     /// Purchase order operation
-    @PurchaseOrderActionOrNullConverter() PurchaseOrderAction? action,
+    @PurchaseOrderOperationOrNullConverter() PurchaseOrderOperation? action,
 
     /// `transportAsset` represet the truck that will transport the product.
     Asset? transportAsset,

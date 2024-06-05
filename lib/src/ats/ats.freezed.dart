@@ -5189,8 +5189,8 @@ mixin _$AtsPurchaseOrder {
   DateTime? get receptionAt => throw _privateConstructorUsedError;
 
   /// Purchase order operation
-  @PurchaseOrderActionOrNullConverter()
-  PurchaseOrderAction? get action => throw _privateConstructorUsedError;
+  @PurchaseOrderOperationOrNullConverter()
+  PurchaseOrderOperation? get action => throw _privateConstructorUsedError;
 
   /// `transportAsset` represet the truck that will transport the product.
   Asset? get transportAsset => throw _privateConstructorUsedError;
@@ -5258,7 +5258,7 @@ abstract class $AtsPurchaseOrderCopyWith<$Res> {
       AtsPurchaseOrder? parentInvoice,
       AtsIdeInformation? ideInformation,
       @TimestampOrNullConverter() DateTime? receptionAt,
-      @PurchaseOrderActionOrNullConverter() PurchaseOrderAction? action,
+      @PurchaseOrderOperationOrNullConverter() PurchaseOrderOperation? action,
       Asset? transportAsset,
       Asset? sellerAsset,
       @AtsPurchaseOrderStatusOrNullConverter()
@@ -5414,7 +5414,7 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
       action: freezed == action
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
-              as PurchaseOrderAction?,
+              as PurchaseOrderOperation?,
       transportAsset: freezed == transportAsset
           ? _value.transportAsset
           : transportAsset // ignore: cast_nullable_to_non_nullable
@@ -5592,7 +5592,7 @@ abstract class _$$AtsPurchaseOrderImplCopyWith<$Res>
       AtsPurchaseOrder? parentInvoice,
       AtsIdeInformation? ideInformation,
       @TimestampOrNullConverter() DateTime? receptionAt,
-      @PurchaseOrderActionOrNullConverter() PurchaseOrderAction? action,
+      @PurchaseOrderOperationOrNullConverter() PurchaseOrderOperation? action,
       Asset? transportAsset,
       Asset? sellerAsset,
       @AtsPurchaseOrderStatusOrNullConverter()
@@ -5755,7 +5755,7 @@ class __$$AtsPurchaseOrderImplCopyWithImpl<$Res>
       action: freezed == action
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
-              as PurchaseOrderAction?,
+              as PurchaseOrderOperation?,
       transportAsset: freezed == transportAsset
           ? _value.transportAsset
           : transportAsset // ignore: cast_nullable_to_non_nullable
@@ -5817,7 +5817,7 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
       this.parentInvoice,
       this.ideInformation,
       @TimestampOrNullConverter() this.receptionAt,
-      @PurchaseOrderActionOrNullConverter() this.action,
+      @PurchaseOrderOperationOrNullConverter() this.action,
       this.transportAsset,
       this.sellerAsset,
       @AtsPurchaseOrderStatusOrNullConverter() this.orderStatus,
@@ -5930,8 +5930,8 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
 
   /// Purchase order operation
   @override
-  @PurchaseOrderActionOrNullConverter()
-  final PurchaseOrderAction? action;
+  @PurchaseOrderOperationOrNullConverter()
+  final PurchaseOrderOperation? action;
 
   /// `transportAsset` represet the truck that will transport the product.
   @override
@@ -6089,40 +6089,41 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
 
 abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
   factory _AtsPurchaseOrder(
-      {final String? id,
-      final String? ownerId,
-      final String? orderId,
-      final String? assetId,
-      final String? sellerAssetId,
-      final String? transportAssetId,
-      @TimestampOrNullConverter() final DateTime? purchasedAt,
-      @TimestampOrNullConverter() final DateTime? receivedAt,
-      final Asset? asset,
-      final AtsCompanyInformation? sellerInformation,
-      final AtsCompanyInformation? receiverInformation,
-      final List<AtsProductInformation>? productsInformation,
-      final AtsPurchaseTotal? total,
-      final bool? isReceived,
-      final bool? hasReception,
-      final AtsTransportInformation? transportInformation,
-      final bool? hasRawXml,
-      final String? invoiceType,
-      final AtsPurchaseOrder? parentInvoice,
-      final AtsIdeInformation? ideInformation,
-      @TimestampOrNullConverter() final DateTime? receptionAt,
-      @PurchaseOrderActionOrNullConverter() final PurchaseOrderAction? action,
-      final Asset? transportAsset,
-      final Asset? sellerAsset,
-      @AtsPurchaseOrderStatusOrNullConverter()
-      final AtsPurchaseOrderStatus? orderStatus,
-      @TimestampOrNullConverter() final DateTime? inTransitAt,
-      @TimestampOrNullConverter() final DateTime? waitingToDispatchAt,
-      @TimestampOrNullConverter() final DateTime? deliveredAt,
-      @AtsPurchaseOrderSubCategoriesOrNullConverter()
-      final AtsPurchaseOrderSubCategories? deliverCategory,
-      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
-      final AtsPurchaseOrderCategoriesEntity?
-          category}) = _$AtsPurchaseOrderImpl;
+          {final String? id,
+          final String? ownerId,
+          final String? orderId,
+          final String? assetId,
+          final String? sellerAssetId,
+          final String? transportAssetId,
+          @TimestampOrNullConverter() final DateTime? purchasedAt,
+          @TimestampOrNullConverter() final DateTime? receivedAt,
+          final Asset? asset,
+          final AtsCompanyInformation? sellerInformation,
+          final AtsCompanyInformation? receiverInformation,
+          final List<AtsProductInformation>? productsInformation,
+          final AtsPurchaseTotal? total,
+          final bool? isReceived,
+          final bool? hasReception,
+          final AtsTransportInformation? transportInformation,
+          final bool? hasRawXml,
+          final String? invoiceType,
+          final AtsPurchaseOrder? parentInvoice,
+          final AtsIdeInformation? ideInformation,
+          @TimestampOrNullConverter() final DateTime? receptionAt,
+          @PurchaseOrderOperationOrNullConverter()
+          final PurchaseOrderOperation? action,
+          final Asset? transportAsset,
+          final Asset? sellerAsset,
+          @AtsPurchaseOrderStatusOrNullConverter()
+          final AtsPurchaseOrderStatus? orderStatus,
+          @TimestampOrNullConverter() final DateTime? inTransitAt,
+          @TimestampOrNullConverter() final DateTime? waitingToDispatchAt,
+          @TimestampOrNullConverter() final DateTime? deliveredAt,
+          @AtsPurchaseOrderSubCategoriesOrNullConverter()
+          final AtsPurchaseOrderSubCategories? deliverCategory,
+          @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+          final AtsPurchaseOrderCategoriesEntity? category}) =
+      _$AtsPurchaseOrderImpl;
 
   factory _AtsPurchaseOrder.fromJson(Map<String, dynamic> json) =
       _$AtsPurchaseOrderImpl.fromJson;
@@ -6217,8 +6218,8 @@ abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
   @override
 
   /// Purchase order operation
-  @PurchaseOrderActionOrNullConverter()
-  PurchaseOrderAction? get action;
+  @PurchaseOrderOperationOrNullConverter()
+  PurchaseOrderOperation? get action;
   @override
 
   /// `transportAsset` represet the truck that will transport the product.
