@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.63
+
+- Added `stateRegistration` to `AtsTransportInformation`
+
 ## 2.1.62
 
 - Added `bool?` `[isSuspended]` to `Asset`

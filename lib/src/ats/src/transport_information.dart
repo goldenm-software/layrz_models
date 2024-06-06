@@ -41,6 +41,9 @@ class AtsTransportInformation with _$AtsTransportInformation {
 
     /// Origin
     String? origin,
+
+    /// State registration
+    String? stateRegistration,
   }) = _AtsTransportInformation;
 
   /// from json factory
