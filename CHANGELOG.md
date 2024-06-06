@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.62
+
+- Added `bool?` `[isSuspended]` to `Asset`
+
 ## 2.1.61
 
 - Minor changes related to `TenvioPackage` model
