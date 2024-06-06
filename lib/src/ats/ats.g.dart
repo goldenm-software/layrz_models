@@ -341,6 +341,7 @@ _$AtsTransportInformationImpl _$$AtsTransportInformationImplFromJson(
       destination: json['destination'] as String?,
       driver: json['driver'] as String?,
       origin: json['origin'] as String?,
+      stateRegistration: json['stateRegistration'] as String?,
     );
 
 Map<String, dynamic> _$$AtsTransportInformationImplToJson(
@@ -359,6 +360,7 @@ Map<String, dynamic> _$$AtsTransportInformationImplToJson(
       'destination': instance.destination,
       'driver': instance.driver,
       'origin': instance.origin,
+      'stateRegistration': instance.stateRegistration,
     };
 
 _$AtsCommandResultImpl _$$AtsCommandResultImplFromJson(

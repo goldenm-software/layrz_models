@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.1.63
+
+- Added `stateRegistration` to `AtsTransportInformation`
+
+## 2.1.62
+
+- Added `bool?` `[isSuspended]` to `Asset`
+
+## 2.1.61
+
+- Minor changes related to `TenvioPackage` model
+
 ## 2.1.60
 
 - Change `PurchaseOrderAction` to `PurchaseOrderOperation`

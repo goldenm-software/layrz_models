@@ -11,3 +11,5 @@ analyzer:
   # Ignore invalid_annotation_target
   errors:
     invalid_annotation_target: ignore
+    deprecated_member_use: ignore
+    deprecated_member_use_from_same_package: ignore

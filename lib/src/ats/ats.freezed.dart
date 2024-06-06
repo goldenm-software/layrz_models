@@ -3866,6 +3866,9 @@ mixin _$AtsTransportInformation {
   /// Origin
   String? get origin => throw _privateConstructorUsedError;
 
+  /// State registration
+  String? get stateRegistration => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AtsTransportInformationCopyWith<AtsTransportInformation> get copyWith =>
@@ -3891,7 +3894,8 @@ abstract class $AtsTransportInformationCopyWith<$Res> {
       String? vehicleName,
       String? destination,
       String? driver,
-      String? origin});
+      String? origin,
+      String? stateRegistration});
 }
 
 /// @nodoc
@@ -3921,6 +3925,7 @@ class _$AtsTransportInformationCopyWithImpl<$Res,
     Object? destination = freezed,
     Object? driver = freezed,
     Object? origin = freezed,
+    Object? stateRegistration = freezed,
   }) {
     return _then(_value.copyWith(
       cnpj: freezed == cnpj
@@ -3975,6 +3980,10 @@ class _$AtsTransportInformationCopyWithImpl<$Res,
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
               as String?,
+      stateRegistration: freezed == stateRegistration
+          ? _value.stateRegistration
+          : stateRegistration // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -4001,7 +4010,8 @@ abstract class _$$AtsTransportInformationImplCopyWith<$Res>
       String? vehicleName,
       String? destination,
       String? driver,
-      String? origin});
+      String? origin,
+      String? stateRegistration});
 }
 
 /// @nodoc
@@ -4030,6 +4040,7 @@ class __$$AtsTransportInformationImplCopyWithImpl<$Res>
     Object? destination = freezed,
     Object? driver = freezed,
     Object? origin = freezed,
+    Object? stateRegistration = freezed,
   }) {
     return _then(_$AtsTransportInformationImpl(
       cnpj: freezed == cnpj
@@ -4084,6 +4095,10 @@ class __$$AtsTransportInformationImplCopyWithImpl<$Res>
           ? _value.origin
           : origin // ignore: cast_nullable_to_non_nullable
               as String?,
+      stateRegistration: freezed == stateRegistration
+          ? _value.stateRegistration
+          : stateRegistration // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -4104,7 +4119,8 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
       this.vehicleName,
       this.destination,
       this.driver,
-      this.origin});
+      this.origin,
+      this.stateRegistration});
 
   factory _$AtsTransportInformationImpl.fromJson(Map<String, dynamic> json) =>
       _$$AtsTransportInformationImplFromJson(json);
@@ -4161,9 +4177,13 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
   @override
   final String? origin;
 
+  /// State registration
+  @override
+  final String? stateRegistration;
+
   @override
   String toString() {
-    return 'AtsTransportInformation(cnpj: $cnpj, name: $name, address: $address, mun: $mun, freightMod: $freightMod, federalUnit: $federalUnit, businessNumber: $businessNumber, vehiclePlate: $vehiclePlate, vehicleUf: $vehicleUf, vehicleName: $vehicleName, destination: $destination, driver: $driver, origin: $origin)';
+    return 'AtsTransportInformation(cnpj: $cnpj, name: $name, address: $address, mun: $mun, freightMod: $freightMod, federalUnit: $federalUnit, businessNumber: $businessNumber, vehiclePlate: $vehiclePlate, vehicleUf: $vehicleUf, vehicleName: $vehicleName, destination: $destination, driver: $driver, origin: $origin, stateRegistration: $stateRegistration)';
   }
 
   @override
@@ -4190,7 +4210,9 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
             (identical(other.destination, destination) ||
                 other.destination == destination) &&
             (identical(other.driver, driver) || other.driver == driver) &&
-            (identical(other.origin, origin) || other.origin == origin));
+            (identical(other.origin, origin) || other.origin == origin) &&
+            (identical(other.stateRegistration, stateRegistration) ||
+                other.stateRegistration == stateRegistration));
   }
 
   @JsonKey(ignore: true)
@@ -4209,7 +4231,8 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
       vehicleName,
       destination,
       driver,
-      origin);
+      origin,
+      stateRegistration);
 
   @JsonKey(ignore: true)
   @override
@@ -4240,7 +4263,8 @@ abstract class _AtsTransportInformation implements AtsTransportInformation {
       final String? vehicleName,
       final String? destination,
       final String? driver,
-      final String? origin}) = _$AtsTransportInformationImpl;
+      final String? origin,
+      final String? stateRegistration}) = _$AtsTransportInformationImpl;
 
   factory _AtsTransportInformation.fromJson(Map<String, dynamic> json) =
       _$AtsTransportInformationImpl.fromJson;
@@ -4297,6 +4321,10 @@ abstract class _AtsTransportInformation implements AtsTransportInformation {
 
   /// Origin
   String? get origin;
+  @override
+
+  /// State registration
+  String? get stateRegistration;
   @override
   @JsonKey(ignore: true)
   _$$AtsTransportInformationImplCopyWith<_$AtsTransportInformationImpl>

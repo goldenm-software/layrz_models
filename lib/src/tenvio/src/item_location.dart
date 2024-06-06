@@ -8,6 +8,10 @@ enum TenvioItemLocation {
   /// [atCustomer] defines that the item is at the customer.
   /// API Reference: `AT_CUSTOMER`
   atCustomer,
+
+  /// [dispatched] defines that the item is dispatched.
+  /// API Reference: `DISPATCHED`
+  dispatched,
   ;
 
   @override
@@ -19,6 +23,8 @@ enum TenvioItemLocation {
         return 'IN_WAREHOUSE';
       case TenvioItemLocation.atCustomer:
         return 'AT_CUSTOMER';
+      case TenvioItemLocation.dispatched:
+        return 'DISPATCHED';
     }
   }
 
@@ -28,6 +34,8 @@ enum TenvioItemLocation {
         return TenvioItemLocation.inWarehouse;
       case 'AT_CUSTOMER':
         return TenvioItemLocation.atCustomer;
+      case 'DISPATCHED':
+        return TenvioItemLocation.dispatched;
       default:
         throw Exception('Unknown TenvioItemLocation value: $json');
     }

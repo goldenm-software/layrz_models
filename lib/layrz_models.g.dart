@@ -394,6 +394,7 @@ _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
           (json['mappitSecondaryRoutesIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList(),
+      isSuspended: json['isSuspended'] as bool?,
     );
 
 Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
@@ -452,6 +453,7 @@ Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
           const TimeOfDayOrNullConverter().toJson(instance.mappitLaborEndTime),
       'geofences': instance.geofences?.map((e) => e.toJson()).toList(),
       'mappitSecondaryRoutesIds': instance.mappitSecondaryRoutesIds,
+      'isSuspended': instance.isSuspended,
     };
 
 _$ContactInfoImpl _$$ContactInfoImplFromJson(Map<String, dynamic> json) =>

@@ -160,6 +160,9 @@ class Asset with _$Asset {
 
     /// `mappitSecondaryRoutesIds` represents the list of secondary routes ids linked to the asset.
     List<String>? mappitSecondaryRoutesIds,
+
+    /// [isSuspended] if the asset is suspended.
+    bool? isSuspended,
   }) = _Asset;
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
