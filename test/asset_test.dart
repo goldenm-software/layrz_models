@@ -13,6 +13,7 @@ void main() {
       "childrenIds": [],
       "qrCode": "https://layrz-development.s3-us-west-2.amazonaws.com/qrs/gwvhwrzkdwjbpsbcdnii.png",
       "mode": "SINGLE",
+      "isSuspended": false,
       "sensors": [
         {
           "__typename": "Sensor",

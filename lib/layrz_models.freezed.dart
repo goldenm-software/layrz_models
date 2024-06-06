@@ -3052,6 +3052,9 @@ mixin _$Asset {
   List<String>? get mappitSecondaryRoutesIds =>
       throw _privateConstructorUsedError;
 
+  /// [isSuspended] if the asset is suspended.
+  bool? get isSuspended => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AssetCopyWith<Asset> get copyWith => throw _privateConstructorUsedError;
@@ -3110,7 +3113,8 @@ abstract class $AssetCopyWith<$Res> {
       @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,
       @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
       List<Geofence>? geofences,
-      List<String>? mappitSecondaryRoutesIds});
+      List<String>? mappitSecondaryRoutesIds,
+      bool? isSuspended});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $CategoryCopyWith<$Res>? get kind;
@@ -3183,6 +3187,7 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     Object? mappitLaborEndTime = freezed,
     Object? geofences = freezed,
     Object? mappitSecondaryRoutesIds = freezed,
+    Object? isSuspended = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -3377,6 +3382,10 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
           ? _value.mappitSecondaryRoutesIds
           : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      isSuspended: freezed == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 
@@ -3533,7 +3542,8 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
       @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,
       @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
       List<Geofence>? geofences,
-      List<String>? mappitSecondaryRoutesIds});
+      List<String>? mappitSecondaryRoutesIds,
+      bool? isSuspended});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -3612,6 +3622,7 @@ class __$$AssetImplCopyWithImpl<$Res>
     Object? mappitLaborEndTime = freezed,
     Object? geofences = freezed,
     Object? mappitSecondaryRoutesIds = freezed,
+    Object? isSuspended = freezed,
   }) {
     return _then(_$AssetImpl(
       id: null == id
@@ -3806,6 +3817,10 @@ class __$$AssetImplCopyWithImpl<$Res>
           ? _value._mappitSecondaryRoutesIds
           : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      isSuspended: freezed == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -3861,7 +3876,8 @@ class _$AssetImpl implements _Asset {
       @TimeOfDayOrNullConverter() this.mappitLaborStartTime,
       @TimeOfDayOrNullConverter() this.mappitLaborEndTime,
       final List<Geofence>? geofences,
-      final List<String>? mappitSecondaryRoutesIds})
+      final List<String>? mappitSecondaryRoutesIds,
+      this.isSuspended})
       : _childrenIds = childrenIds,
         _children = children,
         _commands = commands,
@@ -4351,9 +4367,13 @@ class _$AssetImpl implements _Asset {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [isSuspended] if the asset is suspended.
+  @override
+  final bool? isSuspended;
+
   @override
   String toString() {
-    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds)';
+    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended)';
   }
 
   @override
@@ -4439,7 +4459,9 @@ class _$AssetImpl implements _Asset {
             const DeepCollectionEquality()
                 .equals(other._geofences, _geofences) &&
             const DeepCollectionEquality().equals(
-                other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds));
+                other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds) &&
+            (identical(other.isSuspended, isSuspended) ||
+                other.isSuspended == isSuspended));
   }
 
   @JsonKey(ignore: true)
@@ -4493,7 +4515,8 @@ class _$AssetImpl implements _Asset {
         mappitLaborStartTime,
         mappitLaborEndTime,
         const DeepCollectionEquality().hash(_geofences),
-        const DeepCollectionEquality().hash(_mappitSecondaryRoutesIds)
+        const DeepCollectionEquality().hash(_mappitSecondaryRoutesIds),
+        isSuspended
       ]);
 
   @JsonKey(ignore: true)
@@ -4559,7 +4582,8 @@ abstract class _Asset implements Asset {
       @TimeOfDayOrNullConverter() final TimeOfDay? mappitLaborStartTime,
       @TimeOfDayOrNullConverter() final TimeOfDay? mappitLaborEndTime,
       final List<Geofence>? geofences,
-      final List<String>? mappitSecondaryRoutesIds}) = _$AssetImpl;
+      final List<String>? mappitSecondaryRoutesIds,
+      final bool? isSuspended}) = _$AssetImpl;
 
   factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
 
@@ -4772,6 +4796,10 @@ abstract class _Asset implements Asset {
 
   /// `mappitSecondaryRoutesIds` represents the list of secondary routes ids linked to the asset.
   List<String>? get mappitSecondaryRoutesIds;
+  @override
+
+  /// [isSuspended] if the asset is suspended.
+  bool? get isSuspended;
   @override
   @JsonKey(ignore: true)
   _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
