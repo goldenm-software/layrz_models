@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.64
+
+- Added `GeofenceCategory.lead` to `GeofenceCategory` enum
+
 ## 2.1.63
 
 - Added `stateRegistration` to `AtsTransportInformation`

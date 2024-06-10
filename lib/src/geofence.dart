@@ -56,15 +56,17 @@ enum GeofenceCategory {
   prospect,
 
   /// GraphQL reference: POLYGON
-  polygon;
+  polygon,
+
+  /// GraphQL reference: LEAD
+  lead,
+  ;
 
   @override
   String toString() => toJson();
 
   String toJson() {
     switch (this) {
-      case GeofenceCategory.none:
-        return 'NONE';
       case GeofenceCategory.custom:
         return 'CUSTOM';
       case GeofenceCategory.administrative:
@@ -77,15 +79,16 @@ enum GeofenceCategory {
         return 'PROSPECT';
       case GeofenceCategory.polygon:
         return 'POLYGON';
+      case GeofenceCategory.lead:
+        return 'LEAD';
+      case GeofenceCategory.none:
       default:
-        throw Exception('Unknown GeofenceCategory');
+        return 'NONE';
     }
   }
 
   static GeofenceCategory fromJson(String json) {
     switch (json) {
-      case 'NONE':
-        return GeofenceCategory.none;
       case 'CUSTOM':
         return GeofenceCategory.custom;
       case 'ADMINISTRATIVE':
@@ -98,8 +101,11 @@ enum GeofenceCategory {
         return GeofenceCategory.prospect;
       case 'POLYGON':
         return GeofenceCategory.polygon;
+      case 'LEAD':
+        return GeofenceCategory.lead;
+      case 'NONE':
       default:
-        throw Exception('Unknown GeofenceCategory');
+        return GeofenceCategory.none;
     }
   }
 }

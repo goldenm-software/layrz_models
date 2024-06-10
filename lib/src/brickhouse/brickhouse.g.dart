@@ -31,11 +31,11 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
       hasWebPopup: json['hasWebPopup'] as bool?,
       hasEmail: json['hasEmail'] as bool?,
       hasPhone: json['hasPhone'] as bool?,
-      batteryMinLevel: (json['batteryMinLevel'] as num?)?.toInt(),
+      batteryMinLevel: json['batteryMinLevel'] as int?,
       curfewStartHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson((json['curfewStartHour'] as num?)?.toInt()),
+          .fromJson(json['curfewStartHour'] as int?),
       curfewEndHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson((json['curfewEndHour'] as num?)?.toInt()),
+          .fromJson(json['curfewEndHour'] as int?),
       timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
           ?.map((e) => const WeekdayConverter().fromJson(e as String))
@@ -116,11 +116,11 @@ _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
       hasWebPopup: json['hasWebPopup'] as bool? ?? false,
       hasEmail: json['hasEmail'] as bool? ?? false,
       hasPhone: json['hasPhone'] as bool? ?? false,
-      batteryMinLevel: (json['batteryMinLevel'] as num?)?.toInt(),
+      batteryMinLevel: json['batteryMinLevel'] as int?,
       curfewStartHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson((json['curfewStartHour'] as num?)?.toInt()),
+          .fromJson(json['curfewStartHour'] as int?),
       curfewEndHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson((json['curfewEndHour'] as num?)?.toInt()),
+          .fromJson(json['curfewEndHour'] as int?),
       timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
               ?.map((e) => const WeekdayConverter().fromJson(e as String))
