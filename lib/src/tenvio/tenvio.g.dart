@@ -142,7 +142,7 @@ _$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
           .fromJson(json['status'] as String),
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
       updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
-      totalItems: json['totalItems'] as int?,
+      totalItems: (json['totalItems'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
@@ -168,7 +168,7 @@ _$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(
       matrix: json['matrix'] == null
           ? null
           : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
-      quantity: json['quantity'] as int,
+      quantity: (json['quantity'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$TenvioPackageQuantityImplToJson(
@@ -297,9 +297,9 @@ _$TenvioCustomPropertyImpl _$$TenvioCustomPropertyImplFromJson(
           const [],
       minValue: (json['minValue'] as num?)?.toDouble(),
       maxValue: (json['maxValue'] as num?)?.toDouble(),
-      minLength: json['minLength'] as int?,
-      maxLength: json['maxLength'] as int?,
-      maxFileSize: json['maxFileSize'] as int?,
+      minLength: (json['minLength'] as num?)?.toInt(),
+      maxLength: (json['maxLength'] as num?)?.toInt(),
+      maxFileSize: (json['maxFileSize'] as num?)?.toInt(),
       defaultValue: json['defaultValue'],
     );
 

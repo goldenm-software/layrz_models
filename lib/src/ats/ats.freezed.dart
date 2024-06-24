@@ -10273,3 +10273,948 @@ abstract class _AtsVolume implements AtsVolume {
   _$$AtsVolumeImplCopyWith<_$AtsVolumeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) {
+  return _AtsOperation.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AtsOperation {
+  /// `id` of the asset entity. This ID is unique.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// `sellerAssetId` is the ID of the seller asset.
+  String? get sellerAssetId => throw _privateConstructorUsedError;
+
+  /// `transportAssetId` is the ID of the transport asset.
+  String? get transportAssetId => throw _privateConstructorUsedError;
+
+  /// `purchasedAt` is the Unix timestamp of the last reception date.
+  @TimestampOrNullConverter()
+  DateTime? get purchasedAt => throw _privateConstructorUsedError;
+
+  /// `createdAt` is the Unix timestamp of the creation date.
+  @TimestampOrNullConverter()
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+
+  /// `pendingToReview` indicates if it's pending to review.
+  bool? get pendingToReview => throw _privateConstructorUsedError;
+
+  /// `ordersIds` is a list of purchase orders linked to the operation.
+  List<String>? get ordersIds => throw _privateConstructorUsedError;
+
+  /// `sellerAsset` is the seller Asset linked to the purchase order.
+  Asset? get sellerAsset => throw _privateConstructorUsedError;
+
+  /// `transportAsset` is the transport Asset linked to the purchase order.
+  Asset? get transportAsset => throw _privateConstructorUsedError;
+
+  /// `sellerInformation` is the legal information about the seller.
+  AtsCompanyInformation? get sellerInformation =>
+      throw _privateConstructorUsedError;
+
+  /// `transportInformation` is the legal information about the transport.
+  AtsTransportInformation? get transportInformation =>
+      throw _privateConstructorUsedError;
+
+  /// `orderStatus` is the status of the order.
+  @AtsPurchaseOrderStatusOrNullConverter()
+  AtsPurchaseOrderStatus? get orderStatus => throw _privateConstructorUsedError;
+
+  /// `category` is the category of the purchase order.
+  @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+  AtsPurchaseOrderCategoriesEntity? get category =>
+      throw _privateConstructorUsedError;
+
+  /// `deliverCategory` is the deliver category of the purchase order.
+  @AtsPurchaseOrderSubCategoriesOrNullConverter()
+  AtsPurchaseOrderSubCategories? get deliverCategory =>
+      throw _privateConstructorUsedError;
+
+  /// `purchaseOrders` are the purchase orders linked to the operation.
+  List<AtsPurchaseOrder>? get purchaseOrders =>
+      throw _privateConstructorUsedError;
+
+  /// `statuses` are the statuses of the operation.
+  List<AtsOperationStatuses>? get statuses =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AtsOperationCopyWith<AtsOperation> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AtsOperationCopyWith<$Res> {
+  factory $AtsOperationCopyWith(
+          AtsOperation value, $Res Function(AtsOperation) then) =
+      _$AtsOperationCopyWithImpl<$Res, AtsOperation>;
+  @useResult
+  $Res call(
+      {String? id,
+      String? sellerAssetId,
+      String? transportAssetId,
+      @TimestampOrNullConverter() DateTime? purchasedAt,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      bool? pendingToReview,
+      List<String>? ordersIds,
+      Asset? sellerAsset,
+      Asset? transportAsset,
+      AtsCompanyInformation? sellerInformation,
+      AtsTransportInformation? transportInformation,
+      @AtsPurchaseOrderStatusOrNullConverter()
+      AtsPurchaseOrderStatus? orderStatus,
+      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+      AtsPurchaseOrderCategoriesEntity? category,
+      @AtsPurchaseOrderSubCategoriesOrNullConverter()
+      AtsPurchaseOrderSubCategories? deliverCategory,
+      List<AtsPurchaseOrder>? purchaseOrders,
+      List<AtsOperationStatuses>? statuses});
+
+  $AssetCopyWith<$Res>? get sellerAsset;
+  $AssetCopyWith<$Res>? get transportAsset;
+  $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
+  $AtsTransportInformationCopyWith<$Res>? get transportInformation;
+}
+
+/// @nodoc
+class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
+    implements $AtsOperationCopyWith<$Res> {
+  _$AtsOperationCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? sellerAssetId = freezed,
+    Object? transportAssetId = freezed,
+    Object? purchasedAt = freezed,
+    Object? createdAt = freezed,
+    Object? pendingToReview = freezed,
+    Object? ordersIds = freezed,
+    Object? sellerAsset = freezed,
+    Object? transportAsset = freezed,
+    Object? sellerInformation = freezed,
+    Object? transportInformation = freezed,
+    Object? orderStatus = freezed,
+    Object? category = freezed,
+    Object? deliverCategory = freezed,
+    Object? purchaseOrders = freezed,
+    Object? statuses = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sellerAssetId: freezed == sellerAssetId
+          ? _value.sellerAssetId
+          : sellerAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportAssetId: freezed == transportAssetId
+          ? _value.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      purchasedAt: freezed == purchasedAt
+          ? _value.purchasedAt
+          : purchasedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      pendingToReview: freezed == pendingToReview
+          ? _value.pendingToReview
+          : pendingToReview // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      ordersIds: freezed == ordersIds
+          ? _value.ordersIds
+          : ordersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      sellerAsset: freezed == sellerAsset
+          ? _value.sellerAsset
+          : sellerAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      transportAsset: freezed == transportAsset
+          ? _value.transportAsset
+          : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      sellerInformation: freezed == sellerInformation
+          ? _value.sellerInformation
+          : sellerInformation // ignore: cast_nullable_to_non_nullable
+              as AtsCompanyInformation?,
+      transportInformation: freezed == transportInformation
+          ? _value.transportInformation
+          : transportInformation // ignore: cast_nullable_to_non_nullable
+              as AtsTransportInformation?,
+      orderStatus: freezed == orderStatus
+          ? _value.orderStatus
+          : orderStatus // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderStatus?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderCategoriesEntity?,
+      deliverCategory: freezed == deliverCategory
+          ? _value.deliverCategory
+          : deliverCategory // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderSubCategories?,
+      purchaseOrders: freezed == purchaseOrders
+          ? _value.purchaseOrders
+          : purchaseOrders // ignore: cast_nullable_to_non_nullable
+              as List<AtsPurchaseOrder>?,
+      statuses: freezed == statuses
+          ? _value.statuses
+          : statuses // ignore: cast_nullable_to_non_nullable
+              as List<AtsOperationStatuses>?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get sellerAsset {
+    if (_value.sellerAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_value.sellerAsset!, (value) {
+      return _then(_value.copyWith(sellerAsset: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get transportAsset {
+    if (_value.transportAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_value.transportAsset!, (value) {
+      return _then(_value.copyWith(transportAsset: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsCompanyInformationCopyWith<$Res>? get sellerInformation {
+    if (_value.sellerInformation == null) {
+      return null;
+    }
+
+    return $AtsCompanyInformationCopyWith<$Res>(_value.sellerInformation!,
+        (value) {
+      return _then(_value.copyWith(sellerInformation: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsTransportInformationCopyWith<$Res>? get transportInformation {
+    if (_value.transportInformation == null) {
+      return null;
+    }
+
+    return $AtsTransportInformationCopyWith<$Res>(_value.transportInformation!,
+        (value) {
+      return _then(_value.copyWith(transportInformation: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$AtsOperationImplCopyWith<$Res>
+    implements $AtsOperationCopyWith<$Res> {
+  factory _$$AtsOperationImplCopyWith(
+          _$AtsOperationImpl value, $Res Function(_$AtsOperationImpl) then) =
+      __$$AtsOperationImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? sellerAssetId,
+      String? transportAssetId,
+      @TimestampOrNullConverter() DateTime? purchasedAt,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      bool? pendingToReview,
+      List<String>? ordersIds,
+      Asset? sellerAsset,
+      Asset? transportAsset,
+      AtsCompanyInformation? sellerInformation,
+      AtsTransportInformation? transportInformation,
+      @AtsPurchaseOrderStatusOrNullConverter()
+      AtsPurchaseOrderStatus? orderStatus,
+      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+      AtsPurchaseOrderCategoriesEntity? category,
+      @AtsPurchaseOrderSubCategoriesOrNullConverter()
+      AtsPurchaseOrderSubCategories? deliverCategory,
+      List<AtsPurchaseOrder>? purchaseOrders,
+      List<AtsOperationStatuses>? statuses});
+
+  @override
+  $AssetCopyWith<$Res>? get sellerAsset;
+  @override
+  $AssetCopyWith<$Res>? get transportAsset;
+  @override
+  $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
+  @override
+  $AtsTransportInformationCopyWith<$Res>? get transportInformation;
+}
+
+/// @nodoc
+class __$$AtsOperationImplCopyWithImpl<$Res>
+    extends _$AtsOperationCopyWithImpl<$Res, _$AtsOperationImpl>
+    implements _$$AtsOperationImplCopyWith<$Res> {
+  __$$AtsOperationImplCopyWithImpl(
+      _$AtsOperationImpl _value, $Res Function(_$AtsOperationImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? sellerAssetId = freezed,
+    Object? transportAssetId = freezed,
+    Object? purchasedAt = freezed,
+    Object? createdAt = freezed,
+    Object? pendingToReview = freezed,
+    Object? ordersIds = freezed,
+    Object? sellerAsset = freezed,
+    Object? transportAsset = freezed,
+    Object? sellerInformation = freezed,
+    Object? transportInformation = freezed,
+    Object? orderStatus = freezed,
+    Object? category = freezed,
+    Object? deliverCategory = freezed,
+    Object? purchaseOrders = freezed,
+    Object? statuses = freezed,
+  }) {
+    return _then(_$AtsOperationImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sellerAssetId: freezed == sellerAssetId
+          ? _value.sellerAssetId
+          : sellerAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportAssetId: freezed == transportAssetId
+          ? _value.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      purchasedAt: freezed == purchasedAt
+          ? _value.purchasedAt
+          : purchasedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      pendingToReview: freezed == pendingToReview
+          ? _value.pendingToReview
+          : pendingToReview // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      ordersIds: freezed == ordersIds
+          ? _value._ordersIds
+          : ordersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      sellerAsset: freezed == sellerAsset
+          ? _value.sellerAsset
+          : sellerAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      transportAsset: freezed == transportAsset
+          ? _value.transportAsset
+          : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      sellerInformation: freezed == sellerInformation
+          ? _value.sellerInformation
+          : sellerInformation // ignore: cast_nullable_to_non_nullable
+              as AtsCompanyInformation?,
+      transportInformation: freezed == transportInformation
+          ? _value.transportInformation
+          : transportInformation // ignore: cast_nullable_to_non_nullable
+              as AtsTransportInformation?,
+      orderStatus: freezed == orderStatus
+          ? _value.orderStatus
+          : orderStatus // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderStatus?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderCategoriesEntity?,
+      deliverCategory: freezed == deliverCategory
+          ? _value.deliverCategory
+          : deliverCategory // ignore: cast_nullable_to_non_nullable
+              as AtsPurchaseOrderSubCategories?,
+      purchaseOrders: freezed == purchaseOrders
+          ? _value._purchaseOrders
+          : purchaseOrders // ignore: cast_nullable_to_non_nullable
+              as List<AtsPurchaseOrder>?,
+      statuses: freezed == statuses
+          ? _value._statuses
+          : statuses // ignore: cast_nullable_to_non_nullable
+              as List<AtsOperationStatuses>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AtsOperationImpl implements _AtsOperation {
+  const _$AtsOperationImpl(
+      {this.id,
+      this.sellerAssetId,
+      this.transportAssetId,
+      @TimestampOrNullConverter() this.purchasedAt,
+      @TimestampOrNullConverter() this.createdAt,
+      this.pendingToReview,
+      final List<String>? ordersIds,
+      this.sellerAsset,
+      this.transportAsset,
+      this.sellerInformation,
+      this.transportInformation,
+      @AtsPurchaseOrderStatusOrNullConverter() this.orderStatus,
+      @AtsPurchaseOrderCategoriesEntityOrNullConverter() this.category,
+      @AtsPurchaseOrderSubCategoriesOrNullConverter() this.deliverCategory,
+      final List<AtsPurchaseOrder>? purchaseOrders,
+      final List<AtsOperationStatuses>? statuses})
+      : _ordersIds = ordersIds,
+        _purchaseOrders = purchaseOrders,
+        _statuses = statuses;
+
+  factory _$AtsOperationImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AtsOperationImplFromJson(json);
+
+  /// `id` of the asset entity. This ID is unique.
+  @override
+  final String? id;
+
+  /// `sellerAssetId` is the ID of the seller asset.
+  @override
+  final String? sellerAssetId;
+
+  /// `transportAssetId` is the ID of the transport asset.
+  @override
+  final String? transportAssetId;
+
+  /// `purchasedAt` is the Unix timestamp of the last reception date.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? purchasedAt;
+
+  /// `createdAt` is the Unix timestamp of the creation date.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? createdAt;
+
+  /// `pendingToReview` indicates if it's pending to review.
+  @override
+  final bool? pendingToReview;
+
+  /// `ordersIds` is a list of purchase orders linked to the operation.
+  final List<String>? _ordersIds;
+
+  /// `ordersIds` is a list of purchase orders linked to the operation.
+  @override
+  List<String>? get ordersIds {
+    final value = _ordersIds;
+    if (value == null) return null;
+    if (_ordersIds is EqualUnmodifiableListView) return _ordersIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// `sellerAsset` is the seller Asset linked to the purchase order.
+  @override
+  final Asset? sellerAsset;
+
+  /// `transportAsset` is the transport Asset linked to the purchase order.
+  @override
+  final Asset? transportAsset;
+
+  /// `sellerInformation` is the legal information about the seller.
+  @override
+  final AtsCompanyInformation? sellerInformation;
+
+  /// `transportInformation` is the legal information about the transport.
+  @override
+  final AtsTransportInformation? transportInformation;
+
+  /// `orderStatus` is the status of the order.
+  @override
+  @AtsPurchaseOrderStatusOrNullConverter()
+  final AtsPurchaseOrderStatus? orderStatus;
+
+  /// `category` is the category of the purchase order.
+  @override
+  @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+  final AtsPurchaseOrderCategoriesEntity? category;
+
+  /// `deliverCategory` is the deliver category of the purchase order.
+  @override
+  @AtsPurchaseOrderSubCategoriesOrNullConverter()
+  final AtsPurchaseOrderSubCategories? deliverCategory;
+
+  /// `purchaseOrders` are the purchase orders linked to the operation.
+  final List<AtsPurchaseOrder>? _purchaseOrders;
+
+  /// `purchaseOrders` are the purchase orders linked to the operation.
+  @override
+  List<AtsPurchaseOrder>? get purchaseOrders {
+    final value = _purchaseOrders;
+    if (value == null) return null;
+    if (_purchaseOrders is EqualUnmodifiableListView) return _purchaseOrders;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// `statuses` are the statuses of the operation.
+  final List<AtsOperationStatuses>? _statuses;
+
+  /// `statuses` are the statuses of the operation.
+  @override
+  List<AtsOperationStatuses>? get statuses {
+    final value = _statuses;
+    if (value == null) return null;
+    if (_statuses is EqualUnmodifiableListView) return _statuses;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AtsOperationImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.sellerAssetId, sellerAssetId) ||
+                other.sellerAssetId == sellerAssetId) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.purchasedAt, purchasedAt) ||
+                other.purchasedAt == purchasedAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.pendingToReview, pendingToReview) ||
+                other.pendingToReview == pendingToReview) &&
+            const DeepCollectionEquality()
+                .equals(other._ordersIds, _ordersIds) &&
+            (identical(other.sellerAsset, sellerAsset) ||
+                other.sellerAsset == sellerAsset) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.sellerInformation, sellerInformation) ||
+                other.sellerInformation == sellerInformation) &&
+            (identical(other.transportInformation, transportInformation) ||
+                other.transportInformation == transportInformation) &&
+            (identical(other.orderStatus, orderStatus) ||
+                other.orderStatus == orderStatus) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.deliverCategory, deliverCategory) ||
+                other.deliverCategory == deliverCategory) &&
+            const DeepCollectionEquality()
+                .equals(other._purchaseOrders, _purchaseOrders) &&
+            const DeepCollectionEquality().equals(other._statuses, _statuses));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      sellerAssetId,
+      transportAssetId,
+      purchasedAt,
+      createdAt,
+      pendingToReview,
+      const DeepCollectionEquality().hash(_ordersIds),
+      sellerAsset,
+      transportAsset,
+      sellerInformation,
+      transportInformation,
+      orderStatus,
+      category,
+      deliverCategory,
+      const DeepCollectionEquality().hash(_purchaseOrders),
+      const DeepCollectionEquality().hash(_statuses));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AtsOperationImplCopyWith<_$AtsOperationImpl> get copyWith =>
+      __$$AtsOperationImplCopyWithImpl<_$AtsOperationImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AtsOperationImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AtsOperation implements AtsOperation {
+  const factory _AtsOperation(
+      {final String? id,
+      final String? sellerAssetId,
+      final String? transportAssetId,
+      @TimestampOrNullConverter() final DateTime? purchasedAt,
+      @TimestampOrNullConverter() final DateTime? createdAt,
+      final bool? pendingToReview,
+      final List<String>? ordersIds,
+      final Asset? sellerAsset,
+      final Asset? transportAsset,
+      final AtsCompanyInformation? sellerInformation,
+      final AtsTransportInformation? transportInformation,
+      @AtsPurchaseOrderStatusOrNullConverter()
+      final AtsPurchaseOrderStatus? orderStatus,
+      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+      final AtsPurchaseOrderCategoriesEntity? category,
+      @AtsPurchaseOrderSubCategoriesOrNullConverter()
+      final AtsPurchaseOrderSubCategories? deliverCategory,
+      final List<AtsPurchaseOrder>? purchaseOrders,
+      final List<AtsOperationStatuses>? statuses}) = _$AtsOperationImpl;
+
+  factory _AtsOperation.fromJson(Map<String, dynamic> json) =
+      _$AtsOperationImpl.fromJson;
+
+  @override
+
+  /// `id` of the asset entity. This ID is unique.
+  String? get id;
+  @override
+
+  /// `sellerAssetId` is the ID of the seller asset.
+  String? get sellerAssetId;
+  @override
+
+  /// `transportAssetId` is the ID of the transport asset.
+  String? get transportAssetId;
+  @override
+
+  /// `purchasedAt` is the Unix timestamp of the last reception date.
+  @TimestampOrNullConverter()
+  DateTime? get purchasedAt;
+  @override
+
+  /// `createdAt` is the Unix timestamp of the creation date.
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+  @override
+
+  /// `pendingToReview` indicates if it's pending to review.
+  bool? get pendingToReview;
+  @override
+
+  /// `ordersIds` is a list of purchase orders linked to the operation.
+  List<String>? get ordersIds;
+  @override
+
+  /// `sellerAsset` is the seller Asset linked to the purchase order.
+  Asset? get sellerAsset;
+  @override
+
+  /// `transportAsset` is the transport Asset linked to the purchase order.
+  Asset? get transportAsset;
+  @override
+
+  /// `sellerInformation` is the legal information about the seller.
+  AtsCompanyInformation? get sellerInformation;
+  @override
+
+  /// `transportInformation` is the legal information about the transport.
+  AtsTransportInformation? get transportInformation;
+  @override
+
+  /// `orderStatus` is the status of the order.
+  @AtsPurchaseOrderStatusOrNullConverter()
+  AtsPurchaseOrderStatus? get orderStatus;
+  @override
+
+  /// `category` is the category of the purchase order.
+  @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+  AtsPurchaseOrderCategoriesEntity? get category;
+  @override
+
+  /// `deliverCategory` is the deliver category of the purchase order.
+  @AtsPurchaseOrderSubCategoriesOrNullConverter()
+  AtsPurchaseOrderSubCategories? get deliverCategory;
+  @override
+
+  /// `purchaseOrders` are the purchase orders linked to the operation.
+  List<AtsPurchaseOrder>? get purchaseOrders;
+  @override
+
+  /// `statuses` are the statuses of the operation.
+  List<AtsOperationStatuses>? get statuses;
+  @override
+  @JsonKey(ignore: true)
+  _$$AtsOperationImplCopyWith<_$AtsOperationImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+AtsOperationStatuses _$AtsOperationStatusesFromJson(Map<String, dynamic> json) {
+  return _AtsOperationStatuses.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AtsOperationStatuses {
+  /// `asset` is the Asset linked to the operation.
+  Asset? get asset => throw _privateConstructorUsedError;
+
+  /// `inTransitAt` is the Unix timestamp of when the asset was in transit.
+  @TimestampOrNullConverter()
+  DateTime? get inTransitAt => throw _privateConstructorUsedError;
+
+  /// `waitingToDispatchAt` is the Unix timestamp of when the asset was waiting to dispatch.
+  @TimestampOrNullConverter()
+  DateTime? get waitingToDispatchAt => throw _privateConstructorUsedError;
+
+  /// `deliveredAt` is the Unix timestamp of when the asset was delivered.
+  @TimestampOrNullConverter()
+  DateTime? get deliveredAt => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AtsOperationStatusesCopyWith<AtsOperationStatuses> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AtsOperationStatusesCopyWith<$Res> {
+  factory $AtsOperationStatusesCopyWith(AtsOperationStatuses value,
+          $Res Function(AtsOperationStatuses) then) =
+      _$AtsOperationStatusesCopyWithImpl<$Res, AtsOperationStatuses>;
+  @useResult
+  $Res call(
+      {Asset? asset,
+      @TimestampOrNullConverter() DateTime? inTransitAt,
+      @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+      @TimestampOrNullConverter() DateTime? deliveredAt});
+
+  $AssetCopyWith<$Res>? get asset;
+}
+
+/// @nodoc
+class _$AtsOperationStatusesCopyWithImpl<$Res,
+        $Val extends AtsOperationStatuses>
+    implements $AtsOperationStatusesCopyWith<$Res> {
+  _$AtsOperationStatusesCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? asset = freezed,
+    Object? inTransitAt = freezed,
+    Object? waitingToDispatchAt = freezed,
+    Object? deliveredAt = freezed,
+  }) {
+    return _then(_value.copyWith(
+      asset: freezed == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      inTransitAt: freezed == inTransitAt
+          ? _value.inTransitAt
+          : inTransitAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      waitingToDispatchAt: freezed == waitingToDispatchAt
+          ? _value.waitingToDispatchAt
+          : waitingToDispatchAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      deliveredAt: freezed == deliveredAt
+          ? _value.deliveredAt
+          : deliveredAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_value.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_value.asset!, (value) {
+      return _then(_value.copyWith(asset: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$AtsOperationStatusesImplCopyWith<$Res>
+    implements $AtsOperationStatusesCopyWith<$Res> {
+  factory _$$AtsOperationStatusesImplCopyWith(_$AtsOperationStatusesImpl value,
+          $Res Function(_$AtsOperationStatusesImpl) then) =
+      __$$AtsOperationStatusesImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {Asset? asset,
+      @TimestampOrNullConverter() DateTime? inTransitAt,
+      @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+      @TimestampOrNullConverter() DateTime? deliveredAt});
+
+  @override
+  $AssetCopyWith<$Res>? get asset;
+}
+
+/// @nodoc
+class __$$AtsOperationStatusesImplCopyWithImpl<$Res>
+    extends _$AtsOperationStatusesCopyWithImpl<$Res, _$AtsOperationStatusesImpl>
+    implements _$$AtsOperationStatusesImplCopyWith<$Res> {
+  __$$AtsOperationStatusesImplCopyWithImpl(_$AtsOperationStatusesImpl _value,
+      $Res Function(_$AtsOperationStatusesImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? asset = freezed,
+    Object? inTransitAt = freezed,
+    Object? waitingToDispatchAt = freezed,
+    Object? deliveredAt = freezed,
+  }) {
+    return _then(_$AtsOperationStatusesImpl(
+      asset: freezed == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      inTransitAt: freezed == inTransitAt
+          ? _value.inTransitAt
+          : inTransitAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      waitingToDispatchAt: freezed == waitingToDispatchAt
+          ? _value.waitingToDispatchAt
+          : waitingToDispatchAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      deliveredAt: freezed == deliveredAt
+          ? _value.deliveredAt
+          : deliveredAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AtsOperationStatusesImpl implements _AtsOperationStatuses {
+  const _$AtsOperationStatusesImpl(
+      {this.asset,
+      @TimestampOrNullConverter() this.inTransitAt,
+      @TimestampOrNullConverter() this.waitingToDispatchAt,
+      @TimestampOrNullConverter() this.deliveredAt});
+
+  factory _$AtsOperationStatusesImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AtsOperationStatusesImplFromJson(json);
+
+  /// `asset` is the Asset linked to the operation.
+  @override
+  final Asset? asset;
+
+  /// `inTransitAt` is the Unix timestamp of when the asset was in transit.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? inTransitAt;
+
+  /// `waitingToDispatchAt` is the Unix timestamp of when the asset was waiting to dispatch.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? waitingToDispatchAt;
+
+  /// `deliveredAt` is the Unix timestamp of when the asset was delivered.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? deliveredAt;
+
+  @override
+  String toString() {
+    return 'AtsOperationStatuses(asset: $asset, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AtsOperationStatusesImpl &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.inTransitAt, inTransitAt) ||
+                other.inTransitAt == inTransitAt) &&
+            (identical(other.waitingToDispatchAt, waitingToDispatchAt) ||
+                other.waitingToDispatchAt == waitingToDispatchAt) &&
+            (identical(other.deliveredAt, deliveredAt) ||
+                other.deliveredAt == deliveredAt));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, asset, inTransitAt, waitingToDispatchAt, deliveredAt);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AtsOperationStatusesImplCopyWith<_$AtsOperationStatusesImpl>
+      get copyWith =>
+          __$$AtsOperationStatusesImplCopyWithImpl<_$AtsOperationStatusesImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AtsOperationStatusesImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AtsOperationStatuses implements AtsOperationStatuses {
+  const factory _AtsOperationStatuses(
+          {final Asset? asset,
+          @TimestampOrNullConverter() final DateTime? inTransitAt,
+          @TimestampOrNullConverter() final DateTime? waitingToDispatchAt,
+          @TimestampOrNullConverter() final DateTime? deliveredAt}) =
+      _$AtsOperationStatusesImpl;
+
+  factory _AtsOperationStatuses.fromJson(Map<String, dynamic> json) =
+      _$AtsOperationStatusesImpl.fromJson;
+
+  @override
+
+  /// `asset` is the Asset linked to the operation.
+  Asset? get asset;
+  @override
+
+  /// `inTransitAt` is the Unix timestamp of when the asset was in transit.
+  @TimestampOrNullConverter()
+  DateTime? get inTransitAt;
+  @override
+
+  /// `waitingToDispatchAt` is the Unix timestamp of when the asset was waiting to dispatch.
+  @TimestampOrNullConverter()
+  DateTime? get waitingToDispatchAt;
+  @override
+
+  /// `deliveredAt` is the Unix timestamp of when the asset was delivered.
+  @TimestampOrNullConverter()
+  DateTime? get deliveredAt;
+  @override
+  @JsonKey(ignore: true)
+  _$$AtsOperationStatusesImplCopyWith<_$AtsOperationStatusesImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

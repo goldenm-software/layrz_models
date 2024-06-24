@@ -10,7 +10,7 @@ _$RealtimeEndpointImpl _$$RealtimeEndpointImplFromJson(
         Map<String, dynamic> json) =>
     _$RealtimeEndpointImpl(
       host: json['host'] as String?,
-      port: json['port'] as int?,
+      port: (json['port'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$RealtimeEndpointImplToJson(
@@ -59,8 +59,8 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
       hasSmsCommands: json['hasSmsCommands'] as bool?,
       hasCommandsResult: json['hasCommandsResult'] as bool?,
       isFlespi: json['isFlespi'] as bool?,
-      channelId: json['channelId'] as int?,
-      maxPerReceptor: json['maxPerReceptor'] as int?,
+      channelId: (json['channelId'] as num?)?.toInt(),
+      maxPerReceptor: (json['maxPerReceptor'] as num?)?.toInt(),
       flespiId: json['flespiId'] as String?,
       requiredFields: (json['requiredFields'] as List<dynamic>?)
           ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))

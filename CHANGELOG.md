@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.65
+- added `AtsOperation` and `AtsOperationStatuses` 
+
 ## 2.1.64
 
 - Added `GeofenceCategory.lead` to `GeofenceCategory` enum
