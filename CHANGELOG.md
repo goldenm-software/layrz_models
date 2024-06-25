@@ -1,7 +1,10 @@
 # Changelog
 
+## 2.1.66
+- Added `speedingThreshold` prop to `BrickhouseAlertInput` and `BrickhouseAlert` models
+
 ## 2.1.65
-- added `AtsOperation` and `AtsOperationStatuses` 
+- Added `AtsOperation` and `AtsOperationStatuses`
 
 ## 2.1.64
 

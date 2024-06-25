@@ -223,8 +223,8 @@ Map<String, dynamic> _$$MapCardSensorsImplToJson(
 
 _$GridDimensionImpl _$$GridDimensionImplFromJson(Map<String, dynamic> json) =>
     _$GridDimensionImpl(
-      width: (json['width'] as num).toInt(),
-      height: (json['height'] as num).toInt(),
+      width: json['width'] as int,
+      height: json['height'] as int,
     );
 
 Map<String, dynamic> _$$GridDimensionImplToJson(_$GridDimensionImpl instance) =>
