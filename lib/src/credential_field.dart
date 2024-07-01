@@ -62,7 +62,10 @@ enum CredentialFieldType {
   layrzFtpPassword,
   nestedField,
   wialonToken,
-  base64;
+  base64,
+  layrzItemId,
+  layrzWebhookEndpoint,
+  ;
 
   @override
   String toString() => toJson();
@@ -103,6 +106,10 @@ enum CredentialFieldType {
         return 'WIALONTOKEN';
       case CredentialFieldType.base64:
         return 'BASE64';
+      case CredentialFieldType.layrzItemId:
+        return 'LAYRZ_ITEM_ID';
+      case CredentialFieldType.layrzWebhookEndpoint:
+        return 'LAYRZ_WEBHOOK_ENDPOINT';
       default:
         throw Exception('Unknown CredentialFieldType: $this');
     }
@@ -144,6 +151,10 @@ enum CredentialFieldType {
         return CredentialFieldType.wialonToken;
       case 'BASE64':
         return CredentialFieldType.base64;
+      case 'LAYRZ_ITEM_ID':
+        return CredentialFieldType.layrzItemId;
+      case 'LAYRZ_WEBHOOK_ENDPOINT':
+        return CredentialFieldType.layrzWebhookEndpoint;
       default:
         throw Exception('Unknown CredentialFieldType: $json');
     }

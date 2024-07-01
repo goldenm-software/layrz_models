@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.66
+
+- Added `CredentialFieldType.layrzItemId` and `CredentialFieldType.layrzWebhookEndpoint`
+
 ## 2.1.65
 - Added `speedingThreshold` prop to `BrickhouseAlertInput` and `BrickhouseAlert` models
 - Added `AtsOperation` and `AtsOperationStatuses`
