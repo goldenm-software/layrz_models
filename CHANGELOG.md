@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.67
+- added `totalQuantity` in `AtsOperation` model
+
 ## 2.1.66
 
 - Added `CredentialFieldType.layrzItemId` and `CredentialFieldType.layrzWebhookEndpoint`

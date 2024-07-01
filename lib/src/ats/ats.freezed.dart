@@ -10339,6 +10339,9 @@ mixin _$AtsOperation {
   List<AtsOperationStatuses>? get statuses =>
       throw _privateConstructorUsedError;
 
+  /// `totalQuantity` total quantity of the purchase order.
+  double? get totalQuantity => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AtsOperationCopyWith<AtsOperation> get copyWith =>
@@ -10370,7 +10373,8 @@ abstract class $AtsOperationCopyWith<$Res> {
       @AtsPurchaseOrderSubCategoriesOrNullConverter()
       AtsPurchaseOrderSubCategories? deliverCategory,
       List<AtsPurchaseOrder>? purchaseOrders,
-      List<AtsOperationStatuses>? statuses});
+      List<AtsOperationStatuses>? statuses,
+      double? totalQuantity});
 
   $AssetCopyWith<$Res>? get sellerAsset;
   $AssetCopyWith<$Res>? get transportAsset;
@@ -10407,6 +10411,7 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
     Object? deliverCategory = freezed,
     Object? purchaseOrders = freezed,
     Object? statuses = freezed,
+    Object? totalQuantity = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -10473,6 +10478,10 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
           ? _value.statuses
           : statuses // ignore: cast_nullable_to_non_nullable
               as List<AtsOperationStatuses>?,
+      totalQuantity: freezed == totalQuantity
+          ? _value.totalQuantity
+          : totalQuantity // ignore: cast_nullable_to_non_nullable
+              as double?,
     ) as $Val);
   }
 
@@ -10554,7 +10563,8 @@ abstract class _$$AtsOperationImplCopyWith<$Res>
       @AtsPurchaseOrderSubCategoriesOrNullConverter()
       AtsPurchaseOrderSubCategories? deliverCategory,
       List<AtsPurchaseOrder>? purchaseOrders,
-      List<AtsOperationStatuses>? statuses});
+      List<AtsOperationStatuses>? statuses,
+      double? totalQuantity});
 
   @override
   $AssetCopyWith<$Res>? get sellerAsset;
@@ -10593,6 +10603,7 @@ class __$$AtsOperationImplCopyWithImpl<$Res>
     Object? deliverCategory = freezed,
     Object? purchaseOrders = freezed,
     Object? statuses = freezed,
+    Object? totalQuantity = freezed,
   }) {
     return _then(_$AtsOperationImpl(
       id: freezed == id
@@ -10659,6 +10670,10 @@ class __$$AtsOperationImplCopyWithImpl<$Res>
           ? _value._statuses
           : statuses // ignore: cast_nullable_to_non_nullable
               as List<AtsOperationStatuses>?,
+      totalQuantity: freezed == totalQuantity
+          ? _value.totalQuantity
+          : totalQuantity // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 }
@@ -10682,7 +10697,8 @@ class _$AtsOperationImpl implements _AtsOperation {
       @AtsPurchaseOrderCategoriesEntityOrNullConverter() this.category,
       @AtsPurchaseOrderSubCategoriesOrNullConverter() this.deliverCategory,
       final List<AtsPurchaseOrder>? purchaseOrders,
-      final List<AtsOperationStatuses>? statuses})
+      final List<AtsOperationStatuses>? statuses,
+      this.totalQuantity})
       : _ordersIds = ordersIds,
         _purchaseOrders = purchaseOrders,
         _statuses = statuses;
@@ -10786,9 +10802,13 @@ class _$AtsOperationImpl implements _AtsOperation {
     return EqualUnmodifiableListView(value);
   }
 
+  /// `totalQuantity` total quantity of the purchase order.
+  @override
+  final double? totalQuantity;
+
   @override
   String toString() {
-    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses)';
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity)';
   }
 
   @override
@@ -10825,7 +10845,9 @@ class _$AtsOperationImpl implements _AtsOperation {
                 other.deliverCategory == deliverCategory) &&
             const DeepCollectionEquality()
                 .equals(other._purchaseOrders, _purchaseOrders) &&
-            const DeepCollectionEquality().equals(other._statuses, _statuses));
+            const DeepCollectionEquality().equals(other._statuses, _statuses) &&
+            (identical(other.totalQuantity, totalQuantity) ||
+                other.totalQuantity == totalQuantity));
   }
 
   @JsonKey(ignore: true)
@@ -10847,7 +10869,8 @@ class _$AtsOperationImpl implements _AtsOperation {
       category,
       deliverCategory,
       const DeepCollectionEquality().hash(_purchaseOrders),
-      const DeepCollectionEquality().hash(_statuses));
+      const DeepCollectionEquality().hash(_statuses),
+      totalQuantity);
 
   @JsonKey(ignore: true)
   @override
@@ -10883,7 +10906,8 @@ abstract class _AtsOperation implements AtsOperation {
       @AtsPurchaseOrderSubCategoriesOrNullConverter()
       final AtsPurchaseOrderSubCategories? deliverCategory,
       final List<AtsPurchaseOrder>? purchaseOrders,
-      final List<AtsOperationStatuses>? statuses}) = _$AtsOperationImpl;
+      final List<AtsOperationStatuses>? statuses,
+      final double? totalQuantity}) = _$AtsOperationImpl;
 
   factory _AtsOperation.fromJson(Map<String, dynamic> json) =
       _$AtsOperationImpl.fromJson;
@@ -10957,6 +10981,10 @@ abstract class _AtsOperation implements AtsOperation {
 
   /// `statuses` are the statuses of the operation.
   List<AtsOperationStatuses>? get statuses;
+  @override
+
+  /// `totalQuantity` total quantity of the purchase order.
+  double? get totalQuantity;
   @override
   @JsonKey(ignore: true)
   _$$AtsOperationImplCopyWith<_$AtsOperationImpl> get copyWith =>
