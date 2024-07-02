@@ -38,6 +38,10 @@ class OutboundProtocol with _$OutboundProtocol {
     /// [dynamicIcon] is the icon of the inbound protocol.
     /// This is the new schema of the icon
     Avatar? dynamicIcon,
+
+    /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+    /// For marketing purposes.
+    int? usage,
   }) = _OutboundProtocol;
 
   factory OutboundProtocol.fromJson(Map<String, dynamic> json) => _$OutboundProtocolFromJson(json);

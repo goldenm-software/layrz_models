@@ -253,6 +253,7 @@ _$AlgorithmImpl _$$AlgorithmImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      usage: json['usage'] as int?,
     );
 
 Map<String, dynamic> _$$AlgorithmImplToJson(_$AlgorithmImpl instance) =>
@@ -267,6 +268,7 @@ Map<String, dynamic> _$$AlgorithmImplToJson(_$AlgorithmImpl instance) =>
       'hasHttp': instance.hasHttp,
       'hasFtp': instance.hasFtp,
       'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
+      'usage': instance.usage,
     };
 
 _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
@@ -579,6 +581,10 @@ _$BillingPlanImpl _$$BillingPlanImplFromJson(Map<String, dynamic> json) =>
           (json['allowedVisionProtocolsIds'] as List<dynamic>)
               .map((e) => e as String)
               .toList(),
+      allowedExchangeProtocolsIds:
+          (json['allowedExchangeProtocolsIds'] as List<dynamic>)
+              .map((e) => e as String)
+              .toList(),
     );
 
 Map<String, dynamic> _$$BillingPlanImplToJson(_$BillingPlanImpl instance) =>
@@ -598,6 +604,7 @@ Map<String, dynamic> _$$BillingPlanImplToJson(_$BillingPlanImpl instance) =>
       'allowedInboundProtocolsIds': instance.allowedInboundProtocolsIds,
       'allowedOutboundProtocolsIds': instance.allowedOutboundProtocolsIds,
       'allowedVisionProtocolsIds': instance.allowedVisionProtocolsIds,
+      'allowedExchangeProtocolsIds': instance.allowedExchangeProtocolsIds,
     };
 
 _$CareProtocolImpl _$$CareProtocolImplFromJson(Map<String, dynamic> json) =>
@@ -1089,6 +1096,54 @@ Json? _$JsonConverterToJson<Json, Value>(
   Json? Function(Value value) toJson,
 ) =>
     value == null ? null : toJson(value);
+
+_$CredentialFieldInputImpl _$$CredentialFieldInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CredentialFieldInputImpl(
+      field: json['field'] as String? ?? '',
+      type: json['type'] == null
+          ? CredentialFieldType.string
+          : const CredentialFieldTypeConverter()
+              .fromJson(json['type'] as String),
+      maxLength: json['maxLength'] as int?,
+      minLength: json['minLength'] as int?,
+      maxValue: (json['maxValue'] as num?)?.toDouble(),
+      minValue: (json['minValue'] as num?)?.toDouble(),
+      choices: (json['choices'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      onlyField: json['onlyField'] as String?,
+      onlyChoices: (json['onlyChoices'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      action: json['action'] == null
+          ? CredentialFieldAction.none
+          : const CredentialFieldActionConverter()
+              .fromJson(json['action'] as String),
+      requiredFields: (json['requiredFields'] as List<dynamic>?)
+              ?.map((e) =>
+                  CredentialFieldInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$CredentialFieldInputImplToJson(
+        _$CredentialFieldInputImpl instance) =>
+    <String, dynamic>{
+      'field': instance.field,
+      'type': const CredentialFieldTypeConverter().toJson(instance.type),
+      'maxLength': instance.maxLength,
+      'minLength': instance.minLength,
+      'maxValue': instance.maxValue,
+      'minValue': instance.minValue,
+      'choices': instance.choices,
+      'onlyField': instance.onlyField,
+      'onlyChoices': instance.onlyChoices,
+      'action': const CredentialFieldActionConverter().toJson(instance.action),
+      'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
+    };
 
 _$CustomFieldImpl _$$CustomFieldImplFromJson(Map<String, dynamic> json) =>
     _$CustomFieldImpl(
@@ -2256,6 +2311,12 @@ _$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
       mappitRoutesIds: (json['mappitRoutesIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      exchangeServices: (json['exchangeServices'] as List<dynamic>?)
+          ?.map((e) => ExchangeService.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      exchangeServicesIds: (json['exchangeServicesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -2319,6 +2380,9 @@ Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
       'visionProfilesIds': instance.visionProfilesIds,
       'mappitRoutes': instance.mappitRoutes?.map((e) => e.toJson()).toList(),
       'mappitRoutesIds': instance.mappitRoutesIds,
+      'exchangeServices':
+          instance.exchangeServices?.map((e) => e.toJson()).toList(),
+      'exchangeServicesIds': instance.exchangeServicesIds,
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'owner': instance.owner?.toJson(),
       'ownerId': instance.ownerId,
@@ -2864,4 +2928,51 @@ Map<String, dynamic> _$$InviteLinkImplToJson(_$InviteLinkImpl instance) =>
       'sentAt': const TimestampOrNullConverter().toJson(instance.sentAt),
       'expiresAt': const TimestampConverter().toJson(instance.expiresAt),
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
+    };
+
+_$FlespiAclImpl _$$FlespiAclImplFromJson(Map<String, dynamic> json) =>
+    _$FlespiAclImpl(
+      uri: const FlespiUriConverter().fromJson(json['uri'] as String),
+      topic: json['topic'] as String?,
+      actions: (json['actions'] as List<dynamic>?)
+          ?.map((e) => const FlespiActionConverter().fromJson(e as String))
+          .toList(),
+      methods: (json['methods'] as List<dynamic>?)
+          ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
+          .toList(),
+      ids: (json['ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      submodules: (json['submodules'] as List<dynamic>?)
+          ?.map(
+              (e) => FlespiSubmoduleConfig.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$FlespiAclImplToJson(_$FlespiAclImpl instance) =>
+    <String, dynamic>{
+      'uri': const FlespiUriConverter().toJson(instance.uri),
+      'topic': instance.topic,
+      'actions':
+          instance.actions?.map(const FlespiActionConverter().toJson).toList(),
+      'methods':
+          instance.methods?.map(const FlespiMethodConverter().toJson).toList(),
+      'ids': instance.ids,
+      'submodules': instance.submodules?.map((e) => e.toJson()).toList(),
+    };
+
+_$FlespiSubmoduleConfigImpl _$$FlespiSubmoduleConfigImplFromJson(
+        Map<String, dynamic> json) =>
+    _$FlespiSubmoduleConfigImpl(
+      name: const FlespiSubmoduleConverter().fromJson(json['name'] as String),
+      methods: (json['methods'] as List<dynamic>?)
+              ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$FlespiSubmoduleConfigImplToJson(
+        _$FlespiSubmoduleConfigImpl instance) =>
+    <String, dynamic>{
+      'name': const FlespiSubmoduleConverter().toJson(instance.name),
+      'methods':
+          instance.methods.map(const FlespiMethodConverter().toJson).toList(),
     };

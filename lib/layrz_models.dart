@@ -24,6 +24,7 @@ import 'src/vision/vision.dart';
 // import 'src/sdm/sdm.dart';
 import 'src/modbus/modbus.dart';
 import 'src/charts/charts.dart';
+import 'src/exchange/exchange.dart';
 
 // Internal exports
 export 'src/converters/converters.dart';
@@ -45,6 +46,7 @@ export 'src/tenvio/tenvio.dart';
 export 'src/sdm/sdm.dart';
 export 'src/modbus/modbus.dart';
 export 'src/charts/charts.dart';
+export 'src/exchange/exchange.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
@@ -102,6 +104,7 @@ part 'src/trip.dart';
 part 'src/undeclarated_models.dart';
 part 'src/user.dart';
 part 'src/weekdays.dart';
+part 'src/flespi_acl.dart';
 
 // Helper enums
 enum LayrzListingFormat {

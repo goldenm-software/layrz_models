@@ -1,5 +1,20 @@
 # Changelog
 
+## 2.1.70
+
+- Added `usage` to `InboundProtocol`, `OutboundProtocol` and `Algorithm` models
+
+## 2.1.69
+
+- Expanded configuration of `FlespiAcl` model
+- Added `FlespiSubmoduleConfig` model
+
+## 2.1.68
+
+- Added `CredentialFieldInput` model
+- Added `ExchangeProtocol` model
+- Added `ExchangeService` model
+
 ## 2.1.67
 - added `totalQuantity` in `AtsOperation` model
 
