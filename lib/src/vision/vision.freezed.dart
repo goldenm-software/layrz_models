@@ -37,6 +37,13 @@ mixin _$VisionProtocol {
   List<CredentialField> get requiredFields =>
       throw _privateConstructorUsedError;
 
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  int? get usage => throw _privateConstructorUsedError;
+
+  /// [dynamicIcon] is the icon of the protocol.
+  Avatar? get dynamicIcon => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $VisionProtocolCopyWith<VisionProtocol> get copyWith =>
@@ -54,7 +61,11 @@ abstract class $VisionProtocolCopyWith<$Res> {
       String name,
       @ColorConverter() Color color,
       bool isEnabled,
-      List<CredentialField> requiredFields});
+      List<CredentialField> requiredFields,
+      int? usage,
+      Avatar? dynamicIcon});
+
+  $AvatarCopyWith<$Res>? get dynamicIcon;
 }
 
 /// @nodoc
@@ -75,6 +86,8 @@ class _$VisionProtocolCopyWithImpl<$Res, $Val extends VisionProtocol>
     Object? color = null,
     Object? isEnabled = null,
     Object? requiredFields = null,
+    Object? usage = freezed,
+    Object? dynamicIcon = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -97,7 +110,27 @@ class _$VisionProtocolCopyWithImpl<$Res, $Val extends VisionProtocol>
           ? _value.requiredFields
           : requiredFields // ignore: cast_nullable_to_non_nullable
               as List<CredentialField>,
+      usage: freezed == usage
+          ? _value.usage
+          : usage // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dynamicIcon: freezed == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AvatarCopyWith<$Res>? get dynamicIcon {
+    if (_value.dynamicIcon == null) {
+      return null;
+    }
+
+    return $AvatarCopyWith<$Res>(_value.dynamicIcon!, (value) {
+      return _then(_value.copyWith(dynamicIcon: value) as $Val);
+    });
   }
 }
 
@@ -114,7 +147,12 @@ abstract class _$$VisionProtocolImplCopyWith<$Res>
       String name,
       @ColorConverter() Color color,
       bool isEnabled,
-      List<CredentialField> requiredFields});
+      List<CredentialField> requiredFields,
+      int? usage,
+      Avatar? dynamicIcon});
+
+  @override
+  $AvatarCopyWith<$Res>? get dynamicIcon;
 }
 
 /// @nodoc
@@ -133,6 +171,8 @@ class __$$VisionProtocolImplCopyWithImpl<$Res>
     Object? color = null,
     Object? isEnabled = null,
     Object? requiredFields = null,
+    Object? usage = freezed,
+    Object? dynamicIcon = freezed,
   }) {
     return _then(_$VisionProtocolImpl(
       id: null == id
@@ -155,6 +195,14 @@ class __$$VisionProtocolImplCopyWithImpl<$Res>
           ? _value._requiredFields
           : requiredFields // ignore: cast_nullable_to_non_nullable
               as List<CredentialField>,
+      usage: freezed == usage
+          ? _value.usage
+          : usage // ignore: cast_nullable_to_non_nullable
+              as int?,
+      dynamicIcon: freezed == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
     ));
   }
 }
@@ -167,7 +215,9 @@ class _$VisionProtocolImpl implements _VisionProtocol {
       required this.name,
       @ColorConverter() required this.color,
       required this.isEnabled,
-      final List<CredentialField> requiredFields = const []})
+      final List<CredentialField> requiredFields = const [],
+      this.usage,
+      this.dynamicIcon})
       : _requiredFields = requiredFields;
 
   factory _$VisionProtocolImpl.fromJson(Map<String, dynamic> json) =>
@@ -202,9 +252,18 @@ class _$VisionProtocolImpl implements _VisionProtocol {
     return EqualUnmodifiableListView(_requiredFields);
   }
 
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  @override
+  final int? usage;
+
+  /// [dynamicIcon] is the icon of the protocol.
+  @override
+  final Avatar? dynamicIcon;
+
   @override
   String toString() {
-    return 'VisionProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, requiredFields: $requiredFields)';
+    return 'VisionProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, requiredFields: $requiredFields, usage: $usage, dynamicIcon: $dynamicIcon)';
   }
 
   @override
@@ -218,13 +277,16 @@ class _$VisionProtocolImpl implements _VisionProtocol {
             (identical(other.isEnabled, isEnabled) ||
                 other.isEnabled == isEnabled) &&
             const DeepCollectionEquality()
-                .equals(other._requiredFields, _requiredFields));
+                .equals(other._requiredFields, _requiredFields) &&
+            (identical(other.usage, usage) || other.usage == usage) &&
+            (identical(other.dynamicIcon, dynamicIcon) ||
+                other.dynamicIcon == dynamicIcon));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, color, isEnabled,
-      const DeepCollectionEquality().hash(_requiredFields));
+      const DeepCollectionEquality().hash(_requiredFields), usage, dynamicIcon);
 
   @JsonKey(ignore: true)
   @override
@@ -247,7 +309,9 @@ abstract class _VisionProtocol implements VisionProtocol {
       required final String name,
       @ColorConverter() required final Color color,
       required final bool isEnabled,
-      final List<CredentialField> requiredFields}) = _$VisionProtocolImpl;
+      final List<CredentialField> requiredFields,
+      final int? usage,
+      final Avatar? dynamicIcon}) = _$VisionProtocolImpl;
 
   factory _VisionProtocol.fromJson(Map<String, dynamic> json) =
       _$VisionProtocolImpl.fromJson;
@@ -273,6 +337,15 @@ abstract class _VisionProtocol implements VisionProtocol {
 
   /// [requiredFields] is the list of required fields for the protocol.
   List<CredentialField> get requiredFields;
+  @override
+
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  int? get usage;
+  @override
+
+  /// [dynamicIcon] is the icon of the protocol.
+  Avatar? get dynamicIcon;
   @override
   @JsonKey(ignore: true)
   _$$VisionProtocolImplCopyWith<_$VisionProtocolImpl> get copyWith =>

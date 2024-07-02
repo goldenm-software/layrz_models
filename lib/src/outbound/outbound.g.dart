@@ -28,7 +28,7 @@ _$OutboundProtocolImpl _$$OutboundProtocolImplFromJson(
       dynamicIcon: json['dynamicIcon'] == null
           ? null
           : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
-      usage: (json['usage'] as num?)?.toInt(),
+      usage: json['usage'] as int?,
     );
 
 Map<String, dynamic> _$$OutboundProtocolImplToJson(

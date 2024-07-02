@@ -16,6 +16,10 @@ _$VisionProtocolImpl _$$VisionProtocolImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      usage: json['usage'] as int?,
+      dynamicIcon: json['dynamicIcon'] == null
+          ? null
+          : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$VisionProtocolImplToJson(
@@ -26,6 +30,8 @@ Map<String, dynamic> _$$VisionProtocolImplToJson(
       'color': const ColorConverter().toJson(instance.color),
       'isEnabled': instance.isEnabled,
       'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
+      'usage': instance.usage,
+      'dynamicIcon': instance.dynamicIcon?.toJson(),
     };
 
 _$VisionProfileImpl _$$VisionProfileImplFromJson(Map<String, dynamic> json) =>

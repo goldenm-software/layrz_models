@@ -142,7 +142,7 @@ _$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
           .fromJson(json['status'] as String),
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
       updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
-      totalItems: (json['totalItems'] as num?)?.toInt(),
+      totalItems: json['totalItems'] as int?,
     );
 
 Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
@@ -168,7 +168,7 @@ _$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(
       matrix: json['matrix'] == null
           ? null
           : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
-      quantity: (json['quantity'] as num).toInt(),
+      quantity: json['quantity'] as int,
     );
 
 Map<String, dynamic> _$$TenvioPackageQuantityImplToJson(
@@ -219,7 +219,7 @@ _$TenvioOrderImpl _$$TenvioOrderImplFromJson(Map<String, dynamic> json) =>
       items: (json['items'] as List<dynamic>?)
           ?.map((e) => TenvioItemQuantity.fromJson(e as Map<String, dynamic>))
           .toList(),
-      totalItems: (json['totalItems'] as num).toInt(),
+      totalItems: json['totalItems'] as int,
       createdAt:
           const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
       updatedAt:
@@ -251,7 +251,7 @@ _$TenvioItemQuantityImpl _$$TenvioItemQuantityImplFromJson(
       id: json['id'] as String,
       matrixId: json['matrixId'] as String,
       matrix: TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
-      quantity: (json['quantity'] as num).toInt(),
+      quantity: json['quantity'] as int,
     );
 
 Map<String, dynamic> _$$TenvioItemQuantityImplToJson(
@@ -271,7 +271,7 @@ _$TenvioItemQuantityInputImpl _$$TenvioItemQuantityInputImplFromJson(
       matrix: json['matrix'] == null
           ? null
           : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
-      quantity: (json['quantity'] as num?)?.toInt(),
+      quantity: json['quantity'] as int?,
     );
 
 Map<String, dynamic> _$$TenvioItemQuantityInputImplToJson(
@@ -398,9 +398,9 @@ _$TenvioCustomPropertyImpl _$$TenvioCustomPropertyImplFromJson(
           const [],
       minValue: (json['minValue'] as num?)?.toDouble(),
       maxValue: (json['maxValue'] as num?)?.toDouble(),
-      minLength: (json['minLength'] as num?)?.toInt(),
-      maxLength: (json['maxLength'] as num?)?.toInt(),
-      maxFileSize: (json['maxFileSize'] as num?)?.toInt(),
+      minLength: json['minLength'] as int?,
+      maxLength: json['maxLength'] as int?,
+      maxFileSize: json['maxFileSize'] as int?,
       defaultValue: json['defaultValue'],
     );
 

@@ -1,10 +1,15 @@
 # Changelog
 
+## 2.1.73
+
+- Added `usage` and `dynamicIcon` on `VisionProtocol` model
+
 ## 2.1.72
 - Added `finishedAt` in `AtsOperation` model
 
 ## 2.1.71
--
+
+- Refactorized Tenvio models
 
 ## 2.1.70
 
