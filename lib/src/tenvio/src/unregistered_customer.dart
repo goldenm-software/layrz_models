@@ -1,8 +1,8 @@
 part of '../tenvio.dart';
 
 @freezed
-class DeliverLocation with _$DeliverLocation {
-  const factory DeliverLocation({
+class TenvioUnregisteredCustomer with _$TenvioUnregisteredCustomer {
+  const factory TenvioUnregisteredCustomer({
     /// [name] is the name of the customer.
     required String name,
 
@@ -17,7 +17,7 @@ class DeliverLocation with _$DeliverLocation {
 
     /// [longitude] is the longitude of the customer.
     double? longitude,
-  }) = _DeliverLocation;
+  }) = _TenvioUnregisteredCustomer;
 
-  factory DeliverLocation.fromJson(Map<String, dynamic> json) => _$DeliverLocationFromJson(json);
+  factory TenvioUnregisteredCustomer.fromJson(Map<String, dynamic> json) => _$TenvioUnregisteredCustomerFromJson(json);
 }

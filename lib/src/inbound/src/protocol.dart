@@ -107,6 +107,10 @@ class InboundProtocol with _$InboundProtocol {
 
     /// [modbusPorts] is the list of Modbus ports that the protocol has.
     @Default([]) List<String> modbusPorts,
+
+    /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+    /// For marketing purposes.
+    int? usage,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);

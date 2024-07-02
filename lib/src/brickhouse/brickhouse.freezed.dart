@@ -103,6 +103,10 @@ mixin _$BrickhouseAlert {
   /// [isMuted] represents if the alert is muted or not.
   bool? get isMuted => throw _privateConstructorUsedError;
 
+  /// [speedingThreshold] represents the threshold of the speeding alert.
+  /// This is the maximum speed that the asset can reach before the alert is triggered.
+  double? get speedingThreshold => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $BrickhouseAlertCopyWith<BrickhouseAlert> get copyWith =>
@@ -140,7 +144,8 @@ abstract class $BrickhouseAlertCopyWith<$Res> {
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
       @DurationOrNullConverter() Duration? cooldownTime,
-      bool? isMuted});
+      bool? isMuted,
+      double? speedingThreshold});
 }
 
 /// @nodoc
@@ -180,6 +185,7 @@ class _$BrickhouseAlertCopyWithImpl<$Res, $Val extends BrickhouseAlert>
     Object? maxSpeedMaxValue = freezed,
     Object? cooldownTime = freezed,
     Object? isMuted = freezed,
+    Object? speedingThreshold = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -278,6 +284,10 @@ class _$BrickhouseAlertCopyWithImpl<$Res, $Val extends BrickhouseAlert>
           ? _value.isMuted
           : isMuted // ignore: cast_nullable_to_non_nullable
               as bool?,
+      speedingThreshold: freezed == speedingThreshold
+          ? _value.speedingThreshold
+          : speedingThreshold // ignore: cast_nullable_to_non_nullable
+              as double?,
     ) as $Val);
   }
 }
@@ -315,7 +325,8 @@ abstract class _$$BrickhouseAlertImplCopyWith<$Res>
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
       @DurationOrNullConverter() Duration? cooldownTime,
-      bool? isMuted});
+      bool? isMuted,
+      double? speedingThreshold});
 }
 
 /// @nodoc
@@ -353,6 +364,7 @@ class __$$BrickhouseAlertImplCopyWithImpl<$Res>
     Object? maxSpeedMaxValue = freezed,
     Object? cooldownTime = freezed,
     Object? isMuted = freezed,
+    Object? speedingThreshold = freezed,
   }) {
     return _then(_$BrickhouseAlertImpl(
       id: null == id
@@ -451,6 +463,10 @@ class __$$BrickhouseAlertImplCopyWithImpl<$Res>
           ? _value.isMuted
           : isMuted // ignore: cast_nullable_to_non_nullable
               as bool?,
+      speedingThreshold: freezed == speedingThreshold
+          ? _value.speedingThreshold
+          : speedingThreshold // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 }
@@ -482,7 +498,8 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
       @BrickhouseGeofenceTriggerOrNullConverter() this.geofenceTrigger,
       this.maxSpeedMaxValue,
       @DurationOrNullConverter() this.cooldownTime,
-      this.isMuted = false})
+      this.isMuted = false,
+      this.speedingThreshold})
       : _assets = assets,
         _assetsIds = assetsIds,
         _email = email,
@@ -654,9 +671,14 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
   @JsonKey()
   final bool? isMuted;
 
+  /// [speedingThreshold] represents the threshold of the speeding alert.
+  /// This is the maximum speed that the asset can reach before the alert is triggered.
+  @override
+  final double? speedingThreshold;
+
   @override
   String toString() {
-    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted)';
+    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted, speedingThreshold: $speedingThreshold)';
   }
 
   @override
@@ -704,7 +726,9 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
                 other.maxSpeedMaxValue == maxSpeedMaxValue) &&
             (identical(other.cooldownTime, cooldownTime) ||
                 other.cooldownTime == cooldownTime) &&
-            (identical(other.isMuted, isMuted) || other.isMuted == isMuted));
+            (identical(other.isMuted, isMuted) || other.isMuted == isMuted) &&
+            (identical(other.speedingThreshold, speedingThreshold) ||
+                other.speedingThreshold == speedingThreshold));
   }
 
   @JsonKey(ignore: true)
@@ -734,7 +758,8 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
         geofenceTrigger,
         maxSpeedMaxValue,
         cooldownTime,
-        isMuted
+        isMuted,
+        speedingThreshold
       ]);
 
   @JsonKey(ignore: true)
@@ -780,7 +805,8 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
       final BrickhouseGeofenceTrigger? geofenceTrigger,
       final double? maxSpeedMaxValue,
       @DurationOrNullConverter() final Duration? cooldownTime,
-      final bool? isMuted}) = _$BrickhouseAlertImpl;
+      final bool? isMuted,
+      final double? speedingThreshold}) = _$BrickhouseAlertImpl;
 
   factory _BrickhouseAlert.fromJson(Map<String, dynamic> json) =
       _$BrickhouseAlertImpl.fromJson;
@@ -891,6 +917,11 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
 
   /// [isMuted] represents if the alert is muted or not.
   bool? get isMuted;
+  @override
+
+  /// [speedingThreshold] represents the threshold of the speeding alert.
+  /// This is the maximum speed that the asset can reach before the alert is triggered.
+  double? get speedingThreshold;
   @override
   @JsonKey(ignore: true)
   _$$BrickhouseAlertImplCopyWith<_$BrickhouseAlertImpl> get copyWith =>
@@ -1066,6 +1097,14 @@ mixin _$BrickhouseAlertInput {
   /// [isMuted] represents if the alert is muted or not.
   set isMuted(bool? value) => throw _privateConstructorUsedError;
 
+  /// [speedingThreshold] represents the threshold of the speeding alert.
+  /// This is the maximum speed that the asset can reach before the alert is triggered.
+  double? get speedingThreshold => throw _privateConstructorUsedError;
+
+  /// [speedingThreshold] represents the threshold of the speeding alert.
+  /// This is the maximum speed that the asset can reach before the alert is triggered.
+  set speedingThreshold(double? value) => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $BrickhouseAlertInputCopyWith<BrickhouseAlertInput> get copyWith =>
@@ -1102,7 +1141,8 @@ abstract class $BrickhouseAlertInputCopyWith<$Res> {
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
       @DurationOrNullConverter() Duration? cooldownTime,
-      bool? isMuted});
+      bool? isMuted,
+      double? speedingThreshold});
 }
 
 /// @nodoc
@@ -1142,6 +1182,7 @@ class _$BrickhouseAlertInputCopyWithImpl<$Res,
     Object? maxSpeedMaxValue = freezed,
     Object? cooldownTime = freezed,
     Object? isMuted = freezed,
+    Object? speedingThreshold = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -1236,6 +1277,10 @@ class _$BrickhouseAlertInputCopyWithImpl<$Res,
           ? _value.isMuted
           : isMuted // ignore: cast_nullable_to_non_nullable
               as bool?,
+      speedingThreshold: freezed == speedingThreshold
+          ? _value.speedingThreshold
+          : speedingThreshold // ignore: cast_nullable_to_non_nullable
+              as double?,
     ) as $Val);
   }
 }
@@ -1272,7 +1317,8 @@ abstract class _$$BrickhouseAlertInputImplCopyWith<$Res>
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
       @DurationOrNullConverter() Duration? cooldownTime,
-      bool? isMuted});
+      bool? isMuted,
+      double? speedingThreshold});
 }
 
 /// @nodoc
@@ -1309,6 +1355,7 @@ class __$$BrickhouseAlertInputImplCopyWithImpl<$Res>
     Object? maxSpeedMaxValue = freezed,
     Object? cooldownTime = freezed,
     Object? isMuted = freezed,
+    Object? speedingThreshold = freezed,
   }) {
     return _then(_$BrickhouseAlertInputImpl(
       id: freezed == id
@@ -1403,6 +1450,10 @@ class __$$BrickhouseAlertInputImplCopyWithImpl<$Res>
           ? _value.isMuted
           : isMuted // ignore: cast_nullable_to_non_nullable
               as bool?,
+      speedingThreshold: freezed == speedingThreshold
+          ? _value.speedingThreshold
+          : speedingThreshold // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 }
@@ -1442,7 +1493,8 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
       this.geofenceTrigger = BrickhouseGeofenceTrigger.both,
       this.maxSpeedMaxValue,
       @DurationOrNullConverter() this.cooldownTime,
-      this.isMuted = false});
+      this.isMuted = false,
+      this.speedingThreshold = 0});
 
   factory _$BrickhouseAlertInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$BrickhouseAlertInputImplFromJson(json);
@@ -1559,9 +1611,15 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
   @JsonKey()
   bool? isMuted;
 
+  /// [speedingThreshold] represents the threshold of the speeding alert.
+  /// This is the maximum speed that the asset can reach before the alert is triggered.
+  @override
+  @JsonKey()
+  double? speedingThreshold;
+
   @override
   String toString() {
-    return 'BrickhouseAlertInput(id: $id, name: $name, type: $type, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted)';
+    return 'BrickhouseAlertInput(id: $id, name: $name, type: $type, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted, speedingThreshold: $speedingThreshold)';
   }
 
   @JsonKey(ignore: true)
@@ -1605,7 +1663,8 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
       @DurationOrNullConverter() Duration? cooldownTime,
-      bool? isMuted}) = _$BrickhouseAlertInputImpl;
+      bool? isMuted,
+      double? speedingThreshold}) = _$BrickhouseAlertInputImpl;
 
   factory _BrickhouseAlertInput.fromJson(Map<String, dynamic> json) =
       _$BrickhouseAlertInputImpl.fromJson;
@@ -1791,6 +1850,15 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
 
   /// [isMuted] represents if the alert is muted or not.
   set isMuted(bool? value);
+  @override
+
+  /// [speedingThreshold] represents the threshold of the speeding alert.
+  /// This is the maximum speed that the asset can reach before the alert is triggered.
+  double? get speedingThreshold;
+
+  /// [speedingThreshold] represents the threshold of the speeding alert.
+  /// This is the maximum speed that the asset can reach before the alert is triggered.
+  set speedingThreshold(double? value);
   @override
   @JsonKey(ignore: true)
   _$$BrickhouseAlertInputImplCopyWith<_$BrickhouseAlertInputImpl>

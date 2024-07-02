@@ -144,6 +144,12 @@ class Tag with _$Tag {
     /// Is a list of ID's of associated vision profiles to this module.
     List<String>? mappitRoutesIds,
 
+    /// Is a list of associated exchange services to this module.
+    List<ExchangeService>? exchangeServices,
+
+    /// Is a list of ID's of associated exchange services to this module.
+    List<String>? exchangeServicesIds,
+
     /// Is a list of granted access to this entity.
     List<Access>? access,
 

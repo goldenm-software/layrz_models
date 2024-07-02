@@ -31,11 +31,11 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
       hasWebPopup: json['hasWebPopup'] as bool?,
       hasEmail: json['hasEmail'] as bool?,
       hasPhone: json['hasPhone'] as bool?,
-      batteryMinLevel: (json['batteryMinLevel'] as num?)?.toInt(),
+      batteryMinLevel: json['batteryMinLevel'] as int?,
       curfewStartHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson((json['curfewStartHour'] as num?)?.toInt()),
+          .fromJson(json['curfewStartHour'] as int?),
       curfewEndHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson((json['curfewEndHour'] as num?)?.toInt()),
+          .fromJson(json['curfewEndHour'] as int?),
       timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
           ?.map((e) => const WeekdayConverter().fromJson(e as String))
@@ -54,6 +54,7 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
       cooldownTime: const DurationOrNullConverter()
           .fromJson(json['cooldownTime'] as num?),
       isMuted: json['isMuted'] as bool? ?? false,
+      speedingThreshold: (json['speedingThreshold'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$BrickhouseAlertImplToJson(
@@ -91,6 +92,7 @@ Map<String, dynamic> _$$BrickhouseAlertImplToJson(
       'cooldownTime':
           const DurationOrNullConverter().toJson(instance.cooldownTime),
       'isMuted': instance.isMuted,
+      'speedingThreshold': instance.speedingThreshold,
     };
 
 _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
@@ -116,11 +118,11 @@ _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
       hasWebPopup: json['hasWebPopup'] as bool? ?? false,
       hasEmail: json['hasEmail'] as bool? ?? false,
       hasPhone: json['hasPhone'] as bool? ?? false,
-      batteryMinLevel: (json['batteryMinLevel'] as num?)?.toInt(),
+      batteryMinLevel: json['batteryMinLevel'] as int?,
       curfewStartHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson((json['curfewStartHour'] as num?)?.toInt()),
+          .fromJson(json['curfewStartHour'] as int?),
       curfewEndHour: const BrickhouseTimeOfDayMinuteOrNullConverter()
-          .fromJson((json['curfewEndHour'] as num?)?.toInt()),
+          .fromJson(json['curfewEndHour'] as int?),
       timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
               ?.map((e) => const WeekdayConverter().fromJson(e as String))
@@ -151,6 +153,7 @@ _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
       cooldownTime: const DurationOrNullConverter()
           .fromJson(json['cooldownTime'] as num?),
       isMuted: json['isMuted'] as bool? ?? false,
+      speedingThreshold: (json['speedingThreshold'] as num?)?.toDouble() ?? 0,
     );
 
 Map<String, dynamic> _$$BrickhouseAlertInputImplToJson(
@@ -187,6 +190,7 @@ Map<String, dynamic> _$$BrickhouseAlertInputImplToJson(
       'cooldownTime':
           const DurationOrNullConverter().toJson(instance.cooldownTime),
       'isMuted': instance.isMuted,
+      'speedingThreshold': instance.speedingThreshold,
     };
 
 _$BrickHouseWorkspaceInputImpl _$$BrickHouseWorkspaceInputImplFromJson(

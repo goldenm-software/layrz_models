@@ -3,76 +3,123 @@ part of '../tenvio.dart';
 @freezed
 class TenvioOrder with _$TenvioOrder {
   const factory TenvioOrder({
-    /// [id] is the unique identifier of the movement
+    /// [id] ID of the order entity. This ID is unique along the system.
     required String id,
 
-    /// [driverId] is the unique identifier of the driver that will deliver the order.
-    String? driverId,
+    /// [ownerId] ID of the owner of the order.
+    required String ownerId,
 
-    /// [driver] is the driver that will deliver the order.
-    /// This value will only be filled when the order is assigned to a driver.
-    User? driver,
+    /// [warehouse] where the order is located.
+    required Asset warehouse,
 
-    /// [trackingId] is the unique identifier of the tracking of the order.
-    /// The equivalent to the tracking number of a package.
-    required String trackingId,
+    /// [warehouseId] ID of the warehouse where the order is located.
+    required String warehouseId,
 
-    /// [destinationWarehouseId] is the unique identifier of the destination warehouse that will deliver the order.
-    /// This value will only be filled if the destination is a Warehouse. Otherwise look at `deliverLocation` or
-    /// `customer`.
-    String? destinationWarehouseId,
+    /// [destination] Destination of the order.
+    @TenvioDestinationOrNullConverter() TenvioDestination? destination,
 
-    /// [destinationWarehouse] is the destination warehouse that will deliver the order.
-    /// This value will only be filled if the destination is a Warehouse. Otherwise look at `deliverLocation` or
-    /// `customer`.
-    Asset? destinationWarehouse,
-
-    /// [warehouseId] is the unique identifier of the warehouse that will be the origin of the order.
-    String? warehouseId,
-
-    /// [warehouse] is the warehouse that will be the origin of the order.
-    Asset? warehouse,
-
-    /// [customerId] is the unique identifier of the customer that will receive the order.
-    /// This value will only be filled if the destination is a Tenvio User. Otherwise look at `deliverLocation` or
-    /// `destinationWarehouse`.
-    String? customerId,
-
-    /// [customer] is the customer that will receive the order.
-    /// This value will only be filled if the destination is a Tenvio User. Otherwise look at `deliverLocation` or
-    /// `destinationWarehouse`.
-    User? customer,
-
-    /// [deliverLocation] is the location where the order will be delivered.
-    /// This value will only be filled if the destination is a custom location. Otherwise look at `customer` or
-    /// `destinationWarehouse`.
-    DeliverLocation? deliverLocation,
-
-    /// [packages] is the list of packages that are part of the order.
-    List<TenvioPackage>? packages,
-
-    /// [packagesIds] is the list of packages identifiers that are part of the order.
-    List<String>? packagesIds,
-
-    /// [images] is the list of images of the order.
-    TenvioImageSet? images,
-
-    /// [notes] is the notes of the order.
-    List<String>? notes,
-
-    /// [status] is the status of the order.
+    /// [status] Status of the order entity.
     @TenvioOrderStatusConverter() required TenvioOrderStatus status,
 
-    /// [createdAt] is the date when the order was created.
-    @TimestampConverter() required DateTime createdAt,
+    /// [notes] Notes of the order entity.
+    @Default([]) List<String> notes,
 
-    /// [updatedAt] is the date when the order was last updated.
-    @TimestampConverter() required DateTime updatedAt,
+    /// [assignByDepartment] Assign by division indicator.
+    bool? assignByDepartment,
 
-    /// [dropoffFailedReason] is the reason why the dropoff failed.
-    /// This property will only be filled when the dropoff failed.
-    List<DropoffFailedReason>? dropoffFailedReason,
+    /// [requiresImages] Requires images indicator.
+    bool? requiresImages,
+
+    /// [packedImage] URL of the packed image.
+    String? packedImage,
+
+    /// [items] Items included in the order.
+    List<TenvioItemQuantity>? items,
+
+    /// [totalItems] Total number of items included in the order.
+    required int totalItems,
+
+    /// [createdAt] Creation date of the order.
+    @TimestampOrNullConverter() DateTime? createdAt,
+
+    /// [updatedAt] Last update date of the order.
+    @TimestampOrNullConverter() DateTime? updatedAt,
   }) = _TenvioOrder;
 
   factory TenvioOrder.fromJson(Map<String, dynamic> json) => _$TenvioOrderFromJson(json);
+}
+
+@freezed
+class TenvioItemQuantity with _$TenvioItemQuantity {
+  const factory TenvioItemQuantity({
+    /// [id] is the unique identifier of the package quantity
+    required String id,
+
+    /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
+    required String matrixId,
+
+    /// [matrix] is the matrix that the package quantity is related.
+    required TenvioMatrixItem matrix,
+
+    /// [quantity] is the quantity of the package.
+    required int quantity,
+  }) = _TenvioItemQuantity;
+
+  factory TenvioItemQuantity.fromJson(Map<String, dynamic> json) => _$TenvioItemQuantityFromJson(json);
+}
+
+@unfreezed
+class TenvioItemQuantityInput with _$TenvioItemQuantityInput {
+  const factory TenvioItemQuantityInput({
+    /// [id] is the unique identifier of the package quantity
+    required String id,
+
+    /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
+    required String matrixId,
+
+    /// [matrix] is the matrix that the package quantity is related.
+    required TenvioMatrixItem matrix,
+
+    /// [quantity] is the quantity of the package.
+    required int quantity,
+  }) = _TenvioItemQuantityInput;
+
+  factory TenvioItemQuantityInput.fromJson(Map<String, dynamic> json) => _$TenvioItemQuantityInputFromJson(json);
+}
+
+@unfreezed
+class TenvioOrderInput with _$TenvioOrderInput {
+  factory TenvioOrderInput({
+    /// [id] ID of the order entity. This ID is unique along the system.
+    String? id,
+
+    /// [customerId] ID of the existing customer that will receive the order.
+    String? customerId,
+
+    /// [newCustomer] Unregistered customer that will receive the order.
+    CustomerInput? newCustomer,
+
+    /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
+    String? destinationWareHouseId,
+
+    /// [warehouseId] ID of the warehouse where the order is located.
+    String? warehouseId,
+
+    /// [status] Status of the order entity.
+    @TenvioOrderStatusConverter() required TenvioOrderStatus status,
+
+    /// [notes] Notes of the order entity.
+    @Default([]) List<String> notes,
+
+    /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
+    bool? requiresPhoto,
+
+    /// [packageImage] URL of the packed image.
+    bool? packageImage,
+
+    /// [items] Items included in the order.
+    List<TenvioItemQuantityInput>? items,
+  }) = _TenvioOrderInput;
+
+  factory TenvioOrderInput.fromJson(Map<String, dynamic> json) => _$TenvioOrderInputFromJson(json);
 }

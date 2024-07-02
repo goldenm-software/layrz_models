@@ -1,0 +1,20 @@
+part of '../../ats.dart';
+
+@freezed
+class AtsOperationStatuses with _$AtsOperationStatuses {
+  const factory AtsOperationStatuses({
+    /// `asset` is the Asset linked to the operation.
+    Asset? asset,
+
+    /// `inTransitAt` is the Unix timestamp of when the asset was in transit.
+    @TimestampOrNullConverter() DateTime? inTransitAt,
+
+    /// `waitingToDispatchAt` is the Unix timestamp of when the asset was waiting to dispatch.
+    @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
+
+    /// `deliveredAt` is the Unix timestamp of when the asset was delivered.
+    @TimestampOrNullConverter() DateTime? deliveredAt,
+  }) = _AtsOperationStatuses;
+
+  factory AtsOperationStatuses.fromJson(Map<String, dynamic> json) => _$AtsOperationStatusesFromJson(json);
+}

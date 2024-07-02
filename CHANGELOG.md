@@ -1,5 +1,35 @@
 # Changelog
 
+## 2.1.70
+
+- Added `usage` to `InboundProtocol`, `OutboundProtocol` and `Algorithm` models
+
+## 2.1.69
+
+- Expanded configuration of `FlespiAcl` model
+- Added `FlespiSubmoduleConfig` model
+
+## 2.1.68
+
+- Added `CredentialFieldInput` model
+- Added `ExchangeProtocol` model
+- Added `ExchangeService` model
+
+## 2.1.67
+- added `totalQuantity` in `AtsOperation` model
+
+## 2.1.66
+
+- Added `CredentialFieldType.layrzItemId` and `CredentialFieldType.layrzWebhookEndpoint`
+
+## 2.1.65
+- Added `speedingThreshold` prop to `BrickhouseAlertInput` and `BrickhouseAlert` models
+- Added `AtsOperation` and `AtsOperationStatuses`
+
+## 2.1.64
+
+- Added `GeofenceCategory.lead` to `GeofenceCategory` enum
+
 ## 2.1.63
 
 - Added `stateRegistration` to `AtsTransportInformation`

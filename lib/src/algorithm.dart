@@ -13,6 +13,10 @@ class Algorithm with _$Algorithm {
     @Default(false) bool hasHttp,
     @Default(false) bool hasFtp,
     @Default([]) List<CredentialField> requiredFields,
+
+    /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+    /// For marketing purposes.
+    int? usage,
   }) = _Algorithm;
 
   factory Algorithm.fromJson(Map<String, dynamic> json) => _$AlgorithmFromJson(json);

@@ -45,6 +45,51 @@ class CredentialField with _$CredentialField {
   factory CredentialField.fromJson(Map<String, dynamic> json) => _$CredentialFieldFromJson(json);
 }
 
+@unfreezed
+class CredentialFieldInput with _$CredentialFieldInput {
+  factory CredentialFieldInput({
+    /// [field] is the name of the field, is a translation key.
+    @Default('') String field,
+
+    /// [type] is the type of the field.
+    @CredentialFieldTypeConverter() @Default(CredentialFieldType.string) CredentialFieldType type,
+
+    /// [maxLength] is the maximum length of the field, only used in [type] = [CredentialFieldType.string].
+    int? maxLength,
+
+    /// [minLength] is the minimum length of the field, only used in [type] = [CredentialFieldType.string].
+    int? minLength,
+
+    /// [maxValue] is the maximum value of the field, only used in [type] = [CredentialFieldType.integer]
+    /// or [CredentialFieldType.float].
+    double? maxValue,
+
+    /// [minValue] is the minimum value of the field, only used in [type] = [CredentialFieldType.integer]
+    /// or [CredentialFieldType.float].
+    double? minValue,
+
+    /// [choices] is the list of possible choices for the field, only used in [type] = [CredentialFieldType.choices].
+    @Default([]) List<String> choices,
+
+    /// [onlyField] is the name of the field that must be present in the object,
+    /// only used in [type] = [CredentialFieldType.choices].
+    String? onlyField,
+
+    /// [onlyChoices] is the list of possible choices for the field, only used in
+    /// [type] = [CredentialFieldType.choices].
+    @Default([]) List<String> onlyChoices,
+
+    /// [action] defines the action to show in the field (as suffix icon).
+    @CredentialFieldActionConverter() @Default(CredentialFieldAction.none) CredentialFieldAction action,
+
+    /// [requiredFields] represents the nested fields.
+    /// Only used when [type] = [CredentialFieldType.nestedField].
+    @Default([]) List<CredentialFieldInput> requiredFields,
+  }) = _CredentialFieldInput;
+
+  factory CredentialFieldInput.fromJson(Map<String, dynamic> json) => _$CredentialFieldInputFromJson(json);
+}
+
 enum CredentialFieldType {
   choices,
   soapUrl,
@@ -62,7 +107,10 @@ enum CredentialFieldType {
   layrzFtpPassword,
   nestedField,
   wialonToken,
-  base64;
+  base64,
+  layrzItemId,
+  layrzWebhookEndpoint,
+  ;
 
   @override
   String toString() => toJson();
@@ -103,6 +151,10 @@ enum CredentialFieldType {
         return 'WIALONTOKEN';
       case CredentialFieldType.base64:
         return 'BASE64';
+      case CredentialFieldType.layrzItemId:
+        return 'LAYRZ_ITEM_ID';
+      case CredentialFieldType.layrzWebhookEndpoint:
+        return 'LAYRZ_WEBHOOK_ENDPOINT';
       default:
         throw Exception('Unknown CredentialFieldType: $this');
     }
@@ -144,6 +196,10 @@ enum CredentialFieldType {
         return CredentialFieldType.wialonToken;
       case 'BASE64':
         return CredentialFieldType.base64;
+      case 'LAYRZ_ITEM_ID':
+        return CredentialFieldType.layrzItemId;
+      case 'LAYRZ_WEBHOOK_ENDPOINT':
+        return CredentialFieldType.layrzWebhookEndpoint;
       default:
         throw Exception('Unknown CredentialFieldType: $json');
     }

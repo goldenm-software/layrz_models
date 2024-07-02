@@ -38,6 +38,10 @@ part 'src/exits/execute_exit_history.dart';
 part 'src/entries/entry.dart';
 part 'src/entries/volume.dart';
 
+// ATS Operations Models
+part 'src/operations/operation.dart';
+part 'src/operations/status.dart';
+
 // ATS enums
 part 'src/converters/order_status.dart';
 part 'src/converters/deliver_category.dart';

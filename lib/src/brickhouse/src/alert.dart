@@ -292,6 +292,10 @@ class BrickhouseAlert with _$BrickhouseAlert {
 
     /// [isMuted] represents if the alert is muted or not.
     @Default(false) bool? isMuted,
+
+    /// [speedingThreshold] represents the threshold of the speeding alert.
+    /// This is the maximum speed that the asset can reach before the alert is triggered.
+    double? speedingThreshold,
   }) = _BrickhouseAlert;
 
   /// from json
@@ -451,6 +455,10 @@ class BrickhouseAlertInput with _$BrickhouseAlertInput {
 
     /// [isMuted] represents if the alert is muted or not.
     @Default(false) bool? isMuted,
+
+    /// [speedingThreshold] represents the threshold of the speeding alert.
+    /// This is the maximum speed that the asset can reach before the alert is triggered.
+    @Default(0) double? speedingThreshold,
   }) = _BrickhouseAlertInput;
 
   /// from json
