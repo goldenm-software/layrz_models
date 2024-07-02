@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.68
+
+- Added `CredentialFieldInput` model
+- Added `ExchangeProtocol` model
+- Added `ExchangeService` model
+
 ## 2.1.67
 - added `totalQuantity` in `AtsOperation` model
 

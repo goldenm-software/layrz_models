@@ -1,92 +1,129 @@
 part of '../layrz_models.dart';
 
 enum AccessModule {
-  /// ACTIONS
+  /// Access to actions module
+  /// Layrz API Definition: `ACTIONS`
   actions,
 
-  /// ASSETS
+  /// Access to assets module
+  /// Layrz API Definition: `ASSETS`
   assets,
 
-  /// CAREPROTOCOLS
+  /// Access to care protocols module
+  /// Layrz API Definition: `CAREPROTOCOLS`
   careprotocols,
 
-  /// CHECKPOINTS
+  /// Access to checkpoints module
+  /// Layrz API Definition: `CHECKPOINTS`
   checkpoints,
 
-  /// CONCIERGE_FORMS
+  /// Access to concierge forms module
+  /// Layrz API Definition: `CONCIERGE_FORMS`
   conciergeForms,
 
-  /// COREPROCESS
+  /// Access to core process module
+  /// Layrz API Definition: `COREPROCESS`
   coreprocess,
 
-  /// DEVICES
+  /// Access to devices module
+  /// Layrz API Definition: `DEVICES`
   devices,
 
-  /// FUNCTIONS
+  /// Access to functions module
+  /// Layrz API Definition: `FUNCTIONS`
   functions,
 
-  /// GEOFENCES
+  /// Access to geofences module
+  /// Layrz API Definition: `GEOFENCES`
   geofences,
 
-  /// INBOUND_SERVICES
+  /// Access to inbound services module
+  /// Layrz API Definition: `INBOUND_SERVICES`
   inboundServices,
 
-  /// OPERATIONS
+  /// Access to operations module
+  /// Layrz API Definition: `OPERATIONS`
   operations,
 
-  /// OUTBOUND_SERVICES
+  /// Access to outbound services module
+  /// Layrz API Definition: `OUTBOUND_SERVICES`
   outboundServices,
 
-  /// PRESETS
+  /// Access to presets module
+  /// Layrz API Definition: `PRESETS`
   presets,
 
-  /// REFERENCES
+  /// Access to references module
+  /// Layrz API Definition: `REFERENCES`
   references,
 
-  /// EXTERNAL_ACCOUNTS
+  /// Access to external accounts module
+  /// Layrz API Definition: `EXTERNAL_ACCOUNTS`
   externalAccounts,
 
-  /// TAGS
+  /// Access to tags module
+  /// Layrz API Definition: `TAGS`
   tags,
 
-  /// TRIGGERS
+  /// Access to triggers module
+  /// Layrz API Definition: `TRIGGERS`
   triggers,
 
-  /// USERS
+  /// Access to users module
+  /// Layrz API Definition: `USERS`
   users,
 
-  /// REPORTTEMPLATES
+  /// Access to report templates module
+  /// Layrz API Definition: `REPORTTEMPLATES`
   reporttemplates,
 
-  /// CHARTS
+  /// Access to charts module
+  /// Layrz API Definition: `CHARTS`
   charts,
 
-  /// VISION_PROFILES
+  /// Access to vision profiles module
+  /// Layrz API Definition: `VISION_PROFILES`
   visionProfiles,
 
-  /// CLOUD_FILE
+  /// Access to cloud file module
+  /// Layrz API Definition: `CLOUD_FILE`
   cloudFile,
 
-  /// CLOUD_FOLDER
+  /// Access to cloud folder module
+  /// Layrz API Definition: `CLOUD_FOLDER`
   cloudFolder,
 
-  /// COMMANDS
+  /// Access to commands module
+  /// Layrz API Definition: `COMMANDS`
   commands,
 
-  /// WORKSPACES
+  /// Access to workspaces module
+  /// Layrz API Definition: `WORKSPACES`
   workspaces,
 
-  /// EMAIL_TEMPLATES
+  /// Access to email templates module
+  /// Layrz API Definition: `EMAIL_TEMPLATES`
   emailTemplates,
 
-  /// BRICKHOUSE_ALERT
+  /// Access to brickhouse alert module (Brickhouse app)
+  /// Layrz API Definition: `BRICKHOUSE_ALERT`
   brickhouseAlert,
 
-  /// BRICKHOUSE_UNIT
+  /// Access to brickhouse unit module (Brickhouse app)
+  /// Layrz API Definition: `BRICKHOUSE_UNIT`
   brickhouseUnit,
 
-  /// SENSORS
+  /// Access to sensors module
+  /// Layrz API Definition: `SENSORS`
   sensors,
+
+  /// Access to bus routes module (Tagon app)
+  /// Layrz API Definition: `TAGON_BUS_ROUTES`
+  tagonBusRoutes,
+
+  /// Access to exchange services module
+  /// Layrz API Definition: `EXCHANGE_SERVICES`
+  exchangeServices,
   ;
 
   @override
@@ -152,6 +189,10 @@ enum AccessModule {
         return 'BRICKHOUSE_UNIT';
       case AccessModule.sensors:
         return 'SENSORS';
+      case AccessModule.tagonBusRoutes:
+        return 'TAGON_BUS_ROUTES';
+      case AccessModule.exchangeServices:
+        return 'EXCHANGE_SERVICES';
       default:
         throw Exception('Unknown AccessModule: $this');
     }
@@ -217,6 +258,10 @@ enum AccessModule {
         return AccessModule.brickhouseUnit;
       case 'SENSORS':
         return AccessModule.sensors;
+      case 'TAGON_BUS_ROUTES':
+        return AccessModule.tagonBusRoutes;
+      case 'EXCHANGE_SERVICES':
+        return AccessModule.exchangeServices;
       default:
         throw Exception('Unknown AccessModule: $json');
     }
@@ -253,4 +298,21 @@ class AccessModuleConverter implements JsonConverter<AccessModule, String> {
 
   @override
   String toJson(AccessModule object) => object.toJson();
+}
+
+class AccessModuleOrNullConverter implements JsonConverter<AccessModule?, String?> {
+  const AccessModuleOrNullConverter();
+
+  @override
+  AccessModule? fromJson(String? json) {
+    if (json == null) {
+      return null;
+    }
+    return AccessModule.fromJson(json);
+  }
+
+  @override
+  String? toJson(AccessModule? object) {
+    return object?.toJson();
+  }
 }

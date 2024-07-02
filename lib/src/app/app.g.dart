@@ -181,7 +181,7 @@ _$AppBuildImpl _$$AppBuildImplFromJson(Map<String, dynamic> json) =>
     _$AppBuildImpl(
       id: json['id'] as String,
       buildName: json['buildName'] as String,
-      buildNumber: (json['buildNumber'] as num).toInt(),
+      buildNumber: json['buildNumber'] as int,
       fileUri: json['fileUri'] as String?,
       isNext: json['isNext'] as bool?,
     );
@@ -395,7 +395,7 @@ _$AppVersionImpl _$$AppVersionImplFromJson(Map<String, dynamic> json) =>
       platform:
           const AppPlatformConverter().fromJson(json['platform'] as String),
       fileUri: json['fileUri'] as String?,
-      buildNumber: (json['buildNumber'] as num).toInt(),
+      buildNumber: json['buildNumber'] as int,
       buildName: json['buildName'] as String,
       releasedAt:
           const TimestampConverter().fromJson(json['releasedAt'] as num),

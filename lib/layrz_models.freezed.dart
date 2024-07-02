@@ -6041,6 +6041,8 @@ mixin _$BillingPlan {
       throw _privateConstructorUsedError;
   List<String> get allowedVisionProtocolsIds =>
       throw _privateConstructorUsedError;
+  List<String> get allowedExchangeProtocolsIds =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -6069,7 +6071,8 @@ abstract class $BillingPlanCopyWith<$Res> {
       List<String> allowedAlgorithmsIds,
       List<String> allowedInboundProtocolsIds,
       List<String> allowedOutboundProtocolsIds,
-      List<String> allowedVisionProtocolsIds});
+      List<String> allowedVisionProtocolsIds,
+      List<String> allowedExchangeProtocolsIds});
 }
 
 /// @nodoc
@@ -6100,6 +6103,7 @@ class _$BillingPlanCopyWithImpl<$Res, $Val extends BillingPlan>
     Object? allowedInboundProtocolsIds = null,
     Object? allowedOutboundProtocolsIds = null,
     Object? allowedVisionProtocolsIds = null,
+    Object? allowedExchangeProtocolsIds = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -6162,6 +6166,10 @@ class _$BillingPlanCopyWithImpl<$Res, $Val extends BillingPlan>
           ? _value.allowedVisionProtocolsIds
           : allowedVisionProtocolsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      allowedExchangeProtocolsIds: null == allowedExchangeProtocolsIds
+          ? _value.allowedExchangeProtocolsIds
+          : allowedExchangeProtocolsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 }
@@ -6189,7 +6197,8 @@ abstract class _$$BillingPlanImplCopyWith<$Res>
       List<String> allowedAlgorithmsIds,
       List<String> allowedInboundProtocolsIds,
       List<String> allowedOutboundProtocolsIds,
-      List<String> allowedVisionProtocolsIds});
+      List<String> allowedVisionProtocolsIds,
+      List<String> allowedExchangeProtocolsIds});
 }
 
 /// @nodoc
@@ -6218,6 +6227,7 @@ class __$$BillingPlanImplCopyWithImpl<$Res>
     Object? allowedInboundProtocolsIds = null,
     Object? allowedOutboundProtocolsIds = null,
     Object? allowedVisionProtocolsIds = null,
+    Object? allowedExchangeProtocolsIds = null,
   }) {
     return _then(_$BillingPlanImpl(
       id: null == id
@@ -6280,6 +6290,10 @@ class __$$BillingPlanImplCopyWithImpl<$Res>
           ? _value._allowedVisionProtocolsIds
           : allowedVisionProtocolsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      allowedExchangeProtocolsIds: null == allowedExchangeProtocolsIds
+          ? _value._allowedExchangeProtocolsIds
+          : allowedExchangeProtocolsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -6302,12 +6316,14 @@ class _$BillingPlanImpl implements _BillingPlan {
       required final List<String> allowedAlgorithmsIds,
       required final List<String> allowedInboundProtocolsIds,
       required final List<String> allowedOutboundProtocolsIds,
-      required final List<String> allowedVisionProtocolsIds})
+      required final List<String> allowedVisionProtocolsIds,
+      required final List<String> allowedExchangeProtocolsIds})
       : _allowedAppsIds = allowedAppsIds,
         _allowedAlgorithmsIds = allowedAlgorithmsIds,
         _allowedInboundProtocolsIds = allowedInboundProtocolsIds,
         _allowedOutboundProtocolsIds = allowedOutboundProtocolsIds,
-        _allowedVisionProtocolsIds = allowedVisionProtocolsIds;
+        _allowedVisionProtocolsIds = allowedVisionProtocolsIds,
+        _allowedExchangeProtocolsIds = allowedExchangeProtocolsIds;
 
   factory _$BillingPlanImpl.fromJson(Map<String, dynamic> json) =>
       _$$BillingPlanImplFromJson(json);
@@ -6376,9 +6392,18 @@ class _$BillingPlanImpl implements _BillingPlan {
     return EqualUnmodifiableListView(_allowedVisionProtocolsIds);
   }
 
+  final List<String> _allowedExchangeProtocolsIds;
+  @override
+  List<String> get allowedExchangeProtocolsIds {
+    if (_allowedExchangeProtocolsIds is EqualUnmodifiableListView)
+      return _allowedExchangeProtocolsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_allowedExchangeProtocolsIds);
+  }
+
   @override
   String toString() {
-    return 'BillingPlan(id: $id, reconnectionPercent: $reconnectionPercent, reconnectionMaximum: $reconnectionMaximum, reconnectionIncidents: $reconnectionIncidents, maxAssets: $maxAssets, maxDevices: $maxDevices, maxUsers: $maxUsers, maxOutboundServices: $maxOutboundServices, maxFunctions: $maxFunctions, maxApps: $maxApps, allowedAppsIds: $allowedAppsIds, allowedAlgorithmsIds: $allowedAlgorithmsIds, allowedInboundProtocolsIds: $allowedInboundProtocolsIds, allowedOutboundProtocolsIds: $allowedOutboundProtocolsIds, allowedVisionProtocolsIds: $allowedVisionProtocolsIds)';
+    return 'BillingPlan(id: $id, reconnectionPercent: $reconnectionPercent, reconnectionMaximum: $reconnectionMaximum, reconnectionIncidents: $reconnectionIncidents, maxAssets: $maxAssets, maxDevices: $maxDevices, maxUsers: $maxUsers, maxOutboundServices: $maxOutboundServices, maxFunctions: $maxFunctions, maxApps: $maxApps, allowedAppsIds: $allowedAppsIds, allowedAlgorithmsIds: $allowedAlgorithmsIds, allowedInboundProtocolsIds: $allowedInboundProtocolsIds, allowedOutboundProtocolsIds: $allowedOutboundProtocolsIds, allowedVisionProtocolsIds: $allowedVisionProtocolsIds, allowedExchangeProtocolsIds: $allowedExchangeProtocolsIds)';
   }
 
   @override
@@ -6415,7 +6440,10 @@ class _$BillingPlanImpl implements _BillingPlan {
                 other._allowedOutboundProtocolsIds,
                 _allowedOutboundProtocolsIds) &&
             const DeepCollectionEquality().equals(
-                other._allowedVisionProtocolsIds, _allowedVisionProtocolsIds));
+                other._allowedVisionProtocolsIds, _allowedVisionProtocolsIds) &&
+            const DeepCollectionEquality().equals(
+                other._allowedExchangeProtocolsIds,
+                _allowedExchangeProtocolsIds));
   }
 
   @JsonKey(ignore: true)
@@ -6436,7 +6464,8 @@ class _$BillingPlanImpl implements _BillingPlan {
       const DeepCollectionEquality().hash(_allowedAlgorithmsIds),
       const DeepCollectionEquality().hash(_allowedInboundProtocolsIds),
       const DeepCollectionEquality().hash(_allowedOutboundProtocolsIds),
-      const DeepCollectionEquality().hash(_allowedVisionProtocolsIds));
+      const DeepCollectionEquality().hash(_allowedVisionProtocolsIds),
+      const DeepCollectionEquality().hash(_allowedExchangeProtocolsIds));
 
   @JsonKey(ignore: true)
   @override
@@ -6468,7 +6497,8 @@ abstract class _BillingPlan implements BillingPlan {
           required final List<String> allowedAlgorithmsIds,
           required final List<String> allowedInboundProtocolsIds,
           required final List<String> allowedOutboundProtocolsIds,
-          required final List<String> allowedVisionProtocolsIds}) =
+          required final List<String> allowedVisionProtocolsIds,
+          required final List<String> allowedExchangeProtocolsIds}) =
       _$BillingPlanImpl;
 
   factory _BillingPlan.fromJson(Map<String, dynamic> json) =
@@ -6504,6 +6534,8 @@ abstract class _BillingPlan implements BillingPlan {
   List<String> get allowedOutboundProtocolsIds;
   @override
   List<String> get allowedVisionProtocolsIds;
+  @override
+  List<String> get allowedExchangeProtocolsIds;
   @override
   @JsonKey(ignore: true)
   _$$BillingPlanImplCopyWith<_$BillingPlanImpl> get copyWith =>
@@ -12214,6 +12246,501 @@ abstract class _CredentialField implements CredentialField {
   @JsonKey(ignore: true)
   _$$CredentialFieldImplCopyWith<_$CredentialFieldImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+CredentialFieldInput _$CredentialFieldInputFromJson(Map<String, dynamic> json) {
+  return _CredentialFieldInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CredentialFieldInput {
+  /// [field] is the name of the field, is a translation key.
+  String get field => throw _privateConstructorUsedError;
+
+  /// [field] is the name of the field, is a translation key.
+  set field(String value) => throw _privateConstructorUsedError;
+
+  /// [type] is the type of the field.
+  @CredentialFieldTypeConverter()
+  CredentialFieldType get type => throw _privateConstructorUsedError;
+
+  /// [type] is the type of the field.
+  @CredentialFieldTypeConverter()
+  set type(CredentialFieldType value) => throw _privateConstructorUsedError;
+
+  /// [maxLength] is the maximum length of the field, only used in [type] = [CredentialFieldType.string].
+  int? get maxLength => throw _privateConstructorUsedError;
+
+  /// [maxLength] is the maximum length of the field, only used in [type] = [CredentialFieldType.string].
+  set maxLength(int? value) => throw _privateConstructorUsedError;
+
+  /// [minLength] is the minimum length of the field, only used in [type] = [CredentialFieldType.string].
+  int? get minLength => throw _privateConstructorUsedError;
+
+  /// [minLength] is the minimum length of the field, only used in [type] = [CredentialFieldType.string].
+  set minLength(int? value) => throw _privateConstructorUsedError;
+
+  /// [maxValue] is the maximum value of the field, only used in [type] = [CredentialFieldType.integer]
+  /// or [CredentialFieldType.float].
+  double? get maxValue => throw _privateConstructorUsedError;
+
+  /// [maxValue] is the maximum value of the field, only used in [type] = [CredentialFieldType.integer]
+  /// or [CredentialFieldType.float].
+  set maxValue(double? value) => throw _privateConstructorUsedError;
+
+  /// [minValue] is the minimum value of the field, only used in [type] = [CredentialFieldType.integer]
+  /// or [CredentialFieldType.float].
+  double? get minValue => throw _privateConstructorUsedError;
+
+  /// [minValue] is the minimum value of the field, only used in [type] = [CredentialFieldType.integer]
+  /// or [CredentialFieldType.float].
+  set minValue(double? value) => throw _privateConstructorUsedError;
+
+  /// [choices] is the list of possible choices for the field, only used in [type] = [CredentialFieldType.choices].
+  List<String> get choices => throw _privateConstructorUsedError;
+
+  /// [choices] is the list of possible choices for the field, only used in [type] = [CredentialFieldType.choices].
+  set choices(List<String> value) => throw _privateConstructorUsedError;
+
+  /// [onlyField] is the name of the field that must be present in the object,
+  /// only used in [type] = [CredentialFieldType.choices].
+  String? get onlyField => throw _privateConstructorUsedError;
+
+  /// [onlyField] is the name of the field that must be present in the object,
+  /// only used in [type] = [CredentialFieldType.choices].
+  set onlyField(String? value) => throw _privateConstructorUsedError;
+
+  /// [onlyChoices] is the list of possible choices for the field, only used in
+  /// [type] = [CredentialFieldType.choices].
+  List<String> get onlyChoices => throw _privateConstructorUsedError;
+
+  /// [onlyChoices] is the list of possible choices for the field, only used in
+  /// [type] = [CredentialFieldType.choices].
+  set onlyChoices(List<String> value) => throw _privateConstructorUsedError;
+
+  /// [action] defines the action to show in the field (as suffix icon).
+  @CredentialFieldActionConverter()
+  CredentialFieldAction get action => throw _privateConstructorUsedError;
+
+  /// [action] defines the action to show in the field (as suffix icon).
+  @CredentialFieldActionConverter()
+  set action(CredentialFieldAction value) => throw _privateConstructorUsedError;
+
+  /// [requiredFields] represents the nested fields.
+  /// Only used when [type] = [CredentialFieldType.nestedField].
+  List<CredentialFieldInput> get requiredFields =>
+      throw _privateConstructorUsedError;
+
+  /// [requiredFields] represents the nested fields.
+  /// Only used when [type] = [CredentialFieldType.nestedField].
+  set requiredFields(List<CredentialFieldInput> value) =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CredentialFieldInputCopyWith<CredentialFieldInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CredentialFieldInputCopyWith<$Res> {
+  factory $CredentialFieldInputCopyWith(CredentialFieldInput value,
+          $Res Function(CredentialFieldInput) then) =
+      _$CredentialFieldInputCopyWithImpl<$Res, CredentialFieldInput>;
+  @useResult
+  $Res call(
+      {String field,
+      @CredentialFieldTypeConverter() CredentialFieldType type,
+      int? maxLength,
+      int? minLength,
+      double? maxValue,
+      double? minValue,
+      List<String> choices,
+      String? onlyField,
+      List<String> onlyChoices,
+      @CredentialFieldActionConverter() CredentialFieldAction action,
+      List<CredentialFieldInput> requiredFields});
+}
+
+/// @nodoc
+class _$CredentialFieldInputCopyWithImpl<$Res,
+        $Val extends CredentialFieldInput>
+    implements $CredentialFieldInputCopyWith<$Res> {
+  _$CredentialFieldInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? type = null,
+    Object? maxLength = freezed,
+    Object? minLength = freezed,
+    Object? maxValue = freezed,
+    Object? minValue = freezed,
+    Object? choices = null,
+    Object? onlyField = freezed,
+    Object? onlyChoices = null,
+    Object? action = null,
+    Object? requiredFields = null,
+  }) {
+    return _then(_value.copyWith(
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as CredentialFieldType,
+      maxLength: freezed == maxLength
+          ? _value.maxLength
+          : maxLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      minLength: freezed == minLength
+          ? _value.minLength
+          : minLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxValue: freezed == maxValue
+          ? _value.maxValue
+          : maxValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      minValue: freezed == minValue
+          ? _value.minValue
+          : minValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      choices: null == choices
+          ? _value.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      onlyField: freezed == onlyField
+          ? _value.onlyField
+          : onlyField // ignore: cast_nullable_to_non_nullable
+              as String?,
+      onlyChoices: null == onlyChoices
+          ? _value.onlyChoices
+          : onlyChoices // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      action: null == action
+          ? _value.action
+          : action // ignore: cast_nullable_to_non_nullable
+              as CredentialFieldAction,
+      requiredFields: null == requiredFields
+          ? _value.requiredFields
+          : requiredFields // ignore: cast_nullable_to_non_nullable
+              as List<CredentialFieldInput>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$CredentialFieldInputImplCopyWith<$Res>
+    implements $CredentialFieldInputCopyWith<$Res> {
+  factory _$$CredentialFieldInputImplCopyWith(_$CredentialFieldInputImpl value,
+          $Res Function(_$CredentialFieldInputImpl) then) =
+      __$$CredentialFieldInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String field,
+      @CredentialFieldTypeConverter() CredentialFieldType type,
+      int? maxLength,
+      int? minLength,
+      double? maxValue,
+      double? minValue,
+      List<String> choices,
+      String? onlyField,
+      List<String> onlyChoices,
+      @CredentialFieldActionConverter() CredentialFieldAction action,
+      List<CredentialFieldInput> requiredFields});
+}
+
+/// @nodoc
+class __$$CredentialFieldInputImplCopyWithImpl<$Res>
+    extends _$CredentialFieldInputCopyWithImpl<$Res, _$CredentialFieldInputImpl>
+    implements _$$CredentialFieldInputImplCopyWith<$Res> {
+  __$$CredentialFieldInputImplCopyWithImpl(_$CredentialFieldInputImpl _value,
+      $Res Function(_$CredentialFieldInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? type = null,
+    Object? maxLength = freezed,
+    Object? minLength = freezed,
+    Object? maxValue = freezed,
+    Object? minValue = freezed,
+    Object? choices = null,
+    Object? onlyField = freezed,
+    Object? onlyChoices = null,
+    Object? action = null,
+    Object? requiredFields = null,
+  }) {
+    return _then(_$CredentialFieldInputImpl(
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as CredentialFieldType,
+      maxLength: freezed == maxLength
+          ? _value.maxLength
+          : maxLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      minLength: freezed == minLength
+          ? _value.minLength
+          : minLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxValue: freezed == maxValue
+          ? _value.maxValue
+          : maxValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      minValue: freezed == minValue
+          ? _value.minValue
+          : minValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      choices: null == choices
+          ? _value.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      onlyField: freezed == onlyField
+          ? _value.onlyField
+          : onlyField // ignore: cast_nullable_to_non_nullable
+              as String?,
+      onlyChoices: null == onlyChoices
+          ? _value.onlyChoices
+          : onlyChoices // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      action: null == action
+          ? _value.action
+          : action // ignore: cast_nullable_to_non_nullable
+              as CredentialFieldAction,
+      requiredFields: null == requiredFields
+          ? _value.requiredFields
+          : requiredFields // ignore: cast_nullable_to_non_nullable
+              as List<CredentialFieldInput>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CredentialFieldInputImpl implements _CredentialFieldInput {
+  _$CredentialFieldInputImpl(
+      {this.field = '',
+      @CredentialFieldTypeConverter() this.type = CredentialFieldType.string,
+      this.maxLength,
+      this.minLength,
+      this.maxValue,
+      this.minValue,
+      this.choices = const [],
+      this.onlyField,
+      this.onlyChoices = const [],
+      @CredentialFieldActionConverter()
+      this.action = CredentialFieldAction.none,
+      this.requiredFields = const []});
+
+  factory _$CredentialFieldInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CredentialFieldInputImplFromJson(json);
+
+  /// [field] is the name of the field, is a translation key.
+  @override
+  @JsonKey()
+  String field;
+
+  /// [type] is the type of the field.
+  @override
+  @JsonKey()
+  @CredentialFieldTypeConverter()
+  CredentialFieldType type;
+
+  /// [maxLength] is the maximum length of the field, only used in [type] = [CredentialFieldType.string].
+  @override
+  int? maxLength;
+
+  /// [minLength] is the minimum length of the field, only used in [type] = [CredentialFieldType.string].
+  @override
+  int? minLength;
+
+  /// [maxValue] is the maximum value of the field, only used in [type] = [CredentialFieldType.integer]
+  /// or [CredentialFieldType.float].
+  @override
+  double? maxValue;
+
+  /// [minValue] is the minimum value of the field, only used in [type] = [CredentialFieldType.integer]
+  /// or [CredentialFieldType.float].
+  @override
+  double? minValue;
+
+  /// [choices] is the list of possible choices for the field, only used in [type] = [CredentialFieldType.choices].
+  @override
+  @JsonKey()
+  List<String> choices;
+
+  /// [onlyField] is the name of the field that must be present in the object,
+  /// only used in [type] = [CredentialFieldType.choices].
+  @override
+  String? onlyField;
+
+  /// [onlyChoices] is the list of possible choices for the field, only used in
+  /// [type] = [CredentialFieldType.choices].
+  @override
+  @JsonKey()
+  List<String> onlyChoices;
+
+  /// [action] defines the action to show in the field (as suffix icon).
+  @override
+  @JsonKey()
+  @CredentialFieldActionConverter()
+  CredentialFieldAction action;
+
+  /// [requiredFields] represents the nested fields.
+  /// Only used when [type] = [CredentialFieldType.nestedField].
+  @override
+  @JsonKey()
+  List<CredentialFieldInput> requiredFields;
+
+  @override
+  String toString() {
+    return 'CredentialFieldInput(field: $field, type: $type, maxLength: $maxLength, minLength: $minLength, maxValue: $maxValue, minValue: $minValue, choices: $choices, onlyField: $onlyField, onlyChoices: $onlyChoices, action: $action, requiredFields: $requiredFields)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CredentialFieldInputImplCopyWith<_$CredentialFieldInputImpl>
+      get copyWith =>
+          __$$CredentialFieldInputImplCopyWithImpl<_$CredentialFieldInputImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CredentialFieldInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _CredentialFieldInput implements CredentialFieldInput {
+  factory _CredentialFieldInput(
+      {String field,
+      @CredentialFieldTypeConverter() CredentialFieldType type,
+      int? maxLength,
+      int? minLength,
+      double? maxValue,
+      double? minValue,
+      List<String> choices,
+      String? onlyField,
+      List<String> onlyChoices,
+      @CredentialFieldActionConverter() CredentialFieldAction action,
+      List<CredentialFieldInput> requiredFields}) = _$CredentialFieldInputImpl;
+
+  factory _CredentialFieldInput.fromJson(Map<String, dynamic> json) =
+      _$CredentialFieldInputImpl.fromJson;
+
+  @override
+
+  /// [field] is the name of the field, is a translation key.
+  String get field;
+
+  /// [field] is the name of the field, is a translation key.
+  set field(String value);
+  @override
+
+  /// [type] is the type of the field.
+  @CredentialFieldTypeConverter()
+  CredentialFieldType get type;
+
+  /// [type] is the type of the field.
+  @CredentialFieldTypeConverter()
+  set type(CredentialFieldType value);
+  @override
+
+  /// [maxLength] is the maximum length of the field, only used in [type] = [CredentialFieldType.string].
+  int? get maxLength;
+
+  /// [maxLength] is the maximum length of the field, only used in [type] = [CredentialFieldType.string].
+  set maxLength(int? value);
+  @override
+
+  /// [minLength] is the minimum length of the field, only used in [type] = [CredentialFieldType.string].
+  int? get minLength;
+
+  /// [minLength] is the minimum length of the field, only used in [type] = [CredentialFieldType.string].
+  set minLength(int? value);
+  @override
+
+  /// [maxValue] is the maximum value of the field, only used in [type] = [CredentialFieldType.integer]
+  /// or [CredentialFieldType.float].
+  double? get maxValue;
+
+  /// [maxValue] is the maximum value of the field, only used in [type] = [CredentialFieldType.integer]
+  /// or [CredentialFieldType.float].
+  set maxValue(double? value);
+  @override
+
+  /// [minValue] is the minimum value of the field, only used in [type] = [CredentialFieldType.integer]
+  /// or [CredentialFieldType.float].
+  double? get minValue;
+
+  /// [minValue] is the minimum value of the field, only used in [type] = [CredentialFieldType.integer]
+  /// or [CredentialFieldType.float].
+  set minValue(double? value);
+  @override
+
+  /// [choices] is the list of possible choices for the field, only used in [type] = [CredentialFieldType.choices].
+  List<String> get choices;
+
+  /// [choices] is the list of possible choices for the field, only used in [type] = [CredentialFieldType.choices].
+  set choices(List<String> value);
+  @override
+
+  /// [onlyField] is the name of the field that must be present in the object,
+  /// only used in [type] = [CredentialFieldType.choices].
+  String? get onlyField;
+
+  /// [onlyField] is the name of the field that must be present in the object,
+  /// only used in [type] = [CredentialFieldType.choices].
+  set onlyField(String? value);
+  @override
+
+  /// [onlyChoices] is the list of possible choices for the field, only used in
+  /// [type] = [CredentialFieldType.choices].
+  List<String> get onlyChoices;
+
+  /// [onlyChoices] is the list of possible choices for the field, only used in
+  /// [type] = [CredentialFieldType.choices].
+  set onlyChoices(List<String> value);
+  @override
+
+  /// [action] defines the action to show in the field (as suffix icon).
+  @CredentialFieldActionConverter()
+  CredentialFieldAction get action;
+
+  /// [action] defines the action to show in the field (as suffix icon).
+  @CredentialFieldActionConverter()
+  set action(CredentialFieldAction value);
+  @override
+
+  /// [requiredFields] represents the nested fields.
+  /// Only used when [type] = [CredentialFieldType.nestedField].
+  List<CredentialFieldInput> get requiredFields;
+
+  /// [requiredFields] represents the nested fields.
+  /// Only used when [type] = [CredentialFieldType.nestedField].
+  set requiredFields(List<CredentialFieldInput> value);
+  @override
+  @JsonKey(ignore: true)
+  _$$CredentialFieldInputImplCopyWith<_$CredentialFieldInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 CustomField _$CustomFieldFromJson(Map<String, dynamic> json) {
@@ -24258,6 +24785,13 @@ mixin _$Tag {
   /// Is a list of ID's of associated vision profiles to this module.
   List<String>? get mappitRoutesIds => throw _privateConstructorUsedError;
 
+  /// Is a list of associated exchange services to this module.
+  List<ExchangeService>? get exchangeServices =>
+      throw _privateConstructorUsedError;
+
+  /// Is a list of ID's of associated exchange services to this module.
+  List<String>? get exchangeServicesIds => throw _privateConstructorUsedError;
+
   /// Is a list of granted access to this entity.
   List<Access>? get access => throw _privateConstructorUsedError;
 
@@ -24327,6 +24861,8 @@ abstract class $TagCopyWith<$Res> {
       List<String>? visionProfilesIds,
       List<MappitRoute>? mappitRoutes,
       List<String>? mappitRoutesIds,
+      List<ExchangeService>? exchangeServices,
+      List<String>? exchangeServicesIds,
       List<Access>? access,
       User? owner,
       String? ownerId});
@@ -24394,6 +24930,8 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? visionProfilesIds = freezed,
     Object? mappitRoutes = freezed,
     Object? mappitRoutesIds = freezed,
+    Object? exchangeServices = freezed,
+    Object? exchangeServicesIds = freezed,
     Object? access = freezed,
     Object? owner = freezed,
     Object? ownerId = freezed,
@@ -24587,6 +25125,14 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.mappitRoutesIds
           : mappitRoutesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      exchangeServices: freezed == exchangeServices
+          ? _value.exchangeServices
+          : exchangeServices // ignore: cast_nullable_to_non_nullable
+              as List<ExchangeService>?,
+      exchangeServicesIds: freezed == exchangeServicesIds
+          ? _value.exchangeServicesIds
+          : exchangeServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       access: freezed == access
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
@@ -24683,6 +25229,8 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
       List<String>? visionProfilesIds,
       List<MappitRoute>? mappitRoutes,
       List<String>? mappitRoutesIds,
+      List<ExchangeService>? exchangeServices,
+      List<String>? exchangeServicesIds,
       List<Access>? access,
       User? owner,
       String? ownerId});
@@ -24749,6 +25297,8 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
     Object? visionProfilesIds = freezed,
     Object? mappitRoutes = freezed,
     Object? mappitRoutesIds = freezed,
+    Object? exchangeServices = freezed,
+    Object? exchangeServicesIds = freezed,
     Object? access = freezed,
     Object? owner = freezed,
     Object? ownerId = freezed,
@@ -24942,6 +25492,14 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
           ? _value._mappitRoutesIds
           : mappitRoutesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      exchangeServices: freezed == exchangeServices
+          ? _value._exchangeServices
+          : exchangeServices // ignore: cast_nullable_to_non_nullable
+              as List<ExchangeService>?,
+      exchangeServicesIds: freezed == exchangeServicesIds
+          ? _value._exchangeServicesIds
+          : exchangeServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
       access: freezed == access
           ? _value._access
           : access // ignore: cast_nullable_to_non_nullable
@@ -25009,6 +25567,8 @@ class _$TagImpl implements _Tag {
       final List<String>? visionProfilesIds,
       final List<MappitRoute>? mappitRoutes,
       final List<String>? mappitRoutesIds,
+      final List<ExchangeService>? exchangeServices,
+      final List<String>? exchangeServicesIds,
       final List<Access>? access,
       this.owner,
       this.ownerId})
@@ -25054,6 +25614,8 @@ class _$TagImpl implements _Tag {
         _visionProfilesIds = visionProfilesIds,
         _mappitRoutes = mappitRoutes,
         _mappitRoutesIds = mappitRoutesIds,
+        _exchangeServices = exchangeServices,
+        _exchangeServicesIds = exchangeServicesIds,
         _access = access;
 
   factory _$TagImpl.fromJson(Map<String, dynamic> json) =>
@@ -25637,6 +26199,34 @@ class _$TagImpl implements _Tag {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Is a list of associated exchange services to this module.
+  final List<ExchangeService>? _exchangeServices;
+
+  /// Is a list of associated exchange services to this module.
+  @override
+  List<ExchangeService>? get exchangeServices {
+    final value = _exchangeServices;
+    if (value == null) return null;
+    if (_exchangeServices is EqualUnmodifiableListView)
+      return _exchangeServices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Is a list of ID's of associated exchange services to this module.
+  final List<String>? _exchangeServicesIds;
+
+  /// Is a list of ID's of associated exchange services to this module.
+  @override
+  List<String>? get exchangeServicesIds {
+    final value = _exchangeServicesIds;
+    if (value == null) return null;
+    if (_exchangeServicesIds is EqualUnmodifiableListView)
+      return _exchangeServicesIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// Is a list of granted access to this entity.
   final List<Access>? _access;
 
@@ -25660,7 +26250,7 @@ class _$TagImpl implements _Tag {
 
   @override
   String toString() {
-    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, mappitRoutes: $mappitRoutes, mappitRoutesIds: $mappitRoutesIds, access: $access, owner: $owner, ownerId: $ownerId)';
+    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, mappitRoutes: $mappitRoutes, mappitRoutesIds: $mappitRoutesIds, exchangeServices: $exchangeServices, exchangeServicesIds: $exchangeServicesIds, access: $access, owner: $owner, ownerId: $ownerId)';
   }
 
   @override
@@ -25750,6 +26340,10 @@ class _$TagImpl implements _Tag {
                 .equals(other._mappitRoutes, _mappitRoutes) &&
             const DeepCollectionEquality()
                 .equals(other._mappitRoutesIds, _mappitRoutesIds) &&
+            const DeepCollectionEquality()
+                .equals(other._exchangeServices, _exchangeServices) &&
+            const DeepCollectionEquality()
+                .equals(other._exchangeServicesIds, _exchangeServicesIds) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
             (identical(other.owner, owner) || other.owner == owner) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId));
@@ -25806,6 +26400,8 @@ class _$TagImpl implements _Tag {
         const DeepCollectionEquality().hash(_visionProfilesIds),
         const DeepCollectionEquality().hash(_mappitRoutes),
         const DeepCollectionEquality().hash(_mappitRoutesIds),
+        const DeepCollectionEquality().hash(_exchangeServices),
+        const DeepCollectionEquality().hash(_exchangeServicesIds),
         const DeepCollectionEquality().hash(_access),
         owner,
         ownerId
@@ -25876,6 +26472,8 @@ abstract class _Tag implements Tag {
       final List<String>? visionProfilesIds,
       final List<MappitRoute>? mappitRoutes,
       final List<String>? mappitRoutesIds,
+      final List<ExchangeService>? exchangeServices,
+      final List<String>? exchangeServicesIds,
       final List<Access>? access,
       final User? owner,
       final String? ownerId}) = _$TagImpl;
@@ -26073,6 +26671,14 @@ abstract class _Tag implements Tag {
 
   /// Is a list of ID's of associated vision profiles to this module.
   List<String>? get mappitRoutesIds;
+  @override
+
+  /// Is a list of associated exchange services to this module.
+  List<ExchangeService>? get exchangeServices;
+  @override
+
+  /// Is a list of ID's of associated exchange services to this module.
+  List<String>? get exchangeServicesIds;
   @override
 
   /// Is a list of granted access to this entity.
