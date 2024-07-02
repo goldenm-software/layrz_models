@@ -32830,3 +32830,541 @@ abstract class _InviteLink extends InviteLink {
   _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+FlespiAcl _$FlespiAclFromJson(Map<String, dynamic> json) {
+  return _FlespiAcl.fromJson(json);
+}
+
+/// @nodoc
+mixin _$FlespiAcl {
+  /// [uri] is the URI of the ACL.
+  @FlespiUriConverter()
+  FlespiUri get uri => throw _privateConstructorUsedError;
+
+  /// [topic] is the topic of the ACL.
+  /// This field is only used when the [uri] is [FlespiUri.mqtt].
+  String? get topic => throw _privateConstructorUsedError;
+
+  /// [actions] is the list of actions allowed for the ACL.
+  /// This field is only used when the [uri] is [FlespiUri.mqtt].
+  @FlespiActionConverter()
+  List<FlespiAction>? get actions => throw _privateConstructorUsedError;
+
+  /// [methods] is the list of methods allowed for the ACL.
+  @FlespiMethodConverter()
+  List<FlespiMethod>? get methods => throw _privateConstructorUsedError;
+
+  /// [ids] is the list of IDs allowed for the ACL.
+  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
+  List<String>? get ids => throw _privateConstructorUsedError;
+
+  /// [submodules] is the list of submodules allowed for the ACL.
+  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
+  List<FlespiSubmoduleConfig>? get submodules =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FlespiAclCopyWith<FlespiAcl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FlespiAclCopyWith<$Res> {
+  factory $FlespiAclCopyWith(FlespiAcl value, $Res Function(FlespiAcl) then) =
+      _$FlespiAclCopyWithImpl<$Res, FlespiAcl>;
+  @useResult
+  $Res call(
+      {@FlespiUriConverter() FlespiUri uri,
+      String? topic,
+      @FlespiActionConverter() List<FlespiAction>? actions,
+      @FlespiMethodConverter() List<FlespiMethod>? methods,
+      List<String>? ids,
+      List<FlespiSubmoduleConfig>? submodules});
+}
+
+/// @nodoc
+class _$FlespiAclCopyWithImpl<$Res, $Val extends FlespiAcl>
+    implements $FlespiAclCopyWith<$Res> {
+  _$FlespiAclCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uri = null,
+    Object? topic = freezed,
+    Object? actions = freezed,
+    Object? methods = freezed,
+    Object? ids = freezed,
+    Object? submodules = freezed,
+  }) {
+    return _then(_value.copyWith(
+      uri: null == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as FlespiUri,
+      topic: freezed == topic
+          ? _value.topic
+          : topic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      actions: freezed == actions
+          ? _value.actions
+          : actions // ignore: cast_nullable_to_non_nullable
+              as List<FlespiAction>?,
+      methods: freezed == methods
+          ? _value.methods
+          : methods // ignore: cast_nullable_to_non_nullable
+              as List<FlespiMethod>?,
+      ids: freezed == ids
+          ? _value.ids
+          : ids // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      submodules: freezed == submodules
+          ? _value.submodules
+          : submodules // ignore: cast_nullable_to_non_nullable
+              as List<FlespiSubmoduleConfig>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$FlespiAclImplCopyWith<$Res>
+    implements $FlespiAclCopyWith<$Res> {
+  factory _$$FlespiAclImplCopyWith(
+          _$FlespiAclImpl value, $Res Function(_$FlespiAclImpl) then) =
+      __$$FlespiAclImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@FlespiUriConverter() FlespiUri uri,
+      String? topic,
+      @FlespiActionConverter() List<FlespiAction>? actions,
+      @FlespiMethodConverter() List<FlespiMethod>? methods,
+      List<String>? ids,
+      List<FlespiSubmoduleConfig>? submodules});
+}
+
+/// @nodoc
+class __$$FlespiAclImplCopyWithImpl<$Res>
+    extends _$FlespiAclCopyWithImpl<$Res, _$FlespiAclImpl>
+    implements _$$FlespiAclImplCopyWith<$Res> {
+  __$$FlespiAclImplCopyWithImpl(
+      _$FlespiAclImpl _value, $Res Function(_$FlespiAclImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uri = null,
+    Object? topic = freezed,
+    Object? actions = freezed,
+    Object? methods = freezed,
+    Object? ids = freezed,
+    Object? submodules = freezed,
+  }) {
+    return _then(_$FlespiAclImpl(
+      uri: null == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as FlespiUri,
+      topic: freezed == topic
+          ? _value.topic
+          : topic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      actions: freezed == actions
+          ? _value._actions
+          : actions // ignore: cast_nullable_to_non_nullable
+              as List<FlespiAction>?,
+      methods: freezed == methods
+          ? _value._methods
+          : methods // ignore: cast_nullable_to_non_nullable
+              as List<FlespiMethod>?,
+      ids: freezed == ids
+          ? _value._ids
+          : ids // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      submodules: freezed == submodules
+          ? _value._submodules
+          : submodules // ignore: cast_nullable_to_non_nullable
+              as List<FlespiSubmoduleConfig>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$FlespiAclImpl implements _FlespiAcl {
+  const _$FlespiAclImpl(
+      {@FlespiUriConverter() required this.uri,
+      this.topic,
+      @FlespiActionConverter() final List<FlespiAction>? actions,
+      @FlespiMethodConverter() final List<FlespiMethod>? methods,
+      final List<String>? ids,
+      final List<FlespiSubmoduleConfig>? submodules})
+      : _actions = actions,
+        _methods = methods,
+        _ids = ids,
+        _submodules = submodules;
+
+  factory _$FlespiAclImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlespiAclImplFromJson(json);
+
+  /// [uri] is the URI of the ACL.
+  @override
+  @FlespiUriConverter()
+  final FlespiUri uri;
+
+  /// [topic] is the topic of the ACL.
+  /// This field is only used when the [uri] is [FlespiUri.mqtt].
+  @override
+  final String? topic;
+
+  /// [actions] is the list of actions allowed for the ACL.
+  /// This field is only used when the [uri] is [FlespiUri.mqtt].
+  final List<FlespiAction>? _actions;
+
+  /// [actions] is the list of actions allowed for the ACL.
+  /// This field is only used when the [uri] is [FlespiUri.mqtt].
+  @override
+  @FlespiActionConverter()
+  List<FlespiAction>? get actions {
+    final value = _actions;
+    if (value == null) return null;
+    if (_actions is EqualUnmodifiableListView) return _actions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [methods] is the list of methods allowed for the ACL.
+  final List<FlespiMethod>? _methods;
+
+  /// [methods] is the list of methods allowed for the ACL.
+  @override
+  @FlespiMethodConverter()
+  List<FlespiMethod>? get methods {
+    final value = _methods;
+    if (value == null) return null;
+    if (_methods is EqualUnmodifiableListView) return _methods;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [ids] is the list of IDs allowed for the ACL.
+  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
+  final List<String>? _ids;
+
+  /// [ids] is the list of IDs allowed for the ACL.
+  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
+  @override
+  List<String>? get ids {
+    final value = _ids;
+    if (value == null) return null;
+    if (_ids is EqualUnmodifiableListView) return _ids;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [submodules] is the list of submodules allowed for the ACL.
+  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
+  final List<FlespiSubmoduleConfig>? _submodules;
+
+  /// [submodules] is the list of submodules allowed for the ACL.
+  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
+  @override
+  List<FlespiSubmoduleConfig>? get submodules {
+    final value = _submodules;
+    if (value == null) return null;
+    if (_submodules is EqualUnmodifiableListView) return _submodules;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'FlespiAcl(uri: $uri, topic: $topic, actions: $actions, methods: $methods, ids: $ids, submodules: $submodules)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FlespiAclImpl &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.topic, topic) || other.topic == topic) &&
+            const DeepCollectionEquality().equals(other._actions, _actions) &&
+            const DeepCollectionEquality().equals(other._methods, _methods) &&
+            const DeepCollectionEquality().equals(other._ids, _ids) &&
+            const DeepCollectionEquality()
+                .equals(other._submodules, _submodules));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      uri,
+      topic,
+      const DeepCollectionEquality().hash(_actions),
+      const DeepCollectionEquality().hash(_methods),
+      const DeepCollectionEquality().hash(_ids),
+      const DeepCollectionEquality().hash(_submodules));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FlespiAclImplCopyWith<_$FlespiAclImpl> get copyWith =>
+      __$$FlespiAclImplCopyWithImpl<_$FlespiAclImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FlespiAclImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _FlespiAcl implements FlespiAcl {
+  const factory _FlespiAcl(
+      {@FlespiUriConverter() required final FlespiUri uri,
+      final String? topic,
+      @FlespiActionConverter() final List<FlespiAction>? actions,
+      @FlespiMethodConverter() final List<FlespiMethod>? methods,
+      final List<String>? ids,
+      final List<FlespiSubmoduleConfig>? submodules}) = _$FlespiAclImpl;
+
+  factory _FlespiAcl.fromJson(Map<String, dynamic> json) =
+      _$FlespiAclImpl.fromJson;
+
+  @override
+
+  /// [uri] is the URI of the ACL.
+  @FlespiUriConverter()
+  FlespiUri get uri;
+  @override
+
+  /// [topic] is the topic of the ACL.
+  /// This field is only used when the [uri] is [FlespiUri.mqtt].
+  String? get topic;
+  @override
+
+  /// [actions] is the list of actions allowed for the ACL.
+  /// This field is only used when the [uri] is [FlespiUri.mqtt].
+  @FlespiActionConverter()
+  List<FlespiAction>? get actions;
+  @override
+
+  /// [methods] is the list of methods allowed for the ACL.
+  @FlespiMethodConverter()
+  List<FlespiMethod>? get methods;
+  @override
+
+  /// [ids] is the list of IDs allowed for the ACL.
+  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
+  List<String>? get ids;
+  @override
+
+  /// [submodules] is the list of submodules allowed for the ACL.
+  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
+  List<FlespiSubmoduleConfig>? get submodules;
+  @override
+  @JsonKey(ignore: true)
+  _$$FlespiAclImplCopyWith<_$FlespiAclImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+FlespiSubmoduleConfig _$FlespiSubmoduleConfigFromJson(
+    Map<String, dynamic> json) {
+  return _FlespiSubmoduleConfig.fromJson(json);
+}
+
+/// @nodoc
+mixin _$FlespiSubmoduleConfig {
+  /// [submodule] is the submodule of the configuration.
+  @FlespiSubmoduleConverter()
+  FlespiSubmodule get name => throw _privateConstructorUsedError;
+
+  /// [methods] is the list of methods allowed for the submodule.
+  @FlespiMethodConverter()
+  List<FlespiMethod> get methods => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FlespiSubmoduleConfigCopyWith<FlespiSubmoduleConfig> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FlespiSubmoduleConfigCopyWith<$Res> {
+  factory $FlespiSubmoduleConfigCopyWith(FlespiSubmoduleConfig value,
+          $Res Function(FlespiSubmoduleConfig) then) =
+      _$FlespiSubmoduleConfigCopyWithImpl<$Res, FlespiSubmoduleConfig>;
+  @useResult
+  $Res call(
+      {@FlespiSubmoduleConverter() FlespiSubmodule name,
+      @FlespiMethodConverter() List<FlespiMethod> methods});
+}
+
+/// @nodoc
+class _$FlespiSubmoduleConfigCopyWithImpl<$Res,
+        $Val extends FlespiSubmoduleConfig>
+    implements $FlespiSubmoduleConfigCopyWith<$Res> {
+  _$FlespiSubmoduleConfigCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? methods = null,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as FlespiSubmodule,
+      methods: null == methods
+          ? _value.methods
+          : methods // ignore: cast_nullable_to_non_nullable
+              as List<FlespiMethod>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$FlespiSubmoduleConfigImplCopyWith<$Res>
+    implements $FlespiSubmoduleConfigCopyWith<$Res> {
+  factory _$$FlespiSubmoduleConfigImplCopyWith(
+          _$FlespiSubmoduleConfigImpl value,
+          $Res Function(_$FlespiSubmoduleConfigImpl) then) =
+      __$$FlespiSubmoduleConfigImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@FlespiSubmoduleConverter() FlespiSubmodule name,
+      @FlespiMethodConverter() List<FlespiMethod> methods});
+}
+
+/// @nodoc
+class __$$FlespiSubmoduleConfigImplCopyWithImpl<$Res>
+    extends _$FlespiSubmoduleConfigCopyWithImpl<$Res,
+        _$FlespiSubmoduleConfigImpl>
+    implements _$$FlespiSubmoduleConfigImplCopyWith<$Res> {
+  __$$FlespiSubmoduleConfigImplCopyWithImpl(_$FlespiSubmoduleConfigImpl _value,
+      $Res Function(_$FlespiSubmoduleConfigImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? methods = null,
+  }) {
+    return _then(_$FlespiSubmoduleConfigImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as FlespiSubmodule,
+      methods: null == methods
+          ? _value._methods
+          : methods // ignore: cast_nullable_to_non_nullable
+              as List<FlespiMethod>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$FlespiSubmoduleConfigImpl implements _FlespiSubmoduleConfig {
+  const _$FlespiSubmoduleConfigImpl(
+      {@FlespiSubmoduleConverter() required this.name,
+      @FlespiMethodConverter() final List<FlespiMethod> methods = const []})
+      : _methods = methods;
+
+  factory _$FlespiSubmoduleConfigImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlespiSubmoduleConfigImplFromJson(json);
+
+  /// [submodule] is the submodule of the configuration.
+  @override
+  @FlespiSubmoduleConverter()
+  final FlespiSubmodule name;
+
+  /// [methods] is the list of methods allowed for the submodule.
+  final List<FlespiMethod> _methods;
+
+  /// [methods] is the list of methods allowed for the submodule.
+  @override
+  @JsonKey()
+  @FlespiMethodConverter()
+  List<FlespiMethod> get methods {
+    if (_methods is EqualUnmodifiableListView) return _methods;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_methods);
+  }
+
+  @override
+  String toString() {
+    return 'FlespiSubmoduleConfig(name: $name, methods: $methods)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FlespiSubmoduleConfigImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other._methods, _methods));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, name, const DeepCollectionEquality().hash(_methods));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FlespiSubmoduleConfigImplCopyWith<_$FlespiSubmoduleConfigImpl>
+      get copyWith => __$$FlespiSubmoduleConfigImplCopyWithImpl<
+          _$FlespiSubmoduleConfigImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FlespiSubmoduleConfigImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _FlespiSubmoduleConfig implements FlespiSubmoduleConfig {
+  const factory _FlespiSubmoduleConfig(
+          {@FlespiSubmoduleConverter() required final FlespiSubmodule name,
+          @FlespiMethodConverter() final List<FlespiMethod> methods}) =
+      _$FlespiSubmoduleConfigImpl;
+
+  factory _FlespiSubmoduleConfig.fromJson(Map<String, dynamic> json) =
+      _$FlespiSubmoduleConfigImpl.fromJson;
+
+  @override
+
+  /// [submodule] is the submodule of the configuration.
+  @FlespiSubmoduleConverter()
+  FlespiSubmodule get name;
+  @override
+
+  /// [methods] is the list of methods allowed for the submodule.
+  @FlespiMethodConverter()
+  List<FlespiMethod> get methods;
+  @override
+  @JsonKey(ignore: true)
+  _$$FlespiSubmoduleConfigImplCopyWith<_$FlespiSubmoduleConfigImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

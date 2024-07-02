@@ -104,6 +104,7 @@ part 'src/trip.dart';
 part 'src/undeclarated_models.dart';
 part 'src/user.dart';
 part 'src/weekdays.dart';
+part 'src/flespi_acl.dart';
 
 // Helper enums
 enum LayrzListingFormat {

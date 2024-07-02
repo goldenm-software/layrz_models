@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.69
+
+- Expanded configuration of `FlespiAcl` model
+- Added `FlespiSubmoduleConfig` model
+
 ## 2.1.68
 
 - Added `CredentialFieldInput` model

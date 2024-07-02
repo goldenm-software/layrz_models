@@ -41,23 +41,6 @@ Map<String, dynamic> _$$ExchangeProtocolImplToJson(
       'usage': instance.usage,
     };
 
-_$FlespiAclImpl _$$FlespiAclImplFromJson(Map<String, dynamic> json) =>
-    _$FlespiAclImpl(
-      uri: json['uri'] as String,
-      topic: json['topic'] as String,
-      action: (json['action'] as List<dynamic>?)
-          ?.map((e) => const FlespiActionConverter().fromJson(e as String))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$FlespiAclImplToJson(_$FlespiAclImpl instance) =>
-    <String, dynamic>{
-      'uri': instance.uri,
-      'topic': instance.topic,
-      'action':
-          instance.action?.map(const FlespiActionConverter().toJson).toList(),
-    };
-
 _$ExchangeServiceImpl _$$ExchangeServiceImplFromJson(
         Map<String, dynamic> json) =>
     _$ExchangeServiceImpl(
