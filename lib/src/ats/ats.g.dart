@@ -117,8 +117,8 @@ _$AtsAuthenticationCardImpl _$$AtsAuthenticationCardImplFromJson(
         Map<String, dynamic> json) =>
     _$AtsAuthenticationCardImpl(
       id: json['id'] as String,
-      number: json['number'] as int,
-      externalIdentifier: json['externalIdentifier'] as int,
+      number: (json['number'] as num).toInt(),
+      externalIdentifier: (json['externalIdentifier'] as num).toInt(),
       externalIdentifierHex: json['externalIdentifierHex'] as String,
       asset: json['asset'] == null
           ? null
@@ -577,12 +577,13 @@ Map<String, dynamic> _$$AtsPurchaseTotalImplToJson(
 _$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
     _$AtsReceptionImpl(
       id: json['id'] as String,
-      orderId: json['orderId'] as int?,
+      orderId: (json['orderId'] as num?)?.toInt(),
       order: json['order'] == null
           ? null
           : AtsPurchaseOrder.fromJson(json['order'] as Map<String, dynamic>),
-      ordersIds:
-          (json['ordersIds'] as List<dynamic>?)?.map((e) => e as int).toList(),
+      ordersIds: (json['ordersIds'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
       entry: json['entry'] == null
           ? null
           : AtsEntry.fromJson(json['entry'] as Map<String, dynamic>),
@@ -654,7 +655,7 @@ Map<String, dynamic> _$$AtsExitStatusImplToJson(_$AtsExitStatusImpl instance) =>
 _$AtsExitImpl _$$AtsExitImplFromJson(Map<String, dynamic> json) =>
     _$AtsExitImpl(
       id: json['id'] as String?,
-      identifier: json['identifier'] as int?,
+      identifier: (json['identifier'] as num?)?.toInt(),
       fromAssetId: json['fromAssetId'] as String?,
       fromAsset: json['fromAsset'] == null
           ? null
@@ -752,7 +753,7 @@ _$AtsExecuteExitInputImpl _$$AtsExecuteExitInputImplFromJson(
     _$AtsExecuteExitInputImpl(
       fromAssetId: json['fromAssetId'] as String?,
       sensorId: json['sensorId'] as String?,
-      presetValue: json['presetValue'] as int?,
+      presetValue: (json['presetValue'] as num?)?.toInt(),
       toAssetId: json['toAssetId'] as String?,
       toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
       fromApp: const AtsFromAppOrNullConverter()
@@ -819,7 +820,11 @@ _$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>
       isLinked: json['isLinked'] as bool?,
       fuelType: json['fuelType'] as String?,
       temperature: (json['temperature'] as num?)?.toDouble(),
+      initialTemperature: (json['initialTemperature'] as num?)?.toDouble(),
       density: (json['density'] as num?)?.toDouble(),
+      initialDensity: (json['initialDensity'] as num?)?.toDouble(),
+      waterLevel: (json['waterLevel'] as num?)?.toDouble(),
+      initialWaterLevel: (json['initialWaterLevel'] as num?)?.toDouble(),
       volumeHistory: (json['volumeHistory'] as List<dynamic>?)
               ?.map((e) => AtsVolume.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -841,7 +846,11 @@ Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
       'isLinked': instance.isLinked,
       'fuelType': instance.fuelType,
       'temperature': instance.temperature,
+      'initialTemperature': instance.initialTemperature,
       'density': instance.density,
+      'initialDensity': instance.initialDensity,
+      'waterLevel': instance.waterLevel,
+      'initialWaterLevel': instance.initialWaterLevel,
       'volumeHistory': instance.volumeHistory.map((e) => e.toJson()).toList(),
     };
 

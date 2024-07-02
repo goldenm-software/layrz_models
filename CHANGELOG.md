@@ -1,10 +1,15 @@
 # Changelog
 
+## 2.1.74
+
+- Added `initialDensity`, `initialTemperature`, `waterLevel` and `initialWaterLevel` on `AtsEntry` model
+
 ## 2.1.73
 
 - Added `usage` and `dynamicIcon` on `VisionProtocol` model
 
 ## 2.1.72
+
 - Added `finishedAt` in `AtsOperation` model
 
 ## 2.1.71
@@ -27,6 +32,7 @@
 - Added `ExchangeService` model
 
 ## 2.1.67
+
 - added `totalQuantity` in `AtsOperation` model
 
 ## 2.1.66
@@ -34,6 +40,7 @@
 - Added `CredentialFieldType.layrzItemId` and `CredentialFieldType.layrzWebhookEndpoint`
 
 ## 2.1.65
+
 - Added `speedingThreshold` prop to `BrickhouseAlertInput` and `BrickhouseAlert` models
 - Added `AtsOperation` and `AtsOperationStatuses`
 

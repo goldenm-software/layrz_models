@@ -51,8 +51,20 @@ class AtsEntry with _$AtsEntry {
     /// `temperature` is the temperature of the entry.
     double? temperature,
 
+    /// `initialTemperature` is the initial temperature of the entry.
+    double? initialTemperature,
+
     /// `density` is the density of the entry.
     double? density,
+
+    /// `initialDensity` is the initial density of the entry.
+    double? initialDensity,
+
+    /// `waterLevel` is the water level of the entry.
+    double? waterLevel,
+
+    /// `initialWaterLevel` is the initial water level of the entry.
+    double? initialWaterLevel,
 
     /// `volumenHistory` is the volumen history of the entry.
     @Default([]) List<AtsVolume> volumeHistory,

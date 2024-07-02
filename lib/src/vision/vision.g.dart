@@ -16,7 +16,7 @@ _$VisionProtocolImpl _$$VisionProtocolImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      usage: json['usage'] as int?,
+      usage: (json['usage'] as num?)?.toInt(),
       dynamicIcon: json['dynamicIcon'] == null
           ? null
           : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
