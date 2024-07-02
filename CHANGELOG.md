@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.70
+
+- Added `usage` to `InboundProtocol`, `OutboundProtocol` and `Algorithm` models
+
 ## 2.1.69
 
 - Expanded configuration of `FlespiAcl` model

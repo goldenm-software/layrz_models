@@ -58,6 +58,10 @@ mixin _$OutboundProtocol {
   /// This is the new schema of the icon
   Avatar? get dynamicIcon => throw _privateConstructorUsedError;
 
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  int? get usage => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $OutboundProtocolCopyWith<OutboundProtocol> get copyWith =>
@@ -81,7 +85,8 @@ abstract class $OutboundProtocolCopyWith<$Res> {
       String? mqttTopic,
       bool? isAsync,
       List<CredentialField> requiredFields,
-      Avatar? dynamicIcon});
+      Avatar? dynamicIcon,
+      int? usage});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
 }
@@ -110,6 +115,7 @@ class _$OutboundProtocolCopyWithImpl<$Res, $Val extends OutboundProtocol>
     Object? isAsync = freezed,
     Object? requiredFields = null,
     Object? dynamicIcon = freezed,
+    Object? usage = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -156,6 +162,10 @@ class _$OutboundProtocolCopyWithImpl<$Res, $Val extends OutboundProtocol>
           ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
               as Avatar?,
+      usage: freezed == usage
+          ? _value.usage
+          : usage // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -191,7 +201,8 @@ abstract class _$$OutboundProtocolImplCopyWith<$Res>
       String? mqttTopic,
       bool? isAsync,
       List<CredentialField> requiredFields,
-      Avatar? dynamicIcon});
+      Avatar? dynamicIcon,
+      int? usage});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -219,6 +230,7 @@ class __$$OutboundProtocolImplCopyWithImpl<$Res>
     Object? isAsync = freezed,
     Object? requiredFields = null,
     Object? dynamicIcon = freezed,
+    Object? usage = freezed,
   }) {
     return _then(_$OutboundProtocolImpl(
       id: null == id
@@ -265,6 +277,10 @@ class __$$OutboundProtocolImplCopyWithImpl<$Res>
           ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
               as Avatar?,
+      usage: freezed == usage
+          ? _value.usage
+          : usage // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -283,7 +299,8 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
       this.mqttTopic,
       this.isAsync,
       final List<CredentialField> requiredFields = const [],
-      this.dynamicIcon})
+      this.dynamicIcon,
+      this.usage})
       : _categoriesIds = categoriesIds,
         _requiredFields = requiredFields;
 
@@ -354,9 +371,14 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
   @override
   final Avatar? dynamicIcon;
 
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  @override
+  final int? usage;
+
   @override
   String toString() {
-    return 'OutboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, hasFtp: $hasFtp, isConsumpted: $isConsumpted, mqttTopic: $mqttTopic, isAsync: $isAsync, requiredFields: $requiredFields, dynamicIcon: $dynamicIcon)';
+    return 'OutboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, hasFtp: $hasFtp, isConsumpted: $isConsumpted, mqttTopic: $mqttTopic, isAsync: $isAsync, requiredFields: $requiredFields, dynamicIcon: $dynamicIcon, usage: $usage)';
   }
 
   @override
@@ -380,7 +402,8 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
             const DeepCollectionEquality()
                 .equals(other._requiredFields, _requiredFields) &&
             (identical(other.dynamicIcon, dynamicIcon) ||
-                other.dynamicIcon == dynamicIcon));
+                other.dynamicIcon == dynamicIcon) &&
+            (identical(other.usage, usage) || other.usage == usage));
   }
 
   @JsonKey(ignore: true)
@@ -397,7 +420,8 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
       mqttTopic,
       isAsync,
       const DeepCollectionEquality().hash(_requiredFields),
-      dynamicIcon);
+      dynamicIcon,
+      usage);
 
   @JsonKey(ignore: true)
   @override
@@ -426,7 +450,8 @@ abstract class _OutboundProtocol implements OutboundProtocol {
       final String? mqttTopic,
       final bool? isAsync,
       final List<CredentialField> requiredFields,
-      final Avatar? dynamicIcon}) = _$OutboundProtocolImpl;
+      final Avatar? dynamicIcon,
+      final int? usage}) = _$OutboundProtocolImpl;
 
   factory _OutboundProtocol.fromJson(Map<String, dynamic> json) =
       _$OutboundProtocolImpl.fromJson;
@@ -479,6 +504,11 @@ abstract class _OutboundProtocol implements OutboundProtocol {
   /// [dynamicIcon] is the icon of the inbound protocol.
   /// This is the new schema of the icon
   Avatar? get dynamicIcon;
+  @override
+
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  int? get usage;
   @override
   @JsonKey(ignore: true)
   _$$OutboundProtocolImplCopyWith<_$OutboundProtocolImpl> get copyWith =>

@@ -472,6 +472,10 @@ mixin _$InboundProtocol {
   /// [modbusPorts] is the list of Modbus ports that the protocol has.
   List<String> get modbusPorts => throw _privateConstructorUsedError;
 
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  int? get usage => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
@@ -510,7 +514,8 @@ abstract class $InboundProtocolCopyWith<$Res> {
       String? cycleId,
       SimulationCycle? cycle,
       bool? hasModbus,
-      List<String> modbusPorts});
+      List<String> modbusPorts,
+      int? usage});
 
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
   $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
@@ -557,6 +562,7 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? cycle = freezed,
     Object? hasModbus = freezed,
     Object? modbusPorts = null,
+    Object? usage = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -663,6 +669,10 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.modbusPorts
           : modbusPorts // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      usage: freezed == usage
+          ? _value.usage
+          : usage // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 
@@ -750,7 +760,8 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       String? cycleId,
       SimulationCycle? cycle,
       bool? hasModbus,
-      List<String> modbusPorts});
+      List<String> modbusPorts,
+      int? usage});
 
   @override
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
@@ -799,6 +810,7 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? cycle = freezed,
     Object? hasModbus = freezed,
     Object? modbusPorts = null,
+    Object? usage = freezed,
   }) {
     return _then(_$InboundProtocolImpl(
       id: null == id
@@ -905,6 +917,10 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value._modbusPorts
           : modbusPorts // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      usage: freezed == usage
+          ? _value.usage
+          : usage // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -938,7 +954,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       this.cycleId,
       this.cycle,
       this.hasModbus,
-      final List<String> modbusPorts = const []})
+      final List<String> modbusPorts = const [],
+      this.usage})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models,
@@ -1093,9 +1110,14 @@ class _$InboundProtocolImpl implements _InboundProtocol {
     return EqualUnmodifiableListView(_modbusPorts);
   }
 
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  @override
+  final int? usage;
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage)';
   }
 
   @override
@@ -1147,7 +1169,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
             (identical(other.hasModbus, hasModbus) ||
                 other.hasModbus == hasModbus) &&
             const DeepCollectionEquality()
-                .equals(other._modbusPorts, _modbusPorts));
+                .equals(other._modbusPorts, _modbusPorts) &&
+            (identical(other.usage, usage) || other.usage == usage));
   }
 
   @JsonKey(ignore: true)
@@ -1179,7 +1202,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         cycleId,
         cycle,
         hasModbus,
-        const DeepCollectionEquality().hash(_modbusPorts)
+        const DeepCollectionEquality().hash(_modbusPorts),
+        usage
       ]);
 
   @JsonKey(ignore: true)
@@ -1224,7 +1248,8 @@ abstract class _InboundProtocol implements InboundProtocol {
       final String? cycleId,
       final SimulationCycle? cycle,
       final bool? hasModbus,
-      final List<String> modbusPorts}) = _$InboundProtocolImpl;
+      final List<String> modbusPorts,
+      final int? usage}) = _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
@@ -1340,6 +1365,11 @@ abstract class _InboundProtocol implements InboundProtocol {
 
   /// [modbusPorts] is the list of Modbus ports that the protocol has.
   List<String> get modbusPorts;
+  @override
+
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  int? get usage;
   @override
   @JsonKey(ignore: true)
   _$$InboundProtocolImplCopyWith<_$InboundProtocolImpl> get copyWith =>

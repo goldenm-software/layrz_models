@@ -2540,6 +2540,10 @@ mixin _$Algorithm {
   List<CredentialField> get requiredFields =>
       throw _privateConstructorUsedError;
 
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  int? get usage => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AlgorithmCopyWith<Algorithm> get copyWith =>
@@ -2561,7 +2565,8 @@ abstract class $AlgorithmCopyWith<$Res> {
       bool canBeInSensors,
       bool hasHttp,
       bool hasFtp,
-      List<CredentialField> requiredFields});
+      List<CredentialField> requiredFields,
+      int? usage});
 }
 
 /// @nodoc
@@ -2587,6 +2592,7 @@ class _$AlgorithmCopyWithImpl<$Res, $Val extends Algorithm>
     Object? hasHttp = null,
     Object? hasFtp = null,
     Object? requiredFields = null,
+    Object? usage = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -2629,6 +2635,10 @@ class _$AlgorithmCopyWithImpl<$Res, $Val extends Algorithm>
           ? _value.requiredFields
           : requiredFields // ignore: cast_nullable_to_non_nullable
               as List<CredentialField>,
+      usage: freezed == usage
+          ? _value.usage
+          : usage // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -2651,7 +2661,8 @@ abstract class _$$AlgorithmImplCopyWith<$Res>
       bool canBeInSensors,
       bool hasHttp,
       bool hasFtp,
-      List<CredentialField> requiredFields});
+      List<CredentialField> requiredFields,
+      int? usage});
 }
 
 /// @nodoc
@@ -2675,6 +2686,7 @@ class __$$AlgorithmImplCopyWithImpl<$Res>
     Object? hasHttp = null,
     Object? hasFtp = null,
     Object? requiredFields = null,
+    Object? usage = freezed,
   }) {
     return _then(_$AlgorithmImpl(
       id: null == id
@@ -2717,6 +2729,10 @@ class __$$AlgorithmImplCopyWithImpl<$Res>
           ? _value._requiredFields
           : requiredFields // ignore: cast_nullable_to_non_nullable
               as List<CredentialField>,
+      usage: freezed == usage
+          ? _value.usage
+          : usage // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -2734,7 +2750,8 @@ class _$AlgorithmImpl implements _Algorithm {
       this.canBeInSensors = false,
       this.hasHttp = false,
       this.hasFtp = false,
-      final List<CredentialField> requiredFields = const []})
+      final List<CredentialField> requiredFields = const [],
+      this.usage})
       : _categoriesIds = categoriesIds,
         _requiredFields = requiredFields;
 
@@ -2780,9 +2797,14 @@ class _$AlgorithmImpl implements _Algorithm {
     return EqualUnmodifiableListView(_requiredFields);
   }
 
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  @override
+  final int? usage;
+
   @override
   String toString() {
-    return 'Algorithm(id: $id, name: $name, color: $color, icon: $icon, isEnabled: $isEnabled, categoriesIds: $categoriesIds, canBeInSensors: $canBeInSensors, hasHttp: $hasHttp, hasFtp: $hasFtp, requiredFields: $requiredFields)';
+    return 'Algorithm(id: $id, name: $name, color: $color, icon: $icon, isEnabled: $isEnabled, categoriesIds: $categoriesIds, canBeInSensors: $canBeInSensors, hasHttp: $hasHttp, hasFtp: $hasFtp, requiredFields: $requiredFields, usage: $usage)';
   }
 
   @override
@@ -2803,7 +2825,8 @@ class _$AlgorithmImpl implements _Algorithm {
             (identical(other.hasHttp, hasHttp) || other.hasHttp == hasHttp) &&
             (identical(other.hasFtp, hasFtp) || other.hasFtp == hasFtp) &&
             const DeepCollectionEquality()
-                .equals(other._requiredFields, _requiredFields));
+                .equals(other._requiredFields, _requiredFields) &&
+            (identical(other.usage, usage) || other.usage == usage));
   }
 
   @JsonKey(ignore: true)
@@ -2819,7 +2842,8 @@ class _$AlgorithmImpl implements _Algorithm {
       canBeInSensors,
       hasHttp,
       hasFtp,
-      const DeepCollectionEquality().hash(_requiredFields));
+      const DeepCollectionEquality().hash(_requiredFields),
+      usage);
 
   @JsonKey(ignore: true)
   @override
@@ -2846,7 +2870,8 @@ abstract class _Algorithm implements Algorithm {
       final bool canBeInSensors,
       final bool hasHttp,
       final bool hasFtp,
-      final List<CredentialField> requiredFields}) = _$AlgorithmImpl;
+      final List<CredentialField> requiredFields,
+      final int? usage}) = _$AlgorithmImpl;
 
   factory _Algorithm.fromJson(Map<String, dynamic> json) =
       _$AlgorithmImpl.fromJson;
@@ -2873,6 +2898,11 @@ abstract class _Algorithm implements Algorithm {
   bool get hasFtp;
   @override
   List<CredentialField> get requiredFields;
+  @override
+
+  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+  /// For marketing purposes.
+  int? get usage;
   @override
   @JsonKey(ignore: true)
   _$$AlgorithmImplCopyWith<_$AlgorithmImpl> get copyWith =>

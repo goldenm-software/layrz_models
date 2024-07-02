@@ -253,6 +253,7 @@ _$AlgorithmImpl _$$AlgorithmImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      usage: json['usage'] as int?,
     );
 
 Map<String, dynamic> _$$AlgorithmImplToJson(_$AlgorithmImpl instance) =>
@@ -267,6 +268,7 @@ Map<String, dynamic> _$$AlgorithmImplToJson(_$AlgorithmImpl instance) =>
       'hasHttp': instance.hasHttp,
       'hasFtp': instance.hasFtp,
       'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
+      'usage': instance.usage,
     };
 
 _$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(

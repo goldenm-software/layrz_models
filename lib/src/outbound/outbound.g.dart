@@ -28,6 +28,7 @@ _$OutboundProtocolImpl _$$OutboundProtocolImplFromJson(
       dynamicIcon: json['dynamicIcon'] == null
           ? null
           : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
+      usage: json['usage'] as int?,
     );
 
 Map<String, dynamic> _$$OutboundProtocolImplToJson(
@@ -44,6 +45,7 @@ Map<String, dynamic> _$$OutboundProtocolImplToJson(
       'isAsync': instance.isAsync,
       'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
       'dynamicIcon': instance.dynamicIcon?.toJson(),
+      'usage': instance.usage,
     };
 
 _$OutboundServiceImpl _$$OutboundServiceImplFromJson(

@@ -87,6 +87,7 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
               ?.map((e) => e as String)
               .toList() ??
           const [],
+      usage: json['usage'] as int?,
     );
 
 Map<String, dynamic> _$$InboundProtocolImplToJson(
@@ -120,6 +121,7 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'cycle': instance.cycle?.toJson(),
       'hasModbus': instance.hasModbus,
       'modbusPorts': instance.modbusPorts,
+      'usage': instance.usage,
     };
 
 _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
