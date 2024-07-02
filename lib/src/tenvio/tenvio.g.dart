@@ -266,10 +266,12 @@ Map<String, dynamic> _$$TenvioItemQuantityImplToJson(
 _$TenvioItemQuantityInputImpl _$$TenvioItemQuantityInputImplFromJson(
         Map<String, dynamic> json) =>
     _$TenvioItemQuantityInputImpl(
-      id: json['id'] as String,
-      matrixId: json['matrixId'] as String,
-      matrix: TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
-      quantity: json['quantity'] as int,
+      id: json['id'] as String?,
+      matrixId: json['matrixId'] as String?,
+      matrix: json['matrix'] == null
+          ? null
+          : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
+      quantity: json['quantity'] as int?,
     );
 
 Map<String, dynamic> _$$TenvioItemQuantityInputImplToJson(
@@ -277,7 +279,7 @@ Map<String, dynamic> _$$TenvioItemQuantityInputImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'matrixId': instance.matrixId,
-      'matrix': instance.matrix.toJson(),
+      'matrix': instance.matrix?.toJson(),
       'quantity': instance.quantity,
     };
 

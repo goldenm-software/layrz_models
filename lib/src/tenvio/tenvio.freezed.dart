@@ -3194,28 +3194,28 @@ TenvioItemQuantityInput _$TenvioItemQuantityInputFromJson(
 /// @nodoc
 mixin _$TenvioItemQuantityInput {
   /// [id] is the unique identifier of the package quantity
-  String get id => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
 
   /// [id] is the unique identifier of the package quantity
-  set id(String value) => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
 
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
-  String get matrixId => throw _privateConstructorUsedError;
+  String? get matrixId => throw _privateConstructorUsedError;
 
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
-  set matrixId(String value) => throw _privateConstructorUsedError;
+  set matrixId(String? value) => throw _privateConstructorUsedError;
 
   /// [matrix] is the matrix that the package quantity is related.
-  TenvioMatrixItem get matrix => throw _privateConstructorUsedError;
+  TenvioMatrixItem? get matrix => throw _privateConstructorUsedError;
 
   /// [matrix] is the matrix that the package quantity is related.
-  set matrix(TenvioMatrixItem value) => throw _privateConstructorUsedError;
+  set matrix(TenvioMatrixItem? value) => throw _privateConstructorUsedError;
 
   /// [quantity] is the quantity of the package.
-  int get quantity => throw _privateConstructorUsedError;
+  int? get quantity => throw _privateConstructorUsedError;
 
   /// [quantity] is the quantity of the package.
-  set quantity(int value) => throw _privateConstructorUsedError;
+  set quantity(int? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3230,9 +3230,9 @@ abstract class $TenvioItemQuantityInputCopyWith<$Res> {
       _$TenvioItemQuantityInputCopyWithImpl<$Res, TenvioItemQuantityInput>;
   @useResult
   $Res call(
-      {String id, String matrixId, TenvioMatrixItem matrix, int quantity});
+      {String? id, String? matrixId, TenvioMatrixItem? matrix, int? quantity});
 
-  $TenvioMatrixItemCopyWith<$Res> get matrix;
+  $TenvioMatrixItemCopyWith<$Res>? get matrix;
 }
 
 /// @nodoc
@@ -3249,35 +3249,39 @@ class _$TenvioItemQuantityInputCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? matrixId = null,
-    Object? matrix = null,
-    Object? quantity = null,
+    Object? id = freezed,
+    Object? matrixId = freezed,
+    Object? matrix = freezed,
+    Object? quantity = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      matrixId: null == matrixId
+              as String?,
+      matrixId: freezed == matrixId
           ? _value.matrixId
           : matrixId // ignore: cast_nullable_to_non_nullable
-              as String,
-      matrix: null == matrix
+              as String?,
+      matrix: freezed == matrix
           ? _value.matrix
           : matrix // ignore: cast_nullable_to_non_nullable
-              as TenvioMatrixItem,
-      quantity: null == quantity
+              as TenvioMatrixItem?,
+      quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $TenvioMatrixItemCopyWith<$Res> get matrix {
-    return $TenvioMatrixItemCopyWith<$Res>(_value.matrix, (value) {
+  $TenvioMatrixItemCopyWith<$Res>? get matrix {
+    if (_value.matrix == null) {
+      return null;
+    }
+
+    return $TenvioMatrixItemCopyWith<$Res>(_value.matrix!, (value) {
       return _then(_value.copyWith(matrix: value) as $Val);
     });
   }
@@ -3293,10 +3297,10 @@ abstract class _$$TenvioItemQuantityInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id, String matrixId, TenvioMatrixItem matrix, int quantity});
+      {String? id, String? matrixId, TenvioMatrixItem? matrix, int? quantity});
 
   @override
-  $TenvioMatrixItemCopyWith<$Res> get matrix;
+  $TenvioMatrixItemCopyWith<$Res>? get matrix;
 }
 
 /// @nodoc
@@ -3312,28 +3316,28 @@ class __$$TenvioItemQuantityInputImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? matrixId = null,
-    Object? matrix = null,
-    Object? quantity = null,
+    Object? id = freezed,
+    Object? matrixId = freezed,
+    Object? matrix = freezed,
+    Object? quantity = freezed,
   }) {
     return _then(_$TenvioItemQuantityInputImpl(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      matrixId: null == matrixId
+              as String?,
+      matrixId: freezed == matrixId
           ? _value.matrixId
           : matrixId // ignore: cast_nullable_to_non_nullable
-              as String,
-      matrix: null == matrix
+              as String?,
+      matrix: freezed == matrix
           ? _value.matrix
           : matrix // ignore: cast_nullable_to_non_nullable
-              as TenvioMatrixItem,
-      quantity: null == quantity
+              as TenvioMatrixItem?,
+      quantity: freezed == quantity
           ? _value.quantity
           : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -3341,30 +3345,27 @@ class __$$TenvioItemQuantityInputImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TenvioItemQuantityInputImpl implements _TenvioItemQuantityInput {
-  const _$TenvioItemQuantityInputImpl(
-      {required this.id,
-      required this.matrixId,
-      required this.matrix,
-      required this.quantity});
+  _$TenvioItemQuantityInputImpl(
+      {this.id, this.matrixId, this.matrix, this.quantity});
 
   factory _$TenvioItemQuantityInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioItemQuantityInputImplFromJson(json);
 
   /// [id] is the unique identifier of the package quantity
   @override
-  String id;
+  String? id;
 
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
   @override
-  String matrixId;
+  String? matrixId;
 
   /// [matrix] is the matrix that the package quantity is related.
   @override
-  TenvioMatrixItem matrix;
+  TenvioMatrixItem? matrix;
 
   /// [quantity] is the quantity of the package.
   @override
-  int quantity;
+  int? quantity;
 
   @override
   String toString() {
@@ -3387,11 +3388,11 @@ class _$TenvioItemQuantityInputImpl implements _TenvioItemQuantityInput {
 }
 
 abstract class _TenvioItemQuantityInput implements TenvioItemQuantityInput {
-  const factory _TenvioItemQuantityInput(
-      {required String id,
-      required String matrixId,
-      required TenvioMatrixItem matrix,
-      required int quantity}) = _$TenvioItemQuantityInputImpl;
+  factory _TenvioItemQuantityInput(
+      {String? id,
+      String? matrixId,
+      TenvioMatrixItem? matrix,
+      int? quantity}) = _$TenvioItemQuantityInputImpl;
 
   factory _TenvioItemQuantityInput.fromJson(Map<String, dynamic> json) =
       _$TenvioItemQuantityInputImpl.fromJson;
@@ -3399,31 +3400,31 @@ abstract class _TenvioItemQuantityInput implements TenvioItemQuantityInput {
   @override
 
   /// [id] is the unique identifier of the package quantity
-  String get id;
+  String? get id;
 
   /// [id] is the unique identifier of the package quantity
-  set id(String value);
+  set id(String? value);
   @override
 
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
-  String get matrixId;
+  String? get matrixId;
 
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
-  set matrixId(String value);
+  set matrixId(String? value);
   @override
 
   /// [matrix] is the matrix that the package quantity is related.
-  TenvioMatrixItem get matrix;
+  TenvioMatrixItem? get matrix;
 
   /// [matrix] is the matrix that the package quantity is related.
-  set matrix(TenvioMatrixItem value);
+  set matrix(TenvioMatrixItem? value);
   @override
 
   /// [quantity] is the quantity of the package.
-  int get quantity;
+  int? get quantity;
 
   /// [quantity] is the quantity of the package.
-  set quantity(int value);
+  set quantity(int? value);
   @override
   @JsonKey(ignore: true)
   _$$TenvioItemQuantityInputImplCopyWith<_$TenvioItemQuantityInputImpl>
