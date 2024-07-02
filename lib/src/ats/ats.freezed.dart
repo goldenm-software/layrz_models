@@ -10297,6 +10297,10 @@ mixin _$AtsOperation {
   @TimestampOrNullConverter()
   DateTime? get createdAt => throw _privateConstructorUsedError;
 
+  /// `finishedAt` is the Unix timestamp of the finished date.
+  @TimestampOrNullConverter()
+  DateTime? get finishedAt => throw _privateConstructorUsedError;
+
   /// `pendingToReview` indicates if it's pending to review.
   bool? get pendingToReview => throw _privateConstructorUsedError;
 
@@ -10360,6 +10364,7 @@ abstract class $AtsOperationCopyWith<$Res> {
       String? transportAssetId,
       @TimestampOrNullConverter() DateTime? purchasedAt,
       @TimestampOrNullConverter() DateTime? createdAt,
+      @TimestampOrNullConverter() DateTime? finishedAt,
       bool? pendingToReview,
       List<String>? ordersIds,
       Asset? sellerAsset,
@@ -10400,6 +10405,7 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
     Object? transportAssetId = freezed,
     Object? purchasedAt = freezed,
     Object? createdAt = freezed,
+    Object? finishedAt = freezed,
     Object? pendingToReview = freezed,
     Object? ordersIds = freezed,
     Object? sellerAsset = freezed,
@@ -10433,6 +10439,10 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      finishedAt: freezed == finishedAt
+          ? _value.finishedAt
+          : finishedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       pendingToReview: freezed == pendingToReview
           ? _value.pendingToReview
@@ -10550,6 +10560,7 @@ abstract class _$$AtsOperationImplCopyWith<$Res>
       String? transportAssetId,
       @TimestampOrNullConverter() DateTime? purchasedAt,
       @TimestampOrNullConverter() DateTime? createdAt,
+      @TimestampOrNullConverter() DateTime? finishedAt,
       bool? pendingToReview,
       List<String>? ordersIds,
       Asset? sellerAsset,
@@ -10592,6 +10603,7 @@ class __$$AtsOperationImplCopyWithImpl<$Res>
     Object? transportAssetId = freezed,
     Object? purchasedAt = freezed,
     Object? createdAt = freezed,
+    Object? finishedAt = freezed,
     Object? pendingToReview = freezed,
     Object? ordersIds = freezed,
     Object? sellerAsset = freezed,
@@ -10625,6 +10637,10 @@ class __$$AtsOperationImplCopyWithImpl<$Res>
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      finishedAt: freezed == finishedAt
+          ? _value.finishedAt
+          : finishedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       pendingToReview: freezed == pendingToReview
           ? _value.pendingToReview
@@ -10687,6 +10703,7 @@ class _$AtsOperationImpl implements _AtsOperation {
       this.transportAssetId,
       @TimestampOrNullConverter() this.purchasedAt,
       @TimestampOrNullConverter() this.createdAt,
+      @TimestampOrNullConverter() this.finishedAt,
       this.pendingToReview,
       final List<String>? ordersIds,
       this.sellerAsset,
@@ -10727,6 +10744,11 @@ class _$AtsOperationImpl implements _AtsOperation {
   @override
   @TimestampOrNullConverter()
   final DateTime? createdAt;
+
+  /// `finishedAt` is the Unix timestamp of the finished date.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? finishedAt;
 
   /// `pendingToReview` indicates if it's pending to review.
   @override
@@ -10808,7 +10830,7 @@ class _$AtsOperationImpl implements _AtsOperation {
 
   @override
   String toString() {
-    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity)';
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity)';
   }
 
   @override
@@ -10825,6 +10847,8 @@ class _$AtsOperationImpl implements _AtsOperation {
                 other.purchasedAt == purchasedAt) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
+            (identical(other.finishedAt, finishedAt) ||
+                other.finishedAt == finishedAt) &&
             (identical(other.pendingToReview, pendingToReview) ||
                 other.pendingToReview == pendingToReview) &&
             const DeepCollectionEquality()
@@ -10859,6 +10883,7 @@ class _$AtsOperationImpl implements _AtsOperation {
       transportAssetId,
       purchasedAt,
       createdAt,
+      finishedAt,
       pendingToReview,
       const DeepCollectionEquality().hash(_ordersIds),
       sellerAsset,
@@ -10893,6 +10918,7 @@ abstract class _AtsOperation implements AtsOperation {
       final String? transportAssetId,
       @TimestampOrNullConverter() final DateTime? purchasedAt,
       @TimestampOrNullConverter() final DateTime? createdAt,
+      @TimestampOrNullConverter() final DateTime? finishedAt,
       final bool? pendingToReview,
       final List<String>? ordersIds,
       final Asset? sellerAsset,
@@ -10934,6 +10960,11 @@ abstract class _AtsOperation implements AtsOperation {
   /// `createdAt` is the Unix timestamp of the creation date.
   @TimestampOrNullConverter()
   DateTime? get createdAt;
+  @override
+
+  /// `finishedAt` is the Unix timestamp of the finished date.
+  @TimestampOrNullConverter()
+  DateTime? get finishedAt;
   @override
 
   /// `pendingToReview` indicates if it's pending to review.

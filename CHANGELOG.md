@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.72
+- Added `finishedAt` in `AtsOperation` model
+
+## 2.1.71
+-
+
 ## 2.1.70
 
 - Added `usage` to `InboundProtocol`, `OutboundProtocol` and `Algorithm` models
