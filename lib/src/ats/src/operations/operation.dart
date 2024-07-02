@@ -18,6 +18,9 @@ class AtsOperation with _$AtsOperation {
     /// `createdAt` is the Unix timestamp of the creation date.
     @TimestampOrNullConverter() DateTime? createdAt,
 
+    /// `finishedAt` is the Unix timestamp of the finished date.
+    @TimestampOrNullConverter() DateTime? finishedAt,
+
     /// `pendingToReview` indicates if it's pending to review.
     bool? pendingToReview,
 

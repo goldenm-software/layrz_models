@@ -18,6 +18,13 @@ class VisionProtocol with _$VisionProtocol {
 
     /// [requiredFields] is the list of required fields for the protocol.
     @Default([]) List<CredentialField> requiredFields,
+
+    /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
+    /// For marketing purposes.
+    int? usage,
+
+    /// [dynamicIcon] is the icon of the protocol.
+    Avatar? dynamicIcon,
   }) = _VisionProtocol;
 
   factory VisionProtocol.fromJson(Map<String, dynamic> json) => _$VisionProtocolFromJson(json);

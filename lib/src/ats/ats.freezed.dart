@@ -9533,8 +9533,20 @@ mixin _$AtsEntry {
   /// `temperature` is the temperature of the entry.
   double? get temperature => throw _privateConstructorUsedError;
 
+  /// `initialTemperature` is the initial temperature of the entry.
+  double? get initialTemperature => throw _privateConstructorUsedError;
+
   /// `density` is the density of the entry.
   double? get density => throw _privateConstructorUsedError;
+
+  /// `initialDensity` is the initial density of the entry.
+  double? get initialDensity => throw _privateConstructorUsedError;
+
+  /// `waterLevel` is the water level of the entry.
+  double? get waterLevel => throw _privateConstructorUsedError;
+
+  /// `initialWaterLevel` is the initial water level of the entry.
+  double? get initialWaterLevel => throw _privateConstructorUsedError;
 
   /// `volumenHistory` is the volumen history of the entry.
   List<AtsVolume> get volumeHistory => throw _privateConstructorUsedError;
@@ -9564,7 +9576,11 @@ abstract class $AtsEntryCopyWith<$Res> {
       bool? isLinked,
       String? fuelType,
       double? temperature,
+      double? initialTemperature,
       double? density,
+      double? initialDensity,
+      double? waterLevel,
+      double? initialWaterLevel,
       List<AtsVolume> volumeHistory});
 
   $AssetCopyWith<$Res>? get asset;
@@ -9597,7 +9613,11 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
     Object? isLinked = freezed,
     Object? fuelType = freezed,
     Object? temperature = freezed,
+    Object? initialTemperature = freezed,
     Object? density = freezed,
+    Object? initialDensity = freezed,
+    Object? waterLevel = freezed,
+    Object? initialWaterLevel = freezed,
     Object? volumeHistory = null,
   }) {
     return _then(_value.copyWith(
@@ -9653,9 +9673,25 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
               as double?,
+      initialTemperature: freezed == initialTemperature
+          ? _value.initialTemperature
+          : initialTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
       density: freezed == density
           ? _value.density
           : density // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialDensity: freezed == initialDensity
+          ? _value.initialDensity
+          : initialDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      waterLevel: freezed == waterLevel
+          ? _value.waterLevel
+          : waterLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialWaterLevel: freezed == initialWaterLevel
+          ? _value.initialWaterLevel
+          : initialWaterLevel // ignore: cast_nullable_to_non_nullable
               as double?,
       volumeHistory: null == volumeHistory
           ? _value.volumeHistory
@@ -9711,7 +9747,11 @@ abstract class _$$AtsEntryImplCopyWith<$Res>
       bool? isLinked,
       String? fuelType,
       double? temperature,
+      double? initialTemperature,
       double? density,
+      double? initialDensity,
+      double? waterLevel,
+      double? initialWaterLevel,
       List<AtsVolume> volumeHistory});
 
   @override
@@ -9744,7 +9784,11 @@ class __$$AtsEntryImplCopyWithImpl<$Res>
     Object? isLinked = freezed,
     Object? fuelType = freezed,
     Object? temperature = freezed,
+    Object? initialTemperature = freezed,
     Object? density = freezed,
+    Object? initialDensity = freezed,
+    Object? waterLevel = freezed,
+    Object? initialWaterLevel = freezed,
     Object? volumeHistory = null,
   }) {
     return _then(_$AtsEntryImpl(
@@ -9800,9 +9844,25 @@ class __$$AtsEntryImplCopyWithImpl<$Res>
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
               as double?,
+      initialTemperature: freezed == initialTemperature
+          ? _value.initialTemperature
+          : initialTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
       density: freezed == density
           ? _value.density
           : density // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialDensity: freezed == initialDensity
+          ? _value.initialDensity
+          : initialDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      waterLevel: freezed == waterLevel
+          ? _value.waterLevel
+          : waterLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialWaterLevel: freezed == initialWaterLevel
+          ? _value.initialWaterLevel
+          : initialWaterLevel // ignore: cast_nullable_to_non_nullable
               as double?,
       volumeHistory: null == volumeHistory
           ? _value._volumeHistory
@@ -9829,7 +9889,11 @@ class _$AtsEntryImpl implements _AtsEntry {
       this.isLinked,
       this.fuelType,
       this.temperature,
+      this.initialTemperature,
       this.density,
+      this.initialDensity,
+      this.waterLevel,
+      this.initialWaterLevel,
       final List<AtsVolume> volumeHistory = const []})
       : _receptions = receptions,
         _volumeHistory = volumeHistory;
@@ -9900,9 +9964,25 @@ class _$AtsEntryImpl implements _AtsEntry {
   @override
   final double? temperature;
 
+  /// `initialTemperature` is the initial temperature of the entry.
+  @override
+  final double? initialTemperature;
+
   /// `density` is the density of the entry.
   @override
   final double? density;
+
+  /// `initialDensity` is the initial density of the entry.
+  @override
+  final double? initialDensity;
+
+  /// `waterLevel` is the water level of the entry.
+  @override
+  final double? waterLevel;
+
+  /// `initialWaterLevel` is the initial water level of the entry.
+  @override
+  final double? initialWaterLevel;
 
   /// `volumenHistory` is the volumen history of the entry.
   final List<AtsVolume> _volumeHistory;
@@ -9918,7 +9998,7 @@ class _$AtsEntryImpl implements _AtsEntry {
 
   @override
   String toString() {
-    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, temperature: $temperature, density: $density, volumeHistory: $volumeHistory)';
+    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, temperature: $temperature, initialTemperature: $initialTemperature, density: $density, initialDensity: $initialDensity, waterLevel: $waterLevel, initialWaterLevel: $initialWaterLevel, volumeHistory: $volumeHistory)';
   }
 
   @override
@@ -9947,30 +10027,43 @@ class _$AtsEntryImpl implements _AtsEntry {
                 other.fuelType == fuelType) &&
             (identical(other.temperature, temperature) ||
                 other.temperature == temperature) &&
+            (identical(other.initialTemperature, initialTemperature) ||
+                other.initialTemperature == initialTemperature) &&
             (identical(other.density, density) || other.density == density) &&
+            (identical(other.initialDensity, initialDensity) ||
+                other.initialDensity == initialDensity) &&
+            (identical(other.waterLevel, waterLevel) ||
+                other.waterLevel == waterLevel) &&
+            (identical(other.initialWaterLevel, initialWaterLevel) ||
+                other.initialWaterLevel == initialWaterLevel) &&
             const DeepCollectionEquality()
                 .equals(other._volumeHistory, _volumeHistory));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      assetId,
-      asset,
-      oldTankLevel,
-      newTankLevel,
-      startAt,
-      endAt,
-      errorPercent,
-      reception,
-      const DeepCollectionEquality().hash(_receptions),
-      isLinked,
-      fuelType,
-      temperature,
-      density,
-      const DeepCollectionEquality().hash(_volumeHistory));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        assetId,
+        asset,
+        oldTankLevel,
+        newTankLevel,
+        startAt,
+        endAt,
+        errorPercent,
+        reception,
+        const DeepCollectionEquality().hash(_receptions),
+        isLinked,
+        fuelType,
+        temperature,
+        initialTemperature,
+        density,
+        initialDensity,
+        waterLevel,
+        initialWaterLevel,
+        const DeepCollectionEquality().hash(_volumeHistory)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -10001,7 +10094,11 @@ abstract class _AtsEntry implements AtsEntry {
       final bool? isLinked,
       final String? fuelType,
       final double? temperature,
+      final double? initialTemperature,
       final double? density,
+      final double? initialDensity,
+      final double? waterLevel,
+      final double? initialWaterLevel,
       final List<AtsVolume> volumeHistory}) = _$AtsEntryImpl;
 
   factory _AtsEntry.fromJson(Map<String, dynamic> json) =
@@ -10063,8 +10160,24 @@ abstract class _AtsEntry implements AtsEntry {
   double? get temperature;
   @override
 
+  /// `initialTemperature` is the initial temperature of the entry.
+  double? get initialTemperature;
+  @override
+
   /// `density` is the density of the entry.
   double? get density;
+  @override
+
+  /// `initialDensity` is the initial density of the entry.
+  double? get initialDensity;
+  @override
+
+  /// `waterLevel` is the water level of the entry.
+  double? get waterLevel;
+  @override
+
+  /// `initialWaterLevel` is the initial water level of the entry.
+  double? get initialWaterLevel;
   @override
 
   /// `volumenHistory` is the volumen history of the entry.
@@ -10297,6 +10410,10 @@ mixin _$AtsOperation {
   @TimestampOrNullConverter()
   DateTime? get createdAt => throw _privateConstructorUsedError;
 
+  /// `finishedAt` is the Unix timestamp of the finished date.
+  @TimestampOrNullConverter()
+  DateTime? get finishedAt => throw _privateConstructorUsedError;
+
   /// `pendingToReview` indicates if it's pending to review.
   bool? get pendingToReview => throw _privateConstructorUsedError;
 
@@ -10360,6 +10477,7 @@ abstract class $AtsOperationCopyWith<$Res> {
       String? transportAssetId,
       @TimestampOrNullConverter() DateTime? purchasedAt,
       @TimestampOrNullConverter() DateTime? createdAt,
+      @TimestampOrNullConverter() DateTime? finishedAt,
       bool? pendingToReview,
       List<String>? ordersIds,
       Asset? sellerAsset,
@@ -10400,6 +10518,7 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
     Object? transportAssetId = freezed,
     Object? purchasedAt = freezed,
     Object? createdAt = freezed,
+    Object? finishedAt = freezed,
     Object? pendingToReview = freezed,
     Object? ordersIds = freezed,
     Object? sellerAsset = freezed,
@@ -10433,6 +10552,10 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      finishedAt: freezed == finishedAt
+          ? _value.finishedAt
+          : finishedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       pendingToReview: freezed == pendingToReview
           ? _value.pendingToReview
@@ -10550,6 +10673,7 @@ abstract class _$$AtsOperationImplCopyWith<$Res>
       String? transportAssetId,
       @TimestampOrNullConverter() DateTime? purchasedAt,
       @TimestampOrNullConverter() DateTime? createdAt,
+      @TimestampOrNullConverter() DateTime? finishedAt,
       bool? pendingToReview,
       List<String>? ordersIds,
       Asset? sellerAsset,
@@ -10592,6 +10716,7 @@ class __$$AtsOperationImplCopyWithImpl<$Res>
     Object? transportAssetId = freezed,
     Object? purchasedAt = freezed,
     Object? createdAt = freezed,
+    Object? finishedAt = freezed,
     Object? pendingToReview = freezed,
     Object? ordersIds = freezed,
     Object? sellerAsset = freezed,
@@ -10625,6 +10750,10 @@ class __$$AtsOperationImplCopyWithImpl<$Res>
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      finishedAt: freezed == finishedAt
+          ? _value.finishedAt
+          : finishedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       pendingToReview: freezed == pendingToReview
           ? _value.pendingToReview
@@ -10687,6 +10816,7 @@ class _$AtsOperationImpl implements _AtsOperation {
       this.transportAssetId,
       @TimestampOrNullConverter() this.purchasedAt,
       @TimestampOrNullConverter() this.createdAt,
+      @TimestampOrNullConverter() this.finishedAt,
       this.pendingToReview,
       final List<String>? ordersIds,
       this.sellerAsset,
@@ -10727,6 +10857,11 @@ class _$AtsOperationImpl implements _AtsOperation {
   @override
   @TimestampOrNullConverter()
   final DateTime? createdAt;
+
+  /// `finishedAt` is the Unix timestamp of the finished date.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? finishedAt;
 
   /// `pendingToReview` indicates if it's pending to review.
   @override
@@ -10808,7 +10943,7 @@ class _$AtsOperationImpl implements _AtsOperation {
 
   @override
   String toString() {
-    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity)';
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity)';
   }
 
   @override
@@ -10825,6 +10960,8 @@ class _$AtsOperationImpl implements _AtsOperation {
                 other.purchasedAt == purchasedAt) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
+            (identical(other.finishedAt, finishedAt) ||
+                other.finishedAt == finishedAt) &&
             (identical(other.pendingToReview, pendingToReview) ||
                 other.pendingToReview == pendingToReview) &&
             const DeepCollectionEquality()
@@ -10859,6 +10996,7 @@ class _$AtsOperationImpl implements _AtsOperation {
       transportAssetId,
       purchasedAt,
       createdAt,
+      finishedAt,
       pendingToReview,
       const DeepCollectionEquality().hash(_ordersIds),
       sellerAsset,
@@ -10893,6 +11031,7 @@ abstract class _AtsOperation implements AtsOperation {
       final String? transportAssetId,
       @TimestampOrNullConverter() final DateTime? purchasedAt,
       @TimestampOrNullConverter() final DateTime? createdAt,
+      @TimestampOrNullConverter() final DateTime? finishedAt,
       final bool? pendingToReview,
       final List<String>? ordersIds,
       final Asset? sellerAsset,
@@ -10934,6 +11073,11 @@ abstract class _AtsOperation implements AtsOperation {
   /// `createdAt` is the Unix timestamp of the creation date.
   @TimestampOrNullConverter()
   DateTime? get createdAt;
+  @override
+
+  /// `finishedAt` is the Unix timestamp of the finished date.
+  @TimestampOrNullConverter()
+  DateTime? get finishedAt;
   @override
 
   /// `pendingToReview` indicates if it's pending to review.
