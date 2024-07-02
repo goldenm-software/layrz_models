@@ -70,18 +70,18 @@ class TenvioItemQuantity with _$TenvioItemQuantity {
 
 @unfreezed
 class TenvioItemQuantityInput with _$TenvioItemQuantityInput {
-  const factory TenvioItemQuantityInput({
+  factory TenvioItemQuantityInput({
     /// [id] is the unique identifier of the package quantity
-    required String id,
+    String? id,
 
     /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
-    required String matrixId,
+    String? matrixId,
 
     /// [matrix] is the matrix that the package quantity is related.
-    required TenvioMatrixItem matrix,
+    TenvioMatrixItem? matrix,
 
     /// [quantity] is the quantity of the package.
-    required int quantity,
+    int? quantity,
   }) = _TenvioItemQuantityInput;
 
   factory TenvioItemQuantityInput.fromJson(Map<String, dynamic> json) => _$TenvioItemQuantityInputFromJson(json);
