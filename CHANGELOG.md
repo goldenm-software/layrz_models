@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.76
+
+- New `operationType` called `bhsPush` on `OperationType` enum
+- New `pushPlatforms` and `pushTitle` fields on `Operation` model
+
 ## 2.1.75
 - Added value `bhsPresence` to `TriggerType` enum
 

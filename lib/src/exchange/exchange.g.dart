@@ -24,7 +24,7 @@ _$ExchangeProtocolImpl _$$ExchangeProtocolImplFromJson(
       flespiAcl: (json['flespiAcl'] as List<dynamic>?)
           ?.map((e) => FlespiAcl.fromJson(e as Map<String, dynamic>))
           .toList(),
-      usage: (json['usage'] as num?)?.toInt(),
+      usage: json['usage'] as int?,
     );
 
 Map<String, dynamic> _$$ExchangeProtocolImplToJson(
