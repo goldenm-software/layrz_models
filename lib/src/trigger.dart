@@ -64,7 +64,11 @@ enum TriggerType {
 
   /// BHS_SPEEDING
   /// API Reference: BHS_SPEEDING
-  bhsSpeeding;
+  bhsSpeeding,
+
+  /// BHS_PRESENCE
+  /// API Reference: BHS_PRESENCE
+  bhsPresence;
 
   @override
   String toString() => toJson();
@@ -85,6 +89,8 @@ enum TriggerType {
         return 'CASES_CHANGES';
       case TriggerType.bhsSpeeding:
         return 'BHS_SPEEDING';
+      case TriggerType.bhsPresence:
+        return 'BHS_PRESENCE';
       default:
         throw Exception('Unknown TriggerType');
     }
@@ -106,6 +112,8 @@ enum TriggerType {
         return TriggerType.casesChanges;
       case 'BHS_SPEEDING':
         return TriggerType.bhsSpeeding;
+      case 'BHS_PRESENCE':
+        return TriggerType.bhsPresence;
       default:
         throw Exception('Unknown TriggerType');
     }

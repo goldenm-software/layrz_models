@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.75
+- Added value `bhsPresence` to `TriggerType` enum
+
 ## 2.1.74
 
 - Added `initialDensity`, `initialTemperature`, `waterLevel` and `initialWaterLevel` on `AtsEntry` model
