@@ -90,7 +90,7 @@ class Operation with _$Operation {
     /// [pushPlatforms] is the list of platforms where the operation should be received.
     /// This field will only be considered in the following [operationType]:
     /// - [OperationType.bhsPush]
-    List<AppPlatform>? pushPlatforms,
+    @AppPlatformConverter() List<AppPlatform>? pushPlatforms,
 
     /// [pushTitle] is the title of the push notification.
     /// This field will only be considered in the following [operationType]:

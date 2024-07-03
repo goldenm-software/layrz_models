@@ -19340,6 +19340,7 @@ mixin _$Operation {
   /// [pushPlatforms] is the list of platforms where the operation should be received.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
+  @AppPlatformConverter()
   List<AppPlatform>? get pushPlatforms => throw _privateConstructorUsedError;
 
   /// [pushTitle] is the title of the push notification.
@@ -19381,7 +19382,7 @@ abstract class $OperationCopyWith<$Res> {
       bool? useAssetContactsInstead,
       bool? attachImage,
       String? emailTemplateId,
-      List<AppPlatform>? pushPlatforms,
+      @AppPlatformConverter() List<AppPlatform>? pushPlatforms,
       String? pushTitle});
 
   $TimezoneCopyWith<$Res>? get timezone;
@@ -19569,7 +19570,7 @@ abstract class _$$OperationImplCopyWith<$Res>
       bool? useAssetContactsInstead,
       bool? attachImage,
       String? emailTemplateId,
-      List<AppPlatform>? pushPlatforms,
+      @AppPlatformConverter() List<AppPlatform>? pushPlatforms,
       String? pushTitle});
 
   @override
@@ -19739,7 +19740,7 @@ class _$OperationImpl implements _Operation {
       this.useAssetContactsInstead,
       this.attachImage,
       this.emailTemplateId,
-      final List<AppPlatform>? pushPlatforms,
+      @AppPlatformConverter() final List<AppPlatform>? pushPlatforms,
       this.pushTitle})
       : _headers = headers,
         _receptionEmails = receptionEmails,
@@ -19925,6 +19926,7 @@ class _$OperationImpl implements _Operation {
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
   @override
+  @AppPlatformConverter()
   List<AppPlatform>? get pushPlatforms {
     final value = _pushPlatforms;
     if (value == null) return null;
@@ -20061,7 +20063,7 @@ abstract class _Operation implements Operation {
       final bool? useAssetContactsInstead,
       final bool? attachImage,
       final String? emailTemplateId,
-      final List<AppPlatform>? pushPlatforms,
+      @AppPlatformConverter() final List<AppPlatform>? pushPlatforms,
       final String? pushTitle}) = _$OperationImpl;
 
   factory _Operation.fromJson(Map<String, dynamic> json) =
@@ -20183,6 +20185,7 @@ abstract class _Operation implements Operation {
   /// [pushPlatforms] is the list of platforms where the operation should be received.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
+  @AppPlatformConverter()
   List<AppPlatform>? get pushPlatforms;
   @override
 

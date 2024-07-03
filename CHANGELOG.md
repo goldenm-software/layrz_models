@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.77
+
+- Added missing `@AppPlatformConverter()` into `pushPlatforms` field on `Operation` model
+
 ## 2.1.76
 
 - New `operationType` called `bhsPush` on `OperationType` enum

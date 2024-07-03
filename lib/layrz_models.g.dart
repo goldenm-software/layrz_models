@@ -1748,7 +1748,7 @@ _$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>
       attachImage: json['attachImage'] as bool?,
       emailTemplateId: json['emailTemplateId'] as String?,
       pushPlatforms: (json['pushPlatforms'] as List<dynamic>?)
-          ?.map((e) => $enumDecode(_$AppPlatformEnumMap, e))
+          ?.map((e) => const AppPlatformConverter().fromJson(e as String))
           .toList(),
       pushTitle: json['pushTitle'] as String?,
     );
@@ -1781,19 +1781,11 @@ Map<String, dynamic> _$$OperationImplToJson(_$OperationImpl instance) =>
       'useAssetContactsInstead': instance.useAssetContactsInstead,
       'attachImage': instance.attachImage,
       'emailTemplateId': instance.emailTemplateId,
-      'pushPlatforms': instance.pushPlatforms?.map((e) => e.toJson()).toList(),
+      'pushPlatforms': instance.pushPlatforms
+          ?.map(const AppPlatformConverter().toJson)
+          .toList(),
       'pushTitle': instance.pushTitle,
     };
-
-const _$AppPlatformEnumMap = {
-  AppPlatform.web: 'web',
-  AppPlatform.windows: 'windows',
-  AppPlatform.macos: 'macos',
-  AppPlatform.ios: 'ios',
-  AppPlatform.android: 'android',
-  AppPlatform.linux: 'linux',
-  AppPlatform.layrzOS: 'layrzOS',
-};
 
 _$HttpHeaderImpl _$$HttpHeaderImplFromJson(Map<String, dynamic> json) =>
     _$HttpHeaderImpl(
