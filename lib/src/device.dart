@@ -55,6 +55,9 @@ class Device with _$Device {
 
     /// [modbus] is the configuration of the modbus device.
     ModbusConfig? modbus,
+
+    /// [isSuspended] if the asset is suspended.
+    bool? isSuspended,
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);

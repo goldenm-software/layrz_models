@@ -12,13 +12,19 @@ class Operation with _$Operation {
     /// Is the type of operation.
     @OperationTypeConverter() required OperationType operationType,
 
-    /// Is the HTTP Request type to perform, only available for [OperationType.webhook].
+    /// Is the HTTP Request type to perform
+    /// This field will only be considered in the following [operationType]:
+    /// - [OperationType.webhook].
     @HttpRequestTypeOrNullConverter() HttpRequestType? requestType,
 
-    /// Is the URL to perform the request, only available for [OperationType.webhook].
+    /// Is the URL to perform the request
+    /// This field will only be considered in the following [operationType]:
+    /// - [OperationType.webhook].
     String? url,
 
-    /// Is the headers to send in the HTTP request, only available for [OperationType.webhook].
+    /// Is the headers to send in the HTTP request
+    /// This field will only be considered in the following [operationType]:
+    /// - [OperationType.webhook].
     @Default([]) List<HttpHeader>? headers,
 
     /// Is the payload to send in the submission.
@@ -33,22 +39,34 @@ class Operation with _$Operation {
     /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
     String? timezoneId,
 
-    /// Is the reception email to send the message, only available for [OperationType.email].
+    /// Is the reception email to send the message
+    /// This field will only be considered in the following [operationType]:
+    /// - [OperationType.email].
     @Default([]) List<String>? receptionEmails,
 
-    /// Is the subject of the email, only available for [OperationType.email].
+    /// Is the subject of the email
+    /// This field will only be considered in the following [operationType]:
+    /// - [OperationType.email].
     String? emailSubject,
 
-    /// Is the color of the inline notification. Only available for [OperationType.inAppNotification].
+    /// Is the color of the inline notification
+    /// This field will only be considered in the following [operationType]:
+    /// - [OperationType.inAppNotification].
     @ColorOrNullConverter() Color? color,
 
-    /// Is the text color of the inline notification. Only available for [OperationType.inAppNotification].
+    /// Is the text color of the inline notification
+    /// This field will only be considered in the following [operationType]:
+    /// - [OperationType.inAppNotification].
     @ColorOrNullConverter() Color? textColor,
 
-    /// Is the receiver numbers to send the message, only available for [OperationType.twilio].
+    /// Is the receiver numbers to send the message
+    /// This field will only be considered in the following [operationType]:
+    /// - [OperationType.twilio].
     List<PhoneNumber>? destinationPhones,
 
-    /// Is the Notification type to perform, only available for [OperationType.twilio].
+    /// Is the Notification type to perform
+    /// This field will only be considered in the following [operationType]:
+    /// - [OperationType.twilio]
     @NotificationTypeOrNullConverter() NotificationType? notificationType,
 
     /// The [externalAccountId] of the operation. Only the ID
@@ -68,6 +86,16 @@ class Operation with _$Operation {
 
     /// The [emailTemplateId] of the operation. Only the ID
     String? emailTemplateId,
+
+    /// [pushPlatforms] is the list of platforms where the operation should be received.
+    /// This field will only be considered in the following [operationType]:
+    /// - [OperationType.bhsPush]
+    @AppPlatformConverter() List<AppPlatform>? pushPlatforms,
+
+    /// [pushTitle] is the title of the push notification.
+    /// This field will only be considered in the following [operationType]:
+    /// - [OperationType.bhsPush]
+    String? pushTitle,
   }) = _Operation;
 
   factory Operation.fromJson(Map<String, dynamic> json) => _$OperationFromJson(json);
@@ -89,7 +117,9 @@ enum OperationType {
   registerInAsset,
   inAppNotification,
   twilio,
-  mobilePopupNotification;
+  mobilePopupNotification,
+  bhsPush,
+  ;
 
   @override
   String toString() => toJson();
@@ -108,8 +138,8 @@ enum OperationType {
         return 'TWILIO';
       case OperationType.mobilePopupNotification:
         return 'MOBILE_POPUP_NOTIFICATION';
-      default:
-        throw Exception('OperationType not found');
+      case OperationType.bhsPush:
+        return 'BHS_PUSH';
     }
   }
 
@@ -127,6 +157,8 @@ enum OperationType {
         return OperationType.twilio;
       case 'MOBILE_POPUP_NOTIFICATION':
         return OperationType.mobilePopupNotification;
+      case 'BHS_PUSH':
+        return OperationType.bhsPush;
       default:
         throw Exception('OperationType not found');
     }

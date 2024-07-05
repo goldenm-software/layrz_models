@@ -13769,6 +13769,9 @@ mixin _$Device {
   /// [modbus] is the configuration of the modbus device.
   ModbusConfig? get modbus => throw _privateConstructorUsedError;
 
+  /// [isSuspended] if the asset is suspended.
+  bool? get isSuspended => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DeviceCopyWith<Device> get copyWith => throw _privateConstructorUsedError;
@@ -13797,7 +13800,8 @@ abstract class $DeviceCopyWith<$Res> {
       String? visionProfileId,
       VisionProfile? visionProfile,
       PhoneNumber? phone,
-      ModbusConfig? modbus});
+      ModbusConfig? modbus,
+      bool? isSuspended});
 
   $ModelCopyWith<$Res>? get model;
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -13838,6 +13842,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? visionProfile = freezed,
     Object? phone = freezed,
     Object? modbus = freezed,
+    Object? isSuspended = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -13912,6 +13917,10 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.modbus
           : modbus // ignore: cast_nullable_to_non_nullable
               as ModbusConfig?,
+      isSuspended: freezed == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 
@@ -14013,7 +14022,8 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       String? visionProfileId,
       VisionProfile? visionProfile,
       PhoneNumber? phone,
-      ModbusConfig? modbus});
+      ModbusConfig? modbus,
+      bool? isSuspended});
 
   @override
   $ModelCopyWith<$Res>? get model;
@@ -14058,6 +14068,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? visionProfile = freezed,
     Object? phone = freezed,
     Object? modbus = freezed,
+    Object? isSuspended = freezed,
   }) {
     return _then(_$DeviceImpl(
       id: null == id
@@ -14132,6 +14143,10 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value.modbus
           : modbus // ignore: cast_nullable_to_non_nullable
               as ModbusConfig?,
+      isSuspended: freezed == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -14157,7 +14172,8 @@ class _$DeviceImpl implements _Device {
       this.visionProfileId,
       this.visionProfile,
       this.phone,
-      this.modbus})
+      this.modbus,
+      this.isSuspended})
       : _additionalFields = additionalFields,
         _commands = commands,
         _access = access;
@@ -14263,9 +14279,13 @@ class _$DeviceImpl implements _Device {
   @override
   final ModbusConfig? modbus;
 
+  /// [isSuspended] if the asset is suspended.
+  @override
+  final bool? isSuspended;
+
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, mqttToken: $mqttToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus)';
+    return 'Device(id: $id, name: $name, ident: $ident, mqttToken: $mqttToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended)';
   }
 
   @override
@@ -14297,31 +14317,35 @@ class _$DeviceImpl implements _Device {
             (identical(other.visionProfile, visionProfile) ||
                 other.visionProfile == visionProfile) &&
             (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.modbus, modbus) || other.modbus == modbus));
+            (identical(other.modbus, modbus) || other.modbus == modbus) &&
+            (identical(other.isSuspended, isSuspended) ||
+                other.isSuspended == isSuspended));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      ident,
-      mqttToken,
-      modelId,
-      model,
-      protocolId,
-      protocol,
-      const DeepCollectionEquality().hash(_additionalFields),
-      qrCode,
-      linkQr,
-      const DeepCollectionEquality().hash(_commands),
-      const DeepCollectionEquality().hash(_access),
-      telemetry,
-      visionProfileId,
-      visionProfile,
-      phone,
-      modbus);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        ident,
+        mqttToken,
+        modelId,
+        model,
+        protocolId,
+        protocol,
+        const DeepCollectionEquality().hash(_additionalFields),
+        qrCode,
+        linkQr,
+        const DeepCollectionEquality().hash(_commands),
+        const DeepCollectionEquality().hash(_access),
+        telemetry,
+        visionProfileId,
+        visionProfile,
+        phone,
+        modbus,
+        isSuspended
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -14356,7 +14380,8 @@ abstract class _Device implements Device {
       final String? visionProfileId,
       final VisionProfile? visionProfile,
       final PhoneNumber? phone,
-      final ModbusConfig? modbus}) = _$DeviceImpl;
+      final ModbusConfig? modbus,
+      final bool? isSuspended}) = _$DeviceImpl;
 
   factory _Device.fromJson(Map<String, dynamic> json) = _$DeviceImpl.fromJson;
 
@@ -14430,6 +14455,10 @@ abstract class _Device implements Device {
 
   /// [modbus] is the configuration of the modbus device.
   ModbusConfig? get modbus;
+  @override
+
+  /// [isSuspended] if the asset is suspended.
+  bool? get isSuspended;
   @override
   @JsonKey(ignore: true)
   _$$DeviceImplCopyWith<_$DeviceImpl> get copyWith =>
@@ -19257,14 +19286,20 @@ mixin _$Operation {
   @OperationTypeConverter()
   OperationType get operationType => throw _privateConstructorUsedError;
 
-  /// Is the HTTP Request type to perform, only available for [OperationType.webhook].
+  /// Is the HTTP Request type to perform
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.webhook].
   @HttpRequestTypeOrNullConverter()
   HttpRequestType? get requestType => throw _privateConstructorUsedError;
 
-  /// Is the URL to perform the request, only available for [OperationType.webhook].
+  /// Is the URL to perform the request
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.webhook].
   String? get url => throw _privateConstructorUsedError;
 
-  /// Is the headers to send in the HTTP request, only available for [OperationType.webhook].
+  /// Is the headers to send in the HTTP request
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.webhook].
   List<HttpHeader>? get headers => throw _privateConstructorUsedError;
 
   /// Is the payload to send in the submission.
@@ -19279,25 +19314,37 @@ mixin _$Operation {
   /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
   String? get timezoneId => throw _privateConstructorUsedError;
 
-  /// Is the reception email to send the message, only available for [OperationType.email].
+  /// Is the reception email to send the message
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.email].
   List<String>? get receptionEmails => throw _privateConstructorUsedError;
 
-  /// Is the subject of the email, only available for [OperationType.email].
+  /// Is the subject of the email
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.email].
   String? get emailSubject => throw _privateConstructorUsedError;
 
-  /// Is the color of the inline notification. Only available for [OperationType.inAppNotification].
+  /// Is the color of the inline notification
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
   Color? get color => throw _privateConstructorUsedError;
 
-  /// Is the text color of the inline notification. Only available for [OperationType.inAppNotification].
+  /// Is the text color of the inline notification
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
   Color? get textColor => throw _privateConstructorUsedError;
 
-  /// Is the receiver numbers to send the message, only available for [OperationType.twilio].
+  /// Is the receiver numbers to send the message
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.twilio].
   List<PhoneNumber>? get destinationPhones =>
       throw _privateConstructorUsedError;
 
-  /// Is the Notification type to perform, only available for [OperationType.twilio].
+  /// Is the Notification type to perform
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.twilio]
   @NotificationTypeOrNullConverter()
   NotificationType? get notificationType => throw _privateConstructorUsedError;
 
@@ -19318,6 +19365,17 @@ mixin _$Operation {
 
   /// The [emailTemplateId] of the operation. Only the ID
   String? get emailTemplateId => throw _privateConstructorUsedError;
+
+  /// [pushPlatforms] is the list of platforms where the operation should be received.
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.bhsPush]
+  @AppPlatformConverter()
+  List<AppPlatform>? get pushPlatforms => throw _privateConstructorUsedError;
+
+  /// [pushTitle] is the title of the push notification.
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.bhsPush]
+  String? get pushTitle => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -19352,7 +19410,9 @@ abstract class $OperationCopyWith<$Res> {
       List<Trigger>? triggers,
       bool? useAssetContactsInstead,
       bool? attachImage,
-      String? emailTemplateId});
+      String? emailTemplateId,
+      @AppPlatformConverter() List<AppPlatform>? pushPlatforms,
+      String? pushTitle});
 
   $TimezoneCopyWith<$Res>? get timezone;
 }
@@ -19392,6 +19452,8 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
     Object? useAssetContactsInstead = freezed,
     Object? attachImage = freezed,
     Object? emailTemplateId = freezed,
+    Object? pushPlatforms = freezed,
+    Object? pushTitle = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -19482,6 +19544,14 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
           ? _value.emailTemplateId
           : emailTemplateId // ignore: cast_nullable_to_non_nullable
               as String?,
+      pushPlatforms: freezed == pushPlatforms
+          ? _value.pushPlatforms
+          : pushPlatforms // ignore: cast_nullable_to_non_nullable
+              as List<AppPlatform>?,
+      pushTitle: freezed == pushTitle
+          ? _value.pushTitle
+          : pushTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -19528,7 +19598,9 @@ abstract class _$$OperationImplCopyWith<$Res>
       List<Trigger>? triggers,
       bool? useAssetContactsInstead,
       bool? attachImage,
-      String? emailTemplateId});
+      String? emailTemplateId,
+      @AppPlatformConverter() List<AppPlatform>? pushPlatforms,
+      String? pushTitle});
 
   @override
   $TimezoneCopyWith<$Res>? get timezone;
@@ -19567,6 +19639,8 @@ class __$$OperationImplCopyWithImpl<$Res>
     Object? useAssetContactsInstead = freezed,
     Object? attachImage = freezed,
     Object? emailTemplateId = freezed,
+    Object? pushPlatforms = freezed,
+    Object? pushTitle = freezed,
   }) {
     return _then(_$OperationImpl(
       id: null == id
@@ -19657,6 +19731,14 @@ class __$$OperationImplCopyWithImpl<$Res>
           ? _value.emailTemplateId
           : emailTemplateId // ignore: cast_nullable_to_non_nullable
               as String?,
+      pushPlatforms: freezed == pushPlatforms
+          ? _value._pushPlatforms
+          : pushPlatforms // ignore: cast_nullable_to_non_nullable
+              as List<AppPlatform>?,
+      pushTitle: freezed == pushTitle
+          ? _value.pushTitle
+          : pushTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -19686,12 +19768,15 @@ class _$OperationImpl implements _Operation {
       final List<Trigger>? triggers,
       this.useAssetContactsInstead,
       this.attachImage,
-      this.emailTemplateId})
+      this.emailTemplateId,
+      @AppPlatformConverter() final List<AppPlatform>? pushPlatforms,
+      this.pushTitle})
       : _headers = headers,
         _receptionEmails = receptionEmails,
         _destinationPhones = destinationPhones,
         _access = access,
-        _triggers = triggers;
+        _triggers = triggers,
+        _pushPlatforms = pushPlatforms;
 
   factory _$OperationImpl.fromJson(Map<String, dynamic> json) =>
       _$$OperationImplFromJson(json);
@@ -19709,19 +19794,27 @@ class _$OperationImpl implements _Operation {
   @OperationTypeConverter()
   final OperationType operationType;
 
-  /// Is the HTTP Request type to perform, only available for [OperationType.webhook].
+  /// Is the HTTP Request type to perform
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.webhook].
   @override
   @HttpRequestTypeOrNullConverter()
   final HttpRequestType? requestType;
 
-  /// Is the URL to perform the request, only available for [OperationType.webhook].
+  /// Is the URL to perform the request
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.webhook].
   @override
   final String? url;
 
-  /// Is the headers to send in the HTTP request, only available for [OperationType.webhook].
+  /// Is the headers to send in the HTTP request
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.webhook].
   final List<HttpHeader>? _headers;
 
-  /// Is the headers to send in the HTTP request, only available for [OperationType.webhook].
+  /// Is the headers to send in the HTTP request
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.webhook].
   @override
   @JsonKey()
   List<HttpHeader>? get headers {
@@ -19748,10 +19841,14 @@ class _$OperationImpl implements _Operation {
   @override
   final String? timezoneId;
 
-  /// Is the reception email to send the message, only available for [OperationType.email].
+  /// Is the reception email to send the message
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.email].
   final List<String>? _receptionEmails;
 
-  /// Is the reception email to send the message, only available for [OperationType.email].
+  /// Is the reception email to send the message
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.email].
   @override
   @JsonKey()
   List<String>? get receptionEmails {
@@ -19762,24 +19859,34 @@ class _$OperationImpl implements _Operation {
     return EqualUnmodifiableListView(value);
   }
 
-  /// Is the subject of the email, only available for [OperationType.email].
+  /// Is the subject of the email
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.email].
   @override
   final String? emailSubject;
 
-  /// Is the color of the inline notification. Only available for [OperationType.inAppNotification].
+  /// Is the color of the inline notification
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.inAppNotification].
   @override
   @ColorOrNullConverter()
   final Color? color;
 
-  /// Is the text color of the inline notification. Only available for [OperationType.inAppNotification].
+  /// Is the text color of the inline notification
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.inAppNotification].
   @override
   @ColorOrNullConverter()
   final Color? textColor;
 
-  /// Is the receiver numbers to send the message, only available for [OperationType.twilio].
+  /// Is the receiver numbers to send the message
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.twilio].
   final List<PhoneNumber>? _destinationPhones;
 
-  /// Is the receiver numbers to send the message, only available for [OperationType.twilio].
+  /// Is the receiver numbers to send the message
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.twilio].
   @override
   List<PhoneNumber>? get destinationPhones {
     final value = _destinationPhones;
@@ -19790,7 +19897,9 @@ class _$OperationImpl implements _Operation {
     return EqualUnmodifiableListView(value);
   }
 
-  /// Is the Notification type to perform, only available for [OperationType.twilio].
+  /// Is the Notification type to perform
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.twilio]
   @override
   @NotificationTypeOrNullConverter()
   final NotificationType? notificationType;
@@ -19837,9 +19946,33 @@ class _$OperationImpl implements _Operation {
   @override
   final String? emailTemplateId;
 
+  /// [pushPlatforms] is the list of platforms where the operation should be received.
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.bhsPush]
+  final List<AppPlatform>? _pushPlatforms;
+
+  /// [pushPlatforms] is the list of platforms where the operation should be received.
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.bhsPush]
+  @override
+  @AppPlatformConverter()
+  List<AppPlatform>? get pushPlatforms {
+    final value = _pushPlatforms;
+    if (value == null) return null;
+    if (_pushPlatforms is EqualUnmodifiableListView) return _pushPlatforms;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [pushTitle] is the title of the push notification.
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.bhsPush]
+  @override
+  final String? pushTitle;
+
   @override
   String toString() {
-    return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId)';
+    return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle)';
   }
 
   @override
@@ -19883,7 +20016,11 @@ class _$OperationImpl implements _Operation {
             (identical(other.attachImage, attachImage) ||
                 other.attachImage == attachImage) &&
             (identical(other.emailTemplateId, emailTemplateId) ||
-                other.emailTemplateId == emailTemplateId));
+                other.emailTemplateId == emailTemplateId) &&
+            const DeepCollectionEquality()
+                .equals(other._pushPlatforms, _pushPlatforms) &&
+            (identical(other.pushTitle, pushTitle) ||
+                other.pushTitle == pushTitle));
   }
 
   @JsonKey(ignore: true)
@@ -19911,7 +20048,9 @@ class _$OperationImpl implements _Operation {
         const DeepCollectionEquality().hash(_triggers),
         useAssetContactsInstead,
         attachImage,
-        emailTemplateId
+        emailTemplateId,
+        const DeepCollectionEquality().hash(_pushPlatforms),
+        pushTitle
       ]);
 
   @JsonKey(ignore: true)
@@ -19952,7 +20091,9 @@ abstract class _Operation implements Operation {
       final List<Trigger>? triggers,
       final bool? useAssetContactsInstead,
       final bool? attachImage,
-      final String? emailTemplateId}) = _$OperationImpl;
+      final String? emailTemplateId,
+      @AppPlatformConverter() final List<AppPlatform>? pushPlatforms,
+      final String? pushTitle}) = _$OperationImpl;
 
   factory _Operation.fromJson(Map<String, dynamic> json) =
       _$OperationImpl.fromJson;
@@ -19972,16 +20113,22 @@ abstract class _Operation implements Operation {
   OperationType get operationType;
   @override
 
-  /// Is the HTTP Request type to perform, only available for [OperationType.webhook].
+  /// Is the HTTP Request type to perform
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.webhook].
   @HttpRequestTypeOrNullConverter()
   HttpRequestType? get requestType;
   @override
 
-  /// Is the URL to perform the request, only available for [OperationType.webhook].
+  /// Is the URL to perform the request
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.webhook].
   String? get url;
   @override
 
-  /// Is the headers to send in the HTTP request, only available for [OperationType.webhook].
+  /// Is the headers to send in the HTTP request
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.webhook].
   List<HttpHeader>? get headers;
   @override
 
@@ -20001,29 +20148,41 @@ abstract class _Operation implements Operation {
   String? get timezoneId;
   @override
 
-  /// Is the reception email to send the message, only available for [OperationType.email].
+  /// Is the reception email to send the message
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.email].
   List<String>? get receptionEmails;
   @override
 
-  /// Is the subject of the email, only available for [OperationType.email].
+  /// Is the subject of the email
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.email].
   String? get emailSubject;
   @override
 
-  /// Is the color of the inline notification. Only available for [OperationType.inAppNotification].
+  /// Is the color of the inline notification
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
   Color? get color;
   @override
 
-  /// Is the text color of the inline notification. Only available for [OperationType.inAppNotification].
+  /// Is the text color of the inline notification
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
   Color? get textColor;
   @override
 
-  /// Is the receiver numbers to send the message, only available for [OperationType.twilio].
+  /// Is the receiver numbers to send the message
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.twilio].
   List<PhoneNumber>? get destinationPhones;
   @override
 
-  /// Is the Notification type to perform, only available for [OperationType.twilio].
+  /// Is the Notification type to perform
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.twilio]
   @NotificationTypeOrNullConverter()
   NotificationType? get notificationType;
   @override
@@ -20050,6 +20209,19 @@ abstract class _Operation implements Operation {
 
   /// The [emailTemplateId] of the operation. Only the ID
   String? get emailTemplateId;
+  @override
+
+  /// [pushPlatforms] is the list of platforms where the operation should be received.
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.bhsPush]
+  @AppPlatformConverter()
+  List<AppPlatform>? get pushPlatforms;
+  @override
+
+  /// [pushTitle] is the title of the push notification.
+  /// This field will only be considered in the following [operationType]:
+  /// - [OperationType.bhsPush]
+  String? get pushTitle;
   @override
   @JsonKey(ignore: true)
   _$$OperationImplCopyWith<_$OperationImpl> get copyWith =>

@@ -1,5 +1,21 @@
 # Changelog
 
+## 2.1.78
+
+- Added `isSupended` freezed model into `Device.dart` file
+
+## 2.1.77
+
+- Added missing `@AppPlatformConverter()` into `pushPlatforms` field on `Operation` model
+
+## 2.1.76
+
+- New `operationType` called `bhsPush` on `OperationType` enum
+- New `pushPlatforms` and `pushTitle` fields on `Operation` model
+
+## 2.1.75
+- Added value `bhsPresence` to `TriggerType` enum
+
 ## 2.1.74
 
 - Added `initialDensity`, `initialTemperature`, `waterLevel` and `initialWaterLevel` on `AtsEntry` model
