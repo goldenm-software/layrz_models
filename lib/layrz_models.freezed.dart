@@ -13769,6 +13769,9 @@ mixin _$Device {
   /// [modbus] is the configuration of the modbus device.
   ModbusConfig? get modbus => throw _privateConstructorUsedError;
 
+  /// [isSuspended] if the asset is suspended.
+  bool? get isSuspended => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DeviceCopyWith<Device> get copyWith => throw _privateConstructorUsedError;
@@ -13797,7 +13800,8 @@ abstract class $DeviceCopyWith<$Res> {
       String? visionProfileId,
       VisionProfile? visionProfile,
       PhoneNumber? phone,
-      ModbusConfig? modbus});
+      ModbusConfig? modbus,
+      bool? isSuspended});
 
   $ModelCopyWith<$Res>? get model;
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -13838,6 +13842,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? visionProfile = freezed,
     Object? phone = freezed,
     Object? modbus = freezed,
+    Object? isSuspended = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -13912,6 +13917,10 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.modbus
           : modbus // ignore: cast_nullable_to_non_nullable
               as ModbusConfig?,
+      isSuspended: freezed == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 
@@ -14013,7 +14022,8 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       String? visionProfileId,
       VisionProfile? visionProfile,
       PhoneNumber? phone,
-      ModbusConfig? modbus});
+      ModbusConfig? modbus,
+      bool? isSuspended});
 
   @override
   $ModelCopyWith<$Res>? get model;
@@ -14058,6 +14068,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? visionProfile = freezed,
     Object? phone = freezed,
     Object? modbus = freezed,
+    Object? isSuspended = freezed,
   }) {
     return _then(_$DeviceImpl(
       id: null == id
@@ -14132,6 +14143,10 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value.modbus
           : modbus // ignore: cast_nullable_to_non_nullable
               as ModbusConfig?,
+      isSuspended: freezed == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -14157,7 +14172,8 @@ class _$DeviceImpl implements _Device {
       this.visionProfileId,
       this.visionProfile,
       this.phone,
-      this.modbus})
+      this.modbus,
+      this.isSuspended})
       : _additionalFields = additionalFields,
         _commands = commands,
         _access = access;
@@ -14263,9 +14279,13 @@ class _$DeviceImpl implements _Device {
   @override
   final ModbusConfig? modbus;
 
+  /// [isSuspended] if the asset is suspended.
+  @override
+  final bool? isSuspended;
+
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, mqttToken: $mqttToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus)';
+    return 'Device(id: $id, name: $name, ident: $ident, mqttToken: $mqttToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended)';
   }
 
   @override
@@ -14297,31 +14317,35 @@ class _$DeviceImpl implements _Device {
             (identical(other.visionProfile, visionProfile) ||
                 other.visionProfile == visionProfile) &&
             (identical(other.phone, phone) || other.phone == phone) &&
-            (identical(other.modbus, modbus) || other.modbus == modbus));
+            (identical(other.modbus, modbus) || other.modbus == modbus) &&
+            (identical(other.isSuspended, isSuspended) ||
+                other.isSuspended == isSuspended));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      ident,
-      mqttToken,
-      modelId,
-      model,
-      protocolId,
-      protocol,
-      const DeepCollectionEquality().hash(_additionalFields),
-      qrCode,
-      linkQr,
-      const DeepCollectionEquality().hash(_commands),
-      const DeepCollectionEquality().hash(_access),
-      telemetry,
-      visionProfileId,
-      visionProfile,
-      phone,
-      modbus);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        ident,
+        mqttToken,
+        modelId,
+        model,
+        protocolId,
+        protocol,
+        const DeepCollectionEquality().hash(_additionalFields),
+        qrCode,
+        linkQr,
+        const DeepCollectionEquality().hash(_commands),
+        const DeepCollectionEquality().hash(_access),
+        telemetry,
+        visionProfileId,
+        visionProfile,
+        phone,
+        modbus,
+        isSuspended
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -14356,7 +14380,8 @@ abstract class _Device implements Device {
       final String? visionProfileId,
       final VisionProfile? visionProfile,
       final PhoneNumber? phone,
-      final ModbusConfig? modbus}) = _$DeviceImpl;
+      final ModbusConfig? modbus,
+      final bool? isSuspended}) = _$DeviceImpl;
 
   factory _Device.fromJson(Map<String, dynamic> json) = _$DeviceImpl.fromJson;
 
@@ -14430,6 +14455,10 @@ abstract class _Device implements Device {
 
   /// [modbus] is the configuration of the modbus device.
   ModbusConfig? get modbus;
+  @override
+
+  /// [isSuspended] if the asset is suspended.
+  bool? get isSuspended;
   @override
   @JsonKey(ignore: true)
   _$$DeviceImplCopyWith<_$DeviceImpl> get copyWith =>

@@ -1263,6 +1263,7 @@ _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
       modbus: json['modbus'] == null
           ? null
           : ModbusConfig.fromJson(json['modbus'] as Map<String, dynamic>),
+      isSuspended: json['isSuspended'] as bool?,
     );
 
 Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
@@ -1285,6 +1286,7 @@ Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
       'visionProfile': instance.visionProfile?.toJson(),
       'phone': instance.phone?.toJson(),
       'modbus': instance.modbus?.toJson(),
+      'isSuspended': instance.isSuspended,
     };
 
 _$EmailTemplateImpl _$$EmailTemplateImplFromJson(Map<String, dynamic> json) =>

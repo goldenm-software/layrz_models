@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.78
+
+- Added `isSupended` freezed model into `Device.dart` file
+
 ## 2.1.77
 
 - Added missing `@AppPlatformConverter()` into `pushPlatforms` field on `Operation` model
