@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.80
+
+- Renamed `mqttToken` to `flespiToken` on `Device` model
+
 ## 2.1.79
 
 - Added `host`, `port` and `mqttTopic` to `InboundProtocol` model

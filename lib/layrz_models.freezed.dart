@@ -13720,11 +13720,12 @@ mixin _$Device {
   /// The [name] of the device.
   String get name => throw _privateConstructorUsedError;
 
-  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the MAC address or randomly string.
+  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the
+  /// MAC address or randomly string.
   String get ident => throw _privateConstructorUsedError;
 
-  /// The [mqttToken] of the device, only for Xirgo MQTT devices.
-  String? get mqttToken => throw _privateConstructorUsedError;
+  /// The [flespiToken] of the device.
+  String? get flespiToken => throw _privateConstructorUsedError;
 
   /// The [modelId] of the device.
   String? get modelId => throw _privateConstructorUsedError;
@@ -13786,7 +13787,7 @@ abstract class $DeviceCopyWith<$Res> {
       {String id,
       String name,
       String ident,
-      String? mqttToken,
+      String? flespiToken,
       String? modelId,
       Model? model,
       String? protocolId,
@@ -13827,7 +13828,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? id = null,
     Object? name = null,
     Object? ident = null,
-    Object? mqttToken = freezed,
+    Object? flespiToken = freezed,
     Object? modelId = freezed,
     Object? model = freezed,
     Object? protocolId = freezed,
@@ -13857,9 +13858,9 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.ident
           : ident // ignore: cast_nullable_to_non_nullable
               as String,
-      mqttToken: freezed == mqttToken
-          ? _value.mqttToken
-          : mqttToken // ignore: cast_nullable_to_non_nullable
+      flespiToken: freezed == flespiToken
+          ? _value.flespiToken
+          : flespiToken // ignore: cast_nullable_to_non_nullable
               as String?,
       modelId: freezed == modelId
           ? _value.modelId
@@ -14008,7 +14009,7 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       {String id,
       String name,
       String ident,
-      String? mqttToken,
+      String? flespiToken,
       String? modelId,
       Model? model,
       String? protocolId,
@@ -14053,7 +14054,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? ident = null,
-    Object? mqttToken = freezed,
+    Object? flespiToken = freezed,
     Object? modelId = freezed,
     Object? model = freezed,
     Object? protocolId = freezed,
@@ -14083,9 +14084,9 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value.ident
           : ident // ignore: cast_nullable_to_non_nullable
               as String,
-      mqttToken: freezed == mqttToken
-          ? _value.mqttToken
-          : mqttToken // ignore: cast_nullable_to_non_nullable
+      flespiToken: freezed == flespiToken
+          ? _value.flespiToken
+          : flespiToken // ignore: cast_nullable_to_non_nullable
               as String?,
       modelId: freezed == modelId
           ? _value.modelId
@@ -14158,7 +14159,7 @@ class _$DeviceImpl implements _Device {
       {required this.id,
       required this.name,
       required this.ident,
-      this.mqttToken,
+      this.flespiToken,
       this.modelId,
       this.model,
       this.protocolId,
@@ -14188,13 +14189,14 @@ class _$DeviceImpl implements _Device {
   @override
   final String name;
 
-  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the MAC address or randomly string.
+  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the
+  /// MAC address or randomly string.
   @override
   final String ident;
 
-  /// The [mqttToken] of the device, only for Xirgo MQTT devices.
+  /// The [flespiToken] of the device.
   @override
-  final String? mqttToken;
+  final String? flespiToken;
 
   /// The [modelId] of the device.
   @override
@@ -14285,7 +14287,7 @@ class _$DeviceImpl implements _Device {
 
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, mqttToken: $mqttToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended)';
+    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended)';
   }
 
   @override
@@ -14296,8 +14298,8 @@ class _$DeviceImpl implements _Device {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.ident, ident) || other.ident == ident) &&
-            (identical(other.mqttToken, mqttToken) ||
-                other.mqttToken == mqttToken) &&
+            (identical(other.flespiToken, flespiToken) ||
+                other.flespiToken == flespiToken) &&
             (identical(other.modelId, modelId) || other.modelId == modelId) &&
             (identical(other.model, model) || other.model == model) &&
             (identical(other.protocolId, protocolId) ||
@@ -14329,7 +14331,7 @@ class _$DeviceImpl implements _Device {
         id,
         name,
         ident,
-        mqttToken,
+        flespiToken,
         modelId,
         model,
         protocolId,
@@ -14366,7 +14368,7 @@ abstract class _Device implements Device {
       {required final String id,
       required final String name,
       required final String ident,
-      final String? mqttToken,
+      final String? flespiToken,
       final String? modelId,
       final Model? model,
       final String? protocolId,
@@ -14393,12 +14395,13 @@ abstract class _Device implements Device {
   String get name;
   @override
 
-  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the MAC address or randomly string.
+  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the
+  /// MAC address or randomly string.
   String get ident;
   @override
 
-  /// The [mqttToken] of the device, only for Xirgo MQTT devices.
-  String? get mqttToken;
+  /// The [flespiToken] of the device.
+  String? get flespiToken;
   @override
 
   /// The [modelId] of the device.

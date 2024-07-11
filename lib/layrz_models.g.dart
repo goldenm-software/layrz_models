@@ -1230,7 +1230,7 @@ _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       ident: json['ident'] as String,
-      mqttToken: json['mqttToken'] as String?,
+      flespiToken: json['flespiToken'] as String?,
       modelId: json['modelId'] as String?,
       model: json['model'] == null
           ? null
@@ -1271,7 +1271,7 @@ Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'ident': instance.ident,
-      'mqttToken': instance.mqttToken,
+      'flespiToken': instance.flespiToken,
       'modelId': instance.modelId,
       'model': instance.model?.toJson(),
       'protocolId': instance.protocolId,
