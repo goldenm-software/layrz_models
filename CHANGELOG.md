@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1.79
+
+- Added `host`, `port` and `mqttTopic` to `InboundProtocol` model
+- Deprecation warning to `realtimeEndpoint` and `realtimeVariantEndpoint` in favor of `host`, `port` and `mqttTopic` in `InboundProtocol` model
+- New `OperationMode.mqtt` in `OperationMode` enum
+- New `requiresFlespiToken` and `flespiAcl` in `InboundProtocol` model to handle Flespi token creation
+
 ## 2.1.78
 
 - Added `isSupended` freezed model into `Device.dart` file

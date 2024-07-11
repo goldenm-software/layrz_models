@@ -55,6 +55,9 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
           ? null
           : RealtimeVariantEndpoint.fromJson(
               json['realtimeVariantEndpoint'] as Map<String, dynamic>),
+      host: json['host'] as String?,
+      port: json['port'] as int?,
+      mqttTopic: json['mqttTopic'] as String?,
       hasNativeCommands: json['hasNativeCommands'] as bool?,
       hasSmsCommands: json['hasSmsCommands'] as bool?,
       hasCommandsResult: json['hasCommandsResult'] as bool?,
@@ -88,6 +91,10 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
               .toList() ??
           const [],
       usage: json['usage'] as int?,
+      requiresFlespiToken: json['requiresFlespiToken'] as bool?,
+      flespiAcl: (json['flespiAcl'] as List<dynamic>?)
+          ?.map((e) => FlespiAcl.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$InboundProtocolImplToJson(
@@ -101,6 +108,9 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
           const OperationModeConverter().toJson(instance.operationMode),
       'realtimeEndpoint': instance.realtimeEndpoint?.toJson(),
       'realtimeVariantEndpoint': instance.realtimeVariantEndpoint?.toJson(),
+      'host': instance.host,
+      'port': instance.port,
+      'mqttTopic': instance.mqttTopic,
       'hasNativeCommands': instance.hasNativeCommands,
       'hasSmsCommands': instance.hasSmsCommands,
       'hasCommandsResult': instance.hasCommandsResult,
@@ -122,6 +132,8 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'hasModbus': instance.hasModbus,
       'modbusPorts': instance.modbusPorts,
       'usage': instance.usage,
+      'requiresFlespiToken': instance.requiresFlespiToken,
+      'flespiAcl': instance.flespiAcl?.map((e) => e.toJson()).toList(),
     };
 
 _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>

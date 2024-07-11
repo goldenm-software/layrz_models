@@ -41,11 +41,29 @@ class InboundProtocol with _$InboundProtocol {
     @OperationModeConverter() required OperationMode operationMode,
 
     /// Indicates the [host] and [port] server. Only when [operationMode] is [OperationMode.realtime]
-    RealtimeEndpoint? realtimeEndpoint,
+    @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
+      Check the [host] and [port] field for more information.
+    """) RealtimeEndpoint? realtimeEndpoint,
 
     /// Indicates the [dataTopic], [eventsTopic], [realtimeTopic] and [commandTopic] server.
     /// Only when [operationMode] is [OperationMode.realtime]
-    RealtimeVariantEndpoint? realtimeVariantEndpoint,
+    @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
+      Check the [mqttTopic] field for more information.
+    """) RealtimeVariantEndpoint? realtimeVariantEndpoint,
+
+    /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
+    String? host,
+
+    /// [port] is the port of the protocol. May or may not be provided depending of the protocol
+    ///
+    /// Sometimes, this field marks 0 or null, when this happens, the port is not required to connect to the protocol.
+    int? port,
+
+    /// [mqttTopic] is the host or IP of the MQTT protocol. May or may not be provided depending of
+    /// the protocol
+    String? mqttTopic,
 
     /// Indicates if the protocol has support for commands, depending on the field, means:
     /// for [hasNativeCommands] = true, the protocol has support for commands through the protocol itself
@@ -111,35 +129,69 @@ class InboundProtocol with _$InboundProtocol {
     /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
     /// For marketing purposes.
     int? usage,
+
+    /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+    bool? requiresFlespiToken,
+
+    /// [flespiAcl] refers to the ACL for the token generation.
+    List<FlespiAcl>? flespiAcl,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);
 }
 
 enum OperationMode {
+  /// [realtime] is a realtime communication mode, usually uses flespi platform to connect to the devices, other
+  /// platforms can be used as well.
+  ///
   /// Layrz API Reference: REALTIME
-  /// The protocol is in realtime mode, this means that the protocol is connected to the Layrz platform
   realtime,
 
+  /// [realtimeVariant] is a realtime communication mode, uses TCP or Websocket connection to connect to the devices.
+  ///
   /// Layrz API Reference: REALTIMEVARIANT
-  /// The protocol is in realtime variant mode, this means that the protocol is connected to the Layrz platform
+  @Deprecated("""
+    [realtimeVariant] is deprecated in favor of [mqtt].
+    Check the [mqtt] field for more information.
+  """)
   realtimeVariant,
 
+  /// [realtimeClient] is a realtime communication mode, uses MQTT connection to connect to the devices.
+  /// Also, uses the reversed architecture, so the device acts as the server, and we act as the client.
+  ///
   /// Layrz API Reference: REALTIMECLIENT
-  /// The protocol is in realtime client mode, this means that the protocol is connected to the Layrz platform
   realtimeClient,
 
+  /// [asyncronus] is a asyncronus communication mode, uses HTTP connection to connect to the devices.
+  /// Normally, this type of protocol does not require a connection ([host] and [port]) due to a Layrz automation
+  ///
   /// Layrz API Reference: ASYNC
-  /// The protocol is in asyncronus mode, this means that the protocol is not connected to the Layrz platform
   asyncronus,
 
+  /// [webhook] is a webhook communication mode, uses HTTP connection to connect to the devices.
+  /// The devices are configured to send data to a specific URL.
+  ///
   /// Layrz API Reference: WEBHOOK
-  /// The protocol is in webhook mode, this means that the protocol is not connected to the Layrz platform
   webhook,
 
+  /// [simulation] is a simulation communication mode, uses the Layrz Cycle Scripting language to simulate
+  /// movement, telemetry and more, depending of the script.
+  ///
+  /// This mode is mostly used for demo purposes, testing and development.
+  ///
   /// Layrz API Reference: SIMULATION
-  /// The protocol is in simulation mode, this means that the protocol is not connected to the Layrz platform
-  simulation;
+  simulation,
+
+  /// [mqtt] is a MQTT communication mode, uses MQTT connection to connect to the devices.
+  /// The connection to this type of protocol is made through the [mqttTopic] field and the `mqttTopic` defined
+  /// in the device itself.
+  ///
+  /// We allow connections from `mqtt` (port 1883) and `mqtts` (port 8883), however, ask to your business manager or
+  /// ask to [support@goldenm.com](mailto:suppport@goldenm.com) for more information about the connection.
+  ///
+  /// Layrz API Reference: MQTT
+  mqtt,
+  ;
 
   @override
   String toString() => toJson();
@@ -156,6 +208,8 @@ enum OperationMode {
         return "REALTIMEVARIANT";
       case OperationMode.simulation:
         return "SIMULATION";
+      case OperationMode.mqtt:
+        return "MQTT";
       case OperationMode.realtime:
       default:
         return "REALTIME";
@@ -174,6 +228,8 @@ enum OperationMode {
         return OperationMode.realtimeVariant;
       case "SIMULATION":
         return OperationMode.simulation;
+      case "MQTT":
+        return OperationMode.mqtt;
       case "REALTIME":
       default:
         return OperationMode.realtime;

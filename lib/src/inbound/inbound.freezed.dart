@@ -403,12 +403,32 @@ mixin _$InboundProtocol {
   OperationMode get operationMode => throw _privateConstructorUsedError;
 
   /// Indicates the [host] and [port] server. Only when [operationMode] is [OperationMode.realtime]
+  @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
+      Check the [host] and [port] field for more information.
+    """)
   RealtimeEndpoint? get realtimeEndpoint => throw _privateConstructorUsedError;
 
   /// Indicates the [dataTopic], [eventsTopic], [realtimeTopic] and [commandTopic] server.
   /// Only when [operationMode] is [OperationMode.realtime]
+  @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
+      Check the [mqttTopic] field for more information.
+    """)
   RealtimeVariantEndpoint? get realtimeVariantEndpoint =>
       throw _privateConstructorUsedError;
+
+  /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
+  String? get host => throw _privateConstructorUsedError;
+
+  /// [port] is the port of the protocol. May or may not be provided depending of the protocol
+  ///
+  /// Sometimes, this field marks 0 or null, when this happens, the port is not required to connect to the protocol.
+  int? get port => throw _privateConstructorUsedError;
+
+  /// [mqttTopic] is the host or IP of the MQTT protocol. May or may not be provided depending of
+  /// the protocol
+  String? get mqttTopic => throw _privateConstructorUsedError;
 
   /// Indicates if the protocol has support for commands, depending on the field, means:
   /// for [hasNativeCommands] = true, the protocol has support for commands through the protocol itself
@@ -476,6 +496,12 @@ mixin _$InboundProtocol {
   /// For marketing purposes.
   int? get usage => throw _privateConstructorUsedError;
 
+  /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+  bool? get requiresFlespiToken => throw _privateConstructorUsedError;
+
+  /// [flespiAcl] refers to the ACL for the token generation.
+  List<FlespiAcl>? get flespiAcl => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
@@ -494,8 +520,17 @@ abstract class $InboundProtocolCopyWith<$Res> {
       @ColorConverter() Color color,
       bool isEnabled,
       @OperationModeConverter() OperationMode operationMode,
-      RealtimeEndpoint? realtimeEndpoint,
-      RealtimeVariantEndpoint? realtimeVariantEndpoint,
+      @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
+      Check the [host] and [port] field for more information.
+    """) RealtimeEndpoint? realtimeEndpoint,
+      @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
+      Check the [mqttTopic] field for more information.
+    """) RealtimeVariantEndpoint? realtimeVariantEndpoint,
+      String? host,
+      int? port,
+      String? mqttTopic,
       bool? hasNativeCommands,
       bool? hasSmsCommands,
       bool? hasCommandsResult,
@@ -515,7 +550,9 @@ abstract class $InboundProtocolCopyWith<$Res> {
       SimulationCycle? cycle,
       bool? hasModbus,
       List<String> modbusPorts,
-      int? usage});
+      int? usage,
+      bool? requiresFlespiToken,
+      List<FlespiAcl>? flespiAcl});
 
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
   $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
@@ -543,6 +580,9 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? operationMode = null,
     Object? realtimeEndpoint = freezed,
     Object? realtimeVariantEndpoint = freezed,
+    Object? host = freezed,
+    Object? port = freezed,
+    Object? mqttTopic = freezed,
     Object? hasNativeCommands = freezed,
     Object? hasSmsCommands = freezed,
     Object? hasCommandsResult = freezed,
@@ -563,6 +603,8 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? hasModbus = freezed,
     Object? modbusPorts = null,
     Object? usage = freezed,
+    Object? requiresFlespiToken = freezed,
+    Object? flespiAcl = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -593,6 +635,18 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.realtimeVariantEndpoint
           : realtimeVariantEndpoint // ignore: cast_nullable_to_non_nullable
               as RealtimeVariantEndpoint?,
+      host: freezed == host
+          ? _value.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      port: freezed == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int?,
+      mqttTopic: freezed == mqttTopic
+          ? _value.mqttTopic
+          : mqttTopic // ignore: cast_nullable_to_non_nullable
+              as String?,
       hasNativeCommands: freezed == hasNativeCommands
           ? _value.hasNativeCommands
           : hasNativeCommands // ignore: cast_nullable_to_non_nullable
@@ -673,6 +727,14 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.usage
           : usage // ignore: cast_nullable_to_non_nullable
               as int?,
+      requiresFlespiToken: freezed == requiresFlespiToken
+          ? _value.requiresFlespiToken
+          : requiresFlespiToken // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      flespiAcl: freezed == flespiAcl
+          ? _value.flespiAcl
+          : flespiAcl // ignore: cast_nullable_to_non_nullable
+              as List<FlespiAcl>?,
     ) as $Val);
   }
 
@@ -740,8 +802,17 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       @ColorConverter() Color color,
       bool isEnabled,
       @OperationModeConverter() OperationMode operationMode,
-      RealtimeEndpoint? realtimeEndpoint,
-      RealtimeVariantEndpoint? realtimeVariantEndpoint,
+      @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
+      Check the [host] and [port] field for more information.
+    """) RealtimeEndpoint? realtimeEndpoint,
+      @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
+      Check the [mqttTopic] field for more information.
+    """) RealtimeVariantEndpoint? realtimeVariantEndpoint,
+      String? host,
+      int? port,
+      String? mqttTopic,
       bool? hasNativeCommands,
       bool? hasSmsCommands,
       bool? hasCommandsResult,
@@ -761,7 +832,9 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       SimulationCycle? cycle,
       bool? hasModbus,
       List<String> modbusPorts,
-      int? usage});
+      int? usage,
+      bool? requiresFlespiToken,
+      List<FlespiAcl>? flespiAcl});
 
   @override
   $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
@@ -791,6 +864,9 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? operationMode = null,
     Object? realtimeEndpoint = freezed,
     Object? realtimeVariantEndpoint = freezed,
+    Object? host = freezed,
+    Object? port = freezed,
+    Object? mqttTopic = freezed,
     Object? hasNativeCommands = freezed,
     Object? hasSmsCommands = freezed,
     Object? hasCommandsResult = freezed,
@@ -811,6 +887,8 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? hasModbus = freezed,
     Object? modbusPorts = null,
     Object? usage = freezed,
+    Object? requiresFlespiToken = freezed,
+    Object? flespiAcl = freezed,
   }) {
     return _then(_$InboundProtocolImpl(
       id: null == id
@@ -841,6 +919,18 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value.realtimeVariantEndpoint
           : realtimeVariantEndpoint // ignore: cast_nullable_to_non_nullable
               as RealtimeVariantEndpoint?,
+      host: freezed == host
+          ? _value.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      port: freezed == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int?,
+      mqttTopic: freezed == mqttTopic
+          ? _value.mqttTopic
+          : mqttTopic // ignore: cast_nullable_to_non_nullable
+              as String?,
       hasNativeCommands: freezed == hasNativeCommands
           ? _value.hasNativeCommands
           : hasNativeCommands // ignore: cast_nullable_to_non_nullable
@@ -921,6 +1011,14 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value.usage
           : usage // ignore: cast_nullable_to_non_nullable
               as int?,
+      requiresFlespiToken: freezed == requiresFlespiToken
+          ? _value.requiresFlespiToken
+          : requiresFlespiToken // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      flespiAcl: freezed == flespiAcl
+          ? _value._flespiAcl
+          : flespiAcl // ignore: cast_nullable_to_non_nullable
+              as List<FlespiAcl>?,
     ));
   }
 }
@@ -934,8 +1032,17 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       @ColorConverter() required this.color,
       required this.isEnabled,
       @OperationModeConverter() required this.operationMode,
-      this.realtimeEndpoint,
-      this.realtimeVariantEndpoint,
+      @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
+      Check the [host] and [port] field for more information.
+    """) this.realtimeEndpoint,
+      @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
+      Check the [mqttTopic] field for more information.
+    """) this.realtimeVariantEndpoint,
+      this.host,
+      this.port,
+      this.mqttTopic,
       this.hasNativeCommands,
       this.hasSmsCommands,
       this.hasCommandsResult,
@@ -955,11 +1062,14 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       this.cycle,
       this.hasModbus,
       final List<String> modbusPorts = const [],
-      this.usage})
+      this.usage,
+      this.requiresFlespiToken,
+      final List<FlespiAcl>? flespiAcl})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models,
-        _modbusPorts = modbusPorts;
+        _modbusPorts = modbusPorts,
+        _flespiAcl = flespiAcl;
 
   factory _$InboundProtocolImpl.fromJson(Map<String, dynamic> json) =>
       _$$InboundProtocolImplFromJson(json);
@@ -988,12 +1098,35 @@ class _$InboundProtocolImpl implements _InboundProtocol {
 
   /// Indicates the [host] and [port] server. Only when [operationMode] is [OperationMode.realtime]
   @override
+  @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
+      Check the [host] and [port] field for more information.
+    """)
   final RealtimeEndpoint? realtimeEndpoint;
 
   /// Indicates the [dataTopic], [eventsTopic], [realtimeTopic] and [commandTopic] server.
   /// Only when [operationMode] is [OperationMode.realtime]
   @override
+  @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
+      Check the [mqttTopic] field for more information.
+    """)
   final RealtimeVariantEndpoint? realtimeVariantEndpoint;
+
+  /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
+  @override
+  final String? host;
+
+  /// [port] is the port of the protocol. May or may not be provided depending of the protocol
+  ///
+  /// Sometimes, this field marks 0 or null, when this happens, the port is not required to connect to the protocol.
+  @override
+  final int? port;
+
+  /// [mqttTopic] is the host or IP of the MQTT protocol. May or may not be provided depending of
+  /// the protocol
+  @override
+  final String? mqttTopic;
 
   /// Indicates if the protocol has support for commands, depending on the field, means:
   /// for [hasNativeCommands] = true, the protocol has support for commands through the protocol itself
@@ -1115,9 +1248,26 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   @override
   final int? usage;
 
+  /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+  @override
+  final bool? requiresFlespiToken;
+
+  /// [flespiAcl] refers to the ACL for the token generation.
+  final List<FlespiAcl>? _flespiAcl;
+
+  /// [flespiAcl] refers to the ACL for the token generation.
+  @override
+  List<FlespiAcl>? get flespiAcl {
+    final value = _flespiAcl;
+    if (value == null) return null;
+    if (_flespiAcl is EqualUnmodifiableListView) return _flespiAcl;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl)';
   }
 
   @override
@@ -1137,6 +1287,10 @@ class _$InboundProtocolImpl implements _InboundProtocol {
             (identical(
                     other.realtimeVariantEndpoint, realtimeVariantEndpoint) ||
                 other.realtimeVariantEndpoint == realtimeVariantEndpoint) &&
+            (identical(other.host, host) || other.host == host) &&
+            (identical(other.port, port) || other.port == port) &&
+            (identical(other.mqttTopic, mqttTopic) ||
+                other.mqttTopic == mqttTopic) &&
             (identical(other.hasNativeCommands, hasNativeCommands) ||
                 other.hasNativeCommands == hasNativeCommands) &&
             (identical(other.hasSmsCommands, hasSmsCommands) ||
@@ -1170,7 +1324,11 @@ class _$InboundProtocolImpl implements _InboundProtocol {
                 other.hasModbus == hasModbus) &&
             const DeepCollectionEquality()
                 .equals(other._modbusPorts, _modbusPorts) &&
-            (identical(other.usage, usage) || other.usage == usage));
+            (identical(other.usage, usage) || other.usage == usage) &&
+            (identical(other.requiresFlespiToken, requiresFlespiToken) ||
+                other.requiresFlespiToken == requiresFlespiToken) &&
+            const DeepCollectionEquality()
+                .equals(other._flespiAcl, _flespiAcl));
   }
 
   @JsonKey(ignore: true)
@@ -1184,6 +1342,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         operationMode,
         realtimeEndpoint,
         realtimeVariantEndpoint,
+        host,
+        port,
+        mqttTopic,
         hasNativeCommands,
         hasSmsCommands,
         hasCommandsResult,
@@ -1203,7 +1364,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         cycle,
         hasModbus,
         const DeepCollectionEquality().hash(_modbusPorts),
-        usage
+        usage,
+        requiresFlespiToken,
+        const DeepCollectionEquality().hash(_flespiAcl)
       ]);
 
   @JsonKey(ignore: true)
@@ -1228,8 +1391,17 @@ abstract class _InboundProtocol implements InboundProtocol {
       @ColorConverter() required final Color color,
       required final bool isEnabled,
       @OperationModeConverter() required final OperationMode operationMode,
-      final RealtimeEndpoint? realtimeEndpoint,
-      final RealtimeVariantEndpoint? realtimeVariantEndpoint,
+      @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
+      Check the [host] and [port] field for more information.
+    """) final RealtimeEndpoint? realtimeEndpoint,
+      @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
+      Check the [mqttTopic] field for more information.
+    """) final RealtimeVariantEndpoint? realtimeVariantEndpoint,
+      final String? host,
+      final int? port,
+      final String? mqttTopic,
       final bool? hasNativeCommands,
       final bool? hasSmsCommands,
       final bool? hasCommandsResult,
@@ -1249,7 +1421,9 @@ abstract class _InboundProtocol implements InboundProtocol {
       final SimulationCycle? cycle,
       final bool? hasModbus,
       final List<String> modbusPorts,
-      final int? usage}) = _$InboundProtocolImpl;
+      final int? usage,
+      final bool? requiresFlespiToken,
+      final List<FlespiAcl>? flespiAcl}) = _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
@@ -1279,12 +1453,35 @@ abstract class _InboundProtocol implements InboundProtocol {
   @override
 
   /// Indicates the [host] and [port] server. Only when [operationMode] is [OperationMode.realtime]
+  @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
+      Check the [host] and [port] field for more information.
+    """)
   RealtimeEndpoint? get realtimeEndpoint;
   @override
 
   /// Indicates the [dataTopic], [eventsTopic], [realtimeTopic] and [commandTopic] server.
   /// Only when [operationMode] is [OperationMode.realtime]
+  @Deprecated("""
+      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
+      Check the [mqttTopic] field for more information.
+    """)
   RealtimeVariantEndpoint? get realtimeVariantEndpoint;
+  @override
+
+  /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
+  String? get host;
+  @override
+
+  /// [port] is the port of the protocol. May or may not be provided depending of the protocol
+  ///
+  /// Sometimes, this field marks 0 or null, when this happens, the port is not required to connect to the protocol.
+  int? get port;
+  @override
+
+  /// [mqttTopic] is the host or IP of the MQTT protocol. May or may not be provided depending of
+  /// the protocol
+  String? get mqttTopic;
   @override
 
   /// Indicates if the protocol has support for commands, depending on the field, means:
@@ -1370,6 +1567,14 @@ abstract class _InboundProtocol implements InboundProtocol {
   /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
   /// For marketing purposes.
   int? get usage;
+  @override
+
+  /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+  bool? get requiresFlespiToken;
+  @override
+
+  /// [flespiAcl] refers to the ACL for the token generation.
+  List<FlespiAcl>? get flespiAcl;
   @override
   @JsonKey(ignore: true)
   _$$InboundProtocolImplCopyWith<_$InboundProtocolImpl> get copyWith =>
