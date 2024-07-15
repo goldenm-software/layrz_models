@@ -12,8 +12,14 @@ class SdmIngredient with _$SdmIngredient {
     /// [code] of the pen.
     required String code,
 
-    /// [pricePerKg] is the price of the pen per kilogram.
+    /// [pricePerKg] is the price of the ingredient per kilogram.
     double? pricePerKg,
+
+    /// [dryFactor] is the dry factor of the ingredient.
+    double? dryFactor,
+
+    /// [priceByDry] indicates if the price should be calculated using dry or wet weight.
+    bool? priceByDry,
 
     /// [isArchived] is the status of the pen.
     bool? isArchived,

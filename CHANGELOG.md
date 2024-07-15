@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.81
+
+- Added `dryFactor` and `priceByDry` on `SdmIngredient` model
+
 ## 2.1.80
 
 - Renamed `mqttToken` to `flespiToken` on `Device` model

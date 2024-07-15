@@ -931,8 +931,14 @@ mixin _$SdmIngredient {
   /// [code] of the pen.
   String get code => throw _privateConstructorUsedError;
 
-  /// [pricePerKg] is the price of the pen per kilogram.
+  /// [pricePerKg] is the price of the ingredient per kilogram.
   double? get pricePerKg => throw _privateConstructorUsedError;
+
+  /// [dryFactor] is the dry factor of the ingredient.
+  double? get dryFactor => throw _privateConstructorUsedError;
+
+  /// [priceByDry] indicates if the price should be calculated using dry or wet weight.
+  bool? get priceByDry => throw _privateConstructorUsedError;
 
   /// [isArchived] is the status of the pen.
   bool? get isArchived => throw _privateConstructorUsedError;
@@ -974,6 +980,8 @@ abstract class $SdmIngredientCopyWith<$Res> {
       String name,
       String code,
       double? pricePerKg,
+      double? dryFactor,
+      bool? priceByDry,
       bool? isArchived,
       String? sourceId,
       Device? source,
@@ -1004,6 +1012,8 @@ class _$SdmIngredientCopyWithImpl<$Res, $Val extends SdmIngredient>
     Object? name = null,
     Object? code = null,
     Object? pricePerKg = freezed,
+    Object? dryFactor = freezed,
+    Object? priceByDry = freezed,
     Object? isArchived = freezed,
     Object? sourceId = freezed,
     Object? source = freezed,
@@ -1029,6 +1039,14 @@ class _$SdmIngredientCopyWithImpl<$Res, $Val extends SdmIngredient>
           ? _value.pricePerKg
           : pricePerKg // ignore: cast_nullable_to_non_nullable
               as double?,
+      dryFactor: freezed == dryFactor
+          ? _value.dryFactor
+          : dryFactor // ignore: cast_nullable_to_non_nullable
+              as double?,
+      priceByDry: freezed == priceByDry
+          ? _value.priceByDry
+          : priceByDry // ignore: cast_nullable_to_non_nullable
+              as bool?,
       isArchived: freezed == isArchived
           ? _value.isArchived
           : isArchived // ignore: cast_nullable_to_non_nullable
@@ -1110,6 +1128,8 @@ abstract class _$$SdmIngredientImplCopyWith<$Res>
       String name,
       String code,
       double? pricePerKg,
+      double? dryFactor,
+      bool? priceByDry,
       bool? isArchived,
       String? sourceId,
       Device? source,
@@ -1141,6 +1161,8 @@ class __$$SdmIngredientImplCopyWithImpl<$Res>
     Object? name = null,
     Object? code = null,
     Object? pricePerKg = freezed,
+    Object? dryFactor = freezed,
+    Object? priceByDry = freezed,
     Object? isArchived = freezed,
     Object? sourceId = freezed,
     Object? source = freezed,
@@ -1166,6 +1188,14 @@ class __$$SdmIngredientImplCopyWithImpl<$Res>
           ? _value.pricePerKg
           : pricePerKg // ignore: cast_nullable_to_non_nullable
               as double?,
+      dryFactor: freezed == dryFactor
+          ? _value.dryFactor
+          : dryFactor // ignore: cast_nullable_to_non_nullable
+              as double?,
+      priceByDry: freezed == priceByDry
+          ? _value.priceByDry
+          : priceByDry // ignore: cast_nullable_to_non_nullable
+              as bool?,
       isArchived: freezed == isArchived
           ? _value.isArchived
           : isArchived // ignore: cast_nullable_to_non_nullable
@@ -1206,6 +1236,8 @@ class _$SdmIngredientImpl implements _SdmIngredient {
       required this.name,
       required this.code,
       this.pricePerKg,
+      this.dryFactor,
+      this.priceByDry,
       this.isArchived,
       this.sourceId,
       this.source,
@@ -1229,9 +1261,17 @@ class _$SdmIngredientImpl implements _SdmIngredient {
   @override
   final String code;
 
-  /// [pricePerKg] is the price of the pen per kilogram.
+  /// [pricePerKg] is the price of the ingredient per kilogram.
   @override
   final double? pricePerKg;
+
+  /// [dryFactor] is the dry factor of the ingredient.
+  @override
+  final double? dryFactor;
+
+  /// [priceByDry] indicates if the price should be calculated using dry or wet weight.
+  @override
+  final bool? priceByDry;
 
   /// [isArchived] is the status of the pen.
   @override
@@ -1265,7 +1305,7 @@ class _$SdmIngredientImpl implements _SdmIngredient {
 
   @override
   String toString() {
-    return 'SdmIngredient(id: $id, name: $name, code: $code, pricePerKg: $pricePerKg, isArchived: $isArchived, sourceId: $sourceId, source: $source, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
+    return 'SdmIngredient(id: $id, name: $name, code: $code, pricePerKg: $pricePerKg, dryFactor: $dryFactor, priceByDry: $priceByDry, isArchived: $isArchived, sourceId: $sourceId, source: $source, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
   }
 
   @override
@@ -1278,6 +1318,10 @@ class _$SdmIngredientImpl implements _SdmIngredient {
             (identical(other.code, code) || other.code == code) &&
             (identical(other.pricePerKg, pricePerKg) ||
                 other.pricePerKg == pricePerKg) &&
+            (identical(other.dryFactor, dryFactor) ||
+                other.dryFactor == dryFactor) &&
+            (identical(other.priceByDry, priceByDry) ||
+                other.priceByDry == priceByDry) &&
             (identical(other.isArchived, isArchived) ||
                 other.isArchived == isArchived) &&
             (identical(other.sourceId, sourceId) ||
@@ -1295,8 +1339,21 @@ class _$SdmIngredientImpl implements _SdmIngredient {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, code, pricePerKg,
-      isArchived, sourceId, source, createdAt, createdBy, updatedAt, updatedBy);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      code,
+      pricePerKg,
+      dryFactor,
+      priceByDry,
+      isArchived,
+      sourceId,
+      source,
+      createdAt,
+      createdBy,
+      updatedAt,
+      updatedBy);
 
   @JsonKey(ignore: true)
   @override
@@ -1318,6 +1375,8 @@ abstract class _SdmIngredient implements SdmIngredient {
       required final String name,
       required final String code,
       final double? pricePerKg,
+      final double? dryFactor,
+      final bool? priceByDry,
       final bool? isArchived,
       final String? sourceId,
       final Device? source,
@@ -1343,8 +1402,16 @@ abstract class _SdmIngredient implements SdmIngredient {
   String get code;
   @override
 
-  /// [pricePerKg] is the price of the pen per kilogram.
+  /// [pricePerKg] is the price of the ingredient per kilogram.
   double? get pricePerKg;
+  @override
+
+  /// [dryFactor] is the dry factor of the ingredient.
+  double? get dryFactor;
+  @override
+
+  /// [priceByDry] indicates if the price should be calculated using dry or wet weight.
+  bool? get priceByDry;
   @override
 
   /// [isArchived] is the status of the pen.

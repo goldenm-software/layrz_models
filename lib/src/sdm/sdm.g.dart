@@ -87,6 +87,8 @@ _$SdmIngredientImpl _$$SdmIngredientImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       code: json['code'] as String,
       pricePerKg: (json['pricePerKg'] as num?)?.toDouble(),
+      dryFactor: (json['dryFactor'] as num?)?.toDouble(),
+      priceByDry: json['priceByDry'] as bool?,
       isArchived: json['isArchived'] as bool?,
       sourceId: json['sourceId'] as String?,
       source: json['source'] == null
@@ -110,6 +112,8 @@ Map<String, dynamic> _$$SdmIngredientImplToJson(_$SdmIngredientImpl instance) =>
       'name': instance.name,
       'code': instance.code,
       'pricePerKg': instance.pricePerKg,
+      'dryFactor': instance.dryFactor,
+      'priceByDry': instance.priceByDry,
       'isArchived': instance.isArchived,
       'sourceId': instance.sourceId,
       'source': instance.source?.toJson(),
