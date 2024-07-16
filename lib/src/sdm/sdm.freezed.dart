@@ -1447,3 +1447,346 @@ abstract class _SdmIngredient implements SdmIngredient {
   _$$SdmIngredientImplCopyWith<_$SdmIngredientImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+SdmOperator _$SdmOperatorFromJson(Map<String, dynamic> json) {
+  return _SdmOperator.fromJson(json);
+}
+
+/// @nodoc
+mixin _$SdmOperator {
+  /// [id] of the pen entity. This ID is unique.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [name] of the pen.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [code] of the pen.
+  String get code => throw _privateConstructorUsedError;
+
+  /// [createdAt] is the creation date of the pen.
+  @TimestampOrNullConverter()
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+
+  /// [createdBy] is the user id who created the pen.
+  User? get createdBy => throw _privateConstructorUsedError;
+
+  /// [updatedAt] is the last update date of the pen.
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
+
+  /// [updatedBy] is the user id who updated the pen.
+  User? get updatedBy => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SdmOperatorCopyWith<SdmOperator> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SdmOperatorCopyWith<$Res> {
+  factory $SdmOperatorCopyWith(
+          SdmOperator value, $Res Function(SdmOperator) then) =
+      _$SdmOperatorCopyWithImpl<$Res, SdmOperator>;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String code,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      User? createdBy,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      User? updatedBy});
+
+  $UserCopyWith<$Res>? get createdBy;
+  $UserCopyWith<$Res>? get updatedBy;
+}
+
+/// @nodoc
+class _$SdmOperatorCopyWithImpl<$Res, $Val extends SdmOperator>
+    implements $SdmOperatorCopyWith<$Res> {
+  _$SdmOperatorCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? code = null,
+    Object? createdAt = freezed,
+    Object? createdBy = freezed,
+    Object? updatedAt = freezed,
+    Object? updatedBy = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBy: freezed == createdBy
+          ? _value.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedBy: freezed == updatedBy
+          ? _value.updatedBy
+          : updatedBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get createdBy {
+    if (_value.createdBy == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.createdBy!, (value) {
+      return _then(_value.copyWith(createdBy: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get updatedBy {
+    if (_value.updatedBy == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.updatedBy!, (value) {
+      return _then(_value.copyWith(updatedBy: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$SdmOperatorImplCopyWith<$Res>
+    implements $SdmOperatorCopyWith<$Res> {
+  factory _$$SdmOperatorImplCopyWith(
+          _$SdmOperatorImpl value, $Res Function(_$SdmOperatorImpl) then) =
+      __$$SdmOperatorImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String code,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      User? createdBy,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      User? updatedBy});
+
+  @override
+  $UserCopyWith<$Res>? get createdBy;
+  @override
+  $UserCopyWith<$Res>? get updatedBy;
+}
+
+/// @nodoc
+class __$$SdmOperatorImplCopyWithImpl<$Res>
+    extends _$SdmOperatorCopyWithImpl<$Res, _$SdmOperatorImpl>
+    implements _$$SdmOperatorImplCopyWith<$Res> {
+  __$$SdmOperatorImplCopyWithImpl(
+      _$SdmOperatorImpl _value, $Res Function(_$SdmOperatorImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? code = null,
+    Object? createdAt = freezed,
+    Object? createdBy = freezed,
+    Object? updatedAt = freezed,
+    Object? updatedBy = freezed,
+  }) {
+    return _then(_$SdmOperatorImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBy: freezed == createdBy
+          ? _value.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedBy: freezed == updatedBy
+          ? _value.updatedBy
+          : updatedBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$SdmOperatorImpl implements _SdmOperator {
+  const _$SdmOperatorImpl(
+      {required this.id,
+      required this.name,
+      required this.code,
+      @TimestampOrNullConverter() this.createdAt,
+      this.createdBy,
+      @TimestampOrNullConverter() this.updatedAt,
+      this.updatedBy});
+
+  factory _$SdmOperatorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SdmOperatorImplFromJson(json);
+
+  /// [id] of the pen entity. This ID is unique.
+  @override
+  final String id;
+
+  /// [name] of the pen.
+  @override
+  final String name;
+
+  /// [code] of the pen.
+  @override
+  final String code;
+
+  /// [createdAt] is the creation date of the pen.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? createdAt;
+
+  /// [createdBy] is the user id who created the pen.
+  @override
+  final User? createdBy;
+
+  /// [updatedAt] is the last update date of the pen.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? updatedAt;
+
+  /// [updatedBy] is the user id who updated the pen.
+  @override
+  final User? updatedBy;
+
+  @override
+  String toString() {
+    return 'SdmOperator(id: $id, name: $name, code: $code, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SdmOperatorImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.createdBy, createdBy) ||
+                other.createdBy == createdBy) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.updatedBy, updatedBy) ||
+                other.updatedBy == updatedBy));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, name, code, createdAt, createdBy, updatedAt, updatedBy);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SdmOperatorImplCopyWith<_$SdmOperatorImpl> get copyWith =>
+      __$$SdmOperatorImplCopyWithImpl<_$SdmOperatorImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SdmOperatorImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _SdmOperator implements SdmOperator {
+  const factory _SdmOperator(
+      {required final String id,
+      required final String name,
+      required final String code,
+      @TimestampOrNullConverter() final DateTime? createdAt,
+      final User? createdBy,
+      @TimestampOrNullConverter() final DateTime? updatedAt,
+      final User? updatedBy}) = _$SdmOperatorImpl;
+
+  factory _SdmOperator.fromJson(Map<String, dynamic> json) =
+      _$SdmOperatorImpl.fromJson;
+
+  @override
+
+  /// [id] of the pen entity. This ID is unique.
+  String get id;
+  @override
+
+  /// [name] of the pen.
+  String get name;
+  @override
+
+  /// [code] of the pen.
+  String get code;
+  @override
+
+  /// [createdAt] is the creation date of the pen.
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+  @override
+
+  /// [createdBy] is the user id who created the pen.
+  User? get createdBy;
+  @override
+
+  /// [updatedAt] is the last update date of the pen.
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt;
+  @override
+
+  /// [updatedBy] is the user id who updated the pen.
+  User? get updatedBy;
+  @override
+  @JsonKey(ignore: true)
+  _$$SdmOperatorImplCopyWith<_$SdmOperatorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

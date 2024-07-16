@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.82
+
+- New `SdmOperator` model
+
 ## 2.1.81
 
 - Added `dryFactor` and `priceByDry` on `SdmIngredient` model
