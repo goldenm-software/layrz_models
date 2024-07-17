@@ -27,9 +27,23 @@ class Workspace with _$Workspace {
     /// Indicates the main view of the workspace
     @WorkspaceMainViewOrNullConverter() WorkspaceMainView? mainView,
 
-    /// Is the list of [assets] and their ids [assetsIds]
+    /// Is the list of [assets] associated with the workspace
     List<Asset>? assets,
+
+    /// [assetsIds] is the list of ids of the [assets] associated with the workspace
     List<String>? assetsIds,
+
+    /// Is the list of [inboundServices] associated with the workspace
+    List<InboundService>? inboundServices,
+
+    /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
+    List<String>? inboundServicesIds,
+
+    /// Is the list of [outboundServices] associated with the workspace
+    List<OutboundService>? outboundServices,
+
+    /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
+    List<String>? outboundServicesIds,
 
     /// The fields [casesEnabled], [triggers], [triggersIds], [checkpointsEnabled], [checkpoints], [checkpointsIds],
     /// [mapEnabled], [geofences], [geofencesIds], [mapCardCustomization], [mapCenterCoordinates], [mapCenterMode],

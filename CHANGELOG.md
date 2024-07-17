@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.83
+
+- Updated `Workspace` and `SensorGridItem` to handle new Data grid
+- New `WorkspaceCardType` enum to identify the type of card in the workspace used in the data grid
+
 ## 2.1.82
 
 - New `SdmOperator` model
