@@ -1873,7 +1873,7 @@ BrickHouseWorkspaceInput _$BrickHouseWorkspaceInputFromJson(
 /// @nodoc
 mixin _$BrickHouseWorkspaceInput {
   String? get id => throw _privateConstructorUsedError;
-  String get appId => throw _privateConstructorUsedError;
+  String? get appId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   @MetricSystemConverter()
   MetricSystem get metricSystem => throw _privateConstructorUsedError;
@@ -1898,7 +1898,7 @@ abstract class $BrickHouseWorkspaceInputCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
-      String appId,
+      String? appId,
       String name,
       @MetricSystemConverter() MetricSystem metricSystem,
       @AppInternalIdentifierOrNullConverter() AppInternalIdentifier? typeApp,
@@ -1921,7 +1921,7 @@ class _$BrickHouseWorkspaceInputCopyWithImpl<$Res,
   @override
   $Res call({
     Object? id = freezed,
-    Object? appId = null,
+    Object? appId = freezed,
     Object? name = null,
     Object? metricSystem = null,
     Object? typeApp = freezed,
@@ -1933,10 +1933,10 @@ class _$BrickHouseWorkspaceInputCopyWithImpl<$Res,
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      appId: null == appId
+      appId: freezed == appId
           ? _value.appId
           : appId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -1972,7 +1972,7 @@ abstract class _$$BrickHouseWorkspaceInputImplCopyWith<$Res>
   @useResult
   $Res call(
       {String? id,
-      String appId,
+      String? appId,
       String name,
       @MetricSystemConverter() MetricSystem metricSystem,
       @AppInternalIdentifierOrNullConverter() AppInternalIdentifier? typeApp,
@@ -1994,7 +1994,7 @@ class __$$BrickHouseWorkspaceInputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? appId = null,
+    Object? appId = freezed,
     Object? name = null,
     Object? metricSystem = null,
     Object? typeApp = freezed,
@@ -2006,10 +2006,10 @@ class __$$BrickHouseWorkspaceInputImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      appId: null == appId
+      appId: freezed == appId
           ? _value.appId
           : appId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -2039,7 +2039,7 @@ class __$$BrickHouseWorkspaceInputImplCopyWithImpl<$Res>
 class _$BrickHouseWorkspaceInputImpl implements _BrickHouseWorkspaceInput {
   const _$BrickHouseWorkspaceInputImpl(
       {this.id,
-      required this.appId,
+      this.appId,
       required this.name,
       @MetricSystemConverter() required this.metricSystem,
       @AppInternalIdentifierOrNullConverter()
@@ -2054,7 +2054,7 @@ class _$BrickHouseWorkspaceInputImpl implements _BrickHouseWorkspaceInput {
   @override
   final String? id;
   @override
-  final String appId;
+  final String? appId;
   @override
   final String name;
   @override
@@ -2124,7 +2124,7 @@ class _$BrickHouseWorkspaceInputImpl implements _BrickHouseWorkspaceInput {
 abstract class _BrickHouseWorkspaceInput implements BrickHouseWorkspaceInput {
   const factory _BrickHouseWorkspaceInput(
       {final String? id,
-      required final String appId,
+      final String? appId,
       required final String name,
       @MetricSystemConverter() required final MetricSystem metricSystem,
       @AppInternalIdentifierOrNullConverter()
@@ -2138,7 +2138,7 @@ abstract class _BrickHouseWorkspaceInput implements BrickHouseWorkspaceInput {
   @override
   String? get id;
   @override
-  String get appId;
+  String? get appId;
   @override
   String get name;
   @override

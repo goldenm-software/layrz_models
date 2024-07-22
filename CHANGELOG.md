@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.84
+- Changed  `appId` to be optional on `BrickHouseWorkspaceInput`
+
 ## 2.1.83
 
 - Updated `Workspace` and `SensorGridItem` to handle new Data grid
