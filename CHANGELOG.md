@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.1.86
+
+- Added `requiresAssets` and `requiresGeofences` to `ExchangeProtocol` model
+- Added `geofencesIds`, `geofences`, `geofencesGroupsIds` and `geofencesGroups` to `ExchangeService` model
+
 ## 2.1.85
 -  `BrickHouseWorkspaceInput` update
 
