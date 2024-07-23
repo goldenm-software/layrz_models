@@ -197,7 +197,7 @@ _$BrickHouseWorkspaceInputImpl _$$BrickHouseWorkspaceInputImplFromJson(
         Map<String, dynamic> json) =>
     _$BrickHouseWorkspaceInputImpl(
       id: json['id'] as String?,
-      appId: json['appId'] as String?,
+      appId: json['appId'] as String,
       name: json['name'] as String,
       metricSystem: const MetricSystemConverter()
           .fromJson(json['metricSystem'] as String),

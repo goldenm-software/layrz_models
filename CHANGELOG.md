@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.85
+-  `BrickHouseWorkspaceInput` update
+
 ## 2.1.84
 - Changed  `appId` to be optional on `BrickHouseWorkspaceInput`
 

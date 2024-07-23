@@ -4,7 +4,7 @@ part of '../brickhouse.dart';
 class BrickHouseWorkspaceInput with _$BrickHouseWorkspaceInput {
   const factory BrickHouseWorkspaceInput({
     String? id,
-    String? appId,
+    required String appId,
     required String name,
     @MetricSystemConverter() required MetricSystem metricSystem,
 
