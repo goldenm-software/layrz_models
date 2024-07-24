@@ -9894,6 +9894,9 @@ mixin _$DeviceCommand {
   /// This parameter contains the port number of the modbus command.
   String? get modbusPort => throw _privateConstructorUsedError;
 
+  /// [args] refers to the arguments of the command.
+  Map<String, dynamic>? get args => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DeviceCommandCopyWith<DeviceCommand> get copyWith =>
@@ -9928,7 +9931,8 @@ abstract class $DeviceCommandCopyWith<$Res> {
       List<Access>? access,
       List<Device>? possibleDevices,
       ModbusParameter? modbusParameter,
-      String? modbusPort});
+      String? modbusPort,
+      Map<String, dynamic>? args});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
   $ModelCopyWith<$Res>? get model;
@@ -9971,6 +9975,7 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
     Object? possibleDevices = freezed,
     Object? modbusParameter = freezed,
     Object? modbusPort = freezed,
+    Object? args = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -10061,6 +10066,10 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
           ? _value.modbusPort
           : modbusPort // ignore: cast_nullable_to_non_nullable
               as String?,
+      args: freezed == args
+          ? _value.args
+          : args // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -10143,7 +10152,8 @@ abstract class _$$DeviceCommandImplCopyWith<$Res>
       List<Access>? access,
       List<Device>? possibleDevices,
       ModbusParameter? modbusParameter,
-      String? modbusPort});
+      String? modbusPort,
+      Map<String, dynamic>? args});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -10188,6 +10198,7 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
     Object? possibleDevices = freezed,
     Object? modbusParameter = freezed,
     Object? modbusPort = freezed,
+    Object? args = freezed,
   }) {
     return _then(_$DeviceCommandImpl(
       id: null == id
@@ -10278,6 +10289,10 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
           ? _value.modbusPort
           : modbusPort // ignore: cast_nullable_to_non_nullable
               as String?,
+      args: freezed == args
+          ? _value._args
+          : args // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -10307,9 +10322,11 @@ class _$DeviceCommandImpl implements _DeviceCommand {
       final List<Access>? access,
       final List<Device>? possibleDevices,
       this.modbusParameter,
-      this.modbusPort})
+      this.modbusPort,
+      final Map<String, dynamic>? args})
       : _access = access,
-        _possibleDevices = possibleDevices;
+        _possibleDevices = possibleDevices,
+        _args = args;
 
   factory _$DeviceCommandImpl.fromJson(Map<String, dynamic> json) =>
       _$$DeviceCommandImplFromJson(json);
@@ -10430,9 +10447,22 @@ class _$DeviceCommandImpl implements _DeviceCommand {
   @override
   final String? modbusPort;
 
+  /// [args] refers to the arguments of the command.
+  final Map<String, dynamic>? _args;
+
+  /// [args] refers to the arguments of the command.
+  @override
+  Map<String, dynamic>? get args {
+    final value = _args;
+    if (value == null) return null;
+    if (_args is EqualUnmodifiableMapView) return _args;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   String toString() {
-    return 'DeviceCommand(id: $id, name: $name, source: $source, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, protocol: $protocol, modelId: $modelId, model: $model, command: $command, devicePassword: $devicePassword, payload: $payload, commandId: $commandId, isHexCoded: $isHexCoded, username: $username, scriptName: $scriptName, externalAccount: $externalAccount, externalAccountId: $externalAccountId, access: $access, possibleDevices: $possibleDevices, modbusParameter: $modbusParameter, modbusPort: $modbusPort)';
+    return 'DeviceCommand(id: $id, name: $name, source: $source, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, protocol: $protocol, modelId: $modelId, model: $model, command: $command, devicePassword: $devicePassword, payload: $payload, commandId: $commandId, isHexCoded: $isHexCoded, username: $username, scriptName: $scriptName, externalAccount: $externalAccount, externalAccountId: $externalAccountId, access: $access, possibleDevices: $possibleDevices, modbusParameter: $modbusParameter, modbusPort: $modbusPort, args: $args)';
   }
 
   @override
@@ -10474,7 +10504,8 @@ class _$DeviceCommandImpl implements _DeviceCommand {
             (identical(other.modbusParameter, modbusParameter) ||
                 other.modbusParameter == modbusParameter) &&
             (identical(other.modbusPort, modbusPort) ||
-                other.modbusPort == modbusPort));
+                other.modbusPort == modbusPort) &&
+            const DeepCollectionEquality().equals(other._args, _args));
   }
 
   @JsonKey(ignore: true)
@@ -10502,7 +10533,8 @@ class _$DeviceCommandImpl implements _DeviceCommand {
         const DeepCollectionEquality().hash(_access),
         const DeepCollectionEquality().hash(_possibleDevices),
         modbusParameter,
-        modbusPort
+        modbusPort,
+        const DeepCollectionEquality().hash(_args)
       ]);
 
   @JsonKey(ignore: true)
@@ -10542,7 +10574,8 @@ abstract class _DeviceCommand implements DeviceCommand {
       final List<Access>? access,
       final List<Device>? possibleDevices,
       final ModbusParameter? modbusParameter,
-      final String? modbusPort}) = _$DeviceCommandImpl;
+      final String? modbusPort,
+      final Map<String, dynamic>? args}) = _$DeviceCommandImpl;
 
   factory _DeviceCommand.fromJson(Map<String, dynamic> json) =
       _$DeviceCommandImpl.fromJson;
@@ -10644,6 +10677,10 @@ abstract class _DeviceCommand implements DeviceCommand {
   /// [modbusPort] refers to the modbus port of the command.
   /// This parameter contains the port number of the modbus command.
   String? get modbusPort;
+  @override
+
+  /// [args] refers to the arguments of the command.
+  Map<String, dynamic>? get args;
   @override
   @JsonKey(ignore: true)
   _$$DeviceCommandImplCopyWith<_$DeviceCommandImpl> get copyWith =>

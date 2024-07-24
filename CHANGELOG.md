@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.87
+
+- Added `args` into `Command` model
+
 ## 2.1.86
 
 - Added `requiresAssets` and `requiresGeofences` to `ExchangeProtocol` model
