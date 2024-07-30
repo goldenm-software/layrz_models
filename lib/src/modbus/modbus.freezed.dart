@@ -225,6 +225,14 @@ ModbusParameter _$ModbusParameterFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ModbusParameter {
+  /// [schema] represents the format of the command, it can be either single or multiple.
+  @ModbusParameterSchemaConverter()
+  ModbusParameterSchema get schema => throw _privateConstructorUsedError;
+
+  /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
+  /// This value is a hexadecimal value
+  String? get splitEach => throw _privateConstructorUsedError;
+
   /// [controllerAddress] is the controller or slave ID of the modbus device.
   /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
   String get controllerAddress => throw _privateConstructorUsedError;
@@ -256,7 +264,9 @@ abstract class $ModbusParameterCopyWith<$Res> {
       _$ModbusParameterCopyWithImpl<$Res, ModbusParameter>;
   @useResult
   $Res call(
-      {String controllerAddress,
+      {@ModbusParameterSchemaConverter() ModbusParameterSchema schema,
+      String? splitEach,
+      String controllerAddress,
       String functionCode,
       String dataAddress,
       String dataLength});
@@ -275,12 +285,22 @@ class _$ModbusParameterCopyWithImpl<$Res, $Val extends ModbusParameter>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? schema = null,
+    Object? splitEach = freezed,
     Object? controllerAddress = null,
     Object? functionCode = null,
     Object? dataAddress = null,
     Object? dataLength = null,
   }) {
     return _then(_value.copyWith(
+      schema: null == schema
+          ? _value.schema
+          : schema // ignore: cast_nullable_to_non_nullable
+              as ModbusParameterSchema,
+      splitEach: freezed == splitEach
+          ? _value.splitEach
+          : splitEach // ignore: cast_nullable_to_non_nullable
+              as String?,
       controllerAddress: null == controllerAddress
           ? _value.controllerAddress
           : controllerAddress // ignore: cast_nullable_to_non_nullable
@@ -310,7 +330,9 @@ abstract class _$$ModbusParameterImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String controllerAddress,
+      {@ModbusParameterSchemaConverter() ModbusParameterSchema schema,
+      String? splitEach,
+      String controllerAddress,
       String functionCode,
       String dataAddress,
       String dataLength});
@@ -327,12 +349,22 @@ class __$$ModbusParameterImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? schema = null,
+    Object? splitEach = freezed,
     Object? controllerAddress = null,
     Object? functionCode = null,
     Object? dataAddress = null,
     Object? dataLength = null,
   }) {
     return _then(_$ModbusParameterImpl(
+      schema: null == schema
+          ? _value.schema
+          : schema // ignore: cast_nullable_to_non_nullable
+              as ModbusParameterSchema,
+      splitEach: freezed == splitEach
+          ? _value.splitEach
+          : splitEach // ignore: cast_nullable_to_non_nullable
+              as String?,
       controllerAddress: null == controllerAddress
           ? _value.controllerAddress
           : controllerAddress // ignore: cast_nullable_to_non_nullable
@@ -357,13 +389,27 @@ class __$$ModbusParameterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ModbusParameterImpl implements _ModbusParameter {
   const _$ModbusParameterImpl(
-      {required this.controllerAddress,
+      {@ModbusParameterSchemaConverter()
+      this.schema = ModbusParameterSchema.single,
+      this.splitEach,
+      required this.controllerAddress,
       required this.functionCode,
       required this.dataAddress,
       required this.dataLength});
 
   factory _$ModbusParameterImpl.fromJson(Map<String, dynamic> json) =>
       _$$ModbusParameterImplFromJson(json);
+
+  /// [schema] represents the format of the command, it can be either single or multiple.
+  @override
+  @JsonKey()
+  @ModbusParameterSchemaConverter()
+  final ModbusParameterSchema schema;
+
+  /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
+  /// This value is a hexadecimal value
+  @override
+  final String? splitEach;
 
   /// [controllerAddress] is the controller or slave ID of the modbus device.
   /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
@@ -389,7 +435,7 @@ class _$ModbusParameterImpl implements _ModbusParameter {
 
   @override
   String toString() {
-    return 'ModbusParameter(controllerAddress: $controllerAddress, functionCode: $functionCode, dataAddress: $dataAddress, dataLength: $dataLength)';
+    return 'ModbusParameter(schema: $schema, splitEach: $splitEach, controllerAddress: $controllerAddress, functionCode: $functionCode, dataAddress: $dataAddress, dataLength: $dataLength)';
   }
 
   @override
@@ -397,6 +443,9 @@ class _$ModbusParameterImpl implements _ModbusParameter {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ModbusParameterImpl &&
+            (identical(other.schema, schema) || other.schema == schema) &&
+            (identical(other.splitEach, splitEach) ||
+                other.splitEach == splitEach) &&
             (identical(other.controllerAddress, controllerAddress) ||
                 other.controllerAddress == controllerAddress) &&
             (identical(other.functionCode, functionCode) ||
@@ -409,8 +458,8 @@ class _$ModbusParameterImpl implements _ModbusParameter {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, controllerAddress, functionCode, dataAddress, dataLength);
+  int get hashCode => Object.hash(runtimeType, schema, splitEach,
+      controllerAddress, functionCode, dataAddress, dataLength);
 
   @JsonKey(ignore: true)
   @override
@@ -429,7 +478,9 @@ class _$ModbusParameterImpl implements _ModbusParameter {
 
 abstract class _ModbusParameter implements ModbusParameter {
   const factory _ModbusParameter(
-      {required final String controllerAddress,
+      {@ModbusParameterSchemaConverter() final ModbusParameterSchema schema,
+      final String? splitEach,
+      required final String controllerAddress,
       required final String functionCode,
       required final String dataAddress,
       required final String dataLength}) = _$ModbusParameterImpl;
@@ -437,6 +488,16 @@ abstract class _ModbusParameter implements ModbusParameter {
   factory _ModbusParameter.fromJson(Map<String, dynamic> json) =
       _$ModbusParameterImpl.fromJson;
 
+  @override
+
+  /// [schema] represents the format of the command, it can be either single or multiple.
+  @ModbusParameterSchemaConverter()
+  ModbusParameterSchema get schema;
+  @override
+
+  /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
+  /// This value is a hexadecimal value
+  String? get splitEach;
   @override
 
   /// [controllerAddress] is the controller or slave ID of the modbus device.

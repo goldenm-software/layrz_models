@@ -26,6 +26,11 @@ Map<String, dynamic> _$$ModbusConfigImplToJson(_$ModbusConfigImpl instance) =>
 _$ModbusParameterImpl _$$ModbusParameterImplFromJson(
         Map<String, dynamic> json) =>
     _$ModbusParameterImpl(
+      schema: json['schema'] == null
+          ? ModbusParameterSchema.single
+          : const ModbusParameterSchemaConverter()
+              .fromJson(json['schema'] as String),
+      splitEach: json['splitEach'] as String?,
       controllerAddress: json['controllerAddress'] as String,
       functionCode: json['functionCode'] as String,
       dataAddress: json['dataAddress'] as String,
@@ -35,6 +40,8 @@ _$ModbusParameterImpl _$$ModbusParameterImplFromJson(
 Map<String, dynamic> _$$ModbusParameterImplToJson(
         _$ModbusParameterImpl instance) =>
     <String, dynamic>{
+      'schema': const ModbusParameterSchemaConverter().toJson(instance.schema),
+      'splitEach': instance.splitEach,
       'controllerAddress': instance.controllerAddress,
       'functionCode': instance.functionCode,
       'dataAddress': instance.dataAddress,

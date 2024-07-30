@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.88
+
+- Added `schema` and `splitEach` to `ModbusParameter` model
+
 ## 2.1.87
 
 - Added `args` into `Command` model
