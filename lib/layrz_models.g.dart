@@ -2564,7 +2564,8 @@ _$TriggerImpl _$$TriggerImplFromJson(Map<String, dynamic> json) =>
           .fromJson(json['geofenceKind'] as String?),
       formula: json['formula'] as String?,
       script: json['script'] as String?,
-      exactHour: json['exactHour'] as String?,
+      exactHour: const TimeOfDayOrNullConverter()
+          .fromJson(json['exactHour'] as String?),
       crontabFormat: json['crontabFormat'] as String?,
       weekdays: (json['weekdays'] as List<dynamic>?)
           ?.map((e) => const WeekdayConverter().fromJson(e as String))
@@ -2609,7 +2610,7 @@ Map<String, dynamic> _$$TriggerImplToJson(_$TriggerImpl instance) =>
           .toJson(instance.geofenceKind),
       'formula': instance.formula,
       'script': instance.script,
-      'exactHour': instance.exactHour,
+      'exactHour': const TimeOfDayOrNullConverter().toJson(instance.exactHour),
       'crontabFormat': instance.crontabFormat,
       'weekdays':
           instance.weekdays?.map(const WeekdayConverter().toJson).toList(),

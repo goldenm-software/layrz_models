@@ -317,7 +317,7 @@ class Trigger with _$Trigger {
     String? script,
 
     /// [exactHour] is the exact hour of the trigger. Only used when [kind] is [TriggerType.exactTime].
-    String? exactHour,
+    @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
 
     /// [crontabFormat] is the crontab format of the trigger. Only used when [kind] is [TriggerType.exactTime].
     /// The crontab format is a string that represents the exact time of the trigger.

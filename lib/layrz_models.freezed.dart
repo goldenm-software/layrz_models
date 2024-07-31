@@ -28548,7 +28548,8 @@ mixin _$Trigger {
   String? get script => throw _privateConstructorUsedError;
 
   /// [exactHour] is the exact hour of the trigger. Only used when [kind] is [TriggerType.exactTime].
-  String? get exactHour => throw _privateConstructorUsedError;
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? get exactHour => throw _privateConstructorUsedError;
 
   /// [crontabFormat] is the crontab format of the trigger. Only used when [kind] is [TriggerType.exactTime].
   /// The crontab format is a string that represents the exact time of the trigger.
@@ -28635,7 +28636,7 @@ abstract class $TriggerCopyWith<$Res> {
       TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
-      String? exactHour,
+      @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
       String? crontabFormat,
       @WeekdayConverter() List<Weekday>? weekdays,
       bool? isPlainCrontab,
@@ -28763,7 +28764,7 @@ class _$TriggerCopyWithImpl<$Res, $Val extends Trigger>
       exactHour: freezed == exactHour
           ? _value.exactHour
           : exactHour // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as TimeOfDay?,
       crontabFormat: freezed == crontabFormat
           ? _value.crontabFormat
           : crontabFormat // ignore: cast_nullable_to_non_nullable
@@ -28860,7 +28861,7 @@ abstract class _$$TriggerImplCopyWith<$Res> implements $TriggerCopyWith<$Res> {
       TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
-      String? exactHour,
+      @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
       String? crontabFormat,
       @WeekdayConverter() List<Weekday>? weekdays,
       bool? isPlainCrontab,
@@ -28987,7 +28988,7 @@ class __$$TriggerImplCopyWithImpl<$Res>
       exactHour: freezed == exactHour
           ? _value.exactHour
           : exactHour // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as TimeOfDay?,
       crontabFormat: freezed == crontabFormat
           ? _value.crontabFormat
           : crontabFormat // ignore: cast_nullable_to_non_nullable
@@ -29067,7 +29068,7 @@ class _$TriggerImpl implements _Trigger {
       @TriggerGeofenceDetectionModeOrNullConverter() this.geofenceKind,
       this.formula,
       this.script,
-      this.exactHour,
+      @TimeOfDayOrNullConverter() this.exactHour,
       this.crontabFormat,
       @WeekdayConverter() final List<Weekday>? weekdays,
       this.isPlainCrontab,
@@ -29238,7 +29239,8 @@ class _$TriggerImpl implements _Trigger {
 
   /// [exactHour] is the exact hour of the trigger. Only used when [kind] is [TriggerType.exactTime].
   @override
-  final String? exactHour;
+  @TimeOfDayOrNullConverter()
+  final TimeOfDay? exactHour;
 
   /// [crontabFormat] is the crontab format of the trigger. Only used when [kind] is [TriggerType.exactTime].
   /// The crontab format is a string that represents the exact time of the trigger.
@@ -29462,7 +29464,7 @@ abstract class _Trigger implements Trigger {
       final TriggerGeofenceDetectionMode? geofenceKind,
       final String? formula,
       final String? script,
-      final String? exactHour,
+      @TimeOfDayOrNullConverter() final TimeOfDay? exactHour,
       final String? crontabFormat,
       @WeekdayConverter() final List<Weekday>? weekdays,
       final bool? isPlainCrontab,
@@ -29552,7 +29554,8 @@ abstract class _Trigger implements Trigger {
   @override
 
   /// [exactHour] is the exact hour of the trigger. Only used when [kind] is [TriggerType.exactTime].
-  String? get exactHour;
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? get exactHour;
   @override
 
   /// [crontabFormat] is the crontab format of the trigger. Only used when [kind] is [TriggerType.exactTime].

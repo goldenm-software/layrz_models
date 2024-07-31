@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.1.89
+
+- Changed data type of `exactHour` in `Trigger` model from `String` to `TimeOfDay`
+
 ## 2.1.88
 
 - Added `schema` and `splitEach` to `ModbusParameter` model
