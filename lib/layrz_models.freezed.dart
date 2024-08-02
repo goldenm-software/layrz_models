@@ -31656,6 +31656,13 @@ mixin _$User {
   /// [tenvioLongitude] represents the Tenvio longitude.
   double? get tenvioLongitude => throw _privateConstructorUsedError;
 
+  /// [isSuspended] represents if the users account is suspended.
+  bool? get isSuspended => throw _privateConstructorUsedError;
+
+  /// [suspendedAt] represents the date when the account was suspended.
+  @TimestampOrNullConverter()
+  DateTime? get suspendedAt => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -31700,7 +31707,9 @@ abstract class $UserCopyWith<$Res> {
       String? tenvioAddress,
       String? tenvioPhone,
       double? tenvioLatitude,
-      double? tenvioLongitude});
+      double? tenvioLongitude,
+      bool? isSuspended,
+      @TimestampOrNullConverter() DateTime? suspendedAt});
 
   $TokenCopyWith<$Res>? get token;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
@@ -31756,6 +31765,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? tenvioPhone = freezed,
     Object? tenvioLatitude = freezed,
     Object? tenvioLongitude = freezed,
+    Object? isSuspended = freezed,
+    Object? suspendedAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -31894,6 +31905,14 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.tenvioLongitude
           : tenvioLongitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      isSuspended: freezed == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      suspendedAt: freezed == suspendedAt
+          ? _value.suspendedAt
+          : suspendedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 
@@ -32000,7 +32019,9 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String? tenvioAddress,
       String? tenvioPhone,
       double? tenvioLatitude,
-      double? tenvioLongitude});
+      double? tenvioLongitude,
+      bool? isSuspended,
+      @TimestampOrNullConverter() DateTime? suspendedAt});
 
   @override
   $TokenCopyWith<$Res>? get token;
@@ -32058,6 +32079,8 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? tenvioPhone = freezed,
     Object? tenvioLatitude = freezed,
     Object? tenvioLongitude = freezed,
+    Object? isSuspended = freezed,
+    Object? suspendedAt = freezed,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -32196,6 +32219,14 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.tenvioLongitude
           : tenvioLongitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      isSuspended: freezed == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      suspendedAt: freezed == suspendedAt
+          ? _value.suspendedAt
+          : suspendedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -32237,7 +32268,9 @@ class _$UserImpl implements _User {
       this.tenvioAddress,
       this.tenvioPhone,
       this.tenvioLatitude,
-      this.tenvioLongitude})
+      this.tenvioLongitude,
+      this.isSuspended,
+      @TimestampOrNullConverter() this.suspendedAt})
       : _referencesIds = referencesIds,
         _references = references,
         _access = access,
@@ -32508,9 +32541,18 @@ class _$UserImpl implements _User {
   @override
   final double? tenvioLongitude;
 
+  /// [isSuspended] represents if the users account is suspended.
+  @override
+  final bool? isSuspended;
+
+  /// [suspendedAt] represents the date when the account was suspended.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? suspendedAt;
+
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, isSuspended: $isSuspended, suspendedAt: $suspendedAt)';
   }
 
   @override
@@ -32576,7 +32618,11 @@ class _$UserImpl implements _User {
             (identical(other.tenvioLatitude, tenvioLatitude) ||
                 other.tenvioLatitude == tenvioLatitude) &&
             (identical(other.tenvioLongitude, tenvioLongitude) ||
-                other.tenvioLongitude == tenvioLongitude));
+                other.tenvioLongitude == tenvioLongitude) &&
+            (identical(other.isSuspended, isSuspended) ||
+                other.isSuspended == isSuspended) &&
+            (identical(other.suspendedAt, suspendedAt) ||
+                other.suspendedAt == suspendedAt));
   }
 
   @JsonKey(ignore: true)
@@ -32616,7 +32662,9 @@ class _$UserImpl implements _User {
         tenvioAddress,
         tenvioPhone,
         tenvioLatitude,
-        tenvioLongitude
+        tenvioLongitude,
+        isSuspended,
+        suspendedAt
       ]);
 
   @JsonKey(ignore: true)
@@ -32668,7 +32716,9 @@ abstract class _User implements User {
       final String? tenvioAddress,
       final String? tenvioPhone,
       final double? tenvioLatitude,
-      final double? tenvioLongitude}) = _$UserImpl;
+      final double? tenvioLongitude,
+      final bool? isSuspended,
+      @TimestampOrNullConverter() final DateTime? suspendedAt}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -32815,6 +32865,15 @@ abstract class _User implements User {
 
   /// [tenvioLongitude] represents the Tenvio longitude.
   double? get tenvioLongitude;
+  @override
+
+  /// [isSuspended] represents if the users account is suspended.
+  bool? get isSuspended;
+  @override
+
+  /// [suspendedAt] represents the date when the account was suspended.
+  @TimestampOrNullConverter()
+  DateTime? get suspendedAt;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>

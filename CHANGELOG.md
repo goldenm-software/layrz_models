@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.90
+- Added optional params `isSuspended` and `suspendedAt` to `User` model
+
 ## 2.1.89
 
 - Changed data type of `exactHour` in `Trigger` model from `String` to `TimeOfDay`
