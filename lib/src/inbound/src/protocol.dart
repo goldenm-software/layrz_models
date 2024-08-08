@@ -1,28 +1,6 @@
 part of '../inbound.dart';
 
 @freezed
-class RealtimeEndpoint with _$RealtimeEndpoint {
-  const factory RealtimeEndpoint({
-    String? host,
-    int? port,
-  }) = _RealtimeEndpoint;
-
-  factory RealtimeEndpoint.fromJson(Map<String, dynamic> json) => _$RealtimeEndpointFromJson(json);
-}
-
-@freezed
-class RealtimeVariantEndpoint with _$RealtimeVariantEndpoint {
-  const factory RealtimeVariantEndpoint({
-    String? dataTopic,
-    String? eventsTopic,
-    String? realtimeTopic,
-    String? commandTopic,
-  }) = _RealtimeVariantEndpoint;
-
-  factory RealtimeVariantEndpoint.fromJson(Map<String, dynamic> json) => _$RealtimeVariantEndpointFromJson(json);
-}
-
-@freezed
 class InboundProtocol with _$InboundProtocol {
   const factory InboundProtocol({
     /// The protocol ID
@@ -128,6 +106,97 @@ class InboundProtocol with _$InboundProtocol {
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);
+}
+
+@unfreezed
+class InboundProtocolInput with _$InboundProtocolInput {
+  factory InboundProtocolInput({
+    /// [id] ID of the protocol entity. This ID is unique.
+    String? id,
+
+    ///[name] Name of the protocol.
+    @Default('') String name,
+
+    /// [color] Indicates the color assigned to the protocol
+    @ColorConverter() @Default(kPrimaryColor) Color color,
+
+    /// [isEnabled] Boolean that indicates if the protocol is enabled.
+    @Default(true) bool isEnabled,
+
+    /// [categoriesIds] ID of all categories assigned
+    @Default([]) List<String> categoriesIds,
+
+    /// [operationMode] Indicates the operation mode of the protocol.
+    @OperationModeConverter() @Default(OperationMode.realtime) OperationMode operationMode,
+
+    /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
+    @Default(false) bool hasNativeCommands,
+
+    /// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
+    @Default(false) bool hasSmsCommands,
+
+    /// [hasCommandsResult] Boolean that indicates if the protocol has commands.
+    @Default(false) bool hasCommandsResult,
+
+    /// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
+    int? channelId,
+
+    /// [isFlespi] Boolean that indicates if the protocol is from Flespi.
+    @Default(false) bool isFlespi,
+
+    /// [flespiId] Flespi ID. Only used for Flespi protocols.
+    String? flespiId,
+
+    /// [hasAck] Boolean that indicates if the protocol has ACK support.
+    @Default(false) bool hasAck,
+
+    /// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
+    @Default('') String ackTopicFormat,
+
+    /// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
+    @Default(false) bool isImported,
+
+    /// [requiredFields] Required configuration fields.
+    @Default([]) List<CredentialFieldInput> requiredFields,
+
+    /// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
+    @Default(false) bool canFota,
+
+    /// [host] is the host of the server, means the IP or domain (or subdomain)
+    /// of the server to send or receive the information
+    String? host,
+
+    /// [port] is the port of the server, means the port
+    /// of the server to send or receive the information
+    /// 0 means in API and backend services "ignore this field"
+    int? port,
+
+    /// [mqttTopic] is the MQTT topic to send or receive the information
+    String? mqttTopic,
+
+    /// [dynamicIcon] is the icon of the protocol.
+    required AvatarInput dynamicIcon,
+
+    /// [cycleId] is the ID of the cycle to which the field belongs.
+    String? cycleId,
+
+    /// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
+    @Default(false) bool hasModbus,
+
+    /// [modbusPorts] is the list of Modbus ports that the protocol has.
+    @Default([]) List<String> modbusPorts,
+
+    /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+    @Default(false) bool requiresFlespiToken,
+
+    /// [flespiAcl] refers to the ACL for the token generation.
+    @Default([]) List<FlespiAclInput> flespiAcl,
+
+    /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+    WebhookStructureInput? webhookStructure,
+  }) = _InboundProtocolInput;
+
+  factory InboundProtocolInput.fromJson(Map<String, dynamic> json) => _$InboundProtocolInputFromJson(json);
 }
 
 enum OperationMode {

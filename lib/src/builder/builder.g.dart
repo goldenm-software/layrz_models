@@ -28,6 +28,29 @@ Map<String, dynamic> _$$InboundStructureImplToJson(
       'payload': instance.payload.map((e) => e.toJson()).toList(),
     };
 
+_$InboundStructureInputImpl _$$InboundStructureInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$InboundStructureInputImpl(
+      hasPosition: json['hasPosition'] as bool? ?? true,
+      position: InboundPositionStructureInput.fromJson(
+          json['position'] as Map<String, dynamic>),
+      hasPayload: json['hasPayload'] as bool? ?? false,
+      payload: (json['payload'] as List<dynamic>?)
+              ?.map((e) => InboundPayloadStructureInput.fromJson(
+                  e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$InboundStructureInputImplToJson(
+        _$InboundStructureInputImpl instance) =>
+    <String, dynamic>{
+      'hasPosition': instance.hasPosition,
+      'position': instance.position.toJson(),
+      'hasPayload': instance.hasPayload,
+      'payload': instance.payload.map((e) => e.toJson()).toList(),
+    };
+
 _$InboundPositionStructureImpl _$$InboundPositionStructureImplFromJson(
         Map<String, dynamic> json) =>
     _$InboundPositionStructureImpl(
@@ -52,6 +75,30 @@ Map<String, dynamic> _$$InboundPositionStructureImplToJson(
       'satellites': instance.satellites,
     };
 
+_$InboundPositionStructureInputImpl
+    _$$InboundPositionStructureInputImplFromJson(Map<String, dynamic> json) =>
+        _$InboundPositionStructureInputImpl(
+          latitude: json['latitude'] as bool? ?? true,
+          longitude: json['longitude'] as bool? ?? true,
+          speed: json['speed'] as bool? ?? true,
+          direction: json['direction'] as bool? ?? true,
+          altitude: json['altitude'] as bool? ?? true,
+          satellites: json['satellites'] as bool? ?? true,
+          hdop: json['hdop'] as bool? ?? true,
+        );
+
+Map<String, dynamic> _$$InboundPositionStructureInputImplToJson(
+        _$InboundPositionStructureInputImpl instance) =>
+    <String, dynamic>{
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+      'speed': instance.speed,
+      'direction': instance.direction,
+      'altitude': instance.altitude,
+      'satellites': instance.satellites,
+      'hdop': instance.hdop,
+    };
+
 _$InboundPayloadStructureImpl _$$InboundPayloadStructureImplFromJson(
         Map<String, dynamic> json) =>
     _$InboundPayloadStructureImpl(
@@ -62,6 +109,24 @@ _$InboundPayloadStructureImpl _$$InboundPayloadStructureImplFromJson(
 
 Map<String, dynamic> _$$InboundPayloadStructureImplToJson(
         _$InboundPayloadStructureImpl instance) =>
+    <String, dynamic>{
+      'field': instance.field,
+      'type':
+          const InboundPayloadStructureTypeConverter().toJson(instance.type),
+    };
+
+_$InboundPayloadStructureInputImpl _$$InboundPayloadStructureInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$InboundPayloadStructureInputImpl(
+      field: json['field'] as String? ?? '',
+      type: json['type'] == null
+          ? InboundPayloadStructureType.string
+          : const InboundPayloadStructureTypeConverter()
+              .fromJson(json['type'] as String),
+    );
+
+Map<String, dynamic> _$$InboundPayloadStructureInputImplToJson(
+        _$InboundPayloadStructureInputImpl instance) =>
     <String, dynamic>{
       'field': instance.field,
       'type':

@@ -14,371 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-RealtimeEndpoint _$RealtimeEndpointFromJson(Map<String, dynamic> json) {
-  return _RealtimeEndpoint.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RealtimeEndpoint {
-  String? get host => throw _privateConstructorUsedError;
-  int? get port => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $RealtimeEndpointCopyWith<RealtimeEndpoint> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RealtimeEndpointCopyWith<$Res> {
-  factory $RealtimeEndpointCopyWith(
-          RealtimeEndpoint value, $Res Function(RealtimeEndpoint) then) =
-      _$RealtimeEndpointCopyWithImpl<$Res, RealtimeEndpoint>;
-  @useResult
-  $Res call({String? host, int? port});
-}
-
-/// @nodoc
-class _$RealtimeEndpointCopyWithImpl<$Res, $Val extends RealtimeEndpoint>
-    implements $RealtimeEndpointCopyWith<$Res> {
-  _$RealtimeEndpointCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? host = freezed,
-    Object? port = freezed,
-  }) {
-    return _then(_value.copyWith(
-      host: freezed == host
-          ? _value.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      port: freezed == port
-          ? _value.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$RealtimeEndpointImplCopyWith<$Res>
-    implements $RealtimeEndpointCopyWith<$Res> {
-  factory _$$RealtimeEndpointImplCopyWith(_$RealtimeEndpointImpl value,
-          $Res Function(_$RealtimeEndpointImpl) then) =
-      __$$RealtimeEndpointImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? host, int? port});
-}
-
-/// @nodoc
-class __$$RealtimeEndpointImplCopyWithImpl<$Res>
-    extends _$RealtimeEndpointCopyWithImpl<$Res, _$RealtimeEndpointImpl>
-    implements _$$RealtimeEndpointImplCopyWith<$Res> {
-  __$$RealtimeEndpointImplCopyWithImpl(_$RealtimeEndpointImpl _value,
-      $Res Function(_$RealtimeEndpointImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? host = freezed,
-    Object? port = freezed,
-  }) {
-    return _then(_$RealtimeEndpointImpl(
-      host: freezed == host
-          ? _value.host
-          : host // ignore: cast_nullable_to_non_nullable
-              as String?,
-      port: freezed == port
-          ? _value.port
-          : port // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$RealtimeEndpointImpl implements _RealtimeEndpoint {
-  const _$RealtimeEndpointImpl({this.host, this.port});
-
-  factory _$RealtimeEndpointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RealtimeEndpointImplFromJson(json);
-
-  @override
-  final String? host;
-  @override
-  final int? port;
-
-  @override
-  String toString() {
-    return 'RealtimeEndpoint(host: $host, port: $port)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RealtimeEndpointImpl &&
-            (identical(other.host, host) || other.host == host) &&
-            (identical(other.port, port) || other.port == port));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, host, port);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RealtimeEndpointImplCopyWith<_$RealtimeEndpointImpl> get copyWith =>
-      __$$RealtimeEndpointImplCopyWithImpl<_$RealtimeEndpointImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RealtimeEndpointImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RealtimeEndpoint implements RealtimeEndpoint {
-  const factory _RealtimeEndpoint({final String? host, final int? port}) =
-      _$RealtimeEndpointImpl;
-
-  factory _RealtimeEndpoint.fromJson(Map<String, dynamic> json) =
-      _$RealtimeEndpointImpl.fromJson;
-
-  @override
-  String? get host;
-  @override
-  int? get port;
-  @override
-  @JsonKey(ignore: true)
-  _$$RealtimeEndpointImplCopyWith<_$RealtimeEndpointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-RealtimeVariantEndpoint _$RealtimeVariantEndpointFromJson(
-    Map<String, dynamic> json) {
-  return _RealtimeVariantEndpoint.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RealtimeVariantEndpoint {
-  String? get dataTopic => throw _privateConstructorUsedError;
-  String? get eventsTopic => throw _privateConstructorUsedError;
-  String? get realtimeTopic => throw _privateConstructorUsedError;
-  String? get commandTopic => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $RealtimeVariantEndpointCopyWith<RealtimeVariantEndpoint> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RealtimeVariantEndpointCopyWith<$Res> {
-  factory $RealtimeVariantEndpointCopyWith(RealtimeVariantEndpoint value,
-          $Res Function(RealtimeVariantEndpoint) then) =
-      _$RealtimeVariantEndpointCopyWithImpl<$Res, RealtimeVariantEndpoint>;
-  @useResult
-  $Res call(
-      {String? dataTopic,
-      String? eventsTopic,
-      String? realtimeTopic,
-      String? commandTopic});
-}
-
-/// @nodoc
-class _$RealtimeVariantEndpointCopyWithImpl<$Res,
-        $Val extends RealtimeVariantEndpoint>
-    implements $RealtimeVariantEndpointCopyWith<$Res> {
-  _$RealtimeVariantEndpointCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? dataTopic = freezed,
-    Object? eventsTopic = freezed,
-    Object? realtimeTopic = freezed,
-    Object? commandTopic = freezed,
-  }) {
-    return _then(_value.copyWith(
-      dataTopic: freezed == dataTopic
-          ? _value.dataTopic
-          : dataTopic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      eventsTopic: freezed == eventsTopic
-          ? _value.eventsTopic
-          : eventsTopic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      realtimeTopic: freezed == realtimeTopic
-          ? _value.realtimeTopic
-          : realtimeTopic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      commandTopic: freezed == commandTopic
-          ? _value.commandTopic
-          : commandTopic // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$RealtimeVariantEndpointImplCopyWith<$Res>
-    implements $RealtimeVariantEndpointCopyWith<$Res> {
-  factory _$$RealtimeVariantEndpointImplCopyWith(
-          _$RealtimeVariantEndpointImpl value,
-          $Res Function(_$RealtimeVariantEndpointImpl) then) =
-      __$$RealtimeVariantEndpointImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? dataTopic,
-      String? eventsTopic,
-      String? realtimeTopic,
-      String? commandTopic});
-}
-
-/// @nodoc
-class __$$RealtimeVariantEndpointImplCopyWithImpl<$Res>
-    extends _$RealtimeVariantEndpointCopyWithImpl<$Res,
-        _$RealtimeVariantEndpointImpl>
-    implements _$$RealtimeVariantEndpointImplCopyWith<$Res> {
-  __$$RealtimeVariantEndpointImplCopyWithImpl(
-      _$RealtimeVariantEndpointImpl _value,
-      $Res Function(_$RealtimeVariantEndpointImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? dataTopic = freezed,
-    Object? eventsTopic = freezed,
-    Object? realtimeTopic = freezed,
-    Object? commandTopic = freezed,
-  }) {
-    return _then(_$RealtimeVariantEndpointImpl(
-      dataTopic: freezed == dataTopic
-          ? _value.dataTopic
-          : dataTopic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      eventsTopic: freezed == eventsTopic
-          ? _value.eventsTopic
-          : eventsTopic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      realtimeTopic: freezed == realtimeTopic
-          ? _value.realtimeTopic
-          : realtimeTopic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      commandTopic: freezed == commandTopic
-          ? _value.commandTopic
-          : commandTopic // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$RealtimeVariantEndpointImpl implements _RealtimeVariantEndpoint {
-  const _$RealtimeVariantEndpointImpl(
-      {this.dataTopic,
-      this.eventsTopic,
-      this.realtimeTopic,
-      this.commandTopic});
-
-  factory _$RealtimeVariantEndpointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RealtimeVariantEndpointImplFromJson(json);
-
-  @override
-  final String? dataTopic;
-  @override
-  final String? eventsTopic;
-  @override
-  final String? realtimeTopic;
-  @override
-  final String? commandTopic;
-
-  @override
-  String toString() {
-    return 'RealtimeVariantEndpoint(dataTopic: $dataTopic, eventsTopic: $eventsTopic, realtimeTopic: $realtimeTopic, commandTopic: $commandTopic)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RealtimeVariantEndpointImpl &&
-            (identical(other.dataTopic, dataTopic) ||
-                other.dataTopic == dataTopic) &&
-            (identical(other.eventsTopic, eventsTopic) ||
-                other.eventsTopic == eventsTopic) &&
-            (identical(other.realtimeTopic, realtimeTopic) ||
-                other.realtimeTopic == realtimeTopic) &&
-            (identical(other.commandTopic, commandTopic) ||
-                other.commandTopic == commandTopic));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, dataTopic, eventsTopic, realtimeTopic, commandTopic);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RealtimeVariantEndpointImplCopyWith<_$RealtimeVariantEndpointImpl>
-      get copyWith => __$$RealtimeVariantEndpointImplCopyWithImpl<
-          _$RealtimeVariantEndpointImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$RealtimeVariantEndpointImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _RealtimeVariantEndpoint implements RealtimeVariantEndpoint {
-  const factory _RealtimeVariantEndpoint(
-      {final String? dataTopic,
-      final String? eventsTopic,
-      final String? realtimeTopic,
-      final String? commandTopic}) = _$RealtimeVariantEndpointImpl;
-
-  factory _RealtimeVariantEndpoint.fromJson(Map<String, dynamic> json) =
-      _$RealtimeVariantEndpointImpl.fromJson;
-
-  @override
-  String? get dataTopic;
-  @override
-  String? get eventsTopic;
-  @override
-  String? get realtimeTopic;
-  @override
-  String? get commandTopic;
-  @override
-  @JsonKey(ignore: true)
-  _$$RealtimeVariantEndpointImplCopyWith<_$RealtimeVariantEndpointImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
 InboundProtocol _$InboundProtocolFromJson(Map<String, dynamic> json) {
   return _InboundProtocol.fromJson(json);
 }
@@ -1465,6 +1100,1030 @@ abstract class _InboundProtocol implements InboundProtocol {
       throw _privateConstructorUsedError;
 }
 
+InboundProtocolInput _$InboundProtocolInputFromJson(Map<String, dynamic> json) {
+  return _InboundProtocolInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$InboundProtocolInput {
+  /// [id] ID of the protocol entity. This ID is unique.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] ID of the protocol entity. This ID is unique.
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  ///[name] Name of the protocol.
+  String get name => throw _privateConstructorUsedError;
+
+  ///[name] Name of the protocol.
+  set name(String value) => throw _privateConstructorUsedError;
+
+  /// [color] Indicates the color assigned to the protocol
+  @ColorConverter()
+  Color get color => throw _privateConstructorUsedError;
+
+  /// [color] Indicates the color assigned to the protocol
+  @ColorConverter()
+  set color(Color value) => throw _privateConstructorUsedError;
+
+  /// [isEnabled] Boolean that indicates if the protocol is enabled.
+  bool get isEnabled => throw _privateConstructorUsedError;
+
+  /// [isEnabled] Boolean that indicates if the protocol is enabled.
+  set isEnabled(bool value) => throw _privateConstructorUsedError;
+
+  /// [categoriesIds] ID of all categories assigned
+  List<String> get categoriesIds => throw _privateConstructorUsedError;
+
+  /// [categoriesIds] ID of all categories assigned
+  set categoriesIds(List<String> value) => throw _privateConstructorUsedError;
+
+  /// [operationMode] Indicates the operation mode of the protocol.
+  @OperationModeConverter()
+  OperationMode get operationMode => throw _privateConstructorUsedError;
+
+  /// [operationMode] Indicates the operation mode of the protocol.
+  @OperationModeConverter()
+  set operationMode(OperationMode value) => throw _privateConstructorUsedError;
+
+  /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
+  bool get hasNativeCommands => throw _privateConstructorUsedError;
+
+  /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
+  set hasNativeCommands(bool value) => throw _privateConstructorUsedError;
+
+  /// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
+  bool get hasSmsCommands => throw _privateConstructorUsedError;
+
+  /// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
+  set hasSmsCommands(bool value) => throw _privateConstructorUsedError;
+
+  /// [hasCommandsResult] Boolean that indicates if the protocol has commands.
+  bool get hasCommandsResult => throw _privateConstructorUsedError;
+
+  /// [hasCommandsResult] Boolean that indicates if the protocol has commands.
+  set hasCommandsResult(bool value) => throw _privateConstructorUsedError;
+
+  /// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
+  int? get channelId => throw _privateConstructorUsedError;
+
+  /// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
+  set channelId(int? value) => throw _privateConstructorUsedError;
+
+  /// [isFlespi] Boolean that indicates if the protocol is from Flespi.
+  bool get isFlespi => throw _privateConstructorUsedError;
+
+  /// [isFlespi] Boolean that indicates if the protocol is from Flespi.
+  set isFlespi(bool value) => throw _privateConstructorUsedError;
+
+  /// [flespiId] Flespi ID. Only used for Flespi protocols.
+  String? get flespiId => throw _privateConstructorUsedError;
+
+  /// [flespiId] Flespi ID. Only used for Flespi protocols.
+  set flespiId(String? value) => throw _privateConstructorUsedError;
+
+  /// [hasAck] Boolean that indicates if the protocol has ACK support.
+  bool get hasAck => throw _privateConstructorUsedError;
+
+  /// [hasAck] Boolean that indicates if the protocol has ACK support.
+  set hasAck(bool value) => throw _privateConstructorUsedError;
+
+  /// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
+  String get ackTopicFormat => throw _privateConstructorUsedError;
+
+  /// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
+  set ackTopicFormat(String value) => throw _privateConstructorUsedError;
+
+  /// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
+  bool get isImported => throw _privateConstructorUsedError;
+
+  /// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
+  set isImported(bool value) => throw _privateConstructorUsedError;
+
+  /// [requiredFields] Required configuration fields.
+  List<CredentialFieldInput> get requiredFields =>
+      throw _privateConstructorUsedError;
+
+  /// [requiredFields] Required configuration fields.
+  set requiredFields(List<CredentialFieldInput> value) =>
+      throw _privateConstructorUsedError;
+
+  /// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
+  bool get canFota => throw _privateConstructorUsedError;
+
+  /// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
+  set canFota(bool value) => throw _privateConstructorUsedError;
+
+  /// [host] is the host of the server, means the IP or domain (or subdomain)
+  /// of the server to send or receive the information
+  String? get host => throw _privateConstructorUsedError;
+
+  /// [host] is the host of the server, means the IP or domain (or subdomain)
+  /// of the server to send or receive the information
+  set host(String? value) => throw _privateConstructorUsedError;
+
+  /// [port] is the port of the server, means the port
+  /// of the server to send or receive the information
+  /// 0 means in API and backend services "ignore this field"
+  int? get port => throw _privateConstructorUsedError;
+
+  /// [port] is the port of the server, means the port
+  /// of the server to send or receive the information
+  /// 0 means in API and backend services "ignore this field"
+  set port(int? value) => throw _privateConstructorUsedError;
+
+  /// [mqttTopic] is the MQTT topic to send or receive the information
+  String? get mqttTopic => throw _privateConstructorUsedError;
+
+  /// [mqttTopic] is the MQTT topic to send or receive the information
+  set mqttTopic(String? value) => throw _privateConstructorUsedError;
+
+  /// [dynamicIcon] is the icon of the protocol.
+  AvatarInput get dynamicIcon => throw _privateConstructorUsedError;
+
+  /// [dynamicIcon] is the icon of the protocol.
+  set dynamicIcon(AvatarInput value) => throw _privateConstructorUsedError;
+
+  /// [cycleId] is the ID of the cycle to which the field belongs.
+  String? get cycleId => throw _privateConstructorUsedError;
+
+  /// [cycleId] is the ID of the cycle to which the field belongs.
+  set cycleId(String? value) => throw _privateConstructorUsedError;
+
+  /// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
+  bool get hasModbus => throw _privateConstructorUsedError;
+
+  /// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
+  set hasModbus(bool value) => throw _privateConstructorUsedError;
+
+  /// [modbusPorts] is the list of Modbus ports that the protocol has.
+  List<String> get modbusPorts => throw _privateConstructorUsedError;
+
+  /// [modbusPorts] is the list of Modbus ports that the protocol has.
+  set modbusPorts(List<String> value) => throw _privateConstructorUsedError;
+
+  /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+  bool get requiresFlespiToken => throw _privateConstructorUsedError;
+
+  /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+  set requiresFlespiToken(bool value) => throw _privateConstructorUsedError;
+
+  /// [flespiAcl] refers to the ACL for the token generation.
+  List<FlespiAclInput> get flespiAcl => throw _privateConstructorUsedError;
+
+  /// [flespiAcl] refers to the ACL for the token generation.
+  set flespiAcl(List<FlespiAclInput> value) =>
+      throw _privateConstructorUsedError;
+
+  /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+  WebhookStructureInput? get webhookStructure =>
+      throw _privateConstructorUsedError;
+
+  /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+  set webhookStructure(WebhookStructureInput? value) =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InboundProtocolInputCopyWith<InboundProtocolInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InboundProtocolInputCopyWith<$Res> {
+  factory $InboundProtocolInputCopyWith(InboundProtocolInput value,
+          $Res Function(InboundProtocolInput) then) =
+      _$InboundProtocolInputCopyWithImpl<$Res, InboundProtocolInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      @ColorConverter() Color color,
+      bool isEnabled,
+      List<String> categoriesIds,
+      @OperationModeConverter() OperationMode operationMode,
+      bool hasNativeCommands,
+      bool hasSmsCommands,
+      bool hasCommandsResult,
+      int? channelId,
+      bool isFlespi,
+      String? flespiId,
+      bool hasAck,
+      String ackTopicFormat,
+      bool isImported,
+      List<CredentialFieldInput> requiredFields,
+      bool canFota,
+      String? host,
+      int? port,
+      String? mqttTopic,
+      AvatarInput dynamicIcon,
+      String? cycleId,
+      bool hasModbus,
+      List<String> modbusPorts,
+      bool requiresFlespiToken,
+      List<FlespiAclInput> flespiAcl,
+      WebhookStructureInput? webhookStructure});
+
+  $AvatarInputCopyWith<$Res> get dynamicIcon;
+  $WebhookStructureInputCopyWith<$Res>? get webhookStructure;
+}
+
+/// @nodoc
+class _$InboundProtocolInputCopyWithImpl<$Res,
+        $Val extends InboundProtocolInput>
+    implements $InboundProtocolInputCopyWith<$Res> {
+  _$InboundProtocolInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? color = null,
+    Object? isEnabled = null,
+    Object? categoriesIds = null,
+    Object? operationMode = null,
+    Object? hasNativeCommands = null,
+    Object? hasSmsCommands = null,
+    Object? hasCommandsResult = null,
+    Object? channelId = freezed,
+    Object? isFlespi = null,
+    Object? flespiId = freezed,
+    Object? hasAck = null,
+    Object? ackTopicFormat = null,
+    Object? isImported = null,
+    Object? requiredFields = null,
+    Object? canFota = null,
+    Object? host = freezed,
+    Object? port = freezed,
+    Object? mqttTopic = freezed,
+    Object? dynamicIcon = null,
+    Object? cycleId = freezed,
+    Object? hasModbus = null,
+    Object? modbusPorts = null,
+    Object? requiresFlespiToken = null,
+    Object? flespiAcl = null,
+    Object? webhookStructure = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: null == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
+      isEnabled: null == isEnabled
+          ? _value.isEnabled
+          : isEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      categoriesIds: null == categoriesIds
+          ? _value.categoriesIds
+          : categoriesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      operationMode: null == operationMode
+          ? _value.operationMode
+          : operationMode // ignore: cast_nullable_to_non_nullable
+              as OperationMode,
+      hasNativeCommands: null == hasNativeCommands
+          ? _value.hasNativeCommands
+          : hasNativeCommands // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasSmsCommands: null == hasSmsCommands
+          ? _value.hasSmsCommands
+          : hasSmsCommands // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasCommandsResult: null == hasCommandsResult
+          ? _value.hasCommandsResult
+          : hasCommandsResult // ignore: cast_nullable_to_non_nullable
+              as bool,
+      channelId: freezed == channelId
+          ? _value.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isFlespi: null == isFlespi
+          ? _value.isFlespi
+          : isFlespi // ignore: cast_nullable_to_non_nullable
+              as bool,
+      flespiId: freezed == flespiId
+          ? _value.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hasAck: null == hasAck
+          ? _value.hasAck
+          : hasAck // ignore: cast_nullable_to_non_nullable
+              as bool,
+      ackTopicFormat: null == ackTopicFormat
+          ? _value.ackTopicFormat
+          : ackTopicFormat // ignore: cast_nullable_to_non_nullable
+              as String,
+      isImported: null == isImported
+          ? _value.isImported
+          : isImported // ignore: cast_nullable_to_non_nullable
+              as bool,
+      requiredFields: null == requiredFields
+          ? _value.requiredFields
+          : requiredFields // ignore: cast_nullable_to_non_nullable
+              as List<CredentialFieldInput>,
+      canFota: null == canFota
+          ? _value.canFota
+          : canFota // ignore: cast_nullable_to_non_nullable
+              as bool,
+      host: freezed == host
+          ? _value.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      port: freezed == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int?,
+      mqttTopic: freezed == mqttTopic
+          ? _value.mqttTopic
+          : mqttTopic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dynamicIcon: null == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as AvatarInput,
+      cycleId: freezed == cycleId
+          ? _value.cycleId
+          : cycleId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hasModbus: null == hasModbus
+          ? _value.hasModbus
+          : hasModbus // ignore: cast_nullable_to_non_nullable
+              as bool,
+      modbusPorts: null == modbusPorts
+          ? _value.modbusPorts
+          : modbusPorts // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      requiresFlespiToken: null == requiresFlespiToken
+          ? _value.requiresFlespiToken
+          : requiresFlespiToken // ignore: cast_nullable_to_non_nullable
+              as bool,
+      flespiAcl: null == flespiAcl
+          ? _value.flespiAcl
+          : flespiAcl // ignore: cast_nullable_to_non_nullable
+              as List<FlespiAclInput>,
+      webhookStructure: freezed == webhookStructure
+          ? _value.webhookStructure
+          : webhookStructure // ignore: cast_nullable_to_non_nullable
+              as WebhookStructureInput?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AvatarInputCopyWith<$Res> get dynamicIcon {
+    return $AvatarInputCopyWith<$Res>(_value.dynamicIcon, (value) {
+      return _then(_value.copyWith(dynamicIcon: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $WebhookStructureInputCopyWith<$Res>? get webhookStructure {
+    if (_value.webhookStructure == null) {
+      return null;
+    }
+
+    return $WebhookStructureInputCopyWith<$Res>(_value.webhookStructure!,
+        (value) {
+      return _then(_value.copyWith(webhookStructure: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$InboundProtocolInputImplCopyWith<$Res>
+    implements $InboundProtocolInputCopyWith<$Res> {
+  factory _$$InboundProtocolInputImplCopyWith(_$InboundProtocolInputImpl value,
+          $Res Function(_$InboundProtocolInputImpl) then) =
+      __$$InboundProtocolInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      @ColorConverter() Color color,
+      bool isEnabled,
+      List<String> categoriesIds,
+      @OperationModeConverter() OperationMode operationMode,
+      bool hasNativeCommands,
+      bool hasSmsCommands,
+      bool hasCommandsResult,
+      int? channelId,
+      bool isFlespi,
+      String? flespiId,
+      bool hasAck,
+      String ackTopicFormat,
+      bool isImported,
+      List<CredentialFieldInput> requiredFields,
+      bool canFota,
+      String? host,
+      int? port,
+      String? mqttTopic,
+      AvatarInput dynamicIcon,
+      String? cycleId,
+      bool hasModbus,
+      List<String> modbusPorts,
+      bool requiresFlespiToken,
+      List<FlespiAclInput> flespiAcl,
+      WebhookStructureInput? webhookStructure});
+
+  @override
+  $AvatarInputCopyWith<$Res> get dynamicIcon;
+  @override
+  $WebhookStructureInputCopyWith<$Res>? get webhookStructure;
+}
+
+/// @nodoc
+class __$$InboundProtocolInputImplCopyWithImpl<$Res>
+    extends _$InboundProtocolInputCopyWithImpl<$Res, _$InboundProtocolInputImpl>
+    implements _$$InboundProtocolInputImplCopyWith<$Res> {
+  __$$InboundProtocolInputImplCopyWithImpl(_$InboundProtocolInputImpl _value,
+      $Res Function(_$InboundProtocolInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? color = null,
+    Object? isEnabled = null,
+    Object? categoriesIds = null,
+    Object? operationMode = null,
+    Object? hasNativeCommands = null,
+    Object? hasSmsCommands = null,
+    Object? hasCommandsResult = null,
+    Object? channelId = freezed,
+    Object? isFlespi = null,
+    Object? flespiId = freezed,
+    Object? hasAck = null,
+    Object? ackTopicFormat = null,
+    Object? isImported = null,
+    Object? requiredFields = null,
+    Object? canFota = null,
+    Object? host = freezed,
+    Object? port = freezed,
+    Object? mqttTopic = freezed,
+    Object? dynamicIcon = null,
+    Object? cycleId = freezed,
+    Object? hasModbus = null,
+    Object? modbusPorts = null,
+    Object? requiresFlespiToken = null,
+    Object? flespiAcl = null,
+    Object? webhookStructure = freezed,
+  }) {
+    return _then(_$InboundProtocolInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: null == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
+      isEnabled: null == isEnabled
+          ? _value.isEnabled
+          : isEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      categoriesIds: null == categoriesIds
+          ? _value.categoriesIds
+          : categoriesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      operationMode: null == operationMode
+          ? _value.operationMode
+          : operationMode // ignore: cast_nullable_to_non_nullable
+              as OperationMode,
+      hasNativeCommands: null == hasNativeCommands
+          ? _value.hasNativeCommands
+          : hasNativeCommands // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasSmsCommands: null == hasSmsCommands
+          ? _value.hasSmsCommands
+          : hasSmsCommands // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasCommandsResult: null == hasCommandsResult
+          ? _value.hasCommandsResult
+          : hasCommandsResult // ignore: cast_nullable_to_non_nullable
+              as bool,
+      channelId: freezed == channelId
+          ? _value.channelId
+          : channelId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      isFlespi: null == isFlespi
+          ? _value.isFlespi
+          : isFlespi // ignore: cast_nullable_to_non_nullable
+              as bool,
+      flespiId: freezed == flespiId
+          ? _value.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hasAck: null == hasAck
+          ? _value.hasAck
+          : hasAck // ignore: cast_nullable_to_non_nullable
+              as bool,
+      ackTopicFormat: null == ackTopicFormat
+          ? _value.ackTopicFormat
+          : ackTopicFormat // ignore: cast_nullable_to_non_nullable
+              as String,
+      isImported: null == isImported
+          ? _value.isImported
+          : isImported // ignore: cast_nullable_to_non_nullable
+              as bool,
+      requiredFields: null == requiredFields
+          ? _value.requiredFields
+          : requiredFields // ignore: cast_nullable_to_non_nullable
+              as List<CredentialFieldInput>,
+      canFota: null == canFota
+          ? _value.canFota
+          : canFota // ignore: cast_nullable_to_non_nullable
+              as bool,
+      host: freezed == host
+          ? _value.host
+          : host // ignore: cast_nullable_to_non_nullable
+              as String?,
+      port: freezed == port
+          ? _value.port
+          : port // ignore: cast_nullable_to_non_nullable
+              as int?,
+      mqttTopic: freezed == mqttTopic
+          ? _value.mqttTopic
+          : mqttTopic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dynamicIcon: null == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as AvatarInput,
+      cycleId: freezed == cycleId
+          ? _value.cycleId
+          : cycleId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hasModbus: null == hasModbus
+          ? _value.hasModbus
+          : hasModbus // ignore: cast_nullable_to_non_nullable
+              as bool,
+      modbusPorts: null == modbusPorts
+          ? _value.modbusPorts
+          : modbusPorts // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      requiresFlespiToken: null == requiresFlespiToken
+          ? _value.requiresFlespiToken
+          : requiresFlespiToken // ignore: cast_nullable_to_non_nullable
+              as bool,
+      flespiAcl: null == flespiAcl
+          ? _value.flespiAcl
+          : flespiAcl // ignore: cast_nullable_to_non_nullable
+              as List<FlespiAclInput>,
+      webhookStructure: freezed == webhookStructure
+          ? _value.webhookStructure
+          : webhookStructure // ignore: cast_nullable_to_non_nullable
+              as WebhookStructureInput?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$InboundProtocolInputImpl implements _InboundProtocolInput {
+  _$InboundProtocolInputImpl(
+      {this.id,
+      this.name = '',
+      @ColorConverter() this.color = kPrimaryColor,
+      this.isEnabled = true,
+      this.categoriesIds = const [],
+      @OperationModeConverter() this.operationMode = OperationMode.realtime,
+      this.hasNativeCommands = false,
+      this.hasSmsCommands = false,
+      this.hasCommandsResult = false,
+      this.channelId,
+      this.isFlespi = false,
+      this.flespiId,
+      this.hasAck = false,
+      this.ackTopicFormat = '',
+      this.isImported = false,
+      this.requiredFields = const [],
+      this.canFota = false,
+      this.host,
+      this.port,
+      this.mqttTopic,
+      required this.dynamicIcon,
+      this.cycleId,
+      this.hasModbus = false,
+      this.modbusPorts = const [],
+      this.requiresFlespiToken = false,
+      this.flespiAcl = const [],
+      this.webhookStructure});
+
+  factory _$InboundProtocolInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InboundProtocolInputImplFromJson(json);
+
+  /// [id] ID of the protocol entity. This ID is unique.
+  @override
+  String? id;
+
+  ///[name] Name of the protocol.
+  @override
+  @JsonKey()
+  String name;
+
+  /// [color] Indicates the color assigned to the protocol
+  @override
+  @JsonKey()
+  @ColorConverter()
+  Color color;
+
+  /// [isEnabled] Boolean that indicates if the protocol is enabled.
+  @override
+  @JsonKey()
+  bool isEnabled;
+
+  /// [categoriesIds] ID of all categories assigned
+  @override
+  @JsonKey()
+  List<String> categoriesIds;
+
+  /// [operationMode] Indicates the operation mode of the protocol.
+  @override
+  @JsonKey()
+  @OperationModeConverter()
+  OperationMode operationMode;
+
+  /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
+  @override
+  @JsonKey()
+  bool hasNativeCommands;
+
+  /// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
+  @override
+  @JsonKey()
+  bool hasSmsCommands;
+
+  /// [hasCommandsResult] Boolean that indicates if the protocol has commands.
+  @override
+  @JsonKey()
+  bool hasCommandsResult;
+
+  /// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
+  @override
+  int? channelId;
+
+  /// [isFlespi] Boolean that indicates if the protocol is from Flespi.
+  @override
+  @JsonKey()
+  bool isFlespi;
+
+  /// [flespiId] Flespi ID. Only used for Flespi protocols.
+  @override
+  String? flespiId;
+
+  /// [hasAck] Boolean that indicates if the protocol has ACK support.
+  @override
+  @JsonKey()
+  bool hasAck;
+
+  /// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
+  @override
+  @JsonKey()
+  String ackTopicFormat;
+
+  /// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
+  @override
+  @JsonKey()
+  bool isImported;
+
+  /// [requiredFields] Required configuration fields.
+  @override
+  @JsonKey()
+  List<CredentialFieldInput> requiredFields;
+
+  /// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
+  @override
+  @JsonKey()
+  bool canFota;
+
+  /// [host] is the host of the server, means the IP or domain (or subdomain)
+  /// of the server to send or receive the information
+  @override
+  String? host;
+
+  /// [port] is the port of the server, means the port
+  /// of the server to send or receive the information
+  /// 0 means in API and backend services "ignore this field"
+  @override
+  int? port;
+
+  /// [mqttTopic] is the MQTT topic to send or receive the information
+  @override
+  String? mqttTopic;
+
+  /// [dynamicIcon] is the icon of the protocol.
+  @override
+  AvatarInput dynamicIcon;
+
+  /// [cycleId] is the ID of the cycle to which the field belongs.
+  @override
+  String? cycleId;
+
+  /// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
+  @override
+  @JsonKey()
+  bool hasModbus;
+
+  /// [modbusPorts] is the list of Modbus ports that the protocol has.
+  @override
+  @JsonKey()
+  List<String> modbusPorts;
+
+  /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+  @override
+  @JsonKey()
+  bool requiresFlespiToken;
+
+  /// [flespiAcl] refers to the ACL for the token generation.
+  @override
+  @JsonKey()
+  List<FlespiAclInput> flespiAcl;
+
+  /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+  @override
+  WebhookStructureInput? webhookStructure;
+
+  @override
+  String toString() {
+    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InboundProtocolInputImplCopyWith<_$InboundProtocolInputImpl>
+      get copyWith =>
+          __$$InboundProtocolInputImplCopyWithImpl<_$InboundProtocolInputImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InboundProtocolInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _InboundProtocolInput implements InboundProtocolInput {
+  factory _InboundProtocolInput(
+      {String? id,
+      String name,
+      @ColorConverter() Color color,
+      bool isEnabled,
+      List<String> categoriesIds,
+      @OperationModeConverter() OperationMode operationMode,
+      bool hasNativeCommands,
+      bool hasSmsCommands,
+      bool hasCommandsResult,
+      int? channelId,
+      bool isFlespi,
+      String? flespiId,
+      bool hasAck,
+      String ackTopicFormat,
+      bool isImported,
+      List<CredentialFieldInput> requiredFields,
+      bool canFota,
+      String? host,
+      int? port,
+      String? mqttTopic,
+      required AvatarInput dynamicIcon,
+      String? cycleId,
+      bool hasModbus,
+      List<String> modbusPorts,
+      bool requiresFlespiToken,
+      List<FlespiAclInput> flespiAcl,
+      WebhookStructureInput? webhookStructure}) = _$InboundProtocolInputImpl;
+
+  factory _InboundProtocolInput.fromJson(Map<String, dynamic> json) =
+      _$InboundProtocolInputImpl.fromJson;
+
+  @override
+
+  /// [id] ID of the protocol entity. This ID is unique.
+  String? get id;
+
+  /// [id] ID of the protocol entity. This ID is unique.
+  set id(String? value);
+  @override
+
+  ///[name] Name of the protocol.
+  String get name;
+
+  ///[name] Name of the protocol.
+  set name(String value);
+  @override
+
+  /// [color] Indicates the color assigned to the protocol
+  @ColorConverter()
+  Color get color;
+
+  /// [color] Indicates the color assigned to the protocol
+  @ColorConverter()
+  set color(Color value);
+  @override
+
+  /// [isEnabled] Boolean that indicates if the protocol is enabled.
+  bool get isEnabled;
+
+  /// [isEnabled] Boolean that indicates if the protocol is enabled.
+  set isEnabled(bool value);
+  @override
+
+  /// [categoriesIds] ID of all categories assigned
+  List<String> get categoriesIds;
+
+  /// [categoriesIds] ID of all categories assigned
+  set categoriesIds(List<String> value);
+  @override
+
+  /// [operationMode] Indicates the operation mode of the protocol.
+  @OperationModeConverter()
+  OperationMode get operationMode;
+
+  /// [operationMode] Indicates the operation mode of the protocol.
+  @OperationModeConverter()
+  set operationMode(OperationMode value);
+  @override
+
+  /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
+  bool get hasNativeCommands;
+
+  /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
+  set hasNativeCommands(bool value);
+  @override
+
+  /// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
+  bool get hasSmsCommands;
+
+  /// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
+  set hasSmsCommands(bool value);
+  @override
+
+  /// [hasCommandsResult] Boolean that indicates if the protocol has commands.
+  bool get hasCommandsResult;
+
+  /// [hasCommandsResult] Boolean that indicates if the protocol has commands.
+  set hasCommandsResult(bool value);
+  @override
+
+  /// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
+  int? get channelId;
+
+  /// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
+  set channelId(int? value);
+  @override
+
+  /// [isFlespi] Boolean that indicates if the protocol is from Flespi.
+  bool get isFlespi;
+
+  /// [isFlespi] Boolean that indicates if the protocol is from Flespi.
+  set isFlespi(bool value);
+  @override
+
+  /// [flespiId] Flespi ID. Only used for Flespi protocols.
+  String? get flespiId;
+
+  /// [flespiId] Flespi ID. Only used for Flespi protocols.
+  set flespiId(String? value);
+  @override
+
+  /// [hasAck] Boolean that indicates if the protocol has ACK support.
+  bool get hasAck;
+
+  /// [hasAck] Boolean that indicates if the protocol has ACK support.
+  set hasAck(bool value);
+  @override
+
+  /// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
+  String get ackTopicFormat;
+
+  /// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
+  set ackTopicFormat(String value);
+  @override
+
+  /// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
+  bool get isImported;
+
+  /// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
+  set isImported(bool value);
+  @override
+
+  /// [requiredFields] Required configuration fields.
+  List<CredentialFieldInput> get requiredFields;
+
+  /// [requiredFields] Required configuration fields.
+  set requiredFields(List<CredentialFieldInput> value);
+  @override
+
+  /// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
+  bool get canFota;
+
+  /// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
+  set canFota(bool value);
+  @override
+
+  /// [host] is the host of the server, means the IP or domain (or subdomain)
+  /// of the server to send or receive the information
+  String? get host;
+
+  /// [host] is the host of the server, means the IP or domain (or subdomain)
+  /// of the server to send or receive the information
+  set host(String? value);
+  @override
+
+  /// [port] is the port of the server, means the port
+  /// of the server to send or receive the information
+  /// 0 means in API and backend services "ignore this field"
+  int? get port;
+
+  /// [port] is the port of the server, means the port
+  /// of the server to send or receive the information
+  /// 0 means in API and backend services "ignore this field"
+  set port(int? value);
+  @override
+
+  /// [mqttTopic] is the MQTT topic to send or receive the information
+  String? get mqttTopic;
+
+  /// [mqttTopic] is the MQTT topic to send or receive the information
+  set mqttTopic(String? value);
+  @override
+
+  /// [dynamicIcon] is the icon of the protocol.
+  AvatarInput get dynamicIcon;
+
+  /// [dynamicIcon] is the icon of the protocol.
+  set dynamicIcon(AvatarInput value);
+  @override
+
+  /// [cycleId] is the ID of the cycle to which the field belongs.
+  String? get cycleId;
+
+  /// [cycleId] is the ID of the cycle to which the field belongs.
+  set cycleId(String? value);
+  @override
+
+  /// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
+  bool get hasModbus;
+
+  /// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
+  set hasModbus(bool value);
+  @override
+
+  /// [modbusPorts] is the list of Modbus ports that the protocol has.
+  List<String> get modbusPorts;
+
+  /// [modbusPorts] is the list of Modbus ports that the protocol has.
+  set modbusPorts(List<String> value);
+  @override
+
+  /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+  bool get requiresFlespiToken;
+
+  /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+  set requiresFlespiToken(bool value);
+  @override
+
+  /// [flespiAcl] refers to the ACL for the token generation.
+  List<FlespiAclInput> get flespiAcl;
+
+  /// [flespiAcl] refers to the ACL for the token generation.
+  set flespiAcl(List<FlespiAclInput> value);
+  @override
+
+  /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+  WebhookStructureInput? get webhookStructure;
+
+  /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+  set webhookStructure(WebhookStructureInput? value);
+  @override
+  @JsonKey(ignore: true)
+  _$$InboundProtocolInputImplCopyWith<_$InboundProtocolInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 InboundService _$InboundServiceFromJson(Map<String, dynamic> json) {
   return _InboundService.fromJson(json);
 }
@@ -1984,5 +2643,316 @@ abstract class _InboundService implements InboundService {
   @override
   @JsonKey(ignore: true)
   _$$InboundServiceImplCopyWith<_$InboundServiceImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+InboundServiceInput _$InboundServiceInputFromJson(Map<String, dynamic> json) {
+  return _InboundServiceInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$InboundServiceInput {
+  /// [id] is the ID of the entity. This ID is unique. Should be null when creating a new entity.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] is the ID of the entity. This ID is unique. Should be null when creating a new entity.
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// [name] is the Assigned service name, cannot be translated for other languages.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [name] is the Assigned service name, cannot be translated for other languages.
+  set name(String value) => throw _privateConstructorUsedError;
+
+  /// [credentials] is the Credential object, check the documentation for more information.
+  Map<String, dynamic> get credentials => throw _privateConstructorUsedError;
+
+  /// [credentials] is the Credential object, check the documentation for more information.
+  set credentials(Map<String, dynamic> value) =>
+      throw _privateConstructorUsedError;
+
+  /// [externalAccountId] is the ID of the External Account.
+  String? get externalAccountId => throw _privateConstructorUsedError;
+
+  /// [externalAccountId] is the ID of the External Account.
+  set externalAccountId(String? value) => throw _privateConstructorUsedError;
+
+  /// [protocolId] is the ID of the Protocol.
+  String? get protocolId => throw _privateConstructorUsedError;
+
+  /// [protocolId] is the ID of the Protocol.
+  set protocolId(String? value) => throw _privateConstructorUsedError;
+
+  /// [structure] is the Structure of the inbound protocol, only used for Omega REST Inbound protocol.
+  InboundStructureInput get structure => throw _privateConstructorUsedError;
+
+  /// [structure] is the Structure of the inbound protocol, only used for Omega REST Inbound protocol.
+  set structure(InboundStructureInput value) =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InboundServiceInputCopyWith<InboundServiceInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InboundServiceInputCopyWith<$Res> {
+  factory $InboundServiceInputCopyWith(
+          InboundServiceInput value, $Res Function(InboundServiceInput) then) =
+      _$InboundServiceInputCopyWithImpl<$Res, InboundServiceInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      Map<String, dynamic> credentials,
+      String? externalAccountId,
+      String? protocolId,
+      InboundStructureInput structure});
+
+  $InboundStructureInputCopyWith<$Res> get structure;
+}
+
+/// @nodoc
+class _$InboundServiceInputCopyWithImpl<$Res, $Val extends InboundServiceInput>
+    implements $InboundServiceInputCopyWith<$Res> {
+  _$InboundServiceInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? credentials = null,
+    Object? externalAccountId = freezed,
+    Object? protocolId = freezed,
+    Object? structure = null,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      credentials: null == credentials
+          ? _value.credentials
+          : credentials // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      externalAccountId: freezed == externalAccountId
+          ? _value.externalAccountId
+          : externalAccountId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      structure: null == structure
+          ? _value.structure
+          : structure // ignore: cast_nullable_to_non_nullable
+              as InboundStructureInput,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $InboundStructureInputCopyWith<$Res> get structure {
+    return $InboundStructureInputCopyWith<$Res>(_value.structure, (value) {
+      return _then(_value.copyWith(structure: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$InboundServiceInputImplCopyWith<$Res>
+    implements $InboundServiceInputCopyWith<$Res> {
+  factory _$$InboundServiceInputImplCopyWith(_$InboundServiceInputImpl value,
+          $Res Function(_$InboundServiceInputImpl) then) =
+      __$$InboundServiceInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      Map<String, dynamic> credentials,
+      String? externalAccountId,
+      String? protocolId,
+      InboundStructureInput structure});
+
+  @override
+  $InboundStructureInputCopyWith<$Res> get structure;
+}
+
+/// @nodoc
+class __$$InboundServiceInputImplCopyWithImpl<$Res>
+    extends _$InboundServiceInputCopyWithImpl<$Res, _$InboundServiceInputImpl>
+    implements _$$InboundServiceInputImplCopyWith<$Res> {
+  __$$InboundServiceInputImplCopyWithImpl(_$InboundServiceInputImpl _value,
+      $Res Function(_$InboundServiceInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? credentials = null,
+    Object? externalAccountId = freezed,
+    Object? protocolId = freezed,
+    Object? structure = null,
+  }) {
+    return _then(_$InboundServiceInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      credentials: null == credentials
+          ? _value.credentials
+          : credentials // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      externalAccountId: freezed == externalAccountId
+          ? _value.externalAccountId
+          : externalAccountId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      structure: null == structure
+          ? _value.structure
+          : structure // ignore: cast_nullable_to_non_nullable
+              as InboundStructureInput,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$InboundServiceInputImpl implements _InboundServiceInput {
+  _$InboundServiceInputImpl(
+      {this.id,
+      this.name = '',
+      this.credentials = const {},
+      this.externalAccountId,
+      this.protocolId,
+      required this.structure});
+
+  factory _$InboundServiceInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InboundServiceInputImplFromJson(json);
+
+  /// [id] is the ID of the entity. This ID is unique. Should be null when creating a new entity.
+  @override
+  String? id;
+
+  /// [name] is the Assigned service name, cannot be translated for other languages.
+  @override
+  @JsonKey()
+  String name;
+
+  /// [credentials] is the Credential object, check the documentation for more information.
+  @override
+  @JsonKey()
+  Map<String, dynamic> credentials;
+
+  /// [externalAccountId] is the ID of the External Account.
+  @override
+  String? externalAccountId;
+
+  /// [protocolId] is the ID of the Protocol.
+  @override
+  String? protocolId;
+
+  /// [structure] is the Structure of the inbound protocol, only used for Omega REST Inbound protocol.
+  @override
+  InboundStructureInput structure;
+
+  @override
+  String toString() {
+    return 'InboundServiceInput(id: $id, name: $name, credentials: $credentials, externalAccountId: $externalAccountId, protocolId: $protocolId, structure: $structure)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InboundServiceInputImplCopyWith<_$InboundServiceInputImpl> get copyWith =>
+      __$$InboundServiceInputImplCopyWithImpl<_$InboundServiceInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InboundServiceInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _InboundServiceInput implements InboundServiceInput {
+  factory _InboundServiceInput(
+      {String? id,
+      String name,
+      Map<String, dynamic> credentials,
+      String? externalAccountId,
+      String? protocolId,
+      required InboundStructureInput structure}) = _$InboundServiceInputImpl;
+
+  factory _InboundServiceInput.fromJson(Map<String, dynamic> json) =
+      _$InboundServiceInputImpl.fromJson;
+
+  @override
+
+  /// [id] is the ID of the entity. This ID is unique. Should be null when creating a new entity.
+  String? get id;
+
+  /// [id] is the ID of the entity. This ID is unique. Should be null when creating a new entity.
+  set id(String? value);
+  @override
+
+  /// [name] is the Assigned service name, cannot be translated for other languages.
+  String get name;
+
+  /// [name] is the Assigned service name, cannot be translated for other languages.
+  set name(String value);
+  @override
+
+  /// [credentials] is the Credential object, check the documentation for more information.
+  Map<String, dynamic> get credentials;
+
+  /// [credentials] is the Credential object, check the documentation for more information.
+  set credentials(Map<String, dynamic> value);
+  @override
+
+  /// [externalAccountId] is the ID of the External Account.
+  String? get externalAccountId;
+
+  /// [externalAccountId] is the ID of the External Account.
+  set externalAccountId(String? value);
+  @override
+
+  /// [protocolId] is the ID of the Protocol.
+  String? get protocolId;
+
+  /// [protocolId] is the ID of the Protocol.
+  set protocolId(String? value);
+  @override
+
+  /// [structure] is the Structure of the inbound protocol, only used for Omega REST Inbound protocol.
+  InboundStructureInput get structure;
+
+  /// [structure] is the Structure of the inbound protocol, only used for Omega REST Inbound protocol.
+  set structure(InboundStructureInput value);
+  @override
+  @JsonKey(ignore: true)
+  _$$InboundServiceInputImplCopyWith<_$InboundServiceInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

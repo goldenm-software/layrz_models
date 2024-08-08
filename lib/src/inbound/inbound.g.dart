@@ -6,38 +6,6 @@ part of 'inbound.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RealtimeEndpointImpl _$$RealtimeEndpointImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RealtimeEndpointImpl(
-      host: json['host'] as String?,
-      port: (json['port'] as num?)?.toInt(),
-    );
-
-Map<String, dynamic> _$$RealtimeEndpointImplToJson(
-        _$RealtimeEndpointImpl instance) =>
-    <String, dynamic>{
-      'host': instance.host,
-      'port': instance.port,
-    };
-
-_$RealtimeVariantEndpointImpl _$$RealtimeVariantEndpointImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RealtimeVariantEndpointImpl(
-      dataTopic: json['dataTopic'] as String?,
-      eventsTopic: json['eventsTopic'] as String?,
-      realtimeTopic: json['realtimeTopic'] as String?,
-      commandTopic: json['commandTopic'] as String?,
-    );
-
-Map<String, dynamic> _$$RealtimeVariantEndpointImplToJson(
-        _$RealtimeVariantEndpointImpl instance) =>
-    <String, dynamic>{
-      'dataTopic': instance.dataTopic,
-      'eventsTopic': instance.eventsTopic,
-      'realtimeTopic': instance.realtimeTopic,
-      'commandTopic': instance.commandTopic,
-    };
-
 _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
         Map<String, dynamic> json) =>
     _$InboundProtocolImpl(
@@ -129,6 +97,93 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'webhookStructure': instance.webhookStructure?.toJson(),
     };
 
+_$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$InboundProtocolInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      color: json['color'] == null
+          ? kPrimaryColor
+          : const ColorConverter().fromJson(json['color'] as String),
+      isEnabled: json['isEnabled'] as bool? ?? true,
+      categoriesIds: (json['categoriesIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      operationMode: json['operationMode'] == null
+          ? OperationMode.realtime
+          : const OperationModeConverter()
+              .fromJson(json['operationMode'] as String),
+      hasNativeCommands: json['hasNativeCommands'] as bool? ?? false,
+      hasSmsCommands: json['hasSmsCommands'] as bool? ?? false,
+      hasCommandsResult: json['hasCommandsResult'] as bool? ?? false,
+      channelId: (json['channelId'] as num?)?.toInt(),
+      isFlespi: json['isFlespi'] as bool? ?? false,
+      flespiId: json['flespiId'] as String?,
+      hasAck: json['hasAck'] as bool? ?? false,
+      ackTopicFormat: json['ackTopicFormat'] as String? ?? '',
+      isImported: json['isImported'] as bool? ?? false,
+      requiredFields: (json['requiredFields'] as List<dynamic>?)
+              ?.map((e) =>
+                  CredentialFieldInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      canFota: json['canFota'] as bool? ?? false,
+      host: json['host'] as String?,
+      port: (json['port'] as num?)?.toInt(),
+      mqttTopic: json['mqttTopic'] as String?,
+      dynamicIcon:
+          AvatarInput.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
+      cycleId: json['cycleId'] as String?,
+      hasModbus: json['hasModbus'] as bool? ?? false,
+      modbusPorts: (json['modbusPorts'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      requiresFlespiToken: json['requiresFlespiToken'] as bool? ?? false,
+      flespiAcl: (json['flespiAcl'] as List<dynamic>?)
+              ?.map((e) => FlespiAclInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      webhookStructure: json['webhookStructure'] == null
+          ? null
+          : WebhookStructureInput.fromJson(
+              json['webhookStructure'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$InboundProtocolInputImplToJson(
+        _$InboundProtocolInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'color': const ColorConverter().toJson(instance.color),
+      'isEnabled': instance.isEnabled,
+      'categoriesIds': instance.categoriesIds,
+      'operationMode':
+          const OperationModeConverter().toJson(instance.operationMode),
+      'hasNativeCommands': instance.hasNativeCommands,
+      'hasSmsCommands': instance.hasSmsCommands,
+      'hasCommandsResult': instance.hasCommandsResult,
+      'channelId': instance.channelId,
+      'isFlespi': instance.isFlespi,
+      'flespiId': instance.flespiId,
+      'hasAck': instance.hasAck,
+      'ackTopicFormat': instance.ackTopicFormat,
+      'isImported': instance.isImported,
+      'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
+      'canFota': instance.canFota,
+      'host': instance.host,
+      'port': instance.port,
+      'mqttTopic': instance.mqttTopic,
+      'dynamicIcon': instance.dynamicIcon.toJson(),
+      'cycleId': instance.cycleId,
+      'hasModbus': instance.hasModbus,
+      'modbusPorts': instance.modbusPorts,
+      'requiresFlespiToken': instance.requiresFlespiToken,
+      'flespiAcl': instance.flespiAcl.map((e) => e.toJson()).toList(),
+      'webhookStructure': instance.webhookStructure?.toJson(),
+    };
+
 _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
     _$InboundServiceImpl(
       id: json['id'] as String,
@@ -171,4 +226,27 @@ Map<String, dynamic> _$$InboundServiceImplToJson(
       'structure': instance.structure?.toJson(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'webhookStructure': instance.webhookStructure?.toJson(),
+    };
+
+_$InboundServiceInputImpl _$$InboundServiceInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$InboundServiceInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      credentials: json['credentials'] as Map<String, dynamic>? ?? const {},
+      externalAccountId: json['externalAccountId'] as String?,
+      protocolId: json['protocolId'] as String?,
+      structure: InboundStructureInput.fromJson(
+          json['structure'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$InboundServiceInputImplToJson(
+        _$InboundServiceInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'credentials': instance.credentials,
+      'externalAccountId': instance.externalAccountId,
+      'protocolId': instance.protocolId,
+      'structure': instance.structure.toJson(),
     };

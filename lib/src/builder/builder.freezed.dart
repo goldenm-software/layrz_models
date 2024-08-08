@@ -240,6 +240,264 @@ abstract class _InboundStructure implements InboundStructure {
       throw _privateConstructorUsedError;
 }
 
+InboundStructureInput _$InboundStructureInputFromJson(
+    Map<String, dynamic> json) {
+  return _InboundStructureInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$InboundStructureInput {
+  /// [hasPosition] defines if the structure has a position.
+  bool get hasPosition => throw _privateConstructorUsedError;
+
+  /// [hasPosition] defines if the structure has a position.
+  set hasPosition(bool value) => throw _privateConstructorUsedError;
+
+  /// [position] defines the structure of the position.
+  InboundPositionStructureInput get position =>
+      throw _privateConstructorUsedError;
+
+  /// [position] defines the structure of the position.
+  set position(InboundPositionStructureInput value) =>
+      throw _privateConstructorUsedError;
+
+  /// [hasPayload] defines if the structure has a payload.
+  bool get hasPayload => throw _privateConstructorUsedError;
+
+  /// [hasPayload] defines if the structure has a payload.
+  set hasPayload(bool value) => throw _privateConstructorUsedError;
+
+  /// [payload] defines the structure of the payload.
+  List<InboundPayloadStructureInput> get payload =>
+      throw _privateConstructorUsedError;
+
+  /// [payload] defines the structure of the payload.
+  set payload(List<InboundPayloadStructureInput> value) =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InboundStructureInputCopyWith<InboundStructureInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InboundStructureInputCopyWith<$Res> {
+  factory $InboundStructureInputCopyWith(InboundStructureInput value,
+          $Res Function(InboundStructureInput) then) =
+      _$InboundStructureInputCopyWithImpl<$Res, InboundStructureInput>;
+  @useResult
+  $Res call(
+      {bool hasPosition,
+      InboundPositionStructureInput position,
+      bool hasPayload,
+      List<InboundPayloadStructureInput> payload});
+
+  $InboundPositionStructureInputCopyWith<$Res> get position;
+}
+
+/// @nodoc
+class _$InboundStructureInputCopyWithImpl<$Res,
+        $Val extends InboundStructureInput>
+    implements $InboundStructureInputCopyWith<$Res> {
+  _$InboundStructureInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hasPosition = null,
+    Object? position = null,
+    Object? hasPayload = null,
+    Object? payload = null,
+  }) {
+    return _then(_value.copyWith(
+      hasPosition: null == hasPosition
+          ? _value.hasPosition
+          : hasPosition // ignore: cast_nullable_to_non_nullable
+              as bool,
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as InboundPositionStructureInput,
+      hasPayload: null == hasPayload
+          ? _value.hasPayload
+          : hasPayload // ignore: cast_nullable_to_non_nullable
+              as bool,
+      payload: null == payload
+          ? _value.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as List<InboundPayloadStructureInput>,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $InboundPositionStructureInputCopyWith<$Res> get position {
+    return $InboundPositionStructureInputCopyWith<$Res>(_value.position,
+        (value) {
+      return _then(_value.copyWith(position: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$InboundStructureInputImplCopyWith<$Res>
+    implements $InboundStructureInputCopyWith<$Res> {
+  factory _$$InboundStructureInputImplCopyWith(
+          _$InboundStructureInputImpl value,
+          $Res Function(_$InboundStructureInputImpl) then) =
+      __$$InboundStructureInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {bool hasPosition,
+      InboundPositionStructureInput position,
+      bool hasPayload,
+      List<InboundPayloadStructureInput> payload});
+
+  @override
+  $InboundPositionStructureInputCopyWith<$Res> get position;
+}
+
+/// @nodoc
+class __$$InboundStructureInputImplCopyWithImpl<$Res>
+    extends _$InboundStructureInputCopyWithImpl<$Res,
+        _$InboundStructureInputImpl>
+    implements _$$InboundStructureInputImplCopyWith<$Res> {
+  __$$InboundStructureInputImplCopyWithImpl(_$InboundStructureInputImpl _value,
+      $Res Function(_$InboundStructureInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hasPosition = null,
+    Object? position = null,
+    Object? hasPayload = null,
+    Object? payload = null,
+  }) {
+    return _then(_$InboundStructureInputImpl(
+      hasPosition: null == hasPosition
+          ? _value.hasPosition
+          : hasPosition // ignore: cast_nullable_to_non_nullable
+              as bool,
+      position: null == position
+          ? _value.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as InboundPositionStructureInput,
+      hasPayload: null == hasPayload
+          ? _value.hasPayload
+          : hasPayload // ignore: cast_nullable_to_non_nullable
+              as bool,
+      payload: null == payload
+          ? _value.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as List<InboundPayloadStructureInput>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$InboundStructureInputImpl implements _InboundStructureInput {
+  _$InboundStructureInputImpl(
+      {this.hasPosition = true,
+      required this.position,
+      this.hasPayload = false,
+      this.payload = const []});
+
+  factory _$InboundStructureInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InboundStructureInputImplFromJson(json);
+
+  /// [hasPosition] defines if the structure has a position.
+  @override
+  @JsonKey()
+  bool hasPosition;
+
+  /// [position] defines the structure of the position.
+  @override
+  InboundPositionStructureInput position;
+
+  /// [hasPayload] defines if the structure has a payload.
+  @override
+  @JsonKey()
+  bool hasPayload;
+
+  /// [payload] defines the structure of the payload.
+  @override
+  @JsonKey()
+  List<InboundPayloadStructureInput> payload;
+
+  @override
+  String toString() {
+    return 'InboundStructureInput(hasPosition: $hasPosition, position: $position, hasPayload: $hasPayload, payload: $payload)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InboundStructureInputImplCopyWith<_$InboundStructureInputImpl>
+      get copyWith => __$$InboundStructureInputImplCopyWithImpl<
+          _$InboundStructureInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InboundStructureInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _InboundStructureInput implements InboundStructureInput {
+  factory _InboundStructureInput(
+          {bool hasPosition,
+          required InboundPositionStructureInput position,
+          bool hasPayload,
+          List<InboundPayloadStructureInput> payload}) =
+      _$InboundStructureInputImpl;
+
+  factory _InboundStructureInput.fromJson(Map<String, dynamic> json) =
+      _$InboundStructureInputImpl.fromJson;
+
+  @override
+
+  /// [hasPosition] defines if the structure has a position.
+  bool get hasPosition;
+
+  /// [hasPosition] defines if the structure has a position.
+  set hasPosition(bool value);
+  @override
+
+  /// [position] defines the structure of the position.
+  InboundPositionStructureInput get position;
+
+  /// [position] defines the structure of the position.
+  set position(InboundPositionStructureInput value);
+  @override
+
+  /// [hasPayload] defines if the structure has a payload.
+  bool get hasPayload;
+
+  /// [hasPayload] defines if the structure has a payload.
+  set hasPayload(bool value);
+  @override
+
+  /// [payload] defines the structure of the payload.
+  List<InboundPayloadStructureInput> get payload;
+
+  /// [payload] defines the structure of the payload.
+  set payload(List<InboundPayloadStructureInput> value);
+  @override
+  @JsonKey(ignore: true)
+  _$$InboundStructureInputImplCopyWith<_$InboundStructureInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 InboundPositionStructure _$InboundPositionStructureFromJson(
     Map<String, dynamic> json) {
   return _InboundPositionStructure.fromJson(json);
@@ -512,6 +770,282 @@ abstract class _InboundPositionStructure implements InboundPositionStructure {
       get copyWith => throw _privateConstructorUsedError;
 }
 
+InboundPositionStructureInput _$InboundPositionStructureInputFromJson(
+    Map<String, dynamic> json) {
+  return _InboundPositionStructureInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$InboundPositionStructureInput {
+  bool get latitude => throw _privateConstructorUsedError;
+  set latitude(bool value) => throw _privateConstructorUsedError;
+  bool get longitude => throw _privateConstructorUsedError;
+  set longitude(bool value) => throw _privateConstructorUsedError;
+  bool get speed => throw _privateConstructorUsedError;
+  set speed(bool value) => throw _privateConstructorUsedError;
+  bool get direction => throw _privateConstructorUsedError;
+  set direction(bool value) => throw _privateConstructorUsedError;
+  bool get altitude => throw _privateConstructorUsedError;
+  set altitude(bool value) => throw _privateConstructorUsedError;
+  bool get satellites => throw _privateConstructorUsedError;
+  set satellites(bool value) => throw _privateConstructorUsedError;
+  bool get hdop => throw _privateConstructorUsedError;
+  set hdop(bool value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InboundPositionStructureInputCopyWith<InboundPositionStructureInput>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InboundPositionStructureInputCopyWith<$Res> {
+  factory $InboundPositionStructureInputCopyWith(
+          InboundPositionStructureInput value,
+          $Res Function(InboundPositionStructureInput) then) =
+      _$InboundPositionStructureInputCopyWithImpl<$Res,
+          InboundPositionStructureInput>;
+  @useResult
+  $Res call(
+      {bool latitude,
+      bool longitude,
+      bool speed,
+      bool direction,
+      bool altitude,
+      bool satellites,
+      bool hdop});
+}
+
+/// @nodoc
+class _$InboundPositionStructureInputCopyWithImpl<$Res,
+        $Val extends InboundPositionStructureInput>
+    implements $InboundPositionStructureInputCopyWith<$Res> {
+  _$InboundPositionStructureInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? speed = null,
+    Object? direction = null,
+    Object? altitude = null,
+    Object? satellites = null,
+    Object? hdop = null,
+  }) {
+    return _then(_value.copyWith(
+      latitude: null == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      longitude: null == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      speed: null == speed
+          ? _value.speed
+          : speed // ignore: cast_nullable_to_non_nullable
+              as bool,
+      direction: null == direction
+          ? _value.direction
+          : direction // ignore: cast_nullable_to_non_nullable
+              as bool,
+      altitude: null == altitude
+          ? _value.altitude
+          : altitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      satellites: null == satellites
+          ? _value.satellites
+          : satellites // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hdop: null == hdop
+          ? _value.hdop
+          : hdop // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$InboundPositionStructureInputImplCopyWith<$Res>
+    implements $InboundPositionStructureInputCopyWith<$Res> {
+  factory _$$InboundPositionStructureInputImplCopyWith(
+          _$InboundPositionStructureInputImpl value,
+          $Res Function(_$InboundPositionStructureInputImpl) then) =
+      __$$InboundPositionStructureInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {bool latitude,
+      bool longitude,
+      bool speed,
+      bool direction,
+      bool altitude,
+      bool satellites,
+      bool hdop});
+}
+
+/// @nodoc
+class __$$InboundPositionStructureInputImplCopyWithImpl<$Res>
+    extends _$InboundPositionStructureInputCopyWithImpl<$Res,
+        _$InboundPositionStructureInputImpl>
+    implements _$$InboundPositionStructureInputImplCopyWith<$Res> {
+  __$$InboundPositionStructureInputImplCopyWithImpl(
+      _$InboundPositionStructureInputImpl _value,
+      $Res Function(_$InboundPositionStructureInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? speed = null,
+    Object? direction = null,
+    Object? altitude = null,
+    Object? satellites = null,
+    Object? hdop = null,
+  }) {
+    return _then(_$InboundPositionStructureInputImpl(
+      latitude: null == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      longitude: null == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      speed: null == speed
+          ? _value.speed
+          : speed // ignore: cast_nullable_to_non_nullable
+              as bool,
+      direction: null == direction
+          ? _value.direction
+          : direction // ignore: cast_nullable_to_non_nullable
+              as bool,
+      altitude: null == altitude
+          ? _value.altitude
+          : altitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      satellites: null == satellites
+          ? _value.satellites
+          : satellites // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hdop: null == hdop
+          ? _value.hdop
+          : hdop // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$InboundPositionStructureInputImpl
+    implements _InboundPositionStructureInput {
+  _$InboundPositionStructureInputImpl(
+      {this.latitude = true,
+      this.longitude = true,
+      this.speed = true,
+      this.direction = true,
+      this.altitude = true,
+      this.satellites = true,
+      this.hdop = true});
+
+  factory _$InboundPositionStructureInputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$InboundPositionStructureInputImplFromJson(json);
+
+  @override
+  @JsonKey()
+  bool latitude;
+  @override
+  @JsonKey()
+  bool longitude;
+  @override
+  @JsonKey()
+  bool speed;
+  @override
+  @JsonKey()
+  bool direction;
+  @override
+  @JsonKey()
+  bool altitude;
+  @override
+  @JsonKey()
+  bool satellites;
+  @override
+  @JsonKey()
+  bool hdop;
+
+  @override
+  String toString() {
+    return 'InboundPositionStructureInput(latitude: $latitude, longitude: $longitude, speed: $speed, direction: $direction, altitude: $altitude, satellites: $satellites, hdop: $hdop)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InboundPositionStructureInputImplCopyWith<
+          _$InboundPositionStructureInputImpl>
+      get copyWith => __$$InboundPositionStructureInputImplCopyWithImpl<
+          _$InboundPositionStructureInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InboundPositionStructureInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _InboundPositionStructureInput
+    implements InboundPositionStructureInput {
+  factory _InboundPositionStructureInput(
+      {bool latitude,
+      bool longitude,
+      bool speed,
+      bool direction,
+      bool altitude,
+      bool satellites,
+      bool hdop}) = _$InboundPositionStructureInputImpl;
+
+  factory _InboundPositionStructureInput.fromJson(Map<String, dynamic> json) =
+      _$InboundPositionStructureInputImpl.fromJson;
+
+  @override
+  bool get latitude;
+  set latitude(bool value);
+  @override
+  bool get longitude;
+  set longitude(bool value);
+  @override
+  bool get speed;
+  set speed(bool value);
+  @override
+  bool get direction;
+  set direction(bool value);
+  @override
+  bool get altitude;
+  set altitude(bool value);
+  @override
+  bool get satellites;
+  set satellites(bool value);
+  @override
+  bool get hdop;
+  set hdop(bool value);
+  @override
+  @JsonKey(ignore: true)
+  _$$InboundPositionStructureInputImplCopyWith<
+          _$InboundPositionStructureInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 InboundPayloadStructure _$InboundPayloadStructureFromJson(
     Map<String, dynamic> json) {
   return _InboundPayloadStructure.fromJson(json);
@@ -682,6 +1216,182 @@ abstract class _InboundPayloadStructure implements InboundPayloadStructure {
   @override
   @JsonKey(ignore: true)
   _$$InboundPayloadStructureImplCopyWith<_$InboundPayloadStructureImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+InboundPayloadStructureInput _$InboundPayloadStructureInputFromJson(
+    Map<String, dynamic> json) {
+  return _InboundPayloadStructureInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$InboundPayloadStructureInput {
+  String get field => throw _privateConstructorUsedError;
+  set field(String value) => throw _privateConstructorUsedError;
+  @InboundPayloadStructureTypeConverter()
+  InboundPayloadStructureType get type => throw _privateConstructorUsedError;
+  @InboundPayloadStructureTypeConverter()
+  set type(InboundPayloadStructureType value) =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InboundPayloadStructureInputCopyWith<InboundPayloadStructureInput>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InboundPayloadStructureInputCopyWith<$Res> {
+  factory $InboundPayloadStructureInputCopyWith(
+          InboundPayloadStructureInput value,
+          $Res Function(InboundPayloadStructureInput) then) =
+      _$InboundPayloadStructureInputCopyWithImpl<$Res,
+          InboundPayloadStructureInput>;
+  @useResult
+  $Res call(
+      {String field,
+      @InboundPayloadStructureTypeConverter()
+      InboundPayloadStructureType type});
+}
+
+/// @nodoc
+class _$InboundPayloadStructureInputCopyWithImpl<$Res,
+        $Val extends InboundPayloadStructureInput>
+    implements $InboundPayloadStructureInputCopyWith<$Res> {
+  _$InboundPayloadStructureInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? type = null,
+  }) {
+    return _then(_value.copyWith(
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as InboundPayloadStructureType,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$InboundPayloadStructureInputImplCopyWith<$Res>
+    implements $InboundPayloadStructureInputCopyWith<$Res> {
+  factory _$$InboundPayloadStructureInputImplCopyWith(
+          _$InboundPayloadStructureInputImpl value,
+          $Res Function(_$InboundPayloadStructureInputImpl) then) =
+      __$$InboundPayloadStructureInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String field,
+      @InboundPayloadStructureTypeConverter()
+      InboundPayloadStructureType type});
+}
+
+/// @nodoc
+class __$$InboundPayloadStructureInputImplCopyWithImpl<$Res>
+    extends _$InboundPayloadStructureInputCopyWithImpl<$Res,
+        _$InboundPayloadStructureInputImpl>
+    implements _$$InboundPayloadStructureInputImplCopyWith<$Res> {
+  __$$InboundPayloadStructureInputImplCopyWithImpl(
+      _$InboundPayloadStructureInputImpl _value,
+      $Res Function(_$InboundPayloadStructureInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? type = null,
+  }) {
+    return _then(_$InboundPayloadStructureInputImpl(
+      field: null == field
+          ? _value.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as InboundPayloadStructureType,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$InboundPayloadStructureInputImpl
+    implements _InboundPayloadStructureInput {
+  _$InboundPayloadStructureInputImpl(
+      {this.field = '',
+      @InboundPayloadStructureTypeConverter()
+      this.type = InboundPayloadStructureType.string});
+
+  factory _$InboundPayloadStructureInputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$InboundPayloadStructureInputImplFromJson(json);
+
+  @override
+  @JsonKey()
+  String field;
+  @override
+  @JsonKey()
+  @InboundPayloadStructureTypeConverter()
+  InboundPayloadStructureType type;
+
+  @override
+  String toString() {
+    return 'InboundPayloadStructureInput(field: $field, type: $type)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InboundPayloadStructureInputImplCopyWith<
+          _$InboundPayloadStructureInputImpl>
+      get copyWith => __$$InboundPayloadStructureInputImplCopyWithImpl<
+          _$InboundPayloadStructureInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InboundPayloadStructureInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _InboundPayloadStructureInput
+    implements InboundPayloadStructureInput {
+  factory _InboundPayloadStructureInput(
+      {String field,
+      @InboundPayloadStructureTypeConverter()
+      InboundPayloadStructureType type}) = _$InboundPayloadStructureInputImpl;
+
+  factory _InboundPayloadStructureInput.fromJson(Map<String, dynamic> json) =
+      _$InboundPayloadStructureInputImpl.fromJson;
+
+  @override
+  String get field;
+  set field(String value);
+  @override
+  @InboundPayloadStructureTypeConverter()
+  InboundPayloadStructureType get type;
+  @InboundPayloadStructureTypeConverter()
+  set type(InboundPayloadStructureType value);
+  @override
+  @JsonKey(ignore: true)
+  _$$InboundPayloadStructureInputImplCopyWith<
+          _$InboundPayloadStructureInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 

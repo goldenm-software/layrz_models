@@ -43,3 +43,28 @@ class InboundService with _$InboundService {
   /// From json
   factory InboundService.fromJson(Map<String, dynamic> json) => _$InboundServiceFromJson(json);
 }
+
+@unfreezed
+class InboundServiceInput with _$InboundServiceInput {
+  factory InboundServiceInput({
+    /// [id] is the ID of the entity. This ID is unique. Should be null when creating a new entity.
+    String? id,
+
+    /// [name] is the Assigned service name, cannot be translated for other languages.
+    @Default('') String name,
+
+    /// [credentials] is the Credential object, check the documentation for more information.
+    @Default({}) Map<String, dynamic> credentials,
+
+    /// [externalAccountId] is the ID of the External Account.
+    String? externalAccountId,
+
+    /// [protocolId] is the ID of the Protocol.
+    String? protocolId,
+
+    /// [structure] is the Structure of the inbound protocol, only used for Omega REST Inbound protocol.
+    required InboundStructureInput structure,
+  }) = _InboundServiceInput;
+
+  factory InboundServiceInput.fromJson(Map<String, dynamic> json) => _$InboundServiceInputFromJson(json);
+}
