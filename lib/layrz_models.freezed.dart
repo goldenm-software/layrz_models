@@ -25043,6 +25043,12 @@ mixin _$Tag {
   /// [ownerId] is the ID of the owner of this entity.
   String? get ownerId => throw _privateConstructorUsedError;
 
+  /// [sensorsIds] is a list of ID's of associated sensors to this module.
+  List<String>? get sensorsIds => throw _privateConstructorUsedError;
+
+  /// [sensors] is a list of associated sensors to this module.
+  List<Sensor>? get sensors => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TagCopyWith<Tag> get copyWith => throw _privateConstructorUsedError;
@@ -25107,7 +25113,9 @@ abstract class $TagCopyWith<$Res> {
       List<String>? exchangeServicesIds,
       List<Access>? access,
       User? owner,
-      String? ownerId});
+      String? ownerId,
+      List<String>? sensorsIds,
+      List<Sensor>? sensors});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $UserCopyWith<$Res>? get owner;
@@ -25177,6 +25185,8 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? access = freezed,
     Object? owner = freezed,
     Object? ownerId = freezed,
+    Object? sensorsIds = freezed,
+    Object? sensors = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -25387,6 +25397,14 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sensorsIds: freezed == sensorsIds
+          ? _value.sensorsIds
+          : sensorsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      sensors: freezed == sensors
+          ? _value.sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<Sensor>?,
     ) as $Val);
   }
 
@@ -25475,7 +25493,9 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
       List<String>? exchangeServicesIds,
       List<Access>? access,
       User? owner,
-      String? ownerId});
+      String? ownerId,
+      List<String>? sensorsIds,
+      List<Sensor>? sensors});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -25544,6 +25564,8 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
     Object? access = freezed,
     Object? owner = freezed,
     Object? ownerId = freezed,
+    Object? sensorsIds = freezed,
+    Object? sensors = freezed,
   }) {
     return _then(_$TagImpl(
       id: null == id
@@ -25754,6 +25776,14 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sensorsIds: freezed == sensorsIds
+          ? _value._sensorsIds
+          : sensorsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      sensors: freezed == sensors
+          ? _value._sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<Sensor>?,
     ));
   }
 }
@@ -25813,7 +25843,9 @@ class _$TagImpl implements _Tag {
       final List<String>? exchangeServicesIds,
       final List<Access>? access,
       this.owner,
-      this.ownerId})
+      this.ownerId,
+      final List<String>? sensorsIds,
+      final List<Sensor>? sensors})
       : _users = users,
         _usersIds = usersIds,
         _outboundServices = outboundServices,
@@ -25858,7 +25890,9 @@ class _$TagImpl implements _Tag {
         _mappitRoutesIds = mappitRoutesIds,
         _exchangeServices = exchangeServices,
         _exchangeServicesIds = exchangeServicesIds,
-        _access = access;
+        _access = access,
+        _sensorsIds = sensorsIds,
+        _sensors = sensors;
 
   factory _$TagImpl.fromJson(Map<String, dynamic> json) =>
       _$$TagImplFromJson(json);
@@ -26490,9 +26524,35 @@ class _$TagImpl implements _Tag {
   @override
   final String? ownerId;
 
+  /// [sensorsIds] is a list of ID's of associated sensors to this module.
+  final List<String>? _sensorsIds;
+
+  /// [sensorsIds] is a list of ID's of associated sensors to this module.
+  @override
+  List<String>? get sensorsIds {
+    final value = _sensorsIds;
+    if (value == null) return null;
+    if (_sensorsIds is EqualUnmodifiableListView) return _sensorsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [sensors] is a list of associated sensors to this module.
+  final List<Sensor>? _sensors;
+
+  /// [sensors] is a list of associated sensors to this module.
+  @override
+  List<Sensor>? get sensors {
+    final value = _sensors;
+    if (value == null) return null;
+    if (_sensors is EqualUnmodifiableListView) return _sensors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, mappitRoutes: $mappitRoutes, mappitRoutesIds: $mappitRoutesIds, exchangeServices: $exchangeServices, exchangeServicesIds: $exchangeServicesIds, access: $access, owner: $owner, ownerId: $ownerId)';
+    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, mappitRoutes: $mappitRoutes, mappitRoutesIds: $mappitRoutesIds, exchangeServices: $exchangeServices, exchangeServicesIds: $exchangeServicesIds, access: $access, owner: $owner, ownerId: $ownerId, sensorsIds: $sensorsIds, sensors: $sensors)';
   }
 
   @override
@@ -26588,7 +26648,10 @@ class _$TagImpl implements _Tag {
                 .equals(other._exchangeServicesIds, _exchangeServicesIds) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
             (identical(other.owner, owner) || other.owner == owner) &&
-            (identical(other.ownerId, ownerId) || other.ownerId == ownerId));
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            const DeepCollectionEquality()
+                .equals(other._sensorsIds, _sensorsIds) &&
+            const DeepCollectionEquality().equals(other._sensors, _sensors));
   }
 
   @JsonKey(ignore: true)
@@ -26646,7 +26709,9 @@ class _$TagImpl implements _Tag {
         const DeepCollectionEquality().hash(_exchangeServicesIds),
         const DeepCollectionEquality().hash(_access),
         owner,
-        ownerId
+        ownerId,
+        const DeepCollectionEquality().hash(_sensorsIds),
+        const DeepCollectionEquality().hash(_sensors)
       ]);
 
   @JsonKey(ignore: true)
@@ -26718,7 +26783,9 @@ abstract class _Tag implements Tag {
       final List<String>? exchangeServicesIds,
       final List<Access>? access,
       final User? owner,
-      final String? ownerId}) = _$TagImpl;
+      final String? ownerId,
+      final List<String>? sensorsIds,
+      final List<Sensor>? sensors}) = _$TagImpl;
 
   factory _Tag.fromJson(Map<String, dynamic> json) = _$TagImpl.fromJson;
 
@@ -26933,6 +27000,14 @@ abstract class _Tag implements Tag {
 
   /// [ownerId] is the ID of the owner of this entity.
   String? get ownerId;
+  @override
+
+  /// [sensorsIds] is a list of ID's of associated sensors to this module.
+  List<String>? get sensorsIds;
+  @override
+
+  /// [sensors] is a list of associated sensors to this module.
+  List<Sensor>? get sensors;
   @override
   @JsonKey(ignore: true)
   _$$TagImplCopyWith<_$TagImpl> get copyWith =>

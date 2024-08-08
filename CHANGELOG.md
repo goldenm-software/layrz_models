@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1.91
+- Added `sensors` and `sensorsIds` parameters to `Tag` model
+
 ## 2.1.90
 - Added optional params `isSuspended` and `suspendedAt` to `User` model
 
