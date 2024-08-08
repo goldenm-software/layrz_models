@@ -40,19 +40,6 @@ class InboundProtocol with _$InboundProtocol {
     /// Indicates the operation mode of the protocol.
     @OperationModeConverter() required OperationMode operationMode,
 
-    /// Indicates the [host] and [port] server. Only when [operationMode] is [OperationMode.realtime]
-    @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
-      Check the [host] and [port] field for more information.
-    """) RealtimeEndpoint? realtimeEndpoint,
-
-    /// Indicates the [dataTopic], [eventsTopic], [realtimeTopic] and [commandTopic] server.
-    /// Only when [operationMode] is [OperationMode.realtime]
-    @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
-      Check the [mqttTopic] field for more information.
-    """) RealtimeVariantEndpoint? realtimeVariantEndpoint,
-
     /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
     String? host,
 
@@ -65,26 +52,24 @@ class InboundProtocol with _$InboundProtocol {
     /// the protocol
     String? mqttTopic,
 
-    /// Indicates if the protocol has support for commands, depending on the field, means:
-    /// for [hasNativeCommands] = true, the protocol has support for commands through the protocol itself
-    /// for [hasSmsCommands] = true, the protocol has support for commands through a SMS gateway
-    /// !Important: [hasNativeCommands] and [hasSmsCommands] can be true at the same time
+    /// Indicates if the protocol has support for commands sent via the protocol itself.
     bool? hasNativeCommands,
+
+    /// Indicates if the protocol has support for commands sent via SMS gateway.
     bool? hasSmsCommands,
 
     /// Indicates if the protocol has support for command ACK, only valid for [hasNativeCommands] = true
     bool? hasCommandsResult,
 
-    /// [isFlespi], [channelId], [maxPerReceptor] and [flespiId] are the fields for Flespi protocols.
+    /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
     /// Indicates if the protocol is from Flespi or not
     bool? isFlespi,
 
+    /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
     /// Indicates the Flespi Channel ID.
     int? channelId,
 
-    /// Indicates the maximum amount of devices supported/handled by each receptor.
-    int? maxPerReceptor,
-
+    /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
     /// Indicates the ID of the protocol in Flespi.
     String? flespiId,
 
@@ -108,6 +93,8 @@ class InboundProtocol with _$InboundProtocol {
     /// and [ackTopicFormat] is the [String] value that indicates the format of the topic to send the ACK.
     /// Currently only works for Layrz Link protocol.
     bool? hasAck,
+
+    /// [ackTopicFormat] is the format of the topic to send the ACK.
     String? ackTopicFormat,
 
     /// [dynamicIcon] is the icon of the inbound protocol.
@@ -135,6 +122,9 @@ class InboundProtocol with _$InboundProtocol {
 
     /// [flespiAcl] refers to the ACL for the token generation.
     List<FlespiAcl>? flespiAcl,
+
+    /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+    WebhookStructure? webhookStructure,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);
@@ -146,15 +136,6 @@ enum OperationMode {
   ///
   /// Layrz API Reference: REALTIME
   realtime,
-
-  /// [realtimeVariant] is a realtime communication mode, uses TCP or Websocket connection to connect to the devices.
-  ///
-  /// Layrz API Reference: REALTIMEVARIANT
-  @Deprecated("""
-    [realtimeVariant] is deprecated in favor of [mqtt].
-    Check the [mqtt] field for more information.
-  """)
-  realtimeVariant,
 
   /// [realtimeClient] is a realtime communication mode, uses MQTT connection to connect to the devices.
   /// Also, uses the reversed architecture, so the device acts as the server, and we act as the client.
@@ -204,8 +185,6 @@ enum OperationMode {
         return "WEBHOOK";
       case OperationMode.realtimeClient:
         return "REALTIMECLIENT";
-      case OperationMode.realtimeVariant:
-        return "REALTIMEVARIANT";
       case OperationMode.simulation:
         return "SIMULATION";
       case OperationMode.mqtt:
@@ -224,8 +203,6 @@ enum OperationMode {
         return OperationMode.webhook;
       case "REALTIMECLIENT":
         return OperationMode.realtimeClient;
-      case "REALTIMEVARIANT":
-        return OperationMode.realtimeVariant;
       case "SIMULATION":
         return OperationMode.simulation;
       case "MQTT":

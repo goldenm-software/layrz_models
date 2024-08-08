@@ -2193,7 +2193,6 @@ _$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
-      icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
       dynamicIcon: json['dynamicIcon'] == null
           ? null
           : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
@@ -2342,7 +2341,6 @@ Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'color': const ColorConverter().toJson(instance.color),
-      'icon': const IconOrNullConverter().toJson(instance.icon),
       'dynamicIcon': instance.dynamicIcon?.toJson(),
       'users': instance.users?.map((e) => e.toJson()).toList(),
       'usersIds': instance.usersIds,

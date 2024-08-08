@@ -402,22 +402,6 @@ mixin _$InboundProtocol {
   @OperationModeConverter()
   OperationMode get operationMode => throw _privateConstructorUsedError;
 
-  /// Indicates the [host] and [port] server. Only when [operationMode] is [OperationMode.realtime]
-  @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
-      Check the [host] and [port] field for more information.
-    """)
-  RealtimeEndpoint? get realtimeEndpoint => throw _privateConstructorUsedError;
-
-  /// Indicates the [dataTopic], [eventsTopic], [realtimeTopic] and [commandTopic] server.
-  /// Only when [operationMode] is [OperationMode.realtime]
-  @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
-      Check the [mqttTopic] field for more information.
-    """)
-  RealtimeVariantEndpoint? get realtimeVariantEndpoint =>
-      throw _privateConstructorUsedError;
-
   /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
   String? get host => throw _privateConstructorUsedError;
 
@@ -430,26 +414,24 @@ mixin _$InboundProtocol {
   /// the protocol
   String? get mqttTopic => throw _privateConstructorUsedError;
 
-  /// Indicates if the protocol has support for commands, depending on the field, means:
-  /// for [hasNativeCommands] = true, the protocol has support for commands through the protocol itself
-  /// for [hasSmsCommands] = true, the protocol has support for commands through a SMS gateway
-  /// !Important: [hasNativeCommands] and [hasSmsCommands] can be true at the same time
+  /// Indicates if the protocol has support for commands sent via the protocol itself.
   bool? get hasNativeCommands => throw _privateConstructorUsedError;
+
+  /// Indicates if the protocol has support for commands sent via SMS gateway.
   bool? get hasSmsCommands => throw _privateConstructorUsedError;
 
   /// Indicates if the protocol has support for command ACK, only valid for [hasNativeCommands] = true
   bool? get hasCommandsResult => throw _privateConstructorUsedError;
 
-  /// [isFlespi], [channelId], [maxPerReceptor] and [flespiId] are the fields for Flespi protocols.
+  /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates if the protocol is from Flespi or not
   bool? get isFlespi => throw _privateConstructorUsedError;
 
+  /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates the Flespi Channel ID.
   int? get channelId => throw _privateConstructorUsedError;
 
-  /// Indicates the maximum amount of devices supported/handled by each receptor.
-  int? get maxPerReceptor => throw _privateConstructorUsedError;
-
+  /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates the ID of the protocol in Flespi.
   String? get flespiId => throw _privateConstructorUsedError;
 
@@ -474,6 +456,8 @@ mixin _$InboundProtocol {
   /// and [ackTopicFormat] is the [String] value that indicates the format of the topic to send the ACK.
   /// Currently only works for Layrz Link protocol.
   bool? get hasAck => throw _privateConstructorUsedError;
+
+  /// [ackTopicFormat] is the format of the topic to send the ACK.
   String? get ackTopicFormat => throw _privateConstructorUsedError;
 
   /// [dynamicIcon] is the icon of the inbound protocol.
@@ -502,6 +486,9 @@ mixin _$InboundProtocol {
   /// [flespiAcl] refers to the ACL for the token generation.
   List<FlespiAcl>? get flespiAcl => throw _privateConstructorUsedError;
 
+  /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+  WebhookStructure? get webhookStructure => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
@@ -520,14 +507,6 @@ abstract class $InboundProtocolCopyWith<$Res> {
       @ColorConverter() Color color,
       bool isEnabled,
       @OperationModeConverter() OperationMode operationMode,
-      @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
-      Check the [host] and [port] field for more information.
-    """) RealtimeEndpoint? realtimeEndpoint,
-      @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
-      Check the [mqttTopic] field for more information.
-    """) RealtimeVariantEndpoint? realtimeVariantEndpoint,
       String? host,
       int? port,
       String? mqttTopic,
@@ -536,7 +515,6 @@ abstract class $InboundProtocolCopyWith<$Res> {
       bool? hasCommandsResult,
       bool? isFlespi,
       int? channelId,
-      int? maxPerReceptor,
       String? flespiId,
       List<CredentialField>? requiredFields,
       bool? isImported,
@@ -552,12 +530,12 @@ abstract class $InboundProtocolCopyWith<$Res> {
       List<String> modbusPorts,
       int? usage,
       bool? requiresFlespiToken,
-      List<FlespiAcl>? flespiAcl});
+      List<FlespiAcl>? flespiAcl,
+      WebhookStructure? webhookStructure});
 
-  $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
-  $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $SimulationCycleCopyWith<$Res>? get cycle;
+  $WebhookStructureCopyWith<$Res>? get webhookStructure;
 }
 
 /// @nodoc
@@ -578,8 +556,6 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? color = null,
     Object? isEnabled = null,
     Object? operationMode = null,
-    Object? realtimeEndpoint = freezed,
-    Object? realtimeVariantEndpoint = freezed,
     Object? host = freezed,
     Object? port = freezed,
     Object? mqttTopic = freezed,
@@ -588,7 +564,6 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? hasCommandsResult = freezed,
     Object? isFlespi = freezed,
     Object? channelId = freezed,
-    Object? maxPerReceptor = freezed,
     Object? flespiId = freezed,
     Object? requiredFields = freezed,
     Object? isImported = freezed,
@@ -605,6 +580,7 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? usage = freezed,
     Object? requiresFlespiToken = freezed,
     Object? flespiAcl = freezed,
+    Object? webhookStructure = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -627,14 +603,6 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.operationMode
           : operationMode // ignore: cast_nullable_to_non_nullable
               as OperationMode,
-      realtimeEndpoint: freezed == realtimeEndpoint
-          ? _value.realtimeEndpoint
-          : realtimeEndpoint // ignore: cast_nullable_to_non_nullable
-              as RealtimeEndpoint?,
-      realtimeVariantEndpoint: freezed == realtimeVariantEndpoint
-          ? _value.realtimeVariantEndpoint
-          : realtimeVariantEndpoint // ignore: cast_nullable_to_non_nullable
-              as RealtimeVariantEndpoint?,
       host: freezed == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
@@ -666,10 +634,6 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
       channelId: freezed == channelId
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxPerReceptor: freezed == maxPerReceptor
-          ? _value.maxPerReceptor
-          : maxPerReceptor // ignore: cast_nullable_to_non_nullable
               as int?,
       flespiId: freezed == flespiId
           ? _value.flespiId
@@ -735,32 +699,11 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.flespiAcl
           : flespiAcl // ignore: cast_nullable_to_non_nullable
               as List<FlespiAcl>?,
+      webhookStructure: freezed == webhookStructure
+          ? _value.webhookStructure
+          : webhookStructure // ignore: cast_nullable_to_non_nullable
+              as WebhookStructure?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint {
-    if (_value.realtimeEndpoint == null) {
-      return null;
-    }
-
-    return $RealtimeEndpointCopyWith<$Res>(_value.realtimeEndpoint!, (value) {
-      return _then(_value.copyWith(realtimeEndpoint: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint {
-    if (_value.realtimeVariantEndpoint == null) {
-      return null;
-    }
-
-    return $RealtimeVariantEndpointCopyWith<$Res>(
-        _value.realtimeVariantEndpoint!, (value) {
-      return _then(_value.copyWith(realtimeVariantEndpoint: value) as $Val);
-    });
   }
 
   @override
@@ -786,6 +729,18 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
       return _then(_value.copyWith(cycle: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $WebhookStructureCopyWith<$Res>? get webhookStructure {
+    if (_value.webhookStructure == null) {
+      return null;
+    }
+
+    return $WebhookStructureCopyWith<$Res>(_value.webhookStructure!, (value) {
+      return _then(_value.copyWith(webhookStructure: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -802,14 +757,6 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       @ColorConverter() Color color,
       bool isEnabled,
       @OperationModeConverter() OperationMode operationMode,
-      @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
-      Check the [host] and [port] field for more information.
-    """) RealtimeEndpoint? realtimeEndpoint,
-      @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
-      Check the [mqttTopic] field for more information.
-    """) RealtimeVariantEndpoint? realtimeVariantEndpoint,
       String? host,
       int? port,
       String? mqttTopic,
@@ -818,7 +765,6 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       bool? hasCommandsResult,
       bool? isFlespi,
       int? channelId,
-      int? maxPerReceptor,
       String? flespiId,
       List<CredentialField>? requiredFields,
       bool? isImported,
@@ -834,16 +780,15 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       List<String> modbusPorts,
       int? usage,
       bool? requiresFlespiToken,
-      List<FlespiAcl>? flespiAcl});
+      List<FlespiAcl>? flespiAcl,
+      WebhookStructure? webhookStructure});
 
-  @override
-  $RealtimeEndpointCopyWith<$Res>? get realtimeEndpoint;
-  @override
-  $RealtimeVariantEndpointCopyWith<$Res>? get realtimeVariantEndpoint;
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
   @override
   $SimulationCycleCopyWith<$Res>? get cycle;
+  @override
+  $WebhookStructureCopyWith<$Res>? get webhookStructure;
 }
 
 /// @nodoc
@@ -862,8 +807,6 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? color = null,
     Object? isEnabled = null,
     Object? operationMode = null,
-    Object? realtimeEndpoint = freezed,
-    Object? realtimeVariantEndpoint = freezed,
     Object? host = freezed,
     Object? port = freezed,
     Object? mqttTopic = freezed,
@@ -872,7 +815,6 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? hasCommandsResult = freezed,
     Object? isFlespi = freezed,
     Object? channelId = freezed,
-    Object? maxPerReceptor = freezed,
     Object? flespiId = freezed,
     Object? requiredFields = freezed,
     Object? isImported = freezed,
@@ -889,6 +831,7 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? usage = freezed,
     Object? requiresFlespiToken = freezed,
     Object? flespiAcl = freezed,
+    Object? webhookStructure = freezed,
   }) {
     return _then(_$InboundProtocolImpl(
       id: null == id
@@ -911,14 +854,6 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value.operationMode
           : operationMode // ignore: cast_nullable_to_non_nullable
               as OperationMode,
-      realtimeEndpoint: freezed == realtimeEndpoint
-          ? _value.realtimeEndpoint
-          : realtimeEndpoint // ignore: cast_nullable_to_non_nullable
-              as RealtimeEndpoint?,
-      realtimeVariantEndpoint: freezed == realtimeVariantEndpoint
-          ? _value.realtimeVariantEndpoint
-          : realtimeVariantEndpoint // ignore: cast_nullable_to_non_nullable
-              as RealtimeVariantEndpoint?,
       host: freezed == host
           ? _value.host
           : host // ignore: cast_nullable_to_non_nullable
@@ -950,10 +885,6 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
       channelId: freezed == channelId
           ? _value.channelId
           : channelId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxPerReceptor: freezed == maxPerReceptor
-          ? _value.maxPerReceptor
-          : maxPerReceptor // ignore: cast_nullable_to_non_nullable
               as int?,
       flespiId: freezed == flespiId
           ? _value.flespiId
@@ -1019,6 +950,10 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value._flespiAcl
           : flespiAcl // ignore: cast_nullable_to_non_nullable
               as List<FlespiAcl>?,
+      webhookStructure: freezed == webhookStructure
+          ? _value.webhookStructure
+          : webhookStructure // ignore: cast_nullable_to_non_nullable
+              as WebhookStructure?,
     ));
   }
 }
@@ -1032,14 +967,6 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       @ColorConverter() required this.color,
       required this.isEnabled,
       @OperationModeConverter() required this.operationMode,
-      @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
-      Check the [host] and [port] field for more information.
-    """) this.realtimeEndpoint,
-      @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
-      Check the [mqttTopic] field for more information.
-    """) this.realtimeVariantEndpoint,
       this.host,
       this.port,
       this.mqttTopic,
@@ -1048,7 +975,6 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       this.hasCommandsResult,
       this.isFlespi,
       this.channelId,
-      this.maxPerReceptor,
       this.flespiId,
       final List<CredentialField>? requiredFields,
       this.isImported,
@@ -1064,7 +990,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       final List<String> modbusPorts = const [],
       this.usage,
       this.requiresFlespiToken,
-      final List<FlespiAcl>? flespiAcl})
+      final List<FlespiAcl>? flespiAcl,
+      this.webhookStructure})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models,
@@ -1096,23 +1023,6 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   @OperationModeConverter()
   final OperationMode operationMode;
 
-  /// Indicates the [host] and [port] server. Only when [operationMode] is [OperationMode.realtime]
-  @override
-  @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
-      Check the [host] and [port] field for more information.
-    """)
-  final RealtimeEndpoint? realtimeEndpoint;
-
-  /// Indicates the [dataTopic], [eventsTopic], [realtimeTopic] and [commandTopic] server.
-  /// Only when [operationMode] is [OperationMode.realtime]
-  @override
-  @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
-      Check the [mqttTopic] field for more information.
-    """)
-  final RealtimeVariantEndpoint? realtimeVariantEndpoint;
-
   /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
   @override
   final String? host;
@@ -1128,12 +1038,11 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   @override
   final String? mqttTopic;
 
-  /// Indicates if the protocol has support for commands, depending on the field, means:
-  /// for [hasNativeCommands] = true, the protocol has support for commands through the protocol itself
-  /// for [hasSmsCommands] = true, the protocol has support for commands through a SMS gateway
-  /// !Important: [hasNativeCommands] and [hasSmsCommands] can be true at the same time
+  /// Indicates if the protocol has support for commands sent via the protocol itself.
   @override
   final bool? hasNativeCommands;
+
+  /// Indicates if the protocol has support for commands sent via SMS gateway.
   @override
   final bool? hasSmsCommands;
 
@@ -1141,19 +1050,17 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   @override
   final bool? hasCommandsResult;
 
-  /// [isFlespi], [channelId], [maxPerReceptor] and [flespiId] are the fields for Flespi protocols.
+  /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates if the protocol is from Flespi or not
   @override
   final bool? isFlespi;
 
+  /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates the Flespi Channel ID.
   @override
   final int? channelId;
 
-  /// Indicates the maximum amount of devices supported/handled by each receptor.
-  @override
-  final int? maxPerReceptor;
-
+  /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates the ID of the protocol in Flespi.
   @override
   final String? flespiId;
@@ -1211,6 +1118,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   /// Currently only works for Layrz Link protocol.
   @override
   final bool? hasAck;
+
+  /// [ackTopicFormat] is the format of the topic to send the ACK.
   @override
   final String? ackTopicFormat;
 
@@ -1265,9 +1174,13 @@ class _$InboundProtocolImpl implements _InboundProtocol {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+  @override
+  final WebhookStructure? webhookStructure;
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, realtimeEndpoint: $realtimeEndpoint, realtimeVariantEndpoint: $realtimeVariantEndpoint, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, maxPerReceptor: $maxPerReceptor, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure)';
   }
 
   @override
@@ -1282,11 +1195,6 @@ class _$InboundProtocolImpl implements _InboundProtocol {
                 other.isEnabled == isEnabled) &&
             (identical(other.operationMode, operationMode) ||
                 other.operationMode == operationMode) &&
-            (identical(other.realtimeEndpoint, realtimeEndpoint) ||
-                other.realtimeEndpoint == realtimeEndpoint) &&
-            (identical(
-                    other.realtimeVariantEndpoint, realtimeVariantEndpoint) ||
-                other.realtimeVariantEndpoint == realtimeVariantEndpoint) &&
             (identical(other.host, host) || other.host == host) &&
             (identical(other.port, port) || other.port == port) &&
             (identical(other.mqttTopic, mqttTopic) ||
@@ -1301,8 +1209,6 @@ class _$InboundProtocolImpl implements _InboundProtocol {
                 other.isFlespi == isFlespi) &&
             (identical(other.channelId, channelId) ||
                 other.channelId == channelId) &&
-            (identical(other.maxPerReceptor, maxPerReceptor) ||
-                other.maxPerReceptor == maxPerReceptor) &&
             (identical(other.flespiId, flespiId) ||
                 other.flespiId == flespiId) &&
             const DeepCollectionEquality()
@@ -1328,7 +1234,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
             (identical(other.requiresFlespiToken, requiresFlespiToken) ||
                 other.requiresFlespiToken == requiresFlespiToken) &&
             const DeepCollectionEquality()
-                .equals(other._flespiAcl, _flespiAcl));
+                .equals(other._flespiAcl, _flespiAcl) &&
+            (identical(other.webhookStructure, webhookStructure) ||
+                other.webhookStructure == webhookStructure));
   }
 
   @JsonKey(ignore: true)
@@ -1340,8 +1248,6 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         color,
         isEnabled,
         operationMode,
-        realtimeEndpoint,
-        realtimeVariantEndpoint,
         host,
         port,
         mqttTopic,
@@ -1350,7 +1256,6 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         hasCommandsResult,
         isFlespi,
         channelId,
-        maxPerReceptor,
         flespiId,
         const DeepCollectionEquality().hash(_requiredFields),
         isImported,
@@ -1366,7 +1271,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         const DeepCollectionEquality().hash(_modbusPorts),
         usage,
         requiresFlespiToken,
-        const DeepCollectionEquality().hash(_flespiAcl)
+        const DeepCollectionEquality().hash(_flespiAcl),
+        webhookStructure
       ]);
 
   @JsonKey(ignore: true)
@@ -1391,14 +1297,6 @@ abstract class _InboundProtocol implements InboundProtocol {
       @ColorConverter() required final Color color,
       required final bool isEnabled,
       @OperationModeConverter() required final OperationMode operationMode,
-      @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
-      Check the [host] and [port] field for more information.
-    """) final RealtimeEndpoint? realtimeEndpoint,
-      @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
-      Check the [mqttTopic] field for more information.
-    """) final RealtimeVariantEndpoint? realtimeVariantEndpoint,
       final String? host,
       final int? port,
       final String? mqttTopic,
@@ -1407,7 +1305,6 @@ abstract class _InboundProtocol implements InboundProtocol {
       final bool? hasCommandsResult,
       final bool? isFlespi,
       final int? channelId,
-      final int? maxPerReceptor,
       final String? flespiId,
       final List<CredentialField>? requiredFields,
       final bool? isImported,
@@ -1423,7 +1320,8 @@ abstract class _InboundProtocol implements InboundProtocol {
       final List<String> modbusPorts,
       final int? usage,
       final bool? requiresFlespiToken,
-      final List<FlespiAcl>? flespiAcl}) = _$InboundProtocolImpl;
+      final List<FlespiAcl>? flespiAcl,
+      final WebhookStructure? webhookStructure}) = _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
@@ -1452,23 +1350,6 @@ abstract class _InboundProtocol implements InboundProtocol {
   OperationMode get operationMode;
   @override
 
-  /// Indicates the [host] and [port] server. Only when [operationMode] is [OperationMode.realtime]
-  @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
-      Check the [host] and [port] field for more information.
-    """)
-  RealtimeEndpoint? get realtimeEndpoint;
-  @override
-
-  /// Indicates the [dataTopic], [eventsTopic], [realtimeTopic] and [commandTopic] server.
-  /// Only when [operationMode] is [OperationMode.realtime]
-  @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
-      Check the [mqttTopic] field for more information.
-    """)
-  RealtimeVariantEndpoint? get realtimeVariantEndpoint;
-  @override
-
   /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
   String? get host;
   @override
@@ -1484,12 +1365,11 @@ abstract class _InboundProtocol implements InboundProtocol {
   String? get mqttTopic;
   @override
 
-  /// Indicates if the protocol has support for commands, depending on the field, means:
-  /// for [hasNativeCommands] = true, the protocol has support for commands through the protocol itself
-  /// for [hasSmsCommands] = true, the protocol has support for commands through a SMS gateway
-  /// !Important: [hasNativeCommands] and [hasSmsCommands] can be true at the same time
+  /// Indicates if the protocol has support for commands sent via the protocol itself.
   bool? get hasNativeCommands;
   @override
+
+  /// Indicates if the protocol has support for commands sent via SMS gateway.
   bool? get hasSmsCommands;
   @override
 
@@ -1497,19 +1377,17 @@ abstract class _InboundProtocol implements InboundProtocol {
   bool? get hasCommandsResult;
   @override
 
-  /// [isFlespi], [channelId], [maxPerReceptor] and [flespiId] are the fields for Flespi protocols.
+  /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates if the protocol is from Flespi or not
   bool? get isFlespi;
   @override
 
+  /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates the Flespi Channel ID.
   int? get channelId;
   @override
 
-  /// Indicates the maximum amount of devices supported/handled by each receptor.
-  int? get maxPerReceptor;
-  @override
-
+  /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates the ID of the protocol in Flespi.
   String? get flespiId;
   @override
@@ -1540,6 +1418,8 @@ abstract class _InboundProtocol implements InboundProtocol {
   /// Currently only works for Layrz Link protocol.
   bool? get hasAck;
   @override
+
+  /// [ackTopicFormat] is the format of the topic to send the ACK.
   String? get ackTopicFormat;
   @override
 
@@ -1576,6 +1456,10 @@ abstract class _InboundProtocol implements InboundProtocol {
   /// [flespiAcl] refers to the ACL for the token generation.
   List<FlespiAcl>? get flespiAcl;
   @override
+
+  /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+  WebhookStructure? get webhookStructure;
+  @override
   @JsonKey(ignore: true)
   _$$InboundProtocolImplCopyWith<_$InboundProtocolImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1597,7 +1481,7 @@ mixin _$InboundService {
   Map<String, dynamic>? get credentials => throw _privateConstructorUsedError;
 
   /// Is the ID of the External Account.
-  String? get accountId => throw _privateConstructorUsedError;
+  String? get externalAccountId => throw _privateConstructorUsedError;
 
   /// Is the update time of the service.
   @DurationOrNullConverter()
@@ -1621,6 +1505,9 @@ mixin _$InboundService {
   /// A list of custom access permissions.
   List<Access>? get access => throw _privateConstructorUsedError;
 
+  /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+  WebhookStructure? get webhookStructure => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundServiceCopyWith<InboundService> get copyWith =>
@@ -1637,17 +1524,19 @@ abstract class $InboundServiceCopyWith<$Res> {
       {String id,
       String name,
       Map<String, dynamic>? credentials,
-      String? accountId,
+      String? externalAccountId,
       @DurationOrNullConverter() Duration? updateTime,
       InboundProtocol? protocol,
       String? protocolId,
       bool? isEnabled,
       String? token,
       InboundStructure? structure,
-      List<Access>? access});
+      List<Access>? access,
+      WebhookStructure? webhookStructure});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
   $InboundStructureCopyWith<$Res>? get structure;
+  $WebhookStructureCopyWith<$Res>? get webhookStructure;
 }
 
 /// @nodoc
@@ -1666,7 +1555,7 @@ class _$InboundServiceCopyWithImpl<$Res, $Val extends InboundService>
     Object? id = null,
     Object? name = null,
     Object? credentials = freezed,
-    Object? accountId = freezed,
+    Object? externalAccountId = freezed,
     Object? updateTime = freezed,
     Object? protocol = freezed,
     Object? protocolId = freezed,
@@ -1674,6 +1563,7 @@ class _$InboundServiceCopyWithImpl<$Res, $Val extends InboundService>
     Object? token = freezed,
     Object? structure = freezed,
     Object? access = freezed,
+    Object? webhookStructure = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1688,9 +1578,9 @@ class _$InboundServiceCopyWithImpl<$Res, $Val extends InboundService>
           ? _value.credentials
           : credentials // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      accountId: freezed == accountId
-          ? _value.accountId
-          : accountId // ignore: cast_nullable_to_non_nullable
+      externalAccountId: freezed == externalAccountId
+          ? _value.externalAccountId
+          : externalAccountId // ignore: cast_nullable_to_non_nullable
               as String?,
       updateTime: freezed == updateTime
           ? _value.updateTime
@@ -1720,6 +1610,10 @@ class _$InboundServiceCopyWithImpl<$Res, $Val extends InboundService>
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      webhookStructure: freezed == webhookStructure
+          ? _value.webhookStructure
+          : webhookStructure // ignore: cast_nullable_to_non_nullable
+              as WebhookStructure?,
     ) as $Val);
   }
 
@@ -1746,6 +1640,18 @@ class _$InboundServiceCopyWithImpl<$Res, $Val extends InboundService>
       return _then(_value.copyWith(structure: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $WebhookStructureCopyWith<$Res>? get webhookStructure {
+    if (_value.webhookStructure == null) {
+      return null;
+    }
+
+    return $WebhookStructureCopyWith<$Res>(_value.webhookStructure!, (value) {
+      return _then(_value.copyWith(webhookStructure: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -1760,19 +1666,22 @@ abstract class _$$InboundServiceImplCopyWith<$Res>
       {String id,
       String name,
       Map<String, dynamic>? credentials,
-      String? accountId,
+      String? externalAccountId,
       @DurationOrNullConverter() Duration? updateTime,
       InboundProtocol? protocol,
       String? protocolId,
       bool? isEnabled,
       String? token,
       InboundStructure? structure,
-      List<Access>? access});
+      List<Access>? access,
+      WebhookStructure? webhookStructure});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
   @override
   $InboundStructureCopyWith<$Res>? get structure;
+  @override
+  $WebhookStructureCopyWith<$Res>? get webhookStructure;
 }
 
 /// @nodoc
@@ -1789,7 +1698,7 @@ class __$$InboundServiceImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? credentials = freezed,
-    Object? accountId = freezed,
+    Object? externalAccountId = freezed,
     Object? updateTime = freezed,
     Object? protocol = freezed,
     Object? protocolId = freezed,
@@ -1797,6 +1706,7 @@ class __$$InboundServiceImplCopyWithImpl<$Res>
     Object? token = freezed,
     Object? structure = freezed,
     Object? access = freezed,
+    Object? webhookStructure = freezed,
   }) {
     return _then(_$InboundServiceImpl(
       id: null == id
@@ -1811,9 +1721,9 @@ class __$$InboundServiceImplCopyWithImpl<$Res>
           ? _value._credentials
           : credentials // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
-      accountId: freezed == accountId
-          ? _value.accountId
-          : accountId // ignore: cast_nullable_to_non_nullable
+      externalAccountId: freezed == externalAccountId
+          ? _value.externalAccountId
+          : externalAccountId // ignore: cast_nullable_to_non_nullable
               as String?,
       updateTime: freezed == updateTime
           ? _value.updateTime
@@ -1843,6 +1753,10 @@ class __$$InboundServiceImplCopyWithImpl<$Res>
           ? _value._access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      webhookStructure: freezed == webhookStructure
+          ? _value.webhookStructure
+          : webhookStructure // ignore: cast_nullable_to_non_nullable
+              as WebhookStructure?,
     ));
   }
 }
@@ -1854,14 +1768,15 @@ class _$InboundServiceImpl implements _InboundService {
       {required this.id,
       required this.name,
       final Map<String, dynamic>? credentials,
-      this.accountId,
+      this.externalAccountId,
       @DurationOrNullConverter() this.updateTime,
       this.protocol,
       this.protocolId,
       this.isEnabled,
       this.token,
       this.structure,
-      final List<Access>? access})
+      final List<Access>? access,
+      this.webhookStructure})
       : _credentials = credentials,
         _access = access;
 
@@ -1891,7 +1806,7 @@ class _$InboundServiceImpl implements _InboundService {
 
   /// Is the ID of the External Account.
   @override
-  final String? accountId;
+  final String? externalAccountId;
 
   /// Is the update time of the service.
   @override
@@ -1931,9 +1846,13 @@ class _$InboundServiceImpl implements _InboundService {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+  @override
+  final WebhookStructure? webhookStructure;
+
   @override
   String toString() {
-    return 'InboundService(id: $id, name: $name, credentials: $credentials, accountId: $accountId, updateTime: $updateTime, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, token: $token, structure: $structure, access: $access)';
+    return 'InboundService(id: $id, name: $name, credentials: $credentials, externalAccountId: $externalAccountId, updateTime: $updateTime, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, token: $token, structure: $structure, access: $access, webhookStructure: $webhookStructure)';
   }
 
   @override
@@ -1945,8 +1864,8 @@ class _$InboundServiceImpl implements _InboundService {
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
                 .equals(other._credentials, _credentials) &&
-            (identical(other.accountId, accountId) ||
-                other.accountId == accountId) &&
+            (identical(other.externalAccountId, externalAccountId) ||
+                other.externalAccountId == externalAccountId) &&
             (identical(other.updateTime, updateTime) ||
                 other.updateTime == updateTime) &&
             (identical(other.protocol, protocol) ||
@@ -1958,7 +1877,9 @@ class _$InboundServiceImpl implements _InboundService {
             (identical(other.token, token) || other.token == token) &&
             (identical(other.structure, structure) ||
                 other.structure == structure) &&
-            const DeepCollectionEquality().equals(other._access, _access));
+            const DeepCollectionEquality().equals(other._access, _access) &&
+            (identical(other.webhookStructure, webhookStructure) ||
+                other.webhookStructure == webhookStructure));
   }
 
   @JsonKey(ignore: true)
@@ -1968,14 +1889,15 @@ class _$InboundServiceImpl implements _InboundService {
       id,
       name,
       const DeepCollectionEquality().hash(_credentials),
-      accountId,
+      externalAccountId,
       updateTime,
       protocol,
       protocolId,
       isEnabled,
       token,
       structure,
-      const DeepCollectionEquality().hash(_access));
+      const DeepCollectionEquality().hash(_access),
+      webhookStructure);
 
   @JsonKey(ignore: true)
   @override
@@ -1997,14 +1919,15 @@ abstract class _InboundService implements InboundService {
       {required final String id,
       required final String name,
       final Map<String, dynamic>? credentials,
-      final String? accountId,
+      final String? externalAccountId,
       @DurationOrNullConverter() final Duration? updateTime,
       final InboundProtocol? protocol,
       final String? protocolId,
       final bool? isEnabled,
       final String? token,
       final InboundStructure? structure,
-      final List<Access>? access}) = _$InboundServiceImpl;
+      final List<Access>? access,
+      final WebhookStructure? webhookStructure}) = _$InboundServiceImpl;
 
   factory _InboundService.fromJson(Map<String, dynamic> json) =
       _$InboundServiceImpl.fromJson;
@@ -2024,7 +1947,7 @@ abstract class _InboundService implements InboundService {
   @override
 
   /// Is the ID of the External Account.
-  String? get accountId;
+  String? get externalAccountId;
   @override
 
   /// Is the update time of the service.
@@ -2055,678 +1978,11 @@ abstract class _InboundService implements InboundService {
   /// A list of custom access permissions.
   List<Access>? get access;
   @override
+
+  /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+  WebhookStructure? get webhookStructure;
+  @override
   @JsonKey(ignore: true)
   _$$InboundServiceImplCopyWith<_$InboundServiceImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-InboundStructure _$InboundStructureFromJson(Map<String, dynamic> json) {
-  return _InboundStructure.fromJson(json);
-}
-
-/// @nodoc
-mixin _$InboundStructure {
-  bool get hasPosition => throw _privateConstructorUsedError;
-  InboundPositionStructure get position => throw _privateConstructorUsedError;
-  bool get hasPayload => throw _privateConstructorUsedError;
-  List<InboundPayloadStructure> get payload =>
-      throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $InboundStructureCopyWith<InboundStructure> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $InboundStructureCopyWith<$Res> {
-  factory $InboundStructureCopyWith(
-          InboundStructure value, $Res Function(InboundStructure) then) =
-      _$InboundStructureCopyWithImpl<$Res, InboundStructure>;
-  @useResult
-  $Res call(
-      {bool hasPosition,
-      InboundPositionStructure position,
-      bool hasPayload,
-      List<InboundPayloadStructure> payload});
-
-  $InboundPositionStructureCopyWith<$Res> get position;
-}
-
-/// @nodoc
-class _$InboundStructureCopyWithImpl<$Res, $Val extends InboundStructure>
-    implements $InboundStructureCopyWith<$Res> {
-  _$InboundStructureCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hasPosition = null,
-    Object? position = null,
-    Object? hasPayload = null,
-    Object? payload = null,
-  }) {
-    return _then(_value.copyWith(
-      hasPosition: null == hasPosition
-          ? _value.hasPosition
-          : hasPosition // ignore: cast_nullable_to_non_nullable
-              as bool,
-      position: null == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as InboundPositionStructure,
-      hasPayload: null == hasPayload
-          ? _value.hasPayload
-          : hasPayload // ignore: cast_nullable_to_non_nullable
-              as bool,
-      payload: null == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as List<InboundPayloadStructure>,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $InboundPositionStructureCopyWith<$Res> get position {
-    return $InboundPositionStructureCopyWith<$Res>(_value.position, (value) {
-      return _then(_value.copyWith(position: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$InboundStructureImplCopyWith<$Res>
-    implements $InboundStructureCopyWith<$Res> {
-  factory _$$InboundStructureImplCopyWith(_$InboundStructureImpl value,
-          $Res Function(_$InboundStructureImpl) then) =
-      __$$InboundStructureImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {bool hasPosition,
-      InboundPositionStructure position,
-      bool hasPayload,
-      List<InboundPayloadStructure> payload});
-
-  @override
-  $InboundPositionStructureCopyWith<$Res> get position;
-}
-
-/// @nodoc
-class __$$InboundStructureImplCopyWithImpl<$Res>
-    extends _$InboundStructureCopyWithImpl<$Res, _$InboundStructureImpl>
-    implements _$$InboundStructureImplCopyWith<$Res> {
-  __$$InboundStructureImplCopyWithImpl(_$InboundStructureImpl _value,
-      $Res Function(_$InboundStructureImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hasPosition = null,
-    Object? position = null,
-    Object? hasPayload = null,
-    Object? payload = null,
-  }) {
-    return _then(_$InboundStructureImpl(
-      hasPosition: null == hasPosition
-          ? _value.hasPosition
-          : hasPosition // ignore: cast_nullable_to_non_nullable
-              as bool,
-      position: null == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as InboundPositionStructure,
-      hasPayload: null == hasPayload
-          ? _value.hasPayload
-          : hasPayload // ignore: cast_nullable_to_non_nullable
-              as bool,
-      payload: null == payload
-          ? _value._payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as List<InboundPayloadStructure>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$InboundStructureImpl implements _InboundStructure {
-  const _$InboundStructureImpl(
-      {required this.hasPosition,
-      required this.position,
-      required this.hasPayload,
-      required final List<InboundPayloadStructure> payload})
-      : _payload = payload;
-
-  factory _$InboundStructureImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InboundStructureImplFromJson(json);
-
-  @override
-  final bool hasPosition;
-  @override
-  final InboundPositionStructure position;
-  @override
-  final bool hasPayload;
-  final List<InboundPayloadStructure> _payload;
-  @override
-  List<InboundPayloadStructure> get payload {
-    if (_payload is EqualUnmodifiableListView) return _payload;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_payload);
-  }
-
-  @override
-  String toString() {
-    return 'InboundStructure(hasPosition: $hasPosition, position: $position, hasPayload: $hasPayload, payload: $payload)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InboundStructureImpl &&
-            (identical(other.hasPosition, hasPosition) ||
-                other.hasPosition == hasPosition) &&
-            (identical(other.position, position) ||
-                other.position == position) &&
-            (identical(other.hasPayload, hasPayload) ||
-                other.hasPayload == hasPayload) &&
-            const DeepCollectionEquality().equals(other._payload, _payload));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, hasPosition, position,
-      hasPayload, const DeepCollectionEquality().hash(_payload));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InboundStructureImplCopyWith<_$InboundStructureImpl> get copyWith =>
-      __$$InboundStructureImplCopyWithImpl<_$InboundStructureImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InboundStructureImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _InboundStructure implements InboundStructure {
-  const factory _InboundStructure(
-          {required final bool hasPosition,
-          required final InboundPositionStructure position,
-          required final bool hasPayload,
-          required final List<InboundPayloadStructure> payload}) =
-      _$InboundStructureImpl;
-
-  factory _InboundStructure.fromJson(Map<String, dynamic> json) =
-      _$InboundStructureImpl.fromJson;
-
-  @override
-  bool get hasPosition;
-  @override
-  InboundPositionStructure get position;
-  @override
-  bool get hasPayload;
-  @override
-  List<InboundPayloadStructure> get payload;
-  @override
-  @JsonKey(ignore: true)
-  _$$InboundStructureImplCopyWith<_$InboundStructureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-InboundPositionStructure _$InboundPositionStructureFromJson(
-    Map<String, dynamic> json) {
-  return _InboundPositionStructure.fromJson(json);
-}
-
-/// @nodoc
-mixin _$InboundPositionStructure {
-  bool get latitude => throw _privateConstructorUsedError;
-  bool get longitude => throw _privateConstructorUsedError;
-  bool get altitude => throw _privateConstructorUsedError;
-  bool get speed => throw _privateConstructorUsedError;
-  bool get direction => throw _privateConstructorUsedError;
-  bool get hdop => throw _privateConstructorUsedError;
-  bool get satellites => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $InboundPositionStructureCopyWith<InboundPositionStructure> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $InboundPositionStructureCopyWith<$Res> {
-  factory $InboundPositionStructureCopyWith(InboundPositionStructure value,
-          $Res Function(InboundPositionStructure) then) =
-      _$InboundPositionStructureCopyWithImpl<$Res, InboundPositionStructure>;
-  @useResult
-  $Res call(
-      {bool latitude,
-      bool longitude,
-      bool altitude,
-      bool speed,
-      bool direction,
-      bool hdop,
-      bool satellites});
-}
-
-/// @nodoc
-class _$InboundPositionStructureCopyWithImpl<$Res,
-        $Val extends InboundPositionStructure>
-    implements $InboundPositionStructureCopyWith<$Res> {
-  _$InboundPositionStructureCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? altitude = null,
-    Object? speed = null,
-    Object? direction = null,
-    Object? hdop = null,
-    Object? satellites = null,
-  }) {
-    return _then(_value.copyWith(
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      altitude: null == altitude
-          ? _value.altitude
-          : altitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      speed: null == speed
-          ? _value.speed
-          : speed // ignore: cast_nullable_to_non_nullable
-              as bool,
-      direction: null == direction
-          ? _value.direction
-          : direction // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hdop: null == hdop
-          ? _value.hdop
-          : hdop // ignore: cast_nullable_to_non_nullable
-              as bool,
-      satellites: null == satellites
-          ? _value.satellites
-          : satellites // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$InboundPositionStructureImplCopyWith<$Res>
-    implements $InboundPositionStructureCopyWith<$Res> {
-  factory _$$InboundPositionStructureImplCopyWith(
-          _$InboundPositionStructureImpl value,
-          $Res Function(_$InboundPositionStructureImpl) then) =
-      __$$InboundPositionStructureImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {bool latitude,
-      bool longitude,
-      bool altitude,
-      bool speed,
-      bool direction,
-      bool hdop,
-      bool satellites});
-}
-
-/// @nodoc
-class __$$InboundPositionStructureImplCopyWithImpl<$Res>
-    extends _$InboundPositionStructureCopyWithImpl<$Res,
-        _$InboundPositionStructureImpl>
-    implements _$$InboundPositionStructureImplCopyWith<$Res> {
-  __$$InboundPositionStructureImplCopyWithImpl(
-      _$InboundPositionStructureImpl _value,
-      $Res Function(_$InboundPositionStructureImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? altitude = null,
-    Object? speed = null,
-    Object? direction = null,
-    Object? hdop = null,
-    Object? satellites = null,
-  }) {
-    return _then(_$InboundPositionStructureImpl(
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      altitude: null == altitude
-          ? _value.altitude
-          : altitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      speed: null == speed
-          ? _value.speed
-          : speed // ignore: cast_nullable_to_non_nullable
-              as bool,
-      direction: null == direction
-          ? _value.direction
-          : direction // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hdop: null == hdop
-          ? _value.hdop
-          : hdop // ignore: cast_nullable_to_non_nullable
-              as bool,
-      satellites: null == satellites
-          ? _value.satellites
-          : satellites // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$InboundPositionStructureImpl implements _InboundPositionStructure {
-  const _$InboundPositionStructureImpl(
-      {required this.latitude,
-      required this.longitude,
-      required this.altitude,
-      required this.speed,
-      required this.direction,
-      required this.hdop,
-      required this.satellites});
-
-  factory _$InboundPositionStructureImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InboundPositionStructureImplFromJson(json);
-
-  @override
-  final bool latitude;
-  @override
-  final bool longitude;
-  @override
-  final bool altitude;
-  @override
-  final bool speed;
-  @override
-  final bool direction;
-  @override
-  final bool hdop;
-  @override
-  final bool satellites;
-
-  @override
-  String toString() {
-    return 'InboundPositionStructure(latitude: $latitude, longitude: $longitude, altitude: $altitude, speed: $speed, direction: $direction, hdop: $hdop, satellites: $satellites)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InboundPositionStructureImpl &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.altitude, altitude) ||
-                other.altitude == altitude) &&
-            (identical(other.speed, speed) || other.speed == speed) &&
-            (identical(other.direction, direction) ||
-                other.direction == direction) &&
-            (identical(other.hdop, hdop) || other.hdop == hdop) &&
-            (identical(other.satellites, satellites) ||
-                other.satellites == satellites));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, latitude, longitude, altitude,
-      speed, direction, hdop, satellites);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InboundPositionStructureImplCopyWith<_$InboundPositionStructureImpl>
-      get copyWith => __$$InboundPositionStructureImplCopyWithImpl<
-          _$InboundPositionStructureImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InboundPositionStructureImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _InboundPositionStructure implements InboundPositionStructure {
-  const factory _InboundPositionStructure(
-      {required final bool latitude,
-      required final bool longitude,
-      required final bool altitude,
-      required final bool speed,
-      required final bool direction,
-      required final bool hdop,
-      required final bool satellites}) = _$InboundPositionStructureImpl;
-
-  factory _InboundPositionStructure.fromJson(Map<String, dynamic> json) =
-      _$InboundPositionStructureImpl.fromJson;
-
-  @override
-  bool get latitude;
-  @override
-  bool get longitude;
-  @override
-  bool get altitude;
-  @override
-  bool get speed;
-  @override
-  bool get direction;
-  @override
-  bool get hdop;
-  @override
-  bool get satellites;
-  @override
-  @JsonKey(ignore: true)
-  _$$InboundPositionStructureImplCopyWith<_$InboundPositionStructureImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-InboundPayloadStructure _$InboundPayloadStructureFromJson(
-    Map<String, dynamic> json) {
-  return _InboundPayloadStructure.fromJson(json);
-}
-
-/// @nodoc
-mixin _$InboundPayloadStructure {
-  String get field => throw _privateConstructorUsedError;
-  @InboundPayloadStructureTypeConverter()
-  InboundPayloadStructureType get type => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $InboundPayloadStructureCopyWith<InboundPayloadStructure> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $InboundPayloadStructureCopyWith<$Res> {
-  factory $InboundPayloadStructureCopyWith(InboundPayloadStructure value,
-          $Res Function(InboundPayloadStructure) then) =
-      _$InboundPayloadStructureCopyWithImpl<$Res, InboundPayloadStructure>;
-  @useResult
-  $Res call(
-      {String field,
-      @InboundPayloadStructureTypeConverter()
-      InboundPayloadStructureType type});
-}
-
-/// @nodoc
-class _$InboundPayloadStructureCopyWithImpl<$Res,
-        $Val extends InboundPayloadStructure>
-    implements $InboundPayloadStructureCopyWith<$Res> {
-  _$InboundPayloadStructureCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? field = null,
-    Object? type = null,
-  }) {
-    return _then(_value.copyWith(
-      field: null == field
-          ? _value.field
-          : field // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as InboundPayloadStructureType,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$InboundPayloadStructureImplCopyWith<$Res>
-    implements $InboundPayloadStructureCopyWith<$Res> {
-  factory _$$InboundPayloadStructureImplCopyWith(
-          _$InboundPayloadStructureImpl value,
-          $Res Function(_$InboundPayloadStructureImpl) then) =
-      __$$InboundPayloadStructureImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String field,
-      @InboundPayloadStructureTypeConverter()
-      InboundPayloadStructureType type});
-}
-
-/// @nodoc
-class __$$InboundPayloadStructureImplCopyWithImpl<$Res>
-    extends _$InboundPayloadStructureCopyWithImpl<$Res,
-        _$InboundPayloadStructureImpl>
-    implements _$$InboundPayloadStructureImplCopyWith<$Res> {
-  __$$InboundPayloadStructureImplCopyWithImpl(
-      _$InboundPayloadStructureImpl _value,
-      $Res Function(_$InboundPayloadStructureImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? field = null,
-    Object? type = null,
-  }) {
-    return _then(_$InboundPayloadStructureImpl(
-      field: null == field
-          ? _value.field
-          : field // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as InboundPayloadStructureType,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$InboundPayloadStructureImpl implements _InboundPayloadStructure {
-  const _$InboundPayloadStructureImpl(
-      {required this.field,
-      @InboundPayloadStructureTypeConverter() required this.type});
-
-  factory _$InboundPayloadStructureImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InboundPayloadStructureImplFromJson(json);
-
-  @override
-  final String field;
-  @override
-  @InboundPayloadStructureTypeConverter()
-  final InboundPayloadStructureType type;
-
-  @override
-  String toString() {
-    return 'InboundPayloadStructure(field: $field, type: $type)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InboundPayloadStructureImpl &&
-            (identical(other.field, field) || other.field == field) &&
-            (identical(other.type, type) || other.type == type));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, field, type);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InboundPayloadStructureImplCopyWith<_$InboundPayloadStructureImpl>
-      get copyWith => __$$InboundPayloadStructureImplCopyWithImpl<
-          _$InboundPayloadStructureImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InboundPayloadStructureImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _InboundPayloadStructure implements InboundPayloadStructure {
-  const factory _InboundPayloadStructure(
-          {required final String field,
-          @InboundPayloadStructureTypeConverter()
-          required final InboundPayloadStructureType type}) =
-      _$InboundPayloadStructureImpl;
-
-  factory _InboundPayloadStructure.fromJson(Map<String, dynamic> json) =
-      _$InboundPayloadStructureImpl.fromJson;
-
-  @override
-  String get field;
-  @override
-  @InboundPayloadStructureTypeConverter()
-  InboundPayloadStructureType get type;
-  @override
-  @JsonKey(ignore: true)
-  _$$InboundPayloadStructureImplCopyWith<_$InboundPayloadStructureImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }

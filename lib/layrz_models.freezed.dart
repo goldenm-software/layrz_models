@@ -24889,11 +24889,6 @@ mixin _$Tag {
   @ColorConverter()
   Color get color => throw _privateConstructorUsedError;
 
-  /// Is the icon of the tag.
-  @Deprecated('Use `dynamicIcon` instead')
-  @IconOrNullConverter()
-  IconData? get icon => throw _privateConstructorUsedError;
-
   /// Dynamic icon
   Avatar? get dynamicIcon => throw _privateConstructorUsedError;
 
@@ -25057,9 +25052,6 @@ abstract class $TagCopyWith<$Res> {
       {String id,
       String name,
       @ColorConverter() Color color,
-      @Deprecated('Use `dynamicIcon` instead')
-      @IconOrNullConverter()
-      IconData? icon,
       Avatar? dynamicIcon,
       List<User>? users,
       List<String>? usersIds,
@@ -25128,7 +25120,6 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? id = null,
     Object? name = null,
     Object? color = null,
-    Object? icon = freezed,
     Object? dynamicIcon = freezed,
     Object? users = freezed,
     Object? usersIds = freezed,
@@ -25191,10 +25182,6 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData?,
       dynamicIcon: freezed == dynamicIcon
           ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
@@ -25425,9 +25412,6 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
       {String id,
       String name,
       @ColorConverter() Color color,
-      @Deprecated('Use `dynamicIcon` instead')
-      @IconOrNullConverter()
-      IconData? icon,
       Avatar? dynamicIcon,
       List<User>? users,
       List<String>? usersIds,
@@ -25495,7 +25479,6 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
     Object? id = null,
     Object? name = null,
     Object? color = null,
-    Object? icon = freezed,
     Object? dynamicIcon = freezed,
     Object? users = freezed,
     Object? usersIds = freezed,
@@ -25558,10 +25541,6 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData?,
       dynamicIcon: freezed == dynamicIcon
           ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
@@ -25765,7 +25744,6 @@ class _$TagImpl implements _Tag {
       {required this.id,
       required this.name,
       @ColorConverter() required this.color,
-      @Deprecated('Use `dynamicIcon` instead') @IconOrNullConverter() this.icon,
       this.dynamicIcon,
       final List<User>? users,
       final List<String>? usersIds,
@@ -25875,12 +25853,6 @@ class _$TagImpl implements _Tag {
   @override
   @ColorConverter()
   final Color color;
-
-  /// Is the icon of the tag.
-  @override
-  @Deprecated('Use `dynamicIcon` instead')
-  @IconOrNullConverter()
-  final IconData? icon;
 
   /// Dynamic icon
   @override
@@ -26492,7 +26464,7 @@ class _$TagImpl implements _Tag {
 
   @override
   String toString() {
-    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, mappitRoutes: $mappitRoutes, mappitRoutesIds: $mappitRoutesIds, exchangeServices: $exchangeServices, exchangeServicesIds: $exchangeServicesIds, access: $access, owner: $owner, ownerId: $ownerId)';
+    return 'Tag(id: $id, name: $name, color: $color, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, mappitRoutes: $mappitRoutes, mappitRoutesIds: $mappitRoutesIds, exchangeServices: $exchangeServices, exchangeServicesIds: $exchangeServicesIds, access: $access, owner: $owner, ownerId: $ownerId)';
   }
 
   @override
@@ -26503,7 +26475,6 @@ class _$TagImpl implements _Tag {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color) &&
-            (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.dynamicIcon, dynamicIcon) ||
                 other.dynamicIcon == dynamicIcon) &&
             const DeepCollectionEquality().equals(other._users, _users) &&
@@ -26598,7 +26569,6 @@ class _$TagImpl implements _Tag {
         id,
         name,
         color,
-        icon,
         dynamicIcon,
         const DeepCollectionEquality().hash(_users),
         const DeepCollectionEquality().hash(_usersIds),
@@ -26668,9 +26638,6 @@ abstract class _Tag implements Tag {
       {required final String id,
       required final String name,
       @ColorConverter() required final Color color,
-      @Deprecated('Use `dynamicIcon` instead')
-      @IconOrNullConverter()
-      final IconData? icon,
       final Avatar? dynamicIcon,
       final List<User>? users,
       final List<String>? usersIds,
@@ -26735,12 +26702,6 @@ abstract class _Tag implements Tag {
   /// Is the color of the tag.
   @ColorConverter()
   Color get color;
-  @override
-
-  /// Is the icon of the tag.
-  @Deprecated('Use `dynamicIcon` instead')
-  @IconOrNullConverter()
-  IconData? get icon;
   @override
 
   /// Dynamic icon

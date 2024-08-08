@@ -12,9 +12,6 @@ class Tag with _$Tag {
     /// Is the color of the tag.
     @ColorConverter() required Color color,
 
-    /// Is the icon of the tag.
-    @Deprecated('Use `dynamicIcon` instead') @IconOrNullConverter() IconData? icon,
-
     /// Dynamic icon
     Avatar? dynamicIcon,
 

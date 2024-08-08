@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.0.0-preview1
+
+- Defined new submodule called `builder`, with the definitions required for new connectivity schema.
+- Added `webhookStructure` to `InboundProtocol` model.
+- Added `webhookStructure` to `InboundService` model.
+
 ## 2.1.90
 - Added optional params `isSuspended` and `suspendedAt` to `User` model
 

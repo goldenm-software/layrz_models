@@ -25,6 +25,7 @@ import 'src/vision/vision.dart';
 import 'src/modbus/modbus.dart';
 import 'src/charts/charts.dart';
 import 'src/exchange/exchange.dart';
+// import 'src/builder/builder.dart';
 
 // Internal exports
 export 'src/converters/converters.dart';
@@ -47,6 +48,7 @@ export 'src/sdm/sdm.dart';
 export 'src/modbus/modbus.dart';
 export 'src/charts/charts.dart';
 export 'src/exchange/exchange.dart';
+export 'src/builder/builder.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
