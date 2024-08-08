@@ -58,6 +58,9 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
           ? null
           : WebhookStructure.fromJson(
               json['webhookStructure'] as Map<String, dynamic>),
+      requiresExternalAccount:
+          json['requiresExternalAccount'] as bool? ?? false,
+      requiresStructure: json['requiresStructure'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$InboundProtocolImplToJson(
@@ -95,6 +98,8 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'requiresFlespiToken': instance.requiresFlespiToken,
       'flespiAcl': instance.flespiAcl?.map((e) => e.toJson()).toList(),
       'webhookStructure': instance.webhookStructure?.toJson(),
+      'requiresExternalAccount': instance.requiresExternalAccount,
+      'requiresStructure': instance.requiresStructure,
     };
 
 _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
@@ -149,6 +154,9 @@ _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
           ? null
           : WebhookStructureInput.fromJson(
               json['webhookStructure'] as Map<String, dynamic>),
+      requiresExternalAccount:
+          json['requiresExternalAccount'] as bool? ?? false,
+      requiresStructure: json['requiresStructure'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$InboundProtocolInputImplToJson(
@@ -182,6 +190,8 @@ Map<String, dynamic> _$$InboundProtocolInputImplToJson(
       'requiresFlespiToken': instance.requiresFlespiToken,
       'flespiAcl': instance.flespiAcl.map((e) => e.toJson()).toList(),
       'webhookStructure': instance.webhookStructure?.toJson(),
+      'requiresExternalAccount': instance.requiresExternalAccount,
+      'requiresStructure': instance.requiresStructure,
     };
 
 _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>

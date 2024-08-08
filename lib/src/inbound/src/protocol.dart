@@ -103,6 +103,12 @@ class InboundProtocol with _$InboundProtocol {
 
     /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
     WebhookStructure? webhookStructure,
+
+    /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+    @Default(false) bool requiresExternalAccount,
+
+    /// [requiresStructure] indicates if the protocol requires a structure to work.
+    @Default(false) bool requiresStructure,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);
@@ -194,6 +200,12 @@ class InboundProtocolInput with _$InboundProtocolInput {
 
     /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
     WebhookStructureInput? webhookStructure,
+
+    /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+    @Default(false) bool requiresExternalAccount,
+
+    /// [requiresStructure] indicates if the protocol requires a structure to work.
+    @Default(false) bool requiresStructure,
   }) = _InboundProtocolInput;
 
   factory InboundProtocolInput.fromJson(Map<String, dynamic> json) => _$InboundProtocolInputFromJson(json);

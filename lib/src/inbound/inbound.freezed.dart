@@ -124,6 +124,12 @@ mixin _$InboundProtocol {
   /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
   WebhookStructure? get webhookStructure => throw _privateConstructorUsedError;
 
+  /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+  bool get requiresExternalAccount => throw _privateConstructorUsedError;
+
+  /// [requiresStructure] indicates if the protocol requires a structure to work.
+  bool get requiresStructure => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
@@ -166,7 +172,9 @@ abstract class $InboundProtocolCopyWith<$Res> {
       int? usage,
       bool? requiresFlespiToken,
       List<FlespiAcl>? flespiAcl,
-      WebhookStructure? webhookStructure});
+      WebhookStructure? webhookStructure,
+      bool requiresExternalAccount,
+      bool requiresStructure});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $SimulationCycleCopyWith<$Res>? get cycle;
@@ -216,6 +224,8 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? requiresFlespiToken = freezed,
     Object? flespiAcl = freezed,
     Object? webhookStructure = freezed,
+    Object? requiresExternalAccount = null,
+    Object? requiresStructure = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -338,6 +348,14 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.webhookStructure
           : webhookStructure // ignore: cast_nullable_to_non_nullable
               as WebhookStructure?,
+      requiresExternalAccount: null == requiresExternalAccount
+          ? _value.requiresExternalAccount
+          : requiresExternalAccount // ignore: cast_nullable_to_non_nullable
+              as bool,
+      requiresStructure: null == requiresStructure
+          ? _value.requiresStructure
+          : requiresStructure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -416,7 +434,9 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       int? usage,
       bool? requiresFlespiToken,
       List<FlespiAcl>? flespiAcl,
-      WebhookStructure? webhookStructure});
+      WebhookStructure? webhookStructure,
+      bool requiresExternalAccount,
+      bool requiresStructure});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -467,6 +487,8 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? requiresFlespiToken = freezed,
     Object? flespiAcl = freezed,
     Object? webhookStructure = freezed,
+    Object? requiresExternalAccount = null,
+    Object? requiresStructure = null,
   }) {
     return _then(_$InboundProtocolImpl(
       id: null == id
@@ -589,6 +611,14 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value.webhookStructure
           : webhookStructure // ignore: cast_nullable_to_non_nullable
               as WebhookStructure?,
+      requiresExternalAccount: null == requiresExternalAccount
+          ? _value.requiresExternalAccount
+          : requiresExternalAccount // ignore: cast_nullable_to_non_nullable
+              as bool,
+      requiresStructure: null == requiresStructure
+          ? _value.requiresStructure
+          : requiresStructure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -626,7 +656,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       this.usage,
       this.requiresFlespiToken,
       final List<FlespiAcl>? flespiAcl,
-      this.webhookStructure})
+      this.webhookStructure,
+      this.requiresExternalAccount = false,
+      this.requiresStructure = false})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models,
@@ -813,9 +845,19 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   @override
   final WebhookStructure? webhookStructure;
 
+  /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+  @override
+  @JsonKey()
+  final bool requiresExternalAccount;
+
+  /// [requiresStructure] indicates if the protocol requires a structure to work.
+  @override
+  @JsonKey()
+  final bool requiresStructure;
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure)';
   }
 
   @override
@@ -871,7 +913,12 @@ class _$InboundProtocolImpl implements _InboundProtocol {
             const DeepCollectionEquality()
                 .equals(other._flespiAcl, _flespiAcl) &&
             (identical(other.webhookStructure, webhookStructure) ||
-                other.webhookStructure == webhookStructure));
+                other.webhookStructure == webhookStructure) &&
+            (identical(
+                    other.requiresExternalAccount, requiresExternalAccount) ||
+                other.requiresExternalAccount == requiresExternalAccount) &&
+            (identical(other.requiresStructure, requiresStructure) ||
+                other.requiresStructure == requiresStructure));
   }
 
   @JsonKey(ignore: true)
@@ -907,7 +954,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         usage,
         requiresFlespiToken,
         const DeepCollectionEquality().hash(_flespiAcl),
-        webhookStructure
+        webhookStructure,
+        requiresExternalAccount,
+        requiresStructure
       ]);
 
   @JsonKey(ignore: true)
@@ -956,7 +1005,9 @@ abstract class _InboundProtocol implements InboundProtocol {
       final int? usage,
       final bool? requiresFlespiToken,
       final List<FlespiAcl>? flespiAcl,
-      final WebhookStructure? webhookStructure}) = _$InboundProtocolImpl;
+      final WebhookStructure? webhookStructure,
+      final bool requiresExternalAccount,
+      final bool requiresStructure}) = _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
@@ -1094,6 +1145,14 @@ abstract class _InboundProtocol implements InboundProtocol {
 
   /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
   WebhookStructure? get webhookStructure;
+  @override
+
+  /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+  bool get requiresExternalAccount;
+  @override
+
+  /// [requiresStructure] indicates if the protocol requires a structure to work.
+  bool get requiresStructure;
   @override
   @JsonKey(ignore: true)
   _$$InboundProtocolImplCopyWith<_$InboundProtocolImpl> get copyWith =>
@@ -1283,6 +1342,18 @@ mixin _$InboundProtocolInput {
   set webhookStructure(WebhookStructureInput? value) =>
       throw _privateConstructorUsedError;
 
+  /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+  bool get requiresExternalAccount => throw _privateConstructorUsedError;
+
+  /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+  set requiresExternalAccount(bool value) => throw _privateConstructorUsedError;
+
+  /// [requiresStructure] indicates if the protocol requires a structure to work.
+  bool get requiresStructure => throw _privateConstructorUsedError;
+
+  /// [requiresStructure] indicates if the protocol requires a structure to work.
+  set requiresStructure(bool value) => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolInputCopyWith<InboundProtocolInput> get copyWith =>
@@ -1322,7 +1393,9 @@ abstract class $InboundProtocolInputCopyWith<$Res> {
       List<String> modbusPorts,
       bool requiresFlespiToken,
       List<FlespiAclInput> flespiAcl,
-      WebhookStructureInput? webhookStructure});
+      WebhookStructureInput? webhookStructure,
+      bool requiresExternalAccount,
+      bool requiresStructure});
 
   $AvatarInputCopyWith<$Res> get dynamicIcon;
   $WebhookStructureInputCopyWith<$Res>? get webhookStructure;
@@ -1369,6 +1442,8 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
     Object? requiresFlespiToken = null,
     Object? flespiAcl = null,
     Object? webhookStructure = freezed,
+    Object? requiresExternalAccount = null,
+    Object? requiresStructure = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -1479,6 +1554,14 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
           ? _value.webhookStructure
           : webhookStructure // ignore: cast_nullable_to_non_nullable
               as WebhookStructureInput?,
+      requiresExternalAccount: null == requiresExternalAccount
+          ? _value.requiresExternalAccount
+          : requiresExternalAccount // ignore: cast_nullable_to_non_nullable
+              as bool,
+      requiresStructure: null == requiresStructure
+          ? _value.requiresStructure
+          : requiresStructure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -1539,7 +1622,9 @@ abstract class _$$InboundProtocolInputImplCopyWith<$Res>
       List<String> modbusPorts,
       bool requiresFlespiToken,
       List<FlespiAclInput> flespiAcl,
-      WebhookStructureInput? webhookStructure});
+      WebhookStructureInput? webhookStructure,
+      bool requiresExternalAccount,
+      bool requiresStructure});
 
   @override
   $AvatarInputCopyWith<$Res> get dynamicIcon;
@@ -1585,6 +1670,8 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
     Object? requiresFlespiToken = null,
     Object? flespiAcl = null,
     Object? webhookStructure = freezed,
+    Object? requiresExternalAccount = null,
+    Object? requiresStructure = null,
   }) {
     return _then(_$InboundProtocolInputImpl(
       id: freezed == id
@@ -1695,6 +1782,14 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
           ? _value.webhookStructure
           : webhookStructure // ignore: cast_nullable_to_non_nullable
               as WebhookStructureInput?,
+      requiresExternalAccount: null == requiresExternalAccount
+          ? _value.requiresExternalAccount
+          : requiresExternalAccount // ignore: cast_nullable_to_non_nullable
+              as bool,
+      requiresStructure: null == requiresStructure
+          ? _value.requiresStructure
+          : requiresStructure // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1729,7 +1824,9 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
       this.modbusPorts = const [],
       this.requiresFlespiToken = false,
       this.flespiAcl = const [],
-      this.webhookStructure});
+      this.webhookStructure,
+      this.requiresExternalAccount = false,
+      this.requiresStructure = false});
 
   factory _$InboundProtocolInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$InboundProtocolInputImplFromJson(json);
@@ -1865,9 +1962,19 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
   @override
   WebhookStructureInput? webhookStructure;
 
+  /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+  @override
+  @JsonKey()
+  bool requiresExternalAccount;
+
+  /// [requiresStructure] indicates if the protocol requires a structure to work.
+  @override
+  @JsonKey()
+  bool requiresStructure;
+
   @override
   String toString() {
-    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure)';
+    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure)';
   }
 
   @JsonKey(ignore: true)
@@ -1914,7 +2021,9 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
       List<String> modbusPorts,
       bool requiresFlespiToken,
       List<FlespiAclInput> flespiAcl,
-      WebhookStructureInput? webhookStructure}) = _$InboundProtocolInputImpl;
+      WebhookStructureInput? webhookStructure,
+      bool requiresExternalAccount,
+      bool requiresStructure}) = _$InboundProtocolInputImpl;
 
   factory _InboundProtocolInput.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolInputImpl.fromJson;
@@ -2118,6 +2227,20 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
 
   /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
   set webhookStructure(WebhookStructureInput? value);
+  @override
+
+  /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+  bool get requiresExternalAccount;
+
+  /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+  set requiresExternalAccount(bool value);
+  @override
+
+  /// [requiresStructure] indicates if the protocol requires a structure to work.
+  bool get requiresStructure;
+
+  /// [requiresStructure] indicates if the protocol requires a structure to work.
+  set requiresStructure(bool value);
   @override
   @JsonKey(ignore: true)
   _$$InboundProtocolInputImplCopyWith<_$InboundProtocolInputImpl>

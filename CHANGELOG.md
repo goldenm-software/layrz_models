@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0-preview5
+
+- Added `requiresExternalAccount` and `requiresStructure` on `InboundProtocol` and `InboundProtocolInput` models
+
 ## 3.0.0-preview4
 
 - Added `InboundProtocolInput`, `InboundServiceInput`, `InboundStructureInput`, `InboundPositionStructureInput` and `InboundPayloadStructureInput` models
