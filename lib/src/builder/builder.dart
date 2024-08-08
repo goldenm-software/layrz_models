@@ -7,3 +7,4 @@ part 'builder.g.dart';
 
 part 'src/inbound.dart';
 part 'src/webhook.dart';
+part 'src/flespi.dart';

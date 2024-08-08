@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0.0-preview2
+
+- Moved `FlespiAcl` and submodels to `builder` submodule
+- Added `FlespiAclInput` and `FlespiSubmoduleConfigInput` models
+
 ## 3.0.0-preview1
 
 - Defined new submodule called `builder`, with the definitions required for new connectivity schema.

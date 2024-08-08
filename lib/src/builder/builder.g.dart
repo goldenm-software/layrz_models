@@ -182,3 +182,98 @@ Map<String, dynamic> _$$WebhookStructureInputImplToJson(
           const WebhookFormatConverter().toJson(instance.contentType),
       'headers': instance.headers.map((e) => e.toJson()).toList(),
     };
+
+_$FlespiAclImpl _$$FlespiAclImplFromJson(Map<String, dynamic> json) =>
+    _$FlespiAclImpl(
+      uri: const FlespiUriConverter().fromJson(json['uri'] as String),
+      topic: json['topic'] as String?,
+      actions: (json['actions'] as List<dynamic>?)
+          ?.map((e) => const FlespiActionConverter().fromJson(e as String))
+          .toList(),
+      methods: (json['methods'] as List<dynamic>?)
+          ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
+          .toList(),
+      ids: (json['ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      submodules: (json['submodules'] as List<dynamic>?)
+          ?.map(
+              (e) => FlespiSubmoduleConfig.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$FlespiAclImplToJson(_$FlespiAclImpl instance) =>
+    <String, dynamic>{
+      'uri': const FlespiUriConverter().toJson(instance.uri),
+      'topic': instance.topic,
+      'actions':
+          instance.actions?.map(const FlespiActionConverter().toJson).toList(),
+      'methods':
+          instance.methods?.map(const FlespiMethodConverter().toJson).toList(),
+      'ids': instance.ids,
+      'submodules': instance.submodules?.map((e) => e.toJson()).toList(),
+    };
+
+_$FlespiAclInputImpl _$$FlespiAclInputImplFromJson(Map<String, dynamic> json) =>
+    _$FlespiAclInputImpl(
+      uri: const FlespiUriConverter().fromJson(json['uri'] as String),
+      topic: json['topic'] as String?,
+      actions: (json['actions'] as List<dynamic>?)
+          ?.map((e) => const FlespiActionConverter().fromJson(e as String))
+          .toList(),
+      methods: (json['methods'] as List<dynamic>?)
+          ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
+          .toList(),
+      ids: (json['ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      submodules: (json['submodules'] as List<dynamic>?)
+          ?.map((e) =>
+              FlespiSubmoduleConfigInput.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$FlespiAclInputImplToJson(
+        _$FlespiAclInputImpl instance) =>
+    <String, dynamic>{
+      'uri': const FlespiUriConverter().toJson(instance.uri),
+      'topic': instance.topic,
+      'actions':
+          instance.actions?.map(const FlespiActionConverter().toJson).toList(),
+      'methods':
+          instance.methods?.map(const FlespiMethodConverter().toJson).toList(),
+      'ids': instance.ids,
+      'submodules': instance.submodules?.map((e) => e.toJson()).toList(),
+    };
+
+_$FlespiSubmoduleConfigImpl _$$FlespiSubmoduleConfigImplFromJson(
+        Map<String, dynamic> json) =>
+    _$FlespiSubmoduleConfigImpl(
+      name: const FlespiSubmoduleConverter().fromJson(json['name'] as String),
+      methods: (json['methods'] as List<dynamic>?)
+              ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$FlespiSubmoduleConfigImplToJson(
+        _$FlespiSubmoduleConfigImpl instance) =>
+    <String, dynamic>{
+      'name': const FlespiSubmoduleConverter().toJson(instance.name),
+      'methods':
+          instance.methods.map(const FlespiMethodConverter().toJson).toList(),
+    };
+
+_$FlespiSubmoduleConfigInputImpl _$$FlespiSubmoduleConfigInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$FlespiSubmoduleConfigInputImpl(
+      name: const FlespiSubmoduleConverter().fromJson(json['name'] as String),
+      methods: (json['methods'] as List<dynamic>?)
+              ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$FlespiSubmoduleConfigInputImplToJson(
+        _$FlespiSubmoduleConfigInputImpl instance) =>
+    <String, dynamic>{
+      'name': const FlespiSubmoduleConverter().toJson(instance.name),
+      'methods':
+          instance.methods.map(const FlespiMethodConverter().toJson).toList(),
+    };
