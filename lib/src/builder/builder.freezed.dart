@@ -1500,10 +1500,10 @@ class __$$WebhookStructureImplCopyWithImpl<$Res>
 class _$WebhookStructureImpl implements _WebhookStructure {
   const _$WebhookStructureImpl(
       {required this.baseUrl,
-      required final List<WebhookPath> paths,
-      @WebhookMethodConverter() required this.method = WebhookMethod.post,
-      @WebhookFormatConverter() required this.contentType = WebhookFormat.json,
-      required final List<WebhookHeader> headers})
+      final List<WebhookPath> paths = const [],
+      @WebhookMethodConverter() this.method = WebhookMethod.post,
+      @WebhookFormatConverter() this.contentType = WebhookFormat.json,
+      final List<WebhookHeader> headers = const []})
       : _paths = paths,
         _headers = headers;
 
@@ -1523,6 +1523,7 @@ class _$WebhookStructureImpl implements _WebhookStructure {
 
   /// [paths] is the list of paths that the webhook should use.
   @override
+  @JsonKey()
   List<WebhookPath> get paths {
     if (_paths is EqualUnmodifiableListView) return _paths;
     // ignore: implicit_dynamic_type
@@ -1551,6 +1552,7 @@ class _$WebhookStructureImpl implements _WebhookStructure {
   /// If you detect any issue with the headers, please contact the
   /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
   @override
+  @JsonKey()
   List<WebhookHeader> get headers {
     if (_headers is EqualUnmodifiableListView) return _headers;
     // ignore: implicit_dynamic_type
@@ -1603,10 +1605,10 @@ class _$WebhookStructureImpl implements _WebhookStructure {
 abstract class _WebhookStructure implements WebhookStructure {
   const factory _WebhookStructure(
       {required final String baseUrl,
-      required final List<WebhookPath> paths,
-      @WebhookMethodConverter() required final WebhookMethod method,
-      @WebhookFormatConverter() required final WebhookFormat contentType,
-      required final List<WebhookHeader> headers}) = _$WebhookStructureImpl;
+      final List<WebhookPath> paths,
+      @WebhookMethodConverter() final WebhookMethod method,
+      @WebhookFormatConverter() final WebhookFormat contentType,
+      final List<WebhookHeader> headers}) = _$WebhookStructureImpl;
 
   factory _WebhookStructure.fromJson(Map<String, dynamic> json) =
       _$WebhookStructureImpl.fromJson;

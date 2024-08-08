@@ -124,9 +124,10 @@ _$WebhookStructureImpl _$$WebhookStructureImplFromJson(
         Map<String, dynamic> json) =>
     _$WebhookStructureImpl(
       baseUrl: json['baseUrl'] as String,
-      paths: (json['paths'] as List<dynamic>)
-          .map((e) => WebhookPath.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      paths: (json['paths'] as List<dynamic>?)
+              ?.map((e) => WebhookPath.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       method: json['method'] == null
           ? WebhookMethod.post
           : const WebhookMethodConverter().fromJson(json['method'] as String),
@@ -134,9 +135,10 @@ _$WebhookStructureImpl _$$WebhookStructureImplFromJson(
           ? WebhookFormat.json
           : const WebhookFormatConverter()
               .fromJson(json['contentType'] as String),
-      headers: (json['headers'] as List<dynamic>)
-          .map((e) => WebhookHeader.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      headers: (json['headers'] as List<dynamic>?)
+              ?.map((e) => WebhookHeader.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$WebhookStructureImplToJson(

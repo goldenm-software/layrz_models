@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.0-preview3
+
+- Fixes on `WebhookStructure` model
+
 ## 3.0.0-preview2
 
 - Moved `FlespiAcl` and submodels to `builder` submodule
