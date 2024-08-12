@@ -155,6 +155,12 @@ class Tag with _$Tag {
 
     /// [ownerId] is the ID of the owner of this entity.
     String? ownerId,
+
+    /// [sensorsIds] is a list of ID's of associated sensors to this module.
+    List<String>? sensorsIds,
+
+    /// [sensors] is a list of associated sensors to this module.
+    List<Sensor>? sensors,
   }) = _Tag;
 
   /// Is a list of associated exchange services to this module.

@@ -2335,6 +2335,12 @@ _$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
           ? null
           : User.fromJson(json['owner'] as Map<String, dynamic>),
       ownerId: json['ownerId'] as String?,
+      sensorsIds: (json['sensorsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      sensors: (json['sensors'] as List<dynamic>?)
+          ?.map((e) => Sensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
@@ -2396,6 +2402,8 @@ Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'owner': instance.owner?.toJson(),
       'ownerId': instance.ownerId,
+      'sensorsIds': instance.sensorsIds,
+      'sensors': instance.sensors?.map((e) => e.toJson()).toList(),
     };
 
 _$DeviceTelemetryImpl _$$DeviceTelemetryImplFromJson(
