@@ -31,14 +31,12 @@ mixin _$MonitorRealWaypoint {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MonitorRealWaypointCopyWith<MonitorRealWaypoint> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MonitorRealWaypointCopyWith<MonitorRealWaypoint> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MonitorRealWaypointCopyWith<$Res> {
-  factory $MonitorRealWaypointCopyWith(
-          MonitorRealWaypoint value, $Res Function(MonitorRealWaypoint) then) =
+  factory $MonitorRealWaypointCopyWith(MonitorRealWaypoint value, $Res Function(MonitorRealWaypoint) then) =
       _$MonitorRealWaypointCopyWithImpl<$Res, MonitorRealWaypoint>;
   @useResult
   $Res call(
@@ -100,10 +98,9 @@ class _$MonitorRealWaypointCopyWithImpl<$Res, $Val extends MonitorRealWaypoint>
 }
 
 /// @nodoc
-abstract class _$$MonitorRealWaypointImplCopyWith<$Res>
-    implements $MonitorRealWaypointCopyWith<$Res> {
-  factory _$$MonitorRealWaypointImplCopyWith(_$MonitorRealWaypointImpl value,
-          $Res Function(_$MonitorRealWaypointImpl) then) =
+abstract class _$$MonitorRealWaypointImplCopyWith<$Res> implements $MonitorRealWaypointCopyWith<$Res> {
+  factory _$$MonitorRealWaypointImplCopyWith(
+          _$MonitorRealWaypointImpl value, $Res Function(_$MonitorRealWaypointImpl) then) =
       __$$MonitorRealWaypointImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -120,8 +117,8 @@ abstract class _$$MonitorRealWaypointImplCopyWith<$Res>
 class __$$MonitorRealWaypointImplCopyWithImpl<$Res>
     extends _$MonitorRealWaypointCopyWithImpl<$Res, _$MonitorRealWaypointImpl>
     implements _$$MonitorRealWaypointImplCopyWith<$Res> {
-  __$$MonitorRealWaypointImplCopyWithImpl(_$MonitorRealWaypointImpl _value,
-      $Res Function(_$MonitorRealWaypointImpl) _then)
+  __$$MonitorRealWaypointImplCopyWithImpl(
+      _$MonitorRealWaypointImpl _value, $Res Function(_$MonitorRealWaypointImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -174,8 +171,7 @@ class _$MonitorRealWaypointImpl implements _MonitorRealWaypoint {
       @TimestampOrNullConverter() this.startAt,
       @TimestampOrNullConverter() this.endAt});
 
-  factory _$MonitorRealWaypointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MonitorRealWaypointImplFromJson(json);
+  factory _$MonitorRealWaypointImpl.fromJson(Map<String, dynamic> json) => _$$MonitorRealWaypointImplFromJson(json);
 
   @override
   final String activationId;
@@ -202,29 +198,23 @@ class _$MonitorRealWaypointImpl implements _MonitorRealWaypoint {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MonitorRealWaypointImpl &&
-            (identical(other.activationId, activationId) ||
-                other.activationId == activationId) &&
-            (identical(other.geofenceId, geofenceId) ||
-                other.geofenceId == geofenceId) &&
-            (identical(other.sequenceReal, sequenceReal) ||
-                other.sequenceReal == sequenceReal) &&
-            (identical(other.sequenceIdeal, sequenceIdeal) ||
-                other.sequenceIdeal == sequenceIdeal) &&
+            (identical(other.activationId, activationId) || other.activationId == activationId) &&
+            (identical(other.geofenceId, geofenceId) || other.geofenceId == geofenceId) &&
+            (identical(other.sequenceReal, sequenceReal) || other.sequenceReal == sequenceReal) &&
+            (identical(other.sequenceIdeal, sequenceIdeal) || other.sequenceIdeal == sequenceIdeal) &&
             (identical(other.startAt, startAt) || other.startAt == startAt) &&
             (identical(other.endAt, endAt) || other.endAt == endAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, activationId, geofenceId,
-      sequenceReal, sequenceIdeal, startAt, endAt);
+  int get hashCode => Object.hash(runtimeType, activationId, geofenceId, sequenceReal, sequenceIdeal, startAt, endAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MonitorRealWaypointImplCopyWith<_$MonitorRealWaypointImpl> get copyWith =>
-      __$$MonitorRealWaypointImplCopyWithImpl<_$MonitorRealWaypointImpl>(
-          this, _$identity);
+      __$$MonitorRealWaypointImplCopyWithImpl<_$MonitorRealWaypointImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -236,16 +226,14 @@ class _$MonitorRealWaypointImpl implements _MonitorRealWaypoint {
 
 abstract class _MonitorRealWaypoint implements MonitorRealWaypoint {
   const factory _MonitorRealWaypoint(
-          {required final String activationId,
-          required final String geofenceId,
-          final int? sequenceReal,
-          required final int sequenceIdeal,
-          @TimestampOrNullConverter() final DateTime? startAt,
-          @TimestampOrNullConverter() final DateTime? endAt}) =
-      _$MonitorRealWaypointImpl;
+      {required final String activationId,
+      required final String geofenceId,
+      final int? sequenceReal,
+      required final int sequenceIdeal,
+      @TimestampOrNullConverter() final DateTime? startAt,
+      @TimestampOrNullConverter() final DateTime? endAt}) = _$MonitorRealWaypointImpl;
 
-  factory _MonitorRealWaypoint.fromJson(Map<String, dynamic> json) =
-      _$MonitorRealWaypointImpl.fromJson;
+  factory _MonitorRealWaypoint.fromJson(Map<String, dynamic> json) = _$MonitorRealWaypointImpl.fromJson;
 
   @override
   String get activationId;
@@ -263,12 +251,10 @@ abstract class _MonitorRealWaypoint implements MonitorRealWaypoint {
   DateTime? get endAt;
   @override
   @JsonKey(ignore: true)
-  _$$MonitorRealWaypointImplCopyWith<_$MonitorRealWaypointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MonitorRealWaypointImplCopyWith<_$MonitorRealWaypointImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
-MonitorActiveCheckpoint _$MonitorActiveCheckpointFromJson(
-    Map<String, dynamic> json) {
+MonitorActiveCheckpoint _$MonitorActiveCheckpointFromJson(Map<String, dynamic> json) {
   return _MonitorActiveCheckpoint.fromJson(json);
 }
 
@@ -291,20 +277,17 @@ mixin _$MonitorActiveCheckpoint {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MonitorActiveCheckpointCopyWith<MonitorActiveCheckpoint> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MonitorActiveCheckpointCopyWith<MonitorActiveCheckpoint> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MonitorActiveCheckpointCopyWith<$Res> {
-  factory $MonitorActiveCheckpointCopyWith(MonitorActiveCheckpoint value,
-          $Res Function(MonitorActiveCheckpoint) then) =
+  factory $MonitorActiveCheckpointCopyWith(MonitorActiveCheckpoint value, $Res Function(MonitorActiveCheckpoint) then) =
       _$MonitorActiveCheckpointCopyWithImpl<$Res, MonitorActiveCheckpoint>;
   @useResult
   $Res call(
       {String id,
-      @MonitorActiveCheckpointStateConverter()
-      MonitorActiveCheckpointState state,
+      @MonitorActiveCheckpointStateConverter() MonitorActiveCheckpointState state,
       Checkpoint checkpoint,
       Asset asset,
       @TimestampOrNullConverter() DateTime? startAt,
@@ -318,8 +301,7 @@ abstract class $MonitorActiveCheckpointCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MonitorActiveCheckpointCopyWithImpl<$Res,
-        $Val extends MonitorActiveCheckpoint>
+class _$MonitorActiveCheckpointCopyWithImpl<$Res, $Val extends MonitorActiveCheckpoint>
     implements $MonitorActiveCheckpointCopyWith<$Res> {
   _$MonitorActiveCheckpointCopyWithImpl(this._value, this._then);
 
@@ -399,18 +381,15 @@ class _$MonitorActiveCheckpointCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$MonitorActiveCheckpointImplCopyWith<$Res>
-    implements $MonitorActiveCheckpointCopyWith<$Res> {
+abstract class _$$MonitorActiveCheckpointImplCopyWith<$Res> implements $MonitorActiveCheckpointCopyWith<$Res> {
   factory _$$MonitorActiveCheckpointImplCopyWith(
-          _$MonitorActiveCheckpointImpl value,
-          $Res Function(_$MonitorActiveCheckpointImpl) then) =
+          _$MonitorActiveCheckpointImpl value, $Res Function(_$MonitorActiveCheckpointImpl) then) =
       __$$MonitorActiveCheckpointImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String id,
-      @MonitorActiveCheckpointStateConverter()
-      MonitorActiveCheckpointState state,
+      @MonitorActiveCheckpointStateConverter() MonitorActiveCheckpointState state,
       Checkpoint checkpoint,
       Asset asset,
       @TimestampOrNullConverter() DateTime? startAt,
@@ -427,12 +406,10 @@ abstract class _$$MonitorActiveCheckpointImplCopyWith<$Res>
 
 /// @nodoc
 class __$$MonitorActiveCheckpointImplCopyWithImpl<$Res>
-    extends _$MonitorActiveCheckpointCopyWithImpl<$Res,
-        _$MonitorActiveCheckpointImpl>
+    extends _$MonitorActiveCheckpointCopyWithImpl<$Res, _$MonitorActiveCheckpointImpl>
     implements _$$MonitorActiveCheckpointImplCopyWith<$Res> {
   __$$MonitorActiveCheckpointImplCopyWithImpl(
-      _$MonitorActiveCheckpointImpl _value,
-      $Res Function(_$MonitorActiveCheckpointImpl) _then)
+      _$MonitorActiveCheckpointImpl _value, $Res Function(_$MonitorActiveCheckpointImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -549,39 +526,25 @@ class _$MonitorActiveCheckpointImpl implements _MonitorActiveCheckpoint {
             other is _$MonitorActiveCheckpointImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.state, state) || other.state == state) &&
-            (identical(other.checkpoint, checkpoint) ||
-                other.checkpoint == checkpoint) &&
+            (identical(other.checkpoint, checkpoint) || other.checkpoint == checkpoint) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.startAt, startAt) || other.startAt == startAt) &&
             (identical(other.endAt, endAt) || other.endAt == endAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.checkpointState, checkpointState) ||
-                other.checkpointState == checkpointState) &&
-            const DeepCollectionEquality()
-                .equals(other._waypoints, _waypoints));
+            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt) &&
+            (identical(other.checkpointState, checkpointState) || other.checkpointState == checkpointState) &&
+            const DeepCollectionEquality().equals(other._waypoints, _waypoints));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      state,
-      checkpoint,
-      asset,
-      startAt,
-      endAt,
-      updatedAt,
-      checkpointState,
+  int get hashCode => Object.hash(runtimeType, id, state, checkpoint, asset, startAt, endAt, updatedAt, checkpointState,
       const DeepCollectionEquality().hash(_waypoints));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MonitorActiveCheckpointImplCopyWith<_$MonitorActiveCheckpointImpl>
-      get copyWith => __$$MonitorActiveCheckpointImplCopyWithImpl<
-          _$MonitorActiveCheckpointImpl>(this, _$identity);
+  _$$MonitorActiveCheckpointImplCopyWith<_$MonitorActiveCheckpointImpl> get copyWith =>
+      __$$MonitorActiveCheckpointImplCopyWithImpl<_$MonitorActiveCheckpointImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -593,21 +556,17 @@ class _$MonitorActiveCheckpointImpl implements _MonitorActiveCheckpoint {
 
 abstract class _MonitorActiveCheckpoint implements MonitorActiveCheckpoint {
   const factory _MonitorActiveCheckpoint(
-          {required final String id,
-          @MonitorActiveCheckpointStateConverter()
-          required final MonitorActiveCheckpointState state,
-          required final Checkpoint checkpoint,
-          required final Asset asset,
-          @TimestampOrNullConverter() final DateTime? startAt,
-          @TimestampOrNullConverter() final DateTime? endAt,
-          @TimestampOrNullConverter() final DateTime? updatedAt,
-          @CheckpointStateConverter()
-          required final CheckpointState checkpointState,
-          final List<MonitorRealWaypoint> waypoints}) =
-      _$MonitorActiveCheckpointImpl;
+      {required final String id,
+      @MonitorActiveCheckpointStateConverter() required final MonitorActiveCheckpointState state,
+      required final Checkpoint checkpoint,
+      required final Asset asset,
+      @TimestampOrNullConverter() final DateTime? startAt,
+      @TimestampOrNullConverter() final DateTime? endAt,
+      @TimestampOrNullConverter() final DateTime? updatedAt,
+      @CheckpointStateConverter() required final CheckpointState checkpointState,
+      final List<MonitorRealWaypoint> waypoints}) = _$MonitorActiveCheckpointImpl;
 
-  factory _MonitorActiveCheckpoint.fromJson(Map<String, dynamic> json) =
-      _$MonitorActiveCheckpointImpl.fromJson;
+  factory _MonitorActiveCheckpoint.fromJson(Map<String, dynamic> json) = _$MonitorActiveCheckpointImpl.fromJson;
 
   @override
   String get id;
@@ -634,8 +593,8 @@ abstract class _MonitorActiveCheckpoint implements MonitorActiveCheckpoint {
   List<MonitorRealWaypoint> get waypoints;
   @override
   @JsonKey(ignore: true)
-  _$$MonitorActiveCheckpointImplCopyWith<_$MonitorActiveCheckpointImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$MonitorActiveCheckpointImplCopyWith<_$MonitorActiveCheckpointImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 LinkShortcut _$LinkShortcutFromJson(Map<String, dynamic> json) {
@@ -661,29 +620,21 @@ mixin _$LinkShortcut {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LinkShortcutCopyWith<LinkShortcut> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LinkShortcutCopyWith<LinkShortcut> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LinkShortcutCopyWith<$Res> {
-  factory $LinkShortcutCopyWith(
-          LinkShortcut value, $Res Function(LinkShortcut) then) =
+  factory $LinkShortcutCopyWith(LinkShortcut value, $Res Function(LinkShortcut) then) =
       _$LinkShortcutCopyWithImpl<$Res, LinkShortcut>;
   @useResult
-  $Res call(
-      {String id,
-      String code,
-      String? redirectTo,
-      Employee? creator,
-      String? creatorId});
+  $Res call({String id, String code, String? redirectTo, Employee? creator, String? creatorId});
 
   $EmployeeCopyWith<$Res>? get creator;
 }
 
 /// @nodoc
-class _$LinkShortcutCopyWithImpl<$Res, $Val extends LinkShortcut>
-    implements $LinkShortcutCopyWith<$Res> {
+class _$LinkShortcutCopyWithImpl<$Res, $Val extends LinkShortcut> implements $LinkShortcutCopyWith<$Res> {
   _$LinkShortcutCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -738,30 +689,21 @@ class _$LinkShortcutCopyWithImpl<$Res, $Val extends LinkShortcut>
 }
 
 /// @nodoc
-abstract class _$$LinkShortcutImplCopyWith<$Res>
-    implements $LinkShortcutCopyWith<$Res> {
-  factory _$$LinkShortcutImplCopyWith(
-          _$LinkShortcutImpl value, $Res Function(_$LinkShortcutImpl) then) =
+abstract class _$$LinkShortcutImplCopyWith<$Res> implements $LinkShortcutCopyWith<$Res> {
+  factory _$$LinkShortcutImplCopyWith(_$LinkShortcutImpl value, $Res Function(_$LinkShortcutImpl) then) =
       __$$LinkShortcutImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      String code,
-      String? redirectTo,
-      Employee? creator,
-      String? creatorId});
+  $Res call({String id, String code, String? redirectTo, Employee? creator, String? creatorId});
 
   @override
   $EmployeeCopyWith<$Res>? get creator;
 }
 
 /// @nodoc
-class __$$LinkShortcutImplCopyWithImpl<$Res>
-    extends _$LinkShortcutCopyWithImpl<$Res, _$LinkShortcutImpl>
+class __$$LinkShortcutImplCopyWithImpl<$Res> extends _$LinkShortcutCopyWithImpl<$Res, _$LinkShortcutImpl>
     implements _$$LinkShortcutImplCopyWith<$Res> {
-  __$$LinkShortcutImplCopyWithImpl(
-      _$LinkShortcutImpl _value, $Res Function(_$LinkShortcutImpl) _then)
+  __$$LinkShortcutImplCopyWithImpl(_$LinkShortcutImpl _value, $Res Function(_$LinkShortcutImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -801,15 +743,9 @@ class __$$LinkShortcutImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$LinkShortcutImpl implements _LinkShortcut {
-  const _$LinkShortcutImpl(
-      {required this.id,
-      required this.code,
-      this.redirectTo,
-      this.creator,
-      this.creatorId});
+  const _$LinkShortcutImpl({required this.id, required this.code, this.redirectTo, this.creator, this.creatorId});
 
-  factory _$LinkShortcutImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LinkShortcutImplFromJson(json);
+  factory _$LinkShortcutImpl.fromJson(Map<String, dynamic> json) => _$$LinkShortcutImplFromJson(json);
 
   /// [id] is the unique identifier for the shortcut.
   @override
@@ -843,17 +779,14 @@ class _$LinkShortcutImpl implements _LinkShortcut {
             other is _$LinkShortcutImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.code, code) || other.code == code) &&
-            (identical(other.redirectTo, redirectTo) ||
-                other.redirectTo == redirectTo) &&
+            (identical(other.redirectTo, redirectTo) || other.redirectTo == redirectTo) &&
             (identical(other.creator, creator) || other.creator == creator) &&
-            (identical(other.creatorId, creatorId) ||
-                other.creatorId == creatorId));
+            (identical(other.creatorId, creatorId) || other.creatorId == creatorId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, code, redirectTo, creator, creatorId);
+  int get hashCode => Object.hash(runtimeType, id, code, redirectTo, creator, creatorId);
 
   @JsonKey(ignore: true)
   @override
@@ -877,8 +810,7 @@ abstract class _LinkShortcut implements LinkShortcut {
       final Employee? creator,
       final String? creatorId}) = _$LinkShortcutImpl;
 
-  factory _LinkShortcut.fromJson(Map<String, dynamic> json) =
-      _$LinkShortcutImpl.fromJson;
+  factory _LinkShortcut.fromJson(Map<String, dynamic> json) = _$LinkShortcutImpl.fromJson;
 
   @override
 
@@ -902,8 +834,7 @@ abstract class _LinkShortcut implements LinkShortcut {
   String? get creatorId;
   @override
   @JsonKey(ignore: true)
-  _$$LinkShortcutImplCopyWith<_$LinkShortcutImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LinkShortcutImplCopyWith<_$LinkShortcutImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Access _$AccessFromJson(Map<String, dynamic> json) {
@@ -930,8 +861,7 @@ mixin _$Access {
 
 /// @nodoc
 abstract class $AccessCopyWith<$Res> {
-  factory $AccessCopyWith(Access value, $Res Function(Access) then) =
-      _$AccessCopyWithImpl<$Res, Access>;
+  factory $AccessCopyWith(Access value, $Res Function(Access) then) = _$AccessCopyWithImpl<$Res, Access>;
   @useResult
   $Res call(
       {String id,
@@ -948,8 +878,7 @@ abstract class $AccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AccessCopyWithImpl<$Res, $Val extends Access>
-    implements $AccessCopyWith<$Res> {
+class _$AccessCopyWithImpl<$Res, $Val extends Access> implements $AccessCopyWith<$Res> {
   _$AccessCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1025,8 +954,7 @@ class _$AccessCopyWithImpl<$Res, $Val extends Access>
 
 /// @nodoc
 abstract class _$$AccessImplCopyWith<$Res> implements $AccessCopyWith<$Res> {
-  factory _$$AccessImplCopyWith(
-          _$AccessImpl value, $Res Function(_$AccessImpl) then) =
+  factory _$$AccessImplCopyWith(_$AccessImpl value, $Res Function(_$AccessImpl) then) =
       __$$AccessImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1046,12 +974,9 @@ abstract class _$$AccessImplCopyWith<$Res> implements $AccessCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AccessImplCopyWithImpl<$Res>
-    extends _$AccessCopyWithImpl<$Res, _$AccessImpl>
+class __$$AccessImplCopyWithImpl<$Res> extends _$AccessCopyWithImpl<$Res, _$AccessImpl>
     implements _$$AccessImplCopyWith<$Res> {
-  __$$AccessImplCopyWithImpl(
-      _$AccessImpl _value, $Res Function(_$AccessImpl) _then)
-      : super(_value, _then);
+  __$$AccessImplCopyWithImpl(_$AccessImpl _value, $Res Function(_$AccessImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1121,8 +1046,7 @@ class _$AccessImpl implements _Access {
       this.user,
       @AccessModuleConverter() required this.module});
 
-  factory _$AccessImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AccessImplFromJson(json);
+  factory _$AccessImpl.fromJson(Map<String, dynamic> json) => _$$AccessImplFromJson(json);
 
   @override
   final String id;
@@ -1159,8 +1083,7 @@ class _$AccessImpl implements _Access {
             (identical(other.read, read) || other.read == read) &&
             (identical(other.write, write) || other.write == write) &&
             (identical(other.manage, manage) || other.manage == manage) &&
-            (identical(other.objectId, objectId) ||
-                other.objectId == objectId) &&
+            (identical(other.objectId, objectId) || other.objectId == objectId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.user, user) || other.user == user) &&
             (identical(other.module, module) || other.module == module));
@@ -1168,14 +1091,12 @@ class _$AccessImpl implements _Access {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, label, read, write, manage,
-      objectId, userId, user, module);
+  int get hashCode => Object.hash(runtimeType, id, label, read, write, manage, objectId, userId, user, module);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AccessImplCopyWith<_$AccessImpl> get copyWith =>
-      __$$AccessImplCopyWithImpl<_$AccessImpl>(this, _$identity);
+  _$$AccessImplCopyWith<_$AccessImpl> get copyWith => __$$AccessImplCopyWithImpl<_$AccessImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1187,16 +1108,15 @@ class _$AccessImpl implements _Access {
 
 abstract class _Access implements Access {
   const factory _Access(
-          {required final String id,
-          final String? label,
-          final bool? read,
-          final bool? write,
-          final bool? manage,
-          final String? objectId,
-          required final String userId,
-          final User? user,
-          @AccessModuleConverter() required final AccessModule module}) =
-      _$AccessImpl;
+      {required final String id,
+      final String? label,
+      final bool? read,
+      final bool? write,
+      final bool? manage,
+      final String? objectId,
+      required final String userId,
+      final User? user,
+      @AccessModuleConverter() required final AccessModule module}) = _$AccessImpl;
 
   factory _Access.fromJson(Map<String, dynamic> json) = _$AccessImpl.fromJson;
 
@@ -1221,8 +1141,7 @@ abstract class _Access implements Access {
   AccessModule get module;
   @override
   @JsonKey(ignore: true)
-  _$$AccessImplCopyWith<_$AccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AccessImplCopyWith<_$AccessImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Action _$ActionFromJson(Map<String, dynamic> json) {
@@ -1253,8 +1172,7 @@ mixin _$Action {
   List<String>? get triggersIds => throw _privateConstructorUsedError;
 
   /// Is the list of Outbound Servives or outbound services' IDs.
-  List<OutboundService>? get outboundServices =>
-      throw _privateConstructorUsedError;
+  List<OutboundService>? get outboundServices => throw _privateConstructorUsedError;
   List<String>? get outboundServicesIds => throw _privateConstructorUsedError;
 
   /// Is the list of Operations or operations' IDs.
@@ -1269,8 +1187,7 @@ mixin _$Action {
   bool? get watchImage => throw _privateConstructorUsedError;
 
   /// Is the geofence settings. Only for `ActionType.createGeofence`
-  ActionGeofenceSettings? get geofenceSettings =>
-      throw _privateConstructorUsedError;
+  ActionGeofenceSettings? get geofenceSettings => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1279,8 +1196,7 @@ mixin _$Action {
 
 /// @nodoc
 abstract class $ActionCopyWith<$Res> {
-  factory $ActionCopyWith(Action value, $Res Function(Action) then) =
-      _$ActionCopyWithImpl<$Res, Action>;
+  factory $ActionCopyWith(Action value, $Res Function(Action) then) = _$ActionCopyWithImpl<$Res, Action>;
   @useResult
   $Res call(
       {String id,
@@ -1302,8 +1218,7 @@ abstract class $ActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ActionCopyWithImpl<$Res, $Val extends Action>
-    implements $ActionCopyWith<$Res> {
+class _$ActionCopyWithImpl<$Res, $Val extends Action> implements $ActionCopyWith<$Res> {
   _$ActionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -1396,8 +1311,7 @@ class _$ActionCopyWithImpl<$Res, $Val extends Action>
       return null;
     }
 
-    return $ActionGeofenceSettingsCopyWith<$Res>(_value.geofenceSettings!,
-        (value) {
+    return $ActionGeofenceSettingsCopyWith<$Res>(_value.geofenceSettings!, (value) {
       return _then(_value.copyWith(geofenceSettings: value) as $Val);
     });
   }
@@ -1405,8 +1319,7 @@ class _$ActionCopyWithImpl<$Res, $Val extends Action>
 
 /// @nodoc
 abstract class _$$ActionImplCopyWith<$Res> implements $ActionCopyWith<$Res> {
-  factory _$$ActionImplCopyWith(
-          _$ActionImpl value, $Res Function(_$ActionImpl) then) =
+  factory _$$ActionImplCopyWith(_$ActionImpl value, $Res Function(_$ActionImpl) then) =
       __$$ActionImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1431,12 +1344,9 @@ abstract class _$$ActionImplCopyWith<$Res> implements $ActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$ActionImplCopyWithImpl<$Res>
-    extends _$ActionCopyWithImpl<$Res, _$ActionImpl>
+class __$$ActionImplCopyWithImpl<$Res> extends _$ActionCopyWithImpl<$Res, _$ActionImpl>
     implements _$$ActionImplCopyWith<$Res> {
-  __$$ActionImplCopyWithImpl(
-      _$ActionImpl _value, $Res Function(_$ActionImpl) _then)
-      : super(_value, _then);
+  __$$ActionImplCopyWithImpl(_$ActionImpl _value, $Res Function(_$ActionImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -1543,8 +1453,7 @@ class _$ActionImpl implements _Action {
         _operationsIds = operationsIds,
         _access = access;
 
-  factory _$ActionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ActionImplFromJson(json);
+  factory _$ActionImpl.fromJson(Map<String, dynamic> json) => _$$ActionImplFromJson(json);
 
   /// Is the ID of the action.
   @override
@@ -1600,8 +1509,7 @@ class _$ActionImpl implements _Action {
   List<OutboundService>? get outboundServices {
     final value = _outboundServices;
     if (value == null) return null;
-    if (_outboundServices is EqualUnmodifiableListView)
-      return _outboundServices;
+    if (_outboundServices is EqualUnmodifiableListView) return _outboundServices;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -1611,8 +1519,7 @@ class _$ActionImpl implements _Action {
   List<String>? get outboundServicesIds {
     final value = _outboundServicesIds;
     if (value == null) return null;
-    if (_outboundServicesIds is EqualUnmodifiableListView)
-      return _outboundServicesIds;
+    if (_outboundServicesIds is EqualUnmodifiableListView) return _outboundServicesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -1676,24 +1583,16 @@ class _$ActionImpl implements _Action {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.kind, kind) || other.kind == kind) &&
             (identical(other.subkind, subkind) || other.subkind == subkind) &&
-            (identical(other.commandId, commandId) ||
-                other.commandId == commandId) &&
+            (identical(other.commandId, commandId) || other.commandId == commandId) &&
             const DeepCollectionEquality().equals(other._triggers, _triggers) &&
-            const DeepCollectionEquality()
-                .equals(other._triggersIds, _triggersIds) &&
-            const DeepCollectionEquality()
-                .equals(other._outboundServices, _outboundServices) &&
-            const DeepCollectionEquality()
-                .equals(other._outboundServicesIds, _outboundServicesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._operations, _operations) &&
-            const DeepCollectionEquality()
-                .equals(other._operationsIds, _operationsIds) &&
+            const DeepCollectionEquality().equals(other._triggersIds, _triggersIds) &&
+            const DeepCollectionEquality().equals(other._outboundServices, _outboundServices) &&
+            const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds) &&
+            const DeepCollectionEquality().equals(other._operations, _operations) &&
+            const DeepCollectionEquality().equals(other._operationsIds, _operationsIds) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
-            (identical(other.watchImage, watchImage) ||
-                other.watchImage == watchImage) &&
-            (identical(other.geofenceSettings, geofenceSettings) ||
-                other.geofenceSettings == geofenceSettings));
+            (identical(other.watchImage, watchImage) || other.watchImage == watchImage) &&
+            (identical(other.geofenceSettings, geofenceSettings) || other.geofenceSettings == geofenceSettings));
   }
 
   @JsonKey(ignore: true)
@@ -1718,8 +1617,7 @@ class _$ActionImpl implements _Action {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
-      __$$ActionImplCopyWithImpl<_$ActionImpl>(this, _$identity);
+  _$$ActionImplCopyWith<_$ActionImpl> get copyWith => __$$ActionImplCopyWithImpl<_$ActionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1803,12 +1701,10 @@ abstract class _Action implements Action {
   ActionGeofenceSettings? get geofenceSettings;
   @override
   @JsonKey(ignore: true)
-  _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ActionImplCopyWith<_$ActionImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
-ActionGeofenceSettings _$ActionGeofenceSettingsFromJson(
-    Map<String, dynamic> json) {
+ActionGeofenceSettings _$ActionGeofenceSettingsFromJson(Map<String, dynamic> json) {
   return _ActionGeofenceSettings.fromJson(json);
 }
 
@@ -1837,14 +1733,12 @@ mixin _$ActionGeofenceSettings {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ActionGeofenceSettingsCopyWith<ActionGeofenceSettings> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ActionGeofenceSettingsCopyWith<ActionGeofenceSettings> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ActionGeofenceSettingsCopyWith<$Res> {
-  factory $ActionGeofenceSettingsCopyWith(ActionGeofenceSettings value,
-          $Res Function(ActionGeofenceSettings) then) =
+  factory $ActionGeofenceSettingsCopyWith(ActionGeofenceSettings value, $Res Function(ActionGeofenceSettings) then) =
       _$ActionGeofenceSettingsCopyWithImpl<$Res, ActionGeofenceSettings>;
   @useResult
   $Res call(
@@ -1859,8 +1753,7 @@ abstract class $ActionGeofenceSettingsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ActionGeofenceSettingsCopyWithImpl<$Res,
-        $Val extends ActionGeofenceSettings>
+class _$ActionGeofenceSettingsCopyWithImpl<$Res, $Val extends ActionGeofenceSettings>
     implements $ActionGeofenceSettingsCopyWith<$Res> {
   _$ActionGeofenceSettingsCopyWithImpl(this._value, this._then);
 
@@ -1921,11 +1814,9 @@ class _$ActionGeofenceSettingsCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$ActionGeofenceSettingsImplCopyWith<$Res>
-    implements $ActionGeofenceSettingsCopyWith<$Res> {
+abstract class _$$ActionGeofenceSettingsImplCopyWith<$Res> implements $ActionGeofenceSettingsCopyWith<$Res> {
   factory _$$ActionGeofenceSettingsImplCopyWith(
-          _$ActionGeofenceSettingsImpl value,
-          $Res Function(_$ActionGeofenceSettingsImpl) then) =
+          _$ActionGeofenceSettingsImpl value, $Res Function(_$ActionGeofenceSettingsImpl) then) =
       __$$ActionGeofenceSettingsImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -1943,12 +1834,10 @@ abstract class _$$ActionGeofenceSettingsImplCopyWith<$Res>
 
 /// @nodoc
 class __$$ActionGeofenceSettingsImplCopyWithImpl<$Res>
-    extends _$ActionGeofenceSettingsCopyWithImpl<$Res,
-        _$ActionGeofenceSettingsImpl>
+    extends _$ActionGeofenceSettingsCopyWithImpl<$Res, _$ActionGeofenceSettingsImpl>
     implements _$$ActionGeofenceSettingsImplCopyWith<$Res> {
   __$$ActionGeofenceSettingsImplCopyWithImpl(
-      _$ActionGeofenceSettingsImpl _value,
-      $Res Function(_$ActionGeofenceSettingsImpl) _then)
+      _$ActionGeofenceSettingsImpl _value, $Res Function(_$ActionGeofenceSettingsImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2042,29 +1931,23 @@ class _$ActionGeofenceSettingsImpl implements _ActionGeofenceSettings {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ActionGeofenceSettingsImpl &&
-            (identical(other.whoOwner, whoOwner) ||
-                other.whoOwner == whoOwner) &&
+            (identical(other.whoOwner, whoOwner) || other.whoOwner == whoOwner) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
+            (identical(other.category, category) || other.category == category) &&
             (identical(other.radius, radius) || other.radius == radius) &&
-            (identical(other.mappitRouteId, mappitRouteId) ||
-                other.mappitRouteId == mappitRouteId) &&
-            (identical(other.mappitRoute, mappitRoute) ||
-                other.mappitRoute == mappitRoute));
+            (identical(other.mappitRouteId, mappitRouteId) || other.mappitRouteId == mappitRouteId) &&
+            (identical(other.mappitRoute, mappitRoute) || other.mappitRoute == mappitRoute));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, whoOwner, name, category, radius,
-      mappitRouteId, mappitRoute);
+  int get hashCode => Object.hash(runtimeType, whoOwner, name, category, radius, mappitRouteId, mappitRoute);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ActionGeofenceSettingsImplCopyWith<_$ActionGeofenceSettingsImpl>
-      get copyWith => __$$ActionGeofenceSettingsImplCopyWithImpl<
-          _$ActionGeofenceSettingsImpl>(this, _$identity);
+  _$$ActionGeofenceSettingsImplCopyWith<_$ActionGeofenceSettingsImpl> get copyWith =>
+      __$$ActionGeofenceSettingsImplCopyWithImpl<_$ActionGeofenceSettingsImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -2083,8 +1966,7 @@ abstract class _ActionGeofenceSettings implements ActionGeofenceSettings {
       final String? mappitRouteId,
       final MappitRoute? mappitRoute}) = _$ActionGeofenceSettingsImpl;
 
-  factory _ActionGeofenceSettings.fromJson(Map<String, dynamic> json) =
-      _$ActionGeofenceSettingsImpl.fromJson;
+  factory _ActionGeofenceSettings.fromJson(Map<String, dynamic> json) = _$ActionGeofenceSettingsImpl.fromJson;
 
   @override
 
@@ -2115,8 +1997,8 @@ abstract class _ActionGeofenceSettings implements ActionGeofenceSettings {
   MappitRoute? get mappitRoute;
   @override
   @JsonKey(ignore: true)
-  _$$ActionGeofenceSettingsImplCopyWith<_$ActionGeofenceSettingsImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$ActionGeofenceSettingsImplCopyWith<_$ActionGeofenceSettingsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 ActionInput _$ActionInputFromJson(Map<String, dynamic> json) {
@@ -2161,8 +2043,7 @@ mixin _$ActionInput {
   List<String>? get outboundServicesIds => throw _privateConstructorUsedError;
 
   /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  set outboundServicesIds(List<String>? value) =>
-      throw _privateConstructorUsedError;
+  set outboundServicesIds(List<String>? value) => throw _privateConstructorUsedError;
 
   /// Subkind
   @ActionSubtypeOrNullConverter()
@@ -2186,14 +2067,12 @@ mixin _$ActionInput {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ActionInputCopyWith<ActionInput> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ActionInputCopyWith<ActionInput> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ActionInputCopyWith<$Res> {
-  factory $ActionInputCopyWith(
-          ActionInput value, $Res Function(ActionInput) then) =
+  factory $ActionInputCopyWith(ActionInput value, $Res Function(ActionInput) then) =
       _$ActionInputCopyWithImpl<$Res, ActionInput>;
   @useResult
   $Res call(
@@ -2209,8 +2088,7 @@ abstract class $ActionInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ActionInputCopyWithImpl<$Res, $Val extends ActionInput>
-    implements $ActionInputCopyWith<$Res> {
+class _$ActionInputCopyWithImpl<$Res, $Val extends ActionInput> implements $ActionInputCopyWith<$Res> {
   _$ActionInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -2273,10 +2151,8 @@ class _$ActionInputCopyWithImpl<$Res, $Val extends ActionInput>
 }
 
 /// @nodoc
-abstract class _$$ActionInputImplCopyWith<$Res>
-    implements $ActionInputCopyWith<$Res> {
-  factory _$$ActionInputImplCopyWith(
-          _$ActionInputImpl value, $Res Function(_$ActionInputImpl) then) =
+abstract class _$$ActionInputImplCopyWith<$Res> implements $ActionInputCopyWith<$Res> {
+  factory _$$ActionInputImplCopyWith(_$ActionInputImpl value, $Res Function(_$ActionInputImpl) then) =
       __$$ActionInputImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2293,11 +2169,9 @@ abstract class _$$ActionInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ActionInputImplCopyWithImpl<$Res>
-    extends _$ActionInputCopyWithImpl<$Res, _$ActionInputImpl>
+class __$$ActionInputImplCopyWithImpl<$Res> extends _$ActionInputCopyWithImpl<$Res, _$ActionInputImpl>
     implements _$$ActionInputImplCopyWith<$Res> {
-  __$$ActionInputImplCopyWithImpl(
-      _$ActionInputImpl _value, $Res Function(_$ActionInputImpl) _then)
+  __$$ActionInputImplCopyWithImpl(_$ActionInputImpl _value, $Res Function(_$ActionInputImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -2368,8 +2242,7 @@ class _$ActionInputImpl implements _ActionInput {
       this.triggersIds = const [],
       this.watchImage = false});
 
-  factory _$ActionInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ActionInputImplFromJson(json);
+  factory _$ActionInputImpl.fromJson(Map<String, dynamic> json) => _$$ActionInputImplFromJson(json);
 
   /// ID of the trigger entity. This ID is unique.
   @override
@@ -2444,8 +2317,7 @@ abstract class _ActionInput implements ActionInput {
       List<String>? triggersIds,
       bool? watchImage}) = _$ActionInputImpl;
 
-  factory _ActionInput.fromJson(Map<String, dynamic> json) =
-      _$ActionInputImpl.fromJson;
+  factory _ActionInput.fromJson(Map<String, dynamic> json) = _$ActionInputImpl.fromJson;
 
   @override
 
@@ -2516,8 +2388,7 @@ abstract class _ActionInput implements ActionInput {
   set watchImage(bool? value);
   @override
   @JsonKey(ignore: true)
-  _$$ActionInputImplCopyWith<_$ActionInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ActionInputImplCopyWith<_$ActionInputImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Algorithm _$AlgorithmFromJson(Map<String, dynamic> json) {
@@ -2537,8 +2408,7 @@ mixin _$Algorithm {
   bool get canBeInSensors => throw _privateConstructorUsedError;
   bool get hasHttp => throw _privateConstructorUsedError;
   bool get hasFtp => throw _privateConstructorUsedError;
-  List<CredentialField> get requiredFields =>
-      throw _privateConstructorUsedError;
+  List<CredentialField> get requiredFields => throw _privateConstructorUsedError;
 
   /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
   /// For marketing purposes.
@@ -2546,14 +2416,12 @@ mixin _$Algorithm {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AlgorithmCopyWith<Algorithm> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AlgorithmCopyWith<Algorithm> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AlgorithmCopyWith<$Res> {
-  factory $AlgorithmCopyWith(Algorithm value, $Res Function(Algorithm) then) =
-      _$AlgorithmCopyWithImpl<$Res, Algorithm>;
+  factory $AlgorithmCopyWith(Algorithm value, $Res Function(Algorithm) then) = _$AlgorithmCopyWithImpl<$Res, Algorithm>;
   @useResult
   $Res call(
       {String id,
@@ -2570,8 +2438,7 @@ abstract class $AlgorithmCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AlgorithmCopyWithImpl<$Res, $Val extends Algorithm>
-    implements $AlgorithmCopyWith<$Res> {
+class _$AlgorithmCopyWithImpl<$Res, $Val extends Algorithm> implements $AlgorithmCopyWith<$Res> {
   _$AlgorithmCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -2644,10 +2511,8 @@ class _$AlgorithmCopyWithImpl<$Res, $Val extends Algorithm>
 }
 
 /// @nodoc
-abstract class _$$AlgorithmImplCopyWith<$Res>
-    implements $AlgorithmCopyWith<$Res> {
-  factory _$$AlgorithmImplCopyWith(
-          _$AlgorithmImpl value, $Res Function(_$AlgorithmImpl) then) =
+abstract class _$$AlgorithmImplCopyWith<$Res> implements $AlgorithmCopyWith<$Res> {
+  factory _$$AlgorithmImplCopyWith(_$AlgorithmImpl value, $Res Function(_$AlgorithmImpl) then) =
       __$$AlgorithmImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -2666,12 +2531,9 @@ abstract class _$$AlgorithmImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AlgorithmImplCopyWithImpl<$Res>
-    extends _$AlgorithmCopyWithImpl<$Res, _$AlgorithmImpl>
+class __$$AlgorithmImplCopyWithImpl<$Res> extends _$AlgorithmCopyWithImpl<$Res, _$AlgorithmImpl>
     implements _$$AlgorithmImplCopyWith<$Res> {
-  __$$AlgorithmImplCopyWithImpl(
-      _$AlgorithmImpl _value, $Res Function(_$AlgorithmImpl) _then)
-      : super(_value, _then);
+  __$$AlgorithmImplCopyWithImpl(_$AlgorithmImpl _value, $Res Function(_$AlgorithmImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -2755,8 +2617,7 @@ class _$AlgorithmImpl implements _Algorithm {
       : _categoriesIds = categoriesIds,
         _requiredFields = requiredFields;
 
-  factory _$AlgorithmImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AlgorithmImplFromJson(json);
+  factory _$AlgorithmImpl.fromJson(Map<String, dynamic> json) => _$$AlgorithmImplFromJson(json);
 
   @override
   final String id;
@@ -2816,16 +2677,12 @@ class _$AlgorithmImpl implements _Algorithm {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color) &&
             (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.isEnabled, isEnabled) ||
-                other.isEnabled == isEnabled) &&
-            const DeepCollectionEquality()
-                .equals(other._categoriesIds, _categoriesIds) &&
-            (identical(other.canBeInSensors, canBeInSensors) ||
-                other.canBeInSensors == canBeInSensors) &&
+            (identical(other.isEnabled, isEnabled) || other.isEnabled == isEnabled) &&
+            const DeepCollectionEquality().equals(other._categoriesIds, _categoriesIds) &&
+            (identical(other.canBeInSensors, canBeInSensors) || other.canBeInSensors == canBeInSensors) &&
             (identical(other.hasHttp, hasHttp) || other.hasHttp == hasHttp) &&
             (identical(other.hasFtp, hasFtp) || other.hasFtp == hasFtp) &&
-            const DeepCollectionEquality()
-                .equals(other._requiredFields, _requiredFields) &&
+            const DeepCollectionEquality().equals(other._requiredFields, _requiredFields) &&
             (identical(other.usage, usage) || other.usage == usage));
   }
 
@@ -2873,8 +2730,7 @@ abstract class _Algorithm implements Algorithm {
       final List<CredentialField> requiredFields,
       final int? usage}) = _$AlgorithmImpl;
 
-  factory _Algorithm.fromJson(Map<String, dynamic> json) =
-      _$AlgorithmImpl.fromJson;
+  factory _Algorithm.fromJson(Map<String, dynamic> json) = _$AlgorithmImpl.fromJson;
 
   @override
   String get id;
@@ -2905,8 +2761,7 @@ abstract class _Algorithm implements Algorithm {
   int? get usage;
   @override
   @JsonKey(ignore: true)
-  _$$AlgorithmImplCopyWith<_$AlgorithmImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AlgorithmImplCopyWith<_$AlgorithmImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Asset _$AssetFromJson(Map<String, dynamic> json) {
@@ -2951,8 +2806,7 @@ mixin _$Asset {
   List<Reference>? get references => throw _privateConstructorUsedError;
 
   /// Is the list of [authenticatedAssetsIds] to the asset
-  List<String>? get authenticatedAssetsIds =>
-      throw _privateConstructorUsedError;
+  List<String>? get authenticatedAssetsIds => throw _privateConstructorUsedError;
 
   /// Is the list of [authenticatedAssets] to the asset
   List<Asset>? get authenticatedAssets => throw _privateConstructorUsedError;
@@ -3020,8 +2874,7 @@ mixin _$Asset {
 
   /// [laborHours] represents the list of labor hours configured to this asset.
   /// This field is only for `Mappit` use.
-  List<MappitLaborHour>? get mappitLaborHours =>
-      throw _privateConstructorUsedError;
+  List<MappitLaborHour>? get mappitLaborHours => throw _privateConstructorUsedError;
 
   /// [ownerId] is the ID of the user owner of this asset
   String? get ownerId => throw _privateConstructorUsedError;
@@ -3031,8 +2884,7 @@ mixin _$Asset {
 
   /// [authenticationCard] refers to the authentication card of the asset.
   /// Only used in ATS apps.
-  AtsAuthenticationCard? get authenticationCard =>
-      throw _privateConstructorUsedError;
+  AtsAuthenticationCard? get authenticationCard => throw _privateConstructorUsedError;
 
   /// [authenticationCardId] refers to the authentication card ID of the asset.
   /// Only used in ATS apps.
@@ -3044,13 +2896,11 @@ mixin _$Asset {
 
   /// [linkedSupplyPointAssets] refers to the list of supply points assets linked to this asset.
   /// Only used in ATS apps.
-  List<Asset>? get linkedSupplyPointAssets =>
-      throw _privateConstructorUsedError;
+  List<Asset>? get linkedSupplyPointAssets => throw _privateConstructorUsedError;
 
   /// [linkedSupplyPointAssetsIds] refers to the list of supply points assets IDs linked to this asset.
   /// Only used in ATS apps.
-  List<String>? get linkedSupplyPointAssetsIds =>
-      throw _privateConstructorUsedError;
+  List<String>? get linkedSupplyPointAssetsIds => throw _privateConstructorUsedError;
 
   /// [staticPosition] refers to the static position of the asset.
   /// Only used when mode is [AssetMode.fixed].
@@ -3079,8 +2929,7 @@ mixin _$Asset {
   List<Geofence>? get geofences => throw _privateConstructorUsedError;
 
   /// `mappitSecondaryRoutesIds` represents the list of secondary routes ids linked to the asset.
-  List<String>? get mappitSecondaryRoutesIds =>
-      throw _privateConstructorUsedError;
+  List<String>? get mappitSecondaryRoutesIds => throw _privateConstructorUsedError;
 
   /// [isSuspended] if the asset is suspended.
   bool? get isSuspended => throw _privateConstructorUsedError;
@@ -3092,8 +2941,7 @@ mixin _$Asset {
 
 /// @nodoc
 abstract class $AssetCopyWith<$Res> {
-  factory $AssetCopyWith(Asset value, $Res Function(Asset) then) =
-      _$AssetCopyWithImpl<$Res, Asset>;
+  factory $AssetCopyWith(Asset value, $Res Function(Asset) then) = _$AssetCopyWithImpl<$Res, Asset>;
   @useResult
   $Res call(
       {String id,
@@ -3157,8 +3005,7 @@ abstract class $AssetCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AssetCopyWithImpl<$Res, $Val extends Asset>
-    implements $AssetCopyWith<$Res> {
+class _$AssetCopyWithImpl<$Res, $Val extends Asset> implements $AssetCopyWith<$Res> {
   _$AssetCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -3498,8 +3345,7 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
       return null;
     }
 
-    return $AtsAuthenticationCardCopyWith<$Res>(_value.authenticationCard!,
-        (value) {
+    return $AtsAuthenticationCardCopyWith<$Res>(_value.authenticationCard!, (value) {
       return _then(_value.copyWith(authenticationCard: value) as $Val);
     });
   }
@@ -3519,9 +3365,7 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
 
 /// @nodoc
 abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
-  factory _$$AssetImplCopyWith(
-          _$AssetImpl value, $Res Function(_$AssetImpl) then) =
-      __$$AssetImplCopyWithImpl<$Res>;
+  factory _$$AssetImplCopyWith(_$AssetImpl value, $Res Function(_$AssetImpl) then) = __$$AssetImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -3594,12 +3438,9 @@ abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AssetImplCopyWithImpl<$Res>
-    extends _$AssetCopyWithImpl<$Res, _$AssetImpl>
+class __$$AssetImplCopyWithImpl<$Res> extends _$AssetCopyWithImpl<$Res, _$AssetImpl>
     implements _$$AssetImplCopyWith<$Res> {
-  __$$AssetImplCopyWithImpl(
-      _$AssetImpl _value, $Res Function(_$AssetImpl) _then)
-      : super(_value, _then);
+  __$$AssetImplCopyWithImpl(_$AssetImpl _value, $Res Function(_$AssetImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -3935,8 +3776,7 @@ class _$AssetImpl implements _Asset {
         _geofences = geofences,
         _mappitSecondaryRoutesIds = mappitSecondaryRoutesIds;
 
-  factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AssetImplFromJson(json);
+  factory _$AssetImpl.fromJson(Map<String, dynamic> json) => _$$AssetImplFromJson(json);
 
   /// [id] of the asset entity. This ID is unique.
   @override
@@ -4037,8 +3877,7 @@ class _$AssetImpl implements _Asset {
   List<String>? get authenticatedAssetsIds {
     final value = _authenticatedAssetsIds;
     if (value == null) return null;
-    if (_authenticatedAssetsIds is EqualUnmodifiableListView)
-      return _authenticatedAssetsIds;
+    if (_authenticatedAssetsIds is EqualUnmodifiableListView) return _authenticatedAssetsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -4051,8 +3890,7 @@ class _$AssetImpl implements _Asset {
   List<Asset>? get authenticatedAssets {
     final value = _authenticatedAssets;
     if (value == null) return null;
-    if (_authenticatedAssets is EqualUnmodifiableListView)
-      return _authenticatedAssets;
+    if (_authenticatedAssets is EqualUnmodifiableListView) return _authenticatedAssets;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -4065,8 +3903,7 @@ class _$AssetImpl implements _Asset {
   List<String>? get authenticatedUsersIds {
     final value = _authenticatedUsersIds;
     if (value == null) return null;
-    if (_authenticatedUsersIds is EqualUnmodifiableListView)
-      return _authenticatedUsersIds;
+    if (_authenticatedUsersIds is EqualUnmodifiableListView) return _authenticatedUsersIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -4079,8 +3916,7 @@ class _$AssetImpl implements _Asset {
   List<User>? get authenticatedUsers {
     final value = _authenticatedUsers;
     if (value == null) return null;
-    if (_authenticatedUsers is EqualUnmodifiableListView)
-      return _authenticatedUsers;
+    if (_authenticatedUsers is EqualUnmodifiableListView) return _authenticatedUsers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -4169,8 +4005,7 @@ class _$AssetImpl implements _Asset {
   List<String>? get externalIdentifiers {
     final value = _externalIdentifiers;
     if (value == null) return null;
-    if (_externalIdentifiers is EqualUnmodifiableListView)
-      return _externalIdentifiers;
+    if (_externalIdentifiers is EqualUnmodifiableListView) return _externalIdentifiers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -4252,8 +4087,7 @@ class _$AssetImpl implements _Asset {
   List<MappitLaborHour>? get mappitLaborHours {
     final value = _mappitLaborHours;
     if (value == null) return null;
-    if (_mappitLaborHours is EqualUnmodifiableListView)
-      return _mappitLaborHours;
+    if (_mappitLaborHours is EqualUnmodifiableListView) return _mappitLaborHours;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -4291,8 +4125,7 @@ class _$AssetImpl implements _Asset {
   List<Asset>? get linkedSupplyPointAssets {
     final value = _linkedSupplyPointAssets;
     if (value == null) return null;
-    if (_linkedSupplyPointAssets is EqualUnmodifiableListView)
-      return _linkedSupplyPointAssets;
+    if (_linkedSupplyPointAssets is EqualUnmodifiableListView) return _linkedSupplyPointAssets;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -4307,8 +4140,7 @@ class _$AssetImpl implements _Asset {
   List<String>? get linkedSupplyPointAssetsIds {
     final value = _linkedSupplyPointAssetsIds;
     if (value == null) return null;
-    if (_linkedSupplyPointAssetsIds is EqualUnmodifiableListView)
-      return _linkedSupplyPointAssetsIds;
+    if (_linkedSupplyPointAssetsIds is EqualUnmodifiableListView) return _linkedSupplyPointAssetsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -4391,8 +4223,7 @@ class _$AssetImpl implements _Asset {
   List<String>? get mappitSecondaryRoutesIds {
     final value = _mappitSecondaryRoutesIds;
     if (value == null) return null;
-    if (_mappitSecondaryRoutesIds is EqualUnmodifiableListView)
-      return _mappitSecondaryRoutesIds;
+    if (_mappitSecondaryRoutesIds is EqualUnmodifiableListView) return _mappitSecondaryRoutesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -4415,83 +4246,55 @@ class _$AssetImpl implements _Asset {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.plate, plate) || other.plate == plate) &&
             (identical(other.vin, vin) || other.vin == vin) &&
-            (identical(other.dynamicIcon, dynamicIcon) ||
-                other.dynamicIcon == dynamicIcon) &&
+            (identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon) &&
             (identical(other.mode, mode) || other.mode == mode) &&
-            const DeepCollectionEquality()
-                .equals(other._childrenIds, _childrenIds) &&
+            const DeepCollectionEquality().equals(other._childrenIds, _childrenIds) &&
             const DeepCollectionEquality().equals(other._children, _children) &&
             const DeepCollectionEquality().equals(other._commands, _commands) &&
-            const DeepCollectionEquality()
-                .equals(other._referencesIds, _referencesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._references, _references) &&
-            const DeepCollectionEquality().equals(
-                other._authenticatedAssetsIds, _authenticatedAssetsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._authenticatedAssets, _authenticatedAssets) &&
-            const DeepCollectionEquality()
-                .equals(other._authenticatedUsersIds, _authenticatedUsersIds) &&
-            const DeepCollectionEquality()
-                .equals(other._authenticatedUsers, _authenticatedUsers) &&
+            const DeepCollectionEquality().equals(other._referencesIds, _referencesIds) &&
+            const DeepCollectionEquality().equals(other._references, _references) &&
+            const DeepCollectionEquality().equals(other._authenticatedAssetsIds, _authenticatedAssetsIds) &&
+            const DeepCollectionEquality().equals(other._authenticatedAssets, _authenticatedAssets) &&
+            const DeepCollectionEquality().equals(other._authenticatedUsersIds, _authenticatedUsersIds) &&
+            const DeepCollectionEquality().equals(other._authenticatedUsers, _authenticatedUsers) &&
             (identical(other.kindId, kindId) || other.kindId == kindId) &&
             (identical(other.kind, kind) || other.kind == kind) &&
-            const DeepCollectionEquality()
-                .equals(other._customFields, _customFields) &&
+            const DeepCollectionEquality().equals(other._customFields, _customFields) &&
             const DeepCollectionEquality().equals(other._sensors, _sensors) &&
-            (identical(other.primaryId, primaryId) ||
-                other.primaryId == primaryId) &&
+            (identical(other.primaryId, primaryId) || other.primaryId == primaryId) &&
             (identical(other.primary, primary) || other.primary == primary) &&
-            const DeepCollectionEquality()
-                .equals(other._devicesIds, _devicesIds) &&
+            const DeepCollectionEquality().equals(other._devicesIds, _devicesIds) &&
             const DeepCollectionEquality().equals(other._devices, _devices) &&
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
-            const DeepCollectionEquality()
-                .equals(other._externalIdentifiers, _externalIdentifiers) &&
-            (identical(other.connection, connection) ||
-                other.connection == connection) &&
-            (identical(other.telemetry, telemetry) ||
-                other.telemetry == telemetry) &&
+            const DeepCollectionEquality().equals(other._externalIdentifiers, _externalIdentifiers) &&
+            (identical(other.connection, connection) || other.connection == connection) &&
+            (identical(other.telemetry, telemetry) || other.telemetry == telemetry) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
-            const DeepCollectionEquality()
-                .equals(other._lastExits, _lastExits) &&
-            (identical(other.activeTime, activeTime) ||
-                other.activeTime == activeTime) &&
+            const DeepCollectionEquality().equals(other._lastExits, _lastExits) &&
+            (identical(other.activeTime, activeTime) || other.activeTime == activeTime) &&
             const DeepCollectionEquality().equals(other._contacts, _contacts) &&
-            const DeepCollectionEquality()
-                .equals(other._mappitLaborHours, _mappitLaborHours) &&
+            const DeepCollectionEquality().equals(other._mappitLaborHours, _mappitLaborHours) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
-            (identical(other.loginInfo, loginInfo) ||
-                other.loginInfo == loginInfo) &&
+            (identical(other.loginInfo, loginInfo) || other.loginInfo == loginInfo) &&
             (identical(other.authenticationCard, authenticationCard) ||
                 other.authenticationCard == authenticationCard) &&
             (identical(other.authenticationCardId, authenticationCardId) ||
                 other.authenticationCardId == authenticationCardId) &&
-            (identical(other.nfcIdentifier, nfcIdentifier) ||
-                other.nfcIdentifier == nfcIdentifier) &&
-            const DeepCollectionEquality().equals(
-                other._linkedSupplyPointAssets, _linkedSupplyPointAssets) &&
-            const DeepCollectionEquality().equals(
-                other._linkedSupplyPointAssetsIds,
-                _linkedSupplyPointAssetsIds) &&
-            (identical(other.staticPosition, staticPosition) ||
-                other.staticPosition == staticPosition) &&
+            (identical(other.nfcIdentifier, nfcIdentifier) || other.nfcIdentifier == nfcIdentifier) &&
+            const DeepCollectionEquality().equals(other._linkedSupplyPointAssets, _linkedSupplyPointAssets) &&
+            const DeepCollectionEquality().equals(other._linkedSupplyPointAssetsIds, _linkedSupplyPointAssetsIds) &&
+            (identical(other.staticPosition, staticPosition) || other.staticPosition == staticPosition) &&
             const DeepCollectionEquality().equals(other._points, _points) &&
-            const DeepCollectionEquality()
-                .equals(other._parameters, _parameters) &&
-            const DeepCollectionEquality()
-                .equals(other._globalSensors, _globalSensors) &&
+            const DeepCollectionEquality().equals(other._parameters, _parameters) &&
+            const DeepCollectionEquality().equals(other._globalSensors, _globalSensors) &&
             (identical(other.mappitLaborStartTime, mappitLaborStartTime) ||
                 other.mappitLaborStartTime == mappitLaborStartTime) &&
             (identical(other.mappitLaborEndTime, mappitLaborEndTime) ||
                 other.mappitLaborEndTime == mappitLaborEndTime) &&
-            const DeepCollectionEquality()
-                .equals(other._geofences, _geofences) &&
-            const DeepCollectionEquality().equals(
-                other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds) &&
-            (identical(other.isSuspended, isSuspended) ||
-                other.isSuspended == isSuspended));
+            const DeepCollectionEquality().equals(other._geofences, _geofences) &&
+            const DeepCollectionEquality().equals(other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds) &&
+            (identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended));
   }
 
   @JsonKey(ignore: true)
@@ -4552,8 +4355,7 @@ class _$AssetImpl implements _Asset {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
-      __$$AssetImplCopyWithImpl<_$AssetImpl>(this, _$identity);
+  _$$AssetImplCopyWith<_$AssetImpl> get copyWith => __$$AssetImplCopyWithImpl<_$AssetImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -4832,8 +4634,7 @@ abstract class _Asset implements Asset {
   bool? get isSuspended;
   @override
   @JsonKey(ignore: true)
-  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AssetImplCopyWith<_$AssetImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 ContactInfo _$ContactInfoFromJson(Map<String, dynamic> json) {
@@ -4848,22 +4649,19 @@ mixin _$ContactInfo {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ContactInfoCopyWith<ContactInfo> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ContactInfoCopyWith<ContactInfo> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ContactInfoCopyWith<$Res> {
-  factory $ContactInfoCopyWith(
-          ContactInfo value, $Res Function(ContactInfo) then) =
+  factory $ContactInfoCopyWith(ContactInfo value, $Res Function(ContactInfo) then) =
       _$ContactInfoCopyWithImpl<$Res, ContactInfo>;
   @useResult
   $Res call({String name, String email, String phone});
 }
 
 /// @nodoc
-class _$ContactInfoCopyWithImpl<$Res, $Val extends ContactInfo>
-    implements $ContactInfoCopyWith<$Res> {
+class _$ContactInfoCopyWithImpl<$Res, $Val extends ContactInfo> implements $ContactInfoCopyWith<$Res> {
   _$ContactInfoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -4896,10 +4694,8 @@ class _$ContactInfoCopyWithImpl<$Res, $Val extends ContactInfo>
 }
 
 /// @nodoc
-abstract class _$$ContactInfoImplCopyWith<$Res>
-    implements $ContactInfoCopyWith<$Res> {
-  factory _$$ContactInfoImplCopyWith(
-          _$ContactInfoImpl value, $Res Function(_$ContactInfoImpl) then) =
+abstract class _$$ContactInfoImplCopyWith<$Res> implements $ContactInfoCopyWith<$Res> {
+  factory _$$ContactInfoImplCopyWith(_$ContactInfoImpl value, $Res Function(_$ContactInfoImpl) then) =
       __$$ContactInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -4907,11 +4703,9 @@ abstract class _$$ContactInfoImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ContactInfoImplCopyWithImpl<$Res>
-    extends _$ContactInfoCopyWithImpl<$Res, _$ContactInfoImpl>
+class __$$ContactInfoImplCopyWithImpl<$Res> extends _$ContactInfoCopyWithImpl<$Res, _$ContactInfoImpl>
     implements _$$ContactInfoImplCopyWith<$Res> {
-  __$$ContactInfoImplCopyWithImpl(
-      _$ContactInfoImpl _value, $Res Function(_$ContactInfoImpl) _then)
+  __$$ContactInfoImplCopyWithImpl(_$ContactInfoImpl _value, $Res Function(_$ContactInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -4943,8 +4737,7 @@ class __$$ContactInfoImplCopyWithImpl<$Res>
 class _$ContactInfoImpl implements _ContactInfo {
   const _$ContactInfoImpl({this.name = '', this.email = '', this.phone = ''});
 
-  factory _$ContactInfoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ContactInfoImplFromJson(json);
+  factory _$ContactInfoImpl.fromJson(Map<String, dynamic> json) => _$$ContactInfoImplFromJson(json);
 
   @override
   @JsonKey()
@@ -4990,13 +4783,9 @@ class _$ContactInfoImpl implements _ContactInfo {
 }
 
 abstract class _ContactInfo implements ContactInfo {
-  const factory _ContactInfo(
-      {final String name,
-      final String email,
-      final String phone}) = _$ContactInfoImpl;
+  const factory _ContactInfo({final String name, final String email, final String phone}) = _$ContactInfoImpl;
 
-  factory _ContactInfo.fromJson(Map<String, dynamic> json) =
-      _$ContactInfoImpl.fromJson;
+  factory _ContactInfo.fromJson(Map<String, dynamic> json) = _$ContactInfoImpl.fromJson;
 
   @override
   String get name;
@@ -5006,8 +4795,7 @@ abstract class _ContactInfo implements ContactInfo {
   String get phone;
   @override
   @JsonKey(ignore: true)
-  _$$ContactInfoImplCopyWith<_$ContactInfoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ContactInfoImplCopyWith<_$ContactInfoImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 AssetLoginInfo _$AssetLoginInfoFromJson(Map<String, dynamic> json) {
@@ -5027,22 +4815,19 @@ mixin _$AssetLoginInfo {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AssetLoginInfoCopyWith<AssetLoginInfo> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AssetLoginInfoCopyWith<AssetLoginInfo> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AssetLoginInfoCopyWith<$Res> {
-  factory $AssetLoginInfoCopyWith(
-          AssetLoginInfo value, $Res Function(AssetLoginInfo) then) =
+  factory $AssetLoginInfoCopyWith(AssetLoginInfo value, $Res Function(AssetLoginInfo) then) =
       _$AssetLoginInfoCopyWithImpl<$Res, AssetLoginInfo>;
   @useResult
   $Res call({bool enabled, String? email, String? username});
 }
 
 /// @nodoc
-class _$AssetLoginInfoCopyWithImpl<$Res, $Val extends AssetLoginInfo>
-    implements $AssetLoginInfoCopyWith<$Res> {
+class _$AssetLoginInfoCopyWithImpl<$Res, $Val extends AssetLoginInfo> implements $AssetLoginInfoCopyWith<$Res> {
   _$AssetLoginInfoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5075,10 +4860,8 @@ class _$AssetLoginInfoCopyWithImpl<$Res, $Val extends AssetLoginInfo>
 }
 
 /// @nodoc
-abstract class _$$AssetLoginInfoImplCopyWith<$Res>
-    implements $AssetLoginInfoCopyWith<$Res> {
-  factory _$$AssetLoginInfoImplCopyWith(_$AssetLoginInfoImpl value,
-          $Res Function(_$AssetLoginInfoImpl) then) =
+abstract class _$$AssetLoginInfoImplCopyWith<$Res> implements $AssetLoginInfoCopyWith<$Res> {
+  factory _$$AssetLoginInfoImplCopyWith(_$AssetLoginInfoImpl value, $Res Function(_$AssetLoginInfoImpl) then) =
       __$$AssetLoginInfoImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5086,11 +4869,9 @@ abstract class _$$AssetLoginInfoImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AssetLoginInfoImplCopyWithImpl<$Res>
-    extends _$AssetLoginInfoCopyWithImpl<$Res, _$AssetLoginInfoImpl>
+class __$$AssetLoginInfoImplCopyWithImpl<$Res> extends _$AssetLoginInfoCopyWithImpl<$Res, _$AssetLoginInfoImpl>
     implements _$$AssetLoginInfoImplCopyWith<$Res> {
-  __$$AssetLoginInfoImplCopyWithImpl(
-      _$AssetLoginInfoImpl _value, $Res Function(_$AssetLoginInfoImpl) _then)
+  __$$AssetLoginInfoImplCopyWithImpl(_$AssetLoginInfoImpl _value, $Res Function(_$AssetLoginInfoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5120,11 +4901,9 @@ class __$$AssetLoginInfoImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$AssetLoginInfoImpl implements _AssetLoginInfo {
-  const _$AssetLoginInfoImpl(
-      {required this.enabled, this.email, this.username});
+  const _$AssetLoginInfoImpl({required this.enabled, this.email, this.username});
 
-  factory _$AssetLoginInfoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AssetLoginInfoImplFromJson(json);
+  factory _$AssetLoginInfoImpl.fromJson(Map<String, dynamic> json) => _$$AssetLoginInfoImplFromJson(json);
 
   /// [enabled] is the login status of the asset.
   @override
@@ -5150,8 +4929,7 @@ class _$AssetLoginInfoImpl implements _AssetLoginInfo {
             other is _$AssetLoginInfoImpl &&
             (identical(other.enabled, enabled) || other.enabled == enabled) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.username, username) ||
-                other.username == username));
+            (identical(other.username, username) || other.username == username));
   }
 
   @JsonKey(ignore: true)
@@ -5162,8 +4940,7 @@ class _$AssetLoginInfoImpl implements _AssetLoginInfo {
   @override
   @pragma('vm:prefer-inline')
   _$$AssetLoginInfoImplCopyWith<_$AssetLoginInfoImpl> get copyWith =>
-      __$$AssetLoginInfoImplCopyWithImpl<_$AssetLoginInfoImpl>(
-          this, _$identity);
+      __$$AssetLoginInfoImplCopyWithImpl<_$AssetLoginInfoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -5174,13 +4951,10 @@ class _$AssetLoginInfoImpl implements _AssetLoginInfo {
 }
 
 abstract class _AssetLoginInfo implements AssetLoginInfo {
-  const factory _AssetLoginInfo(
-      {required final bool enabled,
-      final String? email,
-      final String? username}) = _$AssetLoginInfoImpl;
+  const factory _AssetLoginInfo({required final bool enabled, final String? email, final String? username}) =
+      _$AssetLoginInfoImpl;
 
-  factory _AssetLoginInfo.fromJson(Map<String, dynamic> json) =
-      _$AssetLoginInfoImpl.fromJson;
+  factory _AssetLoginInfo.fromJson(Map<String, dynamic> json) = _$AssetLoginInfoImpl.fromJson;
 
   @override
 
@@ -5196,8 +4970,7 @@ abstract class _AssetLoginInfo implements AssetLoginInfo {
   String? get username;
   @override
   @JsonKey(ignore: true)
-  _$$AssetLoginInfoImplCopyWith<_$AssetLoginInfoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AssetLoginInfoImplCopyWith<_$AssetLoginInfoImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 StaticPosition _$StaticPositionFromJson(Map<String, dynamic> json) {
@@ -5217,22 +4990,19 @@ mixin _$StaticPosition {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $StaticPositionCopyWith<StaticPosition> get copyWith =>
-      throw _privateConstructorUsedError;
+  $StaticPositionCopyWith<StaticPosition> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $StaticPositionCopyWith<$Res> {
-  factory $StaticPositionCopyWith(
-          StaticPosition value, $Res Function(StaticPosition) then) =
+  factory $StaticPositionCopyWith(StaticPosition value, $Res Function(StaticPosition) then) =
       _$StaticPositionCopyWithImpl<$Res, StaticPosition>;
   @useResult
   $Res call({double? latitude, double? longitude, double? altitude});
 }
 
 /// @nodoc
-class _$StaticPositionCopyWithImpl<$Res, $Val extends StaticPosition>
-    implements $StaticPositionCopyWith<$Res> {
+class _$StaticPositionCopyWithImpl<$Res, $Val extends StaticPosition> implements $StaticPositionCopyWith<$Res> {
   _$StaticPositionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5265,10 +5035,8 @@ class _$StaticPositionCopyWithImpl<$Res, $Val extends StaticPosition>
 }
 
 /// @nodoc
-abstract class _$$StaticPositionImplCopyWith<$Res>
-    implements $StaticPositionCopyWith<$Res> {
-  factory _$$StaticPositionImplCopyWith(_$StaticPositionImpl value,
-          $Res Function(_$StaticPositionImpl) then) =
+abstract class _$$StaticPositionImplCopyWith<$Res> implements $StaticPositionCopyWith<$Res> {
+  factory _$$StaticPositionImplCopyWith(_$StaticPositionImpl value, $Res Function(_$StaticPositionImpl) then) =
       __$$StaticPositionImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5276,11 +5044,9 @@ abstract class _$$StaticPositionImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$StaticPositionImplCopyWithImpl<$Res>
-    extends _$StaticPositionCopyWithImpl<$Res, _$StaticPositionImpl>
+class __$$StaticPositionImplCopyWithImpl<$Res> extends _$StaticPositionCopyWithImpl<$Res, _$StaticPositionImpl>
     implements _$$StaticPositionImplCopyWith<$Res> {
-  __$$StaticPositionImplCopyWithImpl(
-      _$StaticPositionImpl _value, $Res Function(_$StaticPositionImpl) _then)
+  __$$StaticPositionImplCopyWithImpl(_$StaticPositionImpl _value, $Res Function(_$StaticPositionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5312,8 +5078,7 @@ class __$$StaticPositionImplCopyWithImpl<$Res>
 class _$StaticPositionImpl implements _StaticPosition {
   const _$StaticPositionImpl({this.latitude, this.longitude, this.altitude});
 
-  factory _$StaticPositionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$StaticPositionImplFromJson(json);
+  factory _$StaticPositionImpl.fromJson(Map<String, dynamic> json) => _$$StaticPositionImplFromJson(json);
 
   /// [latitude] is the latitude of the asset.
   @override
@@ -5337,12 +5102,9 @@ class _$StaticPositionImpl implements _StaticPosition {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StaticPositionImpl &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.altitude, altitude) ||
-                other.altitude == altitude));
+            (identical(other.latitude, latitude) || other.latitude == latitude) &&
+            (identical(other.longitude, longitude) || other.longitude == longitude) &&
+            (identical(other.altitude, altitude) || other.altitude == altitude));
   }
 
   @JsonKey(ignore: true)
@@ -5353,8 +5115,7 @@ class _$StaticPositionImpl implements _StaticPosition {
   @override
   @pragma('vm:prefer-inline')
   _$$StaticPositionImplCopyWith<_$StaticPositionImpl> get copyWith =>
-      __$$StaticPositionImplCopyWithImpl<_$StaticPositionImpl>(
-          this, _$identity);
+      __$$StaticPositionImplCopyWithImpl<_$StaticPositionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -5365,13 +5126,10 @@ class _$StaticPositionImpl implements _StaticPosition {
 }
 
 abstract class _StaticPosition implements StaticPosition {
-  const factory _StaticPosition(
-      {final double? latitude,
-      final double? longitude,
-      final double? altitude}) = _$StaticPositionImpl;
+  const factory _StaticPosition({final double? latitude, final double? longitude, final double? altitude}) =
+      _$StaticPositionImpl;
 
-  factory _StaticPosition.fromJson(Map<String, dynamic> json) =
-      _$StaticPositionImpl.fromJson;
+  factory _StaticPosition.fromJson(Map<String, dynamic> json) = _$StaticPositionImpl.fromJson;
 
   @override
 
@@ -5387,8 +5145,7 @@ abstract class _StaticPosition implements StaticPosition {
   double? get altitude;
   @override
   @JsonKey(ignore: true)
-  _$$StaticPositionImplCopyWith<_$StaticPositionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$StaticPositionImplCopyWith<_$StaticPositionImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 ZonePoint _$ZonePointFromJson(Map<String, dynamic> json) {
@@ -5405,21 +5162,18 @@ mixin _$ZonePoint {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ZonePointCopyWith<ZonePoint> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ZonePointCopyWith<ZonePoint> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ZonePointCopyWith<$Res> {
-  factory $ZonePointCopyWith(ZonePoint value, $Res Function(ZonePoint) then) =
-      _$ZonePointCopyWithImpl<$Res, ZonePoint>;
+  factory $ZonePointCopyWith(ZonePoint value, $Res Function(ZonePoint) then) = _$ZonePointCopyWithImpl<$Res, ZonePoint>;
   @useResult
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class _$ZonePointCopyWithImpl<$Res, $Val extends ZonePoint>
-    implements $ZonePointCopyWith<$Res> {
+class _$ZonePointCopyWithImpl<$Res, $Val extends ZonePoint> implements $ZonePointCopyWith<$Res> {
   _$ZonePointCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5447,10 +5201,8 @@ class _$ZonePointCopyWithImpl<$Res, $Val extends ZonePoint>
 }
 
 /// @nodoc
-abstract class _$$ZonePointImplCopyWith<$Res>
-    implements $ZonePointCopyWith<$Res> {
-  factory _$$ZonePointImplCopyWith(
-          _$ZonePointImpl value, $Res Function(_$ZonePointImpl) then) =
+abstract class _$$ZonePointImplCopyWith<$Res> implements $ZonePointCopyWith<$Res> {
+  factory _$$ZonePointImplCopyWith(_$ZonePointImpl value, $Res Function(_$ZonePointImpl) then) =
       __$$ZonePointImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5458,12 +5210,9 @@ abstract class _$$ZonePointImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ZonePointImplCopyWithImpl<$Res>
-    extends _$ZonePointCopyWithImpl<$Res, _$ZonePointImpl>
+class __$$ZonePointImplCopyWithImpl<$Res> extends _$ZonePointCopyWithImpl<$Res, _$ZonePointImpl>
     implements _$$ZonePointImplCopyWith<$Res> {
-  __$$ZonePointImplCopyWithImpl(
-      _$ZonePointImpl _value, $Res Function(_$ZonePointImpl) _then)
-      : super(_value, _then);
+  __$$ZonePointImplCopyWithImpl(_$ZonePointImpl _value, $Res Function(_$ZonePointImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -5489,8 +5238,7 @@ class __$$ZonePointImplCopyWithImpl<$Res>
 class _$ZonePointImpl implements _ZonePoint {
   const _$ZonePointImpl({required this.latitude, required this.longitude});
 
-  factory _$ZonePointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ZonePointImplFromJson(json);
+  factory _$ZonePointImpl.fromJson(Map<String, dynamic> json) => _$$ZonePointImplFromJson(json);
 
   /// [latitude] is the latitude of the point
   @override
@@ -5510,10 +5258,8 @@ class _$ZonePointImpl implements _ZonePoint {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ZonePointImpl &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude));
+            (identical(other.latitude, latitude) || other.latitude == latitude) &&
+            (identical(other.longitude, longitude) || other.longitude == longitude));
   }
 
   @JsonKey(ignore: true)
@@ -5535,12 +5281,9 @@ class _$ZonePointImpl implements _ZonePoint {
 }
 
 abstract class _ZonePoint implements ZonePoint {
-  const factory _ZonePoint(
-      {required final double latitude,
-      required final double longitude}) = _$ZonePointImpl;
+  const factory _ZonePoint({required final double latitude, required final double longitude}) = _$ZonePointImpl;
 
-  factory _ZonePoint.fromJson(Map<String, dynamic> json) =
-      _$ZonePointImpl.fromJson;
+  factory _ZonePoint.fromJson(Map<String, dynamic> json) = _$ZonePointImpl.fromJson;
 
   @override
 
@@ -5552,8 +5295,7 @@ abstract class _ZonePoint implements ZonePoint {
   double get longitude;
   @override
   @JsonKey(ignore: true)
-  _$$ZonePointImplCopyWith<_$ZonePointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ZonePointImplCopyWith<_$ZonePointImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Avatar _$AvatarFromJson(Map<String, dynamic> json) {
@@ -5582,8 +5324,7 @@ mixin _$Avatar {
 
 /// @nodoc
 abstract class $AvatarCopyWith<$Res> {
-  factory $AvatarCopyWith(Avatar value, $Res Function(Avatar) then) =
-      _$AvatarCopyWithImpl<$Res, Avatar>;
+  factory $AvatarCopyWith(Avatar value, $Res Function(Avatar) then) = _$AvatarCopyWithImpl<$Res, Avatar>;
   @useResult
   $Res call(
       {@AvatarTypeConverter() AvatarType type,
@@ -5594,8 +5335,7 @@ abstract class $AvatarCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AvatarCopyWithImpl<$Res, $Val extends Avatar>
-    implements $AvatarCopyWith<$Res> {
+class _$AvatarCopyWithImpl<$Res, $Val extends Avatar> implements $AvatarCopyWith<$Res> {
   _$AvatarCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5639,8 +5379,7 @@ class _$AvatarCopyWithImpl<$Res, $Val extends Avatar>
 
 /// @nodoc
 abstract class _$$AvatarImplCopyWith<$Res> implements $AvatarCopyWith<$Res> {
-  factory _$$AvatarImplCopyWith(
-          _$AvatarImpl value, $Res Function(_$AvatarImpl) then) =
+  factory _$$AvatarImplCopyWith(_$AvatarImpl value, $Res Function(_$AvatarImpl) then) =
       __$$AvatarImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5653,12 +5392,9 @@ abstract class _$$AvatarImplCopyWith<$Res> implements $AvatarCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$AvatarImplCopyWithImpl<$Res>
-    extends _$AvatarCopyWithImpl<$Res, _$AvatarImpl>
+class __$$AvatarImplCopyWithImpl<$Res> extends _$AvatarCopyWithImpl<$Res, _$AvatarImpl>
     implements _$$AvatarImplCopyWith<$Res> {
-  __$$AvatarImplCopyWithImpl(
-      _$AvatarImpl _value, $Res Function(_$AvatarImpl) _then)
-      : super(_value, _then);
+  __$$AvatarImplCopyWithImpl(_$AvatarImpl _value, $Res Function(_$AvatarImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -5698,14 +5434,9 @@ class __$$AvatarImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AvatarImpl implements _Avatar {
   const _$AvatarImpl(
-      {@AvatarTypeConverter() required this.type,
-      this.emoji,
-      @IconOrNullConverter() this.icon,
-      this.url,
-      this.base64});
+      {@AvatarTypeConverter() required this.type, this.emoji, @IconOrNullConverter() this.icon, this.url, this.base64});
 
-  factory _$AvatarImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AvatarImplFromJson(json);
+  factory _$AvatarImpl.fromJson(Map<String, dynamic> json) => _$$AvatarImplFromJson(json);
 
   /// Represents the type of avatar.
   @override
@@ -5749,8 +5480,7 @@ class _$AvatarImpl implements _Avatar {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AvatarImplCopyWith<_$AvatarImpl> get copyWith =>
-      __$$AvatarImplCopyWithImpl<_$AvatarImpl>(this, _$identity);
+  _$$AvatarImplCopyWith<_$AvatarImpl> get copyWith => __$$AvatarImplCopyWithImpl<_$AvatarImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -5790,8 +5520,7 @@ abstract class _Avatar implements Avatar {
   String? get base64;
   @override
   @JsonKey(ignore: true)
-  _$$AvatarImplCopyWith<_$AvatarImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AvatarImplCopyWith<_$AvatarImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 AvatarInput _$AvatarInputFromJson(Map<String, dynamic> json) {
@@ -5828,14 +5557,12 @@ mixin _$AvatarInput {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AvatarInputCopyWith<AvatarInput> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AvatarInputCopyWith<AvatarInput> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AvatarInputCopyWith<$Res> {
-  factory $AvatarInputCopyWith(
-          AvatarInput value, $Res Function(AvatarInput) then) =
+  factory $AvatarInputCopyWith(AvatarInput value, $Res Function(AvatarInput) then) =
       _$AvatarInputCopyWithImpl<$Res, AvatarInput>;
   @useResult
   $Res call(
@@ -5847,8 +5574,7 @@ abstract class $AvatarInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AvatarInputCopyWithImpl<$Res, $Val extends AvatarInput>
-    implements $AvatarInputCopyWith<$Res> {
+class _$AvatarInputCopyWithImpl<$Res, $Val extends AvatarInput> implements $AvatarInputCopyWith<$Res> {
   _$AvatarInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -5891,10 +5617,8 @@ class _$AvatarInputCopyWithImpl<$Res, $Val extends AvatarInput>
 }
 
 /// @nodoc
-abstract class _$$AvatarInputImplCopyWith<$Res>
-    implements $AvatarInputCopyWith<$Res> {
-  factory _$$AvatarInputImplCopyWith(
-          _$AvatarInputImpl value, $Res Function(_$AvatarInputImpl) then) =
+abstract class _$$AvatarInputImplCopyWith<$Res> implements $AvatarInputCopyWith<$Res> {
+  factory _$$AvatarInputImplCopyWith(_$AvatarInputImpl value, $Res Function(_$AvatarInputImpl) then) =
       __$$AvatarInputImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -5907,11 +5631,9 @@ abstract class _$$AvatarInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AvatarInputImplCopyWithImpl<$Res>
-    extends _$AvatarInputCopyWithImpl<$Res, _$AvatarInputImpl>
+class __$$AvatarInputImplCopyWithImpl<$Res> extends _$AvatarInputCopyWithImpl<$Res, _$AvatarInputImpl>
     implements _$$AvatarInputImplCopyWith<$Res> {
-  __$$AvatarInputImplCopyWithImpl(
-      _$AvatarInputImpl _value, $Res Function(_$AvatarInputImpl) _then)
+  __$$AvatarInputImplCopyWithImpl(_$AvatarInputImpl _value, $Res Function(_$AvatarInputImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -5958,8 +5680,7 @@ class _$AvatarInputImpl implements _AvatarInput {
       this.url,
       this.base64});
 
-  factory _$AvatarInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AvatarInputImplFromJson(json);
+  factory _$AvatarInputImpl.fromJson(Map<String, dynamic> json) => _$$AvatarInputImplFromJson(json);
 
   /// Represents the type of avatarInput.
   @override
@@ -6007,8 +5728,7 @@ abstract class _AvatarInput implements AvatarInput {
       String? url,
       String? base64}) = _$AvatarInputImpl;
 
-  factory _AvatarInput.fromJson(Map<String, dynamic> json) =
-      _$AvatarInputImpl.fromJson;
+  factory _AvatarInput.fromJson(Map<String, dynamic> json) = _$AvatarInputImpl.fromJson;
 
   @override
 
@@ -6043,8 +5763,7 @@ abstract class _AvatarInput implements AvatarInput {
   set base64(String? value);
   @override
   @JsonKey(ignore: true)
-  _$$AvatarInputImplCopyWith<_$AvatarInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AvatarInputImplCopyWith<_$AvatarInputImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 BillingPlan _$BillingPlanFromJson(Map<String, dynamic> json) {
@@ -6065,25 +5784,19 @@ mixin _$BillingPlan {
   int get maxApps => throw _privateConstructorUsedError;
   List<String> get allowedAppsIds => throw _privateConstructorUsedError;
   List<String> get allowedAlgorithmsIds => throw _privateConstructorUsedError;
-  List<String> get allowedInboundProtocolsIds =>
-      throw _privateConstructorUsedError;
-  List<String> get allowedOutboundProtocolsIds =>
-      throw _privateConstructorUsedError;
-  List<String> get allowedVisionProtocolsIds =>
-      throw _privateConstructorUsedError;
-  List<String> get allowedExchangeProtocolsIds =>
-      throw _privateConstructorUsedError;
+  List<String> get allowedInboundProtocolsIds => throw _privateConstructorUsedError;
+  List<String> get allowedOutboundProtocolsIds => throw _privateConstructorUsedError;
+  List<String> get allowedVisionProtocolsIds => throw _privateConstructorUsedError;
+  List<String> get allowedExchangeProtocolsIds => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BillingPlanCopyWith<BillingPlan> get copyWith =>
-      throw _privateConstructorUsedError;
+  $BillingPlanCopyWith<BillingPlan> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $BillingPlanCopyWith<$Res> {
-  factory $BillingPlanCopyWith(
-          BillingPlan value, $Res Function(BillingPlan) then) =
+  factory $BillingPlanCopyWith(BillingPlan value, $Res Function(BillingPlan) then) =
       _$BillingPlanCopyWithImpl<$Res, BillingPlan>;
   @useResult
   $Res call(
@@ -6106,8 +5819,7 @@ abstract class $BillingPlanCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$BillingPlanCopyWithImpl<$Res, $Val extends BillingPlan>
-    implements $BillingPlanCopyWith<$Res> {
+class _$BillingPlanCopyWithImpl<$Res, $Val extends BillingPlan> implements $BillingPlanCopyWith<$Res> {
   _$BillingPlanCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -6205,10 +5917,8 @@ class _$BillingPlanCopyWithImpl<$Res, $Val extends BillingPlan>
 }
 
 /// @nodoc
-abstract class _$$BillingPlanImplCopyWith<$Res>
-    implements $BillingPlanCopyWith<$Res> {
-  factory _$$BillingPlanImplCopyWith(
-          _$BillingPlanImpl value, $Res Function(_$BillingPlanImpl) then) =
+abstract class _$$BillingPlanImplCopyWith<$Res> implements $BillingPlanCopyWith<$Res> {
+  factory _$$BillingPlanImplCopyWith(_$BillingPlanImpl value, $Res Function(_$BillingPlanImpl) then) =
       __$$BillingPlanImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -6232,11 +5942,9 @@ abstract class _$$BillingPlanImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$BillingPlanImplCopyWithImpl<$Res>
-    extends _$BillingPlanCopyWithImpl<$Res, _$BillingPlanImpl>
+class __$$BillingPlanImplCopyWithImpl<$Res> extends _$BillingPlanCopyWithImpl<$Res, _$BillingPlanImpl>
     implements _$$BillingPlanImplCopyWith<$Res> {
-  __$$BillingPlanImplCopyWithImpl(
-      _$BillingPlanImpl _value, $Res Function(_$BillingPlanImpl) _then)
+  __$$BillingPlanImplCopyWithImpl(_$BillingPlanImpl _value, $Res Function(_$BillingPlanImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -6355,8 +6063,7 @@ class _$BillingPlanImpl implements _BillingPlan {
         _allowedVisionProtocolsIds = allowedVisionProtocolsIds,
         _allowedExchangeProtocolsIds = allowedExchangeProtocolsIds;
 
-  factory _$BillingPlanImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BillingPlanImplFromJson(json);
+  factory _$BillingPlanImpl.fromJson(Map<String, dynamic> json) => _$$BillingPlanImplFromJson(json);
 
   @override
   final String id;
@@ -6389,8 +6096,7 @@ class _$BillingPlanImpl implements _BillingPlan {
   final List<String> _allowedAlgorithmsIds;
   @override
   List<String> get allowedAlgorithmsIds {
-    if (_allowedAlgorithmsIds is EqualUnmodifiableListView)
-      return _allowedAlgorithmsIds;
+    if (_allowedAlgorithmsIds is EqualUnmodifiableListView) return _allowedAlgorithmsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_allowedAlgorithmsIds);
   }
@@ -6398,8 +6104,7 @@ class _$BillingPlanImpl implements _BillingPlan {
   final List<String> _allowedInboundProtocolsIds;
   @override
   List<String> get allowedInboundProtocolsIds {
-    if (_allowedInboundProtocolsIds is EqualUnmodifiableListView)
-      return _allowedInboundProtocolsIds;
+    if (_allowedInboundProtocolsIds is EqualUnmodifiableListView) return _allowedInboundProtocolsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_allowedInboundProtocolsIds);
   }
@@ -6407,8 +6112,7 @@ class _$BillingPlanImpl implements _BillingPlan {
   final List<String> _allowedOutboundProtocolsIds;
   @override
   List<String> get allowedOutboundProtocolsIds {
-    if (_allowedOutboundProtocolsIds is EqualUnmodifiableListView)
-      return _allowedOutboundProtocolsIds;
+    if (_allowedOutboundProtocolsIds is EqualUnmodifiableListView) return _allowedOutboundProtocolsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_allowedOutboundProtocolsIds);
   }
@@ -6416,8 +6120,7 @@ class _$BillingPlanImpl implements _BillingPlan {
   final List<String> _allowedVisionProtocolsIds;
   @override
   List<String> get allowedVisionProtocolsIds {
-    if (_allowedVisionProtocolsIds is EqualUnmodifiableListView)
-      return _allowedVisionProtocolsIds;
+    if (_allowedVisionProtocolsIds is EqualUnmodifiableListView) return _allowedVisionProtocolsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_allowedVisionProtocolsIds);
   }
@@ -6425,8 +6128,7 @@ class _$BillingPlanImpl implements _BillingPlan {
   final List<String> _allowedExchangeProtocolsIds;
   @override
   List<String> get allowedExchangeProtocolsIds {
-    if (_allowedExchangeProtocolsIds is EqualUnmodifiableListView)
-      return _allowedExchangeProtocolsIds;
+    if (_allowedExchangeProtocolsIds is EqualUnmodifiableListView) return _allowedExchangeProtocolsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_allowedExchangeProtocolsIds);
   }
@@ -6448,32 +6150,19 @@ class _$BillingPlanImpl implements _BillingPlan {
                 other.reconnectionMaximum == reconnectionMaximum) &&
             (identical(other.reconnectionIncidents, reconnectionIncidents) ||
                 other.reconnectionIncidents == reconnectionIncidents) &&
-            (identical(other.maxAssets, maxAssets) ||
-                other.maxAssets == maxAssets) &&
-            (identical(other.maxDevices, maxDevices) ||
-                other.maxDevices == maxDevices) &&
-            (identical(other.maxUsers, maxUsers) ||
-                other.maxUsers == maxUsers) &&
+            (identical(other.maxAssets, maxAssets) || other.maxAssets == maxAssets) &&
+            (identical(other.maxDevices, maxDevices) || other.maxDevices == maxDevices) &&
+            (identical(other.maxUsers, maxUsers) || other.maxUsers == maxUsers) &&
             (identical(other.maxOutboundServices, maxOutboundServices) ||
                 other.maxOutboundServices == maxOutboundServices) &&
-            (identical(other.maxFunctions, maxFunctions) ||
-                other.maxFunctions == maxFunctions) &&
+            (identical(other.maxFunctions, maxFunctions) || other.maxFunctions == maxFunctions) &&
             (identical(other.maxApps, maxApps) || other.maxApps == maxApps) &&
-            const DeepCollectionEquality()
-                .equals(other._allowedAppsIds, _allowedAppsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._allowedAlgorithmsIds, _allowedAlgorithmsIds) &&
-            const DeepCollectionEquality().equals(
-                other._allowedInboundProtocolsIds,
-                _allowedInboundProtocolsIds) &&
-            const DeepCollectionEquality().equals(
-                other._allowedOutboundProtocolsIds,
-                _allowedOutboundProtocolsIds) &&
-            const DeepCollectionEquality().equals(
-                other._allowedVisionProtocolsIds, _allowedVisionProtocolsIds) &&
-            const DeepCollectionEquality().equals(
-                other._allowedExchangeProtocolsIds,
-                _allowedExchangeProtocolsIds));
+            const DeepCollectionEquality().equals(other._allowedAppsIds, _allowedAppsIds) &&
+            const DeepCollectionEquality().equals(other._allowedAlgorithmsIds, _allowedAlgorithmsIds) &&
+            const DeepCollectionEquality().equals(other._allowedInboundProtocolsIds, _allowedInboundProtocolsIds) &&
+            const DeepCollectionEquality().equals(other._allowedOutboundProtocolsIds, _allowedOutboundProtocolsIds) &&
+            const DeepCollectionEquality().equals(other._allowedVisionProtocolsIds, _allowedVisionProtocolsIds) &&
+            const DeepCollectionEquality().equals(other._allowedExchangeProtocolsIds, _allowedExchangeProtocolsIds));
   }
 
   @JsonKey(ignore: true)
@@ -6513,26 +6202,24 @@ class _$BillingPlanImpl implements _BillingPlan {
 
 abstract class _BillingPlan implements BillingPlan {
   const factory _BillingPlan(
-          {required final String id,
-          required final double reconnectionPercent,
-          required final int reconnectionMaximum,
-          required final int reconnectionIncidents,
-          required final int maxAssets,
-          required final int maxDevices,
-          required final int maxUsers,
-          required final int maxOutboundServices,
-          required final int maxFunctions,
-          required final int maxApps,
-          required final List<String> allowedAppsIds,
-          required final List<String> allowedAlgorithmsIds,
-          required final List<String> allowedInboundProtocolsIds,
-          required final List<String> allowedOutboundProtocolsIds,
-          required final List<String> allowedVisionProtocolsIds,
-          required final List<String> allowedExchangeProtocolsIds}) =
-      _$BillingPlanImpl;
+      {required final String id,
+      required final double reconnectionPercent,
+      required final int reconnectionMaximum,
+      required final int reconnectionIncidents,
+      required final int maxAssets,
+      required final int maxDevices,
+      required final int maxUsers,
+      required final int maxOutboundServices,
+      required final int maxFunctions,
+      required final int maxApps,
+      required final List<String> allowedAppsIds,
+      required final List<String> allowedAlgorithmsIds,
+      required final List<String> allowedInboundProtocolsIds,
+      required final List<String> allowedOutboundProtocolsIds,
+      required final List<String> allowedVisionProtocolsIds,
+      required final List<String> allowedExchangeProtocolsIds}) = _$BillingPlanImpl;
 
-  factory _BillingPlan.fromJson(Map<String, dynamic> json) =
-      _$BillingPlanImpl.fromJson;
+  factory _BillingPlan.fromJson(Map<String, dynamic> json) = _$BillingPlanImpl.fromJson;
 
   @override
   String get id;
@@ -6568,8 +6255,7 @@ abstract class _BillingPlan implements BillingPlan {
   List<String> get allowedExchangeProtocolsIds;
   @override
   @JsonKey(ignore: true)
-  _$$BillingPlanImplCopyWith<_$BillingPlanImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$BillingPlanImplCopyWith<_$BillingPlanImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 CareProtocol _$CareProtocolFromJson(Map<String, dynamic> json) {
@@ -6613,14 +6299,12 @@ mixin _$CareProtocol {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CareProtocolCopyWith<CareProtocol> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CareProtocolCopyWith<CareProtocol> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CareProtocolCopyWith<$Res> {
-  factory $CareProtocolCopyWith(
-          CareProtocol value, $Res Function(CareProtocol) then) =
+  factory $CareProtocolCopyWith(CareProtocol value, $Res Function(CareProtocol) then) =
       _$CareProtocolCopyWithImpl<$Res, CareProtocol>;
   @useResult
   $Res call(
@@ -6637,8 +6321,7 @@ abstract class $CareProtocolCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CareProtocolCopyWithImpl<$Res, $Val extends CareProtocol>
-    implements $CareProtocolCopyWith<$Res> {
+class _$CareProtocolCopyWithImpl<$Res, $Val extends CareProtocol> implements $CareProtocolCopyWith<$Res> {
   _$CareProtocolCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -6706,10 +6389,8 @@ class _$CareProtocolCopyWithImpl<$Res, $Val extends CareProtocol>
 }
 
 /// @nodoc
-abstract class _$$CareProtocolImplCopyWith<$Res>
-    implements $CareProtocolCopyWith<$Res> {
-  factory _$$CareProtocolImplCopyWith(
-          _$CareProtocolImpl value, $Res Function(_$CareProtocolImpl) then) =
+abstract class _$$CareProtocolImplCopyWith<$Res> implements $CareProtocolCopyWith<$Res> {
+  factory _$$CareProtocolImplCopyWith(_$CareProtocolImpl value, $Res Function(_$CareProtocolImpl) then) =
       __$$CareProtocolImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -6727,11 +6408,9 @@ abstract class _$$CareProtocolImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CareProtocolImplCopyWithImpl<$Res>
-    extends _$CareProtocolCopyWithImpl<$Res, _$CareProtocolImpl>
+class __$$CareProtocolImplCopyWithImpl<$Res> extends _$CareProtocolCopyWithImpl<$Res, _$CareProtocolImpl>
     implements _$$CareProtocolImplCopyWith<$Res> {
-  __$$CareProtocolImplCopyWithImpl(
-      _$CareProtocolImpl _value, $Res Function(_$CareProtocolImpl) _then)
+  __$$CareProtocolImplCopyWithImpl(_$CareProtocolImpl _value, $Res Function(_$CareProtocolImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -6812,8 +6491,7 @@ class _$CareProtocolImpl implements _CareProtocol {
         _associatedTriggers = associatedTriggers,
         _access = access;
 
-  factory _$CareProtocolImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CareProtocolImplFromJson(json);
+  factory _$CareProtocolImpl.fromJson(Map<String, dynamic> json) => _$$CareProtocolImplFromJson(json);
 
   /// Is the ID
   @override
@@ -6864,8 +6542,7 @@ class _$CareProtocolImpl implements _CareProtocol {
   List<Trigger>? get associatedTriggers {
     final value = _associatedTriggers;
     if (value == null) return null;
-    if (_associatedTriggers is EqualUnmodifiableListView)
-      return _associatedTriggers;
+    if (_associatedTriggers is EqualUnmodifiableListView) return _associatedTriggers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -6910,14 +6587,10 @@ class _$CareProtocolImpl implements _CareProtocol {
             (identical(other.mode, mode) || other.mode == mode) &&
             const DeepCollectionEquality().equals(other._tasks, _tasks) &&
             const DeepCollectionEquality().equals(other._pages, _pages) &&
-            const DeepCollectionEquality()
-                .equals(other._associatedTriggers, _associatedTriggers) &&
-            (identical(other.numOfTasks, numOfTasks) ||
-                other.numOfTasks == numOfTasks) &&
-            (identical(other.numOfPages, numOfPages) ||
-                other.numOfPages == numOfPages) &&
-            (identical(other.numOfBlocks, numOfBlocks) ||
-                other.numOfBlocks == numOfBlocks) &&
+            const DeepCollectionEquality().equals(other._associatedTriggers, _associatedTriggers) &&
+            (identical(other.numOfTasks, numOfTasks) || other.numOfTasks == numOfTasks) &&
+            (identical(other.numOfPages, numOfPages) || other.numOfPages == numOfPages) &&
+            (identical(other.numOfBlocks, numOfBlocks) || other.numOfBlocks == numOfBlocks) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
@@ -6963,8 +6636,7 @@ abstract class _CareProtocol implements CareProtocol {
       final int? numOfBlocks,
       final List<Access>? access}) = _$CareProtocolImpl;
 
-  factory _CareProtocol.fromJson(Map<String, dynamic> json) =
-      _$CareProtocolImpl.fromJson;
+  factory _CareProtocol.fromJson(Map<String, dynamic> json) = _$CareProtocolImpl.fromJson;
 
   @override
 
@@ -7011,8 +6683,7 @@ abstract class _CareProtocol implements CareProtocol {
   List<Access>? get access;
   @override
   @JsonKey(ignore: true)
-  _$$CareProtocolImplCopyWith<_$CareProtocolImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CareProtocolImplCopyWith<_$CareProtocolImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 CareTask _$CareTaskFromJson(Map<String, dynamic> json) {
@@ -7037,26 +6708,19 @@ mixin _$CareTask {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CareTaskCopyWith<CareTask> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CareTaskCopyWith<CareTask> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CareTaskCopyWith<$Res> {
-  factory $CareTaskCopyWith(CareTask value, $Res Function(CareTask) then) =
-      _$CareTaskCopyWithImpl<$Res, CareTask>;
+  factory $CareTaskCopyWith(CareTask value, $Res Function(CareTask) then) = _$CareTaskCopyWithImpl<$Res, CareTask>;
   @useResult
   $Res call(
-      {String question,
-      @AnswerKindConverter() AnswerKind answer,
-      List<String> choices,
-      int minValue,
-      int maxValue});
+      {String question, @AnswerKindConverter() AnswerKind answer, List<String> choices, int minValue, int maxValue});
 }
 
 /// @nodoc
-class _$CareTaskCopyWithImpl<$Res, $Val extends CareTask>
-    implements $CareTaskCopyWith<$Res> {
+class _$CareTaskCopyWithImpl<$Res, $Val extends CareTask> implements $CareTaskCopyWith<$Res> {
   _$CareTaskCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -7099,28 +6763,19 @@ class _$CareTaskCopyWithImpl<$Res, $Val extends CareTask>
 }
 
 /// @nodoc
-abstract class _$$CareTaskImplCopyWith<$Res>
-    implements $CareTaskCopyWith<$Res> {
-  factory _$$CareTaskImplCopyWith(
-          _$CareTaskImpl value, $Res Function(_$CareTaskImpl) then) =
+abstract class _$$CareTaskImplCopyWith<$Res> implements $CareTaskCopyWith<$Res> {
+  factory _$$CareTaskImplCopyWith(_$CareTaskImpl value, $Res Function(_$CareTaskImpl) then) =
       __$$CareTaskImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {String question,
-      @AnswerKindConverter() AnswerKind answer,
-      List<String> choices,
-      int minValue,
-      int maxValue});
+      {String question, @AnswerKindConverter() AnswerKind answer, List<String> choices, int minValue, int maxValue});
 }
 
 /// @nodoc
-class __$$CareTaskImplCopyWithImpl<$Res>
-    extends _$CareTaskCopyWithImpl<$Res, _$CareTaskImpl>
+class __$$CareTaskImplCopyWithImpl<$Res> extends _$CareTaskCopyWithImpl<$Res, _$CareTaskImpl>
     implements _$$CareTaskImplCopyWith<$Res> {
-  __$$CareTaskImplCopyWithImpl(
-      _$CareTaskImpl _value, $Res Function(_$CareTaskImpl) _then)
-      : super(_value, _then);
+  __$$CareTaskImplCopyWithImpl(_$CareTaskImpl _value, $Res Function(_$CareTaskImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -7167,8 +6822,7 @@ class _$CareTaskImpl implements _CareTask {
       this.maxValue = 0})
       : _choices = choices;
 
-  factory _$CareTaskImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CareTaskImplFromJson(json);
+  factory _$CareTaskImpl.fromJson(Map<String, dynamic> json) => _$$CareTaskImplFromJson(json);
 
   /// Is the question to prompt
   @override
@@ -7209,20 +6863,17 @@ class _$CareTaskImpl implements _CareTask {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CareTaskImpl &&
-            (identical(other.question, question) ||
-                other.question == question) &&
+            (identical(other.question, question) || other.question == question) &&
             (identical(other.answer, answer) || other.answer == answer) &&
             const DeepCollectionEquality().equals(other._choices, _choices) &&
-            (identical(other.minValue, minValue) ||
-                other.minValue == minValue) &&
-            (identical(other.maxValue, maxValue) ||
-                other.maxValue == maxValue));
+            (identical(other.minValue, minValue) || other.minValue == minValue) &&
+            (identical(other.maxValue, maxValue) || other.maxValue == maxValue));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, question, answer,
-      const DeepCollectionEquality().hash(_choices), minValue, maxValue);
+  int get hashCode =>
+      Object.hash(runtimeType, question, answer, const DeepCollectionEquality().hash(_choices), minValue, maxValue);
 
   @JsonKey(ignore: true)
   @override
@@ -7246,8 +6897,7 @@ abstract class _CareTask implements CareTask {
       final int minValue,
       final int maxValue}) = _$CareTaskImpl;
 
-  factory _CareTask.fromJson(Map<String, dynamic> json) =
-      _$CareTaskImpl.fromJson;
+  factory _CareTask.fromJson(Map<String, dynamic> json) = _$CareTaskImpl.fromJson;
 
   @override
 
@@ -7270,8 +6920,7 @@ abstract class _CareTask implements CareTask {
   int get maxValue;
   @override
   @JsonKey(ignore: true)
-  _$$CareTaskImplCopyWith<_$CareTaskImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CareTaskImplCopyWith<_$CareTaskImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 CommentOwner _$CommentOwnerFromJson(Map<String, dynamic> json) {
@@ -7287,14 +6936,12 @@ mixin _$CommentOwner {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CommentOwnerCopyWith<CommentOwner> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CommentOwnerCopyWith<CommentOwner> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CommentOwnerCopyWith<$Res> {
-  factory $CommentOwnerCopyWith(
-          CommentOwner value, $Res Function(CommentOwner) then) =
+  factory $CommentOwnerCopyWith(CommentOwner value, $Res Function(CommentOwner) then) =
       _$CommentOwnerCopyWithImpl<$Res, CommentOwner>;
   @useResult
   $Res call({String id, String name, String? avatar, Avatar? dynamicAvatar});
@@ -7303,8 +6950,7 @@ abstract class $CommentOwnerCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CommentOwnerCopyWithImpl<$Res, $Val extends CommentOwner>
-    implements $CommentOwnerCopyWith<$Res> {
+class _$CommentOwnerCopyWithImpl<$Res, $Val extends CommentOwner> implements $CommentOwnerCopyWith<$Res> {
   _$CommentOwnerCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -7354,10 +7000,8 @@ class _$CommentOwnerCopyWithImpl<$Res, $Val extends CommentOwner>
 }
 
 /// @nodoc
-abstract class _$$CommentOwnerImplCopyWith<$Res>
-    implements $CommentOwnerCopyWith<$Res> {
-  factory _$$CommentOwnerImplCopyWith(
-          _$CommentOwnerImpl value, $Res Function(_$CommentOwnerImpl) then) =
+abstract class _$$CommentOwnerImplCopyWith<$Res> implements $CommentOwnerCopyWith<$Res> {
+  factory _$$CommentOwnerImplCopyWith(_$CommentOwnerImpl value, $Res Function(_$CommentOwnerImpl) then) =
       __$$CommentOwnerImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -7368,11 +7012,9 @@ abstract class _$$CommentOwnerImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CommentOwnerImplCopyWithImpl<$Res>
-    extends _$CommentOwnerCopyWithImpl<$Res, _$CommentOwnerImpl>
+class __$$CommentOwnerImplCopyWithImpl<$Res> extends _$CommentOwnerCopyWithImpl<$Res, _$CommentOwnerImpl>
     implements _$$CommentOwnerImplCopyWith<$Res> {
-  __$$CommentOwnerImplCopyWithImpl(
-      _$CommentOwnerImpl _value, $Res Function(_$CommentOwnerImpl) _then)
+  __$$CommentOwnerImplCopyWithImpl(_$CommentOwnerImpl _value, $Res Function(_$CommentOwnerImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -7407,11 +7049,9 @@ class __$$CommentOwnerImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CommentOwnerImpl implements _CommentOwner {
-  const _$CommentOwnerImpl(
-      {required this.id, required this.name, this.avatar, this.dynamicAvatar});
+  const _$CommentOwnerImpl({required this.id, required this.name, this.avatar, this.dynamicAvatar});
 
-  factory _$CommentOwnerImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CommentOwnerImplFromJson(json);
+  factory _$CommentOwnerImpl.fromJson(Map<String, dynamic> json) => _$$CommentOwnerImplFromJson(json);
 
   @override
   final String id;
@@ -7435,8 +7075,7 @@ class _$CommentOwnerImpl implements _CommentOwner {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.avatar, avatar) || other.avatar == avatar) &&
-            (identical(other.dynamicAvatar, dynamicAvatar) ||
-                other.dynamicAvatar == dynamicAvatar));
+            (identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar));
   }
 
   @JsonKey(ignore: true)
@@ -7464,8 +7103,7 @@ abstract class _CommentOwner implements CommentOwner {
       final String? avatar,
       final Avatar? dynamicAvatar}) = _$CommentOwnerImpl;
 
-  factory _CommentOwner.fromJson(Map<String, dynamic> json) =
-      _$CommentOwnerImpl.fromJson;
+  factory _CommentOwner.fromJson(Map<String, dynamic> json) = _$CommentOwnerImpl.fromJson;
 
   @override
   String get id;
@@ -7477,8 +7115,7 @@ abstract class _CommentOwner implements CommentOwner {
   Avatar? get dynamicAvatar;
   @override
   @JsonKey(ignore: true)
-  _$$CommentOwnerImplCopyWith<_$CommentOwnerImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CommentOwnerImplCopyWith<_$CommentOwnerImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 CaseComment _$CaseCommentFromJson(Map<String, dynamic> json) {
@@ -7495,28 +7132,21 @@ mixin _$CaseComment {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CaseCommentCopyWith<CaseComment> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CaseCommentCopyWith<CaseComment> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CaseCommentCopyWith<$Res> {
-  factory $CaseCommentCopyWith(
-          CaseComment value, $Res Function(CaseComment) then) =
+  factory $CaseCommentCopyWith(CaseComment value, $Res Function(CaseComment) then) =
       _$CaseCommentCopyWithImpl<$Res, CaseComment>;
   @useResult
-  $Res call(
-      {String id,
-      @TimestampConverter() DateTime at,
-      CommentOwner? owner,
-      String comment});
+  $Res call({String id, @TimestampConverter() DateTime at, CommentOwner? owner, String comment});
 
   $CommentOwnerCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
-class _$CaseCommentCopyWithImpl<$Res, $Val extends CaseComment>
-    implements $CaseCommentCopyWith<$Res> {
+class _$CaseCommentCopyWithImpl<$Res, $Val extends CaseComment> implements $CaseCommentCopyWith<$Res> {
   _$CaseCommentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -7566,29 +7196,21 @@ class _$CaseCommentCopyWithImpl<$Res, $Val extends CaseComment>
 }
 
 /// @nodoc
-abstract class _$$CaseCommentImplCopyWith<$Res>
-    implements $CaseCommentCopyWith<$Res> {
-  factory _$$CaseCommentImplCopyWith(
-          _$CaseCommentImpl value, $Res Function(_$CaseCommentImpl) then) =
+abstract class _$$CaseCommentImplCopyWith<$Res> implements $CaseCommentCopyWith<$Res> {
+  factory _$$CaseCommentImplCopyWith(_$CaseCommentImpl value, $Res Function(_$CaseCommentImpl) then) =
       __$$CaseCommentImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      @TimestampConverter() DateTime at,
-      CommentOwner? owner,
-      String comment});
+  $Res call({String id, @TimestampConverter() DateTime at, CommentOwner? owner, String comment});
 
   @override
   $CommentOwnerCopyWith<$Res>? get owner;
 }
 
 /// @nodoc
-class __$$CaseCommentImplCopyWithImpl<$Res>
-    extends _$CaseCommentCopyWithImpl<$Res, _$CaseCommentImpl>
+class __$$CaseCommentImplCopyWithImpl<$Res> extends _$CaseCommentCopyWithImpl<$Res, _$CaseCommentImpl>
     implements _$$CaseCommentImplCopyWith<$Res> {
-  __$$CaseCommentImplCopyWithImpl(
-      _$CaseCommentImpl _value, $Res Function(_$CaseCommentImpl) _then)
+  __$$CaseCommentImplCopyWithImpl(_$CaseCommentImpl _value, $Res Function(_$CaseCommentImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -7624,13 +7246,9 @@ class __$$CaseCommentImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CaseCommentImpl implements _CaseComment {
   const _$CaseCommentImpl(
-      {required this.id,
-      @TimestampConverter() required this.at,
-      this.owner,
-      required this.comment});
+      {required this.id, @TimestampConverter() required this.at, this.owner, required this.comment});
 
-  factory _$CaseCommentImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CaseCommentImplFromJson(json);
+  factory _$CaseCommentImpl.fromJson(Map<String, dynamic> json) => _$$CaseCommentImplFromJson(json);
 
   @override
   final String id;
@@ -7683,8 +7301,7 @@ abstract class _CaseComment implements CaseComment {
       final CommentOwner? owner,
       required final String comment}) = _$CaseCommentImpl;
 
-  factory _CaseComment.fromJson(Map<String, dynamic> json) =
-      _$CaseCommentImpl.fromJson;
+  factory _CaseComment.fromJson(Map<String, dynamic> json) = _$CaseCommentImpl.fromJson;
 
   @override
   String get id;
@@ -7697,8 +7314,7 @@ abstract class _CaseComment implements CaseComment {
   String get comment;
   @override
   @JsonKey(ignore: true)
-  _$$CaseCommentImplCopyWith<_$CaseCommentImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CaseCommentImplCopyWith<_$CaseCommentImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Case _$CaseFromJson(Map<String, dynamic> json) {
@@ -7731,8 +7347,7 @@ mixin _$Case {
 
 /// @nodoc
 abstract class $CaseCopyWith<$Res> {
-  factory $CaseCopyWith(Case value, $Res Function(Case) then) =
-      _$CaseCopyWithImpl<$Res, Case>;
+  factory $CaseCopyWith(Case value, $Res Function(Case) then) = _$CaseCopyWithImpl<$Res, Case>;
   @useResult
   $Res call(
       {String id,
@@ -7755,8 +7370,7 @@ abstract class $CaseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CaseCopyWithImpl<$Res, $Val extends Case>
-    implements $CaseCopyWith<$Res> {
+class _$CaseCopyWithImpl<$Res, $Val extends Case> implements $CaseCopyWith<$Res> {
   _$CaseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -7875,9 +7489,7 @@ class _$CaseCopyWithImpl<$Res, $Val extends Case>
 
 /// @nodoc
 abstract class _$$CaseImplCopyWith<$Res> implements $CaseCopyWith<$Res> {
-  factory _$$CaseImplCopyWith(
-          _$CaseImpl value, $Res Function(_$CaseImpl) then) =
-      __$$CaseImplCopyWithImpl<$Res>;
+  factory _$$CaseImplCopyWith(_$CaseImpl value, $Res Function(_$CaseImpl) then) = __$$CaseImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -7905,11 +7517,8 @@ abstract class _$$CaseImplCopyWith<$Res> implements $CaseCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$CaseImplCopyWithImpl<$Res>
-    extends _$CaseCopyWithImpl<$Res, _$CaseImpl>
-    implements _$$CaseImplCopyWith<$Res> {
-  __$$CaseImplCopyWithImpl(_$CaseImpl _value, $Res Function(_$CaseImpl) _then)
-      : super(_value, _then);
+class __$$CaseImplCopyWithImpl<$Res> extends _$CaseCopyWithImpl<$Res, _$CaseImpl> implements _$$CaseImplCopyWith<$Res> {
+  __$$CaseImplCopyWithImpl(_$CaseImpl _value, $Res Function(_$CaseImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -7985,9 +7594,7 @@ class __$$CaseImplCopyWithImpl<$Res>
 class _$CaseImpl implements _Case {
   const _$CaseImpl(
       {required this.id,
-      @JsonKey(name: 'dateReceived')
-      @TimestampConverter()
-      required this.receivedAt,
+      @JsonKey(name: 'dateReceived') @TimestampConverter() required this.receivedAt,
       @CaseStatusConverter() required this.status,
       @CaseIgnoredStatusOrNullConverter() this.ignoredStatus,
       required this.asset,
@@ -8002,8 +7609,7 @@ class _$CaseImpl implements _Case {
         _payload = payload,
         _sensors = sensors;
 
-  factory _$CaseImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CaseImplFromJson(json);
+  factory _$CaseImpl.fromJson(Map<String, dynamic> json) => _$$CaseImplFromJson(json);
 
   @override
   final String id;
@@ -8068,18 +7674,14 @@ class _$CaseImpl implements _Case {
         (other.runtimeType == runtimeType &&
             other is _$CaseImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.receivedAt, receivedAt) ||
-                other.receivedAt == receivedAt) &&
+            (identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt) &&
             (identical(other.status, status) || other.status == status) &&
-            (identical(other.ignoredStatus, ignoredStatus) ||
-                other.ignoredStatus == ignoredStatus) &&
+            (identical(other.ignoredStatus, ignoredStatus) || other.ignoredStatus == ignoredStatus) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.trigger, trigger) || other.trigger == trigger) &&
-            (identical(other.sequence, sequence) ||
-                other.sequence == sequence) &&
+            (identical(other.sequence, sequence) || other.sequence == sequence) &&
             const DeepCollectionEquality().equals(other._comments, _comments) &&
-            (identical(other.position, position) ||
-                other.position == position) &&
+            (identical(other.position, position) || other.position == position) &&
             const DeepCollectionEquality().equals(other._payload, _payload) &&
             const DeepCollectionEquality().equals(other._sensors, _sensors) &&
             (identical(other.file, file) || other.file == file));
@@ -8105,8 +7707,7 @@ class _$CaseImpl implements _Case {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CaseImplCopyWith<_$CaseImpl> get copyWith =>
-      __$$CaseImplCopyWithImpl<_$CaseImpl>(this, _$identity);
+  _$$CaseImplCopyWith<_$CaseImpl> get copyWith => __$$CaseImplCopyWithImpl<_$CaseImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -8119,12 +7720,9 @@ class _$CaseImpl implements _Case {
 abstract class _Case implements Case {
   const factory _Case(
       {required final String id,
-      @JsonKey(name: 'dateReceived')
-      @TimestampConverter()
-      required final DateTime receivedAt,
+      @JsonKey(name: 'dateReceived') @TimestampConverter() required final DateTime receivedAt,
       @CaseStatusConverter() required final CaseStatus status,
-      @CaseIgnoredStatusOrNullConverter()
-      final CaseIgnoredStatus? ignoredStatus,
+      @CaseIgnoredStatusOrNullConverter() final CaseIgnoredStatus? ignoredStatus,
       required final Asset asset,
       required final Trigger trigger,
       final int? sequence,
@@ -8166,8 +7764,7 @@ abstract class _Case implements Case {
   CloudEntry? get file;
   @override
   @JsonKey(ignore: true)
-  _$$CaseImplCopyWith<_$CaseImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CaseImplCopyWith<_$CaseImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Category _$CategoryFromJson(Map<String, dynamic> json) {
@@ -8185,14 +7782,12 @@ mixin _$Category {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CategoryCopyWith<Category> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CategoryCopyWith<Category> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CategoryCopyWith<$Res> {
-  factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
-      _$CategoryCopyWithImpl<$Res, Category>;
+  factory $CategoryCopyWith(Category value, $Res Function(Category) then) = _$CategoryCopyWithImpl<$Res, Category>;
   @useResult
   $Res call(
       {String id,
@@ -8202,8 +7797,7 @@ abstract class $CategoryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CategoryCopyWithImpl<$Res, $Val extends Category>
-    implements $CategoryCopyWith<$Res> {
+class _$CategoryCopyWithImpl<$Res, $Val extends Category> implements $CategoryCopyWith<$Res> {
   _$CategoryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -8241,10 +7835,8 @@ class _$CategoryCopyWithImpl<$Res, $Val extends Category>
 }
 
 /// @nodoc
-abstract class _$$CategoryImplCopyWith<$Res>
-    implements $CategoryCopyWith<$Res> {
-  factory _$$CategoryImplCopyWith(
-          _$CategoryImpl value, $Res Function(_$CategoryImpl) then) =
+abstract class _$$CategoryImplCopyWith<$Res> implements $CategoryCopyWith<$Res> {
+  factory _$$CategoryImplCopyWith(_$CategoryImpl value, $Res Function(_$CategoryImpl) then) =
       __$$CategoryImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -8256,12 +7848,9 @@ abstract class _$$CategoryImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CategoryImplCopyWithImpl<$Res>
-    extends _$CategoryCopyWithImpl<$Res, _$CategoryImpl>
+class __$$CategoryImplCopyWithImpl<$Res> extends _$CategoryCopyWithImpl<$Res, _$CategoryImpl>
     implements _$$CategoryImplCopyWith<$Res> {
-  __$$CategoryImplCopyWithImpl(
-      _$CategoryImpl _value, $Res Function(_$CategoryImpl) _then)
-      : super(_value, _then);
+  __$$CategoryImplCopyWithImpl(_$CategoryImpl _value, $Res Function(_$CategoryImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -8301,8 +7890,7 @@ class _$CategoryImpl implements _Category {
       @CategoryKindConverter() required this.kind,
       @AssetKindOrNullConverter() this.assetKind});
 
-  factory _$CategoryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CategoryImplFromJson(json);
+  factory _$CategoryImpl.fromJson(Map<String, dynamic> json) => _$$CategoryImplFromJson(json);
 
   @override
   final String id;
@@ -8328,8 +7916,7 @@ class _$CategoryImpl implements _Category {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.kind, kind) || other.kind == kind) &&
-            (identical(other.assetKind, assetKind) ||
-                other.assetKind == assetKind));
+            (identical(other.assetKind, assetKind) || other.assetKind == assetKind));
   }
 
   @JsonKey(ignore: true)
@@ -8357,8 +7944,7 @@ abstract class _Category implements Category {
       @CategoryKindConverter() required final CategoryKind kind,
       @AssetKindOrNullConverter() final AssetKind? assetKind}) = _$CategoryImpl;
 
-  factory _Category.fromJson(Map<String, dynamic> json) =
-      _$CategoryImpl.fromJson;
+  factory _Category.fromJson(Map<String, dynamic> json) = _$CategoryImpl.fromJson;
 
   @override
   String get id;
@@ -8372,8 +7958,7 @@ abstract class _Category implements Category {
   AssetKind? get assetKind;
   @override
   @JsonKey(ignore: true)
-  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Checkpoint _$CheckpointFromJson(Map<String, dynamic> json) {
@@ -8401,19 +7986,16 @@ mixin _$Checkpoint {
   List<Access>? get access => throw _privateConstructorUsedError;
 
   /// IDs of the linked Assets.
-  List<LinkedAssetToCheckpointId>? get linkedAssetsIds =>
-      throw _privateConstructorUsedError;
+  List<LinkedAssetToCheckpointId>? get linkedAssetsIds => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CheckpointCopyWith<Checkpoint> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CheckpointCopyWith<Checkpoint> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CheckpointCopyWith<$Res> {
-  factory $CheckpointCopyWith(
-          Checkpoint value, $Res Function(Checkpoint) then) =
+  factory $CheckpointCopyWith(Checkpoint value, $Res Function(Checkpoint) then) =
       _$CheckpointCopyWithImpl<$Res, Checkpoint>;
   @useResult
   $Res call(
@@ -8427,8 +8009,7 @@ abstract class $CheckpointCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CheckpointCopyWithImpl<$Res, $Val extends Checkpoint>
-    implements $CheckpointCopyWith<$Res> {
+class _$CheckpointCopyWithImpl<$Res, $Val extends Checkpoint> implements $CheckpointCopyWith<$Res> {
   _$CheckpointCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -8481,10 +8062,8 @@ class _$CheckpointCopyWithImpl<$Res, $Val extends Checkpoint>
 }
 
 /// @nodoc
-abstract class _$$CheckpointImplCopyWith<$Res>
-    implements $CheckpointCopyWith<$Res> {
-  factory _$$CheckpointImplCopyWith(
-          _$CheckpointImpl value, $Res Function(_$CheckpointImpl) then) =
+abstract class _$$CheckpointImplCopyWith<$Res> implements $CheckpointCopyWith<$Res> {
+  factory _$$CheckpointImplCopyWith(_$CheckpointImpl value, $Res Function(_$CheckpointImpl) then) =
       __$$CheckpointImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -8499,12 +8078,9 @@ abstract class _$$CheckpointImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CheckpointImplCopyWithImpl<$Res>
-    extends _$CheckpointCopyWithImpl<$Res, _$CheckpointImpl>
+class __$$CheckpointImplCopyWithImpl<$Res> extends _$CheckpointCopyWithImpl<$Res, _$CheckpointImpl>
     implements _$$CheckpointImplCopyWith<$Res> {
-  __$$CheckpointImplCopyWithImpl(
-      _$CheckpointImpl _value, $Res Function(_$CheckpointImpl) _then)
-      : super(_value, _then);
+  __$$CheckpointImplCopyWithImpl(_$CheckpointImpl _value, $Res Function(_$CheckpointImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -8565,8 +8141,7 @@ class _$CheckpointImpl implements _Checkpoint {
         _access = access,
         _linkedAssetsIds = linkedAssetsIds;
 
-  factory _$CheckpointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CheckpointImplFromJson(json);
+  factory _$CheckpointImpl.fromJson(Map<String, dynamic> json) => _$$CheckpointImplFromJson(json);
 
   /// ID of the checkpoint entity. This ID is unique.
   @override
@@ -8636,26 +8211,16 @@ class _$CheckpointImpl implements _Checkpoint {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            const DeepCollectionEquality()
-                .equals(other._waypoints, _waypoints) &&
-            (identical(other.isActive, isActive) ||
-                other.isActive == isActive) &&
+            const DeepCollectionEquality().equals(other._waypoints, _waypoints) &&
+            (identical(other.isActive, isActive) || other.isActive == isActive) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
-            const DeepCollectionEquality()
-                .equals(other._linkedAssetsIds, _linkedAssetsIds));
+            const DeepCollectionEquality().equals(other._linkedAssetsIds, _linkedAssetsIds));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      assetId,
-      const DeepCollectionEquality().hash(_waypoints),
-      isActive,
-      const DeepCollectionEquality().hash(_access),
-      const DeepCollectionEquality().hash(_linkedAssetsIds));
+  int get hashCode => Object.hash(runtimeType, id, name, assetId, const DeepCollectionEquality().hash(_waypoints),
+      isActive, const DeepCollectionEquality().hash(_access), const DeepCollectionEquality().hash(_linkedAssetsIds));
 
   @JsonKey(ignore: true)
   @override
@@ -8673,17 +8238,15 @@ class _$CheckpointImpl implements _Checkpoint {
 
 abstract class _Checkpoint implements Checkpoint {
   const factory _Checkpoint(
-          {required final String id,
-          required final String name,
-          final String? assetId,
-          final List<Waypoint>? waypoints,
-          final bool? isActive,
-          final List<Access>? access,
-          final List<LinkedAssetToCheckpointId>? linkedAssetsIds}) =
-      _$CheckpointImpl;
+      {required final String id,
+      required final String name,
+      final String? assetId,
+      final List<Waypoint>? waypoints,
+      final bool? isActive,
+      final List<Access>? access,
+      final List<LinkedAssetToCheckpointId>? linkedAssetsIds}) = _$CheckpointImpl;
 
-  factory _Checkpoint.fromJson(Map<String, dynamic> json) =
-      _$CheckpointImpl.fromJson;
+  factory _Checkpoint.fromJson(Map<String, dynamic> json) = _$CheckpointImpl.fromJson;
 
   @override
 
@@ -8715,8 +8278,7 @@ abstract class _Checkpoint implements Checkpoint {
   List<LinkedAssetToCheckpointId>? get linkedAssetsIds;
   @override
   @JsonKey(ignore: true)
-  _$$CheckpointImplCopyWith<_$CheckpointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CheckpointImplCopyWith<_$CheckpointImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Waypoint _$WaypointFromJson(Map<String, dynamic> json) {
@@ -8741,14 +8303,12 @@ mixin _$Waypoint {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $WaypointCopyWith<Waypoint> get copyWith =>
-      throw _privateConstructorUsedError;
+  $WaypointCopyWith<Waypoint> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $WaypointCopyWith<$Res> {
-  factory $WaypointCopyWith(Waypoint value, $Res Function(Waypoint) then) =
-      _$WaypointCopyWithImpl<$Res, Waypoint>;
+  factory $WaypointCopyWith(Waypoint value, $Res Function(Waypoint) then) = _$WaypointCopyWithImpl<$Res, Waypoint>;
   @useResult
   $Res call(
       {String id,
@@ -8761,8 +8321,7 @@ abstract class $WaypointCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WaypointCopyWithImpl<$Res, $Val extends Waypoint>
-    implements $WaypointCopyWith<$Res> {
+class _$WaypointCopyWithImpl<$Res, $Val extends Waypoint> implements $WaypointCopyWith<$Res> {
   _$WaypointCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -8817,10 +8376,8 @@ class _$WaypointCopyWithImpl<$Res, $Val extends Waypoint>
 }
 
 /// @nodoc
-abstract class _$$WaypointImplCopyWith<$Res>
-    implements $WaypointCopyWith<$Res> {
-  factory _$$WaypointImplCopyWith(
-          _$WaypointImpl value, $Res Function(_$WaypointImpl) then) =
+abstract class _$$WaypointImplCopyWith<$Res> implements $WaypointCopyWith<$Res> {
+  factory _$$WaypointImplCopyWith(_$WaypointImpl value, $Res Function(_$WaypointImpl) then) =
       __$$WaypointImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -8836,12 +8393,9 @@ abstract class _$$WaypointImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$WaypointImplCopyWithImpl<$Res>
-    extends _$WaypointCopyWithImpl<$Res, _$WaypointImpl>
+class __$$WaypointImplCopyWithImpl<$Res> extends _$WaypointCopyWithImpl<$Res, _$WaypointImpl>
     implements _$$WaypointImplCopyWith<$Res> {
-  __$$WaypointImplCopyWithImpl(
-      _$WaypointImpl _value, $Res Function(_$WaypointImpl) _then)
-      : super(_value, _then);
+  __$$WaypointImplCopyWithImpl(_$WaypointImpl _value, $Res Function(_$WaypointImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -8881,14 +8435,9 @@ class __$$WaypointImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$WaypointImpl implements _Waypoint {
   const _$WaypointImpl(
-      {required this.id,
-      this.geofenceId,
-      this.geofence,
-      this.time,
-      @WaypointKindOrNullConverter() this.kind});
+      {required this.id, this.geofenceId, this.geofence, this.time, @WaypointKindOrNullConverter() this.kind});
 
-  factory _$WaypointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WaypointImplFromJson(json);
+  factory _$WaypointImpl.fromJson(Map<String, dynamic> json) => _$$WaypointImplFromJson(json);
 
   /// ID of the waypoint entity. This ID is unique.
   @override
@@ -8920,18 +8469,15 @@ class _$WaypointImpl implements _Waypoint {
         (other.runtimeType == runtimeType &&
             other is _$WaypointImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.geofenceId, geofenceId) ||
-                other.geofenceId == geofenceId) &&
-            (identical(other.geofence, geofence) ||
-                other.geofence == geofence) &&
+            (identical(other.geofenceId, geofenceId) || other.geofenceId == geofenceId) &&
+            (identical(other.geofence, geofence) || other.geofence == geofence) &&
             (identical(other.time, time) || other.time == time) &&
             (identical(other.kind, kind) || other.kind == kind));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, geofenceId, geofence, time, kind);
+  int get hashCode => Object.hash(runtimeType, id, geofenceId, geofence, time, kind);
 
   @JsonKey(ignore: true)
   @override
@@ -8949,15 +8495,13 @@ class _$WaypointImpl implements _Waypoint {
 
 abstract class _Waypoint implements Waypoint {
   const factory _Waypoint(
-          {required final String id,
-          final String? geofenceId,
-          final Geofence? geofence,
-          final String? time,
-          @WaypointKindOrNullConverter() final WaypointKind? kind}) =
-      _$WaypointImpl;
+      {required final String id,
+      final String? geofenceId,
+      final Geofence? geofence,
+      final String? time,
+      @WaypointKindOrNullConverter() final WaypointKind? kind}) = _$WaypointImpl;
 
-  factory _Waypoint.fromJson(Map<String, dynamic> json) =
-      _$WaypointImpl.fromJson;
+  factory _Waypoint.fromJson(Map<String, dynamic> json) = _$WaypointImpl.fromJson;
 
   @override
 
@@ -8980,12 +8524,10 @@ abstract class _Waypoint implements Waypoint {
   WaypointKind? get kind;
   @override
   @JsonKey(ignore: true)
-  _$$WaypointImplCopyWith<_$WaypointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$WaypointImplCopyWith<_$WaypointImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
-LinkedAssetToCheckpointId _$LinkedAssetToCheckpointIdFromJson(
-    Map<String, dynamic> json) {
+LinkedAssetToCheckpointId _$LinkedAssetToCheckpointIdFromJson(Map<String, dynamic> json) {
   return _LinkedAssetToCheckpointId.fromJson(json);
 }
 
@@ -8997,23 +8539,20 @@ mixin _$LinkedAssetToCheckpointId {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LinkedAssetToCheckpointIdCopyWith<LinkedAssetToCheckpointId> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LinkedAssetToCheckpointIdCopyWith<LinkedAssetToCheckpointId> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LinkedAssetToCheckpointIdCopyWith<$Res> {
-  factory $LinkedAssetToCheckpointIdCopyWith(LinkedAssetToCheckpointId value,
-          $Res Function(LinkedAssetToCheckpointId) then) =
+  factory $LinkedAssetToCheckpointIdCopyWith(
+          LinkedAssetToCheckpointId value, $Res Function(LinkedAssetToCheckpointId) then) =
       _$LinkedAssetToCheckpointIdCopyWithImpl<$Res, LinkedAssetToCheckpointId>;
   @useResult
-  $Res call(
-      {String itemId, @LinkedAssetEntityConverter() LinkedAssetEntity entity});
+  $Res call({String itemId, @LinkedAssetEntityConverter() LinkedAssetEntity entity});
 }
 
 /// @nodoc
-class _$LinkedAssetToCheckpointIdCopyWithImpl<$Res,
-        $Val extends LinkedAssetToCheckpointId>
+class _$LinkedAssetToCheckpointIdCopyWithImpl<$Res, $Val extends LinkedAssetToCheckpointId>
     implements $LinkedAssetToCheckpointIdCopyWith<$Res> {
   _$LinkedAssetToCheckpointIdCopyWithImpl(this._value, this._then);
 
@@ -9042,26 +8581,21 @@ class _$LinkedAssetToCheckpointIdCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$LinkedAssetToCheckpointIdImplCopyWith<$Res>
-    implements $LinkedAssetToCheckpointIdCopyWith<$Res> {
+abstract class _$$LinkedAssetToCheckpointIdImplCopyWith<$Res> implements $LinkedAssetToCheckpointIdCopyWith<$Res> {
   factory _$$LinkedAssetToCheckpointIdImplCopyWith(
-          _$LinkedAssetToCheckpointIdImpl value,
-          $Res Function(_$LinkedAssetToCheckpointIdImpl) then) =
+          _$LinkedAssetToCheckpointIdImpl value, $Res Function(_$LinkedAssetToCheckpointIdImpl) then) =
       __$$LinkedAssetToCheckpointIdImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String itemId, @LinkedAssetEntityConverter() LinkedAssetEntity entity});
+  $Res call({String itemId, @LinkedAssetEntityConverter() LinkedAssetEntity entity});
 }
 
 /// @nodoc
 class __$$LinkedAssetToCheckpointIdImplCopyWithImpl<$Res>
-    extends _$LinkedAssetToCheckpointIdCopyWithImpl<$Res,
-        _$LinkedAssetToCheckpointIdImpl>
+    extends _$LinkedAssetToCheckpointIdCopyWithImpl<$Res, _$LinkedAssetToCheckpointIdImpl>
     implements _$$LinkedAssetToCheckpointIdImplCopyWith<$Res> {
   __$$LinkedAssetToCheckpointIdImplCopyWithImpl(
-      _$LinkedAssetToCheckpointIdImpl _value,
-      $Res Function(_$LinkedAssetToCheckpointIdImpl) _then)
+      _$LinkedAssetToCheckpointIdImpl _value, $Res Function(_$LinkedAssetToCheckpointIdImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -9086,9 +8620,7 @@ class __$$LinkedAssetToCheckpointIdImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$LinkedAssetToCheckpointIdImpl implements _LinkedAssetToCheckpointId {
-  const _$LinkedAssetToCheckpointIdImpl(
-      {required this.itemId,
-      @LinkedAssetEntityConverter() required this.entity});
+  const _$LinkedAssetToCheckpointIdImpl({required this.itemId, @LinkedAssetEntityConverter() required this.entity});
 
   factory _$LinkedAssetToCheckpointIdImpl.fromJson(Map<String, dynamic> json) =>
       _$$LinkedAssetToCheckpointIdImplFromJson(json);
@@ -9120,9 +8652,8 @@ class _$LinkedAssetToCheckpointIdImpl implements _LinkedAssetToCheckpointId {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$LinkedAssetToCheckpointIdImplCopyWith<_$LinkedAssetToCheckpointIdImpl>
-      get copyWith => __$$LinkedAssetToCheckpointIdImplCopyWithImpl<
-          _$LinkedAssetToCheckpointIdImpl>(this, _$identity);
+  _$$LinkedAssetToCheckpointIdImplCopyWith<_$LinkedAssetToCheckpointIdImpl> get copyWith =>
+      __$$LinkedAssetToCheckpointIdImplCopyWithImpl<_$LinkedAssetToCheckpointIdImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -9134,13 +8665,10 @@ class _$LinkedAssetToCheckpointIdImpl implements _LinkedAssetToCheckpointId {
 
 abstract class _LinkedAssetToCheckpointId implements LinkedAssetToCheckpointId {
   const factory _LinkedAssetToCheckpointId(
-          {required final String itemId,
-          @LinkedAssetEntityConverter()
-          required final LinkedAssetEntity entity}) =
-      _$LinkedAssetToCheckpointIdImpl;
+      {required final String itemId,
+      @LinkedAssetEntityConverter() required final LinkedAssetEntity entity}) = _$LinkedAssetToCheckpointIdImpl;
 
-  factory _LinkedAssetToCheckpointId.fromJson(Map<String, dynamic> json) =
-      _$LinkedAssetToCheckpointIdImpl.fromJson;
+  factory _LinkedAssetToCheckpointId.fromJson(Map<String, dynamic> json) = _$LinkedAssetToCheckpointIdImpl.fromJson;
 
   @override
   String get itemId;
@@ -9149,8 +8677,8 @@ abstract class _LinkedAssetToCheckpointId implements LinkedAssetToCheckpointId {
   LinkedAssetEntity get entity;
   @override
   @JsonKey(ignore: true)
-  _$$LinkedAssetToCheckpointIdImplCopyWith<_$LinkedAssetToCheckpointIdImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$LinkedAssetToCheckpointIdImplCopyWith<_$LinkedAssetToCheckpointIdImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 CheckpointInput _$CheckpointInputFromJson(Map<String, dynamic> json) {
@@ -9181,27 +8709,22 @@ mixin _$CheckpointInput {
   List<Waypoint>? get waypointsJson => throw _privateConstructorUsedError;
 
   /// List of waypoints in the route. See the documention of the Type.
-  set waypointsJson(List<Waypoint>? value) =>
-      throw _privateConstructorUsedError;
+  set waypointsJson(List<Waypoint>? value) => throw _privateConstructorUsedError;
 
   /// Linked Asset entity ID, only required for
-  List<LinkedAssetToCheckpointId>? get linkedAssetsIds =>
-      throw _privateConstructorUsedError;
+  List<LinkedAssetToCheckpointId>? get linkedAssetsIds => throw _privateConstructorUsedError;
 
   /// Linked Asset entity ID, only required for
-  set linkedAssetsIds(List<LinkedAssetToCheckpointId>? value) =>
-      throw _privateConstructorUsedError;
+  set linkedAssetsIds(List<LinkedAssetToCheckpointId>? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CheckpointInputCopyWith<CheckpointInput> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CheckpointInputCopyWith<CheckpointInput> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CheckpointInputCopyWith<$Res> {
-  factory $CheckpointInputCopyWith(
-          CheckpointInput value, $Res Function(CheckpointInput) then) =
+  factory $CheckpointInputCopyWith(CheckpointInput value, $Res Function(CheckpointInput) then) =
       _$CheckpointInputCopyWithImpl<$Res, CheckpointInput>;
   @useResult
   $Res call(
@@ -9213,8 +8736,7 @@ abstract class $CheckpointInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CheckpointInputCopyWithImpl<$Res, $Val extends CheckpointInput>
-    implements $CheckpointInputCopyWith<$Res> {
+class _$CheckpointInputCopyWithImpl<$Res, $Val extends CheckpointInput> implements $CheckpointInputCopyWith<$Res> {
   _$CheckpointInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -9257,10 +8779,8 @@ class _$CheckpointInputCopyWithImpl<$Res, $Val extends CheckpointInput>
 }
 
 /// @nodoc
-abstract class _$$CheckpointInputImplCopyWith<$Res>
-    implements $CheckpointInputCopyWith<$Res> {
-  factory _$$CheckpointInputImplCopyWith(_$CheckpointInputImpl value,
-          $Res Function(_$CheckpointInputImpl) then) =
+abstract class _$$CheckpointInputImplCopyWith<$Res> implements $CheckpointInputCopyWith<$Res> {
+  factory _$$CheckpointInputImplCopyWith(_$CheckpointInputImpl value, $Res Function(_$CheckpointInputImpl) then) =
       __$$CheckpointInputImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -9273,11 +8793,9 @@ abstract class _$$CheckpointInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CheckpointInputImplCopyWithImpl<$Res>
-    extends _$CheckpointInputCopyWithImpl<$Res, _$CheckpointInputImpl>
+class __$$CheckpointInputImplCopyWithImpl<$Res> extends _$CheckpointInputCopyWithImpl<$Res, _$CheckpointInputImpl>
     implements _$$CheckpointInputImplCopyWith<$Res> {
-  __$$CheckpointInputImplCopyWithImpl(
-      _$CheckpointInputImpl _value, $Res Function(_$CheckpointInputImpl) _then)
+  __$$CheckpointInputImplCopyWithImpl(_$CheckpointInputImpl _value, $Res Function(_$CheckpointInputImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -9318,14 +8836,9 @@ class __$$CheckpointInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CheckpointInputImpl implements _CheckpointInput {
   _$CheckpointInputImpl(
-      {this.id,
-      this.name,
-      this.assetId,
-      this.waypointsJson = const [],
-      this.linkedAssetsIds = const []});
+      {this.id, this.name, this.assetId, this.waypointsJson = const [], this.linkedAssetsIds = const []});
 
-  factory _$CheckpointInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CheckpointInputImplFromJson(json);
+  factory _$CheckpointInputImpl.fromJson(Map<String, dynamic> json) => _$$CheckpointInputImplFromJson(json);
 
   /// ID of the preset entity. This ID is unique.
   @override
@@ -9358,8 +8871,7 @@ class _$CheckpointInputImpl implements _CheckpointInput {
   @override
   @pragma('vm:prefer-inline')
   _$$CheckpointInputImplCopyWith<_$CheckpointInputImpl> get copyWith =>
-      __$$CheckpointInputImplCopyWithImpl<_$CheckpointInputImpl>(
-          this, _$identity);
+      __$$CheckpointInputImplCopyWithImpl<_$CheckpointInputImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -9371,15 +8883,13 @@ class _$CheckpointInputImpl implements _CheckpointInput {
 
 abstract class _CheckpointInput implements CheckpointInput {
   factory _CheckpointInput(
-          {String? id,
-          String? name,
-          String? assetId,
-          List<Waypoint>? waypointsJson,
-          List<LinkedAssetToCheckpointId>? linkedAssetsIds}) =
-      _$CheckpointInputImpl;
+      {String? id,
+      String? name,
+      String? assetId,
+      List<Waypoint>? waypointsJson,
+      List<LinkedAssetToCheckpointId>? linkedAssetsIds}) = _$CheckpointInputImpl;
 
-  factory _CheckpointInput.fromJson(Map<String, dynamic> json) =
-      _$CheckpointInputImpl.fromJson;
+  factory _CheckpointInput.fromJson(Map<String, dynamic> json) = _$CheckpointInputImpl.fromJson;
 
   @override
 
@@ -9418,8 +8928,7 @@ abstract class _CheckpointInput implements CheckpointInput {
   set linkedAssetsIds(List<LinkedAssetToCheckpointId>? value);
   @override
   @JsonKey(ignore: true)
-  _$$CheckpointInputImplCopyWith<_$CheckpointInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CheckpointInputImplCopyWith<_$CheckpointInputImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 CloudEntry _$CloudEntryFromJson(Map<String, dynamic> json) {
@@ -9462,14 +8971,12 @@ mixin _$CloudEntry {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CloudEntryCopyWith<CloudEntry> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CloudEntryCopyWith<CloudEntry> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CloudEntryCopyWith<$Res> {
-  factory $CloudEntryCopyWith(
-          CloudEntry value, $Res Function(CloudEntry) then) =
+  factory $CloudEntryCopyWith(CloudEntry value, $Res Function(CloudEntry) then) =
       _$CloudEntryCopyWithImpl<$Res, CloudEntry>;
   @useResult
   $Res call(
@@ -9485,8 +8992,7 @@ abstract class $CloudEntryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CloudEntryCopyWithImpl<$Res, $Val extends CloudEntry>
-    implements $CloudEntryCopyWith<$Res> {
+class _$CloudEntryCopyWithImpl<$Res, $Val extends CloudEntry> implements $CloudEntryCopyWith<$Res> {
   _$CloudEntryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -9549,10 +9055,8 @@ class _$CloudEntryCopyWithImpl<$Res, $Val extends CloudEntry>
 }
 
 /// @nodoc
-abstract class _$$CloudEntryImplCopyWith<$Res>
-    implements $CloudEntryCopyWith<$Res> {
-  factory _$$CloudEntryImplCopyWith(
-          _$CloudEntryImpl value, $Res Function(_$CloudEntryImpl) then) =
+abstract class _$$CloudEntryImplCopyWith<$Res> implements $CloudEntryCopyWith<$Res> {
+  factory _$$CloudEntryImplCopyWith(_$CloudEntryImpl value, $Res Function(_$CloudEntryImpl) then) =
       __$$CloudEntryImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -9569,12 +9073,9 @@ abstract class _$$CloudEntryImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CloudEntryImplCopyWithImpl<$Res>
-    extends _$CloudEntryCopyWithImpl<$Res, _$CloudEntryImpl>
+class __$$CloudEntryImplCopyWithImpl<$Res> extends _$CloudEntryCopyWithImpl<$Res, _$CloudEntryImpl>
     implements _$$CloudEntryImplCopyWith<$Res> {
-  __$$CloudEntryImplCopyWithImpl(
-      _$CloudEntryImpl _value, $Res Function(_$CloudEntryImpl) _then)
-      : super(_value, _then);
+  __$$CloudEntryImplCopyWithImpl(_$CloudEntryImpl _value, $Res Function(_$CloudEntryImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -9645,8 +9146,7 @@ class _$CloudEntryImpl implements _CloudEntry {
       final Map<String, dynamic>? metadata})
       : _metadata = metadata;
 
-  factory _$CloudEntryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CloudEntryImplFromJson(json);
+  factory _$CloudEntryImpl.fromJson(Map<String, dynamic> json) => _$$CloudEntryImplFromJson(json);
 
   /// Defines the name of the entry. If the name starts with [translate:], means
   /// that the name is a translation key.
@@ -9715,25 +9215,14 @@ class _$CloudEntryImpl implements _CloudEntry {
             (identical(other.serial, serial) || other.serial == serial) &&
             (identical(other.fileId, fileId) || other.fileId == fileId) &&
             (identical(other.size, size) || other.size == size) &&
-            (identical(other.lastModified, lastModified) ||
-                other.lastModified == lastModified) &&
-            (identical(other.contentType, contentType) ||
-                other.contentType == contentType) &&
+            (identical(other.lastModified, lastModified) || other.lastModified == lastModified) &&
+            (identical(other.contentType, contentType) || other.contentType == contentType) &&
             const DeepCollectionEquality().equals(other._metadata, _metadata));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      name,
-      type,
-      path,
-      serial,
-      fileId,
-      size,
-      lastModified,
-      contentType,
+  int get hashCode => Object.hash(runtimeType, name, type, path, serial, fileId, size, lastModified, contentType,
       const DeepCollectionEquality().hash(_metadata));
 
   @JsonKey(ignore: true)
@@ -9762,8 +9251,7 @@ abstract class _CloudEntry implements CloudEntry {
       final String? contentType,
       final Map<String, dynamic>? metadata}) = _$CloudEntryImpl;
 
-  factory _CloudEntry.fromJson(Map<String, dynamic> json) =
-      _$CloudEntryImpl.fromJson;
+  factory _CloudEntry.fromJson(Map<String, dynamic> json) = _$CloudEntryImpl.fromJson;
 
   @override
 
@@ -9808,8 +9296,7 @@ abstract class _CloudEntry implements CloudEntry {
   Map<String, dynamic>? get metadata;
   @override
   @JsonKey(ignore: true)
-  _$$CloudEntryImplCopyWith<_$CloudEntryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CloudEntryImplCopyWith<_$CloudEntryImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 DeviceCommand _$DeviceCommandFromJson(Map<String, dynamic> json) {
@@ -9899,14 +9386,12 @@ mixin _$DeviceCommand {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DeviceCommandCopyWith<DeviceCommand> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeviceCommandCopyWith<DeviceCommand> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeviceCommandCopyWith<$Res> {
-  factory $DeviceCommandCopyWith(
-          DeviceCommand value, $Res Function(DeviceCommand) then) =
+  factory $DeviceCommandCopyWith(DeviceCommand value, $Res Function(DeviceCommand) then) =
       _$DeviceCommandCopyWithImpl<$Res, DeviceCommand>;
   @useResult
   $Res call(
@@ -9941,8 +9426,7 @@ abstract class $DeviceCommandCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
-    implements $DeviceCommandCopyWith<$Res> {
+class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand> implements $DeviceCommandCopyWith<$Res> {
   _$DeviceCommandCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -10123,10 +9607,8 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
 }
 
 /// @nodoc
-abstract class _$$DeviceCommandImplCopyWith<$Res>
-    implements $DeviceCommandCopyWith<$Res> {
-  factory _$$DeviceCommandImplCopyWith(
-          _$DeviceCommandImpl value, $Res Function(_$DeviceCommandImpl) then) =
+abstract class _$$DeviceCommandImplCopyWith<$Res> implements $DeviceCommandCopyWith<$Res> {
+  factory _$$DeviceCommandImplCopyWith(_$DeviceCommandImpl value, $Res Function(_$DeviceCommandImpl) then) =
       __$$DeviceCommandImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -10166,11 +9648,9 @@ abstract class _$$DeviceCommandImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DeviceCommandImplCopyWithImpl<$Res>
-    extends _$DeviceCommandCopyWithImpl<$Res, _$DeviceCommandImpl>
+class __$$DeviceCommandImplCopyWithImpl<$Res> extends _$DeviceCommandCopyWithImpl<$Res, _$DeviceCommandImpl>
     implements _$$DeviceCommandImplCopyWith<$Res> {
-  __$$DeviceCommandImplCopyWithImpl(
-      _$DeviceCommandImpl _value, $Res Function(_$DeviceCommandImpl) _then)
+  __$$DeviceCommandImplCopyWithImpl(_$DeviceCommandImpl _value, $Res Function(_$DeviceCommandImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -10328,8 +9808,7 @@ class _$DeviceCommandImpl implements _DeviceCommand {
         _possibleDevices = possibleDevices,
         _args = args;
 
-  factory _$DeviceCommandImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DeviceCommandImplFromJson(json);
+  factory _$DeviceCommandImpl.fromJson(Map<String, dynamic> json) => _$$DeviceCommandImplFromJson(json);
 
   @override
   final String id;
@@ -10474,37 +9953,24 @@ class _$DeviceCommandImpl implements _DeviceCommand {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.source, source) || other.source == source) &&
             (identical(other.tagId, tagId) || other.tagId == tagId) &&
-            (identical(other.deviceId, deviceId) ||
-                other.deviceId == deviceId) &&
-            (identical(other.protocolId, protocolId) ||
-                other.protocolId == protocolId) &&
-            (identical(other.protocol, protocol) ||
-                other.protocol == protocol) &&
+            (identical(other.deviceId, deviceId) || other.deviceId == deviceId) &&
+            (identical(other.protocolId, protocolId) || other.protocolId == protocolId) &&
+            (identical(other.protocol, protocol) || other.protocol == protocol) &&
             (identical(other.modelId, modelId) || other.modelId == modelId) &&
             (identical(other.model, model) || other.model == model) &&
             (identical(other.command, command) || other.command == command) &&
-            (identical(other.devicePassword, devicePassword) ||
-                other.devicePassword == devicePassword) &&
+            (identical(other.devicePassword, devicePassword) || other.devicePassword == devicePassword) &&
             (identical(other.payload, payload) || other.payload == payload) &&
-            (identical(other.commandId, commandId) ||
-                other.commandId == commandId) &&
-            (identical(other.isHexCoded, isHexCoded) ||
-                other.isHexCoded == isHexCoded) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.scriptName, scriptName) ||
-                other.scriptName == scriptName) &&
-            (identical(other.externalAccount, externalAccount) ||
-                other.externalAccount == externalAccount) &&
-            (identical(other.externalAccountId, externalAccountId) ||
-                other.externalAccountId == externalAccountId) &&
+            (identical(other.commandId, commandId) || other.commandId == commandId) &&
+            (identical(other.isHexCoded, isHexCoded) || other.isHexCoded == isHexCoded) &&
+            (identical(other.username, username) || other.username == username) &&
+            (identical(other.scriptName, scriptName) || other.scriptName == scriptName) &&
+            (identical(other.externalAccount, externalAccount) || other.externalAccount == externalAccount) &&
+            (identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
-            const DeepCollectionEquality()
-                .equals(other._possibleDevices, _possibleDevices) &&
-            (identical(other.modbusParameter, modbusParameter) ||
-                other.modbusParameter == modbusParameter) &&
-            (identical(other.modbusPort, modbusPort) ||
-                other.modbusPort == modbusPort) &&
+            const DeepCollectionEquality().equals(other._possibleDevices, _possibleDevices) &&
+            (identical(other.modbusParameter, modbusParameter) || other.modbusParameter == modbusParameter) &&
+            (identical(other.modbusPort, modbusPort) || other.modbusPort == modbusPort) &&
             const DeepCollectionEquality().equals(other._args, _args));
   }
 
@@ -10577,8 +10043,7 @@ abstract class _DeviceCommand implements DeviceCommand {
       final String? modbusPort,
       final Map<String, dynamic>? args}) = _$DeviceCommandImpl;
 
-  factory _DeviceCommand.fromJson(Map<String, dynamic> json) =
-      _$DeviceCommandImpl.fromJson;
+  factory _DeviceCommand.fromJson(Map<String, dynamic> json) = _$DeviceCommandImpl.fromJson;
 
   @override
   String get id;
@@ -10683,8 +10148,7 @@ abstract class _DeviceCommand implements DeviceCommand {
   Map<String, dynamic>? get args;
   @override
   @JsonKey(ignore: true)
-  _$$DeviceCommandImplCopyWith<_$DeviceCommandImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DeviceCommandImplCopyWith<_$DeviceCommandImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Connection _$ConnectionFromJson(Map<String, dynamic> json) {
@@ -10703,24 +10167,19 @@ mixin _$Connection {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ConnectionCopyWith<Connection> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ConnectionCopyWith<Connection> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ConnectionCopyWith<$Res> {
-  factory $ConnectionCopyWith(
-          Connection value, $Res Function(Connection) then) =
+  factory $ConnectionCopyWith(Connection value, $Res Function(Connection) then) =
       _$ConnectionCopyWithImpl<$Res, Connection>;
   @useResult
-  $Res call(
-      {@DurationOrNullConverter() Duration? online,
-      @DurationOrNullConverter() Duration? hibernation});
+  $Res call({@DurationOrNullConverter() Duration? online, @DurationOrNullConverter() Duration? hibernation});
 }
 
 /// @nodoc
-class _$ConnectionCopyWithImpl<$Res, $Val extends Connection>
-    implements $ConnectionCopyWith<$Res> {
+class _$ConnectionCopyWithImpl<$Res, $Val extends Connection> implements $ConnectionCopyWith<$Res> {
   _$ConnectionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -10748,25 +10207,18 @@ class _$ConnectionCopyWithImpl<$Res, $Val extends Connection>
 }
 
 /// @nodoc
-abstract class _$$ConnectionImplCopyWith<$Res>
-    implements $ConnectionCopyWith<$Res> {
-  factory _$$ConnectionImplCopyWith(
-          _$ConnectionImpl value, $Res Function(_$ConnectionImpl) then) =
+abstract class _$$ConnectionImplCopyWith<$Res> implements $ConnectionCopyWith<$Res> {
+  factory _$$ConnectionImplCopyWith(_$ConnectionImpl value, $Res Function(_$ConnectionImpl) then) =
       __$$ConnectionImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@DurationOrNullConverter() Duration? online,
-      @DurationOrNullConverter() Duration? hibernation});
+  $Res call({@DurationOrNullConverter() Duration? online, @DurationOrNullConverter() Duration? hibernation});
 }
 
 /// @nodoc
-class __$$ConnectionImplCopyWithImpl<$Res>
-    extends _$ConnectionCopyWithImpl<$Res, _$ConnectionImpl>
+class __$$ConnectionImplCopyWithImpl<$Res> extends _$ConnectionCopyWithImpl<$Res, _$ConnectionImpl>
     implements _$$ConnectionImplCopyWith<$Res> {
-  __$$ConnectionImplCopyWithImpl(
-      _$ConnectionImpl _value, $Res Function(_$ConnectionImpl) _then)
-      : super(_value, _then);
+  __$$ConnectionImplCopyWithImpl(_$ConnectionImpl _value, $Res Function(_$ConnectionImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -10790,12 +10242,9 @@ class __$$ConnectionImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ConnectionImpl implements _Connection {
-  const _$ConnectionImpl(
-      {@DurationOrNullConverter() this.online,
-      @DurationOrNullConverter() this.hibernation});
+  const _$ConnectionImpl({@DurationOrNullConverter() this.online, @DurationOrNullConverter() this.hibernation});
 
-  factory _$ConnectionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ConnectionImplFromJson(json);
+  factory _$ConnectionImpl.fromJson(Map<String, dynamic> json) => _$$ConnectionImplFromJson(json);
 
   /// Time in seconds to consider online
   @override
@@ -10818,8 +10267,7 @@ class _$ConnectionImpl implements _Connection {
         (other.runtimeType == runtimeType &&
             other is _$ConnectionImpl &&
             (identical(other.online, online) || other.online == online) &&
-            (identical(other.hibernation, hibernation) ||
-                other.hibernation == hibernation));
+            (identical(other.hibernation, hibernation) || other.hibernation == hibernation));
   }
 
   @JsonKey(ignore: true)
@@ -10842,12 +10290,10 @@ class _$ConnectionImpl implements _Connection {
 
 abstract class _Connection implements Connection {
   const factory _Connection(
-          {@DurationOrNullConverter() final Duration? online,
-          @DurationOrNullConverter() final Duration? hibernation}) =
-      _$ConnectionImpl;
+      {@DurationOrNullConverter() final Duration? online,
+      @DurationOrNullConverter() final Duration? hibernation}) = _$ConnectionImpl;
 
-  factory _Connection.fromJson(Map<String, dynamic> json) =
-      _$ConnectionImpl.fromJson;
+  factory _Connection.fromJson(Map<String, dynamic> json) = _$ConnectionImpl.fromJson;
 
   @override
 
@@ -10861,8 +10307,7 @@ abstract class _Connection implements Connection {
   Duration? get hibernation;
   @override
   @JsonKey(ignore: true)
-  _$$ConnectionImplCopyWith<_$ConnectionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ConnectionImplCopyWith<_$ConnectionImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Country _$CountryFromJson(Map<String, dynamic> json) {
@@ -10884,20 +10329,13 @@ mixin _$Country {
 
 /// @nodoc
 abstract class $CountryCopyWith<$Res> {
-  factory $CountryCopyWith(Country value, $Res Function(Country) then) =
-      _$CountryCopyWithImpl<$Res, Country>;
+  factory $CountryCopyWith(Country value, $Res Function(Country) then) = _$CountryCopyWithImpl<$Res, Country>;
   @useResult
-  $Res call(
-      {String id,
-      String commonName,
-      String flagEmoji,
-      String? phoneCode,
-      String? code});
+  $Res call({String id, String commonName, String flagEmoji, String? phoneCode, String? code});
 }
 
 /// @nodoc
-class _$CountryCopyWithImpl<$Res, $Val extends Country>
-    implements $CountryCopyWith<$Res> {
+class _$CountryCopyWithImpl<$Res, $Val extends Country> implements $CountryCopyWith<$Res> {
   _$CountryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -10941,26 +10379,17 @@ class _$CountryCopyWithImpl<$Res, $Val extends Country>
 
 /// @nodoc
 abstract class _$$CountryImplCopyWith<$Res> implements $CountryCopyWith<$Res> {
-  factory _$$CountryImplCopyWith(
-          _$CountryImpl value, $Res Function(_$CountryImpl) then) =
+  factory _$$CountryImplCopyWith(_$CountryImpl value, $Res Function(_$CountryImpl) then) =
       __$$CountryImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      String commonName,
-      String flagEmoji,
-      String? phoneCode,
-      String? code});
+  $Res call({String id, String commonName, String flagEmoji, String? phoneCode, String? code});
 }
 
 /// @nodoc
-class __$$CountryImplCopyWithImpl<$Res>
-    extends _$CountryCopyWithImpl<$Res, _$CountryImpl>
+class __$$CountryImplCopyWithImpl<$Res> extends _$CountryCopyWithImpl<$Res, _$CountryImpl>
     implements _$$CountryImplCopyWith<$Res> {
-  __$$CountryImplCopyWithImpl(
-      _$CountryImpl _value, $Res Function(_$CountryImpl) _then)
-      : super(_value, _then);
+  __$$CountryImplCopyWithImpl(_$CountryImpl _value, $Res Function(_$CountryImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -10999,15 +10428,9 @@ class __$$CountryImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CountryImpl implements _Country {
-  const _$CountryImpl(
-      {required this.id,
-      required this.commonName,
-      required this.flagEmoji,
-      this.phoneCode,
-      this.code});
+  const _$CountryImpl({required this.id, required this.commonName, required this.flagEmoji, this.phoneCode, this.code});
 
-  factory _$CountryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CountryImplFromJson(json);
+  factory _$CountryImpl.fromJson(Map<String, dynamic> json) => _$$CountryImplFromJson(json);
 
   @override
   final String id;
@@ -11031,25 +10454,20 @@ class _$CountryImpl implements _Country {
         (other.runtimeType == runtimeType &&
             other is _$CountryImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.commonName, commonName) ||
-                other.commonName == commonName) &&
-            (identical(other.flagEmoji, flagEmoji) ||
-                other.flagEmoji == flagEmoji) &&
-            (identical(other.phoneCode, phoneCode) ||
-                other.phoneCode == phoneCode) &&
+            (identical(other.commonName, commonName) || other.commonName == commonName) &&
+            (identical(other.flagEmoji, flagEmoji) || other.flagEmoji == flagEmoji) &&
+            (identical(other.phoneCode, phoneCode) || other.phoneCode == phoneCode) &&
             (identical(other.code, code) || other.code == code));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, commonName, flagEmoji, phoneCode, code);
+  int get hashCode => Object.hash(runtimeType, id, commonName, flagEmoji, phoneCode, code);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CountryImplCopyWith<_$CountryImpl> get copyWith =>
-      __$$CountryImplCopyWithImpl<_$CountryImpl>(this, _$identity);
+  _$$CountryImplCopyWith<_$CountryImpl> get copyWith => __$$CountryImplCopyWithImpl<_$CountryImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -11081,8 +10499,7 @@ abstract class _Country implements Country {
   String? get code;
   @override
   @JsonKey(ignore: true)
-  _$$CountryImplCopyWith<_$CountryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CountryImplCopyWith<_$CountryImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 PhoneNumber _$PhoneNumberFromJson(Map<String, dynamic> json) {
@@ -11099,22 +10516,19 @@ mixin _$PhoneNumber {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PhoneNumberCopyWith<PhoneNumber> get copyWith =>
-      throw _privateConstructorUsedError;
+  $PhoneNumberCopyWith<PhoneNumber> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PhoneNumberCopyWith<$Res> {
-  factory $PhoneNumberCopyWith(
-          PhoneNumber value, $Res Function(PhoneNumber) then) =
+  factory $PhoneNumberCopyWith(PhoneNumber value, $Res Function(PhoneNumber) then) =
       _$PhoneNumberCopyWithImpl<$Res, PhoneNumber>;
   @useResult
   $Res call({String countryCode, String phoneNumber});
 }
 
 /// @nodoc
-class _$PhoneNumberCopyWithImpl<$Res, $Val extends PhoneNumber>
-    implements $PhoneNumberCopyWith<$Res> {
+class _$PhoneNumberCopyWithImpl<$Res, $Val extends PhoneNumber> implements $PhoneNumberCopyWith<$Res> {
   _$PhoneNumberCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -11142,10 +10556,8 @@ class _$PhoneNumberCopyWithImpl<$Res, $Val extends PhoneNumber>
 }
 
 /// @nodoc
-abstract class _$$PhoneNumberImplCopyWith<$Res>
-    implements $PhoneNumberCopyWith<$Res> {
-  factory _$$PhoneNumberImplCopyWith(
-          _$PhoneNumberImpl value, $Res Function(_$PhoneNumberImpl) then) =
+abstract class _$$PhoneNumberImplCopyWith<$Res> implements $PhoneNumberCopyWith<$Res> {
+  factory _$$PhoneNumberImplCopyWith(_$PhoneNumberImpl value, $Res Function(_$PhoneNumberImpl) then) =
       __$$PhoneNumberImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -11153,11 +10565,9 @@ abstract class _$$PhoneNumberImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$PhoneNumberImplCopyWithImpl<$Res>
-    extends _$PhoneNumberCopyWithImpl<$Res, _$PhoneNumberImpl>
+class __$$PhoneNumberImplCopyWithImpl<$Res> extends _$PhoneNumberCopyWithImpl<$Res, _$PhoneNumberImpl>
     implements _$$PhoneNumberImplCopyWith<$Res> {
-  __$$PhoneNumberImplCopyWithImpl(
-      _$PhoneNumberImpl _value, $Res Function(_$PhoneNumberImpl) _then)
+  __$$PhoneNumberImplCopyWithImpl(_$PhoneNumberImpl _value, $Res Function(_$PhoneNumberImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -11182,12 +10592,9 @@ class __$$PhoneNumberImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$PhoneNumberImpl extends _PhoneNumber {
-  const _$PhoneNumberImpl(
-      {required this.countryCode, required this.phoneNumber})
-      : super._();
+  const _$PhoneNumberImpl({required this.countryCode, required this.phoneNumber}) : super._();
 
-  factory _$PhoneNumberImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PhoneNumberImplFromJson(json);
+  factory _$PhoneNumberImpl.fromJson(Map<String, dynamic> json) => _$$PhoneNumberImplFromJson(json);
 
   /// Country code.
   @override
@@ -11207,10 +10614,8 @@ class _$PhoneNumberImpl extends _PhoneNumber {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PhoneNumberImpl &&
-            (identical(other.countryCode, countryCode) ||
-                other.countryCode == countryCode) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber));
+            (identical(other.countryCode, countryCode) || other.countryCode == countryCode) &&
+            (identical(other.phoneNumber, phoneNumber) || other.phoneNumber == phoneNumber));
   }
 
   @JsonKey(ignore: true)
@@ -11232,13 +10637,11 @@ class _$PhoneNumberImpl extends _PhoneNumber {
 }
 
 abstract class _PhoneNumber extends PhoneNumber {
-  const factory _PhoneNumber(
-      {required final String countryCode,
-      required final String phoneNumber}) = _$PhoneNumberImpl;
+  const factory _PhoneNumber({required final String countryCode, required final String phoneNumber}) =
+      _$PhoneNumberImpl;
   const _PhoneNumber._() : super._();
 
-  factory _PhoneNumber.fromJson(Map<String, dynamic> json) =
-      _$PhoneNumberImpl.fromJson;
+  factory _PhoneNumber.fromJson(Map<String, dynamic> json) = _$PhoneNumberImpl.fromJson;
 
   @override
 
@@ -11250,8 +10653,7 @@ abstract class _PhoneNumber extends PhoneNumber {
   String get phoneNumber;
   @override
   @JsonKey(ignore: true)
-  _$$PhoneNumberImplCopyWith<_$PhoneNumberImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PhoneNumberImplCopyWith<_$PhoneNumberImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 NullablePhoneNumber _$NullablePhoneNumberFromJson(Map<String, dynamic> json) {
@@ -11268,14 +10670,12 @@ mixin _$NullablePhoneNumber {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $NullablePhoneNumberCopyWith<NullablePhoneNumber> get copyWith =>
-      throw _privateConstructorUsedError;
+  $NullablePhoneNumberCopyWith<NullablePhoneNumber> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $NullablePhoneNumberCopyWith<$Res> {
-  factory $NullablePhoneNumberCopyWith(
-          NullablePhoneNumber value, $Res Function(NullablePhoneNumber) then) =
+  factory $NullablePhoneNumberCopyWith(NullablePhoneNumber value, $Res Function(NullablePhoneNumber) then) =
       _$NullablePhoneNumberCopyWithImpl<$Res, NullablePhoneNumber>;
   @useResult
   $Res call({String? countryCode, String? phoneNumber});
@@ -11311,10 +10711,9 @@ class _$NullablePhoneNumberCopyWithImpl<$Res, $Val extends NullablePhoneNumber>
 }
 
 /// @nodoc
-abstract class _$$NullablePhoneNumberImplCopyWith<$Res>
-    implements $NullablePhoneNumberCopyWith<$Res> {
-  factory _$$NullablePhoneNumberImplCopyWith(_$NullablePhoneNumberImpl value,
-          $Res Function(_$NullablePhoneNumberImpl) then) =
+abstract class _$$NullablePhoneNumberImplCopyWith<$Res> implements $NullablePhoneNumberCopyWith<$Res> {
+  factory _$$NullablePhoneNumberImplCopyWith(
+          _$NullablePhoneNumberImpl value, $Res Function(_$NullablePhoneNumberImpl) then) =
       __$$NullablePhoneNumberImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -11325,8 +10724,8 @@ abstract class _$$NullablePhoneNumberImplCopyWith<$Res>
 class __$$NullablePhoneNumberImplCopyWithImpl<$Res>
     extends _$NullablePhoneNumberCopyWithImpl<$Res, _$NullablePhoneNumberImpl>
     implements _$$NullablePhoneNumberImplCopyWith<$Res> {
-  __$$NullablePhoneNumberImplCopyWithImpl(_$NullablePhoneNumberImpl _value,
-      $Res Function(_$NullablePhoneNumberImpl) _then)
+  __$$NullablePhoneNumberImplCopyWithImpl(
+      _$NullablePhoneNumberImpl _value, $Res Function(_$NullablePhoneNumberImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -11351,11 +10750,9 @@ class __$$NullablePhoneNumberImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$NullablePhoneNumberImpl extends _NullablePhoneNumber {
-  const _$NullablePhoneNumberImpl({this.countryCode, this.phoneNumber})
-      : super._();
+  const _$NullablePhoneNumberImpl({this.countryCode, this.phoneNumber}) : super._();
 
-  factory _$NullablePhoneNumberImpl.fromJson(Map<String, dynamic> json) =>
-      _$$NullablePhoneNumberImplFromJson(json);
+  factory _$NullablePhoneNumberImpl.fromJson(Map<String, dynamic> json) => _$$NullablePhoneNumberImplFromJson(json);
 
   /// Country code.
   @override
@@ -11375,10 +10772,8 @@ class _$NullablePhoneNumberImpl extends _NullablePhoneNumber {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$NullablePhoneNumberImpl &&
-            (identical(other.countryCode, countryCode) ||
-                other.countryCode == countryCode) &&
-            (identical(other.phoneNumber, phoneNumber) ||
-                other.phoneNumber == phoneNumber));
+            (identical(other.countryCode, countryCode) || other.countryCode == countryCode) &&
+            (identical(other.phoneNumber, phoneNumber) || other.phoneNumber == phoneNumber));
   }
 
   @JsonKey(ignore: true)
@@ -11389,8 +10784,7 @@ class _$NullablePhoneNumberImpl extends _NullablePhoneNumber {
   @override
   @pragma('vm:prefer-inline')
   _$$NullablePhoneNumberImplCopyWith<_$NullablePhoneNumberImpl> get copyWith =>
-      __$$NullablePhoneNumberImplCopyWithImpl<_$NullablePhoneNumberImpl>(
-          this, _$identity);
+      __$$NullablePhoneNumberImplCopyWithImpl<_$NullablePhoneNumberImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -11401,13 +10795,11 @@ class _$NullablePhoneNumberImpl extends _NullablePhoneNumber {
 }
 
 abstract class _NullablePhoneNumber extends NullablePhoneNumber {
-  const factory _NullablePhoneNumber(
-      {final String? countryCode,
-      final String? phoneNumber}) = _$NullablePhoneNumberImpl;
+  const factory _NullablePhoneNumber({final String? countryCode, final String? phoneNumber}) =
+      _$NullablePhoneNumberImpl;
   const _NullablePhoneNumber._() : super._();
 
-  factory _NullablePhoneNumber.fromJson(Map<String, dynamic> json) =
-      _$NullablePhoneNumberImpl.fromJson;
+  factory _NullablePhoneNumber.fromJson(Map<String, dynamic> json) = _$NullablePhoneNumberImpl.fromJson;
 
   @override
 
@@ -11419,8 +10811,7 @@ abstract class _NullablePhoneNumber extends NullablePhoneNumber {
   String? get phoneNumber;
   @override
   @JsonKey(ignore: true)
-  _$$NullablePhoneNumberImplCopyWith<_$NullablePhoneNumberImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$NullablePhoneNumberImplCopyWith<_$NullablePhoneNumberImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 City _$CityFromJson(Map<String, dynamic> json) {
@@ -11449,19 +10840,13 @@ mixin _$City {
 
 /// @nodoc
 abstract class $CityCopyWith<$Res> {
-  factory $CityCopyWith(City value, $Res Function(City) then) =
-      _$CityCopyWithImpl<$Res, City>;
+  factory $CityCopyWith(City value, $Res Function(City) then) = _$CityCopyWithImpl<$Res, City>;
   @useResult
-  $Res call(
-      {String id,
-      @JsonKey(name: 'nativeName') String name,
-      String? code,
-      String countryStateId});
+  $Res call({String id, @JsonKey(name: 'nativeName') String name, String? code, String countryStateId});
 }
 
 /// @nodoc
-class _$CityCopyWithImpl<$Res, $Val extends City>
-    implements $CityCopyWith<$Res> {
+class _$CityCopyWithImpl<$Res, $Val extends City> implements $CityCopyWith<$Res> {
   _$CityCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -11500,24 +10885,15 @@ class _$CityCopyWithImpl<$Res, $Val extends City>
 
 /// @nodoc
 abstract class _$$CityImplCopyWith<$Res> implements $CityCopyWith<$Res> {
-  factory _$$CityImplCopyWith(
-          _$CityImpl value, $Res Function(_$CityImpl) then) =
-      __$$CityImplCopyWithImpl<$Res>;
+  factory _$$CityImplCopyWith(_$CityImpl value, $Res Function(_$CityImpl) then) = __$$CityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      @JsonKey(name: 'nativeName') String name,
-      String? code,
-      String countryStateId});
+  $Res call({String id, @JsonKey(name: 'nativeName') String name, String? code, String countryStateId});
 }
 
 /// @nodoc
-class __$$CityImplCopyWithImpl<$Res>
-    extends _$CityCopyWithImpl<$Res, _$CityImpl>
-    implements _$$CityImplCopyWith<$Res> {
-  __$$CityImplCopyWithImpl(_$CityImpl _value, $Res Function(_$CityImpl) _then)
-      : super(_value, _then);
+class __$$CityImplCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res, _$CityImpl> implements _$$CityImplCopyWith<$Res> {
+  __$$CityImplCopyWithImpl(_$CityImpl _value, $Res Function(_$CityImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -11552,13 +10928,9 @@ class __$$CityImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CityImpl implements _City {
   const _$CityImpl(
-      {required this.id,
-      @JsonKey(name: 'nativeName') required this.name,
-      this.code,
-      required this.countryStateId});
+      {required this.id, @JsonKey(name: 'nativeName') required this.name, this.code, required this.countryStateId});
 
-  factory _$CityImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CityImplFromJson(json);
+  factory _$CityImpl.fromJson(Map<String, dynamic> json) => _$$CityImplFromJson(json);
 
   /// [id] represents the unique identifier of the city
   @override
@@ -11590,8 +10962,7 @@ class _$CityImpl implements _City {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
-            (identical(other.countryStateId, countryStateId) ||
-                other.countryStateId == countryStateId));
+            (identical(other.countryStateId, countryStateId) || other.countryStateId == countryStateId));
   }
 
   @JsonKey(ignore: true)
@@ -11601,8 +10972,7 @@ class _$CityImpl implements _City {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CityImplCopyWith<_$CityImpl> get copyWith =>
-      __$$CityImplCopyWithImpl<_$CityImpl>(this, _$identity);
+  _$$CityImplCopyWith<_$CityImpl> get copyWith => __$$CityImplCopyWithImpl<_$CityImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -11640,8 +11010,7 @@ abstract class _City implements City {
   String get countryStateId;
   @override
   @JsonKey(ignore: true)
-  _$$CityImplCopyWith<_$CityImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CityImplCopyWith<_$CityImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 CountryState _$CountryStateFromJson(Map<String, dynamic> json) {
@@ -11662,22 +11031,19 @@ mixin _$CountryState {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CountryStateCopyWith<CountryState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CountryStateCopyWith<CountryState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CountryStateCopyWith<$Res> {
-  factory $CountryStateCopyWith(
-          CountryState value, $Res Function(CountryState) then) =
+  factory $CountryStateCopyWith(CountryState value, $Res Function(CountryState) then) =
       _$CountryStateCopyWithImpl<$Res, CountryState>;
   @useResult
   $Res call({String id, @JsonKey(name: 'nativeName') String name, String code});
 }
 
 /// @nodoc
-class _$CountryStateCopyWithImpl<$Res, $Val extends CountryState>
-    implements $CountryStateCopyWith<$Res> {
+class _$CountryStateCopyWithImpl<$Res, $Val extends CountryState> implements $CountryStateCopyWith<$Res> {
   _$CountryStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -11710,10 +11076,8 @@ class _$CountryStateCopyWithImpl<$Res, $Val extends CountryState>
 }
 
 /// @nodoc
-abstract class _$$CountryStateImplCopyWith<$Res>
-    implements $CountryStateCopyWith<$Res> {
-  factory _$$CountryStateImplCopyWith(
-          _$CountryStateImpl value, $Res Function(_$CountryStateImpl) then) =
+abstract class _$$CountryStateImplCopyWith<$Res> implements $CountryStateCopyWith<$Res> {
+  factory _$$CountryStateImplCopyWith(_$CountryStateImpl value, $Res Function(_$CountryStateImpl) then) =
       __$$CountryStateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -11721,11 +11085,9 @@ abstract class _$$CountryStateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CountryStateImplCopyWithImpl<$Res>
-    extends _$CountryStateCopyWithImpl<$Res, _$CountryStateImpl>
+class __$$CountryStateImplCopyWithImpl<$Res> extends _$CountryStateCopyWithImpl<$Res, _$CountryStateImpl>
     implements _$$CountryStateImplCopyWith<$Res> {
-  __$$CountryStateImplCopyWithImpl(
-      _$CountryStateImpl _value, $Res Function(_$CountryStateImpl) _then)
+  __$$CountryStateImplCopyWithImpl(_$CountryStateImpl _value, $Res Function(_$CountryStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -11755,13 +11117,9 @@ class __$$CountryStateImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CountryStateImpl implements _CountryState {
-  const _$CountryStateImpl(
-      {required this.id,
-      @JsonKey(name: 'nativeName') required this.name,
-      required this.code});
+  const _$CountryStateImpl({required this.id, @JsonKey(name: 'nativeName') required this.name, required this.code});
 
-  factory _$CountryStateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CountryStateImplFromJson(json);
+  factory _$CountryStateImpl.fromJson(Map<String, dynamic> json) => _$$CountryStateImplFromJson(json);
 
   /// [id] represents the unique identifier of the CountryState
   @override
@@ -11815,8 +11173,7 @@ abstract class _CountryState implements CountryState {
       @JsonKey(name: 'nativeName') required final String name,
       required final String code}) = _$CountryStateImpl;
 
-  factory _CountryState.fromJson(Map<String, dynamic> json) =
-      _$CountryStateImpl.fromJson;
+  factory _CountryState.fromJson(Map<String, dynamic> json) = _$CountryStateImpl.fromJson;
 
   @override
 
@@ -11833,8 +11190,7 @@ abstract class _CountryState implements CountryState {
   String get code;
   @override
   @JsonKey(ignore: true)
-  _$$CountryStateImplCopyWith<_$CountryStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CountryStateImplCopyWith<_$CountryStateImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 CredentialField _$CredentialFieldFromJson(Map<String, dynamic> json) {
@@ -11881,19 +11237,16 @@ mixin _$CredentialField {
 
   /// [requiredFields] represents the nested fields.
   /// Only used when [type] = [CredentialFieldType.nestedField].
-  List<CredentialField>? get requiredFields =>
-      throw _privateConstructorUsedError;
+  List<CredentialField>? get requiredFields => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CredentialFieldCopyWith<CredentialField> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CredentialFieldCopyWith<CredentialField> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CredentialFieldCopyWith<$Res> {
-  factory $CredentialFieldCopyWith(
-          CredentialField value, $Res Function(CredentialField) then) =
+  factory $CredentialFieldCopyWith(CredentialField value, $Res Function(CredentialField) then) =
       _$CredentialFieldCopyWithImpl<$Res, CredentialField>;
   @useResult
   $Res call(
@@ -11911,8 +11264,7 @@ abstract class $CredentialFieldCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CredentialFieldCopyWithImpl<$Res, $Val extends CredentialField>
-    implements $CredentialFieldCopyWith<$Res> {
+class _$CredentialFieldCopyWithImpl<$Res, $Val extends CredentialField> implements $CredentialFieldCopyWith<$Res> {
   _$CredentialFieldCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -11985,10 +11337,8 @@ class _$CredentialFieldCopyWithImpl<$Res, $Val extends CredentialField>
 }
 
 /// @nodoc
-abstract class _$$CredentialFieldImplCopyWith<$Res>
-    implements $CredentialFieldCopyWith<$Res> {
-  factory _$$CredentialFieldImplCopyWith(_$CredentialFieldImpl value,
-          $Res Function(_$CredentialFieldImpl) then) =
+abstract class _$$CredentialFieldImplCopyWith<$Res> implements $CredentialFieldCopyWith<$Res> {
+  factory _$$CredentialFieldImplCopyWith(_$CredentialFieldImpl value, $Res Function(_$CredentialFieldImpl) then) =
       __$$CredentialFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -12007,11 +11357,9 @@ abstract class _$$CredentialFieldImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CredentialFieldImplCopyWithImpl<$Res>
-    extends _$CredentialFieldCopyWithImpl<$Res, _$CredentialFieldImpl>
+class __$$CredentialFieldImplCopyWithImpl<$Res> extends _$CredentialFieldCopyWithImpl<$Res, _$CredentialFieldImpl>
     implements _$$CredentialFieldImplCopyWith<$Res> {
-  __$$CredentialFieldImplCopyWithImpl(
-      _$CredentialFieldImpl _value, $Res Function(_$CredentialFieldImpl) _then)
+  __$$CredentialFieldImplCopyWithImpl(_$CredentialFieldImpl _value, $Res Function(_$CredentialFieldImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -12097,8 +11445,7 @@ class _$CredentialFieldImpl implements _CredentialField {
         _onlyChoices = onlyChoices,
         _requiredFields = requiredFields;
 
-  factory _$CredentialFieldImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CredentialFieldImplFromJson(json);
+  factory _$CredentialFieldImpl.fromJson(Map<String, dynamic> json) => _$$CredentialFieldImplFromJson(json);
 
   /// [field] is the name of the field, is a translation key.
   @override
@@ -12192,22 +11539,15 @@ class _$CredentialFieldImpl implements _CredentialField {
             other is _$CredentialFieldImpl &&
             (identical(other.field, field) || other.field == field) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.maxLength, maxLength) ||
-                other.maxLength == maxLength) &&
-            (identical(other.minLength, minLength) ||
-                other.minLength == minLength) &&
-            (identical(other.maxValue, maxValue) ||
-                other.maxValue == maxValue) &&
-            (identical(other.minValue, minValue) ||
-                other.minValue == minValue) &&
+            (identical(other.maxLength, maxLength) || other.maxLength == maxLength) &&
+            (identical(other.minLength, minLength) || other.minLength == minLength) &&
+            (identical(other.maxValue, maxValue) || other.maxValue == maxValue) &&
+            (identical(other.minValue, minValue) || other.minValue == minValue) &&
             const DeepCollectionEquality().equals(other._choices, _choices) &&
-            (identical(other.onlyField, onlyField) ||
-                other.onlyField == onlyField) &&
-            const DeepCollectionEquality()
-                .equals(other._onlyChoices, _onlyChoices) &&
+            (identical(other.onlyField, onlyField) || other.onlyField == onlyField) &&
+            const DeepCollectionEquality().equals(other._onlyChoices, _onlyChoices) &&
             (identical(other.action, action) || other.action == action) &&
-            const DeepCollectionEquality()
-                .equals(other._requiredFields, _requiredFields));
+            const DeepCollectionEquality().equals(other._requiredFields, _requiredFields));
   }
 
   @JsonKey(ignore: true)
@@ -12230,8 +11570,7 @@ class _$CredentialFieldImpl implements _CredentialField {
   @override
   @pragma('vm:prefer-inline')
   _$$CredentialFieldImplCopyWith<_$CredentialFieldImpl> get copyWith =>
-      __$$CredentialFieldImplCopyWithImpl<_$CredentialFieldImpl>(
-          this, _$identity);
+      __$$CredentialFieldImplCopyWithImpl<_$CredentialFieldImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -12255,8 +11594,7 @@ abstract class _CredentialField implements CredentialField {
       @CredentialFieldActionConverter() final CredentialFieldAction? action,
       final List<CredentialField>? requiredFields}) = _$CredentialFieldImpl;
 
-  factory _CredentialField.fromJson(Map<String, dynamic> json) =
-      _$CredentialFieldImpl.fromJson;
+  factory _CredentialField.fromJson(Map<String, dynamic> json) = _$CredentialFieldImpl.fromJson;
 
   @override
 
@@ -12311,8 +11649,7 @@ abstract class _CredentialField implements CredentialField {
   List<CredentialField>? get requiredFields;
   @override
   @JsonKey(ignore: true)
-  _$$CredentialFieldImplCopyWith<_$CredentialFieldImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CredentialFieldImplCopyWith<_$CredentialFieldImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 CredentialFieldInput _$CredentialFieldInputFromJson(Map<String, dynamic> json) {
@@ -12395,24 +11732,20 @@ mixin _$CredentialFieldInput {
 
   /// [requiredFields] represents the nested fields.
   /// Only used when [type] = [CredentialFieldType.nestedField].
-  List<CredentialFieldInput> get requiredFields =>
-      throw _privateConstructorUsedError;
+  List<CredentialFieldInput> get requiredFields => throw _privateConstructorUsedError;
 
   /// [requiredFields] represents the nested fields.
   /// Only used when [type] = [CredentialFieldType.nestedField].
-  set requiredFields(List<CredentialFieldInput> value) =>
-      throw _privateConstructorUsedError;
+  set requiredFields(List<CredentialFieldInput> value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CredentialFieldInputCopyWith<CredentialFieldInput> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CredentialFieldInputCopyWith<CredentialFieldInput> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CredentialFieldInputCopyWith<$Res> {
-  factory $CredentialFieldInputCopyWith(CredentialFieldInput value,
-          $Res Function(CredentialFieldInput) then) =
+  factory $CredentialFieldInputCopyWith(CredentialFieldInput value, $Res Function(CredentialFieldInput) then) =
       _$CredentialFieldInputCopyWithImpl<$Res, CredentialFieldInput>;
   @useResult
   $Res call(
@@ -12430,8 +11763,7 @@ abstract class $CredentialFieldInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CredentialFieldInputCopyWithImpl<$Res,
-        $Val extends CredentialFieldInput>
+class _$CredentialFieldInputCopyWithImpl<$Res, $Val extends CredentialFieldInput>
     implements $CredentialFieldInputCopyWith<$Res> {
   _$CredentialFieldInputCopyWithImpl(this._value, this._then);
 
@@ -12505,10 +11837,9 @@ class _$CredentialFieldInputCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$CredentialFieldInputImplCopyWith<$Res>
-    implements $CredentialFieldInputCopyWith<$Res> {
-  factory _$$CredentialFieldInputImplCopyWith(_$CredentialFieldInputImpl value,
-          $Res Function(_$CredentialFieldInputImpl) then) =
+abstract class _$$CredentialFieldInputImplCopyWith<$Res> implements $CredentialFieldInputCopyWith<$Res> {
+  factory _$$CredentialFieldInputImplCopyWith(
+          _$CredentialFieldInputImpl value, $Res Function(_$CredentialFieldInputImpl) then) =
       __$$CredentialFieldInputImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -12530,8 +11861,8 @@ abstract class _$$CredentialFieldInputImplCopyWith<$Res>
 class __$$CredentialFieldInputImplCopyWithImpl<$Res>
     extends _$CredentialFieldInputCopyWithImpl<$Res, _$CredentialFieldInputImpl>
     implements _$$CredentialFieldInputImplCopyWith<$Res> {
-  __$$CredentialFieldInputImplCopyWithImpl(_$CredentialFieldInputImpl _value,
-      $Res Function(_$CredentialFieldInputImpl) _then)
+  __$$CredentialFieldInputImplCopyWithImpl(
+      _$CredentialFieldInputImpl _value, $Res Function(_$CredentialFieldInputImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -12611,12 +11942,10 @@ class _$CredentialFieldInputImpl implements _CredentialFieldInput {
       this.choices = const [],
       this.onlyField,
       this.onlyChoices = const [],
-      @CredentialFieldActionConverter()
-      this.action = CredentialFieldAction.none,
+      @CredentialFieldActionConverter() this.action = CredentialFieldAction.none,
       this.requiredFields = const []});
 
-  factory _$CredentialFieldInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CredentialFieldInputImplFromJson(json);
+  factory _$CredentialFieldInputImpl.fromJson(Map<String, dynamic> json) => _$$CredentialFieldInputImplFromJson(json);
 
   /// [field] is the name of the field, is a translation key.
   @override
@@ -12683,10 +12012,8 @@ class _$CredentialFieldInputImpl implements _CredentialFieldInput {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CredentialFieldInputImplCopyWith<_$CredentialFieldInputImpl>
-      get copyWith =>
-          __$$CredentialFieldInputImplCopyWithImpl<_$CredentialFieldInputImpl>(
-              this, _$identity);
+  _$$CredentialFieldInputImplCopyWith<_$CredentialFieldInputImpl> get copyWith =>
+      __$$CredentialFieldInputImplCopyWithImpl<_$CredentialFieldInputImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -12710,8 +12037,7 @@ abstract class _CredentialFieldInput implements CredentialFieldInput {
       @CredentialFieldActionConverter() CredentialFieldAction action,
       List<CredentialFieldInput> requiredFields}) = _$CredentialFieldInputImpl;
 
-  factory _CredentialFieldInput.fromJson(Map<String, dynamic> json) =
-      _$CredentialFieldInputImpl.fromJson;
+  factory _CredentialFieldInput.fromJson(Map<String, dynamic> json) = _$CredentialFieldInputImpl.fromJson;
 
   @override
 
@@ -12806,8 +12132,7 @@ abstract class _CredentialFieldInput implements CredentialFieldInput {
   set requiredFields(List<CredentialFieldInput> value);
   @override
   @JsonKey(ignore: true)
-  _$$CredentialFieldInputImplCopyWith<_$CredentialFieldInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$CredentialFieldInputImplCopyWith<_$CredentialFieldInputImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 CustomField _$CustomFieldFromJson(Map<String, dynamic> json) {
@@ -12825,27 +12150,19 @@ mixin _$CustomField {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CustomFieldCopyWith<CustomField> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CustomFieldCopyWith<CustomField> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CustomFieldCopyWith<$Res> {
-  factory $CustomFieldCopyWith(
-          CustomField value, $Res Function(CustomField) then) =
+  factory $CustomFieldCopyWith(CustomField value, $Res Function(CustomField) then) =
       _$CustomFieldCopyWithImpl<$Res, CustomField>;
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      String value,
-      bool? isFixed,
-      @TimestampOrNullConverter() DateTime? updatedAt});
+  $Res call({String id, String name, String value, bool? isFixed, @TimestampOrNullConverter() DateTime? updatedAt});
 }
 
 /// @nodoc
-class _$CustomFieldCopyWithImpl<$Res, $Val extends CustomField>
-    implements $CustomFieldCopyWith<$Res> {
+class _$CustomFieldCopyWithImpl<$Res, $Val extends CustomField> implements $CustomFieldCopyWith<$Res> {
   _$CustomFieldCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -12888,27 +12205,18 @@ class _$CustomFieldCopyWithImpl<$Res, $Val extends CustomField>
 }
 
 /// @nodoc
-abstract class _$$CustomFieldImplCopyWith<$Res>
-    implements $CustomFieldCopyWith<$Res> {
-  factory _$$CustomFieldImplCopyWith(
-          _$CustomFieldImpl value, $Res Function(_$CustomFieldImpl) then) =
+abstract class _$$CustomFieldImplCopyWith<$Res> implements $CustomFieldCopyWith<$Res> {
+  factory _$$CustomFieldImplCopyWith(_$CustomFieldImpl value, $Res Function(_$CustomFieldImpl) then) =
       __$$CustomFieldImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      String value,
-      bool? isFixed,
-      @TimestampOrNullConverter() DateTime? updatedAt});
+  $Res call({String id, String name, String value, bool? isFixed, @TimestampOrNullConverter() DateTime? updatedAt});
 }
 
 /// @nodoc
-class __$$CustomFieldImplCopyWithImpl<$Res>
-    extends _$CustomFieldCopyWithImpl<$Res, _$CustomFieldImpl>
+class __$$CustomFieldImplCopyWithImpl<$Res> extends _$CustomFieldCopyWithImpl<$Res, _$CustomFieldImpl>
     implements _$$CustomFieldImplCopyWith<$Res> {
-  __$$CustomFieldImplCopyWithImpl(
-      _$CustomFieldImpl _value, $Res Function(_$CustomFieldImpl) _then)
+  __$$CustomFieldImplCopyWithImpl(_$CustomFieldImpl _value, $Res Function(_$CustomFieldImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -12955,8 +12263,7 @@ class _$CustomFieldImpl implements _CustomField {
       this.isFixed,
       @TimestampOrNullConverter() this.updatedAt});
 
-  factory _$CustomFieldImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CustomFieldImplFromJson(json);
+  factory _$CustomFieldImpl.fromJson(Map<String, dynamic> json) => _$$CustomFieldImplFromJson(json);
 
   @override
   final String id;
@@ -12984,14 +12291,12 @@ class _$CustomFieldImpl implements _CustomField {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.value, value) || other.value == value) &&
             (identical(other.isFixed, isFixed) || other.isFixed == isFixed) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+            (identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, value, isFixed, updatedAt);
+  int get hashCode => Object.hash(runtimeType, id, name, value, isFixed, updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -13009,15 +12314,13 @@ class _$CustomFieldImpl implements _CustomField {
 
 abstract class _CustomField implements CustomField {
   const factory _CustomField(
-          {required final String id,
-          required final String name,
-          required final String value,
-          final bool? isFixed,
-          @TimestampOrNullConverter() final DateTime? updatedAt}) =
-      _$CustomFieldImpl;
+      {required final String id,
+      required final String name,
+      required final String value,
+      final bool? isFixed,
+      @TimestampOrNullConverter() final DateTime? updatedAt}) = _$CustomFieldImpl;
 
-  factory _CustomField.fromJson(Map<String, dynamic> json) =
-      _$CustomFieldImpl.fromJson;
+  factory _CustomField.fromJson(Map<String, dynamic> json) = _$CustomFieldImpl.fromJson;
 
   @override
   String get id;
@@ -13032,8 +12335,7 @@ abstract class _CustomField implements CustomField {
   DateTime? get updatedAt;
   @override
   @JsonKey(ignore: true)
-  _$$CustomFieldImplCopyWith<_$CustomFieldImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CustomFieldImplCopyWith<_$CustomFieldImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 CustomFieldInput _$CustomFieldInputFromJson(Map<String, dynamic> json) {
@@ -13048,22 +12350,19 @@ mixin _$CustomFieldInput {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CustomFieldInputCopyWith<CustomFieldInput> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CustomFieldInputCopyWith<CustomFieldInput> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CustomFieldInputCopyWith<$Res> {
-  factory $CustomFieldInputCopyWith(
-          CustomFieldInput value, $Res Function(CustomFieldInput) then) =
+  factory $CustomFieldInputCopyWith(CustomFieldInput value, $Res Function(CustomFieldInput) then) =
       _$CustomFieldInputCopyWithImpl<$Res, CustomFieldInput>;
   @useResult
   $Res call({String name, String value, bool isFixed});
 }
 
 /// @nodoc
-class _$CustomFieldInputCopyWithImpl<$Res, $Val extends CustomFieldInput>
-    implements $CustomFieldInputCopyWith<$Res> {
+class _$CustomFieldInputCopyWithImpl<$Res, $Val extends CustomFieldInput> implements $CustomFieldInputCopyWith<$Res> {
   _$CustomFieldInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -13096,10 +12395,8 @@ class _$CustomFieldInputCopyWithImpl<$Res, $Val extends CustomFieldInput>
 }
 
 /// @nodoc
-abstract class _$$CustomFieldInputImplCopyWith<$Res>
-    implements $CustomFieldInputCopyWith<$Res> {
-  factory _$$CustomFieldInputImplCopyWith(_$CustomFieldInputImpl value,
-          $Res Function(_$CustomFieldInputImpl) then) =
+abstract class _$$CustomFieldInputImplCopyWith<$Res> implements $CustomFieldInputCopyWith<$Res> {
+  factory _$$CustomFieldInputImplCopyWith(_$CustomFieldInputImpl value, $Res Function(_$CustomFieldInputImpl) then) =
       __$$CustomFieldInputImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -13107,11 +12404,9 @@ abstract class _$$CustomFieldInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CustomFieldInputImplCopyWithImpl<$Res>
-    extends _$CustomFieldInputCopyWithImpl<$Res, _$CustomFieldInputImpl>
+class __$$CustomFieldInputImplCopyWithImpl<$Res> extends _$CustomFieldInputCopyWithImpl<$Res, _$CustomFieldInputImpl>
     implements _$$CustomFieldInputImplCopyWith<$Res> {
-  __$$CustomFieldInputImplCopyWithImpl(_$CustomFieldInputImpl _value,
-      $Res Function(_$CustomFieldInputImpl) _then)
+  __$$CustomFieldInputImplCopyWithImpl(_$CustomFieldInputImpl _value, $Res Function(_$CustomFieldInputImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -13141,11 +12436,9 @@ class __$$CustomFieldInputImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CustomFieldInputImpl implements _CustomFieldInput {
-  const _$CustomFieldInputImpl(
-      {required this.name, required this.value, this.isFixed = false});
+  const _$CustomFieldInputImpl({required this.name, required this.value, this.isFixed = false});
 
-  factory _$CustomFieldInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CustomFieldInputImplFromJson(json);
+  factory _$CustomFieldInputImpl.fromJson(Map<String, dynamic> json) => _$$CustomFieldInputImplFromJson(json);
 
   @override
   final String name;
@@ -13178,8 +12471,7 @@ class _$CustomFieldInputImpl implements _CustomFieldInput {
   @override
   @pragma('vm:prefer-inline')
   _$$CustomFieldInputImplCopyWith<_$CustomFieldInputImpl> get copyWith =>
-      __$$CustomFieldInputImplCopyWithImpl<_$CustomFieldInputImpl>(
-          this, _$identity);
+      __$$CustomFieldInputImplCopyWithImpl<_$CustomFieldInputImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -13190,13 +12482,10 @@ class _$CustomFieldInputImpl implements _CustomFieldInput {
 }
 
 abstract class _CustomFieldInput implements CustomFieldInput {
-  const factory _CustomFieldInput(
-      {required final String name,
-      required final String value,
-      final bool isFixed}) = _$CustomFieldInputImpl;
+  const factory _CustomFieldInput({required final String name, required final String value, final bool isFixed}) =
+      _$CustomFieldInputImpl;
 
-  factory _CustomFieldInput.fromJson(Map<String, dynamic> json) =
-      _$CustomFieldInputImpl.fromJson;
+  factory _CustomFieldInput.fromJson(Map<String, dynamic> json) = _$CustomFieldInputImpl.fromJson;
 
   @override
   String get name;
@@ -13206,8 +12495,7 @@ abstract class _CustomFieldInput implements CustomFieldInput {
   bool get isFixed;
   @override
   @JsonKey(ignore: true)
-  _$$CustomFieldInputImplCopyWith<_$CustomFieldInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CustomFieldInputImplCopyWith<_$CustomFieldInputImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 DbPartition _$DbPartitionFromJson(Map<String, dynamic> json) {
@@ -13231,14 +12519,12 @@ mixin _$DbPartition {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DbPartitionCopyWith<DbPartition> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DbPartitionCopyWith<DbPartition> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DbPartitionCopyWith<$Res> {
-  factory $DbPartitionCopyWith(
-          DbPartition value, $Res Function(DbPartition) then) =
+  factory $DbPartitionCopyWith(DbPartition value, $Res Function(DbPartition) then) =
       _$DbPartitionCopyWithImpl<$Res, DbPartition>;
   @useResult
   $Res call(
@@ -13255,8 +12541,7 @@ abstract class $DbPartitionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DbPartitionCopyWithImpl<$Res, $Val extends DbPartition>
-    implements $DbPartitionCopyWith<$Res> {
+class _$DbPartitionCopyWithImpl<$Res, $Val extends DbPartition> implements $DbPartitionCopyWith<$Res> {
   _$DbPartitionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -13324,10 +12609,8 @@ class _$DbPartitionCopyWithImpl<$Res, $Val extends DbPartition>
 }
 
 /// @nodoc
-abstract class _$$DbPartitionImplCopyWith<$Res>
-    implements $DbPartitionCopyWith<$Res> {
-  factory _$$DbPartitionImplCopyWith(
-          _$DbPartitionImpl value, $Res Function(_$DbPartitionImpl) then) =
+abstract class _$$DbPartitionImplCopyWith<$Res> implements $DbPartitionCopyWith<$Res> {
+  factory _$$DbPartitionImplCopyWith(_$DbPartitionImpl value, $Res Function(_$DbPartitionImpl) then) =
       __$$DbPartitionImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -13345,11 +12628,9 @@ abstract class _$$DbPartitionImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DbPartitionImplCopyWithImpl<$Res>
-    extends _$DbPartitionCopyWithImpl<$Res, _$DbPartitionImpl>
+class __$$DbPartitionImplCopyWithImpl<$Res> extends _$DbPartitionCopyWithImpl<$Res, _$DbPartitionImpl>
     implements _$$DbPartitionImplCopyWith<$Res> {
-  __$$DbPartitionImplCopyWithImpl(
-      _$DbPartitionImpl _value, $Res Function(_$DbPartitionImpl) _then)
+  __$$DbPartitionImplCopyWithImpl(_$DbPartitionImpl _value, $Res Function(_$DbPartitionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -13426,8 +12707,7 @@ class _$DbPartitionImpl implements _DbPartition {
       this.totalSize,
       this.sizePerRecord});
 
-  factory _$DbPartitionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DbPartitionImplFromJson(json);
+  factory _$DbPartitionImpl.fromJson(Map<String, dynamic> json) => _$$DbPartitionImplFromJson(json);
 
   @override
   final String id;
@@ -13465,38 +12745,21 @@ class _$DbPartitionImpl implements _DbPartition {
         (other.runtimeType == runtimeType &&
             other is _$DbPartitionImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.parentTable, parentTable) ||
-                other.parentTable == parentTable) &&
-            (identical(other.tableName, tableName) ||
-                other.tableName == tableName) &&
-            (identical(other.isCompleted, isCompleted) ||
-                other.isCompleted == isCompleted) &&
-            (identical(other.isDefault, isDefault) ||
-                other.isDefault == isDefault) &&
+            (identical(other.parentTable, parentTable) || other.parentTable == parentTable) &&
+            (identical(other.tableName, tableName) || other.tableName == tableName) &&
+            (identical(other.isCompleted, isCompleted) || other.isCompleted == isCompleted) &&
+            (identical(other.isDefault, isDefault) || other.isDefault == isDefault) &&
             (identical(other.startAt, startAt) || other.startAt == startAt) &&
             (identical(other.endAt, endAt) || other.endAt == endAt) &&
-            (identical(other.numOfRecords, numOfRecords) ||
-                other.numOfRecords == numOfRecords) &&
-            (identical(other.totalSize, totalSize) ||
-                other.totalSize == totalSize) &&
-            (identical(other.sizePerRecord, sizePerRecord) ||
-                other.sizePerRecord == sizePerRecord));
+            (identical(other.numOfRecords, numOfRecords) || other.numOfRecords == numOfRecords) &&
+            (identical(other.totalSize, totalSize) || other.totalSize == totalSize) &&
+            (identical(other.sizePerRecord, sizePerRecord) || other.sizePerRecord == sizePerRecord));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      parentTable,
-      tableName,
-      isCompleted,
-      isDefault,
-      startAt,
-      endAt,
-      numOfRecords,
-      totalSize,
-      sizePerRecord);
+  int get hashCode => Object.hash(runtimeType, id, parentTable, tableName, isCompleted, isDefault, startAt, endAt,
+      numOfRecords, totalSize, sizePerRecord);
 
   @JsonKey(ignore: true)
   @override
@@ -13525,8 +12788,7 @@ abstract class _DbPartition implements DbPartition {
       final double? totalSize,
       final double? sizePerRecord}) = _$DbPartitionImpl;
 
-  factory _DbPartition.fromJson(Map<String, dynamic> json) =
-      _$DbPartitionImpl.fromJson;
+  factory _DbPartition.fromJson(Map<String, dynamic> json) = _$DbPartitionImpl.fromJson;
 
   @override
   String get id;
@@ -13552,8 +12814,7 @@ abstract class _DbPartition implements DbPartition {
   double? get sizePerRecord;
   @override
   @JsonKey(ignore: true)
-  _$$DbPartitionImplCopyWith<_$DbPartitionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DbPartitionImplCopyWith<_$DbPartitionImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Department _$DepartmentFromJson(Map<String, dynamic> json) {
@@ -13568,14 +12829,12 @@ mixin _$Department {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DepartmentCopyWith<Department> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DepartmentCopyWith<Department> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DepartmentCopyWith<$Res> {
-  factory $DepartmentCopyWith(
-          Department value, $Res Function(Department) then) =
+  factory $DepartmentCopyWith(Department value, $Res Function(Department) then) =
       _$DepartmentCopyWithImpl<$Res, Department>;
   @useResult
   $Res call({String id, String name, GenericPermission? permissions});
@@ -13584,8 +12843,7 @@ abstract class $DepartmentCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DepartmentCopyWithImpl<$Res, $Val extends Department>
-    implements $DepartmentCopyWith<$Res> {
+class _$DepartmentCopyWithImpl<$Res, $Val extends Department> implements $DepartmentCopyWith<$Res> {
   _$DepartmentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -13630,10 +12888,8 @@ class _$DepartmentCopyWithImpl<$Res, $Val extends Department>
 }
 
 /// @nodoc
-abstract class _$$DepartmentImplCopyWith<$Res>
-    implements $DepartmentCopyWith<$Res> {
-  factory _$$DepartmentImplCopyWith(
-          _$DepartmentImpl value, $Res Function(_$DepartmentImpl) then) =
+abstract class _$$DepartmentImplCopyWith<$Res> implements $DepartmentCopyWith<$Res> {
+  factory _$$DepartmentImplCopyWith(_$DepartmentImpl value, $Res Function(_$DepartmentImpl) then) =
       __$$DepartmentImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -13644,12 +12900,9 @@ abstract class _$$DepartmentImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DepartmentImplCopyWithImpl<$Res>
-    extends _$DepartmentCopyWithImpl<$Res, _$DepartmentImpl>
+class __$$DepartmentImplCopyWithImpl<$Res> extends _$DepartmentCopyWithImpl<$Res, _$DepartmentImpl>
     implements _$$DepartmentImplCopyWith<$Res> {
-  __$$DepartmentImplCopyWithImpl(
-      _$DepartmentImpl _value, $Res Function(_$DepartmentImpl) _then)
-      : super(_value, _then);
+  __$$DepartmentImplCopyWithImpl(_$DepartmentImpl _value, $Res Function(_$DepartmentImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -13678,11 +12931,9 @@ class __$$DepartmentImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$DepartmentImpl implements _Department {
-  const _$DepartmentImpl(
-      {required this.id, required this.name, this.permissions});
+  const _$DepartmentImpl({required this.id, required this.name, this.permissions});
 
-  factory _$DepartmentImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DepartmentImplFromJson(json);
+  factory _$DepartmentImpl.fromJson(Map<String, dynamic> json) => _$$DepartmentImplFromJson(json);
 
   @override
   final String id;
@@ -13703,8 +12954,7 @@ class _$DepartmentImpl implements _Department {
             other is _$DepartmentImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.permissions, permissions) ||
-                other.permissions == permissions));
+            (identical(other.permissions, permissions) || other.permissions == permissions));
   }
 
   @JsonKey(ignore: true)
@@ -13727,12 +12977,9 @@ class _$DepartmentImpl implements _Department {
 
 abstract class _Department implements Department {
   const factory _Department(
-      {required final String id,
-      required final String name,
-      final GenericPermission? permissions}) = _$DepartmentImpl;
+      {required final String id, required final String name, final GenericPermission? permissions}) = _$DepartmentImpl;
 
-  factory _Department.fromJson(Map<String, dynamic> json) =
-      _$DepartmentImpl.fromJson;
+  factory _Department.fromJson(Map<String, dynamic> json) = _$DepartmentImpl.fromJson;
 
   @override
   String get id;
@@ -13742,8 +12989,7 @@ abstract class _Department implements Department {
   GenericPermission? get permissions;
   @override
   @JsonKey(ignore: true)
-  _$$DepartmentImplCopyWith<_$DepartmentImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DepartmentImplCopyWith<_$DepartmentImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Device _$DeviceFromJson(Map<String, dynamic> json) {
@@ -13777,8 +13023,7 @@ mixin _$Device {
   InboundProtocol? get protocol => throw _privateConstructorUsedError;
 
   /// The [additionalFields] of the device, only will return something when is imported from compatible source.
-  Map<String, dynamic>? get additionalFields =>
-      throw _privateConstructorUsedError;
+  Map<String, dynamic>? get additionalFields => throw _privateConstructorUsedError;
 
   /// The [qrCode] of the device.
   String? get qrCode => throw _privateConstructorUsedError;
@@ -13817,8 +13062,7 @@ mixin _$Device {
 
 /// @nodoc
 abstract class $DeviceCopyWith<$Res> {
-  factory $DeviceCopyWith(Device value, $Res Function(Device) then) =
-      _$DeviceCopyWithImpl<$Res, Device>;
+  factory $DeviceCopyWith(Device value, $Res Function(Device) then) = _$DeviceCopyWithImpl<$Res, Device>;
   @useResult
   $Res call(
       {String id,
@@ -13850,8 +13094,7 @@ abstract class $DeviceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DeviceCopyWithImpl<$Res, $Val extends Device>
-    implements $DeviceCopyWith<$Res> {
+class _$DeviceCopyWithImpl<$Res, $Val extends Device> implements $DeviceCopyWith<$Res> {
   _$DeviceCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -14037,8 +13280,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
 
 /// @nodoc
 abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
-  factory _$$DeviceImplCopyWith(
-          _$DeviceImpl value, $Res Function(_$DeviceImpl) then) =
+  factory _$$DeviceImplCopyWith(_$DeviceImpl value, $Res Function(_$DeviceImpl) then) =
       __$$DeviceImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -14078,12 +13320,9 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$DeviceImplCopyWithImpl<$Res>
-    extends _$DeviceCopyWithImpl<$Res, _$DeviceImpl>
+class __$$DeviceImplCopyWithImpl<$Res> extends _$DeviceCopyWithImpl<$Res, _$DeviceImpl>
     implements _$$DeviceImplCopyWith<$Res> {
-  __$$DeviceImplCopyWithImpl(
-      _$DeviceImpl _value, $Res Function(_$DeviceImpl) _then)
-      : super(_value, _then);
+  __$$DeviceImplCopyWithImpl(_$DeviceImpl _value, $Res Function(_$DeviceImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -14216,8 +13455,7 @@ class _$DeviceImpl implements _Device {
         _commands = commands,
         _access = access;
 
-  factory _$DeviceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DeviceImplFromJson(json);
+  factory _$DeviceImpl.fromJson(Map<String, dynamic> json) => _$$DeviceImplFromJson(json);
 
   @override
   final String id;
@@ -14335,30 +13573,22 @@ class _$DeviceImpl implements _Device {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.ident, ident) || other.ident == ident) &&
-            (identical(other.flespiToken, flespiToken) ||
-                other.flespiToken == flespiToken) &&
+            (identical(other.flespiToken, flespiToken) || other.flespiToken == flespiToken) &&
             (identical(other.modelId, modelId) || other.modelId == modelId) &&
             (identical(other.model, model) || other.model == model) &&
-            (identical(other.protocolId, protocolId) ||
-                other.protocolId == protocolId) &&
-            (identical(other.protocol, protocol) ||
-                other.protocol == protocol) &&
-            const DeepCollectionEquality()
-                .equals(other._additionalFields, _additionalFields) &&
+            (identical(other.protocolId, protocolId) || other.protocolId == protocolId) &&
+            (identical(other.protocol, protocol) || other.protocol == protocol) &&
+            const DeepCollectionEquality().equals(other._additionalFields, _additionalFields) &&
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
             (identical(other.linkQr, linkQr) || other.linkQr == linkQr) &&
             const DeepCollectionEquality().equals(other._commands, _commands) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
-            (identical(other.telemetry, telemetry) ||
-                other.telemetry == telemetry) &&
-            (identical(other.visionProfileId, visionProfileId) ||
-                other.visionProfileId == visionProfileId) &&
-            (identical(other.visionProfile, visionProfile) ||
-                other.visionProfile == visionProfile) &&
+            (identical(other.telemetry, telemetry) || other.telemetry == telemetry) &&
+            (identical(other.visionProfileId, visionProfileId) || other.visionProfileId == visionProfileId) &&
+            (identical(other.visionProfile, visionProfile) || other.visionProfile == visionProfile) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.modbus, modbus) || other.modbus == modbus) &&
-            (identical(other.isSuspended, isSuspended) ||
-                other.isSuspended == isSuspended));
+            (identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended));
   }
 
   @JsonKey(ignore: true)
@@ -14389,8 +13619,7 @@ class _$DeviceImpl implements _Device {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DeviceImplCopyWith<_$DeviceImpl> get copyWith =>
-      __$$DeviceImplCopyWithImpl<_$DeviceImpl>(this, _$identity);
+  _$$DeviceImplCopyWith<_$DeviceImpl> get copyWith => __$$DeviceImplCopyWithImpl<_$DeviceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -14501,8 +13730,7 @@ abstract class _Device implements Device {
   bool? get isSuspended;
   @override
   @JsonKey(ignore: true)
-  _$$DeviceImplCopyWith<_$DeviceImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DeviceImplCopyWith<_$DeviceImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 EmailTemplate _$EmailTemplateFromJson(Map<String, dynamic> json) {
@@ -14528,27 +13756,19 @@ mixin _$EmailTemplate {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $EmailTemplateCopyWith<EmailTemplate> get copyWith =>
-      throw _privateConstructorUsedError;
+  $EmailTemplateCopyWith<EmailTemplate> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EmailTemplateCopyWith<$Res> {
-  factory $EmailTemplateCopyWith(
-          EmailTemplate value, $Res Function(EmailTemplate) then) =
+  factory $EmailTemplateCopyWith(EmailTemplate value, $Res Function(EmailTemplate) then) =
       _$EmailTemplateCopyWithImpl<$Res, EmailTemplate>;
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      String? contentMjml,
-      String? contentTxt,
-      List<Access>? access});
+  $Res call({String id, String name, String? contentMjml, String? contentTxt, List<Access>? access});
 }
 
 /// @nodoc
-class _$EmailTemplateCopyWithImpl<$Res, $Val extends EmailTemplate>
-    implements $EmailTemplateCopyWith<$Res> {
+class _$EmailTemplateCopyWithImpl<$Res, $Val extends EmailTemplate> implements $EmailTemplateCopyWith<$Res> {
   _$EmailTemplateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -14591,27 +13811,18 @@ class _$EmailTemplateCopyWithImpl<$Res, $Val extends EmailTemplate>
 }
 
 /// @nodoc
-abstract class _$$EmailTemplateImplCopyWith<$Res>
-    implements $EmailTemplateCopyWith<$Res> {
-  factory _$$EmailTemplateImplCopyWith(
-          _$EmailTemplateImpl value, $Res Function(_$EmailTemplateImpl) then) =
+abstract class _$$EmailTemplateImplCopyWith<$Res> implements $EmailTemplateCopyWith<$Res> {
+  factory _$$EmailTemplateImplCopyWith(_$EmailTemplateImpl value, $Res Function(_$EmailTemplateImpl) then) =
       __$$EmailTemplateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      String? contentMjml,
-      String? contentTxt,
-      List<Access>? access});
+  $Res call({String id, String name, String? contentMjml, String? contentTxt, List<Access>? access});
 }
 
 /// @nodoc
-class __$$EmailTemplateImplCopyWithImpl<$Res>
-    extends _$EmailTemplateCopyWithImpl<$Res, _$EmailTemplateImpl>
+class __$$EmailTemplateImplCopyWithImpl<$Res> extends _$EmailTemplateCopyWithImpl<$Res, _$EmailTemplateImpl>
     implements _$$EmailTemplateImplCopyWith<$Res> {
-  __$$EmailTemplateImplCopyWithImpl(
-      _$EmailTemplateImpl _value, $Res Function(_$EmailTemplateImpl) _then)
+  __$$EmailTemplateImplCopyWithImpl(_$EmailTemplateImpl _value, $Res Function(_$EmailTemplateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -14652,15 +13863,10 @@ class __$$EmailTemplateImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$EmailTemplateImpl implements _EmailTemplate {
   const _$EmailTemplateImpl(
-      {required this.id,
-      required this.name,
-      this.contentMjml,
-      this.contentTxt,
-      final List<Access>? access})
+      {required this.id, required this.name, this.contentMjml, this.contentTxt, final List<Access>? access})
       : _access = access;
 
-  factory _$EmailTemplateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EmailTemplateImplFromJson(json);
+  factory _$EmailTemplateImpl.fromJson(Map<String, dynamic> json) => _$$EmailTemplateImplFromJson(json);
 
   /// Is the id of the email template
   @override
@@ -14703,17 +13909,15 @@ class _$EmailTemplateImpl implements _EmailTemplate {
             other is _$EmailTemplateImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.contentMjml, contentMjml) ||
-                other.contentMjml == contentMjml) &&
-            (identical(other.contentTxt, contentTxt) ||
-                other.contentTxt == contentTxt) &&
+            (identical(other.contentMjml, contentMjml) || other.contentMjml == contentMjml) &&
+            (identical(other.contentTxt, contentTxt) || other.contentTxt == contentTxt) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, contentMjml,
-      contentTxt, const DeepCollectionEquality().hash(_access));
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, contentMjml, contentTxt, const DeepCollectionEquality().hash(_access));
 
   @JsonKey(ignore: true)
   @override
@@ -14737,8 +13941,7 @@ abstract class _EmailTemplate implements EmailTemplate {
       final String? contentTxt,
       final List<Access>? access}) = _$EmailTemplateImpl;
 
-  factory _EmailTemplate.fromJson(Map<String, dynamic> json) =
-      _$EmailTemplateImpl.fromJson;
+  factory _EmailTemplate.fromJson(Map<String, dynamic> json) = _$EmailTemplateImpl.fromJson;
 
   @override
 
@@ -14762,8 +13965,7 @@ abstract class _EmailTemplate implements EmailTemplate {
   List<Access>? get access;
   @override
   @JsonKey(ignore: true)
-  _$$EmailTemplateImplCopyWith<_$EmailTemplateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$EmailTemplateImplCopyWith<_$EmailTemplateImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Employee _$EmployeeFromJson(Map<String, dynamic> json) {
@@ -14800,8 +14002,7 @@ mixin _$Employee {
   GenericPermission? get permissions => throw _privateConstructorUsedError;
 
   /// [customPermissions] represents the user custom permissions.
-  GenericPermission? get customPermissions =>
-      throw _privateConstructorUsedError;
+  GenericPermission? get customPermissions => throw _privateConstructorUsedError;
 
   /// [mfaEnabled] represents the MFA enabled flag.
   bool get mfaEnabled => throw _privateConstructorUsedError;
@@ -14812,14 +14013,12 @@ mixin _$Employee {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $EmployeeCopyWith<Employee> get copyWith =>
-      throw _privateConstructorUsedError;
+  $EmployeeCopyWith<Employee> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EmployeeCopyWith<$Res> {
-  factory $EmployeeCopyWith(Employee value, $Res Function(Employee) then) =
-      _$EmployeeCopyWithImpl<$Res, Employee>;
+  factory $EmployeeCopyWith(Employee value, $Res Function(Employee) then) = _$EmployeeCopyWithImpl<$Res, Employee>;
   @useResult
   $Res call(
       {String id,
@@ -14843,8 +14042,7 @@ abstract class $EmployeeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$EmployeeCopyWithImpl<$Res, $Val extends Employee>
-    implements $EmployeeCopyWith<$Res> {
+class _$EmployeeCopyWithImpl<$Res, $Val extends Employee> implements $EmployeeCopyWith<$Res> {
   _$EmployeeCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -14982,10 +14180,8 @@ class _$EmployeeCopyWithImpl<$Res, $Val extends Employee>
 }
 
 /// @nodoc
-abstract class _$$EmployeeImplCopyWith<$Res>
-    implements $EmployeeCopyWith<$Res> {
-  factory _$$EmployeeImplCopyWith(
-          _$EmployeeImpl value, $Res Function(_$EmployeeImpl) then) =
+abstract class _$$EmployeeImplCopyWith<$Res> implements $EmployeeCopyWith<$Res> {
+  factory _$$EmployeeImplCopyWith(_$EmployeeImpl value, $Res Function(_$EmployeeImpl) then) =
       __$$EmployeeImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -15016,12 +14212,9 @@ abstract class _$$EmployeeImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$EmployeeImplCopyWithImpl<$Res>
-    extends _$EmployeeCopyWithImpl<$Res, _$EmployeeImpl>
+class __$$EmployeeImplCopyWithImpl<$Res> extends _$EmployeeCopyWithImpl<$Res, _$EmployeeImpl>
     implements _$$EmployeeImplCopyWith<$Res> {
-  __$$EmployeeImplCopyWithImpl(
-      _$EmployeeImpl _value, $Res Function(_$EmployeeImpl) _then)
-      : super(_value, _then);
+  __$$EmployeeImplCopyWithImpl(_$EmployeeImpl _value, $Res Function(_$EmployeeImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -15110,8 +14303,7 @@ class _$EmployeeImpl implements _Employee {
       @MfaMethodConverter() final List<MfaMethod> mfaMethods = const []})
       : _mfaMethods = mfaMethods;
 
-  factory _$EmployeeImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EmployeeImplFromJson(json);
+  factory _$EmployeeImpl.fromJson(Map<String, dynamic> json) => _$$EmployeeImplFromJson(json);
 
   /// [id] represents the user id.
   @override
@@ -15184,41 +14376,21 @@ class _$EmployeeImpl implements _Employee {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.department, department) ||
-                other.department == department) &&
-            (identical(other.departmentId, departmentId) ||
-                other.departmentId == departmentId) &&
-            (identical(other.dynamicAvatar, dynamicAvatar) ||
-                other.dynamicAvatar == dynamicAvatar) &&
+            (identical(other.username, username) || other.username == username) &&
+            (identical(other.department, department) || other.department == department) &&
+            (identical(other.departmentId, departmentId) || other.departmentId == departmentId) &&
+            (identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar) &&
             (identical(other.token, token) || other.token == token) &&
-            (identical(other.permissions, permissions) ||
-                other.permissions == permissions) &&
-            (identical(other.customPermissions, customPermissions) ||
-                other.customPermissions == customPermissions) &&
-            (identical(other.mfaEnabled, mfaEnabled) ||
-                other.mfaEnabled == mfaEnabled) &&
-            const DeepCollectionEquality()
-                .equals(other._mfaMethods, _mfaMethods));
+            (identical(other.permissions, permissions) || other.permissions == permissions) &&
+            (identical(other.customPermissions, customPermissions) || other.customPermissions == customPermissions) &&
+            (identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled) &&
+            const DeepCollectionEquality().equals(other._mfaMethods, _mfaMethods));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      email,
-      username,
-      department,
-      departmentId,
-      dynamicAvatar,
-      token,
-      permissions,
-      customPermissions,
-      mfaEnabled,
-      const DeepCollectionEquality().hash(_mfaMethods));
+  int get hashCode => Object.hash(runtimeType, id, name, email, username, department, departmentId, dynamicAvatar,
+      token, permissions, customPermissions, mfaEnabled, const DeepCollectionEquality().hash(_mfaMethods));
 
   @JsonKey(ignore: true)
   @override
@@ -15249,8 +14421,7 @@ abstract class _Employee implements Employee {
       final bool mfaEnabled,
       @MfaMethodConverter() final List<MfaMethod> mfaMethods}) = _$EmployeeImpl;
 
-  factory _Employee.fromJson(Map<String, dynamic> json) =
-      _$EmployeeImpl.fromJson;
+  factory _Employee.fromJson(Map<String, dynamic> json) = _$EmployeeImpl.fromJson;
 
   @override
 
@@ -15303,8 +14474,7 @@ abstract class _Employee implements Employee {
   List<MfaMethod> get mfaMethods;
   @override
   @JsonKey(ignore: true)
-  _$$EmployeeImplCopyWith<_$EmployeeImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$EmployeeImplCopyWith<_$EmployeeImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 FtpAccount _$FtpAccountFromJson(Map<String, dynamic> json) {
@@ -15327,22 +14497,19 @@ mixin _$FtpAccount {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FtpAccountCopyWith<FtpAccount> get copyWith =>
-      throw _privateConstructorUsedError;
+  $FtpAccountCopyWith<FtpAccount> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $FtpAccountCopyWith<$Res> {
-  factory $FtpAccountCopyWith(
-          FtpAccount value, $Res Function(FtpAccount) then) =
+  factory $FtpAccountCopyWith(FtpAccount value, $Res Function(FtpAccount) then) =
       _$FtpAccountCopyWithImpl<$Res, FtpAccount>;
   @useResult
   $Res call({String? host, int? port, String? username, String? password});
 }
 
 /// @nodoc
-class _$FtpAccountCopyWithImpl<$Res, $Val extends FtpAccount>
-    implements $FtpAccountCopyWith<$Res> {
+class _$FtpAccountCopyWithImpl<$Res, $Val extends FtpAccount> implements $FtpAccountCopyWith<$Res> {
   _$FtpAccountCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -15380,10 +14547,8 @@ class _$FtpAccountCopyWithImpl<$Res, $Val extends FtpAccount>
 }
 
 /// @nodoc
-abstract class _$$FtpAccountImplCopyWith<$Res>
-    implements $FtpAccountCopyWith<$Res> {
-  factory _$$FtpAccountImplCopyWith(
-          _$FtpAccountImpl value, $Res Function(_$FtpAccountImpl) then) =
+abstract class _$$FtpAccountImplCopyWith<$Res> implements $FtpAccountCopyWith<$Res> {
+  factory _$$FtpAccountImplCopyWith(_$FtpAccountImpl value, $Res Function(_$FtpAccountImpl) then) =
       __$$FtpAccountImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -15391,12 +14556,9 @@ abstract class _$$FtpAccountImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FtpAccountImplCopyWithImpl<$Res>
-    extends _$FtpAccountCopyWithImpl<$Res, _$FtpAccountImpl>
+class __$$FtpAccountImplCopyWithImpl<$Res> extends _$FtpAccountCopyWithImpl<$Res, _$FtpAccountImpl>
     implements _$$FtpAccountImplCopyWith<$Res> {
-  __$$FtpAccountImplCopyWithImpl(
-      _$FtpAccountImpl _value, $Res Function(_$FtpAccountImpl) _then)
-      : super(_value, _then);
+  __$$FtpAccountImplCopyWithImpl(_$FtpAccountImpl _value, $Res Function(_$FtpAccountImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -15432,8 +14594,7 @@ class __$$FtpAccountImplCopyWithImpl<$Res>
 class _$FtpAccountImpl implements _FtpAccount {
   const _$FtpAccountImpl({this.host, this.port, this.username, this.password});
 
-  factory _$FtpAccountImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FtpAccountImplFromJson(json);
+  factory _$FtpAccountImpl.fromJson(Map<String, dynamic> json) => _$$FtpAccountImplFromJson(json);
 
   /// [host] is the host of the ftp account.
   @override
@@ -15463,10 +14624,8 @@ class _$FtpAccountImpl implements _FtpAccount {
             other is _$FtpAccountImpl &&
             (identical(other.host, host) || other.host == host) &&
             (identical(other.port, port) || other.port == port) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.password, password) ||
-                other.password == password));
+            (identical(other.username, username) || other.username == username) &&
+            (identical(other.password, password) || other.password == password));
   }
 
   @JsonKey(ignore: true)
@@ -15488,14 +14647,10 @@ class _$FtpAccountImpl implements _FtpAccount {
 }
 
 abstract class _FtpAccount implements FtpAccount {
-  const factory _FtpAccount(
-      {final String? host,
-      final int? port,
-      final String? username,
-      final String? password}) = _$FtpAccountImpl;
+  const factory _FtpAccount({final String? host, final int? port, final String? username, final String? password}) =
+      _$FtpAccountImpl;
 
-  factory _FtpAccount.fromJson(Map<String, dynamic> json) =
-      _$FtpAccountImpl.fromJson;
+  factory _FtpAccount.fromJson(Map<String, dynamic> json) = _$FtpAccountImpl.fromJson;
 
   @override
 
@@ -15515,8 +14670,7 @@ abstract class _FtpAccount implements FtpAccount {
   String? get password;
   @override
   @JsonKey(ignore: true)
-  _$$FtpAccountImplCopyWith<_$FtpAccountImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$FtpAccountImplCopyWith<_$FtpAccountImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 LayrzFunction _$LayrzFunctionFromJson(Map<String, dynamic> json) {
@@ -15574,14 +14728,12 @@ mixin _$LayrzFunction {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LayrzFunctionCopyWith<LayrzFunction> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LayrzFunctionCopyWith<LayrzFunction> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LayrzFunctionCopyWith<$Res> {
-  factory $LayrzFunctionCopyWith(
-          LayrzFunction value, $Res Function(LayrzFunction) then) =
+  factory $LayrzFunctionCopyWith(LayrzFunction value, $Res Function(LayrzFunction) then) =
       _$LayrzFunctionCopyWithImpl<$Res, LayrzFunction>;
   @useResult
   $Res call(
@@ -15606,8 +14758,7 @@ abstract class $LayrzFunctionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LayrzFunctionCopyWithImpl<$Res, $Val extends LayrzFunction>
-    implements $LayrzFunctionCopyWith<$Res> {
+class _$LayrzFunctionCopyWithImpl<$Res, $Val extends LayrzFunction> implements $LayrzFunctionCopyWith<$Res> {
   _$LayrzFunctionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -15724,10 +14875,8 @@ class _$LayrzFunctionCopyWithImpl<$Res, $Val extends LayrzFunction>
 }
 
 /// @nodoc
-abstract class _$$LayrzFunctionImplCopyWith<$Res>
-    implements $LayrzFunctionCopyWith<$Res> {
-  factory _$$LayrzFunctionImplCopyWith(
-          _$LayrzFunctionImpl value, $Res Function(_$LayrzFunctionImpl) then) =
+abstract class _$$LayrzFunctionImplCopyWith<$Res> implements $LayrzFunctionCopyWith<$Res> {
+  factory _$$LayrzFunctionImplCopyWith(_$LayrzFunctionImpl value, $Res Function(_$LayrzFunctionImpl) then) =
       __$$LayrzFunctionImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -15755,11 +14904,9 @@ abstract class _$$LayrzFunctionImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LayrzFunctionImplCopyWithImpl<$Res>
-    extends _$LayrzFunctionCopyWithImpl<$Res, _$LayrzFunctionImpl>
+class __$$LayrzFunctionImplCopyWithImpl<$Res> extends _$LayrzFunctionCopyWithImpl<$Res, _$LayrzFunctionImpl>
     implements _$$LayrzFunctionImplCopyWith<$Res> {
-  __$$LayrzFunctionImplCopyWithImpl(
-      _$LayrzFunctionImpl _value, $Res Function(_$LayrzFunctionImpl) _then)
+  __$$LayrzFunctionImplCopyWithImpl(_$LayrzFunctionImpl _value, $Res Function(_$LayrzFunctionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -15873,8 +15020,7 @@ class _$LayrzFunctionImpl implements _LayrzFunction {
         _assets = assets,
         _access = access;
 
-  factory _$LayrzFunctionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LayrzFunctionImplFromJson(json);
+  factory _$LayrzFunctionImpl.fromJson(Map<String, dynamic> json) => _$$LayrzFunctionImplFromJson(json);
 
   /// [id] is the unique identifier of the function.
   @override
@@ -15910,8 +15056,7 @@ class _$LayrzFunctionImpl implements _LayrzFunction {
   List<String>? get externalIdentifiers {
     final value = _externalIdentifiers;
     if (value == null) return null;
-    if (_externalIdentifiers is EqualUnmodifiableListView)
-      return _externalIdentifiers;
+    if (_externalIdentifiers is EqualUnmodifiableListView) return _externalIdentifiers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -16014,25 +15159,17 @@ class _$LayrzFunctionImpl implements _LayrzFunction {
             other is _$LayrzFunctionImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.algorithmId, algorithmId) ||
-                other.algorithmId == algorithmId) &&
-            (identical(other.algorithm, algorithm) ||
-                other.algorithm == algorithm) &&
-            (identical(other.maximumTime, maximumTime) ||
-                other.maximumTime == maximumTime) &&
-            (identical(other.minutesDelta, minutesDelta) ||
-                other.minutesDelta == minutesDelta) &&
-            const DeepCollectionEquality()
-                .equals(other._externalIdentifiers, _externalIdentifiers) &&
+            (identical(other.algorithmId, algorithmId) || other.algorithmId == algorithmId) &&
+            (identical(other.algorithm, algorithm) || other.algorithm == algorithm) &&
+            (identical(other.maximumTime, maximumTime) || other.maximumTime == maximumTime) &&
+            (identical(other.minutesDelta, minutesDelta) || other.minutesDelta == minutesDelta) &&
+            const DeepCollectionEquality().equals(other._externalIdentifiers, _externalIdentifiers) &&
             (identical(other.token, token) || other.token == token) &&
-            const DeepCollectionEquality()
-                .equals(other._credentials, _credentials) &&
+            const DeepCollectionEquality().equals(other._credentials, _credentials) &&
             (identical(other.ftp, ftp) || other.ftp == ftp) &&
-            const DeepCollectionEquality()
-                .equals(other._groupsIds, _groupsIds) &&
+            const DeepCollectionEquality().equals(other._groupsIds, _groupsIds) &&
             const DeepCollectionEquality().equals(other._groups, _groups) &&
-            const DeepCollectionEquality()
-                .equals(other._assetsIds, _assetsIds) &&
+            const DeepCollectionEquality().equals(other._assetsIds, _assetsIds) &&
             const DeepCollectionEquality().equals(other._assets, _assets) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
@@ -16089,8 +15226,7 @@ abstract class _LayrzFunction implements LayrzFunction {
       final List<Asset>? assets,
       final List<Access>? access}) = _$LayrzFunctionImpl;
 
-  factory _LayrzFunction.fromJson(Map<String, dynamic> json) =
-      _$LayrzFunctionImpl.fromJson;
+  factory _LayrzFunction.fromJson(Map<String, dynamic> json) = _$LayrzFunctionImpl.fromJson;
 
   @override
 
@@ -16156,12 +15292,10 @@ abstract class _LayrzFunction implements LayrzFunction {
   List<Access>? get access;
   @override
   @JsonKey(ignore: true)
-  _$$LayrzFunctionImplCopyWith<_$LayrzFunctionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LayrzFunctionImplCopyWith<_$LayrzFunctionImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
-GenericPermissionItem _$GenericPermissionItemFromJson(
-    Map<String, dynamic> json) {
+GenericPermissionItem _$GenericPermissionItemFromJson(Map<String, dynamic> json) {
   return _GenericPermissionItem.fromJson(json);
 }
 
@@ -16177,29 +15311,19 @@ mixin _$GenericPermissionItem {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GenericPermissionItemCopyWith<GenericPermissionItem> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GenericPermissionItemCopyWith<GenericPermissionItem> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GenericPermissionItemCopyWith<$Res> {
-  factory $GenericPermissionItemCopyWith(GenericPermissionItem value,
-          $Res Function(GenericPermissionItem) then) =
+  factory $GenericPermissionItemCopyWith(GenericPermissionItem value, $Res Function(GenericPermissionItem) then) =
       _$GenericPermissionItemCopyWithImpl<$Res, GenericPermissionItem>;
   @useResult
-  $Res call(
-      {bool read,
-      bool write,
-      bool create,
-      bool delete,
-      bool plan,
-      bool loginas,
-      bool suspend});
+  $Res call({bool read, bool write, bool create, bool delete, bool plan, bool loginas, bool suspend});
 }
 
 /// @nodoc
-class _$GenericPermissionItemCopyWithImpl<$Res,
-        $Val extends GenericPermissionItem>
+class _$GenericPermissionItemCopyWithImpl<$Res, $Val extends GenericPermissionItem>
     implements $GenericPermissionItemCopyWith<$Res> {
   _$GenericPermissionItemCopyWithImpl(this._value, this._then);
 
@@ -16253,31 +15377,21 @@ class _$GenericPermissionItemCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$GenericPermissionItemImplCopyWith<$Res>
-    implements $GenericPermissionItemCopyWith<$Res> {
+abstract class _$$GenericPermissionItemImplCopyWith<$Res> implements $GenericPermissionItemCopyWith<$Res> {
   factory _$$GenericPermissionItemImplCopyWith(
-          _$GenericPermissionItemImpl value,
-          $Res Function(_$GenericPermissionItemImpl) then) =
+          _$GenericPermissionItemImpl value, $Res Function(_$GenericPermissionItemImpl) then) =
       __$$GenericPermissionItemImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {bool read,
-      bool write,
-      bool create,
-      bool delete,
-      bool plan,
-      bool loginas,
-      bool suspend});
+  $Res call({bool read, bool write, bool create, bool delete, bool plan, bool loginas, bool suspend});
 }
 
 /// @nodoc
 class __$$GenericPermissionItemImplCopyWithImpl<$Res>
-    extends _$GenericPermissionItemCopyWithImpl<$Res,
-        _$GenericPermissionItemImpl>
+    extends _$GenericPermissionItemCopyWithImpl<$Res, _$GenericPermissionItemImpl>
     implements _$$GenericPermissionItemImplCopyWith<$Res> {
-  __$$GenericPermissionItemImplCopyWithImpl(_$GenericPermissionItemImpl _value,
-      $Res Function(_$GenericPermissionItemImpl) _then)
+  __$$GenericPermissionItemImplCopyWithImpl(
+      _$GenericPermissionItemImpl _value, $Res Function(_$GenericPermissionItemImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -16336,8 +15450,7 @@ class _$GenericPermissionItemImpl implements _GenericPermissionItem {
       this.loginas = false,
       this.suspend = false});
 
-  factory _$GenericPermissionItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GenericPermissionItemImplFromJson(json);
+  factory _$GenericPermissionItemImpl.fromJson(Map<String, dynamic> json) => _$$GenericPermissionItemImplFromJson(json);
 
   @override
   @JsonKey()
@@ -16382,15 +15495,13 @@ class _$GenericPermissionItemImpl implements _GenericPermissionItem {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, read, write, create, delete, plan, loginas, suspend);
+  int get hashCode => Object.hash(runtimeType, read, write, create, delete, plan, loginas, suspend);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GenericPermissionItemImplCopyWith<_$GenericPermissionItemImpl>
-      get copyWith => __$$GenericPermissionItemImplCopyWithImpl<
-          _$GenericPermissionItemImpl>(this, _$identity);
+  _$$GenericPermissionItemImplCopyWith<_$GenericPermissionItemImpl> get copyWith =>
+      __$$GenericPermissionItemImplCopyWithImpl<_$GenericPermissionItemImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -16410,8 +15521,7 @@ abstract class _GenericPermissionItem implements GenericPermissionItem {
       final bool loginas,
       final bool suspend}) = _$GenericPermissionItemImpl;
 
-  factory _GenericPermissionItem.fromJson(Map<String, dynamic> json) =
-      _$GenericPermissionItemImpl.fromJson;
+  factory _GenericPermissionItem.fromJson(Map<String, dynamic> json) = _$GenericPermissionItemImpl.fromJson;
 
   @override
   bool get read;
@@ -16429,8 +15539,7 @@ abstract class _GenericPermissionItem implements GenericPermissionItem {
   bool get suspend;
   @override
   @JsonKey(ignore: true)
-  _$$GenericPermissionItemImplCopyWith<_$GenericPermissionItemImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$GenericPermissionItemImplCopyWith<_$GenericPermissionItemImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 GenericPermission _$GenericPermissionFromJson(Map<String, dynamic> json) {
@@ -16454,14 +15563,12 @@ mixin _$GenericPermission {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GenericPermissionCopyWith<GenericPermission> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GenericPermissionCopyWith<GenericPermission> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GenericPermissionCopyWith<$Res> {
-  factory $GenericPermissionCopyWith(
-          GenericPermission value, $Res Function(GenericPermission) then) =
+  factory $GenericPermissionCopyWith(GenericPermission value, $Res Function(GenericPermission) then) =
       _$GenericPermissionCopyWithImpl<$Res, GenericPermission>;
   @useResult
   $Res call(
@@ -16716,10 +15823,8 @@ class _$GenericPermissionCopyWithImpl<$Res, $Val extends GenericPermission>
 }
 
 /// @nodoc
-abstract class _$$GenericPermissionImplCopyWith<$Res>
-    implements $GenericPermissionCopyWith<$Res> {
-  factory _$$GenericPermissionImplCopyWith(_$GenericPermissionImpl value,
-          $Res Function(_$GenericPermissionImpl) then) =
+abstract class _$$GenericPermissionImplCopyWith<$Res> implements $GenericPermissionCopyWith<$Res> {
+  factory _$$GenericPermissionImplCopyWith(_$GenericPermissionImpl value, $Res Function(_$GenericPermissionImpl) then) =
       __$$GenericPermissionImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -16764,11 +15869,9 @@ abstract class _$$GenericPermissionImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GenericPermissionImplCopyWithImpl<$Res>
-    extends _$GenericPermissionCopyWithImpl<$Res, _$GenericPermissionImpl>
+class __$$GenericPermissionImplCopyWithImpl<$Res> extends _$GenericPermissionCopyWithImpl<$Res, _$GenericPermissionImpl>
     implements _$$GenericPermissionImplCopyWith<$Res> {
-  __$$GenericPermissionImplCopyWithImpl(_$GenericPermissionImpl _value,
-      $Res Function(_$GenericPermissionImpl) _then)
+  __$$GenericPermissionImplCopyWithImpl(_$GenericPermissionImpl _value, $Res Function(_$GenericPermissionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -16857,8 +15960,7 @@ class _$GenericPermissionImpl implements _GenericPermission {
       this.shortcuts,
       this.layers});
 
-  factory _$GenericPermissionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GenericPermissionImplFromJson(json);
+  factory _$GenericPermissionImpl.fromJson(Map<String, dynamic> json) => _$$GenericPermissionImplFromJson(json);
 
   @override
   final GenericPermissionItem? apps;
@@ -16897,48 +15999,28 @@ class _$GenericPermissionImpl implements _GenericPermission {
             other is _$GenericPermissionImpl &&
             (identical(other.apps, apps) || other.apps == apps) &&
             (identical(other.users, users) || other.users == users) &&
-            (identical(other.firmwares, firmwares) ||
-                other.firmwares == firmwares) &&
-            (identical(other.employees, employees) ||
-                other.employees == employees) &&
-            (identical(other.languages, languages) ||
-                other.languages == languages) &&
-            (identical(other.categories, categories) ||
-                other.categories == categories) &&
-            (identical(other.departments, departments) ||
-                other.departments == departments) &&
-            (identical(other.protocols, protocols) ||
-                other.protocols == protocols) &&
+            (identical(other.firmwares, firmwares) || other.firmwares == firmwares) &&
+            (identical(other.employees, employees) || other.employees == employees) &&
+            (identical(other.languages, languages) || other.languages == languages) &&
+            (identical(other.categories, categories) || other.categories == categories) &&
+            (identical(other.departments, departments) || other.departments == departments) &&
+            (identical(other.protocols, protocols) || other.protocols == protocols) &&
             (identical(other.billing, billing) || other.billing == billing) &&
             (identical(other.cycles, cycles) || other.cycles == cycles) &&
-            (identical(other.shortcuts, shortcuts) ||
-                other.shortcuts == shortcuts) &&
+            (identical(other.shortcuts, shortcuts) || other.shortcuts == shortcuts) &&
             (identical(other.layers, layers) || other.layers == layers));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      apps,
-      users,
-      firmwares,
-      employees,
-      languages,
-      categories,
-      departments,
-      protocols,
-      billing,
-      cycles,
-      shortcuts,
-      layers);
+  int get hashCode => Object.hash(runtimeType, apps, users, firmwares, employees, languages, categories, departments,
+      protocols, billing, cycles, shortcuts, layers);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GenericPermissionImplCopyWith<_$GenericPermissionImpl> get copyWith =>
-      __$$GenericPermissionImplCopyWithImpl<_$GenericPermissionImpl>(
-          this, _$identity);
+      __$$GenericPermissionImplCopyWithImpl<_$GenericPermissionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -16963,8 +16045,7 @@ abstract class _GenericPermission implements GenericPermission {
       final GenericPermissionItem? shortcuts,
       final GenericPermissionItem? layers}) = _$GenericPermissionImpl;
 
-  factory _GenericPermission.fromJson(Map<String, dynamic> json) =
-      _$GenericPermissionImpl.fromJson;
+  factory _GenericPermission.fromJson(Map<String, dynamic> json) = _$GenericPermissionImpl.fromJson;
 
   @override
   GenericPermissionItem? get apps;
@@ -16992,8 +16073,7 @@ abstract class _GenericPermission implements GenericPermission {
   GenericPermissionItem? get layers;
   @override
   @JsonKey(ignore: true)
-  _$$GenericPermissionImplCopyWith<_$GenericPermissionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GenericPermissionImplCopyWith<_$GenericPermissionImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 GeofencePoint _$GeofencePointFromJson(Map<String, dynamic> json) {
@@ -17007,22 +16087,19 @@ mixin _$GeofencePoint {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GeofencePointCopyWith<GeofencePoint> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GeofencePointCopyWith<GeofencePoint> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GeofencePointCopyWith<$Res> {
-  factory $GeofencePointCopyWith(
-          GeofencePoint value, $Res Function(GeofencePoint) then) =
+  factory $GeofencePointCopyWith(GeofencePoint value, $Res Function(GeofencePoint) then) =
       _$GeofencePointCopyWithImpl<$Res, GeofencePoint>;
   @useResult
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class _$GeofencePointCopyWithImpl<$Res, $Val extends GeofencePoint>
-    implements $GeofencePointCopyWith<$Res> {
+class _$GeofencePointCopyWithImpl<$Res, $Val extends GeofencePoint> implements $GeofencePointCopyWith<$Res> {
   _$GeofencePointCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -17050,10 +16127,8 @@ class _$GeofencePointCopyWithImpl<$Res, $Val extends GeofencePoint>
 }
 
 /// @nodoc
-abstract class _$$GeofencePointImplCopyWith<$Res>
-    implements $GeofencePointCopyWith<$Res> {
-  factory _$$GeofencePointImplCopyWith(
-          _$GeofencePointImpl value, $Res Function(_$GeofencePointImpl) then) =
+abstract class _$$GeofencePointImplCopyWith<$Res> implements $GeofencePointCopyWith<$Res> {
+  factory _$$GeofencePointImplCopyWith(_$GeofencePointImpl value, $Res Function(_$GeofencePointImpl) then) =
       __$$GeofencePointImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -17061,11 +16136,9 @@ abstract class _$$GeofencePointImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GeofencePointImplCopyWithImpl<$Res>
-    extends _$GeofencePointCopyWithImpl<$Res, _$GeofencePointImpl>
+class __$$GeofencePointImplCopyWithImpl<$Res> extends _$GeofencePointCopyWithImpl<$Res, _$GeofencePointImpl>
     implements _$$GeofencePointImplCopyWith<$Res> {
-  __$$GeofencePointImplCopyWithImpl(
-      _$GeofencePointImpl _value, $Res Function(_$GeofencePointImpl) _then)
+  __$$GeofencePointImplCopyWithImpl(_$GeofencePointImpl _value, $Res Function(_$GeofencePointImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -17092,8 +16165,7 @@ class __$$GeofencePointImplCopyWithImpl<$Res>
 class _$GeofencePointImpl implements _GeofencePoint {
   const _$GeofencePointImpl({required this.latitude, required this.longitude});
 
-  factory _$GeofencePointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GeofencePointImplFromJson(json);
+  factory _$GeofencePointImpl.fromJson(Map<String, dynamic> json) => _$$GeofencePointImplFromJson(json);
 
   @override
   final double latitude;
@@ -17110,10 +16182,8 @@ class _$GeofencePointImpl implements _GeofencePoint {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GeofencePointImpl &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude));
+            (identical(other.latitude, latitude) || other.latitude == latitude) &&
+            (identical(other.longitude, longitude) || other.longitude == longitude));
   }
 
   @JsonKey(ignore: true)
@@ -17135,12 +16205,9 @@ class _$GeofencePointImpl implements _GeofencePoint {
 }
 
 abstract class _GeofencePoint implements GeofencePoint {
-  const factory _GeofencePoint(
-      {required final double latitude,
-      required final double longitude}) = _$GeofencePointImpl;
+  const factory _GeofencePoint({required final double latitude, required final double longitude}) = _$GeofencePointImpl;
 
-  factory _GeofencePoint.fromJson(Map<String, dynamic> json) =
-      _$GeofencePointImpl.fromJson;
+  factory _GeofencePoint.fromJson(Map<String, dynamic> json) = _$GeofencePointImpl.fromJson;
 
   @override
   double get latitude;
@@ -17148,8 +16215,7 @@ abstract class _GeofencePoint implements GeofencePoint {
   double get longitude;
   @override
   @JsonKey(ignore: true)
-  _$$GeofencePointImplCopyWith<_$GeofencePointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GeofencePointImplCopyWith<_$GeofencePointImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Geofence _$GeofenceFromJson(Map<String, dynamic> json) {
@@ -17219,14 +16285,12 @@ mixin _$Geofence {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GeofenceCopyWith<Geofence> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GeofenceCopyWith<Geofence> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GeofenceCopyWith<$Res> {
-  factory $GeofenceCopyWith(Geofence value, $Res Function(Geofence) then) =
-      _$GeofenceCopyWithImpl<$Res, Geofence>;
+  factory $GeofenceCopyWith(Geofence value, $Res Function(Geofence) then) = _$GeofenceCopyWithImpl<$Res, Geofence>;
   @useResult
   $Res call(
       {String id,
@@ -17252,8 +16316,7 @@ abstract class $GeofenceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GeofenceCopyWithImpl<$Res, $Val extends Geofence>
-    implements $GeofenceCopyWith<$Res> {
+class _$GeofenceCopyWithImpl<$Res, $Val extends Geofence> implements $GeofenceCopyWith<$Res> {
   _$GeofenceCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -17373,10 +16436,8 @@ class _$GeofenceCopyWithImpl<$Res, $Val extends Geofence>
 }
 
 /// @nodoc
-abstract class _$$GeofenceImplCopyWith<$Res>
-    implements $GeofenceCopyWith<$Res> {
-  factory _$$GeofenceImplCopyWith(
-          _$GeofenceImpl value, $Res Function(_$GeofenceImpl) then) =
+abstract class _$$GeofenceImplCopyWith<$Res> implements $GeofenceCopyWith<$Res> {
+  factory _$$GeofenceImplCopyWith(_$GeofenceImpl value, $Res Function(_$GeofenceImpl) then) =
       __$$GeofenceImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -17405,12 +16466,9 @@ abstract class _$$GeofenceImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GeofenceImplCopyWithImpl<$Res>
-    extends _$GeofenceCopyWithImpl<$Res, _$GeofenceImpl>
+class __$$GeofenceImplCopyWithImpl<$Res> extends _$GeofenceCopyWithImpl<$Res, _$GeofenceImpl>
     implements _$$GeofenceImplCopyWith<$Res> {
-  __$$GeofenceImplCopyWithImpl(
-      _$GeofenceImpl _value, $Res Function(_$GeofenceImpl) _then)
-      : super(_value, _then);
+  __$$GeofenceImplCopyWithImpl(_$GeofenceImpl _value, $Res Function(_$GeofenceImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -17542,8 +16600,7 @@ class _$GeofenceImpl implements _Geofence {
         _mappitRoutes = mappitRoutes,
         _mappitRouteIds = mappitRouteIds;
 
-  factory _$GeofenceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GeofenceImplFromJson(json);
+  factory _$GeofenceImpl.fromJson(Map<String, dynamic> json) => _$$GeofenceImplFromJson(json);
 
   /// ID of the geofence entity. This ID is unique.
   @override
@@ -17709,29 +16766,21 @@ class _$GeofenceImpl implements _Geofence {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.mode, mode) || other.mode == mode) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            (identical(other.description, description) || other.description == description) &&
             (identical(other.color, color) || other.color == color) &&
             const DeepCollectionEquality().equals(other._path, _path) &&
             (identical(other.radius, radius) || other.radius == radius) &&
-            (identical(other.resourceId, resourceId) ||
-                other.resourceId == resourceId) &&
-            const DeepCollectionEquality()
-                .equals(other._assetsInside, _assetsInside) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            const DeepCollectionEquality()
-                .equals(other._childrenIds, _childrenIds) &&
+            (identical(other.resourceId, resourceId) || other.resourceId == resourceId) &&
+            const DeepCollectionEquality().equals(other._assetsInside, _assetsInside) &&
+            (identical(other.category, category) || other.category == category) &&
+            const DeepCollectionEquality().equals(other._childrenIds, _childrenIds) &&
             const DeepCollectionEquality().equals(other._children, _children) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
-            const DeepCollectionEquality()
-                .equals(other._customFields, _customFields) &&
+            const DeepCollectionEquality().equals(other._customFields, _customFields) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
             (identical(other.owner, owner) || other.owner == owner) &&
-            const DeepCollectionEquality()
-                .equals(other._mappitRoutes, _mappitRoutes) &&
-            const DeepCollectionEquality()
-                .equals(other._mappitRouteIds, _mappitRouteIds));
+            const DeepCollectionEquality().equals(other._mappitRoutes, _mappitRoutes) &&
+            const DeepCollectionEquality().equals(other._mappitRouteIds, _mappitRouteIds));
   }
 
   @JsonKey(ignore: true)
@@ -17792,8 +16841,7 @@ abstract class _Geofence implements Geofence {
       final List<MappitRoute>? mappitRoutes,
       final List<String>? mappitRouteIds}) = _$GeofenceImpl;
 
-  factory _Geofence.fromJson(Map<String, dynamic> json) =
-      _$GeofenceImpl.fromJson;
+  factory _Geofence.fromJson(Map<String, dynamic> json) = _$GeofenceImpl.fromJson;
 
   @override
 
@@ -17874,8 +16922,7 @@ abstract class _Geofence implements Geofence {
   List<String>? get mappitRouteIds;
   @override
   @JsonKey(ignore: true)
-  _$$GeofenceImplCopyWith<_$GeofenceImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GeofenceImplCopyWith<_$GeofenceImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 GeofenceInput _$GeofenceInputFromJson(Map<String, dynamic> json) {
@@ -17932,14 +16979,12 @@ mixin _$GeofenceInput {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GeofenceInputCopyWith<GeofenceInput> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GeofenceInputCopyWith<GeofenceInput> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GeofenceInputCopyWith<$Res> {
-  factory $GeofenceInputCopyWith(
-          GeofenceInput value, $Res Function(GeofenceInput) then) =
+  factory $GeofenceInputCopyWith(GeofenceInput value, $Res Function(GeofenceInput) then) =
       _$GeofenceInputCopyWithImpl<$Res, GeofenceInput>;
   @useResult
   $Res call(
@@ -17953,8 +16998,7 @@ abstract class $GeofenceInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GeofenceInputCopyWithImpl<$Res, $Val extends GeofenceInput>
-    implements $GeofenceInputCopyWith<$Res> {
+class _$GeofenceInputCopyWithImpl<$Res, $Val extends GeofenceInput> implements $GeofenceInputCopyWith<$Res> {
   _$GeofenceInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -18007,10 +17051,8 @@ class _$GeofenceInputCopyWithImpl<$Res, $Val extends GeofenceInput>
 }
 
 /// @nodoc
-abstract class _$$GeofenceInputImplCopyWith<$Res>
-    implements $GeofenceInputCopyWith<$Res> {
-  factory _$$GeofenceInputImplCopyWith(
-          _$GeofenceInputImpl value, $Res Function(_$GeofenceInputImpl) then) =
+abstract class _$$GeofenceInputImplCopyWith<$Res> implements $GeofenceInputCopyWith<$Res> {
+  factory _$$GeofenceInputImplCopyWith(_$GeofenceInputImpl value, $Res Function(_$GeofenceInputImpl) then) =
       __$$GeofenceInputImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -18025,11 +17067,9 @@ abstract class _$$GeofenceInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GeofenceInputImplCopyWithImpl<$Res>
-    extends _$GeofenceInputCopyWithImpl<$Res, _$GeofenceInputImpl>
+class __$$GeofenceInputImplCopyWithImpl<$Res> extends _$GeofenceInputCopyWithImpl<$Res, _$GeofenceInputImpl>
     implements _$$GeofenceInputImplCopyWith<$Res> {
-  __$$GeofenceInputImplCopyWithImpl(
-      _$GeofenceInputImpl _value, $Res Function(_$GeofenceInputImpl) _then)
+  __$$GeofenceInputImplCopyWithImpl(_$GeofenceInputImpl _value, $Res Function(_$GeofenceInputImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -18088,8 +17128,7 @@ class _$GeofenceInputImpl implements _GeofenceInput {
       this.path,
       this.radius});
 
-  factory _$GeofenceInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GeofenceInputImplFromJson(json);
+  factory _$GeofenceInputImpl.fromJson(Map<String, dynamic> json) => _$$GeofenceInputImplFromJson(json);
 
   /// ID of the geofence entity. This ID is unique.
   @override
@@ -18150,8 +17189,7 @@ abstract class _GeofenceInput implements GeofenceInput {
       List<GeofencePoint>? path,
       double? radius}) = _$GeofenceInputImpl;
 
-  factory _GeofenceInput.fromJson(Map<String, dynamic> json) =
-      _$GeofenceInputImpl.fromJson;
+  factory _GeofenceInput.fromJson(Map<String, dynamic> json) = _$GeofenceInputImpl.fromJson;
 
   @override
 
@@ -18208,8 +17246,7 @@ abstract class _GeofenceInput implements GeofenceInput {
   set radius(double? value);
   @override
   @JsonKey(ignore: true)
-  _$$GeofenceInputImplCopyWith<_$GeofenceInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GeofenceInputImplCopyWith<_$GeofenceInputImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 GeoPoint _$GeoPointFromJson(Map<String, dynamic> json) {
@@ -18223,21 +17260,18 @@ mixin _$GeoPoint {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $GeoPointCopyWith<GeoPoint> get copyWith =>
-      throw _privateConstructorUsedError;
+  $GeoPointCopyWith<GeoPoint> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $GeoPointCopyWith<$Res> {
-  factory $GeoPointCopyWith(GeoPoint value, $Res Function(GeoPoint) then) =
-      _$GeoPointCopyWithImpl<$Res, GeoPoint>;
+  factory $GeoPointCopyWith(GeoPoint value, $Res Function(GeoPoint) then) = _$GeoPointCopyWithImpl<$Res, GeoPoint>;
   @useResult
   $Res call({double? latitude, double? longitude});
 }
 
 /// @nodoc
-class _$GeoPointCopyWithImpl<$Res, $Val extends GeoPoint>
-    implements $GeoPointCopyWith<$Res> {
+class _$GeoPointCopyWithImpl<$Res, $Val extends GeoPoint> implements $GeoPointCopyWith<$Res> {
   _$GeoPointCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -18265,10 +17299,8 @@ class _$GeoPointCopyWithImpl<$Res, $Val extends GeoPoint>
 }
 
 /// @nodoc
-abstract class _$$GeoPointImplCopyWith<$Res>
-    implements $GeoPointCopyWith<$Res> {
-  factory _$$GeoPointImplCopyWith(
-          _$GeoPointImpl value, $Res Function(_$GeoPointImpl) then) =
+abstract class _$$GeoPointImplCopyWith<$Res> implements $GeoPointCopyWith<$Res> {
+  factory _$$GeoPointImplCopyWith(_$GeoPointImpl value, $Res Function(_$GeoPointImpl) then) =
       __$$GeoPointImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -18276,12 +17308,9 @@ abstract class _$$GeoPointImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$GeoPointImplCopyWithImpl<$Res>
-    extends _$GeoPointCopyWithImpl<$Res, _$GeoPointImpl>
+class __$$GeoPointImplCopyWithImpl<$Res> extends _$GeoPointCopyWithImpl<$Res, _$GeoPointImpl>
     implements _$$GeoPointImplCopyWith<$Res> {
-  __$$GeoPointImplCopyWithImpl(
-      _$GeoPointImpl _value, $Res Function(_$GeoPointImpl) _then)
-      : super(_value, _then);
+  __$$GeoPointImplCopyWithImpl(_$GeoPointImpl _value, $Res Function(_$GeoPointImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -18307,8 +17336,7 @@ class __$$GeoPointImplCopyWithImpl<$Res>
 class _$GeoPointImpl implements _GeoPoint {
   const _$GeoPointImpl({this.latitude, this.longitude});
 
-  factory _$GeoPointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GeoPointImplFromJson(json);
+  factory _$GeoPointImpl.fromJson(Map<String, dynamic> json) => _$$GeoPointImplFromJson(json);
 
   @override
   final double? latitude;
@@ -18325,10 +17353,8 @@ class _$GeoPointImpl implements _GeoPoint {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GeoPointImpl &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude));
+            (identical(other.latitude, latitude) || other.latitude == latitude) &&
+            (identical(other.longitude, longitude) || other.longitude == longitude));
   }
 
   @JsonKey(ignore: true)
@@ -18350,11 +17376,9 @@ class _$GeoPointImpl implements _GeoPoint {
 }
 
 abstract class _GeoPoint implements GeoPoint {
-  const factory _GeoPoint({final double? latitude, final double? longitude}) =
-      _$GeoPointImpl;
+  const factory _GeoPoint({final double? latitude, final double? longitude}) = _$GeoPointImpl;
 
-  factory _GeoPoint.fromJson(Map<String, dynamic> json) =
-      _$GeoPointImpl.fromJson;
+  factory _GeoPoint.fromJson(Map<String, dynamic> json) = _$GeoPointImpl.fromJson;
 
   @override
   double? get latitude;
@@ -18362,8 +17386,7 @@ abstract class _GeoPoint implements GeoPoint {
   double? get longitude;
   @override
   @JsonKey(ignore: true)
-  _$$GeoPointImplCopyWith<_$GeoPointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GeoPointImplCopyWith<_$GeoPointImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Guide _$GuideFromJson(Map<String, dynamic> json) {
@@ -18386,8 +17409,7 @@ mixin _$Guide {
 
 /// @nodoc
 abstract class $GuideCopyWith<$Res> {
-  factory $GuideCopyWith(Guide value, $Res Function(Guide) then) =
-      _$GuideCopyWithImpl<$Res, Guide>;
+  factory $GuideCopyWith(Guide value, $Res Function(Guide) then) = _$GuideCopyWithImpl<$Res, Guide>;
   @useResult
   $Res call(
       {String thumbnail,
@@ -18398,8 +17420,7 @@ abstract class $GuideCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GuideCopyWithImpl<$Res, $Val extends Guide>
-    implements $GuideCopyWith<$Res> {
+class _$GuideCopyWithImpl<$Res, $Val extends Guide> implements $GuideCopyWith<$Res> {
   _$GuideCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -18443,9 +17464,7 @@ class _$GuideCopyWithImpl<$Res, $Val extends Guide>
 
 /// @nodoc
 abstract class _$$GuideImplCopyWith<$Res> implements $GuideCopyWith<$Res> {
-  factory _$$GuideImplCopyWith(
-          _$GuideImpl value, $Res Function(_$GuideImpl) then) =
-      __$$GuideImplCopyWithImpl<$Res>;
+  factory _$$GuideImplCopyWith(_$GuideImpl value, $Res Function(_$GuideImpl) then) = __$$GuideImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -18457,12 +17476,9 @@ abstract class _$$GuideImplCopyWith<$Res> implements $GuideCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$GuideImplCopyWithImpl<$Res>
-    extends _$GuideCopyWithImpl<$Res, _$GuideImpl>
+class __$$GuideImplCopyWithImpl<$Res> extends _$GuideCopyWithImpl<$Res, _$GuideImpl>
     implements _$$GuideImplCopyWith<$Res> {
-  __$$GuideImplCopyWithImpl(
-      _$GuideImpl _value, $Res Function(_$GuideImpl) _then)
-      : super(_value, _then);
+  __$$GuideImplCopyWithImpl(_$GuideImpl _value, $Res Function(_$GuideImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -18508,8 +17524,7 @@ class _$GuideImpl implements _Guide {
       required this.youtubeUrl,
       @TimestampConverter() required this.publishedAt});
 
-  factory _$GuideImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GuideImplFromJson(json);
+  factory _$GuideImpl.fromJson(Map<String, dynamic> json) => _$$GuideImplFromJson(json);
 
   @override
   final String thumbnail;
@@ -18533,27 +17548,21 @@ class _$GuideImpl implements _Guide {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GuideImpl &&
-            (identical(other.thumbnail, thumbnail) ||
-                other.thumbnail == thumbnail) &&
+            (identical(other.thumbnail, thumbnail) || other.thumbnail == thumbnail) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.youtubeUrl, youtubeUrl) ||
-                other.youtubeUrl == youtubeUrl) &&
-            (identical(other.publishedAt, publishedAt) ||
-                other.publishedAt == publishedAt));
+            (identical(other.description, description) || other.description == description) &&
+            (identical(other.youtubeUrl, youtubeUrl) || other.youtubeUrl == youtubeUrl) &&
+            (identical(other.publishedAt, publishedAt) || other.publishedAt == publishedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, thumbnail, title, description, youtubeUrl, publishedAt);
+  int get hashCode => Object.hash(runtimeType, thumbnail, title, description, youtubeUrl, publishedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GuideImplCopyWith<_$GuideImpl> get copyWith =>
-      __$$GuideImplCopyWithImpl<_$GuideImpl>(this, _$identity);
+  _$$GuideImplCopyWith<_$GuideImpl> get copyWith => __$$GuideImplCopyWithImpl<_$GuideImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -18586,8 +17595,7 @@ abstract class _Guide implements Guide {
   DateTime get publishedAt;
   @override
   @JsonKey(ignore: true)
-  _$$GuideImplCopyWith<_$GuideImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$GuideImplCopyWith<_$GuideImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Language _$LanguageFromJson(Map<String, dynamic> json) {
@@ -18602,21 +17610,18 @@ mixin _$Language {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LanguageCopyWith<Language> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LanguageCopyWith<Language> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LanguageCopyWith<$Res> {
-  factory $LanguageCopyWith(Language value, $Res Function(Language) then) =
-      _$LanguageCopyWithImpl<$Res, Language>;
+  factory $LanguageCopyWith(Language value, $Res Function(Language) then) = _$LanguageCopyWithImpl<$Res, Language>;
   @useResult
   $Res call({String id, String name, String code});
 }
 
 /// @nodoc
-class _$LanguageCopyWithImpl<$Res, $Val extends Language>
-    implements $LanguageCopyWith<$Res> {
+class _$LanguageCopyWithImpl<$Res, $Val extends Language> implements $LanguageCopyWith<$Res> {
   _$LanguageCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -18649,10 +17654,8 @@ class _$LanguageCopyWithImpl<$Res, $Val extends Language>
 }
 
 /// @nodoc
-abstract class _$$LanguageImplCopyWith<$Res>
-    implements $LanguageCopyWith<$Res> {
-  factory _$$LanguageImplCopyWith(
-          _$LanguageImpl value, $Res Function(_$LanguageImpl) then) =
+abstract class _$$LanguageImplCopyWith<$Res> implements $LanguageCopyWith<$Res> {
+  factory _$$LanguageImplCopyWith(_$LanguageImpl value, $Res Function(_$LanguageImpl) then) =
       __$$LanguageImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -18660,12 +17663,9 @@ abstract class _$$LanguageImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LanguageImplCopyWithImpl<$Res>
-    extends _$LanguageCopyWithImpl<$Res, _$LanguageImpl>
+class __$$LanguageImplCopyWithImpl<$Res> extends _$LanguageCopyWithImpl<$Res, _$LanguageImpl>
     implements _$$LanguageImplCopyWith<$Res> {
-  __$$LanguageImplCopyWithImpl(
-      _$LanguageImpl _value, $Res Function(_$LanguageImpl) _then)
-      : super(_value, _then);
+  __$$LanguageImplCopyWithImpl(_$LanguageImpl _value, $Res Function(_$LanguageImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -18694,11 +17694,9 @@ class __$$LanguageImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$LanguageImpl implements _Language {
-  const _$LanguageImpl(
-      {required this.id, required this.name, required this.code});
+  const _$LanguageImpl({required this.id, required this.name, required this.code});
 
-  factory _$LanguageImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LanguageImplFromJson(json);
+  factory _$LanguageImpl.fromJson(Map<String, dynamic> json) => _$$LanguageImplFromJson(json);
 
   @override
   final String id;
@@ -18741,13 +17739,10 @@ class _$LanguageImpl implements _Language {
 }
 
 abstract class _Language implements Language {
-  const factory _Language(
-      {required final String id,
-      required final String name,
-      required final String code}) = _$LanguageImpl;
+  const factory _Language({required final String id, required final String name, required final String code}) =
+      _$LanguageImpl;
 
-  factory _Language.fromJson(Map<String, dynamic> json) =
-      _$LanguageImpl.fromJson;
+  factory _Language.fromJson(Map<String, dynamic> json) = _$LanguageImpl.fromJson;
 
   @override
   String get id;
@@ -18757,8 +17752,7 @@ abstract class _Language implements Language {
   String get code;
   @override
   @JsonKey(ignore: true)
-  _$$LanguageImplCopyWith<_$LanguageImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LanguageImplCopyWith<_$LanguageImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 LintError _$LintErrorFromJson(Map<String, dynamic> json) {
@@ -18784,26 +17778,18 @@ mixin _$LintError {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LintErrorCopyWith<LintError> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LintErrorCopyWith<LintError> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $LintErrorCopyWith<$Res> {
-  factory $LintErrorCopyWith(LintError value, $Res Function(LintError) then) =
-      _$LintErrorCopyWithImpl<$Res, LintError>;
+  factory $LintErrorCopyWith(LintError value, $Res Function(LintError) then) = _$LintErrorCopyWithImpl<$Res, LintError>;
   @useResult
-  $Res call(
-      {String code,
-      int line,
-      String? name,
-      dynamic expected,
-      dynamic received});
+  $Res call({String code, int line, String? name, dynamic expected, dynamic received});
 }
 
 /// @nodoc
-class _$LintErrorCopyWithImpl<$Res, $Val extends LintError>
-    implements $LintErrorCopyWith<$Res> {
+class _$LintErrorCopyWithImpl<$Res, $Val extends LintError> implements $LintErrorCopyWith<$Res> {
   _$LintErrorCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -18846,28 +17832,18 @@ class _$LintErrorCopyWithImpl<$Res, $Val extends LintError>
 }
 
 /// @nodoc
-abstract class _$$LintErrorImplCopyWith<$Res>
-    implements $LintErrorCopyWith<$Res> {
-  factory _$$LintErrorImplCopyWith(
-          _$LintErrorImpl value, $Res Function(_$LintErrorImpl) then) =
+abstract class _$$LintErrorImplCopyWith<$Res> implements $LintErrorCopyWith<$Res> {
+  factory _$$LintErrorImplCopyWith(_$LintErrorImpl value, $Res Function(_$LintErrorImpl) then) =
       __$$LintErrorImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String code,
-      int line,
-      String? name,
-      dynamic expected,
-      dynamic received});
+  $Res call({String code, int line, String? name, dynamic expected, dynamic received});
 }
 
 /// @nodoc
-class __$$LintErrorImplCopyWithImpl<$Res>
-    extends _$LintErrorCopyWithImpl<$Res, _$LintErrorImpl>
+class __$$LintErrorImplCopyWithImpl<$Res> extends _$LintErrorCopyWithImpl<$Res, _$LintErrorImpl>
     implements _$$LintErrorImplCopyWith<$Res> {
-  __$$LintErrorImplCopyWithImpl(
-      _$LintErrorImpl _value, $Res Function(_$LintErrorImpl) _then)
-      : super(_value, _then);
+  __$$LintErrorImplCopyWithImpl(_$LintErrorImpl _value, $Res Function(_$LintErrorImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -18906,15 +17882,9 @@ class __$$LintErrorImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$LintErrorImpl implements _LintError {
-  const _$LintErrorImpl(
-      {required this.code,
-      this.line = 1,
-      this.name,
-      this.expected,
-      this.received});
+  const _$LintErrorImpl({required this.code, this.line = 1, this.name, this.expected, this.received});
 
-  factory _$LintErrorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LintErrorImplFromJson(json);
+  factory _$LintErrorImpl.fromJson(Map<String, dynamic> json) => _$$LintErrorImplFromJson(json);
 
   /// [code] defines the error code.
   @override
@@ -18956,12 +17926,7 @@ class _$LintErrorImpl implements _LintError {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      code,
-      line,
-      name,
-      const DeepCollectionEquality().hash(expected),
+  int get hashCode => Object.hash(runtimeType, code, line, name, const DeepCollectionEquality().hash(expected),
       const DeepCollectionEquality().hash(received));
 
   @JsonKey(ignore: true)
@@ -18986,8 +17951,7 @@ abstract class _LintError implements LintError {
       final dynamic expected,
       final dynamic received}) = _$LintErrorImpl;
 
-  factory _LintError.fromJson(Map<String, dynamic> json) =
-      _$LintErrorImpl.fromJson;
+  factory _LintError.fromJson(Map<String, dynamic> json) = _$LintErrorImpl.fromJson;
 
   @override
 
@@ -19011,8 +17975,7 @@ abstract class _LintError implements LintError {
   dynamic get received;
   @override
   @JsonKey(ignore: true)
-  _$$LintErrorImplCopyWith<_$LintErrorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$LintErrorImplCopyWith<_$LintErrorImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Model _$ModelFromJson(Map<String, dynamic> json) {
@@ -19047,23 +18010,15 @@ mixin _$Model {
 
 /// @nodoc
 abstract class $ModelCopyWith<$Res> {
-  factory $ModelCopyWith(Model value, $Res Function(Model) then) =
-      _$ModelCopyWithImpl<$Res, Model>;
+  factory $ModelCopyWith(Model value, $Res Function(Model) then) = _$ModelCopyWithImpl<$Res, Model>;
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      String? flespiId,
-      InboundProtocol? protocol,
-      String? protocolId,
-      bool? isGeneric});
+  $Res call({String id, String name, String? flespiId, InboundProtocol? protocol, String? protocolId, bool? isGeneric});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
 }
 
 /// @nodoc
-class _$ModelCopyWithImpl<$Res, $Val extends Model>
-    implements $ModelCopyWith<$Res> {
+class _$ModelCopyWithImpl<$Res, $Val extends Model> implements $ModelCopyWith<$Res> {
   _$ModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -19124,30 +18079,19 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
 
 /// @nodoc
 abstract class _$$ModelImplCopyWith<$Res> implements $ModelCopyWith<$Res> {
-  factory _$$ModelImplCopyWith(
-          _$ModelImpl value, $Res Function(_$ModelImpl) then) =
-      __$$ModelImplCopyWithImpl<$Res>;
+  factory _$$ModelImplCopyWith(_$ModelImpl value, $Res Function(_$ModelImpl) then) = __$$ModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id,
-      String name,
-      String? flespiId,
-      InboundProtocol? protocol,
-      String? protocolId,
-      bool? isGeneric});
+  $Res call({String id, String name, String? flespiId, InboundProtocol? protocol, String? protocolId, bool? isGeneric});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
 }
 
 /// @nodoc
-class __$$ModelImplCopyWithImpl<$Res>
-    extends _$ModelCopyWithImpl<$Res, _$ModelImpl>
+class __$$ModelImplCopyWithImpl<$Res> extends _$ModelCopyWithImpl<$Res, _$ModelImpl>
     implements _$$ModelImplCopyWith<$Res> {
-  __$$ModelImplCopyWithImpl(
-      _$ModelImpl _value, $Res Function(_$ModelImpl) _then)
-      : super(_value, _then);
+  __$$ModelImplCopyWithImpl(_$ModelImpl _value, $Res Function(_$ModelImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -19192,15 +18136,9 @@ class __$$ModelImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ModelImpl implements _Model {
   const _$ModelImpl(
-      {required this.id,
-      required this.name,
-      this.flespiId,
-      this.protocol,
-      this.protocolId,
-      this.isGeneric});
+      {required this.id, required this.name, this.flespiId, this.protocol, this.protocolId, this.isGeneric});
 
-  factory _$ModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ModelImplFromJson(json);
+  factory _$ModelImpl.fromJson(Map<String, dynamic> json) => _$$ModelImplFromJson(json);
 
   /// [id] is the unique identifier of the model.
   @override
@@ -19239,26 +18177,20 @@ class _$ModelImpl implements _Model {
             other is _$ModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.flespiId, flespiId) ||
-                other.flespiId == flespiId) &&
-            (identical(other.protocol, protocol) ||
-                other.protocol == protocol) &&
-            (identical(other.protocolId, protocolId) ||
-                other.protocolId == protocolId) &&
-            (identical(other.isGeneric, isGeneric) ||
-                other.isGeneric == isGeneric));
+            (identical(other.flespiId, flespiId) || other.flespiId == flespiId) &&
+            (identical(other.protocol, protocol) || other.protocol == protocol) &&
+            (identical(other.protocolId, protocolId) || other.protocolId == protocolId) &&
+            (identical(other.isGeneric, isGeneric) || other.isGeneric == isGeneric));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, name, flespiId, protocol, protocolId, isGeneric);
+  int get hashCode => Object.hash(runtimeType, id, name, flespiId, protocol, protocolId, isGeneric);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ModelImplCopyWith<_$ModelImpl> get copyWith =>
-      __$$ModelImplCopyWithImpl<_$ModelImpl>(this, _$identity);
+  _$$ModelImplCopyWith<_$ModelImpl> get copyWith => __$$ModelImplCopyWithImpl<_$ModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -19306,8 +18238,7 @@ abstract class _Model implements Model {
   bool? get isGeneric;
   @override
   @JsonKey(ignore: true)
-  _$$ModelImplCopyWith<_$ModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ModelImplCopyWith<_$ModelImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Operation _$OperationFromJson(Map<String, dynamic> json) {
@@ -19379,8 +18310,7 @@ mixin _$Operation {
   /// Is the receiver numbers to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
-  List<PhoneNumber>? get destinationPhones =>
-      throw _privateConstructorUsedError;
+  List<PhoneNumber>? get destinationPhones => throw _privateConstructorUsedError;
 
   /// Is the Notification type to perform
   /// This field will only be considered in the following [operationType]:
@@ -19419,14 +18349,12 @@ mixin _$Operation {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $OperationCopyWith<Operation> get copyWith =>
-      throw _privateConstructorUsedError;
+  $OperationCopyWith<Operation> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OperationCopyWith<$Res> {
-  factory $OperationCopyWith(Operation value, $Res Function(Operation) then) =
-      _$OperationCopyWithImpl<$Res, Operation>;
+  factory $OperationCopyWith(Operation value, $Res Function(Operation) then) = _$OperationCopyWithImpl<$Res, Operation>;
   @useResult
   $Res call(
       {String id,
@@ -19458,8 +18386,7 @@ abstract class $OperationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OperationCopyWithImpl<$Res, $Val extends Operation>
-    implements $OperationCopyWith<$Res> {
+class _$OperationCopyWithImpl<$Res, $Val extends Operation> implements $OperationCopyWith<$Res> {
   _$OperationCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -19609,10 +18536,8 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
 }
 
 /// @nodoc
-abstract class _$$OperationImplCopyWith<$Res>
-    implements $OperationCopyWith<$Res> {
-  factory _$$OperationImplCopyWith(
-          _$OperationImpl value, $Res Function(_$OperationImpl) then) =
+abstract class _$$OperationImplCopyWith<$Res> implements $OperationCopyWith<$Res> {
+  factory _$$OperationImplCopyWith(_$OperationImpl value, $Res Function(_$OperationImpl) then) =
       __$$OperationImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -19647,12 +18572,9 @@ abstract class _$$OperationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$OperationImplCopyWithImpl<$Res>
-    extends _$OperationCopyWithImpl<$Res, _$OperationImpl>
+class __$$OperationImplCopyWithImpl<$Res> extends _$OperationCopyWithImpl<$Res, _$OperationImpl>
     implements _$$OperationImplCopyWith<$Res> {
-  __$$OperationImplCopyWithImpl(
-      _$OperationImpl _value, $Res Function(_$OperationImpl) _then)
-      : super(_value, _then);
+  __$$OperationImplCopyWithImpl(_$OperationImpl _value, $Res Function(_$OperationImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -19818,8 +18740,7 @@ class _$OperationImpl implements _Operation {
         _triggers = triggers,
         _pushPlatforms = pushPlatforms;
 
-  factory _$OperationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OperationImplFromJson(json);
+  factory _$OperationImpl.fromJson(Map<String, dynamic> json) => _$$OperationImplFromJson(json);
 
   /// Is the ID of the operation.
   @override
@@ -19931,8 +18852,7 @@ class _$OperationImpl implements _Operation {
   List<PhoneNumber>? get destinationPhones {
     final value = _destinationPhones;
     if (value == null) return null;
-    if (_destinationPhones is EqualUnmodifiableListView)
-      return _destinationPhones;
+    if (_destinationPhones is EqualUnmodifiableListView) return _destinationPhones;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -20022,45 +18942,29 @@ class _$OperationImpl implements _Operation {
             other is _$OperationImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.operationType, operationType) ||
-                other.operationType == operationType) &&
-            (identical(other.requestType, requestType) ||
-                other.requestType == requestType) &&
+            (identical(other.operationType, operationType) || other.operationType == operationType) &&
+            (identical(other.requestType, requestType) || other.requestType == requestType) &&
             (identical(other.url, url) || other.url == url) &&
             const DeepCollectionEquality().equals(other._headers, _headers) &&
             (identical(other.payload, payload) || other.payload == payload) &&
-            (identical(other.languageId, languageId) ||
-                other.languageId == languageId) &&
-            (identical(other.timezone, timezone) ||
-                other.timezone == timezone) &&
-            (identical(other.timezoneId, timezoneId) ||
-                other.timezoneId == timezoneId) &&
-            const DeepCollectionEquality()
-                .equals(other._receptionEmails, _receptionEmails) &&
-            (identical(other.emailSubject, emailSubject) ||
-                other.emailSubject == emailSubject) &&
+            (identical(other.languageId, languageId) || other.languageId == languageId) &&
+            (identical(other.timezone, timezone) || other.timezone == timezone) &&
+            (identical(other.timezoneId, timezoneId) || other.timezoneId == timezoneId) &&
+            const DeepCollectionEquality().equals(other._receptionEmails, _receptionEmails) &&
+            (identical(other.emailSubject, emailSubject) || other.emailSubject == emailSubject) &&
             (identical(other.color, color) || other.color == color) &&
-            (identical(other.textColor, textColor) ||
-                other.textColor == textColor) &&
-            const DeepCollectionEquality()
-                .equals(other._destinationPhones, _destinationPhones) &&
-            (identical(other.notificationType, notificationType) ||
-                other.notificationType == notificationType) &&
-            (identical(other.externalAccountId, externalAccountId) ||
-                other.externalAccountId == externalAccountId) &&
+            (identical(other.textColor, textColor) || other.textColor == textColor) &&
+            const DeepCollectionEquality().equals(other._destinationPhones, _destinationPhones) &&
+            (identical(other.notificationType, notificationType) || other.notificationType == notificationType) &&
+            (identical(other.externalAccountId, externalAccountId) || other.externalAccountId == externalAccountId) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
             const DeepCollectionEquality().equals(other._triggers, _triggers) &&
-            (identical(
-                    other.useAssetContactsInstead, useAssetContactsInstead) ||
+            (identical(other.useAssetContactsInstead, useAssetContactsInstead) ||
                 other.useAssetContactsInstead == useAssetContactsInstead) &&
-            (identical(other.attachImage, attachImage) ||
-                other.attachImage == attachImage) &&
-            (identical(other.emailTemplateId, emailTemplateId) ||
-                other.emailTemplateId == emailTemplateId) &&
-            const DeepCollectionEquality()
-                .equals(other._pushPlatforms, _pushPlatforms) &&
-            (identical(other.pushTitle, pushTitle) ||
-                other.pushTitle == pushTitle));
+            (identical(other.attachImage, attachImage) || other.attachImage == attachImage) &&
+            (identical(other.emailTemplateId, emailTemplateId) || other.emailTemplateId == emailTemplateId) &&
+            const DeepCollectionEquality().equals(other._pushPlatforms, _pushPlatforms) &&
+            (identical(other.pushTitle, pushTitle) || other.pushTitle == pushTitle));
   }
 
   @JsonKey(ignore: true)
@@ -20124,8 +19028,7 @@ abstract class _Operation implements Operation {
       @ColorOrNullConverter() final Color? color,
       @ColorOrNullConverter() final Color? textColor,
       final List<PhoneNumber>? destinationPhones,
-      @NotificationTypeOrNullConverter()
-      final NotificationType? notificationType,
+      @NotificationTypeOrNullConverter() final NotificationType? notificationType,
       final String? externalAccountId,
       final List<Access>? access,
       final List<Trigger>? triggers,
@@ -20135,8 +19038,7 @@ abstract class _Operation implements Operation {
       @AppPlatformConverter() final List<AppPlatform>? pushPlatforms,
       final String? pushTitle}) = _$OperationImpl;
 
-  factory _Operation.fromJson(Map<String, dynamic> json) =
-      _$OperationImpl.fromJson;
+  factory _Operation.fromJson(Map<String, dynamic> json) = _$OperationImpl.fromJson;
 
   @override
 
@@ -20264,8 +19166,7 @@ abstract class _Operation implements Operation {
   String? get pushTitle;
   @override
   @JsonKey(ignore: true)
-  _$$OperationImplCopyWith<_$OperationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$OperationImplCopyWith<_$OperationImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 HttpHeader _$HttpHeaderFromJson(Map<String, dynamic> json) {
@@ -20279,22 +19180,19 @@ mixin _$HttpHeader {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HttpHeaderCopyWith<HttpHeader> get copyWith =>
-      throw _privateConstructorUsedError;
+  $HttpHeaderCopyWith<HttpHeader> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $HttpHeaderCopyWith<$Res> {
-  factory $HttpHeaderCopyWith(
-          HttpHeader value, $Res Function(HttpHeader) then) =
+  factory $HttpHeaderCopyWith(HttpHeader value, $Res Function(HttpHeader) then) =
       _$HttpHeaderCopyWithImpl<$Res, HttpHeader>;
   @useResult
   $Res call({String name, String value});
 }
 
 /// @nodoc
-class _$HttpHeaderCopyWithImpl<$Res, $Val extends HttpHeader>
-    implements $HttpHeaderCopyWith<$Res> {
+class _$HttpHeaderCopyWithImpl<$Res, $Val extends HttpHeader> implements $HttpHeaderCopyWith<$Res> {
   _$HttpHeaderCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -20322,10 +19220,8 @@ class _$HttpHeaderCopyWithImpl<$Res, $Val extends HttpHeader>
 }
 
 /// @nodoc
-abstract class _$$HttpHeaderImplCopyWith<$Res>
-    implements $HttpHeaderCopyWith<$Res> {
-  factory _$$HttpHeaderImplCopyWith(
-          _$HttpHeaderImpl value, $Res Function(_$HttpHeaderImpl) then) =
+abstract class _$$HttpHeaderImplCopyWith<$Res> implements $HttpHeaderCopyWith<$Res> {
+  factory _$$HttpHeaderImplCopyWith(_$HttpHeaderImpl value, $Res Function(_$HttpHeaderImpl) then) =
       __$$HttpHeaderImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -20333,12 +19229,9 @@ abstract class _$$HttpHeaderImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$HttpHeaderImplCopyWithImpl<$Res>
-    extends _$HttpHeaderCopyWithImpl<$Res, _$HttpHeaderImpl>
+class __$$HttpHeaderImplCopyWithImpl<$Res> extends _$HttpHeaderCopyWithImpl<$Res, _$HttpHeaderImpl>
     implements _$$HttpHeaderImplCopyWith<$Res> {
-  __$$HttpHeaderImplCopyWithImpl(
-      _$HttpHeaderImpl _value, $Res Function(_$HttpHeaderImpl) _then)
-      : super(_value, _then);
+  __$$HttpHeaderImplCopyWithImpl(_$HttpHeaderImpl _value, $Res Function(_$HttpHeaderImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -20364,8 +19257,7 @@ class __$$HttpHeaderImplCopyWithImpl<$Res>
 class _$HttpHeaderImpl implements _HttpHeader {
   const _$HttpHeaderImpl({required this.name, required this.value});
 
-  factory _$HttpHeaderImpl.fromJson(Map<String, dynamic> json) =>
-      _$$HttpHeaderImplFromJson(json);
+  factory _$HttpHeaderImpl.fromJson(Map<String, dynamic> json) => _$$HttpHeaderImplFromJson(json);
 
   @override
   final String name;
@@ -20405,12 +19297,9 @@ class _$HttpHeaderImpl implements _HttpHeader {
 }
 
 abstract class _HttpHeader implements HttpHeader {
-  const factory _HttpHeader(
-      {required final String name,
-      required final String value}) = _$HttpHeaderImpl;
+  const factory _HttpHeader({required final String name, required final String value}) = _$HttpHeaderImpl;
 
-  factory _HttpHeader.fromJson(Map<String, dynamic> json) =
-      _$HttpHeaderImpl.fromJson;
+  factory _HttpHeader.fromJson(Map<String, dynamic> json) = _$HttpHeaderImpl.fromJson;
 
   @override
   String get name;
@@ -20418,8 +19307,7 @@ abstract class _HttpHeader implements HttpHeader {
   String get value;
   @override
   @JsonKey(ignore: true)
-  _$$HttpHeaderImplCopyWith<_$HttpHeaderImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$HttpHeaderImplCopyWith<_$HttpHeaderImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 OperationInput _$OperationInputFromJson(Map<String, dynamic> json) {
@@ -20482,8 +19370,7 @@ mixin _$OperationInput {
   List<String>? get receptionEmails => throw _privateConstructorUsedError;
 
   /// List of the reception emails for send the event created.
-  set receptionEmails(List<String>? value) =>
-      throw _privateConstructorUsedError;
+  set receptionEmails(List<String>? value) => throw _privateConstructorUsedError;
 
   /// Type of request method, please read the documentation of RequestType for more information about the requests types.
   @HttpRequestTypeOrNullConverter()
@@ -20512,12 +19399,10 @@ mixin _$OperationInput {
   set url(String? value) => throw _privateConstructorUsedError;
 
   /// List of the receiver numbers for send the event created.
-  List<PhoneNumber>? get destinationPhones =>
-      throw _privateConstructorUsedError;
+  List<PhoneNumber>? get destinationPhones => throw _privateConstructorUsedError;
 
   /// List of the receiver numbers for send the event created.
-  set destinationPhones(List<PhoneNumber>? value) =>
-      throw _privateConstructorUsedError;
+  set destinationPhones(List<PhoneNumber>? value) => throw _privateConstructorUsedError;
 
   /// Type of notification method, please read the documentation of NotificationType for more information about the notification types.
   @NotificationTypeOrNullConverter()
@@ -20525,8 +19410,7 @@ mixin _$OperationInput {
 
   /// Type of notification method, please read the documentation of NotificationType for more information about the notification types.
   @NotificationTypeOrNullConverter()
-  set notificationType(NotificationType value) =>
-      throw _privateConstructorUsedError;
+  set notificationType(NotificationType value) => throw _privateConstructorUsedError;
 
   /// ID of the external account (optional).
   String? get externalAccountId => throw _privateConstructorUsedError;
@@ -20536,14 +19420,12 @@ mixin _$OperationInput {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $OperationInputCopyWith<OperationInput> get copyWith =>
-      throw _privateConstructorUsedError;
+  $OperationInputCopyWith<OperationInput> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $OperationInputCopyWith<$Res> {
-  factory $OperationInputCopyWith(
-          OperationInput value, $Res Function(OperationInput) then) =
+  factory $OperationInputCopyWith(OperationInput value, $Res Function(OperationInput) then) =
       _$OperationInputCopyWithImpl<$Res, OperationInput>;
   @useResult
   $Res call(
@@ -20566,8 +19448,7 @@ abstract class $OperationInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput>
-    implements $OperationInputCopyWith<$Res> {
+class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput> implements $OperationInputCopyWith<$Res> {
   _$OperationInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -20665,10 +19546,8 @@ class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput>
 }
 
 /// @nodoc
-abstract class _$$OperationInputImplCopyWith<$Res>
-    implements $OperationInputCopyWith<$Res> {
-  factory _$$OperationInputImplCopyWith(_$OperationInputImpl value,
-          $Res Function(_$OperationInputImpl) then) =
+abstract class _$$OperationInputImplCopyWith<$Res> implements $OperationInputCopyWith<$Res> {
+  factory _$$OperationInputImplCopyWith(_$OperationInputImpl value, $Res Function(_$OperationInputImpl) then) =
       __$$OperationInputImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -20692,11 +19571,9 @@ abstract class _$$OperationInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$OperationInputImplCopyWithImpl<$Res>
-    extends _$OperationInputCopyWithImpl<$Res, _$OperationInputImpl>
+class __$$OperationInputImplCopyWithImpl<$Res> extends _$OperationInputCopyWithImpl<$Res, _$OperationInputImpl>
     implements _$$OperationInputImplCopyWith<$Res> {
-  __$$OperationInputImplCopyWithImpl(
-      _$OperationInputImpl _value, $Res Function(_$OperationInputImpl) _then)
+  __$$OperationInputImplCopyWithImpl(_$OperationInputImpl _value, $Res Function(_$OperationInputImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -20806,12 +19683,10 @@ class _$OperationInputImpl implements _OperationInput {
       this.timezoneId,
       this.url,
       this.destinationPhones = const [],
-      @NotificationTypeOrNullConverter()
-      this.notificationType = NotificationType.sms,
+      @NotificationTypeOrNullConverter() this.notificationType = NotificationType.sms,
       this.externalAccountId});
 
-  factory _$OperationInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OperationInputImplFromJson(json);
+  factory _$OperationInputImpl.fromJson(Map<String, dynamic> json) => _$$OperationInputImplFromJson(json);
 
   /// Notification color. Only used for "INAPPNOTIFICATION" operation.
   @override
@@ -20892,8 +19767,7 @@ class _$OperationInputImpl implements _OperationInput {
   @override
   @pragma('vm:prefer-inline')
   _$$OperationInputImplCopyWith<_$OperationInputImpl> get copyWith =>
-      __$$OperationInputImplCopyWithImpl<_$OperationInputImpl>(
-          this, _$identity);
+      __$$OperationInputImplCopyWithImpl<_$OperationInputImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -20922,8 +19796,7 @@ abstract class _OperationInput implements OperationInput {
       @NotificationTypeOrNullConverter() NotificationType notificationType,
       String? externalAccountId}) = _$OperationInputImpl;
 
-  factory _OperationInput.fromJson(Map<String, dynamic> json) =
-      _$OperationInputImpl.fromJson;
+  factory _OperationInput.fromJson(Map<String, dynamic> json) = _$OperationInputImpl.fromJson;
 
   @override
 
@@ -21045,8 +19918,7 @@ abstract class _OperationInput implements OperationInput {
   set externalAccountId(String? value);
   @override
   @JsonKey(ignore: true)
-  _$$OperationInputImplCopyWith<_$OperationInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$OperationInputImplCopyWith<_$OperationInputImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Preset _$PresetFromJson(Map<String, dynamic> json) {
@@ -21085,8 +19957,7 @@ mixin _$Preset {
 
 /// @nodoc
 abstract class $PresetCopyWith<$Res> {
-  factory $PresetCopyWith(Preset value, $Res Function(Preset) then) =
-      _$PresetCopyWithImpl<$Res, Preset>;
+  factory $PresetCopyWith(Preset value, $Res Function(Preset) then) = _$PresetCopyWithImpl<$Res, Preset>;
   @useResult
   $Res call(
       {String id,
@@ -21100,8 +19971,7 @@ abstract class $PresetCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PresetCopyWithImpl<$Res, $Val extends Preset>
-    implements $PresetCopyWith<$Res> {
+class _$PresetCopyWithImpl<$Res, $Val extends Preset> implements $PresetCopyWith<$Res> {
   _$PresetCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -21160,8 +20030,7 @@ class _$PresetCopyWithImpl<$Res, $Val extends Preset>
 
 /// @nodoc
 abstract class _$$PresetImplCopyWith<$Res> implements $PresetCopyWith<$Res> {
-  factory _$$PresetImplCopyWith(
-          _$PresetImpl value, $Res Function(_$PresetImpl) then) =
+  factory _$$PresetImplCopyWith(_$PresetImpl value, $Res Function(_$PresetImpl) then) =
       __$$PresetImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -21177,12 +20046,9 @@ abstract class _$$PresetImplCopyWith<$Res> implements $PresetCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PresetImplCopyWithImpl<$Res>
-    extends _$PresetCopyWithImpl<$Res, _$PresetImpl>
+class __$$PresetImplCopyWithImpl<$Res> extends _$PresetCopyWithImpl<$Res, _$PresetImpl>
     implements _$$PresetImplCopyWith<$Res> {
-  __$$PresetImplCopyWithImpl(
-      _$PresetImpl _value, $Res Function(_$PresetImpl) _then)
-      : super(_value, _then);
+  __$$PresetImplCopyWithImpl(_$PresetImpl _value, $Res Function(_$PresetImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -21249,8 +20115,7 @@ class _$PresetImpl implements _Preset {
         _triggersIds = triggersIds,
         _access = access;
 
-  factory _$PresetImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PresetImplFromJson(json);
+  factory _$PresetImpl.fromJson(Map<String, dynamic> json) => _$$PresetImplFromJson(json);
 
   /// Is the ID
   @override
@@ -21322,13 +20187,10 @@ class _$PresetImpl implements _Preset {
             other is _$PresetImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.validBefore, validBefore) ||
-                other.validBefore == validBefore) &&
-            (identical(other.isExpired, isExpired) ||
-                other.isExpired == isExpired) &&
+            (identical(other.validBefore, validBefore) || other.validBefore == validBefore) &&
+            (identical(other.isExpired, isExpired) || other.isExpired == isExpired) &&
             const DeepCollectionEquality().equals(other._triggers, _triggers) &&
-            const DeepCollectionEquality()
-                .equals(other._triggersIds, _triggersIds) &&
+            const DeepCollectionEquality().equals(other._triggersIds, _triggersIds) &&
             (identical(other.comment, comment) || other.comment == comment) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
@@ -21349,8 +20211,7 @@ class _$PresetImpl implements _Preset {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PresetImplCopyWith<_$PresetImpl> get copyWith =>
-      __$$PresetImplCopyWithImpl<_$PresetImpl>(this, _$identity);
+  _$$PresetImplCopyWith<_$PresetImpl> get copyWith => __$$PresetImplCopyWithImpl<_$PresetImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -21406,8 +20267,7 @@ abstract class _Preset implements Preset {
   List<Access>? get access;
   @override
   @JsonKey(ignore: true)
-  _$$PresetImplCopyWith<_$PresetImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PresetImplCopyWith<_$PresetImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Profile _$ProfileFromJson(Map<String, dynamic> json) {
@@ -21429,22 +20289,16 @@ mixin _$Profile {
 
 /// @nodoc
 abstract class $ProfileCopyWith<$Res> {
-  factory $ProfileCopyWith(Profile value, $Res Function(Profile) then) =
-      _$ProfileCopyWithImpl<$Res, Profile>;
+  factory $ProfileCopyWith(Profile value, $Res Function(Profile) then) = _$ProfileCopyWithImpl<$Res, Profile>;
   @useResult
   $Res call(
-      {String? companyName,
-      String? billingAddress,
-      String? fiscalId,
-      String? headquartersId,
-      Country? headquarters});
+      {String? companyName, String? billingAddress, String? fiscalId, String? headquartersId, Country? headquarters});
 
   $CountryCopyWith<$Res>? get headquarters;
 }
 
 /// @nodoc
-class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
-    implements $ProfileCopyWith<$Res> {
+class _$ProfileCopyWithImpl<$Res, $Val extends Profile> implements $ProfileCopyWith<$Res> {
   _$ProfileCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -21500,29 +20354,21 @@ class _$ProfileCopyWithImpl<$Res, $Val extends Profile>
 
 /// @nodoc
 abstract class _$$ProfileImplCopyWith<$Res> implements $ProfileCopyWith<$Res> {
-  factory _$$ProfileImplCopyWith(
-          _$ProfileImpl value, $Res Function(_$ProfileImpl) then) =
+  factory _$$ProfileImplCopyWith(_$ProfileImpl value, $Res Function(_$ProfileImpl) then) =
       __$$ProfileImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {String? companyName,
-      String? billingAddress,
-      String? fiscalId,
-      String? headquartersId,
-      Country? headquarters});
+      {String? companyName, String? billingAddress, String? fiscalId, String? headquartersId, Country? headquarters});
 
   @override
   $CountryCopyWith<$Res>? get headquarters;
 }
 
 /// @nodoc
-class __$$ProfileImplCopyWithImpl<$Res>
-    extends _$ProfileCopyWithImpl<$Res, _$ProfileImpl>
+class __$$ProfileImplCopyWithImpl<$Res> extends _$ProfileCopyWithImpl<$Res, _$ProfileImpl>
     implements _$$ProfileImplCopyWith<$Res> {
-  __$$ProfileImplCopyWithImpl(
-      _$ProfileImpl _value, $Res Function(_$ProfileImpl) _then)
-      : super(_value, _then);
+  __$$ProfileImplCopyWithImpl(_$ProfileImpl _value, $Res Function(_$ProfileImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -21561,15 +20407,9 @@ class __$$ProfileImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$ProfileImpl implements _Profile {
-  const _$ProfileImpl(
-      {this.companyName,
-      this.billingAddress,
-      this.fiscalId,
-      this.headquartersId,
-      this.headquarters});
+  const _$ProfileImpl({this.companyName, this.billingAddress, this.fiscalId, this.headquartersId, this.headquarters});
 
-  factory _$ProfileImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProfileImplFromJson(json);
+  factory _$ProfileImpl.fromJson(Map<String, dynamic> json) => _$$ProfileImplFromJson(json);
 
   @override
   final String? companyName;
@@ -21592,28 +20432,21 @@ class _$ProfileImpl implements _Profile {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ProfileImpl &&
-            (identical(other.companyName, companyName) ||
-                other.companyName == companyName) &&
-            (identical(other.billingAddress, billingAddress) ||
-                other.billingAddress == billingAddress) &&
-            (identical(other.fiscalId, fiscalId) ||
-                other.fiscalId == fiscalId) &&
-            (identical(other.headquartersId, headquartersId) ||
-                other.headquartersId == headquartersId) &&
-            (identical(other.headquarters, headquarters) ||
-                other.headquarters == headquarters));
+            (identical(other.companyName, companyName) || other.companyName == companyName) &&
+            (identical(other.billingAddress, billingAddress) || other.billingAddress == billingAddress) &&
+            (identical(other.fiscalId, fiscalId) || other.fiscalId == fiscalId) &&
+            (identical(other.headquartersId, headquartersId) || other.headquartersId == headquartersId) &&
+            (identical(other.headquarters, headquarters) || other.headquarters == headquarters));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, companyName, billingAddress,
-      fiscalId, headquartersId, headquarters);
+  int get hashCode => Object.hash(runtimeType, companyName, billingAddress, fiscalId, headquartersId, headquarters);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProfileImplCopyWith<_$ProfileImpl> get copyWith =>
-      __$$ProfileImplCopyWithImpl<_$ProfileImpl>(this, _$identity);
+  _$$ProfileImplCopyWith<_$ProfileImpl> get copyWith => __$$ProfileImplCopyWithImpl<_$ProfileImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -21645,8 +20478,7 @@ abstract class _Profile implements Profile {
   Country? get headquarters;
   @override
   @JsonKey(ignore: true)
-  _$$ProfileImplCopyWith<_$ProfileImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ProfileImplCopyWith<_$ProfileImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Reference _$ReferenceFromJson(Map<String, dynamic> json) {
@@ -21676,14 +20508,12 @@ mixin _$Reference {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ReferenceCopyWith<Reference> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ReferenceCopyWith<Reference> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ReferenceCopyWith<$Res> {
-  factory $ReferenceCopyWith(Reference value, $Res Function(Reference) then) =
-      _$ReferenceCopyWithImpl<$Res, Reference>;
+  factory $ReferenceCopyWith(Reference value, $Res Function(Reference) then) = _$ReferenceCopyWithImpl<$Res, Reference>;
   @useResult
   $Res call(
       {String id,
@@ -21695,8 +20525,7 @@ abstract class $ReferenceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ReferenceCopyWithImpl<$Res, $Val extends Reference>
-    implements $ReferenceCopyWith<$Res> {
+class _$ReferenceCopyWithImpl<$Res, $Val extends Reference> implements $ReferenceCopyWith<$Res> {
   _$ReferenceCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -21744,10 +20573,8 @@ class _$ReferenceCopyWithImpl<$Res, $Val extends Reference>
 }
 
 /// @nodoc
-abstract class _$$ReferenceImplCopyWith<$Res>
-    implements $ReferenceCopyWith<$Res> {
-  factory _$$ReferenceImplCopyWith(
-          _$ReferenceImpl value, $Res Function(_$ReferenceImpl) then) =
+abstract class _$$ReferenceImplCopyWith<$Res> implements $ReferenceCopyWith<$Res> {
+  factory _$$ReferenceImplCopyWith(_$ReferenceImpl value, $Res Function(_$ReferenceImpl) then) =
       __$$ReferenceImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -21761,12 +20588,9 @@ abstract class _$$ReferenceImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ReferenceImplCopyWithImpl<$Res>
-    extends _$ReferenceCopyWithImpl<$Res, _$ReferenceImpl>
+class __$$ReferenceImplCopyWithImpl<$Res> extends _$ReferenceCopyWithImpl<$Res, _$ReferenceImpl>
     implements _$$ReferenceImplCopyWith<$Res> {
-  __$$ReferenceImplCopyWithImpl(
-      _$ReferenceImpl _value, $Res Function(_$ReferenceImpl) _then)
-      : super(_value, _then);
+  __$$ReferenceImplCopyWithImpl(_$ReferenceImpl _value, $Res Function(_$ReferenceImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -21820,8 +20644,7 @@ class _$ReferenceImpl implements _Reference {
       : _customFields = customFields,
         _access = access;
 
-  factory _$ReferenceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ReferenceImplFromJson(json);
+  factory _$ReferenceImpl.fromJson(Map<String, dynamic> json) => _$$ReferenceImplFromJson(json);
 
   /// Is the ID.
   @override
@@ -21878,24 +20701,16 @@ class _$ReferenceImpl implements _Reference {
             other is _$ReferenceImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            const DeepCollectionEquality()
-                .equals(other._customFields, _customFields) &&
+            (identical(other.category, category) || other.category == category) &&
+            const DeepCollectionEquality().equals(other._customFields, _customFields) &&
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      category,
-      const DeepCollectionEquality().hash(_customFields),
-      qrCode,
-      const DeepCollectionEquality().hash(_access));
+  int get hashCode => Object.hash(runtimeType, id, name, category, const DeepCollectionEquality().hash(_customFields),
+      qrCode, const DeepCollectionEquality().hash(_access));
 
   @JsonKey(ignore: true)
   @override
@@ -21920,8 +20735,7 @@ abstract class _Reference implements Reference {
       final String? qrCode,
       final List<Access>? access}) = _$ReferenceImpl;
 
-  factory _Reference.fromJson(Map<String, dynamic> json) =
-      _$ReferenceImpl.fromJson;
+  factory _Reference.fromJson(Map<String, dynamic> json) = _$ReferenceImpl.fromJson;
 
   @override
 
@@ -21950,8 +20764,7 @@ abstract class _Reference implements Reference {
   List<Access>? get access;
   @override
   @JsonKey(ignore: true)
-  _$$ReferenceImplCopyWith<_$ReferenceImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ReferenceImplCopyWith<_$ReferenceImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 ReportTemplate _$ReportTemplateFromJson(Map<String, dynamic> json) {
@@ -21974,8 +20787,7 @@ mixin _$ReportTemplate {
   List<String>? get assetsIds => throw _privateConstructorUsedError;
 
   /// Is the report template linked outbound services or outbound services' IDs
-  List<OutboundService>? get outboundServices =>
-      throw _privateConstructorUsedError;
+  List<OutboundService>? get outboundServices => throw _privateConstructorUsedError;
   List<String>? get outboundServicesIds => throw _privateConstructorUsedError;
 
   /// Controls the access of this entity.
@@ -21983,14 +20795,12 @@ mixin _$ReportTemplate {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ReportTemplateCopyWith<ReportTemplate> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ReportTemplateCopyWith<ReportTemplate> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ReportTemplateCopyWith<$Res> {
-  factory $ReportTemplateCopyWith(
-          ReportTemplate value, $Res Function(ReportTemplate) then) =
+  factory $ReportTemplateCopyWith(ReportTemplate value, $Res Function(ReportTemplate) then) =
       _$ReportTemplateCopyWithImpl<$Res, ReportTemplate>;
   @useResult
   $Res call(
@@ -22005,8 +20815,7 @@ abstract class $ReportTemplateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ReportTemplateCopyWithImpl<$Res, $Val extends ReportTemplate>
-    implements $ReportTemplateCopyWith<$Res> {
+class _$ReportTemplateCopyWithImpl<$Res, $Val extends ReportTemplate> implements $ReportTemplateCopyWith<$Res> {
   _$ReportTemplateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -22064,10 +20873,8 @@ class _$ReportTemplateCopyWithImpl<$Res, $Val extends ReportTemplate>
 }
 
 /// @nodoc
-abstract class _$$ReportTemplateImplCopyWith<$Res>
-    implements $ReportTemplateCopyWith<$Res> {
-  factory _$$ReportTemplateImplCopyWith(_$ReportTemplateImpl value,
-          $Res Function(_$ReportTemplateImpl) then) =
+abstract class _$$ReportTemplateImplCopyWith<$Res> implements $ReportTemplateCopyWith<$Res> {
+  factory _$$ReportTemplateImplCopyWith(_$ReportTemplateImpl value, $Res Function(_$ReportTemplateImpl) then) =
       __$$ReportTemplateImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -22083,11 +20890,9 @@ abstract class _$$ReportTemplateImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ReportTemplateImplCopyWithImpl<$Res>
-    extends _$ReportTemplateCopyWithImpl<$Res, _$ReportTemplateImpl>
+class __$$ReportTemplateImplCopyWithImpl<$Res> extends _$ReportTemplateCopyWithImpl<$Res, _$ReportTemplateImpl>
     implements _$$ReportTemplateImplCopyWith<$Res> {
-  __$$ReportTemplateImplCopyWithImpl(
-      _$ReportTemplateImpl _value, $Res Function(_$ReportTemplateImpl) _then)
+  __$$ReportTemplateImplCopyWithImpl(_$ReportTemplateImpl _value, $Res Function(_$ReportTemplateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -22158,8 +20963,7 @@ class _$ReportTemplateImpl implements _ReportTemplate {
         _outboundServicesIds = outboundServicesIds,
         _access = access;
 
-  factory _$ReportTemplateImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ReportTemplateImplFromJson(json);
+  factory _$ReportTemplateImpl.fromJson(Map<String, dynamic> json) => _$$ReportTemplateImplFromJson(json);
 
   /// Is the report template ID
   @override
@@ -22213,8 +21017,7 @@ class _$ReportTemplateImpl implements _ReportTemplate {
   List<OutboundService>? get outboundServices {
     final value = _outboundServices;
     if (value == null) return null;
-    if (_outboundServices is EqualUnmodifiableListView)
-      return _outboundServices;
+    if (_outboundServices is EqualUnmodifiableListView) return _outboundServices;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -22224,8 +21027,7 @@ class _$ReportTemplateImpl implements _ReportTemplate {
   List<String>? get outboundServicesIds {
     final value = _outboundServicesIds;
     if (value == null) return null;
-    if (_outboundServicesIds is EqualUnmodifiableListView)
-      return _outboundServicesIds;
+    if (_outboundServicesIds is EqualUnmodifiableListView) return _outboundServicesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -22255,15 +21057,11 @@ class _$ReportTemplateImpl implements _ReportTemplate {
             other is _$ReportTemplateImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality()
-                .equals(other._structure, _structure) &&
+            const DeepCollectionEquality().equals(other._structure, _structure) &&
             const DeepCollectionEquality().equals(other._assets, _assets) &&
-            const DeepCollectionEquality()
-                .equals(other._assetsIds, _assetsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._outboundServices, _outboundServices) &&
-            const DeepCollectionEquality()
-                .equals(other._outboundServicesIds, _outboundServicesIds) &&
+            const DeepCollectionEquality().equals(other._assetsIds, _assetsIds) &&
+            const DeepCollectionEquality().equals(other._outboundServices, _outboundServices) &&
+            const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
@@ -22284,8 +21082,7 @@ class _$ReportTemplateImpl implements _ReportTemplate {
   @override
   @pragma('vm:prefer-inline')
   _$$ReportTemplateImplCopyWith<_$ReportTemplateImpl> get copyWith =>
-      __$$ReportTemplateImplCopyWithImpl<_$ReportTemplateImpl>(
-          this, _$identity);
+      __$$ReportTemplateImplCopyWithImpl<_$ReportTemplateImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -22306,8 +21103,7 @@ abstract class _ReportTemplate implements ReportTemplate {
       final List<String>? outboundServicesIds,
       final List<Access>? access}) = _$ReportTemplateImpl;
 
-  factory _ReportTemplate.fromJson(Map<String, dynamic> json) =
-      _$ReportTemplateImpl.fromJson;
+  factory _ReportTemplate.fromJson(Map<String, dynamic> json) = _$ReportTemplateImpl.fromJson;
 
   @override
 
@@ -22339,8 +21135,7 @@ abstract class _ReportTemplate implements ReportTemplate {
   List<Access>? get access;
   @override
   @JsonKey(ignore: true)
-  _$$ReportTemplateImplCopyWith<_$ReportTemplateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ReportTemplateImplCopyWith<_$ReportTemplateImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 ReportTemplatePage _$ReportTemplatePageFromJson(Map<String, dynamic> json) {
@@ -22368,14 +21163,12 @@ mixin _$ReportTemplatePage {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ReportTemplatePageCopyWith<ReportTemplatePage> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ReportTemplatePageCopyWith<ReportTemplatePage> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ReportTemplatePageCopyWith<$Res> {
-  factory $ReportTemplatePageCopyWith(
-          ReportTemplatePage value, $Res Function(ReportTemplatePage) then) =
+  factory $ReportTemplatePageCopyWith(ReportTemplatePage value, $Res Function(ReportTemplatePage) then) =
       _$ReportTemplatePageCopyWithImpl<$Res, ReportTemplatePage>;
   @useResult
   $Res call(
@@ -22431,10 +21224,9 @@ class _$ReportTemplatePageCopyWithImpl<$Res, $Val extends ReportTemplatePage>
 }
 
 /// @nodoc
-abstract class _$$ReportTemplatePageImplCopyWith<$Res>
-    implements $ReportTemplatePageCopyWith<$Res> {
-  factory _$$ReportTemplatePageImplCopyWith(_$ReportTemplatePageImpl value,
-          $Res Function(_$ReportTemplatePageImpl) then) =
+abstract class _$$ReportTemplatePageImplCopyWith<$Res> implements $ReportTemplatePageCopyWith<$Res> {
+  factory _$$ReportTemplatePageImplCopyWith(
+          _$ReportTemplatePageImpl value, $Res Function(_$ReportTemplatePageImpl) then) =
       __$$ReportTemplatePageImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -22450,8 +21242,7 @@ abstract class _$$ReportTemplatePageImplCopyWith<$Res>
 class __$$ReportTemplatePageImplCopyWithImpl<$Res>
     extends _$ReportTemplatePageCopyWithImpl<$Res, _$ReportTemplatePageImpl>
     implements _$$ReportTemplatePageImplCopyWith<$Res> {
-  __$$ReportTemplatePageImplCopyWithImpl(_$ReportTemplatePageImpl _value,
-      $Res Function(_$ReportTemplatePageImpl) _then)
+  __$$ReportTemplatePageImplCopyWithImpl(_$ReportTemplatePageImpl _value, $Res Function(_$ReportTemplatePageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -22494,14 +21285,12 @@ class _$ReportTemplatePageImpl implements _ReportTemplatePage {
   const _$ReportTemplatePageImpl(
       {required this.title,
       @ReportTemplateSourceConverter() required this.source,
-      @ReportTemplateAlgorithmConverter()
-      this.algorithm = ReportTemplateAlgorithm.auto,
+      @ReportTemplateAlgorithmConverter() this.algorithm = ReportTemplateAlgorithm.auto,
       final List<ReportTemplateCol>? cols,
       this.script})
       : _cols = cols;
 
-  factory _$ReportTemplatePageImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ReportTemplatePageImplFromJson(json);
+  factory _$ReportTemplatePageImpl.fromJson(Map<String, dynamic> json) => _$$ReportTemplatePageImplFromJson(json);
 
   /// Is the page title
   @override
@@ -22547,23 +21336,21 @@ class _$ReportTemplatePageImpl implements _ReportTemplatePage {
             other is _$ReportTemplatePageImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.source, source) || other.source == source) &&
-            (identical(other.algorithm, algorithm) ||
-                other.algorithm == algorithm) &&
+            (identical(other.algorithm, algorithm) || other.algorithm == algorithm) &&
             const DeepCollectionEquality().equals(other._cols, _cols) &&
             (identical(other.script, script) || other.script == script));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, title, source, algorithm,
-      const DeepCollectionEquality().hash(_cols), script);
+  int get hashCode =>
+      Object.hash(runtimeType, title, source, algorithm, const DeepCollectionEquality().hash(_cols), script);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ReportTemplatePageImplCopyWith<_$ReportTemplatePageImpl> get copyWith =>
-      __$$ReportTemplatePageImplCopyWithImpl<_$ReportTemplatePageImpl>(
-          this, _$identity);
+      __$$ReportTemplatePageImplCopyWithImpl<_$ReportTemplatePageImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -22576,15 +21363,12 @@ class _$ReportTemplatePageImpl implements _ReportTemplatePage {
 abstract class _ReportTemplatePage implements ReportTemplatePage {
   const factory _ReportTemplatePage(
       {required final String title,
-      @ReportTemplateSourceConverter()
-      required final ReportTemplateSource source,
-      @ReportTemplateAlgorithmConverter()
-      final ReportTemplateAlgorithm algorithm,
+      @ReportTemplateSourceConverter() required final ReportTemplateSource source,
+      @ReportTemplateAlgorithmConverter() final ReportTemplateAlgorithm algorithm,
       final List<ReportTemplateCol>? cols,
       final String? script}) = _$ReportTemplatePageImpl;
 
-  factory _ReportTemplatePage.fromJson(Map<String, dynamic> json) =
-      _$ReportTemplatePageImpl.fromJson;
+  factory _ReportTemplatePage.fromJson(Map<String, dynamic> json) = _$ReportTemplatePageImpl.fromJson;
 
   @override
 
@@ -22610,8 +21394,7 @@ abstract class _ReportTemplatePage implements ReportTemplatePage {
   String? get script;
   @override
   @JsonKey(ignore: true)
-  _$$ReportTemplatePageImplCopyWith<_$ReportTemplatePageImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ReportTemplatePageImplCopyWith<_$ReportTemplatePageImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 ReportTemplateCol _$ReportTemplateColFromJson(Map<String, dynamic> json) {
@@ -22634,14 +21417,12 @@ mixin _$ReportTemplateCol {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ReportTemplateColCopyWith<ReportTemplateCol> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ReportTemplateColCopyWith<ReportTemplateCol> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ReportTemplateColCopyWith<$Res> {
-  factory $ReportTemplateColCopyWith(
-          ReportTemplateCol value, $Res Function(ReportTemplateCol) then) =
+  factory $ReportTemplateColCopyWith(ReportTemplateCol value, $Res Function(ReportTemplateCol) then) =
       _$ReportTemplateColCopyWithImpl<$Res, ReportTemplateCol>;
   @useResult
   $Res call({String name, String field, bool visible, bool isCustom});
@@ -22687,10 +21468,8 @@ class _$ReportTemplateColCopyWithImpl<$Res, $Val extends ReportTemplateCol>
 }
 
 /// @nodoc
-abstract class _$$ReportTemplateColImplCopyWith<$Res>
-    implements $ReportTemplateColCopyWith<$Res> {
-  factory _$$ReportTemplateColImplCopyWith(_$ReportTemplateColImpl value,
-          $Res Function(_$ReportTemplateColImpl) then) =
+abstract class _$$ReportTemplateColImplCopyWith<$Res> implements $ReportTemplateColCopyWith<$Res> {
+  factory _$$ReportTemplateColImplCopyWith(_$ReportTemplateColImpl value, $Res Function(_$ReportTemplateColImpl) then) =
       __$$ReportTemplateColImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -22698,11 +21477,9 @@ abstract class _$$ReportTemplateColImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ReportTemplateColImplCopyWithImpl<$Res>
-    extends _$ReportTemplateColCopyWithImpl<$Res, _$ReportTemplateColImpl>
+class __$$ReportTemplateColImplCopyWithImpl<$Res> extends _$ReportTemplateColCopyWithImpl<$Res, _$ReportTemplateColImpl>
     implements _$$ReportTemplateColImplCopyWith<$Res> {
-  __$$ReportTemplateColImplCopyWithImpl(_$ReportTemplateColImpl _value,
-      $Res Function(_$ReportTemplateColImpl) _then)
+  __$$ReportTemplateColImplCopyWithImpl(_$ReportTemplateColImpl _value, $Res Function(_$ReportTemplateColImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -22738,13 +21515,9 @@ class __$$ReportTemplateColImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ReportTemplateColImpl implements _ReportTemplateCol {
   const _$ReportTemplateColImpl(
-      {required this.name,
-      required this.field,
-      required this.visible,
-      required this.isCustom});
+      {required this.name, required this.field, required this.visible, required this.isCustom});
 
-  factory _$ReportTemplateColImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ReportTemplateColImplFromJson(json);
+  factory _$ReportTemplateColImpl.fromJson(Map<String, dynamic> json) => _$$ReportTemplateColImplFromJson(json);
 
   /// Is the col name
   @override
@@ -22775,8 +21548,7 @@ class _$ReportTemplateColImpl implements _ReportTemplateCol {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.field, field) || other.field == field) &&
             (identical(other.visible, visible) || other.visible == visible) &&
-            (identical(other.isCustom, isCustom) ||
-                other.isCustom == isCustom));
+            (identical(other.isCustom, isCustom) || other.isCustom == isCustom));
   }
 
   @JsonKey(ignore: true)
@@ -22787,8 +21559,7 @@ class _$ReportTemplateColImpl implements _ReportTemplateCol {
   @override
   @pragma('vm:prefer-inline')
   _$$ReportTemplateColImplCopyWith<_$ReportTemplateColImpl> get copyWith =>
-      __$$ReportTemplateColImplCopyWithImpl<_$ReportTemplateColImpl>(
-          this, _$identity);
+      __$$ReportTemplateColImplCopyWithImpl<_$ReportTemplateColImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -22805,8 +21576,7 @@ abstract class _ReportTemplateCol implements ReportTemplateCol {
       required final bool visible,
       required final bool isCustom}) = _$ReportTemplateColImpl;
 
-  factory _ReportTemplateCol.fromJson(Map<String, dynamic> json) =
-      _$ReportTemplateColImpl.fromJson;
+  factory _ReportTemplateCol.fromJson(Map<String, dynamic> json) = _$ReportTemplateColImpl.fromJson;
 
   @override
 
@@ -22826,8 +21596,7 @@ abstract class _ReportTemplateCol implements ReportTemplateCol {
   bool get isCustom;
   @override
   @JsonKey(ignore: true)
-  _$$ReportTemplateColImplCopyWith<_$ReportTemplateColImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ReportTemplateColImplCopyWith<_$ReportTemplateColImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 CustomReport _$CustomReportFromJson(Map<String, dynamic> json) {
@@ -22847,22 +21616,19 @@ mixin _$CustomReport {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CustomReportCopyWith<CustomReport> get copyWith =>
-      throw _privateConstructorUsedError;
+  $CustomReportCopyWith<CustomReport> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CustomReportCopyWith<$Res> {
-  factory $CustomReportCopyWith(
-          CustomReport value, $Res Function(CustomReport) then) =
+  factory $CustomReportCopyWith(CustomReport value, $Res Function(CustomReport) then) =
       _$CustomReportCopyWithImpl<$Res, CustomReport>;
   @useResult
   $Res call({String id, String code, List<RegisteredApp>? allowedApps});
 }
 
 /// @nodoc
-class _$CustomReportCopyWithImpl<$Res, $Val extends CustomReport>
-    implements $CustomReportCopyWith<$Res> {
+class _$CustomReportCopyWithImpl<$Res, $Val extends CustomReport> implements $CustomReportCopyWith<$Res> {
   _$CustomReportCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -22895,10 +21661,8 @@ class _$CustomReportCopyWithImpl<$Res, $Val extends CustomReport>
 }
 
 /// @nodoc
-abstract class _$$CustomReportImplCopyWith<$Res>
-    implements $CustomReportCopyWith<$Res> {
-  factory _$$CustomReportImplCopyWith(
-          _$CustomReportImpl value, $Res Function(_$CustomReportImpl) then) =
+abstract class _$$CustomReportImplCopyWith<$Res> implements $CustomReportCopyWith<$Res> {
+  factory _$$CustomReportImplCopyWith(_$CustomReportImpl value, $Res Function(_$CustomReportImpl) then) =
       __$$CustomReportImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -22906,11 +21670,9 @@ abstract class _$$CustomReportImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CustomReportImplCopyWithImpl<$Res>
-    extends _$CustomReportCopyWithImpl<$Res, _$CustomReportImpl>
+class __$$CustomReportImplCopyWithImpl<$Res> extends _$CustomReportCopyWithImpl<$Res, _$CustomReportImpl>
     implements _$$CustomReportImplCopyWith<$Res> {
-  __$$CustomReportImplCopyWithImpl(
-      _$CustomReportImpl _value, $Res Function(_$CustomReportImpl) _then)
+  __$$CustomReportImplCopyWithImpl(_$CustomReportImpl _value, $Res Function(_$CustomReportImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -22940,14 +21702,10 @@ class __$$CustomReportImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CustomReportImpl implements _CustomReport {
-  const _$CustomReportImpl(
-      {required this.id,
-      required this.code,
-      final List<RegisteredApp>? allowedApps})
+  const _$CustomReportImpl({required this.id, required this.code, final List<RegisteredApp>? allowedApps})
       : _allowedApps = allowedApps;
 
-  factory _$CustomReportImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CustomReportImplFromJson(json);
+  factory _$CustomReportImpl.fromJson(Map<String, dynamic> json) => _$$CustomReportImplFromJson(json);
 
   /// [id] is the report ID
   @override
@@ -22982,14 +21740,12 @@ class _$CustomReportImpl implements _CustomReport {
             other is _$CustomReportImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.code, code) || other.code == code) &&
-            const DeepCollectionEquality()
-                .equals(other._allowedApps, _allowedApps));
+            const DeepCollectionEquality().equals(other._allowedApps, _allowedApps));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, code, const DeepCollectionEquality().hash(_allowedApps));
+  int get hashCode => Object.hash(runtimeType, id, code, const DeepCollectionEquality().hash(_allowedApps));
 
   @JsonKey(ignore: true)
   @override
@@ -23011,8 +21767,7 @@ abstract class _CustomReport implements CustomReport {
       required final String code,
       final List<RegisteredApp>? allowedApps}) = _$CustomReportImpl;
 
-  factory _CustomReport.fromJson(Map<String, dynamic> json) =
-      _$CustomReportImpl.fromJson;
+  factory _CustomReport.fromJson(Map<String, dynamic> json) = _$CustomReportImpl.fromJson;
 
   @override
 
@@ -23028,8 +21783,7 @@ abstract class _CustomReport implements CustomReport {
   List<RegisteredApp>? get allowedApps;
   @override
   @JsonKey(ignore: true)
-  _$$CustomReportImplCopyWith<_$CustomReportImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CustomReportImplCopyWith<_$CustomReportImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Sensor _$SensorFromJson(Map<String, dynamic> json) {
@@ -23158,8 +21912,7 @@ mixin _$Sensor {
 
 /// @nodoc
 abstract class $SensorCopyWith<$Res> {
-  factory $SensorCopyWith(Sensor value, $Res Function(Sensor) then) =
-      _$SensorCopyWithImpl<$Res, Sensor>;
+  factory $SensorCopyWith(Sensor value, $Res Function(Sensor) then) = _$SensorCopyWithImpl<$Res, Sensor>;
   @useResult
   $Res call(
       {String id,
@@ -23201,8 +21954,7 @@ abstract class $SensorCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
-    implements $SensorCopyWith<$Res> {
+class _$SensorCopyWithImpl<$Res, $Val extends Sensor> implements $SensorCopyWith<$Res> {
   _$SensorCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -23410,8 +22162,7 @@ class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
 
 /// @nodoc
 abstract class _$$SensorImplCopyWith<$Res> implements $SensorCopyWith<$Res> {
-  factory _$$SensorImplCopyWith(
-          _$SensorImpl value, $Res Function(_$SensorImpl) then) =
+  factory _$$SensorImplCopyWith(_$SensorImpl value, $Res Function(_$SensorImpl) then) =
       __$$SensorImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -23457,12 +22208,9 @@ abstract class _$$SensorImplCopyWith<$Res> implements $SensorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$SensorImplCopyWithImpl<$Res>
-    extends _$SensorCopyWithImpl<$Res, _$SensorImpl>
+class __$$SensorImplCopyWithImpl<$Res> extends _$SensorCopyWithImpl<$Res, _$SensorImpl>
     implements _$$SensorImplCopyWith<$Res> {
-  __$$SensorImplCopyWithImpl(
-      _$SensorImpl _value, $Res Function(_$SensorImpl) _then)
-      : super(_value, _then);
+  __$$SensorImplCopyWithImpl(_$SensorImpl _value, $Res Function(_$SensorImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -23683,8 +22431,7 @@ class _$SensorImpl implements _Sensor {
         _assignedAssets = assignedAssets,
         _access = access;
 
-  factory _$SensorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SensorImplFromJson(json);
+  factory _$SensorImpl.fromJson(Map<String, dynamic> json) => _$$SensorImplFromJson(json);
 
   /// [id] of the sensor. Must be unique along of all sensors of the asset.
   @override
@@ -23736,8 +22483,7 @@ class _$SensorImpl implements _Sensor {
   List<String>? get externalIdentifiers {
     final value = _externalIdentifiers;
     if (value == null) return null;
-    if (_externalIdentifiers is EqualUnmodifiableListView)
-      return _externalIdentifiers;
+    if (_externalIdentifiers is EqualUnmodifiableListView) return _externalIdentifiers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -23850,8 +22596,7 @@ class _$SensorImpl implements _Sensor {
   List<String>? get assignedAssetsIds {
     final value = _assignedAssetsIds;
     if (value == null) return null;
-    if (_assignedAssetsIds is EqualUnmodifiableListView)
-      return _assignedAssetsIds;
+    if (_assignedAssetsIds is EqualUnmodifiableListView) return _assignedAssetsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -23909,57 +22654,37 @@ class _$SensorImpl implements _Sensor {
             other is _$SensorImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.iterationCycle, iterationCycle) ||
-                other.iterationCycle == iterationCycle) &&
+            (identical(other.iterationCycle, iterationCycle) || other.iterationCycle == iterationCycle) &&
             (identical(other.slug, slug) || other.slug == slug) &&
-            (identical(other.isInstant, isInstant) ||
-                other.isInstant == isInstant) &&
+            (identical(other.isInstant, isInstant) || other.isInstant == isInstant) &&
             (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.measuringUnit, measuringUnit) ||
-                other.measuringUnit == measuringUnit) &&
+            (identical(other.measuringUnit, measuringUnit) || other.measuringUnit == measuringUnit) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.subtype, subtype) || other.subtype == subtype) &&
-            (identical(other.parameter, parameter) ||
-                other.parameter == parameter) &&
-            const DeepCollectionEquality()
-                .equals(other._externalIdentifiers, _externalIdentifiers) &&
+            (identical(other.parameter, parameter) || other.parameter == parameter) &&
+            const DeepCollectionEquality().equals(other._externalIdentifiers, _externalIdentifiers) &&
             (identical(other.formula, formula) || other.formula == formula) &&
             (identical(other.script, script) || other.script == script) &&
-            (identical(other.hasHeaders, hasHeaders) ||
-                other.hasHeaders == hasHeaders) &&
-            const DeepCollectionEquality()
-                .equals(other._csvHeaders, _csvHeaders) &&
-            (identical(other.csvSeparator, csvSeparator) ||
-                other.csvSeparator == csvSeparator) &&
+            (identical(other.hasHeaders, hasHeaders) || other.hasHeaders == hasHeaders) &&
+            const DeepCollectionEquality().equals(other._csvHeaders, _csvHeaders) &&
+            (identical(other.csvSeparator, csvSeparator) || other.csvSeparator == csvSeparator) &&
             const DeepCollectionEquality().equals(other._ranges, _ranges) &&
             const DeepCollectionEquality().equals(other._mask, _mask) &&
-            (identical(other.hasValidator, hasValidator) ||
-                other.hasValidator == hasValidator) &&
-            (identical(other.minValue, minValue) ||
-                other.minValue == minValue) &&
-            (identical(other.maxValue, maxValue) ||
-                other.maxValue == maxValue) &&
-            (identical(other.contentType, contentType) ||
-                other.contentType == contentType) &&
-            (identical(other.parentId, parentId) ||
-                other.parentId == parentId) &&
+            (identical(other.hasValidator, hasValidator) || other.hasValidator == hasValidator) &&
+            (identical(other.minValue, minValue) || other.minValue == minValue) &&
+            (identical(other.maxValue, maxValue) || other.maxValue == maxValue) &&
+            (identical(other.contentType, contentType) || other.contentType == contentType) &&
+            (identical(other.parentId, parentId) || other.parentId == parentId) &&
             (identical(other.parent, parent) || other.parent == parent) &&
-            (identical(other.functionId, functionId) ||
-                other.functionId == functionId) &&
-            (identical(other.lastExit, lastExit) ||
-                other.lastExit == lastExit) &&
+            (identical(other.functionId, functionId) || other.functionId == functionId) &&
+            (identical(other.lastExit, lastExit) || other.lastExit == lastExit) &&
             (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
-            const DeepCollectionEquality()
-                .equals(other._assignedAssetsIds, _assignedAssetsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._assignedAssets, _assignedAssets) &&
-            (identical(other.isTemplate, isTemplate) ||
-                other.isTemplate == isTemplate) &&
-            (identical(other.isGlobal, isGlobal) ||
-                other.isGlobal == isGlobal) &&
+            const DeepCollectionEquality().equals(other._assignedAssetsIds, _assignedAssetsIds) &&
+            const DeepCollectionEquality().equals(other._assignedAssets, _assignedAssets) &&
+            (identical(other.isTemplate, isTemplate) || other.isTemplate == isTemplate) &&
+            (identical(other.isGlobal, isGlobal) || other.isGlobal == isGlobal) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
-            (identical(other.maxHistorySearch, maxHistorySearch) ||
-                other.maxHistorySearch == maxHistorySearch));
+            (identical(other.maxHistorySearch, maxHistorySearch) || other.maxHistorySearch == maxHistorySearch));
   }
 
   @JsonKey(ignore: true)
@@ -24004,8 +22729,7 @@ class _$SensorImpl implements _Sensor {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SensorImplCopyWith<_$SensorImpl> get copyWith =>
-      __$$SensorImplCopyWithImpl<_$SensorImpl>(this, _$identity);
+  _$$SensorImplCopyWith<_$SensorImpl> get copyWith => __$$SensorImplCopyWithImpl<_$SensorImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -24017,40 +22741,39 @@ class _$SensorImpl implements _Sensor {
 
 abstract class _Sensor implements Sensor {
   const factory _Sensor(
-          {required final String id,
-          required final String name,
-          final int? iterationCycle,
-          required final String slug,
-          final bool? isInstant,
-          @IconOrNullConverter() final IconData? icon,
-          final String? measuringUnit,
-          @SensorTypeOrNullConverter() final SensorType? type,
-          @SensorSubTypeOrNullConverter() final SensorSubType? subtype,
-          final String? parameter,
-          final List<String>? externalIdentifiers,
-          final String? formula,
-          final String? script,
-          final bool? hasHeaders,
-          final List<String>? csvHeaders,
-          final String? csvSeparator,
-          final List<SensorPair>? ranges,
-          final List<MaskPoint>? mask,
-          final bool? hasValidator,
-          final double? minValue,
-          final double? maxValue,
-          final String? contentType,
-          final String? parentId,
-          final Sensor? parent,
-          final String? functionId,
-          final AtsExit? lastExit,
-          final String? qrCode,
-          final List<String>? assignedAssetsIds,
-          final List<Asset>? assignedAssets,
-          final bool? isTemplate,
-          final bool isGlobal,
-          final List<Access>? access,
-          @DurationOrNullConverter() final Duration? maxHistorySearch}) =
-      _$SensorImpl;
+      {required final String id,
+      required final String name,
+      final int? iterationCycle,
+      required final String slug,
+      final bool? isInstant,
+      @IconOrNullConverter() final IconData? icon,
+      final String? measuringUnit,
+      @SensorTypeOrNullConverter() final SensorType? type,
+      @SensorSubTypeOrNullConverter() final SensorSubType? subtype,
+      final String? parameter,
+      final List<String>? externalIdentifiers,
+      final String? formula,
+      final String? script,
+      final bool? hasHeaders,
+      final List<String>? csvHeaders,
+      final String? csvSeparator,
+      final List<SensorPair>? ranges,
+      final List<MaskPoint>? mask,
+      final bool? hasValidator,
+      final double? minValue,
+      final double? maxValue,
+      final String? contentType,
+      final String? parentId,
+      final Sensor? parent,
+      final String? functionId,
+      final AtsExit? lastExit,
+      final String? qrCode,
+      final List<String>? assignedAssetsIds,
+      final List<Asset>? assignedAssets,
+      final bool? isTemplate,
+      final bool isGlobal,
+      final List<Access>? access,
+      @DurationOrNullConverter() final Duration? maxHistorySearch}) = _$SensorImpl;
 
   factory _Sensor.fromJson(Map<String, dynamic> json) = _$SensorImpl.fromJson;
 
@@ -24202,8 +22925,7 @@ abstract class _Sensor implements Sensor {
   Duration? get maxHistorySearch;
   @override
   @JsonKey(ignore: true)
-  _$$SensorImplCopyWith<_$SensorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SensorImplCopyWith<_$SensorImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 MaskPoint _$MaskPointFromJson(Map<String, dynamic> json) {
@@ -24229,25 +22951,18 @@ mixin _$MaskPoint {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MaskPointCopyWith<MaskPoint> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MaskPointCopyWith<MaskPoint> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MaskPointCopyWith<$Res> {
-  factory $MaskPointCopyWith(MaskPoint value, $Res Function(MaskPoint) then) =
-      _$MaskPointCopyWithImpl<$Res, MaskPoint>;
+  factory $MaskPointCopyWith(MaskPoint value, $Res Function(MaskPoint) then) = _$MaskPointCopyWithImpl<$Res, MaskPoint>;
   @useResult
-  $Res call(
-      {@ColorOrNullConverter() Color? color,
-      String? text,
-      String value,
-      @IconOrNullConverter() IconData? icon});
+  $Res call({@ColorOrNullConverter() Color? color, String? text, String value, @IconOrNullConverter() IconData? icon});
 }
 
 /// @nodoc
-class _$MaskPointCopyWithImpl<$Res, $Val extends MaskPoint>
-    implements $MaskPointCopyWith<$Res> {
+class _$MaskPointCopyWithImpl<$Res, $Val extends MaskPoint> implements $MaskPointCopyWith<$Res> {
   _$MaskPointCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -24285,27 +23000,18 @@ class _$MaskPointCopyWithImpl<$Res, $Val extends MaskPoint>
 }
 
 /// @nodoc
-abstract class _$$MaskPointImplCopyWith<$Res>
-    implements $MaskPointCopyWith<$Res> {
-  factory _$$MaskPointImplCopyWith(
-          _$MaskPointImpl value, $Res Function(_$MaskPointImpl) then) =
+abstract class _$$MaskPointImplCopyWith<$Res> implements $MaskPointCopyWith<$Res> {
+  factory _$$MaskPointImplCopyWith(_$MaskPointImpl value, $Res Function(_$MaskPointImpl) then) =
       __$$MaskPointImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {@ColorOrNullConverter() Color? color,
-      String? text,
-      String value,
-      @IconOrNullConverter() IconData? icon});
+  $Res call({@ColorOrNullConverter() Color? color, String? text, String value, @IconOrNullConverter() IconData? icon});
 }
 
 /// @nodoc
-class __$$MaskPointImplCopyWithImpl<$Res>
-    extends _$MaskPointCopyWithImpl<$Res, _$MaskPointImpl>
+class __$$MaskPointImplCopyWithImpl<$Res> extends _$MaskPointCopyWithImpl<$Res, _$MaskPointImpl>
     implements _$$MaskPointImplCopyWith<$Res> {
-  __$$MaskPointImplCopyWithImpl(
-      _$MaskPointImpl _value, $Res Function(_$MaskPointImpl) _then)
-      : super(_value, _then);
+  __$$MaskPointImplCopyWithImpl(_$MaskPointImpl _value, $Res Function(_$MaskPointImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -24340,13 +23046,9 @@ class __$$MaskPointImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$MaskPointImpl implements _MaskPoint {
   const _$MaskPointImpl(
-      {@ColorOrNullConverter() this.color,
-      this.text,
-      required this.value,
-      @IconOrNullConverter() this.icon});
+      {@ColorOrNullConverter() this.color, this.text, required this.value, @IconOrNullConverter() this.icon});
 
-  factory _$MaskPointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MaskPointImplFromJson(json);
+  factory _$MaskPointImpl.fromJson(Map<String, dynamic> json) => _$$MaskPointImplFromJson(json);
 
   /// [color] of the mask point, will convert the color ignoring the dark/light theme setting.
   @override
@@ -24408,8 +23110,7 @@ abstract class _MaskPoint implements MaskPoint {
       required final String value,
       @IconOrNullConverter() final IconData? icon}) = _$MaskPointImpl;
 
-  factory _MaskPoint.fromJson(Map<String, dynamic> json) =
-      _$MaskPointImpl.fromJson;
+  factory _MaskPoint.fromJson(Map<String, dynamic> json) = _$MaskPointImpl.fromJson;
 
   @override
 
@@ -24432,8 +23133,7 @@ abstract class _MaskPoint implements MaskPoint {
   IconData? get icon;
   @override
   @JsonKey(ignore: true)
-  _$$MaskPointImplCopyWith<_$MaskPointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$MaskPointImplCopyWith<_$MaskPointImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 SensorPair _$SensorPairFromJson(Map<String, dynamic> json) {
@@ -24450,22 +23150,19 @@ mixin _$SensorPair {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SensorPairCopyWith<SensorPair> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SensorPairCopyWith<SensorPair> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SensorPairCopyWith<$Res> {
-  factory $SensorPairCopyWith(
-          SensorPair value, $Res Function(SensorPair) then) =
+  factory $SensorPairCopyWith(SensorPair value, $Res Function(SensorPair) then) =
       _$SensorPairCopyWithImpl<$Res, SensorPair>;
   @useResult
   $Res call({double x, double y});
 }
 
 /// @nodoc
-class _$SensorPairCopyWithImpl<$Res, $Val extends SensorPair>
-    implements $SensorPairCopyWith<$Res> {
+class _$SensorPairCopyWithImpl<$Res, $Val extends SensorPair> implements $SensorPairCopyWith<$Res> {
   _$SensorPairCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -24493,10 +23190,8 @@ class _$SensorPairCopyWithImpl<$Res, $Val extends SensorPair>
 }
 
 /// @nodoc
-abstract class _$$SensorPairImplCopyWith<$Res>
-    implements $SensorPairCopyWith<$Res> {
-  factory _$$SensorPairImplCopyWith(
-          _$SensorPairImpl value, $Res Function(_$SensorPairImpl) then) =
+abstract class _$$SensorPairImplCopyWith<$Res> implements $SensorPairCopyWith<$Res> {
+  factory _$$SensorPairImplCopyWith(_$SensorPairImpl value, $Res Function(_$SensorPairImpl) then) =
       __$$SensorPairImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -24504,12 +23199,9 @@ abstract class _$$SensorPairImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SensorPairImplCopyWithImpl<$Res>
-    extends _$SensorPairCopyWithImpl<$Res, _$SensorPairImpl>
+class __$$SensorPairImplCopyWithImpl<$Res> extends _$SensorPairCopyWithImpl<$Res, _$SensorPairImpl>
     implements _$$SensorPairImplCopyWith<$Res> {
-  __$$SensorPairImplCopyWithImpl(
-      _$SensorPairImpl _value, $Res Function(_$SensorPairImpl) _then)
-      : super(_value, _then);
+  __$$SensorPairImplCopyWithImpl(_$SensorPairImpl _value, $Res Function(_$SensorPairImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -24535,8 +23227,7 @@ class __$$SensorPairImplCopyWithImpl<$Res>
 class _$SensorPairImpl implements _SensorPair {
   const _$SensorPairImpl({required this.x, required this.y});
 
-  factory _$SensorPairImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SensorPairImplFromJson(json);
+  factory _$SensorPairImpl.fromJson(Map<String, dynamic> json) => _$$SensorPairImplFromJson(json);
 
   /// [x] means the input value of the sensor.
   @override
@@ -24579,11 +23270,9 @@ class _$SensorPairImpl implements _SensorPair {
 }
 
 abstract class _SensorPair implements SensorPair {
-  const factory _SensorPair(
-      {required final double x, required final double y}) = _$SensorPairImpl;
+  const factory _SensorPair({required final double x, required final double y}) = _$SensorPairImpl;
 
-  factory _SensorPair.fromJson(Map<String, dynamic> json) =
-      _$SensorPairImpl.fromJson;
+  factory _SensorPair.fromJson(Map<String, dynamic> json) = _$SensorPairImpl.fromJson;
 
   @override
 
@@ -24595,8 +23284,7 @@ abstract class _SensorPair implements SensorPair {
   double get y;
   @override
   @JsonKey(ignore: true)
-  _$$SensorPairImplCopyWith<_$SensorPairImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SensorPairImplCopyWith<_$SensorPairImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 SuspendedService _$SuspendedServiceFromJson(Map<String, dynamic> json) {
@@ -24615,14 +23303,12 @@ mixin _$SuspendedService {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SuspendedServiceCopyWith<SuspendedService> get copyWith =>
-      throw _privateConstructorUsedError;
+  $SuspendedServiceCopyWith<SuspendedService> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $SuspendedServiceCopyWith<$Res> {
-  factory $SuspendedServiceCopyWith(
-          SuspendedService value, $Res Function(SuspendedService) then) =
+  factory $SuspendedServiceCopyWith(SuspendedService value, $Res Function(SuspendedService) then) =
       _$SuspendedServiceCopyWithImpl<$Res, SuspendedService>;
   @useResult
   $Res call(
@@ -24638,8 +23324,7 @@ abstract class $SuspendedServiceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SuspendedServiceCopyWithImpl<$Res, $Val extends SuspendedService>
-    implements $SuspendedServiceCopyWith<$Res> {
+class _$SuspendedServiceCopyWithImpl<$Res, $Val extends SuspendedService> implements $SuspendedServiceCopyWith<$Res> {
   _$SuspendedServiceCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -24703,10 +23388,8 @@ class _$SuspendedServiceCopyWithImpl<$Res, $Val extends SuspendedService>
 }
 
 /// @nodoc
-abstract class _$$SuspendedServiceImplCopyWith<$Res>
-    implements $SuspendedServiceCopyWith<$Res> {
-  factory _$$SuspendedServiceImplCopyWith(_$SuspendedServiceImpl value,
-          $Res Function(_$SuspendedServiceImpl) then) =
+abstract class _$$SuspendedServiceImplCopyWith<$Res> implements $SuspendedServiceCopyWith<$Res> {
+  factory _$$SuspendedServiceImplCopyWith(_$SuspendedServiceImpl value, $Res Function(_$SuspendedServiceImpl) then) =
       __$$SuspendedServiceImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -24725,11 +23408,9 @@ abstract class _$$SuspendedServiceImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$SuspendedServiceImplCopyWithImpl<$Res>
-    extends _$SuspendedServiceCopyWithImpl<$Res, _$SuspendedServiceImpl>
+class __$$SuspendedServiceImplCopyWithImpl<$Res> extends _$SuspendedServiceCopyWithImpl<$Res, _$SuspendedServiceImpl>
     implements _$$SuspendedServiceImplCopyWith<$Res> {
-  __$$SuspendedServiceImplCopyWithImpl(_$SuspendedServiceImpl _value,
-      $Res Function(_$SuspendedServiceImpl) _then)
+  __$$SuspendedServiceImplCopyWithImpl(_$SuspendedServiceImpl _value, $Res Function(_$SuspendedServiceImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -24782,8 +23463,7 @@ class _$SuspendedServiceImpl implements _SuspendedService {
       required this.protocol,
       @TimestampConverter() required this.suspendedAt});
 
-  factory _$SuspendedServiceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SuspendedServiceImplFromJson(json);
+  factory _$SuspendedServiceImpl.fromJson(Map<String, dynamic> json) => _$$SuspendedServiceImplFromJson(json);
 
   @override
   final String incidentId;
@@ -24809,29 +23489,23 @@ class _$SuspendedServiceImpl implements _SuspendedService {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuspendedServiceImpl &&
-            (identical(other.incidentId, incidentId) ||
-                other.incidentId == incidentId) &&
-            (identical(other.serviceId, serviceId) ||
-                other.serviceId == serviceId) &&
+            (identical(other.incidentId, incidentId) || other.incidentId == incidentId) &&
+            (identical(other.serviceId, serviceId) || other.serviceId == serviceId) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.user, user) || other.user == user) &&
-            (identical(other.protocol, protocol) ||
-                other.protocol == protocol) &&
-            (identical(other.suspendedAt, suspendedAt) ||
-                other.suspendedAt == suspendedAt));
+            (identical(other.protocol, protocol) || other.protocol == protocol) &&
+            (identical(other.suspendedAt, suspendedAt) || other.suspendedAt == suspendedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, incidentId, serviceId, name, user, protocol, suspendedAt);
+  int get hashCode => Object.hash(runtimeType, incidentId, serviceId, name, user, protocol, suspendedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SuspendedServiceImplCopyWith<_$SuspendedServiceImpl> get copyWith =>
-      __$$SuspendedServiceImplCopyWithImpl<_$SuspendedServiceImpl>(
-          this, _$identity);
+      __$$SuspendedServiceImplCopyWithImpl<_$SuspendedServiceImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -24843,16 +23517,14 @@ class _$SuspendedServiceImpl implements _SuspendedService {
 
 abstract class _SuspendedService implements SuspendedService {
   const factory _SuspendedService(
-          {required final String incidentId,
-          required final String serviceId,
-          required final String name,
-          required final User user,
-          required final OutboundProtocol protocol,
-          @TimestampConverter() required final DateTime suspendedAt}) =
-      _$SuspendedServiceImpl;
+      {required final String incidentId,
+      required final String serviceId,
+      required final String name,
+      required final User user,
+      required final OutboundProtocol protocol,
+      @TimestampConverter() required final DateTime suspendedAt}) = _$SuspendedServiceImpl;
 
-  factory _SuspendedService.fromJson(Map<String, dynamic> json) =
-      _$SuspendedServiceImpl.fromJson;
+  factory _SuspendedService.fromJson(Map<String, dynamic> json) = _$SuspendedServiceImpl.fromJson;
 
   @override
   String get incidentId;
@@ -24869,8 +23541,7 @@ abstract class _SuspendedService implements SuspendedService {
   DateTime get suspendedAt;
   @override
   @JsonKey(ignore: true)
-  _$$SuspendedServiceImplCopyWith<_$SuspendedServiceImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SuspendedServiceImplCopyWith<_$SuspendedServiceImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Tag _$TagFromJson(Map<String, dynamic> json) {
@@ -24889,11 +23560,6 @@ mixin _$Tag {
   @ColorConverter()
   Color get color => throw _privateConstructorUsedError;
 
-  /// Is the icon of the tag.
-  @Deprecated('Use `dynamicIcon` instead')
-  @IconOrNullConverter()
-  IconData? get icon => throw _privateConstructorUsedError;
-
   /// Dynamic icon
   Avatar? get dynamicIcon => throw _privateConstructorUsedError;
 
@@ -24904,8 +23570,7 @@ mixin _$Tag {
   List<String>? get usersIds => throw _privateConstructorUsedError;
 
   /// Is a list of associated outbound services to this module.
-  List<OutboundService>? get outboundServices =>
-      throw _privateConstructorUsedError;
+  List<OutboundService>? get outboundServices => throw _privateConstructorUsedError;
 
   /// Is a list of ID's of associated outbound services to this module.
   List<String>? get outboundServicesIds => throw _privateConstructorUsedError;
@@ -24947,8 +23612,7 @@ mixin _$Tag {
   List<String>? get geofencesIds => throw _privateConstructorUsedError;
 
   /// Is a list of associated source accounts to this module.
-  List<ExternalAccount>? get externalAccounts =>
-      throw _privateConstructorUsedError;
+  List<ExternalAccount>? get externalAccounts => throw _privateConstructorUsedError;
 
   /// Is a list of ID's of associated source accounts to this module.
   List<String>? get externalAccountsIds => throw _privateConstructorUsedError;
@@ -24978,8 +23642,7 @@ mixin _$Tag {
   List<String>? get careProtocolsIds => throw _privateConstructorUsedError;
 
   /// Is a list of associated inbound services to this module.
-  List<InboundService>? get inboundServices =>
-      throw _privateConstructorUsedError;
+  List<InboundService>? get inboundServices => throw _privateConstructorUsedError;
 
   /// Is a list of ID's of associated inbound services to this module.
   List<String>? get inboundServicesIds => throw _privateConstructorUsedError;
@@ -24997,8 +23660,7 @@ mixin _$Tag {
   List<String>? get conciergeFormsIds => throw _privateConstructorUsedError;
 
   /// Is a list of associated report templates to this module.
-  List<ReportTemplate>? get reportTemplates =>
-      throw _privateConstructorUsedError;
+  List<ReportTemplate>? get reportTemplates => throw _privateConstructorUsedError;
 
   /// Is a list of ID's of associated report templates to this module.
   List<String>? get reportTemplatesIds => throw _privateConstructorUsedError;
@@ -25028,8 +23690,7 @@ mixin _$Tag {
   List<String>? get mappitRoutesIds => throw _privateConstructorUsedError;
 
   /// Is a list of associated exchange services to this module.
-  List<ExchangeService>? get exchangeServices =>
-      throw _privateConstructorUsedError;
+  List<ExchangeService>? get exchangeServices => throw _privateConstructorUsedError;
 
   /// Is a list of ID's of associated exchange services to this module.
   List<String>? get exchangeServicesIds => throw _privateConstructorUsedError;
@@ -25056,16 +23717,12 @@ mixin _$Tag {
 
 /// @nodoc
 abstract class $TagCopyWith<$Res> {
-  factory $TagCopyWith(Tag value, $Res Function(Tag) then) =
-      _$TagCopyWithImpl<$Res, Tag>;
+  factory $TagCopyWith(Tag value, $Res Function(Tag) then) = _$TagCopyWithImpl<$Res, Tag>;
   @useResult
   $Res call(
       {String id,
       String name,
       @ColorConverter() Color color,
-      @Deprecated('Use `dynamicIcon` instead')
-      @IconOrNullConverter()
-      IconData? icon,
       Avatar? dynamicIcon,
       List<User>? users,
       List<String>? usersIds,
@@ -25136,7 +23793,6 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? id = null,
     Object? name = null,
     Object? color = null,
-    Object? icon = freezed,
     Object? dynamicIcon = freezed,
     Object? users = freezed,
     Object? usersIds = freezed,
@@ -25201,10 +23857,6 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData?,
       dynamicIcon: freezed == dynamicIcon
           ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
@@ -25435,17 +24087,13 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
-  factory _$$TagImplCopyWith(_$TagImpl value, $Res Function(_$TagImpl) then) =
-      __$$TagImplCopyWithImpl<$Res>;
+  factory _$$TagImplCopyWith(_$TagImpl value, $Res Function(_$TagImpl) then) = __$$TagImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String id,
       String name,
       @ColorConverter() Color color,
-      @Deprecated('Use `dynamicIcon` instead')
-      @IconOrNullConverter()
-      IconData? icon,
       Avatar? dynamicIcon,
       List<User>? users,
       List<String>? usersIds,
@@ -25504,10 +24152,8 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
-    implements _$$TagImplCopyWith<$Res> {
-  __$$TagImplCopyWithImpl(_$TagImpl _value, $Res Function(_$TagImpl) _then)
-      : super(_value, _then);
+class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl> implements _$$TagImplCopyWith<$Res> {
+  __$$TagImplCopyWithImpl(_$TagImpl _value, $Res Function(_$TagImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -25515,7 +24161,6 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
     Object? id = null,
     Object? name = null,
     Object? color = null,
-    Object? icon = freezed,
     Object? dynamicIcon = freezed,
     Object? users = freezed,
     Object? usersIds = freezed,
@@ -25580,10 +24225,6 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData?,
       dynamicIcon: freezed == dynamicIcon
           ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
@@ -25795,7 +24436,6 @@ class _$TagImpl implements _Tag {
       {required this.id,
       required this.name,
       @ColorConverter() required this.color,
-      @Deprecated('Use `dynamicIcon` instead') @IconOrNullConverter() this.icon,
       this.dynamicIcon,
       final List<User>? users,
       final List<String>? usersIds,
@@ -25894,8 +24534,7 @@ class _$TagImpl implements _Tag {
         _sensorsIds = sensorsIds,
         _sensors = sensors;
 
-  factory _$TagImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TagImplFromJson(json);
+  factory _$TagImpl.fromJson(Map<String, dynamic> json) => _$$TagImplFromJson(json);
 
   /// Is the ID of the tag.
   @override
@@ -25909,12 +24548,6 @@ class _$TagImpl implements _Tag {
   @override
   @ColorConverter()
   final Color color;
-
-  /// Is the icon of the tag.
-  @override
-  @Deprecated('Use `dynamicIcon` instead')
-  @IconOrNullConverter()
-  final IconData? icon;
 
   /// Dynamic icon
   @override
@@ -25954,8 +24587,7 @@ class _$TagImpl implements _Tag {
   List<OutboundService>? get outboundServices {
     final value = _outboundServices;
     if (value == null) return null;
-    if (_outboundServices is EqualUnmodifiableListView)
-      return _outboundServices;
+    if (_outboundServices is EqualUnmodifiableListView) return _outboundServices;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -25968,8 +24600,7 @@ class _$TagImpl implements _Tag {
   List<String>? get outboundServicesIds {
     final value = _outboundServicesIds;
     if (value == null) return null;
-    if (_outboundServicesIds is EqualUnmodifiableListView)
-      return _outboundServicesIds;
+    if (_outboundServicesIds is EqualUnmodifiableListView) return _outboundServicesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -26138,8 +24769,7 @@ class _$TagImpl implements _Tag {
   List<ExternalAccount>? get externalAccounts {
     final value = _externalAccounts;
     if (value == null) return null;
-    if (_externalAccounts is EqualUnmodifiableListView)
-      return _externalAccounts;
+    if (_externalAccounts is EqualUnmodifiableListView) return _externalAccounts;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -26152,8 +24782,7 @@ class _$TagImpl implements _Tag {
   List<String>? get externalAccountsIds {
     final value = _externalAccountsIds;
     if (value == null) return null;
-    if (_externalAccountsIds is EqualUnmodifiableListView)
-      return _externalAccountsIds;
+    if (_externalAccountsIds is EqualUnmodifiableListView) return _externalAccountsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -26257,8 +24886,7 @@ class _$TagImpl implements _Tag {
   List<String>? get careProtocolsIds {
     final value = _careProtocolsIds;
     if (value == null) return null;
-    if (_careProtocolsIds is EqualUnmodifiableListView)
-      return _careProtocolsIds;
+    if (_careProtocolsIds is EqualUnmodifiableListView) return _careProtocolsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -26284,8 +24912,7 @@ class _$TagImpl implements _Tag {
   List<String>? get inboundServicesIds {
     final value = _inboundServicesIds;
     if (value == null) return null;
-    if (_inboundServicesIds is EqualUnmodifiableListView)
-      return _inboundServicesIds;
+    if (_inboundServicesIds is EqualUnmodifiableListView) return _inboundServicesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -26337,8 +24964,7 @@ class _$TagImpl implements _Tag {
   List<String>? get conciergeFormsIds {
     final value = _conciergeFormsIds;
     if (value == null) return null;
-    if (_conciergeFormsIds is EqualUnmodifiableListView)
-      return _conciergeFormsIds;
+    if (_conciergeFormsIds is EqualUnmodifiableListView) return _conciergeFormsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -26364,8 +24990,7 @@ class _$TagImpl implements _Tag {
   List<String>? get reportTemplatesIds {
     final value = _reportTemplatesIds;
     if (value == null) return null;
-    if (_reportTemplatesIds is EqualUnmodifiableListView)
-      return _reportTemplatesIds;
+    if (_reportTemplatesIds is EqualUnmodifiableListView) return _reportTemplatesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -26443,8 +25068,7 @@ class _$TagImpl implements _Tag {
   List<String>? get visionProfilesIds {
     final value = _visionProfilesIds;
     if (value == null) return null;
-    if (_visionProfilesIds is EqualUnmodifiableListView)
-      return _visionProfilesIds;
+    if (_visionProfilesIds is EqualUnmodifiableListView) return _visionProfilesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -26483,8 +25107,7 @@ class _$TagImpl implements _Tag {
   List<ExchangeService>? get exchangeServices {
     final value = _exchangeServices;
     if (value == null) return null;
-    if (_exchangeServices is EqualUnmodifiableListView)
-      return _exchangeServices;
+    if (_exchangeServices is EqualUnmodifiableListView) return _exchangeServices;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -26497,8 +25120,7 @@ class _$TagImpl implements _Tag {
   List<String>? get exchangeServicesIds {
     final value = _exchangeServicesIds;
     if (value == null) return null;
-    if (_exchangeServicesIds is EqualUnmodifiableListView)
-      return _exchangeServicesIds;
+    if (_exchangeServicesIds is EqualUnmodifiableListView) return _exchangeServicesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -26563,94 +25185,55 @@ class _$TagImpl implements _Tag {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color) &&
-            (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.dynamicIcon, dynamicIcon) ||
-                other.dynamicIcon == dynamicIcon) &&
+            (identical(other.dynamicIcon, dynamicIcon) || other.dynamicIcon == dynamicIcon) &&
             const DeepCollectionEquality().equals(other._users, _users) &&
             const DeepCollectionEquality().equals(other._usersIds, _usersIds) &&
-            const DeepCollectionEquality()
-                .equals(other._outboundServices, _outboundServices) &&
-            const DeepCollectionEquality()
-                .equals(other._outboundServicesIds, _outboundServicesIds) &&
+            const DeepCollectionEquality().equals(other._outboundServices, _outboundServices) &&
+            const DeepCollectionEquality().equals(other._outboundServicesIds, _outboundServicesIds) &&
             const DeepCollectionEquality().equals(other._triggers, _triggers) &&
-            const DeepCollectionEquality()
-                .equals(other._triggersIds, _triggersIds) &&
+            const DeepCollectionEquality().equals(other._triggersIds, _triggersIds) &&
             const DeepCollectionEquality().equals(other._actions, _actions) &&
-            const DeepCollectionEquality()
-                .equals(other._actionsIds, _actionsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._operations, _operations) &&
-            const DeepCollectionEquality()
-                .equals(other._operationsIds, _operationsIds) &&
+            const DeepCollectionEquality().equals(other._actionsIds, _actionsIds) &&
+            const DeepCollectionEquality().equals(other._operations, _operations) &&
+            const DeepCollectionEquality().equals(other._operationsIds, _operationsIds) &&
             const DeepCollectionEquality().equals(other._assets, _assets) &&
-            const DeepCollectionEquality()
-                .equals(other._assetsIds, _assetsIds) &&
+            const DeepCollectionEquality().equals(other._assetsIds, _assetsIds) &&
             const DeepCollectionEquality().equals(other._devices, _devices) &&
-            const DeepCollectionEquality()
-                .equals(other._devicesIds, _devicesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._geofences, _geofences) &&
-            const DeepCollectionEquality()
-                .equals(other._geofencesIds, _geofencesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._externalAccounts, _externalAccounts) &&
-            const DeepCollectionEquality()
-                .equals(other._externalAccountsIds, _externalAccountsIds) &&
+            const DeepCollectionEquality().equals(other._devicesIds, _devicesIds) &&
+            const DeepCollectionEquality().equals(other._geofences, _geofences) &&
+            const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds) &&
+            const DeepCollectionEquality().equals(other._externalAccounts, _externalAccounts) &&
+            const DeepCollectionEquality().equals(other._externalAccountsIds, _externalAccountsIds) &&
             const DeepCollectionEquality().equals(other._presets, _presets) &&
-            const DeepCollectionEquality()
-                .equals(other._presetsIds, _presetsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._references, _references) &&
-            const DeepCollectionEquality()
-                .equals(other._referencesIds, _referencesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._checkpoints, _checkpoints) &&
-            const DeepCollectionEquality()
-                .equals(other._checkpointsIds, _checkpointsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._careProtocols, _careProtocols) &&
-            const DeepCollectionEquality()
-                .equals(other._careProtocolsIds, _careProtocolsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._inboundServices, _inboundServices) &&
-            const DeepCollectionEquality()
-                .equals(other._inboundServicesIds, _inboundServicesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._functions, _functions) &&
-            const DeepCollectionEquality()
-                .equals(other._functionsIds, _functionsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._conciergeForms, _conciergeForms) &&
-            const DeepCollectionEquality()
-                .equals(other._conciergeFormsIds, _conciergeFormsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._reportTemplates, _reportTemplates) &&
-            const DeepCollectionEquality()
-                .equals(other._reportTemplatesIds, _reportTemplatesIds) &&
+            const DeepCollectionEquality().equals(other._presetsIds, _presetsIds) &&
+            const DeepCollectionEquality().equals(other._references, _references) &&
+            const DeepCollectionEquality().equals(other._referencesIds, _referencesIds) &&
+            const DeepCollectionEquality().equals(other._checkpoints, _checkpoints) &&
+            const DeepCollectionEquality().equals(other._checkpointsIds, _checkpointsIds) &&
+            const DeepCollectionEquality().equals(other._careProtocols, _careProtocols) &&
+            const DeepCollectionEquality().equals(other._careProtocolsIds, _careProtocolsIds) &&
+            const DeepCollectionEquality().equals(other._inboundServices, _inboundServices) &&
+            const DeepCollectionEquality().equals(other._inboundServicesIds, _inboundServicesIds) &&
+            const DeepCollectionEquality().equals(other._functions, _functions) &&
+            const DeepCollectionEquality().equals(other._functionsIds, _functionsIds) &&
+            const DeepCollectionEquality().equals(other._conciergeForms, _conciergeForms) &&
+            const DeepCollectionEquality().equals(other._conciergeFormsIds, _conciergeFormsIds) &&
+            const DeepCollectionEquality().equals(other._reportTemplates, _reportTemplates) &&
+            const DeepCollectionEquality().equals(other._reportTemplatesIds, _reportTemplatesIds) &&
             const DeepCollectionEquality().equals(other._charts, _charts) &&
-            const DeepCollectionEquality()
-                .equals(other._chartsIds, _chartsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._workspaces, _workspaces) &&
-            const DeepCollectionEquality()
-                .equals(other._workspacesIds, _workspacesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._visionProfiles, _visionProfiles) &&
-            const DeepCollectionEquality()
-                .equals(other._visionProfilesIds, _visionProfilesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._mappitRoutes, _mappitRoutes) &&
-            const DeepCollectionEquality()
-                .equals(other._mappitRoutesIds, _mappitRoutesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._exchangeServices, _exchangeServices) &&
-            const DeepCollectionEquality()
-                .equals(other._exchangeServicesIds, _exchangeServicesIds) &&
+            const DeepCollectionEquality().equals(other._chartsIds, _chartsIds) &&
+            const DeepCollectionEquality().equals(other._workspaces, _workspaces) &&
+            const DeepCollectionEquality().equals(other._workspacesIds, _workspacesIds) &&
+            const DeepCollectionEquality().equals(other._visionProfiles, _visionProfiles) &&
+            const DeepCollectionEquality().equals(other._visionProfilesIds, _visionProfilesIds) &&
+            const DeepCollectionEquality().equals(other._mappitRoutes, _mappitRoutes) &&
+            const DeepCollectionEquality().equals(other._mappitRoutesIds, _mappitRoutesIds) &&
+            const DeepCollectionEquality().equals(other._exchangeServices, _exchangeServices) &&
+            const DeepCollectionEquality().equals(other._exchangeServicesIds, _exchangeServicesIds) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
             (identical(other.owner, owner) || other.owner == owner) &&
             (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
-            const DeepCollectionEquality()
-                .equals(other._sensorsIds, _sensorsIds) &&
+            const DeepCollectionEquality().equals(other._sensorsIds, _sensorsIds) &&
             const DeepCollectionEquality().equals(other._sensors, _sensors));
   }
 
@@ -26661,7 +25244,6 @@ class _$TagImpl implements _Tag {
         id,
         name,
         color,
-        icon,
         dynamicIcon,
         const DeepCollectionEquality().hash(_users),
         const DeepCollectionEquality().hash(_usersIds),
@@ -26717,8 +25299,7 @@ class _$TagImpl implements _Tag {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TagImplCopyWith<_$TagImpl> get copyWith =>
-      __$$TagImplCopyWithImpl<_$TagImpl>(this, _$identity);
+  _$$TagImplCopyWith<_$TagImpl> get copyWith => __$$TagImplCopyWithImpl<_$TagImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -26733,9 +25314,6 @@ abstract class _Tag implements Tag {
       {required final String id,
       required final String name,
       @ColorConverter() required final Color color,
-      @Deprecated('Use `dynamicIcon` instead')
-      @IconOrNullConverter()
-      final IconData? icon,
       final Avatar? dynamicIcon,
       final List<User>? users,
       final List<String>? usersIds,
@@ -26802,12 +25380,6 @@ abstract class _Tag implements Tag {
   /// Is the color of the tag.
   @ColorConverter()
   Color get color;
-  @override
-
-  /// Is the icon of the tag.
-  @Deprecated('Use `dynamicIcon` instead')
-  @IconOrNullConverter()
-  IconData? get icon;
   @override
 
   /// Dynamic icon
@@ -27010,8 +25582,7 @@ abstract class _Tag implements Tag {
   List<Sensor>? get sensors;
   @override
   @JsonKey(ignore: true)
-  _$$TagImplCopyWith<_$TagImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TagImplCopyWith<_$TagImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 DeviceTelemetry _$DeviceTelemetryFromJson(Map<String, dynamic> json) {
@@ -27038,14 +25609,12 @@ mixin _$DeviceTelemetry {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DeviceTelemetryCopyWith<DeviceTelemetry> get copyWith =>
-      throw _privateConstructorUsedError;
+  $DeviceTelemetryCopyWith<DeviceTelemetry> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $DeviceTelemetryCopyWith<$Res> {
-  factory $DeviceTelemetryCopyWith(
-          DeviceTelemetry value, $Res Function(DeviceTelemetry) then) =
+  factory $DeviceTelemetryCopyWith(DeviceTelemetry value, $Res Function(DeviceTelemetry) then) =
       _$DeviceTelemetryCopyWithImpl<$Res, DeviceTelemetry>;
   @useResult
   $Res call(
@@ -27059,8 +25628,7 @@ abstract class $DeviceTelemetryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DeviceTelemetryCopyWithImpl<$Res, $Val extends DeviceTelemetry>
-    implements $DeviceTelemetryCopyWith<$Res> {
+class _$DeviceTelemetryCopyWithImpl<$Res, $Val extends DeviceTelemetry> implements $DeviceTelemetryCopyWith<$Res> {
   _$DeviceTelemetryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -27115,10 +25683,8 @@ class _$DeviceTelemetryCopyWithImpl<$Res, $Val extends DeviceTelemetry>
 }
 
 /// @nodoc
-abstract class _$$DeviceTelemetryImplCopyWith<$Res>
-    implements $DeviceTelemetryCopyWith<$Res> {
-  factory _$$DeviceTelemetryImplCopyWith(_$DeviceTelemetryImpl value,
-          $Res Function(_$DeviceTelemetryImpl) then) =
+abstract class _$$DeviceTelemetryImplCopyWith<$Res> implements $DeviceTelemetryCopyWith<$Res> {
+  factory _$$DeviceTelemetryImplCopyWith(_$DeviceTelemetryImpl value, $Res Function(_$DeviceTelemetryImpl) then) =
       __$$DeviceTelemetryImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -27134,11 +25700,9 @@ abstract class _$$DeviceTelemetryImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$DeviceTelemetryImplCopyWithImpl<$Res>
-    extends _$DeviceTelemetryCopyWithImpl<$Res, _$DeviceTelemetryImpl>
+class __$$DeviceTelemetryImplCopyWithImpl<$Res> extends _$DeviceTelemetryCopyWithImpl<$Res, _$DeviceTelemetryImpl>
     implements _$$DeviceTelemetryImplCopyWith<$Res> {
-  __$$DeviceTelemetryImplCopyWithImpl(
-      _$DeviceTelemetryImpl _value, $Res Function(_$DeviceTelemetryImpl) _then)
+  __$$DeviceTelemetryImplCopyWithImpl(_$DeviceTelemetryImpl _value, $Res Function(_$DeviceTelemetryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -27187,8 +25751,7 @@ class _$DeviceTelemetryImpl extends _DeviceTelemetry {
       : _payload = payload,
         super._();
 
-  factory _$DeviceTelemetryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DeviceTelemetryImplFromJson(json);
+  factory _$DeviceTelemetryImpl.fromJson(Map<String, dynamic> json) => _$$DeviceTelemetryImplFromJson(json);
 
   /// ID of the message entity.
   @override
@@ -27231,26 +25794,22 @@ class _$DeviceTelemetryImpl extends _DeviceTelemetry {
         (other.runtimeType == runtimeType &&
             other is _$DeviceTelemetryImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.deviceId, deviceId) ||
-                other.deviceId == deviceId) &&
-            (identical(other.receivedAt, receivedAt) ||
-                other.receivedAt == receivedAt) &&
-            (identical(other.position, position) ||
-                other.position == position) &&
+            (identical(other.deviceId, deviceId) || other.deviceId == deviceId) &&
+            (identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt) &&
+            (identical(other.position, position) || other.position == position) &&
             const DeepCollectionEquality().equals(other._payload, _payload));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, deviceId, receivedAt,
-      position, const DeepCollectionEquality().hash(_payload));
+  int get hashCode =>
+      Object.hash(runtimeType, id, deviceId, receivedAt, position, const DeepCollectionEquality().hash(_payload));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DeviceTelemetryImplCopyWith<_$DeviceTelemetryImpl> get copyWith =>
-      __$$DeviceTelemetryImplCopyWithImpl<_$DeviceTelemetryImpl>(
-          this, _$identity);
+      __$$DeviceTelemetryImplCopyWithImpl<_$DeviceTelemetryImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -27269,8 +25828,7 @@ abstract class _DeviceTelemetry extends DeviceTelemetry {
       final List<TelemetrySensor>? payload}) = _$DeviceTelemetryImpl;
   const _DeviceTelemetry._() : super._();
 
-  factory _DeviceTelemetry.fromJson(Map<String, dynamic> json) =
-      _$DeviceTelemetryImpl.fromJson;
+  factory _DeviceTelemetry.fromJson(Map<String, dynamic> json) = _$DeviceTelemetryImpl.fromJson;
 
   @override
 
@@ -27295,8 +25853,7 @@ abstract class _DeviceTelemetry extends DeviceTelemetry {
   List<TelemetrySensor>? get payload;
   @override
   @JsonKey(ignore: true)
-  _$$DeviceTelemetryImplCopyWith<_$DeviceTelemetryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$DeviceTelemetryImplCopyWith<_$DeviceTelemetryImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 AssetTelemetry _$AssetTelemetryFromJson(Map<String, dynamic> json) {
@@ -27329,14 +25886,12 @@ mixin _$AssetTelemetry {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AssetTelemetryCopyWith<AssetTelemetry> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AssetTelemetryCopyWith<AssetTelemetry> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $AssetTelemetryCopyWith<$Res> {
-  factory $AssetTelemetryCopyWith(
-          AssetTelemetry value, $Res Function(AssetTelemetry) then) =
+  factory $AssetTelemetryCopyWith(AssetTelemetry value, $Res Function(AssetTelemetry) then) =
       _$AssetTelemetryCopyWithImpl<$Res, AssetTelemetry>;
   @useResult
   $Res call(
@@ -27352,8 +25907,7 @@ abstract class $AssetTelemetryCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AssetTelemetryCopyWithImpl<$Res, $Val extends AssetTelemetry>
-    implements $AssetTelemetryCopyWith<$Res> {
+class _$AssetTelemetryCopyWithImpl<$Res, $Val extends AssetTelemetry> implements $AssetTelemetryCopyWith<$Res> {
   _$AssetTelemetryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -27418,10 +25972,8 @@ class _$AssetTelemetryCopyWithImpl<$Res, $Val extends AssetTelemetry>
 }
 
 /// @nodoc
-abstract class _$$AssetTelemetryImplCopyWith<$Res>
-    implements $AssetTelemetryCopyWith<$Res> {
-  factory _$$AssetTelemetryImplCopyWith(_$AssetTelemetryImpl value,
-          $Res Function(_$AssetTelemetryImpl) then) =
+abstract class _$$AssetTelemetryImplCopyWith<$Res> implements $AssetTelemetryCopyWith<$Res> {
+  factory _$$AssetTelemetryImplCopyWith(_$AssetTelemetryImpl value, $Res Function(_$AssetTelemetryImpl) then) =
       __$$AssetTelemetryImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -27439,11 +25991,9 @@ abstract class _$$AssetTelemetryImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AssetTelemetryImplCopyWithImpl<$Res>
-    extends _$AssetTelemetryCopyWithImpl<$Res, _$AssetTelemetryImpl>
+class __$$AssetTelemetryImplCopyWithImpl<$Res> extends _$AssetTelemetryCopyWithImpl<$Res, _$AssetTelemetryImpl>
     implements _$$AssetTelemetryImplCopyWith<$Res> {
-  __$$AssetTelemetryImplCopyWithImpl(
-      _$AssetTelemetryImpl _value, $Res Function(_$AssetTelemetryImpl) _then)
+  __$$AssetTelemetryImplCopyWithImpl(_$AssetTelemetryImpl _value, $Res Function(_$AssetTelemetryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -27506,8 +26056,7 @@ class _$AssetTelemetryImpl extends _AssetTelemetry {
         _sensors = sensors,
         super._();
 
-  factory _$AssetTelemetryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AssetTelemetryImplFromJson(json);
+  factory _$AssetTelemetryImpl.fromJson(Map<String, dynamic> json) => _$$AssetTelemetryImplFromJson(json);
 
   /// ID of the message entity.
   @override
@@ -27577,12 +26126,9 @@ class _$AssetTelemetryImpl extends _AssetTelemetry {
             other is _$AssetTelemetryImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            (identical(other.receivedAt, receivedAt) ||
-                other.receivedAt == receivedAt) &&
-            const DeepCollectionEquality()
-                .equals(other._geofenceIds, _geofenceIds) &&
-            (identical(other.position, position) ||
-                other.position == position) &&
+            (identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt) &&
+            const DeepCollectionEquality().equals(other._geofenceIds, _geofenceIds) &&
+            (identical(other.position, position) || other.position == position) &&
             const DeepCollectionEquality().equals(other._payload, _payload) &&
             const DeepCollectionEquality().equals(other._sensors, _sensors));
   }
@@ -27603,8 +26149,7 @@ class _$AssetTelemetryImpl extends _AssetTelemetry {
   @override
   @pragma('vm:prefer-inline')
   _$$AssetTelemetryImplCopyWith<_$AssetTelemetryImpl> get copyWith =>
-      __$$AssetTelemetryImplCopyWithImpl<_$AssetTelemetryImpl>(
-          this, _$identity);
+      __$$AssetTelemetryImplCopyWithImpl<_$AssetTelemetryImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -27625,8 +26170,7 @@ abstract class _AssetTelemetry extends AssetTelemetry {
       final List<TelemetrySensor>? sensors}) = _$AssetTelemetryImpl;
   const _AssetTelemetry._() : super._();
 
-  factory _AssetTelemetry.fromJson(Map<String, dynamic> json) =
-      _$AssetTelemetryImpl.fromJson;
+  factory _AssetTelemetry.fromJson(Map<String, dynamic> json) = _$AssetTelemetryImpl.fromJson;
 
   @override
 
@@ -27659,8 +26203,7 @@ abstract class _AssetTelemetry extends AssetTelemetry {
   List<TelemetrySensor>? get sensors;
   @override
   @JsonKey(ignore: true)
-  _$$AssetTelemetryImplCopyWith<_$AssetTelemetryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AssetTelemetryImplCopyWith<_$AssetTelemetryImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 TelemetryPosition _$TelemetryPositionFromJson(Map<String, dynamic> json) {
@@ -27696,14 +26239,12 @@ mixin _$TelemetryPosition {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TelemetryPositionCopyWith<TelemetryPosition> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TelemetryPositionCopyWith<TelemetryPosition> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TelemetryPositionCopyWith<$Res> {
-  factory $TelemetryPositionCopyWith(
-          TelemetryPosition value, $Res Function(TelemetryPosition) then) =
+  factory $TelemetryPositionCopyWith(TelemetryPosition value, $Res Function(TelemetryPosition) then) =
       _$TelemetryPositionCopyWithImpl<$Res, TelemetryPosition>;
   @useResult
   $Res call(
@@ -27777,10 +26318,8 @@ class _$TelemetryPositionCopyWithImpl<$Res, $Val extends TelemetryPosition>
 }
 
 /// @nodoc
-abstract class _$$TelemetryPositionImplCopyWith<$Res>
-    implements $TelemetryPositionCopyWith<$Res> {
-  factory _$$TelemetryPositionImplCopyWith(_$TelemetryPositionImpl value,
-          $Res Function(_$TelemetryPositionImpl) then) =
+abstract class _$$TelemetryPositionImplCopyWith<$Res> implements $TelemetryPositionCopyWith<$Res> {
+  factory _$$TelemetryPositionImplCopyWith(_$TelemetryPositionImpl value, $Res Function(_$TelemetryPositionImpl) then) =
       __$$TelemetryPositionImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -27796,11 +26335,9 @@ abstract class _$$TelemetryPositionImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TelemetryPositionImplCopyWithImpl<$Res>
-    extends _$TelemetryPositionCopyWithImpl<$Res, _$TelemetryPositionImpl>
+class __$$TelemetryPositionImplCopyWithImpl<$Res> extends _$TelemetryPositionCopyWithImpl<$Res, _$TelemetryPositionImpl>
     implements _$$TelemetryPositionImplCopyWith<$Res> {
-  __$$TelemetryPositionImplCopyWithImpl(_$TelemetryPositionImpl _value,
-      $Res Function(_$TelemetryPositionImpl) _then)
+  __$$TelemetryPositionImplCopyWithImpl(_$TelemetryPositionImpl _value, $Res Function(_$TelemetryPositionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -27866,8 +26403,7 @@ class _$TelemetryPositionImpl extends _TelemetryPosition {
       @TimestampOrNullConverter() this.timestamp})
       : super._();
 
-  factory _$TelemetryPositionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TelemetryPositionImplFromJson(json);
+  factory _$TelemetryPositionImpl.fromJson(Map<String, dynamic> json) => _$$TelemetryPositionImplFromJson(json);
 
   /// Latitude in decimal degrees format
   @override
@@ -27912,33 +26448,26 @@ class _$TelemetryPositionImpl extends _TelemetryPosition {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TelemetryPositionImpl &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.altitude, altitude) ||
-                other.altitude == altitude) &&
+            (identical(other.latitude, latitude) || other.latitude == latitude) &&
+            (identical(other.longitude, longitude) || other.longitude == longitude) &&
+            (identical(other.altitude, altitude) || other.altitude == altitude) &&
             (identical(other.speed, speed) || other.speed == speed) &&
-            (identical(other.direction, direction) ||
-                other.direction == direction) &&
-            (identical(other.satellites, satellites) ||
-                other.satellites == satellites) &&
+            (identical(other.direction, direction) || other.direction == direction) &&
+            (identical(other.satellites, satellites) || other.satellites == satellites) &&
             (identical(other.hdop, hdop) || other.hdop == hdop) &&
-            (identical(other.timestamp, timestamp) ||
-                other.timestamp == timestamp));
+            (identical(other.timestamp, timestamp) || other.timestamp == timestamp));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, latitude, longitude, altitude,
-      speed, direction, satellites, hdop, timestamp);
+  int get hashCode =>
+      Object.hash(runtimeType, latitude, longitude, altitude, speed, direction, satellites, hdop, timestamp);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$TelemetryPositionImplCopyWith<_$TelemetryPositionImpl> get copyWith =>
-      __$$TelemetryPositionImplCopyWithImpl<_$TelemetryPositionImpl>(
-          this, _$identity);
+      __$$TelemetryPositionImplCopyWithImpl<_$TelemetryPositionImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -27950,19 +26479,17 @@ class _$TelemetryPositionImpl extends _TelemetryPosition {
 
 abstract class _TelemetryPosition extends TelemetryPosition {
   const factory _TelemetryPosition(
-          {final double? latitude,
-          final double? longitude,
-          final double? altitude,
-          final double? speed,
-          final double? direction,
-          final int? satellites,
-          final double? hdop,
-          @TimestampOrNullConverter() final DateTime? timestamp}) =
-      _$TelemetryPositionImpl;
+      {final double? latitude,
+      final double? longitude,
+      final double? altitude,
+      final double? speed,
+      final double? direction,
+      final int? satellites,
+      final double? hdop,
+      @TimestampOrNullConverter() final DateTime? timestamp}) = _$TelemetryPositionImpl;
   const _TelemetryPosition._() : super._();
 
-  factory _TelemetryPosition.fromJson(Map<String, dynamic> json) =
-      _$TelemetryPositionImpl.fromJson;
+  factory _TelemetryPosition.fromJson(Map<String, dynamic> json) = _$TelemetryPositionImpl.fromJson;
 
   @override
 
@@ -27999,8 +26526,7 @@ abstract class _TelemetryPosition extends TelemetryPosition {
   DateTime? get timestamp;
   @override
   @JsonKey(ignore: true)
-  _$$TelemetryPositionImplCopyWith<_$TelemetryPositionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TelemetryPositionImplCopyWith<_$TelemetryPositionImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 TelemetrySensor _$TelemetrySensorFromJson(Map<String, dynamic> json) {
@@ -28017,22 +26543,19 @@ mixin _$TelemetrySensor {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TelemetrySensorCopyWith<TelemetrySensor> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TelemetrySensorCopyWith<TelemetrySensor> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TelemetrySensorCopyWith<$Res> {
-  factory $TelemetrySensorCopyWith(
-          TelemetrySensor value, $Res Function(TelemetrySensor) then) =
+  factory $TelemetrySensorCopyWith(TelemetrySensor value, $Res Function(TelemetrySensor) then) =
       _$TelemetrySensorCopyWithImpl<$Res, TelemetrySensor>;
   @useResult
   $Res call({dynamic value, String parameter});
 }
 
 /// @nodoc
-class _$TelemetrySensorCopyWithImpl<$Res, $Val extends TelemetrySensor>
-    implements $TelemetrySensorCopyWith<$Res> {
+class _$TelemetrySensorCopyWithImpl<$Res, $Val extends TelemetrySensor> implements $TelemetrySensorCopyWith<$Res> {
   _$TelemetrySensorCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -28060,10 +26583,8 @@ class _$TelemetrySensorCopyWithImpl<$Res, $Val extends TelemetrySensor>
 }
 
 /// @nodoc
-abstract class _$$TelemetrySensorImplCopyWith<$Res>
-    implements $TelemetrySensorCopyWith<$Res> {
-  factory _$$TelemetrySensorImplCopyWith(_$TelemetrySensorImpl value,
-          $Res Function(_$TelemetrySensorImpl) then) =
+abstract class _$$TelemetrySensorImplCopyWith<$Res> implements $TelemetrySensorCopyWith<$Res> {
+  factory _$$TelemetrySensorImplCopyWith(_$TelemetrySensorImpl value, $Res Function(_$TelemetrySensorImpl) then) =
       __$$TelemetrySensorImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -28071,11 +26592,9 @@ abstract class _$$TelemetrySensorImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TelemetrySensorImplCopyWithImpl<$Res>
-    extends _$TelemetrySensorCopyWithImpl<$Res, _$TelemetrySensorImpl>
+class __$$TelemetrySensorImplCopyWithImpl<$Res> extends _$TelemetrySensorCopyWithImpl<$Res, _$TelemetrySensorImpl>
     implements _$$TelemetrySensorImplCopyWith<$Res> {
-  __$$TelemetrySensorImplCopyWithImpl(
-      _$TelemetrySensorImpl _value, $Res Function(_$TelemetrySensorImpl) _then)
+  __$$TelemetrySensorImplCopyWithImpl(_$TelemetrySensorImpl _value, $Res Function(_$TelemetrySensorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -28100,11 +26619,9 @@ class __$$TelemetrySensorImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TelemetrySensorImpl extends _TelemetrySensor {
-  const _$TelemetrySensorImpl({required this.value, required this.parameter})
-      : super._();
+  const _$TelemetrySensorImpl({required this.value, required this.parameter}) : super._();
 
-  factory _$TelemetrySensorImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TelemetrySensorImplFromJson(json);
+  factory _$TelemetrySensorImpl.fromJson(Map<String, dynamic> json) => _$$TelemetrySensorImplFromJson(json);
 
   /// Dynamic value registered.
   @override
@@ -28125,21 +26642,18 @@ class _$TelemetrySensorImpl extends _TelemetrySensor {
         (other.runtimeType == runtimeType &&
             other is _$TelemetrySensorImpl &&
             const DeepCollectionEquality().equals(other.value, value) &&
-            (identical(other.parameter, parameter) ||
-                other.parameter == parameter));
+            (identical(other.parameter, parameter) || other.parameter == parameter));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(value), parameter);
+  int get hashCode => Object.hash(runtimeType, const DeepCollectionEquality().hash(value), parameter);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$TelemetrySensorImplCopyWith<_$TelemetrySensorImpl> get copyWith =>
-      __$$TelemetrySensorImplCopyWithImpl<_$TelemetrySensorImpl>(
-          this, _$identity);
+      __$$TelemetrySensorImplCopyWithImpl<_$TelemetrySensorImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -28150,13 +26664,11 @@ class _$TelemetrySensorImpl extends _TelemetrySensor {
 }
 
 abstract class _TelemetrySensor extends TelemetrySensor {
-  const factory _TelemetrySensor(
-      {required final dynamic value,
-      required final String parameter}) = _$TelemetrySensorImpl;
+  const factory _TelemetrySensor({required final dynamic value, required final String parameter}) =
+      _$TelemetrySensorImpl;
   const _TelemetrySensor._() : super._();
 
-  factory _TelemetrySensor.fromJson(Map<String, dynamic> json) =
-      _$TelemetrySensorImpl.fromJson;
+  factory _TelemetrySensor.fromJson(Map<String, dynamic> json) = _$TelemetrySensorImpl.fromJson;
 
   @override
 
@@ -28168,8 +26680,7 @@ abstract class _TelemetrySensor extends TelemetrySensor {
   String get parameter;
   @override
   @JsonKey(ignore: true)
-  _$$TelemetrySensorImplCopyWith<_$TelemetrySensorImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TelemetrySensorImplCopyWith<_$TelemetrySensorImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Timezone _$TimezoneFromJson(Map<String, dynamic> json) {
@@ -28194,14 +26705,12 @@ mixin _$Timezone {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TimezoneCopyWith<Timezone> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TimezoneCopyWith<Timezone> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TimezoneCopyWith<$Res> {
-  factory $TimezoneCopyWith(Timezone value, $Res Function(Timezone) then) =
-      _$TimezoneCopyWithImpl<$Res, Timezone>;
+  factory $TimezoneCopyWith(Timezone value, $Res Function(Timezone) then) = _$TimezoneCopyWithImpl<$Res, Timezone>;
   @useResult
   $Res call({String id, String name, String offset, Country? country});
 
@@ -28209,8 +26718,7 @@ abstract class $TimezoneCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TimezoneCopyWithImpl<$Res, $Val extends Timezone>
-    implements $TimezoneCopyWith<$Res> {
+class _$TimezoneCopyWithImpl<$Res, $Val extends Timezone> implements $TimezoneCopyWith<$Res> {
   _$TimezoneCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -28260,10 +26768,8 @@ class _$TimezoneCopyWithImpl<$Res, $Val extends Timezone>
 }
 
 /// @nodoc
-abstract class _$$TimezoneImplCopyWith<$Res>
-    implements $TimezoneCopyWith<$Res> {
-  factory _$$TimezoneImplCopyWith(
-          _$TimezoneImpl value, $Res Function(_$TimezoneImpl) then) =
+abstract class _$$TimezoneImplCopyWith<$Res> implements $TimezoneCopyWith<$Res> {
+  factory _$$TimezoneImplCopyWith(_$TimezoneImpl value, $Res Function(_$TimezoneImpl) then) =
       __$$TimezoneImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -28274,12 +26780,9 @@ abstract class _$$TimezoneImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TimezoneImplCopyWithImpl<$Res>
-    extends _$TimezoneCopyWithImpl<$Res, _$TimezoneImpl>
+class __$$TimezoneImplCopyWithImpl<$Res> extends _$TimezoneCopyWithImpl<$Res, _$TimezoneImpl>
     implements _$$TimezoneImplCopyWith<$Res> {
-  __$$TimezoneImplCopyWithImpl(
-      _$TimezoneImpl _value, $Res Function(_$TimezoneImpl) _then)
-      : super(_value, _then);
+  __$$TimezoneImplCopyWithImpl(_$TimezoneImpl _value, $Res Function(_$TimezoneImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -28313,14 +26816,9 @@ class __$$TimezoneImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TimezoneImpl implements _Timezone {
-  const _$TimezoneImpl(
-      {required this.id,
-      required this.name,
-      required this.offset,
-      this.country});
+  const _$TimezoneImpl({required this.id, required this.name, required this.offset, this.country});
 
-  factory _$TimezoneImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TimezoneImplFromJson(json);
+  factory _$TimezoneImpl.fromJson(Map<String, dynamic> json) => _$$TimezoneImplFromJson(json);
 
   /// Is the id of the timezone
   @override
@@ -28381,8 +26879,7 @@ abstract class _Timezone implements Timezone {
       required final String offset,
       final Country? country}) = _$TimezoneImpl;
 
-  factory _Timezone.fromJson(Map<String, dynamic> json) =
-      _$TimezoneImpl.fromJson;
+  factory _Timezone.fromJson(Map<String, dynamic> json) = _$TimezoneImpl.fromJson;
 
   @override
 
@@ -28404,8 +26901,7 @@ abstract class _Timezone implements Timezone {
   Country? get country;
   @override
   @JsonKey(ignore: true)
-  _$$TimezoneImplCopyWith<_$TimezoneImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TimezoneImplCopyWith<_$TimezoneImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Token _$TokenFromJson(Map<String, dynamic> json) {
@@ -28425,15 +26921,13 @@ mixin _$Token {
 
 /// @nodoc
 abstract class $TokenCopyWith<$Res> {
-  factory $TokenCopyWith(Token value, $Res Function(Token) then) =
-      _$TokenCopyWithImpl<$Res, Token>;
+  factory $TokenCopyWith(Token value, $Res Function(Token) then) = _$TokenCopyWithImpl<$Res, Token>;
   @useResult
   $Res call({String token, @TimestampConverter() DateTime validBefore});
 }
 
 /// @nodoc
-class _$TokenCopyWithImpl<$Res, $Val extends Token>
-    implements $TokenCopyWith<$Res> {
+class _$TokenCopyWithImpl<$Res, $Val extends Token> implements $TokenCopyWith<$Res> {
   _$TokenCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -28462,21 +26956,16 @@ class _$TokenCopyWithImpl<$Res, $Val extends Token>
 
 /// @nodoc
 abstract class _$$TokenImplCopyWith<$Res> implements $TokenCopyWith<$Res> {
-  factory _$$TokenImplCopyWith(
-          _$TokenImpl value, $Res Function(_$TokenImpl) then) =
-      __$$TokenImplCopyWithImpl<$Res>;
+  factory _$$TokenImplCopyWith(_$TokenImpl value, $Res Function(_$TokenImpl) then) = __$$TokenImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String token, @TimestampConverter() DateTime validBefore});
 }
 
 /// @nodoc
-class __$$TokenImplCopyWithImpl<$Res>
-    extends _$TokenCopyWithImpl<$Res, _$TokenImpl>
+class __$$TokenImplCopyWithImpl<$Res> extends _$TokenCopyWithImpl<$Res, _$TokenImpl>
     implements _$$TokenImplCopyWith<$Res> {
-  __$$TokenImplCopyWithImpl(
-      _$TokenImpl _value, $Res Function(_$TokenImpl) _then)
-      : super(_value, _then);
+  __$$TokenImplCopyWithImpl(_$TokenImpl _value, $Res Function(_$TokenImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -28500,11 +26989,9 @@ class __$$TokenImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TokenImpl implements _Token {
-  const _$TokenImpl(
-      {required this.token, @TimestampConverter() required this.validBefore});
+  const _$TokenImpl({required this.token, @TimestampConverter() required this.validBefore});
 
-  factory _$TokenImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TokenImplFromJson(json);
+  factory _$TokenImpl.fromJson(Map<String, dynamic> json) => _$$TokenImplFromJson(json);
 
   @override
   final String token;
@@ -28523,8 +27010,7 @@ class _$TokenImpl implements _Token {
         (other.runtimeType == runtimeType &&
             other is _$TokenImpl &&
             (identical(other.token, token) || other.token == token) &&
-            (identical(other.validBefore, validBefore) ||
-                other.validBefore == validBefore));
+            (identical(other.validBefore, validBefore) || other.validBefore == validBefore));
   }
 
   @JsonKey(ignore: true)
@@ -28534,8 +27020,7 @@ class _$TokenImpl implements _Token {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TokenImplCopyWith<_$TokenImpl> get copyWith =>
-      __$$TokenImplCopyWithImpl<_$TokenImpl>(this, _$identity);
+  _$$TokenImplCopyWith<_$TokenImpl> get copyWith => __$$TokenImplCopyWithImpl<_$TokenImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -28546,9 +27031,8 @@ class _$TokenImpl implements _Token {
 }
 
 abstract class _Token implements Token {
-  const factory _Token(
-      {required final String token,
-      @TimestampConverter() required final DateTime validBefore}) = _$TokenImpl;
+  const factory _Token({required final String token, @TimestampConverter() required final DateTime validBefore}) =
+      _$TokenImpl;
 
   factory _Token.fromJson(Map<String, dynamic> json) = _$TokenImpl.fromJson;
 
@@ -28559,8 +27043,7 @@ abstract class _Token implements Token {
   DateTime get validBefore;
   @override
   @JsonKey(ignore: true)
-  _$$TokenImplCopyWith<_$TokenImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TokenImplCopyWith<_$TokenImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Trigger _$TriggerFromJson(Map<String, dynamic> json) {
@@ -28609,8 +27092,7 @@ mixin _$Trigger {
   /// [geofenceKind] is the type of the geofence.
   /// Only used when [kind] is [TriggerType.geofence].
   @TriggerGeofenceDetectionModeOrNullConverter()
-  TriggerGeofenceDetectionMode? get geofenceKind =>
-      throw _privateConstructorUsedError;
+  TriggerGeofenceDetectionMode? get geofenceKind => throw _privateConstructorUsedError;
 
   /// [formula] is the formula of the trigger. Only used when [kind] is [TriggerType.formula].
   /// The formula is a script that returns a boolean value (true or false).
@@ -28669,8 +27151,7 @@ mixin _$Trigger {
   /// actions. This field is required for `kind=[TriggerType.casesChanges]` and
   /// `caseKind=[CaseType.onCommentPattern]`.
   @CaseCommentPatternOrNullConverter()
-  CaseCommentPattern? get caseCommentPattern =>
-      throw _privateConstructorUsedError;
+  CaseCommentPattern? get caseCommentPattern => throw _privateConstructorUsedError;
 
   /// [caseCommentPatternValue] represents the value of the comment pattern to detect changes on cases to perform
   /// actions. This field is required for `kind=[TriggerType.casesChanges]` and
@@ -28691,8 +27172,7 @@ mixin _$Trigger {
 
 /// @nodoc
 abstract class $TriggerCopyWith<$Res> {
-  factory $TriggerCopyWith(Trigger value, $Res Function(Trigger) then) =
-      _$TriggerCopyWithImpl<$Res, Trigger>;
+  factory $TriggerCopyWith(Trigger value, $Res Function(Trigger) then) = _$TriggerCopyWithImpl<$Res, Trigger>;
   @useResult
   $Res call(
       {String id,
@@ -28707,8 +27187,7 @@ abstract class $TriggerCopyWith<$Res> {
       List<String>? authUsersIds,
       List<String>? authTagsIds,
       @TriggerTypeConverter() TriggerType kind,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
+      @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
@@ -28722,8 +27201,7 @@ abstract class $TriggerCopyWith<$Res> {
       String? careProtocolId,
       CareProtocol? careProtocol,
       @CaseTypeOrNullConverter() CaseType? caseKind,
-      @CaseCommentPatternOrNullConverter()
-      CaseCommentPattern? caseCommentPattern,
+      @CaseCommentPatternOrNullConverter() CaseCommentPattern? caseCommentPattern,
       String? caseCommentPatternValue,
       @DurationOrNullConverter() Duration? cooldownTime,
       List<Access>? access});
@@ -28732,8 +27210,7 @@ abstract class $TriggerCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TriggerCopyWithImpl<$Res, $Val extends Trigger>
-    implements $TriggerCopyWith<$Res> {
+class _$TriggerCopyWithImpl<$Res, $Val extends Trigger> implements $TriggerCopyWith<$Res> {
   _$TriggerCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -28914,8 +27391,7 @@ class _$TriggerCopyWithImpl<$Res, $Val extends Trigger>
 
 /// @nodoc
 abstract class _$$TriggerImplCopyWith<$Res> implements $TriggerCopyWith<$Res> {
-  factory _$$TriggerImplCopyWith(
-          _$TriggerImpl value, $Res Function(_$TriggerImpl) then) =
+  factory _$$TriggerImplCopyWith(_$TriggerImpl value, $Res Function(_$TriggerImpl) then) =
       __$$TriggerImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -28932,8 +27408,7 @@ abstract class _$$TriggerImplCopyWith<$Res> implements $TriggerCopyWith<$Res> {
       List<String>? authUsersIds,
       List<String>? authTagsIds,
       @TriggerTypeConverter() TriggerType kind,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
+      @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
@@ -28947,8 +27422,7 @@ abstract class _$$TriggerImplCopyWith<$Res> implements $TriggerCopyWith<$Res> {
       String? careProtocolId,
       CareProtocol? careProtocol,
       @CaseTypeOrNullConverter() CaseType? caseKind,
-      @CaseCommentPatternOrNullConverter()
-      CaseCommentPattern? caseCommentPattern,
+      @CaseCommentPatternOrNullConverter() CaseCommentPattern? caseCommentPattern,
       String? caseCommentPatternValue,
       @DurationOrNullConverter() Duration? cooldownTime,
       List<Access>? access});
@@ -28958,12 +27432,9 @@ abstract class _$$TriggerImplCopyWith<$Res> implements $TriggerCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$TriggerImplCopyWithImpl<$Res>
-    extends _$TriggerCopyWithImpl<$Res, _$TriggerImpl>
+class __$$TriggerImplCopyWithImpl<$Res> extends _$TriggerCopyWithImpl<$Res, _$TriggerImpl>
     implements _$$TriggerImplCopyWith<$Res> {
-  __$$TriggerImplCopyWithImpl(
-      _$TriggerImpl _value, $Res Function(_$TriggerImpl) _then)
-      : super(_value, _then);
+  __$$TriggerImplCopyWithImpl(_$TriggerImpl _value, $Res Function(_$TriggerImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -29169,8 +27640,7 @@ class _$TriggerImpl implements _Trigger {
         _weekdays = weekdays,
         _access = access;
 
-  factory _$TriggerImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TriggerImplFromJson(json);
+  factory _$TriggerImpl.fromJson(Map<String, dynamic> json) => _$$TriggerImplFromJson(json);
 
   /// [id] is the unique identifier of the trigger.
   @override
@@ -29205,8 +27675,7 @@ class _$TriggerImpl implements _Trigger {
   List<String>? get tagsGeofencesIds {
     final value = _tagsGeofencesIds;
     if (value == null) return null;
-    if (_tagsGeofencesIds is EqualUnmodifiableListView)
-      return _tagsGeofencesIds;
+    if (_tagsGeofencesIds is EqualUnmodifiableListView) return _tagsGeofencesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -29420,54 +27889,34 @@ class _$TriggerImpl implements _Trigger {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
-            const DeepCollectionEquality()
-                .equals(other._geofencesIds, _geofencesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._tagsGeofencesIds, _tagsGeofencesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._assetsIds, _assetsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._tagsAssetsIds, _tagsAssetsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._parameters, _parameters) &&
-            const DeepCollectionEquality()
-                .equals(other._authAssetsIds, _authAssetsIds) &&
-            const DeepCollectionEquality()
-                .equals(other._authUsersIds, _authUsersIds) &&
-            const DeepCollectionEquality()
-                .equals(other._authTagsIds, _authTagsIds) &&
+            const DeepCollectionEquality().equals(other._geofencesIds, _geofencesIds) &&
+            const DeepCollectionEquality().equals(other._tagsGeofencesIds, _tagsGeofencesIds) &&
+            const DeepCollectionEquality().equals(other._assetsIds, _assetsIds) &&
+            const DeepCollectionEquality().equals(other._tagsAssetsIds, _tagsAssetsIds) &&
+            const DeepCollectionEquality().equals(other._parameters, _parameters) &&
+            const DeepCollectionEquality().equals(other._authAssetsIds, _authAssetsIds) &&
+            const DeepCollectionEquality().equals(other._authUsersIds, _authUsersIds) &&
+            const DeepCollectionEquality().equals(other._authTagsIds, _authTagsIds) &&
             (identical(other.kind, kind) || other.kind == kind) &&
-            (identical(other.geofenceKind, geofenceKind) ||
-                other.geofenceKind == geofenceKind) &&
+            (identical(other.geofenceKind, geofenceKind) || other.geofenceKind == geofenceKind) &&
             (identical(other.formula, formula) || other.formula == formula) &&
             (identical(other.script, script) || other.script == script) &&
-            (identical(other.exactHour, exactHour) ||
-                other.exactHour == exactHour) &&
-            (identical(other.crontabFormat, crontabFormat) ||
-                other.crontabFormat == crontabFormat) &&
+            (identical(other.exactHour, exactHour) || other.exactHour == exactHour) &&
+            (identical(other.crontabFormat, crontabFormat) || other.crontabFormat == crontabFormat) &&
             const DeepCollectionEquality().equals(other._weekdays, _weekdays) &&
-            (identical(other.isPlainCrontab, isPlainCrontab) ||
-                other.isPlainCrontab == isPlainCrontab) &&
-            (identical(other.timezoneId, timezoneId) ||
-                other.timezoneId == timezoneId) &&
-            (identical(other.priority, priority) ||
-                other.priority == priority) &&
+            (identical(other.isPlainCrontab, isPlainCrontab) || other.isPlainCrontab == isPlainCrontab) &&
+            (identical(other.timezoneId, timezoneId) || other.timezoneId == timezoneId) &&
+            (identical(other.priority, priority) || other.priority == priority) &&
             (identical(other.color, color) || other.color == color) &&
-            (identical(other.visualEventEffect, visualEventEffect) ||
-                other.visualEventEffect == visualEventEffect) &&
-            (identical(other.careProtocolId, careProtocolId) ||
-                other.careProtocolId == careProtocolId) &&
-            (identical(other.careProtocol, careProtocol) ||
-                other.careProtocol == careProtocol) &&
-            (identical(other.caseKind, caseKind) ||
-                other.caseKind == caseKind) &&
+            (identical(other.visualEventEffect, visualEventEffect) || other.visualEventEffect == visualEventEffect) &&
+            (identical(other.careProtocolId, careProtocolId) || other.careProtocolId == careProtocolId) &&
+            (identical(other.careProtocol, careProtocol) || other.careProtocol == careProtocol) &&
+            (identical(other.caseKind, caseKind) || other.caseKind == caseKind) &&
             (identical(other.caseCommentPattern, caseCommentPattern) ||
                 other.caseCommentPattern == caseCommentPattern) &&
-            (identical(
-                    other.caseCommentPatternValue, caseCommentPatternValue) ||
+            (identical(other.caseCommentPatternValue, caseCommentPatternValue) ||
                 other.caseCommentPatternValue == caseCommentPatternValue) &&
-            (identical(other.cooldownTime, cooldownTime) ||
-                other.cooldownTime == cooldownTime) &&
+            (identical(other.cooldownTime, cooldownTime) || other.cooldownTime == cooldownTime) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
@@ -29510,8 +27959,7 @@ class _$TriggerImpl implements _Trigger {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TriggerImplCopyWith<_$TriggerImpl> get copyWith =>
-      __$$TriggerImplCopyWithImpl<_$TriggerImpl>(this, _$identity);
+  _$$TriggerImplCopyWith<_$TriggerImpl> get copyWith => __$$TriggerImplCopyWithImpl<_$TriggerImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -29535,8 +27983,7 @@ abstract class _Trigger implements Trigger {
       final List<String>? authUsersIds,
       final List<String>? authTagsIds,
       @TriggerTypeConverter() required final TriggerType kind,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      final TriggerGeofenceDetectionMode? geofenceKind,
+      @TriggerGeofenceDetectionModeOrNullConverter() final TriggerGeofenceDetectionMode? geofenceKind,
       final String? formula,
       final String? script,
       @TimeOfDayOrNullConverter() final TimeOfDay? exactHour,
@@ -29546,13 +27993,11 @@ abstract class _Trigger implements Trigger {
       final String? timezoneId,
       final int? priority,
       @ColorOrNullConverter() final Color? color,
-      @CaseEventEffectOrNullConverter()
-      final CaseEventEffect? visualEventEffect,
+      @CaseEventEffectOrNullConverter() final CaseEventEffect? visualEventEffect,
       final String? careProtocolId,
       final CareProtocol? careProtocol,
       @CaseTypeOrNullConverter() final CaseType? caseKind,
-      @CaseCommentPatternOrNullConverter()
-      final CaseCommentPattern? caseCommentPattern,
+      @CaseCommentPatternOrNullConverter() final CaseCommentPattern? caseCommentPattern,
       final String? caseCommentPatternValue,
       @DurationOrNullConverter() final Duration? cooldownTime,
       final List<Access>? access}) = _$TriggerImpl;
@@ -29704,8 +28149,7 @@ abstract class _Trigger implements Trigger {
   List<Access>? get access;
   @override
   @JsonKey(ignore: true)
-  _$$TriggerImplCopyWith<_$TriggerImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TriggerImplCopyWith<_$TriggerImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 TriggerActivation _$TriggerActivationFromJson(Map<String, dynamic> json) {
@@ -29728,8 +28172,7 @@ mixin _$TriggerActivation {
 
   /// `presenceType` is the type of presence in the geofence if the trigger was of a geofence presence.
   @TriggerGeofenceDetectionModeOrNullConverter()
-  TriggerGeofenceDetectionMode? get presenceType =>
-      throw _privateConstructorUsedError;
+  TriggerGeofenceDetectionMode? get presenceType => throw _privateConstructorUsedError;
 
   /// `sensors` is the list of sensors that were activated when the trigger was activated.
   List<TelemetrySensor>? get sensors => throw _privateConstructorUsedError;
@@ -29741,14 +28184,12 @@ mixin _$TriggerActivation {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TriggerActivationCopyWith<TriggerActivation> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TriggerActivationCopyWith<TriggerActivation> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TriggerActivationCopyWith<$Res> {
-  factory $TriggerActivationCopyWith(
-          TriggerActivation value, $Res Function(TriggerActivation) then) =
+  factory $TriggerActivationCopyWith(TriggerActivation value, $Res Function(TriggerActivation) then) =
       _$TriggerActivationCopyWithImpl<$Res, TriggerActivation>;
   @useResult
   $Res call(
@@ -29756,8 +28197,7 @@ abstract class $TriggerActivationCopyWith<$Res> {
       Asset asset,
       Trigger? trigger,
       TelemetryPosition? position,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? presenceType,
+      @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? presenceType,
       List<TelemetrySensor>? sensors,
       @JsonKey(name: 'at') @TimestampConverter() DateTime date});
 
@@ -29853,10 +28293,8 @@ class _$TriggerActivationCopyWithImpl<$Res, $Val extends TriggerActivation>
 }
 
 /// @nodoc
-abstract class _$$TriggerActivationImplCopyWith<$Res>
-    implements $TriggerActivationCopyWith<$Res> {
-  factory _$$TriggerActivationImplCopyWith(_$TriggerActivationImpl value,
-          $Res Function(_$TriggerActivationImpl) then) =
+abstract class _$$TriggerActivationImplCopyWith<$Res> implements $TriggerActivationCopyWith<$Res> {
+  factory _$$TriggerActivationImplCopyWith(_$TriggerActivationImpl value, $Res Function(_$TriggerActivationImpl) then) =
       __$$TriggerActivationImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -29865,8 +28303,7 @@ abstract class _$$TriggerActivationImplCopyWith<$Res>
       Asset asset,
       Trigger? trigger,
       TelemetryPosition? position,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? presenceType,
+      @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? presenceType,
       List<TelemetrySensor>? sensors,
       @JsonKey(name: 'at') @TimestampConverter() DateTime date});
 
@@ -29879,11 +28316,9 @@ abstract class _$$TriggerActivationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TriggerActivationImplCopyWithImpl<$Res>
-    extends _$TriggerActivationCopyWithImpl<$Res, _$TriggerActivationImpl>
+class __$$TriggerActivationImplCopyWithImpl<$Res> extends _$TriggerActivationCopyWithImpl<$Res, _$TriggerActivationImpl>
     implements _$$TriggerActivationImplCopyWith<$Res> {
-  __$$TriggerActivationImplCopyWithImpl(_$TriggerActivationImpl _value,
-      $Res Function(_$TriggerActivationImpl) _then)
+  __$$TriggerActivationImplCopyWithImpl(_$TriggerActivationImpl _value, $Res Function(_$TriggerActivationImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -29943,8 +28378,7 @@ class _$TriggerActivationImpl implements _TriggerActivation {
       @JsonKey(name: 'at') @TimestampConverter() required this.date})
       : _sensors = sensors;
 
-  factory _$TriggerActivationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TriggerActivationImplFromJson(json);
+  factory _$TriggerActivationImpl.fromJson(Map<String, dynamic> json) => _$$TriggerActivationImplFromJson(json);
 
   /// `id` of the trigger activation entity. This ID is unique.
   @override
@@ -29999,25 +28433,22 @@ class _$TriggerActivationImpl implements _TriggerActivation {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.asset, asset) || other.asset == asset) &&
             (identical(other.trigger, trigger) || other.trigger == trigger) &&
-            (identical(other.position, position) ||
-                other.position == position) &&
-            (identical(other.presenceType, presenceType) ||
-                other.presenceType == presenceType) &&
+            (identical(other.position, position) || other.position == position) &&
+            (identical(other.presenceType, presenceType) || other.presenceType == presenceType) &&
             const DeepCollectionEquality().equals(other._sensors, _sensors) &&
             (identical(other.date, date) || other.date == date));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, asset, trigger, position,
-      presenceType, const DeepCollectionEquality().hash(_sensors), date);
+  int get hashCode => Object.hash(
+      runtimeType, id, asset, trigger, position, presenceType, const DeepCollectionEquality().hash(_sensors), date);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$TriggerActivationImplCopyWith<_$TriggerActivationImpl> get copyWith =>
-      __$$TriggerActivationImplCopyWithImpl<_$TriggerActivationImpl>(
-          this, _$identity);
+      __$$TriggerActivationImplCopyWithImpl<_$TriggerActivationImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -30033,15 +28464,11 @@ abstract class _TriggerActivation implements TriggerActivation {
       required final Asset asset,
       final Trigger? trigger,
       final TelemetryPosition? position,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      final TriggerGeofenceDetectionMode? presenceType,
+      @TriggerGeofenceDetectionModeOrNullConverter() final TriggerGeofenceDetectionMode? presenceType,
       final List<TelemetrySensor>? sensors,
-      @JsonKey(name: 'at')
-      @TimestampConverter()
-      required final DateTime date}) = _$TriggerActivationImpl;
+      @JsonKey(name: 'at') @TimestampConverter() required final DateTime date}) = _$TriggerActivationImpl;
 
-  factory _TriggerActivation.fromJson(Map<String, dynamic> json) =
-      _$TriggerActivationImpl.fromJson;
+  factory _TriggerActivation.fromJson(Map<String, dynamic> json) = _$TriggerActivationImpl.fromJson;
 
   @override
 
@@ -30076,8 +28503,7 @@ abstract class _TriggerActivation implements TriggerActivation {
   DateTime get date;
   @override
   @JsonKey(ignore: true)
-  _$$TriggerActivationImplCopyWith<_$TriggerActivationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TriggerActivationImplCopyWith<_$TriggerActivationImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 TriggerInput _$TriggerInputFromJson(Map<String, dynamic> json) {
@@ -30114,8 +28540,7 @@ mixin _$TriggerInput {
   List<String>? get tagsGeofencesIds => throw _privateConstructorUsedError;
 
   /// List of ID's of the linked geofences through tags
-  set tagsGeofencesIds(List<String>? value) =>
-      throw _privateConstructorUsedError;
+  set tagsGeofencesIds(List<String>? value) => throw _privateConstructorUsedError;
 
   ///List of ID's of the linked assets
   List<String>? get assetsIds => throw _privateConstructorUsedError;
@@ -30163,13 +28588,11 @@ mixin _$TriggerInput {
 
   /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
   @TriggerGeofenceDetectionModeOrNullConverter()
-  TriggerGeofenceDetectionMode? get geofenceKind =>
-      throw _privateConstructorUsedError;
+  TriggerGeofenceDetectionMode? get geofenceKind => throw _privateConstructorUsedError;
 
   /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
   @TriggerGeofenceDetectionModeOrNullConverter()
-  set geofenceKind(TriggerGeofenceDetectionMode? value) =>
-      throw _privateConstructorUsedError;
+  set geofenceKind(TriggerGeofenceDetectionMode? value) => throw _privateConstructorUsedError;
 
   /// Layrz Language formula
   String? get formula => throw _privateConstructorUsedError;
@@ -30235,8 +28658,7 @@ mixin _$TriggerInput {
 
   /// Visual event effects to use in Monitor Center events received.
   @CaseEventEffectOrNullConverter()
-  set visualEventEffect(CaseEventEffect? value) =>
-      throw _privateConstructorUsedError;
+  set visualEventEffect(CaseEventEffect? value) => throw _privateConstructorUsedError;
 
   /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
   String? get careProtocolId => throw _privateConstructorUsedError;
@@ -30246,14 +28668,12 @@ mixin _$TriggerInput {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TriggerInputCopyWith<TriggerInput> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TriggerInputCopyWith<TriggerInput> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TriggerInputCopyWith<$Res> {
-  factory $TriggerInputCopyWith(
-          TriggerInput value, $Res Function(TriggerInput) then) =
+  factory $TriggerInputCopyWith(TriggerInput value, $Res Function(TriggerInput) then) =
       _$TriggerInputCopyWithImpl<$Res, TriggerInput>;
   @useResult
   $Res call(
@@ -30269,8 +28689,7 @@ abstract class $TriggerInputCopyWith<$Res> {
       List<String>? authUsersIds,
       List<String>? authTagsIds,
       @TriggerTypeOrNullConverter() TriggerType? kind,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
+      @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
@@ -30285,8 +28704,7 @@ abstract class $TriggerInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TriggerInputCopyWithImpl<$Res, $Val extends TriggerInput>
-    implements $TriggerInputCopyWith<$Res> {
+class _$TriggerInputCopyWithImpl<$Res, $Val extends TriggerInput> implements $TriggerInputCopyWith<$Res> {
   _$TriggerInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -30424,10 +28842,8 @@ class _$TriggerInputCopyWithImpl<$Res, $Val extends TriggerInput>
 }
 
 /// @nodoc
-abstract class _$$TriggerInputImplCopyWith<$Res>
-    implements $TriggerInputCopyWith<$Res> {
-  factory _$$TriggerInputImplCopyWith(
-          _$TriggerInputImpl value, $Res Function(_$TriggerInputImpl) then) =
+abstract class _$$TriggerInputImplCopyWith<$Res> implements $TriggerInputCopyWith<$Res> {
+  factory _$$TriggerInputImplCopyWith(_$TriggerInputImpl value, $Res Function(_$TriggerInputImpl) then) =
       __$$TriggerInputImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -30444,8 +28860,7 @@ abstract class _$$TriggerInputImplCopyWith<$Res>
       List<String>? authUsersIds,
       List<String>? authTagsIds,
       @TriggerTypeOrNullConverter() TriggerType? kind,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
+      @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
@@ -30460,11 +28875,9 @@ abstract class _$$TriggerInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TriggerInputImplCopyWithImpl<$Res>
-    extends _$TriggerInputCopyWithImpl<$Res, _$TriggerInputImpl>
+class __$$TriggerInputImplCopyWithImpl<$Res> extends _$TriggerInputCopyWithImpl<$Res, _$TriggerInputImpl>
     implements _$$TriggerInputImplCopyWith<$Res> {
-  __$$TriggerInputImplCopyWithImpl(
-      _$TriggerInputImpl _value, $Res Function(_$TriggerInputImpl) _then)
+  __$$TriggerInputImplCopyWithImpl(_$TriggerInputImpl _value, $Res Function(_$TriggerInputImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -30633,8 +29046,7 @@ class _$TriggerInputImpl implements _TriggerInput {
       @CaseEventEffectOrNullConverter() this.visualEventEffect,
       this.careProtocolId});
 
-  factory _$TriggerInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TriggerInputImplFromJson(json);
+  factory _$TriggerInputImpl.fromJson(Map<String, dynamic> json) => _$$TriggerInputImplFromJson(json);
 
   /// ID of the trigger entity. This ID is unique.
   @override
@@ -30780,8 +29192,7 @@ abstract class _TriggerInput implements TriggerInput {
       List<String>? authUsersIds,
       List<String>? authTagsIds,
       @TriggerTypeOrNullConverter() TriggerType? kind,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
+      @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
       String? exactHour,
@@ -30794,8 +29205,7 @@ abstract class _TriggerInput implements TriggerInput {
       @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
       String? careProtocolId}) = _$TriggerInputImpl;
 
-  factory _TriggerInput.fromJson(Map<String, dynamic> json) =
-      _$TriggerInputImpl.fromJson;
+  factory _TriggerInput.fromJson(Map<String, dynamic> json) = _$TriggerInputImpl.fromJson;
 
   @override
 
@@ -30977,8 +29387,7 @@ abstract class _TriggerInput implements TriggerInput {
   set careProtocolId(String? value);
   @override
   @JsonKey(ignore: true)
-  _$$TriggerInputImplCopyWith<_$TriggerInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TriggerInputImplCopyWith<_$TriggerInputImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Trip _$TripFromJson(Map<String, dynamic> json) {
@@ -31003,15 +29412,13 @@ mixin _$Trip {
 
 /// @nodoc
 abstract class $TripCopyWith<$Res> {
-  factory $TripCopyWith(Trip value, $Res Function(Trip) then) =
-      _$TripCopyWithImpl<$Res, Trip>;
+  factory $TripCopyWith(Trip value, $Res Function(Trip) then) = _$TripCopyWithImpl<$Res, Trip>;
   @useResult
   $Res call({String assetId, String? assetName, List<Point> points});
 }
 
 /// @nodoc
-class _$TripCopyWithImpl<$Res, $Val extends Trip>
-    implements $TripCopyWith<$Res> {
+class _$TripCopyWithImpl<$Res, $Val extends Trip> implements $TripCopyWith<$Res> {
   _$TripCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -31045,20 +29452,15 @@ class _$TripCopyWithImpl<$Res, $Val extends Trip>
 
 /// @nodoc
 abstract class _$$TripImplCopyWith<$Res> implements $TripCopyWith<$Res> {
-  factory _$$TripImplCopyWith(
-          _$TripImpl value, $Res Function(_$TripImpl) then) =
-      __$$TripImplCopyWithImpl<$Res>;
+  factory _$$TripImplCopyWith(_$TripImpl value, $Res Function(_$TripImpl) then) = __$$TripImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String assetId, String? assetName, List<Point> points});
 }
 
 /// @nodoc
-class __$$TripImplCopyWithImpl<$Res>
-    extends _$TripCopyWithImpl<$Res, _$TripImpl>
-    implements _$$TripImplCopyWith<$Res> {
-  __$$TripImplCopyWithImpl(_$TripImpl _value, $Res Function(_$TripImpl) _then)
-      : super(_value, _then);
+class __$$TripImplCopyWithImpl<$Res> extends _$TripCopyWithImpl<$Res, _$TripImpl> implements _$$TripImplCopyWith<$Res> {
+  __$$TripImplCopyWithImpl(_$TripImpl _value, $Res Function(_$TripImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -31087,15 +29489,11 @@ class __$$TripImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TripImpl extends _Trip {
-  const _$TripImpl(
-      {required this.assetId,
-      this.assetName,
-      required final List<Point> points})
+  const _$TripImpl({required this.assetId, this.assetName, required final List<Point> points})
       : _points = points,
         super._();
 
-  factory _$TripImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TripImplFromJson(json);
+  factory _$TripImpl.fromJson(Map<String, dynamic> json) => _$$TripImplFromJson(json);
 
   /// ID of the asset.
   @override
@@ -31127,21 +29525,18 @@ class _$TripImpl extends _Trip {
         (other.runtimeType == runtimeType &&
             other is _$TripImpl &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
-            (identical(other.assetName, assetName) ||
-                other.assetName == assetName) &&
+            (identical(other.assetName, assetName) || other.assetName == assetName) &&
             const DeepCollectionEquality().equals(other._points, _points));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, assetId, assetName,
-      const DeepCollectionEquality().hash(_points));
+  int get hashCode => Object.hash(runtimeType, assetId, assetName, const DeepCollectionEquality().hash(_points));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TripImplCopyWith<_$TripImpl> get copyWith =>
-      __$$TripImplCopyWithImpl<_$TripImpl>(this, _$identity);
+  _$$TripImplCopyWith<_$TripImpl> get copyWith => __$$TripImplCopyWithImpl<_$TripImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -31152,10 +29547,8 @@ class _$TripImpl extends _Trip {
 }
 
 abstract class _Trip extends Trip {
-  const factory _Trip(
-      {required final String assetId,
-      final String? assetName,
-      required final List<Point> points}) = _$TripImpl;
+  const factory _Trip({required final String assetId, final String? assetName, required final List<Point> points}) =
+      _$TripImpl;
   const _Trip._() : super._();
 
   factory _Trip.fromJson(Map<String, dynamic> json) = _$TripImpl.fromJson;
@@ -31174,8 +29567,7 @@ abstract class _Trip extends Trip {
   List<Point> get points;
   @override
   @JsonKey(ignore: true)
-  _$$TripImplCopyWith<_$TripImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$TripImplCopyWith<_$TripImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 Point _$PointFromJson(Map<String, dynamic> json) {
@@ -31210,8 +29602,7 @@ mixin _$Point {
 
 /// @nodoc
 abstract class $PointCopyWith<$Res> {
-  factory $PointCopyWith(Point value, $Res Function(Point) then) =
-      _$PointCopyWithImpl<$Res, Point>;
+  factory $PointCopyWith(Point value, $Res Function(Point) then) = _$PointCopyWithImpl<$Res, Point>;
   @useResult
   $Res call(
       {double latitude,
@@ -31223,8 +29614,7 @@ abstract class $PointCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PointCopyWithImpl<$Res, $Val extends Point>
-    implements $PointCopyWith<$Res> {
+class _$PointCopyWithImpl<$Res, $Val extends Point> implements $PointCopyWith<$Res> {
   _$PointCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -31273,9 +29663,7 @@ class _$PointCopyWithImpl<$Res, $Val extends Point>
 
 /// @nodoc
 abstract class _$$PointImplCopyWith<$Res> implements $PointCopyWith<$Res> {
-  factory _$$PointImplCopyWith(
-          _$PointImpl value, $Res Function(_$PointImpl) then) =
-      __$$PointImplCopyWithImpl<$Res>;
+  factory _$$PointImplCopyWith(_$PointImpl value, $Res Function(_$PointImpl) then) = __$$PointImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -31288,12 +29676,9 @@ abstract class _$$PointImplCopyWith<$Res> implements $PointCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$PointImplCopyWithImpl<$Res>
-    extends _$PointCopyWithImpl<$Res, _$PointImpl>
+class __$$PointImplCopyWithImpl<$Res> extends _$PointCopyWithImpl<$Res, _$PointImpl>
     implements _$$PointImplCopyWith<$Res> {
-  __$$PointImplCopyWithImpl(
-      _$PointImpl _value, $Res Function(_$PointImpl) _then)
-      : super(_value, _then);
+  __$$PointImplCopyWithImpl(_$PointImpl _value, $Res Function(_$PointImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -31346,8 +29731,7 @@ class _$PointImpl extends _Point {
       @TimestampConverter() required this.receivedAt})
       : super._();
 
-  factory _$PointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PointImplFromJson(json);
+  factory _$PointImpl.fromJson(Map<String, dynamic> json) => _$$PointImplFromJson(json);
 
   /// Latitude of the message from asset.
   @override
@@ -31384,30 +29768,22 @@ class _$PointImpl extends _Point {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PointImpl &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.direction, direction) ||
-                other.direction == direction) &&
-            (identical(other.triggerId, triggerId) ||
-                other.triggerId == triggerId) &&
-            (identical(other.triggerName, triggerName) ||
-                other.triggerName == triggerName) &&
-            (identical(other.receivedAt, receivedAt) ||
-                other.receivedAt == receivedAt));
+            (identical(other.latitude, latitude) || other.latitude == latitude) &&
+            (identical(other.longitude, longitude) || other.longitude == longitude) &&
+            (identical(other.direction, direction) || other.direction == direction) &&
+            (identical(other.triggerId, triggerId) || other.triggerId == triggerId) &&
+            (identical(other.triggerName, triggerName) || other.triggerName == triggerName) &&
+            (identical(other.receivedAt, receivedAt) || other.receivedAt == receivedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, latitude, longitude, direction,
-      triggerId, triggerName, receivedAt);
+  int get hashCode => Object.hash(runtimeType, latitude, longitude, direction, triggerId, triggerName, receivedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$PointImplCopyWith<_$PointImpl> get copyWith =>
-      __$$PointImplCopyWithImpl<_$PointImpl>(this, _$identity);
+  _$$PointImplCopyWith<_$PointImpl> get copyWith => __$$PointImplCopyWithImpl<_$PointImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -31456,8 +29832,7 @@ abstract class _Point extends Point {
   DateTime get receivedAt;
   @override
   @JsonKey(ignore: true)
-  _$$PointImplCopyWith<_$PointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$PointImplCopyWith<_$PointImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 ConciergeForm _$ConciergeFormFromJson(Map<String, dynamic> json) {
@@ -31471,22 +29846,19 @@ mixin _$ConciergeForm {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ConciergeFormCopyWith<ConciergeForm> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ConciergeFormCopyWith<ConciergeForm> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ConciergeFormCopyWith<$Res> {
-  factory $ConciergeFormCopyWith(
-          ConciergeForm value, $Res Function(ConciergeForm) then) =
+  factory $ConciergeFormCopyWith(ConciergeForm value, $Res Function(ConciergeForm) then) =
       _$ConciergeFormCopyWithImpl<$Res, ConciergeForm>;
   @useResult
   $Res call({String id, String name});
 }
 
 /// @nodoc
-class _$ConciergeFormCopyWithImpl<$Res, $Val extends ConciergeForm>
-    implements $ConciergeFormCopyWith<$Res> {
+class _$ConciergeFormCopyWithImpl<$Res, $Val extends ConciergeForm> implements $ConciergeFormCopyWith<$Res> {
   _$ConciergeFormCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -31514,10 +29886,8 @@ class _$ConciergeFormCopyWithImpl<$Res, $Val extends ConciergeForm>
 }
 
 /// @nodoc
-abstract class _$$ConciergeFormImplCopyWith<$Res>
-    implements $ConciergeFormCopyWith<$Res> {
-  factory _$$ConciergeFormImplCopyWith(
-          _$ConciergeFormImpl value, $Res Function(_$ConciergeFormImpl) then) =
+abstract class _$$ConciergeFormImplCopyWith<$Res> implements $ConciergeFormCopyWith<$Res> {
+  factory _$$ConciergeFormImplCopyWith(_$ConciergeFormImpl value, $Res Function(_$ConciergeFormImpl) then) =
       __$$ConciergeFormImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -31525,11 +29895,9 @@ abstract class _$$ConciergeFormImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ConciergeFormImplCopyWithImpl<$Res>
-    extends _$ConciergeFormCopyWithImpl<$Res, _$ConciergeFormImpl>
+class __$$ConciergeFormImplCopyWithImpl<$Res> extends _$ConciergeFormCopyWithImpl<$Res, _$ConciergeFormImpl>
     implements _$$ConciergeFormImplCopyWith<$Res> {
-  __$$ConciergeFormImplCopyWithImpl(
-      _$ConciergeFormImpl _value, $Res Function(_$ConciergeFormImpl) _then)
+  __$$ConciergeFormImplCopyWithImpl(_$ConciergeFormImpl _value, $Res Function(_$ConciergeFormImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -31556,8 +29924,7 @@ class __$$ConciergeFormImplCopyWithImpl<$Res>
 class _$ConciergeFormImpl implements _ConciergeForm {
   const _$ConciergeFormImpl({required this.id, required this.name});
 
-  factory _$ConciergeFormImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ConciergeFormImplFromJson(json);
+  factory _$ConciergeFormImpl.fromJson(Map<String, dynamic> json) => _$$ConciergeFormImplFromJson(json);
 
   @override
   final String id;
@@ -31597,12 +29964,9 @@ class _$ConciergeFormImpl implements _ConciergeForm {
 }
 
 abstract class _ConciergeForm implements ConciergeForm {
-  const factory _ConciergeForm(
-      {required final String id,
-      required final String name}) = _$ConciergeFormImpl;
+  const factory _ConciergeForm({required final String id, required final String name}) = _$ConciergeFormImpl;
 
-  factory _ConciergeForm.fromJson(Map<String, dynamic> json) =
-      _$ConciergeFormImpl.fromJson;
+  factory _ConciergeForm.fromJson(Map<String, dynamic> json) = _$ConciergeFormImpl.fromJson;
 
   @override
   String get id;
@@ -31610,8 +29974,7 @@ abstract class _ConciergeForm implements ConciergeForm {
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$ConciergeFormImplCopyWith<_$ConciergeFormImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$ConciergeFormImplCopyWith<_$ConciergeFormImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 User _$UserFromJson(Map<String, dynamic> json) {
@@ -31692,8 +30055,7 @@ mixin _$User {
   List<String>? get mappitAssetsIds => throw _privateConstructorUsedError;
 
   /// [mappitSecondaryRoutes]
-  List<String>? get mappitSecondaryRoutesIds =>
-      throw _privateConstructorUsedError;
+  List<String>? get mappitSecondaryRoutesIds => throw _privateConstructorUsedError;
 
   /// [mappitAssets] represents the list of assets.
   /// This field is only for `Mappit` use.
@@ -31709,8 +30071,7 @@ mixin _$User {
 
   /// [mappitExternalAccount] represents the Mappit external account.
   /// This field is only for `Mappit` use.
-  ExternalAccount? get mappitExternalAccount =>
-      throw _privateConstructorUsedError;
+  ExternalAccount? get mappitExternalAccount => throw _privateConstructorUsedError;
 
   /// [mfaEnabled] represents the MFA enabled flag.
   bool get mfaEnabled => throw _privateConstructorUsedError;
@@ -31745,8 +30106,7 @@ mixin _$User {
 
 /// @nodoc
 abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res, User>;
+  factory $UserCopyWith(User value, $Res Function(User) then) = _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call(
       {String id,
@@ -31794,8 +30154,7 @@ abstract class $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res, $Val extends User>
-    implements $UserCopyWith<$Res> {
+class _$UserCopyWithImpl<$Res, $Val extends User> implements $UserCopyWith<$Res> {
   _$UserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -32046,8 +30405,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       return null;
     }
 
-    return $ExternalAccountCopyWith<$Res>(_value.mappitExternalAccount!,
-        (value) {
+    return $ExternalAccountCopyWith<$Res>(_value.mappitExternalAccount!, (value) {
       return _then(_value.copyWith(mappitExternalAccount: value) as $Val);
     });
   }
@@ -32055,9 +30413,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
 
 /// @nodoc
 abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$UserImplCopyWith(
-          _$UserImpl value, $Res Function(_$UserImpl) then) =
-      __$$UserImplCopyWithImpl<$Res>;
+  factory _$$UserImplCopyWith(_$UserImpl value, $Res Function(_$UserImpl) then) = __$$UserImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -32111,11 +30467,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UserImplCopyWithImpl<$Res>
-    extends _$UserCopyWithImpl<$Res, _$UserImpl>
-    implements _$$UserImplCopyWith<$Res> {
-  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
-      : super(_value, _then);
+class __$$UserImplCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$UserImpl> implements _$$UserImplCopyWith<$Res> {
+  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -32359,8 +30712,7 @@ class _$UserImpl implements _User {
         _mappitAssets = mappitAssets,
         _mfaMethods = mfaMethods;
 
-  factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserImplFromJson(json);
+  factory _$UserImpl.fromJson(Map<String, dynamic> json) => _$$UserImplFromJson(json);
 
   /// [id] represents the user ID.
   @override
@@ -32546,8 +30898,7 @@ class _$UserImpl implements _User {
   List<String>? get mappitSecondaryRoutesIds {
     final value = _mappitSecondaryRoutesIds;
     if (value == null) return null;
-    if (_mappitSecondaryRoutesIds is EqualUnmodifiableListView)
-      return _mappitSecondaryRoutesIds;
+    if (_mappitSecondaryRoutesIds is EqualUnmodifiableListView) return _mappitSecondaryRoutesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -32638,66 +30989,42 @@ class _$UserImpl implements _User {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.token, token) || other.token == token) &&
-            (identical(other.parentId, parentId) ||
-                other.parentId == parentId) &&
+            (identical(other.parentId, parentId) || other.parentId == parentId) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.dynamicAvatar, dynamicAvatar) ||
-                other.dynamicAvatar == dynamicAvatar) &&
-            const DeepCollectionEquality()
-                .equals(other._referencesIds, _referencesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._references, _references) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            (identical(other.categoryId, categoryId) ||
-                other.categoryId == categoryId) &&
-            (identical(other.mqttToken, mqttToken) ||
-                other.mqttToken == mqttToken) &&
+            (identical(other.username, username) || other.username == username) &&
+            (identical(other.dynamicAvatar, dynamicAvatar) || other.dynamicAvatar == dynamicAvatar) &&
+            const DeepCollectionEquality().equals(other._referencesIds, _referencesIds) &&
+            const DeepCollectionEquality().equals(other._references, _references) &&
+            (identical(other.category, category) || other.category == category) &&
+            (identical(other.categoryId, categoryId) || other.categoryId == categoryId) &&
+            (identical(other.mqttToken, mqttToken) || other.mqttToken == mqttToken) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
-            const DeepCollectionEquality()
-                .equals(other._customFields, _customFields) &&
-            (identical(other.platformAuth, platformAuth) ||
-                other.platformAuth == platformAuth) &&
+            const DeepCollectionEquality().equals(other._customFields, _customFields) &&
+            (identical(other.platformAuth, platformAuth) || other.platformAuth == platformAuth) &&
             (identical(other.profile, profile) || other.profile == profile) &&
             const DeepCollectionEquality().equals(other._childs, _childs) &&
             const DeepCollectionEquality().equals(other._tagsIds, _tagsIds) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
             (identical(other.planId, planId) || other.planId == planId) &&
-            (identical(other.configuration, configuration) ||
-                other.configuration == configuration) &&
-            const DeepCollectionEquality()
-                .equals(other._allowedApps, _allowedApps) &&
-            const DeepCollectionEquality()
-                .equals(other._mappitAssetsIds, _mappitAssetsIds) &&
-            const DeepCollectionEquality().equals(
-                other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._mappitAssets, _mappitAssets) &&
+            (identical(other.configuration, configuration) || other.configuration == configuration) &&
+            const DeepCollectionEquality().equals(other._allowedApps, _allowedApps) &&
+            const DeepCollectionEquality().equals(other._mappitAssetsIds, _mappitAssetsIds) &&
+            const DeepCollectionEquality().equals(other._mappitSecondaryRoutesIds, _mappitSecondaryRoutesIds) &&
+            const DeepCollectionEquality().equals(other._mappitAssets, _mappitAssets) &&
             (identical(other.historicalDaysAllowed, historicalDaysAllowed) ||
                 other.historicalDaysAllowed == historicalDaysAllowed) &&
-            (identical(
-                    other.mappitExternalAccountId, mappitExternalAccountId) ||
+            (identical(other.mappitExternalAccountId, mappitExternalAccountId) ||
                 other.mappitExternalAccountId == mappitExternalAccountId) &&
             (identical(other.mappitExternalAccount, mappitExternalAccount) ||
                 other.mappitExternalAccount == mappitExternalAccount) &&
-            (identical(other.mfaEnabled, mfaEnabled) ||
-                other.mfaEnabled == mfaEnabled) &&
-            const DeepCollectionEquality()
-                .equals(other._mfaMethods, _mfaMethods) &&
-            (identical(other.tenvioAddress, tenvioAddress) ||
-                other.tenvioAddress == tenvioAddress) &&
-            (identical(other.tenvioPhone, tenvioPhone) ||
-                other.tenvioPhone == tenvioPhone) &&
-            (identical(other.tenvioLatitude, tenvioLatitude) ||
-                other.tenvioLatitude == tenvioLatitude) &&
-            (identical(other.tenvioLongitude, tenvioLongitude) ||
-                other.tenvioLongitude == tenvioLongitude) &&
-            (identical(other.isSuspended, isSuspended) ||
-                other.isSuspended == isSuspended) &&
-            (identical(other.suspendedAt, suspendedAt) ||
-                other.suspendedAt == suspendedAt));
+            (identical(other.mfaEnabled, mfaEnabled) || other.mfaEnabled == mfaEnabled) &&
+            const DeepCollectionEquality().equals(other._mfaMethods, _mfaMethods) &&
+            (identical(other.tenvioAddress, tenvioAddress) || other.tenvioAddress == tenvioAddress) &&
+            (identical(other.tenvioPhone, tenvioPhone) || other.tenvioPhone == tenvioPhone) &&
+            (identical(other.tenvioLatitude, tenvioLatitude) || other.tenvioLatitude == tenvioLatitude) &&
+            (identical(other.tenvioLongitude, tenvioLongitude) || other.tenvioLongitude == tenvioLongitude) &&
+            (identical(other.isSuspended, isSuspended) || other.isSuspended == isSuspended) &&
+            (identical(other.suspendedAt, suspendedAt) || other.suspendedAt == suspendedAt));
   }
 
   @JsonKey(ignore: true)
@@ -32745,8 +31072,7 @@ class _$UserImpl implements _User {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
-      __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
+  _$$UserImplCopyWith<_$UserImpl> get copyWith => __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -32951,8 +31277,7 @@ abstract class _User implements User {
   DateTime? get suspendedAt;
   @override
   @JsonKey(ignore: true)
-  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UserImplCopyWith<_$UserImpl> get copyWith => throw _privateConstructorUsedError;
 }
 
 InviteLink _$InviteLinkFromJson(Map<String, dynamic> json) {
@@ -32973,14 +31298,12 @@ mixin _$InviteLink {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InviteLinkCopyWith<InviteLink> get copyWith =>
-      throw _privateConstructorUsedError;
+  $InviteLinkCopyWith<InviteLink> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $InviteLinkCopyWith<$Res> {
-  factory $InviteLinkCopyWith(
-          InviteLink value, $Res Function(InviteLink) then) =
+  factory $InviteLinkCopyWith(InviteLink value, $Res Function(InviteLink) then) =
       _$InviteLinkCopyWithImpl<$Res, InviteLink>;
   @useResult
   $Res call(
@@ -32993,8 +31316,7 @@ abstract class $InviteLinkCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$InviteLinkCopyWithImpl<$Res, $Val extends InviteLink>
-    implements $InviteLinkCopyWith<$Res> {
+class _$InviteLinkCopyWithImpl<$Res, $Val extends InviteLink> implements $InviteLinkCopyWith<$Res> {
   _$InviteLinkCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -33042,10 +31364,8 @@ class _$InviteLinkCopyWithImpl<$Res, $Val extends InviteLink>
 }
 
 /// @nodoc
-abstract class _$$InviteLinkImplCopyWith<$Res>
-    implements $InviteLinkCopyWith<$Res> {
-  factory _$$InviteLinkImplCopyWith(
-          _$InviteLinkImpl value, $Res Function(_$InviteLinkImpl) then) =
+abstract class _$$InviteLinkImplCopyWith<$Res> implements $InviteLinkCopyWith<$Res> {
+  factory _$$InviteLinkImplCopyWith(_$InviteLinkImpl value, $Res Function(_$InviteLinkImpl) then) =
       __$$InviteLinkImplCopyWithImpl<$Res>;
   @override
   @useResult
@@ -33059,12 +31379,9 @@ abstract class _$$InviteLinkImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InviteLinkImplCopyWithImpl<$Res>
-    extends _$InviteLinkCopyWithImpl<$Res, _$InviteLinkImpl>
+class __$$InviteLinkImplCopyWithImpl<$Res> extends _$InviteLinkCopyWithImpl<$Res, _$InviteLinkImpl>
     implements _$$InviteLinkImplCopyWith<$Res> {
-  __$$InviteLinkImplCopyWithImpl(
-      _$InviteLinkImpl _value, $Res Function(_$InviteLinkImpl) _then)
-      : super(_value, _then);
+  __$$InviteLinkImplCopyWithImpl(_$InviteLinkImpl _value, $Res Function(_$InviteLinkImpl) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -33117,8 +31434,7 @@ class _$InviteLinkImpl extends _InviteLink {
       @TimestampConverter() required this.createdAt})
       : super._();
 
-  factory _$InviteLinkImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InviteLinkImplFromJson(json);
+  factory _$InviteLinkImpl.fromJson(Map<String, dynamic> json) => _$$InviteLinkImplFromJson(json);
 
   @override
   final String id;
@@ -33150,16 +31466,13 @@ class _$InviteLinkImpl extends _InviteLink {
             (identical(other.code, code) || other.code == code) &&
             (identical(other.sentTo, sentTo) || other.sentTo == sentTo) &&
             (identical(other.sentAt, sentAt) || other.sentAt == sentAt) &&
-            (identical(other.expiresAt, expiresAt) ||
-                other.expiresAt == expiresAt) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt));
+            (identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt) &&
+            (identical(other.createdAt, createdAt) || other.createdAt == createdAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, code, sentTo, sentAt, expiresAt, createdAt);
+  int get hashCode => Object.hash(runtimeType, id, code, sentTo, sentAt, expiresAt, createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -33177,17 +31490,15 @@ class _$InviteLinkImpl extends _InviteLink {
 
 abstract class _InviteLink extends InviteLink {
   const factory _InviteLink(
-          {required final String id,
-          required final String code,
-          final String? sentTo,
-          @TimestampOrNullConverter() final DateTime? sentAt,
-          @TimestampConverter() required final DateTime expiresAt,
-          @TimestampConverter() required final DateTime createdAt}) =
-      _$InviteLinkImpl;
+      {required final String id,
+      required final String code,
+      final String? sentTo,
+      @TimestampOrNullConverter() final DateTime? sentAt,
+      @TimestampConverter() required final DateTime expiresAt,
+      @TimestampConverter() required final DateTime createdAt}) = _$InviteLinkImpl;
   const _InviteLink._() : super._();
 
-  factory _InviteLink.fromJson(Map<String, dynamic> json) =
-      _$InviteLinkImpl.fromJson;
+  factory _InviteLink.fromJson(Map<String, dynamic> json) = _$InviteLinkImpl.fromJson;
 
   @override
   String get id;
@@ -33206,544 +31517,5 @@ abstract class _InviteLink extends InviteLink {
   DateTime get createdAt;
   @override
   @JsonKey(ignore: true)
-  _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-FlespiAcl _$FlespiAclFromJson(Map<String, dynamic> json) {
-  return _FlespiAcl.fromJson(json);
-}
-
-/// @nodoc
-mixin _$FlespiAcl {
-  /// [uri] is the URI of the ACL.
-  @FlespiUriConverter()
-  FlespiUri get uri => throw _privateConstructorUsedError;
-
-  /// [topic] is the topic of the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  String? get topic => throw _privateConstructorUsedError;
-
-  /// [actions] is the list of actions allowed for the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @FlespiActionConverter()
-  List<FlespiAction>? get actions => throw _privateConstructorUsedError;
-
-  /// [methods] is the list of methods allowed for the ACL.
-  @FlespiMethodConverter()
-  List<FlespiMethod>? get methods => throw _privateConstructorUsedError;
-
-  /// [ids] is the list of IDs allowed for the ACL.
-  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  List<String>? get ids => throw _privateConstructorUsedError;
-
-  /// [submodules] is the list of submodules allowed for the ACL.
-  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  List<FlespiSubmoduleConfig>? get submodules =>
-      throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $FlespiAclCopyWith<FlespiAcl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FlespiAclCopyWith<$Res> {
-  factory $FlespiAclCopyWith(FlespiAcl value, $Res Function(FlespiAcl) then) =
-      _$FlespiAclCopyWithImpl<$Res, FlespiAcl>;
-  @useResult
-  $Res call(
-      {@FlespiUriConverter() FlespiUri uri,
-      String? topic,
-      @FlespiActionConverter() List<FlespiAction>? actions,
-      @FlespiMethodConverter() List<FlespiMethod>? methods,
-      List<String>? ids,
-      List<FlespiSubmoduleConfig>? submodules});
-}
-
-/// @nodoc
-class _$FlespiAclCopyWithImpl<$Res, $Val extends FlespiAcl>
-    implements $FlespiAclCopyWith<$Res> {
-  _$FlespiAclCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? uri = null,
-    Object? topic = freezed,
-    Object? actions = freezed,
-    Object? methods = freezed,
-    Object? ids = freezed,
-    Object? submodules = freezed,
-  }) {
-    return _then(_value.copyWith(
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as FlespiUri,
-      topic: freezed == topic
-          ? _value.topic
-          : topic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actions: freezed == actions
-          ? _value.actions
-          : actions // ignore: cast_nullable_to_non_nullable
-              as List<FlespiAction>?,
-      methods: freezed == methods
-          ? _value.methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>?,
-      ids: freezed == ids
-          ? _value.ids
-          : ids // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      submodules: freezed == submodules
-          ? _value.submodules
-          : submodules // ignore: cast_nullable_to_non_nullable
-              as List<FlespiSubmoduleConfig>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$FlespiAclImplCopyWith<$Res>
-    implements $FlespiAclCopyWith<$Res> {
-  factory _$$FlespiAclImplCopyWith(
-          _$FlespiAclImpl value, $Res Function(_$FlespiAclImpl) then) =
-      __$$FlespiAclImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@FlespiUriConverter() FlespiUri uri,
-      String? topic,
-      @FlespiActionConverter() List<FlespiAction>? actions,
-      @FlespiMethodConverter() List<FlespiMethod>? methods,
-      List<String>? ids,
-      List<FlespiSubmoduleConfig>? submodules});
-}
-
-/// @nodoc
-class __$$FlespiAclImplCopyWithImpl<$Res>
-    extends _$FlespiAclCopyWithImpl<$Res, _$FlespiAclImpl>
-    implements _$$FlespiAclImplCopyWith<$Res> {
-  __$$FlespiAclImplCopyWithImpl(
-      _$FlespiAclImpl _value, $Res Function(_$FlespiAclImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? uri = null,
-    Object? topic = freezed,
-    Object? actions = freezed,
-    Object? methods = freezed,
-    Object? ids = freezed,
-    Object? submodules = freezed,
-  }) {
-    return _then(_$FlespiAclImpl(
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as FlespiUri,
-      topic: freezed == topic
-          ? _value.topic
-          : topic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actions: freezed == actions
-          ? _value._actions
-          : actions // ignore: cast_nullable_to_non_nullable
-              as List<FlespiAction>?,
-      methods: freezed == methods
-          ? _value._methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>?,
-      ids: freezed == ids
-          ? _value._ids
-          : ids // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      submodules: freezed == submodules
-          ? _value._submodules
-          : submodules // ignore: cast_nullable_to_non_nullable
-              as List<FlespiSubmoduleConfig>?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$FlespiAclImpl implements _FlespiAcl {
-  const _$FlespiAclImpl(
-      {@FlespiUriConverter() required this.uri,
-      this.topic,
-      @FlespiActionConverter() final List<FlespiAction>? actions,
-      @FlespiMethodConverter() final List<FlespiMethod>? methods,
-      final List<String>? ids,
-      final List<FlespiSubmoduleConfig>? submodules})
-      : _actions = actions,
-        _methods = methods,
-        _ids = ids,
-        _submodules = submodules;
-
-  factory _$FlespiAclImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlespiAclImplFromJson(json);
-
-  /// [uri] is the URI of the ACL.
-  @override
-  @FlespiUriConverter()
-  final FlespiUri uri;
-
-  /// [topic] is the topic of the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
-  final String? topic;
-
-  /// [actions] is the list of actions allowed for the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  final List<FlespiAction>? _actions;
-
-  /// [actions] is the list of actions allowed for the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
-  @FlespiActionConverter()
-  List<FlespiAction>? get actions {
-    final value = _actions;
-    if (value == null) return null;
-    if (_actions is EqualUnmodifiableListView) return _actions;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// [methods] is the list of methods allowed for the ACL.
-  final List<FlespiMethod>? _methods;
-
-  /// [methods] is the list of methods allowed for the ACL.
-  @override
-  @FlespiMethodConverter()
-  List<FlespiMethod>? get methods {
-    final value = _methods;
-    if (value == null) return null;
-    if (_methods is EqualUnmodifiableListView) return _methods;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// [ids] is the list of IDs allowed for the ACL.
-  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  final List<String>? _ids;
-
-  /// [ids] is the list of IDs allowed for the ACL.
-  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  @override
-  List<String>? get ids {
-    final value = _ids;
-    if (value == null) return null;
-    if (_ids is EqualUnmodifiableListView) return _ids;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// [submodules] is the list of submodules allowed for the ACL.
-  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  final List<FlespiSubmoduleConfig>? _submodules;
-
-  /// [submodules] is the list of submodules allowed for the ACL.
-  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  @override
-  List<FlespiSubmoduleConfig>? get submodules {
-    final value = _submodules;
-    if (value == null) return null;
-    if (_submodules is EqualUnmodifiableListView) return _submodules;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  String toString() {
-    return 'FlespiAcl(uri: $uri, topic: $topic, actions: $actions, methods: $methods, ids: $ids, submodules: $submodules)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FlespiAclImpl &&
-            (identical(other.uri, uri) || other.uri == uri) &&
-            (identical(other.topic, topic) || other.topic == topic) &&
-            const DeepCollectionEquality().equals(other._actions, _actions) &&
-            const DeepCollectionEquality().equals(other._methods, _methods) &&
-            const DeepCollectionEquality().equals(other._ids, _ids) &&
-            const DeepCollectionEquality()
-                .equals(other._submodules, _submodules));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      uri,
-      topic,
-      const DeepCollectionEquality().hash(_actions),
-      const DeepCollectionEquality().hash(_methods),
-      const DeepCollectionEquality().hash(_ids),
-      const DeepCollectionEquality().hash(_submodules));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FlespiAclImplCopyWith<_$FlespiAclImpl> get copyWith =>
-      __$$FlespiAclImplCopyWithImpl<_$FlespiAclImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FlespiAclImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _FlespiAcl implements FlespiAcl {
-  const factory _FlespiAcl(
-      {@FlespiUriConverter() required final FlespiUri uri,
-      final String? topic,
-      @FlespiActionConverter() final List<FlespiAction>? actions,
-      @FlespiMethodConverter() final List<FlespiMethod>? methods,
-      final List<String>? ids,
-      final List<FlespiSubmoduleConfig>? submodules}) = _$FlespiAclImpl;
-
-  factory _FlespiAcl.fromJson(Map<String, dynamic> json) =
-      _$FlespiAclImpl.fromJson;
-
-  @override
-
-  /// [uri] is the URI of the ACL.
-  @FlespiUriConverter()
-  FlespiUri get uri;
-  @override
-
-  /// [topic] is the topic of the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  String? get topic;
-  @override
-
-  /// [actions] is the list of actions allowed for the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @FlespiActionConverter()
-  List<FlespiAction>? get actions;
-  @override
-
-  /// [methods] is the list of methods allowed for the ACL.
-  @FlespiMethodConverter()
-  List<FlespiMethod>? get methods;
-  @override
-
-  /// [ids] is the list of IDs allowed for the ACL.
-  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  List<String>? get ids;
-  @override
-
-  /// [submodules] is the list of submodules allowed for the ACL.
-  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  List<FlespiSubmoduleConfig>? get submodules;
-  @override
-  @JsonKey(ignore: true)
-  _$$FlespiAclImplCopyWith<_$FlespiAclImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-FlespiSubmoduleConfig _$FlespiSubmoduleConfigFromJson(
-    Map<String, dynamic> json) {
-  return _FlespiSubmoduleConfig.fromJson(json);
-}
-
-/// @nodoc
-mixin _$FlespiSubmoduleConfig {
-  /// [submodule] is the submodule of the configuration.
-  @FlespiSubmoduleConverter()
-  FlespiSubmodule get name => throw _privateConstructorUsedError;
-
-  /// [methods] is the list of methods allowed for the submodule.
-  @FlespiMethodConverter()
-  List<FlespiMethod> get methods => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $FlespiSubmoduleConfigCopyWith<FlespiSubmoduleConfig> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FlespiSubmoduleConfigCopyWith<$Res> {
-  factory $FlespiSubmoduleConfigCopyWith(FlespiSubmoduleConfig value,
-          $Res Function(FlespiSubmoduleConfig) then) =
-      _$FlespiSubmoduleConfigCopyWithImpl<$Res, FlespiSubmoduleConfig>;
-  @useResult
-  $Res call(
-      {@FlespiSubmoduleConverter() FlespiSubmodule name,
-      @FlespiMethodConverter() List<FlespiMethod> methods});
-}
-
-/// @nodoc
-class _$FlespiSubmoduleConfigCopyWithImpl<$Res,
-        $Val extends FlespiSubmoduleConfig>
-    implements $FlespiSubmoduleConfigCopyWith<$Res> {
-  _$FlespiSubmoduleConfigCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? methods = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as FlespiSubmodule,
-      methods: null == methods
-          ? _value.methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$FlespiSubmoduleConfigImplCopyWith<$Res>
-    implements $FlespiSubmoduleConfigCopyWith<$Res> {
-  factory _$$FlespiSubmoduleConfigImplCopyWith(
-          _$FlespiSubmoduleConfigImpl value,
-          $Res Function(_$FlespiSubmoduleConfigImpl) then) =
-      __$$FlespiSubmoduleConfigImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@FlespiSubmoduleConverter() FlespiSubmodule name,
-      @FlespiMethodConverter() List<FlespiMethod> methods});
-}
-
-/// @nodoc
-class __$$FlespiSubmoduleConfigImplCopyWithImpl<$Res>
-    extends _$FlespiSubmoduleConfigCopyWithImpl<$Res,
-        _$FlespiSubmoduleConfigImpl>
-    implements _$$FlespiSubmoduleConfigImplCopyWith<$Res> {
-  __$$FlespiSubmoduleConfigImplCopyWithImpl(_$FlespiSubmoduleConfigImpl _value,
-      $Res Function(_$FlespiSubmoduleConfigImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? methods = null,
-  }) {
-    return _then(_$FlespiSubmoduleConfigImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as FlespiSubmodule,
-      methods: null == methods
-          ? _value._methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$FlespiSubmoduleConfigImpl implements _FlespiSubmoduleConfig {
-  const _$FlespiSubmoduleConfigImpl(
-      {@FlespiSubmoduleConverter() required this.name,
-      @FlespiMethodConverter() final List<FlespiMethod> methods = const []})
-      : _methods = methods;
-
-  factory _$FlespiSubmoduleConfigImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlespiSubmoduleConfigImplFromJson(json);
-
-  /// [submodule] is the submodule of the configuration.
-  @override
-  @FlespiSubmoduleConverter()
-  final FlespiSubmodule name;
-
-  /// [methods] is the list of methods allowed for the submodule.
-  final List<FlespiMethod> _methods;
-
-  /// [methods] is the list of methods allowed for the submodule.
-  @override
-  @JsonKey()
-  @FlespiMethodConverter()
-  List<FlespiMethod> get methods {
-    if (_methods is EqualUnmodifiableListView) return _methods;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_methods);
-  }
-
-  @override
-  String toString() {
-    return 'FlespiSubmoduleConfig(name: $name, methods: $methods)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FlespiSubmoduleConfigImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other._methods, _methods));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, name, const DeepCollectionEquality().hash(_methods));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FlespiSubmoduleConfigImplCopyWith<_$FlespiSubmoduleConfigImpl>
-      get copyWith => __$$FlespiSubmoduleConfigImplCopyWithImpl<
-          _$FlespiSubmoduleConfigImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FlespiSubmoduleConfigImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _FlespiSubmoduleConfig implements FlespiSubmoduleConfig {
-  const factory _FlespiSubmoduleConfig(
-          {@FlespiSubmoduleConverter() required final FlespiSubmodule name,
-          @FlespiMethodConverter() final List<FlespiMethod> methods}) =
-      _$FlespiSubmoduleConfigImpl;
-
-  factory _FlespiSubmoduleConfig.fromJson(Map<String, dynamic> json) =
-      _$FlespiSubmoduleConfigImpl.fromJson;
-
-  @override
-
-  /// [submodule] is the submodule of the configuration.
-  @FlespiSubmoduleConverter()
-  FlespiSubmodule get name;
-  @override
-
-  /// [methods] is the list of methods allowed for the submodule.
-  @FlespiMethodConverter()
-  List<FlespiMethod> get methods;
-  @override
-  @JsonKey(ignore: true)
-  _$$FlespiSubmoduleConfigImplCopyWith<_$FlespiSubmoduleConfigImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith => throw _privateConstructorUsedError;
 }

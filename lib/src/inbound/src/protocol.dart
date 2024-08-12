@@ -1,28 +1,6 @@
 part of '../inbound.dart';
 
 @freezed
-class RealtimeEndpoint with _$RealtimeEndpoint {
-  const factory RealtimeEndpoint({
-    String? host,
-    int? port,
-  }) = _RealtimeEndpoint;
-
-  factory RealtimeEndpoint.fromJson(Map<String, dynamic> json) => _$RealtimeEndpointFromJson(json);
-}
-
-@freezed
-class RealtimeVariantEndpoint with _$RealtimeVariantEndpoint {
-  const factory RealtimeVariantEndpoint({
-    String? dataTopic,
-    String? eventsTopic,
-    String? realtimeTopic,
-    String? commandTopic,
-  }) = _RealtimeVariantEndpoint;
-
-  factory RealtimeVariantEndpoint.fromJson(Map<String, dynamic> json) => _$RealtimeVariantEndpointFromJson(json);
-}
-
-@freezed
 class InboundProtocol with _$InboundProtocol {
   const factory InboundProtocol({
     /// The protocol ID
@@ -40,19 +18,6 @@ class InboundProtocol with _$InboundProtocol {
     /// Indicates the operation mode of the protocol.
     @OperationModeConverter() required OperationMode operationMode,
 
-    /// Indicates the [host] and [port] server. Only when [operationMode] is [OperationMode.realtime]
-    @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [host] and [port] field.
-      Check the [host] and [port] field for more information.
-    """) RealtimeEndpoint? realtimeEndpoint,
-
-    /// Indicates the [dataTopic], [eventsTopic], [realtimeTopic] and [commandTopic] server.
-    /// Only when [operationMode] is [OperationMode.realtime]
-    @Deprecated("""
-      [realtimeEndpoint] is deprecated in favor of [mqttTopic] field.
-      Check the [mqttTopic] field for more information.
-    """) RealtimeVariantEndpoint? realtimeVariantEndpoint,
-
     /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
     String? host,
 
@@ -65,26 +30,24 @@ class InboundProtocol with _$InboundProtocol {
     /// the protocol
     String? mqttTopic,
 
-    /// Indicates if the protocol has support for commands, depending on the field, means:
-    /// for [hasNativeCommands] = true, the protocol has support for commands through the protocol itself
-    /// for [hasSmsCommands] = true, the protocol has support for commands through a SMS gateway
-    /// !Important: [hasNativeCommands] and [hasSmsCommands] can be true at the same time
+    /// Indicates if the protocol has support for commands sent via the protocol itself.
     bool? hasNativeCommands,
+
+    /// Indicates if the protocol has support for commands sent via SMS gateway.
     bool? hasSmsCommands,
 
     /// Indicates if the protocol has support for command ACK, only valid for [hasNativeCommands] = true
     bool? hasCommandsResult,
 
-    /// [isFlespi], [channelId], [maxPerReceptor] and [flespiId] are the fields for Flespi protocols.
+    /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
     /// Indicates if the protocol is from Flespi or not
     bool? isFlespi,
 
+    /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
     /// Indicates the Flespi Channel ID.
     int? channelId,
 
-    /// Indicates the maximum amount of devices supported/handled by each receptor.
-    int? maxPerReceptor,
-
+    /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
     /// Indicates the ID of the protocol in Flespi.
     String? flespiId,
 
@@ -108,6 +71,8 @@ class InboundProtocol with _$InboundProtocol {
     /// and [ackTopicFormat] is the [String] value that indicates the format of the topic to send the ACK.
     /// Currently only works for Layrz Link protocol.
     bool? hasAck,
+
+    /// [ackTopicFormat] is the format of the topic to send the ACK.
     String? ackTopicFormat,
 
     /// [dynamicIcon] is the icon of the inbound protocol.
@@ -135,9 +100,115 @@ class InboundProtocol with _$InboundProtocol {
 
     /// [flespiAcl] refers to the ACL for the token generation.
     List<FlespiAcl>? flespiAcl,
+
+    /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+    WebhookStructure? webhookStructure,
+
+    /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+    @Default(false) bool requiresExternalAccount,
+
+    /// [requiresStructure] indicates if the protocol requires a structure to work.
+    @Default(false) bool requiresStructure,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);
+}
+
+@unfreezed
+class InboundProtocolInput with _$InboundProtocolInput {
+  factory InboundProtocolInput({
+    /// [id] ID of the protocol entity. This ID is unique.
+    String? id,
+
+    ///[name] Name of the protocol.
+    @Default('') String name,
+
+    /// [color] Indicates the color assigned to the protocol
+    @ColorConverter() @Default(kPrimaryColor) Color color,
+
+    /// [isEnabled] Boolean that indicates if the protocol is enabled.
+    @Default(true) bool isEnabled,
+
+    /// [categoriesIds] ID of all categories assigned
+    @Default([]) List<String> categoriesIds,
+
+    /// [operationMode] Indicates the operation mode of the protocol.
+    @OperationModeConverter() @Default(OperationMode.realtime) OperationMode operationMode,
+
+    /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
+    @Default(false) bool hasNativeCommands,
+
+    /// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
+    @Default(false) bool hasSmsCommands,
+
+    /// [hasCommandsResult] Boolean that indicates if the protocol has commands.
+    @Default(false) bool hasCommandsResult,
+
+    /// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
+    int? channelId,
+
+    /// [isFlespi] Boolean that indicates if the protocol is from Flespi.
+    @Default(false) bool isFlespi,
+
+    /// [flespiId] Flespi ID. Only used for Flespi protocols.
+    String? flespiId,
+
+    /// [hasAck] Boolean that indicates if the protocol has ACK support.
+    @Default(false) bool hasAck,
+
+    /// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
+    @Default('') String ackTopicFormat,
+
+    /// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
+    @Default(false) bool isImported,
+
+    /// [requiredFields] Required configuration fields.
+    @Default([]) List<CredentialFieldInput> requiredFields,
+
+    /// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
+    @Default(false) bool canFota,
+
+    /// [host] is the host of the server, means the IP or domain (or subdomain)
+    /// of the server to send or receive the information
+    String? host,
+
+    /// [port] is the port of the server, means the port
+    /// of the server to send or receive the information
+    /// 0 means in API and backend services "ignore this field"
+    int? port,
+
+    /// [mqttTopic] is the MQTT topic to send or receive the information
+    String? mqttTopic,
+
+    /// [dynamicIcon] is the icon of the protocol.
+    required AvatarInput dynamicIcon,
+
+    /// [cycleId] is the ID of the cycle to which the field belongs.
+    String? cycleId,
+
+    /// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
+    @Default(false) bool hasModbus,
+
+    /// [modbusPorts] is the list of Modbus ports that the protocol has.
+    @Default([]) List<String> modbusPorts,
+
+    /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
+    @Default(false) bool requiresFlespiToken,
+
+    /// [flespiAcl] refers to the ACL for the token generation.
+    @Default([]) List<FlespiAclInput> flespiAcl,
+
+    /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+    WebhookStructureInput? webhookStructure,
+
+    /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
+    @Default(false) bool requiresExternalAccount,
+
+    /// [requiresStructure] indicates if the protocol requires a structure to work.
+    @Default(false) bool requiresStructure,
+  }) = _InboundProtocolInput;
+
+  factory InboundProtocolInput.fromJson(Map<String, dynamic> json) => _$InboundProtocolInputFromJson(json);
 }
 
 enum OperationMode {
@@ -146,15 +217,6 @@ enum OperationMode {
   ///
   /// Layrz API Reference: REALTIME
   realtime,
-
-  /// [realtimeVariant] is a realtime communication mode, uses TCP or Websocket connection to connect to the devices.
-  ///
-  /// Layrz API Reference: REALTIMEVARIANT
-  @Deprecated("""
-    [realtimeVariant] is deprecated in favor of [mqtt].
-    Check the [mqtt] field for more information.
-  """)
-  realtimeVariant,
 
   /// [realtimeClient] is a realtime communication mode, uses MQTT connection to connect to the devices.
   /// Also, uses the reversed architecture, so the device acts as the server, and we act as the client.
@@ -204,8 +266,6 @@ enum OperationMode {
         return "WEBHOOK";
       case OperationMode.realtimeClient:
         return "REALTIMECLIENT";
-      case OperationMode.realtimeVariant:
-        return "REALTIMEVARIANT";
       case OperationMode.simulation:
         return "SIMULATION";
       case OperationMode.mqtt:
@@ -224,8 +284,6 @@ enum OperationMode {
         return OperationMode.webhook;
       case "REALTIMECLIENT":
         return OperationMode.realtimeClient;
-      case "REALTIMEVARIANT":
-        return OperationMode.realtimeVariant;
       case "SIMULATION":
         return OperationMode.simulation;
       case "MQTT":

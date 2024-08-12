@@ -2193,7 +2193,6 @@ _$TagImpl _$$TagImplFromJson(Map<String, dynamic> json) => _$TagImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
-      icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
       dynamicIcon: json['dynamicIcon'] == null
           ? null
           : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
@@ -2348,7 +2347,6 @@ Map<String, dynamic> _$$TagImplToJson(_$TagImpl instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'color': const ColorConverter().toJson(instance.color),
-      'icon': const IconOrNullConverter().toJson(instance.icon),
       'dynamicIcon': instance.dynamicIcon?.toJson(),
       'users': instance.users?.map((e) => e.toJson()).toList(),
       'usersIds': instance.usersIds,
@@ -2955,51 +2953,4 @@ Map<String, dynamic> _$$InviteLinkImplToJson(_$InviteLinkImpl instance) =>
       'sentAt': const TimestampOrNullConverter().toJson(instance.sentAt),
       'expiresAt': const TimestampConverter().toJson(instance.expiresAt),
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
-    };
-
-_$FlespiAclImpl _$$FlespiAclImplFromJson(Map<String, dynamic> json) =>
-    _$FlespiAclImpl(
-      uri: const FlespiUriConverter().fromJson(json['uri'] as String),
-      topic: json['topic'] as String?,
-      actions: (json['actions'] as List<dynamic>?)
-          ?.map((e) => const FlespiActionConverter().fromJson(e as String))
-          .toList(),
-      methods: (json['methods'] as List<dynamic>?)
-          ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
-          .toList(),
-      ids: (json['ids'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      submodules: (json['submodules'] as List<dynamic>?)
-          ?.map(
-              (e) => FlespiSubmoduleConfig.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$FlespiAclImplToJson(_$FlespiAclImpl instance) =>
-    <String, dynamic>{
-      'uri': const FlespiUriConverter().toJson(instance.uri),
-      'topic': instance.topic,
-      'actions':
-          instance.actions?.map(const FlespiActionConverter().toJson).toList(),
-      'methods':
-          instance.methods?.map(const FlespiMethodConverter().toJson).toList(),
-      'ids': instance.ids,
-      'submodules': instance.submodules?.map((e) => e.toJson()).toList(),
-    };
-
-_$FlespiSubmoduleConfigImpl _$$FlespiSubmoduleConfigImplFromJson(
-        Map<String, dynamic> json) =>
-    _$FlespiSubmoduleConfigImpl(
-      name: const FlespiSubmoduleConverter().fromJson(json['name'] as String),
-      methods: (json['methods'] as List<dynamic>?)
-              ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
-              .toList() ??
-          const [],
-    );
-
-Map<String, dynamic> _$$FlespiSubmoduleConfigImplToJson(
-        _$FlespiSubmoduleConfigImpl instance) =>
-    <String, dynamic>{
-      'name': const FlespiSubmoduleConverter().toJson(instance.name),
-      'methods':
-          instance.methods.map(const FlespiMethodConverter().toJson).toList(),
     };

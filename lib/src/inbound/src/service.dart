@@ -13,7 +13,7 @@ class InboundService with _$InboundService {
     Map<String, dynamic>? credentials,
 
     /// Is the ID of the External Account.
-    String? accountId,
+    String? externalAccountId,
 
     /// Is the update time of the service.
     @DurationOrNullConverter() Duration? updateTime,
@@ -35,101 +35,36 @@ class InboundService with _$InboundService {
 
     /// A list of custom access permissions.
     List<Access>? access,
+
+    /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
+    WebhookStructure? webhookStructure,
   }) = _InboundService;
 
   /// From json
   factory InboundService.fromJson(Map<String, dynamic> json) => _$InboundServiceFromJson(json);
 }
 
-@freezed
-class InboundStructure with _$InboundStructure {
-  const factory InboundStructure({
-    required bool hasPosition,
-    required InboundPositionStructure position,
-    required bool hasPayload,
-    required List<InboundPayloadStructure> payload,
-  }) = _InboundStructure;
+@unfreezed
+class InboundServiceInput with _$InboundServiceInput {
+  factory InboundServiceInput({
+    /// [id] is the ID of the entity. This ID is unique. Should be null when creating a new entity.
+    String? id,
 
-  /// From json
-  factory InboundStructure.fromJson(Map<String, dynamic> json) => _$InboundStructureFromJson(json);
-}
+    /// [name] is the Assigned service name, cannot be translated for other languages.
+    @Default('') String name,
 
-@freezed
-class InboundPositionStructure with _$InboundPositionStructure {
-  const factory InboundPositionStructure({
-    required bool latitude,
-    required bool longitude,
-    required bool altitude,
-    required bool speed,
-    required bool direction,
-    required bool hdop,
-    required bool satellites,
-  }) = _InboundPositionStructure;
+    /// [credentials] is the Credential object, check the documentation for more information.
+    @Default({}) Map<String, dynamic> credentials,
 
-  factory InboundPositionStructure.fromJson(Map<String, dynamic> json) => _$InboundPositionStructureFromJson(json);
-}
+    /// [externalAccountId] is the ID of the External Account.
+    String? externalAccountId,
 
-@freezed
-class InboundPayloadStructure with _$InboundPayloadStructure {
-  const factory InboundPayloadStructure({
-    required String field,
-    @InboundPayloadStructureTypeConverter() required InboundPayloadStructureType type,
-  }) = _InboundPayloadStructure;
+    /// [protocolId] is the ID of the Protocol.
+    String? protocolId,
 
-  /// From json
-  factory InboundPayloadStructure.fromJson(Map<String, dynamic> json) => _$InboundPayloadStructureFromJson(json);
-}
+    /// [structure] is the Structure of the inbound protocol, only used for Omega REST Inbound protocol.
+    required InboundStructureInput structure,
+  }) = _InboundServiceInput;
 
-enum InboundPayloadStructureType {
-  string,
-  integer,
-  boolean,
-  float;
-
-  @override
-  String toString() => toJson();
-
-  String toJson() {
-    switch (this) {
-      case InboundPayloadStructureType.string:
-        return 'STR';
-      case InboundPayloadStructureType.integer:
-        return 'INT';
-      case InboundPayloadStructureType.boolean:
-        return 'BOOL';
-      case InboundPayloadStructureType.float:
-        return 'FLOAT';
-      default:
-        throw Exception('Invalid InboundPayloadStructureType');
-    }
-  }
-
-  static InboundPayloadStructureType fromJson(String json) {
-    switch (json) {
-      case 'STR':
-        return InboundPayloadStructureType.string;
-      case 'INT':
-        return InboundPayloadStructureType.integer;
-      case 'BOOL':
-        return InboundPayloadStructureType.boolean;
-      case 'FLOAT':
-        return InboundPayloadStructureType.float;
-      default:
-        throw Exception('Invalid InboundPayloadStructureType');
-    }
-  }
-}
-
-class InboundPayloadStructureTypeConverter implements JsonConverter<InboundPayloadStructureType, String> {
-  const InboundPayloadStructureTypeConverter();
-
-  @override
-  InboundPayloadStructureType fromJson(String json) {
-    return InboundPayloadStructureType.fromJson(json);
-  }
-
-  @override
-  String toJson(InboundPayloadStructureType object) {
-    return object.toJson();
-  }
+  factory InboundServiceInput.fromJson(Map<String, dynamic> json) => _$InboundServiceInputFromJson(json);
 }

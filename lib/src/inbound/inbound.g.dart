@@ -6,38 +6,6 @@ part of 'inbound.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RealtimeEndpointImpl _$$RealtimeEndpointImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RealtimeEndpointImpl(
-      host: json['host'] as String?,
-      port: (json['port'] as num?)?.toInt(),
-    );
-
-Map<String, dynamic> _$$RealtimeEndpointImplToJson(
-        _$RealtimeEndpointImpl instance) =>
-    <String, dynamic>{
-      'host': instance.host,
-      'port': instance.port,
-    };
-
-_$RealtimeVariantEndpointImpl _$$RealtimeVariantEndpointImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RealtimeVariantEndpointImpl(
-      dataTopic: json['dataTopic'] as String?,
-      eventsTopic: json['eventsTopic'] as String?,
-      realtimeTopic: json['realtimeTopic'] as String?,
-      commandTopic: json['commandTopic'] as String?,
-    );
-
-Map<String, dynamic> _$$RealtimeVariantEndpointImplToJson(
-        _$RealtimeVariantEndpointImpl instance) =>
-    <String, dynamic>{
-      'dataTopic': instance.dataTopic,
-      'eventsTopic': instance.eventsTopic,
-      'realtimeTopic': instance.realtimeTopic,
-      'commandTopic': instance.commandTopic,
-    };
-
 _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
         Map<String, dynamic> json) =>
     _$InboundProtocolImpl(
@@ -47,14 +15,6 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
       isEnabled: json['isEnabled'] as bool,
       operationMode: const OperationModeConverter()
           .fromJson(json['operationMode'] as String),
-      realtimeEndpoint: json['realtimeEndpoint'] == null
-          ? null
-          : RealtimeEndpoint.fromJson(
-              json['realtimeEndpoint'] as Map<String, dynamic>),
-      realtimeVariantEndpoint: json['realtimeVariantEndpoint'] == null
-          ? null
-          : RealtimeVariantEndpoint.fromJson(
-              json['realtimeVariantEndpoint'] as Map<String, dynamic>),
       host: json['host'] as String?,
       port: (json['port'] as num?)?.toInt(),
       mqttTopic: json['mqttTopic'] as String?,
@@ -63,7 +23,6 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
       hasCommandsResult: json['hasCommandsResult'] as bool?,
       isFlespi: json['isFlespi'] as bool?,
       channelId: (json['channelId'] as num?)?.toInt(),
-      maxPerReceptor: (json['maxPerReceptor'] as num?)?.toInt(),
       flespiId: json['flespiId'] as String?,
       requiredFields: (json['requiredFields'] as List<dynamic>?)
           ?.map((e) => CredentialField.fromJson(e as Map<String, dynamic>))
@@ -95,6 +54,13 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
       flespiAcl: (json['flespiAcl'] as List<dynamic>?)
           ?.map((e) => FlespiAcl.fromJson(e as Map<String, dynamic>))
           .toList(),
+      webhookStructure: json['webhookStructure'] == null
+          ? null
+          : WebhookStructure.fromJson(
+              json['webhookStructure'] as Map<String, dynamic>),
+      requiresExternalAccount:
+          json['requiresExternalAccount'] as bool? ?? false,
+      requiresStructure: json['requiresStructure'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$InboundProtocolImplToJson(
@@ -106,8 +72,6 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'isEnabled': instance.isEnabled,
       'operationMode':
           const OperationModeConverter().toJson(instance.operationMode),
-      'realtimeEndpoint': instance.realtimeEndpoint?.toJson(),
-      'realtimeVariantEndpoint': instance.realtimeVariantEndpoint?.toJson(),
       'host': instance.host,
       'port': instance.port,
       'mqttTopic': instance.mqttTopic,
@@ -116,7 +80,6 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'hasCommandsResult': instance.hasCommandsResult,
       'isFlespi': instance.isFlespi,
       'channelId': instance.channelId,
-      'maxPerReceptor': instance.maxPerReceptor,
       'flespiId': instance.flespiId,
       'requiredFields':
           instance.requiredFields?.map((e) => e.toJson()).toList(),
@@ -134,6 +97,101 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'usage': instance.usage,
       'requiresFlespiToken': instance.requiresFlespiToken,
       'flespiAcl': instance.flespiAcl?.map((e) => e.toJson()).toList(),
+      'webhookStructure': instance.webhookStructure?.toJson(),
+      'requiresExternalAccount': instance.requiresExternalAccount,
+      'requiresStructure': instance.requiresStructure,
+    };
+
+_$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$InboundProtocolInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      color: json['color'] == null
+          ? kPrimaryColor
+          : const ColorConverter().fromJson(json['color'] as String),
+      isEnabled: json['isEnabled'] as bool? ?? true,
+      categoriesIds: (json['categoriesIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      operationMode: json['operationMode'] == null
+          ? OperationMode.realtime
+          : const OperationModeConverter()
+              .fromJson(json['operationMode'] as String),
+      hasNativeCommands: json['hasNativeCommands'] as bool? ?? false,
+      hasSmsCommands: json['hasSmsCommands'] as bool? ?? false,
+      hasCommandsResult: json['hasCommandsResult'] as bool? ?? false,
+      channelId: (json['channelId'] as num?)?.toInt(),
+      isFlespi: json['isFlespi'] as bool? ?? false,
+      flespiId: json['flespiId'] as String?,
+      hasAck: json['hasAck'] as bool? ?? false,
+      ackTopicFormat: json['ackTopicFormat'] as String? ?? '',
+      isImported: json['isImported'] as bool? ?? false,
+      requiredFields: (json['requiredFields'] as List<dynamic>?)
+              ?.map((e) =>
+                  CredentialFieldInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      canFota: json['canFota'] as bool? ?? false,
+      host: json['host'] as String?,
+      port: (json['port'] as num?)?.toInt(),
+      mqttTopic: json['mqttTopic'] as String?,
+      dynamicIcon:
+          AvatarInput.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
+      cycleId: json['cycleId'] as String?,
+      hasModbus: json['hasModbus'] as bool? ?? false,
+      modbusPorts: (json['modbusPorts'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      requiresFlespiToken: json['requiresFlespiToken'] as bool? ?? false,
+      flespiAcl: (json['flespiAcl'] as List<dynamic>?)
+              ?.map((e) => FlespiAclInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      webhookStructure: json['webhookStructure'] == null
+          ? null
+          : WebhookStructureInput.fromJson(
+              json['webhookStructure'] as Map<String, dynamic>),
+      requiresExternalAccount:
+          json['requiresExternalAccount'] as bool? ?? false,
+      requiresStructure: json['requiresStructure'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$$InboundProtocolInputImplToJson(
+        _$InboundProtocolInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'color': const ColorConverter().toJson(instance.color),
+      'isEnabled': instance.isEnabled,
+      'categoriesIds': instance.categoriesIds,
+      'operationMode':
+          const OperationModeConverter().toJson(instance.operationMode),
+      'hasNativeCommands': instance.hasNativeCommands,
+      'hasSmsCommands': instance.hasSmsCommands,
+      'hasCommandsResult': instance.hasCommandsResult,
+      'channelId': instance.channelId,
+      'isFlespi': instance.isFlespi,
+      'flespiId': instance.flespiId,
+      'hasAck': instance.hasAck,
+      'ackTopicFormat': instance.ackTopicFormat,
+      'isImported': instance.isImported,
+      'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
+      'canFota': instance.canFota,
+      'host': instance.host,
+      'port': instance.port,
+      'mqttTopic': instance.mqttTopic,
+      'dynamicIcon': instance.dynamicIcon.toJson(),
+      'cycleId': instance.cycleId,
+      'hasModbus': instance.hasModbus,
+      'modbusPorts': instance.modbusPorts,
+      'requiresFlespiToken': instance.requiresFlespiToken,
+      'flespiAcl': instance.flespiAcl.map((e) => e.toJson()).toList(),
+      'webhookStructure': instance.webhookStructure?.toJson(),
+      'requiresExternalAccount': instance.requiresExternalAccount,
+      'requiresStructure': instance.requiresStructure,
     };
 
 _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
@@ -141,7 +199,7 @@ _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String,
       credentials: json['credentials'] as Map<String, dynamic>?,
-      accountId: json['accountId'] as String?,
+      externalAccountId: json['externalAccountId'] as String?,
       updateTime:
           const DurationOrNullConverter().fromJson(json['updateTime'] as num?),
       protocol: json['protocol'] == null
@@ -157,6 +215,10 @@ _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
+      webhookStructure: json['webhookStructure'] == null
+          ? null
+          : WebhookStructure.fromJson(
+              json['webhookStructure'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$InboundServiceImplToJson(
@@ -165,7 +227,7 @@ Map<String, dynamic> _$$InboundServiceImplToJson(
       'id': instance.id,
       'name': instance.name,
       'credentials': instance.credentials,
-      'accountId': instance.accountId,
+      'externalAccountId': instance.externalAccountId,
       'updateTime': const DurationOrNullConverter().toJson(instance.updateTime),
       'protocol': instance.protocol?.toJson(),
       'protocolId': instance.protocolId,
@@ -173,66 +235,28 @@ Map<String, dynamic> _$$InboundServiceImplToJson(
       'token': instance.token,
       'structure': instance.structure?.toJson(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
+      'webhookStructure': instance.webhookStructure?.toJson(),
     };
 
-_$InboundStructureImpl _$$InboundStructureImplFromJson(
+_$InboundServiceInputImpl _$$InboundServiceInputImplFromJson(
         Map<String, dynamic> json) =>
-    _$InboundStructureImpl(
-      hasPosition: json['hasPosition'] as bool,
-      position: InboundPositionStructure.fromJson(
-          json['position'] as Map<String, dynamic>),
-      hasPayload: json['hasPayload'] as bool,
-      payload: (json['payload'] as List<dynamic>)
-          .map((e) =>
-              InboundPayloadStructure.fromJson(e as Map<String, dynamic>))
-          .toList(),
+    _$InboundServiceInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      credentials: json['credentials'] as Map<String, dynamic>? ?? const {},
+      externalAccountId: json['externalAccountId'] as String?,
+      protocolId: json['protocolId'] as String?,
+      structure: InboundStructureInput.fromJson(
+          json['structure'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$InboundStructureImplToJson(
-        _$InboundStructureImpl instance) =>
+Map<String, dynamic> _$$InboundServiceInputImplToJson(
+        _$InboundServiceInputImpl instance) =>
     <String, dynamic>{
-      'hasPosition': instance.hasPosition,
-      'position': instance.position.toJson(),
-      'hasPayload': instance.hasPayload,
-      'payload': instance.payload.map((e) => e.toJson()).toList(),
-    };
-
-_$InboundPositionStructureImpl _$$InboundPositionStructureImplFromJson(
-        Map<String, dynamic> json) =>
-    _$InboundPositionStructureImpl(
-      latitude: json['latitude'] as bool,
-      longitude: json['longitude'] as bool,
-      altitude: json['altitude'] as bool,
-      speed: json['speed'] as bool,
-      direction: json['direction'] as bool,
-      hdop: json['hdop'] as bool,
-      satellites: json['satellites'] as bool,
-    );
-
-Map<String, dynamic> _$$InboundPositionStructureImplToJson(
-        _$InboundPositionStructureImpl instance) =>
-    <String, dynamic>{
-      'latitude': instance.latitude,
-      'longitude': instance.longitude,
-      'altitude': instance.altitude,
-      'speed': instance.speed,
-      'direction': instance.direction,
-      'hdop': instance.hdop,
-      'satellites': instance.satellites,
-    };
-
-_$InboundPayloadStructureImpl _$$InboundPayloadStructureImplFromJson(
-        Map<String, dynamic> json) =>
-    _$InboundPayloadStructureImpl(
-      field: json['field'] as String,
-      type: const InboundPayloadStructureTypeConverter()
-          .fromJson(json['type'] as String),
-    );
-
-Map<String, dynamic> _$$InboundPayloadStructureImplToJson(
-        _$InboundPayloadStructureImpl instance) =>
-    <String, dynamic>{
-      'field': instance.field,
-      'type':
-          const InboundPayloadStructureTypeConverter().toJson(instance.type),
+      'id': instance.id,
+      'name': instance.name,
+      'credentials': instance.credentials,
+      'externalAccountId': instance.externalAccountId,
+      'protocolId': instance.protocolId,
+      'structure': instance.structure.toJson(),
     };

@@ -3,15 +3,6 @@ part of '../app.dart';
 @freezed
 class AppLoginDesign with _$AppLoginDesign {
   const factory AppLoginDesign({
-    /// [layout] defines the layout of the login.
-    @Deprecated("This field was deprecated") @LoginLayoutModeOrNullConverter() LoginLayoutMode? layout,
-
-    /// [title] defines the title of the login.
-    @Deprecated("This field was deprecated") @TitleModeOrNullConverter() TitleMode? title,
-
-    /// [background] defines the background of the login.
-    @Deprecated("This field was deprecated") AppBackgroundDesign? background,
-
     /// [backgroundColor] defines the background color of the login.
     /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
     ///
