@@ -4,10 +4,6 @@ part of '../app.dart';
 class AppDesign with _$AppDesign {
   /// [AppDesign] is the design of the app.
   const factory AppDesign({
-    /// [colors] defines the colors of the app, depending of the technology,
-    /// the [AppThemedColors.mainColor] is the primary color of the app or not.
-    @Deprecated("This field was deprecated") AppThemedColors? colors,
-
     /// [mainColor] defines the main color of the app.
     ///
     /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.

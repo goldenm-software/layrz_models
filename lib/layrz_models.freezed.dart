@@ -9894,6 +9894,9 @@ mixin _$DeviceCommand {
   /// This parameter contains the port number of the modbus command.
   String? get modbusPort => throw _privateConstructorUsedError;
 
+  /// [args] refers to the arguments of the command.
+  Map<String, dynamic>? get args => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DeviceCommandCopyWith<DeviceCommand> get copyWith =>
@@ -9928,7 +9931,8 @@ abstract class $DeviceCommandCopyWith<$Res> {
       List<Access>? access,
       List<Device>? possibleDevices,
       ModbusParameter? modbusParameter,
-      String? modbusPort});
+      String? modbusPort,
+      Map<String, dynamic>? args});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
   $ModelCopyWith<$Res>? get model;
@@ -9971,6 +9975,7 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
     Object? possibleDevices = freezed,
     Object? modbusParameter = freezed,
     Object? modbusPort = freezed,
+    Object? args = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -10061,6 +10066,10 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
           ? _value.modbusPort
           : modbusPort // ignore: cast_nullable_to_non_nullable
               as String?,
+      args: freezed == args
+          ? _value.args
+          : args // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -10143,7 +10152,8 @@ abstract class _$$DeviceCommandImplCopyWith<$Res>
       List<Access>? access,
       List<Device>? possibleDevices,
       ModbusParameter? modbusParameter,
-      String? modbusPort});
+      String? modbusPort,
+      Map<String, dynamic>? args});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -10188,6 +10198,7 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
     Object? possibleDevices = freezed,
     Object? modbusParameter = freezed,
     Object? modbusPort = freezed,
+    Object? args = freezed,
   }) {
     return _then(_$DeviceCommandImpl(
       id: null == id
@@ -10278,6 +10289,10 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
           ? _value.modbusPort
           : modbusPort // ignore: cast_nullable_to_non_nullable
               as String?,
+      args: freezed == args
+          ? _value._args
+          : args // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -10307,9 +10322,11 @@ class _$DeviceCommandImpl implements _DeviceCommand {
       final List<Access>? access,
       final List<Device>? possibleDevices,
       this.modbusParameter,
-      this.modbusPort})
+      this.modbusPort,
+      final Map<String, dynamic>? args})
       : _access = access,
-        _possibleDevices = possibleDevices;
+        _possibleDevices = possibleDevices,
+        _args = args;
 
   factory _$DeviceCommandImpl.fromJson(Map<String, dynamic> json) =>
       _$$DeviceCommandImplFromJson(json);
@@ -10430,9 +10447,22 @@ class _$DeviceCommandImpl implements _DeviceCommand {
   @override
   final String? modbusPort;
 
+  /// [args] refers to the arguments of the command.
+  final Map<String, dynamic>? _args;
+
+  /// [args] refers to the arguments of the command.
+  @override
+  Map<String, dynamic>? get args {
+    final value = _args;
+    if (value == null) return null;
+    if (_args is EqualUnmodifiableMapView) return _args;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   String toString() {
-    return 'DeviceCommand(id: $id, name: $name, source: $source, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, protocol: $protocol, modelId: $modelId, model: $model, command: $command, devicePassword: $devicePassword, payload: $payload, commandId: $commandId, isHexCoded: $isHexCoded, username: $username, scriptName: $scriptName, externalAccount: $externalAccount, externalAccountId: $externalAccountId, access: $access, possibleDevices: $possibleDevices, modbusParameter: $modbusParameter, modbusPort: $modbusPort)';
+    return 'DeviceCommand(id: $id, name: $name, source: $source, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, protocol: $protocol, modelId: $modelId, model: $model, command: $command, devicePassword: $devicePassword, payload: $payload, commandId: $commandId, isHexCoded: $isHexCoded, username: $username, scriptName: $scriptName, externalAccount: $externalAccount, externalAccountId: $externalAccountId, access: $access, possibleDevices: $possibleDevices, modbusParameter: $modbusParameter, modbusPort: $modbusPort, args: $args)';
   }
 
   @override
@@ -10474,7 +10504,8 @@ class _$DeviceCommandImpl implements _DeviceCommand {
             (identical(other.modbusParameter, modbusParameter) ||
                 other.modbusParameter == modbusParameter) &&
             (identical(other.modbusPort, modbusPort) ||
-                other.modbusPort == modbusPort));
+                other.modbusPort == modbusPort) &&
+            const DeepCollectionEquality().equals(other._args, _args));
   }
 
   @JsonKey(ignore: true)
@@ -10502,7 +10533,8 @@ class _$DeviceCommandImpl implements _DeviceCommand {
         const DeepCollectionEquality().hash(_access),
         const DeepCollectionEquality().hash(_possibleDevices),
         modbusParameter,
-        modbusPort
+        modbusPort,
+        const DeepCollectionEquality().hash(_args)
       ]);
 
   @JsonKey(ignore: true)
@@ -10542,7 +10574,8 @@ abstract class _DeviceCommand implements DeviceCommand {
       final List<Access>? access,
       final List<Device>? possibleDevices,
       final ModbusParameter? modbusParameter,
-      final String? modbusPort}) = _$DeviceCommandImpl;
+      final String? modbusPort,
+      final Map<String, dynamic>? args}) = _$DeviceCommandImpl;
 
   factory _DeviceCommand.fromJson(Map<String, dynamic> json) =
       _$DeviceCommandImpl.fromJson;
@@ -10644,6 +10677,10 @@ abstract class _DeviceCommand implements DeviceCommand {
   /// [modbusPort] refers to the modbus port of the command.
   /// This parameter contains the port number of the modbus command.
   String? get modbusPort;
+  @override
+
+  /// [args] refers to the arguments of the command.
+  Map<String, dynamic>? get args;
   @override
   @JsonKey(ignore: true)
   _$$DeviceCommandImplCopyWith<_$DeviceCommandImpl> get copyWith =>
@@ -13720,11 +13757,12 @@ mixin _$Device {
   /// The [name] of the device.
   String get name => throw _privateConstructorUsedError;
 
-  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the MAC address or randomly string.
+  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the
+  /// MAC address or randomly string.
   String get ident => throw _privateConstructorUsedError;
 
-  /// The [mqttToken] of the device, only for Xirgo MQTT devices.
-  String? get mqttToken => throw _privateConstructorUsedError;
+  /// The [flespiToken] of the device.
+  String? get flespiToken => throw _privateConstructorUsedError;
 
   /// The [modelId] of the device.
   String? get modelId => throw _privateConstructorUsedError;
@@ -13786,7 +13824,7 @@ abstract class $DeviceCopyWith<$Res> {
       {String id,
       String name,
       String ident,
-      String? mqttToken,
+      String? flespiToken,
       String? modelId,
       Model? model,
       String? protocolId,
@@ -13827,7 +13865,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? id = null,
     Object? name = null,
     Object? ident = null,
-    Object? mqttToken = freezed,
+    Object? flespiToken = freezed,
     Object? modelId = freezed,
     Object? model = freezed,
     Object? protocolId = freezed,
@@ -13857,9 +13895,9 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.ident
           : ident // ignore: cast_nullable_to_non_nullable
               as String,
-      mqttToken: freezed == mqttToken
-          ? _value.mqttToken
-          : mqttToken // ignore: cast_nullable_to_non_nullable
+      flespiToken: freezed == flespiToken
+          ? _value.flespiToken
+          : flespiToken // ignore: cast_nullable_to_non_nullable
               as String?,
       modelId: freezed == modelId
           ? _value.modelId
@@ -14008,7 +14046,7 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       {String id,
       String name,
       String ident,
-      String? mqttToken,
+      String? flespiToken,
       String? modelId,
       Model? model,
       String? protocolId,
@@ -14053,7 +14091,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? ident = null,
-    Object? mqttToken = freezed,
+    Object? flespiToken = freezed,
     Object? modelId = freezed,
     Object? model = freezed,
     Object? protocolId = freezed,
@@ -14083,9 +14121,9 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value.ident
           : ident // ignore: cast_nullable_to_non_nullable
               as String,
-      mqttToken: freezed == mqttToken
-          ? _value.mqttToken
-          : mqttToken // ignore: cast_nullable_to_non_nullable
+      flespiToken: freezed == flespiToken
+          ? _value.flespiToken
+          : flespiToken // ignore: cast_nullable_to_non_nullable
               as String?,
       modelId: freezed == modelId
           ? _value.modelId
@@ -14158,7 +14196,7 @@ class _$DeviceImpl implements _Device {
       {required this.id,
       required this.name,
       required this.ident,
-      this.mqttToken,
+      this.flespiToken,
       this.modelId,
       this.model,
       this.protocolId,
@@ -14188,13 +14226,14 @@ class _$DeviceImpl implements _Device {
   @override
   final String name;
 
-  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the MAC address or randomly string.
+  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the
+  /// MAC address or randomly string.
   @override
   final String ident;
 
-  /// The [mqttToken] of the device, only for Xirgo MQTT devices.
+  /// The [flespiToken] of the device.
   @override
-  final String? mqttToken;
+  final String? flespiToken;
 
   /// The [modelId] of the device.
   @override
@@ -14285,7 +14324,7 @@ class _$DeviceImpl implements _Device {
 
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, mqttToken: $mqttToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended)';
+    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended)';
   }
 
   @override
@@ -14296,8 +14335,8 @@ class _$DeviceImpl implements _Device {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.ident, ident) || other.ident == ident) &&
-            (identical(other.mqttToken, mqttToken) ||
-                other.mqttToken == mqttToken) &&
+            (identical(other.flespiToken, flespiToken) ||
+                other.flespiToken == flespiToken) &&
             (identical(other.modelId, modelId) || other.modelId == modelId) &&
             (identical(other.model, model) || other.model == model) &&
             (identical(other.protocolId, protocolId) ||
@@ -14329,7 +14368,7 @@ class _$DeviceImpl implements _Device {
         id,
         name,
         ident,
-        mqttToken,
+        flespiToken,
         modelId,
         model,
         protocolId,
@@ -14366,7 +14405,7 @@ abstract class _Device implements Device {
       {required final String id,
       required final String name,
       required final String ident,
-      final String? mqttToken,
+      final String? flespiToken,
       final String? modelId,
       final Model? model,
       final String? protocolId,
@@ -14393,12 +14432,13 @@ abstract class _Device implements Device {
   String get name;
   @override
 
-  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the MAC address or randomly string.
+  /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the
+  /// MAC address or randomly string.
   String get ident;
   @override
 
-  /// The [mqttToken] of the device, only for Xirgo MQTT devices.
-  String? get mqttToken;
+  /// The [flespiToken] of the device.
+  String? get flespiToken;
   @override
 
   /// The [modelId] of the device.
@@ -24849,11 +24889,6 @@ mixin _$Tag {
   @ColorConverter()
   Color get color => throw _privateConstructorUsedError;
 
-  /// Is the icon of the tag.
-  @Deprecated('Use `dynamicIcon` instead')
-  @IconOrNullConverter()
-  IconData? get icon => throw _privateConstructorUsedError;
-
   /// Dynamic icon
   Avatar? get dynamicIcon => throw _privateConstructorUsedError;
 
@@ -25003,6 +25038,12 @@ mixin _$Tag {
   /// [ownerId] is the ID of the owner of this entity.
   String? get ownerId => throw _privateConstructorUsedError;
 
+  /// [sensorsIds] is a list of ID's of associated sensors to this module.
+  List<String>? get sensorsIds => throw _privateConstructorUsedError;
+
+  /// [sensors] is a list of associated sensors to this module.
+  List<Sensor>? get sensors => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TagCopyWith<Tag> get copyWith => throw _privateConstructorUsedError;
@@ -25017,9 +25058,6 @@ abstract class $TagCopyWith<$Res> {
       {String id,
       String name,
       @ColorConverter() Color color,
-      @Deprecated('Use `dynamicIcon` instead')
-      @IconOrNullConverter()
-      IconData? icon,
       Avatar? dynamicIcon,
       List<User>? users,
       List<String>? usersIds,
@@ -25067,7 +25105,9 @@ abstract class $TagCopyWith<$Res> {
       List<String>? exchangeServicesIds,
       List<Access>? access,
       User? owner,
-      String? ownerId});
+      String? ownerId,
+      List<String>? sensorsIds,
+      List<Sensor>? sensors});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $UserCopyWith<$Res>? get owner;
@@ -25088,7 +25128,6 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? id = null,
     Object? name = null,
     Object? color = null,
-    Object? icon = freezed,
     Object? dynamicIcon = freezed,
     Object? users = freezed,
     Object? usersIds = freezed,
@@ -25137,6 +25176,8 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
     Object? access = freezed,
     Object? owner = freezed,
     Object? ownerId = freezed,
+    Object? sensorsIds = freezed,
+    Object? sensors = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -25151,10 +25192,6 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData?,
       dynamicIcon: freezed == dynamicIcon
           ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
@@ -25347,6 +25384,14 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sensorsIds: freezed == sensorsIds
+          ? _value.sensorsIds
+          : sensorsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      sensors: freezed == sensors
+          ? _value.sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<Sensor>?,
     ) as $Val);
   }
 
@@ -25385,9 +25430,6 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
       {String id,
       String name,
       @ColorConverter() Color color,
-      @Deprecated('Use `dynamicIcon` instead')
-      @IconOrNullConverter()
-      IconData? icon,
       Avatar? dynamicIcon,
       List<User>? users,
       List<String>? usersIds,
@@ -25435,7 +25477,9 @@ abstract class _$$TagImplCopyWith<$Res> implements $TagCopyWith<$Res> {
       List<String>? exchangeServicesIds,
       List<Access>? access,
       User? owner,
-      String? ownerId});
+      String? ownerId,
+      List<String>? sensorsIds,
+      List<Sensor>? sensors});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -25455,7 +25499,6 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
     Object? id = null,
     Object? name = null,
     Object? color = null,
-    Object? icon = freezed,
     Object? dynamicIcon = freezed,
     Object? users = freezed,
     Object? usersIds = freezed,
@@ -25504,6 +25547,8 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
     Object? access = freezed,
     Object? owner = freezed,
     Object? ownerId = freezed,
+    Object? sensorsIds = freezed,
+    Object? sensors = freezed,
   }) {
     return _then(_$TagImpl(
       id: null == id
@@ -25518,10 +25563,6 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as IconData?,
       dynamicIcon: freezed == dynamicIcon
           ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
@@ -25714,6 +25755,14 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
           ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String?,
+      sensorsIds: freezed == sensorsIds
+          ? _value._sensorsIds
+          : sensorsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      sensors: freezed == sensors
+          ? _value._sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<Sensor>?,
     ));
   }
 }
@@ -25725,7 +25774,6 @@ class _$TagImpl implements _Tag {
       {required this.id,
       required this.name,
       @ColorConverter() required this.color,
-      @Deprecated('Use `dynamicIcon` instead') @IconOrNullConverter() this.icon,
       this.dynamicIcon,
       final List<User>? users,
       final List<String>? usersIds,
@@ -25773,7 +25821,9 @@ class _$TagImpl implements _Tag {
       final List<String>? exchangeServicesIds,
       final List<Access>? access,
       this.owner,
-      this.ownerId})
+      this.ownerId,
+      final List<String>? sensorsIds,
+      final List<Sensor>? sensors})
       : _users = users,
         _usersIds = usersIds,
         _outboundServices = outboundServices,
@@ -25818,7 +25868,9 @@ class _$TagImpl implements _Tag {
         _mappitRoutesIds = mappitRoutesIds,
         _exchangeServices = exchangeServices,
         _exchangeServicesIds = exchangeServicesIds,
-        _access = access;
+        _access = access,
+        _sensorsIds = sensorsIds,
+        _sensors = sensors;
 
   factory _$TagImpl.fromJson(Map<String, dynamic> json) =>
       _$$TagImplFromJson(json);
@@ -25835,12 +25887,6 @@ class _$TagImpl implements _Tag {
   @override
   @ColorConverter()
   final Color color;
-
-  /// Is the icon of the tag.
-  @override
-  @Deprecated('Use `dynamicIcon` instead')
-  @IconOrNullConverter()
-  final IconData? icon;
 
   /// Dynamic icon
   @override
@@ -26450,9 +26496,35 @@ class _$TagImpl implements _Tag {
   @override
   final String? ownerId;
 
+  /// [sensorsIds] is a list of ID's of associated sensors to this module.
+  final List<String>? _sensorsIds;
+
+  /// [sensorsIds] is a list of ID's of associated sensors to this module.
+  @override
+  List<String>? get sensorsIds {
+    final value = _sensorsIds;
+    if (value == null) return null;
+    if (_sensorsIds is EqualUnmodifiableListView) return _sensorsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [sensors] is a list of associated sensors to this module.
+  final List<Sensor>? _sensors;
+
+  /// [sensors] is a list of associated sensors to this module.
+  @override
+  List<Sensor>? get sensors {
+    final value = _sensors;
+    if (value == null) return null;
+    if (_sensors is EqualUnmodifiableListView) return _sensors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'Tag(id: $id, name: $name, color: $color, icon: $icon, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, mappitRoutes: $mappitRoutes, mappitRoutesIds: $mappitRoutesIds, exchangeServices: $exchangeServices, exchangeServicesIds: $exchangeServicesIds, access: $access, owner: $owner, ownerId: $ownerId)';
+    return 'Tag(id: $id, name: $name, color: $color, dynamicIcon: $dynamicIcon, users: $users, usersIds: $usersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, triggers: $triggers, triggersIds: $triggersIds, actions: $actions, actionsIds: $actionsIds, operations: $operations, operationsIds: $operationsIds, assets: $assets, assetsIds: $assetsIds, devices: $devices, devicesIds: $devicesIds, geofences: $geofences, geofencesIds: $geofencesIds, externalAccounts: $externalAccounts, externalAccountsIds: $externalAccountsIds, presets: $presets, presetsIds: $presetsIds, references: $references, referencesIds: $referencesIds, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, careProtocols: $careProtocols, careProtocolsIds: $careProtocolsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, functions: $functions, functionsIds: $functionsIds, conciergeForms: $conciergeForms, conciergeFormsIds: $conciergeFormsIds, reportTemplates: $reportTemplates, reportTemplatesIds: $reportTemplatesIds, charts: $charts, chartsIds: $chartsIds, workspaces: $workspaces, workspacesIds: $workspacesIds, visionProfiles: $visionProfiles, visionProfilesIds: $visionProfilesIds, mappitRoutes: $mappitRoutes, mappitRoutesIds: $mappitRoutesIds, exchangeServices: $exchangeServices, exchangeServicesIds: $exchangeServicesIds, access: $access, owner: $owner, ownerId: $ownerId, sensorsIds: $sensorsIds, sensors: $sensors)';
   }
 
   @override
@@ -26463,7 +26535,6 @@ class _$TagImpl implements _Tag {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color) &&
-            (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.dynamicIcon, dynamicIcon) ||
                 other.dynamicIcon == dynamicIcon) &&
             const DeepCollectionEquality().equals(other._users, _users) &&
@@ -26548,7 +26619,10 @@ class _$TagImpl implements _Tag {
                 .equals(other._exchangeServicesIds, _exchangeServicesIds) &&
             const DeepCollectionEquality().equals(other._access, _access) &&
             (identical(other.owner, owner) || other.owner == owner) &&
-            (identical(other.ownerId, ownerId) || other.ownerId == ownerId));
+            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
+            const DeepCollectionEquality()
+                .equals(other._sensorsIds, _sensorsIds) &&
+            const DeepCollectionEquality().equals(other._sensors, _sensors));
   }
 
   @JsonKey(ignore: true)
@@ -26558,7 +26632,6 @@ class _$TagImpl implements _Tag {
         id,
         name,
         color,
-        icon,
         dynamicIcon,
         const DeepCollectionEquality().hash(_users),
         const DeepCollectionEquality().hash(_usersIds),
@@ -26606,7 +26679,9 @@ class _$TagImpl implements _Tag {
         const DeepCollectionEquality().hash(_exchangeServicesIds),
         const DeepCollectionEquality().hash(_access),
         owner,
-        ownerId
+        ownerId,
+        const DeepCollectionEquality().hash(_sensorsIds),
+        const DeepCollectionEquality().hash(_sensors)
       ]);
 
   @JsonKey(ignore: true)
@@ -26628,9 +26703,6 @@ abstract class _Tag implements Tag {
       {required final String id,
       required final String name,
       @ColorConverter() required final Color color,
-      @Deprecated('Use `dynamicIcon` instead')
-      @IconOrNullConverter()
-      final IconData? icon,
       final Avatar? dynamicIcon,
       final List<User>? users,
       final List<String>? usersIds,
@@ -26678,7 +26750,9 @@ abstract class _Tag implements Tag {
       final List<String>? exchangeServicesIds,
       final List<Access>? access,
       final User? owner,
-      final String? ownerId}) = _$TagImpl;
+      final String? ownerId,
+      final List<String>? sensorsIds,
+      final List<Sensor>? sensors}) = _$TagImpl;
 
   factory _Tag.fromJson(Map<String, dynamic> json) = _$TagImpl.fromJson;
 
@@ -26695,12 +26769,6 @@ abstract class _Tag implements Tag {
   /// Is the color of the tag.
   @ColorConverter()
   Color get color;
-  @override
-
-  /// Is the icon of the tag.
-  @Deprecated('Use `dynamicIcon` instead')
-  @IconOrNullConverter()
-  IconData? get icon;
   @override
 
   /// Dynamic icon
@@ -26893,6 +26961,14 @@ abstract class _Tag implements Tag {
 
   /// [ownerId] is the ID of the owner of this entity.
   String? get ownerId;
+  @override
+
+  /// [sensorsIds] is a list of ID's of associated sensors to this module.
+  List<String>? get sensorsIds;
+  @override
+
+  /// [sensors] is a list of associated sensors to this module.
+  List<Sensor>? get sensors;
   @override
   @JsonKey(ignore: true)
   _$$TagImplCopyWith<_$TagImpl> get copyWith =>
@@ -28508,7 +28584,8 @@ mixin _$Trigger {
   String? get script => throw _privateConstructorUsedError;
 
   /// [exactHour] is the exact hour of the trigger. Only used when [kind] is [TriggerType.exactTime].
-  String? get exactHour => throw _privateConstructorUsedError;
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? get exactHour => throw _privateConstructorUsedError;
 
   /// [crontabFormat] is the crontab format of the trigger. Only used when [kind] is [TriggerType.exactTime].
   /// The crontab format is a string that represents the exact time of the trigger.
@@ -28595,7 +28672,7 @@ abstract class $TriggerCopyWith<$Res> {
       TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
-      String? exactHour,
+      @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
       String? crontabFormat,
       @WeekdayConverter() List<Weekday>? weekdays,
       bool? isPlainCrontab,
@@ -28723,7 +28800,7 @@ class _$TriggerCopyWithImpl<$Res, $Val extends Trigger>
       exactHour: freezed == exactHour
           ? _value.exactHour
           : exactHour // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as TimeOfDay?,
       crontabFormat: freezed == crontabFormat
           ? _value.crontabFormat
           : crontabFormat // ignore: cast_nullable_to_non_nullable
@@ -28820,7 +28897,7 @@ abstract class _$$TriggerImplCopyWith<$Res> implements $TriggerCopyWith<$Res> {
       TriggerGeofenceDetectionMode? geofenceKind,
       String? formula,
       String? script,
-      String? exactHour,
+      @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
       String? crontabFormat,
       @WeekdayConverter() List<Weekday>? weekdays,
       bool? isPlainCrontab,
@@ -28947,7 +29024,7 @@ class __$$TriggerImplCopyWithImpl<$Res>
       exactHour: freezed == exactHour
           ? _value.exactHour
           : exactHour // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as TimeOfDay?,
       crontabFormat: freezed == crontabFormat
           ? _value.crontabFormat
           : crontabFormat // ignore: cast_nullable_to_non_nullable
@@ -29027,7 +29104,7 @@ class _$TriggerImpl implements _Trigger {
       @TriggerGeofenceDetectionModeOrNullConverter() this.geofenceKind,
       this.formula,
       this.script,
-      this.exactHour,
+      @TimeOfDayOrNullConverter() this.exactHour,
       this.crontabFormat,
       @WeekdayConverter() final List<Weekday>? weekdays,
       this.isPlainCrontab,
@@ -29198,7 +29275,8 @@ class _$TriggerImpl implements _Trigger {
 
   /// [exactHour] is the exact hour of the trigger. Only used when [kind] is [TriggerType.exactTime].
   @override
-  final String? exactHour;
+  @TimeOfDayOrNullConverter()
+  final TimeOfDay? exactHour;
 
   /// [crontabFormat] is the crontab format of the trigger. Only used when [kind] is [TriggerType.exactTime].
   /// The crontab format is a string that represents the exact time of the trigger.
@@ -29422,7 +29500,7 @@ abstract class _Trigger implements Trigger {
       final TriggerGeofenceDetectionMode? geofenceKind,
       final String? formula,
       final String? script,
-      final String? exactHour,
+      @TimeOfDayOrNullConverter() final TimeOfDay? exactHour,
       final String? crontabFormat,
       @WeekdayConverter() final List<Weekday>? weekdays,
       final bool? isPlainCrontab,
@@ -29512,7 +29590,8 @@ abstract class _Trigger implements Trigger {
   @override
 
   /// [exactHour] is the exact hour of the trigger. Only used when [kind] is [TriggerType.exactTime].
-  String? get exactHour;
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? get exactHour;
   @override
 
   /// [crontabFormat] is the crontab format of the trigger. Only used when [kind] is [TriggerType.exactTime].
@@ -31613,6 +31692,13 @@ mixin _$User {
   /// [tenvioLongitude] represents the Tenvio longitude.
   double? get tenvioLongitude => throw _privateConstructorUsedError;
 
+  /// [isSuspended] represents if the users account is suspended.
+  bool? get isSuspended => throw _privateConstructorUsedError;
+
+  /// [suspendedAt] represents the date when the account was suspended.
+  @TimestampOrNullConverter()
+  DateTime? get suspendedAt => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -31657,7 +31743,9 @@ abstract class $UserCopyWith<$Res> {
       String? tenvioAddress,
       String? tenvioPhone,
       double? tenvioLatitude,
-      double? tenvioLongitude});
+      double? tenvioLongitude,
+      bool? isSuspended,
+      @TimestampOrNullConverter() DateTime? suspendedAt});
 
   $TokenCopyWith<$Res>? get token;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
@@ -31713,6 +31801,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? tenvioPhone = freezed,
     Object? tenvioLatitude = freezed,
     Object? tenvioLongitude = freezed,
+    Object? isSuspended = freezed,
+    Object? suspendedAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -31851,6 +31941,14 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.tenvioLongitude
           : tenvioLongitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      isSuspended: freezed == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      suspendedAt: freezed == suspendedAt
+          ? _value.suspendedAt
+          : suspendedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 
@@ -31957,7 +32055,9 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String? tenvioAddress,
       String? tenvioPhone,
       double? tenvioLatitude,
-      double? tenvioLongitude});
+      double? tenvioLongitude,
+      bool? isSuspended,
+      @TimestampOrNullConverter() DateTime? suspendedAt});
 
   @override
   $TokenCopyWith<$Res>? get token;
@@ -32015,6 +32115,8 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? tenvioPhone = freezed,
     Object? tenvioLatitude = freezed,
     Object? tenvioLongitude = freezed,
+    Object? isSuspended = freezed,
+    Object? suspendedAt = freezed,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -32153,6 +32255,14 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.tenvioLongitude
           : tenvioLongitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      isSuspended: freezed == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      suspendedAt: freezed == suspendedAt
+          ? _value.suspendedAt
+          : suspendedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -32194,7 +32304,9 @@ class _$UserImpl implements _User {
       this.tenvioAddress,
       this.tenvioPhone,
       this.tenvioLatitude,
-      this.tenvioLongitude})
+      this.tenvioLongitude,
+      this.isSuspended,
+      @TimestampOrNullConverter() this.suspendedAt})
       : _referencesIds = referencesIds,
         _references = references,
         _access = access,
@@ -32465,9 +32577,18 @@ class _$UserImpl implements _User {
   @override
   final double? tenvioLongitude;
 
+  /// [isSuspended] represents if the users account is suspended.
+  @override
+  final bool? isSuspended;
+
+  /// [suspendedAt] represents the date when the account was suspended.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? suspendedAt;
+
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, isSuspended: $isSuspended, suspendedAt: $suspendedAt)';
   }
 
   @override
@@ -32533,7 +32654,11 @@ class _$UserImpl implements _User {
             (identical(other.tenvioLatitude, tenvioLatitude) ||
                 other.tenvioLatitude == tenvioLatitude) &&
             (identical(other.tenvioLongitude, tenvioLongitude) ||
-                other.tenvioLongitude == tenvioLongitude));
+                other.tenvioLongitude == tenvioLongitude) &&
+            (identical(other.isSuspended, isSuspended) ||
+                other.isSuspended == isSuspended) &&
+            (identical(other.suspendedAt, suspendedAt) ||
+                other.suspendedAt == suspendedAt));
   }
 
   @JsonKey(ignore: true)
@@ -32573,7 +32698,9 @@ class _$UserImpl implements _User {
         tenvioAddress,
         tenvioPhone,
         tenvioLatitude,
-        tenvioLongitude
+        tenvioLongitude,
+        isSuspended,
+        suspendedAt
       ]);
 
   @JsonKey(ignore: true)
@@ -32625,7 +32752,9 @@ abstract class _User implements User {
       final String? tenvioAddress,
       final String? tenvioPhone,
       final double? tenvioLatitude,
-      final double? tenvioLongitude}) = _$UserImpl;
+      final double? tenvioLongitude,
+      final bool? isSuspended,
+      @TimestampOrNullConverter() final DateTime? suspendedAt}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -32772,6 +32901,15 @@ abstract class _User implements User {
 
   /// [tenvioLongitude] represents the Tenvio longitude.
   double? get tenvioLongitude;
+  @override
+
+  /// [isSuspended] represents if the users account is suspended.
+  bool? get isSuspended;
+  @override
+
+  /// [suspendedAt] represents the date when the account was suspended.
+  @TimestampOrNullConverter()
+  DateTime? get suspendedAt;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
@@ -33031,542 +33169,4 @@ abstract class _InviteLink extends InviteLink {
   @JsonKey(ignore: true)
   _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-FlespiAcl _$FlespiAclFromJson(Map<String, dynamic> json) {
-  return _FlespiAcl.fromJson(json);
-}
-
-/// @nodoc
-mixin _$FlespiAcl {
-  /// [uri] is the URI of the ACL.
-  @FlespiUriConverter()
-  FlespiUri get uri => throw _privateConstructorUsedError;
-
-  /// [topic] is the topic of the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  String? get topic => throw _privateConstructorUsedError;
-
-  /// [actions] is the list of actions allowed for the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @FlespiActionConverter()
-  List<FlespiAction>? get actions => throw _privateConstructorUsedError;
-
-  /// [methods] is the list of methods allowed for the ACL.
-  @FlespiMethodConverter()
-  List<FlespiMethod>? get methods => throw _privateConstructorUsedError;
-
-  /// [ids] is the list of IDs allowed for the ACL.
-  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  List<String>? get ids => throw _privateConstructorUsedError;
-
-  /// [submodules] is the list of submodules allowed for the ACL.
-  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  List<FlespiSubmoduleConfig>? get submodules =>
-      throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $FlespiAclCopyWith<FlespiAcl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FlespiAclCopyWith<$Res> {
-  factory $FlespiAclCopyWith(FlespiAcl value, $Res Function(FlespiAcl) then) =
-      _$FlespiAclCopyWithImpl<$Res, FlespiAcl>;
-  @useResult
-  $Res call(
-      {@FlespiUriConverter() FlespiUri uri,
-      String? topic,
-      @FlespiActionConverter() List<FlespiAction>? actions,
-      @FlespiMethodConverter() List<FlespiMethod>? methods,
-      List<String>? ids,
-      List<FlespiSubmoduleConfig>? submodules});
-}
-
-/// @nodoc
-class _$FlespiAclCopyWithImpl<$Res, $Val extends FlespiAcl>
-    implements $FlespiAclCopyWith<$Res> {
-  _$FlespiAclCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? uri = null,
-    Object? topic = freezed,
-    Object? actions = freezed,
-    Object? methods = freezed,
-    Object? ids = freezed,
-    Object? submodules = freezed,
-  }) {
-    return _then(_value.copyWith(
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as FlespiUri,
-      topic: freezed == topic
-          ? _value.topic
-          : topic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actions: freezed == actions
-          ? _value.actions
-          : actions // ignore: cast_nullable_to_non_nullable
-              as List<FlespiAction>?,
-      methods: freezed == methods
-          ? _value.methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>?,
-      ids: freezed == ids
-          ? _value.ids
-          : ids // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      submodules: freezed == submodules
-          ? _value.submodules
-          : submodules // ignore: cast_nullable_to_non_nullable
-              as List<FlespiSubmoduleConfig>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$FlespiAclImplCopyWith<$Res>
-    implements $FlespiAclCopyWith<$Res> {
-  factory _$$FlespiAclImplCopyWith(
-          _$FlespiAclImpl value, $Res Function(_$FlespiAclImpl) then) =
-      __$$FlespiAclImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@FlespiUriConverter() FlespiUri uri,
-      String? topic,
-      @FlespiActionConverter() List<FlespiAction>? actions,
-      @FlespiMethodConverter() List<FlespiMethod>? methods,
-      List<String>? ids,
-      List<FlespiSubmoduleConfig>? submodules});
-}
-
-/// @nodoc
-class __$$FlespiAclImplCopyWithImpl<$Res>
-    extends _$FlespiAclCopyWithImpl<$Res, _$FlespiAclImpl>
-    implements _$$FlespiAclImplCopyWith<$Res> {
-  __$$FlespiAclImplCopyWithImpl(
-      _$FlespiAclImpl _value, $Res Function(_$FlespiAclImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? uri = null,
-    Object? topic = freezed,
-    Object? actions = freezed,
-    Object? methods = freezed,
-    Object? ids = freezed,
-    Object? submodules = freezed,
-  }) {
-    return _then(_$FlespiAclImpl(
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as FlespiUri,
-      topic: freezed == topic
-          ? _value.topic
-          : topic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actions: freezed == actions
-          ? _value._actions
-          : actions // ignore: cast_nullable_to_non_nullable
-              as List<FlespiAction>?,
-      methods: freezed == methods
-          ? _value._methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>?,
-      ids: freezed == ids
-          ? _value._ids
-          : ids // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      submodules: freezed == submodules
-          ? _value._submodules
-          : submodules // ignore: cast_nullable_to_non_nullable
-              as List<FlespiSubmoduleConfig>?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$FlespiAclImpl implements _FlespiAcl {
-  const _$FlespiAclImpl(
-      {@FlespiUriConverter() required this.uri,
-      this.topic,
-      @FlespiActionConverter() final List<FlespiAction>? actions,
-      @FlespiMethodConverter() final List<FlespiMethod>? methods,
-      final List<String>? ids,
-      final List<FlespiSubmoduleConfig>? submodules})
-      : _actions = actions,
-        _methods = methods,
-        _ids = ids,
-        _submodules = submodules;
-
-  factory _$FlespiAclImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlespiAclImplFromJson(json);
-
-  /// [uri] is the URI of the ACL.
-  @override
-  @FlespiUriConverter()
-  final FlespiUri uri;
-
-  /// [topic] is the topic of the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
-  final String? topic;
-
-  /// [actions] is the list of actions allowed for the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  final List<FlespiAction>? _actions;
-
-  /// [actions] is the list of actions allowed for the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
-  @FlespiActionConverter()
-  List<FlespiAction>? get actions {
-    final value = _actions;
-    if (value == null) return null;
-    if (_actions is EqualUnmodifiableListView) return _actions;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// [methods] is the list of methods allowed for the ACL.
-  final List<FlespiMethod>? _methods;
-
-  /// [methods] is the list of methods allowed for the ACL.
-  @override
-  @FlespiMethodConverter()
-  List<FlespiMethod>? get methods {
-    final value = _methods;
-    if (value == null) return null;
-    if (_methods is EqualUnmodifiableListView) return _methods;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// [ids] is the list of IDs allowed for the ACL.
-  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  final List<String>? _ids;
-
-  /// [ids] is the list of IDs allowed for the ACL.
-  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  @override
-  List<String>? get ids {
-    final value = _ids;
-    if (value == null) return null;
-    if (_ids is EqualUnmodifiableListView) return _ids;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// [submodules] is the list of submodules allowed for the ACL.
-  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  final List<FlespiSubmoduleConfig>? _submodules;
-
-  /// [submodules] is the list of submodules allowed for the ACL.
-  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  @override
-  List<FlespiSubmoduleConfig>? get submodules {
-    final value = _submodules;
-    if (value == null) return null;
-    if (_submodules is EqualUnmodifiableListView) return _submodules;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  String toString() {
-    return 'FlespiAcl(uri: $uri, topic: $topic, actions: $actions, methods: $methods, ids: $ids, submodules: $submodules)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FlespiAclImpl &&
-            (identical(other.uri, uri) || other.uri == uri) &&
-            (identical(other.topic, topic) || other.topic == topic) &&
-            const DeepCollectionEquality().equals(other._actions, _actions) &&
-            const DeepCollectionEquality().equals(other._methods, _methods) &&
-            const DeepCollectionEquality().equals(other._ids, _ids) &&
-            const DeepCollectionEquality()
-                .equals(other._submodules, _submodules));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      uri,
-      topic,
-      const DeepCollectionEquality().hash(_actions),
-      const DeepCollectionEquality().hash(_methods),
-      const DeepCollectionEquality().hash(_ids),
-      const DeepCollectionEquality().hash(_submodules));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FlespiAclImplCopyWith<_$FlespiAclImpl> get copyWith =>
-      __$$FlespiAclImplCopyWithImpl<_$FlespiAclImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FlespiAclImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _FlespiAcl implements FlespiAcl {
-  const factory _FlespiAcl(
-      {@FlespiUriConverter() required final FlespiUri uri,
-      final String? topic,
-      @FlespiActionConverter() final List<FlespiAction>? actions,
-      @FlespiMethodConverter() final List<FlespiMethod>? methods,
-      final List<String>? ids,
-      final List<FlespiSubmoduleConfig>? submodules}) = _$FlespiAclImpl;
-
-  factory _FlespiAcl.fromJson(Map<String, dynamic> json) =
-      _$FlespiAclImpl.fromJson;
-
-  @override
-
-  /// [uri] is the URI of the ACL.
-  @FlespiUriConverter()
-  FlespiUri get uri;
-  @override
-
-  /// [topic] is the topic of the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  String? get topic;
-  @override
-
-  /// [actions] is the list of actions allowed for the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @FlespiActionConverter()
-  List<FlespiAction>? get actions;
-  @override
-
-  /// [methods] is the list of methods allowed for the ACL.
-  @FlespiMethodConverter()
-  List<FlespiMethod>? get methods;
-  @override
-
-  /// [ids] is the list of IDs allowed for the ACL.
-  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  List<String>? get ids;
-  @override
-
-  /// [submodules] is the list of submodules allowed for the ACL.
-  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  List<FlespiSubmoduleConfig>? get submodules;
-  @override
-  @JsonKey(ignore: true)
-  _$$FlespiAclImplCopyWith<_$FlespiAclImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-FlespiSubmoduleConfig _$FlespiSubmoduleConfigFromJson(
-    Map<String, dynamic> json) {
-  return _FlespiSubmoduleConfig.fromJson(json);
-}
-
-/// @nodoc
-mixin _$FlespiSubmoduleConfig {
-  /// [submodule] is the submodule of the configuration.
-  @FlespiSubmoduleConverter()
-  FlespiSubmodule get name => throw _privateConstructorUsedError;
-
-  /// [methods] is the list of methods allowed for the submodule.
-  @FlespiMethodConverter()
-  List<FlespiMethod> get methods => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $FlespiSubmoduleConfigCopyWith<FlespiSubmoduleConfig> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FlespiSubmoduleConfigCopyWith<$Res> {
-  factory $FlespiSubmoduleConfigCopyWith(FlespiSubmoduleConfig value,
-          $Res Function(FlespiSubmoduleConfig) then) =
-      _$FlespiSubmoduleConfigCopyWithImpl<$Res, FlespiSubmoduleConfig>;
-  @useResult
-  $Res call(
-      {@FlespiSubmoduleConverter() FlespiSubmodule name,
-      @FlespiMethodConverter() List<FlespiMethod> methods});
-}
-
-/// @nodoc
-class _$FlespiSubmoduleConfigCopyWithImpl<$Res,
-        $Val extends FlespiSubmoduleConfig>
-    implements $FlespiSubmoduleConfigCopyWith<$Res> {
-  _$FlespiSubmoduleConfigCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? methods = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as FlespiSubmodule,
-      methods: null == methods
-          ? _value.methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$FlespiSubmoduleConfigImplCopyWith<$Res>
-    implements $FlespiSubmoduleConfigCopyWith<$Res> {
-  factory _$$FlespiSubmoduleConfigImplCopyWith(
-          _$FlespiSubmoduleConfigImpl value,
-          $Res Function(_$FlespiSubmoduleConfigImpl) then) =
-      __$$FlespiSubmoduleConfigImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@FlespiSubmoduleConverter() FlespiSubmodule name,
-      @FlespiMethodConverter() List<FlespiMethod> methods});
-}
-
-/// @nodoc
-class __$$FlespiSubmoduleConfigImplCopyWithImpl<$Res>
-    extends _$FlespiSubmoduleConfigCopyWithImpl<$Res,
-        _$FlespiSubmoduleConfigImpl>
-    implements _$$FlespiSubmoduleConfigImplCopyWith<$Res> {
-  __$$FlespiSubmoduleConfigImplCopyWithImpl(_$FlespiSubmoduleConfigImpl _value,
-      $Res Function(_$FlespiSubmoduleConfigImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? methods = null,
-  }) {
-    return _then(_$FlespiSubmoduleConfigImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as FlespiSubmodule,
-      methods: null == methods
-          ? _value._methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$FlespiSubmoduleConfigImpl implements _FlespiSubmoduleConfig {
-  const _$FlespiSubmoduleConfigImpl(
-      {@FlespiSubmoduleConverter() required this.name,
-      @FlespiMethodConverter() final List<FlespiMethod> methods = const []})
-      : _methods = methods;
-
-  factory _$FlespiSubmoduleConfigImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlespiSubmoduleConfigImplFromJson(json);
-
-  /// [submodule] is the submodule of the configuration.
-  @override
-  @FlespiSubmoduleConverter()
-  final FlespiSubmodule name;
-
-  /// [methods] is the list of methods allowed for the submodule.
-  final List<FlespiMethod> _methods;
-
-  /// [methods] is the list of methods allowed for the submodule.
-  @override
-  @JsonKey()
-  @FlespiMethodConverter()
-  List<FlespiMethod> get methods {
-    if (_methods is EqualUnmodifiableListView) return _methods;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_methods);
-  }
-
-  @override
-  String toString() {
-    return 'FlespiSubmoduleConfig(name: $name, methods: $methods)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$FlespiSubmoduleConfigImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other._methods, _methods));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, name, const DeepCollectionEquality().hash(_methods));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FlespiSubmoduleConfigImplCopyWith<_$FlespiSubmoduleConfigImpl>
-      get copyWith => __$$FlespiSubmoduleConfigImplCopyWithImpl<
-          _$FlespiSubmoduleConfigImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FlespiSubmoduleConfigImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _FlespiSubmoduleConfig implements FlespiSubmoduleConfig {
-  const factory _FlespiSubmoduleConfig(
-          {@FlespiSubmoduleConverter() required final FlespiSubmodule name,
-          @FlespiMethodConverter() final List<FlespiMethod> methods}) =
-      _$FlespiSubmoduleConfigImpl;
-
-  factory _FlespiSubmoduleConfig.fromJson(Map<String, dynamic> json) =
-      _$FlespiSubmoduleConfigImpl.fromJson;
-
-  @override
-
-  /// [submodule] is the submodule of the configuration.
-  @FlespiSubmoduleConverter()
-  FlespiSubmodule get name;
-  @override
-
-  /// [methods] is the list of methods allowed for the submodule.
-  @FlespiMethodConverter()
-  List<FlespiMethod> get methods;
-  @override
-  @JsonKey(ignore: true)
-  _$$FlespiSubmoduleConfigImplCopyWith<_$FlespiSubmoduleConfigImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }

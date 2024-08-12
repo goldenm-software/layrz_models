@@ -1,4 +1,4 @@
-part of '../layrz_models.dart';
+part of '../builder.dart';
 
 @freezed
 class FlespiAcl with _$FlespiAcl {
@@ -29,6 +29,35 @@ class FlespiAcl with _$FlespiAcl {
   factory FlespiAcl.fromJson(Map<String, dynamic> json) => _$FlespiAclFromJson(json);
 }
 
+@unfreezed
+class FlespiAclInput with _$FlespiAclInput {
+  factory FlespiAclInput({
+    /// [uri] is the URI of the ACL.
+    @FlespiUriConverter() required FlespiUri uri,
+
+    /// [topic] is the topic of the ACL.
+    /// This field is only used when the [uri] is [FlespiUri.mqtt].
+    String? topic,
+
+    /// [actions] is the list of actions allowed for the ACL.
+    /// This field is only used when the [uri] is [FlespiUri.mqtt].
+    @FlespiActionConverter() List<FlespiAction>? actions,
+
+    /// [methods] is the list of methods allowed for the ACL.
+    @FlespiMethodConverter() List<FlespiMethod>? methods,
+
+    /// [ids] is the list of IDs allowed for the ACL.
+    /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
+    List<String>? ids,
+
+    /// [submodules] is the list of submodules allowed for the ACL.
+    /// This field is only used when the [uri] is not [FlespiUri.mqtt].
+    List<FlespiSubmoduleConfigInput>? submodules,
+  }) = _FlespiAclInput;
+
+  factory FlespiAclInput.fromJson(Map<String, dynamic> json) => _$FlespiAclInputFromJson(json);
+}
+
 @freezed
 class FlespiSubmoduleConfig with _$FlespiSubmoduleConfig {
   const factory FlespiSubmoduleConfig({
@@ -40,6 +69,19 @@ class FlespiSubmoduleConfig with _$FlespiSubmoduleConfig {
   }) = _FlespiSubmoduleConfig;
 
   factory FlespiSubmoduleConfig.fromJson(Map<String, dynamic> json) => _$FlespiSubmoduleConfigFromJson(json);
+}
+
+@unfreezed
+class FlespiSubmoduleConfigInput with _$FlespiSubmoduleConfigInput {
+  factory FlespiSubmoduleConfigInput({
+    /// [submodule] is the submodule of the configuration.
+    @FlespiSubmoduleConverter() required FlespiSubmodule name,
+
+    /// [methods] is the list of methods allowed for the submodule.
+    @FlespiMethodConverter() @Default([]) List<FlespiMethod> methods,
+  }) = _FlespiSubmoduleConfigInput;
+
+  factory FlespiSubmoduleConfigInput.fromJson(Map<String, dynamic> json) => _$FlespiSubmoduleConfigInputFromJson(json);
 }
 
 enum FlespiUri {

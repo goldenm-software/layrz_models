@@ -109,6 +109,12 @@ class User with _$User {
 
     /// [tenvioLongitude] represents the Tenvio longitude.
     double? tenvioLongitude,
+
+    /// [isSuspended] represents if the users account is suspended.
+    bool? isSuspended,
+
+    /// [suspendedAt] represents the date when the account was suspended.
+    @TimestampOrNullConverter() DateTime? suspendedAt,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

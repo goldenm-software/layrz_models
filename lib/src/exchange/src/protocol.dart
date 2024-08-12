@@ -33,6 +33,12 @@ class ExchangeProtocol with _$ExchangeProtocol {
     /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
     /// For marketing purposes.
     int? usage,
+
+    /// [requiresAssets] indicates if the protocol requires assets to work.
+    bool? requiresAssets,
+
+    /// [requiresGeofences] indicates if the protocol requires geofences to work.
+    bool? requiresGeofences,
   }) = _ExchangeProtocol;
 
   factory ExchangeProtocol.fromJson(Map<String, dynamic> json) => _$ExchangeProtocolFromJson(json);

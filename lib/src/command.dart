@@ -125,6 +125,9 @@ class DeviceCommand with _$DeviceCommand {
     /// [modbusPort] refers to the modbus port of the command.
     /// This parameter contains the port number of the modbus command.
     String? modbusPort,
+
+    /// [args] refers to the arguments of the command.
+    Map<String, dynamic>? args,
   }) = _DeviceCommand;
 
   factory DeviceCommand.fromJson(Map<String, dynamic> json) => _$DeviceCommandFromJson(json);

@@ -53,6 +53,12 @@ mixin _$ExchangeProtocol {
   /// For marketing purposes.
   int? get usage => throw _privateConstructorUsedError;
 
+  /// [requiresAssets] indicates if the protocol requires assets to work.
+  bool? get requiresAssets => throw _privateConstructorUsedError;
+
+  /// [requiresGeofences] indicates if the protocol requires geofences to work.
+  bool? get requiresGeofences => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ExchangeProtocolCopyWith<ExchangeProtocol> get copyWith =>
@@ -74,7 +80,9 @@ abstract class $ExchangeProtocolCopyWith<$Res> {
       bool isEnabled,
       bool? requiresFlespiToken,
       List<FlespiAcl>? flespiAcl,
-      int? usage});
+      int? usage,
+      bool? requiresAssets,
+      bool? requiresGeofences});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
 }
@@ -101,6 +109,8 @@ class _$ExchangeProtocolCopyWithImpl<$Res, $Val extends ExchangeProtocol>
     Object? requiresFlespiToken = freezed,
     Object? flespiAcl = freezed,
     Object? usage = freezed,
+    Object? requiresAssets = freezed,
+    Object? requiresGeofences = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -139,6 +149,14 @@ class _$ExchangeProtocolCopyWithImpl<$Res, $Val extends ExchangeProtocol>
           ? _value.usage
           : usage // ignore: cast_nullable_to_non_nullable
               as int?,
+      requiresAssets: freezed == requiresAssets
+          ? _value.requiresAssets
+          : requiresAssets // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      requiresGeofences: freezed == requiresGeofences
+          ? _value.requiresGeofences
+          : requiresGeofences // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 
@@ -172,7 +190,9 @@ abstract class _$$ExchangeProtocolImplCopyWith<$Res>
       bool isEnabled,
       bool? requiresFlespiToken,
       List<FlespiAcl>? flespiAcl,
-      int? usage});
+      int? usage,
+      bool? requiresAssets,
+      bool? requiresGeofences});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -198,6 +218,8 @@ class __$$ExchangeProtocolImplCopyWithImpl<$Res>
     Object? requiresFlespiToken = freezed,
     Object? flespiAcl = freezed,
     Object? usage = freezed,
+    Object? requiresAssets = freezed,
+    Object? requiresGeofences = freezed,
   }) {
     return _then(_$ExchangeProtocolImpl(
       id: null == id
@@ -236,6 +258,14 @@ class __$$ExchangeProtocolImplCopyWithImpl<$Res>
           ? _value.usage
           : usage // ignore: cast_nullable_to_non_nullable
               as int?,
+      requiresAssets: freezed == requiresAssets
+          ? _value.requiresAssets
+          : requiresAssets // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      requiresGeofences: freezed == requiresGeofences
+          ? _value.requiresGeofences
+          : requiresGeofences // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -252,7 +282,9 @@ class _$ExchangeProtocolImpl implements _ExchangeProtocol {
       required this.isEnabled,
       this.requiresFlespiToken,
       final List<FlespiAcl>? flespiAcl,
-      this.usage})
+      this.usage,
+      this.requiresAssets,
+      this.requiresGeofences})
       : _requiredFields = requiredFields,
         _flespiAcl = flespiAcl;
 
@@ -317,9 +349,17 @@ class _$ExchangeProtocolImpl implements _ExchangeProtocol {
   @override
   final int? usage;
 
+  /// [requiresAssets] indicates if the protocol requires assets to work.
+  @override
+  final bool? requiresAssets;
+
+  /// [requiresGeofences] indicates if the protocol requires geofences to work.
+  @override
+  final bool? requiresGeofences;
+
   @override
   String toString() {
-    return 'ExchangeProtocol(id: $id, name: $name, color: $color, dynamicIcon: $dynamicIcon, requiredFields: $requiredFields, isEnabled: $isEnabled, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, usage: $usage)';
+    return 'ExchangeProtocol(id: $id, name: $name, color: $color, dynamicIcon: $dynamicIcon, requiredFields: $requiredFields, isEnabled: $isEnabled, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, usage: $usage, requiresAssets: $requiresAssets, requiresGeofences: $requiresGeofences)';
   }
 
   @override
@@ -340,7 +380,11 @@ class _$ExchangeProtocolImpl implements _ExchangeProtocol {
                 other.requiresFlespiToken == requiresFlespiToken) &&
             const DeepCollectionEquality()
                 .equals(other._flespiAcl, _flespiAcl) &&
-            (identical(other.usage, usage) || other.usage == usage));
+            (identical(other.usage, usage) || other.usage == usage) &&
+            (identical(other.requiresAssets, requiresAssets) ||
+                other.requiresAssets == requiresAssets) &&
+            (identical(other.requiresGeofences, requiresGeofences) ||
+                other.requiresGeofences == requiresGeofences));
   }
 
   @JsonKey(ignore: true)
@@ -355,7 +399,9 @@ class _$ExchangeProtocolImpl implements _ExchangeProtocol {
       isEnabled,
       requiresFlespiToken,
       const DeepCollectionEquality().hash(_flespiAcl),
-      usage);
+      usage,
+      requiresAssets,
+      requiresGeofences);
 
   @JsonKey(ignore: true)
   @override
@@ -382,7 +428,9 @@ abstract class _ExchangeProtocol implements ExchangeProtocol {
       required final bool isEnabled,
       final bool? requiresFlespiToken,
       final List<FlespiAcl>? flespiAcl,
-      final int? usage}) = _$ExchangeProtocolImpl;
+      final int? usage,
+      final bool? requiresAssets,
+      final bool? requiresGeofences}) = _$ExchangeProtocolImpl;
 
   factory _ExchangeProtocol.fromJson(Map<String, dynamic> json) =
       _$ExchangeProtocolImpl.fromJson;
@@ -429,6 +477,14 @@ abstract class _ExchangeProtocol implements ExchangeProtocol {
   /// For marketing purposes.
   int? get usage;
   @override
+
+  /// [requiresAssets] indicates if the protocol requires assets to work.
+  bool? get requiresAssets;
+  @override
+
+  /// [requiresGeofences] indicates if the protocol requires geofences to work.
+  bool? get requiresGeofences;
+  @override
   @JsonKey(ignore: true)
   _$$ExchangeProtocolImplCopyWith<_$ExchangeProtocolImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -473,6 +529,18 @@ mixin _$ExchangeService {
   /// A list of custom access permissions.
   List<Access>? get access => throw _privateConstructorUsedError;
 
+  /// [geofencesIds] is the list of geofences linked to the service.
+  List<String>? get geofencesIds => throw _privateConstructorUsedError;
+
+  /// [geofences] is the list of geofences linked to the service.
+  List<Geofence>? get geofences => throw _privateConstructorUsedError;
+
+  /// [geofencesGroupsIds] is the list of tags as geofences groups linked to the service.
+  List<String>? get geofencesGroupsIds => throw _privateConstructorUsedError;
+
+  /// [geofencesGroups] is the list of tags as geofences groups linked to the service.
+  List<Tag>? get geofencesGroups => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ExchangeServiceCopyWith<ExchangeService> get copyWith =>
@@ -496,7 +564,11 @@ abstract class $ExchangeServiceCopyWith<$Res> {
       List<Asset>? assets,
       List<String>? tagsIds,
       List<Tag>? tags,
-      List<Access>? access});
+      List<Access>? access,
+      List<String>? geofencesIds,
+      List<Geofence>? geofences,
+      List<String>? geofencesGroupsIds,
+      List<Tag>? geofencesGroups});
 
   $ExchangeProtocolCopyWith<$Res>? get protocol;
 }
@@ -525,6 +597,10 @@ class _$ExchangeServiceCopyWithImpl<$Res, $Val extends ExchangeService>
     Object? tagsIds = freezed,
     Object? tags = freezed,
     Object? access = freezed,
+    Object? geofencesIds = freezed,
+    Object? geofences = freezed,
+    Object? geofencesGroupsIds = freezed,
+    Object? geofencesGroups = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -571,6 +647,22 @@ class _$ExchangeServiceCopyWithImpl<$Res, $Val extends ExchangeService>
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      geofencesIds: freezed == geofencesIds
+          ? _value.geofencesIds
+          : geofencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      geofences: freezed == geofences
+          ? _value.geofences
+          : geofences // ignore: cast_nullable_to_non_nullable
+              as List<Geofence>?,
+      geofencesGroupsIds: freezed == geofencesGroupsIds
+          ? _value.geofencesGroupsIds
+          : geofencesGroupsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      geofencesGroups: freezed == geofencesGroups
+          ? _value.geofencesGroups
+          : geofencesGroups // ignore: cast_nullable_to_non_nullable
+              as List<Tag>?,
     ) as $Val);
   }
 
@@ -606,7 +698,11 @@ abstract class _$$ExchangeServiceImplCopyWith<$Res>
       List<Asset>? assets,
       List<String>? tagsIds,
       List<Tag>? tags,
-      List<Access>? access});
+      List<Access>? access,
+      List<String>? geofencesIds,
+      List<Geofence>? geofences,
+      List<String>? geofencesGroupsIds,
+      List<Tag>? geofencesGroups});
 
   @override
   $ExchangeProtocolCopyWith<$Res>? get protocol;
@@ -634,6 +730,10 @@ class __$$ExchangeServiceImplCopyWithImpl<$Res>
     Object? tagsIds = freezed,
     Object? tags = freezed,
     Object? access = freezed,
+    Object? geofencesIds = freezed,
+    Object? geofences = freezed,
+    Object? geofencesGroupsIds = freezed,
+    Object? geofencesGroups = freezed,
   }) {
     return _then(_$ExchangeServiceImpl(
       id: null == id
@@ -680,6 +780,22 @@ class __$$ExchangeServiceImplCopyWithImpl<$Res>
           ? _value._access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      geofencesIds: freezed == geofencesIds
+          ? _value._geofencesIds
+          : geofencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      geofences: freezed == geofences
+          ? _value._geofences
+          : geofences // ignore: cast_nullable_to_non_nullable
+              as List<Geofence>?,
+      geofencesGroupsIds: freezed == geofencesGroupsIds
+          ? _value._geofencesGroupsIds
+          : geofencesGroupsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      geofencesGroups: freezed == geofencesGroups
+          ? _value._geofencesGroups
+          : geofencesGroups // ignore: cast_nullable_to_non_nullable
+              as List<Tag>?,
     ));
   }
 }
@@ -698,13 +814,21 @@ class _$ExchangeServiceImpl implements _ExchangeService {
       final List<Asset>? assets,
       final List<String>? tagsIds,
       final List<Tag>? tags,
-      final List<Access>? access})
+      final List<Access>? access,
+      final List<String>? geofencesIds,
+      final List<Geofence>? geofences,
+      final List<String>? geofencesGroupsIds,
+      final List<Tag>? geofencesGroups})
       : _credentials = credentials,
         _assetsIds = assetsIds,
         _assets = assets,
         _tagsIds = tagsIds,
         _tags = tags,
-        _access = access;
+        _access = access,
+        _geofencesIds = geofencesIds,
+        _geofences = geofences,
+        _geofencesGroupsIds = geofencesGroupsIds,
+        _geofencesGroups = geofencesGroups;
 
   factory _$ExchangeServiceImpl.fromJson(Map<String, dynamic> json) =>
       _$$ExchangeServiceImplFromJson(json);
@@ -807,9 +931,62 @@ class _$ExchangeServiceImpl implements _ExchangeService {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [geofencesIds] is the list of geofences linked to the service.
+  final List<String>? _geofencesIds;
+
+  /// [geofencesIds] is the list of geofences linked to the service.
+  @override
+  List<String>? get geofencesIds {
+    final value = _geofencesIds;
+    if (value == null) return null;
+    if (_geofencesIds is EqualUnmodifiableListView) return _geofencesIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [geofences] is the list of geofences linked to the service.
+  final List<Geofence>? _geofences;
+
+  /// [geofences] is the list of geofences linked to the service.
+  @override
+  List<Geofence>? get geofences {
+    final value = _geofences;
+    if (value == null) return null;
+    if (_geofences is EqualUnmodifiableListView) return _geofences;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [geofencesGroupsIds] is the list of tags as geofences groups linked to the service.
+  final List<String>? _geofencesGroupsIds;
+
+  /// [geofencesGroupsIds] is the list of tags as geofences groups linked to the service.
+  @override
+  List<String>? get geofencesGroupsIds {
+    final value = _geofencesGroupsIds;
+    if (value == null) return null;
+    if (_geofencesGroupsIds is EqualUnmodifiableListView)
+      return _geofencesGroupsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [geofencesGroups] is the list of tags as geofences groups linked to the service.
+  final List<Tag>? _geofencesGroups;
+
+  /// [geofencesGroups] is the list of tags as geofences groups linked to the service.
+  @override
+  List<Tag>? get geofencesGroups {
+    final value = _geofencesGroups;
+    if (value == null) return null;
+    if (_geofencesGroups is EqualUnmodifiableListView) return _geofencesGroups;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'ExchangeService(id: $id, name: $name, credentials: $credentials, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, assetsIds: $assetsIds, assets: $assets, tagsIds: $tagsIds, tags: $tags, access: $access)';
+    return 'ExchangeService(id: $id, name: $name, credentials: $credentials, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, assetsIds: $assetsIds, assets: $assets, tagsIds: $tagsIds, tags: $tags, access: $access, geofencesIds: $geofencesIds, geofences: $geofences, geofencesGroupsIds: $geofencesGroupsIds, geofencesGroups: $geofencesGroups)';
   }
 
   @override
@@ -832,7 +1009,15 @@ class _$ExchangeServiceImpl implements _ExchangeService {
             const DeepCollectionEquality().equals(other._assets, _assets) &&
             const DeepCollectionEquality().equals(other._tagsIds, _tagsIds) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            const DeepCollectionEquality().equals(other._access, _access));
+            const DeepCollectionEquality().equals(other._access, _access) &&
+            const DeepCollectionEquality()
+                .equals(other._geofencesIds, _geofencesIds) &&
+            const DeepCollectionEquality()
+                .equals(other._geofences, _geofences) &&
+            const DeepCollectionEquality()
+                .equals(other._geofencesGroupsIds, _geofencesGroupsIds) &&
+            const DeepCollectionEquality()
+                .equals(other._geofencesGroups, _geofencesGroups));
   }
 
   @JsonKey(ignore: true)
@@ -849,7 +1034,11 @@ class _$ExchangeServiceImpl implements _ExchangeService {
       const DeepCollectionEquality().hash(_assets),
       const DeepCollectionEquality().hash(_tagsIds),
       const DeepCollectionEquality().hash(_tags),
-      const DeepCollectionEquality().hash(_access));
+      const DeepCollectionEquality().hash(_access),
+      const DeepCollectionEquality().hash(_geofencesIds),
+      const DeepCollectionEquality().hash(_geofences),
+      const DeepCollectionEquality().hash(_geofencesGroupsIds),
+      const DeepCollectionEquality().hash(_geofencesGroups));
 
   @JsonKey(ignore: true)
   @override
@@ -878,7 +1067,11 @@ abstract class _ExchangeService implements ExchangeService {
       final List<Asset>? assets,
       final List<String>? tagsIds,
       final List<Tag>? tags,
-      final List<Access>? access}) = _$ExchangeServiceImpl;
+      final List<Access>? access,
+      final List<String>? geofencesIds,
+      final List<Geofence>? geofences,
+      final List<String>? geofencesGroupsIds,
+      final List<Tag>? geofencesGroups}) = _$ExchangeServiceImpl;
 
   factory _ExchangeService.fromJson(Map<String, dynamic> json) =
       _$ExchangeServiceImpl.fromJson;
@@ -927,6 +1120,22 @@ abstract class _ExchangeService implements ExchangeService {
 
   /// A list of custom access permissions.
   List<Access>? get access;
+  @override
+
+  /// [geofencesIds] is the list of geofences linked to the service.
+  List<String>? get geofencesIds;
+  @override
+
+  /// [geofences] is the list of geofences linked to the service.
+  List<Geofence>? get geofences;
+  @override
+
+  /// [geofencesGroupsIds] is the list of tags as geofences groups linked to the service.
+  List<String>? get geofencesGroupsIds;
+  @override
+
+  /// [geofencesGroups] is the list of tags as geofences groups linked to the service.
+  List<Tag>? get geofencesGroups;
   @override
   @JsonKey(ignore: true)
   _$$ExchangeServiceImplCopyWith<_$ExchangeServiceImpl> get copyWith =>

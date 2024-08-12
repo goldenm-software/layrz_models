@@ -35,6 +35,18 @@ class ExchangeService with _$ExchangeService {
 
     /// A list of custom access permissions.
     List<Access>? access,
+
+    /// [geofencesIds] is the list of geofences linked to the service.
+    List<String>? geofencesIds,
+
+    /// [geofences] is the list of geofences linked to the service.
+    List<Geofence>? geofences,
+
+    /// [geofencesGroupsIds] is the list of tags as geofences groups linked to the service.
+    List<String>? geofencesGroupsIds,
+
+    /// [geofencesGroups] is the list of tags as geofences groups linked to the service.
+    List<Tag>? geofencesGroups,
   }) = _ExchangeService;
 
   /// From json

@@ -8,11 +8,12 @@ class Device with _$Device {
     /// The [name] of the device.
     required String name,
 
-    /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the MAC address or randomly string.
+    /// The [ident] of the device. Generally, for GPS devices means the IMEI, for other devices means the
+    /// MAC address or randomly string.
     required String ident,
 
-    /// The [mqttToken] of the device, only for Xirgo MQTT devices.
-    String? mqttToken,
+    /// The [flespiToken] of the device.
+    String? flespiToken,
 
     /// The [modelId] of the device.
     String? modelId,

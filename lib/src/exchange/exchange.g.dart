@@ -24,7 +24,9 @@ _$ExchangeProtocolImpl _$$ExchangeProtocolImplFromJson(
       flespiAcl: (json['flespiAcl'] as List<dynamic>?)
           ?.map((e) => FlespiAcl.fromJson(e as Map<String, dynamic>))
           .toList(),
-      usage: json['usage'] as int?,
+      usage: (json['usage'] as num?)?.toInt(),
+      requiresAssets: json['requiresAssets'] as bool?,
+      requiresGeofences: json['requiresGeofences'] as bool?,
     );
 
 Map<String, dynamic> _$$ExchangeProtocolImplToJson(
@@ -39,6 +41,8 @@ Map<String, dynamic> _$$ExchangeProtocolImplToJson(
       'requiresFlespiToken': instance.requiresFlespiToken,
       'flespiAcl': instance.flespiAcl?.map((e) => e.toJson()).toList(),
       'usage': instance.usage,
+      'requiresAssets': instance.requiresAssets,
+      'requiresGeofences': instance.requiresGeofences,
     };
 
 _$ExchangeServiceImpl _$$ExchangeServiceImplFromJson(
@@ -66,6 +70,18 @@ _$ExchangeServiceImpl _$$ExchangeServiceImplFromJson(
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
+      geofencesIds: (json['geofencesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      geofences: (json['geofences'] as List<dynamic>?)
+          ?.map((e) => Geofence.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      geofencesGroupsIds: (json['geofencesGroupsIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      geofencesGroups: (json['geofencesGroups'] as List<dynamic>?)
+          ?.map((e) => Tag.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$ExchangeServiceImplToJson(
@@ -82,4 +98,9 @@ Map<String, dynamic> _$$ExchangeServiceImplToJson(
       'tagsIds': instance.tagsIds,
       'tags': instance.tags?.map((e) => e.toJson()).toList(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
+      'geofencesIds': instance.geofencesIds,
+      'geofences': instance.geofences?.map((e) => e.toJson()).toList(),
+      'geofencesGroupsIds': instance.geofencesGroupsIds,
+      'geofencesGroups':
+          instance.geofencesGroups?.map((e) => e.toJson()).toList(),
     };

@@ -24,6 +24,18 @@ _$WorkspaceImpl _$$WorkspaceImplFromJson(Map<String, dynamic> json) =>
       assetsIds: (json['assetsIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
+      inboundServices: (json['inboundServices'] as List<dynamic>?)
+          ?.map((e) => InboundService.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      inboundServicesIds: (json['inboundServicesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+      outboundServices: (json['outboundServices'] as List<dynamic>?)
+          ?.map((e) => OutboundService.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      outboundServicesIds: (json['outboundServicesIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       casesEnabled: json['casesEnabled'] as bool?,
       triggers: (json['triggers'] as List<dynamic>?)
           ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
@@ -101,6 +113,12 @@ Map<String, dynamic> _$$WorkspaceImplToJson(_$WorkspaceImpl instance) =>
           const WorkspaceMainViewOrNullConverter().toJson(instance.mainView),
       'assets': instance.assets?.map((e) => e.toJson()).toList(),
       'assetsIds': instance.assetsIds,
+      'inboundServices':
+          instance.inboundServices?.map((e) => e.toJson()).toList(),
+      'inboundServicesIds': instance.inboundServicesIds,
+      'outboundServices':
+          instance.outboundServices?.map((e) => e.toJson()).toList(),
+      'outboundServicesIds': instance.outboundServicesIds,
       'casesEnabled': instance.casesEnabled,
       'triggers': instance.triggers?.map((e) => e.toJson()).toList(),
       'triggersIds': instance.triggersIds,
@@ -223,8 +241,8 @@ Map<String, dynamic> _$$MapCardSensorsImplToJson(
 
 _$GridDimensionImpl _$$GridDimensionImplFromJson(Map<String, dynamic> json) =>
     _$GridDimensionImpl(
-      width: json['width'] as int,
-      height: json['height'] as int,
+      width: (json['width'] as num).toInt(),
+      height: (json['height'] as num).toInt(),
     );
 
 Map<String, dynamic> _$$GridDimensionImplToJson(_$GridDimensionImpl instance) =>
@@ -252,22 +270,27 @@ Map<String, dynamic> _$$SensorGridContentImplToJson(
 
 _$SensorGridItemImpl _$$SensorGridItemImplFromJson(Map<String, dynamic> json) =>
     _$SensorGridItemImpl(
-      assetId: json['assetId'] as String?,
-      dimensions:
-          GridDimension.fromJson(json['dimensions'] as Map<String, dynamic>),
+      objectId: json['objectId'] as String?,
+      kind: const WorkspaceCardTypeConverter().fromJson(json['kind'] as String),
+      dimensions: json['dimensions'] == null
+          ? null
+          : GridDimension.fromJson(json['dimensions'] as Map<String, dynamic>),
       color: json['color'] == null
           ? Colors.white
           : const ColorConverter().fromJson(json['color'] as String),
-      sensors: (json['sensors'] as List<dynamic>)
-          .map((e) => SensorGridContent.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      sensors: (json['sensors'] as List<dynamic>?)
+              ?.map(
+                  (e) => SensorGridContent.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$SensorGridItemImplToJson(
         _$SensorGridItemImpl instance) =>
     <String, dynamic>{
-      'assetId': instance.assetId,
-      'dimensions': instance.dimensions.toJson(),
+      'objectId': instance.objectId,
+      'kind': const WorkspaceCardTypeConverter().toJson(instance.kind),
+      'dimensions': instance.dimensions?.toJson(),
       'color': const ColorConverter().toJson(instance.color),
       'sensors': instance.sensors.map((e) => e.toJson()).toList(),
     };

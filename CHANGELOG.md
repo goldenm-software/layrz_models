@@ -1,5 +1,69 @@
 # Changelog
 
+## 3.0.0
+
+- Added `requiresExternalAccount` and `requiresStructure` on `InboundProtocol` and `InboundProtocolInput` models
+- Added `InboundProtocolInput`, `InboundServiceInput`, `InboundStructureInput`, `InboundPositionStructureInput` and `InboundPayloadStructureInput` models
+- Fixes on `WebhookStructure` model
+- Moved `FlespiAcl` and submodels to `builder` submodule
+- Added `FlespiAclInput` and `FlespiSubmoduleConfigInput` models
+- Defined new submodule called `builder`, with the definitions required for new connectivity schema.
+- Added `webhookStructure` to `InboundProtocol` model.
+- Added `webhookStructure` to `InboundService` model.
+
+## 2.1.91
+- Added `sensors` and `sensorsIds` parameters to `Tag` model
+
+## 2.1.90
+- Added optional params `isSuspended` and `suspendedAt` to `User` model
+
+## 2.1.89
+
+- Changed data type of `exactHour` in `Trigger` model from `String` to `TimeOfDay`
+
+## 2.1.88
+
+- Added `schema` and `splitEach` to `ModbusParameter` model
+
+## 2.1.87
+
+- Added `args` into `Command` model
+
+## 2.1.86
+
+- Added `requiresAssets` and `requiresGeofences` to `ExchangeProtocol` model
+- Added `geofencesIds`, `geofences`, `geofencesGroupsIds` and `geofencesGroups` to `ExchangeService` model
+
+## 2.1.85
+-  `BrickHouseWorkspaceInput` update
+
+## 2.1.84
+- Changed  `appId` to be optional on `BrickHouseWorkspaceInput`
+
+## 2.1.83
+
+- Updated `Workspace` and `SensorGridItem` to handle new Data grid
+- New `WorkspaceCardType` enum to identify the type of card in the workspace used in the data grid
+
+## 2.1.82
+
+- New `SdmOperator` model
+
+## 2.1.81
+
+- Added `dryFactor` and `priceByDry` on `SdmIngredient` model
+
+## 2.1.80
+
+- Renamed `mqttToken` to `flespiToken` on `Device` model
+
+## 2.1.79
+
+- Added `host`, `port` and `mqttTopic` to `InboundProtocol` model
+- Deprecation warning to `realtimeEndpoint` and `realtimeVariantEndpoint` in favor of `host`, `port` and `mqttTopic` in `InboundProtocol` model
+- New `OperationMode.mqtt` in `OperationMode` enum
+- New `requiresFlespiToken` and `flespiAcl` in `InboundProtocol` model to handle Flespi token creation
+
 ## 2.1.78
 
 - Added `isSupended` freezed model into `Device.dart` file

@@ -48,9 +48,25 @@ mixin _$Workspace {
   @WorkspaceMainViewOrNullConverter()
   WorkspaceMainView? get mainView => throw _privateConstructorUsedError;
 
-  /// Is the list of [assets] and their ids [assetsIds]
+  /// Is the list of [assets] associated with the workspace
   List<Asset>? get assets => throw _privateConstructorUsedError;
+
+  /// [assetsIds] is the list of ids of the [assets] associated with the workspace
   List<String>? get assetsIds => throw _privateConstructorUsedError;
+
+  /// Is the list of [inboundServices] associated with the workspace
+  List<InboundService>? get inboundServices =>
+      throw _privateConstructorUsedError;
+
+  /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
+  List<String>? get inboundServicesIds => throw _privateConstructorUsedError;
+
+  /// Is the list of [outboundServices] associated with the workspace
+  List<OutboundService>? get outboundServices =>
+      throw _privateConstructorUsedError;
+
+  /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
+  List<String>? get outboundServicesIds => throw _privateConstructorUsedError;
 
   /// The fields [casesEnabled], [triggers], [triggersIds], [checkpointsEnabled], [checkpoints], [checkpointsIds],
   /// [mapEnabled], [geofences], [geofencesIds], [mapCardCustomization], [mapCenterCoordinates], [mapCenterMode],
@@ -130,6 +146,10 @@ abstract class $WorkspaceCopyWith<$Res> {
       @WorkspaceMainViewOrNullConverter() WorkspaceMainView? mainView,
       List<Asset>? assets,
       List<String>? assetsIds,
+      List<InboundService>? inboundServices,
+      List<String>? inboundServicesIds,
+      List<OutboundService>? outboundServices,
+      List<String>? outboundServicesIds,
       bool? casesEnabled,
       List<Trigger>? triggers,
       List<String>? triggersIds,
@@ -180,6 +200,10 @@ class _$WorkspaceCopyWithImpl<$Res, $Val extends Workspace>
     Object? mainView = freezed,
     Object? assets = freezed,
     Object? assetsIds = freezed,
+    Object? inboundServices = freezed,
+    Object? inboundServicesIds = freezed,
+    Object? outboundServices = freezed,
+    Object? outboundServicesIds = freezed,
     Object? casesEnabled = freezed,
     Object? triggers = freezed,
     Object? triggersIds = freezed,
@@ -243,6 +267,22 @@ class _$WorkspaceCopyWithImpl<$Res, $Val extends Workspace>
       assetsIds: freezed == assetsIds
           ? _value.assetsIds
           : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      inboundServices: freezed == inboundServices
+          ? _value.inboundServices
+          : inboundServices // ignore: cast_nullable_to_non_nullable
+              as List<InboundService>?,
+      inboundServicesIds: freezed == inboundServicesIds
+          ? _value.inboundServicesIds
+          : inboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      outboundServices: freezed == outboundServices
+          ? _value.outboundServices
+          : outboundServices // ignore: cast_nullable_to_non_nullable
+              as List<OutboundService>?,
+      outboundServicesIds: freezed == outboundServicesIds
+          ? _value.outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       casesEnabled: freezed == casesEnabled
           ? _value.casesEnabled
@@ -379,6 +419,10 @@ abstract class _$$WorkspaceImplCopyWith<$Res>
       @WorkspaceMainViewOrNullConverter() WorkspaceMainView? mainView,
       List<Asset>? assets,
       List<String>? assetsIds,
+      List<InboundService>? inboundServices,
+      List<String>? inboundServicesIds,
+      List<OutboundService>? outboundServices,
+      List<String>? outboundServicesIds,
       bool? casesEnabled,
       List<Trigger>? triggers,
       List<String>? triggersIds,
@@ -429,6 +473,10 @@ class __$$WorkspaceImplCopyWithImpl<$Res>
     Object? mainView = freezed,
     Object? assets = freezed,
     Object? assetsIds = freezed,
+    Object? inboundServices = freezed,
+    Object? inboundServicesIds = freezed,
+    Object? outboundServices = freezed,
+    Object? outboundServicesIds = freezed,
     Object? casesEnabled = freezed,
     Object? triggers = freezed,
     Object? triggersIds = freezed,
@@ -492,6 +540,22 @@ class __$$WorkspaceImplCopyWithImpl<$Res>
       assetsIds: freezed == assetsIds
           ? _value._assetsIds
           : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      inboundServices: freezed == inboundServices
+          ? _value._inboundServices
+          : inboundServices // ignore: cast_nullable_to_non_nullable
+              as List<InboundService>?,
+      inboundServicesIds: freezed == inboundServicesIds
+          ? _value._inboundServicesIds
+          : inboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      outboundServices: freezed == outboundServices
+          ? _value._outboundServices
+          : outboundServices // ignore: cast_nullable_to_non_nullable
+              as List<OutboundService>?,
+      outboundServicesIds: freezed == outboundServicesIds
+          ? _value._outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       casesEnabled: freezed == casesEnabled
           ? _value.casesEnabled
@@ -599,6 +663,10 @@ class _$WorkspaceImpl implements _Workspace {
       @WorkspaceMainViewOrNullConverter() this.mainView,
       final List<Asset>? assets,
       final List<String>? assetsIds,
+      final List<InboundService>? inboundServices,
+      final List<String>? inboundServicesIds,
+      final List<OutboundService>? outboundServices,
+      final List<String>? outboundServicesIds,
       this.casesEnabled,
       final List<Trigger>? triggers,
       final List<String>? triggersIds,
@@ -623,6 +691,10 @@ class _$WorkspaceImpl implements _Workspace {
       final List<Access>? access})
       : _assets = assets,
         _assetsIds = assetsIds,
+        _inboundServices = inboundServices,
+        _inboundServicesIds = inboundServicesIds,
+        _outboundServices = outboundServices,
+        _outboundServicesIds = outboundServicesIds,
         _triggers = triggers,
         _triggersIds = triggersIds,
         _casesMonitorConfig = casesMonitorConfig,
@@ -676,10 +748,10 @@ class _$WorkspaceImpl implements _Workspace {
   @WorkspaceMainViewOrNullConverter()
   final WorkspaceMainView? mainView;
 
-  /// Is the list of [assets] and their ids [assetsIds]
+  /// Is the list of [assets] associated with the workspace
   final List<Asset>? _assets;
 
-  /// Is the list of [assets] and their ids [assetsIds]
+  /// Is the list of [assets] associated with the workspace
   @override
   List<Asset>? get assets {
     final value = _assets;
@@ -689,12 +761,70 @@ class _$WorkspaceImpl implements _Workspace {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [assetsIds] is the list of ids of the [assets] associated with the workspace
   final List<String>? _assetsIds;
+
+  /// [assetsIds] is the list of ids of the [assets] associated with the workspace
   @override
   List<String>? get assetsIds {
     final value = _assetsIds;
     if (value == null) return null;
     if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Is the list of [inboundServices] associated with the workspace
+  final List<InboundService>? _inboundServices;
+
+  /// Is the list of [inboundServices] associated with the workspace
+  @override
+  List<InboundService>? get inboundServices {
+    final value = _inboundServices;
+    if (value == null) return null;
+    if (_inboundServices is EqualUnmodifiableListView) return _inboundServices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
+  final List<String>? _inboundServicesIds;
+
+  /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
+  @override
+  List<String>? get inboundServicesIds {
+    final value = _inboundServicesIds;
+    if (value == null) return null;
+    if (_inboundServicesIds is EqualUnmodifiableListView)
+      return _inboundServicesIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Is the list of [outboundServices] associated with the workspace
+  final List<OutboundService>? _outboundServices;
+
+  /// Is the list of [outboundServices] associated with the workspace
+  @override
+  List<OutboundService>? get outboundServices {
+    final value = _outboundServices;
+    if (value == null) return null;
+    if (_outboundServices is EqualUnmodifiableListView)
+      return _outboundServices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
+  final List<String>? _outboundServicesIds;
+
+  /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
+  @override
+  List<String>? get outboundServicesIds {
+    final value = _outboundServicesIds;
+    if (value == null) return null;
+    if (_outboundServicesIds is EqualUnmodifiableListView)
+      return _outboundServicesIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
@@ -877,7 +1007,7 @@ class _$WorkspaceImpl implements _Workspace {
 
   @override
   String toString() {
-    return 'Workspace(id: $id, name: $name, typeApp: $typeApp, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assets: $assets, assetsIds: $assetsIds, casesEnabled: $casesEnabled, triggers: $triggers, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofences: $geofences, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, charts: $charts, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem, timezone: $timezone, access: $access)';
+    return 'Workspace(id: $id, name: $name, typeApp: $typeApp, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assets: $assets, assetsIds: $assetsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggers: $triggers, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofences: $geofences, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, charts: $charts, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem, timezone: $timezone, access: $access)';
   }
 
   @override
@@ -899,6 +1029,14 @@ class _$WorkspaceImpl implements _Workspace {
             const DeepCollectionEquality().equals(other._assets, _assets) &&
             const DeepCollectionEquality()
                 .equals(other._assetsIds, _assetsIds) &&
+            const DeepCollectionEquality()
+                .equals(other._inboundServices, _inboundServices) &&
+            const DeepCollectionEquality()
+                .equals(other._inboundServicesIds, _inboundServicesIds) &&
+            const DeepCollectionEquality()
+                .equals(other._outboundServices, _outboundServices) &&
+            const DeepCollectionEquality()
+                .equals(other._outboundServicesIds, _outboundServicesIds) &&
             (identical(other.casesEnabled, casesEnabled) ||
                 other.casesEnabled == casesEnabled) &&
             const DeepCollectionEquality().equals(other._triggers, _triggers) &&
@@ -956,6 +1094,10 @@ class _$WorkspaceImpl implements _Workspace {
         mainView,
         const DeepCollectionEquality().hash(_assets),
         const DeepCollectionEquality().hash(_assetsIds),
+        const DeepCollectionEquality().hash(_inboundServices),
+        const DeepCollectionEquality().hash(_inboundServicesIds),
+        const DeepCollectionEquality().hash(_outboundServices),
+        const DeepCollectionEquality().hash(_outboundServicesIds),
         casesEnabled,
         const DeepCollectionEquality().hash(_triggers),
         const DeepCollectionEquality().hash(_triggersIds),
@@ -1007,6 +1149,10 @@ abstract class _Workspace implements Workspace {
       @WorkspaceMainViewOrNullConverter() final WorkspaceMainView? mainView,
       final List<Asset>? assets,
       final List<String>? assetsIds,
+      final List<InboundService>? inboundServices,
+      final List<String>? inboundServicesIds,
+      final List<OutboundService>? outboundServices,
+      final List<String>? outboundServicesIds,
       final bool? casesEnabled,
       final List<Trigger>? triggers,
       final List<String>? triggersIds,
@@ -1071,10 +1217,28 @@ abstract class _Workspace implements Workspace {
   WorkspaceMainView? get mainView;
   @override
 
-  /// Is the list of [assets] and their ids [assetsIds]
+  /// Is the list of [assets] associated with the workspace
   List<Asset>? get assets;
   @override
+
+  /// [assetsIds] is the list of ids of the [assets] associated with the workspace
   List<String>? get assetsIds;
+  @override
+
+  /// Is the list of [inboundServices] associated with the workspace
+  List<InboundService>? get inboundServices;
+  @override
+
+  /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
+  List<String>? get inboundServicesIds;
+  @override
+
+  /// Is the list of [outboundServices] associated with the workspace
+  List<OutboundService>? get outboundServices;
+  @override
+
+  /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
+  List<String>? get outboundServicesIds;
   @override
 
   /// The fields [casesEnabled], [triggers], [triggersIds], [checkpointsEnabled], [checkpoints], [checkpointsIds],
@@ -2606,10 +2770,14 @@ SensorGridItem _$SensorGridItemFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SensorGridItem {
   /// Represents the Asset ID
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get objectId => throw _privateConstructorUsedError;
+
+  /// [kind] represents the kind of card should be displayed
+  @WorkspaceCardTypeConverter()
+  WorkspaceCardType get kind => throw _privateConstructorUsedError;
 
   /// [dimensions] Represents the dimension of the sensor
-  GridDimension get dimensions => throw _privateConstructorUsedError;
+  GridDimension? get dimensions => throw _privateConstructorUsedError;
 
   /// Represents the color of the card
   @ColorConverter()
@@ -2631,12 +2799,13 @@ abstract class $SensorGridItemCopyWith<$Res> {
       _$SensorGridItemCopyWithImpl<$Res, SensorGridItem>;
   @useResult
   $Res call(
-      {String? assetId,
-      GridDimension dimensions,
+      {String? objectId,
+      @WorkspaceCardTypeConverter() WorkspaceCardType kind,
+      GridDimension? dimensions,
       @ColorConverter() Color color,
       List<SensorGridContent> sensors});
 
-  $GridDimensionCopyWith<$Res> get dimensions;
+  $GridDimensionCopyWith<$Res>? get dimensions;
 }
 
 /// @nodoc
@@ -2652,20 +2821,25 @@ class _$SensorGridItemCopyWithImpl<$Res, $Val extends SensorGridItem>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assetId = freezed,
-    Object? dimensions = null,
+    Object? objectId = freezed,
+    Object? kind = null,
+    Object? dimensions = freezed,
     Object? color = null,
     Object? sensors = null,
   }) {
     return _then(_value.copyWith(
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
+      objectId: freezed == objectId
+          ? _value.objectId
+          : objectId // ignore: cast_nullable_to_non_nullable
               as String?,
-      dimensions: null == dimensions
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as WorkspaceCardType,
+      dimensions: freezed == dimensions
           ? _value.dimensions
           : dimensions // ignore: cast_nullable_to_non_nullable
-              as GridDimension,
+              as GridDimension?,
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -2679,8 +2853,12 @@ class _$SensorGridItemCopyWithImpl<$Res, $Val extends SensorGridItem>
 
   @override
   @pragma('vm:prefer-inline')
-  $GridDimensionCopyWith<$Res> get dimensions {
-    return $GridDimensionCopyWith<$Res>(_value.dimensions, (value) {
+  $GridDimensionCopyWith<$Res>? get dimensions {
+    if (_value.dimensions == null) {
+      return null;
+    }
+
+    return $GridDimensionCopyWith<$Res>(_value.dimensions!, (value) {
       return _then(_value.copyWith(dimensions: value) as $Val);
     });
   }
@@ -2695,13 +2873,14 @@ abstract class _$$SensorGridItemImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? assetId,
-      GridDimension dimensions,
+      {String? objectId,
+      @WorkspaceCardTypeConverter() WorkspaceCardType kind,
+      GridDimension? dimensions,
       @ColorConverter() Color color,
       List<SensorGridContent> sensors});
 
   @override
-  $GridDimensionCopyWith<$Res> get dimensions;
+  $GridDimensionCopyWith<$Res>? get dimensions;
 }
 
 /// @nodoc
@@ -2715,20 +2894,25 @@ class __$$SensorGridItemImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? assetId = freezed,
-    Object? dimensions = null,
+    Object? objectId = freezed,
+    Object? kind = null,
+    Object? dimensions = freezed,
     Object? color = null,
     Object? sensors = null,
   }) {
     return _then(_$SensorGridItemImpl(
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
+      objectId: freezed == objectId
+          ? _value.objectId
+          : objectId // ignore: cast_nullable_to_non_nullable
               as String?,
-      dimensions: null == dimensions
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as WorkspaceCardType,
+      dimensions: freezed == dimensions
           ? _value.dimensions
           : dimensions // ignore: cast_nullable_to_non_nullable
-              as GridDimension,
+              as GridDimension?,
       color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -2745,10 +2929,11 @@ class __$$SensorGridItemImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$SensorGridItemImpl implements _SensorGridItem {
   const _$SensorGridItemImpl(
-      {this.assetId,
-      required this.dimensions,
+      {this.objectId,
+      @WorkspaceCardTypeConverter() required this.kind,
+      this.dimensions,
       @ColorConverter() this.color = Colors.white,
-      required final List<SensorGridContent> sensors})
+      final List<SensorGridContent> sensors = const []})
       : _sensors = sensors;
 
   factory _$SensorGridItemImpl.fromJson(Map<String, dynamic> json) =>
@@ -2756,11 +2941,16 @@ class _$SensorGridItemImpl implements _SensorGridItem {
 
   /// Represents the Asset ID
   @override
-  final String? assetId;
+  final String? objectId;
+
+  /// [kind] represents the kind of card should be displayed
+  @override
+  @WorkspaceCardTypeConverter()
+  final WorkspaceCardType kind;
 
   /// [dimensions] Represents the dimension of the sensor
   @override
-  final GridDimension dimensions;
+  final GridDimension? dimensions;
 
   /// Represents the color of the card
   @override
@@ -2773,6 +2963,7 @@ class _$SensorGridItemImpl implements _SensorGridItem {
 
   /// Represents the sensors of the card
   @override
+  @JsonKey()
   List<SensorGridContent> get sensors {
     if (_sensors is EqualUnmodifiableListView) return _sensors;
     // ignore: implicit_dynamic_type
@@ -2781,7 +2972,7 @@ class _$SensorGridItemImpl implements _SensorGridItem {
 
   @override
   String toString() {
-    return 'SensorGridItem(assetId: $assetId, dimensions: $dimensions, color: $color, sensors: $sensors)';
+    return 'SensorGridItem(objectId: $objectId, kind: $kind, dimensions: $dimensions, color: $color, sensors: $sensors)';
   }
 
   @override
@@ -2789,7 +2980,9 @@ class _$SensorGridItemImpl implements _SensorGridItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SensorGridItemImpl &&
-            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.objectId, objectId) ||
+                other.objectId == objectId) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
             (identical(other.dimensions, dimensions) ||
                 other.dimensions == dimensions) &&
             (identical(other.color, color) || other.color == color) &&
@@ -2798,8 +2991,8 @@ class _$SensorGridItemImpl implements _SensorGridItem {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, assetId, dimensions, color,
-      const DeepCollectionEquality().hash(_sensors));
+  int get hashCode => Object.hash(runtimeType, objectId, kind, dimensions,
+      color, const DeepCollectionEquality().hash(_sensors));
 
   @JsonKey(ignore: true)
   @override
@@ -2818,10 +3011,11 @@ class _$SensorGridItemImpl implements _SensorGridItem {
 
 abstract class _SensorGridItem implements SensorGridItem {
   const factory _SensorGridItem(
-      {final String? assetId,
-      required final GridDimension dimensions,
+      {final String? objectId,
+      @WorkspaceCardTypeConverter() required final WorkspaceCardType kind,
+      final GridDimension? dimensions,
       @ColorConverter() final Color color,
-      required final List<SensorGridContent> sensors}) = _$SensorGridItemImpl;
+      final List<SensorGridContent> sensors}) = _$SensorGridItemImpl;
 
   factory _SensorGridItem.fromJson(Map<String, dynamic> json) =
       _$SensorGridItemImpl.fromJson;
@@ -2829,11 +3023,16 @@ abstract class _SensorGridItem implements SensorGridItem {
   @override
 
   /// Represents the Asset ID
-  String? get assetId;
+  String? get objectId;
+  @override
+
+  /// [kind] represents the kind of card should be displayed
+  @WorkspaceCardTypeConverter()
+  WorkspaceCardType get kind;
   @override
 
   /// [dimensions] Represents the dimension of the sensor
-  GridDimension get dimensions;
+  GridDimension? get dimensions;
   @override
 
   /// Represents the color of the card

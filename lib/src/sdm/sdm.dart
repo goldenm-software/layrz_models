@@ -10,3 +10,4 @@ part 'sdm.g.dart';
 part 'src/pen.dart';
 part 'src/recipe.dart';
 part 'src/ingredient.dart';
+part 'src/operator.dart';

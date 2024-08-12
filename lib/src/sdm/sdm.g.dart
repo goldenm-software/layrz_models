@@ -87,6 +87,8 @@ _$SdmIngredientImpl _$$SdmIngredientImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       code: json['code'] as String,
       pricePerKg: (json['pricePerKg'] as num?)?.toDouble(),
+      dryFactor: (json['dryFactor'] as num?)?.toDouble(),
+      priceByDry: json['priceByDry'] as bool?,
       isArchived: json['isArchived'] as bool?,
       sourceId: json['sourceId'] as String?,
       source: json['source'] == null
@@ -110,9 +112,39 @@ Map<String, dynamic> _$$SdmIngredientImplToJson(_$SdmIngredientImpl instance) =>
       'name': instance.name,
       'code': instance.code,
       'pricePerKg': instance.pricePerKg,
+      'dryFactor': instance.dryFactor,
+      'priceByDry': instance.priceByDry,
       'isArchived': instance.isArchived,
       'sourceId': instance.sourceId,
       'source': instance.source?.toJson(),
+      'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
+      'createdBy': instance.createdBy?.toJson(),
+      'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
+      'updatedBy': instance.updatedBy?.toJson(),
+    };
+
+_$SdmOperatorImpl _$$SdmOperatorImplFromJson(Map<String, dynamic> json) =>
+    _$SdmOperatorImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      code: json['code'] as String,
+      createdAt:
+          const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
+      createdBy: json['createdBy'] == null
+          ? null
+          : User.fromJson(json['createdBy'] as Map<String, dynamic>),
+      updatedAt:
+          const TimestampOrNullConverter().fromJson(json['updatedAt'] as num?),
+      updatedBy: json['updatedBy'] == null
+          ? null
+          : User.fromJson(json['updatedBy'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$SdmOperatorImplToJson(_$SdmOperatorImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'code': instance.code,
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
       'createdBy': instance.createdBy?.toJson(),
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),

@@ -181,7 +181,7 @@ _$AppBuildImpl _$$AppBuildImplFromJson(Map<String, dynamic> json) =>
     _$AppBuildImpl(
       id: json['id'] as String,
       buildName: json['buildName'] as String,
-      buildNumber: json['buildNumber'] as int,
+      buildNumber: (json['buildNumber'] as num).toInt(),
       fileUri: json['fileUri'] as String?,
       isNext: json['isNext'] as bool?,
     );
@@ -220,9 +220,6 @@ Map<String, dynamic> _$$AppThemedColorsImplToJson(
 
 _$AppDesignImpl _$$AppDesignImplFromJson(Map<String, dynamic> json) =>
     _$AppDesignImpl(
-      colors: json['colors'] == null
-          ? null
-          : AppThemedColors.fromJson(json['colors'] as Map<String, dynamic>),
       mainColor:
           const ColorOrNullConverter().fromJson(json['mainColor'] as String?),
       theme: const AppThemeOrNullConverter().fromJson(json['theme'] as String?),
@@ -245,7 +242,6 @@ _$AppDesignImpl _$$AppDesignImplFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$$AppDesignImplToJson(_$AppDesignImpl instance) =>
     <String, dynamic>{
-      'colors': instance.colors?.toJson(),
       'mainColor': const ColorOrNullConverter().toJson(instance.mainColor),
       'theme': const AppThemeOrNullConverter().toJson(instance.theme),
       'favicons': instance.favicons.toJson(),
@@ -345,14 +341,6 @@ Map<String, dynamic> _$$AppLegalImplToJson(_$AppLegalImpl instance) =>
 
 _$AppLoginDesignImpl _$$AppLoginDesignImplFromJson(Map<String, dynamic> json) =>
     _$AppLoginDesignImpl(
-      layout: const LoginLayoutModeOrNullConverter()
-          .fromJson(json['layout'] as String?),
-      title:
-          const TitleModeOrNullConverter().fromJson(json['title'] as String?),
-      background: json['background'] == null
-          ? null
-          : AppBackgroundDesign.fromJson(
-              json['background'] as Map<String, dynamic>),
       backgroundColor: const ColorOrNullConverter()
           .fromJson(json['backgroundColor'] as String?),
       backgroundImage: json['backgroundImage'] as String?,
@@ -366,9 +354,6 @@ _$AppLoginDesignImpl _$$AppLoginDesignImplFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$$AppLoginDesignImplToJson(
         _$AppLoginDesignImpl instance) =>
     <String, dynamic>{
-      'layout': const LoginLayoutModeOrNullConverter().toJson(instance.layout),
-      'title': const TitleModeOrNullConverter().toJson(instance.title),
-      'background': instance.background?.toJson(),
       'backgroundColor':
           const ColorOrNullConverter().toJson(instance.backgroundColor),
       'backgroundImage': instance.backgroundImage,
@@ -395,7 +380,7 @@ _$AppVersionImpl _$$AppVersionImplFromJson(Map<String, dynamic> json) =>
       platform:
           const AppPlatformConverter().fromJson(json['platform'] as String),
       fileUri: json['fileUri'] as String?,
-      buildNumber: json['buildNumber'] as int,
+      buildNumber: (json['buildNumber'] as num).toInt(),
       buildName: json['buildName'] as String,
       releasedAt:
           const TimestampConverter().fromJson(json['releasedAt'] as num),
