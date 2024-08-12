@@ -1,24 +1,12 @@
 # Changelog
 
-## 3.0.0-preview5
+## 3.0.0
 
 - Added `requiresExternalAccount` and `requiresStructure` on `InboundProtocol` and `InboundProtocolInput` models
-
-## 3.0.0-preview4
-
 - Added `InboundProtocolInput`, `InboundServiceInput`, `InboundStructureInput`, `InboundPositionStructureInput` and `InboundPayloadStructureInput` models
-
-## 3.0.0-preview3
-
 - Fixes on `WebhookStructure` model
-
-## 3.0.0-preview2
-
 - Moved `FlespiAcl` and submodels to `builder` submodule
 - Added `FlespiAclInput` and `FlespiSubmoduleConfigInput` models
-
-## 3.0.0-preview1
-
 - Defined new submodule called `builder`, with the definitions required for new connectivity schema.
 - Added `webhookStructure` to `InboundProtocol` model.
 - Added `webhookStructure` to `InboundService` model.
