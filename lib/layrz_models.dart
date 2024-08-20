@@ -26,6 +26,7 @@ import 'src/modbus/modbus.dart';
 import 'src/charts/charts.dart';
 import 'src/exchange/exchange.dart';
 // import 'src/builder/builder.dart';
+import 'src/commands/commands.dart';
 
 // Internal exports
 export 'src/converters/converters.dart';
@@ -49,6 +50,7 @@ export 'src/modbus/modbus.dart';
 export 'src/charts/charts.dart';
 export 'src/exchange/exchange.dart';
 export 'src/builder/builder.dart';
+export 'src/commands/commands.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
@@ -72,7 +74,6 @@ part 'src/case.dart';
 part 'src/category.dart';
 part 'src/checkpoint.dart';
 part 'src/cloud_entry.dart';
-part 'src/command.dart';
 part 'src/connection.dart';
 part 'src/country.dart';
 part 'src/credential_field.dart';

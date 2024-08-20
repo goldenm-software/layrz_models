@@ -61,6 +61,11 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
       requiresExternalAccount:
           json['requiresExternalAccount'] as bool? ?? false,
       requiresStructure: json['requiresStructure'] as bool? ?? false,
+      commandsStructure: (json['commandsStructure'] as List<dynamic>?)
+              ?.map(
+                  (e) => CommandDefinition.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$InboundProtocolImplToJson(
@@ -100,6 +105,8 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'webhookStructure': instance.webhookStructure?.toJson(),
       'requiresExternalAccount': instance.requiresExternalAccount,
       'requiresStructure': instance.requiresStructure,
+      'commandsStructure':
+          instance.commandsStructure.map((e) => e.toJson()).toList(),
     };
 
 _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
@@ -157,6 +164,11 @@ _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
       requiresExternalAccount:
           json['requiresExternalAccount'] as bool? ?? false,
       requiresStructure: json['requiresStructure'] as bool? ?? false,
+      commandsStructure: (json['commandsStructure'] as List<dynamic>?)
+              ?.map((e) =>
+                  CommandDefinitionInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$InboundProtocolInputImplToJson(
@@ -192,6 +204,8 @@ Map<String, dynamic> _$$InboundProtocolInputImplToJson(
       'webhookStructure': instance.webhookStructure?.toJson(),
       'requiresExternalAccount': instance.requiresExternalAccount,
       'requiresStructure': instance.requiresStructure,
+      'commandsStructure':
+          instance.commandsStructure.map((e) => e.toJson()).toList(),
     };
 
 _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
