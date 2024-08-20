@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.1
+- Added `PolygonDetails` and `ContainedRouteCategory`
+
 ## 3.0.0
 
 - Added `requiresExternalAccount` and `requiresStructure` on `InboundProtocol` and `InboundProtocolInput` models

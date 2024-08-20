@@ -2657,3 +2657,409 @@ abstract class _MappitFreeDay implements MappitFreeDay {
   _$$MappitFreeDayImplCopyWith<_$MappitFreeDayImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+PolygonDetails _$PolygonDetailsFromJson(Map<String, dynamic> json) {
+  return _PolygonDetails.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PolygonDetails {
+  Geofence get polygon => throw _privateConstructorUsedError;
+  ContainedRouteCategory get containedRoutes =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PolygonDetailsCopyWith<PolygonDetails> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PolygonDetailsCopyWith<$Res> {
+  factory $PolygonDetailsCopyWith(
+          PolygonDetails value, $Res Function(PolygonDetails) then) =
+      _$PolygonDetailsCopyWithImpl<$Res, PolygonDetails>;
+  @useResult
+  $Res call({Geofence polygon, ContainedRouteCategory containedRoutes});
+
+  $GeofenceCopyWith<$Res> get polygon;
+  $ContainedRouteCategoryCopyWith<$Res> get containedRoutes;
+}
+
+/// @nodoc
+class _$PolygonDetailsCopyWithImpl<$Res, $Val extends PolygonDetails>
+    implements $PolygonDetailsCopyWith<$Res> {
+  _$PolygonDetailsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? polygon = null,
+    Object? containedRoutes = null,
+  }) {
+    return _then(_value.copyWith(
+      polygon: null == polygon
+          ? _value.polygon
+          : polygon // ignore: cast_nullable_to_non_nullable
+              as Geofence,
+      containedRoutes: null == containedRoutes
+          ? _value.containedRoutes
+          : containedRoutes // ignore: cast_nullable_to_non_nullable
+              as ContainedRouteCategory,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GeofenceCopyWith<$Res> get polygon {
+    return $GeofenceCopyWith<$Res>(_value.polygon, (value) {
+      return _then(_value.copyWith(polygon: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ContainedRouteCategoryCopyWith<$Res> get containedRoutes {
+    return $ContainedRouteCategoryCopyWith<$Res>(_value.containedRoutes,
+        (value) {
+      return _then(_value.copyWith(containedRoutes: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$PolygonDetailsImplCopyWith<$Res>
+    implements $PolygonDetailsCopyWith<$Res> {
+  factory _$$PolygonDetailsImplCopyWith(_$PolygonDetailsImpl value,
+          $Res Function(_$PolygonDetailsImpl) then) =
+      __$$PolygonDetailsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Geofence polygon, ContainedRouteCategory containedRoutes});
+
+  @override
+  $GeofenceCopyWith<$Res> get polygon;
+  @override
+  $ContainedRouteCategoryCopyWith<$Res> get containedRoutes;
+}
+
+/// @nodoc
+class __$$PolygonDetailsImplCopyWithImpl<$Res>
+    extends _$PolygonDetailsCopyWithImpl<$Res, _$PolygonDetailsImpl>
+    implements _$$PolygonDetailsImplCopyWith<$Res> {
+  __$$PolygonDetailsImplCopyWithImpl(
+      _$PolygonDetailsImpl _value, $Res Function(_$PolygonDetailsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? polygon = null,
+    Object? containedRoutes = null,
+  }) {
+    return _then(_$PolygonDetailsImpl(
+      polygon: null == polygon
+          ? _value.polygon
+          : polygon // ignore: cast_nullable_to_non_nullable
+              as Geofence,
+      containedRoutes: null == containedRoutes
+          ? _value.containedRoutes
+          : containedRoutes // ignore: cast_nullable_to_non_nullable
+              as ContainedRouteCategory,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PolygonDetailsImpl implements _PolygonDetails {
+  const _$PolygonDetailsImpl(
+      {required this.polygon, required this.containedRoutes});
+
+  factory _$PolygonDetailsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PolygonDetailsImplFromJson(json);
+
+  @override
+  final Geofence polygon;
+  @override
+  final ContainedRouteCategory containedRoutes;
+
+  @override
+  String toString() {
+    return 'PolygonDetails(polygon: $polygon, containedRoutes: $containedRoutes)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$PolygonDetailsImpl &&
+            (identical(other.polygon, polygon) || other.polygon == polygon) &&
+            (identical(other.containedRoutes, containedRoutes) ||
+                other.containedRoutes == containedRoutes));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, polygon, containedRoutes);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PolygonDetailsImplCopyWith<_$PolygonDetailsImpl> get copyWith =>
+      __$$PolygonDetailsImplCopyWithImpl<_$PolygonDetailsImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PolygonDetailsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PolygonDetails implements PolygonDetails {
+  const factory _PolygonDetails(
+          {required final Geofence polygon,
+          required final ContainedRouteCategory containedRoutes}) =
+      _$PolygonDetailsImpl;
+
+  factory _PolygonDetails.fromJson(Map<String, dynamic> json) =
+      _$PolygonDetailsImpl.fromJson;
+
+  @override
+  Geofence get polygon;
+  @override
+  ContainedRouteCategory get containedRoutes;
+  @override
+  @JsonKey(ignore: true)
+  _$$PolygonDetailsImplCopyWith<_$PolygonDetailsImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ContainedRouteCategory _$ContainedRouteCategoryFromJson(
+    Map<String, dynamic> json) {
+  return _ContainedRouteCategory.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ContainedRouteCategory {
+  /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
+  /// from the API.
+  @GeofenceCategoryConverter()
+  GeofenceCategory get category => throw _privateConstructorUsedError;
+
+  /// List of routes that contain the geofences in the category.
+  List<MappitRoute>? get routes => throw _privateConstructorUsedError;
+
+  /// Number of geofences per category.
+  int? get geofenceCount => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ContainedRouteCategoryCopyWith<ContainedRouteCategory> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ContainedRouteCategoryCopyWith<$Res> {
+  factory $ContainedRouteCategoryCopyWith(ContainedRouteCategory value,
+          $Res Function(ContainedRouteCategory) then) =
+      _$ContainedRouteCategoryCopyWithImpl<$Res, ContainedRouteCategory>;
+  @useResult
+  $Res call(
+      {@GeofenceCategoryConverter() GeofenceCategory category,
+      List<MappitRoute>? routes,
+      int? geofenceCount});
+}
+
+/// @nodoc
+class _$ContainedRouteCategoryCopyWithImpl<$Res,
+        $Val extends ContainedRouteCategory>
+    implements $ContainedRouteCategoryCopyWith<$Res> {
+  _$ContainedRouteCategoryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? category = null,
+    Object? routes = freezed,
+    Object? geofenceCount = freezed,
+  }) {
+    return _then(_value.copyWith(
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as GeofenceCategory,
+      routes: freezed == routes
+          ? _value.routes
+          : routes // ignore: cast_nullable_to_non_nullable
+              as List<MappitRoute>?,
+      geofenceCount: freezed == geofenceCount
+          ? _value.geofenceCount
+          : geofenceCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ContainedRouteCategoryImplCopyWith<$Res>
+    implements $ContainedRouteCategoryCopyWith<$Res> {
+  factory _$$ContainedRouteCategoryImplCopyWith(
+          _$ContainedRouteCategoryImpl value,
+          $Res Function(_$ContainedRouteCategoryImpl) then) =
+      __$$ContainedRouteCategoryImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@GeofenceCategoryConverter() GeofenceCategory category,
+      List<MappitRoute>? routes,
+      int? geofenceCount});
+}
+
+/// @nodoc
+class __$$ContainedRouteCategoryImplCopyWithImpl<$Res>
+    extends _$ContainedRouteCategoryCopyWithImpl<$Res,
+        _$ContainedRouteCategoryImpl>
+    implements _$$ContainedRouteCategoryImplCopyWith<$Res> {
+  __$$ContainedRouteCategoryImplCopyWithImpl(
+      _$ContainedRouteCategoryImpl _value,
+      $Res Function(_$ContainedRouteCategoryImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? category = null,
+    Object? routes = freezed,
+    Object? geofenceCount = freezed,
+  }) {
+    return _then(_$ContainedRouteCategoryImpl(
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as GeofenceCategory,
+      routes: freezed == routes
+          ? _value._routes
+          : routes // ignore: cast_nullable_to_non_nullable
+              as List<MappitRoute>?,
+      geofenceCount: freezed == geofenceCount
+          ? _value.geofenceCount
+          : geofenceCount // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ContainedRouteCategoryImpl implements _ContainedRouteCategory {
+  const _$ContainedRouteCategoryImpl(
+      {@GeofenceCategoryConverter() this.category = GeofenceCategory.none,
+      final List<MappitRoute>? routes,
+      this.geofenceCount})
+      : _routes = routes;
+
+  factory _$ContainedRouteCategoryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ContainedRouteCategoryImplFromJson(json);
+
+  /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
+  /// from the API.
+  @override
+  @JsonKey()
+  @GeofenceCategoryConverter()
+  final GeofenceCategory category;
+
+  /// List of routes that contain the geofences in the category.
+  final List<MappitRoute>? _routes;
+
+  /// List of routes that contain the geofences in the category.
+  @override
+  List<MappitRoute>? get routes {
+    final value = _routes;
+    if (value == null) return null;
+    if (_routes is EqualUnmodifiableListView) return _routes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Number of geofences per category.
+  @override
+  final int? geofenceCount;
+
+  @override
+  String toString() {
+    return 'ContainedRouteCategory(category: $category, routes: $routes, geofenceCount: $geofenceCount)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ContainedRouteCategoryImpl &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            const DeepCollectionEquality().equals(other._routes, _routes) &&
+            (identical(other.geofenceCount, geofenceCount) ||
+                other.geofenceCount == geofenceCount));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, category,
+      const DeepCollectionEquality().hash(_routes), geofenceCount);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ContainedRouteCategoryImplCopyWith<_$ContainedRouteCategoryImpl>
+      get copyWith => __$$ContainedRouteCategoryImplCopyWithImpl<
+          _$ContainedRouteCategoryImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ContainedRouteCategoryImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ContainedRouteCategory implements ContainedRouteCategory {
+  const factory _ContainedRouteCategory(
+      {@GeofenceCategoryConverter() final GeofenceCategory category,
+      final List<MappitRoute>? routes,
+      final int? geofenceCount}) = _$ContainedRouteCategoryImpl;
+
+  factory _ContainedRouteCategory.fromJson(Map<String, dynamic> json) =
+      _$ContainedRouteCategoryImpl.fromJson;
+
+  @override
+
+  /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
+  /// from the API.
+  @GeofenceCategoryConverter()
+  GeofenceCategory get category;
+  @override
+
+  /// List of routes that contain the geofences in the category.
+  List<MappitRoute>? get routes;
+  @override
+
+  /// Number of geofences per category.
+  int? get geofenceCount;
+  @override
+  @JsonKey(ignore: true)
+  _$$ContainedRouteCategoryImplCopyWith<_$ContainedRouteCategoryImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
