@@ -14,3 +14,5 @@ part 'src/labor_hour.dart';
 part 'src/profile.dart';
 part 'src/home_config.dart';
 part 'src/fee_day.dart';
+part 'src/polygon_detail.dart';
+part 'src/contained_route_category.dart';

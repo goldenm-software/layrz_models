@@ -245,3 +245,38 @@ Map<String, dynamic> _$$MappitFreeDayImplToJson(_$MappitFreeDayImpl instance) =>
       'assets': instance.assets?.map((e) => e.toJson()).toList(),
       'assetsIds': instance.assetsIds,
     };
+
+_$PolygonDetailsImpl _$$PolygonDetailsImplFromJson(Map<String, dynamic> json) =>
+    _$PolygonDetailsImpl(
+      polygon: Geofence.fromJson(json['polygon'] as Map<String, dynamic>),
+      containedRoutes: ContainedRouteCategory.fromJson(
+          json['containedRoutes'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$PolygonDetailsImplToJson(
+        _$PolygonDetailsImpl instance) =>
+    <String, dynamic>{
+      'polygon': instance.polygon.toJson(),
+      'containedRoutes': instance.containedRoutes.toJson(),
+    };
+
+_$ContainedRouteCategoryImpl _$$ContainedRouteCategoryImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ContainedRouteCategoryImpl(
+      category: json['category'] == null
+          ? GeofenceCategory.none
+          : const GeofenceCategoryConverter()
+              .fromJson(json['category'] as String),
+      routes: (json['routes'] as List<dynamic>?)
+          ?.map((e) => MappitRoute.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      geofenceCount: (json['geofenceCount'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$$ContainedRouteCategoryImplToJson(
+        _$ContainedRouteCategoryImpl instance) =>
+    <String, dynamic>{
+      'category': const GeofenceCategoryConverter().toJson(instance.category),
+      'routes': instance.routes?.map((e) => e.toJson()).toList(),
+      'geofenceCount': instance.geofenceCount,
+    };
