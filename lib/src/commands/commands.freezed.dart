@@ -1885,8 +1885,8 @@ CommandDefinition _$CommandDefinitionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CommandDefinition {
-  /// [command] is the name of the command, this is also the translation key.
-  String get command => throw _privateConstructorUsedError;
+  /// [name] is the name of the command, this is also the translation key.
+  String get name => throw _privateConstructorUsedError;
 
   /// [description] is the fallback name of the command, when the translation is not available.
   String? get description => throw _privateConstructorUsedError;
@@ -1912,7 +1912,7 @@ abstract class $CommandDefinitionCopyWith<$Res> {
       _$CommandDefinitionCopyWithImpl<$Res, CommandDefinition>;
   @useResult
   $Res call(
-      {String command,
+      {String name,
       String? description,
       @CommandDefinitionSourceConverter() CommandDefinitionSource source,
       List<CommandPayloadDefinition> payload});
@@ -1931,15 +1931,15 @@ class _$CommandDefinitionCopyWithImpl<$Res, $Val extends CommandDefinition>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? command = null,
+    Object? name = null,
     Object? description = freezed,
     Object? source = null,
     Object? payload = null,
   }) {
     return _then(_value.copyWith(
-      command: null == command
-          ? _value.command
-          : command // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       description: freezed == description
           ? _value.description
@@ -1966,7 +1966,7 @@ abstract class _$$CommandDefinitionImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String command,
+      {String name,
       String? description,
       @CommandDefinitionSourceConverter() CommandDefinitionSource source,
       List<CommandPayloadDefinition> payload});
@@ -1983,15 +1983,15 @@ class __$$CommandDefinitionImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? command = null,
+    Object? name = null,
     Object? description = freezed,
     Object? source = null,
     Object? payload = null,
   }) {
     return _then(_$CommandDefinitionImpl(
-      command: null == command
-          ? _value.command
-          : command // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       description: freezed == description
           ? _value.description
@@ -2013,7 +2013,7 @@ class __$$CommandDefinitionImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CommandDefinitionImpl implements _CommandDefinition {
   const _$CommandDefinitionImpl(
-      {required this.command,
+      {required this.name,
       this.description,
       @CommandDefinitionSourceConverter() required this.source,
       required final List<CommandPayloadDefinition> payload})
@@ -2022,9 +2022,9 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
   factory _$CommandDefinitionImpl.fromJson(Map<String, dynamic> json) =>
       _$$CommandDefinitionImplFromJson(json);
 
-  /// [command] is the name of the command, this is also the translation key.
+  /// [name] is the name of the command, this is also the translation key.
   @override
-  final String command;
+  final String name;
 
   /// [description] is the fallback name of the command, when the translation is not available.
   @override
@@ -2048,7 +2048,7 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
 
   @override
   String toString() {
-    return 'CommandDefinition(command: $command, description: $description, source: $source, payload: $payload)';
+    return 'CommandDefinition(name: $name, description: $description, source: $source, payload: $payload)';
   }
 
   @override
@@ -2056,7 +2056,7 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CommandDefinitionImpl &&
-            (identical(other.command, command) || other.command == command) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.source, source) || other.source == source) &&
@@ -2065,7 +2065,7 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, command, description, source,
+  int get hashCode => Object.hash(runtimeType, name, description, source,
       const DeepCollectionEquality().hash(_payload));
 
   @JsonKey(ignore: true)
@@ -2085,7 +2085,7 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
 
 abstract class _CommandDefinition implements CommandDefinition {
   const factory _CommandDefinition(
-          {required final String command,
+          {required final String name,
           final String? description,
           @CommandDefinitionSourceConverter()
           required final CommandDefinitionSource source,
@@ -2097,8 +2097,8 @@ abstract class _CommandDefinition implements CommandDefinition {
 
   @override
 
-  /// [command] is the name of the command, this is also the translation key.
-  String get command;
+  /// [name] is the name of the command, this is also the translation key.
+  String get name;
   @override
 
   /// [description] is the fallback name of the command, when the translation is not available.
@@ -2125,11 +2125,11 @@ CommandDefinitionInput _$CommandDefinitionInputFromJson(
 
 /// @nodoc
 mixin _$CommandDefinitionInput {
-  /// [command] is the name of the command, this is also the translation key.
-  String get command => throw _privateConstructorUsedError;
+  /// [name] is the name of the command, this is also the translation key.
+  String get name => throw _privateConstructorUsedError;
 
-  /// [command] is the name of the command, this is also the translation key.
-  set command(String value) => throw _privateConstructorUsedError;
+  /// [name] is the name of the command, this is also the translation key.
+  set name(String value) => throw _privateConstructorUsedError;
 
   /// [description] is the fallback name of the command, when the translation is not available.
   String get description => throw _privateConstructorUsedError;
@@ -2167,7 +2167,7 @@ abstract class $CommandDefinitionInputCopyWith<$Res> {
       _$CommandDefinitionInputCopyWithImpl<$Res, CommandDefinitionInput>;
   @useResult
   $Res call(
-      {String command,
+      {String name,
       String description,
       @CommandDefinitionSourceConverter() CommandDefinitionSource source,
       List<CommandPayloadDefinitionInput> payload});
@@ -2187,15 +2187,15 @@ class _$CommandDefinitionInputCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? command = null,
+    Object? name = null,
     Object? description = null,
     Object? source = null,
     Object? payload = null,
   }) {
     return _then(_value.copyWith(
-      command: null == command
-          ? _value.command
-          : command // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -2223,7 +2223,7 @@ abstract class _$$CommandDefinitionInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String command,
+      {String name,
       String description,
       @CommandDefinitionSourceConverter() CommandDefinitionSource source,
       List<CommandPayloadDefinitionInput> payload});
@@ -2242,15 +2242,15 @@ class __$$CommandDefinitionInputImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? command = null,
+    Object? name = null,
     Object? description = null,
     Object? source = null,
     Object? payload = null,
   }) {
     return _then(_$CommandDefinitionInputImpl(
-      command: null == command
-          ? _value.command
-          : command // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       description: null == description
           ? _value.description
@@ -2272,7 +2272,7 @@ class __$$CommandDefinitionInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CommandDefinitionInputImpl implements _CommandDefinitionInput {
   _$CommandDefinitionInputImpl(
-      {this.command = '',
+      {this.name = '',
       this.description = '',
       @CommandDefinitionSourceConverter()
       this.source = CommandDefinitionSource.layrzLink,
@@ -2281,10 +2281,10 @@ class _$CommandDefinitionInputImpl implements _CommandDefinitionInput {
   factory _$CommandDefinitionInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$CommandDefinitionInputImplFromJson(json);
 
-  /// [command] is the name of the command, this is also the translation key.
+  /// [name] is the name of the command, this is also the translation key.
   @override
   @JsonKey()
-  String command;
+  String name;
 
   /// [description] is the fallback name of the command, when the translation is not available.
   @override
@@ -2304,7 +2304,7 @@ class _$CommandDefinitionInputImpl implements _CommandDefinitionInput {
 
   @override
   String toString() {
-    return 'CommandDefinitionInput(command: $command, description: $description, source: $source, payload: $payload)';
+    return 'CommandDefinitionInput(name: $name, description: $description, source: $source, payload: $payload)';
   }
 
   @JsonKey(ignore: true)
@@ -2324,7 +2324,7 @@ class _$CommandDefinitionInputImpl implements _CommandDefinitionInput {
 
 abstract class _CommandDefinitionInput implements CommandDefinitionInput {
   factory _CommandDefinitionInput(
-          {String command,
+          {String name,
           String description,
           @CommandDefinitionSourceConverter() CommandDefinitionSource source,
           List<CommandPayloadDefinitionInput> payload}) =
@@ -2335,11 +2335,11 @@ abstract class _CommandDefinitionInput implements CommandDefinitionInput {
 
   @override
 
-  /// [command] is the name of the command, this is also the translation key.
-  String get command;
+  /// [name] is the name of the command, this is also the translation key.
+  String get name;
 
-  /// [command] is the name of the command, this is also the translation key.
-  set command(String value);
+  /// [name] is the name of the command, this is also the translation key.
+  set name(String value);
   @override
 
   /// [description] is the fallback name of the command, when the translation is not available.

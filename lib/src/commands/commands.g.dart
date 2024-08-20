@@ -161,7 +161,7 @@ Map<String, dynamic> _$$CommandPayloadDefinitionInputImplToJson(
 _$CommandDefinitionImpl _$$CommandDefinitionImplFromJson(
         Map<String, dynamic> json) =>
     _$CommandDefinitionImpl(
-      command: json['command'] as String,
+      name: json['name'] as String,
       description: json['description'] as String?,
       source: const CommandDefinitionSourceConverter()
           .fromJson(json['source'] as String),
@@ -174,7 +174,7 @@ _$CommandDefinitionImpl _$$CommandDefinitionImplFromJson(
 Map<String, dynamic> _$$CommandDefinitionImplToJson(
         _$CommandDefinitionImpl instance) =>
     <String, dynamic>{
-      'command': instance.command,
+      'name': instance.name,
       'description': instance.description,
       'source':
           const CommandDefinitionSourceConverter().toJson(instance.source),
@@ -184,7 +184,7 @@ Map<String, dynamic> _$$CommandDefinitionImplToJson(
 _$CommandDefinitionInputImpl _$$CommandDefinitionInputImplFromJson(
         Map<String, dynamic> json) =>
     _$CommandDefinitionInputImpl(
-      command: json['command'] as String? ?? '',
+      name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
       source: json['source'] == null
           ? CommandDefinitionSource.layrzLink
@@ -200,7 +200,7 @@ _$CommandDefinitionInputImpl _$$CommandDefinitionInputImplFromJson(
 Map<String, dynamic> _$$CommandDefinitionInputImplToJson(
         _$CommandDefinitionInputImpl instance) =>
     <String, dynamic>{
-      'command': instance.command,
+      'name': instance.name,
       'description': instance.description,
       'source':
           const CommandDefinitionSourceConverter().toJson(instance.source),

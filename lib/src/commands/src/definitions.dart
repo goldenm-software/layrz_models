@@ -96,8 +96,8 @@ class CommandPayloadDefinitionInput with _$CommandPayloadDefinitionInput {
 @freezed
 class CommandDefinition with _$CommandDefinition {
   const factory CommandDefinition({
-    /// [command] is the name of the command, this is also the translation key.
-    required String command,
+    /// [name] is the name of the command, this is also the translation key.
+    required String name,
 
     /// [description] is the fallback name of the command, when the translation is not available.
     String? description,
@@ -115,8 +115,8 @@ class CommandDefinition with _$CommandDefinition {
 @unfreezed
 class CommandDefinitionInput with _$CommandDefinitionInput {
   factory CommandDefinitionInput({
-    /// [command] is the name of the command, this is also the translation key.
-    @Default('') String command,
+    /// [name] is the name of the command, this is also the translation key.
+    @Default('') String name,
 
     /// [description] is the fallback name of the command, when the translation is not available.
     @Default('') String description,
