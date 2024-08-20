@@ -1628,6 +1628,15 @@ _$ModelImpl _$$ModelImplFromJson(Map<String, dynamic> json) => _$ModelImpl(
           : InboundProtocol.fromJson(json['protocol'] as Map<String, dynamic>),
       protocolId: json['protocolId'] as String?,
       isGeneric: json['isGeneric'] as bool?,
+      commandsStructure: (json['commandsStructure'] as List<dynamic>?)
+              ?.map(
+                  (e) => CommandDefinition.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      configStructure: (json['configStructure'] as List<dynamic>?)
+              ?.map((e) => ConfigDefinition.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
@@ -1638,6 +1647,42 @@ Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
       'protocol': instance.protocol?.toJson(),
       'protocolId': instance.protocolId,
       'isGeneric': instance.isGeneric,
+      'commandsStructure':
+          instance.commandsStructure.map((e) => e.toJson()).toList(),
+      'configStructure':
+          instance.configStructure.map((e) => e.toJson()).toList(),
+    };
+
+_$ModelInputImpl _$$ModelInputImplFromJson(Map<String, dynamic> json) =>
+    _$ModelInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      flespiId: json['flespiId'] as String?,
+      protocolId: json['protocolId'] as String?,
+      isGeneric: json['isGeneric'] as bool? ?? false,
+      commandsStructure: (json['commandsStructure'] as List<dynamic>?)
+              ?.map((e) =>
+                  CommandDefinitionInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      configStructure: (json['configStructure'] as List<dynamic>?)
+              ?.map((e) =>
+                  ConfigDefinitionInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$ModelInputImplToJson(_$ModelInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'flespiId': instance.flespiId,
+      'protocolId': instance.protocolId,
+      'isGeneric': instance.isGeneric,
+      'commandsStructure':
+          instance.commandsStructure.map((e) => e.toJson()).toList(),
+      'configStructure':
+          instance.configStructure.map((e) => e.toJson()).toList(),
     };
 
 _$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>

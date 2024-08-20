@@ -18165,6 +18165,14 @@ mixin _$Model {
   /// [isGeneric] is true if the model is generic.
   bool? get isGeneric => throw _privateConstructorUsedError;
 
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinition> get commandsStructure =>
+      throw _privateConstructorUsedError;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinition> get configStructure =>
+      throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ModelCopyWith<Model> get copyWith => throw _privateConstructorUsedError;
@@ -18181,7 +18189,9 @@ abstract class $ModelCopyWith<$Res> {
       String? flespiId,
       InboundProtocol? protocol,
       String? protocolId,
-      bool? isGeneric});
+      bool? isGeneric,
+      List<CommandDefinition> commandsStructure,
+      List<ConfigDefinition> configStructure});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
 }
@@ -18205,6 +18215,8 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
     Object? protocol = freezed,
     Object? protocolId = freezed,
     Object? isGeneric = freezed,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -18231,6 +18243,14 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
           ? _value.isGeneric
           : isGeneric // ignore: cast_nullable_to_non_nullable
               as bool?,
+      commandsStructure: null == commandsStructure
+          ? _value.commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinition>,
+      configStructure: null == configStructure
+          ? _value.configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinition>,
     ) as $Val);
   }
 
@@ -18260,7 +18280,9 @@ abstract class _$$ModelImplCopyWith<$Res> implements $ModelCopyWith<$Res> {
       String? flespiId,
       InboundProtocol? protocol,
       String? protocolId,
-      bool? isGeneric});
+      bool? isGeneric,
+      List<CommandDefinition> commandsStructure,
+      List<ConfigDefinition> configStructure});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -18283,6 +18305,8 @@ class __$$ModelImplCopyWithImpl<$Res>
     Object? protocol = freezed,
     Object? protocolId = freezed,
     Object? isGeneric = freezed,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
   }) {
     return _then(_$ModelImpl(
       id: null == id
@@ -18309,6 +18333,14 @@ class __$$ModelImplCopyWithImpl<$Res>
           ? _value.isGeneric
           : isGeneric // ignore: cast_nullable_to_non_nullable
               as bool?,
+      commandsStructure: null == commandsStructure
+          ? _value._commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinition>,
+      configStructure: null == configStructure
+          ? _value._configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinition>,
     ));
   }
 }
@@ -18322,7 +18354,11 @@ class _$ModelImpl implements _Model {
       this.flespiId,
       this.protocol,
       this.protocolId,
-      this.isGeneric});
+      this.isGeneric,
+      final List<CommandDefinition> commandsStructure = const [],
+      final List<ConfigDefinition> configStructure = const []})
+      : _commandsStructure = commandsStructure,
+        _configStructure = configStructure;
 
   factory _$ModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ModelImplFromJson(json);
@@ -18352,9 +18388,34 @@ class _$ModelImpl implements _Model {
   @override
   final bool? isGeneric;
 
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  final List<CommandDefinition> _commandsStructure;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  @override
+  @JsonKey()
+  List<CommandDefinition> get commandsStructure {
+    if (_commandsStructure is EqualUnmodifiableListView)
+      return _commandsStructure;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_commandsStructure);
+  }
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  final List<ConfigDefinition> _configStructure;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  @override
+  @JsonKey()
+  List<ConfigDefinition> get configStructure {
+    if (_configStructure is EqualUnmodifiableListView) return _configStructure;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_configStructure);
+  }
+
   @override
   String toString() {
-    return 'Model(id: $id, name: $name, flespiId: $flespiId, protocol: $protocol, protocolId: $protocolId, isGeneric: $isGeneric)';
+    return 'Model(id: $id, name: $name, flespiId: $flespiId, protocol: $protocol, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure)';
   }
 
   @override
@@ -18371,13 +18432,25 @@ class _$ModelImpl implements _Model {
             (identical(other.protocolId, protocolId) ||
                 other.protocolId == protocolId) &&
             (identical(other.isGeneric, isGeneric) ||
-                other.isGeneric == isGeneric));
+                other.isGeneric == isGeneric) &&
+            const DeepCollectionEquality()
+                .equals(other._commandsStructure, _commandsStructure) &&
+            const DeepCollectionEquality()
+                .equals(other._configStructure, _configStructure));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, name, flespiId, protocol, protocolId, isGeneric);
+      runtimeType,
+      id,
+      name,
+      flespiId,
+      protocol,
+      protocolId,
+      isGeneric,
+      const DeepCollectionEquality().hash(_commandsStructure),
+      const DeepCollectionEquality().hash(_configStructure));
 
   @JsonKey(ignore: true)
   @override
@@ -18400,7 +18473,9 @@ abstract class _Model implements Model {
       final String? flespiId,
       final InboundProtocol? protocol,
       final String? protocolId,
-      final bool? isGeneric}) = _$ModelImpl;
+      final bool? isGeneric,
+      final List<CommandDefinition> commandsStructure,
+      final List<ConfigDefinition> configStructure}) = _$ModelImpl;
 
   factory _Model.fromJson(Map<String, dynamic> json) = _$ModelImpl.fromJson;
 
@@ -18430,8 +18505,353 @@ abstract class _Model implements Model {
   /// [isGeneric] is true if the model is generic.
   bool? get isGeneric;
   @override
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinition> get commandsStructure;
+  @override
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinition> get configStructure;
+  @override
   @JsonKey(ignore: true)
   _$$ModelImplCopyWith<_$ModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ModelInput _$ModelInputFromJson(Map<String, dynamic> json) {
+  return _ModelInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ModelInput {
+  /// [id] is the unique identifier of the model.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] is the unique identifier of the model.
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the model.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the model.
+  set name(String value) => throw _privateConstructorUsedError;
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  String? get flespiId => throw _privateConstructorUsedError;
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  set flespiId(String? value) => throw _privateConstructorUsedError;
+
+  /// [protocolId] is the ID of the protocol
+  String? get protocolId => throw _privateConstructorUsedError;
+
+  /// [protocolId] is the ID of the protocol
+  set protocolId(String? value) => throw _privateConstructorUsedError;
+
+  /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  bool get isGeneric => throw _privateConstructorUsedError;
+
+  /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  set isGeneric(bool value) => throw _privateConstructorUsedError;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinitionInput> get commandsStructure =>
+      throw _privateConstructorUsedError;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  set commandsStructure(List<CommandDefinitionInput> value) =>
+      throw _privateConstructorUsedError;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinitionInput> get configStructure =>
+      throw _privateConstructorUsedError;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  set configStructure(List<ConfigDefinitionInput> value) =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ModelInputCopyWith<ModelInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ModelInputCopyWith<$Res> {
+  factory $ModelInputCopyWith(
+          ModelInput value, $Res Function(ModelInput) then) =
+      _$ModelInputCopyWithImpl<$Res, ModelInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String? flespiId,
+      String? protocolId,
+      bool isGeneric,
+      List<CommandDefinitionInput> commandsStructure,
+      List<ConfigDefinitionInput> configStructure});
+}
+
+/// @nodoc
+class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
+    implements $ModelInputCopyWith<$Res> {
+  _$ModelInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? flespiId = freezed,
+    Object? protocolId = freezed,
+    Object? isGeneric = null,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      flespiId: freezed == flespiId
+          ? _value.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isGeneric: null == isGeneric
+          ? _value.isGeneric
+          : isGeneric // ignore: cast_nullable_to_non_nullable
+              as bool,
+      commandsStructure: null == commandsStructure
+          ? _value.commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinitionInput>,
+      configStructure: null == configStructure
+          ? _value.configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinitionInput>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ModelInputImplCopyWith<$Res>
+    implements $ModelInputCopyWith<$Res> {
+  factory _$$ModelInputImplCopyWith(
+          _$ModelInputImpl value, $Res Function(_$ModelInputImpl) then) =
+      __$$ModelInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String? flespiId,
+      String? protocolId,
+      bool isGeneric,
+      List<CommandDefinitionInput> commandsStructure,
+      List<ConfigDefinitionInput> configStructure});
+}
+
+/// @nodoc
+class __$$ModelInputImplCopyWithImpl<$Res>
+    extends _$ModelInputCopyWithImpl<$Res, _$ModelInputImpl>
+    implements _$$ModelInputImplCopyWith<$Res> {
+  __$$ModelInputImplCopyWithImpl(
+      _$ModelInputImpl _value, $Res Function(_$ModelInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? flespiId = freezed,
+    Object? protocolId = freezed,
+    Object? isGeneric = null,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
+  }) {
+    return _then(_$ModelInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      flespiId: freezed == flespiId
+          ? _value.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isGeneric: null == isGeneric
+          ? _value.isGeneric
+          : isGeneric // ignore: cast_nullable_to_non_nullable
+              as bool,
+      commandsStructure: null == commandsStructure
+          ? _value.commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinitionInput>,
+      configStructure: null == configStructure
+          ? _value.configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinitionInput>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ModelInputImpl implements _ModelInput {
+  _$ModelInputImpl(
+      {this.id,
+      this.name = '',
+      this.flespiId,
+      this.protocolId,
+      this.isGeneric = false,
+      this.commandsStructure = const [],
+      this.configStructure = const []});
+
+  factory _$ModelInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ModelInputImplFromJson(json);
+
+  /// [id] is the unique identifier of the model.
+  @override
+  String? id;
+
+  /// [name] is the name of the model.
+  @override
+  @JsonKey()
+  String name;
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  @override
+  String? flespiId;
+
+  /// [protocolId] is the ID of the protocol
+  @override
+  String? protocolId;
+
+  /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  @override
+  @JsonKey()
+  bool isGeneric;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  @override
+  @JsonKey()
+  List<CommandDefinitionInput> commandsStructure;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  @override
+  @JsonKey()
+  List<ConfigDefinitionInput> configStructure;
+
+  @override
+  String toString() {
+    return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModelInputImplCopyWith<_$ModelInputImpl> get copyWith =>
+      __$$ModelInputImplCopyWithImpl<_$ModelInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ModelInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ModelInput implements ModelInput {
+  factory _ModelInput(
+      {String? id,
+      String name,
+      String? flespiId,
+      String? protocolId,
+      bool isGeneric,
+      List<CommandDefinitionInput> commandsStructure,
+      List<ConfigDefinitionInput> configStructure}) = _$ModelInputImpl;
+
+  factory _ModelInput.fromJson(Map<String, dynamic> json) =
+      _$ModelInputImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier of the model.
+  String? get id;
+
+  /// [id] is the unique identifier of the model.
+  set id(String? value);
+  @override
+
+  /// [name] is the name of the model.
+  String get name;
+
+  /// [name] is the name of the model.
+  set name(String value);
+  @override
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  String? get flespiId;
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  set flespiId(String? value);
+  @override
+
+  /// [protocolId] is the ID of the protocol
+  String? get protocolId;
+
+  /// [protocolId] is the ID of the protocol
+  set protocolId(String? value);
+  @override
+
+  /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  bool get isGeneric;
+
+  /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  set isGeneric(bool value);
+  @override
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinitionInput> get commandsStructure;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  set commandsStructure(List<CommandDefinitionInput> value);
+  @override
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinitionInput> get configStructure;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  set configStructure(List<ConfigDefinitionInput> value);
+  @override
+  @JsonKey(ignore: true)
+  _$$ModelInputImplCopyWith<_$ModelInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
