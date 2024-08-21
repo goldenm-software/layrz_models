@@ -2665,7 +2665,7 @@ PolygonDetails _$PolygonDetailsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PolygonDetails {
   Geofence get polygon => throw _privateConstructorUsedError;
-  ContainedRouteCategory get containedRoutes =>
+  List<ContainedRouteCategory> get containedRoutes =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2680,10 +2680,9 @@ abstract class $PolygonDetailsCopyWith<$Res> {
           PolygonDetails value, $Res Function(PolygonDetails) then) =
       _$PolygonDetailsCopyWithImpl<$Res, PolygonDetails>;
   @useResult
-  $Res call({Geofence polygon, ContainedRouteCategory containedRoutes});
+  $Res call({Geofence polygon, List<ContainedRouteCategory> containedRoutes});
 
   $GeofenceCopyWith<$Res> get polygon;
-  $ContainedRouteCategoryCopyWith<$Res> get containedRoutes;
 }
 
 /// @nodoc
@@ -2710,7 +2709,7 @@ class _$PolygonDetailsCopyWithImpl<$Res, $Val extends PolygonDetails>
       containedRoutes: null == containedRoutes
           ? _value.containedRoutes
           : containedRoutes // ignore: cast_nullable_to_non_nullable
-              as ContainedRouteCategory,
+              as List<ContainedRouteCategory>,
     ) as $Val);
   }
 
@@ -2719,15 +2718,6 @@ class _$PolygonDetailsCopyWithImpl<$Res, $Val extends PolygonDetails>
   $GeofenceCopyWith<$Res> get polygon {
     return $GeofenceCopyWith<$Res>(_value.polygon, (value) {
       return _then(_value.copyWith(polygon: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ContainedRouteCategoryCopyWith<$Res> get containedRoutes {
-    return $ContainedRouteCategoryCopyWith<$Res>(_value.containedRoutes,
-        (value) {
-      return _then(_value.copyWith(containedRoutes: value) as $Val);
     });
   }
 }
@@ -2740,12 +2730,10 @@ abstract class _$$PolygonDetailsImplCopyWith<$Res>
       __$$PolygonDetailsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Geofence polygon, ContainedRouteCategory containedRoutes});
+  $Res call({Geofence polygon, List<ContainedRouteCategory> containedRoutes});
 
   @override
   $GeofenceCopyWith<$Res> get polygon;
-  @override
-  $ContainedRouteCategoryCopyWith<$Res> get containedRoutes;
 }
 
 /// @nodoc
@@ -2768,9 +2756,9 @@ class __$$PolygonDetailsImplCopyWithImpl<$Res>
           : polygon // ignore: cast_nullable_to_non_nullable
               as Geofence,
       containedRoutes: null == containedRoutes
-          ? _value.containedRoutes
+          ? _value._containedRoutes
           : containedRoutes // ignore: cast_nullable_to_non_nullable
-              as ContainedRouteCategory,
+              as List<ContainedRouteCategory>,
     ));
   }
 }
@@ -2779,15 +2767,22 @@ class __$$PolygonDetailsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$PolygonDetailsImpl implements _PolygonDetails {
   const _$PolygonDetailsImpl(
-      {required this.polygon, required this.containedRoutes});
+      {required this.polygon,
+      required final List<ContainedRouteCategory> containedRoutes})
+      : _containedRoutes = containedRoutes;
 
   factory _$PolygonDetailsImpl.fromJson(Map<String, dynamic> json) =>
       _$$PolygonDetailsImplFromJson(json);
 
   @override
   final Geofence polygon;
+  final List<ContainedRouteCategory> _containedRoutes;
   @override
-  final ContainedRouteCategory containedRoutes;
+  List<ContainedRouteCategory> get containedRoutes {
+    if (_containedRoutes is EqualUnmodifiableListView) return _containedRoutes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_containedRoutes);
+  }
 
   @override
   String toString() {
@@ -2800,13 +2795,14 @@ class _$PolygonDetailsImpl implements _PolygonDetails {
         (other.runtimeType == runtimeType &&
             other is _$PolygonDetailsImpl &&
             (identical(other.polygon, polygon) || other.polygon == polygon) &&
-            (identical(other.containedRoutes, containedRoutes) ||
-                other.containedRoutes == containedRoutes));
+            const DeepCollectionEquality()
+                .equals(other._containedRoutes, _containedRoutes));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, polygon, containedRoutes);
+  int get hashCode => Object.hash(runtimeType, polygon,
+      const DeepCollectionEquality().hash(_containedRoutes));
 
   @JsonKey(ignore: true)
   @override
@@ -2826,7 +2822,7 @@ class _$PolygonDetailsImpl implements _PolygonDetails {
 abstract class _PolygonDetails implements PolygonDetails {
   const factory _PolygonDetails(
           {required final Geofence polygon,
-          required final ContainedRouteCategory containedRoutes}) =
+          required final List<ContainedRouteCategory> containedRoutes}) =
       _$PolygonDetailsImpl;
 
   factory _PolygonDetails.fromJson(Map<String, dynamic> json) =
@@ -2835,7 +2831,7 @@ abstract class _PolygonDetails implements PolygonDetails {
   @override
   Geofence get polygon;
   @override
-  ContainedRouteCategory get containedRoutes;
+  List<ContainedRouteCategory> get containedRoutes;
   @override
   @JsonKey(ignore: true)
   _$$PolygonDetailsImplCopyWith<_$PolygonDetailsImpl> get copyWith =>
@@ -2855,7 +2851,7 @@ mixin _$ContainedRouteCategory {
   GeofenceCategory get category => throw _privateConstructorUsedError;
 
   /// List of routes that contain the geofences in the category.
-  List<MappitRoute>? get routes => throw _privateConstructorUsedError;
+  List<MappitRoute> get routes => throw _privateConstructorUsedError;
 
   /// Number of geofences per category.
   int? get geofenceCount => throw _privateConstructorUsedError;
@@ -2874,7 +2870,7 @@ abstract class $ContainedRouteCategoryCopyWith<$Res> {
   @useResult
   $Res call(
       {@GeofenceCategoryConverter() GeofenceCategory category,
-      List<MappitRoute>? routes,
+      List<MappitRoute> routes,
       int? geofenceCount});
 }
 
@@ -2893,7 +2889,7 @@ class _$ContainedRouteCategoryCopyWithImpl<$Res,
   @override
   $Res call({
     Object? category = null,
-    Object? routes = freezed,
+    Object? routes = null,
     Object? geofenceCount = freezed,
   }) {
     return _then(_value.copyWith(
@@ -2901,10 +2897,10 @@ class _$ContainedRouteCategoryCopyWithImpl<$Res,
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as GeofenceCategory,
-      routes: freezed == routes
+      routes: null == routes
           ? _value.routes
           : routes // ignore: cast_nullable_to_non_nullable
-              as List<MappitRoute>?,
+              as List<MappitRoute>,
       geofenceCount: freezed == geofenceCount
           ? _value.geofenceCount
           : geofenceCount // ignore: cast_nullable_to_non_nullable
@@ -2924,7 +2920,7 @@ abstract class _$$ContainedRouteCategoryImplCopyWith<$Res>
   @useResult
   $Res call(
       {@GeofenceCategoryConverter() GeofenceCategory category,
-      List<MappitRoute>? routes,
+      List<MappitRoute> routes,
       int? geofenceCount});
 }
 
@@ -2942,7 +2938,7 @@ class __$$ContainedRouteCategoryImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? category = null,
-    Object? routes = freezed,
+    Object? routes = null,
     Object? geofenceCount = freezed,
   }) {
     return _then(_$ContainedRouteCategoryImpl(
@@ -2950,10 +2946,10 @@ class __$$ContainedRouteCategoryImplCopyWithImpl<$Res>
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as GeofenceCategory,
-      routes: freezed == routes
+      routes: null == routes
           ? _value._routes
           : routes // ignore: cast_nullable_to_non_nullable
-              as List<MappitRoute>?,
+              as List<MappitRoute>,
       geofenceCount: freezed == geofenceCount
           ? _value.geofenceCount
           : geofenceCount // ignore: cast_nullable_to_non_nullable
@@ -2967,7 +2963,7 @@ class __$$ContainedRouteCategoryImplCopyWithImpl<$Res>
 class _$ContainedRouteCategoryImpl implements _ContainedRouteCategory {
   const _$ContainedRouteCategoryImpl(
       {@GeofenceCategoryConverter() this.category = GeofenceCategory.none,
-      final List<MappitRoute>? routes,
+      final List<MappitRoute> routes = const [],
       this.geofenceCount})
       : _routes = routes;
 
@@ -2982,16 +2978,15 @@ class _$ContainedRouteCategoryImpl implements _ContainedRouteCategory {
   final GeofenceCategory category;
 
   /// List of routes that contain the geofences in the category.
-  final List<MappitRoute>? _routes;
+  final List<MappitRoute> _routes;
 
   /// List of routes that contain the geofences in the category.
   @override
-  List<MappitRoute>? get routes {
-    final value = _routes;
-    if (value == null) return null;
+  @JsonKey()
+  List<MappitRoute> get routes {
     if (_routes is EqualUnmodifiableListView) return _routes;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_routes);
   }
 
   /// Number of geofences per category.
@@ -3038,7 +3033,7 @@ class _$ContainedRouteCategoryImpl implements _ContainedRouteCategory {
 abstract class _ContainedRouteCategory implements ContainedRouteCategory {
   const factory _ContainedRouteCategory(
       {@GeofenceCategoryConverter() final GeofenceCategory category,
-      final List<MappitRoute>? routes,
+      final List<MappitRoute> routes,
       final int? geofenceCount}) = _$ContainedRouteCategoryImpl;
 
   factory _ContainedRouteCategory.fromJson(Map<String, dynamic> json) =
@@ -3053,7 +3048,7 @@ abstract class _ContainedRouteCategory implements ContainedRouteCategory {
   @override
 
   /// List of routes that contain the geofences in the category.
-  List<MappitRoute>? get routes;
+  List<MappitRoute> get routes;
   @override
 
   /// Number of geofences per category.
@@ -3072,19 +3067,30 @@ MappitReportInputMulti _$MappitReportInputMultiFromJson(
 /// @nodoc
 mixin _$MappitReportInputMulti {
   /// Start date for the report.
-  @TimestampOrNullConverter()
-  DateTime? get startAt => throw _privateConstructorUsedError;
+  double? get startAt => throw _privateConstructorUsedError;
+
+  /// Start date for the report.
+  set startAt(double? value) => throw _privateConstructorUsedError;
 
   /// End date for the report.
-  @TimestampOrNullConverter()
-  DateTime? get endAt => throw _privateConstructorUsedError;
+  double? get endAt => throw _privateConstructorUsedError;
+
+  /// End date for the report.
+  set endAt(double? value) => throw _privateConstructorUsedError;
 
   /// Time filter (Defined in seconds).
   @DurationOrNullConverter()
   Duration? get timeFilter => throw _privateConstructorUsedError;
 
+  /// Time filter (Defined in seconds).
+  @DurationOrNullConverter()
+  set timeFilter(Duration? value) => throw _privateConstructorUsedError;
+
   /// Seller IDs
   List<String>? get sellerIds => throw _privateConstructorUsedError;
+
+  /// Seller IDs
+  set sellerIds(List<String>? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3099,8 +3105,8 @@ abstract class $MappitReportInputMultiCopyWith<$Res> {
       _$MappitReportInputMultiCopyWithImpl<$Res, MappitReportInputMulti>;
   @useResult
   $Res call(
-      {@TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
+      {double? startAt,
+      double? endAt,
       @DurationOrNullConverter() Duration? timeFilter,
       List<String>? sellerIds});
 }
@@ -3128,11 +3134,11 @@ class _$MappitReportInputMultiCopyWithImpl<$Res,
       startAt: freezed == startAt
           ? _value.startAt
           : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as double?,
       endAt: freezed == endAt
           ? _value.endAt
           : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as double?,
       timeFilter: freezed == timeFilter
           ? _value.timeFilter
           : timeFilter // ignore: cast_nullable_to_non_nullable
@@ -3155,8 +3161,8 @@ abstract class _$$MappitReportInputMultiImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
+      {double? startAt,
+      double? endAt,
       @DurationOrNullConverter() Duration? timeFilter,
       List<String>? sellerIds});
 }
@@ -3183,17 +3189,17 @@ class __$$MappitReportInputMultiImplCopyWithImpl<$Res>
       startAt: freezed == startAt
           ? _value.startAt
           : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as double?,
       endAt: freezed == endAt
           ? _value.endAt
           : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
+              as double?,
       timeFilter: freezed == timeFilter
           ? _value.timeFilter
           : timeFilter // ignore: cast_nullable_to_non_nullable
               as Duration?,
       sellerIds: freezed == sellerIds
-          ? _value._sellerIds
+          ? _value.sellerIds
           : sellerIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
     ));
@@ -3203,66 +3209,36 @@ class __$$MappitReportInputMultiImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MappitReportInputMultiImpl implements _MappitReportInputMulti {
-  const _$MappitReportInputMultiImpl(
-      {@TimestampOrNullConverter() this.startAt,
-      @TimestampOrNullConverter() this.endAt,
+  _$MappitReportInputMultiImpl(
+      {this.startAt,
+      this.endAt,
       @DurationOrNullConverter() this.timeFilter,
-      final List<String>? sellerIds})
-      : _sellerIds = sellerIds;
+      this.sellerIds});
 
   factory _$MappitReportInputMultiImpl.fromJson(Map<String, dynamic> json) =>
       _$$MappitReportInputMultiImplFromJson(json);
 
   /// Start date for the report.
   @override
-  @TimestampOrNullConverter()
-  final DateTime? startAt;
+  double? startAt;
 
   /// End date for the report.
   @override
-  @TimestampOrNullConverter()
-  final DateTime? endAt;
+  double? endAt;
 
   /// Time filter (Defined in seconds).
   @override
   @DurationOrNullConverter()
-  final Duration? timeFilter;
-
-  /// Seller IDs
-  final List<String>? _sellerIds;
+  Duration? timeFilter;
 
   /// Seller IDs
   @override
-  List<String>? get sellerIds {
-    final value = _sellerIds;
-    if (value == null) return null;
-    if (_sellerIds is EqualUnmodifiableListView) return _sellerIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
+  List<String>? sellerIds;
 
   @override
   String toString() {
     return 'MappitReportInputMulti(startAt: $startAt, endAt: $endAt, timeFilter: $timeFilter, sellerIds: $sellerIds)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MappitReportInputMultiImpl &&
-            (identical(other.startAt, startAt) || other.startAt == startAt) &&
-            (identical(other.endAt, endAt) || other.endAt == endAt) &&
-            (identical(other.timeFilter, timeFilter) ||
-                other.timeFilter == timeFilter) &&
-            const DeepCollectionEquality()
-                .equals(other._sellerIds, _sellerIds));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, startAt, endAt, timeFilter,
-      const DeepCollectionEquality().hash(_sellerIds));
 
   @JsonKey(ignore: true)
   @override
@@ -3280,11 +3256,11 @@ class _$MappitReportInputMultiImpl implements _MappitReportInputMulti {
 }
 
 abstract class _MappitReportInputMulti implements MappitReportInputMulti {
-  const factory _MappitReportInputMulti(
-      {@TimestampOrNullConverter() final DateTime? startAt,
-      @TimestampOrNullConverter() final DateTime? endAt,
-      @DurationOrNullConverter() final Duration? timeFilter,
-      final List<String>? sellerIds}) = _$MappitReportInputMultiImpl;
+  factory _MappitReportInputMulti(
+      {double? startAt,
+      double? endAt,
+      @DurationOrNullConverter() Duration? timeFilter,
+      List<String>? sellerIds}) = _$MappitReportInputMultiImpl;
 
   factory _MappitReportInputMulti.fromJson(Map<String, dynamic> json) =
       _$MappitReportInputMultiImpl.fromJson;
@@ -3292,24 +3268,272 @@ abstract class _MappitReportInputMulti implements MappitReportInputMulti {
   @override
 
   /// Start date for the report.
-  @TimestampOrNullConverter()
-  DateTime? get startAt;
+  double? get startAt;
+
+  /// Start date for the report.
+  set startAt(double? value);
   @override
 
   /// End date for the report.
-  @TimestampOrNullConverter()
-  DateTime? get endAt;
+  double? get endAt;
+
+  /// End date for the report.
+  set endAt(double? value);
   @override
 
   /// Time filter (Defined in seconds).
   @DurationOrNullConverter()
   Duration? get timeFilter;
+
+  /// Time filter (Defined in seconds).
+  @DurationOrNullConverter()
+  set timeFilter(Duration? value);
   @override
 
   /// Seller IDs
   List<String>? get sellerIds;
+
+  /// Seller IDs
+  set sellerIds(List<String>? value);
   @override
   @JsonKey(ignore: true)
   _$$MappitReportInputMultiImplCopyWith<_$MappitReportInputMultiImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+MappitReportInput _$MappitReportInputFromJson(Map<String, dynamic> json) {
+  return _MappitReportInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MappitReportInput {
+  /// Start date for the report.
+  double? get startAt => throw _privateConstructorUsedError;
+
+  /// Start date for the report.
+  set startAt(double? value) => throw _privateConstructorUsedError;
+
+  /// End date for the report.
+  double? get endAt => throw _privateConstructorUsedError;
+
+  /// End date for the report.
+  set endAt(double? value) => throw _privateConstructorUsedError;
+
+  /// Time filter (Defined in seconds).
+  @DurationOrNullConverter()
+  Duration? get timeFilter => throw _privateConstructorUsedError;
+
+  /// Time filter (Defined in seconds).
+  @DurationOrNullConverter()
+  set timeFilter(Duration? value) => throw _privateConstructorUsedError;
+
+  /// Seller ID
+  String? get sellerId => throw _privateConstructorUsedError;
+
+  /// Seller ID
+  set sellerId(String? value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MappitReportInputCopyWith<MappitReportInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MappitReportInputCopyWith<$Res> {
+  factory $MappitReportInputCopyWith(
+          MappitReportInput value, $Res Function(MappitReportInput) then) =
+      _$MappitReportInputCopyWithImpl<$Res, MappitReportInput>;
+  @useResult
+  $Res call(
+      {double? startAt,
+      double? endAt,
+      @DurationOrNullConverter() Duration? timeFilter,
+      String? sellerId});
+}
+
+/// @nodoc
+class _$MappitReportInputCopyWithImpl<$Res, $Val extends MappitReportInput>
+    implements $MappitReportInputCopyWith<$Res> {
+  _$MappitReportInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? timeFilter = freezed,
+    Object? sellerId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      timeFilter: freezed == timeFilter
+          ? _value.timeFilter
+          : timeFilter // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      sellerId: freezed == sellerId
+          ? _value.sellerId
+          : sellerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MappitReportInputImplCopyWith<$Res>
+    implements $MappitReportInputCopyWith<$Res> {
+  factory _$$MappitReportInputImplCopyWith(_$MappitReportInputImpl value,
+          $Res Function(_$MappitReportInputImpl) then) =
+      __$$MappitReportInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {double? startAt,
+      double? endAt,
+      @DurationOrNullConverter() Duration? timeFilter,
+      String? sellerId});
+}
+
+/// @nodoc
+class __$$MappitReportInputImplCopyWithImpl<$Res>
+    extends _$MappitReportInputCopyWithImpl<$Res, _$MappitReportInputImpl>
+    implements _$$MappitReportInputImplCopyWith<$Res> {
+  __$$MappitReportInputImplCopyWithImpl(_$MappitReportInputImpl _value,
+      $Res Function(_$MappitReportInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? timeFilter = freezed,
+    Object? sellerId = freezed,
+  }) {
+    return _then(_$MappitReportInputImpl(
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      timeFilter: freezed == timeFilter
+          ? _value.timeFilter
+          : timeFilter // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      sellerId: freezed == sellerId
+          ? _value.sellerId
+          : sellerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MappitReportInputImpl implements _MappitReportInput {
+  _$MappitReportInputImpl(
+      {this.startAt,
+      this.endAt,
+      @DurationOrNullConverter() this.timeFilter,
+      this.sellerId});
+
+  factory _$MappitReportInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MappitReportInputImplFromJson(json);
+
+  /// Start date for the report.
+  @override
+  double? startAt;
+
+  /// End date for the report.
+  @override
+  double? endAt;
+
+  /// Time filter (Defined in seconds).
+  @override
+  @DurationOrNullConverter()
+  Duration? timeFilter;
+
+  /// Seller ID
+  @override
+  String? sellerId;
+
+  @override
+  String toString() {
+    return 'MappitReportInput(startAt: $startAt, endAt: $endAt, timeFilter: $timeFilter, sellerId: $sellerId)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MappitReportInputImplCopyWith<_$MappitReportInputImpl> get copyWith =>
+      __$$MappitReportInputImplCopyWithImpl<_$MappitReportInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MappitReportInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MappitReportInput implements MappitReportInput {
+  factory _MappitReportInput(
+      {double? startAt,
+      double? endAt,
+      @DurationOrNullConverter() Duration? timeFilter,
+      String? sellerId}) = _$MappitReportInputImpl;
+
+  factory _MappitReportInput.fromJson(Map<String, dynamic> json) =
+      _$MappitReportInputImpl.fromJson;
+
+  @override
+
+  /// Start date for the report.
+  double? get startAt;
+
+  /// Start date for the report.
+  set startAt(double? value);
+  @override
+
+  /// End date for the report.
+  double? get endAt;
+
+  /// End date for the report.
+  set endAt(double? value);
+  @override
+
+  /// Time filter (Defined in seconds).
+  @DurationOrNullConverter()
+  Duration? get timeFilter;
+
+  /// Time filter (Defined in seconds).
+  @DurationOrNullConverter()
+  set timeFilter(Duration? value);
+  @override
+
+  /// Seller ID
+  String? get sellerId;
+
+  /// Seller ID
+  set sellerId(String? value);
+  @override
+  @JsonKey(ignore: true)
+  _$$MappitReportInputImplCopyWith<_$MappitReportInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
