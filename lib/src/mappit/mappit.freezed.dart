@@ -3063,3 +3063,253 @@ abstract class _ContainedRouteCategory implements ContainedRouteCategory {
   _$$ContainedRouteCategoryImplCopyWith<_$ContainedRouteCategoryImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+MappitReportInputMulti _$MappitReportInputMultiFromJson(
+    Map<String, dynamic> json) {
+  return _MappitReportInputMulti.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MappitReportInputMulti {
+  /// Start date for the report.
+  @TimestampOrNullConverter()
+  DateTime? get startAt => throw _privateConstructorUsedError;
+
+  /// End date for the report.
+  @TimestampOrNullConverter()
+  DateTime? get endAt => throw _privateConstructorUsedError;
+
+  /// Time filter (Defined in seconds).
+  @DurationOrNullConverter()
+  Duration? get timeFilter => throw _privateConstructorUsedError;
+
+  /// Seller IDs
+  List<String>? get sellerIds => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MappitReportInputMultiCopyWith<MappitReportInputMulti> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MappitReportInputMultiCopyWith<$Res> {
+  factory $MappitReportInputMultiCopyWith(MappitReportInputMulti value,
+          $Res Function(MappitReportInputMulti) then) =
+      _$MappitReportInputMultiCopyWithImpl<$Res, MappitReportInputMulti>;
+  @useResult
+  $Res call(
+      {@TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt,
+      @DurationOrNullConverter() Duration? timeFilter,
+      List<String>? sellerIds});
+}
+
+/// @nodoc
+class _$MappitReportInputMultiCopyWithImpl<$Res,
+        $Val extends MappitReportInputMulti>
+    implements $MappitReportInputMultiCopyWith<$Res> {
+  _$MappitReportInputMultiCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? timeFilter = freezed,
+    Object? sellerIds = freezed,
+  }) {
+    return _then(_value.copyWith(
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      timeFilter: freezed == timeFilter
+          ? _value.timeFilter
+          : timeFilter // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      sellerIds: freezed == sellerIds
+          ? _value.sellerIds
+          : sellerIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MappitReportInputMultiImplCopyWith<$Res>
+    implements $MappitReportInputMultiCopyWith<$Res> {
+  factory _$$MappitReportInputMultiImplCopyWith(
+          _$MappitReportInputMultiImpl value,
+          $Res Function(_$MappitReportInputMultiImpl) then) =
+      __$$MappitReportInputMultiImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt,
+      @DurationOrNullConverter() Duration? timeFilter,
+      List<String>? sellerIds});
+}
+
+/// @nodoc
+class __$$MappitReportInputMultiImplCopyWithImpl<$Res>
+    extends _$MappitReportInputMultiCopyWithImpl<$Res,
+        _$MappitReportInputMultiImpl>
+    implements _$$MappitReportInputMultiImplCopyWith<$Res> {
+  __$$MappitReportInputMultiImplCopyWithImpl(
+      _$MappitReportInputMultiImpl _value,
+      $Res Function(_$MappitReportInputMultiImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? timeFilter = freezed,
+    Object? sellerIds = freezed,
+  }) {
+    return _then(_$MappitReportInputMultiImpl(
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      timeFilter: freezed == timeFilter
+          ? _value.timeFilter
+          : timeFilter // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      sellerIds: freezed == sellerIds
+          ? _value._sellerIds
+          : sellerIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MappitReportInputMultiImpl implements _MappitReportInputMulti {
+  const _$MappitReportInputMultiImpl(
+      {@TimestampOrNullConverter() this.startAt,
+      @TimestampOrNullConverter() this.endAt,
+      @DurationOrNullConverter() this.timeFilter,
+      final List<String>? sellerIds})
+      : _sellerIds = sellerIds;
+
+  factory _$MappitReportInputMultiImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MappitReportInputMultiImplFromJson(json);
+
+  /// Start date for the report.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? startAt;
+
+  /// End date for the report.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? endAt;
+
+  /// Time filter (Defined in seconds).
+  @override
+  @DurationOrNullConverter()
+  final Duration? timeFilter;
+
+  /// Seller IDs
+  final List<String>? _sellerIds;
+
+  /// Seller IDs
+  @override
+  List<String>? get sellerIds {
+    final value = _sellerIds;
+    if (value == null) return null;
+    if (_sellerIds is EqualUnmodifiableListView) return _sellerIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'MappitReportInputMulti(startAt: $startAt, endAt: $endAt, timeFilter: $timeFilter, sellerIds: $sellerIds)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MappitReportInputMultiImpl &&
+            (identical(other.startAt, startAt) || other.startAt == startAt) &&
+            (identical(other.endAt, endAt) || other.endAt == endAt) &&
+            (identical(other.timeFilter, timeFilter) ||
+                other.timeFilter == timeFilter) &&
+            const DeepCollectionEquality()
+                .equals(other._sellerIds, _sellerIds));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, startAt, endAt, timeFilter,
+      const DeepCollectionEquality().hash(_sellerIds));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MappitReportInputMultiImplCopyWith<_$MappitReportInputMultiImpl>
+      get copyWith => __$$MappitReportInputMultiImplCopyWithImpl<
+          _$MappitReportInputMultiImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MappitReportInputMultiImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MappitReportInputMulti implements MappitReportInputMulti {
+  const factory _MappitReportInputMulti(
+      {@TimestampOrNullConverter() final DateTime? startAt,
+      @TimestampOrNullConverter() final DateTime? endAt,
+      @DurationOrNullConverter() final Duration? timeFilter,
+      final List<String>? sellerIds}) = _$MappitReportInputMultiImpl;
+
+  factory _MappitReportInputMulti.fromJson(Map<String, dynamic> json) =
+      _$MappitReportInputMultiImpl.fromJson;
+
+  @override
+
+  /// Start date for the report.
+  @TimestampOrNullConverter()
+  DateTime? get startAt;
+  @override
+
+  /// End date for the report.
+  @TimestampOrNullConverter()
+  DateTime? get endAt;
+  @override
+
+  /// Time filter (Defined in seconds).
+  @DurationOrNullConverter()
+  Duration? get timeFilter;
+  @override
+
+  /// Seller IDs
+  List<String>? get sellerIds;
+  @override
+  @JsonKey(ignore: true)
+  _$$MappitReportInputMultiImplCopyWith<_$MappitReportInputMultiImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
