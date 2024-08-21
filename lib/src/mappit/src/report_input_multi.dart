@@ -1,13 +1,13 @@
 part of '../mappit.dart';
 
-@freezed
+@unfreezed
 class MappitReportInputMulti with _$MappitReportInputMulti {
-  const factory MappitReportInputMulti({
+  factory MappitReportInputMulti({
     /// Start date for the report.
-    @TimestampOrNullConverter() DateTime? startAt,
+    double? startAt,
 
     /// End date for the report.
-    @TimestampOrNullConverter() DateTime? endAt,
+    double? endAt,
 
     /// Time filter (Defined in seconds).
     @DurationOrNullConverter() Duration? timeFilter,

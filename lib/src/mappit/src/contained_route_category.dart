@@ -8,7 +8,7 @@ class ContainedRouteCategory with _$ContainedRouteCategory {
     @GeofenceCategoryConverter() @Default(GeofenceCategory.none) GeofenceCategory category,
 
     /// List of routes that contain the geofences in the category.
-    List<MappitRoute>? routes,
+    @Default([]) List<MappitRoute> routes,
 
     /// Number of geofences per category.
     int? geofenceCount,
