@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.2
+- rename `fee_day.dart `to `free_day.dart`;
+- Add `MappitReportInputMulti`
+
 ## 3.0.1
 - Added `PolygonDetails` and `ContainedRouteCategory`
 

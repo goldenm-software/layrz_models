@@ -280,3 +280,25 @@ Map<String, dynamic> _$$ContainedRouteCategoryImplToJson(
       'routes': instance.routes?.map((e) => e.toJson()).toList(),
       'geofenceCount': instance.geofenceCount,
     };
+
+_$MappitReportInputMultiImpl _$$MappitReportInputMultiImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MappitReportInputMultiImpl(
+      startAt:
+          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
+      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
+      timeFilter:
+          const DurationOrNullConverter().fromJson(json['timeFilter'] as num?),
+      sellerIds: (json['sellerIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+    );
+
+Map<String, dynamic> _$$MappitReportInputMultiImplToJson(
+        _$MappitReportInputMultiImpl instance) =>
+    <String, dynamic>{
+      'startAt': const TimestampOrNullConverter().toJson(instance.startAt),
+      'endAt': const TimestampOrNullConverter().toJson(instance.endAt),
+      'timeFilter': const DurationOrNullConverter().toJson(instance.timeFilter),
+      'sellerIds': instance.sellerIds,
+    };
