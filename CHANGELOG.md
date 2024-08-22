@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0 (WIP)
+
+- Updated `InboundProtocol` and `Model` to handle new commands definitions and configuration parameters
+
 ## 3.0.3
 - Add `MappitReportInput` 
 - Replace DateTime to double in startAt y endAt inside `MappitReportInputMulti`
