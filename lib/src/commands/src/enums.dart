@@ -204,6 +204,10 @@ enum CommandDefinitionSource {
   /// [serial] refers that the command definition is based on the Serial protocol.
   /// Layrz API Definition: `SERIAL`
   serial,
+
+  /// [psg] refers that the command definition is based on the PSG API.
+  /// Layrz API Definition: `PSG`
+  psg,
   ;
 
   @override
@@ -221,6 +225,8 @@ enum CommandDefinitionSource {
         return 'BLE';
       case CommandDefinitionSource.serial:
         return 'SERIAL';
+      case CommandDefinitionSource.psg:
+        return 'PSG';
     }
   }
 
@@ -228,14 +234,15 @@ enum CommandDefinitionSource {
     switch (json) {
       case 'FLESPI':
         return CommandDefinitionSource.flespi;
-      case 'CUSTOM':
-        return CommandDefinitionSource.custom;
       case 'LAYRZ_LINK':
         return CommandDefinitionSource.layrzLink;
       case 'BLE':
         return CommandDefinitionSource.ble;
       case 'SERIAL':
         return CommandDefinitionSource.serial;
+      case 'PSG':
+        return CommandDefinitionSource.psg;
+      case 'CUSTOM':
       default:
         return CommandDefinitionSource.custom;
     }
