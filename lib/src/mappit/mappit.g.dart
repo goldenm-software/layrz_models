@@ -245,3 +245,82 @@ Map<String, dynamic> _$$MappitFreeDayImplToJson(_$MappitFreeDayImpl instance) =>
       'assets': instance.assets?.map((e) => e.toJson()).toList(),
       'assetsIds': instance.assetsIds,
     };
+
+_$PolygonDetailsImpl _$$PolygonDetailsImplFromJson(Map<String, dynamic> json) =>
+    _$PolygonDetailsImpl(
+      polygon: Geofence.fromJson(json['polygon'] as Map<String, dynamic>),
+      containedRoutes: (json['containedRoutes'] as List<dynamic>)
+          .map(
+              (e) => ContainedRouteCategory.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$PolygonDetailsImplToJson(
+        _$PolygonDetailsImpl instance) =>
+    <String, dynamic>{
+      'polygon': instance.polygon.toJson(),
+      'containedRoutes':
+          instance.containedRoutes.map((e) => e.toJson()).toList(),
+    };
+
+_$ContainedRouteCategoryImpl _$$ContainedRouteCategoryImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ContainedRouteCategoryImpl(
+      category: json['category'] == null
+          ? GeofenceCategory.none
+          : const GeofenceCategoryConverter()
+              .fromJson(json['category'] as String),
+      routes: (json['routes'] as List<dynamic>?)
+              ?.map((e) => MappitRoute.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      geofenceCount: (json['geofenceCount'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$$ContainedRouteCategoryImplToJson(
+        _$ContainedRouteCategoryImpl instance) =>
+    <String, dynamic>{
+      'category': const GeofenceCategoryConverter().toJson(instance.category),
+      'routes': instance.routes.map((e) => e.toJson()).toList(),
+      'geofenceCount': instance.geofenceCount,
+    };
+
+_$MappitReportInputMultiImpl _$$MappitReportInputMultiImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MappitReportInputMultiImpl(
+      startAt: (json['startAt'] as num?)?.toDouble(),
+      endAt: (json['endAt'] as num?)?.toDouble(),
+      timeFilter:
+          const DurationOrNullConverter().fromJson(json['timeFilter'] as num?),
+      sellerIds: (json['sellerIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
+    );
+
+Map<String, dynamic> _$$MappitReportInputMultiImplToJson(
+        _$MappitReportInputMultiImpl instance) =>
+    <String, dynamic>{
+      'startAt': instance.startAt,
+      'endAt': instance.endAt,
+      'timeFilter': const DurationOrNullConverter().toJson(instance.timeFilter),
+      'sellerIds': instance.sellerIds,
+    };
+
+_$MappitReportInputImpl _$$MappitReportInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MappitReportInputImpl(
+      startAt: (json['startAt'] as num?)?.toDouble(),
+      endAt: (json['endAt'] as num?)?.toDouble(),
+      timeFilter:
+          const DurationOrNullConverter().fromJson(json['timeFilter'] as num?),
+      sellerId: json['sellerId'] as String?,
+    );
+
+Map<String, dynamic> _$$MappitReportInputImplToJson(
+        _$MappitReportInputImpl instance) =>
+    <String, dynamic>{
+      'startAt': instance.startAt,
+      'endAt': instance.endAt,
+      'timeFilter': const DurationOrNullConverter().toJson(instance.timeFilter),
+      'sellerId': instance.sellerId,
+    };

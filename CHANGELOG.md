@@ -1,5 +1,18 @@
 # Changelog
 
+## 3.0.3
+- Add `MappitReportInput` 
+- Replace DateTime to double in startAt y endAt inside `MappitReportInputMulti`
+- Add `@Default([])` in `routes` inside `ContainedRouteCategory`
+- Convert `containedRoutes` in `PolygonDetails` as List
+
+## 3.0.2
+- rename `fee_day.dart `to `free_day.dart`;
+- Add `MappitReportInputMulti`
+
+## 3.0.1
+- Added `PolygonDetails` and `ContainedRouteCategory`
+
 ## 3.0.0
 
 - Added `requiresExternalAccount` and `requiresStructure` on `InboundProtocol` and `InboundProtocolInput` models
