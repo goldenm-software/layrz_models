@@ -161,3 +161,63 @@ class ConfigSourceOrNullConverter implements JsonConverter<ConfigSource?, String
     return object.toJson();
   }
 }
+
+enum ConfigKind {
+  /// [grouping] refers that the command is a grouping of other commands.
+  /// Layrz API Definition: `GROUPING`
+  grouping,
+
+  /// [param] refers that the command is a parameter.
+  /// Layrz API Definition: `PARAM`
+  param,
+  ;
+
+  @override
+  String toString() => toJson();
+
+  String toJson() {
+    switch (this) {
+      case ConfigKind.grouping:
+        return 'GROUPING';
+      case ConfigKind.param:
+      default:
+        return 'PARAM';
+    }
+  }
+
+  static ConfigKind fromJson(String json) {
+    switch (json) {
+      case 'GROUPING':
+        return ConfigKind.grouping;
+      case 'PARAM':
+      default:
+        return ConfigKind.param;
+    }
+  }
+}
+
+class ConfigKindConverter implements JsonConverter<ConfigKind, String> {
+  const ConfigKindConverter();
+
+  @override
+  ConfigKind fromJson(String json) => ConfigKind.fromJson(json);
+
+  @override
+  String toJson(ConfigKind object) => object.toJson();
+}
+
+class ConfigKindOrNullConverter implements JsonConverter<ConfigKind?, String?> {
+  const ConfigKindOrNullConverter();
+
+  @override
+  ConfigKind? fromJson(String? json) {
+    if (json == null) return null;
+    return ConfigKind.fromJson(json);
+  }
+
+  @override
+  String? toJson(ConfigKind? object) {
+    if (object == null) return null;
+    return object.toJson();
+  }
+}
