@@ -175,6 +175,9 @@ enum ReferenceCategory {
   /// Layrz API Reference: MAPPIT_PERM_FREEDAYS_FULL
   mappitPermFreeDaysFull,
 
+  /// Layrz API Reference: MAPPIT_PERM_TAGS_READ
+  mappitPermTagsRead,
+
   /// Layrz API Reference: TENVIO_DISPATCHER
   tenvioDispatcher,
 
@@ -294,6 +297,8 @@ enum ReferenceCategory {
         return 'MAPPIT_PERM_FREEDAYS_READ';
       case ReferenceCategory.mappitPermFreeDaysFull:
         return 'MAPPIT_PERM_FREEDAYS_FULL';
+      case ReferenceCategory.mappitPermTagsRead:
+        return 'MAPPIT_PERM_TAGS_READ';
       case ReferenceCategory.tenvioDispatcher:
         return 'TENVIO_DISPATCHER';
       case ReferenceCategory.tenvioOperator:
@@ -409,6 +414,8 @@ enum ReferenceCategory {
         return ReferenceCategory.mappitPermFreeDaysRead;
       case 'MAPPIT_PERM_FREEDAYS_FULL':
         return ReferenceCategory.mappitPermFreeDaysFull;
+      case 'MAPPIT_PERM_TAGS_READ':
+        return ReferenceCategory.mappitPermTagsRead;
       case 'TENVIO_DISPATCHER':
         return ReferenceCategory.tenvioDispatcher;
       case 'TENVIO_OPERATOR':
