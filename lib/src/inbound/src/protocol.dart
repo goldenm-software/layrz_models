@@ -109,6 +109,12 @@ class InboundProtocol with _$InboundProtocol {
 
     /// [requiresStructure] indicates if the protocol requires a structure to work.
     @Default(false) bool requiresStructure,
+
+    /// [commandsStructure] is the structure of the commands for the protocol.
+    @Default([]) List<CommandDefinition> commandsStructure,
+
+    /// [configStructure] is the structure of the configuration for the protocol.
+    @Default([]) List<ConfigDefinition> configStructure,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);
@@ -206,6 +212,12 @@ class InboundProtocolInput with _$InboundProtocolInput {
 
     /// [requiresStructure] indicates if the protocol requires a structure to work.
     @Default(false) bool requiresStructure,
+
+    /// [commandsStructure] is the structure of the commands for the protocol.
+    @Default([]) List<CommandDefinitionInput> commandsStructure,
+
+    /// [configStructure] is the structure of the configuration for the protocol.
+    @Default([]) List<ConfigDefinitionInput> configStructure,
   }) = _InboundProtocolInput;
 
   factory InboundProtocolInput.fromJson(Map<String, dynamic> json) => _$InboundProtocolInputFromJson(json);

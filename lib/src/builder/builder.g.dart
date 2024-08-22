@@ -250,6 +250,18 @@ Map<String, dynamic> _$$WebhookStructureInputImplToJson(
       'headers': instance.headers.map((e) => e.toJson()).toList(),
     };
 
+_$FlespiModelImpl _$$FlespiModelImplFromJson(Map<String, dynamic> json) =>
+    _$FlespiModelImpl(
+      flespiId: json['flespiId'] as String,
+      name: json['name'] as String,
+    );
+
+Map<String, dynamic> _$$FlespiModelImplToJson(_$FlespiModelImpl instance) =>
+    <String, dynamic>{
+      'flespiId': instance.flespiId,
+      'name': instance.name,
+    };
+
 _$FlespiAclImpl _$$FlespiAclImplFromJson(Map<String, dynamic> json) =>
     _$FlespiAclImpl(
       uri: const FlespiUriConverter().fromJson(json['uri'] as String),

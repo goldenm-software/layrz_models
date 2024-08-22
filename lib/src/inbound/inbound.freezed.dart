@@ -130,6 +130,14 @@ mixin _$InboundProtocol {
   /// [requiresStructure] indicates if the protocol requires a structure to work.
   bool get requiresStructure => throw _privateConstructorUsedError;
 
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinition> get commandsStructure =>
+      throw _privateConstructorUsedError;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinition> get configStructure =>
+      throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
@@ -174,7 +182,9 @@ abstract class $InboundProtocolCopyWith<$Res> {
       List<FlespiAcl>? flespiAcl,
       WebhookStructure? webhookStructure,
       bool requiresExternalAccount,
-      bool requiresStructure});
+      bool requiresStructure,
+      List<CommandDefinition> commandsStructure,
+      List<ConfigDefinition> configStructure});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $SimulationCycleCopyWith<$Res>? get cycle;
@@ -226,6 +236,8 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? webhookStructure = freezed,
     Object? requiresExternalAccount = null,
     Object? requiresStructure = null,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -356,6 +368,14 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.requiresStructure
           : requiresStructure // ignore: cast_nullable_to_non_nullable
               as bool,
+      commandsStructure: null == commandsStructure
+          ? _value.commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinition>,
+      configStructure: null == configStructure
+          ? _value.configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinition>,
     ) as $Val);
   }
 
@@ -436,7 +456,9 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       List<FlespiAcl>? flespiAcl,
       WebhookStructure? webhookStructure,
       bool requiresExternalAccount,
-      bool requiresStructure});
+      bool requiresStructure,
+      List<CommandDefinition> commandsStructure,
+      List<ConfigDefinition> configStructure});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -489,6 +511,8 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? webhookStructure = freezed,
     Object? requiresExternalAccount = null,
     Object? requiresStructure = null,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
   }) {
     return _then(_$InboundProtocolImpl(
       id: null == id
@@ -619,6 +643,14 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value.requiresStructure
           : requiresStructure // ignore: cast_nullable_to_non_nullable
               as bool,
+      commandsStructure: null == commandsStructure
+          ? _value._commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinition>,
+      configStructure: null == configStructure
+          ? _value._configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinition>,
     ));
   }
 }
@@ -658,12 +690,16 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       final List<FlespiAcl>? flespiAcl,
       this.webhookStructure,
       this.requiresExternalAccount = false,
-      this.requiresStructure = false})
+      this.requiresStructure = false,
+      final List<CommandDefinition> commandsStructure = const [],
+      final List<ConfigDefinition> configStructure = const []})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models,
         _modbusPorts = modbusPorts,
-        _flespiAcl = flespiAcl;
+        _flespiAcl = flespiAcl,
+        _commandsStructure = commandsStructure,
+        _configStructure = configStructure;
 
   factory _$InboundProtocolImpl.fromJson(Map<String, dynamic> json) =>
       _$$InboundProtocolImplFromJson(json);
@@ -855,9 +891,34 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   @JsonKey()
   final bool requiresStructure;
 
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  final List<CommandDefinition> _commandsStructure;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  @override
+  @JsonKey()
+  List<CommandDefinition> get commandsStructure {
+    if (_commandsStructure is EqualUnmodifiableListView)
+      return _commandsStructure;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_commandsStructure);
+  }
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  final List<ConfigDefinition> _configStructure;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  @override
+  @JsonKey()
+  List<ConfigDefinition> get configStructure {
+    if (_configStructure is EqualUnmodifiableListView) return _configStructure;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_configStructure);
+  }
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure)';
   }
 
   @override
@@ -918,7 +979,11 @@ class _$InboundProtocolImpl implements _InboundProtocol {
                     other.requiresExternalAccount, requiresExternalAccount) ||
                 other.requiresExternalAccount == requiresExternalAccount) &&
             (identical(other.requiresStructure, requiresStructure) ||
-                other.requiresStructure == requiresStructure));
+                other.requiresStructure == requiresStructure) &&
+            const DeepCollectionEquality()
+                .equals(other._commandsStructure, _commandsStructure) &&
+            const DeepCollectionEquality()
+                .equals(other._configStructure, _configStructure));
   }
 
   @JsonKey(ignore: true)
@@ -956,7 +1021,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         const DeepCollectionEquality().hash(_flespiAcl),
         webhookStructure,
         requiresExternalAccount,
-        requiresStructure
+        requiresStructure,
+        const DeepCollectionEquality().hash(_commandsStructure),
+        const DeepCollectionEquality().hash(_configStructure)
       ]);
 
   @JsonKey(ignore: true)
@@ -1007,7 +1074,9 @@ abstract class _InboundProtocol implements InboundProtocol {
       final List<FlespiAcl>? flespiAcl,
       final WebhookStructure? webhookStructure,
       final bool requiresExternalAccount,
-      final bool requiresStructure}) = _$InboundProtocolImpl;
+      final bool requiresStructure,
+      final List<CommandDefinition> commandsStructure,
+      final List<ConfigDefinition> configStructure}) = _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
@@ -1153,6 +1222,14 @@ abstract class _InboundProtocol implements InboundProtocol {
 
   /// [requiresStructure] indicates if the protocol requires a structure to work.
   bool get requiresStructure;
+  @override
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinition> get commandsStructure;
+  @override
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinition> get configStructure;
   @override
   @JsonKey(ignore: true)
   _$$InboundProtocolImplCopyWith<_$InboundProtocolImpl> get copyWith =>
@@ -1354,6 +1431,22 @@ mixin _$InboundProtocolInput {
   /// [requiresStructure] indicates if the protocol requires a structure to work.
   set requiresStructure(bool value) => throw _privateConstructorUsedError;
 
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinitionInput> get commandsStructure =>
+      throw _privateConstructorUsedError;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  set commandsStructure(List<CommandDefinitionInput> value) =>
+      throw _privateConstructorUsedError;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinitionInput> get configStructure =>
+      throw _privateConstructorUsedError;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  set configStructure(List<ConfigDefinitionInput> value) =>
+      throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolInputCopyWith<InboundProtocolInput> get copyWith =>
@@ -1395,7 +1488,9 @@ abstract class $InboundProtocolInputCopyWith<$Res> {
       List<FlespiAclInput> flespiAcl,
       WebhookStructureInput? webhookStructure,
       bool requiresExternalAccount,
-      bool requiresStructure});
+      bool requiresStructure,
+      List<CommandDefinitionInput> commandsStructure,
+      List<ConfigDefinitionInput> configStructure});
 
   $AvatarInputCopyWith<$Res> get dynamicIcon;
   $WebhookStructureInputCopyWith<$Res>? get webhookStructure;
@@ -1444,6 +1539,8 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
     Object? webhookStructure = freezed,
     Object? requiresExternalAccount = null,
     Object? requiresStructure = null,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -1562,6 +1659,14 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
           ? _value.requiresStructure
           : requiresStructure // ignore: cast_nullable_to_non_nullable
               as bool,
+      commandsStructure: null == commandsStructure
+          ? _value.commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinitionInput>,
+      configStructure: null == configStructure
+          ? _value.configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinitionInput>,
     ) as $Val);
   }
 
@@ -1624,7 +1729,9 @@ abstract class _$$InboundProtocolInputImplCopyWith<$Res>
       List<FlespiAclInput> flespiAcl,
       WebhookStructureInput? webhookStructure,
       bool requiresExternalAccount,
-      bool requiresStructure});
+      bool requiresStructure,
+      List<CommandDefinitionInput> commandsStructure,
+      List<ConfigDefinitionInput> configStructure});
 
   @override
   $AvatarInputCopyWith<$Res> get dynamicIcon;
@@ -1672,6 +1779,8 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
     Object? webhookStructure = freezed,
     Object? requiresExternalAccount = null,
     Object? requiresStructure = null,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
   }) {
     return _then(_$InboundProtocolInputImpl(
       id: freezed == id
@@ -1790,6 +1899,14 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
           ? _value.requiresStructure
           : requiresStructure // ignore: cast_nullable_to_non_nullable
               as bool,
+      commandsStructure: null == commandsStructure
+          ? _value.commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinitionInput>,
+      configStructure: null == configStructure
+          ? _value.configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinitionInput>,
     ));
   }
 }
@@ -1826,7 +1943,9 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
       this.flespiAcl = const [],
       this.webhookStructure,
       this.requiresExternalAccount = false,
-      this.requiresStructure = false});
+      this.requiresStructure = false,
+      this.commandsStructure = const [],
+      this.configStructure = const []});
 
   factory _$InboundProtocolInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$InboundProtocolInputImplFromJson(json);
@@ -1972,9 +2091,19 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
   @JsonKey()
   bool requiresStructure;
 
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  @override
+  @JsonKey()
+  List<CommandDefinitionInput> commandsStructure;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  @override
+  @JsonKey()
+  List<ConfigDefinitionInput> configStructure;
+
   @override
   String toString() {
-    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure)';
+    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure)';
   }
 
   @JsonKey(ignore: true)
@@ -1995,35 +2124,38 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
 
 abstract class _InboundProtocolInput implements InboundProtocolInput {
   factory _InboundProtocolInput(
-      {String? id,
-      String name,
-      @ColorConverter() Color color,
-      bool isEnabled,
-      List<String> categoriesIds,
-      @OperationModeConverter() OperationMode operationMode,
-      bool hasNativeCommands,
-      bool hasSmsCommands,
-      bool hasCommandsResult,
-      int? channelId,
-      bool isFlespi,
-      String? flespiId,
-      bool hasAck,
-      String ackTopicFormat,
-      bool isImported,
-      List<CredentialFieldInput> requiredFields,
-      bool canFota,
-      String? host,
-      int? port,
-      String? mqttTopic,
-      required AvatarInput dynamicIcon,
-      String? cycleId,
-      bool hasModbus,
-      List<String> modbusPorts,
-      bool requiresFlespiToken,
-      List<FlespiAclInput> flespiAcl,
-      WebhookStructureInput? webhookStructure,
-      bool requiresExternalAccount,
-      bool requiresStructure}) = _$InboundProtocolInputImpl;
+          {String? id,
+          String name,
+          @ColorConverter() Color color,
+          bool isEnabled,
+          List<String> categoriesIds,
+          @OperationModeConverter() OperationMode operationMode,
+          bool hasNativeCommands,
+          bool hasSmsCommands,
+          bool hasCommandsResult,
+          int? channelId,
+          bool isFlespi,
+          String? flespiId,
+          bool hasAck,
+          String ackTopicFormat,
+          bool isImported,
+          List<CredentialFieldInput> requiredFields,
+          bool canFota,
+          String? host,
+          int? port,
+          String? mqttTopic,
+          required AvatarInput dynamicIcon,
+          String? cycleId,
+          bool hasModbus,
+          List<String> modbusPorts,
+          bool requiresFlespiToken,
+          List<FlespiAclInput> flespiAcl,
+          WebhookStructureInput? webhookStructure,
+          bool requiresExternalAccount,
+          bool requiresStructure,
+          List<CommandDefinitionInput> commandsStructure,
+          List<ConfigDefinitionInput> configStructure}) =
+      _$InboundProtocolInputImpl;
 
   factory _InboundProtocolInput.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolInputImpl.fromJson;
@@ -2241,6 +2373,20 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
 
   /// [requiresStructure] indicates if the protocol requires a structure to work.
   set requiresStructure(bool value);
+  @override
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinitionInput> get commandsStructure;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  set commandsStructure(List<CommandDefinitionInput> value);
+  @override
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinitionInput> get configStructure;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  set configStructure(List<ConfigDefinitionInput> value);
   @override
   @JsonKey(ignore: true)
   _$$InboundProtocolInputImplCopyWith<_$InboundProtocolInputImpl>
@@ -3078,4 +3224,1669 @@ abstract class _InboundServiceInput implements InboundServiceInput {
   @JsonKey(ignore: true)
   _$$InboundServiceInputImplCopyWith<_$InboundServiceInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+ConfigParameterEquivalence _$ConfigParameterEquivalenceFromJson(
+    Map<String, dynamic> json) {
+  return _ConfigParameterEquivalence.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ConfigParameterEquivalence {
+  /// [source] is the source of the equivalence.
+  @ConfigSourceConverter()
+  ConfigSource get source => throw _privateConstructorUsedError;
+
+  /// [parameter] is the parameter of the equivalence.
+  String get value => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ConfigParameterEquivalenceCopyWith<ConfigParameterEquivalence>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ConfigParameterEquivalenceCopyWith<$Res> {
+  factory $ConfigParameterEquivalenceCopyWith(ConfigParameterEquivalence value,
+          $Res Function(ConfigParameterEquivalence) then) =
+      _$ConfigParameterEquivalenceCopyWithImpl<$Res,
+          ConfigParameterEquivalence>;
+  @useResult
+  $Res call({@ConfigSourceConverter() ConfigSource source, String value});
+}
+
+/// @nodoc
+class _$ConfigParameterEquivalenceCopyWithImpl<$Res,
+        $Val extends ConfigParameterEquivalence>
+    implements $ConfigParameterEquivalenceCopyWith<$Res> {
+  _$ConfigParameterEquivalenceCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = null,
+    Object? value = null,
+  }) {
+    return _then(_value.copyWith(
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as ConfigSource,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ConfigParameterEquivalenceImplCopyWith<$Res>
+    implements $ConfigParameterEquivalenceCopyWith<$Res> {
+  factory _$$ConfigParameterEquivalenceImplCopyWith(
+          _$ConfigParameterEquivalenceImpl value,
+          $Res Function(_$ConfigParameterEquivalenceImpl) then) =
+      __$$ConfigParameterEquivalenceImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@ConfigSourceConverter() ConfigSource source, String value});
+}
+
+/// @nodoc
+class __$$ConfigParameterEquivalenceImplCopyWithImpl<$Res>
+    extends _$ConfigParameterEquivalenceCopyWithImpl<$Res,
+        _$ConfigParameterEquivalenceImpl>
+    implements _$$ConfigParameterEquivalenceImplCopyWith<$Res> {
+  __$$ConfigParameterEquivalenceImplCopyWithImpl(
+      _$ConfigParameterEquivalenceImpl _value,
+      $Res Function(_$ConfigParameterEquivalenceImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = null,
+    Object? value = null,
+  }) {
+    return _then(_$ConfigParameterEquivalenceImpl(
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as ConfigSource,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ConfigParameterEquivalenceImpl implements _ConfigParameterEquivalence {
+  const _$ConfigParameterEquivalenceImpl(
+      {@ConfigSourceConverter() required this.source, required this.value});
+
+  factory _$ConfigParameterEquivalenceImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$ConfigParameterEquivalenceImplFromJson(json);
+
+  /// [source] is the source of the equivalence.
+  @override
+  @ConfigSourceConverter()
+  final ConfigSource source;
+
+  /// [parameter] is the parameter of the equivalence.
+  @override
+  final String value;
+
+  @override
+  String toString() {
+    return 'ConfigParameterEquivalence(source: $source, value: $value)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConfigParameterEquivalenceImpl &&
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, source, value);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConfigParameterEquivalenceImplCopyWith<_$ConfigParameterEquivalenceImpl>
+      get copyWith => __$$ConfigParameterEquivalenceImplCopyWithImpl<
+          _$ConfigParameterEquivalenceImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ConfigParameterEquivalenceImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ConfigParameterEquivalence
+    implements ConfigParameterEquivalence {
+  const factory _ConfigParameterEquivalence(
+      {@ConfigSourceConverter() required final ConfigSource source,
+      required final String value}) = _$ConfigParameterEquivalenceImpl;
+
+  factory _ConfigParameterEquivalence.fromJson(Map<String, dynamic> json) =
+      _$ConfigParameterEquivalenceImpl.fromJson;
+
+  @override
+
+  /// [source] is the source of the equivalence.
+  @ConfigSourceConverter()
+  ConfigSource get source;
+  @override
+
+  /// [parameter] is the parameter of the equivalence.
+  String get value;
+  @override
+  @JsonKey(ignore: true)
+  _$$ConfigParameterEquivalenceImplCopyWith<_$ConfigParameterEquivalenceImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+ConfigDefinition _$ConfigDefinitionFromJson(Map<String, dynamic> json) {
+  return _ConfigDefinition.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ConfigDefinition {
+  /// [kind] is the kind of the configuration.
+  ///
+  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
+  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
+  /// `parameter`, `description` and `parameters` will come.
+  ///
+  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
+  /// `parameter` and `description` should be the name of the grouping.
+  @ConfigKindConverter()
+  ConfigKind get kind => throw _privateConstructorUsedError;
+
+  /// [parameters] is the list of parameters of the grouping.
+  /// Only for [ConfigKind.grouping]
+  List<ConfigDefinition>? get parameters => throw _privateConstructorUsedError;
+
+  /// [sources] is the list of sources that the command can be executed.
+  /// Only for [ConfigKind.param]
+  @ConfigSourceConverter()
+  List<ConfigSource>? get sources => throw _privateConstructorUsedError;
+
+  /// [parameter] is the name of the parameter, this is also the translation key.
+  /// Only for [ConfigKind.param]
+  String get parameter => throw _privateConstructorUsedError;
+
+  /// [description] is the fallback name of the parameter, when the translation is not available.
+  /// Only for [ConfigKind.param]
+  String? get description => throw _privateConstructorUsedError;
+
+  /// [dataType] is the data type of the parameter.
+  /// Only for [ConfigKind.param]
+  @ConfigPayloadDataTypeConverter()
+  ConfigPayloadDataType? get dataType => throw _privateConstructorUsedError;
+
+  /// [minValue] is the minimum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  num? get minValue => throw _privateConstructorUsedError;
+
+  /// [maxValue] is the maximum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  num? get maxValue => throw _privateConstructorUsedError;
+
+  /// [minLength] is the minimum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  int? get minLength => throw _privateConstructorUsedError;
+
+  /// [maxLength] is the maximum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  int? get maxLength => throw _privateConstructorUsedError;
+
+  /// [choices] is the list of choices of the parameter.
+  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigKind.param]
+  List<String>? get choices => throw _privateConstructorUsedError;
+
+  /// [regexPattern] is the regex pattern of the parameter.
+  /// Only for [ConfigKind.param]
+  @RegExpOrNullConverter()
+  RegExp? get regexPattern => throw _privateConstructorUsedError;
+
+  /// [equivalences] is the list of equivalences of the parameter.
+  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
+  /// source, the parameter can be different, so this list is designed to provide the equivalence
+  /// between the different sources.
+  /// Only for [ConfigKind.param]
+  List<ConfigParameterEquivalence>? get equivalences =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ConfigDefinitionCopyWith<ConfigDefinition> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ConfigDefinitionCopyWith<$Res> {
+  factory $ConfigDefinitionCopyWith(
+          ConfigDefinition value, $Res Function(ConfigDefinition) then) =
+      _$ConfigDefinitionCopyWithImpl<$Res, ConfigDefinition>;
+  @useResult
+  $Res call(
+      {@ConfigKindConverter() ConfigKind kind,
+      List<ConfigDefinition>? parameters,
+      @ConfigSourceConverter() List<ConfigSource>? sources,
+      String parameter,
+      String? description,
+      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
+      num? minValue,
+      num? maxValue,
+      int? minLength,
+      int? maxLength,
+      List<String>? choices,
+      @RegExpOrNullConverter() RegExp? regexPattern,
+      List<ConfigParameterEquivalence>? equivalences});
+}
+
+/// @nodoc
+class _$ConfigDefinitionCopyWithImpl<$Res, $Val extends ConfigDefinition>
+    implements $ConfigDefinitionCopyWith<$Res> {
+  _$ConfigDefinitionCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? kind = null,
+    Object? parameters = freezed,
+    Object? sources = freezed,
+    Object? parameter = null,
+    Object? description = freezed,
+    Object? dataType = freezed,
+    Object? minValue = freezed,
+    Object? maxValue = freezed,
+    Object? minLength = freezed,
+    Object? maxLength = freezed,
+    Object? choices = freezed,
+    Object? regexPattern = freezed,
+    Object? equivalences = freezed,
+  }) {
+    return _then(_value.copyWith(
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ConfigKind,
+      parameters: freezed == parameters
+          ? _value.parameters
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinition>?,
+      sources: freezed == sources
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<ConfigSource>?,
+      parameter: null == parameter
+          ? _value.parameter
+          : parameter // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dataType: freezed == dataType
+          ? _value.dataType
+          : dataType // ignore: cast_nullable_to_non_nullable
+              as ConfigPayloadDataType?,
+      minValue: freezed == minValue
+          ? _value.minValue
+          : minValue // ignore: cast_nullable_to_non_nullable
+              as num?,
+      maxValue: freezed == maxValue
+          ? _value.maxValue
+          : maxValue // ignore: cast_nullable_to_non_nullable
+              as num?,
+      minLength: freezed == minLength
+          ? _value.minLength
+          : minLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxLength: freezed == maxLength
+          ? _value.maxLength
+          : maxLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      choices: freezed == choices
+          ? _value.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      regexPattern: freezed == regexPattern
+          ? _value.regexPattern
+          : regexPattern // ignore: cast_nullable_to_non_nullable
+              as RegExp?,
+      equivalences: freezed == equivalences
+          ? _value.equivalences
+          : equivalences // ignore: cast_nullable_to_non_nullable
+              as List<ConfigParameterEquivalence>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ConfigDefinitionImplCopyWith<$Res>
+    implements $ConfigDefinitionCopyWith<$Res> {
+  factory _$$ConfigDefinitionImplCopyWith(_$ConfigDefinitionImpl value,
+          $Res Function(_$ConfigDefinitionImpl) then) =
+      __$$ConfigDefinitionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@ConfigKindConverter() ConfigKind kind,
+      List<ConfigDefinition>? parameters,
+      @ConfigSourceConverter() List<ConfigSource>? sources,
+      String parameter,
+      String? description,
+      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
+      num? minValue,
+      num? maxValue,
+      int? minLength,
+      int? maxLength,
+      List<String>? choices,
+      @RegExpOrNullConverter() RegExp? regexPattern,
+      List<ConfigParameterEquivalence>? equivalences});
+}
+
+/// @nodoc
+class __$$ConfigDefinitionImplCopyWithImpl<$Res>
+    extends _$ConfigDefinitionCopyWithImpl<$Res, _$ConfigDefinitionImpl>
+    implements _$$ConfigDefinitionImplCopyWith<$Res> {
+  __$$ConfigDefinitionImplCopyWithImpl(_$ConfigDefinitionImpl _value,
+      $Res Function(_$ConfigDefinitionImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? kind = null,
+    Object? parameters = freezed,
+    Object? sources = freezed,
+    Object? parameter = null,
+    Object? description = freezed,
+    Object? dataType = freezed,
+    Object? minValue = freezed,
+    Object? maxValue = freezed,
+    Object? minLength = freezed,
+    Object? maxLength = freezed,
+    Object? choices = freezed,
+    Object? regexPattern = freezed,
+    Object? equivalences = freezed,
+  }) {
+    return _then(_$ConfigDefinitionImpl(
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ConfigKind,
+      parameters: freezed == parameters
+          ? _value._parameters
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinition>?,
+      sources: freezed == sources
+          ? _value._sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<ConfigSource>?,
+      parameter: null == parameter
+          ? _value.parameter
+          : parameter // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dataType: freezed == dataType
+          ? _value.dataType
+          : dataType // ignore: cast_nullable_to_non_nullable
+              as ConfigPayloadDataType?,
+      minValue: freezed == minValue
+          ? _value.minValue
+          : minValue // ignore: cast_nullable_to_non_nullable
+              as num?,
+      maxValue: freezed == maxValue
+          ? _value.maxValue
+          : maxValue // ignore: cast_nullable_to_non_nullable
+              as num?,
+      minLength: freezed == minLength
+          ? _value.minLength
+          : minLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxLength: freezed == maxLength
+          ? _value.maxLength
+          : maxLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      choices: freezed == choices
+          ? _value._choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      regexPattern: freezed == regexPattern
+          ? _value.regexPattern
+          : regexPattern // ignore: cast_nullable_to_non_nullable
+              as RegExp?,
+      equivalences: freezed == equivalences
+          ? _value._equivalences
+          : equivalences // ignore: cast_nullable_to_non_nullable
+              as List<ConfigParameterEquivalence>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ConfigDefinitionImpl implements _ConfigDefinition {
+  const _$ConfigDefinitionImpl(
+      {@ConfigKindConverter() this.kind = ConfigKind.param,
+      final List<ConfigDefinition>? parameters,
+      @ConfigSourceConverter() final List<ConfigSource>? sources,
+      required this.parameter,
+      this.description,
+      @ConfigPayloadDataTypeConverter() this.dataType,
+      this.minValue,
+      this.maxValue,
+      this.minLength,
+      this.maxLength,
+      final List<String>? choices,
+      @RegExpOrNullConverter() this.regexPattern,
+      final List<ConfigParameterEquivalence>? equivalences})
+      : _parameters = parameters,
+        _sources = sources,
+        _choices = choices,
+        _equivalences = equivalences;
+
+  factory _$ConfigDefinitionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConfigDefinitionImplFromJson(json);
+
+  /// [kind] is the kind of the configuration.
+  ///
+  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
+  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
+  /// `parameter`, `description` and `parameters` will come.
+  ///
+  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
+  /// `parameter` and `description` should be the name of the grouping.
+  @override
+  @JsonKey()
+  @ConfigKindConverter()
+  final ConfigKind kind;
+
+  /// [parameters] is the list of parameters of the grouping.
+  /// Only for [ConfigKind.grouping]
+  final List<ConfigDefinition>? _parameters;
+
+  /// [parameters] is the list of parameters of the grouping.
+  /// Only for [ConfigKind.grouping]
+  @override
+  List<ConfigDefinition>? get parameters {
+    final value = _parameters;
+    if (value == null) return null;
+    if (_parameters is EqualUnmodifiableListView) return _parameters;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [sources] is the list of sources that the command can be executed.
+  /// Only for [ConfigKind.param]
+  final List<ConfigSource>? _sources;
+
+  /// [sources] is the list of sources that the command can be executed.
+  /// Only for [ConfigKind.param]
+  @override
+  @ConfigSourceConverter()
+  List<ConfigSource>? get sources {
+    final value = _sources;
+    if (value == null) return null;
+    if (_sources is EqualUnmodifiableListView) return _sources;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [parameter] is the name of the parameter, this is also the translation key.
+  /// Only for [ConfigKind.param]
+  @override
+  final String parameter;
+
+  /// [description] is the fallback name of the parameter, when the translation is not available.
+  /// Only for [ConfigKind.param]
+  @override
+  final String? description;
+
+  /// [dataType] is the data type of the parameter.
+  /// Only for [ConfigKind.param]
+  @override
+  @ConfigPayloadDataTypeConverter()
+  final ConfigPayloadDataType? dataType;
+
+  /// [minValue] is the minimum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  @override
+  final num? minValue;
+
+  /// [maxValue] is the maximum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  @override
+  final num? maxValue;
+
+  /// [minLength] is the minimum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  @override
+  final int? minLength;
+
+  /// [maxLength] is the maximum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  @override
+  final int? maxLength;
+
+  /// [choices] is the list of choices of the parameter.
+  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigKind.param]
+  final List<String>? _choices;
+
+  /// [choices] is the list of choices of the parameter.
+  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigKind.param]
+  @override
+  List<String>? get choices {
+    final value = _choices;
+    if (value == null) return null;
+    if (_choices is EqualUnmodifiableListView) return _choices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [regexPattern] is the regex pattern of the parameter.
+  /// Only for [ConfigKind.param]
+  @override
+  @RegExpOrNullConverter()
+  final RegExp? regexPattern;
+
+  /// [equivalences] is the list of equivalences of the parameter.
+  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
+  /// source, the parameter can be different, so this list is designed to provide the equivalence
+  /// between the different sources.
+  /// Only for [ConfigKind.param]
+  final List<ConfigParameterEquivalence>? _equivalences;
+
+  /// [equivalences] is the list of equivalences of the parameter.
+  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
+  /// source, the parameter can be different, so this list is designed to provide the equivalence
+  /// between the different sources.
+  /// Only for [ConfigKind.param]
+  @override
+  List<ConfigParameterEquivalence>? get equivalences {
+    final value = _equivalences;
+    if (value == null) return null;
+    if (_equivalences is EqualUnmodifiableListView) return _equivalences;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'ConfigDefinition(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ConfigDefinitionImpl &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            const DeepCollectionEquality()
+                .equals(other._parameters, _parameters) &&
+            const DeepCollectionEquality().equals(other._sources, _sources) &&
+            (identical(other.parameter, parameter) ||
+                other.parameter == parameter) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.dataType, dataType) ||
+                other.dataType == dataType) &&
+            (identical(other.minValue, minValue) ||
+                other.minValue == minValue) &&
+            (identical(other.maxValue, maxValue) ||
+                other.maxValue == maxValue) &&
+            (identical(other.minLength, minLength) ||
+                other.minLength == minLength) &&
+            (identical(other.maxLength, maxLength) ||
+                other.maxLength == maxLength) &&
+            const DeepCollectionEquality().equals(other._choices, _choices) &&
+            (identical(other.regexPattern, regexPattern) ||
+                other.regexPattern == regexPattern) &&
+            const DeepCollectionEquality()
+                .equals(other._equivalences, _equivalences));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      kind,
+      const DeepCollectionEquality().hash(_parameters),
+      const DeepCollectionEquality().hash(_sources),
+      parameter,
+      description,
+      dataType,
+      minValue,
+      maxValue,
+      minLength,
+      maxLength,
+      const DeepCollectionEquality().hash(_choices),
+      regexPattern,
+      const DeepCollectionEquality().hash(_equivalences));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConfigDefinitionImplCopyWith<_$ConfigDefinitionImpl> get copyWith =>
+      __$$ConfigDefinitionImplCopyWithImpl<_$ConfigDefinitionImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ConfigDefinitionImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ConfigDefinition implements ConfigDefinition {
+  const factory _ConfigDefinition(
+      {@ConfigKindConverter() final ConfigKind kind,
+      final List<ConfigDefinition>? parameters,
+      @ConfigSourceConverter() final List<ConfigSource>? sources,
+      required final String parameter,
+      final String? description,
+      @ConfigPayloadDataTypeConverter() final ConfigPayloadDataType? dataType,
+      final num? minValue,
+      final num? maxValue,
+      final int? minLength,
+      final int? maxLength,
+      final List<String>? choices,
+      @RegExpOrNullConverter() final RegExp? regexPattern,
+      final List<ConfigParameterEquivalence>?
+          equivalences}) = _$ConfigDefinitionImpl;
+
+  factory _ConfigDefinition.fromJson(Map<String, dynamic> json) =
+      _$ConfigDefinitionImpl.fromJson;
+
+  @override
+
+  /// [kind] is the kind of the configuration.
+  ///
+  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
+  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
+  /// `parameter`, `description` and `parameters` will come.
+  ///
+  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
+  /// `parameter` and `description` should be the name of the grouping.
+  @ConfigKindConverter()
+  ConfigKind get kind;
+  @override
+
+  /// [parameters] is the list of parameters of the grouping.
+  /// Only for [ConfigKind.grouping]
+  List<ConfigDefinition>? get parameters;
+  @override
+
+  /// [sources] is the list of sources that the command can be executed.
+  /// Only for [ConfigKind.param]
+  @ConfigSourceConverter()
+  List<ConfigSource>? get sources;
+  @override
+
+  /// [parameter] is the name of the parameter, this is also the translation key.
+  /// Only for [ConfigKind.param]
+  String get parameter;
+  @override
+
+  /// [description] is the fallback name of the parameter, when the translation is not available.
+  /// Only for [ConfigKind.param]
+  String? get description;
+  @override
+
+  /// [dataType] is the data type of the parameter.
+  /// Only for [ConfigKind.param]
+  @ConfigPayloadDataTypeConverter()
+  ConfigPayloadDataType? get dataType;
+  @override
+
+  /// [minValue] is the minimum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  num? get minValue;
+  @override
+
+  /// [maxValue] is the maximum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  num? get maxValue;
+  @override
+
+  /// [minLength] is the minimum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  int? get minLength;
+  @override
+
+  /// [maxLength] is the maximum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  int? get maxLength;
+  @override
+
+  /// [choices] is the list of choices of the parameter.
+  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigKind.param]
+  List<String>? get choices;
+  @override
+
+  /// [regexPattern] is the regex pattern of the parameter.
+  /// Only for [ConfigKind.param]
+  @RegExpOrNullConverter()
+  RegExp? get regexPattern;
+  @override
+
+  /// [equivalences] is the list of equivalences of the parameter.
+  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
+  /// source, the parameter can be different, so this list is designed to provide the equivalence
+  /// between the different sources.
+  /// Only for [ConfigKind.param]
+  List<ConfigParameterEquivalence>? get equivalences;
+  @override
+  @JsonKey(ignore: true)
+  _$$ConfigDefinitionImplCopyWith<_$ConfigDefinitionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ConfigParameterEquivalenceInput _$ConfigParameterEquivalenceInputFromJson(
+    Map<String, dynamic> json) {
+  return _ConfigParameterEquivalenceInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ConfigParameterEquivalenceInput {
+  /// [source] is the source of the equivalence.
+  @ConfigSourceConverter()
+  ConfigSource get source => throw _privateConstructorUsedError;
+
+  /// [source] is the source of the equivalence.
+  @ConfigSourceConverter()
+  set source(ConfigSource value) => throw _privateConstructorUsedError;
+
+  /// [parameter] is the parameter of the equivalence.
+  String get value => throw _privateConstructorUsedError;
+
+  /// [parameter] is the parameter of the equivalence.
+  set value(String value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ConfigParameterEquivalenceInputCopyWith<ConfigParameterEquivalenceInput>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ConfigParameterEquivalenceInputCopyWith<$Res> {
+  factory $ConfigParameterEquivalenceInputCopyWith(
+          ConfigParameterEquivalenceInput value,
+          $Res Function(ConfigParameterEquivalenceInput) then) =
+      _$ConfigParameterEquivalenceInputCopyWithImpl<$Res,
+          ConfigParameterEquivalenceInput>;
+  @useResult
+  $Res call({@ConfigSourceConverter() ConfigSource source, String value});
+}
+
+/// @nodoc
+class _$ConfigParameterEquivalenceInputCopyWithImpl<$Res,
+        $Val extends ConfigParameterEquivalenceInput>
+    implements $ConfigParameterEquivalenceInputCopyWith<$Res> {
+  _$ConfigParameterEquivalenceInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = null,
+    Object? value = null,
+  }) {
+    return _then(_value.copyWith(
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as ConfigSource,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ConfigParameterEquivalenceInputImplCopyWith<$Res>
+    implements $ConfigParameterEquivalenceInputCopyWith<$Res> {
+  factory _$$ConfigParameterEquivalenceInputImplCopyWith(
+          _$ConfigParameterEquivalenceInputImpl value,
+          $Res Function(_$ConfigParameterEquivalenceInputImpl) then) =
+      __$$ConfigParameterEquivalenceInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({@ConfigSourceConverter() ConfigSource source, String value});
+}
+
+/// @nodoc
+class __$$ConfigParameterEquivalenceInputImplCopyWithImpl<$Res>
+    extends _$ConfigParameterEquivalenceInputCopyWithImpl<$Res,
+        _$ConfigParameterEquivalenceInputImpl>
+    implements _$$ConfigParameterEquivalenceInputImplCopyWith<$Res> {
+  __$$ConfigParameterEquivalenceInputImplCopyWithImpl(
+      _$ConfigParameterEquivalenceInputImpl _value,
+      $Res Function(_$ConfigParameterEquivalenceInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = null,
+    Object? value = null,
+  }) {
+    return _then(_$ConfigParameterEquivalenceInputImpl(
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as ConfigSource,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ConfigParameterEquivalenceInputImpl
+    implements _ConfigParameterEquivalenceInput {
+  _$ConfigParameterEquivalenceInputImpl(
+      {@ConfigSourceConverter() this.source = ConfigSource.layrzLink,
+      this.value = ''});
+
+  factory _$ConfigParameterEquivalenceInputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$ConfigParameterEquivalenceInputImplFromJson(json);
+
+  /// [source] is the source of the equivalence.
+  @override
+  @JsonKey()
+  @ConfigSourceConverter()
+  ConfigSource source;
+
+  /// [parameter] is the parameter of the equivalence.
+  @override
+  @JsonKey()
+  String value;
+
+  @override
+  String toString() {
+    return 'ConfigParameterEquivalenceInput(source: $source, value: $value)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConfigParameterEquivalenceInputImplCopyWith<
+          _$ConfigParameterEquivalenceInputImpl>
+      get copyWith => __$$ConfigParameterEquivalenceInputImplCopyWithImpl<
+          _$ConfigParameterEquivalenceInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ConfigParameterEquivalenceInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ConfigParameterEquivalenceInput
+    implements ConfigParameterEquivalenceInput {
+  factory _ConfigParameterEquivalenceInput(
+      {@ConfigSourceConverter() ConfigSource source,
+      String value}) = _$ConfigParameterEquivalenceInputImpl;
+
+  factory _ConfigParameterEquivalenceInput.fromJson(Map<String, dynamic> json) =
+      _$ConfigParameterEquivalenceInputImpl.fromJson;
+
+  @override
+
+  /// [source] is the source of the equivalence.
+  @ConfigSourceConverter()
+  ConfigSource get source;
+
+  /// [source] is the source of the equivalence.
+  @ConfigSourceConverter()
+  set source(ConfigSource value);
+  @override
+
+  /// [parameter] is the parameter of the equivalence.
+  String get value;
+
+  /// [parameter] is the parameter of the equivalence.
+  set value(String value);
+  @override
+  @JsonKey(ignore: true)
+  _$$ConfigParameterEquivalenceInputImplCopyWith<
+          _$ConfigParameterEquivalenceInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+ConfigDefinitionInput _$ConfigDefinitionInputFromJson(
+    Map<String, dynamic> json) {
+  return _ConfigDefinitionInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ConfigDefinitionInput {
+  /// [kind] is the kind of the configuration.
+  ///
+  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
+  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
+  /// `parameter`, `description` and `parameters` will come.
+  ///
+  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
+  /// `parameter` and `description` should be the name of the grouping.
+  @ConfigKindConverter()
+  ConfigKind get kind => throw _privateConstructorUsedError;
+
+  /// [kind] is the kind of the configuration.
+  ///
+  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
+  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
+  /// `parameter`, `description` and `parameters` will come.
+  ///
+  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
+  /// `parameter` and `description` should be the name of the grouping.
+  @ConfigKindConverter()
+  set kind(ConfigKind value) => throw _privateConstructorUsedError;
+
+  /// [parameters] is the list of parameters of the grouping.
+  /// Only for [ConfigKind.grouping]
+  List<ConfigDefinitionInput>? get parameters =>
+      throw _privateConstructorUsedError;
+
+  /// [parameters] is the list of parameters of the grouping.
+  /// Only for [ConfigKind.grouping]
+  set parameters(List<ConfigDefinitionInput>? value) =>
+      throw _privateConstructorUsedError;
+
+  /// [sources] is the list of sources that the command can be executed.
+  /// Only for [ConfigKind.param]
+  @ConfigSourceConverter()
+  List<ConfigSource>? get sources => throw _privateConstructorUsedError;
+
+  /// [sources] is the list of sources that the command can be executed.
+  /// Only for [ConfigKind.param]
+  @ConfigSourceConverter()
+  set sources(List<ConfigSource>? value) => throw _privateConstructorUsedError;
+
+  /// [parameter] is the name of the parameter, this is also the translation key.
+  /// Only for [ConfigKind.param]
+  String get parameter => throw _privateConstructorUsedError;
+
+  /// [parameter] is the name of the parameter, this is also the translation key.
+  /// Only for [ConfigKind.param]
+  set parameter(String value) => throw _privateConstructorUsedError;
+
+  /// [description] is the fallback name of the parameter, when the translation is not available.
+  /// Only for [ConfigKind.param]
+  String? get description => throw _privateConstructorUsedError;
+
+  /// [description] is the fallback name of the parameter, when the translation is not available.
+  /// Only for [ConfigKind.param]
+  set description(String? value) => throw _privateConstructorUsedError;
+
+  /// [dataType] is the data type of the parameter.
+  /// Only for [ConfigKind.param]
+  @ConfigPayloadDataTypeConverter()
+  ConfigPayloadDataType? get dataType => throw _privateConstructorUsedError;
+
+  /// [dataType] is the data type of the parameter.
+  /// Only for [ConfigKind.param]
+  @ConfigPayloadDataTypeConverter()
+  set dataType(ConfigPayloadDataType? value) =>
+      throw _privateConstructorUsedError;
+
+  /// [minValue] is the minimum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  num? get minValue => throw _privateConstructorUsedError;
+
+  /// [minValue] is the minimum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  set minValue(num? value) => throw _privateConstructorUsedError;
+
+  /// [maxValue] is the maximum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  num? get maxValue => throw _privateConstructorUsedError;
+
+  /// [maxValue] is the maximum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  set maxValue(num? value) => throw _privateConstructorUsedError;
+
+  /// [minLength] is the minimum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  int? get minLength => throw _privateConstructorUsedError;
+
+  /// [minLength] is the minimum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  set minLength(int? value) => throw _privateConstructorUsedError;
+
+  /// [maxLength] is the maximum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  int? get maxLength => throw _privateConstructorUsedError;
+
+  /// [maxLength] is the maximum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  set maxLength(int? value) => throw _privateConstructorUsedError;
+
+  /// [choices] is the list of choices of the parameter.
+  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigKind.param]
+  List<String>? get choices => throw _privateConstructorUsedError;
+
+  /// [choices] is the list of choices of the parameter.
+  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigKind.param]
+  set choices(List<String>? value) => throw _privateConstructorUsedError;
+
+  /// [regexPattern] is the regex pattern of the parameter.
+  /// Only for [ConfigKind.param]
+  @RegExpOrNullConverter()
+  RegExp? get regexPattern => throw _privateConstructorUsedError;
+
+  /// [regexPattern] is the regex pattern of the parameter.
+  /// Only for [ConfigKind.param]
+  @RegExpOrNullConverter()
+  set regexPattern(RegExp? value) => throw _privateConstructorUsedError;
+
+  /// [equivalences] is the list of equivalences of the parameter.
+  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
+  /// source, the parameter can be different, so this list is designed to provide the equivalence
+  /// between the different sources.
+  /// Only for [ConfigKind.param]
+  List<ConfigParameterEquivalenceInput>? get equivalences =>
+      throw _privateConstructorUsedError;
+
+  /// [equivalences] is the list of equivalences of the parameter.
+  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
+  /// source, the parameter can be different, so this list is designed to provide the equivalence
+  /// between the different sources.
+  /// Only for [ConfigKind.param]
+  set equivalences(List<ConfigParameterEquivalenceInput>? value) =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ConfigDefinitionInputCopyWith<ConfigDefinitionInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ConfigDefinitionInputCopyWith<$Res> {
+  factory $ConfigDefinitionInputCopyWith(ConfigDefinitionInput value,
+          $Res Function(ConfigDefinitionInput) then) =
+      _$ConfigDefinitionInputCopyWithImpl<$Res, ConfigDefinitionInput>;
+  @useResult
+  $Res call(
+      {@ConfigKindConverter() ConfigKind kind,
+      List<ConfigDefinitionInput>? parameters,
+      @ConfigSourceConverter() List<ConfigSource>? sources,
+      String parameter,
+      String? description,
+      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
+      num? minValue,
+      num? maxValue,
+      int? minLength,
+      int? maxLength,
+      List<String>? choices,
+      @RegExpOrNullConverter() RegExp? regexPattern,
+      List<ConfigParameterEquivalenceInput>? equivalences});
+}
+
+/// @nodoc
+class _$ConfigDefinitionInputCopyWithImpl<$Res,
+        $Val extends ConfigDefinitionInput>
+    implements $ConfigDefinitionInputCopyWith<$Res> {
+  _$ConfigDefinitionInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? kind = null,
+    Object? parameters = freezed,
+    Object? sources = freezed,
+    Object? parameter = null,
+    Object? description = freezed,
+    Object? dataType = freezed,
+    Object? minValue = freezed,
+    Object? maxValue = freezed,
+    Object? minLength = freezed,
+    Object? maxLength = freezed,
+    Object? choices = freezed,
+    Object? regexPattern = freezed,
+    Object? equivalences = freezed,
+  }) {
+    return _then(_value.copyWith(
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ConfigKind,
+      parameters: freezed == parameters
+          ? _value.parameters
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinitionInput>?,
+      sources: freezed == sources
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<ConfigSource>?,
+      parameter: null == parameter
+          ? _value.parameter
+          : parameter // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dataType: freezed == dataType
+          ? _value.dataType
+          : dataType // ignore: cast_nullable_to_non_nullable
+              as ConfigPayloadDataType?,
+      minValue: freezed == minValue
+          ? _value.minValue
+          : minValue // ignore: cast_nullable_to_non_nullable
+              as num?,
+      maxValue: freezed == maxValue
+          ? _value.maxValue
+          : maxValue // ignore: cast_nullable_to_non_nullable
+              as num?,
+      minLength: freezed == minLength
+          ? _value.minLength
+          : minLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxLength: freezed == maxLength
+          ? _value.maxLength
+          : maxLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      choices: freezed == choices
+          ? _value.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      regexPattern: freezed == regexPattern
+          ? _value.regexPattern
+          : regexPattern // ignore: cast_nullable_to_non_nullable
+              as RegExp?,
+      equivalences: freezed == equivalences
+          ? _value.equivalences
+          : equivalences // ignore: cast_nullable_to_non_nullable
+              as List<ConfigParameterEquivalenceInput>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ConfigDefinitionInputImplCopyWith<$Res>
+    implements $ConfigDefinitionInputCopyWith<$Res> {
+  factory _$$ConfigDefinitionInputImplCopyWith(
+          _$ConfigDefinitionInputImpl value,
+          $Res Function(_$ConfigDefinitionInputImpl) then) =
+      __$$ConfigDefinitionInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@ConfigKindConverter() ConfigKind kind,
+      List<ConfigDefinitionInput>? parameters,
+      @ConfigSourceConverter() List<ConfigSource>? sources,
+      String parameter,
+      String? description,
+      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
+      num? minValue,
+      num? maxValue,
+      int? minLength,
+      int? maxLength,
+      List<String>? choices,
+      @RegExpOrNullConverter() RegExp? regexPattern,
+      List<ConfigParameterEquivalenceInput>? equivalences});
+}
+
+/// @nodoc
+class __$$ConfigDefinitionInputImplCopyWithImpl<$Res>
+    extends _$ConfigDefinitionInputCopyWithImpl<$Res,
+        _$ConfigDefinitionInputImpl>
+    implements _$$ConfigDefinitionInputImplCopyWith<$Res> {
+  __$$ConfigDefinitionInputImplCopyWithImpl(_$ConfigDefinitionInputImpl _value,
+      $Res Function(_$ConfigDefinitionInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? kind = null,
+    Object? parameters = freezed,
+    Object? sources = freezed,
+    Object? parameter = null,
+    Object? description = freezed,
+    Object? dataType = freezed,
+    Object? minValue = freezed,
+    Object? maxValue = freezed,
+    Object? minLength = freezed,
+    Object? maxLength = freezed,
+    Object? choices = freezed,
+    Object? regexPattern = freezed,
+    Object? equivalences = freezed,
+  }) {
+    return _then(_$ConfigDefinitionInputImpl(
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ConfigKind,
+      parameters: freezed == parameters
+          ? _value.parameters
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinitionInput>?,
+      sources: freezed == sources
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<ConfigSource>?,
+      parameter: null == parameter
+          ? _value.parameter
+          : parameter // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dataType: freezed == dataType
+          ? _value.dataType
+          : dataType // ignore: cast_nullable_to_non_nullable
+              as ConfigPayloadDataType?,
+      minValue: freezed == minValue
+          ? _value.minValue
+          : minValue // ignore: cast_nullable_to_non_nullable
+              as num?,
+      maxValue: freezed == maxValue
+          ? _value.maxValue
+          : maxValue // ignore: cast_nullable_to_non_nullable
+              as num?,
+      minLength: freezed == minLength
+          ? _value.minLength
+          : minLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      maxLength: freezed == maxLength
+          ? _value.maxLength
+          : maxLength // ignore: cast_nullable_to_non_nullable
+              as int?,
+      choices: freezed == choices
+          ? _value.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      regexPattern: freezed == regexPattern
+          ? _value.regexPattern
+          : regexPattern // ignore: cast_nullable_to_non_nullable
+              as RegExp?,
+      equivalences: freezed == equivalences
+          ? _value.equivalences
+          : equivalences // ignore: cast_nullable_to_non_nullable
+              as List<ConfigParameterEquivalenceInput>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
+  _$ConfigDefinitionInputImpl(
+      {@ConfigKindConverter() this.kind = ConfigKind.param,
+      this.parameters,
+      @ConfigSourceConverter() this.sources,
+      this.parameter = '',
+      this.description,
+      @ConfigPayloadDataTypeConverter() this.dataType,
+      this.minValue,
+      this.maxValue,
+      this.minLength,
+      this.maxLength,
+      this.choices,
+      @RegExpOrNullConverter() this.regexPattern,
+      this.equivalences});
+
+  factory _$ConfigDefinitionInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConfigDefinitionInputImplFromJson(json);
+
+  /// [kind] is the kind of the configuration.
+  ///
+  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
+  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
+  /// `parameter`, `description` and `parameters` will come.
+  ///
+  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
+  /// `parameter` and `description` should be the name of the grouping.
+  @override
+  @JsonKey()
+  @ConfigKindConverter()
+  ConfigKind kind;
+
+  /// [parameters] is the list of parameters of the grouping.
+  /// Only for [ConfigKind.grouping]
+  @override
+  List<ConfigDefinitionInput>? parameters;
+
+  /// [sources] is the list of sources that the command can be executed.
+  /// Only for [ConfigKind.param]
+  @override
+  @ConfigSourceConverter()
+  List<ConfigSource>? sources;
+
+  /// [parameter] is the name of the parameter, this is also the translation key.
+  /// Only for [ConfigKind.param]
+  @override
+  @JsonKey()
+  String parameter;
+
+  /// [description] is the fallback name of the parameter, when the translation is not available.
+  /// Only for [ConfigKind.param]
+  @override
+  String? description;
+
+  /// [dataType] is the data type of the parameter.
+  /// Only for [ConfigKind.param]
+  @override
+  @ConfigPayloadDataTypeConverter()
+  ConfigPayloadDataType? dataType;
+
+  /// [minValue] is the minimum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  @override
+  num? minValue;
+
+  /// [maxValue] is the maximum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  @override
+  num? maxValue;
+
+  /// [minLength] is the minimum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  @override
+  int? minLength;
+
+  /// [maxLength] is the maximum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  @override
+  int? maxLength;
+
+  /// [choices] is the list of choices of the parameter.
+  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigKind.param]
+  @override
+  List<String>? choices;
+
+  /// [regexPattern] is the regex pattern of the parameter.
+  /// Only for [ConfigKind.param]
+  @override
+  @RegExpOrNullConverter()
+  RegExp? regexPattern;
+
+  /// [equivalences] is the list of equivalences of the parameter.
+  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
+  /// source, the parameter can be different, so this list is designed to provide the equivalence
+  /// between the different sources.
+  /// Only for [ConfigKind.param]
+  @override
+  List<ConfigParameterEquivalenceInput>? equivalences;
+
+  @override
+  String toString() {
+    return 'ConfigDefinitionInput(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ConfigDefinitionInputImplCopyWith<_$ConfigDefinitionInputImpl>
+      get copyWith => __$$ConfigDefinitionInputImplCopyWithImpl<
+          _$ConfigDefinitionInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ConfigDefinitionInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
+  factory _ConfigDefinitionInput(
+          {@ConfigKindConverter() ConfigKind kind,
+          List<ConfigDefinitionInput>? parameters,
+          @ConfigSourceConverter() List<ConfigSource>? sources,
+          String parameter,
+          String? description,
+          @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
+          num? minValue,
+          num? maxValue,
+          int? minLength,
+          int? maxLength,
+          List<String>? choices,
+          @RegExpOrNullConverter() RegExp? regexPattern,
+          List<ConfigParameterEquivalenceInput>? equivalences}) =
+      _$ConfigDefinitionInputImpl;
+
+  factory _ConfigDefinitionInput.fromJson(Map<String, dynamic> json) =
+      _$ConfigDefinitionInputImpl.fromJson;
+
+  @override
+
+  /// [kind] is the kind of the configuration.
+  ///
+  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
+  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
+  /// `parameter`, `description` and `parameters` will come.
+  ///
+  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
+  /// `parameter` and `description` should be the name of the grouping.
+  @ConfigKindConverter()
+  ConfigKind get kind;
+
+  /// [kind] is the kind of the configuration.
+  ///
+  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
+  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
+  /// `parameter`, `description` and `parameters` will come.
+  ///
+  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
+  /// `parameter` and `description` should be the name of the grouping.
+  @ConfigKindConverter()
+  set kind(ConfigKind value);
+  @override
+
+  /// [parameters] is the list of parameters of the grouping.
+  /// Only for [ConfigKind.grouping]
+  List<ConfigDefinitionInput>? get parameters;
+
+  /// [parameters] is the list of parameters of the grouping.
+  /// Only for [ConfigKind.grouping]
+  set parameters(List<ConfigDefinitionInput>? value);
+  @override
+
+  /// [sources] is the list of sources that the command can be executed.
+  /// Only for [ConfigKind.param]
+  @ConfigSourceConverter()
+  List<ConfigSource>? get sources;
+
+  /// [sources] is the list of sources that the command can be executed.
+  /// Only for [ConfigKind.param]
+  @ConfigSourceConverter()
+  set sources(List<ConfigSource>? value);
+  @override
+
+  /// [parameter] is the name of the parameter, this is also the translation key.
+  /// Only for [ConfigKind.param]
+  String get parameter;
+
+  /// [parameter] is the name of the parameter, this is also the translation key.
+  /// Only for [ConfigKind.param]
+  set parameter(String value);
+  @override
+
+  /// [description] is the fallback name of the parameter, when the translation is not available.
+  /// Only for [ConfigKind.param]
+  String? get description;
+
+  /// [description] is the fallback name of the parameter, when the translation is not available.
+  /// Only for [ConfigKind.param]
+  set description(String? value);
+  @override
+
+  /// [dataType] is the data type of the parameter.
+  /// Only for [ConfigKind.param]
+  @ConfigPayloadDataTypeConverter()
+  ConfigPayloadDataType? get dataType;
+
+  /// [dataType] is the data type of the parameter.
+  /// Only for [ConfigKind.param]
+  @ConfigPayloadDataTypeConverter()
+  set dataType(ConfigPayloadDataType? value);
+  @override
+
+  /// [minValue] is the minimum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  num? get minValue;
+
+  /// [minValue] is the minimum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  set minValue(num? value);
+  @override
+
+  /// [maxValue] is the maximum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  num? get maxValue;
+
+  /// [maxValue] is the maximum value of the parameter.
+  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigKind.param]
+  set maxValue(num? value);
+  @override
+
+  /// [minLength] is the minimum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  int? get minLength;
+
+  /// [minLength] is the minimum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  set minLength(int? value);
+  @override
+
+  /// [maxLength] is the maximum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  int? get maxLength;
+
+  /// [maxLength] is the maximum length of the parameter.
+  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigKind.param]
+  set maxLength(int? value);
+  @override
+
+  /// [choices] is the list of choices of the parameter.
+  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigKind.param]
+  List<String>? get choices;
+
+  /// [choices] is the list of choices of the parameter.
+  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigKind.param]
+  set choices(List<String>? value);
+  @override
+
+  /// [regexPattern] is the regex pattern of the parameter.
+  /// Only for [ConfigKind.param]
+  @RegExpOrNullConverter()
+  RegExp? get regexPattern;
+
+  /// [regexPattern] is the regex pattern of the parameter.
+  /// Only for [ConfigKind.param]
+  @RegExpOrNullConverter()
+  set regexPattern(RegExp? value);
+  @override
+
+  /// [equivalences] is the list of equivalences of the parameter.
+  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
+  /// source, the parameter can be different, so this list is designed to provide the equivalence
+  /// between the different sources.
+  /// Only for [ConfigKind.param]
+  List<ConfigParameterEquivalenceInput>? get equivalences;
+
+  /// [equivalences] is the list of equivalences of the parameter.
+  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
+  /// source, the parameter can be different, so this list is designed to provide the equivalence
+  /// between the different sources.
+  /// Only for [ConfigKind.param]
+  set equivalences(List<ConfigParameterEquivalenceInput>? value);
+  @override
+  @JsonKey(ignore: true)
+  _$$ConfigDefinitionInputImplCopyWith<_$ConfigDefinitionInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
