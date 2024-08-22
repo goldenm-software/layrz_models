@@ -104,6 +104,10 @@ enum CommandPayloadDataType {
   /// [nested] is the data type of the payload, consist in a nested object.
   /// Layrz API Reference: `NESTED`
   nested,
+
+  /// [list] is the data type of the payload, consist in a list of objects.
+  /// Layrz API Reference: `LIST`
+  list,
   ;
 
   @override
@@ -125,13 +129,13 @@ enum CommandPayloadDataType {
         return 'CHOICE_INDEX';
       case CommandPayloadDataType.nested:
         return 'NESTED';
+      case CommandPayloadDataType.list:
+        return 'LIST';
     }
   }
 
   static CommandPayloadDataType fromJson(String json) {
     switch (json) {
-      case 'STRING':
-        return CommandPayloadDataType.string;
       case 'INTEGER':
         return CommandPayloadDataType.integer;
       case 'FLOAT':
@@ -144,6 +148,9 @@ enum CommandPayloadDataType {
         return CommandPayloadDataType.choiceIndex;
       case 'NESTED':
         return CommandPayloadDataType.nested;
+      case 'LIST':
+        return CommandPayloadDataType.list;
+      case 'STRING':
       default:
         return CommandPayloadDataType.string;
     }
