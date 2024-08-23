@@ -84,6 +84,9 @@ class ConfigDefinition with _$ConfigDefinition {
     /// between the different sources.
     /// Only for [ConfigKind.param]
     List<ConfigParameterEquivalence>? equivalences,
+
+    /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
+    bool? setupCapable,
   }) = _ConfigDefinition;
 
   factory ConfigDefinition.fromJson(Map<String, dynamic> json) => _$ConfigDefinitionFromJson(json);
@@ -171,6 +174,9 @@ class ConfigDefinitionInput with _$ConfigDefinitionInput {
     /// between the different sources.
     /// Only for [ConfigKind.param]
     List<ConfigParameterEquivalenceInput>? equivalences,
+
+    /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
+    @Default(false) bool setupCapable,
   }) = _ConfigDefinitionInput;
 
   factory ConfigDefinitionInput.fromJson(Map<String, dynamic> json) => _$ConfigDefinitionInputFromJson(json);

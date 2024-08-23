@@ -3,6 +3,7 @@
 ## 3.1.0 (WIP)
 
 - Updated `InboundProtocol` and `Model` to handle new commands definitions and configuration parameters
+- Added `ConfIoTFile` configuration model
 
 ## 3.0.3
 - Add `MappitReportInput` 

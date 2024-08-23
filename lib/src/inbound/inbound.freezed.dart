@@ -3480,6 +3480,9 @@ mixin _$ConfigDefinition {
   List<ConfigParameterEquivalence>? get equivalences =>
       throw _privateConstructorUsedError;
 
+  /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
+  bool? get setupCapable => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ConfigDefinitionCopyWith<ConfigDefinition> get copyWith =>
@@ -3505,7 +3508,8 @@ abstract class $ConfigDefinitionCopyWith<$Res> {
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<ConfigParameterEquivalence>? equivalences});
+      List<ConfigParameterEquivalence>? equivalences,
+      bool? setupCapable});
 }
 
 /// @nodoc
@@ -3534,6 +3538,7 @@ class _$ConfigDefinitionCopyWithImpl<$Res, $Val extends ConfigDefinition>
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? equivalences = freezed,
+    Object? setupCapable = freezed,
   }) {
     return _then(_value.copyWith(
       kind: null == kind
@@ -3588,6 +3593,10 @@ class _$ConfigDefinitionCopyWithImpl<$Res, $Val extends ConfigDefinition>
           ? _value.equivalences
           : equivalences // ignore: cast_nullable_to_non_nullable
               as List<ConfigParameterEquivalence>?,
+      setupCapable: freezed == setupCapable
+          ? _value.setupCapable
+          : setupCapable // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ) as $Val);
   }
 }
@@ -3613,7 +3622,8 @@ abstract class _$$ConfigDefinitionImplCopyWith<$Res>
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<ConfigParameterEquivalence>? equivalences});
+      List<ConfigParameterEquivalence>? equivalences,
+      bool? setupCapable});
 }
 
 /// @nodoc
@@ -3640,6 +3650,7 @@ class __$$ConfigDefinitionImplCopyWithImpl<$Res>
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? equivalences = freezed,
+    Object? setupCapable = freezed,
   }) {
     return _then(_$ConfigDefinitionImpl(
       kind: null == kind
@@ -3694,6 +3705,10 @@ class __$$ConfigDefinitionImplCopyWithImpl<$Res>
           ? _value._equivalences
           : equivalences // ignore: cast_nullable_to_non_nullable
               as List<ConfigParameterEquivalence>?,
+      setupCapable: freezed == setupCapable
+          ? _value.setupCapable
+          : setupCapable // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -3714,7 +3729,8 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
       this.maxLength,
       final List<String>? choices,
       @RegExpOrNullConverter() this.regexPattern,
-      final List<ConfigParameterEquivalence>? equivalences})
+      final List<ConfigParameterEquivalence>? equivalences,
+      this.setupCapable})
       : _parameters = parameters,
         _sources = sources,
         _choices = choices,
@@ -3851,9 +3867,13 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
+  @override
+  final bool? setupCapable;
+
   @override
   String toString() {
-    return 'ConfigDefinition(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences)';
+    return 'ConfigDefinition(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences, setupCapable: $setupCapable)';
   }
 
   @override
@@ -3883,7 +3903,9 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
             (identical(other.regexPattern, regexPattern) ||
                 other.regexPattern == regexPattern) &&
             const DeepCollectionEquality()
-                .equals(other._equivalences, _equivalences));
+                .equals(other._equivalences, _equivalences) &&
+            (identical(other.setupCapable, setupCapable) ||
+                other.setupCapable == setupCapable));
   }
 
   @JsonKey(ignore: true)
@@ -3902,7 +3924,8 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
       maxLength,
       const DeepCollectionEquality().hash(_choices),
       regexPattern,
-      const DeepCollectionEquality().hash(_equivalences));
+      const DeepCollectionEquality().hash(_equivalences),
+      setupCapable);
 
   @JsonKey(ignore: true)
   @override
@@ -3933,8 +3956,8 @@ abstract class _ConfigDefinition implements ConfigDefinition {
       final int? maxLength,
       final List<String>? choices,
       @RegExpOrNullConverter() final RegExp? regexPattern,
-      final List<ConfigParameterEquivalence>?
-          equivalences}) = _$ConfigDefinitionImpl;
+      final List<ConfigParameterEquivalence>? equivalences,
+      final bool? setupCapable}) = _$ConfigDefinitionImpl;
 
   factory _ConfigDefinition.fromJson(Map<String, dynamic> json) =
       _$ConfigDefinitionImpl.fromJson;
@@ -4022,6 +4045,10 @@ abstract class _ConfigDefinition implements ConfigDefinition {
   /// between the different sources.
   /// Only for [ConfigKind.param]
   List<ConfigParameterEquivalence>? get equivalences;
+  @override
+
+  /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
+  bool? get setupCapable;
   @override
   @JsonKey(ignore: true)
   _$$ConfigDefinitionImplCopyWith<_$ConfigDefinitionImpl> get copyWith =>
@@ -4365,6 +4392,12 @@ mixin _$ConfigDefinitionInput {
   set equivalences(List<ConfigParameterEquivalenceInput>? value) =>
       throw _privateConstructorUsedError;
 
+  /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
+  bool get setupCapable => throw _privateConstructorUsedError;
+
+  /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
+  set setupCapable(bool value) => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ConfigDefinitionInputCopyWith<ConfigDefinitionInput> get copyWith =>
@@ -4390,7 +4423,8 @@ abstract class $ConfigDefinitionInputCopyWith<$Res> {
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<ConfigParameterEquivalenceInput>? equivalences});
+      List<ConfigParameterEquivalenceInput>? equivalences,
+      bool setupCapable});
 }
 
 /// @nodoc
@@ -4420,6 +4454,7 @@ class _$ConfigDefinitionInputCopyWithImpl<$Res,
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? equivalences = freezed,
+    Object? setupCapable = null,
   }) {
     return _then(_value.copyWith(
       kind: null == kind
@@ -4474,6 +4509,10 @@ class _$ConfigDefinitionInputCopyWithImpl<$Res,
           ? _value.equivalences
           : equivalences // ignore: cast_nullable_to_non_nullable
               as List<ConfigParameterEquivalenceInput>?,
+      setupCapable: null == setupCapable
+          ? _value.setupCapable
+          : setupCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -4500,7 +4539,8 @@ abstract class _$$ConfigDefinitionInputImplCopyWith<$Res>
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<ConfigParameterEquivalenceInput>? equivalences});
+      List<ConfigParameterEquivalenceInput>? equivalences,
+      bool setupCapable});
 }
 
 /// @nodoc
@@ -4528,6 +4568,7 @@ class __$$ConfigDefinitionInputImplCopyWithImpl<$Res>
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? equivalences = freezed,
+    Object? setupCapable = null,
   }) {
     return _then(_$ConfigDefinitionInputImpl(
       kind: null == kind
@@ -4582,6 +4623,10 @@ class __$$ConfigDefinitionInputImplCopyWithImpl<$Res>
           ? _value.equivalences
           : equivalences // ignore: cast_nullable_to_non_nullable
               as List<ConfigParameterEquivalenceInput>?,
+      setupCapable: null == setupCapable
+          ? _value.setupCapable
+          : setupCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -4602,7 +4647,8 @@ class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
       this.maxLength,
       this.choices,
       @RegExpOrNullConverter() this.regexPattern,
-      this.equivalences});
+      this.equivalences,
+      this.setupCapable = false});
 
   factory _$ConfigDefinitionInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConfigDefinitionInputImplFromJson(json);
@@ -4692,9 +4738,14 @@ class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
   @override
   List<ConfigParameterEquivalenceInput>? equivalences;
 
+  /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
+  @override
+  @JsonKey()
+  bool setupCapable;
+
   @override
   String toString() {
-    return 'ConfigDefinitionInput(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences)';
+    return 'ConfigDefinitionInput(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences, setupCapable: $setupCapable)';
   }
 
   @JsonKey(ignore: true)
@@ -4714,20 +4765,20 @@ class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
 
 abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
   factory _ConfigDefinitionInput(
-          {@ConfigKindConverter() ConfigKind kind,
-          List<ConfigDefinitionInput>? parameters,
-          @ConfigSourceConverter() List<ConfigSource>? sources,
-          String parameter,
-          String? description,
-          @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
-          num? minValue,
-          num? maxValue,
-          int? minLength,
-          int? maxLength,
-          List<String>? choices,
-          @RegExpOrNullConverter() RegExp? regexPattern,
-          List<ConfigParameterEquivalenceInput>? equivalences}) =
-      _$ConfigDefinitionInputImpl;
+      {@ConfigKindConverter() ConfigKind kind,
+      List<ConfigDefinitionInput>? parameters,
+      @ConfigSourceConverter() List<ConfigSource>? sources,
+      String parameter,
+      String? description,
+      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
+      num? minValue,
+      num? maxValue,
+      int? minLength,
+      int? maxLength,
+      List<String>? choices,
+      @RegExpOrNullConverter() RegExp? regexPattern,
+      List<ConfigParameterEquivalenceInput>? equivalences,
+      bool setupCapable}) = _$ConfigDefinitionInputImpl;
 
   factory _ConfigDefinitionInput.fromJson(Map<String, dynamic> json) =
       _$ConfigDefinitionInputImpl.fromJson;
@@ -4885,6 +4936,13 @@ abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
   /// between the different sources.
   /// Only for [ConfigKind.param]
   set equivalences(List<ConfigParameterEquivalenceInput>? value);
+  @override
+
+  /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
+  bool get setupCapable;
+
+  /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
+  set setupCapable(bool value);
   @override
   @JsonKey(ignore: true)
   _$$ConfigDefinitionInputImplCopyWith<_$ConfigDefinitionInputImpl>

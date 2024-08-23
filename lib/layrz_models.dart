@@ -27,6 +27,7 @@ import 'src/charts/charts.dart';
 import 'src/exchange/exchange.dart';
 // import 'src/builder/builder.dart';
 import 'src/commands/commands.dart';
+// import 'src/confiot/confiot.dart';
 
 // Internal exports
 export 'src/converters/converters.dart';
@@ -51,6 +52,7 @@ export 'src/charts/charts.dart';
 export 'src/exchange/exchange.dart';
 export 'src/builder/builder.dart';
 export 'src/commands/commands.dart';
+export 'src/confiot/confiot.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';

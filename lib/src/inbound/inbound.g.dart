@@ -330,6 +330,7 @@ _$ConfigDefinitionImpl _$$ConfigDefinitionImplFromJson(
           ?.map((e) =>
               ConfigParameterEquivalence.fromJson(e as Map<String, dynamic>))
           .toList(),
+      setupCapable: json['setupCapable'] as bool?,
     );
 
 Map<String, dynamic> _$$ConfigDefinitionImplToJson(
@@ -351,6 +352,7 @@ Map<String, dynamic> _$$ConfigDefinitionImplToJson(
       'regexPattern':
           const RegExpOrNullConverter().toJson(instance.regexPattern),
       'equivalences': instance.equivalences?.map((e) => e.toJson()).toList(),
+      'setupCapable': instance.setupCapable,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
@@ -411,6 +413,7 @@ _$ConfigDefinitionInputImpl _$$ConfigDefinitionInputImplFromJson(
           ?.map((e) => ConfigParameterEquivalenceInput.fromJson(
               e as Map<String, dynamic>))
           .toList(),
+      setupCapable: json['setupCapable'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$ConfigDefinitionInputImplToJson(
@@ -432,4 +435,5 @@ Map<String, dynamic> _$$ConfigDefinitionInputImplToJson(
       'regexPattern':
           const RegExpOrNullConverter().toJson(instance.regexPattern),
       'equivalences': instance.equivalences?.map((e) => e.toJson()).toList(),
+      'setupCapable': instance.setupCapable,
     };
