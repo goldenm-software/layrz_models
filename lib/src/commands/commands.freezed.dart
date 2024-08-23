@@ -241,6 +241,12 @@ mixin _$DeviceCommand {
   @CommandSourceConverter()
   CommandSource get source => throw _privateConstructorUsedError;
 
+  /// [isGlobal] is a flag that indicates if the command is global or not. A global command
+  /// is any command created for Layrz LTD members, and available for all of our customers
+  /// to use. A non-global command is a command created by a customer for their own use, this
+  /// can be or not a universal command or local command.
+  bool get isGlobal => throw _privateConstructorUsedError;
+
   /// [payload] is the text payload to send into a SMS command.
   String? get payload => throw _privateConstructorUsedError;
 
@@ -307,6 +313,7 @@ abstract class $DeviceCommandCopyWith<$Res> {
       {String id,
       String name,
       @CommandSourceConverter() CommandSource source,
+      bool isGlobal,
       String? payload,
       String? tagId,
       String? deviceId,
@@ -344,6 +351,7 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
     Object? id = null,
     Object? name = null,
     Object? source = null,
+    Object? isGlobal = null,
     Object? payload = freezed,
     Object? tagId = freezed,
     Object? deviceId = freezed,
@@ -372,6 +380,10 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as CommandSource,
+      isGlobal: null == isGlobal
+          ? _value.isGlobal
+          : isGlobal // ignore: cast_nullable_to_non_nullable
+              as bool,
       payload: freezed == payload
           ? _value.payload
           : payload // ignore: cast_nullable_to_non_nullable
@@ -492,6 +504,7 @@ abstract class _$$DeviceCommandImplCopyWith<$Res>
       {String id,
       String name,
       @CommandSourceConverter() CommandSource source,
+      bool isGlobal,
       String? payload,
       String? tagId,
       String? deviceId,
@@ -531,6 +544,7 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? source = null,
+    Object? isGlobal = null,
     Object? payload = freezed,
     Object? tagId = freezed,
     Object? deviceId = freezed,
@@ -559,6 +573,10 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as CommandSource,
+      isGlobal: null == isGlobal
+          ? _value.isGlobal
+          : isGlobal // ignore: cast_nullable_to_non_nullable
+              as bool,
       payload: freezed == payload
           ? _value.payload
           : payload // ignore: cast_nullable_to_non_nullable
@@ -626,6 +644,7 @@ class _$DeviceCommandImpl implements _DeviceCommand {
       {required this.id,
       required this.name,
       @CommandSourceConverter() required this.source,
+      this.isGlobal = false,
       this.payload,
       this.tagId,
       this.deviceId,
@@ -657,6 +676,14 @@ class _$DeviceCommandImpl implements _DeviceCommand {
   @override
   @CommandSourceConverter()
   final CommandSource source;
+
+  /// [isGlobal] is a flag that indicates if the command is global or not. A global command
+  /// is any command created for Layrz LTD members, and available for all of our customers
+  /// to use. A non-global command is a command created by a customer for their own use, this
+  /// can be or not a universal command or local command.
+  @override
+  @JsonKey()
+  final bool isGlobal;
 
   /// [payload] is the text payload to send into a SMS command.
   @override
@@ -742,7 +769,7 @@ class _$DeviceCommandImpl implements _DeviceCommand {
 
   @override
   String toString() {
-    return 'DeviceCommand(id: $id, name: $name, source: $source, payload: $payload, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, protocol: $protocol, modelId: $modelId, model: $model, definition: $definition, externalAccountId: $externalAccountId, data: $data, modbusParameter: $modbusParameter, modbusPort: $modbusPort, access: $access, possibleDevices: $possibleDevices)';
+    return 'DeviceCommand(id: $id, name: $name, source: $source, isGlobal: $isGlobal, payload: $payload, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, protocol: $protocol, modelId: $modelId, model: $model, definition: $definition, externalAccountId: $externalAccountId, data: $data, modbusParameter: $modbusParameter, modbusPort: $modbusPort, access: $access, possibleDevices: $possibleDevices)';
   }
 
   @override
@@ -753,6 +780,8 @@ class _$DeviceCommandImpl implements _DeviceCommand {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.source, source) || other.source == source) &&
+            (identical(other.isGlobal, isGlobal) ||
+                other.isGlobal == isGlobal) &&
             (identical(other.payload, payload) || other.payload == payload) &&
             (identical(other.tagId, tagId) || other.tagId == tagId) &&
             (identical(other.deviceId, deviceId) ||
@@ -784,6 +813,7 @@ class _$DeviceCommandImpl implements _DeviceCommand {
       id,
       name,
       source,
+      isGlobal,
       payload,
       tagId,
       deviceId,
@@ -818,6 +848,7 @@ abstract class _DeviceCommand implements DeviceCommand {
       {required final String id,
       required final String name,
       @CommandSourceConverter() required final CommandSource source,
+      final bool isGlobal,
       final String? payload,
       final String? tagId,
       final String? deviceId,
@@ -847,6 +878,13 @@ abstract class _DeviceCommand implements DeviceCommand {
   /// Is the source of the command.
   @CommandSourceConverter()
   CommandSource get source;
+  @override
+
+  /// [isGlobal] is a flag that indicates if the command is global or not. A global command
+  /// is any command created for Layrz LTD members, and available for all of our customers
+  /// to use. A non-global command is a command created by a customer for their own use, this
+  /// can be or not a universal command or local command.
+  bool get isGlobal;
   @override
 
   /// [payload] is the text payload to send into a SMS command.

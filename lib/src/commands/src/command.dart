@@ -27,6 +27,12 @@ class DeviceCommand with _$DeviceCommand {
     /// Is the source of the command.
     @CommandSourceConverter() required CommandSource source,
 
+    /// [isGlobal] is a flag that indicates if the command is global or not. A global command
+    /// is any command created for Layrz LTD members, and available for all of our customers
+    /// to use. A non-global command is a command created by a customer for their own use, this
+    /// can be or not a universal command or local command.
+    @Default(false) bool isGlobal,
+
     /// [payload] is the text payload to send into a SMS command.
     String? payload,
 
