@@ -131,7 +131,7 @@ class __$$ConfIoTFileImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConfIoTFileImpl extends _ConfIoTFile {
+class _$ConfIoTFileImpl extends _ConfIoTFile with DiagnosticableTreeMixin {
   const _$ConfIoTFileImpl(
       {@ConfIoTNamespaceConverter() this.namespace = ConfIoTNamespace.unknown,
       this.rev = 1,
@@ -167,8 +167,18 @@ class _$ConfIoTFileImpl extends _ConfIoTFile {
   }
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ConfIoTFile(namespace: $namespace, rev: $rev, configuration: $configuration)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ConfIoTFile'))
+      ..add(DiagnosticsProperty('namespace', namespace))
+      ..add(DiagnosticsProperty('rev', rev))
+      ..add(DiagnosticsProperty('configuration', configuration));
   }
 
   @override

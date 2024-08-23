@@ -107,6 +107,9 @@ class CommandDefinition with _$CommandDefinition {
 
     /// [payload] is the list of parameters of the command.
     required List<CommandPayloadDefinition> payload,
+
+    /// [translationKey] is the translation key of the command.
+    String? translationKey,
   }) = _CommandDefinition;
 
   factory CommandDefinition.fromJson(Map<String, dynamic> json) => _$CommandDefinitionFromJson(json);

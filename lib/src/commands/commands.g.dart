@@ -6,11 +6,28 @@ part of 'commands.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$CommandDataImpl _$$CommandDataImplFromJson(Map<String, dynamic> json) =>
+    _$CommandDataImpl(
+      source: const CommandDefinitionSourceConverter()
+          .fromJson(json['source'] as String),
+      definition: json['definition'] as String,
+      payload: json['payload'] as Map<String, dynamic>?,
+    );
+
+Map<String, dynamic> _$$CommandDataImplToJson(_$CommandDataImpl instance) =>
+    <String, dynamic>{
+      'source':
+          const CommandDefinitionSourceConverter().toJson(instance.source),
+      'definition': instance.definition,
+      'payload': instance.payload,
+    };
+
 _$DeviceCommandImpl _$$DeviceCommandImplFromJson(Map<String, dynamic> json) =>
     _$DeviceCommandImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       source: const CommandSourceConverter().fromJson(json['source'] as String),
+      payload: json['payload'] as String?,
       tagId: json['tagId'] as String?,
       deviceId: json['deviceId'] as String?,
       protocolId: json['protocolId'] as String?,
@@ -21,30 +38,22 @@ _$DeviceCommandImpl _$$DeviceCommandImplFromJson(Map<String, dynamic> json) =>
       model: json['model'] == null
           ? null
           : Model.fromJson(json['model'] as Map<String, dynamic>),
-      command: json['command'] as String?,
-      devicePassword: json['devicePassword'] as String?,
-      payload: json['payload'] as String?,
-      commandId: json['commandId'] as String?,
-      isHexCoded: json['isHexCoded'] as bool?,
-      username: json['username'] as String?,
-      scriptName: json['scriptName'] as String?,
-      externalAccount: json['externalAccount'] == null
-          ? null
-          : ExternalAccount.fromJson(
-              json['externalAccount'] as Map<String, dynamic>),
+      definition: json['definition'] as String?,
       externalAccountId: json['externalAccountId'] as String?,
+      data: json['data'] == null
+          ? null
+          : CommandData.fromJson(json['data'] as Map<String, dynamic>),
+      modbusParameter: json['modbusParameter'] == null
+          ? null
+          : ModbusParameter.fromJson(
+              json['modbusParameter'] as Map<String, dynamic>),
+      modbusPort: json['modbusPort'] as String?,
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
       possibleDevices: (json['possibleDevices'] as List<dynamic>?)
           ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
           .toList(),
-      modbusParameter: json['modbusParameter'] == null
-          ? null
-          : ModbusParameter.fromJson(
-              json['modbusParameter'] as Map<String, dynamic>),
-      modbusPort: json['modbusPort'] as String?,
-      args: json['args'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$DeviceCommandImplToJson(_$DeviceCommandImpl instance) =>
@@ -52,27 +61,77 @@ Map<String, dynamic> _$$DeviceCommandImplToJson(_$DeviceCommandImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'source': const CommandSourceConverter().toJson(instance.source),
+      'payload': instance.payload,
       'tagId': instance.tagId,
       'deviceId': instance.deviceId,
       'protocolId': instance.protocolId,
       'protocol': instance.protocol?.toJson(),
       'modelId': instance.modelId,
       'model': instance.model?.toJson(),
-      'command': instance.command,
-      'devicePassword': instance.devicePassword,
-      'payload': instance.payload,
-      'commandId': instance.commandId,
-      'isHexCoded': instance.isHexCoded,
-      'username': instance.username,
-      'scriptName': instance.scriptName,
-      'externalAccount': instance.externalAccount?.toJson(),
+      'definition': instance.definition,
       'externalAccountId': instance.externalAccountId,
+      'data': instance.data?.toJson(),
+      'modbusParameter': instance.modbusParameter?.toJson(),
+      'modbusPort': instance.modbusPort,
       'access': instance.access?.map((e) => e.toJson()).toList(),
       'possibleDevices':
           instance.possibleDevices?.map((e) => e.toJson()).toList(),
+    };
+
+_$CommandDataInputImpl _$$CommandDataInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CommandDataInputImpl(
+      source: const CommandDefinitionSourceOrNullConverter()
+          .fromJson(json['source'] as String?),
+      definition: json['definition'] as String?,
+      payload: json['payload'] as Map<String, dynamic>? ?? const {},
+    );
+
+Map<String, dynamic> _$$CommandDataInputImplToJson(
+        _$CommandDataInputImpl instance) =>
+    <String, dynamic>{
+      'source': const CommandDefinitionSourceOrNullConverter()
+          .toJson(instance.source),
+      'definition': instance.definition,
+      'payload': instance.payload,
+    };
+
+_$CommandInputImpl _$$CommandInputImplFromJson(Map<String, dynamic> json) =>
+    _$CommandInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      source: const CommandSourceOrNullConverter()
+          .fromJson(json['source'] as String?),
+      payload: json['payload'] as String?,
+      tagId: json['tagId'] as String?,
+      deviceId: json['deviceId'] as String?,
+      protocolId: json['protocolId'] as String?,
+      modelId: json['modelId'] as String?,
+      externalAccountId: json['externalAccountId'] as String?,
+      data: json['data'] == null
+          ? null
+          : CommandDataInput.fromJson(json['data'] as Map<String, dynamic>),
+      modbusParameter: json['modbusParameter'] == null
+          ? null
+          : ModbusParameterInput.fromJson(
+              json['modbusParameter'] as Map<String, dynamic>),
+      modbusPort: json['modbusPort'] as String?,
+    );
+
+Map<String, dynamic> _$$CommandInputImplToJson(_$CommandInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'source': const CommandSourceOrNullConverter().toJson(instance.source),
+      'payload': instance.payload,
+      'tagId': instance.tagId,
+      'deviceId': instance.deviceId,
+      'protocolId': instance.protocolId,
+      'modelId': instance.modelId,
+      'externalAccountId': instance.externalAccountId,
+      'data': instance.data?.toJson(),
       'modbusParameter': instance.modbusParameter?.toJson(),
       'modbusPort': instance.modbusPort,
-      'args': instance.args,
     };
 
 _$CommandPayloadDefinitionImpl _$$CommandPayloadDefinitionImplFromJson(
@@ -169,6 +228,7 @@ _$CommandDefinitionImpl _$$CommandDefinitionImplFromJson(
           .map((e) =>
               CommandPayloadDefinition.fromJson(e as Map<String, dynamic>))
           .toList(),
+      translationKey: json['translationKey'] as String?,
     );
 
 Map<String, dynamic> _$$CommandDefinitionImplToJson(
@@ -179,6 +239,7 @@ Map<String, dynamic> _$$CommandDefinitionImplToJson(
       'source':
           const CommandDefinitionSourceConverter().toJson(instance.source),
       'payload': instance.payload.map((e) => e.toJson()).toList(),
+      'translationKey': instance.translationKey,
     };
 
 _$CommandDefinitionInputImpl _$$CommandDefinitionInputImplFromJson(

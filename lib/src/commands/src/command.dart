@@ -1,6 +1,22 @@
 part of '../commands.dart';
 
 @freezed
+class CommandData with _$CommandData {
+  const factory CommandData({
+    /// [source] is the source of the command.
+    @CommandDefinitionSourceConverter() required CommandDefinitionSource source,
+
+    /// [definition] is the definition of the command.
+    required String definition,
+
+    /// [payload] is the list of parameters of the command.
+    Map<String, dynamic>? payload,
+  }) = _CommandData;
+
+  factory CommandData.fromJson(Map<String, dynamic> json) => _$CommandDataFromJson(json);
+}
+
+@freezed
 class DeviceCommand with _$DeviceCommand {
   const factory DeviceCommand({
     required String id,
@@ -10,6 +26,9 @@ class DeviceCommand with _$DeviceCommand {
 
     /// Is the source of the command.
     @CommandSourceConverter() required CommandSource source,
+
+    /// [payload] is the text payload to send into a SMS command.
+    String? payload,
 
     /// Is the tag id of the command for "multi" execution from any [Action].
     String? tagId,
@@ -34,40 +53,14 @@ class DeviceCommand with _$DeviceCommand {
     /// Only will comes when the command is a "template"
     Model? model,
 
-    /// Is The command to execute.
-    String? command,
+    /// [definition] refers to the definition of the command.
+    String? definition,
 
-    /// Is is the password for the device. Will return null when not apply.
-    String? devicePassword,
-
-    /// Is menas the raw payload to send.
-    String? payload,
-
-    /// Is the internal ID of the command. (Refer to the Ruptela documentation for more information)
-    /// only for Ruptela devices
-    String? commandId,
-
-    /// Is the command is in Hexadecimal format.
-    /// only for Ruptela devices
-    bool? isHexCoded,
-
-    /// Is the EasyLogic username. only for Galileosky devices
-    String? username,
-
-    /// Is the EasyLogic script name. only for Galileosky devices
-    String? scriptName,
-
-    /// Is the external account for the command when source is [CommandSource.sms].
-    ExternalAccount? externalAccount,
-
-    /// Is the external account ID for the command when source is [CommandSource.sms].
+    /// [externalAccountId] refers to the external account id of the command.
     String? externalAccountId,
 
-    /// Is a list of granted access to this entity.
-    List<Access>? access,
-
-    /// List of possible devices that can perform this command.
-    List<Device>? possibleDevices,
+    /// [data] refers to the data of the command.
+    CommandData? data,
 
     /// [modbusParameter] refers to the modbus parameter of the command.
     /// This parameter contains the composition of the modbus command, like the controller address, function code,
@@ -78,9 +71,76 @@ class DeviceCommand with _$DeviceCommand {
     /// This parameter contains the port number of the modbus command.
     String? modbusPort,
 
-    /// [args] refers to the arguments of the command.
-    Map<String, dynamic>? args,
+    /// Is a list of granted access to this entity.
+    List<Access>? access,
+
+    /// List of possible devices that can perform this command.
+    List<Device>? possibleDevices,
   }) = _DeviceCommand;
 
   factory DeviceCommand.fromJson(Map<String, dynamic> json) => _$DeviceCommandFromJson(json);
+}
+
+@unfreezed
+class CommandDataInput with _$CommandDataInput {
+  factory CommandDataInput({
+    /// [source] is the source of the command.
+    @CommandDefinitionSourceOrNullConverter() CommandDefinitionSource? source,
+
+    /// [definition] is the definition of the command.
+    String? definition,
+
+    /// [payload] is the list of parameters of the command.
+    @Default({}) Map<String, dynamic> payload,
+  }) = _CommandDataInput;
+
+  factory CommandDataInput.fromJson(Map<String, dynamic> json) => _$CommandDataInputFromJson(json);
+}
+
+@unfreezed
+class CommandInput with _$CommandInput {
+  factory CommandInput({
+    String? id,
+
+    /// Is name of the command. (Only reference, does not affect the command itself)
+    @Default('') String name,
+
+    /// Is the source of the command.
+    @CommandSourceOrNullConverter() CommandSource? source,
+
+    /// [payload] is the text payload to send into a SMS command.
+    String? payload,
+
+    /// Is the tag id of the command for "multi" execution from any [Action].
+    String? tagId,
+
+    /// Is the [deviceId] that the command is for.
+    /// Only will comes when the command comes from the asset or device query.
+    String? deviceId,
+
+    /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+    /// Only will comes when the command is a "template"
+    String? protocolId,
+
+    /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+    /// Only will comes when the command is a "template"
+    String? modelId,
+
+    /// [externalAccountId] refers to the external account id of the command.
+    String? externalAccountId,
+
+    /// [data] refers to the definition of the command.
+    CommandDataInput? data,
+
+    /// [modbusParameter] refers to the modbus parameter of the command.
+    /// This parameter contains the composition of the modbus command, like the controller address, function code,
+    /// register address, etc.
+    ModbusParameterInput? modbusParameter,
+
+    /// [modbusPort] refers to the modbus port of the command.
+    /// This parameter contains the port number of the modbus command.
+    String? modbusPort,
+  }) = _CommandInput;
+
+  factory CommandInput.fromJson(Map<String, dynamic> json) => _$CommandInputFromJson(json);
 }

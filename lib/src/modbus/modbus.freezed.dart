@@ -525,3 +525,345 @@ abstract class _ModbusParameter implements ModbusParameter {
   _$$ModbusParameterImplCopyWith<_$ModbusParameterImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+ModbusParameterInput _$ModbusParameterInputFromJson(Map<String, dynamic> json) {
+  return _ModbusParameterInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ModbusParameterInput {
+  /// [schema] represents the format of the command, it can be either single or multiple.
+  @ModbusParameterSchemaConverter()
+  ModbusParameterSchema get schema => throw _privateConstructorUsedError;
+
+  /// [schema] represents the format of the command, it can be either single or multiple.
+  @ModbusParameterSchemaConverter()
+  set schema(ModbusParameterSchema value) => throw _privateConstructorUsedError;
+
+  /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
+  /// This value is a hexadecimal value
+  String? get splitEach => throw _privateConstructorUsedError;
+
+  /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
+  /// This value is a hexadecimal value
+  set splitEach(String? value) => throw _privateConstructorUsedError;
+
+  /// [controllerAddress] is the controller or slave ID of the modbus device.
+  /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
+  String get controllerAddress => throw _privateConstructorUsedError;
+
+  /// [controllerAddress] is the controller or slave ID of the modbus device.
+  /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
+  set controllerAddress(String value) => throw _privateConstructorUsedError;
+
+  /// [functionCode] is the function code of the modbus device.
+  /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
+  String get functionCode => throw _privateConstructorUsedError;
+
+  /// [functionCode] is the function code of the modbus device.
+  /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
+  set functionCode(String value) => throw _privateConstructorUsedError;
+
+  /// [dataAddress] is the data address of the modbus device.
+  /// This value is a Hexadecimal number from 0x0000 to 0xFFFF inclusive, the stored value shouldn't be
+  /// prefixed with 0x.
+  String get dataAddress => throw _privateConstructorUsedError;
+
+  /// [dataAddress] is the data address of the modbus device.
+  /// This value is a Hexadecimal number from 0x0000 to 0xFFFF inclusive, the stored value shouldn't be
+  /// prefixed with 0x.
+  set dataAddress(String value) => throw _privateConstructorUsedError;
+
+  /// [dataLength] is the data length of the modbus device.
+  /// This value is a Hexadecimal number from 0x0001 to 0xFFFF inclusive, the stored value shouldn't be
+  /// prefixed with 0x.
+  String get dataLength => throw _privateConstructorUsedError;
+
+  /// [dataLength] is the data length of the modbus device.
+  /// This value is a Hexadecimal number from 0x0001 to 0xFFFF inclusive, the stored value shouldn't be
+  /// prefixed with 0x.
+  set dataLength(String value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ModbusParameterInputCopyWith<ModbusParameterInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ModbusParameterInputCopyWith<$Res> {
+  factory $ModbusParameterInputCopyWith(ModbusParameterInput value,
+          $Res Function(ModbusParameterInput) then) =
+      _$ModbusParameterInputCopyWithImpl<$Res, ModbusParameterInput>;
+  @useResult
+  $Res call(
+      {@ModbusParameterSchemaConverter() ModbusParameterSchema schema,
+      String? splitEach,
+      String controllerAddress,
+      String functionCode,
+      String dataAddress,
+      String dataLength});
+}
+
+/// @nodoc
+class _$ModbusParameterInputCopyWithImpl<$Res,
+        $Val extends ModbusParameterInput>
+    implements $ModbusParameterInputCopyWith<$Res> {
+  _$ModbusParameterInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? schema = null,
+    Object? splitEach = freezed,
+    Object? controllerAddress = null,
+    Object? functionCode = null,
+    Object? dataAddress = null,
+    Object? dataLength = null,
+  }) {
+    return _then(_value.copyWith(
+      schema: null == schema
+          ? _value.schema
+          : schema // ignore: cast_nullable_to_non_nullable
+              as ModbusParameterSchema,
+      splitEach: freezed == splitEach
+          ? _value.splitEach
+          : splitEach // ignore: cast_nullable_to_non_nullable
+              as String?,
+      controllerAddress: null == controllerAddress
+          ? _value.controllerAddress
+          : controllerAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      functionCode: null == functionCode
+          ? _value.functionCode
+          : functionCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      dataAddress: null == dataAddress
+          ? _value.dataAddress
+          : dataAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      dataLength: null == dataLength
+          ? _value.dataLength
+          : dataLength // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ModbusParameterInputImplCopyWith<$Res>
+    implements $ModbusParameterInputCopyWith<$Res> {
+  factory _$$ModbusParameterInputImplCopyWith(_$ModbusParameterInputImpl value,
+          $Res Function(_$ModbusParameterInputImpl) then) =
+      __$$ModbusParameterInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@ModbusParameterSchemaConverter() ModbusParameterSchema schema,
+      String? splitEach,
+      String controllerAddress,
+      String functionCode,
+      String dataAddress,
+      String dataLength});
+}
+
+/// @nodoc
+class __$$ModbusParameterInputImplCopyWithImpl<$Res>
+    extends _$ModbusParameterInputCopyWithImpl<$Res, _$ModbusParameterInputImpl>
+    implements _$$ModbusParameterInputImplCopyWith<$Res> {
+  __$$ModbusParameterInputImplCopyWithImpl(_$ModbusParameterInputImpl _value,
+      $Res Function(_$ModbusParameterInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? schema = null,
+    Object? splitEach = freezed,
+    Object? controllerAddress = null,
+    Object? functionCode = null,
+    Object? dataAddress = null,
+    Object? dataLength = null,
+  }) {
+    return _then(_$ModbusParameterInputImpl(
+      schema: null == schema
+          ? _value.schema
+          : schema // ignore: cast_nullable_to_non_nullable
+              as ModbusParameterSchema,
+      splitEach: freezed == splitEach
+          ? _value.splitEach
+          : splitEach // ignore: cast_nullable_to_non_nullable
+              as String?,
+      controllerAddress: null == controllerAddress
+          ? _value.controllerAddress
+          : controllerAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      functionCode: null == functionCode
+          ? _value.functionCode
+          : functionCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      dataAddress: null == dataAddress
+          ? _value.dataAddress
+          : dataAddress // ignore: cast_nullable_to_non_nullable
+              as String,
+      dataLength: null == dataLength
+          ? _value.dataLength
+          : dataLength // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ModbusParameterInputImpl implements _ModbusParameterInput {
+  _$ModbusParameterInputImpl(
+      {@ModbusParameterSchemaConverter()
+      this.schema = ModbusParameterSchema.single,
+      this.splitEach,
+      this.controllerAddress = '',
+      this.functionCode = '',
+      this.dataAddress = '',
+      this.dataLength = ''});
+
+  factory _$ModbusParameterInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ModbusParameterInputImplFromJson(json);
+
+  /// [schema] represents the format of the command, it can be either single or multiple.
+  @override
+  @JsonKey()
+  @ModbusParameterSchemaConverter()
+  ModbusParameterSchema schema;
+
+  /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
+  /// This value is a hexadecimal value
+  @override
+  String? splitEach;
+
+  /// [controllerAddress] is the controller or slave ID of the modbus device.
+  /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
+  @override
+  @JsonKey()
+  String controllerAddress;
+
+  /// [functionCode] is the function code of the modbus device.
+  /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
+  @override
+  @JsonKey()
+  String functionCode;
+
+  /// [dataAddress] is the data address of the modbus device.
+  /// This value is a Hexadecimal number from 0x0000 to 0xFFFF inclusive, the stored value shouldn't be
+  /// prefixed with 0x.
+  @override
+  @JsonKey()
+  String dataAddress;
+
+  /// [dataLength] is the data length of the modbus device.
+  /// This value is a Hexadecimal number from 0x0001 to 0xFFFF inclusive, the stored value shouldn't be
+  /// prefixed with 0x.
+  @override
+  @JsonKey()
+  String dataLength;
+
+  @override
+  String toString() {
+    return 'ModbusParameterInput(schema: $schema, splitEach: $splitEach, controllerAddress: $controllerAddress, functionCode: $functionCode, dataAddress: $dataAddress, dataLength: $dataLength)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModbusParameterInputImplCopyWith<_$ModbusParameterInputImpl>
+      get copyWith =>
+          __$$ModbusParameterInputImplCopyWithImpl<_$ModbusParameterInputImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ModbusParameterInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ModbusParameterInput implements ModbusParameterInput {
+  factory _ModbusParameterInput(
+      {@ModbusParameterSchemaConverter() ModbusParameterSchema schema,
+      String? splitEach,
+      String controllerAddress,
+      String functionCode,
+      String dataAddress,
+      String dataLength}) = _$ModbusParameterInputImpl;
+
+  factory _ModbusParameterInput.fromJson(Map<String, dynamic> json) =
+      _$ModbusParameterInputImpl.fromJson;
+
+  @override
+
+  /// [schema] represents the format of the command, it can be either single or multiple.
+  @ModbusParameterSchemaConverter()
+  ModbusParameterSchema get schema;
+
+  /// [schema] represents the format of the command, it can be either single or multiple.
+  @ModbusParameterSchemaConverter()
+  set schema(ModbusParameterSchema value);
+  @override
+
+  /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
+  /// This value is a hexadecimal value
+  String? get splitEach;
+
+  /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
+  /// This value is a hexadecimal value
+  set splitEach(String? value);
+  @override
+
+  /// [controllerAddress] is the controller or slave ID of the modbus device.
+  /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
+  String get controllerAddress;
+
+  /// [controllerAddress] is the controller or slave ID of the modbus device.
+  /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
+  set controllerAddress(String value);
+  @override
+
+  /// [functionCode] is the function code of the modbus device.
+  /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
+  String get functionCode;
+
+  /// [functionCode] is the function code of the modbus device.
+  /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
+  set functionCode(String value);
+  @override
+
+  /// [dataAddress] is the data address of the modbus device.
+  /// This value is a Hexadecimal number from 0x0000 to 0xFFFF inclusive, the stored value shouldn't be
+  /// prefixed with 0x.
+  String get dataAddress;
+
+  /// [dataAddress] is the data address of the modbus device.
+  /// This value is a Hexadecimal number from 0x0000 to 0xFFFF inclusive, the stored value shouldn't be
+  /// prefixed with 0x.
+  set dataAddress(String value);
+  @override
+
+  /// [dataLength] is the data length of the modbus device.
+  /// This value is a Hexadecimal number from 0x0001 to 0xFFFF inclusive, the stored value shouldn't be
+  /// prefixed with 0x.
+  String get dataLength;
+
+  /// [dataLength] is the data length of the modbus device.
+  /// This value is a Hexadecimal number from 0x0001 to 0xFFFF inclusive, the stored value shouldn't be
+  /// prefixed with 0x.
+  set dataLength(String value);
+  @override
+  @JsonKey(ignore: true)
+  _$$ModbusParameterInputImplCopyWith<_$ModbusParameterInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

@@ -4,6 +4,7 @@
 
 - Updated `InboundProtocol` and `Model` to handle new commands definitions and configuration parameters
 - Added `ConfIoTFile` configuration model
+- Major change of `Command` to support new command definitions
 
 ## 3.0.3
 - Add `MappitReportInput` 

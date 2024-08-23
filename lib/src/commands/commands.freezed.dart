@@ -14,6 +14,218 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+CommandData _$CommandDataFromJson(Map<String, dynamic> json) {
+  return _CommandData.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CommandData {
+  /// [source] is the source of the command.
+  @CommandDefinitionSourceConverter()
+  CommandDefinitionSource get source => throw _privateConstructorUsedError;
+
+  /// [definition] is the definition of the command.
+  String get definition => throw _privateConstructorUsedError;
+
+  /// [payload] is the list of parameters of the command.
+  Map<String, dynamic>? get payload => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CommandDataCopyWith<CommandData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CommandDataCopyWith<$Res> {
+  factory $CommandDataCopyWith(
+          CommandData value, $Res Function(CommandData) then) =
+      _$CommandDataCopyWithImpl<$Res, CommandData>;
+  @useResult
+  $Res call(
+      {@CommandDefinitionSourceConverter() CommandDefinitionSource source,
+      String definition,
+      Map<String, dynamic>? payload});
+}
+
+/// @nodoc
+class _$CommandDataCopyWithImpl<$Res, $Val extends CommandData>
+    implements $CommandDataCopyWith<$Res> {
+  _$CommandDataCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = null,
+    Object? definition = null,
+    Object? payload = freezed,
+  }) {
+    return _then(_value.copyWith(
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as CommandDefinitionSource,
+      definition: null == definition
+          ? _value.definition
+          : definition // ignore: cast_nullable_to_non_nullable
+              as String,
+      payload: freezed == payload
+          ? _value.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$CommandDataImplCopyWith<$Res>
+    implements $CommandDataCopyWith<$Res> {
+  factory _$$CommandDataImplCopyWith(
+          _$CommandDataImpl value, $Res Function(_$CommandDataImpl) then) =
+      __$$CommandDataImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@CommandDefinitionSourceConverter() CommandDefinitionSource source,
+      String definition,
+      Map<String, dynamic>? payload});
+}
+
+/// @nodoc
+class __$$CommandDataImplCopyWithImpl<$Res>
+    extends _$CommandDataCopyWithImpl<$Res, _$CommandDataImpl>
+    implements _$$CommandDataImplCopyWith<$Res> {
+  __$$CommandDataImplCopyWithImpl(
+      _$CommandDataImpl _value, $Res Function(_$CommandDataImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = null,
+    Object? definition = null,
+    Object? payload = freezed,
+  }) {
+    return _then(_$CommandDataImpl(
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as CommandDefinitionSource,
+      definition: null == definition
+          ? _value.definition
+          : definition // ignore: cast_nullable_to_non_nullable
+              as String,
+      payload: freezed == payload
+          ? _value._payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CommandDataImpl implements _CommandData {
+  const _$CommandDataImpl(
+      {@CommandDefinitionSourceConverter() required this.source,
+      required this.definition,
+      final Map<String, dynamic>? payload})
+      : _payload = payload;
+
+  factory _$CommandDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommandDataImplFromJson(json);
+
+  /// [source] is the source of the command.
+  @override
+  @CommandDefinitionSourceConverter()
+  final CommandDefinitionSource source;
+
+  /// [definition] is the definition of the command.
+  @override
+  final String definition;
+
+  /// [payload] is the list of parameters of the command.
+  final Map<String, dynamic>? _payload;
+
+  /// [payload] is the list of parameters of the command.
+  @override
+  Map<String, dynamic>? get payload {
+    final value = _payload;
+    if (value == null) return null;
+    if (_payload is EqualUnmodifiableMapView) return _payload;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'CommandData(source: $source, definition: $definition, payload: $payload)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CommandDataImpl &&
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.definition, definition) ||
+                other.definition == definition) &&
+            const DeepCollectionEquality().equals(other._payload, _payload));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, source, definition,
+      const DeepCollectionEquality().hash(_payload));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CommandDataImplCopyWith<_$CommandDataImpl> get copyWith =>
+      __$$CommandDataImplCopyWithImpl<_$CommandDataImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CommandDataImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _CommandData implements CommandData {
+  const factory _CommandData(
+      {@CommandDefinitionSourceConverter()
+      required final CommandDefinitionSource source,
+      required final String definition,
+      final Map<String, dynamic>? payload}) = _$CommandDataImpl;
+
+  factory _CommandData.fromJson(Map<String, dynamic> json) =
+      _$CommandDataImpl.fromJson;
+
+  @override
+
+  /// [source] is the source of the command.
+  @CommandDefinitionSourceConverter()
+  CommandDefinitionSource get source;
+  @override
+
+  /// [definition] is the definition of the command.
+  String get definition;
+  @override
+
+  /// [payload] is the list of parameters of the command.
+  Map<String, dynamic>? get payload;
+  @override
+  @JsonKey(ignore: true)
+  _$$CommandDataImplCopyWith<_$CommandDataImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 DeviceCommand _$DeviceCommandFromJson(Map<String, dynamic> json) {
   return _DeviceCommand.fromJson(json);
 }
@@ -28,6 +240,9 @@ mixin _$DeviceCommand {
   /// Is the source of the command.
   @CommandSourceConverter()
   CommandSource get source => throw _privateConstructorUsedError;
+
+  /// [payload] is the text payload to send into a SMS command.
+  String? get payload => throw _privateConstructorUsedError;
 
   /// Is the tag id of the command for "multi" execution from any [Action].
   String? get tagId => throw _privateConstructorUsedError;
@@ -52,40 +267,14 @@ mixin _$DeviceCommand {
   /// Only will comes when the command is a "template"
   Model? get model => throw _privateConstructorUsedError;
 
-  /// Is The command to execute.
-  String? get command => throw _privateConstructorUsedError;
+  /// [definition] refers to the definition of the command.
+  String? get definition => throw _privateConstructorUsedError;
 
-  /// Is is the password for the device. Will return null when not apply.
-  String? get devicePassword => throw _privateConstructorUsedError;
-
-  /// Is menas the raw payload to send.
-  String? get payload => throw _privateConstructorUsedError;
-
-  /// Is the internal ID of the command. (Refer to the Ruptela documentation for more information)
-  /// only for Ruptela devices
-  String? get commandId => throw _privateConstructorUsedError;
-
-  /// Is the command is in Hexadecimal format.
-  /// only for Ruptela devices
-  bool? get isHexCoded => throw _privateConstructorUsedError;
-
-  /// Is the EasyLogic username. only for Galileosky devices
-  String? get username => throw _privateConstructorUsedError;
-
-  /// Is the EasyLogic script name. only for Galileosky devices
-  String? get scriptName => throw _privateConstructorUsedError;
-
-  /// Is the external account for the command when source is [CommandSource.sms].
-  ExternalAccount? get externalAccount => throw _privateConstructorUsedError;
-
-  /// Is the external account ID for the command when source is [CommandSource.sms].
+  /// [externalAccountId] refers to the external account id of the command.
   String? get externalAccountId => throw _privateConstructorUsedError;
 
-  /// Is a list of granted access to this entity.
-  List<Access>? get access => throw _privateConstructorUsedError;
-
-  /// List of possible devices that can perform this command.
-  List<Device>? get possibleDevices => throw _privateConstructorUsedError;
+  /// [data] refers to the data of the command.
+  CommandData? get data => throw _privateConstructorUsedError;
 
   /// [modbusParameter] refers to the modbus parameter of the command.
   /// This parameter contains the composition of the modbus command, like the controller address, function code,
@@ -96,8 +285,11 @@ mixin _$DeviceCommand {
   /// This parameter contains the port number of the modbus command.
   String? get modbusPort => throw _privateConstructorUsedError;
 
-  /// [args] refers to the arguments of the command.
-  Map<String, dynamic>? get args => throw _privateConstructorUsedError;
+  /// Is a list of granted access to this entity.
+  List<Access>? get access => throw _privateConstructorUsedError;
+
+  /// List of possible devices that can perform this command.
+  List<Device>? get possibleDevices => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -115,30 +307,24 @@ abstract class $DeviceCommandCopyWith<$Res> {
       {String id,
       String name,
       @CommandSourceConverter() CommandSource source,
+      String? payload,
       String? tagId,
       String? deviceId,
       String? protocolId,
       InboundProtocol? protocol,
       String? modelId,
       Model? model,
-      String? command,
-      String? devicePassword,
-      String? payload,
-      String? commandId,
-      bool? isHexCoded,
-      String? username,
-      String? scriptName,
-      ExternalAccount? externalAccount,
+      String? definition,
       String? externalAccountId,
-      List<Access>? access,
-      List<Device>? possibleDevices,
+      CommandData? data,
       ModbusParameter? modbusParameter,
       String? modbusPort,
-      Map<String, dynamic>? args});
+      List<Access>? access,
+      List<Device>? possibleDevices});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
   $ModelCopyWith<$Res>? get model;
-  $ExternalAccountCopyWith<$Res>? get externalAccount;
+  $CommandDataCopyWith<$Res>? get data;
   $ModbusParameterCopyWith<$Res>? get modbusParameter;
 }
 
@@ -158,26 +344,20 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
     Object? id = null,
     Object? name = null,
     Object? source = null,
+    Object? payload = freezed,
     Object? tagId = freezed,
     Object? deviceId = freezed,
     Object? protocolId = freezed,
     Object? protocol = freezed,
     Object? modelId = freezed,
     Object? model = freezed,
-    Object? command = freezed,
-    Object? devicePassword = freezed,
-    Object? payload = freezed,
-    Object? commandId = freezed,
-    Object? isHexCoded = freezed,
-    Object? username = freezed,
-    Object? scriptName = freezed,
-    Object? externalAccount = freezed,
+    Object? definition = freezed,
     Object? externalAccountId = freezed,
-    Object? access = freezed,
-    Object? possibleDevices = freezed,
+    Object? data = freezed,
     Object? modbusParameter = freezed,
     Object? modbusPort = freezed,
-    Object? args = freezed,
+    Object? access = freezed,
+    Object? possibleDevices = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -192,6 +372,10 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as CommandSource,
+      payload: freezed == payload
+          ? _value.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as String?,
       tagId: freezed == tagId
           ? _value.tagId
           : tagId // ignore: cast_nullable_to_non_nullable
@@ -216,41 +400,25 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
               as Model?,
-      command: freezed == command
-          ? _value.command
-          : command // ignore: cast_nullable_to_non_nullable
+      definition: freezed == definition
+          ? _value.definition
+          : definition // ignore: cast_nullable_to_non_nullable
               as String?,
-      devicePassword: freezed == devicePassword
-          ? _value.devicePassword
-          : devicePassword // ignore: cast_nullable_to_non_nullable
-              as String?,
-      payload: freezed == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as String?,
-      commandId: freezed == commandId
-          ? _value.commandId
-          : commandId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isHexCoded: freezed == isHexCoded
-          ? _value.isHexCoded
-          : isHexCoded // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      username: freezed == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scriptName: freezed == scriptName
-          ? _value.scriptName
-          : scriptName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      externalAccount: freezed == externalAccount
-          ? _value.externalAccount
-          : externalAccount // ignore: cast_nullable_to_non_nullable
-              as ExternalAccount?,
       externalAccountId: freezed == externalAccountId
           ? _value.externalAccountId
           : externalAccountId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as CommandData?,
+      modbusParameter: freezed == modbusParameter
+          ? _value.modbusParameter
+          : modbusParameter // ignore: cast_nullable_to_non_nullable
+              as ModbusParameter?,
+      modbusPort: freezed == modbusPort
+          ? _value.modbusPort
+          : modbusPort // ignore: cast_nullable_to_non_nullable
               as String?,
       access: freezed == access
           ? _value.access
@@ -260,18 +428,6 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
           ? _value.possibleDevices
           : possibleDevices // ignore: cast_nullable_to_non_nullable
               as List<Device>?,
-      modbusParameter: freezed == modbusParameter
-          ? _value.modbusParameter
-          : modbusParameter // ignore: cast_nullable_to_non_nullable
-              as ModbusParameter?,
-      modbusPort: freezed == modbusPort
-          ? _value.modbusPort
-          : modbusPort // ignore: cast_nullable_to_non_nullable
-              as String?,
-      args: freezed == args
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -301,13 +457,13 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
 
   @override
   @pragma('vm:prefer-inline')
-  $ExternalAccountCopyWith<$Res>? get externalAccount {
-    if (_value.externalAccount == null) {
+  $CommandDataCopyWith<$Res>? get data {
+    if (_value.data == null) {
       return null;
     }
 
-    return $ExternalAccountCopyWith<$Res>(_value.externalAccount!, (value) {
-      return _then(_value.copyWith(externalAccount: value) as $Val);
+    return $CommandDataCopyWith<$Res>(_value.data!, (value) {
+      return _then(_value.copyWith(data: value) as $Val);
     });
   }
 
@@ -336,33 +492,27 @@ abstract class _$$DeviceCommandImplCopyWith<$Res>
       {String id,
       String name,
       @CommandSourceConverter() CommandSource source,
+      String? payload,
       String? tagId,
       String? deviceId,
       String? protocolId,
       InboundProtocol? protocol,
       String? modelId,
       Model? model,
-      String? command,
-      String? devicePassword,
-      String? payload,
-      String? commandId,
-      bool? isHexCoded,
-      String? username,
-      String? scriptName,
-      ExternalAccount? externalAccount,
+      String? definition,
       String? externalAccountId,
-      List<Access>? access,
-      List<Device>? possibleDevices,
+      CommandData? data,
       ModbusParameter? modbusParameter,
       String? modbusPort,
-      Map<String, dynamic>? args});
+      List<Access>? access,
+      List<Device>? possibleDevices});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
   @override
   $ModelCopyWith<$Res>? get model;
   @override
-  $ExternalAccountCopyWith<$Res>? get externalAccount;
+  $CommandDataCopyWith<$Res>? get data;
   @override
   $ModbusParameterCopyWith<$Res>? get modbusParameter;
 }
@@ -381,26 +531,20 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? source = null,
+    Object? payload = freezed,
     Object? tagId = freezed,
     Object? deviceId = freezed,
     Object? protocolId = freezed,
     Object? protocol = freezed,
     Object? modelId = freezed,
     Object? model = freezed,
-    Object? command = freezed,
-    Object? devicePassword = freezed,
-    Object? payload = freezed,
-    Object? commandId = freezed,
-    Object? isHexCoded = freezed,
-    Object? username = freezed,
-    Object? scriptName = freezed,
-    Object? externalAccount = freezed,
+    Object? definition = freezed,
     Object? externalAccountId = freezed,
-    Object? access = freezed,
-    Object? possibleDevices = freezed,
+    Object? data = freezed,
     Object? modbusParameter = freezed,
     Object? modbusPort = freezed,
-    Object? args = freezed,
+    Object? access = freezed,
+    Object? possibleDevices = freezed,
   }) {
     return _then(_$DeviceCommandImpl(
       id: null == id
@@ -415,6 +559,10 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as CommandSource,
+      payload: freezed == payload
+          ? _value.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as String?,
       tagId: freezed == tagId
           ? _value.tagId
           : tagId // ignore: cast_nullable_to_non_nullable
@@ -439,41 +587,25 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
               as Model?,
-      command: freezed == command
-          ? _value.command
-          : command // ignore: cast_nullable_to_non_nullable
+      definition: freezed == definition
+          ? _value.definition
+          : definition // ignore: cast_nullable_to_non_nullable
               as String?,
-      devicePassword: freezed == devicePassword
-          ? _value.devicePassword
-          : devicePassword // ignore: cast_nullable_to_non_nullable
-              as String?,
-      payload: freezed == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as String?,
-      commandId: freezed == commandId
-          ? _value.commandId
-          : commandId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isHexCoded: freezed == isHexCoded
-          ? _value.isHexCoded
-          : isHexCoded // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      username: freezed == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scriptName: freezed == scriptName
-          ? _value.scriptName
-          : scriptName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      externalAccount: freezed == externalAccount
-          ? _value.externalAccount
-          : externalAccount // ignore: cast_nullable_to_non_nullable
-              as ExternalAccount?,
       externalAccountId: freezed == externalAccountId
           ? _value.externalAccountId
           : externalAccountId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as CommandData?,
+      modbusParameter: freezed == modbusParameter
+          ? _value.modbusParameter
+          : modbusParameter // ignore: cast_nullable_to_non_nullable
+              as ModbusParameter?,
+      modbusPort: freezed == modbusPort
+          ? _value.modbusPort
+          : modbusPort // ignore: cast_nullable_to_non_nullable
               as String?,
       access: freezed == access
           ? _value._access
@@ -483,18 +615,6 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
           ? _value._possibleDevices
           : possibleDevices // ignore: cast_nullable_to_non_nullable
               as List<Device>?,
-      modbusParameter: freezed == modbusParameter
-          ? _value.modbusParameter
-          : modbusParameter // ignore: cast_nullable_to_non_nullable
-              as ModbusParameter?,
-      modbusPort: freezed == modbusPort
-          ? _value.modbusPort
-          : modbusPort // ignore: cast_nullable_to_non_nullable
-              as String?,
-      args: freezed == args
-          ? _value._args
-          : args // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
     ));
   }
 }
@@ -506,29 +626,22 @@ class _$DeviceCommandImpl implements _DeviceCommand {
       {required this.id,
       required this.name,
       @CommandSourceConverter() required this.source,
+      this.payload,
       this.tagId,
       this.deviceId,
       this.protocolId,
       this.protocol,
       this.modelId,
       this.model,
-      this.command,
-      this.devicePassword,
-      this.payload,
-      this.commandId,
-      this.isHexCoded,
-      this.username,
-      this.scriptName,
-      this.externalAccount,
+      this.definition,
       this.externalAccountId,
-      final List<Access>? access,
-      final List<Device>? possibleDevices,
+      this.data,
       this.modbusParameter,
       this.modbusPort,
-      final Map<String, dynamic>? args})
+      final List<Access>? access,
+      final List<Device>? possibleDevices})
       : _access = access,
-        _possibleDevices = possibleDevices,
-        _args = args;
+        _possibleDevices = possibleDevices;
 
   factory _$DeviceCommandImpl.fromJson(Map<String, dynamic> json) =>
       _$$DeviceCommandImplFromJson(json);
@@ -544,6 +657,10 @@ class _$DeviceCommandImpl implements _DeviceCommand {
   @override
   @CommandSourceConverter()
   final CommandSource source;
+
+  /// [payload] is the text payload to send into a SMS command.
+  @override
+  final String? payload;
 
   /// Is the tag id of the command for "multi" execution from any [Action].
   @override
@@ -574,43 +691,28 @@ class _$DeviceCommandImpl implements _DeviceCommand {
   @override
   final Model? model;
 
-  /// Is The command to execute.
+  /// [definition] refers to the definition of the command.
   @override
-  final String? command;
+  final String? definition;
 
-  /// Is is the password for the device. Will return null when not apply.
-  @override
-  final String? devicePassword;
-
-  /// Is menas the raw payload to send.
-  @override
-  final String? payload;
-
-  /// Is the internal ID of the command. (Refer to the Ruptela documentation for more information)
-  /// only for Ruptela devices
-  @override
-  final String? commandId;
-
-  /// Is the command is in Hexadecimal format.
-  /// only for Ruptela devices
-  @override
-  final bool? isHexCoded;
-
-  /// Is the EasyLogic username. only for Galileosky devices
-  @override
-  final String? username;
-
-  /// Is the EasyLogic script name. only for Galileosky devices
-  @override
-  final String? scriptName;
-
-  /// Is the external account for the command when source is [CommandSource.sms].
-  @override
-  final ExternalAccount? externalAccount;
-
-  /// Is the external account ID for the command when source is [CommandSource.sms].
+  /// [externalAccountId] refers to the external account id of the command.
   @override
   final String? externalAccountId;
+
+  /// [data] refers to the data of the command.
+  @override
+  final CommandData? data;
+
+  /// [modbusParameter] refers to the modbus parameter of the command.
+  /// This parameter contains the composition of the modbus command, like the controller address, function code,
+  /// register address, etc.
+  @override
+  final ModbusParameter? modbusParameter;
+
+  /// [modbusPort] refers to the modbus port of the command.
+  /// This parameter contains the port number of the modbus command.
+  @override
+  final String? modbusPort;
 
   /// Is a list of granted access to this entity.
   final List<Access>? _access;
@@ -638,33 +740,9 @@ class _$DeviceCommandImpl implements _DeviceCommand {
     return EqualUnmodifiableListView(value);
   }
 
-  /// [modbusParameter] refers to the modbus parameter of the command.
-  /// This parameter contains the composition of the modbus command, like the controller address, function code,
-  /// register address, etc.
-  @override
-  final ModbusParameter? modbusParameter;
-
-  /// [modbusPort] refers to the modbus port of the command.
-  /// This parameter contains the port number of the modbus command.
-  @override
-  final String? modbusPort;
-
-  /// [args] refers to the arguments of the command.
-  final Map<String, dynamic>? _args;
-
-  /// [args] refers to the arguments of the command.
-  @override
-  Map<String, dynamic>? get args {
-    final value = _args;
-    if (value == null) return null;
-    if (_args is EqualUnmodifiableMapView) return _args;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
   @override
   String toString() {
-    return 'DeviceCommand(id: $id, name: $name, source: $source, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, protocol: $protocol, modelId: $modelId, model: $model, command: $command, devicePassword: $devicePassword, payload: $payload, commandId: $commandId, isHexCoded: $isHexCoded, username: $username, scriptName: $scriptName, externalAccount: $externalAccount, externalAccountId: $externalAccountId, access: $access, possibleDevices: $possibleDevices, modbusParameter: $modbusParameter, modbusPort: $modbusPort, args: $args)';
+    return 'DeviceCommand(id: $id, name: $name, source: $source, payload: $payload, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, protocol: $protocol, modelId: $modelId, model: $model, definition: $definition, externalAccountId: $externalAccountId, data: $data, modbusParameter: $modbusParameter, modbusPort: $modbusPort, access: $access, possibleDevices: $possibleDevices)';
   }
 
   @override
@@ -675,6 +753,7 @@ class _$DeviceCommandImpl implements _DeviceCommand {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.source, source) || other.source == source) &&
+            (identical(other.payload, payload) || other.payload == payload) &&
             (identical(other.tagId, tagId) || other.tagId == tagId) &&
             (identical(other.deviceId, deviceId) ||
                 other.deviceId == deviceId) &&
@@ -684,60 +763,41 @@ class _$DeviceCommandImpl implements _DeviceCommand {
                 other.protocol == protocol) &&
             (identical(other.modelId, modelId) || other.modelId == modelId) &&
             (identical(other.model, model) || other.model == model) &&
-            (identical(other.command, command) || other.command == command) &&
-            (identical(other.devicePassword, devicePassword) ||
-                other.devicePassword == devicePassword) &&
-            (identical(other.payload, payload) || other.payload == payload) &&
-            (identical(other.commandId, commandId) ||
-                other.commandId == commandId) &&
-            (identical(other.isHexCoded, isHexCoded) ||
-                other.isHexCoded == isHexCoded) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.scriptName, scriptName) ||
-                other.scriptName == scriptName) &&
-            (identical(other.externalAccount, externalAccount) ||
-                other.externalAccount == externalAccount) &&
+            (identical(other.definition, definition) ||
+                other.definition == definition) &&
             (identical(other.externalAccountId, externalAccountId) ||
                 other.externalAccountId == externalAccountId) &&
-            const DeepCollectionEquality().equals(other._access, _access) &&
-            const DeepCollectionEquality()
-                .equals(other._possibleDevices, _possibleDevices) &&
+            (identical(other.data, data) || other.data == data) &&
             (identical(other.modbusParameter, modbusParameter) ||
                 other.modbusParameter == modbusParameter) &&
             (identical(other.modbusPort, modbusPort) ||
                 other.modbusPort == modbusPort) &&
-            const DeepCollectionEquality().equals(other._args, _args));
+            const DeepCollectionEquality().equals(other._access, _access) &&
+            const DeepCollectionEquality()
+                .equals(other._possibleDevices, _possibleDevices));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        name,
-        source,
-        tagId,
-        deviceId,
-        protocolId,
-        protocol,
-        modelId,
-        model,
-        command,
-        devicePassword,
-        payload,
-        commandId,
-        isHexCoded,
-        username,
-        scriptName,
-        externalAccount,
-        externalAccountId,
-        const DeepCollectionEquality().hash(_access),
-        const DeepCollectionEquality().hash(_possibleDevices),
-        modbusParameter,
-        modbusPort,
-        const DeepCollectionEquality().hash(_args)
-      ]);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      source,
+      payload,
+      tagId,
+      deviceId,
+      protocolId,
+      protocol,
+      modelId,
+      model,
+      definition,
+      externalAccountId,
+      data,
+      modbusParameter,
+      modbusPort,
+      const DeepCollectionEquality().hash(_access),
+      const DeepCollectionEquality().hash(_possibleDevices));
 
   @JsonKey(ignore: true)
   @override
@@ -758,26 +818,20 @@ abstract class _DeviceCommand implements DeviceCommand {
       {required final String id,
       required final String name,
       @CommandSourceConverter() required final CommandSource source,
+      final String? payload,
       final String? tagId,
       final String? deviceId,
       final String? protocolId,
       final InboundProtocol? protocol,
       final String? modelId,
       final Model? model,
-      final String? command,
-      final String? devicePassword,
-      final String? payload,
-      final String? commandId,
-      final bool? isHexCoded,
-      final String? username,
-      final String? scriptName,
-      final ExternalAccount? externalAccount,
+      final String? definition,
       final String? externalAccountId,
-      final List<Access>? access,
-      final List<Device>? possibleDevices,
+      final CommandData? data,
       final ModbusParameter? modbusParameter,
       final String? modbusPort,
-      final Map<String, dynamic>? args}) = _$DeviceCommandImpl;
+      final List<Access>? access,
+      final List<Device>? possibleDevices}) = _$DeviceCommandImpl;
 
   factory _DeviceCommand.fromJson(Map<String, dynamic> json) =
       _$DeviceCommandImpl.fromJson;
@@ -793,6 +847,10 @@ abstract class _DeviceCommand implements DeviceCommand {
   /// Is the source of the command.
   @CommandSourceConverter()
   CommandSource get source;
+  @override
+
+  /// [payload] is the text payload to send into a SMS command.
+  String? get payload;
   @override
 
   /// Is the tag id of the command for "multi" execution from any [Action].
@@ -824,50 +882,16 @@ abstract class _DeviceCommand implements DeviceCommand {
   Model? get model;
   @override
 
-  /// Is The command to execute.
-  String? get command;
+  /// [definition] refers to the definition of the command.
+  String? get definition;
   @override
 
-  /// Is is the password for the device. Will return null when not apply.
-  String? get devicePassword;
-  @override
-
-  /// Is menas the raw payload to send.
-  String? get payload;
-  @override
-
-  /// Is the internal ID of the command. (Refer to the Ruptela documentation for more information)
-  /// only for Ruptela devices
-  String? get commandId;
-  @override
-
-  /// Is the command is in Hexadecimal format.
-  /// only for Ruptela devices
-  bool? get isHexCoded;
-  @override
-
-  /// Is the EasyLogic username. only for Galileosky devices
-  String? get username;
-  @override
-
-  /// Is the EasyLogic script name. only for Galileosky devices
-  String? get scriptName;
-  @override
-
-  /// Is the external account for the command when source is [CommandSource.sms].
-  ExternalAccount? get externalAccount;
-  @override
-
-  /// Is the external account ID for the command when source is [CommandSource.sms].
+  /// [externalAccountId] refers to the external account id of the command.
   String? get externalAccountId;
   @override
 
-  /// Is a list of granted access to this entity.
-  List<Access>? get access;
-  @override
-
-  /// List of possible devices that can perform this command.
-  List<Device>? get possibleDevices;
+  /// [data] refers to the data of the command.
+  CommandData? get data;
   @override
 
   /// [modbusParameter] refers to the modbus parameter of the command.
@@ -881,11 +905,768 @@ abstract class _DeviceCommand implements DeviceCommand {
   String? get modbusPort;
   @override
 
-  /// [args] refers to the arguments of the command.
-  Map<String, dynamic>? get args;
+  /// Is a list of granted access to this entity.
+  List<Access>? get access;
+  @override
+
+  /// List of possible devices that can perform this command.
+  List<Device>? get possibleDevices;
   @override
   @JsonKey(ignore: true)
   _$$DeviceCommandImplCopyWith<_$DeviceCommandImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+CommandDataInput _$CommandDataInputFromJson(Map<String, dynamic> json) {
+  return _CommandDataInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CommandDataInput {
+  /// [source] is the source of the command.
+  @CommandDefinitionSourceOrNullConverter()
+  CommandDefinitionSource? get source => throw _privateConstructorUsedError;
+
+  /// [source] is the source of the command.
+  @CommandDefinitionSourceOrNullConverter()
+  set source(CommandDefinitionSource? value) =>
+      throw _privateConstructorUsedError;
+
+  /// [definition] is the definition of the command.
+  String? get definition => throw _privateConstructorUsedError;
+
+  /// [definition] is the definition of the command.
+  set definition(String? value) => throw _privateConstructorUsedError;
+
+  /// [payload] is the list of parameters of the command.
+  Map<String, dynamic> get payload => throw _privateConstructorUsedError;
+
+  /// [payload] is the list of parameters of the command.
+  set payload(Map<String, dynamic> value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CommandDataInputCopyWith<CommandDataInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CommandDataInputCopyWith<$Res> {
+  factory $CommandDataInputCopyWith(
+          CommandDataInput value, $Res Function(CommandDataInput) then) =
+      _$CommandDataInputCopyWithImpl<$Res, CommandDataInput>;
+  @useResult
+  $Res call(
+      {@CommandDefinitionSourceOrNullConverter()
+      CommandDefinitionSource? source,
+      String? definition,
+      Map<String, dynamic> payload});
+}
+
+/// @nodoc
+class _$CommandDataInputCopyWithImpl<$Res, $Val extends CommandDataInput>
+    implements $CommandDataInputCopyWith<$Res> {
+  _$CommandDataInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = freezed,
+    Object? definition = freezed,
+    Object? payload = null,
+  }) {
+    return _then(_value.copyWith(
+      source: freezed == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as CommandDefinitionSource?,
+      definition: freezed == definition
+          ? _value.definition
+          : definition // ignore: cast_nullable_to_non_nullable
+              as String?,
+      payload: null == payload
+          ? _value.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$CommandDataInputImplCopyWith<$Res>
+    implements $CommandDataInputCopyWith<$Res> {
+  factory _$$CommandDataInputImplCopyWith(_$CommandDataInputImpl value,
+          $Res Function(_$CommandDataInputImpl) then) =
+      __$$CommandDataInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@CommandDefinitionSourceOrNullConverter()
+      CommandDefinitionSource? source,
+      String? definition,
+      Map<String, dynamic> payload});
+}
+
+/// @nodoc
+class __$$CommandDataInputImplCopyWithImpl<$Res>
+    extends _$CommandDataInputCopyWithImpl<$Res, _$CommandDataInputImpl>
+    implements _$$CommandDataInputImplCopyWith<$Res> {
+  __$$CommandDataInputImplCopyWithImpl(_$CommandDataInputImpl _value,
+      $Res Function(_$CommandDataInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = freezed,
+    Object? definition = freezed,
+    Object? payload = null,
+  }) {
+    return _then(_$CommandDataInputImpl(
+      source: freezed == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as CommandDefinitionSource?,
+      definition: freezed == definition
+          ? _value.definition
+          : definition // ignore: cast_nullable_to_non_nullable
+              as String?,
+      payload: null == payload
+          ? _value.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CommandDataInputImpl implements _CommandDataInput {
+  _$CommandDataInputImpl(
+      {@CommandDefinitionSourceOrNullConverter() this.source,
+      this.definition,
+      this.payload = const {}});
+
+  factory _$CommandDataInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommandDataInputImplFromJson(json);
+
+  /// [source] is the source of the command.
+  @override
+  @CommandDefinitionSourceOrNullConverter()
+  CommandDefinitionSource? source;
+
+  /// [definition] is the definition of the command.
+  @override
+  String? definition;
+
+  /// [payload] is the list of parameters of the command.
+  @override
+  @JsonKey()
+  Map<String, dynamic> payload;
+
+  @override
+  String toString() {
+    return 'CommandDataInput(source: $source, definition: $definition, payload: $payload)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CommandDataInputImplCopyWith<_$CommandDataInputImpl> get copyWith =>
+      __$$CommandDataInputImplCopyWithImpl<_$CommandDataInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CommandDataInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _CommandDataInput implements CommandDataInput {
+  factory _CommandDataInput(
+      {@CommandDefinitionSourceOrNullConverter()
+      CommandDefinitionSource? source,
+      String? definition,
+      Map<String, dynamic> payload}) = _$CommandDataInputImpl;
+
+  factory _CommandDataInput.fromJson(Map<String, dynamic> json) =
+      _$CommandDataInputImpl.fromJson;
+
+  @override
+
+  /// [source] is the source of the command.
+  @CommandDefinitionSourceOrNullConverter()
+  CommandDefinitionSource? get source;
+
+  /// [source] is the source of the command.
+  @CommandDefinitionSourceOrNullConverter()
+  set source(CommandDefinitionSource? value);
+  @override
+
+  /// [definition] is the definition of the command.
+  String? get definition;
+
+  /// [definition] is the definition of the command.
+  set definition(String? value);
+  @override
+
+  /// [payload] is the list of parameters of the command.
+  Map<String, dynamic> get payload;
+
+  /// [payload] is the list of parameters of the command.
+  set payload(Map<String, dynamic> value);
+  @override
+  @JsonKey(ignore: true)
+  _$$CommandDataInputImplCopyWith<_$CommandDataInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+CommandInput _$CommandInputFromJson(Map<String, dynamic> json) {
+  return _CommandInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$CommandInput {
+  String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// Is name of the command. (Only reference, does not affect the command itself)
+  String get name => throw _privateConstructorUsedError;
+
+  /// Is name of the command. (Only reference, does not affect the command itself)
+  set name(String value) => throw _privateConstructorUsedError;
+
+  /// Is the source of the command.
+  @CommandSourceOrNullConverter()
+  CommandSource? get source => throw _privateConstructorUsedError;
+
+  /// Is the source of the command.
+  @CommandSourceOrNullConverter()
+  set source(CommandSource? value) => throw _privateConstructorUsedError;
+
+  /// [payload] is the text payload to send into a SMS command.
+  String? get payload => throw _privateConstructorUsedError;
+
+  /// [payload] is the text payload to send into a SMS command.
+  set payload(String? value) => throw _privateConstructorUsedError;
+
+  /// Is the tag id of the command for "multi" execution from any [Action].
+  String? get tagId => throw _privateConstructorUsedError;
+
+  /// Is the tag id of the command for "multi" execution from any [Action].
+  set tagId(String? value) => throw _privateConstructorUsedError;
+
+  /// Is the [deviceId] that the command is for.
+  /// Only will comes when the command comes from the asset or device query.
+  String? get deviceId => throw _privateConstructorUsedError;
+
+  /// Is the [deviceId] that the command is for.
+  /// Only will comes when the command comes from the asset or device query.
+  set deviceId(String? value) => throw _privateConstructorUsedError;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
+  String? get protocolId => throw _privateConstructorUsedError;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
+  set protocolId(String? value) => throw _privateConstructorUsedError;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
+  String? get modelId => throw _privateConstructorUsedError;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
+  set modelId(String? value) => throw _privateConstructorUsedError;
+
+  /// [externalAccountId] refers to the external account id of the command.
+  String? get externalAccountId => throw _privateConstructorUsedError;
+
+  /// [externalAccountId] refers to the external account id of the command.
+  set externalAccountId(String? value) => throw _privateConstructorUsedError;
+
+  /// [data] refers to the definition of the command.
+  CommandDataInput? get data => throw _privateConstructorUsedError;
+
+  /// [data] refers to the definition of the command.
+  set data(CommandDataInput? value) => throw _privateConstructorUsedError;
+
+  /// [modbusParameter] refers to the modbus parameter of the command.
+  /// This parameter contains the composition of the modbus command, like the controller address, function code,
+  /// register address, etc.
+  ModbusParameterInput? get modbusParameter =>
+      throw _privateConstructorUsedError;
+
+  /// [modbusParameter] refers to the modbus parameter of the command.
+  /// This parameter contains the composition of the modbus command, like the controller address, function code,
+  /// register address, etc.
+  set modbusParameter(ModbusParameterInput? value) =>
+      throw _privateConstructorUsedError;
+
+  /// [modbusPort] refers to the modbus port of the command.
+  /// This parameter contains the port number of the modbus command.
+  String? get modbusPort => throw _privateConstructorUsedError;
+
+  /// [modbusPort] refers to the modbus port of the command.
+  /// This parameter contains the port number of the modbus command.
+  set modbusPort(String? value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CommandInputCopyWith<CommandInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CommandInputCopyWith<$Res> {
+  factory $CommandInputCopyWith(
+          CommandInput value, $Res Function(CommandInput) then) =
+      _$CommandInputCopyWithImpl<$Res, CommandInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      @CommandSourceOrNullConverter() CommandSource? source,
+      String? payload,
+      String? tagId,
+      String? deviceId,
+      String? protocolId,
+      String? modelId,
+      String? externalAccountId,
+      CommandDataInput? data,
+      ModbusParameterInput? modbusParameter,
+      String? modbusPort});
+
+  $CommandDataInputCopyWith<$Res>? get data;
+  $ModbusParameterInputCopyWith<$Res>? get modbusParameter;
+}
+
+/// @nodoc
+class _$CommandInputCopyWithImpl<$Res, $Val extends CommandInput>
+    implements $CommandInputCopyWith<$Res> {
+  _$CommandInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? source = freezed,
+    Object? payload = freezed,
+    Object? tagId = freezed,
+    Object? deviceId = freezed,
+    Object? protocolId = freezed,
+    Object? modelId = freezed,
+    Object? externalAccountId = freezed,
+    Object? data = freezed,
+    Object? modbusParameter = freezed,
+    Object? modbusPort = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: freezed == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as CommandSource?,
+      payload: freezed == payload
+          ? _value.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tagId: freezed == tagId
+          ? _value.tagId
+          : tagId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      deviceId: freezed == deviceId
+          ? _value.deviceId
+          : deviceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      modelId: freezed == modelId
+          ? _value.modelId
+          : modelId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      externalAccountId: freezed == externalAccountId
+          ? _value.externalAccountId
+          : externalAccountId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as CommandDataInput?,
+      modbusParameter: freezed == modbusParameter
+          ? _value.modbusParameter
+          : modbusParameter // ignore: cast_nullable_to_non_nullable
+              as ModbusParameterInput?,
+      modbusPort: freezed == modbusPort
+          ? _value.modbusPort
+          : modbusPort // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CommandDataInputCopyWith<$Res>? get data {
+    if (_value.data == null) {
+      return null;
+    }
+
+    return $CommandDataInputCopyWith<$Res>(_value.data!, (value) {
+      return _then(_value.copyWith(data: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ModbusParameterInputCopyWith<$Res>? get modbusParameter {
+    if (_value.modbusParameter == null) {
+      return null;
+    }
+
+    return $ModbusParameterInputCopyWith<$Res>(_value.modbusParameter!,
+        (value) {
+      return _then(_value.copyWith(modbusParameter: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$CommandInputImplCopyWith<$Res>
+    implements $CommandInputCopyWith<$Res> {
+  factory _$$CommandInputImplCopyWith(
+          _$CommandInputImpl value, $Res Function(_$CommandInputImpl) then) =
+      __$$CommandInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      @CommandSourceOrNullConverter() CommandSource? source,
+      String? payload,
+      String? tagId,
+      String? deviceId,
+      String? protocolId,
+      String? modelId,
+      String? externalAccountId,
+      CommandDataInput? data,
+      ModbusParameterInput? modbusParameter,
+      String? modbusPort});
+
+  @override
+  $CommandDataInputCopyWith<$Res>? get data;
+  @override
+  $ModbusParameterInputCopyWith<$Res>? get modbusParameter;
+}
+
+/// @nodoc
+class __$$CommandInputImplCopyWithImpl<$Res>
+    extends _$CommandInputCopyWithImpl<$Res, _$CommandInputImpl>
+    implements _$$CommandInputImplCopyWith<$Res> {
+  __$$CommandInputImplCopyWithImpl(
+      _$CommandInputImpl _value, $Res Function(_$CommandInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? source = freezed,
+    Object? payload = freezed,
+    Object? tagId = freezed,
+    Object? deviceId = freezed,
+    Object? protocolId = freezed,
+    Object? modelId = freezed,
+    Object? externalAccountId = freezed,
+    Object? data = freezed,
+    Object? modbusParameter = freezed,
+    Object? modbusPort = freezed,
+  }) {
+    return _then(_$CommandInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: freezed == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as CommandSource?,
+      payload: freezed == payload
+          ? _value.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tagId: freezed == tagId
+          ? _value.tagId
+          : tagId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      deviceId: freezed == deviceId
+          ? _value.deviceId
+          : deviceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      modelId: freezed == modelId
+          ? _value.modelId
+          : modelId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      externalAccountId: freezed == externalAccountId
+          ? _value.externalAccountId
+          : externalAccountId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as CommandDataInput?,
+      modbusParameter: freezed == modbusParameter
+          ? _value.modbusParameter
+          : modbusParameter // ignore: cast_nullable_to_non_nullable
+              as ModbusParameterInput?,
+      modbusPort: freezed == modbusPort
+          ? _value.modbusPort
+          : modbusPort // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$CommandInputImpl implements _CommandInput {
+  _$CommandInputImpl(
+      {this.id,
+      this.name = '',
+      @CommandSourceOrNullConverter() this.source,
+      this.payload,
+      this.tagId,
+      this.deviceId,
+      this.protocolId,
+      this.modelId,
+      this.externalAccountId,
+      this.data,
+      this.modbusParameter,
+      this.modbusPort});
+
+  factory _$CommandInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CommandInputImplFromJson(json);
+
+  @override
+  String? id;
+
+  /// Is name of the command. (Only reference, does not affect the command itself)
+  @override
+  @JsonKey()
+  String name;
+
+  /// Is the source of the command.
+  @override
+  @CommandSourceOrNullConverter()
+  CommandSource? source;
+
+  /// [payload] is the text payload to send into a SMS command.
+  @override
+  String? payload;
+
+  /// Is the tag id of the command for "multi" execution from any [Action].
+  @override
+  String? tagId;
+
+  /// Is the [deviceId] that the command is for.
+  /// Only will comes when the command comes from the asset or device query.
+  @override
+  String? deviceId;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
+  @override
+  String? protocolId;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
+  @override
+  String? modelId;
+
+  /// [externalAccountId] refers to the external account id of the command.
+  @override
+  String? externalAccountId;
+
+  /// [data] refers to the definition of the command.
+  @override
+  CommandDataInput? data;
+
+  /// [modbusParameter] refers to the modbus parameter of the command.
+  /// This parameter contains the composition of the modbus command, like the controller address, function code,
+  /// register address, etc.
+  @override
+  ModbusParameterInput? modbusParameter;
+
+  /// [modbusPort] refers to the modbus port of the command.
+  /// This parameter contains the port number of the modbus command.
+  @override
+  String? modbusPort;
+
+  @override
+  String toString() {
+    return 'CommandInput(id: $id, name: $name, source: $source, payload: $payload, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, modelId: $modelId, externalAccountId: $externalAccountId, data: $data, modbusParameter: $modbusParameter, modbusPort: $modbusPort)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CommandInputImplCopyWith<_$CommandInputImpl> get copyWith =>
+      __$$CommandInputImplCopyWithImpl<_$CommandInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CommandInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _CommandInput implements CommandInput {
+  factory _CommandInput(
+      {String? id,
+      String name,
+      @CommandSourceOrNullConverter() CommandSource? source,
+      String? payload,
+      String? tagId,
+      String? deviceId,
+      String? protocolId,
+      String? modelId,
+      String? externalAccountId,
+      CommandDataInput? data,
+      ModbusParameterInput? modbusParameter,
+      String? modbusPort}) = _$CommandInputImpl;
+
+  factory _CommandInput.fromJson(Map<String, dynamic> json) =
+      _$CommandInputImpl.fromJson;
+
+  @override
+  String? get id;
+  set id(String? value);
+  @override
+
+  /// Is name of the command. (Only reference, does not affect the command itself)
+  String get name;
+
+  /// Is name of the command. (Only reference, does not affect the command itself)
+  set name(String value);
+  @override
+
+  /// Is the source of the command.
+  @CommandSourceOrNullConverter()
+  CommandSource? get source;
+
+  /// Is the source of the command.
+  @CommandSourceOrNullConverter()
+  set source(CommandSource? value);
+  @override
+
+  /// [payload] is the text payload to send into a SMS command.
+  String? get payload;
+
+  /// [payload] is the text payload to send into a SMS command.
+  set payload(String? value);
+  @override
+
+  /// Is the tag id of the command for "multi" execution from any [Action].
+  String? get tagId;
+
+  /// Is the tag id of the command for "multi" execution from any [Action].
+  set tagId(String? value);
+  @override
+
+  /// Is the [deviceId] that the command is for.
+  /// Only will comes when the command comes from the asset or device query.
+  String? get deviceId;
+
+  /// Is the [deviceId] that the command is for.
+  /// Only will comes when the command comes from the asset or device query.
+  set deviceId(String? value);
+  @override
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
+  String? get protocolId;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
+  set protocolId(String? value);
+  @override
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
+  String? get modelId;
+
+  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
+  /// Only will comes when the command is a "template"
+  set modelId(String? value);
+  @override
+
+  /// [externalAccountId] refers to the external account id of the command.
+  String? get externalAccountId;
+
+  /// [externalAccountId] refers to the external account id of the command.
+  set externalAccountId(String? value);
+  @override
+
+  /// [data] refers to the definition of the command.
+  CommandDataInput? get data;
+
+  /// [data] refers to the definition of the command.
+  set data(CommandDataInput? value);
+  @override
+
+  /// [modbusParameter] refers to the modbus parameter of the command.
+  /// This parameter contains the composition of the modbus command, like the controller address, function code,
+  /// register address, etc.
+  ModbusParameterInput? get modbusParameter;
+
+  /// [modbusParameter] refers to the modbus parameter of the command.
+  /// This parameter contains the composition of the modbus command, like the controller address, function code,
+  /// register address, etc.
+  set modbusParameter(ModbusParameterInput? value);
+  @override
+
+  /// [modbusPort] refers to the modbus port of the command.
+  /// This parameter contains the port number of the modbus command.
+  String? get modbusPort;
+
+  /// [modbusPort] refers to the modbus port of the command.
+  /// This parameter contains the port number of the modbus command.
+  set modbusPort(String? value);
+  @override
+  @JsonKey(ignore: true)
+  _$$CommandInputImplCopyWith<_$CommandInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1899,6 +2680,9 @@ mixin _$CommandDefinition {
   List<CommandPayloadDefinition> get payload =>
       throw _privateConstructorUsedError;
 
+  /// [translationKey] is the translation key of the command.
+  String? get translationKey => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CommandDefinitionCopyWith<CommandDefinition> get copyWith =>
@@ -1915,7 +2699,8 @@ abstract class $CommandDefinitionCopyWith<$Res> {
       {String name,
       String? description,
       @CommandDefinitionSourceConverter() CommandDefinitionSource source,
-      List<CommandPayloadDefinition> payload});
+      List<CommandPayloadDefinition> payload,
+      String? translationKey});
 }
 
 /// @nodoc
@@ -1935,6 +2720,7 @@ class _$CommandDefinitionCopyWithImpl<$Res, $Val extends CommandDefinition>
     Object? description = freezed,
     Object? source = null,
     Object? payload = null,
+    Object? translationKey = freezed,
   }) {
     return _then(_value.copyWith(
       name: null == name
@@ -1953,6 +2739,10 @@ class _$CommandDefinitionCopyWithImpl<$Res, $Val extends CommandDefinition>
           ? _value.payload
           : payload // ignore: cast_nullable_to_non_nullable
               as List<CommandPayloadDefinition>,
+      translationKey: freezed == translationKey
+          ? _value.translationKey
+          : translationKey // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -1969,7 +2759,8 @@ abstract class _$$CommandDefinitionImplCopyWith<$Res>
       {String name,
       String? description,
       @CommandDefinitionSourceConverter() CommandDefinitionSource source,
-      List<CommandPayloadDefinition> payload});
+      List<CommandPayloadDefinition> payload,
+      String? translationKey});
 }
 
 /// @nodoc
@@ -1987,6 +2778,7 @@ class __$$CommandDefinitionImplCopyWithImpl<$Res>
     Object? description = freezed,
     Object? source = null,
     Object? payload = null,
+    Object? translationKey = freezed,
   }) {
     return _then(_$CommandDefinitionImpl(
       name: null == name
@@ -2005,6 +2797,10 @@ class __$$CommandDefinitionImplCopyWithImpl<$Res>
           ? _value._payload
           : payload // ignore: cast_nullable_to_non_nullable
               as List<CommandPayloadDefinition>,
+      translationKey: freezed == translationKey
+          ? _value.translationKey
+          : translationKey // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -2016,7 +2812,8 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
       {required this.name,
       this.description,
       @CommandDefinitionSourceConverter() required this.source,
-      required final List<CommandPayloadDefinition> payload})
+      required final List<CommandPayloadDefinition> payload,
+      this.translationKey})
       : _payload = payload;
 
   factory _$CommandDefinitionImpl.fromJson(Map<String, dynamic> json) =>
@@ -2046,9 +2843,13 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
     return EqualUnmodifiableListView(_payload);
   }
 
+  /// [translationKey] is the translation key of the command.
+  @override
+  final String? translationKey;
+
   @override
   String toString() {
-    return 'CommandDefinition(name: $name, description: $description, source: $source, payload: $payload)';
+    return 'CommandDefinition(name: $name, description: $description, source: $source, payload: $payload, translationKey: $translationKey)';
   }
 
   @override
@@ -2060,13 +2861,15 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.source, source) || other.source == source) &&
-            const DeepCollectionEquality().equals(other._payload, _payload));
+            const DeepCollectionEquality().equals(other._payload, _payload) &&
+            (identical(other.translationKey, translationKey) ||
+                other.translationKey == translationKey));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name, description, source,
-      const DeepCollectionEquality().hash(_payload));
+      const DeepCollectionEquality().hash(_payload), translationKey);
 
   @JsonKey(ignore: true)
   @override
@@ -2085,12 +2888,12 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
 
 abstract class _CommandDefinition implements CommandDefinition {
   const factory _CommandDefinition(
-          {required final String name,
-          final String? description,
-          @CommandDefinitionSourceConverter()
-          required final CommandDefinitionSource source,
-          required final List<CommandPayloadDefinition> payload}) =
-      _$CommandDefinitionImpl;
+      {required final String name,
+      final String? description,
+      @CommandDefinitionSourceConverter()
+      required final CommandDefinitionSource source,
+      required final List<CommandPayloadDefinition> payload,
+      final String? translationKey}) = _$CommandDefinitionImpl;
 
   factory _CommandDefinition.fromJson(Map<String, dynamic> json) =
       _$CommandDefinitionImpl.fromJson;
@@ -2112,6 +2915,10 @@ abstract class _CommandDefinition implements CommandDefinition {
 
   /// [payload] is the list of parameters of the command.
   List<CommandPayloadDefinition> get payload;
+  @override
+
+  /// [translationKey] is the translation key of the command.
+  String? get translationKey;
   @override
   @JsonKey(ignore: true)
   _$$CommandDefinitionImplCopyWith<_$CommandDefinitionImpl> get copyWith =>
