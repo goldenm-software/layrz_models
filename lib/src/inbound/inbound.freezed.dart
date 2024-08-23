@@ -138,6 +138,9 @@ mixin _$InboundProtocol {
   List<ConfigDefinition> get configStructure =>
       throw _privateConstructorUsedError;
 
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  bool get confiotCapable => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
@@ -184,7 +187,8 @@ abstract class $InboundProtocolCopyWith<$Res> {
       bool requiresExternalAccount,
       bool requiresStructure,
       List<CommandDefinition> commandsStructure,
-      List<ConfigDefinition> configStructure});
+      List<ConfigDefinition> configStructure,
+      bool confiotCapable});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $SimulationCycleCopyWith<$Res>? get cycle;
@@ -238,6 +242,7 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? requiresStructure = null,
     Object? commandsStructure = null,
     Object? configStructure = null,
+    Object? confiotCapable = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -376,6 +381,10 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
               as List<ConfigDefinition>,
+      confiotCapable: null == confiotCapable
+          ? _value.confiotCapable
+          : confiotCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -458,7 +467,8 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       bool requiresExternalAccount,
       bool requiresStructure,
       List<CommandDefinition> commandsStructure,
-      List<ConfigDefinition> configStructure});
+      List<ConfigDefinition> configStructure,
+      bool confiotCapable});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -513,6 +523,7 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? requiresStructure = null,
     Object? commandsStructure = null,
     Object? configStructure = null,
+    Object? confiotCapable = null,
   }) {
     return _then(_$InboundProtocolImpl(
       id: null == id
@@ -651,6 +662,10 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value._configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
               as List<ConfigDefinition>,
+      confiotCapable: null == confiotCapable
+          ? _value.confiotCapable
+          : confiotCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -692,7 +707,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       this.requiresExternalAccount = false,
       this.requiresStructure = false,
       final List<CommandDefinition> commandsStructure = const [],
-      final List<ConfigDefinition> configStructure = const []})
+      final List<ConfigDefinition> configStructure = const [],
+      this.confiotCapable = false})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models,
@@ -916,9 +932,14 @@ class _$InboundProtocolImpl implements _InboundProtocol {
     return EqualUnmodifiableListView(_configStructure);
   }
 
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  @override
+  @JsonKey()
+  final bool confiotCapable;
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable)';
   }
 
   @override
@@ -983,7 +1004,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
             const DeepCollectionEquality()
                 .equals(other._commandsStructure, _commandsStructure) &&
             const DeepCollectionEquality()
-                .equals(other._configStructure, _configStructure));
+                .equals(other._configStructure, _configStructure) &&
+            (identical(other.confiotCapable, confiotCapable) ||
+                other.confiotCapable == confiotCapable));
   }
 
   @JsonKey(ignore: true)
@@ -1023,7 +1046,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         requiresExternalAccount,
         requiresStructure,
         const DeepCollectionEquality().hash(_commandsStructure),
-        const DeepCollectionEquality().hash(_configStructure)
+        const DeepCollectionEquality().hash(_configStructure),
+        confiotCapable
       ]);
 
   @JsonKey(ignore: true)
@@ -1076,7 +1100,8 @@ abstract class _InboundProtocol implements InboundProtocol {
       final bool requiresExternalAccount,
       final bool requiresStructure,
       final List<CommandDefinition> commandsStructure,
-      final List<ConfigDefinition> configStructure}) = _$InboundProtocolImpl;
+      final List<ConfigDefinition> configStructure,
+      final bool confiotCapable}) = _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
@@ -1230,6 +1255,10 @@ abstract class _InboundProtocol implements InboundProtocol {
 
   /// [configStructure] is the structure of the configuration for the protocol.
   List<ConfigDefinition> get configStructure;
+  @override
+
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  bool get confiotCapable;
   @override
   @JsonKey(ignore: true)
   _$$InboundProtocolImplCopyWith<_$InboundProtocolImpl> get copyWith =>
@@ -1447,6 +1476,12 @@ mixin _$InboundProtocolInput {
   set configStructure(List<ConfigDefinitionInput> value) =>
       throw _privateConstructorUsedError;
 
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  bool get confiotCapable => throw _privateConstructorUsedError;
+
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  set confiotCapable(bool value) => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $InboundProtocolInputCopyWith<InboundProtocolInput> get copyWith =>
@@ -1490,7 +1525,8 @@ abstract class $InboundProtocolInputCopyWith<$Res> {
       bool requiresExternalAccount,
       bool requiresStructure,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure});
+      List<ConfigDefinitionInput> configStructure,
+      bool confiotCapable});
 
   $AvatarInputCopyWith<$Res> get dynamicIcon;
   $WebhookStructureInputCopyWith<$Res>? get webhookStructure;
@@ -1541,6 +1577,7 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
     Object? requiresStructure = null,
     Object? commandsStructure = null,
     Object? configStructure = null,
+    Object? confiotCapable = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -1667,6 +1704,10 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
               as List<ConfigDefinitionInput>,
+      confiotCapable: null == confiotCapable
+          ? _value.confiotCapable
+          : confiotCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -1731,7 +1772,8 @@ abstract class _$$InboundProtocolInputImplCopyWith<$Res>
       bool requiresExternalAccount,
       bool requiresStructure,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure});
+      List<ConfigDefinitionInput> configStructure,
+      bool confiotCapable});
 
   @override
   $AvatarInputCopyWith<$Res> get dynamicIcon;
@@ -1781,6 +1823,7 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
     Object? requiresStructure = null,
     Object? commandsStructure = null,
     Object? configStructure = null,
+    Object? confiotCapable = null,
   }) {
     return _then(_$InboundProtocolInputImpl(
       id: freezed == id
@@ -1907,6 +1950,10 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
               as List<ConfigDefinitionInput>,
+      confiotCapable: null == confiotCapable
+          ? _value.confiotCapable
+          : confiotCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1945,7 +1992,8 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
       this.requiresExternalAccount = false,
       this.requiresStructure = false,
       this.commandsStructure = const [],
-      this.configStructure = const []});
+      this.configStructure = const [],
+      this.confiotCapable = false});
 
   factory _$InboundProtocolInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$InboundProtocolInputImplFromJson(json);
@@ -2101,9 +2149,14 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
   @JsonKey()
   List<ConfigDefinitionInput> configStructure;
 
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  @override
+  @JsonKey()
+  bool confiotCapable;
+
   @override
   String toString() {
-    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure)';
+    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable)';
   }
 
   @JsonKey(ignore: true)
@@ -2124,38 +2177,38 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
 
 abstract class _InboundProtocolInput implements InboundProtocolInput {
   factory _InboundProtocolInput(
-          {String? id,
-          String name,
-          @ColorConverter() Color color,
-          bool isEnabled,
-          List<String> categoriesIds,
-          @OperationModeConverter() OperationMode operationMode,
-          bool hasNativeCommands,
-          bool hasSmsCommands,
-          bool hasCommandsResult,
-          int? channelId,
-          bool isFlespi,
-          String? flespiId,
-          bool hasAck,
-          String ackTopicFormat,
-          bool isImported,
-          List<CredentialFieldInput> requiredFields,
-          bool canFota,
-          String? host,
-          int? port,
-          String? mqttTopic,
-          required AvatarInput dynamicIcon,
-          String? cycleId,
-          bool hasModbus,
-          List<String> modbusPorts,
-          bool requiresFlespiToken,
-          List<FlespiAclInput> flespiAcl,
-          WebhookStructureInput? webhookStructure,
-          bool requiresExternalAccount,
-          bool requiresStructure,
-          List<CommandDefinitionInput> commandsStructure,
-          List<ConfigDefinitionInput> configStructure}) =
-      _$InboundProtocolInputImpl;
+      {String? id,
+      String name,
+      @ColorConverter() Color color,
+      bool isEnabled,
+      List<String> categoriesIds,
+      @OperationModeConverter() OperationMode operationMode,
+      bool hasNativeCommands,
+      bool hasSmsCommands,
+      bool hasCommandsResult,
+      int? channelId,
+      bool isFlespi,
+      String? flespiId,
+      bool hasAck,
+      String ackTopicFormat,
+      bool isImported,
+      List<CredentialFieldInput> requiredFields,
+      bool canFota,
+      String? host,
+      int? port,
+      String? mqttTopic,
+      required AvatarInput dynamicIcon,
+      String? cycleId,
+      bool hasModbus,
+      List<String> modbusPorts,
+      bool requiresFlespiToken,
+      List<FlespiAclInput> flespiAcl,
+      WebhookStructureInput? webhookStructure,
+      bool requiresExternalAccount,
+      bool requiresStructure,
+      List<CommandDefinitionInput> commandsStructure,
+      List<ConfigDefinitionInput> configStructure,
+      bool confiotCapable}) = _$InboundProtocolInputImpl;
 
   factory _InboundProtocolInput.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolInputImpl.fromJson;
@@ -2387,6 +2440,13 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
 
   /// [configStructure] is the structure of the configuration for the protocol.
   set configStructure(List<ConfigDefinitionInput> value);
+  @override
+
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  bool get confiotCapable;
+
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  set confiotCapable(bool value);
   @override
   @JsonKey(ignore: true)
   _$$InboundProtocolInputImplCopyWith<_$InboundProtocolInputImpl>

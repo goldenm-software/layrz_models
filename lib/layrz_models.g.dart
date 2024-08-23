@@ -934,6 +934,20 @@ Map<String, dynamic> _$$PhoneNumberImplToJson(_$PhoneNumberImpl instance) =>
       'phoneNumber': instance.phoneNumber,
     };
 
+_$PhoneNumberInputImpl _$$PhoneNumberInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$PhoneNumberInputImpl(
+      countryCode: json['countryCode'] as String? ?? '',
+      phoneNumber: json['phoneNumber'] as String? ?? '',
+    );
+
+Map<String, dynamic> _$$PhoneNumberInputImplToJson(
+        _$PhoneNumberInputImpl instance) =>
+    <String, dynamic>{
+      'countryCode': instance.countryCode,
+      'phoneNumber': instance.phoneNumber,
+    };
+
 _$NullablePhoneNumberImpl _$$NullablePhoneNumberImplFromJson(
         Map<String, dynamic> json) =>
     _$NullablePhoneNumberImpl(
@@ -1220,6 +1234,36 @@ Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
       'phone': instance.phone?.toJson(),
       'modbus': instance.modbus?.toJson(),
       'isSuspended': instance.isSuspended,
+    };
+
+_$DeviceInputImpl _$$DeviceInputImplFromJson(Map<String, dynamic> json) =>
+    _$DeviceInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      ident: json['ident'] as String? ?? '',
+      protocolId: json['protocolId'] as String?,
+      modelId: json['modelId'] as String?,
+      visionProfileId: json['visionProfileId'] as String?,
+      phone: json['phone'] == null
+          ? null
+          : PhoneNumberInput.fromJson(json['phone'] as Map<String, dynamic>),
+      modbus: json['modbus'] == null
+          ? null
+          : ModbusConfigInput.fromJson(json['modbus'] as Map<String, dynamic>),
+      macAddress: json['macAddress'] as String?,
+    );
+
+Map<String, dynamic> _$$DeviceInputImplToJson(_$DeviceInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'ident': instance.ident,
+      'protocolId': instance.protocolId,
+      'modelId': instance.modelId,
+      'visionProfileId': instance.visionProfileId,
+      'phone': instance.phone?.toJson(),
+      'modbus': instance.modbus?.toJson(),
+      'macAddress': instance.macAddress,
     };
 
 _$EmailTemplateImpl _$$EmailTemplateImplFromJson(Map<String, dynamic> json) =>

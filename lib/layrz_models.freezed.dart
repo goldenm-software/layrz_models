@@ -10379,6 +10379,171 @@ abstract class _PhoneNumber extends PhoneNumber {
       throw _privateConstructorUsedError;
 }
 
+PhoneNumberInput _$PhoneNumberInputFromJson(Map<String, dynamic> json) {
+  return _PhoneNumberInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PhoneNumberInput {
+  /// Country code.
+  String get countryCode => throw _privateConstructorUsedError;
+
+  /// Country code.
+  set countryCode(String value) => throw _privateConstructorUsedError;
+
+  /// Phone number.
+  String get phoneNumber => throw _privateConstructorUsedError;
+
+  /// Phone number.
+  set phoneNumber(String value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PhoneNumberInputCopyWith<PhoneNumberInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PhoneNumberInputCopyWith<$Res> {
+  factory $PhoneNumberInputCopyWith(
+          PhoneNumberInput value, $Res Function(PhoneNumberInput) then) =
+      _$PhoneNumberInputCopyWithImpl<$Res, PhoneNumberInput>;
+  @useResult
+  $Res call({String countryCode, String phoneNumber});
+}
+
+/// @nodoc
+class _$PhoneNumberInputCopyWithImpl<$Res, $Val extends PhoneNumberInput>
+    implements $PhoneNumberInputCopyWith<$Res> {
+  _$PhoneNumberInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? countryCode = null,
+    Object? phoneNumber = null,
+  }) {
+    return _then(_value.copyWith(
+      countryCode: null == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$PhoneNumberInputImplCopyWith<$Res>
+    implements $PhoneNumberInputCopyWith<$Res> {
+  factory _$$PhoneNumberInputImplCopyWith(_$PhoneNumberInputImpl value,
+          $Res Function(_$PhoneNumberInputImpl) then) =
+      __$$PhoneNumberInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String countryCode, String phoneNumber});
+}
+
+/// @nodoc
+class __$$PhoneNumberInputImplCopyWithImpl<$Res>
+    extends _$PhoneNumberInputCopyWithImpl<$Res, _$PhoneNumberInputImpl>
+    implements _$$PhoneNumberInputImplCopyWith<$Res> {
+  __$$PhoneNumberInputImplCopyWithImpl(_$PhoneNumberInputImpl _value,
+      $Res Function(_$PhoneNumberInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? countryCode = null,
+    Object? phoneNumber = null,
+  }) {
+    return _then(_$PhoneNumberInputImpl(
+      countryCode: null == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PhoneNumberInputImpl implements _PhoneNumberInput {
+  _$PhoneNumberInputImpl({this.countryCode = '', this.phoneNumber = ''});
+
+  factory _$PhoneNumberInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PhoneNumberInputImplFromJson(json);
+
+  /// Country code.
+  @override
+  @JsonKey()
+  String countryCode;
+
+  /// Phone number.
+  @override
+  @JsonKey()
+  String phoneNumber;
+
+  @override
+  String toString() {
+    return 'PhoneNumberInput(countryCode: $countryCode, phoneNumber: $phoneNumber)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PhoneNumberInputImplCopyWith<_$PhoneNumberInputImpl> get copyWith =>
+      __$$PhoneNumberInputImplCopyWithImpl<_$PhoneNumberInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PhoneNumberInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PhoneNumberInput implements PhoneNumberInput {
+  factory _PhoneNumberInput({String countryCode, String phoneNumber}) =
+      _$PhoneNumberInputImpl;
+
+  factory _PhoneNumberInput.fromJson(Map<String, dynamic> json) =
+      _$PhoneNumberInputImpl.fromJson;
+
+  @override
+
+  /// Country code.
+  String get countryCode;
+
+  /// Country code.
+  set countryCode(String value);
+  @override
+
+  /// Phone number.
+  String get phoneNumber;
+
+  /// Phone number.
+  set phoneNumber(String value);
+  @override
+  @JsonKey(ignore: true)
+  _$$PhoneNumberInputImplCopyWith<_$PhoneNumberInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 NullablePhoneNumber _$NullablePhoneNumberFromJson(Map<String, dynamic> json) {
   return _NullablePhoneNumber.fromJson(json);
 }
@@ -13627,6 +13792,338 @@ abstract class _Device implements Device {
   @override
   @JsonKey(ignore: true)
   _$$DeviceImplCopyWith<_$DeviceImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+DeviceInput _$DeviceInputFromJson(Map<String, dynamic> json) {
+  return _DeviceInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$DeviceInput {
+  String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
+  String get ident => throw _privateConstructorUsedError;
+  set ident(String value) => throw _privateConstructorUsedError;
+  String? get protocolId => throw _privateConstructorUsedError;
+  set protocolId(String? value) => throw _privateConstructorUsedError;
+  String? get modelId => throw _privateConstructorUsedError;
+  set modelId(String? value) => throw _privateConstructorUsedError;
+  String? get visionProfileId => throw _privateConstructorUsedError;
+  set visionProfileId(String? value) => throw _privateConstructorUsedError;
+  PhoneNumberInput? get phone => throw _privateConstructorUsedError;
+  set phone(PhoneNumberInput? value) => throw _privateConstructorUsedError;
+  ModbusConfigInput? get modbus => throw _privateConstructorUsedError;
+  set modbus(ModbusConfigInput? value) => throw _privateConstructorUsedError;
+  String? get macAddress => throw _privateConstructorUsedError;
+  set macAddress(String? value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DeviceInputCopyWith<DeviceInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeviceInputCopyWith<$Res> {
+  factory $DeviceInputCopyWith(
+          DeviceInput value, $Res Function(DeviceInput) then) =
+      _$DeviceInputCopyWithImpl<$Res, DeviceInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String ident,
+      String? protocolId,
+      String? modelId,
+      String? visionProfileId,
+      PhoneNumberInput? phone,
+      ModbusConfigInput? modbus,
+      String? macAddress});
+
+  $PhoneNumberInputCopyWith<$Res>? get phone;
+  $ModbusConfigInputCopyWith<$Res>? get modbus;
+}
+
+/// @nodoc
+class _$DeviceInputCopyWithImpl<$Res, $Val extends DeviceInput>
+    implements $DeviceInputCopyWith<$Res> {
+  _$DeviceInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? ident = null,
+    Object? protocolId = freezed,
+    Object? modelId = freezed,
+    Object? visionProfileId = freezed,
+    Object? phone = freezed,
+    Object? modbus = freezed,
+    Object? macAddress = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      ident: null == ident
+          ? _value.ident
+          : ident // ignore: cast_nullable_to_non_nullable
+              as String,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      modelId: freezed == modelId
+          ? _value.modelId
+          : modelId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      visionProfileId: freezed == visionProfileId
+          ? _value.visionProfileId
+          : visionProfileId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as PhoneNumberInput?,
+      modbus: freezed == modbus
+          ? _value.modbus
+          : modbus // ignore: cast_nullable_to_non_nullable
+              as ModbusConfigInput?,
+      macAddress: freezed == macAddress
+          ? _value.macAddress
+          : macAddress // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PhoneNumberInputCopyWith<$Res>? get phone {
+    if (_value.phone == null) {
+      return null;
+    }
+
+    return $PhoneNumberInputCopyWith<$Res>(_value.phone!, (value) {
+      return _then(_value.copyWith(phone: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ModbusConfigInputCopyWith<$Res>? get modbus {
+    if (_value.modbus == null) {
+      return null;
+    }
+
+    return $ModbusConfigInputCopyWith<$Res>(_value.modbus!, (value) {
+      return _then(_value.copyWith(modbus: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$DeviceInputImplCopyWith<$Res>
+    implements $DeviceInputCopyWith<$Res> {
+  factory _$$DeviceInputImplCopyWith(
+          _$DeviceInputImpl value, $Res Function(_$DeviceInputImpl) then) =
+      __$$DeviceInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String ident,
+      String? protocolId,
+      String? modelId,
+      String? visionProfileId,
+      PhoneNumberInput? phone,
+      ModbusConfigInput? modbus,
+      String? macAddress});
+
+  @override
+  $PhoneNumberInputCopyWith<$Res>? get phone;
+  @override
+  $ModbusConfigInputCopyWith<$Res>? get modbus;
+}
+
+/// @nodoc
+class __$$DeviceInputImplCopyWithImpl<$Res>
+    extends _$DeviceInputCopyWithImpl<$Res, _$DeviceInputImpl>
+    implements _$$DeviceInputImplCopyWith<$Res> {
+  __$$DeviceInputImplCopyWithImpl(
+      _$DeviceInputImpl _value, $Res Function(_$DeviceInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? ident = null,
+    Object? protocolId = freezed,
+    Object? modelId = freezed,
+    Object? visionProfileId = freezed,
+    Object? phone = freezed,
+    Object? modbus = freezed,
+    Object? macAddress = freezed,
+  }) {
+    return _then(_$DeviceInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      ident: null == ident
+          ? _value.ident
+          : ident // ignore: cast_nullable_to_non_nullable
+              as String,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      modelId: freezed == modelId
+          ? _value.modelId
+          : modelId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      visionProfileId: freezed == visionProfileId
+          ? _value.visionProfileId
+          : visionProfileId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as PhoneNumberInput?,
+      modbus: freezed == modbus
+          ? _value.modbus
+          : modbus // ignore: cast_nullable_to_non_nullable
+              as ModbusConfigInput?,
+      macAddress: freezed == macAddress
+          ? _value.macAddress
+          : macAddress // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$DeviceInputImpl implements _DeviceInput {
+  _$DeviceInputImpl(
+      {this.id,
+      this.name = '',
+      this.ident = '',
+      this.protocolId,
+      this.modelId,
+      this.visionProfileId,
+      this.phone,
+      this.modbus,
+      this.macAddress});
+
+  factory _$DeviceInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DeviceInputImplFromJson(json);
+
+  @override
+  String? id;
+  @override
+  @JsonKey()
+  String name;
+  @override
+  @JsonKey()
+  String ident;
+  @override
+  String? protocolId;
+  @override
+  String? modelId;
+  @override
+  String? visionProfileId;
+  @override
+  PhoneNumberInput? phone;
+  @override
+  ModbusConfigInput? modbus;
+  @override
+  String? macAddress;
+
+  @override
+  String toString() {
+    return 'DeviceInput(id: $id, name: $name, ident: $ident, protocolId: $protocolId, modelId: $modelId, visionProfileId: $visionProfileId, phone: $phone, modbus: $modbus, macAddress: $macAddress)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeviceInputImplCopyWith<_$DeviceInputImpl> get copyWith =>
+      __$$DeviceInputImplCopyWithImpl<_$DeviceInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DeviceInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _DeviceInput implements DeviceInput {
+  factory _DeviceInput(
+      {String? id,
+      String name,
+      String ident,
+      String? protocolId,
+      String? modelId,
+      String? visionProfileId,
+      PhoneNumberInput? phone,
+      ModbusConfigInput? modbus,
+      String? macAddress}) = _$DeviceInputImpl;
+
+  factory _DeviceInput.fromJson(Map<String, dynamic> json) =
+      _$DeviceInputImpl.fromJson;
+
+  @override
+  String? get id;
+  set id(String? value);
+  @override
+  String get name;
+  set name(String value);
+  @override
+  String get ident;
+  set ident(String value);
+  @override
+  String? get protocolId;
+  set protocolId(String? value);
+  @override
+  String? get modelId;
+  set modelId(String? value);
+  @override
+  String? get visionProfileId;
+  set visionProfileId(String? value);
+  @override
+  PhoneNumberInput? get phone;
+  set phone(PhoneNumberInput? value);
+  @override
+  ModbusConfigInput? get modbus;
+  set modbus(ModbusConfigInput? value);
+  @override
+  String? get macAddress;
+  set macAddress(String? value);
+  @override
+  @JsonKey(ignore: true)
+  _$$DeviceInputImplCopyWith<_$DeviceInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

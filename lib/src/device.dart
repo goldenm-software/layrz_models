@@ -63,3 +63,20 @@ class Device with _$Device {
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
 }
+
+@unfreezed
+class DeviceInput with _$DeviceInput {
+  factory DeviceInput({
+    String? id,
+    @Default('') String name,
+    @Default('') String ident,
+    String? protocolId,
+    String? modelId,
+    String? visionProfileId,
+    PhoneNumberInput? phone,
+    ModbusConfigInput? modbus,
+    String? macAddress,
+  }) = _DeviceInput;
+
+  factory DeviceInput.fromJson(Map<String, dynamic> json) => _$DeviceInputFromJson(json);
+}

@@ -64,7 +64,6 @@ class ModbusParameterInput with _$ModbusParameterInput {
   factory ModbusParameterInput.fromJson(Map<String, dynamic> json) => _$ModbusParameterInputFromJson(json);
 }
 
-
 enum ModbusParameterSchema {
   single,
   multiple,

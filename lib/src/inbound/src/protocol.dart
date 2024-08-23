@@ -115,6 +115,9 @@ class InboundProtocol with _$InboundProtocol {
 
     /// [configStructure] is the structure of the configuration for the protocol.
     @Default([]) List<ConfigDefinition> configStructure,
+
+    /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+    @Default(false) bool confiotCapable,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);
@@ -218,6 +221,9 @@ class InboundProtocolInput with _$InboundProtocolInput {
 
     /// [configStructure] is the structure of the configuration for the protocol.
     @Default([]) List<ConfigDefinitionInput> configStructure,
+
+    /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+    @Default(false) bool confiotCapable,
   }) = _InboundProtocolInput;
 
   factory InboundProtocolInput.fromJson(Map<String, dynamic> json) => _$InboundProtocolInputFromJson(json);

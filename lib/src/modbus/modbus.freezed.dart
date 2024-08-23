@@ -219,6 +219,210 @@ abstract class _ModbusConfig implements ModbusConfig {
       throw _privateConstructorUsedError;
 }
 
+ModbusConfigInput _$ModbusConfigInputFromJson(Map<String, dynamic> json) {
+  return _ModbusConfigInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ModbusConfigInput {
+  /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
+  bool get isEnabled => throw _privateConstructorUsedError;
+
+  /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
+  set isEnabled(bool value) => throw _privateConstructorUsedError;
+
+  /// [parameters] is a list of modbus parameters.
+  List<ModbusParameterInput> get parameters =>
+      throw _privateConstructorUsedError;
+
+  /// [parameters] is a list of modbus parameters.
+  set parameters(List<ModbusParameterInput> value) =>
+      throw _privateConstructorUsedError;
+
+  /// [portId] is the port ID of the modbus device.
+  /// This value is refered from the [InboundProtocol] `modbusPorts` list.
+  String? get portId => throw _privateConstructorUsedError;
+
+  /// [portId] is the port ID of the modbus device.
+  /// This value is refered from the [InboundProtocol] `modbusPorts` list.
+  set portId(String? value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ModbusConfigInputCopyWith<ModbusConfigInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ModbusConfigInputCopyWith<$Res> {
+  factory $ModbusConfigInputCopyWith(
+          ModbusConfigInput value, $Res Function(ModbusConfigInput) then) =
+      _$ModbusConfigInputCopyWithImpl<$Res, ModbusConfigInput>;
+  @useResult
+  $Res call(
+      {bool isEnabled, List<ModbusParameterInput> parameters, String? portId});
+}
+
+/// @nodoc
+class _$ModbusConfigInputCopyWithImpl<$Res, $Val extends ModbusConfigInput>
+    implements $ModbusConfigInputCopyWith<$Res> {
+  _$ModbusConfigInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isEnabled = null,
+    Object? parameters = null,
+    Object? portId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      isEnabled: null == isEnabled
+          ? _value.isEnabled
+          : isEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      parameters: null == parameters
+          ? _value.parameters
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as List<ModbusParameterInput>,
+      portId: freezed == portId
+          ? _value.portId
+          : portId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ModbusConfigInputImplCopyWith<$Res>
+    implements $ModbusConfigInputCopyWith<$Res> {
+  factory _$$ModbusConfigInputImplCopyWith(_$ModbusConfigInputImpl value,
+          $Res Function(_$ModbusConfigInputImpl) then) =
+      __$$ModbusConfigInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {bool isEnabled, List<ModbusParameterInput> parameters, String? portId});
+}
+
+/// @nodoc
+class __$$ModbusConfigInputImplCopyWithImpl<$Res>
+    extends _$ModbusConfigInputCopyWithImpl<$Res, _$ModbusConfigInputImpl>
+    implements _$$ModbusConfigInputImplCopyWith<$Res> {
+  __$$ModbusConfigInputImplCopyWithImpl(_$ModbusConfigInputImpl _value,
+      $Res Function(_$ModbusConfigInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isEnabled = null,
+    Object? parameters = null,
+    Object? portId = freezed,
+  }) {
+    return _then(_$ModbusConfigInputImpl(
+      isEnabled: null == isEnabled
+          ? _value.isEnabled
+          : isEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      parameters: null == parameters
+          ? _value.parameters
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as List<ModbusParameterInput>,
+      portId: freezed == portId
+          ? _value.portId
+          : portId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ModbusConfigInputImpl implements _ModbusConfigInput {
+  _$ModbusConfigInputImpl(
+      {this.isEnabled = false, this.parameters = const [], this.portId});
+
+  factory _$ModbusConfigInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ModbusConfigInputImplFromJson(json);
+
+  /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
+  @override
+  @JsonKey()
+  bool isEnabled;
+
+  /// [parameters] is a list of modbus parameters.
+  @override
+  @JsonKey()
+  List<ModbusParameterInput> parameters;
+
+  /// [portId] is the port ID of the modbus device.
+  /// This value is refered from the [InboundProtocol] `modbusPorts` list.
+  @override
+  String? portId;
+
+  @override
+  String toString() {
+    return 'ModbusConfigInput(isEnabled: $isEnabled, parameters: $parameters, portId: $portId)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModbusConfigInputImplCopyWith<_$ModbusConfigInputImpl> get copyWith =>
+      __$$ModbusConfigInputImplCopyWithImpl<_$ModbusConfigInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ModbusConfigInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ModbusConfigInput implements ModbusConfigInput {
+  factory _ModbusConfigInput(
+      {bool isEnabled,
+      List<ModbusParameterInput> parameters,
+      String? portId}) = _$ModbusConfigInputImpl;
+
+  factory _ModbusConfigInput.fromJson(Map<String, dynamic> json) =
+      _$ModbusConfigInputImpl.fromJson;
+
+  @override
+
+  /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
+  bool get isEnabled;
+
+  /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
+  set isEnabled(bool value);
+  @override
+
+  /// [parameters] is a list of modbus parameters.
+  List<ModbusParameterInput> get parameters;
+
+  /// [parameters] is a list of modbus parameters.
+  set parameters(List<ModbusParameterInput> value);
+  @override
+
+  /// [portId] is the port ID of the modbus device.
+  /// This value is refered from the [InboundProtocol] `modbusPorts` list.
+  String? get portId;
+
+  /// [portId] is the port ID of the modbus device.
+  /// This value is refered from the [InboundProtocol] `modbusPorts` list.
+  set portId(String? value);
+  @override
+  @JsonKey(ignore: true)
+  _$$ModbusConfigInputImplCopyWith<_$ModbusConfigInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 ModbusParameter _$ModbusParameterFromJson(Map<String, dynamic> json) {
   return _ModbusParameter.fromJson(json);
 }

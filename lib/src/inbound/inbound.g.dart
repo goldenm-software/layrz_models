@@ -70,6 +70,7 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
               ?.map((e) => ConfigDefinition.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      confiotCapable: json['confiotCapable'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$InboundProtocolImplToJson(
@@ -113,6 +114,7 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
           instance.commandsStructure.map((e) => e.toJson()).toList(),
       'configStructure':
           instance.configStructure.map((e) => e.toJson()).toList(),
+      'confiotCapable': instance.confiotCapable,
     };
 
 _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
@@ -180,6 +182,7 @@ _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
                   ConfigDefinitionInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      confiotCapable: json['confiotCapable'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$InboundProtocolInputImplToJson(
@@ -219,6 +222,7 @@ Map<String, dynamic> _$$InboundProtocolInputImplToJson(
           instance.commandsStructure.map((e) => e.toJson()).toList(),
       'configStructure':
           instance.configStructure.map((e) => e.toJson()).toList(),
+      'confiotCapable': instance.confiotCapable,
     };
 
 _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
