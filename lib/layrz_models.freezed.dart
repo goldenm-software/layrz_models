@@ -18674,6 +18674,7 @@ mixin _$Model {
   bool get confiotCapable => throw _privateConstructorUsedError;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @ConfIoTLayoutConverter()
   ConfIoTLayout get confiotLayout => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -18696,7 +18697,7 @@ abstract class $ModelCopyWith<$Res> {
       List<CommandDefinition> commandsStructure,
       List<ConfigDefinition> configStructure,
       bool confiotCapable,
-      ConfIoTLayout confiotLayout});
+      @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
 }
@@ -18799,7 +18800,7 @@ abstract class _$$ModelImplCopyWith<$Res> implements $ModelCopyWith<$Res> {
       List<CommandDefinition> commandsStructure,
       List<ConfigDefinition> configStructure,
       bool confiotCapable,
-      ConfIoTLayout confiotLayout});
+      @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -18885,7 +18886,7 @@ class _$ModelImpl implements _Model {
       final List<CommandDefinition> commandsStructure = const [],
       final List<ConfigDefinition> configStructure = const [],
       this.confiotCapable = false,
-      this.confiotLayout = ConfIoTLayout.standard})
+      @ConfIoTLayoutConverter() this.confiotLayout = ConfIoTLayout.standard})
       : _commandsStructure = commandsStructure,
         _configStructure = configStructure;
 
@@ -18950,6 +18951,7 @@ class _$ModelImpl implements _Model {
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
   @override
   @JsonKey()
+  @ConfIoTLayoutConverter()
   final ConfIoTLayout confiotLayout;
 
   @override
@@ -19013,16 +19015,17 @@ class _$ModelImpl implements _Model {
 
 abstract class _Model implements Model {
   const factory _Model(
-      {required final String id,
-      required final String name,
-      final String? flespiId,
-      final InboundProtocol? protocol,
-      final String? protocolId,
-      final bool? isGeneric,
-      final List<CommandDefinition> commandsStructure,
-      final List<ConfigDefinition> configStructure,
-      final bool confiotCapable,
-      final ConfIoTLayout confiotLayout}) = _$ModelImpl;
+          {required final String id,
+          required final String name,
+          final String? flespiId,
+          final InboundProtocol? protocol,
+          final String? protocolId,
+          final bool? isGeneric,
+          final List<CommandDefinition> commandsStructure,
+          final List<ConfigDefinition> configStructure,
+          final bool confiotCapable,
+          @ConfIoTLayoutConverter() final ConfIoTLayout confiotLayout}) =
+      _$ModelImpl;
 
   factory _Model.fromJson(Map<String, dynamic> json) = _$ModelImpl.fromJson;
 
@@ -19066,6 +19069,7 @@ abstract class _Model implements Model {
   @override
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @ConfIoTLayoutConverter()
   ConfIoTLayout get confiotLayout;
   @override
   @JsonKey(ignore: true)
@@ -19134,9 +19138,11 @@ mixin _$ModelInput {
   set confiotCapable(bool value) => throw _privateConstructorUsedError;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @ConfIoTLayoutConverter()
   ConfIoTLayout get confiotLayout => throw _privateConstructorUsedError;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @ConfIoTLayoutConverter()
   set confiotLayout(ConfIoTLayout value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -19160,7 +19166,7 @@ abstract class $ModelInputCopyWith<$Res> {
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigDefinitionInput> configStructure,
       bool confiotCapable,
-      ConfIoTLayout confiotLayout});
+      @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout});
 }
 
 /// @nodoc
@@ -19244,7 +19250,7 @@ abstract class _$$ModelInputImplCopyWith<$Res>
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigDefinitionInput> configStructure,
       bool confiotCapable,
-      ConfIoTLayout confiotLayout});
+      @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout});
 }
 
 /// @nodoc
@@ -19321,7 +19327,7 @@ class _$ModelInputImpl implements _ModelInput {
       this.commandsStructure = const [],
       this.configStructure = const [],
       this.confiotCapable = false,
-      this.confiotLayout = ConfIoTLayout.standard});
+      @ConfIoTLayoutConverter() this.confiotLayout = ConfIoTLayout.standard});
 
   factory _$ModelInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$ModelInputImplFromJson(json);
@@ -19367,6 +19373,7 @@ class _$ModelInputImpl implements _ModelInput {
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
   @override
   @JsonKey()
+  @ConfIoTLayoutConverter()
   ConfIoTLayout confiotLayout;
 
   @override
@@ -19390,15 +19397,16 @@ class _$ModelInputImpl implements _ModelInput {
 
 abstract class _ModelInput implements ModelInput {
   factory _ModelInput(
-      {String? id,
-      String name,
-      String? flespiId,
-      String? protocolId,
-      bool isGeneric,
-      List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure,
-      bool confiotCapable,
-      ConfIoTLayout confiotLayout}) = _$ModelInputImpl;
+          {String? id,
+          String name,
+          String? flespiId,
+          String? protocolId,
+          bool isGeneric,
+          List<CommandDefinitionInput> commandsStructure,
+          List<ConfigDefinitionInput> configStructure,
+          bool confiotCapable,
+          @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout}) =
+      _$ModelInputImpl;
 
   factory _ModelInput.fromJson(Map<String, dynamic> json) =
       _$ModelInputImpl.fromJson;
@@ -19464,9 +19472,11 @@ abstract class _ModelInput implements ModelInput {
   @override
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @ConfIoTLayoutConverter()
   ConfIoTLayout get confiotLayout;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @ConfIoTLayoutConverter()
   set confiotLayout(ConfIoTLayout value);
   @override
   @JsonKey(ignore: true)

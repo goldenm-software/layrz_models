@@ -1682,9 +1682,10 @@ _$ModelImpl _$$ModelImplFromJson(Map<String, dynamic> json) => _$ModelImpl(
               .toList() ??
           const [],
       confiotCapable: json['confiotCapable'] as bool? ?? false,
-      confiotLayout:
-          $enumDecodeNullable(_$ConfIoTLayoutEnumMap, json['confiotLayout']) ??
-              ConfIoTLayout.standard,
+      confiotLayout: json['confiotLayout'] == null
+          ? ConfIoTLayout.standard
+          : const ConfIoTLayoutConverter()
+              .fromJson(json['confiotLayout'] as String),
     );
 
 Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
@@ -1700,13 +1701,9 @@ Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
       'configStructure':
           instance.configStructure.map((e) => e.toJson()).toList(),
       'confiotCapable': instance.confiotCapable,
-      'confiotLayout': instance.confiotLayout.toJson(),
+      'confiotLayout':
+          const ConfIoTLayoutConverter().toJson(instance.confiotLayout),
     };
-
-const _$ConfIoTLayoutEnumMap = {
-  ConfIoTLayout.standard: 'standard',
-  ConfIoTLayout.sdmMonitor: 'sdmMonitor',
-};
 
 _$ModelInputImpl _$$ModelInputImplFromJson(Map<String, dynamic> json) =>
     _$ModelInputImpl(
@@ -1726,9 +1723,10 @@ _$ModelInputImpl _$$ModelInputImplFromJson(Map<String, dynamic> json) =>
               .toList() ??
           const [],
       confiotCapable: json['confiotCapable'] as bool? ?? false,
-      confiotLayout:
-          $enumDecodeNullable(_$ConfIoTLayoutEnumMap, json['confiotLayout']) ??
-              ConfIoTLayout.standard,
+      confiotLayout: json['confiotLayout'] == null
+          ? ConfIoTLayout.standard
+          : const ConfIoTLayoutConverter()
+              .fromJson(json['confiotLayout'] as String),
     );
 
 Map<String, dynamic> _$$ModelInputImplToJson(_$ModelInputImpl instance) =>
@@ -1743,7 +1741,8 @@ Map<String, dynamic> _$$ModelInputImplToJson(_$ModelInputImpl instance) =>
       'configStructure':
           instance.configStructure.map((e) => e.toJson()).toList(),
       'confiotCapable': instance.confiotCapable,
-      'confiotLayout': instance.confiotLayout.toJson(),
+      'confiotLayout':
+          const ConfIoTLayoutConverter().toJson(instance.confiotLayout),
     };
 
 _$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>

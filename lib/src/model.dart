@@ -35,7 +35,7 @@ class Model with _$Model {
     @Default(false) bool confiotCapable,
 
     /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
-    @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
+    @ConfIoTLayoutConverter() @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
   }) = _Model;
 
   factory Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
@@ -73,7 +73,7 @@ class ModelInput with _$ModelInput {
     @Default(false) bool confiotCapable,
 
     /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
-    @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
+    @ConfIoTLayoutConverter() @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
   }) = _ModelInput;
 
   factory ModelInput.fromJson(Map<String, dynamic> json) => _$ModelInputFromJson(json);

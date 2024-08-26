@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1.2
+
+- Added `@ConfIoTLayoutConverter()` to `confiotLayout` property in `Model` model.
+- Updated all dependencies and using the hat version instead of a constraint version.
+- Changed constraint of flutter version to `>=3.22.0`
+
 ## 3.1.1
 
 - Added `confiotCapable` property to `Model` model.
