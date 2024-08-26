@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.1.0 (WIP)
+## 3.1.0
 
 - Updated `InboundProtocol` and `Model` to handle new commands definitions and configuration parameters
 - Added `ConfIoTFile` configuration model
