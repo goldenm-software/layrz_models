@@ -6,6 +6,9 @@
 - Added `ConfIoTFile` configuration model
 - Major change of `Command` to support new command definitions
 
+## 3.0.4
+- Add `ReferenceCategory.mappitPermTagsRead` to mappit 
+
 ## 3.0.3
 - Add `MappitReportInput` 
 - Replace DateTime to double in startAt y endAt inside `MappitReportInputMulti`
