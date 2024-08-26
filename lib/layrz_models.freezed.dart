@@ -9812,881 +9812,6 @@ abstract class _CloudEntry implements CloudEntry {
       throw _privateConstructorUsedError;
 }
 
-DeviceCommand _$DeviceCommandFromJson(Map<String, dynamic> json) {
-  return _DeviceCommand.fromJson(json);
-}
-
-/// @nodoc
-mixin _$DeviceCommand {
-  String get id => throw _privateConstructorUsedError;
-
-  /// Is name of the command. (Only reference, does not affect the command itself)
-  String get name => throw _privateConstructorUsedError;
-
-  /// Is the source of the command.
-  @CommandSourceConverter()
-  CommandSource get source => throw _privateConstructorUsedError;
-
-  /// Is the tag id of the command for "multi" execution from any [Action].
-  String? get tagId => throw _privateConstructorUsedError;
-
-  /// Is the [deviceId] that the command is for.
-  /// Only will comes when the command comes from the asset or device query.
-  String? get deviceId => throw _privateConstructorUsedError;
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  String? get protocolId => throw _privateConstructorUsedError;
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  InboundProtocol? get protocol => throw _privateConstructorUsedError;
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  String? get modelId => throw _privateConstructorUsedError;
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  Model? get model => throw _privateConstructorUsedError;
-
-  /// Is The command to execute.
-  String? get command => throw _privateConstructorUsedError;
-
-  /// Is is the password for the device. Will return null when not apply.
-  String? get devicePassword => throw _privateConstructorUsedError;
-
-  /// Is menas the raw payload to send.
-  String? get payload => throw _privateConstructorUsedError;
-
-  /// Is the internal ID of the command. (Refer to the Ruptela documentation for more information)
-  /// only for Ruptela devices
-  String? get commandId => throw _privateConstructorUsedError;
-
-  /// Is the command is in Hexadecimal format.
-  /// only for Ruptela devices
-  bool? get isHexCoded => throw _privateConstructorUsedError;
-
-  /// Is the EasyLogic username. only for Galileosky devices
-  String? get username => throw _privateConstructorUsedError;
-
-  /// Is the EasyLogic script name. only for Galileosky devices
-  String? get scriptName => throw _privateConstructorUsedError;
-
-  /// Is the external account for the command when source is [CommandSource.sms].
-  ExternalAccount? get externalAccount => throw _privateConstructorUsedError;
-
-  /// Is the external account ID for the command when source is [CommandSource.sms].
-  String? get externalAccountId => throw _privateConstructorUsedError;
-
-  /// Is a list of granted access to this entity.
-  List<Access>? get access => throw _privateConstructorUsedError;
-
-  /// List of possible devices that can perform this command.
-  List<Device>? get possibleDevices => throw _privateConstructorUsedError;
-
-  /// [modbusParameter] refers to the modbus parameter of the command.
-  /// This parameter contains the composition of the modbus command, like the controller address, function code,
-  /// register address, etc.
-  ModbusParameter? get modbusParameter => throw _privateConstructorUsedError;
-
-  /// [modbusPort] refers to the modbus port of the command.
-  /// This parameter contains the port number of the modbus command.
-  String? get modbusPort => throw _privateConstructorUsedError;
-
-  /// [args] refers to the arguments of the command.
-  Map<String, dynamic>? get args => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $DeviceCommandCopyWith<DeviceCommand> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $DeviceCommandCopyWith<$Res> {
-  factory $DeviceCommandCopyWith(
-          DeviceCommand value, $Res Function(DeviceCommand) then) =
-      _$DeviceCommandCopyWithImpl<$Res, DeviceCommand>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @CommandSourceConverter() CommandSource source,
-      String? tagId,
-      String? deviceId,
-      String? protocolId,
-      InboundProtocol? protocol,
-      String? modelId,
-      Model? model,
-      String? command,
-      String? devicePassword,
-      String? payload,
-      String? commandId,
-      bool? isHexCoded,
-      String? username,
-      String? scriptName,
-      ExternalAccount? externalAccount,
-      String? externalAccountId,
-      List<Access>? access,
-      List<Device>? possibleDevices,
-      ModbusParameter? modbusParameter,
-      String? modbusPort,
-      Map<String, dynamic>? args});
-
-  $InboundProtocolCopyWith<$Res>? get protocol;
-  $ModelCopyWith<$Res>? get model;
-  $ExternalAccountCopyWith<$Res>? get externalAccount;
-  $ModbusParameterCopyWith<$Res>? get modbusParameter;
-}
-
-/// @nodoc
-class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
-    implements $DeviceCommandCopyWith<$Res> {
-  _$DeviceCommandCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? source = null,
-    Object? tagId = freezed,
-    Object? deviceId = freezed,
-    Object? protocolId = freezed,
-    Object? protocol = freezed,
-    Object? modelId = freezed,
-    Object? model = freezed,
-    Object? command = freezed,
-    Object? devicePassword = freezed,
-    Object? payload = freezed,
-    Object? commandId = freezed,
-    Object? isHexCoded = freezed,
-    Object? username = freezed,
-    Object? scriptName = freezed,
-    Object? externalAccount = freezed,
-    Object? externalAccountId = freezed,
-    Object? access = freezed,
-    Object? possibleDevices = freezed,
-    Object? modbusParameter = freezed,
-    Object? modbusPort = freezed,
-    Object? args = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as CommandSource,
-      tagId: freezed == tagId
-          ? _value.tagId
-          : tagId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deviceId: freezed == deviceId
-          ? _value.deviceId
-          : deviceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      protocolId: freezed == protocolId
-          ? _value.protocolId
-          : protocolId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      protocol: freezed == protocol
-          ? _value.protocol
-          : protocol // ignore: cast_nullable_to_non_nullable
-              as InboundProtocol?,
-      modelId: freezed == modelId
-          ? _value.modelId
-          : modelId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      model: freezed == model
-          ? _value.model
-          : model // ignore: cast_nullable_to_non_nullable
-              as Model?,
-      command: freezed == command
-          ? _value.command
-          : command // ignore: cast_nullable_to_non_nullable
-              as String?,
-      devicePassword: freezed == devicePassword
-          ? _value.devicePassword
-          : devicePassword // ignore: cast_nullable_to_non_nullable
-              as String?,
-      payload: freezed == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as String?,
-      commandId: freezed == commandId
-          ? _value.commandId
-          : commandId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isHexCoded: freezed == isHexCoded
-          ? _value.isHexCoded
-          : isHexCoded // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      username: freezed == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scriptName: freezed == scriptName
-          ? _value.scriptName
-          : scriptName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      externalAccount: freezed == externalAccount
-          ? _value.externalAccount
-          : externalAccount // ignore: cast_nullable_to_non_nullable
-              as ExternalAccount?,
-      externalAccountId: freezed == externalAccountId
-          ? _value.externalAccountId
-          : externalAccountId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      access: freezed == access
-          ? _value.access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      possibleDevices: freezed == possibleDevices
-          ? _value.possibleDevices
-          : possibleDevices // ignore: cast_nullable_to_non_nullable
-              as List<Device>?,
-      modbusParameter: freezed == modbusParameter
-          ? _value.modbusParameter
-          : modbusParameter // ignore: cast_nullable_to_non_nullable
-              as ModbusParameter?,
-      modbusPort: freezed == modbusPort
-          ? _value.modbusPort
-          : modbusPort // ignore: cast_nullable_to_non_nullable
-              as String?,
-      args: freezed == args
-          ? _value.args
-          : args // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $InboundProtocolCopyWith<$Res>? get protocol {
-    if (_value.protocol == null) {
-      return null;
-    }
-
-    return $InboundProtocolCopyWith<$Res>(_value.protocol!, (value) {
-      return _then(_value.copyWith(protocol: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ModelCopyWith<$Res>? get model {
-    if (_value.model == null) {
-      return null;
-    }
-
-    return $ModelCopyWith<$Res>(_value.model!, (value) {
-      return _then(_value.copyWith(model: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ExternalAccountCopyWith<$Res>? get externalAccount {
-    if (_value.externalAccount == null) {
-      return null;
-    }
-
-    return $ExternalAccountCopyWith<$Res>(_value.externalAccount!, (value) {
-      return _then(_value.copyWith(externalAccount: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $ModbusParameterCopyWith<$Res>? get modbusParameter {
-    if (_value.modbusParameter == null) {
-      return null;
-    }
-
-    return $ModbusParameterCopyWith<$Res>(_value.modbusParameter!, (value) {
-      return _then(_value.copyWith(modbusParameter: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$DeviceCommandImplCopyWith<$Res>
-    implements $DeviceCommandCopyWith<$Res> {
-  factory _$$DeviceCommandImplCopyWith(
-          _$DeviceCommandImpl value, $Res Function(_$DeviceCommandImpl) then) =
-      __$$DeviceCommandImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @CommandSourceConverter() CommandSource source,
-      String? tagId,
-      String? deviceId,
-      String? protocolId,
-      InboundProtocol? protocol,
-      String? modelId,
-      Model? model,
-      String? command,
-      String? devicePassword,
-      String? payload,
-      String? commandId,
-      bool? isHexCoded,
-      String? username,
-      String? scriptName,
-      ExternalAccount? externalAccount,
-      String? externalAccountId,
-      List<Access>? access,
-      List<Device>? possibleDevices,
-      ModbusParameter? modbusParameter,
-      String? modbusPort,
-      Map<String, dynamic>? args});
-
-  @override
-  $InboundProtocolCopyWith<$Res>? get protocol;
-  @override
-  $ModelCopyWith<$Res>? get model;
-  @override
-  $ExternalAccountCopyWith<$Res>? get externalAccount;
-  @override
-  $ModbusParameterCopyWith<$Res>? get modbusParameter;
-}
-
-/// @nodoc
-class __$$DeviceCommandImplCopyWithImpl<$Res>
-    extends _$DeviceCommandCopyWithImpl<$Res, _$DeviceCommandImpl>
-    implements _$$DeviceCommandImplCopyWith<$Res> {
-  __$$DeviceCommandImplCopyWithImpl(
-      _$DeviceCommandImpl _value, $Res Function(_$DeviceCommandImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? source = null,
-    Object? tagId = freezed,
-    Object? deviceId = freezed,
-    Object? protocolId = freezed,
-    Object? protocol = freezed,
-    Object? modelId = freezed,
-    Object? model = freezed,
-    Object? command = freezed,
-    Object? devicePassword = freezed,
-    Object? payload = freezed,
-    Object? commandId = freezed,
-    Object? isHexCoded = freezed,
-    Object? username = freezed,
-    Object? scriptName = freezed,
-    Object? externalAccount = freezed,
-    Object? externalAccountId = freezed,
-    Object? access = freezed,
-    Object? possibleDevices = freezed,
-    Object? modbusParameter = freezed,
-    Object? modbusPort = freezed,
-    Object? args = freezed,
-  }) {
-    return _then(_$DeviceCommandImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as CommandSource,
-      tagId: freezed == tagId
-          ? _value.tagId
-          : tagId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      deviceId: freezed == deviceId
-          ? _value.deviceId
-          : deviceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      protocolId: freezed == protocolId
-          ? _value.protocolId
-          : protocolId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      protocol: freezed == protocol
-          ? _value.protocol
-          : protocol // ignore: cast_nullable_to_non_nullable
-              as InboundProtocol?,
-      modelId: freezed == modelId
-          ? _value.modelId
-          : modelId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      model: freezed == model
-          ? _value.model
-          : model // ignore: cast_nullable_to_non_nullable
-              as Model?,
-      command: freezed == command
-          ? _value.command
-          : command // ignore: cast_nullable_to_non_nullable
-              as String?,
-      devicePassword: freezed == devicePassword
-          ? _value.devicePassword
-          : devicePassword // ignore: cast_nullable_to_non_nullable
-              as String?,
-      payload: freezed == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as String?,
-      commandId: freezed == commandId
-          ? _value.commandId
-          : commandId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isHexCoded: freezed == isHexCoded
-          ? _value.isHexCoded
-          : isHexCoded // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      username: freezed == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scriptName: freezed == scriptName
-          ? _value.scriptName
-          : scriptName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      externalAccount: freezed == externalAccount
-          ? _value.externalAccount
-          : externalAccount // ignore: cast_nullable_to_non_nullable
-              as ExternalAccount?,
-      externalAccountId: freezed == externalAccountId
-          ? _value.externalAccountId
-          : externalAccountId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      access: freezed == access
-          ? _value._access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      possibleDevices: freezed == possibleDevices
-          ? _value._possibleDevices
-          : possibleDevices // ignore: cast_nullable_to_non_nullable
-              as List<Device>?,
-      modbusParameter: freezed == modbusParameter
-          ? _value.modbusParameter
-          : modbusParameter // ignore: cast_nullable_to_non_nullable
-              as ModbusParameter?,
-      modbusPort: freezed == modbusPort
-          ? _value.modbusPort
-          : modbusPort // ignore: cast_nullable_to_non_nullable
-              as String?,
-      args: freezed == args
-          ? _value._args
-          : args // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$DeviceCommandImpl implements _DeviceCommand {
-  const _$DeviceCommandImpl(
-      {required this.id,
-      required this.name,
-      @CommandSourceConverter() required this.source,
-      this.tagId,
-      this.deviceId,
-      this.protocolId,
-      this.protocol,
-      this.modelId,
-      this.model,
-      this.command,
-      this.devicePassword,
-      this.payload,
-      this.commandId,
-      this.isHexCoded,
-      this.username,
-      this.scriptName,
-      this.externalAccount,
-      this.externalAccountId,
-      final List<Access>? access,
-      final List<Device>? possibleDevices,
-      this.modbusParameter,
-      this.modbusPort,
-      final Map<String, dynamic>? args})
-      : _access = access,
-        _possibleDevices = possibleDevices,
-        _args = args;
-
-  factory _$DeviceCommandImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DeviceCommandImplFromJson(json);
-
-  @override
-  final String id;
-
-  /// Is name of the command. (Only reference, does not affect the command itself)
-  @override
-  final String name;
-
-  /// Is the source of the command.
-  @override
-  @CommandSourceConverter()
-  final CommandSource source;
-
-  /// Is the tag id of the command for "multi" execution from any [Action].
-  @override
-  final String? tagId;
-
-  /// Is the [deviceId] that the command is for.
-  /// Only will comes when the command comes from the asset or device query.
-  @override
-  final String? deviceId;
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  @override
-  final String? protocolId;
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  @override
-  final InboundProtocol? protocol;
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  @override
-  final String? modelId;
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  @override
-  final Model? model;
-
-  /// Is The command to execute.
-  @override
-  final String? command;
-
-  /// Is is the password for the device. Will return null when not apply.
-  @override
-  final String? devicePassword;
-
-  /// Is menas the raw payload to send.
-  @override
-  final String? payload;
-
-  /// Is the internal ID of the command. (Refer to the Ruptela documentation for more information)
-  /// only for Ruptela devices
-  @override
-  final String? commandId;
-
-  /// Is the command is in Hexadecimal format.
-  /// only for Ruptela devices
-  @override
-  final bool? isHexCoded;
-
-  /// Is the EasyLogic username. only for Galileosky devices
-  @override
-  final String? username;
-
-  /// Is the EasyLogic script name. only for Galileosky devices
-  @override
-  final String? scriptName;
-
-  /// Is the external account for the command when source is [CommandSource.sms].
-  @override
-  final ExternalAccount? externalAccount;
-
-  /// Is the external account ID for the command when source is [CommandSource.sms].
-  @override
-  final String? externalAccountId;
-
-  /// Is a list of granted access to this entity.
-  final List<Access>? _access;
-
-  /// Is a list of granted access to this entity.
-  @override
-  List<Access>? get access {
-    final value = _access;
-    if (value == null) return null;
-    if (_access is EqualUnmodifiableListView) return _access;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// List of possible devices that can perform this command.
-  final List<Device>? _possibleDevices;
-
-  /// List of possible devices that can perform this command.
-  @override
-  List<Device>? get possibleDevices {
-    final value = _possibleDevices;
-    if (value == null) return null;
-    if (_possibleDevices is EqualUnmodifiableListView) return _possibleDevices;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// [modbusParameter] refers to the modbus parameter of the command.
-  /// This parameter contains the composition of the modbus command, like the controller address, function code,
-  /// register address, etc.
-  @override
-  final ModbusParameter? modbusParameter;
-
-  /// [modbusPort] refers to the modbus port of the command.
-  /// This parameter contains the port number of the modbus command.
-  @override
-  final String? modbusPort;
-
-  /// [args] refers to the arguments of the command.
-  final Map<String, dynamic>? _args;
-
-  /// [args] refers to the arguments of the command.
-  @override
-  Map<String, dynamic>? get args {
-    final value = _args;
-    if (value == null) return null;
-    if (_args is EqualUnmodifiableMapView) return _args;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
-  @override
-  String toString() {
-    return 'DeviceCommand(id: $id, name: $name, source: $source, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, protocol: $protocol, modelId: $modelId, model: $model, command: $command, devicePassword: $devicePassword, payload: $payload, commandId: $commandId, isHexCoded: $isHexCoded, username: $username, scriptName: $scriptName, externalAccount: $externalAccount, externalAccountId: $externalAccountId, access: $access, possibleDevices: $possibleDevices, modbusParameter: $modbusParameter, modbusPort: $modbusPort, args: $args)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$DeviceCommandImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.source, source) || other.source == source) &&
-            (identical(other.tagId, tagId) || other.tagId == tagId) &&
-            (identical(other.deviceId, deviceId) ||
-                other.deviceId == deviceId) &&
-            (identical(other.protocolId, protocolId) ||
-                other.protocolId == protocolId) &&
-            (identical(other.protocol, protocol) ||
-                other.protocol == protocol) &&
-            (identical(other.modelId, modelId) || other.modelId == modelId) &&
-            (identical(other.model, model) || other.model == model) &&
-            (identical(other.command, command) || other.command == command) &&
-            (identical(other.devicePassword, devicePassword) ||
-                other.devicePassword == devicePassword) &&
-            (identical(other.payload, payload) || other.payload == payload) &&
-            (identical(other.commandId, commandId) ||
-                other.commandId == commandId) &&
-            (identical(other.isHexCoded, isHexCoded) ||
-                other.isHexCoded == isHexCoded) &&
-            (identical(other.username, username) ||
-                other.username == username) &&
-            (identical(other.scriptName, scriptName) ||
-                other.scriptName == scriptName) &&
-            (identical(other.externalAccount, externalAccount) ||
-                other.externalAccount == externalAccount) &&
-            (identical(other.externalAccountId, externalAccountId) ||
-                other.externalAccountId == externalAccountId) &&
-            const DeepCollectionEquality().equals(other._access, _access) &&
-            const DeepCollectionEquality()
-                .equals(other._possibleDevices, _possibleDevices) &&
-            (identical(other.modbusParameter, modbusParameter) ||
-                other.modbusParameter == modbusParameter) &&
-            (identical(other.modbusPort, modbusPort) ||
-                other.modbusPort == modbusPort) &&
-            const DeepCollectionEquality().equals(other._args, _args));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        name,
-        source,
-        tagId,
-        deviceId,
-        protocolId,
-        protocol,
-        modelId,
-        model,
-        command,
-        devicePassword,
-        payload,
-        commandId,
-        isHexCoded,
-        username,
-        scriptName,
-        externalAccount,
-        externalAccountId,
-        const DeepCollectionEquality().hash(_access),
-        const DeepCollectionEquality().hash(_possibleDevices),
-        modbusParameter,
-        modbusPort,
-        const DeepCollectionEquality().hash(_args)
-      ]);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$DeviceCommandImplCopyWith<_$DeviceCommandImpl> get copyWith =>
-      __$$DeviceCommandImplCopyWithImpl<_$DeviceCommandImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$DeviceCommandImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _DeviceCommand implements DeviceCommand {
-  const factory _DeviceCommand(
-      {required final String id,
-      required final String name,
-      @CommandSourceConverter() required final CommandSource source,
-      final String? tagId,
-      final String? deviceId,
-      final String? protocolId,
-      final InboundProtocol? protocol,
-      final String? modelId,
-      final Model? model,
-      final String? command,
-      final String? devicePassword,
-      final String? payload,
-      final String? commandId,
-      final bool? isHexCoded,
-      final String? username,
-      final String? scriptName,
-      final ExternalAccount? externalAccount,
-      final String? externalAccountId,
-      final List<Access>? access,
-      final List<Device>? possibleDevices,
-      final ModbusParameter? modbusParameter,
-      final String? modbusPort,
-      final Map<String, dynamic>? args}) = _$DeviceCommandImpl;
-
-  factory _DeviceCommand.fromJson(Map<String, dynamic> json) =
-      _$DeviceCommandImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-
-  /// Is name of the command. (Only reference, does not affect the command itself)
-  String get name;
-  @override
-
-  /// Is the source of the command.
-  @CommandSourceConverter()
-  CommandSource get source;
-  @override
-
-  /// Is the tag id of the command for "multi" execution from any [Action].
-  String? get tagId;
-  @override
-
-  /// Is the [deviceId] that the command is for.
-  /// Only will comes when the command comes from the asset or device query.
-  String? get deviceId;
-  @override
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  String? get protocolId;
-  @override
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  InboundProtocol? get protocol;
-  @override
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  String? get modelId;
-  @override
-
-  /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
-  /// Only will comes when the command is a "template"
-  Model? get model;
-  @override
-
-  /// Is The command to execute.
-  String? get command;
-  @override
-
-  /// Is is the password for the device. Will return null when not apply.
-  String? get devicePassword;
-  @override
-
-  /// Is menas the raw payload to send.
-  String? get payload;
-  @override
-
-  /// Is the internal ID of the command. (Refer to the Ruptela documentation for more information)
-  /// only for Ruptela devices
-  String? get commandId;
-  @override
-
-  /// Is the command is in Hexadecimal format.
-  /// only for Ruptela devices
-  bool? get isHexCoded;
-  @override
-
-  /// Is the EasyLogic username. only for Galileosky devices
-  String? get username;
-  @override
-
-  /// Is the EasyLogic script name. only for Galileosky devices
-  String? get scriptName;
-  @override
-
-  /// Is the external account for the command when source is [CommandSource.sms].
-  ExternalAccount? get externalAccount;
-  @override
-
-  /// Is the external account ID for the command when source is [CommandSource.sms].
-  String? get externalAccountId;
-  @override
-
-  /// Is a list of granted access to this entity.
-  List<Access>? get access;
-  @override
-
-  /// List of possible devices that can perform this command.
-  List<Device>? get possibleDevices;
-  @override
-
-  /// [modbusParameter] refers to the modbus parameter of the command.
-  /// This parameter contains the composition of the modbus command, like the controller address, function code,
-  /// register address, etc.
-  ModbusParameter? get modbusParameter;
-  @override
-
-  /// [modbusPort] refers to the modbus port of the command.
-  /// This parameter contains the port number of the modbus command.
-  String? get modbusPort;
-  @override
-
-  /// [args] refers to the arguments of the command.
-  Map<String, dynamic>? get args;
-  @override
-  @JsonKey(ignore: true)
-  _$$DeviceCommandImplCopyWith<_$DeviceCommandImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 Connection _$ConnectionFromJson(Map<String, dynamic> json) {
   return _Connection.fromJson(json);
 }
@@ -11251,6 +10376,171 @@ abstract class _PhoneNumber extends PhoneNumber {
   @override
   @JsonKey(ignore: true)
   _$$PhoneNumberImplCopyWith<_$PhoneNumberImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+PhoneNumberInput _$PhoneNumberInputFromJson(Map<String, dynamic> json) {
+  return _PhoneNumberInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PhoneNumberInput {
+  /// Country code.
+  String get countryCode => throw _privateConstructorUsedError;
+
+  /// Country code.
+  set countryCode(String value) => throw _privateConstructorUsedError;
+
+  /// Phone number.
+  String get phoneNumber => throw _privateConstructorUsedError;
+
+  /// Phone number.
+  set phoneNumber(String value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PhoneNumberInputCopyWith<PhoneNumberInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PhoneNumberInputCopyWith<$Res> {
+  factory $PhoneNumberInputCopyWith(
+          PhoneNumberInput value, $Res Function(PhoneNumberInput) then) =
+      _$PhoneNumberInputCopyWithImpl<$Res, PhoneNumberInput>;
+  @useResult
+  $Res call({String countryCode, String phoneNumber});
+}
+
+/// @nodoc
+class _$PhoneNumberInputCopyWithImpl<$Res, $Val extends PhoneNumberInput>
+    implements $PhoneNumberInputCopyWith<$Res> {
+  _$PhoneNumberInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? countryCode = null,
+    Object? phoneNumber = null,
+  }) {
+    return _then(_value.copyWith(
+      countryCode: null == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$PhoneNumberInputImplCopyWith<$Res>
+    implements $PhoneNumberInputCopyWith<$Res> {
+  factory _$$PhoneNumberInputImplCopyWith(_$PhoneNumberInputImpl value,
+          $Res Function(_$PhoneNumberInputImpl) then) =
+      __$$PhoneNumberInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String countryCode, String phoneNumber});
+}
+
+/// @nodoc
+class __$$PhoneNumberInputImplCopyWithImpl<$Res>
+    extends _$PhoneNumberInputCopyWithImpl<$Res, _$PhoneNumberInputImpl>
+    implements _$$PhoneNumberInputImplCopyWith<$Res> {
+  __$$PhoneNumberInputImplCopyWithImpl(_$PhoneNumberInputImpl _value,
+      $Res Function(_$PhoneNumberInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? countryCode = null,
+    Object? phoneNumber = null,
+  }) {
+    return _then(_$PhoneNumberInputImpl(
+      countryCode: null == countryCode
+          ? _value.countryCode
+          : countryCode // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneNumber: null == phoneNumber
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PhoneNumberInputImpl implements _PhoneNumberInput {
+  _$PhoneNumberInputImpl({this.countryCode = '', this.phoneNumber = ''});
+
+  factory _$PhoneNumberInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PhoneNumberInputImplFromJson(json);
+
+  /// Country code.
+  @override
+  @JsonKey()
+  String countryCode;
+
+  /// Phone number.
+  @override
+  @JsonKey()
+  String phoneNumber;
+
+  @override
+  String toString() {
+    return 'PhoneNumberInput(countryCode: $countryCode, phoneNumber: $phoneNumber)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PhoneNumberInputImplCopyWith<_$PhoneNumberInputImpl> get copyWith =>
+      __$$PhoneNumberInputImplCopyWithImpl<_$PhoneNumberInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PhoneNumberInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PhoneNumberInput implements PhoneNumberInput {
+  factory _PhoneNumberInput({String countryCode, String phoneNumber}) =
+      _$PhoneNumberInputImpl;
+
+  factory _PhoneNumberInput.fromJson(Map<String, dynamic> json) =
+      _$PhoneNumberInputImpl.fromJson;
+
+  @override
+
+  /// Country code.
+  String get countryCode;
+
+  /// Country code.
+  set countryCode(String value);
+  @override
+
+  /// Phone number.
+  String get phoneNumber;
+
+  /// Phone number.
+  set phoneNumber(String value);
+  @override
+  @JsonKey(ignore: true)
+  _$$PhoneNumberInputImplCopyWith<_$PhoneNumberInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -14502,6 +13792,338 @@ abstract class _Device implements Device {
   @override
   @JsonKey(ignore: true)
   _$$DeviceImplCopyWith<_$DeviceImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+DeviceInput _$DeviceInputFromJson(Map<String, dynamic> json) {
+  return _DeviceInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$DeviceInput {
+  String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
+  String get ident => throw _privateConstructorUsedError;
+  set ident(String value) => throw _privateConstructorUsedError;
+  String? get protocolId => throw _privateConstructorUsedError;
+  set protocolId(String? value) => throw _privateConstructorUsedError;
+  String? get modelId => throw _privateConstructorUsedError;
+  set modelId(String? value) => throw _privateConstructorUsedError;
+  String? get visionProfileId => throw _privateConstructorUsedError;
+  set visionProfileId(String? value) => throw _privateConstructorUsedError;
+  PhoneNumberInput? get phone => throw _privateConstructorUsedError;
+  set phone(PhoneNumberInput? value) => throw _privateConstructorUsedError;
+  ModbusConfigInput? get modbus => throw _privateConstructorUsedError;
+  set modbus(ModbusConfigInput? value) => throw _privateConstructorUsedError;
+  String? get macAddress => throw _privateConstructorUsedError;
+  set macAddress(String? value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $DeviceInputCopyWith<DeviceInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $DeviceInputCopyWith<$Res> {
+  factory $DeviceInputCopyWith(
+          DeviceInput value, $Res Function(DeviceInput) then) =
+      _$DeviceInputCopyWithImpl<$Res, DeviceInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String ident,
+      String? protocolId,
+      String? modelId,
+      String? visionProfileId,
+      PhoneNumberInput? phone,
+      ModbusConfigInput? modbus,
+      String? macAddress});
+
+  $PhoneNumberInputCopyWith<$Res>? get phone;
+  $ModbusConfigInputCopyWith<$Res>? get modbus;
+}
+
+/// @nodoc
+class _$DeviceInputCopyWithImpl<$Res, $Val extends DeviceInput>
+    implements $DeviceInputCopyWith<$Res> {
+  _$DeviceInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? ident = null,
+    Object? protocolId = freezed,
+    Object? modelId = freezed,
+    Object? visionProfileId = freezed,
+    Object? phone = freezed,
+    Object? modbus = freezed,
+    Object? macAddress = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      ident: null == ident
+          ? _value.ident
+          : ident // ignore: cast_nullable_to_non_nullable
+              as String,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      modelId: freezed == modelId
+          ? _value.modelId
+          : modelId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      visionProfileId: freezed == visionProfileId
+          ? _value.visionProfileId
+          : visionProfileId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as PhoneNumberInput?,
+      modbus: freezed == modbus
+          ? _value.modbus
+          : modbus // ignore: cast_nullable_to_non_nullable
+              as ModbusConfigInput?,
+      macAddress: freezed == macAddress
+          ? _value.macAddress
+          : macAddress // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $PhoneNumberInputCopyWith<$Res>? get phone {
+    if (_value.phone == null) {
+      return null;
+    }
+
+    return $PhoneNumberInputCopyWith<$Res>(_value.phone!, (value) {
+      return _then(_value.copyWith(phone: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ModbusConfigInputCopyWith<$Res>? get modbus {
+    if (_value.modbus == null) {
+      return null;
+    }
+
+    return $ModbusConfigInputCopyWith<$Res>(_value.modbus!, (value) {
+      return _then(_value.copyWith(modbus: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$DeviceInputImplCopyWith<$Res>
+    implements $DeviceInputCopyWith<$Res> {
+  factory _$$DeviceInputImplCopyWith(
+          _$DeviceInputImpl value, $Res Function(_$DeviceInputImpl) then) =
+      __$$DeviceInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String ident,
+      String? protocolId,
+      String? modelId,
+      String? visionProfileId,
+      PhoneNumberInput? phone,
+      ModbusConfigInput? modbus,
+      String? macAddress});
+
+  @override
+  $PhoneNumberInputCopyWith<$Res>? get phone;
+  @override
+  $ModbusConfigInputCopyWith<$Res>? get modbus;
+}
+
+/// @nodoc
+class __$$DeviceInputImplCopyWithImpl<$Res>
+    extends _$DeviceInputCopyWithImpl<$Res, _$DeviceInputImpl>
+    implements _$$DeviceInputImplCopyWith<$Res> {
+  __$$DeviceInputImplCopyWithImpl(
+      _$DeviceInputImpl _value, $Res Function(_$DeviceInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? ident = null,
+    Object? protocolId = freezed,
+    Object? modelId = freezed,
+    Object? visionProfileId = freezed,
+    Object? phone = freezed,
+    Object? modbus = freezed,
+    Object? macAddress = freezed,
+  }) {
+    return _then(_$DeviceInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      ident: null == ident
+          ? _value.ident
+          : ident // ignore: cast_nullable_to_non_nullable
+              as String,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      modelId: freezed == modelId
+          ? _value.modelId
+          : modelId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      visionProfileId: freezed == visionProfileId
+          ? _value.visionProfileId
+          : visionProfileId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      phone: freezed == phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as PhoneNumberInput?,
+      modbus: freezed == modbus
+          ? _value.modbus
+          : modbus // ignore: cast_nullable_to_non_nullable
+              as ModbusConfigInput?,
+      macAddress: freezed == macAddress
+          ? _value.macAddress
+          : macAddress // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$DeviceInputImpl implements _DeviceInput {
+  _$DeviceInputImpl(
+      {this.id,
+      this.name = '',
+      this.ident = '',
+      this.protocolId,
+      this.modelId,
+      this.visionProfileId,
+      this.phone,
+      this.modbus,
+      this.macAddress});
+
+  factory _$DeviceInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DeviceInputImplFromJson(json);
+
+  @override
+  String? id;
+  @override
+  @JsonKey()
+  String name;
+  @override
+  @JsonKey()
+  String ident;
+  @override
+  String? protocolId;
+  @override
+  String? modelId;
+  @override
+  String? visionProfileId;
+  @override
+  PhoneNumberInput? phone;
+  @override
+  ModbusConfigInput? modbus;
+  @override
+  String? macAddress;
+
+  @override
+  String toString() {
+    return 'DeviceInput(id: $id, name: $name, ident: $ident, protocolId: $protocolId, modelId: $modelId, visionProfileId: $visionProfileId, phone: $phone, modbus: $modbus, macAddress: $macAddress)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeviceInputImplCopyWith<_$DeviceInputImpl> get copyWith =>
+      __$$DeviceInputImplCopyWithImpl<_$DeviceInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$DeviceInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _DeviceInput implements DeviceInput {
+  factory _DeviceInput(
+      {String? id,
+      String name,
+      String ident,
+      String? protocolId,
+      String? modelId,
+      String? visionProfileId,
+      PhoneNumberInput? phone,
+      ModbusConfigInput? modbus,
+      String? macAddress}) = _$DeviceInputImpl;
+
+  factory _DeviceInput.fromJson(Map<String, dynamic> json) =
+      _$DeviceInputImpl.fromJson;
+
+  @override
+  String? get id;
+  set id(String? value);
+  @override
+  String get name;
+  set name(String value);
+  @override
+  String get ident;
+  set ident(String value);
+  @override
+  String? get protocolId;
+  set protocolId(String? value);
+  @override
+  String? get modelId;
+  set modelId(String? value);
+  @override
+  String? get visionProfileId;
+  set visionProfileId(String? value);
+  @override
+  PhoneNumberInput? get phone;
+  set phone(PhoneNumberInput? value);
+  @override
+  ModbusConfigInput? get modbus;
+  set modbus(ModbusConfigInput? value);
+  @override
+  String? get macAddress;
+  set macAddress(String? value);
+  @override
+  @JsonKey(ignore: true)
+  _$$DeviceInputImplCopyWith<_$DeviceInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -19040,6 +18662,14 @@ mixin _$Model {
   /// [isGeneric] is true if the model is generic.
   bool? get isGeneric => throw _privateConstructorUsedError;
 
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinition> get commandsStructure =>
+      throw _privateConstructorUsedError;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinition> get configStructure =>
+      throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ModelCopyWith<Model> get copyWith => throw _privateConstructorUsedError;
@@ -19056,7 +18686,9 @@ abstract class $ModelCopyWith<$Res> {
       String? flespiId,
       InboundProtocol? protocol,
       String? protocolId,
-      bool? isGeneric});
+      bool? isGeneric,
+      List<CommandDefinition> commandsStructure,
+      List<ConfigDefinition> configStructure});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
 }
@@ -19080,6 +18712,8 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
     Object? protocol = freezed,
     Object? protocolId = freezed,
     Object? isGeneric = freezed,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -19106,6 +18740,14 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
           ? _value.isGeneric
           : isGeneric // ignore: cast_nullable_to_non_nullable
               as bool?,
+      commandsStructure: null == commandsStructure
+          ? _value.commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinition>,
+      configStructure: null == configStructure
+          ? _value.configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinition>,
     ) as $Val);
   }
 
@@ -19135,7 +18777,9 @@ abstract class _$$ModelImplCopyWith<$Res> implements $ModelCopyWith<$Res> {
       String? flespiId,
       InboundProtocol? protocol,
       String? protocolId,
-      bool? isGeneric});
+      bool? isGeneric,
+      List<CommandDefinition> commandsStructure,
+      List<ConfigDefinition> configStructure});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -19158,6 +18802,8 @@ class __$$ModelImplCopyWithImpl<$Res>
     Object? protocol = freezed,
     Object? protocolId = freezed,
     Object? isGeneric = freezed,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
   }) {
     return _then(_$ModelImpl(
       id: null == id
@@ -19184,6 +18830,14 @@ class __$$ModelImplCopyWithImpl<$Res>
           ? _value.isGeneric
           : isGeneric // ignore: cast_nullable_to_non_nullable
               as bool?,
+      commandsStructure: null == commandsStructure
+          ? _value._commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinition>,
+      configStructure: null == configStructure
+          ? _value._configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinition>,
     ));
   }
 }
@@ -19197,7 +18851,11 @@ class _$ModelImpl implements _Model {
       this.flespiId,
       this.protocol,
       this.protocolId,
-      this.isGeneric});
+      this.isGeneric,
+      final List<CommandDefinition> commandsStructure = const [],
+      final List<ConfigDefinition> configStructure = const []})
+      : _commandsStructure = commandsStructure,
+        _configStructure = configStructure;
 
   factory _$ModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ModelImplFromJson(json);
@@ -19227,9 +18885,34 @@ class _$ModelImpl implements _Model {
   @override
   final bool? isGeneric;
 
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  final List<CommandDefinition> _commandsStructure;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  @override
+  @JsonKey()
+  List<CommandDefinition> get commandsStructure {
+    if (_commandsStructure is EqualUnmodifiableListView)
+      return _commandsStructure;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_commandsStructure);
+  }
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  final List<ConfigDefinition> _configStructure;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  @override
+  @JsonKey()
+  List<ConfigDefinition> get configStructure {
+    if (_configStructure is EqualUnmodifiableListView) return _configStructure;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_configStructure);
+  }
+
   @override
   String toString() {
-    return 'Model(id: $id, name: $name, flespiId: $flespiId, protocol: $protocol, protocolId: $protocolId, isGeneric: $isGeneric)';
+    return 'Model(id: $id, name: $name, flespiId: $flespiId, protocol: $protocol, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure)';
   }
 
   @override
@@ -19246,13 +18929,25 @@ class _$ModelImpl implements _Model {
             (identical(other.protocolId, protocolId) ||
                 other.protocolId == protocolId) &&
             (identical(other.isGeneric, isGeneric) ||
-                other.isGeneric == isGeneric));
+                other.isGeneric == isGeneric) &&
+            const DeepCollectionEquality()
+                .equals(other._commandsStructure, _commandsStructure) &&
+            const DeepCollectionEquality()
+                .equals(other._configStructure, _configStructure));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, name, flespiId, protocol, protocolId, isGeneric);
+      runtimeType,
+      id,
+      name,
+      flespiId,
+      protocol,
+      protocolId,
+      isGeneric,
+      const DeepCollectionEquality().hash(_commandsStructure),
+      const DeepCollectionEquality().hash(_configStructure));
 
   @JsonKey(ignore: true)
   @override
@@ -19275,7 +18970,9 @@ abstract class _Model implements Model {
       final String? flespiId,
       final InboundProtocol? protocol,
       final String? protocolId,
-      final bool? isGeneric}) = _$ModelImpl;
+      final bool? isGeneric,
+      final List<CommandDefinition> commandsStructure,
+      final List<ConfigDefinition> configStructure}) = _$ModelImpl;
 
   factory _Model.fromJson(Map<String, dynamic> json) = _$ModelImpl.fromJson;
 
@@ -19305,8 +19002,353 @@ abstract class _Model implements Model {
   /// [isGeneric] is true if the model is generic.
   bool? get isGeneric;
   @override
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinition> get commandsStructure;
+  @override
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinition> get configStructure;
+  @override
   @JsonKey(ignore: true)
   _$$ModelImplCopyWith<_$ModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ModelInput _$ModelInputFromJson(Map<String, dynamic> json) {
+  return _ModelInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ModelInput {
+  /// [id] is the unique identifier of the model.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] is the unique identifier of the model.
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the model.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the model.
+  set name(String value) => throw _privateConstructorUsedError;
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  String? get flespiId => throw _privateConstructorUsedError;
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  set flespiId(String? value) => throw _privateConstructorUsedError;
+
+  /// [protocolId] is the ID of the protocol
+  String? get protocolId => throw _privateConstructorUsedError;
+
+  /// [protocolId] is the ID of the protocol
+  set protocolId(String? value) => throw _privateConstructorUsedError;
+
+  /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  bool get isGeneric => throw _privateConstructorUsedError;
+
+  /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  set isGeneric(bool value) => throw _privateConstructorUsedError;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinitionInput> get commandsStructure =>
+      throw _privateConstructorUsedError;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  set commandsStructure(List<CommandDefinitionInput> value) =>
+      throw _privateConstructorUsedError;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinitionInput> get configStructure =>
+      throw _privateConstructorUsedError;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  set configStructure(List<ConfigDefinitionInput> value) =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $ModelInputCopyWith<ModelInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ModelInputCopyWith<$Res> {
+  factory $ModelInputCopyWith(
+          ModelInput value, $Res Function(ModelInput) then) =
+      _$ModelInputCopyWithImpl<$Res, ModelInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String? flespiId,
+      String? protocolId,
+      bool isGeneric,
+      List<CommandDefinitionInput> commandsStructure,
+      List<ConfigDefinitionInput> configStructure});
+}
+
+/// @nodoc
+class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
+    implements $ModelInputCopyWith<$Res> {
+  _$ModelInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? flespiId = freezed,
+    Object? protocolId = freezed,
+    Object? isGeneric = null,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      flespiId: freezed == flespiId
+          ? _value.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isGeneric: null == isGeneric
+          ? _value.isGeneric
+          : isGeneric // ignore: cast_nullable_to_non_nullable
+              as bool,
+      commandsStructure: null == commandsStructure
+          ? _value.commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinitionInput>,
+      configStructure: null == configStructure
+          ? _value.configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinitionInput>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ModelInputImplCopyWith<$Res>
+    implements $ModelInputCopyWith<$Res> {
+  factory _$$ModelInputImplCopyWith(
+          _$ModelInputImpl value, $Res Function(_$ModelInputImpl) then) =
+      __$$ModelInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String? flespiId,
+      String? protocolId,
+      bool isGeneric,
+      List<CommandDefinitionInput> commandsStructure,
+      List<ConfigDefinitionInput> configStructure});
+}
+
+/// @nodoc
+class __$$ModelInputImplCopyWithImpl<$Res>
+    extends _$ModelInputCopyWithImpl<$Res, _$ModelInputImpl>
+    implements _$$ModelInputImplCopyWith<$Res> {
+  __$$ModelInputImplCopyWithImpl(
+      _$ModelInputImpl _value, $Res Function(_$ModelInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? flespiId = freezed,
+    Object? protocolId = freezed,
+    Object? isGeneric = null,
+    Object? commandsStructure = null,
+    Object? configStructure = null,
+  }) {
+    return _then(_$ModelInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      flespiId: freezed == flespiId
+          ? _value.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      protocolId: freezed == protocolId
+          ? _value.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isGeneric: null == isGeneric
+          ? _value.isGeneric
+          : isGeneric // ignore: cast_nullable_to_non_nullable
+              as bool,
+      commandsStructure: null == commandsStructure
+          ? _value.commandsStructure
+          : commandsStructure // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinitionInput>,
+      configStructure: null == configStructure
+          ? _value.configStructure
+          : configStructure // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinitionInput>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ModelInputImpl implements _ModelInput {
+  _$ModelInputImpl(
+      {this.id,
+      this.name = '',
+      this.flespiId,
+      this.protocolId,
+      this.isGeneric = false,
+      this.commandsStructure = const [],
+      this.configStructure = const []});
+
+  factory _$ModelInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ModelInputImplFromJson(json);
+
+  /// [id] is the unique identifier of the model.
+  @override
+  String? id;
+
+  /// [name] is the name of the model.
+  @override
+  @JsonKey()
+  String name;
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  @override
+  String? flespiId;
+
+  /// [protocolId] is the ID of the protocol
+  @override
+  String? protocolId;
+
+  /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  @override
+  @JsonKey()
+  bool isGeneric;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  @override
+  @JsonKey()
+  List<CommandDefinitionInput> commandsStructure;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  @override
+  @JsonKey()
+  List<ConfigDefinitionInput> configStructure;
+
+  @override
+  String toString() {
+    return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ModelInputImplCopyWith<_$ModelInputImpl> get copyWith =>
+      __$$ModelInputImplCopyWithImpl<_$ModelInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ModelInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ModelInput implements ModelInput {
+  factory _ModelInput(
+      {String? id,
+      String name,
+      String? flespiId,
+      String? protocolId,
+      bool isGeneric,
+      List<CommandDefinitionInput> commandsStructure,
+      List<ConfigDefinitionInput> configStructure}) = _$ModelInputImpl;
+
+  factory _ModelInput.fromJson(Map<String, dynamic> json) =
+      _$ModelInputImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier of the model.
+  String? get id;
+
+  /// [id] is the unique identifier of the model.
+  set id(String? value);
+  @override
+
+  /// [name] is the name of the model.
+  String get name;
+
+  /// [name] is the name of the model.
+  set name(String value);
+  @override
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  String? get flespiId;
+
+  /// [flespiId] is the ID of the device in the flespi platform.
+  /// Can be null if the model is not connected to a device or is a in-house protocol.
+  set flespiId(String? value);
+  @override
+
+  /// [protocolId] is the ID of the protocol
+  String? get protocolId;
+
+  /// [protocolId] is the ID of the protocol
+  set protocolId(String? value);
+  @override
+
+  /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  bool get isGeneric;
+
+  /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  set isGeneric(bool value);
+  @override
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  List<CommandDefinitionInput> get commandsStructure;
+
+  /// [commandsStructure] is the structure of the commands for the protocol.
+  set commandsStructure(List<CommandDefinitionInput> value);
+  @override
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  List<ConfigDefinitionInput> get configStructure;
+
+  /// [configStructure] is the structure of the configuration for the protocol.
+  set configStructure(List<ConfigDefinitionInput> value);
+  @override
+  @JsonKey(ignore: true)
+  _$$ModelInputImplCopyWith<_$ModelInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

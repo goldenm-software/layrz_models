@@ -24,7 +24,45 @@ class Model with _$Model {
 
     /// [isGeneric] is true if the model is generic.
     bool? isGeneric,
+
+    /// [commandsStructure] is the structure of the commands for the protocol.
+    @Default([]) List<CommandDefinition> commandsStructure,
+
+    /// [configStructure] is the structure of the configuration for the protocol.
+    @Default([]) List<ConfigDefinition> configStructure,
   }) = _Model;
 
   factory Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
+}
+
+@unfreezed
+class ModelInput with _$ModelInput {
+  /// [ModelInput] is the model of a device. It contains the information about the model of the device.
+  /// Does not contain information of connectivity or related, only the model information like the name, the
+  /// protocol and if is generic or not.
+  factory ModelInput({
+    /// [id] is the unique identifier of the model.
+    String? id,
+
+    /// [name] is the name of the model.
+    @Default('') String name,
+
+    /// [flespiId] is the ID of the device in the flespi platform.
+    /// Can be null if the model is not connected to a device or is a in-house protocol.
+    String? flespiId,
+
+    /// [protocolId] is the ID of the protocol
+    String? protocolId,
+
+    /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+    @Default(false) bool isGeneric,
+
+    /// [commandsStructure] is the structure of the commands for the protocol.
+    @Default([]) List<CommandDefinitionInput> commandsStructure,
+
+    /// [configStructure] is the structure of the configuration for the protocol.
+    @Default([]) List<ConfigDefinitionInput> configStructure,
+  }) = _ModelInput;
+
+  factory ModelInput.fromJson(Map<String, dynamic> json) => _$ModelInputFromJson(json);
 }

@@ -2676,6 +2676,161 @@ abstract class _WebhookStructureInput implements WebhookStructureInput {
       get copyWith => throw _privateConstructorUsedError;
 }
 
+FlespiModel _$FlespiModelFromJson(Map<String, dynamic> json) {
+  return _FlespiModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$FlespiModel {
+  String get flespiId => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $FlespiModelCopyWith<FlespiModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FlespiModelCopyWith<$Res> {
+  factory $FlespiModelCopyWith(
+          FlespiModel value, $Res Function(FlespiModel) then) =
+      _$FlespiModelCopyWithImpl<$Res, FlespiModel>;
+  @useResult
+  $Res call({String flespiId, String name});
+}
+
+/// @nodoc
+class _$FlespiModelCopyWithImpl<$Res, $Val extends FlespiModel>
+    implements $FlespiModelCopyWith<$Res> {
+  _$FlespiModelCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? flespiId = null,
+    Object? name = null,
+  }) {
+    return _then(_value.copyWith(
+      flespiId: null == flespiId
+          ? _value.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$FlespiModelImplCopyWith<$Res>
+    implements $FlespiModelCopyWith<$Res> {
+  factory _$$FlespiModelImplCopyWith(
+          _$FlespiModelImpl value, $Res Function(_$FlespiModelImpl) then) =
+      __$$FlespiModelImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String flespiId, String name});
+}
+
+/// @nodoc
+class __$$FlespiModelImplCopyWithImpl<$Res>
+    extends _$FlespiModelCopyWithImpl<$Res, _$FlespiModelImpl>
+    implements _$$FlespiModelImplCopyWith<$Res> {
+  __$$FlespiModelImplCopyWithImpl(
+      _$FlespiModelImpl _value, $Res Function(_$FlespiModelImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? flespiId = null,
+    Object? name = null,
+  }) {
+    return _then(_$FlespiModelImpl(
+      flespiId: null == flespiId
+          ? _value.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$FlespiModelImpl implements _FlespiModel {
+  const _$FlespiModelImpl({required this.flespiId, required this.name});
+
+  factory _$FlespiModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$FlespiModelImplFromJson(json);
+
+  @override
+  final String flespiId;
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'FlespiModel(flespiId: $flespiId, name: $name)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FlespiModelImpl &&
+            (identical(other.flespiId, flespiId) ||
+                other.flespiId == flespiId) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, flespiId, name);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FlespiModelImplCopyWith<_$FlespiModelImpl> get copyWith =>
+      __$$FlespiModelImplCopyWithImpl<_$FlespiModelImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$FlespiModelImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _FlespiModel implements FlespiModel {
+  const factory _FlespiModel(
+      {required final String flespiId,
+      required final String name}) = _$FlespiModelImpl;
+
+  factory _FlespiModel.fromJson(Map<String, dynamic> json) =
+      _$FlespiModelImpl.fromJson;
+
+  @override
+  String get flespiId;
+  @override
+  String get name;
+  @override
+  @JsonKey(ignore: true)
+  _$$FlespiModelImplCopyWith<_$FlespiModelImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 FlespiAcl _$FlespiAclFromJson(Map<String, dynamic> json) {
   return _FlespiAcl.fromJson(json);
 }

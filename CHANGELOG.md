@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.1.0 (WIP)
+
+- Updated `InboundProtocol` and `Model` to handle new commands definitions and configuration parameters
+- Added `ConfIoTFile` configuration model
+- Major change of `Command` to support new command definitions
+
 ## 3.0.4
 - Add `ReferenceCategory.mappitPermTagsRead` to mappit 
 
