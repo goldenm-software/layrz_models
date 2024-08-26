@@ -28,6 +28,19 @@ class PhoneNumber with _$PhoneNumber {
   factory PhoneNumber.fromJson(Map<String, String> json) => _$PhoneNumberFromJson(json);
 }
 
+@unfreezed
+class PhoneNumberInput with _$PhoneNumberInput {
+  factory PhoneNumberInput({
+    /// Country code.
+    @Default('') String countryCode,
+
+    /// Phone number.
+    @Default('') String phoneNumber,
+  }) = _PhoneNumberInput;
+
+  factory PhoneNumberInput.fromJson(Map<String, dynamic> json) => _$PhoneNumberInputFromJson(json);
+}
+
 @freezed
 class NullablePhoneNumber with _$NullablePhoneNumber {
   const NullablePhoneNumber._();
