@@ -1681,6 +1681,10 @@ _$ModelImpl _$$ModelImplFromJson(Map<String, dynamic> json) => _$ModelImpl(
               ?.map((e) => ConfigDefinition.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      confiotCapable: json['confiotCapable'] as bool? ?? false,
+      confiotLayout:
+          $enumDecodeNullable(_$ConfIoTLayoutEnumMap, json['confiotLayout']) ??
+              ConfIoTLayout.standard,
     );
 
 Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
@@ -1695,7 +1699,14 @@ Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
           instance.commandsStructure.map((e) => e.toJson()).toList(),
       'configStructure':
           instance.configStructure.map((e) => e.toJson()).toList(),
+      'confiotCapable': instance.confiotCapable,
+      'confiotLayout': instance.confiotLayout.toJson(),
     };
+
+const _$ConfIoTLayoutEnumMap = {
+  ConfIoTLayout.standard: 'standard',
+  ConfIoTLayout.sdmMonitor: 'sdmMonitor',
+};
 
 _$ModelInputImpl _$$ModelInputImplFromJson(Map<String, dynamic> json) =>
     _$ModelInputImpl(
@@ -1714,6 +1725,10 @@ _$ModelInputImpl _$$ModelInputImplFromJson(Map<String, dynamic> json) =>
                   ConfigDefinitionInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      confiotCapable: json['confiotCapable'] as bool? ?? false,
+      confiotLayout:
+          $enumDecodeNullable(_$ConfIoTLayoutEnumMap, json['confiotLayout']) ??
+              ConfIoTLayout.standard,
     );
 
 Map<String, dynamic> _$$ModelInputImplToJson(_$ModelInputImpl instance) =>
@@ -1727,6 +1742,8 @@ Map<String, dynamic> _$$ModelInputImplToJson(_$ModelInputImpl instance) =>
           instance.commandsStructure.map((e) => e.toJson()).toList(),
       'configStructure':
           instance.configStructure.map((e) => e.toJson()).toList(),
+      'confiotCapable': instance.confiotCapable,
+      'confiotLayout': instance.confiotLayout.toJson(),
     };
 
 _$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>

@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.1.1
+
+- Added `confiotCapable` property to `Model` model.
+- Added `ConfIoTLayout` enum and their respective properties to `Model` model (As `confiotLayout` property).
+
 ## 3.1.0
 
 - Updated `InboundProtocol` and `Model` to handle new commands definitions and configuration parameters

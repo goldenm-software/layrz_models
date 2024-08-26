@@ -18670,6 +18670,12 @@ mixin _$Model {
   List<ConfigDefinition> get configStructure =>
       throw _privateConstructorUsedError;
 
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  bool get confiotCapable => throw _privateConstructorUsedError;
+
+  /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  ConfIoTLayout get confiotLayout => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ModelCopyWith<Model> get copyWith => throw _privateConstructorUsedError;
@@ -18688,7 +18694,9 @@ abstract class $ModelCopyWith<$Res> {
       String? protocolId,
       bool? isGeneric,
       List<CommandDefinition> commandsStructure,
-      List<ConfigDefinition> configStructure});
+      List<ConfigDefinition> configStructure,
+      bool confiotCapable,
+      ConfIoTLayout confiotLayout});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
 }
@@ -18714,6 +18722,8 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
     Object? isGeneric = freezed,
     Object? commandsStructure = null,
     Object? configStructure = null,
+    Object? confiotCapable = null,
+    Object? confiotLayout = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -18748,6 +18758,14 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
               as List<ConfigDefinition>,
+      confiotCapable: null == confiotCapable
+          ? _value.confiotCapable
+          : confiotCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      confiotLayout: null == confiotLayout
+          ? _value.confiotLayout
+          : confiotLayout // ignore: cast_nullable_to_non_nullable
+              as ConfIoTLayout,
     ) as $Val);
   }
 
@@ -18779,7 +18797,9 @@ abstract class _$$ModelImplCopyWith<$Res> implements $ModelCopyWith<$Res> {
       String? protocolId,
       bool? isGeneric,
       List<CommandDefinition> commandsStructure,
-      List<ConfigDefinition> configStructure});
+      List<ConfigDefinition> configStructure,
+      bool confiotCapable,
+      ConfIoTLayout confiotLayout});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -18804,6 +18824,8 @@ class __$$ModelImplCopyWithImpl<$Res>
     Object? isGeneric = freezed,
     Object? commandsStructure = null,
     Object? configStructure = null,
+    Object? confiotCapable = null,
+    Object? confiotLayout = null,
   }) {
     return _then(_$ModelImpl(
       id: null == id
@@ -18838,6 +18860,14 @@ class __$$ModelImplCopyWithImpl<$Res>
           ? _value._configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
               as List<ConfigDefinition>,
+      confiotCapable: null == confiotCapable
+          ? _value.confiotCapable
+          : confiotCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      confiotLayout: null == confiotLayout
+          ? _value.confiotLayout
+          : confiotLayout // ignore: cast_nullable_to_non_nullable
+              as ConfIoTLayout,
     ));
   }
 }
@@ -18853,7 +18883,9 @@ class _$ModelImpl implements _Model {
       this.protocolId,
       this.isGeneric,
       final List<CommandDefinition> commandsStructure = const [],
-      final List<ConfigDefinition> configStructure = const []})
+      final List<ConfigDefinition> configStructure = const [],
+      this.confiotCapable = false,
+      this.confiotLayout = ConfIoTLayout.standard})
       : _commandsStructure = commandsStructure,
         _configStructure = configStructure;
 
@@ -18910,9 +18942,19 @@ class _$ModelImpl implements _Model {
     return EqualUnmodifiableListView(_configStructure);
   }
 
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  @override
+  @JsonKey()
+  final bool confiotCapable;
+
+  /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @override
+  @JsonKey()
+  final ConfIoTLayout confiotLayout;
+
   @override
   String toString() {
-    return 'Model(id: $id, name: $name, flespiId: $flespiId, protocol: $protocol, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure)';
+    return 'Model(id: $id, name: $name, flespiId: $flespiId, protocol: $protocol, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout)';
   }
 
   @override
@@ -18933,7 +18975,11 @@ class _$ModelImpl implements _Model {
             const DeepCollectionEquality()
                 .equals(other._commandsStructure, _commandsStructure) &&
             const DeepCollectionEquality()
-                .equals(other._configStructure, _configStructure));
+                .equals(other._configStructure, _configStructure) &&
+            (identical(other.confiotCapable, confiotCapable) ||
+                other.confiotCapable == confiotCapable) &&
+            (identical(other.confiotLayout, confiotLayout) ||
+                other.confiotLayout == confiotLayout));
   }
 
   @JsonKey(ignore: true)
@@ -18947,7 +18993,9 @@ class _$ModelImpl implements _Model {
       protocolId,
       isGeneric,
       const DeepCollectionEquality().hash(_commandsStructure),
-      const DeepCollectionEquality().hash(_configStructure));
+      const DeepCollectionEquality().hash(_configStructure),
+      confiotCapable,
+      confiotLayout);
 
   @JsonKey(ignore: true)
   @override
@@ -18972,7 +19020,9 @@ abstract class _Model implements Model {
       final String? protocolId,
       final bool? isGeneric,
       final List<CommandDefinition> commandsStructure,
-      final List<ConfigDefinition> configStructure}) = _$ModelImpl;
+      final List<ConfigDefinition> configStructure,
+      final bool confiotCapable,
+      final ConfIoTLayout confiotLayout}) = _$ModelImpl;
 
   factory _Model.fromJson(Map<String, dynamic> json) = _$ModelImpl.fromJson;
 
@@ -19009,6 +19059,14 @@ abstract class _Model implements Model {
 
   /// [configStructure] is the structure of the configuration for the protocol.
   List<ConfigDefinition> get configStructure;
+  @override
+
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  bool get confiotCapable;
+  @override
+
+  /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  ConfIoTLayout get confiotLayout;
   @override
   @JsonKey(ignore: true)
   _$$ModelImplCopyWith<_$ModelImpl> get copyWith =>
@@ -19069,6 +19127,18 @@ mixin _$ModelInput {
   set configStructure(List<ConfigDefinitionInput> value) =>
       throw _privateConstructorUsedError;
 
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  bool get confiotCapable => throw _privateConstructorUsedError;
+
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  set confiotCapable(bool value) => throw _privateConstructorUsedError;
+
+  /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  ConfIoTLayout get confiotLayout => throw _privateConstructorUsedError;
+
+  /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  set confiotLayout(ConfIoTLayout value) => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ModelInputCopyWith<ModelInput> get copyWith =>
@@ -19088,7 +19158,9 @@ abstract class $ModelInputCopyWith<$Res> {
       String? protocolId,
       bool isGeneric,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure});
+      List<ConfigDefinitionInput> configStructure,
+      bool confiotCapable,
+      ConfIoTLayout confiotLayout});
 }
 
 /// @nodoc
@@ -19111,6 +19183,8 @@ class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
     Object? isGeneric = null,
     Object? commandsStructure = null,
     Object? configStructure = null,
+    Object? confiotCapable = null,
+    Object? confiotLayout = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -19141,6 +19215,14 @@ class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
               as List<ConfigDefinitionInput>,
+      confiotCapable: null == confiotCapable
+          ? _value.confiotCapable
+          : confiotCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      confiotLayout: null == confiotLayout
+          ? _value.confiotLayout
+          : confiotLayout // ignore: cast_nullable_to_non_nullable
+              as ConfIoTLayout,
     ) as $Val);
   }
 }
@@ -19160,7 +19242,9 @@ abstract class _$$ModelInputImplCopyWith<$Res>
       String? protocolId,
       bool isGeneric,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure});
+      List<ConfigDefinitionInput> configStructure,
+      bool confiotCapable,
+      ConfIoTLayout confiotLayout});
 }
 
 /// @nodoc
@@ -19181,6 +19265,8 @@ class __$$ModelInputImplCopyWithImpl<$Res>
     Object? isGeneric = null,
     Object? commandsStructure = null,
     Object? configStructure = null,
+    Object? confiotCapable = null,
+    Object? confiotLayout = null,
   }) {
     return _then(_$ModelInputImpl(
       id: freezed == id
@@ -19211,6 +19297,14 @@ class __$$ModelInputImplCopyWithImpl<$Res>
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
               as List<ConfigDefinitionInput>,
+      confiotCapable: null == confiotCapable
+          ? _value.confiotCapable
+          : confiotCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      confiotLayout: null == confiotLayout
+          ? _value.confiotLayout
+          : confiotLayout // ignore: cast_nullable_to_non_nullable
+              as ConfIoTLayout,
     ));
   }
 }
@@ -19225,7 +19319,9 @@ class _$ModelInputImpl implements _ModelInput {
       this.protocolId,
       this.isGeneric = false,
       this.commandsStructure = const [],
-      this.configStructure = const []});
+      this.configStructure = const [],
+      this.confiotCapable = false,
+      this.confiotLayout = ConfIoTLayout.standard});
 
   factory _$ModelInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$ModelInputImplFromJson(json);
@@ -19263,9 +19359,19 @@ class _$ModelInputImpl implements _ModelInput {
   @JsonKey()
   List<ConfigDefinitionInput> configStructure;
 
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  @override
+  @JsonKey()
+  bool confiotCapable;
+
+  /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @override
+  @JsonKey()
+  ConfIoTLayout confiotLayout;
+
   @override
   String toString() {
-    return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure)';
+    return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout)';
   }
 
   @JsonKey(ignore: true)
@@ -19290,7 +19396,9 @@ abstract class _ModelInput implements ModelInput {
       String? protocolId,
       bool isGeneric,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure}) = _$ModelInputImpl;
+      List<ConfigDefinitionInput> configStructure,
+      bool confiotCapable,
+      ConfIoTLayout confiotLayout}) = _$ModelInputImpl;
 
   factory _ModelInput.fromJson(Map<String, dynamic> json) =
       _$ModelInputImpl.fromJson;
@@ -19346,6 +19454,20 @@ abstract class _ModelInput implements ModelInput {
 
   /// [configStructure] is the structure of the configuration for the protocol.
   set configStructure(List<ConfigDefinitionInput> value);
+  @override
+
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  bool get confiotCapable;
+
+  /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  set confiotCapable(bool value);
+  @override
+
+  /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  ConfIoTLayout get confiotLayout;
+
+  /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  set confiotLayout(ConfIoTLayout value);
   @override
   @JsonKey(ignore: true)
   _$$ModelInputImplCopyWith<_$ModelInputImpl> get copyWith =>
