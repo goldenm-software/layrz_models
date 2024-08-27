@@ -26,6 +26,10 @@ enum ConfigPayloadDataType {
   /// value, it uses the index of the choice.
   /// Layrz API Reference: `CHOICE_INDEX`
   choiceIndex,
+
+  /// [list] is the data type of the payload, consist in a list of objects.
+  /// Layrz API Reference: `LIST`
+  list,
   ;
 
   @override
@@ -45,6 +49,8 @@ enum ConfigPayloadDataType {
         return 'CHOICE';
       case ConfigPayloadDataType.choiceIndex:
         return 'CHOICE_INDEX';
+      case ConfigPayloadDataType.list:
+        return 'LIST';
     }
   }
 
@@ -62,6 +68,8 @@ enum ConfigPayloadDataType {
         return ConfigPayloadDataType.choice;
       case 'CHOICE_INDEX':
         return ConfigPayloadDataType.choiceIndex;
+      case 'LIST':
+        return ConfigPayloadDataType.list;
       default:
         return ConfigPayloadDataType.string;
     }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.3
+
+- Added `ConfigPayloadDataType.list` option.
+
 ## 3.1.2
 
 - Added `@ConfIoTLayoutConverter()` to `confiotLayout` property in `Model` model.
