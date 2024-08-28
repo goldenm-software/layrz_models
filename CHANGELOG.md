@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.4
+
+- Added `confiot` to `AppInternalIdentifier` enum.
+
 ## 3.1.3
 
 - Added `ConfigPayloadDataType.list` option.
