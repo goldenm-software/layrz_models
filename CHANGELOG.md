@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.1
+
+- New `bluetoothPair` on `CommandPayloadDataType` and `ConfigPayloadDataType` enums
+- Removed `models` on `HwModelInput` model
+
 ## 3.2.0
 
 - Added `HwModel` and `HwModelInput` models

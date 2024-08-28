@@ -108,6 +108,10 @@ enum CommandPayloadDataType {
   /// [list] is the data type of the payload, consist in a list of objects.
   /// Layrz API Reference: `LIST`
   list,
+
+  /// [bluetoothPair] is the data type of the payload, consist in a Bluetooth Pairing.
+  /// Layrz API Reference: `BLUETOOTH_PAIR`
+  bluetoothPair,
   ;
 
   @override
@@ -131,6 +135,8 @@ enum CommandPayloadDataType {
         return 'NESTED';
       case CommandPayloadDataType.list:
         return 'LIST';
+      case CommandPayloadDataType.bluetoothPair:
+        return 'BLUETOOTH_PAIR';
     }
   }
 
@@ -150,6 +156,8 @@ enum CommandPayloadDataType {
         return CommandPayloadDataType.nested;
       case 'LIST':
         return CommandPayloadDataType.list;
+      case 'BLUETOOTH_PAIR':
+        return CommandPayloadDataType.bluetoothPair;
       case 'STRING':
       default:
         return CommandPayloadDataType.string;

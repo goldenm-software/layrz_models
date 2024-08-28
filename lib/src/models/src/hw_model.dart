@@ -30,9 +30,6 @@ class HwModelInput with _$HwModelInput {
 
     /// [modelsIds] is the list of the models IDs that are part of this model.
     @Default([]) List<String> modelsIds,
-
-    /// [models] is the list of the models that are part of this model.
-    @Default([]) List<ModelInput> models,
   }) = _HwModelInput;
 
   factory HwModelInput.fromJson(Map<String, dynamic> json) => _$HwModelInputFromJson(json);

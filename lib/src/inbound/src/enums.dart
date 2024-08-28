@@ -30,6 +30,10 @@ enum ConfigPayloadDataType {
   /// [list] is the data type of the payload, consist in a list of objects.
   /// Layrz API Reference: `LIST`
   list,
+
+  /// [bluetoothPair] is the data type of the payload, consist in a Bluetooth Pairing.
+  /// Layrz API Reference: `BLUETOOTH_PAIR`
+  bluetoothPair,
   ;
 
   @override
@@ -51,6 +55,8 @@ enum ConfigPayloadDataType {
         return 'CHOICE_INDEX';
       case ConfigPayloadDataType.list:
         return 'LIST';
+      case ConfigPayloadDataType.bluetoothPair:
+        return 'BLUETOOTH_PAIR';
     }
   }
 
@@ -70,6 +76,8 @@ enum ConfigPayloadDataType {
         return ConfigPayloadDataType.choiceIndex;
       case 'LIST':
         return ConfigPayloadDataType.list;
+      case 'BLUETOOTH_PAIR':
+        return ConfigPayloadDataType.bluetoothPair;
       default:
         return ConfigPayloadDataType.string;
     }

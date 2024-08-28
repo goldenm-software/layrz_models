@@ -122,10 +122,6 @@ _$HwModelInputImpl _$$HwModelInputImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      models: (json['models'] as List<dynamic>?)
-              ?.map((e) => ModelInput.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
     );
 
 Map<String, dynamic> _$$HwModelInputImplToJson(_$HwModelInputImpl instance) =>
@@ -133,5 +129,4 @@ Map<String, dynamic> _$$HwModelInputImplToJson(_$HwModelInputImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'modelsIds': instance.modelsIds,
-      'models': instance.models.map((e) => e.toJson()).toList(),
     };

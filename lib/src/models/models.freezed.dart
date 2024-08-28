@@ -1178,12 +1178,6 @@ mixin _$HwModelInput {
   /// [modelsIds] is the list of the models IDs that are part of this model.
   set modelsIds(List<String> value) => throw _privateConstructorUsedError;
 
-  /// [models] is the list of the models that are part of this model.
-  List<ModelInput> get models => throw _privateConstructorUsedError;
-
-  /// [models] is the list of the models that are part of this model.
-  set models(List<ModelInput> value) => throw _privateConstructorUsedError;
-
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $HwModelInputCopyWith<HwModelInput> get copyWith =>
@@ -1196,11 +1190,7 @@ abstract class $HwModelInputCopyWith<$Res> {
           HwModelInput value, $Res Function(HwModelInput) then) =
       _$HwModelInputCopyWithImpl<$Res, HwModelInput>;
   @useResult
-  $Res call(
-      {String? id,
-      String name,
-      List<String> modelsIds,
-      List<ModelInput> models});
+  $Res call({String? id, String name, List<String> modelsIds});
 }
 
 /// @nodoc
@@ -1219,7 +1209,6 @@ class _$HwModelInputCopyWithImpl<$Res, $Val extends HwModelInput>
     Object? id = freezed,
     Object? name = null,
     Object? modelsIds = null,
-    Object? models = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -1234,10 +1223,6 @@ class _$HwModelInputCopyWithImpl<$Res, $Val extends HwModelInput>
           ? _value.modelsIds
           : modelsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      models: null == models
-          ? _value.models
-          : models // ignore: cast_nullable_to_non_nullable
-              as List<ModelInput>,
     ) as $Val);
   }
 }
@@ -1250,11 +1235,7 @@ abstract class _$$HwModelInputImplCopyWith<$Res>
       __$$HwModelInputImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String? id,
-      String name,
-      List<String> modelsIds,
-      List<ModelInput> models});
+  $Res call({String? id, String name, List<String> modelsIds});
 }
 
 /// @nodoc
@@ -1271,7 +1252,6 @@ class __$$HwModelInputImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = null,
     Object? modelsIds = null,
-    Object? models = null,
   }) {
     return _then(_$HwModelInputImpl(
       id: freezed == id
@@ -1286,10 +1266,6 @@ class __$$HwModelInputImplCopyWithImpl<$Res>
           ? _value.modelsIds
           : modelsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      models: null == models
-          ? _value.models
-          : models // ignore: cast_nullable_to_non_nullable
-              as List<ModelInput>,
     ));
   }
 }
@@ -1297,11 +1273,7 @@ class __$$HwModelInputImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$HwModelInputImpl implements _HwModelInput {
-  _$HwModelInputImpl(
-      {this.id,
-      this.name = '',
-      this.modelsIds = const [],
-      this.models = const []});
+  _$HwModelInputImpl({this.id, this.name = '', this.modelsIds = const []});
 
   factory _$HwModelInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$HwModelInputImplFromJson(json);
@@ -1320,14 +1292,9 @@ class _$HwModelInputImpl implements _HwModelInput {
   @JsonKey()
   List<String> modelsIds;
 
-  /// [models] is the list of the models that are part of this model.
-  @override
-  @JsonKey()
-  List<ModelInput> models;
-
   @override
   String toString() {
-    return 'HwModelInput(id: $id, name: $name, modelsIds: $modelsIds, models: $models)';
+    return 'HwModelInput(id: $id, name: $name, modelsIds: $modelsIds)';
   }
 
   @JsonKey(ignore: true)
@@ -1345,11 +1312,8 @@ class _$HwModelInputImpl implements _HwModelInput {
 }
 
 abstract class _HwModelInput implements HwModelInput {
-  factory _HwModelInput(
-      {String? id,
-      String name,
-      List<String> modelsIds,
-      List<ModelInput> models}) = _$HwModelInputImpl;
+  factory _HwModelInput({String? id, String name, List<String> modelsIds}) =
+      _$HwModelInputImpl;
 
   factory _HwModelInput.fromJson(Map<String, dynamic> json) =
       _$HwModelInputImpl.fromJson;
@@ -1375,13 +1339,6 @@ abstract class _HwModelInput implements HwModelInput {
 
   /// [modelsIds] is the list of the models IDs that are part of this model.
   set modelsIds(List<String> value);
-  @override
-
-  /// [models] is the list of the models that are part of this model.
-  List<ModelInput> get models;
-
-  /// [models] is the list of the models that are part of this model.
-  set models(List<ModelInput> value);
   @override
   @JsonKey(ignore: true)
   _$$HwModelInputImplCopyWith<_$HwModelInputImpl> get copyWith =>
