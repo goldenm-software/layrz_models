@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.0
+
+- Added `HwModel` and `HwModelInput` models
+- Added `hwModelId` to `Device` model
+
 ## 3.1.4
 
 - Added `confiot` to `AppInternalIdentifier` enum.

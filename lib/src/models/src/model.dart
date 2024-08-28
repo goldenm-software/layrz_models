@@ -1,4 +1,4 @@
-part of '../layrz_models.dart';
+part of '../models.dart';
 
 @freezed
 class Model with _$Model {
@@ -36,6 +36,9 @@ class Model with _$Model {
 
     /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
     @ConfIoTLayoutConverter() @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
+
+    /// [confiotName] is the name of the model in the ConfIoT.
+    String? confiotName,
   }) = _Model;
 
   factory Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
@@ -74,6 +77,9 @@ class ModelInput with _$ModelInput {
 
     /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
     @ConfIoTLayoutConverter() @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
+
+    /// [confiotName] is the name of the model in the ConfIoT.
+    String? confiotName,
   }) = _ModelInput;
 
   factory ModelInput.fromJson(Map<String, dynamic> json) => _$ModelInputFromJson(json);

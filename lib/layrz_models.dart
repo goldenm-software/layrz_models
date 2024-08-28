@@ -28,6 +28,7 @@ import 'src/exchange/exchange.dart';
 // import 'src/builder/builder.dart';
 import 'src/commands/commands.dart';
 // import 'src/confiot/confiot.dart';
+import 'src/models/models.dart';
 
 // Internal exports
 export 'src/converters/converters.dart';
@@ -53,6 +54,7 @@ export 'src/exchange/exchange.dart';
 export 'src/builder/builder.dart';
 export 'src/commands/commands.dart';
 export 'src/confiot/confiot.dart';
+export 'src/models/models.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
@@ -92,7 +94,6 @@ part 'src/guide.dart';
 part 'src/language.dart';
 part 'src/lint_errors.dart';
 part 'src/mfa.dart';
-part 'src/model.dart';
 part 'src/operation.dart';
 part 'src/presets.dart';
 part 'src/profile.dart';

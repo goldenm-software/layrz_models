@@ -59,6 +59,12 @@ class Device with _$Device {
 
     /// [isSuspended] if the asset is suspended.
     bool? isSuspended,
+
+    /// [hwModel] is the hardware model of the device.
+    HwModel? hwModel,
+
+    /// [hwModelId] is the hardware model ID of the device.
+    String? hwModelId,
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
@@ -67,15 +73,36 @@ class Device with _$Device {
 @unfreezed
 class DeviceInput with _$DeviceInput {
   factory DeviceInput({
+    /// [id] is the unique identifier of the device.
     String? id,
+
+    /// [name] is the name of the device.
     @Default('') String name,
+
+    /// [ident] is the ident of the device. Generally, for GPS devices means the IMEI, for other devices means the
+    /// MAC address or randomly string.
     @Default('') String ident,
+
+    /// [protocolId] is the ID of the protocol
     String? protocolId,
+
+    /// [modelId] is the ID of the model
     String? modelId,
+
+    /// [visionProfileId] is the ID of the vision profile
     String? visionProfileId,
+
+    /// [phone] is the phone number information linked to this device.
     PhoneNumberInput? phone,
+
+    /// [modbus] is the configuration of the modbus device.
     ModbusConfigInput? modbus,
+
+    /// [macAddress] is the MAC address of the device.
     String? macAddress,
+
+    /// [hwModelId] is the hardware model ID of the device.
+    String? hwModelId,
   }) = _DeviceInput;
 
   factory DeviceInput.fromJson(Map<String, dynamic> json) => _$DeviceInputFromJson(json);
