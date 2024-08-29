@@ -7486,6 +7486,254 @@ abstract class _AtsIdeInformation implements AtsIdeInformation {
       throw _privateConstructorUsedError;
 }
 
+OperationProductInformation _$OperationProductInformationFromJson(
+    Map<String, dynamic> json) {
+  return _OperationProductInformation.fromJson(json);
+}
+
+/// @nodoc
+mixin _$OperationProductInformation {
+  /// category of the product.
+  String? get category => throw _privateConstructorUsedError;
+
+  /// quantity of the product.
+  double? get quantity => throw _privateConstructorUsedError;
+
+  /// subcategory of the product.
+  Map<String, dynamic>? get subcategory => throw _privateConstructorUsedError;
+
+  /// fuel type of the product.
+  String? get fuelType => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OperationProductInformationCopyWith<OperationProductInformation>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OperationProductInformationCopyWith<$Res> {
+  factory $OperationProductInformationCopyWith(
+          OperationProductInformation value,
+          $Res Function(OperationProductInformation) then) =
+      _$OperationProductInformationCopyWithImpl<$Res,
+          OperationProductInformation>;
+  @useResult
+  $Res call(
+      {String? category,
+      double? quantity,
+      Map<String, dynamic>? subcategory,
+      String? fuelType});
+}
+
+/// @nodoc
+class _$OperationProductInformationCopyWithImpl<$Res,
+        $Val extends OperationProductInformation>
+    implements $OperationProductInformationCopyWith<$Res> {
+  _$OperationProductInformationCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? category = freezed,
+    Object? quantity = freezed,
+    Object? subcategory = freezed,
+    Object? fuelType = freezed,
+  }) {
+    return _then(_value.copyWith(
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      subcategory: freezed == subcategory
+          ? _value.subcategory
+          : subcategory // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      fuelType: freezed == fuelType
+          ? _value.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$OperationProductInformationImplCopyWith<$Res>
+    implements $OperationProductInformationCopyWith<$Res> {
+  factory _$$OperationProductInformationImplCopyWith(
+          _$OperationProductInformationImpl value,
+          $Res Function(_$OperationProductInformationImpl) then) =
+      __$$OperationProductInformationImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? category,
+      double? quantity,
+      Map<String, dynamic>? subcategory,
+      String? fuelType});
+}
+
+/// @nodoc
+class __$$OperationProductInformationImplCopyWithImpl<$Res>
+    extends _$OperationProductInformationCopyWithImpl<$Res,
+        _$OperationProductInformationImpl>
+    implements _$$OperationProductInformationImplCopyWith<$Res> {
+  __$$OperationProductInformationImplCopyWithImpl(
+      _$OperationProductInformationImpl _value,
+      $Res Function(_$OperationProductInformationImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? category = freezed,
+    Object? quantity = freezed,
+    Object? subcategory = freezed,
+    Object? fuelType = freezed,
+  }) {
+    return _then(_$OperationProductInformationImpl(
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      subcategory: freezed == subcategory
+          ? _value._subcategory
+          : subcategory // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      fuelType: freezed == fuelType
+          ? _value.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$OperationProductInformationImpl
+    implements _OperationProductInformation {
+  _$OperationProductInformationImpl(
+      {this.category,
+      this.quantity,
+      final Map<String, dynamic>? subcategory,
+      this.fuelType})
+      : _subcategory = subcategory;
+
+  factory _$OperationProductInformationImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$OperationProductInformationImplFromJson(json);
+
+  /// category of the product.
+  @override
+  final String? category;
+
+  /// quantity of the product.
+  @override
+  final double? quantity;
+
+  /// subcategory of the product.
+  final Map<String, dynamic>? _subcategory;
+
+  /// subcategory of the product.
+  @override
+  Map<String, dynamic>? get subcategory {
+    final value = _subcategory;
+    if (value == null) return null;
+    if (_subcategory is EqualUnmodifiableMapView) return _subcategory;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  /// fuel type of the product.
+  @override
+  final String? fuelType;
+
+  @override
+  String toString() {
+    return 'OperationProductInformation(category: $category, quantity: $quantity, subcategory: $subcategory, fuelType: $fuelType)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OperationProductInformationImpl &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            const DeepCollectionEquality()
+                .equals(other._subcategory, _subcategory) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, category, quantity,
+      const DeepCollectionEquality().hash(_subcategory), fuelType);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OperationProductInformationImplCopyWith<_$OperationProductInformationImpl>
+      get copyWith => __$$OperationProductInformationImplCopyWithImpl<
+          _$OperationProductInformationImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$OperationProductInformationImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _OperationProductInformation
+    implements OperationProductInformation {
+  factory _OperationProductInformation(
+      {final String? category,
+      final double? quantity,
+      final Map<String, dynamic>? subcategory,
+      final String? fuelType}) = _$OperationProductInformationImpl;
+
+  factory _OperationProductInformation.fromJson(Map<String, dynamic> json) =
+      _$OperationProductInformationImpl.fromJson;
+
+  @override
+
+  /// category of the product.
+  String? get category;
+  @override
+
+  /// quantity of the product.
+  double? get quantity;
+  @override
+
+  /// subcategory of the product.
+  Map<String, dynamic>? get subcategory;
+  @override
+
+  /// fuel type of the product.
+  String? get fuelType;
+  @override
+  @JsonKey(ignore: true)
+  _$$OperationProductInformationImplCopyWith<_$OperationProductInformationImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 AtsExitStatus _$AtsExitStatusFromJson(Map<String, dynamic> json) {
   return _AtsExitStatus.fromJson(json);
 }
@@ -10460,7 +10708,7 @@ mixin _$AtsOperation {
   double? get totalQuantity => throw _privateConstructorUsedError;
 
   /// `productsInformation` is the list of products information.
-  List<AtsProductInformation>? get productsInformation =>
+  List<OperationProductInformation>? get productsInformation =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -10497,7 +10745,7 @@ abstract class $AtsOperationCopyWith<$Res> {
       List<AtsPurchaseOrder>? purchaseOrders,
       List<AtsOperationStatuses>? statuses,
       double? totalQuantity,
-      List<AtsProductInformation>? productsInformation});
+      List<OperationProductInformation>? productsInformation});
 
   $AssetCopyWith<$Res>? get sellerAsset;
   $AssetCopyWith<$Res>? get transportAsset;
@@ -10614,7 +10862,7 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
       productsInformation: freezed == productsInformation
           ? _value.productsInformation
           : productsInformation // ignore: cast_nullable_to_non_nullable
-              as List<AtsProductInformation>?,
+              as List<OperationProductInformation>?,
     ) as $Val);
   }
 
@@ -10699,7 +10947,7 @@ abstract class _$$AtsOperationImplCopyWith<$Res>
       List<AtsPurchaseOrder>? purchaseOrders,
       List<AtsOperationStatuses>? statuses,
       double? totalQuantity,
-      List<AtsProductInformation>? productsInformation});
+      List<OperationProductInformation>? productsInformation});
 
   @override
   $AssetCopyWith<$Res>? get sellerAsset;
@@ -10818,7 +11066,7 @@ class __$$AtsOperationImplCopyWithImpl<$Res>
       productsInformation: freezed == productsInformation
           ? _value._productsInformation
           : productsInformation // ignore: cast_nullable_to_non_nullable
-              as List<AtsProductInformation>?,
+              as List<OperationProductInformation>?,
     ));
   }
 }
@@ -10845,7 +11093,7 @@ class _$AtsOperationImpl implements _AtsOperation {
       final List<AtsPurchaseOrder>? purchaseOrders,
       final List<AtsOperationStatuses>? statuses,
       this.totalQuantity,
-      final List<AtsProductInformation>? productsInformation})
+      final List<OperationProductInformation>? productsInformation})
       : _ordersIds = ordersIds,
         _purchaseOrders = purchaseOrders,
         _statuses = statuses,
@@ -10960,11 +11208,11 @@ class _$AtsOperationImpl implements _AtsOperation {
   final double? totalQuantity;
 
   /// `productsInformation` is the list of products information.
-  final List<AtsProductInformation>? _productsInformation;
+  final List<OperationProductInformation>? _productsInformation;
 
   /// `productsInformation` is the list of products information.
   @override
-  List<AtsProductInformation>? get productsInformation {
+  List<OperationProductInformation>? get productsInformation {
     final value = _productsInformation;
     if (value == null) return null;
     if (_productsInformation is EqualUnmodifiableListView)
@@ -11083,7 +11331,7 @@ abstract class _AtsOperation implements AtsOperation {
           final List<AtsPurchaseOrder>? purchaseOrders,
           final List<AtsOperationStatuses>? statuses,
           final double? totalQuantity,
-          final List<AtsProductInformation>? productsInformation}) =
+          final List<OperationProductInformation>? productsInformation}) =
       _$AtsOperationImpl;
 
   factory _AtsOperation.fromJson(Map<String, dynamic> json) =
@@ -11170,7 +11418,7 @@ abstract class _AtsOperation implements AtsOperation {
   @override
 
   /// `productsInformation` is the list of products information.
-  List<AtsProductInformation>? get productsInformation;
+  List<OperationProductInformation>? get productsInformation;
   @override
   @JsonKey(ignore: true)
   _$$AtsOperationImplCopyWith<_$AtsOperationImpl> get copyWith =>

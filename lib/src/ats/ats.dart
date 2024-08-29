@@ -26,6 +26,7 @@ part 'src/reception/purchase_total.dart';
 part 'src/reception/reception.dart';
 part 'src/reception/entry_unload_input.dart';
 part 'src/reception/ide_information.dart';
+part 'src/reception/operation_product_information.dart';
 
 // ATS Exit Models
 part 'src/exits/exit_status.dart';
