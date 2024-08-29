@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.3
+
+- Added `OperationProductInformation` model
+
 ## 3.2.2
 
 - Added `productsInformation` on `AtsOperation` model

@@ -640,6 +640,24 @@ Map<String, dynamic> _$$AtsIdeInformationImplToJson(
       'operationType': instance.operationType,
     };
 
+_$OperationProductInformationImpl _$$OperationProductInformationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$OperationProductInformationImpl(
+      category: json['category'] as String?,
+      quantity: (json['quantity'] as num?)?.toDouble(),
+      subcategory: json['subcategory'] as Map<String, dynamic>?,
+      fuelType: json['fuelType'] as String?,
+    );
+
+Map<String, dynamic> _$$OperationProductInformationImplToJson(
+        _$OperationProductInformationImpl instance) =>
+    <String, dynamic>{
+      'category': instance.category,
+      'quantity': instance.quantity,
+      'subcategory': instance.subcategory,
+      'fuelType': instance.fuelType,
+    };
+
 _$AtsExitStatusImpl _$$AtsExitStatusImplFromJson(Map<String, dynamic> json) =>
     _$AtsExitStatusImpl(
       date: const TimestampOrNullConverter().fromJson(json['date'] as num?),
@@ -911,8 +929,8 @@ _$AtsOperationImpl _$$AtsOperationImplFromJson(Map<String, dynamic> json) =>
           .toList(),
       totalQuantity: (json['totalQuantity'] as num?)?.toDouble(),
       productsInformation: (json['productsInformation'] as List<dynamic>?)
-          ?.map(
-              (e) => AtsProductInformation.fromJson(e as Map<String, dynamic>))
+          ?.map((e) =>
+              OperationProductInformation.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
