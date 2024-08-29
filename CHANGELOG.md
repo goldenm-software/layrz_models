@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.2
+
+- Added `productsInformation` on `AtsOperation` model
+
 ## 3.2.1
 
 - New `bluetoothPair` on `CommandPayloadDataType` and `ConfigPayloadDataType` enums
@@ -36,19 +40,23 @@
 - Major change of `Command` to support new command definitions
 
 ## 3.0.4
-- Add `ReferenceCategory.mappitPermTagsRead` to mappit 
+
+- Add `ReferenceCategory.mappitPermTagsRead` to mappit
 
 ## 3.0.3
-- Add `MappitReportInput` 
+
+- Add `MappitReportInput`
 - Replace DateTime to double in startAt y endAt inside `MappitReportInputMulti`
 - Add `@Default([])` in `routes` inside `ContainedRouteCategory`
 - Convert `containedRoutes` in `PolygonDetails` as List
 
 ## 3.0.2
+
 - rename `fee_day.dart `to `free_day.dart`;
 - Add `MappitReportInputMulti`
 
 ## 3.0.1
+
 - Added `PolygonDetails` and `ContainedRouteCategory`
 
 ## 3.0.0
@@ -63,9 +71,11 @@
 - Added `webhookStructure` to `InboundService` model.
 
 ## 2.1.91
+
 - Added `sensors` and `sensorsIds` parameters to `Tag` model
 
 ## 2.1.90
+
 - Added optional params `isSuspended` and `suspendedAt` to `User` model
 
 ## 2.1.89
@@ -86,10 +96,12 @@
 - Added `geofencesIds`, `geofences`, `geofencesGroupsIds` and `geofencesGroups` to `ExchangeService` model
 
 ## 2.1.85
--  `BrickHouseWorkspaceInput` update
+
+- `BrickHouseWorkspaceInput` update
 
 ## 2.1.84
-- Changed  `appId` to be optional on `BrickHouseWorkspaceInput`
+
+- Changed `appId` to be optional on `BrickHouseWorkspaceInput`
 
 ## 2.1.83
 
@@ -129,6 +141,7 @@
 - New `pushPlatforms` and `pushTitle` fields on `Operation` model
 
 ## 2.1.75
+
 - Added value `bhsPresence` to `TriggerType` enum
 
 ## 2.1.74
