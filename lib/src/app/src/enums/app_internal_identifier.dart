@@ -40,6 +40,9 @@ enum AppInternalIdentifier {
   /// API Reference: `CLOUD`
   cloud,
 
+  /// API Reference: `CONFIOT`
+  confiot,
+
   /// API Reference: `GASLP`
   gaslp,
 
@@ -110,6 +113,8 @@ enum AppInternalIdentifier {
         return 'CLOUD';
       case AppInternalIdentifier.tenvioPickAndPack:
         return 'TENVIO_PICK_AND_PACK';
+      case AppInternalIdentifier.confiot:
+        return 'CONFIOT';
 
       case AppInternalIdentifier.analyticsAdmin:
         return 'ANALYTICS_ADMIN';
@@ -172,6 +177,8 @@ enum AppInternalIdentifier {
         return AppInternalIdentifier.cloud;
       case 'TENVIO_PICK_AND_PACK':
         return AppInternalIdentifier.tenvioPickAndPack;
+      case 'CONFIOT':
+        return AppInternalIdentifier.confiot;
 
       case 'ANALYTICS_ADMIN':
         return AppInternalIdentifier.analyticsAdmin;

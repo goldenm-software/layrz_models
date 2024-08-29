@@ -1,5 +1,38 @@
 # Changelog
 
+## 3.2.2
+
+- Added `productsInformation` on `AtsOperation` model
+
+## 3.2.1
+
+- New `bluetoothPair` on `CommandPayloadDataType` and `ConfigPayloadDataType` enums
+- Removed `models` on `HwModelInput` model
+
+## 3.2.0
+
+- Added `HwModel` and `HwModelInput` models
+- Added `hwModelId` to `Device` model
+
+## 3.1.4
+
+- Added `confiot` to `AppInternalIdentifier` enum.
+
+## 3.1.3
+
+- Added `ConfigPayloadDataType.list` option.
+
+## 3.1.2
+
+- Added `@ConfIoTLayoutConverter()` to `confiotLayout` property in `Model` model.
+- Updated all dependencies and using the hat version instead of a constraint version.
+- Changed constraint of flutter version to `>=3.22.0`
+
+## 3.1.1
+
+- Added `confiotCapable` property to `Model` model.
+- Added `ConfIoTLayout` enum and their respective properties to `Model` model (As `confiotLayout` property).
+
 ## 3.1.0
 
 - Updated `InboundProtocol` and `Model` to handle new commands definitions and configuration parameters
@@ -7,19 +40,23 @@
 - Major change of `Command` to support new command definitions
 
 ## 3.0.4
-- Add `ReferenceCategory.mappitPermTagsRead` to mappit 
+
+- Add `ReferenceCategory.mappitPermTagsRead` to mappit
 
 ## 3.0.3
-- Add `MappitReportInput` 
+
+- Add `MappitReportInput`
 - Replace DateTime to double in startAt y endAt inside `MappitReportInputMulti`
 - Add `@Default([])` in `routes` inside `ContainedRouteCategory`
 - Convert `containedRoutes` in `PolygonDetails` as List
 
 ## 3.0.2
+
 - rename `fee_day.dart `to `free_day.dart`;
 - Add `MappitReportInputMulti`
 
 ## 3.0.1
+
 - Added `PolygonDetails` and `ContainedRouteCategory`
 
 ## 3.0.0
@@ -34,9 +71,11 @@
 - Added `webhookStructure` to `InboundService` model.
 
 ## 2.1.91
+
 - Added `sensors` and `sensorsIds` parameters to `Tag` model
 
 ## 2.1.90
+
 - Added optional params `isSuspended` and `suspendedAt` to `User` model
 
 ## 2.1.89
@@ -57,10 +96,12 @@
 - Added `geofencesIds`, `geofences`, `geofencesGroupsIds` and `geofencesGroups` to `ExchangeService` model
 
 ## 2.1.85
--  `BrickHouseWorkspaceInput` update
+
+- `BrickHouseWorkspaceInput` update
 
 ## 2.1.84
-- Changed  `appId` to be optional on `BrickHouseWorkspaceInput`
+
+- Changed `appId` to be optional on `BrickHouseWorkspaceInput`
 
 ## 2.1.83
 
@@ -100,6 +141,7 @@
 - New `pushPlatforms` and `pushTitle` fields on `Operation` model
 
 ## 2.1.75
+
 - Added value `bhsPresence` to `TriggerType` enum
 
 ## 2.1.74

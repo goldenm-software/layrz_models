@@ -56,6 +56,9 @@ class AtsOperation with _$AtsOperation {
 
     /// `totalQuantity` total quantity of the purchase order.
     double? totalQuantity,
+
+    /// `productsInformation` is the list of products information.
+    List<AtsProductInformation>? productsInformation,
   }) = _AtsOperation;
 
   factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);

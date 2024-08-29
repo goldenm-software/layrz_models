@@ -1,4 +1,4 @@
-part of '../layrz_models.dart';
+part of '../models.dart';
 
 @freezed
 class Model with _$Model {
@@ -30,6 +30,15 @@ class Model with _$Model {
 
     /// [configStructure] is the structure of the configuration for the protocol.
     @Default([]) List<ConfigDefinition> configStructure,
+
+    /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+    @Default(false) bool confiotCapable,
+
+    /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+    @ConfIoTLayoutConverter() @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
+
+    /// [confiotName] is the name of the model in the ConfIoT.
+    String? confiotName,
   }) = _Model;
 
   factory Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
@@ -62,7 +71,71 @@ class ModelInput with _$ModelInput {
 
     /// [configStructure] is the structure of the configuration for the protocol.
     @Default([]) List<ConfigDefinitionInput> configStructure,
+
+    /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+    @Default(false) bool confiotCapable,
+
+    /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+    @ConfIoTLayoutConverter() @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
+
+    /// [confiotName] is the name of the model in the ConfIoT.
+    String? confiotName,
   }) = _ModelInput;
 
   factory ModelInput.fromJson(Map<String, dynamic> json) => _$ModelInputFromJson(json);
+}
+
+enum ConfIoTLayout {
+  /// [standard] defines the classic layout of the device, with the commands and the configuration.
+  standard,
+
+  /// [sdmMonitor] defines the layout for the SDM Monitor.
+  sdmMonitor,
+  ;
+
+  @override
+  String toString() => toJson();
+
+  String toJson() {
+    switch (this) {
+      case ConfIoTLayout.sdmMonitor:
+        return 'SDM_MONITOR';
+      case ConfIoTLayout.standard:
+      default:
+        return 'STANDARD';
+    }
+  }
+
+  static ConfIoTLayout fromJson(String json) {
+    switch (json) {
+      case 'SDM_MONITOR':
+        return ConfIoTLayout.sdmMonitor;
+      case 'STANDARD':
+      default:
+        return ConfIoTLayout.standard;
+    }
+  }
+}
+
+class ConfIoTLayoutConverter implements JsonConverter<ConfIoTLayout, String> {
+  const ConfIoTLayoutConverter();
+
+  @override
+  ConfIoTLayout fromJson(String json) => ConfIoTLayout.fromJson(json);
+
+  @override
+  String toJson(ConfIoTLayout object) => object.toJson();
+}
+
+class ConfIoTLayoutNullableConverter implements JsonConverter<ConfIoTLayout?, String?> {
+  const ConfIoTLayoutNullableConverter();
+
+  @override
+  ConfIoTLayout? fromJson(String? json) {
+    if (json == null) return null;
+    return ConfIoTLayout.fromJson(json);
+  }
+
+  @override
+  String? toJson(ConfIoTLayout? object) => object?.toJson();
 }

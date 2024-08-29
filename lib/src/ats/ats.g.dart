@@ -910,6 +910,10 @@ _$AtsOperationImpl _$$AtsOperationImplFromJson(Map<String, dynamic> json) =>
           ?.map((e) => AtsOperationStatuses.fromJson(e as Map<String, dynamic>))
           .toList(),
       totalQuantity: (json['totalQuantity'] as num?)?.toDouble(),
+      productsInformation: (json['productsInformation'] as List<dynamic>?)
+          ?.map(
+              (e) => AtsProductInformation.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$AtsOperationImplToJson(_$AtsOperationImpl instance) =>
@@ -938,6 +942,8 @@ Map<String, dynamic> _$$AtsOperationImplToJson(_$AtsOperationImpl instance) =>
           instance.purchaseOrders?.map((e) => e.toJson()).toList(),
       'statuses': instance.statuses?.map((e) => e.toJson()).toList(),
       'totalQuantity': instance.totalQuantity,
+      'productsInformation':
+          instance.productsInformation?.map((e) => e.toJson()).toList(),
     };
 
 _$AtsOperationStatusesImpl _$$AtsOperationStatusesImplFromJson(
