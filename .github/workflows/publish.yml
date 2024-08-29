@@ -2,13 +2,13 @@ name: Publish to pub.dev
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/goldenm-software/flutter-web-builder:flutter-3.22.0-python3.11
+      image: ghcr.io/goldenm-software/flutter-web-builder:flutter3.22.0-python3.11
       options: --user root
       credentials:
         username: ${{ github.repository_owner }}
@@ -27,11 +27,11 @@ jobs:
       - name: Authenticate
         run: |
           python3 authenticate.py
-      
+
       - name: Publish
         run: |
           flutter pub publish --force
-      
+
       - name: Cleanup
         run: |
           dart pub token remove https://pub.dev
