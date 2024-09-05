@@ -1215,6 +1215,7 @@ _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
           ? null
           : HwModel.fromJson(json['hwModel'] as Map<String, dynamic>),
       hwModelId: json['hwModelId'] as String?,
+      configParams: json['configParams'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
@@ -1240,6 +1241,7 @@ Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
       'isSuspended': instance.isSuspended,
       'hwModel': instance.hwModel?.toJson(),
       'hwModelId': instance.hwModelId,
+      'configParams': instance.configParams,
     };
 
 _$DeviceInputImpl _$$DeviceInputImplFromJson(Map<String, dynamic> json) =>

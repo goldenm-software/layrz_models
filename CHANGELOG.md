@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.4
+
+- Added `configParams` to `Device` model
+
 ## 3.2.3
 
 - Added `OperationProductInformation` model

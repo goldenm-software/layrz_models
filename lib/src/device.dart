@@ -65,6 +65,10 @@ class Device with _$Device {
 
     /// [hwModelId] is the hardware model ID of the device.
     String? hwModelId,
+
+    /// [configParams] is the configuration parameters received from the device, this information is
+    /// used to configure the device.
+    Map<String, dynamic>? configParams,
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
