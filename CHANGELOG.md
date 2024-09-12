@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.5
+
+- Changed `source` to `sources` on `CommandPayloadDefinition` and `CommandPayloadDefinitionInput` models
+
 ## 3.2.4
 
 - Added `configParams` to `Device` model

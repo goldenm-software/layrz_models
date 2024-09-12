@@ -103,7 +103,7 @@ class CommandDefinition with _$CommandDefinition {
     String? description,
 
     /// [source] is the source of the command.
-    @CommandDefinitionSourceConverter() required CommandDefinitionSource source,
+    @CommandDefinitionSourceConverter() required List<CommandDefinitionSource> sources,
 
     /// [payload] is the list of parameters of the command.
     required List<CommandPayloadDefinition> payload,
@@ -125,7 +125,7 @@ class CommandDefinitionInput with _$CommandDefinitionInput {
     @Default('') String description,
 
     /// [source] is the source of the command.
-    @CommandDefinitionSourceConverter() @Default(CommandDefinitionSource.layrzLink) CommandDefinitionSource source,
+    @CommandDefinitionSourceConverter() @Default([]) List<CommandDefinitionSource> sources,
 
     /// [payload] is the list of parameters of the command.
     @Default([]) List<CommandPayloadDefinitionInput> payload,
