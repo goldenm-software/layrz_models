@@ -156,6 +156,7 @@ _$CommandPayloadDefinitionImpl _$$CommandPayloadDefinitionImplFromJson(
           ?.map((e) =>
               CommandPayloadDefinition.fromJson(e as Map<String, dynamic>))
           .toList(),
+      maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$CommandPayloadDefinitionImplToJson(
@@ -174,6 +175,7 @@ Map<String, dynamic> _$$CommandPayloadDefinitionImplToJson(
       'regexPattern':
           const RegExpOrNullConverter().toJson(instance.regexPattern),
       'nested': instance.nested?.map((e) => e.toJson()).toList(),
+      'maxQuantity': instance.maxQuantity,
     };
 
 _$CommandPayloadDefinitionInputImpl
@@ -199,6 +201,7 @@ _$CommandPayloadDefinitionInputImpl
               ?.map((e) => CommandPayloadDefinitionInput.fromJson(
                   e as Map<String, dynamic>))
               .toList(),
+          maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
         );
 
 Map<String, dynamic> _$$CommandPayloadDefinitionInputImplToJson(
@@ -217,6 +220,7 @@ Map<String, dynamic> _$$CommandPayloadDefinitionInputImplToJson(
       'regexPattern':
           const RegExpOrNullConverter().toJson(instance.regexPattern),
       'nested': instance.nested?.map((e) => e.toJson()).toList(),
+      'maxQuantity': instance.maxQuantity,
     };
 
 _$CommandDefinitionImpl _$$CommandDefinitionImplFromJson(

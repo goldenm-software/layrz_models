@@ -1757,6 +1757,11 @@ mixin _$CommandPayloadDefinition {
   List<CommandPayloadDefinition>? get nested =>
       throw _privateConstructorUsedError;
 
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  int? get maxQuantity => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CommandPayloadDefinitionCopyWith<CommandPayloadDefinition> get copyWith =>
@@ -1780,7 +1785,8 @@ abstract class $CommandPayloadDefinitionCopyWith<$Res> {
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<CommandPayloadDefinition>? nested});
+      List<CommandPayloadDefinition>? nested,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -1808,6 +1814,7 @@ class _$CommandPayloadDefinitionCopyWithImpl<$Res,
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? nested = freezed,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_value.copyWith(
       parameter: null == parameter
@@ -1854,6 +1861,10 @@ class _$CommandPayloadDefinitionCopyWithImpl<$Res,
           ? _value.nested
           : nested // ignore: cast_nullable_to_non_nullable
               as List<CommandPayloadDefinition>?,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -1878,7 +1889,8 @@ abstract class _$$CommandPayloadDefinitionImplCopyWith<$Res>
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<CommandPayloadDefinition>? nested});
+      List<CommandPayloadDefinition>? nested,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -1905,6 +1917,7 @@ class __$$CommandPayloadDefinitionImplCopyWithImpl<$Res>
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? nested = freezed,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_$CommandPayloadDefinitionImpl(
       parameter: null == parameter
@@ -1951,6 +1964,10 @@ class __$$CommandPayloadDefinitionImplCopyWithImpl<$Res>
           ? _value._nested
           : nested // ignore: cast_nullable_to_non_nullable
               as List<CommandPayloadDefinition>?,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -1969,7 +1986,8 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
       this.maxLength,
       final List<String>? choices,
       @RegExpOrNullConverter() this.regexPattern,
-      final List<CommandPayloadDefinition>? nested})
+      final List<CommandPayloadDefinition>? nested,
+      this.maxQuantity})
       : _choices = choices,
         _nested = nested;
 
@@ -2048,9 +2066,15 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  @override
+  final int? maxQuantity;
+
   @override
   String toString() {
-    return 'CommandPayloadDefinition(parameter: $parameter, description: $description, dataType: $dataType, isRequired: $isRequired, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, nested: $nested)';
+    return 'CommandPayloadDefinition(parameter: $parameter, description: $description, dataType: $dataType, isRequired: $isRequired, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, nested: $nested, maxQuantity: $maxQuantity)';
   }
 
   @override
@@ -2077,7 +2101,9 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
             const DeepCollectionEquality().equals(other._choices, _choices) &&
             (identical(other.regexPattern, regexPattern) ||
                 other.regexPattern == regexPattern) &&
-            const DeepCollectionEquality().equals(other._nested, _nested));
+            const DeepCollectionEquality().equals(other._nested, _nested) &&
+            (identical(other.maxQuantity, maxQuantity) ||
+                other.maxQuantity == maxQuantity));
   }
 
   @JsonKey(ignore: true)
@@ -2094,7 +2120,8 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
       maxLength,
       const DeepCollectionEquality().hash(_choices),
       regexPattern,
-      const DeepCollectionEquality().hash(_nested));
+      const DeepCollectionEquality().hash(_nested),
+      maxQuantity);
 
   @JsonKey(ignore: true)
   @override
@@ -2113,19 +2140,19 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
 
 abstract class _CommandPayloadDefinition implements CommandPayloadDefinition {
   const factory _CommandPayloadDefinition(
-          {required final String parameter,
-          final String? description,
-          @CommandPayloadDataTypeConverter()
-          required final CommandPayloadDataType dataType,
-          final bool? isRequired,
-          final num? minValue,
-          final num? maxValue,
-          final int? minLength,
-          final int? maxLength,
-          final List<String>? choices,
-          @RegExpOrNullConverter() final RegExp? regexPattern,
-          final List<CommandPayloadDefinition>? nested}) =
-      _$CommandPayloadDefinitionImpl;
+      {required final String parameter,
+      final String? description,
+      @CommandPayloadDataTypeConverter()
+      required final CommandPayloadDataType dataType,
+      final bool? isRequired,
+      final num? minValue,
+      final num? maxValue,
+      final int? minLength,
+      final int? maxLength,
+      final List<String>? choices,
+      @RegExpOrNullConverter() final RegExp? regexPattern,
+      final List<CommandPayloadDefinition>? nested,
+      final int? maxQuantity}) = _$CommandPayloadDefinitionImpl;
 
   factory _CommandPayloadDefinition.fromJson(Map<String, dynamic> json) =
       _$CommandPayloadDefinitionImpl.fromJson;
@@ -2182,6 +2209,12 @@ abstract class _CommandPayloadDefinition implements CommandPayloadDefinition {
   /// [nested] is the nested object of the parameter.
   /// Only for [CommandPayloadDataType.nested]
   List<CommandPayloadDefinition>? get nested;
+  @override
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  int? get maxQuantity;
   @override
   @JsonKey(ignore: true)
   _$$CommandPayloadDefinitionImplCopyWith<_$CommandPayloadDefinitionImpl>
@@ -2280,6 +2313,16 @@ mixin _$CommandPayloadDefinitionInput {
   set nested(List<CommandPayloadDefinitionInput>? value) =>
       throw _privateConstructorUsedError;
 
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  int? get maxQuantity => throw _privateConstructorUsedError;
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  set maxQuantity(int? value) => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CommandPayloadDefinitionInputCopyWith<CommandPayloadDefinitionInput>
@@ -2305,7 +2348,8 @@ abstract class $CommandPayloadDefinitionInputCopyWith<$Res> {
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<CommandPayloadDefinitionInput>? nested});
+      List<CommandPayloadDefinitionInput>? nested,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -2333,6 +2377,7 @@ class _$CommandPayloadDefinitionInputCopyWithImpl<$Res,
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? nested = freezed,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_value.copyWith(
       parameter: null == parameter
@@ -2379,6 +2424,10 @@ class _$CommandPayloadDefinitionInputCopyWithImpl<$Res,
           ? _value.nested
           : nested // ignore: cast_nullable_to_non_nullable
               as List<CommandPayloadDefinitionInput>?,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -2403,7 +2452,8 @@ abstract class _$$CommandPayloadDefinitionInputImplCopyWith<$Res>
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<CommandPayloadDefinitionInput>? nested});
+      List<CommandPayloadDefinitionInput>? nested,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -2430,6 +2480,7 @@ class __$$CommandPayloadDefinitionInputImplCopyWithImpl<$Res>
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? nested = freezed,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_$CommandPayloadDefinitionInputImpl(
       parameter: null == parameter
@@ -2476,6 +2527,10 @@ class __$$CommandPayloadDefinitionInputImplCopyWithImpl<$Res>
           ? _value.nested
           : nested // ignore: cast_nullable_to_non_nullable
               as List<CommandPayloadDefinitionInput>?,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -2496,7 +2551,8 @@ class _$CommandPayloadDefinitionInputImpl
       this.maxLength,
       this.choices,
       @RegExpOrNullConverter() this.regexPattern,
-      this.nested});
+      this.nested,
+      this.maxQuantity});
 
   factory _$CommandPayloadDefinitionInputImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -2558,9 +2614,15 @@ class _$CommandPayloadDefinitionInputImpl
   @override
   List<CommandPayloadDefinitionInput>? nested;
 
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  @override
+  int? maxQuantity;
+
   @override
   String toString() {
-    return 'CommandPayloadDefinitionInput(parameter: $parameter, description: $description, dataType: $dataType, isRequired: $isRequired, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, nested: $nested)';
+    return 'CommandPayloadDefinitionInput(parameter: $parameter, description: $description, dataType: $dataType, isRequired: $isRequired, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, nested: $nested, maxQuantity: $maxQuantity)';
   }
 
   @JsonKey(ignore: true)
@@ -2582,18 +2644,18 @@ class _$CommandPayloadDefinitionInputImpl
 abstract class _CommandPayloadDefinitionInput
     implements CommandPayloadDefinitionInput {
   factory _CommandPayloadDefinitionInput(
-          {String parameter,
-          String description,
-          @CommandPayloadDataTypeConverter() CommandPayloadDataType dataType,
-          bool isRequired,
-          num? minValue,
-          num? maxValue,
-          int? minLength,
-          int? maxLength,
-          List<String>? choices,
-          @RegExpOrNullConverter() RegExp? regexPattern,
-          List<CommandPayloadDefinitionInput>? nested}) =
-      _$CommandPayloadDefinitionInputImpl;
+      {String parameter,
+      String description,
+      @CommandPayloadDataTypeConverter() CommandPayloadDataType dataType,
+      bool isRequired,
+      num? minValue,
+      num? maxValue,
+      int? minLength,
+      int? maxLength,
+      List<String>? choices,
+      @RegExpOrNullConverter() RegExp? regexPattern,
+      List<CommandPayloadDefinitionInput>? nested,
+      int? maxQuantity}) = _$CommandPayloadDefinitionInputImpl;
 
   factory _CommandPayloadDefinitionInput.fromJson(Map<String, dynamic> json) =
       _$CommandPayloadDefinitionInputImpl.fromJson;
@@ -2691,6 +2753,17 @@ abstract class _CommandPayloadDefinitionInput
   /// [nested] is the nested object of the parameter.
   /// Only for [CommandPayloadDataType.nested]
   set nested(List<CommandPayloadDefinitionInput>? value);
+  @override
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  int? get maxQuantity;
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  set maxQuantity(int? value);
   @override
   @JsonKey(ignore: true)
   _$$CommandPayloadDefinitionInputImplCopyWith<

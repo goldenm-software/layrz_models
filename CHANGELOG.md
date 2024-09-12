@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.7
+
+- Added `maxQuantity` on Command definitions
+
 ## 3.2.6
 
 - Added new values on `CommandSource` enum

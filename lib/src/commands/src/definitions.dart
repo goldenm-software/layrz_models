@@ -41,6 +41,11 @@ class CommandPayloadDefinition with _$CommandPayloadDefinition {
     /// [nested] is the nested object of the parameter.
     /// Only for [CommandPayloadDataType.nested]
     List<CommandPayloadDefinition>? nested,
+
+    /// [maxQuantity] is the maximum quantity of the nested parameters.
+    ///
+    /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+    int? maxQuantity,
   }) = _CommandPayloadDefinition;
 
   factory CommandPayloadDefinition.fromJson(Map<String, dynamic> json) => _$CommandPayloadDefinitionFromJson(json);
@@ -87,6 +92,11 @@ class CommandPayloadDefinitionInput with _$CommandPayloadDefinitionInput {
     /// [nested] is the nested object of the parameter.
     /// Only for [CommandPayloadDataType.nested]
     List<CommandPayloadDefinitionInput>? nested,
+
+    /// [maxQuantity] is the maximum quantity of the nested parameters.
+    ///
+    /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+    int? maxQuantity,
   }) = _CommandPayloadDefinitionInput;
 
   factory CommandPayloadDefinitionInput.fromJson(Map<String, dynamic> json) =>
