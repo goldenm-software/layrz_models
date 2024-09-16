@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.8
+
+- Added `deviceConfig` to the `ConfIoTNamespace` enum.
+
 ## 3.2.7
 
 - Added `maxQuantity` on Command definitions
