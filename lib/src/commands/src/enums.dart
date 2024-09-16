@@ -1,13 +1,22 @@
 part of '../commands.dart';
 
 enum CommandSource {
-  /// The command was sent from the server through the protocol channel.
+  /// [CommandSource.protocolNative] refers to the command is a native command.
+  /// This command is sent from the server through the protocol channel and uses a native protocol.
+  ///
+  /// Layrz API Reference: `NATIVE`
   protocolNative,
 
-  /// The command was sent from the server through a External Account gateway.
+  /// [CommandSource.sms] refers to the command is a SMS command.
+  /// Uses an `ExternalAccount` with a supported SMS provider to send the command.
+  ///
+  /// Layrz API Reference: `SMS`
   sms,
 
-  /// The command was sent from the server through Portal MT APÏ.
+  /// [CommandSource.psg] refers to the command is a PSG command.
+  /// Uses the Portal MT APÏ to send the command.
+  ///
+  /// Layrz API Reference: `PSG`
   psg,
 
   /// [CommandSource.modbus] refers to the command is a modbus command.
@@ -15,6 +24,22 @@ enum CommandSource {
   ///
   /// Layrz API Reference: `MODBUS`
   modbus,
+
+  /// [CommandSource.ble] refers to the command is a Bluetooth Low Energy command.
+  /// This command is sent from the server through the protocol channel and uses a Bluetooth Low Energy protocol.
+  /// When this command is selected, the interface should handle the comm and the payload using the
+  /// protocol standard.
+  ///
+  /// Layrz API Reference: `BLE`
+  ble,
+
+  /// [CommandSource.serial] refers to the command is a Serial command.
+  /// This command is sent from the server through the protocol channel and uses a Serial protocol.
+  /// When this command is selected, the interface should handle the comm and the payload using the
+  /// protocol standard.
+  ///
+  /// Layrz API Reference: `SERIAL`
+  serial,
   ;
 
   @override
@@ -30,6 +55,10 @@ enum CommandSource {
         return 'PSG';
       case CommandSource.modbus:
         return 'MODBUS';
+      case CommandSource.ble:
+        return 'BLE';
+      case CommandSource.serial:
+        return 'SERIAL';
     }
   }
 
@@ -43,6 +72,10 @@ enum CommandSource {
         return CommandSource.psg;
       case 'MODBUS':
         return CommandSource.modbus;
+      case 'BLE':
+        return CommandSource.ble;
+      case 'SERIAL':
+        return CommandSource.serial;
     }
     throw ArgumentError('Invalid CommandSource: $json');
   }

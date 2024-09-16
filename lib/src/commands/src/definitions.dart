@@ -41,6 +41,11 @@ class CommandPayloadDefinition with _$CommandPayloadDefinition {
     /// [nested] is the nested object of the parameter.
     /// Only for [CommandPayloadDataType.nested]
     List<CommandPayloadDefinition>? nested,
+
+    /// [maxQuantity] is the maximum quantity of the nested parameters.
+    ///
+    /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+    int? maxQuantity,
   }) = _CommandPayloadDefinition;
 
   factory CommandPayloadDefinition.fromJson(Map<String, dynamic> json) => _$CommandPayloadDefinitionFromJson(json);
@@ -87,6 +92,11 @@ class CommandPayloadDefinitionInput with _$CommandPayloadDefinitionInput {
     /// [nested] is the nested object of the parameter.
     /// Only for [CommandPayloadDataType.nested]
     List<CommandPayloadDefinitionInput>? nested,
+
+    /// [maxQuantity] is the maximum quantity of the nested parameters.
+    ///
+    /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+    int? maxQuantity,
   }) = _CommandPayloadDefinitionInput;
 
   factory CommandPayloadDefinitionInput.fromJson(Map<String, dynamic> json) =>
@@ -103,7 +113,7 @@ class CommandDefinition with _$CommandDefinition {
     String? description,
 
     /// [source] is the source of the command.
-    @CommandDefinitionSourceConverter() required CommandDefinitionSource source,
+    @CommandDefinitionSourceConverter() required List<CommandDefinitionSource> sources,
 
     /// [payload] is the list of parameters of the command.
     required List<CommandPayloadDefinition> payload,
@@ -125,7 +135,7 @@ class CommandDefinitionInput with _$CommandDefinitionInput {
     @Default('') String description,
 
     /// [source] is the source of the command.
-    @CommandDefinitionSourceConverter() @Default(CommandDefinitionSource.layrzLink) CommandDefinitionSource source,
+    @CommandDefinitionSourceConverter() @Default([]) List<CommandDefinitionSource> sources,
 
     /// [payload] is the list of parameters of the command.
     @Default([]) List<CommandPayloadDefinitionInput> payload,

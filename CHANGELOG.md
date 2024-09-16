@@ -1,5 +1,29 @@
 # Changelog
 
+## 3.2.9
+
+-Changed `requiresPhoto` to `requiresPhotos` & `destinationWareHouseId` to `destinationWarehouseId`, field  `packageImage` deleted
+
+## 3.2.8
+
+- Added `deviceConfig` to the `ConfIoTNamespace` enum.
+
+## 3.2.7
+
+- Added `maxQuantity` on Command definitions
+
+## 3.2.6
+
+- Added new values on `CommandSource` enum
+
+## 3.2.5
+
+- Changed `source` to `sources` on `CommandPayloadDefinition` and `CommandPayloadDefinitionInput` models
+
+## 3.2.4
+
+- Added `configParams` to `Device` model
+
 ## 3.2.3
 
 - Added `OperationProductInformation` model

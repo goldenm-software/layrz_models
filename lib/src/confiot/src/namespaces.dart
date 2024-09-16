@@ -9,6 +9,11 @@ enum ConfIoTNamespace {
   /// Refers to the configuration definition, this defition is the loaded on the [InboundProtocol] and/or [Model]
   config,
 
+  /// [deviceConfig]  namespace
+  /// Refers to the device configuration definition, this configuration can only be handled by
+  /// ConfIoT official app.
+  deviceConfig,
+
   /// [unknown] namespace
   /// Refers to the unknown definition, when the file was editted wrong or the namespace is not defined
   unknown,
@@ -23,6 +28,8 @@ enum ConfIoTNamespace {
         return 'COMMANDS';
       case ConfIoTNamespace.config:
         return 'CONFIG';
+      case ConfIoTNamespace.deviceConfig:
+        return 'DEVICE_CONFIG';
       case ConfIoTNamespace.unknown:
       default:
         return 'UNKNOWN';
@@ -35,6 +42,8 @@ enum ConfIoTNamespace {
         return ConfIoTNamespace.commands;
       case 'CONFIG':
         return ConfIoTNamespace.config;
+      case 'DEVICE_CONFIG':
+        return ConfIoTNamespace.deviceConfig;
       case 'UNKNOWN':
       default:
         return ConfIoTNamespace.unknown;

@@ -13106,6 +13106,10 @@ mixin _$Device {
   /// [hwModelId] is the hardware model ID of the device.
   String? get hwModelId => throw _privateConstructorUsedError;
 
+  /// [configParams] is the configuration parameters received from the device, this information is
+  /// used to configure the device.
+  Map<String, dynamic>? get configParams => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $DeviceCopyWith<Device> get copyWith => throw _privateConstructorUsedError;
@@ -13137,7 +13141,8 @@ abstract class $DeviceCopyWith<$Res> {
       ModbusConfig? modbus,
       bool? isSuspended,
       HwModel? hwModel,
-      String? hwModelId});
+      String? hwModelId,
+      Map<String, dynamic>? configParams});
 
   $ModelCopyWith<$Res>? get model;
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -13182,6 +13187,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? isSuspended = freezed,
     Object? hwModel = freezed,
     Object? hwModelId = freezed,
+    Object? configParams = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -13268,6 +13274,10 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.hwModelId
           : hwModelId // ignore: cast_nullable_to_non_nullable
               as String?,
+      configParams: freezed == configParams
+          ? _value.configParams
+          : configParams // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -13384,7 +13394,8 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       ModbusConfig? modbus,
       bool? isSuspended,
       HwModel? hwModel,
-      String? hwModelId});
+      String? hwModelId,
+      Map<String, dynamic>? configParams});
 
   @override
   $ModelCopyWith<$Res>? get model;
@@ -13434,6 +13445,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? isSuspended = freezed,
     Object? hwModel = freezed,
     Object? hwModelId = freezed,
+    Object? configParams = freezed,
   }) {
     return _then(_$DeviceImpl(
       id: null == id
@@ -13520,6 +13532,10 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value.hwModelId
           : hwModelId // ignore: cast_nullable_to_non_nullable
               as String?,
+      configParams: freezed == configParams
+          ? _value._configParams
+          : configParams // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -13548,10 +13564,12 @@ class _$DeviceImpl implements _Device {
       this.modbus,
       this.isSuspended,
       this.hwModel,
-      this.hwModelId})
+      this.hwModelId,
+      final Map<String, dynamic>? configParams})
       : _additionalFields = additionalFields,
         _commands = commands,
-        _access = access;
+        _access = access,
+        _configParams = configParams;
 
   factory _$DeviceImpl.fromJson(Map<String, dynamic> json) =>
       _$$DeviceImplFromJson(json);
@@ -13667,9 +13685,24 @@ class _$DeviceImpl implements _Device {
   @override
   final String? hwModelId;
 
+  /// [configParams] is the configuration parameters received from the device, this information is
+  /// used to configure the device.
+  final Map<String, dynamic>? _configParams;
+
+  /// [configParams] is the configuration parameters received from the device, this information is
+  /// used to configure the device.
+  @override
+  Map<String, dynamic>? get configParams {
+    final value = _configParams;
+    if (value == null) return null;
+    if (_configParams is EqualUnmodifiableMapView) return _configParams;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId)';
+    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, configParams: $configParams)';
   }
 
   @override
@@ -13706,7 +13739,9 @@ class _$DeviceImpl implements _Device {
                 other.isSuspended == isSuspended) &&
             (identical(other.hwModel, hwModel) || other.hwModel == hwModel) &&
             (identical(other.hwModelId, hwModelId) ||
-                other.hwModelId == hwModelId));
+                other.hwModelId == hwModelId) &&
+            const DeepCollectionEquality()
+                .equals(other._configParams, _configParams));
   }
 
   @JsonKey(ignore: true)
@@ -13733,7 +13768,8 @@ class _$DeviceImpl implements _Device {
         modbus,
         isSuspended,
         hwModel,
-        hwModelId
+        hwModelId,
+        const DeepCollectionEquality().hash(_configParams)
       ]);
 
   @JsonKey(ignore: true)
@@ -13772,7 +13808,8 @@ abstract class _Device implements Device {
       final ModbusConfig? modbus,
       final bool? isSuspended,
       final HwModel? hwModel,
-      final String? hwModelId}) = _$DeviceImpl;
+      final String? hwModelId,
+      final Map<String, dynamic>? configParams}) = _$DeviceImpl;
 
   factory _Device.fromJson(Map<String, dynamic> json) = _$DeviceImpl.fromJson;
 
@@ -13859,6 +13896,11 @@ abstract class _Device implements Device {
 
   /// [hwModelId] is the hardware model ID of the device.
   String? get hwModelId;
+  @override
+
+  /// [configParams] is the configuration parameters received from the device, this information is
+  /// used to configure the device.
+  Map<String, dynamic>? get configParams;
   @override
   @JsonKey(ignore: true)
   _$$DeviceImplCopyWith<_$DeviceImpl> get copyWith =>

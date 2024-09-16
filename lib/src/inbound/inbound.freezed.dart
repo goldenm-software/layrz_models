@@ -3503,27 +3503,27 @@ mixin _$ConfigDefinition {
   ConfigPayloadDataType? get dataType => throw _privateConstructorUsedError;
 
   /// [minValue] is the minimum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   num? get minValue => throw _privateConstructorUsedError;
 
   /// [maxValue] is the maximum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   num? get maxValue => throw _privateConstructorUsedError;
 
   /// [minLength] is the minimum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   int? get minLength => throw _privateConstructorUsedError;
 
   /// [maxLength] is the maximum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   int? get maxLength => throw _privateConstructorUsedError;
 
   /// [choices] is the list of choices of the parameter.
-  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigPayloadDataType.choice]
   /// Only for [ConfigKind.param]
   List<String>? get choices => throw _privateConstructorUsedError;
 
@@ -3542,6 +3542,11 @@ mixin _$ConfigDefinition {
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   bool? get setupCapable => throw _privateConstructorUsedError;
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
+  int? get maxQuantity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3569,7 +3574,8 @@ abstract class $ConfigDefinitionCopyWith<$Res> {
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
       List<ConfigParameterEquivalence>? equivalences,
-      bool? setupCapable});
+      bool? setupCapable,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -3599,6 +3605,7 @@ class _$ConfigDefinitionCopyWithImpl<$Res, $Val extends ConfigDefinition>
     Object? regexPattern = freezed,
     Object? equivalences = freezed,
     Object? setupCapable = freezed,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_value.copyWith(
       kind: null == kind
@@ -3657,6 +3664,10 @@ class _$ConfigDefinitionCopyWithImpl<$Res, $Val extends ConfigDefinition>
           ? _value.setupCapable
           : setupCapable // ignore: cast_nullable_to_non_nullable
               as bool?,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -3683,7 +3694,8 @@ abstract class _$$ConfigDefinitionImplCopyWith<$Res>
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
       List<ConfigParameterEquivalence>? equivalences,
-      bool? setupCapable});
+      bool? setupCapable,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -3711,6 +3723,7 @@ class __$$ConfigDefinitionImplCopyWithImpl<$Res>
     Object? regexPattern = freezed,
     Object? equivalences = freezed,
     Object? setupCapable = freezed,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_$ConfigDefinitionImpl(
       kind: null == kind
@@ -3769,6 +3782,10 @@ class __$$ConfigDefinitionImplCopyWithImpl<$Res>
           ? _value.setupCapable
           : setupCapable // ignore: cast_nullable_to_non_nullable
               as bool?,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -3790,7 +3807,8 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
       final List<String>? choices,
       @RegExpOrNullConverter() this.regexPattern,
       final List<ConfigParameterEquivalence>? equivalences,
-      this.setupCapable})
+      this.setupCapable,
+      this.maxQuantity})
       : _parameters = parameters,
         _sources = sources,
         _choices = choices,
@@ -3860,36 +3878,36 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
   final ConfigPayloadDataType? dataType;
 
   /// [minValue] is the minimum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   @override
   final num? minValue;
 
   /// [maxValue] is the maximum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   @override
   final num? maxValue;
 
   /// [minLength] is the minimum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   @override
   final int? minLength;
 
   /// [maxLength] is the maximum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   @override
   final int? maxLength;
 
   /// [choices] is the list of choices of the parameter.
-  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigPayloadDataType.choice]
   /// Only for [ConfigKind.param]
   final List<String>? _choices;
 
   /// [choices] is the list of choices of the parameter.
-  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigPayloadDataType.choice]
   /// Only for [ConfigKind.param]
   @override
   List<String>? get choices {
@@ -3931,9 +3949,15 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
   @override
   final bool? setupCapable;
 
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
+  @override
+  final int? maxQuantity;
+
   @override
   String toString() {
-    return 'ConfigDefinition(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences, setupCapable: $setupCapable)';
+    return 'ConfigDefinition(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences, setupCapable: $setupCapable, maxQuantity: $maxQuantity)';
   }
 
   @override
@@ -3965,7 +3989,9 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
             const DeepCollectionEquality()
                 .equals(other._equivalences, _equivalences) &&
             (identical(other.setupCapable, setupCapable) ||
-                other.setupCapable == setupCapable));
+                other.setupCapable == setupCapable) &&
+            (identical(other.maxQuantity, maxQuantity) ||
+                other.maxQuantity == maxQuantity));
   }
 
   @JsonKey(ignore: true)
@@ -3985,7 +4011,8 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
       const DeepCollectionEquality().hash(_choices),
       regexPattern,
       const DeepCollectionEquality().hash(_equivalences),
-      setupCapable);
+      setupCapable,
+      maxQuantity);
 
   @JsonKey(ignore: true)
   @override
@@ -4017,7 +4044,8 @@ abstract class _ConfigDefinition implements ConfigDefinition {
       final List<String>? choices,
       @RegExpOrNullConverter() final RegExp? regexPattern,
       final List<ConfigParameterEquivalence>? equivalences,
-      final bool? setupCapable}) = _$ConfigDefinitionImpl;
+      final bool? setupCapable,
+      final int? maxQuantity}) = _$ConfigDefinitionImpl;
 
   factory _ConfigDefinition.fromJson(Map<String, dynamic> json) =
       _$ConfigDefinitionImpl.fromJson;
@@ -4064,31 +4092,31 @@ abstract class _ConfigDefinition implements ConfigDefinition {
   @override
 
   /// [minValue] is the minimum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   num? get minValue;
   @override
 
   /// [maxValue] is the maximum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   num? get maxValue;
   @override
 
   /// [minLength] is the minimum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   int? get minLength;
   @override
 
   /// [maxLength] is the maximum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   int? get maxLength;
   @override
 
   /// [choices] is the list of choices of the parameter.
-  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigPayloadDataType.choice]
   /// Only for [ConfigKind.param]
   List<String>? get choices;
   @override
@@ -4109,6 +4137,12 @@ abstract class _ConfigDefinition implements ConfigDefinition {
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   bool? get setupCapable;
+  @override
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
+  int? get maxQuantity;
   @override
   @JsonKey(ignore: true)
   _$$ConfigDefinitionImplCopyWith<_$ConfigDefinitionImpl> get copyWith =>
@@ -4377,52 +4411,52 @@ mixin _$ConfigDefinitionInput {
       throw _privateConstructorUsedError;
 
   /// [minValue] is the minimum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   num? get minValue => throw _privateConstructorUsedError;
 
   /// [minValue] is the minimum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   set minValue(num? value) => throw _privateConstructorUsedError;
 
   /// [maxValue] is the maximum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   num? get maxValue => throw _privateConstructorUsedError;
 
   /// [maxValue] is the maximum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   set maxValue(num? value) => throw _privateConstructorUsedError;
 
   /// [minLength] is the minimum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   int? get minLength => throw _privateConstructorUsedError;
 
   /// [minLength] is the minimum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   set minLength(int? value) => throw _privateConstructorUsedError;
 
   /// [maxLength] is the maximum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   int? get maxLength => throw _privateConstructorUsedError;
 
   /// [maxLength] is the maximum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   set maxLength(int? value) => throw _privateConstructorUsedError;
 
   /// [choices] is the list of choices of the parameter.
-  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigPayloadDataType.choice]
   /// Only for [ConfigKind.param]
   List<String>? get choices => throw _privateConstructorUsedError;
 
   /// [choices] is the list of choices of the parameter.
-  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigPayloadDataType.choice]
   /// Only for [ConfigKind.param]
   set choices(List<String>? value) => throw _privateConstructorUsedError;
 
@@ -4458,6 +4492,16 @@ mixin _$ConfigDefinitionInput {
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   set setupCapable(bool value) => throw _privateConstructorUsedError;
 
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
+  int? get maxQuantity => throw _privateConstructorUsedError;
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
+  set maxQuantity(int? value) => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ConfigDefinitionInputCopyWith<ConfigDefinitionInput> get copyWith =>
@@ -4484,7 +4528,8 @@ abstract class $ConfigDefinitionInputCopyWith<$Res> {
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
       List<ConfigParameterEquivalenceInput>? equivalences,
-      bool setupCapable});
+      bool setupCapable,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -4515,6 +4560,7 @@ class _$ConfigDefinitionInputCopyWithImpl<$Res,
     Object? regexPattern = freezed,
     Object? equivalences = freezed,
     Object? setupCapable = null,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_value.copyWith(
       kind: null == kind
@@ -4573,6 +4619,10 @@ class _$ConfigDefinitionInputCopyWithImpl<$Res,
           ? _value.setupCapable
           : setupCapable // ignore: cast_nullable_to_non_nullable
               as bool,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -4600,7 +4650,8 @@ abstract class _$$ConfigDefinitionInputImplCopyWith<$Res>
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
       List<ConfigParameterEquivalenceInput>? equivalences,
-      bool setupCapable});
+      bool setupCapable,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -4629,6 +4680,7 @@ class __$$ConfigDefinitionInputImplCopyWithImpl<$Res>
     Object? regexPattern = freezed,
     Object? equivalences = freezed,
     Object? setupCapable = null,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_$ConfigDefinitionInputImpl(
       kind: null == kind
@@ -4687,6 +4739,10 @@ class __$$ConfigDefinitionInputImplCopyWithImpl<$Res>
           ? _value.setupCapable
           : setupCapable // ignore: cast_nullable_to_non_nullable
               as bool,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -4708,7 +4764,8 @@ class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
       this.choices,
       @RegExpOrNullConverter() this.regexPattern,
       this.equivalences,
-      this.setupCapable = false});
+      this.setupCapable = false,
+      this.maxQuantity});
 
   factory _$ConfigDefinitionInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConfigDefinitionInputImplFromJson(json);
@@ -4755,31 +4812,31 @@ class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
   ConfigPayloadDataType? dataType;
 
   /// [minValue] is the minimum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   @override
   num? minValue;
 
   /// [maxValue] is the maximum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   @override
   num? maxValue;
 
   /// [minLength] is the minimum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   @override
   int? minLength;
 
   /// [maxLength] is the maximum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   @override
   int? maxLength;
 
   /// [choices] is the list of choices of the parameter.
-  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigPayloadDataType.choice]
   /// Only for [ConfigKind.param]
   @override
   List<String>? choices;
@@ -4803,9 +4860,15 @@ class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
   @JsonKey()
   bool setupCapable;
 
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
+  @override
+  int? maxQuantity;
+
   @override
   String toString() {
-    return 'ConfigDefinitionInput(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences, setupCapable: $setupCapable)';
+    return 'ConfigDefinitionInput(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences, setupCapable: $setupCapable, maxQuantity: $maxQuantity)';
   }
 
   @JsonKey(ignore: true)
@@ -4838,7 +4901,8 @@ abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
       List<ConfigParameterEquivalenceInput>? equivalences,
-      bool setupCapable}) = _$ConfigDefinitionInputImpl;
+      bool setupCapable,
+      int? maxQuantity}) = _$ConfigDefinitionInputImpl;
 
   factory _ConfigDefinitionInput.fromJson(Map<String, dynamic> json) =
       _$ConfigDefinitionInputImpl.fromJson;
@@ -4918,56 +4982,56 @@ abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
   @override
 
   /// [minValue] is the minimum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   num? get minValue;
 
   /// [minValue] is the minimum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   set minValue(num? value);
   @override
 
   /// [maxValue] is the maximum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   num? get maxValue;
 
   /// [maxValue] is the maximum value of the parameter.
-  /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   /// Only for [ConfigKind.param]
   set maxValue(num? value);
   @override
 
   /// [minLength] is the minimum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   int? get minLength;
 
   /// [minLength] is the minimum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   set minLength(int? value);
   @override
 
   /// [maxLength] is the maximum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   int? get maxLength;
 
   /// [maxLength] is the maximum length of the parameter.
-  /// Only for [CommandPayloadDataType.string]
+  /// Only for [ConfigPayloadDataType.string]
   /// Only for [ConfigKind.param]
   set maxLength(int? value);
   @override
 
   /// [choices] is the list of choices of the parameter.
-  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigPayloadDataType.choice]
   /// Only for [ConfigKind.param]
   List<String>? get choices;
 
   /// [choices] is the list of choices of the parameter.
-  /// Only for [CommandPayloadDataType.choice]
+  /// Only for [ConfigPayloadDataType.choice]
   /// Only for [ConfigKind.param]
   set choices(List<String>? value);
   @override
@@ -5003,6 +5067,17 @@ abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   set setupCapable(bool value);
+  @override
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
+  int? get maxQuantity;
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
+  set maxQuantity(int? value);
   @override
   @JsonKey(ignore: true)
   _$$ConfigDefinitionInputImplCopyWith<_$ConfigDefinitionInputImpl>

@@ -50,27 +50,27 @@ class ConfigDefinition with _$ConfigDefinition {
     @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
 
     /// [minValue] is the minimum value of the parameter.
-    /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+    /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
     /// Only for [ConfigKind.param]
     num? minValue,
 
     /// [maxValue] is the maximum value of the parameter.
-    /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+    /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
     /// Only for [ConfigKind.param]
     num? maxValue,
 
     /// [minLength] is the minimum length of the parameter.
-    /// Only for [CommandPayloadDataType.string]
+    /// Only for [ConfigPayloadDataType.string]
     /// Only for [ConfigKind.param]
     int? minLength,
 
     /// [maxLength] is the maximum length of the parameter.
-    /// Only for [CommandPayloadDataType.string]
+    /// Only for [ConfigPayloadDataType.string]
     /// Only for [ConfigKind.param]
     int? maxLength,
 
     /// [choices] is the list of choices of the parameter.
-    /// Only for [CommandPayloadDataType.choice]
+    /// Only for [ConfigPayloadDataType.choice]
     /// Only for [ConfigKind.param]
     List<String>? choices,
 
@@ -87,6 +87,11 @@ class ConfigDefinition with _$ConfigDefinition {
 
     /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
     bool? setupCapable,
+
+    /// [maxQuantity] is the maximum quantity of the nested parameters.
+    ///
+    /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
+    int? maxQuantity,
   }) = _ConfigDefinition;
 
   factory ConfigDefinition.fromJson(Map<String, dynamic> json) => _$ConfigDefinitionFromJson(json);
@@ -140,27 +145,27 @@ class ConfigDefinitionInput with _$ConfigDefinitionInput {
     @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
 
     /// [minValue] is the minimum value of the parameter.
-    /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+    /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
     /// Only for [ConfigKind.param]
     num? minValue,
 
     /// [maxValue] is the maximum value of the parameter.
-    /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+    /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
     /// Only for [ConfigKind.param]
     num? maxValue,
 
     /// [minLength] is the minimum length of the parameter.
-    /// Only for [CommandPayloadDataType.string]
+    /// Only for [ConfigPayloadDataType.string]
     /// Only for [ConfigKind.param]
     int? minLength,
 
     /// [maxLength] is the maximum length of the parameter.
-    /// Only for [CommandPayloadDataType.string]
+    /// Only for [ConfigPayloadDataType.string]
     /// Only for [ConfigKind.param]
     int? maxLength,
 
     /// [choices] is the list of choices of the parameter.
-    /// Only for [CommandPayloadDataType.choice]
+    /// Only for [ConfigPayloadDataType.choice]
     /// Only for [ConfigKind.param]
     List<String>? choices,
 
@@ -177,6 +182,11 @@ class ConfigDefinitionInput with _$ConfigDefinitionInput {
 
     /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
     @Default(false) bool setupCapable,
+
+    /// [maxQuantity] is the maximum quantity of the nested parameters.
+    ///
+    /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
+    int? maxQuantity,
   }) = _ConfigDefinitionInput;
 
   factory ConfigDefinitionInput.fromJson(Map<String, dynamic> json) => _$ConfigDefinitionInputFromJson(json);

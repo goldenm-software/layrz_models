@@ -3456,10 +3456,10 @@ mixin _$TenvioOrderInput {
   set newCustomer(CustomerInput? value) => throw _privateConstructorUsedError;
 
   /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
-  String? get destinationWareHouseId => throw _privateConstructorUsedError;
+  String? get destinationWarehouseId => throw _privateConstructorUsedError;
 
   /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
-  set destinationWareHouseId(String? value) =>
+  set destinationWarehouseId(String? value) =>
       throw _privateConstructorUsedError;
 
   /// [warehouseId] ID of the warehouse where the order is located.
@@ -3483,16 +3483,10 @@ mixin _$TenvioOrderInput {
   set notes(List<String> value) => throw _privateConstructorUsedError;
 
   /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
-  bool? get requiresPhoto => throw _privateConstructorUsedError;
+  bool? get requiresPhotos => throw _privateConstructorUsedError;
 
   /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
-  set requiresPhoto(bool? value) => throw _privateConstructorUsedError;
-
-  /// [packageImage] URL of the packed image.
-  bool? get packageImage => throw _privateConstructorUsedError;
-
-  /// [packageImage] URL of the packed image.
-  set packageImage(bool? value) => throw _privateConstructorUsedError;
+  set requiresPhotos(bool? value) => throw _privateConstructorUsedError;
 
   /// [items] Items included in the order.
   List<TenvioItemQuantityInput>? get items =>
@@ -3518,12 +3512,11 @@ abstract class $TenvioOrderInputCopyWith<$Res> {
       {String? id,
       String? customerId,
       CustomerInput? newCustomer,
-      String? destinationWareHouseId,
+      String? destinationWarehouseId,
       String? warehouseId,
       @TenvioOrderStatusConverter() TenvioOrderStatus status,
       List<String> notes,
-      bool? requiresPhoto,
-      bool? packageImage,
+      bool? requiresPhotos,
       List<TenvioItemQuantityInput>? items});
 
   $CustomerInputCopyWith<$Res>? get newCustomer;
@@ -3545,12 +3538,11 @@ class _$TenvioOrderInputCopyWithImpl<$Res, $Val extends TenvioOrderInput>
     Object? id = freezed,
     Object? customerId = freezed,
     Object? newCustomer = freezed,
-    Object? destinationWareHouseId = freezed,
+    Object? destinationWarehouseId = freezed,
     Object? warehouseId = freezed,
     Object? status = null,
     Object? notes = null,
-    Object? requiresPhoto = freezed,
-    Object? packageImage = freezed,
+    Object? requiresPhotos = freezed,
     Object? items = freezed,
   }) {
     return _then(_value.copyWith(
@@ -3566,9 +3558,9 @@ class _$TenvioOrderInputCopyWithImpl<$Res, $Val extends TenvioOrderInput>
           ? _value.newCustomer
           : newCustomer // ignore: cast_nullable_to_non_nullable
               as CustomerInput?,
-      destinationWareHouseId: freezed == destinationWareHouseId
-          ? _value.destinationWareHouseId
-          : destinationWareHouseId // ignore: cast_nullable_to_non_nullable
+      destinationWarehouseId: freezed == destinationWarehouseId
+          ? _value.destinationWarehouseId
+          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
               as String?,
       warehouseId: freezed == warehouseId
           ? _value.warehouseId
@@ -3582,13 +3574,9 @@ class _$TenvioOrderInputCopyWithImpl<$Res, $Val extends TenvioOrderInput>
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      requiresPhoto: freezed == requiresPhoto
-          ? _value.requiresPhoto
-          : requiresPhoto // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      packageImage: freezed == packageImage
-          ? _value.packageImage
-          : packageImage // ignore: cast_nullable_to_non_nullable
+      requiresPhotos: freezed == requiresPhotos
+          ? _value.requiresPhotos
+          : requiresPhotos // ignore: cast_nullable_to_non_nullable
               as bool?,
       items: freezed == items
           ? _value.items
@@ -3622,12 +3610,11 @@ abstract class _$$TenvioOrderInputImplCopyWith<$Res>
       {String? id,
       String? customerId,
       CustomerInput? newCustomer,
-      String? destinationWareHouseId,
+      String? destinationWarehouseId,
       String? warehouseId,
       @TenvioOrderStatusConverter() TenvioOrderStatus status,
       List<String> notes,
-      bool? requiresPhoto,
-      bool? packageImage,
+      bool? requiresPhotos,
       List<TenvioItemQuantityInput>? items});
 
   @override
@@ -3648,12 +3635,11 @@ class __$$TenvioOrderInputImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? customerId = freezed,
     Object? newCustomer = freezed,
-    Object? destinationWareHouseId = freezed,
+    Object? destinationWarehouseId = freezed,
     Object? warehouseId = freezed,
     Object? status = null,
     Object? notes = null,
-    Object? requiresPhoto = freezed,
-    Object? packageImage = freezed,
+    Object? requiresPhotos = freezed,
     Object? items = freezed,
   }) {
     return _then(_$TenvioOrderInputImpl(
@@ -3669,9 +3655,9 @@ class __$$TenvioOrderInputImplCopyWithImpl<$Res>
           ? _value.newCustomer
           : newCustomer // ignore: cast_nullable_to_non_nullable
               as CustomerInput?,
-      destinationWareHouseId: freezed == destinationWareHouseId
-          ? _value.destinationWareHouseId
-          : destinationWareHouseId // ignore: cast_nullable_to_non_nullable
+      destinationWarehouseId: freezed == destinationWarehouseId
+          ? _value.destinationWarehouseId
+          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
               as String?,
       warehouseId: freezed == warehouseId
           ? _value.warehouseId
@@ -3685,13 +3671,9 @@ class __$$TenvioOrderInputImplCopyWithImpl<$Res>
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      requiresPhoto: freezed == requiresPhoto
-          ? _value.requiresPhoto
-          : requiresPhoto // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      packageImage: freezed == packageImage
-          ? _value.packageImage
-          : packageImage // ignore: cast_nullable_to_non_nullable
+      requiresPhotos: freezed == requiresPhotos
+          ? _value.requiresPhotos
+          : requiresPhotos // ignore: cast_nullable_to_non_nullable
               as bool?,
       items: freezed == items
           ? _value.items
@@ -3708,12 +3690,11 @@ class _$TenvioOrderInputImpl implements _TenvioOrderInput {
       {this.id,
       this.customerId,
       this.newCustomer,
-      this.destinationWareHouseId,
+      this.destinationWarehouseId,
       this.warehouseId,
       @TenvioOrderStatusConverter() required this.status,
       this.notes = const [],
-      this.requiresPhoto,
-      this.packageImage,
+      this.requiresPhotos,
       this.items});
 
   factory _$TenvioOrderInputImpl.fromJson(Map<String, dynamic> json) =>
@@ -3733,7 +3714,7 @@ class _$TenvioOrderInputImpl implements _TenvioOrderInput {
 
   /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
   @override
-  String? destinationWareHouseId;
+  String? destinationWarehouseId;
 
   /// [warehouseId] ID of the warehouse where the order is located.
   @override
@@ -3751,11 +3732,7 @@ class _$TenvioOrderInputImpl implements _TenvioOrderInput {
 
   /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
   @override
-  bool? requiresPhoto;
-
-  /// [packageImage] URL of the packed image.
-  @override
-  bool? packageImage;
+  bool? requiresPhotos;
 
   /// [items] Items included in the order.
   @override
@@ -3763,7 +3740,7 @@ class _$TenvioOrderInputImpl implements _TenvioOrderInput {
 
   @override
   String toString() {
-    return 'TenvioOrderInput(id: $id, customerId: $customerId, newCustomer: $newCustomer, destinationWareHouseId: $destinationWareHouseId, warehouseId: $warehouseId, status: $status, notes: $notes, requiresPhoto: $requiresPhoto, packageImage: $packageImage, items: $items)';
+    return 'TenvioOrderInput(id: $id, customerId: $customerId, newCustomer: $newCustomer, destinationWarehouseId: $destinationWarehouseId, warehouseId: $warehouseId, status: $status, notes: $notes, requiresPhotos: $requiresPhotos, items: $items)';
   }
 
   @JsonKey(ignore: true)
@@ -3786,12 +3763,11 @@ abstract class _TenvioOrderInput implements TenvioOrderInput {
       {String? id,
       String? customerId,
       CustomerInput? newCustomer,
-      String? destinationWareHouseId,
+      String? destinationWarehouseId,
       String? warehouseId,
       @TenvioOrderStatusConverter() required TenvioOrderStatus status,
       List<String> notes,
-      bool? requiresPhoto,
-      bool? packageImage,
+      bool? requiresPhotos,
       List<TenvioItemQuantityInput>? items}) = _$TenvioOrderInputImpl;
 
   factory _TenvioOrderInput.fromJson(Map<String, dynamic> json) =
@@ -3821,10 +3797,10 @@ abstract class _TenvioOrderInput implements TenvioOrderInput {
   @override
 
   /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
-  String? get destinationWareHouseId;
+  String? get destinationWarehouseId;
 
   /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
-  set destinationWareHouseId(String? value);
+  set destinationWarehouseId(String? value);
   @override
 
   /// [warehouseId] ID of the warehouse where the order is located.
@@ -3851,17 +3827,10 @@ abstract class _TenvioOrderInput implements TenvioOrderInput {
   @override
 
   /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
-  bool? get requiresPhoto;
+  bool? get requiresPhotos;
 
   /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
-  set requiresPhoto(bool? value);
-  @override
-
-  /// [packageImage] URL of the packed image.
-  bool? get packageImage;
-
-  /// [packageImage] URL of the packed image.
-  set packageImage(bool? value);
+  set requiresPhotos(bool? value);
   @override
 
   /// [items] Items included in the order.

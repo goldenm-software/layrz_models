@@ -1757,6 +1757,11 @@ mixin _$CommandPayloadDefinition {
   List<CommandPayloadDefinition>? get nested =>
       throw _privateConstructorUsedError;
 
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  int? get maxQuantity => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CommandPayloadDefinitionCopyWith<CommandPayloadDefinition> get copyWith =>
@@ -1780,7 +1785,8 @@ abstract class $CommandPayloadDefinitionCopyWith<$Res> {
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<CommandPayloadDefinition>? nested});
+      List<CommandPayloadDefinition>? nested,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -1808,6 +1814,7 @@ class _$CommandPayloadDefinitionCopyWithImpl<$Res,
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? nested = freezed,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_value.copyWith(
       parameter: null == parameter
@@ -1854,6 +1861,10 @@ class _$CommandPayloadDefinitionCopyWithImpl<$Res,
           ? _value.nested
           : nested // ignore: cast_nullable_to_non_nullable
               as List<CommandPayloadDefinition>?,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -1878,7 +1889,8 @@ abstract class _$$CommandPayloadDefinitionImplCopyWith<$Res>
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<CommandPayloadDefinition>? nested});
+      List<CommandPayloadDefinition>? nested,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -1905,6 +1917,7 @@ class __$$CommandPayloadDefinitionImplCopyWithImpl<$Res>
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? nested = freezed,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_$CommandPayloadDefinitionImpl(
       parameter: null == parameter
@@ -1951,6 +1964,10 @@ class __$$CommandPayloadDefinitionImplCopyWithImpl<$Res>
           ? _value._nested
           : nested // ignore: cast_nullable_to_non_nullable
               as List<CommandPayloadDefinition>?,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -1969,7 +1986,8 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
       this.maxLength,
       final List<String>? choices,
       @RegExpOrNullConverter() this.regexPattern,
-      final List<CommandPayloadDefinition>? nested})
+      final List<CommandPayloadDefinition>? nested,
+      this.maxQuantity})
       : _choices = choices,
         _nested = nested;
 
@@ -2048,9 +2066,15 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  @override
+  final int? maxQuantity;
+
   @override
   String toString() {
-    return 'CommandPayloadDefinition(parameter: $parameter, description: $description, dataType: $dataType, isRequired: $isRequired, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, nested: $nested)';
+    return 'CommandPayloadDefinition(parameter: $parameter, description: $description, dataType: $dataType, isRequired: $isRequired, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, nested: $nested, maxQuantity: $maxQuantity)';
   }
 
   @override
@@ -2077,7 +2101,9 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
             const DeepCollectionEquality().equals(other._choices, _choices) &&
             (identical(other.regexPattern, regexPattern) ||
                 other.regexPattern == regexPattern) &&
-            const DeepCollectionEquality().equals(other._nested, _nested));
+            const DeepCollectionEquality().equals(other._nested, _nested) &&
+            (identical(other.maxQuantity, maxQuantity) ||
+                other.maxQuantity == maxQuantity));
   }
 
   @JsonKey(ignore: true)
@@ -2094,7 +2120,8 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
       maxLength,
       const DeepCollectionEquality().hash(_choices),
       regexPattern,
-      const DeepCollectionEquality().hash(_nested));
+      const DeepCollectionEquality().hash(_nested),
+      maxQuantity);
 
   @JsonKey(ignore: true)
   @override
@@ -2113,19 +2140,19 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
 
 abstract class _CommandPayloadDefinition implements CommandPayloadDefinition {
   const factory _CommandPayloadDefinition(
-          {required final String parameter,
-          final String? description,
-          @CommandPayloadDataTypeConverter()
-          required final CommandPayloadDataType dataType,
-          final bool? isRequired,
-          final num? minValue,
-          final num? maxValue,
-          final int? minLength,
-          final int? maxLength,
-          final List<String>? choices,
-          @RegExpOrNullConverter() final RegExp? regexPattern,
-          final List<CommandPayloadDefinition>? nested}) =
-      _$CommandPayloadDefinitionImpl;
+      {required final String parameter,
+      final String? description,
+      @CommandPayloadDataTypeConverter()
+      required final CommandPayloadDataType dataType,
+      final bool? isRequired,
+      final num? minValue,
+      final num? maxValue,
+      final int? minLength,
+      final int? maxLength,
+      final List<String>? choices,
+      @RegExpOrNullConverter() final RegExp? regexPattern,
+      final List<CommandPayloadDefinition>? nested,
+      final int? maxQuantity}) = _$CommandPayloadDefinitionImpl;
 
   factory _CommandPayloadDefinition.fromJson(Map<String, dynamic> json) =
       _$CommandPayloadDefinitionImpl.fromJson;
@@ -2182,6 +2209,12 @@ abstract class _CommandPayloadDefinition implements CommandPayloadDefinition {
   /// [nested] is the nested object of the parameter.
   /// Only for [CommandPayloadDataType.nested]
   List<CommandPayloadDefinition>? get nested;
+  @override
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  int? get maxQuantity;
   @override
   @JsonKey(ignore: true)
   _$$CommandPayloadDefinitionImplCopyWith<_$CommandPayloadDefinitionImpl>
@@ -2280,6 +2313,16 @@ mixin _$CommandPayloadDefinitionInput {
   set nested(List<CommandPayloadDefinitionInput>? value) =>
       throw _privateConstructorUsedError;
 
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  int? get maxQuantity => throw _privateConstructorUsedError;
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  set maxQuantity(int? value) => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CommandPayloadDefinitionInputCopyWith<CommandPayloadDefinitionInput>
@@ -2305,7 +2348,8 @@ abstract class $CommandPayloadDefinitionInputCopyWith<$Res> {
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<CommandPayloadDefinitionInput>? nested});
+      List<CommandPayloadDefinitionInput>? nested,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -2333,6 +2377,7 @@ class _$CommandPayloadDefinitionInputCopyWithImpl<$Res,
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? nested = freezed,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_value.copyWith(
       parameter: null == parameter
@@ -2379,6 +2424,10 @@ class _$CommandPayloadDefinitionInputCopyWithImpl<$Res,
           ? _value.nested
           : nested // ignore: cast_nullable_to_non_nullable
               as List<CommandPayloadDefinitionInput>?,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ) as $Val);
   }
 }
@@ -2403,7 +2452,8 @@ abstract class _$$CommandPayloadDefinitionInputImplCopyWith<$Res>
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<CommandPayloadDefinitionInput>? nested});
+      List<CommandPayloadDefinitionInput>? nested,
+      int? maxQuantity});
 }
 
 /// @nodoc
@@ -2430,6 +2480,7 @@ class __$$CommandPayloadDefinitionInputImplCopyWithImpl<$Res>
     Object? choices = freezed,
     Object? regexPattern = freezed,
     Object? nested = freezed,
+    Object? maxQuantity = freezed,
   }) {
     return _then(_$CommandPayloadDefinitionInputImpl(
       parameter: null == parameter
@@ -2476,6 +2527,10 @@ class __$$CommandPayloadDefinitionInputImplCopyWithImpl<$Res>
           ? _value.nested
           : nested // ignore: cast_nullable_to_non_nullable
               as List<CommandPayloadDefinitionInput>?,
+      maxQuantity: freezed == maxQuantity
+          ? _value.maxQuantity
+          : maxQuantity // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -2496,7 +2551,8 @@ class _$CommandPayloadDefinitionInputImpl
       this.maxLength,
       this.choices,
       @RegExpOrNullConverter() this.regexPattern,
-      this.nested});
+      this.nested,
+      this.maxQuantity});
 
   factory _$CommandPayloadDefinitionInputImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -2558,9 +2614,15 @@ class _$CommandPayloadDefinitionInputImpl
   @override
   List<CommandPayloadDefinitionInput>? nested;
 
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  @override
+  int? maxQuantity;
+
   @override
   String toString() {
-    return 'CommandPayloadDefinitionInput(parameter: $parameter, description: $description, dataType: $dataType, isRequired: $isRequired, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, nested: $nested)';
+    return 'CommandPayloadDefinitionInput(parameter: $parameter, description: $description, dataType: $dataType, isRequired: $isRequired, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, nested: $nested, maxQuantity: $maxQuantity)';
   }
 
   @JsonKey(ignore: true)
@@ -2582,18 +2644,18 @@ class _$CommandPayloadDefinitionInputImpl
 abstract class _CommandPayloadDefinitionInput
     implements CommandPayloadDefinitionInput {
   factory _CommandPayloadDefinitionInput(
-          {String parameter,
-          String description,
-          @CommandPayloadDataTypeConverter() CommandPayloadDataType dataType,
-          bool isRequired,
-          num? minValue,
-          num? maxValue,
-          int? minLength,
-          int? maxLength,
-          List<String>? choices,
-          @RegExpOrNullConverter() RegExp? regexPattern,
-          List<CommandPayloadDefinitionInput>? nested}) =
-      _$CommandPayloadDefinitionInputImpl;
+      {String parameter,
+      String description,
+      @CommandPayloadDataTypeConverter() CommandPayloadDataType dataType,
+      bool isRequired,
+      num? minValue,
+      num? maxValue,
+      int? minLength,
+      int? maxLength,
+      List<String>? choices,
+      @RegExpOrNullConverter() RegExp? regexPattern,
+      List<CommandPayloadDefinitionInput>? nested,
+      int? maxQuantity}) = _$CommandPayloadDefinitionInputImpl;
 
   factory _CommandPayloadDefinitionInput.fromJson(Map<String, dynamic> json) =
       _$CommandPayloadDefinitionInputImpl.fromJson;
@@ -2692,6 +2754,17 @@ abstract class _CommandPayloadDefinitionInput
   /// Only for [CommandPayloadDataType.nested]
   set nested(List<CommandPayloadDefinitionInput>? value);
   @override
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  int? get maxQuantity;
+
+  /// [maxQuantity] is the maximum quantity of the nested parameters.
+  ///
+  /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  set maxQuantity(int? value);
+  @override
   @JsonKey(ignore: true)
   _$$CommandPayloadDefinitionInputImplCopyWith<
           _$CommandPayloadDefinitionInputImpl>
@@ -2712,7 +2785,8 @@ mixin _$CommandDefinition {
 
   /// [source] is the source of the command.
   @CommandDefinitionSourceConverter()
-  CommandDefinitionSource get source => throw _privateConstructorUsedError;
+  List<CommandDefinitionSource> get sources =>
+      throw _privateConstructorUsedError;
 
   /// [payload] is the list of parameters of the command.
   List<CommandPayloadDefinition> get payload =>
@@ -2736,7 +2810,7 @@ abstract class $CommandDefinitionCopyWith<$Res> {
   $Res call(
       {String name,
       String? description,
-      @CommandDefinitionSourceConverter() CommandDefinitionSource source,
+      @CommandDefinitionSourceConverter() List<CommandDefinitionSource> sources,
       List<CommandPayloadDefinition> payload,
       String? translationKey});
 }
@@ -2756,7 +2830,7 @@ class _$CommandDefinitionCopyWithImpl<$Res, $Val extends CommandDefinition>
   $Res call({
     Object? name = null,
     Object? description = freezed,
-    Object? source = null,
+    Object? sources = null,
     Object? payload = null,
     Object? translationKey = freezed,
   }) {
@@ -2769,10 +2843,10 @@ class _$CommandDefinitionCopyWithImpl<$Res, $Val extends CommandDefinition>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as CommandDefinitionSource,
+      sources: null == sources
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinitionSource>,
       payload: null == payload
           ? _value.payload
           : payload // ignore: cast_nullable_to_non_nullable
@@ -2796,7 +2870,7 @@ abstract class _$$CommandDefinitionImplCopyWith<$Res>
   $Res call(
       {String name,
       String? description,
-      @CommandDefinitionSourceConverter() CommandDefinitionSource source,
+      @CommandDefinitionSourceConverter() List<CommandDefinitionSource> sources,
       List<CommandPayloadDefinition> payload,
       String? translationKey});
 }
@@ -2814,7 +2888,7 @@ class __$$CommandDefinitionImplCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
     Object? description = freezed,
-    Object? source = null,
+    Object? sources = null,
     Object? payload = null,
     Object? translationKey = freezed,
   }) {
@@ -2827,10 +2901,10 @@ class __$$CommandDefinitionImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as CommandDefinitionSource,
+      sources: null == sources
+          ? _value._sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinitionSource>,
       payload: null == payload
           ? _value._payload
           : payload // ignore: cast_nullable_to_non_nullable
@@ -2849,10 +2923,12 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
   const _$CommandDefinitionImpl(
       {required this.name,
       this.description,
-      @CommandDefinitionSourceConverter() required this.source,
+      @CommandDefinitionSourceConverter()
+      required final List<CommandDefinitionSource> sources,
       required final List<CommandPayloadDefinition> payload,
       this.translationKey})
-      : _payload = payload;
+      : _sources = sources,
+        _payload = payload;
 
   factory _$CommandDefinitionImpl.fromJson(Map<String, dynamic> json) =>
       _$$CommandDefinitionImplFromJson(json);
@@ -2866,9 +2942,16 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
   final String? description;
 
   /// [source] is the source of the command.
+  final List<CommandDefinitionSource> _sources;
+
+  /// [source] is the source of the command.
   @override
   @CommandDefinitionSourceConverter()
-  final CommandDefinitionSource source;
+  List<CommandDefinitionSource> get sources {
+    if (_sources is EqualUnmodifiableListView) return _sources;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_sources);
+  }
 
   /// [payload] is the list of parameters of the command.
   final List<CommandPayloadDefinition> _payload;
@@ -2887,7 +2970,7 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
 
   @override
   String toString() {
-    return 'CommandDefinition(name: $name, description: $description, source: $source, payload: $payload, translationKey: $translationKey)';
+    return 'CommandDefinition(name: $name, description: $description, sources: $sources, payload: $payload, translationKey: $translationKey)';
   }
 
   @override
@@ -2898,7 +2981,7 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.source, source) || other.source == source) &&
+            const DeepCollectionEquality().equals(other._sources, _sources) &&
             const DeepCollectionEquality().equals(other._payload, _payload) &&
             (identical(other.translationKey, translationKey) ||
                 other.translationKey == translationKey));
@@ -2906,8 +2989,13 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, description, source,
-      const DeepCollectionEquality().hash(_payload), translationKey);
+  int get hashCode => Object.hash(
+      runtimeType,
+      name,
+      description,
+      const DeepCollectionEquality().hash(_sources),
+      const DeepCollectionEquality().hash(_payload),
+      translationKey);
 
   @JsonKey(ignore: true)
   @override
@@ -2929,7 +3017,7 @@ abstract class _CommandDefinition implements CommandDefinition {
       {required final String name,
       final String? description,
       @CommandDefinitionSourceConverter()
-      required final CommandDefinitionSource source,
+      required final List<CommandDefinitionSource> sources,
       required final List<CommandPayloadDefinition> payload,
       final String? translationKey}) = _$CommandDefinitionImpl;
 
@@ -2948,7 +3036,7 @@ abstract class _CommandDefinition implements CommandDefinition {
 
   /// [source] is the source of the command.
   @CommandDefinitionSourceConverter()
-  CommandDefinitionSource get source;
+  List<CommandDefinitionSource> get sources;
   @override
 
   /// [payload] is the list of parameters of the command.
@@ -2984,11 +3072,12 @@ mixin _$CommandDefinitionInput {
 
   /// [source] is the source of the command.
   @CommandDefinitionSourceConverter()
-  CommandDefinitionSource get source => throw _privateConstructorUsedError;
+  List<CommandDefinitionSource> get sources =>
+      throw _privateConstructorUsedError;
 
   /// [source] is the source of the command.
   @CommandDefinitionSourceConverter()
-  set source(CommandDefinitionSource value) =>
+  set sources(List<CommandDefinitionSource> value) =>
       throw _privateConstructorUsedError;
 
   /// [payload] is the list of parameters of the command.
@@ -3014,7 +3103,7 @@ abstract class $CommandDefinitionInputCopyWith<$Res> {
   $Res call(
       {String name,
       String description,
-      @CommandDefinitionSourceConverter() CommandDefinitionSource source,
+      @CommandDefinitionSourceConverter() List<CommandDefinitionSource> sources,
       List<CommandPayloadDefinitionInput> payload});
 }
 
@@ -3034,7 +3123,7 @@ class _$CommandDefinitionInputCopyWithImpl<$Res,
   $Res call({
     Object? name = null,
     Object? description = null,
-    Object? source = null,
+    Object? sources = null,
     Object? payload = null,
   }) {
     return _then(_value.copyWith(
@@ -3046,10 +3135,10 @@ class _$CommandDefinitionInputCopyWithImpl<$Res,
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as CommandDefinitionSource,
+      sources: null == sources
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinitionSource>,
       payload: null == payload
           ? _value.payload
           : payload // ignore: cast_nullable_to_non_nullable
@@ -3070,7 +3159,7 @@ abstract class _$$CommandDefinitionInputImplCopyWith<$Res>
   $Res call(
       {String name,
       String description,
-      @CommandDefinitionSourceConverter() CommandDefinitionSource source,
+      @CommandDefinitionSourceConverter() List<CommandDefinitionSource> sources,
       List<CommandPayloadDefinitionInput> payload});
 }
 
@@ -3089,7 +3178,7 @@ class __$$CommandDefinitionInputImplCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
     Object? description = null,
-    Object? source = null,
+    Object? sources = null,
     Object? payload = null,
   }) {
     return _then(_$CommandDefinitionInputImpl(
@@ -3101,10 +3190,10 @@ class __$$CommandDefinitionInputImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as CommandDefinitionSource,
+      sources: null == sources
+          ? _value.sources
+          : sources // ignore: cast_nullable_to_non_nullable
+              as List<CommandDefinitionSource>,
       payload: null == payload
           ? _value.payload
           : payload // ignore: cast_nullable_to_non_nullable
@@ -3119,8 +3208,7 @@ class _$CommandDefinitionInputImpl implements _CommandDefinitionInput {
   _$CommandDefinitionInputImpl(
       {this.name = '',
       this.description = '',
-      @CommandDefinitionSourceConverter()
-      this.source = CommandDefinitionSource.layrzLink,
+      @CommandDefinitionSourceConverter() this.sources = const [],
       this.payload = const []});
 
   factory _$CommandDefinitionInputImpl.fromJson(Map<String, dynamic> json) =>
@@ -3140,7 +3228,7 @@ class _$CommandDefinitionInputImpl implements _CommandDefinitionInput {
   @override
   @JsonKey()
   @CommandDefinitionSourceConverter()
-  CommandDefinitionSource source;
+  List<CommandDefinitionSource> sources;
 
   /// [payload] is the list of parameters of the command.
   @override
@@ -3149,7 +3237,7 @@ class _$CommandDefinitionInputImpl implements _CommandDefinitionInput {
 
   @override
   String toString() {
-    return 'CommandDefinitionInput(name: $name, description: $description, source: $source, payload: $payload)';
+    return 'CommandDefinitionInput(name: $name, description: $description, sources: $sources, payload: $payload)';
   }
 
   @JsonKey(ignore: true)
@@ -3169,11 +3257,11 @@ class _$CommandDefinitionInputImpl implements _CommandDefinitionInput {
 
 abstract class _CommandDefinitionInput implements CommandDefinitionInput {
   factory _CommandDefinitionInput(
-          {String name,
-          String description,
-          @CommandDefinitionSourceConverter() CommandDefinitionSource source,
-          List<CommandPayloadDefinitionInput> payload}) =
-      _$CommandDefinitionInputImpl;
+      {String name,
+      String description,
+      @CommandDefinitionSourceConverter() List<CommandDefinitionSource> sources,
+      List<CommandPayloadDefinitionInput>
+          payload}) = _$CommandDefinitionInputImpl;
 
   factory _CommandDefinitionInput.fromJson(Map<String, dynamic> json) =
       _$CommandDefinitionInputImpl.fromJson;
@@ -3196,11 +3284,11 @@ abstract class _CommandDefinitionInput implements CommandDefinitionInput {
 
   /// [source] is the source of the command.
   @CommandDefinitionSourceConverter()
-  CommandDefinitionSource get source;
+  List<CommandDefinitionSource> get sources;
 
   /// [source] is the source of the command.
   @CommandDefinitionSourceConverter()
-  set source(CommandDefinitionSource value);
+  set sources(List<CommandDefinitionSource> value);
   @override
 
   /// [payload] is the list of parameters of the command.

@@ -156,6 +156,7 @@ _$CommandPayloadDefinitionImpl _$$CommandPayloadDefinitionImplFromJson(
           ?.map((e) =>
               CommandPayloadDefinition.fromJson(e as Map<String, dynamic>))
           .toList(),
+      maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$CommandPayloadDefinitionImplToJson(
@@ -174,6 +175,7 @@ Map<String, dynamic> _$$CommandPayloadDefinitionImplToJson(
       'regexPattern':
           const RegExpOrNullConverter().toJson(instance.regexPattern),
       'nested': instance.nested?.map((e) => e.toJson()).toList(),
+      'maxQuantity': instance.maxQuantity,
     };
 
 _$CommandPayloadDefinitionInputImpl
@@ -199,6 +201,7 @@ _$CommandPayloadDefinitionInputImpl
               ?.map((e) => CommandPayloadDefinitionInput.fromJson(
                   e as Map<String, dynamic>))
               .toList(),
+          maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
         );
 
 Map<String, dynamic> _$$CommandPayloadDefinitionInputImplToJson(
@@ -217,6 +220,7 @@ Map<String, dynamic> _$$CommandPayloadDefinitionInputImplToJson(
       'regexPattern':
           const RegExpOrNullConverter().toJson(instance.regexPattern),
       'nested': instance.nested?.map((e) => e.toJson()).toList(),
+      'maxQuantity': instance.maxQuantity,
     };
 
 _$CommandDefinitionImpl _$$CommandDefinitionImplFromJson(
@@ -224,8 +228,10 @@ _$CommandDefinitionImpl _$$CommandDefinitionImplFromJson(
     _$CommandDefinitionImpl(
       name: json['name'] as String,
       description: json['description'] as String?,
-      source: const CommandDefinitionSourceConverter()
-          .fromJson(json['source'] as String),
+      sources: (json['sources'] as List<dynamic>)
+          .map((e) =>
+              const CommandDefinitionSourceConverter().fromJson(e as String))
+          .toList(),
       payload: (json['payload'] as List<dynamic>)
           .map((e) =>
               CommandPayloadDefinition.fromJson(e as Map<String, dynamic>))
@@ -238,8 +244,9 @@ Map<String, dynamic> _$$CommandDefinitionImplToJson(
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
-      'source':
-          const CommandDefinitionSourceConverter().toJson(instance.source),
+      'sources': instance.sources
+          .map(const CommandDefinitionSourceConverter().toJson)
+          .toList(),
       'payload': instance.payload.map((e) => e.toJson()).toList(),
       'translationKey': instance.translationKey,
     };
@@ -249,10 +256,11 @@ _$CommandDefinitionInputImpl _$$CommandDefinitionInputImplFromJson(
     _$CommandDefinitionInputImpl(
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
-      source: json['source'] == null
-          ? CommandDefinitionSource.layrzLink
-          : const CommandDefinitionSourceConverter()
-              .fromJson(json['source'] as String),
+      sources: (json['sources'] as List<dynamic>?)
+              ?.map((e) => const CommandDefinitionSourceConverter()
+                  .fromJson(e as String))
+              .toList() ??
+          const [],
       payload: (json['payload'] as List<dynamic>?)
               ?.map((e) => CommandPayloadDefinitionInput.fromJson(
                   e as Map<String, dynamic>))
@@ -265,7 +273,8 @@ Map<String, dynamic> _$$CommandDefinitionInputImplToJson(
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
-      'source':
-          const CommandDefinitionSourceConverter().toJson(instance.source),
+      'sources': instance.sources
+          .map(const CommandDefinitionSourceConverter().toJson)
+          .toList(),
       'payload': instance.payload.map((e) => e.toJson()).toList(),
     };

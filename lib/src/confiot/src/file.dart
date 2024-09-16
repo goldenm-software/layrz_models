@@ -19,7 +19,6 @@ class ConfIoTFile with _$ConfIoTFile {
   factory ConfIoTFile.fromJson(Map<String, dynamic> json) => _$ConfIoTFileFromJson(json);
 
   List<CommandDefinition> get commandsConfiguration {
-    debugPrint('namespace: $namespace - commandsConfiguration: ${configuration?.length}');
     if (namespace != ConfIoTNamespace.commands) return [];
 
     if (configuration == null) return [];
@@ -46,6 +45,23 @@ class ConfIoTFile with _$ConfIoTFile {
         .map((data) {
           try {
             return ConfigDefinition.fromJson(data);
+          } catch (e) {
+            return null;
+          }
+        })
+        .whereNotNull()
+        .toList();
+  }
+
+  List<Map<String, dynamic>> get deviceConfigConfiguration {
+    if (namespace != ConfIoTNamespace.deviceConfig) return [];
+
+    if (configuration == null) return [];
+
+    return configuration!
+        .map((data) {
+          try {
+            return Map<String, dynamic>.from(data);
           } catch (e) {
             return null;
           }

@@ -335,6 +335,7 @@ _$ConfigDefinitionImpl _$$ConfigDefinitionImplFromJson(
               ConfigParameterEquivalence.fromJson(e as Map<String, dynamic>))
           .toList(),
       setupCapable: json['setupCapable'] as bool?,
+      maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$ConfigDefinitionImplToJson(
@@ -357,6 +358,7 @@ Map<String, dynamic> _$$ConfigDefinitionImplToJson(
           const RegExpOrNullConverter().toJson(instance.regexPattern),
       'equivalences': instance.equivalences?.map((e) => e.toJson()).toList(),
       'setupCapable': instance.setupCapable,
+      'maxQuantity': instance.maxQuantity,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
@@ -418,6 +420,7 @@ _$ConfigDefinitionInputImpl _$$ConfigDefinitionInputImplFromJson(
               e as Map<String, dynamic>))
           .toList(),
       setupCapable: json['setupCapable'] as bool? ?? false,
+      maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$ConfigDefinitionInputImplToJson(
@@ -440,4 +443,5 @@ Map<String, dynamic> _$$ConfigDefinitionInputImplToJson(
           const RegExpOrNullConverter().toJson(instance.regexPattern),
       'equivalences': instance.equivalences?.map((e) => e.toJson()).toList(),
       'setupCapable': instance.setupCapable,
+      'maxQuantity': instance.maxQuantity,
     };
