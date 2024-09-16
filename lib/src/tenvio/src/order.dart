@@ -100,7 +100,7 @@ class TenvioOrderInput with _$TenvioOrderInput {
     CustomerInput? newCustomer,
 
     /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
-    String? destinationWareHouseId,
+    String? destinationWarehouseId,
 
     /// [warehouseId] ID of the warehouse where the order is located.
     String? warehouseId,
@@ -112,10 +112,7 @@ class TenvioOrderInput with _$TenvioOrderInput {
     @Default([]) List<String> notes,
 
     /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
-    bool? requiresPhoto,
-
-    /// [packageImage] URL of the packed image.
-    bool? packageImage,
+    bool? requiresPhotos,
 
     /// [items] Items included in the order.
     List<TenvioItemQuantityInput>? items,

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.9
+
+-Changed `requiresPhoto` to `requiresPhotos` & `destinationWareHouseId` to `destinationWarehouseId`, field  `packageImage` deleted
+
 ## 3.2.8
 
 - Added `deviceConfig` to the `ConfIoTNamespace` enum.

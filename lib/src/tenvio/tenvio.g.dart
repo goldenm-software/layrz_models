@@ -291,15 +291,14 @@ _$TenvioOrderInputImpl _$$TenvioOrderInputImplFromJson(
       newCustomer: json['newCustomer'] == null
           ? null
           : CustomerInput.fromJson(json['newCustomer'] as Map<String, dynamic>),
-      destinationWareHouseId: json['destinationWareHouseId'] as String?,
+      destinationWarehouseId: json['destinationWarehouseId'] as String?,
       warehouseId: json['warehouseId'] as String?,
       status:
           const TenvioOrderStatusConverter().fromJson(json['status'] as String),
       notes:
           (json['notes'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const [],
-      requiresPhoto: json['requiresPhoto'] as bool?,
-      packageImage: json['packageImage'] as bool?,
+      requiresPhotos: json['requiresPhotos'] as bool?,
       items: (json['items'] as List<dynamic>?)
           ?.map((e) =>
               TenvioItemQuantityInput.fromJson(e as Map<String, dynamic>))
@@ -312,12 +311,11 @@ Map<String, dynamic> _$$TenvioOrderInputImplToJson(
       'id': instance.id,
       'customerId': instance.customerId,
       'newCustomer': instance.newCustomer?.toJson(),
-      'destinationWareHouseId': instance.destinationWareHouseId,
+      'destinationWarehouseId': instance.destinationWarehouseId,
       'warehouseId': instance.warehouseId,
       'status': const TenvioOrderStatusConverter().toJson(instance.status),
       'notes': instance.notes,
-      'requiresPhoto': instance.requiresPhoto,
-      'packageImage': instance.packageImage,
+      'requiresPhotos': instance.requiresPhotos,
       'items': instance.items?.map((e) => e.toJson()).toList(),
     };
 
