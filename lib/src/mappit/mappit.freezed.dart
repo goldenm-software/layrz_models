@@ -1254,12 +1254,13 @@ class _$MappitProfileGeofenceImpl implements _MappitProfileGeofence {
                 other.geofenceId == geofenceId) &&
             (identical(other.geofence, geofence) ||
                 other.geofence == geofence) &&
-            (identical(other.color, color) || other.color == color));
+            const DeepCollectionEquality().equals(other.color, color));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, geofenceId, geofence, color);
+  int get hashCode => Object.hash(runtimeType, geofenceId, geofence,
+      const DeepCollectionEquality().hash(color));
 
   @JsonKey(ignore: true)
   @override
@@ -1559,7 +1560,7 @@ class _$MappitDurationRangeCopyWithImpl<$Res, $Val extends MappitDurationRange>
   $Res call({
     Object? min = null,
     Object? max = null,
-    Object? color = null,
+    Object? color = freezed,
   }) {
     return _then(_value.copyWith(
       min: null == min
@@ -1570,7 +1571,7 @@ class _$MappitDurationRangeCopyWithImpl<$Res, $Val extends MappitDurationRange>
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
               as Duration,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -1605,7 +1606,7 @@ class __$$MappitDurationRangeImplCopyWithImpl<$Res>
   $Res call({
     Object? min = null,
     Object? max = null,
-    Object? color = null,
+    Object? color = freezed,
   }) {
     return _then(_$MappitDurationRangeImpl(
       min: null == min
@@ -1616,7 +1617,7 @@ class __$$MappitDurationRangeImplCopyWithImpl<$Res>
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
               as Duration,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -1665,12 +1666,13 @@ class _$MappitDurationRangeImpl implements _MappitDurationRange {
             other is _$MappitDurationRangeImpl &&
             (identical(other.min, min) || other.min == min) &&
             (identical(other.max, max) || other.max == max) &&
-            (identical(other.color, color) || other.color == color));
+            const DeepCollectionEquality().equals(other.color, color));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, min, max, color);
+  int get hashCode => Object.hash(
+      runtimeType, min, max, const DeepCollectionEquality().hash(color));
 
   @JsonKey(ignore: true)
   @override
@@ -1763,7 +1765,7 @@ class _$MappitIntRangeCopyWithImpl<$Res, $Val extends MappitIntRange>
   $Res call({
     Object? min = null,
     Object? max = null,
-    Object? color = null,
+    Object? color = freezed,
   }) {
     return _then(_value.copyWith(
       min: null == min
@@ -1774,7 +1776,7 @@ class _$MappitIntRangeCopyWithImpl<$Res, $Val extends MappitIntRange>
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
               as int,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -1806,7 +1808,7 @@ class __$$MappitIntRangeImplCopyWithImpl<$Res>
   $Res call({
     Object? min = null,
     Object? max = null,
-    Object? color = null,
+    Object? color = freezed,
   }) {
     return _then(_$MappitIntRangeImpl(
       min: null == min
@@ -1817,7 +1819,7 @@ class __$$MappitIntRangeImplCopyWithImpl<$Res>
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
               as int,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -1862,12 +1864,13 @@ class _$MappitIntRangeImpl implements _MappitIntRange {
             other is _$MappitIntRangeImpl &&
             (identical(other.min, min) || other.min == min) &&
             (identical(other.max, max) || other.max == max) &&
-            (identical(other.color, color) || other.color == color));
+            const DeepCollectionEquality().equals(other.color, color));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, min, max, color);
+  int get hashCode => Object.hash(
+      runtimeType, min, max, const DeepCollectionEquality().hash(color));
 
   @JsonKey(ignore: true)
   @override
@@ -1958,7 +1961,7 @@ class _$MappitDoubleRangeCopyWithImpl<$Res, $Val extends MappitDoubleRange>
   $Res call({
     Object? min = null,
     Object? max = null,
-    Object? color = null,
+    Object? color = freezed,
   }) {
     return _then(_value.copyWith(
       min: null == min
@@ -1969,7 +1972,7 @@ class _$MappitDoubleRangeCopyWithImpl<$Res, $Val extends MappitDoubleRange>
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
               as double,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -2001,7 +2004,7 @@ class __$$MappitDoubleRangeImplCopyWithImpl<$Res>
   $Res call({
     Object? min = null,
     Object? max = null,
-    Object? color = null,
+    Object? color = freezed,
   }) {
     return _then(_$MappitDoubleRangeImpl(
       min: null == min
@@ -2012,7 +2015,7 @@ class __$$MappitDoubleRangeImplCopyWithImpl<$Res>
           ? _value.max
           : max // ignore: cast_nullable_to_non_nullable
               as double,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -2057,12 +2060,13 @@ class _$MappitDoubleRangeImpl implements _MappitDoubleRange {
             other is _$MappitDoubleRangeImpl &&
             (identical(other.min, min) || other.min == min) &&
             (identical(other.max, max) || other.max == max) &&
-            (identical(other.color, color) || other.color == color));
+            const DeepCollectionEquality().equals(other.color, color));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, min, max, color);
+  int get hashCode => Object.hash(
+      runtimeType, min, max, const DeepCollectionEquality().hash(color));
 
   @JsonKey(ignore: true)
   @override

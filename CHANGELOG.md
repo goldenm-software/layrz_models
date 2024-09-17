@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.10
+
+- Added `highPriority` to `TenvioOrder` & `TenvioOrderInput` on `Order` model
+
 ## 3.2.9
 
 -Changed `requiresPhoto` to `requiresPhotos` & `destinationWareHouseId` to `destinationWarehouseId`, field  `packageImage` deleted

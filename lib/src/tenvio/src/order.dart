@@ -33,6 +33,9 @@ class TenvioOrder with _$TenvioOrder {
     /// [packedImage] URL of the packed image.
     String? packedImage,
 
+    /// [highhighPriority] High priority indicator.
+    bool? highPriority,
+
     /// [items] Items included in the order.
     List<TenvioItemQuantity>? items,
 
@@ -113,6 +116,9 @@ class TenvioOrderInput with _$TenvioOrderInput {
 
     /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
     bool? requiresPhotos,
+
+    /// [highPriority] Whether the order is high priority..
+    bool? highPriority,
 
     /// [items] Items included in the order.
     List<TenvioItemQuantityInput>? items,

@@ -2584,7 +2584,7 @@ class _$AlgorithmCopyWithImpl<$Res, $Val extends Algorithm>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = null,
+    Object? color = freezed,
     Object? icon = freezed,
     Object? isEnabled = null,
     Object? categoriesIds = null,
@@ -2603,7 +2603,7 @@ class _$AlgorithmCopyWithImpl<$Res, $Val extends Algorithm>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -2678,7 +2678,7 @@ class __$$AlgorithmImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = null,
+    Object? color = freezed,
     Object? icon = freezed,
     Object? isEnabled = null,
     Object? categoriesIds = null,
@@ -2697,7 +2697,7 @@ class __$$AlgorithmImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -2814,7 +2814,7 @@ class _$AlgorithmImpl implements _Algorithm {
             other is _$AlgorithmImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.isEnabled, isEnabled) ||
                 other.isEnabled == isEnabled) &&
@@ -2835,7 +2835,7 @@ class _$AlgorithmImpl implements _Algorithm {
       runtimeType,
       id,
       name,
-      color,
+      const DeepCollectionEquality().hash(color),
       icon,
       isEnabled,
       const DeepCollectionEquality().hash(_categoriesIds),
@@ -17569,7 +17569,7 @@ class _$GeofenceImpl implements _Geofence {
             (identical(other.mode, mode) || other.mode == mode) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             const DeepCollectionEquality().equals(other._path, _path) &&
             (identical(other.radius, radius) || other.radius == radius) &&
             (identical(other.resourceId, resourceId) ||
@@ -17600,7 +17600,7 @@ class _$GeofenceImpl implements _Geofence {
       name,
       mode,
       description,
-      color,
+      const DeepCollectionEquality().hash(color),
       const DeepCollectionEquality().hash(_path),
       radius,
       resourceId,
@@ -19602,9 +19602,8 @@ class _$OperationImpl implements _Operation {
                 .equals(other._receptionEmails, _receptionEmails) &&
             (identical(other.emailSubject, emailSubject) ||
                 other.emailSubject == emailSubject) &&
-            (identical(other.color, color) || other.color == color) &&
-            (identical(other.textColor, textColor) ||
-                other.textColor == textColor) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
+            const DeepCollectionEquality().equals(other.textColor, textColor) &&
             const DeepCollectionEquality()
                 .equals(other._destinationPhones, _destinationPhones) &&
             (identical(other.notificationType, notificationType) ||
@@ -19642,8 +19641,8 @@ class _$OperationImpl implements _Operation {
         timezoneId,
         const DeepCollectionEquality().hash(_receptionEmails),
         emailSubject,
-        color,
-        textColor,
+        const DeepCollectionEquality().hash(color),
+        const DeepCollectionEquality().hash(textColor),
         const DeepCollectionEquality().hash(_destinationPhones),
         notificationType,
         externalAccountId,
@@ -23940,7 +23939,7 @@ class _$MaskPointImpl implements _MaskPoint {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MaskPointImpl &&
-            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.value, value) || other.value == value) &&
             (identical(other.icon, icon) || other.icon == icon));
@@ -23948,7 +23947,8 @@ class _$MaskPointImpl implements _MaskPoint {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, color, text, value, icon);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(color), text, value, icon);
 
   @JsonKey(ignore: true)
   @override
@@ -24690,7 +24690,7 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = null,
+    Object? color = freezed,
     Object? dynamicIcon = freezed,
     Object? users = freezed,
     Object? usersIds = freezed,
@@ -24751,7 +24751,7 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -25061,7 +25061,7 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = null,
+    Object? color = freezed,
     Object? dynamicIcon = freezed,
     Object? users = freezed,
     Object? usersIds = freezed,
@@ -25122,7 +25122,7 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -26097,7 +26097,7 @@ class _$TagImpl implements _Tag {
             other is _$TagImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             (identical(other.dynamicIcon, dynamicIcon) ||
                 other.dynamicIcon == dynamicIcon) &&
             const DeepCollectionEquality().equals(other._users, _users) &&
@@ -26194,7 +26194,7 @@ class _$TagImpl implements _Tag {
         runtimeType,
         id,
         name,
-        color,
+        const DeepCollectionEquality().hash(color),
         dynamicIcon,
         const DeepCollectionEquality().hash(_users),
         const DeepCollectionEquality().hash(_usersIds),
@@ -28976,7 +28976,7 @@ class _$TriggerImpl implements _Trigger {
                 other.timezoneId == timezoneId) &&
             (identical(other.priority, priority) ||
                 other.priority == priority) &&
-            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             (identical(other.visualEventEffect, visualEventEffect) ||
                 other.visualEventEffect == visualEventEffect) &&
             (identical(other.careProtocolId, careProtocolId) ||
@@ -29020,7 +29020,7 @@ class _$TriggerImpl implements _Trigger {
         isPlainCrontab,
         timezoneId,
         priority,
-        color,
+        const DeepCollectionEquality().hash(color),
         visualEventEffect,
         careProtocolId,
         careProtocol,

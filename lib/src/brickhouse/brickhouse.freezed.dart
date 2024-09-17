@@ -712,8 +712,8 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
                 other.timezone == timezone) &&
             const DeepCollectionEquality()
                 .equals(other._curfewWeekdays, _curfewWeekdays) &&
-            (identical(other.geofenceColor, geofenceColor) ||
-                other.geofenceColor == geofenceColor) &&
+            const DeepCollectionEquality()
+                .equals(other.geofenceColor, geofenceColor) &&
             (identical(other.geofenceMode, geofenceMode) ||
                 other.geofenceMode == geofenceMode) &&
             (identical(other.geofenceRadius, geofenceRadius) ||
@@ -751,7 +751,7 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
         curfewEndHour,
         timezone,
         const DeepCollectionEquality().hash(_curfewWeekdays),
-        geofenceColor,
+        const DeepCollectionEquality().hash(geofenceColor),
         geofenceMode,
         geofenceRadius,
         const DeepCollectionEquality().hash(_geofenceShape),

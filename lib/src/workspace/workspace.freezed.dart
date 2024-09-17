@@ -1018,7 +1018,7 @@ class _$WorkspaceImpl implements _Workspace {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.typeApp, typeApp) || other.typeApp == typeApp) &&
-            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.background, background) ||
                 other.background == background) &&
@@ -1087,7 +1087,7 @@ class _$WorkspaceImpl implements _Workspace {
         id,
         name,
         typeApp,
-        color,
+        const DeepCollectionEquality().hash(color),
         icon,
         background,
         isFavorite,
@@ -2824,7 +2824,7 @@ class _$SensorGridItemCopyWithImpl<$Res, $Val extends SensorGridItem>
     Object? objectId = freezed,
     Object? kind = null,
     Object? dimensions = freezed,
-    Object? color = null,
+    Object? color = freezed,
     Object? sensors = null,
   }) {
     return _then(_value.copyWith(
@@ -2840,7 +2840,7 @@ class _$SensorGridItemCopyWithImpl<$Res, $Val extends SensorGridItem>
           ? _value.dimensions
           : dimensions // ignore: cast_nullable_to_non_nullable
               as GridDimension?,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -2897,7 +2897,7 @@ class __$$SensorGridItemImplCopyWithImpl<$Res>
     Object? objectId = freezed,
     Object? kind = null,
     Object? dimensions = freezed,
-    Object? color = null,
+    Object? color = freezed,
     Object? sensors = null,
   }) {
     return _then(_$SensorGridItemImpl(
@@ -2913,7 +2913,7 @@ class __$$SensorGridItemImplCopyWithImpl<$Res>
           ? _value.dimensions
           : dimensions // ignore: cast_nullable_to_non_nullable
               as GridDimension?,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -2985,14 +2985,19 @@ class _$SensorGridItemImpl implements _SensorGridItem {
             (identical(other.kind, kind) || other.kind == kind) &&
             (identical(other.dimensions, dimensions) ||
                 other.dimensions == dimensions) &&
-            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             const DeepCollectionEquality().equals(other._sensors, _sensors));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, objectId, kind, dimensions,
-      color, const DeepCollectionEquality().hash(_sensors));
+  int get hashCode => Object.hash(
+      runtimeType,
+      objectId,
+      kind,
+      dimensions,
+      const DeepCollectionEquality().hash(color),
+      const DeepCollectionEquality().hash(_sensors));
 
   @JsonKey(ignore: true)
   @override
