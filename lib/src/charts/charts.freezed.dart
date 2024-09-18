@@ -863,13 +863,13 @@ class _$LineChartSerieCopyWithImpl<$Res, $Val extends LineChartSerie>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? color = freezed,
+    Object? color = null,
     Object? label = null,
     Object? type = null,
     Object? values = null,
   }) {
     return _then(_value.copyWith(
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -915,13 +915,13 @@ class __$$LineChartSerieImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? color = freezed,
+    Object? color = null,
     Object? label = null,
     Object? type = null,
     Object? values = null,
   }) {
     return _then(_$LineChartSerieImpl(
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -980,7 +980,7 @@ class _$LineChartSerieImpl implements _LineChartSerie {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LineChartSerieImpl &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.label, label) || other.label == label) &&
             (identical(other.type, type) || other.type == type) &&
             const DeepCollectionEquality().equals(other._values, _values));
@@ -988,11 +988,7 @@ class _$LineChartSerieImpl implements _LineChartSerie {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(color),
-      label,
-      type,
+  int get hashCode => Object.hash(runtimeType, color, label, type,
       const DeepCollectionEquality().hash(_values));
 
   @JsonKey(ignore: true)
@@ -1781,12 +1777,12 @@ class _$ColumnChartSerieCopyWithImpl<$Res, $Val extends ColumnChartSerie>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? color = freezed,
+    Object? color = null,
     Object? label = null,
     Object? values = null,
   }) {
     return _then(_value.copyWith(
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -1827,12 +1823,12 @@ class __$$ColumnChartSerieImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? color = freezed,
+    Object? color = null,
     Object? label = null,
     Object? values = null,
   }) {
     return _then(_$ColumnChartSerieImpl(
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -1883,7 +1879,7 @@ class _$ColumnChartSerieImpl implements _ColumnChartSerie {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ColumnChartSerieImpl &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.label, label) || other.label == label) &&
             const DeepCollectionEquality().equals(other._values, _values));
   }
@@ -1891,10 +1887,7 @@ class _$ColumnChartSerieImpl implements _ColumnChartSerie {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(color),
-      label,
-      const DeepCollectionEquality().hash(_values));
+      runtimeType, color, label, const DeepCollectionEquality().hash(_values));
 
   @JsonKey(ignore: true)
   @override
@@ -2340,12 +2333,12 @@ class _$BarChartSerieCopyWithImpl<$Res, $Val extends BarChartSerie>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? color = freezed,
+    Object? color = null,
     Object? label = null,
     Object? values = null,
   }) {
     return _then(_value.copyWith(
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -2386,12 +2379,12 @@ class __$$BarChartSerieImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? color = freezed,
+    Object? color = null,
     Object? label = null,
     Object? values = null,
   }) {
     return _then(_$BarChartSerieImpl(
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -2442,7 +2435,7 @@ class _$BarChartSerieImpl implements _BarChartSerie {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$BarChartSerieImpl &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.label, label) || other.label == label) &&
             const DeepCollectionEquality().equals(other._values, _values));
   }
@@ -2450,10 +2443,7 @@ class _$BarChartSerieImpl implements _BarChartSerie {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(color),
-      label,
-      const DeepCollectionEquality().hash(_values));
+      runtimeType, color, label, const DeepCollectionEquality().hash(_values));
 
   @JsonKey(ignore: true)
   @override
@@ -2986,14 +2976,13 @@ class _$NumberDataSerieImpl implements _NumberDataSerie {
         (other.runtimeType == runtimeType &&
             other is _$NumberDataSerieImpl &&
             (identical(other.label, label) || other.label == label) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.value, value) || other.value == value));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, label, const DeepCollectionEquality().hash(color), value);
+  int get hashCode => Object.hash(runtimeType, label, color, value);
 
   @JsonKey(ignore: true)
   @override
@@ -3216,12 +3205,12 @@ class _$PieChartSerieCopyWithImpl<$Res, $Val extends PieChartSerie>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? color = freezed,
+    Object? color = null,
     Object? label = null,
     Object? value = null,
   }) {
     return _then(_value.copyWith(
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -3259,12 +3248,12 @@ class __$$PieChartSerieImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? color = freezed,
+    Object? color = null,
     Object? label = null,
     Object? value = null,
   }) {
     return _then(_$PieChartSerieImpl(
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -3309,15 +3298,14 @@ class _$PieChartSerieImpl implements _PieChartSerie {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PieChartSerieImpl &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.label, label) || other.label == label) &&
             (identical(other.value, value) || other.value == value));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(color), label, value);
+  int get hashCode => Object.hash(runtimeType, color, label, value);
 
   @JsonKey(ignore: true)
   @override
@@ -3543,12 +3531,12 @@ class _$RadialBarChartSerieCopyWithImpl<$Res, $Val extends RadialBarChartSerie>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? color = freezed,
+    Object? color = null,
     Object? label = null,
     Object? value = null,
   }) {
     return _then(_value.copyWith(
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -3586,12 +3574,12 @@ class __$$RadialBarChartSerieImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? color = freezed,
+    Object? color = null,
     Object? label = null,
     Object? value = null,
   }) {
     return _then(_$RadialBarChartSerieImpl(
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -3636,15 +3624,14 @@ class _$RadialBarChartSerieImpl implements _RadialBarChartSerie {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RadialBarChartSerieImpl &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.label, label) || other.label == label) &&
             (identical(other.value, value) || other.value == value));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(color), label, value);
+  int get hashCode => Object.hash(runtimeType, color, label, value);
 
   @JsonKey(ignore: true)
   @override

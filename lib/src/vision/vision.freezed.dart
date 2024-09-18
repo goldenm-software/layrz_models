@@ -83,7 +83,7 @@ class _$VisionProtocolCopyWithImpl<$Res, $Val extends VisionProtocol>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? isEnabled = null,
     Object? requiredFields = null,
     Object? usage = freezed,
@@ -98,7 +98,7 @@ class _$VisionProtocolCopyWithImpl<$Res, $Val extends VisionProtocol>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -168,7 +168,7 @@ class __$$VisionProtocolImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? isEnabled = null,
     Object? requiredFields = null,
     Object? usage = freezed,
@@ -183,7 +183,7 @@ class __$$VisionProtocolImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -273,7 +273,7 @@ class _$VisionProtocolImpl implements _VisionProtocol {
             other is _$VisionProtocolImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.isEnabled, isEnabled) ||
                 other.isEnabled == isEnabled) &&
             const DeepCollectionEquality()
@@ -285,15 +285,8 @@ class _$VisionProtocolImpl implements _VisionProtocol {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      const DeepCollectionEquality().hash(color),
-      isEnabled,
-      const DeepCollectionEquality().hash(_requiredFields),
-      usage,
-      dynamicIcon);
+  int get hashCode => Object.hash(runtimeType, id, name, color, isEnabled,
+      const DeepCollectionEquality().hash(_requiredFields), usage, dynamicIcon);
 
   @JsonKey(ignore: true)
   @override

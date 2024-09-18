@@ -3516,10 +3516,10 @@ mixin _$TenvioOrderInput {
   /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
   set requiresPhotos(bool? value) => throw _privateConstructorUsedError;
 
-  /// [highPriority] High priority indicator.
+  /// [highPriority] Whether the order is high priority..
   bool? get highPriority => throw _privateConstructorUsedError;
 
-  /// [highPriority] High priority indicator.
+  /// [highPriority] Whether the order is high priority..
   set highPriority(bool? value) => throw _privateConstructorUsedError;
 
   /// [items] Items included in the order.
@@ -3781,7 +3781,7 @@ class _$TenvioOrderInputImpl implements _TenvioOrderInput {
   @override
   bool? requiresPhotos;
 
-  /// [highPriority] High priority indicator.
+  /// [highPriority] Whether the order is high priority..
   @override
   bool? highPriority;
 
@@ -3885,10 +3885,10 @@ abstract class _TenvioOrderInput implements TenvioOrderInput {
   set requiresPhotos(bool? value);
   @override
 
-  /// [highPriority] High priority indicator.
+  /// [highPriority] Whether the order is high priority..
   bool? get highPriority;
 
-  /// [highPriority] High priority indicator.
+  /// [highPriority] Whether the order is high priority..
   set highPriority(bool? value);
   @override
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.11
+
+- Added `hwModelsAnimationsIds` to `User` model
+
 ## 3.2.10
 
 - Added `highPriority` to `TenvioOrder` & `TenvioOrderInput` on `Order` model

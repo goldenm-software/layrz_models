@@ -210,7 +210,7 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? isEnabled = null,
     Object? operationMode = null,
     Object? host = freezed,
@@ -253,7 +253,7 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -491,7 +491,7 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? isEnabled = null,
     Object? operationMode = null,
     Object? host = freezed,
@@ -534,7 +534,7 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -949,7 +949,7 @@ class _$InboundProtocolImpl implements _InboundProtocol {
             other is _$InboundProtocolImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.isEnabled, isEnabled) ||
                 other.isEnabled == isEnabled) &&
             (identical(other.operationMode, operationMode) ||
@@ -1015,7 +1015,7 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         runtimeType,
         id,
         name,
-        const DeepCollectionEquality().hash(color),
+        color,
         isEnabled,
         operationMode,
         host,
@@ -1548,7 +1548,7 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
   $Res call({
     Object? id = freezed,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? isEnabled = null,
     Object? categoriesIds = null,
     Object? operationMode = null,
@@ -1588,7 +1588,7 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -1794,7 +1794,7 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? isEnabled = null,
     Object? categoriesIds = null,
     Object? operationMode = null,
@@ -1834,7 +1834,7 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,

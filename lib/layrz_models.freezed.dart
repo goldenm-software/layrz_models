@@ -2584,7 +2584,7 @@ class _$AlgorithmCopyWithImpl<$Res, $Val extends Algorithm>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? icon = freezed,
     Object? isEnabled = null,
     Object? categoriesIds = null,
@@ -2603,7 +2603,7 @@ class _$AlgorithmCopyWithImpl<$Res, $Val extends Algorithm>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -2678,7 +2678,7 @@ class __$$AlgorithmImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? icon = freezed,
     Object? isEnabled = null,
     Object? categoriesIds = null,
@@ -2697,7 +2697,7 @@ class __$$AlgorithmImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -2814,7 +2814,7 @@ class _$AlgorithmImpl implements _Algorithm {
             other is _$AlgorithmImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.isEnabled, isEnabled) ||
                 other.isEnabled == isEnabled) &&
@@ -2835,7 +2835,7 @@ class _$AlgorithmImpl implements _Algorithm {
       runtimeType,
       id,
       name,
-      const DeepCollectionEquality().hash(color),
+      color,
       icon,
       isEnabled,
       const DeepCollectionEquality().hash(_categoriesIds),
@@ -17569,7 +17569,7 @@ class _$GeofenceImpl implements _Geofence {
             (identical(other.mode, mode) || other.mode == mode) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             const DeepCollectionEquality().equals(other._path, _path) &&
             (identical(other.radius, radius) || other.radius == radius) &&
             (identical(other.resourceId, resourceId) ||
@@ -17600,7 +17600,7 @@ class _$GeofenceImpl implements _Geofence {
       name,
       mode,
       description,
-      const DeepCollectionEquality().hash(color),
+      color,
       const DeepCollectionEquality().hash(_path),
       radius,
       resourceId,
@@ -19602,8 +19602,9 @@ class _$OperationImpl implements _Operation {
                 .equals(other._receptionEmails, _receptionEmails) &&
             (identical(other.emailSubject, emailSubject) ||
                 other.emailSubject == emailSubject) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
-            const DeepCollectionEquality().equals(other.textColor, textColor) &&
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.textColor, textColor) ||
+                other.textColor == textColor) &&
             const DeepCollectionEquality()
                 .equals(other._destinationPhones, _destinationPhones) &&
             (identical(other.notificationType, notificationType) ||
@@ -19641,8 +19642,8 @@ class _$OperationImpl implements _Operation {
         timezoneId,
         const DeepCollectionEquality().hash(_receptionEmails),
         emailSubject,
-        const DeepCollectionEquality().hash(color),
-        const DeepCollectionEquality().hash(textColor),
+        color,
+        textColor,
         const DeepCollectionEquality().hash(_destinationPhones),
         notificationType,
         externalAccountId,
@@ -23939,7 +23940,7 @@ class _$MaskPointImpl implements _MaskPoint {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MaskPointImpl &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.value, value) || other.value == value) &&
             (identical(other.icon, icon) || other.icon == icon));
@@ -23947,8 +23948,7 @@ class _$MaskPointImpl implements _MaskPoint {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(color), text, value, icon);
+  int get hashCode => Object.hash(runtimeType, color, text, value, icon);
 
   @JsonKey(ignore: true)
   @override
@@ -24690,7 +24690,7 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? dynamicIcon = freezed,
     Object? users = freezed,
     Object? usersIds = freezed,
@@ -24751,7 +24751,7 @@ class _$TagCopyWithImpl<$Res, $Val extends Tag> implements $TagCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -25061,7 +25061,7 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? dynamicIcon = freezed,
     Object? users = freezed,
     Object? usersIds = freezed,
@@ -25122,7 +25122,7 @@ class __$$TagImplCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$TagImpl>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -26097,7 +26097,7 @@ class _$TagImpl implements _Tag {
             other is _$TagImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.dynamicIcon, dynamicIcon) ||
                 other.dynamicIcon == dynamicIcon) &&
             const DeepCollectionEquality().equals(other._users, _users) &&
@@ -26194,7 +26194,7 @@ class _$TagImpl implements _Tag {
         runtimeType,
         id,
         name,
-        const DeepCollectionEquality().hash(color),
+        color,
         dynamicIcon,
         const DeepCollectionEquality().hash(_users),
         const DeepCollectionEquality().hash(_usersIds),
@@ -28976,7 +28976,7 @@ class _$TriggerImpl implements _Trigger {
                 other.timezoneId == timezoneId) &&
             (identical(other.priority, priority) ||
                 other.priority == priority) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.visualEventEffect, visualEventEffect) ||
                 other.visualEventEffect == visualEventEffect) &&
             (identical(other.careProtocolId, careProtocolId) ||
@@ -29020,7 +29020,7 @@ class _$TriggerImpl implements _Trigger {
         isPlainCrontab,
         timezoneId,
         priority,
-        const DeepCollectionEquality().hash(color),
+        color,
         visualEventEffect,
         careProtocolId,
         careProtocol,
@@ -31262,6 +31262,9 @@ mixin _$User {
   @TimestampOrNullConverter()
   DateTime? get suspendedAt => throw _privateConstructorUsedError;
 
+  /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
+  List<String> get hwModelsAnimationsIds => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -31308,7 +31311,8 @@ abstract class $UserCopyWith<$Res> {
       double? tenvioLatitude,
       double? tenvioLongitude,
       bool? isSuspended,
-      @TimestampOrNullConverter() DateTime? suspendedAt});
+      @TimestampOrNullConverter() DateTime? suspendedAt,
+      List<String> hwModelsAnimationsIds});
 
   $TokenCopyWith<$Res>? get token;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
@@ -31366,6 +31370,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? tenvioLongitude = freezed,
     Object? isSuspended = freezed,
     Object? suspendedAt = freezed,
+    Object? hwModelsAnimationsIds = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -31512,6 +31517,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.suspendedAt
           : suspendedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      hwModelsAnimationsIds: null == hwModelsAnimationsIds
+          ? _value.hwModelsAnimationsIds
+          : hwModelsAnimationsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 
@@ -31620,7 +31629,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       double? tenvioLatitude,
       double? tenvioLongitude,
       bool? isSuspended,
-      @TimestampOrNullConverter() DateTime? suspendedAt});
+      @TimestampOrNullConverter() DateTime? suspendedAt,
+      List<String> hwModelsAnimationsIds});
 
   @override
   $TokenCopyWith<$Res>? get token;
@@ -31680,6 +31690,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? tenvioLongitude = freezed,
     Object? isSuspended = freezed,
     Object? suspendedAt = freezed,
+    Object? hwModelsAnimationsIds = null,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -31826,6 +31837,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.suspendedAt
           : suspendedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      hwModelsAnimationsIds: null == hwModelsAnimationsIds
+          ? _value._hwModelsAnimationsIds
+          : hwModelsAnimationsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -31869,7 +31884,8 @@ class _$UserImpl implements _User {
       this.tenvioLatitude,
       this.tenvioLongitude,
       this.isSuspended,
-      @TimestampOrNullConverter() this.suspendedAt})
+      @TimestampOrNullConverter() this.suspendedAt,
+      final List<String> hwModelsAnimationsIds = const []})
       : _referencesIds = referencesIds,
         _references = references,
         _access = access,
@@ -31881,7 +31897,8 @@ class _$UserImpl implements _User {
         _mappitAssetsIds = mappitAssetsIds,
         _mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,
         _mappitAssets = mappitAssets,
-        _mfaMethods = mfaMethods;
+        _mfaMethods = mfaMethods,
+        _hwModelsAnimationsIds = hwModelsAnimationsIds;
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -32149,9 +32166,22 @@ class _$UserImpl implements _User {
   @TimestampOrNullConverter()
   final DateTime? suspendedAt;
 
+  /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
+  final List<String> _hwModelsAnimationsIds;
+
+  /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
+  @override
+  @JsonKey()
+  List<String> get hwModelsAnimationsIds {
+    if (_hwModelsAnimationsIds is EqualUnmodifiableListView)
+      return _hwModelsAnimationsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_hwModelsAnimationsIds);
+  }
+
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, isSuspended: $isSuspended, suspendedAt: $suspendedAt)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, isSuspended: $isSuspended, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds)';
   }
 
   @override
@@ -32221,7 +32251,9 @@ class _$UserImpl implements _User {
             (identical(other.isSuspended, isSuspended) ||
                 other.isSuspended == isSuspended) &&
             (identical(other.suspendedAt, suspendedAt) ||
-                other.suspendedAt == suspendedAt));
+                other.suspendedAt == suspendedAt) &&
+            const DeepCollectionEquality()
+                .equals(other._hwModelsAnimationsIds, _hwModelsAnimationsIds));
   }
 
   @JsonKey(ignore: true)
@@ -32263,7 +32295,8 @@ class _$UserImpl implements _User {
         tenvioLatitude,
         tenvioLongitude,
         isSuspended,
-        suspendedAt
+        suspendedAt,
+        const DeepCollectionEquality().hash(_hwModelsAnimationsIds)
       ]);
 
   @JsonKey(ignore: true)
@@ -32317,7 +32350,8 @@ abstract class _User implements User {
       final double? tenvioLatitude,
       final double? tenvioLongitude,
       final bool? isSuspended,
-      @TimestampOrNullConverter() final DateTime? suspendedAt}) = _$UserImpl;
+      @TimestampOrNullConverter() final DateTime? suspendedAt,
+      final List<String> hwModelsAnimationsIds}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -32473,6 +32507,10 @@ abstract class _User implements User {
   /// [suspendedAt] represents the date when the account was suspended.
   @TimestampOrNullConverter()
   DateTime? get suspendedAt;
+  @override
+
+  /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
+  List<String> get hwModelsAnimationsIds;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>

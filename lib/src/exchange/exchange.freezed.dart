@@ -102,7 +102,7 @@ class _$ExchangeProtocolCopyWithImpl<$Res, $Val extends ExchangeProtocol>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? dynamicIcon = freezed,
     Object? requiredFields = null,
     Object? isEnabled = null,
@@ -121,7 +121,7 @@ class _$ExchangeProtocolCopyWithImpl<$Res, $Val extends ExchangeProtocol>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -211,7 +211,7 @@ class __$$ExchangeProtocolImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? dynamicIcon = freezed,
     Object? requiredFields = null,
     Object? isEnabled = null,
@@ -230,7 +230,7 @@ class __$$ExchangeProtocolImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -369,7 +369,7 @@ class _$ExchangeProtocolImpl implements _ExchangeProtocol {
             other is _$ExchangeProtocolImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.dynamicIcon, dynamicIcon) ||
                 other.dynamicIcon == dynamicIcon) &&
             const DeepCollectionEquality()
@@ -393,7 +393,7 @@ class _$ExchangeProtocolImpl implements _ExchangeProtocol {
       runtimeType,
       id,
       name,
-      const DeepCollectionEquality().hash(color),
+      color,
       dynamicIcon,
       const DeepCollectionEquality().hash(_requiredFields),
       isEnabled,
