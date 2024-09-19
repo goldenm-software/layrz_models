@@ -216,6 +216,7 @@ _$TenvioOrderImpl _$$TenvioOrderImplFromJson(Map<String, dynamic> json) =>
       assignByDepartment: json['assignByDepartment'] as bool?,
       requiresImages: json['requiresImages'] as bool?,
       packedImage: json['packedImage'] as String?,
+      highPriority: json['highPriority'] as bool?,
       items: (json['items'] as List<dynamic>?)
           ?.map((e) => TenvioItemQuantity.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -239,6 +240,7 @@ Map<String, dynamic> _$$TenvioOrderImplToJson(_$TenvioOrderImpl instance) =>
       'assignByDepartment': instance.assignByDepartment,
       'requiresImages': instance.requiresImages,
       'packedImage': instance.packedImage,
+      'highPriority': instance.highPriority,
       'items': instance.items?.map((e) => e.toJson()).toList(),
       'totalItems': instance.totalItems,
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
@@ -299,9 +301,13 @@ _$TenvioOrderInputImpl _$$TenvioOrderInputImplFromJson(
           (json['notes'] as List<dynamic>?)?.map((e) => e as String).toList() ??
               const [],
       requiresPhotos: json['requiresPhotos'] as bool?,
+      highPriority: json['highPriority'] as bool?,
       items: (json['items'] as List<dynamic>?)
           ?.map((e) =>
               TenvioItemQuantityInput.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      packersIds: (json['packersIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
           .toList(),
     );
 
@@ -316,7 +322,9 @@ Map<String, dynamic> _$$TenvioOrderInputImplToJson(
       'status': const TenvioOrderStatusConverter().toJson(instance.status),
       'notes': instance.notes,
       'requiresPhotos': instance.requiresPhotos,
+      'highPriority': instance.highPriority,
       'items': instance.items?.map((e) => e.toJson()).toList(),
+      'packersIds': instance.packersIds,
     };
 
 _$TenvioDestinationImpl _$$TenvioDestinationImplFromJson(

@@ -31262,6 +31262,9 @@ mixin _$User {
   @TimestampOrNullConverter()
   DateTime? get suspendedAt => throw _privateConstructorUsedError;
 
+  /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
+  List<String> get hwModelsAnimationsIds => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -31308,7 +31311,8 @@ abstract class $UserCopyWith<$Res> {
       double? tenvioLatitude,
       double? tenvioLongitude,
       bool? isSuspended,
-      @TimestampOrNullConverter() DateTime? suspendedAt});
+      @TimestampOrNullConverter() DateTime? suspendedAt,
+      List<String> hwModelsAnimationsIds});
 
   $TokenCopyWith<$Res>? get token;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
@@ -31366,6 +31370,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? tenvioLongitude = freezed,
     Object? isSuspended = freezed,
     Object? suspendedAt = freezed,
+    Object? hwModelsAnimationsIds = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -31512,6 +31517,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.suspendedAt
           : suspendedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      hwModelsAnimationsIds: null == hwModelsAnimationsIds
+          ? _value.hwModelsAnimationsIds
+          : hwModelsAnimationsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ) as $Val);
   }
 
@@ -31620,7 +31629,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       double? tenvioLatitude,
       double? tenvioLongitude,
       bool? isSuspended,
-      @TimestampOrNullConverter() DateTime? suspendedAt});
+      @TimestampOrNullConverter() DateTime? suspendedAt,
+      List<String> hwModelsAnimationsIds});
 
   @override
   $TokenCopyWith<$Res>? get token;
@@ -31680,6 +31690,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? tenvioLongitude = freezed,
     Object? isSuspended = freezed,
     Object? suspendedAt = freezed,
+    Object? hwModelsAnimationsIds = null,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -31826,6 +31837,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.suspendedAt
           : suspendedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      hwModelsAnimationsIds: null == hwModelsAnimationsIds
+          ? _value._hwModelsAnimationsIds
+          : hwModelsAnimationsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -31869,7 +31884,8 @@ class _$UserImpl implements _User {
       this.tenvioLatitude,
       this.tenvioLongitude,
       this.isSuspended,
-      @TimestampOrNullConverter() this.suspendedAt})
+      @TimestampOrNullConverter() this.suspendedAt,
+      final List<String> hwModelsAnimationsIds = const []})
       : _referencesIds = referencesIds,
         _references = references,
         _access = access,
@@ -31881,7 +31897,8 @@ class _$UserImpl implements _User {
         _mappitAssetsIds = mappitAssetsIds,
         _mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,
         _mappitAssets = mappitAssets,
-        _mfaMethods = mfaMethods;
+        _mfaMethods = mfaMethods,
+        _hwModelsAnimationsIds = hwModelsAnimationsIds;
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -32149,9 +32166,22 @@ class _$UserImpl implements _User {
   @TimestampOrNullConverter()
   final DateTime? suspendedAt;
 
+  /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
+  final List<String> _hwModelsAnimationsIds;
+
+  /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
+  @override
+  @JsonKey()
+  List<String> get hwModelsAnimationsIds {
+    if (_hwModelsAnimationsIds is EqualUnmodifiableListView)
+      return _hwModelsAnimationsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_hwModelsAnimationsIds);
+  }
+
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, isSuspended: $isSuspended, suspendedAt: $suspendedAt)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, isSuspended: $isSuspended, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds)';
   }
 
   @override
@@ -32221,7 +32251,9 @@ class _$UserImpl implements _User {
             (identical(other.isSuspended, isSuspended) ||
                 other.isSuspended == isSuspended) &&
             (identical(other.suspendedAt, suspendedAt) ||
-                other.suspendedAt == suspendedAt));
+                other.suspendedAt == suspendedAt) &&
+            const DeepCollectionEquality()
+                .equals(other._hwModelsAnimationsIds, _hwModelsAnimationsIds));
   }
 
   @JsonKey(ignore: true)
@@ -32263,7 +32295,8 @@ class _$UserImpl implements _User {
         tenvioLatitude,
         tenvioLongitude,
         isSuspended,
-        suspendedAt
+        suspendedAt,
+        const DeepCollectionEquality().hash(_hwModelsAnimationsIds)
       ]);
 
   @JsonKey(ignore: true)
@@ -32317,7 +32350,8 @@ abstract class _User implements User {
       final double? tenvioLatitude,
       final double? tenvioLongitude,
       final bool? isSuspended,
-      @TimestampOrNullConverter() final DateTime? suspendedAt}) = _$UserImpl;
+      @TimestampOrNullConverter() final DateTime? suspendedAt,
+      final List<String> hwModelsAnimationsIds}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -32473,6 +32507,10 @@ abstract class _User implements User {
   /// [suspendedAt] represents the date when the account was suspended.
   @TimestampOrNullConverter()
   DateTime? get suspendedAt;
+  @override
+
+  /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
+  List<String> get hwModelsAnimationsIds;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>

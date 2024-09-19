@@ -1,5 +1,18 @@
 # Changelog
 
+## 3.2.12
+- Added `LoadingParamsForm`
+- Added `@Default([])` in `AtsReception` and `AtsReceptionProduct`
+- Added `TenvioOrderInput` in `packersIds`
+
+## 3.2.11
+
+- Added `hwModelsAnimationsIds` to `User` model
+
+## 3.2.10
+
+- Added `highPriority` to `TenvioOrder` & `TenvioOrderInput` on `Order` model
+
 ## 3.2.9
 
 -Changed `requiresPhoto` to `requiresPhotos` & `destinationWareHouseId` to `destinationWarehouseId`, field  `packageImage` deleted

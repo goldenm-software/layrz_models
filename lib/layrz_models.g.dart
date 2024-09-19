@@ -2854,6 +2854,10 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       isSuspended: json['isSuspended'] as bool?,
       suspendedAt: const TimestampOrNullConverter()
           .fromJson(json['suspendedAt'] as num?),
+      hwModelsAnimationsIds: (json['hwModelsAnimationsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
@@ -2897,6 +2901,7 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'isSuspended': instance.isSuspended,
       'suspendedAt':
           const TimestampOrNullConverter().toJson(instance.suspendedAt),
+      'hwModelsAnimationsIds': instance.hwModelsAnimationsIds,
     };
 
 _$InviteLinkImpl _$$InviteLinkImplFromJson(Map<String, dynamic> json) =>

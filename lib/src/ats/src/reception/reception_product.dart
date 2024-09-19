@@ -105,7 +105,7 @@ class AtsReceptionProduct with _$AtsReceptionProduct {
     String? provider,
 
     /// List of tank images
-    List<String>? tanksImages,
+    @Default([]) List<String> tanksImages,
   }) = _AtsReceptionProduct;
 
   /// from json method
