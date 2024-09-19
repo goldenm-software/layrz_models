@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.12
+- Added `LoadingParamsForm`
+- Added `@Default([])` in `AtsReception` and `AtsReceptionProduct`
+- Added `TenvioOrderInput` in `packersIds`
+
 ## 3.2.11
 
 - Added `hwModelsAnimationsIds` to `User` model

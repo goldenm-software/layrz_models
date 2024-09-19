@@ -13,13 +13,13 @@ class AtsReception with _$AtsReception {
     AtsPurchaseOrder? order,
 
     /// List of [AtsPurchaseOrder] IDs.
-    List<int>? ordersIds,
+    @Default([]) List<int> ordersIds,
 
     /// [AtsEntry] linked to the [AtsReception].
     AtsEntry? entry,
 
     /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
-    List<AtsReceptionProduct>? products,
+    @Default([]) List<AtsReceptionProduct> products,
 
     /// `errorRate` represents error percent between reception and sensor entry raw.
     double? errorRate,

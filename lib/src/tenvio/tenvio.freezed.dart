@@ -3530,6 +3530,12 @@ mixin _$TenvioOrderInput {
   set items(List<TenvioItemQuantityInput>? value) =>
       throw _privateConstructorUsedError;
 
+  /// [packersIds] IDs of the users that will pack the order.
+  List<String>? get packersIds => throw _privateConstructorUsedError;
+
+  /// [packersIds] IDs of the users that will pack the order.
+  set packersIds(List<String>? value) => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioOrderInputCopyWith<TenvioOrderInput> get copyWith =>
@@ -3552,7 +3558,8 @@ abstract class $TenvioOrderInputCopyWith<$Res> {
       List<String> notes,
       bool? requiresPhotos,
       bool? highPriority,
-      List<TenvioItemQuantityInput>? items});
+      List<TenvioItemQuantityInput>? items,
+      List<String>? packersIds});
 
   $CustomerInputCopyWith<$Res>? get newCustomer;
 }
@@ -3580,6 +3587,7 @@ class _$TenvioOrderInputCopyWithImpl<$Res, $Val extends TenvioOrderInput>
     Object? requiresPhotos = freezed,
     Object? highPriority = freezed,
     Object? items = freezed,
+    Object? packersIds = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -3622,6 +3630,10 @@ class _$TenvioOrderInputCopyWithImpl<$Res, $Val extends TenvioOrderInput>
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<TenvioItemQuantityInput>?,
+      packersIds: freezed == packersIds
+          ? _value.packersIds
+          : packersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ) as $Val);
   }
 
@@ -3656,7 +3668,8 @@ abstract class _$$TenvioOrderInputImplCopyWith<$Res>
       List<String> notes,
       bool? requiresPhotos,
       bool? highPriority,
-      List<TenvioItemQuantityInput>? items});
+      List<TenvioItemQuantityInput>? items,
+      List<String>? packersIds});
 
   @override
   $CustomerInputCopyWith<$Res>? get newCustomer;
@@ -3683,6 +3696,7 @@ class __$$TenvioOrderInputImplCopyWithImpl<$Res>
     Object? requiresPhotos = freezed,
     Object? highPriority = freezed,
     Object? items = freezed,
+    Object? packersIds = freezed,
   }) {
     return _then(_$TenvioOrderInputImpl(
       id: freezed == id
@@ -3725,6 +3739,10 @@ class __$$TenvioOrderInputImplCopyWithImpl<$Res>
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<TenvioItemQuantityInput>?,
+      packersIds: freezed == packersIds
+          ? _value.packersIds
+          : packersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -3742,7 +3760,8 @@ class _$TenvioOrderInputImpl implements _TenvioOrderInput {
       this.notes = const [],
       this.requiresPhotos,
       this.highPriority,
-      this.items});
+      this.items,
+      this.packersIds});
 
   factory _$TenvioOrderInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioOrderInputImplFromJson(json);
@@ -3789,9 +3808,13 @@ class _$TenvioOrderInputImpl implements _TenvioOrderInput {
   @override
   List<TenvioItemQuantityInput>? items;
 
+  /// [packersIds] IDs of the users that will pack the order.
+  @override
+  List<String>? packersIds;
+
   @override
   String toString() {
-    return 'TenvioOrderInput(id: $id, customerId: $customerId, newCustomer: $newCustomer, destinationWarehouseId: $destinationWarehouseId, warehouseId: $warehouseId, status: $status, notes: $notes, requiresPhotos: $requiresPhotos, highPriority: $highPriority, items: $items)';
+    return 'TenvioOrderInput(id: $id, customerId: $customerId, newCustomer: $newCustomer, destinationWarehouseId: $destinationWarehouseId, warehouseId: $warehouseId, status: $status, notes: $notes, requiresPhotos: $requiresPhotos, highPriority: $highPriority, items: $items, packersIds: $packersIds)';
   }
 
   @JsonKey(ignore: true)
@@ -3820,7 +3843,8 @@ abstract class _TenvioOrderInput implements TenvioOrderInput {
       List<String> notes,
       bool? requiresPhotos,
       bool? highPriority,
-      List<TenvioItemQuantityInput>? items}) = _$TenvioOrderInputImpl;
+      List<TenvioItemQuantityInput>? items,
+      List<String>? packersIds}) = _$TenvioOrderInputImpl;
 
   factory _TenvioOrderInput.fromJson(Map<String, dynamic> json) =
       _$TenvioOrderInputImpl.fromJson;
@@ -3897,6 +3921,13 @@ abstract class _TenvioOrderInput implements TenvioOrderInput {
 
   /// [items] Items included in the order.
   set items(List<TenvioItemQuantityInput>? value);
+  @override
+
+  /// [packersIds] IDs of the users that will pack the order.
+  List<String>? get packersIds;
+
+  /// [packersIds] IDs of the users that will pack the order.
+  set packersIds(List<String>? value);
   @override
   @JsonKey(ignore: true)
   _$$TenvioOrderInputImplCopyWith<_$TenvioOrderInputImpl> get copyWith =>

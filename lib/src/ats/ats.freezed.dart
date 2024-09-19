@@ -53,7 +53,7 @@ mixin _$AtsReceptionProduct {
   String? get provider => throw _privateConstructorUsedError;
 
   /// List of tank images
-  List<String>? get tanksImages => throw _privateConstructorUsedError;
+  List<String> get tanksImages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -78,7 +78,7 @@ abstract class $AtsReceptionProductCopyWith<$Res> {
       double? realVolume,
       @TimestampOrNullConverter() DateTime? receivedAt,
       String? provider,
-      List<String>? tanksImages});
+      List<String> tanksImages});
 }
 
 /// @nodoc
@@ -104,7 +104,7 @@ class _$AtsReceptionProductCopyWithImpl<$Res, $Val extends AtsReceptionProduct>
     Object? realVolume = freezed,
     Object? receivedAt = freezed,
     Object? provider = freezed,
-    Object? tanksImages = freezed,
+    Object? tanksImages = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -147,10 +147,10 @@ class _$AtsReceptionProductCopyWithImpl<$Res, $Val extends AtsReceptionProduct>
           ? _value.provider
           : provider // ignore: cast_nullable_to_non_nullable
               as String?,
-      tanksImages: freezed == tanksImages
+      tanksImages: null == tanksImages
           ? _value.tanksImages
           : tanksImages // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
     ) as $Val);
   }
 }
@@ -174,7 +174,7 @@ abstract class _$$AtsReceptionProductImplCopyWith<$Res>
       double? realVolume,
       @TimestampOrNullConverter() DateTime? receivedAt,
       String? provider,
-      List<String>? tanksImages});
+      List<String> tanksImages});
 }
 
 /// @nodoc
@@ -198,7 +198,7 @@ class __$$AtsReceptionProductImplCopyWithImpl<$Res>
     Object? realVolume = freezed,
     Object? receivedAt = freezed,
     Object? provider = freezed,
-    Object? tanksImages = freezed,
+    Object? tanksImages = null,
   }) {
     return _then(_$AtsReceptionProductImpl(
       id: freezed == id
@@ -241,10 +241,10 @@ class __$$AtsReceptionProductImplCopyWithImpl<$Res>
           ? _value.provider
           : provider // ignore: cast_nullable_to_non_nullable
               as String?,
-      tanksImages: freezed == tanksImages
+      tanksImages: null == tanksImages
           ? _value._tanksImages
           : tanksImages // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
     ));
   }
 }
@@ -263,7 +263,7 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
       this.realVolume,
       @TimestampOrNullConverter() this.receivedAt,
       this.provider,
-      final List<String>? tanksImages})
+      final List<String> tanksImages = const []})
       : _tanksImages = tanksImages;
 
   factory _$AtsReceptionProductImpl.fromJson(Map<String, dynamic> json) =>
@@ -312,16 +312,15 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
   final String? provider;
 
   /// List of tank images
-  final List<String>? _tanksImages;
+  final List<String> _tanksImages;
 
   /// List of tank images
   @override
-  List<String>? get tanksImages {
-    final value = _tanksImages;
-    if (value == null) return null;
+  @JsonKey()
+  List<String> get tanksImages {
     if (_tanksImages is EqualUnmodifiableListView) return _tanksImages;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_tanksImages);
   }
 
   @override
@@ -398,7 +397,7 @@ abstract class _AtsReceptionProduct implements AtsReceptionProduct {
       final double? realVolume,
       @TimestampOrNullConverter() final DateTime? receivedAt,
       final String? provider,
-      final List<String>? tanksImages}) = _$AtsReceptionProductImpl;
+      final List<String> tanksImages}) = _$AtsReceptionProductImpl;
 
   factory _AtsReceptionProduct.fromJson(Map<String, dynamic> json) =
       _$AtsReceptionProductImpl.fromJson;
@@ -448,7 +447,7 @@ abstract class _AtsReceptionProduct implements AtsReceptionProduct {
   @override
 
   /// List of tank images
-  List<String>? get tanksImages;
+  List<String> get tanksImages;
   @override
   @JsonKey(ignore: true)
   _$$AtsReceptionProductImplCopyWith<_$AtsReceptionProductImpl> get copyWith =>
@@ -6707,13 +6706,13 @@ mixin _$AtsReception {
   AtsPurchaseOrder? get order => throw _privateConstructorUsedError;
 
   /// List of [AtsPurchaseOrder] IDs.
-  List<int>? get ordersIds => throw _privateConstructorUsedError;
+  List<int> get ordersIds => throw _privateConstructorUsedError;
 
   /// [AtsEntry] linked to the [AtsReception].
   AtsEntry? get entry => throw _privateConstructorUsedError;
 
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
-  List<AtsReceptionProduct>? get products => throw _privateConstructorUsedError;
+  List<AtsReceptionProduct> get products => throw _privateConstructorUsedError;
 
   /// `errorRate` represents error percent between reception and sensor entry raw.
   double? get errorRate => throw _privateConstructorUsedError;
@@ -6734,9 +6733,9 @@ abstract class $AtsReceptionCopyWith<$Res> {
       {String id,
       int? orderId,
       AtsPurchaseOrder? order,
-      List<int>? ordersIds,
+      List<int> ordersIds,
       AtsEntry? entry,
-      List<AtsReceptionProduct>? products,
+      List<AtsReceptionProduct> products,
       double? errorRate});
 
   $AtsPurchaseOrderCopyWith<$Res>? get order;
@@ -6759,9 +6758,9 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
     Object? id = null,
     Object? orderId = freezed,
     Object? order = freezed,
-    Object? ordersIds = freezed,
+    Object? ordersIds = null,
     Object? entry = freezed,
-    Object? products = freezed,
+    Object? products = null,
     Object? errorRate = freezed,
   }) {
     return _then(_value.copyWith(
@@ -6777,18 +6776,18 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrder?,
-      ordersIds: freezed == ordersIds
+      ordersIds: null == ordersIds
           ? _value.ordersIds
           : ordersIds // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as List<int>,
       entry: freezed == entry
           ? _value.entry
           : entry // ignore: cast_nullable_to_non_nullable
               as AtsEntry?,
-      products: freezed == products
+      products: null == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<AtsReceptionProduct>?,
+              as List<AtsReceptionProduct>,
       errorRate: freezed == errorRate
           ? _value.errorRate
           : errorRate // ignore: cast_nullable_to_non_nullable
@@ -6833,9 +6832,9 @@ abstract class _$$AtsReceptionImplCopyWith<$Res>
       {String id,
       int? orderId,
       AtsPurchaseOrder? order,
-      List<int>? ordersIds,
+      List<int> ordersIds,
       AtsEntry? entry,
-      List<AtsReceptionProduct>? products,
+      List<AtsReceptionProduct> products,
       double? errorRate});
 
   @override
@@ -6858,9 +6857,9 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
     Object? id = null,
     Object? orderId = freezed,
     Object? order = freezed,
-    Object? ordersIds = freezed,
+    Object? ordersIds = null,
     Object? entry = freezed,
-    Object? products = freezed,
+    Object? products = null,
     Object? errorRate = freezed,
   }) {
     return _then(_$AtsReceptionImpl(
@@ -6876,18 +6875,18 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrder?,
-      ordersIds: freezed == ordersIds
+      ordersIds: null == ordersIds
           ? _value._ordersIds
           : ordersIds // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
+              as List<int>,
       entry: freezed == entry
           ? _value.entry
           : entry // ignore: cast_nullable_to_non_nullable
               as AtsEntry?,
-      products: freezed == products
+      products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<AtsReceptionProduct>?,
+              as List<AtsReceptionProduct>,
       errorRate: freezed == errorRate
           ? _value.errorRate
           : errorRate // ignore: cast_nullable_to_non_nullable
@@ -6903,9 +6902,9 @@ class _$AtsReceptionImpl implements _AtsReception {
       {required this.id,
       this.orderId,
       this.order,
-      final List<int>? ordersIds,
+      final List<int> ordersIds = const [],
       this.entry,
-      final List<AtsReceptionProduct>? products,
+      final List<AtsReceptionProduct> products = const [],
       this.errorRate})
       : _ordersIds = ordersIds,
         _products = products;
@@ -6926,16 +6925,15 @@ class _$AtsReceptionImpl implements _AtsReception {
   final AtsPurchaseOrder? order;
 
   /// List of [AtsPurchaseOrder] IDs.
-  final List<int>? _ordersIds;
+  final List<int> _ordersIds;
 
   /// List of [AtsPurchaseOrder] IDs.
   @override
-  List<int>? get ordersIds {
-    final value = _ordersIds;
-    if (value == null) return null;
+  @JsonKey()
+  List<int> get ordersIds {
     if (_ordersIds is EqualUnmodifiableListView) return _ordersIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_ordersIds);
   }
 
   /// [AtsEntry] linked to the [AtsReception].
@@ -6943,16 +6941,15 @@ class _$AtsReceptionImpl implements _AtsReception {
   final AtsEntry? entry;
 
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
-  final List<AtsReceptionProduct>? _products;
+  final List<AtsReceptionProduct> _products;
 
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   @override
-  List<AtsReceptionProduct>? get products {
-    final value = _products;
-    if (value == null) return null;
+  @JsonKey()
+  List<AtsReceptionProduct> get products {
     if (_products is EqualUnmodifiableListView) return _products;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_products);
   }
 
   /// `errorRate` represents error percent between reception and sensor entry raw.
@@ -7011,9 +7008,9 @@ abstract class _AtsReception implements AtsReception {
       {required final String id,
       final int? orderId,
       final AtsPurchaseOrder? order,
-      final List<int>? ordersIds,
+      final List<int> ordersIds,
       final AtsEntry? entry,
-      final List<AtsReceptionProduct>? products,
+      final List<AtsReceptionProduct> products,
       final double? errorRate}) = _$AtsReceptionImpl;
 
   factory _AtsReception.fromJson(Map<String, dynamic> json) =
@@ -7034,7 +7031,7 @@ abstract class _AtsReception implements AtsReception {
   @override
 
   /// List of [AtsPurchaseOrder] IDs.
-  List<int>? get ordersIds;
+  List<int> get ordersIds;
   @override
 
   /// [AtsEntry] linked to the [AtsReception].
@@ -7042,7 +7039,7 @@ abstract class _AtsReception implements AtsReception {
   @override
 
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
-  List<AtsReceptionProduct>? get products;
+  List<AtsReceptionProduct> get products;
   @override
 
   /// `errorRate` represents error percent between reception and sensor entry raw.
@@ -7732,6 +7729,956 @@ abstract class _OperationProductInformation
   @JsonKey(ignore: true)
   _$$OperationProductInformationImplCopyWith<_$OperationProductInformationImpl>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+LoadingParamsFormInput _$LoadingParamsFormInputFromJson(
+    Map<String, dynamic> json) {
+  return _LoadingParamsFormInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LoadingParamsFormInput {
+  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
+  String? get id => throw _privateConstructorUsedError;
+
+  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// `assetId` What asset is linked to loading params form (Truck).
+  String? get assetId => throw _privateConstructorUsedError;
+
+  /// `assetId` What asset is linked to loading params form (Truck).
+  set assetId(String? value) => throw _privateConstructorUsedError;
+
+  /// `receptionId` linked to loading params form.
+  String? get receptionId => throw _privateConstructorUsedError;
+
+  /// `receptionId` linked to loading params form.
+  set receptionId(String? value) => throw _privateConstructorUsedError;
+
+  /// `driver` name
+  String? get driver => throw _privateConstructorUsedError;
+
+  /// `driver` name
+  set driver(String? value) => throw _privateConstructorUsedError;
+
+  /// `sampleDensity` is loading params form density
+  double? get sampleDensity => throw _privateConstructorUsedError;
+
+  /// `sampleDensity` is loading params form density
+  set sampleDensity(double? value) => throw _privateConstructorUsedError;
+
+  /// `sampleTemperature` is loading params form temperature
+  double? get sampleTemperature => throw _privateConstructorUsedError;
+
+  /// `sampleTemperature` is loading params form temperature
+  set sampleTemperature(double? value) => throw _privateConstructorUsedError;
+
+  /// `assetTemperature` represent the asset temperature
+  double? get assetTemperature => throw _privateConstructorUsedError;
+
+  /// `assetTemperature` represent the asset temperature
+  set assetTemperature(double? value) => throw _privateConstructorUsedError;
+
+  ///  `analyzedAt` represent when the asset density in UNIX
+  double? get analyzedAt => throw _privateConstructorUsedError;
+
+  ///  `analyzedAt` represent when the asset density in UNIX
+  set analyzedAt(double? value) => throw _privateConstructorUsedError;
+
+  /// `sampleType` represent the loading params sample type
+  @AtsLoadingParamsSampleOrNullConverter()
+  AtsLoadingParamsSample? get sampleType => throw _privateConstructorUsedError;
+
+  /// `sampleType` represent the loading params sample type
+  @AtsLoadingParamsSampleOrNullConverter()
+  set sampleType(AtsLoadingParamsSample? value) =>
+      throw _privateConstructorUsedError;
+
+  /// `formNumber` Loading params form number
+  String? get formNumber => throw _privateConstructorUsedError;
+
+  /// `formNumber` Loading params form number
+  set formNumber(String? value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LoadingParamsFormInputCopyWith<LoadingParamsFormInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LoadingParamsFormInputCopyWith<$Res> {
+  factory $LoadingParamsFormInputCopyWith(LoadingParamsFormInput value,
+          $Res Function(LoadingParamsFormInput) then) =
+      _$LoadingParamsFormInputCopyWithImpl<$Res, LoadingParamsFormInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      String? receptionId,
+      String? driver,
+      double? sampleDensity,
+      double? sampleTemperature,
+      double? assetTemperature,
+      double? analyzedAt,
+      @AtsLoadingParamsSampleOrNullConverter()
+      AtsLoadingParamsSample? sampleType,
+      String? formNumber});
+}
+
+/// @nodoc
+class _$LoadingParamsFormInputCopyWithImpl<$Res,
+        $Val extends LoadingParamsFormInput>
+    implements $LoadingParamsFormInputCopyWith<$Res> {
+  _$LoadingParamsFormInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? receptionId = freezed,
+    Object? driver = freezed,
+    Object? sampleDensity = freezed,
+    Object? sampleTemperature = freezed,
+    Object? assetTemperature = freezed,
+    Object? analyzedAt = freezed,
+    Object? sampleType = freezed,
+    Object? formNumber = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receptionId: freezed == receptionId
+          ? _value.receptionId
+          : receptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      driver: freezed == driver
+          ? _value.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sampleDensity: freezed == sampleDensity
+          ? _value.sampleDensity
+          : sampleDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sampleTemperature: freezed == sampleTemperature
+          ? _value.sampleTemperature
+          : sampleTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      assetTemperature: freezed == assetTemperature
+          ? _value.assetTemperature
+          : assetTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      analyzedAt: freezed == analyzedAt
+          ? _value.analyzedAt
+          : analyzedAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sampleType: freezed == sampleType
+          ? _value.sampleType
+          : sampleType // ignore: cast_nullable_to_non_nullable
+              as AtsLoadingParamsSample?,
+      formNumber: freezed == formNumber
+          ? _value.formNumber
+          : formNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LoadingParamsFormInputImplCopyWith<$Res>
+    implements $LoadingParamsFormInputCopyWith<$Res> {
+  factory _$$LoadingParamsFormInputImplCopyWith(
+          _$LoadingParamsFormInputImpl value,
+          $Res Function(_$LoadingParamsFormInputImpl) then) =
+      __$$LoadingParamsFormInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      String? receptionId,
+      String? driver,
+      double? sampleDensity,
+      double? sampleTemperature,
+      double? assetTemperature,
+      double? analyzedAt,
+      @AtsLoadingParamsSampleOrNullConverter()
+      AtsLoadingParamsSample? sampleType,
+      String? formNumber});
+}
+
+/// @nodoc
+class __$$LoadingParamsFormInputImplCopyWithImpl<$Res>
+    extends _$LoadingParamsFormInputCopyWithImpl<$Res,
+        _$LoadingParamsFormInputImpl>
+    implements _$$LoadingParamsFormInputImplCopyWith<$Res> {
+  __$$LoadingParamsFormInputImplCopyWithImpl(
+      _$LoadingParamsFormInputImpl _value,
+      $Res Function(_$LoadingParamsFormInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? receptionId = freezed,
+    Object? driver = freezed,
+    Object? sampleDensity = freezed,
+    Object? sampleTemperature = freezed,
+    Object? assetTemperature = freezed,
+    Object? analyzedAt = freezed,
+    Object? sampleType = freezed,
+    Object? formNumber = freezed,
+  }) {
+    return _then(_$LoadingParamsFormInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receptionId: freezed == receptionId
+          ? _value.receptionId
+          : receptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      driver: freezed == driver
+          ? _value.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sampleDensity: freezed == sampleDensity
+          ? _value.sampleDensity
+          : sampleDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sampleTemperature: freezed == sampleTemperature
+          ? _value.sampleTemperature
+          : sampleTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      assetTemperature: freezed == assetTemperature
+          ? _value.assetTemperature
+          : assetTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      analyzedAt: freezed == analyzedAt
+          ? _value.analyzedAt
+          : analyzedAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sampleType: freezed == sampleType
+          ? _value.sampleType
+          : sampleType // ignore: cast_nullable_to_non_nullable
+              as AtsLoadingParamsSample?,
+      formNumber: freezed == formNumber
+          ? _value.formNumber
+          : formNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LoadingParamsFormInputImpl implements _LoadingParamsFormInput {
+  _$LoadingParamsFormInputImpl(
+      {this.id,
+      this.assetId,
+      this.receptionId,
+      this.driver,
+      this.sampleDensity,
+      this.sampleTemperature,
+      this.assetTemperature,
+      this.analyzedAt,
+      @AtsLoadingParamsSampleOrNullConverter() this.sampleType,
+      this.formNumber});
+
+  factory _$LoadingParamsFormInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoadingParamsFormInputImplFromJson(json);
+
+  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
+  @override
+  String? id;
+
+  /// `assetId` What asset is linked to loading params form (Truck).
+  @override
+  String? assetId;
+
+  /// `receptionId` linked to loading params form.
+  @override
+  String? receptionId;
+
+  /// `driver` name
+  @override
+  String? driver;
+
+  /// `sampleDensity` is loading params form density
+  @override
+  double? sampleDensity;
+
+  /// `sampleTemperature` is loading params form temperature
+  @override
+  double? sampleTemperature;
+
+  /// `assetTemperature` represent the asset temperature
+  @override
+  double? assetTemperature;
+
+  ///  `analyzedAt` represent when the asset density in UNIX
+  @override
+  double? analyzedAt;
+
+  /// `sampleType` represent the loading params sample type
+  @override
+  @AtsLoadingParamsSampleOrNullConverter()
+  AtsLoadingParamsSample? sampleType;
+
+  /// `formNumber` Loading params form number
+  @override
+  String? formNumber;
+
+  @override
+  String toString() {
+    return 'LoadingParamsFormInput(id: $id, assetId: $assetId, receptionId: $receptionId, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, formNumber: $formNumber)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadingParamsFormInputImplCopyWith<_$LoadingParamsFormInputImpl>
+      get copyWith => __$$LoadingParamsFormInputImplCopyWithImpl<
+          _$LoadingParamsFormInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LoadingParamsFormInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LoadingParamsFormInput implements LoadingParamsFormInput {
+  factory _LoadingParamsFormInput(
+      {String? id,
+      String? assetId,
+      String? receptionId,
+      String? driver,
+      double? sampleDensity,
+      double? sampleTemperature,
+      double? assetTemperature,
+      double? analyzedAt,
+      @AtsLoadingParamsSampleOrNullConverter()
+      AtsLoadingParamsSample? sampleType,
+      String? formNumber}) = _$LoadingParamsFormInputImpl;
+
+  factory _LoadingParamsFormInput.fromJson(Map<String, dynamic> json) =
+      _$LoadingParamsFormInputImpl.fromJson;
+
+  @override
+
+  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
+  String? get id;
+
+  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
+  set id(String? value);
+  @override
+
+  /// `assetId` What asset is linked to loading params form (Truck).
+  String? get assetId;
+
+  /// `assetId` What asset is linked to loading params form (Truck).
+  set assetId(String? value);
+  @override
+
+  /// `receptionId` linked to loading params form.
+  String? get receptionId;
+
+  /// `receptionId` linked to loading params form.
+  set receptionId(String? value);
+  @override
+
+  /// `driver` name
+  String? get driver;
+
+  /// `driver` name
+  set driver(String? value);
+  @override
+
+  /// `sampleDensity` is loading params form density
+  double? get sampleDensity;
+
+  /// `sampleDensity` is loading params form density
+  set sampleDensity(double? value);
+  @override
+
+  /// `sampleTemperature` is loading params form temperature
+  double? get sampleTemperature;
+
+  /// `sampleTemperature` is loading params form temperature
+  set sampleTemperature(double? value);
+  @override
+
+  /// `assetTemperature` represent the asset temperature
+  double? get assetTemperature;
+
+  /// `assetTemperature` represent the asset temperature
+  set assetTemperature(double? value);
+  @override
+
+  ///  `analyzedAt` represent when the asset density in UNIX
+  double? get analyzedAt;
+
+  ///  `analyzedAt` represent when the asset density in UNIX
+  set analyzedAt(double? value);
+  @override
+
+  /// `sampleType` represent the loading params sample type
+  @AtsLoadingParamsSampleOrNullConverter()
+  AtsLoadingParamsSample? get sampleType;
+
+  /// `sampleType` represent the loading params sample type
+  @AtsLoadingParamsSampleOrNullConverter()
+  set sampleType(AtsLoadingParamsSample? value);
+  @override
+
+  /// `formNumber` Loading params form number
+  String? get formNumber;
+
+  /// `formNumber` Loading params form number
+  set formNumber(String? value);
+  @override
+  @JsonKey(ignore: true)
+  _$$LoadingParamsFormInputImplCopyWith<_$LoadingParamsFormInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+LoadingParamsForm _$LoadingParamsFormFromJson(Map<String, dynamic> json) {
+  return _LoadingParamsForm.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LoadingParamsForm {
+  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
+  String? get id => throw _privateConstructorUsedError;
+
+  /// `assetId` What asset is linked to loading params form (Truck).
+  String? get assetId => throw _privateConstructorUsedError;
+
+  /// `asset` What asset is linked to loading params form (Truck).
+  Asset? get asset => throw _privateConstructorUsedError;
+
+  /// `receptionId` linked to loading params form.
+  String? get receptionId => throw _privateConstructorUsedError;
+
+  /// `reception` linked to loading params form.
+  AtsReception? get reception => throw _privateConstructorUsedError;
+
+  /// `driver` name
+  String? get driver => throw _privateConstructorUsedError;
+
+  /// `sampleDensity` is loading params form density
+  double? get sampleDensity => throw _privateConstructorUsedError;
+
+  /// `sampleTemperature` is loading params form temperature
+  double? get sampleTemperature => throw _privateConstructorUsedError;
+
+  /// `assetTemperature` represent the asset temperature
+  double? get assetTemperature => throw _privateConstructorUsedError;
+
+  ///  `analyzedAt` represent when the asset density in UNIX
+  double? get analyzedAt => throw _privateConstructorUsedError;
+
+  /// `sampleType` represent the loading params sample type
+  @AtsLoadingParamsSampleOrNullConverter()
+  AtsLoadingParamsSample? get sampleType => throw _privateConstructorUsedError;
+
+  /// `fuelType` is the fuel type of the entry.
+  String? get fuelType => throw _privateConstructorUsedError;
+
+  /// `formNumber` Loading params form number
+  String? get formNumber => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LoadingParamsFormCopyWith<LoadingParamsForm> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LoadingParamsFormCopyWith<$Res> {
+  factory $LoadingParamsFormCopyWith(
+          LoadingParamsForm value, $Res Function(LoadingParamsForm) then) =
+      _$LoadingParamsFormCopyWithImpl<$Res, LoadingParamsForm>;
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      Asset? asset,
+      String? receptionId,
+      AtsReception? reception,
+      String? driver,
+      double? sampleDensity,
+      double? sampleTemperature,
+      double? assetTemperature,
+      double? analyzedAt,
+      @AtsLoadingParamsSampleOrNullConverter()
+      AtsLoadingParamsSample? sampleType,
+      String? fuelType,
+      String? formNumber});
+
+  $AssetCopyWith<$Res>? get asset;
+  $AtsReceptionCopyWith<$Res>? get reception;
+}
+
+/// @nodoc
+class _$LoadingParamsFormCopyWithImpl<$Res, $Val extends LoadingParamsForm>
+    implements $LoadingParamsFormCopyWith<$Res> {
+  _$LoadingParamsFormCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? asset = freezed,
+    Object? receptionId = freezed,
+    Object? reception = freezed,
+    Object? driver = freezed,
+    Object? sampleDensity = freezed,
+    Object? sampleTemperature = freezed,
+    Object? assetTemperature = freezed,
+    Object? analyzedAt = freezed,
+    Object? sampleType = freezed,
+    Object? fuelType = freezed,
+    Object? formNumber = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      asset: freezed == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      receptionId: freezed == receptionId
+          ? _value.receptionId
+          : receptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reception: freezed == reception
+          ? _value.reception
+          : reception // ignore: cast_nullable_to_non_nullable
+              as AtsReception?,
+      driver: freezed == driver
+          ? _value.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sampleDensity: freezed == sampleDensity
+          ? _value.sampleDensity
+          : sampleDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sampleTemperature: freezed == sampleTemperature
+          ? _value.sampleTemperature
+          : sampleTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      assetTemperature: freezed == assetTemperature
+          ? _value.assetTemperature
+          : assetTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      analyzedAt: freezed == analyzedAt
+          ? _value.analyzedAt
+          : analyzedAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sampleType: freezed == sampleType
+          ? _value.sampleType
+          : sampleType // ignore: cast_nullable_to_non_nullable
+              as AtsLoadingParamsSample?,
+      fuelType: freezed == fuelType
+          ? _value.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      formNumber: freezed == formNumber
+          ? _value.formNumber
+          : formNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get asset {
+    if (_value.asset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_value.asset!, (value) {
+      return _then(_value.copyWith(asset: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsReceptionCopyWith<$Res>? get reception {
+    if (_value.reception == null) {
+      return null;
+    }
+
+    return $AtsReceptionCopyWith<$Res>(_value.reception!, (value) {
+      return _then(_value.copyWith(reception: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$LoadingParamsFormImplCopyWith<$Res>
+    implements $LoadingParamsFormCopyWith<$Res> {
+  factory _$$LoadingParamsFormImplCopyWith(_$LoadingParamsFormImpl value,
+          $Res Function(_$LoadingParamsFormImpl) then) =
+      __$$LoadingParamsFormImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      Asset? asset,
+      String? receptionId,
+      AtsReception? reception,
+      String? driver,
+      double? sampleDensity,
+      double? sampleTemperature,
+      double? assetTemperature,
+      double? analyzedAt,
+      @AtsLoadingParamsSampleOrNullConverter()
+      AtsLoadingParamsSample? sampleType,
+      String? fuelType,
+      String? formNumber});
+
+  @override
+  $AssetCopyWith<$Res>? get asset;
+  @override
+  $AtsReceptionCopyWith<$Res>? get reception;
+}
+
+/// @nodoc
+class __$$LoadingParamsFormImplCopyWithImpl<$Res>
+    extends _$LoadingParamsFormCopyWithImpl<$Res, _$LoadingParamsFormImpl>
+    implements _$$LoadingParamsFormImplCopyWith<$Res> {
+  __$$LoadingParamsFormImplCopyWithImpl(_$LoadingParamsFormImpl _value,
+      $Res Function(_$LoadingParamsFormImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? asset = freezed,
+    Object? receptionId = freezed,
+    Object? reception = freezed,
+    Object? driver = freezed,
+    Object? sampleDensity = freezed,
+    Object? sampleTemperature = freezed,
+    Object? assetTemperature = freezed,
+    Object? analyzedAt = freezed,
+    Object? sampleType = freezed,
+    Object? fuelType = freezed,
+    Object? formNumber = freezed,
+  }) {
+    return _then(_$LoadingParamsFormImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      asset: freezed == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      receptionId: freezed == receptionId
+          ? _value.receptionId
+          : receptionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reception: freezed == reception
+          ? _value.reception
+          : reception // ignore: cast_nullable_to_non_nullable
+              as AtsReception?,
+      driver: freezed == driver
+          ? _value.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sampleDensity: freezed == sampleDensity
+          ? _value.sampleDensity
+          : sampleDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sampleTemperature: freezed == sampleTemperature
+          ? _value.sampleTemperature
+          : sampleTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      assetTemperature: freezed == assetTemperature
+          ? _value.assetTemperature
+          : assetTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      analyzedAt: freezed == analyzedAt
+          ? _value.analyzedAt
+          : analyzedAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      sampleType: freezed == sampleType
+          ? _value.sampleType
+          : sampleType // ignore: cast_nullable_to_non_nullable
+              as AtsLoadingParamsSample?,
+      fuelType: freezed == fuelType
+          ? _value.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      formNumber: freezed == formNumber
+          ? _value.formNumber
+          : formNumber // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LoadingParamsFormImpl implements _LoadingParamsForm {
+  _$LoadingParamsFormImpl(
+      {this.id,
+      this.assetId,
+      this.asset,
+      this.receptionId,
+      this.reception,
+      this.driver,
+      this.sampleDensity,
+      this.sampleTemperature,
+      this.assetTemperature,
+      this.analyzedAt,
+      @AtsLoadingParamsSampleOrNullConverter() this.sampleType,
+      this.fuelType,
+      this.formNumber});
+
+  factory _$LoadingParamsFormImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LoadingParamsFormImplFromJson(json);
+
+  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
+  @override
+  final String? id;
+
+  /// `assetId` What asset is linked to loading params form (Truck).
+  @override
+  final String? assetId;
+
+  /// `asset` What asset is linked to loading params form (Truck).
+  @override
+  final Asset? asset;
+
+  /// `receptionId` linked to loading params form.
+  @override
+  final String? receptionId;
+
+  /// `reception` linked to loading params form.
+  @override
+  final AtsReception? reception;
+
+  /// `driver` name
+  @override
+  final String? driver;
+
+  /// `sampleDensity` is loading params form density
+  @override
+  final double? sampleDensity;
+
+  /// `sampleTemperature` is loading params form temperature
+  @override
+  final double? sampleTemperature;
+
+  /// `assetTemperature` represent the asset temperature
+  @override
+  final double? assetTemperature;
+
+  ///  `analyzedAt` represent when the asset density in UNIX
+  @override
+  final double? analyzedAt;
+
+  /// `sampleType` represent the loading params sample type
+  @override
+  @AtsLoadingParamsSampleOrNullConverter()
+  final AtsLoadingParamsSample? sampleType;
+
+  /// `fuelType` is the fuel type of the entry.
+  @override
+  final String? fuelType;
+
+  /// `formNumber` Loading params form number
+  @override
+  final String? formNumber;
+
+  @override
+  String toString() {
+    return 'LoadingParamsForm(id: $id, assetId: $assetId, asset: $asset, receptionId: $receptionId, reception: $reception, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelType: $fuelType, formNumber: $formNumber)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingParamsFormImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.receptionId, receptionId) ||
+                other.receptionId == receptionId) &&
+            (identical(other.reception, reception) ||
+                other.reception == reception) &&
+            (identical(other.driver, driver) || other.driver == driver) &&
+            (identical(other.sampleDensity, sampleDensity) ||
+                other.sampleDensity == sampleDensity) &&
+            (identical(other.sampleTemperature, sampleTemperature) ||
+                other.sampleTemperature == sampleTemperature) &&
+            (identical(other.assetTemperature, assetTemperature) ||
+                other.assetTemperature == assetTemperature) &&
+            (identical(other.analyzedAt, analyzedAt) ||
+                other.analyzedAt == analyzedAt) &&
+            (identical(other.sampleType, sampleType) ||
+                other.sampleType == sampleType) &&
+            (identical(other.fuelType, fuelType) ||
+                other.fuelType == fuelType) &&
+            (identical(other.formNumber, formNumber) ||
+                other.formNumber == formNumber));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      assetId,
+      asset,
+      receptionId,
+      reception,
+      driver,
+      sampleDensity,
+      sampleTemperature,
+      assetTemperature,
+      analyzedAt,
+      sampleType,
+      fuelType,
+      formNumber);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoadingParamsFormImplCopyWith<_$LoadingParamsFormImpl> get copyWith =>
+      __$$LoadingParamsFormImplCopyWithImpl<_$LoadingParamsFormImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LoadingParamsFormImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LoadingParamsForm implements LoadingParamsForm {
+  factory _LoadingParamsForm(
+      {final String? id,
+      final String? assetId,
+      final Asset? asset,
+      final String? receptionId,
+      final AtsReception? reception,
+      final String? driver,
+      final double? sampleDensity,
+      final double? sampleTemperature,
+      final double? assetTemperature,
+      final double? analyzedAt,
+      @AtsLoadingParamsSampleOrNullConverter()
+      final AtsLoadingParamsSample? sampleType,
+      final String? fuelType,
+      final String? formNumber}) = _$LoadingParamsFormImpl;
+
+  factory _LoadingParamsForm.fromJson(Map<String, dynamic> json) =
+      _$LoadingParamsFormImpl.fromJson;
+
+  @override
+
+  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
+  String? get id;
+  @override
+
+  /// `assetId` What asset is linked to loading params form (Truck).
+  String? get assetId;
+  @override
+
+  /// `asset` What asset is linked to loading params form (Truck).
+  Asset? get asset;
+  @override
+
+  /// `receptionId` linked to loading params form.
+  String? get receptionId;
+  @override
+
+  /// `reception` linked to loading params form.
+  AtsReception? get reception;
+  @override
+
+  /// `driver` name
+  String? get driver;
+  @override
+
+  /// `sampleDensity` is loading params form density
+  double? get sampleDensity;
+  @override
+
+  /// `sampleTemperature` is loading params form temperature
+  double? get sampleTemperature;
+  @override
+
+  /// `assetTemperature` represent the asset temperature
+  double? get assetTemperature;
+  @override
+
+  ///  `analyzedAt` represent when the asset density in UNIX
+  double? get analyzedAt;
+  @override
+
+  /// `sampleType` represent the loading params sample type
+  @AtsLoadingParamsSampleOrNullConverter()
+  AtsLoadingParamsSample? get sampleType;
+  @override
+
+  /// `fuelType` is the fuel type of the entry.
+  String? get fuelType;
+  @override
+
+  /// `formNumber` Loading params form number
+  String? get formNumber;
+  @override
+  @JsonKey(ignore: true)
+  _$$LoadingParamsFormImplCopyWith<_$LoadingParamsFormImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 AtsExitStatus _$AtsExitStatusFromJson(Map<String, dynamic> json) {

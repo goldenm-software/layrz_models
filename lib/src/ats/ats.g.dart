@@ -22,8 +22,9 @@ _$AtsReceptionProductImpl _$$AtsReceptionProductImplFromJson(
           const TimestampOrNullConverter().fromJson(json['receivedAt'] as num?),
       provider: json['provider'] as String?,
       tanksImages: (json['tanksImages'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$AtsReceptionProductImplToJson(
@@ -582,14 +583,17 @@ _$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
           ? null
           : AtsPurchaseOrder.fromJson(json['order'] as Map<String, dynamic>),
       ordersIds: (json['ordersIds'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+              ?.map((e) => (e as num).toInt())
+              .toList() ??
+          const [],
       entry: json['entry'] == null
           ? null
           : AtsEntry.fromJson(json['entry'] as Map<String, dynamic>),
       products: (json['products'] as List<dynamic>?)
-          ?.map((e) => AtsReceptionProduct.fromJson(e as Map<String, dynamic>))
-          .toList(),
+              ?.map((e) =>
+                  AtsReceptionProduct.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       errorRate: (json['errorRate'] as num?)?.toDouble(),
     );
 
@@ -600,7 +604,7 @@ Map<String, dynamic> _$$AtsReceptionImplToJson(_$AtsReceptionImpl instance) =>
       'order': instance.order?.toJson(),
       'ordersIds': instance.ordersIds,
       'entry': instance.entry?.toJson(),
-      'products': instance.products?.map((e) => e.toJson()).toList(),
+      'products': instance.products.map((e) => e.toJson()).toList(),
       'errorRate': instance.errorRate,
     };
 
@@ -656,6 +660,80 @@ Map<String, dynamic> _$$OperationProductInformationImplToJson(
       'quantity': instance.quantity,
       'subcategory': instance.subcategory,
       'fuelType': instance.fuelType,
+    };
+
+_$LoadingParamsFormInputImpl _$$LoadingParamsFormInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LoadingParamsFormInputImpl(
+      id: json['id'] as String?,
+      assetId: json['assetId'] as String?,
+      receptionId: json['receptionId'] as String?,
+      driver: json['driver'] as String?,
+      sampleDensity: (json['sampleDensity'] as num?)?.toDouble(),
+      sampleTemperature: (json['sampleTemperature'] as num?)?.toDouble(),
+      assetTemperature: (json['assetTemperature'] as num?)?.toDouble(),
+      analyzedAt: (json['analyzedAt'] as num?)?.toDouble(),
+      sampleType: const AtsLoadingParamsSampleOrNullConverter()
+          .fromJson(json['sampleType'] as String?),
+      formNumber: json['formNumber'] as String?,
+    );
+
+Map<String, dynamic> _$$LoadingParamsFormInputImplToJson(
+        _$LoadingParamsFormInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'assetId': instance.assetId,
+      'receptionId': instance.receptionId,
+      'driver': instance.driver,
+      'sampleDensity': instance.sampleDensity,
+      'sampleTemperature': instance.sampleTemperature,
+      'assetTemperature': instance.assetTemperature,
+      'analyzedAt': instance.analyzedAt,
+      'sampleType': const AtsLoadingParamsSampleOrNullConverter()
+          .toJson(instance.sampleType),
+      'formNumber': instance.formNumber,
+    };
+
+_$LoadingParamsFormImpl _$$LoadingParamsFormImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LoadingParamsFormImpl(
+      id: json['id'] as String?,
+      assetId: json['assetId'] as String?,
+      asset: json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+      receptionId: json['receptionId'] as String?,
+      reception: json['reception'] == null
+          ? null
+          : AtsReception.fromJson(json['reception'] as Map<String, dynamic>),
+      driver: json['driver'] as String?,
+      sampleDensity: (json['sampleDensity'] as num?)?.toDouble(),
+      sampleTemperature: (json['sampleTemperature'] as num?)?.toDouble(),
+      assetTemperature: (json['assetTemperature'] as num?)?.toDouble(),
+      analyzedAt: (json['analyzedAt'] as num?)?.toDouble(),
+      sampleType: const AtsLoadingParamsSampleOrNullConverter()
+          .fromJson(json['sampleType'] as String?),
+      fuelType: json['fuelType'] as String?,
+      formNumber: json['formNumber'] as String?,
+    );
+
+Map<String, dynamic> _$$LoadingParamsFormImplToJson(
+        _$LoadingParamsFormImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'assetId': instance.assetId,
+      'asset': instance.asset?.toJson(),
+      'receptionId': instance.receptionId,
+      'reception': instance.reception?.toJson(),
+      'driver': instance.driver,
+      'sampleDensity': instance.sampleDensity,
+      'sampleTemperature': instance.sampleTemperature,
+      'assetTemperature': instance.assetTemperature,
+      'analyzedAt': instance.analyzedAt,
+      'sampleType': const AtsLoadingParamsSampleOrNullConverter()
+          .toJson(instance.sampleType),
+      'fuelType': instance.fuelType,
+      'formNumber': instance.formNumber,
     };
 
 _$AtsExitStatusImpl _$$AtsExitStatusImplFromJson(Map<String, dynamic> json) =>

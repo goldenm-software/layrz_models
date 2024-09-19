@@ -122,6 +122,9 @@ class TenvioOrderInput with _$TenvioOrderInput {
 
     /// [items] Items included in the order.
     List<TenvioItemQuantityInput>? items,
+
+    /// [packersIds] IDs of the users that will pack the order.
+    List<String>? packersIds,
   }) = _TenvioOrderInput;
 
   factory TenvioOrderInput.fromJson(Map<String, dynamic> json) => _$TenvioOrderInputFromJson(json);

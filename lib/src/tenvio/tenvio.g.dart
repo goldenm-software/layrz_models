@@ -306,6 +306,9 @@ _$TenvioOrderInputImpl _$$TenvioOrderInputImplFromJson(
           ?.map((e) =>
               TenvioItemQuantityInput.fromJson(e as Map<String, dynamic>))
           .toList(),
+      packersIds: (json['packersIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
 Map<String, dynamic> _$$TenvioOrderInputImplToJson(
@@ -321,6 +324,7 @@ Map<String, dynamic> _$$TenvioOrderInputImplToJson(
       'requiresPhotos': instance.requiresPhotos,
       'highPriority': instance.highPriority,
       'items': instance.items?.map((e) => e.toJson()).toList(),
+      'packersIds': instance.packersIds,
     };
 
 _$TenvioDestinationImpl _$$TenvioDestinationImplFromJson(

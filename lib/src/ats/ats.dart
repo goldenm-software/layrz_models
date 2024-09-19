@@ -27,6 +27,8 @@ part 'src/reception/reception.dart';
 part 'src/reception/entry_unload_input.dart';
 part 'src/reception/ide_information.dart';
 part 'src/reception/operation_product_information.dart';
+part 'src/reception/loading_params_form_input.dart';
+part 'src/reception/loading_params_form.dart'; 
 
 // ATS Exit Models
 part 'src/exits/exit_status.dart';
@@ -47,3 +49,5 @@ part 'src/operations/status.dart';
 part 'src/converters/order_status.dart';
 part 'src/converters/deliver_category.dart';
 part 'src/converters/category.dart';
+part 'src/converters/loading_params_sample.dart';
+
