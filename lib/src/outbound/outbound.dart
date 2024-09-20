@@ -11,3 +11,4 @@ part 'outbound.g.dart';
 // Modules
 part 'src/protocol.dart';
 part 'src/service.dart';
+part 'src/metrics.dart';

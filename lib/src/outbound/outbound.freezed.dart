@@ -560,6 +560,9 @@ mixin _$OutboundService {
   /// A list of custom access permissions.
   List<Access>? get access => throw _privateConstructorUsedError;
 
+  /// Is the Metrics object.
+  OutboundMetrics? get metrics => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $OutboundServiceCopyWith<OutboundService> get copyWith =>
@@ -585,9 +588,11 @@ abstract class $OutboundServiceCopyWith<$Res> {
       List<Asset>? assets,
       List<String>? groupsIds,
       List<Tag>? groups,
-      List<Access>? access});
+      List<Access>? access,
+      OutboundMetrics? metrics});
 
   $OutboundProtocolCopyWith<$Res>? get protocol;
+  $OutboundMetricsCopyWith<$Res>? get metrics;
 }
 
 /// @nodoc
@@ -616,6 +621,7 @@ class _$OutboundServiceCopyWithImpl<$Res, $Val extends OutboundService>
     Object? groupsIds = freezed,
     Object? groups = freezed,
     Object? access = freezed,
+    Object? metrics = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -670,6 +676,10 @@ class _$OutboundServiceCopyWithImpl<$Res, $Val extends OutboundService>
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      metrics: freezed == metrics
+          ? _value.metrics
+          : metrics // ignore: cast_nullable_to_non_nullable
+              as OutboundMetrics?,
     ) as $Val);
   }
 
@@ -682,6 +692,18 @@ class _$OutboundServiceCopyWithImpl<$Res, $Val extends OutboundService>
 
     return $OutboundProtocolCopyWith<$Res>(_value.protocol!, (value) {
       return _then(_value.copyWith(protocol: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $OutboundMetricsCopyWith<$Res>? get metrics {
+    if (_value.metrics == null) {
+      return null;
+    }
+
+    return $OutboundMetricsCopyWith<$Res>(_value.metrics!, (value) {
+      return _then(_value.copyWith(metrics: value) as $Val);
     });
   }
 }
@@ -707,10 +729,13 @@ abstract class _$$OutboundServiceImplCopyWith<$Res>
       List<Asset>? assets,
       List<String>? groupsIds,
       List<Tag>? groups,
-      List<Access>? access});
+      List<Access>? access,
+      OutboundMetrics? metrics});
 
   @override
   $OutboundProtocolCopyWith<$Res>? get protocol;
+  @override
+  $OutboundMetricsCopyWith<$Res>? get metrics;
 }
 
 /// @nodoc
@@ -737,6 +762,7 @@ class __$$OutboundServiceImplCopyWithImpl<$Res>
     Object? groupsIds = freezed,
     Object? groups = freezed,
     Object? access = freezed,
+    Object? metrics = freezed,
   }) {
     return _then(_$OutboundServiceImpl(
       id: null == id
@@ -791,6 +817,10 @@ class __$$OutboundServiceImplCopyWithImpl<$Res>
           ? _value._access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
+      metrics: freezed == metrics
+          ? _value.metrics
+          : metrics // ignore: cast_nullable_to_non_nullable
+              as OutboundMetrics?,
     ));
   }
 }
@@ -811,7 +841,8 @@ class _$OutboundServiceImpl implements _OutboundService {
       final List<Asset>? assets,
       final List<String>? groupsIds,
       final List<Tag>? groups,
-      final List<Access>? access})
+      final List<Access>? access,
+      this.metrics})
       : _credentials = credentials,
         _structure = structure,
         _assetsIds = assetsIds,
@@ -938,9 +969,13 @@ class _$OutboundServiceImpl implements _OutboundService {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Is the Metrics object.
+  @override
+  final OutboundMetrics? metrics;
+
   @override
   String toString() {
-    return 'OutboundService(id: $id, name: $name, credentials: $credentials, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, structure: $structure, token: $token, assetsIds: $assetsIds, assets: $assets, groupsIds: $groupsIds, groups: $groups, access: $access)';
+    return 'OutboundService(id: $id, name: $name, credentials: $credentials, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, structure: $structure, token: $token, assetsIds: $assetsIds, assets: $assets, groupsIds: $groupsIds, groups: $groups, access: $access, metrics: $metrics)';
   }
 
   @override
@@ -967,7 +1002,8 @@ class _$OutboundServiceImpl implements _OutboundService {
             const DeepCollectionEquality()
                 .equals(other._groupsIds, _groupsIds) &&
             const DeepCollectionEquality().equals(other._groups, _groups) &&
-            const DeepCollectionEquality().equals(other._access, _access));
+            const DeepCollectionEquality().equals(other._access, _access) &&
+            (identical(other.metrics, metrics) || other.metrics == metrics));
   }
 
   @JsonKey(ignore: true)
@@ -986,7 +1022,8 @@ class _$OutboundServiceImpl implements _OutboundService {
       const DeepCollectionEquality().hash(_assets),
       const DeepCollectionEquality().hash(_groupsIds),
       const DeepCollectionEquality().hash(_groups),
-      const DeepCollectionEquality().hash(_access));
+      const DeepCollectionEquality().hash(_access),
+      metrics);
 
   @JsonKey(ignore: true)
   @override
@@ -1017,7 +1054,8 @@ abstract class _OutboundService implements OutboundService {
       final List<Asset>? assets,
       final List<String>? groupsIds,
       final List<Tag>? groups,
-      final List<Access>? access}) = _$OutboundServiceImpl;
+      final List<Access>? access,
+      final OutboundMetrics? metrics}) = _$OutboundServiceImpl;
 
   factory _OutboundService.fromJson(Map<String, dynamic> json) =
       _$OutboundServiceImpl.fromJson;
@@ -1074,6 +1112,10 @@ abstract class _OutboundService implements OutboundService {
 
   /// A list of custom access permissions.
   List<Access>? get access;
+  @override
+
+  /// Is the Metrics object.
+  OutboundMetrics? get metrics;
   @override
   @JsonKey(ignore: true)
   _$$OutboundServiceImplCopyWith<_$OutboundServiceImpl> get copyWith =>
@@ -1250,5 +1292,263 @@ abstract class _OutboundStructure implements OutboundStructure {
   @override
   @JsonKey(ignore: true)
   _$$OutboundStructureImplCopyWith<_$OutboundStructureImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+OutboundMetrics _$OutboundMetricsFromJson(Map<String, dynamic> json) {
+  return _OutboundMetrics.fromJson(json);
+}
+
+/// @nodoc
+mixin _$OutboundMetrics {
+  /// [online] is the number of online devices.
+  int get online => throw _privateConstructorUsedError;
+
+  /// [hibernation] is the number of devices in hibernation.
+  int get hibernation => throw _privateConstructorUsedError;
+
+  /// [offline] is the number of offline devices.
+  int get offline => throw _privateConstructorUsedError;
+
+  /// [totalItems] is the total number of devices.
+  int get totalItems => throw _privateConstructorUsedError;
+
+  /// [statsLoading] indicates if the stats are loading.
+  bool get statsLoading => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OutboundMetricsCopyWith<OutboundMetrics> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OutboundMetricsCopyWith<$Res> {
+  factory $OutboundMetricsCopyWith(
+          OutboundMetrics value, $Res Function(OutboundMetrics) then) =
+      _$OutboundMetricsCopyWithImpl<$Res, OutboundMetrics>;
+  @useResult
+  $Res call(
+      {int online,
+      int hibernation,
+      int offline,
+      int totalItems,
+      bool statsLoading});
+}
+
+/// @nodoc
+class _$OutboundMetricsCopyWithImpl<$Res, $Val extends OutboundMetrics>
+    implements $OutboundMetricsCopyWith<$Res> {
+  _$OutboundMetricsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? online = null,
+    Object? hibernation = null,
+    Object? offline = null,
+    Object? totalItems = null,
+    Object? statsLoading = null,
+  }) {
+    return _then(_value.copyWith(
+      online: null == online
+          ? _value.online
+          : online // ignore: cast_nullable_to_non_nullable
+              as int,
+      hibernation: null == hibernation
+          ? _value.hibernation
+          : hibernation // ignore: cast_nullable_to_non_nullable
+              as int,
+      offline: null == offline
+          ? _value.offline
+          : offline // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalItems: null == totalItems
+          ? _value.totalItems
+          : totalItems // ignore: cast_nullable_to_non_nullable
+              as int,
+      statsLoading: null == statsLoading
+          ? _value.statsLoading
+          : statsLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$OutboundMetricsImplCopyWith<$Res>
+    implements $OutboundMetricsCopyWith<$Res> {
+  factory _$$OutboundMetricsImplCopyWith(_$OutboundMetricsImpl value,
+          $Res Function(_$OutboundMetricsImpl) then) =
+      __$$OutboundMetricsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {int online,
+      int hibernation,
+      int offline,
+      int totalItems,
+      bool statsLoading});
+}
+
+/// @nodoc
+class __$$OutboundMetricsImplCopyWithImpl<$Res>
+    extends _$OutboundMetricsCopyWithImpl<$Res, _$OutboundMetricsImpl>
+    implements _$$OutboundMetricsImplCopyWith<$Res> {
+  __$$OutboundMetricsImplCopyWithImpl(
+      _$OutboundMetricsImpl _value, $Res Function(_$OutboundMetricsImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? online = null,
+    Object? hibernation = null,
+    Object? offline = null,
+    Object? totalItems = null,
+    Object? statsLoading = null,
+  }) {
+    return _then(_$OutboundMetricsImpl(
+      online: null == online
+          ? _value.online
+          : online // ignore: cast_nullable_to_non_nullable
+              as int,
+      hibernation: null == hibernation
+          ? _value.hibernation
+          : hibernation // ignore: cast_nullable_to_non_nullable
+              as int,
+      offline: null == offline
+          ? _value.offline
+          : offline // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalItems: null == totalItems
+          ? _value.totalItems
+          : totalItems // ignore: cast_nullable_to_non_nullable
+              as int,
+      statsLoading: null == statsLoading
+          ? _value.statsLoading
+          : statsLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$OutboundMetricsImpl implements _OutboundMetrics {
+  const _$OutboundMetricsImpl(
+      {this.online = 0,
+      this.hibernation = 0,
+      this.offline = 0,
+      this.totalItems = 0,
+      this.statsLoading = false});
+
+  factory _$OutboundMetricsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OutboundMetricsImplFromJson(json);
+
+  /// [online] is the number of online devices.
+  @override
+  @JsonKey()
+  final int online;
+
+  /// [hibernation] is the number of devices in hibernation.
+  @override
+  @JsonKey()
+  final int hibernation;
+
+  /// [offline] is the number of offline devices.
+  @override
+  @JsonKey()
+  final int offline;
+
+  /// [totalItems] is the total number of devices.
+  @override
+  @JsonKey()
+  final int totalItems;
+
+  /// [statsLoading] indicates if the stats are loading.
+  @override
+  @JsonKey()
+  final bool statsLoading;
+
+  @override
+  String toString() {
+    return 'OutboundMetrics(online: $online, hibernation: $hibernation, offline: $offline, totalItems: $totalItems, statsLoading: $statsLoading)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$OutboundMetricsImpl &&
+            (identical(other.online, online) || other.online == online) &&
+            (identical(other.hibernation, hibernation) ||
+                other.hibernation == hibernation) &&
+            (identical(other.offline, offline) || other.offline == offline) &&
+            (identical(other.totalItems, totalItems) ||
+                other.totalItems == totalItems) &&
+            (identical(other.statsLoading, statsLoading) ||
+                other.statsLoading == statsLoading));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, online, hibernation, offline, totalItems, statsLoading);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OutboundMetricsImplCopyWith<_$OutboundMetricsImpl> get copyWith =>
+      __$$OutboundMetricsImplCopyWithImpl<_$OutboundMetricsImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$OutboundMetricsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _OutboundMetrics implements OutboundMetrics {
+  const factory _OutboundMetrics(
+      {final int online,
+      final int hibernation,
+      final int offline,
+      final int totalItems,
+      final bool statsLoading}) = _$OutboundMetricsImpl;
+
+  factory _OutboundMetrics.fromJson(Map<String, dynamic> json) =
+      _$OutboundMetricsImpl.fromJson;
+
+  @override
+
+  /// [online] is the number of online devices.
+  int get online;
+  @override
+
+  /// [hibernation] is the number of devices in hibernation.
+  int get hibernation;
+  @override
+
+  /// [offline] is the number of offline devices.
+  int get offline;
+  @override
+
+  /// [totalItems] is the total number of devices.
+  int get totalItems;
+  @override
+
+  /// [statsLoading] indicates if the stats are loading.
+  bool get statsLoading;
+  @override
+  @JsonKey(ignore: true)
+  _$$OutboundMetricsImplCopyWith<_$OutboundMetricsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -78,6 +78,9 @@ _$OutboundServiceImpl _$$OutboundServiceImplFromJson(
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
+      metrics: json['metrics'] == null
+          ? null
+          : OutboundMetrics.fromJson(json['metrics'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$OutboundServiceImplToJson(
@@ -96,6 +99,7 @@ Map<String, dynamic> _$$OutboundServiceImplToJson(
       'groupsIds': instance.groupsIds,
       'groups': instance.groups?.map((e) => e.toJson()).toList(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
+      'metrics': instance.metrics?.toJson(),
     };
 
 _$OutboundStructureImpl _$$OutboundStructureImplFromJson(
@@ -112,4 +116,24 @@ Map<String, dynamic> _$$OutboundStructureImplToJson(
       'field': instance.field,
       'type': instance.type,
       'value': instance.value,
+    };
+
+_$OutboundMetricsImpl _$$OutboundMetricsImplFromJson(
+        Map<String, dynamic> json) =>
+    _$OutboundMetricsImpl(
+      online: (json['online'] as num?)?.toInt() ?? 0,
+      hibernation: (json['hibernation'] as num?)?.toInt() ?? 0,
+      offline: (json['offline'] as num?)?.toInt() ?? 0,
+      totalItems: (json['totalItems'] as num?)?.toInt() ?? 0,
+      statsLoading: json['statsLoading'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$$OutboundMetricsImplToJson(
+        _$OutboundMetricsImpl instance) =>
+    <String, dynamic>{
+      'online': instance.online,
+      'hibernation': instance.hibernation,
+      'offline': instance.offline,
+      'totalItems': instance.totalItems,
+      'statsLoading': instance.statsLoading,
     };
