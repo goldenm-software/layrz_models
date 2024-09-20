@@ -96,35 +96,38 @@ class TenvioOrderInput with _$TenvioOrderInput {
     /// [id] ID of the order entity. This ID is unique along the system.
     String? id,
 
-    /// [customerId] ID of the existing customer that will receive the order.
-    String? customerId,
-
-    /// [newCustomer] Unregistered customer that will receive the order.
-    CustomerInput? newCustomer,
-
-    /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
-    String? destinationWarehouseId,
-
     /// [warehouseId] ID of the warehouse where the order is located.
     String? warehouseId,
 
     /// [status] Status of the order entity.
     @TenvioOrderStatusConverter() required TenvioOrderStatus status,
 
+    /// [customerId] ID of the existing customer that will receive the order.
+    String? customerId,
+
+    // /// [newCustomer] Unregistered customer that will receive the order.
+    UnregisteredCustomerInput? newCustomer,
+
+    /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
+    String? destinationWarehouseId,
+
     /// [notes] Notes of the order entity.
     @Default([]) List<String> notes,
 
-    /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
-    bool? requiresPhotos,
-
-    /// [highPriority] Whether the order is high priority..
-    bool? highPriority,
-
-    /// [items] Items included in the order.
-    List<TenvioItemQuantityInput>? items,
-
     /// [packersIds] IDs of the users that will pack the order.
     List<String>? packersIds,
+
+    /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
+    @Default(false) bool requiresPhotos,
+
+    /// [statusPhotos] Photos of the order
+    @Default([]) List<TenvioOrderPhotosInput> statusPhotos,
+
+    /// [highPriority] Whether the order is high priority..
+    @Default(false) bool highPriority,
+
+    /// [items] Items included in the order.
+    @Default([]) List<OrderItemQuantityInput>? items,
   }) = _TenvioOrderInput;
 
   factory TenvioOrderInput.fromJson(Map<String, dynamic> json) => _$TenvioOrderInputFromJson(json);

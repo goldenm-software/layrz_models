@@ -1,6 +1,9 @@
 part of '../tenvio.dart';
 
 enum TenvioOrderStatus {
+  /// [draft] refers that the order is a draft
+  draft,
+
   /// [pending] refers that the order was created but not processed yet
   /// API Reference: PENDING
   pending,
@@ -9,29 +12,25 @@ enum TenvioOrderStatus {
   /// API Reference: PROCESSING
   processing,
 
-  /// [waitingForPickup] refers that the order is waiting for pickup
+  /// [waitingForPickUp] refers that the order is waiting for pickup
   /// API Reference: WAITING_FOR_PICK_UP
-  waitingForPickup,
+  waitingForPickUp,
 
-  /// [pickingUp] refers that the order is being picked up
-  /// API Reference: PICKING_UP
-  pickingUp,
-
-  /// [transit] refers that the order is in transit
-  /// API Reference: TRANSIT
-  transit,
-
-  /// [arrivingSoon] refers that the order is arriving soon
-  /// API Reference: ARRIVING_SOON
-  arrivingSoon,
+  /// [inTransit] refers that the order is in transit
+  /// API Reference: IN_TRANSIT
+  inTransit,
 
   /// [delivered] refers that the order was delivered
   /// API Reference: DELIVERED
   delivered,
 
-  /// [dropoffFailed] refers that the order failed to be dropped off
-  /// API Reference: DROPOFF_FAILED
-  dropoffFailed,
+  /// [dropOffFailed] refers that the order failed to be dropped off
+  /// API Reference: DROP_OFF_FAILED
+  dropOffFailed,
+
+  /// [returned] refers that the order was returned
+  /// API Reference: RETURNED
+  returned,
 
   /// [unknown] refers that the order status is unknown
   unknown,
@@ -42,45 +41,45 @@ enum TenvioOrderStatus {
 
   String toJson() {
     switch (this) {
+      case TenvioOrderStatus.draft:
+        return 'DRAFT';
       case TenvioOrderStatus.pending:
         return 'PENDING';
-      case TenvioOrderStatus.pickingUp:
-        return 'PICKING_UP';
-      case TenvioOrderStatus.transit:
-        return 'TRANSIT';
-      case TenvioOrderStatus.arrivingSoon:
-        return 'ARRIVING_SOON';
-      case TenvioOrderStatus.delivered:
-        return 'DELIVERED';
-      case TenvioOrderStatus.dropoffFailed:
-        return 'DROPOFF_FAILED';
       case TenvioOrderStatus.processing:
         return 'PROCESSING';
-      case TenvioOrderStatus.waitingForPickup:
+      case TenvioOrderStatus.waitingForPickUp:
         return 'WAITING_FOR_PICK_UP';
-      default:
+      case TenvioOrderStatus.inTransit:
+        return 'IN_TRANSIT';
+      case TenvioOrderStatus.delivered:
+        return 'DELIVERED';
+      case TenvioOrderStatus.dropOffFailed:
+        return 'DROP_OFF_FAILED';
+      case TenvioOrderStatus.returned:
+        return 'RETURNED';
+      case TenvioOrderStatus.unknown:
         return 'UNKNOWN';
     }
   }
 
   static TenvioOrderStatus fromJson(String json) {
     switch (json) {
+      case 'DRAFT':
+        return TenvioOrderStatus.draft;
       case 'PENDING':
         return TenvioOrderStatus.pending;
-      case 'PICKING_UP':
-        return TenvioOrderStatus.pickingUp;
-      case 'TRANSIT':
-        return TenvioOrderStatus.transit;
-      case 'ARRIVING_SOON':
-        return TenvioOrderStatus.arrivingSoon;
-      case 'DELIVERED':
-        return TenvioOrderStatus.delivered;
-      case 'DROPOFF_FAILED':
-        return TenvioOrderStatus.dropoffFailed;
       case 'PROCESSING':
         return TenvioOrderStatus.processing;
       case 'WAITING_FOR_PICK_UP':
-        return TenvioOrderStatus.waitingForPickup;
+        return TenvioOrderStatus.waitingForPickUp;
+      case 'IN_TRANSIT':
+        return TenvioOrderStatus.inTransit;
+      case 'DELIVERED':
+        return TenvioOrderStatus.delivered;
+      case 'DROP_OFF_FAILED':
+        return TenvioOrderStatus.dropOffFailed;
+      case 'RETURNED':
+        return TenvioOrderStatus.returned;
       default:
         return TenvioOrderStatus.unknown;
     }

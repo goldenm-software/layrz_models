@@ -1,8 +1,8 @@
 part of '../tenvio.dart';
 
 @unfreezed
-class CustomerInput with _$CustomerInput {
-  factory CustomerInput({
+class UnregisteredCustomerInput with _$UnregisteredCustomerInput {
+  factory UnregisteredCustomerInput({
     /// [address] Address of the customer.
     String? address,
 
@@ -17,7 +17,10 @@ class CustomerInput with _$CustomerInput {
 
     /// [longitude] Longitude of the customer.
     double? longitude,
-  }) = _CustomerInput;
 
-  factory CustomerInput.fromJson(Map<String, dynamic> json) => _$CustomerInputFromJson(json);
+    /// [email] Email of the customer.
+    String? email,
+  }) = _UnregisteredCustomerInput;
+
+  factory UnregisteredCustomerInput.fromJson(Map<String, dynamic> json) => _$UnregisteredCustomerInputFromJson(json);
 }

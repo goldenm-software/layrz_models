@@ -3471,25 +3471,6 @@ mixin _$TenvioOrderInput {
   /// [id] ID of the order entity. This ID is unique along the system.
   set id(String? value) => throw _privateConstructorUsedError;
 
-  /// [customerId] ID of the existing customer that will receive the order.
-  String? get customerId => throw _privateConstructorUsedError;
-
-  /// [customerId] ID of the existing customer that will receive the order.
-  set customerId(String? value) => throw _privateConstructorUsedError;
-
-  /// [newCustomer] Unregistered customer that will receive the order.
-  CustomerInput? get newCustomer => throw _privateConstructorUsedError;
-
-  /// [newCustomer] Unregistered customer that will receive the order.
-  set newCustomer(CustomerInput? value) => throw _privateConstructorUsedError;
-
-  /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
-  String? get destinationWarehouseId => throw _privateConstructorUsedError;
-
-  /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
-  set destinationWarehouseId(String? value) =>
-      throw _privateConstructorUsedError;
-
   /// [warehouseId] ID of the warehouse where the order is located.
   String? get warehouseId => throw _privateConstructorUsedError;
 
@@ -3504,37 +3485,62 @@ mixin _$TenvioOrderInput {
   @TenvioOrderStatusConverter()
   set status(TenvioOrderStatus value) => throw _privateConstructorUsedError;
 
+  /// [customerId] ID of the existing customer that will receive the order.
+  String? get customerId => throw _privateConstructorUsedError;
+
+  /// [customerId] ID of the existing customer that will receive the order.
+  set customerId(String? value) =>
+      throw _privateConstructorUsedError; // /// [newCustomer] Unregistered customer that will receive the order.
+  UnregisteredCustomerInput? get newCustomer =>
+      throw _privateConstructorUsedError; // /// [newCustomer] Unregistered customer that will receive the order.
+  set newCustomer(UnregisteredCustomerInput? value) =>
+      throw _privateConstructorUsedError;
+
+  /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
+  String? get destinationWarehouseId => throw _privateConstructorUsedError;
+
+  /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
+  set destinationWarehouseId(String? value) =>
+      throw _privateConstructorUsedError;
+
   /// [notes] Notes of the order entity.
   List<String> get notes => throw _privateConstructorUsedError;
 
   /// [notes] Notes of the order entity.
   set notes(List<String> value) => throw _privateConstructorUsedError;
 
-  /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
-  bool? get requiresPhotos => throw _privateConstructorUsedError;
-
-  /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
-  set requiresPhotos(bool? value) => throw _privateConstructorUsedError;
-
-  /// [highPriority] Whether the order is high priority..
-  bool? get highPriority => throw _privateConstructorUsedError;
-
-  /// [highPriority] Whether the order is high priority..
-  set highPriority(bool? value) => throw _privateConstructorUsedError;
-
-  /// [items] Items included in the order.
-  List<TenvioItemQuantityInput>? get items =>
-      throw _privateConstructorUsedError;
-
-  /// [items] Items included in the order.
-  set items(List<TenvioItemQuantityInput>? value) =>
-      throw _privateConstructorUsedError;
-
   /// [packersIds] IDs of the users that will pack the order.
   List<String>? get packersIds => throw _privateConstructorUsedError;
 
   /// [packersIds] IDs of the users that will pack the order.
   set packersIds(List<String>? value) => throw _privateConstructorUsedError;
+
+  /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
+  bool get requiresPhotos => throw _privateConstructorUsedError;
+
+  /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
+  set requiresPhotos(bool value) => throw _privateConstructorUsedError;
+
+  /// [statusPhotos] Photos of the order
+  List<TenvioOrderPhotosInput> get statusPhotos =>
+      throw _privateConstructorUsedError;
+
+  /// [statusPhotos] Photos of the order
+  set statusPhotos(List<TenvioOrderPhotosInput> value) =>
+      throw _privateConstructorUsedError;
+
+  /// [highPriority] Whether the order is high priority..
+  bool get highPriority => throw _privateConstructorUsedError;
+
+  /// [highPriority] Whether the order is high priority..
+  set highPriority(bool value) => throw _privateConstructorUsedError;
+
+  /// [items] Items included in the order.
+  List<OrderItemQuantityInput>? get items => throw _privateConstructorUsedError;
+
+  /// [items] Items included in the order.
+  set items(List<OrderItemQuantityInput>? value) =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3550,18 +3556,19 @@ abstract class $TenvioOrderInputCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
-      String? customerId,
-      CustomerInput? newCustomer,
-      String? destinationWarehouseId,
       String? warehouseId,
       @TenvioOrderStatusConverter() TenvioOrderStatus status,
+      String? customerId,
+      UnregisteredCustomerInput? newCustomer,
+      String? destinationWarehouseId,
       List<String> notes,
-      bool? requiresPhotos,
-      bool? highPriority,
-      List<TenvioItemQuantityInput>? items,
-      List<String>? packersIds});
+      List<String>? packersIds,
+      bool requiresPhotos,
+      List<TenvioOrderPhotosInput> statusPhotos,
+      bool highPriority,
+      List<OrderItemQuantityInput>? items});
 
-  $CustomerInputCopyWith<$Res>? get newCustomer;
+  $UnregisteredCustomerInputCopyWith<$Res>? get newCustomer;
 }
 
 /// @nodoc
@@ -3578,33 +3585,22 @@ class _$TenvioOrderInputCopyWithImpl<$Res, $Val extends TenvioOrderInput>
   @override
   $Res call({
     Object? id = freezed,
+    Object? warehouseId = freezed,
+    Object? status = null,
     Object? customerId = freezed,
     Object? newCustomer = freezed,
     Object? destinationWarehouseId = freezed,
-    Object? warehouseId = freezed,
-    Object? status = null,
     Object? notes = null,
-    Object? requiresPhotos = freezed,
-    Object? highPriority = freezed,
-    Object? items = freezed,
     Object? packersIds = freezed,
+    Object? requiresPhotos = null,
+    Object? statusPhotos = null,
+    Object? highPriority = null,
+    Object? items = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customerId: freezed == customerId
-          ? _value.customerId
-          : customerId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      newCustomer: freezed == newCustomer
-          ? _value.newCustomer
-          : newCustomer // ignore: cast_nullable_to_non_nullable
-              as CustomerInput?,
-      destinationWarehouseId: freezed == destinationWarehouseId
-          ? _value.destinationWarehouseId
-          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
               as String?,
       warehouseId: freezed == warehouseId
           ? _value.warehouseId
@@ -3614,37 +3610,54 @@ class _$TenvioOrderInputCopyWithImpl<$Res, $Val extends TenvioOrderInput>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TenvioOrderStatus,
+      customerId: freezed == customerId
+          ? _value.customerId
+          : customerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      newCustomer: freezed == newCustomer
+          ? _value.newCustomer
+          : newCustomer // ignore: cast_nullable_to_non_nullable
+              as UnregisteredCustomerInput?,
+      destinationWarehouseId: freezed == destinationWarehouseId
+          ? _value.destinationWarehouseId
+          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
       notes: null == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      requiresPhotos: freezed == requiresPhotos
-          ? _value.requiresPhotos
-          : requiresPhotos // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      highPriority: freezed == highPriority
-          ? _value.highPriority
-          : highPriority // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      items: freezed == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<TenvioItemQuantityInput>?,
       packersIds: freezed == packersIds
           ? _value.packersIds
           : packersIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      requiresPhotos: null == requiresPhotos
+          ? _value.requiresPhotos
+          : requiresPhotos // ignore: cast_nullable_to_non_nullable
+              as bool,
+      statusPhotos: null == statusPhotos
+          ? _value.statusPhotos
+          : statusPhotos // ignore: cast_nullable_to_non_nullable
+              as List<TenvioOrderPhotosInput>,
+      highPriority: null == highPriority
+          ? _value.highPriority
+          : highPriority // ignore: cast_nullable_to_non_nullable
+              as bool,
+      items: freezed == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<OrderItemQuantityInput>?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CustomerInputCopyWith<$Res>? get newCustomer {
+  $UnregisteredCustomerInputCopyWith<$Res>? get newCustomer {
     if (_value.newCustomer == null) {
       return null;
     }
 
-    return $CustomerInputCopyWith<$Res>(_value.newCustomer!, (value) {
+    return $UnregisteredCustomerInputCopyWith<$Res>(_value.newCustomer!,
+        (value) {
       return _then(_value.copyWith(newCustomer: value) as $Val);
     });
   }
@@ -3660,19 +3673,20 @@ abstract class _$$TenvioOrderInputImplCopyWith<$Res>
   @useResult
   $Res call(
       {String? id,
-      String? customerId,
-      CustomerInput? newCustomer,
-      String? destinationWarehouseId,
       String? warehouseId,
       @TenvioOrderStatusConverter() TenvioOrderStatus status,
+      String? customerId,
+      UnregisteredCustomerInput? newCustomer,
+      String? destinationWarehouseId,
       List<String> notes,
-      bool? requiresPhotos,
-      bool? highPriority,
-      List<TenvioItemQuantityInput>? items,
-      List<String>? packersIds});
+      List<String>? packersIds,
+      bool requiresPhotos,
+      List<TenvioOrderPhotosInput> statusPhotos,
+      bool highPriority,
+      List<OrderItemQuantityInput>? items});
 
   @override
-  $CustomerInputCopyWith<$Res>? get newCustomer;
+  $UnregisteredCustomerInputCopyWith<$Res>? get newCustomer;
 }
 
 /// @nodoc
@@ -3687,33 +3701,22 @@ class __$$TenvioOrderInputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? warehouseId = freezed,
+    Object? status = null,
     Object? customerId = freezed,
     Object? newCustomer = freezed,
     Object? destinationWarehouseId = freezed,
-    Object? warehouseId = freezed,
-    Object? status = null,
     Object? notes = null,
-    Object? requiresPhotos = freezed,
-    Object? highPriority = freezed,
-    Object? items = freezed,
     Object? packersIds = freezed,
+    Object? requiresPhotos = null,
+    Object? statusPhotos = null,
+    Object? highPriority = null,
+    Object? items = freezed,
   }) {
     return _then(_$TenvioOrderInputImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customerId: freezed == customerId
-          ? _value.customerId
-          : customerId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      newCustomer: freezed == newCustomer
-          ? _value.newCustomer
-          : newCustomer // ignore: cast_nullable_to_non_nullable
-              as CustomerInput?,
-      destinationWarehouseId: freezed == destinationWarehouseId
-          ? _value.destinationWarehouseId
-          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
               as String?,
       warehouseId: freezed == warehouseId
           ? _value.warehouseId
@@ -3723,26 +3726,42 @@ class __$$TenvioOrderInputImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TenvioOrderStatus,
+      customerId: freezed == customerId
+          ? _value.customerId
+          : customerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      newCustomer: freezed == newCustomer
+          ? _value.newCustomer
+          : newCustomer // ignore: cast_nullable_to_non_nullable
+              as UnregisteredCustomerInput?,
+      destinationWarehouseId: freezed == destinationWarehouseId
+          ? _value.destinationWarehouseId
+          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
       notes: null == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      requiresPhotos: freezed == requiresPhotos
-          ? _value.requiresPhotos
-          : requiresPhotos // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      highPriority: freezed == highPriority
-          ? _value.highPriority
-          : highPriority // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      items: freezed == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<TenvioItemQuantityInput>?,
       packersIds: freezed == packersIds
           ? _value.packersIds
           : packersIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      requiresPhotos: null == requiresPhotos
+          ? _value.requiresPhotos
+          : requiresPhotos // ignore: cast_nullable_to_non_nullable
+              as bool,
+      statusPhotos: null == statusPhotos
+          ? _value.statusPhotos
+          : statusPhotos // ignore: cast_nullable_to_non_nullable
+              as List<TenvioOrderPhotosInput>,
+      highPriority: null == highPriority
+          ? _value.highPriority
+          : highPriority // ignore: cast_nullable_to_non_nullable
+              as bool,
+      items: freezed == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<OrderItemQuantityInput>?,
     ));
   }
 }
@@ -3752,16 +3771,17 @@ class __$$TenvioOrderInputImplCopyWithImpl<$Res>
 class _$TenvioOrderInputImpl implements _TenvioOrderInput {
   _$TenvioOrderInputImpl(
       {this.id,
+      this.warehouseId,
+      @TenvioOrderStatusConverter() required this.status,
       this.customerId,
       this.newCustomer,
       this.destinationWarehouseId,
-      this.warehouseId,
-      @TenvioOrderStatusConverter() required this.status,
       this.notes = const [],
-      this.requiresPhotos,
-      this.highPriority,
-      this.items,
-      this.packersIds});
+      this.packersIds,
+      this.requiresPhotos = false,
+      this.statusPhotos = const [],
+      this.highPriority = false,
+      this.items = const []});
 
   factory _$TenvioOrderInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioOrderInputImplFromJson(json);
@@ -3769,18 +3789,6 @@ class _$TenvioOrderInputImpl implements _TenvioOrderInput {
   /// [id] ID of the order entity. This ID is unique along the system.
   @override
   String? id;
-
-  /// [customerId] ID of the existing customer that will receive the order.
-  @override
-  String? customerId;
-
-  /// [newCustomer] Unregistered customer that will receive the order.
-  @override
-  CustomerInput? newCustomer;
-
-  /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
-  @override
-  String? destinationWarehouseId;
 
   /// [warehouseId] ID of the warehouse where the order is located.
   @override
@@ -3791,30 +3799,49 @@ class _$TenvioOrderInputImpl implements _TenvioOrderInput {
   @TenvioOrderStatusConverter()
   TenvioOrderStatus status;
 
+  /// [customerId] ID of the existing customer that will receive the order.
+  @override
+  String? customerId;
+// /// [newCustomer] Unregistered customer that will receive the order.
+  @override
+  UnregisteredCustomerInput? newCustomer;
+
+  /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
+  @override
+  String? destinationWarehouseId;
+
   /// [notes] Notes of the order entity.
   @override
   @JsonKey()
   List<String> notes;
 
-  /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
-  @override
-  bool? requiresPhotos;
-
-  /// [highPriority] Whether the order is high priority..
-  @override
-  bool? highPriority;
-
-  /// [items] Items included in the order.
-  @override
-  List<TenvioItemQuantityInput>? items;
-
   /// [packersIds] IDs of the users that will pack the order.
   @override
   List<String>? packersIds;
 
+  /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
+  @override
+  @JsonKey()
+  bool requiresPhotos;
+
+  /// [statusPhotos] Photos of the order
+  @override
+  @JsonKey()
+  List<TenvioOrderPhotosInput> statusPhotos;
+
+  /// [highPriority] Whether the order is high priority..
+  @override
+  @JsonKey()
+  bool highPriority;
+
+  /// [items] Items included in the order.
+  @override
+  @JsonKey()
+  List<OrderItemQuantityInput>? items;
+
   @override
   String toString() {
-    return 'TenvioOrderInput(id: $id, customerId: $customerId, newCustomer: $newCustomer, destinationWarehouseId: $destinationWarehouseId, warehouseId: $warehouseId, status: $status, notes: $notes, requiresPhotos: $requiresPhotos, highPriority: $highPriority, items: $items, packersIds: $packersIds)';
+    return 'TenvioOrderInput(id: $id, warehouseId: $warehouseId, status: $status, customerId: $customerId, newCustomer: $newCustomer, destinationWarehouseId: $destinationWarehouseId, notes: $notes, packersIds: $packersIds, requiresPhotos: $requiresPhotos, statusPhotos: $statusPhotos, highPriority: $highPriority, items: $items)';
   }
 
   @JsonKey(ignore: true)
@@ -3835,16 +3862,17 @@ class _$TenvioOrderInputImpl implements _TenvioOrderInput {
 abstract class _TenvioOrderInput implements TenvioOrderInput {
   factory _TenvioOrderInput(
       {String? id,
-      String? customerId,
-      CustomerInput? newCustomer,
-      String? destinationWarehouseId,
       String? warehouseId,
       @TenvioOrderStatusConverter() required TenvioOrderStatus status,
+      String? customerId,
+      UnregisteredCustomerInput? newCustomer,
+      String? destinationWarehouseId,
       List<String> notes,
-      bool? requiresPhotos,
-      bool? highPriority,
-      List<TenvioItemQuantityInput>? items,
-      List<String>? packersIds}) = _$TenvioOrderInputImpl;
+      List<String>? packersIds,
+      bool requiresPhotos,
+      List<TenvioOrderPhotosInput> statusPhotos,
+      bool highPriority,
+      List<OrderItemQuantityInput>? items}) = _$TenvioOrderInputImpl;
 
   factory _TenvioOrderInput.fromJson(Map<String, dynamic> json) =
       _$TenvioOrderInputImpl.fromJson;
@@ -3856,27 +3884,6 @@ abstract class _TenvioOrderInput implements TenvioOrderInput {
 
   /// [id] ID of the order entity. This ID is unique along the system.
   set id(String? value);
-  @override
-
-  /// [customerId] ID of the existing customer that will receive the order.
-  String? get customerId;
-
-  /// [customerId] ID of the existing customer that will receive the order.
-  set customerId(String? value);
-  @override
-
-  /// [newCustomer] Unregistered customer that will receive the order.
-  CustomerInput? get newCustomer;
-
-  /// [newCustomer] Unregistered customer that will receive the order.
-  set newCustomer(CustomerInput? value);
-  @override
-
-  /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
-  String? get destinationWarehouseId;
-
-  /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
-  set destinationWarehouseId(String? value);
   @override
 
   /// [warehouseId] ID of the warehouse where the order is located.
@@ -3895,6 +3902,24 @@ abstract class _TenvioOrderInput implements TenvioOrderInput {
   set status(TenvioOrderStatus value);
   @override
 
+  /// [customerId] ID of the existing customer that will receive the order.
+  String? get customerId;
+
+  /// [customerId] ID of the existing customer that will receive the order.
+  set customerId(String? value);
+  @override // /// [newCustomer] Unregistered customer that will receive the order.
+  UnregisteredCustomerInput?
+      get newCustomer; // /// [newCustomer] Unregistered customer that will receive the order.
+  set newCustomer(UnregisteredCustomerInput? value);
+  @override
+
+  /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
+  String? get destinationWarehouseId;
+
+  /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
+  set destinationWarehouseId(String? value);
+  @override
+
   /// [notes] Notes of the order entity.
   List<String> get notes;
 
@@ -3902,32 +3927,39 @@ abstract class _TenvioOrderInput implements TenvioOrderInput {
   set notes(List<String> value);
   @override
 
-  /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
-  bool? get requiresPhotos;
-
-  /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
-  set requiresPhotos(bool? value);
-  @override
-
-  /// [highPriority] Whether the order is high priority..
-  bool? get highPriority;
-
-  /// [highPriority] Whether the order is high priority..
-  set highPriority(bool? value);
-  @override
-
-  /// [items] Items included in the order.
-  List<TenvioItemQuantityInput>? get items;
-
-  /// [items] Items included in the order.
-  set items(List<TenvioItemQuantityInput>? value);
-  @override
-
   /// [packersIds] IDs of the users that will pack the order.
   List<String>? get packersIds;
 
   /// [packersIds] IDs of the users that will pack the order.
   set packersIds(List<String>? value);
+  @override
+
+  /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
+  bool get requiresPhotos;
+
+  /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
+  set requiresPhotos(bool value);
+  @override
+
+  /// [statusPhotos] Photos of the order
+  List<TenvioOrderPhotosInput> get statusPhotos;
+
+  /// [statusPhotos] Photos of the order
+  set statusPhotos(List<TenvioOrderPhotosInput> value);
+  @override
+
+  /// [highPriority] Whether the order is high priority..
+  bool get highPriority;
+
+  /// [highPriority] Whether the order is high priority..
+  set highPriority(bool value);
+  @override
+
+  /// [items] Items included in the order.
+  List<OrderItemQuantityInput>? get items;
+
+  /// [items] Items included in the order.
+  set items(List<OrderItemQuantityInput>? value);
   @override
   @JsonKey(ignore: true)
   _$$TenvioOrderInputImplCopyWith<_$TenvioOrderInputImpl> get copyWith =>
@@ -4377,12 +4409,13 @@ abstract class _TenvioImageSet implements TenvioImageSet {
       throw _privateConstructorUsedError;
 }
 
-CustomerInput _$CustomerInputFromJson(Map<String, dynamic> json) {
-  return _CustomerInput.fromJson(json);
+UnregisteredCustomerInput _$UnregisteredCustomerInputFromJson(
+    Map<String, dynamic> json) {
+  return _UnregisteredCustomerInput.fromJson(json);
 }
 
 /// @nodoc
-mixin _$CustomerInput {
+mixin _$UnregisteredCustomerInput {
   /// [address] Address of the customer.
   String? get address => throw _privateConstructorUsedError;
 
@@ -4413,30 +4446,38 @@ mixin _$CustomerInput {
   /// [longitude] Longitude of the customer.
   set longitude(double? value) => throw _privateConstructorUsedError;
 
+  /// [email] Email of the customer.
+  String? get email => throw _privateConstructorUsedError;
+
+  /// [email] Email of the customer.
+  set email(String? value) => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CustomerInputCopyWith<CustomerInput> get copyWith =>
+  $UnregisteredCustomerInputCopyWith<UnregisteredCustomerInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CustomerInputCopyWith<$Res> {
-  factory $CustomerInputCopyWith(
-          CustomerInput value, $Res Function(CustomerInput) then) =
-      _$CustomerInputCopyWithImpl<$Res, CustomerInput>;
+abstract class $UnregisteredCustomerInputCopyWith<$Res> {
+  factory $UnregisteredCustomerInputCopyWith(UnregisteredCustomerInput value,
+          $Res Function(UnregisteredCustomerInput) then) =
+      _$UnregisteredCustomerInputCopyWithImpl<$Res, UnregisteredCustomerInput>;
   @useResult
   $Res call(
       {String? address,
       String? name,
       String? phone,
       double? latitude,
-      double? longitude});
+      double? longitude,
+      String? email});
 }
 
 /// @nodoc
-class _$CustomerInputCopyWithImpl<$Res, $Val extends CustomerInput>
-    implements $CustomerInputCopyWith<$Res> {
-  _$CustomerInputCopyWithImpl(this._value, this._then);
+class _$UnregisteredCustomerInputCopyWithImpl<$Res,
+        $Val extends UnregisteredCustomerInput>
+    implements $UnregisteredCustomerInputCopyWith<$Res> {
+  _$UnregisteredCustomerInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -4451,6 +4492,7 @@ class _$CustomerInputCopyWithImpl<$Res, $Val extends CustomerInput>
     Object? phone = freezed,
     Object? latitude = freezed,
     Object? longitude = freezed,
+    Object? email = freezed,
   }) {
     return _then(_value.copyWith(
       address: freezed == address
@@ -4473,16 +4515,21 @@ class _$CustomerInputCopyWithImpl<$Res, $Val extends CustomerInput>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$CustomerInputImplCopyWith<$Res>
-    implements $CustomerInputCopyWith<$Res> {
-  factory _$$CustomerInputImplCopyWith(
-          _$CustomerInputImpl value, $Res Function(_$CustomerInputImpl) then) =
-      __$$CustomerInputImplCopyWithImpl<$Res>;
+abstract class _$$UnregisteredCustomerInputImplCopyWith<$Res>
+    implements $UnregisteredCustomerInputCopyWith<$Res> {
+  factory _$$UnregisteredCustomerInputImplCopyWith(
+          _$UnregisteredCustomerInputImpl value,
+          $Res Function(_$UnregisteredCustomerInputImpl) then) =
+      __$$UnregisteredCustomerInputImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -4490,15 +4537,18 @@ abstract class _$$CustomerInputImplCopyWith<$Res>
       String? name,
       String? phone,
       double? latitude,
-      double? longitude});
+      double? longitude,
+      String? email});
 }
 
 /// @nodoc
-class __$$CustomerInputImplCopyWithImpl<$Res>
-    extends _$CustomerInputCopyWithImpl<$Res, _$CustomerInputImpl>
-    implements _$$CustomerInputImplCopyWith<$Res> {
-  __$$CustomerInputImplCopyWithImpl(
-      _$CustomerInputImpl _value, $Res Function(_$CustomerInputImpl) _then)
+class __$$UnregisteredCustomerInputImplCopyWithImpl<$Res>
+    extends _$UnregisteredCustomerInputCopyWithImpl<$Res,
+        _$UnregisteredCustomerInputImpl>
+    implements _$$UnregisteredCustomerInputImplCopyWith<$Res> {
+  __$$UnregisteredCustomerInputImplCopyWithImpl(
+      _$UnregisteredCustomerInputImpl _value,
+      $Res Function(_$UnregisteredCustomerInputImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -4509,8 +4559,9 @@ class __$$CustomerInputImplCopyWithImpl<$Res>
     Object? phone = freezed,
     Object? latitude = freezed,
     Object? longitude = freezed,
+    Object? email = freezed,
   }) {
-    return _then(_$CustomerInputImpl(
+    return _then(_$UnregisteredCustomerInputImpl(
       address: freezed == address
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
@@ -4531,18 +4582,27 @@ class __$$CustomerInputImplCopyWithImpl<$Res>
           ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$CustomerInputImpl implements _CustomerInput {
-  _$CustomerInputImpl(
-      {this.address, this.name, this.phone, this.latitude, this.longitude});
+class _$UnregisteredCustomerInputImpl implements _UnregisteredCustomerInput {
+  _$UnregisteredCustomerInputImpl(
+      {this.address,
+      this.name,
+      this.phone,
+      this.latitude,
+      this.longitude,
+      this.email});
 
-  factory _$CustomerInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CustomerInputImplFromJson(json);
+  factory _$UnregisteredCustomerInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UnregisteredCustomerInputImplFromJson(json);
 
   /// [address] Address of the customer.
   @override
@@ -4564,35 +4624,41 @@ class _$CustomerInputImpl implements _CustomerInput {
   @override
   double? longitude;
 
+  /// [email] Email of the customer.
+  @override
+  String? email;
+
   @override
   String toString() {
-    return 'CustomerInput(address: $address, name: $name, phone: $phone, latitude: $latitude, longitude: $longitude)';
+    return 'UnregisteredCustomerInput(address: $address, name: $name, phone: $phone, latitude: $latitude, longitude: $longitude, email: $email)';
   }
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CustomerInputImplCopyWith<_$CustomerInputImpl> get copyWith =>
-      __$$CustomerInputImplCopyWithImpl<_$CustomerInputImpl>(this, _$identity);
+  _$$UnregisteredCustomerInputImplCopyWith<_$UnregisteredCustomerInputImpl>
+      get copyWith => __$$UnregisteredCustomerInputImplCopyWithImpl<
+          _$UnregisteredCustomerInputImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$CustomerInputImplToJson(
+    return _$$UnregisteredCustomerInputImplToJson(
       this,
     );
   }
 }
 
-abstract class _CustomerInput implements CustomerInput {
-  factory _CustomerInput(
+abstract class _UnregisteredCustomerInput implements UnregisteredCustomerInput {
+  factory _UnregisteredCustomerInput(
       {String? address,
       String? name,
       String? phone,
       double? latitude,
-      double? longitude}) = _$CustomerInputImpl;
+      double? longitude,
+      String? email}) = _$UnregisteredCustomerInputImpl;
 
-  factory _CustomerInput.fromJson(Map<String, dynamic> json) =
-      _$CustomerInputImpl.fromJson;
+  factory _UnregisteredCustomerInput.fromJson(Map<String, dynamic> json) =
+      _$UnregisteredCustomerInputImpl.fromJson;
 
   @override
 
@@ -4630,9 +4696,16 @@ abstract class _CustomerInput implements CustomerInput {
   /// [longitude] Longitude of the customer.
   set longitude(double? value);
   @override
+
+  /// [email] Email of the customer.
+  String? get email;
+
+  /// [email] Email of the customer.
+  set email(String? value);
+  @override
   @JsonKey(ignore: true)
-  _$$CustomerInputImplCopyWith<_$CustomerInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UnregisteredCustomerInputImplCopyWith<_$UnregisteredCustomerInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 TenvioCustomProperty _$TenvioCustomPropertyFromJson(Map<String, dynamic> json) {
@@ -5343,4 +5416,352 @@ abstract class _DropoffFailedReason implements DropoffFailedReason {
   @JsonKey(ignore: true)
   _$$DropoffFailedReasonImplCopyWith<_$DropoffFailedReasonImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+TenvioOrderPhotosInput _$TenvioOrderPhotosInputFromJson(
+    Map<String, dynamic> json) {
+  return _TenvioOrderPhotosInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioOrderPhotosInput {
+  /// [status] Status of the order when the photo was taken.
+  @TenvioOrderStatusConverter()
+  TenvioOrderStatus? get status => throw _privateConstructorUsedError;
+
+  /// [status] Status of the order when the photo was taken.
+  @TenvioOrderStatusConverter()
+  set status(TenvioOrderStatus? value) => throw _privateConstructorUsedError;
+
+  /// [urls] Photos of the order.
+  List<String> get urls => throw _privateConstructorUsedError;
+
+  /// [urls] Photos of the order.
+  set urls(List<String> value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioOrderPhotosInputCopyWith<TenvioOrderPhotosInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioOrderPhotosInputCopyWith<$Res> {
+  factory $TenvioOrderPhotosInputCopyWith(TenvioOrderPhotosInput value,
+          $Res Function(TenvioOrderPhotosInput) then) =
+      _$TenvioOrderPhotosInputCopyWithImpl<$Res, TenvioOrderPhotosInput>;
+  @useResult
+  $Res call(
+      {@TenvioOrderStatusConverter() TenvioOrderStatus? status,
+      List<String> urls});
+}
+
+/// @nodoc
+class _$TenvioOrderPhotosInputCopyWithImpl<$Res,
+        $Val extends TenvioOrderPhotosInput>
+    implements $TenvioOrderPhotosInputCopyWith<$Res> {
+  _$TenvioOrderPhotosInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? urls = null,
+  }) {
+    return _then(_value.copyWith(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as TenvioOrderStatus?,
+      urls: null == urls
+          ? _value.urls
+          : urls // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioOrderPhotosInputImplCopyWith<$Res>
+    implements $TenvioOrderPhotosInputCopyWith<$Res> {
+  factory _$$TenvioOrderPhotosInputImplCopyWith(
+          _$TenvioOrderPhotosInputImpl value,
+          $Res Function(_$TenvioOrderPhotosInputImpl) then) =
+      __$$TenvioOrderPhotosInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@TenvioOrderStatusConverter() TenvioOrderStatus? status,
+      List<String> urls});
+}
+
+/// @nodoc
+class __$$TenvioOrderPhotosInputImplCopyWithImpl<$Res>
+    extends _$TenvioOrderPhotosInputCopyWithImpl<$Res,
+        _$TenvioOrderPhotosInputImpl>
+    implements _$$TenvioOrderPhotosInputImplCopyWith<$Res> {
+  __$$TenvioOrderPhotosInputImplCopyWithImpl(
+      _$TenvioOrderPhotosInputImpl _value,
+      $Res Function(_$TenvioOrderPhotosInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? urls = null,
+  }) {
+    return _then(_$TenvioOrderPhotosInputImpl(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as TenvioOrderStatus?,
+      urls: null == urls
+          ? _value.urls
+          : urls // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioOrderPhotosInputImpl implements _TenvioOrderPhotosInput {
+  _$TenvioOrderPhotosInputImpl(
+      {@TenvioOrderStatusConverter() this.status, this.urls = const []});
+
+  factory _$TenvioOrderPhotosInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioOrderPhotosInputImplFromJson(json);
+
+  /// [status] Status of the order when the photo was taken.
+  @override
+  @TenvioOrderStatusConverter()
+  TenvioOrderStatus? status;
+
+  /// [urls] Photos of the order.
+  @override
+  @JsonKey()
+  List<String> urls;
+
+  @override
+  String toString() {
+    return 'TenvioOrderPhotosInput(status: $status, urls: $urls)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioOrderPhotosInputImplCopyWith<_$TenvioOrderPhotosInputImpl>
+      get copyWith => __$$TenvioOrderPhotosInputImplCopyWithImpl<
+          _$TenvioOrderPhotosInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioOrderPhotosInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioOrderPhotosInput implements TenvioOrderPhotosInput {
+  factory _TenvioOrderPhotosInput(
+      {@TenvioOrderStatusConverter() TenvioOrderStatus? status,
+      List<String> urls}) = _$TenvioOrderPhotosInputImpl;
+
+  factory _TenvioOrderPhotosInput.fromJson(Map<String, dynamic> json) =
+      _$TenvioOrderPhotosInputImpl.fromJson;
+
+  @override
+
+  /// [status] Status of the order when the photo was taken.
+  @TenvioOrderStatusConverter()
+  TenvioOrderStatus? get status;
+
+  /// [status] Status of the order when the photo was taken.
+  @TenvioOrderStatusConverter()
+  set status(TenvioOrderStatus? value);
+  @override
+
+  /// [urls] Photos of the order.
+  List<String> get urls;
+
+  /// [urls] Photos of the order.
+  set urls(List<String> value);
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioOrderPhotosInputImplCopyWith<_$TenvioOrderPhotosInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+OrderItemQuantityInput _$OrderItemQuantityInputFromJson(
+    Map<String, dynamic> json) {
+  return _OrderItemQuantityInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$OrderItemQuantityInput {
+  /// [matrixId] ID of the matrix item related to the order item quantity.
+  String? get matrixId => throw _privateConstructorUsedError;
+
+  /// [matrixId] ID of the matrix item related to the order item quantity.
+  set matrixId(String? value) => throw _privateConstructorUsedError;
+
+  /// [quantity] Quantity of the matrix item related to the order item quantity.
+  int? get quantity => throw _privateConstructorUsedError;
+
+  /// [quantity] Quantity of the matrix item related to the order item quantity.
+  set quantity(int? value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $OrderItemQuantityInputCopyWith<OrderItemQuantityInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OrderItemQuantityInputCopyWith<$Res> {
+  factory $OrderItemQuantityInputCopyWith(OrderItemQuantityInput value,
+          $Res Function(OrderItemQuantityInput) then) =
+      _$OrderItemQuantityInputCopyWithImpl<$Res, OrderItemQuantityInput>;
+  @useResult
+  $Res call({String? matrixId, int? quantity});
+}
+
+/// @nodoc
+class _$OrderItemQuantityInputCopyWithImpl<$Res,
+        $Val extends OrderItemQuantityInput>
+    implements $OrderItemQuantityInputCopyWith<$Res> {
+  _$OrderItemQuantityInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? matrixId = freezed,
+    Object? quantity = freezed,
+  }) {
+    return _then(_value.copyWith(
+      matrixId: freezed == matrixId
+          ? _value.matrixId
+          : matrixId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$OrderItemQuantityInputImplCopyWith<$Res>
+    implements $OrderItemQuantityInputCopyWith<$Res> {
+  factory _$$OrderItemQuantityInputImplCopyWith(
+          _$OrderItemQuantityInputImpl value,
+          $Res Function(_$OrderItemQuantityInputImpl) then) =
+      __$$OrderItemQuantityInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? matrixId, int? quantity});
+}
+
+/// @nodoc
+class __$$OrderItemQuantityInputImplCopyWithImpl<$Res>
+    extends _$OrderItemQuantityInputCopyWithImpl<$Res,
+        _$OrderItemQuantityInputImpl>
+    implements _$$OrderItemQuantityInputImplCopyWith<$Res> {
+  __$$OrderItemQuantityInputImplCopyWithImpl(
+      _$OrderItemQuantityInputImpl _value,
+      $Res Function(_$OrderItemQuantityInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? matrixId = freezed,
+    Object? quantity = freezed,
+  }) {
+    return _then(_$OrderItemQuantityInputImpl(
+      matrixId: freezed == matrixId
+          ? _value.matrixId
+          : matrixId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$OrderItemQuantityInputImpl implements _OrderItemQuantityInput {
+  _$OrderItemQuantityInputImpl({this.matrixId, this.quantity});
+
+  factory _$OrderItemQuantityInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$OrderItemQuantityInputImplFromJson(json);
+
+  /// [matrixId] ID of the matrix item related to the order item quantity.
+  @override
+  String? matrixId;
+
+  /// [quantity] Quantity of the matrix item related to the order item quantity.
+  @override
+  int? quantity;
+
+  @override
+  String toString() {
+    return 'OrderItemQuantityInput(matrixId: $matrixId, quantity: $quantity)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$OrderItemQuantityInputImplCopyWith<_$OrderItemQuantityInputImpl>
+      get copyWith => __$$OrderItemQuantityInputImplCopyWithImpl<
+          _$OrderItemQuantityInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$OrderItemQuantityInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _OrderItemQuantityInput implements OrderItemQuantityInput {
+  factory _OrderItemQuantityInput({String? matrixId, int? quantity}) =
+      _$OrderItemQuantityInputImpl;
+
+  factory _OrderItemQuantityInput.fromJson(Map<String, dynamic> json) =
+      _$OrderItemQuantityInputImpl.fromJson;
+
+  @override
+
+  /// [matrixId] ID of the matrix item related to the order item quantity.
+  String? get matrixId;
+
+  /// [matrixId] ID of the matrix item related to the order item quantity.
+  set matrixId(String? value);
+  @override
+
+  /// [quantity] Quantity of the matrix item related to the order item quantity.
+  int? get quantity;
+
+  /// [quantity] Quantity of the matrix item related to the order item quantity.
+  set quantity(int? value);
+  @override
+  @JsonKey(ignore: true)
+  _$$OrderItemQuantityInputImplCopyWith<_$OrderItemQuantityInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

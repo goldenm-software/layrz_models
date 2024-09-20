@@ -1,4 +1,10 @@
 # Changelog
+## 3.2.13
+- `CustomerInput` change to `UnregisteredCustomerInput`
+- added `OrderItemQuantityInput`
+- added `TenvioOrderPhotosInput`
+- rework `TenvioOrderStatus`
+- rework `TenvioOrderInput` 
 
 ## 3.2.12
 - Added `LoadingParamsForm`
