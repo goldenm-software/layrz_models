@@ -41,6 +41,9 @@ class OutboundService with _$OutboundService {
 
     /// A list of custom access permissions.
     List<Access>? access,
+
+    /// Is the Metrics object.
+    OutboundMetrics? metrics,
   }) = _OutboundService;
 
   /// From json

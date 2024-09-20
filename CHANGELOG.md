@@ -1,12 +1,19 @@
 # Changelog
+
+## 3.2.14
+
+- Added `OutboundMetrics` to `OutboundService` model
+
 ## 3.2.13
+
 - `CustomerInput` change to `UnregisteredCustomerInput`
 - added `OrderItemQuantityInput`
 - added `TenvioOrderPhotosInput`
 - rework `TenvioOrderStatus`
-- rework `TenvioOrderInput` 
+- rework `TenvioOrderInput`
 
 ## 3.2.12
+
 - Added `LoadingParamsForm`
 - Added `@Default([])` in `AtsReception` and `AtsReceptionProduct`
 - Added `TenvioOrderInput` in `packersIds`
@@ -21,7 +28,7 @@
 
 ## 3.2.9
 
--Changed `requiresPhoto` to `requiresPhotos` & `destinationWareHouseId` to `destinationWarehouseId`, field  `packageImage` deleted
+-Changed `requiresPhoto` to `requiresPhotos` & `destinationWareHouseId` to `destinationWarehouseId`, field `packageImage` deleted
 
 ## 3.2.8
 
