@@ -125,7 +125,7 @@ _$OutboundMetricsImpl _$$OutboundMetricsImplFromJson(
       hibernation: (json['hibernation'] as num?)?.toInt() ?? 0,
       offline: (json['offline'] as num?)?.toInt() ?? 0,
       totalItems: (json['totalItems'] as num?)?.toInt() ?? 0,
-      statsLoading: json['statsLoading'] as bool? ?? false,
+      statsLoading: json['statsLoading'] as bool? ?? true,
     );
 
 Map<String, dynamic> _$$OutboundMetricsImplToJson(

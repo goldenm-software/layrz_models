@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.15
+
+- Change `statsLoading` from `OutboundService` default value to `true`
+
 ## 3.2.14
 
 - Added `OutboundMetrics` to `OutboundService` model
