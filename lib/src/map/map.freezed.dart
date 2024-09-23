@@ -88,8 +88,12 @@ mixin _$MapLayer {
   /// [appsIds] is the list of [App]s that are associated with the layer.
   List<String> get appsIds => throw _privateConstructorUsedError;
 
+  /// Serializes this MapLayer to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MapLayer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MapLayerCopyWith<MapLayer> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -130,6 +134,8 @@ class _$MapLayerCopyWithImpl<$Res, $Val extends MapLayer>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MapLayer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -266,6 +272,8 @@ class __$$MapLayerImplCopyWithImpl<$Res>
       _$MapLayerImpl _value, $Res Function(_$MapLayerImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MapLayer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -567,7 +575,7 @@ class _$MapLayerImpl implements _MapLayer {
             const DeepCollectionEquality().equals(other._appsIds, _appsIds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -590,7 +598,9 @@ class _$MapLayerImpl implements _MapLayer {
       attributionHeight,
       const DeepCollectionEquality().hash(_appsIds));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MapLayer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MapLayerImplCopyWith<_$MapLayerImpl> get copyWith =>
@@ -628,94 +638,96 @@ abstract class _MapLayer implements MapLayer {
   factory _MapLayer.fromJson(Map<String, dynamic> json) =
       _$MapLayerImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier for the layer.
-  String get id;
   @override
+  String get id;
 
   /// [name] is the name of the layer.
-  String get name;
   @override
+  String get name;
 
   /// [source] is the source of the layer.
+  @override
   @MapSourceConverter()
   MapSource get source;
-  @override
 
   /// [rasterServerLight] is the raster server for light mode and default.
   /// Only used when the [source] is [MapSource.custom].
-  String? get rasterServerLight;
   @override
+  String? get rasterServerLight;
 
   /// [rasterServerDark] is the raster server for dark mode.
   /// Only used when the [source] is [MapSource.custom].
-  String? get rasterServerDark;
   @override
+  String? get rasterServerDark;
 
   /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.google].
-  String? get googleToken;
   @override
+  String? get googleToken;
 
   /// [googleLayers] is the list of enabled layers for the Google Maps.
   /// Only used when the [source] is [MapSource.google].
+  @override
   @GoogleMapLayerConverter()
   List<GoogleMapLayer>? get googleLayers;
-  @override
 
   /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
   /// Only used when the [source] is [MapSource.mapbox].
-  String? get mapboxToken;
   @override
+  String? get mapboxToken;
 
   /// [mapboxStyle] is the Mapbox style for the layer.
   /// Only used when the [source] is [MapSource.mapbox].
+  @override
   @MapboxStyleConverter()
   List<MapboxStyle>? get mapboxLayers;
-  @override
 
   /// [mapboxCustomUsername] is the Mapbox custom username.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  String? get mapboxCustomUsername;
   @override
+  String? get mapboxCustomUsername;
 
   /// [mapboxCustomStyleId] is the Mapbox custom style id.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  String? get mapboxCustomStyleId;
   @override
+  String? get mapboxCustomStyleId;
 
   /// [hereToken] is the HERE token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.here].
-  String? get hereToken;
   @override
+  String? get hereToken;
 
   /// [hereLayers] is the list of enabled layers for the HERE Maps.
   /// Only used when the [source] is [MapSource.here].
+  @override
   @HereStyleConverter()
   List<HereStyle>? get hereLayers;
-  @override
 
   /// [attributionUrl] is the URI for the attribution of the layer.
-  String get attributionUrl;
   @override
+  String get attributionUrl;
 
   /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
-  String? get attributionUrlDark;
   @override
+  String? get attributionUrlDark;
 
   /// [attributionWidth] is the width of the attribution of the layer.
-  double get attributionWidth;
   @override
+  double get attributionWidth;
 
   /// [attributionHeight] is the height of the attribution of the layer.
-  double get attributionHeight;
   @override
+  double get attributionHeight;
 
   /// [appsIds] is the list of [App]s that are associated with the layer.
-  List<String> get appsIds;
   @override
-  @JsonKey(ignore: true)
+  List<String> get appsIds;
+
+  /// Create a copy of MapLayer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MapLayerImplCopyWith<_$MapLayerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

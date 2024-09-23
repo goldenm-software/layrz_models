@@ -44,7 +44,7 @@ mixin _$Model {
       throw _privateConstructorUsedError;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinition> get configStructure =>
+  List<ConfigGrouping> get configStructure =>
       throw _privateConstructorUsedError;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
@@ -57,8 +57,12 @@ mixin _$Model {
   /// [confiotName] is the name of the model in the ConfIoT.
   String? get confiotName => throw _privateConstructorUsedError;
 
+  /// Serializes this Model to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ModelCopyWith<Model> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -75,7 +79,7 @@ abstract class $ModelCopyWith<$Res> {
       String? protocolId,
       bool? isGeneric,
       List<CommandDefinition> commandsStructure,
-      List<ConfigDefinition> configStructure,
+      List<ConfigGrouping> configStructure,
       bool confiotCapable,
       @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
       String? confiotName});
@@ -93,6 +97,8 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,7 +146,7 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
       configStructure: null == configStructure
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinition>,
+              as List<ConfigGrouping>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -156,6 +162,8 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
     ) as $Val);
   }
 
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InboundProtocolCopyWith<$Res>? get protocol {
@@ -184,7 +192,7 @@ abstract class _$$ModelImplCopyWith<$Res> implements $ModelCopyWith<$Res> {
       String? protocolId,
       bool? isGeneric,
       List<CommandDefinition> commandsStructure,
-      List<ConfigDefinition> configStructure,
+      List<ConfigGrouping> configStructure,
       bool confiotCapable,
       @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
       String? confiotName});
@@ -201,6 +209,8 @@ class __$$ModelImplCopyWithImpl<$Res>
       _$ModelImpl _value, $Res Function(_$ModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -248,7 +258,7 @@ class __$$ModelImplCopyWithImpl<$Res>
       configStructure: null == configStructure
           ? _value._configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinition>,
+              as List<ConfigGrouping>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -276,7 +286,7 @@ class _$ModelImpl implements _Model {
       this.protocolId,
       this.isGeneric,
       final List<CommandDefinition> commandsStructure = const [],
-      final List<ConfigDefinition> configStructure = const [],
+      final List<ConfigGrouping> configStructure = const [],
       this.confiotCapable = false,
       @ConfIoTLayoutConverter() this.confiotLayout = ConfIoTLayout.standard,
       this.confiotName})
@@ -325,12 +335,12 @@ class _$ModelImpl implements _Model {
   }
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  final List<ConfigDefinition> _configStructure;
+  final List<ConfigGrouping> _configStructure;
 
   /// [configStructure] is the structure of the configuration for the protocol.
   @override
   @JsonKey()
-  List<ConfigDefinition> get configStructure {
+  List<ConfigGrouping> get configStructure {
     if (_configStructure is EqualUnmodifiableListView) return _configStructure;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_configStructure);
@@ -383,7 +393,7 @@ class _$ModelImpl implements _Model {
                 other.confiotName == confiotName));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -399,7 +409,9 @@ class _$ModelImpl implements _Model {
       confiotLayout,
       confiotName);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ModelImplCopyWith<_$ModelImpl> get copyWith =>
@@ -422,61 +434,63 @@ abstract class _Model implements Model {
       final String? protocolId,
       final bool? isGeneric,
       final List<CommandDefinition> commandsStructure,
-      final List<ConfigDefinition> configStructure,
+      final List<ConfigGrouping> configStructure,
       final bool confiotCapable,
       @ConfIoTLayoutConverter() final ConfIoTLayout confiotLayout,
       final String? confiotName}) = _$ModelImpl;
 
   factory _Model.fromJson(Map<String, dynamic> json) = _$ModelImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the model.
-  String get id;
   @override
+  String get id;
 
   /// [name] is the name of the model.
-  String get name;
   @override
+  String get name;
 
   /// [flespiId] is the ID of the device in the flespi platform.
   /// Can be null if the model is not connected to a device or is a in-house protocol.
-  String? get flespiId;
   @override
+  String? get flespiId;
 
   /// [protocol] is the protocol of the model.
-  InboundProtocol? get protocol;
   @override
+  InboundProtocol? get protocol;
 
   /// [protocolId] is the ID of the protocol
-  String? get protocolId;
   @override
+  String? get protocolId;
 
   /// [isGeneric] is true if the model is generic.
-  bool? get isGeneric;
   @override
+  bool? get isGeneric;
 
   /// [commandsStructure] is the structure of the commands for the protocol.
-  List<CommandDefinition> get commandsStructure;
   @override
+  List<CommandDefinition> get commandsStructure;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinition> get configStructure;
   @override
+  List<ConfigGrouping> get configStructure;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
-  bool get confiotCapable;
   @override
+  bool get confiotCapable;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @override
   @ConfIoTLayoutConverter()
   ConfIoTLayout get confiotLayout;
-  @override
 
   /// [confiotName] is the name of the model in the ConfIoT.
-  String? get confiotName;
   @override
-  @JsonKey(ignore: true)
+  String? get confiotName;
+
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ModelImplCopyWith<_$ModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -528,11 +542,11 @@ mixin _$ModelInput {
       throw _privateConstructorUsedError;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinitionInput> get configStructure =>
+  List<ConfigGroupingInput> get configStructure =>
       throw _privateConstructorUsedError;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  set configStructure(List<ConfigDefinitionInput> value) =>
+  set configStructure(List<ConfigGroupingInput> value) =>
       throw _privateConstructorUsedError;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
@@ -555,8 +569,12 @@ mixin _$ModelInput {
   /// [confiotName] is the name of the model in the ConfIoT.
   set confiotName(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this ModelInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ModelInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ModelInputCopyWith<ModelInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -574,7 +592,7 @@ abstract class $ModelInputCopyWith<$Res> {
       String? protocolId,
       bool isGeneric,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure,
+      List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
       @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
       String? confiotName});
@@ -590,6 +608,8 @@ class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -632,7 +652,7 @@ class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
       configStructure: null == configStructure
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinitionInput>,
+              as List<ConfigGroupingInput>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -664,7 +684,7 @@ abstract class _$$ModelInputImplCopyWith<$Res>
       String? protocolId,
       bool isGeneric,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure,
+      List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
       @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
       String? confiotName});
@@ -678,6 +698,8 @@ class __$$ModelInputImplCopyWithImpl<$Res>
       _$ModelInputImpl _value, $Res Function(_$ModelInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -720,7 +742,7 @@ class __$$ModelInputImplCopyWithImpl<$Res>
       configStructure: null == configStructure
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinitionInput>,
+              as List<ConfigGroupingInput>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -786,7 +808,7 @@ class _$ModelInputImpl implements _ModelInput {
   /// [configStructure] is the structure of the configuration for the protocol.
   @override
   @JsonKey()
-  List<ConfigDefinitionInput> configStructure;
+  List<ConfigGroupingInput> configStructure;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
   @override
@@ -808,7 +830,9 @@ class _$ModelInputImpl implements _ModelInput {
     return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ModelInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ModelInputImplCopyWith<_$ModelInputImpl> get copyWith =>
@@ -830,7 +854,7 @@ abstract class _ModelInput implements ModelInput {
       String? protocolId,
       bool isGeneric,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure,
+      List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
       @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
       String? confiotName}) = _$ModelInputImpl;
@@ -838,82 +862,84 @@ abstract class _ModelInput implements ModelInput {
   factory _ModelInput.fromJson(Map<String, dynamic> json) =
       _$ModelInputImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the model.
+  @override
   String? get id;
 
   /// [id] is the unique identifier of the model.
   set id(String? value);
-  @override
 
   /// [name] is the name of the model.
+  @override
   String get name;
 
   /// [name] is the name of the model.
   set name(String value);
-  @override
 
   /// [flespiId] is the ID of the device in the flespi platform.
   /// Can be null if the model is not connected to a device or is a in-house protocol.
+  @override
   String? get flespiId;
 
   /// [flespiId] is the ID of the device in the flespi platform.
   /// Can be null if the model is not connected to a device or is a in-house protocol.
   set flespiId(String? value);
-  @override
 
   /// [protocolId] is the ID of the protocol
+  @override
   String? get protocolId;
 
   /// [protocolId] is the ID of the protocol
   set protocolId(String? value);
-  @override
 
   /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  @override
   bool get isGeneric;
 
   /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
   set isGeneric(bool value);
-  @override
 
   /// [commandsStructure] is the structure of the commands for the protocol.
+  @override
   List<CommandDefinitionInput> get commandsStructure;
 
   /// [commandsStructure] is the structure of the commands for the protocol.
   set commandsStructure(List<CommandDefinitionInput> value);
-  @override
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinitionInput> get configStructure;
+  @override
+  List<ConfigGroupingInput> get configStructure;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  set configStructure(List<ConfigDefinitionInput> value);
-  @override
+  set configStructure(List<ConfigGroupingInput> value);
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  @override
   bool get confiotCapable;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
   set confiotCapable(bool value);
-  @override
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @override
   @ConfIoTLayoutConverter()
   ConfIoTLayout get confiotLayout;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
   @ConfIoTLayoutConverter()
   set confiotLayout(ConfIoTLayout value);
-  @override
 
   /// [confiotName] is the name of the model in the ConfIoT.
+  @override
   String? get confiotName;
 
   /// [confiotName] is the name of the model in the ConfIoT.
   set confiotName(String? value);
+
+  /// Create a copy of ModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ModelInputImplCopyWith<_$ModelInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -936,8 +962,12 @@ mixin _$HwModel {
   /// [models] is the list of the models that are part of this model.
   List<Model> get models => throw _privateConstructorUsedError;
 
+  /// Serializes this HwModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HwModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HwModelCopyWith<HwModel> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -960,6 +990,8 @@ class _$HwModelCopyWithImpl<$Res, $Val extends HwModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HwModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1008,6 +1040,8 @@ class __$$HwModelImplCopyWithImpl<$Res>
       _$HwModelImpl _value, $Res Function(_$HwModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HwModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1100,7 +1134,7 @@ class _$HwModelImpl implements _HwModel {
             const DeepCollectionEquality().equals(other._models, _models));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1109,7 +1143,9 @@ class _$HwModelImpl implements _HwModel {
       const DeepCollectionEquality().hash(_modelsIds),
       const DeepCollectionEquality().hash(_models));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HwModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HwModelImplCopyWith<_$HwModelImpl> get copyWith =>
@@ -1132,24 +1168,26 @@ abstract class _HwModel implements HwModel {
 
   factory _HwModel.fromJson(Map<String, dynamic> json) = _$HwModelImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the model.
-  String get id;
   @override
+  String get id;
 
   /// [name] is the name of the model.
-  String get name;
   @override
+  String get name;
 
   /// [modelsIds] is the list of the models IDs that are part of this model.
-  List<String> get modelsIds;
   @override
+  List<String> get modelsIds;
 
   /// [models] is the list of the models that are part of this model.
-  List<Model> get models;
   @override
-  @JsonKey(ignore: true)
+  List<Model> get models;
+
+  /// Create a copy of HwModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HwModelImplCopyWith<_$HwModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1178,8 +1216,12 @@ mixin _$HwModelInput {
   /// [modelsIds] is the list of the models IDs that are part of this model.
   set modelsIds(List<String> value) => throw _privateConstructorUsedError;
 
+  /// Serializes this HwModelInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HwModelInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HwModelInputCopyWith<HwModelInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1203,6 +1245,8 @@ class _$HwModelInputCopyWithImpl<$Res, $Val extends HwModelInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HwModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1246,6 +1290,8 @@ class __$$HwModelInputImplCopyWithImpl<$Res>
       _$HwModelInputImpl _value, $Res Function(_$HwModelInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HwModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1297,7 +1343,9 @@ class _$HwModelInputImpl implements _HwModelInput {
     return 'HwModelInput(id: $id, name: $name, modelsIds: $modelsIds)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HwModelInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HwModelInputImplCopyWith<_$HwModelInputImpl> get copyWith =>
@@ -1318,29 +1366,31 @@ abstract class _HwModelInput implements HwModelInput {
   factory _HwModelInput.fromJson(Map<String, dynamic> json) =
       _$HwModelInputImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the model.
+  @override
   String? get id;
 
   /// [id] is the unique identifier of the model.
   set id(String? value);
-  @override
 
   /// [name] is the name of the model.
+  @override
   String get name;
 
   /// [name] is the name of the model.
   set name(String value);
-  @override
 
   /// [modelsIds] is the list of the models IDs that are part of this model.
+  @override
   List<String> get modelsIds;
 
   /// [modelsIds] is the list of the models IDs that are part of this model.
   set modelsIds(List<String> value);
+
+  /// Create a copy of HwModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HwModelInputImplCopyWith<_$HwModelInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

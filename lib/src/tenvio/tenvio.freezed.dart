@@ -63,8 +63,12 @@ mixin _$TenvioItem {
   @TimestampOrNullConverter()
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioItemCopyWith<TenvioItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -103,6 +107,8 @@ class _$TenvioItemCopyWithImpl<$Res, $Val extends TenvioItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -171,6 +177,8 @@ class _$TenvioItemCopyWithImpl<$Res, $Val extends TenvioItem>
     ) as $Val);
   }
 
+  /// Create a copy of TenvioItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TenvioMatrixItemCopyWith<$Res>? get matrix {
@@ -183,6 +191,8 @@ class _$TenvioItemCopyWithImpl<$Res, $Val extends TenvioItem>
     });
   }
 
+  /// Create a copy of TenvioItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get warehouse {
@@ -232,6 +242,8 @@ class __$$TenvioItemImplCopyWithImpl<$Res>
       _$TenvioItemImpl _value, $Res Function(_$TenvioItemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -430,7 +442,7 @@ class _$TenvioItemImpl implements _TenvioItem {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -447,7 +459,9 @@ class _$TenvioItemImpl implements _TenvioItem {
       createdAt,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioItemImplCopyWith<_$TenvioItemImpl> get copyWith =>
@@ -480,62 +494,64 @@ abstract class _TenvioItem implements TenvioItem {
   factory _TenvioItem.fromJson(Map<String, dynamic> json) =
       _$TenvioItemImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier for the item.
-  String get id;
   @override
+  String get id;
 
   /// [matrixId] is the unique identifier of the matrix item.
-  String? get matrixId;
   @override
+  String? get matrixId;
 
   /// [matrix] is the matrix item.
-  TenvioMatrixItem? get matrix;
   @override
+  TenvioMatrixItem? get matrix;
 
   /// [location] is the location of the item.
+  @override
   @TenvioItemLocationOrNullConverter()
   TenvioItemLocation? get location;
-  @override
 
   /// [address] is the address of the item. This property is only available when the item is at the customer.
-  String? get address;
   @override
+  String? get address;
 
   /// [pickupDate] is the date when the item was picked up.
+  @override
   @TimestampOrNullConverter()
   DateTime? get pickupDate;
-  @override
 
   /// [customProperties] is a `Map<String, dynamic>` that contains the custom properties of the item.
   /// This properties can be used to store additional information about the item and it's up to the
   /// user to define them.
-  Map<String, dynamic>? get customProperties;
   @override
+  Map<String, dynamic>? get customProperties;
 
   /// [movements] is a history of movements of the item.
-  List<TenvioItemMovement>? get movements;
   @override
+  List<TenvioItemMovement>? get movements;
 
   /// [warehouse] is the warehouse where the item is located.
-  Asset? get warehouse;
   @override
+  Asset? get warehouse;
 
   /// [warehouseId] is the unique identifier of the warehouse where the item is located.
-  String? get warehouseId;
   @override
+  String? get warehouseId;
 
   /// [createdAt] is the date when the item was created.
+  @override
   @TimestampOrNullConverter()
   DateTime? get createdAt;
-  @override
 
   /// [updatedAt] is the date when the item was updated.
+  @override
   @TimestampOrNullConverter()
   DateTime? get updatedAt;
+
+  /// Create a copy of TenvioItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioItemImplCopyWith<_$TenvioItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -584,8 +600,12 @@ mixin _$TenvioMatrixItem {
   /// [items] is a list of items that are part of the matrix item.
   List<TenvioItem>? get items => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioMatrixItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioMatrixItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioMatrixItemCopyWith<TenvioMatrixItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -620,6 +640,8 @@ class _$TenvioMatrixItemCopyWithImpl<$Res, $Val extends TenvioMatrixItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioMatrixItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -714,6 +736,8 @@ class __$$TenvioMatrixItemImplCopyWithImpl<$Res>
       $Res Function(_$TenvioMatrixItemImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioMatrixItem
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -894,7 +918,7 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -910,7 +934,9 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
       updatedAt,
       const DeepCollectionEquality().hash(_items));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioMatrixItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioMatrixItemImplCopyWith<_$TenvioMatrixItemImpl> get copyWith =>
@@ -942,56 +968,58 @@ abstract class _TenvioMatrixItem implements TenvioMatrixItem {
   factory _TenvioMatrixItem.fromJson(Map<String, dynamic> json) =
       _$TenvioMatrixItemImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier for the item.
-  String get id;
   @override
+  String get id;
 
   /// [name] is the name of the item.
-  String get name;
   @override
+  String get name;
 
   /// [image] is the image of the item.
-  String? get image;
   @override
+  String? get image;
 
   /// [code] is the code unique code of the item, can be the barcode value, or an autogenerated code.
-  String get code;
   @override
+  String get code;
 
   /// [weight] is the weight of the item.
-  double? get weight;
   @override
+  double? get weight;
 
   /// [width] is the width of the item.
-  double? get width;
   @override
+  double? get width;
 
   /// [height] is the height of the item.
-  double? get height;
   @override
+  double? get height;
 
   /// [customProperties] is a `List` that contains the definition of the custom properties of the item
   /// This properties can be used to store additional information about the item and it's up to the
   /// user to define them.
-  List<TenvioCustomProperty>? get customProperties;
   @override
+  List<TenvioCustomProperty>? get customProperties;
 
   /// [createdAt] is the date when the item was created.
+  @override
   @TimestampOrNullConverter()
   DateTime? get createdAt;
-  @override
 
   /// [updatedAt] is the date when the item was updated.
+  @override
   @TimestampOrNullConverter()
   DateTime? get updatedAt;
-  @override
 
   /// [items] is a list of items that are part of the matrix item.
-  List<TenvioItem>? get items;
   @override
-  @JsonKey(ignore: true)
+  List<TenvioItem>? get items;
+
+  /// Create a copy of TenvioMatrixItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioMatrixItemImplCopyWith<_$TenvioMatrixItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1033,8 +1061,12 @@ mixin _$TenvioItemMovement {
   @TimestampConverter()
   DateTime get triggeredAt => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioItemMovement to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioItemMovement
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioItemMovementCopyWith<TenvioItemMovement> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1070,6 +1102,8 @@ class _$TenvioItemMovementCopyWithImpl<$Res, $Val extends TenvioItemMovement>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioItemMovement
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1118,6 +1152,8 @@ class _$TenvioItemMovementCopyWithImpl<$Res, $Val extends TenvioItemMovement>
     ) as $Val);
   }
 
+  /// Create a copy of TenvioItemMovement
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get previousOwner {
@@ -1130,6 +1166,8 @@ class _$TenvioItemMovementCopyWithImpl<$Res, $Val extends TenvioItemMovement>
     });
   }
 
+  /// Create a copy of TenvioItemMovement
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get newOwner {
@@ -1142,6 +1180,8 @@ class _$TenvioItemMovementCopyWithImpl<$Res, $Val extends TenvioItemMovement>
     });
   }
 
+  /// Create a copy of TenvioItemMovement
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get receivedBy {
@@ -1189,6 +1229,8 @@ class __$$TenvioItemMovementImplCopyWithImpl<$Res>
       $Res Function(_$TenvioItemMovementImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioItemMovement
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1320,7 +1362,7 @@ class _$TenvioItemMovementImpl implements _TenvioItemMovement {
                 other.triggeredAt == triggeredAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1333,7 +1375,9 @@ class _$TenvioItemMovementImpl implements _TenvioItemMovement {
       receivedBy,
       triggeredAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioItemMovement
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioItemMovementImplCopyWith<_$TenvioItemMovementImpl> get copyWith =>
@@ -1363,47 +1407,49 @@ abstract class _TenvioItemMovement implements TenvioItemMovement {
   factory _TenvioItemMovement.fromJson(Map<String, dynamic> json) =
       _$TenvioItemMovementImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the movement
-  String get id;
   @override
+  String get id;
 
   /// [previousOwnerId] is the unique identifier of the previous owner of the item.
   /// May be null if the item is being created.
-  String? get previousOwnerId;
   @override
+  String? get previousOwnerId;
 
   /// [previousOwner] is the previous owner of the item.
   /// May be null if the item is being created.
-  User? get previousOwner;
   @override
+  User? get previousOwner;
 
   /// [newOwnerId] is the unique identifier of the new owner of the item.
   /// May be null if the item is being deleted or delivered to a non-tenvio user.
-  String? get newOwnerId;
   @override
+  String? get newOwnerId;
 
   /// [newOwner] is the new owner of the item.
   /// May be null if the item is being deleted or delivered to a non-tenvio user.
-  User? get newOwner;
   @override
+  User? get newOwner;
 
   /// [receivedById] is the unique identifier of the user that received the item.
   /// This value will only be filled when the item is received by an a Warehouse.
-  String? get receivedById;
   @override
+  String? get receivedById;
 
   /// [receivedBy] is the user that received the item.
   /// This value will only be filled when the item is received by an a Warehouse.
-  User? get receivedBy;
   @override
+  User? get receivedBy;
 
   /// [triggeredAt] is the date when the movement was triggered.
+  @override
   @TimestampConverter()
   DateTime get triggeredAt;
+
+  /// Create a copy of TenvioItemMovement
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioItemMovementImplCopyWith<_$TenvioItemMovementImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1452,8 +1498,12 @@ mixin _$TenvioPackage {
   /// [totalItems] is the total number of items in the package.
   int? get totalItems => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioPackage to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioPackage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioPackageCopyWith<TenvioPackage> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1491,6 +1541,8 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioPackage
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1554,6 +1606,8 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
     ) as $Val);
   }
 
+  /// Create a copy of TenvioPackage
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get packer {
@@ -1566,6 +1620,8 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
     });
   }
 
+  /// Create a copy of TenvioPackage
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get warehouse {
@@ -1614,6 +1670,8 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
       _$TenvioPackageImpl _value, $Res Function(_$TenvioPackageImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioPackage
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1786,7 +1844,7 @@ class _$TenvioPackageImpl implements _TenvioPackage {
                 other.totalItems == totalItems));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1802,7 +1860,9 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       updatedAt,
       totalItems);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioPackage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>
@@ -1833,57 +1893,59 @@ abstract class _TenvioPackage implements TenvioPackage {
   factory _TenvioPackage.fromJson(Map<String, dynamic> json) =
       _$TenvioPackageImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the package
-  String get id;
   @override
+  String get id;
 
   /// [packerId] is the unique identifier of the operator that will pack the package.
-  String? get packerId;
   @override
+  String? get packerId;
 
   /// [packer] is the operator that will pack the package.
   /// This value will only be filled when the package is assigned to an operator.
-  User? get packer;
   @override
+  User? get packer;
 
   /// [trackingId] is the unique identifier of the tracking of the package.
   /// The equivalent to the tracking number of a package.
-  String get trackingId;
   @override
+  String get trackingId;
 
   /// [warehouseId] is the unique identifier of the warehouse that the package is located.
-  String? get warehouseId;
   @override
+  String? get warehouseId;
 
   /// [warehouse] is the warehouse that the package is located.
-  Asset? get warehouse;
   @override
+  Asset? get warehouse;
 
   /// [items] is the list of items that are part of the package.
-  List<TenvioPackageQuantity>? get items;
   @override
+  List<TenvioPackageQuantity>? get items;
 
   /// [status] is the status of the package.
+  @override
   @TenvioPackageStatusConverter()
   TenvioPackageStatus get status;
-  @override
 
   /// [createdAt] is the date when the package was created.
+  @override
   @TimestampConverter()
   DateTime get createdAt;
-  @override
 
   /// [updatedAt] is the date when the package was last updated.
+  @override
   @TimestampConverter()
   DateTime get updatedAt;
-  @override
 
   /// [totalItems] is the total number of items in the package.
-  int? get totalItems;
   @override
-  @JsonKey(ignore: true)
+  int? get totalItems;
+
+  /// Create a copy of TenvioPackage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1907,8 +1969,12 @@ mixin _$TenvioPackageQuantity {
   /// [quantity] is the quantity of the package.
   int get quantity => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioPackageQuantity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioPackageQuantity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioPackageQuantityCopyWith<TenvioPackageQuantity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1936,6 +2002,8 @@ class _$TenvioPackageQuantityCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioPackageQuantity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1964,6 +2032,8 @@ class _$TenvioPackageQuantityCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of TenvioPackageQuantity
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TenvioMatrixItemCopyWith<$Res>? get matrix {
@@ -2002,6 +2072,8 @@ class __$$TenvioPackageQuantityImplCopyWithImpl<$Res>
       $Res Function(_$TenvioPackageQuantityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioPackageQuantity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2077,11 +2149,13 @@ class _$TenvioPackageQuantityImpl implements _TenvioPackageQuantity {
                 other.quantity == quantity));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, matrixId, matrix, quantity);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioPackageQuantity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioPackageQuantityImplCopyWith<_$TenvioPackageQuantityImpl>
@@ -2106,24 +2180,26 @@ abstract class _TenvioPackageQuantity implements TenvioPackageQuantity {
   factory _TenvioPackageQuantity.fromJson(Map<String, dynamic> json) =
       _$TenvioPackageQuantityImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the package quantity
-  String get id;
   @override
+  String get id;
 
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
-  String get matrixId;
   @override
+  String get matrixId;
 
   /// [matrix] is the matrix that the package quantity is related.
-  TenvioMatrixItem? get matrix;
   @override
+  TenvioMatrixItem? get matrix;
 
   /// [quantity] is the quantity of the package.
-  int get quantity;
   @override
-  @JsonKey(ignore: true)
+  int get quantity;
+
+  /// Create a copy of TenvioPackageQuantity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioPackageQuantityImplCopyWith<_$TenvioPackageQuantityImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2150,8 +2226,12 @@ mixin _$TenvioUnregisteredCustomer {
   /// [longitude] is the longitude of the customer.
   double? get longitude => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioUnregisteredCustomer to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioUnregisteredCustomer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioUnregisteredCustomerCopyWith<TenvioUnregisteredCustomer>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2182,6 +2262,8 @@ class _$TenvioUnregisteredCustomerCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioUnregisteredCustomer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2243,6 +2325,8 @@ class __$$TenvioUnregisteredCustomerImplCopyWithImpl<$Res>
       $Res Function(_$TenvioUnregisteredCustomerImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioUnregisteredCustomer
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2330,12 +2414,14 @@ class _$TenvioUnregisteredCustomerImpl implements _TenvioUnregisteredCustomer {
                 other.longitude == longitude));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, name, phone, address, latitude, longitude);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioUnregisteredCustomer
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioUnregisteredCustomerImplCopyWith<_$TenvioUnregisteredCustomerImpl>
@@ -2362,28 +2448,30 @@ abstract class _TenvioUnregisteredCustomer
   factory _TenvioUnregisteredCustomer.fromJson(Map<String, dynamic> json) =
       _$TenvioUnregisteredCustomerImpl.fromJson;
 
-  @override
-
   /// [name] is the name of the customer.
-  String get name;
   @override
+  String get name;
 
   /// [phone] is the phone number of the customer.
-  String? get phone;
   @override
+  String? get phone;
 
   /// [address] is the address of the customer.
-  String? get address;
   @override
+  String? get address;
 
   /// [latitude] is the latitude of the customer.
-  double? get latitude;
   @override
+  double? get latitude;
 
   /// [longitude] is the longitude of the customer.
-  double? get longitude;
   @override
-  @JsonKey(ignore: true)
+  double? get longitude;
+
+  /// Create a copy of TenvioUnregisteredCustomer
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioUnregisteredCustomerImplCopyWith<_$TenvioUnregisteredCustomerImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2443,8 +2531,12 @@ mixin _$TenvioOrder {
   @TimestampOrNullConverter()
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioOrder to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioOrderCopyWith<TenvioOrder> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2486,6 +2578,8 @@ class _$TenvioOrderCopyWithImpl<$Res, $Val extends TenvioOrder>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioOrder
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2569,6 +2663,8 @@ class _$TenvioOrderCopyWithImpl<$Res, $Val extends TenvioOrder>
     ) as $Val);
   }
 
+  /// Create a copy of TenvioOrder
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res> get warehouse {
@@ -2577,6 +2673,8 @@ class _$TenvioOrderCopyWithImpl<$Res, $Val extends TenvioOrder>
     });
   }
 
+  /// Create a copy of TenvioOrder
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TenvioDestinationCopyWith<$Res>? get destination {
@@ -2629,6 +2727,8 @@ class __$$TenvioOrderImplCopyWithImpl<$Res>
       _$TenvioOrderImpl _value, $Res Function(_$TenvioOrderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioOrder
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2856,7 +2956,7 @@ class _$TenvioOrderImpl implements _TenvioOrder {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2876,7 +2976,9 @@ class _$TenvioOrderImpl implements _TenvioOrder {
       createdAt,
       updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioOrder
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioOrderImplCopyWith<_$TenvioOrderImpl> get copyWith =>
@@ -2912,72 +3014,74 @@ abstract class _TenvioOrder implements TenvioOrder {
   factory _TenvioOrder.fromJson(Map<String, dynamic> json) =
       _$TenvioOrderImpl.fromJson;
 
-  @override
-
   /// [id] ID of the order entity. This ID is unique along the system.
-  String get id;
   @override
+  String get id;
 
   /// [ownerId] ID of the owner of the order.
-  String get ownerId;
   @override
+  String get ownerId;
 
   /// [warehouse] where the order is located.
-  Asset get warehouse;
   @override
+  Asset get warehouse;
 
   /// [warehouseId] ID of the warehouse where the order is located.
-  String get warehouseId;
   @override
+  String get warehouseId;
 
   /// [destination] Destination of the order.
+  @override
   @TenvioDestinationOrNullConverter()
   TenvioDestination? get destination;
-  @override
 
   /// [status] Status of the order entity.
+  @override
   @TenvioOrderStatusConverter()
   TenvioOrderStatus get status;
-  @override
 
   /// [notes] Notes of the order entity.
-  List<String> get notes;
   @override
+  List<String> get notes;
 
   /// [assignByDepartment] Assign by division indicator.
-  bool? get assignByDepartment;
   @override
+  bool? get assignByDepartment;
 
   /// [requiresImages] Requires images indicator.
-  bool? get requiresImages;
   @override
+  bool? get requiresImages;
 
   /// [packedImage] URL of the packed image.
-  String? get packedImage;
   @override
+  String? get packedImage;
 
   /// [highhighPriority] High priority indicator.
-  bool? get highPriority;
   @override
+  bool? get highPriority;
 
   /// [items] Items included in the order.
-  List<TenvioItemQuantity>? get items;
   @override
+  List<TenvioItemQuantity>? get items;
 
   /// [totalItems] Total number of items included in the order.
-  int get totalItems;
   @override
+  int get totalItems;
 
   /// [createdAt] Creation date of the order.
+  @override
   @TimestampOrNullConverter()
   DateTime? get createdAt;
-  @override
 
   /// [updatedAt] Last update date of the order.
+  @override
   @TimestampOrNullConverter()
   DateTime? get updatedAt;
+
+  /// Create a copy of TenvioOrder
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioOrderImplCopyWith<_$TenvioOrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3000,8 +3104,12 @@ mixin _$TenvioItemQuantity {
   /// [quantity] is the quantity of the package.
   int get quantity => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioItemQuantity to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioItemQuantity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioItemQuantityCopyWith<TenvioItemQuantity> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3028,6 +3136,8 @@ class _$TenvioItemQuantityCopyWithImpl<$Res, $Val extends TenvioItemQuantity>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioItemQuantity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3056,6 +3166,8 @@ class _$TenvioItemQuantityCopyWithImpl<$Res, $Val extends TenvioItemQuantity>
     ) as $Val);
   }
 
+  /// Create a copy of TenvioItemQuantity
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TenvioMatrixItemCopyWith<$Res> get matrix {
@@ -3088,6 +3200,8 @@ class __$$TenvioItemQuantityImplCopyWithImpl<$Res>
       $Res Function(_$TenvioItemQuantityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioItemQuantity
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3163,11 +3277,13 @@ class _$TenvioItemQuantityImpl implements _TenvioItemQuantity {
                 other.quantity == quantity));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, matrixId, matrix, quantity);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioItemQuantity
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioItemQuantityImplCopyWith<_$TenvioItemQuantityImpl> get copyWith =>
@@ -3192,24 +3308,26 @@ abstract class _TenvioItemQuantity implements TenvioItemQuantity {
   factory _TenvioItemQuantity.fromJson(Map<String, dynamic> json) =
       _$TenvioItemQuantityImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the package quantity
-  String get id;
   @override
+  String get id;
 
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
-  String get matrixId;
   @override
+  String get matrixId;
 
   /// [matrix] is the matrix that the package quantity is related.
-  TenvioMatrixItem get matrix;
   @override
+  TenvioMatrixItem get matrix;
 
   /// [quantity] is the quantity of the package.
-  int get quantity;
   @override
-  @JsonKey(ignore: true)
+  int get quantity;
+
+  /// Create a copy of TenvioItemQuantity
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioItemQuantityImplCopyWith<_$TenvioItemQuantityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3245,8 +3363,12 @@ mixin _$TenvioItemQuantityInput {
   /// [quantity] is the quantity of the package.
   set quantity(int? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioItemQuantityInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioItemQuantityInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioItemQuantityInputCopyWith<TenvioItemQuantityInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3274,6 +3396,8 @@ class _$TenvioItemQuantityInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioItemQuantityInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3302,6 +3426,8 @@ class _$TenvioItemQuantityInputCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of TenvioItemQuantityInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TenvioMatrixItemCopyWith<$Res>? get matrix {
@@ -3341,6 +3467,8 @@ class __$$TenvioItemQuantityInputImplCopyWithImpl<$Res>
       $Res Function(_$TenvioItemQuantityInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioItemQuantityInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3400,7 +3528,9 @@ class _$TenvioItemQuantityInputImpl implements _TenvioItemQuantityInput {
     return 'TenvioItemQuantityInput(id: $id, matrixId: $matrixId, matrix: $matrix, quantity: $quantity)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioItemQuantityInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioItemQuantityInputImplCopyWith<_$TenvioItemQuantityInputImpl>
@@ -3425,36 +3555,38 @@ abstract class _TenvioItemQuantityInput implements TenvioItemQuantityInput {
   factory _TenvioItemQuantityInput.fromJson(Map<String, dynamic> json) =
       _$TenvioItemQuantityInputImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the package quantity
+  @override
   String? get id;
 
   /// [id] is the unique identifier of the package quantity
   set id(String? value);
-  @override
 
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
+  @override
   String? get matrixId;
 
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
   set matrixId(String? value);
-  @override
 
   /// [matrix] is the matrix that the package quantity is related.
+  @override
   TenvioMatrixItem? get matrix;
 
   /// [matrix] is the matrix that the package quantity is related.
   set matrix(TenvioMatrixItem? value);
-  @override
 
   /// [quantity] is the quantity of the package.
+  @override
   int? get quantity;
 
   /// [quantity] is the quantity of the package.
   set quantity(int? value);
+
+  /// Create a copy of TenvioItemQuantityInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioItemQuantityInputImplCopyWith<_$TenvioItemQuantityInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3542,8 +3674,12 @@ mixin _$TenvioOrderInput {
   set items(List<OrderItemQuantityInput>? value) =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioOrderInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioOrderInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioOrderInputCopyWith<TenvioOrderInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3581,6 +3717,8 @@ class _$TenvioOrderInputCopyWithImpl<$Res, $Val extends TenvioOrderInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioOrderInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3649,6 +3787,8 @@ class _$TenvioOrderInputCopyWithImpl<$Res, $Val extends TenvioOrderInput>
     ) as $Val);
   }
 
+  /// Create a copy of TenvioOrderInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UnregisteredCustomerInputCopyWith<$Res>? get newCustomer {
@@ -3697,6 +3837,8 @@ class __$$TenvioOrderInputImplCopyWithImpl<$Res>
       $Res Function(_$TenvioOrderInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioOrderInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3844,7 +3986,9 @@ class _$TenvioOrderInputImpl implements _TenvioOrderInput {
     return 'TenvioOrderInput(id: $id, warehouseId: $warehouseId, status: $status, customerId: $customerId, newCustomer: $newCustomer, destinationWarehouseId: $destinationWarehouseId, notes: $notes, packersIds: $packersIds, requiresPhotos: $requiresPhotos, statusPhotos: $statusPhotos, highPriority: $highPriority, items: $items)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioOrderInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioOrderInputImplCopyWith<_$TenvioOrderInputImpl> get copyWith =>
@@ -3877,91 +4021,95 @@ abstract class _TenvioOrderInput implements TenvioOrderInput {
   factory _TenvioOrderInput.fromJson(Map<String, dynamic> json) =
       _$TenvioOrderInputImpl.fromJson;
 
-  @override
-
   /// [id] ID of the order entity. This ID is unique along the system.
+  @override
   String? get id;
 
   /// [id] ID of the order entity. This ID is unique along the system.
   set id(String? value);
-  @override
 
   /// [warehouseId] ID of the warehouse where the order is located.
+  @override
   String? get warehouseId;
 
   /// [warehouseId] ID of the warehouse where the order is located.
   set warehouseId(String? value);
-  @override
 
   /// [status] Status of the order entity.
+  @override
   @TenvioOrderStatusConverter()
   TenvioOrderStatus get status;
 
   /// [status] Status of the order entity.
   @TenvioOrderStatusConverter()
   set status(TenvioOrderStatus value);
-  @override
 
   /// [customerId] ID of the existing customer that will receive the order.
+  @override
   String? get customerId;
 
   /// [customerId] ID of the existing customer that will receive the order.
-  set customerId(String? value);
-  @override // /// [newCustomer] Unregistered customer that will receive the order.
+  set customerId(
+      String?
+          value); // /// [newCustomer] Unregistered customer that will receive the order.
+  @override
   UnregisteredCustomerInput?
       get newCustomer; // /// [newCustomer] Unregistered customer that will receive the order.
   set newCustomer(UnregisteredCustomerInput? value);
-  @override
 
   /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
+  @override
   String? get destinationWarehouseId;
 
   /// [destinationWarehouseId] ID of the warehouse where the order will be picked up
   set destinationWarehouseId(String? value);
-  @override
 
   /// [notes] Notes of the order entity.
+  @override
   List<String> get notes;
 
   /// [notes] Notes of the order entity.
   set notes(List<String> value);
-  @override
 
   /// [packersIds] IDs of the users that will pack the order.
+  @override
   List<String>? get packersIds;
 
   /// [packersIds] IDs of the users that will pack the order.
   set packersIds(List<String>? value);
-  @override
 
   /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
+  @override
   bool get requiresPhotos;
 
   /// [requiresPhoto] Whether the order requires a photo to be taken for the packaging.
   set requiresPhotos(bool value);
-  @override
 
   /// [statusPhotos] Photos of the order
+  @override
   List<TenvioOrderPhotosInput> get statusPhotos;
 
   /// [statusPhotos] Photos of the order
   set statusPhotos(List<TenvioOrderPhotosInput> value);
-  @override
 
   /// [highPriority] Whether the order is high priority..
+  @override
   bool get highPriority;
 
   /// [highPriority] Whether the order is high priority..
   set highPriority(bool value);
-  @override
 
   /// [items] Items included in the order.
+  @override
   List<OrderItemQuantityInput>? get items;
 
   /// [items] Items included in the order.
   set items(List<OrderItemQuantityInput>? value);
+
+  /// Create a copy of TenvioOrderInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioOrderInputImplCopyWith<_$TenvioOrderInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3978,8 +4126,12 @@ mixin _$TenvioDestination {
       throw _privateConstructorUsedError;
   Asset? get warehouse => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioDestination to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioDestination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioDestinationCopyWith<TenvioDestination> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4011,6 +4163,8 @@ class _$TenvioDestinationCopyWithImpl<$Res, $Val extends TenvioDestination>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioDestination
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4039,6 +4193,8 @@ class _$TenvioDestinationCopyWithImpl<$Res, $Val extends TenvioDestination>
     ) as $Val);
   }
 
+  /// Create a copy of TenvioDestination
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get registeredCustomer {
@@ -4051,6 +4207,8 @@ class _$TenvioDestinationCopyWithImpl<$Res, $Val extends TenvioDestination>
     });
   }
 
+  /// Create a copy of TenvioDestination
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TenvioUnregisteredCustomerCopyWith<$Res>? get unregisteredCustomer {
@@ -4064,6 +4222,8 @@ class _$TenvioDestinationCopyWithImpl<$Res, $Val extends TenvioDestination>
     });
   }
 
+  /// Create a copy of TenvioDestination
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get warehouse {
@@ -4107,6 +4267,8 @@ class __$$TenvioDestinationImplCopyWithImpl<$Res>
       $Res Function(_$TenvioDestinationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioDestination
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4176,12 +4338,14 @@ class _$TenvioDestinationImpl implements _TenvioDestination {
                 other.warehouse == warehouse));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, type, registeredCustomer, unregisteredCustomer, warehouse);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioDestination
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioDestinationImplCopyWith<_$TenvioDestinationImpl> get copyWith =>
@@ -4214,8 +4378,11 @@ abstract class _TenvioDestination implements TenvioDestination {
   TenvioUnregisteredCustomer? get unregisteredCustomer;
   @override
   Asset? get warehouse;
+
+  /// Create a copy of TenvioDestination
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioDestinationImplCopyWith<_$TenvioDestinationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4235,8 +4402,12 @@ mixin _$TenvioImageSet {
   /// [dropoff] is the delivery image of the image set.
   String? get dropoff => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioImageSet to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioImageSet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioImageSetCopyWith<TenvioImageSet> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4260,6 +4431,8 @@ class _$TenvioImageSetCopyWithImpl<$Res, $Val extends TenvioImageSet>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioImageSet
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4303,6 +4476,8 @@ class __$$TenvioImageSetImplCopyWithImpl<$Res>
       _$TenvioImageSetImpl _value, $Res Function(_$TenvioImageSetImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioImageSet
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4363,11 +4538,13 @@ class _$TenvioImageSetImpl implements _TenvioImageSet {
             (identical(other.dropoff, dropoff) || other.dropoff == dropoff));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, signature, pickup, dropoff);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioImageSet
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioImageSetImplCopyWith<_$TenvioImageSetImpl> get copyWith =>
@@ -4391,20 +4568,22 @@ abstract class _TenvioImageSet implements TenvioImageSet {
   factory _TenvioImageSet.fromJson(Map<String, dynamic> json) =
       _$TenvioImageSetImpl.fromJson;
 
-  @override
-
   /// [signature] is the signature image of the image set.
-  String? get signature;
   @override
+  String? get signature;
 
   /// [pickup] is the pickup image of the image set.
-  String? get pickup;
   @override
+  String? get pickup;
 
   /// [dropoff] is the delivery image of the image set.
-  String? get dropoff;
   @override
-  @JsonKey(ignore: true)
+  String? get dropoff;
+
+  /// Create a copy of TenvioImageSet
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioImageSetImplCopyWith<_$TenvioImageSetImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4452,8 +4631,12 @@ mixin _$UnregisteredCustomerInput {
   /// [email] Email of the customer.
   set email(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this UnregisteredCustomerInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UnregisteredCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UnregisteredCustomerInputCopyWith<UnregisteredCustomerInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4484,6 +4667,8 @@ class _$UnregisteredCustomerInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UnregisteredCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4551,6 +4736,8 @@ class __$$UnregisteredCustomerInputImplCopyWithImpl<$Res>
       $Res Function(_$UnregisteredCustomerInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UnregisteredCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4633,7 +4820,9 @@ class _$UnregisteredCustomerInputImpl implements _UnregisteredCustomerInput {
     return 'UnregisteredCustomerInput(address: $address, name: $name, phone: $phone, latitude: $latitude, longitude: $longitude, email: $email)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UnregisteredCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UnregisteredCustomerInputImplCopyWith<_$UnregisteredCustomerInputImpl>
@@ -4660,50 +4849,52 @@ abstract class _UnregisteredCustomerInput implements UnregisteredCustomerInput {
   factory _UnregisteredCustomerInput.fromJson(Map<String, dynamic> json) =
       _$UnregisteredCustomerInputImpl.fromJson;
 
-  @override
-
   /// [address] Address of the customer.
+  @override
   String? get address;
 
   /// [address] Address of the customer.
   set address(String? value);
-  @override
 
   /// [name] Name of the customer.
+  @override
   String? get name;
 
   /// [name] Name of the customer.
   set name(String? value);
-  @override
 
   /// [phone] Phone number of the customer.
+  @override
   String? get phone;
 
   /// [phone] Phone number of the customer.
   set phone(String? value);
-  @override
 
   /// [latitude] Latitude of the customer.
+  @override
   double? get latitude;
 
   /// [latitude] Latitude of the customer.
   set latitude(double? value);
-  @override
 
   /// [longitude] Longitude of the customer.
+  @override
   double? get longitude;
 
   /// [longitude] Longitude of the customer.
   set longitude(double? value);
-  @override
 
   /// [email] Email of the customer.
+  @override
   String? get email;
 
   /// [email] Email of the customer.
   set email(String? value);
+
+  /// Create a copy of UnregisteredCustomerInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UnregisteredCustomerInputImplCopyWith<_$UnregisteredCustomerInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -4752,8 +4943,12 @@ mixin _$TenvioCustomProperty {
   /// [defaultValue] is the default value for the property.
   dynamic get defaultValue => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioCustomProperty to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioCustomProperty
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioCustomPropertyCopyWith<TenvioCustomProperty> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4788,6 +4983,8 @@ class _$TenvioCustomPropertyCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioCustomProperty
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4876,6 +5073,8 @@ class __$$TenvioCustomPropertyImplCopyWithImpl<$Res>
       $Res Function(_$TenvioCustomPropertyImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioCustomProperty
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5043,7 +5242,7 @@ class _$TenvioCustomPropertyImpl implements _TenvioCustomProperty {
                 .equals(other.defaultValue, defaultValue));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -5058,7 +5257,9 @@ class _$TenvioCustomPropertyImpl implements _TenvioCustomProperty {
       maxFileSize,
       const DeepCollectionEquality().hash(defaultValue));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioCustomProperty
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioCustomPropertyImplCopyWith<_$TenvioCustomPropertyImpl>
@@ -5091,56 +5292,58 @@ abstract class _TenvioCustomProperty implements TenvioCustomProperty {
   factory _TenvioCustomProperty.fromJson(Map<String, dynamic> json) =
       _$TenvioCustomPropertyImpl.fromJson;
 
-  @override
-
   /// [name] is the name of the item.
-  String get name;
   @override
+  String get name;
 
   /// [dataType] is the data type of the property.
+  @override
   @TenvioPropertyDataTypeConverter()
   TenvioPropertyDataType get dataType;
-  @override
 
   /// [isRequired] is a flag that indicates if the property is required.
-  bool get isRequired;
   @override
+  bool get isRequired;
 
   /// [choices] is a list of choices for the property.
   /// This property is only available when the data type is [TenvioPropertyDataType.choice] or
   /// [TenvioPropertyDataType.mutipleChoices].
-  List<String> get choices;
   @override
+  List<String> get choices;
 
   /// [minValue] is the minimum value for the property.
   /// This property is only available when the data type is [TenvioPropertyDataType.number].
-  double? get minValue;
   @override
+  double? get minValue;
 
   /// [maxValue] is the maximum value for the property.
   /// This property is only available when the data type is [TenvioPropertyDataType.number].
-  double? get maxValue;
   @override
+  double? get maxValue;
 
   /// [minLength] is the minimum length for the property.
   /// This property is only available when the data type is [TenvioPropertyDataType.string].
-  int? get minLength;
   @override
+  int? get minLength;
 
   /// [maxLength] is the maximum length for the property.
   /// This property is only available when the data type is [TenvioPropertyDataType.string].
-  int? get maxLength;
   @override
+  int? get maxLength;
 
   /// [maxFileSize] is the maximum file size for the property.
   /// This property is only available when the data type is [TenvioPropertyDataType.file].
-  int? get maxFileSize;
   @override
+  int? get maxFileSize;
 
   /// [defaultValue] is the default value for the property.
-  dynamic get defaultValue;
   @override
-  @JsonKey(ignore: true)
+  dynamic get defaultValue;
+
+  /// Create a copy of TenvioCustomProperty
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioCustomPropertyImplCopyWith<_$TenvioCustomPropertyImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -5167,8 +5370,12 @@ mixin _$DropoffFailedReason {
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
 
+  /// Serializes this DropoffFailedReason to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DropoffFailedReason
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DropoffFailedReasonCopyWith<DropoffFailedReason> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5199,6 +5406,8 @@ class _$DropoffFailedReasonCopyWithImpl<$Res, $Val extends DropoffFailedReason>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DropoffFailedReason
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5232,6 +5441,8 @@ class _$DropoffFailedReasonCopyWithImpl<$Res, $Val extends DropoffFailedReason>
     ) as $Val);
   }
 
+  /// Create a copy of DropoffFailedReason
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get driver {
@@ -5272,6 +5483,8 @@ class __$$DropoffFailedReasonImplCopyWithImpl<$Res>
       $Res Function(_$DropoffFailedReasonImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DropoffFailedReason
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5359,12 +5572,14 @@ class _$DropoffFailedReasonImpl implements _DropoffFailedReason {
                 other.createdAt == createdAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, driverId, driver, reason, createdAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DropoffFailedReason
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DropoffFailedReasonImplCopyWith<_$DropoffFailedReasonImpl> get copyWith =>
@@ -5391,29 +5606,31 @@ abstract class _DropoffFailedReason implements DropoffFailedReason {
   factory _DropoffFailedReason.fromJson(Map<String, dynamic> json) =
       _$DropoffFailedReasonImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier for the reason.
-  String get id;
   @override
+  String get id;
 
   /// [driverId] is the unique identifier of the driver that failed the dropoff.
-  String get driverId;
   @override
+  String get driverId;
 
   /// [driver] is the name of the driver that failed the dropoff.
-  User? get driver;
   @override
+  User? get driver;
 
   /// [reason] is the reason why the dropoff failed.
-  String get reason;
   @override
+  String get reason;
 
   /// [createdAt] is the date when the dropoff failed.
+  @override
   @TimestampConverter()
   DateTime get createdAt;
+
+  /// Create a copy of DropoffFailedReason
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DropoffFailedReasonImplCopyWith<_$DropoffFailedReasonImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5439,8 +5656,12 @@ mixin _$TenvioOrderPhotosInput {
   /// [urls] Photos of the order.
   set urls(List<String> value) => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioOrderPhotosInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioOrderPhotosInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioOrderPhotosInputCopyWith<TenvioOrderPhotosInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5467,6 +5688,8 @@ class _$TenvioOrderPhotosInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioOrderPhotosInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5510,6 +5733,8 @@ class __$$TenvioOrderPhotosInputImplCopyWithImpl<$Res>
       $Res Function(_$TenvioOrderPhotosInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioOrderPhotosInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5553,7 +5778,9 @@ class _$TenvioOrderPhotosInputImpl implements _TenvioOrderPhotosInput {
     return 'TenvioOrderPhotosInput(status: $status, urls: $urls)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioOrderPhotosInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioOrderPhotosInputImplCopyWith<_$TenvioOrderPhotosInputImpl>
@@ -5576,24 +5803,26 @@ abstract class _TenvioOrderPhotosInput implements TenvioOrderPhotosInput {
   factory _TenvioOrderPhotosInput.fromJson(Map<String, dynamic> json) =
       _$TenvioOrderPhotosInputImpl.fromJson;
 
-  @override
-
   /// [status] Status of the order when the photo was taken.
+  @override
   @TenvioOrderStatusConverter()
   TenvioOrderStatus? get status;
 
   /// [status] Status of the order when the photo was taken.
   @TenvioOrderStatusConverter()
   set status(TenvioOrderStatus? value);
-  @override
 
   /// [urls] Photos of the order.
+  @override
   List<String> get urls;
 
   /// [urls] Photos of the order.
   set urls(List<String> value);
+
+  /// Create a copy of TenvioOrderPhotosInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioOrderPhotosInputImplCopyWith<_$TenvioOrderPhotosInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -5617,8 +5846,12 @@ mixin _$OrderItemQuantityInput {
   /// [quantity] Quantity of the matrix item related to the order item quantity.
   set quantity(int? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this OrderItemQuantityInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OrderItemQuantityInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OrderItemQuantityInputCopyWith<OrderItemQuantityInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5643,6 +5876,8 @@ class _$OrderItemQuantityInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OrderItemQuantityInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5684,6 +5919,8 @@ class __$$OrderItemQuantityInputImplCopyWithImpl<$Res>
       $Res Function(_$OrderItemQuantityInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OrderItemQuantityInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5724,7 +5961,9 @@ class _$OrderItemQuantityInputImpl implements _OrderItemQuantityInput {
     return 'OrderItemQuantityInput(matrixId: $matrixId, quantity: $quantity)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OrderItemQuantityInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OrderItemQuantityInputImplCopyWith<_$OrderItemQuantityInputImpl>
@@ -5746,22 +5985,24 @@ abstract class _OrderItemQuantityInput implements OrderItemQuantityInput {
   factory _OrderItemQuantityInput.fromJson(Map<String, dynamic> json) =
       _$OrderItemQuantityInputImpl.fromJson;
 
-  @override
-
   /// [matrixId] ID of the matrix item related to the order item quantity.
+  @override
   String? get matrixId;
 
   /// [matrixId] ID of the matrix item related to the order item quantity.
   set matrixId(String? value);
-  @override
 
   /// [quantity] Quantity of the matrix item related to the order item quantity.
+  @override
   int? get quantity;
 
   /// [quantity] Quantity of the matrix item related to the order item quantity.
   set quantity(int? value);
+
+  /// Create a copy of OrderItemQuantityInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OrderItemQuantityInputImplCopyWith<_$OrderItemQuantityInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

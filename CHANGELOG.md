@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.16
+
+- New config parameters definition for `InboundProtocol` and `Model` models
+
 ## 3.2.15
 
 - Change `statsLoading` from `OutboundService` default value to `true`
