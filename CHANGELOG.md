@@ -1,4 +1,6 @@
 # Changelog
+## 3.2.17
+- Add `price` in `AtsReceptionProduct`
 
 ## 3.2.16
 
