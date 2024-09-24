@@ -26,12 +26,8 @@ mixin _$ConciergeFormPage {
   /// Is the blocks (May be fields, headers or paragraph) of the page
   List<ConciergeFormBlock> get blocks => throw _privateConstructorUsedError;
 
-  /// Serializes this ConciergeFormPage to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ConciergeFormPage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ConciergeFormPageCopyWith<ConciergeFormPage> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,8 +51,6 @@ class _$ConciergeFormPageCopyWithImpl<$Res, $Val extends ConciergeFormPage>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ConciergeFormPage
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -95,8 +89,6 @@ class __$$ConciergeFormPageImplCopyWithImpl<$Res>
       $Res Function(_$ConciergeFormPageImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ConciergeFormPage
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -157,14 +149,12 @@ class _$ConciergeFormPageImpl implements _ConciergeFormPage {
             const DeepCollectionEquality().equals(other._blocks, _blocks));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, title, const DeepCollectionEquality().hash(_blocks));
 
-  /// Create a copy of ConciergeFormPage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ConciergeFormPageImplCopyWith<_$ConciergeFormPageImpl> get copyWith =>
@@ -187,18 +177,16 @@ abstract class _ConciergeFormPage implements ConciergeFormPage {
   factory _ConciergeFormPage.fromJson(Map<String, dynamic> json) =
       _$ConciergeFormPageImpl.fromJson;
 
-  /// Is the title of the page
   @override
+
+  /// Is the title of the page
   String get title;
+  @override
 
   /// Is the blocks (May be fields, headers or paragraph) of the page
-  @override
   List<ConciergeFormBlock> get blocks;
-
-  /// Create a copy of ConciergeFormPage
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ConciergeFormPageImplCopyWith<_$ConciergeFormPageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -224,12 +212,8 @@ mixin _$ConciergeFormBlock {
   ConciergeFormBlockValidator? get showWhen =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this ConciergeFormBlock to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ConciergeFormBlock
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ConciergeFormBlockCopyWith<ConciergeFormBlock> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -260,8 +244,6 @@ class _$ConciergeFormBlockCopyWithImpl<$Res, $Val extends ConciergeFormBlock>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ConciergeFormBlock
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -290,8 +272,6 @@ class _$ConciergeFormBlockCopyWithImpl<$Res, $Val extends ConciergeFormBlock>
     ) as $Val);
   }
 
-  /// Create a copy of ConciergeFormBlock
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ConciergeFormBlockConfigurationCopyWith<$Res>? get configuration {
@@ -305,8 +285,6 @@ class _$ConciergeFormBlockCopyWithImpl<$Res, $Val extends ConciergeFormBlock>
     });
   }
 
-  /// Create a copy of ConciergeFormBlock
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ConciergeFormBlockValidatorCopyWith<$Res>? get showWhen {
@@ -349,8 +327,6 @@ class __$$ConciergeFormBlockImplCopyWithImpl<$Res>
       $Res Function(_$ConciergeFormBlockImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ConciergeFormBlock
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -428,14 +404,12 @@ class _$ConciergeFormBlockImpl implements _ConciergeFormBlock {
                 other.showWhen == showWhen));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, blockType, name, configuration, showWhen);
 
-  /// Create a copy of ConciergeFormBlock
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ConciergeFormBlockImplCopyWith<_$ConciergeFormBlockImpl> get copyWith =>
@@ -461,27 +435,25 @@ abstract class _ConciergeFormBlock implements ConciergeFormBlock {
   factory _ConciergeFormBlock.fromJson(Map<String, dynamic> json) =
       _$ConciergeFormBlockImpl.fromJson;
 
-  /// Is the type of the block
   @override
+
+  /// Is the type of the block
   @ConciergeFormBlockTypeConverter()
   ConciergeFormBlockType get blockType;
+  @override
 
   /// Is the title of the block
-  @override
   String get name;
+  @override
 
   /// Is the configuration of the block
-  @override
   ConciergeFormBlockConfiguration? get configuration;
+  @override
 
   /// Is the validator of the block
-  @override
   ConciergeFormBlockValidator? get showWhen;
-
-  /// Create a copy of ConciergeFormBlock
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ConciergeFormBlockImplCopyWith<_$ConciergeFormBlockImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -509,12 +481,8 @@ mixin _$ConciergeFormBlockConfiguration {
   /// Represents the list of choices when the field is a select
   List<String> get choices => throw _privateConstructorUsedError;
 
-  /// Serializes this ConciergeFormBlockConfiguration to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ConciergeFormBlockConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ConciergeFormBlockConfigurationCopyWith<ConciergeFormBlockConfiguration>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -547,8 +515,6 @@ class _$ConciergeFormBlockConfigurationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ConciergeFormBlockConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -616,8 +582,6 @@ class __$$ConciergeFormBlockConfigurationImplCopyWithImpl<$Res>
       $Res Function(_$ConciergeFormBlockConfigurationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ConciergeFormBlockConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -724,14 +688,12 @@ class _$ConciergeFormBlockConfigurationImpl
             const DeepCollectionEquality().equals(other._choices, _choices));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, allowEmpty, isInt, isMultiple,
       max, min, const DeepCollectionEquality().hash(_choices));
 
-  /// Create a copy of ConciergeFormBlockConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ConciergeFormBlockConfigurationImplCopyWith<
@@ -760,32 +722,30 @@ abstract class _ConciergeFormBlockConfiguration
   factory _ConciergeFormBlockConfiguration.fromJson(Map<String, dynamic> json) =
       _$ConciergeFormBlockConfigurationImpl.fromJson;
 
-  /// Indicates if the field can be submitted without value
   @override
+
+  /// Indicates if the field can be submitted without value
   bool get allowEmpty;
+  @override
 
   /// Indicates if the field is an integer value or a float value
-  @override
   bool? get isInt;
+  @override
 
   /// Indicates if the field is a multiple choice
-  @override
   bool? get isMultiple;
+  @override
 
   /// [max] and [min] represents the range of the field when is a number
-  @override
   double? get max;
   @override
   double? get min;
+  @override
 
   /// Represents the list of choices when the field is a select
-  @override
   List<String> get choices;
-
-  /// Create a copy of ConciergeFormBlockConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ConciergeFormBlockConfigurationImplCopyWith<
           _$ConciergeFormBlockConfigurationImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -818,12 +778,8 @@ mixin _$ConciergeFormBlockValidator {
   ConciergeFormDisplayConditionOperator? get validatorOperator =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this ConciergeFormBlockValidator to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ConciergeFormBlockValidator
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ConciergeFormBlockValidatorCopyWith<ConciergeFormBlockValidator>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -858,8 +814,6 @@ class _$ConciergeFormBlockValidatorCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ConciergeFormBlockValidator
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -929,8 +883,6 @@ class __$$ConciergeFormBlockValidatorImplCopyWithImpl<$Res>
       $Res Function(_$ConciergeFormBlockValidatorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ConciergeFormBlockValidator
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1032,14 +984,12 @@ class _$ConciergeFormBlockValidatorImpl
                 other.validatorOperator == validatorOperator));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, blockId, max, min, value, validator, validatorOperator);
 
-  /// Create a copy of ConciergeFormBlockValidator
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ConciergeFormBlockValidatorImplCopyWith<_$ConciergeFormBlockValidatorImpl>
@@ -1070,34 +1020,32 @@ abstract class _ConciergeFormBlockValidator
   factory _ConciergeFormBlockValidator.fromJson(Map<String, dynamic> json) =
       _$ConciergeFormBlockValidatorImpl.fromJson;
 
-  /// Is the reference number of the block inside the same page, in programming terms, is the position of the array
   @override
+
+  /// Is the reference number of the block inside the same page, in programming terms, is the position of the array
   int? get blockId;
+  @override
 
   /// [max] and [min] represents the range of the field when is a number, or the length range of the string value
-  @override
   double? get max;
   @override
   double? get min;
+  @override
 
   /// Represents the exact value of the field
-  @override
   String? get value;
+  @override
 
   /// Represents the validator of the block
-  @override
   @ConciergeFormDisplayConditionValidatorConverter()
   ConciergeFormDisplayConditionValidator get validator;
+  @override
 
   /// Represents the operator to validate the value
-  @override
   @ConciergeFormDisplayConditionOperatorOrNullConverter()
   ConciergeFormDisplayConditionOperator? get validatorOperator;
-
-  /// Create a copy of ConciergeFormBlockValidator
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ConciergeFormBlockValidatorImplCopyWith<_$ConciergeFormBlockValidatorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

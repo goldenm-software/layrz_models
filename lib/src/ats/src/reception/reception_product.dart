@@ -106,6 +106,9 @@ class AtsReceptionProduct with _$AtsReceptionProduct {
 
     /// List of tank images
     @Default([]) List<String> tanksImages,
+
+    /// `price` of the product
+    double? price,
   }) = _AtsReceptionProduct;
 
   /// from json method

@@ -107,12 +107,8 @@ mixin _$BrickhouseAlert {
   /// This is the maximum speed that the asset can reach before the alert is triggered.
   double? get speedingThreshold => throw _privateConstructorUsedError;
 
-  /// Serializes this BrickhouseAlert to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BrickhouseAlert
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $BrickhouseAlertCopyWith<BrickhouseAlert> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -162,8 +158,6 @@ class _$BrickhouseAlertCopyWithImpl<$Res, $Val extends BrickhouseAlert>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BrickhouseAlert
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -343,8 +337,6 @@ class __$$BrickhouseAlertImplCopyWithImpl<$Res>
       _$BrickhouseAlertImpl _value, $Res Function(_$BrickhouseAlertImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BrickhouseAlert
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -739,7 +731,7 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
                 other.speedingThreshold == speedingThreshold));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -770,9 +762,7 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
         speedingThreshold
       ]);
 
-  /// Create a copy of BrickhouseAlert
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$BrickhouseAlertImplCopyWith<_$BrickhouseAlertImpl> get copyWith =>
@@ -821,121 +811,119 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
   factory _BrickhouseAlert.fromJson(Map<String, dynamic> json) =
       _$BrickhouseAlertImpl.fromJson;
 
-  /// ID of the alert entity. This ID is unique.
   @override
+
+  /// ID of the alert entity. This ID is unique.
   String get id;
+  @override
 
   /// Name of the alert.
-  @override
   String get name;
+  @override
 
   /// Type of the alert.
-  @override
   @BrickhouseAlertTypeConverter()
   BrickhouseAlertType get type;
+  @override
 
   /// List of assets
-  @override
   List<Asset>? get assets;
+  @override
 
   /// List of assets IDs.
-  @override
   List<String>? get assetsIds;
+  @override
 
   /// Email to send the alert to.
-  @override
   List<String>? get email;
+  @override
 
   /// Phone number to send the alert to.
-  @override
   List<NullablePhoneNumber?>? get phone;
+  @override
 
   /// If the alert should be shown in the mobile app.
-  @override
   bool? get hasMobilePopup;
+  @override
 
   /// If the alert should be shown in the web app.
-  @override
   bool? get hasWebPopup;
+  @override
 
   /// Email to send the alert to.
-  @override
   bool? get hasEmail;
+  @override
 
   /// Phone number to send the alert to.
-  @override
   bool? get hasPhone;
+  @override
 
   /// Minimum battery level to trigger the alert, in percentage (%). Only for BrickhouseAlertType.BATTERY
-  @override
   int? get batteryMinLevel;
+  @override
 
   /// Start hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
-  @override
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   TimeOfDay? get curfewStartHour;
+  @override
 
   /// End hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
-  @override
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   TimeOfDay? get curfewEndHour;
+  @override
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  @override
   String? get timezone;
+  @override
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
-  @override
   @WeekdayConverter()
   List<Weekday>? get curfewWeekdays;
+  @override
 
   /// Geofence color, in hex mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @override
   @ColorOrNullConverter()
   Color? get geofenceColor;
+  @override
 
   /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @override
   @GeofenceModeOrNullConverter()
   GeofenceMode? get geofenceMode;
+  @override
 
   /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @override
   double? get geofenceRadius;
+  @override
 
   /// geofenceShape [GeofencePoint]
-  @override
   List<GeofencePoint>? get geofenceShape;
+  @override
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @override
   @BrickhouseGeofenceTriggerOrNullConverter()
   BrickhouseGeofenceTrigger? get geofenceTrigger;
+  @override
 
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
-  @override
   double? get maxSpeedMaxValue;
+  @override
 
   /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
 // String? sosMessage,
   /// [cooldownTime] represents the cooldown time of the trigger.
-  @override
   @DurationOrNullConverter()
   Duration? get cooldownTime;
+  @override
 
   /// [isMuted] represents if the alert is muted or not.
-  @override
   bool? get isMuted;
+  @override
 
   /// [speedingThreshold] represents the threshold of the speeding alert.
   /// This is the maximum speed that the asset can reach before the alert is triggered.
-  @override
   double? get speedingThreshold;
-
-  /// Create a copy of BrickhouseAlert
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$BrickhouseAlertImplCopyWith<_$BrickhouseAlertImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1117,12 +1105,8 @@ mixin _$BrickhouseAlertInput {
   /// This is the maximum speed that the asset can reach before the alert is triggered.
   set speedingThreshold(double? value) => throw _privateConstructorUsedError;
 
-  /// Serializes this BrickhouseAlertInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BrickhouseAlertInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $BrickhouseAlertInputCopyWith<BrickhouseAlertInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1172,8 +1156,6 @@ class _$BrickhouseAlertInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BrickhouseAlertInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1347,8 +1329,6 @@ class __$$BrickhouseAlertInputImplCopyWithImpl<$Res>
       $Res Function(_$BrickhouseAlertInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BrickhouseAlertInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1642,9 +1622,7 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
     return 'BrickhouseAlertInput(id: $id, name: $name, type: $type, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted, speedingThreshold: $speedingThreshold)';
   }
 
-  /// Create a copy of BrickhouseAlertInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$BrickhouseAlertInputImplCopyWith<_$BrickhouseAlertInputImpl>
@@ -1691,171 +1669,172 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
   factory _BrickhouseAlertInput.fromJson(Map<String, dynamic> json) =
       _$BrickhouseAlertInputImpl.fromJson;
 
-  /// ID of the alert entity. Send only when you want to edit it
   @override
+
+  /// ID of the alert entity. Send only when you want to edit it
   String? get id;
 
   /// ID of the alert entity. Send only when you want to edit it
   set id(String? value);
+  @override
 
   /// Name of the alert.
-  @override
   String get name;
 
   /// Name of the alert.
   set name(String value);
+  @override
 
   /// Type of the alert.
-  @override
   @BrickhouseAlertTypeConverter()
   BrickhouseAlertType get type;
 
   /// Type of the alert.
   @BrickhouseAlertTypeConverter()
   set type(BrickhouseAlertType value);
+  @override
 
   /// List of assets IDs.
-  @override
   List<String> get assetsIds;
 
   /// List of assets IDs.
   set assetsIds(List<String> value);
+  @override
 
   /// Email to send the alert to.
-  @override
   List<String>? get email;
 
   /// Email to send the alert to.
   set email(List<String>? value);
+  @override
 
   /// Phone number to send the alert to.
-  @override
   List<NullablePhoneNumber?>? get phone;
 
   /// Phone number to send the alert to.
   set phone(List<NullablePhoneNumber?>? value);
+  @override
 
   /// If the alert should be shown in the mobile app.
-  @override
   bool? get hasMobilePopup;
 
   /// If the alert should be shown in the mobile app.
   set hasMobilePopup(bool? value);
+  @override
 
   /// If the alert should be shown in the web app.
-  @override
   bool? get hasWebPopup;
 
   /// If the alert should be shown in the web app.
   set hasWebPopup(bool? value);
+  @override
 
   /// Email to send the alert to.
-  @override
   bool? get hasEmail;
 
   /// Email to send the alert to.
   set hasEmail(bool? value);
+  @override
 
   /// Phone number to send the alert to.
-  @override
   bool? get hasPhone;
 
   /// Phone number to send the alert to.
   set hasPhone(bool? value);
+  @override
 
   /// Minimum battery level to trigger the alert, in percentage (%). Only for BrickhouseAlertType.BATTERY
-  @override
   int? get batteryMinLevel;
 
   /// Minimum battery level to trigger the alert, in percentage (%). Only for BrickhouseAlertType.BATTERY
   set batteryMinLevel(int? value);
+  @override
 
   /// Start hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
-  @override
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   TimeOfDay? get curfewStartHour;
 
   /// Start hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   set curfewStartHour(TimeOfDay? value);
+  @override
 
   /// End hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
-  @override
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   TimeOfDay? get curfewEndHour;
 
   /// End hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   set curfewEndHour(TimeOfDay? value);
+  @override
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  @override
   String? get timezone;
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
   set timezone(String? value);
+  @override
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
-  @override
   @WeekdayConverter()
   List<Weekday>? get curfewWeekdays;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
   @WeekdayConverter()
   set curfewWeekdays(List<Weekday>? value);
+  @override
 
   /// Geofence color, in hex mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @override
   @ColorOrNullConverter()
   Color? get geofenceColor;
 
   /// Geofence color, in hex mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   @ColorOrNullConverter()
   set geofenceColor(Color? value);
+  @override
 
   /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @override
   @GeofenceModeOrNullConverter()
   GeofenceMode? get geofenceMode;
 
   /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   @GeofenceModeOrNullConverter()
   set geofenceMode(GeofenceMode? value);
+  @override
 
   /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @override
   double? get geofenceRadius;
 
   /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   set geofenceRadius(double? value);
+  @override
 
   /// geofenceShape [GeofencePointInput]
-  @override
   List<GeofencePoint>? get geofenceShape;
 
   /// geofenceShape [GeofencePointInput]
   set geofenceShape(List<GeofencePoint>? value);
+  @override
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @override
   @BrickhouseGeofenceTriggerOrNullConverter()
   BrickhouseGeofenceTrigger? get geofenceTrigger;
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   @BrickhouseGeofenceTriggerOrNullConverter()
   set geofenceTrigger(BrickhouseGeofenceTrigger? value);
+  @override
 
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
-  @override
   double? get maxSpeedMaxValue;
 
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
   set maxSpeedMaxValue(double? value);
+  @override
 
   /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
 // String? sosMessage,
   /// [cooldownTime] represents the cooldown time of the trigger.
-  @override
   @DurationOrNullConverter()
   Duration? get cooldownTime;
 
@@ -1864,27 +1843,24 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
   /// [cooldownTime] represents the cooldown time of the trigger.
   @DurationOrNullConverter()
   set cooldownTime(Duration? value);
+  @override
 
   /// [isMuted] represents if the alert is muted or not.
-  @override
   bool? get isMuted;
 
   /// [isMuted] represents if the alert is muted or not.
   set isMuted(bool? value);
+  @override
 
   /// [speedingThreshold] represents the threshold of the speeding alert.
   /// This is the maximum speed that the asset can reach before the alert is triggered.
-  @override
   double? get speedingThreshold;
 
   /// [speedingThreshold] represents the threshold of the speeding alert.
   /// This is the maximum speed that the asset can reach before the alert is triggered.
   set speedingThreshold(double? value);
-
-  /// Create a copy of BrickhouseAlertInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$BrickhouseAlertInputImplCopyWith<_$BrickhouseAlertInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1908,12 +1884,8 @@ mixin _$BrickHouseWorkspaceInput {
   String get timezoneId => throw _privateConstructorUsedError;
   List<String>? get assetsIds => throw _privateConstructorUsedError;
 
-  /// Serializes this BrickHouseWorkspaceInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BrickHouseWorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $BrickHouseWorkspaceInputCopyWith<BrickHouseWorkspaceInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1945,8 +1917,6 @@ class _$BrickHouseWorkspaceInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BrickHouseWorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2020,8 +1990,6 @@ class __$$BrickHouseWorkspaceInputImplCopyWithImpl<$Res>
       $Res Function(_$BrickHouseWorkspaceInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BrickHouseWorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2133,14 +2101,12 @@ class _$BrickHouseWorkspaceInputImpl implements _BrickHouseWorkspaceInput {
                 .equals(other._assetsIds, _assetsIds));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, appId, name, metricSystem,
       typeApp, timezoneId, const DeepCollectionEquality().hash(_assetsIds));
 
-  /// Create a copy of BrickHouseWorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$BrickHouseWorkspaceInputImplCopyWith<_$BrickHouseWorkspaceInputImpl>
@@ -2178,20 +2144,17 @@ abstract class _BrickHouseWorkspaceInput implements BrickHouseWorkspaceInput {
   @override
   @MetricSystemConverter()
   MetricSystem get metricSystem;
+  @override
 
   /// Is the type of the App
-  @override
   @AppInternalIdentifierOrNullConverter()
   AppInternalIdentifier? get typeApp;
   @override
   String get timezoneId;
   @override
   List<String>? get assetsIds;
-
-  /// Create a copy of BrickHouseWorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$BrickHouseWorkspaceInputImplCopyWith<_$BrickHouseWorkspaceInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2207,12 +2170,8 @@ mixin _$BHSDriverSafetyEventScore {
   String? get status => throw _privateConstructorUsedError;
   List<AssetTelemetry>? get messages => throw _privateConstructorUsedError;
 
-  /// Serializes this BHSDriverSafetyEventScore to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BHSDriverSafetyEventScore
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $BHSDriverSafetyEventScoreCopyWith<BHSDriverSafetyEventScore> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2237,8 +2196,6 @@ class _$BHSDriverSafetyEventScoreCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BHSDriverSafetyEventScore
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2285,8 +2242,6 @@ class __$$BHSDriverSafetyEventScoreImplCopyWithImpl<$Res>
       $Res Function(_$BHSDriverSafetyEventScoreImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BHSDriverSafetyEventScore
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2350,14 +2305,12 @@ class _$BHSDriverSafetyEventScoreImpl implements _BHSDriverSafetyEventScore {
             const DeepCollectionEquality().equals(other._messages, _messages));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, score, status,
       const DeepCollectionEquality().hash(_messages));
 
-  /// Create a copy of BHSDriverSafetyEventScore
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSDriverSafetyEventScoreImplCopyWith<_$BHSDriverSafetyEventScoreImpl>
@@ -2387,11 +2340,8 @@ abstract class _BHSDriverSafetyEventScore implements BHSDriverSafetyEventScore {
   String? get status;
   @override
   List<AssetTelemetry>? get messages;
-
-  /// Create a copy of BHSDriverSafetyEventScore
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$BHSDriverSafetyEventScoreImplCopyWith<_$BHSDriverSafetyEventScoreImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2407,12 +2357,8 @@ mixin _$BHSDriverSafetyDrivenScore {
   String? get status => throw _privateConstructorUsedError;
   double get drivenSeconds => throw _privateConstructorUsedError;
 
-  /// Serializes this BHSDriverSafetyDrivenScore to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BHSDriverSafetyDrivenScore
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $BHSDriverSafetyDrivenScoreCopyWith<BHSDriverSafetyDrivenScore>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2438,8 +2384,6 @@ class _$BHSDriverSafetyDrivenScoreCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BHSDriverSafetyDrivenScore
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2486,8 +2430,6 @@ class __$$BHSDriverSafetyDrivenScoreImplCopyWithImpl<$Res>
       $Res Function(_$BHSDriverSafetyDrivenScoreImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BHSDriverSafetyDrivenScore
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2545,13 +2487,11 @@ class _$BHSDriverSafetyDrivenScoreImpl implements _BHSDriverSafetyDrivenScore {
                 other.drivenSeconds == drivenSeconds));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, score, status, drivenSeconds);
 
-  /// Create a copy of BHSDriverSafetyDrivenScore
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSDriverSafetyDrivenScoreImplCopyWith<_$BHSDriverSafetyDrivenScoreImpl>
@@ -2582,11 +2522,8 @@ abstract class _BHSDriverSafetyDrivenScore
   String? get status;
   @override
   double get drivenSeconds;
-
-  /// Create a copy of BHSDriverSafetyDrivenScore
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$BHSDriverSafetyDrivenScoreImplCopyWith<_$BHSDriverSafetyDrivenScoreImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2608,12 +2545,8 @@ mixin _$BrickhouseDriverSafety {
   BHSDriverSafetyEventScore? get harshCornering =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this BrickhouseDriverSafety to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BrickhouseDriverSafety
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $BrickhouseDriverSafetyCopyWith<BrickhouseDriverSafety> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2648,8 +2581,6 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BrickhouseDriverSafety
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2683,8 +2614,6 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of BrickhouseDriverSafety
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSDriverSafetyDrivenScoreCopyWith<$Res>? get drivingHours {
@@ -2698,8 +2627,6 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
     });
   }
 
-  /// Create a copy of BrickhouseDriverSafety
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshAcceleration {
@@ -2713,8 +2640,6 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
     });
   }
 
-  /// Create a copy of BrickhouseDriverSafety
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshBraking {
@@ -2728,8 +2653,6 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
     });
   }
 
-  /// Create a copy of BrickhouseDriverSafety
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshCornering {
@@ -2780,8 +2703,6 @@ class __$$BrickhouseDriverSafetyImplCopyWithImpl<$Res>
       $Res Function(_$BrickhouseDriverSafetyImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BrickhouseDriverSafety
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2862,14 +2783,12 @@ class _$BrickhouseDriverSafetyImpl implements _BrickhouseDriverSafety {
                 other.harshCornering == harshCornering));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, totalScore, drivingHours,
       harshAcceleration, harshBraking, harshCornering);
 
-  /// Create a copy of BrickhouseDriverSafety
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$BrickhouseDriverSafetyImplCopyWith<_$BrickhouseDriverSafetyImpl>
@@ -2906,11 +2825,8 @@ abstract class _BrickhouseDriverSafety implements BrickhouseDriverSafety {
   BHSDriverSafetyEventScore? get harshBraking;
   @override
   BHSDriverSafetyEventScore? get harshCornering;
-
-  /// Create a copy of BrickhouseDriverSafety
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$BrickhouseDriverSafetyImplCopyWith<_$BrickhouseDriverSafetyImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
