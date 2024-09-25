@@ -103,6 +103,39 @@ enum ReferenceCategory {
   /// Layrz API Reference: ATS_AUTOMATIC_RECEPTION
   atsAutomaticReception,
 
+  /// Layrz API Reference: ATS_DRIVER
+  atsDriver,
+
+  /// Layrz API Reference: ATS_TERMINAL_OPERATIONS
+  atsTerminalOperations,
+
+  /// Layrz API Reference: ATS_TERMINAL_LOADING_GRID
+  atsTerminalLoadingGrid,
+
+  /// Layrz API Reference: ATS_TERMINAL_ACCESS_CONTROL
+  atsTerminalAccessControl,
+
+  /// Layrz API Reference: ATS_TERMINAL_YARD_ALERTS
+  atsTerminalYardAlerts,
+
+  /// Layrz API Reference: ATS_TERMINAL_LOAD_FORMATTING
+  atsTerminalLoadFormatting,
+
+  /// Layrz API Reference: ATS_TERMINAL_STOCK_MANAGEMENT
+  atsTerminalStockManagement,
+
+  /// Layrz API Reference: ATS_TERMINAL_CACL
+  atsTerminalCacl,
+
+  /// Layrz API Reference: ATS_TERMINAL_EDIT_TRANSPORT
+  atsTerminalEditTransport,
+
+  /// Layrz API Reference: ATS_ACCESS_COLETA
+  atsAccessColeta,
+
+  /// Layrz API Reference: ATS_PA_LOAD_COMBOIO
+  atsPaLoadComboio,
+
   /// Layrz API Reference: MAPPIT_OPERATOR
   mappitOperator,
 
@@ -249,6 +282,29 @@ enum ReferenceCategory {
         return 'ATS_SELECTION_MANUAL_EXECUTE_EXIT';
       case ReferenceCategory.atsAutomaticReception:
         return 'ATS_AUTOMATIC_RECEPTION';
+      case ReferenceCategory.atsDriver:
+        return 'ATS_DRIVER';
+      case ReferenceCategory.atsTerminalOperations:
+        return 'ATS_TERMINAL_OPERATIONS';
+      case ReferenceCategory.atsTerminalLoadingGrid:
+        return 'ATS_TERMINAL_LOADING_GRID';
+      case ReferenceCategory.atsTerminalAccessControl:
+        return 'ATS_TERMINAL_ACCESS_CONTROL';
+      case ReferenceCategory.atsTerminalYardAlerts:
+        return 'ATS_TERMINAL_YARD_ALERTS';
+      case ReferenceCategory.atsTerminalLoadFormatting:
+        return 'ATS_TERMINAL_LOAD_FORMATTING';
+      case ReferenceCategory.atsTerminalStockManagement:
+        return 'ATS_TERMINAL_STOCK_MANAGEMENT';
+      case ReferenceCategory.atsTerminalCacl:
+        return 'ATS_TERMINAL_CACL';
+      case ReferenceCategory.atsTerminalEditTransport:
+        return 'ATS_TERMINAL_EDIT_TRANSPORT';
+      case ReferenceCategory.atsAccessColeta:
+        return 'ATS_ACCESS_COLETA';
+      case ReferenceCategory.atsPaLoadComboio:
+        return 'ATS_PA_LOAD_COMBOIO';
+
       case ReferenceCategory.mappitOperator:
         return 'MAPPIT_OPERATOR';
       case ReferenceCategory.mappitCustomer:
@@ -366,6 +422,28 @@ enum ReferenceCategory {
         return ReferenceCategory.atsSelectionManualExecuteExit;
       case 'ATS_AUTOMATIC_RECEPTION':
         return ReferenceCategory.atsAutomaticReception;
+      case 'ATS_DRIVER':
+        return ReferenceCategory.atsDriver;
+      case 'ATS_TERMINAL_OPERATIONS':
+        return ReferenceCategory.atsTerminalOperations;
+      case 'ATS_TERMINAL_LOADING_GRID':
+        return ReferenceCategory.atsTerminalLoadingGrid;
+      case 'ATS_TERMINAL_ACCESS_CONTROL':
+        return ReferenceCategory.atsTerminalAccessControl;
+      case 'ATS_TERMINAL_YARD_ALERTS':
+        return ReferenceCategory.atsTerminalYardAlerts;
+      case 'ATS_TERMINAL_LOAD_FORMATTING':
+        return ReferenceCategory.atsTerminalLoadFormatting;
+      case 'ATS_TERMINAL_STOCK_MANAGEMENT':
+        return ReferenceCategory.atsTerminalStockManagement;
+      case 'ATS_TERMINAL_CACL':
+        return ReferenceCategory.atsTerminalCacl;
+      case 'ATS_TERMINAL_EDIT_TRANSPORT':
+        return ReferenceCategory.atsTerminalEditTransport;
+      case 'ATS_ACCESS_COLETA':
+        return ReferenceCategory.atsAccessColeta;
+      case 'ATS_PA_LOAD_COMBOIO':
+        return ReferenceCategory.atsPaLoadComboio;
       case 'MAPPIT_OPERATOR':
         return ReferenceCategory.mappitOperator;
       case 'MAPPIT_CUSTOMER':
