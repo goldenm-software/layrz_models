@@ -44,7 +44,7 @@ mixin _$Model {
       throw _privateConstructorUsedError;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinition> get configStructure =>
+  List<ConfigGrouping> get configStructure =>
       throw _privateConstructorUsedError;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
@@ -75,7 +75,7 @@ abstract class $ModelCopyWith<$Res> {
       String? protocolId,
       bool? isGeneric,
       List<CommandDefinition> commandsStructure,
-      List<ConfigDefinition> configStructure,
+      List<ConfigGrouping> configStructure,
       bool confiotCapable,
       @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
       String? confiotName});
@@ -140,7 +140,7 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
       configStructure: null == configStructure
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinition>,
+              as List<ConfigGrouping>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -184,7 +184,7 @@ abstract class _$$ModelImplCopyWith<$Res> implements $ModelCopyWith<$Res> {
       String? protocolId,
       bool? isGeneric,
       List<CommandDefinition> commandsStructure,
-      List<ConfigDefinition> configStructure,
+      List<ConfigGrouping> configStructure,
       bool confiotCapable,
       @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
       String? confiotName});
@@ -248,7 +248,7 @@ class __$$ModelImplCopyWithImpl<$Res>
       configStructure: null == configStructure
           ? _value._configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinition>,
+              as List<ConfigGrouping>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -276,7 +276,7 @@ class _$ModelImpl implements _Model {
       this.protocolId,
       this.isGeneric,
       final List<CommandDefinition> commandsStructure = const [],
-      final List<ConfigDefinition> configStructure = const [],
+      final List<ConfigGrouping> configStructure = const [],
       this.confiotCapable = false,
       @ConfIoTLayoutConverter() this.confiotLayout = ConfIoTLayout.standard,
       this.confiotName})
@@ -325,12 +325,12 @@ class _$ModelImpl implements _Model {
   }
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  final List<ConfigDefinition> _configStructure;
+  final List<ConfigGrouping> _configStructure;
 
   /// [configStructure] is the structure of the configuration for the protocol.
   @override
   @JsonKey()
-  List<ConfigDefinition> get configStructure {
+  List<ConfigGrouping> get configStructure {
     if (_configStructure is EqualUnmodifiableListView) return _configStructure;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_configStructure);
@@ -422,7 +422,7 @@ abstract class _Model implements Model {
       final String? protocolId,
       final bool? isGeneric,
       final List<CommandDefinition> commandsStructure,
-      final List<ConfigDefinition> configStructure,
+      final List<ConfigGrouping> configStructure,
       final bool confiotCapable,
       @ConfIoTLayoutConverter() final ConfIoTLayout confiotLayout,
       final String? confiotName}) = _$ModelImpl;
@@ -461,7 +461,7 @@ abstract class _Model implements Model {
   @override
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinition> get configStructure;
+  List<ConfigGrouping> get configStructure;
   @override
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
@@ -528,11 +528,11 @@ mixin _$ModelInput {
       throw _privateConstructorUsedError;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinitionInput> get configStructure =>
+  List<ConfigGroupingInput> get configStructure =>
       throw _privateConstructorUsedError;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  set configStructure(List<ConfigDefinitionInput> value) =>
+  set configStructure(List<ConfigGroupingInput> value) =>
       throw _privateConstructorUsedError;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
@@ -574,7 +574,7 @@ abstract class $ModelInputCopyWith<$Res> {
       String? protocolId,
       bool isGeneric,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure,
+      List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
       @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
       String? confiotName});
@@ -632,7 +632,7 @@ class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
       configStructure: null == configStructure
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinitionInput>,
+              as List<ConfigGroupingInput>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -664,7 +664,7 @@ abstract class _$$ModelInputImplCopyWith<$Res>
       String? protocolId,
       bool isGeneric,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure,
+      List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
       @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
       String? confiotName});
@@ -720,7 +720,7 @@ class __$$ModelInputImplCopyWithImpl<$Res>
       configStructure: null == configStructure
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinitionInput>,
+              as List<ConfigGroupingInput>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -786,7 +786,7 @@ class _$ModelInputImpl implements _ModelInput {
   /// [configStructure] is the structure of the configuration for the protocol.
   @override
   @JsonKey()
-  List<ConfigDefinitionInput> configStructure;
+  List<ConfigGroupingInput> configStructure;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
   @override
@@ -830,7 +830,7 @@ abstract class _ModelInput implements ModelInput {
       String? protocolId,
       bool isGeneric,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure,
+      List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
       @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
       String? confiotName}) = _$ModelInputImpl;
@@ -885,10 +885,10 @@ abstract class _ModelInput implements ModelInput {
   @override
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinitionInput> get configStructure;
+  List<ConfigGroupingInput> get configStructure;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  set configStructure(List<ConfigDefinitionInput> value);
+  set configStructure(List<ConfigGroupingInput> value);
   @override
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.

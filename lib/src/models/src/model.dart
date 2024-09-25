@@ -29,7 +29,7 @@ class Model with _$Model {
     @Default([]) List<CommandDefinition> commandsStructure,
 
     /// [configStructure] is the structure of the configuration for the protocol.
-    @Default([]) List<ConfigDefinition> configStructure,
+    @Default([]) List<ConfigGrouping> configStructure,
 
     /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
     @Default(false) bool confiotCapable,
@@ -70,7 +70,7 @@ class ModelInput with _$ModelInput {
     @Default([]) List<CommandDefinitionInput> commandsStructure,
 
     /// [configStructure] is the structure of the configuration for the protocol.
-    @Default([]) List<ConfigDefinitionInput> configStructure,
+    @Default([]) List<ConfigGroupingInput> configStructure,
 
     /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
     @Default(false) bool confiotCapable,

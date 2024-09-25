@@ -21,7 +21,7 @@ _$ModelImpl _$$ModelImplFromJson(Map<String, dynamic> json) => _$ModelImpl(
               .toList() ??
           const [],
       configStructure: (json['configStructure'] as List<dynamic>?)
-              ?.map((e) => ConfigDefinition.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => ConfigGrouping.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       confiotCapable: json['confiotCapable'] as bool? ?? false,
@@ -64,7 +64,7 @@ _$ModelInputImpl _$$ModelInputImplFromJson(Map<String, dynamic> json) =>
           const [],
       configStructure: (json['configStructure'] as List<dynamic>?)
               ?.map((e) =>
-                  ConfigDefinitionInput.fromJson(e as Map<String, dynamic>))
+                  ConfigGroupingInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       confiotCapable: json['confiotCapable'] as bool? ?? false,

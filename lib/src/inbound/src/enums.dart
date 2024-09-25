@@ -27,13 +27,17 @@ enum ConfigPayloadDataType {
   /// Layrz API Reference: `CHOICE_INDEX`
   choiceIndex,
 
-  /// [list] is the data type of the payload, consist in a list of objects.
-  /// Layrz API Reference: `LIST`
-  list,
-
   /// [bluetoothPair] is the data type of the payload, consist in a Bluetooth Pairing.
   /// Layrz API Reference: `BLUETOOTH_PAIR`
   bluetoothPair,
+
+  /// [coordinates] is the data type of the payload, consist in a pair of coordinates.
+  /// Layrz API Reference: `COORDINATES`
+  coordinates,
+
+  /// [unknown] is the data type of the payload, consist in an unknown value.
+  /// Layrz API Reference: `UNKNOWN`
+  unknown,
   ;
 
   @override
@@ -53,10 +57,13 @@ enum ConfigPayloadDataType {
         return 'CHOICE';
       case ConfigPayloadDataType.choiceIndex:
         return 'CHOICE_INDEX';
-      case ConfigPayloadDataType.list:
-        return 'LIST';
       case ConfigPayloadDataType.bluetoothPair:
         return 'BLUETOOTH_PAIR';
+      case ConfigPayloadDataType.coordinates:
+        return 'COORDINATES';
+      case ConfigPayloadDataType.unknown:
+      default:
+        return 'UNKNOWN';
     }
   }
 
@@ -74,12 +81,13 @@ enum ConfigPayloadDataType {
         return ConfigPayloadDataType.choice;
       case 'CHOICE_INDEX':
         return ConfigPayloadDataType.choiceIndex;
-      case 'LIST':
-        return ConfigPayloadDataType.list;
       case 'BLUETOOTH_PAIR':
         return ConfigPayloadDataType.bluetoothPair;
+      case 'COORDINATES':
+        return ConfigPayloadDataType.coordinates;
+      case 'UNKNOWN':
       default:
-        return ConfigPayloadDataType.string;
+        return ConfigPayloadDataType.unknown;
     }
   }
 }
@@ -183,9 +191,13 @@ enum ConfigKind {
   /// Layrz API Definition: `GROUPING`
   grouping,
 
-  /// [param] refers that the command is a parameter.
-  /// Layrz API Definition: `PARAM`
-  param,
+  /// [listing] refers that the command is a listing of other commands.
+  /// Layrz API Definition: `LISTING`
+  listing,
+
+  /// [unknown] refers that the command is unknown.
+  /// Layrz API Definition: `UNKNOWN`
+  unknown,
   ;
 
   @override
@@ -195,9 +207,11 @@ enum ConfigKind {
     switch (this) {
       case ConfigKind.grouping:
         return 'GROUPING';
-      case ConfigKind.param:
+      case ConfigKind.listing:
+        return 'LISTING';
+      case ConfigKind.unknown:
       default:
-        return 'PARAM';
+        return 'unknown';
     }
   }
 
@@ -205,9 +219,11 @@ enum ConfigKind {
     switch (json) {
       case 'GROUPING':
         return ConfigKind.grouping;
-      case 'PARAM':
+      case 'LISTING':
+        return ConfigKind.listing;
+      case 'UNKNOWN':
       default:
-        return ConfigKind.param;
+        return ConfigKind.unknown;
     }
   }
 }

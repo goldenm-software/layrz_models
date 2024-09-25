@@ -25,6 +25,7 @@ _$AtsReceptionProductImpl _$$AtsReceptionProductImplFromJson(
               ?.map((e) => e as String)
               .toList() ??
           const [],
+      price: (json['price'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$AtsReceptionProductImplToJson(
@@ -42,6 +43,7 @@ Map<String, dynamic> _$$AtsReceptionProductImplToJson(
           const TimestampOrNullConverter().toJson(instance.receivedAt),
       'provider': instance.provider,
       'tanksImages': instance.tanksImages,
+      'price': instance.price,
     };
 
 _$AtsReceptionProductInputImpl _$$AtsReceptionProductInputImplFromJson(

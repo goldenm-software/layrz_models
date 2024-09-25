@@ -135,7 +135,7 @@ mixin _$InboundProtocol {
       throw _privateConstructorUsedError;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinition> get configStructure =>
+  List<ConfigGrouping> get configStructure =>
       throw _privateConstructorUsedError;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
@@ -187,7 +187,7 @@ abstract class $InboundProtocolCopyWith<$Res> {
       bool requiresExternalAccount,
       bool requiresStructure,
       List<CommandDefinition> commandsStructure,
-      List<ConfigDefinition> configStructure,
+      List<ConfigGrouping> configStructure,
       bool confiotCapable});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -380,7 +380,7 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
       configStructure: null == configStructure
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinition>,
+              as List<ConfigGrouping>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -467,7 +467,7 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       bool requiresExternalAccount,
       bool requiresStructure,
       List<CommandDefinition> commandsStructure,
-      List<ConfigDefinition> configStructure,
+      List<ConfigGrouping> configStructure,
       bool confiotCapable});
 
   @override
@@ -661,7 +661,7 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
       configStructure: null == configStructure
           ? _value._configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinition>,
+              as List<ConfigGrouping>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -707,7 +707,7 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       this.requiresExternalAccount = false,
       this.requiresStructure = false,
       final List<CommandDefinition> commandsStructure = const [],
-      final List<ConfigDefinition> configStructure = const [],
+      final List<ConfigGrouping> configStructure = const [],
       this.confiotCapable = false})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
@@ -921,12 +921,12 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   }
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  final List<ConfigDefinition> _configStructure;
+  final List<ConfigGrouping> _configStructure;
 
   /// [configStructure] is the structure of the configuration for the protocol.
   @override
   @JsonKey()
-  List<ConfigDefinition> get configStructure {
+  List<ConfigGrouping> get configStructure {
     if (_configStructure is EqualUnmodifiableListView) return _configStructure;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_configStructure);
@@ -1100,7 +1100,7 @@ abstract class _InboundProtocol implements InboundProtocol {
       final bool requiresExternalAccount,
       final bool requiresStructure,
       final List<CommandDefinition> commandsStructure,
-      final List<ConfigDefinition> configStructure,
+      final List<ConfigGrouping> configStructure,
       final bool confiotCapable}) = _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
@@ -1254,7 +1254,7 @@ abstract class _InboundProtocol implements InboundProtocol {
   @override
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinition> get configStructure;
+  List<ConfigGrouping> get configStructure;
   @override
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
@@ -1469,11 +1469,11 @@ mixin _$InboundProtocolInput {
       throw _privateConstructorUsedError;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinitionInput> get configStructure =>
+  List<ConfigGroupingInput> get configStructure =>
       throw _privateConstructorUsedError;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  set configStructure(List<ConfigDefinitionInput> value) =>
+  set configStructure(List<ConfigGroupingInput> value) =>
       throw _privateConstructorUsedError;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
@@ -1525,7 +1525,7 @@ abstract class $InboundProtocolInputCopyWith<$Res> {
       bool requiresExternalAccount,
       bool requiresStructure,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure,
+      List<ConfigGroupingInput> configStructure,
       bool confiotCapable});
 
   $AvatarInputCopyWith<$Res> get dynamicIcon;
@@ -1703,7 +1703,7 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
       configStructure: null == configStructure
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinitionInput>,
+              as List<ConfigGroupingInput>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -1772,7 +1772,7 @@ abstract class _$$InboundProtocolInputImplCopyWith<$Res>
       bool requiresExternalAccount,
       bool requiresStructure,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure,
+      List<ConfigGroupingInput> configStructure,
       bool confiotCapable});
 
   @override
@@ -1949,7 +1949,7 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
       configStructure: null == configStructure
           ? _value.configStructure
           : configStructure // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinitionInput>,
+              as List<ConfigGroupingInput>,
       confiotCapable: null == confiotCapable
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
@@ -2147,7 +2147,7 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
   /// [configStructure] is the structure of the configuration for the protocol.
   @override
   @JsonKey()
-  List<ConfigDefinitionInput> configStructure;
+  List<ConfigGroupingInput> configStructure;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
   @override
@@ -2207,7 +2207,7 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
       bool requiresExternalAccount,
       bool requiresStructure,
       List<CommandDefinitionInput> commandsStructure,
-      List<ConfigDefinitionInput> configStructure,
+      List<ConfigGroupingInput> configStructure,
       bool confiotCapable}) = _$InboundProtocolInputImpl;
 
   factory _InboundProtocolInput.fromJson(Map<String, dynamic> json) =
@@ -2436,10 +2436,10 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
   @override
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigDefinitionInput> get configStructure;
+  List<ConfigGroupingInput> get configStructure;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  set configStructure(List<ConfigDefinitionInput> value);
+  set configStructure(List<ConfigGroupingInput> value);
   @override
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
@@ -3286,41 +3286,54 @@ abstract class _InboundServiceInput implements InboundServiceInput {
       throw _privateConstructorUsedError;
 }
 
-ConfigParameterEquivalence _$ConfigParameterEquivalenceFromJson(
-    Map<String, dynamic> json) {
-  return _ConfigParameterEquivalence.fromJson(json);
+ConfigGrouping _$ConfigGroupingFromJson(Map<String, dynamic> json) {
+  return _ConfigGrouping.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ConfigParameterEquivalence {
-  /// [source] is the source of the equivalence.
-  @ConfigSourceConverter()
-  ConfigSource get source => throw _privateConstructorUsedError;
+mixin _$ConfigGrouping {
+  /// [name] is the name of the grouping.
+  /// This is the translation key.
+  String get name => throw _privateConstructorUsedError;
 
-  /// [parameter] is the parameter of the equivalence.
-  String get value => throw _privateConstructorUsedError;
+  /// [kind] is the kind of the grouping.
+  @ConfigKindConverter()
+  ConfigKind get kind => throw _privateConstructorUsedError;
+
+  /// [description] is the fallback name of the grouping, when the translation is not available.
+  /// This is the translation key.
+  String? get description => throw _privateConstructorUsedError;
+
+  /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+  bool? get setupCapable => throw _privateConstructorUsedError;
+
+  /// [items] is the list of items of the grouping.
+  List<ConfigDefinition> get items => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ConfigParameterEquivalenceCopyWith<ConfigParameterEquivalence>
-      get copyWith => throw _privateConstructorUsedError;
+  $ConfigGroupingCopyWith<ConfigGrouping> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ConfigParameterEquivalenceCopyWith<$Res> {
-  factory $ConfigParameterEquivalenceCopyWith(ConfigParameterEquivalence value,
-          $Res Function(ConfigParameterEquivalence) then) =
-      _$ConfigParameterEquivalenceCopyWithImpl<$Res,
-          ConfigParameterEquivalence>;
+abstract class $ConfigGroupingCopyWith<$Res> {
+  factory $ConfigGroupingCopyWith(
+          ConfigGrouping value, $Res Function(ConfigGrouping) then) =
+      _$ConfigGroupingCopyWithImpl<$Res, ConfigGrouping>;
   @useResult
-  $Res call({@ConfigSourceConverter() ConfigSource source, String value});
+  $Res call(
+      {String name,
+      @ConfigKindConverter() ConfigKind kind,
+      String? description,
+      bool? setupCapable,
+      List<ConfigDefinition> items});
 }
 
 /// @nodoc
-class _$ConfigParameterEquivalenceCopyWithImpl<$Res,
-        $Val extends ConfigParameterEquivalence>
-    implements $ConfigParameterEquivalenceCopyWith<$Res> {
-  _$ConfigParameterEquivalenceCopyWithImpl(this._value, this._then);
+class _$ConfigGroupingCopyWithImpl<$Res, $Val extends ConfigGrouping>
+    implements $ConfigGroupingCopyWith<$Res> {
+  _$ConfigGroupingCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -3330,137 +3343,217 @@ class _$ConfigParameterEquivalenceCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? source = null,
-    Object? value = null,
+    Object? name = null,
+    Object? kind = null,
+    Object? description = freezed,
+    Object? setupCapable = freezed,
+    Object? items = null,
   }) {
     return _then(_value.copyWith(
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as ConfigSource,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ConfigKind,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      setupCapable: freezed == setupCapable
+          ? _value.setupCapable
+          : setupCapable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      items: null == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinition>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$ConfigParameterEquivalenceImplCopyWith<$Res>
-    implements $ConfigParameterEquivalenceCopyWith<$Res> {
-  factory _$$ConfigParameterEquivalenceImplCopyWith(
-          _$ConfigParameterEquivalenceImpl value,
-          $Res Function(_$ConfigParameterEquivalenceImpl) then) =
-      __$$ConfigParameterEquivalenceImplCopyWithImpl<$Res>;
+abstract class _$$ConfigGroupingImplCopyWith<$Res>
+    implements $ConfigGroupingCopyWith<$Res> {
+  factory _$$ConfigGroupingImplCopyWith(_$ConfigGroupingImpl value,
+          $Res Function(_$ConfigGroupingImpl) then) =
+      __$$ConfigGroupingImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@ConfigSourceConverter() ConfigSource source, String value});
+  $Res call(
+      {String name,
+      @ConfigKindConverter() ConfigKind kind,
+      String? description,
+      bool? setupCapable,
+      List<ConfigDefinition> items});
 }
 
 /// @nodoc
-class __$$ConfigParameterEquivalenceImplCopyWithImpl<$Res>
-    extends _$ConfigParameterEquivalenceCopyWithImpl<$Res,
-        _$ConfigParameterEquivalenceImpl>
-    implements _$$ConfigParameterEquivalenceImplCopyWith<$Res> {
-  __$$ConfigParameterEquivalenceImplCopyWithImpl(
-      _$ConfigParameterEquivalenceImpl _value,
-      $Res Function(_$ConfigParameterEquivalenceImpl) _then)
+class __$$ConfigGroupingImplCopyWithImpl<$Res>
+    extends _$ConfigGroupingCopyWithImpl<$Res, _$ConfigGroupingImpl>
+    implements _$$ConfigGroupingImplCopyWith<$Res> {
+  __$$ConfigGroupingImplCopyWithImpl(
+      _$ConfigGroupingImpl _value, $Res Function(_$ConfigGroupingImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? source = null,
-    Object? value = null,
+    Object? name = null,
+    Object? kind = null,
+    Object? description = freezed,
+    Object? setupCapable = freezed,
+    Object? items = null,
   }) {
-    return _then(_$ConfigParameterEquivalenceImpl(
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as ConfigSource,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
+    return _then(_$ConfigGroupingImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ConfigKind,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      setupCapable: freezed == setupCapable
+          ? _value.setupCapable
+          : setupCapable // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      items: null == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinition>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ConfigParameterEquivalenceImpl implements _ConfigParameterEquivalence {
-  const _$ConfigParameterEquivalenceImpl(
-      {@ConfigSourceConverter() required this.source, required this.value});
+class _$ConfigGroupingImpl implements _ConfigGrouping {
+  const _$ConfigGroupingImpl(
+      {required this.name,
+      @ConfigKindConverter() required this.kind,
+      this.description,
+      this.setupCapable,
+      final List<ConfigDefinition> items = const []})
+      : _items = items;
 
-  factory _$ConfigParameterEquivalenceImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$ConfigParameterEquivalenceImplFromJson(json);
+  factory _$ConfigGroupingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConfigGroupingImplFromJson(json);
 
-  /// [source] is the source of the equivalence.
+  /// [name] is the name of the grouping.
+  /// This is the translation key.
   @override
-  @ConfigSourceConverter()
-  final ConfigSource source;
+  final String name;
 
-  /// [parameter] is the parameter of the equivalence.
+  /// [kind] is the kind of the grouping.
   @override
-  final String value;
+  @ConfigKindConverter()
+  final ConfigKind kind;
+
+  /// [description] is the fallback name of the grouping, when the translation is not available.
+  /// This is the translation key.
+  @override
+  final String? description;
+
+  /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+  @override
+  final bool? setupCapable;
+
+  /// [items] is the list of items of the grouping.
+  final List<ConfigDefinition> _items;
+
+  /// [items] is the list of items of the grouping.
+  @override
+  @JsonKey()
+  List<ConfigDefinition> get items {
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_items);
+  }
 
   @override
   String toString() {
-    return 'ConfigParameterEquivalence(source: $source, value: $value)';
+    return 'ConfigGrouping(name: $name, kind: $kind, description: $description, setupCapable: $setupCapable, items: $items)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ConfigParameterEquivalenceImpl &&
-            (identical(other.source, source) || other.source == source) &&
-            (identical(other.value, value) || other.value == value));
+            other is _$ConfigGroupingImpl &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.setupCapable, setupCapable) ||
+                other.setupCapable == setupCapable) &&
+            const DeepCollectionEquality().equals(other._items, _items));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, source, value);
+  int get hashCode => Object.hash(runtimeType, name, kind, description,
+      setupCapable, const DeepCollectionEquality().hash(_items));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ConfigParameterEquivalenceImplCopyWith<_$ConfigParameterEquivalenceImpl>
-      get copyWith => __$$ConfigParameterEquivalenceImplCopyWithImpl<
-          _$ConfigParameterEquivalenceImpl>(this, _$identity);
+  _$$ConfigGroupingImplCopyWith<_$ConfigGroupingImpl> get copyWith =>
+      __$$ConfigGroupingImplCopyWithImpl<_$ConfigGroupingImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ConfigParameterEquivalenceImplToJson(
+    return _$$ConfigGroupingImplToJson(
       this,
     );
   }
 }
 
-abstract class _ConfigParameterEquivalence
-    implements ConfigParameterEquivalence {
-  const factory _ConfigParameterEquivalence(
-      {@ConfigSourceConverter() required final ConfigSource source,
-      required final String value}) = _$ConfigParameterEquivalenceImpl;
+abstract class _ConfigGrouping implements ConfigGrouping {
+  const factory _ConfigGrouping(
+      {required final String name,
+      @ConfigKindConverter() required final ConfigKind kind,
+      final String? description,
+      final bool? setupCapable,
+      final List<ConfigDefinition> items}) = _$ConfigGroupingImpl;
 
-  factory _ConfigParameterEquivalence.fromJson(Map<String, dynamic> json) =
-      _$ConfigParameterEquivalenceImpl.fromJson;
+  factory _ConfigGrouping.fromJson(Map<String, dynamic> json) =
+      _$ConfigGroupingImpl.fromJson;
 
   @override
 
-  /// [source] is the source of the equivalence.
-  @ConfigSourceConverter()
-  ConfigSource get source;
+  /// [name] is the name of the grouping.
+  /// This is the translation key.
+  String get name;
   @override
 
-  /// [parameter] is the parameter of the equivalence.
-  String get value;
+  /// [kind] is the kind of the grouping.
+  @ConfigKindConverter()
+  ConfigKind get kind;
+  @override
+
+  /// [description] is the fallback name of the grouping, when the translation is not available.
+  /// This is the translation key.
+  String? get description;
+  @override
+
+  /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+  bool? get setupCapable;
+  @override
+
+  /// [items] is the list of items of the grouping.
+  List<ConfigDefinition> get items;
   @override
   @JsonKey(ignore: true)
-  _$$ConfigParameterEquivalenceImplCopyWith<_$ConfigParameterEquivalenceImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$ConfigGroupingImplCopyWith<_$ConfigGroupingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 ConfigDefinition _$ConfigDefinitionFromJson(Map<String, dynamic> json) {
@@ -3469,84 +3562,46 @@ ConfigDefinition _$ConfigDefinitionFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ConfigDefinition {
-  /// [kind] is the kind of the configuration.
-  ///
-  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
-  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
-  /// `parameter`, `description` and `parameters` will come.
-  ///
-  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
-  /// `parameter` and `description` should be the name of the grouping.
-  @ConfigKindConverter()
-  ConfigKind get kind => throw _privateConstructorUsedError;
-
-  /// [parameters] is the list of parameters of the grouping.
-  /// Only for [ConfigKind.grouping]
-  List<ConfigDefinition>? get parameters => throw _privateConstructorUsedError;
-
   /// [sources] is the list of sources that the command can be executed.
-  /// Only for [ConfigKind.param]
   @ConfigSourceConverter()
   List<ConfigSource>? get sources => throw _privateConstructorUsedError;
 
   /// [parameter] is the name of the parameter, this is also the translation key.
-  /// Only for [ConfigKind.param]
   String get parameter => throw _privateConstructorUsedError;
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
-  /// Only for [ConfigKind.param]
   String? get description => throw _privateConstructorUsedError;
 
   /// [dataType] is the data type of the parameter.
-  /// Only for [ConfigKind.param]
   @ConfigPayloadDataTypeConverter()
   ConfigPayloadDataType? get dataType => throw _privateConstructorUsedError;
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
   num? get minValue => throw _privateConstructorUsedError;
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
   num? get maxValue => throw _privateConstructorUsedError;
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
   int? get minLength => throw _privateConstructorUsedError;
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
   int? get maxLength => throw _privateConstructorUsedError;
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
-  /// Only for [ConfigKind.param]
   List<String>? get choices => throw _privateConstructorUsedError;
 
   /// [regexPattern] is the regex pattern of the parameter.
-  /// Only for [ConfigKind.param]
   @RegExpOrNullConverter()
   RegExp? get regexPattern => throw _privateConstructorUsedError;
 
-  /// [equivalences] is the list of equivalences of the parameter.
-  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
-  /// source, the parameter can be different, so this list is designed to provide the equivalence
-  /// between the different sources.
-  /// Only for [ConfigKind.param]
-  List<ConfigParameterEquivalence>? get equivalences =>
-      throw _privateConstructorUsedError;
-
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   bool? get setupCapable => throw _privateConstructorUsedError;
-
-  /// [maxQuantity] is the maximum quantity of the nested parameters.
-  ///
-  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
-  int? get maxQuantity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -3561,9 +3616,7 @@ abstract class $ConfigDefinitionCopyWith<$Res> {
       _$ConfigDefinitionCopyWithImpl<$Res, ConfigDefinition>;
   @useResult
   $Res call(
-      {@ConfigKindConverter() ConfigKind kind,
-      List<ConfigDefinition>? parameters,
-      @ConfigSourceConverter() List<ConfigSource>? sources,
+      {@ConfigSourceConverter() List<ConfigSource>? sources,
       String parameter,
       String? description,
       @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
@@ -3573,9 +3626,7 @@ abstract class $ConfigDefinitionCopyWith<$Res> {
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<ConfigParameterEquivalence>? equivalences,
-      bool? setupCapable,
-      int? maxQuantity});
+      bool? setupCapable});
 }
 
 /// @nodoc
@@ -3591,8 +3642,6 @@ class _$ConfigDefinitionCopyWithImpl<$Res, $Val extends ConfigDefinition>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? kind = null,
-    Object? parameters = freezed,
     Object? sources = freezed,
     Object? parameter = null,
     Object? description = freezed,
@@ -3603,19 +3652,9 @@ class _$ConfigDefinitionCopyWithImpl<$Res, $Val extends ConfigDefinition>
     Object? maxLength = freezed,
     Object? choices = freezed,
     Object? regexPattern = freezed,
-    Object? equivalences = freezed,
     Object? setupCapable = freezed,
-    Object? maxQuantity = freezed,
   }) {
     return _then(_value.copyWith(
-      kind: null == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ConfigKind,
-      parameters: freezed == parameters
-          ? _value.parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinition>?,
       sources: freezed == sources
           ? _value.sources
           : sources // ignore: cast_nullable_to_non_nullable
@@ -3656,18 +3695,10 @@ class _$ConfigDefinitionCopyWithImpl<$Res, $Val extends ConfigDefinition>
           ? _value.regexPattern
           : regexPattern // ignore: cast_nullable_to_non_nullable
               as RegExp?,
-      equivalences: freezed == equivalences
-          ? _value.equivalences
-          : equivalences // ignore: cast_nullable_to_non_nullable
-              as List<ConfigParameterEquivalence>?,
       setupCapable: freezed == setupCapable
           ? _value.setupCapable
           : setupCapable // ignore: cast_nullable_to_non_nullable
               as bool?,
-      maxQuantity: freezed == maxQuantity
-          ? _value.maxQuantity
-          : maxQuantity // ignore: cast_nullable_to_non_nullable
-              as int?,
     ) as $Val);
   }
 }
@@ -3681,9 +3712,7 @@ abstract class _$$ConfigDefinitionImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@ConfigKindConverter() ConfigKind kind,
-      List<ConfigDefinition>? parameters,
-      @ConfigSourceConverter() List<ConfigSource>? sources,
+      {@ConfigSourceConverter() List<ConfigSource>? sources,
       String parameter,
       String? description,
       @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
@@ -3693,9 +3722,7 @@ abstract class _$$ConfigDefinitionImplCopyWith<$Res>
       int? maxLength,
       List<String>? choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<ConfigParameterEquivalence>? equivalences,
-      bool? setupCapable,
-      int? maxQuantity});
+      bool? setupCapable});
 }
 
 /// @nodoc
@@ -3709,8 +3736,6 @@ class __$$ConfigDefinitionImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? kind = null,
-    Object? parameters = freezed,
     Object? sources = freezed,
     Object? parameter = null,
     Object? description = freezed,
@@ -3721,19 +3746,9 @@ class __$$ConfigDefinitionImplCopyWithImpl<$Res>
     Object? maxLength = freezed,
     Object? choices = freezed,
     Object? regexPattern = freezed,
-    Object? equivalences = freezed,
     Object? setupCapable = freezed,
-    Object? maxQuantity = freezed,
   }) {
     return _then(_$ConfigDefinitionImpl(
-      kind: null == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ConfigKind,
-      parameters: freezed == parameters
-          ? _value._parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinition>?,
       sources: freezed == sources
           ? _value._sources
           : sources // ignore: cast_nullable_to_non_nullable
@@ -3774,18 +3789,10 @@ class __$$ConfigDefinitionImplCopyWithImpl<$Res>
           ? _value.regexPattern
           : regexPattern // ignore: cast_nullable_to_non_nullable
               as RegExp?,
-      equivalences: freezed == equivalences
-          ? _value._equivalences
-          : equivalences // ignore: cast_nullable_to_non_nullable
-              as List<ConfigParameterEquivalence>?,
       setupCapable: freezed == setupCapable
           ? _value.setupCapable
           : setupCapable // ignore: cast_nullable_to_non_nullable
               as bool?,
-      maxQuantity: freezed == maxQuantity
-          ? _value.maxQuantity
-          : maxQuantity // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -3794,9 +3801,7 @@ class __$$ConfigDefinitionImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ConfigDefinitionImpl implements _ConfigDefinition {
   const _$ConfigDefinitionImpl(
-      {@ConfigKindConverter() this.kind = ConfigKind.param,
-      final List<ConfigDefinition>? parameters,
-      @ConfigSourceConverter() final List<ConfigSource>? sources,
+      {@ConfigSourceConverter() final List<ConfigSource>? sources,
       required this.parameter,
       this.description,
       @ConfigPayloadDataTypeConverter() this.dataType,
@@ -3806,51 +3811,17 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
       this.maxLength,
       final List<String>? choices,
       @RegExpOrNullConverter() this.regexPattern,
-      final List<ConfigParameterEquivalence>? equivalences,
-      this.setupCapable,
-      this.maxQuantity})
-      : _parameters = parameters,
-        _sources = sources,
-        _choices = choices,
-        _equivalences = equivalences;
+      this.setupCapable})
+      : _sources = sources,
+        _choices = choices;
 
   factory _$ConfigDefinitionImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConfigDefinitionImplFromJson(json);
 
-  /// [kind] is the kind of the configuration.
-  ///
-  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
-  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
-  /// `parameter`, `description` and `parameters` will come.
-  ///
-  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
-  /// `parameter` and `description` should be the name of the grouping.
-  @override
-  @JsonKey()
-  @ConfigKindConverter()
-  final ConfigKind kind;
-
-  /// [parameters] is the list of parameters of the grouping.
-  /// Only for [ConfigKind.grouping]
-  final List<ConfigDefinition>? _parameters;
-
-  /// [parameters] is the list of parameters of the grouping.
-  /// Only for [ConfigKind.grouping]
-  @override
-  List<ConfigDefinition>? get parameters {
-    final value = _parameters;
-    if (value == null) return null;
-    if (_parameters is EqualUnmodifiableListView) return _parameters;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
   /// [sources] is the list of sources that the command can be executed.
-  /// Only for [ConfigKind.param]
   final List<ConfigSource>? _sources;
 
   /// [sources] is the list of sources that the command can be executed.
-  /// Only for [ConfigKind.param]
   @override
   @ConfigSourceConverter()
   List<ConfigSource>? get sources {
@@ -3862,53 +3833,44 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
   }
 
   /// [parameter] is the name of the parameter, this is also the translation key.
-  /// Only for [ConfigKind.param]
   @override
   final String parameter;
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
-  /// Only for [ConfigKind.param]
   @override
   final String? description;
 
   /// [dataType] is the data type of the parameter.
-  /// Only for [ConfigKind.param]
   @override
   @ConfigPayloadDataTypeConverter()
   final ConfigPayloadDataType? dataType;
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
   @override
   final num? minValue;
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
   @override
   final num? maxValue;
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
   @override
   final int? minLength;
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
   @override
   final int? maxLength;
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
-  /// Only for [ConfigKind.param]
   final List<String>? _choices;
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
-  /// Only for [ConfigKind.param]
   @override
   List<String>? get choices {
     final value = _choices;
@@ -3919,45 +3881,17 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
   }
 
   /// [regexPattern] is the regex pattern of the parameter.
-  /// Only for [ConfigKind.param]
   @override
   @RegExpOrNullConverter()
   final RegExp? regexPattern;
-
-  /// [equivalences] is the list of equivalences of the parameter.
-  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
-  /// source, the parameter can be different, so this list is designed to provide the equivalence
-  /// between the different sources.
-  /// Only for [ConfigKind.param]
-  final List<ConfigParameterEquivalence>? _equivalences;
-
-  /// [equivalences] is the list of equivalences of the parameter.
-  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
-  /// source, the parameter can be different, so this list is designed to provide the equivalence
-  /// between the different sources.
-  /// Only for [ConfigKind.param]
-  @override
-  List<ConfigParameterEquivalence>? get equivalences {
-    final value = _equivalences;
-    if (value == null) return null;
-    if (_equivalences is EqualUnmodifiableListView) return _equivalences;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   @override
   final bool? setupCapable;
 
-  /// [maxQuantity] is the maximum quantity of the nested parameters.
-  ///
-  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
-  @override
-  final int? maxQuantity;
-
   @override
   String toString() {
-    return 'ConfigDefinition(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences, setupCapable: $setupCapable, maxQuantity: $maxQuantity)';
+    return 'ConfigDefinition(sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, setupCapable: $setupCapable)';
   }
 
   @override
@@ -3965,9 +3899,6 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ConfigDefinitionImpl &&
-            (identical(other.kind, kind) || other.kind == kind) &&
-            const DeepCollectionEquality()
-                .equals(other._parameters, _parameters) &&
             const DeepCollectionEquality().equals(other._sources, _sources) &&
             (identical(other.parameter, parameter) ||
                 other.parameter == parameter) &&
@@ -3986,20 +3917,14 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
             const DeepCollectionEquality().equals(other._choices, _choices) &&
             (identical(other.regexPattern, regexPattern) ||
                 other.regexPattern == regexPattern) &&
-            const DeepCollectionEquality()
-                .equals(other._equivalences, _equivalences) &&
             (identical(other.setupCapable, setupCapable) ||
-                other.setupCapable == setupCapable) &&
-            (identical(other.maxQuantity, maxQuantity) ||
-                other.maxQuantity == maxQuantity));
+                other.setupCapable == setupCapable));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      kind,
-      const DeepCollectionEquality().hash(_parameters),
       const DeepCollectionEquality().hash(_sources),
       parameter,
       description,
@@ -4010,9 +3935,7 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
       maxLength,
       const DeepCollectionEquality().hash(_choices),
       regexPattern,
-      const DeepCollectionEquality().hash(_equivalences),
-      setupCapable,
-      maxQuantity);
+      setupCapable);
 
   @JsonKey(ignore: true)
   @override
@@ -4031,9 +3954,7 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
 
 abstract class _ConfigDefinition implements ConfigDefinition {
   const factory _ConfigDefinition(
-      {@ConfigKindConverter() final ConfigKind kind,
-      final List<ConfigDefinition>? parameters,
-      @ConfigSourceConverter() final List<ConfigSource>? sources,
+      {@ConfigSourceConverter() final List<ConfigSource>? sources,
       required final String parameter,
       final String? description,
       @ConfigPayloadDataTypeConverter() final ConfigPayloadDataType? dataType,
@@ -4043,155 +3964,136 @@ abstract class _ConfigDefinition implements ConfigDefinition {
       final int? maxLength,
       final List<String>? choices,
       @RegExpOrNullConverter() final RegExp? regexPattern,
-      final List<ConfigParameterEquivalence>? equivalences,
-      final bool? setupCapable,
-      final int? maxQuantity}) = _$ConfigDefinitionImpl;
+      final bool? setupCapable}) = _$ConfigDefinitionImpl;
 
   factory _ConfigDefinition.fromJson(Map<String, dynamic> json) =
       _$ConfigDefinitionImpl.fromJson;
 
   @override
 
-  /// [kind] is the kind of the configuration.
-  ///
-  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
-  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
-  /// `parameter`, `description` and `parameters` will come.
-  ///
-  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
-  /// `parameter` and `description` should be the name of the grouping.
-  @ConfigKindConverter()
-  ConfigKind get kind;
-  @override
-
-  /// [parameters] is the list of parameters of the grouping.
-  /// Only for [ConfigKind.grouping]
-  List<ConfigDefinition>? get parameters;
-  @override
-
   /// [sources] is the list of sources that the command can be executed.
-  /// Only for [ConfigKind.param]
   @ConfigSourceConverter()
   List<ConfigSource>? get sources;
   @override
 
   /// [parameter] is the name of the parameter, this is also the translation key.
-  /// Only for [ConfigKind.param]
   String get parameter;
   @override
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
-  /// Only for [ConfigKind.param]
   String? get description;
   @override
 
   /// [dataType] is the data type of the parameter.
-  /// Only for [ConfigKind.param]
   @ConfigPayloadDataTypeConverter()
   ConfigPayloadDataType? get dataType;
   @override
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
   num? get minValue;
   @override
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
   num? get maxValue;
   @override
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
   int? get minLength;
   @override
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
   int? get maxLength;
   @override
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
-  /// Only for [ConfigKind.param]
   List<String>? get choices;
   @override
 
   /// [regexPattern] is the regex pattern of the parameter.
-  /// Only for [ConfigKind.param]
   @RegExpOrNullConverter()
   RegExp? get regexPattern;
   @override
 
-  /// [equivalences] is the list of equivalences of the parameter.
-  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
-  /// source, the parameter can be different, so this list is designed to provide the equivalence
-  /// between the different sources.
-  /// Only for [ConfigKind.param]
-  List<ConfigParameterEquivalence>? get equivalences;
-  @override
-
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   bool? get setupCapable;
-  @override
-
-  /// [maxQuantity] is the maximum quantity of the nested parameters.
-  ///
-  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
-  int? get maxQuantity;
   @override
   @JsonKey(ignore: true)
   _$$ConfigDefinitionImplCopyWith<_$ConfigDefinitionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-ConfigParameterEquivalenceInput _$ConfigParameterEquivalenceInputFromJson(
-    Map<String, dynamic> json) {
-  return _ConfigParameterEquivalenceInput.fromJson(json);
+ConfigGroupingInput _$ConfigGroupingInputFromJson(Map<String, dynamic> json) {
+  return _ConfigGroupingInput.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ConfigParameterEquivalenceInput {
-  /// [source] is the source of the equivalence.
-  @ConfigSourceConverter()
-  ConfigSource get source => throw _privateConstructorUsedError;
+mixin _$ConfigGroupingInput {
+  /// [name] is the name of the grouping.
+  /// This is the translation key.
+  String get name => throw _privateConstructorUsedError;
 
-  /// [source] is the source of the equivalence.
-  @ConfigSourceConverter()
-  set source(ConfigSource value) => throw _privateConstructorUsedError;
+  /// [name] is the name of the grouping.
+  /// This is the translation key.
+  set name(String value) => throw _privateConstructorUsedError;
 
-  /// [parameter] is the parameter of the equivalence.
-  String get value => throw _privateConstructorUsedError;
+  /// [kind] is the kind of the grouping.
+  @ConfigKindConverter()
+  ConfigKind get kind => throw _privateConstructorUsedError;
 
-  /// [parameter] is the parameter of the equivalence.
-  set value(String value) => throw _privateConstructorUsedError;
+  /// [kind] is the kind of the grouping.
+  @ConfigKindConverter()
+  set kind(ConfigKind value) => throw _privateConstructorUsedError;
+
+  /// [description] is the fallback name of the grouping, when the translation is not available.
+  /// This is the translation key.
+  String get description => throw _privateConstructorUsedError;
+
+  /// [description] is the fallback name of the grouping, when the translation is not available.
+  /// This is the translation key.
+  set description(String value) => throw _privateConstructorUsedError;
+
+  /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+  bool get setupCapable => throw _privateConstructorUsedError;
+
+  /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+  set setupCapable(bool value) => throw _privateConstructorUsedError;
+
+  /// [items] is the list of items of the grouping.
+  List<ConfigDefinitionInput> get items => throw _privateConstructorUsedError;
+
+  /// [items] is the list of items of the grouping.
+  set items(List<ConfigDefinitionInput> value) =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ConfigParameterEquivalenceInputCopyWith<ConfigParameterEquivalenceInput>
-      get copyWith => throw _privateConstructorUsedError;
+  $ConfigGroupingInputCopyWith<ConfigGroupingInput> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ConfigParameterEquivalenceInputCopyWith<$Res> {
-  factory $ConfigParameterEquivalenceInputCopyWith(
-          ConfigParameterEquivalenceInput value,
-          $Res Function(ConfigParameterEquivalenceInput) then) =
-      _$ConfigParameterEquivalenceInputCopyWithImpl<$Res,
-          ConfigParameterEquivalenceInput>;
+abstract class $ConfigGroupingInputCopyWith<$Res> {
+  factory $ConfigGroupingInputCopyWith(
+          ConfigGroupingInput value, $Res Function(ConfigGroupingInput) then) =
+      _$ConfigGroupingInputCopyWithImpl<$Res, ConfigGroupingInput>;
   @useResult
-  $Res call({@ConfigSourceConverter() ConfigSource source, String value});
+  $Res call(
+      {String name,
+      @ConfigKindConverter() ConfigKind kind,
+      String description,
+      bool setupCapable,
+      List<ConfigDefinitionInput> items});
 }
 
 /// @nodoc
-class _$ConfigParameterEquivalenceInputCopyWithImpl<$Res,
-        $Val extends ConfigParameterEquivalenceInput>
-    implements $ConfigParameterEquivalenceInputCopyWith<$Res> {
-  _$ConfigParameterEquivalenceInputCopyWithImpl(this._value, this._then);
+class _$ConfigGroupingInputCopyWithImpl<$Res, $Val extends ConfigGroupingInput>
+    implements $ConfigGroupingInputCopyWith<$Res> {
+  _$ConfigGroupingInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -4201,137 +4103,212 @@ class _$ConfigParameterEquivalenceInputCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? source = null,
-    Object? value = null,
+    Object? name = null,
+    Object? kind = null,
+    Object? description = null,
+    Object? setupCapable = null,
+    Object? items = null,
   }) {
     return _then(_value.copyWith(
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as ConfigSource,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ConfigKind,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      setupCapable: null == setupCapable
+          ? _value.setupCapable
+          : setupCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      items: null == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinitionInput>,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$ConfigParameterEquivalenceInputImplCopyWith<$Res>
-    implements $ConfigParameterEquivalenceInputCopyWith<$Res> {
-  factory _$$ConfigParameterEquivalenceInputImplCopyWith(
-          _$ConfigParameterEquivalenceInputImpl value,
-          $Res Function(_$ConfigParameterEquivalenceInputImpl) then) =
-      __$$ConfigParameterEquivalenceInputImplCopyWithImpl<$Res>;
+abstract class _$$ConfigGroupingInputImplCopyWith<$Res>
+    implements $ConfigGroupingInputCopyWith<$Res> {
+  factory _$$ConfigGroupingInputImplCopyWith(_$ConfigGroupingInputImpl value,
+          $Res Function(_$ConfigGroupingInputImpl) then) =
+      __$$ConfigGroupingInputImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@ConfigSourceConverter() ConfigSource source, String value});
+  $Res call(
+      {String name,
+      @ConfigKindConverter() ConfigKind kind,
+      String description,
+      bool setupCapable,
+      List<ConfigDefinitionInput> items});
 }
 
 /// @nodoc
-class __$$ConfigParameterEquivalenceInputImplCopyWithImpl<$Res>
-    extends _$ConfigParameterEquivalenceInputCopyWithImpl<$Res,
-        _$ConfigParameterEquivalenceInputImpl>
-    implements _$$ConfigParameterEquivalenceInputImplCopyWith<$Res> {
-  __$$ConfigParameterEquivalenceInputImplCopyWithImpl(
-      _$ConfigParameterEquivalenceInputImpl _value,
-      $Res Function(_$ConfigParameterEquivalenceInputImpl) _then)
+class __$$ConfigGroupingInputImplCopyWithImpl<$Res>
+    extends _$ConfigGroupingInputCopyWithImpl<$Res, _$ConfigGroupingInputImpl>
+    implements _$$ConfigGroupingInputImplCopyWith<$Res> {
+  __$$ConfigGroupingInputImplCopyWithImpl(_$ConfigGroupingInputImpl _value,
+      $Res Function(_$ConfigGroupingInputImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? source = null,
-    Object? value = null,
+    Object? name = null,
+    Object? kind = null,
+    Object? description = null,
+    Object? setupCapable = null,
+    Object? items = null,
   }) {
-    return _then(_$ConfigParameterEquivalenceInputImpl(
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as ConfigSource,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
+    return _then(_$ConfigGroupingInputImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ConfigKind,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      setupCapable: null == setupCapable
+          ? _value.setupCapable
+          : setupCapable // ignore: cast_nullable_to_non_nullable
+              as bool,
+      items: null == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<ConfigDefinitionInput>,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ConfigParameterEquivalenceInputImpl
-    implements _ConfigParameterEquivalenceInput {
-  _$ConfigParameterEquivalenceInputImpl(
-      {@ConfigSourceConverter() this.source = ConfigSource.layrzLink,
-      this.value = ''});
+class _$ConfigGroupingInputImpl implements _ConfigGroupingInput {
+  _$ConfigGroupingInputImpl(
+      {this.name = '',
+      @ConfigKindConverter() this.kind = ConfigKind.grouping,
+      this.description = '',
+      this.setupCapable = false,
+      this.items = const []});
 
-  factory _$ConfigParameterEquivalenceInputImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$ConfigParameterEquivalenceInputImplFromJson(json);
+  factory _$ConfigGroupingInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConfigGroupingInputImplFromJson(json);
 
-  /// [source] is the source of the equivalence.
+  /// [name] is the name of the grouping.
+  /// This is the translation key.
   @override
   @JsonKey()
-  @ConfigSourceConverter()
-  ConfigSource source;
+  String name;
 
-  /// [parameter] is the parameter of the equivalence.
+  /// [kind] is the kind of the grouping.
   @override
   @JsonKey()
-  String value;
+  @ConfigKindConverter()
+  ConfigKind kind;
+
+  /// [description] is the fallback name of the grouping, when the translation is not available.
+  /// This is the translation key.
+  @override
+  @JsonKey()
+  String description;
+
+  /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+  @override
+  @JsonKey()
+  bool setupCapable;
+
+  /// [items] is the list of items of the grouping.
+  @override
+  @JsonKey()
+  List<ConfigDefinitionInput> items;
 
   @override
   String toString() {
-    return 'ConfigParameterEquivalenceInput(source: $source, value: $value)';
+    return 'ConfigGroupingInput(name: $name, kind: $kind, description: $description, setupCapable: $setupCapable, items: $items)';
   }
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$ConfigParameterEquivalenceInputImplCopyWith<
-          _$ConfigParameterEquivalenceInputImpl>
-      get copyWith => __$$ConfigParameterEquivalenceInputImplCopyWithImpl<
-          _$ConfigParameterEquivalenceInputImpl>(this, _$identity);
+  _$$ConfigGroupingInputImplCopyWith<_$ConfigGroupingInputImpl> get copyWith =>
+      __$$ConfigGroupingInputImplCopyWithImpl<_$ConfigGroupingInputImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ConfigParameterEquivalenceInputImplToJson(
+    return _$$ConfigGroupingInputImplToJson(
       this,
     );
   }
 }
 
-abstract class _ConfigParameterEquivalenceInput
-    implements ConfigParameterEquivalenceInput {
-  factory _ConfigParameterEquivalenceInput(
-      {@ConfigSourceConverter() ConfigSource source,
-      String value}) = _$ConfigParameterEquivalenceInputImpl;
+abstract class _ConfigGroupingInput implements ConfigGroupingInput {
+  factory _ConfigGroupingInput(
+      {String name,
+      @ConfigKindConverter() ConfigKind kind,
+      String description,
+      bool setupCapable,
+      List<ConfigDefinitionInput> items}) = _$ConfigGroupingInputImpl;
 
-  factory _ConfigParameterEquivalenceInput.fromJson(Map<String, dynamic> json) =
-      _$ConfigParameterEquivalenceInputImpl.fromJson;
+  factory _ConfigGroupingInput.fromJson(Map<String, dynamic> json) =
+      _$ConfigGroupingInputImpl.fromJson;
 
   @override
 
-  /// [source] is the source of the equivalence.
-  @ConfigSourceConverter()
-  ConfigSource get source;
+  /// [name] is the name of the grouping.
+  /// This is the translation key.
+  String get name;
 
-  /// [source] is the source of the equivalence.
-  @ConfigSourceConverter()
-  set source(ConfigSource value);
+  /// [name] is the name of the grouping.
+  /// This is the translation key.
+  set name(String value);
   @override
 
-  /// [parameter] is the parameter of the equivalence.
-  String get value;
+  /// [kind] is the kind of the grouping.
+  @ConfigKindConverter()
+  ConfigKind get kind;
 
-  /// [parameter] is the parameter of the equivalence.
-  set value(String value);
+  /// [kind] is the kind of the grouping.
+  @ConfigKindConverter()
+  set kind(ConfigKind value);
+  @override
+
+  /// [description] is the fallback name of the grouping, when the translation is not available.
+  /// This is the translation key.
+  String get description;
+
+  /// [description] is the fallback name of the grouping, when the translation is not available.
+  /// This is the translation key.
+  set description(String value);
+  @override
+
+  /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+  bool get setupCapable;
+
+  /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+  set setupCapable(bool value);
+  @override
+
+  /// [items] is the list of items of the grouping.
+  List<ConfigDefinitionInput> get items;
+
+  /// [items] is the list of items of the grouping.
+  set items(List<ConfigDefinitionInput> value);
   @override
   @JsonKey(ignore: true)
-  _$$ConfigParameterEquivalenceInputImplCopyWith<
-          _$ConfigParameterEquivalenceInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$ConfigGroupingInputImplCopyWith<_$ConfigGroupingInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 ConfigDefinitionInput _$ConfigDefinitionInputFromJson(
@@ -4341,166 +4318,88 @@ ConfigDefinitionInput _$ConfigDefinitionInputFromJson(
 
 /// @nodoc
 mixin _$ConfigDefinitionInput {
-  /// [kind] is the kind of the configuration.
-  ///
-  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
-  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
-  /// `parameter`, `description` and `parameters` will come.
-  ///
-  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
-  /// `parameter` and `description` should be the name of the grouping.
-  @ConfigKindConverter()
-  ConfigKind get kind => throw _privateConstructorUsedError;
-
-  /// [kind] is the kind of the configuration.
-  ///
-  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
-  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
-  /// `parameter`, `description` and `parameters` will come.
-  ///
-  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
-  /// `parameter` and `description` should be the name of the grouping.
-  @ConfigKindConverter()
-  set kind(ConfigKind value) => throw _privateConstructorUsedError;
-
-  /// [parameters] is the list of parameters of the grouping.
-  /// Only for [ConfigKind.grouping]
-  List<ConfigDefinitionInput>? get parameters =>
-      throw _privateConstructorUsedError;
-
-  /// [parameters] is the list of parameters of the grouping.
-  /// Only for [ConfigKind.grouping]
-  set parameters(List<ConfigDefinitionInput>? value) =>
-      throw _privateConstructorUsedError;
+  /// [sources] is the list of sources that the command can be executed.
+  @ConfigSourceConverter()
+  List<ConfigSource> get sources => throw _privateConstructorUsedError;
 
   /// [sources] is the list of sources that the command can be executed.
-  /// Only for [ConfigKind.param]
   @ConfigSourceConverter()
-  List<ConfigSource>? get sources => throw _privateConstructorUsedError;
-
-  /// [sources] is the list of sources that the command can be executed.
-  /// Only for [ConfigKind.param]
-  @ConfigSourceConverter()
-  set sources(List<ConfigSource>? value) => throw _privateConstructorUsedError;
+  set sources(List<ConfigSource> value) => throw _privateConstructorUsedError;
 
   /// [parameter] is the name of the parameter, this is also the translation key.
-  /// Only for [ConfigKind.param]
   String get parameter => throw _privateConstructorUsedError;
 
   /// [parameter] is the name of the parameter, this is also the translation key.
-  /// Only for [ConfigKind.param]
   set parameter(String value) => throw _privateConstructorUsedError;
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
-  /// Only for [ConfigKind.param]
   String? get description => throw _privateConstructorUsedError;
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
-  /// Only for [ConfigKind.param]
   set description(String? value) => throw _privateConstructorUsedError;
 
   /// [dataType] is the data type of the parameter.
-  /// Only for [ConfigKind.param]
   @ConfigPayloadDataTypeConverter()
-  ConfigPayloadDataType? get dataType => throw _privateConstructorUsedError;
+  ConfigPayloadDataType get dataType => throw _privateConstructorUsedError;
 
   /// [dataType] is the data type of the parameter.
-  /// Only for [ConfigKind.param]
   @ConfigPayloadDataTypeConverter()
-  set dataType(ConfigPayloadDataType? value) =>
+  set dataType(ConfigPayloadDataType value) =>
       throw _privateConstructorUsedError;
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
-  num? get minValue => throw _privateConstructorUsedError;
+  num get minValue => throw _privateConstructorUsedError;
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
-  set minValue(num? value) => throw _privateConstructorUsedError;
+  set minValue(num value) => throw _privateConstructorUsedError;
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
-  num? get maxValue => throw _privateConstructorUsedError;
+  num get maxValue => throw _privateConstructorUsedError;
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
-  set maxValue(num? value) => throw _privateConstructorUsedError;
+  set maxValue(num value) => throw _privateConstructorUsedError;
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
-  int? get minLength => throw _privateConstructorUsedError;
+  int get minLength => throw _privateConstructorUsedError;
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
-  set minLength(int? value) => throw _privateConstructorUsedError;
+  set minLength(int value) => throw _privateConstructorUsedError;
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
-  int? get maxLength => throw _privateConstructorUsedError;
+  int get maxLength => throw _privateConstructorUsedError;
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
-  set maxLength(int? value) => throw _privateConstructorUsedError;
+  set maxLength(int value) => throw _privateConstructorUsedError;
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
-  /// Only for [ConfigKind.param]
-  List<String>? get choices => throw _privateConstructorUsedError;
+  List<String> get choices => throw _privateConstructorUsedError;
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
-  /// Only for [ConfigKind.param]
-  set choices(List<String>? value) => throw _privateConstructorUsedError;
+  set choices(List<String> value) => throw _privateConstructorUsedError;
 
   /// [regexPattern] is the regex pattern of the parameter.
-  /// Only for [ConfigKind.param]
   @RegExpOrNullConverter()
   RegExp? get regexPattern => throw _privateConstructorUsedError;
 
   /// [regexPattern] is the regex pattern of the parameter.
-  /// Only for [ConfigKind.param]
   @RegExpOrNullConverter()
   set regexPattern(RegExp? value) => throw _privateConstructorUsedError;
-
-  /// [equivalences] is the list of equivalences of the parameter.
-  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
-  /// source, the parameter can be different, so this list is designed to provide the equivalence
-  /// between the different sources.
-  /// Only for [ConfigKind.param]
-  List<ConfigParameterEquivalenceInput>? get equivalences =>
-      throw _privateConstructorUsedError;
-
-  /// [equivalences] is the list of equivalences of the parameter.
-  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
-  /// source, the parameter can be different, so this list is designed to provide the equivalence
-  /// between the different sources.
-  /// Only for [ConfigKind.param]
-  set equivalences(List<ConfigParameterEquivalenceInput>? value) =>
-      throw _privateConstructorUsedError;
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   bool get setupCapable => throw _privateConstructorUsedError;
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   set setupCapable(bool value) => throw _privateConstructorUsedError;
-
-  /// [maxQuantity] is the maximum quantity of the nested parameters.
-  ///
-  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
-  int? get maxQuantity => throw _privateConstructorUsedError;
-
-  /// [maxQuantity] is the maximum quantity of the nested parameters.
-  ///
-  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
-  set maxQuantity(int? value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -4515,21 +4414,17 @@ abstract class $ConfigDefinitionInputCopyWith<$Res> {
       _$ConfigDefinitionInputCopyWithImpl<$Res, ConfigDefinitionInput>;
   @useResult
   $Res call(
-      {@ConfigKindConverter() ConfigKind kind,
-      List<ConfigDefinitionInput>? parameters,
-      @ConfigSourceConverter() List<ConfigSource>? sources,
+      {@ConfigSourceConverter() List<ConfigSource> sources,
       String parameter,
       String? description,
-      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
-      num? minValue,
-      num? maxValue,
-      int? minLength,
-      int? maxLength,
-      List<String>? choices,
+      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType dataType,
+      num minValue,
+      num maxValue,
+      int minLength,
+      int maxLength,
+      List<String> choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<ConfigParameterEquivalenceInput>? equivalences,
-      bool setupCapable,
-      int? maxQuantity});
+      bool setupCapable});
 }
 
 /// @nodoc
@@ -4546,35 +4441,23 @@ class _$ConfigDefinitionInputCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? kind = null,
-    Object? parameters = freezed,
-    Object? sources = freezed,
+    Object? sources = null,
     Object? parameter = null,
     Object? description = freezed,
-    Object? dataType = freezed,
-    Object? minValue = freezed,
-    Object? maxValue = freezed,
-    Object? minLength = freezed,
-    Object? maxLength = freezed,
-    Object? choices = freezed,
+    Object? dataType = null,
+    Object? minValue = null,
+    Object? maxValue = null,
+    Object? minLength = null,
+    Object? maxLength = null,
+    Object? choices = null,
     Object? regexPattern = freezed,
-    Object? equivalences = freezed,
     Object? setupCapable = null,
-    Object? maxQuantity = freezed,
   }) {
     return _then(_value.copyWith(
-      kind: null == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ConfigKind,
-      parameters: freezed == parameters
-          ? _value.parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinitionInput>?,
-      sources: freezed == sources
+      sources: null == sources
           ? _value.sources
           : sources // ignore: cast_nullable_to_non_nullable
-              as List<ConfigSource>?,
+              as List<ConfigSource>,
       parameter: null == parameter
           ? _value.parameter
           : parameter // ignore: cast_nullable_to_non_nullable
@@ -4583,46 +4466,38 @@ class _$ConfigDefinitionInputCopyWithImpl<$Res,
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      dataType: freezed == dataType
+      dataType: null == dataType
           ? _value.dataType
           : dataType // ignore: cast_nullable_to_non_nullable
-              as ConfigPayloadDataType?,
-      minValue: freezed == minValue
+              as ConfigPayloadDataType,
+      minValue: null == minValue
           ? _value.minValue
           : minValue // ignore: cast_nullable_to_non_nullable
-              as num?,
-      maxValue: freezed == maxValue
+              as num,
+      maxValue: null == maxValue
           ? _value.maxValue
           : maxValue // ignore: cast_nullable_to_non_nullable
-              as num?,
-      minLength: freezed == minLength
+              as num,
+      minLength: null == minLength
           ? _value.minLength
           : minLength // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxLength: freezed == maxLength
+              as int,
+      maxLength: null == maxLength
           ? _value.maxLength
           : maxLength // ignore: cast_nullable_to_non_nullable
-              as int?,
-      choices: freezed == choices
+              as int,
+      choices: null == choices
           ? _value.choices
           : choices // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       regexPattern: freezed == regexPattern
           ? _value.regexPattern
           : regexPattern // ignore: cast_nullable_to_non_nullable
               as RegExp?,
-      equivalences: freezed == equivalences
-          ? _value.equivalences
-          : equivalences // ignore: cast_nullable_to_non_nullable
-              as List<ConfigParameterEquivalenceInput>?,
       setupCapable: null == setupCapable
           ? _value.setupCapable
           : setupCapable // ignore: cast_nullable_to_non_nullable
               as bool,
-      maxQuantity: freezed == maxQuantity
-          ? _value.maxQuantity
-          : maxQuantity // ignore: cast_nullable_to_non_nullable
-              as int?,
     ) as $Val);
   }
 }
@@ -4637,21 +4512,17 @@ abstract class _$$ConfigDefinitionInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@ConfigKindConverter() ConfigKind kind,
-      List<ConfigDefinitionInput>? parameters,
-      @ConfigSourceConverter() List<ConfigSource>? sources,
+      {@ConfigSourceConverter() List<ConfigSource> sources,
       String parameter,
       String? description,
-      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
-      num? minValue,
-      num? maxValue,
-      int? minLength,
-      int? maxLength,
-      List<String>? choices,
+      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType dataType,
+      num minValue,
+      num maxValue,
+      int minLength,
+      int maxLength,
+      List<String> choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<ConfigParameterEquivalenceInput>? equivalences,
-      bool setupCapable,
-      int? maxQuantity});
+      bool setupCapable});
 }
 
 /// @nodoc
@@ -4666,35 +4537,23 @@ class __$$ConfigDefinitionInputImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? kind = null,
-    Object? parameters = freezed,
-    Object? sources = freezed,
+    Object? sources = null,
     Object? parameter = null,
     Object? description = freezed,
-    Object? dataType = freezed,
-    Object? minValue = freezed,
-    Object? maxValue = freezed,
-    Object? minLength = freezed,
-    Object? maxLength = freezed,
-    Object? choices = freezed,
+    Object? dataType = null,
+    Object? minValue = null,
+    Object? maxValue = null,
+    Object? minLength = null,
+    Object? maxLength = null,
+    Object? choices = null,
     Object? regexPattern = freezed,
-    Object? equivalences = freezed,
     Object? setupCapable = null,
-    Object? maxQuantity = freezed,
   }) {
     return _then(_$ConfigDefinitionInputImpl(
-      kind: null == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ConfigKind,
-      parameters: freezed == parameters
-          ? _value.parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as List<ConfigDefinitionInput>?,
-      sources: freezed == sources
+      sources: null == sources
           ? _value.sources
           : sources // ignore: cast_nullable_to_non_nullable
-              as List<ConfigSource>?,
+              as List<ConfigSource>,
       parameter: null == parameter
           ? _value.parameter
           : parameter // ignore: cast_nullable_to_non_nullable
@@ -4703,46 +4562,38 @@ class __$$ConfigDefinitionInputImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      dataType: freezed == dataType
+      dataType: null == dataType
           ? _value.dataType
           : dataType // ignore: cast_nullable_to_non_nullable
-              as ConfigPayloadDataType?,
-      minValue: freezed == minValue
+              as ConfigPayloadDataType,
+      minValue: null == minValue
           ? _value.minValue
           : minValue // ignore: cast_nullable_to_non_nullable
-              as num?,
-      maxValue: freezed == maxValue
+              as num,
+      maxValue: null == maxValue
           ? _value.maxValue
           : maxValue // ignore: cast_nullable_to_non_nullable
-              as num?,
-      minLength: freezed == minLength
+              as num,
+      minLength: null == minLength
           ? _value.minLength
           : minLength // ignore: cast_nullable_to_non_nullable
-              as int?,
-      maxLength: freezed == maxLength
+              as int,
+      maxLength: null == maxLength
           ? _value.maxLength
           : maxLength // ignore: cast_nullable_to_non_nullable
-              as int?,
-      choices: freezed == choices
+              as int,
+      choices: null == choices
           ? _value.choices
           : choices // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+              as List<String>,
       regexPattern: freezed == regexPattern
           ? _value.regexPattern
           : regexPattern // ignore: cast_nullable_to_non_nullable
               as RegExp?,
-      equivalences: freezed == equivalences
-          ? _value.equivalences
-          : equivalences // ignore: cast_nullable_to_non_nullable
-              as List<ConfigParameterEquivalenceInput>?,
       setupCapable: null == setupCapable
           ? _value.setupCapable
           : setupCapable // ignore: cast_nullable_to_non_nullable
               as bool,
-      maxQuantity: freezed == maxQuantity
-          ? _value.maxQuantity
-          : maxQuantity // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -4751,124 +4602,87 @@ class __$$ConfigDefinitionInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
   _$ConfigDefinitionInputImpl(
-      {@ConfigKindConverter() this.kind = ConfigKind.param,
-      this.parameters,
-      @ConfigSourceConverter() this.sources,
+      {@ConfigSourceConverter()
+      this.sources = const [ConfigSource.layrzLink, ConfigSource.ble],
       this.parameter = '',
       this.description,
-      @ConfigPayloadDataTypeConverter() this.dataType,
-      this.minValue,
-      this.maxValue,
-      this.minLength,
-      this.maxLength,
-      this.choices,
+      @ConfigPayloadDataTypeConverter()
+      this.dataType = ConfigPayloadDataType.string,
+      this.minValue = 0,
+      this.maxValue = 255,
+      this.minLength = 0,
+      this.maxLength = 255,
+      this.choices = const [],
       @RegExpOrNullConverter() this.regexPattern,
-      this.equivalences,
-      this.setupCapable = false,
-      this.maxQuantity});
+      this.setupCapable = false});
 
   factory _$ConfigDefinitionInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$ConfigDefinitionInputImplFromJson(json);
 
-  /// [kind] is the kind of the configuration.
-  ///
-  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
-  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
-  /// `parameter`, `description` and `parameters` will come.
-  ///
-  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
-  /// `parameter` and `description` should be the name of the grouping.
+  /// [sources] is the list of sources that the command can be executed.
   @override
   @JsonKey()
-  @ConfigKindConverter()
-  ConfigKind kind;
-
-  /// [parameters] is the list of parameters of the grouping.
-  /// Only for [ConfigKind.grouping]
-  @override
-  List<ConfigDefinitionInput>? parameters;
-
-  /// [sources] is the list of sources that the command can be executed.
-  /// Only for [ConfigKind.param]
-  @override
   @ConfigSourceConverter()
-  List<ConfigSource>? sources;
+  List<ConfigSource> sources;
 
   /// [parameter] is the name of the parameter, this is also the translation key.
-  /// Only for [ConfigKind.param]
   @override
   @JsonKey()
   String parameter;
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
-  /// Only for [ConfigKind.param]
   @override
   String? description;
 
   /// [dataType] is the data type of the parameter.
-  /// Only for [ConfigKind.param]
   @override
+  @JsonKey()
   @ConfigPayloadDataTypeConverter()
-  ConfigPayloadDataType? dataType;
+  ConfigPayloadDataType dataType;
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
   @override
-  num? minValue;
+  @JsonKey()
+  num minValue;
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
   @override
-  num? maxValue;
+  @JsonKey()
+  num maxValue;
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
   @override
-  int? minLength;
+  @JsonKey()
+  int minLength;
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
   @override
-  int? maxLength;
+  @JsonKey()
+  int maxLength;
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
-  /// Only for [ConfigKind.param]
   @override
-  List<String>? choices;
+  @JsonKey()
+  List<String> choices;
 
   /// [regexPattern] is the regex pattern of the parameter.
-  /// Only for [ConfigKind.param]
   @override
   @RegExpOrNullConverter()
   RegExp? regexPattern;
-
-  /// [equivalences] is the list of equivalences of the parameter.
-  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
-  /// source, the parameter can be different, so this list is designed to provide the equivalence
-  /// between the different sources.
-  /// Only for [ConfigKind.param]
-  @override
-  List<ConfigParameterEquivalenceInput>? equivalences;
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   @override
   @JsonKey()
   bool setupCapable;
 
-  /// [maxQuantity] is the maximum quantity of the nested parameters.
-  ///
-  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
-  @override
-  int? maxQuantity;
-
   @override
   String toString() {
-    return 'ConfigDefinitionInput(kind: $kind, parameters: $parameters, sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, equivalences: $equivalences, setupCapable: $setupCapable, maxQuantity: $maxQuantity)';
+    return 'ConfigDefinitionInput(sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, setupCapable: $setupCapable)';
   }
 
   @JsonKey(ignore: true)
@@ -4888,178 +4702,107 @@ class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
 
 abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
   factory _ConfigDefinitionInput(
-      {@ConfigKindConverter() ConfigKind kind,
-      List<ConfigDefinitionInput>? parameters,
-      @ConfigSourceConverter() List<ConfigSource>? sources,
+      {@ConfigSourceConverter() List<ConfigSource> sources,
       String parameter,
       String? description,
-      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
-      num? minValue,
-      num? maxValue,
-      int? minLength,
-      int? maxLength,
-      List<String>? choices,
+      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType dataType,
+      num minValue,
+      num maxValue,
+      int minLength,
+      int maxLength,
+      List<String> choices,
       @RegExpOrNullConverter() RegExp? regexPattern,
-      List<ConfigParameterEquivalenceInput>? equivalences,
-      bool setupCapable,
-      int? maxQuantity}) = _$ConfigDefinitionInputImpl;
+      bool setupCapable}) = _$ConfigDefinitionInputImpl;
 
   factory _ConfigDefinitionInput.fromJson(Map<String, dynamic> json) =
       _$ConfigDefinitionInputImpl.fromJson;
 
   @override
 
-  /// [kind] is the kind of the configuration.
-  ///
-  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
-  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
-  /// `parameter`, `description` and `parameters` will come.
-  ///
-  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
-  /// `parameter` and `description` should be the name of the grouping.
-  @ConfigKindConverter()
-  ConfigKind get kind;
-
-  /// [kind] is the kind of the configuration.
-  ///
-  /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
-  /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
-  /// `parameter`, `description` and `parameters` will come.
-  ///
-  /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
-  /// `parameter` and `description` should be the name of the grouping.
-  @ConfigKindConverter()
-  set kind(ConfigKind value);
-  @override
-
-  /// [parameters] is the list of parameters of the grouping.
-  /// Only for [ConfigKind.grouping]
-  List<ConfigDefinitionInput>? get parameters;
-
-  /// [parameters] is the list of parameters of the grouping.
-  /// Only for [ConfigKind.grouping]
-  set parameters(List<ConfigDefinitionInput>? value);
-  @override
+  /// [sources] is the list of sources that the command can be executed.
+  @ConfigSourceConverter()
+  List<ConfigSource> get sources;
 
   /// [sources] is the list of sources that the command can be executed.
-  /// Only for [ConfigKind.param]
   @ConfigSourceConverter()
-  List<ConfigSource>? get sources;
-
-  /// [sources] is the list of sources that the command can be executed.
-  /// Only for [ConfigKind.param]
-  @ConfigSourceConverter()
-  set sources(List<ConfigSource>? value);
+  set sources(List<ConfigSource> value);
   @override
 
   /// [parameter] is the name of the parameter, this is also the translation key.
-  /// Only for [ConfigKind.param]
   String get parameter;
 
   /// [parameter] is the name of the parameter, this is also the translation key.
-  /// Only for [ConfigKind.param]
   set parameter(String value);
   @override
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
-  /// Only for [ConfigKind.param]
   String? get description;
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
-  /// Only for [ConfigKind.param]
   set description(String? value);
   @override
 
   /// [dataType] is the data type of the parameter.
-  /// Only for [ConfigKind.param]
   @ConfigPayloadDataTypeConverter()
-  ConfigPayloadDataType? get dataType;
+  ConfigPayloadDataType get dataType;
 
   /// [dataType] is the data type of the parameter.
-  /// Only for [ConfigKind.param]
   @ConfigPayloadDataTypeConverter()
-  set dataType(ConfigPayloadDataType? value);
+  set dataType(ConfigPayloadDataType value);
   @override
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
-  num? get minValue;
+  num get minValue;
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
-  set minValue(num? value);
+  set minValue(num value);
   @override
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
-  num? get maxValue;
+  num get maxValue;
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  /// Only for [ConfigKind.param]
-  set maxValue(num? value);
+  set maxValue(num value);
   @override
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
-  int? get minLength;
+  int get minLength;
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
-  set minLength(int? value);
+  set minLength(int value);
   @override
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
-  int? get maxLength;
+  int get maxLength;
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  /// Only for [ConfigKind.param]
-  set maxLength(int? value);
+  set maxLength(int value);
   @override
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
-  /// Only for [ConfigKind.param]
-  List<String>? get choices;
+  List<String> get choices;
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
-  /// Only for [ConfigKind.param]
-  set choices(List<String>? value);
+  set choices(List<String> value);
   @override
 
   /// [regexPattern] is the regex pattern of the parameter.
-  /// Only for [ConfigKind.param]
   @RegExpOrNullConverter()
   RegExp? get regexPattern;
 
   /// [regexPattern] is the regex pattern of the parameter.
-  /// Only for [ConfigKind.param]
   @RegExpOrNullConverter()
   set regexPattern(RegExp? value);
-  @override
-
-  /// [equivalences] is the list of equivalences of the parameter.
-  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
-  /// source, the parameter can be different, so this list is designed to provide the equivalence
-  /// between the different sources.
-  /// Only for [ConfigKind.param]
-  List<ConfigParameterEquivalenceInput>? get equivalences;
-
-  /// [equivalences] is the list of equivalences of the parameter.
-  /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
-  /// source, the parameter can be different, so this list is designed to provide the equivalence
-  /// between the different sources.
-  /// Only for [ConfigKind.param]
-  set equivalences(List<ConfigParameterEquivalenceInput>? value);
   @override
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
@@ -5067,17 +4810,6 @@ abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   set setupCapable(bool value);
-  @override
-
-  /// [maxQuantity] is the maximum quantity of the nested parameters.
-  ///
-  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
-  int? get maxQuantity;
-
-  /// [maxQuantity] is the maximum quantity of the nested parameters.
-  ///
-  /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
-  set maxQuantity(int? value);
   @override
   @JsonKey(ignore: true)
   _$$ConfigDefinitionInputImplCopyWith<_$ConfigDefinitionInputImpl>

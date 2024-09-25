@@ -1,16 +1,27 @@
 part of '../inbound.dart';
 
 @freezed
-class ConfigParameterEquivalence with _$ConfigParameterEquivalence {
-  const factory ConfigParameterEquivalence({
-    /// [source] is the source of the equivalence.
-    @ConfigSourceConverter() required ConfigSource source,
+class ConfigGrouping with _$ConfigGrouping {
+  const factory ConfigGrouping({
+    /// [name] is the name of the grouping.
+    /// This is the translation key.
+    required String name,
 
-    /// [parameter] is the parameter of the equivalence.
-    required String value,
-  }) = _ConfigParameterEquivalence;
+    /// [kind] is the kind of the grouping.
+    @ConfigKindConverter() required ConfigKind kind,
 
-  factory ConfigParameterEquivalence.fromJson(Map<String, dynamic> json) => _$ConfigParameterEquivalenceFromJson(json);
+    /// [description] is the fallback name of the grouping, when the translation is not available.
+    /// This is the translation key.
+    String? description,
+
+    /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+    bool? setupCapable,
+
+    /// [items] is the list of items of the grouping.
+    @Default([]) List<ConfigDefinition> items,
+  }) = _ConfigGrouping;
+
+  factory ConfigGrouping.fromJson(Map<String, dynamic> json) => _$ConfigGroupingFromJson(json);
 }
 
 @freezed
@@ -19,174 +30,117 @@ class ConfigDefinition with _$ConfigDefinition {
   ///
   /// Please, read the documentation of the fields to understand the meaning of each one.
   const factory ConfigDefinition({
-    /// [kind] is the kind of the configuration.
-    ///
-    /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
-    /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
-    /// `parameter`, `description` and `parameters` will come.
-    ///
-    /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
-    /// `parameter` and `description` should be the name of the grouping.
-    @ConfigKindConverter() @Default(ConfigKind.param) ConfigKind kind,
-
-    /// [parameters] is the list of parameters of the grouping.
-    /// Only for [ConfigKind.grouping]
-    List<ConfigDefinition>? parameters,
-
     /// [sources] is the list of sources that the command can be executed.
-    /// Only for [ConfigKind.param]
     @ConfigSourceConverter() List<ConfigSource>? sources,
 
     /// [parameter] is the name of the parameter, this is also the translation key.
-    /// Only for [ConfigKind.param]
     required String parameter,
 
     /// [description] is the fallback name of the parameter, when the translation is not available.
-    /// Only for [ConfigKind.param]
     String? description,
 
     /// [dataType] is the data type of the parameter.
-    /// Only for [ConfigKind.param]
     @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
 
     /// [minValue] is the minimum value of the parameter.
     /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-    /// Only for [ConfigKind.param]
     num? minValue,
 
     /// [maxValue] is the maximum value of the parameter.
     /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-    /// Only for [ConfigKind.param]
     num? maxValue,
 
     /// [minLength] is the minimum length of the parameter.
     /// Only for [ConfigPayloadDataType.string]
-    /// Only for [ConfigKind.param]
     int? minLength,
 
     /// [maxLength] is the maximum length of the parameter.
     /// Only for [ConfigPayloadDataType.string]
-    /// Only for [ConfigKind.param]
     int? maxLength,
 
     /// [choices] is the list of choices of the parameter.
     /// Only for [ConfigPayloadDataType.choice]
-    /// Only for [ConfigKind.param]
     List<String>? choices,
 
     /// [regexPattern] is the regex pattern of the parameter.
-    /// Only for [ConfigKind.param]
     @RegExpOrNullConverter() RegExp? regexPattern,
-
-    /// [equivalences] is the list of equivalences of the parameter.
-    /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
-    /// source, the parameter can be different, so this list is designed to provide the equivalence
-    /// between the different sources.
-    /// Only for [ConfigKind.param]
-    List<ConfigParameterEquivalence>? equivalences,
 
     /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
     bool? setupCapable,
-
-    /// [maxQuantity] is the maximum quantity of the nested parameters.
-    ///
-    /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
-    int? maxQuantity,
   }) = _ConfigDefinition;
 
   factory ConfigDefinition.fromJson(Map<String, dynamic> json) => _$ConfigDefinitionFromJson(json);
 }
 
 @unfreezed
-class ConfigParameterEquivalenceInput with _$ConfigParameterEquivalenceInput {
-  factory ConfigParameterEquivalenceInput({
-    /// [source] is the source of the equivalence.
-    @ConfigSourceConverter() @Default(ConfigSource.layrzLink) ConfigSource source,
+class ConfigGroupingInput with _$ConfigGroupingInput {
+  factory ConfigGroupingInput({
+    /// [name] is the name of the grouping.
+    /// This is the translation key.
+    @Default('') String name,
 
-    /// [parameter] is the parameter of the equivalence.
-    @Default('') String value,
-  }) = _ConfigParameterEquivalenceInput;
+    /// [kind] is the kind of the grouping.
+    @ConfigKindConverter() @Default(ConfigKind.grouping) ConfigKind kind,
 
-  factory ConfigParameterEquivalenceInput.fromJson(Map<String, dynamic> json) =>
-      _$ConfigParameterEquivalenceInputFromJson(json);
+    /// [description] is the fallback name of the grouping, when the translation is not available.
+    /// This is the translation key.
+    @Default('') String description,
+
+    /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
+    @Default(false) bool setupCapable,
+
+    /// [items] is the list of items of the grouping.
+    @Default([]) List<ConfigDefinitionInput> items,
+  }) = _ConfigGroupingInput;
+
+  factory ConfigGroupingInput.fromJson(Map<String, dynamic> json) => _$ConfigGroupingInputFromJson(json);
 }
 
 @unfreezed
 class ConfigDefinitionInput with _$ConfigDefinitionInput {
   factory ConfigDefinitionInput({
-    /// [kind] is the kind of the configuration.
-    ///
-    /// If the kind is [ConfigKind.param], `parameter`. `description`, `dataType`, `minValue`, `maxValue`,
-    /// `minLength`, `maxLength`, `choices`, `regexPattern` and `equivalences` will come, otherwise
-    /// `parameter`, `description` and `parameters` will come.
-    ///
-    /// Note, if the kind is [ConfigKind.grouping], `parameters` will be a list of [ConfigDefinition] and
-    /// `parameter` and `description` should be the name of the grouping.
-    @ConfigKindConverter() @Default(ConfigKind.param) ConfigKind kind,
-
-    /// [parameters] is the list of parameters of the grouping.
-    /// Only for [ConfigKind.grouping]
-    List<ConfigDefinitionInput>? parameters,
-
     /// [sources] is the list of sources that the command can be executed.
-    /// Only for [ConfigKind.param]
-    @ConfigSourceConverter() List<ConfigSource>? sources,
+    @ConfigSourceConverter()
+    @Default([
+      ConfigSource.layrzLink,
+      ConfigSource.ble,
+    ])
+    List<ConfigSource> sources,
 
     /// [parameter] is the name of the parameter, this is also the translation key.
-    /// Only for [ConfigKind.param]
     @Default('') String parameter,
 
     /// [description] is the fallback name of the parameter, when the translation is not available.
-    /// Only for [ConfigKind.param]
     String? description,
 
     /// [dataType] is the data type of the parameter.
-    /// Only for [ConfigKind.param]
-    @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
+    @ConfigPayloadDataTypeConverter() @Default(ConfigPayloadDataType.string) ConfigPayloadDataType dataType,
 
     /// [minValue] is the minimum value of the parameter.
     /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-    /// Only for [ConfigKind.param]
-    num? minValue,
+    @Default(0) num minValue,
 
     /// [maxValue] is the maximum value of the parameter.
     /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-    /// Only for [ConfigKind.param]
-    num? maxValue,
+    @Default(255) num maxValue,
 
     /// [minLength] is the minimum length of the parameter.
     /// Only for [ConfigPayloadDataType.string]
-    /// Only for [ConfigKind.param]
-    int? minLength,
+    @Default(0) int minLength,
 
     /// [maxLength] is the maximum length of the parameter.
     /// Only for [ConfigPayloadDataType.string]
-    /// Only for [ConfigKind.param]
-    int? maxLength,
+    @Default(255) int maxLength,
 
     /// [choices] is the list of choices of the parameter.
     /// Only for [ConfigPayloadDataType.choice]
-    /// Only for [ConfigKind.param]
-    List<String>? choices,
+    @Default([]) List<String> choices,
 
     /// [regexPattern] is the regex pattern of the parameter.
-    /// Only for [ConfigKind.param]
     @RegExpOrNullConverter() RegExp? regexPattern,
-
-    /// [equivalences] is the list of equivalences of the parameter.
-    /// This field is designed to be used with ConfIoT or inline configuration tool, depending of the
-    /// source, the parameter can be different, so this list is designed to provide the equivalence
-    /// between the different sources.
-    /// Only for [ConfigKind.param]
-    List<ConfigParameterEquivalenceInput>? equivalences,
 
     /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
     @Default(false) bool setupCapable,
-
-    /// [maxQuantity] is the maximum quantity of the nested parameters.
-    ///
-    /// Only for [ConfigPayloadDataType.list] or [ConfigPayloadDataType.bluetoothPair]
-    int? maxQuantity,
   }) = _ConfigDefinitionInput;
 
   factory ConfigDefinitionInput.fromJson(Map<String, dynamic> json) => _$ConfigDefinitionInputFromJson(json);

@@ -1446,7 +1446,7 @@ class _$OutboundMetricsImpl implements _OutboundMetrics {
       this.hibernation = 0,
       this.offline = 0,
       this.totalItems = 0,
-      this.statsLoading = false});
+      this.statsLoading = true});
 
   factory _$OutboundMetricsImpl.fromJson(Map<String, dynamic> json) =>
       _$$OutboundMetricsImplFromJson(json);

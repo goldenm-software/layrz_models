@@ -1,4 +1,19 @@
 # Changelog
+## 3.2.17
+- Add `price` in `AtsReceptionProduct`
+- Add `atsDriver`, `atsTerminalOperations`, `atsTerminalLoadingGrid` , `atsTerminalAccessControl`, `atsTerminalYardAlerts`, `atsTerminalLoadFormatting`,
+`atsTerminalStockManagement`, `atsTerminalCacl`,
+`atsTerminalEditTransport`, `atsAccessColeta`,
+`atsPaLoadComboio` in `ReferenceCategory`
+
+
+## 3.2.16
+
+- New config parameters definition for `InboundProtocol` and `Model` models
+
+## 3.2.15
+
+- Change `statsLoading` from `OutboundService` default value to `true`
 
 ## 3.2.14
 

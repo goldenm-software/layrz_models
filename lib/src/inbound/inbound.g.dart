@@ -67,7 +67,7 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
               .toList() ??
           const [],
       configStructure: (json['configStructure'] as List<dynamic>?)
-              ?.map((e) => ConfigDefinition.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => ConfigGrouping.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       confiotCapable: json['confiotCapable'] as bool? ?? false,
@@ -179,7 +179,7 @@ _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
           const [],
       configStructure: (json['configStructure'] as List<dynamic>?)
               ?.map((e) =>
-                  ConfigDefinitionInput.fromJson(e as Map<String, dynamic>))
+                  ConfigGroupingInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       confiotCapable: json['confiotCapable'] as bool? ?? false,
@@ -292,29 +292,31 @@ Map<String, dynamic> _$$InboundServiceInputImplToJson(
       'structure': instance.structure.toJson(),
     };
 
-_$ConfigParameterEquivalenceImpl _$$ConfigParameterEquivalenceImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ConfigParameterEquivalenceImpl(
-      source: const ConfigSourceConverter().fromJson(json['source'] as String),
-      value: json['value'] as String,
+_$ConfigGroupingImpl _$$ConfigGroupingImplFromJson(Map<String, dynamic> json) =>
+    _$ConfigGroupingImpl(
+      name: json['name'] as String,
+      kind: const ConfigKindConverter().fromJson(json['kind'] as String),
+      description: json['description'] as String?,
+      setupCapable: json['setupCapable'] as bool?,
+      items: (json['items'] as List<dynamic>?)
+              ?.map((e) => ConfigDefinition.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
-Map<String, dynamic> _$$ConfigParameterEquivalenceImplToJson(
-        _$ConfigParameterEquivalenceImpl instance) =>
+Map<String, dynamic> _$$ConfigGroupingImplToJson(
+        _$ConfigGroupingImpl instance) =>
     <String, dynamic>{
-      'source': const ConfigSourceConverter().toJson(instance.source),
-      'value': instance.value,
+      'name': instance.name,
+      'kind': const ConfigKindConverter().toJson(instance.kind),
+      'description': instance.description,
+      'setupCapable': instance.setupCapable,
+      'items': instance.items.map((e) => e.toJson()).toList(),
     };
 
 _$ConfigDefinitionImpl _$$ConfigDefinitionImplFromJson(
         Map<String, dynamic> json) =>
     _$ConfigDefinitionImpl(
-      kind: json['kind'] == null
-          ? ConfigKind.param
-          : const ConfigKindConverter().fromJson(json['kind'] as String),
-      parameters: (json['parameters'] as List<dynamic>?)
-          ?.map((e) => ConfigDefinition.fromJson(e as Map<String, dynamic>))
-          .toList(),
       sources: (json['sources'] as List<dynamic>?)
           ?.map((e) => const ConfigSourceConverter().fromJson(e as String))
           .toList(),
@@ -330,19 +332,12 @@ _$ConfigDefinitionImpl _$$ConfigDefinitionImplFromJson(
           (json['choices'] as List<dynamic>?)?.map((e) => e as String).toList(),
       regexPattern: const RegExpOrNullConverter()
           .fromJson(json['regexPattern'] as String?),
-      equivalences: (json['equivalences'] as List<dynamic>?)
-          ?.map((e) =>
-              ConfigParameterEquivalence.fromJson(e as Map<String, dynamic>))
-          .toList(),
       setupCapable: json['setupCapable'] as bool?,
-      maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$ConfigDefinitionImplToJson(
         _$ConfigDefinitionImpl instance) =>
     <String, dynamic>{
-      'kind': const ConfigKindConverter().toJson(instance.kind),
-      'parameters': instance.parameters?.map((e) => e.toJson()).toList(),
       'sources':
           instance.sources?.map(const ConfigSourceConverter().toJson).toList(),
       'parameter': instance.parameter,
@@ -356,9 +351,7 @@ Map<String, dynamic> _$$ConfigDefinitionImplToJson(
       'choices': instance.choices,
       'regexPattern':
           const RegExpOrNullConverter().toJson(instance.regexPattern),
-      'equivalences': instance.equivalences?.map((e) => e.toJson()).toList(),
       'setupCapable': instance.setupCapable,
-      'maxQuantity': instance.maxQuantity,
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
@@ -373,67 +366,67 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-_$ConfigParameterEquivalenceInputImpl
-    _$$ConfigParameterEquivalenceInputImplFromJson(Map<String, dynamic> json) =>
-        _$ConfigParameterEquivalenceInputImpl(
-          source: json['source'] == null
-              ? ConfigSource.layrzLink
-              : const ConfigSourceConverter()
-                  .fromJson(json['source'] as String),
-          value: json['value'] as String? ?? '',
-        );
+_$ConfigGroupingInputImpl _$$ConfigGroupingInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ConfigGroupingInputImpl(
+      name: json['name'] as String? ?? '',
+      kind: json['kind'] == null
+          ? ConfigKind.grouping
+          : const ConfigKindConverter().fromJson(json['kind'] as String),
+      description: json['description'] as String? ?? '',
+      setupCapable: json['setupCapable'] as bool? ?? false,
+      items: (json['items'] as List<dynamic>?)
+              ?.map((e) =>
+                  ConfigDefinitionInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
 
-Map<String, dynamic> _$$ConfigParameterEquivalenceInputImplToJson(
-        _$ConfigParameterEquivalenceInputImpl instance) =>
+Map<String, dynamic> _$$ConfigGroupingInputImplToJson(
+        _$ConfigGroupingInputImpl instance) =>
     <String, dynamic>{
-      'source': const ConfigSourceConverter().toJson(instance.source),
-      'value': instance.value,
+      'name': instance.name,
+      'kind': const ConfigKindConverter().toJson(instance.kind),
+      'description': instance.description,
+      'setupCapable': instance.setupCapable,
+      'items': instance.items.map((e) => e.toJson()).toList(),
     };
 
 _$ConfigDefinitionInputImpl _$$ConfigDefinitionInputImplFromJson(
         Map<String, dynamic> json) =>
     _$ConfigDefinitionInputImpl(
-      kind: json['kind'] == null
-          ? ConfigKind.param
-          : const ConfigKindConverter().fromJson(json['kind'] as String),
-      parameters: (json['parameters'] as List<dynamic>?)
-          ?.map(
-              (e) => ConfigDefinitionInput.fromJson(e as Map<String, dynamic>))
-          .toList(),
       sources: (json['sources'] as List<dynamic>?)
-          ?.map((e) => const ConfigSourceConverter().fromJson(e as String))
-          .toList(),
+              ?.map((e) => const ConfigSourceConverter().fromJson(e as String))
+              .toList() ??
+          const [ConfigSource.layrzLink, ConfigSource.ble],
       parameter: json['parameter'] as String? ?? '',
       description: json['description'] as String?,
-      dataType: _$JsonConverterFromJson<String, ConfigPayloadDataType>(
-          json['dataType'], const ConfigPayloadDataTypeConverter().fromJson),
-      minValue: json['minValue'] as num?,
-      maxValue: json['maxValue'] as num?,
-      minLength: (json['minLength'] as num?)?.toInt(),
-      maxLength: (json['maxLength'] as num?)?.toInt(),
-      choices:
-          (json['choices'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      dataType: json['dataType'] == null
+          ? ConfigPayloadDataType.string
+          : const ConfigPayloadDataTypeConverter()
+              .fromJson(json['dataType'] as String),
+      minValue: json['minValue'] as num? ?? 0,
+      maxValue: json['maxValue'] as num? ?? 255,
+      minLength: (json['minLength'] as num?)?.toInt() ?? 0,
+      maxLength: (json['maxLength'] as num?)?.toInt() ?? 255,
+      choices: (json['choices'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
       regexPattern: const RegExpOrNullConverter()
           .fromJson(json['regexPattern'] as String?),
-      equivalences: (json['equivalences'] as List<dynamic>?)
-          ?.map((e) => ConfigParameterEquivalenceInput.fromJson(
-              e as Map<String, dynamic>))
-          .toList(),
       setupCapable: json['setupCapable'] as bool? ?? false,
-      maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$ConfigDefinitionInputImplToJson(
         _$ConfigDefinitionInputImpl instance) =>
     <String, dynamic>{
-      'kind': const ConfigKindConverter().toJson(instance.kind),
-      'parameters': instance.parameters?.map((e) => e.toJson()).toList(),
       'sources':
-          instance.sources?.map(const ConfigSourceConverter().toJson).toList(),
+          instance.sources.map(const ConfigSourceConverter().toJson).toList(),
       'parameter': instance.parameter,
       'description': instance.description,
-      'dataType': _$JsonConverterToJson<String, ConfigPayloadDataType>(
-          instance.dataType, const ConfigPayloadDataTypeConverter().toJson),
+      'dataType':
+          const ConfigPayloadDataTypeConverter().toJson(instance.dataType),
       'minValue': instance.minValue,
       'maxValue': instance.maxValue,
       'minLength': instance.minLength,
@@ -441,7 +434,5 @@ Map<String, dynamic> _$$ConfigDefinitionInputImplToJson(
       'choices': instance.choices,
       'regexPattern':
           const RegExpOrNullConverter().toJson(instance.regexPattern),
-      'equivalences': instance.equivalences?.map((e) => e.toJson()).toList(),
       'setupCapable': instance.setupCapable,
-      'maxQuantity': instance.maxQuantity,
     };

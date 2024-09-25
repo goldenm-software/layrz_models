@@ -16,7 +16,7 @@ class OutboundMetrics with _$OutboundMetrics {
     @Default(0) int totalItems,
 
     /// [statsLoading] indicates if the stats are loading.
-    @Default(false) bool statsLoading,
+    @Default(true) bool statsLoading,
   }) = _OutboundMetrics;
 
   factory OutboundMetrics.fromJson(Map<String, dynamic> json) => _$OutboundMetricsFromJson(json);

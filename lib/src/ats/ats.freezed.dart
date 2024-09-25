@@ -55,6 +55,9 @@ mixin _$AtsReceptionProduct {
   /// List of tank images
   List<String> get tanksImages => throw _privateConstructorUsedError;
 
+  /// `price` of the product
+  double? get price => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AtsReceptionProductCopyWith<AtsReceptionProduct> get copyWith =>
@@ -78,7 +81,8 @@ abstract class $AtsReceptionProductCopyWith<$Res> {
       double? realVolume,
       @TimestampOrNullConverter() DateTime? receivedAt,
       String? provider,
-      List<String> tanksImages});
+      List<String> tanksImages,
+      double? price});
 }
 
 /// @nodoc
@@ -105,6 +109,7 @@ class _$AtsReceptionProductCopyWithImpl<$Res, $Val extends AtsReceptionProduct>
     Object? receivedAt = freezed,
     Object? provider = freezed,
     Object? tanksImages = null,
+    Object? price = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -151,6 +156,10 @@ class _$AtsReceptionProductCopyWithImpl<$Res, $Val extends AtsReceptionProduct>
           ? _value.tanksImages
           : tanksImages // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      price: freezed == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double?,
     ) as $Val);
   }
 }
@@ -174,7 +183,8 @@ abstract class _$$AtsReceptionProductImplCopyWith<$Res>
       double? realVolume,
       @TimestampOrNullConverter() DateTime? receivedAt,
       String? provider,
-      List<String> tanksImages});
+      List<String> tanksImages,
+      double? price});
 }
 
 /// @nodoc
@@ -199,6 +209,7 @@ class __$$AtsReceptionProductImplCopyWithImpl<$Res>
     Object? receivedAt = freezed,
     Object? provider = freezed,
     Object? tanksImages = null,
+    Object? price = freezed,
   }) {
     return _then(_$AtsReceptionProductImpl(
       id: freezed == id
@@ -245,6 +256,10 @@ class __$$AtsReceptionProductImplCopyWithImpl<$Res>
           ? _value._tanksImages
           : tanksImages // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      price: freezed == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 }
@@ -263,7 +278,8 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
       this.realVolume,
       @TimestampOrNullConverter() this.receivedAt,
       this.provider,
-      final List<String> tanksImages = const []})
+      final List<String> tanksImages = const [],
+      this.price})
       : _tanksImages = tanksImages;
 
   factory _$AtsReceptionProductImpl.fromJson(Map<String, dynamic> json) =>
@@ -323,9 +339,13 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
     return EqualUnmodifiableListView(_tanksImages);
   }
 
+  /// `price` of the product
+  @override
+  final double? price;
+
   @override
   String toString() {
-    return 'AtsReceptionProduct(id: $id, assetId: $assetId, fuelType: $fuelType, fuelSubtype: $fuelSubtype, density: $density, temperature: $temperature, volumeBought: $volumeBought, realVolume: $realVolume, receivedAt: $receivedAt, provider: $provider, tanksImages: $tanksImages)';
+    return 'AtsReceptionProduct(id: $id, assetId: $assetId, fuelType: $fuelType, fuelSubtype: $fuelSubtype, density: $density, temperature: $temperature, volumeBought: $volumeBought, realVolume: $realVolume, receivedAt: $receivedAt, provider: $provider, tanksImages: $tanksImages, price: $price)';
   }
 
   @override
@@ -351,7 +371,8 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
             (identical(other.provider, provider) ||
                 other.provider == provider) &&
             const DeepCollectionEquality()
-                .equals(other._tanksImages, _tanksImages));
+                .equals(other._tanksImages, _tanksImages) &&
+            (identical(other.price, price) || other.price == price));
   }
 
   @JsonKey(ignore: true)
@@ -368,7 +389,8 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
       realVolume,
       receivedAt,
       provider,
-      const DeepCollectionEquality().hash(_tanksImages));
+      const DeepCollectionEquality().hash(_tanksImages),
+      price);
 
   @JsonKey(ignore: true)
   @override
@@ -397,7 +419,8 @@ abstract class _AtsReceptionProduct implements AtsReceptionProduct {
       final double? realVolume,
       @TimestampOrNullConverter() final DateTime? receivedAt,
       final String? provider,
-      final List<String> tanksImages}) = _$AtsReceptionProductImpl;
+      final List<String> tanksImages,
+      final double? price}) = _$AtsReceptionProductImpl;
 
   factory _AtsReceptionProduct.fromJson(Map<String, dynamic> json) =
       _$AtsReceptionProductImpl.fromJson;
@@ -448,6 +471,10 @@ abstract class _AtsReceptionProduct implements AtsReceptionProduct {
 
   /// List of tank images
   List<String> get tanksImages;
+  @override
+
+  /// `price` of the product
+  double? get price;
   @override
   @JsonKey(ignore: true)
   _$$AtsReceptionProductImplCopyWith<_$AtsReceptionProductImpl> get copyWith =>
