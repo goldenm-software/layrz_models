@@ -1225,6 +1225,339 @@ abstract class _Access implements Access {
       throw _privateConstructorUsedError;
 }
 
+AccessInput _$AccessInputFromJson(Map<String, dynamic> json) {
+  return _AccessInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AccessInput {
+  /// Represents the id of the access.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// Represents the id of the access.
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// Represents the read permission.
+  bool get read => throw _privateConstructorUsedError;
+
+  /// Represents the read permission.
+  set read(bool value) => throw _privateConstructorUsedError;
+
+  /// Represents the write permission.
+  bool get write => throw _privateConstructorUsedError;
+
+  /// Represents the write permission.
+  set write(bool value) => throw _privateConstructorUsedError;
+
+  /// Represents the manage permission.
+  bool get manage => throw _privateConstructorUsedError;
+
+  /// Represents the manage permission.
+  set manage(bool value) => throw _privateConstructorUsedError;
+
+  /// Represents the id of the object.
+  String? get objectId => throw _privateConstructorUsedError;
+
+  /// Represents the id of the object.
+  set objectId(String? value) => throw _privateConstructorUsedError;
+
+  /// Represents the id of the user.
+  String? get userId => throw _privateConstructorUsedError;
+
+  /// Represents the id of the user.
+  set userId(String? value) => throw _privateConstructorUsedError;
+
+  /// Represents the module of the access.
+  @AccessModuleConverter()
+  AccessModule get module => throw _privateConstructorUsedError;
+
+  /// Represents the module of the access.
+  @AccessModuleConverter()
+  set module(AccessModule value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AccessInputCopyWith<AccessInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AccessInputCopyWith<$Res> {
+  factory $AccessInputCopyWith(
+          AccessInput value, $Res Function(AccessInput) then) =
+      _$AccessInputCopyWithImpl<$Res, AccessInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      bool read,
+      bool write,
+      bool manage,
+      String? objectId,
+      String? userId,
+      @AccessModuleConverter() AccessModule module});
+}
+
+/// @nodoc
+class _$AccessInputCopyWithImpl<$Res, $Val extends AccessInput>
+    implements $AccessInputCopyWith<$Res> {
+  _$AccessInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? read = null,
+    Object? write = null,
+    Object? manage = null,
+    Object? objectId = freezed,
+    Object? userId = freezed,
+    Object? module = null,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      read: null == read
+          ? _value.read
+          : read // ignore: cast_nullable_to_non_nullable
+              as bool,
+      write: null == write
+          ? _value.write
+          : write // ignore: cast_nullable_to_non_nullable
+              as bool,
+      manage: null == manage
+          ? _value.manage
+          : manage // ignore: cast_nullable_to_non_nullable
+              as bool,
+      objectId: freezed == objectId
+          ? _value.objectId
+          : objectId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      module: null == module
+          ? _value.module
+          : module // ignore: cast_nullable_to_non_nullable
+              as AccessModule,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AccessInputImplCopyWith<$Res>
+    implements $AccessInputCopyWith<$Res> {
+  factory _$$AccessInputImplCopyWith(
+          _$AccessInputImpl value, $Res Function(_$AccessInputImpl) then) =
+      __$$AccessInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      bool read,
+      bool write,
+      bool manage,
+      String? objectId,
+      String? userId,
+      @AccessModuleConverter() AccessModule module});
+}
+
+/// @nodoc
+class __$$AccessInputImplCopyWithImpl<$Res>
+    extends _$AccessInputCopyWithImpl<$Res, _$AccessInputImpl>
+    implements _$$AccessInputImplCopyWith<$Res> {
+  __$$AccessInputImplCopyWithImpl(
+      _$AccessInputImpl _value, $Res Function(_$AccessInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? read = null,
+    Object? write = null,
+    Object? manage = null,
+    Object? objectId = freezed,
+    Object? userId = freezed,
+    Object? module = null,
+  }) {
+    return _then(_$AccessInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      read: null == read
+          ? _value.read
+          : read // ignore: cast_nullable_to_non_nullable
+              as bool,
+      write: null == write
+          ? _value.write
+          : write // ignore: cast_nullable_to_non_nullable
+              as bool,
+      manage: null == manage
+          ? _value.manage
+          : manage // ignore: cast_nullable_to_non_nullable
+              as bool,
+      objectId: freezed == objectId
+          ? _value.objectId
+          : objectId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      module: null == module
+          ? _value.module
+          : module // ignore: cast_nullable_to_non_nullable
+              as AccessModule,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AccessInputImpl implements _AccessInput {
+  _$AccessInputImpl(
+      {this.id,
+      this.read = false,
+      this.write = false,
+      this.manage = false,
+      this.objectId,
+      this.userId,
+      @AccessModuleConverter() required this.module});
+
+  factory _$AccessInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AccessInputImplFromJson(json);
+
+  /// Represents the id of the access.
+  @override
+  String? id;
+
+  /// Represents the read permission.
+  @override
+  @JsonKey()
+  bool read;
+
+  /// Represents the write permission.
+  @override
+  @JsonKey()
+  bool write;
+
+  /// Represents the manage permission.
+  @override
+  @JsonKey()
+  bool manage;
+
+  /// Represents the id of the object.
+  @override
+  String? objectId;
+
+  /// Represents the id of the user.
+  @override
+  String? userId;
+
+  /// Represents the module of the access.
+  @override
+  @AccessModuleConverter()
+  AccessModule module;
+
+  @override
+  String toString() {
+    return 'AccessInput(id: $id, read: $read, write: $write, manage: $manage, objectId: $objectId, userId: $userId, module: $module)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AccessInputImplCopyWith<_$AccessInputImpl> get copyWith =>
+      __$$AccessInputImplCopyWithImpl<_$AccessInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AccessInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AccessInput implements AccessInput {
+  factory _AccessInput(
+          {String? id,
+          bool read,
+          bool write,
+          bool manage,
+          String? objectId,
+          String? userId,
+          @AccessModuleConverter() required AccessModule module}) =
+      _$AccessInputImpl;
+
+  factory _AccessInput.fromJson(Map<String, dynamic> json) =
+      _$AccessInputImpl.fromJson;
+
+  @override
+
+  /// Represents the id of the access.
+  String? get id;
+
+  /// Represents the id of the access.
+  set id(String? value);
+  @override
+
+  /// Represents the read permission.
+  bool get read;
+
+  /// Represents the read permission.
+  set read(bool value);
+  @override
+
+  /// Represents the write permission.
+  bool get write;
+
+  /// Represents the write permission.
+  set write(bool value);
+  @override
+
+  /// Represents the manage permission.
+  bool get manage;
+
+  /// Represents the manage permission.
+  set manage(bool value);
+  @override
+
+  /// Represents the id of the object.
+  String? get objectId;
+
+  /// Represents the id of the object.
+  set objectId(String? value);
+  @override
+
+  /// Represents the id of the user.
+  String? get userId;
+
+  /// Represents the id of the user.
+  set userId(String? value);
+  @override
+
+  /// Represents the module of the access.
+  @AccessModuleConverter()
+  AccessModule get module;
+
+  /// Represents the module of the access.
+  @AccessModuleConverter()
+  set module(AccessModule value);
+  @override
+  @JsonKey(ignore: true)
+  _$$AccessInputImplCopyWith<_$AccessInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 Action _$ActionFromJson(Map<String, dynamic> json) {
   return _Action.fromJson(json);
 }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.19
+
+- Added `AccessInput` model.
+
 ## 3.2.18
 
 - Fixed an issue with automatic conversion of `ConfIoTFile` when the namespace is `ConfIoTNamespace.config`.

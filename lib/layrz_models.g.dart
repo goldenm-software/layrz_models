@@ -115,6 +115,28 @@ Map<String, dynamic> _$$AccessImplToJson(_$AccessImpl instance) =>
       'module': const AccessModuleConverter().toJson(instance.module),
     };
 
+_$AccessInputImpl _$$AccessInputImplFromJson(Map<String, dynamic> json) =>
+    _$AccessInputImpl(
+      id: json['id'] as String?,
+      read: json['read'] as bool? ?? false,
+      write: json['write'] as bool? ?? false,
+      manage: json['manage'] as bool? ?? false,
+      objectId: json['objectId'] as String?,
+      userId: json['userId'] as String?,
+      module: const AccessModuleConverter().fromJson(json['module'] as String),
+    );
+
+Map<String, dynamic> _$$AccessInputImplToJson(_$AccessInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'read': instance.read,
+      'write': instance.write,
+      'manage': instance.manage,
+      'objectId': instance.objectId,
+      'userId': instance.userId,
+      'module': const AccessModuleConverter().toJson(instance.module),
+    };
+
 _$ActionImpl _$$ActionImplFromJson(Map<String, dynamic> json) => _$ActionImpl(
       id: json['id'] as String,
       name: json['name'] as String,
