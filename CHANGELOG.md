@@ -1,4 +1,18 @@
 # Changelog
+
+## 3.2.20
+- New folder to add all Ats enums.
+- Transform `fuelSubType` as enum.
+- Add `AtsLoadingParamsSample`, `LoadingParamsFormInput`
+
+## 3.2.19
+
+- Added `AccessInput` model.
+
+## 3.2.18
+
+- Fixed an issue with automatic conversion of `ConfIoTFile` when the namespace is `ConfIoTNamespace.config`.
+
 ## 3.2.17
 - Add `price` in `AtsReceptionProduct`
 - Add `atsDriver`, `atsTerminalOperations`, `atsTerminalLoadingGrid` , `atsTerminalAccessControl`, `atsTerminalYardAlerts`, `atsTerminalLoadFormatting`,

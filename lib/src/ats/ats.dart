@@ -28,7 +28,7 @@ part 'src/reception/entry_unload_input.dart';
 part 'src/reception/ide_information.dart';
 part 'src/reception/operation_product_information.dart';
 part 'src/reception/loading_params_form_input.dart';
-part 'src/reception/loading_params_form.dart'; 
+part 'src/reception/loading_params_form.dart';
 
 // ATS Exit Models
 part 'src/exits/exit_status.dart';
@@ -50,4 +50,13 @@ part 'src/converters/order_status.dart';
 part 'src/converters/deliver_category.dart';
 part 'src/converters/category.dart';
 part 'src/converters/loading_params_sample.dart';
+part 'src/converters/fuel_type.dart';
+part 'src/converters/fuel_sub_type.dart';
 
+// ATS Enums
+part 'src/enums/fuel_sub_type.dart';
+part 'src/enums/fuel_type.dart';
+part 'src/enums/loading_params_sample.dart';
+part 'src/enums/purchase_order_categories_entity.dart';
+part 'src/enums/purchase_order_status.dart';
+part 'src/enums/purchase_order_sub_categories.dart';

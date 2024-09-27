@@ -288,6 +288,35 @@ class Access with _$Access {
   factory Access.fromJson(Map<String, dynamic> json) => _$AccessFromJson(json);
 }
 
+@unfreezed
+class AccessInput with _$AccessInput {
+  factory AccessInput({
+    /// Represents the id of the access.
+    String? id,
+
+    /// Represents the read permission.
+    @Default(false) bool read,
+
+    /// Represents the write permission.
+    @Default(false) bool write,
+
+    /// Represents the manage permission.
+    @Default(false) bool manage,
+
+    /// Represents the id of the object.
+    String? objectId,
+
+    /// Represents the id of the user.
+    String? userId,
+
+    /// Represents the module of the access.
+    @AccessModuleConverter() required AccessModule module,
+  }) = _AccessInput;
+
+  factory AccessInput.fromJson(Map<String, dynamic> json) => _$AccessInputFromJson(json);
+}
+
+
 class AccessModuleConverter implements JsonConverter<AccessModule, String> {
   const AccessModuleConverter();
 

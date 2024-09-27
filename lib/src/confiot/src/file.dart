@@ -36,7 +36,7 @@ class ConfIoTFile with _$ConfIoTFile {
         .toList();
   }
 
-  List<ConfigDefinition> get configConfiguration {
+  List<ConfigGrouping> get configConfiguration {
     if (namespace != ConfIoTNamespace.config) return [];
 
     if (configuration == null) return [];
@@ -44,7 +44,7 @@ class ConfIoTFile with _$ConfIoTFile {
     return configuration!
         .map((data) {
           try {
-            return ConfigDefinition.fromJson(data);
+            return ConfigGrouping.fromJson(data);
           } catch (e) {
             return null;
           }
