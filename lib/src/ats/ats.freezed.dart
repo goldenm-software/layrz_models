@@ -31,7 +31,8 @@ mixin _$AtsReceptionProduct {
   AtsFuelType? get fuelType => throw _privateConstructorUsedError;
 
   /// Fuel subTuype represent the fuel subtype of the product
-  String? get fuelSubtype => throw _privateConstructorUsedError;
+  @AtsFuelSubTypeOrNullConverter()
+  AtsFuelSubType? get fuelSubtype => throw _privateConstructorUsedError;
 
   /// Fuel density expressed in gr/cc.
   double? get density => throw _privateConstructorUsedError;
@@ -74,7 +75,7 @@ abstract class $AtsReceptionProductCopyWith<$Res> {
       {String? id,
       String? assetId,
       @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
-      String? fuelSubtype,
+      @AtsFuelSubTypeOrNullConverter() AtsFuelSubType? fuelSubtype,
       double? density,
       double? temperature,
       double? volumeBought,
@@ -127,7 +128,7 @@ class _$AtsReceptionProductCopyWithImpl<$Res, $Val extends AtsReceptionProduct>
       fuelSubtype: freezed == fuelSubtype
           ? _value.fuelSubtype
           : fuelSubtype // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as AtsFuelSubType?,
       density: freezed == density
           ? _value.density
           : density // ignore: cast_nullable_to_non_nullable
@@ -176,7 +177,7 @@ abstract class _$$AtsReceptionProductImplCopyWith<$Res>
       {String? id,
       String? assetId,
       @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
-      String? fuelSubtype,
+      @AtsFuelSubTypeOrNullConverter() AtsFuelSubType? fuelSubtype,
       double? density,
       double? temperature,
       double? volumeBought,
@@ -227,7 +228,7 @@ class __$$AtsReceptionProductImplCopyWithImpl<$Res>
       fuelSubtype: freezed == fuelSubtype
           ? _value.fuelSubtype
           : fuelSubtype // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as AtsFuelSubType?,
       density: freezed == density
           ? _value.density
           : density // ignore: cast_nullable_to_non_nullable
@@ -271,7 +272,7 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
       {this.id,
       this.assetId,
       @AtsFuelTypeOrNullConverter() this.fuelType,
-      this.fuelSubtype,
+      @AtsFuelSubTypeOrNullConverter() this.fuelSubtype,
       this.density,
       this.temperature,
       this.volumeBought,
@@ -300,7 +301,8 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
 
   /// Fuel subTuype represent the fuel subtype of the product
   @override
-  final String? fuelSubtype;
+  @AtsFuelSubTypeOrNullConverter()
+  final AtsFuelSubType? fuelSubtype;
 
   /// Fuel density expressed in gr/cc.
   @override
@@ -412,7 +414,7 @@ abstract class _AtsReceptionProduct implements AtsReceptionProduct {
       {final String? id,
       final String? assetId,
       @AtsFuelTypeOrNullConverter() final AtsFuelType? fuelType,
-      final String? fuelSubtype,
+      @AtsFuelSubTypeOrNullConverter() final AtsFuelSubType? fuelSubtype,
       final double? density,
       final double? temperature,
       final double? volumeBought,
@@ -441,7 +443,8 @@ abstract class _AtsReceptionProduct implements AtsReceptionProduct {
   @override
 
   /// Fuel subTuype represent the fuel subtype of the product
-  String? get fuelSubtype;
+  @AtsFuelSubTypeOrNullConverter()
+  AtsFuelSubType? get fuelSubtype;
   @override
 
   /// Fuel density expressed in gr/cc.

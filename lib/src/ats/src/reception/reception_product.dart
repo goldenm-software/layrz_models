@@ -1,76 +1,5 @@
 part of '../../ats.dart';
 
-/// FuelType
-/// Fuel Type enum definition
-///
-/// VALUES:
-///
-/// ETHANOL ETHANOL
-/// Ethanol fuel
-///
-/// GASOLINE GASOLINE
-/// Gasoline fuel
-///
-/// DIESEL DIESEL
-/// Diesel fuel
-///
-/// PREMIUMGASOLINE PREMIUMGASOLINE
-/// Premium gasoline fuel
-///
-/// HYDRATEDETHANOL HYDRATEDETHANOL
-/// Hydrated ethanol fuel
-///
-/// BIODIESEL BIODIESEL
-/// Biodiesel fuel
-enum AtsFuelType {
-  ethanol,
-  gasoline,
-  diesel,
-  premiumgasoline,
-  hydratedethanol,
-  biodiesel;
-
-  @override
-  String toString() => toJson();
-
-  /// to json
-  String toJson() {
-    switch (this) {
-      case AtsFuelType.ethanol:
-        return 'ETHANOL';
-      case AtsFuelType.gasoline:
-        return 'GASOLINE';
-      case AtsFuelType.diesel:
-        return 'DIESEL';
-      case AtsFuelType.premiumgasoline:
-        return 'PREMIUMGASOLINE';
-      case AtsFuelType.hydratedethanol:
-        return 'HYDRATEDETHANOL';
-      case AtsFuelType.biodiesel:
-        return 'BIODIESEL';
-    }
-  }
-
-  static AtsFuelType fromJson(String json) {
-    switch (json) {
-      case 'ETHANOL':
-        return AtsFuelType.ethanol;
-      case 'GASOLINE':
-        return AtsFuelType.gasoline;
-      case 'DIESEL':
-        return AtsFuelType.diesel;
-      case 'PREMIUMGASOLINE':
-        return AtsFuelType.premiumgasoline;
-      case 'HYDRATEDETHANOL':
-        return AtsFuelType.hydratedethanol;
-      case 'BIODIESEL':
-        return AtsFuelType.biodiesel;
-      default:
-        throw Exception('Invalid FuelType');
-    }
-  }
-}
-
 @freezed
 class AtsReceptionProduct with _$AtsReceptionProduct {
   const factory AtsReceptionProduct({
@@ -84,7 +13,7 @@ class AtsReceptionProduct with _$AtsReceptionProduct {
     @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
 
     /// Fuel subTuype represent the fuel subtype of the product
-    String? fuelSubtype,
+    @AtsFuelSubTypeOrNullConverter() AtsFuelSubType? fuelSubtype,
 
     /// Fuel density expressed in gr/cc.
     double? density,
@@ -152,31 +81,4 @@ class AtsReceptionInput with _$AtsReceptionInput {
   }) = _AtsReceptionInput;
 
   factory AtsReceptionInput.fromJson(Map<String, dynamic> json) => _$AtsReceptionInputFromJson(json);
-}
-
-class AtsFuelTypeConverter implements JsonConverter<AtsFuelType, String> {
-  const AtsFuelTypeConverter();
-
-  @override
-  AtsFuelType fromJson(String json) => AtsFuelType.fromJson(json);
-
-  @override
-  String toJson(AtsFuelType object) => object.toJson();
-}
-
-class AtsFuelTypeOrNullConverter implements JsonConverter<AtsFuelType?, String?> {
-  const AtsFuelTypeOrNullConverter();
-
-  @override
-  AtsFuelType? fromJson(String? json) {
-    if (json == null) {
-      return null;
-    }
-    return AtsFuelType.fromJson(json);
-  }
-
-  @override
-  String? toJson(AtsFuelType? object) {
-    return object?.toJson();
-  }
 }

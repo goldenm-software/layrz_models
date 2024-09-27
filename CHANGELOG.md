@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.20
+- New folder to add all Ats enums.
+- Transform `fuelSubType` as enum.
+- Add `AtsLoadingParamsSample`, `LoadingParamsFormInput`
+
 ## 3.2.19
 
 - Added `AccessInput` model.

@@ -13,7 +13,8 @@ _$AtsReceptionProductImpl _$$AtsReceptionProductImplFromJson(
       assetId: json['assetId'] as String?,
       fuelType: const AtsFuelTypeOrNullConverter()
           .fromJson(json['fuelType'] as String?),
-      fuelSubtype: json['fuelSubtype'] as String?,
+      fuelSubtype: const AtsFuelSubTypeOrNullConverter()
+          .fromJson(json['fuelSubtype'] as String?),
       density: (json['density'] as num?)?.toDouble(),
       temperature: (json['temperature'] as num?)?.toDouble(),
       volumeBought: (json['volumeBought'] as num?)?.toDouble(),
@@ -34,7 +35,8 @@ Map<String, dynamic> _$$AtsReceptionProductImplToJson(
       'id': instance.id,
       'assetId': instance.assetId,
       'fuelType': const AtsFuelTypeOrNullConverter().toJson(instance.fuelType),
-      'fuelSubtype': instance.fuelSubtype,
+      'fuelSubtype':
+          const AtsFuelSubTypeOrNullConverter().toJson(instance.fuelSubtype),
       'density': instance.density,
       'temperature': instance.temperature,
       'volumeBought': instance.volumeBought,
