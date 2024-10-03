@@ -3,7 +3,7 @@ part of '../tenvio.dart';
 @freezed
 class TenvioDestination with _$TenvioDestination {
   const factory TenvioDestination({
-    required TenvioDestinationType type,
+    required TenvioOrderDestinationType type,
     User? registeredCustomer,
     TenvioUnregisteredCustomer? unregisteredCustomer,
     Asset? warehouse,
@@ -12,10 +12,10 @@ class TenvioDestination with _$TenvioDestination {
   factory TenvioDestination.fromJson(Map<String, dynamic> json) => _$TenvioDestinationFromJson(json);
 }
 
-enum TenvioDestinationType {
+enum TenvioOrderDestinationType {
   registeredCustomer,
   unregisteredCustomer,
-  warehouse,
+  warehouse, tenvioWarehouse,
   ;
 }
 
@@ -26,34 +26,34 @@ class TenvioDestinationConverter implements JsonConverter<TenvioDestination, Map
   TenvioDestination fromJson(Map<String, dynamic> json) {
     if (json['__typename'] == 'User') {
       return TenvioDestination(
-        type: TenvioDestinationType.registeredCustomer,
+        type: TenvioOrderDestinationType.registeredCustomer,
         registeredCustomer: User.fromJson(json),
       );
     }
 
     if (json['__typename'] == 'Asset') {
       return TenvioDestination(
-        type: TenvioDestinationType.warehouse,
+        type: TenvioOrderDestinationType.warehouse,
         warehouse: Asset.fromJson(json),
       );
     }
 
     return TenvioDestination(
-      type: TenvioDestinationType.unregisteredCustomer,
+      type: TenvioOrderDestinationType.unregisteredCustomer,
       unregisteredCustomer: TenvioUnregisteredCustomer.fromJson(json),
     );
   }
 
   @override
   Map<String, dynamic> toJson(TenvioDestination object) {
-    if (object.type == TenvioDestinationType.registeredCustomer) {
+    if (object.type == TenvioOrderDestinationType.registeredCustomer) {
       return {
         '__typename': 'User',
         ...object.registeredCustomer!.toJson(),
       };
     }
 
-    if (object.type == TenvioDestinationType.warehouse) {
+    if (object.type == TenvioOrderDestinationType.warehouse) {
       return {
         '__typename': 'Asset',
         ...object.warehouse!.toJson(),
