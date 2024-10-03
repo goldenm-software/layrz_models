@@ -1,9 +1,15 @@
 # Changelog
 
+## 3.2.21
+- New enum `TenvioDestinationType` for `TenvioDestinationTypeOrNullConverter`
+- Changed `TenvioDestinationType` to `TenvioOrderDestinationType`
+-
 ## 3.2.20
 - New folder to add all Ats enums.
 - Transform `fuelSubType` as enum.
-- Add `AtsLoadingParamsSample`, `LoadingParamsFormInput`
+- Added `AtsLoadingParamsSample`, `LoadingParamsFormInput`
+- Added `itemQuantities` & `statusPhotos` model on `TenvioOrder`
+- Removed `totalItems`  `AsignByDepartment` model on `TenvioOrder`
 
 ## 3.2.19
 

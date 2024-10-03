@@ -2406,34 +2406,47 @@ mixin _$TenvioOrder {
   /// [warehouseId] ID of the warehouse where the order is located.
   String get warehouseId => throw _privateConstructorUsedError;
 
-  /// [destination] Destination of the order.
-  @TenvioDestinationOrNullConverter()
-  TenvioDestination? get destination => throw _privateConstructorUsedError;
-
   /// [status] Status of the order entity.
   @TenvioOrderStatusConverter()
   TenvioOrderStatus get status => throw _privateConstructorUsedError;
 
+  /// [destinationType] Type of the destination of the order.
+  @TenvioDestinationTypeOrNullConverter()
+  TenvioOrderDestinationType? get destinationType =>
+      throw _privateConstructorUsedError;
+
+  /// [destination] Destination of the order.
+  @TenvioDestinationOrNullConverter()
+  TenvioDestination? get destination => throw _privateConstructorUsedError;
+
   /// [notes] Notes of the order entity.
   List<String> get notes => throw _privateConstructorUsedError;
 
-  /// [assignByDepartment] Assign by division indicator.
-  bool? get assignByDepartment => throw _privateConstructorUsedError;
-
   /// [requiresImages] Requires images indicator.
-  bool? get requiresImages => throw _privateConstructorUsedError;
-
-  /// [packedImage] URL of the packed image.
-  String? get packedImage => throw _privateConstructorUsedError;
+  bool? get requiresPhotos => throw _privateConstructorUsedError;
 
   /// [highhighPriority] High priority indicator.
   bool? get highPriority => throw _privateConstructorUsedError;
 
-  /// [items] Items included in the order.
-  List<TenvioItemQuantity>? get items => throw _privateConstructorUsedError;
+  /// [packers] Packers assigned to the order.
+  List<User>? get packers => throw _privateConstructorUsedError;
 
-  /// [totalItems] Total number of items included in the order.
-  int get totalItems => throw _privateConstructorUsedError;
+  /// [packersIds] IDs of packers assigned to the order.
+  String? get packerIds => throw _privateConstructorUsedError;
+
+  /// [itemQuantities] Items included in the order.
+  List<TenvioOrderItemQuantity>? get itemQuantities =>
+      throw _privateConstructorUsedError;
+
+  /// [items] Items included in the order.
+  List<TenvioItem>? get items => throw _privateConstructorUsedError;
+
+  /// [packedImage] URL of the packed image.
+  String? get packedImage => throw _privateConstructorUsedError;
+
+  /// [statusPhotos] Status photos of the order.
+  List<TenvioOrderPhotos>? get statusPhotos =>
+      throw _privateConstructorUsedError;
 
   /// [createdAt] Creation date of the order.
   @TimestampOrNullConverter()
@@ -2460,15 +2473,19 @@ abstract class $TenvioOrderCopyWith<$Res> {
       String ownerId,
       Asset warehouse,
       String warehouseId,
-      @TenvioDestinationOrNullConverter() TenvioDestination? destination,
       @TenvioOrderStatusConverter() TenvioOrderStatus status,
+      @TenvioDestinationTypeOrNullConverter()
+      TenvioOrderDestinationType? destinationType,
+      @TenvioDestinationOrNullConverter() TenvioDestination? destination,
       List<String> notes,
-      bool? assignByDepartment,
-      bool? requiresImages,
-      String? packedImage,
+      bool? requiresPhotos,
       bool? highPriority,
-      List<TenvioItemQuantity>? items,
-      int totalItems,
+      List<User>? packers,
+      String? packerIds,
+      List<TenvioOrderItemQuantity>? itemQuantities,
+      List<TenvioItem>? items,
+      String? packedImage,
+      List<TenvioOrderPhotos>? statusPhotos,
       @TimestampOrNullConverter() DateTime? createdAt,
       @TimestampOrNullConverter() DateTime? updatedAt});
 
@@ -2493,15 +2510,18 @@ class _$TenvioOrderCopyWithImpl<$Res, $Val extends TenvioOrder>
     Object? ownerId = null,
     Object? warehouse = null,
     Object? warehouseId = null,
-    Object? destination = freezed,
     Object? status = null,
+    Object? destinationType = freezed,
+    Object? destination = freezed,
     Object? notes = null,
-    Object? assignByDepartment = freezed,
-    Object? requiresImages = freezed,
-    Object? packedImage = freezed,
+    Object? requiresPhotos = freezed,
     Object? highPriority = freezed,
+    Object? packers = freezed,
+    Object? packerIds = freezed,
+    Object? itemQuantities = freezed,
     Object? items = freezed,
-    Object? totalItems = null,
+    Object? packedImage = freezed,
+    Object? statusPhotos = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -2522,42 +2542,54 @@ class _$TenvioOrderCopyWithImpl<$Res, $Val extends TenvioOrder>
           ? _value.warehouseId
           : warehouseId // ignore: cast_nullable_to_non_nullable
               as String,
-      destination: freezed == destination
-          ? _value.destination
-          : destination // ignore: cast_nullable_to_non_nullable
-              as TenvioDestination?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TenvioOrderStatus,
+      destinationType: freezed == destinationType
+          ? _value.destinationType
+          : destinationType // ignore: cast_nullable_to_non_nullable
+              as TenvioOrderDestinationType?,
+      destination: freezed == destination
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as TenvioDestination?,
       notes: null == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      assignByDepartment: freezed == assignByDepartment
-          ? _value.assignByDepartment
-          : assignByDepartment // ignore: cast_nullable_to_non_nullable
+      requiresPhotos: freezed == requiresPhotos
+          ? _value.requiresPhotos
+          : requiresPhotos // ignore: cast_nullable_to_non_nullable
               as bool?,
-      requiresImages: freezed == requiresImages
-          ? _value.requiresImages
-          : requiresImages // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      packedImage: freezed == packedImage
-          ? _value.packedImage
-          : packedImage // ignore: cast_nullable_to_non_nullable
-              as String?,
       highPriority: freezed == highPriority
           ? _value.highPriority
           : highPriority // ignore: cast_nullable_to_non_nullable
               as bool?,
+      packers: freezed == packers
+          ? _value.packers
+          : packers // ignore: cast_nullable_to_non_nullable
+              as List<User>?,
+      packerIds: freezed == packerIds
+          ? _value.packerIds
+          : packerIds // ignore: cast_nullable_to_non_nullable
+              as String?,
+      itemQuantities: freezed == itemQuantities
+          ? _value.itemQuantities
+          : itemQuantities // ignore: cast_nullable_to_non_nullable
+              as List<TenvioOrderItemQuantity>?,
       items: freezed == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<TenvioItemQuantity>?,
-      totalItems: null == totalItems
-          ? _value.totalItems
-          : totalItems // ignore: cast_nullable_to_non_nullable
-              as int,
+              as List<TenvioItem>?,
+      packedImage: freezed == packedImage
+          ? _value.packedImage
+          : packedImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusPhotos: freezed == statusPhotos
+          ? _value.statusPhotos
+          : statusPhotos // ignore: cast_nullable_to_non_nullable
+              as List<TenvioOrderPhotos>?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -2603,15 +2635,19 @@ abstract class _$$TenvioOrderImplCopyWith<$Res>
       String ownerId,
       Asset warehouse,
       String warehouseId,
-      @TenvioDestinationOrNullConverter() TenvioDestination? destination,
       @TenvioOrderStatusConverter() TenvioOrderStatus status,
+      @TenvioDestinationTypeOrNullConverter()
+      TenvioOrderDestinationType? destinationType,
+      @TenvioDestinationOrNullConverter() TenvioDestination? destination,
       List<String> notes,
-      bool? assignByDepartment,
-      bool? requiresImages,
-      String? packedImage,
+      bool? requiresPhotos,
       bool? highPriority,
-      List<TenvioItemQuantity>? items,
-      int totalItems,
+      List<User>? packers,
+      String? packerIds,
+      List<TenvioOrderItemQuantity>? itemQuantities,
+      List<TenvioItem>? items,
+      String? packedImage,
+      List<TenvioOrderPhotos>? statusPhotos,
       @TimestampOrNullConverter() DateTime? createdAt,
       @TimestampOrNullConverter() DateTime? updatedAt});
 
@@ -2636,15 +2672,18 @@ class __$$TenvioOrderImplCopyWithImpl<$Res>
     Object? ownerId = null,
     Object? warehouse = null,
     Object? warehouseId = null,
-    Object? destination = freezed,
     Object? status = null,
+    Object? destinationType = freezed,
+    Object? destination = freezed,
     Object? notes = null,
-    Object? assignByDepartment = freezed,
-    Object? requiresImages = freezed,
-    Object? packedImage = freezed,
+    Object? requiresPhotos = freezed,
     Object? highPriority = freezed,
+    Object? packers = freezed,
+    Object? packerIds = freezed,
+    Object? itemQuantities = freezed,
     Object? items = freezed,
-    Object? totalItems = null,
+    Object? packedImage = freezed,
+    Object? statusPhotos = freezed,
     Object? createdAt = freezed,
     Object? updatedAt = freezed,
   }) {
@@ -2665,42 +2704,54 @@ class __$$TenvioOrderImplCopyWithImpl<$Res>
           ? _value.warehouseId
           : warehouseId // ignore: cast_nullable_to_non_nullable
               as String,
-      destination: freezed == destination
-          ? _value.destination
-          : destination // ignore: cast_nullable_to_non_nullable
-              as TenvioDestination?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as TenvioOrderStatus,
+      destinationType: freezed == destinationType
+          ? _value.destinationType
+          : destinationType // ignore: cast_nullable_to_non_nullable
+              as TenvioOrderDestinationType?,
+      destination: freezed == destination
+          ? _value.destination
+          : destination // ignore: cast_nullable_to_non_nullable
+              as TenvioDestination?,
       notes: null == notes
           ? _value._notes
           : notes // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      assignByDepartment: freezed == assignByDepartment
-          ? _value.assignByDepartment
-          : assignByDepartment // ignore: cast_nullable_to_non_nullable
+      requiresPhotos: freezed == requiresPhotos
+          ? _value.requiresPhotos
+          : requiresPhotos // ignore: cast_nullable_to_non_nullable
               as bool?,
-      requiresImages: freezed == requiresImages
-          ? _value.requiresImages
-          : requiresImages // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      packedImage: freezed == packedImage
-          ? _value.packedImage
-          : packedImage // ignore: cast_nullable_to_non_nullable
-              as String?,
       highPriority: freezed == highPriority
           ? _value.highPriority
           : highPriority // ignore: cast_nullable_to_non_nullable
               as bool?,
+      packers: freezed == packers
+          ? _value._packers
+          : packers // ignore: cast_nullable_to_non_nullable
+              as List<User>?,
+      packerIds: freezed == packerIds
+          ? _value.packerIds
+          : packerIds // ignore: cast_nullable_to_non_nullable
+              as String?,
+      itemQuantities: freezed == itemQuantities
+          ? _value._itemQuantities
+          : itemQuantities // ignore: cast_nullable_to_non_nullable
+              as List<TenvioOrderItemQuantity>?,
       items: freezed == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<TenvioItemQuantity>?,
-      totalItems: null == totalItems
-          ? _value.totalItems
-          : totalItems // ignore: cast_nullable_to_non_nullable
-              as int,
+              as List<TenvioItem>?,
+      packedImage: freezed == packedImage
+          ? _value.packedImage
+          : packedImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      statusPhotos: freezed == statusPhotos
+          ? _value._statusPhotos
+          : statusPhotos // ignore: cast_nullable_to_non_nullable
+              as List<TenvioOrderPhotos>?,
       createdAt: freezed == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -2721,19 +2772,25 @@ class _$TenvioOrderImpl implements _TenvioOrder {
       required this.ownerId,
       required this.warehouse,
       required this.warehouseId,
-      @TenvioDestinationOrNullConverter() this.destination,
       @TenvioOrderStatusConverter() required this.status,
+      @TenvioDestinationTypeOrNullConverter() this.destinationType,
+      @TenvioDestinationOrNullConverter() this.destination,
       final List<String> notes = const [],
-      this.assignByDepartment,
-      this.requiresImages,
-      this.packedImage,
+      this.requiresPhotos,
       this.highPriority,
-      final List<TenvioItemQuantity>? items,
-      required this.totalItems,
+      final List<User>? packers,
+      this.packerIds,
+      final List<TenvioOrderItemQuantity>? itemQuantities,
+      final List<TenvioItem>? items,
+      this.packedImage,
+      final List<TenvioOrderPhotos>? statusPhotos,
       @TimestampOrNullConverter() this.createdAt,
       @TimestampOrNullConverter() this.updatedAt})
       : _notes = notes,
-        _items = items;
+        _packers = packers,
+        _itemQuantities = itemQuantities,
+        _items = items,
+        _statusPhotos = statusPhotos;
 
   factory _$TenvioOrderImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioOrderImplFromJson(json);
@@ -2754,15 +2811,20 @@ class _$TenvioOrderImpl implements _TenvioOrder {
   @override
   final String warehouseId;
 
-  /// [destination] Destination of the order.
-  @override
-  @TenvioDestinationOrNullConverter()
-  final TenvioDestination? destination;
-
   /// [status] Status of the order entity.
   @override
   @TenvioOrderStatusConverter()
   final TenvioOrderStatus status;
+
+  /// [destinationType] Type of the destination of the order.
+  @override
+  @TenvioDestinationTypeOrNullConverter()
+  final TenvioOrderDestinationType? destinationType;
+
+  /// [destination] Destination of the order.
+  @override
+  @TenvioDestinationOrNullConverter()
+  final TenvioDestination? destination;
 
   /// [notes] Notes of the order entity.
   final List<String> _notes;
@@ -2776,28 +2838,50 @@ class _$TenvioOrderImpl implements _TenvioOrder {
     return EqualUnmodifiableListView(_notes);
   }
 
-  /// [assignByDepartment] Assign by division indicator.
-  @override
-  final bool? assignByDepartment;
-
   /// [requiresImages] Requires images indicator.
   @override
-  final bool? requiresImages;
-
-  /// [packedImage] URL of the packed image.
-  @override
-  final String? packedImage;
+  final bool? requiresPhotos;
 
   /// [highhighPriority] High priority indicator.
   @override
   final bool? highPriority;
 
+  /// [packers] Packers assigned to the order.
+  final List<User>? _packers;
+
+  /// [packers] Packers assigned to the order.
+  @override
+  List<User>? get packers {
+    final value = _packers;
+    if (value == null) return null;
+    if (_packers is EqualUnmodifiableListView) return _packers;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [packersIds] IDs of packers assigned to the order.
+  @override
+  final String? packerIds;
+
+  /// [itemQuantities] Items included in the order.
+  final List<TenvioOrderItemQuantity>? _itemQuantities;
+
+  /// [itemQuantities] Items included in the order.
+  @override
+  List<TenvioOrderItemQuantity>? get itemQuantities {
+    final value = _itemQuantities;
+    if (value == null) return null;
+    if (_itemQuantities is EqualUnmodifiableListView) return _itemQuantities;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// [items] Items included in the order.
-  final List<TenvioItemQuantity>? _items;
+  final List<TenvioItem>? _items;
 
   /// [items] Items included in the order.
   @override
-  List<TenvioItemQuantity>? get items {
+  List<TenvioItem>? get items {
     final value = _items;
     if (value == null) return null;
     if (_items is EqualUnmodifiableListView) return _items;
@@ -2805,9 +2889,22 @@ class _$TenvioOrderImpl implements _TenvioOrder {
     return EqualUnmodifiableListView(value);
   }
 
-  /// [totalItems] Total number of items included in the order.
+  /// [packedImage] URL of the packed image.
   @override
-  final int totalItems;
+  final String? packedImage;
+
+  /// [statusPhotos] Status photos of the order.
+  final List<TenvioOrderPhotos>? _statusPhotos;
+
+  /// [statusPhotos] Status photos of the order.
+  @override
+  List<TenvioOrderPhotos>? get statusPhotos {
+    final value = _statusPhotos;
+    if (value == null) return null;
+    if (_statusPhotos is EqualUnmodifiableListView) return _statusPhotos;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// [createdAt] Creation date of the order.
   @override
@@ -2821,7 +2918,7 @@ class _$TenvioOrderImpl implements _TenvioOrder {
 
   @override
   String toString() {
-    return 'TenvioOrder(id: $id, ownerId: $ownerId, warehouse: $warehouse, warehouseId: $warehouseId, destination: $destination, status: $status, notes: $notes, assignByDepartment: $assignByDepartment, requiresImages: $requiresImages, packedImage: $packedImage, highPriority: $highPriority, items: $items, totalItems: $totalItems, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'TenvioOrder(id: $id, ownerId: $ownerId, warehouse: $warehouse, warehouseId: $warehouseId, status: $status, destinationType: $destinationType, destination: $destination, notes: $notes, requiresPhotos: $requiresPhotos, highPriority: $highPriority, packers: $packers, packerIds: $packerIds, itemQuantities: $itemQuantities, items: $items, packedImage: $packedImage, statusPhotos: $statusPhotos, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -2835,21 +2932,26 @@ class _$TenvioOrderImpl implements _TenvioOrder {
                 other.warehouse == warehouse) &&
             (identical(other.warehouseId, warehouseId) ||
                 other.warehouseId == warehouseId) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.destinationType, destinationType) ||
+                other.destinationType == destinationType) &&
             (identical(other.destination, destination) ||
                 other.destination == destination) &&
-            (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other._notes, _notes) &&
-            (identical(other.assignByDepartment, assignByDepartment) ||
-                other.assignByDepartment == assignByDepartment) &&
-            (identical(other.requiresImages, requiresImages) ||
-                other.requiresImages == requiresImages) &&
-            (identical(other.packedImage, packedImage) ||
-                other.packedImage == packedImage) &&
+            (identical(other.requiresPhotos, requiresPhotos) ||
+                other.requiresPhotos == requiresPhotos) &&
             (identical(other.highPriority, highPriority) ||
                 other.highPriority == highPriority) &&
+            const DeepCollectionEquality().equals(other._packers, _packers) &&
+            (identical(other.packerIds, packerIds) ||
+                other.packerIds == packerIds) &&
+            const DeepCollectionEquality()
+                .equals(other._itemQuantities, _itemQuantities) &&
             const DeepCollectionEquality().equals(other._items, _items) &&
-            (identical(other.totalItems, totalItems) ||
-                other.totalItems == totalItems) &&
+            (identical(other.packedImage, packedImage) ||
+                other.packedImage == packedImage) &&
+            const DeepCollectionEquality()
+                .equals(other._statusPhotos, _statusPhotos) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -2864,15 +2966,18 @@ class _$TenvioOrderImpl implements _TenvioOrder {
       ownerId,
       warehouse,
       warehouseId,
-      destination,
       status,
+      destinationType,
+      destination,
       const DeepCollectionEquality().hash(_notes),
-      assignByDepartment,
-      requiresImages,
-      packedImage,
+      requiresPhotos,
       highPriority,
+      const DeepCollectionEquality().hash(_packers),
+      packerIds,
+      const DeepCollectionEquality().hash(_itemQuantities),
       const DeepCollectionEquality().hash(_items),
-      totalItems,
+      packedImage,
+      const DeepCollectionEquality().hash(_statusPhotos),
       createdAt,
       updatedAt);
 
@@ -2896,15 +3001,19 @@ abstract class _TenvioOrder implements TenvioOrder {
       required final String ownerId,
       required final Asset warehouse,
       required final String warehouseId,
-      @TenvioDestinationOrNullConverter() final TenvioDestination? destination,
       @TenvioOrderStatusConverter() required final TenvioOrderStatus status,
+      @TenvioDestinationTypeOrNullConverter()
+      final TenvioOrderDestinationType? destinationType,
+      @TenvioDestinationOrNullConverter() final TenvioDestination? destination,
       final List<String> notes,
-      final bool? assignByDepartment,
-      final bool? requiresImages,
-      final String? packedImage,
+      final bool? requiresPhotos,
       final bool? highPriority,
-      final List<TenvioItemQuantity>? items,
-      required final int totalItems,
+      final List<User>? packers,
+      final String? packerIds,
+      final List<TenvioOrderItemQuantity>? itemQuantities,
+      final List<TenvioItem>? items,
+      final String? packedImage,
+      final List<TenvioOrderPhotos>? statusPhotos,
       @TimestampOrNullConverter() final DateTime? createdAt,
       @TimestampOrNullConverter()
       final DateTime? updatedAt}) = _$TenvioOrderImpl;
@@ -2930,42 +3039,55 @@ abstract class _TenvioOrder implements TenvioOrder {
   String get warehouseId;
   @override
 
-  /// [destination] Destination of the order.
-  @TenvioDestinationOrNullConverter()
-  TenvioDestination? get destination;
-  @override
-
   /// [status] Status of the order entity.
   @TenvioOrderStatusConverter()
   TenvioOrderStatus get status;
+  @override
+
+  /// [destinationType] Type of the destination of the order.
+  @TenvioDestinationTypeOrNullConverter()
+  TenvioOrderDestinationType? get destinationType;
+  @override
+
+  /// [destination] Destination of the order.
+  @TenvioDestinationOrNullConverter()
+  TenvioDestination? get destination;
   @override
 
   /// [notes] Notes of the order entity.
   List<String> get notes;
   @override
 
-  /// [assignByDepartment] Assign by division indicator.
-  bool? get assignByDepartment;
-  @override
-
   /// [requiresImages] Requires images indicator.
-  bool? get requiresImages;
-  @override
-
-  /// [packedImage] URL of the packed image.
-  String? get packedImage;
+  bool? get requiresPhotos;
   @override
 
   /// [highhighPriority] High priority indicator.
   bool? get highPriority;
   @override
 
-  /// [items] Items included in the order.
-  List<TenvioItemQuantity>? get items;
+  /// [packers] Packers assigned to the order.
+  List<User>? get packers;
   @override
 
-  /// [totalItems] Total number of items included in the order.
-  int get totalItems;
+  /// [packersIds] IDs of packers assigned to the order.
+  String? get packerIds;
+  @override
+
+  /// [itemQuantities] Items included in the order.
+  List<TenvioOrderItemQuantity>? get itemQuantities;
+  @override
+
+  /// [items] Items included in the order.
+  List<TenvioItem>? get items;
+  @override
+
+  /// [packedImage] URL of the packed image.
+  String? get packedImage;
+  @override
+
+  /// [statusPhotos] Status photos of the order.
+  List<TenvioOrderPhotos>? get statusPhotos;
   @override
 
   /// [createdAt] Creation date of the order.
@@ -2979,6 +3101,530 @@ abstract class _TenvioOrder implements TenvioOrder {
   @override
   @JsonKey(ignore: true)
   _$$TenvioOrderImplCopyWith<_$TenvioOrderImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TenvioOrderItemQuantity _$TenvioOrderItemQuantityFromJson(
+    Map<String, dynamic> json) {
+  return _TenvioOrderItemQuantity.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioOrderItemQuantity {
+  /// [quantity] Quantity of the matrix item related to the order item quantity.
+  int? get quantity => throw _privateConstructorUsedError;
+
+  /// [matrixId] ID of the matrix item related to the order item quantity.
+  String? get matrixId => throw _privateConstructorUsedError;
+
+  /// [matrix] Matrix item related to the order item quantity.
+  TenvioMatrixItem? get matrix => throw _privateConstructorUsedError;
+
+  /// [orderId] ID of the order related to the order item quantity.
+  String? get orderId => throw _privateConstructorUsedError;
+
+  /// [order] Order related to the order item quantity.
+  TenvioOrder? get order => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioOrderItemQuantityCopyWith<TenvioOrderItemQuantity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioOrderItemQuantityCopyWith<$Res> {
+  factory $TenvioOrderItemQuantityCopyWith(TenvioOrderItemQuantity value,
+          $Res Function(TenvioOrderItemQuantity) then) =
+      _$TenvioOrderItemQuantityCopyWithImpl<$Res, TenvioOrderItemQuantity>;
+  @useResult
+  $Res call(
+      {int? quantity,
+      String? matrixId,
+      TenvioMatrixItem? matrix,
+      String? orderId,
+      TenvioOrder? order});
+
+  $TenvioMatrixItemCopyWith<$Res>? get matrix;
+  $TenvioOrderCopyWith<$Res>? get order;
+}
+
+/// @nodoc
+class _$TenvioOrderItemQuantityCopyWithImpl<$Res,
+        $Val extends TenvioOrderItemQuantity>
+    implements $TenvioOrderItemQuantityCopyWith<$Res> {
+  _$TenvioOrderItemQuantityCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? quantity = freezed,
+    Object? matrixId = freezed,
+    Object? matrix = freezed,
+    Object? orderId = freezed,
+    Object? order = freezed,
+  }) {
+    return _then(_value.copyWith(
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      matrixId: freezed == matrixId
+          ? _value.matrixId
+          : matrixId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      matrix: freezed == matrix
+          ? _value.matrix
+          : matrix // ignore: cast_nullable_to_non_nullable
+              as TenvioMatrixItem?,
+      orderId: freezed == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      order: freezed == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as TenvioOrder?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TenvioMatrixItemCopyWith<$Res>? get matrix {
+    if (_value.matrix == null) {
+      return null;
+    }
+
+    return $TenvioMatrixItemCopyWith<$Res>(_value.matrix!, (value) {
+      return _then(_value.copyWith(matrix: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TenvioOrderCopyWith<$Res>? get order {
+    if (_value.order == null) {
+      return null;
+    }
+
+    return $TenvioOrderCopyWith<$Res>(_value.order!, (value) {
+      return _then(_value.copyWith(order: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioOrderItemQuantityImplCopyWith<$Res>
+    implements $TenvioOrderItemQuantityCopyWith<$Res> {
+  factory _$$TenvioOrderItemQuantityImplCopyWith(
+          _$TenvioOrderItemQuantityImpl value,
+          $Res Function(_$TenvioOrderItemQuantityImpl) then) =
+      __$$TenvioOrderItemQuantityImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {int? quantity,
+      String? matrixId,
+      TenvioMatrixItem? matrix,
+      String? orderId,
+      TenvioOrder? order});
+
+  @override
+  $TenvioMatrixItemCopyWith<$Res>? get matrix;
+  @override
+  $TenvioOrderCopyWith<$Res>? get order;
+}
+
+/// @nodoc
+class __$$TenvioOrderItemQuantityImplCopyWithImpl<$Res>
+    extends _$TenvioOrderItemQuantityCopyWithImpl<$Res,
+        _$TenvioOrderItemQuantityImpl>
+    implements _$$TenvioOrderItemQuantityImplCopyWith<$Res> {
+  __$$TenvioOrderItemQuantityImplCopyWithImpl(
+      _$TenvioOrderItemQuantityImpl _value,
+      $Res Function(_$TenvioOrderItemQuantityImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? quantity = freezed,
+    Object? matrixId = freezed,
+    Object? matrix = freezed,
+    Object? orderId = freezed,
+    Object? order = freezed,
+  }) {
+    return _then(_$TenvioOrderItemQuantityImpl(
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      matrixId: freezed == matrixId
+          ? _value.matrixId
+          : matrixId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      matrix: freezed == matrix
+          ? _value.matrix
+          : matrix // ignore: cast_nullable_to_non_nullable
+              as TenvioMatrixItem?,
+      orderId: freezed == orderId
+          ? _value.orderId
+          : orderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      order: freezed == order
+          ? _value.order
+          : order // ignore: cast_nullable_to_non_nullable
+              as TenvioOrder?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioOrderItemQuantityImpl implements _TenvioOrderItemQuantity {
+  const _$TenvioOrderItemQuantityImpl(
+      {this.quantity, this.matrixId, this.matrix, this.orderId, this.order});
+
+  factory _$TenvioOrderItemQuantityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioOrderItemQuantityImplFromJson(json);
+
+  /// [quantity] Quantity of the matrix item related to the order item quantity.
+  @override
+  final int? quantity;
+
+  /// [matrixId] ID of the matrix item related to the order item quantity.
+  @override
+  final String? matrixId;
+
+  /// [matrix] Matrix item related to the order item quantity.
+  @override
+  final TenvioMatrixItem? matrix;
+
+  /// [orderId] ID of the order related to the order item quantity.
+  @override
+  final String? orderId;
+
+  /// [order] Order related to the order item quantity.
+  @override
+  final TenvioOrder? order;
+
+  @override
+  String toString() {
+    return 'TenvioOrderItemQuantity(quantity: $quantity, matrixId: $matrixId, matrix: $matrix, orderId: $orderId, order: $order)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TenvioOrderItemQuantityImpl &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity) &&
+            (identical(other.matrixId, matrixId) ||
+                other.matrixId == matrixId) &&
+            (identical(other.matrix, matrix) || other.matrix == matrix) &&
+            (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.order, order) || other.order == order));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, quantity, matrixId, matrix, orderId, order);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioOrderItemQuantityImplCopyWith<_$TenvioOrderItemQuantityImpl>
+      get copyWith => __$$TenvioOrderItemQuantityImplCopyWithImpl<
+          _$TenvioOrderItemQuantityImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioOrderItemQuantityImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioOrderItemQuantity implements TenvioOrderItemQuantity {
+  const factory _TenvioOrderItemQuantity(
+      {final int? quantity,
+      final String? matrixId,
+      final TenvioMatrixItem? matrix,
+      final String? orderId,
+      final TenvioOrder? order}) = _$TenvioOrderItemQuantityImpl;
+
+  factory _TenvioOrderItemQuantity.fromJson(Map<String, dynamic> json) =
+      _$TenvioOrderItemQuantityImpl.fromJson;
+
+  @override
+
+  /// [quantity] Quantity of the matrix item related to the order item quantity.
+  int? get quantity;
+  @override
+
+  /// [matrixId] ID of the matrix item related to the order item quantity.
+  String? get matrixId;
+  @override
+
+  /// [matrix] Matrix item related to the order item quantity.
+  TenvioMatrixItem? get matrix;
+  @override
+
+  /// [orderId] ID of the order related to the order item quantity.
+  String? get orderId;
+  @override
+
+  /// [order] Order related to the order item quantity.
+  TenvioOrder? get order;
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioOrderItemQuantityImplCopyWith<_$TenvioOrderItemQuantityImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+TenvioOrderPhotos _$TenvioOrderPhotosFromJson(Map<String, dynamic> json) {
+  return _TenvioOrderPhotos.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioOrderPhotos {
+  /// [status] Status of the order when the photo was taken.
+  String? get status => throw _privateConstructorUsedError;
+
+  /// [urls] URLs of the order photos.
+  String? get urls => throw _privateConstructorUsedError;
+
+  /// [packagedId] ID of the package related to the order photo.
+  String? get packagedId => throw _privateConstructorUsedError;
+
+  /// [package] Package related to the order photo.
+  TenvioPackage? get package => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioOrderPhotosCopyWith<TenvioOrderPhotos> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioOrderPhotosCopyWith<$Res> {
+  factory $TenvioOrderPhotosCopyWith(
+          TenvioOrderPhotos value, $Res Function(TenvioOrderPhotos) then) =
+      _$TenvioOrderPhotosCopyWithImpl<$Res, TenvioOrderPhotos>;
+  @useResult
+  $Res call(
+      {String? status,
+      String? urls,
+      String? packagedId,
+      TenvioPackage? package});
+
+  $TenvioPackageCopyWith<$Res>? get package;
+}
+
+/// @nodoc
+class _$TenvioOrderPhotosCopyWithImpl<$Res, $Val extends TenvioOrderPhotos>
+    implements $TenvioOrderPhotosCopyWith<$Res> {
+  _$TenvioOrderPhotosCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? urls = freezed,
+    Object? packagedId = freezed,
+    Object? package = freezed,
+  }) {
+    return _then(_value.copyWith(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      urls: freezed == urls
+          ? _value.urls
+          : urls // ignore: cast_nullable_to_non_nullable
+              as String?,
+      packagedId: freezed == packagedId
+          ? _value.packagedId
+          : packagedId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      package: freezed == package
+          ? _value.package
+          : package // ignore: cast_nullable_to_non_nullable
+              as TenvioPackage?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TenvioPackageCopyWith<$Res>? get package {
+    if (_value.package == null) {
+      return null;
+    }
+
+    return $TenvioPackageCopyWith<$Res>(_value.package!, (value) {
+      return _then(_value.copyWith(package: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioOrderPhotosImplCopyWith<$Res>
+    implements $TenvioOrderPhotosCopyWith<$Res> {
+  factory _$$TenvioOrderPhotosImplCopyWith(_$TenvioOrderPhotosImpl value,
+          $Res Function(_$TenvioOrderPhotosImpl) then) =
+      __$$TenvioOrderPhotosImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? status,
+      String? urls,
+      String? packagedId,
+      TenvioPackage? package});
+
+  @override
+  $TenvioPackageCopyWith<$Res>? get package;
+}
+
+/// @nodoc
+class __$$TenvioOrderPhotosImplCopyWithImpl<$Res>
+    extends _$TenvioOrderPhotosCopyWithImpl<$Res, _$TenvioOrderPhotosImpl>
+    implements _$$TenvioOrderPhotosImplCopyWith<$Res> {
+  __$$TenvioOrderPhotosImplCopyWithImpl(_$TenvioOrderPhotosImpl _value,
+      $Res Function(_$TenvioOrderPhotosImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? urls = freezed,
+    Object? packagedId = freezed,
+    Object? package = freezed,
+  }) {
+    return _then(_$TenvioOrderPhotosImpl(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      urls: freezed == urls
+          ? _value.urls
+          : urls // ignore: cast_nullable_to_non_nullable
+              as String?,
+      packagedId: freezed == packagedId
+          ? _value.packagedId
+          : packagedId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      package: freezed == package
+          ? _value.package
+          : package // ignore: cast_nullable_to_non_nullable
+              as TenvioPackage?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioOrderPhotosImpl implements _TenvioOrderPhotos {
+  const _$TenvioOrderPhotosImpl(
+      {this.status, this.urls, this.packagedId, this.package});
+
+  factory _$TenvioOrderPhotosImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioOrderPhotosImplFromJson(json);
+
+  /// [status] Status of the order when the photo was taken.
+  @override
+  final String? status;
+
+  /// [urls] URLs of the order photos.
+  @override
+  final String? urls;
+
+  /// [packagedId] ID of the package related to the order photo.
+  @override
+  final String? packagedId;
+
+  /// [package] Package related to the order photo.
+  @override
+  final TenvioPackage? package;
+
+  @override
+  String toString() {
+    return 'TenvioOrderPhotos(status: $status, urls: $urls, packagedId: $packagedId, package: $package)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TenvioOrderPhotosImpl &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.urls, urls) || other.urls == urls) &&
+            (identical(other.packagedId, packagedId) ||
+                other.packagedId == packagedId) &&
+            (identical(other.package, package) || other.package == package));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, status, urls, packagedId, package);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioOrderPhotosImplCopyWith<_$TenvioOrderPhotosImpl> get copyWith =>
+      __$$TenvioOrderPhotosImplCopyWithImpl<_$TenvioOrderPhotosImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioOrderPhotosImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioOrderPhotos implements TenvioOrderPhotos {
+  const factory _TenvioOrderPhotos(
+      {final String? status,
+      final String? urls,
+      final String? packagedId,
+      final TenvioPackage? package}) = _$TenvioOrderPhotosImpl;
+
+  factory _TenvioOrderPhotos.fromJson(Map<String, dynamic> json) =
+      _$TenvioOrderPhotosImpl.fromJson;
+
+  @override
+
+  /// [status] Status of the order when the photo was taken.
+  String? get status;
+  @override
+
+  /// [urls] URLs of the order photos.
+  String? get urls;
+  @override
+
+  /// [packagedId] ID of the package related to the order photo.
+  String? get packagedId;
+  @override
+
+  /// [package] Package related to the order photo.
+  TenvioPackage? get package;
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioOrderPhotosImplCopyWith<_$TenvioOrderPhotosImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3972,7 +4618,7 @@ TenvioDestination _$TenvioDestinationFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TenvioDestination {
-  TenvioDestinationType get type => throw _privateConstructorUsedError;
+  TenvioOrderDestinationType get type => throw _privateConstructorUsedError;
   User? get registeredCustomer => throw _privateConstructorUsedError;
   TenvioUnregisteredCustomer? get unregisteredCustomer =>
       throw _privateConstructorUsedError;
@@ -3991,7 +4637,7 @@ abstract class $TenvioDestinationCopyWith<$Res> {
       _$TenvioDestinationCopyWithImpl<$Res, TenvioDestination>;
   @useResult
   $Res call(
-      {TenvioDestinationType type,
+      {TenvioOrderDestinationType type,
       User? registeredCustomer,
       TenvioUnregisteredCustomer? unregisteredCustomer,
       Asset? warehouse});
@@ -4023,7 +4669,7 @@ class _$TenvioDestinationCopyWithImpl<$Res, $Val extends TenvioDestination>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as TenvioDestinationType,
+              as TenvioOrderDestinationType,
       registeredCustomer: freezed == registeredCustomer
           ? _value.registeredCustomer
           : registeredCustomer // ignore: cast_nullable_to_non_nullable
@@ -4086,7 +4732,7 @@ abstract class _$$TenvioDestinationImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {TenvioDestinationType type,
+      {TenvioOrderDestinationType type,
       User? registeredCustomer,
       TenvioUnregisteredCustomer? unregisteredCustomer,
       Asset? warehouse});
@@ -4119,7 +4765,7 @@ class __$$TenvioDestinationImplCopyWithImpl<$Res>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as TenvioDestinationType,
+              as TenvioOrderDestinationType,
       registeredCustomer: freezed == registeredCustomer
           ? _value.registeredCustomer
           : registeredCustomer // ignore: cast_nullable_to_non_nullable
@@ -4149,7 +4795,7 @@ class _$TenvioDestinationImpl implements _TenvioDestination {
       _$$TenvioDestinationImplFromJson(json);
 
   @override
-  final TenvioDestinationType type;
+  final TenvioOrderDestinationType type;
   @override
   final User? registeredCustomer;
   @override
@@ -4198,7 +4844,7 @@ class _$TenvioDestinationImpl implements _TenvioDestination {
 
 abstract class _TenvioDestination implements TenvioDestination {
   const factory _TenvioDestination(
-      {required final TenvioDestinationType type,
+      {required final TenvioOrderDestinationType type,
       final User? registeredCustomer,
       final TenvioUnregisteredCustomer? unregisteredCustomer,
       final Asset? warehouse}) = _$TenvioDestinationImpl;
@@ -4207,7 +4853,7 @@ abstract class _TenvioDestination implements TenvioDestination {
       _$TenvioDestinationImpl.fromJson;
 
   @override
-  TenvioDestinationType get type;
+  TenvioOrderDestinationType get type;
   @override
   User? get registeredCustomer;
   @override

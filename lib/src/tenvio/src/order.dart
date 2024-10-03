@@ -15,32 +15,41 @@ class TenvioOrder with _$TenvioOrder {
     /// [warehouseId] ID of the warehouse where the order is located.
     required String warehouseId,
 
-    /// [destination] Destination of the order.
-    @TenvioDestinationOrNullConverter() TenvioDestination? destination,
-
     /// [status] Status of the order entity.
     @TenvioOrderStatusConverter() required TenvioOrderStatus status,
+
+    /// [destinationType] Type of the destination of the order.
+    @TenvioDestinationTypeOrNullConverter() TenvioOrderDestinationType? destinationType,
+
+    /// [destination] Destination of the order.
+    @TenvioDestinationOrNullConverter() TenvioDestination? destination,
 
     /// [notes] Notes of the order entity.
     @Default([]) List<String> notes,
 
-    /// [assignByDepartment] Assign by division indicator.
-    bool? assignByDepartment,
-
     /// [requiresImages] Requires images indicator.
-    bool? requiresImages,
-
-    /// [packedImage] URL of the packed image.
-    String? packedImage,
+    bool? requiresPhotos,
 
     /// [highhighPriority] High priority indicator.
     bool? highPriority,
 
-    /// [items] Items included in the order.
-    List<TenvioItemQuantity>? items,
+    /// [packers] Packers assigned to the order.
+    List<User>? packers,
 
-    /// [totalItems] Total number of items included in the order.
-    required int totalItems,
+    /// [packersIds] IDs of packers assigned to the order.
+    String? packerIds,
+
+    /// [itemQuantities] Items included in the order.
+    List<TenvioOrderItemQuantity>? itemQuantities,
+
+    /// [items] Items included in the order.
+    List<TenvioItem>? items,
+
+    /// [packedImage] URL of the packed image.
+    String? packedImage,
+
+    /// [statusPhotos] Status photos of the order.
+    List<TenvioOrderPhotos>? statusPhotos,
 
     /// [createdAt] Creation date of the order.
     @TimestampOrNullConverter() DateTime? createdAt,
@@ -50,6 +59,47 @@ class TenvioOrder with _$TenvioOrder {
   }) = _TenvioOrder;
 
   factory TenvioOrder.fromJson(Map<String, dynamic> json) => _$TenvioOrderFromJson(json);
+}
+
+@freezed
+class TenvioOrderItemQuantity with _$TenvioOrderItemQuantity {
+  const factory TenvioOrderItemQuantity({
+    /// [quantity] Quantity of the matrix item related to the order item quantity.
+    int? quantity,
+
+    /// [matrixId] ID of the matrix item related to the order item quantity.
+    String? matrixId,
+
+    /// [matrix] Matrix item related to the order item quantity.
+    TenvioMatrixItem? matrix,
+
+    /// [orderId] ID of the order related to the order item quantity.
+    String? orderId,
+
+    /// [order] Order related to the order item quantity.
+    TenvioOrder? order,
+  }) = _TenvioOrderItemQuantity;
+
+  factory TenvioOrderItemQuantity.fromJson(Map<String, dynamic> json) => _$TenvioOrderItemQuantityFromJson(json);
+}
+
+@freezed
+class TenvioOrderPhotos with _$TenvioOrderPhotos {
+  const factory TenvioOrderPhotos({
+    /// [status] Status of the order when the photo was taken.
+    String? status,
+
+    /// [urls] URLs of the order photos.
+    String? urls,
+
+    /// [packagedId] ID of the package related to the order photo.
+    String? packagedId,
+
+    /// [package] Package related to the order photo.
+    TenvioPackage? package,
+  }) = _TenvioOrderPhotos;
+
+  factory TenvioOrderPhotos.fromJson(Map<String, dynamic> json) => _$TenvioOrderPhotosFromJson(json);
 }
 
 @freezed

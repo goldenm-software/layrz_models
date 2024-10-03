@@ -22,3 +22,4 @@ part 'src/custom_property.dart';
 part 'src/dropoff_failed_reason.dart';
 part 'src/photos_input.dart';
 part 'src/order_item_quantity_input.dart';
+part 'src/destination_type.dart';
