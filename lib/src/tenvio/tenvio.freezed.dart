@@ -6411,3 +6411,398 @@ abstract class _OrderItemQuantityInput implements OrderItemQuantityInput {
   _$$OrderItemQuantityInputImplCopyWith<_$OrderItemQuantityInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+TenvioMonitorAccess _$TenvioMonitorAccessFromJson(Map<String, dynamic> json) {
+  return _TenvioMonitorAccess.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioMonitorAccess {
+  /// [reception] is the reception of the monitor access.
+  bool get reception => throw _privateConstructorUsedError;
+
+  /// [warehouse] is the warehouse of the monitor access.
+  bool get warehouse => throw _privateConstructorUsedError;
+
+  /// [dispatch] is the dispatch of the monitor access.
+  bool get dispatch => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioMonitorAccessCopyWith<TenvioMonitorAccess> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioMonitorAccessCopyWith<$Res> {
+  factory $TenvioMonitorAccessCopyWith(
+          TenvioMonitorAccess value, $Res Function(TenvioMonitorAccess) then) =
+      _$TenvioMonitorAccessCopyWithImpl<$Res, TenvioMonitorAccess>;
+  @useResult
+  $Res call({bool reception, bool warehouse, bool dispatch});
+}
+
+/// @nodoc
+class _$TenvioMonitorAccessCopyWithImpl<$Res, $Val extends TenvioMonitorAccess>
+    implements $TenvioMonitorAccessCopyWith<$Res> {
+  _$TenvioMonitorAccessCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reception = null,
+    Object? warehouse = null,
+    Object? dispatch = null,
+  }) {
+    return _then(_value.copyWith(
+      reception: null == reception
+          ? _value.reception
+          : reception // ignore: cast_nullable_to_non_nullable
+              as bool,
+      warehouse: null == warehouse
+          ? _value.warehouse
+          : warehouse // ignore: cast_nullable_to_non_nullable
+              as bool,
+      dispatch: null == dispatch
+          ? _value.dispatch
+          : dispatch // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioMonitorAccessImplCopyWith<$Res>
+    implements $TenvioMonitorAccessCopyWith<$Res> {
+  factory _$$TenvioMonitorAccessImplCopyWith(_$TenvioMonitorAccessImpl value,
+          $Res Function(_$TenvioMonitorAccessImpl) then) =
+      __$$TenvioMonitorAccessImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool reception, bool warehouse, bool dispatch});
+}
+
+/// @nodoc
+class __$$TenvioMonitorAccessImplCopyWithImpl<$Res>
+    extends _$TenvioMonitorAccessCopyWithImpl<$Res, _$TenvioMonitorAccessImpl>
+    implements _$$TenvioMonitorAccessImplCopyWith<$Res> {
+  __$$TenvioMonitorAccessImplCopyWithImpl(_$TenvioMonitorAccessImpl _value,
+      $Res Function(_$TenvioMonitorAccessImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reception = null,
+    Object? warehouse = null,
+    Object? dispatch = null,
+  }) {
+    return _then(_$TenvioMonitorAccessImpl(
+      reception: null == reception
+          ? _value.reception
+          : reception // ignore: cast_nullable_to_non_nullable
+              as bool,
+      warehouse: null == warehouse
+          ? _value.warehouse
+          : warehouse // ignore: cast_nullable_to_non_nullable
+              as bool,
+      dispatch: null == dispatch
+          ? _value.dispatch
+          : dispatch // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioMonitorAccessImpl implements _TenvioMonitorAccess {
+  const _$TenvioMonitorAccessImpl(
+      {required this.reception,
+      required this.warehouse,
+      required this.dispatch});
+
+  factory _$TenvioMonitorAccessImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioMonitorAccessImplFromJson(json);
+
+  /// [reception] is the reception of the monitor access.
+  @override
+  final bool reception;
+
+  /// [warehouse] is the warehouse of the monitor access.
+  @override
+  final bool warehouse;
+
+  /// [dispatch] is the dispatch of the monitor access.
+  @override
+  final bool dispatch;
+
+  @override
+  String toString() {
+    return 'TenvioMonitorAccess(reception: $reception, warehouse: $warehouse, dispatch: $dispatch)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TenvioMonitorAccessImpl &&
+            (identical(other.reception, reception) ||
+                other.reception == reception) &&
+            (identical(other.warehouse, warehouse) ||
+                other.warehouse == warehouse) &&
+            (identical(other.dispatch, dispatch) ||
+                other.dispatch == dispatch));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, reception, warehouse, dispatch);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioMonitorAccessImplCopyWith<_$TenvioMonitorAccessImpl> get copyWith =>
+      __$$TenvioMonitorAccessImplCopyWithImpl<_$TenvioMonitorAccessImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioMonitorAccessImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioMonitorAccess implements TenvioMonitorAccess {
+  const factory _TenvioMonitorAccess(
+      {required final bool reception,
+      required final bool warehouse,
+      required final bool dispatch}) = _$TenvioMonitorAccessImpl;
+
+  factory _TenvioMonitorAccess.fromJson(Map<String, dynamic> json) =
+      _$TenvioMonitorAccessImpl.fromJson;
+
+  @override
+
+  /// [reception] is the reception of the monitor access.
+  bool get reception;
+  @override
+
+  /// [warehouse] is the warehouse of the monitor access.
+  bool get warehouse;
+  @override
+
+  /// [dispatch] is the dispatch of the monitor access.
+  bool get dispatch;
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioMonitorAccessImplCopyWith<_$TenvioMonitorAccessImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TenvioMonitorAccessInput _$TenvioMonitorAccessInputFromJson(
+    Map<String, dynamic> json) {
+  return _TenvioMonitorAccessInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioMonitorAccessInput {
+  /// [reception] is the reception of the monitor access.
+  bool get reception => throw _privateConstructorUsedError;
+
+  /// [reception] is the reception of the monitor access.
+  set reception(bool value) => throw _privateConstructorUsedError;
+
+  /// [warehouse] is the warehouse of the monitor access.
+  bool get warehouse => throw _privateConstructorUsedError;
+
+  /// [warehouse] is the warehouse of the monitor access.
+  set warehouse(bool value) => throw _privateConstructorUsedError;
+
+  /// [dispatch] is the dispatch of the monitor access.
+  bool get dispatch => throw _privateConstructorUsedError;
+
+  /// [dispatch] is the dispatch of the monitor access.
+  set dispatch(bool value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioMonitorAccessInputCopyWith<TenvioMonitorAccessInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioMonitorAccessInputCopyWith<$Res> {
+  factory $TenvioMonitorAccessInputCopyWith(TenvioMonitorAccessInput value,
+          $Res Function(TenvioMonitorAccessInput) then) =
+      _$TenvioMonitorAccessInputCopyWithImpl<$Res, TenvioMonitorAccessInput>;
+  @useResult
+  $Res call({bool reception, bool warehouse, bool dispatch});
+}
+
+/// @nodoc
+class _$TenvioMonitorAccessInputCopyWithImpl<$Res,
+        $Val extends TenvioMonitorAccessInput>
+    implements $TenvioMonitorAccessInputCopyWith<$Res> {
+  _$TenvioMonitorAccessInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reception = null,
+    Object? warehouse = null,
+    Object? dispatch = null,
+  }) {
+    return _then(_value.copyWith(
+      reception: null == reception
+          ? _value.reception
+          : reception // ignore: cast_nullable_to_non_nullable
+              as bool,
+      warehouse: null == warehouse
+          ? _value.warehouse
+          : warehouse // ignore: cast_nullable_to_non_nullable
+              as bool,
+      dispatch: null == dispatch
+          ? _value.dispatch
+          : dispatch // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioMonitorAccessInputImplCopyWith<$Res>
+    implements $TenvioMonitorAccessInputCopyWith<$Res> {
+  factory _$$TenvioMonitorAccessInputImplCopyWith(
+          _$TenvioMonitorAccessInputImpl value,
+          $Res Function(_$TenvioMonitorAccessInputImpl) then) =
+      __$$TenvioMonitorAccessInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool reception, bool warehouse, bool dispatch});
+}
+
+/// @nodoc
+class __$$TenvioMonitorAccessInputImplCopyWithImpl<$Res>
+    extends _$TenvioMonitorAccessInputCopyWithImpl<$Res,
+        _$TenvioMonitorAccessInputImpl>
+    implements _$$TenvioMonitorAccessInputImplCopyWith<$Res> {
+  __$$TenvioMonitorAccessInputImplCopyWithImpl(
+      _$TenvioMonitorAccessInputImpl _value,
+      $Res Function(_$TenvioMonitorAccessInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? reception = null,
+    Object? warehouse = null,
+    Object? dispatch = null,
+  }) {
+    return _then(_$TenvioMonitorAccessInputImpl(
+      reception: null == reception
+          ? _value.reception
+          : reception // ignore: cast_nullable_to_non_nullable
+              as bool,
+      warehouse: null == warehouse
+          ? _value.warehouse
+          : warehouse // ignore: cast_nullable_to_non_nullable
+              as bool,
+      dispatch: null == dispatch
+          ? _value.dispatch
+          : dispatch // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioMonitorAccessInputImpl implements _TenvioMonitorAccessInput {
+  _$TenvioMonitorAccessInputImpl(
+      {this.reception = false, this.warehouse = false, this.dispatch = false});
+
+  factory _$TenvioMonitorAccessInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioMonitorAccessInputImplFromJson(json);
+
+  /// [reception] is the reception of the monitor access.
+  @override
+  @JsonKey()
+  bool reception;
+
+  /// [warehouse] is the warehouse of the monitor access.
+  @override
+  @JsonKey()
+  bool warehouse;
+
+  /// [dispatch] is the dispatch of the monitor access.
+  @override
+  @JsonKey()
+  bool dispatch;
+
+  @override
+  String toString() {
+    return 'TenvioMonitorAccessInput(reception: $reception, warehouse: $warehouse, dispatch: $dispatch)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioMonitorAccessInputImplCopyWith<_$TenvioMonitorAccessInputImpl>
+      get copyWith => __$$TenvioMonitorAccessInputImplCopyWithImpl<
+          _$TenvioMonitorAccessInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioMonitorAccessInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioMonitorAccessInput implements TenvioMonitorAccessInput {
+  factory _TenvioMonitorAccessInput(
+      {bool reception,
+      bool warehouse,
+      bool dispatch}) = _$TenvioMonitorAccessInputImpl;
+
+  factory _TenvioMonitorAccessInput.fromJson(Map<String, dynamic> json) =
+      _$TenvioMonitorAccessInputImpl.fromJson;
+
+  @override
+
+  /// [reception] is the reception of the monitor access.
+  bool get reception;
+
+  /// [reception] is the reception of the monitor access.
+  set reception(bool value);
+  @override
+
+  /// [warehouse] is the warehouse of the monitor access.
+  bool get warehouse;
+
+  /// [warehouse] is the warehouse of the monitor access.
+  set warehouse(bool value);
+  @override
+
+  /// [dispatch] is the dispatch of the monitor access.
+  bool get dispatch;
+
+  /// [dispatch] is the dispatch of the monitor access.
+  set dispatch(bool value);
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioMonitorAccessInputImplCopyWith<_$TenvioMonitorAccessInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

@@ -564,3 +564,35 @@ Map<String, dynamic> _$$OrderItemQuantityInputImplToJson(
       'matrixId': instance.matrixId,
       'quantity': instance.quantity,
     };
+
+_$TenvioMonitorAccessImpl _$$TenvioMonitorAccessImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioMonitorAccessImpl(
+      reception: json['reception'] as bool,
+      warehouse: json['warehouse'] as bool,
+      dispatch: json['dispatch'] as bool,
+    );
+
+Map<String, dynamic> _$$TenvioMonitorAccessImplToJson(
+        _$TenvioMonitorAccessImpl instance) =>
+    <String, dynamic>{
+      'reception': instance.reception,
+      'warehouse': instance.warehouse,
+      'dispatch': instance.dispatch,
+    };
+
+_$TenvioMonitorAccessInputImpl _$$TenvioMonitorAccessInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioMonitorAccessInputImpl(
+      reception: json['reception'] as bool? ?? false,
+      warehouse: json['warehouse'] as bool? ?? false,
+      dispatch: json['dispatch'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$$TenvioMonitorAccessInputImplToJson(
+        _$TenvioMonitorAccessInputImpl instance) =>
+    <String, dynamic>{
+      'reception': instance.reception,
+      'warehouse': instance.warehouse,
+      'dispatch': instance.dispatch,
+    };

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.22
+
+- New models `TenvioMonitorAccess` and `TenvioMonitorAccessInput`
+
 ## 3.2.21
 - New enum `TenvioDestinationType` for `TenvioDestinationTypeOrNullConverter`
 - Changed `TenvioDestinationType` to `TenvioOrderDestinationType`
