@@ -13,9 +13,9 @@ class CustomField with _$CustomField {
   factory CustomField.fromJson(Map<String, dynamic> json) => _$CustomFieldFromJson(json);
 }
 
-@freezed
+@unfreezed
 class CustomFieldInput with _$CustomFieldInput {
-  const factory CustomFieldInput({
+  factory CustomFieldInput({
     String? id,
     @Default('') String name,
     @Default('') String value,

@@ -9841,9 +9841,13 @@ CustomFieldInput _$CustomFieldInputFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$CustomFieldInput {
   String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
+  set value(String value) => throw _privateConstructorUsedError;
   bool get isFixed => throw _privateConstructorUsedError;
+  set isFixed(bool value) => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -9950,43 +9954,28 @@ class __$$CustomFieldInputImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$CustomFieldInputImpl implements _CustomFieldInput {
-  const _$CustomFieldInputImpl(
+  _$CustomFieldInputImpl(
       {this.id, this.name = '', this.value = '', this.isFixed = false});
 
   factory _$CustomFieldInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$CustomFieldInputImplFromJson(json);
 
   @override
-  final String? id;
+  String? id;
   @override
   @JsonKey()
-  final String name;
+  String name;
   @override
   @JsonKey()
-  final String value;
+  String value;
   @override
   @JsonKey()
-  final bool isFixed;
+  bool isFixed;
 
   @override
   String toString() {
     return 'CustomFieldInput(id: $id, name: $name, value: $value, isFixed: $isFixed)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$CustomFieldInputImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.value, value) || other.value == value) &&
-            (identical(other.isFixed, isFixed) || other.isFixed == isFixed));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name, value, isFixed);
 
   @JsonKey(ignore: true)
   @override
@@ -10004,23 +9993,27 @@ class _$CustomFieldInputImpl implements _CustomFieldInput {
 }
 
 abstract class _CustomFieldInput implements CustomFieldInput {
-  const factory _CustomFieldInput(
-      {final String? id,
-      final String name,
-      final String value,
-      final bool isFixed}) = _$CustomFieldInputImpl;
+  factory _CustomFieldInput(
+      {String? id,
+      String name,
+      String value,
+      bool isFixed}) = _$CustomFieldInputImpl;
 
   factory _CustomFieldInput.fromJson(Map<String, dynamic> json) =
       _$CustomFieldInputImpl.fromJson;
 
   @override
   String? get id;
+  set id(String? value);
   @override
   String get name;
+  set name(String value);
   @override
   String get value;
+  set value(String value);
   @override
   bool get isFixed;
+  set isFixed(bool value);
   @override
   @JsonKey(ignore: true)
   _$$CustomFieldInputImplCopyWith<_$CustomFieldInputImpl> get copyWith =>

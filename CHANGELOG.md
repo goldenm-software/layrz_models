@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.25
+
+- Changed `@freezed` to `@unfreezed` on `CustomFieldInput` model
+
 ## 3.2.24
 
 - Added `id` field to `CustomFieldInput` model
