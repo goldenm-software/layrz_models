@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.24
+
+- Added `id` field to `CustomFieldInput` model
+
 ## 3.2.23
 
 - Relocated `Asset` model to a submodule

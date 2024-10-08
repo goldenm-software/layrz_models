@@ -879,6 +879,7 @@ Map<String, dynamic> _$$CustomFieldImplToJson(_$CustomFieldImpl instance) =>
 _$CustomFieldInputImpl _$$CustomFieldInputImplFromJson(
         Map<String, dynamic> json) =>
     _$CustomFieldInputImpl(
+      id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       value: json['value'] as String? ?? '',
       isFixed: json['isFixed'] as bool? ?? false,
@@ -887,6 +888,7 @@ _$CustomFieldInputImpl _$$CustomFieldInputImplFromJson(
 Map<String, dynamic> _$$CustomFieldInputImplToJson(
         _$CustomFieldInputImpl instance) =>
     <String, dynamic>{
+      'id': instance.id,
       'name': instance.name,
       'value': instance.value,
       'isFixed': instance.isFixed,

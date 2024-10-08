@@ -9840,6 +9840,7 @@ CustomFieldInput _$CustomFieldInputFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CustomFieldInput {
+  String? get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
   bool get isFixed => throw _privateConstructorUsedError;
@@ -9856,7 +9857,7 @@ abstract class $CustomFieldInputCopyWith<$Res> {
           CustomFieldInput value, $Res Function(CustomFieldInput) then) =
       _$CustomFieldInputCopyWithImpl<$Res, CustomFieldInput>;
   @useResult
-  $Res call({String name, String value, bool isFixed});
+  $Res call({String? id, String name, String value, bool isFixed});
 }
 
 /// @nodoc
@@ -9872,11 +9873,16 @@ class _$CustomFieldInputCopyWithImpl<$Res, $Val extends CustomFieldInput>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = null,
     Object? value = null,
     Object? isFixed = null,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -9901,7 +9907,7 @@ abstract class _$$CustomFieldInputImplCopyWith<$Res>
       __$$CustomFieldInputImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String name, String value, bool isFixed});
+  $Res call({String? id, String name, String value, bool isFixed});
 }
 
 /// @nodoc
@@ -9915,11 +9921,16 @@ class __$$CustomFieldInputImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = null,
     Object? value = null,
     Object? isFixed = null,
   }) {
     return _then(_$CustomFieldInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -9940,11 +9951,13 @@ class __$$CustomFieldInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$CustomFieldInputImpl implements _CustomFieldInput {
   const _$CustomFieldInputImpl(
-      {this.name = '', this.value = '', this.isFixed = false});
+      {this.id, this.name = '', this.value = '', this.isFixed = false});
 
   factory _$CustomFieldInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$CustomFieldInputImplFromJson(json);
 
+  @override
+  final String? id;
   @override
   @JsonKey()
   final String name;
@@ -9957,7 +9970,7 @@ class _$CustomFieldInputImpl implements _CustomFieldInput {
 
   @override
   String toString() {
-    return 'CustomFieldInput(name: $name, value: $value, isFixed: $isFixed)';
+    return 'CustomFieldInput(id: $id, name: $name, value: $value, isFixed: $isFixed)';
   }
 
   @override
@@ -9965,6 +9978,7 @@ class _$CustomFieldInputImpl implements _CustomFieldInput {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CustomFieldInputImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.value, value) || other.value == value) &&
             (identical(other.isFixed, isFixed) || other.isFixed == isFixed));
@@ -9972,7 +9986,7 @@ class _$CustomFieldInputImpl implements _CustomFieldInput {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, value, isFixed);
+  int get hashCode => Object.hash(runtimeType, id, name, value, isFixed);
 
   @JsonKey(ignore: true)
   @override
@@ -9991,13 +10005,16 @@ class _$CustomFieldInputImpl implements _CustomFieldInput {
 
 abstract class _CustomFieldInput implements CustomFieldInput {
   const factory _CustomFieldInput(
-      {final String name,
+      {final String? id,
+      final String name,
       final String value,
       final bool isFixed}) = _$CustomFieldInputImpl;
 
   factory _CustomFieldInput.fromJson(Map<String, dynamic> json) =
       _$CustomFieldInputImpl.fromJson;
 
+  @override
+  String? get id;
   @override
   String get name;
   @override
