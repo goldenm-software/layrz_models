@@ -1079,6 +1079,294 @@ abstract class _MappitLaborHour implements MappitLaborHour {
       throw _privateConstructorUsedError;
 }
 
+MappitLaborHourInput _$MappitLaborHourInputFromJson(Map<String, dynamic> json) {
+  return _MappitLaborHourInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MappitLaborHourInput {
+  /// [id] represents the labor hour ID.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] represents the labor hour ID.
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// [weekday] represents the labor hour weekday.
+  @WeekdayConverter()
+  Weekday get weekday => throw _privateConstructorUsedError;
+
+  /// [weekday] represents the labor hour weekday.
+  @WeekdayConverter()
+  set weekday(Weekday value) => throw _privateConstructorUsedError;
+
+  /// [administrative] represents the labor hour administrative time.
+  @DurationConverter()
+  Duration get administrative => throw _privateConstructorUsedError;
+
+  /// [administrative] represents the labor hour administrative time.
+  @DurationConverter()
+  set administrative(Duration value) => throw _privateConstructorUsedError;
+
+  /// [f2f] represents the labor hour face-to-face time.
+  @DurationConverter()
+  Duration get f2f => throw _privateConstructorUsedError;
+
+  /// [f2f] represents the labor hour face-to-face time.
+  @DurationConverter()
+  set f2f(Duration value) => throw _privateConstructorUsedError;
+
+  /// [other] represents the labor hour other time.
+  @DurationConverter()
+  Duration get other => throw _privateConstructorUsedError;
+
+  /// [other] represents the labor hour other time.
+  @DurationConverter()
+  set other(Duration value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MappitLaborHourInputCopyWith<MappitLaborHourInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MappitLaborHourInputCopyWith<$Res> {
+  factory $MappitLaborHourInputCopyWith(MappitLaborHourInput value,
+          $Res Function(MappitLaborHourInput) then) =
+      _$MappitLaborHourInputCopyWithImpl<$Res, MappitLaborHourInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      @WeekdayConverter() Weekday weekday,
+      @DurationConverter() Duration administrative,
+      @DurationConverter() Duration f2f,
+      @DurationConverter() Duration other});
+}
+
+/// @nodoc
+class _$MappitLaborHourInputCopyWithImpl<$Res,
+        $Val extends MappitLaborHourInput>
+    implements $MappitLaborHourInputCopyWith<$Res> {
+  _$MappitLaborHourInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? weekday = null,
+    Object? administrative = null,
+    Object? f2f = null,
+    Object? other = null,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      weekday: null == weekday
+          ? _value.weekday
+          : weekday // ignore: cast_nullable_to_non_nullable
+              as Weekday,
+      administrative: null == administrative
+          ? _value.administrative
+          : administrative // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      f2f: null == f2f
+          ? _value.f2f
+          : f2f // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      other: null == other
+          ? _value.other
+          : other // ignore: cast_nullable_to_non_nullable
+              as Duration,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MappitLaborHourInputImplCopyWith<$Res>
+    implements $MappitLaborHourInputCopyWith<$Res> {
+  factory _$$MappitLaborHourInputImplCopyWith(_$MappitLaborHourInputImpl value,
+          $Res Function(_$MappitLaborHourInputImpl) then) =
+      __$$MappitLaborHourInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      @WeekdayConverter() Weekday weekday,
+      @DurationConverter() Duration administrative,
+      @DurationConverter() Duration f2f,
+      @DurationConverter() Duration other});
+}
+
+/// @nodoc
+class __$$MappitLaborHourInputImplCopyWithImpl<$Res>
+    extends _$MappitLaborHourInputCopyWithImpl<$Res, _$MappitLaborHourInputImpl>
+    implements _$$MappitLaborHourInputImplCopyWith<$Res> {
+  __$$MappitLaborHourInputImplCopyWithImpl(_$MappitLaborHourInputImpl _value,
+      $Res Function(_$MappitLaborHourInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? weekday = null,
+    Object? administrative = null,
+    Object? f2f = null,
+    Object? other = null,
+  }) {
+    return _then(_$MappitLaborHourInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      weekday: null == weekday
+          ? _value.weekday
+          : weekday // ignore: cast_nullable_to_non_nullable
+              as Weekday,
+      administrative: null == administrative
+          ? _value.administrative
+          : administrative // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      f2f: null == f2f
+          ? _value.f2f
+          : f2f // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      other: null == other
+          ? _value.other
+          : other // ignore: cast_nullable_to_non_nullable
+              as Duration,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MappitLaborHourInputImpl implements _MappitLaborHourInput {
+  _$MappitLaborHourInputImpl(
+      {this.id,
+      @WeekdayConverter() required this.weekday,
+      @DurationConverter() this.administrative = const Duration(minutes: 0),
+      @DurationConverter() this.f2f = const Duration(minutes: 0),
+      @DurationConverter() this.other = const Duration(minutes: 0)});
+
+  factory _$MappitLaborHourInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MappitLaborHourInputImplFromJson(json);
+
+  /// [id] represents the labor hour ID.
+  @override
+  String? id;
+
+  /// [weekday] represents the labor hour weekday.
+  @override
+  @WeekdayConverter()
+  Weekday weekday;
+
+  /// [administrative] represents the labor hour administrative time.
+  @override
+  @JsonKey()
+  @DurationConverter()
+  Duration administrative;
+
+  /// [f2f] represents the labor hour face-to-face time.
+  @override
+  @JsonKey()
+  @DurationConverter()
+  Duration f2f;
+
+  /// [other] represents the labor hour other time.
+  @override
+  @JsonKey()
+  @DurationConverter()
+  Duration other;
+
+  @override
+  String toString() {
+    return 'MappitLaborHourInput(id: $id, weekday: $weekday, administrative: $administrative, f2f: $f2f, other: $other)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MappitLaborHourInputImplCopyWith<_$MappitLaborHourInputImpl>
+      get copyWith =>
+          __$$MappitLaborHourInputImplCopyWithImpl<_$MappitLaborHourInputImpl>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MappitLaborHourInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MappitLaborHourInput implements MappitLaborHourInput {
+  factory _MappitLaborHourInput(
+      {String? id,
+      @WeekdayConverter() required Weekday weekday,
+      @DurationConverter() Duration administrative,
+      @DurationConverter() Duration f2f,
+      @DurationConverter() Duration other}) = _$MappitLaborHourInputImpl;
+
+  factory _MappitLaborHourInput.fromJson(Map<String, dynamic> json) =
+      _$MappitLaborHourInputImpl.fromJson;
+
+  @override
+
+  /// [id] represents the labor hour ID.
+  String? get id;
+
+  /// [id] represents the labor hour ID.
+  set id(String? value);
+  @override
+
+  /// [weekday] represents the labor hour weekday.
+  @WeekdayConverter()
+  Weekday get weekday;
+
+  /// [weekday] represents the labor hour weekday.
+  @WeekdayConverter()
+  set weekday(Weekday value);
+  @override
+
+  /// [administrative] represents the labor hour administrative time.
+  @DurationConverter()
+  Duration get administrative;
+
+  /// [administrative] represents the labor hour administrative time.
+  @DurationConverter()
+  set administrative(Duration value);
+  @override
+
+  /// [f2f] represents the labor hour face-to-face time.
+  @DurationConverter()
+  Duration get f2f;
+
+  /// [f2f] represents the labor hour face-to-face time.
+  @DurationConverter()
+  set f2f(Duration value);
+  @override
+
+  /// [other] represents the labor hour other time.
+  @DurationConverter()
+  Duration get other;
+
+  /// [other] represents the labor hour other time.
+  @DurationConverter()
+  set other(Duration value);
+  @override
+  @JsonKey(ignore: true)
+  _$$MappitLaborHourInputImplCopyWith<_$MappitLaborHourInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 MappitProfileGeofence _$MappitProfileGeofenceFromJson(
     Map<String, dynamic> json) {
   return _MappitProfileGeofence.fromJson(json);

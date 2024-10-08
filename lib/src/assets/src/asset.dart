@@ -1,4 +1,4 @@
-part of '../layrz_models.dart';
+part of '../assets.dart';
 
 @freezed
 class Asset with _$Asset {
@@ -111,7 +111,7 @@ class Asset with _$Asset {
     /// [ownerId] is the ID of the user owner of this asset
     String? ownerId,
 
-    /// [loginInfo] refers to the login information of the asset.
+    /// [loginInfo] refers to the login inInputation of the asset.
     AssetLoginInfo? loginInfo,
 
     /// [authenticationCard] refers to the authentication card of the asset.
@@ -168,146 +168,43 @@ class Asset with _$Asset {
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
 }
 
-@freezed
-class ContactInfo with _$ContactInfo {
-  const factory ContactInfo({
+@unfreezed
+class AssetInput with _$AssetInput {
+  factory AssetInput({
+    String? id,
     @Default('') String name,
-    @Default('') String email,
-    @Default('') String phone,
-  }) = _ContactInfo;
+    String? kindId,
+    @Default('') String plate,
+    @Default('') String vin,
+    @Default([]) List<ContactInfoInput> contacts,
+    required ConnectionInput connection,
+    @AssetModeConverter() @Default(AssetMode.single) AssetMode mode,
+    String? primaryId,
+    @Default([]) List<String> authenticatedUsersIds,
+    @Default([]) List<String> authenticatedAssetsIds,
+    @Default([]) List<String> externalIdentifiers,
+    @Default([]) List<String> devicesIds,
+    @Default([]) List<String> childrenIds,
+    @Default([]) List<String> referencesIds,
+    @Default([]) List<CustomFieldInput> customFields,
+    @Default([]) List<SensorInput> sensors,
+    AvatarInput? dynamicIcon,
+    StaticPositionInput? staticPosition,
+    AssetLoginInfoInput? loginInfo,
+    List<ZonePointInput>? points,
 
-  factory ContactInfo.fromJson(Map<String, dynamic> json) => _$ContactInfoFromJson(json);
-}
+    // ATS Specific fields
+    @Default('') String nfcIdentifier,
+    String? authenticationCardId,
+    @Default([]) List<String> linkedSupplyPointAssetsIds,
+    @Default([]) List<String> geofencesIds,
 
-@freezed
-class AssetLoginInfo with _$AssetLoginInfo {
-  const factory AssetLoginInfo({
-    /// [enabled] is the login status of the asset.
-    required bool enabled,
+    // Mapppit specific fields
+    @Default([]) List<MappitLaborHourInput> mappitLaborHours,
+    @Default(TimeOfDay(hour: 9, minute: 0)) @TimeOfDayConverter() TimeOfDay mappitLaborStartTime,
+    @Default(TimeOfDay(hour: 18, minute: 0)) @TimeOfDayConverter() TimeOfDay mappitLaborEndTime,
+    @Default([]) List<String> mappitSecondaryRoutesIds,
+  }) = _AssetInput;
 
-    /// [email] is the login email of the asset.
-    String? email,
-
-    /// [username] is the login username of the asset.
-    String? username,
-  }) = _AssetLoginInfo;
-
-  factory AssetLoginInfo.fromJson(Map<String, dynamic> json) => _$AssetLoginInfoFromJson(json);
-}
-
-@freezed
-class StaticPosition with _$StaticPosition {
-  const factory StaticPosition({
-    /// [latitude] is the latitude of the asset.
-    double? latitude,
-
-    /// [longitude] is the longitude of the asset.
-    double? longitude,
-
-    /// [altitude] is the altitude of the asset.
-    double? altitude,
-  }) = _StaticPosition;
-
-  factory StaticPosition.fromJson(Map<String, dynamic> json) => _$StaticPositionFromJson(json);
-}
-
-@freezed
-class ZonePoint with _$ZonePoint {
-  const factory ZonePoint({
-    /// [latitude] is the latitude of the point
-    required double latitude,
-
-    /// [longitude] is the longitude of the point
-    required double longitude,
-  }) = _ZonePoint;
-
-  factory ZonePoint.fromJson(Map<String, dynamic> json) => _$ZonePointFromJson(json);
-}
-
-enum AssetMode {
-  /// [AssetMode.single] is the default mode for an asset. It means that the asset is a single device.
-  /// Layrz API definition: SINGLE
-  single,
-
-  /// [AssetMode.multiple] means that the asset is a cluster of devices.
-  /// Layrz API definition: MULTIPLE
-  multiple,
-
-  /// [AssetMode.assetmultiple] means that the asset is a cluster of assets.
-  /// Layrz API definition: ASSETMULTIPLE
-  assetmultiple,
-
-  /// [AssetMode.disconnected] means that the asset is a disconnected device.
-  /// Layrz API definition: DISCONNECTED
-  disconnected,
-
-  /// [AssetMode.fixed] means that the asset is a static asset.
-  /// Layrz API definition: STATIC
-  fixed,
-
-  /// [AssetMode.zone] means that the asset is a zone. Like a Geofence
-  /// Layrz API definition: ZONE
-  zone,
-  ;
-
-  @override
-  String toString() => toJson();
-  String toJson() {
-    switch (this) {
-      case AssetMode.multiple:
-        return 'MULTIPLE';
-      case AssetMode.assetmultiple:
-        return 'ASSETMULTIPLE';
-      case AssetMode.disconnected:
-        return 'DISCONNECTED';
-      case AssetMode.fixed:
-        return 'STATIC';
-      case AssetMode.zone:
-        return 'ZONE';
-      case AssetMode.single:
-      default:
-        return 'SINGLE';
-    }
-  }
-
-  static AssetMode fromJson(String json) {
-    switch (json) {
-      case 'MULTIPLE':
-        return AssetMode.multiple;
-      case 'ASSETMULTIPLE':
-        return AssetMode.assetmultiple;
-      case 'DISCONNECTED':
-        return AssetMode.disconnected;
-      case 'STATIC':
-        return AssetMode.fixed;
-      case 'ZONE':
-        return AssetMode.zone;
-      case 'SINGLE':
-      default:
-        return AssetMode.single;
-    }
-  }
-}
-
-class AssetModeOrNullConverter implements JsonConverter<AssetMode?, String?> {
-  const AssetModeOrNullConverter();
-
-  @override
-  AssetMode? fromJson(String? json) {
-    if (json == null) return null;
-    return AssetMode.fromJson(json);
-  }
-
-  @override
-  String? toJson(AssetMode? object) => object?.toJson();
-}
-
-class AssetModeConverter implements JsonConverter<AssetMode, String> {
-  const AssetModeConverter();
-
-  @override
-  AssetMode fromJson(String json) => AssetMode.fromJson(json);
-
-  @override
-  String toJson(AssetMode object) => object.toJson();
+  factory AssetInput.fromJson(Map<String, dynamic> json) => _$AssetInputFromJson(json);
 }

@@ -29,6 +29,8 @@ import 'src/exchange/exchange.dart';
 import 'src/commands/commands.dart';
 // import 'src/confiot/confiot.dart';
 import 'src/models/models.dart';
+import 'src/assets/assets.dart';
+import 'src/sensors/sensors.dart';
 
 // Internal exports
 export 'src/converters/converters.dart';
@@ -55,6 +57,8 @@ export 'src/builder/builder.dart';
 export 'src/commands/commands.dart';
 export 'src/confiot/confiot.dart';
 export 'src/models/models.dart';
+export 'src/assets/assets.dart';
+export 'src/sensors/sensors.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
@@ -70,7 +74,6 @@ part 'src/accessibility/shortcut.dart';
 part 'src/access.dart';
 part 'src/action.dart';
 part 'src/algorithm.dart';
-part 'src/asset.dart';
 part 'src/avatar.dart';
 part 'src/billing_plan.dart';
 part 'src/care_protocol.dart';
@@ -78,7 +81,6 @@ part 'src/case.dart';
 part 'src/category.dart';
 part 'src/checkpoint.dart';
 part 'src/cloud_entry.dart';
-part 'src/connection.dart';
 part 'src/country.dart';
 part 'src/credential_field.dart';
 part 'src/custom_field.dart';
@@ -99,7 +101,6 @@ part 'src/presets.dart';
 part 'src/profile.dart';
 part 'src/reference.dart';
 part 'src/report.dart';
-part 'src/sensor.dart';
 part 'src/suspended_service.dart';
 part 'src/tag.dart';
 part 'src/telemetry.dart';

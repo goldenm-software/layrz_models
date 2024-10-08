@@ -98,6 +98,33 @@ Map<String, dynamic> _$$MappitLaborHourImplToJson(
       'other': const DurationConverter().toJson(instance.other),
     };
 
+_$MappitLaborHourInputImpl _$$MappitLaborHourInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MappitLaborHourInputImpl(
+      id: json['id'] as String?,
+      weekday: const WeekdayConverter().fromJson(json['weekday'] as String),
+      administrative: json['administrative'] == null
+          ? const Duration(minutes: 0)
+          : const DurationConverter().fromJson(json['administrative'] as num),
+      f2f: json['f2f'] == null
+          ? const Duration(minutes: 0)
+          : const DurationConverter().fromJson(json['f2f'] as num),
+      other: json['other'] == null
+          ? const Duration(minutes: 0)
+          : const DurationConverter().fromJson(json['other'] as num),
+    );
+
+Map<String, dynamic> _$$MappitLaborHourInputImplToJson(
+        _$MappitLaborHourInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'weekday': const WeekdayConverter().toJson(instance.weekday),
+      'administrative':
+          const DurationConverter().toJson(instance.administrative),
+      'f2f': const DurationConverter().toJson(instance.f2f),
+      'other': const DurationConverter().toJson(instance.other),
+    };
+
 _$MappitProfileGeofenceImpl _$$MappitProfileGeofenceImplFromJson(
         Map<String, dynamic> json) =>
     _$MappitProfileGeofenceImpl(

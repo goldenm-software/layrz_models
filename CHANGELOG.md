@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.2.23
+
+- Relocated `Asset` model to a submodule
+- Relocated `Sensor` model to a submodule
+- New models `SensorInput` and `AssetInput` in the submodule with their respective dependencies
+
 ## 3.2.22
 
 - New models `TenvioMonitorAccess` and `TenvioMonitorAccessInput`
