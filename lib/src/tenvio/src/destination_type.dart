@@ -1,55 +1,87 @@
 part of '../tenvio.dart';
 
 enum TenvioDestinationType {
-  tenvioWarehouse,
-  tenvioUser,
-  unregisteredUser;
+  warehouse,
+  user,
+  unregisteredUser,
+  ;
+
+  @override
+  String toString() => toJson();
 
   String toJson() {
     switch (this) {
-      case TenvioDestinationType.tenvioWarehouse:
-
-        /// Another warehouse in the Tenvio system
+      case TenvioDestinationType.warehouse:
         return 'TENVIO_WAREHOUSE';
-      case TenvioDestinationType.tenvioUser:
-
-        /// A user registered in the Tenvio system
+      case TenvioDestinationType.user:
         return 'TENVIO_USER';
       case TenvioDestinationType.unregisteredUser:
-
-        /// A user not registered in the Tenvio system
         return 'UNREGISTERED_USER';
-      default:
-        throw Exception('Unknown TenvioDestinationType: $this');
     }
   }
 
   static TenvioDestinationType fromJson(String json) {
     switch (json) {
       case 'TENVIO_WAREHOUSE':
-        return TenvioDestinationType.tenvioWarehouse;
+        return TenvioDestinationType.warehouse;
       case 'TENVIO_USER':
-        return TenvioDestinationType.tenvioUser;
+        return TenvioDestinationType.user;
       case 'UNREGISTERED_USER':
         return TenvioDestinationType.unregisteredUser;
       default:
         throw Exception('Unknown TenvioDestinationType: $json');
     }
   }
+
+  IconData get icon {
+    switch (this) {
+      case TenvioDestinationType.warehouse:
+        return MdiIcons.warehouse;
+      case TenvioDestinationType.user:
+        return MdiIcons.account;
+      case TenvioDestinationType.unregisteredUser:
+        return MdiIcons.accountQuestion;
+    }
+  }
+
+  Color get color {
+    switch (this) {
+      case TenvioDestinationType.warehouse:
+        return Colors.lightBlue;
+      case TenvioDestinationType.user:
+        return Colors.teal;
+      case TenvioDestinationType.unregisteredUser:
+        return Colors.purple;
+    }
+  }
 }
 
-class TenvioDestinationTypeOrNullConverter implements JsonConverter<TenvioDestinationType?, Map<String, dynamic>?> {
-  const TenvioDestinationTypeOrNullConverter();
+class TenvioDestinationTypeConverter implements JsonConverter<TenvioDestinationType, String> {
+  const TenvioDestinationTypeConverter();
 
   @override
-  TenvioDestinationType? fromJson(Map<String, dynamic>? json) {
-    if (json == null) return null;
-    return const TenvioDestinationTypeOrNullConverter().fromJson(json);
+  TenvioDestinationType fromJson(String json) {
+    return TenvioDestinationType.fromJson(json);
   }
 
   @override
-  Map<String, dynamic>? toJson(TenvioDestinationType? object) {
+  String toJson(TenvioDestinationType object) {
+    return object.toJson();
+  }
+}
+
+class TenvioDestinationTypeOrNullConverter implements JsonConverter<TenvioDestinationType?, String?> {
+  const TenvioDestinationTypeOrNullConverter();
+
+  @override
+  TenvioDestinationType? fromJson(String? json) {
+    if (json == null) return null;
+    return TenvioDestinationType.fromJson(json);
+  }
+
+  @override
+  String? toJson(TenvioDestinationType? object) {
     if (object == null) return null;
-    return const TenvioDestinationTypeOrNullConverter().toJson(object);
+    return object.toJson();
   }
 }

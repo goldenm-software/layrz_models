@@ -7,7 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 // Internal imports
 import 'src/converters/converters.dart';
 import 'src/app/app.dart';
-import 'src/ats/ats.dart';
+// import 'src/ats/ats.dart';
 import 'src/external/external.dart';
 import 'src/concierge/concierge.dart';
 // import 'src/i18n/i18n.dart';

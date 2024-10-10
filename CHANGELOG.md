@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.26
+
+- Changes on Tenvio submodule
+
 ## 3.2.25
 
 - Changed `@freezed` to `@unfreezed` on `CustomFieldInput` model
