@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.2.28
+- Added `getColor()` in `AtsFuelSubType`
+
 ## 3.2.27
 
 - Moved Geofences' things to a submodule

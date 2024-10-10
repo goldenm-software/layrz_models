@@ -213,6 +213,43 @@ enum AtsFuelSubType {
         throw Exception("Unknown Basic fuel type");
     }
   }
+
+  Color getColor() {
+    switch (this) {
+      case AtsFuelSubType.dieselS500ComunA:
+      case AtsFuelSubType.dieselS500AditivadoA:
+      case AtsFuelSubType.dieselS500ComunB:
+      case AtsFuelSubType.dieselS500AditivadoB:
+        return const Color(0xff970c14);
+      case AtsFuelSubType.dieselS10A:
+      case AtsFuelSubType.dieselS10ComunB:
+      case AtsFuelSubType.dieselS10AditivadoB:
+        return const Color(0xffa8aa8f);
+      case AtsFuelSubType.gasolineComunA:
+      case AtsFuelSubType.gasolineNullA:
+      case AtsFuelSubType.gasolinePremiumA:
+      case AtsFuelSubType.gasolineComunC:
+      case AtsFuelSubType.gasolineAditivadaC:
+      case AtsFuelSubType.gasolinePremiumC:
+      case AtsFuelSubType.gasolineNullC:
+        return const Color(0xFF000000);
+      case AtsFuelSubType.ethanol:
+      case AtsFuelSubType.ethanolNull:
+        return const Color(0xFF000000);
+      case AtsFuelSubType.hydratedEthanolComun:
+      case AtsFuelSubType.hydratedEthanolAditivado:
+      case AtsFuelSubType.hydratedEthanolNull:
+        return const Color(0xFF000000);
+      case AtsFuelSubType.biodieselB100:
+        return const Color(0xFF000000);
+      case AtsFuelSubType.anidro:
+        return const Color(0xFF000000);
+      case AtsFuelSubType.marineDiesel:
+        return const Color(0xFF000000);
+      default:
+        return const Color(0xFF000000);
+    }
+  }
 }
 
 extension AtsFuelSubTypeExtension on AtsFuelSubType {
