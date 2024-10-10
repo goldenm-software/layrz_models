@@ -84,6 +84,28 @@ enum TenvioOrderStatus {
         return TenvioOrderStatus.unknown;
     }
   }
+
+  Color get color {
+    switch (this) {
+      case TenvioOrderStatus.pending:
+        return Colors.orange;
+      case TenvioOrderStatus.processing:
+        return Colors.blue;
+      case TenvioOrderStatus.waitingForPickUp:
+        return Colors.amber;
+      case TenvioOrderStatus.inTransit:
+        return Colors.blue;
+      case TenvioOrderStatus.delivered:
+        return Colors.green;
+      case TenvioOrderStatus.dropOffFailed:
+        return Colors.red;
+      case TenvioOrderStatus.returned:
+        return Colors.red;
+      case TenvioOrderStatus.unknown:
+      case TenvioOrderStatus.draft:
+        return Colors.grey;
+    }
+  }
 }
 
 class TenvioOrderStatusConverter implements JsonConverter<TenvioOrderStatus, String> {

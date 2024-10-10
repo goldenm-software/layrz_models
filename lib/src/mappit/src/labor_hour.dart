@@ -21,3 +21,26 @@ class MappitLaborHour with _$MappitLaborHour {
 
   factory MappitLaborHour.fromJson(Map<String, dynamic> json) => _$MappitLaborHourFromJson(json);
 }
+
+
+@unfreezed
+class MappitLaborHourInput with _$MappitLaborHourInput {
+  factory MappitLaborHourInput({
+    /// [id] represents the labor hour ID.
+    String? id,
+
+    /// [weekday] represents the labor hour weekday.
+    @WeekdayConverter() required Weekday weekday,
+
+    /// [administrative] represents the labor hour administrative time.
+    @Default(Duration(minutes: 0)) @DurationConverter() Duration administrative,
+
+    /// [f2f] represents the labor hour face-to-face time.
+    @Default(Duration(minutes: 0)) @DurationConverter() Duration f2f,
+
+    /// [other] represents the labor hour other time.
+    @Default(Duration(minutes: 0)) @DurationConverter() Duration other,
+  }) = _MappitLaborHourInput;
+
+  factory MappitLaborHourInput.fromJson(Map<String, dynamic> json) => _$MappitLaborHourInputFromJson(json);
+}

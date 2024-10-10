@@ -1,5 +1,33 @@
 # Changelog
 
+## 3.2.27
+
+- Moved Geofences' things to a submodule
+- Added `GeofenceInput` and `GeofencePointInput` models
+- Tenvio changes
+
+## 3.2.26
+
+- Changes on Tenvio submodule
+
+## 3.2.25
+
+- Changed `@freezed` to `@unfreezed` on `CustomFieldInput` model
+
+## 3.2.24
+
+- Added `id` field to `CustomFieldInput` model
+
+## 3.2.23
+
+- Relocated `Asset` model to a submodule
+- Relocated `Sensor` model to a submodule
+- New models `SensorInput` and `AssetInput` in the submodule with their respective dependencies
+
+## 3.2.22
+
+- New models `TenvioMonitorAccess` and `TenvioMonitorAccessInput`
+
 ## 3.2.21
 - New enum `TenvioDestinationType` for `TenvioDestinationTypeOrNullConverter`
 - Changed `TenvioDestinationType` to `TenvioOrderDestinationType`
