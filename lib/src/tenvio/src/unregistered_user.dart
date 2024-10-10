@@ -3,9 +3,6 @@ part of '../tenvio.dart';
 @freezed
 class TenvioUnregisteredUser with _$TenvioUnregisteredUser {
   const factory TenvioUnregisteredUser({
-    /// [id] is the id of the customer.
-    required String id,
-
     /// [name] is the name of the customer.
     required String name,
 
@@ -31,8 +28,6 @@ class TenvioUnregisteredUser with _$TenvioUnregisteredUser {
 @unfreezed
 class TenvioUnregisteredUserInput with _$TenvioUnregisteredUserInput {
   factory TenvioUnregisteredUserInput({
-    /// [id] is the id of the customer.
-    String? id,
     /// [name] is the name of the customer.
     @Default('') String name,
 

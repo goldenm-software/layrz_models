@@ -312,7 +312,6 @@ Map<String, dynamic> _$$TenvioMatrixItemImplToJson(
 _$TenvioUnregisteredUserImpl _$$TenvioUnregisteredUserImplFromJson(
         Map<String, dynamic> json) =>
     _$TenvioUnregisteredUserImpl(
-      id: json['id'] as String,
       name: json['name'] as String,
       phone: json['phone'] as String?,
       address: json['address'] as String?,
@@ -324,7 +323,6 @@ _$TenvioUnregisteredUserImpl _$$TenvioUnregisteredUserImplFromJson(
 Map<String, dynamic> _$$TenvioUnregisteredUserImplToJson(
         _$TenvioUnregisteredUserImpl instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'name': instance.name,
       'phone': instance.phone,
       'address': instance.address,
@@ -336,7 +334,6 @@ Map<String, dynamic> _$$TenvioUnregisteredUserImplToJson(
 _$TenvioUnregisteredUserInputImpl _$$TenvioUnregisteredUserInputImplFromJson(
         Map<String, dynamic> json) =>
     _$TenvioUnregisteredUserInputImpl(
-      id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       phone: json['phone'] as String?,
       address: json['address'] as String?,
@@ -348,7 +345,6 @@ _$TenvioUnregisteredUserInputImpl _$$TenvioUnregisteredUserInputImplFromJson(
 Map<String, dynamic> _$$TenvioUnregisteredUserInputImplToJson(
         _$TenvioUnregisteredUserInputImpl instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'name': instance.name,
       'phone': instance.phone,
       'address': instance.address,

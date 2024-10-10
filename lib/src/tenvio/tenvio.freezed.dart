@@ -3717,9 +3717,6 @@ TenvioUnregisteredUser _$TenvioUnregisteredUserFromJson(
 
 /// @nodoc
 mixin _$TenvioUnregisteredUser {
-  /// [id] is the id of the customer.
-  String get id => throw _privateConstructorUsedError;
-
   /// [name] is the name of the customer.
   String get name => throw _privateConstructorUsedError;
 
@@ -3751,8 +3748,7 @@ abstract class $TenvioUnregisteredUserCopyWith<$Res> {
       _$TenvioUnregisteredUserCopyWithImpl<$Res, TenvioUnregisteredUser>;
   @useResult
   $Res call(
-      {String id,
-      String name,
+      {String name,
       String? phone,
       String? address,
       double? latitude,
@@ -3774,7 +3770,6 @@ class _$TenvioUnregisteredUserCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? name = null,
     Object? phone = freezed,
     Object? address = freezed,
@@ -3783,10 +3778,6 @@ class _$TenvioUnregisteredUserCopyWithImpl<$Res,
     Object? email = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -3825,8 +3816,7 @@ abstract class _$$TenvioUnregisteredUserImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String name,
+      {String name,
       String? phone,
       String? address,
       double? latitude,
@@ -3847,7 +3837,6 @@ class __$$TenvioUnregisteredUserImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? name = null,
     Object? phone = freezed,
     Object? address = freezed,
@@ -3856,10 +3845,6 @@ class __$$TenvioUnregisteredUserImplCopyWithImpl<$Res>
     Object? email = null,
   }) {
     return _then(_$TenvioUnregisteredUserImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -3892,8 +3877,7 @@ class __$$TenvioUnregisteredUserImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TenvioUnregisteredUserImpl implements _TenvioUnregisteredUser {
   const _$TenvioUnregisteredUserImpl(
-      {required this.id,
-      required this.name,
+      {required this.name,
       this.phone,
       this.address,
       this.latitude,
@@ -3902,10 +3886,6 @@ class _$TenvioUnregisteredUserImpl implements _TenvioUnregisteredUser {
 
   factory _$TenvioUnregisteredUserImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioUnregisteredUserImplFromJson(json);
-
-  /// [id] is the id of the customer.
-  @override
-  final String id;
 
   /// [name] is the name of the customer.
   @override
@@ -3933,7 +3913,7 @@ class _$TenvioUnregisteredUserImpl implements _TenvioUnregisteredUser {
 
   @override
   String toString() {
-    return 'TenvioUnregisteredUser(id: $id, name: $name, phone: $phone, address: $address, latitude: $latitude, longitude: $longitude, email: $email)';
+    return 'TenvioUnregisteredUser(name: $name, phone: $phone, address: $address, latitude: $latitude, longitude: $longitude, email: $email)';
   }
 
   @override
@@ -3941,7 +3921,6 @@ class _$TenvioUnregisteredUserImpl implements _TenvioUnregisteredUser {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioUnregisteredUserImpl &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.phone, phone) || other.phone == phone) &&
             (identical(other.address, address) || other.address == address) &&
@@ -3955,7 +3934,7 @@ class _$TenvioUnregisteredUserImpl implements _TenvioUnregisteredUser {
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, name, phone, address, latitude, longitude, email);
+      runtimeType, name, phone, address, latitude, longitude, email);
 
   @JsonKey(ignore: true)
   @override
@@ -3974,8 +3953,7 @@ class _$TenvioUnregisteredUserImpl implements _TenvioUnregisteredUser {
 
 abstract class _TenvioUnregisteredUser implements TenvioUnregisteredUser {
   const factory _TenvioUnregisteredUser(
-      {required final String id,
-      required final String name,
+      {required final String name,
       final String? phone,
       final String? address,
       final double? latitude,
@@ -3985,10 +3963,6 @@ abstract class _TenvioUnregisteredUser implements TenvioUnregisteredUser {
   factory _TenvioUnregisteredUser.fromJson(Map<String, dynamic> json) =
       _$TenvioUnregisteredUserImpl.fromJson;
 
-  @override
-
-  /// [id] is the id of the customer.
-  String get id;
   @override
 
   /// [name] is the name of the customer.
@@ -4026,12 +4000,6 @@ TenvioUnregisteredUserInput _$TenvioUnregisteredUserInputFromJson(
 
 /// @nodoc
 mixin _$TenvioUnregisteredUserInput {
-  /// [id] is the id of the customer.
-  String? get id => throw _privateConstructorUsedError;
-
-  /// [id] is the id of the customer.
-  set id(String? value) => throw _privateConstructorUsedError;
-
   /// [name] is the name of the customer.
   String get name => throw _privateConstructorUsedError;
 
@@ -4083,8 +4051,7 @@ abstract class $TenvioUnregisteredUserInputCopyWith<$Res> {
           TenvioUnregisteredUserInput>;
   @useResult
   $Res call(
-      {String? id,
-      String name,
+      {String name,
       String? phone,
       String? address,
       double? latitude,
@@ -4106,7 +4073,6 @@ class _$TenvioUnregisteredUserInputCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
     Object? name = null,
     Object? phone = freezed,
     Object? address = freezed,
@@ -4115,10 +4081,6 @@ class _$TenvioUnregisteredUserInputCopyWithImpl<$Res,
     Object? email = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -4157,8 +4119,7 @@ abstract class _$$TenvioUnregisteredUserInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? id,
-      String name,
+      {String name,
       String? phone,
       String? address,
       double? latitude,
@@ -4179,7 +4140,6 @@ class __$$TenvioUnregisteredUserInputImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
     Object? name = null,
     Object? phone = freezed,
     Object? address = freezed,
@@ -4188,10 +4148,6 @@ class __$$TenvioUnregisteredUserInputImplCopyWithImpl<$Res>
     Object? email = null,
   }) {
     return _then(_$TenvioUnregisteredUserInputImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -4225,8 +4181,7 @@ class __$$TenvioUnregisteredUserInputImplCopyWithImpl<$Res>
 class _$TenvioUnregisteredUserInputImpl
     implements _TenvioUnregisteredUserInput {
   _$TenvioUnregisteredUserInputImpl(
-      {this.id,
-      this.name = '',
+      {this.name = '',
       this.phone,
       this.address,
       this.latitude,
@@ -4236,10 +4191,6 @@ class _$TenvioUnregisteredUserInputImpl
   factory _$TenvioUnregisteredUserInputImpl.fromJson(
           Map<String, dynamic> json) =>
       _$$TenvioUnregisteredUserInputImplFromJson(json);
-
-  /// [id] is the id of the customer.
-  @override
-  String? id;
 
   /// [name] is the name of the customer.
   @override
@@ -4269,7 +4220,7 @@ class _$TenvioUnregisteredUserInputImpl
 
   @override
   String toString() {
-    return 'TenvioUnregisteredUserInput(id: $id, name: $name, phone: $phone, address: $address, latitude: $latitude, longitude: $longitude, email: $email)';
+    return 'TenvioUnregisteredUserInput(name: $name, phone: $phone, address: $address, latitude: $latitude, longitude: $longitude, email: $email)';
   }
 
   @JsonKey(ignore: true)
@@ -4290,8 +4241,7 @@ class _$TenvioUnregisteredUserInputImpl
 abstract class _TenvioUnregisteredUserInput
     implements TenvioUnregisteredUserInput {
   factory _TenvioUnregisteredUserInput(
-      {String? id,
-      String name,
+      {String name,
       String? phone,
       String? address,
       double? latitude,
@@ -4301,13 +4251,6 @@ abstract class _TenvioUnregisteredUserInput
   factory _TenvioUnregisteredUserInput.fromJson(Map<String, dynamic> json) =
       _$TenvioUnregisteredUserInputImpl.fromJson;
 
-  @override
-
-  /// [id] is the id of the customer.
-  String? get id;
-
-  /// [id] is the id of the customer.
-  set id(String? value);
   @override
 
   /// [name] is the name of the customer.

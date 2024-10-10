@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.2.27
+
+- Moved Geofences' things to a submodule
+- Added `GeofenceInput` and `GeofencePointInput` models
+- Tenvio changes
+
 ## 3.2.26
 
 - Changes on Tenvio submodule

@@ -31,6 +31,7 @@ import 'src/commands/commands.dart';
 import 'src/models/models.dart';
 import 'src/assets/assets.dart';
 import 'src/sensors/sensors.dart';
+import 'src/geofences/geofences.dart';
 
 // Internal exports
 export 'src/converters/converters.dart';
@@ -59,6 +60,7 @@ export 'src/confiot/confiot.dart';
 export 'src/models/models.dart';
 export 'src/assets/assets.dart';
 export 'src/sensors/sensors.dart';
+export 'src/geofences/geofences.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
@@ -91,7 +93,6 @@ part 'src/email_template.dart';
 part 'src/employee.dart';
 part 'src/function.dart';
 part 'src/generic_permission.dart';
-part 'src/geofence.dart';
 part 'src/guide.dart';
 part 'src/language.dart';
 part 'src/lint_errors.dart';
