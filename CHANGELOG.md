@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.30
+
+- Changes for Tenvio Pick & Pack ecosystem
+
 ## 3.2.29
 
 - Added `TenvioMatrixItemInput` and `TenvioItemInput` models

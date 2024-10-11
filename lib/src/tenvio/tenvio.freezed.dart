@@ -2340,12 +2340,6 @@ mixin _$TenvioItemQuantity {
   /// [matrix] Matrix item related to the order item quantity.
   TenvioMatrixItem? get matrix => throw _privateConstructorUsedError;
 
-  /// [orderId] ID of the order related to the order item quantity.
-  String? get orderId => throw _privateConstructorUsedError;
-
-  /// [order] Order related to the order item quantity.
-  TenvioOrder? get order => throw _privateConstructorUsedError;
-
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioItemQuantityCopyWith<TenvioItemQuantity> get copyWith =>
@@ -2358,15 +2352,9 @@ abstract class $TenvioItemQuantityCopyWith<$Res> {
           TenvioItemQuantity value, $Res Function(TenvioItemQuantity) then) =
       _$TenvioItemQuantityCopyWithImpl<$Res, TenvioItemQuantity>;
   @useResult
-  $Res call(
-      {int? quantity,
-      String? matrixId,
-      TenvioMatrixItem? matrix,
-      String? orderId,
-      TenvioOrder? order});
+  $Res call({int? quantity, String? matrixId, TenvioMatrixItem? matrix});
 
   $TenvioMatrixItemCopyWith<$Res>? get matrix;
-  $TenvioOrderCopyWith<$Res>? get order;
 }
 
 /// @nodoc
@@ -2385,8 +2373,6 @@ class _$TenvioItemQuantityCopyWithImpl<$Res, $Val extends TenvioItemQuantity>
     Object? quantity = freezed,
     Object? matrixId = freezed,
     Object? matrix = freezed,
-    Object? orderId = freezed,
-    Object? order = freezed,
   }) {
     return _then(_value.copyWith(
       quantity: freezed == quantity
@@ -2401,14 +2387,6 @@ class _$TenvioItemQuantityCopyWithImpl<$Res, $Val extends TenvioItemQuantity>
           ? _value.matrix
           : matrix // ignore: cast_nullable_to_non_nullable
               as TenvioMatrixItem?,
-      orderId: freezed == orderId
-          ? _value.orderId
-          : orderId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      order: freezed == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
-              as TenvioOrder?,
     ) as $Val);
   }
 
@@ -2423,18 +2401,6 @@ class _$TenvioItemQuantityCopyWithImpl<$Res, $Val extends TenvioItemQuantity>
       return _then(_value.copyWith(matrix: value) as $Val);
     });
   }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TenvioOrderCopyWith<$Res>? get order {
-    if (_value.order == null) {
-      return null;
-    }
-
-    return $TenvioOrderCopyWith<$Res>(_value.order!, (value) {
-      return _then(_value.copyWith(order: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
@@ -2445,17 +2411,10 @@ abstract class _$$TenvioItemQuantityImplCopyWith<$Res>
       __$$TenvioItemQuantityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int? quantity,
-      String? matrixId,
-      TenvioMatrixItem? matrix,
-      String? orderId,
-      TenvioOrder? order});
+  $Res call({int? quantity, String? matrixId, TenvioMatrixItem? matrix});
 
   @override
   $TenvioMatrixItemCopyWith<$Res>? get matrix;
-  @override
-  $TenvioOrderCopyWith<$Res>? get order;
 }
 
 /// @nodoc
@@ -2472,8 +2431,6 @@ class __$$TenvioItemQuantityImplCopyWithImpl<$Res>
     Object? quantity = freezed,
     Object? matrixId = freezed,
     Object? matrix = freezed,
-    Object? orderId = freezed,
-    Object? order = freezed,
   }) {
     return _then(_$TenvioItemQuantityImpl(
       quantity: freezed == quantity
@@ -2488,14 +2445,6 @@ class __$$TenvioItemQuantityImplCopyWithImpl<$Res>
           ? _value.matrix
           : matrix // ignore: cast_nullable_to_non_nullable
               as TenvioMatrixItem?,
-      orderId: freezed == orderId
-          ? _value.orderId
-          : orderId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      order: freezed == order
-          ? _value.order
-          : order // ignore: cast_nullable_to_non_nullable
-              as TenvioOrder?,
     ));
   }
 }
@@ -2503,8 +2452,7 @@ class __$$TenvioItemQuantityImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TenvioItemQuantityImpl implements _TenvioItemQuantity {
-  const _$TenvioItemQuantityImpl(
-      {this.quantity, this.matrixId, this.matrix, this.orderId, this.order});
+  const _$TenvioItemQuantityImpl({this.quantity, this.matrixId, this.matrix});
 
   factory _$TenvioItemQuantityImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioItemQuantityImplFromJson(json);
@@ -2521,17 +2469,9 @@ class _$TenvioItemQuantityImpl implements _TenvioItemQuantity {
   @override
   final TenvioMatrixItem? matrix;
 
-  /// [orderId] ID of the order related to the order item quantity.
-  @override
-  final String? orderId;
-
-  /// [order] Order related to the order item quantity.
-  @override
-  final TenvioOrder? order;
-
   @override
   String toString() {
-    return 'TenvioItemQuantity(quantity: $quantity, matrixId: $matrixId, matrix: $matrix, orderId: $orderId, order: $order)';
+    return 'TenvioItemQuantity(quantity: $quantity, matrixId: $matrixId, matrix: $matrix)';
   }
 
   @override
@@ -2543,15 +2483,12 @@ class _$TenvioItemQuantityImpl implements _TenvioItemQuantity {
                 other.quantity == quantity) &&
             (identical(other.matrixId, matrixId) ||
                 other.matrixId == matrixId) &&
-            (identical(other.matrix, matrix) || other.matrix == matrix) &&
-            (identical(other.orderId, orderId) || other.orderId == orderId) &&
-            (identical(other.order, order) || other.order == order));
+            (identical(other.matrix, matrix) || other.matrix == matrix));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, quantity, matrixId, matrix, orderId, order);
+  int get hashCode => Object.hash(runtimeType, quantity, matrixId, matrix);
 
   @JsonKey(ignore: true)
   @override
@@ -2572,9 +2509,7 @@ abstract class _TenvioItemQuantity implements TenvioItemQuantity {
   const factory _TenvioItemQuantity(
       {final int? quantity,
       final String? matrixId,
-      final TenvioMatrixItem? matrix,
-      final String? orderId,
-      final TenvioOrder? order}) = _$TenvioItemQuantityImpl;
+      final TenvioMatrixItem? matrix}) = _$TenvioItemQuantityImpl;
 
   factory _TenvioItemQuantity.fromJson(Map<String, dynamic> json) =
       _$TenvioItemQuantityImpl.fromJson;
@@ -2591,14 +2526,6 @@ abstract class _TenvioItemQuantity implements TenvioItemQuantity {
 
   /// [matrix] Matrix item related to the order item quantity.
   TenvioMatrixItem? get matrix;
-  @override
-
-  /// [orderId] ID of the order related to the order item quantity.
-  String? get orderId;
-  @override
-
-  /// [order] Order related to the order item quantity.
-  TenvioOrder? get order;
   @override
   @JsonKey(ignore: true)
   _$$TenvioItemQuantityImplCopyWith<_$TenvioItemQuantityImpl> get copyWith =>
@@ -2624,12 +2551,6 @@ mixin _$TenvioItemQuantityInput {
   /// [matrixId] ID of the matrix item related to the order item quantity.
   set matrixId(String? value) => throw _privateConstructorUsedError;
 
-  /// [orderId] ID of the order related to the order item quantity.
-  String? get orderId => throw _privateConstructorUsedError;
-
-  /// [orderId] ID of the order related to the order item quantity.
-  set orderId(String? value) => throw _privateConstructorUsedError;
-
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioItemQuantityInputCopyWith<TenvioItemQuantityInput> get copyWith =>
@@ -2642,7 +2563,7 @@ abstract class $TenvioItemQuantityInputCopyWith<$Res> {
           $Res Function(TenvioItemQuantityInput) then) =
       _$TenvioItemQuantityInputCopyWithImpl<$Res, TenvioItemQuantityInput>;
   @useResult
-  $Res call({int? quantity, String? matrixId, String? orderId});
+  $Res call({int? quantity, String? matrixId});
 }
 
 /// @nodoc
@@ -2661,7 +2582,6 @@ class _$TenvioItemQuantityInputCopyWithImpl<$Res,
   $Res call({
     Object? quantity = freezed,
     Object? matrixId = freezed,
-    Object? orderId = freezed,
   }) {
     return _then(_value.copyWith(
       quantity: freezed == quantity
@@ -2671,10 +2591,6 @@ class _$TenvioItemQuantityInputCopyWithImpl<$Res,
       matrixId: freezed == matrixId
           ? _value.matrixId
           : matrixId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      orderId: freezed == orderId
-          ? _value.orderId
-          : orderId // ignore: cast_nullable_to_non_nullable
               as String?,
     ) as $Val);
   }
@@ -2689,7 +2605,7 @@ abstract class _$$TenvioItemQuantityInputImplCopyWith<$Res>
       __$$TenvioItemQuantityInputImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? quantity, String? matrixId, String? orderId});
+  $Res call({int? quantity, String? matrixId});
 }
 
 /// @nodoc
@@ -2707,7 +2623,6 @@ class __$$TenvioItemQuantityInputImplCopyWithImpl<$Res>
   $Res call({
     Object? quantity = freezed,
     Object? matrixId = freezed,
-    Object? orderId = freezed,
   }) {
     return _then(_$TenvioItemQuantityInputImpl(
       quantity: freezed == quantity
@@ -2718,10 +2633,6 @@ class __$$TenvioItemQuantityInputImplCopyWithImpl<$Res>
           ? _value.matrixId
           : matrixId // ignore: cast_nullable_to_non_nullable
               as String?,
-      orderId: freezed == orderId
-          ? _value.orderId
-          : orderId // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -2729,7 +2640,7 @@ class __$$TenvioItemQuantityInputImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$TenvioItemQuantityInputImpl implements _TenvioItemQuantityInput {
-  _$TenvioItemQuantityInputImpl({this.quantity, this.matrixId, this.orderId});
+  _$TenvioItemQuantityInputImpl({this.quantity, this.matrixId});
 
   factory _$TenvioItemQuantityInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioItemQuantityInputImplFromJson(json);
@@ -2742,13 +2653,9 @@ class _$TenvioItemQuantityInputImpl implements _TenvioItemQuantityInput {
   @override
   String? matrixId;
 
-  /// [orderId] ID of the order related to the order item quantity.
-  @override
-  String? orderId;
-
   @override
   String toString() {
-    return 'TenvioItemQuantityInput(quantity: $quantity, matrixId: $matrixId, orderId: $orderId)';
+    return 'TenvioItemQuantityInput(quantity: $quantity, matrixId: $matrixId)';
   }
 
   @JsonKey(ignore: true)
@@ -2767,10 +2674,8 @@ class _$TenvioItemQuantityInputImpl implements _TenvioItemQuantityInput {
 }
 
 abstract class _TenvioItemQuantityInput implements TenvioItemQuantityInput {
-  factory _TenvioItemQuantityInput(
-      {int? quantity,
-      String? matrixId,
-      String? orderId}) = _$TenvioItemQuantityInputImpl;
+  factory _TenvioItemQuantityInput({int? quantity, String? matrixId}) =
+      _$TenvioItemQuantityInputImpl;
 
   factory _TenvioItemQuantityInput.fromJson(Map<String, dynamic> json) =
       _$TenvioItemQuantityInputImpl.fromJson;
@@ -2789,13 +2694,6 @@ abstract class _TenvioItemQuantityInput implements TenvioItemQuantityInput {
 
   /// [matrixId] ID of the matrix item related to the order item quantity.
   set matrixId(String? value);
-  @override
-
-  /// [orderId] ID of the order related to the order item quantity.
-  String? get orderId;
-
-  /// [orderId] ID of the order related to the order item quantity.
-  set orderId(String? value);
   @override
   @JsonKey(ignore: true)
   _$$TenvioItemQuantityInputImplCopyWith<_$TenvioItemQuantityInputImpl>
@@ -5550,7 +5448,7 @@ mixin _$TenvioOrder {
   List<User>? get packers => throw _privateConstructorUsedError;
 
   /// [packersIds] IDs of packers assigned to the order.
-  String? get packersIds => throw _privateConstructorUsedError;
+  List<String>? get packersIds => throw _privateConstructorUsedError;
 
   /// [itemQuantities] Items included in the order.
   List<TenvioItemQuantity>? get itemQuantities =>
@@ -5602,7 +5500,7 @@ abstract class $TenvioOrderCopyWith<$Res> {
       bool? requiresPhotos,
       bool? highPriority,
       List<User>? packers,
-      String? packersIds,
+      List<String>? packersIds,
       List<TenvioItemQuantity>? itemQuantities,
       List<TenvioItem>? items,
       String? packedImage,
@@ -5716,7 +5614,7 @@ class _$TenvioOrderCopyWithImpl<$Res, $Val extends TenvioOrder>
       packersIds: freezed == packersIds
           ? _value.packersIds
           : packersIds // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<String>?,
       itemQuantities: freezed == itemQuantities
           ? _value.itemQuantities
           : itemQuantities // ignore: cast_nullable_to_non_nullable
@@ -5815,7 +5713,7 @@ abstract class _$$TenvioOrderImplCopyWith<$Res>
       bool? requiresPhotos,
       bool? highPriority,
       List<User>? packers,
-      String? packersIds,
+      List<String>? packersIds,
       List<TenvioItemQuantity>? itemQuantities,
       List<TenvioItem>? items,
       String? packedImage,
@@ -5929,9 +5827,9 @@ class __$$TenvioOrderImplCopyWithImpl<$Res>
           : packers // ignore: cast_nullable_to_non_nullable
               as List<User>?,
       packersIds: freezed == packersIds
-          ? _value.packersIds
+          ? _value._packersIds
           : packersIds // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<String>?,
       itemQuantities: freezed == itemQuantities
           ? _value._itemQuantities
           : itemQuantities // ignore: cast_nullable_to_non_nullable
@@ -5979,7 +5877,7 @@ class _$TenvioOrderImpl extends _TenvioOrder {
       this.requiresPhotos,
       this.highPriority,
       final List<User>? packers,
-      this.packersIds,
+      final List<String>? packersIds,
       final List<TenvioItemQuantity>? itemQuantities,
       final List<TenvioItem>? items,
       this.packedImage,
@@ -5988,6 +5886,7 @@ class _$TenvioOrderImpl extends _TenvioOrder {
       @TimestampOrNullConverter() this.updatedAt})
       : _notes = notes,
         _packers = packers,
+        _packersIds = packersIds,
         _itemQuantities = itemQuantities,
         _items = items,
         _statusPhotos = statusPhotos,
@@ -6076,8 +5975,17 @@ class _$TenvioOrderImpl extends _TenvioOrder {
   }
 
   /// [packersIds] IDs of packers assigned to the order.
+  final List<String>? _packersIds;
+
+  /// [packersIds] IDs of packers assigned to the order.
   @override
-  final String? packersIds;
+  List<String>? get packersIds {
+    final value = _packersIds;
+    if (value == null) return null;
+    if (_packersIds is EqualUnmodifiableListView) return _packersIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   /// [itemQuantities] Items included in the order.
   final List<TenvioItemQuantity>? _itemQuantities;
@@ -6168,8 +6076,8 @@ class _$TenvioOrderImpl extends _TenvioOrder {
             (identical(other.highPriority, highPriority) ||
                 other.highPriority == highPriority) &&
             const DeepCollectionEquality().equals(other._packers, _packers) &&
-            (identical(other.packersIds, packersIds) ||
-                other.packersIds == packersIds) &&
+            const DeepCollectionEquality()
+                .equals(other._packersIds, _packersIds) &&
             const DeepCollectionEquality()
                 .equals(other._itemQuantities, _itemQuantities) &&
             const DeepCollectionEquality().equals(other._items, _items) &&
@@ -6202,7 +6110,7 @@ class _$TenvioOrderImpl extends _TenvioOrder {
         requiresPhotos,
         highPriority,
         const DeepCollectionEquality().hash(_packers),
-        packersIds,
+        const DeepCollectionEquality().hash(_packersIds),
         const DeepCollectionEquality().hash(_itemQuantities),
         const DeepCollectionEquality().hash(_items),
         packedImage,
@@ -6243,7 +6151,7 @@ abstract class _TenvioOrder extends TenvioOrder {
           final bool? requiresPhotos,
           final bool? highPriority,
           final List<User>? packers,
-          final String? packersIds,
+          final List<String>? packersIds,
           final List<TenvioItemQuantity>? itemQuantities,
           final List<TenvioItem>? items,
           final String? packedImage,
@@ -6321,7 +6229,7 @@ abstract class _TenvioOrder extends TenvioOrder {
   @override
 
   /// [packersIds] IDs of packers assigned to the order.
-  String? get packersIds;
+  List<String>? get packersIds;
   @override
 
   /// [itemQuantities] Items included in the order.

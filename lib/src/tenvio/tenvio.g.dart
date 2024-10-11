@@ -199,10 +199,6 @@ _$TenvioItemQuantityImpl _$$TenvioItemQuantityImplFromJson(
       matrix: json['matrix'] == null
           ? null
           : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
-      orderId: json['orderId'] as String?,
-      order: json['order'] == null
-          ? null
-          : TenvioOrder.fromJson(json['order'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$TenvioItemQuantityImplToJson(
@@ -211,8 +207,6 @@ Map<String, dynamic> _$$TenvioItemQuantityImplToJson(
       'quantity': instance.quantity,
       'matrixId': instance.matrixId,
       'matrix': instance.matrix?.toJson(),
-      'orderId': instance.orderId,
-      'order': instance.order?.toJson(),
     };
 
 _$TenvioItemQuantityInputImpl _$$TenvioItemQuantityInputImplFromJson(
@@ -220,7 +214,6 @@ _$TenvioItemQuantityInputImpl _$$TenvioItemQuantityInputImplFromJson(
     _$TenvioItemQuantityInputImpl(
       quantity: (json['quantity'] as num?)?.toInt(),
       matrixId: json['matrixId'] as String?,
-      orderId: json['orderId'] as String?,
     );
 
 Map<String, dynamic> _$$TenvioItemQuantityInputImplToJson(
@@ -228,7 +221,6 @@ Map<String, dynamic> _$$TenvioItemQuantityInputImplToJson(
     <String, dynamic>{
       'quantity': instance.quantity,
       'matrixId': instance.matrixId,
-      'orderId': instance.orderId,
     };
 
 _$TenvioMonitorAccessImpl _$$TenvioMonitorAccessImplFromJson(
@@ -482,7 +474,9 @@ _$TenvioOrderImpl _$$TenvioOrderImplFromJson(Map<String, dynamic> json) =>
       packers: (json['packers'] as List<dynamic>?)
           ?.map((e) => User.fromJson(e as Map<String, dynamic>))
           .toList(),
-      packersIds: json['packersIds'] as String?,
+      packersIds: (json['packersIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       itemQuantities: (json['itemQuantities'] as List<dynamic>?)
           ?.map((e) => TenvioItemQuantity.fromJson(e as Map<String, dynamic>))
           .toList(),
