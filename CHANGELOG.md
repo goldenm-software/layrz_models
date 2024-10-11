@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.29
+
+- Added `TenvioMatrixItemInput` and `TenvioItemInput` models
+
 ## 3.2.28
 - Added `getColor()` in `AtsFuelSubType`
 
