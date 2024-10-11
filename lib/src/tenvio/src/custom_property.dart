@@ -50,6 +50,57 @@ class TenvioCustomProperty with _$TenvioCustomProperty {
   factory TenvioCustomProperty.fromJson(Map<String, dynamic> json) => _$TenvioCustomPropertyFromJson(json);
 }
 
+
+@unfreezed
+class TenvioCustomPropertyInput with _$TenvioCustomPropertyInput {
+  /// [TenvioCustomPropertyInput] represents a custom property of an item.
+  /// This properties can be used to store additional information about the item and it's up to the
+  /// user to define them.
+  ///
+  /// The representation of the custom properties in the items is trough a `Map<String, dynamic>`, where
+  /// the key is the name of the property and the value is the value of the property.
+  factory TenvioCustomPropertyInput({
+    /// [name] is the name of the item.
+    @Default('') String name,
+
+    /// [dataType] is the data type of the property.
+    @TenvioPropertyDataTypeConverter() @Default(TenvioPropertyDataType.string) TenvioPropertyDataType dataType,
+
+    /// [isRequired] is a flag that indicates if the property is required.
+    @Default(false) bool isRequired,
+
+    /// [choices] is a list of choices for the property.
+    /// This property is only available when the data type is [TenvioPropertyDataType.choice] or
+    /// [TenvioPropertyDataType.mutipleChoices].
+    @Default([]) List<String> choices,
+
+    /// [minValue] is the minimum value for the property.
+    /// This property is only available when the data type is [TenvioPropertyDataType.number].
+    double? minValue,
+
+    /// [maxValue] is the maximum value for the property.
+    /// This property is only available when the data type is [TenvioPropertyDataType.number].
+    double? maxValue,
+
+    /// [minLength] is the minimum length for the property.
+    /// This property is only available when the data type is [TenvioPropertyDataType.string].
+    int? minLength,
+
+    /// [maxLength] is the maximum length for the property.
+    /// This property is only available when the data type is [TenvioPropertyDataType.string].
+    int? maxLength,
+
+    /// [maxFileSize] is the maximum file size for the property.
+    /// This property is only available when the data type is [TenvioPropertyDataType.file].
+    int? maxFileSize,
+
+    /// [defaultValue] is the default value for the property.
+    dynamic defaultValue,
+  }) = _TenvioCustomPropertyInput;
+
+  factory TenvioCustomPropertyInput.fromJson(Map<String, dynamic> json) => _$TenvioCustomPropertyInputFromJson(json);
+}
+
 /// [TenvioPropertyDataType] represents the data type of a custom property.
 /// Read carefully the documentation of each data type to understand how to use it.
 enum TenvioPropertyDataType {

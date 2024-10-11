@@ -132,6 +132,43 @@ Map<String, dynamic> _$$TenvioCustomPropertyImplToJson(
       'defaultValue': instance.defaultValue,
     };
 
+_$TenvioCustomPropertyInputImpl _$$TenvioCustomPropertyInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioCustomPropertyInputImpl(
+      name: json['name'] as String? ?? '',
+      dataType: json['dataType'] == null
+          ? TenvioPropertyDataType.string
+          : const TenvioPropertyDataTypeConverter()
+              .fromJson(json['dataType'] as String),
+      isRequired: json['isRequired'] as bool? ?? false,
+      choices: (json['choices'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      minValue: (json['minValue'] as num?)?.toDouble(),
+      maxValue: (json['maxValue'] as num?)?.toDouble(),
+      minLength: (json['minLength'] as num?)?.toInt(),
+      maxLength: (json['maxLength'] as num?)?.toInt(),
+      maxFileSize: (json['maxFileSize'] as num?)?.toInt(),
+      defaultValue: json['defaultValue'],
+    );
+
+Map<String, dynamic> _$$TenvioCustomPropertyInputImplToJson(
+        _$TenvioCustomPropertyInputImpl instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'dataType':
+          const TenvioPropertyDataTypeConverter().toJson(instance.dataType),
+      'isRequired': instance.isRequired,
+      'choices': instance.choices,
+      'minValue': instance.minValue,
+      'maxValue': instance.maxValue,
+      'minLength': instance.minLength,
+      'maxLength': instance.maxLength,
+      'maxFileSize': instance.maxFileSize,
+      'defaultValue': instance.defaultValue,
+    };
+
 _$DropoffFailedReasonImpl _$$DropoffFailedReasonImplFromJson(
         Map<String, dynamic> json) =>
     _$DropoffFailedReasonImpl(
@@ -162,10 +199,6 @@ _$TenvioItemQuantityImpl _$$TenvioItemQuantityImplFromJson(
       matrix: json['matrix'] == null
           ? null
           : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
-      orderId: json['orderId'] as String?,
-      order: json['order'] == null
-          ? null
-          : TenvioOrder.fromJson(json['order'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$TenvioItemQuantityImplToJson(
@@ -174,8 +207,6 @@ Map<String, dynamic> _$$TenvioItemQuantityImplToJson(
       'quantity': instance.quantity,
       'matrixId': instance.matrixId,
       'matrix': instance.matrix?.toJson(),
-      'orderId': instance.orderId,
-      'order': instance.order?.toJson(),
     };
 
 _$TenvioItemQuantityInputImpl _$$TenvioItemQuantityInputImplFromJson(
@@ -183,7 +214,6 @@ _$TenvioItemQuantityInputImpl _$$TenvioItemQuantityInputImplFromJson(
     _$TenvioItemQuantityInputImpl(
       quantity: (json['quantity'] as num?)?.toInt(),
       matrixId: json['matrixId'] as String?,
-      orderId: json['orderId'] as String?,
     );
 
 Map<String, dynamic> _$$TenvioItemQuantityInputImplToJson(
@@ -191,7 +221,6 @@ Map<String, dynamic> _$$TenvioItemQuantityInputImplToJson(
     <String, dynamic>{
       'quantity': instance.quantity,
       'matrixId': instance.matrixId,
-      'orderId': instance.orderId,
     };
 
 _$TenvioMonitorAccessImpl _$$TenvioMonitorAccessImplFromJson(
@@ -270,6 +299,36 @@ Map<String, dynamic> _$$TenvioItemImplToJson(_$TenvioItemImpl instance) =>
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
     };
 
+_$TenvioItemInputImpl _$$TenvioItemInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioItemInputImpl(
+      id: json['id'] as String?,
+      matrixId: json['matrixId'] as String?,
+      location: json['location'] == null
+          ? TenvioItemLocation.inWarehouse
+          : const TenvioItemLocationConverter()
+              .fromJson(json['location'] as String),
+      address: json['address'] as String?,
+      pickupDate:
+          const TimestampOrNullConverter().fromJson(json['pickupDate'] as num?),
+      customProperties:
+          json['customProperties'] as Map<String, dynamic>? ?? const {},
+      warehouseId: json['warehouseId'] as String?,
+    );
+
+Map<String, dynamic> _$$TenvioItemInputImplToJson(
+        _$TenvioItemInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'matrixId': instance.matrixId,
+      'location': const TenvioItemLocationConverter().toJson(instance.location),
+      'address': instance.address,
+      'pickupDate':
+          const TimestampOrNullConverter().toJson(instance.pickupDate),
+      'customProperties': instance.customProperties,
+      'warehouseId': instance.warehouseId,
+    };
+
 _$TenvioMatrixItemImpl _$$TenvioMatrixItemImplFromJson(
         Map<String, dynamic> json) =>
     _$TenvioMatrixItemImpl(
@@ -307,6 +366,37 @@ Map<String, dynamic> _$$TenvioMatrixItemImplToJson(
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
       'items': instance.items?.map((e) => e.toJson()).toList(),
+    };
+
+_$TenvioMatrixItemInputImpl _$$TenvioMatrixItemInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioMatrixItemInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      image: json['image'] as String?,
+      code: json['code'] as String? ?? '',
+      weight: (json['weight'] as num?)?.toDouble(),
+      width: (json['width'] as num?)?.toDouble(),
+      height: (json['height'] as num?)?.toDouble(),
+      customProperties: (json['customProperties'] as List<dynamic>?)
+              ?.map((e) =>
+                  TenvioCustomPropertyInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$TenvioMatrixItemInputImplToJson(
+        _$TenvioMatrixItemInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'image': instance.image,
+      'code': instance.code,
+      'weight': instance.weight,
+      'width': instance.width,
+      'height': instance.height,
+      'customProperties':
+          instance.customProperties.map((e) => e.toJson()).toList(),
     };
 
 _$TenvioUnregisteredUserImpl _$$TenvioUnregisteredUserImplFromJson(
@@ -384,7 +474,9 @@ _$TenvioOrderImpl _$$TenvioOrderImplFromJson(Map<String, dynamic> json) =>
       packers: (json['packers'] as List<dynamic>?)
           ?.map((e) => User.fromJson(e as Map<String, dynamic>))
           .toList(),
-      packersIds: json['packersIds'] as String?,
+      packersIds: (json['packersIds'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
       itemQuantities: (json['itemQuantities'] as List<dynamic>?)
           ?.map((e) => TenvioItemQuantity.fromJson(e as Map<String, dynamic>))
           .toList(),

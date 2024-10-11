@@ -11,12 +11,6 @@ class TenvioItemQuantity with _$TenvioItemQuantity {
 
     /// [matrix] Matrix item related to the order item quantity.
     TenvioMatrixItem? matrix,
-
-    /// [orderId] ID of the order related to the order item quantity.
-    String? orderId,
-
-    /// [order] Order related to the order item quantity.
-    TenvioOrder? order,
   }) = _TenvioItemQuantity;
 
   factory TenvioItemQuantity.fromJson(Map<String, dynamic> json) => _$TenvioItemQuantityFromJson(json);
@@ -30,9 +24,6 @@ class TenvioItemQuantityInput with _$TenvioItemQuantityInput {
 
     /// [matrixId] ID of the matrix item related to the order item quantity.
     String? matrixId,
-
-    /// [orderId] ID of the order related to the order item quantity.
-    String? orderId,
   }) = _TenvioItemQuantityInput;
 
   factory TenvioItemQuantityInput.fromJson(Map<String, dynamic> json) => _$TenvioItemQuantityInputFromJson(json);

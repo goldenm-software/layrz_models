@@ -50,7 +50,7 @@ class TenvioOrder with _$TenvioOrder {
     List<User>? packers,
 
     /// [packersIds] IDs of packers assigned to the order.
-    String? packersIds,
+    List<String>? packersIds,
 
     /// [itemQuantities] Items included in the order.
     List<TenvioItemQuantity>? itemQuantities,

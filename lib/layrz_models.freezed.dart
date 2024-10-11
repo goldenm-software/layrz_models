@@ -10626,6 +10626,9 @@ mixin _$Device {
   /// [hwModelId] is the hardware model ID of the device.
   String? get hwModelId => throw _privateConstructorUsedError;
 
+  /// [macAddress] is the MAC address of the device.
+  String? get macAddress => throw _privateConstructorUsedError;
+
   /// [configParams] is the configuration parameters received from the device, this information is
   /// used to configure the device.
   Map<String, dynamic>? get configParams => throw _privateConstructorUsedError;
@@ -10662,6 +10665,7 @@ abstract class $DeviceCopyWith<$Res> {
       bool? isSuspended,
       HwModel? hwModel,
       String? hwModelId,
+      String? macAddress,
       Map<String, dynamic>? configParams});
 
   $ModelCopyWith<$Res>? get model;
@@ -10707,6 +10711,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? isSuspended = freezed,
     Object? hwModel = freezed,
     Object? hwModelId = freezed,
+    Object? macAddress = freezed,
     Object? configParams = freezed,
   }) {
     return _then(_value.copyWith(
@@ -10793,6 +10798,10 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
       hwModelId: freezed == hwModelId
           ? _value.hwModelId
           : hwModelId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      macAddress: freezed == macAddress
+          ? _value.macAddress
+          : macAddress // ignore: cast_nullable_to_non_nullable
               as String?,
       configParams: freezed == configParams
           ? _value.configParams
@@ -10915,6 +10924,7 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       bool? isSuspended,
       HwModel? hwModel,
       String? hwModelId,
+      String? macAddress,
       Map<String, dynamic>? configParams});
 
   @override
@@ -10965,6 +10975,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? isSuspended = freezed,
     Object? hwModel = freezed,
     Object? hwModelId = freezed,
+    Object? macAddress = freezed,
     Object? configParams = freezed,
   }) {
     return _then(_$DeviceImpl(
@@ -11052,6 +11063,10 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value.hwModelId
           : hwModelId // ignore: cast_nullable_to_non_nullable
               as String?,
+      macAddress: freezed == macAddress
+          ? _value.macAddress
+          : macAddress // ignore: cast_nullable_to_non_nullable
+              as String?,
       configParams: freezed == configParams
           ? _value._configParams
           : configParams // ignore: cast_nullable_to_non_nullable
@@ -11085,6 +11100,7 @@ class _$DeviceImpl implements _Device {
       this.isSuspended,
       this.hwModel,
       this.hwModelId,
+      this.macAddress,
       final Map<String, dynamic>? configParams})
       : _additionalFields = additionalFields,
         _commands = commands,
@@ -11205,6 +11221,10 @@ class _$DeviceImpl implements _Device {
   @override
   final String? hwModelId;
 
+  /// [macAddress] is the MAC address of the device.
+  @override
+  final String? macAddress;
+
   /// [configParams] is the configuration parameters received from the device, this information is
   /// used to configure the device.
   final Map<String, dynamic>? _configParams;
@@ -11222,7 +11242,7 @@ class _$DeviceImpl implements _Device {
 
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, configParams: $configParams)';
+    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams)';
   }
 
   @override
@@ -11260,6 +11280,8 @@ class _$DeviceImpl implements _Device {
             (identical(other.hwModel, hwModel) || other.hwModel == hwModel) &&
             (identical(other.hwModelId, hwModelId) ||
                 other.hwModelId == hwModelId) &&
+            (identical(other.macAddress, macAddress) ||
+                other.macAddress == macAddress) &&
             const DeepCollectionEquality()
                 .equals(other._configParams, _configParams));
   }
@@ -11289,6 +11311,7 @@ class _$DeviceImpl implements _Device {
         isSuspended,
         hwModel,
         hwModelId,
+        macAddress,
         const DeepCollectionEquality().hash(_configParams)
       ]);
 
@@ -11329,6 +11352,7 @@ abstract class _Device implements Device {
       final bool? isSuspended,
       final HwModel? hwModel,
       final String? hwModelId,
+      final String? macAddress,
       final Map<String, dynamic>? configParams}) = _$DeviceImpl;
 
   factory _Device.fromJson(Map<String, dynamic> json) = _$DeviceImpl.fromJson;
@@ -11416,6 +11440,10 @@ abstract class _Device implements Device {
 
   /// [hwModelId] is the hardware model ID of the device.
   String? get hwModelId;
+  @override
+
+  /// [macAddress] is the MAC address of the device.
+  String? get macAddress;
   @override
 
   /// [configParams] is the configuration parameters received from the device, this information is
