@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.31
+
+- Added `macAddress` to `Device` models
+
 ## 3.2.30
 
 - Changes for Tenvio Pick & Pack ecosystem
@@ -9,6 +13,7 @@
 - Added `TenvioMatrixItemInput` and `TenvioItemInput` models
 
 ## 3.2.28
+
 - Added `getColor()` in `AtsFuelSubType`
 
 ## 3.2.27
@@ -40,15 +45,18 @@
 - New models `TenvioMonitorAccess` and `TenvioMonitorAccessInput`
 
 ## 3.2.21
+
 - New enum `TenvioDestinationType` for `TenvioDestinationTypeOrNullConverter`
 - Changed `TenvioDestinationType` to `TenvioOrderDestinationType`
 -
+
 ## 3.2.20
+
 - New folder to add all Ats enums.
 - Transform `fuelSubType` as enum.
 - Added `AtsLoadingParamsSample`, `LoadingParamsFormInput`
 - Added `itemQuantities` & `statusPhotos` model on `TenvioOrder`
-- Removed `totalItems`  `AsignByDepartment` model on `TenvioOrder`
+- Removed `totalItems` `AsignByDepartment` model on `TenvioOrder`
 
 ## 3.2.19
 
@@ -59,12 +67,12 @@
 - Fixed an issue with automatic conversion of `ConfIoTFile` when the namespace is `ConfIoTNamespace.config`.
 
 ## 3.2.17
+
 - Add `price` in `AtsReceptionProduct`
 - Add `atsDriver`, `atsTerminalOperations`, `atsTerminalLoadingGrid` , `atsTerminalAccessControl`, `atsTerminalYardAlerts`, `atsTerminalLoadFormatting`,
-`atsTerminalStockManagement`, `atsTerminalCacl`,
-`atsTerminalEditTransport`, `atsAccessColeta`,
-`atsPaLoadComboio` in `ReferenceCategory`
-
+  `atsTerminalStockManagement`, `atsTerminalCacl`,
+  `atsTerminalEditTransport`, `atsAccessColeta`,
+  `atsPaLoadComboio` in `ReferenceCategory`
 
 ## 3.2.16
 
