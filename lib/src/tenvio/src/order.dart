@@ -73,7 +73,7 @@ class TenvioOrder with _$TenvioOrder {
 
   factory TenvioOrder.fromJson(Map<String, dynamic> json) => _$TenvioOrderFromJson(json);
 
-  String get orderId => id.padLeft(9, '0');
+  String get orderId => LayrzNumber.toSystem(int.parse(id)).padLeft(6, '0');
 }
 
 @unfreezed
@@ -120,5 +120,5 @@ class TenvioOrderInput with _$TenvioOrderInput {
 
   factory TenvioOrderInput.fromJson(Map<String, dynamic> json) => _$TenvioOrderInputFromJson(json);
 
-  String get orderId => id?.padLeft(9, '0') ?? 'N/A';
+  String get orderId => id == null ? 'N/A' : LayrzNumber.toSystem(int.parse(id!)).padLeft(6, '0');
 }

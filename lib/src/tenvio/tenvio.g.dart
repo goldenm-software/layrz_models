@@ -195,6 +195,7 @@ _$TenvioItemQuantityImpl _$$TenvioItemQuantityImplFromJson(
         Map<String, dynamic> json) =>
     _$TenvioItemQuantityImpl(
       quantity: (json['quantity'] as num?)?.toInt(),
+      loadedQuantity: (json['loadedQuantity'] as num?)?.toInt(),
       matrixId: json['matrixId'] as String?,
       matrix: json['matrix'] == null
           ? null
@@ -205,6 +206,7 @@ Map<String, dynamic> _$$TenvioItemQuantityImplToJson(
         _$TenvioItemQuantityImpl instance) =>
     <String, dynamic>{
       'quantity': instance.quantity,
+      'loadedQuantity': instance.loadedQuantity,
       'matrixId': instance.matrixId,
       'matrix': instance.matrix?.toJson(),
     };
@@ -212,7 +214,7 @@ Map<String, dynamic> _$$TenvioItemQuantityImplToJson(
 _$TenvioItemQuantityInputImpl _$$TenvioItemQuantityInputImplFromJson(
         Map<String, dynamic> json) =>
     _$TenvioItemQuantityInputImpl(
-      quantity: (json['quantity'] as num?)?.toInt(),
+      quantity: (json['quantity'] as num?)?.toInt() ?? 0,
       matrixId: json['matrixId'] as String?,
     );
 

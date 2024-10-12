@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' show Color, Colors;
+part of '../utils.dart';
 
 const Color kPrimaryColor = Color(0xff001e60);
 final Map<String, Color> kVuetifyColors = {

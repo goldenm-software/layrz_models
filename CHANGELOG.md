@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.32
+
+- Added `LayrzNumber` numeric system to handle the `Order.orderId` and Tracking IDs of Tenvio
+- Tenvio changes
+
 ## 3.2.31
 
 - Added `macAddress` to `Device` models
