@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.34
+
+- Added qrCodes to `TenvioOrder`, `TenvioPackage` and `TenvioMatrixItem` models
+
 ## 3.2.33
 
 - Major changes on `TenvioPackage` model.

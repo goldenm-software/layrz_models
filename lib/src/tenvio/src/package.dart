@@ -16,6 +16,10 @@ class TenvioPackage with _$TenvioPackage {
     /// [warehouse] is the warehouse that the package is located.
     Asset? warehouse,
 
+    /// [qrCode] is the QR code of the package. should contains the following URI:
+    /// `tenvio://orders/:orderId/packages/:packageId`
+    String? qrCode,
+
     /// [items] is the list of items that are part of the package.
     List<TenvioPackageQuantity>? items,
 

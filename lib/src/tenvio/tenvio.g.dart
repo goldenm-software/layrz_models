@@ -47,6 +47,7 @@ _$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
       warehouse: json['warehouse'] == null
           ? null
           : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
+      qrCode: json['qrCode'] as String?,
       items: (json['items'] as List<dynamic>?)
           ?.map(
               (e) => TenvioPackageQuantity.fromJson(e as Map<String, dynamic>))
@@ -78,6 +79,7 @@ Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
       'trackingId': instance.trackingId,
       'warehouseId': instance.warehouseId,
       'warehouse': instance.warehouse?.toJson(),
+      'qrCode': instance.qrCode,
       'items': instance.items?.map((e) => e.toJson()).toList(),
       'destinationType': const TenvioDestinationTypeOrNullConverter()
           .toJson(instance.destinationType),
@@ -350,6 +352,7 @@ _$TenvioMatrixItemImpl _$$TenvioMatrixItemImplFromJson(
       name: json['name'] as String,
       image: json['image'] as String?,
       code: json['code'] as String,
+      qrCode: json['qrCode'] as String?,
       weight: (json['weight'] as num?)?.toDouble(),
       width: (json['width'] as num?)?.toDouble(),
       height: (json['height'] as num?)?.toDouble(),
@@ -372,6 +375,7 @@ Map<String, dynamic> _$$TenvioMatrixItemImplToJson(
       'name': instance.name,
       'image': instance.image,
       'code': instance.code,
+      'qrCode': instance.qrCode,
       'weight': instance.weight,
       'width': instance.width,
       'height': instance.height,
@@ -463,6 +467,7 @@ _$TenvioOrderImpl _$$TenvioOrderImplFromJson(Map<String, dynamic> json) =>
       ownerId: json['ownerId'] as String,
       warehouse: Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
       warehouseId: json['warehouseId'] as String,
+      qrCode: json['qrCode'] as String?,
       status:
           const TenvioOrderStatusConverter().fromJson(json['status'] as String),
       destinationType: const TenvioDestinationTypeOrNullConverter()
@@ -513,6 +518,7 @@ Map<String, dynamic> _$$TenvioOrderImplToJson(_$TenvioOrderImpl instance) =>
       'ownerId': instance.ownerId,
       'warehouse': instance.warehouse.toJson(),
       'warehouseId': instance.warehouseId,
+      'qrCode': instance.qrCode,
       'status': const TenvioOrderStatusConverter().toJson(instance.status),
       'destinationType': const TenvioDestinationTypeOrNullConverter()
           .toJson(instance.destinationType),

@@ -16,6 +16,10 @@ class TenvioOrder with _$TenvioOrder {
     /// [warehouseId] ID of the warehouse where the order is located.
     required String warehouseId,
 
+    /// [qrCode] is the QR code of the order. should contains the following URI:
+    /// `tenvio://orders/:id`
+    String? qrCode,
+
     /// [status] Status of the order entity.
     @TenvioOrderStatusConverter() required TenvioOrderStatus status,
 

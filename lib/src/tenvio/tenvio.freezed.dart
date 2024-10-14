@@ -445,6 +445,10 @@ mixin _$TenvioPackage {
   /// [warehouse] is the warehouse that the package is located.
   Asset? get warehouse => throw _privateConstructorUsedError;
 
+  /// [qrCode] is the QR code of the package. should contains the following URI:
+  /// `tenvio://orders/:orderId/packages/:packageId`
+  String? get qrCode => throw _privateConstructorUsedError;
+
   /// [items] is the list of items that are part of the package.
   List<TenvioPackageQuantity>? get items => throw _privateConstructorUsedError;
 
@@ -498,6 +502,7 @@ abstract class $TenvioPackageCopyWith<$Res> {
       String trackingId,
       String? warehouseId,
       Asset? warehouse,
+      String? qrCode,
       List<TenvioPackageQuantity>? items,
       @TenvioDestinationTypeOrNullConverter()
       TenvioDestinationType? destinationType,
@@ -533,6 +538,7 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
     Object? trackingId = null,
     Object? warehouseId = freezed,
     Object? warehouse = freezed,
+    Object? qrCode = freezed,
     Object? items = freezed,
     Object? destinationType = freezed,
     Object? destinationWarehouse = freezed,
@@ -561,6 +567,10 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
           ? _value.warehouse
           : warehouse // ignore: cast_nullable_to_non_nullable
               as Asset?,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       items: freezed == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
@@ -667,6 +677,7 @@ abstract class _$$TenvioPackageImplCopyWith<$Res>
       String trackingId,
       String? warehouseId,
       Asset? warehouse,
+      String? qrCode,
       List<TenvioPackageQuantity>? items,
       @TenvioDestinationTypeOrNullConverter()
       TenvioDestinationType? destinationType,
@@ -704,6 +715,7 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
     Object? trackingId = null,
     Object? warehouseId = freezed,
     Object? warehouse = freezed,
+    Object? qrCode = freezed,
     Object? items = freezed,
     Object? destinationType = freezed,
     Object? destinationWarehouse = freezed,
@@ -732,6 +744,10 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
           ? _value.warehouse
           : warehouse // ignore: cast_nullable_to_non_nullable
               as Asset?,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       items: freezed == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
@@ -784,6 +800,7 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       required this.trackingId,
       this.warehouseId,
       this.warehouse,
+      this.qrCode,
       final List<TenvioPackageQuantity>? items,
       @TenvioDestinationTypeOrNullConverter() this.destinationType,
       this.destinationWarehouse,
@@ -815,6 +832,11 @@ class _$TenvioPackageImpl implements _TenvioPackage {
   /// [warehouse] is the warehouse that the package is located.
   @override
   final Asset? warehouse;
+
+  /// [qrCode] is the QR code of the package. should contains the following URI:
+  /// `tenvio://orders/:orderId/packages/:packageId`
+  @override
+  final String? qrCode;
 
   /// [items] is the list of items that are part of the package.
   final List<TenvioPackageQuantity>? _items;
@@ -871,7 +893,7 @@ class _$TenvioPackageImpl implements _TenvioPackage {
 
   @override
   String toString() {
-    return 'TenvioPackage(id: $id, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, items: $items, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'TenvioPackage(id: $id, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, qrCode: $qrCode, items: $items, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -886,6 +908,7 @@ class _$TenvioPackageImpl implements _TenvioPackage {
                 other.warehouseId == warehouseId) &&
             (identical(other.warehouse, warehouse) ||
                 other.warehouse == warehouse) &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
             const DeepCollectionEquality().equals(other._items, _items) &&
             (identical(other.destinationType, destinationType) ||
                 other.destinationType == destinationType) &&
@@ -915,6 +938,7 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       trackingId,
       warehouseId,
       warehouse,
+      qrCode,
       const DeepCollectionEquality().hash(_items),
       destinationType,
       destinationWarehouse,
@@ -946,6 +970,7 @@ abstract class _TenvioPackage implements TenvioPackage {
       required final String trackingId,
       final String? warehouseId,
       final Asset? warehouse,
+      final String? qrCode,
       final List<TenvioPackageQuantity>? items,
       @TenvioDestinationTypeOrNullConverter()
       final TenvioDestinationType? destinationType,
@@ -979,6 +1004,11 @@ abstract class _TenvioPackage implements TenvioPackage {
 
   /// [warehouse] is the warehouse that the package is located.
   Asset? get warehouse;
+  @override
+
+  /// [qrCode] is the QR code of the package. should contains the following URI:
+  /// `tenvio://orders/:orderId/packages/:packageId`
+  String? get qrCode;
   @override
 
   /// [items] is the list of items that are part of the package.
@@ -4116,8 +4146,12 @@ mixin _$TenvioMatrixItem {
   /// [image] is the image of the item.
   String? get image => throw _privateConstructorUsedError;
 
-  /// [code] is the code unique code of the item, can be the barcode value, or an autogenerated code.
+  /// [code] is the code unique code of the item, can be the SKU or an autogenerated code.
   String get code => throw _privateConstructorUsedError;
+
+  /// [qrCode] is the QR code of the item. should contains the following URI:
+  /// `tenvio://matrix/:id`
+  String? get qrCode => throw _privateConstructorUsedError;
 
   /// [weight] is the weight of the item.
   double? get weight => throw _privateConstructorUsedError;
@@ -4162,6 +4196,7 @@ abstract class $TenvioMatrixItemCopyWith<$Res> {
       String name,
       String? image,
       String code,
+      String? qrCode,
       double? weight,
       double? width,
       double? height,
@@ -4188,6 +4223,7 @@ class _$TenvioMatrixItemCopyWithImpl<$Res, $Val extends TenvioMatrixItem>
     Object? name = null,
     Object? image = freezed,
     Object? code = null,
+    Object? qrCode = freezed,
     Object? weight = freezed,
     Object? width = freezed,
     Object? height = freezed,
@@ -4213,6 +4249,10 @@ class _$TenvioMatrixItemCopyWithImpl<$Res, $Val extends TenvioMatrixItem>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       weight: freezed == weight
           ? _value.weight
           : weight // ignore: cast_nullable_to_non_nullable
@@ -4258,6 +4298,7 @@ abstract class _$$TenvioMatrixItemImplCopyWith<$Res>
       String name,
       String? image,
       String code,
+      String? qrCode,
       double? weight,
       double? width,
       double? height,
@@ -4282,6 +4323,7 @@ class __$$TenvioMatrixItemImplCopyWithImpl<$Res>
     Object? name = null,
     Object? image = freezed,
     Object? code = null,
+    Object? qrCode = freezed,
     Object? weight = freezed,
     Object? width = freezed,
     Object? height = freezed,
@@ -4307,6 +4349,10 @@ class __$$TenvioMatrixItemImplCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       weight: freezed == weight
           ? _value.weight
           : weight // ignore: cast_nullable_to_non_nullable
@@ -4347,6 +4393,7 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
       required this.name,
       this.image,
       required this.code,
+      this.qrCode,
       this.weight,
       this.width,
       this.height,
@@ -4372,9 +4419,14 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
   @override
   final String? image;
 
-  /// [code] is the code unique code of the item, can be the barcode value, or an autogenerated code.
+  /// [code] is the code unique code of the item, can be the SKU or an autogenerated code.
   @override
   final String code;
+
+  /// [qrCode] is the QR code of the item. should contains the following URI:
+  /// `tenvio://matrix/:id`
+  @override
+  final String? qrCode;
 
   /// [weight] is the weight of the item.
   @override
@@ -4431,7 +4483,7 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
 
   @override
   String toString() {
-    return 'TenvioMatrixItem(id: $id, name: $name, image: $image, code: $code, weight: $weight, width: $width, height: $height, customProperties: $customProperties, createdAt: $createdAt, updatedAt: $updatedAt, items: $items)';
+    return 'TenvioMatrixItem(id: $id, name: $name, image: $image, code: $code, qrCode: $qrCode, weight: $weight, width: $width, height: $height, customProperties: $customProperties, createdAt: $createdAt, updatedAt: $updatedAt, items: $items)';
   }
 
   @override
@@ -4443,6 +4495,7 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.image, image) || other.image == image) &&
             (identical(other.code, code) || other.code == code) &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
             (identical(other.weight, weight) || other.weight == weight) &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.height, height) || other.height == height) &&
@@ -4463,6 +4516,7 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
       name,
       image,
       code,
+      qrCode,
       weight,
       width,
       height,
@@ -4492,6 +4546,7 @@ abstract class _TenvioMatrixItem implements TenvioMatrixItem {
       required final String name,
       final String? image,
       required final String code,
+      final String? qrCode,
       final double? weight,
       final double? width,
       final double? height,
@@ -4517,8 +4572,13 @@ abstract class _TenvioMatrixItem implements TenvioMatrixItem {
   String? get image;
   @override
 
-  /// [code] is the code unique code of the item, can be the barcode value, or an autogenerated code.
+  /// [code] is the code unique code of the item, can be the SKU or an autogenerated code.
   String get code;
+  @override
+
+  /// [qrCode] is the QR code of the item. should contains the following URI:
+  /// `tenvio://matrix/:id`
+  String? get qrCode;
   @override
 
   /// [weight] is the weight of the item.
@@ -5540,6 +5600,10 @@ mixin _$TenvioOrder {
   /// [warehouseId] ID of the warehouse where the order is located.
   String get warehouseId => throw _privateConstructorUsedError;
 
+  /// [qrCode] is the QR code of the order. should contains the following URI:
+  /// `tenvio://orders/:id`
+  String? get qrCode => throw _privateConstructorUsedError;
+
   /// [status] Status of the order entity.
   @TenvioOrderStatusConverter()
   TenvioOrderStatus get status => throw _privateConstructorUsedError;
@@ -5618,6 +5682,7 @@ abstract class $TenvioOrderCopyWith<$Res> {
       String ownerId,
       Asset warehouse,
       String warehouseId,
+      String? qrCode,
       @TenvioOrderStatusConverter() TenvioOrderStatus status,
       @TenvioDestinationTypeOrNullConverter()
       TenvioDestinationType? destinationType,
@@ -5661,6 +5726,7 @@ class _$TenvioOrderCopyWithImpl<$Res, $Val extends TenvioOrder>
     Object? ownerId = null,
     Object? warehouse = null,
     Object? warehouseId = null,
+    Object? qrCode = freezed,
     Object? status = null,
     Object? destinationType = freezed,
     Object? destinationWarehouse = freezed,
@@ -5697,6 +5763,10 @@ class _$TenvioOrderCopyWithImpl<$Res, $Val extends TenvioOrder>
           ? _value.warehouseId
           : warehouseId // ignore: cast_nullable_to_non_nullable
               as String,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -5831,6 +5901,7 @@ abstract class _$$TenvioOrderImplCopyWith<$Res>
       String ownerId,
       Asset warehouse,
       String warehouseId,
+      String? qrCode,
       @TenvioOrderStatusConverter() TenvioOrderStatus status,
       @TenvioDestinationTypeOrNullConverter()
       TenvioDestinationType? destinationType,
@@ -5876,6 +5947,7 @@ class __$$TenvioOrderImplCopyWithImpl<$Res>
     Object? ownerId = null,
     Object? warehouse = null,
     Object? warehouseId = null,
+    Object? qrCode = freezed,
     Object? status = null,
     Object? destinationType = freezed,
     Object? destinationWarehouse = freezed,
@@ -5912,6 +5984,10 @@ class __$$TenvioOrderImplCopyWithImpl<$Res>
           ? _value.warehouseId
           : warehouseId // ignore: cast_nullable_to_non_nullable
               as String,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -5996,6 +6072,7 @@ class _$TenvioOrderImpl extends _TenvioOrder {
       required this.ownerId,
       required this.warehouse,
       required this.warehouseId,
+      this.qrCode,
       @TenvioOrderStatusConverter() required this.status,
       @TenvioDestinationTypeOrNullConverter() this.destinationType,
       this.destinationWarehouse,
@@ -6040,6 +6117,11 @@ class _$TenvioOrderImpl extends _TenvioOrder {
   /// [warehouseId] ID of the warehouse where the order is located.
   @override
   final String warehouseId;
+
+  /// [qrCode] is the QR code of the order. should contains the following URI:
+  /// `tenvio://orders/:id`
+  @override
+  final String? qrCode;
 
   /// [status] Status of the order entity.
   @override
@@ -6172,7 +6254,7 @@ class _$TenvioOrderImpl extends _TenvioOrder {
 
   @override
   String toString() {
-    return 'TenvioOrder(id: $id, ownerId: $ownerId, warehouse: $warehouse, warehouseId: $warehouseId, status: $status, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, notes: $notes, requiresPhotos: $requiresPhotos, highPriority: $highPriority, packers: $packers, packersIds: $packersIds, itemQuantities: $itemQuantities, items: $items, packedImage: $packedImage, statusPhotos: $statusPhotos, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'TenvioOrder(id: $id, ownerId: $ownerId, warehouse: $warehouse, warehouseId: $warehouseId, qrCode: $qrCode, status: $status, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, notes: $notes, requiresPhotos: $requiresPhotos, highPriority: $highPriority, packers: $packers, packersIds: $packersIds, itemQuantities: $itemQuantities, items: $items, packedImage: $packedImage, statusPhotos: $statusPhotos, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -6186,6 +6268,7 @@ class _$TenvioOrderImpl extends _TenvioOrder {
                 other.warehouse == warehouse) &&
             (identical(other.warehouseId, warehouseId) ||
                 other.warehouseId == warehouseId) &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.destinationType, destinationType) ||
                 other.destinationType == destinationType) &&
@@ -6229,6 +6312,7 @@ class _$TenvioOrderImpl extends _TenvioOrder {
         ownerId,
         warehouse,
         warehouseId,
+        qrCode,
         status,
         destinationType,
         destinationWarehouse,
@@ -6269,6 +6353,7 @@ abstract class _TenvioOrder extends TenvioOrder {
           required final String ownerId,
           required final Asset warehouse,
           required final String warehouseId,
+          final String? qrCode,
           @TenvioOrderStatusConverter() required final TenvioOrderStatus status,
           @TenvioDestinationTypeOrNullConverter()
           final TenvioDestinationType? destinationType,
@@ -6310,6 +6395,11 @@ abstract class _TenvioOrder extends TenvioOrder {
 
   /// [warehouseId] ID of the warehouse where the order is located.
   String get warehouseId;
+  @override
+
+  /// [qrCode] is the QR code of the order. should contains the following URI:
+  /// `tenvio://orders/:id`
+  String? get qrCode;
   @override
 
   /// [status] Status of the order entity.
