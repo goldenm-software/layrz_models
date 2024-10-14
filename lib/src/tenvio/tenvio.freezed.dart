@@ -435,13 +435,6 @@ mixin _$TenvioPackage {
   /// [id] is the unique identifier of the package
   String get id => throw _privateConstructorUsedError;
 
-  /// [packerId] is the unique identifier of the operator that will pack the package.
-  String? get packerId => throw _privateConstructorUsedError;
-
-  /// [packer] is the operator that will pack the package.
-  /// This value will only be filled when the package is assigned to an operator.
-  User? get packer => throw _privateConstructorUsedError;
-
   /// [trackingId] is the unique identifier of the tracking of the package.
   /// The equivalent to the tracking number of a package.
   String get trackingId => throw _privateConstructorUsedError;
@@ -455,6 +448,27 @@ mixin _$TenvioPackage {
   /// [items] is the list of items that are part of the package.
   List<TenvioPackageQuantity>? get items => throw _privateConstructorUsedError;
 
+  /// [destinationType] Type of the destination.
+  @TenvioDestinationTypeOrNullConverter()
+  TenvioDestinationType? get destinationType =>
+      throw _privateConstructorUsedError;
+
+  /// [destinationWarehouse] Warehouse destination of the order.
+  Asset? get destinationWarehouse => throw _privateConstructorUsedError;
+
+  /// [destinationWarehouseId] ID of the warehouse destination of the order.
+  String? get destinationWarehouseId => throw _privateConstructorUsedError;
+
+  /// [destinationUser] User destination of the order.
+  User? get destinationUser => throw _privateConstructorUsedError;
+
+  /// [destinationUserId] ID of the user destination of the order.
+  String? get destinationUserId => throw _privateConstructorUsedError;
+
+  /// [destinationUnregisteredUser] Unregistered user destination of the order.
+  TenvioUnregisteredUser? get destinationUnregistered =>
+      throw _privateConstructorUsedError;
+
   /// [status] is the status of the package.
   @TenvioPackageStatusConverter()
   TenvioPackageStatus get status => throw _privateConstructorUsedError;
@@ -466,9 +480,6 @@ mixin _$TenvioPackage {
   /// [updatedAt] is the date when the package was last updated.
   @TimestampConverter()
   DateTime get updatedAt => throw _privateConstructorUsedError;
-
-  /// [totalItems] is the total number of items in the package.
-  int? get totalItems => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -484,19 +495,25 @@ abstract class $TenvioPackageCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      String? packerId,
-      User? packer,
       String trackingId,
       String? warehouseId,
       Asset? warehouse,
       List<TenvioPackageQuantity>? items,
+      @TenvioDestinationTypeOrNullConverter()
+      TenvioDestinationType? destinationType,
+      Asset? destinationWarehouse,
+      String? destinationWarehouseId,
+      User? destinationUser,
+      String? destinationUserId,
+      TenvioUnregisteredUser? destinationUnregistered,
       @TenvioPackageStatusConverter() TenvioPackageStatus status,
       @TimestampConverter() DateTime createdAt,
-      @TimestampConverter() DateTime updatedAt,
-      int? totalItems});
+      @TimestampConverter() DateTime updatedAt});
 
-  $UserCopyWith<$Res>? get packer;
   $AssetCopyWith<$Res>? get warehouse;
+  $AssetCopyWith<$Res>? get destinationWarehouse;
+  $UserCopyWith<$Res>? get destinationUser;
+  $TenvioUnregisteredUserCopyWith<$Res>? get destinationUnregistered;
 }
 
 /// @nodoc
@@ -513,30 +530,25 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
   @override
   $Res call({
     Object? id = null,
-    Object? packerId = freezed,
-    Object? packer = freezed,
     Object? trackingId = null,
     Object? warehouseId = freezed,
     Object? warehouse = freezed,
     Object? items = freezed,
+    Object? destinationType = freezed,
+    Object? destinationWarehouse = freezed,
+    Object? destinationWarehouseId = freezed,
+    Object? destinationUser = freezed,
+    Object? destinationUserId = freezed,
+    Object? destinationUnregistered = freezed,
     Object? status = null,
     Object? createdAt = null,
     Object? updatedAt = null,
-    Object? totalItems = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      packerId: freezed == packerId
-          ? _value.packerId
-          : packerId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      packer: freezed == packer
-          ? _value.packer
-          : packer // ignore: cast_nullable_to_non_nullable
-              as User?,
       trackingId: null == trackingId
           ? _value.trackingId
           : trackingId // ignore: cast_nullable_to_non_nullable
@@ -553,6 +565,30 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<TenvioPackageQuantity>?,
+      destinationType: freezed == destinationType
+          ? _value.destinationType
+          : destinationType // ignore: cast_nullable_to_non_nullable
+              as TenvioDestinationType?,
+      destinationWarehouse: freezed == destinationWarehouse
+          ? _value.destinationWarehouse
+          : destinationWarehouse // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      destinationWarehouseId: freezed == destinationWarehouseId
+          ? _value.destinationWarehouseId
+          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      destinationUser: freezed == destinationUser
+          ? _value.destinationUser
+          : destinationUser // ignore: cast_nullable_to_non_nullable
+              as User?,
+      destinationUserId: freezed == destinationUserId
+          ? _value.destinationUserId
+          : destinationUserId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      destinationUnregistered: freezed == destinationUnregistered
+          ? _value.destinationUnregistered
+          : destinationUnregistered // ignore: cast_nullable_to_non_nullable
+              as TenvioUnregisteredUser?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -565,23 +601,7 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      totalItems: freezed == totalItems
-          ? _value.totalItems
-          : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
     ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get packer {
-    if (_value.packer == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_value.packer!, (value) {
-      return _then(_value.copyWith(packer: value) as $Val);
-    });
   }
 
   @override
@@ -593,6 +613,43 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
 
     return $AssetCopyWith<$Res>(_value.warehouse!, (value) {
       return _then(_value.copyWith(warehouse: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get destinationWarehouse {
+    if (_value.destinationWarehouse == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_value.destinationWarehouse!, (value) {
+      return _then(_value.copyWith(destinationWarehouse: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get destinationUser {
+    if (_value.destinationUser == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.destinationUser!, (value) {
+      return _then(_value.copyWith(destinationUser: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TenvioUnregisteredUserCopyWith<$Res>? get destinationUnregistered {
+    if (_value.destinationUnregistered == null) {
+      return null;
+    }
+
+    return $TenvioUnregisteredUserCopyWith<$Res>(
+        _value.destinationUnregistered!, (value) {
+      return _then(_value.copyWith(destinationUnregistered: value) as $Val);
     });
   }
 }
@@ -607,21 +664,29 @@ abstract class _$$TenvioPackageImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      String? packerId,
-      User? packer,
       String trackingId,
       String? warehouseId,
       Asset? warehouse,
       List<TenvioPackageQuantity>? items,
+      @TenvioDestinationTypeOrNullConverter()
+      TenvioDestinationType? destinationType,
+      Asset? destinationWarehouse,
+      String? destinationWarehouseId,
+      User? destinationUser,
+      String? destinationUserId,
+      TenvioUnregisteredUser? destinationUnregistered,
       @TenvioPackageStatusConverter() TenvioPackageStatus status,
       @TimestampConverter() DateTime createdAt,
-      @TimestampConverter() DateTime updatedAt,
-      int? totalItems});
+      @TimestampConverter() DateTime updatedAt});
 
   @override
-  $UserCopyWith<$Res>? get packer;
-  @override
   $AssetCopyWith<$Res>? get warehouse;
+  @override
+  $AssetCopyWith<$Res>? get destinationWarehouse;
+  @override
+  $UserCopyWith<$Res>? get destinationUser;
+  @override
+  $TenvioUnregisteredUserCopyWith<$Res>? get destinationUnregistered;
 }
 
 /// @nodoc
@@ -636,30 +701,25 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? packerId = freezed,
-    Object? packer = freezed,
     Object? trackingId = null,
     Object? warehouseId = freezed,
     Object? warehouse = freezed,
     Object? items = freezed,
+    Object? destinationType = freezed,
+    Object? destinationWarehouse = freezed,
+    Object? destinationWarehouseId = freezed,
+    Object? destinationUser = freezed,
+    Object? destinationUserId = freezed,
+    Object? destinationUnregistered = freezed,
     Object? status = null,
     Object? createdAt = null,
     Object? updatedAt = null,
-    Object? totalItems = freezed,
   }) {
     return _then(_$TenvioPackageImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      packerId: freezed == packerId
-          ? _value.packerId
-          : packerId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      packer: freezed == packer
-          ? _value.packer
-          : packer // ignore: cast_nullable_to_non_nullable
-              as User?,
       trackingId: null == trackingId
           ? _value.trackingId
           : trackingId // ignore: cast_nullable_to_non_nullable
@@ -676,6 +736,30 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
               as List<TenvioPackageQuantity>?,
+      destinationType: freezed == destinationType
+          ? _value.destinationType
+          : destinationType // ignore: cast_nullable_to_non_nullable
+              as TenvioDestinationType?,
+      destinationWarehouse: freezed == destinationWarehouse
+          ? _value.destinationWarehouse
+          : destinationWarehouse // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      destinationWarehouseId: freezed == destinationWarehouseId
+          ? _value.destinationWarehouseId
+          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      destinationUser: freezed == destinationUser
+          ? _value.destinationUser
+          : destinationUser // ignore: cast_nullable_to_non_nullable
+              as User?,
+      destinationUserId: freezed == destinationUserId
+          ? _value.destinationUserId
+          : destinationUserId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      destinationUnregistered: freezed == destinationUnregistered
+          ? _value.destinationUnregistered
+          : destinationUnregistered // ignore: cast_nullable_to_non_nullable
+              as TenvioUnregisteredUser?,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -688,10 +772,6 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      totalItems: freezed == totalItems
-          ? _value.totalItems
-          : totalItems // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -701,16 +781,19 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
 class _$TenvioPackageImpl implements _TenvioPackage {
   const _$TenvioPackageImpl(
       {required this.id,
-      this.packerId,
-      this.packer,
       required this.trackingId,
       this.warehouseId,
       this.warehouse,
       final List<TenvioPackageQuantity>? items,
+      @TenvioDestinationTypeOrNullConverter() this.destinationType,
+      this.destinationWarehouse,
+      this.destinationWarehouseId,
+      this.destinationUser,
+      this.destinationUserId,
+      this.destinationUnregistered,
       @TenvioPackageStatusConverter() required this.status,
       @TimestampConverter() required this.createdAt,
-      @TimestampConverter() required this.updatedAt,
-      this.totalItems})
+      @TimestampConverter() required this.updatedAt})
       : _items = items;
 
   factory _$TenvioPackageImpl.fromJson(Map<String, dynamic> json) =>
@@ -719,15 +802,6 @@ class _$TenvioPackageImpl implements _TenvioPackage {
   /// [id] is the unique identifier of the package
   @override
   final String id;
-
-  /// [packerId] is the unique identifier of the operator that will pack the package.
-  @override
-  final String? packerId;
-
-  /// [packer] is the operator that will pack the package.
-  /// This value will only be filled when the package is assigned to an operator.
-  @override
-  final User? packer;
 
   /// [trackingId] is the unique identifier of the tracking of the package.
   /// The equivalent to the tracking number of a package.
@@ -755,6 +829,31 @@ class _$TenvioPackageImpl implements _TenvioPackage {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [destinationType] Type of the destination.
+  @override
+  @TenvioDestinationTypeOrNullConverter()
+  final TenvioDestinationType? destinationType;
+
+  /// [destinationWarehouse] Warehouse destination of the order.
+  @override
+  final Asset? destinationWarehouse;
+
+  /// [destinationWarehouseId] ID of the warehouse destination of the order.
+  @override
+  final String? destinationWarehouseId;
+
+  /// [destinationUser] User destination of the order.
+  @override
+  final User? destinationUser;
+
+  /// [destinationUserId] ID of the user destination of the order.
+  @override
+  final String? destinationUserId;
+
+  /// [destinationUnregisteredUser] Unregistered user destination of the order.
+  @override
+  final TenvioUnregisteredUser? destinationUnregistered;
+
   /// [status] is the status of the package.
   @override
   @TenvioPackageStatusConverter()
@@ -770,13 +869,9 @@ class _$TenvioPackageImpl implements _TenvioPackage {
   @TimestampConverter()
   final DateTime updatedAt;
 
-  /// [totalItems] is the total number of items in the package.
-  @override
-  final int? totalItems;
-
   @override
   String toString() {
-    return 'TenvioPackage(id: $id, packerId: $packerId, packer: $packer, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, items: $items, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, totalItems: $totalItems)';
+    return 'TenvioPackage(id: $id, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, items: $items, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -785,9 +880,6 @@ class _$TenvioPackageImpl implements _TenvioPackage {
         (other.runtimeType == runtimeType &&
             other is _$TenvioPackageImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.packerId, packerId) ||
-                other.packerId == packerId) &&
-            (identical(other.packer, packer) || other.packer == packer) &&
             (identical(other.trackingId, trackingId) ||
                 other.trackingId == trackingId) &&
             (identical(other.warehouseId, warehouseId) ||
@@ -795,13 +887,24 @@ class _$TenvioPackageImpl implements _TenvioPackage {
             (identical(other.warehouse, warehouse) ||
                 other.warehouse == warehouse) &&
             const DeepCollectionEquality().equals(other._items, _items) &&
+            (identical(other.destinationType, destinationType) ||
+                other.destinationType == destinationType) &&
+            (identical(other.destinationWarehouse, destinationWarehouse) ||
+                other.destinationWarehouse == destinationWarehouse) &&
+            (identical(other.destinationWarehouseId, destinationWarehouseId) ||
+                other.destinationWarehouseId == destinationWarehouseId) &&
+            (identical(other.destinationUser, destinationUser) ||
+                other.destinationUser == destinationUser) &&
+            (identical(other.destinationUserId, destinationUserId) ||
+                other.destinationUserId == destinationUserId) &&
+            (identical(
+                    other.destinationUnregistered, destinationUnregistered) ||
+                other.destinationUnregistered == destinationUnregistered) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.totalItems, totalItems) ||
-                other.totalItems == totalItems));
+                other.updatedAt == updatedAt));
   }
 
   @JsonKey(ignore: true)
@@ -809,16 +912,19 @@ class _$TenvioPackageImpl implements _TenvioPackage {
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      packerId,
-      packer,
       trackingId,
       warehouseId,
       warehouse,
       const DeepCollectionEquality().hash(_items),
+      destinationType,
+      destinationWarehouse,
+      destinationWarehouseId,
+      destinationUser,
+      destinationUserId,
+      destinationUnregistered,
       status,
       createdAt,
-      updatedAt,
-      totalItems);
+      updatedAt);
 
   @JsonKey(ignore: true)
   @override
@@ -837,16 +943,21 @@ class _$TenvioPackageImpl implements _TenvioPackage {
 abstract class _TenvioPackage implements TenvioPackage {
   const factory _TenvioPackage(
       {required final String id,
-      final String? packerId,
-      final User? packer,
       required final String trackingId,
       final String? warehouseId,
       final Asset? warehouse,
       final List<TenvioPackageQuantity>? items,
+      @TenvioDestinationTypeOrNullConverter()
+      final TenvioDestinationType? destinationType,
+      final Asset? destinationWarehouse,
+      final String? destinationWarehouseId,
+      final User? destinationUser,
+      final String? destinationUserId,
+      final TenvioUnregisteredUser? destinationUnregistered,
       @TenvioPackageStatusConverter() required final TenvioPackageStatus status,
       @TimestampConverter() required final DateTime createdAt,
-      @TimestampConverter() required final DateTime updatedAt,
-      final int? totalItems}) = _$TenvioPackageImpl;
+      @TimestampConverter()
+      required final DateTime updatedAt}) = _$TenvioPackageImpl;
 
   factory _TenvioPackage.fromJson(Map<String, dynamic> json) =
       _$TenvioPackageImpl.fromJson;
@@ -855,15 +966,6 @@ abstract class _TenvioPackage implements TenvioPackage {
 
   /// [id] is the unique identifier of the package
   String get id;
-  @override
-
-  /// [packerId] is the unique identifier of the operator that will pack the package.
-  String? get packerId;
-  @override
-
-  /// [packer] is the operator that will pack the package.
-  /// This value will only be filled when the package is assigned to an operator.
-  User? get packer;
   @override
 
   /// [trackingId] is the unique identifier of the tracking of the package.
@@ -883,6 +985,31 @@ abstract class _TenvioPackage implements TenvioPackage {
   List<TenvioPackageQuantity>? get items;
   @override
 
+  /// [destinationType] Type of the destination.
+  @TenvioDestinationTypeOrNullConverter()
+  TenvioDestinationType? get destinationType;
+  @override
+
+  /// [destinationWarehouse] Warehouse destination of the order.
+  Asset? get destinationWarehouse;
+  @override
+
+  /// [destinationWarehouseId] ID of the warehouse destination of the order.
+  String? get destinationWarehouseId;
+  @override
+
+  /// [destinationUser] User destination of the order.
+  User? get destinationUser;
+  @override
+
+  /// [destinationUserId] ID of the user destination of the order.
+  String? get destinationUserId;
+  @override
+
+  /// [destinationUnregisteredUser] Unregistered user destination of the order.
+  TenvioUnregisteredUser? get destinationUnregistered;
+  @override
+
   /// [status] is the status of the package.
   @TenvioPackageStatusConverter()
   TenvioPackageStatus get status;
@@ -897,10 +1024,6 @@ abstract class _TenvioPackage implements TenvioPackage {
   @TimestampConverter()
   DateTime get updatedAt;
   @override
-
-  /// [totalItems] is the total number of items in the package.
-  int? get totalItems;
-  @override
   @JsonKey(ignore: true)
   _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -913,9 +1036,6 @@ TenvioPackageQuantity _$TenvioPackageQuantityFromJson(
 
 /// @nodoc
 mixin _$TenvioPackageQuantity {
-  /// [id] is the unique identifier of the package quantity
-  String get id => throw _privateConstructorUsedError;
-
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
   String get matrixId => throw _privateConstructorUsedError;
 
@@ -937,8 +1057,7 @@ abstract class $TenvioPackageQuantityCopyWith<$Res> {
           $Res Function(TenvioPackageQuantity) then) =
       _$TenvioPackageQuantityCopyWithImpl<$Res, TenvioPackageQuantity>;
   @useResult
-  $Res call(
-      {String id, String matrixId, TenvioMatrixItem? matrix, int quantity});
+  $Res call({String matrixId, TenvioMatrixItem? matrix, int quantity});
 
   $TenvioMatrixItemCopyWith<$Res>? get matrix;
 }
@@ -957,16 +1076,11 @@ class _$TenvioPackageQuantityCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? matrixId = null,
     Object? matrix = freezed,
     Object? quantity = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       matrixId: null == matrixId
           ? _value.matrixId
           : matrixId // ignore: cast_nullable_to_non_nullable
@@ -1004,8 +1118,7 @@ abstract class _$$TenvioPackageQuantityImplCopyWith<$Res>
       __$$TenvioPackageQuantityImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String id, String matrixId, TenvioMatrixItem? matrix, int quantity});
+  $Res call({String matrixId, TenvioMatrixItem? matrix, int quantity});
 
   @override
   $TenvioMatrixItemCopyWith<$Res>? get matrix;
@@ -1023,16 +1136,11 @@ class __$$TenvioPackageQuantityImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? matrixId = null,
     Object? matrix = freezed,
     Object? quantity = null,
   }) {
     return _then(_$TenvioPackageQuantityImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       matrixId: null == matrixId
           ? _value.matrixId
           : matrixId // ignore: cast_nullable_to_non_nullable
@@ -1053,17 +1161,10 @@ class __$$TenvioPackageQuantityImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TenvioPackageQuantityImpl implements _TenvioPackageQuantity {
   const _$TenvioPackageQuantityImpl(
-      {required this.id,
-      required this.matrixId,
-      this.matrix,
-      required this.quantity});
+      {required this.matrixId, this.matrix, required this.quantity});
 
   factory _$TenvioPackageQuantityImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioPackageQuantityImplFromJson(json);
-
-  /// [id] is the unique identifier of the package quantity
-  @override
-  final String id;
 
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
   @override
@@ -1079,7 +1180,7 @@ class _$TenvioPackageQuantityImpl implements _TenvioPackageQuantity {
 
   @override
   String toString() {
-    return 'TenvioPackageQuantity(id: $id, matrixId: $matrixId, matrix: $matrix, quantity: $quantity)';
+    return 'TenvioPackageQuantity(matrixId: $matrixId, matrix: $matrix, quantity: $quantity)';
   }
 
   @override
@@ -1087,7 +1188,6 @@ class _$TenvioPackageQuantityImpl implements _TenvioPackageQuantity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$TenvioPackageQuantityImpl &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.matrixId, matrixId) ||
                 other.matrixId == matrixId) &&
             (identical(other.matrix, matrix) || other.matrix == matrix) &&
@@ -1097,7 +1197,7 @@ class _$TenvioPackageQuantityImpl implements _TenvioPackageQuantity {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, matrixId, matrix, quantity);
+  int get hashCode => Object.hash(runtimeType, matrixId, matrix, quantity);
 
   @JsonKey(ignore: true)
   @override
@@ -1116,18 +1216,13 @@ class _$TenvioPackageQuantityImpl implements _TenvioPackageQuantity {
 
 abstract class _TenvioPackageQuantity implements TenvioPackageQuantity {
   const factory _TenvioPackageQuantity(
-      {required final String id,
-      required final String matrixId,
+      {required final String matrixId,
       final TenvioMatrixItem? matrix,
       required final int quantity}) = _$TenvioPackageQuantityImpl;
 
   factory _TenvioPackageQuantity.fromJson(Map<String, dynamic> json) =
       _$TenvioPackageQuantityImpl.fromJson;
 
-  @override
-
-  /// [id] is the unique identifier of the package quantity
-  String get id;
   @override
 
   /// [matrixId] is the unique identifier of the matrix that the package quantity is related.

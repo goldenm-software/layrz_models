@@ -42,10 +42,6 @@ Map<String, dynamic> _$$TenvioItemMovementImplToJson(
 _$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
     _$TenvioPackageImpl(
       id: json['id'] as String,
-      packerId: json['packerId'] as String?,
-      packer: json['packer'] == null
-          ? null
-          : User.fromJson(json['packer'] as Map<String, dynamic>),
       trackingId: json['trackingId'] as String,
       warehouseId: json['warehouseId'] as String?,
       warehouse: json['warehouse'] == null
@@ -55,32 +51,49 @@ _$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
           ?.map(
               (e) => TenvioPackageQuantity.fromJson(e as Map<String, dynamic>))
           .toList(),
+      destinationType: const TenvioDestinationTypeOrNullConverter()
+          .fromJson(json['destinationType'] as String?),
+      destinationWarehouse: json['destinationWarehouse'] == null
+          ? null
+          : Asset.fromJson(
+              json['destinationWarehouse'] as Map<String, dynamic>),
+      destinationWarehouseId: json['destinationWarehouseId'] as String?,
+      destinationUser: json['destinationUser'] == null
+          ? null
+          : User.fromJson(json['destinationUser'] as Map<String, dynamic>),
+      destinationUserId: json['destinationUserId'] as String?,
+      destinationUnregistered: json['destinationUnregistered'] == null
+          ? null
+          : TenvioUnregisteredUser.fromJson(
+              json['destinationUnregistered'] as Map<String, dynamic>),
       status: const TenvioPackageStatusConverter()
           .fromJson(json['status'] as String),
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
       updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
-      totalItems: (json['totalItems'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'packerId': instance.packerId,
-      'packer': instance.packer?.toJson(),
       'trackingId': instance.trackingId,
       'warehouseId': instance.warehouseId,
       'warehouse': instance.warehouse?.toJson(),
       'items': instance.items?.map((e) => e.toJson()).toList(),
+      'destinationType': const TenvioDestinationTypeOrNullConverter()
+          .toJson(instance.destinationType),
+      'destinationWarehouse': instance.destinationWarehouse?.toJson(),
+      'destinationWarehouseId': instance.destinationWarehouseId,
+      'destinationUser': instance.destinationUser?.toJson(),
+      'destinationUserId': instance.destinationUserId,
+      'destinationUnregistered': instance.destinationUnregistered?.toJson(),
       'status': const TenvioPackageStatusConverter().toJson(instance.status),
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
-      'totalItems': instance.totalItems,
     };
 
 _$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(
         Map<String, dynamic> json) =>
     _$TenvioPackageQuantityImpl(
-      id: json['id'] as String,
       matrixId: json['matrixId'] as String,
       matrix: json['matrix'] == null
           ? null
@@ -91,7 +104,6 @@ _$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(
 Map<String, dynamic> _$$TenvioPackageQuantityImplToJson(
         _$TenvioPackageQuantityImpl instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'matrixId': instance.matrixId,
       'matrix': instance.matrix?.toJson(),
       'quantity': instance.quantity,

@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.2.33
+
+- Major changes on `TenvioPackage` model.
+- Removed unnecessary values from `TenvioOrderStatus` enum.
+- Re-writed `TenvioPackageStatus` enum to be accurate with the Tenvio Pick & Pack ecosystem.
+
 ## 3.2.32
 
 - Added `LayrzNumber` numeric system to handle the `Order.orderId` and Tracking IDs of Tenvio

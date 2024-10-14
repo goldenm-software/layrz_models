@@ -12,25 +12,9 @@ enum TenvioOrderStatus {
   /// API Reference: PROCESSING
   processing,
 
-  /// [waitingForPickUp] refers that the order is waiting for pickup
-  /// API Reference: WAITING_FOR_PICK_UP
-  waitingForPickUp,
-
-  /// [inTransit] refers that the order is in transit
-  /// API Reference: IN_TRANSIT
-  inTransit,
-
-  /// [delivered] refers that the order was delivered
-  /// API Reference: DELIVERED
-  delivered,
-
-  /// [dropOffFailed] refers that the order failed to be dropped off
-  /// API Reference: DROP_OFF_FAILED
-  dropOffFailed,
-
-  /// [returned] refers that the order was returned
-  /// API Reference: RETURNED
-  returned,
+  /// [finished] refers that the order was completed the packaging process
+  /// API Reference: FINISHED
+  finished,
 
   /// [unknown] refers that the order status is unknown
   unknown,
@@ -47,16 +31,8 @@ enum TenvioOrderStatus {
         return 'PENDING';
       case TenvioOrderStatus.processing:
         return 'PROCESSING';
-      case TenvioOrderStatus.waitingForPickUp:
-        return 'WAITING_FOR_PICK_UP';
-      case TenvioOrderStatus.inTransit:
-        return 'IN_TRANSIT';
-      case TenvioOrderStatus.delivered:
-        return 'DELIVERED';
-      case TenvioOrderStatus.dropOffFailed:
-        return 'DROP_OFF_FAILED';
-      case TenvioOrderStatus.returned:
-        return 'RETURNED';
+      case TenvioOrderStatus.finished:
+        return 'FINISHED';
       case TenvioOrderStatus.unknown:
         return 'UNKNOWN';
     }
@@ -70,16 +46,8 @@ enum TenvioOrderStatus {
         return TenvioOrderStatus.pending;
       case 'PROCESSING':
         return TenvioOrderStatus.processing;
-      case 'WAITING_FOR_PICK_UP':
-        return TenvioOrderStatus.waitingForPickUp;
-      case 'IN_TRANSIT':
-        return TenvioOrderStatus.inTransit;
-      case 'DELIVERED':
-        return TenvioOrderStatus.delivered;
-      case 'DROP_OFF_FAILED':
-        return TenvioOrderStatus.dropOffFailed;
-      case 'RETURNED':
-        return TenvioOrderStatus.returned;
+      case 'FINISHED':
+        return TenvioOrderStatus.finished;
       default:
         return TenvioOrderStatus.unknown;
     }
@@ -91,16 +59,8 @@ enum TenvioOrderStatus {
         return Colors.orange;
       case TenvioOrderStatus.processing:
         return Colors.blue;
-      case TenvioOrderStatus.waitingForPickUp:
-        return Colors.amber;
-      case TenvioOrderStatus.inTransit:
-        return Colors.blue;
-      case TenvioOrderStatus.delivered:
+      case TenvioOrderStatus.finished:
         return Colors.green;
-      case TenvioOrderStatus.dropOffFailed:
-        return Colors.red;
-      case TenvioOrderStatus.returned:
-        return Colors.red;
       case TenvioOrderStatus.unknown:
       case TenvioOrderStatus.draft:
         return Colors.grey;
