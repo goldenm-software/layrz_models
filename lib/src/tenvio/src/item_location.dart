@@ -12,6 +12,14 @@ enum TenvioItemLocation {
   /// [dispatched] defines that the item is dispatched.
   /// API Reference: `DISPATCHED`
   dispatched,
+
+  /// [inPackage] defines that the item is in a package.
+  /// API Reference: `IN_PACKAGE`
+  inPackage,
+
+  /// [unknown] defines that the item location is unknown.
+  /// API Reference: `UNKNOWN`
+  unknown,
   ;
 
   @override
@@ -25,6 +33,11 @@ enum TenvioItemLocation {
         return 'AT_CUSTOMER';
       case TenvioItemLocation.dispatched:
         return 'DISPATCHED';
+      case TenvioItemLocation.inPackage:
+        return 'IN_PACKAGE';
+      case TenvioItemLocation.unknown:
+      default:
+        return 'UNKNOWN';
     }
   }
 
@@ -36,8 +49,11 @@ enum TenvioItemLocation {
         return TenvioItemLocation.atCustomer;
       case 'DISPATCHED':
         return TenvioItemLocation.dispatched;
+      case 'IN_PACKAGE':
+        return TenvioItemLocation.inPackage;
+      case 'UNKNOWN':
       default:
-        throw Exception('Unknown TenvioItemLocation value: $json');
+        return TenvioItemLocation.unknown;
     }
   }
 }

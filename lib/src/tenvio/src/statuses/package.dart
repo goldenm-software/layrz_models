@@ -1,6 +1,10 @@
 part of '../../tenvio.dart';
 
 enum TenvioPackageStatus {
+  /// [pending] refers that the package was created but not processed yet
+  /// API Reference: `PENDING`
+  pending,
+
   /// [packaging] refers that the package is being packed
   /// API Reference: `PACKAGING`
   packaging,
@@ -45,6 +49,8 @@ enum TenvioPackageStatus {
 
   String toJson() {
     switch (this) {
+      case TenvioPackageStatus.pending:
+        return 'PENDING';
       case TenvioPackageStatus.packaging:
         return 'PACKAGING';
       case TenvioPackageStatus.closed:
@@ -69,6 +75,8 @@ enum TenvioPackageStatus {
 
   static TenvioPackageStatus fromJson(String json) {
     switch (json) {
+      case 'PENDING':
+        return TenvioPackageStatus.pending;
       case 'PACKAGING':
         return TenvioPackageStatus.packaging;
       case 'CLOSED':
@@ -88,6 +96,29 @@ enum TenvioPackageStatus {
       case 'UNKNOWN':
       default:
         return TenvioPackageStatus.unknown;
+    }
+  }
+
+  Color get color {
+    switch (this) {
+      case TenvioPackageStatus.packaging:
+        return Colors.blue;
+      case TenvioPackageStatus.closed:
+        return Colors.orange;
+      case TenvioPackageStatus.waitingForPickup:
+        return Colors.blue;
+      case TenvioPackageStatus.transit:
+        return Colors.purple;
+      case TenvioPackageStatus.arrivingSoon:
+        return Colors.purple;
+      case TenvioPackageStatus.delivered:
+        return Colors.green;
+      case TenvioPackageStatus.dropoffFailed:
+      case TenvioPackageStatus.returned:
+        return Colors.red;
+      case TenvioPackageStatus.unknown:
+      case TenvioPackageStatus.pending:
+        return Colors.grey;
     }
   }
 }

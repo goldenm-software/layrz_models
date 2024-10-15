@@ -2,6 +2,8 @@ part of '../tenvio.dart';
 
 @freezed
 class TenvioMatrixItem with _$TenvioMatrixItem {
+  const TenvioMatrixItem._();
+
   const factory TenvioMatrixItem({
     /// [id] is the unique identifier for the item.
     required String id,
@@ -44,6 +46,8 @@ class TenvioMatrixItem with _$TenvioMatrixItem {
   }) = _TenvioMatrixItem;
 
   factory TenvioMatrixItem.fromJson(Map<String, dynamic> json) => _$TenvioMatrixItemFromJson(json);
+
+  String get label =>  LayrzNumber.toSystem(int.parse(id)).padLeft(6, '0');
 }
 
 @unfreezed

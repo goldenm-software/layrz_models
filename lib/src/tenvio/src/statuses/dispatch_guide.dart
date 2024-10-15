@@ -71,6 +71,24 @@ enum TenvioDispatchGuideStatus {
         return TenvioDispatchGuideStatus.unknown;
     }
   }
+
+  Color get color {
+    switch (this) {
+      case TenvioDispatchGuideStatus.pending:
+        return Colors.orange;
+      case TenvioDispatchGuideStatus.loading:
+        return Colors.lightBlue;
+      case TenvioDispatchGuideStatus.waitingCheck:
+        return Colors.blue;
+      case TenvioDispatchGuideStatus.checking:
+        return Colors.blue;
+      case TenvioDispatchGuideStatus.done:
+        return Colors.green;
+      case TenvioDispatchGuideStatus.unknown:
+      case TenvioDispatchGuideStatus.draft:
+        return Colors.grey;
+    }
+  }
 }
 
 class TenvioDispatchGuideStatusConverter implements JsonConverter<TenvioDispatchGuideStatus, String> {

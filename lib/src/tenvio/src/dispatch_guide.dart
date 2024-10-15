@@ -61,6 +61,9 @@ class TenvioDispatchGuideInput with _$TenvioDispatchGuideInput {
     /// [id] is the unique identifier of the dispatch guide
     String? id,
 
+    /// [warehouseId] is the unique identifier of the warehouse where the dispatch guide was created
+    required String warehouseId,
+
     /// [status] is the current status of the dispatch guide
     @TenvioDispatchGuideStatusConverter() @Default(TenvioDispatchGuideStatus.draft) TenvioDispatchGuideStatus status,
 

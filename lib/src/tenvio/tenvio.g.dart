@@ -663,6 +663,7 @@ _$TenvioDispatchGuideInputImpl _$$TenvioDispatchGuideInputImplFromJson(
         Map<String, dynamic> json) =>
     _$TenvioDispatchGuideInputImpl(
       id: json['id'] as String?,
+      warehouseId: json['warehouseId'] as String,
       status: json['status'] == null
           ? TenvioDispatchGuideStatus.draft
           : const TenvioDispatchGuideStatusConverter()
@@ -680,6 +681,7 @@ Map<String, dynamic> _$$TenvioDispatchGuideInputImplToJson(
         _$TenvioDispatchGuideInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'warehouseId': instance.warehouseId,
       'status':
           const TenvioDispatchGuideStatusConverter().toJson(instance.status),
       'driverId': instance.driverId,

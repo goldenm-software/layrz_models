@@ -4387,7 +4387,7 @@ class __$$TenvioMatrixItemImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
+class _$TenvioMatrixItemImpl extends _TenvioMatrixItem {
   const _$TenvioMatrixItemImpl(
       {required this.id,
       required this.name,
@@ -4402,7 +4402,8 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
       @TimestampOrNullConverter() this.updatedAt,
       final List<TenvioItem>? items})
       : _customProperties = customProperties,
-        _items = items;
+        _items = items,
+        super._();
 
   factory _$TenvioMatrixItemImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioMatrixItemImplFromJson(json);
@@ -4540,7 +4541,7 @@ class _$TenvioMatrixItemImpl implements _TenvioMatrixItem {
   }
 }
 
-abstract class _TenvioMatrixItem implements TenvioMatrixItem {
+abstract class _TenvioMatrixItem extends TenvioMatrixItem {
   const factory _TenvioMatrixItem(
       {required final String id,
       required final String name,
@@ -4554,6 +4555,7 @@ abstract class _TenvioMatrixItem implements TenvioMatrixItem {
       @TimestampOrNullConverter() final DateTime? createdAt,
       @TimestampOrNullConverter() final DateTime? updatedAt,
       final List<TenvioItem>? items}) = _$TenvioMatrixItemImpl;
+  const _TenvioMatrixItem._() : super._();
 
   factory _TenvioMatrixItem.fromJson(Map<String, dynamic> json) =
       _$TenvioMatrixItemImpl.fromJson;
@@ -7846,6 +7848,12 @@ mixin _$TenvioDispatchGuideInput {
   /// [id] is the unique identifier of the dispatch guide
   set id(String? value) => throw _privateConstructorUsedError;
 
+  /// [warehouseId] is the unique identifier of the warehouse where the dispatch guide was created
+  String get warehouseId => throw _privateConstructorUsedError;
+
+  /// [warehouseId] is the unique identifier of the warehouse where the dispatch guide was created
+  set warehouseId(String value) => throw _privateConstructorUsedError;
+
   /// [status] is the current status of the dispatch guide
   @TenvioDispatchGuideStatusConverter()
   TenvioDispatchGuideStatus get status => throw _privateConstructorUsedError;
@@ -7893,6 +7901,7 @@ abstract class $TenvioDispatchGuideInputCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
+      String warehouseId,
       @TenvioDispatchGuideStatusConverter() TenvioDispatchGuideStatus status,
       String? driverId,
       String? truckId,
@@ -7915,6 +7924,7 @@ class _$TenvioDispatchGuideInputCopyWithImpl<$Res,
   @override
   $Res call({
     Object? id = freezed,
+    Object? warehouseId = null,
     Object? status = null,
     Object? driverId = freezed,
     Object? truckId = freezed,
@@ -7926,6 +7936,10 @@ class _$TenvioDispatchGuideInputCopyWithImpl<$Res,
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
+      warehouseId: null == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as String,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -7961,6 +7975,7 @@ abstract class _$$TenvioDispatchGuideInputImplCopyWith<$Res>
   @useResult
   $Res call(
       {String? id,
+      String warehouseId,
       @TenvioDispatchGuideStatusConverter() TenvioDispatchGuideStatus status,
       String? driverId,
       String? truckId,
@@ -7982,6 +7997,7 @@ class __$$TenvioDispatchGuideInputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? warehouseId = null,
     Object? status = null,
     Object? driverId = freezed,
     Object? truckId = freezed,
@@ -7993,6 +8009,10 @@ class __$$TenvioDispatchGuideInputImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
+      warehouseId: null == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as String,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -8022,6 +8042,7 @@ class __$$TenvioDispatchGuideInputImplCopyWithImpl<$Res>
 class _$TenvioDispatchGuideInputImpl extends _TenvioDispatchGuideInput {
   _$TenvioDispatchGuideInputImpl(
       {this.id,
+      required this.warehouseId,
       @TenvioDispatchGuideStatusConverter()
       this.status = TenvioDispatchGuideStatus.draft,
       this.driverId,
@@ -8036,6 +8057,10 @@ class _$TenvioDispatchGuideInputImpl extends _TenvioDispatchGuideInput {
   /// [id] is the unique identifier of the dispatch guide
   @override
   String? id;
+
+  /// [warehouseId] is the unique identifier of the warehouse where the dispatch guide was created
+  @override
+  String warehouseId;
 
   /// [status] is the current status of the dispatch guide
   @override
@@ -8062,7 +8087,7 @@ class _$TenvioDispatchGuideInputImpl extends _TenvioDispatchGuideInput {
 
   @override
   String toString() {
-    return 'TenvioDispatchGuideInput(id: $id, status: $status, driverId: $driverId, truckId: $truckId, loaderId: $loaderId, packagesIds: $packagesIds)';
+    return 'TenvioDispatchGuideInput(id: $id, warehouseId: $warehouseId, status: $status, driverId: $driverId, truckId: $truckId, loaderId: $loaderId, packagesIds: $packagesIds)';
   }
 
   @JsonKey(ignore: true)
@@ -8083,6 +8108,7 @@ class _$TenvioDispatchGuideInputImpl extends _TenvioDispatchGuideInput {
 abstract class _TenvioDispatchGuideInput extends TenvioDispatchGuideInput {
   factory _TenvioDispatchGuideInput(
       {String? id,
+      required String warehouseId,
       @TenvioDispatchGuideStatusConverter() TenvioDispatchGuideStatus status,
       String? driverId,
       String? truckId,
@@ -8100,6 +8126,13 @@ abstract class _TenvioDispatchGuideInput extends TenvioDispatchGuideInput {
 
   /// [id] is the unique identifier of the dispatch guide
   set id(String? value);
+  @override
+
+  /// [warehouseId] is the unique identifier of the warehouse where the dispatch guide was created
+  String get warehouseId;
+
+  /// [warehouseId] is the unique identifier of the warehouse where the dispatch guide was created
+  set warehouseId(String value);
   @override
 
   /// [status] is the current status of the dispatch guide
