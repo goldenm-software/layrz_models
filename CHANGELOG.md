@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.35
+
+- Added `TenvioDispatchGuide` model and `TenvioDispatchGuideStatus` enum
+- Added `TenvioDriver` model
+
 ## 3.2.34
 
 - Added qrCodes to `TenvioOrder`, `TenvioPackage` and `TenvioMatrixItem` models

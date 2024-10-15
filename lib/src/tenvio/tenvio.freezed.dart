@@ -426,105 +426,54 @@ abstract class _TenvioItemMovement implements TenvioItemMovement {
       throw _privateConstructorUsedError;
 }
 
-TenvioPackage _$TenvioPackageFromJson(Map<String, dynamic> json) {
-  return _TenvioPackage.fromJson(json);
+DropoffFailedReason _$DropoffFailedReasonFromJson(Map<String, dynamic> json) {
+  return _DropoffFailedReason.fromJson(json);
 }
 
 /// @nodoc
-mixin _$TenvioPackage {
-  /// [id] is the unique identifier of the package
+mixin _$DropoffFailedReason {
+  /// [id] is the unique identifier for the reason.
   String get id => throw _privateConstructorUsedError;
 
-  /// [trackingId] is the unique identifier of the tracking of the package.
-  /// The equivalent to the tracking number of a package.
-  String get trackingId => throw _privateConstructorUsedError;
+  /// [driverId] is the unique identifier of the driver that failed the dropoff.
+  String get driverId => throw _privateConstructorUsedError;
 
-  /// [warehouseId] is the unique identifier of the warehouse that the package is located.
-  String? get warehouseId => throw _privateConstructorUsedError;
+  /// [driver] is the name of the driver that failed the dropoff.
+  User? get driver => throw _privateConstructorUsedError;
 
-  /// [warehouse] is the warehouse that the package is located.
-  Asset? get warehouse => throw _privateConstructorUsedError;
+  /// [reason] is the reason why the dropoff failed.
+  String get reason => throw _privateConstructorUsedError;
 
-  /// [qrCode] is the QR code of the package. should contains the following URI:
-  /// `tenvio://orders/:orderId/packages/:packageId`
-  String? get qrCode => throw _privateConstructorUsedError;
-
-  /// [items] is the list of items that are part of the package.
-  List<TenvioPackageQuantity>? get items => throw _privateConstructorUsedError;
-
-  /// [destinationType] Type of the destination.
-  @TenvioDestinationTypeOrNullConverter()
-  TenvioDestinationType? get destinationType =>
-      throw _privateConstructorUsedError;
-
-  /// [destinationWarehouse] Warehouse destination of the order.
-  Asset? get destinationWarehouse => throw _privateConstructorUsedError;
-
-  /// [destinationWarehouseId] ID of the warehouse destination of the order.
-  String? get destinationWarehouseId => throw _privateConstructorUsedError;
-
-  /// [destinationUser] User destination of the order.
-  User? get destinationUser => throw _privateConstructorUsedError;
-
-  /// [destinationUserId] ID of the user destination of the order.
-  String? get destinationUserId => throw _privateConstructorUsedError;
-
-  /// [destinationUnregisteredUser] Unregistered user destination of the order.
-  TenvioUnregisteredUser? get destinationUnregistered =>
-      throw _privateConstructorUsedError;
-
-  /// [status] is the status of the package.
-  @TenvioPackageStatusConverter()
-  TenvioPackageStatus get status => throw _privateConstructorUsedError;
-
-  /// [createdAt] is the date when the package was created.
+  /// [createdAt] is the date when the dropoff failed.
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
 
-  /// [updatedAt] is the date when the package was last updated.
-  @TimestampConverter()
-  DateTime get updatedAt => throw _privateConstructorUsedError;
-
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TenvioPackageCopyWith<TenvioPackage> get copyWith =>
+  $DropoffFailedReasonCopyWith<DropoffFailedReason> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TenvioPackageCopyWith<$Res> {
-  factory $TenvioPackageCopyWith(
-          TenvioPackage value, $Res Function(TenvioPackage) then) =
-      _$TenvioPackageCopyWithImpl<$Res, TenvioPackage>;
+abstract class $DropoffFailedReasonCopyWith<$Res> {
+  factory $DropoffFailedReasonCopyWith(
+          DropoffFailedReason value, $Res Function(DropoffFailedReason) then) =
+      _$DropoffFailedReasonCopyWithImpl<$Res, DropoffFailedReason>;
   @useResult
   $Res call(
       {String id,
-      String trackingId,
-      String? warehouseId,
-      Asset? warehouse,
-      String? qrCode,
-      List<TenvioPackageQuantity>? items,
-      @TenvioDestinationTypeOrNullConverter()
-      TenvioDestinationType? destinationType,
-      Asset? destinationWarehouse,
-      String? destinationWarehouseId,
-      User? destinationUser,
-      String? destinationUserId,
-      TenvioUnregisteredUser? destinationUnregistered,
-      @TenvioPackageStatusConverter() TenvioPackageStatus status,
-      @TimestampConverter() DateTime createdAt,
-      @TimestampConverter() DateTime updatedAt});
+      String driverId,
+      User? driver,
+      String reason,
+      @TimestampConverter() DateTime createdAt});
 
-  $AssetCopyWith<$Res>? get warehouse;
-  $AssetCopyWith<$Res>? get destinationWarehouse;
-  $UserCopyWith<$Res>? get destinationUser;
-  $TenvioUnregisteredUserCopyWith<$Res>? get destinationUnregistered;
+  $UserCopyWith<$Res>? get driver;
 }
 
 /// @nodoc
-class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
-    implements $TenvioPackageCopyWith<$Res> {
-  _$TenvioPackageCopyWithImpl(this._value, this._then);
+class _$DropoffFailedReasonCopyWithImpl<$Res, $Val extends DropoffFailedReason>
+    implements $DropoffFailedReasonCopyWith<$Res> {
+  _$DropoffFailedReasonCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -535,258 +484,104 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
   @override
   $Res call({
     Object? id = null,
-    Object? trackingId = null,
-    Object? warehouseId = freezed,
-    Object? warehouse = freezed,
-    Object? qrCode = freezed,
-    Object? items = freezed,
-    Object? destinationType = freezed,
-    Object? destinationWarehouse = freezed,
-    Object? destinationWarehouseId = freezed,
-    Object? destinationUser = freezed,
-    Object? destinationUserId = freezed,
-    Object? destinationUnregistered = freezed,
-    Object? status = null,
+    Object? driverId = null,
+    Object? driver = freezed,
+    Object? reason = null,
     Object? createdAt = null,
-    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      trackingId: null == trackingId
-          ? _value.trackingId
-          : trackingId // ignore: cast_nullable_to_non_nullable
+      driverId: null == driverId
+          ? _value.driverId
+          : driverId // ignore: cast_nullable_to_non_nullable
               as String,
-      warehouseId: freezed == warehouseId
-          ? _value.warehouseId
-          : warehouseId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      warehouse: freezed == warehouse
-          ? _value.warehouse
-          : warehouse // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      qrCode: freezed == qrCode
-          ? _value.qrCode
-          : qrCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      items: freezed == items
-          ? _value.items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<TenvioPackageQuantity>?,
-      destinationType: freezed == destinationType
-          ? _value.destinationType
-          : destinationType // ignore: cast_nullable_to_non_nullable
-              as TenvioDestinationType?,
-      destinationWarehouse: freezed == destinationWarehouse
-          ? _value.destinationWarehouse
-          : destinationWarehouse // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      destinationWarehouseId: freezed == destinationWarehouseId
-          ? _value.destinationWarehouseId
-          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      destinationUser: freezed == destinationUser
-          ? _value.destinationUser
-          : destinationUser // ignore: cast_nullable_to_non_nullable
+      driver: freezed == driver
+          ? _value.driver
+          : driver // ignore: cast_nullable_to_non_nullable
               as User?,
-      destinationUserId: freezed == destinationUserId
-          ? _value.destinationUserId
-          : destinationUserId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      destinationUnregistered: freezed == destinationUnregistered
-          ? _value.destinationUnregistered
-          : destinationUnregistered // ignore: cast_nullable_to_non_nullable
-              as TenvioUnregisteredUser?,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as TenvioPackageStatus,
+      reason: null == reason
+          ? _value.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $AssetCopyWith<$Res>? get warehouse {
-    if (_value.warehouse == null) {
+  $UserCopyWith<$Res>? get driver {
+    if (_value.driver == null) {
       return null;
     }
 
-    return $AssetCopyWith<$Res>(_value.warehouse!, (value) {
-      return _then(_value.copyWith(warehouse: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AssetCopyWith<$Res>? get destinationWarehouse {
-    if (_value.destinationWarehouse == null) {
-      return null;
-    }
-
-    return $AssetCopyWith<$Res>(_value.destinationWarehouse!, (value) {
-      return _then(_value.copyWith(destinationWarehouse: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get destinationUser {
-    if (_value.destinationUser == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_value.destinationUser!, (value) {
-      return _then(_value.copyWith(destinationUser: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TenvioUnregisteredUserCopyWith<$Res>? get destinationUnregistered {
-    if (_value.destinationUnregistered == null) {
-      return null;
-    }
-
-    return $TenvioUnregisteredUserCopyWith<$Res>(
-        _value.destinationUnregistered!, (value) {
-      return _then(_value.copyWith(destinationUnregistered: value) as $Val);
+    return $UserCopyWith<$Res>(_value.driver!, (value) {
+      return _then(_value.copyWith(driver: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$TenvioPackageImplCopyWith<$Res>
-    implements $TenvioPackageCopyWith<$Res> {
-  factory _$$TenvioPackageImplCopyWith(
-          _$TenvioPackageImpl value, $Res Function(_$TenvioPackageImpl) then) =
-      __$$TenvioPackageImplCopyWithImpl<$Res>;
+abstract class _$$DropoffFailedReasonImplCopyWith<$Res>
+    implements $DropoffFailedReasonCopyWith<$Res> {
+  factory _$$DropoffFailedReasonImplCopyWith(_$DropoffFailedReasonImpl value,
+          $Res Function(_$DropoffFailedReasonImpl) then) =
+      __$$DropoffFailedReasonImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String id,
-      String trackingId,
-      String? warehouseId,
-      Asset? warehouse,
-      String? qrCode,
-      List<TenvioPackageQuantity>? items,
-      @TenvioDestinationTypeOrNullConverter()
-      TenvioDestinationType? destinationType,
-      Asset? destinationWarehouse,
-      String? destinationWarehouseId,
-      User? destinationUser,
-      String? destinationUserId,
-      TenvioUnregisteredUser? destinationUnregistered,
-      @TenvioPackageStatusConverter() TenvioPackageStatus status,
-      @TimestampConverter() DateTime createdAt,
-      @TimestampConverter() DateTime updatedAt});
+      String driverId,
+      User? driver,
+      String reason,
+      @TimestampConverter() DateTime createdAt});
 
   @override
-  $AssetCopyWith<$Res>? get warehouse;
-  @override
-  $AssetCopyWith<$Res>? get destinationWarehouse;
-  @override
-  $UserCopyWith<$Res>? get destinationUser;
-  @override
-  $TenvioUnregisteredUserCopyWith<$Res>? get destinationUnregistered;
+  $UserCopyWith<$Res>? get driver;
 }
 
 /// @nodoc
-class __$$TenvioPackageImplCopyWithImpl<$Res>
-    extends _$TenvioPackageCopyWithImpl<$Res, _$TenvioPackageImpl>
-    implements _$$TenvioPackageImplCopyWith<$Res> {
-  __$$TenvioPackageImplCopyWithImpl(
-      _$TenvioPackageImpl _value, $Res Function(_$TenvioPackageImpl) _then)
+class __$$DropoffFailedReasonImplCopyWithImpl<$Res>
+    extends _$DropoffFailedReasonCopyWithImpl<$Res, _$DropoffFailedReasonImpl>
+    implements _$$DropoffFailedReasonImplCopyWith<$Res> {
+  __$$DropoffFailedReasonImplCopyWithImpl(_$DropoffFailedReasonImpl _value,
+      $Res Function(_$DropoffFailedReasonImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
-    Object? trackingId = null,
-    Object? warehouseId = freezed,
-    Object? warehouse = freezed,
-    Object? qrCode = freezed,
-    Object? items = freezed,
-    Object? destinationType = freezed,
-    Object? destinationWarehouse = freezed,
-    Object? destinationWarehouseId = freezed,
-    Object? destinationUser = freezed,
-    Object? destinationUserId = freezed,
-    Object? destinationUnregistered = freezed,
-    Object? status = null,
+    Object? driverId = null,
+    Object? driver = freezed,
+    Object? reason = null,
     Object? createdAt = null,
-    Object? updatedAt = null,
   }) {
-    return _then(_$TenvioPackageImpl(
+    return _then(_$DropoffFailedReasonImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      trackingId: null == trackingId
-          ? _value.trackingId
-          : trackingId // ignore: cast_nullable_to_non_nullable
+      driverId: null == driverId
+          ? _value.driverId
+          : driverId // ignore: cast_nullable_to_non_nullable
               as String,
-      warehouseId: freezed == warehouseId
-          ? _value.warehouseId
-          : warehouseId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      warehouse: freezed == warehouse
-          ? _value.warehouse
-          : warehouse // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      qrCode: freezed == qrCode
-          ? _value.qrCode
-          : qrCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      items: freezed == items
-          ? _value._items
-          : items // ignore: cast_nullable_to_non_nullable
-              as List<TenvioPackageQuantity>?,
-      destinationType: freezed == destinationType
-          ? _value.destinationType
-          : destinationType // ignore: cast_nullable_to_non_nullable
-              as TenvioDestinationType?,
-      destinationWarehouse: freezed == destinationWarehouse
-          ? _value.destinationWarehouse
-          : destinationWarehouse // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      destinationWarehouseId: freezed == destinationWarehouseId
-          ? _value.destinationWarehouseId
-          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      destinationUser: freezed == destinationUser
-          ? _value.destinationUser
-          : destinationUser // ignore: cast_nullable_to_non_nullable
+      driver: freezed == driver
+          ? _value.driver
+          : driver // ignore: cast_nullable_to_non_nullable
               as User?,
-      destinationUserId: freezed == destinationUserId
-          ? _value.destinationUserId
-          : destinationUserId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      destinationUnregistered: freezed == destinationUnregistered
-          ? _value.destinationUnregistered
-          : destinationUnregistered // ignore: cast_nullable_to_non_nullable
-              as TenvioUnregisteredUser?,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as TenvioPackageStatus,
+      reason: null == reason
+          ? _value.reason
+          : reason // ignore: cast_nullable_to_non_nullable
+              as String,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      updatedAt: null == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -794,481 +589,114 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TenvioPackageImpl implements _TenvioPackage {
-  const _$TenvioPackageImpl(
+class _$DropoffFailedReasonImpl implements _DropoffFailedReason {
+  const _$DropoffFailedReasonImpl(
       {required this.id,
-      required this.trackingId,
-      this.warehouseId,
-      this.warehouse,
-      this.qrCode,
-      final List<TenvioPackageQuantity>? items,
-      @TenvioDestinationTypeOrNullConverter() this.destinationType,
-      this.destinationWarehouse,
-      this.destinationWarehouseId,
-      this.destinationUser,
-      this.destinationUserId,
-      this.destinationUnregistered,
-      @TenvioPackageStatusConverter() required this.status,
-      @TimestampConverter() required this.createdAt,
-      @TimestampConverter() required this.updatedAt})
-      : _items = items;
+      required this.driverId,
+      this.driver,
+      required this.reason,
+      @TimestampConverter() required this.createdAt});
 
-  factory _$TenvioPackageImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TenvioPackageImplFromJson(json);
+  factory _$DropoffFailedReasonImpl.fromJson(Map<String, dynamic> json) =>
+      _$$DropoffFailedReasonImplFromJson(json);
 
-  /// [id] is the unique identifier of the package
+  /// [id] is the unique identifier for the reason.
   @override
   final String id;
 
-  /// [trackingId] is the unique identifier of the tracking of the package.
-  /// The equivalent to the tracking number of a package.
+  /// [driverId] is the unique identifier of the driver that failed the dropoff.
   @override
-  final String trackingId;
+  final String driverId;
 
-  /// [warehouseId] is the unique identifier of the warehouse that the package is located.
+  /// [driver] is the name of the driver that failed the dropoff.
   @override
-  final String? warehouseId;
+  final User? driver;
 
-  /// [warehouse] is the warehouse that the package is located.
+  /// [reason] is the reason why the dropoff failed.
   @override
-  final Asset? warehouse;
+  final String reason;
 
-  /// [qrCode] is the QR code of the package. should contains the following URI:
-  /// `tenvio://orders/:orderId/packages/:packageId`
-  @override
-  final String? qrCode;
-
-  /// [items] is the list of items that are part of the package.
-  final List<TenvioPackageQuantity>? _items;
-
-  /// [items] is the list of items that are part of the package.
-  @override
-  List<TenvioPackageQuantity>? get items {
-    final value = _items;
-    if (value == null) return null;
-    if (_items is EqualUnmodifiableListView) return _items;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// [destinationType] Type of the destination.
-  @override
-  @TenvioDestinationTypeOrNullConverter()
-  final TenvioDestinationType? destinationType;
-
-  /// [destinationWarehouse] Warehouse destination of the order.
-  @override
-  final Asset? destinationWarehouse;
-
-  /// [destinationWarehouseId] ID of the warehouse destination of the order.
-  @override
-  final String? destinationWarehouseId;
-
-  /// [destinationUser] User destination of the order.
-  @override
-  final User? destinationUser;
-
-  /// [destinationUserId] ID of the user destination of the order.
-  @override
-  final String? destinationUserId;
-
-  /// [destinationUnregisteredUser] Unregistered user destination of the order.
-  @override
-  final TenvioUnregisteredUser? destinationUnregistered;
-
-  /// [status] is the status of the package.
-  @override
-  @TenvioPackageStatusConverter()
-  final TenvioPackageStatus status;
-
-  /// [createdAt] is the date when the package was created.
+  /// [createdAt] is the date when the dropoff failed.
   @override
   @TimestampConverter()
   final DateTime createdAt;
 
-  /// [updatedAt] is the date when the package was last updated.
-  @override
-  @TimestampConverter()
-  final DateTime updatedAt;
-
   @override
   String toString() {
-    return 'TenvioPackage(id: $id, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, qrCode: $qrCode, items: $items, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'DropoffFailedReason(id: $id, driverId: $driverId, driver: $driver, reason: $reason, createdAt: $createdAt)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TenvioPackageImpl &&
+            other is _$DropoffFailedReasonImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.trackingId, trackingId) ||
-                other.trackingId == trackingId) &&
-            (identical(other.warehouseId, warehouseId) ||
-                other.warehouseId == warehouseId) &&
-            (identical(other.warehouse, warehouse) ||
-                other.warehouse == warehouse) &&
-            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
-            const DeepCollectionEquality().equals(other._items, _items) &&
-            (identical(other.destinationType, destinationType) ||
-                other.destinationType == destinationType) &&
-            (identical(other.destinationWarehouse, destinationWarehouse) ||
-                other.destinationWarehouse == destinationWarehouse) &&
-            (identical(other.destinationWarehouseId, destinationWarehouseId) ||
-                other.destinationWarehouseId == destinationWarehouseId) &&
-            (identical(other.destinationUser, destinationUser) ||
-                other.destinationUser == destinationUser) &&
-            (identical(other.destinationUserId, destinationUserId) ||
-                other.destinationUserId == destinationUserId) &&
-            (identical(
-                    other.destinationUnregistered, destinationUnregistered) ||
-                other.destinationUnregistered == destinationUnregistered) &&
-            (identical(other.status, status) || other.status == status) &&
+            (identical(other.driverId, driverId) ||
+                other.driverId == driverId) &&
+            (identical(other.driver, driver) || other.driver == driver) &&
+            (identical(other.reason, reason) || other.reason == reason) &&
             (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+                other.createdAt == createdAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      trackingId,
-      warehouseId,
-      warehouse,
-      qrCode,
-      const DeepCollectionEquality().hash(_items),
-      destinationType,
-      destinationWarehouse,
-      destinationWarehouseId,
-      destinationUser,
-      destinationUserId,
-      destinationUnregistered,
-      status,
-      createdAt,
-      updatedAt);
+  int get hashCode =>
+      Object.hash(runtimeType, id, driverId, driver, reason, createdAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>
-      __$$TenvioPackageImplCopyWithImpl<_$TenvioPackageImpl>(this, _$identity);
+  _$$DropoffFailedReasonImplCopyWith<_$DropoffFailedReasonImpl> get copyWith =>
+      __$$DropoffFailedReasonImplCopyWithImpl<_$DropoffFailedReasonImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$TenvioPackageImplToJson(
+    return _$$DropoffFailedReasonImplToJson(
       this,
     );
   }
 }
 
-abstract class _TenvioPackage implements TenvioPackage {
-  const factory _TenvioPackage(
-      {required final String id,
-      required final String trackingId,
-      final String? warehouseId,
-      final Asset? warehouse,
-      final String? qrCode,
-      final List<TenvioPackageQuantity>? items,
-      @TenvioDestinationTypeOrNullConverter()
-      final TenvioDestinationType? destinationType,
-      final Asset? destinationWarehouse,
-      final String? destinationWarehouseId,
-      final User? destinationUser,
-      final String? destinationUserId,
-      final TenvioUnregisteredUser? destinationUnregistered,
-      @TenvioPackageStatusConverter() required final TenvioPackageStatus status,
-      @TimestampConverter() required final DateTime createdAt,
-      @TimestampConverter()
-      required final DateTime updatedAt}) = _$TenvioPackageImpl;
+abstract class _DropoffFailedReason implements DropoffFailedReason {
+  const factory _DropoffFailedReason(
+          {required final String id,
+          required final String driverId,
+          final User? driver,
+          required final String reason,
+          @TimestampConverter() required final DateTime createdAt}) =
+      _$DropoffFailedReasonImpl;
 
-  factory _TenvioPackage.fromJson(Map<String, dynamic> json) =
-      _$TenvioPackageImpl.fromJson;
+  factory _DropoffFailedReason.fromJson(Map<String, dynamic> json) =
+      _$DropoffFailedReasonImpl.fromJson;
 
   @override
 
-  /// [id] is the unique identifier of the package
+  /// [id] is the unique identifier for the reason.
   String get id;
   @override
 
-  /// [trackingId] is the unique identifier of the tracking of the package.
-  /// The equivalent to the tracking number of a package.
-  String get trackingId;
+  /// [driverId] is the unique identifier of the driver that failed the dropoff.
+  String get driverId;
   @override
 
-  /// [warehouseId] is the unique identifier of the warehouse that the package is located.
-  String? get warehouseId;
+  /// [driver] is the name of the driver that failed the dropoff.
+  User? get driver;
   @override
 
-  /// [warehouse] is the warehouse that the package is located.
-  Asset? get warehouse;
+  /// [reason] is the reason why the dropoff failed.
+  String get reason;
   @override
 
-  /// [qrCode] is the QR code of the package. should contains the following URI:
-  /// `tenvio://orders/:orderId/packages/:packageId`
-  String? get qrCode;
-  @override
-
-  /// [items] is the list of items that are part of the package.
-  List<TenvioPackageQuantity>? get items;
-  @override
-
-  /// [destinationType] Type of the destination.
-  @TenvioDestinationTypeOrNullConverter()
-  TenvioDestinationType? get destinationType;
-  @override
-
-  /// [destinationWarehouse] Warehouse destination of the order.
-  Asset? get destinationWarehouse;
-  @override
-
-  /// [destinationWarehouseId] ID of the warehouse destination of the order.
-  String? get destinationWarehouseId;
-  @override
-
-  /// [destinationUser] User destination of the order.
-  User? get destinationUser;
-  @override
-
-  /// [destinationUserId] ID of the user destination of the order.
-  String? get destinationUserId;
-  @override
-
-  /// [destinationUnregisteredUser] Unregistered user destination of the order.
-  TenvioUnregisteredUser? get destinationUnregistered;
-  @override
-
-  /// [status] is the status of the package.
-  @TenvioPackageStatusConverter()
-  TenvioPackageStatus get status;
-  @override
-
-  /// [createdAt] is the date when the package was created.
+  /// [createdAt] is the date when the dropoff failed.
   @TimestampConverter()
   DateTime get createdAt;
   @override
-
-  /// [updatedAt] is the date when the package was last updated.
-  @TimestampConverter()
-  DateTime get updatedAt;
-  @override
   @JsonKey(ignore: true)
-  _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>
+  _$$DropoffFailedReasonImplCopyWith<_$DropoffFailedReasonImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-TenvioPackageQuantity _$TenvioPackageQuantityFromJson(
-    Map<String, dynamic> json) {
-  return _TenvioPackageQuantity.fromJson(json);
-}
-
-/// @nodoc
-mixin _$TenvioPackageQuantity {
-  /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
-  String get matrixId => throw _privateConstructorUsedError;
-
-  /// [matrix] is the matrix that the package quantity is related.
-  TenvioMatrixItem? get matrix => throw _privateConstructorUsedError;
-
-  /// [quantity] is the quantity of the package.
-  int get quantity => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TenvioPackageQuantityCopyWith<TenvioPackageQuantity> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TenvioPackageQuantityCopyWith<$Res> {
-  factory $TenvioPackageQuantityCopyWith(TenvioPackageQuantity value,
-          $Res Function(TenvioPackageQuantity) then) =
-      _$TenvioPackageQuantityCopyWithImpl<$Res, TenvioPackageQuantity>;
-  @useResult
-  $Res call({String matrixId, TenvioMatrixItem? matrix, int quantity});
-
-  $TenvioMatrixItemCopyWith<$Res>? get matrix;
-}
-
-/// @nodoc
-class _$TenvioPackageQuantityCopyWithImpl<$Res,
-        $Val extends TenvioPackageQuantity>
-    implements $TenvioPackageQuantityCopyWith<$Res> {
-  _$TenvioPackageQuantityCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? matrixId = null,
-    Object? matrix = freezed,
-    Object? quantity = null,
-  }) {
-    return _then(_value.copyWith(
-      matrixId: null == matrixId
-          ? _value.matrixId
-          : matrixId // ignore: cast_nullable_to_non_nullable
-              as String,
-      matrix: freezed == matrix
-          ? _value.matrix
-          : matrix // ignore: cast_nullable_to_non_nullable
-              as TenvioMatrixItem?,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $TenvioMatrixItemCopyWith<$Res>? get matrix {
-    if (_value.matrix == null) {
-      return null;
-    }
-
-    return $TenvioMatrixItemCopyWith<$Res>(_value.matrix!, (value) {
-      return _then(_value.copyWith(matrix: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$TenvioPackageQuantityImplCopyWith<$Res>
-    implements $TenvioPackageQuantityCopyWith<$Res> {
-  factory _$$TenvioPackageQuantityImplCopyWith(
-          _$TenvioPackageQuantityImpl value,
-          $Res Function(_$TenvioPackageQuantityImpl) then) =
-      __$$TenvioPackageQuantityImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String matrixId, TenvioMatrixItem? matrix, int quantity});
-
-  @override
-  $TenvioMatrixItemCopyWith<$Res>? get matrix;
-}
-
-/// @nodoc
-class __$$TenvioPackageQuantityImplCopyWithImpl<$Res>
-    extends _$TenvioPackageQuantityCopyWithImpl<$Res,
-        _$TenvioPackageQuantityImpl>
-    implements _$$TenvioPackageQuantityImplCopyWith<$Res> {
-  __$$TenvioPackageQuantityImplCopyWithImpl(_$TenvioPackageQuantityImpl _value,
-      $Res Function(_$TenvioPackageQuantityImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? matrixId = null,
-    Object? matrix = freezed,
-    Object? quantity = null,
-  }) {
-    return _then(_$TenvioPackageQuantityImpl(
-      matrixId: null == matrixId
-          ? _value.matrixId
-          : matrixId // ignore: cast_nullable_to_non_nullable
-              as String,
-      matrix: freezed == matrix
-          ? _value.matrix
-          : matrix // ignore: cast_nullable_to_non_nullable
-              as TenvioMatrixItem?,
-      quantity: null == quantity
-          ? _value.quantity
-          : quantity // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TenvioPackageQuantityImpl implements _TenvioPackageQuantity {
-  const _$TenvioPackageQuantityImpl(
-      {required this.matrixId, this.matrix, required this.quantity});
-
-  factory _$TenvioPackageQuantityImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TenvioPackageQuantityImplFromJson(json);
-
-  /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
-  @override
-  final String matrixId;
-
-  /// [matrix] is the matrix that the package quantity is related.
-  @override
-  final TenvioMatrixItem? matrix;
-
-  /// [quantity] is the quantity of the package.
-  @override
-  final int quantity;
-
-  @override
-  String toString() {
-    return 'TenvioPackageQuantity(matrixId: $matrixId, matrix: $matrix, quantity: $quantity)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TenvioPackageQuantityImpl &&
-            (identical(other.matrixId, matrixId) ||
-                other.matrixId == matrixId) &&
-            (identical(other.matrix, matrix) || other.matrix == matrix) &&
-            (identical(other.quantity, quantity) ||
-                other.quantity == quantity));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, matrixId, matrix, quantity);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TenvioPackageQuantityImplCopyWith<_$TenvioPackageQuantityImpl>
-      get copyWith => __$$TenvioPackageQuantityImplCopyWithImpl<
-          _$TenvioPackageQuantityImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TenvioPackageQuantityImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _TenvioPackageQuantity implements TenvioPackageQuantity {
-  const factory _TenvioPackageQuantity(
-      {required final String matrixId,
-      final TenvioMatrixItem? matrix,
-      required final int quantity}) = _$TenvioPackageQuantityImpl;
-
-  factory _TenvioPackageQuantity.fromJson(Map<String, dynamic> json) =
-      _$TenvioPackageQuantityImpl.fromJson;
-
-  @override
-
-  /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
-  String get matrixId;
-  @override
-
-  /// [matrix] is the matrix that the package quantity is related.
-  TenvioMatrixItem? get matrix;
-  @override
-
-  /// [quantity] is the quantity of the package.
-  int get quantity;
-  @override
-  @JsonKey(ignore: true)
-  _$$TenvioPackageQuantityImplCopyWith<_$TenvioPackageQuantityImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 TenvioCustomProperty _$TenvioCustomPropertyFromJson(Map<String, dynamic> json) {
@@ -2177,54 +1605,105 @@ abstract class _TenvioCustomPropertyInput implements TenvioCustomPropertyInput {
       get copyWith => throw _privateConstructorUsedError;
 }
 
-DropoffFailedReason _$DropoffFailedReasonFromJson(Map<String, dynamic> json) {
-  return _DropoffFailedReason.fromJson(json);
+TenvioPackage _$TenvioPackageFromJson(Map<String, dynamic> json) {
+  return _TenvioPackage.fromJson(json);
 }
 
 /// @nodoc
-mixin _$DropoffFailedReason {
-  /// [id] is the unique identifier for the reason.
+mixin _$TenvioPackage {
+  /// [id] is the unique identifier of the package
   String get id => throw _privateConstructorUsedError;
 
-  /// [driverId] is the unique identifier of the driver that failed the dropoff.
-  String get driverId => throw _privateConstructorUsedError;
+  /// [trackingId] is the unique identifier of the tracking of the package.
+  /// The equivalent to the tracking number of a package.
+  String get trackingId => throw _privateConstructorUsedError;
 
-  /// [driver] is the name of the driver that failed the dropoff.
-  User? get driver => throw _privateConstructorUsedError;
+  /// [warehouseId] is the unique identifier of the warehouse that the package is located.
+  String? get warehouseId => throw _privateConstructorUsedError;
 
-  /// [reason] is the reason why the dropoff failed.
-  String get reason => throw _privateConstructorUsedError;
+  /// [warehouse] is the warehouse that the package is located.
+  Asset? get warehouse => throw _privateConstructorUsedError;
 
-  /// [createdAt] is the date when the dropoff failed.
+  /// [qrCode] is the QR code of the package. should contains the following URI:
+  /// `tenvio://orders/:orderId/packages/:packageId`
+  String? get qrCode => throw _privateConstructorUsedError;
+
+  /// [items] is the list of items that are part of the package.
+  List<TenvioPackageQuantity>? get items => throw _privateConstructorUsedError;
+
+  /// [destinationType] Type of the destination.
+  @TenvioDestinationTypeOrNullConverter()
+  TenvioDestinationType? get destinationType =>
+      throw _privateConstructorUsedError;
+
+  /// [destinationWarehouse] Warehouse destination of the order.
+  Asset? get destinationWarehouse => throw _privateConstructorUsedError;
+
+  /// [destinationWarehouseId] ID of the warehouse destination of the order.
+  String? get destinationWarehouseId => throw _privateConstructorUsedError;
+
+  /// [destinationUser] User destination of the order.
+  User? get destinationUser => throw _privateConstructorUsedError;
+
+  /// [destinationUserId] ID of the user destination of the order.
+  String? get destinationUserId => throw _privateConstructorUsedError;
+
+  /// [destinationUnregisteredUser] Unregistered user destination of the order.
+  TenvioUnregisteredUser? get destinationUnregistered =>
+      throw _privateConstructorUsedError;
+
+  /// [status] is the status of the package.
+  @TenvioPackageStatusConverter()
+  TenvioPackageStatus get status => throw _privateConstructorUsedError;
+
+  /// [createdAt] is the date when the package was created.
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
 
+  /// [updatedAt] is the date when the package was last updated.
+  @TimestampConverter()
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DropoffFailedReasonCopyWith<DropoffFailedReason> get copyWith =>
+  $TenvioPackageCopyWith<TenvioPackage> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DropoffFailedReasonCopyWith<$Res> {
-  factory $DropoffFailedReasonCopyWith(
-          DropoffFailedReason value, $Res Function(DropoffFailedReason) then) =
-      _$DropoffFailedReasonCopyWithImpl<$Res, DropoffFailedReason>;
+abstract class $TenvioPackageCopyWith<$Res> {
+  factory $TenvioPackageCopyWith(
+          TenvioPackage value, $Res Function(TenvioPackage) then) =
+      _$TenvioPackageCopyWithImpl<$Res, TenvioPackage>;
   @useResult
   $Res call(
       {String id,
-      String driverId,
-      User? driver,
-      String reason,
-      @TimestampConverter() DateTime createdAt});
+      String trackingId,
+      String? warehouseId,
+      Asset? warehouse,
+      String? qrCode,
+      List<TenvioPackageQuantity>? items,
+      @TenvioDestinationTypeOrNullConverter()
+      TenvioDestinationType? destinationType,
+      Asset? destinationWarehouse,
+      String? destinationWarehouseId,
+      User? destinationUser,
+      String? destinationUserId,
+      TenvioUnregisteredUser? destinationUnregistered,
+      @TenvioPackageStatusConverter() TenvioPackageStatus status,
+      @TimestampConverter() DateTime createdAt,
+      @TimestampConverter() DateTime updatedAt});
 
-  $UserCopyWith<$Res>? get driver;
+  $AssetCopyWith<$Res>? get warehouse;
+  $AssetCopyWith<$Res>? get destinationWarehouse;
+  $UserCopyWith<$Res>? get destinationUser;
+  $TenvioUnregisteredUserCopyWith<$Res>? get destinationUnregistered;
 }
 
 /// @nodoc
-class _$DropoffFailedReasonCopyWithImpl<$Res, $Val extends DropoffFailedReason>
-    implements $DropoffFailedReasonCopyWith<$Res> {
-  _$DropoffFailedReasonCopyWithImpl(this._value, this._then);
+class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
+    implements $TenvioPackageCopyWith<$Res> {
+  _$TenvioPackageCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -2235,104 +1714,258 @@ class _$DropoffFailedReasonCopyWithImpl<$Res, $Val extends DropoffFailedReason>
   @override
   $Res call({
     Object? id = null,
-    Object? driverId = null,
-    Object? driver = freezed,
-    Object? reason = null,
+    Object? trackingId = null,
+    Object? warehouseId = freezed,
+    Object? warehouse = freezed,
+    Object? qrCode = freezed,
+    Object? items = freezed,
+    Object? destinationType = freezed,
+    Object? destinationWarehouse = freezed,
+    Object? destinationWarehouseId = freezed,
+    Object? destinationUser = freezed,
+    Object? destinationUserId = freezed,
+    Object? destinationUnregistered = freezed,
+    Object? status = null,
     Object? createdAt = null,
+    Object? updatedAt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      driverId: null == driverId
-          ? _value.driverId
-          : driverId // ignore: cast_nullable_to_non_nullable
+      trackingId: null == trackingId
+          ? _value.trackingId
+          : trackingId // ignore: cast_nullable_to_non_nullable
               as String,
-      driver: freezed == driver
-          ? _value.driver
-          : driver // ignore: cast_nullable_to_non_nullable
+      warehouseId: freezed == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      warehouse: freezed == warehouse
+          ? _value.warehouse
+          : warehouse // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      items: freezed == items
+          ? _value.items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<TenvioPackageQuantity>?,
+      destinationType: freezed == destinationType
+          ? _value.destinationType
+          : destinationType // ignore: cast_nullable_to_non_nullable
+              as TenvioDestinationType?,
+      destinationWarehouse: freezed == destinationWarehouse
+          ? _value.destinationWarehouse
+          : destinationWarehouse // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      destinationWarehouseId: freezed == destinationWarehouseId
+          ? _value.destinationWarehouseId
+          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      destinationUser: freezed == destinationUser
+          ? _value.destinationUser
+          : destinationUser // ignore: cast_nullable_to_non_nullable
               as User?,
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
+      destinationUserId: freezed == destinationUserId
+          ? _value.destinationUserId
+          : destinationUserId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      destinationUnregistered: freezed == destinationUnregistered
+          ? _value.destinationUnregistered
+          : destinationUnregistered // ignore: cast_nullable_to_non_nullable
+              as TenvioUnregisteredUser?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as TenvioPackageStatus,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get driver {
-    if (_value.driver == null) {
+  $AssetCopyWith<$Res>? get warehouse {
+    if (_value.warehouse == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_value.driver!, (value) {
-      return _then(_value.copyWith(driver: value) as $Val);
+    return $AssetCopyWith<$Res>(_value.warehouse!, (value) {
+      return _then(_value.copyWith(warehouse: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get destinationWarehouse {
+    if (_value.destinationWarehouse == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_value.destinationWarehouse!, (value) {
+      return _then(_value.copyWith(destinationWarehouse: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get destinationUser {
+    if (_value.destinationUser == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.destinationUser!, (value) {
+      return _then(_value.copyWith(destinationUser: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TenvioUnregisteredUserCopyWith<$Res>? get destinationUnregistered {
+    if (_value.destinationUnregistered == null) {
+      return null;
+    }
+
+    return $TenvioUnregisteredUserCopyWith<$Res>(
+        _value.destinationUnregistered!, (value) {
+      return _then(_value.copyWith(destinationUnregistered: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$DropoffFailedReasonImplCopyWith<$Res>
-    implements $DropoffFailedReasonCopyWith<$Res> {
-  factory _$$DropoffFailedReasonImplCopyWith(_$DropoffFailedReasonImpl value,
-          $Res Function(_$DropoffFailedReasonImpl) then) =
-      __$$DropoffFailedReasonImplCopyWithImpl<$Res>;
+abstract class _$$TenvioPackageImplCopyWith<$Res>
+    implements $TenvioPackageCopyWith<$Res> {
+  factory _$$TenvioPackageImplCopyWith(
+          _$TenvioPackageImpl value, $Res Function(_$TenvioPackageImpl) then) =
+      __$$TenvioPackageImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {String id,
-      String driverId,
-      User? driver,
-      String reason,
-      @TimestampConverter() DateTime createdAt});
+      String trackingId,
+      String? warehouseId,
+      Asset? warehouse,
+      String? qrCode,
+      List<TenvioPackageQuantity>? items,
+      @TenvioDestinationTypeOrNullConverter()
+      TenvioDestinationType? destinationType,
+      Asset? destinationWarehouse,
+      String? destinationWarehouseId,
+      User? destinationUser,
+      String? destinationUserId,
+      TenvioUnregisteredUser? destinationUnregistered,
+      @TenvioPackageStatusConverter() TenvioPackageStatus status,
+      @TimestampConverter() DateTime createdAt,
+      @TimestampConverter() DateTime updatedAt});
 
   @override
-  $UserCopyWith<$Res>? get driver;
+  $AssetCopyWith<$Res>? get warehouse;
+  @override
+  $AssetCopyWith<$Res>? get destinationWarehouse;
+  @override
+  $UserCopyWith<$Res>? get destinationUser;
+  @override
+  $TenvioUnregisteredUserCopyWith<$Res>? get destinationUnregistered;
 }
 
 /// @nodoc
-class __$$DropoffFailedReasonImplCopyWithImpl<$Res>
-    extends _$DropoffFailedReasonCopyWithImpl<$Res, _$DropoffFailedReasonImpl>
-    implements _$$DropoffFailedReasonImplCopyWith<$Res> {
-  __$$DropoffFailedReasonImplCopyWithImpl(_$DropoffFailedReasonImpl _value,
-      $Res Function(_$DropoffFailedReasonImpl) _then)
+class __$$TenvioPackageImplCopyWithImpl<$Res>
+    extends _$TenvioPackageCopyWithImpl<$Res, _$TenvioPackageImpl>
+    implements _$$TenvioPackageImplCopyWith<$Res> {
+  __$$TenvioPackageImplCopyWithImpl(
+      _$TenvioPackageImpl _value, $Res Function(_$TenvioPackageImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
-    Object? driverId = null,
-    Object? driver = freezed,
-    Object? reason = null,
+    Object? trackingId = null,
+    Object? warehouseId = freezed,
+    Object? warehouse = freezed,
+    Object? qrCode = freezed,
+    Object? items = freezed,
+    Object? destinationType = freezed,
+    Object? destinationWarehouse = freezed,
+    Object? destinationWarehouseId = freezed,
+    Object? destinationUser = freezed,
+    Object? destinationUserId = freezed,
+    Object? destinationUnregistered = freezed,
+    Object? status = null,
     Object? createdAt = null,
+    Object? updatedAt = null,
   }) {
-    return _then(_$DropoffFailedReasonImpl(
+    return _then(_$TenvioPackageImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      driverId: null == driverId
-          ? _value.driverId
-          : driverId // ignore: cast_nullable_to_non_nullable
+      trackingId: null == trackingId
+          ? _value.trackingId
+          : trackingId // ignore: cast_nullable_to_non_nullable
               as String,
-      driver: freezed == driver
-          ? _value.driver
-          : driver // ignore: cast_nullable_to_non_nullable
+      warehouseId: freezed == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      warehouse: freezed == warehouse
+          ? _value.warehouse
+          : warehouse // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      items: freezed == items
+          ? _value._items
+          : items // ignore: cast_nullable_to_non_nullable
+              as List<TenvioPackageQuantity>?,
+      destinationType: freezed == destinationType
+          ? _value.destinationType
+          : destinationType // ignore: cast_nullable_to_non_nullable
+              as TenvioDestinationType?,
+      destinationWarehouse: freezed == destinationWarehouse
+          ? _value.destinationWarehouse
+          : destinationWarehouse // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      destinationWarehouseId: freezed == destinationWarehouseId
+          ? _value.destinationWarehouseId
+          : destinationWarehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      destinationUser: freezed == destinationUser
+          ? _value.destinationUser
+          : destinationUser // ignore: cast_nullable_to_non_nullable
               as User?,
-      reason: null == reason
-          ? _value.reason
-          : reason // ignore: cast_nullable_to_non_nullable
-              as String,
+      destinationUserId: freezed == destinationUserId
+          ? _value.destinationUserId
+          : destinationUserId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      destinationUnregistered: freezed == destinationUnregistered
+          ? _value.destinationUnregistered
+          : destinationUnregistered // ignore: cast_nullable_to_non_nullable
+              as TenvioUnregisteredUser?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as TenvioPackageStatus,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
   }
@@ -2340,114 +1973,481 @@ class __$$DropoffFailedReasonImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$DropoffFailedReasonImpl implements _DropoffFailedReason {
-  const _$DropoffFailedReasonImpl(
+class _$TenvioPackageImpl implements _TenvioPackage {
+  const _$TenvioPackageImpl(
       {required this.id,
-      required this.driverId,
-      this.driver,
-      required this.reason,
-      @TimestampConverter() required this.createdAt});
+      required this.trackingId,
+      this.warehouseId,
+      this.warehouse,
+      this.qrCode,
+      final List<TenvioPackageQuantity>? items,
+      @TenvioDestinationTypeOrNullConverter() this.destinationType,
+      this.destinationWarehouse,
+      this.destinationWarehouseId,
+      this.destinationUser,
+      this.destinationUserId,
+      this.destinationUnregistered,
+      @TenvioPackageStatusConverter() required this.status,
+      @TimestampConverter() required this.createdAt,
+      @TimestampConverter() required this.updatedAt})
+      : _items = items;
 
-  factory _$DropoffFailedReasonImpl.fromJson(Map<String, dynamic> json) =>
-      _$$DropoffFailedReasonImplFromJson(json);
+  factory _$TenvioPackageImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioPackageImplFromJson(json);
 
-  /// [id] is the unique identifier for the reason.
+  /// [id] is the unique identifier of the package
   @override
   final String id;
 
-  /// [driverId] is the unique identifier of the driver that failed the dropoff.
+  /// [trackingId] is the unique identifier of the tracking of the package.
+  /// The equivalent to the tracking number of a package.
   @override
-  final String driverId;
+  final String trackingId;
 
-  /// [driver] is the name of the driver that failed the dropoff.
+  /// [warehouseId] is the unique identifier of the warehouse that the package is located.
   @override
-  final User? driver;
+  final String? warehouseId;
 
-  /// [reason] is the reason why the dropoff failed.
+  /// [warehouse] is the warehouse that the package is located.
   @override
-  final String reason;
+  final Asset? warehouse;
 
-  /// [createdAt] is the date when the dropoff failed.
+  /// [qrCode] is the QR code of the package. should contains the following URI:
+  /// `tenvio://orders/:orderId/packages/:packageId`
+  @override
+  final String? qrCode;
+
+  /// [items] is the list of items that are part of the package.
+  final List<TenvioPackageQuantity>? _items;
+
+  /// [items] is the list of items that are part of the package.
+  @override
+  List<TenvioPackageQuantity>? get items {
+    final value = _items;
+    if (value == null) return null;
+    if (_items is EqualUnmodifiableListView) return _items;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [destinationType] Type of the destination.
+  @override
+  @TenvioDestinationTypeOrNullConverter()
+  final TenvioDestinationType? destinationType;
+
+  /// [destinationWarehouse] Warehouse destination of the order.
+  @override
+  final Asset? destinationWarehouse;
+
+  /// [destinationWarehouseId] ID of the warehouse destination of the order.
+  @override
+  final String? destinationWarehouseId;
+
+  /// [destinationUser] User destination of the order.
+  @override
+  final User? destinationUser;
+
+  /// [destinationUserId] ID of the user destination of the order.
+  @override
+  final String? destinationUserId;
+
+  /// [destinationUnregisteredUser] Unregistered user destination of the order.
+  @override
+  final TenvioUnregisteredUser? destinationUnregistered;
+
+  /// [status] is the status of the package.
+  @override
+  @TenvioPackageStatusConverter()
+  final TenvioPackageStatus status;
+
+  /// [createdAt] is the date when the package was created.
   @override
   @TimestampConverter()
   final DateTime createdAt;
 
+  /// [updatedAt] is the date when the package was last updated.
+  @override
+  @TimestampConverter()
+  final DateTime updatedAt;
+
   @override
   String toString() {
-    return 'DropoffFailedReason(id: $id, driverId: $driverId, driver: $driver, reason: $reason, createdAt: $createdAt)';
+    return 'TenvioPackage(id: $id, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, qrCode: $qrCode, items: $items, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$DropoffFailedReasonImpl &&
+            other is _$TenvioPackageImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.driverId, driverId) ||
-                other.driverId == driverId) &&
-            (identical(other.driver, driver) || other.driver == driver) &&
-            (identical(other.reason, reason) || other.reason == reason) &&
+            (identical(other.trackingId, trackingId) ||
+                other.trackingId == trackingId) &&
+            (identical(other.warehouseId, warehouseId) ||
+                other.warehouseId == warehouseId) &&
+            (identical(other.warehouse, warehouse) ||
+                other.warehouse == warehouse) &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            (identical(other.destinationType, destinationType) ||
+                other.destinationType == destinationType) &&
+            (identical(other.destinationWarehouse, destinationWarehouse) ||
+                other.destinationWarehouse == destinationWarehouse) &&
+            (identical(other.destinationWarehouseId, destinationWarehouseId) ||
+                other.destinationWarehouseId == destinationWarehouseId) &&
+            (identical(other.destinationUser, destinationUser) ||
+                other.destinationUser == destinationUser) &&
+            (identical(other.destinationUserId, destinationUserId) ||
+                other.destinationUserId == destinationUserId) &&
+            (identical(
+                    other.destinationUnregistered, destinationUnregistered) ||
+                other.destinationUnregistered == destinationUnregistered) &&
+            (identical(other.status, status) || other.status == status) &&
             (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt));
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, driverId, driver, reason, createdAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      trackingId,
+      warehouseId,
+      warehouse,
+      qrCode,
+      const DeepCollectionEquality().hash(_items),
+      destinationType,
+      destinationWarehouse,
+      destinationWarehouseId,
+      destinationUser,
+      destinationUserId,
+      destinationUnregistered,
+      status,
+      createdAt,
+      updatedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$DropoffFailedReasonImplCopyWith<_$DropoffFailedReasonImpl> get copyWith =>
-      __$$DropoffFailedReasonImplCopyWithImpl<_$DropoffFailedReasonImpl>(
-          this, _$identity);
+  _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>
+      __$$TenvioPackageImplCopyWithImpl<_$TenvioPackageImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$DropoffFailedReasonImplToJson(
+    return _$$TenvioPackageImplToJson(
       this,
     );
   }
 }
 
-abstract class _DropoffFailedReason implements DropoffFailedReason {
-  const factory _DropoffFailedReason(
-          {required final String id,
-          required final String driverId,
-          final User? driver,
-          required final String reason,
-          @TimestampConverter() required final DateTime createdAt}) =
-      _$DropoffFailedReasonImpl;
+abstract class _TenvioPackage implements TenvioPackage {
+  const factory _TenvioPackage(
+      {required final String id,
+      required final String trackingId,
+      final String? warehouseId,
+      final Asset? warehouse,
+      final String? qrCode,
+      final List<TenvioPackageQuantity>? items,
+      @TenvioDestinationTypeOrNullConverter()
+      final TenvioDestinationType? destinationType,
+      final Asset? destinationWarehouse,
+      final String? destinationWarehouseId,
+      final User? destinationUser,
+      final String? destinationUserId,
+      final TenvioUnregisteredUser? destinationUnregistered,
+      @TenvioPackageStatusConverter() required final TenvioPackageStatus status,
+      @TimestampConverter() required final DateTime createdAt,
+      @TimestampConverter()
+      required final DateTime updatedAt}) = _$TenvioPackageImpl;
 
-  factory _DropoffFailedReason.fromJson(Map<String, dynamic> json) =
-      _$DropoffFailedReasonImpl.fromJson;
+  factory _TenvioPackage.fromJson(Map<String, dynamic> json) =
+      _$TenvioPackageImpl.fromJson;
 
   @override
 
-  /// [id] is the unique identifier for the reason.
+  /// [id] is the unique identifier of the package
   String get id;
   @override
 
-  /// [driverId] is the unique identifier of the driver that failed the dropoff.
-  String get driverId;
+  /// [trackingId] is the unique identifier of the tracking of the package.
+  /// The equivalent to the tracking number of a package.
+  String get trackingId;
   @override
 
-  /// [driver] is the name of the driver that failed the dropoff.
-  User? get driver;
+  /// [warehouseId] is the unique identifier of the warehouse that the package is located.
+  String? get warehouseId;
   @override
 
-  /// [reason] is the reason why the dropoff failed.
-  String get reason;
+  /// [warehouse] is the warehouse that the package is located.
+  Asset? get warehouse;
   @override
 
-  /// [createdAt] is the date when the dropoff failed.
+  /// [qrCode] is the QR code of the package. should contains the following URI:
+  /// `tenvio://orders/:orderId/packages/:packageId`
+  String? get qrCode;
+  @override
+
+  /// [items] is the list of items that are part of the package.
+  List<TenvioPackageQuantity>? get items;
+  @override
+
+  /// [destinationType] Type of the destination.
+  @TenvioDestinationTypeOrNullConverter()
+  TenvioDestinationType? get destinationType;
+  @override
+
+  /// [destinationWarehouse] Warehouse destination of the order.
+  Asset? get destinationWarehouse;
+  @override
+
+  /// [destinationWarehouseId] ID of the warehouse destination of the order.
+  String? get destinationWarehouseId;
+  @override
+
+  /// [destinationUser] User destination of the order.
+  User? get destinationUser;
+  @override
+
+  /// [destinationUserId] ID of the user destination of the order.
+  String? get destinationUserId;
+  @override
+
+  /// [destinationUnregisteredUser] Unregistered user destination of the order.
+  TenvioUnregisteredUser? get destinationUnregistered;
+  @override
+
+  /// [status] is the status of the package.
+  @TenvioPackageStatusConverter()
+  TenvioPackageStatus get status;
+  @override
+
+  /// [createdAt] is the date when the package was created.
   @TimestampConverter()
   DateTime get createdAt;
   @override
+
+  /// [updatedAt] is the date when the package was last updated.
+  @TimestampConverter()
+  DateTime get updatedAt;
+  @override
   @JsonKey(ignore: true)
-  _$$DropoffFailedReasonImplCopyWith<_$DropoffFailedReasonImpl> get copyWith =>
+  _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+TenvioPackageQuantity _$TenvioPackageQuantityFromJson(
+    Map<String, dynamic> json) {
+  return _TenvioPackageQuantity.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioPackageQuantity {
+  /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
+  String get matrixId => throw _privateConstructorUsedError;
+
+  /// [matrix] is the matrix that the package quantity is related.
+  TenvioMatrixItem? get matrix => throw _privateConstructorUsedError;
+
+  /// [quantity] is the quantity of the package.
+  int get quantity => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioPackageQuantityCopyWith<TenvioPackageQuantity> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioPackageQuantityCopyWith<$Res> {
+  factory $TenvioPackageQuantityCopyWith(TenvioPackageQuantity value,
+          $Res Function(TenvioPackageQuantity) then) =
+      _$TenvioPackageQuantityCopyWithImpl<$Res, TenvioPackageQuantity>;
+  @useResult
+  $Res call({String matrixId, TenvioMatrixItem? matrix, int quantity});
+
+  $TenvioMatrixItemCopyWith<$Res>? get matrix;
+}
+
+/// @nodoc
+class _$TenvioPackageQuantityCopyWithImpl<$Res,
+        $Val extends TenvioPackageQuantity>
+    implements $TenvioPackageQuantityCopyWith<$Res> {
+  _$TenvioPackageQuantityCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? matrixId = null,
+    Object? matrix = freezed,
+    Object? quantity = null,
+  }) {
+    return _then(_value.copyWith(
+      matrixId: null == matrixId
+          ? _value.matrixId
+          : matrixId // ignore: cast_nullable_to_non_nullable
+              as String,
+      matrix: freezed == matrix
+          ? _value.matrix
+          : matrix // ignore: cast_nullable_to_non_nullable
+              as TenvioMatrixItem?,
+      quantity: null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TenvioMatrixItemCopyWith<$Res>? get matrix {
+    if (_value.matrix == null) {
+      return null;
+    }
+
+    return $TenvioMatrixItemCopyWith<$Res>(_value.matrix!, (value) {
+      return _then(_value.copyWith(matrix: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioPackageQuantityImplCopyWith<$Res>
+    implements $TenvioPackageQuantityCopyWith<$Res> {
+  factory _$$TenvioPackageQuantityImplCopyWith(
+          _$TenvioPackageQuantityImpl value,
+          $Res Function(_$TenvioPackageQuantityImpl) then) =
+      __$$TenvioPackageQuantityImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String matrixId, TenvioMatrixItem? matrix, int quantity});
+
+  @override
+  $TenvioMatrixItemCopyWith<$Res>? get matrix;
+}
+
+/// @nodoc
+class __$$TenvioPackageQuantityImplCopyWithImpl<$Res>
+    extends _$TenvioPackageQuantityCopyWithImpl<$Res,
+        _$TenvioPackageQuantityImpl>
+    implements _$$TenvioPackageQuantityImplCopyWith<$Res> {
+  __$$TenvioPackageQuantityImplCopyWithImpl(_$TenvioPackageQuantityImpl _value,
+      $Res Function(_$TenvioPackageQuantityImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? matrixId = null,
+    Object? matrix = freezed,
+    Object? quantity = null,
+  }) {
+    return _then(_$TenvioPackageQuantityImpl(
+      matrixId: null == matrixId
+          ? _value.matrixId
+          : matrixId // ignore: cast_nullable_to_non_nullable
+              as String,
+      matrix: freezed == matrix
+          ? _value.matrix
+          : matrix // ignore: cast_nullable_to_non_nullable
+              as TenvioMatrixItem?,
+      quantity: null == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioPackageQuantityImpl implements _TenvioPackageQuantity {
+  const _$TenvioPackageQuantityImpl(
+      {required this.matrixId, this.matrix, required this.quantity});
+
+  factory _$TenvioPackageQuantityImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioPackageQuantityImplFromJson(json);
+
+  /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
+  @override
+  final String matrixId;
+
+  /// [matrix] is the matrix that the package quantity is related.
+  @override
+  final TenvioMatrixItem? matrix;
+
+  /// [quantity] is the quantity of the package.
+  @override
+  final int quantity;
+
+  @override
+  String toString() {
+    return 'TenvioPackageQuantity(matrixId: $matrixId, matrix: $matrix, quantity: $quantity)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TenvioPackageQuantityImpl &&
+            (identical(other.matrixId, matrixId) ||
+                other.matrixId == matrixId) &&
+            (identical(other.matrix, matrix) || other.matrix == matrix) &&
+            (identical(other.quantity, quantity) ||
+                other.quantity == quantity));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, matrixId, matrix, quantity);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioPackageQuantityImplCopyWith<_$TenvioPackageQuantityImpl>
+      get copyWith => __$$TenvioPackageQuantityImplCopyWithImpl<
+          _$TenvioPackageQuantityImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioPackageQuantityImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioPackageQuantity implements TenvioPackageQuantity {
+  const factory _TenvioPackageQuantity(
+      {required final String matrixId,
+      final TenvioMatrixItem? matrix,
+      required final int quantity}) = _$TenvioPackageQuantityImpl;
+
+  factory _TenvioPackageQuantity.fromJson(Map<String, dynamic> json) =
+      _$TenvioPackageQuantityImpl.fromJson;
+
+  @override
+
+  /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
+  String get matrixId;
+  @override
+
+  /// [matrix] is the matrix that the package quantity is related.
+  TenvioMatrixItem? get matrix;
+  @override
+
+  /// [quantity] is the quantity of the package.
+  int get quantity;
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioPackageQuantityImplCopyWith<_$TenvioPackageQuantityImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 TenvioItemQuantity _$TenvioItemQuantityFromJson(Map<String, dynamic> json) {
@@ -7242,5 +7242,1341 @@ abstract class _TenvioPhotos implements TenvioPhotos {
   @override
   @JsonKey(ignore: true)
   _$$TenvioPhotosImplCopyWith<_$TenvioPhotosImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TenvioDispatchGuide _$TenvioDispatchGuideFromJson(Map<String, dynamic> json) {
+  return _TenvioDispatchGuide.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioDispatchGuide {
+  /// [id] is the unique identifier of the dispatch guide
+  String get id => throw _privateConstructorUsedError;
+
+  /// [status] is the current status of the dispatch guide
+  @TenvioDispatchGuideStatusConverter()
+  TenvioDispatchGuideStatus get status => throw _privateConstructorUsedError;
+
+  /// [qrCode] is the QR code of the dispatch guide
+  String? get qrCode => throw _privateConstructorUsedError;
+
+  /// [warehouse] is the warehouse where the dispatch guide was created
+  Asset? get warehouse => throw _privateConstructorUsedError;
+
+  /// [warehouseId] is the unique identifier of the warehouse where the dispatch guide was created
+  String? get warehouseId => throw _privateConstructorUsedError;
+
+  /// [driver] is the driver assigned to the dispatch guide
+  TenvioDriver? get driver => throw _privateConstructorUsedError;
+
+  /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
+  String? get driverId => throw _privateConstructorUsedError;
+
+  /// [truck] is the truck assigned to the dispatch guide
+  Asset? get truck => throw _privateConstructorUsedError;
+
+  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
+  String? get truckId => throw _privateConstructorUsedError;
+
+  /// [loader] is the loader assigned to the dispatch guide
+  User? get loader => throw _privateConstructorUsedError;
+
+  /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
+  String? get loaderId => throw _privateConstructorUsedError;
+
+  /// [packages] is the list of packages assigned to the dispatch guide
+  List<TenvioPackage> get packages => throw _privateConstructorUsedError;
+
+  /// [createdAt] is the date and time when the dispatch guide was created
+  @TimestampConverter()
+  DateTime get createdAt => throw _privateConstructorUsedError;
+
+  /// [updatedAt] is the date and time when the dispatch guide was last updated
+  @TimestampConverter()
+  DateTime get updatedAt => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioDispatchGuideCopyWith<TenvioDispatchGuide> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioDispatchGuideCopyWith<$Res> {
+  factory $TenvioDispatchGuideCopyWith(
+          TenvioDispatchGuide value, $Res Function(TenvioDispatchGuide) then) =
+      _$TenvioDispatchGuideCopyWithImpl<$Res, TenvioDispatchGuide>;
+  @useResult
+  $Res call(
+      {String id,
+      @TenvioDispatchGuideStatusConverter() TenvioDispatchGuideStatus status,
+      String? qrCode,
+      Asset? warehouse,
+      String? warehouseId,
+      TenvioDriver? driver,
+      String? driverId,
+      Asset? truck,
+      String? truckId,
+      User? loader,
+      String? loaderId,
+      List<TenvioPackage> packages,
+      @TimestampConverter() DateTime createdAt,
+      @TimestampConverter() DateTime updatedAt});
+
+  $AssetCopyWith<$Res>? get warehouse;
+  $TenvioDriverCopyWith<$Res>? get driver;
+  $AssetCopyWith<$Res>? get truck;
+  $UserCopyWith<$Res>? get loader;
+}
+
+/// @nodoc
+class _$TenvioDispatchGuideCopyWithImpl<$Res, $Val extends TenvioDispatchGuide>
+    implements $TenvioDispatchGuideCopyWith<$Res> {
+  _$TenvioDispatchGuideCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? status = null,
+    Object? qrCode = freezed,
+    Object? warehouse = freezed,
+    Object? warehouseId = freezed,
+    Object? driver = freezed,
+    Object? driverId = freezed,
+    Object? truck = freezed,
+    Object? truckId = freezed,
+    Object? loader = freezed,
+    Object? loaderId = freezed,
+    Object? packages = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as TenvioDispatchGuideStatus,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      warehouse: freezed == warehouse
+          ? _value.warehouse
+          : warehouse // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      warehouseId: freezed == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      driver: freezed == driver
+          ? _value.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as TenvioDriver?,
+      driverId: freezed == driverId
+          ? _value.driverId
+          : driverId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      truck: freezed == truck
+          ? _value.truck
+          : truck // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      truckId: freezed == truckId
+          ? _value.truckId
+          : truckId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      loader: freezed == loader
+          ? _value.loader
+          : loader // ignore: cast_nullable_to_non_nullable
+              as User?,
+      loaderId: freezed == loaderId
+          ? _value.loaderId
+          : loaderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      packages: null == packages
+          ? _value.packages
+          : packages // ignore: cast_nullable_to_non_nullable
+              as List<TenvioPackage>,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get warehouse {
+    if (_value.warehouse == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_value.warehouse!, (value) {
+      return _then(_value.copyWith(warehouse: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TenvioDriverCopyWith<$Res>? get driver {
+    if (_value.driver == null) {
+      return null;
+    }
+
+    return $TenvioDriverCopyWith<$Res>(_value.driver!, (value) {
+      return _then(_value.copyWith(driver: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get truck {
+    if (_value.truck == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_value.truck!, (value) {
+      return _then(_value.copyWith(truck: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get loader {
+    if (_value.loader == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.loader!, (value) {
+      return _then(_value.copyWith(loader: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioDispatchGuideImplCopyWith<$Res>
+    implements $TenvioDispatchGuideCopyWith<$Res> {
+  factory _$$TenvioDispatchGuideImplCopyWith(_$TenvioDispatchGuideImpl value,
+          $Res Function(_$TenvioDispatchGuideImpl) then) =
+      __$$TenvioDispatchGuideImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @TenvioDispatchGuideStatusConverter() TenvioDispatchGuideStatus status,
+      String? qrCode,
+      Asset? warehouse,
+      String? warehouseId,
+      TenvioDriver? driver,
+      String? driverId,
+      Asset? truck,
+      String? truckId,
+      User? loader,
+      String? loaderId,
+      List<TenvioPackage> packages,
+      @TimestampConverter() DateTime createdAt,
+      @TimestampConverter() DateTime updatedAt});
+
+  @override
+  $AssetCopyWith<$Res>? get warehouse;
+  @override
+  $TenvioDriverCopyWith<$Res>? get driver;
+  @override
+  $AssetCopyWith<$Res>? get truck;
+  @override
+  $UserCopyWith<$Res>? get loader;
+}
+
+/// @nodoc
+class __$$TenvioDispatchGuideImplCopyWithImpl<$Res>
+    extends _$TenvioDispatchGuideCopyWithImpl<$Res, _$TenvioDispatchGuideImpl>
+    implements _$$TenvioDispatchGuideImplCopyWith<$Res> {
+  __$$TenvioDispatchGuideImplCopyWithImpl(_$TenvioDispatchGuideImpl _value,
+      $Res Function(_$TenvioDispatchGuideImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? status = null,
+    Object? qrCode = freezed,
+    Object? warehouse = freezed,
+    Object? warehouseId = freezed,
+    Object? driver = freezed,
+    Object? driverId = freezed,
+    Object? truck = freezed,
+    Object? truckId = freezed,
+    Object? loader = freezed,
+    Object? loaderId = freezed,
+    Object? packages = null,
+    Object? createdAt = null,
+    Object? updatedAt = null,
+  }) {
+    return _then(_$TenvioDispatchGuideImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as TenvioDispatchGuideStatus,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      warehouse: freezed == warehouse
+          ? _value.warehouse
+          : warehouse // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      warehouseId: freezed == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      driver: freezed == driver
+          ? _value.driver
+          : driver // ignore: cast_nullable_to_non_nullable
+              as TenvioDriver?,
+      driverId: freezed == driverId
+          ? _value.driverId
+          : driverId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      truck: freezed == truck
+          ? _value.truck
+          : truck // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      truckId: freezed == truckId
+          ? _value.truckId
+          : truckId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      loader: freezed == loader
+          ? _value.loader
+          : loader // ignore: cast_nullable_to_non_nullable
+              as User?,
+      loaderId: freezed == loaderId
+          ? _value.loaderId
+          : loaderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      packages: null == packages
+          ? _value._packages
+          : packages // ignore: cast_nullable_to_non_nullable
+              as List<TenvioPackage>,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      updatedAt: null == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioDispatchGuideImpl extends _TenvioDispatchGuide {
+  const _$TenvioDispatchGuideImpl(
+      {required this.id,
+      @TenvioDispatchGuideStatusConverter() required this.status,
+      this.qrCode,
+      this.warehouse,
+      this.warehouseId,
+      this.driver,
+      this.driverId,
+      this.truck,
+      this.truckId,
+      this.loader,
+      this.loaderId,
+      final List<TenvioPackage> packages = const [],
+      @TimestampConverter() required this.createdAt,
+      @TimestampConverter() required this.updatedAt})
+      : _packages = packages,
+        super._();
+
+  factory _$TenvioDispatchGuideImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioDispatchGuideImplFromJson(json);
+
+  /// [id] is the unique identifier of the dispatch guide
+  @override
+  final String id;
+
+  /// [status] is the current status of the dispatch guide
+  @override
+  @TenvioDispatchGuideStatusConverter()
+  final TenvioDispatchGuideStatus status;
+
+  /// [qrCode] is the QR code of the dispatch guide
+  @override
+  final String? qrCode;
+
+  /// [warehouse] is the warehouse where the dispatch guide was created
+  @override
+  final Asset? warehouse;
+
+  /// [warehouseId] is the unique identifier of the warehouse where the dispatch guide was created
+  @override
+  final String? warehouseId;
+
+  /// [driver] is the driver assigned to the dispatch guide
+  @override
+  final TenvioDriver? driver;
+
+  /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
+  @override
+  final String? driverId;
+
+  /// [truck] is the truck assigned to the dispatch guide
+  @override
+  final Asset? truck;
+
+  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
+  @override
+  final String? truckId;
+
+  /// [loader] is the loader assigned to the dispatch guide
+  @override
+  final User? loader;
+
+  /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
+  @override
+  final String? loaderId;
+
+  /// [packages] is the list of packages assigned to the dispatch guide
+  final List<TenvioPackage> _packages;
+
+  /// [packages] is the list of packages assigned to the dispatch guide
+  @override
+  @JsonKey()
+  List<TenvioPackage> get packages {
+    if (_packages is EqualUnmodifiableListView) return _packages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_packages);
+  }
+
+  /// [createdAt] is the date and time when the dispatch guide was created
+  @override
+  @TimestampConverter()
+  final DateTime createdAt;
+
+  /// [updatedAt] is the date and time when the dispatch guide was last updated
+  @override
+  @TimestampConverter()
+  final DateTime updatedAt;
+
+  @override
+  String toString() {
+    return 'TenvioDispatchGuide(id: $id, status: $status, qrCode: $qrCode, warehouse: $warehouse, warehouseId: $warehouseId, driver: $driver, driverId: $driverId, truck: $truck, truckId: $truckId, loader: $loader, loaderId: $loaderId, packages: $packages, createdAt: $createdAt, updatedAt: $updatedAt)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TenvioDispatchGuideImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
+            (identical(other.warehouse, warehouse) ||
+                other.warehouse == warehouse) &&
+            (identical(other.warehouseId, warehouseId) ||
+                other.warehouseId == warehouseId) &&
+            (identical(other.driver, driver) || other.driver == driver) &&
+            (identical(other.driverId, driverId) ||
+                other.driverId == driverId) &&
+            (identical(other.truck, truck) || other.truck == truck) &&
+            (identical(other.truckId, truckId) || other.truckId == truckId) &&
+            (identical(other.loader, loader) || other.loader == loader) &&
+            (identical(other.loaderId, loaderId) ||
+                other.loaderId == loaderId) &&
+            const DeepCollectionEquality().equals(other._packages, _packages) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      status,
+      qrCode,
+      warehouse,
+      warehouseId,
+      driver,
+      driverId,
+      truck,
+      truckId,
+      loader,
+      loaderId,
+      const DeepCollectionEquality().hash(_packages),
+      createdAt,
+      updatedAt);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioDispatchGuideImplCopyWith<_$TenvioDispatchGuideImpl> get copyWith =>
+      __$$TenvioDispatchGuideImplCopyWithImpl<_$TenvioDispatchGuideImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioDispatchGuideImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioDispatchGuide extends TenvioDispatchGuide {
+  const factory _TenvioDispatchGuide(
+          {required final String id,
+          @TenvioDispatchGuideStatusConverter()
+          required final TenvioDispatchGuideStatus status,
+          final String? qrCode,
+          final Asset? warehouse,
+          final String? warehouseId,
+          final TenvioDriver? driver,
+          final String? driverId,
+          final Asset? truck,
+          final String? truckId,
+          final User? loader,
+          final String? loaderId,
+          final List<TenvioPackage> packages,
+          @TimestampConverter() required final DateTime createdAt,
+          @TimestampConverter() required final DateTime updatedAt}) =
+      _$TenvioDispatchGuideImpl;
+  const _TenvioDispatchGuide._() : super._();
+
+  factory _TenvioDispatchGuide.fromJson(Map<String, dynamic> json) =
+      _$TenvioDispatchGuideImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier of the dispatch guide
+  String get id;
+  @override
+
+  /// [status] is the current status of the dispatch guide
+  @TenvioDispatchGuideStatusConverter()
+  TenvioDispatchGuideStatus get status;
+  @override
+
+  /// [qrCode] is the QR code of the dispatch guide
+  String? get qrCode;
+  @override
+
+  /// [warehouse] is the warehouse where the dispatch guide was created
+  Asset? get warehouse;
+  @override
+
+  /// [warehouseId] is the unique identifier of the warehouse where the dispatch guide was created
+  String? get warehouseId;
+  @override
+
+  /// [driver] is the driver assigned to the dispatch guide
+  TenvioDriver? get driver;
+  @override
+
+  /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
+  String? get driverId;
+  @override
+
+  /// [truck] is the truck assigned to the dispatch guide
+  Asset? get truck;
+  @override
+
+  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
+  String? get truckId;
+  @override
+
+  /// [loader] is the loader assigned to the dispatch guide
+  User? get loader;
+  @override
+
+  /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
+  String? get loaderId;
+  @override
+
+  /// [packages] is the list of packages assigned to the dispatch guide
+  List<TenvioPackage> get packages;
+  @override
+
+  /// [createdAt] is the date and time when the dispatch guide was created
+  @TimestampConverter()
+  DateTime get createdAt;
+  @override
+
+  /// [updatedAt] is the date and time when the dispatch guide was last updated
+  @TimestampConverter()
+  DateTime get updatedAt;
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioDispatchGuideImplCopyWith<_$TenvioDispatchGuideImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TenvioDispatchGuideInput _$TenvioDispatchGuideInputFromJson(
+    Map<String, dynamic> json) {
+  return _TenvioDispatchGuideInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioDispatchGuideInput {
+  /// [id] is the unique identifier of the dispatch guide
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] is the unique identifier of the dispatch guide
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// [status] is the current status of the dispatch guide
+  @TenvioDispatchGuideStatusConverter()
+  TenvioDispatchGuideStatus get status => throw _privateConstructorUsedError;
+
+  /// [status] is the current status of the dispatch guide
+  @TenvioDispatchGuideStatusConverter()
+  set status(TenvioDispatchGuideStatus value) =>
+      throw _privateConstructorUsedError;
+
+  /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
+  String? get driverId => throw _privateConstructorUsedError;
+
+  /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
+  set driverId(String? value) => throw _privateConstructorUsedError;
+
+  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
+  String? get truckId => throw _privateConstructorUsedError;
+
+  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
+  set truckId(String? value) => throw _privateConstructorUsedError;
+
+  /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
+  String? get loaderId => throw _privateConstructorUsedError;
+
+  /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
+  set loaderId(String? value) => throw _privateConstructorUsedError;
+
+  /// [packages] is the list of packages assigned to the dispatch guide
+  List<String> get packagesIds => throw _privateConstructorUsedError;
+
+  /// [packages] is the list of packages assigned to the dispatch guide
+  set packagesIds(List<String> value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioDispatchGuideInputCopyWith<TenvioDispatchGuideInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioDispatchGuideInputCopyWith<$Res> {
+  factory $TenvioDispatchGuideInputCopyWith(TenvioDispatchGuideInput value,
+          $Res Function(TenvioDispatchGuideInput) then) =
+      _$TenvioDispatchGuideInputCopyWithImpl<$Res, TenvioDispatchGuideInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      @TenvioDispatchGuideStatusConverter() TenvioDispatchGuideStatus status,
+      String? driverId,
+      String? truckId,
+      String? loaderId,
+      List<String> packagesIds});
+}
+
+/// @nodoc
+class _$TenvioDispatchGuideInputCopyWithImpl<$Res,
+        $Val extends TenvioDispatchGuideInput>
+    implements $TenvioDispatchGuideInputCopyWith<$Res> {
+  _$TenvioDispatchGuideInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? status = null,
+    Object? driverId = freezed,
+    Object? truckId = freezed,
+    Object? loaderId = freezed,
+    Object? packagesIds = null,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as TenvioDispatchGuideStatus,
+      driverId: freezed == driverId
+          ? _value.driverId
+          : driverId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      truckId: freezed == truckId
+          ? _value.truckId
+          : truckId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      loaderId: freezed == loaderId
+          ? _value.loaderId
+          : loaderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      packagesIds: null == packagesIds
+          ? _value.packagesIds
+          : packagesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioDispatchGuideInputImplCopyWith<$Res>
+    implements $TenvioDispatchGuideInputCopyWith<$Res> {
+  factory _$$TenvioDispatchGuideInputImplCopyWith(
+          _$TenvioDispatchGuideInputImpl value,
+          $Res Function(_$TenvioDispatchGuideInputImpl) then) =
+      __$$TenvioDispatchGuideInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      @TenvioDispatchGuideStatusConverter() TenvioDispatchGuideStatus status,
+      String? driverId,
+      String? truckId,
+      String? loaderId,
+      List<String> packagesIds});
+}
+
+/// @nodoc
+class __$$TenvioDispatchGuideInputImplCopyWithImpl<$Res>
+    extends _$TenvioDispatchGuideInputCopyWithImpl<$Res,
+        _$TenvioDispatchGuideInputImpl>
+    implements _$$TenvioDispatchGuideInputImplCopyWith<$Res> {
+  __$$TenvioDispatchGuideInputImplCopyWithImpl(
+      _$TenvioDispatchGuideInputImpl _value,
+      $Res Function(_$TenvioDispatchGuideInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? status = null,
+    Object? driverId = freezed,
+    Object? truckId = freezed,
+    Object? loaderId = freezed,
+    Object? packagesIds = null,
+  }) {
+    return _then(_$TenvioDispatchGuideInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as TenvioDispatchGuideStatus,
+      driverId: freezed == driverId
+          ? _value.driverId
+          : driverId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      truckId: freezed == truckId
+          ? _value.truckId
+          : truckId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      loaderId: freezed == loaderId
+          ? _value.loaderId
+          : loaderId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      packagesIds: null == packagesIds
+          ? _value.packagesIds
+          : packagesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioDispatchGuideInputImpl extends _TenvioDispatchGuideInput {
+  _$TenvioDispatchGuideInputImpl(
+      {this.id,
+      @TenvioDispatchGuideStatusConverter()
+      this.status = TenvioDispatchGuideStatus.draft,
+      this.driverId,
+      this.truckId,
+      this.loaderId,
+      this.packagesIds = const []})
+      : super._();
+
+  factory _$TenvioDispatchGuideInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioDispatchGuideInputImplFromJson(json);
+
+  /// [id] is the unique identifier of the dispatch guide
+  @override
+  String? id;
+
+  /// [status] is the current status of the dispatch guide
+  @override
+  @JsonKey()
+  @TenvioDispatchGuideStatusConverter()
+  TenvioDispatchGuideStatus status;
+
+  /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
+  @override
+  String? driverId;
+
+  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
+  @override
+  String? truckId;
+
+  /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
+  @override
+  String? loaderId;
+
+  /// [packages] is the list of packages assigned to the dispatch guide
+  @override
+  @JsonKey()
+  List<String> packagesIds;
+
+  @override
+  String toString() {
+    return 'TenvioDispatchGuideInput(id: $id, status: $status, driverId: $driverId, truckId: $truckId, loaderId: $loaderId, packagesIds: $packagesIds)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioDispatchGuideInputImplCopyWith<_$TenvioDispatchGuideInputImpl>
+      get copyWith => __$$TenvioDispatchGuideInputImplCopyWithImpl<
+          _$TenvioDispatchGuideInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioDispatchGuideInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioDispatchGuideInput extends TenvioDispatchGuideInput {
+  factory _TenvioDispatchGuideInput(
+      {String? id,
+      @TenvioDispatchGuideStatusConverter() TenvioDispatchGuideStatus status,
+      String? driverId,
+      String? truckId,
+      String? loaderId,
+      List<String> packagesIds}) = _$TenvioDispatchGuideInputImpl;
+  _TenvioDispatchGuideInput._() : super._();
+
+  factory _TenvioDispatchGuideInput.fromJson(Map<String, dynamic> json) =
+      _$TenvioDispatchGuideInputImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier of the dispatch guide
+  String? get id;
+
+  /// [id] is the unique identifier of the dispatch guide
+  set id(String? value);
+  @override
+
+  /// [status] is the current status of the dispatch guide
+  @TenvioDispatchGuideStatusConverter()
+  TenvioDispatchGuideStatus get status;
+
+  /// [status] is the current status of the dispatch guide
+  @TenvioDispatchGuideStatusConverter()
+  set status(TenvioDispatchGuideStatus value);
+  @override
+
+  /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
+  String? get driverId;
+
+  /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
+  set driverId(String? value);
+  @override
+
+  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
+  String? get truckId;
+
+  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
+  set truckId(String? value);
+  @override
+
+  /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
+  String? get loaderId;
+
+  /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
+  set loaderId(String? value);
+  @override
+
+  /// [packages] is the list of packages assigned to the dispatch guide
+  List<String> get packagesIds;
+
+  /// [packages] is the list of packages assigned to the dispatch guide
+  set packagesIds(List<String> value);
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioDispatchGuideInputImplCopyWith<_$TenvioDispatchGuideInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+TenvioDriver _$TenvioDriverFromJson(Map<String, dynamic> json) {
+  return _TenvioDriver.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioDriver {
+  /// [id] is the unique identifier of the driver
+  String get id => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the driver
+  String get name => throw _privateConstructorUsedError;
+
+  /// [email] is the email of the driver
+  String? get email => throw _privateConstructorUsedError;
+
+  /// [username] is the username of the driver
+  String? get username => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioDriverCopyWith<TenvioDriver> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioDriverCopyWith<$Res> {
+  factory $TenvioDriverCopyWith(
+          TenvioDriver value, $Res Function(TenvioDriver) then) =
+      _$TenvioDriverCopyWithImpl<$Res, TenvioDriver>;
+  @useResult
+  $Res call({String id, String name, String? email, String? username});
+}
+
+/// @nodoc
+class _$TenvioDriverCopyWithImpl<$Res, $Val extends TenvioDriver>
+    implements $TenvioDriverCopyWith<$Res> {
+  _$TenvioDriverCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? email = freezed,
+    Object? username = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: freezed == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioDriverImplCopyWith<$Res>
+    implements $TenvioDriverCopyWith<$Res> {
+  factory _$$TenvioDriverImplCopyWith(
+          _$TenvioDriverImpl value, $Res Function(_$TenvioDriverImpl) then) =
+      __$$TenvioDriverImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String name, String? email, String? username});
+}
+
+/// @nodoc
+class __$$TenvioDriverImplCopyWithImpl<$Res>
+    extends _$TenvioDriverCopyWithImpl<$Res, _$TenvioDriverImpl>
+    implements _$$TenvioDriverImplCopyWith<$Res> {
+  __$$TenvioDriverImplCopyWithImpl(
+      _$TenvioDriverImpl _value, $Res Function(_$TenvioDriverImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? email = freezed,
+    Object? username = freezed,
+  }) {
+    return _then(_$TenvioDriverImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: freezed == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioDriverImpl extends _TenvioDriver {
+  const _$TenvioDriverImpl(
+      {required this.id, required this.name, this.email, this.username})
+      : super._();
+
+  factory _$TenvioDriverImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioDriverImplFromJson(json);
+
+  /// [id] is the unique identifier of the driver
+  @override
+  final String id;
+
+  /// [name] is the name of the driver
+  @override
+  final String name;
+
+  /// [email] is the email of the driver
+  @override
+  final String? email;
+
+  /// [username] is the username of the driver
+  @override
+  final String? username;
+
+  @override
+  String toString() {
+    return 'TenvioDriver(id: $id, name: $name, email: $email, username: $username)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TenvioDriverImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.username, username) ||
+                other.username == username));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, email, username);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioDriverImplCopyWith<_$TenvioDriverImpl> get copyWith =>
+      __$$TenvioDriverImplCopyWithImpl<_$TenvioDriverImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioDriverImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioDriver extends TenvioDriver {
+  const factory _TenvioDriver(
+      {required final String id,
+      required final String name,
+      final String? email,
+      final String? username}) = _$TenvioDriverImpl;
+  const _TenvioDriver._() : super._();
+
+  factory _TenvioDriver.fromJson(Map<String, dynamic> json) =
+      _$TenvioDriverImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier of the driver
+  String get id;
+  @override
+
+  /// [name] is the name of the driver
+  String get name;
+  @override
+
+  /// [email] is the email of the driver
+  String? get email;
+  @override
+
+  /// [username] is the username of the driver
+  String? get username;
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioDriverImplCopyWith<_$TenvioDriverImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TenvioDriverInput _$TenvioDriverInputFromJson(Map<String, dynamic> json) {
+  return _TenvioDriverInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioDriverInput {
+  /// [id] is the unique identifier of the driver
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] is the unique identifier of the driver
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the driver
+  String get name => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the driver
+  set name(String value) => throw _privateConstructorUsedError;
+
+  /// [email] is the email of the driver
+  String get email => throw _privateConstructorUsedError;
+
+  /// [email] is the email of the driver
+  set email(String value) => throw _privateConstructorUsedError;
+
+  /// [username] is the username of the driver
+  String get username => throw _privateConstructorUsedError;
+
+  /// [username] is the username of the driver
+  set username(String value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioDriverInputCopyWith<TenvioDriverInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioDriverInputCopyWith<$Res> {
+  factory $TenvioDriverInputCopyWith(
+          TenvioDriverInput value, $Res Function(TenvioDriverInput) then) =
+      _$TenvioDriverInputCopyWithImpl<$Res, TenvioDriverInput>;
+  @useResult
+  $Res call({String? id, String name, String email, String username});
+}
+
+/// @nodoc
+class _$TenvioDriverInputCopyWithImpl<$Res, $Val extends TenvioDriverInput>
+    implements $TenvioDriverInputCopyWith<$Res> {
+  _$TenvioDriverInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? email = null,
+    Object? username = null,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioDriverInputImplCopyWith<$Res>
+    implements $TenvioDriverInputCopyWith<$Res> {
+  factory _$$TenvioDriverInputImplCopyWith(_$TenvioDriverInputImpl value,
+          $Res Function(_$TenvioDriverInputImpl) then) =
+      __$$TenvioDriverInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? id, String name, String email, String username});
+}
+
+/// @nodoc
+class __$$TenvioDriverInputImplCopyWithImpl<$Res>
+    extends _$TenvioDriverInputCopyWithImpl<$Res, _$TenvioDriverInputImpl>
+    implements _$$TenvioDriverInputImplCopyWith<$Res> {
+  __$$TenvioDriverInputImplCopyWithImpl(_$TenvioDriverInputImpl _value,
+      $Res Function(_$TenvioDriverInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? email = null,
+    Object? username = null,
+  }) {
+    return _then(_$TenvioDriverInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioDriverInputImpl implements _TenvioDriverInput {
+  _$TenvioDriverInputImpl(
+      {this.id, this.name = '', this.email = '', this.username = ''});
+
+  factory _$TenvioDriverInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioDriverInputImplFromJson(json);
+
+  /// [id] is the unique identifier of the driver
+  @override
+  String? id;
+
+  /// [name] is the name of the driver
+  @override
+  @JsonKey()
+  String name;
+
+  /// [email] is the email of the driver
+  @override
+  @JsonKey()
+  String email;
+
+  /// [username] is the username of the driver
+  @override
+  @JsonKey()
+  String username;
+
+  @override
+  String toString() {
+    return 'TenvioDriverInput(id: $id, name: $name, email: $email, username: $username)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioDriverInputImplCopyWith<_$TenvioDriverInputImpl> get copyWith =>
+      __$$TenvioDriverInputImplCopyWithImpl<_$TenvioDriverInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioDriverInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioDriverInput implements TenvioDriverInput {
+  factory _TenvioDriverInput(
+      {String? id,
+      String name,
+      String email,
+      String username}) = _$TenvioDriverInputImpl;
+
+  factory _TenvioDriverInput.fromJson(Map<String, dynamic> json) =
+      _$TenvioDriverInputImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier of the driver
+  String? get id;
+
+  /// [id] is the unique identifier of the driver
+  set id(String? value);
+  @override
+
+  /// [name] is the name of the driver
+  String get name;
+
+  /// [name] is the name of the driver
+  set name(String value);
+  @override
+
+  /// [email] is the email of the driver
+  String get email;
+
+  /// [email] is the email of the driver
+  set email(String value);
+  @override
+
+  /// [username] is the username of the driver
+  String get username;
+
+  /// [username] is the username of the driver
+  set username(String value);
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioDriverInputImplCopyWith<_$TenvioDriverInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,4 +1,4 @@
-part of '../tenvio.dart';
+part of '../../tenvio.dart';
 
 enum TenvioOrderStatus {
   /// [draft] refers that the order is a draft

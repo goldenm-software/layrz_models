@@ -1,4 +1,4 @@
-part of '../tenvio.dart';
+part of '../../tenvio.dart';
 
 enum TenvioPackageStatus {
   /// [packaging] refers that the package is being packed

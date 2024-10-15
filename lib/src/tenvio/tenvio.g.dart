@@ -39,76 +39,26 @@ Map<String, dynamic> _$$TenvioItemMovementImplToJson(
       'triggeredAt': const TimestampConverter().toJson(instance.triggeredAt),
     };
 
-_$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
-    _$TenvioPackageImpl(
+_$DropoffFailedReasonImpl _$$DropoffFailedReasonImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DropoffFailedReasonImpl(
       id: json['id'] as String,
-      trackingId: json['trackingId'] as String,
-      warehouseId: json['warehouseId'] as String?,
-      warehouse: json['warehouse'] == null
+      driverId: json['driverId'] as String,
+      driver: json['driver'] == null
           ? null
-          : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
-      qrCode: json['qrCode'] as String?,
-      items: (json['items'] as List<dynamic>?)
-          ?.map(
-              (e) => TenvioPackageQuantity.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      destinationType: const TenvioDestinationTypeOrNullConverter()
-          .fromJson(json['destinationType'] as String?),
-      destinationWarehouse: json['destinationWarehouse'] == null
-          ? null
-          : Asset.fromJson(
-              json['destinationWarehouse'] as Map<String, dynamic>),
-      destinationWarehouseId: json['destinationWarehouseId'] as String?,
-      destinationUser: json['destinationUser'] == null
-          ? null
-          : User.fromJson(json['destinationUser'] as Map<String, dynamic>),
-      destinationUserId: json['destinationUserId'] as String?,
-      destinationUnregistered: json['destinationUnregistered'] == null
-          ? null
-          : TenvioUnregisteredUser.fromJson(
-              json['destinationUnregistered'] as Map<String, dynamic>),
-      status: const TenvioPackageStatusConverter()
-          .fromJson(json['status'] as String),
+          : User.fromJson(json['driver'] as Map<String, dynamic>),
+      reason: json['reason'] as String,
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
-      updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
     );
 
-Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
+Map<String, dynamic> _$$DropoffFailedReasonImplToJson(
+        _$DropoffFailedReasonImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'trackingId': instance.trackingId,
-      'warehouseId': instance.warehouseId,
-      'warehouse': instance.warehouse?.toJson(),
-      'qrCode': instance.qrCode,
-      'items': instance.items?.map((e) => e.toJson()).toList(),
-      'destinationType': const TenvioDestinationTypeOrNullConverter()
-          .toJson(instance.destinationType),
-      'destinationWarehouse': instance.destinationWarehouse?.toJson(),
-      'destinationWarehouseId': instance.destinationWarehouseId,
-      'destinationUser': instance.destinationUser?.toJson(),
-      'destinationUserId': instance.destinationUserId,
-      'destinationUnregistered': instance.destinationUnregistered?.toJson(),
-      'status': const TenvioPackageStatusConverter().toJson(instance.status),
+      'driverId': instance.driverId,
+      'driver': instance.driver?.toJson(),
+      'reason': instance.reason,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
-      'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
-    };
-
-_$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TenvioPackageQuantityImpl(
-      matrixId: json['matrixId'] as String,
-      matrix: json['matrix'] == null
-          ? null
-          : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
-      quantity: (json['quantity'] as num).toInt(),
-    );
-
-Map<String, dynamic> _$$TenvioPackageQuantityImplToJson(
-        _$TenvioPackageQuantityImpl instance) =>
-    <String, dynamic>{
-      'matrixId': instance.matrixId,
-      'matrix': instance.matrix?.toJson(),
-      'quantity': instance.quantity,
     };
 
 _$TenvioCustomPropertyImpl _$$TenvioCustomPropertyImplFromJson(
@@ -183,26 +133,76 @@ Map<String, dynamic> _$$TenvioCustomPropertyInputImplToJson(
       'defaultValue': instance.defaultValue,
     };
 
-_$DropoffFailedReasonImpl _$$DropoffFailedReasonImplFromJson(
-        Map<String, dynamic> json) =>
-    _$DropoffFailedReasonImpl(
+_$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
+    _$TenvioPackageImpl(
       id: json['id'] as String,
-      driverId: json['driverId'] as String,
-      driver: json['driver'] == null
+      trackingId: json['trackingId'] as String,
+      warehouseId: json['warehouseId'] as String?,
+      warehouse: json['warehouse'] == null
           ? null
-          : User.fromJson(json['driver'] as Map<String, dynamic>),
-      reason: json['reason'] as String,
+          : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
+      qrCode: json['qrCode'] as String?,
+      items: (json['items'] as List<dynamic>?)
+          ?.map(
+              (e) => TenvioPackageQuantity.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      destinationType: const TenvioDestinationTypeOrNullConverter()
+          .fromJson(json['destinationType'] as String?),
+      destinationWarehouse: json['destinationWarehouse'] == null
+          ? null
+          : Asset.fromJson(
+              json['destinationWarehouse'] as Map<String, dynamic>),
+      destinationWarehouseId: json['destinationWarehouseId'] as String?,
+      destinationUser: json['destinationUser'] == null
+          ? null
+          : User.fromJson(json['destinationUser'] as Map<String, dynamic>),
+      destinationUserId: json['destinationUserId'] as String?,
+      destinationUnregistered: json['destinationUnregistered'] == null
+          ? null
+          : TenvioUnregisteredUser.fromJson(
+              json['destinationUnregistered'] as Map<String, dynamic>),
+      status: const TenvioPackageStatusConverter()
+          .fromJson(json['status'] as String),
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
+      updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
     );
 
-Map<String, dynamic> _$$DropoffFailedReasonImplToJson(
-        _$DropoffFailedReasonImpl instance) =>
+Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'driverId': instance.driverId,
-      'driver': instance.driver?.toJson(),
-      'reason': instance.reason,
+      'trackingId': instance.trackingId,
+      'warehouseId': instance.warehouseId,
+      'warehouse': instance.warehouse?.toJson(),
+      'qrCode': instance.qrCode,
+      'items': instance.items?.map((e) => e.toJson()).toList(),
+      'destinationType': const TenvioDestinationTypeOrNullConverter()
+          .toJson(instance.destinationType),
+      'destinationWarehouse': instance.destinationWarehouse?.toJson(),
+      'destinationWarehouseId': instance.destinationWarehouseId,
+      'destinationUser': instance.destinationUser?.toJson(),
+      'destinationUserId': instance.destinationUserId,
+      'destinationUnregistered': instance.destinationUnregistered?.toJson(),
+      'status': const TenvioPackageStatusConverter().toJson(instance.status),
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
+      'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
+    };
+
+_$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioPackageQuantityImpl(
+      matrixId: json['matrixId'] as String,
+      matrix: json['matrix'] == null
+          ? null
+          : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
+      quantity: (json['quantity'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$$TenvioPackageQuantityImplToJson(
+        _$TenvioPackageQuantityImpl instance) =>
+    <String, dynamic>{
+      'matrixId': instance.matrixId,
+      'matrix': instance.matrix?.toJson(),
+      'quantity': instance.quantity,
     };
 
 _$TenvioItemQuantityImpl _$$TenvioItemQuantityImplFromJson(
@@ -606,4 +606,118 @@ Map<String, dynamic> _$$TenvioPhotosImplToJson(_$TenvioPhotosImpl instance) =>
       'urls': instance.urls,
       'packagedId': instance.packagedId,
       'package': instance.package?.toJson(),
+    };
+
+_$TenvioDispatchGuideImpl _$$TenvioDispatchGuideImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioDispatchGuideImpl(
+      id: json['id'] as String,
+      status: const TenvioDispatchGuideStatusConverter()
+          .fromJson(json['status'] as String),
+      qrCode: json['qrCode'] as String?,
+      warehouse: json['warehouse'] == null
+          ? null
+          : Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
+      warehouseId: json['warehouseId'] as String?,
+      driver: json['driver'] == null
+          ? null
+          : TenvioDriver.fromJson(json['driver'] as Map<String, dynamic>),
+      driverId: json['driverId'] as String?,
+      truck: json['truck'] == null
+          ? null
+          : Asset.fromJson(json['truck'] as Map<String, dynamic>),
+      truckId: json['truckId'] as String?,
+      loader: json['loader'] == null
+          ? null
+          : User.fromJson(json['loader'] as Map<String, dynamic>),
+      loaderId: json['loaderId'] as String?,
+      packages: (json['packages'] as List<dynamic>?)
+              ?.map((e) => TenvioPackage.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
+      updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
+    );
+
+Map<String, dynamic> _$$TenvioDispatchGuideImplToJson(
+        _$TenvioDispatchGuideImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'status':
+          const TenvioDispatchGuideStatusConverter().toJson(instance.status),
+      'qrCode': instance.qrCode,
+      'warehouse': instance.warehouse?.toJson(),
+      'warehouseId': instance.warehouseId,
+      'driver': instance.driver?.toJson(),
+      'driverId': instance.driverId,
+      'truck': instance.truck?.toJson(),
+      'truckId': instance.truckId,
+      'loader': instance.loader?.toJson(),
+      'loaderId': instance.loaderId,
+      'packages': instance.packages.map((e) => e.toJson()).toList(),
+      'createdAt': const TimestampConverter().toJson(instance.createdAt),
+      'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
+    };
+
+_$TenvioDispatchGuideInputImpl _$$TenvioDispatchGuideInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioDispatchGuideInputImpl(
+      id: json['id'] as String?,
+      status: json['status'] == null
+          ? TenvioDispatchGuideStatus.draft
+          : const TenvioDispatchGuideStatusConverter()
+              .fromJson(json['status'] as String),
+      driverId: json['driverId'] as String?,
+      truckId: json['truckId'] as String?,
+      loaderId: json['loaderId'] as String?,
+      packagesIds: (json['packagesIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$TenvioDispatchGuideInputImplToJson(
+        _$TenvioDispatchGuideInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'status':
+          const TenvioDispatchGuideStatusConverter().toJson(instance.status),
+      'driverId': instance.driverId,
+      'truckId': instance.truckId,
+      'loaderId': instance.loaderId,
+      'packagesIds': instance.packagesIds,
+    };
+
+_$TenvioDriverImpl _$$TenvioDriverImplFromJson(Map<String, dynamic> json) =>
+    _$TenvioDriverImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      email: json['email'] as String?,
+      username: json['username'] as String?,
+    );
+
+Map<String, dynamic> _$$TenvioDriverImplToJson(_$TenvioDriverImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'email': instance.email,
+      'username': instance.username,
+    };
+
+_$TenvioDriverInputImpl _$$TenvioDriverInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioDriverInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      email: json['email'] as String? ?? '',
+      username: json['username'] as String? ?? '',
+    );
+
+Map<String, dynamic> _$$TenvioDriverInputImplToJson(
+        _$TenvioDriverInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'email': instance.email,
+      'username': instance.username,
     };
