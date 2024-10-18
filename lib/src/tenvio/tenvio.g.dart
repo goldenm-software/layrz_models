@@ -635,6 +635,14 @@ _$TenvioDispatchGuideImpl _$$TenvioDispatchGuideImplFromJson(
               ?.map((e) => TenvioPackage.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      packagesIds: (json['packagesIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      hasRoute: json['hasRoute'] as bool? ?? false,
+      route:
+          (json['route'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const [],
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
       updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
     );
@@ -655,6 +663,9 @@ Map<String, dynamic> _$$TenvioDispatchGuideImplToJson(
       'loader': instance.loader?.toJson(),
       'loaderId': instance.loaderId,
       'packages': instance.packages.map((e) => e.toJson()).toList(),
+      'packagesIds': instance.packagesIds,
+      'hasRoute': instance.hasRoute,
+      'route': instance.route,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
     };
@@ -671,6 +682,10 @@ _$TenvioDispatchGuideInputImpl _$$TenvioDispatchGuideInputImplFromJson(
       driverId: json['driverId'] as String?,
       truckId: json['truckId'] as String?,
       loaderId: json['loaderId'] as String?,
+      hasRoute: json['hasRoute'] as bool? ?? false,
+      route:
+          (json['route'] as List<dynamic>?)?.map((e) => e as String).toList() ??
+              const [],
       packagesIds: (json['packagesIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -687,6 +702,8 @@ Map<String, dynamic> _$$TenvioDispatchGuideInputImplToJson(
       'driverId': instance.driverId,
       'truckId': instance.truckId,
       'loaderId': instance.loaderId,
+      'hasRoute': instance.hasRoute,
+      'route': instance.route,
       'packagesIds': instance.packagesIds,
     };
 

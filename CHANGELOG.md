@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.38
+
+- Adjustments on Tenvio Dispatch Guide and their status
+
 ## 3.2.37
 
 - Tenvio Driver changes

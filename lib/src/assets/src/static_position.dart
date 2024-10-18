@@ -2,6 +2,7 @@ part of '../assets.dart';
 
 @freezed
 class StaticPosition with _$StaticPosition {
+  const StaticPosition._();
   const factory StaticPosition({
     /// [latitude] is the latitude of the asset.
     double? latitude,
@@ -14,10 +15,14 @@ class StaticPosition with _$StaticPosition {
   }) = _StaticPosition;
 
   factory StaticPosition.fromJson(Map<String, dynamic> json) => _$StaticPositionFromJson(json);
+
+  LatLng? get toLatLng => latitude != null && longitude != null ? LatLng(latitude!, longitude!) : null;
 }
 
 @unfreezed
 class StaticPositionInput with _$StaticPositionInput {
+  StaticPositionInput._();
+  
   factory StaticPositionInput({
     double? latitude,
     double? longitude,
@@ -25,4 +30,6 @@ class StaticPositionInput with _$StaticPositionInput {
   }) = _StaticPositionInput;
 
   factory StaticPositionInput.fromJson(Map<String, dynamic> json) => _$StaticPositionInputFromJson(json);
+
+  LatLng? get toLatLng => latitude != null && longitude != null ? LatLng(latitude!, longitude!) : null;
 }

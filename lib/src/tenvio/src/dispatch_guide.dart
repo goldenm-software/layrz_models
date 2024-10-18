@@ -41,6 +41,16 @@ class TenvioDispatchGuide with _$TenvioDispatchGuide {
     /// [packages] is the list of packages assigned to the dispatch guide
     @Default([]) List<TenvioPackage> packages,
 
+    /// [packagesIds] is the list of packages' ids assigned to the dispatch guide
+    @Default([]) List<String> packagesIds,
+
+    /// [hasRoute] is a flag that indicates if the dispatch guide has a route
+    @Default(false) bool hasRoute,
+
+    /// [route] is the route assigned to the dispatch guide
+    /// Is a list of packages' ids (ordered by the delivery sequence)
+    @Default([]) List<String> route,
+
     /// [createdAt] is the date and time when the dispatch guide was created
     @TimestampConverter() required DateTime createdAt,
 
@@ -75,6 +85,13 @@ class TenvioDispatchGuideInput with _$TenvioDispatchGuideInput {
 
     /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
     String? loaderId,
+
+    /// [hasRoute] is a flag that indicates if the dispatch guide has a route
+    @Default(false) bool hasRoute,
+
+    /// [route] is the route assigned to the dispatch guide
+    /// Is a list of packages' ids (ordered by the delivery sequence)
+    @Default([]) List<String> route,
 
     /// [packages] is the list of packages assigned to the dispatch guide
     @Default([]) List<String> packagesIds,

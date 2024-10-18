@@ -1643,7 +1643,7 @@ class __$$AssetImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AssetImpl implements _Asset {
+class _$AssetImpl extends _Asset {
   const _$AssetImpl(
       {required this.id,
       required this.name,
@@ -1719,7 +1719,8 @@ class _$AssetImpl implements _Asset {
         _parameters = parameters,
         _globalSensors = globalSensors,
         _geofences = geofences,
-        _mappitSecondaryRoutesIds = mappitSecondaryRoutesIds;
+        _mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,
+        super._();
 
   factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
       _$$AssetImplFromJson(json);
@@ -2349,7 +2350,7 @@ class _$AssetImpl implements _Asset {
   }
 }
 
-abstract class _Asset implements Asset {
+abstract class _Asset extends Asset {
   const factory _Asset(
       {required final String id,
       required final String name,
@@ -2400,6 +2401,7 @@ abstract class _Asset implements Asset {
       final List<Geofence>? geofences,
       final List<String>? mappitSecondaryRoutesIds,
       final bool? isSuspended}) = _$AssetImpl;
+  const _Asset._() : super._();
 
   factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
 
@@ -3180,7 +3182,7 @@ class __$$AssetInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AssetInputImpl implements _AssetInput {
+class _$AssetInputImpl extends _AssetInput {
   _$AssetInputImpl(
       {this.id,
       this.name = '',
@@ -3212,7 +3214,8 @@ class _$AssetInputImpl implements _AssetInput {
       this.mappitLaborStartTime = const TimeOfDay(hour: 9, minute: 0),
       @TimeOfDayConverter()
       this.mappitLaborEndTime = const TimeOfDay(hour: 18, minute: 0),
-      this.mappitSecondaryRoutesIds = const []});
+      this.mappitSecondaryRoutesIds = const []})
+      : super._();
 
   factory _$AssetInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$AssetInputImplFromJson(json);
@@ -3320,7 +3323,7 @@ class _$AssetInputImpl implements _AssetInput {
   }
 }
 
-abstract class _AssetInput implements AssetInput {
+abstract class _AssetInput extends AssetInput {
   factory _AssetInput(
       {String? id,
       String name,
@@ -3351,6 +3354,7 @@ abstract class _AssetInput implements AssetInput {
       @TimeOfDayConverter() TimeOfDay mappitLaborStartTime,
       @TimeOfDayConverter() TimeOfDay mappitLaborEndTime,
       List<String> mappitSecondaryRoutesIds}) = _$AssetInputImpl;
+  _AssetInput._() : super._();
 
   factory _AssetInput.fromJson(Map<String, dynamic> json) =
       _$AssetInputImpl.fromJson;
@@ -3946,8 +3950,9 @@ class __$$StaticPositionImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StaticPositionImpl implements _StaticPosition {
-  const _$StaticPositionImpl({this.latitude, this.longitude, this.altitude});
+class _$StaticPositionImpl extends _StaticPosition {
+  const _$StaticPositionImpl({this.latitude, this.longitude, this.altitude})
+      : super._();
 
   factory _$StaticPositionImpl.fromJson(Map<String, dynamic> json) =>
       _$$StaticPositionImplFromJson(json);
@@ -4001,11 +4006,12 @@ class _$StaticPositionImpl implements _StaticPosition {
   }
 }
 
-abstract class _StaticPosition implements StaticPosition {
+abstract class _StaticPosition extends StaticPosition {
   const factory _StaticPosition(
       {final double? latitude,
       final double? longitude,
       final double? altitude}) = _$StaticPositionImpl;
+  const _StaticPosition._() : super._();
 
   factory _StaticPosition.fromJson(Map<String, dynamic> json) =
       _$StaticPositionImpl.fromJson;
@@ -4135,8 +4141,9 @@ class __$$StaticPositionInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$StaticPositionInputImpl implements _StaticPositionInput {
-  _$StaticPositionInputImpl({this.latitude, this.longitude, this.altitude});
+class _$StaticPositionInputImpl extends _StaticPositionInput {
+  _$StaticPositionInputImpl({this.latitude, this.longitude, this.altitude})
+      : super._();
 
   factory _$StaticPositionInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$StaticPositionInputImplFromJson(json);
@@ -4168,11 +4175,12 @@ class _$StaticPositionInputImpl implements _StaticPositionInput {
   }
 }
 
-abstract class _StaticPositionInput implements StaticPositionInput {
+abstract class _StaticPositionInput extends StaticPositionInput {
   factory _StaticPositionInput(
       {double? latitude,
       double? longitude,
       double? altitude}) = _$StaticPositionInputImpl;
+  _StaticPositionInput._() : super._();
 
   factory _StaticPositionInput.fromJson(Map<String, dynamic> json) =
       _$StaticPositionInputImpl.fromJson;
@@ -4287,8 +4295,9 @@ class __$$ZonePointImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ZonePointImpl implements _ZonePoint {
-  const _$ZonePointImpl({required this.latitude, required this.longitude});
+class _$ZonePointImpl extends _ZonePoint {
+  const _$ZonePointImpl({required this.latitude, required this.longitude})
+      : super._();
 
   factory _$ZonePointImpl.fromJson(Map<String, dynamic> json) =>
       _$$ZonePointImplFromJson(json);
@@ -4335,10 +4344,11 @@ class _$ZonePointImpl implements _ZonePoint {
   }
 }
 
-abstract class _ZonePoint implements ZonePoint {
+abstract class _ZonePoint extends ZonePoint {
   const factory _ZonePoint(
       {required final double latitude,
       required final double longitude}) = _$ZonePointImpl;
+  const _ZonePoint._() : super._();
 
   factory _ZonePoint.fromJson(Map<String, dynamic> json) =
       _$ZonePointImpl.fromJson;
@@ -4459,8 +4469,9 @@ class __$$ZonePointInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ZonePointInputImpl implements _ZonePointInput {
-  _$ZonePointInputImpl({required this.latitude, required this.longitude});
+class _$ZonePointInputImpl extends _ZonePointInput {
+  _$ZonePointInputImpl({required this.latitude, required this.longitude})
+      : super._();
 
   factory _$ZonePointInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$ZonePointInputImplFromJson(json);
@@ -4493,10 +4504,11 @@ class _$ZonePointInputImpl implements _ZonePointInput {
   }
 }
 
-abstract class _ZonePointInput implements ZonePointInput {
+abstract class _ZonePointInput extends ZonePointInput {
   factory _ZonePointInput(
       {required double latitude,
       required double longitude}) = _$ZonePointInputImpl;
+  _ZonePointInput._() : super._();
 
   factory _ZonePointInput.fromJson(Map<String, dynamic> json) =
       _$ZonePointInputImpl.fromJson;

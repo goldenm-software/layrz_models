@@ -7290,6 +7290,16 @@ mixin _$TenvioDispatchGuide {
   /// [packages] is the list of packages assigned to the dispatch guide
   List<TenvioPackage> get packages => throw _privateConstructorUsedError;
 
+  /// [packagesIds] is the list of packages' ids assigned to the dispatch guide
+  List<String> get packagesIds => throw _privateConstructorUsedError;
+
+  /// [hasRoute] is a flag that indicates if the dispatch guide has a route
+  bool get hasRoute => throw _privateConstructorUsedError;
+
+  /// [route] is the route assigned to the dispatch guide
+  /// Is a list of packages' ids (ordered by the delivery sequence)
+  List<String> get route => throw _privateConstructorUsedError;
+
   /// [createdAt] is the date and time when the dispatch guide was created
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
@@ -7323,6 +7333,9 @@ abstract class $TenvioDispatchGuideCopyWith<$Res> {
       User? loader,
       String? loaderId,
       List<TenvioPackage> packages,
+      List<String> packagesIds,
+      bool hasRoute,
+      List<String> route,
       @TimestampConverter() DateTime createdAt,
       @TimestampConverter() DateTime updatedAt});
 
@@ -7357,6 +7370,9 @@ class _$TenvioDispatchGuideCopyWithImpl<$Res, $Val extends TenvioDispatchGuide>
     Object? loader = freezed,
     Object? loaderId = freezed,
     Object? packages = null,
+    Object? packagesIds = null,
+    Object? hasRoute = null,
+    Object? route = null,
     Object? createdAt = null,
     Object? updatedAt = null,
   }) {
@@ -7409,6 +7425,18 @@ class _$TenvioDispatchGuideCopyWithImpl<$Res, $Val extends TenvioDispatchGuide>
           ? _value.packages
           : packages // ignore: cast_nullable_to_non_nullable
               as List<TenvioPackage>,
+      packagesIds: null == packagesIds
+          ? _value.packagesIds
+          : packagesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      hasRoute: null == hasRoute
+          ? _value.hasRoute
+          : hasRoute // ignore: cast_nullable_to_non_nullable
+              as bool,
+      route: null == route
+          ? _value.route
+          : route // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -7490,6 +7518,9 @@ abstract class _$$TenvioDispatchGuideImplCopyWith<$Res>
       User? loader,
       String? loaderId,
       List<TenvioPackage> packages,
+      List<String> packagesIds,
+      bool hasRoute,
+      List<String> route,
       @TimestampConverter() DateTime createdAt,
       @TimestampConverter() DateTime updatedAt});
 
@@ -7526,6 +7557,9 @@ class __$$TenvioDispatchGuideImplCopyWithImpl<$Res>
     Object? loader = freezed,
     Object? loaderId = freezed,
     Object? packages = null,
+    Object? packagesIds = null,
+    Object? hasRoute = null,
+    Object? route = null,
     Object? createdAt = null,
     Object? updatedAt = null,
   }) {
@@ -7578,6 +7612,18 @@ class __$$TenvioDispatchGuideImplCopyWithImpl<$Res>
           ? _value._packages
           : packages // ignore: cast_nullable_to_non_nullable
               as List<TenvioPackage>,
+      packagesIds: null == packagesIds
+          ? _value._packagesIds
+          : packagesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      hasRoute: null == hasRoute
+          ? _value.hasRoute
+          : hasRoute // ignore: cast_nullable_to_non_nullable
+              as bool,
+      route: null == route
+          ? _value._route
+          : route // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       createdAt: null == createdAt
           ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
@@ -7606,9 +7652,14 @@ class _$TenvioDispatchGuideImpl extends _TenvioDispatchGuide {
       this.loader,
       this.loaderId,
       final List<TenvioPackage> packages = const [],
+      final List<String> packagesIds = const [],
+      this.hasRoute = false,
+      final List<String> route = const [],
       @TimestampConverter() required this.createdAt,
       @TimestampConverter() required this.updatedAt})
       : _packages = packages,
+        _packagesIds = packagesIds,
+        _route = route,
         super._();
 
   factory _$TenvioDispatchGuideImpl.fromJson(Map<String, dynamic> json) =>
@@ -7671,6 +7722,37 @@ class _$TenvioDispatchGuideImpl extends _TenvioDispatchGuide {
     return EqualUnmodifiableListView(_packages);
   }
 
+  /// [packagesIds] is the list of packages' ids assigned to the dispatch guide
+  final List<String> _packagesIds;
+
+  /// [packagesIds] is the list of packages' ids assigned to the dispatch guide
+  @override
+  @JsonKey()
+  List<String> get packagesIds {
+    if (_packagesIds is EqualUnmodifiableListView) return _packagesIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_packagesIds);
+  }
+
+  /// [hasRoute] is a flag that indicates if the dispatch guide has a route
+  @override
+  @JsonKey()
+  final bool hasRoute;
+
+  /// [route] is the route assigned to the dispatch guide
+  /// Is a list of packages' ids (ordered by the delivery sequence)
+  final List<String> _route;
+
+  /// [route] is the route assigned to the dispatch guide
+  /// Is a list of packages' ids (ordered by the delivery sequence)
+  @override
+  @JsonKey()
+  List<String> get route {
+    if (_route is EqualUnmodifiableListView) return _route;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_route);
+  }
+
   /// [createdAt] is the date and time when the dispatch guide was created
   @override
   @TimestampConverter()
@@ -7683,7 +7765,7 @@ class _$TenvioDispatchGuideImpl extends _TenvioDispatchGuide {
 
   @override
   String toString() {
-    return 'TenvioDispatchGuide(id: $id, status: $status, qrCode: $qrCode, warehouse: $warehouse, warehouseId: $warehouseId, driver: $driver, driverId: $driverId, truck: $truck, truckId: $truckId, loader: $loader, loaderId: $loaderId, packages: $packages, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'TenvioDispatchGuide(id: $id, status: $status, qrCode: $qrCode, warehouse: $warehouse, warehouseId: $warehouseId, driver: $driver, driverId: $driverId, truck: $truck, truckId: $truckId, loader: $loader, loaderId: $loaderId, packages: $packages, packagesIds: $packagesIds, hasRoute: $hasRoute, route: $route, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -7707,6 +7789,11 @@ class _$TenvioDispatchGuideImpl extends _TenvioDispatchGuide {
             (identical(other.loaderId, loaderId) ||
                 other.loaderId == loaderId) &&
             const DeepCollectionEquality().equals(other._packages, _packages) &&
+            const DeepCollectionEquality()
+                .equals(other._packagesIds, _packagesIds) &&
+            (identical(other.hasRoute, hasRoute) ||
+                other.hasRoute == hasRoute) &&
+            const DeepCollectionEquality().equals(other._route, _route) &&
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
@@ -7729,6 +7816,9 @@ class _$TenvioDispatchGuideImpl extends _TenvioDispatchGuide {
       loader,
       loaderId,
       const DeepCollectionEquality().hash(_packages),
+      const DeepCollectionEquality().hash(_packagesIds),
+      hasRoute,
+      const DeepCollectionEquality().hash(_route),
       createdAt,
       updatedAt);
 
@@ -7762,6 +7852,9 @@ abstract class _TenvioDispatchGuide extends TenvioDispatchGuide {
           final User? loader,
           final String? loaderId,
           final List<TenvioPackage> packages,
+          final List<String> packagesIds,
+          final bool hasRoute,
+          final List<String> route,
           @TimestampConverter() required final DateTime createdAt,
           @TimestampConverter() required final DateTime updatedAt}) =
       _$TenvioDispatchGuideImpl;
@@ -7819,6 +7912,19 @@ abstract class _TenvioDispatchGuide extends TenvioDispatchGuide {
 
   /// [packages] is the list of packages assigned to the dispatch guide
   List<TenvioPackage> get packages;
+  @override
+
+  /// [packagesIds] is the list of packages' ids assigned to the dispatch guide
+  List<String> get packagesIds;
+  @override
+
+  /// [hasRoute] is a flag that indicates if the dispatch guide has a route
+  bool get hasRoute;
+  @override
+
+  /// [route] is the route assigned to the dispatch guide
+  /// Is a list of packages' ids (ordered by the delivery sequence)
+  List<String> get route;
   @override
 
   /// [createdAt] is the date and time when the dispatch guide was created
@@ -7881,6 +7987,20 @@ mixin _$TenvioDispatchGuideInput {
   /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
   set loaderId(String? value) => throw _privateConstructorUsedError;
 
+  /// [hasRoute] is a flag that indicates if the dispatch guide has a route
+  bool get hasRoute => throw _privateConstructorUsedError;
+
+  /// [hasRoute] is a flag that indicates if the dispatch guide has a route
+  set hasRoute(bool value) => throw _privateConstructorUsedError;
+
+  /// [route] is the route assigned to the dispatch guide
+  /// Is a list of packages' ids (ordered by the delivery sequence)
+  List<String> get route => throw _privateConstructorUsedError;
+
+  /// [route] is the route assigned to the dispatch guide
+  /// Is a list of packages' ids (ordered by the delivery sequence)
+  set route(List<String> value) => throw _privateConstructorUsedError;
+
   /// [packages] is the list of packages assigned to the dispatch guide
   List<String> get packagesIds => throw _privateConstructorUsedError;
 
@@ -7906,6 +8026,8 @@ abstract class $TenvioDispatchGuideInputCopyWith<$Res> {
       String? driverId,
       String? truckId,
       String? loaderId,
+      bool hasRoute,
+      List<String> route,
       List<String> packagesIds});
 }
 
@@ -7929,6 +8051,8 @@ class _$TenvioDispatchGuideInputCopyWithImpl<$Res,
     Object? driverId = freezed,
     Object? truckId = freezed,
     Object? loaderId = freezed,
+    Object? hasRoute = null,
+    Object? route = null,
     Object? packagesIds = null,
   }) {
     return _then(_value.copyWith(
@@ -7956,6 +8080,14 @@ class _$TenvioDispatchGuideInputCopyWithImpl<$Res,
           ? _value.loaderId
           : loaderId // ignore: cast_nullable_to_non_nullable
               as String?,
+      hasRoute: null == hasRoute
+          ? _value.hasRoute
+          : hasRoute // ignore: cast_nullable_to_non_nullable
+              as bool,
+      route: null == route
+          ? _value.route
+          : route // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       packagesIds: null == packagesIds
           ? _value.packagesIds
           : packagesIds // ignore: cast_nullable_to_non_nullable
@@ -7980,6 +8112,8 @@ abstract class _$$TenvioDispatchGuideInputImplCopyWith<$Res>
       String? driverId,
       String? truckId,
       String? loaderId,
+      bool hasRoute,
+      List<String> route,
       List<String> packagesIds});
 }
 
@@ -8002,6 +8136,8 @@ class __$$TenvioDispatchGuideInputImplCopyWithImpl<$Res>
     Object? driverId = freezed,
     Object? truckId = freezed,
     Object? loaderId = freezed,
+    Object? hasRoute = null,
+    Object? route = null,
     Object? packagesIds = null,
   }) {
     return _then(_$TenvioDispatchGuideInputImpl(
@@ -8029,6 +8165,14 @@ class __$$TenvioDispatchGuideInputImplCopyWithImpl<$Res>
           ? _value.loaderId
           : loaderId // ignore: cast_nullable_to_non_nullable
               as String?,
+      hasRoute: null == hasRoute
+          ? _value.hasRoute
+          : hasRoute // ignore: cast_nullable_to_non_nullable
+              as bool,
+      route: null == route
+          ? _value.route
+          : route // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       packagesIds: null == packagesIds
           ? _value.packagesIds
           : packagesIds // ignore: cast_nullable_to_non_nullable
@@ -8048,6 +8192,8 @@ class _$TenvioDispatchGuideInputImpl extends _TenvioDispatchGuideInput {
       this.driverId,
       this.truckId,
       this.loaderId,
+      this.hasRoute = false,
+      this.route = const [],
       this.packagesIds = const []})
       : super._();
 
@@ -8080,6 +8226,17 @@ class _$TenvioDispatchGuideInputImpl extends _TenvioDispatchGuideInput {
   @override
   String? loaderId;
 
+  /// [hasRoute] is a flag that indicates if the dispatch guide has a route
+  @override
+  @JsonKey()
+  bool hasRoute;
+
+  /// [route] is the route assigned to the dispatch guide
+  /// Is a list of packages' ids (ordered by the delivery sequence)
+  @override
+  @JsonKey()
+  List<String> route;
+
   /// [packages] is the list of packages assigned to the dispatch guide
   @override
   @JsonKey()
@@ -8087,7 +8244,7 @@ class _$TenvioDispatchGuideInputImpl extends _TenvioDispatchGuideInput {
 
   @override
   String toString() {
-    return 'TenvioDispatchGuideInput(id: $id, warehouseId: $warehouseId, status: $status, driverId: $driverId, truckId: $truckId, loaderId: $loaderId, packagesIds: $packagesIds)';
+    return 'TenvioDispatchGuideInput(id: $id, warehouseId: $warehouseId, status: $status, driverId: $driverId, truckId: $truckId, loaderId: $loaderId, hasRoute: $hasRoute, route: $route, packagesIds: $packagesIds)';
   }
 
   @JsonKey(ignore: true)
@@ -8113,6 +8270,8 @@ abstract class _TenvioDispatchGuideInput extends TenvioDispatchGuideInput {
       String? driverId,
       String? truckId,
       String? loaderId,
+      bool hasRoute,
+      List<String> route,
       List<String> packagesIds}) = _$TenvioDispatchGuideInputImpl;
   _TenvioDispatchGuideInput._() : super._();
 
@@ -8163,6 +8322,22 @@ abstract class _TenvioDispatchGuideInput extends TenvioDispatchGuideInput {
 
   /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
   set loaderId(String? value);
+  @override
+
+  /// [hasRoute] is a flag that indicates if the dispatch guide has a route
+  bool get hasRoute;
+
+  /// [hasRoute] is a flag that indicates if the dispatch guide has a route
+  set hasRoute(bool value);
+  @override
+
+  /// [route] is the route assigned to the dispatch guide
+  /// Is a list of packages' ids (ordered by the delivery sequence)
+  List<String> get route;
+
+  /// [route] is the route assigned to the dispatch guide
+  /// Is a list of packages' ids (ordered by the delivery sequence)
+  set route(List<String> value);
   @override
 
   /// [packages] is the list of packages assigned to the dispatch guide

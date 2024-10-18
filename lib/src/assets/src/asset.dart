@@ -2,6 +2,8 @@ part of '../assets.dart';
 
 @freezed
 class Asset with _$Asset {
+  const Asset._();
+
   const factory Asset({
     /// [id] of the asset entity. This ID is unique.
     required String id,
@@ -166,10 +168,14 @@ class Asset with _$Asset {
   }) = _Asset;
 
   factory Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
+
+  List<LatLng>? get pointsLatLng => points?.map((e) => e.toLatLng).toList();
 }
 
 @unfreezed
 class AssetInput with _$AssetInput {
+  AssetInput._();
+
   factory AssetInput({
     String? id,
     @Default('') String name,
@@ -207,4 +213,6 @@ class AssetInput with _$AssetInput {
   }) = _AssetInput;
 
   factory AssetInput.fromJson(Map<String, dynamic> json) => _$AssetInputFromJson(json);
+
+  List<LatLng>? get pointsLatLng => points?.map((e) => e.toLatLng).toList();
 }

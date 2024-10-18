@@ -13,6 +13,10 @@ enum TenvioPackageStatus {
   /// API Reference: `CLOSED`
   closed,
 
+  /// [loading] refers that the package is being loaded to the dispatch guide
+  /// API Reference: `LOADING`
+  loading,
+
   /// [waitingForPickup] refers that the package was assigned to a dispatch guide and
   /// it's waiting to be picked up
   /// API Reference: `WAITING_FOR_PICKUP`
@@ -55,6 +59,8 @@ enum TenvioPackageStatus {
         return 'PACKAGING';
       case TenvioPackageStatus.closed:
         return 'CLOSED';
+      case TenvioPackageStatus.loading:
+        return 'LOADING';
       case TenvioPackageStatus.waitingForPickup:
         return 'WAITING_FOR_PICKUP';
       case TenvioPackageStatus.transit:
@@ -81,6 +87,8 @@ enum TenvioPackageStatus {
         return TenvioPackageStatus.packaging;
       case 'CLOSED':
         return TenvioPackageStatus.closed;
+      case 'LOADING':
+        return TenvioPackageStatus.loading;
       case 'WAITING_FOR_PICKUP':
         return TenvioPackageStatus.waitingForPickup;
       case 'IN_TRANSIT':
@@ -102,9 +110,11 @@ enum TenvioPackageStatus {
   Color get color {
     switch (this) {
       case TenvioPackageStatus.packaging:
-        return Colors.blue;
+        return Colors.orange;
       case TenvioPackageStatus.closed:
         return Colors.orange;
+      case TenvioPackageStatus.loading:
+        return Colors.blue;
       case TenvioPackageStatus.waitingForPickup:
         return Colors.blue;
       case TenvioPackageStatus.transit:
