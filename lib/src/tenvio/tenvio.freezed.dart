@@ -8384,6 +8384,15 @@ mixin _$TenvioDriver {
   /// [maskedDeviceId] is the masked identifier of the device
   String? get maskedDeviceId => throw _privateConstructorUsedError;
 
+  /// [app] represents the app that this user is linked to.
+  RegisteredApp? get app => throw _privateConstructorUsedError;
+
+  /// [mqttToken] represents the MQTT token.
+  String? get mqttToken => throw _privateConstructorUsedError;
+
+  /// [token] represents the user token.
+  Token? get token => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioDriverCopyWith<TenvioDriver> get copyWith =>
@@ -8404,9 +8413,14 @@ abstract class $TenvioDriverCopyWith<$Res> {
       @TimestampOrNullConverter() DateTime? createdAt,
       @TimestampOrNullConverter() DateTime? updatedAt,
       DeviceTelemetry? telemetry,
-      String? maskedDeviceId});
+      String? maskedDeviceId,
+      RegisteredApp? app,
+      String? mqttToken,
+      Token? token});
 
   $DeviceTelemetryCopyWith<$Res>? get telemetry;
+  $RegisteredAppCopyWith<$Res>? get app;
+  $TokenCopyWith<$Res>? get token;
 }
 
 /// @nodoc
@@ -8430,6 +8444,9 @@ class _$TenvioDriverCopyWithImpl<$Res, $Val extends TenvioDriver>
     Object? updatedAt = freezed,
     Object? telemetry = freezed,
     Object? maskedDeviceId = freezed,
+    Object? app = freezed,
+    Object? mqttToken = freezed,
+    Object? token = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -8464,6 +8481,18 @@ class _$TenvioDriverCopyWithImpl<$Res, $Val extends TenvioDriver>
           ? _value.maskedDeviceId
           : maskedDeviceId // ignore: cast_nullable_to_non_nullable
               as String?,
+      app: freezed == app
+          ? _value.app
+          : app // ignore: cast_nullable_to_non_nullable
+              as RegisteredApp?,
+      mqttToken: freezed == mqttToken
+          ? _value.mqttToken
+          : mqttToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as Token?,
     ) as $Val);
   }
 
@@ -8476,6 +8505,30 @@ class _$TenvioDriverCopyWithImpl<$Res, $Val extends TenvioDriver>
 
     return $DeviceTelemetryCopyWith<$Res>(_value.telemetry!, (value) {
       return _then(_value.copyWith(telemetry: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RegisteredAppCopyWith<$Res>? get app {
+    if (_value.app == null) {
+      return null;
+    }
+
+    return $RegisteredAppCopyWith<$Res>(_value.app!, (value) {
+      return _then(_value.copyWith(app: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TokenCopyWith<$Res>? get token {
+    if (_value.token == null) {
+      return null;
+    }
+
+    return $TokenCopyWith<$Res>(_value.token!, (value) {
+      return _then(_value.copyWith(token: value) as $Val);
     });
   }
 }
@@ -8496,10 +8549,17 @@ abstract class _$$TenvioDriverImplCopyWith<$Res>
       @TimestampOrNullConverter() DateTime? createdAt,
       @TimestampOrNullConverter() DateTime? updatedAt,
       DeviceTelemetry? telemetry,
-      String? maskedDeviceId});
+      String? maskedDeviceId,
+      RegisteredApp? app,
+      String? mqttToken,
+      Token? token});
 
   @override
   $DeviceTelemetryCopyWith<$Res>? get telemetry;
+  @override
+  $RegisteredAppCopyWith<$Res>? get app;
+  @override
+  $TokenCopyWith<$Res>? get token;
 }
 
 /// @nodoc
@@ -8521,6 +8581,9 @@ class __$$TenvioDriverImplCopyWithImpl<$Res>
     Object? updatedAt = freezed,
     Object? telemetry = freezed,
     Object? maskedDeviceId = freezed,
+    Object? app = freezed,
+    Object? mqttToken = freezed,
+    Object? token = freezed,
   }) {
     return _then(_$TenvioDriverImpl(
       id: null == id
@@ -8555,6 +8618,18 @@ class __$$TenvioDriverImplCopyWithImpl<$Res>
           ? _value.maskedDeviceId
           : maskedDeviceId // ignore: cast_nullable_to_non_nullable
               as String?,
+      app: freezed == app
+          ? _value.app
+          : app // ignore: cast_nullable_to_non_nullable
+              as RegisteredApp?,
+      mqttToken: freezed == mqttToken
+          ? _value.mqttToken
+          : mqttToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as Token?,
     ));
   }
 }
@@ -8570,7 +8645,10 @@ class _$TenvioDriverImpl extends _TenvioDriver {
       @TimestampOrNullConverter() this.createdAt,
       @TimestampOrNullConverter() this.updatedAt,
       this.telemetry,
-      this.maskedDeviceId})
+      this.maskedDeviceId,
+      this.app,
+      this.mqttToken,
+      this.token})
       : super._();
 
   factory _$TenvioDriverImpl.fromJson(Map<String, dynamic> json) =>
@@ -8611,9 +8689,21 @@ class _$TenvioDriverImpl extends _TenvioDriver {
   @override
   final String? maskedDeviceId;
 
+  /// [app] represents the app that this user is linked to.
+  @override
+  final RegisteredApp? app;
+
+  /// [mqttToken] represents the MQTT token.
+  @override
+  final String? mqttToken;
+
+  /// [token] represents the user token.
+  @override
+  final Token? token;
+
   @override
   String toString() {
-    return 'TenvioDriver(id: $id, name: $name, email: $email, username: $username, createdAt: $createdAt, updatedAt: $updatedAt, telemetry: $telemetry, maskedDeviceId: $maskedDeviceId)';
+    return 'TenvioDriver(id: $id, name: $name, email: $email, username: $username, createdAt: $createdAt, updatedAt: $updatedAt, telemetry: $telemetry, maskedDeviceId: $maskedDeviceId, app: $app, mqttToken: $mqttToken, token: $token)';
   }
 
   @override
@@ -8633,13 +8723,17 @@ class _$TenvioDriverImpl extends _TenvioDriver {
             (identical(other.telemetry, telemetry) ||
                 other.telemetry == telemetry) &&
             (identical(other.maskedDeviceId, maskedDeviceId) ||
-                other.maskedDeviceId == maskedDeviceId));
+                other.maskedDeviceId == maskedDeviceId) &&
+            (identical(other.app, app) || other.app == app) &&
+            (identical(other.mqttToken, mqttToken) ||
+                other.mqttToken == mqttToken) &&
+            (identical(other.token, token) || other.token == token));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, email, username,
-      createdAt, updatedAt, telemetry, maskedDeviceId);
+      createdAt, updatedAt, telemetry, maskedDeviceId, app, mqttToken, token);
 
   @JsonKey(ignore: true)
   @override
@@ -8664,7 +8758,10 @@ abstract class _TenvioDriver extends TenvioDriver {
       @TimestampOrNullConverter() final DateTime? createdAt,
       @TimestampOrNullConverter() final DateTime? updatedAt,
       final DeviceTelemetry? telemetry,
-      final String? maskedDeviceId}) = _$TenvioDriverImpl;
+      final String? maskedDeviceId,
+      final RegisteredApp? app,
+      final String? mqttToken,
+      final Token? token}) = _$TenvioDriverImpl;
   const _TenvioDriver._() : super._();
 
   factory _TenvioDriver.fromJson(Map<String, dynamic> json) =
@@ -8705,6 +8802,18 @@ abstract class _TenvioDriver extends TenvioDriver {
 
   /// [maskedDeviceId] is the masked identifier of the device
   String? get maskedDeviceId;
+  @override
+
+  /// [app] represents the app that this user is linked to.
+  RegisteredApp? get app;
+  @override
+
+  /// [mqttToken] represents the MQTT token.
+  String? get mqttToken;
+  @override
+
+  /// [token] represents the user token.
+  Token? get token;
   @override
   @JsonKey(ignore: true)
   _$$TenvioDriverImplCopyWith<_$TenvioDriverImpl> get copyWith =>

@@ -721,6 +721,13 @@ _$TenvioDriverImpl _$$TenvioDriverImplFromJson(Map<String, dynamic> json) =>
           ? null
           : DeviceTelemetry.fromJson(json['telemetry'] as Map<String, dynamic>),
       maskedDeviceId: json['maskedDeviceId'] as String?,
+      app: json['app'] == null
+          ? null
+          : RegisteredApp.fromJson(json['app'] as Map<String, dynamic>),
+      mqttToken: json['mqttToken'] as String?,
+      token: json['token'] == null
+          ? null
+          : Token.fromJson(json['token'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$TenvioDriverImplToJson(_$TenvioDriverImpl instance) =>
@@ -733,6 +740,9 @@ Map<String, dynamic> _$$TenvioDriverImplToJson(_$TenvioDriverImpl instance) =>
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
       'telemetry': instance.telemetry?.toJson(),
       'maskedDeviceId': instance.maskedDeviceId,
+      'app': instance.app?.toJson(),
+      'mqttToken': instance.mqttToken,
+      'token': instance.token?.toJson(),
     };
 
 _$TenvioDriverInputImpl _$$TenvioDriverInputImplFromJson(

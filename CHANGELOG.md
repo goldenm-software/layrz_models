@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.39
+
+- More tenvio changes
+
 ## 3.2.38
 
 - Adjustments on Tenvio Dispatch Guide and their status

@@ -29,6 +29,15 @@ class TenvioDriver with _$TenvioDriver {
 
     /// [maskedDeviceId] is the masked identifier of the device
     String? maskedDeviceId,
+
+    /// [app] represents the app that this user is linked to.
+    RegisteredApp? app,
+
+    /// [mqttToken] represents the MQTT token.
+    String? mqttToken,
+
+    /// [token] represents the user token.
+    Token? token,
   }) = _TenvioDriver;
 
   factory TenvioDriver.fromJson(Map<String, dynamic> json) => _$TenvioDriverFromJson(json);

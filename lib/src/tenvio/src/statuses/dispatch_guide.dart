@@ -10,6 +10,10 @@ enum TenvioDispatchGuideStatus {
   /// API reference: `PENDING`
   pending,
 
+  /// [waitingLoad] status refers that the dispatch guide is waiting to be loaded by a packer
+  /// API reference: `WAITING_LOAD`
+  waitingLoad,
+
   /// [loading] status refers that the dispatch guide is being loaded by a packer
   /// API reference: `LOADING`
   loading,
@@ -39,6 +43,8 @@ enum TenvioDispatchGuideStatus {
         return 'DRAFT';
       case TenvioDispatchGuideStatus.pending:
         return 'PENDING';
+      case TenvioDispatchGuideStatus.waitingLoad:
+        return 'WAITING_LOAD';
       case TenvioDispatchGuideStatus.loading:
         return 'LOADING';
       case TenvioDispatchGuideStatus.waitingCheck:
@@ -59,6 +65,8 @@ enum TenvioDispatchGuideStatus {
         return TenvioDispatchGuideStatus.draft;
       case 'PENDING':
         return TenvioDispatchGuideStatus.pending;
+      case 'WAITING_LOAD':
+        return TenvioDispatchGuideStatus.waitingLoad;
       case 'LOADING':
         return TenvioDispatchGuideStatus.loading;
       case 'WAITING_CHECK':
@@ -75,9 +83,11 @@ enum TenvioDispatchGuideStatus {
   Color get color {
     switch (this) {
       case TenvioDispatchGuideStatus.pending:
+        return Colors.red;
+      case TenvioDispatchGuideStatus.waitingLoad:
         return Colors.orange;
       case TenvioDispatchGuideStatus.loading:
-        return Colors.lightBlue;
+        return Colors.orange;
       case TenvioDispatchGuideStatus.waitingCheck:
         return Colors.blue;
       case TenvioDispatchGuideStatus.checking:
