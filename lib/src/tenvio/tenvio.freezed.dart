@@ -8194,6 +8194,21 @@ mixin _$TenvioDriver {
   /// [username] is the username of the driver
   String? get username => throw _privateConstructorUsedError;
 
+  /// [createdAt] is the date and time when the driver was created
+  @TimestampOrNullConverter()
+  DateTime? get createdAt => throw _privateConstructorUsedError;
+
+  /// [updatedAt] is the date and time when the driver was last updated
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
+
+  /// [telemetry] is the last message received from the driver, read the documentation of
+  /// [DeviceTelemetry] for more information.
+  DeviceTelemetry? get telemetry => throw _privateConstructorUsedError;
+
+  /// [maskedDeviceId] is the masked identifier of the device
+  String? get maskedDeviceId => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioDriverCopyWith<TenvioDriver> get copyWith =>
@@ -8206,7 +8221,17 @@ abstract class $TenvioDriverCopyWith<$Res> {
           TenvioDriver value, $Res Function(TenvioDriver) then) =
       _$TenvioDriverCopyWithImpl<$Res, TenvioDriver>;
   @useResult
-  $Res call({String id, String name, String? email, String? username});
+  $Res call(
+      {String id,
+      String name,
+      String? email,
+      String? username,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      DeviceTelemetry? telemetry,
+      String? maskedDeviceId});
+
+  $DeviceTelemetryCopyWith<$Res>? get telemetry;
 }
 
 /// @nodoc
@@ -8226,6 +8251,10 @@ class _$TenvioDriverCopyWithImpl<$Res, $Val extends TenvioDriver>
     Object? name = null,
     Object? email = freezed,
     Object? username = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? telemetry = freezed,
+    Object? maskedDeviceId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -8244,7 +8273,35 @@ class _$TenvioDriverCopyWithImpl<$Res, $Val extends TenvioDriver>
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      telemetry: freezed == telemetry
+          ? _value.telemetry
+          : telemetry // ignore: cast_nullable_to_non_nullable
+              as DeviceTelemetry?,
+      maskedDeviceId: freezed == maskedDeviceId
+          ? _value.maskedDeviceId
+          : maskedDeviceId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $DeviceTelemetryCopyWith<$Res>? get telemetry {
+    if (_value.telemetry == null) {
+      return null;
+    }
+
+    return $DeviceTelemetryCopyWith<$Res>(_value.telemetry!, (value) {
+      return _then(_value.copyWith(telemetry: value) as $Val);
+    });
   }
 }
 
@@ -8256,7 +8313,18 @@ abstract class _$$TenvioDriverImplCopyWith<$Res>
       __$$TenvioDriverImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String? email, String? username});
+  $Res call(
+      {String id,
+      String name,
+      String? email,
+      String? username,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      DeviceTelemetry? telemetry,
+      String? maskedDeviceId});
+
+  @override
+  $DeviceTelemetryCopyWith<$Res>? get telemetry;
 }
 
 /// @nodoc
@@ -8274,6 +8342,10 @@ class __$$TenvioDriverImplCopyWithImpl<$Res>
     Object? name = null,
     Object? email = freezed,
     Object? username = freezed,
+    Object? createdAt = freezed,
+    Object? updatedAt = freezed,
+    Object? telemetry = freezed,
+    Object? maskedDeviceId = freezed,
   }) {
     return _then(_$TenvioDriverImpl(
       id: null == id
@@ -8292,6 +8364,22 @@ class __$$TenvioDriverImplCopyWithImpl<$Res>
           ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      telemetry: freezed == telemetry
+          ? _value.telemetry
+          : telemetry // ignore: cast_nullable_to_non_nullable
+              as DeviceTelemetry?,
+      maskedDeviceId: freezed == maskedDeviceId
+          ? _value.maskedDeviceId
+          : maskedDeviceId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -8300,7 +8388,14 @@ class __$$TenvioDriverImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$TenvioDriverImpl extends _TenvioDriver {
   const _$TenvioDriverImpl(
-      {required this.id, required this.name, this.email, this.username})
+      {required this.id,
+      required this.name,
+      this.email,
+      this.username,
+      @TimestampOrNullConverter() this.createdAt,
+      @TimestampOrNullConverter() this.updatedAt,
+      this.telemetry,
+      this.maskedDeviceId})
       : super._();
 
   factory _$TenvioDriverImpl.fromJson(Map<String, dynamic> json) =>
@@ -8322,9 +8417,28 @@ class _$TenvioDriverImpl extends _TenvioDriver {
   @override
   final String? username;
 
+  /// [createdAt] is the date and time when the driver was created
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? createdAt;
+
+  /// [updatedAt] is the date and time when the driver was last updated
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? updatedAt;
+
+  /// [telemetry] is the last message received from the driver, read the documentation of
+  /// [DeviceTelemetry] for more information.
+  @override
+  final DeviceTelemetry? telemetry;
+
+  /// [maskedDeviceId] is the masked identifier of the device
+  @override
+  final String? maskedDeviceId;
+
   @override
   String toString() {
-    return 'TenvioDriver(id: $id, name: $name, email: $email, username: $username)';
+    return 'TenvioDriver(id: $id, name: $name, email: $email, username: $username, createdAt: $createdAt, updatedAt: $updatedAt, telemetry: $telemetry, maskedDeviceId: $maskedDeviceId)';
   }
 
   @override
@@ -8336,12 +8450,21 @@ class _$TenvioDriverImpl extends _TenvioDriver {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.username, username) ||
-                other.username == username));
+                other.username == username) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.telemetry, telemetry) ||
+                other.telemetry == telemetry) &&
+            (identical(other.maskedDeviceId, maskedDeviceId) ||
+                other.maskedDeviceId == maskedDeviceId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, email, username);
+  int get hashCode => Object.hash(runtimeType, id, name, email, username,
+      createdAt, updatedAt, telemetry, maskedDeviceId);
 
   @JsonKey(ignore: true)
   @override
@@ -8362,7 +8485,11 @@ abstract class _TenvioDriver extends TenvioDriver {
       {required final String id,
       required final String name,
       final String? email,
-      final String? username}) = _$TenvioDriverImpl;
+      final String? username,
+      @TimestampOrNullConverter() final DateTime? createdAt,
+      @TimestampOrNullConverter() final DateTime? updatedAt,
+      final DeviceTelemetry? telemetry,
+      final String? maskedDeviceId}) = _$TenvioDriverImpl;
   const _TenvioDriver._() : super._();
 
   factory _TenvioDriver.fromJson(Map<String, dynamic> json) =
@@ -8384,6 +8511,25 @@ abstract class _TenvioDriver extends TenvioDriver {
 
   /// [username] is the username of the driver
   String? get username;
+  @override
+
+  /// [createdAt] is the date and time when the driver was created
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+  @override
+
+  /// [updatedAt] is the date and time when the driver was last updated
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt;
+  @override
+
+  /// [telemetry] is the last message received from the driver, read the documentation of
+  /// [DeviceTelemetry] for more information.
+  DeviceTelemetry? get telemetry;
+  @override
+
+  /// [maskedDeviceId] is the masked identifier of the device
+  String? get maskedDeviceId;
   @override
   @JsonKey(ignore: true)
   _$$TenvioDriverImplCopyWith<_$TenvioDriverImpl> get copyWith =>

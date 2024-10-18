@@ -16,6 +16,19 @@ class TenvioDriver with _$TenvioDriver {
 
     /// [username] is the username of the driver
     String? username,
+
+    /// [createdAt] is the date and time when the driver was created
+    @TimestampOrNullConverter() DateTime? createdAt,
+
+    /// [updatedAt] is the date and time when the driver was last updated
+    @TimestampOrNullConverter() DateTime? updatedAt,
+
+    /// [telemetry] is the last message received from the driver, read the documentation of
+    /// [DeviceTelemetry] for more information.
+    DeviceTelemetry? telemetry,
+
+    /// [maskedDeviceId] is the masked identifier of the device
+    String? maskedDeviceId,
   }) = _TenvioDriver;
 
   factory TenvioDriver.fromJson(Map<String, dynamic> json) => _$TenvioDriverFromJson(json);
