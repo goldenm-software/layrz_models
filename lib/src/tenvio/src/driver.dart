@@ -38,6 +38,9 @@ class TenvioDriver with _$TenvioDriver {
 
     /// [token] represents the user token.
     Token? token,
+
+    /// [originalId] is the original identifier of the driver.
+    String? originalId,
   }) = _TenvioDriver;
 
   factory TenvioDriver.fromJson(Map<String, dynamic> json) => _$TenvioDriverFromJson(json);

@@ -623,10 +623,6 @@ _$TenvioDispatchGuideImpl _$$TenvioDispatchGuideImplFromJson(
           ? null
           : TenvioDriver.fromJson(json['driver'] as Map<String, dynamic>),
       driverId: json['driverId'] as String?,
-      truck: json['truck'] == null
-          ? null
-          : Asset.fromJson(json['truck'] as Map<String, dynamic>),
-      truckId: json['truckId'] as String?,
       loader: json['loader'] == null
           ? null
           : User.fromJson(json['loader'] as Map<String, dynamic>),
@@ -658,8 +654,6 @@ Map<String, dynamic> _$$TenvioDispatchGuideImplToJson(
       'warehouseId': instance.warehouseId,
       'driver': instance.driver?.toJson(),
       'driverId': instance.driverId,
-      'truck': instance.truck?.toJson(),
-      'truckId': instance.truckId,
       'loader': instance.loader?.toJson(),
       'loaderId': instance.loaderId,
       'packages': instance.packages.map((e) => e.toJson()).toList(),
@@ -680,7 +674,6 @@ _$TenvioDispatchGuideInputImpl _$$TenvioDispatchGuideInputImplFromJson(
           : const TenvioDispatchGuideStatusConverter()
               .fromJson(json['status'] as String),
       driverId: json['driverId'] as String?,
-      truckId: json['truckId'] as String?,
       loaderId: json['loaderId'] as String?,
       hasRoute: json['hasRoute'] as bool? ?? false,
       route:
@@ -700,7 +693,6 @@ Map<String, dynamic> _$$TenvioDispatchGuideInputImplToJson(
       'status':
           const TenvioDispatchGuideStatusConverter().toJson(instance.status),
       'driverId': instance.driverId,
-      'truckId': instance.truckId,
       'loaderId': instance.loaderId,
       'hasRoute': instance.hasRoute,
       'route': instance.route,
@@ -728,6 +720,7 @@ _$TenvioDriverImpl _$$TenvioDriverImplFromJson(Map<String, dynamic> json) =>
       token: json['token'] == null
           ? null
           : Token.fromJson(json['token'] as Map<String, dynamic>),
+      originalId: json['originalId'] as String?,
     );
 
 Map<String, dynamic> _$$TenvioDriverImplToJson(_$TenvioDriverImpl instance) =>
@@ -743,6 +736,7 @@ Map<String, dynamic> _$$TenvioDriverImplToJson(_$TenvioDriverImpl instance) =>
       'app': instance.app?.toJson(),
       'mqttToken': instance.mqttToken,
       'token': instance.token?.toJson(),
+      'originalId': instance.originalId,
     };
 
 _$TenvioDriverInputImpl _$$TenvioDriverInputImplFromJson(

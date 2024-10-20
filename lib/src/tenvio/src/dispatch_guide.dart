@@ -26,12 +26,6 @@ class TenvioDispatchGuide with _$TenvioDispatchGuide {
     /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
     String? driverId,
 
-    /// [truck] is the truck assigned to the dispatch guide
-    Asset? truck,
-
-    /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
-    String? truckId,
-
     /// [loader] is the loader assigned to the dispatch guide
     User? loader,
 
@@ -79,9 +73,6 @@ class TenvioDispatchGuideInput with _$TenvioDispatchGuideInput {
 
     /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
     String? driverId,
-
-    /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
-    String? truckId,
 
     /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
     String? loaderId,

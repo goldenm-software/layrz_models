@@ -7275,12 +7275,6 @@ mixin _$TenvioDispatchGuide {
   /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
   String? get driverId => throw _privateConstructorUsedError;
 
-  /// [truck] is the truck assigned to the dispatch guide
-  Asset? get truck => throw _privateConstructorUsedError;
-
-  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
-  String? get truckId => throw _privateConstructorUsedError;
-
   /// [loader] is the loader assigned to the dispatch guide
   User? get loader => throw _privateConstructorUsedError;
 
@@ -7328,8 +7322,6 @@ abstract class $TenvioDispatchGuideCopyWith<$Res> {
       String? warehouseId,
       TenvioDriver? driver,
       String? driverId,
-      Asset? truck,
-      String? truckId,
       User? loader,
       String? loaderId,
       List<TenvioPackage> packages,
@@ -7341,7 +7333,6 @@ abstract class $TenvioDispatchGuideCopyWith<$Res> {
 
   $AssetCopyWith<$Res>? get warehouse;
   $TenvioDriverCopyWith<$Res>? get driver;
-  $AssetCopyWith<$Res>? get truck;
   $UserCopyWith<$Res>? get loader;
 }
 
@@ -7365,8 +7356,6 @@ class _$TenvioDispatchGuideCopyWithImpl<$Res, $Val extends TenvioDispatchGuide>
     Object? warehouseId = freezed,
     Object? driver = freezed,
     Object? driverId = freezed,
-    Object? truck = freezed,
-    Object? truckId = freezed,
     Object? loader = freezed,
     Object? loaderId = freezed,
     Object? packages = null,
@@ -7404,14 +7393,6 @@ class _$TenvioDispatchGuideCopyWithImpl<$Res, $Val extends TenvioDispatchGuide>
       driverId: freezed == driverId
           ? _value.driverId
           : driverId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      truck: freezed == truck
-          ? _value.truck
-          : truck // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      truckId: freezed == truckId
-          ? _value.truckId
-          : truckId // ignore: cast_nullable_to_non_nullable
               as String?,
       loader: freezed == loader
           ? _value.loader
@@ -7474,18 +7455,6 @@ class _$TenvioDispatchGuideCopyWithImpl<$Res, $Val extends TenvioDispatchGuide>
 
   @override
   @pragma('vm:prefer-inline')
-  $AssetCopyWith<$Res>? get truck {
-    if (_value.truck == null) {
-      return null;
-    }
-
-    return $AssetCopyWith<$Res>(_value.truck!, (value) {
-      return _then(_value.copyWith(truck: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get loader {
     if (_value.loader == null) {
       return null;
@@ -7513,8 +7482,6 @@ abstract class _$$TenvioDispatchGuideImplCopyWith<$Res>
       String? warehouseId,
       TenvioDriver? driver,
       String? driverId,
-      Asset? truck,
-      String? truckId,
       User? loader,
       String? loaderId,
       List<TenvioPackage> packages,
@@ -7528,8 +7495,6 @@ abstract class _$$TenvioDispatchGuideImplCopyWith<$Res>
   $AssetCopyWith<$Res>? get warehouse;
   @override
   $TenvioDriverCopyWith<$Res>? get driver;
-  @override
-  $AssetCopyWith<$Res>? get truck;
   @override
   $UserCopyWith<$Res>? get loader;
 }
@@ -7552,8 +7517,6 @@ class __$$TenvioDispatchGuideImplCopyWithImpl<$Res>
     Object? warehouseId = freezed,
     Object? driver = freezed,
     Object? driverId = freezed,
-    Object? truck = freezed,
-    Object? truckId = freezed,
     Object? loader = freezed,
     Object? loaderId = freezed,
     Object? packages = null,
@@ -7591,14 +7554,6 @@ class __$$TenvioDispatchGuideImplCopyWithImpl<$Res>
       driverId: freezed == driverId
           ? _value.driverId
           : driverId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      truck: freezed == truck
-          ? _value.truck
-          : truck // ignore: cast_nullable_to_non_nullable
-              as Asset?,
-      truckId: freezed == truckId
-          ? _value.truckId
-          : truckId // ignore: cast_nullable_to_non_nullable
               as String?,
       loader: freezed == loader
           ? _value.loader
@@ -7647,8 +7602,6 @@ class _$TenvioDispatchGuideImpl extends _TenvioDispatchGuide {
       this.warehouseId,
       this.driver,
       this.driverId,
-      this.truck,
-      this.truckId,
       this.loader,
       this.loaderId,
       final List<TenvioPackage> packages = const [],
@@ -7693,14 +7646,6 @@ class _$TenvioDispatchGuideImpl extends _TenvioDispatchGuide {
   /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
   @override
   final String? driverId;
-
-  /// [truck] is the truck assigned to the dispatch guide
-  @override
-  final Asset? truck;
-
-  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
-  @override
-  final String? truckId;
 
   /// [loader] is the loader assigned to the dispatch guide
   @override
@@ -7765,7 +7710,7 @@ class _$TenvioDispatchGuideImpl extends _TenvioDispatchGuide {
 
   @override
   String toString() {
-    return 'TenvioDispatchGuide(id: $id, status: $status, qrCode: $qrCode, warehouse: $warehouse, warehouseId: $warehouseId, driver: $driver, driverId: $driverId, truck: $truck, truckId: $truckId, loader: $loader, loaderId: $loaderId, packages: $packages, packagesIds: $packagesIds, hasRoute: $hasRoute, route: $route, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'TenvioDispatchGuide(id: $id, status: $status, qrCode: $qrCode, warehouse: $warehouse, warehouseId: $warehouseId, driver: $driver, driverId: $driverId, loader: $loader, loaderId: $loaderId, packages: $packages, packagesIds: $packagesIds, hasRoute: $hasRoute, route: $route, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -7783,8 +7728,6 @@ class _$TenvioDispatchGuideImpl extends _TenvioDispatchGuide {
             (identical(other.driver, driver) || other.driver == driver) &&
             (identical(other.driverId, driverId) ||
                 other.driverId == driverId) &&
-            (identical(other.truck, truck) || other.truck == truck) &&
-            (identical(other.truckId, truckId) || other.truckId == truckId) &&
             (identical(other.loader, loader) || other.loader == loader) &&
             (identical(other.loaderId, loaderId) ||
                 other.loaderId == loaderId) &&
@@ -7811,8 +7754,6 @@ class _$TenvioDispatchGuideImpl extends _TenvioDispatchGuide {
       warehouseId,
       driver,
       driverId,
-      truck,
-      truckId,
       loader,
       loaderId,
       const DeepCollectionEquality().hash(_packages),
@@ -7847,8 +7788,6 @@ abstract class _TenvioDispatchGuide extends TenvioDispatchGuide {
           final String? warehouseId,
           final TenvioDriver? driver,
           final String? driverId,
-          final Asset? truck,
-          final String? truckId,
           final User? loader,
           final String? loaderId,
           final List<TenvioPackage> packages,
@@ -7892,14 +7831,6 @@ abstract class _TenvioDispatchGuide extends TenvioDispatchGuide {
 
   /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
   String? get driverId;
-  @override
-
-  /// [truck] is the truck assigned to the dispatch guide
-  Asset? get truck;
-  @override
-
-  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
-  String? get truckId;
   @override
 
   /// [loader] is the loader assigned to the dispatch guide
@@ -7975,12 +7906,6 @@ mixin _$TenvioDispatchGuideInput {
   /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
   set driverId(String? value) => throw _privateConstructorUsedError;
 
-  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
-  String? get truckId => throw _privateConstructorUsedError;
-
-  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
-  set truckId(String? value) => throw _privateConstructorUsedError;
-
   /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
   String? get loaderId => throw _privateConstructorUsedError;
 
@@ -8024,7 +7949,6 @@ abstract class $TenvioDispatchGuideInputCopyWith<$Res> {
       String warehouseId,
       @TenvioDispatchGuideStatusConverter() TenvioDispatchGuideStatus status,
       String? driverId,
-      String? truckId,
       String? loaderId,
       bool hasRoute,
       List<String> route,
@@ -8049,7 +7973,6 @@ class _$TenvioDispatchGuideInputCopyWithImpl<$Res,
     Object? warehouseId = null,
     Object? status = null,
     Object? driverId = freezed,
-    Object? truckId = freezed,
     Object? loaderId = freezed,
     Object? hasRoute = null,
     Object? route = null,
@@ -8071,10 +7994,6 @@ class _$TenvioDispatchGuideInputCopyWithImpl<$Res,
       driverId: freezed == driverId
           ? _value.driverId
           : driverId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      truckId: freezed == truckId
-          ? _value.truckId
-          : truckId // ignore: cast_nullable_to_non_nullable
               as String?,
       loaderId: freezed == loaderId
           ? _value.loaderId
@@ -8110,7 +8029,6 @@ abstract class _$$TenvioDispatchGuideInputImplCopyWith<$Res>
       String warehouseId,
       @TenvioDispatchGuideStatusConverter() TenvioDispatchGuideStatus status,
       String? driverId,
-      String? truckId,
       String? loaderId,
       bool hasRoute,
       List<String> route,
@@ -8134,7 +8052,6 @@ class __$$TenvioDispatchGuideInputImplCopyWithImpl<$Res>
     Object? warehouseId = null,
     Object? status = null,
     Object? driverId = freezed,
-    Object? truckId = freezed,
     Object? loaderId = freezed,
     Object? hasRoute = null,
     Object? route = null,
@@ -8156,10 +8073,6 @@ class __$$TenvioDispatchGuideInputImplCopyWithImpl<$Res>
       driverId: freezed == driverId
           ? _value.driverId
           : driverId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      truckId: freezed == truckId
-          ? _value.truckId
-          : truckId // ignore: cast_nullable_to_non_nullable
               as String?,
       loaderId: freezed == loaderId
           ? _value.loaderId
@@ -8190,7 +8103,6 @@ class _$TenvioDispatchGuideInputImpl extends _TenvioDispatchGuideInput {
       @TenvioDispatchGuideStatusConverter()
       this.status = TenvioDispatchGuideStatus.draft,
       this.driverId,
-      this.truckId,
       this.loaderId,
       this.hasRoute = false,
       this.route = const [],
@@ -8218,10 +8130,6 @@ class _$TenvioDispatchGuideInputImpl extends _TenvioDispatchGuideInput {
   @override
   String? driverId;
 
-  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
-  @override
-  String? truckId;
-
   /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
   @override
   String? loaderId;
@@ -8244,7 +8152,7 @@ class _$TenvioDispatchGuideInputImpl extends _TenvioDispatchGuideInput {
 
   @override
   String toString() {
-    return 'TenvioDispatchGuideInput(id: $id, warehouseId: $warehouseId, status: $status, driverId: $driverId, truckId: $truckId, loaderId: $loaderId, hasRoute: $hasRoute, route: $route, packagesIds: $packagesIds)';
+    return 'TenvioDispatchGuideInput(id: $id, warehouseId: $warehouseId, status: $status, driverId: $driverId, loaderId: $loaderId, hasRoute: $hasRoute, route: $route, packagesIds: $packagesIds)';
   }
 
   @JsonKey(ignore: true)
@@ -8268,7 +8176,6 @@ abstract class _TenvioDispatchGuideInput extends TenvioDispatchGuideInput {
       required String warehouseId,
       @TenvioDispatchGuideStatusConverter() TenvioDispatchGuideStatus status,
       String? driverId,
-      String? truckId,
       String? loaderId,
       bool hasRoute,
       List<String> route,
@@ -8308,13 +8215,6 @@ abstract class _TenvioDispatchGuideInput extends TenvioDispatchGuideInput {
 
   /// [driverId] is the unique identifier of the driver assigned to the dispatch guide
   set driverId(String? value);
-  @override
-
-  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
-  String? get truckId;
-
-  /// [truckId] is the unique identifier of the truck assigned to the dispatch guide
-  set truckId(String? value);
   @override
 
   /// [loaderId] is the unique identifier of the loader assigned to the dispatch guide
@@ -8393,6 +8293,9 @@ mixin _$TenvioDriver {
   /// [token] represents the user token.
   Token? get token => throw _privateConstructorUsedError;
 
+  /// [originalId] is the original identifier of the driver.
+  String? get originalId => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioDriverCopyWith<TenvioDriver> get copyWith =>
@@ -8416,7 +8319,8 @@ abstract class $TenvioDriverCopyWith<$Res> {
       String? maskedDeviceId,
       RegisteredApp? app,
       String? mqttToken,
-      Token? token});
+      Token? token,
+      String? originalId});
 
   $DeviceTelemetryCopyWith<$Res>? get telemetry;
   $RegisteredAppCopyWith<$Res>? get app;
@@ -8447,6 +8351,7 @@ class _$TenvioDriverCopyWithImpl<$Res, $Val extends TenvioDriver>
     Object? app = freezed,
     Object? mqttToken = freezed,
     Object? token = freezed,
+    Object? originalId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -8493,6 +8398,10 @@ class _$TenvioDriverCopyWithImpl<$Res, $Val extends TenvioDriver>
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as Token?,
+      originalId: freezed == originalId
+          ? _value.originalId
+          : originalId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -8552,7 +8461,8 @@ abstract class _$$TenvioDriverImplCopyWith<$Res>
       String? maskedDeviceId,
       RegisteredApp? app,
       String? mqttToken,
-      Token? token});
+      Token? token,
+      String? originalId});
 
   @override
   $DeviceTelemetryCopyWith<$Res>? get telemetry;
@@ -8584,6 +8494,7 @@ class __$$TenvioDriverImplCopyWithImpl<$Res>
     Object? app = freezed,
     Object? mqttToken = freezed,
     Object? token = freezed,
+    Object? originalId = freezed,
   }) {
     return _then(_$TenvioDriverImpl(
       id: null == id
@@ -8630,6 +8541,10 @@ class __$$TenvioDriverImplCopyWithImpl<$Res>
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as Token?,
+      originalId: freezed == originalId
+          ? _value.originalId
+          : originalId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -8648,7 +8563,8 @@ class _$TenvioDriverImpl extends _TenvioDriver {
       this.maskedDeviceId,
       this.app,
       this.mqttToken,
-      this.token})
+      this.token,
+      this.originalId})
       : super._();
 
   factory _$TenvioDriverImpl.fromJson(Map<String, dynamic> json) =>
@@ -8701,9 +8617,13 @@ class _$TenvioDriverImpl extends _TenvioDriver {
   @override
   final Token? token;
 
+  /// [originalId] is the original identifier of the driver.
+  @override
+  final String? originalId;
+
   @override
   String toString() {
-    return 'TenvioDriver(id: $id, name: $name, email: $email, username: $username, createdAt: $createdAt, updatedAt: $updatedAt, telemetry: $telemetry, maskedDeviceId: $maskedDeviceId, app: $app, mqttToken: $mqttToken, token: $token)';
+    return 'TenvioDriver(id: $id, name: $name, email: $email, username: $username, createdAt: $createdAt, updatedAt: $updatedAt, telemetry: $telemetry, maskedDeviceId: $maskedDeviceId, app: $app, mqttToken: $mqttToken, token: $token, originalId: $originalId)';
   }
 
   @override
@@ -8727,13 +8647,27 @@ class _$TenvioDriverImpl extends _TenvioDriver {
             (identical(other.app, app) || other.app == app) &&
             (identical(other.mqttToken, mqttToken) ||
                 other.mqttToken == mqttToken) &&
-            (identical(other.token, token) || other.token == token));
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.originalId, originalId) ||
+                other.originalId == originalId));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, email, username,
-      createdAt, updatedAt, telemetry, maskedDeviceId, app, mqttToken, token);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      email,
+      username,
+      createdAt,
+      updatedAt,
+      telemetry,
+      maskedDeviceId,
+      app,
+      mqttToken,
+      token,
+      originalId);
 
   @JsonKey(ignore: true)
   @override
@@ -8761,7 +8695,8 @@ abstract class _TenvioDriver extends TenvioDriver {
       final String? maskedDeviceId,
       final RegisteredApp? app,
       final String? mqttToken,
-      final Token? token}) = _$TenvioDriverImpl;
+      final Token? token,
+      final String? originalId}) = _$TenvioDriverImpl;
   const _TenvioDriver._() : super._();
 
   factory _TenvioDriver.fromJson(Map<String, dynamic> json) =
@@ -8814,6 +8749,10 @@ abstract class _TenvioDriver extends TenvioDriver {
 
   /// [token] represents the user token.
   Token? get token;
+  @override
+
+  /// [originalId] is the original identifier of the driver.
+  String? get originalId;
   @override
   @JsonKey(ignore: true)
   _$$TenvioDriverImplCopyWith<_$TenvioDriverImpl> get copyWith =>

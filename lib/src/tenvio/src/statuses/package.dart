@@ -17,10 +17,14 @@ enum TenvioPackageStatus {
   /// API Reference: `LOADING`
   loading,
 
-  /// [waitingForPickup] refers that the package was assigned to a dispatch guide and
-  /// it's waiting to be picked up
-  /// API Reference: `WAITING_FOR_PICKUP`
-  waitingForPickup,
+  /// [waitingCheck] refers that the package was assigned to a dispatch guide and
+  /// it's waiting to be checked
+  /// API Reference: `WAITING_CHECK`
+  waitingCheck,
+
+  /// [waitingDeparture] refers that the package was assigned to a dispatch guide, loaded and waiting for departure
+  /// API Reference: `WAITING_DEPARTURE`
+  waitingDeparture,
 
   /// [transit] refers that the package is in transit
   /// API Reference: `IN_TRANSIT`
@@ -61,8 +65,10 @@ enum TenvioPackageStatus {
         return 'CLOSED';
       case TenvioPackageStatus.loading:
         return 'LOADING';
-      case TenvioPackageStatus.waitingForPickup:
-        return 'WAITING_FOR_PICKUP';
+      case TenvioPackageStatus.waitingCheck:
+        return 'WAITING_CHECK';
+      case TenvioPackageStatus.waitingDeparture:
+        return 'WAITING_DEPARTURE';
       case TenvioPackageStatus.transit:
         return 'IN_TRANSIT';
       case TenvioPackageStatus.arrivingSoon:
@@ -89,8 +95,10 @@ enum TenvioPackageStatus {
         return TenvioPackageStatus.closed;
       case 'LOADING':
         return TenvioPackageStatus.loading;
-      case 'WAITING_FOR_PICKUP':
-        return TenvioPackageStatus.waitingForPickup;
+      case 'WAITING_CHECK':
+        return TenvioPackageStatus.waitingCheck;
+      case 'WAITING_DEPARTURE':
+        return TenvioPackageStatus.waitingDeparture;
       case 'IN_TRANSIT':
         return TenvioPackageStatus.transit;
       case 'ARRIVING_SOON':
@@ -115,7 +123,9 @@ enum TenvioPackageStatus {
         return Colors.orange;
       case TenvioPackageStatus.loading:
         return Colors.blue;
-      case TenvioPackageStatus.waitingForPickup:
+      case TenvioPackageStatus.waitingCheck:
+        return Colors.blue;
+      case TenvioPackageStatus.waitingDeparture:
         return Colors.blue;
       case TenvioPackageStatus.transit:
         return Colors.purple;

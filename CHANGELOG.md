@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.40
+
+- Tenvio workflows changes
+
 ## 3.2.39
 
 - More tenvio changes
