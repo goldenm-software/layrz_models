@@ -165,6 +165,7 @@ _$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
           .fromJson(json['status'] as String),
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
       updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
+      isCurrent: json['isCurrent'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
@@ -185,6 +186,7 @@ Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
       'status': const TenvioPackageStatusConverter().toJson(instance.status),
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
+      'isCurrent': instance.isCurrent,
     };
 
 _$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(

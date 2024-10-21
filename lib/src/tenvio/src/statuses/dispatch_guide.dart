@@ -30,6 +30,10 @@ enum TenvioDispatchGuideStatus {
   /// API reference: `DONE`
   done,
 
+  /// [finished] status refers that the dispatch guide is finished
+  /// API reference: `FINISHED`
+  finished,
+
   /// [unknown] status refers that the dispatch guide status is unknown
   unknown,
   ;
@@ -53,6 +57,8 @@ enum TenvioDispatchGuideStatus {
         return 'CHECKING';
       case TenvioDispatchGuideStatus.done:
         return 'DONE';
+      case TenvioDispatchGuideStatus.finished:
+        return 'FINISHED';
       case TenvioDispatchGuideStatus.unknown:
       default:
         return 'UNKNOWN';
@@ -75,6 +81,8 @@ enum TenvioDispatchGuideStatus {
         return TenvioDispatchGuideStatus.checking;
       case 'DONE':
         return TenvioDispatchGuideStatus.done;
+      case 'FINISHED':
+        return TenvioDispatchGuideStatus.finished;
       default:
         return TenvioDispatchGuideStatus.unknown;
     }
@@ -85,14 +93,13 @@ enum TenvioDispatchGuideStatus {
       case TenvioDispatchGuideStatus.pending:
         return Colors.red;
       case TenvioDispatchGuideStatus.waitingLoad:
-        return Colors.orange;
       case TenvioDispatchGuideStatus.loading:
         return Colors.orange;
       case TenvioDispatchGuideStatus.waitingCheck:
-        return Colors.blue;
       case TenvioDispatchGuideStatus.checking:
         return Colors.blue;
       case TenvioDispatchGuideStatus.done:
+      case TenvioDispatchGuideStatus.finished:
         return Colors.green;
       case TenvioDispatchGuideStatus.unknown:
       case TenvioDispatchGuideStatus.draft:

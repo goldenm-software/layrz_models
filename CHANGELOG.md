@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.41
+
+- Added new status to `TenvioPackageStatus` enum
+- Added `isCurrent` to `TenvioPackage` model
+
 ## 3.2.40
 
 - Tenvio workflows changes

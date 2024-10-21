@@ -49,6 +49,9 @@ class TenvioPackage with _$TenvioPackage {
 
     /// [updatedAt] is the date when the package was last updated.
     @TimestampConverter() required DateTime updatedAt,
+
+    /// [isCurrent] indicates that this package is currently setted by the driver to next to be delivered
+    @Default(false) bool isCurrent,
   }) = _TenvioPackage;
 
   factory TenvioPackage.fromJson(Map<String, dynamic> json) => _$TenvioPackageFromJson(json);

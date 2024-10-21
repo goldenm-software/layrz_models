@@ -1664,6 +1664,9 @@ mixin _$TenvioPackage {
   @TimestampConverter()
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
+  /// [isCurrent] indicates that this package is currently setted by the driver to next to be delivered
+  bool get isCurrent => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioPackageCopyWith<TenvioPackage> get copyWith =>
@@ -1692,7 +1695,8 @@ abstract class $TenvioPackageCopyWith<$Res> {
       TenvioUnregisteredUser? destinationUnregistered,
       @TenvioPackageStatusConverter() TenvioPackageStatus status,
       @TimestampConverter() DateTime createdAt,
-      @TimestampConverter() DateTime updatedAt});
+      @TimestampConverter() DateTime updatedAt,
+      bool isCurrent});
 
   $AssetCopyWith<$Res>? get warehouse;
   $AssetCopyWith<$Res>? get destinationWarehouse;
@@ -1728,6 +1732,7 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
     Object? status = null,
     Object? createdAt = null,
     Object? updatedAt = null,
+    Object? isCurrent = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1790,6 +1795,10 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      isCurrent: null == isCurrent
+          ? _value.isCurrent
+          : isCurrent // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -1867,7 +1876,8 @@ abstract class _$$TenvioPackageImplCopyWith<$Res>
       TenvioUnregisteredUser? destinationUnregistered,
       @TenvioPackageStatusConverter() TenvioPackageStatus status,
       @TimestampConverter() DateTime createdAt,
-      @TimestampConverter() DateTime updatedAt});
+      @TimestampConverter() DateTime updatedAt,
+      bool isCurrent});
 
   @override
   $AssetCopyWith<$Res>? get warehouse;
@@ -1905,6 +1915,7 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
     Object? status = null,
     Object? createdAt = null,
     Object? updatedAt = null,
+    Object? isCurrent = null,
   }) {
     return _then(_$TenvioPackageImpl(
       id: null == id
@@ -1967,6 +1978,10 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      isCurrent: null == isCurrent
+          ? _value.isCurrent
+          : isCurrent // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1989,7 +2004,8 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       this.destinationUnregistered,
       @TenvioPackageStatusConverter() required this.status,
       @TimestampConverter() required this.createdAt,
-      @TimestampConverter() required this.updatedAt})
+      @TimestampConverter() required this.updatedAt,
+      this.isCurrent = false})
       : _items = items;
 
   factory _$TenvioPackageImpl.fromJson(Map<String, dynamic> json) =>
@@ -2070,9 +2086,14 @@ class _$TenvioPackageImpl implements _TenvioPackage {
   @TimestampConverter()
   final DateTime updatedAt;
 
+  /// [isCurrent] indicates that this package is currently setted by the driver to next to be delivered
+  @override
+  @JsonKey()
+  final bool isCurrent;
+
   @override
   String toString() {
-    return 'TenvioPackage(id: $id, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, qrCode: $qrCode, items: $items, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, status: $status, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'TenvioPackage(id: $id, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, qrCode: $qrCode, items: $items, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, isCurrent: $isCurrent)';
   }
 
   @override
@@ -2106,7 +2127,9 @@ class _$TenvioPackageImpl implements _TenvioPackage {
             (identical(other.createdAt, createdAt) ||
                 other.createdAt == createdAt) &&
             (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+                other.updatedAt == updatedAt) &&
+            (identical(other.isCurrent, isCurrent) ||
+                other.isCurrent == isCurrent));
   }
 
   @JsonKey(ignore: true)
@@ -2127,7 +2150,8 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       destinationUnregistered,
       status,
       createdAt,
-      updatedAt);
+      updatedAt,
+      isCurrent);
 
   @JsonKey(ignore: true)
   @override
@@ -2160,8 +2184,8 @@ abstract class _TenvioPackage implements TenvioPackage {
       final TenvioUnregisteredUser? destinationUnregistered,
       @TenvioPackageStatusConverter() required final TenvioPackageStatus status,
       @TimestampConverter() required final DateTime createdAt,
-      @TimestampConverter()
-      required final DateTime updatedAt}) = _$TenvioPackageImpl;
+      @TimestampConverter() required final DateTime updatedAt,
+      final bool isCurrent}) = _$TenvioPackageImpl;
 
   factory _TenvioPackage.fromJson(Map<String, dynamic> json) =
       _$TenvioPackageImpl.fromJson;
@@ -2232,6 +2256,10 @@ abstract class _TenvioPackage implements TenvioPackage {
   /// [updatedAt] is the date when the package was last updated.
   @TimestampConverter()
   DateTime get updatedAt;
+  @override
+
+  /// [isCurrent] indicates that this package is currently setted by the driver to next to be delivered
+  bool get isCurrent;
   @override
   @JsonKey(ignore: true)
   _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>
