@@ -1,6 +1,11 @@
 # Changelog
 
+## 3.2.43
+
+- Added `AppInternalIdentifier.tenvioDrivers` and `AppInternalIdentifier.unknown` to `AppInternalIdentifier` enum
+
 ## 3.2.42
+
 - Added `BHSPermissionTier` model and `BHSPermissionTierInput` model
 
 ## 3.2.41
