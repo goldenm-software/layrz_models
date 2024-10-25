@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.2.42
+- Added `BHSPermissionTier` model and `BHSPermissionTierInput` model
+
 ## 3.2.41
 
 - Added new status to `TenvioPackageStatus` enum
