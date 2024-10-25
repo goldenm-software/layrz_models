@@ -193,39 +193,6 @@ Map<String, dynamic> _$$BrickhouseAlertInputImplToJson(
       'speedingThreshold': instance.speedingThreshold,
     };
 
-_$BrickHouseWorkspaceInputImpl _$$BrickHouseWorkspaceInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BrickHouseWorkspaceInputImpl(
-      id: json['id'] as String?,
-      appId: json['appId'] as String,
-      name: json['name'] as String,
-      metricSystem: const MetricSystemConverter()
-          .fromJson(json['metricSystem'] as String),
-      typeApp: json['typeApp'] == null
-          ? AppInternalIdentifier.brickhouseTracking
-          : const AppInternalIdentifierOrNullConverter()
-              .fromJson(json['typeApp'] as String?),
-      timezoneId: json['timezoneId'] as String,
-      assetsIds: (json['assetsIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-    );
-
-Map<String, dynamic> _$$BrickHouseWorkspaceInputImplToJson(
-        _$BrickHouseWorkspaceInputImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'appId': instance.appId,
-      'name': instance.name,
-      'metricSystem':
-          const MetricSystemConverter().toJson(instance.metricSystem),
-      'typeApp':
-          const AppInternalIdentifierOrNullConverter().toJson(instance.typeApp),
-      'timezoneId': instance.timezoneId,
-      'assetsIds': instance.assetsIds,
-    };
-
 _$BHSDriverSafetyEventScoreImpl _$$BHSDriverSafetyEventScoreImplFromJson(
         Map<String, dynamic> json) =>
     _$BHSDriverSafetyEventScoreImpl(
@@ -290,4 +257,73 @@ Map<String, dynamic> _$$BrickhouseDriverSafetyImplToJson(
       'harshAcceleration': instance.harshAcceleration?.toJson(),
       'harshBraking': instance.harshBraking?.toJson(),
       'harshCornering': instance.harshCornering?.toJson(),
+    };
+
+_$BHSPermissionTierImpl _$$BHSPermissionTierImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BHSPermissionTierImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      tierLevel: (json['tierLevel'] as num).toInt(),
+      customProperties: json['customProperties'] as Map<String, dynamic>?,
+    );
+
+Map<String, dynamic> _$$BHSPermissionTierImplToJson(
+        _$BHSPermissionTierImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'tierLevel': instance.tierLevel,
+      'customProperties': instance.customProperties,
+    };
+
+_$BHSPermissionTierInputImpl _$$BHSPermissionTierInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BHSPermissionTierInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String,
+      tierLevel: (json['tierLevel'] as num).toInt(),
+      customProperties: json['customProperties'] as Map<String, dynamic>?,
+    );
+
+Map<String, dynamic> _$$BHSPermissionTierInputImplToJson(
+        _$BHSPermissionTierInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'tierLevel': instance.tierLevel,
+      'customProperties': instance.customProperties,
+    };
+
+_$BrickHouseWorkspaceInputImpl _$$BrickHouseWorkspaceInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BrickHouseWorkspaceInputImpl(
+      id: json['id'] as String?,
+      appId: json['appId'] as String,
+      name: json['name'] as String,
+      metricSystem: const MetricSystemConverter()
+          .fromJson(json['metricSystem'] as String),
+      typeApp: json['typeApp'] == null
+          ? AppInternalIdentifier.brickhouseTracking
+          : const AppInternalIdentifierOrNullConverter()
+              .fromJson(json['typeApp'] as String?),
+      timezoneId: json['timezoneId'] as String,
+      assetsIds: (json['assetsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$BrickHouseWorkspaceInputImplToJson(
+        _$BrickHouseWorkspaceInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'appId': instance.appId,
+      'name': instance.name,
+      'metricSystem':
+          const MetricSystemConverter().toJson(instance.metricSystem),
+      'typeApp':
+          const AppInternalIdentifierOrNullConverter().toJson(instance.typeApp),
+      'timezoneId': instance.timezoneId,
+      'assetsIds': instance.assetsIds,
     };

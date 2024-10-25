@@ -1865,300 +1865,6 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
       get copyWith => throw _privateConstructorUsedError;
 }
 
-BrickHouseWorkspaceInput _$BrickHouseWorkspaceInputFromJson(
-    Map<String, dynamic> json) {
-  return _BrickHouseWorkspaceInput.fromJson(json);
-}
-
-/// @nodoc
-mixin _$BrickHouseWorkspaceInput {
-  String? get id => throw _privateConstructorUsedError;
-  String get appId => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  @MetricSystemConverter()
-  MetricSystem get metricSystem => throw _privateConstructorUsedError;
-
-  /// Is the type of the App
-  @AppInternalIdentifierOrNullConverter()
-  AppInternalIdentifier? get typeApp => throw _privateConstructorUsedError;
-  String get timezoneId => throw _privateConstructorUsedError;
-  List<String>? get assetsIds => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $BrickHouseWorkspaceInputCopyWith<BrickHouseWorkspaceInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BrickHouseWorkspaceInputCopyWith<$Res> {
-  factory $BrickHouseWorkspaceInputCopyWith(BrickHouseWorkspaceInput value,
-          $Res Function(BrickHouseWorkspaceInput) then) =
-      _$BrickHouseWorkspaceInputCopyWithImpl<$Res, BrickHouseWorkspaceInput>;
-  @useResult
-  $Res call(
-      {String? id,
-      String appId,
-      String name,
-      @MetricSystemConverter() MetricSystem metricSystem,
-      @AppInternalIdentifierOrNullConverter() AppInternalIdentifier? typeApp,
-      String timezoneId,
-      List<String>? assetsIds});
-}
-
-/// @nodoc
-class _$BrickHouseWorkspaceInputCopyWithImpl<$Res,
-        $Val extends BrickHouseWorkspaceInput>
-    implements $BrickHouseWorkspaceInputCopyWith<$Res> {
-  _$BrickHouseWorkspaceInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? appId = null,
-    Object? name = null,
-    Object? metricSystem = null,
-    Object? typeApp = freezed,
-    Object? timezoneId = null,
-    Object? assetsIds = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      appId: null == appId
-          ? _value.appId
-          : appId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      metricSystem: null == metricSystem
-          ? _value.metricSystem
-          : metricSystem // ignore: cast_nullable_to_non_nullable
-              as MetricSystem,
-      typeApp: freezed == typeApp
-          ? _value.typeApp
-          : typeApp // ignore: cast_nullable_to_non_nullable
-              as AppInternalIdentifier?,
-      timezoneId: null == timezoneId
-          ? _value.timezoneId
-          : timezoneId // ignore: cast_nullable_to_non_nullable
-              as String,
-      assetsIds: freezed == assetsIds
-          ? _value.assetsIds
-          : assetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$BrickHouseWorkspaceInputImplCopyWith<$Res>
-    implements $BrickHouseWorkspaceInputCopyWith<$Res> {
-  factory _$$BrickHouseWorkspaceInputImplCopyWith(
-          _$BrickHouseWorkspaceInputImpl value,
-          $Res Function(_$BrickHouseWorkspaceInputImpl) then) =
-      __$$BrickHouseWorkspaceInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      String appId,
-      String name,
-      @MetricSystemConverter() MetricSystem metricSystem,
-      @AppInternalIdentifierOrNullConverter() AppInternalIdentifier? typeApp,
-      String timezoneId,
-      List<String>? assetsIds});
-}
-
-/// @nodoc
-class __$$BrickHouseWorkspaceInputImplCopyWithImpl<$Res>
-    extends _$BrickHouseWorkspaceInputCopyWithImpl<$Res,
-        _$BrickHouseWorkspaceInputImpl>
-    implements _$$BrickHouseWorkspaceInputImplCopyWith<$Res> {
-  __$$BrickHouseWorkspaceInputImplCopyWithImpl(
-      _$BrickHouseWorkspaceInputImpl _value,
-      $Res Function(_$BrickHouseWorkspaceInputImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? appId = null,
-    Object? name = null,
-    Object? metricSystem = null,
-    Object? typeApp = freezed,
-    Object? timezoneId = null,
-    Object? assetsIds = freezed,
-  }) {
-    return _then(_$BrickHouseWorkspaceInputImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      appId: null == appId
-          ? _value.appId
-          : appId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      metricSystem: null == metricSystem
-          ? _value.metricSystem
-          : metricSystem // ignore: cast_nullable_to_non_nullable
-              as MetricSystem,
-      typeApp: freezed == typeApp
-          ? _value.typeApp
-          : typeApp // ignore: cast_nullable_to_non_nullable
-              as AppInternalIdentifier?,
-      timezoneId: null == timezoneId
-          ? _value.timezoneId
-          : timezoneId // ignore: cast_nullable_to_non_nullable
-              as String,
-      assetsIds: freezed == assetsIds
-          ? _value._assetsIds
-          : assetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$BrickHouseWorkspaceInputImpl implements _BrickHouseWorkspaceInput {
-  const _$BrickHouseWorkspaceInputImpl(
-      {this.id,
-      required this.appId,
-      required this.name,
-      @MetricSystemConverter() required this.metricSystem,
-      @AppInternalIdentifierOrNullConverter()
-      this.typeApp = AppInternalIdentifier.brickhouseTracking,
-      required this.timezoneId,
-      final List<String>? assetsIds = const []})
-      : _assetsIds = assetsIds;
-
-  factory _$BrickHouseWorkspaceInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BrickHouseWorkspaceInputImplFromJson(json);
-
-  @override
-  final String? id;
-  @override
-  final String appId;
-  @override
-  final String name;
-  @override
-  @MetricSystemConverter()
-  final MetricSystem metricSystem;
-
-  /// Is the type of the App
-  @override
-  @JsonKey()
-  @AppInternalIdentifierOrNullConverter()
-  final AppInternalIdentifier? typeApp;
-  @override
-  final String timezoneId;
-  final List<String>? _assetsIds;
-  @override
-  @JsonKey()
-  List<String>? get assetsIds {
-    final value = _assetsIds;
-    if (value == null) return null;
-    if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  String toString() {
-    return 'BrickHouseWorkspaceInput(id: $id, appId: $appId, name: $name, metricSystem: $metricSystem, typeApp: $typeApp, timezoneId: $timezoneId, assetsIds: $assetsIds)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BrickHouseWorkspaceInputImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.appId, appId) || other.appId == appId) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.metricSystem, metricSystem) ||
-                other.metricSystem == metricSystem) &&
-            (identical(other.typeApp, typeApp) || other.typeApp == typeApp) &&
-            (identical(other.timezoneId, timezoneId) ||
-                other.timezoneId == timezoneId) &&
-            const DeepCollectionEquality()
-                .equals(other._assetsIds, _assetsIds));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, appId, name, metricSystem,
-      typeApp, timezoneId, const DeepCollectionEquality().hash(_assetsIds));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BrickHouseWorkspaceInputImplCopyWith<_$BrickHouseWorkspaceInputImpl>
-      get copyWith => __$$BrickHouseWorkspaceInputImplCopyWithImpl<
-          _$BrickHouseWorkspaceInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BrickHouseWorkspaceInputImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _BrickHouseWorkspaceInput implements BrickHouseWorkspaceInput {
-  const factory _BrickHouseWorkspaceInput(
-      {final String? id,
-      required final String appId,
-      required final String name,
-      @MetricSystemConverter() required final MetricSystem metricSystem,
-      @AppInternalIdentifierOrNullConverter()
-      final AppInternalIdentifier? typeApp,
-      required final String timezoneId,
-      final List<String>? assetsIds}) = _$BrickHouseWorkspaceInputImpl;
-
-  factory _BrickHouseWorkspaceInput.fromJson(Map<String, dynamic> json) =
-      _$BrickHouseWorkspaceInputImpl.fromJson;
-
-  @override
-  String? get id;
-  @override
-  String get appId;
-  @override
-  String get name;
-  @override
-  @MetricSystemConverter()
-  MetricSystem get metricSystem;
-  @override
-
-  /// Is the type of the App
-  @AppInternalIdentifierOrNullConverter()
-  AppInternalIdentifier? get typeApp;
-  @override
-  String get timezoneId;
-  @override
-  List<String>? get assetsIds;
-  @override
-  @JsonKey(ignore: true)
-  _$$BrickHouseWorkspaceInputImplCopyWith<_$BrickHouseWorkspaceInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
 BHSDriverSafetyEventScore _$BHSDriverSafetyEventScoreFromJson(
     Map<String, dynamic> json) {
   return _BHSDriverSafetyEventScore.fromJson(json);
@@ -2828,5 +2534,731 @@ abstract class _BrickhouseDriverSafety implements BrickhouseDriverSafety {
   @override
   @JsonKey(ignore: true)
   _$$BrickhouseDriverSafetyImplCopyWith<_$BrickhouseDriverSafetyImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+BHSPermissionTier _$BHSPermissionTierFromJson(Map<String, dynamic> json) {
+  return _BHSPermissionTier.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BHSPermissionTier {
+  String get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  int get tierLevel => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get customProperties =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BHSPermissionTierCopyWith<BHSPermissionTier> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BHSPermissionTierCopyWith<$Res> {
+  factory $BHSPermissionTierCopyWith(
+          BHSPermissionTier value, $Res Function(BHSPermissionTier) then) =
+      _$BHSPermissionTierCopyWithImpl<$Res, BHSPermissionTier>;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      int tierLevel,
+      Map<String, dynamic>? customProperties});
+}
+
+/// @nodoc
+class _$BHSPermissionTierCopyWithImpl<$Res, $Val extends BHSPermissionTier>
+    implements $BHSPermissionTierCopyWith<$Res> {
+  _$BHSPermissionTierCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? tierLevel = null,
+    Object? customProperties = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      tierLevel: null == tierLevel
+          ? _value.tierLevel
+          : tierLevel // ignore: cast_nullable_to_non_nullable
+              as int,
+      customProperties: freezed == customProperties
+          ? _value.customProperties
+          : customProperties // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BHSPermissionTierImplCopyWith<$Res>
+    implements $BHSPermissionTierCopyWith<$Res> {
+  factory _$$BHSPermissionTierImplCopyWith(_$BHSPermissionTierImpl value,
+          $Res Function(_$BHSPermissionTierImpl) then) =
+      __$$BHSPermissionTierImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      int tierLevel,
+      Map<String, dynamic>? customProperties});
+}
+
+/// @nodoc
+class __$$BHSPermissionTierImplCopyWithImpl<$Res>
+    extends _$BHSPermissionTierCopyWithImpl<$Res, _$BHSPermissionTierImpl>
+    implements _$$BHSPermissionTierImplCopyWith<$Res> {
+  __$$BHSPermissionTierImplCopyWithImpl(_$BHSPermissionTierImpl _value,
+      $Res Function(_$BHSPermissionTierImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? tierLevel = null,
+    Object? customProperties = freezed,
+  }) {
+    return _then(_$BHSPermissionTierImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      tierLevel: null == tierLevel
+          ? _value.tierLevel
+          : tierLevel // ignore: cast_nullable_to_non_nullable
+              as int,
+      customProperties: freezed == customProperties
+          ? _value._customProperties
+          : customProperties // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BHSPermissionTierImpl implements _BHSPermissionTier {
+  const _$BHSPermissionTierImpl(
+      {required this.id,
+      required this.name,
+      required this.tierLevel,
+      final Map<String, dynamic>? customProperties})
+      : _customProperties = customProperties;
+
+  factory _$BHSPermissionTierImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BHSPermissionTierImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String name;
+  @override
+  final int tierLevel;
+  final Map<String, dynamic>? _customProperties;
+  @override
+  Map<String, dynamic>? get customProperties {
+    final value = _customProperties;
+    if (value == null) return null;
+    if (_customProperties is EqualUnmodifiableMapView) return _customProperties;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'BHSPermissionTier(id: $id, name: $name, tierLevel: $tierLevel, customProperties: $customProperties)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BHSPermissionTierImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.tierLevel, tierLevel) ||
+                other.tierLevel == tierLevel) &&
+            const DeepCollectionEquality()
+                .equals(other._customProperties, _customProperties));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, tierLevel,
+      const DeepCollectionEquality().hash(_customProperties));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BHSPermissionTierImplCopyWith<_$BHSPermissionTierImpl> get copyWith =>
+      __$$BHSPermissionTierImplCopyWithImpl<_$BHSPermissionTierImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BHSPermissionTierImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BHSPermissionTier implements BHSPermissionTier {
+  const factory _BHSPermissionTier(
+      {required final String id,
+      required final String name,
+      required final int tierLevel,
+      final Map<String, dynamic>? customProperties}) = _$BHSPermissionTierImpl;
+
+  factory _BHSPermissionTier.fromJson(Map<String, dynamic> json) =
+      _$BHSPermissionTierImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get name;
+  @override
+  int get tierLevel;
+  @override
+  Map<String, dynamic>? get customProperties;
+  @override
+  @JsonKey(ignore: true)
+  _$$BHSPermissionTierImplCopyWith<_$BHSPermissionTierImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+BHSPermissionTierInput _$BHSPermissionTierInputFromJson(
+    Map<String, dynamic> json) {
+  return _BHSPermissionTierInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BHSPermissionTierInput {
+  String? get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  int get tierLevel => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get customProperties =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BHSPermissionTierInputCopyWith<BHSPermissionTierInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BHSPermissionTierInputCopyWith<$Res> {
+  factory $BHSPermissionTierInputCopyWith(BHSPermissionTierInput value,
+          $Res Function(BHSPermissionTierInput) then) =
+      _$BHSPermissionTierInputCopyWithImpl<$Res, BHSPermissionTierInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      int tierLevel,
+      Map<String, dynamic>? customProperties});
+}
+
+/// @nodoc
+class _$BHSPermissionTierInputCopyWithImpl<$Res,
+        $Val extends BHSPermissionTierInput>
+    implements $BHSPermissionTierInputCopyWith<$Res> {
+  _$BHSPermissionTierInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? tierLevel = null,
+    Object? customProperties = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      tierLevel: null == tierLevel
+          ? _value.tierLevel
+          : tierLevel // ignore: cast_nullable_to_non_nullable
+              as int,
+      customProperties: freezed == customProperties
+          ? _value.customProperties
+          : customProperties // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BHSPermissionTierInputImplCopyWith<$Res>
+    implements $BHSPermissionTierInputCopyWith<$Res> {
+  factory _$$BHSPermissionTierInputImplCopyWith(
+          _$BHSPermissionTierInputImpl value,
+          $Res Function(_$BHSPermissionTierInputImpl) then) =
+      __$$BHSPermissionTierInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      int tierLevel,
+      Map<String, dynamic>? customProperties});
+}
+
+/// @nodoc
+class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
+    extends _$BHSPermissionTierInputCopyWithImpl<$Res,
+        _$BHSPermissionTierInputImpl>
+    implements _$$BHSPermissionTierInputImplCopyWith<$Res> {
+  __$$BHSPermissionTierInputImplCopyWithImpl(
+      _$BHSPermissionTierInputImpl _value,
+      $Res Function(_$BHSPermissionTierInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? tierLevel = null,
+    Object? customProperties = freezed,
+  }) {
+    return _then(_$BHSPermissionTierInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      tierLevel: null == tierLevel
+          ? _value.tierLevel
+          : tierLevel // ignore: cast_nullable_to_non_nullable
+              as int,
+      customProperties: freezed == customProperties
+          ? _value._customProperties
+          : customProperties // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
+  const _$BHSPermissionTierInputImpl(
+      {this.id,
+      required this.name,
+      required this.tierLevel,
+      final Map<String, dynamic>? customProperties})
+      : _customProperties = customProperties;
+
+  factory _$BHSPermissionTierInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BHSPermissionTierInputImplFromJson(json);
+
+  @override
+  final String? id;
+  @override
+  final String name;
+  @override
+  final int tierLevel;
+  final Map<String, dynamic>? _customProperties;
+  @override
+  Map<String, dynamic>? get customProperties {
+    final value = _customProperties;
+    if (value == null) return null;
+    if (_customProperties is EqualUnmodifiableMapView) return _customProperties;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
+  @override
+  String toString() {
+    return 'BHSPermissionTierInput(id: $id, name: $name, tierLevel: $tierLevel, customProperties: $customProperties)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BHSPermissionTierInputImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.tierLevel, tierLevel) ||
+                other.tierLevel == tierLevel) &&
+            const DeepCollectionEquality()
+                .equals(other._customProperties, _customProperties));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, tierLevel,
+      const DeepCollectionEquality().hash(_customProperties));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BHSPermissionTierInputImplCopyWith<_$BHSPermissionTierInputImpl>
+      get copyWith => __$$BHSPermissionTierInputImplCopyWithImpl<
+          _$BHSPermissionTierInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BHSPermissionTierInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BHSPermissionTierInput implements BHSPermissionTierInput {
+  const factory _BHSPermissionTierInput(
+          {final String? id,
+          required final String name,
+          required final int tierLevel,
+          final Map<String, dynamic>? customProperties}) =
+      _$BHSPermissionTierInputImpl;
+
+  factory _BHSPermissionTierInput.fromJson(Map<String, dynamic> json) =
+      _$BHSPermissionTierInputImpl.fromJson;
+
+  @override
+  String? get id;
+  @override
+  String get name;
+  @override
+  int get tierLevel;
+  @override
+  Map<String, dynamic>? get customProperties;
+  @override
+  @JsonKey(ignore: true)
+  _$$BHSPermissionTierInputImplCopyWith<_$BHSPermissionTierInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+BrickHouseWorkspaceInput _$BrickHouseWorkspaceInputFromJson(
+    Map<String, dynamic> json) {
+  return _BrickHouseWorkspaceInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BrickHouseWorkspaceInput {
+  String? get id => throw _privateConstructorUsedError;
+  String get appId => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  @MetricSystemConverter()
+  MetricSystem get metricSystem => throw _privateConstructorUsedError;
+
+  /// Is the type of the App
+  @AppInternalIdentifierOrNullConverter()
+  AppInternalIdentifier? get typeApp => throw _privateConstructorUsedError;
+  String get timezoneId => throw _privateConstructorUsedError;
+  List<String>? get assetsIds => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BrickHouseWorkspaceInputCopyWith<BrickHouseWorkspaceInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BrickHouseWorkspaceInputCopyWith<$Res> {
+  factory $BrickHouseWorkspaceInputCopyWith(BrickHouseWorkspaceInput value,
+          $Res Function(BrickHouseWorkspaceInput) then) =
+      _$BrickHouseWorkspaceInputCopyWithImpl<$Res, BrickHouseWorkspaceInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String appId,
+      String name,
+      @MetricSystemConverter() MetricSystem metricSystem,
+      @AppInternalIdentifierOrNullConverter() AppInternalIdentifier? typeApp,
+      String timezoneId,
+      List<String>? assetsIds});
+}
+
+/// @nodoc
+class _$BrickHouseWorkspaceInputCopyWithImpl<$Res,
+        $Val extends BrickHouseWorkspaceInput>
+    implements $BrickHouseWorkspaceInputCopyWith<$Res> {
+  _$BrickHouseWorkspaceInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? appId = null,
+    Object? name = null,
+    Object? metricSystem = null,
+    Object? typeApp = freezed,
+    Object? timezoneId = null,
+    Object? assetsIds = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      appId: null == appId
+          ? _value.appId
+          : appId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      metricSystem: null == metricSystem
+          ? _value.metricSystem
+          : metricSystem // ignore: cast_nullable_to_non_nullable
+              as MetricSystem,
+      typeApp: freezed == typeApp
+          ? _value.typeApp
+          : typeApp // ignore: cast_nullable_to_non_nullable
+              as AppInternalIdentifier?,
+      timezoneId: null == timezoneId
+          ? _value.timezoneId
+          : timezoneId // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetsIds: freezed == assetsIds
+          ? _value.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BrickHouseWorkspaceInputImplCopyWith<$Res>
+    implements $BrickHouseWorkspaceInputCopyWith<$Res> {
+  factory _$$BrickHouseWorkspaceInputImplCopyWith(
+          _$BrickHouseWorkspaceInputImpl value,
+          $Res Function(_$BrickHouseWorkspaceInputImpl) then) =
+      __$$BrickHouseWorkspaceInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String appId,
+      String name,
+      @MetricSystemConverter() MetricSystem metricSystem,
+      @AppInternalIdentifierOrNullConverter() AppInternalIdentifier? typeApp,
+      String timezoneId,
+      List<String>? assetsIds});
+}
+
+/// @nodoc
+class __$$BrickHouseWorkspaceInputImplCopyWithImpl<$Res>
+    extends _$BrickHouseWorkspaceInputCopyWithImpl<$Res,
+        _$BrickHouseWorkspaceInputImpl>
+    implements _$$BrickHouseWorkspaceInputImplCopyWith<$Res> {
+  __$$BrickHouseWorkspaceInputImplCopyWithImpl(
+      _$BrickHouseWorkspaceInputImpl _value,
+      $Res Function(_$BrickHouseWorkspaceInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? appId = null,
+    Object? name = null,
+    Object? metricSystem = null,
+    Object? typeApp = freezed,
+    Object? timezoneId = null,
+    Object? assetsIds = freezed,
+  }) {
+    return _then(_$BrickHouseWorkspaceInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      appId: null == appId
+          ? _value.appId
+          : appId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      metricSystem: null == metricSystem
+          ? _value.metricSystem
+          : metricSystem // ignore: cast_nullable_to_non_nullable
+              as MetricSystem,
+      typeApp: freezed == typeApp
+          ? _value.typeApp
+          : typeApp // ignore: cast_nullable_to_non_nullable
+              as AppInternalIdentifier?,
+      timezoneId: null == timezoneId
+          ? _value.timezoneId
+          : timezoneId // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetsIds: freezed == assetsIds
+          ? _value._assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BrickHouseWorkspaceInputImpl implements _BrickHouseWorkspaceInput {
+  const _$BrickHouseWorkspaceInputImpl(
+      {this.id,
+      required this.appId,
+      required this.name,
+      @MetricSystemConverter() required this.metricSystem,
+      @AppInternalIdentifierOrNullConverter()
+      this.typeApp = AppInternalIdentifier.brickhouseTracking,
+      required this.timezoneId,
+      final List<String>? assetsIds = const []})
+      : _assetsIds = assetsIds;
+
+  factory _$BrickHouseWorkspaceInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BrickHouseWorkspaceInputImplFromJson(json);
+
+  @override
+  final String? id;
+  @override
+  final String appId;
+  @override
+  final String name;
+  @override
+  @MetricSystemConverter()
+  final MetricSystem metricSystem;
+
+  /// Is the type of the App
+  @override
+  @JsonKey()
+  @AppInternalIdentifierOrNullConverter()
+  final AppInternalIdentifier? typeApp;
+  @override
+  final String timezoneId;
+  final List<String>? _assetsIds;
+  @override
+  @JsonKey()
+  List<String>? get assetsIds {
+    final value = _assetsIds;
+    if (value == null) return null;
+    if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'BrickHouseWorkspaceInput(id: $id, appId: $appId, name: $name, metricSystem: $metricSystem, typeApp: $typeApp, timezoneId: $timezoneId, assetsIds: $assetsIds)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BrickHouseWorkspaceInputImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.appId, appId) || other.appId == appId) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.metricSystem, metricSystem) ||
+                other.metricSystem == metricSystem) &&
+            (identical(other.typeApp, typeApp) || other.typeApp == typeApp) &&
+            (identical(other.timezoneId, timezoneId) ||
+                other.timezoneId == timezoneId) &&
+            const DeepCollectionEquality()
+                .equals(other._assetsIds, _assetsIds));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, appId, name, metricSystem,
+      typeApp, timezoneId, const DeepCollectionEquality().hash(_assetsIds));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BrickHouseWorkspaceInputImplCopyWith<_$BrickHouseWorkspaceInputImpl>
+      get copyWith => __$$BrickHouseWorkspaceInputImplCopyWithImpl<
+          _$BrickHouseWorkspaceInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BrickHouseWorkspaceInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BrickHouseWorkspaceInput implements BrickHouseWorkspaceInput {
+  const factory _BrickHouseWorkspaceInput(
+      {final String? id,
+      required final String appId,
+      required final String name,
+      @MetricSystemConverter() required final MetricSystem metricSystem,
+      @AppInternalIdentifierOrNullConverter()
+      final AppInternalIdentifier? typeApp,
+      required final String timezoneId,
+      final List<String>? assetsIds}) = _$BrickHouseWorkspaceInputImpl;
+
+  factory _BrickHouseWorkspaceInput.fromJson(Map<String, dynamic> json) =
+      _$BrickHouseWorkspaceInputImpl.fromJson;
+
+  @override
+  String? get id;
+  @override
+  String get appId;
+  @override
+  String get name;
+  @override
+  @MetricSystemConverter()
+  MetricSystem get metricSystem;
+  @override
+
+  /// Is the type of the App
+  @AppInternalIdentifierOrNullConverter()
+  AppInternalIdentifier? get typeApp;
+  @override
+  String get timezoneId;
+  @override
+  List<String>? get assetsIds;
+  @override
+  @JsonKey(ignore: true)
+  _$$BrickHouseWorkspaceInputImplCopyWith<_$BrickHouseWorkspaceInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

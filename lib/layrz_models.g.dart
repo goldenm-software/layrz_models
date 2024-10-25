@@ -6,88 +6,6 @@ part of 'layrz_models.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MonitorRealWaypointImpl _$$MonitorRealWaypointImplFromJson(
-        Map<String, dynamic> json) =>
-    _$MonitorRealWaypointImpl(
-      activationId: json['activationId'] as String,
-      geofenceId: json['geofenceId'] as String,
-      sequenceReal: (json['sequenceReal'] as num?)?.toInt(),
-      sequenceIdeal: (json['sequenceIdeal'] as num).toInt(),
-      startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
-      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
-    );
-
-Map<String, dynamic> _$$MonitorRealWaypointImplToJson(
-        _$MonitorRealWaypointImpl instance) =>
-    <String, dynamic>{
-      'activationId': instance.activationId,
-      'geofenceId': instance.geofenceId,
-      'sequenceReal': instance.sequenceReal,
-      'sequenceIdeal': instance.sequenceIdeal,
-      'startAt': const TimestampOrNullConverter().toJson(instance.startAt),
-      'endAt': const TimestampOrNullConverter().toJson(instance.endAt),
-    };
-
-_$MonitorActiveCheckpointImpl _$$MonitorActiveCheckpointImplFromJson(
-        Map<String, dynamic> json) =>
-    _$MonitorActiveCheckpointImpl(
-      id: json['id'] as String,
-      state: const MonitorActiveCheckpointStateConverter()
-          .fromJson(json['state'] as String),
-      checkpoint:
-          Checkpoint.fromJson(json['checkpoint'] as Map<String, dynamic>),
-      asset: Asset.fromJson(json['asset'] as Map<String, dynamic>),
-      startAt:
-          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
-      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
-      updatedAt:
-          const TimestampOrNullConverter().fromJson(json['updatedAt'] as num?),
-      checkpointState: const CheckpointStateConverter()
-          .fromJson(json['checkpointState'] as String),
-      waypoints: (json['waypoints'] as List<dynamic>?)
-              ?.map((e) =>
-                  MonitorRealWaypoint.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-    );
-
-Map<String, dynamic> _$$MonitorActiveCheckpointImplToJson(
-        _$MonitorActiveCheckpointImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'state':
-          const MonitorActiveCheckpointStateConverter().toJson(instance.state),
-      'checkpoint': instance.checkpoint.toJson(),
-      'asset': instance.asset.toJson(),
-      'startAt': const TimestampOrNullConverter().toJson(instance.startAt),
-      'endAt': const TimestampOrNullConverter().toJson(instance.endAt),
-      'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
-      'checkpointState':
-          const CheckpointStateConverter().toJson(instance.checkpointState),
-      'waypoints': instance.waypoints.map((e) => e.toJson()).toList(),
-    };
-
-_$LinkShortcutImpl _$$LinkShortcutImplFromJson(Map<String, dynamic> json) =>
-    _$LinkShortcutImpl(
-      id: json['id'] as String,
-      code: json['code'] as String,
-      redirectTo: json['redirectTo'] as String?,
-      creator: json['creator'] == null
-          ? null
-          : Employee.fromJson(json['creator'] as Map<String, dynamic>),
-      creatorId: json['creatorId'] as String?,
-    );
-
-Map<String, dynamic> _$$LinkShortcutImplToJson(_$LinkShortcutImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'code': instance.code,
-      'redirectTo': instance.redirectTo,
-      'creator': instance.creator?.toJson(),
-      'creatorId': instance.creatorId,
-    };
-
 _$AccessImpl _$$AccessImplFromJson(Map<String, dynamic> json) => _$AccessImpl(
       id: json['id'] as String,
       label: json['label'] as String?,
@@ -135,6 +53,26 @@ Map<String, dynamic> _$$AccessInputImplToJson(_$AccessInputImpl instance) =>
       'objectId': instance.objectId,
       'userId': instance.userId,
       'module': const AccessModuleConverter().toJson(instance.module),
+    };
+
+_$LinkShortcutImpl _$$LinkShortcutImplFromJson(Map<String, dynamic> json) =>
+    _$LinkShortcutImpl(
+      id: json['id'] as String,
+      code: json['code'] as String,
+      redirectTo: json['redirectTo'] as String?,
+      creator: json['creator'] == null
+          ? null
+          : Employee.fromJson(json['creator'] as Map<String, dynamic>),
+      creatorId: json['creatorId'] as String?,
+    );
+
+Map<String, dynamic> _$$LinkShortcutImplToJson(_$LinkShortcutImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'code': instance.code,
+      'redirectTo': instance.redirectTo,
+      'creator': instance.creator?.toJson(),
+      'creatorId': instance.creatorId,
     };
 
 _$ActionImpl _$$ActionImplFromJson(Map<String, dynamic> json) => _$ActionImpl(
@@ -1327,6 +1265,68 @@ Map<String, dynamic> _$$LintErrorImplToJson(_$LintErrorImpl instance) =>
       'received': instance.received,
     };
 
+_$MonitorRealWaypointImpl _$$MonitorRealWaypointImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MonitorRealWaypointImpl(
+      activationId: json['activationId'] as String,
+      geofenceId: json['geofenceId'] as String,
+      sequenceReal: (json['sequenceReal'] as num?)?.toInt(),
+      sequenceIdeal: (json['sequenceIdeal'] as num).toInt(),
+      startAt:
+          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
+      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
+    );
+
+Map<String, dynamic> _$$MonitorRealWaypointImplToJson(
+        _$MonitorRealWaypointImpl instance) =>
+    <String, dynamic>{
+      'activationId': instance.activationId,
+      'geofenceId': instance.geofenceId,
+      'sequenceReal': instance.sequenceReal,
+      'sequenceIdeal': instance.sequenceIdeal,
+      'startAt': const TimestampOrNullConverter().toJson(instance.startAt),
+      'endAt': const TimestampOrNullConverter().toJson(instance.endAt),
+    };
+
+_$MonitorActiveCheckpointImpl _$$MonitorActiveCheckpointImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MonitorActiveCheckpointImpl(
+      id: json['id'] as String,
+      state: const MonitorActiveCheckpointStateConverter()
+          .fromJson(json['state'] as String),
+      checkpoint:
+          Checkpoint.fromJson(json['checkpoint'] as Map<String, dynamic>),
+      asset: Asset.fromJson(json['asset'] as Map<String, dynamic>),
+      startAt:
+          const TimestampOrNullConverter().fromJson(json['startAt'] as num?),
+      endAt: const TimestampOrNullConverter().fromJson(json['endAt'] as num?),
+      updatedAt:
+          const TimestampOrNullConverter().fromJson(json['updatedAt'] as num?),
+      checkpointState: const CheckpointStateConverter()
+          .fromJson(json['checkpointState'] as String),
+      waypoints: (json['waypoints'] as List<dynamic>?)
+              ?.map((e) =>
+                  MonitorRealWaypoint.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$MonitorActiveCheckpointImplToJson(
+        _$MonitorActiveCheckpointImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'state':
+          const MonitorActiveCheckpointStateConverter().toJson(instance.state),
+      'checkpoint': instance.checkpoint.toJson(),
+      'asset': instance.asset.toJson(),
+      'startAt': const TimestampOrNullConverter().toJson(instance.startAt),
+      'endAt': const TimestampOrNullConverter().toJson(instance.endAt),
+      'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
+      'checkpointState':
+          const CheckpointStateConverter().toJson(instance.checkpointState),
+      'waypoints': instance.waypoints.map((e) => e.toJson()).toList(),
+    };
+
 _$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>
     _$OperationImpl(
       id: json['id'] as String,
@@ -2389,6 +2389,11 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
               ?.map((e) => e as String)
               .toList() ??
           const [],
+      brickhousePermissionTier: json['brickhousePermissionTier'] == null
+          ? null
+          : BHSPermissionTier.fromJson(
+              json['brickhousePermissionTier'] as Map<String, dynamic>),
+      brickhousePermissionTierId: json['brickhousePermissionTierId'] as String?,
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
@@ -2433,6 +2438,8 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'suspendedAt':
           const TimestampOrNullConverter().toJson(instance.suspendedAt),
       'hwModelsAnimationsIds': instance.hwModelsAnimationsIds,
+      'brickhousePermissionTier': instance.brickhousePermissionTier?.toJson(),
+      'brickhousePermissionTierId': instance.brickhousePermissionTierId,
     };
 
 _$InviteLinkImpl _$$InviteLinkImplFromJson(Map<String, dynamic> json) =>
