@@ -7,6 +7,9 @@ class BHSPermissionTier with _$BHSPermissionTier {
     required String name,
     required int tierLevel,
     Map<String, dynamic>? customProperties,
+
+    /// Is the list of granted access
+    List<Access>? access,
   }) = _BHSPermissionTier;
 
   /// from json

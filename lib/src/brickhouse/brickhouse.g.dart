@@ -266,6 +266,9 @@ _$BHSPermissionTierImpl _$$BHSPermissionTierImplFromJson(
       name: json['name'] as String,
       tierLevel: (json['tierLevel'] as num).toInt(),
       customProperties: json['customProperties'] as Map<String, dynamic>?,
+      access: (json['access'] as List<dynamic>?)
+          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$BHSPermissionTierImplToJson(
@@ -275,6 +278,7 @@ Map<String, dynamic> _$$BHSPermissionTierImplToJson(
       'name': instance.name,
       'tierLevel': instance.tierLevel,
       'customProperties': instance.customProperties,
+      'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
 _$BHSPermissionTierInputImpl _$$BHSPermissionTierInputImplFromJson(
