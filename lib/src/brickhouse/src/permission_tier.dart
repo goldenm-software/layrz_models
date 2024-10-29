@@ -20,8 +20,8 @@ class BHSPermissionTier with _$BHSPermissionTier {
 class BHSPermissionTierInput with _$BHSPermissionTierInput {
   factory BHSPermissionTierInput({
     String? id,
-    required String name,
-    required int tierLevel,
+    String? name,
+    @Default(1) int tierLevel,
     Map<String, dynamic>? customProperties,
   }) = _BHSPermissionTierInput;
 

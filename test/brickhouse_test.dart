@@ -56,6 +56,12 @@ void main() {
     expect(permissionTier, isA<BHSPermissionTier>());
   });
 
+  test('Brickhouse permission Tier', () {
+    final data = BHSPermissionTierInput();
+
+    expect(data.tierLevel, equals(1));
+  });
+
   /// From json Test for the class [BrickhouseAlert]
   test('BrickhouseAlert from json', () {
     final data = {

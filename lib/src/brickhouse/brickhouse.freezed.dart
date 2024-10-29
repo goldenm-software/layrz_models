@@ -2884,8 +2884,8 @@ BHSPermissionTierInput _$BHSPermissionTierInputFromJson(
 mixin _$BHSPermissionTierInput {
   String? get id => throw _privateConstructorUsedError;
   set id(String? value) => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  set name(String value) => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  set name(String? value) => throw _privateConstructorUsedError;
   int get tierLevel => throw _privateConstructorUsedError;
   set tierLevel(int value) => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customProperties =>
@@ -2911,7 +2911,7 @@ abstract class $BHSPermissionTierInputCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
-      String name,
+      String? name,
       int tierLevel,
       Map<String, dynamic>? customProperties});
 }
@@ -2933,7 +2933,7 @@ class _$BHSPermissionTierInputCopyWithImpl<$Res,
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = null,
+    Object? name = freezed,
     Object? tierLevel = null,
     Object? customProperties = freezed,
   }) {
@@ -2942,10 +2942,10 @@ class _$BHSPermissionTierInputCopyWithImpl<$Res,
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       tierLevel: null == tierLevel
           ? _value.tierLevel
           : tierLevel // ignore: cast_nullable_to_non_nullable
@@ -2969,7 +2969,7 @@ abstract class _$$BHSPermissionTierInputImplCopyWith<$Res>
   @useResult
   $Res call(
       {String? id,
-      String name,
+      String? name,
       int tierLevel,
       Map<String, dynamic>? customProperties});
 }
@@ -2990,7 +2990,7 @@ class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? name = null,
+    Object? name = freezed,
     Object? tierLevel = null,
     Object? customProperties = freezed,
   }) {
@@ -2999,10 +2999,10 @@ class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       tierLevel: null == tierLevel
           ? _value.tierLevel
           : tierLevel // ignore: cast_nullable_to_non_nullable
@@ -3019,10 +3019,7 @@ class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
   _$BHSPermissionTierInputImpl(
-      {this.id,
-      required this.name,
-      required this.tierLevel,
-      this.customProperties});
+      {this.id, this.name, this.tierLevel = 1, this.customProperties});
 
   factory _$BHSPermissionTierInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$BHSPermissionTierInputImplFromJson(json);
@@ -3030,8 +3027,9 @@ class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
   @override
   String? id;
   @override
-  String name;
+  String? name;
   @override
+  @JsonKey()
   int tierLevel;
   @override
   Map<String, dynamic>? customProperties;
@@ -3061,8 +3059,8 @@ class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
 abstract class _BHSPermissionTierInput implements BHSPermissionTierInput {
   factory _BHSPermissionTierInput(
       {String? id,
-      required String name,
-      required int tierLevel,
+      String? name,
+      int tierLevel,
       Map<String, dynamic>? customProperties}) = _$BHSPermissionTierInputImpl;
 
   factory _BHSPermissionTierInput.fromJson(Map<String, dynamic> json) =
@@ -3072,8 +3070,8 @@ abstract class _BHSPermissionTierInput implements BHSPermissionTierInput {
   String? get id;
   set id(String? value);
   @override
-  String get name;
-  set name(String value);
+  String? get name;
+  set name(String? value);
   @override
   int get tierLevel;
   set tierLevel(int value);

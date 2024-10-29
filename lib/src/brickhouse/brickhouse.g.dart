@@ -285,8 +285,8 @@ _$BHSPermissionTierInputImpl _$$BHSPermissionTierInputImplFromJson(
         Map<String, dynamic> json) =>
     _$BHSPermissionTierInputImpl(
       id: json['id'] as String?,
-      name: json['name'] as String,
-      tierLevel: (json['tierLevel'] as num).toInt(),
+      name: json['name'] as String?,
+      tierLevel: (json['tierLevel'] as num?)?.toInt() ?? 1,
       customProperties: json['customProperties'] as Map<String, dynamic>?,
     );
 
