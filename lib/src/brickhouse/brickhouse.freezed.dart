@@ -2883,9 +2883,14 @@ BHSPermissionTierInput _$BHSPermissionTierInputFromJson(
 /// @nodoc
 mixin _$BHSPermissionTierInput {
   String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
   int get tierLevel => throw _privateConstructorUsedError;
+  set tierLevel(int value) => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customProperties =>
+      throw _privateConstructorUsedError;
+  set customProperties(Map<String, dynamic>? value) =>
       throw _privateConstructorUsedError;
 
   /// Serializes this BHSPermissionTierInput to a JSON map.
@@ -3003,7 +3008,7 @@ class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
           : tierLevel // ignore: cast_nullable_to_non_nullable
               as int,
       customProperties: freezed == customProperties
-          ? _value._customProperties
+          ? _value.customProperties
           : customProperties // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
     ));
@@ -3013,54 +3018,28 @@ class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
-  const _$BHSPermissionTierInputImpl(
+  _$BHSPermissionTierInputImpl(
       {this.id,
       required this.name,
       required this.tierLevel,
-      final Map<String, dynamic>? customProperties})
-      : _customProperties = customProperties;
+      this.customProperties});
 
   factory _$BHSPermissionTierInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$BHSPermissionTierInputImplFromJson(json);
 
   @override
-  final String? id;
+  String? id;
   @override
-  final String name;
+  String name;
   @override
-  final int tierLevel;
-  final Map<String, dynamic>? _customProperties;
+  int tierLevel;
   @override
-  Map<String, dynamic>? get customProperties {
-    final value = _customProperties;
-    if (value == null) return null;
-    if (_customProperties is EqualUnmodifiableMapView) return _customProperties;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+  Map<String, dynamic>? customProperties;
 
   @override
   String toString() {
     return 'BHSPermissionTierInput(id: $id, name: $name, tierLevel: $tierLevel, customProperties: $customProperties)';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BHSPermissionTierInputImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.tierLevel, tierLevel) ||
-                other.tierLevel == tierLevel) &&
-            const DeepCollectionEquality()
-                .equals(other._customProperties, _customProperties));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name, tierLevel,
-      const DeepCollectionEquality().hash(_customProperties));
 
   /// Create a copy of BHSPermissionTierInput
   /// with the given fields replaced by the non-null parameter values.
@@ -3080,24 +3059,27 @@ class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
 }
 
 abstract class _BHSPermissionTierInput implements BHSPermissionTierInput {
-  const factory _BHSPermissionTierInput(
-          {final String? id,
-          required final String name,
-          required final int tierLevel,
-          final Map<String, dynamic>? customProperties}) =
-      _$BHSPermissionTierInputImpl;
+  factory _BHSPermissionTierInput(
+      {String? id,
+      required String name,
+      required int tierLevel,
+      Map<String, dynamic>? customProperties}) = _$BHSPermissionTierInputImpl;
 
   factory _BHSPermissionTierInput.fromJson(Map<String, dynamic> json) =
       _$BHSPermissionTierInputImpl.fromJson;
 
   @override
   String? get id;
+  set id(String? value);
   @override
   String get name;
+  set name(String value);
   @override
   int get tierLevel;
+  set tierLevel(int value);
   @override
   Map<String, dynamic>? get customProperties;
+  set customProperties(Map<String, dynamic>? value);
 
   /// Create a copy of BHSPermissionTierInput
   /// with the given fields replaced by the non-null parameter values.

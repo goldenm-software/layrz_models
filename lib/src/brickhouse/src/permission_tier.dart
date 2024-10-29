@@ -16,9 +16,9 @@ class BHSPermissionTier with _$BHSPermissionTier {
   factory BHSPermissionTier.fromJson(Map<String, dynamic> json) => _$BHSPermissionTierFromJson(json);
 }
 
-@freezed
+@unfreezed
 class BHSPermissionTierInput with _$BHSPermissionTierInput {
-  const factory BHSPermissionTierInput({
+  factory BHSPermissionTierInput({
     String? id,
     required String name,
     required int tierLevel,

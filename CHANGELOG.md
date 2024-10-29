@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.45
+
+- Changed `BHSPermissionTierInput` to `@unfreezed`
+
 ## 3.2.44
 
 - Added `access` element on the `BHSPermissionTier` model
