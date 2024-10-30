@@ -6,7 +6,9 @@ enum AtsFuelType {
   diesel,
   premiumgasoline,
   hydratedethanol,
-  biodiesel;
+  biodiesel,
+  arla32,
+  ;
 
   @override
   String toString() => toJson();
@@ -26,6 +28,8 @@ enum AtsFuelType {
         return 'HYDRATEDETHANOL';
       case AtsFuelType.biodiesel:
         return 'BIODIESEL';
+      case AtsFuelType.arla32:
+        return 'ARLA32';
     }
   }
 
@@ -43,8 +47,29 @@ enum AtsFuelType {
         return AtsFuelType.hydratedethanol;
       case 'BIODIESEL':
         return AtsFuelType.biodiesel;
+      case 'ARLA32':
+        return AtsFuelType.arla32;
       default:
         throw Exception('Invalid FuelType');
+    }
+  }
+
+  Color getColor() {
+    switch (this) {
+      case AtsFuelType.diesel:
+        return const Color(0xffa8aa8f);
+      case AtsFuelType.gasoline:
+        return const Color(0xFFF1C202);
+      case AtsFuelType.ethanol:
+      case AtsFuelType.hydratedethanol:
+        return const Color(0xFFFFFFFF);
+      case AtsFuelType.biodiesel:
+        return const Color(0xFF016B2E);
+      case AtsFuelType.arla32:
+        return const Color(0xFF2196f3);
+
+      default:
+        return const Color(0xFF000000);
     }
   }
 }

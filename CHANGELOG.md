@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.48
+- Added `AtsFuelSubType` `toCProdANP()` and new colors in `getColor()`
+- Added ` getColor()` in `AtsFuelType` and add `arla32`in this enum
+- Added `AtsCfFuelType` and this converter
+
 ## 3.2.47
 
 - Added `TrackedTenvioPackage` and `TenvioPackageHistory` models
