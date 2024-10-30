@@ -28,6 +28,9 @@ enum AppInternalIdentifier {
   /// API Reference: `TENVIO_PICK_AND_PACK`
   tenvioPickAndPack,
 
+  /// API Reference: `TENVIO_DRIVERS`
+  tenvioDrivers,
+
   /// API Reference: `DRIVE`
   drive,
 
@@ -78,6 +81,9 @@ enum AppInternalIdentifier {
 
   /// API Reference: `SDM_MANAGER`
   sdmManager,
+
+  /// API Reference: `UNKNOWN`
+  unknown,
   ;
 
   @override
@@ -113,6 +119,8 @@ enum AppInternalIdentifier {
         return 'CLOUD';
       case AppInternalIdentifier.tenvioPickAndPack:
         return 'TENVIO_PICK_AND_PACK';
+      case AppInternalIdentifier.tenvioDrivers:
+        return 'TENVIO_DRIVERS';
       case AppInternalIdentifier.confiot:
         return 'CONFIOT';
 
@@ -143,7 +151,7 @@ enum AppInternalIdentifier {
       case AppInternalIdentifier.sdmManager:
         return 'SDM_MANAGER';
       default:
-        throw Exception('Unknown AppInternalIdentifier: $this');
+        return 'UNKNOWN';
     }
   }
 
@@ -177,6 +185,8 @@ enum AppInternalIdentifier {
         return AppInternalIdentifier.cloud;
       case 'TENVIO_PICK_AND_PACK':
         return AppInternalIdentifier.tenvioPickAndPack;
+      case 'TENVIO_DRIVERS':
+        return AppInternalIdentifier.tenvioDrivers;
       case 'CONFIOT':
         return AppInternalIdentifier.confiot;
 
@@ -208,7 +218,7 @@ enum AppInternalIdentifier {
         return AppInternalIdentifier.sdmManager;
 
       default:
-        throw Exception('Unknown AppInternalIdentifier: $value');
+        return AppInternalIdentifier.unknown;
     }
   }
 }

@@ -47,13 +47,14 @@ part 'src/entries/volume.dart';
 part 'src/operations/operation.dart';
 part 'src/operations/status.dart';
 
-// ATS enums
+// ATS Converters
 part 'src/converters/order_status.dart';
 part 'src/converters/deliver_category.dart';
 part 'src/converters/category.dart';
 part 'src/converters/loading_params_sample.dart';
 part 'src/converters/fuel_type.dart';
 part 'src/converters/fuel_sub_type.dart';
+part 'src/converters/cf_fuel_type.dart';
 
 // ATS Enums
 part 'src/enums/fuel_sub_type.dart';
@@ -62,3 +63,4 @@ part 'src/enums/loading_params_sample.dart';
 part 'src/enums/purchase_order_categories_entity.dart';
 part 'src/enums/purchase_order_status.dart';
 part 'src/enums/purchase_order_sub_categories.dart';
+part 'src/enums/cf_fuel_type.dart';

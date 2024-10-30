@@ -7,8 +7,8 @@ import 'package:layrz_models/layrz_models.dart';
 // Freezed
 part 'brickhouse.freezed.dart';
 part 'brickhouse.g.dart';
-
 // Modules
 part 'src/alert.dart';
-part 'src/workspace.dart';
 part 'src/driver_safety.dart';
+part 'src/permission_tier.dart';
+part 'src/workspace.dart';

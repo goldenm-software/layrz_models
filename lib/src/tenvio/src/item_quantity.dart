@@ -6,6 +6,9 @@ class TenvioItemQuantity with _$TenvioItemQuantity {
     /// [quantity] Quantity of the matrix item related to the order item quantity.
     int? quantity,
 
+    /// [loadedQuantity] Quantity of the matrix item loaded in the order item quantity.
+    int? loadedQuantity,
+
     /// [matrixId] ID of the matrix item related to the order item quantity.
     String? matrixId,
 
@@ -20,7 +23,7 @@ class TenvioItemQuantity with _$TenvioItemQuantity {
 class TenvioItemQuantityInput with _$TenvioItemQuantityInput {
   factory TenvioItemQuantityInput({
     /// [quantity] Quantity of the matrix item related to the order item quantity.
-    int? quantity,
+    @Default(0) int quantity,
 
     /// [matrixId] ID of the matrix item related to the order item quantity.
     String? matrixId,

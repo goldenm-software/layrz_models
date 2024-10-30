@@ -1,5 +1,75 @@
 # Changelog
 
+## 3.2.48
+- Added `AtsFuelSubType` `toCProdANP()` and new colors in `getColor()`
+- Added ` getColor()` in `AtsFuelType` and add `arla32`in this enum
+- Added `AtsCfFuelType` and this converter
+
+## 3.2.47
+
+- Added `TrackedTenvioPackage` and `TenvioPackageHistory` models
+
+## 3.2.45
+
+- Changed `BHSPermissionTierInput` to `@unfreezed`
+
+## 3.2.44
+
+- Added `access` element on the `BHSPermissionTier` model
+
+## 3.2.43
+
+- Added `AppInternalIdentifier.tenvioDrivers` and `AppInternalIdentifier.unknown` to `AppInternalIdentifier` enum
+
+## 3.2.42
+
+- Added `BHSPermissionTier` model and `BHSPermissionTierInput` model
+
+## 3.2.41
+
+- Added new status to `TenvioPackageStatus` enum
+- Added `isCurrent` to `TenvioPackage` model
+
+## 3.2.40
+
+- Tenvio workflows changes
+
+## 3.2.39
+
+- More tenvio changes
+
+## 3.2.38
+
+- Adjustments on Tenvio Dispatch Guide and their status
+
+## 3.2.37
+
+- Tenvio Driver changes
+
+## 3.2.36
+
+- Tenvio changes
+
+## 3.2.35
+
+- Added `TenvioDispatchGuide` model and `TenvioDispatchGuideStatus` enum
+- Added `TenvioDriver` model
+
+## 3.2.34
+
+- Added qrCodes to `TenvioOrder`, `TenvioPackage` and `TenvioMatrixItem` models
+
+## 3.2.33
+
+- Major changes on `TenvioPackage` model.
+- Removed unnecessary values from `TenvioOrderStatus` enum.
+- Re-writed `TenvioPackageStatus` enum to be accurate with the Tenvio Pick & Pack ecosystem.
+
+## 3.2.32
+
+- Added `LayrzNumber` numeric system to handle the `Order.orderId` and Tracking IDs of Tenvio
+- Tenvio changes
+
 ## 3.2.31
 
 - Added `macAddress` to `Device` models

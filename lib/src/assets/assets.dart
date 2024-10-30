@@ -2,6 +2,7 @@ library assets;
 
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:layrz_models/layrz_models.dart';
 
 part 'assets.freezed.dart';

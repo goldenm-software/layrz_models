@@ -14,898 +14,6 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
-MonitorRealWaypoint _$MonitorRealWaypointFromJson(Map<String, dynamic> json) {
-  return _MonitorRealWaypoint.fromJson(json);
-}
-
-/// @nodoc
-mixin _$MonitorRealWaypoint {
-  String get activationId => throw _privateConstructorUsedError;
-  String get geofenceId => throw _privateConstructorUsedError;
-  int? get sequenceReal => throw _privateConstructorUsedError;
-  int get sequenceIdeal => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get startAt => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get endAt => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MonitorRealWaypointCopyWith<MonitorRealWaypoint> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MonitorRealWaypointCopyWith<$Res> {
-  factory $MonitorRealWaypointCopyWith(
-          MonitorRealWaypoint value, $Res Function(MonitorRealWaypoint) then) =
-      _$MonitorRealWaypointCopyWithImpl<$Res, MonitorRealWaypoint>;
-  @useResult
-  $Res call(
-      {String activationId,
-      String geofenceId,
-      int? sequenceReal,
-      int sequenceIdeal,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt});
-}
-
-/// @nodoc
-class _$MonitorRealWaypointCopyWithImpl<$Res, $Val extends MonitorRealWaypoint>
-    implements $MonitorRealWaypointCopyWith<$Res> {
-  _$MonitorRealWaypointCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? activationId = null,
-    Object? geofenceId = null,
-    Object? sequenceReal = freezed,
-    Object? sequenceIdeal = null,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
-  }) {
-    return _then(_value.copyWith(
-      activationId: null == activationId
-          ? _value.activationId
-          : activationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      geofenceId: null == geofenceId
-          ? _value.geofenceId
-          : geofenceId // ignore: cast_nullable_to_non_nullable
-              as String,
-      sequenceReal: freezed == sequenceReal
-          ? _value.sequenceReal
-          : sequenceReal // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sequenceIdeal: null == sequenceIdeal
-          ? _value.sequenceIdeal
-          : sequenceIdeal // ignore: cast_nullable_to_non_nullable
-              as int,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$MonitorRealWaypointImplCopyWith<$Res>
-    implements $MonitorRealWaypointCopyWith<$Res> {
-  factory _$$MonitorRealWaypointImplCopyWith(_$MonitorRealWaypointImpl value,
-          $Res Function(_$MonitorRealWaypointImpl) then) =
-      __$$MonitorRealWaypointImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String activationId,
-      String geofenceId,
-      int? sequenceReal,
-      int sequenceIdeal,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt});
-}
-
-/// @nodoc
-class __$$MonitorRealWaypointImplCopyWithImpl<$Res>
-    extends _$MonitorRealWaypointCopyWithImpl<$Res, _$MonitorRealWaypointImpl>
-    implements _$$MonitorRealWaypointImplCopyWith<$Res> {
-  __$$MonitorRealWaypointImplCopyWithImpl(_$MonitorRealWaypointImpl _value,
-      $Res Function(_$MonitorRealWaypointImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? activationId = null,
-    Object? geofenceId = null,
-    Object? sequenceReal = freezed,
-    Object? sequenceIdeal = null,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
-  }) {
-    return _then(_$MonitorRealWaypointImpl(
-      activationId: null == activationId
-          ? _value.activationId
-          : activationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      geofenceId: null == geofenceId
-          ? _value.geofenceId
-          : geofenceId // ignore: cast_nullable_to_non_nullable
-              as String,
-      sequenceReal: freezed == sequenceReal
-          ? _value.sequenceReal
-          : sequenceReal // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sequenceIdeal: null == sequenceIdeal
-          ? _value.sequenceIdeal
-          : sequenceIdeal // ignore: cast_nullable_to_non_nullable
-              as int,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$MonitorRealWaypointImpl implements _MonitorRealWaypoint {
-  const _$MonitorRealWaypointImpl(
-      {required this.activationId,
-      required this.geofenceId,
-      this.sequenceReal,
-      required this.sequenceIdeal,
-      @TimestampOrNullConverter() this.startAt,
-      @TimestampOrNullConverter() this.endAt});
-
-  factory _$MonitorRealWaypointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MonitorRealWaypointImplFromJson(json);
-
-  @override
-  final String activationId;
-  @override
-  final String geofenceId;
-  @override
-  final int? sequenceReal;
-  @override
-  final int sequenceIdeal;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? startAt;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? endAt;
-
-  @override
-  String toString() {
-    return 'MonitorRealWaypoint(activationId: $activationId, geofenceId: $geofenceId, sequenceReal: $sequenceReal, sequenceIdeal: $sequenceIdeal, startAt: $startAt, endAt: $endAt)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MonitorRealWaypointImpl &&
-            (identical(other.activationId, activationId) ||
-                other.activationId == activationId) &&
-            (identical(other.geofenceId, geofenceId) ||
-                other.geofenceId == geofenceId) &&
-            (identical(other.sequenceReal, sequenceReal) ||
-                other.sequenceReal == sequenceReal) &&
-            (identical(other.sequenceIdeal, sequenceIdeal) ||
-                other.sequenceIdeal == sequenceIdeal) &&
-            (identical(other.startAt, startAt) || other.startAt == startAt) &&
-            (identical(other.endAt, endAt) || other.endAt == endAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(runtimeType, activationId, geofenceId,
-      sequenceReal, sequenceIdeal, startAt, endAt);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MonitorRealWaypointImplCopyWith<_$MonitorRealWaypointImpl> get copyWith =>
-      __$$MonitorRealWaypointImplCopyWithImpl<_$MonitorRealWaypointImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MonitorRealWaypointImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _MonitorRealWaypoint implements MonitorRealWaypoint {
-  const factory _MonitorRealWaypoint(
-          {required final String activationId,
-          required final String geofenceId,
-          final int? sequenceReal,
-          required final int sequenceIdeal,
-          @TimestampOrNullConverter() final DateTime? startAt,
-          @TimestampOrNullConverter() final DateTime? endAt}) =
-      _$MonitorRealWaypointImpl;
-
-  factory _MonitorRealWaypoint.fromJson(Map<String, dynamic> json) =
-      _$MonitorRealWaypointImpl.fromJson;
-
-  @override
-  String get activationId;
-  @override
-  String get geofenceId;
-  @override
-  int? get sequenceReal;
-  @override
-  int get sequenceIdeal;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get startAt;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get endAt;
-  @override
-  @JsonKey(ignore: true)
-  _$$MonitorRealWaypointImplCopyWith<_$MonitorRealWaypointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-MonitorActiveCheckpoint _$MonitorActiveCheckpointFromJson(
-    Map<String, dynamic> json) {
-  return _MonitorActiveCheckpoint.fromJson(json);
-}
-
-/// @nodoc
-mixin _$MonitorActiveCheckpoint {
-  String get id => throw _privateConstructorUsedError;
-  @MonitorActiveCheckpointStateConverter()
-  MonitorActiveCheckpointState get state => throw _privateConstructorUsedError;
-  Checkpoint get checkpoint => throw _privateConstructorUsedError;
-  Asset get asset => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get startAt => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get endAt => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get updatedAt => throw _privateConstructorUsedError;
-  @CheckpointStateConverter()
-  CheckpointState get checkpointState => throw _privateConstructorUsedError;
-  List<MonitorRealWaypoint> get waypoints => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MonitorActiveCheckpointCopyWith<MonitorActiveCheckpoint> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MonitorActiveCheckpointCopyWith<$Res> {
-  factory $MonitorActiveCheckpointCopyWith(MonitorActiveCheckpoint value,
-          $Res Function(MonitorActiveCheckpoint) then) =
-      _$MonitorActiveCheckpointCopyWithImpl<$Res, MonitorActiveCheckpoint>;
-  @useResult
-  $Res call(
-      {String id,
-      @MonitorActiveCheckpointStateConverter()
-      MonitorActiveCheckpointState state,
-      Checkpoint checkpoint,
-      Asset asset,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
-      @TimestampOrNullConverter() DateTime? updatedAt,
-      @CheckpointStateConverter() CheckpointState checkpointState,
-      List<MonitorRealWaypoint> waypoints});
-
-  $CheckpointCopyWith<$Res> get checkpoint;
-  $AssetCopyWith<$Res> get asset;
-}
-
-/// @nodoc
-class _$MonitorActiveCheckpointCopyWithImpl<$Res,
-        $Val extends MonitorActiveCheckpoint>
-    implements $MonitorActiveCheckpointCopyWith<$Res> {
-  _$MonitorActiveCheckpointCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? state = null,
-    Object? checkpoint = null,
-    Object? asset = null,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
-    Object? updatedAt = freezed,
-    Object? checkpointState = null,
-    Object? waypoints = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as MonitorActiveCheckpointState,
-      checkpoint: null == checkpoint
-          ? _value.checkpoint
-          : checkpoint // ignore: cast_nullable_to_non_nullable
-              as Checkpoint,
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as Asset,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      checkpointState: null == checkpointState
-          ? _value.checkpointState
-          : checkpointState // ignore: cast_nullable_to_non_nullable
-              as CheckpointState,
-      waypoints: null == waypoints
-          ? _value.waypoints
-          : waypoints // ignore: cast_nullable_to_non_nullable
-              as List<MonitorRealWaypoint>,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $CheckpointCopyWith<$Res> get checkpoint {
-    return $CheckpointCopyWith<$Res>(_value.checkpoint, (value) {
-      return _then(_value.copyWith(checkpoint: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $AssetCopyWith<$Res> get asset {
-    return $AssetCopyWith<$Res>(_value.asset, (value) {
-      return _then(_value.copyWith(asset: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$MonitorActiveCheckpointImplCopyWith<$Res>
-    implements $MonitorActiveCheckpointCopyWith<$Res> {
-  factory _$$MonitorActiveCheckpointImplCopyWith(
-          _$MonitorActiveCheckpointImpl value,
-          $Res Function(_$MonitorActiveCheckpointImpl) then) =
-      __$$MonitorActiveCheckpointImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      @MonitorActiveCheckpointStateConverter()
-      MonitorActiveCheckpointState state,
-      Checkpoint checkpoint,
-      Asset asset,
-      @TimestampOrNullConverter() DateTime? startAt,
-      @TimestampOrNullConverter() DateTime? endAt,
-      @TimestampOrNullConverter() DateTime? updatedAt,
-      @CheckpointStateConverter() CheckpointState checkpointState,
-      List<MonitorRealWaypoint> waypoints});
-
-  @override
-  $CheckpointCopyWith<$Res> get checkpoint;
-  @override
-  $AssetCopyWith<$Res> get asset;
-}
-
-/// @nodoc
-class __$$MonitorActiveCheckpointImplCopyWithImpl<$Res>
-    extends _$MonitorActiveCheckpointCopyWithImpl<$Res,
-        _$MonitorActiveCheckpointImpl>
-    implements _$$MonitorActiveCheckpointImplCopyWith<$Res> {
-  __$$MonitorActiveCheckpointImplCopyWithImpl(
-      _$MonitorActiveCheckpointImpl _value,
-      $Res Function(_$MonitorActiveCheckpointImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? state = null,
-    Object? checkpoint = null,
-    Object? asset = null,
-    Object? startAt = freezed,
-    Object? endAt = freezed,
-    Object? updatedAt = freezed,
-    Object? checkpointState = null,
-    Object? waypoints = null,
-  }) {
-    return _then(_$MonitorActiveCheckpointImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as MonitorActiveCheckpointState,
-      checkpoint: null == checkpoint
-          ? _value.checkpoint
-          : checkpoint // ignore: cast_nullable_to_non_nullable
-              as Checkpoint,
-      asset: null == asset
-          ? _value.asset
-          : asset // ignore: cast_nullable_to_non_nullable
-              as Asset,
-      startAt: freezed == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      endAt: freezed == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      updatedAt: freezed == updatedAt
-          ? _value.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      checkpointState: null == checkpointState
-          ? _value.checkpointState
-          : checkpointState // ignore: cast_nullable_to_non_nullable
-              as CheckpointState,
-      waypoints: null == waypoints
-          ? _value._waypoints
-          : waypoints // ignore: cast_nullable_to_non_nullable
-              as List<MonitorRealWaypoint>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$MonitorActiveCheckpointImpl implements _MonitorActiveCheckpoint {
-  const _$MonitorActiveCheckpointImpl(
-      {required this.id,
-      @MonitorActiveCheckpointStateConverter() required this.state,
-      required this.checkpoint,
-      required this.asset,
-      @TimestampOrNullConverter() this.startAt,
-      @TimestampOrNullConverter() this.endAt,
-      @TimestampOrNullConverter() this.updatedAt,
-      @CheckpointStateConverter() required this.checkpointState,
-      final List<MonitorRealWaypoint> waypoints = const []})
-      : _waypoints = waypoints;
-
-  factory _$MonitorActiveCheckpointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MonitorActiveCheckpointImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  @MonitorActiveCheckpointStateConverter()
-  final MonitorActiveCheckpointState state;
-  @override
-  final Checkpoint checkpoint;
-  @override
-  final Asset asset;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? startAt;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? endAt;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? updatedAt;
-  @override
-  @CheckpointStateConverter()
-  final CheckpointState checkpointState;
-  final List<MonitorRealWaypoint> _waypoints;
-  @override
-  @JsonKey()
-  List<MonitorRealWaypoint> get waypoints {
-    if (_waypoints is EqualUnmodifiableListView) return _waypoints;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_waypoints);
-  }
-
-  @override
-  String toString() {
-    return 'MonitorActiveCheckpoint(id: $id, state: $state, checkpoint: $checkpoint, asset: $asset, startAt: $startAt, endAt: $endAt, updatedAt: $updatedAt, checkpointState: $checkpointState, waypoints: $waypoints)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$MonitorActiveCheckpointImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.state, state) || other.state == state) &&
-            (identical(other.checkpoint, checkpoint) ||
-                other.checkpoint == checkpoint) &&
-            (identical(other.asset, asset) || other.asset == asset) &&
-            (identical(other.startAt, startAt) || other.startAt == startAt) &&
-            (identical(other.endAt, endAt) || other.endAt == endAt) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.checkpointState, checkpointState) ||
-                other.checkpointState == checkpointState) &&
-            const DeepCollectionEquality()
-                .equals(other._waypoints, _waypoints));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      state,
-      checkpoint,
-      asset,
-      startAt,
-      endAt,
-      updatedAt,
-      checkpointState,
-      const DeepCollectionEquality().hash(_waypoints));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MonitorActiveCheckpointImplCopyWith<_$MonitorActiveCheckpointImpl>
-      get copyWith => __$$MonitorActiveCheckpointImplCopyWithImpl<
-          _$MonitorActiveCheckpointImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MonitorActiveCheckpointImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _MonitorActiveCheckpoint implements MonitorActiveCheckpoint {
-  const factory _MonitorActiveCheckpoint(
-          {required final String id,
-          @MonitorActiveCheckpointStateConverter()
-          required final MonitorActiveCheckpointState state,
-          required final Checkpoint checkpoint,
-          required final Asset asset,
-          @TimestampOrNullConverter() final DateTime? startAt,
-          @TimestampOrNullConverter() final DateTime? endAt,
-          @TimestampOrNullConverter() final DateTime? updatedAt,
-          @CheckpointStateConverter()
-          required final CheckpointState checkpointState,
-          final List<MonitorRealWaypoint> waypoints}) =
-      _$MonitorActiveCheckpointImpl;
-
-  factory _MonitorActiveCheckpoint.fromJson(Map<String, dynamic> json) =
-      _$MonitorActiveCheckpointImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  @MonitorActiveCheckpointStateConverter()
-  MonitorActiveCheckpointState get state;
-  @override
-  Checkpoint get checkpoint;
-  @override
-  Asset get asset;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get startAt;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get endAt;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get updatedAt;
-  @override
-  @CheckpointStateConverter()
-  CheckpointState get checkpointState;
-  @override
-  List<MonitorRealWaypoint> get waypoints;
-  @override
-  @JsonKey(ignore: true)
-  _$$MonitorActiveCheckpointImplCopyWith<_$MonitorActiveCheckpointImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-LinkShortcut _$LinkShortcutFromJson(Map<String, dynamic> json) {
-  return _LinkShortcut.fromJson(json);
-}
-
-/// @nodoc
-mixin _$LinkShortcut {
-  /// [id] is the unique identifier for the shortcut.
-  String get id => throw _privateConstructorUsedError;
-
-  /// [code] is the code for the shortcut.
-  String get code => throw _privateConstructorUsedError;
-
-  /// [redirectTo] is the URL to redirect to.
-  String? get redirectTo => throw _privateConstructorUsedError;
-
-  /// [creator] is the user who created the shortcut.
-  Employee? get creator => throw _privateConstructorUsedError;
-
-  /// [creatorId] is the ID of the user who created the shortcut.
-  String? get creatorId => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $LinkShortcutCopyWith<LinkShortcut> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LinkShortcutCopyWith<$Res> {
-  factory $LinkShortcutCopyWith(
-          LinkShortcut value, $Res Function(LinkShortcut) then) =
-      _$LinkShortcutCopyWithImpl<$Res, LinkShortcut>;
-  @useResult
-  $Res call(
-      {String id,
-      String code,
-      String? redirectTo,
-      Employee? creator,
-      String? creatorId});
-
-  $EmployeeCopyWith<$Res>? get creator;
-}
-
-/// @nodoc
-class _$LinkShortcutCopyWithImpl<$Res, $Val extends LinkShortcut>
-    implements $LinkShortcutCopyWith<$Res> {
-  _$LinkShortcutCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? code = null,
-    Object? redirectTo = freezed,
-    Object? creator = freezed,
-    Object? creatorId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      redirectTo: freezed == redirectTo
-          ? _value.redirectTo
-          : redirectTo // ignore: cast_nullable_to_non_nullable
-              as String?,
-      creator: freezed == creator
-          ? _value.creator
-          : creator // ignore: cast_nullable_to_non_nullable
-              as Employee?,
-      creatorId: freezed == creatorId
-          ? _value.creatorId
-          : creatorId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $EmployeeCopyWith<$Res>? get creator {
-    if (_value.creator == null) {
-      return null;
-    }
-
-    return $EmployeeCopyWith<$Res>(_value.creator!, (value) {
-      return _then(_value.copyWith(creator: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$LinkShortcutImplCopyWith<$Res>
-    implements $LinkShortcutCopyWith<$Res> {
-  factory _$$LinkShortcutImplCopyWith(
-          _$LinkShortcutImpl value, $Res Function(_$LinkShortcutImpl) then) =
-      __$$LinkShortcutImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String code,
-      String? redirectTo,
-      Employee? creator,
-      String? creatorId});
-
-  @override
-  $EmployeeCopyWith<$Res>? get creator;
-}
-
-/// @nodoc
-class __$$LinkShortcutImplCopyWithImpl<$Res>
-    extends _$LinkShortcutCopyWithImpl<$Res, _$LinkShortcutImpl>
-    implements _$$LinkShortcutImplCopyWith<$Res> {
-  __$$LinkShortcutImplCopyWithImpl(
-      _$LinkShortcutImpl _value, $Res Function(_$LinkShortcutImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? code = null,
-    Object? redirectTo = freezed,
-    Object? creator = freezed,
-    Object? creatorId = freezed,
-  }) {
-    return _then(_$LinkShortcutImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      redirectTo: freezed == redirectTo
-          ? _value.redirectTo
-          : redirectTo // ignore: cast_nullable_to_non_nullable
-              as String?,
-      creator: freezed == creator
-          ? _value.creator
-          : creator // ignore: cast_nullable_to_non_nullable
-              as Employee?,
-      creatorId: freezed == creatorId
-          ? _value.creatorId
-          : creatorId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$LinkShortcutImpl implements _LinkShortcut {
-  const _$LinkShortcutImpl(
-      {required this.id,
-      required this.code,
-      this.redirectTo,
-      this.creator,
-      this.creatorId});
-
-  factory _$LinkShortcutImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LinkShortcutImplFromJson(json);
-
-  /// [id] is the unique identifier for the shortcut.
-  @override
-  final String id;
-
-  /// [code] is the code for the shortcut.
-  @override
-  final String code;
-
-  /// [redirectTo] is the URL to redirect to.
-  @override
-  final String? redirectTo;
-
-  /// [creator] is the user who created the shortcut.
-  @override
-  final Employee? creator;
-
-  /// [creatorId] is the ID of the user who created the shortcut.
-  @override
-  final String? creatorId;
-
-  @override
-  String toString() {
-    return 'LinkShortcut(id: $id, code: $code, redirectTo: $redirectTo, creator: $creator, creatorId: $creatorId)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LinkShortcutImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.redirectTo, redirectTo) ||
-                other.redirectTo == redirectTo) &&
-            (identical(other.creator, creator) || other.creator == creator) &&
-            (identical(other.creatorId, creatorId) ||
-                other.creatorId == creatorId));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, code, redirectTo, creator, creatorId);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LinkShortcutImplCopyWith<_$LinkShortcutImpl> get copyWith =>
-      __$$LinkShortcutImplCopyWithImpl<_$LinkShortcutImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LinkShortcutImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _LinkShortcut implements LinkShortcut {
-  const factory _LinkShortcut(
-      {required final String id,
-      required final String code,
-      final String? redirectTo,
-      final Employee? creator,
-      final String? creatorId}) = _$LinkShortcutImpl;
-
-  factory _LinkShortcut.fromJson(Map<String, dynamic> json) =
-      _$LinkShortcutImpl.fromJson;
-
-  @override
-
-  /// [id] is the unique identifier for the shortcut.
-  String get id;
-  @override
-
-  /// [code] is the code for the shortcut.
-  String get code;
-  @override
-
-  /// [redirectTo] is the URL to redirect to.
-  String? get redirectTo;
-  @override
-
-  /// [creator] is the user who created the shortcut.
-  Employee? get creator;
-  @override
-
-  /// [creatorId] is the ID of the user who created the shortcut.
-  String? get creatorId;
-  @override
-  @JsonKey(ignore: true)
-  _$$LinkShortcutImplCopyWith<_$LinkShortcutImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 Access _$AccessFromJson(Map<String, dynamic> json) {
   return _Access.fromJson(json);
 }
@@ -1555,6 +663,274 @@ abstract class _AccessInput implements AccessInput {
   @override
   @JsonKey(ignore: true)
   _$$AccessInputImplCopyWith<_$AccessInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+LinkShortcut _$LinkShortcutFromJson(Map<String, dynamic> json) {
+  return _LinkShortcut.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LinkShortcut {
+  /// [id] is the unique identifier for the shortcut.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [code] is the code for the shortcut.
+  String get code => throw _privateConstructorUsedError;
+
+  /// [redirectTo] is the URL to redirect to.
+  String? get redirectTo => throw _privateConstructorUsedError;
+
+  /// [creator] is the user who created the shortcut.
+  Employee? get creator => throw _privateConstructorUsedError;
+
+  /// [creatorId] is the ID of the user who created the shortcut.
+  String? get creatorId => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LinkShortcutCopyWith<LinkShortcut> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LinkShortcutCopyWith<$Res> {
+  factory $LinkShortcutCopyWith(
+          LinkShortcut value, $Res Function(LinkShortcut) then) =
+      _$LinkShortcutCopyWithImpl<$Res, LinkShortcut>;
+  @useResult
+  $Res call(
+      {String id,
+      String code,
+      String? redirectTo,
+      Employee? creator,
+      String? creatorId});
+
+  $EmployeeCopyWith<$Res>? get creator;
+}
+
+/// @nodoc
+class _$LinkShortcutCopyWithImpl<$Res, $Val extends LinkShortcut>
+    implements $LinkShortcutCopyWith<$Res> {
+  _$LinkShortcutCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? redirectTo = freezed,
+    Object? creator = freezed,
+    Object? creatorId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      redirectTo: freezed == redirectTo
+          ? _value.redirectTo
+          : redirectTo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      creator: freezed == creator
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as Employee?,
+      creatorId: freezed == creatorId
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $EmployeeCopyWith<$Res>? get creator {
+    if (_value.creator == null) {
+      return null;
+    }
+
+    return $EmployeeCopyWith<$Res>(_value.creator!, (value) {
+      return _then(_value.copyWith(creator: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$LinkShortcutImplCopyWith<$Res>
+    implements $LinkShortcutCopyWith<$Res> {
+  factory _$$LinkShortcutImplCopyWith(
+          _$LinkShortcutImpl value, $Res Function(_$LinkShortcutImpl) then) =
+      __$$LinkShortcutImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String code,
+      String? redirectTo,
+      Employee? creator,
+      String? creatorId});
+
+  @override
+  $EmployeeCopyWith<$Res>? get creator;
+}
+
+/// @nodoc
+class __$$LinkShortcutImplCopyWithImpl<$Res>
+    extends _$LinkShortcutCopyWithImpl<$Res, _$LinkShortcutImpl>
+    implements _$$LinkShortcutImplCopyWith<$Res> {
+  __$$LinkShortcutImplCopyWithImpl(
+      _$LinkShortcutImpl _value, $Res Function(_$LinkShortcutImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? redirectTo = freezed,
+    Object? creator = freezed,
+    Object? creatorId = freezed,
+  }) {
+    return _then(_$LinkShortcutImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      redirectTo: freezed == redirectTo
+          ? _value.redirectTo
+          : redirectTo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      creator: freezed == creator
+          ? _value.creator
+          : creator // ignore: cast_nullable_to_non_nullable
+              as Employee?,
+      creatorId: freezed == creatorId
+          ? _value.creatorId
+          : creatorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LinkShortcutImpl implements _LinkShortcut {
+  const _$LinkShortcutImpl(
+      {required this.id,
+      required this.code,
+      this.redirectTo,
+      this.creator,
+      this.creatorId});
+
+  factory _$LinkShortcutImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LinkShortcutImplFromJson(json);
+
+  /// [id] is the unique identifier for the shortcut.
+  @override
+  final String id;
+
+  /// [code] is the code for the shortcut.
+  @override
+  final String code;
+
+  /// [redirectTo] is the URL to redirect to.
+  @override
+  final String? redirectTo;
+
+  /// [creator] is the user who created the shortcut.
+  @override
+  final Employee? creator;
+
+  /// [creatorId] is the ID of the user who created the shortcut.
+  @override
+  final String? creatorId;
+
+  @override
+  String toString() {
+    return 'LinkShortcut(id: $id, code: $code, redirectTo: $redirectTo, creator: $creator, creatorId: $creatorId)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LinkShortcutImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.redirectTo, redirectTo) ||
+                other.redirectTo == redirectTo) &&
+            (identical(other.creator, creator) || other.creator == creator) &&
+            (identical(other.creatorId, creatorId) ||
+                other.creatorId == creatorId));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, code, redirectTo, creator, creatorId);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LinkShortcutImplCopyWith<_$LinkShortcutImpl> get copyWith =>
+      __$$LinkShortcutImplCopyWithImpl<_$LinkShortcutImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LinkShortcutImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LinkShortcut implements LinkShortcut {
+  const factory _LinkShortcut(
+      {required final String id,
+      required final String code,
+      final String? redirectTo,
+      final Employee? creator,
+      final String? creatorId}) = _$LinkShortcutImpl;
+
+  factory _LinkShortcut.fromJson(Map<String, dynamic> json) =
+      _$LinkShortcutImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier for the shortcut.
+  String get id;
+  @override
+
+  /// [code] is the code for the shortcut.
+  String get code;
+  @override
+
+  /// [redirectTo] is the URL to redirect to.
+  String? get redirectTo;
+  @override
+
+  /// [creator] is the user who created the shortcut.
+  Employee? get creator;
+  @override
+
+  /// [creatorId] is the ID of the user who created the shortcut.
+  String? get creatorId;
+  @override
+  @JsonKey(ignore: true)
+  _$$LinkShortcutImplCopyWith<_$LinkShortcutImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -15051,6 +14427,630 @@ abstract class _LintError implements LintError {
       throw _privateConstructorUsedError;
 }
 
+MonitorRealWaypoint _$MonitorRealWaypointFromJson(Map<String, dynamic> json) {
+  return _MonitorRealWaypoint.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MonitorRealWaypoint {
+  String get activationId => throw _privateConstructorUsedError;
+  String get geofenceId => throw _privateConstructorUsedError;
+  int? get sequenceReal => throw _privateConstructorUsedError;
+  int get sequenceIdeal => throw _privateConstructorUsedError;
+  @TimestampOrNullConverter()
+  DateTime? get startAt => throw _privateConstructorUsedError;
+  @TimestampOrNullConverter()
+  DateTime? get endAt => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MonitorRealWaypointCopyWith<MonitorRealWaypoint> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MonitorRealWaypointCopyWith<$Res> {
+  factory $MonitorRealWaypointCopyWith(
+          MonitorRealWaypoint value, $Res Function(MonitorRealWaypoint) then) =
+      _$MonitorRealWaypointCopyWithImpl<$Res, MonitorRealWaypoint>;
+  @useResult
+  $Res call(
+      {String activationId,
+      String geofenceId,
+      int? sequenceReal,
+      int sequenceIdeal,
+      @TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt});
+}
+
+/// @nodoc
+class _$MonitorRealWaypointCopyWithImpl<$Res, $Val extends MonitorRealWaypoint>
+    implements $MonitorRealWaypointCopyWith<$Res> {
+  _$MonitorRealWaypointCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? activationId = null,
+    Object? geofenceId = null,
+    Object? sequenceReal = freezed,
+    Object? sequenceIdeal = null,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+  }) {
+    return _then(_value.copyWith(
+      activationId: null == activationId
+          ? _value.activationId
+          : activationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      geofenceId: null == geofenceId
+          ? _value.geofenceId
+          : geofenceId // ignore: cast_nullable_to_non_nullable
+              as String,
+      sequenceReal: freezed == sequenceReal
+          ? _value.sequenceReal
+          : sequenceReal // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sequenceIdeal: null == sequenceIdeal
+          ? _value.sequenceIdeal
+          : sequenceIdeal // ignore: cast_nullable_to_non_nullable
+              as int,
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MonitorRealWaypointImplCopyWith<$Res>
+    implements $MonitorRealWaypointCopyWith<$Res> {
+  factory _$$MonitorRealWaypointImplCopyWith(_$MonitorRealWaypointImpl value,
+          $Res Function(_$MonitorRealWaypointImpl) then) =
+      __$$MonitorRealWaypointImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String activationId,
+      String geofenceId,
+      int? sequenceReal,
+      int sequenceIdeal,
+      @TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt});
+}
+
+/// @nodoc
+class __$$MonitorRealWaypointImplCopyWithImpl<$Res>
+    extends _$MonitorRealWaypointCopyWithImpl<$Res, _$MonitorRealWaypointImpl>
+    implements _$$MonitorRealWaypointImplCopyWith<$Res> {
+  __$$MonitorRealWaypointImplCopyWithImpl(_$MonitorRealWaypointImpl _value,
+      $Res Function(_$MonitorRealWaypointImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? activationId = null,
+    Object? geofenceId = null,
+    Object? sequenceReal = freezed,
+    Object? sequenceIdeal = null,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+  }) {
+    return _then(_$MonitorRealWaypointImpl(
+      activationId: null == activationId
+          ? _value.activationId
+          : activationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      geofenceId: null == geofenceId
+          ? _value.geofenceId
+          : geofenceId // ignore: cast_nullable_to_non_nullable
+              as String,
+      sequenceReal: freezed == sequenceReal
+          ? _value.sequenceReal
+          : sequenceReal // ignore: cast_nullable_to_non_nullable
+              as int?,
+      sequenceIdeal: null == sequenceIdeal
+          ? _value.sequenceIdeal
+          : sequenceIdeal // ignore: cast_nullable_to_non_nullable
+              as int,
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MonitorRealWaypointImpl implements _MonitorRealWaypoint {
+  const _$MonitorRealWaypointImpl(
+      {required this.activationId,
+      required this.geofenceId,
+      this.sequenceReal,
+      required this.sequenceIdeal,
+      @TimestampOrNullConverter() this.startAt,
+      @TimestampOrNullConverter() this.endAt});
+
+  factory _$MonitorRealWaypointImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MonitorRealWaypointImplFromJson(json);
+
+  @override
+  final String activationId;
+  @override
+  final String geofenceId;
+  @override
+  final int? sequenceReal;
+  @override
+  final int sequenceIdeal;
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? startAt;
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? endAt;
+
+  @override
+  String toString() {
+    return 'MonitorRealWaypoint(activationId: $activationId, geofenceId: $geofenceId, sequenceReal: $sequenceReal, sequenceIdeal: $sequenceIdeal, startAt: $startAt, endAt: $endAt)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MonitorRealWaypointImpl &&
+            (identical(other.activationId, activationId) ||
+                other.activationId == activationId) &&
+            (identical(other.geofenceId, geofenceId) ||
+                other.geofenceId == geofenceId) &&
+            (identical(other.sequenceReal, sequenceReal) ||
+                other.sequenceReal == sequenceReal) &&
+            (identical(other.sequenceIdeal, sequenceIdeal) ||
+                other.sequenceIdeal == sequenceIdeal) &&
+            (identical(other.startAt, startAt) || other.startAt == startAt) &&
+            (identical(other.endAt, endAt) || other.endAt == endAt));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, activationId, geofenceId,
+      sequenceReal, sequenceIdeal, startAt, endAt);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MonitorRealWaypointImplCopyWith<_$MonitorRealWaypointImpl> get copyWith =>
+      __$$MonitorRealWaypointImplCopyWithImpl<_$MonitorRealWaypointImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MonitorRealWaypointImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MonitorRealWaypoint implements MonitorRealWaypoint {
+  const factory _MonitorRealWaypoint(
+          {required final String activationId,
+          required final String geofenceId,
+          final int? sequenceReal,
+          required final int sequenceIdeal,
+          @TimestampOrNullConverter() final DateTime? startAt,
+          @TimestampOrNullConverter() final DateTime? endAt}) =
+      _$MonitorRealWaypointImpl;
+
+  factory _MonitorRealWaypoint.fromJson(Map<String, dynamic> json) =
+      _$MonitorRealWaypointImpl.fromJson;
+
+  @override
+  String get activationId;
+  @override
+  String get geofenceId;
+  @override
+  int? get sequenceReal;
+  @override
+  int get sequenceIdeal;
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get startAt;
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get endAt;
+  @override
+  @JsonKey(ignore: true)
+  _$$MonitorRealWaypointImplCopyWith<_$MonitorRealWaypointImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+MonitorActiveCheckpoint _$MonitorActiveCheckpointFromJson(
+    Map<String, dynamic> json) {
+  return _MonitorActiveCheckpoint.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MonitorActiveCheckpoint {
+  String get id => throw _privateConstructorUsedError;
+  @MonitorActiveCheckpointStateConverter()
+  MonitorActiveCheckpointState get state => throw _privateConstructorUsedError;
+  Checkpoint get checkpoint => throw _privateConstructorUsedError;
+  Asset get asset => throw _privateConstructorUsedError;
+  @TimestampOrNullConverter()
+  DateTime? get startAt => throw _privateConstructorUsedError;
+  @TimestampOrNullConverter()
+  DateTime? get endAt => throw _privateConstructorUsedError;
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
+  @CheckpointStateConverter()
+  CheckpointState get checkpointState => throw _privateConstructorUsedError;
+  List<MonitorRealWaypoint> get waypoints => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MonitorActiveCheckpointCopyWith<MonitorActiveCheckpoint> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MonitorActiveCheckpointCopyWith<$Res> {
+  factory $MonitorActiveCheckpointCopyWith(MonitorActiveCheckpoint value,
+          $Res Function(MonitorActiveCheckpoint) then) =
+      _$MonitorActiveCheckpointCopyWithImpl<$Res, MonitorActiveCheckpoint>;
+  @useResult
+  $Res call(
+      {String id,
+      @MonitorActiveCheckpointStateConverter()
+      MonitorActiveCheckpointState state,
+      Checkpoint checkpoint,
+      Asset asset,
+      @TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      @CheckpointStateConverter() CheckpointState checkpointState,
+      List<MonitorRealWaypoint> waypoints});
+
+  $CheckpointCopyWith<$Res> get checkpoint;
+  $AssetCopyWith<$Res> get asset;
+}
+
+/// @nodoc
+class _$MonitorActiveCheckpointCopyWithImpl<$Res,
+        $Val extends MonitorActiveCheckpoint>
+    implements $MonitorActiveCheckpointCopyWith<$Res> {
+  _$MonitorActiveCheckpointCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? state = null,
+    Object? checkpoint = null,
+    Object? asset = null,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? updatedAt = freezed,
+    Object? checkpointState = null,
+    Object? waypoints = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as MonitorActiveCheckpointState,
+      checkpoint: null == checkpoint
+          ? _value.checkpoint
+          : checkpoint // ignore: cast_nullable_to_non_nullable
+              as Checkpoint,
+      asset: null == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset,
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      checkpointState: null == checkpointState
+          ? _value.checkpointState
+          : checkpointState // ignore: cast_nullable_to_non_nullable
+              as CheckpointState,
+      waypoints: null == waypoints
+          ? _value.waypoints
+          : waypoints // ignore: cast_nullable_to_non_nullable
+              as List<MonitorRealWaypoint>,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CheckpointCopyWith<$Res> get checkpoint {
+    return $CheckpointCopyWith<$Res>(_value.checkpoint, (value) {
+      return _then(_value.copyWith(checkpoint: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res> get asset {
+    return $AssetCopyWith<$Res>(_value.asset, (value) {
+      return _then(_value.copyWith(asset: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$MonitorActiveCheckpointImplCopyWith<$Res>
+    implements $MonitorActiveCheckpointCopyWith<$Res> {
+  factory _$$MonitorActiveCheckpointImplCopyWith(
+          _$MonitorActiveCheckpointImpl value,
+          $Res Function(_$MonitorActiveCheckpointImpl) then) =
+      __$$MonitorActiveCheckpointImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      @MonitorActiveCheckpointStateConverter()
+      MonitorActiveCheckpointState state,
+      Checkpoint checkpoint,
+      Asset asset,
+      @TimestampOrNullConverter() DateTime? startAt,
+      @TimestampOrNullConverter() DateTime? endAt,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      @CheckpointStateConverter() CheckpointState checkpointState,
+      List<MonitorRealWaypoint> waypoints});
+
+  @override
+  $CheckpointCopyWith<$Res> get checkpoint;
+  @override
+  $AssetCopyWith<$Res> get asset;
+}
+
+/// @nodoc
+class __$$MonitorActiveCheckpointImplCopyWithImpl<$Res>
+    extends _$MonitorActiveCheckpointCopyWithImpl<$Res,
+        _$MonitorActiveCheckpointImpl>
+    implements _$$MonitorActiveCheckpointImplCopyWith<$Res> {
+  __$$MonitorActiveCheckpointImplCopyWithImpl(
+      _$MonitorActiveCheckpointImpl _value,
+      $Res Function(_$MonitorActiveCheckpointImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? state = null,
+    Object? checkpoint = null,
+    Object? asset = null,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? updatedAt = freezed,
+    Object? checkpointState = null,
+    Object? waypoints = null,
+  }) {
+    return _then(_$MonitorActiveCheckpointImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as MonitorActiveCheckpointState,
+      checkpoint: null == checkpoint
+          ? _value.checkpoint
+          : checkpoint // ignore: cast_nullable_to_non_nullable
+              as Checkpoint,
+      asset: null == asset
+          ? _value.asset
+          : asset // ignore: cast_nullable_to_non_nullable
+              as Asset,
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      checkpointState: null == checkpointState
+          ? _value.checkpointState
+          : checkpointState // ignore: cast_nullable_to_non_nullable
+              as CheckpointState,
+      waypoints: null == waypoints
+          ? _value._waypoints
+          : waypoints // ignore: cast_nullable_to_non_nullable
+              as List<MonitorRealWaypoint>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MonitorActiveCheckpointImpl implements _MonitorActiveCheckpoint {
+  const _$MonitorActiveCheckpointImpl(
+      {required this.id,
+      @MonitorActiveCheckpointStateConverter() required this.state,
+      required this.checkpoint,
+      required this.asset,
+      @TimestampOrNullConverter() this.startAt,
+      @TimestampOrNullConverter() this.endAt,
+      @TimestampOrNullConverter() this.updatedAt,
+      @CheckpointStateConverter() required this.checkpointState,
+      final List<MonitorRealWaypoint> waypoints = const []})
+      : _waypoints = waypoints;
+
+  factory _$MonitorActiveCheckpointImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MonitorActiveCheckpointImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  @MonitorActiveCheckpointStateConverter()
+  final MonitorActiveCheckpointState state;
+  @override
+  final Checkpoint checkpoint;
+  @override
+  final Asset asset;
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? startAt;
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? endAt;
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? updatedAt;
+  @override
+  @CheckpointStateConverter()
+  final CheckpointState checkpointState;
+  final List<MonitorRealWaypoint> _waypoints;
+  @override
+  @JsonKey()
+  List<MonitorRealWaypoint> get waypoints {
+    if (_waypoints is EqualUnmodifiableListView) return _waypoints;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_waypoints);
+  }
+
+  @override
+  String toString() {
+    return 'MonitorActiveCheckpoint(id: $id, state: $state, checkpoint: $checkpoint, asset: $asset, startAt: $startAt, endAt: $endAt, updatedAt: $updatedAt, checkpointState: $checkpointState, waypoints: $waypoints)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MonitorActiveCheckpointImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.state, state) || other.state == state) &&
+            (identical(other.checkpoint, checkpoint) ||
+                other.checkpoint == checkpoint) &&
+            (identical(other.asset, asset) || other.asset == asset) &&
+            (identical(other.startAt, startAt) || other.startAt == startAt) &&
+            (identical(other.endAt, endAt) || other.endAt == endAt) &&
+            (identical(other.updatedAt, updatedAt) ||
+                other.updatedAt == updatedAt) &&
+            (identical(other.checkpointState, checkpointState) ||
+                other.checkpointState == checkpointState) &&
+            const DeepCollectionEquality()
+                .equals(other._waypoints, _waypoints));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      state,
+      checkpoint,
+      asset,
+      startAt,
+      endAt,
+      updatedAt,
+      checkpointState,
+      const DeepCollectionEquality().hash(_waypoints));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MonitorActiveCheckpointImplCopyWith<_$MonitorActiveCheckpointImpl>
+      get copyWith => __$$MonitorActiveCheckpointImplCopyWithImpl<
+          _$MonitorActiveCheckpointImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MonitorActiveCheckpointImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MonitorActiveCheckpoint implements MonitorActiveCheckpoint {
+  const factory _MonitorActiveCheckpoint(
+          {required final String id,
+          @MonitorActiveCheckpointStateConverter()
+          required final MonitorActiveCheckpointState state,
+          required final Checkpoint checkpoint,
+          required final Asset asset,
+          @TimestampOrNullConverter() final DateTime? startAt,
+          @TimestampOrNullConverter() final DateTime? endAt,
+          @TimestampOrNullConverter() final DateTime? updatedAt,
+          @CheckpointStateConverter()
+          required final CheckpointState checkpointState,
+          final List<MonitorRealWaypoint> waypoints}) =
+      _$MonitorActiveCheckpointImpl;
+
+  factory _MonitorActiveCheckpoint.fromJson(Map<String, dynamic> json) =
+      _$MonitorActiveCheckpointImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  @MonitorActiveCheckpointStateConverter()
+  MonitorActiveCheckpointState get state;
+  @override
+  Checkpoint get checkpoint;
+  @override
+  Asset get asset;
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get startAt;
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get endAt;
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt;
+  @override
+  @CheckpointStateConverter()
+  CheckpointState get checkpointState;
+  @override
+  List<MonitorRealWaypoint> get waypoints;
+  @override
+  @JsonKey(ignore: true)
+  _$$MonitorActiveCheckpointImplCopyWith<_$MonitorActiveCheckpointImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 Operation _$OperationFromJson(Map<String, dynamic> json) {
   return _Operation.fromJson(json);
 }
@@ -25876,6 +25876,13 @@ mixin _$User {
   /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
   List<String> get hwModelsAnimationsIds => throw _privateConstructorUsedError;
 
+  /// [brickhousePermissionTier] represents the Brickhouse permission tier for access level of an user.
+  BHSPermissionTier? get brickhousePermissionTier =>
+      throw _privateConstructorUsedError;
+
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  String? get brickhousePermissionTierId => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -25923,13 +25930,16 @@ abstract class $UserCopyWith<$Res> {
       double? tenvioLongitude,
       bool? isSuspended,
       @TimestampOrNullConverter() DateTime? suspendedAt,
-      List<String> hwModelsAnimationsIds});
+      List<String> hwModelsAnimationsIds,
+      BHSPermissionTier? brickhousePermissionTier,
+      String? brickhousePermissionTierId});
 
   $TokenCopyWith<$Res>? get token;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
   $CategoryCopyWith<$Res>? get category;
   $ProfileCopyWith<$Res>? get profile;
   $ExternalAccountCopyWith<$Res>? get mappitExternalAccount;
+  $BHSPermissionTierCopyWith<$Res>? get brickhousePermissionTier;
 }
 
 /// @nodoc
@@ -25982,6 +25992,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? isSuspended = freezed,
     Object? suspendedAt = freezed,
     Object? hwModelsAnimationsIds = null,
+    Object? brickhousePermissionTier = freezed,
+    Object? brickhousePermissionTierId = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -26132,6 +26144,14 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.hwModelsAnimationsIds
           : hwModelsAnimationsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      brickhousePermissionTier: freezed == brickhousePermissionTier
+          ? _value.brickhousePermissionTier
+          : brickhousePermissionTier // ignore: cast_nullable_to_non_nullable
+              as BHSPermissionTier?,
+      brickhousePermissionTierId: freezed == brickhousePermissionTierId
+          ? _value.brickhousePermissionTierId
+          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -26195,6 +26215,19 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       return _then(_value.copyWith(mappitExternalAccount: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BHSPermissionTierCopyWith<$Res>? get brickhousePermissionTier {
+    if (_value.brickhousePermissionTier == null) {
+      return null;
+    }
+
+    return $BHSPermissionTierCopyWith<$Res>(_value.brickhousePermissionTier!,
+        (value) {
+      return _then(_value.copyWith(brickhousePermissionTier: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -26241,7 +26274,9 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       double? tenvioLongitude,
       bool? isSuspended,
       @TimestampOrNullConverter() DateTime? suspendedAt,
-      List<String> hwModelsAnimationsIds});
+      List<String> hwModelsAnimationsIds,
+      BHSPermissionTier? brickhousePermissionTier,
+      String? brickhousePermissionTierId});
 
   @override
   $TokenCopyWith<$Res>? get token;
@@ -26253,6 +26288,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   $ProfileCopyWith<$Res>? get profile;
   @override
   $ExternalAccountCopyWith<$Res>? get mappitExternalAccount;
+  @override
+  $BHSPermissionTierCopyWith<$Res>? get brickhousePermissionTier;
 }
 
 /// @nodoc
@@ -26302,6 +26339,8 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? isSuspended = freezed,
     Object? suspendedAt = freezed,
     Object? hwModelsAnimationsIds = null,
+    Object? brickhousePermissionTier = freezed,
+    Object? brickhousePermissionTierId = freezed,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -26452,6 +26491,14 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value._hwModelsAnimationsIds
           : hwModelsAnimationsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      brickhousePermissionTier: freezed == brickhousePermissionTier
+          ? _value.brickhousePermissionTier
+          : brickhousePermissionTier // ignore: cast_nullable_to_non_nullable
+              as BHSPermissionTier?,
+      brickhousePermissionTierId: freezed == brickhousePermissionTierId
+          ? _value.brickhousePermissionTierId
+          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -26496,7 +26543,9 @@ class _$UserImpl implements _User {
       this.tenvioLongitude,
       this.isSuspended,
       @TimestampOrNullConverter() this.suspendedAt,
-      final List<String> hwModelsAnimationsIds = const []})
+      final List<String> hwModelsAnimationsIds = const [],
+      this.brickhousePermissionTier,
+      this.brickhousePermissionTierId})
       : _referencesIds = referencesIds,
         _references = references,
         _access = access,
@@ -26790,9 +26839,17 @@ class _$UserImpl implements _User {
     return EqualUnmodifiableListView(_hwModelsAnimationsIds);
   }
 
+  /// [brickhousePermissionTier] represents the Brickhouse permission tier for access level of an user.
+  @override
+  final BHSPermissionTier? brickhousePermissionTier;
+
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  @override
+  final String? brickhousePermissionTierId;
+
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, isSuspended: $isSuspended, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, profile: $profile, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, configuration: $configuration, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, isSuspended: $isSuspended, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId)';
   }
 
   @override
@@ -26864,7 +26921,14 @@ class _$UserImpl implements _User {
             (identical(other.suspendedAt, suspendedAt) ||
                 other.suspendedAt == suspendedAt) &&
             const DeepCollectionEquality()
-                .equals(other._hwModelsAnimationsIds, _hwModelsAnimationsIds));
+                .equals(other._hwModelsAnimationsIds, _hwModelsAnimationsIds) &&
+            (identical(
+                    other.brickhousePermissionTier, brickhousePermissionTier) ||
+                other.brickhousePermissionTier == brickhousePermissionTier) &&
+            (identical(other.brickhousePermissionTierId,
+                    brickhousePermissionTierId) ||
+                other.brickhousePermissionTierId ==
+                    brickhousePermissionTierId));
   }
 
   @JsonKey(ignore: true)
@@ -26907,7 +26971,9 @@ class _$UserImpl implements _User {
         tenvioLongitude,
         isSuspended,
         suspendedAt,
-        const DeepCollectionEquality().hash(_hwModelsAnimationsIds)
+        const DeepCollectionEquality().hash(_hwModelsAnimationsIds),
+        brickhousePermissionTier,
+        brickhousePermissionTierId
       ]);
 
   @JsonKey(ignore: true)
@@ -26962,7 +27028,9 @@ abstract class _User implements User {
       final double? tenvioLongitude,
       final bool? isSuspended,
       @TimestampOrNullConverter() final DateTime? suspendedAt,
-      final List<String> hwModelsAnimationsIds}) = _$UserImpl;
+      final List<String> hwModelsAnimationsIds,
+      final BHSPermissionTier? brickhousePermissionTier,
+      final String? brickhousePermissionTierId}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -27122,6 +27190,14 @@ abstract class _User implements User {
 
   /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
   List<String> get hwModelsAnimationsIds;
+  @override
+
+  /// [brickhousePermissionTier] represents the Brickhouse permission tier for access level of an user.
+  BHSPermissionTier? get brickhousePermissionTier;
+  @override
+
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  String? get brickhousePermissionTierId;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
