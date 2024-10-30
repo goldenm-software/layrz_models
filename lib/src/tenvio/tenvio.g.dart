@@ -207,6 +207,56 @@ Map<String, dynamic> _$$TenvioPackageQuantityImplToJson(
       'quantity': instance.quantity,
     };
 
+_$TrackedTenvioPackageImpl _$$TrackedTenvioPackageImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TrackedTenvioPackageImpl(
+      trackingId: json['trackingId'] as String,
+      status: const TenvioPackageStatusConverter()
+          .fromJson(json['status'] as String),
+      driverName: json['driverName'] as String?,
+      latitude: (json['latitude'] as num?)?.toDouble(),
+      longitude: (json['longitude'] as num?)?.toDouble(),
+      destinationLatitude: (json['destinationLatitude'] as num?)?.toDouble(),
+      destinationLongitude: (json['destinationLongitude'] as num?)?.toDouble(),
+      history: (json['history'] as List<dynamic>)
+          .map((e) => TenvioPackageHistory.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
+    );
+
+Map<String, dynamic> _$$TrackedTenvioPackageImplToJson(
+        _$TrackedTenvioPackageImpl instance) =>
+    <String, dynamic>{
+      'trackingId': instance.trackingId,
+      'status': const TenvioPackageStatusConverter().toJson(instance.status),
+      'driverName': instance.driverName,
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+      'destinationLatitude': instance.destinationLatitude,
+      'destinationLongitude': instance.destinationLongitude,
+      'history': instance.history.map((e) => e.toJson()).toList(),
+      'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
+    };
+
+_$TenvioPackageHistoryImpl _$$TenvioPackageHistoryImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioPackageHistoryImpl(
+      status: const TenvioPackageStatusConverter()
+          .fromJson(json['status'] as String),
+      latitude: (json['latitude'] as num?)?.toDouble(),
+      longitude: (json['longitude'] as num?)?.toDouble(),
+      updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
+    );
+
+Map<String, dynamic> _$$TenvioPackageHistoryImplToJson(
+        _$TenvioPackageHistoryImpl instance) =>
+    <String, dynamic>{
+      'status': const TenvioPackageStatusConverter().toJson(instance.status),
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+      'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
+    };
+
 _$TenvioItemQuantityImpl _$$TenvioItemQuantityImplFromJson(
         Map<String, dynamic> json) =>
     _$TenvioItemQuantityImpl(

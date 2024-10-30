@@ -72,3 +72,64 @@ class TenvioPackageQuantity with _$TenvioPackageQuantity {
 
   factory TenvioPackageQuantity.fromJson(Map<String, dynamic> json) => _$TenvioPackageQuantityFromJson(json);
 }
+
+@freezed
+class TrackedTenvioPackage with _$TrackedTenvioPackage {
+  const TrackedTenvioPackage._();
+
+  const factory TrackedTenvioPackage({
+    /// [trackingId] is the unique identifier of the tracking of the package.
+    /// The equivalent to the tracking number of a package.
+    required String trackingId,
+
+    /// [status] is the status of the package.
+    @TenvioPackageStatusConverter() required TenvioPackageStatus status,
+
+    /// [driverName] is the name of the driver that is currently handling the package.
+    /// This field is only available when the [status] is [TenvioPackageStatus.arrivingSoon].
+    String? driverName,
+
+    /// [latitude] is the latitude of the package, based on the driver's location.
+    /// This information is only provided when the [status] is [TenvioPackageStatus.arrivingSoon].
+    double? latitude,
+
+    /// [longitude] is the longitude of the package, based on the driver's location.
+    /// This information is only provided when the [status] is [TenvioPackageStatus.arrivingSoon].
+    double? longitude,
+
+    /// [destinationLatitude] is the latitude of the destination of the package.
+    double? destinationLatitude,
+
+    /// [destinationLongitude] is the longitude of the destination of the package.
+    double? destinationLongitude,
+
+    /// [history] is the list of the history of the package.
+    required List<TenvioPackageHistory> history,
+
+    /// [updatedAt] is the date when the package was last updated.
+    @TimestampConverter() required DateTime updatedAt,
+  }) = _TrackedTenvioPackage;
+
+  factory TrackedTenvioPackage.fromJson(Map<String, dynamic> json) => _$TrackedTenvioPackageFromJson(json);
+}
+
+@freezed
+class TenvioPackageHistory with _$TenvioPackageHistory {
+  const TenvioPackageHistory._();
+
+  const factory TenvioPackageHistory({
+    /// [status] is the status of the package.
+    @TenvioPackageStatusConverter() required TenvioPackageStatus status,
+
+    /// [latitude] is the latitude of the history change, based on the driver's location.
+    double? latitude,
+
+    /// [longitude] is the longitude of the history change, based on the driver's location.
+    double? longitude,
+
+    /// [updatedAt] is the date when the package was last updated.
+    @TimestampConverter() required DateTime updatedAt,
+  }) = _TenvioPackageHistory;
+
+  factory TenvioPackageHistory.fromJson(Map<String, dynamic> json) => _$TenvioPackageHistoryFromJson(json);
+}

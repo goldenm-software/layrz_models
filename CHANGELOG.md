@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.47
+
+- Added `TrackedTenvioPackage` and `TenvioPackageHistory` models
+
 ## 3.2.45
 
 - Changed `BHSPermissionTierInput` to `@unfreezed`
