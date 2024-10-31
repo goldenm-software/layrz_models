@@ -52,6 +52,9 @@ class TenvioPackage with _$TenvioPackage {
 
     /// [isCurrent] indicates that this package is currently setted by the driver to next to be delivered
     @Default(false) bool isCurrent,
+
+    /// [history] is the list of the history of the package.
+    List<TenvioPackageHistory>? history,
   }) = _TenvioPackage;
 
   factory TenvioPackage.fromJson(Map<String, dynamic> json) => _$TenvioPackageFromJson(json);
@@ -129,6 +132,12 @@ class TenvioPackageHistory with _$TenvioPackageHistory {
 
     /// [updatedAt] is the date when the package was last updated.
     @TimestampConverter() required DateTime updatedAt,
+
+    /// [madeBy] is the user that made the change.
+    User? madeBy,
+
+    /// [images] is the list of images that are related to the history change.
+    List<String>? images,
   }) = _TenvioPackageHistory;
 
   factory TenvioPackageHistory.fromJson(Map<String, dynamic> json) => _$TenvioPackageHistoryFromJson(json);

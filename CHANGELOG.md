@@ -1,6 +1,12 @@
 # Changelog
 
+## 3.2.49
+
+- Added `images` and `madeBy` fields into `TenvioPackageHistory` model
+- Added `history` field into `TenvioPackage` model
+
 ## 3.2.48
+
 - Added `AtsFuelSubType` `toCProdANP()` and new colors in `getColor()`
 - Added ` getColor()` in `AtsFuelType` and add `arla32`in this enum
 - Added `AtsCfFuelType` and this converter
