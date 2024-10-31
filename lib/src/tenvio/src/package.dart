@@ -55,6 +55,9 @@ class TenvioPackage with _$TenvioPackage {
 
     /// [history] is the list of the history of the package.
     List<TenvioPackageHistory>? history,
+
+    /// [requiresPhotos] indicates if the package requires photos to be taken.
+    @Default(false) bool requiresPhotos,
   }) = _TenvioPackage;
 
   factory TenvioPackage.fromJson(Map<String, dynamic> json) => _$TenvioPackageFromJson(json);

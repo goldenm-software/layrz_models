@@ -169,6 +169,7 @@ _$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
       history: (json['history'] as List<dynamic>?)
           ?.map((e) => TenvioPackageHistory.fromJson(e as Map<String, dynamic>))
           .toList(),
+      requiresPhotos: json['requiresPhotos'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
@@ -191,6 +192,7 @@ Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
       'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
       'isCurrent': instance.isCurrent,
       'history': instance.history?.map((e) => e.toJson()).toList(),
+      'requiresPhotos': instance.requiresPhotos,
     };
 
 _$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(

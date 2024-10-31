@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.50
+
+- Added `requiresPhotos` on `TenvioPackage` model
+
 ## 3.2.49
 
 - Added `images` and `madeBy` fields into `TenvioPackageHistory` model

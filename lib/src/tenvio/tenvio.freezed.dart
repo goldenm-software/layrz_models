@@ -1670,6 +1670,9 @@ mixin _$TenvioPackage {
   /// [history] is the list of the history of the package.
   List<TenvioPackageHistory>? get history => throw _privateConstructorUsedError;
 
+  /// [requiresPhotos] indicates if the package requires photos to be taken.
+  bool get requiresPhotos => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioPackageCopyWith<TenvioPackage> get copyWith =>
@@ -1700,7 +1703,8 @@ abstract class $TenvioPackageCopyWith<$Res> {
       @TimestampConverter() DateTime createdAt,
       @TimestampConverter() DateTime updatedAt,
       bool isCurrent,
-      List<TenvioPackageHistory>? history});
+      List<TenvioPackageHistory>? history,
+      bool requiresPhotos});
 
   $AssetCopyWith<$Res>? get warehouse;
   $AssetCopyWith<$Res>? get destinationWarehouse;
@@ -1738,6 +1742,7 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
     Object? updatedAt = null,
     Object? isCurrent = null,
     Object? history = freezed,
+    Object? requiresPhotos = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1808,6 +1813,10 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
           ? _value.history
           : history // ignore: cast_nullable_to_non_nullable
               as List<TenvioPackageHistory>?,
+      requiresPhotos: null == requiresPhotos
+          ? _value.requiresPhotos
+          : requiresPhotos // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -1887,7 +1896,8 @@ abstract class _$$TenvioPackageImplCopyWith<$Res>
       @TimestampConverter() DateTime createdAt,
       @TimestampConverter() DateTime updatedAt,
       bool isCurrent,
-      List<TenvioPackageHistory>? history});
+      List<TenvioPackageHistory>? history,
+      bool requiresPhotos});
 
   @override
   $AssetCopyWith<$Res>? get warehouse;
@@ -1927,6 +1937,7 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
     Object? updatedAt = null,
     Object? isCurrent = null,
     Object? history = freezed,
+    Object? requiresPhotos = null,
   }) {
     return _then(_$TenvioPackageImpl(
       id: null == id
@@ -1997,6 +2008,10 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
           ? _value._history
           : history // ignore: cast_nullable_to_non_nullable
               as List<TenvioPackageHistory>?,
+      requiresPhotos: null == requiresPhotos
+          ? _value.requiresPhotos
+          : requiresPhotos // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -2021,7 +2036,8 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       @TimestampConverter() required this.createdAt,
       @TimestampConverter() required this.updatedAt,
       this.isCurrent = false,
-      final List<TenvioPackageHistory>? history})
+      final List<TenvioPackageHistory>? history,
+      this.requiresPhotos = false})
       : _items = items,
         _history = history;
 
@@ -2121,9 +2137,14 @@ class _$TenvioPackageImpl implements _TenvioPackage {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [requiresPhotos] indicates if the package requires photos to be taken.
+  @override
+  @JsonKey()
+  final bool requiresPhotos;
+
   @override
   String toString() {
-    return 'TenvioPackage(id: $id, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, qrCode: $qrCode, items: $items, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, isCurrent: $isCurrent, history: $history)';
+    return 'TenvioPackage(id: $id, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, qrCode: $qrCode, items: $items, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, isCurrent: $isCurrent, history: $history, requiresPhotos: $requiresPhotos)';
   }
 
   @override
@@ -2160,7 +2181,9 @@ class _$TenvioPackageImpl implements _TenvioPackage {
                 other.updatedAt == updatedAt) &&
             (identical(other.isCurrent, isCurrent) ||
                 other.isCurrent == isCurrent) &&
-            const DeepCollectionEquality().equals(other._history, _history));
+            const DeepCollectionEquality().equals(other._history, _history) &&
+            (identical(other.requiresPhotos, requiresPhotos) ||
+                other.requiresPhotos == requiresPhotos));
   }
 
   @JsonKey(ignore: true)
@@ -2183,7 +2206,8 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       createdAt,
       updatedAt,
       isCurrent,
-      const DeepCollectionEquality().hash(_history));
+      const DeepCollectionEquality().hash(_history),
+      requiresPhotos);
 
   @JsonKey(ignore: true)
   @override
@@ -2218,7 +2242,8 @@ abstract class _TenvioPackage implements TenvioPackage {
       @TimestampConverter() required final DateTime createdAt,
       @TimestampConverter() required final DateTime updatedAt,
       final bool isCurrent,
-      final List<TenvioPackageHistory>? history}) = _$TenvioPackageImpl;
+      final List<TenvioPackageHistory>? history,
+      final bool requiresPhotos}) = _$TenvioPackageImpl;
 
   factory _TenvioPackage.fromJson(Map<String, dynamic> json) =
       _$TenvioPackageImpl.fromJson;
@@ -2297,6 +2322,10 @@ abstract class _TenvioPackage implements TenvioPackage {
 
   /// [history] is the list of the history of the package.
   List<TenvioPackageHistory>? get history;
+  @override
+
+  /// [requiresPhotos] indicates if the package requires photos to be taken.
+  bool get requiresPhotos;
   @override
   @JsonKey(ignore: true)
   _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>
