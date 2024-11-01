@@ -24,7 +24,7 @@ enum AtsCfFuelType {
       case AtsCfFuelType.disels10:
         return 'DIESELS10';
       case AtsCfFuelType.disels500:
-        return 'DIESEL500';
+        return 'DIESELS500';
       case AtsCfFuelType.arla32:
         return 'ARLA32';
     }
@@ -40,7 +40,7 @@ enum AtsCfFuelType {
         return AtsCfFuelType.gasolinaP;
       case 'DIESELS10':
         return AtsCfFuelType.disels10;
-      case 'DIESEL500':
+      case 'DIESELS500':
         return AtsCfFuelType.disels500;
       case 'ARLA32':
         return AtsCfFuelType.arla32;
