@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.2.49
+- Fix in `AtsCfFuelType` dieselS500 fromJson() and toJson()
+
 ## 3.2.48
 - Added `AtsFuelSubType` `toCProdANP()` and new colors in `getColor()`
 - Added ` getColor()` in `AtsFuelType` and add `arla32`in this enum
