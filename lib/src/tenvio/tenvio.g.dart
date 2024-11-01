@@ -166,6 +166,10 @@ _$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
       updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
       isCurrent: json['isCurrent'] as bool? ?? false,
+      history: (json['history'] as List<dynamic>?)
+          ?.map((e) => TenvioPackageHistory.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      requiresPhotos: json['requiresPhotos'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
@@ -187,6 +191,8 @@ Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
       'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
       'isCurrent': instance.isCurrent,
+      'history': instance.history?.map((e) => e.toJson()).toList(),
+      'requiresPhotos': instance.requiresPhotos,
     };
 
 _$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(
@@ -246,6 +252,11 @@ _$TenvioPackageHistoryImpl _$$TenvioPackageHistoryImplFromJson(
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
+      madeBy: json['madeBy'] == null
+          ? null
+          : User.fromJson(json['madeBy'] as Map<String, dynamic>),
+      images:
+          (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
 Map<String, dynamic> _$$TenvioPackageHistoryImplToJson(
@@ -255,6 +266,8 @@ Map<String, dynamic> _$$TenvioPackageHistoryImplToJson(
       'latitude': instance.latitude,
       'longitude': instance.longitude,
       'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
+      'madeBy': instance.madeBy?.toJson(),
+      'images': instance.images,
     };
 
 _$TenvioItemQuantityImpl _$$TenvioItemQuantityImplFromJson(

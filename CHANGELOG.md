@@ -1,9 +1,19 @@
 # Changelog
 
-## 3.2.49
+## 3.2.51
+
 - Fix in `AtsCfFuelType` dieselS500 fromJson() and toJson()
+## 3.2.50
+
+- Added `requiresPhotos` on `TenvioPackage` model
+
+## 3.2.49
+
+- Added `images` and `madeBy` fields into `TenvioPackageHistory` model
+- Added `history` field into `TenvioPackage` model
 
 ## 3.2.48
+
 - Added `AtsFuelSubType` `toCProdANP()` and new colors in `getColor()`
 - Added ` getColor()` in `AtsFuelType` and add `arla32`in this enum
 - Added `AtsCfFuelType` and this converter

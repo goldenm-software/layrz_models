@@ -1667,6 +1667,12 @@ mixin _$TenvioPackage {
   /// [isCurrent] indicates that this package is currently setted by the driver to next to be delivered
   bool get isCurrent => throw _privateConstructorUsedError;
 
+  /// [history] is the list of the history of the package.
+  List<TenvioPackageHistory>? get history => throw _privateConstructorUsedError;
+
+  /// [requiresPhotos] indicates if the package requires photos to be taken.
+  bool get requiresPhotos => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioPackageCopyWith<TenvioPackage> get copyWith =>
@@ -1696,7 +1702,9 @@ abstract class $TenvioPackageCopyWith<$Res> {
       @TenvioPackageStatusConverter() TenvioPackageStatus status,
       @TimestampConverter() DateTime createdAt,
       @TimestampConverter() DateTime updatedAt,
-      bool isCurrent});
+      bool isCurrent,
+      List<TenvioPackageHistory>? history,
+      bool requiresPhotos});
 
   $AssetCopyWith<$Res>? get warehouse;
   $AssetCopyWith<$Res>? get destinationWarehouse;
@@ -1733,6 +1741,8 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
     Object? createdAt = null,
     Object? updatedAt = null,
     Object? isCurrent = null,
+    Object? history = freezed,
+    Object? requiresPhotos = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1798,6 +1808,14 @@ class _$TenvioPackageCopyWithImpl<$Res, $Val extends TenvioPackage>
       isCurrent: null == isCurrent
           ? _value.isCurrent
           : isCurrent // ignore: cast_nullable_to_non_nullable
+              as bool,
+      history: freezed == history
+          ? _value.history
+          : history // ignore: cast_nullable_to_non_nullable
+              as List<TenvioPackageHistory>?,
+      requiresPhotos: null == requiresPhotos
+          ? _value.requiresPhotos
+          : requiresPhotos // ignore: cast_nullable_to_non_nullable
               as bool,
     ) as $Val);
   }
@@ -1877,7 +1895,9 @@ abstract class _$$TenvioPackageImplCopyWith<$Res>
       @TenvioPackageStatusConverter() TenvioPackageStatus status,
       @TimestampConverter() DateTime createdAt,
       @TimestampConverter() DateTime updatedAt,
-      bool isCurrent});
+      bool isCurrent,
+      List<TenvioPackageHistory>? history,
+      bool requiresPhotos});
 
   @override
   $AssetCopyWith<$Res>? get warehouse;
@@ -1916,6 +1936,8 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
     Object? createdAt = null,
     Object? updatedAt = null,
     Object? isCurrent = null,
+    Object? history = freezed,
+    Object? requiresPhotos = null,
   }) {
     return _then(_$TenvioPackageImpl(
       id: null == id
@@ -1982,6 +2004,14 @@ class __$$TenvioPackageImplCopyWithImpl<$Res>
           ? _value.isCurrent
           : isCurrent // ignore: cast_nullable_to_non_nullable
               as bool,
+      history: freezed == history
+          ? _value._history
+          : history // ignore: cast_nullable_to_non_nullable
+              as List<TenvioPackageHistory>?,
+      requiresPhotos: null == requiresPhotos
+          ? _value.requiresPhotos
+          : requiresPhotos // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -2005,8 +2035,11 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       @TenvioPackageStatusConverter() required this.status,
       @TimestampConverter() required this.createdAt,
       @TimestampConverter() required this.updatedAt,
-      this.isCurrent = false})
-      : _items = items;
+      this.isCurrent = false,
+      final List<TenvioPackageHistory>? history,
+      this.requiresPhotos = false})
+      : _items = items,
+        _history = history;
 
   factory _$TenvioPackageImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioPackageImplFromJson(json);
@@ -2091,9 +2124,27 @@ class _$TenvioPackageImpl implements _TenvioPackage {
   @JsonKey()
   final bool isCurrent;
 
+  /// [history] is the list of the history of the package.
+  final List<TenvioPackageHistory>? _history;
+
+  /// [history] is the list of the history of the package.
+  @override
+  List<TenvioPackageHistory>? get history {
+    final value = _history;
+    if (value == null) return null;
+    if (_history is EqualUnmodifiableListView) return _history;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [requiresPhotos] indicates if the package requires photos to be taken.
+  @override
+  @JsonKey()
+  final bool requiresPhotos;
+
   @override
   String toString() {
-    return 'TenvioPackage(id: $id, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, qrCode: $qrCode, items: $items, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, isCurrent: $isCurrent)';
+    return 'TenvioPackage(id: $id, trackingId: $trackingId, warehouseId: $warehouseId, warehouse: $warehouse, qrCode: $qrCode, items: $items, destinationType: $destinationType, destinationWarehouse: $destinationWarehouse, destinationWarehouseId: $destinationWarehouseId, destinationUser: $destinationUser, destinationUserId: $destinationUserId, destinationUnregistered: $destinationUnregistered, status: $status, createdAt: $createdAt, updatedAt: $updatedAt, isCurrent: $isCurrent, history: $history, requiresPhotos: $requiresPhotos)';
   }
 
   @override
@@ -2129,7 +2180,10 @@ class _$TenvioPackageImpl implements _TenvioPackage {
             (identical(other.updatedAt, updatedAt) ||
                 other.updatedAt == updatedAt) &&
             (identical(other.isCurrent, isCurrent) ||
-                other.isCurrent == isCurrent));
+                other.isCurrent == isCurrent) &&
+            const DeepCollectionEquality().equals(other._history, _history) &&
+            (identical(other.requiresPhotos, requiresPhotos) ||
+                other.requiresPhotos == requiresPhotos));
   }
 
   @JsonKey(ignore: true)
@@ -2151,7 +2205,9 @@ class _$TenvioPackageImpl implements _TenvioPackage {
       status,
       createdAt,
       updatedAt,
-      isCurrent);
+      isCurrent,
+      const DeepCollectionEquality().hash(_history),
+      requiresPhotos);
 
   @JsonKey(ignore: true)
   @override
@@ -2185,7 +2241,9 @@ abstract class _TenvioPackage implements TenvioPackage {
       @TenvioPackageStatusConverter() required final TenvioPackageStatus status,
       @TimestampConverter() required final DateTime createdAt,
       @TimestampConverter() required final DateTime updatedAt,
-      final bool isCurrent}) = _$TenvioPackageImpl;
+      final bool isCurrent,
+      final List<TenvioPackageHistory>? history,
+      final bool requiresPhotos}) = _$TenvioPackageImpl;
 
   factory _TenvioPackage.fromJson(Map<String, dynamic> json) =
       _$TenvioPackageImpl.fromJson;
@@ -2260,6 +2318,14 @@ abstract class _TenvioPackage implements TenvioPackage {
 
   /// [isCurrent] indicates that this package is currently setted by the driver to next to be delivered
   bool get isCurrent;
+  @override
+
+  /// [history] is the list of the history of the package.
+  List<TenvioPackageHistory>? get history;
+  @override
+
+  /// [requiresPhotos] indicates if the package requires photos to be taken.
+  bool get requiresPhotos;
   @override
   @JsonKey(ignore: true)
   _$$TenvioPackageImplCopyWith<_$TenvioPackageImpl> get copyWith =>
@@ -2899,6 +2965,12 @@ mixin _$TenvioPackageHistory {
   @TimestampConverter()
   DateTime get updatedAt => throw _privateConstructorUsedError;
 
+  /// [madeBy] is the user that made the change.
+  User? get madeBy => throw _privateConstructorUsedError;
+
+  /// [images] is the list of images that are related to the history change.
+  List<String>? get images => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $TenvioPackageHistoryCopyWith<TenvioPackageHistory> get copyWith =>
@@ -2915,7 +2987,11 @@ abstract class $TenvioPackageHistoryCopyWith<$Res> {
       {@TenvioPackageStatusConverter() TenvioPackageStatus status,
       double? latitude,
       double? longitude,
-      @TimestampConverter() DateTime updatedAt});
+      @TimestampConverter() DateTime updatedAt,
+      User? madeBy,
+      List<String>? images});
+
+  $UserCopyWith<$Res>? get madeBy;
 }
 
 /// @nodoc
@@ -2936,6 +3012,8 @@ class _$TenvioPackageHistoryCopyWithImpl<$Res,
     Object? latitude = freezed,
     Object? longitude = freezed,
     Object? updatedAt = null,
+    Object? madeBy = freezed,
+    Object? images = freezed,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -2954,7 +3032,27 @@ class _$TenvioPackageHistoryCopyWithImpl<$Res,
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      madeBy: freezed == madeBy
+          ? _value.madeBy
+          : madeBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+      images: freezed == images
+          ? _value.images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<$Res>? get madeBy {
+    if (_value.madeBy == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.madeBy!, (value) {
+      return _then(_value.copyWith(madeBy: value) as $Val);
+    });
   }
 }
 
@@ -2970,7 +3068,12 @@ abstract class _$$TenvioPackageHistoryImplCopyWith<$Res>
       {@TenvioPackageStatusConverter() TenvioPackageStatus status,
       double? latitude,
       double? longitude,
-      @TimestampConverter() DateTime updatedAt});
+      @TimestampConverter() DateTime updatedAt,
+      User? madeBy,
+      List<String>? images});
+
+  @override
+  $UserCopyWith<$Res>? get madeBy;
 }
 
 /// @nodoc
@@ -2988,6 +3091,8 @@ class __$$TenvioPackageHistoryImplCopyWithImpl<$Res>
     Object? latitude = freezed,
     Object? longitude = freezed,
     Object? updatedAt = null,
+    Object? madeBy = freezed,
+    Object? images = freezed,
   }) {
     return _then(_$TenvioPackageHistoryImpl(
       status: null == status
@@ -3006,6 +3111,14 @@ class __$$TenvioPackageHistoryImplCopyWithImpl<$Res>
           ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      madeBy: freezed == madeBy
+          ? _value.madeBy
+          : madeBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+      images: freezed == images
+          ? _value._images
+          : images // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -3017,8 +3130,11 @@ class _$TenvioPackageHistoryImpl extends _TenvioPackageHistory {
       {@TenvioPackageStatusConverter() required this.status,
       this.latitude,
       this.longitude,
-      @TimestampConverter() required this.updatedAt})
-      : super._();
+      @TimestampConverter() required this.updatedAt,
+      this.madeBy,
+      final List<String>? images})
+      : _images = images,
+        super._();
 
   factory _$TenvioPackageHistoryImpl.fromJson(Map<String, dynamic> json) =>
       _$$TenvioPackageHistoryImplFromJson(json);
@@ -3041,9 +3157,26 @@ class _$TenvioPackageHistoryImpl extends _TenvioPackageHistory {
   @TimestampConverter()
   final DateTime updatedAt;
 
+  /// [madeBy] is the user that made the change.
+  @override
+  final User? madeBy;
+
+  /// [images] is the list of images that are related to the history change.
+  final List<String>? _images;
+
+  /// [images] is the list of images that are related to the history change.
+  @override
+  List<String>? get images {
+    final value = _images;
+    if (value == null) return null;
+    if (_images is EqualUnmodifiableListView) return _images;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'TenvioPackageHistory(status: $status, latitude: $latitude, longitude: $longitude, updatedAt: $updatedAt)';
+    return 'TenvioPackageHistory(status: $status, latitude: $latitude, longitude: $longitude, updatedAt: $updatedAt, madeBy: $madeBy, images: $images)';
   }
 
   @override
@@ -3057,13 +3190,15 @@ class _$TenvioPackageHistoryImpl extends _TenvioPackageHistory {
             (identical(other.longitude, longitude) ||
                 other.longitude == longitude) &&
             (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt));
+                other.updatedAt == updatedAt) &&
+            (identical(other.madeBy, madeBy) || other.madeBy == madeBy) &&
+            const DeepCollectionEquality().equals(other._images, _images));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, status, latitude, longitude, updatedAt);
+  int get hashCode => Object.hash(runtimeType, status, latitude, longitude,
+      updatedAt, madeBy, const DeepCollectionEquality().hash(_images));
 
   @JsonKey(ignore: true)
   @override
@@ -3083,12 +3218,13 @@ class _$TenvioPackageHistoryImpl extends _TenvioPackageHistory {
 
 abstract class _TenvioPackageHistory extends TenvioPackageHistory {
   const factory _TenvioPackageHistory(
-          {@TenvioPackageStatusConverter()
-          required final TenvioPackageStatus status,
-          final double? latitude,
-          final double? longitude,
-          @TimestampConverter() required final DateTime updatedAt}) =
-      _$TenvioPackageHistoryImpl;
+      {@TenvioPackageStatusConverter()
+      required final TenvioPackageStatus status,
+      final double? latitude,
+      final double? longitude,
+      @TimestampConverter() required final DateTime updatedAt,
+      final User? madeBy,
+      final List<String>? images}) = _$TenvioPackageHistoryImpl;
   const _TenvioPackageHistory._() : super._();
 
   factory _TenvioPackageHistory.fromJson(Map<String, dynamic> json) =
@@ -3112,6 +3248,14 @@ abstract class _TenvioPackageHistory extends TenvioPackageHistory {
   /// [updatedAt] is the date when the package was last updated.
   @TimestampConverter()
   DateTime get updatedAt;
+  @override
+
+  /// [madeBy] is the user that made the change.
+  User? get madeBy;
+  @override
+
+  /// [images] is the list of images that are related to the history change.
+  List<String>? get images;
   @override
   @JsonKey(ignore: true)
   _$$TenvioPackageHistoryImplCopyWith<_$TenvioPackageHistoryImpl>
