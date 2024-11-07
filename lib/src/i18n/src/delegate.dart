@@ -142,7 +142,20 @@ class LayrzAppLocalizations {
   /// The translated string
   /// Note: If the translation is not found, it will return the "Translation missing $key" string
   /// Also, if the developer mode is on, it will return the key and the arguments as a json string
-  String translate(String key, [Map<String, dynamic> args = const {}]) {
+  @Deprecated('`translate()` was deprecated in favor of `t()`. Please use `t()` instead.')
+  String translate(String key, [Map<String, dynamic> args = const {}]) => t(key, args);
+
+  /// [t] is used to translate a string
+  ///
+  /// Arguments:
+  /// [key] is the key of the translation
+  /// [args] is a map of arguments to replace in the translation
+  ///
+  /// Returns:
+  /// The translated string
+  /// Note: If the translation is not found, it will return the "Translation missing $key" string
+  /// Also, if the developer mode is on, it will return the key and the arguments as a json string
+  String t(String key, [Map<String, dynamic> args = const {}]) {
     if (developerMode) {
       return '$key : ${jsonEncode(args)}';
     }
@@ -155,18 +168,6 @@ class LayrzAppLocalizations {
 
     return res;
   }
-
-  /// [t] is a shorthand for [translate]
-  ///
-  /// Arguments:
-  /// [key] is the key of the translation
-  /// [args] is a map of arguments to replace in the translation
-  ///
-  /// Returns:
-  /// The translated string
-  /// Note: If the translation is not found, it will return the "Translation missing $key" string
-  /// Also, if the developer mode is on, it will return the key and the arguments as a json string
-  String t(String key, [Map<String, dynamic> args = const {}]) => translate(key, args);
 
   /// [tc] is a translation for count
   /// The key should have two translations separated by a pipe (|)
@@ -186,7 +187,7 @@ class LayrzAppLocalizations {
     if (developerMode) {
       return '$key|$val : ${jsonEncode(args)}';
     }
-    List<String> rawTranslation = translate(key, args).split(' | ');
+    List<String> rawTranslation = t(key, args).split(' | ');
 
     if (val == null) {
       if (rawTranslation.length == 1) {
@@ -205,6 +206,232 @@ class LayrzAppLocalizations {
     } else {
       return rawTranslation[1];
     }
+  }
+
+  /// [te] means Translate Enriched
+  /// Works similar to [t] but it will return a [TextSpan].
+  /// Similar to [t], it will replace the arguments in the translation using `{key}` format, but
+  /// adds new variable marker called `[var]` to replace the arguments with a [TextSpan].
+  ///
+  /// Arguments:
+  /// [key] is the key of the translation
+  /// [args] is a map of arguments to replace in the translation
+  /// [richArgs] is a map of arguments to replace in the translation with a [TextSpan]
+  /// [style] is the style to apply to the [TextSpan]
+  ///
+  /// Returns:
+  /// A [TextSpan] with the translated string
+  /// Note: If the translation is not found, it will return the "Translation missing $key" string
+  /// Also, if the developer mode is on, it will return the key and the arguments as a json string
+  ///
+  /// Example usage:
+  /// ```dart
+  /// RichText(
+  ///   text: TextSpan(
+  ///     children: [
+  ///       TextSpan(
+  ///         text: "Example -> ",
+  ///         style: Theme.of(context).textTheme.bodyMedium,
+  ///       ),
+  ///       i18n.te(
+  ///         'my.awesome.translation.key', // Will translate to "Hello [text]"
+  ///         richArgs: {
+  ///           'text': WidgetSpan(
+  ///             // alignment is optional, but we suggest to use it due to a placement differences between
+  ///             // TextSpan and WidgetSpan
+  ///             alignment: PlaceholderAlignment.middle,
+  ///             child: Container(
+  ///               color: Colors.green,
+  ///               child: InkWell(
+  ///                 onTap: () => debugPrint('Hello World'),
+  ///                 child: Text(
+  ///                   'Mundo',
+  ///                   style: TextStyle(
+  ///                     color: Colors.white,
+  ///                     decoration: TextDecoration.underline,
+  ///                     decorationColor: Colors.white,
+  ///                   ),
+  ///                 ),
+  ///               ),
+  ///             ),
+  ///           ),
+  ///         },
+  ///         style: Theme.of(context).textTheme.bodyMedium,
+  ///       ),
+  ///     ],
+  ///   ),
+  /// );
+  /// ```
+  TextSpan te(
+    String key, {
+    Map<String, dynamic> args = const {},
+    Map<String, InlineSpan> richArgs = const {},
+    TextStyle? style,
+    EdgeInsets padding = EdgeInsets.zero,
+  }) {
+    if (developerMode) {
+      return TextSpan(
+        text: '$key : args: ${jsonEncode(args)} | richArgs.keys: ${richArgs.keys}',
+        style: style,
+      );
+    }
+
+    String baseText = t(key, args);
+
+    final items = _deepReplace(items: [baseText], richArgs: richArgs, style: style);
+
+    return TextSpan(
+      children: items
+          .map((item) {
+            if (item is String) return TextSpan(text: item, style: style);
+            if (item is InlineSpan) return item;
+            return null;
+          })
+          .whereNotNull()
+          .toList(),
+      style: style,
+    );
+  }
+
+  /// [tce] means Translate Count Enriched
+  /// Works similar to [tc] but it will return a [TextSpan].
+  /// Similar to [tc], it will replace the arguments in the translation using `{key}` format, but
+  /// adds new variable marker called `[var]` to replace the arguments with a [TextSpan].
+  /// The key should have two translations separated by a pipe (|)
+  /// If the count is 1, it will return the first translation
+  ///
+  /// Arguments:
+  /// [key] is the key of the translation
+  /// [val] is the count to determine which translation to use
+  /// [args] is a map of arguments to replace in the translation
+  /// [richArgs] is a map of arguments to replace in the translation with a [TextSpan]
+  /// [style] is the style to apply to the [TextSpan]
+  ///
+  /// Returns:
+  /// A [TextSpan] with the translated string
+  /// Note: If the translation is not found, it will return the "Translation missing $key" string
+  /// Also, if the developer mode is on, it will return the key and the arguments as a json string
+  ///
+  ///
+  /// Example usage:
+  /// ```dart
+  /// RichText(
+  ///   text: TextSpan(
+  ///     children: [
+  ///       TextSpan(
+  ///         text: "Example -> ",
+  ///         style: Theme.of(context).textTheme.bodyMedium,
+  ///       ),
+  ///       i18n.tce(
+  ///         'my.awesome.translation.key', // Will translate to "Hello [text] | Hola [text]"
+  ///         5, // With this, your ouput will be "Hola [text]", because the count is not 1
+  ///         richArgs: {
+  ///           'text': WidgetSpan(
+  ///             // alignment is optional, but we suggest to use it due to a placement differences between
+  ///             // TextSpan and WidgetSpan
+  ///             alignment: PlaceholderAlignment.middle,
+  ///             child: Container(
+  ///               color: Colors.green,
+  ///               child: InkWell(
+  ///                 onTap: () => debugPrint('Hello World'),
+  ///                 child: Text(
+  ///                   'Mundo',
+  ///                   style: TextStyle(
+  ///                     color: Colors.white,
+  ///                     decoration: TextDecoration.underline,
+  ///                     decorationColor: Colors.white,
+  ///                   ),
+  ///                 ),
+  ///               ),
+  ///             ),
+  ///           ),
+  ///         },
+  ///         style: Theme.of(context).textTheme.bodyMedium,
+  ///       ),
+  ///     ],
+  ///   ),
+  /// );
+  /// ```
+  TextSpan tce(
+    String key,
+    int? val, {
+    Map<String, dynamic> args = const {},
+    Map<String, InlineSpan> richArgs = const {},
+    TextStyle? style,
+  }) {
+    if (developerMode) {
+      return TextSpan(
+        text: '$key | $val : args: ${jsonEncode(args)} | richArgs.keys: ${richArgs.keys}',
+        style: style,
+      );
+    }
+
+    String baseText = tc(key, val, args);
+
+    final items = _deepReplace(items: [baseText], richArgs: richArgs, style: style);
+
+    return TextSpan(
+      children: items
+          .map((item) {
+            if (item is String) return TextSpan(text: item, style: style);
+            if (item is InlineSpan) return item;
+            return null;
+          })
+          .whereNotNull()
+          .toList(),
+      style: style,
+    );
+  }
+
+  /// [_deepReplace] is a helper function to replace the arguments in the translation with a [TextSpan]
+  List _deepReplace({
+    required List<dynamic> items,
+    required Map<String, InlineSpan> richArgs,
+    TextStyle? style,
+  }) {
+    if (_requiresDeep(items: items, vars: richArgs.keys.toList())) {
+      final entry = richArgs.entries.firstWhereOrNull((entry) {
+        return items.any((item) {
+          if (item is String) {
+            return item.contains('[${entry.key}]');
+          }
+          return false;
+        });
+      });
+
+      if (entry == null) return items;
+
+      for (int i = 0; i < items.length; i++) {
+        if (items[i] is String) {
+          if (items[i].contains('[${entry.key}]')) {
+            final removed = items.removeAt(i);
+            final parts = removed.split('[${entry.key}]');
+
+            items.insert(i, parts[0]);
+            items.insert(i + 1, entry.value);
+            items.insert(i + 2, parts.sublist(1).join('[${entry.key}]'));
+            break;
+          }
+        }
+      }
+      return _deepReplace(items: items, richArgs: richArgs, style: style);
+    }
+    return items;
+  }
+
+  /// [_requiresDeep] is a helper function to check if the translation requires a deep replacement
+  /// This is used to avoid infinite loops
+  bool _requiresDeep({required List items, required List<String> vars}) {
+    for (var item in items) {
+      if (item is String) {
+        for (var varName in vars) {
+          if (item.contains('[$varName]')) {
+            return true;
+          }
+        }
+      }
+    }
+    return false;
   }
 
   /// [delegate] helps to you to get the [LocalizationsDelegate]

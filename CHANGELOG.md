@@ -1,8 +1,14 @@
 # Changelog
 
+## 3.2.52
+
+- Added `te()` and `tce()` to `LayrzAppLocalizations` to handle translations with [InlineSpan].
+- Marked as `@Deprecated` the `translate()` of `LayrzAppLocalizations` in favor of `t()` and `tc()`.
+
 ## 3.2.51
 
 - Fix in `AtsCfFuelType` dieselS500 fromJson() and toJson()
+
 ## 3.2.50
 
 - Added `requiresPhotos` on `TenvioPackage` model
