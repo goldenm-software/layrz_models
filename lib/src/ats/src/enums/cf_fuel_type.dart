@@ -14,7 +14,7 @@ enum AtsCfFuelType {
   String toJson() {
     switch (this) {
       case AtsCfFuelType.hydrated:
-        return 'ETANOL';
+        return 'HYDRATED';
       case AtsCfFuelType.gasolina:
         return 'GASOLINA';
       case AtsCfFuelType.diesel:
@@ -28,7 +28,7 @@ enum AtsCfFuelType {
 
   static AtsCfFuelType fromJson(String json) {
     switch (json) {
-      case 'ETANOL':
+      case 'HYDRATED':
         return AtsCfFuelType.hydrated;
       case 'GASOLINA':
         return AtsCfFuelType.gasolina;
