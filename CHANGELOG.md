@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.2.53
+- Rework `AtsCfFuelType` and `AtsFuelSubType`.
+
 ## 3.2.52
 
 - Added `te()` and `tce()` to `LayrzAppLocalizations` to handle translations with [InlineSpan].
