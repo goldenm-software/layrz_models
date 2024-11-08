@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.2.54
+- Fix `AtsCfFuelType.hydrated` toJson() and fromJson()
+
 ## 3.2.53
 - Rework `AtsCfFuelType` and `AtsFuelSubType`.
 
