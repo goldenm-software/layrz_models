@@ -48,6 +48,9 @@ class AtsEntry with _$AtsEntry {
     /// `fuelType` is the fuel type of the entry.
     String? fuelType,
 
+    /// `fuelSubtype` is the fuel subtype of the entry.
+    String? fuelSubtype,
+
     /// `temperature` is the temperature of the entry.
     double? temperature,
 

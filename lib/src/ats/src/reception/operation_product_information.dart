@@ -10,7 +10,7 @@ class OperationProductInformation with _$OperationProductInformation {
     double? quantity,
 
     /// subcategory of the product.
-    Map<String, dynamic>? subcategory,
+    String? subcategory,
 
     /// fuel type of the product.
     String? fuelType,

@@ -653,7 +653,7 @@ _$OperationProductInformationImpl _$$OperationProductInformationImplFromJson(
     _$OperationProductInformationImpl(
       category: json['category'] as String?,
       quantity: (json['quantity'] as num?)?.toDouble(),
-      subcategory: json['subcategory'] as Map<String, dynamic>?,
+      subcategory: json['subcategory'] as String?,
       fuelType: json['fuelType'] as String?,
     );
 
@@ -919,6 +919,7 @@ _$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>
           .toList(),
       isLinked: json['isLinked'] as bool?,
       fuelType: json['fuelType'] as String?,
+      fuelSubtype: json['fuelSubtype'] as String?,
       temperature: (json['temperature'] as num?)?.toDouble(),
       initialTemperature: (json['initialTemperature'] as num?)?.toDouble(),
       density: (json['density'] as num?)?.toDouble(),
@@ -945,6 +946,7 @@ Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
       'receptions': instance.receptions?.map((e) => e.toJson()).toList(),
       'isLinked': instance.isLinked,
       'fuelType': instance.fuelType,
+      'fuelSubtype': instance.fuelSubtype,
       'temperature': instance.temperature,
       'initialTemperature': instance.initialTemperature,
       'density': instance.density,

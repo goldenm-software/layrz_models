@@ -1,9 +1,17 @@
 # Changelog
 
+## 3.2.55
+
+- Update `OperationProductInformation` prop `subcategory` type
+- Added `fuelSubtype` on `AtsEntry` model
+- Update `AtsFuelSubType` enum, added `getLocaleKey` and `getFuelSubTypeList`
+
 ## 3.2.54
+
 - Fix `AtsCfFuelType.hydrated` toJson() and fromJson()
 
 ## 3.2.53
+
 - Rework `AtsCfFuelType` and `AtsFuelSubType`.
 
 ## 3.2.52
