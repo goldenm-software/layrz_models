@@ -209,37 +209,37 @@ enum AtsFuelSubType {
   String getLocaleKey() {
     switch (this) {
       case AtsFuelSubType.dieselS10A:
-        return 'ats.fuelSubType.dieselS10A';
+        return 'ats.fuelSubType.DIESEL_S10_A';
       case AtsFuelSubType.dieselS10B:
-        return 'ats.fuelSubType.dieselS10B';
+        return 'ats.fuelSubType.DIESEL_S10_B';
       case AtsFuelSubType.dieselS10BAditivado:
-        return 'ats.fuelSubType.dieselS10BAditivado';
+        return 'ats.fuelSubType.DIESEL_S10_B_ADITIVADO';
       case AtsFuelSubType.dieselS500A:
-        return 'ats.fuelSubType.dieselS500A';
+        return 'ats.fuelSubType.DIESEL_S500_A';
       case AtsFuelSubType.dieselS500B:
-        return 'ats.fuelSubType.dieselS500B';
+        return 'ats.fuelSubType.DIESEL_S500_B';
       case AtsFuelSubType.dieselS500BAditivado:
-        return 'ats.fuelSubType.dieselS500BAditivado';
+        return 'ats.fuelSubType.DIESEL_S500_B_ADITIVADO';
       case AtsFuelSubType.dieselMaritimo:
-        return 'ats.fuelSubType.dieselMaritimo';
+        return 'ats.fuelSubType.DIESEL_MARITIMO';
       case AtsFuelSubType.gasolineA:
-        return 'ats.fuelSubType.gasolineA';
+        return 'ats.fuelSubType.GASOLINE_A';
       case AtsFuelSubType.gasolineC:
-        return 'ats.fuelSubType.gasolineC';
+        return 'ats.fuelSubType.GASOLINE_C';
       case AtsFuelSubType.gasolineCAditivada:
-        return 'ats.fuelSubType.gasolineCAditivada';
+        return 'ats.fuelSubType.GASOLINE_C_ADITIVADA';
       case AtsFuelSubType.gasolineCPremium:
-        return 'ats.fuelSubType.gasolineCPremium';
+        return 'ats.fuelSubType.GASOLINE_C_PREMIUM';
       case AtsFuelSubType.ethanol:
-        return 'ats.fuelSubType.ethanol';
+        return 'ats.fuelSubType.ETHANOL';
       case AtsFuelSubType.ethanolAditivado:
-        return 'ats.fuelSubType.ethanolAditivado';
+        return 'ats.fuelSubType.ETHANOL_ADITIVADO';
       case AtsFuelSubType.anidro:
-        return 'ats.fuelSubType.anidro';
+        return 'ats.fuelSubType.ANIDRO';
       case AtsFuelSubType.arla32:
-        return 'ats.fuelSubType.arla32';
+        return 'ats.fuelSubType.ARLA32';
       case AtsFuelSubType.biodieselB100:
-        return 'ats.fuelSubType.biodieselB100';
+        return 'ats.fuelSubType.BIODIESEL_B100';
       default:
         throw Exception("Unknown AtsFuelSubType");
     }
