@@ -122,7 +122,7 @@ enum AtsFuelSubType {
       case AtsFuelSubType.gasolineCPremium:
         return '320102003';
       case AtsFuelSubType.ethanol:
-        return '810102001';
+        return '810101001';
       case AtsFuelSubType.ethanolAditivado:
         return '810101002';
       case AtsFuelSubType.anidro:
@@ -203,6 +203,84 @@ enum AtsFuelSubType {
         return const Color(0xFF2196f3);
       default:
         return const Color(0xFF000000);
+    }
+  }
+
+  String getLocaleKey() {
+    switch (this) {
+      case AtsFuelSubType.dieselS10A:
+        return 'ats.fuelSubType.dieselS10A';
+      case AtsFuelSubType.dieselS10B:
+        return 'ats.fuelSubType.dieselS10B';
+      case AtsFuelSubType.dieselS10BAditivado:
+        return 'ats.fuelSubType.dieselS10BAditivado';
+      case AtsFuelSubType.dieselS500A:
+        return 'ats.fuelSubType.dieselS500A';
+      case AtsFuelSubType.dieselS500B:
+        return 'ats.fuelSubType.dieselS500B';
+      case AtsFuelSubType.dieselS500BAditivado:
+        return 'ats.fuelSubType.dieselS500BAditivado';
+      case AtsFuelSubType.dieselMaritimo:
+        return 'ats.fuelSubType.dieselMaritimo';
+      case AtsFuelSubType.gasolineA:
+        return 'ats.fuelSubType.gasolineA';
+      case AtsFuelSubType.gasolineC:
+        return 'ats.fuelSubType.gasolineC';
+      case AtsFuelSubType.gasolineCAditivada:
+        return 'ats.fuelSubType.gasolineCAditivada';
+      case AtsFuelSubType.gasolineCPremium:
+        return 'ats.fuelSubType.gasolineCPremium';
+      case AtsFuelSubType.ethanol:
+        return 'ats.fuelSubType.ethanol';
+      case AtsFuelSubType.ethanolAditivado:
+        return 'ats.fuelSubType.ethanolAditivado';
+      case AtsFuelSubType.anidro:
+        return 'ats.fuelSubType.anidro';
+      case AtsFuelSubType.arla32:
+        return 'ats.fuelSubType.arla32';
+      case AtsFuelSubType.biodieselB100:
+        return 'ats.fuelSubType.biodieselB100';
+      default:
+        throw Exception("Unknown AtsFuelSubType");
+    }
+  }
+
+  List<AtsFuelSubType> getFuelSubTypeList(String? fuelType) {
+    if (fuelType == null) return [];
+
+    switch (fuelType) {
+      case 'DIESEL':
+        return [
+          AtsFuelSubType.dieselS10A,
+          AtsFuelSubType.dieselS10B,
+          AtsFuelSubType.dieselS10BAditivado,
+          AtsFuelSubType.dieselS500A,
+          AtsFuelSubType.dieselS500B,
+          AtsFuelSubType.dieselS500BAditivado,
+          AtsFuelSubType.dieselMaritimo,
+        ];
+
+      case 'GASOLINA':
+        return [
+          AtsFuelSubType.gasolineA,
+          AtsFuelSubType.gasolineC,
+          AtsFuelSubType.gasolineCAditivada,
+          AtsFuelSubType.gasolineCPremium,
+        ];
+
+      case 'HYDRATED':
+        return [
+          AtsFuelSubType.ethanol,
+          AtsFuelSubType.ethanolAditivado,
+          AtsFuelSubType.anidro,
+          AtsFuelSubType.arla32,
+        ];
+
+      case 'BIODIESEL':
+        return [AtsFuelSubType.biodieselB100];
+
+      default:
+        return [];
     }
   }
 }

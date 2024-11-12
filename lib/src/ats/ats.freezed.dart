@@ -7527,7 +7527,7 @@ mixin _$OperationProductInformation {
   double? get quantity => throw _privateConstructorUsedError;
 
   /// subcategory of the product.
-  Map<String, dynamic>? get subcategory => throw _privateConstructorUsedError;
+  String? get subcategory => throw _privateConstructorUsedError;
 
   /// fuel type of the product.
   String? get fuelType => throw _privateConstructorUsedError;
@@ -7549,7 +7549,7 @@ abstract class $OperationProductInformationCopyWith<$Res> {
   $Res call(
       {String? category,
       double? quantity,
-      Map<String, dynamic>? subcategory,
+      String? subcategory,
       String? fuelType});
 }
 
@@ -7584,7 +7584,7 @@ class _$OperationProductInformationCopyWithImpl<$Res,
       subcategory: freezed == subcategory
           ? _value.subcategory
           : subcategory // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as String?,
       fuelType: freezed == fuelType
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
@@ -7605,7 +7605,7 @@ abstract class _$$OperationProductInformationImplCopyWith<$Res>
   $Res call(
       {String? category,
       double? quantity,
-      Map<String, dynamic>? subcategory,
+      String? subcategory,
       String? fuelType});
 }
 
@@ -7637,9 +7637,9 @@ class __$$OperationProductInformationImplCopyWithImpl<$Res>
           : quantity // ignore: cast_nullable_to_non_nullable
               as double?,
       subcategory: freezed == subcategory
-          ? _value._subcategory
+          ? _value.subcategory
           : subcategory // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
+              as String?,
       fuelType: freezed == fuelType
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
@@ -7653,11 +7653,7 @@ class __$$OperationProductInformationImplCopyWithImpl<$Res>
 class _$OperationProductInformationImpl
     implements _OperationProductInformation {
   _$OperationProductInformationImpl(
-      {this.category,
-      this.quantity,
-      final Map<String, dynamic>? subcategory,
-      this.fuelType})
-      : _subcategory = subcategory;
+      {this.category, this.quantity, this.subcategory, this.fuelType});
 
   factory _$OperationProductInformationImpl.fromJson(
           Map<String, dynamic> json) =>
@@ -7672,17 +7668,8 @@ class _$OperationProductInformationImpl
   final double? quantity;
 
   /// subcategory of the product.
-  final Map<String, dynamic>? _subcategory;
-
-  /// subcategory of the product.
   @override
-  Map<String, dynamic>? get subcategory {
-    final value = _subcategory;
-    if (value == null) return null;
-    if (_subcategory is EqualUnmodifiableMapView) return _subcategory;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
+  final String? subcategory;
 
   /// fuel type of the product.
   @override
@@ -7702,16 +7689,16 @@ class _$OperationProductInformationImpl
                 other.category == category) &&
             (identical(other.quantity, quantity) ||
                 other.quantity == quantity) &&
-            const DeepCollectionEquality()
-                .equals(other._subcategory, _subcategory) &&
+            (identical(other.subcategory, subcategory) ||
+                other.subcategory == subcategory) &&
             (identical(other.fuelType, fuelType) ||
                 other.fuelType == fuelType));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, category, quantity,
-      const DeepCollectionEquality().hash(_subcategory), fuelType);
+  int get hashCode =>
+      Object.hash(runtimeType, category, quantity, subcategory, fuelType);
 
   @JsonKey(ignore: true)
   @override
@@ -7733,7 +7720,7 @@ abstract class _OperationProductInformation
   factory _OperationProductInformation(
       {final String? category,
       final double? quantity,
-      final Map<String, dynamic>? subcategory,
+      final String? subcategory,
       final String? fuelType}) = _$OperationProductInformationImpl;
 
   factory _OperationProductInformation.fromJson(Map<String, dynamic> json) =
@@ -7750,7 +7737,7 @@ abstract class _OperationProductInformation
   @override
 
   /// subcategory of the product.
-  Map<String, dynamic>? get subcategory;
+  String? get subcategory;
   @override
 
   /// fuel type of the product.
@@ -10755,6 +10742,9 @@ mixin _$AtsEntry {
   /// `fuelType` is the fuel type of the entry.
   String? get fuelType => throw _privateConstructorUsedError;
 
+  /// `fuelSubtype` is the fuel subtype of the entry.
+  String? get fuelSubtype => throw _privateConstructorUsedError;
+
   /// `temperature` is the temperature of the entry.
   double? get temperature => throw _privateConstructorUsedError;
 
@@ -10800,6 +10790,7 @@ abstract class $AtsEntryCopyWith<$Res> {
       List<AtsReception>? receptions,
       bool? isLinked,
       String? fuelType,
+      String? fuelSubtype,
       double? temperature,
       double? initialTemperature,
       double? density,
@@ -10837,6 +10828,7 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
     Object? receptions = freezed,
     Object? isLinked = freezed,
     Object? fuelType = freezed,
+    Object? fuelSubtype = freezed,
     Object? temperature = freezed,
     Object? initialTemperature = freezed,
     Object? density = freezed,
@@ -10893,6 +10885,10 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
       fuelType: freezed == fuelType
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fuelSubtype: freezed == fuelSubtype
+          ? _value.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
               as String?,
       temperature: freezed == temperature
           ? _value.temperature
@@ -10971,6 +10967,7 @@ abstract class _$$AtsEntryImplCopyWith<$Res>
       List<AtsReception>? receptions,
       bool? isLinked,
       String? fuelType,
+      String? fuelSubtype,
       double? temperature,
       double? initialTemperature,
       double? density,
@@ -11008,6 +11005,7 @@ class __$$AtsEntryImplCopyWithImpl<$Res>
     Object? receptions = freezed,
     Object? isLinked = freezed,
     Object? fuelType = freezed,
+    Object? fuelSubtype = freezed,
     Object? temperature = freezed,
     Object? initialTemperature = freezed,
     Object? density = freezed,
@@ -11065,6 +11063,10 @@ class __$$AtsEntryImplCopyWithImpl<$Res>
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
               as String?,
+      fuelSubtype: freezed == fuelSubtype
+          ? _value.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
+              as String?,
       temperature: freezed == temperature
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
@@ -11113,6 +11115,7 @@ class _$AtsEntryImpl implements _AtsEntry {
       final List<AtsReception>? receptions,
       this.isLinked,
       this.fuelType,
+      this.fuelSubtype,
       this.temperature,
       this.initialTemperature,
       this.density,
@@ -11185,6 +11188,10 @@ class _$AtsEntryImpl implements _AtsEntry {
   @override
   final String? fuelType;
 
+  /// `fuelSubtype` is the fuel subtype of the entry.
+  @override
+  final String? fuelSubtype;
+
   /// `temperature` is the temperature of the entry.
   @override
   final double? temperature;
@@ -11223,7 +11230,7 @@ class _$AtsEntryImpl implements _AtsEntry {
 
   @override
   String toString() {
-    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, temperature: $temperature, initialTemperature: $initialTemperature, density: $density, initialDensity: $initialDensity, waterLevel: $waterLevel, initialWaterLevel: $initialWaterLevel, volumeHistory: $volumeHistory)';
+    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, fuelSubtype: $fuelSubtype, temperature: $temperature, initialTemperature: $initialTemperature, density: $density, initialDensity: $initialDensity, waterLevel: $waterLevel, initialWaterLevel: $initialWaterLevel, volumeHistory: $volumeHistory)';
   }
 
   @override
@@ -11250,6 +11257,8 @@ class _$AtsEntryImpl implements _AtsEntry {
                 other.isLinked == isLinked) &&
             (identical(other.fuelType, fuelType) ||
                 other.fuelType == fuelType) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
             (identical(other.temperature, temperature) ||
                 other.temperature == temperature) &&
             (identical(other.initialTemperature, initialTemperature) ||
@@ -11281,6 +11290,7 @@ class _$AtsEntryImpl implements _AtsEntry {
         const DeepCollectionEquality().hash(_receptions),
         isLinked,
         fuelType,
+        fuelSubtype,
         temperature,
         initialTemperature,
         density,
@@ -11318,6 +11328,7 @@ abstract class _AtsEntry implements AtsEntry {
       final List<AtsReception>? receptions,
       final bool? isLinked,
       final String? fuelType,
+      final String? fuelSubtype,
       final double? temperature,
       final double? initialTemperature,
       final double? density,
@@ -11379,6 +11390,10 @@ abstract class _AtsEntry implements AtsEntry {
 
   /// `fuelType` is the fuel type of the entry.
   String? get fuelType;
+  @override
+
+  /// `fuelSubtype` is the fuel subtype of the entry.
+  String? get fuelSubtype;
   @override
 
   /// `temperature` is the temperature of the entry.
