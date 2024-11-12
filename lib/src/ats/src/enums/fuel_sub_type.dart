@@ -160,7 +160,7 @@ enum AtsFuelSubType {
         return AtsFuelSubType.gasolineCAditivada;
       case '320102003':
         return AtsFuelSubType.gasolineCPremium;
-      case '810102001':
+      case '810101001':
         return AtsFuelSubType.ethanol;
       case '810101002':
         return AtsFuelSubType.ethanolAditivado;
