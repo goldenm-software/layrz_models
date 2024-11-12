@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.57
+
+- Fix `AtsFuelSubType` enum, `getLocaleKey` structure
+
 ## 3.2.56
 
 - Fix `AtsFuelSubType` enum, `fromCProdANP` method
