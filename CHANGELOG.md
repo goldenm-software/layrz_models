@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.56
+
+- Fix `AtsFuelSubType` enum, `fromCProdANP` method
+
 ## 3.2.55
 
 - Update `OperationProductInformation` prop `subcategory` type
