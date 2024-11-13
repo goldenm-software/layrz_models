@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.2.59
+- Added `getLocaleKey` in `AtsFuelType`
+
 ## 3.2.58
 
 - Convert `getFuelSubTypeList` from `AtsFuelSubType` as static
