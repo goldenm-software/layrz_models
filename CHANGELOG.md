@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.58
+
+- Convert `getFuelSubTypeList` from `AtsFuelSubType` as static
+
 ## 3.2.57
 
 - Fix `AtsFuelSubType` enum, `getLocaleKey` structure

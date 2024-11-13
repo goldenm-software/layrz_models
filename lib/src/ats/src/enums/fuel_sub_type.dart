@@ -245,8 +245,10 @@ enum AtsFuelSubType {
     }
   }
 
-  List<AtsFuelSubType> getFuelSubTypeList(String? fuelType) {
+  static List<AtsFuelSubType> getFuelSubTypeList(String? fuelType) {
     if (fuelType == null) return [];
+
+    /// This `fuelType` is the same list of `AtsCfFuelType` enum values
 
     switch (fuelType) {
       case 'DIESEL':
