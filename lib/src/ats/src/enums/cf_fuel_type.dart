@@ -40,4 +40,19 @@ enum AtsCfFuelType {
         throw Exception('Invalid FuelType');
     }
   }
+
+  String getLocaleKey() {
+    switch (this) {
+      case AtsCfFuelType.hydrated:
+        return 'ats.cf.fuelType.DIESEL';
+      case AtsCfFuelType.gasolina:
+        return 'ats.cf.fuelType.GASOLINA';
+      case AtsCfFuelType.diesel:
+        return 'ats.cf.fuelType.HYDRATED';
+      case AtsCfFuelType.biodiesel:
+        return 'ats.cf.fuelType.BIODIESEL';
+      default:
+        throw Exception("Unknown AtsFuelSubType");
+    }
+  }
 }
