@@ -170,6 +170,7 @@ _$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
           ?.map((e) => TenvioPackageHistory.fromJson(e as Map<String, dynamic>))
           .toList(),
       requiresPhotos: json['requiresPhotos'] as bool? ?? false,
+      signature: json['signature'] as String?,
     );
 
 Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
@@ -193,6 +194,7 @@ Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
       'isCurrent': instance.isCurrent,
       'history': instance.history?.map((e) => e.toJson()).toList(),
       'requiresPhotos': instance.requiresPhotos,
+      'signature': instance.signature,
     };
 
 _$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(

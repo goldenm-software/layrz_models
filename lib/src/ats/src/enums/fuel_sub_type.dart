@@ -2,14 +2,14 @@ part of '../../ats.dart';
 
 enum AtsFuelSubType {
   dieselS10A,
-  dieselS10B,
+  dieselS10ComunB,
   dieselS10BAditivado,
-  dieselS500A,
-  dieselS500B,
+  dieselS500ComunA,
+  dieselS500ComunB,
   dieselS500BAditivado,
-  dieselMaritimo,
-  gasolineA,
-  gasolineC,
+  marineDiesel,
+  gasolineComunA,
+  gasolineComunC,
   gasolineCAditivada,
   gasolineCPremium,
   ethanol,
@@ -17,83 +17,84 @@ enum AtsFuelSubType {
   anidro,
   arla32,
   biodieselB100,
+  unknown,
   ;
 
   static AtsFuelSubType fromJson(String json) {
     switch (json) {
-      case 'DIESEL_S10_A':
+      case 'DIESELS10_A':
         return AtsFuelSubType.dieselS10A;
-      case 'DIESEL_S10_B':
-        return AtsFuelSubType.dieselS10B;
-      case 'DIESEL_S10_B_ADITIVADO':
+      case 'DIESELS10COMUN_B':
+        return AtsFuelSubType.dieselS10ComunB;
+      case 'DIESELS10ADITIVADO_B':
         return AtsFuelSubType.dieselS10BAditivado;
-      case 'DIESEL_S500_A':
-        return AtsFuelSubType.dieselS500A;
-      case 'DIESEL_S500_B':
-        return AtsFuelSubType.dieselS500B;
-      case 'DIESEL_S500_B_ADITIVADO':
+      case 'DIESELS500COMUN_A':
+        return AtsFuelSubType.dieselS500ComunA;
+      case 'DIESELS500COMUN_B':
+        return AtsFuelSubType.dieselS500ComunB;
+      case 'DIESELS500ADITIVADO_B':
         return AtsFuelSubType.dieselS500BAditivado;
-      case 'DIESEL_MARITIMO':
-        return AtsFuelSubType.dieselMaritimo;
-      case 'GASOLINE_A':
-        return AtsFuelSubType.gasolineA;
-      case 'GASOLINE_C':
-        return AtsFuelSubType.gasolineC;
-      case 'GASOLINE_C_ADITIVADA':
+      case 'MARINEDIESEL':
+        return AtsFuelSubType.marineDiesel;
+      case 'GASOLINECOMUN_A':
+        return AtsFuelSubType.gasolineComunA;
+      case 'GASOLINECOMUN_C':
+        return AtsFuelSubType.gasolineComunC;
+      case 'GASOLINEADITIVADA_C':
         return AtsFuelSubType.gasolineCAditivada;
-      case 'GASOLINE_C_PREMIUM':
+      case 'GASOLINEPREMIUM_C':
         return AtsFuelSubType.gasolineCPremium;
       case 'ETHANOL':
         return AtsFuelSubType.ethanol;
-      case 'ETHANOL_ADITIVADO':
+      case 'ETHANOLADITIVADO':
         return AtsFuelSubType.ethanolAditivado;
       case 'ANIDRO':
         return AtsFuelSubType.anidro;
       case 'ARLA32':
         return AtsFuelSubType.arla32;
-      case 'BIODIESEL_B100':
+      case 'BIODIESELB100':
         return AtsFuelSubType.biodieselB100;
       default:
-        throw Exception("Unknown AtsFuelSubType");
+        return AtsFuelSubType.unknown;
     }
   }
 
   String toJson() {
     switch (this) {
       case AtsFuelSubType.dieselS10A:
-        return 'DIESEL_S10_A';
-      case AtsFuelSubType.dieselS10B:
-        return 'DIESEL_S10_B';
+        return 'DIESELS10_A';
+      case AtsFuelSubType.dieselS10ComunB:
+        return 'DIESELS10COMUN_B';
       case AtsFuelSubType.dieselS10BAditivado:
-        return 'DIESEL_S10_B_ADITIVADO';
-      case AtsFuelSubType.dieselS500A:
-        return 'DIESEL_S500_A';
-      case AtsFuelSubType.dieselS500B:
-        return 'DIESEL_S500_B';
+        return 'DIESELS10ADITIVADO_B';
+      case AtsFuelSubType.dieselS500ComunA:
+        return 'DIESELS500COMUN_A';
+      case AtsFuelSubType.dieselS500ComunB:
+        return 'DIESELS500COMUN_B';
       case AtsFuelSubType.dieselS500BAditivado:
-        return 'DIESEL_S500_B_ADITIVADO';
-      case AtsFuelSubType.dieselMaritimo:
-        return 'DIESEL_MARITIMO';
-      case AtsFuelSubType.gasolineA:
-        return 'GASOLINE_A';
-      case AtsFuelSubType.gasolineC:
-        return 'GASOLINE_C';
+        return 'DIESELS500ADITIVADO_B';
+      case AtsFuelSubType.marineDiesel:
+        return 'MARINEDIESEL';
+      case AtsFuelSubType.gasolineComunA:
+        return 'GASOLINECOMUN_A';
+      case AtsFuelSubType.gasolineComunC:
+        return 'GASOLINECOMUN_C';
       case AtsFuelSubType.gasolineCAditivada:
-        return 'GASOLINE_C_ADITIVADA';
+        return 'GASOLINEADITIVADA_C';
       case AtsFuelSubType.gasolineCPremium:
-        return 'GASOLINE_C_PREMIUM';
+        return 'GASOLINEPREMIUM_C';
       case AtsFuelSubType.ethanol:
         return 'ETHANOL';
       case AtsFuelSubType.ethanolAditivado:
-        return 'ETHANOL_ADITIVADO';
+        return 'ETHANOLADITIVADO';
       case AtsFuelSubType.anidro:
         return 'ANIDRO';
       case AtsFuelSubType.arla32:
         return 'ARLA32';
       case AtsFuelSubType.biodieselB100:
-        return 'BIODIESEL_B100';
+        return 'BIODIESELB100';
       default:
-        throw Exception("Unknown AtsFuelSubType");
+        return 'UNKNOWN';
     }
   }
 
@@ -101,21 +102,21 @@ enum AtsFuelSubType {
     switch (this) {
       case AtsFuelSubType.dieselS10A:
         return '420105001';
-      case AtsFuelSubType.dieselS10B:
+      case AtsFuelSubType.dieselS10ComunB:
         return '820101034';
       case AtsFuelSubType.dieselS10BAditivado:
         return '820101033';
-      case AtsFuelSubType.dieselS500A:
+      case AtsFuelSubType.dieselS500ComunA:
         return '420102004';
-      case AtsFuelSubType.dieselS500B:
+      case AtsFuelSubType.dieselS500ComunB:
         return '820101012';
       case AtsFuelSubType.dieselS500BAditivado:
         return '820101013';
-      case AtsFuelSubType.dieselMaritimo:
+      case AtsFuelSubType.marineDiesel:
         return '420201001';
-      case AtsFuelSubType.gasolineA:
+      case AtsFuelSubType.gasolineComunA:
         return '320101001';
-      case AtsFuelSubType.gasolineC:
+      case AtsFuelSubType.gasolineComunC:
         return '320102001';
       case AtsFuelSubType.gasolineCAditivada:
         return '320102002';
@@ -136,26 +137,29 @@ enum AtsFuelSubType {
     }
   }
 
+  /// get all getLocalKet in comments
+
+  ///
   static AtsFuelSubType fromCProdANP(String cProdANP) {
     switch (cProdANP) {
       case '420105001':
         return AtsFuelSubType.dieselS10A;
       case '820101034':
-        return AtsFuelSubType.dieselS10B;
+        return AtsFuelSubType.dieselS10ComunB;
       case '820101033':
         return AtsFuelSubType.dieselS10BAditivado;
       case '420102004':
-        return AtsFuelSubType.dieselS500A;
+        return AtsFuelSubType.dieselS500ComunA;
       case '820101012':
-        return AtsFuelSubType.dieselS500B;
+        return AtsFuelSubType.dieselS500ComunB;
       case '820101013':
         return AtsFuelSubType.dieselS500BAditivado;
       case '420201001':
-        return AtsFuelSubType.dieselMaritimo;
+        return AtsFuelSubType.marineDiesel;
       case '320101001':
-        return AtsFuelSubType.gasolineA;
+        return AtsFuelSubType.gasolineComunA;
       case '320102001':
-        return AtsFuelSubType.gasolineC;
+        return AtsFuelSubType.gasolineComunC;
       case '320102002':
         return AtsFuelSubType.gasolineCAditivada;
       case '320102003':
@@ -177,16 +181,16 @@ enum AtsFuelSubType {
 
   Color getColor() {
     switch (this) {
-      case AtsFuelSubType.dieselS500A:
-      case AtsFuelSubType.dieselS500B:
+      case AtsFuelSubType.dieselS500ComunA:
+      case AtsFuelSubType.dieselS500ComunB:
       case AtsFuelSubType.dieselS500BAditivado:
         return const Color(0xffCD0202);
       case AtsFuelSubType.dieselS10A:
-      case AtsFuelSubType.dieselS10B:
+      case AtsFuelSubType.dieselS10ComunB:
       case AtsFuelSubType.dieselS10BAditivado:
         return const Color(0xffBEFA79);
-      case AtsFuelSubType.gasolineA:
-      case AtsFuelSubType.gasolineC:
+      case AtsFuelSubType.gasolineComunA:
+      case AtsFuelSubType.gasolineComunC:
       case AtsFuelSubType.gasolineCAditivada:
       case AtsFuelSubType.gasolineCPremium:
         return const Color(0xFFF1C202);
@@ -197,7 +201,7 @@ enum AtsFuelSubType {
         return const Color(0xFF016B2E);
       case AtsFuelSubType.anidro:
         return const Color(0xFFF85E54);
-      case AtsFuelSubType.dieselMaritimo:
+      case AtsFuelSubType.marineDiesel:
         return const Color(0xFFB65B22);
       case AtsFuelSubType.arla32:
         return const Color(0xFF2196f3);
@@ -209,39 +213,39 @@ enum AtsFuelSubType {
   String getLocaleKey() {
     switch (this) {
       case AtsFuelSubType.dieselS10A:
-        return 'ats.fuelSubType.DIESEL_S10_A';
-      case AtsFuelSubType.dieselS10B:
-        return 'ats.fuelSubType.DIESEL_S10_B';
+        return 'ats.fuelSubType.DIESELS10_A';
+      case AtsFuelSubType.dieselS10ComunB:
+        return 'ats.fuelSubType.DIESELS10COMUN_B';
       case AtsFuelSubType.dieselS10BAditivado:
-        return 'ats.fuelSubType.DIESEL_S10_B_ADITIVADO';
-      case AtsFuelSubType.dieselS500A:
-        return 'ats.fuelSubType.DIESEL_S500_A';
-      case AtsFuelSubType.dieselS500B:
-        return 'ats.fuelSubType.DIESEL_S500_B';
+        return 'ats.fuelSubType.DIESELS10ADITIVADO_B';
+      case AtsFuelSubType.dieselS500ComunA:
+        return 'ats.fuelSubType.DIESELS500COMUN_A';
+      case AtsFuelSubType.dieselS500ComunB:
+        return 'ats.fuelSubType.DIESELS500COMUN_B';
       case AtsFuelSubType.dieselS500BAditivado:
-        return 'ats.fuelSubType.DIESEL_S500_B_ADITIVADO';
-      case AtsFuelSubType.dieselMaritimo:
-        return 'ats.fuelSubType.DIESEL_MARITIMO';
-      case AtsFuelSubType.gasolineA:
-        return 'ats.fuelSubType.GASOLINE_A';
-      case AtsFuelSubType.gasolineC:
-        return 'ats.fuelSubType.GASOLINE_C';
+        return 'ats.fuelSubType.DIESELS500ADITIVADO_B';
+      case AtsFuelSubType.marineDiesel:
+        return 'ats.fuelSubType.MARINEDIESEL';
+      case AtsFuelSubType.gasolineComunA:
+        return 'ats.fuelSubType.GASOLINECOMUN_A';
+      case AtsFuelSubType.gasolineComunC:
+        return 'ats.fuelSubType.GASOLINECOMUN_C';
       case AtsFuelSubType.gasolineCAditivada:
-        return 'ats.fuelSubType.GASOLINE_C_ADITIVADA';
+        return 'ats.fuelSubType.GASOLINEADITIVADA_C';
       case AtsFuelSubType.gasolineCPremium:
-        return 'ats.fuelSubType.GASOLINE_C_PREMIUM';
+        return 'ats.fuelSubType.GASOLINEPREMIUM_C';
       case AtsFuelSubType.ethanol:
         return 'ats.fuelSubType.ETHANOL';
       case AtsFuelSubType.ethanolAditivado:
-        return 'ats.fuelSubType.ETHANOL_ADITIVADO';
+        return 'ats.fuelSubType.ETHANOLADITIVADO';
       case AtsFuelSubType.anidro:
         return 'ats.fuelSubType.ANIDRO';
       case AtsFuelSubType.arla32:
         return 'ats.fuelSubType.ARLA32';
       case AtsFuelSubType.biodieselB100:
-        return 'ats.fuelSubType.BIODIESEL_B100';
+        return 'ats.fuelSubType.BIODIESELB100';
       default:
-        throw Exception("Unknown AtsFuelSubType");
+        return 'ats.fuelSubType.UNKNOWN';
     }
   }
 
@@ -254,18 +258,18 @@ enum AtsFuelSubType {
       case 'DIESEL':
         return [
           AtsFuelSubType.dieselS10A,
-          AtsFuelSubType.dieselS10B,
+          AtsFuelSubType.dieselS10ComunB,
           AtsFuelSubType.dieselS10BAditivado,
-          AtsFuelSubType.dieselS500A,
-          AtsFuelSubType.dieselS500B,
+          AtsFuelSubType.dieselS500ComunA,
+          AtsFuelSubType.dieselS500ComunB,
           AtsFuelSubType.dieselS500BAditivado,
-          AtsFuelSubType.dieselMaritimo,
+          AtsFuelSubType.marineDiesel,
         ];
 
       case 'GASOLINA':
         return [
-          AtsFuelSubType.gasolineA,
-          AtsFuelSubType.gasolineC,
+          AtsFuelSubType.gasolineComunA,
+          AtsFuelSubType.gasolineComunC,
           AtsFuelSubType.gasolineCAditivada,
           AtsFuelSubType.gasolineCPremium,
         ];

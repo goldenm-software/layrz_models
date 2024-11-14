@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.2.61
+- Fix `AtsFuelSubType` and `Gasolina` was remplace for `Gasoline` in `AtsCfFuelType`
+
+## 3.2.60
+
+- Added `signature` on `TenvioPackage` model
+
 ## 3.2.59
 - Added `getLocaleKey` in `AtsFuelType`
 

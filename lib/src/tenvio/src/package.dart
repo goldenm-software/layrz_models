@@ -58,6 +58,9 @@ class TenvioPackage with _$TenvioPackage {
 
     /// [requiresPhotos] indicates if the package requires photos to be taken.
     @Default(false) bool requiresPhotos,
+
+    /// [signature] is the signature of the package.
+    String? signature,
   }) = _TenvioPackage;
 
   factory TenvioPackage.fromJson(Map<String, dynamic> json) => _$TenvioPackageFromJson(json);

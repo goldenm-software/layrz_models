@@ -2,7 +2,7 @@ part of '../../ats.dart';
 
 enum AtsCfFuelType {
   hydrated,
-  gasolina,
+  gasoline,
   diesel,
   biodiesel,
   ;
@@ -15,8 +15,8 @@ enum AtsCfFuelType {
     switch (this) {
       case AtsCfFuelType.hydrated:
         return 'HYDRATED';
-      case AtsCfFuelType.gasolina:
-        return 'GASOLINA';
+      case AtsCfFuelType.gasoline:
+        return 'GASOLINE';
       case AtsCfFuelType.diesel:
         return 'DIESEL';
       case AtsCfFuelType.biodiesel:
@@ -30,8 +30,8 @@ enum AtsCfFuelType {
     switch (json) {
       case 'HYDRATED':
         return AtsCfFuelType.hydrated;
-      case 'GASOLINA':
-        return AtsCfFuelType.gasolina;
+      case 'GASOLINE':
+        return AtsCfFuelType.gasoline;
       case 'DIESEL':
         return AtsCfFuelType.diesel;
       case 'BIODIESEL':
@@ -45,8 +45,8 @@ enum AtsCfFuelType {
     switch (this) {
       case AtsCfFuelType.hydrated:
         return 'ats.cf.fuelType.DIESEL';
-      case AtsCfFuelType.gasolina:
-        return 'ats.cf.fuelType.GASOLINA';
+      case AtsCfFuelType.gasoline:
+        return 'ats.cf.fuelType.GASOLINE';
       case AtsCfFuelType.diesel:
         return 'ats.cf.fuelType.HYDRATED';
       case AtsCfFuelType.biodiesel:
