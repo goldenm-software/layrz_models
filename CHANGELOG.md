@@ -6,7 +6,7 @@
 
 
 ## 3.2.61
-- Fix `AtsFuelSubType` and `Gasolina` was remplace for `Gasoline` in `AtsFuelType`
+- Fix `AtsFuelSubType` and `Gasolina` was remplace for `Gasoline` in `AtsCfFuelType`
 
 ## 3.2.60
 
