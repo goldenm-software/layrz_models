@@ -501,6 +501,9 @@ _$AtsPurchaseOrderImpl _$$AtsPurchaseOrderImplFromJson(
           .fromJson(json['deliverCategory'] as String?),
       category: const AtsPurchaseOrderCategoriesEntityOrNullConverter()
           .fromJson(json['category'] as String?),
+      operation: json['operation'] == null
+          ? null
+          : AtsOperation.fromJson(json['operation'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
@@ -547,6 +550,7 @@ Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
           .toJson(instance.deliverCategory),
       'category': const AtsPurchaseOrderCategoriesEntityOrNullConverter()
           .toJson(instance.category),
+      'operation': instance.operation?.toJson(),
     };
 
 _$AtsPurchaseTotalImpl _$$AtsPurchaseTotalImplFromJson(

@@ -62,8 +62,12 @@ mixin _$OutboundProtocol {
   /// For marketing purposes.
   int? get usage => throw _privateConstructorUsedError;
 
+  /// Serializes this OutboundProtocol to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OutboundProtocolCopyWith<OutboundProtocol> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -101,6 +105,8 @@ class _$OutboundProtocolCopyWithImpl<$Res, $Val extends OutboundProtocol>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -169,6 +175,8 @@ class _$OutboundProtocolCopyWithImpl<$Res, $Val extends OutboundProtocol>
     ) as $Val);
   }
 
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarCopyWith<$Res>? get dynamicIcon {
@@ -216,6 +224,8 @@ class __$$OutboundProtocolImplCopyWithImpl<$Res>
       $Res Function(_$OutboundProtocolImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -406,7 +416,7 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
             (identical(other.usage, usage) || other.usage == usage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -423,7 +433,9 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
       dynamicIcon,
       usage);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OutboundProtocolImplCopyWith<_$OutboundProtocolImpl> get copyWith =>
@@ -456,61 +468,63 @@ abstract class _OutboundProtocol implements OutboundProtocol {
   factory _OutboundProtocol.fromJson(Map<String, dynamic> json) =
       _$OutboundProtocolImpl.fromJson;
 
-  @override
-
   /// [id] is the protocol ID, this ID is unique for each protocol.
-  String get id;
   @override
+  String get id;
 
   /// [name] is the name of the protocol.
   /// This name is a translation key, so, check the translation messages to get the name,
   /// the key is composed by `protocols.outbound.{name}`.
-  String get name;
   @override
+  String get name;
 
   /// [color] is the color assigned to the protocol.
+  @override
   @ColorConverter()
   Color get color;
-  @override
 
   /// [isEnabled] indicates if the protocol is enabled and available for use, or disabled and not available for use.
-  bool get isEnabled;
   @override
+  bool get isEnabled;
 
   /// [categoriesIds] is the list of categories IDs that the protocol belongs to.
-  List<String> get categoriesIds;
   @override
+  List<String> get categoriesIds;
 
   /// [hasFtp] indicates if the protocol has support for FTP.
-  bool? get hasFtp;
   @override
+  bool? get hasFtp;
 
   /// [isConsumpted] indicates if the protocol is consumpted.
-  bool? get isConsumpted;
   @override
+  bool? get isConsumpted;
 
   /// [mqttTopic] is the MQTT topic of the protocol.
-  String? get mqttTopic;
   @override
+  String? get mqttTopic;
 
   /// [isAsync] indicates if the protocol is asynchronous.
-  bool? get isAsync;
   @override
+  bool? get isAsync;
 
   /// [requiredFields] is the list of required fields for the protocol.
-  List<CredentialField> get requiredFields;
   @override
+  List<CredentialField> get requiredFields;
 
   /// [dynamicIcon] is the icon of the inbound protocol.
   /// This is the new schema of the icon
-  Avatar? get dynamicIcon;
   @override
+  Avatar? get dynamicIcon;
 
   /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
   /// For marketing purposes.
-  int? get usage;
   @override
-  @JsonKey(ignore: true)
+  int? get usage;
+
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OutboundProtocolImplCopyWith<_$OutboundProtocolImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -563,8 +577,12 @@ mixin _$OutboundService {
   /// Is the Metrics object.
   OutboundMetrics? get metrics => throw _privateConstructorUsedError;
 
+  /// Serializes this OutboundService to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OutboundServiceCopyWith<OutboundService> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -605,6 +623,8 @@ class _$OutboundServiceCopyWithImpl<$Res, $Val extends OutboundService>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -683,6 +703,8 @@ class _$OutboundServiceCopyWithImpl<$Res, $Val extends OutboundService>
     ) as $Val);
   }
 
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OutboundProtocolCopyWith<$Res>? get protocol {
@@ -695,6 +717,8 @@ class _$OutboundServiceCopyWithImpl<$Res, $Val extends OutboundService>
     });
   }
 
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OutboundMetricsCopyWith<$Res>? get metrics {
@@ -746,6 +770,8 @@ class __$$OutboundServiceImplCopyWithImpl<$Res>
       _$OutboundServiceImpl _value, $Res Function(_$OutboundServiceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1006,7 +1032,7 @@ class _$OutboundServiceImpl implements _OutboundService {
             (identical(other.metrics, metrics) || other.metrics == metrics));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1025,7 +1051,9 @@ class _$OutboundServiceImpl implements _OutboundService {
       const DeepCollectionEquality().hash(_access),
       metrics);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OutboundServiceImplCopyWith<_$OutboundServiceImpl> get copyWith =>
@@ -1060,64 +1088,66 @@ abstract class _OutboundService implements OutboundService {
   factory _OutboundService.fromJson(Map<String, dynamic> json) =
       _$OutboundServiceImpl.fromJson;
 
-  @override
-
   /// IS the ID of the entity. This ID is unique.
-  String get id;
   @override
+  String get id;
 
   /// Is the Assigned service name, cannot be translated for other languages.
-  String get name;
   @override
+  String get name;
 
   /// Is the Credential object, check the documentation for more information.
-  Map<String, dynamic>? get credentials;
   @override
+  Map<String, dynamic>? get credentials;
 
   /// Is the Protocol entity.
-  OutboundProtocol? get protocol;
   @override
+  OutboundProtocol? get protocol;
 
   /// Is the Protocol ID.
-  String? get protocolId;
   @override
+  String? get protocolId;
 
   /// Is the Current transmission status.
-  bool? get isEnabled;
   @override
+  bool? get isEnabled;
 
   /// Is the Structure of the outbound protocol, only used for Omega REST Outbound protocol.
-  List<OutboundStructure>? get structure;
   @override
+  List<OutboundStructure>? get structure;
 
   /// Is the Token to authenticate the request, only used for Alpha REST Inbound protocol
-  String? get token;
   @override
+  String? get token;
 
   /// Is the Assets IDs linked to the service.
-  List<String>? get assetsIds;
   @override
+  List<String>? get assetsIds;
 
   /// Is the Assets linked to the service.
-  List<Asset>? get assets;
   @override
+  List<Asset>? get assets;
 
   /// Is the Groups (Tags) IDs linked to the service.
-  List<String>? get groupsIds;
   @override
+  List<String>? get groupsIds;
 
   /// Is the Groups (Tags) linked to the service.
-  List<Tag>? get groups;
   @override
+  List<Tag>? get groups;
 
   /// A list of custom access permissions.
-  List<Access>? get access;
   @override
+  List<Access>? get access;
 
   /// Is the Metrics object.
-  OutboundMetrics? get metrics;
   @override
-  @JsonKey(ignore: true)
+  OutboundMetrics? get metrics;
+
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OutboundServiceImplCopyWith<_$OutboundServiceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1132,8 +1162,12 @@ mixin _$OutboundStructure {
   String get type => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
 
+  /// Serializes this OutboundStructure to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OutboundStructure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OutboundStructureCopyWith<OutboundStructure> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1157,6 +1191,8 @@ class _$OutboundStructureCopyWithImpl<$Res, $Val extends OutboundStructure>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OutboundStructure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1200,6 +1236,8 @@ class __$$OutboundStructureImplCopyWithImpl<$Res>
       $Res Function(_$OutboundStructureImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OutboundStructure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1255,11 +1293,13 @@ class _$OutboundStructureImpl implements _OutboundStructure {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, field, type, value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OutboundStructure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OutboundStructureImplCopyWith<_$OutboundStructureImpl> get copyWith =>
@@ -1289,8 +1329,11 @@ abstract class _OutboundStructure implements OutboundStructure {
   String get type;
   @override
   String get value;
+
+  /// Create a copy of OutboundStructure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OutboundStructureImplCopyWith<_$OutboundStructureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1316,8 +1359,12 @@ mixin _$OutboundMetrics {
   /// [statsLoading] indicates if the stats are loading.
   bool get statsLoading => throw _privateConstructorUsedError;
 
+  /// Serializes this OutboundMetrics to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of OutboundMetrics
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $OutboundMetricsCopyWith<OutboundMetrics> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1346,6 +1393,8 @@ class _$OutboundMetricsCopyWithImpl<$Res, $Val extends OutboundMetrics>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of OutboundMetrics
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1404,6 +1453,8 @@ class __$$OutboundMetricsImplCopyWithImpl<$Res>
       _$OutboundMetricsImpl _value, $Res Function(_$OutboundMetricsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of OutboundMetrics
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1496,12 +1547,14 @@ class _$OutboundMetricsImpl implements _OutboundMetrics {
                 other.statsLoading == statsLoading));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, online, hibernation, offline, totalItems, statsLoading);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of OutboundMetrics
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$OutboundMetricsImplCopyWith<_$OutboundMetricsImpl> get copyWith =>
@@ -1527,28 +1580,30 @@ abstract class _OutboundMetrics implements OutboundMetrics {
   factory _OutboundMetrics.fromJson(Map<String, dynamic> json) =
       _$OutboundMetricsImpl.fromJson;
 
-  @override
-
   /// [online] is the number of online devices.
-  int get online;
   @override
+  int get online;
 
   /// [hibernation] is the number of devices in hibernation.
-  int get hibernation;
   @override
+  int get hibernation;
 
   /// [offline] is the number of offline devices.
-  int get offline;
   @override
+  int get offline;
 
   /// [totalItems] is the total number of devices.
-  int get totalItems;
   @override
+  int get totalItems;
 
   /// [statsLoading] indicates if the stats are loading.
-  bool get statsLoading;
   @override
-  @JsonKey(ignore: true)
+  bool get statsLoading;
+
+  /// Create a copy of OutboundMetrics
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$OutboundMetricsImplCopyWith<_$OutboundMetricsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

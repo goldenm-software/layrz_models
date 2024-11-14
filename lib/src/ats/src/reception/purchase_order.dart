@@ -148,6 +148,9 @@ class AtsPurchaseOrder with _$AtsPurchaseOrder {
 
     /// `category` defines the category.
     @AtsPurchaseOrderCategoriesEntityOrNullConverter() AtsPurchaseOrderCategoriesEntity? category,
+
+    /// `operation` associated to the purchase order.
+    AtsOperation? operation,
   }) = _AtsPurchaseOrder;
 
   /// from json factory
