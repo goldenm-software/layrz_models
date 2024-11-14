@@ -1,10 +1,9 @@
 # Changelog
+
 ## 3.2.62
 - Add `AtsOperation` in `AtsPurchaseOrder`
 - Add `getCfFuelType()` in `AtsFuelSubType`
 - Change the `fuelType` variable type in `getFuelSubTypeList()`
-
-
 ## 3.2.61
 - Fix `AtsFuelSubType` and `Gasolina` was remplace for `Gasoline` in `AtsCfFuelType`
 
