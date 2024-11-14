@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.2.61
+- Fix `AtsFuelSubType` and `Gasolina` was remplace for `Gasoline` in `AtsFuelType`
+
 ## 3.2.60
 
 - Added `signature` on `TenvioPackage` model
