@@ -249,13 +249,13 @@ enum AtsFuelSubType {
     }
   }
 
-  static List<AtsFuelSubType> getFuelSubTypeList(String? fuelType) {
+  static List<AtsFuelSubType> getFuelSubTypeList(AtsCfFuelType? fuelType) {
     if (fuelType == null) return [];
 
     /// This `fuelType` is the same list of `AtsCfFuelType` enum values
 
     switch (fuelType) {
-      case 'DIESEL':
+      case AtsCfFuelType.diesel:
         return [
           AtsFuelSubType.dieselS10A,
           AtsFuelSubType.dieselS10ComunB,
@@ -266,7 +266,7 @@ enum AtsFuelSubType {
           AtsFuelSubType.marineDiesel,
         ];
 
-      case 'GASOLINA':
+      case AtsCfFuelType.gasoline:
         return [
           AtsFuelSubType.gasolineComunA,
           AtsFuelSubType.gasolineComunC,
@@ -274,7 +274,7 @@ enum AtsFuelSubType {
           AtsFuelSubType.gasolineCPremium,
         ];
 
-      case 'HYDRATED':
+      case AtsCfFuelType.hydrated:
         return [
           AtsFuelSubType.ethanol,
           AtsFuelSubType.ethanolAditivado,
@@ -282,11 +282,38 @@ enum AtsFuelSubType {
           AtsFuelSubType.arla32,
         ];
 
-      case 'BIODIESEL':
+      case AtsCfFuelType.biodiesel:
         return [AtsFuelSubType.biodieselB100];
 
       default:
         return [];
+    }
+  }
+
+  AtsCfFuelType getCfFuelType() {
+    switch (this) {
+      case AtsFuelSubType.dieselS10A:
+      case AtsFuelSubType.dieselS10ComunB:
+      case AtsFuelSubType.dieselS10BAditivado:
+      case AtsFuelSubType.dieselS500ComunA:
+      case AtsFuelSubType.dieselS500ComunB:
+      case AtsFuelSubType.dieselS500BAditivado:
+      case AtsFuelSubType.marineDiesel:
+        return AtsCfFuelType.diesel;
+      case AtsFuelSubType.gasolineComunA:
+      case AtsFuelSubType.gasolineComunC:
+      case AtsFuelSubType.gasolineCAditivada:
+      case AtsFuelSubType.gasolineCPremium:
+        return AtsCfFuelType.gasoline;
+      case AtsFuelSubType.ethanol:
+      case AtsFuelSubType.ethanolAditivado:
+      case AtsFuelSubType.anidro:
+      case AtsFuelSubType.arla32:
+        return AtsCfFuelType.hydrated;
+      case AtsFuelSubType.biodieselB100:
+        return AtsCfFuelType.biodiesel;
+      default:
+        throw Exception("Unknown AtsFuelSubType");
     }
   }
 }
