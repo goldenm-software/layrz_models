@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.60
+
+- Added `signature` on `TenvioPackage` model
+
 ## 3.2.59
 - Added `getLocaleKey` in `AtsFuelType`
 
