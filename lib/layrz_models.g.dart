@@ -2382,6 +2382,7 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       tenvioPhone: json['tenvioPhone'] as String?,
       tenvioLatitude: (json['tenvioLatitude'] as num?)?.toDouble(),
       tenvioLongitude: (json['tenvioLongitude'] as num?)?.toDouble(),
+      tenvioAddressIsPlusCode: json['tenvioAddressIsPlusCode'] as bool?,
       isSuspended: json['isSuspended'] as bool?,
       suspendedAt: const TimestampOrNullConverter()
           .fromJson(json['suspendedAt'] as num?),
@@ -2434,6 +2435,7 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'tenvioPhone': instance.tenvioPhone,
       'tenvioLatitude': instance.tenvioLatitude,
       'tenvioLongitude': instance.tenvioLongitude,
+      'tenvioAddressIsPlusCode': instance.tenvioAddressIsPlusCode,
       'isSuspended': instance.isSuspended,
       'suspendedAt':
           const TimestampOrNullConverter().toJson(instance.suspendedAt),
@@ -2460,4 +2462,22 @@ Map<String, dynamic> _$$InviteLinkImplToJson(_$InviteLinkImpl instance) =>
       'sentAt': const TimestampOrNullConverter().toJson(instance.sentAt),
       'expiresAt': const TimestampConverter().toJson(instance.expiresAt),
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
+    };
+
+_$TenvioDestinationSetupImpl _$$TenvioDestinationSetupImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioDestinationSetupImpl(
+      address: json['address'] as String? ?? '',
+      latitude: (json['latitude'] as num?)?.toDouble(),
+      longitude: (json['longitude'] as num?)?.toDouble(),
+      addressIsPlusCode: json['addressIsPlusCode'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$$TenvioDestinationSetupImplToJson(
+        _$TenvioDestinationSetupImpl instance) =>
+    <String, dynamic>{
+      'address': instance.address,
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+      'addressIsPlusCode': instance.addressIsPlusCode,
     };

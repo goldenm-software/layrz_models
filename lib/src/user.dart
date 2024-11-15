@@ -110,6 +110,9 @@ class User with _$User {
     /// [tenvioLongitude] represents the Tenvio longitude.
     double? tenvioLongitude,
 
+    /// [tenvioAddressIsPlusCode] represents the Tenvio address is Plus Code.
+    bool? tenvioAddressIsPlusCode,
+
     /// [isSuspended] represents if the users account is suspended.
     bool? isSuspended,
 
@@ -195,4 +198,16 @@ class InviteLink with _$InviteLink {
   factory InviteLink.fromJson(Map<String, dynamic> json) => _$InviteLinkFromJson(json);
 
   String get url => "https://invite.layrz.com/$code";
+}
+
+@unfreezed
+class TenvioDestinationSetup with _$TenvioDestinationSetup {
+  factory TenvioDestinationSetup({
+    @Default('') String address,
+    double? latitude,
+    double? longitude,
+    @Default(false) bool addressIsPlusCode,
+  }) = _TenvioDestinationSetup;
+
+  factory TenvioDestinationSetup.fromJson(Map<String, dynamic> json) => _$TenvioDestinationSetupFromJson(json);
 }

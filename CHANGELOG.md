@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.64
+
+- Added tenvio things on `User` model
+
 ## 3.2.63
 
 - Fix `AtsCfFuelType` localizations
