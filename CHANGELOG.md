@@ -1,10 +1,17 @@
 # Changelog
 
+## 3.2.63
+
+- Fix `AtsCfFuelType` localizations
+
 ## 3.2.62
+
 - Add `AtsOperation` in `AtsPurchaseOrder`
 - Add `getCfFuelType()` in `AtsFuelSubType`
 - Change the `fuelType` variable type in `getFuelSubTypeList()`
+
 ## 3.2.61
+
 - Fix `AtsFuelSubType` and `Gasolina` was remplace for `Gasoline` in `AtsCfFuelType`
 
 ## 3.2.60
@@ -12,6 +19,7 @@
 - Added `signature` on `TenvioPackage` model
 
 ## 3.2.59
+
 - Added `getLocaleKey` in `AtsFuelType`
 
 ## 3.2.58

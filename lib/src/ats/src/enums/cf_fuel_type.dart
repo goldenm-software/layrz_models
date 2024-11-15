@@ -44,11 +44,11 @@ enum AtsCfFuelType {
   String getLocaleKey() {
     switch (this) {
       case AtsCfFuelType.hydrated:
-        return 'ats.cf.fuelType.DIESEL';
+        return 'ats.cf.fuelType.HYDRATED';
       case AtsCfFuelType.gasoline:
         return 'ats.cf.fuelType.GASOLINE';
       case AtsCfFuelType.diesel:
-        return 'ats.cf.fuelType.HYDRATED';
+        return 'ats.cf.fuelType.DIESEL';
       case AtsCfFuelType.biodiesel:
         return 'ats.cf.fuelType.BIODIESEL';
       default:
