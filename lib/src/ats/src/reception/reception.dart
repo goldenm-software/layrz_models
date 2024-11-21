@@ -9,6 +9,12 @@ class AtsReception with _$AtsReception {
     /// ID of the [AtsPurchaseOrder].
     int? orderId,
 
+    /// `errorRate` Represents error percent between reception and sensor entry raw.
+    double? errorRate,
+
+    /// `receptionStatus` represents the status of the reception.
+    @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
+
     /// [AtsPurchaseOrder] linked to the reception.
     AtsPurchaseOrder? order,
 
@@ -18,11 +24,11 @@ class AtsReception with _$AtsReception {
     /// [AtsEntry] linked to the [AtsReception].
     AtsEntry? entry,
 
+    /// `loadingParameters` represents the loading parameters of the reception.
+    @Default([]) List<AtsLoadingParamsForm>? loadingParameters,
+
     /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
     @Default([]) List<AtsReceptionProduct> products,
-
-    /// `errorRate` represents error percent between reception and sensor entry raw.
-    double? errorRate,
   }) = _AtsReception;
 
   factory AtsReception.fromJson(Map<String, dynamic> json) => _$AtsReceptionFromJson(json);

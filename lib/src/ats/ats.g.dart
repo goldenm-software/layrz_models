@@ -587,6 +587,10 @@ _$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
     _$AtsReceptionImpl(
       id: json['id'] as String,
       orderId: (json['orderId'] as num?)?.toInt(),
+      errorRate: (json['errorRate'] as num?)?.toDouble(),
+      receptionStatus: _$JsonConverterFromJson<String, AtsReceptionStatus>(
+          json['receptionStatus'],
+          const AtsReceptionStatusConverter().fromJson),
       order: json['order'] == null
           ? null
           : AtsPurchaseOrder.fromJson(json['order'] as Map<String, dynamic>),
@@ -597,24 +601,44 @@ _$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
       entry: json['entry'] == null
           ? null
           : AtsEntry.fromJson(json['entry'] as Map<String, dynamic>),
+      loadingParameters: (json['loadingParameters'] as List<dynamic>?)
+              ?.map((e) =>
+                  AtsLoadingParamsForm.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       products: (json['products'] as List<dynamic>?)
               ?.map((e) =>
                   AtsReceptionProduct.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      errorRate: (json['errorRate'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$AtsReceptionImplToJson(_$AtsReceptionImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'orderId': instance.orderId,
+      'errorRate': instance.errorRate,
+      'receptionStatus': _$JsonConverterToJson<String, AtsReceptionStatus>(
+          instance.receptionStatus, const AtsReceptionStatusConverter().toJson),
       'order': instance.order?.toJson(),
       'ordersIds': instance.ordersIds,
       'entry': instance.entry?.toJson(),
+      'loadingParameters':
+          instance.loadingParameters?.map((e) => e.toJson()).toList(),
       'products': instance.products.map((e) => e.toJson()).toList(),
-      'errorRate': instance.errorRate,
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);
 
 _$AtsEntryUnloadInputImpl _$$AtsEntryUnloadInputImplFromJson(
         Map<String, dynamic> json) =>
@@ -670,9 +694,9 @@ Map<String, dynamic> _$$OperationProductInformationImplToJson(
       'fuelType': instance.fuelType,
     };
 
-_$LoadingParamsFormInputImpl _$$LoadingParamsFormInputImplFromJson(
+_$AtsLoadingParamsFormInputImpl _$$AtsLoadingParamsFormInputImplFromJson(
         Map<String, dynamic> json) =>
-    _$LoadingParamsFormInputImpl(
+    _$AtsLoadingParamsFormInputImpl(
       id: json['id'] as String?,
       assetId: json['assetId'] as String?,
       receptionId: json['receptionId'] as String?,
@@ -686,8 +710,8 @@ _$LoadingParamsFormInputImpl _$$LoadingParamsFormInputImplFromJson(
       formNumber: json['formNumber'] as String?,
     );
 
-Map<String, dynamic> _$$LoadingParamsFormInputImplToJson(
-        _$LoadingParamsFormInputImpl instance) =>
+Map<String, dynamic> _$$AtsLoadingParamsFormInputImplToJson(
+        _$AtsLoadingParamsFormInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -702,9 +726,9 @@ Map<String, dynamic> _$$LoadingParamsFormInputImplToJson(
       'formNumber': instance.formNumber,
     };
 
-_$LoadingParamsFormImpl _$$LoadingParamsFormImplFromJson(
+_$AtsLoadingParamsFormImpl _$$AtsLoadingParamsFormImplFromJson(
         Map<String, dynamic> json) =>
-    _$LoadingParamsFormImpl(
+    _$AtsLoadingParamsFormImpl(
       id: json['id'] as String?,
       assetId: json['assetId'] as String?,
       asset: json['asset'] == null
@@ -725,8 +749,8 @@ _$LoadingParamsFormImpl _$$LoadingParamsFormImplFromJson(
       formNumber: json['formNumber'] as String?,
     );
 
-Map<String, dynamic> _$$LoadingParamsFormImplToJson(
-        _$LoadingParamsFormImpl instance) =>
+Map<String, dynamic> _$$AtsLoadingParamsFormImplToJson(
+        _$AtsLoadingParamsFormImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
