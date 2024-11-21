@@ -133,8 +133,12 @@ mixin _$Sensor {
   @DurationOrNullConverter()
   Duration? get maxHistorySearch => throw _privateConstructorUsedError;
 
+  /// Serializes this Sensor to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Sensor
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SensorCopyWith<Sensor> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -192,6 +196,8 @@ class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Sensor
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -365,6 +371,8 @@ class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
     ) as $Val);
   }
 
+  /// Create a copy of Sensor
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SensorCopyWith<$Res>? get parent {
@@ -377,6 +385,8 @@ class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
     });
   }
 
+  /// Create a copy of Sensor
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsExitCopyWith<$Res>? get lastExit {
@@ -446,6 +456,8 @@ class __$$SensorImplCopyWithImpl<$Res>
       _$SensorImpl _value, $Res Function(_$SensorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Sensor
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -944,7 +956,7 @@ class _$SensorImpl implements _Sensor {
                 other.maxHistorySearch == maxHistorySearch));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -983,7 +995,9 @@ class _$SensorImpl implements _Sensor {
         maxHistorySearch
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Sensor
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SensorImplCopyWith<_$SensorImpl> get copyWith =>
@@ -1036,154 +1050,156 @@ abstract class _Sensor implements Sensor {
 
   factory _Sensor.fromJson(Map<String, dynamic> json) = _$SensorImpl.fromJson;
 
-  @override
-
   /// [id] of the sensor. Must be unique along of all sensors of the asset.
-  String get id;
   @override
+  String get id;
 
   /// [name] of the sensor. Must be unique along of all sensors of the asset.
-  String get name;
   @override
+  String get name;
 
   /// [iterationCycle] of the sensor. Only will accept positive values
-  int? get iterationCycle;
   @override
+  int? get iterationCycle;
 
   /// [slug] of the sensor. Must be unique along of all sensors of the asset.
-  String get slug;
   @override
+  String get slug;
 
   /// [isInstant] is a boolean to indicate if the sensor is an instant sensor. Means what the sensor execution
   /// returns [null], if it's [true], the sensor is will "disappear" from the calculated sensors, otherwise it will be
   /// take the previous value of the sensor.
-  bool? get isInstant;
   @override
+  bool? get isInstant;
 
   /// [icon] of the sensor. To send it to API, will convert to javascript codename, but from Flutter execution
   /// will convert to IconData entity.
+  @override
   @IconOrNullConverter()
   IconData? get icon;
-  @override
 
   /// [measuringUnit] of the sensor. Can be an estandard unit or a custom one.
-  String? get measuringUnit;
   @override
+  String? get measuringUnit;
 
   /// [type] of the sensor.
+  @override
   @SensorTypeOrNullConverter()
   SensorType? get type;
-  @override
 
   /// [subType] of the sensor.
+  @override
   @SensorSubTypeOrNullConverter()
   SensorSubType? get subtype;
-  @override
 
   /// [parameter] of the sensor.
+  @override
   String? get parameter;
   @override
   List<String>? get externalIdentifiers;
-  @override
 
   /// [formula] is the LCL formula to execute.
-  String? get formula;
   @override
+  String? get formula;
 
   /// [script] is the script to execute.
-  String? get script;
   @override
+  String? get script;
 
   /// Only for [SensorType.unpack] and [SensorSubType.csv], [hasHeaders], [csvHeaders] and [csvSeparator] means the configuration
   /// to unpack a CSV data comming from message.
   /// [hasHeaders] is a boolean to indicate if the CSV has headers inside of the message.
-  bool? get hasHeaders;
   @override
+  bool? get hasHeaders;
 
   /// [csvHeaders] is a list of strings to indicate the names of the columns of the CSV. Only when [hasHeaders] is true.
-  List<String>? get csvHeaders;
   @override
+  List<String>? get csvHeaders;
 
   /// [csvSeparator] is a string to indicate the separator of the CSV.
-  String? get csvSeparator;
   @override
+  String? get csvSeparator;
 
   /// [ranges] of the sensor, only for [SensorType.interval] linear conversion.
   /// It's a list of [SensorPair] objects.
-  List<SensorRange>? get ranges;
   @override
+  List<SensorRange>? get ranges;
 
   /// [mask] of the sensor. Is basically a list of [MaskPoint] objects.
-  List<MaskPoint>? get mask;
   @override
+  List<MaskPoint>? get mask;
 
   /// [hasValidator] is a boolean to indicate if the sensor has a [double] validator. When true, [minValur] and [maxValue]
   /// will define the range, both values can be [null] if the minimum or maximum range is [double.infinity].
-  bool? get hasValidator;
   @override
+  bool? get hasValidator;
 
   /// [minValue] is a [double] to indicate the minimum value of the sensor. Only when [hasValidator] is true.
   /// Can return [null] if the minimum range is [double.infinity].
-  double? get minValue;
   @override
+  double? get minValue;
 
   /// [maxValue] is a [double] to indicate the maximum value of the sensor. Only when [hasValidator] is true.
   /// [maxValue] must be greater than [minValue].
   /// If [maxValue] is [null], the minimum range is [double.infinity].
-  double? get maxValue;
   @override
+  double? get maxValue;
 
   /// [contentType] is a string to indicate the content type of the sensor, only used for [SensorType.image],
   /// [SensorType.video] and [SensorType.audio], but only when the [SensorSubType] is [SensorSubType.base64].
-  String? get contentType;
   @override
+  String? get contentType;
 
   /// [parentId] is a string to indicate the id of the parent sensor.
-  String? get parentId;
   @override
+  String? get parentId;
 
   /// [parent] is a [Sensor] to indicate the parent sensor.
-  Sensor? get parent;
   @override
+  Sensor? get parent;
 
   /// [functionId] is a string to indicate the id of the [Function] of the sensor.
-  String? get functionId;
   @override
+  String? get functionId;
 
   /// [lastExit] is the last [AtsExit] registered by this sensor.
-  AtsExit? get lastExit;
   @override
+  AtsExit? get lastExit;
 
   /// [qrCode] is a string to indicate the QR code URI of the sensor.
-  String? get qrCode;
   @override
+  String? get qrCode;
 
   /// [assignedAssetsIds] is the list of assets ids assigned to this sensor.
-  List<String>? get assignedAssetsIds;
   @override
+  List<String>? get assignedAssetsIds;
 
   /// [assignedAssets] is the list of assets assigned to this sensor.
-  List<Asset>? get assignedAssets;
   @override
+  List<Asset>? get assignedAssets;
 
   /// [isTemplate] is a boolean to indicate if the sensor is a template.
   /// So, this sensor was created from the Golden M, and their authorized you to use it.
-  bool? get isTemplate;
   @override
+  bool? get isTemplate;
 
   /// [isGlobal] defines if the sensor is global or not.
-  bool get isGlobal;
   @override
+  bool get isGlobal;
 
   /// Is the list of granted access
-  List<Access>? get access;
   @override
+  List<Access>? get access;
 
   /// [maxHistorySearch] defines the maximum search interval for the history of the sensor.
+  @override
   @DurationOrNullConverter()
   Duration? get maxHistorySearch;
+
+  /// Create a copy of Sensor
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SensorImplCopyWith<_$SensorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1257,8 +1273,12 @@ mixin _$SensorInput {
   @DurationOrNullConverter()
   set maxHistorySearch(Duration? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this SensorInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SensorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SensorInputCopyWith<SensorInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1308,6 +1328,8 @@ class _$SensorInputCopyWithImpl<$Res, $Val extends SensorInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SensorInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1492,6 +1514,8 @@ class __$$SensorInputImplCopyWithImpl<$Res>
       _$SensorInputImpl _value, $Res Function(_$SensorInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SensorInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1744,7 +1768,9 @@ class _$SensorInputImpl implements _SensorInput {
     return 'SensorInput(id: $id, assetId: $assetId, name: $name, slug: $slug, measuringUnit: $measuringUnit, type: $type, subtype: $subtype, parameter: $parameter, iterationCycle: $iterationCycle, formula: $formula, script: $script, icon: $icon, contentType: $contentType, ranges: $ranges, mask: $mask, parentId: $parentId, isInstant: $isInstant, hasValidator: $hasValidator, minValue: $minValue, maxValue: $maxValue, hasHeaders: $hasHeaders, csvSeparator: $csvSeparator, csvHeaders: $csvHeaders, functionId: $functionId, assignedAssetsIds: $assignedAssetsIds, maxHistorySearch: $maxHistorySearch)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SensorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SensorInputImplCopyWith<_$SensorInputImpl> get copyWith =>
@@ -1877,8 +1903,11 @@ abstract class _SensorInput implements SensorInput {
   Duration? get maxHistorySearch;
   @DurationOrNullConverter()
   set maxHistorySearch(Duration? value);
+
+  /// Create a copy of SensorInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SensorInputImplCopyWith<_$SensorInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1894,8 +1923,12 @@ mixin _$SensorRangeInput {
   double get y => throw _privateConstructorUsedError;
   set y(double value) => throw _privateConstructorUsedError;
 
+  /// Serializes this SensorRangeInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SensorRangeInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SensorRangeInputCopyWith<SensorRangeInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1919,6 +1952,8 @@ class _$SensorRangeInputCopyWithImpl<$Res, $Val extends SensorRangeInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SensorRangeInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1957,6 +1992,8 @@ class __$$SensorRangeInputImplCopyWithImpl<$Res>
       $Res Function(_$SensorRangeInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SensorRangeInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1996,7 +2033,9 @@ class _$SensorRangeInputImpl implements _SensorRangeInput {
     return 'SensorRangeInput(x: $x, y: $y)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SensorRangeInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SensorRangeInputImplCopyWith<_$SensorRangeInputImpl> get copyWith =>
@@ -2023,8 +2062,11 @@ abstract class _SensorRangeInput implements SensorRangeInput {
   @override
   double get y;
   set y(double value);
+
+  /// Create a copy of SensorRangeInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SensorRangeInputImplCopyWith<_$SensorRangeInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2041,8 +2083,12 @@ mixin _$SensorRange {
   /// [y] means the output value of the sensor.
   double get y => throw _privateConstructorUsedError;
 
+  /// Serializes this SensorRange to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SensorRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SensorRangeCopyWith<SensorRange> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2066,6 +2112,8 @@ class _$SensorRangeCopyWithImpl<$Res, $Val extends SensorRange>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SensorRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2104,6 +2152,8 @@ class __$$SensorRangeImplCopyWithImpl<$Res>
       _$SensorRangeImpl _value, $Res Function(_$SensorRangeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SensorRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2153,11 +2203,13 @@ class _$SensorRangeImpl implements _SensorRange {
             (identical(other.y, y) || other.y == y));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, x, y);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SensorRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SensorRangeImplCopyWith<_$SensorRangeImpl> get copyWith =>
@@ -2178,16 +2230,18 @@ abstract class _SensorRange implements SensorRange {
   factory _SensorRange.fromJson(Map<String, dynamic> json) =
       _$SensorRangeImpl.fromJson;
 
-  @override
-
   /// [x] means the input value of the sensor.
-  double get x;
   @override
+  double get x;
 
   /// [y] means the output value of the sensor.
-  double get y;
   @override
-  @JsonKey(ignore: true)
+  double get y;
+
+  /// Create a copy of SensorRange
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SensorRangeImplCopyWith<_$SensorRangeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2213,8 +2267,12 @@ mixin _$MaskPoint {
   @IconOrNullConverter()
   IconData? get icon => throw _privateConstructorUsedError;
 
+  /// Serializes this MaskPoint to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MaskPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MaskPointCopyWith<MaskPoint> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2241,6 +2299,8 @@ class _$MaskPointCopyWithImpl<$Res, $Val extends MaskPoint>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MaskPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2293,6 +2353,8 @@ class __$$MaskPointImplCopyWithImpl<$Res>
       _$MaskPointImpl _value, $Res Function(_$MaskPointImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MaskPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2369,11 +2431,13 @@ class _$MaskPointImpl implements _MaskPoint {
             (identical(other.icon, icon) || other.icon == icon));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, color, text, value, icon);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MaskPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MaskPointImplCopyWith<_$MaskPointImpl> get copyWith =>
@@ -2397,27 +2461,29 @@ abstract class _MaskPoint implements MaskPoint {
   factory _MaskPoint.fromJson(Map<String, dynamic> json) =
       _$MaskPointImpl.fromJson;
 
-  @override
-
   /// [color] of the mask point, will convert the color ignoring the dark/light theme setting.
+  @override
   @ColorOrNullConverter()
   Color? get color;
-  @override
 
   /// [text] of the mask point, will replace the value of the mask point when is not null
-  String? get text;
   @override
+  String? get text;
 
   /// [value] of the mask point.
-  String get value;
   @override
+  String get value;
 
   /// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
   /// will convert to IconData entity.
+  @override
   @IconOrNullConverter()
   IconData? get icon;
+
+  /// Create a copy of MaskPoint
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MaskPointImplCopyWith<_$MaskPointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2441,8 +2507,12 @@ mixin _$MaskPointInput {
   @IconOrNullConverter()
   set icon(IconData? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this MaskPointInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MaskPointInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MaskPointInputCopyWith<MaskPointInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2470,6 +2540,8 @@ class _$MaskPointInputCopyWithImpl<$Res, $Val extends MaskPointInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MaskPointInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2522,6 +2594,8 @@ class __$$MaskPointInputImplCopyWithImpl<$Res>
       _$MaskPointInputImpl _value, $Res Function(_$MaskPointInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MaskPointInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2579,7 +2653,9 @@ class _$MaskPointInputImpl implements _MaskPointInput {
     return 'MaskPointInput(color: $color, text: $text, value: $value, icon: $icon)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MaskPointInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MaskPointInputImplCopyWith<_$MaskPointInputImpl> get copyWith =>
@@ -2620,8 +2696,11 @@ abstract class _MaskPointInput implements MaskPointInput {
   IconData? get icon;
   @IconOrNullConverter()
   set icon(IconData? value);
+
+  /// Create a copy of MaskPointInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MaskPointInputImplCopyWith<_$MaskPointInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -23,6 +23,9 @@ class AtsReception with _$AtsReception {
 
     /// `errorRate` represents error percent between reception and sensor entry raw.
     double? errorRate,
+
+    /// `loadingParameters` represents the loading parameters of the reception.
+    // @Default([]) List<LoadingParamsForm>? loadingParameters,
   }) = _AtsReception;
 
   factory AtsReception.fromJson(Map<String, dynamic> json) => _$AtsReceptionFromJson(json);

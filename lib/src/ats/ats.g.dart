@@ -670,9 +670,9 @@ Map<String, dynamic> _$$OperationProductInformationImplToJson(
       'fuelType': instance.fuelType,
     };
 
-_$LoadingParamsFormInputImpl _$$LoadingParamsFormInputImplFromJson(
+_$AtsLoadingParamsFormInputImpl _$$AtsLoadingParamsFormInputImplFromJson(
         Map<String, dynamic> json) =>
-    _$LoadingParamsFormInputImpl(
+    _$AtsLoadingParamsFormInputImpl(
       id: json['id'] as String?,
       assetId: json['assetId'] as String?,
       receptionId: json['receptionId'] as String?,
@@ -686,8 +686,8 @@ _$LoadingParamsFormInputImpl _$$LoadingParamsFormInputImplFromJson(
       formNumber: json['formNumber'] as String?,
     );
 
-Map<String, dynamic> _$$LoadingParamsFormInputImplToJson(
-        _$LoadingParamsFormInputImpl instance) =>
+Map<String, dynamic> _$$AtsLoadingParamsFormInputImplToJson(
+        _$AtsLoadingParamsFormInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -702,9 +702,9 @@ Map<String, dynamic> _$$LoadingParamsFormInputImplToJson(
       'formNumber': instance.formNumber,
     };
 
-_$LoadingParamsFormImpl _$$LoadingParamsFormImplFromJson(
+_$AtsLoadingParamsFormImpl _$$AtsLoadingParamsFormImplFromJson(
         Map<String, dynamic> json) =>
-    _$LoadingParamsFormImpl(
+    _$AtsLoadingParamsFormImpl(
       id: json['id'] as String?,
       assetId: json['assetId'] as String?,
       asset: json['asset'] == null
@@ -725,8 +725,8 @@ _$LoadingParamsFormImpl _$$LoadingParamsFormImplFromJson(
       formNumber: json['formNumber'] as String?,
     );
 
-Map<String, dynamic> _$$LoadingParamsFormImplToJson(
-        _$LoadingParamsFormImpl instance) =>
+Map<String, dynamic> _$$AtsLoadingParamsFormImplToJson(
+        _$AtsLoadingParamsFormImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
