@@ -7011,6 +7011,13 @@ mixin _$AtsReception {
   /// ID of the [AtsPurchaseOrder].
   int? get orderId => throw _privateConstructorUsedError;
 
+  /// `errorRate` Represents error percent between reception and sensor entry raw.
+  double? get errorRate => throw _privateConstructorUsedError;
+
+  /// `receptionStatus` represents the status of the reception.
+  @AtsReceptionStatusConverter()
+  AtsReceptionStatus? get receptionStatus => throw _privateConstructorUsedError;
+
   /// [AtsPurchaseOrder] linked to the reception.
   AtsPurchaseOrder? get order => throw _privateConstructorUsedError;
 
@@ -7020,11 +7027,12 @@ mixin _$AtsReception {
   /// [AtsEntry] linked to the [AtsReception].
   AtsEntry? get entry => throw _privateConstructorUsedError;
 
+  /// `loadingParameters` represents the loading parameters of the reception.
+  List<AtsLoadingParamsForm>? get loadingParameters =>
+      throw _privateConstructorUsedError;
+
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   List<AtsReceptionProduct> get products => throw _privateConstructorUsedError;
-
-  /// `errorRate` represents error percent between reception and sensor entry raw.
-  double? get errorRate => throw _privateConstructorUsedError;
 
   /// Serializes this AtsReception to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -7045,11 +7053,13 @@ abstract class $AtsReceptionCopyWith<$Res> {
   $Res call(
       {String id,
       int? orderId,
+      double? errorRate,
+      @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
       AtsPurchaseOrder? order,
       List<int> ordersIds,
       AtsEntry? entry,
-      List<AtsReceptionProduct> products,
-      double? errorRate});
+      List<AtsLoadingParamsForm>? loadingParameters,
+      List<AtsReceptionProduct> products});
 
   $AtsPurchaseOrderCopyWith<$Res>? get order;
   $AtsEntryCopyWith<$Res>? get entry;
@@ -7072,11 +7082,13 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
   $Res call({
     Object? id = null,
     Object? orderId = freezed,
+    Object? errorRate = freezed,
+    Object? receptionStatus = freezed,
     Object? order = freezed,
     Object? ordersIds = null,
     Object? entry = freezed,
+    Object? loadingParameters = freezed,
     Object? products = null,
-    Object? errorRate = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -7087,6 +7099,14 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as int?,
+      errorRate: freezed == errorRate
+          ? _value.errorRate
+          : errorRate // ignore: cast_nullable_to_non_nullable
+              as double?,
+      receptionStatus: freezed == receptionStatus
+          ? _value.receptionStatus
+          : receptionStatus // ignore: cast_nullable_to_non_nullable
+              as AtsReceptionStatus?,
       order: freezed == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
@@ -7099,14 +7119,14 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
           ? _value.entry
           : entry // ignore: cast_nullable_to_non_nullable
               as AtsEntry?,
+      loadingParameters: freezed == loadingParameters
+          ? _value.loadingParameters
+          : loadingParameters // ignore: cast_nullable_to_non_nullable
+              as List<AtsLoadingParamsForm>?,
       products: null == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<AtsReceptionProduct>,
-      errorRate: freezed == errorRate
-          ? _value.errorRate
-          : errorRate // ignore: cast_nullable_to_non_nullable
-              as double?,
     ) as $Val);
   }
 
@@ -7150,11 +7170,13 @@ abstract class _$$AtsReceptionImplCopyWith<$Res>
   $Res call(
       {String id,
       int? orderId,
+      double? errorRate,
+      @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
       AtsPurchaseOrder? order,
       List<int> ordersIds,
       AtsEntry? entry,
-      List<AtsReceptionProduct> products,
-      double? errorRate});
+      List<AtsLoadingParamsForm>? loadingParameters,
+      List<AtsReceptionProduct> products});
 
   @override
   $AtsPurchaseOrderCopyWith<$Res>? get order;
@@ -7177,11 +7199,13 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? orderId = freezed,
+    Object? errorRate = freezed,
+    Object? receptionStatus = freezed,
     Object? order = freezed,
     Object? ordersIds = null,
     Object? entry = freezed,
+    Object? loadingParameters = freezed,
     Object? products = null,
-    Object? errorRate = freezed,
   }) {
     return _then(_$AtsReceptionImpl(
       id: null == id
@@ -7192,6 +7216,14 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as int?,
+      errorRate: freezed == errorRate
+          ? _value.errorRate
+          : errorRate // ignore: cast_nullable_to_non_nullable
+              as double?,
+      receptionStatus: freezed == receptionStatus
+          ? _value.receptionStatus
+          : receptionStatus // ignore: cast_nullable_to_non_nullable
+              as AtsReceptionStatus?,
       order: freezed == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
@@ -7204,14 +7236,14 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
           ? _value.entry
           : entry // ignore: cast_nullable_to_non_nullable
               as AtsEntry?,
+      loadingParameters: freezed == loadingParameters
+          ? _value._loadingParameters
+          : loadingParameters // ignore: cast_nullable_to_non_nullable
+              as List<AtsLoadingParamsForm>?,
       products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
               as List<AtsReceptionProduct>,
-      errorRate: freezed == errorRate
-          ? _value.errorRate
-          : errorRate // ignore: cast_nullable_to_non_nullable
-              as double?,
     ));
   }
 }
@@ -7222,12 +7254,15 @@ class _$AtsReceptionImpl implements _AtsReception {
   _$AtsReceptionImpl(
       {required this.id,
       this.orderId,
+      this.errorRate,
+      @AtsReceptionStatusConverter() this.receptionStatus,
       this.order,
       final List<int> ordersIds = const [],
       this.entry,
-      final List<AtsReceptionProduct> products = const [],
-      this.errorRate})
+      final List<AtsLoadingParamsForm>? loadingParameters = const [],
+      final List<AtsReceptionProduct> products = const []})
       : _ordersIds = ordersIds,
+        _loadingParameters = loadingParameters,
         _products = products;
 
   factory _$AtsReceptionImpl.fromJson(Map<String, dynamic> json) =>
@@ -7240,6 +7275,15 @@ class _$AtsReceptionImpl implements _AtsReception {
   /// ID of the [AtsPurchaseOrder].
   @override
   final int? orderId;
+
+  /// `errorRate` Represents error percent between reception and sensor entry raw.
+  @override
+  final double? errorRate;
+
+  /// `receptionStatus` represents the status of the reception.
+  @override
+  @AtsReceptionStatusConverter()
+  final AtsReceptionStatus? receptionStatus;
 
   /// [AtsPurchaseOrder] linked to the reception.
   @override
@@ -7261,6 +7305,21 @@ class _$AtsReceptionImpl implements _AtsReception {
   @override
   final AtsEntry? entry;
 
+  /// `loadingParameters` represents the loading parameters of the reception.
+  final List<AtsLoadingParamsForm>? _loadingParameters;
+
+  /// `loadingParameters` represents the loading parameters of the reception.
+  @override
+  @JsonKey()
+  List<AtsLoadingParamsForm>? get loadingParameters {
+    final value = _loadingParameters;
+    if (value == null) return null;
+    if (_loadingParameters is EqualUnmodifiableListView)
+      return _loadingParameters;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   final List<AtsReceptionProduct> _products;
 
@@ -7273,13 +7332,9 @@ class _$AtsReceptionImpl implements _AtsReception {
     return EqualUnmodifiableListView(_products);
   }
 
-  /// `errorRate` represents error percent between reception and sensor entry raw.
-  @override
-  final double? errorRate;
-
   @override
   String toString() {
-    return 'AtsReception(id: $id, orderId: $orderId, order: $order, ordersIds: $ordersIds, entry: $entry, products: $products, errorRate: $errorRate)';
+    return 'AtsReception(id: $id, orderId: $orderId, errorRate: $errorRate, receptionStatus: $receptionStatus, order: $order, ordersIds: $ordersIds, entry: $entry, loadingParameters: $loadingParameters, products: $products)';
   }
 
   @override
@@ -7289,13 +7344,17 @@ class _$AtsReceptionImpl implements _AtsReception {
             other is _$AtsReceptionImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.errorRate, errorRate) ||
+                other.errorRate == errorRate) &&
+            (identical(other.receptionStatus, receptionStatus) ||
+                other.receptionStatus == receptionStatus) &&
             (identical(other.order, order) || other.order == order) &&
             const DeepCollectionEquality()
                 .equals(other._ordersIds, _ordersIds) &&
             (identical(other.entry, entry) || other.entry == entry) &&
-            const DeepCollectionEquality().equals(other._products, _products) &&
-            (identical(other.errorRate, errorRate) ||
-                other.errorRate == errorRate));
+            const DeepCollectionEquality()
+                .equals(other._loadingParameters, _loadingParameters) &&
+            const DeepCollectionEquality().equals(other._products, _products));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7304,11 +7363,13 @@ class _$AtsReceptionImpl implements _AtsReception {
       runtimeType,
       id,
       orderId,
+      errorRate,
+      receptionStatus,
       order,
       const DeepCollectionEquality().hash(_ordersIds),
       entry,
-      const DeepCollectionEquality().hash(_products),
-      errorRate);
+      const DeepCollectionEquality().hash(_loadingParameters),
+      const DeepCollectionEquality().hash(_products));
 
   /// Create a copy of AtsReception
   /// with the given fields replaced by the non-null parameter values.
@@ -7330,11 +7391,13 @@ abstract class _AtsReception implements AtsReception {
   factory _AtsReception(
       {required final String id,
       final int? orderId,
+      final double? errorRate,
+      @AtsReceptionStatusConverter() final AtsReceptionStatus? receptionStatus,
       final AtsPurchaseOrder? order,
       final List<int> ordersIds,
       final AtsEntry? entry,
-      final List<AtsReceptionProduct> products,
-      final double? errorRate}) = _$AtsReceptionImpl;
+      final List<AtsLoadingParamsForm>? loadingParameters,
+      final List<AtsReceptionProduct> products}) = _$AtsReceptionImpl;
 
   factory _AtsReception.fromJson(Map<String, dynamic> json) =
       _$AtsReceptionImpl.fromJson;
@@ -7346,6 +7409,15 @@ abstract class _AtsReception implements AtsReception {
   /// ID of the [AtsPurchaseOrder].
   @override
   int? get orderId;
+
+  /// `errorRate` Represents error percent between reception and sensor entry raw.
+  @override
+  double? get errorRate;
+
+  /// `receptionStatus` represents the status of the reception.
+  @override
+  @AtsReceptionStatusConverter()
+  AtsReceptionStatus? get receptionStatus;
 
   /// [AtsPurchaseOrder] linked to the reception.
   @override
@@ -7359,13 +7431,13 @@ abstract class _AtsReception implements AtsReception {
   @override
   AtsEntry? get entry;
 
+  /// `loadingParameters` represents the loading parameters of the reception.
+  @override
+  List<AtsLoadingParamsForm>? get loadingParameters;
+
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   @override
   List<AtsReceptionProduct> get products;
-
-  /// `errorRate` represents error percent between reception and sensor entry raw.
-  @override
-  double? get errorRate;
 
   /// Create a copy of AtsReception
   /// with the given fields replaced by the non-null parameter values.

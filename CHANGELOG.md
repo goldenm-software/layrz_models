@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.2.65
+- rename `LoadingParamsFormInput` to `AtsLoadingParamsFormInput` and `LoadingParamsForm` to `AtsLoadingParamsForm`.
+- add `AtsReceptionStatus` in `AtsReception`.
+- add `loadingParamsForm` in `AtsReception`.
+
 ## 3.2.64
 
 - Added tenvio things on `User` model
