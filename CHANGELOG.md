@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.2.67
+
+- Added `description` to `BHSPermissionTier` and `BHSPermissionTierInput` 
+
 ## 3.2.66
 
 - Adjustments on MFA models

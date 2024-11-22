@@ -36,8 +36,12 @@ mixin _$LayrzChart {
   /// Is a list of granted access to this entity.
   List<Access>? get access => throw _privateConstructorUsedError;
 
+  /// Serializes this LayrzChart to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LayrzChart
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LayrzChartCopyWith<LayrzChart> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -71,6 +75,8 @@ class _$LayrzChartCopyWithImpl<$Res, $Val extends LayrzChart>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LayrzChart
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -159,6 +165,8 @@ class __$$LayrzChartImplCopyWithImpl<$Res>
       _$LayrzChartImpl _value, $Res Function(_$LayrzChartImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LayrzChart
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -306,7 +314,7 @@ class _$LayrzChartImpl implements _LayrzChart {
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -321,7 +329,9 @@ class _$LayrzChartImpl implements _LayrzChart {
       dataSource,
       const DeepCollectionEquality().hash(_access));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LayrzChart
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LayrzChartImplCopyWith<_$LayrzChartImpl> get copyWith =>
@@ -372,12 +382,15 @@ abstract class _LayrzChart implements LayrzChart {
   @override
   @ChartDataSourceOrNullConverter()
   ChartDataSource? get dataSource;
-  @override
 
   /// Is a list of granted access to this entity.
-  List<Access>? get access;
   @override
-  @JsonKey(ignore: true)
+  List<Access>? get access;
+
+  /// Create a copy of LayrzChart
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LayrzChartImplCopyWith<_$LayrzChartImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -395,8 +408,12 @@ mixin _$AxisConfig {
   @ChartDataTypeOrNullConverter()
   ChartDataType? get dataType => throw _privateConstructorUsedError;
 
+  /// Serializes this AxisConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AxisConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AxisConfigCopyWith<AxisConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -425,6 +442,8 @@ class _$AxisConfigCopyWithImpl<$Res, $Val extends AxisConfig>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AxisConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -483,6 +502,8 @@ class __$$AxisConfigImplCopyWithImpl<$Res>
       _$AxisConfigImpl _value, $Res Function(_$AxisConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AxisConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -563,12 +584,14 @@ class _$AxisConfigImpl implements _AxisConfig {
                 other.dataType == dataType));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, label, measureUnit, minValue, maxValue, dataType);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AxisConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AxisConfigImplCopyWith<_$AxisConfigImpl> get copyWith =>
@@ -605,8 +628,11 @@ abstract class _AxisConfig implements AxisConfig {
   @override
   @ChartDataTypeOrNullConverter()
   ChartDataType? get dataType;
+
+  /// Create a copy of AxisConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AxisConfigImplCopyWith<_$AxisConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -621,8 +647,12 @@ mixin _$LineChartRender {
   AxisConfig get xAxis => throw _privateConstructorUsedError;
   AxisConfig get yAxis => throw _privateConstructorUsedError;
 
+  /// Serializes this LineChartRender to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LineChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LineChartRenderCopyWith<LineChartRender> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -649,6 +679,8 @@ class _$LineChartRenderCopyWithImpl<$Res, $Val extends LineChartRender>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LineChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -672,6 +704,8 @@ class _$LineChartRenderCopyWithImpl<$Res, $Val extends LineChartRender>
     ) as $Val);
   }
 
+  /// Create a copy of LineChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AxisConfigCopyWith<$Res> get xAxis {
@@ -680,6 +714,8 @@ class _$LineChartRenderCopyWithImpl<$Res, $Val extends LineChartRender>
     });
   }
 
+  /// Create a copy of LineChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AxisConfigCopyWith<$Res> get yAxis {
@@ -713,6 +749,8 @@ class __$$LineChartRenderImplCopyWithImpl<$Res>
       _$LineChartRenderImpl _value, $Res Function(_$LineChartRenderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LineChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -777,12 +815,14 @@ class _$LineChartRenderImpl implements _LineChartRender {
             (identical(other.yAxis, yAxis) || other.yAxis == yAxis));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_series), xAxis, yAxis);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LineChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LineChartRenderImplCopyWith<_$LineChartRenderImpl> get copyWith =>
@@ -812,8 +852,11 @@ abstract class _LineChartRender implements LineChartRender {
   AxisConfig get xAxis;
   @override
   AxisConfig get yAxis;
+
+  /// Create a copy of LineChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LineChartRenderImplCopyWith<_$LineChartRenderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -831,8 +874,12 @@ mixin _$LineChartSerie {
   ChartDataSerieType get type => throw _privateConstructorUsedError;
   List<LineChartDataPoint> get values => throw _privateConstructorUsedError;
 
+  /// Serializes this LineChartSerie to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LineChartSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LineChartSerieCopyWith<LineChartSerie> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -860,6 +907,8 @@ class _$LineChartSerieCopyWithImpl<$Res, $Val extends LineChartSerie>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LineChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -912,6 +961,8 @@ class __$$LineChartSerieImplCopyWithImpl<$Res>
       _$LineChartSerieImpl _value, $Res Function(_$LineChartSerieImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LineChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -986,12 +1037,14 @@ class _$LineChartSerieImpl implements _LineChartSerie {
             const DeepCollectionEquality().equals(other._values, _values));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, color, label, type,
       const DeepCollectionEquality().hash(_values));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LineChartSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LineChartSerieImplCopyWith<_$LineChartSerieImpl> get copyWith =>
@@ -1026,8 +1079,11 @@ abstract class _LineChartSerie implements LineChartSerie {
   ChartDataSerieType get type;
   @override
   List<LineChartDataPoint> get values;
+
+  /// Create a copy of LineChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LineChartSerieImplCopyWith<_$LineChartSerieImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1041,8 +1097,12 @@ mixin _$LineChartDataPoint {
   dynamic get xAxis => throw _privateConstructorUsedError;
   num get yAxis => throw _privateConstructorUsedError;
 
+  /// Serializes this LineChartDataPoint to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of LineChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $LineChartDataPointCopyWith<LineChartDataPoint> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1066,6 +1126,8 @@ class _$LineChartDataPointCopyWithImpl<$Res, $Val extends LineChartDataPoint>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of LineChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1104,6 +1166,8 @@ class __$$LineChartDataPointImplCopyWithImpl<$Res>
       $Res Function(_$LineChartDataPointImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of LineChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1150,12 +1214,14 @@ class _$LineChartDataPointImpl implements _LineChartDataPoint {
             (identical(other.yAxis, yAxis) || other.yAxis == yAxis));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(xAxis), yAxis);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of LineChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$LineChartDataPointImplCopyWith<_$LineChartDataPointImpl> get copyWith =>
@@ -1182,8 +1248,11 @@ abstract class _LineChartDataPoint implements LineChartDataPoint {
   dynamic get xAxis;
   @override
   num get yAxis;
+
+  /// Create a copy of LineChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LineChartDataPointImplCopyWith<_$LineChartDataPointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1197,8 +1266,12 @@ mixin _$TableHeader {
   String get label => throw _privateConstructorUsedError;
   String get key => throw _privateConstructorUsedError;
 
+  /// Serializes this TableHeader to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TableHeader
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TableHeaderCopyWith<TableHeader> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1222,6 +1295,8 @@ class _$TableHeaderCopyWithImpl<$Res, $Val extends TableHeader>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TableHeader
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1260,6 +1335,8 @@ class __$$TableHeaderImplCopyWithImpl<$Res>
       _$TableHeaderImpl _value, $Res Function(_$TableHeaderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TableHeader
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1306,11 +1383,13 @@ class _$TableHeaderImpl implements _TableHeader {
             (identical(other.key, key) || other.key == key));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, label, key);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TableHeader
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TableHeaderImplCopyWith<_$TableHeaderImpl> get copyWith =>
@@ -1336,8 +1415,11 @@ abstract class _TableHeader implements TableHeader {
   String get label;
   @override
   String get key;
+
+  /// Create a copy of TableHeader
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TableHeaderImplCopyWith<_$TableHeaderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1353,8 +1435,12 @@ mixin _$TableDataSerie {
   @JsonKey(name: 'rows')
   List<Map<String, dynamic>> get values => throw _privateConstructorUsedError;
 
+  /// Serializes this TableDataSerie to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TableDataSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TableDataSerieCopyWith<TableDataSerie> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1380,6 +1466,8 @@ class _$TableDataSerieCopyWithImpl<$Res, $Val extends TableDataSerie>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TableDataSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1420,6 +1508,8 @@ class __$$TableDataSerieImplCopyWithImpl<$Res>
       _$TableDataSerieImpl _value, $Res Function(_$TableDataSerieImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TableDataSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1483,14 +1573,16 @@ class _$TableDataSerieImpl implements _TableDataSerie {
             const DeepCollectionEquality().equals(other._values, _values));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_headers),
       const DeepCollectionEquality().hash(_values));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TableDataSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TableDataSerieImplCopyWith<_$TableDataSerieImpl> get copyWith =>
@@ -1520,8 +1612,11 @@ abstract class _TableDataSerie implements TableDataSerie {
   @override
   @JsonKey(name: 'rows')
   List<Map<String, dynamic>> get values;
+
+  /// Create a copy of TableDataSerie
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TableDataSerieImplCopyWith<_$TableDataSerieImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1536,8 +1631,12 @@ mixin _$ColumnChartRender {
   AxisConfig get xAxis => throw _privateConstructorUsedError;
   AxisConfig get yAxis => throw _privateConstructorUsedError;
 
+  /// Serializes this ColumnChartRender to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ColumnChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ColumnChartRenderCopyWith<ColumnChartRender> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1565,6 +1664,8 @@ class _$ColumnChartRenderCopyWithImpl<$Res, $Val extends ColumnChartRender>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ColumnChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1588,6 +1689,8 @@ class _$ColumnChartRenderCopyWithImpl<$Res, $Val extends ColumnChartRender>
     ) as $Val);
   }
 
+  /// Create a copy of ColumnChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AxisConfigCopyWith<$Res> get xAxis {
@@ -1596,6 +1699,8 @@ class _$ColumnChartRenderCopyWithImpl<$Res, $Val extends ColumnChartRender>
     });
   }
 
+  /// Create a copy of ColumnChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AxisConfigCopyWith<$Res> get yAxis {
@@ -1630,6 +1735,8 @@ class __$$ColumnChartRenderImplCopyWithImpl<$Res>
       $Res Function(_$ColumnChartRenderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ColumnChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1694,12 +1801,14 @@ class _$ColumnChartRenderImpl implements _ColumnChartRender {
             (identical(other.yAxis, yAxis) || other.yAxis == yAxis));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_series), xAxis, yAxis);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ColumnChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ColumnChartRenderImplCopyWith<_$ColumnChartRenderImpl> get copyWith =>
@@ -1729,8 +1838,11 @@ abstract class _ColumnChartRender implements ColumnChartRender {
   AxisConfig get xAxis;
   @override
   AxisConfig get yAxis;
+
+  /// Create a copy of ColumnChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ColumnChartRenderImplCopyWith<_$ColumnChartRenderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1746,8 +1858,12 @@ mixin _$ColumnChartSerie {
   String get label => throw _privateConstructorUsedError;
   List<ColumnChartDataPoint> get values => throw _privateConstructorUsedError;
 
+  /// Serializes this ColumnChartSerie to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ColumnChartSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ColumnChartSerieCopyWith<ColumnChartSerie> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1774,6 +1890,8 @@ class _$ColumnChartSerieCopyWithImpl<$Res, $Val extends ColumnChartSerie>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ColumnChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1820,6 +1938,8 @@ class __$$ColumnChartSerieImplCopyWithImpl<$Res>
       $Res Function(_$ColumnChartSerieImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ColumnChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1884,12 +2004,14 @@ class _$ColumnChartSerieImpl implements _ColumnChartSerie {
             const DeepCollectionEquality().equals(other._values, _values));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, color, label, const DeepCollectionEquality().hash(_values));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ColumnChartSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ColumnChartSerieImplCopyWith<_$ColumnChartSerieImpl> get copyWith =>
@@ -1921,8 +2043,11 @@ abstract class _ColumnChartSerie implements ColumnChartSerie {
   String get label;
   @override
   List<ColumnChartDataPoint> get values;
+
+  /// Create a copy of ColumnChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ColumnChartSerieImplCopyWith<_$ColumnChartSerieImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1936,8 +2061,12 @@ mixin _$ColumnChartDataPoint {
   String get xAxis => throw _privateConstructorUsedError;
   num get yAxis => throw _privateConstructorUsedError;
 
+  /// Serializes this ColumnChartDataPoint to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ColumnChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ColumnChartDataPointCopyWith<ColumnChartDataPoint> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1962,6 +2091,8 @@ class _$ColumnChartDataPointCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ColumnChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2000,6 +2131,8 @@ class __$$ColumnChartDataPointImplCopyWithImpl<$Res>
       $Res Function(_$ColumnChartDataPointImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ColumnChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2046,11 +2179,13 @@ class _$ColumnChartDataPointImpl implements _ColumnChartDataPoint {
             (identical(other.yAxis, yAxis) || other.yAxis == yAxis));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, xAxis, yAxis);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ColumnChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ColumnChartDataPointImplCopyWith<_$ColumnChartDataPointImpl>
@@ -2078,8 +2213,11 @@ abstract class _ColumnChartDataPoint implements ColumnChartDataPoint {
   String get xAxis;
   @override
   num get yAxis;
+
+  /// Create a copy of ColumnChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ColumnChartDataPointImplCopyWith<_$ColumnChartDataPointImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2094,8 +2232,12 @@ mixin _$BarChartRender {
   AxisConfig get xAxis => throw _privateConstructorUsedError;
   AxisConfig get yAxis => throw _privateConstructorUsedError;
 
+  /// Serializes this BarChartRender to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BarChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BarChartRenderCopyWith<BarChartRender> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2122,6 +2264,8 @@ class _$BarChartRenderCopyWithImpl<$Res, $Val extends BarChartRender>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BarChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2145,6 +2289,8 @@ class _$BarChartRenderCopyWithImpl<$Res, $Val extends BarChartRender>
     ) as $Val);
   }
 
+  /// Create a copy of BarChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AxisConfigCopyWith<$Res> get xAxis {
@@ -2153,6 +2299,8 @@ class _$BarChartRenderCopyWithImpl<$Res, $Val extends BarChartRender>
     });
   }
 
+  /// Create a copy of BarChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AxisConfigCopyWith<$Res> get yAxis {
@@ -2186,6 +2334,8 @@ class __$$BarChartRenderImplCopyWithImpl<$Res>
       _$BarChartRenderImpl _value, $Res Function(_$BarChartRenderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BarChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2250,12 +2400,14 @@ class _$BarChartRenderImpl implements _BarChartRender {
             (identical(other.yAxis, yAxis) || other.yAxis == yAxis));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_series), xAxis, yAxis);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BarChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BarChartRenderImplCopyWith<_$BarChartRenderImpl> get copyWith =>
@@ -2285,8 +2437,11 @@ abstract class _BarChartRender implements BarChartRender {
   AxisConfig get xAxis;
   @override
   AxisConfig get yAxis;
+
+  /// Create a copy of BarChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BarChartRenderImplCopyWith<_$BarChartRenderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2302,8 +2457,12 @@ mixin _$BarChartSerie {
   String get label => throw _privateConstructorUsedError;
   List<BarChartDataPoint> get values => throw _privateConstructorUsedError;
 
+  /// Serializes this BarChartSerie to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BarChartSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BarChartSerieCopyWith<BarChartSerie> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2330,6 +2489,8 @@ class _$BarChartSerieCopyWithImpl<$Res, $Val extends BarChartSerie>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BarChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2376,6 +2537,8 @@ class __$$BarChartSerieImplCopyWithImpl<$Res>
       _$BarChartSerieImpl _value, $Res Function(_$BarChartSerieImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BarChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2440,12 +2603,14 @@ class _$BarChartSerieImpl implements _BarChartSerie {
             const DeepCollectionEquality().equals(other._values, _values));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, color, label, const DeepCollectionEquality().hash(_values));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BarChartSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BarChartSerieImplCopyWith<_$BarChartSerieImpl> get copyWith =>
@@ -2475,8 +2640,11 @@ abstract class _BarChartSerie implements BarChartSerie {
   String get label;
   @override
   List<BarChartDataPoint> get values;
+
+  /// Create a copy of BarChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BarChartSerieImplCopyWith<_$BarChartSerieImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2490,8 +2658,12 @@ mixin _$BarChartDataPoint {
   String get xAxis => throw _privateConstructorUsedError;
   num get yAxis => throw _privateConstructorUsedError;
 
+  /// Serializes this BarChartDataPoint to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BarChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BarChartDataPointCopyWith<BarChartDataPoint> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2515,6 +2687,8 @@ class _$BarChartDataPointCopyWithImpl<$Res, $Val extends BarChartDataPoint>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BarChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2553,6 +2727,8 @@ class __$$BarChartDataPointImplCopyWithImpl<$Res>
       $Res Function(_$BarChartDataPointImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BarChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2599,11 +2775,13 @@ class _$BarChartDataPointImpl implements _BarChartDataPoint {
             (identical(other.yAxis, yAxis) || other.yAxis == yAxis));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, xAxis, yAxis);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BarChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BarChartDataPointImplCopyWith<_$BarChartDataPointImpl> get copyWith =>
@@ -2630,8 +2808,11 @@ abstract class _BarChartDataPoint implements BarChartDataPoint {
   String get xAxis;
   @override
   num get yAxis;
+
+  /// Create a copy of BarChartDataPoint
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BarChartDataPointImplCopyWith<_$BarChartDataPointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2646,8 +2827,12 @@ mixin _$ScatterChartRender {
   AxisConfig get xAxis => throw _privateConstructorUsedError;
   AxisConfig get yAxis => throw _privateConstructorUsedError;
 
+  /// Serializes this ScatterChartRender to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ScatterChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ScatterChartRenderCopyWith<ScatterChartRender> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2674,6 +2859,8 @@ class _$ScatterChartRenderCopyWithImpl<$Res, $Val extends ScatterChartRender>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ScatterChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2697,6 +2884,8 @@ class _$ScatterChartRenderCopyWithImpl<$Res, $Val extends ScatterChartRender>
     ) as $Val);
   }
 
+  /// Create a copy of ScatterChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AxisConfigCopyWith<$Res> get xAxis {
@@ -2705,6 +2894,8 @@ class _$ScatterChartRenderCopyWithImpl<$Res, $Val extends ScatterChartRender>
     });
   }
 
+  /// Create a copy of ScatterChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AxisConfigCopyWith<$Res> get yAxis {
@@ -2738,6 +2929,8 @@ class __$$ScatterChartRenderImplCopyWithImpl<$Res>
       $Res Function(_$ScatterChartRenderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ScatterChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2802,12 +2995,14 @@ class _$ScatterChartRenderImpl implements _ScatterChartRender {
             (identical(other.yAxis, yAxis) || other.yAxis == yAxis));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, const DeepCollectionEquality().hash(_series), xAxis, yAxis);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ScatterChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ScatterChartRenderImplCopyWith<_$ScatterChartRenderImpl> get copyWith =>
@@ -2837,8 +3032,11 @@ abstract class _ScatterChartRender implements ScatterChartRender {
   AxisConfig get xAxis;
   @override
   AxisConfig get yAxis;
+
+  /// Create a copy of ScatterChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ScatterChartRenderImplCopyWith<_$ScatterChartRenderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2854,8 +3052,12 @@ mixin _$NumberDataSerie {
   Color? get color => throw _privateConstructorUsedError;
   num get value => throw _privateConstructorUsedError;
 
+  /// Serializes this NumberDataSerie to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of NumberDataSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $NumberDataSerieCopyWith<NumberDataSerie> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2879,6 +3081,8 @@ class _$NumberDataSerieCopyWithImpl<$Res, $Val extends NumberDataSerie>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of NumberDataSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2922,6 +3126,8 @@ class __$$NumberDataSerieImplCopyWithImpl<$Res>
       _$NumberDataSerieImpl _value, $Res Function(_$NumberDataSerieImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of NumberDataSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2980,11 +3186,13 @@ class _$NumberDataSerieImpl implements _NumberDataSerie {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, label, color, value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of NumberDataSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$NumberDataSerieImplCopyWith<_$NumberDataSerieImpl> get copyWith =>
@@ -3015,8 +3223,11 @@ abstract class _NumberDataSerie implements NumberDataSerie {
   Color? get color;
   @override
   num get value;
+
+  /// Create a copy of NumberDataSerie
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$NumberDataSerieImplCopyWith<_$NumberDataSerieImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3029,8 +3240,12 @@ PieChartRender _$PieChartRenderFromJson(Map<String, dynamic> json) {
 mixin _$PieChartRender {
   List<PieChartSerie> get series => throw _privateConstructorUsedError;
 
+  /// Serializes this PieChartRender to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PieChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PieChartRenderCopyWith<PieChartRender> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3054,6 +3269,8 @@ class _$PieChartRenderCopyWithImpl<$Res, $Val extends PieChartRender>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PieChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3087,6 +3304,8 @@ class __$$PieChartRenderImplCopyWithImpl<$Res>
       _$PieChartRenderImpl _value, $Res Function(_$PieChartRenderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PieChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3131,12 +3350,14 @@ class _$PieChartRenderImpl implements _PieChartRender {
             const DeepCollectionEquality().equals(other._series, _series));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_series));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PieChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PieChartRenderImplCopyWith<_$PieChartRenderImpl> get copyWith =>
@@ -3160,8 +3381,11 @@ abstract class _PieChartRender implements PieChartRender {
 
   @override
   List<PieChartSerie> get series;
+
+  /// Create a copy of PieChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PieChartRenderImplCopyWith<_$PieChartRenderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3177,8 +3401,12 @@ mixin _$PieChartSerie {
   String get label => throw _privateConstructorUsedError;
   num get value => throw _privateConstructorUsedError;
 
+  /// Serializes this PieChartSerie to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PieChartSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PieChartSerieCopyWith<PieChartSerie> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3202,6 +3430,8 @@ class _$PieChartSerieCopyWithImpl<$Res, $Val extends PieChartSerie>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PieChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3245,6 +3475,8 @@ class __$$PieChartSerieImplCopyWithImpl<$Res>
       _$PieChartSerieImpl _value, $Res Function(_$PieChartSerieImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PieChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3303,11 +3535,13 @@ class _$PieChartSerieImpl implements _PieChartSerie {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, color, label, value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PieChartSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PieChartSerieImplCopyWith<_$PieChartSerieImpl> get copyWith =>
@@ -3337,8 +3571,11 @@ abstract class _PieChartSerie implements PieChartSerie {
   String get label;
   @override
   num get value;
+
+  /// Create a copy of PieChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PieChartSerieImplCopyWith<_$PieChartSerieImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3351,8 +3588,12 @@ RadialBarChartRender _$RadialBarChartRenderFromJson(Map<String, dynamic> json) {
 mixin _$RadialBarChartRender {
   List<RadialBarChartSerie> get series => throw _privateConstructorUsedError;
 
+  /// Serializes this RadialBarChartRender to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RadialBarChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RadialBarChartRenderCopyWith<RadialBarChartRender> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3377,6 +3618,8 @@ class _$RadialBarChartRenderCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RadialBarChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3410,6 +3653,8 @@ class __$$RadialBarChartRenderImplCopyWithImpl<$Res>
       $Res Function(_$RadialBarChartRenderImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RadialBarChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3455,12 +3700,14 @@ class _$RadialBarChartRenderImpl implements _RadialBarChartRender {
             const DeepCollectionEquality().equals(other._series, _series));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_series));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RadialBarChartRender
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RadialBarChartRenderImplCopyWith<_$RadialBarChartRenderImpl>
@@ -3486,8 +3733,11 @@ abstract class _RadialBarChartRender implements RadialBarChartRender {
 
   @override
   List<RadialBarChartSerie> get series;
+
+  /// Create a copy of RadialBarChartRender
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RadialBarChartRenderImplCopyWith<_$RadialBarChartRenderImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3503,8 +3753,12 @@ mixin _$RadialBarChartSerie {
   String get label => throw _privateConstructorUsedError;
   num get value => throw _privateConstructorUsedError;
 
+  /// Serializes this RadialBarChartSerie to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RadialBarChartSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RadialBarChartSerieCopyWith<RadialBarChartSerie> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3528,6 +3782,8 @@ class _$RadialBarChartSerieCopyWithImpl<$Res, $Val extends RadialBarChartSerie>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RadialBarChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3571,6 +3827,8 @@ class __$$RadialBarChartSerieImplCopyWithImpl<$Res>
       $Res Function(_$RadialBarChartSerieImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RadialBarChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3629,11 +3887,13 @@ class _$RadialBarChartSerieImpl implements _RadialBarChartSerie {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, color, label, value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RadialBarChartSerie
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RadialBarChartSerieImplCopyWith<_$RadialBarChartSerieImpl> get copyWith =>
@@ -3664,8 +3924,11 @@ abstract class _RadialBarChartSerie implements RadialBarChartSerie {
   String get label;
   @override
   num get value;
+
+  /// Create a copy of RadialBarChartSerie
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RadialBarChartSerieImplCopyWith<_$RadialBarChartSerieImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

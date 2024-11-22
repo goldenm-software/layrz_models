@@ -6,7 +6,9 @@ class BHSPermissionTier with _$BHSPermissionTier {
     required String id,
     required String name,
     required int tierLevel,
+    String? description,
     Map<String, dynamic>? customProperties,
+    List<User>? users,
 
     /// Is the list of granted access
     List<Access>? access,
@@ -21,6 +23,7 @@ class BHSPermissionTierInput with _$BHSPermissionTierInput {
   factory BHSPermissionTierInput({
     String? id,
     String? name,
+    String? description,
     @Default(1) int tierLevel,
     Map<String, dynamic>? customProperties,
   }) = _BHSPermissionTierInput;
