@@ -7011,6 +7011,13 @@ mixin _$AtsReception {
   /// ID of the [AtsPurchaseOrder].
   int? get orderId => throw _privateConstructorUsedError;
 
+  /// `errorRate` Represents error percent between reception and sensor entry raw.
+  double? get errorRate => throw _privateConstructorUsedError;
+
+  /// `receptionStatus` represents the status of the reception.
+  @AtsReceptionStatusConverter()
+  AtsReceptionStatus? get receptionStatus => throw _privateConstructorUsedError;
+
   /// [AtsPurchaseOrder] linked to the reception.
   AtsPurchaseOrder? get order => throw _privateConstructorUsedError;
 
@@ -7020,11 +7027,12 @@ mixin _$AtsReception {
   /// [AtsEntry] linked to the [AtsReception].
   AtsEntry? get entry => throw _privateConstructorUsedError;
 
+  /// `loadingParameters` represents the loading parameters of the reception.
+  List<AtsLoadingParamsForm> get loadingParamsForm =>
+      throw _privateConstructorUsedError;
+
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   List<AtsReceptionProduct> get products => throw _privateConstructorUsedError;
-
-  /// `errorRate` represents error percent between reception and sensor entry raw.
-  double? get errorRate => throw _privateConstructorUsedError;
 
   /// Serializes this AtsReception to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -7045,11 +7053,13 @@ abstract class $AtsReceptionCopyWith<$Res> {
   $Res call(
       {String id,
       int? orderId,
+      double? errorRate,
+      @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
       AtsPurchaseOrder? order,
       List<int> ordersIds,
       AtsEntry? entry,
-      List<AtsReceptionProduct> products,
-      double? errorRate});
+      List<AtsLoadingParamsForm> loadingParamsForm,
+      List<AtsReceptionProduct> products});
 
   $AtsPurchaseOrderCopyWith<$Res>? get order;
   $AtsEntryCopyWith<$Res>? get entry;
@@ -7072,11 +7082,13 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
   $Res call({
     Object? id = null,
     Object? orderId = freezed,
+    Object? errorRate = freezed,
+    Object? receptionStatus = freezed,
     Object? order = freezed,
     Object? ordersIds = null,
     Object? entry = freezed,
+    Object? loadingParamsForm = null,
     Object? products = null,
-    Object? errorRate = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -7087,6 +7099,14 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as int?,
+      errorRate: freezed == errorRate
+          ? _value.errorRate
+          : errorRate // ignore: cast_nullable_to_non_nullable
+              as double?,
+      receptionStatus: freezed == receptionStatus
+          ? _value.receptionStatus
+          : receptionStatus // ignore: cast_nullable_to_non_nullable
+              as AtsReceptionStatus?,
       order: freezed == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
@@ -7099,14 +7119,14 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
           ? _value.entry
           : entry // ignore: cast_nullable_to_non_nullable
               as AtsEntry?,
+      loadingParamsForm: null == loadingParamsForm
+          ? _value.loadingParamsForm
+          : loadingParamsForm // ignore: cast_nullable_to_non_nullable
+              as List<AtsLoadingParamsForm>,
       products: null == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
               as List<AtsReceptionProduct>,
-      errorRate: freezed == errorRate
-          ? _value.errorRate
-          : errorRate // ignore: cast_nullable_to_non_nullable
-              as double?,
     ) as $Val);
   }
 
@@ -7150,11 +7170,13 @@ abstract class _$$AtsReceptionImplCopyWith<$Res>
   $Res call(
       {String id,
       int? orderId,
+      double? errorRate,
+      @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
       AtsPurchaseOrder? order,
       List<int> ordersIds,
       AtsEntry? entry,
-      List<AtsReceptionProduct> products,
-      double? errorRate});
+      List<AtsLoadingParamsForm> loadingParamsForm,
+      List<AtsReceptionProduct> products});
 
   @override
   $AtsPurchaseOrderCopyWith<$Res>? get order;
@@ -7177,11 +7199,13 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? orderId = freezed,
+    Object? errorRate = freezed,
+    Object? receptionStatus = freezed,
     Object? order = freezed,
     Object? ordersIds = null,
     Object? entry = freezed,
+    Object? loadingParamsForm = null,
     Object? products = null,
-    Object? errorRate = freezed,
   }) {
     return _then(_$AtsReceptionImpl(
       id: null == id
@@ -7192,6 +7216,14 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as int?,
+      errorRate: freezed == errorRate
+          ? _value.errorRate
+          : errorRate // ignore: cast_nullable_to_non_nullable
+              as double?,
+      receptionStatus: freezed == receptionStatus
+          ? _value.receptionStatus
+          : receptionStatus // ignore: cast_nullable_to_non_nullable
+              as AtsReceptionStatus?,
       order: freezed == order
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
@@ -7204,14 +7236,14 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
           ? _value.entry
           : entry // ignore: cast_nullable_to_non_nullable
               as AtsEntry?,
+      loadingParamsForm: null == loadingParamsForm
+          ? _value._loadingParamsForm
+          : loadingParamsForm // ignore: cast_nullable_to_non_nullable
+              as List<AtsLoadingParamsForm>,
       products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
               as List<AtsReceptionProduct>,
-      errorRate: freezed == errorRate
-          ? _value.errorRate
-          : errorRate // ignore: cast_nullable_to_non_nullable
-              as double?,
     ));
   }
 }
@@ -7222,12 +7254,15 @@ class _$AtsReceptionImpl implements _AtsReception {
   _$AtsReceptionImpl(
       {required this.id,
       this.orderId,
+      this.errorRate,
+      @AtsReceptionStatusConverter() this.receptionStatus,
       this.order,
       final List<int> ordersIds = const [],
       this.entry,
-      final List<AtsReceptionProduct> products = const [],
-      this.errorRate})
+      final List<AtsLoadingParamsForm> loadingParamsForm = const [],
+      final List<AtsReceptionProduct> products = const []})
       : _ordersIds = ordersIds,
+        _loadingParamsForm = loadingParamsForm,
         _products = products;
 
   factory _$AtsReceptionImpl.fromJson(Map<String, dynamic> json) =>
@@ -7240,6 +7275,15 @@ class _$AtsReceptionImpl implements _AtsReception {
   /// ID of the [AtsPurchaseOrder].
   @override
   final int? orderId;
+
+  /// `errorRate` Represents error percent between reception and sensor entry raw.
+  @override
+  final double? errorRate;
+
+  /// `receptionStatus` represents the status of the reception.
+  @override
+  @AtsReceptionStatusConverter()
+  final AtsReceptionStatus? receptionStatus;
 
   /// [AtsPurchaseOrder] linked to the reception.
   @override
@@ -7261,6 +7305,19 @@ class _$AtsReceptionImpl implements _AtsReception {
   @override
   final AtsEntry? entry;
 
+  /// `loadingParameters` represents the loading parameters of the reception.
+  final List<AtsLoadingParamsForm> _loadingParamsForm;
+
+  /// `loadingParameters` represents the loading parameters of the reception.
+  @override
+  @JsonKey()
+  List<AtsLoadingParamsForm> get loadingParamsForm {
+    if (_loadingParamsForm is EqualUnmodifiableListView)
+      return _loadingParamsForm;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_loadingParamsForm);
+  }
+
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   final List<AtsReceptionProduct> _products;
 
@@ -7273,13 +7330,9 @@ class _$AtsReceptionImpl implements _AtsReception {
     return EqualUnmodifiableListView(_products);
   }
 
-  /// `errorRate` represents error percent between reception and sensor entry raw.
-  @override
-  final double? errorRate;
-
   @override
   String toString() {
-    return 'AtsReception(id: $id, orderId: $orderId, order: $order, ordersIds: $ordersIds, entry: $entry, products: $products, errorRate: $errorRate)';
+    return 'AtsReception(id: $id, orderId: $orderId, errorRate: $errorRate, receptionStatus: $receptionStatus, order: $order, ordersIds: $ordersIds, entry: $entry, loadingParamsForm: $loadingParamsForm, products: $products)';
   }
 
   @override
@@ -7289,13 +7342,17 @@ class _$AtsReceptionImpl implements _AtsReception {
             other is _$AtsReceptionImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.orderId, orderId) || other.orderId == orderId) &&
+            (identical(other.errorRate, errorRate) ||
+                other.errorRate == errorRate) &&
+            (identical(other.receptionStatus, receptionStatus) ||
+                other.receptionStatus == receptionStatus) &&
             (identical(other.order, order) || other.order == order) &&
             const DeepCollectionEquality()
                 .equals(other._ordersIds, _ordersIds) &&
             (identical(other.entry, entry) || other.entry == entry) &&
-            const DeepCollectionEquality().equals(other._products, _products) &&
-            (identical(other.errorRate, errorRate) ||
-                other.errorRate == errorRate));
+            const DeepCollectionEquality()
+                .equals(other._loadingParamsForm, _loadingParamsForm) &&
+            const DeepCollectionEquality().equals(other._products, _products));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -7304,11 +7361,13 @@ class _$AtsReceptionImpl implements _AtsReception {
       runtimeType,
       id,
       orderId,
+      errorRate,
+      receptionStatus,
       order,
       const DeepCollectionEquality().hash(_ordersIds),
       entry,
-      const DeepCollectionEquality().hash(_products),
-      errorRate);
+      const DeepCollectionEquality().hash(_loadingParamsForm),
+      const DeepCollectionEquality().hash(_products));
 
   /// Create a copy of AtsReception
   /// with the given fields replaced by the non-null parameter values.
@@ -7330,11 +7389,13 @@ abstract class _AtsReception implements AtsReception {
   factory _AtsReception(
       {required final String id,
       final int? orderId,
+      final double? errorRate,
+      @AtsReceptionStatusConverter() final AtsReceptionStatus? receptionStatus,
       final AtsPurchaseOrder? order,
       final List<int> ordersIds,
       final AtsEntry? entry,
-      final List<AtsReceptionProduct> products,
-      final double? errorRate}) = _$AtsReceptionImpl;
+      final List<AtsLoadingParamsForm> loadingParamsForm,
+      final List<AtsReceptionProduct> products}) = _$AtsReceptionImpl;
 
   factory _AtsReception.fromJson(Map<String, dynamic> json) =
       _$AtsReceptionImpl.fromJson;
@@ -7346,6 +7407,15 @@ abstract class _AtsReception implements AtsReception {
   /// ID of the [AtsPurchaseOrder].
   @override
   int? get orderId;
+
+  /// `errorRate` Represents error percent between reception and sensor entry raw.
+  @override
+  double? get errorRate;
+
+  /// `receptionStatus` represents the status of the reception.
+  @override
+  @AtsReceptionStatusConverter()
+  AtsReceptionStatus? get receptionStatus;
 
   /// [AtsPurchaseOrder] linked to the reception.
   @override
@@ -7359,13 +7429,13 @@ abstract class _AtsReception implements AtsReception {
   @override
   AtsEntry? get entry;
 
+  /// `loadingParameters` represents the loading parameters of the reception.
+  @override
+  List<AtsLoadingParamsForm> get loadingParamsForm;
+
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   @override
   List<AtsReceptionProduct> get products;
-
-  /// `errorRate` represents error percent between reception and sensor entry raw.
-  @override
-  double? get errorRate;
 
   /// Create a copy of AtsReception
   /// with the given fields replaced by the non-null parameter values.
@@ -8079,13 +8149,13 @@ abstract class _OperationProductInformation
       get copyWith => throw _privateConstructorUsedError;
 }
 
-LoadingParamsFormInput _$LoadingParamsFormInputFromJson(
+AtsLoadingParamsFormInput _$AtsLoadingParamsFormInputFromJson(
     Map<String, dynamic> json) {
-  return _LoadingParamsFormInput.fromJson(json);
+  return _AtsLoadingParamsFormInput.fromJson(json);
 }
 
 /// @nodoc
-mixin _$LoadingParamsFormInput {
+mixin _$AtsLoadingParamsFormInput {
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   String? get id => throw _privateConstructorUsedError;
 
@@ -8149,21 +8219,21 @@ mixin _$LoadingParamsFormInput {
   /// `formNumber` Loading params form number
   set formNumber(String? value) => throw _privateConstructorUsedError;
 
-  /// Serializes this LoadingParamsFormInput to a JSON map.
+  /// Serializes this AtsLoadingParamsFormInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of LoadingParamsFormInput
+  /// Create a copy of AtsLoadingParamsFormInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LoadingParamsFormInputCopyWith<LoadingParamsFormInput> get copyWith =>
+  $AtsLoadingParamsFormInputCopyWith<AtsLoadingParamsFormInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoadingParamsFormInputCopyWith<$Res> {
-  factory $LoadingParamsFormInputCopyWith(LoadingParamsFormInput value,
-          $Res Function(LoadingParamsFormInput) then) =
-      _$LoadingParamsFormInputCopyWithImpl<$Res, LoadingParamsFormInput>;
+abstract class $AtsLoadingParamsFormInputCopyWith<$Res> {
+  factory $AtsLoadingParamsFormInputCopyWith(AtsLoadingParamsFormInput value,
+          $Res Function(AtsLoadingParamsFormInput) then) =
+      _$AtsLoadingParamsFormInputCopyWithImpl<$Res, AtsLoadingParamsFormInput>;
   @useResult
   $Res call(
       {String? id,
@@ -8180,17 +8250,17 @@ abstract class $LoadingParamsFormInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LoadingParamsFormInputCopyWithImpl<$Res,
-        $Val extends LoadingParamsFormInput>
-    implements $LoadingParamsFormInputCopyWith<$Res> {
-  _$LoadingParamsFormInputCopyWithImpl(this._value, this._then);
+class _$AtsLoadingParamsFormInputCopyWithImpl<$Res,
+        $Val extends AtsLoadingParamsFormInput>
+    implements $AtsLoadingParamsFormInputCopyWith<$Res> {
+  _$AtsLoadingParamsFormInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LoadingParamsFormInput
+  /// Create a copy of AtsLoadingParamsFormInput
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -8252,12 +8322,12 @@ class _$LoadingParamsFormInputCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$LoadingParamsFormInputImplCopyWith<$Res>
-    implements $LoadingParamsFormInputCopyWith<$Res> {
-  factory _$$LoadingParamsFormInputImplCopyWith(
-          _$LoadingParamsFormInputImpl value,
-          $Res Function(_$LoadingParamsFormInputImpl) then) =
-      __$$LoadingParamsFormInputImplCopyWithImpl<$Res>;
+abstract class _$$AtsLoadingParamsFormInputImplCopyWith<$Res>
+    implements $AtsLoadingParamsFormInputCopyWith<$Res> {
+  factory _$$AtsLoadingParamsFormInputImplCopyWith(
+          _$AtsLoadingParamsFormInputImpl value,
+          $Res Function(_$AtsLoadingParamsFormInputImpl) then) =
+      __$$AtsLoadingParamsFormInputImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -8275,16 +8345,16 @@ abstract class _$$LoadingParamsFormInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LoadingParamsFormInputImplCopyWithImpl<$Res>
-    extends _$LoadingParamsFormInputCopyWithImpl<$Res,
-        _$LoadingParamsFormInputImpl>
-    implements _$$LoadingParamsFormInputImplCopyWith<$Res> {
-  __$$LoadingParamsFormInputImplCopyWithImpl(
-      _$LoadingParamsFormInputImpl _value,
-      $Res Function(_$LoadingParamsFormInputImpl) _then)
+class __$$AtsLoadingParamsFormInputImplCopyWithImpl<$Res>
+    extends _$AtsLoadingParamsFormInputCopyWithImpl<$Res,
+        _$AtsLoadingParamsFormInputImpl>
+    implements _$$AtsLoadingParamsFormInputImplCopyWith<$Res> {
+  __$$AtsLoadingParamsFormInputImplCopyWithImpl(
+      _$AtsLoadingParamsFormInputImpl _value,
+      $Res Function(_$AtsLoadingParamsFormInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoadingParamsFormInput
+  /// Create a copy of AtsLoadingParamsFormInput
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -8300,7 +8370,7 @@ class __$$LoadingParamsFormInputImplCopyWithImpl<$Res>
     Object? sampleType = freezed,
     Object? formNumber = freezed,
   }) {
-    return _then(_$LoadingParamsFormInputImpl(
+    return _then(_$AtsLoadingParamsFormInputImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -8347,8 +8417,8 @@ class __$$LoadingParamsFormInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$LoadingParamsFormInputImpl implements _LoadingParamsFormInput {
-  _$LoadingParamsFormInputImpl(
+class _$AtsLoadingParamsFormInputImpl implements _AtsLoadingParamsFormInput {
+  _$AtsLoadingParamsFormInputImpl(
       {this.id,
       this.assetId,
       this.receptionId,
@@ -8360,8 +8430,8 @@ class _$LoadingParamsFormInputImpl implements _LoadingParamsFormInput {
       @AtsLoadingParamsSampleOrNullConverter() this.sampleType,
       this.formNumber});
 
-  factory _$LoadingParamsFormInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LoadingParamsFormInputImplFromJson(json);
+  factory _$AtsLoadingParamsFormInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AtsLoadingParamsFormInputImplFromJson(json);
 
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   @override
@@ -8406,28 +8476,28 @@ class _$LoadingParamsFormInputImpl implements _LoadingParamsFormInput {
 
   @override
   String toString() {
-    return 'LoadingParamsFormInput(id: $id, assetId: $assetId, receptionId: $receptionId, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, formNumber: $formNumber)';
+    return 'AtsLoadingParamsFormInput(id: $id, assetId: $assetId, receptionId: $receptionId, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, formNumber: $formNumber)';
   }
 
-  /// Create a copy of LoadingParamsFormInput
+  /// Create a copy of AtsLoadingParamsFormInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingParamsFormInputImplCopyWith<_$LoadingParamsFormInputImpl>
-      get copyWith => __$$LoadingParamsFormInputImplCopyWithImpl<
-          _$LoadingParamsFormInputImpl>(this, _$identity);
+  _$$AtsLoadingParamsFormInputImplCopyWith<_$AtsLoadingParamsFormInputImpl>
+      get copyWith => __$$AtsLoadingParamsFormInputImplCopyWithImpl<
+          _$AtsLoadingParamsFormInputImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LoadingParamsFormInputImplToJson(
+    return _$$AtsLoadingParamsFormInputImplToJson(
       this,
     );
   }
 }
 
-abstract class _LoadingParamsFormInput implements LoadingParamsFormInput {
-  factory _LoadingParamsFormInput(
+abstract class _AtsLoadingParamsFormInput implements AtsLoadingParamsFormInput {
+  factory _AtsLoadingParamsFormInput(
       {String? id,
       String? assetId,
       String? receptionId,
@@ -8438,10 +8508,10 @@ abstract class _LoadingParamsFormInput implements LoadingParamsFormInput {
       double? analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter()
       AtsLoadingParamsSample? sampleType,
-      String? formNumber}) = _$LoadingParamsFormInputImpl;
+      String? formNumber}) = _$AtsLoadingParamsFormInputImpl;
 
-  factory _LoadingParamsFormInput.fromJson(Map<String, dynamic> json) =
-      _$LoadingParamsFormInputImpl.fromJson;
+  factory _AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) =
+      _$AtsLoadingParamsFormInputImpl.fromJson;
 
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   @override
@@ -8515,20 +8585,20 @@ abstract class _LoadingParamsFormInput implements LoadingParamsFormInput {
   /// `formNumber` Loading params form number
   set formNumber(String? value);
 
-  /// Create a copy of LoadingParamsFormInput
+  /// Create a copy of AtsLoadingParamsFormInput
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoadingParamsFormInputImplCopyWith<_$LoadingParamsFormInputImpl>
+  _$$AtsLoadingParamsFormInputImplCopyWith<_$AtsLoadingParamsFormInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
-LoadingParamsForm _$LoadingParamsFormFromJson(Map<String, dynamic> json) {
-  return _LoadingParamsForm.fromJson(json);
+AtsLoadingParamsForm _$AtsLoadingParamsFormFromJson(Map<String, dynamic> json) {
+  return _AtsLoadingParamsForm.fromJson(json);
 }
 
 /// @nodoc
-mixin _$LoadingParamsForm {
+mixin _$AtsLoadingParamsForm {
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   String? get id => throw _privateConstructorUsedError;
 
@@ -8557,33 +8627,35 @@ mixin _$LoadingParamsForm {
   double? get assetTemperature => throw _privateConstructorUsedError;
 
   ///  `analyzedAt` represent when the asset density in UNIX
-  double? get analyzedAt => throw _privateConstructorUsedError;
+  @TimestampOrNullConverter()
+  DateTime? get analyzedAt => throw _privateConstructorUsedError;
 
   /// `sampleType` represent the loading params sample type
   @AtsLoadingParamsSampleOrNullConverter()
   AtsLoadingParamsSample? get sampleType => throw _privateConstructorUsedError;
 
   /// `fuelType` is the fuel type of the entry.
-  String? get fuelType => throw _privateConstructorUsedError;
+  @AtsFuelTypeOrNullConverter()
+  AtsFuelType? get fuelType => throw _privateConstructorUsedError;
 
   /// `formNumber` Loading params form number
   String? get formNumber => throw _privateConstructorUsedError;
 
-  /// Serializes this LoadingParamsForm to a JSON map.
+  /// Serializes this AtsLoadingParamsForm to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of LoadingParamsForm
+  /// Create a copy of AtsLoadingParamsForm
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $LoadingParamsFormCopyWith<LoadingParamsForm> get copyWith =>
+  $AtsLoadingParamsFormCopyWith<AtsLoadingParamsForm> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoadingParamsFormCopyWith<$Res> {
-  factory $LoadingParamsFormCopyWith(
-          LoadingParamsForm value, $Res Function(LoadingParamsForm) then) =
-      _$LoadingParamsFormCopyWithImpl<$Res, LoadingParamsForm>;
+abstract class $AtsLoadingParamsFormCopyWith<$Res> {
+  factory $AtsLoadingParamsFormCopyWith(AtsLoadingParamsForm value,
+          $Res Function(AtsLoadingParamsForm) then) =
+      _$AtsLoadingParamsFormCopyWithImpl<$Res, AtsLoadingParamsForm>;
   @useResult
   $Res call(
       {String? id,
@@ -8595,10 +8667,10 @@ abstract class $LoadingParamsFormCopyWith<$Res> {
       double? sampleDensity,
       double? sampleTemperature,
       double? assetTemperature,
-      double? analyzedAt,
+      @TimestampOrNullConverter() DateTime? analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter()
       AtsLoadingParamsSample? sampleType,
-      String? fuelType,
+      @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
       String? formNumber});
 
   $AssetCopyWith<$Res>? get asset;
@@ -8606,16 +8678,17 @@ abstract class $LoadingParamsFormCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LoadingParamsFormCopyWithImpl<$Res, $Val extends LoadingParamsForm>
-    implements $LoadingParamsFormCopyWith<$Res> {
-  _$LoadingParamsFormCopyWithImpl(this._value, this._then);
+class _$AtsLoadingParamsFormCopyWithImpl<$Res,
+        $Val extends AtsLoadingParamsForm>
+    implements $AtsLoadingParamsFormCopyWith<$Res> {
+  _$AtsLoadingParamsFormCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LoadingParamsForm
+  /// Create a copy of AtsLoadingParamsForm
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -8674,7 +8747,7 @@ class _$LoadingParamsFormCopyWithImpl<$Res, $Val extends LoadingParamsForm>
       analyzedAt: freezed == analyzedAt
           ? _value.analyzedAt
           : analyzedAt // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as DateTime?,
       sampleType: freezed == sampleType
           ? _value.sampleType
           : sampleType // ignore: cast_nullable_to_non_nullable
@@ -8682,7 +8755,7 @@ class _$LoadingParamsFormCopyWithImpl<$Res, $Val extends LoadingParamsForm>
       fuelType: freezed == fuelType
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as AtsFuelType?,
       formNumber: freezed == formNumber
           ? _value.formNumber
           : formNumber // ignore: cast_nullable_to_non_nullable
@@ -8690,7 +8763,7 @@ class _$LoadingParamsFormCopyWithImpl<$Res, $Val extends LoadingParamsForm>
     ) as $Val);
   }
 
-  /// Create a copy of LoadingParamsForm
+  /// Create a copy of AtsLoadingParamsForm
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -8704,7 +8777,7 @@ class _$LoadingParamsFormCopyWithImpl<$Res, $Val extends LoadingParamsForm>
     });
   }
 
-  /// Create a copy of LoadingParamsForm
+  /// Create a copy of AtsLoadingParamsForm
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
@@ -8720,11 +8793,11 @@ class _$LoadingParamsFormCopyWithImpl<$Res, $Val extends LoadingParamsForm>
 }
 
 /// @nodoc
-abstract class _$$LoadingParamsFormImplCopyWith<$Res>
-    implements $LoadingParamsFormCopyWith<$Res> {
-  factory _$$LoadingParamsFormImplCopyWith(_$LoadingParamsFormImpl value,
-          $Res Function(_$LoadingParamsFormImpl) then) =
-      __$$LoadingParamsFormImplCopyWithImpl<$Res>;
+abstract class _$$AtsLoadingParamsFormImplCopyWith<$Res>
+    implements $AtsLoadingParamsFormCopyWith<$Res> {
+  factory _$$AtsLoadingParamsFormImplCopyWith(_$AtsLoadingParamsFormImpl value,
+          $Res Function(_$AtsLoadingParamsFormImpl) then) =
+      __$$AtsLoadingParamsFormImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -8737,10 +8810,10 @@ abstract class _$$LoadingParamsFormImplCopyWith<$Res>
       double? sampleDensity,
       double? sampleTemperature,
       double? assetTemperature,
-      double? analyzedAt,
+      @TimestampOrNullConverter() DateTime? analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter()
       AtsLoadingParamsSample? sampleType,
-      String? fuelType,
+      @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
       String? formNumber});
 
   @override
@@ -8750,14 +8823,14 @@ abstract class _$$LoadingParamsFormImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$LoadingParamsFormImplCopyWithImpl<$Res>
-    extends _$LoadingParamsFormCopyWithImpl<$Res, _$LoadingParamsFormImpl>
-    implements _$$LoadingParamsFormImplCopyWith<$Res> {
-  __$$LoadingParamsFormImplCopyWithImpl(_$LoadingParamsFormImpl _value,
-      $Res Function(_$LoadingParamsFormImpl) _then)
+class __$$AtsLoadingParamsFormImplCopyWithImpl<$Res>
+    extends _$AtsLoadingParamsFormCopyWithImpl<$Res, _$AtsLoadingParamsFormImpl>
+    implements _$$AtsLoadingParamsFormImplCopyWith<$Res> {
+  __$$AtsLoadingParamsFormImplCopyWithImpl(_$AtsLoadingParamsFormImpl _value,
+      $Res Function(_$AtsLoadingParamsFormImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LoadingParamsForm
+  /// Create a copy of AtsLoadingParamsForm
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -8776,7 +8849,7 @@ class __$$LoadingParamsFormImplCopyWithImpl<$Res>
     Object? fuelType = freezed,
     Object? formNumber = freezed,
   }) {
-    return _then(_$LoadingParamsFormImpl(
+    return _then(_$AtsLoadingParamsFormImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -8816,7 +8889,7 @@ class __$$LoadingParamsFormImplCopyWithImpl<$Res>
       analyzedAt: freezed == analyzedAt
           ? _value.analyzedAt
           : analyzedAt // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as DateTime?,
       sampleType: freezed == sampleType
           ? _value.sampleType
           : sampleType // ignore: cast_nullable_to_non_nullable
@@ -8824,7 +8897,7 @@ class __$$LoadingParamsFormImplCopyWithImpl<$Res>
       fuelType: freezed == fuelType
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as AtsFuelType?,
       formNumber: freezed == formNumber
           ? _value.formNumber
           : formNumber // ignore: cast_nullable_to_non_nullable
@@ -8835,8 +8908,8 @@ class __$$LoadingParamsFormImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$LoadingParamsFormImpl implements _LoadingParamsForm {
-  _$LoadingParamsFormImpl(
+class _$AtsLoadingParamsFormImpl implements _AtsLoadingParamsForm {
+  _$AtsLoadingParamsFormImpl(
       {this.id,
       this.assetId,
       this.asset,
@@ -8846,13 +8919,13 @@ class _$LoadingParamsFormImpl implements _LoadingParamsForm {
       this.sampleDensity,
       this.sampleTemperature,
       this.assetTemperature,
-      this.analyzedAt,
+      @TimestampOrNullConverter() this.analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter() this.sampleType,
-      this.fuelType,
+      @AtsFuelTypeOrNullConverter() this.fuelType,
       this.formNumber});
 
-  factory _$LoadingParamsFormImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LoadingParamsFormImplFromJson(json);
+  factory _$AtsLoadingParamsFormImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AtsLoadingParamsFormImplFromJson(json);
 
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   @override
@@ -8892,7 +8965,8 @@ class _$LoadingParamsFormImpl implements _LoadingParamsForm {
 
   ///  `analyzedAt` represent when the asset density in UNIX
   @override
-  final double? analyzedAt;
+  @TimestampOrNullConverter()
+  final DateTime? analyzedAt;
 
   /// `sampleType` represent the loading params sample type
   @override
@@ -8901,7 +8975,8 @@ class _$LoadingParamsFormImpl implements _LoadingParamsForm {
 
   /// `fuelType` is the fuel type of the entry.
   @override
-  final String? fuelType;
+  @AtsFuelTypeOrNullConverter()
+  final AtsFuelType? fuelType;
 
   /// `formNumber` Loading params form number
   @override
@@ -8909,14 +8984,14 @@ class _$LoadingParamsFormImpl implements _LoadingParamsForm {
 
   @override
   String toString() {
-    return 'LoadingParamsForm(id: $id, assetId: $assetId, asset: $asset, receptionId: $receptionId, reception: $reception, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelType: $fuelType, formNumber: $formNumber)';
+    return 'AtsLoadingParamsForm(id: $id, assetId: $assetId, asset: $asset, receptionId: $receptionId, reception: $reception, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, fuelType: $fuelType, formNumber: $formNumber)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$LoadingParamsFormImpl &&
+            other is _$AtsLoadingParamsFormImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.asset, asset) || other.asset == asset) &&
@@ -8959,25 +9034,26 @@ class _$LoadingParamsFormImpl implements _LoadingParamsForm {
       fuelType,
       formNumber);
 
-  /// Create a copy of LoadingParamsForm
+  /// Create a copy of AtsLoadingParamsForm
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$LoadingParamsFormImplCopyWith<_$LoadingParamsFormImpl> get copyWith =>
-      __$$LoadingParamsFormImplCopyWithImpl<_$LoadingParamsFormImpl>(
-          this, _$identity);
+  _$$AtsLoadingParamsFormImplCopyWith<_$AtsLoadingParamsFormImpl>
+      get copyWith =>
+          __$$AtsLoadingParamsFormImplCopyWithImpl<_$AtsLoadingParamsFormImpl>(
+              this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$LoadingParamsFormImplToJson(
+    return _$$AtsLoadingParamsFormImplToJson(
       this,
     );
   }
 }
 
-abstract class _LoadingParamsForm implements LoadingParamsForm {
-  factory _LoadingParamsForm(
+abstract class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
+  factory _AtsLoadingParamsForm(
       {final String? id,
       final String? assetId,
       final Asset? asset,
@@ -8987,14 +9063,14 @@ abstract class _LoadingParamsForm implements LoadingParamsForm {
       final double? sampleDensity,
       final double? sampleTemperature,
       final double? assetTemperature,
-      final double? analyzedAt,
+      @TimestampOrNullConverter() final DateTime? analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter()
       final AtsLoadingParamsSample? sampleType,
-      final String? fuelType,
-      final String? formNumber}) = _$LoadingParamsFormImpl;
+      @AtsFuelTypeOrNullConverter() final AtsFuelType? fuelType,
+      final String? formNumber}) = _$AtsLoadingParamsFormImpl;
 
-  factory _LoadingParamsForm.fromJson(Map<String, dynamic> json) =
-      _$LoadingParamsFormImpl.fromJson;
+  factory _AtsLoadingParamsForm.fromJson(Map<String, dynamic> json) =
+      _$AtsLoadingParamsFormImpl.fromJson;
 
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   @override
@@ -9034,7 +9110,8 @@ abstract class _LoadingParamsForm implements LoadingParamsForm {
 
   ///  `analyzedAt` represent when the asset density in UNIX
   @override
-  double? get analyzedAt;
+  @TimestampOrNullConverter()
+  DateTime? get analyzedAt;
 
   /// `sampleType` represent the loading params sample type
   @override
@@ -9043,18 +9120,19 @@ abstract class _LoadingParamsForm implements LoadingParamsForm {
 
   /// `fuelType` is the fuel type of the entry.
   @override
-  String? get fuelType;
+  @AtsFuelTypeOrNullConverter()
+  AtsFuelType? get fuelType;
 
   /// `formNumber` Loading params form number
   @override
   String? get formNumber;
 
-  /// Create a copy of LoadingParamsForm
+  /// Create a copy of AtsLoadingParamsForm
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LoadingParamsFormImplCopyWith<_$LoadingParamsFormImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$AtsLoadingParamsFormImplCopyWith<_$AtsLoadingParamsFormImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 AtsExitStatus _$AtsExitStatusFromJson(Map<String, dynamic> json) {

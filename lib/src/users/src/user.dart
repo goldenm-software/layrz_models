@@ -1,4 +1,4 @@
-part of '../layrz_models.dart';
+part of '../users.dart';
 
 @freezed
 class User with _$User {
@@ -48,9 +48,6 @@ class User with _$User {
     /// [platformAuth] represents the platform auth.
     @Default("") String platformAuth,
 
-    /// [profile] represents the user profile.
-    Profile? profile,
-
     /// [childs] represents the list of childs.
     @Default([]) List<User> childs,
 
@@ -62,9 +59,6 @@ class User with _$User {
 
     /// [planId] represents the plan ID.
     String? planId,
-
-    /// [configuration] represents the configuration.
-    @EnvironmentOrNullConverter() Environment? configuration,
 
     /// [allowedApps] represents the list of allowed apps.
     List<RegisteredApp>? allowedApps,
@@ -110,6 +104,9 @@ class User with _$User {
     /// [tenvioLongitude] represents the Tenvio longitude.
     double? tenvioLongitude,
 
+    /// [tenvioAddressIsPlusCode] represents the Tenvio address is Plus Code.
+    bool? tenvioAddressIsPlusCode,
+
     /// [isSuspended] represents if the users account is suspended.
     bool? isSuspended,
 
@@ -129,70 +126,25 @@ class User with _$User {
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
 
-enum Environment {
-  development,
-  production;
+@unfreezed
+class ProfileInput with _$ProfileInput {
+  factory ProfileInput({
+    @Default('') String name,
+    @Default('') String email,
+    @Default('') String username,
+    AvatarInput? dynamicAvatar,
+  }) = _ProfileInput;
 
-  @override
-  String toString() => toJson();
-
-  String toJson() {
-    switch (this) {
-      case Environment.development:
-        return "DEVELOPMENT";
-      case Environment.production:
-        return "PRODUCTION";
-    }
-  }
-
-  static Environment fromJson(String json) {
-    switch (json) {
-      case "DEVELOPMENT":
-        return Environment.development;
-      case "PRODUCTION":
-        return Environment.production;
-      default:
-        return Environment.development;
-    }
-  }
+  factory ProfileInput.fromJson(Map<String, dynamic> json) => _$ProfileInputFromJson(json);
 }
 
-class EnvironmentOrNullConverter implements JsonConverter<Environment?, String?> {
-  const EnvironmentOrNullConverter();
+@unfreezed
+class PasswordInput with _$PasswordInput {
+  factory PasswordInput({
+    @Default('') String currentPassword,
+    @Default('') String newPassword,
+    @Default('') String newPasswordConfirmation,
+  }) = _PasswordInput;
 
-  @override
-  Environment? fromJson(String? json) {
-    if (json == null) return null;
-    return Environment.fromJson(json);
-  }
-
-  @override
-  String? toJson(Environment? object) => object?.toJson();
-}
-
-class EnvironmentConverter implements JsonConverter<Environment, String> {
-  const EnvironmentConverter();
-
-  @override
-  Environment fromJson(String json) => Environment.fromJson(json);
-
-  @override
-  String toJson(Environment object) => object.toJson();
-}
-
-@freezed
-class InviteLink with _$InviteLink {
-  const InviteLink._();
-  const factory InviteLink({
-    required String id,
-    required String code,
-    String? sentTo,
-    @TimestampOrNullConverter() DateTime? sentAt,
-    @TimestampConverter() required DateTime expiresAt,
-    @TimestampConverter() required DateTime createdAt,
-  }) = _InviteLink;
-
-  factory InviteLink.fromJson(Map<String, dynamic> json) => _$InviteLinkFromJson(json);
-
-  String get url => "https://invite.layrz.com/$code";
+  factory PasswordInput.fromJson(Map<String, dynamic> json) => _$PasswordInputFromJson(json);
 }

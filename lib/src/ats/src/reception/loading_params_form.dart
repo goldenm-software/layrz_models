@@ -1,8 +1,8 @@
 part of '../../ats.dart';
 
 @freezed
-class LoadingParamsForm with _$LoadingParamsForm {
-  factory LoadingParamsForm({
+class AtsLoadingParamsForm with _$AtsLoadingParamsForm {
+  factory AtsLoadingParamsForm({
     /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
     String? id,
 
@@ -31,17 +31,17 @@ class LoadingParamsForm with _$LoadingParamsForm {
     double? assetTemperature,
 
     ///  `analyzedAt` represent when the asset density in UNIX
-    double? analyzedAt,
+    @TimestampOrNullConverter() DateTime? analyzedAt,
 
     /// `sampleType` represent the loading params sample type
     @AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,
 
     /// `fuelType` is the fuel type of the entry.
-    String? fuelType,
+    @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
 
     /// `formNumber` Loading params form number
     String? formNumber,
-  }) = _LoadingParamsForm;
+  }) = _AtsLoadingParamsForm;
 
-  factory LoadingParamsForm.fromJson(Map<String, dynamic> json) => _$LoadingParamsFormFromJson(json);
+  factory AtsLoadingParamsForm.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormFromJson(json);
 }

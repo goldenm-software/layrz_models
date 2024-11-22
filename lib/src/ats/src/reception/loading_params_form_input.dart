@@ -1,8 +1,8 @@
 part of '../../ats.dart';
 
 @unfreezed
-class LoadingParamsFormInput with _$LoadingParamsFormInput {
-  factory LoadingParamsFormInput({
+class AtsLoadingParamsFormInput with _$AtsLoadingParamsFormInput {
+  factory AtsLoadingParamsFormInput({
     /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
     String? id,
 
@@ -32,7 +32,7 @@ class LoadingParamsFormInput with _$LoadingParamsFormInput {
 
     /// `formNumber` Loading params form number
     String? formNumber,
-  }) = _LoadingParamsFormInput;
+  }) = _AtsLoadingParamsFormInput;
 
-  factory LoadingParamsFormInput.fromJson(Map<String, dynamic> json) => _$LoadingParamsFormInputFromJson(json);
+  factory AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) => _$AtsLoadingParamsFormInputFromJson(json);
 }

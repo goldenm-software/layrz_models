@@ -1,4 +1,15 @@
-part of '../layrz_models.dart';
+part of '../users.dart';
+
+@unfreezed
+class MfaInput with _$MfaInput {
+  factory MfaInput({
+    MfaMethod? method,
+    String? token,
+    @Default(false) bool isRequesting,
+  }) = _MfaInput;
+
+  factory MfaInput.fromJson(Map<String, dynamic> json) => _$MfaInputFromJson(json);
+}
 
 enum MfaMethod {
   /// Layrz API Reference: `TOTP`

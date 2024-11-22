@@ -24,6 +24,7 @@ import 'src/outbound/outbound.dart';
 import 'src/sensors/sensors.dart';
 import 'src/vision/vision.dart';
 import 'src/workspace/workspace.dart';
+import 'src/users/users.dart';
 
 export 'src/app/app.dart';
 export 'src/assets/assets.dart';
@@ -53,6 +54,7 @@ export 'src/simulation/simulation.dart';
 export 'src/tenvio/tenvio.dart';
 export 'src/vision/vision.dart';
 export 'src/workspace/workspace.dart';
+export 'src/users/users.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
@@ -83,12 +85,9 @@ part 'src/generic_permission.dart';
 part 'src/guide.dart';
 part 'src/language.dart';
 part 'src/lint_errors.dart';
-part 'src/mfa.dart';
-// Monitor
 part 'src/monitor/checkpoints.dart';
 part 'src/operation.dart';
 part 'src/presets.dart';
-part 'src/profile.dart';
 part 'src/reference.dart';
 part 'src/report.dart';
 part 'src/suspended_service.dart';
@@ -99,7 +98,6 @@ part 'src/token.dart';
 part 'src/trigger.dart';
 part 'src/trip.dart';
 part 'src/undeclarated_models.dart';
-part 'src/user.dart';
 part 'src/weekdays.dart';
 
 // Helper enums

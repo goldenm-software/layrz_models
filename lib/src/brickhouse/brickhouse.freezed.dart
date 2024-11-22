@@ -2617,8 +2617,10 @@ mixin _$BHSPermissionTier {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get tierLevel => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customProperties =>
       throw _privateConstructorUsedError;
+  List<User>? get users => throw _privateConstructorUsedError;
 
   /// Is the list of granted access
   List<Access>? get access => throw _privateConstructorUsedError;
@@ -2643,7 +2645,9 @@ abstract class $BHSPermissionTierCopyWith<$Res> {
       {String id,
       String name,
       int tierLevel,
+      String? description,
       Map<String, dynamic>? customProperties,
+      List<User>? users,
       List<Access>? access});
 }
 
@@ -2665,7 +2669,9 @@ class _$BHSPermissionTierCopyWithImpl<$Res, $Val extends BHSPermissionTier>
     Object? id = null,
     Object? name = null,
     Object? tierLevel = null,
+    Object? description = freezed,
     Object? customProperties = freezed,
+    Object? users = freezed,
     Object? access = freezed,
   }) {
     return _then(_value.copyWith(
@@ -2681,10 +2687,18 @@ class _$BHSPermissionTierCopyWithImpl<$Res, $Val extends BHSPermissionTier>
           ? _value.tierLevel
           : tierLevel // ignore: cast_nullable_to_non_nullable
               as int,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
       customProperties: freezed == customProperties
           ? _value.customProperties
           : customProperties // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      users: freezed == users
+          ? _value.users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<User>?,
       access: freezed == access
           ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
@@ -2705,7 +2719,9 @@ abstract class _$$BHSPermissionTierImplCopyWith<$Res>
       {String id,
       String name,
       int tierLevel,
+      String? description,
       Map<String, dynamic>? customProperties,
+      List<User>? users,
       List<Access>? access});
 }
 
@@ -2725,7 +2741,9 @@ class __$$BHSPermissionTierImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? tierLevel = null,
+    Object? description = freezed,
     Object? customProperties = freezed,
+    Object? users = freezed,
     Object? access = freezed,
   }) {
     return _then(_$BHSPermissionTierImpl(
@@ -2741,10 +2759,18 @@ class __$$BHSPermissionTierImplCopyWithImpl<$Res>
           ? _value.tierLevel
           : tierLevel // ignore: cast_nullable_to_non_nullable
               as int,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
       customProperties: freezed == customProperties
           ? _value._customProperties
           : customProperties // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      users: freezed == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<User>?,
       access: freezed == access
           ? _value._access
           : access // ignore: cast_nullable_to_non_nullable
@@ -2760,9 +2786,12 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
       {required this.id,
       required this.name,
       required this.tierLevel,
+      this.description,
       final Map<String, dynamic>? customProperties,
+      final List<User>? users,
       final List<Access>? access})
       : _customProperties = customProperties,
+        _users = users,
         _access = access;
 
   factory _$BHSPermissionTierImpl.fromJson(Map<String, dynamic> json) =>
@@ -2774,6 +2803,8 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
   final String name;
   @override
   final int tierLevel;
+  @override
+  final String? description;
   final Map<String, dynamic>? _customProperties;
   @override
   Map<String, dynamic>? get customProperties {
@@ -2782,6 +2813,16 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
     if (_customProperties is EqualUnmodifiableMapView) return _customProperties;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableMapView(value);
+  }
+
+  final List<User>? _users;
+  @override
+  List<User>? get users {
+    final value = _users;
+    if (value == null) return null;
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
   }
 
   /// Is the list of granted access
@@ -2799,7 +2840,7 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
 
   @override
   String toString() {
-    return 'BHSPermissionTier(id: $id, name: $name, tierLevel: $tierLevel, customProperties: $customProperties, access: $access)';
+    return 'BHSPermissionTier(id: $id, name: $name, tierLevel: $tierLevel, description: $description, customProperties: $customProperties, users: $users, access: $access)';
   }
 
   @override
@@ -2811,8 +2852,11 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.tierLevel, tierLevel) ||
                 other.tierLevel == tierLevel) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             const DeepCollectionEquality()
                 .equals(other._customProperties, _customProperties) &&
+            const DeepCollectionEquality().equals(other._users, _users) &&
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
@@ -2823,7 +2867,9 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
       id,
       name,
       tierLevel,
+      description,
       const DeepCollectionEquality().hash(_customProperties),
+      const DeepCollectionEquality().hash(_users),
       const DeepCollectionEquality().hash(_access));
 
   /// Create a copy of BHSPermissionTier
@@ -2848,7 +2894,9 @@ abstract class _BHSPermissionTier implements BHSPermissionTier {
       {required final String id,
       required final String name,
       required final int tierLevel,
+      final String? description,
       final Map<String, dynamic>? customProperties,
+      final List<User>? users,
       final List<Access>? access}) = _$BHSPermissionTierImpl;
 
   factory _BHSPermissionTier.fromJson(Map<String, dynamic> json) =
@@ -2861,7 +2909,11 @@ abstract class _BHSPermissionTier implements BHSPermissionTier {
   @override
   int get tierLevel;
   @override
+  String? get description;
+  @override
   Map<String, dynamic>? get customProperties;
+  @override
+  List<User>? get users;
 
   /// Is the list of granted access
   @override
@@ -2886,6 +2938,8 @@ mixin _$BHSPermissionTierInput {
   set id(String? value) => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   set name(String? value) => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  set description(String? value) => throw _privateConstructorUsedError;
   int get tierLevel => throw _privateConstructorUsedError;
   set tierLevel(int value) => throw _privateConstructorUsedError;
   Map<String, dynamic>? get customProperties =>
@@ -2912,6 +2966,7 @@ abstract class $BHSPermissionTierInputCopyWith<$Res> {
   $Res call(
       {String? id,
       String? name,
+      String? description,
       int tierLevel,
       Map<String, dynamic>? customProperties});
 }
@@ -2934,6 +2989,7 @@ class _$BHSPermissionTierInputCopyWithImpl<$Res,
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? description = freezed,
     Object? tierLevel = null,
     Object? customProperties = freezed,
   }) {
@@ -2945,6 +3001,10 @@ class _$BHSPermissionTierInputCopyWithImpl<$Res,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String?,
       tierLevel: null == tierLevel
           ? _value.tierLevel
@@ -2970,6 +3030,7 @@ abstract class _$$BHSPermissionTierInputImplCopyWith<$Res>
   $Res call(
       {String? id,
       String? name,
+      String? description,
       int tierLevel,
       Map<String, dynamic>? customProperties});
 }
@@ -2991,6 +3052,7 @@ class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
+    Object? description = freezed,
     Object? tierLevel = null,
     Object? customProperties = freezed,
   }) {
@@ -3002,6 +3064,10 @@ class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String?,
       tierLevel: null == tierLevel
           ? _value.tierLevel
@@ -3019,7 +3085,11 @@ class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
   _$BHSPermissionTierInputImpl(
-      {this.id, this.name, this.tierLevel = 1, this.customProperties});
+      {this.id,
+      this.name,
+      this.description,
+      this.tierLevel = 1,
+      this.customProperties});
 
   factory _$BHSPermissionTierInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$BHSPermissionTierInputImplFromJson(json);
@@ -3029,6 +3099,8 @@ class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
   @override
   String? name;
   @override
+  String? description;
+  @override
   @JsonKey()
   int tierLevel;
   @override
@@ -3036,7 +3108,7 @@ class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
 
   @override
   String toString() {
-    return 'BHSPermissionTierInput(id: $id, name: $name, tierLevel: $tierLevel, customProperties: $customProperties)';
+    return 'BHSPermissionTierInput(id: $id, name: $name, description: $description, tierLevel: $tierLevel, customProperties: $customProperties)';
   }
 
   /// Create a copy of BHSPermissionTierInput
@@ -3060,6 +3132,7 @@ abstract class _BHSPermissionTierInput implements BHSPermissionTierInput {
   factory _BHSPermissionTierInput(
       {String? id,
       String? name,
+      String? description,
       int tierLevel,
       Map<String, dynamic>? customProperties}) = _$BHSPermissionTierInputImpl;
 
@@ -3072,6 +3145,9 @@ abstract class _BHSPermissionTierInput implements BHSPermissionTierInput {
   @override
   String? get name;
   set name(String? value);
+  @override
+  String? get description;
+  set description(String? value);
   @override
   int get tierLevel;
   set tierLevel(int value);

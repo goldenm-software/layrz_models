@@ -1,5 +1,29 @@
 # Changelog
 
+## 3.2.68
+add `AtsFuelSubType.unknown` and `AtsFuelType.unknown`.
+add in `AtsLoadingParamsSample` `getLocalKey()`.
+use converters in `AtsLoadingParamsForm`.
+fix `loadingParameters` in `AtsReception`.
+
+
+## 3.2.67
+
+- Added `description` to `BHSPermissionTier` and `BHSPermissionTierInput` 
+
+## 3.2.66
+
+- Adjustments on MFA models
+
+## 3.2.65
+- rename `LoadingParamsFormInput` to `AtsLoadingParamsFormInput` and `LoadingParamsForm` to `AtsLoadingParamsForm`.
+- add `AtsReceptionStatus` in `AtsReception`.
+- add `loadingParamsForm` in `AtsReception`.
+
+## 3.2.64
+
+- Added tenvio things on `User` model
+
 ## 3.2.63
 
 - Fix `AtsCfFuelType` localizations
