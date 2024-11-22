@@ -7028,7 +7028,7 @@ mixin _$AtsReception {
   AtsEntry? get entry => throw _privateConstructorUsedError;
 
   /// `loadingParameters` represents the loading parameters of the reception.
-  List<AtsLoadingParamsForm>? get loadingParameters =>
+  List<AtsLoadingParamsForm> get loadingParamsForm =>
       throw _privateConstructorUsedError;
 
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
@@ -7058,7 +7058,7 @@ abstract class $AtsReceptionCopyWith<$Res> {
       AtsPurchaseOrder? order,
       List<int> ordersIds,
       AtsEntry? entry,
-      List<AtsLoadingParamsForm>? loadingParameters,
+      List<AtsLoadingParamsForm> loadingParamsForm,
       List<AtsReceptionProduct> products});
 
   $AtsPurchaseOrderCopyWith<$Res>? get order;
@@ -7087,7 +7087,7 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
     Object? order = freezed,
     Object? ordersIds = null,
     Object? entry = freezed,
-    Object? loadingParameters = freezed,
+    Object? loadingParamsForm = null,
     Object? products = null,
   }) {
     return _then(_value.copyWith(
@@ -7119,10 +7119,10 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
           ? _value.entry
           : entry // ignore: cast_nullable_to_non_nullable
               as AtsEntry?,
-      loadingParameters: freezed == loadingParameters
-          ? _value.loadingParameters
-          : loadingParameters // ignore: cast_nullable_to_non_nullable
-              as List<AtsLoadingParamsForm>?,
+      loadingParamsForm: null == loadingParamsForm
+          ? _value.loadingParamsForm
+          : loadingParamsForm // ignore: cast_nullable_to_non_nullable
+              as List<AtsLoadingParamsForm>,
       products: null == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
@@ -7175,7 +7175,7 @@ abstract class _$$AtsReceptionImplCopyWith<$Res>
       AtsPurchaseOrder? order,
       List<int> ordersIds,
       AtsEntry? entry,
-      List<AtsLoadingParamsForm>? loadingParameters,
+      List<AtsLoadingParamsForm> loadingParamsForm,
       List<AtsReceptionProduct> products});
 
   @override
@@ -7204,7 +7204,7 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
     Object? order = freezed,
     Object? ordersIds = null,
     Object? entry = freezed,
-    Object? loadingParameters = freezed,
+    Object? loadingParamsForm = null,
     Object? products = null,
   }) {
     return _then(_$AtsReceptionImpl(
@@ -7236,10 +7236,10 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
           ? _value.entry
           : entry // ignore: cast_nullable_to_non_nullable
               as AtsEntry?,
-      loadingParameters: freezed == loadingParameters
-          ? _value._loadingParameters
-          : loadingParameters // ignore: cast_nullable_to_non_nullable
-              as List<AtsLoadingParamsForm>?,
+      loadingParamsForm: null == loadingParamsForm
+          ? _value._loadingParamsForm
+          : loadingParamsForm // ignore: cast_nullable_to_non_nullable
+              as List<AtsLoadingParamsForm>,
       products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
@@ -7259,10 +7259,10 @@ class _$AtsReceptionImpl implements _AtsReception {
       this.order,
       final List<int> ordersIds = const [],
       this.entry,
-      final List<AtsLoadingParamsForm>? loadingParameters = const [],
+      final List<AtsLoadingParamsForm> loadingParamsForm = const [],
       final List<AtsReceptionProduct> products = const []})
       : _ordersIds = ordersIds,
-        _loadingParameters = loadingParameters,
+        _loadingParamsForm = loadingParamsForm,
         _products = products;
 
   factory _$AtsReceptionImpl.fromJson(Map<String, dynamic> json) =>
@@ -7306,18 +7306,16 @@ class _$AtsReceptionImpl implements _AtsReception {
   final AtsEntry? entry;
 
   /// `loadingParameters` represents the loading parameters of the reception.
-  final List<AtsLoadingParamsForm>? _loadingParameters;
+  final List<AtsLoadingParamsForm> _loadingParamsForm;
 
   /// `loadingParameters` represents the loading parameters of the reception.
   @override
   @JsonKey()
-  List<AtsLoadingParamsForm>? get loadingParameters {
-    final value = _loadingParameters;
-    if (value == null) return null;
-    if (_loadingParameters is EqualUnmodifiableListView)
-      return _loadingParameters;
+  List<AtsLoadingParamsForm> get loadingParamsForm {
+    if (_loadingParamsForm is EqualUnmodifiableListView)
+      return _loadingParamsForm;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_loadingParamsForm);
   }
 
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
@@ -7334,7 +7332,7 @@ class _$AtsReceptionImpl implements _AtsReception {
 
   @override
   String toString() {
-    return 'AtsReception(id: $id, orderId: $orderId, errorRate: $errorRate, receptionStatus: $receptionStatus, order: $order, ordersIds: $ordersIds, entry: $entry, loadingParameters: $loadingParameters, products: $products)';
+    return 'AtsReception(id: $id, orderId: $orderId, errorRate: $errorRate, receptionStatus: $receptionStatus, order: $order, ordersIds: $ordersIds, entry: $entry, loadingParamsForm: $loadingParamsForm, products: $products)';
   }
 
   @override
@@ -7353,7 +7351,7 @@ class _$AtsReceptionImpl implements _AtsReception {
                 .equals(other._ordersIds, _ordersIds) &&
             (identical(other.entry, entry) || other.entry == entry) &&
             const DeepCollectionEquality()
-                .equals(other._loadingParameters, _loadingParameters) &&
+                .equals(other._loadingParamsForm, _loadingParamsForm) &&
             const DeepCollectionEquality().equals(other._products, _products));
   }
 
@@ -7368,7 +7366,7 @@ class _$AtsReceptionImpl implements _AtsReception {
       order,
       const DeepCollectionEquality().hash(_ordersIds),
       entry,
-      const DeepCollectionEquality().hash(_loadingParameters),
+      const DeepCollectionEquality().hash(_loadingParamsForm),
       const DeepCollectionEquality().hash(_products));
 
   /// Create a copy of AtsReception
@@ -7396,7 +7394,7 @@ abstract class _AtsReception implements AtsReception {
       final AtsPurchaseOrder? order,
       final List<int> ordersIds,
       final AtsEntry? entry,
-      final List<AtsLoadingParamsForm>? loadingParameters,
+      final List<AtsLoadingParamsForm> loadingParamsForm,
       final List<AtsReceptionProduct> products}) = _$AtsReceptionImpl;
 
   factory _AtsReception.fromJson(Map<String, dynamic> json) =
@@ -7433,7 +7431,7 @@ abstract class _AtsReception implements AtsReception {
 
   /// `loadingParameters` represents the loading parameters of the reception.
   @override
-  List<AtsLoadingParamsForm>? get loadingParameters;
+  List<AtsLoadingParamsForm> get loadingParamsForm;
 
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   @override
@@ -8629,14 +8627,16 @@ mixin _$AtsLoadingParamsForm {
   double? get assetTemperature => throw _privateConstructorUsedError;
 
   ///  `analyzedAt` represent when the asset density in UNIX
-  double? get analyzedAt => throw _privateConstructorUsedError;
+  @TimestampOrNullConverter()
+  DateTime? get analyzedAt => throw _privateConstructorUsedError;
 
   /// `sampleType` represent the loading params sample type
   @AtsLoadingParamsSampleOrNullConverter()
   AtsLoadingParamsSample? get sampleType => throw _privateConstructorUsedError;
 
   /// `fuelType` is the fuel type of the entry.
-  String? get fuelType => throw _privateConstructorUsedError;
+  @AtsFuelTypeOrNullConverter()
+  AtsFuelType? get fuelType => throw _privateConstructorUsedError;
 
   /// `formNumber` Loading params form number
   String? get formNumber => throw _privateConstructorUsedError;
@@ -8667,10 +8667,10 @@ abstract class $AtsLoadingParamsFormCopyWith<$Res> {
       double? sampleDensity,
       double? sampleTemperature,
       double? assetTemperature,
-      double? analyzedAt,
+      @TimestampOrNullConverter() DateTime? analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter()
       AtsLoadingParamsSample? sampleType,
-      String? fuelType,
+      @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
       String? formNumber});
 
   $AssetCopyWith<$Res>? get asset;
@@ -8747,7 +8747,7 @@ class _$AtsLoadingParamsFormCopyWithImpl<$Res,
       analyzedAt: freezed == analyzedAt
           ? _value.analyzedAt
           : analyzedAt // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as DateTime?,
       sampleType: freezed == sampleType
           ? _value.sampleType
           : sampleType // ignore: cast_nullable_to_non_nullable
@@ -8755,7 +8755,7 @@ class _$AtsLoadingParamsFormCopyWithImpl<$Res,
       fuelType: freezed == fuelType
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as AtsFuelType?,
       formNumber: freezed == formNumber
           ? _value.formNumber
           : formNumber // ignore: cast_nullable_to_non_nullable
@@ -8810,10 +8810,10 @@ abstract class _$$AtsLoadingParamsFormImplCopyWith<$Res>
       double? sampleDensity,
       double? sampleTemperature,
       double? assetTemperature,
-      double? analyzedAt,
+      @TimestampOrNullConverter() DateTime? analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter()
       AtsLoadingParamsSample? sampleType,
-      String? fuelType,
+      @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
       String? formNumber});
 
   @override
@@ -8889,7 +8889,7 @@ class __$$AtsLoadingParamsFormImplCopyWithImpl<$Res>
       analyzedAt: freezed == analyzedAt
           ? _value.analyzedAt
           : analyzedAt // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as DateTime?,
       sampleType: freezed == sampleType
           ? _value.sampleType
           : sampleType // ignore: cast_nullable_to_non_nullable
@@ -8897,7 +8897,7 @@ class __$$AtsLoadingParamsFormImplCopyWithImpl<$Res>
       fuelType: freezed == fuelType
           ? _value.fuelType
           : fuelType // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as AtsFuelType?,
       formNumber: freezed == formNumber
           ? _value.formNumber
           : formNumber // ignore: cast_nullable_to_non_nullable
@@ -8919,9 +8919,9 @@ class _$AtsLoadingParamsFormImpl implements _AtsLoadingParamsForm {
       this.sampleDensity,
       this.sampleTemperature,
       this.assetTemperature,
-      this.analyzedAt,
+      @TimestampOrNullConverter() this.analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter() this.sampleType,
-      this.fuelType,
+      @AtsFuelTypeOrNullConverter() this.fuelType,
       this.formNumber});
 
   factory _$AtsLoadingParamsFormImpl.fromJson(Map<String, dynamic> json) =>
@@ -8965,7 +8965,8 @@ class _$AtsLoadingParamsFormImpl implements _AtsLoadingParamsForm {
 
   ///  `analyzedAt` represent when the asset density in UNIX
   @override
-  final double? analyzedAt;
+  @TimestampOrNullConverter()
+  final DateTime? analyzedAt;
 
   /// `sampleType` represent the loading params sample type
   @override
@@ -8974,7 +8975,8 @@ class _$AtsLoadingParamsFormImpl implements _AtsLoadingParamsForm {
 
   /// `fuelType` is the fuel type of the entry.
   @override
-  final String? fuelType;
+  @AtsFuelTypeOrNullConverter()
+  final AtsFuelType? fuelType;
 
   /// `formNumber` Loading params form number
   @override
@@ -9061,10 +9063,10 @@ abstract class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
       final double? sampleDensity,
       final double? sampleTemperature,
       final double? assetTemperature,
-      final double? analyzedAt,
+      @TimestampOrNullConverter() final DateTime? analyzedAt,
       @AtsLoadingParamsSampleOrNullConverter()
       final AtsLoadingParamsSample? sampleType,
-      final String? fuelType,
+      @AtsFuelTypeOrNullConverter() final AtsFuelType? fuelType,
       final String? formNumber}) = _$AtsLoadingParamsFormImpl;
 
   factory _AtsLoadingParamsForm.fromJson(Map<String, dynamic> json) =
@@ -9108,7 +9110,8 @@ abstract class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
 
   ///  `analyzedAt` represent when the asset density in UNIX
   @override
-  double? get analyzedAt;
+  @TimestampOrNullConverter()
+  DateTime? get analyzedAt;
 
   /// `sampleType` represent the loading params sample type
   @override
@@ -9117,7 +9120,8 @@ abstract class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
 
   /// `fuelType` is the fuel type of the entry.
   @override
-  String? get fuelType;
+  @AtsFuelTypeOrNullConverter()
+  AtsFuelType? get fuelType;
 
   /// `formNumber` Loading params form number
   @override

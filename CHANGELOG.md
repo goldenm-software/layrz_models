@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.2.68
+add `AtsFuelSubType.unknown` and `AtsFuelType.unknown`.
+add in `AtsLoadingParamsSample` `getLocalKey()`.
+use converters in `AtsLoadingParamsForm`.
+fix `loadingParameters` in `AtsReception`.
+
+
 ## 3.2.67
 
 - Added `description` to `BHSPermissionTier` and `BHSPermissionTierInput` 

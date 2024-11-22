@@ -8,6 +8,7 @@ enum AtsFuelType {
   hydratedethanol,
   biodiesel,
   arla32,
+  unknown,
   ;
 
   @override
@@ -30,6 +31,8 @@ enum AtsFuelType {
         return 'BIODIESEL';
       case AtsFuelType.arla32:
         return 'ARLA32';
+      default:
+        return 'UNKNOWN';
     }
   }
 
@@ -50,7 +53,7 @@ enum AtsFuelType {
       case 'ARLA32':
         return AtsFuelType.arla32;
       default:
-        throw Exception('Invalid FuelType');
+        return AtsFuelType.unknown;
     }
   }
 

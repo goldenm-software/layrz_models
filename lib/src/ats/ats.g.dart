@@ -601,7 +601,7 @@ _$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
       entry: json['entry'] == null
           ? null
           : AtsEntry.fromJson(json['entry'] as Map<String, dynamic>),
-      loadingParameters: (json['loadingParameters'] as List<dynamic>?)
+      loadingParamsForm: (json['loadingParamsForm'] as List<dynamic>?)
               ?.map((e) =>
                   AtsLoadingParamsForm.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -623,8 +623,8 @@ Map<String, dynamic> _$$AtsReceptionImplToJson(_$AtsReceptionImpl instance) =>
       'order': instance.order?.toJson(),
       'ordersIds': instance.ordersIds,
       'entry': instance.entry?.toJson(),
-      'loadingParameters':
-          instance.loadingParameters?.map((e) => e.toJson()).toList(),
+      'loadingParamsForm':
+          instance.loadingParamsForm.map((e) => e.toJson()).toList(),
       'products': instance.products.map((e) => e.toJson()).toList(),
     };
 
@@ -742,10 +742,12 @@ _$AtsLoadingParamsFormImpl _$$AtsLoadingParamsFormImplFromJson(
       sampleDensity: (json['sampleDensity'] as num?)?.toDouble(),
       sampleTemperature: (json['sampleTemperature'] as num?)?.toDouble(),
       assetTemperature: (json['assetTemperature'] as num?)?.toDouble(),
-      analyzedAt: (json['analyzedAt'] as num?)?.toDouble(),
+      analyzedAt:
+          const TimestampOrNullConverter().fromJson(json['analyzedAt'] as num?),
       sampleType: const AtsLoadingParamsSampleOrNullConverter()
           .fromJson(json['sampleType'] as String?),
-      fuelType: json['fuelType'] as String?,
+      fuelType: const AtsFuelTypeOrNullConverter()
+          .fromJson(json['fuelType'] as String?),
       formNumber: json['formNumber'] as String?,
     );
 
@@ -761,10 +763,11 @@ Map<String, dynamic> _$$AtsLoadingParamsFormImplToJson(
       'sampleDensity': instance.sampleDensity,
       'sampleTemperature': instance.sampleTemperature,
       'assetTemperature': instance.assetTemperature,
-      'analyzedAt': instance.analyzedAt,
+      'analyzedAt':
+          const TimestampOrNullConverter().toJson(instance.analyzedAt),
       'sampleType': const AtsLoadingParamsSampleOrNullConverter()
           .toJson(instance.sampleType),
-      'fuelType': instance.fuelType,
+      'fuelType': const AtsFuelTypeOrNullConverter().toJson(instance.fuelType),
       'formNumber': instance.formNumber,
     };
 

@@ -2,7 +2,9 @@ part of '../../ats.dart';
 
 enum AtsLoadingParamsSample {
   sealedSample,
-  inSiteSample;
+  inSiteSample,
+  unknown,
+  ;
 
   String toJson() {
     switch (this) {
@@ -10,6 +12,8 @@ enum AtsLoadingParamsSample {
         return 'SEALED_SAMPLE';
       case AtsLoadingParamsSample.inSiteSample:
         return 'IN_SITE_SAMPLE';
+      default:
+        return 'UNKNOWN';
     }
   }
 
@@ -20,7 +24,18 @@ enum AtsLoadingParamsSample {
       case 'IN_SITE_SAMPLE':
         return AtsLoadingParamsSample.inSiteSample;
       default:
-        throw Exception('Unknown AtsLoadingParamsSample value: $value');
+        return AtsLoadingParamsSample.unknown;
+    }
+  }
+
+  String getLocalKey() {
+    switch (this) {
+      case AtsLoadingParamsSample.sealedSample:
+        return 'ats.loadingParamsSample.sealedSample';
+      case AtsLoadingParamsSample.inSiteSample:
+        return 'ats.loadingParamsSample.inSiteSample';
+      default:
+        return 'ats.loadingParamsSample.unknown';
     }
   }
 }

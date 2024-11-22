@@ -25,7 +25,7 @@ class AtsReception with _$AtsReception {
     AtsEntry? entry,
 
     /// `loadingParameters` represents the loading parameters of the reception.
-    @Default([]) List<AtsLoadingParamsForm>? loadingParameters,
+    @Default([]) List<AtsLoadingParamsForm> loadingParamsForm,
 
     /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
     @Default([]) List<AtsReceptionProduct> products,

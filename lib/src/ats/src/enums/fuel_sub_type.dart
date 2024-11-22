@@ -133,7 +133,7 @@ enum AtsFuelSubType {
       case AtsFuelSubType.biodieselB100:
         return '820101001';
       default:
-        throw Exception("Unknown AtsFuelSubType");
+        return 'UNKNOWN';
     }
   }
 
@@ -175,7 +175,7 @@ enum AtsFuelSubType {
       case '820101001':
         return AtsFuelSubType.biodieselB100;
       default:
-        throw Exception("Unknown AtsFuelSubType");
+        return AtsFuelSubType.unknown;
     }
   }
 

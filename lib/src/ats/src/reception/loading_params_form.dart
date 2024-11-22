@@ -31,13 +31,13 @@ class AtsLoadingParamsForm with _$AtsLoadingParamsForm {
     double? assetTemperature,
 
     ///  `analyzedAt` represent when the asset density in UNIX
-    double? analyzedAt,
+    @TimestampOrNullConverter() DateTime? analyzedAt,
 
     /// `sampleType` represent the loading params sample type
     @AtsLoadingParamsSampleOrNullConverter() AtsLoadingParamsSample? sampleType,
 
     /// `fuelType` is the fuel type of the entry.
-    String? fuelType,
+    @AtsFuelTypeOrNullConverter() AtsFuelType? fuelType,
 
     /// `formNumber` Loading params form number
     String? formNumber,
