@@ -583,7 +583,7 @@ class _$GeofenceImpl implements _Geofence {
             (identical(other.mode, mode) || other.mode == mode) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             const DeepCollectionEquality().equals(other._path, _path) &&
             (identical(other.radius, radius) || other.radius == radius) &&
             (identical(other.resourceId, resourceId) ||
@@ -614,7 +614,7 @@ class _$GeofenceImpl implements _Geofence {
       name,
       mode,
       description,
-      color,
+      const DeepCollectionEquality().hash(color),
       const DeepCollectionEquality().hash(_path),
       radius,
       resourceId,
@@ -832,7 +832,7 @@ class _$GeofenceInputCopyWithImpl<$Res, $Val extends GeofenceInput>
     Object? id = freezed,
     Object? name = null,
     Object? description = null,
-    Object? color = null,
+    Object? color = freezed,
     Object? mode = null,
     Object? radius = null,
     Object? path = null,
@@ -852,7 +852,7 @@ class _$GeofenceInputCopyWithImpl<$Res, $Val extends GeofenceInput>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -916,7 +916,7 @@ class __$$GeofenceInputImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = null,
     Object? description = null,
-    Object? color = null,
+    Object? color = freezed,
     Object? mode = null,
     Object? radius = null,
     Object? path = null,
@@ -936,7 +936,7 @@ class __$$GeofenceInputImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,

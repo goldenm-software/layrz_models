@@ -78,7 +78,7 @@ class _$ExternalSourceCopyWithImpl<$Res, $Val extends ExternalSource>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = null,
+    Object? color = freezed,
     Object? isEnabled = null,
     Object? requiredFields = null,
   }) {
@@ -91,7 +91,7 @@ class _$ExternalSourceCopyWithImpl<$Res, $Val extends ExternalSource>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -138,7 +138,7 @@ class __$$ExternalSourceImplCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = null,
+    Object? color = freezed,
     Object? isEnabled = null,
     Object? requiredFields = null,
   }) {
@@ -151,7 +151,7 @@ class __$$ExternalSourceImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: null == color
+      color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -222,7 +222,7 @@ class _$ExternalSourceImpl implements _ExternalSource {
             other is _$ExternalSourceImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             (identical(other.isEnabled, isEnabled) ||
                 other.isEnabled == isEnabled) &&
             const DeepCollectionEquality()
@@ -231,7 +231,12 @@ class _$ExternalSourceImpl implements _ExternalSource {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, color, isEnabled,
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      const DeepCollectionEquality().hash(color),
+      isEnabled,
       const DeepCollectionEquality().hash(_requiredFields));
 
   /// Create a copy of ExternalSource

@@ -211,8 +211,6 @@ class BrickhouseTimeOfDayMinuteOrNullConverter implements JsonConverter<TimeOfDa
 /// Deprecated sosMessage String
 /// Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
 ///
-/// [cooldownTime] represents the cooldown time of the trigger.
-///
 /// type BrickhouseAlertType
 /// Type of the alert.
 @freezed
@@ -283,12 +281,6 @@ class BrickhouseAlert with _$BrickhouseAlert {
 
     /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
     double? maxSpeedMaxValue,
-
-    /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
-    // String? sosMessage,
-
-    /// [cooldownTime] represents the cooldown time of the trigger.
-    @DurationOrNullConverter() Duration? cooldownTime,
 
     /// [isMuted] represents if the alert is muted or not.
     @Default(false) bool? isMuted,
@@ -446,12 +438,6 @@ class BrickhouseAlertInput with _$BrickhouseAlertInput {
 
     /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
     double? maxSpeedMaxValue,
-
-    /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
-    // String? sosMessage,
-
-    /// [cooldownTime] represents the cooldown time of the trigger.
-    @DurationOrNullConverter() Duration? cooldownTime,
 
     /// [isMuted] represents if the alert is muted or not.
     @Default(false) bool? isMuted,

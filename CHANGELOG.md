@@ -1,15 +1,18 @@
 # Changelog
 
-## 3.2.68
-add `AtsFuelSubType.unknown` and `AtsFuelType.unknown`.
-add in `AtsLoadingParamsSample` `getLocalKey()`.
-use converters in `AtsLoadingParamsForm`.
-fix `loadingParameters` in `AtsReception`.
+# 3.2.69
 
+- removed `cooldownTime` from `BrickhouseAlert` and `BrickhouseAlertInput` models since it has been deprecated.
+
+## 3.2.68
+- add `AtsFuelSubType.unknown` and `AtsFuelType.unknown`.
+- add in `AtsLoadingParamsSample` `getLocalKey()`.
+- use converters in `AtsLoadingParamsForm`.
+- fix `loadingParameters` in `AtsReception`.
 
 ## 3.2.67
 
-- Added `description` to `BHSPermissionTier` and `BHSPermissionTierInput` 
+- Added `description` to `BHSPermissionTier` and `BHSPermissionTierInput`
 
 ## 3.2.66
 

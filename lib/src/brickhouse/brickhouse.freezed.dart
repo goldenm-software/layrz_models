@@ -94,12 +94,6 @@ mixin _$BrickhouseAlert {
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
   double? get maxSpeedMaxValue => throw _privateConstructorUsedError;
 
-  /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
-// String? sosMessage,
-  /// [cooldownTime] represents the cooldown time of the trigger.
-  @DurationOrNullConverter()
-  Duration? get cooldownTime => throw _privateConstructorUsedError;
-
   /// [isMuted] represents if the alert is muted or not.
   bool? get isMuted => throw _privateConstructorUsedError;
 
@@ -147,7 +141,6 @@ abstract class $BrickhouseAlertCopyWith<$Res> {
       @BrickhouseGeofenceTriggerOrNullConverter()
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
       bool? isMuted,
       double? speedingThreshold});
 }
@@ -189,7 +182,6 @@ class _$BrickhouseAlertCopyWithImpl<$Res, $Val extends BrickhouseAlert>
     Object? geofenceShape = freezed,
     Object? geofenceTrigger = freezed,
     Object? maxSpeedMaxValue = freezed,
-    Object? cooldownTime = freezed,
     Object? isMuted = freezed,
     Object? speedingThreshold = freezed,
   }) {
@@ -282,10 +274,6 @@ class _$BrickhouseAlertCopyWithImpl<$Res, $Val extends BrickhouseAlert>
           ? _value.maxSpeedMaxValue
           : maxSpeedMaxValue // ignore: cast_nullable_to_non_nullable
               as double?,
-      cooldownTime: freezed == cooldownTime
-          ? _value.cooldownTime
-          : cooldownTime // ignore: cast_nullable_to_non_nullable
-              as Duration?,
       isMuted: freezed == isMuted
           ? _value.isMuted
           : isMuted // ignore: cast_nullable_to_non_nullable
@@ -330,7 +318,6 @@ abstract class _$$BrickhouseAlertImplCopyWith<$Res>
       @BrickhouseGeofenceTriggerOrNullConverter()
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
       bool? isMuted,
       double? speedingThreshold});
 }
@@ -370,7 +357,6 @@ class __$$BrickhouseAlertImplCopyWithImpl<$Res>
     Object? geofenceShape = freezed,
     Object? geofenceTrigger = freezed,
     Object? maxSpeedMaxValue = freezed,
-    Object? cooldownTime = freezed,
     Object? isMuted = freezed,
     Object? speedingThreshold = freezed,
   }) {
@@ -463,10 +449,6 @@ class __$$BrickhouseAlertImplCopyWithImpl<$Res>
           ? _value.maxSpeedMaxValue
           : maxSpeedMaxValue // ignore: cast_nullable_to_non_nullable
               as double?,
-      cooldownTime: freezed == cooldownTime
-          ? _value.cooldownTime
-          : cooldownTime // ignore: cast_nullable_to_non_nullable
-              as Duration?,
       isMuted: freezed == isMuted
           ? _value.isMuted
           : isMuted // ignore: cast_nullable_to_non_nullable
@@ -505,7 +487,6 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
       final List<GeofencePoint>? geofenceShape,
       @BrickhouseGeofenceTriggerOrNullConverter() this.geofenceTrigger,
       this.maxSpeedMaxValue,
-      @DurationOrNullConverter() this.cooldownTime,
       this.isMuted = false,
       this.speedingThreshold})
       : _assets = assets,
@@ -667,13 +648,6 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
   @override
   final double? maxSpeedMaxValue;
 
-  /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
-// String? sosMessage,
-  /// [cooldownTime] represents the cooldown time of the trigger.
-  @override
-  @DurationOrNullConverter()
-  final Duration? cooldownTime;
-
   /// [isMuted] represents if the alert is muted or not.
   @override
   @JsonKey()
@@ -686,7 +660,7 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
 
   @override
   String toString() {
-    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted, speedingThreshold: $speedingThreshold)';
+    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, isMuted: $isMuted, speedingThreshold: $speedingThreshold)';
   }
 
   @override
@@ -720,8 +694,8 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
                 other.timezone == timezone) &&
             const DeepCollectionEquality()
                 .equals(other._curfewWeekdays, _curfewWeekdays) &&
-            (identical(other.geofenceColor, geofenceColor) ||
-                other.geofenceColor == geofenceColor) &&
+            const DeepCollectionEquality()
+                .equals(other.geofenceColor, geofenceColor) &&
             (identical(other.geofenceMode, geofenceMode) ||
                 other.geofenceMode == geofenceMode) &&
             (identical(other.geofenceRadius, geofenceRadius) ||
@@ -732,8 +706,6 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
                 other.geofenceTrigger == geofenceTrigger) &&
             (identical(other.maxSpeedMaxValue, maxSpeedMaxValue) ||
                 other.maxSpeedMaxValue == maxSpeedMaxValue) &&
-            (identical(other.cooldownTime, cooldownTime) ||
-                other.cooldownTime == cooldownTime) &&
             (identical(other.isMuted, isMuted) || other.isMuted == isMuted) &&
             (identical(other.speedingThreshold, speedingThreshold) ||
                 other.speedingThreshold == speedingThreshold));
@@ -759,13 +731,12 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
         curfewEndHour,
         timezone,
         const DeepCollectionEquality().hash(_curfewWeekdays),
-        geofenceColor,
+        const DeepCollectionEquality().hash(geofenceColor),
         geofenceMode,
         geofenceRadius,
         const DeepCollectionEquality().hash(_geofenceShape),
         geofenceTrigger,
         maxSpeedMaxValue,
-        cooldownTime,
         isMuted,
         speedingThreshold
       ]);
@@ -814,7 +785,6 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
       @BrickhouseGeofenceTriggerOrNullConverter()
       final BrickhouseGeofenceTrigger? geofenceTrigger,
       final double? maxSpeedMaxValue,
-      @DurationOrNullConverter() final Duration? cooldownTime,
       final bool? isMuted,
       final double? speedingThreshold}) = _$BrickhouseAlertImpl;
 
@@ -915,13 +885,6 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
   @override
   double? get maxSpeedMaxValue;
-
-  /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
-// String? sosMessage,
-  /// [cooldownTime] represents the cooldown time of the trigger.
-  @override
-  @DurationOrNullConverter()
-  Duration? get cooldownTime;
 
   /// [isMuted] represents if the alert is muted or not.
   @override
@@ -1091,18 +1054,6 @@ mixin _$BrickhouseAlertInput {
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
   set maxSpeedMaxValue(double? value) => throw _privateConstructorUsedError;
 
-  /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
-// String? sosMessage,
-  /// [cooldownTime] represents the cooldown time of the trigger.
-  @DurationOrNullConverter()
-  Duration? get cooldownTime => throw _privateConstructorUsedError;
-
-  /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
-// String? sosMessage,
-  /// [cooldownTime] represents the cooldown time of the trigger.
-  @DurationOrNullConverter()
-  set cooldownTime(Duration? value) => throw _privateConstructorUsedError;
-
   /// [isMuted] represents if the alert is muted or not.
   bool? get isMuted => throw _privateConstructorUsedError;
 
@@ -1156,7 +1107,6 @@ abstract class $BrickhouseAlertInputCopyWith<$Res> {
       @BrickhouseGeofenceTriggerOrNullConverter()
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
       bool? isMuted,
       double? speedingThreshold});
 }
@@ -1198,7 +1148,6 @@ class _$BrickhouseAlertInputCopyWithImpl<$Res,
     Object? geofenceShape = freezed,
     Object? geofenceTrigger = freezed,
     Object? maxSpeedMaxValue = freezed,
-    Object? cooldownTime = freezed,
     Object? isMuted = freezed,
     Object? speedingThreshold = freezed,
   }) {
@@ -1287,10 +1236,6 @@ class _$BrickhouseAlertInputCopyWithImpl<$Res,
           ? _value.maxSpeedMaxValue
           : maxSpeedMaxValue // ignore: cast_nullable_to_non_nullable
               as double?,
-      cooldownTime: freezed == cooldownTime
-          ? _value.cooldownTime
-          : cooldownTime // ignore: cast_nullable_to_non_nullable
-              as Duration?,
       isMuted: freezed == isMuted
           ? _value.isMuted
           : isMuted // ignore: cast_nullable_to_non_nullable
@@ -1334,7 +1279,6 @@ abstract class _$$BrickhouseAlertInputImplCopyWith<$Res>
       @BrickhouseGeofenceTriggerOrNullConverter()
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
       bool? isMuted,
       double? speedingThreshold});
 }
@@ -1373,7 +1317,6 @@ class __$$BrickhouseAlertInputImplCopyWithImpl<$Res>
     Object? geofenceShape = freezed,
     Object? geofenceTrigger = freezed,
     Object? maxSpeedMaxValue = freezed,
-    Object? cooldownTime = freezed,
     Object? isMuted = freezed,
     Object? speedingThreshold = freezed,
   }) {
@@ -1462,10 +1405,6 @@ class __$$BrickhouseAlertInputImplCopyWithImpl<$Res>
           ? _value.maxSpeedMaxValue
           : maxSpeedMaxValue // ignore: cast_nullable_to_non_nullable
               as double?,
-      cooldownTime: freezed == cooldownTime
-          ? _value.cooldownTime
-          : cooldownTime // ignore: cast_nullable_to_non_nullable
-              as Duration?,
       isMuted: freezed == isMuted
           ? _value.isMuted
           : isMuted // ignore: cast_nullable_to_non_nullable
@@ -1512,7 +1451,6 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
       @BrickhouseGeofenceTriggerOrNullConverter()
       this.geofenceTrigger = BrickhouseGeofenceTrigger.both,
       this.maxSpeedMaxValue,
-      @DurationOrNullConverter() this.cooldownTime,
       this.isMuted = false,
       this.speedingThreshold = 0});
 
@@ -1619,13 +1557,6 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
   @override
   double? maxSpeedMaxValue;
 
-  /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
-// String? sosMessage,
-  /// [cooldownTime] represents the cooldown time of the trigger.
-  @override
-  @DurationOrNullConverter()
-  Duration? cooldownTime;
-
   /// [isMuted] represents if the alert is muted or not.
   @override
   @JsonKey()
@@ -1639,7 +1570,7 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
 
   @override
   String toString() {
-    return 'BrickhouseAlertInput(id: $id, name: $name, type: $type, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, cooldownTime: $cooldownTime, isMuted: $isMuted, speedingThreshold: $speedingThreshold)';
+    return 'BrickhouseAlertInput(id: $id, name: $name, type: $type, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, isMuted: $isMuted, speedingThreshold: $speedingThreshold)';
   }
 
   /// Create a copy of BrickhouseAlertInput
@@ -1684,7 +1615,6 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
       @BrickhouseGeofenceTriggerOrNullConverter()
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
-      @DurationOrNullConverter() Duration? cooldownTime,
       bool? isMuted,
       double? speedingThreshold}) = _$BrickhouseAlertInputImpl;
 
@@ -1851,19 +1781,6 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
 
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
   set maxSpeedMaxValue(double? value);
-
-  /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
-// String? sosMessage,
-  /// [cooldownTime] represents the cooldown time of the trigger.
-  @override
-  @DurationOrNullConverter()
-  Duration? get cooldownTime;
-
-  /// Deprecated Message to send when the SOS alert is triggered. Only for BrickhouseAlertType.SOS
-// String? sosMessage,
-  /// [cooldownTime] represents the cooldown time of the trigger.
-  @DurationOrNullConverter()
-  set cooldownTime(Duration? value);
 
   /// [isMuted] represents if the alert is muted or not.
   @override

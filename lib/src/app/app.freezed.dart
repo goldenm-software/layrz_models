@@ -1842,13 +1842,14 @@ class _$AppBackgroundDesignImpl implements _AppBackgroundDesign {
         (other.runtimeType == runtimeType &&
             other is _$AppBackgroundDesignImpl &&
             (identical(other.image, image) || other.image == image) &&
-            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             (identical(other.mode, mode) || other.mode == mode));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, image, color, mode);
+  int get hashCode => Object.hash(
+      runtimeType, image, const DeepCollectionEquality().hash(color), mode);
 
   /// Create a copy of AppBackgroundDesign
   /// with the given fields replaced by the non-null parameter values.
@@ -2343,18 +2344,21 @@ class _$AppThemedColorsImpl implements _AppThemedColors {
         (other.runtimeType == runtimeType &&
             other is _$AppThemedColorsImpl &&
             (identical(other.theme, theme) || other.theme == theme) &&
-            (identical(other.mainColor, mainColor) ||
-                other.mainColor == mainColor) &&
-            (identical(other.primary, primary) || other.primary == primary) &&
-            (identical(other.secondary, secondary) ||
-                other.secondary == secondary) &&
-            (identical(other.accent, accent) || other.accent == accent));
+            const DeepCollectionEquality().equals(other.mainColor, mainColor) &&
+            const DeepCollectionEquality().equals(other.primary, primary) &&
+            const DeepCollectionEquality().equals(other.secondary, secondary) &&
+            const DeepCollectionEquality().equals(other.accent, accent));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, theme, mainColor, primary, secondary, accent);
+  int get hashCode => Object.hash(
+      runtimeType,
+      theme,
+      const DeepCollectionEquality().hash(mainColor),
+      const DeepCollectionEquality().hash(primary),
+      const DeepCollectionEquality().hash(secondary),
+      const DeepCollectionEquality().hash(accent));
 
   /// Create a copy of AppThemedColors
   /// with the given fields replaced by the non-null parameter values.
@@ -2816,8 +2820,7 @@ class _$AppDesignImpl implements _AppDesign {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppDesignImpl &&
-            (identical(other.mainColor, mainColor) ||
-                other.mainColor == mainColor) &&
+            const DeepCollectionEquality().equals(other.mainColor, mainColor) &&
             (identical(other.theme, theme) || other.theme == theme) &&
             (identical(other.favicons, favicons) ||
                 other.favicons == favicons) &&
@@ -2834,8 +2837,17 @@ class _$AppDesignImpl implements _AppDesign {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, mainColor, theme, favicons,
-      logos, appicon, login, footerFormat, titleFont, bodyFont);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(mainColor),
+      theme,
+      favicons,
+      logos,
+      appicon,
+      login,
+      footerFormat,
+      titleFont,
+      bodyFont);
 
   /// Create a copy of AppDesign
   /// with the given fields replaced by the non-null parameter values.
@@ -4251,8 +4263,8 @@ class _$AppLoginDesignImpl implements _AppLoginDesign {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$AppLoginDesignImpl &&
-            (identical(other.backgroundColor, backgroundColor) ||
-                other.backgroundColor == backgroundColor) &&
+            const DeepCollectionEquality()
+                .equals(other.backgroundColor, backgroundColor) &&
             (identical(other.backgroundImage, backgroundImage) ||
                 other.backgroundImage == backgroundImage) &&
             (identical(other.mode, mode) || other.mode == mode) &&
@@ -4264,7 +4276,12 @@ class _$AppLoginDesignImpl implements _AppLoginDesign {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType, backgroundColor, backgroundImage, mode, description, design);
+      runtimeType,
+      const DeepCollectionEquality().hash(backgroundColor),
+      backgroundImage,
+      mode,
+      description,
+      design);
 
   /// Create a copy of AppLoginDesign
   /// with the given fields replaced by the non-null parameter values.

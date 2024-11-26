@@ -2425,7 +2425,7 @@ class _$MaskPointImpl implements _MaskPoint {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MaskPointImpl &&
-            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.color, color) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.value, value) || other.value == value) &&
             (identical(other.icon, icon) || other.icon == icon));
@@ -2433,7 +2433,8 @@ class _$MaskPointImpl implements _MaskPoint {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, color, text, value, icon);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(color), text, value, icon);
 
   /// Create a copy of MaskPoint
   /// with the given fields replaced by the non-null parameter values.

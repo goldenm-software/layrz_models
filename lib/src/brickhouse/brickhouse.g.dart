@@ -51,8 +51,6 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
       geofenceTrigger: const BrickhouseGeofenceTriggerOrNullConverter()
           .fromJson(json['geofenceTrigger'] as String?),
       maxSpeedMaxValue: (json['maxSpeedMaxValue'] as num?)?.toDouble(),
-      cooldownTime: const DurationOrNullConverter()
-          .fromJson(json['cooldownTime'] as num?),
       isMuted: json['isMuted'] as bool? ?? false,
       speedingThreshold: (json['speedingThreshold'] as num?)?.toDouble(),
     );
@@ -89,8 +87,6 @@ Map<String, dynamic> _$$BrickhouseAlertImplToJson(
       'geofenceTrigger': const BrickhouseGeofenceTriggerOrNullConverter()
           .toJson(instance.geofenceTrigger),
       'maxSpeedMaxValue': instance.maxSpeedMaxValue,
-      'cooldownTime':
-          const DurationOrNullConverter().toJson(instance.cooldownTime),
       'isMuted': instance.isMuted,
       'speedingThreshold': instance.speedingThreshold,
     };
@@ -150,8 +146,6 @@ _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
           : const BrickhouseGeofenceTriggerOrNullConverter()
               .fromJson(json['geofenceTrigger'] as String?),
       maxSpeedMaxValue: (json['maxSpeedMaxValue'] as num?)?.toDouble(),
-      cooldownTime: const DurationOrNullConverter()
-          .fromJson(json['cooldownTime'] as num?),
       isMuted: json['isMuted'] as bool? ?? false,
       speedingThreshold: (json['speedingThreshold'] as num?)?.toDouble() ?? 0,
     );
@@ -187,8 +181,6 @@ Map<String, dynamic> _$$BrickhouseAlertInputImplToJson(
       'geofenceTrigger': const BrickhouseGeofenceTriggerOrNullConverter()
           .toJson(instance.geofenceTrigger),
       'maxSpeedMaxValue': instance.maxSpeedMaxValue,
-      'cooldownTime':
-          const DurationOrNullConverter().toJson(instance.cooldownTime),
       'isMuted': instance.isMuted,
       'speedingThreshold': instance.speedingThreshold,
     };
