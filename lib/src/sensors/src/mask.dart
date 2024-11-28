@@ -13,8 +13,8 @@ class MaskPoint with _$MaskPoint {
     required String value,
 
     /// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
-    /// will convert to IconData entity.
-    @IconOrNullConverter() IconData? icon,
+    /// will convert to LayrzIcon entity.
+    @IconOrNullConverter() LayrzIcon? icon,
   }) = _MaskPoint;
 
   factory MaskPoint.fromJson(Map<String, dynamic> json) => _$MaskPointFromJson(json);
@@ -26,7 +26,7 @@ class MaskPointInput with _$MaskPointInput {
     @ColorOrNullConverter() Color? color,
     String? text,
     String? value,
-    @IconOrNullConverter() IconData? icon,
+    @IconOrNullConverter() LayrzIcon? icon,
   }) = _MaskPointInput;
 
   factory MaskPointInput.fromJson(Map<String, dynamic> json) => _$MaskPointInputFromJson(json);

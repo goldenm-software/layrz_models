@@ -7,6 +7,7 @@ analyzer:
   exclude:
     - '**/*.g.dart'
     - '**/*.freezed.dart'
+    - lib/utils/src/icons.dart
 
   # Ignore invalid_annotation_target
   errors:

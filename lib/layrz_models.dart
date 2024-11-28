@@ -4,11 +4,12 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:layrz_icons/layrz_icons.dart';
 
 import 'src/app/app.dart';
 import 'src/assets/assets.dart';
 // Internal imports
-import 'src/brickhouse/brickhouse.dart';
+// import 'src/brickhouse/brickhouse.dart';
 import 'src/charts/charts.dart';
 import 'src/commands/commands.dart';
 import 'src/concierge/concierge.dart';

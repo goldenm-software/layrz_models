@@ -2,6 +2,7 @@ library workspace;
 
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:layrz_icons/layrz_icons.dart';
 import 'package:layrz_models/layrz_models.dart';
 
 // Freezed

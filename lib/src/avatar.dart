@@ -8,9 +8,9 @@ class Avatar with _$Avatar {
 
     /// [emoji], [icon], [url] or [base64] depending on the [type].
     /// [emoni], [url] and [base64] are [String].
-    /// And [icon] is [IconData].
+    /// And [icon] is [LayrzIcon].
     String? emoji,
-    @IconOrNullConverter() IconData? icon,
+    @IconOrNullConverter() LayrzIcon? icon,
     String? url,
     String? base64,
   }) = _Avatar;
@@ -26,9 +26,9 @@ class AvatarInput with _$AvatarInput {
 
     /// [emoji], [icon], [url] or [base64] depending on the [type].
     /// [emoni], [url] and [base64] are [String].
-    /// And [icon] is [IconData].
+    /// And [icon] is [LayrzIcon].
     String? emoji,
-    @IconOrNullConverter() IconData? icon,
+    @IconOrNullConverter() LayrzIcon? icon,
     String? url,
     String? base64,
   }) = _AvatarInput;

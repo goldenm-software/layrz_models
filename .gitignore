@@ -35,3 +35,5 @@ credentials.json
 
 # FVM Version Cache
 .fvm/
+
+mapper.py

@@ -59,12 +59,8 @@ mixin _$ExchangeProtocol {
   /// [requiresGeofences] indicates if the protocol requires geofences to work.
   bool? get requiresGeofences => throw _privateConstructorUsedError;
 
-  /// Serializes this ExchangeProtocol to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ExchangeProtocol
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ExchangeProtocolCopyWith<ExchangeProtocol> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -101,14 +97,12 @@ class _$ExchangeProtocolCopyWithImpl<$Res, $Val extends ExchangeProtocol>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ExchangeProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? dynamicIcon = freezed,
     Object? requiredFields = null,
     Object? isEnabled = null,
@@ -127,7 +121,7 @@ class _$ExchangeProtocolCopyWithImpl<$Res, $Val extends ExchangeProtocol>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -166,8 +160,6 @@ class _$ExchangeProtocolCopyWithImpl<$Res, $Val extends ExchangeProtocol>
     ) as $Val);
   }
 
-  /// Create a copy of ExchangeProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarCopyWith<$Res>? get dynamicIcon {
@@ -214,14 +206,12 @@ class __$$ExchangeProtocolImplCopyWithImpl<$Res>
       $Res Function(_$ExchangeProtocolImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ExchangeProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? color = freezed,
+    Object? color = null,
     Object? dynamicIcon = freezed,
     Object? requiredFields = null,
     Object? isEnabled = null,
@@ -240,7 +230,7 @@ class __$$ExchangeProtocolImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      color: freezed == color
+      color: null == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -379,7 +369,7 @@ class _$ExchangeProtocolImpl implements _ExchangeProtocol {
             other is _$ExchangeProtocolImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.dynamicIcon, dynamicIcon) ||
                 other.dynamicIcon == dynamicIcon) &&
             const DeepCollectionEquality()
@@ -397,13 +387,13 @@ class _$ExchangeProtocolImpl implements _ExchangeProtocol {
                 other.requiresGeofences == requiresGeofences));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       id,
       name,
-      const DeepCollectionEquality().hash(color),
+      color,
       dynamicIcon,
       const DeepCollectionEquality().hash(_requiredFields),
       isEnabled,
@@ -413,9 +403,7 @@ class _$ExchangeProtocolImpl implements _ExchangeProtocol {
       requiresAssets,
       requiresGeofences);
 
-  /// Create a copy of ExchangeProtocol
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ExchangeProtocolImplCopyWith<_$ExchangeProtocolImpl> get copyWith =>
@@ -447,59 +435,57 @@ abstract class _ExchangeProtocol implements ExchangeProtocol {
   factory _ExchangeProtocol.fromJson(Map<String, dynamic> json) =
       _$ExchangeProtocolImpl.fromJson;
 
-  /// [id] is the protocol ID, this ID is unique for each protocol.
   @override
+
+  /// [id] is the protocol ID, this ID is unique for each protocol.
   String get id;
+  @override
 
   /// [name] is the name of the protocol.
   /// This name is a translation key, so, check the translation messages to get the name,
   /// the key is composed by `protocols.exchange.{name}`.
-  @override
   String get name;
+  @override
 
   /// [color] is the color assigned to the protocol.
-  @override
   @ColorConverter()
   Color get color;
+  @override
 
   /// [dynamicIcon] is the icon of the inbound protocol.
   /// This is the new schema of the icon
-  @override
   Avatar? get dynamicIcon;
+  @override
 
   /// [requiredFields] is the list of required fields for the protocol.
-  @override
   List<CredentialField> get requiredFields;
+  @override
 
   /// [isEnabled] indicates if the protocol is enabled and available for use, or disabled and not available for use.
-  @override
   bool get isEnabled;
+  @override
 
   /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
-  @override
   bool? get requiresFlespiToken;
+  @override
 
   /// [flespiAcl] refers to the ACL for the token generation.
-  @override
   List<FlespiAcl>? get flespiAcl;
+  @override
 
   /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
   /// For marketing purposes.
-  @override
   int? get usage;
+  @override
 
   /// [requiresAssets] indicates if the protocol requires assets to work.
-  @override
   bool? get requiresAssets;
+  @override
 
   /// [requiresGeofences] indicates if the protocol requires geofences to work.
-  @override
   bool? get requiresGeofences;
-
-  /// Create a copy of ExchangeProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ExchangeProtocolImplCopyWith<_$ExchangeProtocolImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -555,12 +541,8 @@ mixin _$ExchangeService {
   /// [geofencesGroups] is the list of tags as geofences groups linked to the service.
   List<Tag>? get geofencesGroups => throw _privateConstructorUsedError;
 
-  /// Serializes this ExchangeService to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ExchangeService
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ExchangeServiceCopyWith<ExchangeService> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -601,8 +583,6 @@ class _$ExchangeServiceCopyWithImpl<$Res, $Val extends ExchangeService>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ExchangeService
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -686,8 +666,6 @@ class _$ExchangeServiceCopyWithImpl<$Res, $Val extends ExchangeService>
     ) as $Val);
   }
 
-  /// Create a copy of ExchangeService
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExchangeProtocolCopyWith<$Res>? get protocol {
@@ -738,8 +716,6 @@ class __$$ExchangeServiceImplCopyWithImpl<$Res>
       _$ExchangeServiceImpl _value, $Res Function(_$ExchangeServiceImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ExchangeService
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1044,7 +1020,7 @@ class _$ExchangeServiceImpl implements _ExchangeService {
                 .equals(other._geofencesGroups, _geofencesGroups));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1064,9 +1040,7 @@ class _$ExchangeServiceImpl implements _ExchangeService {
       const DeepCollectionEquality().hash(_geofencesGroupsIds),
       const DeepCollectionEquality().hash(_geofencesGroups));
 
-  /// Create a copy of ExchangeService
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ExchangeServiceImplCopyWith<_$ExchangeServiceImpl> get copyWith =>
@@ -1102,70 +1076,68 @@ abstract class _ExchangeService implements ExchangeService {
   factory _ExchangeService.fromJson(Map<String, dynamic> json) =
       _$ExchangeServiceImpl.fromJson;
 
-  /// IS the ID of the entity. This ID is unique.
   @override
+
+  /// IS the ID of the entity. This ID is unique.
   String get id;
+  @override
 
   /// Is the Assigned service name, cannot be translated for other languages.
-  @override
   String get name;
+  @override
 
   /// Is the Credential object, check the documentation for more information.
-  @override
   Map<String, dynamic>? get credentials;
+  @override
 
   /// Is the Protocol entity.
-  @override
   ExchangeProtocol? get protocol;
+  @override
 
   /// Is the Protocol ID.
-  @override
   String? get protocolId;
+  @override
 
   /// Is the Current transmission status.
-  @override
   bool? get isEnabled;
+  @override
 
   /// Is the Assets IDs linked to the service.
-  @override
   List<String>? get assetsIds;
+  @override
 
   /// Is the Assets linked to the service.
-  @override
   List<Asset>? get assets;
+  @override
 
   /// Is the Groups (Tags) IDs linked to the service.
-  @override
   List<String>? get tagsIds;
+  @override
 
   /// Is the Groups (Tags) linked to the service.
-  @override
   List<Tag>? get tags;
+  @override
 
   /// A list of custom access permissions.
-  @override
   List<Access>? get access;
+  @override
 
   /// [geofencesIds] is the list of geofences linked to the service.
-  @override
   List<String>? get geofencesIds;
+  @override
 
   /// [geofences] is the list of geofences linked to the service.
-  @override
   List<Geofence>? get geofences;
+  @override
 
   /// [geofencesGroupsIds] is the list of tags as geofences groups linked to the service.
-  @override
   List<String>? get geofencesGroupsIds;
+  @override
 
   /// [geofencesGroups] is the list of tags as geofences groups linked to the service.
-  @override
   List<Tag>? get geofencesGroups;
-
-  /// Create a copy of ExchangeService
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ExchangeServiceImplCopyWith<_$ExchangeServiceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.0
+
+- Changed icon library from `material_design_icons_flutter` to `layrz_icons`
+
 # 3.2.69
 
 - removed `cooldownTime` from `BrickhouseAlert` and `BrickhouseAlertInput` models since it has been deprecated.

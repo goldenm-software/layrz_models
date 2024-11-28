@@ -59,12 +59,8 @@ mixin _$AtsReceptionProduct {
   /// `price` of the product
   double? get price => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsReceptionProduct to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsReceptionProduct
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsReceptionProductCopyWith<AtsReceptionProduct> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -100,8 +96,6 @@ class _$AtsReceptionProductCopyWithImpl<$Res, $Val extends AtsReceptionProduct>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsReceptionProduct
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -202,8 +196,6 @@ class __$$AtsReceptionProductImplCopyWithImpl<$Res>
       $Res Function(_$AtsReceptionProductImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsReceptionProduct
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -385,7 +377,7 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
             (identical(other.price, price) || other.price == price));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -402,9 +394,7 @@ class _$AtsReceptionProductImpl implements _AtsReceptionProduct {
       const DeepCollectionEquality().hash(_tanksImages),
       price);
 
-  /// Create a copy of AtsReceptionProduct
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsReceptionProductImplCopyWith<_$AtsReceptionProductImpl> get copyWith =>
@@ -437,61 +427,59 @@ abstract class _AtsReceptionProduct implements AtsReceptionProduct {
   factory _AtsReceptionProduct.fromJson(Map<String, dynamic> json) =
       _$AtsReceptionProductImpl.fromJson;
 
-  /// ID of the reception product. This ID is unique.
   @override
+
+  /// ID of the reception product. This ID is unique.
   String? get id;
+  @override
 
   /// ID of the asset.
-  @override
   String? get assetId;
+  @override
 
   /// Fuel type enum. Check its possible values in the enum documentation.
-  @override
   @AtsFuelTypeOrNullConverter()
   AtsFuelType? get fuelType;
+  @override
 
   /// Fuel subTuype represent the fuel subtype of the product
-  @override
   @AtsFuelSubTypeOrNullConverter()
   AtsFuelSubType? get fuelSubtype;
+  @override
 
   /// Fuel density expressed in gr/cc.
-  @override
   double? get density;
+  @override
 
   /// Fuel temperature expressed in degrees Celsius.
-  @override
   double? get temperature;
+  @override
 
   /// Volume received in purchased order (Expressed in Litters).
-  @override
   double? get volumeBought;
+  @override
 
   /// Total volume received, based on fuel type, density and temperature.
-  @override
   double? get realVolume;
+  @override
 
   /// Reception date and time expressed in unix timestamp.
-  @override
   @TimestampOrNullConverter()
   DateTime? get receivedAt;
+  @override
 
   /// Seller / provider name
-  @override
   String? get provider;
+  @override
 
   /// List of tank images
-  @override
   List<String> get tanksImages;
+  @override
 
   /// `price` of the product
-  @override
   double? get price;
-
-  /// Create a copy of AtsReceptionProduct
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsReceptionProductImplCopyWith<_$AtsReceptionProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -515,12 +503,8 @@ mixin _$AtsReceptionProductInput {
   /// List of tank photos
   set tanksImages(List<String>? value) => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsReceptionProductInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsReceptionProductInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsReceptionProductInputCopyWith<AtsReceptionProductInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -545,8 +529,6 @@ class _$AtsReceptionProductInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsReceptionProductInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -588,8 +570,6 @@ class __$$AtsReceptionProductInputImplCopyWithImpl<$Res>
       $Res Function(_$AtsReceptionProductInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsReceptionProductInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -630,9 +610,7 @@ class _$AtsReceptionProductInputImpl implements _AtsReceptionProductInput {
     return 'AtsReceptionProductInput(fuelAnp: $fuelAnp, tanksImages: $tanksImages)';
   }
 
-  /// Create a copy of AtsReceptionProductInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsReceptionProductInputImplCopyWith<_$AtsReceptionProductInputImpl>
@@ -655,24 +633,22 @@ abstract class _AtsReceptionProductInput implements AtsReceptionProductInput {
   factory _AtsReceptionProductInput.fromJson(Map<String, dynamic> json) =
       _$AtsReceptionProductInputImpl.fromJson;
 
-  /// Fuel ANP category code
   @override
+
+  /// Fuel ANP category code
   String? get fuelAnp;
 
   /// Fuel ANP category code
   set fuelAnp(String? value);
+  @override
 
   /// List of tank photos
-  @override
   List<String>? get tanksImages;
 
   /// List of tank photos
   set tanksImages(List<String>? value);
-
-  /// Create a copy of AtsReceptionProductInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsReceptionProductInputImplCopyWith<_$AtsReceptionProductInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -725,12 +701,8 @@ mixin _$AtsReceptionInput {
   @AtsFromAppOrNullConverter()
   set app(AtsFromApp? value) => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsReceptionInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsReceptionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsReceptionInputCopyWith<AtsReceptionInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -760,8 +732,6 @@ class _$AtsReceptionInputCopyWithImpl<$Res, $Val extends AtsReceptionInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsReceptionInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -826,8 +796,6 @@ class __$$AtsReceptionInputImplCopyWithImpl<$Res>
       $Res Function(_$AtsReceptionInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsReceptionInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -912,9 +880,7 @@ class _$AtsReceptionInputImpl implements _AtsReceptionInput {
     return 'AtsReceptionInput(id: $id, ordersIds: $ordersIds, products: $products, assetId: $assetId, operationTime: $operationTime, app: $app)';
   }
 
-  /// Create a copy of AtsReceptionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsReceptionInputImplCopyWith<_$AtsReceptionInputImpl> get copyWith =>
@@ -941,56 +907,54 @@ abstract class _AtsReceptionInput implements AtsReceptionInput {
   factory _AtsReceptionInput.fromJson(Map<String, dynamic> json) =
       _$AtsReceptionInputImpl.fromJson;
 
-  ///ID of the [AtsReception]. This ID is unique.
   @override
+
+  ///ID of the [AtsReception]. This ID is unique.
   String? get id;
 
   ///ID of the [AtsReception]. This ID is unique.
   set id(String? value);
+  @override
 
   /// List of [AtsPurchaseOrder] IDs.
-  @override
   List<String>? get ordersIds;
 
   /// List of [AtsPurchaseOrder] IDs.
   set ordersIds(List<String>? value);
+  @override
 
   /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
-  @override
   List<AtsReceptionProductInput>? get products;
 
   /// Diferent [AtsReceptionProductInput] obtained of the [AtsPurchaseOrder]
   set products(List<AtsReceptionProductInput>? value);
+  @override
 
   /// ID of the [Asset] supply point
-  @override
   String? get assetId;
 
   /// ID of the [Asset] supply point
   set assetId(String? value);
+  @override
 
   /// [AtsReception] operation time
-  @override
   @DurationOrNullConverter()
   Duration? get operationTime;
 
   /// [AtsReception] operation time
   @DurationOrNullConverter()
   set operationTime(Duration? value);
+  @override
 
   /// App used to create the [AtsReception].
-  @override
   @AtsFromAppOrNullConverter()
   AtsFromApp? get app;
 
   /// App used to create the [AtsReception].
   @AtsFromAppOrNullConverter()
   set app(AtsFromApp? value);
-
-  /// Create a copy of AtsReceptionInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsReceptionInputImplCopyWith<_$AtsReceptionInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1018,12 +982,8 @@ mixin _$AtsAuthenticationIdentifier {
   /// Authentication identifier NFC identifier
   String? get nfcIdentifier => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsAuthenticationIdentifier to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsAuthenticationIdentifier
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsAuthenticationIdentifierCopyWith<AtsAuthenticationIdentifier>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1058,8 +1018,6 @@ class _$AtsAuthenticationIdentifierCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsAuthenticationIdentifier
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1093,8 +1051,6 @@ class _$AtsAuthenticationIdentifierCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of AtsAuthenticationIdentifier
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsAuthenticationCardCopyWith<$Res>? get card {
@@ -1139,8 +1095,6 @@ class __$$AtsAuthenticationIdentifierImplCopyWithImpl<$Res>
       $Res Function(_$AtsAuthenticationIdentifierImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsAuthenticationIdentifier
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1230,14 +1184,12 @@ class _$AtsAuthenticationIdentifierImpl
                 other.nfcIdentifier == nfcIdentifier));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, category, cardId, card, nfcIdentifier);
 
-  /// Create a copy of AtsAuthenticationIdentifier
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsAuthenticationIdentifierImplCopyWith<_$AtsAuthenticationIdentifierImpl>
@@ -1265,31 +1217,29 @@ abstract class _AtsAuthenticationIdentifier
   factory _AtsAuthenticationIdentifier.fromJson(Map<String, dynamic> json) =
       _$AtsAuthenticationIdentifierImpl.fromJson;
 
-  /// ID of the [AtsAuthenticationIdentifier]. This ID is unique'
   @override
+
+  /// ID of the [AtsAuthenticationIdentifier]. This ID is unique'
   String? get id;
+  @override
 
   /// [AtsAuthenticationIdentifier] identifier category, It is a Enum from [AtsAuthenticationCategory]
-  @override
   @AtsAuthenticationCategoryOrNullConverter()
   AtsAuthenticationCategory? get category;
+  @override
 
   /// [AtsAuthenticationIdentifier] card ID
-  @override
   String? get cardId;
+  @override
 
   /// [AtsAuthenticationCard] linked to this identifier. See AuthenticationCard for more information
-  @override
   AtsAuthenticationCard? get card;
+  @override
 
   /// Authentication identifier NFC identifier
-  @override
   String? get nfcIdentifier;
-
-  /// Create a copy of AtsAuthenticationIdentifier
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsAuthenticationIdentifierImplCopyWith<_$AtsAuthenticationIdentifierImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1334,12 +1284,8 @@ mixin _$AtsAuthenticationCard {
   @TimestampOrNullConverter()
   DateTime? get createdAt => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsAuthenticationCard to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsAuthenticationCardCopyWith<AtsAuthenticationCard> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1377,8 +1323,6 @@ class _$AtsAuthenticationCardCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1437,8 +1381,6 @@ class _$AtsAuthenticationCardCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of AtsAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
@@ -1451,8 +1393,6 @@ class _$AtsAuthenticationCardCopyWithImpl<$Res,
     });
   }
 
-  /// Create a copy of AtsAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get owner {
@@ -1502,8 +1442,6 @@ class __$$AtsAuthenticationCardImplCopyWithImpl<$Res>
       $Res Function(_$AtsAuthenticationCardImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1659,7 +1597,7 @@ class _$AtsAuthenticationCardImpl implements _AtsAuthenticationCard {
                 other.createdAt == createdAt));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1674,9 +1612,7 @@ class _$AtsAuthenticationCardImpl implements _AtsAuthenticationCard {
       const DeepCollectionEquality().hash(_history),
       createdAt);
 
-  /// Create a copy of AtsAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsAuthenticationCardImplCopyWith<_$AtsAuthenticationCardImpl>
@@ -1708,52 +1644,50 @@ abstract class _AtsAuthenticationCard implements AtsAuthenticationCard {
   factory _AtsAuthenticationCard.fromJson(Map<String, dynamic> json) =
       _$AtsAuthenticationCardImpl.fromJson;
 
-  /// [id] represents the unique identifier of the card.
   @override
+
+  /// [id] represents the unique identifier of the card.
   String get id;
+  @override
 
   /// [number] represents the number printed in the card
-  @override
   int get number;
+  @override
 
   /// [externalIdentifier] is the external identifier of the card. Defined in decimal format.
-  @override
   int get externalIdentifier;
+  @override
 
   /// [externalIdentifierHex] is the external identifier of the card. Defined in hexadecimal format.
-  @override
   String get externalIdentifierHex;
+  @override
 
   /// [asset] is the linked asset to this card.
-  @override
   Asset? get asset;
+  @override
 
   /// [owner] is the owner of this card.
-  @override
   User? get owner;
+  @override
 
   /// [isSuspended] is true if the card is suspended.
-  @override
   bool? get isSuspended;
+  @override
 
   /// [typeId] type id of the card.
-  @override
   @AtsSelectCardConverter()
   AtsSelectCard get typeId;
+  @override
 
   /// [history] is the history of this card.
-  @override
   List<AtsHistoryAuthenticationCard>? get history;
+  @override
 
   /// [createdAt] is the date when the card was created.
-  @override
   @TimestampOrNullConverter()
   DateTime? get createdAt;
-
-  /// Create a copy of AtsAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsAuthenticationCardImplCopyWith<_$AtsAuthenticationCardImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1786,12 +1720,8 @@ mixin _$AtsHistoryAuthenticationCard {
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsHistoryAuthenticationCard to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsHistoryAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsHistoryAuthenticationCardCopyWith<AtsHistoryAuthenticationCard>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1829,8 +1759,6 @@ class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsHistoryAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1869,8 +1797,6 @@ class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of AtsHistoryAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
@@ -1883,8 +1809,6 @@ class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res,
     });
   }
 
-  /// Create a copy of AtsHistoryAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get owner {
@@ -1897,8 +1821,6 @@ class _$AtsHistoryAuthenticationCardCopyWithImpl<$Res,
     });
   }
 
-  /// Create a copy of AtsHistoryAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get createdBy {
@@ -1944,8 +1866,6 @@ class __$$AtsHistoryAuthenticationCardImplCopyWithImpl<$Res>
       $Res Function(_$AtsHistoryAuthenticationCardImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsHistoryAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2048,14 +1968,12 @@ class _$AtsHistoryAuthenticationCardImpl
                 other.createdAt == createdAt));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, operation, asset, owner, createdBy, createdAt);
 
-  /// Create a copy of AtsHistoryAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsHistoryAuthenticationCardImplCopyWith<
@@ -2086,36 +2004,34 @@ abstract class _AtsHistoryAuthenticationCard
   factory _AtsHistoryAuthenticationCard.fromJson(Map<String, dynamic> json) =
       _$AtsHistoryAuthenticationCardImpl.fromJson;
 
-  /// [id] represents the unique identifier of the history operation of the card.
   @override
+
+  /// [id] represents the unique identifier of the history operation of the card.
   String get id;
+  @override
 
   /// [operation] represents the operation performed in the card.
-  @override
   @AtsHistoryAuthenticationCardOperationConverter()
   AtsHistoryAuthenticationCardOperation get operation;
+  @override
 
   /// [asset] is the linked asset to this card.
-  @override
   Asset? get asset;
+  @override
 
   /// [owner] is the owner of this card.
-  @override
   User? get owner;
+  @override
 
   /// [createdBy] is the user who performed the operation.
-  @override
   User get createdBy;
+  @override
 
   /// [createdAt] is the date when the card was created.
-  @override
   @TimestampConverter()
   DateTime get createdAt;
-
-  /// Create a copy of AtsHistoryAuthenticationCard
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsHistoryAuthenticationCardImplCopyWith<
           _$AtsHistoryAuthenticationCardImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2150,12 +2066,8 @@ mixin _$AtsFeedbackMessege {
   /// [isRead] Is read indicator.
   bool? get isRead => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsFeedbackMessege to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsFeedbackMessege
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsFeedbackMessegeCopyWith<AtsFeedbackMessege> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2189,8 +2101,6 @@ class _$AtsFeedbackMessegeCopyWithImpl<$Res, $Val extends AtsFeedbackMessege>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsFeedbackMessege
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2234,8 +2144,6 @@ class _$AtsFeedbackMessegeCopyWithImpl<$Res, $Val extends AtsFeedbackMessege>
     ) as $Val);
   }
 
-  /// Create a copy of AtsFeedbackMessege
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get creator {
@@ -2248,8 +2156,6 @@ class _$AtsFeedbackMessegeCopyWithImpl<$Res, $Val extends AtsFeedbackMessege>
     });
   }
 
-  /// Create a copy of AtsFeedbackMessege
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RegisteredAppCopyWith<$Res>? get app {
@@ -2294,8 +2200,6 @@ class __$$AtsFeedbackMessegeImplCopyWithImpl<$Res>
       $Res Function(_$AtsFeedbackMessegeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsFeedbackMessege
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2404,14 +2308,12 @@ class _$AtsFeedbackMessegeImpl implements _AtsFeedbackMessege {
             (identical(other.isRead, isRead) || other.isRead == isRead));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, content, creator, at, app, source, isRead);
 
-  /// Create a copy of AtsFeedbackMessege
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsFeedbackMessegeImplCopyWith<_$AtsFeedbackMessegeImpl> get copyWith =>
@@ -2439,40 +2341,38 @@ abstract class _AtsFeedbackMessege implements AtsFeedbackMessege {
   factory _AtsFeedbackMessege.fromJson(Map<String, dynamic> json) =
       _$AtsFeedbackMessegeImpl.fromJson;
 
-  /// [id] of the asset entity. This ID is unique.
   @override
+
+  /// [id] of the asset entity. This ID is unique.
   String? get id;
+  @override
 
   /// [content] sent from the [User].
-  @override
   String? get content;
+  @override
 
   /// [creator] Owner or submitter.
-  @override
   User? get creator;
+  @override
 
   /// [at] Date of creation in UNIX Timestamp.
-  @override
   @TimestampOrNullConverter()
   DateTime? get at;
+  @override
 
   /// [app] object from comming feedback message, only will return when FeedbackMessage.source = FeedbackSource.APP
-  @override
   RegisteredApp? get app;
+  @override
 
   /// [source] Source of the feedback message.
-  @override
   @FeedbackSourceOrNullConverter()
   FeedbackSource? get source;
+  @override
 
   /// [isRead] Is read indicator.
-  @override
   bool? get isRead;
-
-  /// Create a copy of AtsFeedbackMessege
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsFeedbackMessegeImplCopyWith<_$AtsFeedbackMessegeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2527,12 +2427,8 @@ mixin _$AtsEvent {
   /// [comment] on closing event.
   String? get comment => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsEventCopyWith<AtsEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2574,8 +2470,6 @@ class _$AtsEventCopyWithImpl<$Res, $Val extends AtsEvent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2654,8 +2548,6 @@ class _$AtsEventCopyWithImpl<$Res, $Val extends AtsEvent>
     ) as $Val);
   }
 
-  /// Create a copy of AtsEvent
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $OperationCopyWith<$Res>? get operation {
@@ -2668,8 +2560,6 @@ class _$AtsEventCopyWithImpl<$Res, $Val extends AtsEvent>
     });
   }
 
-  /// Create a copy of AtsEvent
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TriggerCopyWith<$Res>? get trigger {
@@ -2682,8 +2572,6 @@ class _$AtsEventCopyWithImpl<$Res, $Val extends AtsEvent>
     });
   }
 
-  /// Create a copy of AtsEvent
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
@@ -2696,8 +2584,6 @@ class _$AtsEventCopyWithImpl<$Res, $Val extends AtsEvent>
     });
   }
 
-  /// Create a copy of AtsEvent
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TelemetryPositionCopyWith<$Res>? get position {
@@ -2753,8 +2639,6 @@ class __$$AtsEventImplCopyWithImpl<$Res>
       _$AtsEventImpl _value, $Res Function(_$AtsEventImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2965,7 +2849,7 @@ class _$AtsEventImpl implements _AtsEvent {
             (identical(other.comment, comment) || other.comment == comment));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2984,9 +2868,7 @@ class _$AtsEventImpl implements _AtsEvent {
       isCheck,
       comment);
 
-  /// Create a copy of AtsEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsEventImplCopyWith<_$AtsEventImpl> get copyWith =>
@@ -3020,68 +2902,65 @@ abstract class _AtsEvent implements AtsEvent {
   factory _AtsEvent.fromJson(Map<String, dynamic> json) =
       _$AtsEventImpl.fromJson;
 
-  /// [id] of the asset entity. This ID is unique.
   @override
+
+  /// [id] of the asset entity. This ID is unique.
   String? get id;
+  @override
 
   /// [operation] Operation linked to the [AtsEvent].
-  @override
   Operation? get operation;
+  @override
 
   /// [operationId] Operation linked to the [AtsEvent].
-  @override
   String? get operationId;
+  @override
 
   /// [trigger] Trigger linked to the [AtsEvent].
-  @override
   Trigger? get trigger;
+  @override
 
   /// [triggerId] Trigger linked to the [AtsEvent].
-  @override
-  String?
-      get triggerId; // /// [function] Pitagoras function linked to the [AtsEvent].
+  String? get triggerId;
+  @override // /// [function] Pitagoras function linked to the [AtsEvent].
 // Function? function,
   /// [functionId] Pitagoras function ID linked to the [AtsEvent].
-  @override
   String? get functionId;
+  @override
 
   /// [asset] Asset linked to the [AtsEvent].
-  @override
   Asset? get asset;
+  @override
 
   /// [assetId] Asset ID linked to the [AtsEvent].
-  @override
   String? get assetId;
+  @override
 
   /// [position] linked to the [AtsEvent].
-  @override
   TelemetryPosition? get position;
+  @override
 
   /// [payload] Raw received payload values list of the message.
-  @override
   List<TelemetrySensor>? get payload;
+  @override
 
   /// [sensors] values list of the message.
-  @override
   List<Sensor>? get sensors;
+  @override
 
   /// [at] Unix timestamp representing the date of the event.
-  @override
   @TimestampOrNullConverter()
   DateTime? get at;
+  @override
 
   /// [isCheck] Flag to identify if the event has been checked.
-  @override
   bool? get isCheck;
+  @override
 
   /// [comment] on closing event.
-  @override
   String? get comment;
-
-  /// Create a copy of AtsEvent
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsEventImplCopyWith<_$AtsEventImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3110,12 +2989,8 @@ mixin _$AtsNsAddress {
   /// [cityName] represents the city name of the address
   String get cityName => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsNsAddress to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsNsAddress
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsNsAddressCopyWith<AtsNsAddress> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3145,8 +3020,6 @@ class _$AtsNsAddressCopyWithImpl<$Res, $Val extends AtsNsAddress>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsNsAddress
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3211,8 +3084,6 @@ class __$$AtsNsAddressImplCopyWithImpl<$Res>
       _$AtsNsAddressImpl _value, $Res Function(_$AtsNsAddressImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsNsAddress
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3311,14 +3182,12 @@ class _$AtsNsAddressImpl implements _AtsNsAddress {
                 other.cityName == cityName));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, address, number, district, zipCode, cityCode, cityName);
 
-  /// Create a copy of AtsNsAddress
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsNsAddressImplCopyWith<_$AtsNsAddressImpl> get copyWith =>
@@ -3344,34 +3213,32 @@ abstract class _AtsNsAddress implements AtsNsAddress {
   factory _AtsNsAddress.fromJson(Map<String, dynamic> json) =
       _$AtsNsAddressImpl.fromJson;
 
-  /// [address] represents the address of the address
   @override
+
+  /// [address] represents the address of the address
   String get address;
+  @override
 
   /// [number] represents the number of the address
-  @override
   String get number;
+  @override
 
   /// [district] represents the district of the address
-  @override
   String get district;
+  @override
 
   /// [zipCode] represents the zip code of the address
-  @override
   String get zipCode;
+  @override
 
   /// [cityCode] represents the city code of the address
-  @override
   String get cityCode;
+  @override
 
   /// [cityName] represents the city name of the address
-  @override
   String get cityName;
-
-  /// Create a copy of AtsNsAddress
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsNsAddressImplCopyWith<_$AtsNsAddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3438,12 +3305,8 @@ mixin _$AtsNsLicense {
   @TimestampOrNullConverter()
   DateTime? get expirationDate => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsNsLicense to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsNsLicense
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsNsLicenseCopyWith<AtsNsLicense> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3484,8 +3347,6 @@ class _$AtsNsLicenseCopyWithImpl<$Res, $Val extends AtsNsLicense>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsNsLicense
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3606,8 +3467,6 @@ class __$$AtsNsLicenseImplCopyWithImpl<$Res>
       _$AtsNsLicenseImpl _value, $Res Function(_$AtsNsLicenseImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsNsLicense
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3856,7 +3715,7 @@ class _$AtsNsLicenseImpl implements _AtsNsLicense {
                 other.expirationDate == expirationDate));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3876,9 +3735,7 @@ class _$AtsNsLicenseImpl implements _AtsNsLicense {
       const DeepCollectionEquality().hash(_addresses),
       expirationDate);
 
-  /// Create a copy of AtsNsLicense
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsNsLicenseImplCopyWith<_$AtsNsLicenseImpl> get copyWith =>
@@ -3915,81 +3772,79 @@ abstract class _AtsNsLicense implements AtsNsLicense {
   factory _AtsNsLicense.fromJson(Map<String, dynamic> json) =
       _$AtsNsLicenseImpl.fromJson;
 
-  /// [id] represents the unique identifier of the license
   @override
+
+  /// [id] represents the unique identifier of the license
   String get id;
+  @override
 
   /// [status] represents the status of the license
   /// `0` means Testing environment
   /// `1` means Production environment
   /// `2` means Blocked license
-  @override
   @AtsNsStatusConverter()
   AtsNsStatus get status;
+  @override
 
   /// [receive90Days] represents that the license can receive last 90 days of data.
   /// Also, is only available for [projectId] = `NS DDFe`.
-  @override
   bool? get receive90Days;
+  @override
 
   /// [projectId] represents the project id of the license
-  @override
   @AtsNsProjectIdOrNullConverter()
   AtsNsProjectId? get projectId;
+  @override
 
   /// [certificate] represents the certificate of the license
   /// Is stored in base64 format
-  @override
   String? get certificate;
+  @override
 
   /// [certificatePassword] represents the certificate password of the license
-  @override
   String? get certificatePassword;
+  @override
 
   /// [cnpj] represents the CNPJ of the license
   /// CNPJ is equivalent to a Taxpayer Identification Number (TIN) (RIF for Venecos)
-  @override
   String get cnpj;
+  @override
 
   /// [inscriptionId] represents the state registration of the license
-  @override
   String? get inscriptionId;
+  @override
 
   /// [businessName] represents the business name of the license
-  @override
   String? get businessName;
+  @override
 
   /// [companyName] represents the business trademark name of the license
-  @override
   String? get companyName;
+  @override
 
   /// [icmsType] represents the ICMS type of the license
-  @override
   @AtsIcmsTypeOrNullConverter()
   AtsIcmsType? get icmsType;
+  @override
 
   /// [emails] is a list of `String` that represents the emails of the license
-  @override
   List<String>? get emails;
+  @override
 
   /// [phoneNumbers] is a list of `String` that represents the phone numbers of the license
-  @override
   List<String>? get phoneNumbers;
+  @override
 
   /// [addresses] is a list of [AtsNsAddress] that represents the addresses of the license
-  @override
   List<AtsNsAddress>? get addresses;
+  @override
 
   /// [expirationDate] represents the expiration date of the license
-  @override
   @JsonKey(name: 'expirationDateUnix')
   @TimestampOrNullConverter()
   DateTime? get expirationDate;
-
-  /// Create a copy of AtsNsLicense
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsNsLicenseImplCopyWith<_$AtsNsLicenseImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4043,12 +3898,8 @@ mixin _$AtsTransportInformation {
   /// State registration
   String? get stateRegistration => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsTransportInformation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsTransportInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsTransportInformationCopyWith<AtsTransportInformation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4087,8 +3938,6 @@ class _$AtsTransportInformationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsTransportInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4204,8 +4053,6 @@ class __$$AtsTransportInformationImplCopyWithImpl<$Res>
       $Res Function(_$AtsTransportInformationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsTransportInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4397,7 +4244,7 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
                 other.stateRegistration == stateRegistration));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -4416,9 +4263,7 @@ class _$AtsTransportInformationImpl implements _AtsTransportInformation {
       origin,
       stateRegistration);
 
-  /// Create a copy of AtsTransportInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsTransportInformationImplCopyWith<_$AtsTransportInformationImpl>
@@ -4453,66 +4298,64 @@ abstract class _AtsTransportInformation implements AtsTransportInformation {
   factory _AtsTransportInformation.fromJson(Map<String, dynamic> json) =
       _$AtsTransportInformationImpl.fromJson;
 
-  /// Transport company CNPJ.
   @override
+
+  /// Transport company CNPJ.
   String? get cnpj;
+  @override
 
   /// Transport name / description.
-  @override
   String? get name;
+  @override
 
   /// Transport address.
-  @override
   String? get address;
+  @override
 
   /// Transport mun.
-  @override
   String? get mun;
+  @override
 
   /// Freight mod.
-  @override
   String? get freightMod;
+  @override
 
   /// Federal unit.
-  @override
   String? get federalUnit;
+  @override
 
   /// Business number.
-  @override
   String? get businessNumber;
+  @override
 
   /// Vehicle plate code.
-  @override
   String? get vehiclePlate;
+  @override
 
   /// Vehicle federal unit.
-  @override
   String? get vehicleUf;
+  @override
 
   /// Vehicle name.
-  @override
   String? get vehicleName;
+  @override
 
   /// destination
-  @override
   String? get destination;
+  @override
 
   /// Driver
-  @override
   String? get driver;
+  @override
 
   /// Origin
-  @override
   String? get origin;
+  @override
 
   /// State registration
-  @override
   String? get stateRegistration;
-
-  /// Create a copy of AtsTransportInformation
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsTransportInformationImplCopyWith<_$AtsTransportInformationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -4533,12 +4376,8 @@ mixin _$AtsCommandResult {
   @TimestampOrNullConverter()
   DateTime? get executedAt => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsCommandResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsCommandResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsCommandResultCopyWith<AtsCommandResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4565,8 +4404,6 @@ class _$AtsCommandResultCopyWithImpl<$Res, $Val extends AtsCommandResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsCommandResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4613,8 +4450,6 @@ class __$$AtsCommandResultImplCopyWithImpl<$Res>
       $Res Function(_$AtsCommandResultImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsCommandResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4680,13 +4515,11 @@ class _$AtsCommandResultImpl implements _AtsCommandResult {
                 other.executedAt == executedAt));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, request, response, executedAt);
 
-  /// Create a copy of AtsCommandResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsCommandResultImplCopyWith<_$AtsCommandResultImpl> get copyWith =>
@@ -4711,23 +4544,21 @@ abstract class _AtsCommandResult implements AtsCommandResult {
   factory _AtsCommandResult.fromJson(Map<String, dynamic> json) =
       _$AtsCommandResultImpl.fromJson;
 
-  /// [String] Command sent to the device.
   @override
+
+  /// [String] Command sent to the device.
   String? get request;
+  @override
 
   /// [String] Command response.
-  @override
   String? get response;
+  @override
 
   /// [DateTime] Command execution date.
-  @override
   @TimestampOrNullConverter()
   DateTime? get executedAt;
-
-  /// Create a copy of AtsCommandResult
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsCommandResultImplCopyWith<_$AtsCommandResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4754,12 +4585,8 @@ mixin _$AtsCompanyInformation {
   /// State registration
   String? get stateRegistration => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsCompanyInformation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsCompanyInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsCompanyInformationCopyWith<AtsCompanyInformation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4789,8 +4616,6 @@ class _$AtsCompanyInformationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsCompanyInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4851,8 +4676,6 @@ class __$$AtsCompanyInformationImplCopyWithImpl<$Res>
       $Res Function(_$AtsCompanyInformationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsCompanyInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4934,14 +4757,12 @@ class _$AtsCompanyInformationImpl implements _AtsCompanyInformation {
                 other.stateRegistration == stateRegistration));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, name, cnpj, address, email, stateRegistration);
 
-  /// Create a copy of AtsCompanyInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsCompanyInformationImplCopyWith<_$AtsCompanyInformationImpl>
@@ -4967,30 +4788,28 @@ abstract class _AtsCompanyInformation implements AtsCompanyInformation {
   factory _AtsCompanyInformation.fromJson(Map<String, dynamic> json) =
       _$AtsCompanyInformationImpl.fromJson;
 
-  /// Your company name, could be the legal name or commercial name. For example, Golden M is the commercial name of Golden M, Inc.
   @override
+
+  /// Your company name, could be the legal name or commercial name. For example, Golden M is the commercial name of Golden M, Inc.
   String? get name;
+  @override
 
   /// Company National Registry of Legal Entities.
-  @override
   String? get cnpj;
+  @override
 
   /// Company Address
-  @override
   String? get address;
+  @override
 
   /// Email Address
-  @override
   String? get email;
+  @override
 
   /// State registration
-  @override
   String? get stateRegistration;
-
-  /// Create a copy of AtsCompanyInformation
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsCompanyInformationImplCopyWith<_$AtsCompanyInformationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -5026,12 +4845,8 @@ mixin _$AtsProductInformation {
   /// Product sub category.
   Map<String, dynamic>? get subcategory => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsProductInformation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsProductInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsProductInformationCopyWith<AtsProductInformation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5064,8 +4879,6 @@ class _$AtsProductInformationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsProductInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5144,8 +4957,6 @@ class __$$AtsProductInformationImplCopyWithImpl<$Res>
       $Res Function(_$AtsProductInformationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsProductInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5278,7 +5089,7 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
                 .equals(other._subcategory, _subcategory));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -5291,9 +5102,7 @@ class _$AtsProductInformationImpl implements _AtsProductInformation {
       cfop,
       const DeepCollectionEquality().hash(_subcategory));
 
-  /// Create a copy of AtsProductInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsProductInformationImplCopyWith<_$AtsProductInformationImpl>
@@ -5322,42 +5131,40 @@ abstract class _AtsProductInformation implements AtsProductInformation {
   factory _AtsProductInformation.fromJson(Map<String, dynamic> json) =
       _$AtsProductInformationImpl.fromJson;
 
-  /// Product code.
   @override
+
+  /// Product code.
   String? get ncm;
+  @override
 
   /// Product name / description.
-  @override
   String? get name;
+  @override
 
   /// Measure unit of the product.
-  @override
   String? get measureUnit;
+  @override
 
   /// Quantity of the product it is of [AtsReceptionPructsInput] volumeBought.
-  @override
   double? get quantity;
+  @override
 
   /// Unitary value of the product.
-  @override
   double? get unitValue;
+  @override
 
   /// Result of quantity + unit_value (From API)
-  @override
   double? get productValue;
+  @override
 
   /// cfop of the product.
-  @override
   String? get cfop;
+  @override
 
   /// Product sub category.
-  @override
   Map<String, dynamic>? get subcategory;
-
-  /// Create a copy of AtsProductInformation
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsProductInformationImplCopyWith<_$AtsProductInformationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -5477,12 +5284,8 @@ mixin _$AtsPurchaseOrder {
   /// `operation` associated to the purchase order.
   AtsOperation? get operation => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsPurchaseOrder to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsPurchaseOrderCopyWith<AtsPurchaseOrder> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5551,8 +5354,6 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5716,8 +5517,6 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     ) as $Val);
   }
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
@@ -5730,8 +5529,6 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     });
   }
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation {
@@ -5745,8 +5542,6 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     });
   }
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsCompanyInformationCopyWith<$Res>? get receiverInformation {
@@ -5760,8 +5555,6 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     });
   }
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsPurchaseTotalCopyWith<$Res>? get total {
@@ -5774,8 +5567,6 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     });
   }
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsTransportInformationCopyWith<$Res>? get transportInformation {
@@ -5789,8 +5580,6 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     });
   }
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsPurchaseOrderCopyWith<$Res>? get parentInvoice {
@@ -5803,8 +5592,6 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     });
   }
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsIdeInformationCopyWith<$Res>? get ideInformation {
@@ -5817,8 +5604,6 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     });
   }
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get transportAsset {
@@ -5831,8 +5616,6 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     });
   }
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get sellerAsset {
@@ -5845,8 +5628,6 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     });
   }
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsOperationCopyWith<$Res>? get operation {
@@ -5934,8 +5715,6 @@ class __$$AtsPurchaseOrderImplCopyWithImpl<$Res>
       $Res Function(_$AtsPurchaseOrderImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6351,7 +6130,7 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
                 other.operation == operation));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -6388,9 +6167,7 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
         operation
       ]);
 
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsPurchaseOrderImplCopyWith<_$AtsPurchaseOrderImpl> get copyWith =>
@@ -6446,144 +6223,142 @@ abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
   factory _AtsPurchaseOrder.fromJson(Map<String, dynamic> json) =
       _$AtsPurchaseOrderImpl.fromJson;
 
-  /// ID of the [Asset] entity. This ID is unique.
   @override
+
+  /// ID of the [Asset] entity. This ID is unique.
   String? get id;
+  @override
 
   /// External API ID
-  @override
   String? get ownerId;
+  @override
 
   /// Order or invoice number.
-  @override
   String? get orderId;
+  @override
 
   /// ID of the asset.
-  @override
   String? get assetId;
+  @override
 
   /// ID of the seller asset.
-  @override
   String? get sellerAssetId;
+  @override
 
   /// ID of the transport asset.
-  @override
   String? get transportAssetId;
+  @override
 
   /// Unix of last [AtsReception] date.
-  @override
   @TimestampOrNullConverter()
   DateTime? get purchasedAt;
+  @override
 
   /// Unix of last [AtsReception] date.
-  @override
   @TimestampOrNullConverter()
   DateTime? get receivedAt;
+  @override
 
   /// [Asset] linked to the [AtsPurchaseOrder].
-  @override
   Asset? get asset;
+  @override
 
   /// Legal information about the seller. Please read the comments of CompanyInformation definition for more information.
-  @override
   AtsCompanyInformation? get sellerInformation;
+  @override
 
   /// Legal information about the receiver. Please read the comments of CompanyInformation definition for more information.
-  @override
   AtsCompanyInformation? get receiverInformation;
+  @override
 
   /// List of products purchased. Please read the comments of ProductInformation definition for more information.
-  @override
   List<AtsProductInformation>? get productsInformation;
+  @override
 
   /// Total information. Please read the comments of Total definition for more information.
-  @override
   AtsPurchaseTotal? get total;
+  @override
 
   /// True if the purchase order was received.
-  @override
   bool? get isReceived;
+  @override
 
   /// True is the purchase order has a reception
-  @override
   bool? get hasReception;
+  @override
 
   /// Legal information about the transport. Please read the comments of TransportInformation definition for more information.
-  @override
   AtsTransportInformation? get transportInformation;
+  @override
 
   /// True if the purchase order has a raw xml
-  @override
   bool? get hasRawXml;
+  @override
 
   /// Invoice type (NFe, CTe)
-  @override
   String? get invoiceType;
+  @override
 
   /// Parent invoice
-  @override
   AtsPurchaseOrder? get parentInvoice;
+  @override
 
   /// Ide information
-  @override
   AtsIdeInformation? get ideInformation;
+  @override
 
   /// Unix of reception at.
-  @override
   @TimestampOrNullConverter()
   DateTime? get receptionAt;
+  @override
 
   /// Purchase order operation
-  @override
   @PurchaseOrderOperationOrNullConverter()
   PurchaseOrderOperation? get action;
+  @override
 
   /// `transportAsset` represet the truck that will transport the product.
-  @override
   Asset? get transportAsset;
+  @override
 
   /// `sellerAsset` represet the terminal that will sell the product.
-  @override
   Asset? get sellerAsset;
+  @override
 
   /// `orderStatus` defines the order status.
-  @override
   @AtsPurchaseOrderStatusOrNullConverter()
   AtsPurchaseOrderStatus? get orderStatus;
+  @override
 
   /// `inTransitAt` defines the in transit date.
-  @override
   @TimestampOrNullConverter()
   DateTime? get inTransitAt;
+  @override
 
   /// `waitingToDispatchAt` defines the waiting to dispatch date.
-  @override
   @TimestampOrNullConverter()
   DateTime? get waitingToDispatchAt;
+  @override
 
   /// `deliveredAt` defines the delivered date.
-  @override
   @TimestampOrNullConverter()
   DateTime? get deliveredAt;
+  @override
 
   /// `deliverCategory` defines the delivery category.
-  @override
   @AtsPurchaseOrderSubCategoriesOrNullConverter()
   AtsPurchaseOrderSubCategories? get deliverCategory;
+  @override
 
   /// `category` defines the category.
-  @override
   @AtsPurchaseOrderCategoriesEntityOrNullConverter()
   AtsPurchaseOrderCategoriesEntity? get category;
+  @override
 
   /// `operation` associated to the purchase order.
-  @override
   AtsOperation? get operation;
-
-  /// Create a copy of AtsPurchaseOrder
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsPurchaseOrderImplCopyWith<_$AtsPurchaseOrderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6624,12 +6399,8 @@ mixin _$AtsPurchaseTotal {
   /// Freight weight
   double? get freightWeight => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsPurchaseTotal to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsPurchaseTotal
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsPurchaseTotalCopyWith<AtsPurchaseTotal> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6663,8 +6434,6 @@ class _$AtsPurchaseTotalCopyWithImpl<$Res, $Val extends AtsPurchaseTotal>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsPurchaseTotal
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6753,8 +6522,6 @@ class __$$AtsPurchaseTotalImplCopyWithImpl<$Res>
       $Res Function(_$AtsPurchaseTotalImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsPurchaseTotal
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6903,7 +6670,7 @@ class _$AtsPurchaseTotalImpl implements _AtsPurchaseTotal {
                 other.freightWeight == freightWeight));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -6918,9 +6685,7 @@ class _$AtsPurchaseTotalImpl implements _AtsPurchaseTotal {
       loadQuantityMeasure,
       freightWeight);
 
-  /// Create a copy of AtsPurchaseTotal
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsPurchaseTotalImplCopyWith<_$AtsPurchaseTotalImpl> get copyWith =>
@@ -6951,50 +6716,48 @@ abstract class _AtsPurchaseTotal implements AtsPurchaseTotal {
   factory _AtsPurchaseTotal.fromJson(Map<String, dynamic> json) =
       _$AtsPurchaseTotalImpl.fromJson;
 
-  /// Subtotal of the product.
   @override
+
+  /// Subtotal of the product.
   double? get subtotal;
+  @override
 
   /// Net discount value (not %)
-  @override
   double? get discountValue;
+  @override
 
   /// Total value of the product with discount
-  @override
   double? get total;
+  @override
 
   /// Total value of the product with discount and load
-  @override
   double? get totalLoad;
+  @override
 
   /// Predominant product
-  @override
   String? get predominantProduct;
+  @override
 
   /// Total freight value
-  @override
   double? get totalFreight;
+  @override
 
   /// Total received value
-  @override
   double? get totalReceived;
+  @override
 
   /// Load quantity
-  @override
   double? get loadQuantity;
+  @override
 
   /// Load quantity measure
-  @override
   String? get loadQuantityMeasure;
+  @override
 
   /// Freight weight
-  @override
   double? get freightWeight;
-
-  /// Create a copy of AtsPurchaseTotal
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsPurchaseTotalImplCopyWith<_$AtsPurchaseTotalImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7034,12 +6797,8 @@ mixin _$AtsReception {
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
   List<AtsReceptionProduct> get products => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsReception to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsReception
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsReceptionCopyWith<AtsReception> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7075,8 +6834,6 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsReception
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7130,8 +6887,6 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
     ) as $Val);
   }
 
-  /// Create a copy of AtsReception
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsPurchaseOrderCopyWith<$Res>? get order {
@@ -7144,8 +6899,6 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
     });
   }
 
-  /// Create a copy of AtsReception
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsEntryCopyWith<$Res>? get entry {
@@ -7192,8 +6945,6 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
       _$AtsReceptionImpl _value, $Res Function(_$AtsReceptionImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsReception
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7355,7 +7106,7 @@ class _$AtsReceptionImpl implements _AtsReception {
             const DeepCollectionEquality().equals(other._products, _products));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -7369,9 +7120,7 @@ class _$AtsReceptionImpl implements _AtsReception {
       const DeepCollectionEquality().hash(_loadingParamsForm),
       const DeepCollectionEquality().hash(_products));
 
-  /// Create a copy of AtsReception
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsReceptionImplCopyWith<_$AtsReceptionImpl> get copyWith =>
@@ -7400,47 +7149,45 @@ abstract class _AtsReception implements AtsReception {
   factory _AtsReception.fromJson(Map<String, dynamic> json) =
       _$AtsReceptionImpl.fromJson;
 
-  ///  ID of the [AtsReception]. This ID is unique.
   @override
+
+  ///  ID of the [AtsReception]. This ID is unique.
   String get id;
+  @override
 
   /// ID of the [AtsPurchaseOrder].
-  @override
   int? get orderId;
+  @override
 
   /// `errorRate` Represents error percent between reception and sensor entry raw.
-  @override
   double? get errorRate;
+  @override
 
   /// `receptionStatus` represents the status of the reception.
-  @override
   @AtsReceptionStatusConverter()
   AtsReceptionStatus? get receptionStatus;
+  @override
 
   /// [AtsPurchaseOrder] linked to the reception.
-  @override
   AtsPurchaseOrder? get order;
+  @override
 
   /// List of [AtsPurchaseOrder] IDs.
-  @override
   List<int> get ordersIds;
+  @override
 
   /// [AtsEntry] linked to the [AtsReception].
-  @override
   AtsEntry? get entry;
+  @override
 
   /// `loadingParameters` represents the loading parameters of the reception.
-  @override
   List<AtsLoadingParamsForm> get loadingParamsForm;
+  @override
 
   /// List of [AtsReceptionProduct] obtained of the [AtsPurchaseOrder] exactly in [AtsProductsInformation]
-  @override
   List<AtsReceptionProduct> get products;
-
-  /// Create a copy of AtsReception
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsReceptionImplCopyWith<_$AtsReceptionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7469,12 +7216,8 @@ mixin _$AtsEntryUnloadInput {
   /// `receptionId` of the [AtsReception] entity. This ID is unique.
   set receptionId(String? value) => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsEntryUnloadInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsEntryUnloadInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsEntryUnloadInputCopyWith<AtsEntryUnloadInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7498,8 +7241,6 @@ class _$AtsEntryUnloadInputCopyWithImpl<$Res, $Val extends AtsEntryUnloadInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsEntryUnloadInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7543,8 +7284,6 @@ class __$$AtsEntryUnloadInputImplCopyWithImpl<$Res>
       $Res Function(_$AtsEntryUnloadInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsEntryUnloadInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7594,9 +7333,7 @@ class _$AtsEntryUnloadInputImpl implements _AtsEntryUnloadInput {
     return 'AtsEntryUnloadInput(id: $id, fromAssetId: $fromAssetId, receptionId: $receptionId)';
   }
 
-  /// Create a copy of AtsEntryUnloadInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsEntryUnloadInputImplCopyWith<_$AtsEntryUnloadInputImpl> get copyWith =>
@@ -7620,31 +7357,29 @@ abstract class _AtsEntryUnloadInput implements AtsEntryUnloadInput {
   factory _AtsEntryUnloadInput.fromJson(Map<String, dynamic> json) =
       _$AtsEntryUnloadInputImpl.fromJson;
 
-  /// `id` of the [AtsEntry] entity. This ID is unique.
   @override
+
+  /// `id` of the [AtsEntry] entity. This ID is unique.
   String? get id;
 
   /// `id` of the [AtsEntry] entity. This ID is unique.
   set id(String? value);
+  @override
 
   /// `fromAssetId` of the [Asset] entity. This ID is unique.
-  @override
   String? get fromAssetId;
 
   /// `fromAssetId` of the [Asset] entity. This ID is unique.
   set fromAssetId(String? value);
+  @override
 
   /// `receptionId` of the [AtsReception] entity. This ID is unique.
-  @override
   String? get receptionId;
 
   /// `receptionId` of the [AtsReception] entity. This ID is unique.
   set receptionId(String? value);
-
-  /// Create a copy of AtsEntryUnloadInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsEntryUnloadInputImplCopyWith<_$AtsEntryUnloadInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7668,12 +7403,8 @@ mixin _$AtsIdeInformation {
   String? get cfop => throw _privateConstructorUsedError;
   String? get operationType => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsIdeInformation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsIdeInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsIdeInformationCopyWith<AtsIdeInformation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7702,8 +7433,6 @@ class _$AtsIdeInformationCopyWithImpl<$Res, $Val extends AtsIdeInformation>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsIdeInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7762,8 +7491,6 @@ class __$$AtsIdeInformationImplCopyWithImpl<$Res>
       $Res Function(_$AtsIdeInformationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsIdeInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7843,14 +7570,12 @@ class _$AtsIdeInformationImpl implements _AtsIdeInformation {
                 other.operationType == operationType));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, ideType, serie, model, cfop, operationType);
 
-  /// Create a copy of AtsIdeInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsIdeInformationImplCopyWith<_$AtsIdeInformationImpl> get copyWith =>
@@ -7876,28 +7601,26 @@ abstract class _AtsIdeInformation implements AtsIdeInformation {
   factory _AtsIdeInformation.fromJson(Map<String, dynamic> json) =
       _$AtsIdeInformationImpl.fromJson;
 
-  /// Ide type
   @override
+
+  /// Ide type
   String? get ideType;
+  @override
 
   /// Serie
-  @override
   String? get serie;
+  @override
 
   /// Model
-  @override
   String? get model;
+  @override
 
   /// CFOP
-  @override
   String? get cfop;
   @override
   String? get operationType;
-
-  /// Create a copy of AtsIdeInformation
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsIdeInformationImplCopyWith<_$AtsIdeInformationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7921,12 +7644,8 @@ mixin _$OperationProductInformation {
   /// fuel type of the product.
   String? get fuelType => throw _privateConstructorUsedError;
 
-  /// Serializes this OperationProductInformation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of OperationProductInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $OperationProductInformationCopyWith<OperationProductInformation>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -7957,8 +7676,6 @@ class _$OperationProductInformationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of OperationProductInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8014,8 +7731,6 @@ class __$$OperationProductInformationImplCopyWithImpl<$Res>
       $Res Function(_$OperationProductInformationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OperationProductInformation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8092,14 +7807,12 @@ class _$OperationProductInformationImpl
                 other.fuelType == fuelType));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, category, quantity, subcategory, fuelType);
 
-  /// Create a copy of OperationProductInformation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$OperationProductInformationImplCopyWith<_$OperationProductInformationImpl>
@@ -8125,26 +7838,24 @@ abstract class _OperationProductInformation
   factory _OperationProductInformation.fromJson(Map<String, dynamic> json) =
       _$OperationProductInformationImpl.fromJson;
 
-  /// category of the product.
   @override
+
+  /// category of the product.
   String? get category;
+  @override
 
   /// quantity of the product.
-  @override
   double? get quantity;
+  @override
 
   /// subcategory of the product.
-  @override
   String? get subcategory;
+  @override
 
   /// fuel type of the product.
-  @override
   String? get fuelType;
-
-  /// Create a copy of OperationProductInformation
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$OperationProductInformationImplCopyWith<_$OperationProductInformationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -8219,12 +7930,8 @@ mixin _$AtsLoadingParamsFormInput {
   /// `formNumber` Loading params form number
   set formNumber(String? value) => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsLoadingParamsFormInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsLoadingParamsFormInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsLoadingParamsFormInputCopyWith<AtsLoadingParamsFormInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -8260,8 +7967,6 @@ class _$AtsLoadingParamsFormInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsLoadingParamsFormInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8354,8 +8059,6 @@ class __$$AtsLoadingParamsFormInputImplCopyWithImpl<$Res>
       $Res Function(_$AtsLoadingParamsFormInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsLoadingParamsFormInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8479,9 +8182,7 @@ class _$AtsLoadingParamsFormInputImpl implements _AtsLoadingParamsFormInput {
     return 'AtsLoadingParamsFormInput(id: $id, assetId: $assetId, receptionId: $receptionId, driver: $driver, sampleDensity: $sampleDensity, sampleTemperature: $sampleTemperature, assetTemperature: $assetTemperature, analyzedAt: $analyzedAt, sampleType: $sampleType, formNumber: $formNumber)';
   }
 
-  /// Create a copy of AtsLoadingParamsFormInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsLoadingParamsFormInputImplCopyWith<_$AtsLoadingParamsFormInputImpl>
@@ -8513,82 +8214,80 @@ abstract class _AtsLoadingParamsFormInput implements AtsLoadingParamsFormInput {
   factory _AtsLoadingParamsFormInput.fromJson(Map<String, dynamic> json) =
       _$AtsLoadingParamsFormInputImpl.fromJson;
 
-  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   @override
+
+  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   String? get id;
 
   /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   set id(String? value);
+  @override
 
   /// `assetId` What asset is linked to loading params form (Truck).
-  @override
   String? get assetId;
 
   /// `assetId` What asset is linked to loading params form (Truck).
   set assetId(String? value);
+  @override
 
   /// `receptionId` linked to loading params form.
-  @override
   String? get receptionId;
 
   /// `receptionId` linked to loading params form.
   set receptionId(String? value);
+  @override
 
   /// `driver` name
-  @override
   String? get driver;
 
   /// `driver` name
   set driver(String? value);
+  @override
 
   /// `sampleDensity` is loading params form density
-  @override
   double? get sampleDensity;
 
   /// `sampleDensity` is loading params form density
   set sampleDensity(double? value);
+  @override
 
   /// `sampleTemperature` is loading params form temperature
-  @override
   double? get sampleTemperature;
 
   /// `sampleTemperature` is loading params form temperature
   set sampleTemperature(double? value);
+  @override
 
   /// `assetTemperature` represent the asset temperature
-  @override
   double? get assetTemperature;
 
   /// `assetTemperature` represent the asset temperature
   set assetTemperature(double? value);
+  @override
 
   ///  `analyzedAt` represent when the asset density in UNIX
-  @override
   double? get analyzedAt;
 
   ///  `analyzedAt` represent when the asset density in UNIX
   set analyzedAt(double? value);
+  @override
 
   /// `sampleType` represent the loading params sample type
-  @override
   @AtsLoadingParamsSampleOrNullConverter()
   AtsLoadingParamsSample? get sampleType;
 
   /// `sampleType` represent the loading params sample type
   @AtsLoadingParamsSampleOrNullConverter()
   set sampleType(AtsLoadingParamsSample? value);
+  @override
 
   /// `formNumber` Loading params form number
-  @override
   String? get formNumber;
 
   /// `formNumber` Loading params form number
   set formNumber(String? value);
-
-  /// Create a copy of AtsLoadingParamsFormInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsLoadingParamsFormInputImplCopyWith<_$AtsLoadingParamsFormInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -8641,12 +8340,8 @@ mixin _$AtsLoadingParamsForm {
   /// `formNumber` Loading params form number
   String? get formNumber => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsLoadingParamsForm to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsLoadingParamsForm
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsLoadingParamsFormCopyWith<AtsLoadingParamsForm> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -8688,8 +8383,6 @@ class _$AtsLoadingParamsFormCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsLoadingParamsForm
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8763,8 +8456,6 @@ class _$AtsLoadingParamsFormCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of AtsLoadingParamsForm
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
@@ -8777,8 +8468,6 @@ class _$AtsLoadingParamsFormCopyWithImpl<$Res,
     });
   }
 
-  /// Create a copy of AtsLoadingParamsForm
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsReceptionCopyWith<$Res>? get reception {
@@ -8830,8 +8519,6 @@ class __$$AtsLoadingParamsFormImplCopyWithImpl<$Res>
       $Res Function(_$AtsLoadingParamsFormImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsLoadingParamsForm
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -9016,7 +8703,7 @@ class _$AtsLoadingParamsFormImpl implements _AtsLoadingParamsForm {
                 other.formNumber == formNumber));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -9034,9 +8721,7 @@ class _$AtsLoadingParamsFormImpl implements _AtsLoadingParamsForm {
       fuelType,
       formNumber);
 
-  /// Create a copy of AtsLoadingParamsForm
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsLoadingParamsFormImplCopyWith<_$AtsLoadingParamsFormImpl>
@@ -9072,65 +8757,63 @@ abstract class _AtsLoadingParamsForm implements AtsLoadingParamsForm {
   factory _AtsLoadingParamsForm.fromJson(Map<String, dynamic> json) =
       _$AtsLoadingParamsFormImpl.fromJson;
 
-  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   @override
+
+  /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
   String? get id;
+  @override
 
   /// `assetId` What asset is linked to loading params form (Truck).
-  @override
   String? get assetId;
+  @override
 
   /// `asset` What asset is linked to loading params form (Truck).
-  @override
   Asset? get asset;
+  @override
 
   /// `receptionId` linked to loading params form.
-  @override
   String? get receptionId;
+  @override
 
   /// `reception` linked to loading params form.
-  @override
   AtsReception? get reception;
+  @override
 
   /// `driver` name
-  @override
   String? get driver;
+  @override
 
   /// `sampleDensity` is loading params form density
-  @override
   double? get sampleDensity;
+  @override
 
   /// `sampleTemperature` is loading params form temperature
-  @override
   double? get sampleTemperature;
+  @override
 
   /// `assetTemperature` represent the asset temperature
-  @override
   double? get assetTemperature;
+  @override
 
   ///  `analyzedAt` represent when the asset density in UNIX
-  @override
   @TimestampOrNullConverter()
   DateTime? get analyzedAt;
+  @override
 
   /// `sampleType` represent the loading params sample type
-  @override
   @AtsLoadingParamsSampleOrNullConverter()
   AtsLoadingParamsSample? get sampleType;
+  @override
 
   /// `fuelType` is the fuel type of the entry.
-  @override
   @AtsFuelTypeOrNullConverter()
   AtsFuelType? get fuelType;
+  @override
 
   /// `formNumber` Loading params form number
-  @override
   String? get formNumber;
-
-  /// Create a copy of AtsLoadingParamsForm
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsLoadingParamsFormImplCopyWith<_$AtsLoadingParamsFormImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -9148,12 +8831,8 @@ mixin _$AtsExitStatus {
   /// Validation between total liters by fluxometers and to total liters by exits records..
   bool? get status => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsExitStatus to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsExitStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsExitStatusCopyWith<AtsExitStatus> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -9177,8 +8856,6 @@ class _$AtsExitStatusCopyWithImpl<$Res, $Val extends AtsExitStatus>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsExitStatus
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -9217,8 +8894,6 @@ class __$$AtsExitStatusImplCopyWithImpl<$Res>
       _$AtsExitStatusImpl _value, $Res Function(_$AtsExitStatusImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsExitStatus
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -9270,13 +8945,11 @@ class _$AtsExitStatusImpl implements _AtsExitStatus {
             (identical(other.status, status) || other.status == status));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, date, status);
 
-  /// Create a copy of AtsExitStatus
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsExitStatusImplCopyWith<_$AtsExitStatusImpl> get copyWith =>
@@ -9298,19 +8971,17 @@ abstract class _AtsExitStatus implements AtsExitStatus {
   factory _AtsExitStatus.fromJson(Map<String, dynamic> json) =
       _$AtsExitStatusImpl.fromJson;
 
-  /// Date of the [AtsExit]
   @override
+
+  /// Date of the [AtsExit]
   @TimestampOrNullConverter()
   DateTime? get date;
+  @override
 
   /// Validation between total liters by fluxometers and to total liters by exits records..
-  @override
   bool? get status;
-
-  /// Create a copy of AtsExitStatus
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsExitStatusImplCopyWith<_$AtsExitStatusImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -9381,12 +9052,8 @@ mixin _$AtsExit {
   /// `attendantName` is the attendant name.
   String? get attendantName => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsExit to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsExit
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsExitCopyWith<AtsExit> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -9430,8 +9097,6 @@ class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsExit
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -9535,8 +9200,6 @@ class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
     ) as $Val);
   }
 
-  /// Create a copy of AtsExit
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get fromAsset {
@@ -9549,8 +9212,6 @@ class _$AtsExitCopyWithImpl<$Res, $Val extends AtsExit>
     });
   }
 
-  /// Create a copy of AtsExit
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get toAsset {
@@ -9606,8 +9267,6 @@ class __$$AtsExitImplCopyWithImpl<$Res>
       _$AtsExitImpl _value, $Res Function(_$AtsExitImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsExit
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -9863,7 +9522,7 @@ class _$AtsExitImpl implements _AtsExit {
                 other.attendantName == attendantName));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -9888,9 +9547,7 @@ class _$AtsExitImpl implements _AtsExit {
         attendantName
       ]);
 
-  /// Create a copy of AtsExit
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsExitImplCopyWith<_$AtsExitImpl> get copyWith =>
@@ -9928,89 +9585,87 @@ abstract class _AtsExit implements AtsExit {
 
   factory _AtsExit.fromJson(Map<String, dynamic> json) = _$AtsExitImpl.fromJson;
 
-  /// `id` of the volume. This ID is unique.
   @override
+
+  /// `id` of the volume. This ID is unique.
   String? get id;
+  @override
 
   /// `identifier` is the exit identifier.
-  @override
   int? get identifier;
+  @override
 
   /// `fromAssetId` is the [Asset] kind pump to generate the exit.
-  @override
   String? get fromAssetId;
+  @override
 
   /// `fromAsset` is the id [Asset] kind pump to generate the exit.
-  @override
   Asset? get fromAsset;
+  @override
 
   /// `toAssetId` is the id [Asset] that receive the fuel (Receive the exit).
-  @override
   String? get toAssetId;
+  @override
 
   /// `toAsset` is the [Asset] that receive the fuel (Receive the exit).
-  @override
   Asset? get toAsset;
+  @override
 
   /// `errorPercent` is the errror percent between reception and sensor entry.
-  @override
   double? get errorPercent;
+  @override
 
   /// `totalLiters` is the total liters of the exit.
-  @override
   double? get totalLiters;
+  @override
 
   /// `toAssetMileage` is the Odometer of the asset mileage registered.
-  @override
   double? get toAssetMileage;
+  @override
 
   /// `startAt` is the start exit date.
-  @override
   @TimestampOrNullConverter()
   DateTime? get startAt;
+  @override
 
   /// `endAt` is the end exit date.
-  @override
   @TimestampOrNullConverter()
   DateTime? get endAt;
+  @override
 
   /// `totalTime` is the total exit time.
-  @override
   String? get totalTime;
+  @override
 
   /// `totalTimeDuration` is the duration in seconds of the exit.
-  @override
   @DurationOrNullConverter()
   Duration? get totalTimeDuration;
+  @override
 
   /// `initialFluxometer` is the initial fluxometer of the day.
-  @override
   double? get initialFluxometer;
+  @override
 
   /// `finalFluxometer` is the final fluxometer of the day.
-  @override
   double? get finalFluxometer;
+  @override
 
   /// `initialTankVolume` is the initial tank volume of the day.
-  @override
   double? get initialTankVolume;
+  @override
 
   /// `finalTankVolume` is the final tank volume of the day.
-  @override
   double? get finalTankVolume;
+  @override
 
   /// `price` is the unit price per liter of exit.
-  @override
   double? get price;
+  @override
 
   /// `attendantName` is the attendant name.
-  @override
   String? get attendantName;
-
-  /// Create a copy of AtsExit
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsExitImplCopyWith<_$AtsExitImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -10062,12 +9717,8 @@ mixin _$AtsPossibleExit {
   /// This flag defines if the possible exit is authenticated.
   bool? get isValidated => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsPossibleExit to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsPossibleExit
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsPossibleExitCopyWith<AtsPossibleExit> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -10108,8 +9759,6 @@ class _$AtsPossibleExitCopyWithImpl<$Res, $Val extends AtsPossibleExit>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsPossibleExit
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -10183,8 +9832,6 @@ class _$AtsPossibleExitCopyWithImpl<$Res, $Val extends AtsPossibleExit>
     ) as $Val);
   }
 
-  /// Create a copy of AtsPossibleExit
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get fromAsset {
@@ -10197,8 +9844,6 @@ class _$AtsPossibleExitCopyWithImpl<$Res, $Val extends AtsPossibleExit>
     });
   }
 
-  /// Create a copy of AtsPossibleExit
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SensorCopyWith<$Res>? get sensor {
@@ -10211,8 +9856,6 @@ class _$AtsPossibleExitCopyWithImpl<$Res, $Val extends AtsPossibleExit>
     });
   }
 
-  /// Create a copy of AtsPossibleExit
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get toAsset {
@@ -10265,8 +9908,6 @@ class __$$AtsPossibleExitImplCopyWithImpl<$Res>
       _$AtsPossibleExitImpl _value, $Res Function(_$AtsPossibleExitImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsPossibleExit
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -10448,7 +10089,7 @@ class _$AtsPossibleExitImpl implements _AtsPossibleExit {
                 other.isValidated == isValidated));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -10466,9 +10107,7 @@ class _$AtsPossibleExitImpl implements _AtsPossibleExit {
       inProgress,
       isValidated);
 
-  /// Create a copy of AtsPossibleExit
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsPossibleExitImplCopyWith<_$AtsPossibleExitImpl> get copyWith =>
@@ -10502,64 +10141,62 @@ abstract class _AtsPossibleExit implements AtsPossibleExit {
   factory _AtsPossibleExit.fromJson(Map<String, dynamic> json) =
       _$AtsPossibleExitImpl.fromJson;
 
-  /// ID of the possible exit. This ID is unique.
   @override
+
+  /// ID of the possible exit. This ID is unique.
   String? get id;
+  @override
 
   /// ID of the Asset
-  @override
   String? get fromAssetId;
+  @override
 
   /// Asset linked to exit.
-  @override
   Asset? get fromAsset;
+  @override
 
   /// ID of the Sensor
-  @override
   String? get sensorId;
+  @override
 
   /// Sensor linked to exit.
-  @override
   Sensor? get sensor;
+  @override
 
   /// ID of the Asset
-  @override
   String? get toAssetId;
+  @override
 
   /// Asset linked to exit.
-  @override
   Asset? get toAsset;
+  @override
 
   /// Total liters of the exit.
-  @override
   double? get totalLiters;
+  @override
 
   /// Date of the start of the exit.
-  @override
   @TimestampOrNullConverter()
   DateTime? get startAt;
+  @override
 
   /// Date of the end of the exit.
-  @override
   @TimestampOrNullConverter()
   DateTime? get endAt;
+  @override
 
   /// This flag defines if the possible exit was finished.
-  @override
   bool? get isReady;
+  @override
 
   /// This flag defines if the possible exit was started but not finished.
-  @override
   bool? get inProgress;
+  @override
 
   /// This flag defines if the possible exit is authenticated.
-  @override
   bool? get isValidated;
-
-  /// Create a copy of AtsPossibleExit
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsPossibleExitImplCopyWith<_$AtsPossibleExitImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -10608,12 +10245,8 @@ mixin _$AtsExecuteExitInput {
   @AtsFromAppOrNullConverter()
   set fromApp(AtsFromApp? value) => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsExecuteExitInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsExecuteExitInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsExecuteExitInputCopyWith<AtsExecuteExitInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -10643,8 +10276,6 @@ class _$AtsExecuteExitInputCopyWithImpl<$Res, $Val extends AtsExecuteExitInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsExecuteExitInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -10709,8 +10340,6 @@ class __$$AtsExecuteExitInputImplCopyWithImpl<$Res>
       $Res Function(_$AtsExecuteExitInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsExecuteExitInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -10794,9 +10423,7 @@ class _$AtsExecuteExitInputImpl implements _AtsExecuteExitInput {
     return 'AtsExecuteExitInput(fromAssetId: $fromAssetId, sensorId: $sensorId, presetValue: $presetValue, toAssetId: $toAssetId, toAssetMileage: $toAssetMileage, fromApp: $fromApp)';
   }
 
-  /// Create a copy of AtsExecuteExitInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsExecuteExitInputImplCopyWith<_$AtsExecuteExitInputImpl> get copyWith =>
@@ -10824,54 +10451,52 @@ abstract class _AtsExecuteExitInput implements AtsExecuteExitInput {
   factory _AtsExecuteExitInput.fromJson(Map<String, dynamic> json) =
       _$AtsExecuteExitInputImpl.fromJson;
 
-  /// [fromAssetId] ID of the bomb [Asset].
   @override
+
+  /// [fromAssetId] ID of the bomb [Asset].
   String? get fromAssetId;
 
   /// [fromAssetId] ID of the bomb [Asset].
   set fromAssetId(String? value);
+  @override
 
   /// [sensorId] ID of [Sensor] bomb.
-  @override
   String? get sensorId;
 
   /// [sensorId] ID of [Sensor] bomb.
   set sensorId(String? value);
+  @override
 
   /// [presetValue] Total liters limit allowed for exit execution
-  @override
   int? get presetValue;
 
   /// [presetValue] Total liters limit allowed for exit execution
   set presetValue(int? value);
+  @override
 
   /// [toAssetID] ID of the [Asset] validated.
-  @override
   String? get toAssetId;
 
   /// [toAssetID] ID of the [Asset] validated.
   set toAssetId(String? value);
+  @override
 
   /// [toAssetMileage] Mileage of the [Asset]
-  @override
   double? get toAssetMileage;
 
   /// [toAssetMileage] Mileage of the [Asset]
   set toAssetMileage(double? value);
+  @override
 
   /// [fromApp] Exit execution enum definition
-  @override
   @AtsFromAppOrNullConverter()
   AtsFromApp? get fromApp;
 
   /// [fromApp] Exit execution enum definition
   @AtsFromAppOrNullConverter()
   set fromApp(AtsFromApp? value);
-
-  /// Create a copy of AtsExecuteExitInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsExecuteExitInputImplCopyWith<_$AtsExecuteExitInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -10906,12 +10531,8 @@ mixin _$AtsExecuteExitHistory {
   @AtsExitExecuteStatusOrNullConverter()
   AtsExitExecuteStatus? get status => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsExecuteExitHistory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsExecuteExitHistory
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsExecuteExitHistoryCopyWith<AtsExecuteExitHistory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -10943,8 +10564,6 @@ class _$AtsExecuteExitHistoryCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsExecuteExitHistory
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11017,8 +10636,6 @@ class __$$AtsExecuteExitHistoryImplCopyWithImpl<$Res>
       $Res Function(_$AtsExecuteExitHistoryImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsExecuteExitHistory
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11131,14 +10748,12 @@ class _$AtsExecuteExitHistoryImpl implements _AtsExecuteExitHistory {
             (identical(other.status, status) || other.status == status));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, generatedBy, fromAsset,
       toAsset, createdAt, errorResponse, status);
 
-  /// Create a copy of AtsExecuteExitHistory
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsExecuteExitHistoryImplCopyWith<_$AtsExecuteExitHistoryImpl>
@@ -11167,40 +10782,38 @@ abstract class _AtsExecuteExitHistory implements AtsExecuteExitHistory {
   factory _AtsExecuteExitHistory.fromJson(Map<String, dynamic> json) =
       _$AtsExecuteExitHistoryImpl.fromJson;
 
-  /// ID of the recalculation entity. This ID is unique.
   @override
+
+  /// ID of the recalculation entity. This ID is unique.
   String? get id;
+  @override
 
   /// User NAME who execute the exit
-  @override
   String? get generatedBy;
+  @override
 
   /// Pump asset name
-  @override
   String? get fromAsset;
+  @override
 
   /// Vehicle asset name
-  @override
   String? get toAsset;
+  @override
 
   /// Date of execution
-  @override
   @TimestampOrNullConverter()
   DateTime? get createdAt;
+  @override
 
   /// Reason of any error in execution
-  @override
   String? get errorResponse;
+  @override
 
   /// Execution status to know the process
-  @override
   @AtsExitExecuteStatusOrNullConverter()
   AtsExitExecuteStatus? get status;
-
-  /// Create a copy of AtsExecuteExitHistory
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsExecuteExitHistoryImplCopyWith<_$AtsExecuteExitHistoryImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -11273,12 +10886,8 @@ mixin _$AtsEntry {
   /// `volumenHistory` is the volumen history of the entry.
   List<AtsVolume> get volumeHistory => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsEntry to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsEntryCopyWith<AtsEntry> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -11324,8 +10933,6 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsEntry
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11434,8 +11041,6 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
     ) as $Val);
   }
 
-  /// Create a copy of AtsEntry
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
@@ -11448,8 +11053,6 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
     });
   }
 
-  /// Create a copy of AtsEntry
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsReceptionCopyWith<$Res>? get reception {
@@ -11507,8 +11110,6 @@ class __$$AtsEntryImplCopyWithImpl<$Res>
       _$AtsEntryImpl _value, $Res Function(_$AtsEntryImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsEntry
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11793,7 +11394,7 @@ class _$AtsEntryImpl implements _AtsEntry {
                 .equals(other._volumeHistory, _volumeHistory));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -11819,9 +11420,7 @@ class _$AtsEntryImpl implements _AtsEntry {
         const DeepCollectionEquality().hash(_volumeHistory)
       ]);
 
-  /// Create a copy of AtsEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsEntryImplCopyWith<_$AtsEntryImpl> get copyWith =>
@@ -11861,92 +11460,90 @@ abstract class _AtsEntry implements AtsEntry {
   factory _AtsEntry.fromJson(Map<String, dynamic> json) =
       _$AtsEntryImpl.fromJson;
 
-  /// `id` is the unique ID of the entry.
   @override
+
+  /// `id` is the unique ID of the entry.
   String get id;
+  @override
 
   /// `assetId` is the ID of the associated asset.
-  @override
   String? get assetId;
+  @override
 
   /// `asset` is the associated asset.
-  @override
   Asset? get asset;
+  @override
 
   /// `oldTankLevel` is the tank level at the start of the entry.
-  @override
   double? get oldTankLevel;
+  @override
 
   /// `newTankLevel` is the tank level at the end of the entry.
-  @override
   double? get newTankLevel;
+  @override
 
   /// `startAt` is the start date of the entry.
-  @override
   @TimestampOrNullConverter()
   DateTime? get startAt;
+  @override
 
   /// `endAt` is the end date of the entry.
-  @override
   @TimestampOrNullConverter()
   DateTime? get endAt;
+  @override
 
   /// `errorPercent` is the error percent between reception and sensor entry.
-  @override
   double? get errorPercent;
+  @override
 
   /// `reception` is the associated reception.
-  @override
   AtsReception? get reception;
+  @override
 
   /// `receptions` is a list of receptions associated with the entry.
-  @override
   List<AtsReception>? get receptions;
+  @override
 
   /// `isLinked` indicates whether the entry is linked to a purchase order.
-  @override
   bool? get isLinked;
+  @override
 
   /// `fuelType` is the fuel type of the entry.
-  @override
   String? get fuelType;
+  @override
 
   /// `fuelSubtype` is the fuel subtype of the entry.
-  @override
   String? get fuelSubtype;
+  @override
 
   /// `temperature` is the temperature of the entry.
-  @override
   double? get temperature;
+  @override
 
   /// `initialTemperature` is the initial temperature of the entry.
-  @override
   double? get initialTemperature;
+  @override
 
   /// `density` is the density of the entry.
-  @override
   double? get density;
+  @override
 
   /// `initialDensity` is the initial density of the entry.
-  @override
   double? get initialDensity;
+  @override
 
   /// `waterLevel` is the water level of the entry.
-  @override
   double? get waterLevel;
+  @override
 
   /// `initialWaterLevel` is the initial water level of the entry.
-  @override
   double? get initialWaterLevel;
+  @override
 
   /// `volumenHistory` is the volumen history of the entry.
-  @override
   List<AtsVolume> get volumeHistory;
-
-  /// Create a copy of AtsEntry
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsEntryImplCopyWith<_$AtsEntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -11967,12 +11564,8 @@ mixin _$AtsVolume {
   @TimestampOrNullConverter()
   DateTime? get at => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsVolume to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsVolume
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsVolumeCopyWith<AtsVolume> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -11998,8 +11591,6 @@ class _$AtsVolumeCopyWithImpl<$Res, $Val extends AtsVolume>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsVolume
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -12046,8 +11637,6 @@ class __$$AtsVolumeImplCopyWithImpl<$Res>
       _$AtsVolumeImpl _value, $Res Function(_$AtsVolumeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsVolume
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -12112,13 +11701,11 @@ class _$AtsVolumeImpl implements _AtsVolume {
             (identical(other.at, at) || other.at == at));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, assetId, procedureResult, at);
 
-  /// Create a copy of AtsVolume
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsVolumeImplCopyWith<_$AtsVolumeImpl> get copyWith =>
@@ -12141,23 +11728,21 @@ abstract class _AtsVolume implements AtsVolume {
   factory _AtsVolume.fromJson(Map<String, dynamic> json) =
       _$AtsVolumeImpl.fromJson;
 
-  /// `assetId` is the ID of the associated asset.
   @override
+
+  /// `assetId` is the ID of the associated asset.
   String? get assetId;
+  @override
 
   /// `procedureResult` represent the volumen calculated
-  @override
   double? get procedureResult;
+  @override
 
   /// `at` is the date and time of the volumen calculation.
-  @override
   @TimestampOrNullConverter()
   DateTime? get at;
-
-  /// Create a copy of AtsVolume
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsVolumeImplCopyWith<_$AtsVolumeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -12238,12 +11823,8 @@ mixin _$AtsOperation {
   List<OperationProductInformation>? get productsInformation =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this AtsOperation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsOperation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsOperationCopyWith<AtsOperation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -12294,8 +11875,6 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsOperation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -12399,8 +11978,6 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
     ) as $Val);
   }
 
-  /// Create a copy of AtsOperation
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get sellerAsset {
@@ -12413,8 +11990,6 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
     });
   }
 
-  /// Create a copy of AtsOperation
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get transportAsset {
@@ -12427,8 +12002,6 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
     });
   }
 
-  /// Create a copy of AtsOperation
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation {
@@ -12442,8 +12015,6 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
     });
   }
 
-  /// Create a copy of AtsOperation
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsTransportInformationCopyWith<$Res>? get transportInformation {
@@ -12508,8 +12079,6 @@ class __$$AtsOperationImplCopyWithImpl<$Res>
       _$AtsOperationImpl _value, $Res Function(_$AtsOperationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsOperation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -12812,7 +12381,7 @@ class _$AtsOperationImpl implements _AtsOperation {
                 .equals(other._productsInformation, _productsInformation));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -12837,9 +12406,7 @@ class _$AtsOperationImpl implements _AtsOperation {
         const DeepCollectionEquality().hash(_productsInformation)
       ]);
 
-  /// Create a copy of AtsOperation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsOperationImplCopyWith<_$AtsOperationImpl> get copyWith =>
@@ -12882,92 +12449,90 @@ abstract class _AtsOperation implements AtsOperation {
   factory _AtsOperation.fromJson(Map<String, dynamic> json) =
       _$AtsOperationImpl.fromJson;
 
-  /// `id` of the asset entity. This ID is unique.
   @override
+
+  /// `id` of the asset entity. This ID is unique.
   String? get id;
+  @override
 
   /// `sellerAssetId` is the ID of the seller asset.
-  @override
   String? get sellerAssetId;
+  @override
 
   /// `transportAssetId` is the ID of the transport asset.
-  @override
   String? get transportAssetId;
+  @override
 
   /// `purchasedAt` is the Unix timestamp of the last reception date.
-  @override
   @TimestampOrNullConverter()
   DateTime? get purchasedAt;
+  @override
 
   /// `createdAt` is the Unix timestamp of the creation date.
-  @override
   @TimestampOrNullConverter()
   DateTime? get createdAt;
+  @override
 
   /// `finishedAt` is the Unix timestamp of the finished date.
-  @override
   @TimestampOrNullConverter()
   DateTime? get finishedAt;
+  @override
 
   /// `pendingToReview` indicates if it's pending to review.
-  @override
   bool? get pendingToReview;
+  @override
 
   /// `ordersIds` is a list of purchase orders linked to the operation.
-  @override
   List<String>? get ordersIds;
+  @override
 
   /// `sellerAsset` is the seller Asset linked to the purchase order.
-  @override
   Asset? get sellerAsset;
+  @override
 
   /// `transportAsset` is the transport Asset linked to the purchase order.
-  @override
   Asset? get transportAsset;
+  @override
 
   /// `sellerInformation` is the legal information about the seller.
-  @override
   AtsCompanyInformation? get sellerInformation;
+  @override
 
   /// `transportInformation` is the legal information about the transport.
-  @override
   AtsTransportInformation? get transportInformation;
+  @override
 
   /// `orderStatus` is the status of the order.
-  @override
   @AtsPurchaseOrderStatusOrNullConverter()
   AtsPurchaseOrderStatus? get orderStatus;
+  @override
 
   /// `category` is the category of the purchase order.
-  @override
   @AtsPurchaseOrderCategoriesEntityOrNullConverter()
   AtsPurchaseOrderCategoriesEntity? get category;
+  @override
 
   /// `deliverCategory` is the deliver category of the purchase order.
-  @override
   @AtsPurchaseOrderSubCategoriesOrNullConverter()
   AtsPurchaseOrderSubCategories? get deliverCategory;
+  @override
 
   /// `purchaseOrders` are the purchase orders linked to the operation.
-  @override
   List<AtsPurchaseOrder>? get purchaseOrders;
+  @override
 
   /// `statuses` are the statuses of the operation.
-  @override
   List<AtsOperationStatuses>? get statuses;
+  @override
 
   /// `totalQuantity` total quantity of the purchase order.
-  @override
   double? get totalQuantity;
+  @override
 
   /// `productsInformation` is the list of products information.
-  @override
   List<OperationProductInformation>? get productsInformation;
-
-  /// Create a copy of AtsOperation
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsOperationImplCopyWith<_$AtsOperationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -12993,12 +12558,8 @@ mixin _$AtsOperationStatuses {
   @TimestampOrNullConverter()
   DateTime? get deliveredAt => throw _privateConstructorUsedError;
 
-  /// Serializes this AtsOperationStatuses to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AtsOperationStatuses
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AtsOperationStatusesCopyWith<AtsOperationStatuses> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -13029,8 +12590,6 @@ class _$AtsOperationStatusesCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AtsOperationStatuses
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -13059,8 +12618,6 @@ class _$AtsOperationStatusesCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of AtsOperationStatuses
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get asset {
@@ -13100,8 +12657,6 @@ class __$$AtsOperationStatusesImplCopyWithImpl<$Res>
       $Res Function(_$AtsOperationStatusesImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AtsOperationStatuses
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -13181,14 +12736,12 @@ class _$AtsOperationStatusesImpl implements _AtsOperationStatuses {
                 other.deliveredAt == deliveredAt));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, asset, inTransitAt, waitingToDispatchAt, deliveredAt);
 
-  /// Create a copy of AtsOperationStatuses
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AtsOperationStatusesImplCopyWith<_$AtsOperationStatusesImpl>
@@ -13215,29 +12768,27 @@ abstract class _AtsOperationStatuses implements AtsOperationStatuses {
   factory _AtsOperationStatuses.fromJson(Map<String, dynamic> json) =
       _$AtsOperationStatusesImpl.fromJson;
 
-  /// `asset` is the Asset linked to the operation.
   @override
+
+  /// `asset` is the Asset linked to the operation.
   Asset? get asset;
+  @override
 
   /// `inTransitAt` is the Unix timestamp of when the asset was in transit.
-  @override
   @TimestampOrNullConverter()
   DateTime? get inTransitAt;
+  @override
 
   /// `waitingToDispatchAt` is the Unix timestamp of when the asset was waiting to dispatch.
-  @override
   @TimestampOrNullConverter()
   DateTime? get waitingToDispatchAt;
+  @override
 
   /// `deliveredAt` is the Unix timestamp of when the asset was delivered.
-  @override
   @TimestampOrNullConverter()
   DateTime? get deliveredAt;
-
-  /// Create a copy of AtsOperationStatuses
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AtsOperationStatusesImplCopyWith<_$AtsOperationStatusesImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
