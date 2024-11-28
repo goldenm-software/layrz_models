@@ -21,8 +21,8 @@ class Sensor with _$Sensor {
     bool? isInstant,
 
     /// [icon] of the sensor. To send it to API, will convert to javascript codename, but from Flutter execution
-    /// will convert to IconData entity.
-    @IconOrNullConverter() IconData? icon,
+    /// will convert to LayrzIcon entity.
+    @IconOrNullConverter() LayrzIcon? icon,
 
     /// [measuringUnit] of the sensor. Can be an estandard unit or a custom one.
     String? measuringUnit,
@@ -130,7 +130,7 @@ class SensorInput with _$SensorInput {
     @Default(1) int iterationCycle,
     @Default('') String formula,
     @Default('') String script,
-    @IconOrNullConverter() IconData? icon,
+    @IconOrNullConverter() LayrzIcon? icon,
     String? contentType,
     @Default([]) List<SensorRangeInput> ranges,
     @Default([]) List<MaskPointInput> mask,

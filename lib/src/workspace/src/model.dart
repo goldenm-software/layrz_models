@@ -16,7 +16,7 @@ class Workspace with _$Workspace {
     @ColorOrNullConverter() Color? color,
 
     /// Is the icon URI of the workspace
-    @IconOrNullConverter() IconData? icon,
+    @IconOrNullConverter() LayrzIcon? icon,
 
     /// Background image URI of the workspace
     String? background,

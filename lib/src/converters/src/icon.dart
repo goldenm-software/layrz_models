@@ -1,64 +1,31 @@
 part of '../converters.dart';
 
-class IconOrNullConverter implements JsonConverter<IconData?, String?> {
+final kHelpIcon = LayrzIcon(
+  name: 'mdi-help',
+  family: LayrzFamily.materialDesignIcons,
+  codePoint: LayrzIcons.mdiHelp.codePoint,
+);
+
+class IconOrNullConverter implements JsonConverter<LayrzIcon?, String?> {
   const IconOrNullConverter();
 
   @override
-  String? toJson(IconData? object) {
-    if (object == null) {
-      return null;
-    }
-
-    String? iconName;
-
-    for (String name in iconMap.keys) {
-      if (iconMap[name]?.codePoint == object.codePoint) {
-        iconName = name;
-        break;
-      }
-    }
-
-    if (iconName == null) {
-      return 'mdi-help';
-    }
-
-    ReCase rc = ReCase(iconName);
-    return 'mdi-${rc.paramCase}';
-  }
+  String? toJson(LayrzIcon? object) => object?.name ?? 'mdi-help';
 
   @override
-  IconData? fromJson(String? json) {
-    if (json == null) {
-      return null;
-    }
-    return MdiIcons.fromString(json.replaceAll('mdi-', '')) ?? MdiIcons.help;
+  LayrzIcon? fromJson(String? json) {
+    if (json == null) return kHelpIcon;
+    final icon = iconMapping[json];
+    return icon ?? kHelpIcon;
   }
 }
 
-class IconConverter implements JsonConverter<IconData, String> {
+class IconConverter implements JsonConverter<LayrzIcon, String> {
   const IconConverter();
 
   @override
-  IconData fromJson(String json) {
-    return MdiIcons.fromString(json.replaceAll('mdi-', '')) ?? MdiIcons.help;
-  }
+  LayrzIcon fromJson(String json) => const IconOrNullConverter().fromJson(json) ?? kHelpIcon;
 
   @override
-  String toJson(IconData object) {
-    String? iconName;
-
-    for (String name in iconMap.keys) {
-      if (iconMap[name]?.codePoint == object.codePoint) {
-        iconName = name;
-        break;
-      }
-    }
-
-    if (iconName == null) {
-      return 'mdi-help';
-    }
-
-    ReCase rc = ReCase(iconName);
-    return 'mdi-${rc.paramCase}';
-  }
+  String toJson(LayrzIcon object) => const IconOrNullConverter().toJson(object) ?? 'mdi-help';
 }

@@ -2,9 +2,9 @@ library tenvio;
 
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:layrz_icons/layrz_icons.dart';
 import 'package:layrz_models/layrz_models.dart';
 import 'package:layrz_models/utils/utils.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 part 'tenvio.freezed.dart';
 part 'tenvio.g.dart';
