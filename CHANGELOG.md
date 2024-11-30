@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.2
+
+- Changed conditional import to validate from `dart.library.html` to `dart.library.js_interop` to WASM support.
+
 ## 3.3.1
 
 - Some fixes related to icon conversion.

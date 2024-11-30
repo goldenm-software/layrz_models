@@ -5,7 +5,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import './src/detection/native.dart' if (dart.library.html) './src/detection/web.dart';
+import './src/detection/native.dart' if (dart.library.js_interop) './src/detection/web.dart';
 
 // Freezed
 part 'i18n.freezed.dart';
