@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.1
+
+- Some fixes related to icon conversion.
+
 ## 3.3.0
 
 - Changed icon library from `material_design_icons_flutter` to `layrz_icons`
