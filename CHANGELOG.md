@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.3
+
+- Changed `dart:html` to `package:web` in `LayrzAppLocalizations` to support web WASM.
+
 ## 3.3.2
 
 - Changed conditional import to validate from `dart.library.html` to `dart.library.js_interop` to WASM support.
