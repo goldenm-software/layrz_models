@@ -25509,3 +25509,318 @@ abstract class _ConciergeForm implements ConciergeForm {
   _$$ConciergeFormImplCopyWith<_$ConciergeFormImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+LayrzPackage _$LayrzPackageFromJson(Map<String, dynamic> json) {
+  return _LayrzPackage.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LayrzPackage {
+  /// [id] is the unique identifier of the package. This ID is only for identification purposes.
+  /// The private registries does not use this ID.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the package.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [version] is the version of the package.
+  String get version => throw _privateConstructorUsedError;
+
+  /// [languageVersionConstraint] is the language version constraint of the package.
+  String? get languageVersionConstraint => throw _privateConstructorUsedError;
+
+  /// [createdAt] is the date when the package was created.
+  @TimestampConverter()
+  DateTime get createdAt => throw _privateConstructorUsedError;
+
+  /// [language] is the language of the package.
+  @PackageLanguageConverter()
+  PackageLanguage get language => throw _privateConstructorUsedError;
+
+  /// [repository] is the repository of the package.
+  String? get repository => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LayrzPackageCopyWith<LayrzPackage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LayrzPackageCopyWith<$Res> {
+  factory $LayrzPackageCopyWith(
+          LayrzPackage value, $Res Function(LayrzPackage) then) =
+      _$LayrzPackageCopyWithImpl<$Res, LayrzPackage>;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String version,
+      String? languageVersionConstraint,
+      @TimestampConverter() DateTime createdAt,
+      @PackageLanguageConverter() PackageLanguage language,
+      String? repository});
+}
+
+/// @nodoc
+class _$LayrzPackageCopyWithImpl<$Res, $Val extends LayrzPackage>
+    implements $LayrzPackageCopyWith<$Res> {
+  _$LayrzPackageCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? version = null,
+    Object? languageVersionConstraint = freezed,
+    Object? createdAt = null,
+    Object? language = null,
+    Object? repository = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: null == version
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      languageVersionConstraint: freezed == languageVersionConstraint
+          ? _value.languageVersionConstraint
+          : languageVersionConstraint // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      language: null == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as PackageLanguage,
+      repository: freezed == repository
+          ? _value.repository
+          : repository // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LayrzPackageImplCopyWith<$Res>
+    implements $LayrzPackageCopyWith<$Res> {
+  factory _$$LayrzPackageImplCopyWith(
+          _$LayrzPackageImpl value, $Res Function(_$LayrzPackageImpl) then) =
+      __$$LayrzPackageImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String version,
+      String? languageVersionConstraint,
+      @TimestampConverter() DateTime createdAt,
+      @PackageLanguageConverter() PackageLanguage language,
+      String? repository});
+}
+
+/// @nodoc
+class __$$LayrzPackageImplCopyWithImpl<$Res>
+    extends _$LayrzPackageCopyWithImpl<$Res, _$LayrzPackageImpl>
+    implements _$$LayrzPackageImplCopyWith<$Res> {
+  __$$LayrzPackageImplCopyWithImpl(
+      _$LayrzPackageImpl _value, $Res Function(_$LayrzPackageImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? version = null,
+    Object? languageVersionConstraint = freezed,
+    Object? createdAt = null,
+    Object? language = null,
+    Object? repository = freezed,
+  }) {
+    return _then(_$LayrzPackageImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: null == version
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      languageVersionConstraint: freezed == languageVersionConstraint
+          ? _value.languageVersionConstraint
+          : languageVersionConstraint // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      language: null == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as PackageLanguage,
+      repository: freezed == repository
+          ? _value.repository
+          : repository // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LayrzPackageImpl implements _LayrzPackage {
+  const _$LayrzPackageImpl(
+      {required this.id,
+      required this.name,
+      required this.version,
+      this.languageVersionConstraint,
+      @TimestampConverter() required this.createdAt,
+      @PackageLanguageConverter() required this.language,
+      this.repository});
+
+  factory _$LayrzPackageImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LayrzPackageImplFromJson(json);
+
+  /// [id] is the unique identifier of the package. This ID is only for identification purposes.
+  /// The private registries does not use this ID.
+  @override
+  final String id;
+
+  /// [name] is the name of the package.
+  @override
+  final String name;
+
+  /// [version] is the version of the package.
+  @override
+  final String version;
+
+  /// [languageVersionConstraint] is the language version constraint of the package.
+  @override
+  final String? languageVersionConstraint;
+
+  /// [createdAt] is the date when the package was created.
+  @override
+  @TimestampConverter()
+  final DateTime createdAt;
+
+  /// [language] is the language of the package.
+  @override
+  @PackageLanguageConverter()
+  final PackageLanguage language;
+
+  /// [repository] is the repository of the package.
+  @override
+  final String? repository;
+
+  @override
+  String toString() {
+    return 'LayrzPackage(id: $id, name: $name, version: $version, languageVersionConstraint: $languageVersionConstraint, createdAt: $createdAt, language: $language, repository: $repository)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LayrzPackageImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.languageVersionConstraint,
+                    languageVersionConstraint) ||
+                other.languageVersionConstraint == languageVersionConstraint) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.repository, repository) ||
+                other.repository == repository));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, version,
+      languageVersionConstraint, createdAt, language, repository);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LayrzPackageImplCopyWith<_$LayrzPackageImpl> get copyWith =>
+      __$$LayrzPackageImplCopyWithImpl<_$LayrzPackageImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LayrzPackageImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LayrzPackage implements LayrzPackage {
+  const factory _LayrzPackage(
+      {required final String id,
+      required final String name,
+      required final String version,
+      final String? languageVersionConstraint,
+      @TimestampConverter() required final DateTime createdAt,
+      @PackageLanguageConverter() required final PackageLanguage language,
+      final String? repository}) = _$LayrzPackageImpl;
+
+  factory _LayrzPackage.fromJson(Map<String, dynamic> json) =
+      _$LayrzPackageImpl.fromJson;
+
+  @override
+
+  /// [id] is the unique identifier of the package. This ID is only for identification purposes.
+  /// The private registries does not use this ID.
+  String get id;
+  @override
+
+  /// [name] is the name of the package.
+  String get name;
+  @override
+
+  /// [version] is the version of the package.
+  String get version;
+  @override
+
+  /// [languageVersionConstraint] is the language version constraint of the package.
+  String? get languageVersionConstraint;
+  @override
+
+  /// [createdAt] is the date when the package was created.
+  @TimestampConverter()
+  DateTime get createdAt;
+  @override
+
+  /// [language] is the language of the package.
+  @PackageLanguageConverter()
+  PackageLanguage get language;
+  @override
+
+  /// [repository] is the repository of the package.
+  String? get repository;
+  @override
+  @JsonKey(ignore: true)
+  _$$LayrzPackageImplCopyWith<_$LayrzPackageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

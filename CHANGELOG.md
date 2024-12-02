@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.4
+
+- Added `LayrzPackage` model
+
 ## 3.3.3
 
 - Changed `dart:html` to `package:web` in `LayrzAppLocalizations` to support web WASM.

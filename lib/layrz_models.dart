@@ -100,6 +100,7 @@ part 'src/trigger.dart';
 part 'src/trip.dart';
 part 'src/undeclarated_models.dart';
 part 'src/weekdays.dart';
+part 'src/package.dart';
 
 // Helper enums
 enum LayrzListingFormat {
