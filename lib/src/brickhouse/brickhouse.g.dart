@@ -258,7 +258,8 @@ _$BHSPermissionTierImpl _$$BHSPermissionTierImplFromJson(
       name: json['name'] as String,
       tierLevel: (json['tierLevel'] as num).toInt(),
       description: json['description'] as String?,
-      customProperties: json['customProperties'] as Map<String, dynamic>?,
+      customProperties:
+          json['customProperties'] as Map<String, dynamic>? ?? const {},
       users: (json['users'] as List<dynamic>?)
           ?.map((e) => User.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -286,7 +287,8 @@ _$BHSPermissionTierInputImpl _$$BHSPermissionTierInputImplFromJson(
       name: json['name'] as String?,
       description: json['description'] as String?,
       tierLevel: (json['tierLevel'] as num?)?.toInt() ?? 1,
-      customProperties: json['customProperties'] as Map<String, dynamic>?,
+      customProperties:
+          json['customProperties'] as Map<String, dynamic>? ?? const {},
     );
 
 Map<String, dynamic> _$$BHSPermissionTierInputImplToJson(

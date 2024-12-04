@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.5
+
+- Changed `customProperties` on `BHSPermissionTier` to default to a dict
+
 ## 3.3.4
 
 - Added `LayrzPackage` model
