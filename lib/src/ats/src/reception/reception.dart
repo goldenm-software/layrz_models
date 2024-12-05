@@ -18,6 +18,9 @@ class AtsReception with _$AtsReception {
     /// [AtsPurchaseOrder] linked to the reception.
     AtsPurchaseOrder? order,
 
+    /// List of [AtsPurchaseOrder]
+    @Default([]) List<AtsPurchaseOrder> orders,
+
     /// List of [AtsPurchaseOrder] IDs.
     @Default([]) List<int> ordersIds,
 

@@ -7021,6 +7021,9 @@ mixin _$AtsReception {
   /// [AtsPurchaseOrder] linked to the reception.
   AtsPurchaseOrder? get order => throw _privateConstructorUsedError;
 
+  /// List of [AtsPurchaseOrder]
+  List<AtsPurchaseOrder> get orders => throw _privateConstructorUsedError;
+
   /// List of [AtsPurchaseOrder] IDs.
   List<int> get ordersIds => throw _privateConstructorUsedError;
 
@@ -7056,6 +7059,7 @@ abstract class $AtsReceptionCopyWith<$Res> {
       double? errorRate,
       @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
       AtsPurchaseOrder? order,
+      List<AtsPurchaseOrder> orders,
       List<int> ordersIds,
       AtsEntry? entry,
       List<AtsLoadingParamsForm> loadingParamsForm,
@@ -7085,6 +7089,7 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
     Object? errorRate = freezed,
     Object? receptionStatus = freezed,
     Object? order = freezed,
+    Object? orders = null,
     Object? ordersIds = null,
     Object? entry = freezed,
     Object? loadingParamsForm = null,
@@ -7111,6 +7116,10 @@ class _$AtsReceptionCopyWithImpl<$Res, $Val extends AtsReception>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrder?,
+      orders: null == orders
+          ? _value.orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<AtsPurchaseOrder>,
       ordersIds: null == ordersIds
           ? _value.ordersIds
           : ordersIds // ignore: cast_nullable_to_non_nullable
@@ -7173,6 +7182,7 @@ abstract class _$$AtsReceptionImplCopyWith<$Res>
       double? errorRate,
       @AtsReceptionStatusConverter() AtsReceptionStatus? receptionStatus,
       AtsPurchaseOrder? order,
+      List<AtsPurchaseOrder> orders,
       List<int> ordersIds,
       AtsEntry? entry,
       List<AtsLoadingParamsForm> loadingParamsForm,
@@ -7202,6 +7212,7 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
     Object? errorRate = freezed,
     Object? receptionStatus = freezed,
     Object? order = freezed,
+    Object? orders = null,
     Object? ordersIds = null,
     Object? entry = freezed,
     Object? loadingParamsForm = null,
@@ -7228,6 +7239,10 @@ class __$$AtsReceptionImplCopyWithImpl<$Res>
           ? _value.order
           : order // ignore: cast_nullable_to_non_nullable
               as AtsPurchaseOrder?,
+      orders: null == orders
+          ? _value._orders
+          : orders // ignore: cast_nullable_to_non_nullable
+              as List<AtsPurchaseOrder>,
       ordersIds: null == ordersIds
           ? _value._ordersIds
           : ordersIds // ignore: cast_nullable_to_non_nullable
@@ -7257,11 +7272,13 @@ class _$AtsReceptionImpl implements _AtsReception {
       this.errorRate,
       @AtsReceptionStatusConverter() this.receptionStatus,
       this.order,
+      final List<AtsPurchaseOrder> orders = const [],
       final List<int> ordersIds = const [],
       this.entry,
       final List<AtsLoadingParamsForm> loadingParamsForm = const [],
       final List<AtsReceptionProduct> products = const []})
-      : _ordersIds = ordersIds,
+      : _orders = orders,
+        _ordersIds = ordersIds,
         _loadingParamsForm = loadingParamsForm,
         _products = products;
 
@@ -7288,6 +7305,18 @@ class _$AtsReceptionImpl implements _AtsReception {
   /// [AtsPurchaseOrder] linked to the reception.
   @override
   final AtsPurchaseOrder? order;
+
+  /// List of [AtsPurchaseOrder]
+  final List<AtsPurchaseOrder> _orders;
+
+  /// List of [AtsPurchaseOrder]
+  @override
+  @JsonKey()
+  List<AtsPurchaseOrder> get orders {
+    if (_orders is EqualUnmodifiableListView) return _orders;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_orders);
+  }
 
   /// List of [AtsPurchaseOrder] IDs.
   final List<int> _ordersIds;
@@ -7332,7 +7361,7 @@ class _$AtsReceptionImpl implements _AtsReception {
 
   @override
   String toString() {
-    return 'AtsReception(id: $id, orderId: $orderId, errorRate: $errorRate, receptionStatus: $receptionStatus, order: $order, ordersIds: $ordersIds, entry: $entry, loadingParamsForm: $loadingParamsForm, products: $products)';
+    return 'AtsReception(id: $id, orderId: $orderId, errorRate: $errorRate, receptionStatus: $receptionStatus, order: $order, orders: $orders, ordersIds: $ordersIds, entry: $entry, loadingParamsForm: $loadingParamsForm, products: $products)';
   }
 
   @override
@@ -7347,6 +7376,7 @@ class _$AtsReceptionImpl implements _AtsReception {
             (identical(other.receptionStatus, receptionStatus) ||
                 other.receptionStatus == receptionStatus) &&
             (identical(other.order, order) || other.order == order) &&
+            const DeepCollectionEquality().equals(other._orders, _orders) &&
             const DeepCollectionEquality()
                 .equals(other._ordersIds, _ordersIds) &&
             (identical(other.entry, entry) || other.entry == entry) &&
@@ -7364,6 +7394,7 @@ class _$AtsReceptionImpl implements _AtsReception {
       errorRate,
       receptionStatus,
       order,
+      const DeepCollectionEquality().hash(_orders),
       const DeepCollectionEquality().hash(_ordersIds),
       entry,
       const DeepCollectionEquality().hash(_loadingParamsForm),
@@ -7392,6 +7423,7 @@ abstract class _AtsReception implements AtsReception {
       final double? errorRate,
       @AtsReceptionStatusConverter() final AtsReceptionStatus? receptionStatus,
       final AtsPurchaseOrder? order,
+      final List<AtsPurchaseOrder> orders,
       final List<int> ordersIds,
       final AtsEntry? entry,
       final List<AtsLoadingParamsForm> loadingParamsForm,
@@ -7420,6 +7452,10 @@ abstract class _AtsReception implements AtsReception {
   /// [AtsPurchaseOrder] linked to the reception.
   @override
   AtsPurchaseOrder? get order;
+
+  /// List of [AtsPurchaseOrder]
+  @override
+  List<AtsPurchaseOrder> get orders;
 
   /// List of [AtsPurchaseOrder] IDs.
   @override

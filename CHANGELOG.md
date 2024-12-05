@@ -1,5 +1,8 @@
 # Changelog
 
+# 3.3.6
+- Add `orders` in `AtsReception`
+
 ## 3.3.5
 
 - Changed `customProperties` on `BHSPermissionTier` to default to a dict
