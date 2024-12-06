@@ -2288,3 +2288,26 @@ Map<String, dynamic> _$$ConciergeFormImplToJson(_$ConciergeFormImpl instance) =>
       'id': instance.id,
       'name': instance.name,
     };
+
+_$LayrzPackageImpl _$$LayrzPackageImplFromJson(Map<String, dynamic> json) =>
+    _$LayrzPackageImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      version: json['version'] as String,
+      languageVersionConstraint: json['languageVersionConstraint'] as String?,
+      createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
+      language:
+          const PackageLanguageConverter().fromJson(json['language'] as String),
+      repository: json['repository'] as String?,
+    );
+
+Map<String, dynamic> _$$LayrzPackageImplToJson(_$LayrzPackageImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'version': instance.version,
+      'languageVersionConstraint': instance.languageVersionConstraint,
+      'createdAt': const TimestampConverter().toJson(instance.createdAt),
+      'language': const PackageLanguageConverter().toJson(instance.language),
+      'repository': instance.repository,
+    };

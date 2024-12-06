@@ -594,6 +594,10 @@ _$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
       order: json['order'] == null
           ? null
           : AtsPurchaseOrder.fromJson(json['order'] as Map<String, dynamic>),
+      orders: (json['orders'] as List<dynamic>?)
+              ?.map((e) => AtsPurchaseOrder.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       ordersIds: (json['ordersIds'] as List<dynamic>?)
               ?.map((e) => (e as num).toInt())
               .toList() ??
@@ -621,6 +625,7 @@ Map<String, dynamic> _$$AtsReceptionImplToJson(_$AtsReceptionImpl instance) =>
       'receptionStatus': _$JsonConverterToJson<String, AtsReceptionStatus>(
           instance.receptionStatus, const AtsReceptionStatusConverter().toJson),
       'order': instance.order?.toJson(),
+      'orders': instance.orders.map((e) => e.toJson()).toList(),
       'ordersIds': instance.ordersIds,
       'entry': instance.entry?.toJson(),
       'loadingParamsForm':

@@ -1,5 +1,28 @@
 # Changelog
 
+# 3.3.6
+- Add `orders` in `AtsReception`
+
+## 3.3.5
+
+- Changed `customProperties` on `BHSPermissionTier` to default to a dict
+
+## 3.3.4
+
+- Added `LayrzPackage` model
+
+## 3.3.3
+
+- Changed `dart:html` to `package:web` in `LayrzAppLocalizations` to support web WASM.
+
+## 3.3.2
+
+- Changed conditional import to validate from `dart.library.html` to `dart.library.js_interop` to WASM support.
+
+## 3.3.1
+
+- Some fixes related to icon conversion.
+
 ## 3.3.0
 
 - Changed icon library from `material_design_icons_flutter` to `layrz_icons`

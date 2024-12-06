@@ -1,6 +1,6 @@
 name: layrz_models
 description: Layrz API models for Dart/Flutter. This package contains the models used by the Layrz API.
-version: "3.3.0"
+version: "3.3.6"
 repository: https://github.com/goldenm-software/layrz_models
 
 environment:
@@ -10,12 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  web: ^1.1.0
   collection: ^1.18.0
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
   recase: ^4.1.0
   latlong2: ^0.9.1
-  layrz_icons: ^1.0.1
+  layrz_icons: ^1.0.3
 
 dev_dependencies:
   flutter_test:
