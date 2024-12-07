@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.9
+
+- Updated README.md
+
 ## 3.3.8
 
 - Added `BleCharacteristic` and `BleService` models
