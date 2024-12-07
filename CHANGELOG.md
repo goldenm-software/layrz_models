@@ -1,6 +1,15 @@
 # Changelog
 
-# 3.3.6
+## 3.3.8
+
+- Added `BleCharacteristic` and `BleService` models
+- Added `BleProperty` enum
+
+## 3.3.7
+
+- Added `BleDevice` model
+
+## 3.3.6
 - Add `orders` in `AtsReception`
 
 ## 3.3.5
