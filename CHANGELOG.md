@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.8
+
+- Added `BleCharacteristic` and `BleService` models
+- Added `BleProperty` enum
+
 ## 3.3.7
 
 - Added `BleDevice` model
