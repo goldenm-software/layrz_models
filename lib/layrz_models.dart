@@ -26,6 +26,7 @@ import 'src/sensors/sensors.dart';
 import 'src/vision/vision.dart';
 import 'src/workspace/workspace.dart';
 import 'src/users/users.dart';
+// import 'src/ble/ble.dart';
 
 export 'src/app/app.dart';
 export 'src/assets/assets.dart';
@@ -56,6 +57,7 @@ export 'src/tenvio/tenvio.dart';
 export 'src/vision/vision.dart';
 export 'src/workspace/workspace.dart';
 export 'src/users/users.dart';
+export 'src/ble/ble.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';

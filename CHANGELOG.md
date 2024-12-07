@@ -1,6 +1,10 @@
 # Changelog
 
-# 3.3.6
+## 3.3.7
+
+- Added `BleDevice` model
+
+## 3.3.6
 - Add `orders` in `AtsReception`
 
 ## 3.3.5
