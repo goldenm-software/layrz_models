@@ -14,6 +14,9 @@ class AtsOperationStatuses with _$AtsOperationStatuses {
 
     /// `deliveredAt` is the Unix timestamp of when the asset was delivered.
     @TimestampOrNullConverter() DateTime? deliveredAt,
+
+    /// `eta` is the estimated time of arrival in Unix timestamp.
+    @TimestampOrNullConverter() DateTime? eta,
   }) = _AtsOperationStatuses;
 
   factory AtsOperationStatuses.fromJson(Map<String, dynamic> json) => _$AtsOperationStatusesFromJson(json);

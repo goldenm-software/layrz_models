@@ -26,12 +26,8 @@ mixin _$InboundStructure {
   List<InboundPayloadStructure> get payload =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this InboundStructure to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $InboundStructureCopyWith<InboundStructure> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -61,8 +57,6 @@ class _$InboundStructureCopyWithImpl<$Res, $Val extends InboundStructure>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of InboundStructure
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -91,8 +85,6 @@ class _$InboundStructureCopyWithImpl<$Res, $Val extends InboundStructure>
     ) as $Val);
   }
 
-  /// Create a copy of InboundStructure
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InboundPositionStructureCopyWith<$Res> get position {
@@ -128,8 +120,6 @@ class __$$InboundStructureImplCopyWithImpl<$Res>
       $Res Function(_$InboundStructureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of InboundStructure
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -205,14 +195,12 @@ class _$InboundStructureImpl implements _InboundStructure {
             const DeepCollectionEquality().equals(other._payload, _payload));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, hasPosition, position,
       hasPayload, const DeepCollectionEquality().hash(_payload));
 
-  /// Create a copy of InboundStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InboundStructureImplCopyWith<_$InboundStructureImpl> get copyWith =>
@@ -246,11 +234,8 @@ abstract class _InboundStructure implements InboundStructure {
   bool get hasPayload;
   @override
   List<InboundPayloadStructure> get payload;
-
-  /// Create a copy of InboundStructure
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InboundStructureImplCopyWith<_$InboundStructureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -290,12 +275,8 @@ mixin _$InboundStructureInput {
   set payload(List<InboundPayloadStructureInput> value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this InboundStructureInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $InboundStructureInputCopyWith<InboundStructureInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -326,8 +307,6 @@ class _$InboundStructureInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of InboundStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -356,8 +335,6 @@ class _$InboundStructureInputCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of InboundStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InboundPositionStructureInputCopyWith<$Res> get position {
@@ -396,8 +373,6 @@ class __$$InboundStructureInputImplCopyWithImpl<$Res>
       $Res Function(_$InboundStructureInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of InboundStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -463,9 +438,7 @@ class _$InboundStructureInputImpl implements _InboundStructureInput {
     return 'InboundStructureInput(hasPosition: $hasPosition, position: $position, hasPayload: $hasPayload, payload: $payload)';
   }
 
-  /// Create a copy of InboundStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InboundStructureInputImplCopyWith<_$InboundStructureInputImpl>
@@ -491,38 +464,36 @@ abstract class _InboundStructureInput implements InboundStructureInput {
   factory _InboundStructureInput.fromJson(Map<String, dynamic> json) =
       _$InboundStructureInputImpl.fromJson;
 
-  /// [hasPosition] defines if the structure has a position.
   @override
+
+  /// [hasPosition] defines if the structure has a position.
   bool get hasPosition;
 
   /// [hasPosition] defines if the structure has a position.
   set hasPosition(bool value);
+  @override
 
   /// [position] defines the structure of the position.
-  @override
   InboundPositionStructureInput get position;
 
   /// [position] defines the structure of the position.
   set position(InboundPositionStructureInput value);
+  @override
 
   /// [hasPayload] defines if the structure has a payload.
-  @override
   bool get hasPayload;
 
   /// [hasPayload] defines if the structure has a payload.
   set hasPayload(bool value);
+  @override
 
   /// [payload] defines the structure of the payload.
-  @override
   List<InboundPayloadStructureInput> get payload;
 
   /// [payload] defines the structure of the payload.
   set payload(List<InboundPayloadStructureInput> value);
-
-  /// Create a copy of InboundStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InboundStructureInputImplCopyWith<_$InboundStructureInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -542,12 +513,8 @@ mixin _$InboundPositionStructure {
   bool get hdop => throw _privateConstructorUsedError;
   bool get satellites => throw _privateConstructorUsedError;
 
-  /// Serializes this InboundPositionStructure to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundPositionStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $InboundPositionStructureCopyWith<InboundPositionStructure> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -579,8 +546,6 @@ class _$InboundPositionStructureCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of InboundPositionStructure
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -654,8 +619,6 @@ class __$$InboundPositionStructureImplCopyWithImpl<$Res>
       $Res Function(_$InboundPositionStructureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of InboundPositionStructure
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -754,14 +717,12 @@ class _$InboundPositionStructureImpl implements _InboundPositionStructure {
                 other.satellites == satellites));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude, altitude,
       speed, direction, hdop, satellites);
 
-  /// Create a copy of InboundPositionStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InboundPositionStructureImplCopyWith<_$InboundPositionStructureImpl>
@@ -803,11 +764,8 @@ abstract class _InboundPositionStructure implements InboundPositionStructure {
   bool get hdop;
   @override
   bool get satellites;
-
-  /// Create a copy of InboundPositionStructure
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InboundPositionStructureImplCopyWith<_$InboundPositionStructureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -834,12 +792,8 @@ mixin _$InboundPositionStructureInput {
   bool get hdop => throw _privateConstructorUsedError;
   set hdop(bool value) => throw _privateConstructorUsedError;
 
-  /// Serializes this InboundPositionStructureInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundPositionStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $InboundPositionStructureInputCopyWith<InboundPositionStructureInput>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -873,8 +827,6 @@ class _$InboundPositionStructureInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of InboundPositionStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -948,8 +900,6 @@ class __$$InboundPositionStructureInputImplCopyWithImpl<$Res>
       $Res Function(_$InboundPositionStructureInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of InboundPositionStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1038,9 +988,7 @@ class _$InboundPositionStructureInputImpl
     return 'InboundPositionStructureInput(latitude: $latitude, longitude: $longitude, speed: $speed, direction: $direction, altitude: $altitude, satellites: $satellites, hdop: $hdop)';
   }
 
-  /// Create a copy of InboundPositionStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InboundPositionStructureInputImplCopyWith<
@@ -1091,11 +1039,8 @@ abstract class _InboundPositionStructureInput
   @override
   bool get hdop;
   set hdop(bool value);
-
-  /// Create a copy of InboundPositionStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InboundPositionStructureInputImplCopyWith<
           _$InboundPositionStructureInputImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1112,12 +1057,8 @@ mixin _$InboundPayloadStructure {
   @InboundPayloadStructureTypeConverter()
   InboundPayloadStructureType get type => throw _privateConstructorUsedError;
 
-  /// Serializes this InboundPayloadStructure to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundPayloadStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $InboundPayloadStructureCopyWith<InboundPayloadStructure> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1145,8 +1086,6 @@ class _$InboundPayloadStructureCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of InboundPayloadStructure
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1191,8 +1130,6 @@ class __$$InboundPayloadStructureImplCopyWithImpl<$Res>
       $Res Function(_$InboundPayloadStructureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of InboundPayloadStructure
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1242,13 +1179,11 @@ class _$InboundPayloadStructureImpl implements _InboundPayloadStructure {
             (identical(other.type, type) || other.type == type));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, field, type);
 
-  /// Create a copy of InboundPayloadStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InboundPayloadStructureImplCopyWith<_$InboundPayloadStructureImpl>
@@ -1278,11 +1213,8 @@ abstract class _InboundPayloadStructure implements InboundPayloadStructure {
   @override
   @InboundPayloadStructureTypeConverter()
   InboundPayloadStructureType get type;
-
-  /// Create a copy of InboundPayloadStructure
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InboundPayloadStructureImplCopyWith<_$InboundPayloadStructureImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1302,12 +1234,8 @@ mixin _$InboundPayloadStructureInput {
   set type(InboundPayloadStructureType value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this InboundPayloadStructureInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundPayloadStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $InboundPayloadStructureInputCopyWith<InboundPayloadStructureInput>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1337,8 +1265,6 @@ class _$InboundPayloadStructureInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of InboundPayloadStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1383,8 +1309,6 @@ class __$$InboundPayloadStructureInputImplCopyWithImpl<$Res>
       $Res Function(_$InboundPayloadStructureInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of InboundPayloadStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1430,9 +1354,7 @@ class _$InboundPayloadStructureInputImpl
     return 'InboundPayloadStructureInput(field: $field, type: $type)';
   }
 
-  /// Create a copy of InboundPayloadStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InboundPayloadStructureInputImplCopyWith<
@@ -1466,11 +1388,8 @@ abstract class _InboundPayloadStructureInput
   InboundPayloadStructureType get type;
   @InboundPayloadStructureTypeConverter()
   set type(InboundPayloadStructureType value);
-
-  /// Create a copy of InboundPayloadStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InboundPayloadStructureInputImplCopyWith<
           _$InboundPayloadStructureInputImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -1488,12 +1407,8 @@ mixin _$WebhookHeader {
   /// Is the value of the header.
   String get value => throw _privateConstructorUsedError;
 
-  /// Serializes this WebhookHeader to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WebhookHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WebhookHeaderCopyWith<WebhookHeader> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1517,8 +1432,6 @@ class _$WebhookHeaderCopyWithImpl<$Res, $Val extends WebhookHeader>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WebhookHeader
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1557,8 +1470,6 @@ class __$$WebhookHeaderImplCopyWithImpl<$Res>
       _$WebhookHeaderImpl _value, $Res Function(_$WebhookHeaderImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WebhookHeader
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1608,13 +1519,11 @@ class _$WebhookHeaderImpl implements _WebhookHeader {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name, value);
 
-  /// Create a copy of WebhookHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WebhookHeaderImplCopyWith<_$WebhookHeaderImpl> get copyWith =>
@@ -1636,18 +1545,16 @@ abstract class _WebhookHeader implements WebhookHeader {
   factory _WebhookHeader.fromJson(Map<String, dynamic> json) =
       _$WebhookHeaderImpl.fromJson;
 
-  /// Is the key of the header.
   @override
+
+  /// Is the key of the header.
   String get name;
+  @override
 
   /// Is the value of the header.
-  @override
   String get value;
-
-  /// Create a copy of WebhookHeader
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WebhookHeaderImplCopyWith<_$WebhookHeaderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1670,12 +1577,8 @@ mixin _$WebhookHeaderInput {
   /// Is the value of the header.
   set value(String value) => throw _privateConstructorUsedError;
 
-  /// Serializes this WebhookHeaderInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WebhookHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WebhookHeaderInputCopyWith<WebhookHeaderInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1699,8 +1602,6 @@ class _$WebhookHeaderInputCopyWithImpl<$Res, $Val extends WebhookHeaderInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WebhookHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1739,8 +1640,6 @@ class __$$WebhookHeaderInputImplCopyWithImpl<$Res>
       $Res Function(_$WebhookHeaderInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WebhookHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1783,9 +1682,7 @@ class _$WebhookHeaderInputImpl implements _WebhookHeaderInput {
     return 'WebhookHeaderInput(name: $name, value: $value)';
   }
 
-  /// Create a copy of WebhookHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WebhookHeaderInputImplCopyWith<_$WebhookHeaderInputImpl> get copyWith =>
@@ -1807,24 +1704,22 @@ abstract class _WebhookHeaderInput implements WebhookHeaderInput {
   factory _WebhookHeaderInput.fromJson(Map<String, dynamic> json) =
       _$WebhookHeaderInputImpl.fromJson;
 
-  /// Is the key of the header.
   @override
+
+  /// Is the key of the header.
   String get name;
 
   /// Is the key of the header.
   set name(String value);
+  @override
 
   /// Is the value of the header.
-  @override
   String get value;
 
   /// Is the value of the header.
   set value(String value);
-
-  /// Create a copy of WebhookHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WebhookHeaderInputImplCopyWith<_$WebhookHeaderInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1841,12 +1736,8 @@ mixin _$WebhookPath {
   /// Is the name of the path. If the key is present in our translation system, it will be translated.
   String get name => throw _privateConstructorUsedError;
 
-  /// Serializes this WebhookPath to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WebhookPath
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WebhookPathCopyWith<WebhookPath> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1870,8 +1761,6 @@ class _$WebhookPathCopyWithImpl<$Res, $Val extends WebhookPath>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WebhookPath
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1910,8 +1799,6 @@ class __$$WebhookPathImplCopyWithImpl<$Res>
       _$WebhookPathImpl _value, $Res Function(_$WebhookPathImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WebhookPath
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1961,13 +1848,11 @@ class _$WebhookPathImpl implements _WebhookPath {
             (identical(other.name, name) || other.name == name));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, path, name);
 
-  /// Create a copy of WebhookPath
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WebhookPathImplCopyWith<_$WebhookPathImpl> get copyWith =>
@@ -1989,18 +1874,16 @@ abstract class _WebhookPath implements WebhookPath {
   factory _WebhookPath.fromJson(Map<String, dynamic> json) =
       _$WebhookPathImpl.fromJson;
 
-  /// Is the path of the webhook.
   @override
+
+  /// Is the path of the webhook.
   String get path;
+  @override
 
   /// Is the name of the path. If the key is present in our translation system, it will be translated.
-  @override
   String get name;
-
-  /// Create a copy of WebhookPath
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WebhookPathImplCopyWith<_$WebhookPathImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2023,12 +1906,8 @@ mixin _$WebhookPathInput {
   /// Is the name of the path. If the key is present in our translation system, it will be translated.
   set name(String value) => throw _privateConstructorUsedError;
 
-  /// Serializes this WebhookPathInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WebhookPathInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WebhookPathInputCopyWith<WebhookPathInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2052,8 +1931,6 @@ class _$WebhookPathInputCopyWithImpl<$Res, $Val extends WebhookPathInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WebhookPathInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2092,8 +1969,6 @@ class __$$WebhookPathInputImplCopyWithImpl<$Res>
       $Res Function(_$WebhookPathInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WebhookPathInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2136,9 +2011,7 @@ class _$WebhookPathInputImpl implements _WebhookPathInput {
     return 'WebhookPathInput(path: $path, name: $name)';
   }
 
-  /// Create a copy of WebhookPathInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WebhookPathInputImplCopyWith<_$WebhookPathInputImpl> get copyWith =>
@@ -2160,24 +2033,22 @@ abstract class _WebhookPathInput implements WebhookPathInput {
   factory _WebhookPathInput.fromJson(Map<String, dynamic> json) =
       _$WebhookPathInputImpl.fromJson;
 
-  /// Is the path of the webhook.
   @override
+
+  /// Is the path of the webhook.
   String get path;
 
   /// Is the path of the webhook.
   set path(String value);
+  @override
 
   /// Is the name of the path. If the key is present in our translation system, it will be translated.
-  @override
   String get name;
 
   /// Is the name of the path. If the key is present in our translation system, it will be translated.
   set name(String value);
-
-  /// Create a copy of WebhookPathInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WebhookPathInputImplCopyWith<_$WebhookPathInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2212,12 +2083,8 @@ mixin _$WebhookStructure {
   /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
   List<WebhookHeader> get headers => throw _privateConstructorUsedError;
 
-  /// Serializes this WebhookStructure to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WebhookStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WebhookStructureCopyWith<WebhookStructure> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2246,8 +2113,6 @@ class _$WebhookStructureCopyWithImpl<$Res, $Val extends WebhookStructure>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WebhookStructure
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2306,8 +2171,6 @@ class __$$WebhookStructureImplCopyWithImpl<$Res>
       $Res Function(_$WebhookStructureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WebhookStructure
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2424,7 +2287,7 @@ class _$WebhookStructureImpl implements _WebhookStructure {
             const DeepCollectionEquality().equals(other._headers, _headers));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2434,9 +2297,7 @@ class _$WebhookStructureImpl implements _WebhookStructure {
       contentType,
       const DeepCollectionEquality().hash(_headers));
 
-  /// Create a copy of WebhookStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WebhookStructureImplCopyWith<_$WebhookStructureImpl> get copyWith =>
@@ -2462,39 +2323,37 @@ abstract class _WebhookStructure implements WebhookStructure {
   factory _WebhookStructure.fromJson(Map<String, dynamic> json) =
       _$WebhookStructureImpl.fromJson;
 
+  @override
+
   /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
   /// the full URL.
   ///
   /// For example, if the [baseUrl] is `https://api.example.com` and one of the [paths] is `/v1/users`, the
   /// full URL will be `https://api.example.com/v1/users`.
-  @override
   String get baseUrl;
+  @override
 
   /// [paths] is the list of paths that the webhook should use.
-  @override
   List<WebhookPath> get paths;
+  @override
 
   /// [method] is the HTTP method of the webhook. Be careful, not all of the HTTP methods are listed or available
   /// for webhook usage.
-  @override
   @WebhookMethodConverter()
   WebhookMethod get method;
+  @override
 
   /// [contentType] is the format of the webhook.
-  @override
   @WebhookFormatConverter()
   WebhookFormat get contentType;
+  @override
 
   /// [headers] is the list of headers that the webhook should use.
   /// If you detect any issue with the headers, please contact the
   /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
-  @override
   List<WebhookHeader> get headers;
-
-  /// Create a copy of WebhookStructure
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WebhookStructureImplCopyWith<_$WebhookStructureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2555,12 +2414,8 @@ mixin _$WebhookStructureInput {
   set headers(List<WebhookHeaderInput> value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this WebhookStructureInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WebhookStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WebhookStructureInputCopyWith<WebhookStructureInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2590,8 +2445,6 @@ class _$WebhookStructureInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WebhookStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2652,8 +2505,6 @@ class __$$WebhookStructureInputImplCopyWithImpl<$Res>
       $Res Function(_$WebhookStructureInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WebhookStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2740,9 +2591,7 @@ class _$WebhookStructureInputImpl implements _WebhookStructureInput {
     return 'WebhookStructureInput(baseUrl: $baseUrl, paths: $paths, method: $method, contentType: $contentType, headers: $headers)';
   }
 
-  /// Create a copy of WebhookStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WebhookStructureInputImplCopyWith<_$WebhookStructureInputImpl>
@@ -2768,12 +2617,13 @@ abstract class _WebhookStructureInput implements WebhookStructureInput {
   factory _WebhookStructureInput.fromJson(Map<String, dynamic> json) =
       _$WebhookStructureInputImpl.fromJson;
 
+  @override
+
   /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
   /// the full URL.
   ///
   /// For example, if the [baseUrl] is `https://api.example.com` and one of the [paths] is `/v1/users`, the
   /// full URL will be `https://api.example.com/v1/users`.
-  @override
   String get baseUrl;
 
   /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
@@ -2782,17 +2632,17 @@ abstract class _WebhookStructureInput implements WebhookStructureInput {
   /// For example, if the [baseUrl] is `https://api.example.com` and one of the [paths] is `/v1/users`, the
   /// full URL will be `https://api.example.com/v1/users`.
   set baseUrl(String value);
+  @override
 
   /// [paths] is the list of paths that the webhook should use.
-  @override
   List<WebhookPathInput> get paths;
 
   /// [paths] is the list of paths that the webhook should use.
   set paths(List<WebhookPathInput> value);
+  @override
 
   /// [method] is the HTTP method of the webhook. Be careful, not all of the HTTP methods are listed or available
   /// for webhook usage.
-  @override
   @WebhookMethodConverter()
   WebhookMethod get method;
 
@@ -2800,31 +2650,28 @@ abstract class _WebhookStructureInput implements WebhookStructureInput {
   /// for webhook usage.
   @WebhookMethodConverter()
   set method(WebhookMethod value);
+  @override
 
   /// [contentType] is the format of the webhook.
-  @override
   @WebhookFormatConverter()
   WebhookFormat get contentType;
 
   /// [contentType] is the format of the webhook.
   @WebhookFormatConverter()
   set contentType(WebhookFormat value);
+  @override
 
   /// [headers] is the list of headers that the webhook should use.
   /// If you detect any issue with the headers, please contact the
   /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
-  @override
   List<WebhookHeaderInput> get headers;
 
   /// [headers] is the list of headers that the webhook should use.
   /// If you detect any issue with the headers, please contact the
   /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
   set headers(List<WebhookHeaderInput> value);
-
-  /// Create a copy of WebhookStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WebhookStructureInputImplCopyWith<_$WebhookStructureInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2838,12 +2685,8 @@ mixin _$FlespiModel {
   String get flespiId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
-  /// Serializes this FlespiModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of FlespiModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $FlespiModelCopyWith<FlespiModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2867,8 +2710,6 @@ class _$FlespiModelCopyWithImpl<$Res, $Val extends FlespiModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of FlespiModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2907,8 +2748,6 @@ class __$$FlespiModelImplCopyWithImpl<$Res>
       _$FlespiModelImpl _value, $Res Function(_$FlespiModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FlespiModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2956,13 +2795,11 @@ class _$FlespiModelImpl implements _FlespiModel {
             (identical(other.name, name) || other.name == name));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, flespiId, name);
 
-  /// Create a copy of FlespiModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FlespiModelImplCopyWith<_$FlespiModelImpl> get copyWith =>
@@ -2988,11 +2825,8 @@ abstract class _FlespiModel implements FlespiModel {
   String get flespiId;
   @override
   String get name;
-
-  /// Create a copy of FlespiModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FlespiModelImplCopyWith<_$FlespiModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3029,12 +2863,8 @@ mixin _$FlespiAcl {
   List<FlespiSubmoduleConfig>? get submodules =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this FlespiAcl to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of FlespiAcl
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $FlespiAclCopyWith<FlespiAcl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3063,8 +2893,6 @@ class _$FlespiAclCopyWithImpl<$Res, $Val extends FlespiAcl>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of FlespiAcl
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3129,8 +2957,6 @@ class __$$FlespiAclImplCopyWithImpl<$Res>
       _$FlespiAclImpl _value, $Res Function(_$FlespiAclImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FlespiAcl
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3277,7 +3103,7 @@ class _$FlespiAclImpl implements _FlespiAcl {
                 .equals(other._submodules, _submodules));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3288,9 +3114,7 @@ class _$FlespiAclImpl implements _FlespiAcl {
       const DeepCollectionEquality().hash(_ids),
       const DeepCollectionEquality().hash(_submodules));
 
-  /// Create a copy of FlespiAcl
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FlespiAclImplCopyWith<_$FlespiAclImpl> get copyWith =>
@@ -3316,41 +3140,39 @@ abstract class _FlespiAcl implements FlespiAcl {
   factory _FlespiAcl.fromJson(Map<String, dynamic> json) =
       _$FlespiAclImpl.fromJson;
 
-  /// [uri] is the URI of the ACL.
   @override
+
+  /// [uri] is the URI of the ACL.
   @FlespiUriConverter()
   FlespiUri get uri;
+  @override
 
   /// [topic] is the topic of the ACL.
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
   String? get topic;
+  @override
 
   /// [actions] is the list of actions allowed for the ACL.
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
   @FlespiActionConverter()
   List<FlespiAction>? get actions;
+  @override
 
   /// [methods] is the list of methods allowed for the ACL.
-  @override
   @FlespiMethodConverter()
   List<FlespiMethod>? get methods;
+  @override
 
   /// [ids] is the list of IDs allowed for the ACL.
   /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  @override
   List<String>? get ids;
+  @override
 
   /// [submodules] is the list of submodules allowed for the ACL.
   /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  @override
   List<FlespiSubmoduleConfig>? get submodules;
-
-  /// Create a copy of FlespiAcl
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FlespiAclImplCopyWith<_$FlespiAclImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3413,12 +3235,8 @@ mixin _$FlespiAclInput {
   set submodules(List<FlespiSubmoduleConfigInput>? value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this FlespiAclInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of FlespiAclInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $FlespiAclInputCopyWith<FlespiAclInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3448,8 +3266,6 @@ class _$FlespiAclInputCopyWithImpl<$Res, $Val extends FlespiAclInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of FlespiAclInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3514,8 +3330,6 @@ class __$$FlespiAclInputImplCopyWithImpl<$Res>
       _$FlespiAclInputImpl _value, $Res Function(_$FlespiAclInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FlespiAclInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3605,9 +3419,7 @@ class _$FlespiAclInputImpl implements _FlespiAclInput {
     return 'FlespiAclInput(uri: $uri, topic: $topic, actions: $actions, methods: $methods, ids: $ids, submodules: $submodules)';
   }
 
-  /// Create a copy of FlespiAclInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FlespiAclInputImplCopyWith<_$FlespiAclInputImpl> get copyWith =>
@@ -3634,27 +3446,28 @@ abstract class _FlespiAclInput implements FlespiAclInput {
   factory _FlespiAclInput.fromJson(Map<String, dynamic> json) =
       _$FlespiAclInputImpl.fromJson;
 
-  /// [uri] is the URI of the ACL.
   @override
+
+  /// [uri] is the URI of the ACL.
   @FlespiUriConverter()
   FlespiUri get uri;
 
   /// [uri] is the URI of the ACL.
   @FlespiUriConverter()
   set uri(FlespiUri value);
+  @override
 
   /// [topic] is the topic of the ACL.
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
   String? get topic;
 
   /// [topic] is the topic of the ACL.
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
   set topic(String? value);
+  @override
 
   /// [actions] is the list of actions allowed for the ACL.
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
   @FlespiActionConverter()
   List<FlespiAction>? get actions;
 
@@ -3662,38 +3475,35 @@ abstract class _FlespiAclInput implements FlespiAclInput {
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
   @FlespiActionConverter()
   set actions(List<FlespiAction>? value);
+  @override
 
   /// [methods] is the list of methods allowed for the ACL.
-  @override
   @FlespiMethodConverter()
   List<FlespiMethod>? get methods;
 
   /// [methods] is the list of methods allowed for the ACL.
   @FlespiMethodConverter()
   set methods(List<FlespiMethod>? value);
+  @override
 
   /// [ids] is the list of IDs allowed for the ACL.
   /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  @override
   List<String>? get ids;
 
   /// [ids] is the list of IDs allowed for the ACL.
   /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
   set ids(List<String>? value);
+  @override
 
   /// [submodules] is the list of submodules allowed for the ACL.
   /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  @override
   List<FlespiSubmoduleConfigInput>? get submodules;
 
   /// [submodules] is the list of submodules allowed for the ACL.
   /// This field is only used when the [uri] is not [FlespiUri.mqtt].
   set submodules(List<FlespiSubmoduleConfigInput>? value);
-
-  /// Create a copy of FlespiAclInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FlespiAclInputImplCopyWith<_$FlespiAclInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3713,12 +3523,8 @@ mixin _$FlespiSubmoduleConfig {
   @FlespiMethodConverter()
   List<FlespiMethod> get methods => throw _privateConstructorUsedError;
 
-  /// Serializes this FlespiSubmoduleConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of FlespiSubmoduleConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $FlespiSubmoduleConfigCopyWith<FlespiSubmoduleConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3745,8 +3551,6 @@ class _$FlespiSubmoduleConfigCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of FlespiSubmoduleConfig
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3789,8 +3593,6 @@ class __$$FlespiSubmoduleConfigImplCopyWithImpl<$Res>
       $Res Function(_$FlespiSubmoduleConfigImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FlespiSubmoduleConfig
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3853,14 +3655,12 @@ class _$FlespiSubmoduleConfigImpl implements _FlespiSubmoduleConfig {
             const DeepCollectionEquality().equals(other._methods, _methods));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, name, const DeepCollectionEquality().hash(_methods));
 
-  /// Create a copy of FlespiSubmoduleConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FlespiSubmoduleConfigImplCopyWith<_$FlespiSubmoduleConfigImpl>
@@ -3884,20 +3684,18 @@ abstract class _FlespiSubmoduleConfig implements FlespiSubmoduleConfig {
   factory _FlespiSubmoduleConfig.fromJson(Map<String, dynamic> json) =
       _$FlespiSubmoduleConfigImpl.fromJson;
 
-  /// [submodule] is the submodule of the configuration.
   @override
+
+  /// [submodule] is the submodule of the configuration.
   @FlespiSubmoduleConverter()
   FlespiSubmodule get name;
+  @override
 
   /// [methods] is the list of methods allowed for the submodule.
-  @override
   @FlespiMethodConverter()
   List<FlespiMethod> get methods;
-
-  /// Create a copy of FlespiSubmoduleConfig
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FlespiSubmoduleConfigImplCopyWith<_$FlespiSubmoduleConfigImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3925,12 +3723,8 @@ mixin _$FlespiSubmoduleConfigInput {
   @FlespiMethodConverter()
   set methods(List<FlespiMethod> value) => throw _privateConstructorUsedError;
 
-  /// Serializes this FlespiSubmoduleConfigInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of FlespiSubmoduleConfigInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $FlespiSubmoduleConfigInputCopyWith<FlespiSubmoduleConfigInput>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3958,8 +3752,6 @@ class _$FlespiSubmoduleConfigInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of FlespiSubmoduleConfigInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4003,8 +3795,6 @@ class __$$FlespiSubmoduleConfigInputImplCopyWithImpl<$Res>
       $Res Function(_$FlespiSubmoduleConfigInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FlespiSubmoduleConfigInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4051,9 +3841,7 @@ class _$FlespiSubmoduleConfigInputImpl implements _FlespiSubmoduleConfigInput {
     return 'FlespiSubmoduleConfigInput(name: $name, methods: $methods)';
   }
 
-  /// Create a copy of FlespiSubmoduleConfigInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FlespiSubmoduleConfigInputImplCopyWith<_$FlespiSubmoduleConfigInputImpl>
@@ -4078,28 +3866,26 @@ abstract class _FlespiSubmoduleConfigInput
   factory _FlespiSubmoduleConfigInput.fromJson(Map<String, dynamic> json) =
       _$FlespiSubmoduleConfigInputImpl.fromJson;
 
-  /// [submodule] is the submodule of the configuration.
   @override
+
+  /// [submodule] is the submodule of the configuration.
   @FlespiSubmoduleConverter()
   FlespiSubmodule get name;
 
   /// [submodule] is the submodule of the configuration.
   @FlespiSubmoduleConverter()
   set name(FlespiSubmodule value);
+  @override
 
   /// [methods] is the list of methods allowed for the submodule.
-  @override
   @FlespiMethodConverter()
   List<FlespiMethod> get methods;
 
   /// [methods] is the list of methods allowed for the submodule.
   @FlespiMethodConverter()
   set methods(List<FlespiMethod> value);
-
-  /// Create a copy of FlespiSubmoduleConfigInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FlespiSubmoduleConfigInputImplCopyWith<_$FlespiSubmoduleConfigInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
