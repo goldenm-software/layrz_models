@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.10
+- Added new values in `AtsPurchaseOrderCategoriesEntity`
+- added new function in cfop function in `AtsPurchaseOrderCategoriesEntity`
+
 ## 3.3.9
 
 - Updated README.md
