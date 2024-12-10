@@ -12594,6 +12594,10 @@ mixin _$AtsOperationStatuses {
   @TimestampOrNullConverter()
   DateTime? get deliveredAt => throw _privateConstructorUsedError;
 
+  /// `eta` is the estimated time of arrival in Unix timestamp.
+  @TimestampOrNullConverter()
+  DateTime? get eta => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AtsOperationStatusesCopyWith<AtsOperationStatuses> get copyWith =>
@@ -12610,7 +12614,8 @@ abstract class $AtsOperationStatusesCopyWith<$Res> {
       {Asset? asset,
       @TimestampOrNullConverter() DateTime? inTransitAt,
       @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
-      @TimestampOrNullConverter() DateTime? deliveredAt});
+      @TimestampOrNullConverter() DateTime? deliveredAt,
+      @TimestampOrNullConverter() DateTime? eta});
 
   $AssetCopyWith<$Res>? get asset;
 }
@@ -12633,6 +12638,7 @@ class _$AtsOperationStatusesCopyWithImpl<$Res,
     Object? inTransitAt = freezed,
     Object? waitingToDispatchAt = freezed,
     Object? deliveredAt = freezed,
+    Object? eta = freezed,
   }) {
     return _then(_value.copyWith(
       asset: freezed == asset
@@ -12650,6 +12656,10 @@ class _$AtsOperationStatusesCopyWithImpl<$Res,
       deliveredAt: freezed == deliveredAt
           ? _value.deliveredAt
           : deliveredAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      eta: freezed == eta
+          ? _value.eta
+          : eta // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ) as $Val);
   }
@@ -12679,7 +12689,8 @@ abstract class _$$AtsOperationStatusesImplCopyWith<$Res>
       {Asset? asset,
       @TimestampOrNullConverter() DateTime? inTransitAt,
       @TimestampOrNullConverter() DateTime? waitingToDispatchAt,
-      @TimestampOrNullConverter() DateTime? deliveredAt});
+      @TimestampOrNullConverter() DateTime? deliveredAt,
+      @TimestampOrNullConverter() DateTime? eta});
 
   @override
   $AssetCopyWith<$Res>? get asset;
@@ -12700,6 +12711,7 @@ class __$$AtsOperationStatusesImplCopyWithImpl<$Res>
     Object? inTransitAt = freezed,
     Object? waitingToDispatchAt = freezed,
     Object? deliveredAt = freezed,
+    Object? eta = freezed,
   }) {
     return _then(_$AtsOperationStatusesImpl(
       asset: freezed == asset
@@ -12718,6 +12730,10 @@ class __$$AtsOperationStatusesImplCopyWithImpl<$Res>
           ? _value.deliveredAt
           : deliveredAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      eta: freezed == eta
+          ? _value.eta
+          : eta // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -12729,7 +12745,8 @@ class _$AtsOperationStatusesImpl implements _AtsOperationStatuses {
       {this.asset,
       @TimestampOrNullConverter() this.inTransitAt,
       @TimestampOrNullConverter() this.waitingToDispatchAt,
-      @TimestampOrNullConverter() this.deliveredAt});
+      @TimestampOrNullConverter() this.deliveredAt,
+      @TimestampOrNullConverter() this.eta});
 
   factory _$AtsOperationStatusesImpl.fromJson(Map<String, dynamic> json) =>
       _$$AtsOperationStatusesImplFromJson(json);
@@ -12753,9 +12770,14 @@ class _$AtsOperationStatusesImpl implements _AtsOperationStatuses {
   @TimestampOrNullConverter()
   final DateTime? deliveredAt;
 
+  /// `eta` is the estimated time of arrival in Unix timestamp.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? eta;
+
   @override
   String toString() {
-    return 'AtsOperationStatuses(asset: $asset, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt)';
+    return 'AtsOperationStatuses(asset: $asset, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt, eta: $eta)';
   }
 
   @override
@@ -12769,13 +12791,14 @@ class _$AtsOperationStatusesImpl implements _AtsOperationStatuses {
             (identical(other.waitingToDispatchAt, waitingToDispatchAt) ||
                 other.waitingToDispatchAt == waitingToDispatchAt) &&
             (identical(other.deliveredAt, deliveredAt) ||
-                other.deliveredAt == deliveredAt));
+                other.deliveredAt == deliveredAt) &&
+            (identical(other.eta, eta) || other.eta == eta));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, asset, inTransitAt, waitingToDispatchAt, deliveredAt);
+      runtimeType, asset, inTransitAt, waitingToDispatchAt, deliveredAt, eta);
 
   @JsonKey(ignore: true)
   @override
@@ -12798,7 +12821,8 @@ abstract class _AtsOperationStatuses implements AtsOperationStatuses {
           {final Asset? asset,
           @TimestampOrNullConverter() final DateTime? inTransitAt,
           @TimestampOrNullConverter() final DateTime? waitingToDispatchAt,
-          @TimestampOrNullConverter() final DateTime? deliveredAt}) =
+          @TimestampOrNullConverter() final DateTime? deliveredAt,
+          @TimestampOrNullConverter() final DateTime? eta}) =
       _$AtsOperationStatusesImpl;
 
   factory _AtsOperationStatuses.fromJson(Map<String, dynamic> json) =
@@ -12823,6 +12847,11 @@ abstract class _AtsOperationStatuses implements AtsOperationStatuses {
   /// `deliveredAt` is the Unix timestamp of when the asset was delivered.
   @TimestampOrNullConverter()
   DateTime? get deliveredAt;
+  @override
+
+  /// `eta` is the estimated time of arrival in Unix timestamp.
+  @TimestampOrNullConverter()
+  DateTime? get eta;
   @override
   @JsonKey(ignore: true)
   _$$AtsOperationStatusesImplCopyWith<_$AtsOperationStatusesImpl>

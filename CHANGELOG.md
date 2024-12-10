@@ -1,6 +1,11 @@
 # Changelog
 
+## 3.3.11
+
+- Added new value `eta` in `AtsOperationStatuses`
+
 ## 3.3.10
+
 - Added new values in `AtsPurchaseOrderCategoriesEntity`
 - added new function in cfop function in `AtsPurchaseOrderCategoriesEntity`
 
@@ -18,6 +23,7 @@
 - Added `BleDevice` model
 
 ## 3.3.6
+
 - Add `orders` in `AtsReception`
 
 ## 3.3.5
@@ -49,6 +55,7 @@
 - removed `cooldownTime` from `BrickhouseAlert` and `BrickhouseAlertInput` models since it has been deprecated.
 
 ## 3.2.68
+
 - add `AtsFuelSubType.unknown` and `AtsFuelType.unknown`.
 - add in `AtsLoadingParamsSample` `getLocalKey()`.
 - use converters in `AtsLoadingParamsForm`.
@@ -63,6 +70,7 @@
 - Adjustments on MFA models
 
 ## 3.2.65
+
 - rename `LoadingParamsFormInput` to `AtsLoadingParamsFormInput` and `LoadingParamsForm` to `AtsLoadingParamsForm`.
 - add `AtsReceptionStatus` in `AtsReception`.
 - add `loadingParamsForm` in `AtsReception`.

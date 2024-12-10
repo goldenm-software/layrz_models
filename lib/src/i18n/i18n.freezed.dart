@@ -26,12 +26,8 @@ mixin _$AvailableLanguage {
   String? get fallback => throw _privateConstructorUsedError;
   Map<String, String>? get messages => throw _privateConstructorUsedError;
 
-  /// Serializes this AvailableLanguage to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AvailableLanguage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AvailableLanguageCopyWith<AvailableLanguage> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,8 +56,6 @@ class _$AvailableLanguageCopyWithImpl<$Res, $Val extends AvailableLanguage>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AvailableLanguage
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,8 +114,6 @@ class __$$AvailableLanguageImplCopyWithImpl<$Res>
       $Res Function(_$AvailableLanguageImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AvailableLanguage
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -207,14 +199,12 @@ class _$AvailableLanguageImpl extends _AvailableLanguage {
             const DeepCollectionEquality().equals(other._messages, _messages));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, code, fallback,
       const DeepCollectionEquality().hash(_messages));
 
-  /// Create a copy of AvailableLanguage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AvailableLanguageImplCopyWith<_$AvailableLanguageImpl> get copyWith =>
@@ -251,11 +241,8 @@ abstract class _AvailableLanguage extends AvailableLanguage {
   String? get fallback;
   @override
   Map<String, String>? get messages;
-
-  /// Create a copy of AvailableLanguage
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AvailableLanguageImplCopyWith<_$AvailableLanguageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1096,6 +1096,7 @@ _$AtsOperationStatusesImpl _$$AtsOperationStatusesImplFromJson(
           .fromJson(json['waitingToDispatchAt'] as num?),
       deliveredAt: const TimestampOrNullConverter()
           .fromJson(json['deliveredAt'] as num?),
+      eta: const TimestampOrNullConverter().fromJson(json['eta'] as num?),
     );
 
 Map<String, dynamic> _$$AtsOperationStatusesImplToJson(
@@ -1108,4 +1109,5 @@ Map<String, dynamic> _$$AtsOperationStatusesImplToJson(
           const TimestampOrNullConverter().toJson(instance.waitingToDispatchAt),
       'deliveredAt':
           const TimestampOrNullConverter().toJson(instance.deliveredAt),
+      'eta': const TimestampOrNullConverter().toJson(instance.eta),
     };
