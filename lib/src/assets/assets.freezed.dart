@@ -24,8 +24,12 @@ mixin _$ContactInfo {
   String get email => throw _privateConstructorUsedError;
   String get phone => throw _privateConstructorUsedError;
 
+  /// Serializes this ContactInfo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ContactInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ContactInfoCopyWith<ContactInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$ContactInfoCopyWithImpl<$Res, $Val extends ContactInfo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ContactInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$ContactInfoImplCopyWithImpl<$Res>
       _$ContactInfoImpl _value, $Res Function(_$ContactInfoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ContactInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -149,11 +157,13 @@ class _$ContactInfoImpl implements _ContactInfo {
             (identical(other.phone, phone) || other.phone == phone));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, email, phone);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ContactInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContactInfoImplCopyWith<_$ContactInfoImpl> get copyWith =>
@@ -182,8 +192,11 @@ abstract class _ContactInfo implements ContactInfo {
   String get email;
   @override
   String get phone;
+
+  /// Create a copy of ContactInfo
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContactInfoImplCopyWith<_$ContactInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -201,8 +214,12 @@ mixin _$ContactInfoInput {
   String get phone => throw _privateConstructorUsedError;
   set phone(String value) => throw _privateConstructorUsedError;
 
+  /// Serializes this ContactInfoInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ContactInfoInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ContactInfoInputCopyWith<ContactInfoInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -226,6 +243,8 @@ class _$ContactInfoInputCopyWithImpl<$Res, $Val extends ContactInfoInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ContactInfoInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -269,6 +288,8 @@ class __$$ContactInfoInputImplCopyWithImpl<$Res>
       $Res Function(_$ContactInfoInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ContactInfoInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -316,7 +337,9 @@ class _$ContactInfoInputImpl implements _ContactInfoInput {
     return 'ContactInfoInput(name: $name, email: $email, phone: $phone)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ContactInfoInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContactInfoInputImplCopyWith<_$ContactInfoInputImpl> get copyWith =>
@@ -347,8 +370,11 @@ abstract class _ContactInfoInput implements ContactInfoInput {
   @override
   String get phone;
   set phone(String value);
+
+  /// Create a copy of ContactInfoInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContactInfoInputImplCopyWith<_$ContactInfoInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -367,8 +393,12 @@ mixin _$Connection {
   @DurationOrNullConverter()
   Duration? get hibernation => throw _privateConstructorUsedError;
 
+  /// Serializes this Connection to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Connection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ConnectionCopyWith<Connection> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -394,6 +424,8 @@ class _$ConnectionCopyWithImpl<$Res, $Val extends Connection>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Connection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -434,6 +466,8 @@ class __$$ConnectionImplCopyWithImpl<$Res>
       _$ConnectionImpl _value, $Res Function(_$ConnectionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Connection
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -488,11 +522,13 @@ class _$ConnectionImpl implements _Connection {
                 other.hibernation == hibernation));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, online, hibernation);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Connection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConnectionImplCopyWith<_$ConnectionImpl> get copyWith =>
@@ -515,18 +551,20 @@ abstract class _Connection implements Connection {
   factory _Connection.fromJson(Map<String, dynamic> json) =
       _$ConnectionImpl.fromJson;
 
-  @override
-
   /// Time in seconds to consider online
+  @override
   @DurationOrNullConverter()
   Duration? get online;
-  @override
 
   /// Time in seconds to consider in hibernation
+  @override
   @DurationOrNullConverter()
   Duration? get hibernation;
+
+  /// Create a copy of Connection
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConnectionImplCopyWith<_$ConnectionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -546,8 +584,12 @@ mixin _$ConnectionInput {
   @DurationConverter()
   set hibernation(Duration value) => throw _privateConstructorUsedError;
 
+  /// Serializes this ConnectionInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ConnectionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ConnectionInputCopyWith<ConnectionInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -573,6 +615,8 @@ class _$ConnectionInputCopyWithImpl<$Res, $Val extends ConnectionInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ConnectionInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -613,6 +657,8 @@ class __$$ConnectionInputImplCopyWithImpl<$Res>
       _$ConnectionInputImpl _value, $Res Function(_$ConnectionInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ConnectionInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -656,7 +702,9 @@ class _$ConnectionInputImpl implements _ConnectionInput {
     return 'ConnectionInput(online: $online, hibernation: $hibernation)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ConnectionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ConnectionInputImplCopyWith<_$ConnectionInputImpl> get copyWith =>
@@ -689,8 +737,11 @@ abstract class _ConnectionInput implements ConnectionInput {
   Duration get hibernation;
   @DurationConverter()
   set hibernation(Duration value);
+
+  /// Create a copy of ConnectionInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConnectionInputImplCopyWith<_$ConnectionInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -871,8 +922,12 @@ mixin _$Asset {
   /// [isSuspended] if the asset is suspended.
   bool? get isSuspended => throw _privateConstructorUsedError;
 
+  /// Serializes this Asset to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AssetCopyWith<Asset> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -952,6 +1007,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1205,6 +1262,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     ) as $Val);
   }
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarCopyWith<$Res>? get dynamicIcon {
@@ -1217,6 +1276,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     });
   }
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CategoryCopyWith<$Res>? get kind {
@@ -1229,6 +1290,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     });
   }
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DeviceCopyWith<$Res>? get primary {
@@ -1241,6 +1304,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     });
   }
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ConnectionCopyWith<$Res>? get connection {
@@ -1253,6 +1318,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     });
   }
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetTelemetryCopyWith<$Res>? get telemetry {
@@ -1265,6 +1332,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     });
   }
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetLoginInfoCopyWith<$Res>? get loginInfo {
@@ -1277,6 +1346,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     });
   }
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AtsAuthenticationCardCopyWith<$Res>? get authenticationCard {
@@ -1290,6 +1361,8 @@ class _$AssetCopyWithImpl<$Res, $Val extends Asset>
     });
   }
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StaticPositionCopyWith<$Res>? get staticPosition {
@@ -1387,6 +1460,8 @@ class __$$AssetImplCopyWithImpl<$Res>
       _$AssetImpl _value, $Res Function(_$AssetImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2281,7 +2356,7 @@ class _$AssetImpl extends _Asset {
                 other.isSuspended == isSuspended));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -2336,7 +2411,9 @@ class _$AssetImpl extends _Asset {
         isSuspended
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
@@ -2405,221 +2482,223 @@ abstract class _Asset extends Asset {
 
   factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
 
-  @override
-
   /// [id] of the asset entity. This ID is unique.
-  String get id;
   @override
+  String get id;
 
   /// [name] of the asset.
-  String get name;
   @override
+  String get name;
 
   /// [plate] of the asset (If apply).
-  String? get plate;
   @override
+  String? get plate;
 
   /// [vin] or Vehicle serial number of the asset (If apply).
-  String? get vin;
   @override
+  String? get vin;
 
   /// [dynamicIcon] is the icon of the asset.
   /// This is the new schema of the icon
-  Avatar? get dynamicIcon;
   @override
+  Avatar? get dynamicIcon;
 
   /// Operation [mode] of the asset
+  @override
   @AssetModeOrNullConverter()
   AssetMode? get mode;
-  @override
 
   /// Children [assets] ids, only for clusters, limited to 1 level.
-  List<String>? get childrenIds;
   @override
+  List<String>? get childrenIds;
 
   /// Children [assets], only for clusters, limited to 1 level.
-  List<Asset>? get children;
   @override
+  List<Asset>? get children;
 
   /// Is the list of device [commands] available for this asset.
-  List<DeviceCommand>? get commands;
   @override
+  List<DeviceCommand>? get commands;
 
   /// Is the list of [references] ids associated to the asset
-  List<String>? get referencesIds;
   @override
+  List<String>? get referencesIds;
 
   /// Is the list of [references] associated to the asset
-  List<Reference>? get references;
   @override
+  List<Reference>? get references;
 
   /// Is the list of [authenticatedAssetsIds] to the asset
-  List<String>? get authenticatedAssetsIds;
   @override
+  List<String>? get authenticatedAssetsIds;
 
   /// Is the list of [authenticatedAssets] to the asset
-  List<Asset>? get authenticatedAssets;
   @override
+  List<Asset>? get authenticatedAssets;
 
   /// Is the list of [authenticatedUsersIds] to the asset
-  List<String>? get authenticatedUsersIds;
   @override
+  List<String>? get authenticatedUsersIds;
 
   /// Is the list of [authenticatedUsers] to the asset
-  List<User>? get authenticatedUsers;
   @override
+  List<User>? get authenticatedUsers;
 
   /// [kindId] is the id of the asset kind.
-  String? get kindId;
   @override
+  String? get kindId;
 
   /// [kind] is the asset kind.
-  Category? get kind;
   @override
+  Category? get kind;
 
   /// List of [customFields] linked to the asset. Please read the documentation for [CustomField]
   /// for more details about the fields.
-  List<CustomField>? get customFields;
   @override
+  List<CustomField>? get customFields;
 
   /// List of [sensors] linked to the asset. Please read the documentation for Sensor for more
   /// details about the fields.
-  List<Sensor>? get sensors;
   @override
+  List<Sensor>? get sensors;
 
   /// [primaryId] is the primary device id.
-  String? get primaryId;
   @override
+  String? get primaryId;
 
   /// [primary] is the primary device.
-  Device? get primary;
   @override
+  Device? get primary;
 
   /// [devicesIds] is the list of devices ids associated to the asset.
-  List<String>? get devicesIds;
   @override
+  List<String>? get devicesIds;
 
   /// [devices] is the list of devices associated to the asset.
-  List<Device>? get devices;
   @override
+  List<Device>? get devices;
 
   /// [qrCode] is the QR code of the asset.
-  String? get qrCode;
   @override
+  String? get qrCode;
 
   /// [externalIdentifiers] is the list of external identifiers of the asset.
-  List<String>? get externalIdentifiers;
   @override
+  List<String>? get externalIdentifiers;
 
   /// [connection] is the connection status of the asset.
-  Connection? get connection;
   @override
+  Connection? get connection;
 
   /// [telemetry] is the telemetry of the asset.
-  AssetTelemetry? get telemetry;
   @override
+  AssetTelemetry? get telemetry;
 
   /// List of [tags] assigned to the asset
-  List<Tag>? get tags;
   @override
+  List<Tag>? get tags;
 
   /// List of custom [access] permissions.
-  List<Access>? get access;
   @override
+  List<Access>? get access;
 
   /// List of [lastExits] of the asset.
   /// Only used for AllTank Systems project.
-  List<AtsExit>? get lastExits;
   @override
+  List<AtsExit>? get lastExits;
 
   /// [activeTime] is the active time of the asset.
   /// Only used for AllTank Systems project.
-  String? get activeTime;
   @override
+  String? get activeTime;
 
   /// [contacts] is the list of contacts associated to the asset.
-  List<ContactInfo>? get contacts;
   @override
+  List<ContactInfo>? get contacts;
 
   /// [laborHours] represents the list of labor hours configured to this asset.
   /// This field is only for `Mappit` use.
-  List<MappitLaborHour>? get mappitLaborHours;
   @override
+  List<MappitLaborHour>? get mappitLaborHours;
 
   /// [ownerId] is the ID of the user owner of this asset
-  String? get ownerId;
   @override
+  String? get ownerId;
 
   /// [loginInfo] refers to the login inInputation of the asset.
-  AssetLoginInfo? get loginInfo;
   @override
+  AssetLoginInfo? get loginInfo;
 
   /// [authenticationCard] refers to the authentication card of the asset.
   /// Only used in ATS apps.
-  AtsAuthenticationCard? get authenticationCard;
   @override
+  AtsAuthenticationCard? get authenticationCard;
 
   /// [authenticationCardId] refers to the authentication card ID of the asset.
   /// Only used in ATS apps.
-  String? get authenticationCardId;
   @override
+  String? get authenticationCardId;
 
   /// [nfcIdentifier] refers to the NFC identifier of the asset.
   /// Only used in ATS apps.
-  String? get nfcIdentifier;
   @override
+  String? get nfcIdentifier;
 
   /// [linkedSupplyPointAssets] refers to the list of supply points assets linked to this asset.
   /// Only used in ATS apps.
-  List<Asset>? get linkedSupplyPointAssets;
   @override
+  List<Asset>? get linkedSupplyPointAssets;
 
   /// [linkedSupplyPointAssetsIds] refers to the list of supply points assets IDs linked to this asset.
   /// Only used in ATS apps.
-  List<String>? get linkedSupplyPointAssetsIds;
   @override
+  List<String>? get linkedSupplyPointAssetsIds;
 
   /// [staticPosition] refers to the static position of the asset.
   /// Only used when mode is [AssetMode.fixed].
-  StaticPosition? get staticPosition;
   @override
+  StaticPosition? get staticPosition;
 
   /// [points] refers to the list of points of the zone.
   /// Only used when mode is [AssetMode.zone].
-  List<ZonePoint>? get points;
   @override
+  List<ZonePoint>? get points;
 
   /// [parameters] refers to the list of parameters of the asset.
   /// Is only a list of strings.
-  List<String> get parameters;
   @override
+  List<String> get parameters;
 
   /// [globalSensors] is the list of global sensors of the asset.
-  List<Sensor>? get globalSensors;
   @override
+  List<Sensor>? get globalSensors;
 
   /// [mappitLaborStartTime] is the time of the labor start time.
+  @override
   @TimeOfDayOrNullConverter()
   TimeOfDay? get mappitLaborStartTime;
-  @override
 
   /// [mappitLaborEndTime] is the time of the labor end time.
+  @override
   @TimeOfDayOrNullConverter()
   TimeOfDay? get mappitLaborEndTime;
-  @override
 
   /// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
-  List<Geofence>? get geofences;
   @override
+  List<Geofence>? get geofences;
 
   /// `mappitSecondaryRoutesIds` represents the list of secondary routes ids linked to the asset.
-  List<String>? get mappitSecondaryRoutesIds;
   @override
+  List<String>? get mappitSecondaryRoutesIds;
 
   /// [isSuspended] if the asset is suspended.
-  bool? get isSuspended;
   @override
-  @JsonKey(ignore: true)
+  bool? get isSuspended;
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2712,8 +2791,12 @@ mixin _$AssetInput {
   set mappitSecondaryRoutesIds(List<String> value) =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this AssetInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AssetInputCopyWith<AssetInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2771,6 +2854,8 @@ class _$AssetInputCopyWithImpl<$Res, $Val extends AssetInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2924,6 +3009,8 @@ class _$AssetInputCopyWithImpl<$Res, $Val extends AssetInput>
     ) as $Val);
   }
 
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ConnectionInputCopyWith<$Res> get connection {
@@ -2932,6 +3019,8 @@ class _$AssetInputCopyWithImpl<$Res, $Val extends AssetInput>
     });
   }
 
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarInputCopyWith<$Res>? get dynamicIcon {
@@ -2944,6 +3033,8 @@ class _$AssetInputCopyWithImpl<$Res, $Val extends AssetInput>
     });
   }
 
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StaticPositionInputCopyWith<$Res>? get staticPosition {
@@ -2956,6 +3047,8 @@ class _$AssetInputCopyWithImpl<$Res, $Val extends AssetInput>
     });
   }
 
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetLoginInfoInputCopyWith<$Res>? get loginInfo {
@@ -3026,6 +3119,8 @@ class __$$AssetInputImplCopyWithImpl<$Res>
       _$AssetInputImpl _value, $Res Function(_$AssetInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3309,7 +3404,9 @@ class _$AssetInputImpl extends _AssetInput {
     return 'AssetInput(id: $id, name: $name, kindId: $kindId, plate: $plate, vin: $vin, contacts: $contacts, connection: $connection, mode: $mode, primaryId: $primaryId, authenticatedUsersIds: $authenticatedUsersIds, authenticatedAssetsIds: $authenticatedAssetsIds, externalIdentifiers: $externalIdentifiers, devicesIds: $devicesIds, childrenIds: $childrenIds, referencesIds: $referencesIds, customFields: $customFields, sensors: $sensors, dynamicIcon: $dynamicIcon, staticPosition: $staticPosition, loginInfo: $loginInfo, points: $points, nfcIdentifier: $nfcIdentifier, authenticationCardId: $authenticationCardId, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, geofencesIds: $geofencesIds, mappitLaborHours: $mappitLaborHours, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AssetInputImplCopyWith<_$AssetInputImpl> get copyWith =>
@@ -3423,8 +3520,8 @@ abstract class _AssetInput extends AssetInput {
   set loginInfo(AssetLoginInfoInput? value);
   @override
   List<ZonePointInput>? get points;
-  set points(List<ZonePointInput>? value);
-  @override // ATS Specific fields
+  set points(List<ZonePointInput>? value); // ATS Specific fields
+  @override
   String get nfcIdentifier; // ATS Specific fields
   set nfcIdentifier(String value);
   @override
@@ -3435,8 +3532,8 @@ abstract class _AssetInput extends AssetInput {
   set linkedSupplyPointAssetsIds(List<String> value);
   @override
   List<String> get geofencesIds;
-  set geofencesIds(List<String> value);
-  @override // Mapppit specific fields
+  set geofencesIds(List<String> value); // Mapppit specific fields
+  @override
   List<MappitLaborHourInput> get mappitLaborHours; // Mapppit specific fields
   set mappitLaborHours(List<MappitLaborHourInput> value);
   @override
@@ -3452,8 +3549,11 @@ abstract class _AssetInput extends AssetInput {
   @override
   List<String> get mappitSecondaryRoutesIds;
   set mappitSecondaryRoutesIds(List<String> value);
+
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AssetInputImplCopyWith<_$AssetInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3473,8 +3573,12 @@ mixin _$AssetLoginInfo {
   /// [username] is the login username of the asset.
   String? get username => throw _privateConstructorUsedError;
 
+  /// Serializes this AssetLoginInfo to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AssetLoginInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AssetLoginInfoCopyWith<AssetLoginInfo> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3498,6 +3602,8 @@ class _$AssetLoginInfoCopyWithImpl<$Res, $Val extends AssetLoginInfo>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AssetLoginInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3541,6 +3647,8 @@ class __$$AssetLoginInfoImplCopyWithImpl<$Res>
       _$AssetLoginInfoImpl _value, $Res Function(_$AssetLoginInfoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AssetLoginInfo
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3602,11 +3710,13 @@ class _$AssetLoginInfoImpl implements _AssetLoginInfo {
                 other.username == username));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, enabled, email, username);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AssetLoginInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AssetLoginInfoImplCopyWith<_$AssetLoginInfoImpl> get copyWith =>
@@ -3630,20 +3740,22 @@ abstract class _AssetLoginInfo implements AssetLoginInfo {
   factory _AssetLoginInfo.fromJson(Map<String, dynamic> json) =
       _$AssetLoginInfoImpl.fromJson;
 
-  @override
-
   /// [enabled] is the login status of the asset.
-  bool get enabled;
   @override
+  bool get enabled;
 
   /// [email] is the login email of the asset.
-  String? get email;
   @override
+  String? get email;
 
   /// [username] is the login username of the asset.
-  String? get username;
   @override
-  @JsonKey(ignore: true)
+  String? get username;
+
+  /// Create a copy of AssetLoginInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AssetLoginInfoImplCopyWith<_$AssetLoginInfoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3672,8 +3784,12 @@ mixin _$AssetLoginInfoInput {
   /// [username] is the login username of the asset.
   set username(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this AssetLoginInfoInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AssetLoginInfoInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AssetLoginInfoInputCopyWith<AssetLoginInfoInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3697,6 +3813,8 @@ class _$AssetLoginInfoInputCopyWithImpl<$Res, $Val extends AssetLoginInfoInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AssetLoginInfoInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3740,6 +3858,8 @@ class __$$AssetLoginInfoInputImplCopyWithImpl<$Res>
       $Res Function(_$AssetLoginInfoInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AssetLoginInfoInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3790,7 +3910,9 @@ class _$AssetLoginInfoInputImpl implements _AssetLoginInfoInput {
     return 'AssetLoginInfoInput(enabled: $enabled, email: $email, username: $username)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AssetLoginInfoInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AssetLoginInfoInputImplCopyWith<_$AssetLoginInfoInputImpl> get copyWith =>
@@ -3814,29 +3936,31 @@ abstract class _AssetLoginInfoInput implements AssetLoginInfoInput {
   factory _AssetLoginInfoInput.fromJson(Map<String, dynamic> json) =
       _$AssetLoginInfoInputImpl.fromJson;
 
-  @override
-
   /// [enabled] is the login status of the asset.
+  @override
   bool get enabled;
 
   /// [enabled] is the login status of the asset.
   set enabled(bool value);
-  @override
 
   /// [email] is the login email of the asset.
+  @override
   String? get email;
 
   /// [email] is the login email of the asset.
   set email(String? value);
-  @override
 
   /// [username] is the login username of the asset.
+  @override
   String? get username;
 
   /// [username] is the login username of the asset.
   set username(String? value);
+
+  /// Create a copy of AssetLoginInfoInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AssetLoginInfoInputImplCopyWith<_$AssetLoginInfoInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3856,8 +3980,12 @@ mixin _$StaticPosition {
   /// [altitude] is the altitude of the asset.
   double? get altitude => throw _privateConstructorUsedError;
 
+  /// Serializes this StaticPosition to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StaticPosition
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StaticPositionCopyWith<StaticPosition> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3881,6 +4009,8 @@ class _$StaticPositionCopyWithImpl<$Res, $Val extends StaticPosition>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StaticPosition
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3924,6 +4054,8 @@ class __$$StaticPositionImplCopyWithImpl<$Res>
       _$StaticPositionImpl _value, $Res Function(_$StaticPositionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StaticPosition
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3987,11 +4119,13 @@ class _$StaticPositionImpl extends _StaticPosition {
                 other.altitude == altitude));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude, altitude);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StaticPosition
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StaticPositionImplCopyWith<_$StaticPositionImpl> get copyWith =>
@@ -4016,20 +4150,22 @@ abstract class _StaticPosition extends StaticPosition {
   factory _StaticPosition.fromJson(Map<String, dynamic> json) =
       _$StaticPositionImpl.fromJson;
 
-  @override
-
   /// [latitude] is the latitude of the asset.
-  double? get latitude;
   @override
+  double? get latitude;
 
   /// [longitude] is the longitude of the asset.
-  double? get longitude;
   @override
+  double? get longitude;
 
   /// [altitude] is the altitude of the asset.
-  double? get altitude;
   @override
-  @JsonKey(ignore: true)
+  double? get altitude;
+
+  /// Create a copy of StaticPosition
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StaticPositionImplCopyWith<_$StaticPositionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4047,8 +4183,12 @@ mixin _$StaticPositionInput {
   double? get altitude => throw _privateConstructorUsedError;
   set altitude(double? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this StaticPositionInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StaticPositionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StaticPositionInputCopyWith<StaticPositionInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4072,6 +4212,8 @@ class _$StaticPositionInputCopyWithImpl<$Res, $Val extends StaticPositionInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StaticPositionInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4115,6 +4257,8 @@ class __$$StaticPositionInputImplCopyWithImpl<$Res>
       $Res Function(_$StaticPositionInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StaticPositionInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4160,7 +4304,9 @@ class _$StaticPositionInputImpl extends _StaticPositionInput {
     return 'StaticPositionInput(latitude: $latitude, longitude: $longitude, altitude: $altitude)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StaticPositionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StaticPositionInputImplCopyWith<_$StaticPositionInputImpl> get copyWith =>
@@ -4194,8 +4340,11 @@ abstract class _StaticPositionInput extends StaticPositionInput {
   @override
   double? get altitude;
   set altitude(double? value);
+
+  /// Create a copy of StaticPositionInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StaticPositionInputImplCopyWith<_$StaticPositionInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4212,8 +4361,12 @@ mixin _$ZonePoint {
   /// [longitude] is the longitude of the point
   double get longitude => throw _privateConstructorUsedError;
 
+  /// Serializes this ZonePoint to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ZonePoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ZonePointCopyWith<ZonePoint> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4236,6 +4389,8 @@ class _$ZonePointCopyWithImpl<$Res, $Val extends ZonePoint>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ZonePoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4274,6 +4429,8 @@ class __$$ZonePointImplCopyWithImpl<$Res>
       _$ZonePointImpl _value, $Res Function(_$ZonePointImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ZonePoint
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4326,11 +4483,13 @@ class _$ZonePointImpl extends _ZonePoint {
                 other.longitude == longitude));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ZonePoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ZonePointImplCopyWith<_$ZonePointImpl> get copyWith =>
@@ -4353,16 +4512,18 @@ abstract class _ZonePoint extends ZonePoint {
   factory _ZonePoint.fromJson(Map<String, dynamic> json) =
       _$ZonePointImpl.fromJson;
 
-  @override
-
   /// [latitude] is the latitude of the point
-  double get latitude;
   @override
+  double get latitude;
 
   /// [longitude] is the longitude of the point
-  double get longitude;
   @override
-  @JsonKey(ignore: true)
+  double get longitude;
+
+  /// Create a copy of ZonePoint
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ZonePointImplCopyWith<_$ZonePointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4385,8 +4546,12 @@ mixin _$ZonePointInput {
   /// [longitude] is the longitude of the point
   set longitude(double value) => throw _privateConstructorUsedError;
 
+  /// Serializes this ZonePointInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ZonePointInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ZonePointInputCopyWith<ZonePointInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4410,6 +4575,8 @@ class _$ZonePointInputCopyWithImpl<$Res, $Val extends ZonePointInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ZonePointInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4448,6 +4615,8 @@ class __$$ZonePointInputImplCopyWithImpl<$Res>
       _$ZonePointInputImpl _value, $Res Function(_$ZonePointInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ZonePointInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4489,7 +4658,9 @@ class _$ZonePointInputImpl extends _ZonePointInput {
     return 'ZonePointInput(latitude: $latitude, longitude: $longitude)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ZonePointInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ZonePointInputImplCopyWith<_$ZonePointInputImpl> get copyWith =>
@@ -4513,22 +4684,24 @@ abstract class _ZonePointInput extends ZonePointInput {
   factory _ZonePointInput.fromJson(Map<String, dynamic> json) =
       _$ZonePointInputImpl.fromJson;
 
-  @override
-
   /// [latitude] is the latitude of the point
+  @override
   double get latitude;
 
   /// [latitude] is the latitude of the point
   set latitude(double value);
-  @override
 
   /// [longitude] is the longitude of the point
+  @override
   double get longitude;
 
   /// [longitude] is the longitude of the point
   set longitude(double value);
+
+  /// Create a copy of ZonePointInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ZonePointInputImplCopyWith<_$ZonePointInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

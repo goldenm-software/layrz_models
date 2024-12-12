@@ -1,4 +1,6 @@
 # Changelog
+## 3.3.12
+- In `AtsEntry` these properties `fuelType` and `fuelSubType` were deprecated
 
 ## 3.3.11
 
