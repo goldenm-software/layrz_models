@@ -966,6 +966,7 @@ _$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => AtsVolume.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
+      fuelAnp: json['fuelAnp'] as String?,
     );
 
 Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
@@ -990,6 +991,7 @@ Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
       'waterLevel': instance.waterLevel,
       'initialWaterLevel': instance.initialWaterLevel,
       'volumeHistory': instance.volumeHistory.map((e) => e.toJson()).toList(),
+      'fuelAnp': instance.fuelAnp,
     };
 
 _$AtsVolumeImpl _$$AtsVolumeImplFromJson(Map<String, dynamic> json) =>

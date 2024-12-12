@@ -46,9 +46,10 @@ class AtsEntry with _$AtsEntry {
     bool? isLinked,
 
     /// `fuelType` is the fuel type of the entry.
-    String? fuelType,
+    @Deprecated("Get first `AtsFuelSubType` and wit `AtsCfFuelType.getCfFuelType()` get a fuelType") String? fuelType,
 
     /// `fuelSubtype` is the fuel subtype of the entry.
+    @Deprecated("Use `fuelAnp` to identify a fuelSubType with `AtsFuelSubType.toCProdANP(`fuelAnp`)")
     String? fuelSubtype,
 
     /// `temperature` is the temperature of the entry.
@@ -71,6 +72,9 @@ class AtsEntry with _$AtsEntry {
 
     /// `volumenHistory` is the volumen history of the entry.
     @Default([]) List<AtsVolume> volumeHistory,
+
+    /// `fuelAnp` is the fuel anp of the entry.
+    String? fuelAnp,
   }) = _AtsEntry;
 
   /// fromJson creates a new `AtsEntry` from a JSON object.
