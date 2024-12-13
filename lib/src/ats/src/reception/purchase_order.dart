@@ -151,6 +151,9 @@ class AtsPurchaseOrder with _$AtsPurchaseOrder {
 
     /// `operation` associated to the purchase order.
     AtsOperation? operation,
+
+    /// [eta] defines the estimated time of arrival.
+    @TimestampOrNullConverter() DateTime? eta,
   }) = _AtsPurchaseOrder;
 
   /// from json factory
