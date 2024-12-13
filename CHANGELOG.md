@@ -1,5 +1,11 @@
 # Changelog
+
+## 3.3.13
+
+- Added new value `eta` in `AtsPurchaseOrder`
+
 ## 3.3.12
+
 - In `AtsEntry` these properties `fuelType` and `fuelSubType` were deprecated
 
 ## 3.3.11
