@@ -5288,6 +5288,10 @@ mixin _$AtsPurchaseOrder {
   @TimestampOrNullConverter()
   DateTime? get eta => throw _privateConstructorUsedError;
 
+  /// [etaUpdatedAt] defines the estimated time of arrival updated at.
+  @TimestampOrNullConverter()
+  DateTime? get etaUpdatedAt => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AtsPurchaseOrderCopyWith<AtsPurchaseOrder> get copyWith =>
@@ -5335,7 +5339,8 @@ abstract class $AtsPurchaseOrderCopyWith<$Res> {
       @AtsPurchaseOrderCategoriesEntityOrNullConverter()
       AtsPurchaseOrderCategoriesEntity? category,
       AtsOperation? operation,
-      @TimestampOrNullConverter() DateTime? eta});
+      @TimestampOrNullConverter() DateTime? eta,
+      @TimestampOrNullConverter() DateTime? etaUpdatedAt});
 
   $AssetCopyWith<$Res>? get asset;
   $AtsCompanyInformationCopyWith<$Res>? get sellerInformation;
@@ -5394,6 +5399,7 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
     Object? category = freezed,
     Object? operation = freezed,
     Object? eta = freezed,
+    Object? etaUpdatedAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -5523,6 +5529,10 @@ class _$AtsPurchaseOrderCopyWithImpl<$Res, $Val extends AtsPurchaseOrder>
       eta: freezed == eta
           ? _value.eta
           : eta // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      etaUpdatedAt: freezed == etaUpdatedAt
+          ? _value.etaUpdatedAt
+          : etaUpdatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
     ) as $Val);
   }
@@ -5694,7 +5704,8 @@ abstract class _$$AtsPurchaseOrderImplCopyWith<$Res>
       @AtsPurchaseOrderCategoriesEntityOrNullConverter()
       AtsPurchaseOrderCategoriesEntity? category,
       AtsOperation? operation,
-      @TimestampOrNullConverter() DateTime? eta});
+      @TimestampOrNullConverter() DateTime? eta,
+      @TimestampOrNullConverter() DateTime? etaUpdatedAt});
 
   @override
   $AssetCopyWith<$Res>? get asset;
@@ -5761,6 +5772,7 @@ class __$$AtsPurchaseOrderImplCopyWithImpl<$Res>
     Object? category = freezed,
     Object? operation = freezed,
     Object? eta = freezed,
+    Object? etaUpdatedAt = freezed,
   }) {
     return _then(_$AtsPurchaseOrderImpl(
       id: freezed == id
@@ -5891,6 +5903,10 @@ class __$$AtsPurchaseOrderImplCopyWithImpl<$Res>
           ? _value.eta
           : eta // ignore: cast_nullable_to_non_nullable
               as DateTime?,
+      etaUpdatedAt: freezed == etaUpdatedAt
+          ? _value.etaUpdatedAt
+          : etaUpdatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -5930,7 +5946,8 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
       @AtsPurchaseOrderSubCategoriesOrNullConverter() this.deliverCategory,
       @AtsPurchaseOrderCategoriesEntityOrNullConverter() this.category,
       this.operation,
-      @TimestampOrNullConverter() this.eta})
+      @TimestampOrNullConverter() this.eta,
+      @TimestampOrNullConverter() this.etaUpdatedAt})
       : _productsInformation = productsInformation;
 
   factory _$AtsPurchaseOrderImpl.fromJson(Map<String, dynamic> json) =>
@@ -6085,9 +6102,14 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
   @TimestampOrNullConverter()
   final DateTime? eta;
 
+  /// [etaUpdatedAt] defines the estimated time of arrival updated at.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? etaUpdatedAt;
+
   @override
   String toString() {
-    return 'AtsPurchaseOrder(id: $id, ownerId: $ownerId, orderId: $orderId, assetId: $assetId, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, receivedAt: $receivedAt, asset: $asset, sellerInformation: $sellerInformation, receiverInformation: $receiverInformation, productsInformation: $productsInformation, total: $total, isReceived: $isReceived, hasReception: $hasReception, transportInformation: $transportInformation, hasRawXml: $hasRawXml, invoiceType: $invoiceType, parentInvoice: $parentInvoice, ideInformation: $ideInformation, receptionAt: $receptionAt, action: $action, transportAsset: $transportAsset, sellerAsset: $sellerAsset, orderStatus: $orderStatus, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt, deliverCategory: $deliverCategory, category: $category, operation: $operation, eta: $eta)';
+    return 'AtsPurchaseOrder(id: $id, ownerId: $ownerId, orderId: $orderId, assetId: $assetId, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, receivedAt: $receivedAt, asset: $asset, sellerInformation: $sellerInformation, receiverInformation: $receiverInformation, productsInformation: $productsInformation, total: $total, isReceived: $isReceived, hasReception: $hasReception, transportInformation: $transportInformation, hasRawXml: $hasRawXml, invoiceType: $invoiceType, parentInvoice: $parentInvoice, ideInformation: $ideInformation, receptionAt: $receptionAt, action: $action, transportAsset: $transportAsset, sellerAsset: $sellerAsset, orderStatus: $orderStatus, inTransitAt: $inTransitAt, waitingToDispatchAt: $waitingToDispatchAt, deliveredAt: $deliveredAt, deliverCategory: $deliverCategory, category: $category, operation: $operation, eta: $eta, etaUpdatedAt: $etaUpdatedAt)';
   }
 
   @override
@@ -6150,7 +6172,9 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
                 other.category == category) &&
             (identical(other.operation, operation) ||
                 other.operation == operation) &&
-            (identical(other.eta, eta) || other.eta == eta));
+            (identical(other.eta, eta) || other.eta == eta) &&
+            (identical(other.etaUpdatedAt, etaUpdatedAt) ||
+                other.etaUpdatedAt == etaUpdatedAt));
   }
 
   @JsonKey(ignore: true)
@@ -6188,7 +6212,8 @@ class _$AtsPurchaseOrderImpl implements _AtsPurchaseOrder {
         deliverCategory,
         category,
         operation,
-        eta
+        eta,
+        etaUpdatedAt
       ]);
 
   @JsonKey(ignore: true)
@@ -6243,7 +6268,8 @@ abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
           @AtsPurchaseOrderCategoriesEntityOrNullConverter()
           final AtsPurchaseOrderCategoriesEntity? category,
           final AtsOperation? operation,
-          @TimestampOrNullConverter() final DateTime? eta}) =
+          @TimestampOrNullConverter() final DateTime? eta,
+          @TimestampOrNullConverter() final DateTime? etaUpdatedAt}) =
       _$AtsPurchaseOrderImpl;
 
   factory _AtsPurchaseOrder.fromJson(Map<String, dynamic> json) =
@@ -6388,6 +6414,11 @@ abstract class _AtsPurchaseOrder implements AtsPurchaseOrder {
   /// [eta] defines the estimated time of arrival.
   @TimestampOrNullConverter()
   DateTime? get eta;
+  @override
+
+  /// [etaUpdatedAt] defines the estimated time of arrival updated at.
+  @TimestampOrNullConverter()
+  DateTime? get etaUpdatedAt;
   @override
   @JsonKey(ignore: true)
   _$$AtsPurchaseOrderImplCopyWith<_$AtsPurchaseOrderImpl> get copyWith =>

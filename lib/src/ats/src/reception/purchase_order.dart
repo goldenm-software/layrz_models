@@ -154,6 +154,9 @@ class AtsPurchaseOrder with _$AtsPurchaseOrder {
 
     /// [eta] defines the estimated time of arrival.
     @TimestampOrNullConverter() DateTime? eta,
+
+    /// [etaUpdatedAt] defines the estimated time of arrival updated at.
+    @TimestampOrNullConverter() DateTime? etaUpdatedAt,
   }) = _AtsPurchaseOrder;
 
   /// from json factory

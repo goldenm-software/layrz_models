@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.14
+
+- Added new value `etaUpdatedAt` in `AtsPurchaseOrder`
+
 ## 3.3.13
 
 - Added new value `eta` in `AtsPurchaseOrder`
