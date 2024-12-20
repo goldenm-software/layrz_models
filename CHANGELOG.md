@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.15
+
+- Added `BrickhouseUserRole` enum and updates to the `BHSPermissionTier`
+
 ## 3.3.14
 
 - Added new value `etaUpdatedAt` in `AtsPurchaseOrder`

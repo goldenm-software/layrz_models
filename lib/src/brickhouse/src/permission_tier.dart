@@ -1,13 +1,33 @@
 part of '../brickhouse.dart';
 
+@JsonEnum()
+enum BrickhouseBillingPeriod {
+  @JsonValue('MONTHLY')
+  monthly,
+  @JsonValue('QUARTERLY')
+  quarterly,
+  @JsonValue('YEARLY')
+  yearly,
+  @JsonValue('UNKNOWN')
+  unknown;
+
+  String toJson() => _$BrickhouseBillingPeriodEnumMap[this] ?? 'UNKNOWN';
+
+  static BrickhouseBillingPeriod fromJson(String json) {
+    return _$BrickhouseBillingPeriodEnumMap.entries.firstWhereOrNull((e) => e.value == json)?.key ??
+        BrickhouseBillingPeriod.unknown;
+  }
+}
+
 @freezed
 class BHSPermissionTier with _$BHSPermissionTier {
   const factory BHSPermissionTier({
     required String id,
     required String name,
     required int tierLevel,
+    BrickhouseBillingPeriod? billingPeriod,
     String? description,
-    @Default({}) Map<String, dynamic> customProperties,
+    Map<String, dynamic>? customProperties,
     List<User>? users,
 
     /// Is the list of granted access
@@ -24,8 +44,9 @@ class BHSPermissionTierInput with _$BHSPermissionTierInput {
     String? id,
     String? name,
     String? description,
+    BrickhouseBillingPeriod? billingPeriod,
     @Default(1) int tierLevel,
-    @Default({}) Map<String, dynamic> customProperties,
+    Map<String, dynamic>? customProperties,
   }) = _BHSPermissionTierInput;
 
   /// from json

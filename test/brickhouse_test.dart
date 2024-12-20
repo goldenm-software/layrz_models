@@ -2,6 +2,24 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:layrz_models/layrz_models.dart';
 
 void main() {
+  test('Tiers input test', () {
+    final Map<String, dynamic> data = {
+      "id": "1",
+      "name": "basic",
+      "description": "",
+      "tierLevel": 1,
+      "customProperties": <String, dynamic>{},
+      "billingPeriod": 'YEARLY',
+    };
+
+    final tier = BHSPermissionTierInput.fromJson(data);
+    final tier2 = BHSPermissionTier.fromJson(data);
+
+    expect(tier, isA<BHSPermissionTierInput>());
+    expect(tier2, isA<BHSPermissionTier>());
+    expect(tier2.billingPeriod, equals(BrickhouseBillingPeriod.yearly));
+  });
+
   test('Workspace input', () {
     final data = {
       "id": "1",
@@ -67,7 +85,7 @@ void main() {
     final data = {
       "id": "1",
       "name": "test",
-      "type": "BATTERY",
+      "type": "PRESENCE_GEOFENCE",
       "assets": null,
       "assetsIds": null,
       "email": null,
@@ -80,12 +98,12 @@ void main() {
       "curfewStartHour": null,
       "curfewEndHour": null,
       "curfewTimezone": null,
-      "curfewWeekdays": null,
+      "curfewWeekdays": ['MON'],
       "geofenceColor": null,
-      "geofenceMode": null,
+      "geofenceMode": 'RADIAL',
       "geofenceRadius": null,
       "geofenceShape": null,
-      "geofenceTrigger": null,
+      "geofenceTrigger": 'BOTH',
       "maxSpeedMaxValue": null,
       "sosMessage": null,
       "cooldownTime": null,

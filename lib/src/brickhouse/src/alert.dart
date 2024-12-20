@@ -19,111 +19,47 @@ part of '../brickhouse.dart';
 ///
 /// SPEEDING
 /// Speeding alert
+@JsonEnum()
 enum BrickhouseAlertType {
+  @JsonValue('PRESENCE_GEOFENCE')
   presenceGeofence,
+  @JsonValue('MAX_SPEED')
   maxSpeed,
+  @JsonValue('SOS')
   sos,
+  @JsonValue('BATTERY')
   battery,
+  @JsonValue('CURFEW')
   curfew,
+  @JsonValue('SPEEDING')
   speeding,
-  ;
+  @JsonValue('UNKNOWN')
+  unknown;
 
-  String toJson() {
-    switch (this) {
-      case BrickhouseAlertType.presenceGeofence:
-        return "PRESENCE_GEOFENCE";
-      case BrickhouseAlertType.maxSpeed:
-        return "MAX_SPEED";
-      case BrickhouseAlertType.sos:
-        return "SOS";
-      case BrickhouseAlertType.battery:
-        return "BATTERY";
-      case BrickhouseAlertType.curfew:
-        return "CURFEW";
-      case BrickhouseAlertType.speeding:
-        return "SPEEDING";
-      default:
-        throw Exception("Unknown BrickhouseAlertType: $this");
-    }
-  }
+  String toJson() => _$BrickhouseAlertTypeEnumMap[this] ?? 'UNKNOWN';
 
   static BrickhouseAlertType fromJson(String json) {
-    switch (json) {
-      case "PRESENCE_GEOFENCE":
-        return BrickhouseAlertType.presenceGeofence;
-      case "MAX_SPEED":
-        return BrickhouseAlertType.maxSpeed;
-      case "SOS":
-        return BrickhouseAlertType.sos;
-      case "BATTERY":
-        return BrickhouseAlertType.battery;
-      case "CURFEW":
-        return BrickhouseAlertType.curfew;
-      case "SPEEDING":
-        return BrickhouseAlertType.speeding;
-      default:
-        throw Exception("Unknown BrickhouseAlertType: $json");
-    }
+    return _$BrickhouseAlertTypeEnumMap.entries.firstWhereOrNull((e) => e.value == json)?.key ??
+        BrickhouseAlertType.unknown;
   }
 }
 
-class BrickhouseAlertTypeConverter implements JsonConverter<BrickhouseAlertType, String> {
-  const BrickhouseAlertTypeConverter();
-
-  @override
-  BrickhouseAlertType fromJson(String json) => BrickhouseAlertType.fromJson(json);
-
-  @override
-  String toJson(BrickhouseAlertType object) => object.toJson();
-}
-
+@JsonEnum()
 enum BrickhouseGeofenceTrigger {
+  @JsonValue('ENTRANCE')
   entrance,
+  @JsonValue('EXIT')
   exit,
+  @JsonValue('BOTH')
   both,
-  ;
+  @JsonValue('UNKNOWN')
+  unknown;
 
-  String toJson() {
-    switch (this) {
-      case BrickhouseGeofenceTrigger.entrance:
-        return "ENTRANCE";
-      case BrickhouseGeofenceTrigger.exit:
-        return "EXIT";
-      case BrickhouseGeofenceTrigger.both:
-        return "BOTH";
-      default:
-        throw Exception("Unknown BrickhouseGeofenceTrigger: $this");
-    }
-  }
+  String toJson() => _$BrickhouseGeofenceTriggerEnumMap[this] ?? 'UNKNOWN';
 
   static BrickhouseGeofenceTrigger fromJson(String json) {
-    switch (json) {
-      case "ENTRANCE":
-        return BrickhouseGeofenceTrigger.entrance;
-      case "EXIT":
-        return BrickhouseGeofenceTrigger.exit;
-      case "BOTH":
-        return BrickhouseGeofenceTrigger.both;
-      default:
-        // return BrickhouseGeofenceTrigger.;
-        throw Exception("Unknown BrickhouseGeofenceTrigger: $json");
-    }
-  }
-}
-
-class BrickhouseGeofenceTriggerOrNullConverter implements JsonConverter<BrickhouseGeofenceTrigger?, String?> {
-  const BrickhouseGeofenceTriggerOrNullConverter();
-
-  @override
-  BrickhouseGeofenceTrigger? fromJson(String? json) {
-    if (json == null) return null;
-    return BrickhouseGeofenceTrigger.fromJson(json);
-  }
-
-  @override
-  String? toJson(BrickhouseGeofenceTrigger? object) {
-    if (object == null) return null;
-    return object.toJson();
+    return _$BrickhouseGeofenceTriggerEnumMap.entries.firstWhereOrNull((e) => e.value == json)?.key ??
+        BrickhouseGeofenceTrigger.unknown;
   }
 }
 
@@ -223,7 +159,7 @@ class BrickhouseAlert with _$BrickhouseAlert {
     required String name,
 
     /// Type of the alert.
-    @BrickhouseAlertTypeConverter() required BrickhouseAlertType type,
+    required BrickhouseAlertType type,
 
     /// List of assets
     List<Asset>? assets,
@@ -277,7 +213,7 @@ class BrickhouseAlert with _$BrickhouseAlert {
     List<GeofencePoint>? geofenceShape,
 
     /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-    @BrickhouseGeofenceTriggerOrNullConverter() BrickhouseGeofenceTrigger? geofenceTrigger,
+    BrickhouseGeofenceTrigger? geofenceTrigger,
 
     /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
     double? maxSpeedMaxValue,
@@ -371,7 +307,7 @@ class BrickhouseAlertInput with _$BrickhouseAlertInput {
     required String name,
 
     /// Type of the alert.
-    @BrickhouseAlertTypeConverter() required BrickhouseAlertType type,
+    required BrickhouseAlertType type,
 
     /// List of assets IDs.
     required List<String> assetsIds,
@@ -432,9 +368,7 @@ class BrickhouseAlertInput with _$BrickhouseAlertInput {
     @Default([]) List<GeofencePoint>? geofenceShape,
 
     /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-    @Default(BrickhouseGeofenceTrigger.both)
-    @BrickhouseGeofenceTriggerOrNullConverter()
-    BrickhouseGeofenceTrigger? geofenceTrigger,
+    @Default(BrickhouseGeofenceTrigger.both) BrickhouseGeofenceTrigger? geofenceTrigger,
 
     /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
     double? maxSpeedMaxValue,
