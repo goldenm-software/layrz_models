@@ -27,7 +27,9 @@ import 'src/vision/vision.dart';
 import 'src/workspace/workspace.dart';
 import 'src/users/users.dart';
 // import 'src/ble/ble.dart';
+import 'src/references/references.dart';
 
+// Internal exports
 export 'src/app/app.dart';
 export 'src/assets/assets.dart';
 export 'src/ats/ats.dart';
@@ -37,7 +39,6 @@ export 'src/charts/charts.dart';
 export 'src/commands/commands.dart';
 export 'src/concierge/concierge.dart';
 export 'src/confiot/confiot.dart';
-// Internal exports
 export 'src/converters/converters.dart';
 export 'src/exchange/exchange.dart';
 export 'src/external/external.dart';
@@ -58,6 +59,7 @@ export 'src/vision/vision.dart';
 export 'src/workspace/workspace.dart';
 export 'src/users/users.dart';
 export 'src/ble/ble.dart';
+export 'src/references/references.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
@@ -91,7 +93,6 @@ part 'src/lint_errors.dart';
 part 'src/monitor/checkpoints.dart';
 part 'src/operation.dart';
 part 'src/presets.dart';
-part 'src/reference.dart';
 part 'src/report.dart';
 part 'src/suspended_service.dart';
 part 'src/tag.dart';

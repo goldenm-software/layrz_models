@@ -1515,32 +1515,6 @@ Map<String, dynamic> _$$PresetImplToJson(_$PresetImpl instance) =>
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
 
-_$ReferenceImpl _$$ReferenceImplFromJson(Map<String, dynamic> json) =>
-    _$ReferenceImpl(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      category: const ReferenceCategoryOrNullConverter()
-          .fromJson(json['category'] as String?),
-      customFields: (json['customFields'] as List<dynamic>?)
-          ?.map((e) => CustomField.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      qrCode: json['qrCode'] as String?,
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-    );
-
-Map<String, dynamic> _$$ReferenceImplToJson(_$ReferenceImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'category':
-          const ReferenceCategoryOrNullConverter().toJson(instance.category),
-      'customFields': instance.customFields?.map((e) => e.toJson()).toList(),
-      'qrCode': instance.qrCode,
-      'access': instance.access?.map((e) => e.toJson()).toList(),
-    };
-
 _$ReportTemplateImpl _$$ReportTemplateImplFromJson(Map<String, dynamic> json) =>
     _$ReportTemplateImpl(
       id: json['id'] as String,
