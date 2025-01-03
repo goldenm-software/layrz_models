@@ -121,6 +121,9 @@ class User with _$User {
 
     /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
     String? brickhousePermissionTierId,
+
+    /// [brickhouseRole] represents the Brickhouse user role.
+    BrickhouseUserRole? brickhouseRole,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

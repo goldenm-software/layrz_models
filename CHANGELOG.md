@@ -1,5 +1,15 @@
 # Changelog
 
+## 3.3.16
+
+- Moved `Reference` model and `ReferenceCategory` to a submodule
+- Replaced conversion of `ReferenceCategory` enum from JsonConverter to a native @JsonValue and @JsonKey
+- Declared `sdmAdmin` and `sdmSupervisor` on `ReferenceCategory` enum
+
+## 3.3.15
+
+- Added `BrickhouseUserRole` enum and updates to the `BHSPermissionTier`
+
 ## 3.3.14
 
 - Added new value `etaUpdatedAt` in `AtsPurchaseOrder`

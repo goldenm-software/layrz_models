@@ -14,6 +14,623 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+InviteLink _$InviteLinkFromJson(Map<String, dynamic> json) {
+  return _InviteLink.fromJson(json);
+}
+
+/// @nodoc
+mixin _$InviteLink {
+  String get id => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
+  String? get sentTo => throw _privateConstructorUsedError;
+  @TimestampOrNullConverter()
+  DateTime? get sentAt => throw _privateConstructorUsedError;
+  @TimestampConverter()
+  DateTime get expiresAt => throw _privateConstructorUsedError;
+  @TimestampConverter()
+  DateTime get createdAt => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $InviteLinkCopyWith<InviteLink> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $InviteLinkCopyWith<$Res> {
+  factory $InviteLinkCopyWith(
+          InviteLink value, $Res Function(InviteLink) then) =
+      _$InviteLinkCopyWithImpl<$Res, InviteLink>;
+  @useResult
+  $Res call(
+      {String id,
+      String code,
+      String? sentTo,
+      @TimestampOrNullConverter() DateTime? sentAt,
+      @TimestampConverter() DateTime expiresAt,
+      @TimestampConverter() DateTime createdAt});
+}
+
+/// @nodoc
+class _$InviteLinkCopyWithImpl<$Res, $Val extends InviteLink>
+    implements $InviteLinkCopyWith<$Res> {
+  _$InviteLinkCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? sentTo = freezed,
+    Object? sentAt = freezed,
+    Object? expiresAt = null,
+    Object? createdAt = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      sentTo: freezed == sentTo
+          ? _value.sentTo
+          : sentTo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sentAt: freezed == sentAt
+          ? _value.sentAt
+          : sentAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiresAt: null == expiresAt
+          ? _value.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$InviteLinkImplCopyWith<$Res>
+    implements $InviteLinkCopyWith<$Res> {
+  factory _$$InviteLinkImplCopyWith(
+          _$InviteLinkImpl value, $Res Function(_$InviteLinkImpl) then) =
+      __$$InviteLinkImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String code,
+      String? sentTo,
+      @TimestampOrNullConverter() DateTime? sentAt,
+      @TimestampConverter() DateTime expiresAt,
+      @TimestampConverter() DateTime createdAt});
+}
+
+/// @nodoc
+class __$$InviteLinkImplCopyWithImpl<$Res>
+    extends _$InviteLinkCopyWithImpl<$Res, _$InviteLinkImpl>
+    implements _$$InviteLinkImplCopyWith<$Res> {
+  __$$InviteLinkImplCopyWithImpl(
+      _$InviteLinkImpl _value, $Res Function(_$InviteLinkImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? sentTo = freezed,
+    Object? sentAt = freezed,
+    Object? expiresAt = null,
+    Object? createdAt = null,
+  }) {
+    return _then(_$InviteLinkImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      sentTo: freezed == sentTo
+          ? _value.sentTo
+          : sentTo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sentAt: freezed == sentAt
+          ? _value.sentAt
+          : sentAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiresAt: null == expiresAt
+          ? _value.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$InviteLinkImpl extends _InviteLink {
+  const _$InviteLinkImpl(
+      {required this.id,
+      required this.code,
+      this.sentTo,
+      @TimestampOrNullConverter() this.sentAt,
+      @TimestampConverter() required this.expiresAt,
+      @TimestampConverter() required this.createdAt})
+      : super._();
+
+  factory _$InviteLinkImpl.fromJson(Map<String, dynamic> json) =>
+      _$$InviteLinkImplFromJson(json);
+
+  @override
+  final String id;
+  @override
+  final String code;
+  @override
+  final String? sentTo;
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? sentAt;
+  @override
+  @TimestampConverter()
+  final DateTime expiresAt;
+  @override
+  @TimestampConverter()
+  final DateTime createdAt;
+
+  @override
+  String toString() {
+    return 'InviteLink(id: $id, code: $code, sentTo: $sentTo, sentAt: $sentAt, expiresAt: $expiresAt, createdAt: $createdAt)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InviteLinkImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.sentTo, sentTo) || other.sentTo == sentTo) &&
+            (identical(other.sentAt, sentAt) || other.sentAt == sentAt) &&
+            (identical(other.expiresAt, expiresAt) ||
+                other.expiresAt == expiresAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, code, sentTo, sentAt, expiresAt, createdAt);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
+      __$$InviteLinkImplCopyWithImpl<_$InviteLinkImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$InviteLinkImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _InviteLink extends InviteLink {
+  const factory _InviteLink(
+          {required final String id,
+          required final String code,
+          final String? sentTo,
+          @TimestampOrNullConverter() final DateTime? sentAt,
+          @TimestampConverter() required final DateTime expiresAt,
+          @TimestampConverter() required final DateTime createdAt}) =
+      _$InviteLinkImpl;
+  const _InviteLink._() : super._();
+
+  factory _InviteLink.fromJson(Map<String, dynamic> json) =
+      _$InviteLinkImpl.fromJson;
+
+  @override
+  String get id;
+  @override
+  String get code;
+  @override
+  String? get sentTo;
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get sentAt;
+  @override
+  @TimestampConverter()
+  DateTime get expiresAt;
+  @override
+  @TimestampConverter()
+  DateTime get createdAt;
+  @override
+  @JsonKey(ignore: true)
+  _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+MfaInput _$MfaInputFromJson(Map<String, dynamic> json) {
+  return _MfaInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MfaInput {
+  MfaMethod? get method => throw _privateConstructorUsedError;
+  set method(MfaMethod? value) => throw _privateConstructorUsedError;
+  String? get token => throw _privateConstructorUsedError;
+  set token(String? value) => throw _privateConstructorUsedError;
+  bool get isRequesting => throw _privateConstructorUsedError;
+  set isRequesting(bool value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MfaInputCopyWith<MfaInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MfaInputCopyWith<$Res> {
+  factory $MfaInputCopyWith(MfaInput value, $Res Function(MfaInput) then) =
+      _$MfaInputCopyWithImpl<$Res, MfaInput>;
+  @useResult
+  $Res call({MfaMethod? method, String? token, bool isRequesting});
+}
+
+/// @nodoc
+class _$MfaInputCopyWithImpl<$Res, $Val extends MfaInput>
+    implements $MfaInputCopyWith<$Res> {
+  _$MfaInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? method = freezed,
+    Object? token = freezed,
+    Object? isRequesting = null,
+  }) {
+    return _then(_value.copyWith(
+      method: freezed == method
+          ? _value.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as MfaMethod?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isRequesting: null == isRequesting
+          ? _value.isRequesting
+          : isRequesting // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MfaInputImplCopyWith<$Res>
+    implements $MfaInputCopyWith<$Res> {
+  factory _$$MfaInputImplCopyWith(
+          _$MfaInputImpl value, $Res Function(_$MfaInputImpl) then) =
+      __$$MfaInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({MfaMethod? method, String? token, bool isRequesting});
+}
+
+/// @nodoc
+class __$$MfaInputImplCopyWithImpl<$Res>
+    extends _$MfaInputCopyWithImpl<$Res, _$MfaInputImpl>
+    implements _$$MfaInputImplCopyWith<$Res> {
+  __$$MfaInputImplCopyWithImpl(
+      _$MfaInputImpl _value, $Res Function(_$MfaInputImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? method = freezed,
+    Object? token = freezed,
+    Object? isRequesting = null,
+  }) {
+    return _then(_$MfaInputImpl(
+      method: freezed == method
+          ? _value.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as MfaMethod?,
+      token: freezed == token
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isRequesting: null == isRequesting
+          ? _value.isRequesting
+          : isRequesting // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MfaInputImpl implements _MfaInput {
+  _$MfaInputImpl({this.method, this.token, this.isRequesting = false});
+
+  factory _$MfaInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MfaInputImplFromJson(json);
+
+  @override
+  MfaMethod? method;
+  @override
+  String? token;
+  @override
+  @JsonKey()
+  bool isRequesting;
+
+  @override
+  String toString() {
+    return 'MfaInput(method: $method, token: $token, isRequesting: $isRequesting)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MfaInputImplCopyWith<_$MfaInputImpl> get copyWith =>
+      __$$MfaInputImplCopyWithImpl<_$MfaInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MfaInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MfaInput implements MfaInput {
+  factory _MfaInput({MfaMethod? method, String? token, bool isRequesting}) =
+      _$MfaInputImpl;
+
+  factory _MfaInput.fromJson(Map<String, dynamic> json) =
+      _$MfaInputImpl.fromJson;
+
+  @override
+  MfaMethod? get method;
+  set method(MfaMethod? value);
+  @override
+  String? get token;
+  set token(String? value);
+  @override
+  bool get isRequesting;
+  set isRequesting(bool value);
+  @override
+  @JsonKey(ignore: true)
+  _$$MfaInputImplCopyWith<_$MfaInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+TenvioDestinationSetup _$TenvioDestinationSetupFromJson(
+    Map<String, dynamic> json) {
+  return _TenvioDestinationSetup.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioDestinationSetup {
+  String get address => throw _privateConstructorUsedError;
+  set address(String value) => throw _privateConstructorUsedError;
+  double? get latitude => throw _privateConstructorUsedError;
+  set latitude(double? value) => throw _privateConstructorUsedError;
+  double? get longitude => throw _privateConstructorUsedError;
+  set longitude(double? value) => throw _privateConstructorUsedError;
+  bool get addressIsPlusCode => throw _privateConstructorUsedError;
+  set addressIsPlusCode(bool value) => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TenvioDestinationSetupCopyWith<TenvioDestinationSetup> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioDestinationSetupCopyWith<$Res> {
+  factory $TenvioDestinationSetupCopyWith(TenvioDestinationSetup value,
+          $Res Function(TenvioDestinationSetup) then) =
+      _$TenvioDestinationSetupCopyWithImpl<$Res, TenvioDestinationSetup>;
+  @useResult
+  $Res call(
+      {String address,
+      double? latitude,
+      double? longitude,
+      bool addressIsPlusCode});
+}
+
+/// @nodoc
+class _$TenvioDestinationSetupCopyWithImpl<$Res,
+        $Val extends TenvioDestinationSetup>
+    implements $TenvioDestinationSetupCopyWith<$Res> {
+  _$TenvioDestinationSetupCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? address = null,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? addressIsPlusCode = null,
+  }) {
+    return _then(_value.copyWith(
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      latitude: freezed == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      addressIsPlusCode: null == addressIsPlusCode
+          ? _value.addressIsPlusCode
+          : addressIsPlusCode // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioDestinationSetupImplCopyWith<$Res>
+    implements $TenvioDestinationSetupCopyWith<$Res> {
+  factory _$$TenvioDestinationSetupImplCopyWith(
+          _$TenvioDestinationSetupImpl value,
+          $Res Function(_$TenvioDestinationSetupImpl) then) =
+      __$$TenvioDestinationSetupImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String address,
+      double? latitude,
+      double? longitude,
+      bool addressIsPlusCode});
+}
+
+/// @nodoc
+class __$$TenvioDestinationSetupImplCopyWithImpl<$Res>
+    extends _$TenvioDestinationSetupCopyWithImpl<$Res,
+        _$TenvioDestinationSetupImpl>
+    implements _$$TenvioDestinationSetupImplCopyWith<$Res> {
+  __$$TenvioDestinationSetupImplCopyWithImpl(
+      _$TenvioDestinationSetupImpl _value,
+      $Res Function(_$TenvioDestinationSetupImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? address = null,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? addressIsPlusCode = null,
+  }) {
+    return _then(_$TenvioDestinationSetupImpl(
+      address: null == address
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      latitude: freezed == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      addressIsPlusCode: null == addressIsPlusCode
+          ? _value.addressIsPlusCode
+          : addressIsPlusCode // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioDestinationSetupImpl implements _TenvioDestinationSetup {
+  _$TenvioDestinationSetupImpl(
+      {this.address = '',
+      this.latitude,
+      this.longitude,
+      this.addressIsPlusCode = false});
+
+  factory _$TenvioDestinationSetupImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioDestinationSetupImplFromJson(json);
+
+  @override
+  @JsonKey()
+  String address;
+  @override
+  double? latitude;
+  @override
+  double? longitude;
+  @override
+  @JsonKey()
+  bool addressIsPlusCode;
+
+  @override
+  String toString() {
+    return 'TenvioDestinationSetup(address: $address, latitude: $latitude, longitude: $longitude, addressIsPlusCode: $addressIsPlusCode)';
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioDestinationSetupImplCopyWith<_$TenvioDestinationSetupImpl>
+      get copyWith => __$$TenvioDestinationSetupImplCopyWithImpl<
+          _$TenvioDestinationSetupImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioDestinationSetupImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioDestinationSetup implements TenvioDestinationSetup {
+  factory _TenvioDestinationSetup(
+      {String address,
+      double? latitude,
+      double? longitude,
+      bool addressIsPlusCode}) = _$TenvioDestinationSetupImpl;
+
+  factory _TenvioDestinationSetup.fromJson(Map<String, dynamic> json) =
+      _$TenvioDestinationSetupImpl.fromJson;
+
+  @override
+  String get address;
+  set address(String value);
+  @override
+  double? get latitude;
+  set latitude(double? value);
+  @override
+  double? get longitude;
+  set longitude(double? value);
+  @override
+  bool get addressIsPlusCode;
+  set addressIsPlusCode(bool value);
+  @override
+  @JsonKey(ignore: true)
+  _$$TenvioDestinationSetupImplCopyWith<_$TenvioDestinationSetupImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 User _$UserFromJson(Map<String, dynamic> json) {
   return _User.fromJson(json);
 }
@@ -144,6 +761,9 @@ mixin _$User {
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
   String? get brickhousePermissionTierId => throw _privateConstructorUsedError;
 
+  /// [brickhouseRole] represents the Brickhouse user role.
+  BrickhouseUserRole? get brickhouseRole => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -192,7 +812,8 @@ abstract class $UserCopyWith<$Res> {
       @TimestampOrNullConverter() DateTime? suspendedAt,
       List<String> hwModelsAnimationsIds,
       BHSPermissionTier? brickhousePermissionTier,
-      String? brickhousePermissionTierId});
+      String? brickhousePermissionTierId,
+      BrickhouseUserRole? brickhouseRole});
 
   $TokenCopyWith<$Res>? get token;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
@@ -252,6 +873,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? hwModelsAnimationsIds = null,
     Object? brickhousePermissionTier = freezed,
     Object? brickhousePermissionTierId = freezed,
+    Object? brickhouseRole = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -406,6 +1028,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.brickhousePermissionTierId
           : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
               as String?,
+      brickhouseRole: freezed == brickhouseRole
+          ? _value.brickhouseRole
+          : brickhouseRole // ignore: cast_nullable_to_non_nullable
+              as BrickhouseUserRole?,
     ) as $Val);
   }
 
@@ -517,7 +1143,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       @TimestampOrNullConverter() DateTime? suspendedAt,
       List<String> hwModelsAnimationsIds,
       BHSPermissionTier? brickhousePermissionTier,
-      String? brickhousePermissionTierId});
+      String? brickhousePermissionTierId,
+      BrickhouseUserRole? brickhouseRole});
 
   @override
   $TokenCopyWith<$Res>? get token;
@@ -579,6 +1206,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? hwModelsAnimationsIds = null,
     Object? brickhousePermissionTier = freezed,
     Object? brickhousePermissionTierId = freezed,
+    Object? brickhouseRole = freezed,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -733,6 +1361,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.brickhousePermissionTierId
           : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
               as String?,
+      brickhouseRole: freezed == brickhouseRole
+          ? _value.brickhouseRole
+          : brickhouseRole // ignore: cast_nullable_to_non_nullable
+              as BrickhouseUserRole?,
     ));
   }
 }
@@ -778,7 +1410,8 @@ class _$UserImpl implements _User {
       @TimestampOrNullConverter() this.suspendedAt,
       final List<String> hwModelsAnimationsIds = const [],
       this.brickhousePermissionTier,
-      this.brickhousePermissionTierId})
+      this.brickhousePermissionTierId,
+      this.brickhouseRole})
       : _referencesIds = referencesIds,
         _references = references,
         _access = access,
@@ -1075,9 +1708,13 @@ class _$UserImpl implements _User {
   @override
   final String? brickhousePermissionTierId;
 
+  /// [brickhouseRole] represents the Brickhouse user role.
+  @override
+  final BrickhouseUserRole? brickhouseRole;
+
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, isSuspended: $isSuspended, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, isSuspended: $isSuspended, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole)';
   }
 
   @override
@@ -1140,8 +1777,7 @@ class _$UserImpl implements _User {
                 other.tenvioLatitude == tenvioLatitude) &&
             (identical(other.tenvioLongitude, tenvioLongitude) ||
                 other.tenvioLongitude == tenvioLongitude) &&
-            (identical(
-                    other.tenvioAddressIsPlusCode, tenvioAddressIsPlusCode) ||
+            (identical(other.tenvioAddressIsPlusCode, tenvioAddressIsPlusCode) ||
                 other.tenvioAddressIsPlusCode == tenvioAddressIsPlusCode) &&
             (identical(other.isSuspended, isSuspended) ||
                 other.isSuspended == isSuspended) &&
@@ -1155,7 +1791,9 @@ class _$UserImpl implements _User {
             (identical(other.brickhousePermissionTierId,
                     brickhousePermissionTierId) ||
                 other.brickhousePermissionTierId ==
-                    brickhousePermissionTierId));
+                    brickhousePermissionTierId) &&
+            (identical(other.brickhouseRole, brickhouseRole) ||
+                other.brickhouseRole == brickhouseRole));
   }
 
   @JsonKey(ignore: true)
@@ -1199,7 +1837,8 @@ class _$UserImpl implements _User {
         suspendedAt,
         const DeepCollectionEquality().hash(_hwModelsAnimationsIds),
         brickhousePermissionTier,
-        brickhousePermissionTierId
+        brickhousePermissionTierId,
+        brickhouseRole
       ]);
 
   @JsonKey(ignore: true)
@@ -1255,7 +1894,8 @@ abstract class _User implements User {
       @TimestampOrNullConverter() final DateTime? suspendedAt,
       final List<String> hwModelsAnimationsIds,
       final BHSPermissionTier? brickhousePermissionTier,
-      final String? brickhousePermissionTierId}) = _$UserImpl;
+      final String? brickhousePermissionTierId,
+      final BrickhouseUserRole? brickhouseRole}) = _$UserImpl;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
@@ -1418,6 +2058,10 @@ abstract class _User implements User {
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
   String? get brickhousePermissionTierId;
+  @override
+
+  /// [brickhouseRole] represents the Brickhouse user role.
+  BrickhouseUserRole? get brickhouseRole;
   @override
   @JsonKey(ignore: true)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
@@ -1805,621 +2449,4 @@ abstract class _PasswordInput implements PasswordInput {
   @JsonKey(ignore: true)
   _$$PasswordInputImplCopyWith<_$PasswordInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-MfaInput _$MfaInputFromJson(Map<String, dynamic> json) {
-  return _MfaInput.fromJson(json);
-}
-
-/// @nodoc
-mixin _$MfaInput {
-  MfaMethod? get method => throw _privateConstructorUsedError;
-  set method(MfaMethod? value) => throw _privateConstructorUsedError;
-  String? get token => throw _privateConstructorUsedError;
-  set token(String? value) => throw _privateConstructorUsedError;
-  bool get isRequesting => throw _privateConstructorUsedError;
-  set isRequesting(bool value) => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $MfaInputCopyWith<MfaInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MfaInputCopyWith<$Res> {
-  factory $MfaInputCopyWith(MfaInput value, $Res Function(MfaInput) then) =
-      _$MfaInputCopyWithImpl<$Res, MfaInput>;
-  @useResult
-  $Res call({MfaMethod? method, String? token, bool isRequesting});
-}
-
-/// @nodoc
-class _$MfaInputCopyWithImpl<$Res, $Val extends MfaInput>
-    implements $MfaInputCopyWith<$Res> {
-  _$MfaInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? method = freezed,
-    Object? token = freezed,
-    Object? isRequesting = null,
-  }) {
-    return _then(_value.copyWith(
-      method: freezed == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as MfaMethod?,
-      token: freezed == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isRequesting: null == isRequesting
-          ? _value.isRequesting
-          : isRequesting // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$MfaInputImplCopyWith<$Res>
-    implements $MfaInputCopyWith<$Res> {
-  factory _$$MfaInputImplCopyWith(
-          _$MfaInputImpl value, $Res Function(_$MfaInputImpl) then) =
-      __$$MfaInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({MfaMethod? method, String? token, bool isRequesting});
-}
-
-/// @nodoc
-class __$$MfaInputImplCopyWithImpl<$Res>
-    extends _$MfaInputCopyWithImpl<$Res, _$MfaInputImpl>
-    implements _$$MfaInputImplCopyWith<$Res> {
-  __$$MfaInputImplCopyWithImpl(
-      _$MfaInputImpl _value, $Res Function(_$MfaInputImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? method = freezed,
-    Object? token = freezed,
-    Object? isRequesting = null,
-  }) {
-    return _then(_$MfaInputImpl(
-      method: freezed == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as MfaMethod?,
-      token: freezed == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isRequesting: null == isRequesting
-          ? _value.isRequesting
-          : isRequesting // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$MfaInputImpl implements _MfaInput {
-  _$MfaInputImpl({this.method, this.token, this.isRequesting = false});
-
-  factory _$MfaInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MfaInputImplFromJson(json);
-
-  @override
-  MfaMethod? method;
-  @override
-  String? token;
-  @override
-  @JsonKey()
-  bool isRequesting;
-
-  @override
-  String toString() {
-    return 'MfaInput(method: $method, token: $token, isRequesting: $isRequesting)';
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MfaInputImplCopyWith<_$MfaInputImpl> get copyWith =>
-      __$$MfaInputImplCopyWithImpl<_$MfaInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MfaInputImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _MfaInput implements MfaInput {
-  factory _MfaInput({MfaMethod? method, String? token, bool isRequesting}) =
-      _$MfaInputImpl;
-
-  factory _MfaInput.fromJson(Map<String, dynamic> json) =
-      _$MfaInputImpl.fromJson;
-
-  @override
-  MfaMethod? get method;
-  set method(MfaMethod? value);
-  @override
-  String? get token;
-  set token(String? value);
-  @override
-  bool get isRequesting;
-  set isRequesting(bool value);
-  @override
-  @JsonKey(ignore: true)
-  _$$MfaInputImplCopyWith<_$MfaInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-InviteLink _$InviteLinkFromJson(Map<String, dynamic> json) {
-  return _InviteLink.fromJson(json);
-}
-
-/// @nodoc
-mixin _$InviteLink {
-  String get id => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
-  String? get sentTo => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get sentAt => throw _privateConstructorUsedError;
-  @TimestampConverter()
-  DateTime get expiresAt => throw _privateConstructorUsedError;
-  @TimestampConverter()
-  DateTime get createdAt => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $InviteLinkCopyWith<InviteLink> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $InviteLinkCopyWith<$Res> {
-  factory $InviteLinkCopyWith(
-          InviteLink value, $Res Function(InviteLink) then) =
-      _$InviteLinkCopyWithImpl<$Res, InviteLink>;
-  @useResult
-  $Res call(
-      {String id,
-      String code,
-      String? sentTo,
-      @TimestampOrNullConverter() DateTime? sentAt,
-      @TimestampConverter() DateTime expiresAt,
-      @TimestampConverter() DateTime createdAt});
-}
-
-/// @nodoc
-class _$InviteLinkCopyWithImpl<$Res, $Val extends InviteLink>
-    implements $InviteLinkCopyWith<$Res> {
-  _$InviteLinkCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? code = null,
-    Object? sentTo = freezed,
-    Object? sentAt = freezed,
-    Object? expiresAt = null,
-    Object? createdAt = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      sentTo: freezed == sentTo
-          ? _value.sentTo
-          : sentTo // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sentAt: freezed == sentAt
-          ? _value.sentAt
-          : sentAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      expiresAt: null == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$InviteLinkImplCopyWith<$Res>
-    implements $InviteLinkCopyWith<$Res> {
-  factory _$$InviteLinkImplCopyWith(
-          _$InviteLinkImpl value, $Res Function(_$InviteLinkImpl) then) =
-      __$$InviteLinkImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String code,
-      String? sentTo,
-      @TimestampOrNullConverter() DateTime? sentAt,
-      @TimestampConverter() DateTime expiresAt,
-      @TimestampConverter() DateTime createdAt});
-}
-
-/// @nodoc
-class __$$InviteLinkImplCopyWithImpl<$Res>
-    extends _$InviteLinkCopyWithImpl<$Res, _$InviteLinkImpl>
-    implements _$$InviteLinkImplCopyWith<$Res> {
-  __$$InviteLinkImplCopyWithImpl(
-      _$InviteLinkImpl _value, $Res Function(_$InviteLinkImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? code = null,
-    Object? sentTo = freezed,
-    Object? sentAt = freezed,
-    Object? expiresAt = null,
-    Object? createdAt = null,
-  }) {
-    return _then(_$InviteLinkImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      sentTo: freezed == sentTo
-          ? _value.sentTo
-          : sentTo // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sentAt: freezed == sentAt
-          ? _value.sentAt
-          : sentAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      expiresAt: null == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$InviteLinkImpl extends _InviteLink {
-  const _$InviteLinkImpl(
-      {required this.id,
-      required this.code,
-      this.sentTo,
-      @TimestampOrNullConverter() this.sentAt,
-      @TimestampConverter() required this.expiresAt,
-      @TimestampConverter() required this.createdAt})
-      : super._();
-
-  factory _$InviteLinkImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InviteLinkImplFromJson(json);
-
-  @override
-  final String id;
-  @override
-  final String code;
-  @override
-  final String? sentTo;
-  @override
-  @TimestampOrNullConverter()
-  final DateTime? sentAt;
-  @override
-  @TimestampConverter()
-  final DateTime expiresAt;
-  @override
-  @TimestampConverter()
-  final DateTime createdAt;
-
-  @override
-  String toString() {
-    return 'InviteLink(id: $id, code: $code, sentTo: $sentTo, sentAt: $sentAt, expiresAt: $expiresAt, createdAt: $createdAt)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InviteLinkImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.sentTo, sentTo) || other.sentTo == sentTo) &&
-            (identical(other.sentAt, sentAt) || other.sentAt == sentAt) &&
-            (identical(other.expiresAt, expiresAt) ||
-                other.expiresAt == expiresAt) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt));
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, code, sentTo, sentAt, expiresAt, createdAt);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
-      __$$InviteLinkImplCopyWithImpl<_$InviteLinkImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InviteLinkImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _InviteLink extends InviteLink {
-  const factory _InviteLink(
-          {required final String id,
-          required final String code,
-          final String? sentTo,
-          @TimestampOrNullConverter() final DateTime? sentAt,
-          @TimestampConverter() required final DateTime expiresAt,
-          @TimestampConverter() required final DateTime createdAt}) =
-      _$InviteLinkImpl;
-  const _InviteLink._() : super._();
-
-  factory _InviteLink.fromJson(Map<String, dynamic> json) =
-      _$InviteLinkImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get code;
-  @override
-  String? get sentTo;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get sentAt;
-  @override
-  @TimestampConverter()
-  DateTime get expiresAt;
-  @override
-  @TimestampConverter()
-  DateTime get createdAt;
-  @override
-  @JsonKey(ignore: true)
-  _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-TenvioDestinationSetup _$TenvioDestinationSetupFromJson(
-    Map<String, dynamic> json) {
-  return _TenvioDestinationSetup.fromJson(json);
-}
-
-/// @nodoc
-mixin _$TenvioDestinationSetup {
-  String get address => throw _privateConstructorUsedError;
-  set address(String value) => throw _privateConstructorUsedError;
-  double? get latitude => throw _privateConstructorUsedError;
-  set latitude(double? value) => throw _privateConstructorUsedError;
-  double? get longitude => throw _privateConstructorUsedError;
-  set longitude(double? value) => throw _privateConstructorUsedError;
-  bool get addressIsPlusCode => throw _privateConstructorUsedError;
-  set addressIsPlusCode(bool value) => throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $TenvioDestinationSetupCopyWith<TenvioDestinationSetup> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TenvioDestinationSetupCopyWith<$Res> {
-  factory $TenvioDestinationSetupCopyWith(TenvioDestinationSetup value,
-          $Res Function(TenvioDestinationSetup) then) =
-      _$TenvioDestinationSetupCopyWithImpl<$Res, TenvioDestinationSetup>;
-  @useResult
-  $Res call(
-      {String address,
-      double? latitude,
-      double? longitude,
-      bool addressIsPlusCode});
-}
-
-/// @nodoc
-class _$TenvioDestinationSetupCopyWithImpl<$Res,
-        $Val extends TenvioDestinationSetup>
-    implements $TenvioDestinationSetupCopyWith<$Res> {
-  _$TenvioDestinationSetupCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? addressIsPlusCode = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      addressIsPlusCode: null == addressIsPlusCode
-          ? _value.addressIsPlusCode
-          : addressIsPlusCode // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$TenvioDestinationSetupImplCopyWith<$Res>
-    implements $TenvioDestinationSetupCopyWith<$Res> {
-  factory _$$TenvioDestinationSetupImplCopyWith(
-          _$TenvioDestinationSetupImpl value,
-          $Res Function(_$TenvioDestinationSetupImpl) then) =
-      __$$TenvioDestinationSetupImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String address,
-      double? latitude,
-      double? longitude,
-      bool addressIsPlusCode});
-}
-
-/// @nodoc
-class __$$TenvioDestinationSetupImplCopyWithImpl<$Res>
-    extends _$TenvioDestinationSetupCopyWithImpl<$Res,
-        _$TenvioDestinationSetupImpl>
-    implements _$$TenvioDestinationSetupImplCopyWith<$Res> {
-  __$$TenvioDestinationSetupImplCopyWithImpl(
-      _$TenvioDestinationSetupImpl _value,
-      $Res Function(_$TenvioDestinationSetupImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? address = null,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? addressIsPlusCode = null,
-  }) {
-    return _then(_$TenvioDestinationSetupImpl(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      addressIsPlusCode: null == addressIsPlusCode
-          ? _value.addressIsPlusCode
-          : addressIsPlusCode // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TenvioDestinationSetupImpl implements _TenvioDestinationSetup {
-  _$TenvioDestinationSetupImpl(
-      {this.address = '',
-      this.latitude,
-      this.longitude,
-      this.addressIsPlusCode = false});
-
-  factory _$TenvioDestinationSetupImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TenvioDestinationSetupImplFromJson(json);
-
-  @override
-  @JsonKey()
-  String address;
-  @override
-  double? latitude;
-  @override
-  double? longitude;
-  @override
-  @JsonKey()
-  bool addressIsPlusCode;
-
-  @override
-  String toString() {
-    return 'TenvioDestinationSetup(address: $address, latitude: $latitude, longitude: $longitude, addressIsPlusCode: $addressIsPlusCode)';
-  }
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TenvioDestinationSetupImplCopyWith<_$TenvioDestinationSetupImpl>
-      get copyWith => __$$TenvioDestinationSetupImplCopyWithImpl<
-          _$TenvioDestinationSetupImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TenvioDestinationSetupImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _TenvioDestinationSetup implements TenvioDestinationSetup {
-  factory _TenvioDestinationSetup(
-      {String address,
-      double? latitude,
-      double? longitude,
-      bool addressIsPlusCode}) = _$TenvioDestinationSetupImpl;
-
-  factory _TenvioDestinationSetup.fromJson(Map<String, dynamic> json) =
-      _$TenvioDestinationSetupImpl.fromJson;
-
-  @override
-  String get address;
-  set address(String value);
-  @override
-  double? get latitude;
-  set latitude(double? value);
-  @override
-  double? get longitude;
-  set longitude(double? value);
-  @override
-  bool get addressIsPlusCode;
-  set addressIsPlusCode(bool value);
-  @override
-  @JsonKey(ignore: true)
-  _$$TenvioDestinationSetupImplCopyWith<_$TenvioDestinationSetupImpl>
-      get copyWith => throw _privateConstructorUsedError;
 }

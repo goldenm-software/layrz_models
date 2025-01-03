@@ -11,8 +11,7 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
     _$BrickhouseAlertImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      type:
-          const BrickhouseAlertTypeConverter().fromJson(json['type'] as String),
+      type: $enumDecode(_$BrickhouseAlertTypeEnumMap, json['type']),
       assets: (json['assets'] as List<dynamic>?)
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -48,8 +47,8 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
       geofenceShape: (json['geofenceShape'] as List<dynamic>?)
           ?.map((e) => GeofencePoint.fromJson(e as Map<String, dynamic>))
           .toList(),
-      geofenceTrigger: const BrickhouseGeofenceTriggerOrNullConverter()
-          .fromJson(json['geofenceTrigger'] as String?),
+      geofenceTrigger: $enumDecodeNullable(
+          _$BrickhouseGeofenceTriggerEnumMap, json['geofenceTrigger']),
       maxSpeedMaxValue: (json['maxSpeedMaxValue'] as num?)?.toDouble(),
       isMuted: json['isMuted'] as bool? ?? false,
       speedingThreshold: (json['speedingThreshold'] as num?)?.toDouble(),
@@ -60,7 +59,7 @@ Map<String, dynamic> _$$BrickhouseAlertImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'type': const BrickhouseAlertTypeConverter().toJson(instance.type),
+      'type': instance.type.toJson(),
       'assets': instance.assets?.map((e) => e.toJson()).toList(),
       'assetsIds': instance.assetsIds,
       'email': instance.email,
@@ -84,20 +83,35 @@ Map<String, dynamic> _$$BrickhouseAlertImplToJson(
           const GeofenceModeOrNullConverter().toJson(instance.geofenceMode),
       'geofenceRadius': instance.geofenceRadius,
       'geofenceShape': instance.geofenceShape?.map((e) => e.toJson()).toList(),
-      'geofenceTrigger': const BrickhouseGeofenceTriggerOrNullConverter()
-          .toJson(instance.geofenceTrigger),
+      'geofenceTrigger': instance.geofenceTrigger?.toJson(),
       'maxSpeedMaxValue': instance.maxSpeedMaxValue,
       'isMuted': instance.isMuted,
       'speedingThreshold': instance.speedingThreshold,
     };
+
+const _$BrickhouseAlertTypeEnumMap = {
+  BrickhouseAlertType.presenceGeofence: 'PRESENCE_GEOFENCE',
+  BrickhouseAlertType.maxSpeed: 'MAX_SPEED',
+  BrickhouseAlertType.sos: 'SOS',
+  BrickhouseAlertType.battery: 'BATTERY',
+  BrickhouseAlertType.curfew: 'CURFEW',
+  BrickhouseAlertType.speeding: 'SPEEDING',
+  BrickhouseAlertType.unknown: 'UNKNOWN',
+};
+
+const _$BrickhouseGeofenceTriggerEnumMap = {
+  BrickhouseGeofenceTrigger.entrance: 'ENTRANCE',
+  BrickhouseGeofenceTrigger.exit: 'EXIT',
+  BrickhouseGeofenceTrigger.both: 'BOTH',
+  BrickhouseGeofenceTrigger.unknown: 'UNKNOWN',
+};
 
 _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
         Map<String, dynamic> json) =>
     _$BrickhouseAlertInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String,
-      type:
-          const BrickhouseAlertTypeConverter().fromJson(json['type'] as String),
+      type: $enumDecode(_$BrickhouseAlertTypeEnumMap, json['type']),
       assetsIds:
           (json['assetsIds'] as List<dynamic>).map((e) => e as String).toList(),
       email:
@@ -141,10 +155,9 @@ _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
               ?.map((e) => GeofencePoint.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      geofenceTrigger: json['geofenceTrigger'] == null
-          ? BrickhouseGeofenceTrigger.both
-          : const BrickhouseGeofenceTriggerOrNullConverter()
-              .fromJson(json['geofenceTrigger'] as String?),
+      geofenceTrigger: $enumDecodeNullable(
+              _$BrickhouseGeofenceTriggerEnumMap, json['geofenceTrigger']) ??
+          BrickhouseGeofenceTrigger.both,
       maxSpeedMaxValue: (json['maxSpeedMaxValue'] as num?)?.toDouble(),
       isMuted: json['isMuted'] as bool? ?? false,
       speedingThreshold: (json['speedingThreshold'] as num?)?.toDouble() ?? 0,
@@ -155,7 +168,7 @@ Map<String, dynamic> _$$BrickhouseAlertInputImplToJson(
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'type': const BrickhouseAlertTypeConverter().toJson(instance.type),
+      'type': instance.type.toJson(),
       'assetsIds': instance.assetsIds,
       'email': instance.email,
       'phone': instance.phone?.map((e) => e?.toJson()).toList(),
@@ -178,8 +191,7 @@ Map<String, dynamic> _$$BrickhouseAlertInputImplToJson(
           const GeofenceModeOrNullConverter().toJson(instance.geofenceMode),
       'geofenceRadius': instance.geofenceRadius,
       'geofenceShape': instance.geofenceShape?.map((e) => e.toJson()).toList(),
-      'geofenceTrigger': const BrickhouseGeofenceTriggerOrNullConverter()
-          .toJson(instance.geofenceTrigger),
+      'geofenceTrigger': instance.geofenceTrigger?.toJson(),
       'maxSpeedMaxValue': instance.maxSpeedMaxValue,
       'isMuted': instance.isMuted,
       'speedingThreshold': instance.speedingThreshold,
@@ -257,9 +269,10 @@ _$BHSPermissionTierImpl _$$BHSPermissionTierImplFromJson(
       id: json['id'] as String,
       name: json['name'] as String,
       tierLevel: (json['tierLevel'] as num).toInt(),
+      billingPeriod: $enumDecodeNullable(
+          _$BrickhouseBillingPeriodEnumMap, json['billingPeriod']),
       description: json['description'] as String?,
-      customProperties:
-          json['customProperties'] as Map<String, dynamic>? ?? const {},
+      customProperties: json['customProperties'] as Map<String, dynamic>?,
       users: (json['users'] as List<dynamic>?)
           ?.map((e) => User.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -274,11 +287,19 @@ Map<String, dynamic> _$$BHSPermissionTierImplToJson(
       'id': instance.id,
       'name': instance.name,
       'tierLevel': instance.tierLevel,
+      'billingPeriod': instance.billingPeriod?.toJson(),
       'description': instance.description,
       'customProperties': instance.customProperties,
       'users': instance.users?.map((e) => e.toJson()).toList(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
+
+const _$BrickhouseBillingPeriodEnumMap = {
+  BrickhouseBillingPeriod.monthly: 'MONTHLY',
+  BrickhouseBillingPeriod.quarterly: 'QUARTERLY',
+  BrickhouseBillingPeriod.yearly: 'YEARLY',
+  BrickhouseBillingPeriod.unknown: 'UNKNOWN',
+};
 
 _$BHSPermissionTierInputImpl _$$BHSPermissionTierInputImplFromJson(
         Map<String, dynamic> json) =>
@@ -286,9 +307,10 @@ _$BHSPermissionTierInputImpl _$$BHSPermissionTierInputImplFromJson(
       id: json['id'] as String?,
       name: json['name'] as String?,
       description: json['description'] as String?,
+      billingPeriod: $enumDecodeNullable(
+          _$BrickhouseBillingPeriodEnumMap, json['billingPeriod']),
       tierLevel: (json['tierLevel'] as num?)?.toInt() ?? 1,
-      customProperties:
-          json['customProperties'] as Map<String, dynamic>? ?? const {},
+      customProperties: json['customProperties'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$BHSPermissionTierInputImplToJson(
@@ -297,6 +319,7 @@ Map<String, dynamic> _$$BHSPermissionTierInputImplToJson(
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
+      'billingPeriod': instance.billingPeriod?.toJson(),
       'tierLevel': instance.tierLevel,
       'customProperties': instance.customProperties,
     };

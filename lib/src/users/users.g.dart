@@ -6,6 +6,65 @@ part of 'users.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$InviteLinkImpl _$$InviteLinkImplFromJson(Map<String, dynamic> json) =>
+    _$InviteLinkImpl(
+      id: json['id'] as String,
+      code: json['code'] as String,
+      sentTo: json['sentTo'] as String?,
+      sentAt: const TimestampOrNullConverter().fromJson(json['sentAt'] as num?),
+      expiresAt: const TimestampConverter().fromJson(json['expiresAt'] as num),
+      createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
+    );
+
+Map<String, dynamic> _$$InviteLinkImplToJson(_$InviteLinkImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'code': instance.code,
+      'sentTo': instance.sentTo,
+      'sentAt': const TimestampOrNullConverter().toJson(instance.sentAt),
+      'expiresAt': const TimestampConverter().toJson(instance.expiresAt),
+      'createdAt': const TimestampConverter().toJson(instance.createdAt),
+    };
+
+_$MfaInputImpl _$$MfaInputImplFromJson(Map<String, dynamic> json) =>
+    _$MfaInputImpl(
+      method: $enumDecodeNullable(_$MfaMethodEnumMap, json['method']),
+      token: json['token'] as String?,
+      isRequesting: json['isRequesting'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$$MfaInputImplToJson(_$MfaInputImpl instance) =>
+    <String, dynamic>{
+      'method': instance.method?.toJson(),
+      'token': instance.token,
+      'isRequesting': instance.isRequesting,
+    };
+
+const _$MfaMethodEnumMap = {
+  MfaMethod.totp: 'totp',
+  MfaMethod.hotp: 'hotp',
+  MfaMethod.passkey: 'passkey',
+  MfaMethod.backupCode: 'backupCode',
+};
+
+_$TenvioDestinationSetupImpl _$$TenvioDestinationSetupImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioDestinationSetupImpl(
+      address: json['address'] as String? ?? '',
+      latitude: (json['latitude'] as num?)?.toDouble(),
+      longitude: (json['longitude'] as num?)?.toDouble(),
+      addressIsPlusCode: json['addressIsPlusCode'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$$TenvioDestinationSetupImplToJson(
+        _$TenvioDestinationSetupImpl instance) =>
+    <String, dynamic>{
+      'address': instance.address,
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+      'addressIsPlusCode': instance.addressIsPlusCode,
+    };
+
 _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       id: json['id'] as String,
       name: json['name'] as String,
@@ -87,6 +146,8 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
           : BHSPermissionTier.fromJson(
               json['brickhousePermissionTier'] as Map<String, dynamic>),
       brickhousePermissionTierId: json['brickhousePermissionTierId'] as String?,
+      brickhouseRole: $enumDecodeNullable(
+          _$BrickhouseUserRoleEnumMap, json['brickhouseRole']),
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
@@ -131,7 +192,15 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'hwModelsAnimationsIds': instance.hwModelsAnimationsIds,
       'brickhousePermissionTier': instance.brickhousePermissionTier?.toJson(),
       'brickhousePermissionTierId': instance.brickhousePermissionTierId,
+      'brickhouseRole': instance.brickhouseRole?.toJson(),
     };
+
+const _$BrickhouseUserRoleEnumMap = {
+  BrickhouseUserRole.owner: 'OWNER',
+  BrickhouseUserRole.manager: 'MANAGER',
+  BrickhouseUserRole.viewer: 'VIEWER',
+  BrickhouseUserRole.unknown: 'UNKNOWN',
+};
 
 _$ProfileInputImpl _$$ProfileInputImplFromJson(Map<String, dynamic> json) =>
     _$ProfileInputImpl(
@@ -163,63 +232,4 @@ Map<String, dynamic> _$$PasswordInputImplToJson(_$PasswordInputImpl instance) =>
       'currentPassword': instance.currentPassword,
       'newPassword': instance.newPassword,
       'newPasswordConfirmation': instance.newPasswordConfirmation,
-    };
-
-_$MfaInputImpl _$$MfaInputImplFromJson(Map<String, dynamic> json) =>
-    _$MfaInputImpl(
-      method: $enumDecodeNullable(_$MfaMethodEnumMap, json['method']),
-      token: json['token'] as String?,
-      isRequesting: json['isRequesting'] as bool? ?? false,
-    );
-
-Map<String, dynamic> _$$MfaInputImplToJson(_$MfaInputImpl instance) =>
-    <String, dynamic>{
-      'method': instance.method?.toJson(),
-      'token': instance.token,
-      'isRequesting': instance.isRequesting,
-    };
-
-const _$MfaMethodEnumMap = {
-  MfaMethod.totp: 'totp',
-  MfaMethod.hotp: 'hotp',
-  MfaMethod.passkey: 'passkey',
-  MfaMethod.backupCode: 'backupCode',
-};
-
-_$InviteLinkImpl _$$InviteLinkImplFromJson(Map<String, dynamic> json) =>
-    _$InviteLinkImpl(
-      id: json['id'] as String,
-      code: json['code'] as String,
-      sentTo: json['sentTo'] as String?,
-      sentAt: const TimestampOrNullConverter().fromJson(json['sentAt'] as num?),
-      expiresAt: const TimestampConverter().fromJson(json['expiresAt'] as num),
-      createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
-    );
-
-Map<String, dynamic> _$$InviteLinkImplToJson(_$InviteLinkImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'code': instance.code,
-      'sentTo': instance.sentTo,
-      'sentAt': const TimestampOrNullConverter().toJson(instance.sentAt),
-      'expiresAt': const TimestampConverter().toJson(instance.expiresAt),
-      'createdAt': const TimestampConverter().toJson(instance.createdAt),
-    };
-
-_$TenvioDestinationSetupImpl _$$TenvioDestinationSetupImplFromJson(
-        Map<String, dynamic> json) =>
-    _$TenvioDestinationSetupImpl(
-      address: json['address'] as String? ?? '',
-      latitude: (json['latitude'] as num?)?.toDouble(),
-      longitude: (json['longitude'] as num?)?.toDouble(),
-      addressIsPlusCode: json['addressIsPlusCode'] as bool? ?? false,
-    );
-
-Map<String, dynamic> _$$TenvioDestinationSetupImplToJson(
-        _$TenvioDestinationSetupImpl instance) =>
-    <String, dynamic>{
-      'address': instance.address,
-      'latitude': instance.latitude,
-      'longitude': instance.longitude,
-      'addressIsPlusCode': instance.addressIsPlusCode,
     };

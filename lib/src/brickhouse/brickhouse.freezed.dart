@@ -27,7 +27,6 @@ mixin _$BrickhouseAlert {
   String get name => throw _privateConstructorUsedError;
 
   /// Type of the alert.
-  @BrickhouseAlertTypeConverter()
   BrickhouseAlertType get type => throw _privateConstructorUsedError;
 
   /// List of assets
@@ -87,7 +86,6 @@ mixin _$BrickhouseAlert {
   List<GeofencePoint>? get geofenceShape => throw _privateConstructorUsedError;
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @BrickhouseGeofenceTriggerOrNullConverter()
   BrickhouseGeofenceTrigger? get geofenceTrigger =>
       throw _privateConstructorUsedError;
 
@@ -116,7 +114,7 @@ abstract class $BrickhouseAlertCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
+      BrickhouseAlertType type,
       List<Asset>? assets,
       List<String>? assetsIds,
       List<String>? email,
@@ -134,7 +132,6 @@ abstract class $BrickhouseAlertCopyWith<$Res> {
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
-      @BrickhouseGeofenceTriggerOrNullConverter()
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
       bool? isMuted,
@@ -291,7 +288,7 @@ abstract class _$$BrickhouseAlertImplCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
+      BrickhouseAlertType type,
       List<Asset>? assets,
       List<String>? assetsIds,
       List<String>? email,
@@ -309,7 +306,6 @@ abstract class _$$BrickhouseAlertImplCopyWith<$Res>
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
-      @BrickhouseGeofenceTriggerOrNullConverter()
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
       bool? isMuted,
@@ -459,7 +455,7 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
   const _$BrickhouseAlertImpl(
       {required this.id,
       required this.name,
-      @BrickhouseAlertTypeConverter() required this.type,
+      required this.type,
       final List<Asset>? assets,
       final List<String>? assetsIds,
       final List<String>? email,
@@ -477,7 +473,7 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
       @GeofenceModeOrNullConverter() this.geofenceMode,
       this.geofenceRadius,
       final List<GeofencePoint>? geofenceShape,
-      @BrickhouseGeofenceTriggerOrNullConverter() this.geofenceTrigger,
+      this.geofenceTrigger,
       this.maxSpeedMaxValue,
       this.isMuted = false,
       this.speedingThreshold})
@@ -501,7 +497,6 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
 
   /// Type of the alert.
   @override
-  @BrickhouseAlertTypeConverter()
   final BrickhouseAlertType type;
 
   /// List of assets
@@ -633,7 +628,6 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   @override
-  @BrickhouseGeofenceTriggerOrNullConverter()
   final BrickhouseGeofenceTrigger? geofenceTrigger;
 
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
@@ -752,7 +746,7 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
   const factory _BrickhouseAlert(
       {required final String id,
       required final String name,
-      @BrickhouseAlertTypeConverter() required final BrickhouseAlertType type,
+      required final BrickhouseAlertType type,
       final List<Asset>? assets,
       final List<String>? assetsIds,
       final List<String>? email,
@@ -772,7 +766,6 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
       @GeofenceModeOrNullConverter() final GeofenceMode? geofenceMode,
       final double? geofenceRadius,
       final List<GeofencePoint>? geofenceShape,
-      @BrickhouseGeofenceTriggerOrNullConverter()
       final BrickhouseGeofenceTrigger? geofenceTrigger,
       final double? maxSpeedMaxValue,
       final bool? isMuted,
@@ -792,7 +785,6 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
   @override
 
   /// Type of the alert.
-  @BrickhouseAlertTypeConverter()
   BrickhouseAlertType get type;
   @override
 
@@ -870,7 +862,6 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
   @override
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @BrickhouseGeofenceTriggerOrNullConverter()
   BrickhouseGeofenceTrigger? get geofenceTrigger;
   @override
 
@@ -910,11 +901,9 @@ mixin _$BrickhouseAlertInput {
   set name(String value) => throw _privateConstructorUsedError;
 
   /// Type of the alert.
-  @BrickhouseAlertTypeConverter()
   BrickhouseAlertType get type => throw _privateConstructorUsedError;
 
   /// Type of the alert.
-  @BrickhouseAlertTypeConverter()
   set type(BrickhouseAlertType value) => throw _privateConstructorUsedError;
 
   /// List of assets IDs.
@@ -1027,12 +1016,10 @@ mixin _$BrickhouseAlertInput {
       throw _privateConstructorUsedError;
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @BrickhouseGeofenceTriggerOrNullConverter()
   BrickhouseGeofenceTrigger? get geofenceTrigger =>
       throw _privateConstructorUsedError;
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @BrickhouseGeofenceTriggerOrNullConverter()
   set geofenceTrigger(BrickhouseGeofenceTrigger? value) =>
       throw _privateConstructorUsedError;
 
@@ -1071,7 +1058,7 @@ abstract class $BrickhouseAlertInputCopyWith<$Res> {
   $Res call(
       {String? id,
       String name,
-      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
+      BrickhouseAlertType type,
       List<String> assetsIds,
       List<String>? email,
       List<NullablePhoneNumber?>? phone,
@@ -1088,7 +1075,6 @@ abstract class $BrickhouseAlertInputCopyWith<$Res> {
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
-      @BrickhouseGeofenceTriggerOrNullConverter()
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
       bool? isMuted,
@@ -1241,7 +1227,7 @@ abstract class _$$BrickhouseAlertInputImplCopyWith<$Res>
   $Res call(
       {String? id,
       String name,
-      @BrickhouseAlertTypeConverter() BrickhouseAlertType type,
+      BrickhouseAlertType type,
       List<String> assetsIds,
       List<String>? email,
       List<NullablePhoneNumber?>? phone,
@@ -1258,7 +1244,6 @@ abstract class _$$BrickhouseAlertInputImplCopyWith<$Res>
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
-      @BrickhouseGeofenceTriggerOrNullConverter()
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
       bool? isMuted,
@@ -1403,7 +1388,7 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
   _$BrickhouseAlertInputImpl(
       {this.id,
       required this.name,
-      @BrickhouseAlertTypeConverter() required this.type,
+      required this.type,
       required this.assetsIds,
       this.email = const [],
       this.phone = const [],
@@ -1428,7 +1413,6 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
       @GeofenceModeOrNullConverter() this.geofenceMode,
       this.geofenceRadius,
       this.geofenceShape = const [],
-      @BrickhouseGeofenceTriggerOrNullConverter()
       this.geofenceTrigger = BrickhouseGeofenceTrigger.both,
       this.maxSpeedMaxValue,
       this.isMuted = false,
@@ -1447,7 +1431,6 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
 
   /// Type of the alert.
   @override
-  @BrickhouseAlertTypeConverter()
   BrickhouseAlertType type;
 
   /// List of assets IDs.
@@ -1530,7 +1513,6 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   @override
   @JsonKey()
-  @BrickhouseGeofenceTriggerOrNullConverter()
   BrickhouseGeofenceTrigger? geofenceTrigger;
 
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
@@ -1573,7 +1555,7 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
   factory _BrickhouseAlertInput(
       {String? id,
       required String name,
-      @BrickhouseAlertTypeConverter() required BrickhouseAlertType type,
+      required BrickhouseAlertType type,
       required List<String> assetsIds,
       List<String>? email,
       List<NullablePhoneNumber?>? phone,
@@ -1590,7 +1572,6 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
       List<GeofencePoint>? geofenceShape,
-      @BrickhouseGeofenceTriggerOrNullConverter()
       BrickhouseGeofenceTrigger? geofenceTrigger,
       double? maxSpeedMaxValue,
       bool? isMuted,
@@ -1616,11 +1597,9 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
   @override
 
   /// Type of the alert.
-  @BrickhouseAlertTypeConverter()
   BrickhouseAlertType get type;
 
   /// Type of the alert.
-  @BrickhouseAlertTypeConverter()
   set type(BrickhouseAlertType value);
   @override
 
@@ -1747,11 +1726,9 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
   @override
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @BrickhouseGeofenceTriggerOrNullConverter()
   BrickhouseGeofenceTrigger? get geofenceTrigger;
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  @BrickhouseGeofenceTriggerOrNullConverter()
   set geofenceTrigger(BrickhouseGeofenceTrigger? value);
   @override
 
@@ -2463,8 +2440,10 @@ mixin _$BHSPermissionTier {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get tierLevel => throw _privateConstructorUsedError;
+  BrickhouseBillingPeriod? get billingPeriod =>
+      throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  Map<String, dynamic> get customProperties =>
+  Map<String, dynamic>? get customProperties =>
       throw _privateConstructorUsedError;
   List<User>? get users => throw _privateConstructorUsedError;
 
@@ -2487,8 +2466,9 @@ abstract class $BHSPermissionTierCopyWith<$Res> {
       {String id,
       String name,
       int tierLevel,
+      BrickhouseBillingPeriod? billingPeriod,
       String? description,
-      Map<String, dynamic> customProperties,
+      Map<String, dynamic>? customProperties,
       List<User>? users,
       List<Access>? access});
 }
@@ -2509,8 +2489,9 @@ class _$BHSPermissionTierCopyWithImpl<$Res, $Val extends BHSPermissionTier>
     Object? id = null,
     Object? name = null,
     Object? tierLevel = null,
+    Object? billingPeriod = freezed,
     Object? description = freezed,
-    Object? customProperties = null,
+    Object? customProperties = freezed,
     Object? users = freezed,
     Object? access = freezed,
   }) {
@@ -2527,14 +2508,18 @@ class _$BHSPermissionTierCopyWithImpl<$Res, $Val extends BHSPermissionTier>
           ? _value.tierLevel
           : tierLevel // ignore: cast_nullable_to_non_nullable
               as int,
+      billingPeriod: freezed == billingPeriod
+          ? _value.billingPeriod
+          : billingPeriod // ignore: cast_nullable_to_non_nullable
+              as BrickhouseBillingPeriod?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      customProperties: null == customProperties
+      customProperties: freezed == customProperties
           ? _value.customProperties
           : customProperties // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as Map<String, dynamic>?,
       users: freezed == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
@@ -2559,8 +2544,9 @@ abstract class _$$BHSPermissionTierImplCopyWith<$Res>
       {String id,
       String name,
       int tierLevel,
+      BrickhouseBillingPeriod? billingPeriod,
       String? description,
-      Map<String, dynamic> customProperties,
+      Map<String, dynamic>? customProperties,
       List<User>? users,
       List<Access>? access});
 }
@@ -2579,8 +2565,9 @@ class __$$BHSPermissionTierImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? tierLevel = null,
+    Object? billingPeriod = freezed,
     Object? description = freezed,
-    Object? customProperties = null,
+    Object? customProperties = freezed,
     Object? users = freezed,
     Object? access = freezed,
   }) {
@@ -2597,14 +2584,18 @@ class __$$BHSPermissionTierImplCopyWithImpl<$Res>
           ? _value.tierLevel
           : tierLevel // ignore: cast_nullable_to_non_nullable
               as int,
+      billingPeriod: freezed == billingPeriod
+          ? _value.billingPeriod
+          : billingPeriod // ignore: cast_nullable_to_non_nullable
+              as BrickhouseBillingPeriod?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      customProperties: null == customProperties
+      customProperties: freezed == customProperties
           ? _value._customProperties
           : customProperties // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as Map<String, dynamic>?,
       users: freezed == users
           ? _value._users
           : users // ignore: cast_nullable_to_non_nullable
@@ -2624,8 +2615,9 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
       {required this.id,
       required this.name,
       required this.tierLevel,
+      this.billingPeriod,
       this.description,
-      final Map<String, dynamic> customProperties = const {},
+      final Map<String, dynamic>? customProperties,
       final List<User>? users,
       final List<Access>? access})
       : _customProperties = customProperties,
@@ -2642,14 +2634,17 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
   @override
   final int tierLevel;
   @override
-  final String? description;
-  final Map<String, dynamic> _customProperties;
+  final BrickhouseBillingPeriod? billingPeriod;
   @override
-  @JsonKey()
-  Map<String, dynamic> get customProperties {
+  final String? description;
+  final Map<String, dynamic>? _customProperties;
+  @override
+  Map<String, dynamic>? get customProperties {
+    final value = _customProperties;
+    if (value == null) return null;
     if (_customProperties is EqualUnmodifiableMapView) return _customProperties;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_customProperties);
+    return EqualUnmodifiableMapView(value);
   }
 
   final List<User>? _users;
@@ -2677,7 +2672,7 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
 
   @override
   String toString() {
-    return 'BHSPermissionTier(id: $id, name: $name, tierLevel: $tierLevel, description: $description, customProperties: $customProperties, users: $users, access: $access)';
+    return 'BHSPermissionTier(id: $id, name: $name, tierLevel: $tierLevel, billingPeriod: $billingPeriod, description: $description, customProperties: $customProperties, users: $users, access: $access)';
   }
 
   @override
@@ -2689,6 +2684,8 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.tierLevel, tierLevel) ||
                 other.tierLevel == tierLevel) &&
+            (identical(other.billingPeriod, billingPeriod) ||
+                other.billingPeriod == billingPeriod) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             const DeepCollectionEquality()
@@ -2704,6 +2701,7 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
       id,
       name,
       tierLevel,
+      billingPeriod,
       description,
       const DeepCollectionEquality().hash(_customProperties),
       const DeepCollectionEquality().hash(_users),
@@ -2729,8 +2727,9 @@ abstract class _BHSPermissionTier implements BHSPermissionTier {
       {required final String id,
       required final String name,
       required final int tierLevel,
+      final BrickhouseBillingPeriod? billingPeriod,
       final String? description,
-      final Map<String, dynamic> customProperties,
+      final Map<String, dynamic>? customProperties,
       final List<User>? users,
       final List<Access>? access}) = _$BHSPermissionTierImpl;
 
@@ -2744,9 +2743,11 @@ abstract class _BHSPermissionTier implements BHSPermissionTier {
   @override
   int get tierLevel;
   @override
+  BrickhouseBillingPeriod? get billingPeriod;
+  @override
   String? get description;
   @override
-  Map<String, dynamic> get customProperties;
+  Map<String, dynamic>? get customProperties;
   @override
   List<User>? get users;
   @override
@@ -2772,11 +2773,15 @@ mixin _$BHSPermissionTierInput {
   set name(String? value) => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   set description(String? value) => throw _privateConstructorUsedError;
+  BrickhouseBillingPeriod? get billingPeriod =>
+      throw _privateConstructorUsedError;
+  set billingPeriod(BrickhouseBillingPeriod? value) =>
+      throw _privateConstructorUsedError;
   int get tierLevel => throw _privateConstructorUsedError;
   set tierLevel(int value) => throw _privateConstructorUsedError;
-  Map<String, dynamic> get customProperties =>
+  Map<String, dynamic>? get customProperties =>
       throw _privateConstructorUsedError;
-  set customProperties(Map<String, dynamic> value) =>
+  set customProperties(Map<String, dynamic>? value) =>
       throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2795,8 +2800,9 @@ abstract class $BHSPermissionTierInputCopyWith<$Res> {
       {String? id,
       String? name,
       String? description,
+      BrickhouseBillingPeriod? billingPeriod,
       int tierLevel,
-      Map<String, dynamic> customProperties});
+      Map<String, dynamic>? customProperties});
 }
 
 /// @nodoc
@@ -2816,8 +2822,9 @@ class _$BHSPermissionTierInputCopyWithImpl<$Res,
     Object? id = freezed,
     Object? name = freezed,
     Object? description = freezed,
+    Object? billingPeriod = freezed,
     Object? tierLevel = null,
-    Object? customProperties = null,
+    Object? customProperties = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -2832,14 +2839,18 @@ class _$BHSPermissionTierInputCopyWithImpl<$Res,
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      billingPeriod: freezed == billingPeriod
+          ? _value.billingPeriod
+          : billingPeriod // ignore: cast_nullable_to_non_nullable
+              as BrickhouseBillingPeriod?,
       tierLevel: null == tierLevel
           ? _value.tierLevel
           : tierLevel // ignore: cast_nullable_to_non_nullable
               as int,
-      customProperties: null == customProperties
+      customProperties: freezed == customProperties
           ? _value.customProperties
           : customProperties // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 }
@@ -2857,8 +2868,9 @@ abstract class _$$BHSPermissionTierInputImplCopyWith<$Res>
       {String? id,
       String? name,
       String? description,
+      BrickhouseBillingPeriod? billingPeriod,
       int tierLevel,
-      Map<String, dynamic> customProperties});
+      Map<String, dynamic>? customProperties});
 }
 
 /// @nodoc
@@ -2877,8 +2889,9 @@ class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? description = freezed,
+    Object? billingPeriod = freezed,
     Object? tierLevel = null,
-    Object? customProperties = null,
+    Object? customProperties = freezed,
   }) {
     return _then(_$BHSPermissionTierInputImpl(
       id: freezed == id
@@ -2893,14 +2906,18 @@ class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      billingPeriod: freezed == billingPeriod
+          ? _value.billingPeriod
+          : billingPeriod // ignore: cast_nullable_to_non_nullable
+              as BrickhouseBillingPeriod?,
       tierLevel: null == tierLevel
           ? _value.tierLevel
           : tierLevel // ignore: cast_nullable_to_non_nullable
               as int,
-      customProperties: null == customProperties
+      customProperties: freezed == customProperties
           ? _value.customProperties
           : customProperties // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -2912,8 +2929,9 @@ class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
       {this.id,
       this.name,
       this.description,
+      this.billingPeriod,
       this.tierLevel = 1,
-      this.customProperties = const {}});
+      this.customProperties});
 
   factory _$BHSPermissionTierInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$BHSPermissionTierInputImplFromJson(json);
@@ -2925,15 +2943,16 @@ class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
   @override
   String? description;
   @override
+  BrickhouseBillingPeriod? billingPeriod;
+  @override
   @JsonKey()
   int tierLevel;
   @override
-  @JsonKey()
-  Map<String, dynamic> customProperties;
+  Map<String, dynamic>? customProperties;
 
   @override
   String toString() {
-    return 'BHSPermissionTierInput(id: $id, name: $name, description: $description, tierLevel: $tierLevel, customProperties: $customProperties)';
+    return 'BHSPermissionTierInput(id: $id, name: $name, description: $description, billingPeriod: $billingPeriod, tierLevel: $tierLevel, customProperties: $customProperties)';
   }
 
   @JsonKey(ignore: true)
@@ -2956,8 +2975,9 @@ abstract class _BHSPermissionTierInput implements BHSPermissionTierInput {
       {String? id,
       String? name,
       String? description,
+      BrickhouseBillingPeriod? billingPeriod,
       int tierLevel,
-      Map<String, dynamic> customProperties}) = _$BHSPermissionTierInputImpl;
+      Map<String, dynamic>? customProperties}) = _$BHSPermissionTierInputImpl;
 
   factory _BHSPermissionTierInput.fromJson(Map<String, dynamic> json) =
       _$BHSPermissionTierInputImpl.fromJson;
@@ -2972,11 +2992,14 @@ abstract class _BHSPermissionTierInput implements BHSPermissionTierInput {
   String? get description;
   set description(String? value);
   @override
+  BrickhouseBillingPeriod? get billingPeriod;
+  set billingPeriod(BrickhouseBillingPeriod? value);
+  @override
   int get tierLevel;
   set tierLevel(int value);
   @override
-  Map<String, dynamic> get customProperties;
-  set customProperties(Map<String, dynamic> value);
+  Map<String, dynamic>? get customProperties;
+  set customProperties(Map<String, dynamic>? value);
   @override
   @JsonKey(ignore: true)
   _$$BHSPermissionTierInputImplCopyWith<_$BHSPermissionTierInputImpl>
