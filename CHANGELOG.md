@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.17
+
+- Added `sdmOperator` and `sdmGuest` on `ReferenceCategory` enum
+- Marked as deprecated `sdmAdmin` from `ReferenceCategory` enum
+
 ## 3.3.16
 
 - Moved `Reference` model and `ReferenceCategory` to a submodule

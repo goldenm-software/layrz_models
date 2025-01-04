@@ -399,6 +399,7 @@ enum ReferenceCategory {
   /// Defines the user as a admin on SDM ecosystem
   /// Layrz API Reference: SDM_ADMIN
   @JsonValue('SDM_ADMIN')
+  @Deprecated('Will be removed in future versions, use sdmSupervisor instead')
   sdmAdmin,
 
   /// !SDM Reference
@@ -406,6 +407,18 @@ enum ReferenceCategory {
   /// Layrz API Reference: SDM_SUPERVISOR
   @JsonValue('SDM_SUPERVISOR')
   sdmSupervisor,
+
+  /// !SDM Reference
+  /// Defines the user as a operator on SDM ecosystem
+  /// Layrz API Reference: SDM_OPERATOR
+  @JsonValue('SDM_OPERATOR')
+  sdmOperator,
+
+  /// !SDM Reference
+  /// Defines the user as a guest on SDM ecosystem
+  /// Layrz API Reference: SDM_GUEST
+  @JsonValue('SDM_GUEST')
+  sdmGuest,
 
   /// Defines a value that is not known or not applicable.
   /// Layrz API Reference: UNKNOWN
