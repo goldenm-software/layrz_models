@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.18
+
+- Added `UserInput` model
+
 ## 3.3.17
 
 - Added `sdmOperator` and `sdmGuest` on `ReferenceCategory` enum
