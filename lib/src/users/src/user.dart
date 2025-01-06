@@ -182,6 +182,9 @@ class UserInput with _$UserInput {
 
     /// [sdmCode] represents the SDM code.
     String? sdmCode,
+
+    /// [password] default password if allowed by the form
+    String? password,
   }) = _UserInput;
 
   factory UserInput.fromJson(Map<String, dynamic> json) => _$UserInputFromJson(json);

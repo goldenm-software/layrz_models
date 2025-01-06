@@ -213,7 +213,8 @@ class BrickhouseAlert with _$BrickhouseAlert {
     List<GeofencePoint>? geofenceShape,
 
     /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-    BrickhouseGeofenceTrigger? geofenceTrigger,
+    ///
+    @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown) BrickhouseGeofenceTrigger? geofenceTrigger,
 
     /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
     double? maxSpeedMaxValue,
@@ -368,7 +369,9 @@ class BrickhouseAlertInput with _$BrickhouseAlertInput {
     @Default([]) List<GeofencePoint>? geofenceShape,
 
     /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-    @Default(BrickhouseGeofenceTrigger.both) BrickhouseGeofenceTrigger? geofenceTrigger,
+    @Default(BrickhouseGeofenceTrigger.both)
+    @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
+    BrickhouseGeofenceTrigger? geofenceTrigger,
 
     /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
     double? maxSpeedMaxValue,

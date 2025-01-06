@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.19
+
+- Added optional `password` field to `UserInput` model
+
 ## 3.3.18
 
 - Added `UserInput` model

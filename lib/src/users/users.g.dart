@@ -238,6 +238,7 @@ _$UserInputImpl _$$UserInputImplFromJson(Map<String, dynamic> json) =>
           _$BrickhouseUserRoleEnumMap, json['brickhouseRole'],
           unknownValue: BrickhouseUserRole.unknown),
       sdmCode: json['sdmCode'] as String?,
+      password: json['password'] as String?,
     );
 
 Map<String, dynamic> _$$UserInputImplToJson(_$UserInputImpl instance) =>
@@ -256,6 +257,7 @@ Map<String, dynamic> _$$UserInputImplToJson(_$UserInputImpl instance) =>
       'brickhousePermissionTierId': instance.brickhousePermissionTierId,
       'brickhouseRole': instance.brickhouseRole?.toJson(),
       'sdmCode': instance.sdmCode,
+      'password': instance.password,
     };
 
 _$PasswordInputImpl _$$PasswordInputImplFromJson(Map<String, dynamic> json) =>
