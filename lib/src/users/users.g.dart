@@ -6,6 +6,37 @@ part of 'users.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+_$BHSUserInputImpl _$$BHSUserInputImplFromJson(Map<String, dynamic> json) =>
+    _$BHSUserInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      email: json['email'] as String? ?? '',
+      username: json['username'] as String? ?? '',
+      brickhousePermissionTierId: json['brickhousePermissionTierId'] as String?,
+      brickhouseRole: $enumDecodeNullable(
+          _$BrickhouseUserRoleEnumMap, json['brickhouseRole'],
+          unknownValue: BrickhouseUserRole.unknown),
+      password: json['password'] as String?,
+    );
+
+Map<String, dynamic> _$$BHSUserInputImplToJson(_$BHSUserInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'email': instance.email,
+      'username': instance.username,
+      'brickhousePermissionTierId': instance.brickhousePermissionTierId,
+      'brickhouseRole': instance.brickhouseRole?.toJson(),
+      'password': instance.password,
+    };
+
+const _$BrickhouseUserRoleEnumMap = {
+  BrickhouseUserRole.owner: 'OWNER',
+  BrickhouseUserRole.manager: 'MANAGER',
+  BrickhouseUserRole.viewer: 'VIEWER',
+  BrickhouseUserRole.unknown: 'UNKNOWN',
+};
+
 _$InviteLinkImpl _$$InviteLinkImplFromJson(Map<String, dynamic> json) =>
     _$InviteLinkImpl(
       id: json['id'] as String,
@@ -46,6 +77,38 @@ const _$MfaMethodEnumMap = {
   MfaMethod.passkey: 'passkey',
   MfaMethod.backupCode: 'backupCode',
 };
+
+_$PasswordInputImpl _$$PasswordInputImplFromJson(Map<String, dynamic> json) =>
+    _$PasswordInputImpl(
+      currentPassword: json['currentPassword'] as String? ?? '',
+      newPassword: json['newPassword'] as String? ?? '',
+      newPasswordConfirmation: json['newPasswordConfirmation'] as String? ?? '',
+    );
+
+Map<String, dynamic> _$$PasswordInputImplToJson(_$PasswordInputImpl instance) =>
+    <String, dynamic>{
+      'currentPassword': instance.currentPassword,
+      'newPassword': instance.newPassword,
+      'newPasswordConfirmation': instance.newPasswordConfirmation,
+    };
+
+_$ProfileInputImpl _$$ProfileInputImplFromJson(Map<String, dynamic> json) =>
+    _$ProfileInputImpl(
+      name: json['name'] as String? ?? '',
+      email: json['email'] as String? ?? '',
+      username: json['username'] as String? ?? '',
+      dynamicAvatar: json['dynamicAvatar'] == null
+          ? null
+          : AvatarInput.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$ProfileInputImplToJson(_$ProfileInputImpl instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'email': instance.email,
+      'username': instance.username,
+      'dynamicAvatar': instance.dynamicAvatar?.toJson(),
+    };
 
 _$TenvioDestinationSetupImpl _$$TenvioDestinationSetupImplFromJson(
         Map<String, dynamic> json) =>
@@ -198,13 +261,6 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'sdmCode': instance.sdmCode,
     };
 
-const _$BrickhouseUserRoleEnumMap = {
-  BrickhouseUserRole.owner: 'OWNER',
-  BrickhouseUserRole.manager: 'MANAGER',
-  BrickhouseUserRole.viewer: 'VIEWER',
-  BrickhouseUserRole.unknown: 'UNKNOWN',
-};
-
 _$UserInputImpl _$$UserInputImplFromJson(Map<String, dynamic> json) =>
     _$UserInputImpl(
       id: json['id'] as String?,
@@ -258,36 +314,4 @@ Map<String, dynamic> _$$UserInputImplToJson(_$UserInputImpl instance) =>
       'brickhouseRole': instance.brickhouseRole?.toJson(),
       'sdmCode': instance.sdmCode,
       'password': instance.password,
-    };
-
-_$PasswordInputImpl _$$PasswordInputImplFromJson(Map<String, dynamic> json) =>
-    _$PasswordInputImpl(
-      currentPassword: json['currentPassword'] as String? ?? '',
-      newPassword: json['newPassword'] as String? ?? '',
-      newPasswordConfirmation: json['newPasswordConfirmation'] as String? ?? '',
-    );
-
-Map<String, dynamic> _$$PasswordInputImplToJson(_$PasswordInputImpl instance) =>
-    <String, dynamic>{
-      'currentPassword': instance.currentPassword,
-      'newPassword': instance.newPassword,
-      'newPasswordConfirmation': instance.newPasswordConfirmation,
-    };
-
-_$ProfileInputImpl _$$ProfileInputImplFromJson(Map<String, dynamic> json) =>
-    _$ProfileInputImpl(
-      name: json['name'] as String? ?? '',
-      email: json['email'] as String? ?? '',
-      username: json['username'] as String? ?? '',
-      dynamicAvatar: json['dynamicAvatar'] == null
-          ? null
-          : AvatarInput.fromJson(json['dynamicAvatar'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$ProfileInputImplToJson(_$ProfileInputImpl instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'email': instance.email,
-      'username': instance.username,
-      'dynamicAvatar': instance.dynamicAvatar?.toJson(),
     };
