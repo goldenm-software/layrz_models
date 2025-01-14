@@ -75,6 +75,12 @@ class AtsEntry with _$AtsEntry {
 
     /// `fuelAnp` is the fuel anp of the entry.
     String? fuelAnp,
+
+    /// `height` represent a sensor height of the tank.
+    double? height,
+
+    /// `initialHeight` represent a sensor height of the tank.
+    double? initialHeight,
   }) = _AtsEntry;
 
   /// fromJson creates a new `AtsEntry` from a JSON object.
