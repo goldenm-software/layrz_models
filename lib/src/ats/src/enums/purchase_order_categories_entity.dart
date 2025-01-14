@@ -1,14 +1,23 @@
 part of '../../ats.dart';
 
 enum AtsPurchaseOrderCategoriesEntity {
+  // Fuel puchase from Terminal to Reseller (5652 / 6652)
   pickup,
+  // Fuel puchase from Terminal to Supplier (5653 / 6653)
   pickupToSupplier,
+  // Fuel transfer between terminals in the same company (5659 / 6659)
   transfer,
+  // Fuel delivery to supplier (5656 / 6656)
   deliveryToSupplier,
+  // Fuel delivery to reseller (5655 / 6655)
   deliveryToReseller,
+  // For sale outside (5904)
   forSaleOutside,
+  // Fuel delivery to storage (5663 / 6663)
   deliveryToStorage,
+  // Return of fuel from storage (5664 / 6664)
   returnFromStorage,
+  // Not defined
   notDefined;
 
   String toJson() {

@@ -11378,6 +11378,12 @@ mixin _$AtsEntry {
   /// `fuelAnp` is the fuel anp of the entry.
   String? get fuelAnp => throw _privateConstructorUsedError;
 
+  /// `height` represent a sensor height of the tank.
+  double? get height => throw _privateConstructorUsedError;
+
+  /// `initialHeight` represent a sensor height of the tank.
+  double? get initialHeight => throw _privateConstructorUsedError;
+
   /// Serializes this AtsEntry to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -11418,7 +11424,9 @@ abstract class $AtsEntryCopyWith<$Res> {
       double? waterLevel,
       double? initialWaterLevel,
       List<AtsVolume> volumeHistory,
-      String? fuelAnp});
+      String? fuelAnp,
+      double? height,
+      double? initialHeight});
 
   $AssetCopyWith<$Res>? get asset;
   $AtsReceptionCopyWith<$Res>? get reception;
@@ -11460,6 +11468,8 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
     Object? initialWaterLevel = freezed,
     Object? volumeHistory = null,
     Object? fuelAnp = freezed,
+    Object? height = freezed,
+    Object? initialHeight = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -11546,6 +11556,14 @@ class _$AtsEntryCopyWithImpl<$Res, $Val extends AtsEntry>
           ? _value.fuelAnp
           : fuelAnp // ignore: cast_nullable_to_non_nullable
               as String?,
+      height: freezed == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialHeight: freezed == initialHeight
+          ? _value.initialHeight
+          : initialHeight // ignore: cast_nullable_to_non_nullable
+              as double?,
     ) as $Val);
   }
 
@@ -11611,7 +11629,9 @@ abstract class _$$AtsEntryImplCopyWith<$Res>
       double? waterLevel,
       double? initialWaterLevel,
       List<AtsVolume> volumeHistory,
-      String? fuelAnp});
+      String? fuelAnp,
+      double? height,
+      double? initialHeight});
 
   @override
   $AssetCopyWith<$Res>? get asset;
@@ -11653,6 +11673,8 @@ class __$$AtsEntryImplCopyWithImpl<$Res>
     Object? initialWaterLevel = freezed,
     Object? volumeHistory = null,
     Object? fuelAnp = freezed,
+    Object? height = freezed,
+    Object? initialHeight = freezed,
   }) {
     return _then(_$AtsEntryImpl(
       id: null == id
@@ -11739,6 +11761,14 @@ class __$$AtsEntryImplCopyWithImpl<$Res>
           ? _value.fuelAnp
           : fuelAnp // ignore: cast_nullable_to_non_nullable
               as String?,
+      height: freezed == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialHeight: freezed == initialHeight
+          ? _value.initialHeight
+          : initialHeight // ignore: cast_nullable_to_non_nullable
+              as double?,
     ));
   }
 }
@@ -11771,7 +11801,9 @@ class _$AtsEntryImpl implements _AtsEntry {
       this.waterLevel,
       this.initialWaterLevel,
       final List<AtsVolume> volumeHistory = const [],
-      this.fuelAnp})
+      this.fuelAnp,
+      this.height,
+      this.initialHeight})
       : _receptions = receptions,
         _volumeHistory = volumeHistory;
 
@@ -11885,9 +11917,17 @@ class _$AtsEntryImpl implements _AtsEntry {
   @override
   final String? fuelAnp;
 
+  /// `height` represent a sensor height of the tank.
+  @override
+  final double? height;
+
+  /// `initialHeight` represent a sensor height of the tank.
+  @override
+  final double? initialHeight;
+
   @override
   String toString() {
-    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, fuelSubtype: $fuelSubtype, temperature: $temperature, initialTemperature: $initialTemperature, density: $density, initialDensity: $initialDensity, waterLevel: $waterLevel, initialWaterLevel: $initialWaterLevel, volumeHistory: $volumeHistory, fuelAnp: $fuelAnp)';
+    return 'AtsEntry(id: $id, assetId: $assetId, asset: $asset, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, startAt: $startAt, endAt: $endAt, errorPercent: $errorPercent, reception: $reception, receptions: $receptions, isLinked: $isLinked, fuelType: $fuelType, fuelSubtype: $fuelSubtype, temperature: $temperature, initialTemperature: $initialTemperature, density: $density, initialDensity: $initialDensity, waterLevel: $waterLevel, initialWaterLevel: $initialWaterLevel, volumeHistory: $volumeHistory, fuelAnp: $fuelAnp, height: $height, initialHeight: $initialHeight)';
   }
 
   @override
@@ -11929,7 +11969,10 @@ class _$AtsEntryImpl implements _AtsEntry {
                 other.initialWaterLevel == initialWaterLevel) &&
             const DeepCollectionEquality()
                 .equals(other._volumeHistory, _volumeHistory) &&
-            (identical(other.fuelAnp, fuelAnp) || other.fuelAnp == fuelAnp));
+            (identical(other.fuelAnp, fuelAnp) || other.fuelAnp == fuelAnp) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.initialHeight, initialHeight) ||
+                other.initialHeight == initialHeight));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -11956,7 +11999,9 @@ class _$AtsEntryImpl implements _AtsEntry {
         waterLevel,
         initialWaterLevel,
         const DeepCollectionEquality().hash(_volumeHistory),
-        fuelAnp
+        fuelAnp,
+        height,
+        initialHeight
       ]);
 
   /// Create a copy of AtsEntry
@@ -12001,7 +12046,9 @@ abstract class _AtsEntry implements AtsEntry {
       final double? waterLevel,
       final double? initialWaterLevel,
       final List<AtsVolume> volumeHistory,
-      final String? fuelAnp}) = _$AtsEntryImpl;
+      final String? fuelAnp,
+      final double? height,
+      final double? initialHeight}) = _$AtsEntryImpl;
 
   factory _AtsEntry.fromJson(Map<String, dynamic> json) =
       _$AtsEntryImpl.fromJson;
@@ -12095,6 +12142,14 @@ abstract class _AtsEntry implements AtsEntry {
   /// `fuelAnp` is the fuel anp of the entry.
   @override
   String? get fuelAnp;
+
+  /// `height` represent a sensor height of the tank.
+  @override
+  double? get height;
+
+  /// `initialHeight` represent a sensor height of the tank.
+  @override
+  double? get initialHeight;
 
   /// Create a copy of AtsEntry
   /// with the given fields replaced by the non-null parameter values.

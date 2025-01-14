@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.22
+- Document `AtsPurchaseOrderCategoriesEntity`
+- `height` and `initialHeight` was added in `AtsEntry`
+
 ## 3.3.21
 
 - Modified things on `BleDevice` to works with `layrz_ble` plugin.
