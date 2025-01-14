@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.3.21
+
+- Modified things on `BleDevice` to works with `layrz_ble` plugin.
+
+## 3.3.20
+
+- Missing definition
+
 ## 3.3.19
 
 - Added optional `password` field to `UserInput` model

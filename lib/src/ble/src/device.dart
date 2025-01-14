@@ -19,9 +19,18 @@ class BleDevice with _$BleDevice {
     /// Can be null if the device does not have a signal strength due to a platform limitation.
     int? rssi,
 
-    /// [advertisementData] is the advertisement data of the BLE device.
-    /// Can be null if the device does not have advertisement data or is not broadcasted.
-    List<int>? advertisementData,
+    /// [manufacturerData] is the manufacturer data of the BLE device.
+    /// Can be null if the device does not have manufacturer data or is not broadcasted.
+    List<int>? manufacturerData,
+
+    /// [serviceData] is the service data of the BLE device.
+    /// Can be null if the device does not have service data or is not broadcasted.
+    /// Also, this list will be ordered by the service UUID.
+    List<int>? serviceData,
+
+    /// [servicesIdentifiers] is the list of services identifiers of the BLE device.
+    /// Can be null if the device does not have services identifiers or is not broadcasted.
+    List<List<int>>? servicesIdentifiers,
   }) = _BleDevice;
 
   factory BleDevice.fromJson(Map<String, dynamic> json) => _$BleDeviceFromJson(json);
