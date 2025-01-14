@@ -2,6 +2,8 @@ part of '../users.dart';
 
 @freezed
 class User with _$User {
+  const User._();
+
   const factory User({
     /// [id] represents the user ID.
     required String id,
@@ -123,31 +125,67 @@ class User with _$User {
     String? brickhousePermissionTierId,
 
     /// [brickhouseRole] represents the Brickhouse user role.
-    BrickhouseUserRole? brickhouseRole,
+    @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole,
+
+    /// [sdmCode] represents the SDM code.
+    String? sdmCode,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 }
 
 @unfreezed
-class ProfileInput with _$ProfileInput {
-  factory ProfileInput({
+class UserInput with _$UserInput {
+  const UserInput._();
+
+  factory UserInput({
+    /// [id] represents the user ID. When is new, this value should be null.
+    String? id,
+
+    /// [name] represents the user name.
     @Default('') String name,
+
+    /// [email] represents the user email.
     @Default('') String email,
+
+    /// [username] represents the username.
     @Default('') String username,
+
+    /// [dynamicAvatar] represents the user avatar.
     AvatarInput? dynamicAvatar,
-  }) = _ProfileInput;
 
-  factory ProfileInput.fromJson(Map<String, dynamic> json) => _$ProfileInputFromJson(json);
-}
+    /// [referencesIds] represents the list of references IDs.
+    @Default([]) List<String> referencesIds,
 
-@unfreezed
-class PasswordInput with _$PasswordInput {
-  factory PasswordInput({
-    @Default('') String currentPassword,
-    @Default('') String newPassword,
-    @Default('') String newPasswordConfirmation,
-  }) = _PasswordInput;
+    /// [categoryId] represents the user category ID.
+    String? categoryId,
 
-  factory PasswordInput.fromJson(Map<String, dynamic> json) => _$PasswordInputFromJson(json);
+    /// [customFields] represents the list of custom fields.
+    @Default([]) List<CustomField> customFields,
+
+    /// [tagsIds] represents the list of tags IDs.
+    @Default([]) List<String> tagsIds,
+
+    /// [mappitAssetsIds] represents the list of assets IDs.
+    /// This field is only for `Mappit` use.
+    @Default([]) List<String> mappitAssetsIds,
+
+    /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
+    /// This field is only for `Mappit` use.
+    @Default(1) int historicalDaysAllowed,
+
+    /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+    String? brickhousePermissionTierId,
+
+    /// [brickhouseRole] represents the Brickhouse user role.
+    @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole,
+
+    /// [sdmCode] represents the SDM code.
+    String? sdmCode,
+
+    /// [password] default password if allowed by the form
+    String? password,
+  }) = _UserInput;
+
+  factory UserInput.fromJson(Map<String, dynamic> json) => _$UserInputFromJson(json);
 }

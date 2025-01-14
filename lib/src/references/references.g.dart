@@ -104,6 +104,8 @@ const _$ReferenceCategoryEnumMap = {
   ReferenceCategory.tenvioAdmin: 'TENVIO_ADMIN',
   ReferenceCategory.sdmAdmin: 'SDM_ADMIN',
   ReferenceCategory.sdmSupervisor: 'SDM_SUPERVISOR',
+  ReferenceCategory.sdmOperator: 'SDM_OPERATOR',
+  ReferenceCategory.sdmGuest: 'SDM_GUEST',
   ReferenceCategory.unknown: 'UNKNOWN',
 };
 

@@ -33,9 +33,19 @@ mixin _$BleDevice {
   /// Can be null if the device does not have a signal strength due to a platform limitation.
   int? get rssi => throw _privateConstructorUsedError;
 
-  /// [advertisementData] is the advertisement data of the BLE device.
-  /// Can be null if the device does not have advertisement data or is not broadcasted.
-  List<int>? get advertisementData => throw _privateConstructorUsedError;
+  /// [manufacturerData] is the manufacturer data of the BLE device.
+  /// Can be null if the device does not have manufacturer data or is not broadcasted.
+  List<int>? get manufacturerData => throw _privateConstructorUsedError;
+
+  /// [serviceData] is the service data of the BLE device.
+  /// Can be null if the device does not have service data or is not broadcasted.
+  /// Also, this list will be ordered by the service UUID.
+  List<int>? get serviceData => throw _privateConstructorUsedError;
+
+  /// [servicesIdentifiers] is the list of services identifiers of the BLE device.
+  /// Can be null if the device does not have services identifiers or is not broadcasted.
+  List<List<int>>? get servicesIdentifiers =>
+      throw _privateConstructorUsedError;
 
   /// Serializes this BleDevice to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -56,7 +66,9 @@ abstract class $BleDeviceCopyWith<$Res> {
       {String macAddress,
       String? name,
       int? rssi,
-      List<int>? advertisementData});
+      List<int>? manufacturerData,
+      List<int>? serviceData,
+      List<List<int>>? servicesIdentifiers});
 }
 
 /// @nodoc
@@ -77,7 +89,9 @@ class _$BleDeviceCopyWithImpl<$Res, $Val extends BleDevice>
     Object? macAddress = null,
     Object? name = freezed,
     Object? rssi = freezed,
-    Object? advertisementData = freezed,
+    Object? manufacturerData = freezed,
+    Object? serviceData = freezed,
+    Object? servicesIdentifiers = freezed,
   }) {
     return _then(_value.copyWith(
       macAddress: null == macAddress
@@ -92,10 +106,18 @@ class _$BleDeviceCopyWithImpl<$Res, $Val extends BleDevice>
           ? _value.rssi
           : rssi // ignore: cast_nullable_to_non_nullable
               as int?,
-      advertisementData: freezed == advertisementData
-          ? _value.advertisementData
-          : advertisementData // ignore: cast_nullable_to_non_nullable
+      manufacturerData: freezed == manufacturerData
+          ? _value.manufacturerData
+          : manufacturerData // ignore: cast_nullable_to_non_nullable
               as List<int>?,
+      serviceData: freezed == serviceData
+          ? _value.serviceData
+          : serviceData // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
+      servicesIdentifiers: freezed == servicesIdentifiers
+          ? _value.servicesIdentifiers
+          : servicesIdentifiers // ignore: cast_nullable_to_non_nullable
+              as List<List<int>>?,
     ) as $Val);
   }
 }
@@ -112,7 +134,9 @@ abstract class _$$BleDeviceImplCopyWith<$Res>
       {String macAddress,
       String? name,
       int? rssi,
-      List<int>? advertisementData});
+      List<int>? manufacturerData,
+      List<int>? serviceData,
+      List<List<int>>? servicesIdentifiers});
 }
 
 /// @nodoc
@@ -131,7 +155,9 @@ class __$$BleDeviceImplCopyWithImpl<$Res>
     Object? macAddress = null,
     Object? name = freezed,
     Object? rssi = freezed,
-    Object? advertisementData = freezed,
+    Object? manufacturerData = freezed,
+    Object? serviceData = freezed,
+    Object? servicesIdentifiers = freezed,
   }) {
     return _then(_$BleDeviceImpl(
       macAddress: null == macAddress
@@ -146,10 +172,18 @@ class __$$BleDeviceImplCopyWithImpl<$Res>
           ? _value.rssi
           : rssi // ignore: cast_nullable_to_non_nullable
               as int?,
-      advertisementData: freezed == advertisementData
-          ? _value._advertisementData
-          : advertisementData // ignore: cast_nullable_to_non_nullable
+      manufacturerData: freezed == manufacturerData
+          ? _value._manufacturerData
+          : manufacturerData // ignore: cast_nullable_to_non_nullable
               as List<int>?,
+      serviceData: freezed == serviceData
+          ? _value._serviceData
+          : serviceData // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
+      servicesIdentifiers: freezed == servicesIdentifiers
+          ? _value._servicesIdentifiers
+          : servicesIdentifiers // ignore: cast_nullable_to_non_nullable
+              as List<List<int>>?,
     ));
   }
 }
@@ -161,8 +195,12 @@ class _$BleDeviceImpl extends _BleDevice {
       {required this.macAddress,
       this.name,
       this.rssi,
-      final List<int>? advertisementData})
-      : _advertisementData = advertisementData,
+      final List<int>? manufacturerData,
+      final List<int>? serviceData,
+      final List<List<int>>? servicesIdentifiers})
+      : _manufacturerData = manufacturerData,
+        _serviceData = serviceData,
+        _servicesIdentifiers = servicesIdentifiers,
         super._();
 
   factory _$BleDeviceImpl.fromJson(Map<String, dynamic> json) =>
@@ -184,25 +222,58 @@ class _$BleDeviceImpl extends _BleDevice {
   @override
   final int? rssi;
 
-  /// [advertisementData] is the advertisement data of the BLE device.
-  /// Can be null if the device does not have advertisement data or is not broadcasted.
-  final List<int>? _advertisementData;
+  /// [manufacturerData] is the manufacturer data of the BLE device.
+  /// Can be null if the device does not have manufacturer data or is not broadcasted.
+  final List<int>? _manufacturerData;
 
-  /// [advertisementData] is the advertisement data of the BLE device.
-  /// Can be null if the device does not have advertisement data or is not broadcasted.
+  /// [manufacturerData] is the manufacturer data of the BLE device.
+  /// Can be null if the device does not have manufacturer data or is not broadcasted.
   @override
-  List<int>? get advertisementData {
-    final value = _advertisementData;
+  List<int>? get manufacturerData {
+    final value = _manufacturerData;
     if (value == null) return null;
-    if (_advertisementData is EqualUnmodifiableListView)
-      return _advertisementData;
+    if (_manufacturerData is EqualUnmodifiableListView)
+      return _manufacturerData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [serviceData] is the service data of the BLE device.
+  /// Can be null if the device does not have service data or is not broadcasted.
+  /// Also, this list will be ordered by the service UUID.
+  final List<int>? _serviceData;
+
+  /// [serviceData] is the service data of the BLE device.
+  /// Can be null if the device does not have service data or is not broadcasted.
+  /// Also, this list will be ordered by the service UUID.
+  @override
+  List<int>? get serviceData {
+    final value = _serviceData;
+    if (value == null) return null;
+    if (_serviceData is EqualUnmodifiableListView) return _serviceData;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// [servicesIdentifiers] is the list of services identifiers of the BLE device.
+  /// Can be null if the device does not have services identifiers or is not broadcasted.
+  final List<List<int>>? _servicesIdentifiers;
+
+  /// [servicesIdentifiers] is the list of services identifiers of the BLE device.
+  /// Can be null if the device does not have services identifiers or is not broadcasted.
+  @override
+  List<List<int>>? get servicesIdentifiers {
+    final value = _servicesIdentifiers;
+    if (value == null) return null;
+    if (_servicesIdentifiers is EqualUnmodifiableListView)
+      return _servicesIdentifiers;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(value);
   }
 
   @override
   String toString() {
-    return 'BleDevice(macAddress: $macAddress, name: $name, rssi: $rssi, advertisementData: $advertisementData)';
+    return 'BleDevice(macAddress: $macAddress, name: $name, rssi: $rssi, manufacturerData: $manufacturerData, serviceData: $serviceData, servicesIdentifiers: $servicesIdentifiers)';
   }
 
   @override
@@ -215,13 +286,23 @@ class _$BleDeviceImpl extends _BleDevice {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.rssi, rssi) || other.rssi == rssi) &&
             const DeepCollectionEquality()
-                .equals(other._advertisementData, _advertisementData));
+                .equals(other._manufacturerData, _manufacturerData) &&
+            const DeepCollectionEquality()
+                .equals(other._serviceData, _serviceData) &&
+            const DeepCollectionEquality()
+                .equals(other._servicesIdentifiers, _servicesIdentifiers));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, macAddress, name, rssi,
-      const DeepCollectionEquality().hash(_advertisementData));
+  int get hashCode => Object.hash(
+      runtimeType,
+      macAddress,
+      name,
+      rssi,
+      const DeepCollectionEquality().hash(_manufacturerData),
+      const DeepCollectionEquality().hash(_serviceData),
+      const DeepCollectionEquality().hash(_servicesIdentifiers));
 
   /// Create a copy of BleDevice
   /// with the given fields replaced by the non-null parameter values.
@@ -244,7 +325,9 @@ abstract class _BleDevice extends BleDevice {
       {required final String macAddress,
       final String? name,
       final int? rssi,
-      final List<int>? advertisementData}) = _$BleDeviceImpl;
+      final List<int>? manufacturerData,
+      final List<int>? serviceData,
+      final List<List<int>>? servicesIdentifiers}) = _$BleDeviceImpl;
   const _BleDevice._() : super._();
 
   factory _BleDevice.fromJson(Map<String, dynamic> json) =
@@ -266,10 +349,21 @@ abstract class _BleDevice extends BleDevice {
   @override
   int? get rssi;
 
-  /// [advertisementData] is the advertisement data of the BLE device.
-  /// Can be null if the device does not have advertisement data or is not broadcasted.
+  /// [manufacturerData] is the manufacturer data of the BLE device.
+  /// Can be null if the device does not have manufacturer data or is not broadcasted.
   @override
-  List<int>? get advertisementData;
+  List<int>? get manufacturerData;
+
+  /// [serviceData] is the service data of the BLE device.
+  /// Can be null if the device does not have service data or is not broadcasted.
+  /// Also, this list will be ordered by the service UUID.
+  @override
+  List<int>? get serviceData;
+
+  /// [servicesIdentifiers] is the list of services identifiers of the BLE device.
+  /// Can be null if the device does not have services identifiers or is not broadcasted.
+  @override
+  List<List<int>>? get servicesIdentifiers;
 
   /// Create a copy of BleDevice
   /// with the given fields replaced by the non-null parameter values.

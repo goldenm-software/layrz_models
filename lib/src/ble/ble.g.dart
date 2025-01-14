@@ -11,8 +11,15 @@ _$BleDeviceImpl _$$BleDeviceImplFromJson(Map<String, dynamic> json) =>
       macAddress: json['macAddress'] as String,
       name: json['name'] as String?,
       rssi: (json['rssi'] as num?)?.toInt(),
-      advertisementData: (json['advertisementData'] as List<dynamic>?)
+      manufacturerData: (json['manufacturerData'] as List<dynamic>?)
           ?.map((e) => (e as num).toInt())
+          .toList(),
+      serviceData: (json['serviceData'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+      servicesIdentifiers: (json['servicesIdentifiers'] as List<dynamic>?)
+          ?.map((e) =>
+              (e as List<dynamic>).map((e) => (e as num).toInt()).toList())
           .toList(),
     );
 
@@ -21,7 +28,9 @@ Map<String, dynamic> _$$BleDeviceImplToJson(_$BleDeviceImpl instance) =>
       'macAddress': instance.macAddress,
       'name': instance.name,
       'rssi': instance.rssi,
-      'advertisementData': instance.advertisementData,
+      'manufacturerData': instance.manufacturerData,
+      'serviceData': instance.serviceData,
+      'servicesIdentifiers': instance.servicesIdentifiers,
     };
 
 _$BleServiceImpl _$$BleServiceImplFromJson(Map<String, dynamic> json) =>

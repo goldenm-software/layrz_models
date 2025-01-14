@@ -48,7 +48,8 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
           ?.map((e) => GeofencePoint.fromJson(e as Map<String, dynamic>))
           .toList(),
       geofenceTrigger: $enumDecodeNullable(
-          _$BrickhouseGeofenceTriggerEnumMap, json['geofenceTrigger']),
+          _$BrickhouseGeofenceTriggerEnumMap, json['geofenceTrigger'],
+          unknownValue: BrickhouseGeofenceTrigger.unknown),
       maxSpeedMaxValue: (json['maxSpeedMaxValue'] as num?)?.toDouble(),
       isMuted: json['isMuted'] as bool? ?? false,
       speedingThreshold: (json['speedingThreshold'] as num?)?.toDouble(),
@@ -156,7 +157,8 @@ _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
               .toList() ??
           const [],
       geofenceTrigger: $enumDecodeNullable(
-              _$BrickhouseGeofenceTriggerEnumMap, json['geofenceTrigger']) ??
+              _$BrickhouseGeofenceTriggerEnumMap, json['geofenceTrigger'],
+              unknownValue: BrickhouseGeofenceTrigger.unknown) ??
           BrickhouseGeofenceTrigger.both,
       maxSpeedMaxValue: (json['maxSpeedMaxValue'] as num?)?.toDouble(),
       isMuted: json['isMuted'] as bool? ?? false,

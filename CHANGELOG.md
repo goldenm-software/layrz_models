@@ -1,5 +1,26 @@
 # Changelog
 
+## 3.3.21
+
+- Modified things on `BleDevice` to works with `layrz_ble` plugin.
+
+## 3.3.20
+
+- Missing definition
+
+## 3.3.19
+
+- Added optional `password` field to `UserInput` model
+
+## 3.3.18
+
+- Added `UserInput` model
+
+## 3.3.17
+
+- Added `sdmOperator` and `sdmGuest` on `ReferenceCategory` enum
+- Marked as deprecated `sdmAdmin` from `ReferenceCategory` enum
+
 ## 3.3.16
 
 - Moved `Reference` model and `ReferenceCategory` to a submodule

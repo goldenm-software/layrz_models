@@ -14,6 +14,358 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+BHSUserInput _$BHSUserInputFromJson(Map<String, dynamic> json) {
+  return _BHSUserInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BHSUserInput {
+  /// [id] represents the user ID. When is new, this value should be null.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] represents the user ID. When is new, this value should be null.
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// [name] represents the user name.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [name] represents the user name.
+  set name(String value) => throw _privateConstructorUsedError;
+
+  /// [email] represents the user email.
+  String get email => throw _privateConstructorUsedError;
+
+  /// [email] represents the user email.
+  set email(String value) => throw _privateConstructorUsedError;
+
+  /// [username] represents the username.
+  String get username => throw _privateConstructorUsedError;
+
+  /// [username] represents the username.
+  set username(String value) => throw _privateConstructorUsedError;
+
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  String? get brickhousePermissionTierId => throw _privateConstructorUsedError;
+
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  set brickhousePermissionTierId(String? value) =>
+      throw _privateConstructorUsedError;
+
+  /// [brickhouseRole] represents the Brickhouse user role.
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+  BrickhouseUserRole? get brickhouseRole => throw _privateConstructorUsedError;
+
+  /// [brickhouseRole] represents the Brickhouse user role.
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+  set brickhouseRole(BrickhouseUserRole? value) =>
+      throw _privateConstructorUsedError;
+
+  /// [password] default password if allowed by the form
+  String? get password => throw _privateConstructorUsedError;
+
+  /// [password] default password if allowed by the form
+  set password(String? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this BHSUserInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BHSUserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BHSUserInputCopyWith<BHSUserInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BHSUserInputCopyWith<$Res> {
+  factory $BHSUserInputCopyWith(
+          BHSUserInput value, $Res Function(BHSUserInput) then) =
+      _$BHSUserInputCopyWithImpl<$Res, BHSUserInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String email,
+      String username,
+      String? brickhousePermissionTierId,
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      BrickhouseUserRole? brickhouseRole,
+      String? password});
+}
+
+/// @nodoc
+class _$BHSUserInputCopyWithImpl<$Res, $Val extends BHSUserInput>
+    implements $BHSUserInputCopyWith<$Res> {
+  _$BHSUserInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BHSUserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? email = null,
+    Object? username = null,
+    Object? brickhousePermissionTierId = freezed,
+    Object? brickhouseRole = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      brickhousePermissionTierId: freezed == brickhousePermissionTierId
+          ? _value.brickhousePermissionTierId
+          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      brickhouseRole: freezed == brickhouseRole
+          ? _value.brickhouseRole
+          : brickhouseRole // ignore: cast_nullable_to_non_nullable
+              as BrickhouseUserRole?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BHSUserInputImplCopyWith<$Res>
+    implements $BHSUserInputCopyWith<$Res> {
+  factory _$$BHSUserInputImplCopyWith(
+          _$BHSUserInputImpl value, $Res Function(_$BHSUserInputImpl) then) =
+      __$$BHSUserInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String email,
+      String username,
+      String? brickhousePermissionTierId,
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      BrickhouseUserRole? brickhouseRole,
+      String? password});
+}
+
+/// @nodoc
+class __$$BHSUserInputImplCopyWithImpl<$Res>
+    extends _$BHSUserInputCopyWithImpl<$Res, _$BHSUserInputImpl>
+    implements _$$BHSUserInputImplCopyWith<$Res> {
+  __$$BHSUserInputImplCopyWithImpl(
+      _$BHSUserInputImpl _value, $Res Function(_$BHSUserInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BHSUserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? email = null,
+    Object? username = null,
+    Object? brickhousePermissionTierId = freezed,
+    Object? brickhouseRole = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_$BHSUserInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      brickhousePermissionTierId: freezed == brickhousePermissionTierId
+          ? _value.brickhousePermissionTierId
+          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      brickhouseRole: freezed == brickhouseRole
+          ? _value.brickhouseRole
+          : brickhouseRole // ignore: cast_nullable_to_non_nullable
+              as BrickhouseUserRole?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BHSUserInputImpl extends _BHSUserInput {
+  _$BHSUserInputImpl(
+      {this.id,
+      this.name = '',
+      this.email = '',
+      this.username = '',
+      this.brickhousePermissionTierId,
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      this.brickhouseRole,
+      this.password})
+      : super._();
+
+  factory _$BHSUserInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BHSUserInputImplFromJson(json);
+
+  /// [id] represents the user ID. When is new, this value should be null.
+  @override
+  String? id;
+
+  /// [name] represents the user name.
+  @override
+  @JsonKey()
+  String name;
+
+  /// [email] represents the user email.
+  @override
+  @JsonKey()
+  String email;
+
+  /// [username] represents the username.
+  @override
+  @JsonKey()
+  String username;
+
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  @override
+  String? brickhousePermissionTierId;
+
+  /// [brickhouseRole] represents the Brickhouse user role.
+  @override
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+  BrickhouseUserRole? brickhouseRole;
+
+  /// [password] default password if allowed by the form
+  @override
+  String? password;
+
+  @override
+  String toString() {
+    return 'BHSUserInput(id: $id, name: $name, email: $email, username: $username, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, password: $password)';
+  }
+
+  /// Create a copy of BHSUserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BHSUserInputImplCopyWith<_$BHSUserInputImpl> get copyWith =>
+      __$$BHSUserInputImplCopyWithImpl<_$BHSUserInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BHSUserInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BHSUserInput extends BHSUserInput {
+  factory _BHSUserInput(
+      {String? id,
+      String name,
+      String email,
+      String username,
+      String? brickhousePermissionTierId,
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      BrickhouseUserRole? brickhouseRole,
+      String? password}) = _$BHSUserInputImpl;
+  _BHSUserInput._() : super._();
+
+  factory _BHSUserInput.fromJson(Map<String, dynamic> json) =
+      _$BHSUserInputImpl.fromJson;
+
+  /// [id] represents the user ID. When is new, this value should be null.
+  @override
+  String? get id;
+
+  /// [id] represents the user ID. When is new, this value should be null.
+  set id(String? value);
+
+  /// [name] represents the user name.
+  @override
+  String get name;
+
+  /// [name] represents the user name.
+  set name(String value);
+
+  /// [email] represents the user email.
+  @override
+  String get email;
+
+  /// [email] represents the user email.
+  set email(String value);
+
+  /// [username] represents the username.
+  @override
+  String get username;
+
+  /// [username] represents the username.
+  set username(String value);
+
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  @override
+  String? get brickhousePermissionTierId;
+
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  set brickhousePermissionTierId(String? value);
+
+  /// [brickhouseRole] represents the Brickhouse user role.
+  @override
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+  BrickhouseUserRole? get brickhouseRole;
+
+  /// [brickhouseRole] represents the Brickhouse user role.
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+  set brickhouseRole(BrickhouseUserRole? value);
+
+  /// [password] default password if allowed by the form
+  @override
+  String? get password;
+
+  /// [password] default password if allowed by the form
+  set password(String? value);
+
+  /// Create a copy of BHSUserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BHSUserInputImplCopyWith<_$BHSUserInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 InviteLink _$InviteLinkFromJson(Map<String, dynamic> json) {
   return _InviteLink.fromJson(json);
 }
@@ -30,8 +382,12 @@ mixin _$InviteLink {
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
 
+  /// Serializes this InviteLink to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $InviteLinkCopyWith<InviteLink> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -61,6 +417,8 @@ class _$InviteLinkCopyWithImpl<$Res, $Val extends InviteLink>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -125,6 +483,8 @@ class __$$InviteLinkImplCopyWithImpl<$Res>
       _$InviteLinkImpl _value, $Res Function(_$InviteLinkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -215,12 +575,14 @@ class _$InviteLinkImpl extends _InviteLink {
                 other.createdAt == createdAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, code, sentTo, sentAt, expiresAt, createdAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
@@ -263,8 +625,11 @@ abstract class _InviteLink extends InviteLink {
   @override
   @TimestampConverter()
   DateTime get createdAt;
+
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -282,8 +647,12 @@ mixin _$MfaInput {
   bool get isRequesting => throw _privateConstructorUsedError;
   set isRequesting(bool value) => throw _privateConstructorUsedError;
 
+  /// Serializes this MfaInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MfaInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MfaInputCopyWith<MfaInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -306,6 +675,8 @@ class _$MfaInputCopyWithImpl<$Res, $Val extends MfaInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MfaInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -349,6 +720,8 @@ class __$$MfaInputImplCopyWithImpl<$Res>
       _$MfaInputImpl _value, $Res Function(_$MfaInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MfaInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -394,7 +767,9 @@ class _$MfaInputImpl implements _MfaInput {
     return 'MfaInput(method: $method, token: $token, isRequesting: $isRequesting)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MfaInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MfaInputImplCopyWith<_$MfaInputImpl> get copyWith =>
@@ -424,9 +799,423 @@ abstract class _MfaInput implements MfaInput {
   @override
   bool get isRequesting;
   set isRequesting(bool value);
+
+  /// Create a copy of MfaInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MfaInputImplCopyWith<_$MfaInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+PasswordInput _$PasswordInputFromJson(Map<String, dynamic> json) {
+  return _PasswordInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$PasswordInput {
+  String get currentPassword => throw _privateConstructorUsedError;
+  set currentPassword(String value) => throw _privateConstructorUsedError;
+  String get newPassword => throw _privateConstructorUsedError;
+  set newPassword(String value) => throw _privateConstructorUsedError;
+  String get newPasswordConfirmation => throw _privateConstructorUsedError;
+  set newPasswordConfirmation(String value) =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this PasswordInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of PasswordInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $PasswordInputCopyWith<PasswordInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PasswordInputCopyWith<$Res> {
+  factory $PasswordInputCopyWith(
+          PasswordInput value, $Res Function(PasswordInput) then) =
+      _$PasswordInputCopyWithImpl<$Res, PasswordInput>;
+  @useResult
+  $Res call(
+      {String currentPassword,
+      String newPassword,
+      String newPasswordConfirmation});
+}
+
+/// @nodoc
+class _$PasswordInputCopyWithImpl<$Res, $Val extends PasswordInput>
+    implements $PasswordInputCopyWith<$Res> {
+  _$PasswordInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of PasswordInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currentPassword = null,
+    Object? newPassword = null,
+    Object? newPasswordConfirmation = null,
+  }) {
+    return _then(_value.copyWith(
+      currentPassword: null == currentPassword
+          ? _value.currentPassword
+          : currentPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      newPassword: null == newPassword
+          ? _value.newPassword
+          : newPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      newPasswordConfirmation: null == newPasswordConfirmation
+          ? _value.newPasswordConfirmation
+          : newPasswordConfirmation // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$PasswordInputImplCopyWith<$Res>
+    implements $PasswordInputCopyWith<$Res> {
+  factory _$$PasswordInputImplCopyWith(
+          _$PasswordInputImpl value, $Res Function(_$PasswordInputImpl) then) =
+      __$$PasswordInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String currentPassword,
+      String newPassword,
+      String newPasswordConfirmation});
+}
+
+/// @nodoc
+class __$$PasswordInputImplCopyWithImpl<$Res>
+    extends _$PasswordInputCopyWithImpl<$Res, _$PasswordInputImpl>
+    implements _$$PasswordInputImplCopyWith<$Res> {
+  __$$PasswordInputImplCopyWithImpl(
+      _$PasswordInputImpl _value, $Res Function(_$PasswordInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PasswordInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? currentPassword = null,
+    Object? newPassword = null,
+    Object? newPasswordConfirmation = null,
+  }) {
+    return _then(_$PasswordInputImpl(
+      currentPassword: null == currentPassword
+          ? _value.currentPassword
+          : currentPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      newPassword: null == newPassword
+          ? _value.newPassword
+          : newPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      newPasswordConfirmation: null == newPasswordConfirmation
+          ? _value.newPasswordConfirmation
+          : newPasswordConfirmation // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$PasswordInputImpl implements _PasswordInput {
+  _$PasswordInputImpl(
+      {this.currentPassword = '',
+      this.newPassword = '',
+      this.newPasswordConfirmation = ''});
+
+  factory _$PasswordInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$PasswordInputImplFromJson(json);
+
+  @override
+  @JsonKey()
+  String currentPassword;
+  @override
+  @JsonKey()
+  String newPassword;
+  @override
+  @JsonKey()
+  String newPasswordConfirmation;
+
+  @override
+  String toString() {
+    return 'PasswordInput(currentPassword: $currentPassword, newPassword: $newPassword, newPasswordConfirmation: $newPasswordConfirmation)';
+  }
+
+  /// Create a copy of PasswordInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$PasswordInputImplCopyWith<_$PasswordInputImpl> get copyWith =>
+      __$$PasswordInputImplCopyWithImpl<_$PasswordInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$PasswordInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _PasswordInput implements PasswordInput {
+  factory _PasswordInput(
+      {String currentPassword,
+      String newPassword,
+      String newPasswordConfirmation}) = _$PasswordInputImpl;
+
+  factory _PasswordInput.fromJson(Map<String, dynamic> json) =
+      _$PasswordInputImpl.fromJson;
+
+  @override
+  String get currentPassword;
+  set currentPassword(String value);
+  @override
+  String get newPassword;
+  set newPassword(String value);
+  @override
+  String get newPasswordConfirmation;
+  set newPasswordConfirmation(String value);
+
+  /// Create a copy of PasswordInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$PasswordInputImplCopyWith<_$PasswordInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ProfileInput _$ProfileInputFromJson(Map<String, dynamic> json) {
+  return _ProfileInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$ProfileInput {
+  String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  set email(String value) => throw _privateConstructorUsedError;
+  String get username => throw _privateConstructorUsedError;
+  set username(String value) => throw _privateConstructorUsedError;
+  AvatarInput? get dynamicAvatar => throw _privateConstructorUsedError;
+  set dynamicAvatar(AvatarInput? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this ProfileInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ProfileInputCopyWith<ProfileInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ProfileInputCopyWith<$Res> {
+  factory $ProfileInputCopyWith(
+          ProfileInput value, $Res Function(ProfileInput) then) =
+      _$ProfileInputCopyWithImpl<$Res, ProfileInput>;
+  @useResult
+  $Res call(
+      {String name, String email, String username, AvatarInput? dynamicAvatar});
+
+  $AvatarInputCopyWith<$Res>? get dynamicAvatar;
+}
+
+/// @nodoc
+class _$ProfileInputCopyWithImpl<$Res, $Val extends ProfileInput>
+    implements $ProfileInputCopyWith<$Res> {
+  _$ProfileInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? email = null,
+    Object? username = null,
+    Object? dynamicAvatar = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      dynamicAvatar: freezed == dynamicAvatar
+          ? _value.dynamicAvatar
+          : dynamicAvatar // ignore: cast_nullable_to_non_nullable
+              as AvatarInput?,
+    ) as $Val);
+  }
+
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AvatarInputCopyWith<$Res>? get dynamicAvatar {
+    if (_value.dynamicAvatar == null) {
+      return null;
+    }
+
+    return $AvatarInputCopyWith<$Res>(_value.dynamicAvatar!, (value) {
+      return _then(_value.copyWith(dynamicAvatar: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$ProfileInputImplCopyWith<$Res>
+    implements $ProfileInputCopyWith<$Res> {
+  factory _$$ProfileInputImplCopyWith(
+          _$ProfileInputImpl value, $Res Function(_$ProfileInputImpl) then) =
+      __$$ProfileInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String name, String email, String username, AvatarInput? dynamicAvatar});
+
+  @override
+  $AvatarInputCopyWith<$Res>? get dynamicAvatar;
+}
+
+/// @nodoc
+class __$$ProfileInputImplCopyWithImpl<$Res>
+    extends _$ProfileInputCopyWithImpl<$Res, _$ProfileInputImpl>
+    implements _$$ProfileInputImplCopyWith<$Res> {
+  __$$ProfileInputImplCopyWithImpl(
+      _$ProfileInputImpl _value, $Res Function(_$ProfileInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? email = null,
+    Object? username = null,
+    Object? dynamicAvatar = freezed,
+  }) {
+    return _then(_$ProfileInputImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      dynamicAvatar: freezed == dynamicAvatar
+          ? _value.dynamicAvatar
+          : dynamicAvatar // ignore: cast_nullable_to_non_nullable
+              as AvatarInput?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$ProfileInputImpl implements _ProfileInput {
+  _$ProfileInputImpl(
+      {this.name = '',
+      this.email = '',
+      this.username = '',
+      this.dynamicAvatar});
+
+  factory _$ProfileInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProfileInputImplFromJson(json);
+
+  @override
+  @JsonKey()
+  String name;
+  @override
+  @JsonKey()
+  String email;
+  @override
+  @JsonKey()
+  String username;
+  @override
+  AvatarInput? dynamicAvatar;
+
+  @override
+  String toString() {
+    return 'ProfileInput(name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar)';
+  }
+
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProfileInputImplCopyWith<_$ProfileInputImpl> get copyWith =>
+      __$$ProfileInputImplCopyWithImpl<_$ProfileInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ProfileInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _ProfileInput implements ProfileInput {
+  factory _ProfileInput(
+      {String name,
+      String email,
+      String username,
+      AvatarInput? dynamicAvatar}) = _$ProfileInputImpl;
+
+  factory _ProfileInput.fromJson(Map<String, dynamic> json) =
+      _$ProfileInputImpl.fromJson;
+
+  @override
+  String get name;
+  set name(String value);
+  @override
+  String get email;
+  set email(String value);
+  @override
+  String get username;
+  set username(String value);
+  @override
+  AvatarInput? get dynamicAvatar;
+  set dynamicAvatar(AvatarInput? value);
+
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProfileInputImplCopyWith<_$ProfileInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -446,8 +1235,12 @@ mixin _$TenvioDestinationSetup {
   bool get addressIsPlusCode => throw _privateConstructorUsedError;
   set addressIsPlusCode(bool value) => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioDestinationSetup to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioDestinationSetup
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioDestinationSetupCopyWith<TenvioDestinationSetup> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -476,6 +1269,8 @@ class _$TenvioDestinationSetupCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioDestinationSetup
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -531,6 +1326,8 @@ class __$$TenvioDestinationSetupImplCopyWithImpl<$Res>
       $Res Function(_$TenvioDestinationSetupImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioDestinationSetup
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -588,7 +1385,9 @@ class _$TenvioDestinationSetupImpl implements _TenvioDestinationSetup {
     return 'TenvioDestinationSetup(address: $address, latitude: $latitude, longitude: $longitude, addressIsPlusCode: $addressIsPlusCode)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioDestinationSetup
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioDestinationSetupImplCopyWith<_$TenvioDestinationSetupImpl>
@@ -625,8 +1424,11 @@ abstract class _TenvioDestinationSetup implements TenvioDestinationSetup {
   @override
   bool get addressIsPlusCode;
   set addressIsPlusCode(bool value);
+
+  /// Create a copy of TenvioDestinationSetup
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioDestinationSetupImplCopyWith<_$TenvioDestinationSetupImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -762,10 +1564,18 @@ mixin _$User {
   String? get brickhousePermissionTierId => throw _privateConstructorUsedError;
 
   /// [brickhouseRole] represents the Brickhouse user role.
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
   BrickhouseUserRole? get brickhouseRole => throw _privateConstructorUsedError;
 
+  /// [sdmCode] represents the SDM code.
+  String? get sdmCode => throw _privateConstructorUsedError;
+
+  /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -813,7 +1623,9 @@ abstract class $UserCopyWith<$Res> {
       List<String> hwModelsAnimationsIds,
       BHSPermissionTier? brickhousePermissionTier,
       String? brickhousePermissionTierId,
-      BrickhouseUserRole? brickhouseRole});
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      BrickhouseUserRole? brickhouseRole,
+      String? sdmCode});
 
   $TokenCopyWith<$Res>? get token;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
@@ -832,6 +1644,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -874,6 +1688,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? brickhousePermissionTier = freezed,
     Object? brickhousePermissionTierId = freezed,
     Object? brickhouseRole = freezed,
+    Object? sdmCode = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1032,9 +1847,15 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.brickhouseRole
           : brickhouseRole // ignore: cast_nullable_to_non_nullable
               as BrickhouseUserRole?,
+      sdmCode: freezed == sdmCode
+          ? _value.sdmCode
+          : sdmCode // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TokenCopyWith<$Res>? get token {
@@ -1047,6 +1868,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarCopyWith<$Res>? get dynamicAvatar {
@@ -1059,6 +1882,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CategoryCopyWith<$Res>? get category {
@@ -1071,6 +1896,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExternalAccountCopyWith<$Res>? get mappitExternalAccount {
@@ -1084,6 +1911,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSPermissionTierCopyWith<$Res>? get brickhousePermissionTier {
@@ -1144,7 +1973,9 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       List<String> hwModelsAnimationsIds,
       BHSPermissionTier? brickhousePermissionTier,
       String? brickhousePermissionTierId,
-      BrickhouseUserRole? brickhouseRole});
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      BrickhouseUserRole? brickhouseRole,
+      String? sdmCode});
 
   @override
   $TokenCopyWith<$Res>? get token;
@@ -1165,6 +1996,8 @@ class __$$UserImplCopyWithImpl<$Res>
   __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1207,6 +2040,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? brickhousePermissionTier = freezed,
     Object? brickhousePermissionTierId = freezed,
     Object? brickhouseRole = freezed,
+    Object? sdmCode = freezed,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -1365,13 +2199,17 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.brickhouseRole
           : brickhouseRole // ignore: cast_nullable_to_non_nullable
               as BrickhouseUserRole?,
+      sdmCode: freezed == sdmCode
+          ? _value.sdmCode
+          : sdmCode // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$UserImpl implements _User {
+class _$UserImpl extends _User {
   const _$UserImpl(
       {required this.id,
       required this.name,
@@ -1411,7 +2249,9 @@ class _$UserImpl implements _User {
       final List<String> hwModelsAnimationsIds = const [],
       this.brickhousePermissionTier,
       this.brickhousePermissionTierId,
-      this.brickhouseRole})
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      this.brickhouseRole,
+      this.sdmCode})
       : _referencesIds = referencesIds,
         _references = references,
         _access = access,
@@ -1424,7 +2264,8 @@ class _$UserImpl implements _User {
         _mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,
         _mappitAssets = mappitAssets,
         _mfaMethods = mfaMethods,
-        _hwModelsAnimationsIds = hwModelsAnimationsIds;
+        _hwModelsAnimationsIds = hwModelsAnimationsIds,
+        super._();
 
   factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
       _$$UserImplFromJson(json);
@@ -1710,11 +2551,16 @@ class _$UserImpl implements _User {
 
   /// [brickhouseRole] represents the Brickhouse user role.
   @override
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
   final BrickhouseUserRole? brickhouseRole;
+
+  /// [sdmCode] represents the SDM code.
+  @override
+  final String? sdmCode;
 
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, isSuspended: $isSuspended, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, isSuspended: $isSuspended, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode)';
   }
 
   @override
@@ -1793,10 +2639,11 @@ class _$UserImpl implements _User {
                 other.brickhousePermissionTierId ==
                     brickhousePermissionTierId) &&
             (identical(other.brickhouseRole, brickhouseRole) ||
-                other.brickhouseRole == brickhouseRole));
+                other.brickhouseRole == brickhouseRole) &&
+            (identical(other.sdmCode, sdmCode) || other.sdmCode == sdmCode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1838,10 +2685,13 @@ class _$UserImpl implements _User {
         const DeepCollectionEquality().hash(_hwModelsAnimationsIds),
         brickhousePermissionTier,
         brickhousePermissionTierId,
-        brickhouseRole
+        brickhouseRole,
+        sdmCode
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
@@ -1855,7 +2705,7 @@ class _$UserImpl implements _User {
   }
 }
 
-abstract class _User implements User {
+abstract class _User extends User {
   const factory _User(
       {required final String id,
       required final String name,
@@ -1895,231 +2745,366 @@ abstract class _User implements User {
       final List<String> hwModelsAnimationsIds,
       final BHSPermissionTier? brickhousePermissionTier,
       final String? brickhousePermissionTierId,
-      final BrickhouseUserRole? brickhouseRole}) = _$UserImpl;
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      final BrickhouseUserRole? brickhouseRole,
+      final String? sdmCode}) = _$UserImpl;
+  const _User._() : super._();
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
-  @override
-
   /// [id] represents the user ID.
-  String get id;
   @override
+  String get id;
 
   /// [name] represents the user name.
-  String get name;
   @override
+  String get name;
 
   /// [token] represents the user token.
-  Token? get token;
   @override
+  Token? get token;
 
   /// [parentId] represents the parent ID.
-  String? get parentId;
   @override
+  String? get parentId;
 
   /// [email] represents the user email.
-  String? get email;
   @override
+  String? get email;
 
   /// [username] represents the username.
-  String? get username;
   @override
+  String? get username;
 
   /// [dynamicAvatar] represents the user avatar.
-  Avatar? get dynamicAvatar;
   @override
+  Avatar? get dynamicAvatar;
 
   /// [referencesIds] represents the list of references IDs.
-  List<String>? get referencesIds;
   @override
+  List<String>? get referencesIds;
 
   /// [references] represents the list of references.
-  List<Reference>? get references;
   @override
+  List<Reference>? get references;
 
   /// [category] represents the user category.
-  Category? get category;
   @override
+  Category? get category;
 
   /// [categoryId] represents the user category ID.
-  String? get categoryId;
   @override
+  String? get categoryId;
 
   /// [mqttToken] represents the MQTT token.
-  String? get mqttToken;
   @override
+  String? get mqttToken;
 
   /// [access] represents the list of granted access.
-  List<Access>? get access;
   @override
+  List<Access>? get access;
 
   /// [customFields] represents the list of custom fields.
-  List<CustomField>? get customFields;
   @override
+  List<CustomField>? get customFields;
 
   /// [platformAuth] represents the platform auth.
-  String get platformAuth;
   @override
+  String get platformAuth;
 
   /// [childs] represents the list of childs.
-  List<User> get childs;
   @override
+  List<User> get childs;
 
   /// [tagsIds] represents the list of tags IDs.
-  List<String>? get tagsIds;
   @override
+  List<String>? get tagsIds;
 
   /// [tags] represents the list of tags.
-  List<Tag>? get tags;
   @override
+  List<Tag>? get tags;
 
   /// [planId] represents the plan ID.
-  String? get planId;
   @override
+  String? get planId;
 
   /// [allowedApps] represents the list of allowed apps.
-  List<RegisteredApp>? get allowedApps;
   @override
+  List<RegisteredApp>? get allowedApps;
 
   /// [mappitAssetsIds] represents the list of assets IDs.
   /// This field is only for `Mappit` use.
-  List<String>? get mappitAssetsIds;
   @override
+  List<String>? get mappitAssetsIds;
 
   /// [mappitSecondaryRoutes]
-  List<String>? get mappitSecondaryRoutesIds;
   @override
+  List<String>? get mappitSecondaryRoutesIds;
 
   /// [mappitAssets] represents the list of assets.
   /// This field is only for `Mappit` use.
-  List<Asset>? get mappitAssets;
   @override
+  List<Asset>? get mappitAssets;
 
   /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
   /// This field is only for `Mappit` use.
-  int? get historicalDaysAllowed;
   @override
+  int? get historicalDaysAllowed;
 
   /// [mappitExternalAccountId] represents the Mappit external account ID.
   /// This field is only for `Mappit` use.
-  String? get mappitExternalAccountId;
   @override
+  String? get mappitExternalAccountId;
 
   /// [mappitExternalAccount] represents the Mappit external account.
   /// This field is only for `Mappit` use.
-  ExternalAccount? get mappitExternalAccount;
   @override
+  ExternalAccount? get mappitExternalAccount;
 
   /// [mfaEnabled] represents the MFA enabled flag.
-  bool get mfaEnabled;
   @override
+  bool get mfaEnabled;
 
   /// [mfaMethods] represents the list of MFA methods.
+  @override
   @MfaMethodConverter()
   List<MfaMethod> get mfaMethods;
-  @override
 
   /// [tenvioAddress] represents the Tenvio address.
-  String? get tenvioAddress;
   @override
+  String? get tenvioAddress;
 
   /// [tenvioPhone] represents the Tenvio phone.
-  String? get tenvioPhone;
   @override
+  String? get tenvioPhone;
 
   /// [tenvioLatitude] represents the Tenvio latitude.
-  double? get tenvioLatitude;
   @override
+  double? get tenvioLatitude;
 
   /// [tenvioLongitude] represents the Tenvio longitude.
-  double? get tenvioLongitude;
   @override
+  double? get tenvioLongitude;
 
   /// [tenvioAddressIsPlusCode] represents the Tenvio address is Plus Code.
-  bool? get tenvioAddressIsPlusCode;
   @override
+  bool? get tenvioAddressIsPlusCode;
 
   /// [isSuspended] represents if the users account is suspended.
-  bool? get isSuspended;
   @override
+  bool? get isSuspended;
 
   /// [suspendedAt] represents the date when the account was suspended.
+  @override
   @TimestampOrNullConverter()
   DateTime? get suspendedAt;
-  @override
 
   /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
-  List<String> get hwModelsAnimationsIds;
   @override
+  List<String> get hwModelsAnimationsIds;
 
   /// [brickhousePermissionTier] represents the Brickhouse permission tier for access level of an user.
-  BHSPermissionTier? get brickhousePermissionTier;
   @override
+  BHSPermissionTier? get brickhousePermissionTier;
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  String? get brickhousePermissionTierId;
   @override
+  String? get brickhousePermissionTierId;
 
   /// [brickhouseRole] represents the Brickhouse user role.
-  BrickhouseUserRole? get brickhouseRole;
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+  BrickhouseUserRole? get brickhouseRole;
+
+  /// [sdmCode] represents the SDM code.
+  @override
+  String? get sdmCode;
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-ProfileInput _$ProfileInputFromJson(Map<String, dynamic> json) {
-  return _ProfileInput.fromJson(json);
+UserInput _$UserInputFromJson(Map<String, dynamic> json) {
+  return _UserInput.fromJson(json);
 }
 
 /// @nodoc
-mixin _$ProfileInput {
+mixin _$UserInput {
+  /// [id] represents the user ID. When is new, this value should be null.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] represents the user ID. When is new, this value should be null.
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// [name] represents the user name.
   String get name => throw _privateConstructorUsedError;
+
+  /// [name] represents the user name.
   set name(String value) => throw _privateConstructorUsedError;
+
+  /// [email] represents the user email.
   String get email => throw _privateConstructorUsedError;
+
+  /// [email] represents the user email.
   set email(String value) => throw _privateConstructorUsedError;
+
+  /// [username] represents the username.
   String get username => throw _privateConstructorUsedError;
+
+  /// [username] represents the username.
   set username(String value) => throw _privateConstructorUsedError;
+
+  /// [dynamicAvatar] represents the user avatar.
   AvatarInput? get dynamicAvatar => throw _privateConstructorUsedError;
+
+  /// [dynamicAvatar] represents the user avatar.
   set dynamicAvatar(AvatarInput? value) => throw _privateConstructorUsedError;
 
+  /// [referencesIds] represents the list of references IDs.
+  List<String> get referencesIds => throw _privateConstructorUsedError;
+
+  /// [referencesIds] represents the list of references IDs.
+  set referencesIds(List<String> value) => throw _privateConstructorUsedError;
+
+  /// [categoryId] represents the user category ID.
+  String? get categoryId => throw _privateConstructorUsedError;
+
+  /// [categoryId] represents the user category ID.
+  set categoryId(String? value) => throw _privateConstructorUsedError;
+
+  /// [customFields] represents the list of custom fields.
+  List<CustomField> get customFields => throw _privateConstructorUsedError;
+
+  /// [customFields] represents the list of custom fields.
+  set customFields(List<CustomField> value) =>
+      throw _privateConstructorUsedError;
+
+  /// [tagsIds] represents the list of tags IDs.
+  List<String> get tagsIds => throw _privateConstructorUsedError;
+
+  /// [tagsIds] represents the list of tags IDs.
+  set tagsIds(List<String> value) => throw _privateConstructorUsedError;
+
+  /// [mappitAssetsIds] represents the list of assets IDs.
+  /// This field is only for `Mappit` use.
+  List<String> get mappitAssetsIds => throw _privateConstructorUsedError;
+
+  /// [mappitAssetsIds] represents the list of assets IDs.
+  /// This field is only for `Mappit` use.
+  set mappitAssetsIds(List<String> value) => throw _privateConstructorUsedError;
+
+  /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
+  /// This field is only for `Mappit` use.
+  int get historicalDaysAllowed => throw _privateConstructorUsedError;
+
+  /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
+  /// This field is only for `Mappit` use.
+  set historicalDaysAllowed(int value) => throw _privateConstructorUsedError;
+
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  String? get brickhousePermissionTierId => throw _privateConstructorUsedError;
+
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  set brickhousePermissionTierId(String? value) =>
+      throw _privateConstructorUsedError;
+
+  /// [brickhouseRole] represents the Brickhouse user role.
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+  BrickhouseUserRole? get brickhouseRole => throw _privateConstructorUsedError;
+
+  /// [brickhouseRole] represents the Brickhouse user role.
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+  set brickhouseRole(BrickhouseUserRole? value) =>
+      throw _privateConstructorUsedError;
+
+  /// [sdmCode] represents the SDM code.
+  String? get sdmCode => throw _privateConstructorUsedError;
+
+  /// [sdmCode] represents the SDM code.
+  set sdmCode(String? value) => throw _privateConstructorUsedError;
+
+  /// [password] default password if allowed by the form
+  String? get password => throw _privateConstructorUsedError;
+
+  /// [password] default password if allowed by the form
+  set password(String? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this UserInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ProfileInputCopyWith<ProfileInput> get copyWith =>
+
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $UserInputCopyWith<UserInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProfileInputCopyWith<$Res> {
-  factory $ProfileInputCopyWith(
-          ProfileInput value, $Res Function(ProfileInput) then) =
-      _$ProfileInputCopyWithImpl<$Res, ProfileInput>;
+abstract class $UserInputCopyWith<$Res> {
+  factory $UserInputCopyWith(UserInput value, $Res Function(UserInput) then) =
+      _$UserInputCopyWithImpl<$Res, UserInput>;
   @useResult
   $Res call(
-      {String name, String email, String username, AvatarInput? dynamicAvatar});
+      {String? id,
+      String name,
+      String email,
+      String username,
+      AvatarInput? dynamicAvatar,
+      List<String> referencesIds,
+      String? categoryId,
+      List<CustomField> customFields,
+      List<String> tagsIds,
+      List<String> mappitAssetsIds,
+      int historicalDaysAllowed,
+      String? brickhousePermissionTierId,
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      BrickhouseUserRole? brickhouseRole,
+      String? sdmCode,
+      String? password});
 
   $AvatarInputCopyWith<$Res>? get dynamicAvatar;
 }
 
 /// @nodoc
-class _$ProfileInputCopyWithImpl<$Res, $Val extends ProfileInput>
-    implements $ProfileInputCopyWith<$Res> {
-  _$ProfileInputCopyWithImpl(this._value, this._then);
+class _$UserInputCopyWithImpl<$Res, $Val extends UserInput>
+    implements $UserInputCopyWith<$Res> {
+  _$UserInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = null,
     Object? email = null,
     Object? username = null,
     Object? dynamicAvatar = freezed,
+    Object? referencesIds = null,
+    Object? categoryId = freezed,
+    Object? customFields = null,
+    Object? tagsIds = null,
+    Object? mappitAssetsIds = null,
+    Object? historicalDaysAllowed = null,
+    Object? brickhousePermissionTierId = freezed,
+    Object? brickhouseRole = freezed,
+    Object? sdmCode = freezed,
+    Object? password = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -2136,9 +3121,51 @@ class _$ProfileInputCopyWithImpl<$Res, $Val extends ProfileInput>
           ? _value.dynamicAvatar
           : dynamicAvatar // ignore: cast_nullable_to_non_nullable
               as AvatarInput?,
+      referencesIds: null == referencesIds
+          ? _value.referencesIds
+          : referencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customFields: null == customFields
+          ? _value.customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as List<CustomField>,
+      tagsIds: null == tagsIds
+          ? _value.tagsIds
+          : tagsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      mappitAssetsIds: null == mappitAssetsIds
+          ? _value.mappitAssetsIds
+          : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      historicalDaysAllowed: null == historicalDaysAllowed
+          ? _value.historicalDaysAllowed
+          : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
+              as int,
+      brickhousePermissionTierId: freezed == brickhousePermissionTierId
+          ? _value.brickhousePermissionTierId
+          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      brickhouseRole: freezed == brickhouseRole
+          ? _value.brickhouseRole
+          : brickhouseRole // ignore: cast_nullable_to_non_nullable
+              as BrickhouseUserRole?,
+      sdmCode: freezed == sdmCode
+          ? _value.sdmCode
+          : sdmCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarInputCopyWith<$Res>? get dynamicAvatar {
@@ -2153,37 +3180,69 @@ class _$ProfileInputCopyWithImpl<$Res, $Val extends ProfileInput>
 }
 
 /// @nodoc
-abstract class _$$ProfileInputImplCopyWith<$Res>
-    implements $ProfileInputCopyWith<$Res> {
-  factory _$$ProfileInputImplCopyWith(
-          _$ProfileInputImpl value, $Res Function(_$ProfileInputImpl) then) =
-      __$$ProfileInputImplCopyWithImpl<$Res>;
+abstract class _$$UserInputImplCopyWith<$Res>
+    implements $UserInputCopyWith<$Res> {
+  factory _$$UserInputImplCopyWith(
+          _$UserInputImpl value, $Res Function(_$UserInputImpl) then) =
+      __$$UserInputImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {String name, String email, String username, AvatarInput? dynamicAvatar});
+      {String? id,
+      String name,
+      String email,
+      String username,
+      AvatarInput? dynamicAvatar,
+      List<String> referencesIds,
+      String? categoryId,
+      List<CustomField> customFields,
+      List<String> tagsIds,
+      List<String> mappitAssetsIds,
+      int historicalDaysAllowed,
+      String? brickhousePermissionTierId,
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      BrickhouseUserRole? brickhouseRole,
+      String? sdmCode,
+      String? password});
 
   @override
   $AvatarInputCopyWith<$Res>? get dynamicAvatar;
 }
 
 /// @nodoc
-class __$$ProfileInputImplCopyWithImpl<$Res>
-    extends _$ProfileInputCopyWithImpl<$Res, _$ProfileInputImpl>
-    implements _$$ProfileInputImplCopyWith<$Res> {
-  __$$ProfileInputImplCopyWithImpl(
-      _$ProfileInputImpl _value, $Res Function(_$ProfileInputImpl) _then)
+class __$$UserInputImplCopyWithImpl<$Res>
+    extends _$UserInputCopyWithImpl<$Res, _$UserInputImpl>
+    implements _$$UserInputImplCopyWith<$Res> {
+  __$$UserInputImplCopyWithImpl(
+      _$UserInputImpl _value, $Res Function(_$UserInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = null,
     Object? email = null,
     Object? username = null,
     Object? dynamicAvatar = freezed,
+    Object? referencesIds = null,
+    Object? categoryId = freezed,
+    Object? customFields = null,
+    Object? tagsIds = null,
+    Object? mappitAssetsIds = null,
+    Object? historicalDaysAllowed = null,
+    Object? brickhousePermissionTierId = freezed,
+    Object? brickhouseRole = freezed,
+    Object? sdmCode = freezed,
+    Object? password = freezed,
   }) {
-    return _then(_$ProfileInputImpl(
+    return _then(_$UserInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -2200,253 +3259,305 @@ class __$$ProfileInputImplCopyWithImpl<$Res>
           ? _value.dynamicAvatar
           : dynamicAvatar // ignore: cast_nullable_to_non_nullable
               as AvatarInput?,
+      referencesIds: null == referencesIds
+          ? _value.referencesIds
+          : referencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customFields: null == customFields
+          ? _value.customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as List<CustomField>,
+      tagsIds: null == tagsIds
+          ? _value.tagsIds
+          : tagsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      mappitAssetsIds: null == mappitAssetsIds
+          ? _value.mappitAssetsIds
+          : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      historicalDaysAllowed: null == historicalDaysAllowed
+          ? _value.historicalDaysAllowed
+          : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
+              as int,
+      brickhousePermissionTierId: freezed == brickhousePermissionTierId
+          ? _value.brickhousePermissionTierId
+          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      brickhouseRole: freezed == brickhouseRole
+          ? _value.brickhouseRole
+          : brickhouseRole // ignore: cast_nullable_to_non_nullable
+              as BrickhouseUserRole?,
+      sdmCode: freezed == sdmCode
+          ? _value.sdmCode
+          : sdmCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: freezed == password
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$ProfileInputImpl implements _ProfileInput {
-  _$ProfileInputImpl(
-      {this.name = '',
+class _$UserInputImpl extends _UserInput {
+  _$UserInputImpl(
+      {this.id,
+      this.name = '',
       this.email = '',
       this.username = '',
-      this.dynamicAvatar});
+      this.dynamicAvatar,
+      this.referencesIds = const [],
+      this.categoryId,
+      this.customFields = const [],
+      this.tagsIds = const [],
+      this.mappitAssetsIds = const [],
+      this.historicalDaysAllowed = 1,
+      this.brickhousePermissionTierId,
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      this.brickhouseRole,
+      this.sdmCode,
+      this.password})
+      : super._();
 
-  factory _$ProfileInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProfileInputImplFromJson(json);
+  factory _$UserInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$UserInputImplFromJson(json);
 
+  /// [id] represents the user ID. When is new, this value should be null.
+  @override
+  String? id;
+
+  /// [name] represents the user name.
   @override
   @JsonKey()
   String name;
+
+  /// [email] represents the user email.
   @override
   @JsonKey()
   String email;
+
+  /// [username] represents the username.
   @override
   @JsonKey()
   String username;
+
+  /// [dynamicAvatar] represents the user avatar.
   @override
   AvatarInput? dynamicAvatar;
 
+  /// [referencesIds] represents the list of references IDs.
+  @override
+  @JsonKey()
+  List<String> referencesIds;
+
+  /// [categoryId] represents the user category ID.
+  @override
+  String? categoryId;
+
+  /// [customFields] represents the list of custom fields.
+  @override
+  @JsonKey()
+  List<CustomField> customFields;
+
+  /// [tagsIds] represents the list of tags IDs.
+  @override
+  @JsonKey()
+  List<String> tagsIds;
+
+  /// [mappitAssetsIds] represents the list of assets IDs.
+  /// This field is only for `Mappit` use.
+  @override
+  @JsonKey()
+  List<String> mappitAssetsIds;
+
+  /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
+  /// This field is only for `Mappit` use.
+  @override
+  @JsonKey()
+  int historicalDaysAllowed;
+
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  @override
+  String? brickhousePermissionTierId;
+
+  /// [brickhouseRole] represents the Brickhouse user role.
+  @override
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+  BrickhouseUserRole? brickhouseRole;
+
+  /// [sdmCode] represents the SDM code.
+  @override
+  String? sdmCode;
+
+  /// [password] default password if allowed by the form
+  @override
+  String? password;
+
   @override
   String toString() {
-    return 'ProfileInput(name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar)';
+    return 'UserInput(id: $id, name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, categoryId: $categoryId, customFields: $customFields, tagsIds: $tagsIds, mappitAssetsIds: $mappitAssetsIds, historicalDaysAllowed: $historicalDaysAllowed, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, password: $password)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProfileInputImplCopyWith<_$ProfileInputImpl> get copyWith =>
-      __$$ProfileInputImplCopyWithImpl<_$ProfileInputImpl>(this, _$identity);
+  _$$UserInputImplCopyWith<_$UserInputImpl> get copyWith =>
+      __$$UserInputImplCopyWithImpl<_$UserInputImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$ProfileInputImplToJson(
+    return _$$UserInputImplToJson(
       this,
     );
   }
 }
 
-abstract class _ProfileInput implements ProfileInput {
-  factory _ProfileInput(
-      {String name,
+abstract class _UserInput extends UserInput {
+  factory _UserInput(
+      {String? id,
+      String name,
       String email,
       String username,
-      AvatarInput? dynamicAvatar}) = _$ProfileInputImpl;
+      AvatarInput? dynamicAvatar,
+      List<String> referencesIds,
+      String? categoryId,
+      List<CustomField> customFields,
+      List<String> tagsIds,
+      List<String> mappitAssetsIds,
+      int historicalDaysAllowed,
+      String? brickhousePermissionTierId,
+      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+      BrickhouseUserRole? brickhouseRole,
+      String? sdmCode,
+      String? password}) = _$UserInputImpl;
+  _UserInput._() : super._();
 
-  factory _ProfileInput.fromJson(Map<String, dynamic> json) =
-      _$ProfileInputImpl.fromJson;
+  factory _UserInput.fromJson(Map<String, dynamic> json) =
+      _$UserInputImpl.fromJson;
 
+  /// [id] represents the user ID. When is new, this value should be null.
+  @override
+  String? get id;
+
+  /// [id] represents the user ID. When is new, this value should be null.
+  set id(String? value);
+
+  /// [name] represents the user name.
   @override
   String get name;
+
+  /// [name] represents the user name.
   set name(String value);
+
+  /// [email] represents the user email.
   @override
   String get email;
+
+  /// [email] represents the user email.
   set email(String value);
+
+  /// [username] represents the username.
   @override
   String get username;
+
+  /// [username] represents the username.
   set username(String value);
+
+  /// [dynamicAvatar] represents the user avatar.
   @override
   AvatarInput? get dynamicAvatar;
+
+  /// [dynamicAvatar] represents the user avatar.
   set dynamicAvatar(AvatarInput? value);
+
+  /// [referencesIds] represents the list of references IDs.
   @override
-  @JsonKey(ignore: true)
-  _$$ProfileInputImplCopyWith<_$ProfileInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  List<String> get referencesIds;
 
-PasswordInput _$PasswordInputFromJson(Map<String, dynamic> json) {
-  return _PasswordInput.fromJson(json);
-}
+  /// [referencesIds] represents the list of references IDs.
+  set referencesIds(List<String> value);
 
-/// @nodoc
-mixin _$PasswordInput {
-  String get currentPassword => throw _privateConstructorUsedError;
-  set currentPassword(String value) => throw _privateConstructorUsedError;
-  String get newPassword => throw _privateConstructorUsedError;
-  set newPassword(String value) => throw _privateConstructorUsedError;
-  String get newPasswordConfirmation => throw _privateConstructorUsedError;
-  set newPasswordConfirmation(String value) =>
-      throw _privateConstructorUsedError;
-
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $PasswordInputCopyWith<PasswordInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PasswordInputCopyWith<$Res> {
-  factory $PasswordInputCopyWith(
-          PasswordInput value, $Res Function(PasswordInput) then) =
-      _$PasswordInputCopyWithImpl<$Res, PasswordInput>;
-  @useResult
-  $Res call(
-      {String currentPassword,
-      String newPassword,
-      String newPasswordConfirmation});
-}
-
-/// @nodoc
-class _$PasswordInputCopyWithImpl<$Res, $Val extends PasswordInput>
-    implements $PasswordInputCopyWith<$Res> {
-  _$PasswordInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
+  /// [categoryId] represents the user category ID.
   @override
-  $Res call({
-    Object? currentPassword = null,
-    Object? newPassword = null,
-    Object? newPasswordConfirmation = null,
-  }) {
-    return _then(_value.copyWith(
-      currentPassword: null == currentPassword
-          ? _value.currentPassword
-          : currentPassword // ignore: cast_nullable_to_non_nullable
-              as String,
-      newPassword: null == newPassword
-          ? _value.newPassword
-          : newPassword // ignore: cast_nullable_to_non_nullable
-              as String,
-      newPasswordConfirmation: null == newPasswordConfirmation
-          ? _value.newPasswordConfirmation
-          : newPasswordConfirmation // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
+  String? get categoryId;
 
-/// @nodoc
-abstract class _$$PasswordInputImplCopyWith<$Res>
-    implements $PasswordInputCopyWith<$Res> {
-  factory _$$PasswordInputImplCopyWith(
-          _$PasswordInputImpl value, $Res Function(_$PasswordInputImpl) then) =
-      __$$PasswordInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String currentPassword,
-      String newPassword,
-      String newPasswordConfirmation});
-}
+  /// [categoryId] represents the user category ID.
+  set categoryId(String? value);
 
-/// @nodoc
-class __$$PasswordInputImplCopyWithImpl<$Res>
-    extends _$PasswordInputCopyWithImpl<$Res, _$PasswordInputImpl>
-    implements _$$PasswordInputImplCopyWith<$Res> {
-  __$$PasswordInputImplCopyWithImpl(
-      _$PasswordInputImpl _value, $Res Function(_$PasswordInputImpl) _then)
-      : super(_value, _then);
+  /// [customFields] represents the list of custom fields.
+  @override
+  List<CustomField> get customFields;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? currentPassword = null,
-    Object? newPassword = null,
-    Object? newPasswordConfirmation = null,
-  }) {
-    return _then(_$PasswordInputImpl(
-      currentPassword: null == currentPassword
-          ? _value.currentPassword
-          : currentPassword // ignore: cast_nullable_to_non_nullable
-              as String,
-      newPassword: null == newPassword
-          ? _value.newPassword
-          : newPassword // ignore: cast_nullable_to_non_nullable
-              as String,
-      newPasswordConfirmation: null == newPasswordConfirmation
-          ? _value.newPasswordConfirmation
-          : newPasswordConfirmation // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
+  /// [customFields] represents the list of custom fields.
+  set customFields(List<CustomField> value);
 
-/// @nodoc
-@JsonSerializable()
-class _$PasswordInputImpl implements _PasswordInput {
-  _$PasswordInputImpl(
-      {this.currentPassword = '',
-      this.newPassword = '',
-      this.newPasswordConfirmation = ''});
+  /// [tagsIds] represents the list of tags IDs.
+  @override
+  List<String> get tagsIds;
 
-  factory _$PasswordInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PasswordInputImplFromJson(json);
+  /// [tagsIds] represents the list of tags IDs.
+  set tagsIds(List<String> value);
 
+  /// [mappitAssetsIds] represents the list of assets IDs.
+  /// This field is only for `Mappit` use.
   @override
-  @JsonKey()
-  String currentPassword;
-  @override
-  @JsonKey()
-  String newPassword;
-  @override
-  @JsonKey()
-  String newPasswordConfirmation;
+  List<String> get mappitAssetsIds;
 
-  @override
-  String toString() {
-    return 'PasswordInput(currentPassword: $currentPassword, newPassword: $newPassword, newPasswordConfirmation: $newPasswordConfirmation)';
-  }
+  /// [mappitAssetsIds] represents the list of assets IDs.
+  /// This field is only for `Mappit` use.
+  set mappitAssetsIds(List<String> value);
 
-  @JsonKey(ignore: true)
+  /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
+  /// This field is only for `Mappit` use.
   @override
-  @pragma('vm:prefer-inline')
-  _$$PasswordInputImplCopyWith<_$PasswordInputImpl> get copyWith =>
-      __$$PasswordInputImplCopyWithImpl<_$PasswordInputImpl>(this, _$identity);
+  int get historicalDaysAllowed;
 
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PasswordInputImplToJson(
-      this,
-    );
-  }
-}
+  /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
+  /// This field is only for `Mappit` use.
+  set historicalDaysAllowed(int value);
 
-abstract class _PasswordInput implements PasswordInput {
-  factory _PasswordInput(
-      {String currentPassword,
-      String newPassword,
-      String newPasswordConfirmation}) = _$PasswordInputImpl;
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  @override
+  String? get brickhousePermissionTierId;
 
-  factory _PasswordInput.fromJson(Map<String, dynamic> json) =
-      _$PasswordInputImpl.fromJson;
+  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  set brickhousePermissionTierId(String? value);
 
+  /// [brickhouseRole] represents the Brickhouse user role.
   @override
-  String get currentPassword;
-  set currentPassword(String value);
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+  BrickhouseUserRole? get brickhouseRole;
+
+  /// [brickhouseRole] represents the Brickhouse user role.
+  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+  set brickhouseRole(BrickhouseUserRole? value);
+
+  /// [sdmCode] represents the SDM code.
   @override
-  String get newPassword;
-  set newPassword(String value);
+  String? get sdmCode;
+
+  /// [sdmCode] represents the SDM code.
+  set sdmCode(String? value);
+
+  /// [password] default password if allowed by the form
   @override
-  String get newPasswordConfirmation;
-  set newPasswordConfirmation(String value);
+  String? get password;
+
+  /// [password] default password if allowed by the form
+  set password(String? value);
+
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$PasswordInputImplCopyWith<_$PasswordInputImpl> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserInputImplCopyWith<_$UserInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

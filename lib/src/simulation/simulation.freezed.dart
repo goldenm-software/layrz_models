@@ -32,8 +32,12 @@ mixin _$SimulationCycle {
   /// [fileUri] is the URI of the file that contains the cycle
   String? get fileUri => throw _privateConstructorUsedError;
 
+  /// Serializes this SimulationCycle to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SimulationCycle
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SimulationCycleCopyWith<SimulationCycle> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -57,6 +61,8 @@ class _$SimulationCycleCopyWithImpl<$Res, $Val extends SimulationCycle>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SimulationCycle
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -105,6 +111,8 @@ class __$$SimulationCycleImplCopyWithImpl<$Res>
       _$SimulationCycleImpl _value, $Res Function(_$SimulationCycleImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SimulationCycle
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -178,11 +186,13 @@ class _$SimulationCycleImpl implements _SimulationCycle {
             (identical(other.fileUri, fileUri) || other.fileUri == fileUri));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, steps, fileUri);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SimulationCycle
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SimulationCycleImplCopyWith<_$SimulationCycleImpl> get copyWith =>
@@ -207,24 +217,26 @@ abstract class _SimulationCycle implements SimulationCycle {
   factory _SimulationCycle.fromJson(Map<String, dynamic> json) =
       _$SimulationCycleImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the cycle
-  String get id;
   @override
+  String get id;
 
   /// [name] is the name of the cycle
-  String get name;
   @override
+  String get name;
 
   /// [steps] is the number of steps of the cycle
-  int get steps;
   @override
+  int get steps;
 
   /// [fileUri] is the URI of the file that contains the cycle
-  String? get fileUri;
   @override
-  @JsonKey(ignore: true)
+  String? get fileUri;
+
+  /// Create a copy of SimulationCycle
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SimulationCycleImplCopyWith<_$SimulationCycleImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
