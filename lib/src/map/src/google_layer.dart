@@ -5,49 +5,35 @@ part of '../map.dart';
 enum GoogleMapLayer {
   /// [GoogleMapLayer.roadmap] is the roadmap layer.
   /// Layrz API definition: `ROADMAP`
+  @JsonValue('ROADMAP')
   roadmap,
 
   /// [GoogleMapLayer.satellite] is the satellite layer.
   /// Layrz API definition: `SATELLITE`
+  @JsonValue('SATELLITE')
   satellite,
 
   /// [GoogleMapLayer.terrain] is the terrain layer.
   /// Layrz API definition: `TERRAIN`
+  @JsonValue('TERRAIN')
   terrain,
 
   /// [GoogleMapLayer.hybrid] is the hybrid layer.
   /// Layrz API definition: `HYBRID`
+  @JsonValue('HYBRID')
   hybrid,
   ;
 
   @override
   String toString() => toJson();
 
-  String toJson() {
-    switch (this) {
-      case GoogleMapLayer.roadmap:
-        return 'ROADMAP';
-      case GoogleMapLayer.satellite:
-        return 'SATELLITE';
-      case GoogleMapLayer.terrain:
-        return 'TERRAIN';
-      case GoogleMapLayer.hybrid:
-        return 'HYBRID';
-    }
-  }
+  /// [toJson] returns the string representation of the enum value.
+  String toJson() => _$GoogleMapLayerEnumMap[this] ?? 'ROADMAP';
 
+  /// [fromJson] returns the enum value from a string representation.
   static GoogleMapLayer fromJson(String json) {
-    switch (json) {
-      case 'ROADMAP':
-        return GoogleMapLayer.roadmap;
-      case 'SATELLITE':
-        return GoogleMapLayer.satellite;
-      case 'TERRAIN':
-        return GoogleMapLayer.terrain;
-      case 'HYBRID':
-      default:
-        return GoogleMapLayer.hybrid;
-    }
+    final found = _$GoogleMapLayerEnumMap.entries.firstWhereOrNull((e) => e.value == json);
+    return found?.key ?? GoogleMapLayer.roadmap;
   }
 
   String get description {
@@ -60,28 +46,6 @@ enum GoogleMapLayer {
         return 'Google Terrain';
       case GoogleMapLayer.hybrid:
         return 'Google Hybrid';
-      default:
-        return 'Unknown $this';
     }
   }
-}
-
-class GoogleMapLayerConverter implements JsonConverter<GoogleMapLayer, String> {
-  const GoogleMapLayerConverter();
-
-  @override
-  GoogleMapLayer fromJson(String json) => GoogleMapLayer.fromJson(json);
-
-  @override
-  String toJson(GoogleMapLayer object) => object.toJson();
-}
-
-class GoogleMapLayerOrNullConverter implements JsonConverter<GoogleMapLayer?, String?> {
-  const GoogleMapLayerOrNullConverter();
-
-  @override
-  GoogleMapLayer? fromJson(String? json) => json == null ? null : GoogleMapLayer.fromJson(json);
-
-  @override
-  String? toJson(GoogleMapLayer? object) => object?.toJson();
 }

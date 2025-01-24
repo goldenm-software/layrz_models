@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.25
+
+- Updated `MapLayer` model to use direct enum conversion
+- Added `MapLayerInput` model
+
 ## 3.3.24
 
 - Updated some models of sub module `apps` to support direct enum conversion
