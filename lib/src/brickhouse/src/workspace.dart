@@ -10,7 +10,7 @@ class BrickHouseWorkspaceInput with _$BrickHouseWorkspaceInput {
 
     /// Is the type of the App
     @Default(AppInternalIdentifier.brickhouseTracking)
-    @AppInternalIdentifierOrNullConverter()
+    @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
     AppInternalIdentifier? typeApp,
     required String timezoneId,
     @Default([]) List<String>? assetsIds,

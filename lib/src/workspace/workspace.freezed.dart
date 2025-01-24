@@ -27,7 +27,7 @@ mixin _$Workspace {
   String get name => throw _privateConstructorUsedError;
 
   /// Is the type of the App
-  @AppInternalIdentifierOrNullConverter()
+  @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
   AppInternalIdentifier? get typeApp => throw _privateConstructorUsedError;
 
   /// Indicates the color of the workspace
@@ -142,7 +142,8 @@ abstract class $WorkspaceCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @AppInternalIdentifierOrNullConverter() AppInternalIdentifier? typeApp,
+      @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
+      AppInternalIdentifier? typeApp,
       @ColorOrNullConverter() Color? color,
       @IconOrNullConverter() LayrzIcon? icon,
       String? background,
@@ -421,7 +422,8 @@ abstract class _$$WorkspaceImplCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      @AppInternalIdentifierOrNullConverter() AppInternalIdentifier? typeApp,
+      @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
+      AppInternalIdentifier? typeApp,
       @ColorOrNullConverter() Color? color,
       @IconOrNullConverter() LayrzIcon? icon,
       String? background,
@@ -667,7 +669,7 @@ class _$WorkspaceImpl implements _Workspace {
   const _$WorkspaceImpl(
       {required this.id,
       required this.name,
-      @AppInternalIdentifierOrNullConverter() this.typeApp,
+      @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) this.typeApp,
       @ColorOrNullConverter() this.color,
       @IconOrNullConverter() this.icon,
       this.background,
@@ -734,7 +736,7 @@ class _$WorkspaceImpl implements _Workspace {
 
   /// Is the type of the App
   @override
-  @AppInternalIdentifierOrNullConverter()
+  @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
   final AppInternalIdentifier? typeApp;
 
   /// Indicates the color of the workspace
@@ -1154,7 +1156,7 @@ abstract class _Workspace implements Workspace {
   const factory _Workspace(
       {required final String id,
       required final String name,
-      @AppInternalIdentifierOrNullConverter()
+      @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
       final AppInternalIdentifier? typeApp,
       @ColorOrNullConverter() final Color? color,
       @IconOrNullConverter() final LayrzIcon? icon,
@@ -1203,7 +1205,7 @@ abstract class _Workspace implements Workspace {
 
   /// Is the type of the App
   @override
-  @AppInternalIdentifierOrNullConverter()
+  @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
   AppInternalIdentifier? get typeApp;
 
   /// Indicates the color of the workspace

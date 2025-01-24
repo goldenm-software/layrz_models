@@ -1,63 +1,21 @@
 part of '../../app.dart';
 
 enum BackgroundMode {
+  @JsonValue('SOLID')
   solid,
+  @JsonValue('WALLPAPER')
   wallpaper,
-  plasma;
+  ;
 
   @override
   String toString() => toJson();
 
+  /// [toJson] returns the string representation of the enum value.
+  String toJson() => _$BackgroundModeEnumMap[this] ?? 'SOLID';
+
+  /// [fromJson] returns the enum value from a string representation.
   static BackgroundMode fromJson(String json) {
-    switch (json) {
-      case 'SOLID':
-        return BackgroundMode.solid;
-      case 'WALLPAPER':
-        return BackgroundMode.wallpaper;
-      case 'PLASMA':
-        return BackgroundMode.plasma;
-      default:
-        return BackgroundMode.solid;
-    }
+    final found = _$BackgroundModeEnumMap.entries.firstWhereOrNull((e) => e.value == json);
+    return found?.key ?? BackgroundMode.solid;
   }
-
-  String toJson() {
-    switch (this) {
-      case BackgroundMode.solid:
-        return 'SOLID';
-      case BackgroundMode.wallpaper:
-        return 'WALLPAPER';
-      case BackgroundMode.plasma:
-        return 'PLASMA';
-      default:
-        return 'SOLID';
-    }
-  }
-}
-
-class BackgroundModeConverter implements JsonConverter<BackgroundMode, String> {
-  const BackgroundModeConverter();
-
-  @override
-  BackgroundMode fromJson(String json) {
-    return BackgroundMode.fromJson(json);
-  }
-
-  @override
-  String toJson(BackgroundMode object) {
-    return object.toJson();
-  }
-}
-
-class BackgroundModeOrNullConverter implements JsonConverter<BackgroundMode?, String?> {
-  const BackgroundModeOrNullConverter();
-
-  @override
-  BackgroundMode? fromJson(String? json) {
-    if (json == null) return null;
-    return BackgroundMode.fromJson(json);
-  }
-
-  @override
-  String? toJson(BackgroundMode? object) => object?.toJson();
 }

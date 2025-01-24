@@ -10,10 +10,10 @@ class Action with _$Action {
     required String name,
 
     /// Is the type of the action.
-    @ActionTypeConverter() required ActionType kind,
+    @JsonKey(unknownEnumValue: ActionType.performOperation) required ActionType kind,
 
     /// Is the subtype of the action.
-    @ActionSubtypeConverter() @Default(ActionSubtype.unused) ActionSubtype subkind,
+    @JsonKey(unknownEnumValue: ActionSubtype.unused) @Default(ActionSubtype.unused) ActionSubtype subkind,
 
     /// Is the ID of tag to perform commands.
     String? commandId,
@@ -48,7 +48,7 @@ class Action with _$Action {
 class ActionGeofenceSettings with _$ActionGeofenceSettings {
   const factory ActionGeofenceSettings({
     /// [whoOwner] defines who is the owner of the geofence to create.
-    @ActionPropertyConverter() @Default(ActionProperty.none) ActionProperty whoOwner,
+    @JsonKey(unknownEnumValue: ActionProperty.none) @Default(ActionProperty.none) ActionProperty whoOwner,
 
     /// [name] defines the name of the geofence to create.
     /// This property is a LCL formula
@@ -72,155 +72,99 @@ class ActionGeofenceSettings with _$ActionGeofenceSettings {
 
 enum ActionType {
   /// Layrz API Reference: LINK
+  @JsonValue('LINK')
   link,
 
   /// Layrz API Reference: PERFORMOPERATION
+  @JsonValue('PERFORMOPERATION')
   performOperation,
 
   /// Layrz API Reference: PERFORMCOMMAND
+  @JsonValue('PERFORMCOMMAND')
   performCommand,
 
   /// Layrz API Reference: SENDTOOMEGA
+  @JsonValue('SENDTOOMEGA')
   sendToOutbound,
 
   /// Layrz API Reference: TOMONITORCENTER
+  @JsonValue('TOMONITORCENTER')
   sendToMonitorCenter,
 
   /// Layrz API Reference: TOCHECKPOINTROUTE
+  @JsonValue('TOCHECKPOINTROUTE')
   sendToCheckpoint,
 
   /// Layrz API Reference: CREATE_GEOFENCE
+  @JsonValue('CREATE_GEOFENCE')
   createGeofence,
   ;
 
   @override
   String toString() => toJson();
 
-  String toJson() {
-    switch (this) {
-      case ActionType.performOperation:
-        return 'PERFORMOPERATION';
-      case ActionType.performCommand:
-        return 'PERFORMCOMMAND';
-      case ActionType.sendToOutbound:
-        return 'SENDTOOMEGA';
-      case ActionType.sendToMonitorCenter:
-        return 'TOMONITORCENTER';
-      case ActionType.sendToCheckpoint:
-        return 'TOCHECKPOINTROUTE';
-      case ActionType.createGeofence:
-        return 'CREATE_GEOFENCE';
-      case ActionType.link:
-      default:
-        return 'LINK';
-    }
-  }
+  String toJson() => _$ActionTypeEnumMap[this] ?? 'PERFORMOPERATION';
 
   static ActionType fromJson(String json) {
-    switch (json) {
-      case 'PERFORMOPERATION':
-        return ActionType.performOperation;
-      case 'PERFORMCOMMAND':
-        return ActionType.performCommand;
-      case 'SENDTOOMEGA':
-        return ActionType.sendToOutbound;
-      case 'TOMONITORCENTER':
-        return ActionType.sendToMonitorCenter;
-      case 'TOCHECKPOINTROUTE':
-        return ActionType.sendToCheckpoint;
-      case 'CREATE_GEOFENCE':
-        return ActionType.createGeofence;
-      case 'LINK':
-      default:
-        return ActionType.link;
-    }
+    final found = _$ActionTypeEnumMap.entries.firstWhereOrNull((e) => e.value == json);
+    return found?.key ?? ActionType.performOperation;
   }
 }
 
 enum ActionSubtype {
   /// Layrz API Reference: BOTH
+  @JsonValue('BOTH')
   both,
 
   /// Layrz API Reference: LINK
+  @JsonValue('LINK')
   link,
 
   /// Layrz API Reference: UNLINK
+  @JsonValue('UNLINK')
   unlink,
 
   /// Layrz API Reference: UNUSED
-  unused;
+  @JsonValue('UNUSED')
+  unused,
+  ;
 
   @override
   String toString() => toJson();
 
-  String toJson() {
-    switch (this) {
-      case ActionSubtype.link:
-        return 'LINK';
-      case ActionSubtype.unlink:
-        return 'UNLINK';
-      case ActionSubtype.unused:
-        return 'UNUSED';
-      case ActionSubtype.both:
-      default:
-        return 'BOTH';
-    }
-  }
+  String toJson() => _$ActionSubtypeEnumMap[this] ?? 'UNUSED';
 
   static ActionSubtype fromJson(String json) {
-    switch (json) {
-      case 'LINK':
-        return ActionSubtype.link;
-      case 'UNLINK':
-        return ActionSubtype.unlink;
-      case 'UNUSED':
-        return ActionSubtype.unused;
-      case 'BOTH':
-      default:
-        return ActionSubtype.both;
-    }
+    final found = _$ActionSubtypeEnumMap.entries.firstWhereOrNull((e) => e.value == json);
+    return found?.key ?? ActionSubtype.unused;
   }
 }
 
 enum ActionProperty {
   /// Layrz API Reference: NONE
   /// Description: No owner or let the system decide
+  @JsonValue('NONE')
   none,
 
   /// Layrz API Reference: ASSET
   /// Description: The owner of the geofence should be the asset owner
+  @JsonValue('ASSET')
   asset,
 
   /// Layrz API Reference: ACTION
   /// Description: The owner of the geofence should be the action owner
+  @JsonValue('ACTION')
   action,
   ;
 
   @override
   String toString() => toJson();
 
-  String toJson() {
-    switch (this) {
-      case ActionProperty.asset:
-        return 'ASSET';
-      case ActionProperty.action:
-        return 'ACTION';
-      case ActionProperty.none:
-      default:
-        return 'NONE';
-    }
-  }
+  String toJson() => _$ActionPropertyEnumMap[this] ?? 'NONE';
 
   static ActionProperty fromJson(String json) {
-    switch (json) {
-      case 'ASSET':
-        return ActionProperty.asset;
-      case 'ACTION':
-        return ActionProperty.action;
-      case 'NONE':
-      default:
-        return ActionProperty.none;
-    }
+    final found = _$ActionPropertyEnumMap.entries.firstWhereOrNull((e) => e.value == json);
+    return found?.key ?? ActionProperty.none;
   }
 }
 
@@ -259,7 +203,7 @@ class ActionInput with _$ActionInput {
     String? commandId,
 
     /// Action type, please read the documentation of ActionType for more information about the actions.
-    @ActionTypeOrNullConverter() ActionType? kind,
+    @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType? kind,
 
     /// Name of the trigger.
     String? name,
@@ -271,7 +215,7 @@ class ActionInput with _$ActionInput {
     @Default([]) List<String>? outboundServicesIds,
 
     /// Subkind
-    @ActionSubtypeOrNullConverter() ActionSubtype? subkind,
+    @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype? subkind,
 
     /// List of triggers IDs enabled for handle this action.
     @Default([]) List<String>? triggersIds,
@@ -281,106 +225,4 @@ class ActionInput with _$ActionInput {
   }) = _ActionInput;
 
   factory ActionInput.fromJson(Map<String, dynamic> json) => _$ActionInputFromJson(json);
-}
-
-class ActionTypeConverter implements JsonConverter<ActionType, String> {
-  const ActionTypeConverter();
-
-  @override
-  ActionType fromJson(String json) {
-    return ActionType.fromJson(json);
-  }
-
-  @override
-  String toJson(ActionType object) {
-    return object.toJson();
-  }
-}
-
-class ActionTypeOrNullConverter implements JsonConverter<ActionType?, String?> {
-  const ActionTypeOrNullConverter();
-
-  @override
-  ActionType? fromJson(String? json) {
-    if (json == null) {
-      return null;
-    }
-    return ActionType.fromJson(json);
-  }
-
-  @override
-  String? toJson(ActionType? object) {
-    if (object == null) {
-      return null;
-    }
-    return object.toJson();
-  }
-}
-
-class ActionSubtypeConverter implements JsonConverter<ActionSubtype, String> {
-  const ActionSubtypeConverter();
-
-  @override
-  ActionSubtype fromJson(String json) {
-    return ActionSubtype.fromJson(json);
-  }
-
-  @override
-  String toJson(ActionSubtype object) {
-    return object.toJson();
-  }
-}
-
-class ActionSubtypeOrNullConverter implements JsonConverter<ActionSubtype?, String?> {
-  const ActionSubtypeOrNullConverter();
-
-  @override
-  ActionSubtype? fromJson(String? json) {
-    if (json == null) {
-      return null;
-    }
-    return ActionSubtype.fromJson(json);
-  }
-
-  @override
-  String? toJson(ActionSubtype? object) {
-    if (object == null) {
-      return null;
-    }
-    return object.toJson();
-  }
-}
-
-class ActionPropertyConverter implements JsonConverter<ActionProperty, String> {
-  const ActionPropertyConverter();
-
-  @override
-  ActionProperty fromJson(String json) {
-    return ActionProperty.fromJson(json);
-  }
-
-  @override
-  String toJson(ActionProperty object) {
-    return object.toJson();
-  }
-}
-
-class ActionPropertyOrNullConverter implements JsonConverter<ActionProperty?, String?> {
-  const ActionPropertyOrNullConverter();
-
-  @override
-  ActionProperty? fromJson(String? json) {
-    if (json == null) {
-      return null;
-    }
-    return ActionProperty.fromJson(json);
-  }
-
-  @override
-  String? toJson(ActionProperty? object) {
-    if (object == null) {
-      return null;
-    }
-    return object.toJson();
-  }
 }

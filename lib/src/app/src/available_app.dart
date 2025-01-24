@@ -13,10 +13,10 @@ class AvailableApp with _$AvailableApp {
     required String appId,
 
     /// [appType] is the type of the app.
-    @AppTypeConverter() required AppType appType,
+    @JsonKey(unknownEnumValue: AppType.public) @Default(AppType.public) AppType appType,
 
     /// [technology] is the technology of the app.
-    @AppTechnologyConverter() required AppTechnology technology,
+    @JsonKey(unknownEnumValue: AppTechnology.flutter) @Default(AppTechnology.flutter) AppTechnology technology,
 
     /// [legalInformation] is the legal information of the app.
     AppLegal? legalInformation,
@@ -25,7 +25,7 @@ class AvailableApp with _$AvailableApp {
     AppDesign? designInformation,
 
     /// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
-    @AppPlatformConverter() List<AppPlatform>? supportedPlatforms,
+    @JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? supportedPlatforms,
 
     /// [onlyCustomized] is true if the app only can be register with customization.
     required bool onlyCustomized,
@@ -50,4 +50,22 @@ class AvailableApp with _$AvailableApp {
   }) = _AvailableApp;
 
   factory AvailableApp.fromJson(Map<String, dynamic> json) => _$AvailableAppFromJson(json);
+}
+
+@unfreezed
+class AvailableAppInput with _$AvailableAppInput {
+  factory AvailableAppInput({
+    String? id,
+    @Default('') String name,
+    @Default('') String appId,
+    @JsonKey(unknownEnumValue: AppTechnology.flutter) @Default(AppTechnology.flutter) AppTechnology technology,
+    required AppLegalInput legalInformation,
+    required AppDesignInput designInformation,
+    @JsonKey(unknownEnumValue: AppPlatform.web) @Default([]) List<AppPlatform> supportedPlatforms,
+    @Default(false) bool onlyCustomized,
+    @Default(true) bool hasImport,
+    @Default(true) bool hasKeychain,
+  }) = _AvailableAppInput;
+
+  factory AvailableAppInput.fromJson(Map<String, dynamic> json) => _$AvailableAppInputFromJson(json);
 }

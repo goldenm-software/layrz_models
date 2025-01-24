@@ -17,7 +17,8 @@ _$AccessImpl _$$AccessImplFromJson(Map<String, dynamic> json) => _$AccessImpl(
       user: json['user'] == null
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),
-      module: const AccessModuleConverter().fromJson(json['module'] as String),
+      module: $enumDecode(_$AccessModuleEnumMap, json['module'],
+          unknownValue: AccessModule.unknown),
     );
 
 Map<String, dynamic> _$$AccessImplToJson(_$AccessImpl instance) =>
@@ -30,8 +31,43 @@ Map<String, dynamic> _$$AccessImplToJson(_$AccessImpl instance) =>
       'objectId': instance.objectId,
       'userId': instance.userId,
       'user': instance.user?.toJson(),
-      'module': const AccessModuleConverter().toJson(instance.module),
+      'module': instance.module.toJson(),
     };
+
+const _$AccessModuleEnumMap = {
+  AccessModule.actions: 'ACTIONS',
+  AccessModule.assets: 'ASSETS',
+  AccessModule.careprotocols: 'CAREPROTOCOLS',
+  AccessModule.checkpoints: 'CHECKPOINTS',
+  AccessModule.conciergeForms: 'CONCIERGE_FORMS',
+  AccessModule.coreprocess: 'COREPROCESS',
+  AccessModule.devices: 'DEVICES',
+  AccessModule.functions: 'FUNCTIONS',
+  AccessModule.geofences: 'GEOFENCES',
+  AccessModule.inboundServices: 'INBOUND_SERVICES',
+  AccessModule.operations: 'OPERATIONS',
+  AccessModule.outboundServices: 'OUTBOUND_SERVICES',
+  AccessModule.presets: 'PRESETS',
+  AccessModule.references: 'REFERENCES',
+  AccessModule.externalAccounts: 'EXTERNAL_ACCOUNTS',
+  AccessModule.tags: 'TAGS',
+  AccessModule.triggers: 'TRIGGERS',
+  AccessModule.users: 'USERS',
+  AccessModule.reporttemplates: 'REPORTTEMPLATES',
+  AccessModule.charts: 'CHARTS',
+  AccessModule.visionProfiles: 'VISION_PROFILES',
+  AccessModule.cloudFile: 'CLOUD_FILE',
+  AccessModule.cloudFolder: 'CLOUD_FOLDER',
+  AccessModule.commands: 'COMMANDS',
+  AccessModule.workspaces: 'WORKSPACES',
+  AccessModule.emailTemplates: 'EMAIL_TEMPLATES',
+  AccessModule.brickhouseAlert: 'BRICKHOUSE_ALERT',
+  AccessModule.brickhouseUnit: 'BRICKHOUSE_UNIT',
+  AccessModule.sensors: 'SENSORS',
+  AccessModule.tagonBusRoutes: 'TAGON_BUS_ROUTES',
+  AccessModule.exchangeServices: 'EXCHANGE_SERVICES',
+  AccessModule.unknown: 'UNKNOWN',
+};
 
 _$AccessInputImpl _$$AccessInputImplFromJson(Map<String, dynamic> json) =>
     _$AccessInputImpl(
@@ -41,7 +77,8 @@ _$AccessInputImpl _$$AccessInputImplFromJson(Map<String, dynamic> json) =>
       manage: json['manage'] as bool? ?? false,
       objectId: json['objectId'] as String?,
       userId: json['userId'] as String?,
-      module: const AccessModuleConverter().fromJson(json['module'] as String),
+      module: $enumDecode(_$AccessModuleEnumMap, json['module'],
+          unknownValue: AccessModule.unknown),
     );
 
 Map<String, dynamic> _$$AccessInputImplToJson(_$AccessInputImpl instance) =>
@@ -52,7 +89,7 @@ Map<String, dynamic> _$$AccessInputImplToJson(_$AccessInputImpl instance) =>
       'manage': instance.manage,
       'objectId': instance.objectId,
       'userId': instance.userId,
-      'module': const AccessModuleConverter().toJson(instance.module),
+      'module': instance.module.toJson(),
     };
 
 _$LinkShortcutImpl _$$LinkShortcutImplFromJson(Map<String, dynamic> json) =>
@@ -78,10 +115,11 @@ Map<String, dynamic> _$$LinkShortcutImplToJson(_$LinkShortcutImpl instance) =>
 _$ActionImpl _$$ActionImplFromJson(Map<String, dynamic> json) => _$ActionImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      kind: const ActionTypeConverter().fromJson(json['kind'] as String),
-      subkind: json['subkind'] == null
-          ? ActionSubtype.unused
-          : const ActionSubtypeConverter().fromJson(json['subkind'] as String),
+      kind: $enumDecode(_$ActionTypeEnumMap, json['kind'],
+          unknownValue: ActionType.performOperation),
+      subkind: $enumDecodeNullable(_$ActionSubtypeEnumMap, json['subkind'],
+              unknownValue: ActionSubtype.unused) ??
+          ActionSubtype.unused,
       commandId: json['commandId'] as String?,
       triggers: (json['triggers'] as List<dynamic>?)
           ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
@@ -115,8 +153,8 @@ Map<String, dynamic> _$$ActionImplToJson(_$ActionImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'kind': const ActionTypeConverter().toJson(instance.kind),
-      'subkind': const ActionSubtypeConverter().toJson(instance.subkind),
+      'kind': instance.kind.toJson(),
+      'subkind': instance.subkind.toJson(),
       'commandId': instance.commandId,
       'triggers': instance.triggers?.map((e) => e.toJson()).toList(),
       'triggersIds': instance.triggersIds,
@@ -130,13 +168,29 @@ Map<String, dynamic> _$$ActionImplToJson(_$ActionImpl instance) =>
       'geofenceSettings': instance.geofenceSettings?.toJson(),
     };
 
+const _$ActionTypeEnumMap = {
+  ActionType.link: 'LINK',
+  ActionType.performOperation: 'PERFORMOPERATION',
+  ActionType.performCommand: 'PERFORMCOMMAND',
+  ActionType.sendToOutbound: 'SENDTOOMEGA',
+  ActionType.sendToMonitorCenter: 'TOMONITORCENTER',
+  ActionType.sendToCheckpoint: 'TOCHECKPOINTROUTE',
+  ActionType.createGeofence: 'CREATE_GEOFENCE',
+};
+
+const _$ActionSubtypeEnumMap = {
+  ActionSubtype.both: 'BOTH',
+  ActionSubtype.link: 'LINK',
+  ActionSubtype.unlink: 'UNLINK',
+  ActionSubtype.unused: 'UNUSED',
+};
+
 _$ActionGeofenceSettingsImpl _$$ActionGeofenceSettingsImplFromJson(
         Map<String, dynamic> json) =>
     _$ActionGeofenceSettingsImpl(
-      whoOwner: json['whoOwner'] == null
-          ? ActionProperty.none
-          : const ActionPropertyConverter()
-              .fromJson(json['whoOwner'] as String),
+      whoOwner: $enumDecodeNullable(_$ActionPropertyEnumMap, json['whoOwner'],
+              unknownValue: ActionProperty.none) ??
+          ActionProperty.none,
       name: json['name'] as String?,
       category: const GeofenceCategoryOrNullConverter()
           .fromJson(json['category'] as String?),
@@ -150,7 +204,7 @@ _$ActionGeofenceSettingsImpl _$$ActionGeofenceSettingsImplFromJson(
 Map<String, dynamic> _$$ActionGeofenceSettingsImplToJson(
         _$ActionGeofenceSettingsImpl instance) =>
     <String, dynamic>{
-      'whoOwner': const ActionPropertyConverter().toJson(instance.whoOwner),
+      'whoOwner': instance.whoOwner.toJson(),
       'name': instance.name,
       'category':
           const GeofenceCategoryOrNullConverter().toJson(instance.category),
@@ -159,11 +213,18 @@ Map<String, dynamic> _$$ActionGeofenceSettingsImplToJson(
       'mappitRoute': instance.mappitRoute?.toJson(),
     };
 
+const _$ActionPropertyEnumMap = {
+  ActionProperty.none: 'NONE',
+  ActionProperty.asset: 'ASSET',
+  ActionProperty.action: 'ACTION',
+};
+
 _$ActionInputImpl _$$ActionInputImplFromJson(Map<String, dynamic> json) =>
     _$ActionInputImpl(
       id: json['id'] as String?,
       commandId: json['commandId'] as String?,
-      kind: const ActionTypeOrNullConverter().fromJson(json['kind'] as String?),
+      kind: $enumDecodeNullable(_$ActionTypeEnumMap, json['kind'],
+          unknownValue: ActionType.performOperation),
       name: json['name'] as String?,
       operationsIds: (json['operationsIds'] as List<dynamic>?)
               ?.map((e) => e as String)
@@ -173,8 +234,8 @@ _$ActionInputImpl _$$ActionInputImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      subkind: const ActionSubtypeOrNullConverter()
-          .fromJson(json['subkind'] as String?),
+      subkind: $enumDecodeNullable(_$ActionSubtypeEnumMap, json['subkind'],
+          unknownValue: ActionSubtype.unused),
       triggersIds: (json['triggersIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -186,11 +247,11 @@ Map<String, dynamic> _$$ActionInputImplToJson(_$ActionInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'commandId': instance.commandId,
-      'kind': const ActionTypeOrNullConverter().toJson(instance.kind),
+      'kind': instance.kind?.toJson(),
       'name': instance.name,
       'operationsIds': instance.operationsIds,
       'outboundServicesIds': instance.outboundServicesIds,
-      'subkind': const ActionSubtypeOrNullConverter().toJson(instance.subkind),
+      'subkind': instance.subkind?.toJson(),
       'triggersIds': instance.triggersIds,
       'watchImage': instance.watchImage,
     };
@@ -1378,7 +1439,8 @@ _$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>
       attachImage: json['attachImage'] as bool?,
       emailTemplateId: json['emailTemplateId'] as String?,
       pushPlatforms: (json['pushPlatforms'] as List<dynamic>?)
-          ?.map((e) => const AppPlatformConverter().fromJson(e as String))
+          ?.map((e) => $enumDecode(_$AppPlatformEnumMap, e,
+              unknownValue: AppPlatform.web))
           .toList(),
       pushTitle: json['pushTitle'] as String?,
     );
@@ -1411,11 +1473,19 @@ Map<String, dynamic> _$$OperationImplToJson(_$OperationImpl instance) =>
       'useAssetContactsInstead': instance.useAssetContactsInstead,
       'attachImage': instance.attachImage,
       'emailTemplateId': instance.emailTemplateId,
-      'pushPlatforms': instance.pushPlatforms
-          ?.map(const AppPlatformConverter().toJson)
-          .toList(),
+      'pushPlatforms': instance.pushPlatforms?.map((e) => e.toJson()).toList(),
       'pushTitle': instance.pushTitle,
     };
+
+const _$AppPlatformEnumMap = {
+  AppPlatform.web: 'WEB',
+  AppPlatform.windows: 'WINDOWS',
+  AppPlatform.macos: 'MACOS',
+  AppPlatform.ios: 'IOS',
+  AppPlatform.android: 'ANDROID',
+  AppPlatform.linux: 'LINUX',
+  AppPlatform.layrzOS: 'LAYRZ_OS',
+};
 
 _$HttpHeaderImpl _$$HttpHeaderImplFromJson(Map<String, dynamic> json) =>
     _$HttpHeaderImpl(

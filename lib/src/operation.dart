@@ -90,7 +90,7 @@ class Operation with _$Operation {
     /// [pushPlatforms] is the list of platforms where the operation should be received.
     /// This field will only be considered in the following [operationType]:
     /// - [OperationType.bhsPush]
-    @AppPlatformConverter() List<AppPlatform>? pushPlatforms,
+    @JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? pushPlatforms,
 
     /// [pushTitle] is the title of the push notification.
     /// This field will only be considered in the following [operationType]:
@@ -187,8 +187,6 @@ enum HttpRequestType {
         return 'PATCH';
       case HttpRequestType.httpDelete:
         return 'DELETE';
-      default:
-        throw Exception('HttpRequestType not found');
     }
   }
 
@@ -226,8 +224,6 @@ enum NotificationType {
         return 'WHATSAPP';
       case NotificationType.voice:
         return 'VOICE';
-      default:
-        throw Exception('NotificationType not found');
     }
   }
 
@@ -391,20 +387,6 @@ class HttpRequestTypeOrNullConverter implements JsonConverter<HttpRequestType?, 
     if (object == null) {
       return null;
     }
-    return object.toJson();
-  }
-}
-
-class HttpHeaderConverter implements JsonConverter<HttpHeader, Map<String, dynamic>> {
-  const HttpHeaderConverter();
-
-  @override
-  HttpHeader fromJson(Map<String, dynamic> json) {
-    return HttpHeader.fromJson(json);
-  }
-
-  @override
-  Map<String, dynamic> toJson(HttpHeader object) {
     return object.toJson();
   }
 }

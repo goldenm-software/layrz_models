@@ -6,7 +6,7 @@ class RegisteredApp with _$RegisteredApp {
     required String id,
     required String name,
     required String nickname,
-    @AppTechnologyConverter() required AppTechnology technology,
+    @JsonKey(unknownEnumValue: AppTechnology.flutter) @Default(AppTechnology.flutter) AppTechnology technology,
     AppLegal? legalInformation,
     AppDesign? designInformation,
     bool? isCustomized,

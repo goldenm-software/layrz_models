@@ -334,10 +334,10 @@ _$BrickHouseWorkspaceInputImpl _$$BrickHouseWorkspaceInputImplFromJson(
       name: json['name'] as String,
       metricSystem: const MetricSystemConverter()
           .fromJson(json['metricSystem'] as String),
-      typeApp: json['typeApp'] == null
-          ? AppInternalIdentifier.brickhouseTracking
-          : const AppInternalIdentifierOrNullConverter()
-              .fromJson(json['typeApp'] as String?),
+      typeApp: $enumDecodeNullable(
+              _$AppInternalIdentifierEnumMap, json['typeApp'],
+              unknownValue: AppInternalIdentifier.unknown) ??
+          AppInternalIdentifier.brickhouseTracking,
       timezoneId: json['timezoneId'] as String,
       assetsIds: (json['assetsIds'] as List<dynamic>?)
               ?.map((e) => e as String)
@@ -353,8 +353,38 @@ Map<String, dynamic> _$$BrickHouseWorkspaceInputImplToJson(
       'name': instance.name,
       'metricSystem':
           const MetricSystemConverter().toJson(instance.metricSystem),
-      'typeApp':
-          const AppInternalIdentifierOrNullConverter().toJson(instance.typeApp),
+      'typeApp': instance.typeApp?.toJson(),
       'timezoneId': instance.timezoneId,
       'assetsIds': instance.assetsIds,
     };
+
+const _$AppInternalIdentifierEnumMap = {
+  AppInternalIdentifier.admin: 'ADMIN',
+  AppInternalIdentifier.invite: 'INVITE',
+  AppInternalIdentifier.launchpad: 'LAUNCHPAD',
+  AppInternalIdentifier.link: 'LINK',
+  AppInternalIdentifier.one: 'ONE',
+  AppInternalIdentifier.fusion: 'FUSION',
+  AppInternalIdentifier.concierge: 'CONCIERGE',
+  AppInternalIdentifier.keyboard: 'KEYBOARD',
+  AppInternalIdentifier.tenvioPickAndPack: 'TENVIO_PICK_AND_PACK',
+  AppInternalIdentifier.tenvioDrivers: 'TENVIO_DRIVERS',
+  AppInternalIdentifier.drive: 'DRIVE',
+  AppInternalIdentifier.repcom: 'REPCOM',
+  AppInternalIdentifier.vision: 'VISION',
+  AppInternalIdentifier.cloud: 'CLOUD',
+  AppInternalIdentifier.confiot: 'CONFIOT',
+  AppInternalIdentifier.gaslp: 'GASLP',
+  AppInternalIdentifier.brickhouseTracking: 'BRICKHOUSE_TRACKING',
+  AppInternalIdentifier.analyticsAdmin: 'ANALYTICS_ADMIN',
+  AppInternalIdentifier.analyticsDashboard: 'ANALYTICS_DASHBOARD',
+  AppInternalIdentifier.atsAdmin: 'ATS_ADMIN',
+  AppInternalIdentifier.atsWeb: 'ATS_WEB',
+  AppInternalIdentifier.atsFrentista: 'ATS_FRENTISTA',
+  AppInternalIdentifier.atsDriver: 'ATS_DRIVER',
+  AppInternalIdentifier.mapOnly: 'MAP_ONLY',
+  AppInternalIdentifier.tagonMap: 'TAGON_MAP',
+  AppInternalIdentifier.tagonManager: 'TAGON_MANAGER',
+  AppInternalIdentifier.sdmManager: 'SDM_MANAGER',
+  AppInternalIdentifier.unknown: 'UNKNOWN',
+};

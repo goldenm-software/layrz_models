@@ -28,7 +28,7 @@ mixin _$Access {
   String? get objectId => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   AccessModule get module => throw _privateConstructorUsedError;
 
   /// Serializes this Access to a JSON map.
@@ -54,7 +54,7 @@ abstract class $AccessCopyWith<$Res> {
       String? objectId,
       String userId,
       User? user,
-      @AccessModuleConverter() AccessModule module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module});
 
   $UserCopyWith<$Res>? get user;
 }
@@ -155,7 +155,7 @@ abstract class _$$AccessImplCopyWith<$Res> implements $AccessCopyWith<$Res> {
       String? objectId,
       String userId,
       User? user,
-      @AccessModuleConverter() AccessModule module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module});
 
   @override
   $UserCopyWith<$Res>? get user;
@@ -237,7 +237,7 @@ class _$AccessImpl implements _Access {
       this.objectId,
       required this.userId,
       this.user,
-      @AccessModuleConverter() required this.module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) required this.module});
 
   factory _$AccessImpl.fromJson(Map<String, dynamic> json) =>
       _$$AccessImplFromJson(json);
@@ -259,7 +259,7 @@ class _$AccessImpl implements _Access {
   @override
   final User? user;
   @override
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   final AccessModule module;
 
   @override
@@ -307,16 +307,16 @@ class _$AccessImpl implements _Access {
 
 abstract class _Access implements Access {
   const factory _Access(
-          {required final String id,
-          final String? label,
-          final bool? read,
-          final bool? write,
-          final bool? manage,
-          final String? objectId,
-          required final String userId,
-          final User? user,
-          @AccessModuleConverter() required final AccessModule module}) =
-      _$AccessImpl;
+      {required final String id,
+      final String? label,
+      final bool? read,
+      final bool? write,
+      final bool? manage,
+      final String? objectId,
+      required final String userId,
+      final User? user,
+      @JsonKey(unknownEnumValue: AccessModule.unknown)
+      required final AccessModule module}) = _$AccessImpl;
 
   factory _Access.fromJson(Map<String, dynamic> json) = _$AccessImpl.fromJson;
 
@@ -337,7 +337,7 @@ abstract class _Access implements Access {
   @override
   User? get user;
   @override
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   AccessModule get module;
 
   /// Create a copy of Access
@@ -391,11 +391,11 @@ mixin _$AccessInput {
   set userId(String? value) => throw _privateConstructorUsedError;
 
   /// Represents the module of the access.
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   AccessModule get module => throw _privateConstructorUsedError;
 
   /// Represents the module of the access.
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   set module(AccessModule value) => throw _privateConstructorUsedError;
 
   /// Serializes this AccessInput to a JSON map.
@@ -421,7 +421,7 @@ abstract class $AccessInputCopyWith<$Res> {
       bool manage,
       String? objectId,
       String? userId,
-      @AccessModuleConverter() AccessModule module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module});
 }
 
 /// @nodoc
@@ -495,7 +495,7 @@ abstract class _$$AccessInputImplCopyWith<$Res>
       bool manage,
       String? objectId,
       String? userId,
-      @AccessModuleConverter() AccessModule module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module});
 }
 
 /// @nodoc
@@ -562,7 +562,7 @@ class _$AccessInputImpl implements _AccessInput {
       this.manage = false,
       this.objectId,
       this.userId,
-      @AccessModuleConverter() required this.module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) required this.module});
 
   factory _$AccessInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$AccessInputImplFromJson(json);
@@ -596,7 +596,7 @@ class _$AccessInputImpl implements _AccessInput {
 
   /// Represents the module of the access.
   @override
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   AccessModule module;
 
   @override
@@ -622,14 +622,14 @@ class _$AccessInputImpl implements _AccessInput {
 
 abstract class _AccessInput implements AccessInput {
   factory _AccessInput(
-          {String? id,
-          bool read,
-          bool write,
-          bool manage,
-          String? objectId,
-          String? userId,
-          @AccessModuleConverter() required AccessModule module}) =
-      _$AccessInputImpl;
+      {String? id,
+      bool read,
+      bool write,
+      bool manage,
+      String? objectId,
+      String? userId,
+      @JsonKey(unknownEnumValue: AccessModule.unknown)
+      required AccessModule module}) = _$AccessInputImpl;
 
   factory _AccessInput.fromJson(Map<String, dynamic> json) =
       _$AccessInputImpl.fromJson;
@@ -678,11 +678,11 @@ abstract class _AccessInput implements AccessInput {
 
   /// Represents the module of the access.
   @override
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   AccessModule get module;
 
   /// Represents the module of the access.
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   set module(AccessModule value);
 
   /// Create a copy of AccessInput
@@ -988,11 +988,11 @@ mixin _$Action {
   String get name => throw _privateConstructorUsedError;
 
   /// Is the type of the action.
-  @ActionTypeConverter()
+  @JsonKey(unknownEnumValue: ActionType.performOperation)
   ActionType get kind => throw _privateConstructorUsedError;
 
   /// Is the subtype of the action.
-  @ActionSubtypeConverter()
+  @JsonKey(unknownEnumValue: ActionSubtype.unused)
   ActionSubtype get subkind => throw _privateConstructorUsedError;
 
   /// Is the ID of tag to perform commands.
@@ -1039,8 +1039,8 @@ abstract class $ActionCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @ActionTypeConverter() ActionType kind,
-      @ActionSubtypeConverter() ActionSubtype subkind,
+      @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,
+      @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind,
       String? commandId,
       List<Trigger>? triggers,
       List<String>? triggersIds,
@@ -1171,8 +1171,8 @@ abstract class _$$ActionImplCopyWith<$Res> implements $ActionCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      @ActionTypeConverter() ActionType kind,
-      @ActionSubtypeConverter() ActionSubtype subkind,
+      @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,
+      @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind,
       String? commandId,
       List<Trigger>? triggers,
       List<String>? triggersIds,
@@ -1283,8 +1283,10 @@ class _$ActionImpl implements _Action {
   const _$ActionImpl(
       {required this.id,
       required this.name,
-      @ActionTypeConverter() required this.kind,
-      @ActionSubtypeConverter() this.subkind = ActionSubtype.unused,
+      @JsonKey(unknownEnumValue: ActionType.performOperation)
+      required this.kind,
+      @JsonKey(unknownEnumValue: ActionSubtype.unused)
+      this.subkind = ActionSubtype.unused,
       this.commandId,
       final List<Trigger>? triggers,
       final List<String>? triggersIds,
@@ -1316,13 +1318,12 @@ class _$ActionImpl implements _Action {
 
   /// Is the type of the action.
   @override
-  @ActionTypeConverter()
+  @JsonKey(unknownEnumValue: ActionType.performOperation)
   final ActionType kind;
 
   /// Is the subtype of the action.
   @override
-  @JsonKey()
-  @ActionSubtypeConverter()
+  @JsonKey(unknownEnumValue: ActionSubtype.unused)
   final ActionSubtype subkind;
 
   /// Is the ID of tag to perform commands.
@@ -1495,8 +1496,10 @@ abstract class _Action implements Action {
   const factory _Action(
       {required final String id,
       required final String name,
-      @ActionTypeConverter() required final ActionType kind,
-      @ActionSubtypeConverter() final ActionSubtype subkind,
+      @JsonKey(unknownEnumValue: ActionType.performOperation)
+      required final ActionType kind,
+      @JsonKey(unknownEnumValue: ActionSubtype.unused)
+      final ActionSubtype subkind,
       final String? commandId,
       final List<Trigger>? triggers,
       final List<String>? triggersIds,
@@ -1520,12 +1523,12 @@ abstract class _Action implements Action {
 
   /// Is the type of the action.
   @override
-  @ActionTypeConverter()
+  @JsonKey(unknownEnumValue: ActionType.performOperation)
   ActionType get kind;
 
   /// Is the subtype of the action.
   @override
-  @ActionSubtypeConverter()
+  @JsonKey(unknownEnumValue: ActionSubtype.unused)
   ActionSubtype get subkind;
 
   /// Is the ID of tag to perform commands.
@@ -1579,7 +1582,7 @@ ActionGeofenceSettings _$ActionGeofenceSettingsFromJson(
 /// @nodoc
 mixin _$ActionGeofenceSettings {
   /// [whoOwner] defines who is the owner of the geofence to create.
-  @ActionPropertyConverter()
+  @JsonKey(unknownEnumValue: ActionProperty.none)
   ActionProperty get whoOwner => throw _privateConstructorUsedError;
 
   /// [name] defines the name of the geofence to create.
@@ -1616,7 +1619,7 @@ abstract class $ActionGeofenceSettingsCopyWith<$Res> {
       _$ActionGeofenceSettingsCopyWithImpl<$Res, ActionGeofenceSettings>;
   @useResult
   $Res call(
-      {@ActionPropertyConverter() ActionProperty whoOwner,
+      {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
       String? name,
       @GeofenceCategoryOrNullConverter() GeofenceCategory? category,
       double? radius,
@@ -1702,7 +1705,7 @@ abstract class _$$ActionGeofenceSettingsImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@ActionPropertyConverter() ActionProperty whoOwner,
+      {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
       String? name,
       @GeofenceCategoryOrNullConverter() GeofenceCategory? category,
       double? radius,
@@ -1768,7 +1771,8 @@ class __$$ActionGeofenceSettingsImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ActionGeofenceSettingsImpl implements _ActionGeofenceSettings {
   const _$ActionGeofenceSettingsImpl(
-      {@ActionPropertyConverter() this.whoOwner = ActionProperty.none,
+      {@JsonKey(unknownEnumValue: ActionProperty.none)
+      this.whoOwner = ActionProperty.none,
       this.name,
       @GeofenceCategoryOrNullConverter() this.category,
       this.radius,
@@ -1780,8 +1784,7 @@ class _$ActionGeofenceSettingsImpl implements _ActionGeofenceSettings {
 
   /// [whoOwner] defines who is the owner of the geofence to create.
   @override
-  @JsonKey()
-  @ActionPropertyConverter()
+  @JsonKey(unknownEnumValue: ActionProperty.none)
   final ActionProperty whoOwner;
 
   /// [name] defines the name of the geofence to create.
@@ -1852,7 +1855,8 @@ class _$ActionGeofenceSettingsImpl implements _ActionGeofenceSettings {
 
 abstract class _ActionGeofenceSettings implements ActionGeofenceSettings {
   const factory _ActionGeofenceSettings(
-      {@ActionPropertyConverter() final ActionProperty whoOwner,
+      {@JsonKey(unknownEnumValue: ActionProperty.none)
+      final ActionProperty whoOwner,
       final String? name,
       @GeofenceCategoryOrNullConverter() final GeofenceCategory? category,
       final double? radius,
@@ -1864,7 +1868,7 @@ abstract class _ActionGeofenceSettings implements ActionGeofenceSettings {
 
   /// [whoOwner] defines who is the owner of the geofence to create.
   @override
-  @ActionPropertyConverter()
+  @JsonKey(unknownEnumValue: ActionProperty.none)
   ActionProperty get whoOwner;
 
   /// [name] defines the name of the geofence to create.
@@ -1916,11 +1920,11 @@ mixin _$ActionInput {
   set commandId(String? value) => throw _privateConstructorUsedError;
 
   /// Action type, please read the documentation of ActionType for more information about the actions.
-  @ActionTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ActionType.performOperation)
   ActionType? get kind => throw _privateConstructorUsedError;
 
   /// Action type, please read the documentation of ActionType for more information about the actions.
-  @ActionTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ActionType.performOperation)
   set kind(ActionType? value) => throw _privateConstructorUsedError;
 
   /// Name of the trigger.
@@ -1943,11 +1947,11 @@ mixin _$ActionInput {
       throw _privateConstructorUsedError;
 
   /// Subkind
-  @ActionSubtypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ActionSubtype.unused)
   ActionSubtype? get subkind => throw _privateConstructorUsedError;
 
   /// Subkind
-  @ActionSubtypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ActionSubtype.unused)
   set subkind(ActionSubtype? value) => throw _privateConstructorUsedError;
 
   /// List of triggers IDs enabled for handle this action.
@@ -1981,11 +1985,11 @@ abstract class $ActionInputCopyWith<$Res> {
   $Res call(
       {String? id,
       String? commandId,
-      @ActionTypeOrNullConverter() ActionType? kind,
+      @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType? kind,
       String? name,
       List<String>? operationsIds,
       List<String>? outboundServicesIds,
-      @ActionSubtypeOrNullConverter() ActionSubtype? subkind,
+      @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype? subkind,
       List<String>? triggersIds,
       bool? watchImage});
 }
@@ -2067,11 +2071,11 @@ abstract class _$$ActionInputImplCopyWith<$Res>
   $Res call(
       {String? id,
       String? commandId,
-      @ActionTypeOrNullConverter() ActionType? kind,
+      @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType? kind,
       String? name,
       List<String>? operationsIds,
       List<String>? outboundServicesIds,
-      @ActionSubtypeOrNullConverter() ActionSubtype? subkind,
+      @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype? subkind,
       List<String>? triggersIds,
       bool? watchImage});
 }
@@ -2146,11 +2150,11 @@ class _$ActionInputImpl implements _ActionInput {
   _$ActionInputImpl(
       {this.id,
       this.commandId,
-      @ActionTypeOrNullConverter() this.kind,
+      @JsonKey(unknownEnumValue: ActionType.performOperation) this.kind,
       this.name,
       this.operationsIds = const [],
       this.outboundServicesIds = const [],
-      @ActionSubtypeOrNullConverter() this.subkind,
+      @JsonKey(unknownEnumValue: ActionSubtype.unused) this.subkind,
       this.triggersIds = const [],
       this.watchImage = false});
 
@@ -2167,7 +2171,7 @@ class _$ActionInputImpl implements _ActionInput {
 
   /// Action type, please read the documentation of ActionType for more information about the actions.
   @override
-  @ActionTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ActionType.performOperation)
   ActionType? kind;
 
   /// Name of the trigger.
@@ -2186,7 +2190,7 @@ class _$ActionInputImpl implements _ActionInput {
 
   /// Subkind
   @override
-  @ActionSubtypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ActionSubtype.unused)
   ActionSubtype? subkind;
 
   /// List of triggers IDs enabled for handle this action.
@@ -2224,11 +2228,11 @@ abstract class _ActionInput implements ActionInput {
   factory _ActionInput(
       {String? id,
       String? commandId,
-      @ActionTypeOrNullConverter() ActionType? kind,
+      @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType? kind,
       String? name,
       List<String>? operationsIds,
       List<String>? outboundServicesIds,
-      @ActionSubtypeOrNullConverter() ActionSubtype? subkind,
+      @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype? subkind,
       List<String>? triggersIds,
       bool? watchImage}) = _$ActionInputImpl;
 
@@ -2251,11 +2255,11 @@ abstract class _ActionInput implements ActionInput {
 
   /// Action type, please read the documentation of ActionType for more information about the actions.
   @override
-  @ActionTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ActionType.performOperation)
   ActionType? get kind;
 
   /// Action type, please read the documentation of ActionType for more information about the actions.
-  @ActionTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ActionType.performOperation)
   set kind(ActionType? value);
 
   /// Name of the trigger.
@@ -2281,11 +2285,11 @@ abstract class _ActionInput implements ActionInput {
 
   /// Subkind
   @override
-  @ActionSubtypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ActionSubtype.unused)
   ActionSubtype? get subkind;
 
   /// Subkind
-  @ActionSubtypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ActionSubtype.unused)
   set subkind(ActionSubtype? value);
 
   /// List of triggers IDs enabled for handle this action.
@@ -15884,7 +15888,7 @@ mixin _$Operation {
   /// [pushPlatforms] is the list of platforms where the operation should be received.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
-  @AppPlatformConverter()
+  @JsonKey(unknownEnumValue: AppPlatform.web)
   List<AppPlatform>? get pushPlatforms => throw _privateConstructorUsedError;
 
   /// [pushTitle] is the title of the push notification.
@@ -15930,7 +15934,8 @@ abstract class $OperationCopyWith<$Res> {
       bool? useAssetContactsInstead,
       bool? attachImage,
       String? emailTemplateId,
-      @AppPlatformConverter() List<AppPlatform>? pushPlatforms,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      List<AppPlatform>? pushPlatforms,
       String? pushTitle});
 
   $TimezoneCopyWith<$Res>? get timezone;
@@ -16122,7 +16127,8 @@ abstract class _$$OperationImplCopyWith<$Res>
       bool? useAssetContactsInstead,
       bool? attachImage,
       String? emailTemplateId,
-      @AppPlatformConverter() List<AppPlatform>? pushPlatforms,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      List<AppPlatform>? pushPlatforms,
       String? pushTitle});
 
   @override
@@ -16294,7 +16300,8 @@ class _$OperationImpl implements _Operation {
       this.useAssetContactsInstead,
       this.attachImage,
       this.emailTemplateId,
-      @AppPlatformConverter() final List<AppPlatform>? pushPlatforms,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      final List<AppPlatform>? pushPlatforms,
       this.pushTitle})
       : _headers = headers,
         _receptionEmails = receptionEmails,
@@ -16480,7 +16487,7 @@ class _$OperationImpl implements _Operation {
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
   @override
-  @AppPlatformConverter()
+  @JsonKey(unknownEnumValue: AppPlatform.web)
   List<AppPlatform>? get pushPlatforms {
     final value = _pushPlatforms;
     if (value == null) return null;
@@ -16619,7 +16626,8 @@ abstract class _Operation implements Operation {
       final bool? useAssetContactsInstead,
       final bool? attachImage,
       final String? emailTemplateId,
-      @AppPlatformConverter() final List<AppPlatform>? pushPlatforms,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      final List<AppPlatform>? pushPlatforms,
       final String? pushTitle}) = _$OperationImpl;
 
   factory _Operation.fromJson(Map<String, dynamic> json) =
@@ -16740,7 +16748,7 @@ abstract class _Operation implements Operation {
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
   @override
-  @AppPlatformConverter()
+  @JsonKey(unknownEnumValue: AppPlatform.web)
   List<AppPlatform>? get pushPlatforms;
 
   /// [pushTitle] is the title of the push notification.

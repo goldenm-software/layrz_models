@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.24
+
+- Updated some models of sub module `apps` to support direct enum conversion
+
 ## 3.3.23
 
 - Added peripheral indicator and identifier for `InboundProtocol` and `Model` models

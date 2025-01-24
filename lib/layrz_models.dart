@@ -2,13 +2,14 @@ library layrz_models;
 
 import 'dart:convert';
 
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_icons/layrz_icons.dart';
 
+// Internal imports
 import 'src/app/app.dart';
 import 'src/assets/assets.dart';
-// Internal imports
 // import 'src/brickhouse/brickhouse.dart';
 import 'src/charts/charts.dart';
 import 'src/commands/commands.dart';
@@ -64,9 +65,9 @@ export 'src/references/references.dart';
 // Freezed
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';
+
 // Core
 part 'src/access.dart';
-// Accessibility
 part 'src/accessibility/shortcut.dart';
 part 'src/action.dart';
 part 'src/algorithm.dart';

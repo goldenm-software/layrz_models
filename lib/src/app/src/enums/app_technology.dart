@@ -1,58 +1,21 @@
 part of '../../app.dart';
 
 enum AppTechnology {
+  @JsonValue('VUEJS')
   vuejs,
-  flutter;
+  @JsonValue('FLUTTER')
+  flutter,
+  ;
 
   @override
   String toString() => toJson();
 
+  /// [toJson] returns the string representation of the enum value.
+  String toJson() => _$AppTechnologyEnumMap[this] ?? 'FLUTTER';
+
+  /// [fromJson] returns the enum value from a string representation.
   static AppTechnology fromJson(String json) {
-    switch (json) {
-      case 'VUEJS':
-        return AppTechnology.vuejs;
-      case 'FLUTTER':
-        return AppTechnology.flutter;
-      default:
-        return AppTechnology.vuejs;
-    }
+    final found = _$AppTechnologyEnumMap.entries.firstWhereOrNull((e) => e.value == json);
+    return found?.key ?? AppTechnology.flutter;
   }
-
-  String toJson() {
-    switch (this) {
-      case AppTechnology.vuejs:
-        return 'VUEJS';
-      case AppTechnology.flutter:
-        return 'FLUTTER';
-      default:
-        return 'VUEJS';
-    }
-  }
-}
-
-class AppTechnologyConverter implements JsonConverter<AppTechnology, String> {
-  const AppTechnologyConverter();
-
-  @override
-  AppTechnology fromJson(String json) {
-    return AppTechnology.fromJson(json);
-  }
-
-  @override
-  String toJson(AppTechnology object) {
-    return object.toJson();
-  }
-}
-
-class AppTechnologyOrNullConverter implements JsonConverter<AppTechnology?, String?> {
-  const AppTechnologyOrNullConverter();
-
-  @override
-  AppTechnology? fromJson(String? json) {
-    if (json == null) return null;
-    return AppTechnology.fromJson(json);
-  }
-
-  @override
-  String? toJson(AppTechnology? object) => object?.toJson();
 }
