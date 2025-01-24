@@ -13,8 +13,8 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
       isEnabled: json['isEnabled'] as bool,
-      operationMode: const OperationModeConverter()
-          .fromJson(json['operationMode'] as String),
+      operationMode: $enumDecode(_$OperationModeEnumMap, json['operationMode'],
+          unknownValue: OperationMode.unknown),
       host: json['host'] as String?,
       port: (json['port'] as num?)?.toInt(),
       mqttTopic: json['mqttTopic'] as String?,
@@ -71,6 +71,7 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
               .toList() ??
           const [],
       confiotCapable: json['confiotCapable'] as bool? ?? false,
+      peripheralIdentifier: json['peripheralIdentifier'] as String?,
     );
 
 Map<String, dynamic> _$$InboundProtocolImplToJson(
@@ -80,8 +81,7 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'name': instance.name,
       'color': const ColorConverter().toJson(instance.color),
       'isEnabled': instance.isEnabled,
-      'operationMode':
-          const OperationModeConverter().toJson(instance.operationMode),
+      'operationMode': instance.operationMode.toJson(),
       'host': instance.host,
       'port': instance.port,
       'mqttTopic': instance.mqttTopic,
@@ -115,7 +115,19 @@ Map<String, dynamic> _$$InboundProtocolImplToJson(
       'configStructure':
           instance.configStructure.map((e) => e.toJson()).toList(),
       'confiotCapable': instance.confiotCapable,
+      'peripheralIdentifier': instance.peripheralIdentifier,
     };
+
+const _$OperationModeEnumMap = {
+  OperationMode.realtime: 'REALTIME',
+  OperationMode.realtimeClient: 'REALTIMECLIENT',
+  OperationMode.asyncronus: 'ASYNC',
+  OperationMode.webhook: 'WEBHOOK',
+  OperationMode.simulation: 'SIMULATION',
+  OperationMode.mqtt: 'MQTT',
+  OperationMode.peripheral: 'PERIPHERAL',
+  OperationMode.unknown: 'UNKNOWN',
+};
 
 _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
         Map<String, dynamic> json) =>
@@ -130,10 +142,10 @@ _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      operationMode: json['operationMode'] == null
-          ? OperationMode.realtime
-          : const OperationModeConverter()
-              .fromJson(json['operationMode'] as String),
+      operationMode: $enumDecodeNullable(
+              _$OperationModeEnumMap, json['operationMode'],
+              unknownValue: OperationMode.unknown) ??
+          OperationMode.realtime,
       hasNativeCommands: json['hasNativeCommands'] as bool? ?? false,
       hasSmsCommands: json['hasSmsCommands'] as bool? ?? false,
       hasCommandsResult: json['hasCommandsResult'] as bool? ?? false,
@@ -183,6 +195,7 @@ _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
               .toList() ??
           const [],
       confiotCapable: json['confiotCapable'] as bool? ?? false,
+      peripheralIdentifier: json['peripheralIdentifier'] as String?,
     );
 
 Map<String, dynamic> _$$InboundProtocolInputImplToJson(
@@ -193,8 +206,7 @@ Map<String, dynamic> _$$InboundProtocolInputImplToJson(
       'color': const ColorConverter().toJson(instance.color),
       'isEnabled': instance.isEnabled,
       'categoriesIds': instance.categoriesIds,
-      'operationMode':
-          const OperationModeConverter().toJson(instance.operationMode),
+      'operationMode': instance.operationMode.toJson(),
       'hasNativeCommands': instance.hasNativeCommands,
       'hasSmsCommands': instance.hasSmsCommands,
       'hasCommandsResult': instance.hasCommandsResult,
@@ -223,6 +235,7 @@ Map<String, dynamic> _$$InboundProtocolInputImplToJson(
       'configStructure':
           instance.configStructure.map((e) => e.toJson()).toList(),
       'confiotCapable': instance.confiotCapable,
+      'peripheralIdentifier': instance.peripheralIdentifier,
     };
 
 _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
@@ -295,7 +308,8 @@ Map<String, dynamic> _$$InboundServiceInputImplToJson(
 _$ConfigGroupingImpl _$$ConfigGroupingImplFromJson(Map<String, dynamic> json) =>
     _$ConfigGroupingImpl(
       name: json['name'] as String,
-      kind: const ConfigKindConverter().fromJson(json['kind'] as String),
+      kind: $enumDecode(_$ConfigKindEnumMap, json['kind'],
+          unknownValue: ConfigKind.unknown),
       description: json['description'] as String?,
       setupCapable: json['setupCapable'] as bool?,
       items: (json['items'] as List<dynamic>?)
@@ -308,22 +322,30 @@ Map<String, dynamic> _$$ConfigGroupingImplToJson(
         _$ConfigGroupingImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'kind': const ConfigKindConverter().toJson(instance.kind),
+      'kind': instance.kind.toJson(),
       'description': instance.description,
       'setupCapable': instance.setupCapable,
       'items': instance.items.map((e) => e.toJson()).toList(),
     };
 
+const _$ConfigKindEnumMap = {
+  ConfigKind.grouping: 'GROUPING',
+  ConfigKind.listing: 'LISTING',
+  ConfigKind.unknown: 'UNKNOWN',
+};
+
 _$ConfigDefinitionImpl _$$ConfigDefinitionImplFromJson(
         Map<String, dynamic> json) =>
     _$ConfigDefinitionImpl(
       sources: (json['sources'] as List<dynamic>?)
-          ?.map((e) => const ConfigSourceConverter().fromJson(e as String))
+          ?.map((e) => $enumDecode(_$ConfigSourceEnumMap, e,
+              unknownValue: ConfigSource.unknown))
           .toList(),
       parameter: json['parameter'] as String,
       description: json['description'] as String?,
-      dataType: _$JsonConverterFromJson<String, ConfigPayloadDataType>(
-          json['dataType'], const ConfigPayloadDataTypeConverter().fromJson),
+      dataType: $enumDecodeNullable(
+          _$ConfigPayloadDataTypeEnumMap, json['dataType'],
+          unknownValue: ConfigPayloadDataType.unknown),
       minValue: json['minValue'] as num?,
       maxValue: json['maxValue'] as num?,
       minLength: (json['minLength'] as num?)?.toInt(),
@@ -338,12 +360,10 @@ _$ConfigDefinitionImpl _$$ConfigDefinitionImplFromJson(
 Map<String, dynamic> _$$ConfigDefinitionImplToJson(
         _$ConfigDefinitionImpl instance) =>
     <String, dynamic>{
-      'sources':
-          instance.sources?.map(const ConfigSourceConverter().toJson).toList(),
+      'sources': instance.sources?.map((e) => e.toJson()).toList(),
       'parameter': instance.parameter,
       'description': instance.description,
-      'dataType': _$JsonConverterToJson<String, ConfigPayloadDataType>(
-          instance.dataType, const ConfigPayloadDataTypeConverter().toJson),
+      'dataType': instance.dataType?.toJson(),
       'minValue': instance.minValue,
       'maxValue': instance.maxValue,
       'minLength': instance.minLength,
@@ -354,25 +374,32 @@ Map<String, dynamic> _$$ConfigDefinitionImplToJson(
       'setupCapable': instance.setupCapable,
     };
 
-Value? _$JsonConverterFromJson<Json, Value>(
-  Object? json,
-  Value? Function(Json json) fromJson,
-) =>
-    json == null ? null : fromJson(json as Json);
+const _$ConfigSourceEnumMap = {
+  ConfigSource.layrzLink: 'LAYRZ_LINK',
+  ConfigSource.ble: 'BLE',
+  ConfigSource.serial: 'SERIAL',
+  ConfigSource.unknown: 'UNKNOWN',
+};
 
-Json? _$JsonConverterToJson<Json, Value>(
-  Value? value,
-  Json? Function(Value value) toJson,
-) =>
-    value == null ? null : toJson(value);
+const _$ConfigPayloadDataTypeEnumMap = {
+  ConfigPayloadDataType.string: 'STRING',
+  ConfigPayloadDataType.integer: 'INTEGER',
+  ConfigPayloadDataType.float: 'FLOAT',
+  ConfigPayloadDataType.boolean: 'BOOLEAN',
+  ConfigPayloadDataType.choice: 'CHOICE',
+  ConfigPayloadDataType.choiceIndex: 'CHOICE_INDEX',
+  ConfigPayloadDataType.bluetoothPair: 'BLUETOOTH_PAIR',
+  ConfigPayloadDataType.coordinates: 'COORDINATES',
+  ConfigPayloadDataType.unknown: 'UNKNOWN',
+};
 
 _$ConfigGroupingInputImpl _$$ConfigGroupingInputImplFromJson(
         Map<String, dynamic> json) =>
     _$ConfigGroupingInputImpl(
       name: json['name'] as String? ?? '',
-      kind: json['kind'] == null
-          ? ConfigKind.grouping
-          : const ConfigKindConverter().fromJson(json['kind'] as String),
+      kind: $enumDecodeNullable(_$ConfigKindEnumMap, json['kind'],
+              unknownValue: ConfigKind.unknown) ??
+          ConfigKind.grouping,
       description: json['description'] as String? ?? '',
       setupCapable: json['setupCapable'] as bool? ?? false,
       items: (json['items'] as List<dynamic>?)
@@ -386,7 +413,7 @@ Map<String, dynamic> _$$ConfigGroupingInputImplToJson(
         _$ConfigGroupingInputImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'kind': const ConfigKindConverter().toJson(instance.kind),
+      'kind': instance.kind.toJson(),
       'description': instance.description,
       'setupCapable': instance.setupCapable,
       'items': instance.items.map((e) => e.toJson()).toList(),
@@ -396,15 +423,16 @@ _$ConfigDefinitionInputImpl _$$ConfigDefinitionInputImplFromJson(
         Map<String, dynamic> json) =>
     _$ConfigDefinitionInputImpl(
       sources: (json['sources'] as List<dynamic>?)
-              ?.map((e) => const ConfigSourceConverter().fromJson(e as String))
+              ?.map((e) => $enumDecode(_$ConfigSourceEnumMap, e,
+                  unknownValue: ConfigSource.unknown))
               .toList() ??
           const [ConfigSource.layrzLink, ConfigSource.ble],
       parameter: json['parameter'] as String? ?? '',
       description: json['description'] as String?,
-      dataType: json['dataType'] == null
-          ? ConfigPayloadDataType.string
-          : const ConfigPayloadDataTypeConverter()
-              .fromJson(json['dataType'] as String),
+      dataType: $enumDecodeNullable(
+              _$ConfigPayloadDataTypeEnumMap, json['dataType'],
+              unknownValue: ConfigPayloadDataType.unknown) ??
+          ConfigPayloadDataType.string,
       minValue: json['minValue'] as num? ?? 0,
       maxValue: json['maxValue'] as num? ?? 255,
       minLength: (json['minLength'] as num?)?.toInt() ?? 0,
@@ -421,12 +449,10 @@ _$ConfigDefinitionInputImpl _$$ConfigDefinitionInputImplFromJson(
 Map<String, dynamic> _$$ConfigDefinitionInputImplToJson(
         _$ConfigDefinitionInputImpl instance) =>
     <String, dynamic>{
-      'sources':
-          instance.sources.map(const ConfigSourceConverter().toJson).toList(),
+      'sources': instance.sources.map((e) => e.toJson()).toList(),
       'parameter': instance.parameter,
       'description': instance.description,
-      'dataType':
-          const ConfigPayloadDataTypeConverter().toJson(instance.dataType),
+      'dataType': instance.dataType.toJson(),
       'minValue': instance.minValue,
       'maxValue': instance.maxValue,
       'minLength': instance.minLength,

@@ -16,7 +16,7 @@ class InboundProtocol with _$InboundProtocol {
     required bool isEnabled,
 
     /// Indicates the operation mode of the protocol.
-    @OperationModeConverter() required OperationMode operationMode,
+    @JsonKey(unknownEnumValue: OperationMode.unknown) required OperationMode operationMode,
 
     /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
     String? host,
@@ -118,6 +118,9 @@ class InboundProtocol with _$InboundProtocol {
 
     /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
     @Default(false) bool confiotCapable,
+
+    /// [peripheralIdentifier] is the identifier of the peripheral device.
+    String? peripheralIdentifier,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);
@@ -142,7 +145,7 @@ class InboundProtocolInput with _$InboundProtocolInput {
     @Default([]) List<String> categoriesIds,
 
     /// [operationMode] Indicates the operation mode of the protocol.
-    @OperationModeConverter() @Default(OperationMode.realtime) OperationMode operationMode,
+    @JsonKey(unknownEnumValue: OperationMode.unknown) @Default(OperationMode.realtime) OperationMode operationMode,
 
     /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
     @Default(false) bool hasNativeCommands,
@@ -224,114 +227,10 @@ class InboundProtocolInput with _$InboundProtocolInput {
 
     /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
     @Default(false) bool confiotCapable,
+
+    /// [peripheralIdentifier] is the identifier of the peripheral device.
+    String? peripheralIdentifier,
   }) = _InboundProtocolInput;
 
   factory InboundProtocolInput.fromJson(Map<String, dynamic> json) => _$InboundProtocolInputFromJson(json);
-}
-
-enum OperationMode {
-  /// [realtime] is a realtime communication mode, usually uses flespi platform to connect to the devices, other
-  /// platforms can be used as well.
-  ///
-  /// Layrz API Reference: REALTIME
-  realtime,
-
-  /// [realtimeClient] is a realtime communication mode, uses MQTT connection to connect to the devices.
-  /// Also, uses the reversed architecture, so the device acts as the server, and we act as the client.
-  ///
-  /// Layrz API Reference: REALTIMECLIENT
-  realtimeClient,
-
-  /// [asyncronus] is a asyncronus communication mode, uses HTTP connection to connect to the devices.
-  /// Normally, this type of protocol does not require a connection ([host] and [port]) due to a Layrz automation
-  ///
-  /// Layrz API Reference: ASYNC
-  asyncronus,
-
-  /// [webhook] is a webhook communication mode, uses HTTP connection to connect to the devices.
-  /// The devices are configured to send data to a specific URL.
-  ///
-  /// Layrz API Reference: WEBHOOK
-  webhook,
-
-  /// [simulation] is a simulation communication mode, uses the Layrz Cycle Scripting language to simulate
-  /// movement, telemetry and more, depending of the script.
-  ///
-  /// This mode is mostly used for demo purposes, testing and development.
-  ///
-  /// Layrz API Reference: SIMULATION
-  simulation,
-
-  /// [mqtt] is a MQTT communication mode, uses MQTT connection to connect to the devices.
-  /// The connection to this type of protocol is made through the [mqttTopic] field and the `mqttTopic` defined
-  /// in the device itself.
-  ///
-  /// We allow connections from `mqtt` (port 1883) and `mqtts` (port 8883), however, ask to your business manager or
-  /// ask to [support@goldenm.com](mailto:suppport@goldenm.com) for more information about the connection.
-  ///
-  /// Layrz API Reference: MQTT
-  mqtt,
-  ;
-
-  @override
-  String toString() => toJson();
-
-  String toJson() {
-    switch (this) {
-      case OperationMode.asyncronus:
-        return "ASYNC";
-      case OperationMode.webhook:
-        return "WEBHOOK";
-      case OperationMode.realtimeClient:
-        return "REALTIMECLIENT";
-      case OperationMode.simulation:
-        return "SIMULATION";
-      case OperationMode.mqtt:
-        return "MQTT";
-      case OperationMode.realtime:
-      default:
-        return "REALTIME";
-    }
-  }
-
-  static OperationMode fromJson(String json) {
-    switch (json) {
-      case "ASYNC":
-        return OperationMode.asyncronus;
-      case "WEBHOOK":
-        return OperationMode.webhook;
-      case "REALTIMECLIENT":
-        return OperationMode.realtimeClient;
-      case "SIMULATION":
-        return OperationMode.simulation;
-      case "MQTT":
-        return OperationMode.mqtt;
-      case "REALTIME":
-      default:
-        return OperationMode.realtime;
-    }
-  }
-}
-
-class OperationModeConverter implements JsonConverter<OperationMode, String> {
-  const OperationModeConverter();
-
-  @override
-  OperationMode fromJson(String json) => OperationMode.fromJson(json);
-
-  @override
-  String toJson(OperationMode object) => object.toJson();
-}
-
-class OperationModeOrNullConverter implements JsonConverter<OperationMode?, String?> {
-  const OperationModeOrNullConverter();
-
-  @override
-  OperationMode? fromJson(String? json) {
-    if (json == null) return null;
-    return OperationMode.fromJson(json);
-  }
-
-  @override
-  String? toJson(OperationMode? object) => object?.toJson();
 }

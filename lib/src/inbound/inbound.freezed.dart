@@ -34,7 +34,7 @@ mixin _$InboundProtocol {
   bool get isEnabled => throw _privateConstructorUsedError;
 
   /// Indicates the operation mode of the protocol.
-  @OperationModeConverter()
+  @JsonKey(unknownEnumValue: OperationMode.unknown)
   OperationMode get operationMode => throw _privateConstructorUsedError;
 
   /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
@@ -141,6 +141,9 @@ mixin _$InboundProtocol {
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
   bool get confiotCapable => throw _privateConstructorUsedError;
 
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  String? get peripheralIdentifier => throw _privateConstructorUsedError;
+
   /// Serializes this InboundProtocol to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -162,7 +165,8 @@ abstract class $InboundProtocolCopyWith<$Res> {
       String name,
       @ColorConverter() Color color,
       bool isEnabled,
-      @OperationModeConverter() OperationMode operationMode,
+      @JsonKey(unknownEnumValue: OperationMode.unknown)
+      OperationMode operationMode,
       String? host,
       int? port,
       String? mqttTopic,
@@ -192,7 +196,8 @@ abstract class $InboundProtocolCopyWith<$Res> {
       bool requiresStructure,
       List<CommandDefinition> commandsStructure,
       List<ConfigGrouping> configStructure,
-      bool confiotCapable});
+      bool confiotCapable,
+      String? peripheralIdentifier});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $SimulationCycleCopyWith<$Res>? get cycle;
@@ -249,6 +254,7 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? commandsStructure = null,
     Object? configStructure = null,
     Object? confiotCapable = null,
+    Object? peripheralIdentifier = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -391,6 +397,10 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
               as bool,
+      peripheralIdentifier: freezed == peripheralIdentifier
+          ? _value.peripheralIdentifier
+          : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -450,7 +460,8 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       String name,
       @ColorConverter() Color color,
       bool isEnabled,
-      @OperationModeConverter() OperationMode operationMode,
+      @JsonKey(unknownEnumValue: OperationMode.unknown)
+      OperationMode operationMode,
       String? host,
       int? port,
       String? mqttTopic,
@@ -480,7 +491,8 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       bool requiresStructure,
       List<CommandDefinition> commandsStructure,
       List<ConfigGrouping> configStructure,
-      bool confiotCapable});
+      bool confiotCapable,
+      String? peripheralIdentifier});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -538,6 +550,7 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? commandsStructure = null,
     Object? configStructure = null,
     Object? confiotCapable = null,
+    Object? peripheralIdentifier = freezed,
   }) {
     return _then(_$InboundProtocolImpl(
       id: null == id
@@ -680,6 +693,10 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
               as bool,
+      peripheralIdentifier: freezed == peripheralIdentifier
+          ? _value.peripheralIdentifier
+          : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -692,7 +709,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       required this.name,
       @ColorConverter() required this.color,
       required this.isEnabled,
-      @OperationModeConverter() required this.operationMode,
+      @JsonKey(unknownEnumValue: OperationMode.unknown)
+      required this.operationMode,
       this.host,
       this.port,
       this.mqttTopic,
@@ -722,7 +740,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       this.requiresStructure = false,
       final List<CommandDefinition> commandsStructure = const [],
       final List<ConfigGrouping> configStructure = const [],
-      this.confiotCapable = false})
+      this.confiotCapable = false,
+      this.peripheralIdentifier})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models,
@@ -753,7 +772,7 @@ class _$InboundProtocolImpl implements _InboundProtocol {
 
   /// Indicates the operation mode of the protocol.
   @override
-  @OperationModeConverter()
+  @JsonKey(unknownEnumValue: OperationMode.unknown)
   final OperationMode operationMode;
 
   /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
@@ -951,9 +970,13 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   @JsonKey()
   final bool confiotCapable;
 
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  @override
+  final String? peripheralIdentifier;
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier)';
   }
 
   @override
@@ -1020,7 +1043,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
             const DeepCollectionEquality()
                 .equals(other._configStructure, _configStructure) &&
             (identical(other.confiotCapable, confiotCapable) ||
-                other.confiotCapable == confiotCapable));
+                other.confiotCapable == confiotCapable) &&
+            (identical(other.peripheralIdentifier, peripheralIdentifier) ||
+                other.peripheralIdentifier == peripheralIdentifier));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1061,7 +1086,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         requiresStructure,
         const DeepCollectionEquality().hash(_commandsStructure),
         const DeepCollectionEquality().hash(_configStructure),
-        confiotCapable
+        confiotCapable,
+        peripheralIdentifier
       ]);
 
   /// Create a copy of InboundProtocol
@@ -1087,7 +1113,8 @@ abstract class _InboundProtocol implements InboundProtocol {
       required final String name,
       @ColorConverter() required final Color color,
       required final bool isEnabled,
-      @OperationModeConverter() required final OperationMode operationMode,
+      @JsonKey(unknownEnumValue: OperationMode.unknown)
+      required final OperationMode operationMode,
       final String? host,
       final int? port,
       final String? mqttTopic,
@@ -1117,7 +1144,8 @@ abstract class _InboundProtocol implements InboundProtocol {
       final bool requiresStructure,
       final List<CommandDefinition> commandsStructure,
       final List<ConfigGrouping> configStructure,
-      final bool confiotCapable}) = _$InboundProtocolImpl;
+      final bool confiotCapable,
+      final String? peripheralIdentifier}) = _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
@@ -1141,7 +1169,7 @@ abstract class _InboundProtocol implements InboundProtocol {
 
   /// Indicates the operation mode of the protocol.
   @override
-  @OperationModeConverter()
+  @JsonKey(unknownEnumValue: OperationMode.unknown)
   OperationMode get operationMode;
 
   /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
@@ -1275,6 +1303,10 @@ abstract class _InboundProtocol implements InboundProtocol {
   @override
   bool get confiotCapable;
 
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  @override
+  String? get peripheralIdentifier;
+
   /// Create a copy of InboundProtocol
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -1322,11 +1354,11 @@ mixin _$InboundProtocolInput {
   set categoriesIds(List<String> value) => throw _privateConstructorUsedError;
 
   /// [operationMode] Indicates the operation mode of the protocol.
-  @OperationModeConverter()
+  @JsonKey(unknownEnumValue: OperationMode.unknown)
   OperationMode get operationMode => throw _privateConstructorUsedError;
 
   /// [operationMode] Indicates the operation mode of the protocol.
-  @OperationModeConverter()
+  @JsonKey(unknownEnumValue: OperationMode.unknown)
   set operationMode(OperationMode value) => throw _privateConstructorUsedError;
 
   /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
@@ -1500,6 +1532,12 @@ mixin _$InboundProtocolInput {
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
   set confiotCapable(bool value) => throw _privateConstructorUsedError;
 
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  String? get peripheralIdentifier => throw _privateConstructorUsedError;
+
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  set peripheralIdentifier(String? value) => throw _privateConstructorUsedError;
+
   /// Serializes this InboundProtocolInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -1522,7 +1560,8 @@ abstract class $InboundProtocolInputCopyWith<$Res> {
       @ColorConverter() Color color,
       bool isEnabled,
       List<String> categoriesIds,
-      @OperationModeConverter() OperationMode operationMode,
+      @JsonKey(unknownEnumValue: OperationMode.unknown)
+      OperationMode operationMode,
       bool hasNativeCommands,
       bool hasSmsCommands,
       bool hasCommandsResult,
@@ -1548,7 +1587,8 @@ abstract class $InboundProtocolInputCopyWith<$Res> {
       bool requiresStructure,
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
-      bool confiotCapable});
+      bool confiotCapable,
+      String? peripheralIdentifier});
 
   $AvatarInputCopyWith<$Res> get dynamicIcon;
   $WebhookStructureInputCopyWith<$Res>? get webhookStructure;
@@ -1602,6 +1642,7 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
     Object? commandsStructure = null,
     Object? configStructure = null,
     Object? confiotCapable = null,
+    Object? peripheralIdentifier = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -1732,6 +1773,10 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
               as bool,
+      peripheralIdentifier: freezed == peripheralIdentifier
+          ? _value.peripheralIdentifier
+          : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -1775,7 +1820,8 @@ abstract class _$$InboundProtocolInputImplCopyWith<$Res>
       @ColorConverter() Color color,
       bool isEnabled,
       List<String> categoriesIds,
-      @OperationModeConverter() OperationMode operationMode,
+      @JsonKey(unknownEnumValue: OperationMode.unknown)
+      OperationMode operationMode,
       bool hasNativeCommands,
       bool hasSmsCommands,
       bool hasCommandsResult,
@@ -1801,7 +1847,8 @@ abstract class _$$InboundProtocolInputImplCopyWith<$Res>
       bool requiresStructure,
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
-      bool confiotCapable});
+      bool confiotCapable,
+      String? peripheralIdentifier});
 
   @override
   $AvatarInputCopyWith<$Res> get dynamicIcon;
@@ -1854,6 +1901,7 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
     Object? commandsStructure = null,
     Object? configStructure = null,
     Object? confiotCapable = null,
+    Object? peripheralIdentifier = freezed,
   }) {
     return _then(_$InboundProtocolInputImpl(
       id: freezed == id
@@ -1984,6 +2032,10 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
           ? _value.confiotCapable
           : confiotCapable // ignore: cast_nullable_to_non_nullable
               as bool,
+      peripheralIdentifier: freezed == peripheralIdentifier
+          ? _value.peripheralIdentifier
+          : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -1997,7 +2049,8 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
       @ColorConverter() this.color = kPrimaryColor,
       this.isEnabled = true,
       this.categoriesIds = const [],
-      @OperationModeConverter() this.operationMode = OperationMode.realtime,
+      @JsonKey(unknownEnumValue: OperationMode.unknown)
+      this.operationMode = OperationMode.realtime,
       this.hasNativeCommands = false,
       this.hasSmsCommands = false,
       this.hasCommandsResult = false,
@@ -2023,7 +2076,8 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
       this.requiresStructure = false,
       this.commandsStructure = const [],
       this.configStructure = const [],
-      this.confiotCapable = false});
+      this.confiotCapable = false,
+      this.peripheralIdentifier});
 
   factory _$InboundProtocolInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$InboundProtocolInputImplFromJson(json);
@@ -2055,8 +2109,7 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
 
   /// [operationMode] Indicates the operation mode of the protocol.
   @override
-  @JsonKey()
-  @OperationModeConverter()
+  @JsonKey(unknownEnumValue: OperationMode.unknown)
   OperationMode operationMode;
 
   /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
@@ -2184,9 +2237,13 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
   @JsonKey()
   bool confiotCapable;
 
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  @override
+  String? peripheralIdentifier;
+
   @override
   String toString() {
-    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable)';
+    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier)';
   }
 
   /// Create a copy of InboundProtocolInput
@@ -2214,7 +2271,8 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
       @ColorConverter() Color color,
       bool isEnabled,
       List<String> categoriesIds,
-      @OperationModeConverter() OperationMode operationMode,
+      @JsonKey(unknownEnumValue: OperationMode.unknown)
+      OperationMode operationMode,
       bool hasNativeCommands,
       bool hasSmsCommands,
       bool hasCommandsResult,
@@ -2240,7 +2298,8 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
       bool requiresStructure,
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
-      bool confiotCapable}) = _$InboundProtocolInputImpl;
+      bool confiotCapable,
+      String? peripheralIdentifier}) = _$InboundProtocolInputImpl;
 
   factory _InboundProtocolInput.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolInputImpl.fromJson;
@@ -2284,11 +2343,11 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
 
   /// [operationMode] Indicates the operation mode of the protocol.
   @override
-  @OperationModeConverter()
+  @JsonKey(unknownEnumValue: OperationMode.unknown)
   OperationMode get operationMode;
 
   /// [operationMode] Indicates the operation mode of the protocol.
-  @OperationModeConverter()
+  @JsonKey(unknownEnumValue: OperationMode.unknown)
   set operationMode(OperationMode value);
 
   /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
@@ -2478,6 +2537,13 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
   set confiotCapable(bool value);
+
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  @override
+  String? get peripheralIdentifier;
+
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  set peripheralIdentifier(String? value);
 
   /// Create a copy of InboundProtocolInput
   /// with the given fields replaced by the non-null parameter values.
@@ -3363,7 +3429,7 @@ mixin _$ConfigGrouping {
   String get name => throw _privateConstructorUsedError;
 
   /// [kind] is the kind of the grouping.
-  @ConfigKindConverter()
+  @JsonKey(unknownEnumValue: ConfigKind.unknown)
   ConfigKind get kind => throw _privateConstructorUsedError;
 
   /// [description] is the fallback name of the grouping, when the translation is not available.
@@ -3394,7 +3460,7 @@ abstract class $ConfigGroupingCopyWith<$Res> {
   @useResult
   $Res call(
       {String name,
-      @ConfigKindConverter() ConfigKind kind,
+      @JsonKey(unknownEnumValue: ConfigKind.unknown) ConfigKind kind,
       String? description,
       bool? setupCapable,
       List<ConfigDefinition> items});
@@ -3456,7 +3522,7 @@ abstract class _$$ConfigGroupingImplCopyWith<$Res>
   @useResult
   $Res call(
       {String name,
-      @ConfigKindConverter() ConfigKind kind,
+      @JsonKey(unknownEnumValue: ConfigKind.unknown) ConfigKind kind,
       String? description,
       bool? setupCapable,
       List<ConfigDefinition> items});
@@ -3511,7 +3577,7 @@ class __$$ConfigGroupingImplCopyWithImpl<$Res>
 class _$ConfigGroupingImpl implements _ConfigGrouping {
   const _$ConfigGroupingImpl(
       {required this.name,
-      @ConfigKindConverter() required this.kind,
+      @JsonKey(unknownEnumValue: ConfigKind.unknown) required this.kind,
       this.description,
       this.setupCapable,
       final List<ConfigDefinition> items = const []})
@@ -3527,7 +3593,7 @@ class _$ConfigGroupingImpl implements _ConfigGrouping {
 
   /// [kind] is the kind of the grouping.
   @override
-  @ConfigKindConverter()
+  @JsonKey(unknownEnumValue: ConfigKind.unknown)
   final ConfigKind kind;
 
   /// [description] is the fallback name of the grouping, when the translation is not available.
@@ -3595,7 +3661,8 @@ class _$ConfigGroupingImpl implements _ConfigGrouping {
 abstract class _ConfigGrouping implements ConfigGrouping {
   const factory _ConfigGrouping(
       {required final String name,
-      @ConfigKindConverter() required final ConfigKind kind,
+      @JsonKey(unknownEnumValue: ConfigKind.unknown)
+      required final ConfigKind kind,
       final String? description,
       final bool? setupCapable,
       final List<ConfigDefinition> items}) = _$ConfigGroupingImpl;
@@ -3610,7 +3677,7 @@ abstract class _ConfigGrouping implements ConfigGrouping {
 
   /// [kind] is the kind of the grouping.
   @override
-  @ConfigKindConverter()
+  @JsonKey(unknownEnumValue: ConfigKind.unknown)
   ConfigKind get kind;
 
   /// [description] is the fallback name of the grouping, when the translation is not available.
@@ -3641,7 +3708,7 @@ ConfigDefinition _$ConfigDefinitionFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ConfigDefinition {
   /// [sources] is the list of sources that the command can be executed.
-  @ConfigSourceConverter()
+  @JsonKey(unknownEnumValue: ConfigSource.unknown)
   List<ConfigSource>? get sources => throw _privateConstructorUsedError;
 
   /// [parameter] is the name of the parameter, this is also the translation key.
@@ -3651,7 +3718,7 @@ mixin _$ConfigDefinition {
   String? get description => throw _privateConstructorUsedError;
 
   /// [dataType] is the data type of the parameter.
-  @ConfigPayloadDataTypeConverter()
+  @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
   ConfigPayloadDataType? get dataType => throw _privateConstructorUsedError;
 
   /// [minValue] is the minimum value of the parameter.
@@ -3698,10 +3765,12 @@ abstract class $ConfigDefinitionCopyWith<$Res> {
       _$ConfigDefinitionCopyWithImpl<$Res, ConfigDefinition>;
   @useResult
   $Res call(
-      {@ConfigSourceConverter() List<ConfigSource>? sources,
+      {@JsonKey(unknownEnumValue: ConfigSource.unknown)
+      List<ConfigSource>? sources,
       String parameter,
       String? description,
-      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
+      @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
+      ConfigPayloadDataType? dataType,
       num? minValue,
       num? maxValue,
       int? minLength,
@@ -3796,10 +3865,12 @@ abstract class _$$ConfigDefinitionImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@ConfigSourceConverter() List<ConfigSource>? sources,
+      {@JsonKey(unknownEnumValue: ConfigSource.unknown)
+      List<ConfigSource>? sources,
       String parameter,
       String? description,
-      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
+      @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
+      ConfigPayloadDataType? dataType,
       num? minValue,
       num? maxValue,
       int? minLength,
@@ -3887,10 +3958,11 @@ class __$$ConfigDefinitionImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ConfigDefinitionImpl implements _ConfigDefinition {
   const _$ConfigDefinitionImpl(
-      {@ConfigSourceConverter() final List<ConfigSource>? sources,
+      {@JsonKey(unknownEnumValue: ConfigSource.unknown)
+      final List<ConfigSource>? sources,
       required this.parameter,
       this.description,
-      @ConfigPayloadDataTypeConverter() this.dataType,
+      @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown) this.dataType,
       this.minValue,
       this.maxValue,
       this.minLength,
@@ -3909,7 +3981,7 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
 
   /// [sources] is the list of sources that the command can be executed.
   @override
-  @ConfigSourceConverter()
+  @JsonKey(unknownEnumValue: ConfigSource.unknown)
   List<ConfigSource>? get sources {
     final value = _sources;
     if (value == null) return null;
@@ -3928,7 +4000,7 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
 
   /// [dataType] is the data type of the parameter.
   @override
-  @ConfigPayloadDataTypeConverter()
+  @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
   final ConfigPayloadDataType? dataType;
 
   /// [minValue] is the minimum value of the parameter.
@@ -4042,10 +4114,12 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
 
 abstract class _ConfigDefinition implements ConfigDefinition {
   const factory _ConfigDefinition(
-      {@ConfigSourceConverter() final List<ConfigSource>? sources,
+      {@JsonKey(unknownEnumValue: ConfigSource.unknown)
+      final List<ConfigSource>? sources,
       required final String parameter,
       final String? description,
-      @ConfigPayloadDataTypeConverter() final ConfigPayloadDataType? dataType,
+      @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
+      final ConfigPayloadDataType? dataType,
       final num? minValue,
       final num? maxValue,
       final int? minLength,
@@ -4059,7 +4133,7 @@ abstract class _ConfigDefinition implements ConfigDefinition {
 
   /// [sources] is the list of sources that the command can be executed.
   @override
-  @ConfigSourceConverter()
+  @JsonKey(unknownEnumValue: ConfigSource.unknown)
   List<ConfigSource>? get sources;
 
   /// [parameter] is the name of the parameter, this is also the translation key.
@@ -4072,7 +4146,7 @@ abstract class _ConfigDefinition implements ConfigDefinition {
 
   /// [dataType] is the data type of the parameter.
   @override
-  @ConfigPayloadDataTypeConverter()
+  @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
   ConfigPayloadDataType? get dataType;
 
   /// [minValue] is the minimum value of the parameter.
@@ -4132,11 +4206,11 @@ mixin _$ConfigGroupingInput {
   set name(String value) => throw _privateConstructorUsedError;
 
   /// [kind] is the kind of the grouping.
-  @ConfigKindConverter()
+  @JsonKey(unknownEnumValue: ConfigKind.unknown)
   ConfigKind get kind => throw _privateConstructorUsedError;
 
   /// [kind] is the kind of the grouping.
-  @ConfigKindConverter()
+  @JsonKey(unknownEnumValue: ConfigKind.unknown)
   set kind(ConfigKind value) => throw _privateConstructorUsedError;
 
   /// [description] is the fallback name of the grouping, when the translation is not available.
@@ -4178,7 +4252,7 @@ abstract class $ConfigGroupingInputCopyWith<$Res> {
   @useResult
   $Res call(
       {String name,
-      @ConfigKindConverter() ConfigKind kind,
+      @JsonKey(unknownEnumValue: ConfigKind.unknown) ConfigKind kind,
       String description,
       bool setupCapable,
       List<ConfigDefinitionInput> items});
@@ -4240,7 +4314,7 @@ abstract class _$$ConfigGroupingInputImplCopyWith<$Res>
   @useResult
   $Res call(
       {String name,
-      @ConfigKindConverter() ConfigKind kind,
+      @JsonKey(unknownEnumValue: ConfigKind.unknown) ConfigKind kind,
       String description,
       bool setupCapable,
       List<ConfigDefinitionInput> items});
@@ -4295,7 +4369,8 @@ class __$$ConfigGroupingInputImplCopyWithImpl<$Res>
 class _$ConfigGroupingInputImpl implements _ConfigGroupingInput {
   _$ConfigGroupingInputImpl(
       {this.name = '',
-      @ConfigKindConverter() this.kind = ConfigKind.grouping,
+      @JsonKey(unknownEnumValue: ConfigKind.unknown)
+      this.kind = ConfigKind.grouping,
       this.description = '',
       this.setupCapable = false,
       this.items = const []});
@@ -4311,8 +4386,7 @@ class _$ConfigGroupingInputImpl implements _ConfigGroupingInput {
 
   /// [kind] is the kind of the grouping.
   @override
-  @JsonKey()
-  @ConfigKindConverter()
+  @JsonKey(unknownEnumValue: ConfigKind.unknown)
   ConfigKind kind;
 
   /// [description] is the fallback name of the grouping, when the translation is not available.
@@ -4356,7 +4430,7 @@ class _$ConfigGroupingInputImpl implements _ConfigGroupingInput {
 abstract class _ConfigGroupingInput implements ConfigGroupingInput {
   factory _ConfigGroupingInput(
       {String name,
-      @ConfigKindConverter() ConfigKind kind,
+      @JsonKey(unknownEnumValue: ConfigKind.unknown) ConfigKind kind,
       String description,
       bool setupCapable,
       List<ConfigDefinitionInput> items}) = _$ConfigGroupingInputImpl;
@@ -4375,11 +4449,11 @@ abstract class _ConfigGroupingInput implements ConfigGroupingInput {
 
   /// [kind] is the kind of the grouping.
   @override
-  @ConfigKindConverter()
+  @JsonKey(unknownEnumValue: ConfigKind.unknown)
   ConfigKind get kind;
 
   /// [kind] is the kind of the grouping.
-  @ConfigKindConverter()
+  @JsonKey(unknownEnumValue: ConfigKind.unknown)
   set kind(ConfigKind value);
 
   /// [description] is the fallback name of the grouping, when the translation is not available.
@@ -4421,11 +4495,11 @@ ConfigDefinitionInput _$ConfigDefinitionInputFromJson(
 /// @nodoc
 mixin _$ConfigDefinitionInput {
   /// [sources] is the list of sources that the command can be executed.
-  @ConfigSourceConverter()
+  @JsonKey(unknownEnumValue: ConfigSource.unknown)
   List<ConfigSource> get sources => throw _privateConstructorUsedError;
 
   /// [sources] is the list of sources that the command can be executed.
-  @ConfigSourceConverter()
+  @JsonKey(unknownEnumValue: ConfigSource.unknown)
   set sources(List<ConfigSource> value) => throw _privateConstructorUsedError;
 
   /// [parameter] is the name of the parameter, this is also the translation key.
@@ -4441,11 +4515,11 @@ mixin _$ConfigDefinitionInput {
   set description(String? value) => throw _privateConstructorUsedError;
 
   /// [dataType] is the data type of the parameter.
-  @ConfigPayloadDataTypeConverter()
+  @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
   ConfigPayloadDataType get dataType => throw _privateConstructorUsedError;
 
   /// [dataType] is the data type of the parameter.
-  @ConfigPayloadDataTypeConverter()
+  @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
   set dataType(ConfigPayloadDataType value) =>
       throw _privateConstructorUsedError;
 
@@ -4520,10 +4594,12 @@ abstract class $ConfigDefinitionInputCopyWith<$Res> {
       _$ConfigDefinitionInputCopyWithImpl<$Res, ConfigDefinitionInput>;
   @useResult
   $Res call(
-      {@ConfigSourceConverter() List<ConfigSource> sources,
+      {@JsonKey(unknownEnumValue: ConfigSource.unknown)
+      List<ConfigSource> sources,
       String parameter,
       String? description,
-      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType dataType,
+      @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
+      ConfigPayloadDataType dataType,
       num minValue,
       num maxValue,
       int minLength,
@@ -4620,10 +4696,12 @@ abstract class _$$ConfigDefinitionInputImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@ConfigSourceConverter() List<ConfigSource> sources,
+      {@JsonKey(unknownEnumValue: ConfigSource.unknown)
+      List<ConfigSource> sources,
       String parameter,
       String? description,
-      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType dataType,
+      @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
+      ConfigPayloadDataType dataType,
       num minValue,
       num maxValue,
       int minLength,
@@ -4712,11 +4790,11 @@ class __$$ConfigDefinitionInputImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
   _$ConfigDefinitionInputImpl(
-      {@ConfigSourceConverter()
+      {@JsonKey(unknownEnumValue: ConfigSource.unknown)
       this.sources = const [ConfigSource.layrzLink, ConfigSource.ble],
       this.parameter = '',
       this.description,
-      @ConfigPayloadDataTypeConverter()
+      @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
       this.dataType = ConfigPayloadDataType.string,
       this.minValue = 0,
       this.maxValue = 255,
@@ -4731,8 +4809,7 @@ class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
 
   /// [sources] is the list of sources that the command can be executed.
   @override
-  @JsonKey()
-  @ConfigSourceConverter()
+  @JsonKey(unknownEnumValue: ConfigSource.unknown)
   List<ConfigSource> sources;
 
   /// [parameter] is the name of the parameter, this is also the translation key.
@@ -4746,8 +4823,7 @@ class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
 
   /// [dataType] is the data type of the parameter.
   @override
-  @JsonKey()
-  @ConfigPayloadDataTypeConverter()
+  @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
   ConfigPayloadDataType dataType;
 
   /// [minValue] is the minimum value of the parameter.
@@ -4814,10 +4890,12 @@ class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
 
 abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
   factory _ConfigDefinitionInput(
-      {@ConfigSourceConverter() List<ConfigSource> sources,
+      {@JsonKey(unknownEnumValue: ConfigSource.unknown)
+      List<ConfigSource> sources,
       String parameter,
       String? description,
-      @ConfigPayloadDataTypeConverter() ConfigPayloadDataType dataType,
+      @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
+      ConfigPayloadDataType dataType,
       num minValue,
       num maxValue,
       int minLength,
@@ -4831,11 +4909,11 @@ abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
 
   /// [sources] is the list of sources that the command can be executed.
   @override
-  @ConfigSourceConverter()
+  @JsonKey(unknownEnumValue: ConfigSource.unknown)
   List<ConfigSource> get sources;
 
   /// [sources] is the list of sources that the command can be executed.
-  @ConfigSourceConverter()
+  @JsonKey(unknownEnumValue: ConfigSource.unknown)
   set sources(List<ConfigSource> value);
 
   /// [parameter] is the name of the parameter, this is also the translation key.
@@ -4854,11 +4932,11 @@ abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
 
   /// [dataType] is the data type of the parameter.
   @override
-  @ConfigPayloadDataTypeConverter()
+  @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
   ConfigPayloadDataType get dataType;
 
   /// [dataType] is the data type of the parameter.
-  @ConfigPayloadDataTypeConverter()
+  @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
   set dataType(ConfigPayloadDataType value);
 
   /// [minValue] is the minimum value of the parameter.

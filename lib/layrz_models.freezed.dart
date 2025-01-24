@@ -10442,6 +10442,11 @@ mixin _$Device {
   /// used to configure the device.
   Map<String, dynamic>? get configParams => throw _privateConstructorUsedError;
 
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @DurationConverter()
+  Duration? get visionCaptureThreshold => throw _privateConstructorUsedError;
+
   /// Serializes this Device to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -10479,7 +10484,8 @@ abstract class $DeviceCopyWith<$Res> {
       HwModel? hwModel,
       String? hwModelId,
       String? macAddress,
-      Map<String, dynamic>? configParams});
+      Map<String, dynamic>? configParams,
+      @DurationConverter() Duration? visionCaptureThreshold});
 
   $ModelCopyWith<$Res>? get model;
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -10528,6 +10534,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? hwModelId = freezed,
     Object? macAddress = freezed,
     Object? configParams = freezed,
+    Object? visionCaptureThreshold = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -10622,6 +10629,10 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.configParams
           : configParams // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      visionCaptureThreshold: freezed == visionCaptureThreshold
+          ? _value.visionCaptureThreshold
+          : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ) as $Val);
   }
 
@@ -10754,7 +10765,8 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       HwModel? hwModel,
       String? hwModelId,
       String? macAddress,
-      Map<String, dynamic>? configParams});
+      Map<String, dynamic>? configParams,
+      @DurationConverter() Duration? visionCaptureThreshold});
 
   @override
   $ModelCopyWith<$Res>? get model;
@@ -10808,6 +10820,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? hwModelId = freezed,
     Object? macAddress = freezed,
     Object? configParams = freezed,
+    Object? visionCaptureThreshold = freezed,
   }) {
     return _then(_$DeviceImpl(
       id: null == id
@@ -10902,6 +10915,10 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value._configParams
           : configParams // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      visionCaptureThreshold: freezed == visionCaptureThreshold
+          ? _value.visionCaptureThreshold
+          : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ));
   }
 }
@@ -10932,7 +10949,8 @@ class _$DeviceImpl implements _Device {
       this.hwModel,
       this.hwModelId,
       this.macAddress,
-      final Map<String, dynamic>? configParams})
+      final Map<String, dynamic>? configParams,
+      @DurationConverter() this.visionCaptureThreshold})
       : _additionalFields = additionalFields,
         _commands = commands,
         _access = access,
@@ -11071,9 +11089,15 @@ class _$DeviceImpl implements _Device {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @override
+  @DurationConverter()
+  final Duration? visionCaptureThreshold;
+
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams)';
+    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold)';
   }
 
   @override
@@ -11114,7 +11138,9 @@ class _$DeviceImpl implements _Device {
             (identical(other.macAddress, macAddress) ||
                 other.macAddress == macAddress) &&
             const DeepCollectionEquality()
-                .equals(other._configParams, _configParams));
+                .equals(other._configParams, _configParams) &&
+            (identical(other.visionCaptureThreshold, visionCaptureThreshold) ||
+                other.visionCaptureThreshold == visionCaptureThreshold));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -11143,7 +11169,8 @@ class _$DeviceImpl implements _Device {
         hwModel,
         hwModelId,
         macAddress,
-        const DeepCollectionEquality().hash(_configParams)
+        const DeepCollectionEquality().hash(_configParams),
+        visionCaptureThreshold
       ]);
 
   /// Create a copy of Device
@@ -11164,29 +11191,31 @@ class _$DeviceImpl implements _Device {
 
 abstract class _Device implements Device {
   const factory _Device(
-      {required final String id,
-      required final String name,
-      required final String ident,
-      final String? flespiToken,
-      final String? modelId,
-      final Model? model,
-      final String? protocolId,
-      final InboundProtocol? protocol,
-      final Map<String, dynamic>? additionalFields,
-      final String? qrCode,
-      final String? linkQr,
-      final List<DeviceCommand>? commands,
-      final List<Access>? access,
-      final DeviceTelemetry? telemetry,
-      final String? visionProfileId,
-      final VisionProfile? visionProfile,
-      final PhoneNumber? phone,
-      final ModbusConfig? modbus,
-      final bool? isSuspended,
-      final HwModel? hwModel,
-      final String? hwModelId,
-      final String? macAddress,
-      final Map<String, dynamic>? configParams}) = _$DeviceImpl;
+          {required final String id,
+          required final String name,
+          required final String ident,
+          final String? flespiToken,
+          final String? modelId,
+          final Model? model,
+          final String? protocolId,
+          final InboundProtocol? protocol,
+          final Map<String, dynamic>? additionalFields,
+          final String? qrCode,
+          final String? linkQr,
+          final List<DeviceCommand>? commands,
+          final List<Access>? access,
+          final DeviceTelemetry? telemetry,
+          final String? visionProfileId,
+          final VisionProfile? visionProfile,
+          final PhoneNumber? phone,
+          final ModbusConfig? modbus,
+          final bool? isSuspended,
+          final HwModel? hwModel,
+          final String? hwModelId,
+          final String? macAddress,
+          final Map<String, dynamic>? configParams,
+          @DurationConverter() final Duration? visionCaptureThreshold}) =
+      _$DeviceImpl;
 
   factory _Device.fromJson(Map<String, dynamic> json) = _$DeviceImpl.fromJson;
 
@@ -11283,6 +11312,12 @@ abstract class _Device implements Device {
   @override
   Map<String, dynamic>? get configParams;
 
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @override
+  @DurationConverter()
+  Duration? get visionCaptureThreshold;
+
   /// Create a copy of Device
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -11359,6 +11394,17 @@ mixin _$DeviceInput {
   /// [hwModelId] is the hardware model ID of the device.
   set hwModelId(String? value) => throw _privateConstructorUsedError;
 
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @DurationConverter()
+  Duration? get visionCaptureThreshold => throw _privateConstructorUsedError;
+
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @DurationConverter()
+  set visionCaptureThreshold(Duration? value) =>
+      throw _privateConstructorUsedError;
+
   /// Serializes this DeviceInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -11385,7 +11431,8 @@ abstract class $DeviceInputCopyWith<$Res> {
       PhoneNumberInput? phone,
       ModbusConfigInput? modbus,
       String? macAddress,
-      String? hwModelId});
+      String? hwModelId,
+      @DurationConverter() Duration? visionCaptureThreshold});
 
   $PhoneNumberInputCopyWith<$Res>? get phone;
   $ModbusConfigInputCopyWith<$Res>? get modbus;
@@ -11416,6 +11463,7 @@ class _$DeviceInputCopyWithImpl<$Res, $Val extends DeviceInput>
     Object? modbus = freezed,
     Object? macAddress = freezed,
     Object? hwModelId = freezed,
+    Object? visionCaptureThreshold = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -11458,6 +11506,10 @@ class _$DeviceInputCopyWithImpl<$Res, $Val extends DeviceInput>
           ? _value.hwModelId
           : hwModelId // ignore: cast_nullable_to_non_nullable
               as String?,
+      visionCaptureThreshold: freezed == visionCaptureThreshold
+          ? _value.visionCaptureThreshold
+          : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ) as $Val);
   }
 
@@ -11508,7 +11560,8 @@ abstract class _$$DeviceInputImplCopyWith<$Res>
       PhoneNumberInput? phone,
       ModbusConfigInput? modbus,
       String? macAddress,
-      String? hwModelId});
+      String? hwModelId,
+      @DurationConverter() Duration? visionCaptureThreshold});
 
   @override
   $PhoneNumberInputCopyWith<$Res>? get phone;
@@ -11539,6 +11592,7 @@ class __$$DeviceInputImplCopyWithImpl<$Res>
     Object? modbus = freezed,
     Object? macAddress = freezed,
     Object? hwModelId = freezed,
+    Object? visionCaptureThreshold = freezed,
   }) {
     return _then(_$DeviceInputImpl(
       id: freezed == id
@@ -11581,6 +11635,10 @@ class __$$DeviceInputImplCopyWithImpl<$Res>
           ? _value.hwModelId
           : hwModelId // ignore: cast_nullable_to_non_nullable
               as String?,
+      visionCaptureThreshold: freezed == visionCaptureThreshold
+          ? _value.visionCaptureThreshold
+          : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ));
   }
 }
@@ -11598,7 +11656,8 @@ class _$DeviceInputImpl implements _DeviceInput {
       this.phone,
       this.modbus,
       this.macAddress,
-      this.hwModelId});
+      this.hwModelId,
+      @DurationConverter() this.visionCaptureThreshold});
 
   factory _$DeviceInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$DeviceInputImplFromJson(json);
@@ -11646,9 +11705,15 @@ class _$DeviceInputImpl implements _DeviceInput {
   @override
   String? hwModelId;
 
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @override
+  @DurationConverter()
+  Duration? visionCaptureThreshold;
+
   @override
   String toString() {
-    return 'DeviceInput(id: $id, name: $name, ident: $ident, protocolId: $protocolId, modelId: $modelId, visionProfileId: $visionProfileId, phone: $phone, modbus: $modbus, macAddress: $macAddress, hwModelId: $hwModelId)';
+    return 'DeviceInput(id: $id, name: $name, ident: $ident, protocolId: $protocolId, modelId: $modelId, visionProfileId: $visionProfileId, phone: $phone, modbus: $modbus, macAddress: $macAddress, hwModelId: $hwModelId, visionCaptureThreshold: $visionCaptureThreshold)';
   }
 
   /// Create a copy of DeviceInput
@@ -11669,16 +11734,18 @@ class _$DeviceInputImpl implements _DeviceInput {
 
 abstract class _DeviceInput implements DeviceInput {
   factory _DeviceInput(
-      {String? id,
-      String name,
-      String ident,
-      String? protocolId,
-      String? modelId,
-      String? visionProfileId,
-      PhoneNumberInput? phone,
-      ModbusConfigInput? modbus,
-      String? macAddress,
-      String? hwModelId}) = _$DeviceInputImpl;
+          {String? id,
+          String name,
+          String ident,
+          String? protocolId,
+          String? modelId,
+          String? visionProfileId,
+          PhoneNumberInput? phone,
+          ModbusConfigInput? modbus,
+          String? macAddress,
+          String? hwModelId,
+          @DurationConverter() Duration? visionCaptureThreshold}) =
+      _$DeviceInputImpl;
 
   factory _DeviceInput.fromJson(Map<String, dynamic> json) =
       _$DeviceInputImpl.fromJson;
@@ -11754,6 +11821,17 @@ abstract class _DeviceInput implements DeviceInput {
 
   /// [hwModelId] is the hardware model ID of the device.
   set hwModelId(String? value);
+
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @override
+  @DurationConverter()
+  Duration? get visionCaptureThreshold;
+
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @DurationConverter()
+  set visionCaptureThreshold(Duration? value);
 
   /// Create a copy of DeviceInput
   /// with the given fields replaced by the non-null parameter values.

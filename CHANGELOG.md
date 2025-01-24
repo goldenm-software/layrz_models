@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.23
+
+- Added peripheral indicator and identifier for `InboundProtocol` and `Model` models
+- Added new `visionCaptureThreshold` in `Device` model
+
 ## 3.3.22
 - Document `AtsPurchaseOrderCategoriesEntity`
 - `height` and `initialHeight` was added in `AtsEntry`

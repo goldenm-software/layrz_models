@@ -922,6 +922,8 @@ _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
       hwModelId: json['hwModelId'] as String?,
       macAddress: json['macAddress'] as String?,
       configParams: json['configParams'] as Map<String, dynamic>?,
+      visionCaptureThreshold: _$JsonConverterFromJson<num, Duration>(
+          json['visionCaptureThreshold'], const DurationConverter().fromJson),
     );
 
 Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
@@ -949,6 +951,8 @@ Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
       'hwModelId': instance.hwModelId,
       'macAddress': instance.macAddress,
       'configParams': instance.configParams,
+      'visionCaptureThreshold': _$JsonConverterToJson<num, Duration>(
+          instance.visionCaptureThreshold, const DurationConverter().toJson),
     };
 
 _$DeviceInputImpl _$$DeviceInputImplFromJson(Map<String, dynamic> json) =>
@@ -967,6 +971,8 @@ _$DeviceInputImpl _$$DeviceInputImplFromJson(Map<String, dynamic> json) =>
           : ModbusConfigInput.fromJson(json['modbus'] as Map<String, dynamic>),
       macAddress: json['macAddress'] as String?,
       hwModelId: json['hwModelId'] as String?,
+      visionCaptureThreshold: _$JsonConverterFromJson<num, Duration>(
+          json['visionCaptureThreshold'], const DurationConverter().fromJson),
     );
 
 Map<String, dynamic> _$$DeviceInputImplToJson(_$DeviceInputImpl instance) =>
@@ -981,6 +987,8 @@ Map<String, dynamic> _$$DeviceInputImplToJson(_$DeviceInputImpl instance) =>
       'modbus': instance.modbus?.toJson(),
       'macAddress': instance.macAddress,
       'hwModelId': instance.hwModelId,
+      'visionCaptureThreshold': _$JsonConverterToJson<num, Duration>(
+          instance.visionCaptureThreshold, const DurationConverter().toJson),
     };
 
 _$EmailTemplateImpl _$$EmailTemplateImplFromJson(Map<String, dynamic> json) =>
