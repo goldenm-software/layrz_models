@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.29
+
+- Hotfix
+
 ## 3.3.28
 
 - Updates on `Action` and `LayrzChart` models to support direct enum conversion

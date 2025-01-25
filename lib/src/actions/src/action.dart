@@ -65,19 +65,19 @@ class ActionInput with _$ActionInput {
     String? commandId,
 
     /// List of triggers IDs enabled for handle this action.
-    @Default([]) List<String>? triggersIds,
+    @Default([]) List<String> triggersIds,
 
     /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-    @Default([]) List<String>? operationsIds,
+    @Default([]) List<String> operationsIds,
 
     /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-    @Default([]) List<String>? outboundServicesIds,
+    @Default([]) List<String> outboundServicesIds,
 
     /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-    @Default(false) bool? watchImage,
+    @Default(false) bool watchImage,
 
     /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
-    ActionGeofenceSettingsInput? geofenceSettings,
+    required ActionGeofenceSettingsInput geofenceSettings,
   }) = _ActionInput;
 
   factory ActionInput.fromJson(Map<String, dynamic> json) => _$ActionInputFromJson(json);

@@ -103,10 +103,8 @@ _$ActionInputImpl _$$ActionInputImplFromJson(Map<String, dynamic> json) =>
               .toList() ??
           const [],
       watchImage: json['watchImage'] as bool? ?? false,
-      geofenceSettings: json['geofenceSettings'] == null
-          ? null
-          : ActionGeofenceSettingsInput.fromJson(
-              json['geofenceSettings'] as Map<String, dynamic>),
+      geofenceSettings: ActionGeofenceSettingsInput.fromJson(
+          json['geofenceSettings'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$ActionInputImplToJson(_$ActionInputImpl instance) =>
@@ -120,7 +118,7 @@ Map<String, dynamic> _$$ActionInputImplToJson(_$ActionInputImpl instance) =>
       'operationsIds': instance.operationsIds,
       'outboundServicesIds': instance.outboundServicesIds,
       'watchImage': instance.watchImage,
-      'geofenceSettings': instance.geofenceSettings?.toJson(),
+      'geofenceSettings': instance.geofenceSettings.toJson(),
     };
 
 _$ActionGeofenceSettingsImpl _$$ActionGeofenceSettingsImplFromJson(

@@ -64,10 +64,10 @@ const _$ChartAlgorithmEnumMap = {
 };
 
 const _$ChartDataSourceEnumMap = {
-  ChartDataSource.messages: 'messages',
-  ChartDataSource.events: 'events',
-  ChartDataSource.cases: 'cases',
-  ChartDataSource.checkpoints: 'checkpoints',
+  ChartDataSource.messages: 'MESSAGES',
+  ChartDataSource.events: 'EVENTS',
+  ChartDataSource.cases: 'CASES',
+  ChartDataSource.checkpoints: 'CHECKPOINTS',
 };
 
 _$LayrzChartInputImpl _$$LayrzChartInputImplFromJson(

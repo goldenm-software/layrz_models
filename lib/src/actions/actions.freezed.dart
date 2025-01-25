@@ -656,36 +656,36 @@ mixin _$ActionInput {
   set commandId(String? value) => throw _privateConstructorUsedError;
 
   /// List of triggers IDs enabled for handle this action.
-  List<String>? get triggersIds => throw _privateConstructorUsedError;
+  List<String> get triggersIds => throw _privateConstructorUsedError;
 
   /// List of triggers IDs enabled for handle this action.
-  set triggersIds(List<String>? value) => throw _privateConstructorUsedError;
+  set triggersIds(List<String> value) => throw _privateConstructorUsedError;
 
   /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-  List<String>? get operationsIds => throw _privateConstructorUsedError;
+  List<String> get operationsIds => throw _privateConstructorUsedError;
 
   /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-  set operationsIds(List<String>? value) => throw _privateConstructorUsedError;
+  set operationsIds(List<String> value) => throw _privateConstructorUsedError;
 
   /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  List<String>? get outboundServicesIds => throw _privateConstructorUsedError;
+  List<String> get outboundServicesIds => throw _privateConstructorUsedError;
 
   /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  set outboundServicesIds(List<String>? value) =>
+  set outboundServicesIds(List<String> value) =>
       throw _privateConstructorUsedError;
 
   /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-  bool? get watchImage => throw _privateConstructorUsedError;
+  bool get watchImage => throw _privateConstructorUsedError;
 
   /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-  set watchImage(bool? value) => throw _privateConstructorUsedError;
+  set watchImage(bool value) => throw _privateConstructorUsedError;
 
   /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
-  ActionGeofenceSettingsInput? get geofenceSettings =>
+  ActionGeofenceSettingsInput get geofenceSettings =>
       throw _privateConstructorUsedError;
 
   /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
-  set geofenceSettings(ActionGeofenceSettingsInput? value) =>
+  set geofenceSettings(ActionGeofenceSettingsInput value) =>
       throw _privateConstructorUsedError;
 
   /// Serializes this ActionInput to a JSON map.
@@ -710,13 +710,13 @@ abstract class $ActionInputCopyWith<$Res> {
       @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,
       @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind,
       String? commandId,
-      List<String>? triggersIds,
-      List<String>? operationsIds,
-      List<String>? outboundServicesIds,
-      bool? watchImage,
-      ActionGeofenceSettingsInput? geofenceSettings});
+      List<String> triggersIds,
+      List<String> operationsIds,
+      List<String> outboundServicesIds,
+      bool watchImage,
+      ActionGeofenceSettingsInput geofenceSettings});
 
-  $ActionGeofenceSettingsInputCopyWith<$Res>? get geofenceSettings;
+  $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings;
 }
 
 /// @nodoc
@@ -739,11 +739,11 @@ class _$ActionInputCopyWithImpl<$Res, $Val extends ActionInput>
     Object? kind = null,
     Object? subkind = null,
     Object? commandId = freezed,
-    Object? triggersIds = freezed,
-    Object? operationsIds = freezed,
-    Object? outboundServicesIds = freezed,
-    Object? watchImage = freezed,
-    Object? geofenceSettings = freezed,
+    Object? triggersIds = null,
+    Object? operationsIds = null,
+    Object? outboundServicesIds = null,
+    Object? watchImage = null,
+    Object? geofenceSettings = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -766,26 +766,26 @@ class _$ActionInputCopyWithImpl<$Res, $Val extends ActionInput>
           ? _value.commandId
           : commandId // ignore: cast_nullable_to_non_nullable
               as String?,
-      triggersIds: freezed == triggersIds
+      triggersIds: null == triggersIds
           ? _value.triggersIds
           : triggersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      operationsIds: freezed == operationsIds
+              as List<String>,
+      operationsIds: null == operationsIds
           ? _value.operationsIds
           : operationsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      outboundServicesIds: freezed == outboundServicesIds
+              as List<String>,
+      outboundServicesIds: null == outboundServicesIds
           ? _value.outboundServicesIds
           : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      watchImage: freezed == watchImage
+              as List<String>,
+      watchImage: null == watchImage
           ? _value.watchImage
           : watchImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      geofenceSettings: freezed == geofenceSettings
+              as bool,
+      geofenceSettings: null == geofenceSettings
           ? _value.geofenceSettings
           : geofenceSettings // ignore: cast_nullable_to_non_nullable
-              as ActionGeofenceSettingsInput?,
+              as ActionGeofenceSettingsInput,
     ) as $Val);
   }
 
@@ -793,12 +793,8 @@ class _$ActionInputCopyWithImpl<$Res, $Val extends ActionInput>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $ActionGeofenceSettingsInputCopyWith<$Res>? get geofenceSettings {
-    if (_value.geofenceSettings == null) {
-      return null;
-    }
-
-    return $ActionGeofenceSettingsInputCopyWith<$Res>(_value.geofenceSettings!,
+  $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings {
+    return $ActionGeofenceSettingsInputCopyWith<$Res>(_value.geofenceSettings,
         (value) {
       return _then(_value.copyWith(geofenceSettings: value) as $Val);
     });
@@ -819,14 +815,14 @@ abstract class _$$ActionInputImplCopyWith<$Res>
       @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,
       @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind,
       String? commandId,
-      List<String>? triggersIds,
-      List<String>? operationsIds,
-      List<String>? outboundServicesIds,
-      bool? watchImage,
-      ActionGeofenceSettingsInput? geofenceSettings});
+      List<String> triggersIds,
+      List<String> operationsIds,
+      List<String> outboundServicesIds,
+      bool watchImage,
+      ActionGeofenceSettingsInput geofenceSettings});
 
   @override
-  $ActionGeofenceSettingsInputCopyWith<$Res>? get geofenceSettings;
+  $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings;
 }
 
 /// @nodoc
@@ -847,11 +843,11 @@ class __$$ActionInputImplCopyWithImpl<$Res>
     Object? kind = null,
     Object? subkind = null,
     Object? commandId = freezed,
-    Object? triggersIds = freezed,
-    Object? operationsIds = freezed,
-    Object? outboundServicesIds = freezed,
-    Object? watchImage = freezed,
-    Object? geofenceSettings = freezed,
+    Object? triggersIds = null,
+    Object? operationsIds = null,
+    Object? outboundServicesIds = null,
+    Object? watchImage = null,
+    Object? geofenceSettings = null,
   }) {
     return _then(_$ActionInputImpl(
       id: freezed == id
@@ -874,26 +870,26 @@ class __$$ActionInputImplCopyWithImpl<$Res>
           ? _value.commandId
           : commandId // ignore: cast_nullable_to_non_nullable
               as String?,
-      triggersIds: freezed == triggersIds
+      triggersIds: null == triggersIds
           ? _value.triggersIds
           : triggersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      operationsIds: freezed == operationsIds
+              as List<String>,
+      operationsIds: null == operationsIds
           ? _value.operationsIds
           : operationsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      outboundServicesIds: freezed == outboundServicesIds
+              as List<String>,
+      outboundServicesIds: null == outboundServicesIds
           ? _value.outboundServicesIds
           : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      watchImage: freezed == watchImage
+              as List<String>,
+      watchImage: null == watchImage
           ? _value.watchImage
           : watchImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      geofenceSettings: freezed == geofenceSettings
+              as bool,
+      geofenceSettings: null == geofenceSettings
           ? _value.geofenceSettings
           : geofenceSettings // ignore: cast_nullable_to_non_nullable
-              as ActionGeofenceSettingsInput?,
+              as ActionGeofenceSettingsInput,
     ));
   }
 }
@@ -913,7 +909,7 @@ class _$ActionInputImpl extends _ActionInput {
       this.operationsIds = const [],
       this.outboundServicesIds = const [],
       this.watchImage = false,
-      this.geofenceSettings})
+      required this.geofenceSettings})
       : super._();
 
   factory _$ActionInputImpl.fromJson(Map<String, dynamic> json) =>
@@ -945,26 +941,26 @@ class _$ActionInputImpl extends _ActionInput {
   /// List of triggers IDs enabled for handle this action.
   @override
   @JsonKey()
-  List<String>? triggersIds;
+  List<String> triggersIds;
 
   /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
   @override
   @JsonKey()
-  List<String>? operationsIds;
+  List<String> operationsIds;
 
   /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
   @override
   @JsonKey()
-  List<String>? outboundServicesIds;
+  List<String> outboundServicesIds;
 
   /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
   @override
   @JsonKey()
-  bool? watchImage;
+  bool watchImage;
 
   /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
   @override
-  ActionGeofenceSettingsInput? geofenceSettings;
+  ActionGeofenceSettingsInput geofenceSettings;
 
   @override
   String toString() {
@@ -994,11 +990,12 @@ abstract class _ActionInput extends ActionInput {
       @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,
       @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind,
       String? commandId,
-      List<String>? triggersIds,
-      List<String>? operationsIds,
-      List<String>? outboundServicesIds,
-      bool? watchImage,
-      ActionGeofenceSettingsInput? geofenceSettings}) = _$ActionInputImpl;
+      List<String> triggersIds,
+      List<String> operationsIds,
+      List<String> outboundServicesIds,
+      bool watchImage,
+      required ActionGeofenceSettingsInput
+          geofenceSettings}) = _$ActionInputImpl;
   _ActionInput._() : super._();
 
   factory _ActionInput.fromJson(Map<String, dynamic> json) =
@@ -1045,38 +1042,38 @@ abstract class _ActionInput extends ActionInput {
 
   /// List of triggers IDs enabled for handle this action.
   @override
-  List<String>? get triggersIds;
+  List<String> get triggersIds;
 
   /// List of triggers IDs enabled for handle this action.
-  set triggersIds(List<String>? value);
+  set triggersIds(List<String> value);
 
   /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
   @override
-  List<String>? get operationsIds;
+  List<String> get operationsIds;
 
   /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-  set operationsIds(List<String>? value);
+  set operationsIds(List<String> value);
 
   /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
   @override
-  List<String>? get outboundServicesIds;
+  List<String> get outboundServicesIds;
 
   /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  set outboundServicesIds(List<String>? value);
+  set outboundServicesIds(List<String> value);
 
   /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
   @override
-  bool? get watchImage;
+  bool get watchImage;
 
   /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-  set watchImage(bool? value);
+  set watchImage(bool value);
 
   /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
   @override
-  ActionGeofenceSettingsInput? get geofenceSettings;
+  ActionGeofenceSettingsInput get geofenceSettings;
 
   /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
-  set geofenceSettings(ActionGeofenceSettingsInput? value);
+  set geofenceSettings(ActionGeofenceSettingsInput value);
 
   /// Create a copy of ActionInput
   /// with the given fields replaced by the non-null parameter values.
