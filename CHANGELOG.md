@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.28
+
+- Updates on `Action` and `LayrzChart` models to support direct enum conversion
+- Added their equivalences of the models mentioned above in the `Input` models
+
 ## 3.3.27
 
 - Changes added to `Operation` and `OperationInput` models

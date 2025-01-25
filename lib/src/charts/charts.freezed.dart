@@ -20,20 +20,37 @@ LayrzChart _$LayrzChartFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LayrzChart {
+  /// [id] is a unique identifier for this entity.
   String get id => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the chart.
   String get name => throw _privateConstructorUsedError;
+
+  /// [description] is a description of the chart. Useful for identification or brief explanation.
   String? get description => throw _privateConstructorUsedError;
+
+  /// [formula] is the formula used to calculate the chart. This property is a LCL formula.
   String? get formula => throw _privateConstructorUsedError;
+
+  /// [script] is the script used to calculate the chart. This property is a Python script.
   String? get script => throw _privateConstructorUsedError;
+
+  /// [sensors] is a list of sensors used to calculate the chart.
   List<String>? get sensors => throw _privateConstructorUsedError;
-  @ChartTypeOrNullConverter()
+
+  /// [type] is the type of the chart.
+  @JsonKey(unknownEnumValue: ChartType.area)
   ChartType? get type => throw _privateConstructorUsedError;
-  @ChartAlgorithmOrNullConverter()
+
+  /// [algorithm] is the algorithm used to calculate the chart.
+  @JsonKey(unknownEnumValue: ChartAlgorithm.auto)
   ChartAlgorithm? get algorithm => throw _privateConstructorUsedError;
-  @ChartDataSourceOrNullConverter()
+
+  /// [dataSource] is the data source used to calculate the chart.
+  @JsonKey(unknownEnumValue: ChartDataSource.messages)
   ChartDataSource? get dataSource => throw _privateConstructorUsedError;
 
-  /// Is a list of granted access to this entity.
+  /// [access] is a list of granted access to this entity.
   List<Access>? get access => throw _privateConstructorUsedError;
 
   /// Serializes this LayrzChart to a JSON map.
@@ -59,9 +76,10 @@ abstract class $LayrzChartCopyWith<$Res> {
       String? formula,
       String? script,
       List<String>? sensors,
-      @ChartTypeOrNullConverter() ChartType? type,
-      @ChartAlgorithmOrNullConverter() ChartAlgorithm? algorithm,
-      @ChartDataSourceOrNullConverter() ChartDataSource? dataSource,
+      @JsonKey(unknownEnumValue: ChartType.area) ChartType? type,
+      @JsonKey(unknownEnumValue: ChartAlgorithm.auto) ChartAlgorithm? algorithm,
+      @JsonKey(unknownEnumValue: ChartDataSource.messages)
+      ChartDataSource? dataSource,
       List<Access>? access});
 }
 
@@ -151,9 +169,10 @@ abstract class _$$LayrzChartImplCopyWith<$Res>
       String? formula,
       String? script,
       List<String>? sensors,
-      @ChartTypeOrNullConverter() ChartType? type,
-      @ChartAlgorithmOrNullConverter() ChartAlgorithm? algorithm,
-      @ChartDataSourceOrNullConverter() ChartDataSource? dataSource,
+      @JsonKey(unknownEnumValue: ChartType.area) ChartType? type,
+      @JsonKey(unknownEnumValue: ChartAlgorithm.auto) ChartAlgorithm? algorithm,
+      @JsonKey(unknownEnumValue: ChartDataSource.messages)
+      ChartDataSource? dataSource,
       List<Access>? access});
 }
 
@@ -228,7 +247,7 @@ class __$$LayrzChartImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$LayrzChartImpl implements _LayrzChart {
+class _$LayrzChartImpl extends _LayrzChart {
   const _$LayrzChartImpl(
       {required this.id,
       required this.name,
@@ -236,27 +255,41 @@ class _$LayrzChartImpl implements _LayrzChart {
       this.formula,
       this.script,
       final List<String>? sensors,
-      @ChartTypeOrNullConverter() this.type,
-      @ChartAlgorithmOrNullConverter() this.algorithm,
-      @ChartDataSourceOrNullConverter() this.dataSource,
+      @JsonKey(unknownEnumValue: ChartType.area) this.type,
+      @JsonKey(unknownEnumValue: ChartAlgorithm.auto) this.algorithm,
+      @JsonKey(unknownEnumValue: ChartDataSource.messages) this.dataSource,
       final List<Access>? access})
       : _sensors = sensors,
-        _access = access;
+        _access = access,
+        super._();
 
   factory _$LayrzChartImpl.fromJson(Map<String, dynamic> json) =>
       _$$LayrzChartImplFromJson(json);
 
+  /// [id] is a unique identifier for this entity.
   @override
   final String id;
+
+  /// [name] is the name of the chart.
   @override
   final String name;
+
+  /// [description] is a description of the chart. Useful for identification or brief explanation.
   @override
   final String? description;
+
+  /// [formula] is the formula used to calculate the chart. This property is a LCL formula.
   @override
   final String? formula;
+
+  /// [script] is the script used to calculate the chart. This property is a Python script.
   @override
   final String? script;
+
+  /// [sensors] is a list of sensors used to calculate the chart.
   final List<String>? _sensors;
+
+  /// [sensors] is a list of sensors used to calculate the chart.
   @override
   List<String>? get sensors {
     final value = _sensors;
@@ -266,20 +299,25 @@ class _$LayrzChartImpl implements _LayrzChart {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [type] is the type of the chart.
   @override
-  @ChartTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ChartType.area)
   final ChartType? type;
+
+  /// [algorithm] is the algorithm used to calculate the chart.
   @override
-  @ChartAlgorithmOrNullConverter()
+  @JsonKey(unknownEnumValue: ChartAlgorithm.auto)
   final ChartAlgorithm? algorithm;
+
+  /// [dataSource] is the data source used to calculate the chart.
   @override
-  @ChartDataSourceOrNullConverter()
+  @JsonKey(unknownEnumValue: ChartDataSource.messages)
   final ChartDataSource? dataSource;
 
-  /// Is a list of granted access to this entity.
+  /// [access] is a list of granted access to this entity.
   final List<Access>? _access;
 
-  /// Is a list of granted access to this entity.
+  /// [access] is a list of granted access to this entity.
   @override
   List<Access>? get access {
     final value = _access;
@@ -345,7 +383,7 @@ class _$LayrzChartImpl implements _LayrzChart {
   }
 }
 
-abstract class _LayrzChart implements LayrzChart {
+abstract class _LayrzChart extends LayrzChart {
   const factory _LayrzChart(
       {required final String id,
       required final String name,
@@ -353,37 +391,57 @@ abstract class _LayrzChart implements LayrzChart {
       final String? formula,
       final String? script,
       final List<String>? sensors,
-      @ChartTypeOrNullConverter() final ChartType? type,
-      @ChartAlgorithmOrNullConverter() final ChartAlgorithm? algorithm,
-      @ChartDataSourceOrNullConverter() final ChartDataSource? dataSource,
+      @JsonKey(unknownEnumValue: ChartType.area) final ChartType? type,
+      @JsonKey(unknownEnumValue: ChartAlgorithm.auto)
+      final ChartAlgorithm? algorithm,
+      @JsonKey(unknownEnumValue: ChartDataSource.messages)
+      final ChartDataSource? dataSource,
       final List<Access>? access}) = _$LayrzChartImpl;
+  const _LayrzChart._() : super._();
 
   factory _LayrzChart.fromJson(Map<String, dynamic> json) =
       _$LayrzChartImpl.fromJson;
 
+  /// [id] is a unique identifier for this entity.
   @override
   String get id;
+
+  /// [name] is the name of the chart.
   @override
   String get name;
+
+  /// [description] is a description of the chart. Useful for identification or brief explanation.
   @override
   String? get description;
+
+  /// [formula] is the formula used to calculate the chart. This property is a LCL formula.
   @override
   String? get formula;
+
+  /// [script] is the script used to calculate the chart. This property is a Python script.
   @override
   String? get script;
+
+  /// [sensors] is a list of sensors used to calculate the chart.
   @override
   List<String>? get sensors;
+
+  /// [type] is the type of the chart.
   @override
-  @ChartTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ChartType.area)
   ChartType? get type;
+
+  /// [algorithm] is the algorithm used to calculate the chart.
   @override
-  @ChartAlgorithmOrNullConverter()
+  @JsonKey(unknownEnumValue: ChartAlgorithm.auto)
   ChartAlgorithm? get algorithm;
+
+  /// [dataSource] is the data source used to calculate the chart.
   @override
-  @ChartDataSourceOrNullConverter()
+  @JsonKey(unknownEnumValue: ChartDataSource.messages)
   ChartDataSource? get dataSource;
 
-  /// Is a list of granted access to this entity.
+  /// [access] is a list of granted access to this entity.
   @override
   List<Access>? get access;
 
@@ -392,6 +450,432 @@ abstract class _LayrzChart implements LayrzChart {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LayrzChartImplCopyWith<_$LayrzChartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+LayrzChartInput _$LayrzChartInputFromJson(Map<String, dynamic> json) {
+  return _LayrzChartInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LayrzChartInput {
+  /// [id] is a unique identifier for this entity. Keep it null to create a new entity.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// [id] is a unique identifier for this entity. Keep it null to create a new entity.
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the chart.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the chart.
+  set name(String value) => throw _privateConstructorUsedError;
+
+  /// [description] is a description of the chart. Useful for identification or brief explanation.
+  String get description => throw _privateConstructorUsedError;
+
+  /// [description] is a description of the chart. Useful for identification or brief explanation.
+  set description(String value) => throw _privateConstructorUsedError;
+
+  /// [formula] is the formula used to calculate the chart. This property is a LCL formula.
+  String get formula => throw _privateConstructorUsedError;
+
+  /// [formula] is the formula used to calculate the chart. This property is a LCL formula.
+  set formula(String value) => throw _privateConstructorUsedError;
+
+  /// [script] is the script used to calculate the chart. This property is a Python script.
+  String get script => throw _privateConstructorUsedError;
+
+  /// [script] is the script used to calculate the chart. This property is a Python script.
+  set script(String value) => throw _privateConstructorUsedError;
+
+  /// [sensors] is a list of sensors used to calculate the chart.
+  List<String> get sensors => throw _privateConstructorUsedError;
+
+  /// [sensors] is a list of sensors used to calculate the chart.
+  set sensors(List<String> value) => throw _privateConstructorUsedError;
+
+  /// [type] is the type of the chart.
+  @JsonKey(unknownEnumValue: ChartType.area)
+  ChartType get type => throw _privateConstructorUsedError;
+
+  /// [type] is the type of the chart.
+  @JsonKey(unknownEnumValue: ChartType.area)
+  set type(ChartType value) => throw _privateConstructorUsedError;
+
+  /// [algorithm] is the algorithm used to calculate the chart.
+  @JsonKey(unknownEnumValue: ChartAlgorithm.auto)
+  ChartAlgorithm get algorithm => throw _privateConstructorUsedError;
+
+  /// [algorithm] is the algorithm used to calculate the chart.
+  @JsonKey(unknownEnumValue: ChartAlgorithm.auto)
+  set algorithm(ChartAlgorithm value) => throw _privateConstructorUsedError;
+
+  /// [dataSource] is the data source used to calculate the chart.
+  @JsonKey(unknownEnumValue: ChartDataSource.messages)
+  ChartDataSource get dataSource => throw _privateConstructorUsedError;
+
+  /// [dataSource] is the data source used to calculate the chart.
+  @JsonKey(unknownEnumValue: ChartDataSource.messages)
+  set dataSource(ChartDataSource value) => throw _privateConstructorUsedError;
+
+  /// Serializes this LayrzChartInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LayrzChartInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LayrzChartInputCopyWith<LayrzChartInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LayrzChartInputCopyWith<$Res> {
+  factory $LayrzChartInputCopyWith(
+          LayrzChartInput value, $Res Function(LayrzChartInput) then) =
+      _$LayrzChartInputCopyWithImpl<$Res, LayrzChartInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String description,
+      String formula,
+      String script,
+      List<String> sensors,
+      @JsonKey(unknownEnumValue: ChartType.area) ChartType type,
+      @JsonKey(unknownEnumValue: ChartAlgorithm.auto) ChartAlgorithm algorithm,
+      @JsonKey(unknownEnumValue: ChartDataSource.messages)
+      ChartDataSource dataSource});
+}
+
+/// @nodoc
+class _$LayrzChartInputCopyWithImpl<$Res, $Val extends LayrzChartInput>
+    implements $LayrzChartInputCopyWith<$Res> {
+  _$LayrzChartInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LayrzChartInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? description = null,
+    Object? formula = null,
+    Object? script = null,
+    Object? sensors = null,
+    Object? type = null,
+    Object? algorithm = null,
+    Object? dataSource = null,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      formula: null == formula
+          ? _value.formula
+          : formula // ignore: cast_nullable_to_non_nullable
+              as String,
+      script: null == script
+          ? _value.script
+          : script // ignore: cast_nullable_to_non_nullable
+              as String,
+      sensors: null == sensors
+          ? _value.sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ChartType,
+      algorithm: null == algorithm
+          ? _value.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as ChartAlgorithm,
+      dataSource: null == dataSource
+          ? _value.dataSource
+          : dataSource // ignore: cast_nullable_to_non_nullable
+              as ChartDataSource,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LayrzChartInputImplCopyWith<$Res>
+    implements $LayrzChartInputCopyWith<$Res> {
+  factory _$$LayrzChartInputImplCopyWith(_$LayrzChartInputImpl value,
+          $Res Function(_$LayrzChartInputImpl) then) =
+      __$$LayrzChartInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String description,
+      String formula,
+      String script,
+      List<String> sensors,
+      @JsonKey(unknownEnumValue: ChartType.area) ChartType type,
+      @JsonKey(unknownEnumValue: ChartAlgorithm.auto) ChartAlgorithm algorithm,
+      @JsonKey(unknownEnumValue: ChartDataSource.messages)
+      ChartDataSource dataSource});
+}
+
+/// @nodoc
+class __$$LayrzChartInputImplCopyWithImpl<$Res>
+    extends _$LayrzChartInputCopyWithImpl<$Res, _$LayrzChartInputImpl>
+    implements _$$LayrzChartInputImplCopyWith<$Res> {
+  __$$LayrzChartInputImplCopyWithImpl(
+      _$LayrzChartInputImpl _value, $Res Function(_$LayrzChartInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LayrzChartInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? description = null,
+    Object? formula = null,
+    Object? script = null,
+    Object? sensors = null,
+    Object? type = null,
+    Object? algorithm = null,
+    Object? dataSource = null,
+  }) {
+    return _then(_$LayrzChartInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
+      formula: null == formula
+          ? _value.formula
+          : formula // ignore: cast_nullable_to_non_nullable
+              as String,
+      script: null == script
+          ? _value.script
+          : script // ignore: cast_nullable_to_non_nullable
+              as String,
+      sensors: null == sensors
+          ? _value.sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as ChartType,
+      algorithm: null == algorithm
+          ? _value.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as ChartAlgorithm,
+      dataSource: null == dataSource
+          ? _value.dataSource
+          : dataSource // ignore: cast_nullable_to_non_nullable
+              as ChartDataSource,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LayrzChartInputImpl extends _LayrzChartInput {
+  _$LayrzChartInputImpl(
+      {this.id,
+      this.name = '',
+      this.description = '',
+      this.formula = '',
+      this.script = '',
+      this.sensors = const [],
+      @JsonKey(unknownEnumValue: ChartType.area) this.type = ChartType.area,
+      @JsonKey(unknownEnumValue: ChartAlgorithm.auto)
+      this.algorithm = ChartAlgorithm.auto,
+      @JsonKey(unknownEnumValue: ChartDataSource.messages)
+      this.dataSource = ChartDataSource.messages})
+      : super._();
+
+  factory _$LayrzChartInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LayrzChartInputImplFromJson(json);
+
+  /// [id] is a unique identifier for this entity. Keep it null to create a new entity.
+  @override
+  String? id;
+
+  /// [name] is the name of the chart.
+  @override
+  @JsonKey()
+  String name;
+
+  /// [description] is a description of the chart. Useful for identification or brief explanation.
+  @override
+  @JsonKey()
+  String description;
+
+  /// [formula] is the formula used to calculate the chart. This property is a LCL formula.
+  @override
+  @JsonKey()
+  String formula;
+
+  /// [script] is the script used to calculate the chart. This property is a Python script.
+  @override
+  @JsonKey()
+  String script;
+
+  /// [sensors] is a list of sensors used to calculate the chart.
+  @override
+  @JsonKey()
+  List<String> sensors;
+
+  /// [type] is the type of the chart.
+  @override
+  @JsonKey(unknownEnumValue: ChartType.area)
+  ChartType type;
+
+  /// [algorithm] is the algorithm used to calculate the chart.
+  @override
+  @JsonKey(unknownEnumValue: ChartAlgorithm.auto)
+  ChartAlgorithm algorithm;
+
+  /// [dataSource] is the data source used to calculate the chart.
+  @override
+  @JsonKey(unknownEnumValue: ChartDataSource.messages)
+  ChartDataSource dataSource;
+
+  @override
+  String toString() {
+    return 'LayrzChartInput(id: $id, name: $name, description: $description, formula: $formula, script: $script, sensors: $sensors, type: $type, algorithm: $algorithm, dataSource: $dataSource)';
+  }
+
+  /// Create a copy of LayrzChartInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LayrzChartInputImplCopyWith<_$LayrzChartInputImpl> get copyWith =>
+      __$$LayrzChartInputImplCopyWithImpl<_$LayrzChartInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LayrzChartInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LayrzChartInput extends LayrzChartInput {
+  factory _LayrzChartInput(
+      {String? id,
+      String name,
+      String description,
+      String formula,
+      String script,
+      List<String> sensors,
+      @JsonKey(unknownEnumValue: ChartType.area) ChartType type,
+      @JsonKey(unknownEnumValue: ChartAlgorithm.auto) ChartAlgorithm algorithm,
+      @JsonKey(unknownEnumValue: ChartDataSource.messages)
+      ChartDataSource dataSource}) = _$LayrzChartInputImpl;
+  _LayrzChartInput._() : super._();
+
+  factory _LayrzChartInput.fromJson(Map<String, dynamic> json) =
+      _$LayrzChartInputImpl.fromJson;
+
+  /// [id] is a unique identifier for this entity. Keep it null to create a new entity.
+  @override
+  String? get id;
+
+  /// [id] is a unique identifier for this entity. Keep it null to create a new entity.
+  set id(String? value);
+
+  /// [name] is the name of the chart.
+  @override
+  String get name;
+
+  /// [name] is the name of the chart.
+  set name(String value);
+
+  /// [description] is a description of the chart. Useful for identification or brief explanation.
+  @override
+  String get description;
+
+  /// [description] is a description of the chart. Useful for identification or brief explanation.
+  set description(String value);
+
+  /// [formula] is the formula used to calculate the chart. This property is a LCL formula.
+  @override
+  String get formula;
+
+  /// [formula] is the formula used to calculate the chart. This property is a LCL formula.
+  set formula(String value);
+
+  /// [script] is the script used to calculate the chart. This property is a Python script.
+  @override
+  String get script;
+
+  /// [script] is the script used to calculate the chart. This property is a Python script.
+  set script(String value);
+
+  /// [sensors] is a list of sensors used to calculate the chart.
+  @override
+  List<String> get sensors;
+
+  /// [sensors] is a list of sensors used to calculate the chart.
+  set sensors(List<String> value);
+
+  /// [type] is the type of the chart.
+  @override
+  @JsonKey(unknownEnumValue: ChartType.area)
+  ChartType get type;
+
+  /// [type] is the type of the chart.
+  @JsonKey(unknownEnumValue: ChartType.area)
+  set type(ChartType value);
+
+  /// [algorithm] is the algorithm used to calculate the chart.
+  @override
+  @JsonKey(unknownEnumValue: ChartAlgorithm.auto)
+  ChartAlgorithm get algorithm;
+
+  /// [algorithm] is the algorithm used to calculate the chart.
+  @JsonKey(unknownEnumValue: ChartAlgorithm.auto)
+  set algorithm(ChartAlgorithm value);
+
+  /// [dataSource] is the data source used to calculate the chart.
+  @override
+  @JsonKey(unknownEnumValue: ChartDataSource.messages)
+  ChartDataSource get dataSource;
+
+  /// [dataSource] is the data source used to calculate the chart.
+  @JsonKey(unknownEnumValue: ChartDataSource.messages)
+  set dataSource(ChartDataSource value);
+
+  /// Create a copy of LayrzChartInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LayrzChartInputImplCopyWith<_$LayrzChartInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -405,7 +889,7 @@ mixin _$AxisConfig {
   String? get measureUnit => throw _privateConstructorUsedError;
   num? get minValue => throw _privateConstructorUsedError;
   num? get maxValue => throw _privateConstructorUsedError;
-  @ChartDataTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ChartDataType.unknown)
   ChartDataType? get dataType => throw _privateConstructorUsedError;
 
   /// Serializes this AxisConfig to a JSON map.
@@ -429,7 +913,8 @@ abstract class $AxisConfigCopyWith<$Res> {
       String? measureUnit,
       num? minValue,
       num? maxValue,
-      @ChartDataTypeOrNullConverter() ChartDataType? dataType});
+      @JsonKey(unknownEnumValue: ChartDataType.unknown)
+      ChartDataType? dataType});
 }
 
 /// @nodoc
@@ -491,7 +976,8 @@ abstract class _$$AxisConfigImplCopyWith<$Res>
       String? measureUnit,
       num? minValue,
       num? maxValue,
-      @ChartDataTypeOrNullConverter() ChartDataType? dataType});
+      @JsonKey(unknownEnumValue: ChartDataType.unknown)
+      ChartDataType? dataType});
 }
 
 /// @nodoc
@@ -546,7 +1032,7 @@ class _$AxisConfigImpl implements _AxisConfig {
       this.measureUnit,
       this.minValue,
       this.maxValue,
-      @ChartDataTypeOrNullConverter() this.dataType});
+      @JsonKey(unknownEnumValue: ChartDataType.unknown) this.dataType});
 
   factory _$AxisConfigImpl.fromJson(Map<String, dynamic> json) =>
       _$$AxisConfigImplFromJson(json);
@@ -560,7 +1046,7 @@ class _$AxisConfigImpl implements _AxisConfig {
   @override
   final num? maxValue;
   @override
-  @ChartDataTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ChartDataType.unknown)
   final ChartDataType? dataType;
 
   @override
@@ -607,12 +1093,12 @@ class _$AxisConfigImpl implements _AxisConfig {
 
 abstract class _AxisConfig implements AxisConfig {
   const factory _AxisConfig(
-          {final String? label,
-          final String? measureUnit,
-          final num? minValue,
-          final num? maxValue,
-          @ChartDataTypeOrNullConverter() final ChartDataType? dataType}) =
-      _$AxisConfigImpl;
+      {final String? label,
+      final String? measureUnit,
+      final num? minValue,
+      final num? maxValue,
+      @JsonKey(unknownEnumValue: ChartDataType.unknown)
+      final ChartDataType? dataType}) = _$AxisConfigImpl;
 
   factory _AxisConfig.fromJson(Map<String, dynamic> json) =
       _$AxisConfigImpl.fromJson;
@@ -626,7 +1112,7 @@ abstract class _AxisConfig implements AxisConfig {
   @override
   num? get maxValue;
   @override
-  @ChartDataTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ChartDataType.unknown)
   ChartDataType? get dataType;
 
   /// Create a copy of AxisConfig
@@ -870,7 +1356,7 @@ mixin _$LineChartSerie {
   @ColorConverter()
   Color get color => throw _privateConstructorUsedError;
   String get label => throw _privateConstructorUsedError;
-  @ChartDataSerieTypeConverter()
+  @JsonKey(unknownEnumValue: ChartDataSerieType.line)
   ChartDataSerieType get type => throw _privateConstructorUsedError;
   List<LineChartDataPoint> get values => throw _privateConstructorUsedError;
 
@@ -893,7 +1379,8 @@ abstract class $LineChartSerieCopyWith<$Res> {
   $Res call(
       {@ColorConverter() Color color,
       String label,
-      @ChartDataSerieTypeConverter() ChartDataSerieType type,
+      @JsonKey(unknownEnumValue: ChartDataSerieType.line)
+      ChartDataSerieType type,
       List<LineChartDataPoint> values});
 }
 
@@ -949,7 +1436,8 @@ abstract class _$$LineChartSerieImplCopyWith<$Res>
   $Res call(
       {@ColorConverter() Color color,
       String label,
-      @ChartDataSerieTypeConverter() ChartDataSerieType type,
+      @JsonKey(unknownEnumValue: ChartDataSerieType.line)
+      ChartDataSerieType type,
       List<LineChartDataPoint> values});
 }
 
@@ -998,7 +1486,7 @@ class _$LineChartSerieImpl implements _LineChartSerie {
   const _$LineChartSerieImpl(
       {@ColorConverter() required this.color,
       required this.label,
-      @ChartDataSerieTypeConverter() required this.type,
+      @JsonKey(unknownEnumValue: ChartDataSerieType.line) required this.type,
       required final List<LineChartDataPoint> values})
       : _values = values;
 
@@ -1011,7 +1499,7 @@ class _$LineChartSerieImpl implements _LineChartSerie {
   @override
   final String label;
   @override
-  @ChartDataSerieTypeConverter()
+  @JsonKey(unknownEnumValue: ChartDataSerieType.line)
   final ChartDataSerieType type;
   final List<LineChartDataPoint> _values;
   @override
@@ -1063,7 +1551,8 @@ abstract class _LineChartSerie implements LineChartSerie {
   const factory _LineChartSerie(
       {@ColorConverter() required final Color color,
       required final String label,
-      @ChartDataSerieTypeConverter() required final ChartDataSerieType type,
+      @JsonKey(unknownEnumValue: ChartDataSerieType.line)
+      required final ChartDataSerieType type,
       required final List<LineChartDataPoint> values}) = _$LineChartSerieImpl;
 
   factory _LineChartSerie.fromJson(Map<String, dynamic> json) =
@@ -1075,7 +1564,7 @@ abstract class _LineChartSerie implements LineChartSerie {
   @override
   String get label;
   @override
-  @ChartDataSerieTypeConverter()
+  @JsonKey(unknownEnumValue: ChartDataSerieType.line)
   ChartDataSerieType get type;
   @override
   List<LineChartDataPoint> get values;

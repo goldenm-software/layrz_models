@@ -16,7 +16,7 @@ class LineChartSerie with _$LineChartSerie {
   const factory LineChartSerie({
     @ColorConverter() required Color color,
     required String label,
-    @ChartDataSerieTypeConverter() required ChartDataSerieType type,
+    @JsonKey(unknownEnumValue: ChartDataSerieType.line) required ChartDataSerieType type,
     required List<LineChartDataPoint> values,
   }) = _LineChartSerie;
 
@@ -31,68 +31,4 @@ class LineChartDataPoint with _$LineChartDataPoint {
   }) = _LineChartDataPoint;
 
   factory LineChartDataPoint.fromJson(Map<String, dynamic> json) => _$LineChartDataPointFromJson(json);
-}
-
-enum ChartDataSerieType {
-  /// Line chart
-  line,
-
-  /// Area chart
-  area,
-
-  /// Scatter chart
-  scatter,
-  ;
-
-  @override
-  String toString() => toJson();
-
-  String toJson() {
-    switch (this) {
-      case ChartDataSerieType.line:
-        return 'LINE';
-      case ChartDataSerieType.area:
-        return 'AREA';
-      case ChartDataSerieType.scatter:
-        return 'SCATTER';
-    }
-  }
-
-  static ChartDataSerieType fromJson(String json) {
-    switch (json) {
-      case 'LINE':
-        return ChartDataSerieType.line;
-      case 'AREA':
-        return ChartDataSerieType.area;
-      case 'SCATTER':
-        return ChartDataSerieType.scatter;
-      default:
-        return ChartDataSerieType.line;
-    }
-  }
-}
-
-class ChartDataSerieTypeConverter implements JsonConverter<ChartDataSerieType, String> {
-  const ChartDataSerieTypeConverter();
-
-  @override
-  ChartDataSerieType fromJson(String json) => ChartDataSerieType.fromJson(json);
-
-  @override
-  String toJson(ChartDataSerieType object) => object.toJson();
-}
-
-class ChartDataSerieTypeOrNullConverter implements JsonConverter<ChartDataSerieType?, String?> {
-  const ChartDataSerieTypeOrNullConverter();
-
-  @override
-  ChartDataSerieType? fromJson(String? json) {
-    if (json == null) {
-      return null;
-    }
-    return ChartDataSerieType.fromJson(json);
-  }
-
-  @override
-  String? toJson(ChartDataSerieType? object) => object?.toJson();
 }

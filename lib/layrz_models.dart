@@ -3,7 +3,7 @@ library layrz_models;
 import 'dart:convert';
 
 import 'package:collection/collection.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Action;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_icons/layrz_icons.dart';
 import 'package:layrz_models/src/operations/operations.dart';
@@ -32,6 +32,7 @@ import 'src/users/users.dart';
 import 'src/references/references.dart';
 // import 'src/notifications/notifications.dart';
 import 'src/operations/operations.dart';
+import 'src/actions/actions.dart';
 
 // Internal exports
 export 'src/app/app.dart';
@@ -66,6 +67,7 @@ export 'src/ble/ble.dart';
 export 'src/references/references.dart';
 export 'src/notifications/notifications.dart';
 export 'src/operations/operations.dart';
+export 'src/actions/actions.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
@@ -74,7 +76,6 @@ part 'layrz_models.g.dart';
 // Core
 part 'src/access.dart';
 part 'src/accessibility/shortcut.dart';
-part 'src/action.dart';
 part 'src/algorithm.dart';
 part 'src/avatar.dart';
 part 'src/billing_plan.dart';
