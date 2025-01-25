@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.3.26
+
+- Added `LayrzNotification` model
+- Added `SoundEffect` enum
+- Updated `Operation` and `OPerationInput` models to support sound effects on notifications.
+
 ## 3.3.25
 
 - Updated `MapLayer` model to use direct enum conversion
