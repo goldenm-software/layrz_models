@@ -55,10 +55,14 @@ _$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>
               unknownValue: AppPlatform.web))
           .toList(),
       pushTitle: json['pushTitle'] as String?,
-      sound: $enumDecodeNullable(_$SoundEffectEnumMap, json['sound'],
+      soundEffect: $enumDecodeNullable(
+              _$SoundEffectEnumMap, json['soundEffect'],
               unknownValue: SoundEffect.none) ??
           SoundEffect.none,
       soundEffectUri: json['soundEffectUri'] as String?,
+      icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
+      duration:
+          const DurationOrNullConverter().fromJson(json['duration'] as num?),
     );
 
 Map<String, dynamic> _$$OperationImplToJson(_$OperationImpl instance) =>
@@ -88,8 +92,10 @@ Map<String, dynamic> _$$OperationImplToJson(_$OperationImpl instance) =>
       'emailTemplateId': instance.emailTemplateId,
       'pushPlatforms': instance.pushPlatforms?.map((e) => e.toJson()).toList(),
       'pushTitle': instance.pushTitle,
-      'sound': instance.sound.toJson(),
+      'soundEffect': instance.soundEffect.toJson(),
       'soundEffectUri': instance.soundEffectUri,
+      'icon': const IconOrNullConverter().toJson(instance.icon),
+      'duration': const DurationOrNullConverter().toJson(instance.duration),
     };
 
 const _$OperationTypeEnumMap = {
@@ -153,38 +159,31 @@ _$OperationInputImpl _$$OperationInputImplFromJson(Map<String, dynamic> json) =>
           unknownValue: HttpRequestType.httpGet),
       url: json['url'] as String?,
       headers: (json['headers'] as List<dynamic>?)
-              ?.map((e) => HttpHeader.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => HttpHeaderInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
       payload: json['payload'] as String?,
       languageId: json['languageId'] as String?,
-      timezone: json['timezone'] == null
-          ? null
-          : Timezone.fromJson(json['timezone'] as Map<String, dynamic>),
       timezoneId: json['timezoneId'] as String?,
       receptionEmails: (json['receptionEmails'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      emailSubject: json['emailSubject'] as String?,
+      emailSubject: json['emailSubject'] as String? ?? '',
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       textColor:
           const ColorOrNullConverter().fromJson(json['textColor'] as String?),
       destinationPhones: (json['destinationPhones'] as List<dynamic>?)
-          ?.map((e) => PhoneNumber.fromJson(Map<String, String>.from(e as Map)))
-          .toList(),
+              ?.map((e) => PhoneNumberInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       notificationType: $enumDecodeNullable(
           _$NotificationTypeEnumMap, json['notificationType'],
           unknownValue: NotificationType.unknown),
       externalAccountId: json['externalAccountId'] as String?,
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      triggers: (json['triggers'] as List<dynamic>?)
-          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      useAssetContactsInstead: json['useAssetContactsInstead'] as bool?,
-      attachImage: json['attachImage'] as bool?,
+      useAssetContactsInstead:
+          json['useAssetContactsInstead'] as bool? ?? false,
+      attachImage: json['attachImage'] as bool? ?? false,
       emailTemplateId: json['emailTemplateId'] as String?,
       pushPlatforms: (json['pushPlatforms'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$AppPlatformEnumMap, e,
@@ -196,6 +195,10 @@ _$OperationInputImpl _$$OperationInputImplFromJson(Map<String, dynamic> json) =>
               unknownValue: SoundEffect.none) ??
           SoundEffect.none,
       soundEffectUri: json['soundEffectUri'] as String?,
+      icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
+      duration: json['duration'] == null
+          ? const Duration(seconds: 5)
+          : const DurationConverter().fromJson(json['duration'] as num),
     );
 
 Map<String, dynamic> _$$OperationInputImplToJson(
@@ -206,21 +209,18 @@ Map<String, dynamic> _$$OperationInputImplToJson(
       'operationType': instance.operationType.toJson(),
       'requestType': instance.requestType?.toJson(),
       'url': instance.url,
-      'headers': instance.headers?.map((e) => e.toJson()).toList(),
+      'headers': instance.headers.map((e) => e.toJson()).toList(),
       'payload': instance.payload,
       'languageId': instance.languageId,
-      'timezone': instance.timezone?.toJson(),
       'timezoneId': instance.timezoneId,
       'receptionEmails': instance.receptionEmails,
       'emailSubject': instance.emailSubject,
       'color': const ColorOrNullConverter().toJson(instance.color),
       'textColor': const ColorOrNullConverter().toJson(instance.textColor),
       'destinationPhones':
-          instance.destinationPhones?.map((e) => e.toJson()).toList(),
+          instance.destinationPhones.map((e) => e.toJson()).toList(),
       'notificationType': instance.notificationType?.toJson(),
       'externalAccountId': instance.externalAccountId,
-      'access': instance.access?.map((e) => e.toJson()).toList(),
-      'triggers': instance.triggers?.map((e) => e.toJson()).toList(),
       'useAssetContactsInstead': instance.useAssetContactsInstead,
       'attachImage': instance.attachImage,
       'emailTemplateId': instance.emailTemplateId,
@@ -228,6 +228,8 @@ Map<String, dynamic> _$$OperationInputImplToJson(
       'pushTitle': instance.pushTitle,
       'soundEffect': instance.soundEffect.toJson(),
       'soundEffectUri': instance.soundEffectUri,
+      'icon': const IconOrNullConverter().toJson(instance.icon),
+      'duration': const DurationConverter().toJson(instance.duration),
     };
 
 _$HttpHeaderImpl _$$HttpHeaderImplFromJson(Map<String, dynamic> json) =>

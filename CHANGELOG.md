@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.27
+
+- Changes added to `Operation` and `OperationInput` models
+
 ## 3.3.26
 
 - Added `LayrzNotification` model

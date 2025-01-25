@@ -123,14 +123,26 @@ mixin _$Operation {
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @JsonKey(unknownEnumValue: SoundEffect.none)
-  SoundEffect get sound => throw _privateConstructorUsedError;
+  SoundEffect get soundEffect => throw _privateConstructorUsedError;
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   String? get soundEffectUri => throw _privateConstructorUsedError;
+
+  /// [icon] is the icon of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @IconOrNullConverter()
+  LayrzIcon? get icon => throw _privateConstructorUsedError;
+
+  /// [duration] is the duration of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @DurationOrNullConverter()
+  Duration? get duration => throw _privateConstructorUsedError;
 
   /// Serializes this Operation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -176,8 +188,10 @@ abstract class $OperationCopyWith<$Res> {
       @JsonKey(unknownEnumValue: AppPlatform.web)
       List<AppPlatform>? pushPlatforms,
       String? pushTitle,
-      @JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect sound,
-      String? soundEffectUri});
+      @JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect,
+      String? soundEffectUri,
+      @IconOrNullConverter() LayrzIcon? icon,
+      @DurationOrNullConverter() Duration? duration});
 
   $TimezoneCopyWith<$Res>? get timezone;
 }
@@ -221,8 +235,10 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
     Object? emailTemplateId = freezed,
     Object? pushPlatforms = freezed,
     Object? pushTitle = freezed,
-    Object? sound = null,
+    Object? soundEffect = null,
     Object? soundEffectUri = freezed,
+    Object? icon = freezed,
+    Object? duration = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -321,14 +337,22 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
           ? _value.pushTitle
           : pushTitle // ignore: cast_nullable_to_non_nullable
               as String?,
-      sound: null == sound
-          ? _value.sound
-          : sound // ignore: cast_nullable_to_non_nullable
+      soundEffect: null == soundEffect
+          ? _value.soundEffect
+          : soundEffect // ignore: cast_nullable_to_non_nullable
               as SoundEffect,
       soundEffectUri: freezed == soundEffectUri
           ? _value.soundEffectUri
           : soundEffectUri // ignore: cast_nullable_to_non_nullable
               as String?,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      duration: freezed == duration
+          ? _value.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ) as $Val);
   }
 
@@ -384,8 +408,10 @@ abstract class _$$OperationImplCopyWith<$Res>
       @JsonKey(unknownEnumValue: AppPlatform.web)
       List<AppPlatform>? pushPlatforms,
       String? pushTitle,
-      @JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect sound,
-      String? soundEffectUri});
+      @JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect,
+      String? soundEffectUri,
+      @IconOrNullConverter() LayrzIcon? icon,
+      @DurationOrNullConverter() Duration? duration});
 
   @override
   $TimezoneCopyWith<$Res>? get timezone;
@@ -428,8 +454,10 @@ class __$$OperationImplCopyWithImpl<$Res>
     Object? emailTemplateId = freezed,
     Object? pushPlatforms = freezed,
     Object? pushTitle = freezed,
-    Object? sound = null,
+    Object? soundEffect = null,
     Object? soundEffectUri = freezed,
+    Object? icon = freezed,
+    Object? duration = freezed,
   }) {
     return _then(_$OperationImpl(
       id: null == id
@@ -528,14 +556,22 @@ class __$$OperationImplCopyWithImpl<$Res>
           ? _value.pushTitle
           : pushTitle // ignore: cast_nullable_to_non_nullable
               as String?,
-      sound: null == sound
-          ? _value.sound
-          : sound // ignore: cast_nullable_to_non_nullable
+      soundEffect: null == soundEffect
+          ? _value.soundEffect
+          : soundEffect // ignore: cast_nullable_to_non_nullable
               as SoundEffect,
       soundEffectUri: freezed == soundEffectUri
           ? _value.soundEffectUri
           : soundEffectUri // ignore: cast_nullable_to_non_nullable
               as String?,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      duration: freezed == duration
+          ? _value.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ));
   }
 }
@@ -572,8 +608,10 @@ class _$OperationImpl extends _Operation {
       final List<AppPlatform>? pushPlatforms,
       this.pushTitle,
       @JsonKey(unknownEnumValue: SoundEffect.none)
-      this.sound = SoundEffect.none,
-      this.soundEffectUri})
+      this.soundEffect = SoundEffect.none,
+      this.soundEffectUri,
+      @IconOrNullConverter() this.icon,
+      @DurationOrNullConverter() this.duration})
       : _headers = headers,
         _receptionEmails = receptionEmails,
         _destinationPhones = destinationPhones,
@@ -776,20 +814,34 @@ class _$OperationImpl extends _Operation {
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @override
   @JsonKey(unknownEnumValue: SoundEffect.none)
-  final SoundEffect sound;
+  final SoundEffect soundEffect;
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @override
   final String? soundEffectUri;
 
+  /// [icon] is the icon of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @override
+  @IconOrNullConverter()
+  final LayrzIcon? icon;
+
+  /// [duration] is the duration of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @override
+  @DurationOrNullConverter()
+  final Duration? duration;
+
   @override
   String toString() {
-    return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, sound: $sound, soundEffectUri: $soundEffectUri)';
+    return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
   }
 
   @override
@@ -838,9 +890,13 @@ class _$OperationImpl extends _Operation {
                 .equals(other._pushPlatforms, _pushPlatforms) &&
             (identical(other.pushTitle, pushTitle) ||
                 other.pushTitle == pushTitle) &&
-            (identical(other.sound, sound) || other.sound == sound) &&
+            (identical(other.soundEffect, soundEffect) ||
+                other.soundEffect == soundEffect) &&
             (identical(other.soundEffectUri, soundEffectUri) ||
-                other.soundEffectUri == soundEffectUri));
+                other.soundEffectUri == soundEffectUri) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
+            (identical(other.duration, duration) ||
+                other.duration == duration));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -871,8 +927,10 @@ class _$OperationImpl extends _Operation {
         emailTemplateId,
         const DeepCollectionEquality().hash(_pushPlatforms),
         pushTitle,
-        sound,
-        soundEffectUri
+        soundEffect,
+        soundEffectUri,
+        icon,
+        duration
       ]);
 
   /// Create a copy of Operation
@@ -921,8 +979,11 @@ abstract class _Operation extends Operation {
       @JsonKey(unknownEnumValue: AppPlatform.web)
       final List<AppPlatform>? pushPlatforms,
       final String? pushTitle,
-      @JsonKey(unknownEnumValue: SoundEffect.none) final SoundEffect sound,
-      final String? soundEffectUri}) = _$OperationImpl;
+      @JsonKey(unknownEnumValue: SoundEffect.none)
+      final SoundEffect soundEffect,
+      final String? soundEffectUri,
+      @IconOrNullConverter() final LayrzIcon? icon,
+      @DurationOrNullConverter() final Duration? duration}) = _$OperationImpl;
   const _Operation._() : super._();
 
   factory _Operation.fromJson(Map<String, dynamic> json) =
@@ -1054,16 +1115,30 @@ abstract class _Operation extends Operation {
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @override
   @JsonKey(unknownEnumValue: SoundEffect.none)
-  SoundEffect get sound;
+  SoundEffect get soundEffect;
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @override
   String? get soundEffectUri;
+
+  /// [icon] is the icon of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @override
+  @IconOrNullConverter()
+  LayrzIcon? get icon;
+
+  /// [duration] is the duration of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @override
+  @DurationOrNullConverter()
+  Duration? get duration;
 
   /// Create a copy of Operation
   /// with the given fields replaced by the non-null parameter values.
@@ -1124,12 +1199,13 @@ mixin _$OperationInput {
   /// Is the headers to send in the HTTP request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  List<HttpHeader>? get headers => throw _privateConstructorUsedError;
+  List<HttpHeaderInput> get headers => throw _privateConstructorUsedError;
 
   /// Is the headers to send in the HTTP request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  set headers(List<HttpHeader>? value) => throw _privateConstructorUsedError;
+  set headers(List<HttpHeaderInput> value) =>
+      throw _privateConstructorUsedError;
 
   /// Is the payload to send in the submission.
   String? get payload => throw _privateConstructorUsedError;
@@ -1143,12 +1219,6 @@ mixin _$OperationInput {
   /// Is the language ID of the message. Used to define the default language of the message.
   set languageId(String? value) => throw _privateConstructorUsedError;
 
-  /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-  Timezone? get timezone => throw _privateConstructorUsedError;
-
-  /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-  set timezone(Timezone? value) => throw _privateConstructorUsedError;
-
   /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
   String? get timezoneId => throw _privateConstructorUsedError;
 
@@ -1158,23 +1228,22 @@ mixin _$OperationInput {
   /// Is the reception email to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  List<String>? get receptionEmails => throw _privateConstructorUsedError;
+  List<String> get receptionEmails => throw _privateConstructorUsedError;
 
   /// Is the reception email to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  set receptionEmails(List<String>? value) =>
-      throw _privateConstructorUsedError;
+  set receptionEmails(List<String> value) => throw _privateConstructorUsedError;
 
   /// Is the subject of the email
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  String? get emailSubject => throw _privateConstructorUsedError;
+  String get emailSubject => throw _privateConstructorUsedError;
 
   /// Is the subject of the email
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  set emailSubject(String? value) => throw _privateConstructorUsedError;
+  set emailSubject(String value) => throw _privateConstructorUsedError;
 
   /// Is the color of the inline notification
   /// This field will only be considered in the following [operationType]:
@@ -1203,13 +1272,13 @@ mixin _$OperationInput {
   /// Is the receiver numbers to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
-  List<PhoneNumber>? get destinationPhones =>
+  List<PhoneNumberInput> get destinationPhones =>
       throw _privateConstructorUsedError;
 
   /// Is the receiver numbers to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
-  set destinationPhones(List<PhoneNumber>? value) =>
+  set destinationPhones(List<PhoneNumberInput> value) =>
       throw _privateConstructorUsedError;
 
   /// Is the Notification type to perform
@@ -1231,30 +1300,17 @@ mixin _$OperationInput {
   /// The [externalAccountId] of the operation. Only the ID
   set externalAccountId(String? value) => throw _privateConstructorUsedError;
 
-  /// Is the list of granted access of the operation.
-  List<Access>? get access => throw _privateConstructorUsedError;
-
-  /// Is the list of granted access of the operation.
-  set access(List<Access>? value) => throw _privateConstructorUsedError;
-
-  /// Is the list of associated triggers (directly or indirectly) of the operation.
-  List<Trigger>? get triggers => throw _privateConstructorUsedError;
-
-  /// Is the list of associated triggers (directly or indirectly) of the operation.
-  set triggers(List<Trigger>? value) => throw _privateConstructorUsedError;
+  /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
+  bool get useAssetContactsInstead => throw _privateConstructorUsedError;
 
   /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  bool? get useAssetContactsInstead => throw _privateConstructorUsedError;
-
-  /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  set useAssetContactsInstead(bool? value) =>
-      throw _privateConstructorUsedError;
+  set useAssetContactsInstead(bool value) => throw _privateConstructorUsedError;
 
   /// [attachImage] is a flag to attach the image of the submission to the email.
-  bool? get attachImage => throw _privateConstructorUsedError;
+  bool get attachImage => throw _privateConstructorUsedError;
 
   /// [attachImage] is a flag to attach the image of the submission to the email.
-  set attachImage(bool? value) => throw _privateConstructorUsedError;
+  set attachImage(bool value) => throw _privateConstructorUsedError;
 
   /// The [emailTemplateId] of the operation. Only the ID
   String? get emailTemplateId => throw _privateConstructorUsedError;
@@ -1287,25 +1343,49 @@ mixin _$OperationInput {
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @JsonKey(unknownEnumValue: SoundEffect.none)
   SoundEffect get soundEffect => throw _privateConstructorUsedError;
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @JsonKey(unknownEnumValue: SoundEffect.none)
   set soundEffect(SoundEffect value) => throw _privateConstructorUsedError;
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   String? get soundEffectUri => throw _privateConstructorUsedError;
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   set soundEffectUri(String? value) => throw _privateConstructorUsedError;
+
+  /// [icon] is the icon of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @IconOrNullConverter()
+  LayrzIcon? get icon => throw _privateConstructorUsedError;
+
+  /// [icon] is the icon of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @IconOrNullConverter()
+  set icon(LayrzIcon? value) => throw _privateConstructorUsedError;
+
+  /// [duration] is the duration of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @DurationConverter()
+  Duration get duration => throw _privateConstructorUsedError;
+
+  /// [duration] is the duration of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @DurationConverter()
+  set duration(Duration value) => throw _privateConstructorUsedError;
 
   /// Serializes this OperationInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1331,31 +1411,28 @@ abstract class $OperationInputCopyWith<$Res> {
       @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
       HttpRequestType? requestType,
       String? url,
-      List<HttpHeader>? headers,
+      List<HttpHeaderInput> headers,
       String? payload,
       String? languageId,
-      Timezone? timezone,
       String? timezoneId,
-      List<String>? receptionEmails,
-      String? emailSubject,
+      List<String> receptionEmails,
+      String emailSubject,
       @ColorOrNullConverter() Color? color,
       @ColorOrNullConverter() Color? textColor,
-      List<PhoneNumber>? destinationPhones,
+      List<PhoneNumberInput> destinationPhones,
       @JsonKey(unknownEnumValue: NotificationType.unknown)
       NotificationType? notificationType,
       String? externalAccountId,
-      List<Access>? access,
-      List<Trigger>? triggers,
-      bool? useAssetContactsInstead,
-      bool? attachImage,
+      bool useAssetContactsInstead,
+      bool attachImage,
       String? emailTemplateId,
       @JsonKey(unknownEnumValue: AppPlatform.web)
       List<AppPlatform>? pushPlatforms,
       String? pushTitle,
       @JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect,
-      String? soundEffectUri});
-
-  $TimezoneCopyWith<$Res>? get timezone;
+      String? soundEffectUri,
+      @IconOrNullConverter() LayrzIcon? icon,
+      @DurationConverter() Duration duration});
 }
 
 /// @nodoc
@@ -1378,27 +1455,26 @@ class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput>
     Object? operationType = null,
     Object? requestType = freezed,
     Object? url = freezed,
-    Object? headers = freezed,
+    Object? headers = null,
     Object? payload = freezed,
     Object? languageId = freezed,
-    Object? timezone = freezed,
     Object? timezoneId = freezed,
-    Object? receptionEmails = freezed,
-    Object? emailSubject = freezed,
+    Object? receptionEmails = null,
+    Object? emailSubject = null,
     Object? color = freezed,
     Object? textColor = freezed,
-    Object? destinationPhones = freezed,
+    Object? destinationPhones = null,
     Object? notificationType = freezed,
     Object? externalAccountId = freezed,
-    Object? access = freezed,
-    Object? triggers = freezed,
-    Object? useAssetContactsInstead = freezed,
-    Object? attachImage = freezed,
+    Object? useAssetContactsInstead = null,
+    Object? attachImage = null,
     Object? emailTemplateId = freezed,
     Object? pushPlatforms = freezed,
     Object? pushTitle = freezed,
     Object? soundEffect = null,
     Object? soundEffectUri = freezed,
+    Object? icon = freezed,
+    Object? duration = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -1421,10 +1497,10 @@ class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      headers: freezed == headers
+      headers: null == headers
           ? _value.headers
           : headers // ignore: cast_nullable_to_non_nullable
-              as List<HttpHeader>?,
+              as List<HttpHeaderInput>,
       payload: freezed == payload
           ? _value.payload
           : payload // ignore: cast_nullable_to_non_nullable
@@ -1433,22 +1509,18 @@ class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput>
           ? _value.languageId
           : languageId // ignore: cast_nullable_to_non_nullable
               as String?,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as Timezone?,
       timezoneId: freezed == timezoneId
           ? _value.timezoneId
           : timezoneId // ignore: cast_nullable_to_non_nullable
               as String?,
-      receptionEmails: freezed == receptionEmails
+      receptionEmails: null == receptionEmails
           ? _value.receptionEmails
           : receptionEmails // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      emailSubject: freezed == emailSubject
+              as List<String>,
+      emailSubject: null == emailSubject
           ? _value.emailSubject
           : emailSubject // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -1457,10 +1529,10 @@ class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput>
           ? _value.textColor
           : textColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      destinationPhones: freezed == destinationPhones
+      destinationPhones: null == destinationPhones
           ? _value.destinationPhones
           : destinationPhones // ignore: cast_nullable_to_non_nullable
-              as List<PhoneNumber>?,
+              as List<PhoneNumberInput>,
       notificationType: freezed == notificationType
           ? _value.notificationType
           : notificationType // ignore: cast_nullable_to_non_nullable
@@ -1469,22 +1541,14 @@ class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput>
           ? _value.externalAccountId
           : externalAccountId // ignore: cast_nullable_to_non_nullable
               as String?,
-      access: freezed == access
-          ? _value.access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      triggers: freezed == triggers
-          ? _value.triggers
-          : triggers // ignore: cast_nullable_to_non_nullable
-              as List<Trigger>?,
-      useAssetContactsInstead: freezed == useAssetContactsInstead
+      useAssetContactsInstead: null == useAssetContactsInstead
           ? _value.useAssetContactsInstead
           : useAssetContactsInstead // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      attachImage: freezed == attachImage
+              as bool,
+      attachImage: null == attachImage
           ? _value.attachImage
           : attachImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       emailTemplateId: freezed == emailTemplateId
           ? _value.emailTemplateId
           : emailTemplateId // ignore: cast_nullable_to_non_nullable
@@ -1505,21 +1569,15 @@ class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput>
           ? _value.soundEffectUri
           : soundEffectUri // ignore: cast_nullable_to_non_nullable
               as String?,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      duration: null == duration
+          ? _value.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as Duration,
     ) as $Val);
-  }
-
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $TimezoneCopyWith<$Res>? get timezone {
-    if (_value.timezone == null) {
-      return null;
-    }
-
-    return $TimezoneCopyWith<$Res>(_value.timezone!, (value) {
-      return _then(_value.copyWith(timezone: value) as $Val);
-    });
   }
 }
 
@@ -1539,32 +1597,28 @@ abstract class _$$OperationInputImplCopyWith<$Res>
       @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
       HttpRequestType? requestType,
       String? url,
-      List<HttpHeader>? headers,
+      List<HttpHeaderInput> headers,
       String? payload,
       String? languageId,
-      Timezone? timezone,
       String? timezoneId,
-      List<String>? receptionEmails,
-      String? emailSubject,
+      List<String> receptionEmails,
+      String emailSubject,
       @ColorOrNullConverter() Color? color,
       @ColorOrNullConverter() Color? textColor,
-      List<PhoneNumber>? destinationPhones,
+      List<PhoneNumberInput> destinationPhones,
       @JsonKey(unknownEnumValue: NotificationType.unknown)
       NotificationType? notificationType,
       String? externalAccountId,
-      List<Access>? access,
-      List<Trigger>? triggers,
-      bool? useAssetContactsInstead,
-      bool? attachImage,
+      bool useAssetContactsInstead,
+      bool attachImage,
       String? emailTemplateId,
       @JsonKey(unknownEnumValue: AppPlatform.web)
       List<AppPlatform>? pushPlatforms,
       String? pushTitle,
       @JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect,
-      String? soundEffectUri});
-
-  @override
-  $TimezoneCopyWith<$Res>? get timezone;
+      String? soundEffectUri,
+      @IconOrNullConverter() LayrzIcon? icon,
+      @DurationConverter() Duration duration});
 }
 
 /// @nodoc
@@ -1585,27 +1639,26 @@ class __$$OperationInputImplCopyWithImpl<$Res>
     Object? operationType = null,
     Object? requestType = freezed,
     Object? url = freezed,
-    Object? headers = freezed,
+    Object? headers = null,
     Object? payload = freezed,
     Object? languageId = freezed,
-    Object? timezone = freezed,
     Object? timezoneId = freezed,
-    Object? receptionEmails = freezed,
-    Object? emailSubject = freezed,
+    Object? receptionEmails = null,
+    Object? emailSubject = null,
     Object? color = freezed,
     Object? textColor = freezed,
-    Object? destinationPhones = freezed,
+    Object? destinationPhones = null,
     Object? notificationType = freezed,
     Object? externalAccountId = freezed,
-    Object? access = freezed,
-    Object? triggers = freezed,
-    Object? useAssetContactsInstead = freezed,
-    Object? attachImage = freezed,
+    Object? useAssetContactsInstead = null,
+    Object? attachImage = null,
     Object? emailTemplateId = freezed,
     Object? pushPlatforms = freezed,
     Object? pushTitle = freezed,
     Object? soundEffect = null,
     Object? soundEffectUri = freezed,
+    Object? icon = freezed,
+    Object? duration = null,
   }) {
     return _then(_$OperationInputImpl(
       id: freezed == id
@@ -1628,10 +1681,10 @@ class __$$OperationInputImplCopyWithImpl<$Res>
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
-      headers: freezed == headers
+      headers: null == headers
           ? _value.headers
           : headers // ignore: cast_nullable_to_non_nullable
-              as List<HttpHeader>?,
+              as List<HttpHeaderInput>,
       payload: freezed == payload
           ? _value.payload
           : payload // ignore: cast_nullable_to_non_nullable
@@ -1640,22 +1693,18 @@ class __$$OperationInputImplCopyWithImpl<$Res>
           ? _value.languageId
           : languageId // ignore: cast_nullable_to_non_nullable
               as String?,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as Timezone?,
       timezoneId: freezed == timezoneId
           ? _value.timezoneId
           : timezoneId // ignore: cast_nullable_to_non_nullable
               as String?,
-      receptionEmails: freezed == receptionEmails
+      receptionEmails: null == receptionEmails
           ? _value.receptionEmails
           : receptionEmails // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      emailSubject: freezed == emailSubject
+              as List<String>,
+      emailSubject: null == emailSubject
           ? _value.emailSubject
           : emailSubject // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       color: freezed == color
           ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
@@ -1664,10 +1713,10 @@ class __$$OperationInputImplCopyWithImpl<$Res>
           ? _value.textColor
           : textColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      destinationPhones: freezed == destinationPhones
+      destinationPhones: null == destinationPhones
           ? _value.destinationPhones
           : destinationPhones // ignore: cast_nullable_to_non_nullable
-              as List<PhoneNumber>?,
+              as List<PhoneNumberInput>,
       notificationType: freezed == notificationType
           ? _value.notificationType
           : notificationType // ignore: cast_nullable_to_non_nullable
@@ -1676,22 +1725,14 @@ class __$$OperationInputImplCopyWithImpl<$Res>
           ? _value.externalAccountId
           : externalAccountId // ignore: cast_nullable_to_non_nullable
               as String?,
-      access: freezed == access
-          ? _value.access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      triggers: freezed == triggers
-          ? _value.triggers
-          : triggers // ignore: cast_nullable_to_non_nullable
-              as List<Trigger>?,
-      useAssetContactsInstead: freezed == useAssetContactsInstead
+      useAssetContactsInstead: null == useAssetContactsInstead
           ? _value.useAssetContactsInstead
           : useAssetContactsInstead // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      attachImage: freezed == attachImage
+              as bool,
+      attachImage: null == attachImage
           ? _value.attachImage
           : attachImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
       emailTemplateId: freezed == emailTemplateId
           ? _value.emailTemplateId
           : emailTemplateId // ignore: cast_nullable_to_non_nullable
@@ -1712,6 +1753,14 @@ class __$$OperationInputImplCopyWithImpl<$Res>
           ? _value.soundEffectUri
           : soundEffectUri // ignore: cast_nullable_to_non_nullable
               as String?,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      duration: null == duration
+          ? _value.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as Duration,
     ));
   }
 }
@@ -1729,26 +1778,25 @@ class _$OperationInputImpl implements _OperationInput {
       this.headers = const [],
       this.payload,
       this.languageId,
-      this.timezone,
       this.timezoneId,
       this.receptionEmails = const [],
-      this.emailSubject,
+      this.emailSubject = '',
       @ColorOrNullConverter() this.color,
       @ColorOrNullConverter() this.textColor,
-      this.destinationPhones,
+      this.destinationPhones = const [],
       @JsonKey(unknownEnumValue: NotificationType.unknown)
       this.notificationType,
       this.externalAccountId,
-      this.access,
-      this.triggers,
-      this.useAssetContactsInstead,
-      this.attachImage,
+      this.useAssetContactsInstead = false,
+      this.attachImage = false,
       this.emailTemplateId,
       @JsonKey(unknownEnumValue: AppPlatform.web) this.pushPlatforms,
       this.pushTitle,
       @JsonKey(unknownEnumValue: SoundEffect.none)
       this.soundEffect = SoundEffect.none,
-      this.soundEffectUri});
+      this.soundEffectUri,
+      @IconOrNullConverter() this.icon,
+      @DurationConverter() this.duration = const Duration(seconds: 5)});
 
   factory _$OperationInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$OperationInputImplFromJson(json);
@@ -1785,7 +1833,7 @@ class _$OperationInputImpl implements _OperationInput {
   /// - [OperationType.webhook].
   @override
   @JsonKey()
-  List<HttpHeader>? headers;
+  List<HttpHeaderInput> headers;
 
   /// Is the payload to send in the submission.
   @override
@@ -1794,10 +1842,6 @@ class _$OperationInputImpl implements _OperationInput {
   /// Is the language ID of the message. Used to define the default language of the message.
   @override
   String? languageId;
-
-  /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-  @override
-  Timezone? timezone;
 
   /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
   @override
@@ -1808,13 +1852,14 @@ class _$OperationInputImpl implements _OperationInput {
   /// - [OperationType.email].
   @override
   @JsonKey()
-  List<String>? receptionEmails;
+  List<String> receptionEmails;
 
   /// Is the subject of the email
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
   @override
-  String? emailSubject;
+  @JsonKey()
+  String emailSubject;
 
   /// Is the color of the inline notification
   /// This field will only be considered in the following [operationType]:
@@ -1834,7 +1879,8 @@ class _$OperationInputImpl implements _OperationInput {
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
   @override
-  List<PhoneNumber>? destinationPhones;
+  @JsonKey()
+  List<PhoneNumberInput> destinationPhones;
 
   /// Is the Notification type to perform
   /// This field will only be considered in the following [operationType]:
@@ -1847,21 +1893,15 @@ class _$OperationInputImpl implements _OperationInput {
   @override
   String? externalAccountId;
 
-  /// Is the list of granted access of the operation.
-  @override
-  List<Access>? access;
-
-  /// Is the list of associated triggers (directly or indirectly) of the operation.
-  @override
-  List<Trigger>? triggers;
-
   /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
   @override
-  bool? useAssetContactsInstead;
+  @JsonKey()
+  bool useAssetContactsInstead;
 
   /// [attachImage] is a flag to attach the image of the submission to the email.
   @override
-  bool? attachImage;
+  @JsonKey()
+  bool attachImage;
 
   /// The [emailTemplateId] of the operation. Only the ID
   @override
@@ -1882,20 +1922,35 @@ class _$OperationInputImpl implements _OperationInput {
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @override
   @JsonKey(unknownEnumValue: SoundEffect.none)
   SoundEffect soundEffect;
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @override
   String? soundEffectUri;
 
+  /// [icon] is the icon of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @override
+  @IconOrNullConverter()
+  LayrzIcon? icon;
+
+  /// [duration] is the duration of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @override
+  @JsonKey()
+  @DurationConverter()
+  Duration duration;
+
   @override
   String toString() {
-    return 'OperationInput(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri)';
+    return 'OperationInput(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
   }
 
   /// Create a copy of OperationInput
@@ -1924,29 +1979,28 @@ abstract class _OperationInput implements OperationInput {
       @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
       HttpRequestType? requestType,
       String? url,
-      List<HttpHeader>? headers,
+      List<HttpHeaderInput> headers,
       String? payload,
       String? languageId,
-      Timezone? timezone,
       String? timezoneId,
-      List<String>? receptionEmails,
-      String? emailSubject,
+      List<String> receptionEmails,
+      String emailSubject,
       @ColorOrNullConverter() Color? color,
       @ColorOrNullConverter() Color? textColor,
-      List<PhoneNumber>? destinationPhones,
+      List<PhoneNumberInput> destinationPhones,
       @JsonKey(unknownEnumValue: NotificationType.unknown)
       NotificationType? notificationType,
       String? externalAccountId,
-      List<Access>? access,
-      List<Trigger>? triggers,
-      bool? useAssetContactsInstead,
-      bool? attachImage,
+      bool useAssetContactsInstead,
+      bool attachImage,
       String? emailTemplateId,
       @JsonKey(unknownEnumValue: AppPlatform.web)
       List<AppPlatform>? pushPlatforms,
       String? pushTitle,
       @JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect,
-      String? soundEffectUri}) = _$OperationInputImpl;
+      String? soundEffectUri,
+      @IconOrNullConverter() LayrzIcon? icon,
+      @DurationConverter() Duration duration}) = _$OperationInputImpl;
 
   factory _OperationInput.fromJson(Map<String, dynamic> json) =
       _$OperationInputImpl.fromJson;
@@ -2002,12 +2056,12 @@ abstract class _OperationInput implements OperationInput {
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
   @override
-  List<HttpHeader>? get headers;
+  List<HttpHeaderInput> get headers;
 
   /// Is the headers to send in the HTTP request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  set headers(List<HttpHeader>? value);
+  set headers(List<HttpHeaderInput> value);
 
   /// Is the payload to send in the submission.
   @override
@@ -2023,13 +2077,6 @@ abstract class _OperationInput implements OperationInput {
   /// Is the language ID of the message. Used to define the default language of the message.
   set languageId(String? value);
 
-  /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-  @override
-  Timezone? get timezone;
-
-  /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-  set timezone(Timezone? value);
-
   /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
   @override
   String? get timezoneId;
@@ -2041,23 +2088,23 @@ abstract class _OperationInput implements OperationInput {
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
   @override
-  List<String>? get receptionEmails;
+  List<String> get receptionEmails;
 
   /// Is the reception email to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  set receptionEmails(List<String>? value);
+  set receptionEmails(List<String> value);
 
   /// Is the subject of the email
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
   @override
-  String? get emailSubject;
+  String get emailSubject;
 
   /// Is the subject of the email
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  set emailSubject(String? value);
+  set emailSubject(String value);
 
   /// Is the color of the inline notification
   /// This field will only be considered in the following [operationType]:
@@ -2089,12 +2136,12 @@ abstract class _OperationInput implements OperationInput {
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
   @override
-  List<PhoneNumber>? get destinationPhones;
+  List<PhoneNumberInput> get destinationPhones;
 
   /// Is the receiver numbers to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
-  set destinationPhones(List<PhoneNumber>? value);
+  set destinationPhones(List<PhoneNumberInput> value);
 
   /// Is the Notification type to perform
   /// This field will only be considered in the following [operationType]:
@@ -2116,33 +2163,19 @@ abstract class _OperationInput implements OperationInput {
   /// The [externalAccountId] of the operation. Only the ID
   set externalAccountId(String? value);
 
-  /// Is the list of granted access of the operation.
-  @override
-  List<Access>? get access;
-
-  /// Is the list of granted access of the operation.
-  set access(List<Access>? value);
-
-  /// Is the list of associated triggers (directly or indirectly) of the operation.
-  @override
-  List<Trigger>? get triggers;
-
-  /// Is the list of associated triggers (directly or indirectly) of the operation.
-  set triggers(List<Trigger>? value);
-
   /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
   @override
-  bool? get useAssetContactsInstead;
+  bool get useAssetContactsInstead;
 
   /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  set useAssetContactsInstead(bool? value);
+  set useAssetContactsInstead(bool value);
 
   /// [attachImage] is a flag to attach the image of the submission to the email.
   @override
-  bool? get attachImage;
+  bool get attachImage;
 
   /// [attachImage] is a flag to attach the image of the submission to the email.
-  set attachImage(bool? value);
+  set attachImage(bool value);
 
   /// The [emailTemplateId] of the operation. Only the ID
   @override
@@ -2177,27 +2210,53 @@ abstract class _OperationInput implements OperationInput {
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @override
   @JsonKey(unknownEnumValue: SoundEffect.none)
   SoundEffect get soundEffect;
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @JsonKey(unknownEnumValue: SoundEffect.none)
   set soundEffect(SoundEffect value);
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @override
   String? get soundEffectUri;
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
-  /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   set soundEffectUri(String? value);
+
+  /// [icon] is the icon of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @override
+  @IconOrNullConverter()
+  LayrzIcon? get icon;
+
+  /// [icon] is the icon of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @IconOrNullConverter()
+  set icon(LayrzIcon? value);
+
+  /// [duration] is the duration of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @override
+  @DurationConverter()
+  Duration get duration;
+
+  /// [duration] is the duration of the notification
+  ///
+  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+  @DurationConverter()
+  set duration(Duration value);
 
   /// Create a copy of OperationInput
   /// with the given fields replaced by the non-null parameter values.

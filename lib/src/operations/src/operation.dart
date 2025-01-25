@@ -100,13 +100,23 @@ class Operation with _$Operation {
 
     /// [soundEffect] is the sound effect to play when the notification arrives.
     ///
-    /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
-    @JsonKey(unknownEnumValue: SoundEffect.none) @Default(SoundEffect.none) SoundEffect sound,
+    /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+    @JsonKey(unknownEnumValue: SoundEffect.none) @Default(SoundEffect.none) SoundEffect soundEffect,
 
     /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
     ///
-    /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+    /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
     String? soundEffectUri,
+
+    /// [icon] is the icon of the notification
+    ///
+    /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+    @IconOrNullConverter() LayrzIcon? icon,
+
+    /// [duration] is the duration of the notification
+    ///
+    /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+    @DurationOrNullConverter() Duration? duration,
   }) = _Operation;
 
   factory Operation.fromJson(Map<String, dynamic> json) => _$OperationFromJson(json);
@@ -139,7 +149,7 @@ class OperationInput with _$OperationInput {
     /// Is the headers to send in the HTTP request
     /// This field will only be considered in the following [operationType]:
     /// - [OperationType.webhook].
-    @Default([]) List<HttpHeader>? headers,
+    @Default([]) List<HttpHeaderInput> headers,
 
     /// Is the payload to send in the submission.
     String? payload,
@@ -147,21 +157,18 @@ class OperationInput with _$OperationInput {
     /// Is the language ID of the message. Used to define the default language of the message.
     String? languageId,
 
-    /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-    Timezone? timezone,
-
     /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
     String? timezoneId,
 
     /// Is the reception email to send the message
     /// This field will only be considered in the following [operationType]:
     /// - [OperationType.email].
-    @Default([]) List<String>? receptionEmails,
+    @Default([]) List<String> receptionEmails,
 
     /// Is the subject of the email
     /// This field will only be considered in the following [operationType]:
     /// - [OperationType.email].
-    String? emailSubject,
+    @Default('') String emailSubject,
 
     /// Is the color of the inline notification
     /// This field will only be considered in the following [operationType]:
@@ -176,7 +183,7 @@ class OperationInput with _$OperationInput {
     /// Is the receiver numbers to send the message
     /// This field will only be considered in the following [operationType]:
     /// - [OperationType.twilio].
-    List<PhoneNumber>? destinationPhones,
+    @Default([]) List<PhoneNumberInput> destinationPhones,
 
     /// Is the Notification type to perform
     /// This field will only be considered in the following [operationType]:
@@ -186,17 +193,11 @@ class OperationInput with _$OperationInput {
     /// The [externalAccountId] of the operation. Only the ID
     String? externalAccountId,
 
-    /// Is the list of granted access of the operation.
-    List<Access>? access,
-
-    /// Is the list of associated triggers (directly or indirectly) of the operation.
-    List<Trigger>? triggers,
-
     /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-    bool? useAssetContactsInstead,
+    @Default(false) bool useAssetContactsInstead,
 
     /// [attachImage] is a flag to attach the image of the submission to the email.
-    bool? attachImage,
+    @Default(false) bool attachImage,
 
     /// The [emailTemplateId] of the operation. Only the ID
     String? emailTemplateId,
@@ -213,13 +214,23 @@ class OperationInput with _$OperationInput {
 
     /// [soundEffect] is the sound effect to play when the notification arrives.
     ///
-    /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+    /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
     @JsonKey(unknownEnumValue: SoundEffect.none) @Default(SoundEffect.none) SoundEffect soundEffect,
 
     /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
     ///
-    /// This will only be considered if the [notificationType] is set to `NotificationType.voice`.
+    /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
     String? soundEffectUri,
+
+    /// [icon] is the icon of the notification
+    ///
+    /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+    @IconOrNullConverter() LayrzIcon? icon,
+
+    /// [duration] is the duration of the notification
+    ///
+    /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
+    @DurationConverter() @Default(Duration(seconds: 5)) Duration duration,
   }) = _OperationInput;
 
   factory OperationInput.fromJson(Map<String, dynamic> json) => _$OperationInputFromJson(json);
