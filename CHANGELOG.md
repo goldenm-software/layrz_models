@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.31
+
+- Added Parsing technology on `ble` submodule
+
 ## 3.3.30
 
 - Updates over Ble things
