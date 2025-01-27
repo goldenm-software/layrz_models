@@ -6,7 +6,6 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart' hide Action;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_icons/layrz_icons.dart';
-import 'package:layrz_models/src/operations/operations.dart';
 
 // Internal imports
 import 'src/app/app.dart';
