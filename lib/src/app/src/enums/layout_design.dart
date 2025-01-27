@@ -3,82 +3,35 @@ part of '../../app.dart';
 enum LayoutDesign {
   /// [LayoutDesign.right] defines the layout mode of the login.
   /// This value is used as default
+  @JsonValue('RIGHT')
   right,
 
   /// [LayoutDesign.left] defines the layout mode of the login.
+  @JsonValue('LEFT')
   left,
 
   /// [LayoutDesign.top] defines the layout mode of the login.
+  @JsonValue('TOP')
   top,
 
   /// [LayoutDesign.bottom] defines the layout mode of the login.
+  @JsonValue('BOTTOM')
   bottom,
 
   /// [LayoutDesign.center] defines the layout mode of the login.
+  @JsonValue('CENTER')
   center,
   ;
 
   @override
   String toString() => toJson();
 
+  /// [toJson] returns the string representation of the enum value.
+  String toJson() => _$LayoutDesignEnumMap[this] ?? 'RIGHT';
+
+  /// [fromJson] returns the enum value from a string representation.
   static LayoutDesign fromJson(String json) {
-    switch (json) {
-      case 'LEFT':
-        return LayoutDesign.left;
-      case 'RIGHT':
-        return LayoutDesign.right;
-      case 'TOP':
-        return LayoutDesign.top;
-      case 'BOTTOM':
-        return LayoutDesign.bottom;
-      case 'CENTER':
-        return LayoutDesign.center;
-      default:
-        return LayoutDesign.right;
-    }
+    final found = _$LayoutDesignEnumMap.entries.firstWhereOrNull((e) => e.value == json);
+    return found?.key ?? LayoutDesign.right;
   }
-
-  String toJson() {
-    switch (this) {
-      case LayoutDesign.left:
-        return 'LEFT';
-      case LayoutDesign.right:
-        return 'RIGHT';
-      case LayoutDesign.top:
-        return 'TOP';
-      case LayoutDesign.bottom:
-        return 'BOTTOM';
-      case LayoutDesign.center:
-        return 'CENTER';
-      default:
-        return 'RIGHT';
-    }
-  }
-}
-
-class LayoutDesignConverter implements JsonConverter<LayoutDesign, String> {
-  const LayoutDesignConverter();
-
-  @override
-  LayoutDesign fromJson(String json) {
-    return LayoutDesign.fromJson(json);
-  }
-
-  @override
-  String toJson(LayoutDesign object) {
-    return object.toJson();
-  }
-}
-
-class LayoutDesignOrNullConverter implements JsonConverter<LayoutDesign?, String?> {
-  const LayoutDesignOrNullConverter();
-
-  @override
-  LayoutDesign? fromJson(String? json) {
-    if (json == null) return null;
-    return LayoutDesign.fromJson(json);
-  }
-
-  @override
-  String? toJson(LayoutDesign? object) => object?.toJson();
 }

@@ -35,10 +35,13 @@ class Model with _$Model {
     @Default(false) bool confiotCapable,
 
     /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
-    @ConfIoTLayoutConverter() @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
+    @JsonKey(unknownEnumValue: ConfIoTLayout.standard) @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
 
     /// [confiotName] is the name of the model in the ConfIoT.
     String? confiotName,
+
+    /// [peripheralIdentifier] is the identifier of the peripheral device.
+    String? peripheralIdentifier,
   }) = _Model;
 
   factory Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);
@@ -76,10 +79,13 @@ class ModelInput with _$ModelInput {
     @Default(false) bool confiotCapable,
 
     /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
-    @ConfIoTLayoutConverter() @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
+    @JsonKey(unknownEnumValue: ConfIoTLayout.standard) @Default(ConfIoTLayout.standard) ConfIoTLayout confiotLayout,
 
     /// [confiotName] is the name of the model in the ConfIoT.
     String? confiotName,
+
+    /// [peripheralIdentifier] is the identifier of the peripheral device.
+    String? peripheralIdentifier,
   }) = _ModelInput;
 
   factory ModelInput.fromJson(Map<String, dynamic> json) => _$ModelInputFromJson(json);
@@ -87,55 +93,27 @@ class ModelInput with _$ModelInput {
 
 enum ConfIoTLayout {
   /// [standard] defines the classic layout of the device, with the commands and the configuration.
+  ///
+  /// Layrz API definition: `STANDARD`
+  @JsonValue('STANDARD')
   standard,
 
   /// [sdmMonitor] defines the layout for the SDM Monitor.
+  ///
+  /// Layrz API definition: `SDM_MONITOR`
+  @JsonValue('SDM_MONITOR')
   sdmMonitor,
   ;
 
   @override
   String toString() => toJson();
 
-  String toJson() {
-    switch (this) {
-      case ConfIoTLayout.sdmMonitor:
-        return 'SDM_MONITOR';
-      case ConfIoTLayout.standard:
-      default:
-        return 'STANDARD';
-    }
-  }
+  /// [toJson] returns the string representation of the enum value.
+  String toJson() => _$ConfIoTLayoutEnumMap[this] ?? 'UNKNOWN';
 
+  /// [fromJson] returns the enum value from a string representation.
   static ConfIoTLayout fromJson(String json) {
-    switch (json) {
-      case 'SDM_MONITOR':
-        return ConfIoTLayout.sdmMonitor;
-      case 'STANDARD':
-      default:
-        return ConfIoTLayout.standard;
-    }
+    final found = _$ConfIoTLayoutEnumMap.entries.firstWhereOrNull((e) => e.value == json);
+    return found?.key ?? ConfIoTLayout.standard;
   }
-}
-
-class ConfIoTLayoutConverter implements JsonConverter<ConfIoTLayout, String> {
-  const ConfIoTLayoutConverter();
-
-  @override
-  ConfIoTLayout fromJson(String json) => ConfIoTLayout.fromJson(json);
-
-  @override
-  String toJson(ConfIoTLayout object) => object.toJson();
-}
-
-class ConfIoTLayoutNullableConverter implements JsonConverter<ConfIoTLayout?, String?> {
-  const ConfIoTLayoutNullableConverter();
-
-  @override
-  ConfIoTLayout? fromJson(String? json) {
-    if (json == null) return null;
-    return ConfIoTLayout.fromJson(json);
-  }
-
-  @override
-  String? toJson(ConfIoTLayout? object) => object?.toJson();
 }

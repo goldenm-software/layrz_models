@@ -17,7 +17,8 @@ _$AccessImpl _$$AccessImplFromJson(Map<String, dynamic> json) => _$AccessImpl(
       user: json['user'] == null
           ? null
           : User.fromJson(json['user'] as Map<String, dynamic>),
-      module: const AccessModuleConverter().fromJson(json['module'] as String),
+      module: $enumDecode(_$AccessModuleEnumMap, json['module'],
+          unknownValue: AccessModule.unknown),
     );
 
 Map<String, dynamic> _$$AccessImplToJson(_$AccessImpl instance) =>
@@ -30,8 +31,43 @@ Map<String, dynamic> _$$AccessImplToJson(_$AccessImpl instance) =>
       'objectId': instance.objectId,
       'userId': instance.userId,
       'user': instance.user?.toJson(),
-      'module': const AccessModuleConverter().toJson(instance.module),
+      'module': instance.module.toJson(),
     };
+
+const _$AccessModuleEnumMap = {
+  AccessModule.actions: 'ACTIONS',
+  AccessModule.assets: 'ASSETS',
+  AccessModule.careprotocols: 'CAREPROTOCOLS',
+  AccessModule.checkpoints: 'CHECKPOINTS',
+  AccessModule.conciergeForms: 'CONCIERGE_FORMS',
+  AccessModule.coreprocess: 'COREPROCESS',
+  AccessModule.devices: 'DEVICES',
+  AccessModule.functions: 'FUNCTIONS',
+  AccessModule.geofences: 'GEOFENCES',
+  AccessModule.inboundServices: 'INBOUND_SERVICES',
+  AccessModule.operations: 'OPERATIONS',
+  AccessModule.outboundServices: 'OUTBOUND_SERVICES',
+  AccessModule.presets: 'PRESETS',
+  AccessModule.references: 'REFERENCES',
+  AccessModule.externalAccounts: 'EXTERNAL_ACCOUNTS',
+  AccessModule.tags: 'TAGS',
+  AccessModule.triggers: 'TRIGGERS',
+  AccessModule.users: 'USERS',
+  AccessModule.reporttemplates: 'REPORTTEMPLATES',
+  AccessModule.charts: 'CHARTS',
+  AccessModule.visionProfiles: 'VISION_PROFILES',
+  AccessModule.cloudFile: 'CLOUD_FILE',
+  AccessModule.cloudFolder: 'CLOUD_FOLDER',
+  AccessModule.commands: 'COMMANDS',
+  AccessModule.workspaces: 'WORKSPACES',
+  AccessModule.emailTemplates: 'EMAIL_TEMPLATES',
+  AccessModule.brickhouseAlert: 'BRICKHOUSE_ALERT',
+  AccessModule.brickhouseUnit: 'BRICKHOUSE_UNIT',
+  AccessModule.sensors: 'SENSORS',
+  AccessModule.tagonBusRoutes: 'TAGON_BUS_ROUTES',
+  AccessModule.exchangeServices: 'EXCHANGE_SERVICES',
+  AccessModule.unknown: 'UNKNOWN',
+};
 
 _$AccessInputImpl _$$AccessInputImplFromJson(Map<String, dynamic> json) =>
     _$AccessInputImpl(
@@ -41,7 +77,8 @@ _$AccessInputImpl _$$AccessInputImplFromJson(Map<String, dynamic> json) =>
       manage: json['manage'] as bool? ?? false,
       objectId: json['objectId'] as String?,
       userId: json['userId'] as String?,
-      module: const AccessModuleConverter().fromJson(json['module'] as String),
+      module: $enumDecode(_$AccessModuleEnumMap, json['module'],
+          unknownValue: AccessModule.unknown),
     );
 
 Map<String, dynamic> _$$AccessInputImplToJson(_$AccessInputImpl instance) =>
@@ -52,7 +89,7 @@ Map<String, dynamic> _$$AccessInputImplToJson(_$AccessInputImpl instance) =>
       'manage': instance.manage,
       'objectId': instance.objectId,
       'userId': instance.userId,
-      'module': const AccessModuleConverter().toJson(instance.module),
+      'module': instance.module.toJson(),
     };
 
 _$LinkShortcutImpl _$$LinkShortcutImplFromJson(Map<String, dynamic> json) =>
@@ -73,126 +110,6 @@ Map<String, dynamic> _$$LinkShortcutImplToJson(_$LinkShortcutImpl instance) =>
       'redirectTo': instance.redirectTo,
       'creator': instance.creator?.toJson(),
       'creatorId': instance.creatorId,
-    };
-
-_$ActionImpl _$$ActionImplFromJson(Map<String, dynamic> json) => _$ActionImpl(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      kind: const ActionTypeConverter().fromJson(json['kind'] as String),
-      subkind: json['subkind'] == null
-          ? ActionSubtype.unused
-          : const ActionSubtypeConverter().fromJson(json['subkind'] as String),
-      commandId: json['commandId'] as String?,
-      triggers: (json['triggers'] as List<dynamic>?)
-          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      triggersIds: (json['triggersIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      outboundServices: (json['outboundServices'] as List<dynamic>?)
-          ?.map((e) => OutboundService.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      outboundServicesIds: (json['outboundServicesIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      operations: (json['operations'] as List<dynamic>?)
-          ?.map((e) => Operation.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      operationsIds: (json['operationsIds'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      watchImage: json['watchImage'] as bool?,
-      geofenceSettings: json['geofenceSettings'] == null
-          ? null
-          : ActionGeofenceSettings.fromJson(
-              json['geofenceSettings'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$ActionImplToJson(_$ActionImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'kind': const ActionTypeConverter().toJson(instance.kind),
-      'subkind': const ActionSubtypeConverter().toJson(instance.subkind),
-      'commandId': instance.commandId,
-      'triggers': instance.triggers?.map((e) => e.toJson()).toList(),
-      'triggersIds': instance.triggersIds,
-      'outboundServices':
-          instance.outboundServices?.map((e) => e.toJson()).toList(),
-      'outboundServicesIds': instance.outboundServicesIds,
-      'operations': instance.operations?.map((e) => e.toJson()).toList(),
-      'operationsIds': instance.operationsIds,
-      'access': instance.access?.map((e) => e.toJson()).toList(),
-      'watchImage': instance.watchImage,
-      'geofenceSettings': instance.geofenceSettings?.toJson(),
-    };
-
-_$ActionGeofenceSettingsImpl _$$ActionGeofenceSettingsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ActionGeofenceSettingsImpl(
-      whoOwner: json['whoOwner'] == null
-          ? ActionProperty.none
-          : const ActionPropertyConverter()
-              .fromJson(json['whoOwner'] as String),
-      name: json['name'] as String?,
-      category: const GeofenceCategoryOrNullConverter()
-          .fromJson(json['category'] as String?),
-      radius: (json['radius'] as num?)?.toDouble(),
-      mappitRouteId: json['mappitRouteId'] as String?,
-      mappitRoute: json['mappitRoute'] == null
-          ? null
-          : MappitRoute.fromJson(json['mappitRoute'] as Map<String, dynamic>),
-    );
-
-Map<String, dynamic> _$$ActionGeofenceSettingsImplToJson(
-        _$ActionGeofenceSettingsImpl instance) =>
-    <String, dynamic>{
-      'whoOwner': const ActionPropertyConverter().toJson(instance.whoOwner),
-      'name': instance.name,
-      'category':
-          const GeofenceCategoryOrNullConverter().toJson(instance.category),
-      'radius': instance.radius,
-      'mappitRouteId': instance.mappitRouteId,
-      'mappitRoute': instance.mappitRoute?.toJson(),
-    };
-
-_$ActionInputImpl _$$ActionInputImplFromJson(Map<String, dynamic> json) =>
-    _$ActionInputImpl(
-      id: json['id'] as String?,
-      commandId: json['commandId'] as String?,
-      kind: const ActionTypeOrNullConverter().fromJson(json['kind'] as String?),
-      name: json['name'] as String?,
-      operationsIds: (json['operationsIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      outboundServicesIds: (json['outboundServicesIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      subkind: const ActionSubtypeOrNullConverter()
-          .fromJson(json['subkind'] as String?),
-      triggersIds: (json['triggersIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      watchImage: json['watchImage'] as bool? ?? false,
-    );
-
-Map<String, dynamic> _$$ActionInputImplToJson(_$ActionInputImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'commandId': instance.commandId,
-      'kind': const ActionTypeOrNullConverter().toJson(instance.kind),
-      'name': instance.name,
-      'operationsIds': instance.operationsIds,
-      'outboundServicesIds': instance.outboundServicesIds,
-      'subkind': const ActionSubtypeOrNullConverter().toJson(instance.subkind),
-      'triggersIds': instance.triggersIds,
-      'watchImage': instance.watchImage,
     };
 
 _$AlgorithmImpl _$$AlgorithmImplFromJson(Map<String, dynamic> json) =>
@@ -922,6 +839,8 @@ _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
       hwModelId: json['hwModelId'] as String?,
       macAddress: json['macAddress'] as String?,
       configParams: json['configParams'] as Map<String, dynamic>?,
+      visionCaptureThreshold: _$JsonConverterFromJson<num, Duration>(
+          json['visionCaptureThreshold'], const DurationConverter().fromJson),
     );
 
 Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
@@ -949,6 +868,8 @@ Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
       'hwModelId': instance.hwModelId,
       'macAddress': instance.macAddress,
       'configParams': instance.configParams,
+      'visionCaptureThreshold': _$JsonConverterToJson<num, Duration>(
+          instance.visionCaptureThreshold, const DurationConverter().toJson),
     };
 
 _$DeviceInputImpl _$$DeviceInputImplFromJson(Map<String, dynamic> json) =>
@@ -967,6 +888,8 @@ _$DeviceInputImpl _$$DeviceInputImplFromJson(Map<String, dynamic> json) =>
           : ModbusConfigInput.fromJson(json['modbus'] as Map<String, dynamic>),
       macAddress: json['macAddress'] as String?,
       hwModelId: json['hwModelId'] as String?,
+      visionCaptureThreshold: _$JsonConverterFromJson<num, Duration>(
+          json['visionCaptureThreshold'], const DurationConverter().fromJson),
     );
 
 Map<String, dynamic> _$$DeviceInputImplToJson(_$DeviceInputImpl instance) =>
@@ -981,6 +904,8 @@ Map<String, dynamic> _$$DeviceInputImplToJson(_$DeviceInputImpl instance) =>
       'modbus': instance.modbus?.toJson(),
       'macAddress': instance.macAddress,
       'hwModelId': instance.hwModelId,
+      'visionCaptureThreshold': _$JsonConverterToJson<num, Duration>(
+          instance.visionCaptureThreshold, const DurationConverter().toJson),
     };
 
 _$EmailTemplateImpl _$$EmailTemplateImplFromJson(Map<String, dynamic> json) =>
@@ -1326,163 +1251,6 @@ Map<String, dynamic> _$$MonitorActiveCheckpointImplToJson(
           const CheckpointStateConverter().toJson(instance.checkpointState),
       'waypoints': instance.waypoints.map((e) => e.toJson()).toList(),
     };
-
-_$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>
-    _$OperationImpl(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      operationType: const OperationTypeConverter()
-          .fromJson(json['operationType'] as String),
-      requestType: const HttpRequestTypeOrNullConverter()
-          .fromJson(json['requestType'] as String?),
-      url: json['url'] as String?,
-      headers: (json['headers'] as List<dynamic>?)
-              ?.map((e) => HttpHeader.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-      payload: json['payload'] as String?,
-      languageId: json['languageId'] as String?,
-      timezone: json['timezone'] == null
-          ? null
-          : Timezone.fromJson(json['timezone'] as Map<String, dynamic>),
-      timezoneId: json['timezoneId'] as String?,
-      receptionEmails: (json['receptionEmails'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      emailSubject: json['emailSubject'] as String?,
-      color: const ColorOrNullConverter().fromJson(json['color'] as String?),
-      textColor:
-          const ColorOrNullConverter().fromJson(json['textColor'] as String?),
-      destinationPhones: (json['destinationPhones'] as List<dynamic>?)
-          ?.map((e) => PhoneNumber.fromJson(Map<String, String>.from(e as Map)))
-          .toList(),
-      notificationType: const NotificationTypeOrNullConverter()
-          .fromJson(json['notificationType'] as String?),
-      externalAccountId: json['externalAccountId'] as String?,
-      access: (json['access'] as List<dynamic>?)
-          ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      triggers: (json['triggers'] as List<dynamic>?)
-          ?.map((e) => Trigger.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      useAssetContactsInstead: json['useAssetContactsInstead'] as bool?,
-      attachImage: json['attachImage'] as bool?,
-      emailTemplateId: json['emailTemplateId'] as String?,
-      pushPlatforms: (json['pushPlatforms'] as List<dynamic>?)
-          ?.map((e) => const AppPlatformConverter().fromJson(e as String))
-          .toList(),
-      pushTitle: json['pushTitle'] as String?,
-    );
-
-Map<String, dynamic> _$$OperationImplToJson(_$OperationImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'operationType':
-          const OperationTypeConverter().toJson(instance.operationType),
-      'requestType':
-          const HttpRequestTypeOrNullConverter().toJson(instance.requestType),
-      'url': instance.url,
-      'headers': instance.headers?.map((e) => e.toJson()).toList(),
-      'payload': instance.payload,
-      'languageId': instance.languageId,
-      'timezone': instance.timezone?.toJson(),
-      'timezoneId': instance.timezoneId,
-      'receptionEmails': instance.receptionEmails,
-      'emailSubject': instance.emailSubject,
-      'color': const ColorOrNullConverter().toJson(instance.color),
-      'textColor': const ColorOrNullConverter().toJson(instance.textColor),
-      'destinationPhones':
-          instance.destinationPhones?.map((e) => e.toJson()).toList(),
-      'notificationType': const NotificationTypeOrNullConverter()
-          .toJson(instance.notificationType),
-      'externalAccountId': instance.externalAccountId,
-      'access': instance.access?.map((e) => e.toJson()).toList(),
-      'triggers': instance.triggers?.map((e) => e.toJson()).toList(),
-      'useAssetContactsInstead': instance.useAssetContactsInstead,
-      'attachImage': instance.attachImage,
-      'emailTemplateId': instance.emailTemplateId,
-      'pushPlatforms': instance.pushPlatforms
-          ?.map(const AppPlatformConverter().toJson)
-          .toList(),
-      'pushTitle': instance.pushTitle,
-    };
-
-_$HttpHeaderImpl _$$HttpHeaderImplFromJson(Map<String, dynamic> json) =>
-    _$HttpHeaderImpl(
-      name: json['name'] as String,
-      value: json['value'] as String,
-    );
-
-Map<String, dynamic> _$$HttpHeaderImplToJson(_$HttpHeaderImpl instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'value': instance.value,
-    };
-
-_$OperationInputImpl _$$OperationInputImplFromJson(Map<String, dynamic> json) =>
-    _$OperationInputImpl(
-      color: json['color'] as String?,
-      emailSubject: json['emailSubject'] as String?,
-      headers: (json['headers'] as List<dynamic>?)
-              ?.map((e) => HttpHeader.fromJson(e as Map<String, dynamic>))
-              .toList() ??
-          const [],
-      id: json['id'] as String?,
-      languageId: json['languageId'] as String?,
-      name: json['name'] as String?,
-      operationType: const OperationTypeOrNullConverter()
-          .fromJson(json['operationType'] as String?),
-      payload: json['payload'] as String?,
-      receptionEmails: (json['receptionEmails'] as List<dynamic>?)
-          ?.map((e) => e as String)
-          .toList(),
-      requestType: const HttpRequestTypeOrNullConverter()
-          .fromJson(json['requestType'] as String?),
-      textColor: json['textColor'] as String?,
-      timezoneId: json['timezoneId'] as String?,
-      url: json['url'] as String?,
-      destinationPhones: (json['destinationPhones'] as List<dynamic>?)
-              ?.map((e) =>
-                  PhoneNumber.fromJson(Map<String, String>.from(e as Map)))
-              .toList() ??
-          const [],
-      notificationType: $enumDecodeNullable(
-              _$NotificationTypeEnumMap, json['notificationType']) ??
-          NotificationType.sms,
-      externalAccountId: json['externalAccountId'] as String?,
-    );
-
-Map<String, dynamic> _$$OperationInputImplToJson(
-        _$OperationInputImpl instance) =>
-    <String, dynamic>{
-      'color': instance.color,
-      'emailSubject': instance.emailSubject,
-      'headers': instance.headers?.map((e) => e.toJson()).toList(),
-      'id': instance.id,
-      'languageId': instance.languageId,
-      'name': instance.name,
-      'operationType':
-          const OperationTypeOrNullConverter().toJson(instance.operationType),
-      'payload': instance.payload,
-      'receptionEmails': instance.receptionEmails,
-      'requestType':
-          const HttpRequestTypeOrNullConverter().toJson(instance.requestType),
-      'textColor': instance.textColor,
-      'timezoneId': instance.timezoneId,
-      'url': instance.url,
-      'destinationPhones':
-          instance.destinationPhones?.map((e) => e.toJson()).toList(),
-      'notificationType': instance.notificationType.toJson(),
-      'externalAccountId': instance.externalAccountId,
-    };
-
-const _$NotificationTypeEnumMap = {
-  NotificationType.sms: 'sms',
-  NotificationType.whatsapp: 'whatsapp',
-  NotificationType.voice: 'voice',
-};
 
 _$PresetImpl _$$PresetImplFromJson(Map<String, dynamic> json) => _$PresetImpl(
       id: json['id'] as String,

@@ -220,11 +220,11 @@ mixin _$AvailableApp {
   String get appId => throw _privateConstructorUsedError;
 
   /// [appType] is the type of the app.
-  @AppTypeConverter()
+  @JsonKey(unknownEnumValue: AppType.public)
   AppType get appType => throw _privateConstructorUsedError;
 
   /// [technology] is the technology of the app.
-  @AppTechnologyConverter()
+  @JsonKey(unknownEnumValue: AppTechnology.flutter)
   AppTechnology get technology => throw _privateConstructorUsedError;
 
   /// [legalInformation] is the legal information of the app.
@@ -234,7 +234,7 @@ mixin _$AvailableApp {
   AppDesign? get designInformation => throw _privateConstructorUsedError;
 
   /// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
-  @AppPlatformConverter()
+  @JsonKey(unknownEnumValue: AppPlatform.web)
   List<AppPlatform>? get supportedPlatforms =>
       throw _privateConstructorUsedError;
 
@@ -280,11 +280,13 @@ abstract class $AvailableAppCopyWith<$Res> {
       {String id,
       String name,
       String appId,
-      @AppTypeConverter() AppType appType,
-      @AppTechnologyConverter() AppTechnology technology,
+      @JsonKey(unknownEnumValue: AppType.public) AppType appType,
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
-      @AppPlatformConverter() List<AppPlatform>? supportedPlatforms,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      List<AppPlatform>? supportedPlatforms,
       bool onlyCustomized,
       bool? hasImport,
       bool? hasKeychain,
@@ -433,11 +435,13 @@ abstract class _$$AvailableAppImplCopyWith<$Res>
       {String id,
       String name,
       String appId,
-      @AppTypeConverter() AppType appType,
-      @AppTechnologyConverter() AppTechnology technology,
+      @JsonKey(unknownEnumValue: AppType.public) AppType appType,
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
-      @AppPlatformConverter() List<AppPlatform>? supportedPlatforms,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      List<AppPlatform>? supportedPlatforms,
       bool onlyCustomized,
       bool? hasImport,
       bool? hasKeychain,
@@ -553,11 +557,13 @@ class _$AvailableAppImpl implements _AvailableApp {
       {required this.id,
       required this.name,
       required this.appId,
-      @AppTypeConverter() required this.appType,
-      @AppTechnologyConverter() required this.technology,
+      @JsonKey(unknownEnumValue: AppType.public) this.appType = AppType.public,
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      this.technology = AppTechnology.flutter,
       this.legalInformation,
       this.designInformation,
-      @AppPlatformConverter() final List<AppPlatform>? supportedPlatforms,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      final List<AppPlatform>? supportedPlatforms,
       required this.onlyCustomized,
       this.hasImport,
       this.hasKeychain,
@@ -586,12 +592,12 @@ class _$AvailableAppImpl implements _AvailableApp {
 
   /// [appType] is the type of the app.
   @override
-  @AppTypeConverter()
+  @JsonKey(unknownEnumValue: AppType.public)
   final AppType appType;
 
   /// [technology] is the technology of the app.
   @override
-  @AppTechnologyConverter()
+  @JsonKey(unknownEnumValue: AppTechnology.flutter)
   final AppTechnology technology;
 
   /// [legalInformation] is the legal information of the app.
@@ -607,7 +613,7 @@ class _$AvailableAppImpl implements _AvailableApp {
 
   /// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
   @override
-  @AppPlatformConverter()
+  @JsonKey(unknownEnumValue: AppPlatform.web)
   List<AppPlatform>? get supportedPlatforms {
     final value = _supportedPlatforms;
     if (value == null) return null;
@@ -741,11 +747,13 @@ abstract class _AvailableApp implements AvailableApp {
       {required final String id,
       required final String name,
       required final String appId,
-      @AppTypeConverter() required final AppType appType,
-      @AppTechnologyConverter() required final AppTechnology technology,
+      @JsonKey(unknownEnumValue: AppType.public) final AppType appType,
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      final AppTechnology technology,
       final AppLegal? legalInformation,
       final AppDesign? designInformation,
-      @AppPlatformConverter() final List<AppPlatform>? supportedPlatforms,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      final List<AppPlatform>? supportedPlatforms,
       required final bool onlyCustomized,
       final bool? hasImport,
       final bool? hasKeychain,
@@ -771,12 +779,12 @@ abstract class _AvailableApp implements AvailableApp {
 
   /// [appType] is the type of the app.
   @override
-  @AppTypeConverter()
+  @JsonKey(unknownEnumValue: AppType.public)
   AppType get appType;
 
   /// [technology] is the technology of the app.
   @override
-  @AppTechnologyConverter()
+  @JsonKey(unknownEnumValue: AppTechnology.flutter)
   AppTechnology get technology;
 
   /// [legalInformation] is the legal information of the app.
@@ -789,7 +797,7 @@ abstract class _AvailableApp implements AvailableApp {
 
   /// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
   @override
-  @AppPlatformConverter()
+  @JsonKey(unknownEnumValue: AppPlatform.web)
   List<AppPlatform>? get supportedPlatforms;
 
   /// [onlyCustomized] is true if the app only can be register with customization.
@@ -828,6 +836,394 @@ abstract class _AvailableApp implements AvailableApp {
       throw _privateConstructorUsedError;
 }
 
+AvailableAppInput _$AvailableAppInputFromJson(Map<String, dynamic> json) {
+  return _AvailableAppInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AvailableAppInput {
+  String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
+  String get appId => throw _privateConstructorUsedError;
+  set appId(String value) => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: AppTechnology.flutter)
+  AppTechnology get technology => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: AppTechnology.flutter)
+  set technology(AppTechnology value) => throw _privateConstructorUsedError;
+  AppLegalInput get legalInformation => throw _privateConstructorUsedError;
+  set legalInformation(AppLegalInput value) =>
+      throw _privateConstructorUsedError;
+  AppDesignInput get designInformation => throw _privateConstructorUsedError;
+  set designInformation(AppDesignInput value) =>
+      throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: AppPlatform.web)
+  List<AppPlatform> get supportedPlatforms =>
+      throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: AppPlatform.web)
+  set supportedPlatforms(List<AppPlatform> value) =>
+      throw _privateConstructorUsedError;
+  bool get onlyCustomized => throw _privateConstructorUsedError;
+  set onlyCustomized(bool value) => throw _privateConstructorUsedError;
+  bool get hasImport => throw _privateConstructorUsedError;
+  set hasImport(bool value) => throw _privateConstructorUsedError;
+  bool get hasKeychain => throw _privateConstructorUsedError;
+  set hasKeychain(bool value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AvailableAppInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AvailableAppInputCopyWith<AvailableAppInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AvailableAppInputCopyWith<$Res> {
+  factory $AvailableAppInputCopyWith(
+          AvailableAppInput value, $Res Function(AvailableAppInput) then) =
+      _$AvailableAppInputCopyWithImpl<$Res, AvailableAppInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String appId,
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      AppTechnology technology,
+      AppLegalInput legalInformation,
+      AppDesignInput designInformation,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      List<AppPlatform> supportedPlatforms,
+      bool onlyCustomized,
+      bool hasImport,
+      bool hasKeychain});
+
+  $AppLegalInputCopyWith<$Res> get legalInformation;
+  $AppDesignInputCopyWith<$Res> get designInformation;
+}
+
+/// @nodoc
+class _$AvailableAppInputCopyWithImpl<$Res, $Val extends AvailableAppInput>
+    implements $AvailableAppInputCopyWith<$Res> {
+  _$AvailableAppInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? appId = null,
+    Object? technology = null,
+    Object? legalInformation = null,
+    Object? designInformation = null,
+    Object? supportedPlatforms = null,
+    Object? onlyCustomized = null,
+    Object? hasImport = null,
+    Object? hasKeychain = null,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      appId: null == appId
+          ? _value.appId
+          : appId // ignore: cast_nullable_to_non_nullable
+              as String,
+      technology: null == technology
+          ? _value.technology
+          : technology // ignore: cast_nullable_to_non_nullable
+              as AppTechnology,
+      legalInformation: null == legalInformation
+          ? _value.legalInformation
+          : legalInformation // ignore: cast_nullable_to_non_nullable
+              as AppLegalInput,
+      designInformation: null == designInformation
+          ? _value.designInformation
+          : designInformation // ignore: cast_nullable_to_non_nullable
+              as AppDesignInput,
+      supportedPlatforms: null == supportedPlatforms
+          ? _value.supportedPlatforms
+          : supportedPlatforms // ignore: cast_nullable_to_non_nullable
+              as List<AppPlatform>,
+      onlyCustomized: null == onlyCustomized
+          ? _value.onlyCustomized
+          : onlyCustomized // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasImport: null == hasImport
+          ? _value.hasImport
+          : hasImport // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasKeychain: null == hasKeychain
+          ? _value.hasKeychain
+          : hasKeychain // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ) as $Val);
+  }
+
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppLegalInputCopyWith<$Res> get legalInformation {
+    return $AppLegalInputCopyWith<$Res>(_value.legalInformation, (value) {
+      return _then(_value.copyWith(legalInformation: value) as $Val);
+    });
+  }
+
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppDesignInputCopyWith<$Res> get designInformation {
+    return $AppDesignInputCopyWith<$Res>(_value.designInformation, (value) {
+      return _then(_value.copyWith(designInformation: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$AvailableAppInputImplCopyWith<$Res>
+    implements $AvailableAppInputCopyWith<$Res> {
+  factory _$$AvailableAppInputImplCopyWith(_$AvailableAppInputImpl value,
+          $Res Function(_$AvailableAppInputImpl) then) =
+      __$$AvailableAppInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String appId,
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      AppTechnology technology,
+      AppLegalInput legalInformation,
+      AppDesignInput designInformation,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      List<AppPlatform> supportedPlatforms,
+      bool onlyCustomized,
+      bool hasImport,
+      bool hasKeychain});
+
+  @override
+  $AppLegalInputCopyWith<$Res> get legalInformation;
+  @override
+  $AppDesignInputCopyWith<$Res> get designInformation;
+}
+
+/// @nodoc
+class __$$AvailableAppInputImplCopyWithImpl<$Res>
+    extends _$AvailableAppInputCopyWithImpl<$Res, _$AvailableAppInputImpl>
+    implements _$$AvailableAppInputImplCopyWith<$Res> {
+  __$$AvailableAppInputImplCopyWithImpl(_$AvailableAppInputImpl _value,
+      $Res Function(_$AvailableAppInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? appId = null,
+    Object? technology = null,
+    Object? legalInformation = null,
+    Object? designInformation = null,
+    Object? supportedPlatforms = null,
+    Object? onlyCustomized = null,
+    Object? hasImport = null,
+    Object? hasKeychain = null,
+  }) {
+    return _then(_$AvailableAppInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      appId: null == appId
+          ? _value.appId
+          : appId // ignore: cast_nullable_to_non_nullable
+              as String,
+      technology: null == technology
+          ? _value.technology
+          : technology // ignore: cast_nullable_to_non_nullable
+              as AppTechnology,
+      legalInformation: null == legalInformation
+          ? _value.legalInformation
+          : legalInformation // ignore: cast_nullable_to_non_nullable
+              as AppLegalInput,
+      designInformation: null == designInformation
+          ? _value.designInformation
+          : designInformation // ignore: cast_nullable_to_non_nullable
+              as AppDesignInput,
+      supportedPlatforms: null == supportedPlatforms
+          ? _value.supportedPlatforms
+          : supportedPlatforms // ignore: cast_nullable_to_non_nullable
+              as List<AppPlatform>,
+      onlyCustomized: null == onlyCustomized
+          ? _value.onlyCustomized
+          : onlyCustomized // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasImport: null == hasImport
+          ? _value.hasImport
+          : hasImport // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasKeychain: null == hasKeychain
+          ? _value.hasKeychain
+          : hasKeychain // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AvailableAppInputImpl implements _AvailableAppInput {
+  _$AvailableAppInputImpl(
+      {this.id,
+      this.name = '',
+      this.appId = '',
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      this.technology = AppTechnology.flutter,
+      required this.legalInformation,
+      required this.designInformation,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      this.supportedPlatforms = const [],
+      this.onlyCustomized = false,
+      this.hasImport = true,
+      this.hasKeychain = true});
+
+  factory _$AvailableAppInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AvailableAppInputImplFromJson(json);
+
+  @override
+  String? id;
+  @override
+  @JsonKey()
+  String name;
+  @override
+  @JsonKey()
+  String appId;
+  @override
+  @JsonKey(unknownEnumValue: AppTechnology.flutter)
+  AppTechnology technology;
+  @override
+  AppLegalInput legalInformation;
+  @override
+  AppDesignInput designInformation;
+  @override
+  @JsonKey(unknownEnumValue: AppPlatform.web)
+  List<AppPlatform> supportedPlatforms;
+  @override
+  @JsonKey()
+  bool onlyCustomized;
+  @override
+  @JsonKey()
+  bool hasImport;
+  @override
+  @JsonKey()
+  bool hasKeychain;
+
+  @override
+  String toString() {
+    return 'AvailableAppInput(id: $id, name: $name, appId: $appId, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, supportedPlatforms: $supportedPlatforms, onlyCustomized: $onlyCustomized, hasImport: $hasImport, hasKeychain: $hasKeychain)';
+  }
+
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AvailableAppInputImplCopyWith<_$AvailableAppInputImpl> get copyWith =>
+      __$$AvailableAppInputImplCopyWithImpl<_$AvailableAppInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AvailableAppInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AvailableAppInput implements AvailableAppInput {
+  factory _AvailableAppInput(
+      {String? id,
+      String name,
+      String appId,
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      AppTechnology technology,
+      required AppLegalInput legalInformation,
+      required AppDesignInput designInformation,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      List<AppPlatform> supportedPlatforms,
+      bool onlyCustomized,
+      bool hasImport,
+      bool hasKeychain}) = _$AvailableAppInputImpl;
+
+  factory _AvailableAppInput.fromJson(Map<String, dynamic> json) =
+      _$AvailableAppInputImpl.fromJson;
+
+  @override
+  String? get id;
+  set id(String? value);
+  @override
+  String get name;
+  set name(String value);
+  @override
+  String get appId;
+  set appId(String value);
+  @override
+  @JsonKey(unknownEnumValue: AppTechnology.flutter)
+  AppTechnology get technology;
+  @JsonKey(unknownEnumValue: AppTechnology.flutter)
+  set technology(AppTechnology value);
+  @override
+  AppLegalInput get legalInformation;
+  set legalInformation(AppLegalInput value);
+  @override
+  AppDesignInput get designInformation;
+  set designInformation(AppDesignInput value);
+  @override
+  @JsonKey(unknownEnumValue: AppPlatform.web)
+  List<AppPlatform> get supportedPlatforms;
+  @JsonKey(unknownEnumValue: AppPlatform.web)
+  set supportedPlatforms(List<AppPlatform> value);
+  @override
+  bool get onlyCustomized;
+  set onlyCustomized(bool value);
+  @override
+  bool get hasImport;
+  set hasImport(bool value);
+  @override
+  bool get hasKeychain;
+  set hasKeychain(bool value);
+
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AvailableAppInputImplCopyWith<_$AvailableAppInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 RegisteredApp _$RegisteredAppFromJson(Map<String, dynamic> json) {
   return _RegisteredApp.fromJson(json);
 }
@@ -837,7 +1233,7 @@ mixin _$RegisteredApp {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get nickname => throw _privateConstructorUsedError;
-  @AppTechnologyConverter()
+  @JsonKey(unknownEnumValue: AppTechnology.flutter)
   AppTechnology get technology => throw _privateConstructorUsedError;
   AppLegal? get legalInformation => throw _privateConstructorUsedError;
   AppDesign? get designInformation => throw _privateConstructorUsedError;
@@ -885,7 +1281,8 @@ abstract class $RegisteredAppCopyWith<$Res> {
       {String id,
       String name,
       String nickname,
-      @AppTechnologyConverter() AppTechnology technology,
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
       bool? isCustomized,
@@ -1086,7 +1483,8 @@ abstract class _$$RegisteredAppImplCopyWith<$Res>
       {String id,
       String name,
       String nickname,
-      @AppTechnologyConverter() AppTechnology technology,
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
       bool? isCustomized,
@@ -1228,7 +1626,8 @@ class _$RegisteredAppImpl implements _RegisteredApp {
       {required this.id,
       required this.name,
       required this.nickname,
-      @AppTechnologyConverter() required this.technology,
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      this.technology = AppTechnology.flutter,
       this.legalInformation,
       this.designInformation,
       this.isCustomized,
@@ -1261,7 +1660,7 @@ class _$RegisteredAppImpl implements _RegisteredApp {
   @override
   final String nickname;
   @override
-  @AppTechnologyConverter()
+  @JsonKey(unknownEnumValue: AppTechnology.flutter)
   final AppTechnology technology;
   @override
   final AppLegal? legalInformation;
@@ -1449,7 +1848,8 @@ abstract class _RegisteredApp implements RegisteredApp {
       {required final String id,
       required final String name,
       required final String nickname,
-      @AppTechnologyConverter() required final AppTechnology technology,
+      @JsonKey(unknownEnumValue: AppTechnology.flutter)
+      final AppTechnology technology,
       final AppLegal? legalInformation,
       final AppDesign? designInformation,
       final bool? isCustomized,
@@ -1475,7 +1875,7 @@ abstract class _RegisteredApp implements RegisteredApp {
   @override
   String get nickname;
   @override
-  @AppTechnologyConverter()
+  @JsonKey(unknownEnumValue: AppTechnology.flutter)
   AppTechnology get technology;
   @override
   AppLegal? get legalInformation;
@@ -1693,6 +2093,164 @@ abstract class _AppThemedAsset implements AppThemedAsset {
       throw _privateConstructorUsedError;
 }
 
+AppThemedAssetInput _$AppThemedAssetInputFromJson(Map<String, dynamic> json) {
+  return _AppThemedAssetInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AppThemedAssetInput {
+  String? get normal => throw _privateConstructorUsedError;
+  set normal(String? value) => throw _privateConstructorUsedError;
+  String? get white => throw _privateConstructorUsedError;
+  set white(String? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AppThemedAssetInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AppThemedAssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AppThemedAssetInputCopyWith<AppThemedAssetInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AppThemedAssetInputCopyWith<$Res> {
+  factory $AppThemedAssetInputCopyWith(
+          AppThemedAssetInput value, $Res Function(AppThemedAssetInput) then) =
+      _$AppThemedAssetInputCopyWithImpl<$Res, AppThemedAssetInput>;
+  @useResult
+  $Res call({String? normal, String? white});
+}
+
+/// @nodoc
+class _$AppThemedAssetInputCopyWithImpl<$Res, $Val extends AppThemedAssetInput>
+    implements $AppThemedAssetInputCopyWith<$Res> {
+  _$AppThemedAssetInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AppThemedAssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? normal = freezed,
+    Object? white = freezed,
+  }) {
+    return _then(_value.copyWith(
+      normal: freezed == normal
+          ? _value.normal
+          : normal // ignore: cast_nullable_to_non_nullable
+              as String?,
+      white: freezed == white
+          ? _value.white
+          : white // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AppThemedAssetInputImplCopyWith<$Res>
+    implements $AppThemedAssetInputCopyWith<$Res> {
+  factory _$$AppThemedAssetInputImplCopyWith(_$AppThemedAssetInputImpl value,
+          $Res Function(_$AppThemedAssetInputImpl) then) =
+      __$$AppThemedAssetInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? normal, String? white});
+}
+
+/// @nodoc
+class __$$AppThemedAssetInputImplCopyWithImpl<$Res>
+    extends _$AppThemedAssetInputCopyWithImpl<$Res, _$AppThemedAssetInputImpl>
+    implements _$$AppThemedAssetInputImplCopyWith<$Res> {
+  __$$AppThemedAssetInputImplCopyWithImpl(_$AppThemedAssetInputImpl _value,
+      $Res Function(_$AppThemedAssetInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppThemedAssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? normal = freezed,
+    Object? white = freezed,
+  }) {
+    return _then(_$AppThemedAssetInputImpl(
+      normal: freezed == normal
+          ? _value.normal
+          : normal // ignore: cast_nullable_to_non_nullable
+              as String?,
+      white: freezed == white
+          ? _value.white
+          : white // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AppThemedAssetInputImpl implements _AppThemedAssetInput {
+  _$AppThemedAssetInputImpl({this.normal, this.white});
+
+  factory _$AppThemedAssetInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppThemedAssetInputImplFromJson(json);
+
+  @override
+  String? normal;
+  @override
+  String? white;
+
+  @override
+  String toString() {
+    return 'AppThemedAssetInput(normal: $normal, white: $white)';
+  }
+
+  /// Create a copy of AppThemedAssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppThemedAssetInputImplCopyWith<_$AppThemedAssetInputImpl> get copyWith =>
+      __$$AppThemedAssetInputImplCopyWithImpl<_$AppThemedAssetInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AppThemedAssetInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AppThemedAssetInput implements AppThemedAssetInput {
+  factory _AppThemedAssetInput({String? normal, String? white}) =
+      _$AppThemedAssetInputImpl;
+
+  factory _AppThemedAssetInput.fromJson(Map<String, dynamic> json) =
+      _$AppThemedAssetInputImpl.fromJson;
+
+  @override
+  String? get normal;
+  set normal(String? value);
+  @override
+  String? get white;
+  set white(String? value);
+
+  /// Create a copy of AppThemedAssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AppThemedAssetInputImplCopyWith<_$AppThemedAssetInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 AppBackgroundDesign _$AppBackgroundDesignFromJson(Map<String, dynamic> json) {
   return _AppBackgroundDesign.fromJson(json);
 }
@@ -1702,7 +2260,7 @@ mixin _$AppBackgroundDesign {
   String? get image => throw _privateConstructorUsedError;
   @ColorOrNullConverter()
   Color? get color => throw _privateConstructorUsedError;
-  @BackgroundModeConverter()
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
   BackgroundMode get mode => throw _privateConstructorUsedError;
 
   /// Serializes this AppBackgroundDesign to a JSON map.
@@ -1724,7 +2282,7 @@ abstract class $AppBackgroundDesignCopyWith<$Res> {
   $Res call(
       {String? image,
       @ColorOrNullConverter() Color? color,
-      @BackgroundModeConverter() BackgroundMode mode});
+      @JsonKey(unknownEnumValue: BackgroundMode.solid) BackgroundMode mode});
 }
 
 /// @nodoc
@@ -1774,7 +2332,7 @@ abstract class _$$AppBackgroundDesignImplCopyWith<$Res>
   $Res call(
       {String? image,
       @ColorOrNullConverter() Color? color,
-      @BackgroundModeConverter() BackgroundMode mode});
+      @JsonKey(unknownEnumValue: BackgroundMode.solid) BackgroundMode mode});
 }
 
 /// @nodoc
@@ -1817,7 +2375,8 @@ class _$AppBackgroundDesignImpl implements _AppBackgroundDesign {
   const _$AppBackgroundDesignImpl(
       {this.image,
       @ColorOrNullConverter() this.color,
-      @BackgroundModeConverter() required this.mode});
+      @JsonKey(unknownEnumValue: BackgroundMode.solid)
+      this.mode = BackgroundMode.solid});
 
   factory _$AppBackgroundDesignImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppBackgroundDesignImplFromJson(json);
@@ -1828,7 +2387,7 @@ class _$AppBackgroundDesignImpl implements _AppBackgroundDesign {
   @ColorOrNullConverter()
   final Color? color;
   @override
-  @BackgroundModeConverter()
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
   final BackgroundMode mode;
 
   @override
@@ -1869,10 +2428,10 @@ class _$AppBackgroundDesignImpl implements _AppBackgroundDesign {
 
 abstract class _AppBackgroundDesign implements AppBackgroundDesign {
   const factory _AppBackgroundDesign(
-          {final String? image,
-          @ColorOrNullConverter() final Color? color,
-          @BackgroundModeConverter() required final BackgroundMode mode}) =
-      _$AppBackgroundDesignImpl;
+      {final String? image,
+      @ColorOrNullConverter() final Color? color,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid)
+      final BackgroundMode mode}) = _$AppBackgroundDesignImpl;
 
   factory _AppBackgroundDesign.fromJson(Map<String, dynamic> json) =
       _$AppBackgroundDesignImpl.fromJson;
@@ -1883,7 +2442,7 @@ abstract class _AppBackgroundDesign implements AppBackgroundDesign {
   @ColorOrNullConverter()
   Color? get color;
   @override
-  @BackgroundModeConverter()
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
   BackgroundMode get mode;
 
   /// Create a copy of AppBackgroundDesign
@@ -1892,6 +2451,209 @@ abstract class _AppBackgroundDesign implements AppBackgroundDesign {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppBackgroundDesignImplCopyWith<_$AppBackgroundDesignImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+AppBackgroundDesignInput _$AppBackgroundDesignInputFromJson(
+    Map<String, dynamic> json) {
+  return _AppBackgroundDesignInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AppBackgroundDesignInput {
+  String? get image => throw _privateConstructorUsedError;
+  set image(String? value) => throw _privateConstructorUsedError;
+  @ColorOrNullConverter()
+  Color? get color => throw _privateConstructorUsedError;
+  @ColorOrNullConverter()
+  set color(Color? value) => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
+  BackgroundMode get mode => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
+  set mode(BackgroundMode value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AppBackgroundDesignInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AppBackgroundDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AppBackgroundDesignInputCopyWith<AppBackgroundDesignInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AppBackgroundDesignInputCopyWith<$Res> {
+  factory $AppBackgroundDesignInputCopyWith(AppBackgroundDesignInput value,
+          $Res Function(AppBackgroundDesignInput) then) =
+      _$AppBackgroundDesignInputCopyWithImpl<$Res, AppBackgroundDesignInput>;
+  @useResult
+  $Res call(
+      {String? image,
+      @ColorOrNullConverter() Color? color,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid) BackgroundMode mode});
+}
+
+/// @nodoc
+class _$AppBackgroundDesignInputCopyWithImpl<$Res,
+        $Val extends AppBackgroundDesignInput>
+    implements $AppBackgroundDesignInputCopyWith<$Res> {
+  _$AppBackgroundDesignInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AppBackgroundDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? image = freezed,
+    Object? color = freezed,
+    Object? mode = null,
+  }) {
+    return _then(_value.copyWith(
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      mode: null == mode
+          ? _value.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as BackgroundMode,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AppBackgroundDesignInputImplCopyWith<$Res>
+    implements $AppBackgroundDesignInputCopyWith<$Res> {
+  factory _$$AppBackgroundDesignInputImplCopyWith(
+          _$AppBackgroundDesignInputImpl value,
+          $Res Function(_$AppBackgroundDesignInputImpl) then) =
+      __$$AppBackgroundDesignInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? image,
+      @ColorOrNullConverter() Color? color,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid) BackgroundMode mode});
+}
+
+/// @nodoc
+class __$$AppBackgroundDesignInputImplCopyWithImpl<$Res>
+    extends _$AppBackgroundDesignInputCopyWithImpl<$Res,
+        _$AppBackgroundDesignInputImpl>
+    implements _$$AppBackgroundDesignInputImplCopyWith<$Res> {
+  __$$AppBackgroundDesignInputImplCopyWithImpl(
+      _$AppBackgroundDesignInputImpl _value,
+      $Res Function(_$AppBackgroundDesignInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppBackgroundDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? image = freezed,
+    Object? color = freezed,
+    Object? mode = null,
+  }) {
+    return _then(_$AppBackgroundDesignInputImpl(
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      mode: null == mode
+          ? _value.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as BackgroundMode,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AppBackgroundDesignInputImpl implements _AppBackgroundDesignInput {
+  _$AppBackgroundDesignInputImpl(
+      {this.image,
+      @ColorOrNullConverter() this.color,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid)
+      this.mode = BackgroundMode.solid});
+
+  factory _$AppBackgroundDesignInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppBackgroundDesignInputImplFromJson(json);
+
+  @override
+  String? image;
+  @override
+  @ColorOrNullConverter()
+  Color? color;
+  @override
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
+  BackgroundMode mode;
+
+  @override
+  String toString() {
+    return 'AppBackgroundDesignInput(image: $image, color: $color, mode: $mode)';
+  }
+
+  /// Create a copy of AppBackgroundDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppBackgroundDesignInputImplCopyWith<_$AppBackgroundDesignInputImpl>
+      get copyWith => __$$AppBackgroundDesignInputImplCopyWithImpl<
+          _$AppBackgroundDesignInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AppBackgroundDesignInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AppBackgroundDesignInput implements AppBackgroundDesignInput {
+  factory _AppBackgroundDesignInput(
+      {String? image,
+      @ColorOrNullConverter() Color? color,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid)
+      BackgroundMode mode}) = _$AppBackgroundDesignInputImpl;
+
+  factory _AppBackgroundDesignInput.fromJson(Map<String, dynamic> json) =
+      _$AppBackgroundDesignInputImpl.fromJson;
+
+  @override
+  String? get image;
+  set image(String? value);
+  @override
+  @ColorOrNullConverter()
+  Color? get color;
+  @ColorOrNullConverter()
+  set color(Color? value);
+  @override
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
+  BackgroundMode get mode;
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
+  set mode(BackgroundMode value);
+
+  /// Create a copy of AppBackgroundDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AppBackgroundDesignInputImplCopyWith<_$AppBackgroundDesignInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 AppBuild _$AppBuildFromJson(Map<String, dynamic> json) {
@@ -2156,258 +2918,6 @@ abstract class _AppBuild implements AppBuild {
       throw _privateConstructorUsedError;
 }
 
-AppThemedColors _$AppThemedColorsFromJson(Map<String, dynamic> json) {
-  return _AppThemedColors.fromJson(json);
-}
-
-/// @nodoc
-mixin _$AppThemedColors {
-  @AppThemeOrNullConverter()
-  AppTheme? get theme => throw _privateConstructorUsedError;
-  @ColorOrNullConverter()
-  Color? get mainColor => throw _privateConstructorUsedError;
-  @ColorOrNullConverter()
-  Color? get primary => throw _privateConstructorUsedError;
-  @ColorOrNullConverter()
-  Color? get secondary => throw _privateConstructorUsedError;
-  @ColorOrNullConverter()
-  Color? get accent => throw _privateConstructorUsedError;
-
-  /// Serializes this AppThemedColors to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AppThemedColors
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AppThemedColorsCopyWith<AppThemedColors> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AppThemedColorsCopyWith<$Res> {
-  factory $AppThemedColorsCopyWith(
-          AppThemedColors value, $Res Function(AppThemedColors) then) =
-      _$AppThemedColorsCopyWithImpl<$Res, AppThemedColors>;
-  @useResult
-  $Res call(
-      {@AppThemeOrNullConverter() AppTheme? theme,
-      @ColorOrNullConverter() Color? mainColor,
-      @ColorOrNullConverter() Color? primary,
-      @ColorOrNullConverter() Color? secondary,
-      @ColorOrNullConverter() Color? accent});
-}
-
-/// @nodoc
-class _$AppThemedColorsCopyWithImpl<$Res, $Val extends AppThemedColors>
-    implements $AppThemedColorsCopyWith<$Res> {
-  _$AppThemedColorsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AppThemedColors
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? theme = freezed,
-    Object? mainColor = freezed,
-    Object? primary = freezed,
-    Object? secondary = freezed,
-    Object? accent = freezed,
-  }) {
-    return _then(_value.copyWith(
-      theme: freezed == theme
-          ? _value.theme
-          : theme // ignore: cast_nullable_to_non_nullable
-              as AppTheme?,
-      mainColor: freezed == mainColor
-          ? _value.mainColor
-          : mainColor // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      primary: freezed == primary
-          ? _value.primary
-          : primary // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      secondary: freezed == secondary
-          ? _value.secondary
-          : secondary // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      accent: freezed == accent
-          ? _value.accent
-          : accent // ignore: cast_nullable_to_non_nullable
-              as Color?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$AppThemedColorsImplCopyWith<$Res>
-    implements $AppThemedColorsCopyWith<$Res> {
-  factory _$$AppThemedColorsImplCopyWith(_$AppThemedColorsImpl value,
-          $Res Function(_$AppThemedColorsImpl) then) =
-      __$$AppThemedColorsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@AppThemeOrNullConverter() AppTheme? theme,
-      @ColorOrNullConverter() Color? mainColor,
-      @ColorOrNullConverter() Color? primary,
-      @ColorOrNullConverter() Color? secondary,
-      @ColorOrNullConverter() Color? accent});
-}
-
-/// @nodoc
-class __$$AppThemedColorsImplCopyWithImpl<$Res>
-    extends _$AppThemedColorsCopyWithImpl<$Res, _$AppThemedColorsImpl>
-    implements _$$AppThemedColorsImplCopyWith<$Res> {
-  __$$AppThemedColorsImplCopyWithImpl(
-      _$AppThemedColorsImpl _value, $Res Function(_$AppThemedColorsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AppThemedColors
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? theme = freezed,
-    Object? mainColor = freezed,
-    Object? primary = freezed,
-    Object? secondary = freezed,
-    Object? accent = freezed,
-  }) {
-    return _then(_$AppThemedColorsImpl(
-      theme: freezed == theme
-          ? _value.theme
-          : theme // ignore: cast_nullable_to_non_nullable
-              as AppTheme?,
-      mainColor: freezed == mainColor
-          ? _value.mainColor
-          : mainColor // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      primary: freezed == primary
-          ? _value.primary
-          : primary // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      secondary: freezed == secondary
-          ? _value.secondary
-          : secondary // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      accent: freezed == accent
-          ? _value.accent
-          : accent // ignore: cast_nullable_to_non_nullable
-              as Color?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$AppThemedColorsImpl implements _AppThemedColors {
-  const _$AppThemedColorsImpl(
-      {@AppThemeOrNullConverter() this.theme,
-      @ColorOrNullConverter() this.mainColor,
-      @ColorOrNullConverter() this.primary,
-      @ColorOrNullConverter() this.secondary,
-      @ColorOrNullConverter() this.accent});
-
-  factory _$AppThemedColorsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AppThemedColorsImplFromJson(json);
-
-  @override
-  @AppThemeOrNullConverter()
-  final AppTheme? theme;
-  @override
-  @ColorOrNullConverter()
-  final Color? mainColor;
-  @override
-  @ColorOrNullConverter()
-  final Color? primary;
-  @override
-  @ColorOrNullConverter()
-  final Color? secondary;
-  @override
-  @ColorOrNullConverter()
-  final Color? accent;
-
-  @override
-  String toString() {
-    return 'AppThemedColors(theme: $theme, mainColor: $mainColor, primary: $primary, secondary: $secondary, accent: $accent)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AppThemedColorsImpl &&
-            (identical(other.theme, theme) || other.theme == theme) &&
-            (identical(other.mainColor, mainColor) ||
-                other.mainColor == mainColor) &&
-            (identical(other.primary, primary) || other.primary == primary) &&
-            (identical(other.secondary, secondary) ||
-                other.secondary == secondary) &&
-            (identical(other.accent, accent) || other.accent == accent));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, theme, mainColor, primary, secondary, accent);
-
-  /// Create a copy of AppThemedColors
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AppThemedColorsImplCopyWith<_$AppThemedColorsImpl> get copyWith =>
-      __$$AppThemedColorsImplCopyWithImpl<_$AppThemedColorsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AppThemedColorsImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _AppThemedColors implements AppThemedColors {
-  const factory _AppThemedColors(
-      {@AppThemeOrNullConverter() final AppTheme? theme,
-      @ColorOrNullConverter() final Color? mainColor,
-      @ColorOrNullConverter() final Color? primary,
-      @ColorOrNullConverter() final Color? secondary,
-      @ColorOrNullConverter() final Color? accent}) = _$AppThemedColorsImpl;
-
-  factory _AppThemedColors.fromJson(Map<String, dynamic> json) =
-      _$AppThemedColorsImpl.fromJson;
-
-  @override
-  @AppThemeOrNullConverter()
-  AppTheme? get theme;
-  @override
-  @ColorOrNullConverter()
-  Color? get mainColor;
-  @override
-  @ColorOrNullConverter()
-  Color? get primary;
-  @override
-  @ColorOrNullConverter()
-  Color? get secondary;
-  @override
-  @ColorOrNullConverter()
-  Color? get accent;
-
-  /// Create a copy of AppThemedColors
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AppThemedColorsImplCopyWith<_$AppThemedColorsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
 AppDesign _$AppDesignFromJson(Map<String, dynamic> json) {
   return _AppDesign.fromJson(json);
 }
@@ -2427,7 +2937,7 @@ mixin _$AppDesign {
   ///
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [colors] field and use the [theme] field from it.
-  @AppThemeOrNullConverter()
+  @JsonKey(unknownEnumValue: AppTheme.blue)
   AppTheme? get theme => throw _privateConstructorUsedError;
 
   /// [favicons] defines the favicons of the app.
@@ -2443,7 +2953,7 @@ mixin _$AppDesign {
   AppLoginDesign? get login => throw _privateConstructorUsedError;
 
   /// [footerFormat] defines the footer format of the app.
-  @FooterFormatOrNullConverter()
+  @JsonKey(unknownEnumValue: FooterFormat.madeWith)
   FooterFormat? get footerFormat => throw _privateConstructorUsedError;
 
   /// [titleFont] defines the title font of the app.
@@ -2486,12 +2996,13 @@ abstract class $AppDesignCopyWith<$Res> {
   @useResult
   $Res call(
       {@ColorOrNullConverter() Color? mainColor,
-      @AppThemeOrNullConverter() AppTheme? theme,
+      @JsonKey(unknownEnumValue: AppTheme.blue) AppTheme? theme,
       AppThemedAsset favicons,
       AppThemedAsset logos,
       String appicon,
       AppLoginDesign? login,
-      @FooterFormatOrNullConverter() FooterFormat? footerFormat,
+      @JsonKey(unknownEnumValue: FooterFormat.madeWith)
+      FooterFormat? footerFormat,
       AppFont? titleFont,
       AppFont? bodyFont});
 
@@ -2640,12 +3151,13 @@ abstract class _$$AppDesignImplCopyWith<$Res>
   @useResult
   $Res call(
       {@ColorOrNullConverter() Color? mainColor,
-      @AppThemeOrNullConverter() AppTheme? theme,
+      @JsonKey(unknownEnumValue: AppTheme.blue) AppTheme? theme,
       AppThemedAsset favicons,
       AppThemedAsset logos,
       String appicon,
       AppLoginDesign? login,
-      @FooterFormatOrNullConverter() FooterFormat? footerFormat,
+      @JsonKey(unknownEnumValue: FooterFormat.madeWith)
+      FooterFormat? footerFormat,
       AppFont? titleFont,
       AppFont? bodyFont});
 
@@ -2730,12 +3242,12 @@ class __$$AppDesignImplCopyWithImpl<$Res>
 class _$AppDesignImpl implements _AppDesign {
   const _$AppDesignImpl(
       {@ColorOrNullConverter() this.mainColor,
-      @AppThemeOrNullConverter() this.theme,
+      @JsonKey(unknownEnumValue: AppTheme.blue) this.theme,
       required this.favicons,
       required this.logos,
       required this.appicon,
       this.login,
-      @FooterFormatOrNullConverter() this.footerFormat,
+      @JsonKey(unknownEnumValue: FooterFormat.madeWith) this.footerFormat,
       this.titleFont,
       this.bodyFont});
 
@@ -2757,7 +3269,7 @@ class _$AppDesignImpl implements _AppDesign {
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [colors] field and use the [theme] field from it.
   @override
-  @AppThemeOrNullConverter()
+  @JsonKey(unknownEnumValue: AppTheme.blue)
   final AppTheme? theme;
 
   /// [favicons] defines the favicons of the app.
@@ -2778,7 +3290,7 @@ class _$AppDesignImpl implements _AppDesign {
 
   /// [footerFormat] defines the footer format of the app.
   @override
-  @FooterFormatOrNullConverter()
+  @JsonKey(unknownEnumValue: FooterFormat.madeWith)
   final FooterFormat? footerFormat;
 
   /// [titleFont] defines the title font of the app.
@@ -2856,12 +3368,13 @@ class _$AppDesignImpl implements _AppDesign {
 abstract class _AppDesign implements AppDesign {
   const factory _AppDesign(
       {@ColorOrNullConverter() final Color? mainColor,
-      @AppThemeOrNullConverter() final AppTheme? theme,
+      @JsonKey(unknownEnumValue: AppTheme.blue) final AppTheme? theme,
       required final AppThemedAsset favicons,
       required final AppThemedAsset logos,
       required final String appicon,
       final AppLoginDesign? login,
-      @FooterFormatOrNullConverter() final FooterFormat? footerFormat,
+      @JsonKey(unknownEnumValue: FooterFormat.madeWith)
+      final FooterFormat? footerFormat,
       final AppFont? titleFont,
       final AppFont? bodyFont}) = _$AppDesignImpl;
 
@@ -2883,7 +3396,7 @@ abstract class _AppDesign implements AppDesign {
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [colors] field and use the [theme] field from it.
   @override
-  @AppThemeOrNullConverter()
+  @JsonKey(unknownEnumValue: AppTheme.blue)
   AppTheme? get theme;
 
   /// [favicons] defines the favicons of the app.
@@ -2904,7 +3417,7 @@ abstract class _AppDesign implements AppDesign {
 
   /// [footerFormat] defines the footer format of the app.
   @override
-  @FooterFormatOrNullConverter()
+  @JsonKey(unknownEnumValue: FooterFormat.madeWith)
   FooterFormat? get footerFormat;
 
   /// [titleFont] defines the title font of the app.
@@ -2947,7 +3460,7 @@ AppFooter _$AppFooterFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppFooter {
   /// [mode] defines the footer format of the app.
-  @FooterFormatConverter()
+  @JsonKey(unknownEnumValue: FooterFormat.madeWith)
   FooterFormat get mode => throw _privateConstructorUsedError;
 
   /// [custom] defines the custom footer of the app.
@@ -2968,7 +3481,9 @@ abstract class $AppFooterCopyWith<$Res> {
   factory $AppFooterCopyWith(AppFooter value, $Res Function(AppFooter) then) =
       _$AppFooterCopyWithImpl<$Res, AppFooter>;
   @useResult
-  $Res call({@FooterFormatConverter() FooterFormat mode, String? custom});
+  $Res call(
+      {@JsonKey(unknownEnumValue: FooterFormat.madeWith) FooterFormat mode,
+      String? custom});
 }
 
 /// @nodoc
@@ -3010,7 +3525,9 @@ abstract class _$$AppFooterImplCopyWith<$Res>
       __$$AppFooterImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@FooterFormatConverter() FooterFormat mode, String? custom});
+  $Res call(
+      {@JsonKey(unknownEnumValue: FooterFormat.madeWith) FooterFormat mode,
+      String? custom});
 }
 
 /// @nodoc
@@ -3046,14 +3563,16 @@ class __$$AppFooterImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppFooterImpl implements _AppFooter {
   const _$AppFooterImpl(
-      {@FooterFormatConverter() required this.mode, this.custom});
+      {@JsonKey(unknownEnumValue: FooterFormat.madeWith)
+      this.mode = FooterFormat.madeWith,
+      this.custom});
 
   factory _$AppFooterImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppFooterImplFromJson(json);
 
   /// [mode] defines the footer format of the app.
   @override
-  @FooterFormatConverter()
+  @JsonKey(unknownEnumValue: FooterFormat.madeWith)
   final FooterFormat mode;
 
   /// [custom] defines the custom footer of the app.
@@ -3096,7 +3615,8 @@ class _$AppFooterImpl implements _AppFooter {
 
 abstract class _AppFooter implements AppFooter {
   const factory _AppFooter(
-      {@FooterFormatConverter() required final FooterFormat mode,
+      {@JsonKey(unknownEnumValue: FooterFormat.madeWith)
+      final FooterFormat mode,
       final String? custom}) = _$AppFooterImpl;
 
   factory _AppFooter.fromJson(Map<String, dynamic> json) =
@@ -3104,7 +3624,7 @@ abstract class _AppFooter implements AppFooter {
 
   /// [mode] defines the footer format of the app.
   @override
-  @FooterFormatConverter()
+  @JsonKey(unknownEnumValue: FooterFormat.madeWith)
   FooterFormat get mode;
 
   /// [custom] defines the custom footer of the app.
@@ -3116,6 +3636,353 @@ abstract class _AppFooter implements AppFooter {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppFooterImplCopyWith<_$AppFooterImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+AppDesignInput _$AppDesignInputFromJson(Map<String, dynamic> json) {
+  return _AppDesignInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AppDesignInput {
+  @JsonKey(unknownEnumValue: AppTheme.custom)
+  AppTheme get theme => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: AppTheme.custom)
+  set theme(AppTheme value) => throw _privateConstructorUsedError;
+  @ColorConverter()
+  Color get mainColor => throw _privateConstructorUsedError;
+  @ColorConverter()
+  set mainColor(Color value) => throw _privateConstructorUsedError;
+  AppThemedAssetInput get favicons => throw _privateConstructorUsedError;
+  set favicons(AppThemedAssetInput value) => throw _privateConstructorUsedError;
+  AppThemedAssetInput get logos => throw _privateConstructorUsedError;
+  set logos(AppThemedAssetInput value) => throw _privateConstructorUsedError;
+  AppLoginDesignInput get login => throw _privateConstructorUsedError;
+  set login(AppLoginDesignInput value) => throw _privateConstructorUsedError;
+  AppFontInput get titleFont => throw _privateConstructorUsedError;
+  set titleFont(AppFontInput value) => throw _privateConstructorUsedError;
+  AppFontInput get bodyFont => throw _privateConstructorUsedError;
+  set bodyFont(AppFontInput value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AppDesignInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AppDesignInputCopyWith<AppDesignInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AppDesignInputCopyWith<$Res> {
+  factory $AppDesignInputCopyWith(
+          AppDesignInput value, $Res Function(AppDesignInput) then) =
+      _$AppDesignInputCopyWithImpl<$Res, AppDesignInput>;
+  @useResult
+  $Res call(
+      {@JsonKey(unknownEnumValue: AppTheme.custom) AppTheme theme,
+      @ColorConverter() Color mainColor,
+      AppThemedAssetInput favicons,
+      AppThemedAssetInput logos,
+      AppLoginDesignInput login,
+      AppFontInput titleFont,
+      AppFontInput bodyFont});
+
+  $AppThemedAssetInputCopyWith<$Res> get favicons;
+  $AppThemedAssetInputCopyWith<$Res> get logos;
+  $AppLoginDesignInputCopyWith<$Res> get login;
+  $AppFontInputCopyWith<$Res> get titleFont;
+  $AppFontInputCopyWith<$Res> get bodyFont;
+}
+
+/// @nodoc
+class _$AppDesignInputCopyWithImpl<$Res, $Val extends AppDesignInput>
+    implements $AppDesignInputCopyWith<$Res> {
+  _$AppDesignInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? theme = null,
+    Object? mainColor = null,
+    Object? favicons = null,
+    Object? logos = null,
+    Object? login = null,
+    Object? titleFont = null,
+    Object? bodyFont = null,
+  }) {
+    return _then(_value.copyWith(
+      theme: null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as AppTheme,
+      mainColor: null == mainColor
+          ? _value.mainColor
+          : mainColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      favicons: null == favicons
+          ? _value.favicons
+          : favicons // ignore: cast_nullable_to_non_nullable
+              as AppThemedAssetInput,
+      logos: null == logos
+          ? _value.logos
+          : logos // ignore: cast_nullable_to_non_nullable
+              as AppThemedAssetInput,
+      login: null == login
+          ? _value.login
+          : login // ignore: cast_nullable_to_non_nullable
+              as AppLoginDesignInput,
+      titleFont: null == titleFont
+          ? _value.titleFont
+          : titleFont // ignore: cast_nullable_to_non_nullable
+              as AppFontInput,
+      bodyFont: null == bodyFont
+          ? _value.bodyFont
+          : bodyFont // ignore: cast_nullable_to_non_nullable
+              as AppFontInput,
+    ) as $Val);
+  }
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppThemedAssetInputCopyWith<$Res> get favicons {
+    return $AppThemedAssetInputCopyWith<$Res>(_value.favicons, (value) {
+      return _then(_value.copyWith(favicons: value) as $Val);
+    });
+  }
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppThemedAssetInputCopyWith<$Res> get logos {
+    return $AppThemedAssetInputCopyWith<$Res>(_value.logos, (value) {
+      return _then(_value.copyWith(logos: value) as $Val);
+    });
+  }
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppLoginDesignInputCopyWith<$Res> get login {
+    return $AppLoginDesignInputCopyWith<$Res>(_value.login, (value) {
+      return _then(_value.copyWith(login: value) as $Val);
+    });
+  }
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppFontInputCopyWith<$Res> get titleFont {
+    return $AppFontInputCopyWith<$Res>(_value.titleFont, (value) {
+      return _then(_value.copyWith(titleFont: value) as $Val);
+    });
+  }
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AppFontInputCopyWith<$Res> get bodyFont {
+    return $AppFontInputCopyWith<$Res>(_value.bodyFont, (value) {
+      return _then(_value.copyWith(bodyFont: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$AppDesignInputImplCopyWith<$Res>
+    implements $AppDesignInputCopyWith<$Res> {
+  factory _$$AppDesignInputImplCopyWith(_$AppDesignInputImpl value,
+          $Res Function(_$AppDesignInputImpl) then) =
+      __$$AppDesignInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(unknownEnumValue: AppTheme.custom) AppTheme theme,
+      @ColorConverter() Color mainColor,
+      AppThemedAssetInput favicons,
+      AppThemedAssetInput logos,
+      AppLoginDesignInput login,
+      AppFontInput titleFont,
+      AppFontInput bodyFont});
+
+  @override
+  $AppThemedAssetInputCopyWith<$Res> get favicons;
+  @override
+  $AppThemedAssetInputCopyWith<$Res> get logos;
+  @override
+  $AppLoginDesignInputCopyWith<$Res> get login;
+  @override
+  $AppFontInputCopyWith<$Res> get titleFont;
+  @override
+  $AppFontInputCopyWith<$Res> get bodyFont;
+}
+
+/// @nodoc
+class __$$AppDesignInputImplCopyWithImpl<$Res>
+    extends _$AppDesignInputCopyWithImpl<$Res, _$AppDesignInputImpl>
+    implements _$$AppDesignInputImplCopyWith<$Res> {
+  __$$AppDesignInputImplCopyWithImpl(
+      _$AppDesignInputImpl _value, $Res Function(_$AppDesignInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? theme = null,
+    Object? mainColor = null,
+    Object? favicons = null,
+    Object? logos = null,
+    Object? login = null,
+    Object? titleFont = null,
+    Object? bodyFont = null,
+  }) {
+    return _then(_$AppDesignInputImpl(
+      theme: null == theme
+          ? _value.theme
+          : theme // ignore: cast_nullable_to_non_nullable
+              as AppTheme,
+      mainColor: null == mainColor
+          ? _value.mainColor
+          : mainColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      favicons: null == favicons
+          ? _value.favicons
+          : favicons // ignore: cast_nullable_to_non_nullable
+              as AppThemedAssetInput,
+      logos: null == logos
+          ? _value.logos
+          : logos // ignore: cast_nullable_to_non_nullable
+              as AppThemedAssetInput,
+      login: null == login
+          ? _value.login
+          : login // ignore: cast_nullable_to_non_nullable
+              as AppLoginDesignInput,
+      titleFont: null == titleFont
+          ? _value.titleFont
+          : titleFont // ignore: cast_nullable_to_non_nullable
+              as AppFontInput,
+      bodyFont: null == bodyFont
+          ? _value.bodyFont
+          : bodyFont // ignore: cast_nullable_to_non_nullable
+              as AppFontInput,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AppDesignInputImpl implements _AppDesignInput {
+  _$AppDesignInputImpl(
+      {@JsonKey(unknownEnumValue: AppTheme.custom) this.theme = AppTheme.custom,
+      @ColorConverter() required this.mainColor,
+      required this.favicons,
+      required this.logos,
+      required this.login,
+      required this.titleFont,
+      required this.bodyFont});
+
+  factory _$AppDesignInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppDesignInputImplFromJson(json);
+
+  @override
+  @JsonKey(unknownEnumValue: AppTheme.custom)
+  AppTheme theme;
+  @override
+  @ColorConverter()
+  Color mainColor;
+  @override
+  AppThemedAssetInput favicons;
+  @override
+  AppThemedAssetInput logos;
+  @override
+  AppLoginDesignInput login;
+  @override
+  AppFontInput titleFont;
+  @override
+  AppFontInput bodyFont;
+
+  @override
+  String toString() {
+    return 'AppDesignInput(theme: $theme, mainColor: $mainColor, favicons: $favicons, logos: $logos, login: $login, titleFont: $titleFont, bodyFont: $bodyFont)';
+  }
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppDesignInputImplCopyWith<_$AppDesignInputImpl> get copyWith =>
+      __$$AppDesignInputImplCopyWithImpl<_$AppDesignInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AppDesignInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AppDesignInput implements AppDesignInput {
+  factory _AppDesignInput(
+      {@JsonKey(unknownEnumValue: AppTheme.custom) AppTheme theme,
+      @ColorConverter() required Color mainColor,
+      required AppThemedAssetInput favicons,
+      required AppThemedAssetInput logos,
+      required AppLoginDesignInput login,
+      required AppFontInput titleFont,
+      required AppFontInput bodyFont}) = _$AppDesignInputImpl;
+
+  factory _AppDesignInput.fromJson(Map<String, dynamic> json) =
+      _$AppDesignInputImpl.fromJson;
+
+  @override
+  @JsonKey(unknownEnumValue: AppTheme.custom)
+  AppTheme get theme;
+  @JsonKey(unknownEnumValue: AppTheme.custom)
+  set theme(AppTheme value);
+  @override
+  @ColorConverter()
+  Color get mainColor;
+  @ColorConverter()
+  set mainColor(Color value);
+  @override
+  AppThemedAssetInput get favicons;
+  set favicons(AppThemedAssetInput value);
+  @override
+  AppThemedAssetInput get logos;
+  set logos(AppThemedAssetInput value);
+  @override
+  AppLoginDesignInput get login;
+  set login(AppLoginDesignInput value);
+  @override
+  AppFontInput get titleFont;
+  set titleFont(AppFontInput value);
+  @override
+  AppFontInput get bodyFont;
+  set bodyFont(AppFontInput value);
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AppDesignInputImplCopyWith<_$AppDesignInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3132,7 +3999,7 @@ mixin _$AppInstance {
   String get appId => throw _privateConstructorUsedError;
 
   /// [platform] is the platform of the instance
-  @AppPlatformConverter()
+  @JsonKey(unknownEnumValue: AppPlatform.web)
   AppPlatform get platform => throw _privateConstructorUsedError;
 
   /// [host] is the host of the instance. It is only used when the platform is `AppPlatform.web`
@@ -3153,7 +4020,7 @@ mixin _$AppInstance {
 
   /// [status] is the status of the instance. It is only used when the platform is `AppPlatform.web`
   /// For other platforms, this value is only `InstanceStatus.pending` and `InstanceStatus.ready`
-  @InstanceStatusConverter()
+  @JsonKey(unknownEnumValue: InstanceStatus.pending)
   InstanceStatus get status => throw _privateConstructorUsedError;
 
   /// [cloudfront] is the DNS of the instance for CloudFront
@@ -3168,7 +4035,7 @@ mixin _$AppInstance {
   /// It is only used when the platform is `AppPlatform.web`
   /// Why this field? Simple, we're migrating to a new High Availability architecture, so,
   /// for web instances, we require some changes about the configuration of the DNS.
-  @InstanceMigrationStatusConverter()
+  @JsonKey(unknownEnumValue: InstanceMigrationStatus.pending)
   InstanceMigrationStatus get migrationStatus =>
       throw _privateConstructorUsedError;
 
@@ -3191,16 +4058,16 @@ abstract class $AppInstanceCopyWith<$Res> {
   $Res call(
       {String id,
       String appId,
-      @AppPlatformConverter() AppPlatform platform,
+      @JsonKey(unknownEnumValue: AppPlatform.web) AppPlatform platform,
       String? host,
       String? appIdentifier,
       String? developerName,
       String? developerIdentifier,
       List<AppBuild> builds,
-      @InstanceStatusConverter() InstanceStatus status,
+      @JsonKey(unknownEnumValue: InstanceStatus.pending) InstanceStatus status,
       DnsConfiguration? cloudfront,
       DnsConfiguration? certificate,
-      @InstanceMigrationStatusConverter()
+      @JsonKey(unknownEnumValue: InstanceMigrationStatus.pending)
       InstanceMigrationStatus migrationStatus});
 
   $DnsConfigurationCopyWith<$Res>? get cloudfront;
@@ -3327,16 +4194,16 @@ abstract class _$$AppInstanceImplCopyWith<$Res>
   $Res call(
       {String id,
       String appId,
-      @AppPlatformConverter() AppPlatform platform,
+      @JsonKey(unknownEnumValue: AppPlatform.web) AppPlatform platform,
       String? host,
       String? appIdentifier,
       String? developerName,
       String? developerIdentifier,
       List<AppBuild> builds,
-      @InstanceStatusConverter() InstanceStatus status,
+      @JsonKey(unknownEnumValue: InstanceStatus.pending) InstanceStatus status,
       DnsConfiguration? cloudfront,
       DnsConfiguration? certificate,
-      @InstanceMigrationStatusConverter()
+      @JsonKey(unknownEnumValue: InstanceMigrationStatus.pending)
       InstanceMigrationStatus migrationStatus});
 
   @override
@@ -3430,16 +4297,18 @@ class _$AppInstanceImpl implements _AppInstance {
   const _$AppInstanceImpl(
       {required this.id,
       required this.appId,
-      @AppPlatformConverter() required this.platform,
+      @JsonKey(unknownEnumValue: AppPlatform.web) required this.platform,
       this.host,
       this.appIdentifier,
       this.developerName,
       this.developerIdentifier,
       final List<AppBuild> builds = const [],
-      @InstanceStatusConverter() required this.status,
+      @JsonKey(unknownEnumValue: InstanceStatus.pending)
+      this.status = InstanceStatus.pending,
       this.cloudfront,
       this.certificate,
-      @InstanceMigrationStatusConverter() required this.migrationStatus})
+      @JsonKey(unknownEnumValue: InstanceMigrationStatus.pending)
+      this.migrationStatus = InstanceMigrationStatus.pending})
       : _builds = builds;
 
   factory _$AppInstanceImpl.fromJson(Map<String, dynamic> json) =>
@@ -3455,7 +4324,7 @@ class _$AppInstanceImpl implements _AppInstance {
 
   /// [platform] is the platform of the instance
   @override
-  @AppPlatformConverter()
+  @JsonKey(unknownEnumValue: AppPlatform.web)
   final AppPlatform platform;
 
   /// [host] is the host of the instance. It is only used when the platform is `AppPlatform.web`
@@ -3490,7 +4359,7 @@ class _$AppInstanceImpl implements _AppInstance {
   /// [status] is the status of the instance. It is only used when the platform is `AppPlatform.web`
   /// For other platforms, this value is only `InstanceStatus.pending` and `InstanceStatus.ready`
   @override
-  @InstanceStatusConverter()
+  @JsonKey(unknownEnumValue: InstanceStatus.pending)
   final InstanceStatus status;
 
   /// [cloudfront] is the DNS of the instance for CloudFront
@@ -3508,7 +4377,7 @@ class _$AppInstanceImpl implements _AppInstance {
   /// Why this field? Simple, we're migrating to a new High Availability architecture, so,
   /// for web instances, we require some changes about the configuration of the DNS.
   @override
-  @InstanceMigrationStatusConverter()
+  @JsonKey(unknownEnumValue: InstanceMigrationStatus.pending)
   final InstanceMigrationStatus migrationStatus;
 
   @override
@@ -3577,20 +4446,21 @@ class _$AppInstanceImpl implements _AppInstance {
 
 abstract class _AppInstance implements AppInstance {
   const factory _AppInstance(
-          {required final String id,
-          required final String appId,
-          @AppPlatformConverter() required final AppPlatform platform,
-          final String? host,
-          final String? appIdentifier,
-          final String? developerName,
-          final String? developerIdentifier,
-          final List<AppBuild> builds,
-          @InstanceStatusConverter() required final InstanceStatus status,
-          final DnsConfiguration? cloudfront,
-          final DnsConfiguration? certificate,
-          @InstanceMigrationStatusConverter()
-          required final InstanceMigrationStatus migrationStatus}) =
-      _$AppInstanceImpl;
+      {required final String id,
+      required final String appId,
+      @JsonKey(unknownEnumValue: AppPlatform.web)
+      required final AppPlatform platform,
+      final String? host,
+      final String? appIdentifier,
+      final String? developerName,
+      final String? developerIdentifier,
+      final List<AppBuild> builds,
+      @JsonKey(unknownEnumValue: InstanceStatus.pending)
+      final InstanceStatus status,
+      final DnsConfiguration? cloudfront,
+      final DnsConfiguration? certificate,
+      @JsonKey(unknownEnumValue: InstanceMigrationStatus.pending)
+      final InstanceMigrationStatus migrationStatus}) = _$AppInstanceImpl;
 
   factory _AppInstance.fromJson(Map<String, dynamic> json) =
       _$AppInstanceImpl.fromJson;
@@ -3605,7 +4475,7 @@ abstract class _AppInstance implements AppInstance {
 
   /// [platform] is the platform of the instance
   @override
-  @AppPlatformConverter()
+  @JsonKey(unknownEnumValue: AppPlatform.web)
   AppPlatform get platform;
 
   /// [host] is the host of the instance. It is only used when the platform is `AppPlatform.web`
@@ -3632,7 +4502,7 @@ abstract class _AppInstance implements AppInstance {
   /// [status] is the status of the instance. It is only used when the platform is `AppPlatform.web`
   /// For other platforms, this value is only `InstanceStatus.pending` and `InstanceStatus.ready`
   @override
-  @InstanceStatusConverter()
+  @JsonKey(unknownEnumValue: InstanceStatus.pending)
   InstanceStatus get status;
 
   /// [cloudfront] is the DNS of the instance for CloudFront
@@ -3650,7 +4520,7 @@ abstract class _AppInstance implements AppInstance {
   /// Why this field? Simple, we're migrating to a new High Availability architecture, so,
   /// for web instances, we require some changes about the configuration of the DNS.
   @override
-  @InstanceMigrationStatusConverter()
+  @JsonKey(unknownEnumValue: InstanceMigrationStatus.pending)
   InstanceMigrationStatus get migrationStatus;
 
   /// Create a copy of AppInstance
@@ -4027,6 +4897,186 @@ abstract class _AppLegal implements AppLegal {
       throw _privateConstructorUsedError;
 }
 
+AppLegalInput _$AppLegalInputFromJson(Map<String, dynamic> json) {
+  return _AppLegalInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AppLegalInput {
+  String get companyName => throw _privateConstructorUsedError;
+  set companyName(String value) => throw _privateConstructorUsedError;
+  String get companyUrl => throw _privateConstructorUsedError;
+  set companyUrl(String value) => throw _privateConstructorUsedError;
+  String get privacyPolicy => throw _privateConstructorUsedError;
+  set privacyPolicy(String value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AppLegalInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AppLegalInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AppLegalInputCopyWith<AppLegalInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AppLegalInputCopyWith<$Res> {
+  factory $AppLegalInputCopyWith(
+          AppLegalInput value, $Res Function(AppLegalInput) then) =
+      _$AppLegalInputCopyWithImpl<$Res, AppLegalInput>;
+  @useResult
+  $Res call({String companyName, String companyUrl, String privacyPolicy});
+}
+
+/// @nodoc
+class _$AppLegalInputCopyWithImpl<$Res, $Val extends AppLegalInput>
+    implements $AppLegalInputCopyWith<$Res> {
+  _$AppLegalInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AppLegalInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? companyName = null,
+    Object? companyUrl = null,
+    Object? privacyPolicy = null,
+  }) {
+    return _then(_value.copyWith(
+      companyName: null == companyName
+          ? _value.companyName
+          : companyName // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyUrl: null == companyUrl
+          ? _value.companyUrl
+          : companyUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      privacyPolicy: null == privacyPolicy
+          ? _value.privacyPolicy
+          : privacyPolicy // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AppLegalInputImplCopyWith<$Res>
+    implements $AppLegalInputCopyWith<$Res> {
+  factory _$$AppLegalInputImplCopyWith(
+          _$AppLegalInputImpl value, $Res Function(_$AppLegalInputImpl) then) =
+      __$$AppLegalInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String companyName, String companyUrl, String privacyPolicy});
+}
+
+/// @nodoc
+class __$$AppLegalInputImplCopyWithImpl<$Res>
+    extends _$AppLegalInputCopyWithImpl<$Res, _$AppLegalInputImpl>
+    implements _$$AppLegalInputImplCopyWith<$Res> {
+  __$$AppLegalInputImplCopyWithImpl(
+      _$AppLegalInputImpl _value, $Res Function(_$AppLegalInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppLegalInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? companyName = null,
+    Object? companyUrl = null,
+    Object? privacyPolicy = null,
+  }) {
+    return _then(_$AppLegalInputImpl(
+      companyName: null == companyName
+          ? _value.companyName
+          : companyName // ignore: cast_nullable_to_non_nullable
+              as String,
+      companyUrl: null == companyUrl
+          ? _value.companyUrl
+          : companyUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      privacyPolicy: null == privacyPolicy
+          ? _value.privacyPolicy
+          : privacyPolicy // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AppLegalInputImpl implements _AppLegalInput {
+  _$AppLegalInputImpl(
+      {this.companyName = '', this.companyUrl = '', this.privacyPolicy = ''});
+
+  factory _$AppLegalInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppLegalInputImplFromJson(json);
+
+  @override
+  @JsonKey()
+  String companyName;
+  @override
+  @JsonKey()
+  String companyUrl;
+  @override
+  @JsonKey()
+  String privacyPolicy;
+
+  @override
+  String toString() {
+    return 'AppLegalInput(companyName: $companyName, companyUrl: $companyUrl, privacyPolicy: $privacyPolicy)';
+  }
+
+  /// Create a copy of AppLegalInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppLegalInputImplCopyWith<_$AppLegalInputImpl> get copyWith =>
+      __$$AppLegalInputImplCopyWithImpl<_$AppLegalInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AppLegalInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AppLegalInput implements AppLegalInput {
+  factory _AppLegalInput(
+      {String companyName,
+      String companyUrl,
+      String privacyPolicy}) = _$AppLegalInputImpl;
+
+  factory _AppLegalInput.fromJson(Map<String, dynamic> json) =
+      _$AppLegalInputImpl.fromJson;
+
+  @override
+  String get companyName;
+  set companyName(String value);
+  @override
+  String get companyUrl;
+  set companyUrl(String value);
+  @override
+  String get privacyPolicy;
+  set privacyPolicy(String value);
+
+  /// Create a copy of AppLegalInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AppLegalInputImplCopyWith<_$AppLegalInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 AppLoginDesign _$AppLoginDesignFromJson(Map<String, dynamic> json) {
   return _AppLoginDesign.fromJson(json);
 }
@@ -4052,7 +5102,7 @@ mixin _$AppLoginDesign {
   ///
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [mode] field in the [background] field and use it
-  @BackgroundModeOrNullConverter()
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
   BackgroundMode? get mode => throw _privateConstructorUsedError;
 
   /// [description] defines any additional text that should be displayed below the logo in case that
@@ -4060,7 +5110,7 @@ mixin _$AppLoginDesign {
   String? get description => throw _privateConstructorUsedError;
 
   /// [design] defines the design of the login.
-  @LayoutDesignOrNullConverter()
+  @JsonKey(unknownEnumValue: LayoutDesign.right)
   LayoutDesign? get design => throw _privateConstructorUsedError;
 
   /// Serializes this AppLoginDesign to a JSON map.
@@ -4082,9 +5132,9 @@ abstract class $AppLoginDesignCopyWith<$Res> {
   $Res call(
       {@ColorOrNullConverter() Color? backgroundColor,
       String? backgroundImage,
-      @BackgroundModeOrNullConverter() BackgroundMode? mode,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid) BackgroundMode? mode,
       String? description,
-      @LayoutDesignOrNullConverter() LayoutDesign? design});
+      @JsonKey(unknownEnumValue: LayoutDesign.right) LayoutDesign? design});
 }
 
 /// @nodoc
@@ -4144,9 +5194,9 @@ abstract class _$$AppLoginDesignImplCopyWith<$Res>
   $Res call(
       {@ColorOrNullConverter() Color? backgroundColor,
       String? backgroundImage,
-      @BackgroundModeOrNullConverter() BackgroundMode? mode,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid) BackgroundMode? mode,
       String? description,
-      @LayoutDesignOrNullConverter() LayoutDesign? design});
+      @JsonKey(unknownEnumValue: LayoutDesign.right) LayoutDesign? design});
 }
 
 /// @nodoc
@@ -4199,9 +5249,9 @@ class _$AppLoginDesignImpl implements _AppLoginDesign {
   const _$AppLoginDesignImpl(
       {@ColorOrNullConverter() this.backgroundColor,
       this.backgroundImage,
-      @BackgroundModeOrNullConverter() this.mode,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid) this.mode,
       this.description,
-      @LayoutDesignOrNullConverter() this.design});
+      @JsonKey(unknownEnumValue: LayoutDesign.right) this.design});
 
   factory _$AppLoginDesignImpl.fromJson(Map<String, dynamic> json) =>
       _$$AppLoginDesignImplFromJson(json);
@@ -4228,7 +5278,7 @@ class _$AppLoginDesignImpl implements _AppLoginDesign {
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [mode] field in the [background] field and use it
   @override
-  @BackgroundModeOrNullConverter()
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
   final BackgroundMode? mode;
 
   /// [description] defines any additional text that should be displayed below the logo in case that
@@ -4238,7 +5288,7 @@ class _$AppLoginDesignImpl implements _AppLoginDesign {
 
   /// [design] defines the design of the login.
   @override
-  @LayoutDesignOrNullConverter()
+  @JsonKey(unknownEnumValue: LayoutDesign.right)
   final LayoutDesign? design;
 
   @override
@@ -4285,12 +5335,13 @@ class _$AppLoginDesignImpl implements _AppLoginDesign {
 
 abstract class _AppLoginDesign implements AppLoginDesign {
   const factory _AppLoginDesign(
-          {@ColorOrNullConverter() final Color? backgroundColor,
-          final String? backgroundImage,
-          @BackgroundModeOrNullConverter() final BackgroundMode? mode,
-          final String? description,
-          @LayoutDesignOrNullConverter() final LayoutDesign? design}) =
-      _$AppLoginDesignImpl;
+      {@ColorOrNullConverter() final Color? backgroundColor,
+      final String? backgroundImage,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid)
+      final BackgroundMode? mode,
+      final String? description,
+      @JsonKey(unknownEnumValue: LayoutDesign.right)
+      final LayoutDesign? design}) = _$AppLoginDesignImpl;
 
   factory _AppLoginDesign.fromJson(Map<String, dynamic> json) =
       _$AppLoginDesignImpl.fromJson;
@@ -4317,7 +5368,7 @@ abstract class _AppLoginDesign implements AppLoginDesign {
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [mode] field in the [background] field and use it
   @override
-  @BackgroundModeOrNullConverter()
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
   BackgroundMode? get mode;
 
   /// [description] defines any additional text that should be displayed below the logo in case that
@@ -4327,7 +5378,7 @@ abstract class _AppLoginDesign implements AppLoginDesign {
 
   /// [design] defines the design of the login.
   @override
-  @LayoutDesignOrNullConverter()
+  @JsonKey(unknownEnumValue: LayoutDesign.right)
   LayoutDesign? get design;
 
   /// Create a copy of AppLoginDesign
@@ -4338,157 +5389,354 @@ abstract class _AppLoginDesign implements AppLoginDesign {
       throw _privateConstructorUsedError;
 }
 
-AppTitleMode _$AppTitleModeFromJson(Map<String, dynamic> json) {
-  return _AppTitleMode.fromJson(json);
+AppLoginDesignInput _$AppLoginDesignInputFromJson(Map<String, dynamic> json) {
+  return _AppLoginDesignInput.fromJson(json);
 }
 
 /// @nodoc
-mixin _$AppTitleMode {
-  @TitleModeConverter()
-  TitleMode get mode => throw _privateConstructorUsedError;
+mixin _$AppLoginDesignInput {
+  /// [backgroundColor] defines the background color of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [color] field from it.
+  @ColorOrNullConverter()
+  Color? get backgroundColor => throw _privateConstructorUsedError;
 
-  /// Serializes this AppTitleMode to a JSON map.
+  /// [backgroundColor] defines the background color of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [color] field from it.
+  @ColorOrNullConverter()
+  set backgroundColor(Color? value) => throw _privateConstructorUsedError;
+
+  /// [backgroundImage] defines the background image of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [image] field from it.
+  String? get backgroundImage => throw _privateConstructorUsedError;
+
+  /// [backgroundImage] defines the background image of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [image] field from it.
+  set backgroundImage(String? value) => throw _privateConstructorUsedError;
+
+  /// [logo] defines the logo of the login.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [mode] field in the [background] field and use it
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
+  BackgroundMode? get mode => throw _privateConstructorUsedError;
+
+  /// [logo] defines the logo of the login.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [mode] field in the [background] field and use it
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
+  set mode(BackgroundMode? value) => throw _privateConstructorUsedError;
+
+  /// [description] defines any additional text that should be displayed below the logo in case that
+  /// the [layout] is [LoginLayout.left] or [LoginLayout.right].
+  String? get description => throw _privateConstructorUsedError;
+
+  /// [description] defines any additional text that should be displayed below the logo in case that
+  /// the [layout] is [LoginLayout.left] or [LoginLayout.right].
+  set description(String? value) => throw _privateConstructorUsedError;
+
+  /// [design] defines the design of the login.
+  @JsonKey(unknownEnumValue: LayoutDesign.right)
+  LayoutDesign? get design => throw _privateConstructorUsedError;
+
+  /// [design] defines the design of the login.
+  @JsonKey(unknownEnumValue: LayoutDesign.right)
+  set design(LayoutDesign? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AppLoginDesignInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of AppTitleMode
+  /// Create a copy of AppLoginDesignInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AppTitleModeCopyWith<AppTitleMode> get copyWith =>
+  $AppLoginDesignInputCopyWith<AppLoginDesignInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AppTitleModeCopyWith<$Res> {
-  factory $AppTitleModeCopyWith(
-          AppTitleMode value, $Res Function(AppTitleMode) then) =
-      _$AppTitleModeCopyWithImpl<$Res, AppTitleMode>;
+abstract class $AppLoginDesignInputCopyWith<$Res> {
+  factory $AppLoginDesignInputCopyWith(
+          AppLoginDesignInput value, $Res Function(AppLoginDesignInput) then) =
+      _$AppLoginDesignInputCopyWithImpl<$Res, AppLoginDesignInput>;
   @useResult
-  $Res call({@TitleModeConverter() TitleMode mode});
+  $Res call(
+      {@ColorOrNullConverter() Color? backgroundColor,
+      String? backgroundImage,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid) BackgroundMode? mode,
+      String? description,
+      @JsonKey(unknownEnumValue: LayoutDesign.right) LayoutDesign? design});
 }
 
 /// @nodoc
-class _$AppTitleModeCopyWithImpl<$Res, $Val extends AppTitleMode>
-    implements $AppTitleModeCopyWith<$Res> {
-  _$AppTitleModeCopyWithImpl(this._value, this._then);
+class _$AppLoginDesignInputCopyWithImpl<$Res, $Val extends AppLoginDesignInput>
+    implements $AppLoginDesignInputCopyWith<$Res> {
+  _$AppLoginDesignInputCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AppTitleMode
+  /// Create a copy of AppLoginDesignInput
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mode = null,
+    Object? backgroundColor = freezed,
+    Object? backgroundImage = freezed,
+    Object? mode = freezed,
+    Object? description = freezed,
+    Object? design = freezed,
   }) {
     return _then(_value.copyWith(
-      mode: null == mode
+      backgroundColor: freezed == backgroundColor
+          ? _value.backgroundColor
+          : backgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      backgroundImage: freezed == backgroundImage
+          ? _value.backgroundImage
+          : backgroundImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mode: freezed == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
-              as TitleMode,
+              as BackgroundMode?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      design: freezed == design
+          ? _value.design
+          : design // ignore: cast_nullable_to_non_nullable
+              as LayoutDesign?,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$AppTitleModeImplCopyWith<$Res>
-    implements $AppTitleModeCopyWith<$Res> {
-  factory _$$AppTitleModeImplCopyWith(
-          _$AppTitleModeImpl value, $Res Function(_$AppTitleModeImpl) then) =
-      __$$AppTitleModeImplCopyWithImpl<$Res>;
+abstract class _$$AppLoginDesignInputImplCopyWith<$Res>
+    implements $AppLoginDesignInputCopyWith<$Res> {
+  factory _$$AppLoginDesignInputImplCopyWith(_$AppLoginDesignInputImpl value,
+          $Res Function(_$AppLoginDesignInputImpl) then) =
+      __$$AppLoginDesignInputImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@TitleModeConverter() TitleMode mode});
+  $Res call(
+      {@ColorOrNullConverter() Color? backgroundColor,
+      String? backgroundImage,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid) BackgroundMode? mode,
+      String? description,
+      @JsonKey(unknownEnumValue: LayoutDesign.right) LayoutDesign? design});
 }
 
 /// @nodoc
-class __$$AppTitleModeImplCopyWithImpl<$Res>
-    extends _$AppTitleModeCopyWithImpl<$Res, _$AppTitleModeImpl>
-    implements _$$AppTitleModeImplCopyWith<$Res> {
-  __$$AppTitleModeImplCopyWithImpl(
-      _$AppTitleModeImpl _value, $Res Function(_$AppTitleModeImpl) _then)
+class __$$AppLoginDesignInputImplCopyWithImpl<$Res>
+    extends _$AppLoginDesignInputCopyWithImpl<$Res, _$AppLoginDesignInputImpl>
+    implements _$$AppLoginDesignInputImplCopyWith<$Res> {
+  __$$AppLoginDesignInputImplCopyWithImpl(_$AppLoginDesignInputImpl _value,
+      $Res Function(_$AppLoginDesignInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AppTitleMode
+  /// Create a copy of AppLoginDesignInput
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? mode = null,
+    Object? backgroundColor = freezed,
+    Object? backgroundImage = freezed,
+    Object? mode = freezed,
+    Object? description = freezed,
+    Object? design = freezed,
   }) {
-    return _then(_$AppTitleModeImpl(
-      mode: null == mode
+    return _then(_$AppLoginDesignInputImpl(
+      backgroundColor: freezed == backgroundColor
+          ? _value.backgroundColor
+          : backgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      backgroundImage: freezed == backgroundImage
+          ? _value.backgroundImage
+          : backgroundImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mode: freezed == mode
           ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
-              as TitleMode,
+              as BackgroundMode?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      design: freezed == design
+          ? _value.design
+          : design // ignore: cast_nullable_to_non_nullable
+              as LayoutDesign?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$AppTitleModeImpl implements _AppTitleMode {
-  const _$AppTitleModeImpl({@TitleModeConverter() required this.mode});
+class _$AppLoginDesignInputImpl implements _AppLoginDesignInput {
+  _$AppLoginDesignInputImpl(
+      {@ColorOrNullConverter() this.backgroundColor,
+      this.backgroundImage,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid) this.mode,
+      this.description,
+      @JsonKey(unknownEnumValue: LayoutDesign.right) this.design});
 
-  factory _$AppTitleModeImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AppTitleModeImplFromJson(json);
+  factory _$AppLoginDesignInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppLoginDesignInputImplFromJson(json);
 
+  /// [backgroundColor] defines the background color of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [color] field from it.
   @override
-  @TitleModeConverter()
-  final TitleMode mode;
+  @ColorOrNullConverter()
+  Color? backgroundColor;
+
+  /// [backgroundImage] defines the background image of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [image] field from it.
+  @override
+  String? backgroundImage;
+
+  /// [logo] defines the logo of the login.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [mode] field in the [background] field and use it
+  @override
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
+  BackgroundMode? mode;
+
+  /// [description] defines any additional text that should be displayed below the logo in case that
+  /// the [layout] is [LoginLayout.left] or [LoginLayout.right].
+  @override
+  String? description;
+
+  /// [design] defines the design of the login.
+  @override
+  @JsonKey(unknownEnumValue: LayoutDesign.right)
+  LayoutDesign? design;
 
   @override
   String toString() {
-    return 'AppTitleMode(mode: $mode)';
+    return 'AppLoginDesignInput(backgroundColor: $backgroundColor, backgroundImage: $backgroundImage, mode: $mode, description: $description, design: $design)';
   }
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AppTitleModeImpl &&
-            (identical(other.mode, mode) || other.mode == mode));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, mode);
-
-  /// Create a copy of AppTitleMode
+  /// Create a copy of AppLoginDesignInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AppTitleModeImplCopyWith<_$AppTitleModeImpl> get copyWith =>
-      __$$AppTitleModeImplCopyWithImpl<_$AppTitleModeImpl>(this, _$identity);
+  _$$AppLoginDesignInputImplCopyWith<_$AppLoginDesignInputImpl> get copyWith =>
+      __$$AppLoginDesignInputImplCopyWithImpl<_$AppLoginDesignInputImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$AppTitleModeImplToJson(
+    return _$$AppLoginDesignInputImplToJson(
       this,
     );
   }
 }
 
-abstract class _AppTitleMode implements AppTitleMode {
-  const factory _AppTitleMode(
-          {@TitleModeConverter() required final TitleMode mode}) =
-      _$AppTitleModeImpl;
+abstract class _AppLoginDesignInput implements AppLoginDesignInput {
+  factory _AppLoginDesignInput(
+      {@ColorOrNullConverter() Color? backgroundColor,
+      String? backgroundImage,
+      @JsonKey(unknownEnumValue: BackgroundMode.solid) BackgroundMode? mode,
+      String? description,
+      @JsonKey(unknownEnumValue: LayoutDesign.right)
+      LayoutDesign? design}) = _$AppLoginDesignInputImpl;
 
-  factory _AppTitleMode.fromJson(Map<String, dynamic> json) =
-      _$AppTitleModeImpl.fromJson;
+  factory _AppLoginDesignInput.fromJson(Map<String, dynamic> json) =
+      _$AppLoginDesignInputImpl.fromJson;
 
+  /// [backgroundColor] defines the background color of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [color] field from it.
   @override
-  @TitleModeConverter()
-  TitleMode get mode;
+  @ColorOrNullConverter()
+  Color? get backgroundColor;
 
-  /// Create a copy of AppTitleMode
+  /// [backgroundColor] defines the background color of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [color] field from it.
+  @ColorOrNullConverter()
+  set backgroundColor(Color? value);
+
+  /// [backgroundImage] defines the background image of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [image] field from it.
+  @override
+  String? get backgroundImage;
+
+  /// [backgroundImage] defines the background image of the login.
+  /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [background] field and use the [image] field from it.
+  set backgroundImage(String? value);
+
+  /// [logo] defines the logo of the login.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [mode] field in the [background] field and use it
+  @override
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
+  BackgroundMode? get mode;
+
+  /// [logo] defines the logo of the login.
+  ///
+  /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
+  /// for the [mode] field in the [background] field and use it
+  @JsonKey(unknownEnumValue: BackgroundMode.solid)
+  set mode(BackgroundMode? value);
+
+  /// [description] defines any additional text that should be displayed below the logo in case that
+  /// the [layout] is [LoginLayout.left] or [LoginLayout.right].
+  @override
+  String? get description;
+
+  /// [description] defines any additional text that should be displayed below the logo in case that
+  /// the [layout] is [LoginLayout.left] or [LoginLayout.right].
+  set description(String? value);
+
+  /// [design] defines the design of the login.
+  @override
+  @JsonKey(unknownEnumValue: LayoutDesign.right)
+  LayoutDesign? get design;
+
+  /// [design] defines the design of the login.
+  @JsonKey(unknownEnumValue: LayoutDesign.right)
+  set design(LayoutDesign? value);
+
+  /// Create a copy of AppLoginDesignInput
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AppTitleModeImplCopyWith<_$AppTitleModeImpl> get copyWith =>
+  _$$AppLoginDesignInputImplCopyWith<_$AppLoginDesignInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -4499,10 +5747,10 @@ AppVersion _$AppVersionFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppVersion {
   String get id => throw _privateConstructorUsedError;
-  @AppInternalIdentifierConverter()
-  AppInternalIdentifier get app => throw _privateConstructorUsedError;
-  @AppPlatformConverter()
-  AppPlatform get platform => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
+  AppInternalIdentifier? get app => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: AppPlatform.web)
+  AppPlatform? get platform => throw _privateConstructorUsedError;
   String? get fileUri => throw _privateConstructorUsedError;
   int get buildNumber => throw _privateConstructorUsedError;
   String get buildName => throw _privateConstructorUsedError;
@@ -4527,8 +5775,9 @@ abstract class $AppVersionCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      @AppInternalIdentifierConverter() AppInternalIdentifier app,
-      @AppPlatformConverter() AppPlatform platform,
+      @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
+      AppInternalIdentifier? app,
+      @JsonKey(unknownEnumValue: AppPlatform.web) AppPlatform? platform,
       String? fileUri,
       int buildNumber,
       String buildName,
@@ -4551,8 +5800,8 @@ class _$AppVersionCopyWithImpl<$Res, $Val extends AppVersion>
   @override
   $Res call({
     Object? id = null,
-    Object? app = null,
-    Object? platform = null,
+    Object? app = freezed,
+    Object? platform = freezed,
     Object? fileUri = freezed,
     Object? buildNumber = null,
     Object? buildName = null,
@@ -4563,14 +5812,14 @@ class _$AppVersionCopyWithImpl<$Res, $Val extends AppVersion>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      app: null == app
+      app: freezed == app
           ? _value.app
           : app // ignore: cast_nullable_to_non_nullable
-              as AppInternalIdentifier,
-      platform: null == platform
+              as AppInternalIdentifier?,
+      platform: freezed == platform
           ? _value.platform
           : platform // ignore: cast_nullable_to_non_nullable
-              as AppPlatform,
+              as AppPlatform?,
       fileUri: freezed == fileUri
           ? _value.fileUri
           : fileUri // ignore: cast_nullable_to_non_nullable
@@ -4601,8 +5850,9 @@ abstract class _$$AppVersionImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      @AppInternalIdentifierConverter() AppInternalIdentifier app,
-      @AppPlatformConverter() AppPlatform platform,
+      @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
+      AppInternalIdentifier? app,
+      @JsonKey(unknownEnumValue: AppPlatform.web) AppPlatform? platform,
       String? fileUri,
       int buildNumber,
       String buildName,
@@ -4623,8 +5873,8 @@ class __$$AppVersionImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? app = null,
-    Object? platform = null,
+    Object? app = freezed,
+    Object? platform = freezed,
     Object? fileUri = freezed,
     Object? buildNumber = null,
     Object? buildName = null,
@@ -4635,14 +5885,14 @@ class __$$AppVersionImplCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      app: null == app
+      app: freezed == app
           ? _value.app
           : app // ignore: cast_nullable_to_non_nullable
-              as AppInternalIdentifier,
-      platform: null == platform
+              as AppInternalIdentifier?,
+      platform: freezed == platform
           ? _value.platform
           : platform // ignore: cast_nullable_to_non_nullable
-              as AppPlatform,
+              as AppPlatform?,
       fileUri: freezed == fileUri
           ? _value.fileUri
           : fileUri // ignore: cast_nullable_to_non_nullable
@@ -4668,8 +5918,8 @@ class __$$AppVersionImplCopyWithImpl<$Res>
 class _$AppVersionImpl implements _AppVersion {
   const _$AppVersionImpl(
       {required this.id,
-      @AppInternalIdentifierConverter() required this.app,
-      @AppPlatformConverter() required this.platform,
+      @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) this.app,
+      @JsonKey(unknownEnumValue: AppPlatform.web) this.platform,
       this.fileUri,
       required this.buildNumber,
       required this.buildName,
@@ -4681,11 +5931,11 @@ class _$AppVersionImpl implements _AppVersion {
   @override
   final String id;
   @override
-  @AppInternalIdentifierConverter()
-  final AppInternalIdentifier app;
+  @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
+  final AppInternalIdentifier? app;
   @override
-  @AppPlatformConverter()
-  final AppPlatform platform;
+  @JsonKey(unknownEnumValue: AppPlatform.web)
+  final AppPlatform? platform;
   @override
   final String? fileUri;
   @override
@@ -4742,15 +5992,15 @@ class _$AppVersionImpl implements _AppVersion {
 
 abstract class _AppVersion implements AppVersion {
   const factory _AppVersion(
-          {required final String id,
-          @AppInternalIdentifierConverter()
-          required final AppInternalIdentifier app,
-          @AppPlatformConverter() required final AppPlatform platform,
-          final String? fileUri,
-          required final int buildNumber,
-          required final String buildName,
-          @TimestampConverter() required final DateTime releasedAt}) =
-      _$AppVersionImpl;
+      {required final String id,
+      @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
+      final AppInternalIdentifier? app,
+      @JsonKey(unknownEnumValue: AppPlatform.web) final AppPlatform? platform,
+      final String? fileUri,
+      required final int buildNumber,
+      required final String buildName,
+      @TimestampConverter()
+      required final DateTime releasedAt}) = _$AppVersionImpl;
 
   factory _AppVersion.fromJson(Map<String, dynamic> json) =
       _$AppVersionImpl.fromJson;
@@ -4758,11 +6008,11 @@ abstract class _AppVersion implements AppVersion {
   @override
   String get id;
   @override
-  @AppInternalIdentifierConverter()
-  AppInternalIdentifier get app;
+  @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
+  AppInternalIdentifier? get app;
   @override
-  @AppPlatformConverter()
-  AppPlatform get platform;
+  @JsonKey(unknownEnumValue: AppPlatform.web)
+  AppPlatform? get platform;
   @override
   String? get fileUri;
   @override
@@ -4788,11 +6038,11 @@ AppFont _$AppFontFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$AppFont {
   /// [source] defines where is stored the font
-  @FontSourceConverter()
+  @JsonKey(unknownEnumValue: FontSource.google)
   FontSource get source => throw _privateConstructorUsedError;
 
   /// [name] is the name of the font to load
-  /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Fira Sans Condensed`
+  /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Ubuntu`
   /// Check out [`google_fonts` package](https://pub.dev/packages/google_fonts) for more information
   String get name => throw _privateConstructorUsedError;
 
@@ -4815,7 +6065,9 @@ abstract class $AppFontCopyWith<$Res> {
       _$AppFontCopyWithImpl<$Res, AppFont>;
   @useResult
   $Res call(
-      {@FontSourceConverter() FontSource source, String name, String? uri});
+      {@JsonKey(unknownEnumValue: FontSource.google) FontSource source,
+      String name,
+      String? uri});
 }
 
 /// @nodoc
@@ -4862,7 +6114,9 @@ abstract class _$$AppFontImplCopyWith<$Res> implements $AppFontCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@FontSourceConverter() FontSource source, String name, String? uri});
+      {@JsonKey(unknownEnumValue: FontSource.google) FontSource source,
+      String name,
+      String? uri});
 }
 
 /// @nodoc
@@ -4903,8 +6157,9 @@ class __$$AppFontImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$AppFontImpl implements _AppFont {
   const _$AppFontImpl(
-      {@FontSourceConverter() this.source = FontSource.google,
-      this.name = 'Fira Sans Condensed',
+      {@JsonKey(unknownEnumValue: FontSource.google)
+      this.source = FontSource.google,
+      this.name = 'Ubuntu',
       this.uri});
 
   factory _$AppFontImpl.fromJson(Map<String, dynamic> json) =>
@@ -4912,12 +6167,11 @@ class _$AppFontImpl implements _AppFont {
 
   /// [source] defines where is stored the font
   @override
-  @JsonKey()
-  @FontSourceConverter()
+  @JsonKey(unknownEnumValue: FontSource.google)
   final FontSource source;
 
   /// [name] is the name of the font to load
-  /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Fira Sans Condensed`
+  /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Ubuntu`
   /// Check out [`google_fonts` package](https://pub.dev/packages/google_fonts) for more information
   @override
   @JsonKey()
@@ -4965,7 +6219,7 @@ class _$AppFontImpl implements _AppFont {
 
 abstract class _AppFont implements AppFont {
   const factory _AppFont(
-      {@FontSourceConverter() final FontSource source,
+      {@JsonKey(unknownEnumValue: FontSource.google) final FontSource source,
       final String name,
       final String? uri}) = _$AppFontImpl;
 
@@ -4973,11 +6227,11 @@ abstract class _AppFont implements AppFont {
 
   /// [source] defines where is stored the font
   @override
-  @FontSourceConverter()
+  @JsonKey(unknownEnumValue: FontSource.google)
   FontSource get source;
 
   /// [name] is the name of the font to load
-  /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Fira Sans Condensed`
+  /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Ubuntu`
   /// Check out [`google_fonts` package](https://pub.dev/packages/google_fonts) for more information
   @override
   String get name;
@@ -4992,5 +6246,239 @@ abstract class _AppFont implements AppFont {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppFontImplCopyWith<_$AppFontImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+AppFontInput _$AppFontInputFromJson(Map<String, dynamic> json) {
+  return _AppFontInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AppFontInput {
+  /// [source] defines where is stored the font
+  @JsonKey(unknownEnumValue: FontSource.google)
+  FontSource get source => throw _privateConstructorUsedError;
+
+  /// [source] defines where is stored the font
+  @JsonKey(unknownEnumValue: FontSource.google)
+  set source(FontSource value) => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the font to load
+  /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Ubuntu`
+  /// Check out [`google_fonts` package](https://pub.dev/packages/google_fonts) for more information
+  String get name => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the font to load
+  /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Ubuntu`
+  /// Check out [`google_fonts` package](https://pub.dev/packages/google_fonts) for more information
+  set name(String value) => throw _privateConstructorUsedError;
+
+  /// [uri] is the url of the font in the remote server or the path of the local file
+  /// For example: `https://example.com/font.ttf` or `assets/fonts/font.ttf`
+  String? get uri => throw _privateConstructorUsedError;
+
+  /// [uri] is the url of the font in the remote server or the path of the local file
+  /// For example: `https://example.com/font.ttf` or `assets/fonts/font.ttf`
+  set uri(String? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AppFontInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AppFontInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AppFontInputCopyWith<AppFontInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AppFontInputCopyWith<$Res> {
+  factory $AppFontInputCopyWith(
+          AppFontInput value, $Res Function(AppFontInput) then) =
+      _$AppFontInputCopyWithImpl<$Res, AppFontInput>;
+  @useResult
+  $Res call(
+      {@JsonKey(unknownEnumValue: FontSource.google) FontSource source,
+      String name,
+      String? uri});
+}
+
+/// @nodoc
+class _$AppFontInputCopyWithImpl<$Res, $Val extends AppFontInput>
+    implements $AppFontInputCopyWith<$Res> {
+  _$AppFontInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AppFontInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = null,
+    Object? name = null,
+    Object? uri = freezed,
+  }) {
+    return _then(_value.copyWith(
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as FontSource,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      uri: freezed == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AppFontInputImplCopyWith<$Res>
+    implements $AppFontInputCopyWith<$Res> {
+  factory _$$AppFontInputImplCopyWith(
+          _$AppFontInputImpl value, $Res Function(_$AppFontInputImpl) then) =
+      __$$AppFontInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(unknownEnumValue: FontSource.google) FontSource source,
+      String name,
+      String? uri});
+}
+
+/// @nodoc
+class __$$AppFontInputImplCopyWithImpl<$Res>
+    extends _$AppFontInputCopyWithImpl<$Res, _$AppFontInputImpl>
+    implements _$$AppFontInputImplCopyWith<$Res> {
+  __$$AppFontInputImplCopyWithImpl(
+      _$AppFontInputImpl _value, $Res Function(_$AppFontInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AppFontInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? source = null,
+    Object? name = null,
+    Object? uri = freezed,
+  }) {
+    return _then(_$AppFontInputImpl(
+      source: null == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as FontSource,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      uri: freezed == uri
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AppFontInputImpl implements _AppFontInput {
+  _$AppFontInputImpl(
+      {@JsonKey(unknownEnumValue: FontSource.google)
+      this.source = FontSource.google,
+      this.name = 'Ubuntu',
+      this.uri});
+
+  factory _$AppFontInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AppFontInputImplFromJson(json);
+
+  /// [source] defines where is stored the font
+  @override
+  @JsonKey(unknownEnumValue: FontSource.google)
+  FontSource source;
+
+  /// [name] is the name of the font to load
+  /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Ubuntu`
+  /// Check out [`google_fonts` package](https://pub.dev/packages/google_fonts) for more information
+  @override
+  @JsonKey()
+  String name;
+
+  /// [uri] is the url of the font in the remote server or the path of the local file
+  /// For example: `https://example.com/font.ttf` or `assets/fonts/font.ttf`
+  @override
+  String? uri;
+
+  @override
+  String toString() {
+    return 'AppFontInput(source: $source, name: $name, uri: $uri)';
+  }
+
+  /// Create a copy of AppFontInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AppFontInputImplCopyWith<_$AppFontInputImpl> get copyWith =>
+      __$$AppFontInputImplCopyWithImpl<_$AppFontInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AppFontInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AppFontInput implements AppFontInput {
+  factory _AppFontInput(
+      {@JsonKey(unknownEnumValue: FontSource.google) FontSource source,
+      String name,
+      String? uri}) = _$AppFontInputImpl;
+
+  factory _AppFontInput.fromJson(Map<String, dynamic> json) =
+      _$AppFontInputImpl.fromJson;
+
+  /// [source] defines where is stored the font
+  @override
+  @JsonKey(unknownEnumValue: FontSource.google)
+  FontSource get source;
+
+  /// [source] defines where is stored the font
+  @JsonKey(unknownEnumValue: FontSource.google)
+  set source(FontSource value);
+
+  /// [name] is the name of the font to load
+  /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Ubuntu`
+  /// Check out [`google_fonts` package](https://pub.dev/packages/google_fonts) for more information
+  @override
+  String get name;
+
+  /// [name] is the name of the font to load
+  /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Ubuntu`
+  /// Check out [`google_fonts` package](https://pub.dev/packages/google_fonts) for more information
+  set name(String value);
+
+  /// [uri] is the url of the font in the remote server or the path of the local file
+  /// For example: `https://example.com/font.ttf` or `assets/fonts/font.ttf`
+  @override
+  String? get uri;
+
+  /// [uri] is the url of the font in the remote server or the path of the local file
+  /// For example: `https://example.com/font.ttf` or `assets/fonts/font.ttf`
+  set uri(String? value);
+
+  /// Create a copy of AppFontInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AppFontInputImplCopyWith<_$AppFontInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

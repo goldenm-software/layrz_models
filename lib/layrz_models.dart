@@ -2,13 +2,15 @@ library layrz_models;
 
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
+import 'package:collection/collection.dart';
+import 'package:flutter/material.dart' hide Action;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_icons/layrz_icons.dart';
+import 'package:layrz_models/src/operations/operations.dart';
 
+// Internal imports
 import 'src/app/app.dart';
 import 'src/assets/assets.dart';
-// Internal imports
 // import 'src/brickhouse/brickhouse.dart';
 import 'src/charts/charts.dart';
 import 'src/commands/commands.dart';
@@ -28,6 +30,9 @@ import 'src/workspace/workspace.dart';
 import 'src/users/users.dart';
 // import 'src/ble/ble.dart';
 import 'src/references/references.dart';
+// import 'src/notifications/notifications.dart';
+import 'src/operations/operations.dart';
+import 'src/actions/actions.dart';
 
 // Internal exports
 export 'src/app/app.dart';
@@ -60,15 +65,17 @@ export 'src/workspace/workspace.dart';
 export 'src/users/users.dart';
 export 'src/ble/ble.dart';
 export 'src/references/references.dart';
+export 'src/notifications/notifications.dart';
+export 'src/operations/operations.dart';
+export 'src/actions/actions.dart';
 
 // Freezed
 part 'layrz_models.freezed.dart';
 part 'layrz_models.g.dart';
+
 // Core
 part 'src/access.dart';
-// Accessibility
 part 'src/accessibility/shortcut.dart';
-part 'src/action.dart';
 part 'src/algorithm.dart';
 part 'src/avatar.dart';
 part 'src/billing_plan.dart';
@@ -91,7 +98,6 @@ part 'src/guide.dart';
 part 'src/language.dart';
 part 'src/lint_errors.dart';
 part 'src/monitor/checkpoints.dart';
-part 'src/operation.dart';
 part 'src/presets.dart';
 part 'src/report.dart';
 part 'src/suspended_service.dart';

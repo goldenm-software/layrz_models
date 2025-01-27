@@ -4,8 +4,8 @@ part of '../app.dart';
 class AppVersion with _$AppVersion {
   const factory AppVersion({
     required String id,
-    @AppInternalIdentifierConverter() required AppInternalIdentifier app,
-    @AppPlatformConverter() required AppPlatform platform,
+    @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) AppInternalIdentifier? app,
+    @JsonKey(unknownEnumValue: AppPlatform.web) AppPlatform? platform,
     String? fileUri,
     required int buildNumber,
     required String buildName,

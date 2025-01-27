@@ -8,7 +8,7 @@ class ConfigGrouping with _$ConfigGrouping {
     required String name,
 
     /// [kind] is the kind of the grouping.
-    @ConfigKindConverter() required ConfigKind kind,
+    @JsonKey(unknownEnumValue: ConfigKind.unknown) required ConfigKind kind,
 
     /// [description] is the fallback name of the grouping, when the translation is not available.
     /// This is the translation key.
@@ -31,7 +31,7 @@ class ConfigDefinition with _$ConfigDefinition {
   /// Please, read the documentation of the fields to understand the meaning of each one.
   const factory ConfigDefinition({
     /// [sources] is the list of sources that the command can be executed.
-    @ConfigSourceConverter() List<ConfigSource>? sources,
+    @JsonKey(unknownEnumValue: ConfigSource.unknown) List<ConfigSource>? sources,
 
     /// [parameter] is the name of the parameter, this is also the translation key.
     required String parameter,
@@ -40,7 +40,7 @@ class ConfigDefinition with _$ConfigDefinition {
     String? description,
 
     /// [dataType] is the data type of the parameter.
-    @ConfigPayloadDataTypeConverter() ConfigPayloadDataType? dataType,
+    @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown) ConfigPayloadDataType? dataType,
 
     /// [minValue] is the minimum value of the parameter.
     /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
@@ -80,7 +80,7 @@ class ConfigGroupingInput with _$ConfigGroupingInput {
     @Default('') String name,
 
     /// [kind] is the kind of the grouping.
-    @ConfigKindConverter() @Default(ConfigKind.grouping) ConfigKind kind,
+    @JsonKey(unknownEnumValue: ConfigKind.unknown) @Default(ConfigKind.grouping) ConfigKind kind,
 
     /// [description] is the fallback name of the grouping, when the translation is not available.
     /// This is the translation key.
@@ -100,7 +100,7 @@ class ConfigGroupingInput with _$ConfigGroupingInput {
 class ConfigDefinitionInput with _$ConfigDefinitionInput {
   factory ConfigDefinitionInput({
     /// [sources] is the list of sources that the command can be executed.
-    @ConfigSourceConverter()
+    @JsonKey(unknownEnumValue: ConfigSource.unknown)
     @Default([
       ConfigSource.layrzLink,
       ConfigSource.ble,
@@ -114,7 +114,9 @@ class ConfigDefinitionInput with _$ConfigDefinitionInput {
     String? description,
 
     /// [dataType] is the data type of the parameter.
-    @ConfigPayloadDataTypeConverter() @Default(ConfigPayloadDataType.string) ConfigPayloadDataType dataType,
+    @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
+    @Default(ConfigPayloadDataType.string)
+    ConfigPayloadDataType dataType,
 
     /// [minValue] is the minimum value of the parameter.
     /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]

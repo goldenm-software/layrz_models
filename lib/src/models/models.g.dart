@@ -25,11 +25,12 @@ _$ModelImpl _$$ModelImplFromJson(Map<String, dynamic> json) => _$ModelImpl(
               .toList() ??
           const [],
       confiotCapable: json['confiotCapable'] as bool? ?? false,
-      confiotLayout: json['confiotLayout'] == null
-          ? ConfIoTLayout.standard
-          : const ConfIoTLayoutConverter()
-              .fromJson(json['confiotLayout'] as String),
+      confiotLayout: $enumDecodeNullable(
+              _$ConfIoTLayoutEnumMap, json['confiotLayout'],
+              unknownValue: ConfIoTLayout.standard) ??
+          ConfIoTLayout.standard,
       confiotName: json['confiotName'] as String?,
+      peripheralIdentifier: json['peripheralIdentifier'] as String?,
     );
 
 Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
@@ -45,10 +46,15 @@ Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
       'configStructure':
           instance.configStructure.map((e) => e.toJson()).toList(),
       'confiotCapable': instance.confiotCapable,
-      'confiotLayout':
-          const ConfIoTLayoutConverter().toJson(instance.confiotLayout),
+      'confiotLayout': instance.confiotLayout.toJson(),
       'confiotName': instance.confiotName,
+      'peripheralIdentifier': instance.peripheralIdentifier,
     };
+
+const _$ConfIoTLayoutEnumMap = {
+  ConfIoTLayout.standard: 'STANDARD',
+  ConfIoTLayout.sdmMonitor: 'SDM_MONITOR',
+};
 
 _$ModelInputImpl _$$ModelInputImplFromJson(Map<String, dynamic> json) =>
     _$ModelInputImpl(
@@ -68,11 +74,12 @@ _$ModelInputImpl _$$ModelInputImplFromJson(Map<String, dynamic> json) =>
               .toList() ??
           const [],
       confiotCapable: json['confiotCapable'] as bool? ?? false,
-      confiotLayout: json['confiotLayout'] == null
-          ? ConfIoTLayout.standard
-          : const ConfIoTLayoutConverter()
-              .fromJson(json['confiotLayout'] as String),
+      confiotLayout: $enumDecodeNullable(
+              _$ConfIoTLayoutEnumMap, json['confiotLayout'],
+              unknownValue: ConfIoTLayout.standard) ??
+          ConfIoTLayout.standard,
       confiotName: json['confiotName'] as String?,
+      peripheralIdentifier: json['peripheralIdentifier'] as String?,
     );
 
 Map<String, dynamic> _$$ModelInputImplToJson(_$ModelInputImpl instance) =>
@@ -87,9 +94,9 @@ Map<String, dynamic> _$$ModelInputImplToJson(_$ModelInputImpl instance) =>
       'configStructure':
           instance.configStructure.map((e) => e.toJson()).toList(),
       'confiotCapable': instance.confiotCapable,
-      'confiotLayout':
-          const ConfIoTLayoutConverter().toJson(instance.confiotLayout),
+      'confiotLayout': instance.confiotLayout.toJson(),
       'confiotName': instance.confiotName,
+      'peripheralIdentifier': instance.peripheralIdentifier,
     };
 
 _$HwModelImpl _$$HwModelImplFromJson(Map<String, dynamic> json) =>

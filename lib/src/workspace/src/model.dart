@@ -10,7 +10,7 @@ class Workspace with _$Workspace {
     required String name,
 
     /// Is the type of the App
-    @AppInternalIdentifierOrNullConverter() AppInternalIdentifier? typeApp,
+    @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) AppInternalIdentifier? typeApp,
 
     /// Indicates the color of the workspace
     @ColorOrNullConverter() Color? color,

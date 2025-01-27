@@ -15,11 +15,13 @@ _$LayrzChartImpl _$$LayrzChartImplFromJson(Map<String, dynamic> json) =>
       script: json['script'] as String?,
       sensors:
           (json['sensors'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      type: const ChartTypeOrNullConverter().fromJson(json['type'] as String?),
-      algorithm: const ChartAlgorithmOrNullConverter()
-          .fromJson(json['algorithm'] as String?),
-      dataSource: const ChartDataSourceOrNullConverter()
-          .fromJson(json['dataSource'] as String?),
+      type: $enumDecodeNullable(_$ChartTypeEnumMap, json['type'],
+          unknownValue: ChartType.area),
+      algorithm: $enumDecodeNullable(_$ChartAlgorithmEnumMap, json['algorithm'],
+          unknownValue: ChartAlgorithm.auto),
+      dataSource: $enumDecodeNullable(
+          _$ChartDataSourceEnumMap, json['dataSource'],
+          unknownValue: ChartDataSource.messages),
       access: (json['access'] as List<dynamic>?)
           ?.map((e) => Access.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -33,12 +35,77 @@ Map<String, dynamic> _$$LayrzChartImplToJson(_$LayrzChartImpl instance) =>
       'formula': instance.formula,
       'script': instance.script,
       'sensors': instance.sensors,
-      'type': const ChartTypeOrNullConverter().toJson(instance.type),
-      'algorithm':
-          const ChartAlgorithmOrNullConverter().toJson(instance.algorithm),
-      'dataSource':
-          const ChartDataSourceOrNullConverter().toJson(instance.dataSource),
+      'type': instance.type?.toJson(),
+      'algorithm': instance.algorithm?.toJson(),
+      'dataSource': instance.dataSource?.toJson(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
+    };
+
+const _$ChartTypeEnumMap = {
+  ChartType.pie: 'PIE',
+  ChartType.bar: 'BAR',
+  ChartType.line: 'LINE',
+  ChartType.area: 'AREA',
+  ChartType.column: 'COLUMN',
+  ChartType.radialBar: 'RADIALBAR',
+  ChartType.scatter: 'SCATTER',
+  ChartType.timeline: 'TIMELINE',
+  ChartType.radar: 'RADAR',
+  ChartType.html: 'HTML',
+  ChartType.map: 'MAP',
+  ChartType.number: 'NUMBER',
+  ChartType.table: 'TABLE',
+};
+
+const _$ChartAlgorithmEnumMap = {
+  ChartAlgorithm.python: 'PYTHON',
+  ChartAlgorithm.lcl: 'LCL',
+  ChartAlgorithm.auto: 'AUTO',
+};
+
+const _$ChartDataSourceEnumMap = {
+  ChartDataSource.messages: 'MESSAGES',
+  ChartDataSource.events: 'EVENTS',
+  ChartDataSource.cases: 'CASES',
+  ChartDataSource.checkpoints: 'CHECKPOINTS',
+};
+
+_$LayrzChartInputImpl _$$LayrzChartInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LayrzChartInputImpl(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? '',
+      description: json['description'] as String? ?? '',
+      formula: json['formula'] as String? ?? '',
+      script: json['script'] as String? ?? '',
+      sensors: (json['sensors'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      type: $enumDecodeNullable(_$ChartTypeEnumMap, json['type'],
+              unknownValue: ChartType.area) ??
+          ChartType.area,
+      algorithm: $enumDecodeNullable(_$ChartAlgorithmEnumMap, json['algorithm'],
+              unknownValue: ChartAlgorithm.auto) ??
+          ChartAlgorithm.auto,
+      dataSource: $enumDecodeNullable(
+              _$ChartDataSourceEnumMap, json['dataSource'],
+              unknownValue: ChartDataSource.messages) ??
+          ChartDataSource.messages,
+    );
+
+Map<String, dynamic> _$$LayrzChartInputImplToJson(
+        _$LayrzChartInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'description': instance.description,
+      'formula': instance.formula,
+      'script': instance.script,
+      'sensors': instance.sensors,
+      'type': instance.type.toJson(),
+      'algorithm': instance.algorithm.toJson(),
+      'dataSource': instance.dataSource.toJson(),
     };
 
 _$AxisConfigImpl _$$AxisConfigImplFromJson(Map<String, dynamic> json) =>
@@ -47,8 +114,8 @@ _$AxisConfigImpl _$$AxisConfigImplFromJson(Map<String, dynamic> json) =>
       measureUnit: json['measureUnit'] as String?,
       minValue: json['minValue'] as num?,
       maxValue: json['maxValue'] as num?,
-      dataType: const ChartDataTypeOrNullConverter()
-          .fromJson(json['dataType'] as String?),
+      dataType: $enumDecodeNullable(_$ChartDataTypeEnumMap, json['dataType'],
+          unknownValue: ChartDataType.unknown),
     );
 
 Map<String, dynamic> _$$AxisConfigImplToJson(_$AxisConfigImpl instance) =>
@@ -57,9 +124,15 @@ Map<String, dynamic> _$$AxisConfigImplToJson(_$AxisConfigImpl instance) =>
       'measureUnit': instance.measureUnit,
       'minValue': instance.minValue,
       'maxValue': instance.maxValue,
-      'dataType':
-          const ChartDataTypeOrNullConverter().toJson(instance.dataType),
+      'dataType': instance.dataType?.toJson(),
     };
+
+const _$ChartDataTypeEnumMap = {
+  ChartDataType.number: 'NUMBER',
+  ChartDataType.string: 'STRING',
+  ChartDataType.dateTime: 'DATETIME',
+  ChartDataType.unknown: 'UNKNOWN',
+};
 
 _$LineChartRenderImpl _$$LineChartRenderImplFromJson(
         Map<String, dynamic> json) =>
@@ -83,8 +156,8 @@ _$LineChartSerieImpl _$$LineChartSerieImplFromJson(Map<String, dynamic> json) =>
     _$LineChartSerieImpl(
       color: const ColorConverter().fromJson(json['color'] as String),
       label: json['label'] as String,
-      type:
-          const ChartDataSerieTypeConverter().fromJson(json['type'] as String),
+      type: $enumDecode(_$ChartDataSerieTypeEnumMap, json['type'],
+          unknownValue: ChartDataSerieType.line),
       values: (json['values'] as List<dynamic>)
           .map((e) => LineChartDataPoint.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -95,9 +168,15 @@ Map<String, dynamic> _$$LineChartSerieImplToJson(
     <String, dynamic>{
       'color': const ColorConverter().toJson(instance.color),
       'label': instance.label,
-      'type': const ChartDataSerieTypeConverter().toJson(instance.type),
+      'type': instance.type.toJson(),
       'values': instance.values.map((e) => e.toJson()).toList(),
     };
+
+const _$ChartDataSerieTypeEnumMap = {
+  ChartDataSerieType.line: 'LINE',
+  ChartDataSerieType.area: 'AREA',
+  ChartDataSerieType.scatter: 'SCATTER',
+};
 
 _$LineChartDataPointImpl _$$LineChartDataPointImplFromJson(
         Map<String, dynamic> json) =>

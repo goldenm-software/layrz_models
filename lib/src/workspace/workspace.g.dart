@@ -10,8 +10,9 @@ _$WorkspaceImpl _$$WorkspaceImplFromJson(Map<String, dynamic> json) =>
     _$WorkspaceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      typeApp: const AppInternalIdentifierOrNullConverter()
-          .fromJson(json['typeApp'] as String?),
+      typeApp: $enumDecodeNullable(
+          _$AppInternalIdentifierEnumMap, json['typeApp'],
+          unknownValue: AppInternalIdentifier.unknown),
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
       background: json['background'] as String?,
@@ -103,8 +104,7 @@ Map<String, dynamic> _$$WorkspaceImplToJson(_$WorkspaceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'typeApp':
-          const AppInternalIdentifierOrNullConverter().toJson(instance.typeApp),
+      'typeApp': instance.typeApp?.toJson(),
       'color': const ColorOrNullConverter().toJson(instance.color),
       'icon': const IconOrNullConverter().toJson(instance.icon),
       'background': instance.background,
@@ -148,6 +148,37 @@ Map<String, dynamic> _$$WorkspaceImplToJson(_$WorkspaceImpl instance) =>
       'timezone': instance.timezone?.toJson(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
+
+const _$AppInternalIdentifierEnumMap = {
+  AppInternalIdentifier.admin: 'ADMIN',
+  AppInternalIdentifier.invite: 'INVITE',
+  AppInternalIdentifier.launchpad: 'LAUNCHPAD',
+  AppInternalIdentifier.link: 'LINK',
+  AppInternalIdentifier.one: 'ONE',
+  AppInternalIdentifier.fusion: 'FUSION',
+  AppInternalIdentifier.concierge: 'CONCIERGE',
+  AppInternalIdentifier.keyboard: 'KEYBOARD',
+  AppInternalIdentifier.tenvioPickAndPack: 'TENVIO_PICK_AND_PACK',
+  AppInternalIdentifier.tenvioDrivers: 'TENVIO_DRIVERS',
+  AppInternalIdentifier.drive: 'DRIVE',
+  AppInternalIdentifier.repcom: 'REPCOM',
+  AppInternalIdentifier.vision: 'VISION',
+  AppInternalIdentifier.cloud: 'CLOUD',
+  AppInternalIdentifier.confiot: 'CONFIOT',
+  AppInternalIdentifier.gaslp: 'GASLP',
+  AppInternalIdentifier.brickhouseTracking: 'BRICKHOUSE_TRACKING',
+  AppInternalIdentifier.analyticsAdmin: 'ANALYTICS_ADMIN',
+  AppInternalIdentifier.analyticsDashboard: 'ANALYTICS_DASHBOARD',
+  AppInternalIdentifier.atsAdmin: 'ATS_ADMIN',
+  AppInternalIdentifier.atsWeb: 'ATS_WEB',
+  AppInternalIdentifier.atsFrentista: 'ATS_FRENTISTA',
+  AppInternalIdentifier.atsDriver: 'ATS_DRIVER',
+  AppInternalIdentifier.mapOnly: 'MAP_ONLY',
+  AppInternalIdentifier.tagonMap: 'TAGON_MAP',
+  AppInternalIdentifier.tagonManager: 'TAGON_MANAGER',
+  AppInternalIdentifier.sdmManager: 'SDM_MANAGER',
+  AppInternalIdentifier.unknown: 'UNKNOWN',
+};
 
 _$AnalyticsGridItemImpl _$$AnalyticsGridItemImplFromJson(
         Map<String, dynamic> json) =>

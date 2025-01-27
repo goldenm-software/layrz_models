@@ -16,7 +16,7 @@ class AppDesign with _$AppDesign {
     ///
     /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
     /// for the [colors] field and use the [theme] field from it.
-    @AppThemeOrNullConverter() AppTheme? theme,
+    @JsonKey(unknownEnumValue: AppTheme.blue) AppTheme? theme,
 
     /// [favicons] defines the favicons of the app.
     required AppThemedAsset favicons,
@@ -31,7 +31,7 @@ class AppDesign with _$AppDesign {
     AppLoginDesign? login,
 
     /// [footerFormat] defines the footer format of the app.
-    @FooterFormatOrNullConverter() FooterFormat? footerFormat,
+    @JsonKey(unknownEnumValue: FooterFormat.madeWith) FooterFormat? footerFormat,
 
     /// [titleFont] defines the title font of the app.
     /// This style is used for:
@@ -64,11 +64,26 @@ class AppDesign with _$AppDesign {
 class AppFooter with _$AppFooter {
   const factory AppFooter({
     /// [mode] defines the footer format of the app.
-    @FooterFormatConverter() required FooterFormat mode,
+    @JsonKey(unknownEnumValue: FooterFormat.madeWith) @Default(FooterFormat.madeWith) FooterFormat mode,
 
     /// [custom] defines the custom footer of the app.
     String? custom,
   }) = _AppFooter;
 
   factory AppFooter.fromJson(Map<String, dynamic> json) => _$AppFooterFromJson(json);
+}
+
+@unfreezed
+class AppDesignInput with _$AppDesignInput {
+  factory AppDesignInput({
+    @JsonKey(unknownEnumValue: AppTheme.custom) @Default(AppTheme.custom) AppTheme theme,
+    @ColorConverter() required Color mainColor,
+    required AppThemedAssetInput favicons,
+    required AppThemedAssetInput logos,
+    required AppLoginDesignInput login,
+    required AppFontInput titleFont,
+    required AppFontInput bodyFont,
+  }) = _AppDesignInput;
+
+  factory AppDesignInput.fromJson(Map<String, dynamic> json) => _$AppDesignInputFromJson(json);
 }

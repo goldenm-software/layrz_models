@@ -28,7 +28,7 @@ mixin _$Access {
   String? get objectId => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   User? get user => throw _privateConstructorUsedError;
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   AccessModule get module => throw _privateConstructorUsedError;
 
   /// Serializes this Access to a JSON map.
@@ -54,7 +54,7 @@ abstract class $AccessCopyWith<$Res> {
       String? objectId,
       String userId,
       User? user,
-      @AccessModuleConverter() AccessModule module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module});
 
   $UserCopyWith<$Res>? get user;
 }
@@ -155,7 +155,7 @@ abstract class _$$AccessImplCopyWith<$Res> implements $AccessCopyWith<$Res> {
       String? objectId,
       String userId,
       User? user,
-      @AccessModuleConverter() AccessModule module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module});
 
   @override
   $UserCopyWith<$Res>? get user;
@@ -237,7 +237,7 @@ class _$AccessImpl implements _Access {
       this.objectId,
       required this.userId,
       this.user,
-      @AccessModuleConverter() required this.module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) required this.module});
 
   factory _$AccessImpl.fromJson(Map<String, dynamic> json) =>
       _$$AccessImplFromJson(json);
@@ -259,7 +259,7 @@ class _$AccessImpl implements _Access {
   @override
   final User? user;
   @override
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   final AccessModule module;
 
   @override
@@ -307,16 +307,16 @@ class _$AccessImpl implements _Access {
 
 abstract class _Access implements Access {
   const factory _Access(
-          {required final String id,
-          final String? label,
-          final bool? read,
-          final bool? write,
-          final bool? manage,
-          final String? objectId,
-          required final String userId,
-          final User? user,
-          @AccessModuleConverter() required final AccessModule module}) =
-      _$AccessImpl;
+      {required final String id,
+      final String? label,
+      final bool? read,
+      final bool? write,
+      final bool? manage,
+      final String? objectId,
+      required final String userId,
+      final User? user,
+      @JsonKey(unknownEnumValue: AccessModule.unknown)
+      required final AccessModule module}) = _$AccessImpl;
 
   factory _Access.fromJson(Map<String, dynamic> json) = _$AccessImpl.fromJson;
 
@@ -337,7 +337,7 @@ abstract class _Access implements Access {
   @override
   User? get user;
   @override
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   AccessModule get module;
 
   /// Create a copy of Access
@@ -391,11 +391,11 @@ mixin _$AccessInput {
   set userId(String? value) => throw _privateConstructorUsedError;
 
   /// Represents the module of the access.
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   AccessModule get module => throw _privateConstructorUsedError;
 
   /// Represents the module of the access.
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   set module(AccessModule value) => throw _privateConstructorUsedError;
 
   /// Serializes this AccessInput to a JSON map.
@@ -421,7 +421,7 @@ abstract class $AccessInputCopyWith<$Res> {
       bool manage,
       String? objectId,
       String? userId,
-      @AccessModuleConverter() AccessModule module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module});
 }
 
 /// @nodoc
@@ -495,7 +495,7 @@ abstract class _$$AccessInputImplCopyWith<$Res>
       bool manage,
       String? objectId,
       String? userId,
-      @AccessModuleConverter() AccessModule module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) AccessModule module});
 }
 
 /// @nodoc
@@ -562,7 +562,7 @@ class _$AccessInputImpl implements _AccessInput {
       this.manage = false,
       this.objectId,
       this.userId,
-      @AccessModuleConverter() required this.module});
+      @JsonKey(unknownEnumValue: AccessModule.unknown) required this.module});
 
   factory _$AccessInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$AccessInputImplFromJson(json);
@@ -596,7 +596,7 @@ class _$AccessInputImpl implements _AccessInput {
 
   /// Represents the module of the access.
   @override
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   AccessModule module;
 
   @override
@@ -622,14 +622,14 @@ class _$AccessInputImpl implements _AccessInput {
 
 abstract class _AccessInput implements AccessInput {
   factory _AccessInput(
-          {String? id,
-          bool read,
-          bool write,
-          bool manage,
-          String? objectId,
-          String? userId,
-          @AccessModuleConverter() required AccessModule module}) =
-      _$AccessInputImpl;
+      {String? id,
+      bool read,
+      bool write,
+      bool manage,
+      String? objectId,
+      String? userId,
+      @JsonKey(unknownEnumValue: AccessModule.unknown)
+      required AccessModule module}) = _$AccessInputImpl;
 
   factory _AccessInput.fromJson(Map<String, dynamic> json) =
       _$AccessInputImpl.fromJson;
@@ -678,11 +678,11 @@ abstract class _AccessInput implements AccessInput {
 
   /// Represents the module of the access.
   @override
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   AccessModule get module;
 
   /// Represents the module of the access.
-  @AccessModuleConverter()
+  @JsonKey(unknownEnumValue: AccessModule.unknown)
   set module(AccessModule value);
 
   /// Create a copy of AccessInput
@@ -972,1341 +972,6 @@ abstract class _LinkShortcut implements LinkShortcut {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LinkShortcutImplCopyWith<_$LinkShortcutImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-Action _$ActionFromJson(Map<String, dynamic> json) {
-  return _Action.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Action {
-  /// Is the ID of the action.
-  String get id => throw _privateConstructorUsedError;
-
-  /// Is the name of the action.
-  String get name => throw _privateConstructorUsedError;
-
-  /// Is the type of the action.
-  @ActionTypeConverter()
-  ActionType get kind => throw _privateConstructorUsedError;
-
-  /// Is the subtype of the action.
-  @ActionSubtypeConverter()
-  ActionSubtype get subkind => throw _privateConstructorUsedError;
-
-  /// Is the ID of tag to perform commands.
-  String? get commandId => throw _privateConstructorUsedError;
-
-  /// Is the list of Triggers or triggers' IDs.
-  List<Trigger>? get triggers => throw _privateConstructorUsedError;
-  List<String>? get triggersIds => throw _privateConstructorUsedError;
-
-  /// Is the list of Outbound Servives or outbound services' IDs.
-  List<OutboundService>? get outboundServices =>
-      throw _privateConstructorUsedError;
-  List<String>? get outboundServicesIds => throw _privateConstructorUsedError;
-
-  /// Is the list of Operations or operations' IDs.
-  List<Operation>? get operations => throw _privateConstructorUsedError;
-  List<String>? get operationsIds => throw _privateConstructorUsedError;
-
-  /// Is a list of granted access to this entity.
-  List<Access>? get access => throw _privateConstructorUsedError;
-
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
-  /// data need image convertion.
-  bool? get watchImage => throw _privateConstructorUsedError;
-
-  /// Is the geofence settings. Only for `ActionType.createGeofence`
-  ActionGeofenceSettings? get geofenceSettings =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this Action to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ActionCopyWith<Action> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ActionCopyWith<$Res> {
-  factory $ActionCopyWith(Action value, $Res Function(Action) then) =
-      _$ActionCopyWithImpl<$Res, Action>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @ActionTypeConverter() ActionType kind,
-      @ActionSubtypeConverter() ActionSubtype subkind,
-      String? commandId,
-      List<Trigger>? triggers,
-      List<String>? triggersIds,
-      List<OutboundService>? outboundServices,
-      List<String>? outboundServicesIds,
-      List<Operation>? operations,
-      List<String>? operationsIds,
-      List<Access>? access,
-      bool? watchImage,
-      ActionGeofenceSettings? geofenceSettings});
-
-  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;
-}
-
-/// @nodoc
-class _$ActionCopyWithImpl<$Res, $Val extends Action>
-    implements $ActionCopyWith<$Res> {
-  _$ActionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? kind = null,
-    Object? subkind = null,
-    Object? commandId = freezed,
-    Object? triggers = freezed,
-    Object? triggersIds = freezed,
-    Object? outboundServices = freezed,
-    Object? outboundServicesIds = freezed,
-    Object? operations = freezed,
-    Object? operationsIds = freezed,
-    Object? access = freezed,
-    Object? watchImage = freezed,
-    Object? geofenceSettings = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      kind: null == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ActionType,
-      subkind: null == subkind
-          ? _value.subkind
-          : subkind // ignore: cast_nullable_to_non_nullable
-              as ActionSubtype,
-      commandId: freezed == commandId
-          ? _value.commandId
-          : commandId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      triggers: freezed == triggers
-          ? _value.triggers
-          : triggers // ignore: cast_nullable_to_non_nullable
-              as List<Trigger>?,
-      triggersIds: freezed == triggersIds
-          ? _value.triggersIds
-          : triggersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      outboundServices: freezed == outboundServices
-          ? _value.outboundServices
-          : outboundServices // ignore: cast_nullable_to_non_nullable
-              as List<OutboundService>?,
-      outboundServicesIds: freezed == outboundServicesIds
-          ? _value.outboundServicesIds
-          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      operations: freezed == operations
-          ? _value.operations
-          : operations // ignore: cast_nullable_to_non_nullable
-              as List<Operation>?,
-      operationsIds: freezed == operationsIds
-          ? _value.operationsIds
-          : operationsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      access: freezed == access
-          ? _value.access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      watchImage: freezed == watchImage
-          ? _value.watchImage
-          : watchImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      geofenceSettings: freezed == geofenceSettings
-          ? _value.geofenceSettings
-          : geofenceSettings // ignore: cast_nullable_to_non_nullable
-              as ActionGeofenceSettings?,
-    ) as $Val);
-  }
-
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings {
-    if (_value.geofenceSettings == null) {
-      return null;
-    }
-
-    return $ActionGeofenceSettingsCopyWith<$Res>(_value.geofenceSettings!,
-        (value) {
-      return _then(_value.copyWith(geofenceSettings: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$ActionImplCopyWith<$Res> implements $ActionCopyWith<$Res> {
-  factory _$$ActionImplCopyWith(
-          _$ActionImpl value, $Res Function(_$ActionImpl) then) =
-      __$$ActionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @ActionTypeConverter() ActionType kind,
-      @ActionSubtypeConverter() ActionSubtype subkind,
-      String? commandId,
-      List<Trigger>? triggers,
-      List<String>? triggersIds,
-      List<OutboundService>? outboundServices,
-      List<String>? outboundServicesIds,
-      List<Operation>? operations,
-      List<String>? operationsIds,
-      List<Access>? access,
-      bool? watchImage,
-      ActionGeofenceSettings? geofenceSettings});
-
-  @override
-  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;
-}
-
-/// @nodoc
-class __$$ActionImplCopyWithImpl<$Res>
-    extends _$ActionCopyWithImpl<$Res, _$ActionImpl>
-    implements _$$ActionImplCopyWith<$Res> {
-  __$$ActionImplCopyWithImpl(
-      _$ActionImpl _value, $Res Function(_$ActionImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? kind = null,
-    Object? subkind = null,
-    Object? commandId = freezed,
-    Object? triggers = freezed,
-    Object? triggersIds = freezed,
-    Object? outboundServices = freezed,
-    Object? outboundServicesIds = freezed,
-    Object? operations = freezed,
-    Object? operationsIds = freezed,
-    Object? access = freezed,
-    Object? watchImage = freezed,
-    Object? geofenceSettings = freezed,
-  }) {
-    return _then(_$ActionImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      kind: null == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ActionType,
-      subkind: null == subkind
-          ? _value.subkind
-          : subkind // ignore: cast_nullable_to_non_nullable
-              as ActionSubtype,
-      commandId: freezed == commandId
-          ? _value.commandId
-          : commandId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      triggers: freezed == triggers
-          ? _value._triggers
-          : triggers // ignore: cast_nullable_to_non_nullable
-              as List<Trigger>?,
-      triggersIds: freezed == triggersIds
-          ? _value._triggersIds
-          : triggersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      outboundServices: freezed == outboundServices
-          ? _value._outboundServices
-          : outboundServices // ignore: cast_nullable_to_non_nullable
-              as List<OutboundService>?,
-      outboundServicesIds: freezed == outboundServicesIds
-          ? _value._outboundServicesIds
-          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      operations: freezed == operations
-          ? _value._operations
-          : operations // ignore: cast_nullable_to_non_nullable
-              as List<Operation>?,
-      operationsIds: freezed == operationsIds
-          ? _value._operationsIds
-          : operationsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      access: freezed == access
-          ? _value._access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      watchImage: freezed == watchImage
-          ? _value.watchImage
-          : watchImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      geofenceSettings: freezed == geofenceSettings
-          ? _value.geofenceSettings
-          : geofenceSettings // ignore: cast_nullable_to_non_nullable
-              as ActionGeofenceSettings?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ActionImpl implements _Action {
-  const _$ActionImpl(
-      {required this.id,
-      required this.name,
-      @ActionTypeConverter() required this.kind,
-      @ActionSubtypeConverter() this.subkind = ActionSubtype.unused,
-      this.commandId,
-      final List<Trigger>? triggers,
-      final List<String>? triggersIds,
-      final List<OutboundService>? outboundServices,
-      final List<String>? outboundServicesIds,
-      final List<Operation>? operations,
-      final List<String>? operationsIds,
-      final List<Access>? access,
-      this.watchImage,
-      this.geofenceSettings})
-      : _triggers = triggers,
-        _triggersIds = triggersIds,
-        _outboundServices = outboundServices,
-        _outboundServicesIds = outboundServicesIds,
-        _operations = operations,
-        _operationsIds = operationsIds,
-        _access = access;
-
-  factory _$ActionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ActionImplFromJson(json);
-
-  /// Is the ID of the action.
-  @override
-  final String id;
-
-  /// Is the name of the action.
-  @override
-  final String name;
-
-  /// Is the type of the action.
-  @override
-  @ActionTypeConverter()
-  final ActionType kind;
-
-  /// Is the subtype of the action.
-  @override
-  @JsonKey()
-  @ActionSubtypeConverter()
-  final ActionSubtype subkind;
-
-  /// Is the ID of tag to perform commands.
-  @override
-  final String? commandId;
-
-  /// Is the list of Triggers or triggers' IDs.
-  final List<Trigger>? _triggers;
-
-  /// Is the list of Triggers or triggers' IDs.
-  @override
-  List<Trigger>? get triggers {
-    final value = _triggers;
-    if (value == null) return null;
-    if (_triggers is EqualUnmodifiableListView) return _triggers;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<String>? _triggersIds;
-  @override
-  List<String>? get triggersIds {
-    final value = _triggersIds;
-    if (value == null) return null;
-    if (_triggersIds is EqualUnmodifiableListView) return _triggersIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// Is the list of Outbound Servives or outbound services' IDs.
-  final List<OutboundService>? _outboundServices;
-
-  /// Is the list of Outbound Servives or outbound services' IDs.
-  @override
-  List<OutboundService>? get outboundServices {
-    final value = _outboundServices;
-    if (value == null) return null;
-    if (_outboundServices is EqualUnmodifiableListView)
-      return _outboundServices;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<String>? _outboundServicesIds;
-  @override
-  List<String>? get outboundServicesIds {
-    final value = _outboundServicesIds;
-    if (value == null) return null;
-    if (_outboundServicesIds is EqualUnmodifiableListView)
-      return _outboundServicesIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// Is the list of Operations or operations' IDs.
-  final List<Operation>? _operations;
-
-  /// Is the list of Operations or operations' IDs.
-  @override
-  List<Operation>? get operations {
-    final value = _operations;
-    if (value == null) return null;
-    if (_operations is EqualUnmodifiableListView) return _operations;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  final List<String>? _operationsIds;
-  @override
-  List<String>? get operationsIds {
-    final value = _operationsIds;
-    if (value == null) return null;
-    if (_operationsIds is EqualUnmodifiableListView) return _operationsIds;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// Is a list of granted access to this entity.
-  final List<Access>? _access;
-
-  /// Is a list of granted access to this entity.
-  @override
-  List<Access>? get access {
-    final value = _access;
-    if (value == null) return null;
-    if (_access is EqualUnmodifiableListView) return _access;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
-  /// data need image convertion.
-  @override
-  final bool? watchImage;
-
-  /// Is the geofence settings. Only for `ActionType.createGeofence`
-  @override
-  final ActionGeofenceSettings? geofenceSettings;
-
-  @override
-  String toString() {
-    return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ActionImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.kind, kind) || other.kind == kind) &&
-            (identical(other.subkind, subkind) || other.subkind == subkind) &&
-            (identical(other.commandId, commandId) ||
-                other.commandId == commandId) &&
-            const DeepCollectionEquality().equals(other._triggers, _triggers) &&
-            const DeepCollectionEquality()
-                .equals(other._triggersIds, _triggersIds) &&
-            const DeepCollectionEquality()
-                .equals(other._outboundServices, _outboundServices) &&
-            const DeepCollectionEquality()
-                .equals(other._outboundServicesIds, _outboundServicesIds) &&
-            const DeepCollectionEquality()
-                .equals(other._operations, _operations) &&
-            const DeepCollectionEquality()
-                .equals(other._operationsIds, _operationsIds) &&
-            const DeepCollectionEquality().equals(other._access, _access) &&
-            (identical(other.watchImage, watchImage) ||
-                other.watchImage == watchImage) &&
-            (identical(other.geofenceSettings, geofenceSettings) ||
-                other.geofenceSettings == geofenceSettings));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      kind,
-      subkind,
-      commandId,
-      const DeepCollectionEquality().hash(_triggers),
-      const DeepCollectionEquality().hash(_triggersIds),
-      const DeepCollectionEquality().hash(_outboundServices),
-      const DeepCollectionEquality().hash(_outboundServicesIds),
-      const DeepCollectionEquality().hash(_operations),
-      const DeepCollectionEquality().hash(_operationsIds),
-      const DeepCollectionEquality().hash(_access),
-      watchImage,
-      geofenceSettings);
-
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
-      __$$ActionImplCopyWithImpl<_$ActionImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ActionImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Action implements Action {
-  const factory _Action(
-      {required final String id,
-      required final String name,
-      @ActionTypeConverter() required final ActionType kind,
-      @ActionSubtypeConverter() final ActionSubtype subkind,
-      final String? commandId,
-      final List<Trigger>? triggers,
-      final List<String>? triggersIds,
-      final List<OutboundService>? outboundServices,
-      final List<String>? outboundServicesIds,
-      final List<Operation>? operations,
-      final List<String>? operationsIds,
-      final List<Access>? access,
-      final bool? watchImage,
-      final ActionGeofenceSettings? geofenceSettings}) = _$ActionImpl;
-
-  factory _Action.fromJson(Map<String, dynamic> json) = _$ActionImpl.fromJson;
-
-  /// Is the ID of the action.
-  @override
-  String get id;
-
-  /// Is the name of the action.
-  @override
-  String get name;
-
-  /// Is the type of the action.
-  @override
-  @ActionTypeConverter()
-  ActionType get kind;
-
-  /// Is the subtype of the action.
-  @override
-  @ActionSubtypeConverter()
-  ActionSubtype get subkind;
-
-  /// Is the ID of tag to perform commands.
-  @override
-  String? get commandId;
-
-  /// Is the list of Triggers or triggers' IDs.
-  @override
-  List<Trigger>? get triggers;
-  @override
-  List<String>? get triggersIds;
-
-  /// Is the list of Outbound Servives or outbound services' IDs.
-  @override
-  List<OutboundService>? get outboundServices;
-  @override
-  List<String>? get outboundServicesIds;
-
-  /// Is the list of Operations or operations' IDs.
-  @override
-  List<Operation>? get operations;
-  @override
-  List<String>? get operationsIds;
-
-  /// Is a list of granted access to this entity.
-  @override
-  List<Access>? get access;
-
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
-  /// data need image convertion.
-  @override
-  bool? get watchImage;
-
-  /// Is the geofence settings. Only for `ActionType.createGeofence`
-  @override
-  ActionGeofenceSettings? get geofenceSettings;
-
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ActionGeofenceSettings _$ActionGeofenceSettingsFromJson(
-    Map<String, dynamic> json) {
-  return _ActionGeofenceSettings.fromJson(json);
-}
-
-/// @nodoc
-mixin _$ActionGeofenceSettings {
-  /// [whoOwner] defines who is the owner of the geofence to create.
-  @ActionPropertyConverter()
-  ActionProperty get whoOwner => throw _privateConstructorUsedError;
-
-  /// [name] defines the name of the geofence to create.
-  /// This property is a LCL formula
-  String? get name => throw _privateConstructorUsedError;
-
-  /// [category] defines the category of the geofence to create.
-  @GeofenceCategoryOrNullConverter()
-  GeofenceCategory? get category => throw _privateConstructorUsedError;
-
-  /// [radius] defines the radius of the geofence to create.
-  double? get radius => throw _privateConstructorUsedError;
-
-  /// [mappitRouteId] defines the route ID of the geofence to create.
-  String? get mappitRouteId => throw _privateConstructorUsedError;
-
-  /// [mappitRoute] defines the route of the geofence to create.
-  MappitRoute? get mappitRoute => throw _privateConstructorUsedError;
-
-  /// Serializes this ActionGeofenceSettings to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ActionGeofenceSettingsCopyWith<ActionGeofenceSettings> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ActionGeofenceSettingsCopyWith<$Res> {
-  factory $ActionGeofenceSettingsCopyWith(ActionGeofenceSettings value,
-          $Res Function(ActionGeofenceSettings) then) =
-      _$ActionGeofenceSettingsCopyWithImpl<$Res, ActionGeofenceSettings>;
-  @useResult
-  $Res call(
-      {@ActionPropertyConverter() ActionProperty whoOwner,
-      String? name,
-      @GeofenceCategoryOrNullConverter() GeofenceCategory? category,
-      double? radius,
-      String? mappitRouteId,
-      MappitRoute? mappitRoute});
-
-  $MappitRouteCopyWith<$Res>? get mappitRoute;
-}
-
-/// @nodoc
-class _$ActionGeofenceSettingsCopyWithImpl<$Res,
-        $Val extends ActionGeofenceSettings>
-    implements $ActionGeofenceSettingsCopyWith<$Res> {
-  _$ActionGeofenceSettingsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? whoOwner = null,
-    Object? name = freezed,
-    Object? category = freezed,
-    Object? radius = freezed,
-    Object? mappitRouteId = freezed,
-    Object? mappitRoute = freezed,
-  }) {
-    return _then(_value.copyWith(
-      whoOwner: null == whoOwner
-          ? _value.whoOwner
-          : whoOwner // ignore: cast_nullable_to_non_nullable
-              as ActionProperty,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as GeofenceCategory?,
-      radius: freezed == radius
-          ? _value.radius
-          : radius // ignore: cast_nullable_to_non_nullable
-              as double?,
-      mappitRouteId: freezed == mappitRouteId
-          ? _value.mappitRouteId
-          : mappitRouteId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mappitRoute: freezed == mappitRoute
-          ? _value.mappitRoute
-          : mappitRoute // ignore: cast_nullable_to_non_nullable
-              as MappitRoute?,
-    ) as $Val);
-  }
-
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $MappitRouteCopyWith<$Res>? get mappitRoute {
-    if (_value.mappitRoute == null) {
-      return null;
-    }
-
-    return $MappitRouteCopyWith<$Res>(_value.mappitRoute!, (value) {
-      return _then(_value.copyWith(mappitRoute: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$ActionGeofenceSettingsImplCopyWith<$Res>
-    implements $ActionGeofenceSettingsCopyWith<$Res> {
-  factory _$$ActionGeofenceSettingsImplCopyWith(
-          _$ActionGeofenceSettingsImpl value,
-          $Res Function(_$ActionGeofenceSettingsImpl) then) =
-      __$$ActionGeofenceSettingsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@ActionPropertyConverter() ActionProperty whoOwner,
-      String? name,
-      @GeofenceCategoryOrNullConverter() GeofenceCategory? category,
-      double? radius,
-      String? mappitRouteId,
-      MappitRoute? mappitRoute});
-
-  @override
-  $MappitRouteCopyWith<$Res>? get mappitRoute;
-}
-
-/// @nodoc
-class __$$ActionGeofenceSettingsImplCopyWithImpl<$Res>
-    extends _$ActionGeofenceSettingsCopyWithImpl<$Res,
-        _$ActionGeofenceSettingsImpl>
-    implements _$$ActionGeofenceSettingsImplCopyWith<$Res> {
-  __$$ActionGeofenceSettingsImplCopyWithImpl(
-      _$ActionGeofenceSettingsImpl _value,
-      $Res Function(_$ActionGeofenceSettingsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? whoOwner = null,
-    Object? name = freezed,
-    Object? category = freezed,
-    Object? radius = freezed,
-    Object? mappitRouteId = freezed,
-    Object? mappitRoute = freezed,
-  }) {
-    return _then(_$ActionGeofenceSettingsImpl(
-      whoOwner: null == whoOwner
-          ? _value.whoOwner
-          : whoOwner // ignore: cast_nullable_to_non_nullable
-              as ActionProperty,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as GeofenceCategory?,
-      radius: freezed == radius
-          ? _value.radius
-          : radius // ignore: cast_nullable_to_non_nullable
-              as double?,
-      mappitRouteId: freezed == mappitRouteId
-          ? _value.mappitRouteId
-          : mappitRouteId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mappitRoute: freezed == mappitRoute
-          ? _value.mappitRoute
-          : mappitRoute // ignore: cast_nullable_to_non_nullable
-              as MappitRoute?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ActionGeofenceSettingsImpl implements _ActionGeofenceSettings {
-  const _$ActionGeofenceSettingsImpl(
-      {@ActionPropertyConverter() this.whoOwner = ActionProperty.none,
-      this.name,
-      @GeofenceCategoryOrNullConverter() this.category,
-      this.radius,
-      this.mappitRouteId,
-      this.mappitRoute});
-
-  factory _$ActionGeofenceSettingsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ActionGeofenceSettingsImplFromJson(json);
-
-  /// [whoOwner] defines who is the owner of the geofence to create.
-  @override
-  @JsonKey()
-  @ActionPropertyConverter()
-  final ActionProperty whoOwner;
-
-  /// [name] defines the name of the geofence to create.
-  /// This property is a LCL formula
-  @override
-  final String? name;
-
-  /// [category] defines the category of the geofence to create.
-  @override
-  @GeofenceCategoryOrNullConverter()
-  final GeofenceCategory? category;
-
-  /// [radius] defines the radius of the geofence to create.
-  @override
-  final double? radius;
-
-  /// [mappitRouteId] defines the route ID of the geofence to create.
-  @override
-  final String? mappitRouteId;
-
-  /// [mappitRoute] defines the route of the geofence to create.
-  @override
-  final MappitRoute? mappitRoute;
-
-  @override
-  String toString() {
-    return 'ActionGeofenceSettings(whoOwner: $whoOwner, name: $name, category: $category, radius: $radius, mappitRouteId: $mappitRouteId, mappitRoute: $mappitRoute)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$ActionGeofenceSettingsImpl &&
-            (identical(other.whoOwner, whoOwner) ||
-                other.whoOwner == whoOwner) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            (identical(other.radius, radius) || other.radius == radius) &&
-            (identical(other.mappitRouteId, mappitRouteId) ||
-                other.mappitRouteId == mappitRouteId) &&
-            (identical(other.mappitRoute, mappitRoute) ||
-                other.mappitRoute == mappitRoute));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, whoOwner, name, category, radius,
-      mappitRouteId, mappitRoute);
-
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ActionGeofenceSettingsImplCopyWith<_$ActionGeofenceSettingsImpl>
-      get copyWith => __$$ActionGeofenceSettingsImplCopyWithImpl<
-          _$ActionGeofenceSettingsImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ActionGeofenceSettingsImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ActionGeofenceSettings implements ActionGeofenceSettings {
-  const factory _ActionGeofenceSettings(
-      {@ActionPropertyConverter() final ActionProperty whoOwner,
-      final String? name,
-      @GeofenceCategoryOrNullConverter() final GeofenceCategory? category,
-      final double? radius,
-      final String? mappitRouteId,
-      final MappitRoute? mappitRoute}) = _$ActionGeofenceSettingsImpl;
-
-  factory _ActionGeofenceSettings.fromJson(Map<String, dynamic> json) =
-      _$ActionGeofenceSettingsImpl.fromJson;
-
-  /// [whoOwner] defines who is the owner of the geofence to create.
-  @override
-  @ActionPropertyConverter()
-  ActionProperty get whoOwner;
-
-  /// [name] defines the name of the geofence to create.
-  /// This property is a LCL formula
-  @override
-  String? get name;
-
-  /// [category] defines the category of the geofence to create.
-  @override
-  @GeofenceCategoryOrNullConverter()
-  GeofenceCategory? get category;
-
-  /// [radius] defines the radius of the geofence to create.
-  @override
-  double? get radius;
-
-  /// [mappitRouteId] defines the route ID of the geofence to create.
-  @override
-  String? get mappitRouteId;
-
-  /// [mappitRoute] defines the route of the geofence to create.
-  @override
-  MappitRoute? get mappitRoute;
-
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ActionGeofenceSettingsImplCopyWith<_$ActionGeofenceSettingsImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-ActionInput _$ActionInputFromJson(Map<String, dynamic> json) {
-  return _ActionInput.fromJson(json);
-}
-
-/// @nodoc
-mixin _$ActionInput {
-  /// ID of the trigger entity. This ID is unique.
-  String? get id => throw _privateConstructorUsedError;
-
-  /// ID of the trigger entity. This ID is unique.
-  set id(String? value) => throw _privateConstructorUsedError;
-
-  /// ID of the linked Commands Tag.
-  String? get commandId => throw _privateConstructorUsedError;
-
-  /// ID of the linked Commands Tag.
-  set commandId(String? value) => throw _privateConstructorUsedError;
-
-  /// Action type, please read the documentation of ActionType for more information about the actions.
-  @ActionTypeOrNullConverter()
-  ActionType? get kind => throw _privateConstructorUsedError;
-
-  /// Action type, please read the documentation of ActionType for more information about the actions.
-  @ActionTypeOrNullConverter()
-  set kind(ActionType? value) => throw _privateConstructorUsedError;
-
-  /// Name of the trigger.
-  String? get name => throw _privateConstructorUsedError;
-
-  /// Name of the trigger.
-  set name(String? value) => throw _privateConstructorUsedError;
-
-  /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-  List<String>? get operationsIds => throw _privateConstructorUsedError;
-
-  /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-  set operationsIds(List<String>? value) => throw _privateConstructorUsedError;
-
-  /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  List<String>? get outboundServicesIds => throw _privateConstructorUsedError;
-
-  /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  set outboundServicesIds(List<String>? value) =>
-      throw _privateConstructorUsedError;
-
-  /// Subkind
-  @ActionSubtypeOrNullConverter()
-  ActionSubtype? get subkind => throw _privateConstructorUsedError;
-
-  /// Subkind
-  @ActionSubtypeOrNullConverter()
-  set subkind(ActionSubtype? value) => throw _privateConstructorUsedError;
-
-  /// List of triggers IDs enabled for handle this action.
-  List<String>? get triggersIds => throw _privateConstructorUsedError;
-
-  /// List of triggers IDs enabled for handle this action.
-  set triggersIds(List<String>? value) => throw _privateConstructorUsedError;
-
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-  bool? get watchImage => throw _privateConstructorUsedError;
-
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-  set watchImage(bool? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this ActionInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $ActionInputCopyWith<ActionInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ActionInputCopyWith<$Res> {
-  factory $ActionInputCopyWith(
-          ActionInput value, $Res Function(ActionInput) then) =
-      _$ActionInputCopyWithImpl<$Res, ActionInput>;
-  @useResult
-  $Res call(
-      {String? id,
-      String? commandId,
-      @ActionTypeOrNullConverter() ActionType? kind,
-      String? name,
-      List<String>? operationsIds,
-      List<String>? outboundServicesIds,
-      @ActionSubtypeOrNullConverter() ActionSubtype? subkind,
-      List<String>? triggersIds,
-      bool? watchImage});
-}
-
-/// @nodoc
-class _$ActionInputCopyWithImpl<$Res, $Val extends ActionInput>
-    implements $ActionInputCopyWith<$Res> {
-  _$ActionInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? commandId = freezed,
-    Object? kind = freezed,
-    Object? name = freezed,
-    Object? operationsIds = freezed,
-    Object? outboundServicesIds = freezed,
-    Object? subkind = freezed,
-    Object? triggersIds = freezed,
-    Object? watchImage = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      commandId: freezed == commandId
-          ? _value.commandId
-          : commandId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      kind: freezed == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ActionType?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      operationsIds: freezed == operationsIds
-          ? _value.operationsIds
-          : operationsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      outboundServicesIds: freezed == outboundServicesIds
-          ? _value.outboundServicesIds
-          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      subkind: freezed == subkind
-          ? _value.subkind
-          : subkind // ignore: cast_nullable_to_non_nullable
-              as ActionSubtype?,
-      triggersIds: freezed == triggersIds
-          ? _value.triggersIds
-          : triggersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      watchImage: freezed == watchImage
-          ? _value.watchImage
-          : watchImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$ActionInputImplCopyWith<$Res>
-    implements $ActionInputCopyWith<$Res> {
-  factory _$$ActionInputImplCopyWith(
-          _$ActionInputImpl value, $Res Function(_$ActionInputImpl) then) =
-      __$$ActionInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      String? commandId,
-      @ActionTypeOrNullConverter() ActionType? kind,
-      String? name,
-      List<String>? operationsIds,
-      List<String>? outboundServicesIds,
-      @ActionSubtypeOrNullConverter() ActionSubtype? subkind,
-      List<String>? triggersIds,
-      bool? watchImage});
-}
-
-/// @nodoc
-class __$$ActionInputImplCopyWithImpl<$Res>
-    extends _$ActionInputCopyWithImpl<$Res, _$ActionInputImpl>
-    implements _$$ActionInputImplCopyWith<$Res> {
-  __$$ActionInputImplCopyWithImpl(
-      _$ActionInputImpl _value, $Res Function(_$ActionInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? commandId = freezed,
-    Object? kind = freezed,
-    Object? name = freezed,
-    Object? operationsIds = freezed,
-    Object? outboundServicesIds = freezed,
-    Object? subkind = freezed,
-    Object? triggersIds = freezed,
-    Object? watchImage = freezed,
-  }) {
-    return _then(_$ActionInputImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      commandId: freezed == commandId
-          ? _value.commandId
-          : commandId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      kind: freezed == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ActionType?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      operationsIds: freezed == operationsIds
-          ? _value.operationsIds
-          : operationsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      outboundServicesIds: freezed == outboundServicesIds
-          ? _value.outboundServicesIds
-          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      subkind: freezed == subkind
-          ? _value.subkind
-          : subkind // ignore: cast_nullable_to_non_nullable
-              as ActionSubtype?,
-      triggersIds: freezed == triggersIds
-          ? _value.triggersIds
-          : triggersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      watchImage: freezed == watchImage
-          ? _value.watchImage
-          : watchImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$ActionInputImpl implements _ActionInput {
-  _$ActionInputImpl(
-      {this.id,
-      this.commandId,
-      @ActionTypeOrNullConverter() this.kind,
-      this.name,
-      this.operationsIds = const [],
-      this.outboundServicesIds = const [],
-      @ActionSubtypeOrNullConverter() this.subkind,
-      this.triggersIds = const [],
-      this.watchImage = false});
-
-  factory _$ActionInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ActionInputImplFromJson(json);
-
-  /// ID of the trigger entity. This ID is unique.
-  @override
-  String? id;
-
-  /// ID of the linked Commands Tag.
-  @override
-  String? commandId;
-
-  /// Action type, please read the documentation of ActionType for more information about the actions.
-  @override
-  @ActionTypeOrNullConverter()
-  ActionType? kind;
-
-  /// Name of the trigger.
-  @override
-  String? name;
-
-  /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-  @override
-  @JsonKey()
-  List<String>? operationsIds;
-
-  /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  @override
-  @JsonKey()
-  List<String>? outboundServicesIds;
-
-  /// Subkind
-  @override
-  @ActionSubtypeOrNullConverter()
-  ActionSubtype? subkind;
-
-  /// List of triggers IDs enabled for handle this action.
-  @override
-  @JsonKey()
-  List<String>? triggersIds;
-
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-  @override
-  @JsonKey()
-  bool? watchImage;
-
-  @override
-  String toString() {
-    return 'ActionInput(id: $id, commandId: $commandId, kind: $kind, name: $name, operationsIds: $operationsIds, outboundServicesIds: $outboundServicesIds, subkind: $subkind, triggersIds: $triggersIds, watchImage: $watchImage)';
-  }
-
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ActionInputImplCopyWith<_$ActionInputImpl> get copyWith =>
-      __$$ActionInputImplCopyWithImpl<_$ActionInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ActionInputImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _ActionInput implements ActionInput {
-  factory _ActionInput(
-      {String? id,
-      String? commandId,
-      @ActionTypeOrNullConverter() ActionType? kind,
-      String? name,
-      List<String>? operationsIds,
-      List<String>? outboundServicesIds,
-      @ActionSubtypeOrNullConverter() ActionSubtype? subkind,
-      List<String>? triggersIds,
-      bool? watchImage}) = _$ActionInputImpl;
-
-  factory _ActionInput.fromJson(Map<String, dynamic> json) =
-      _$ActionInputImpl.fromJson;
-
-  /// ID of the trigger entity. This ID is unique.
-  @override
-  String? get id;
-
-  /// ID of the trigger entity. This ID is unique.
-  set id(String? value);
-
-  /// ID of the linked Commands Tag.
-  @override
-  String? get commandId;
-
-  /// ID of the linked Commands Tag.
-  set commandId(String? value);
-
-  /// Action type, please read the documentation of ActionType for more information about the actions.
-  @override
-  @ActionTypeOrNullConverter()
-  ActionType? get kind;
-
-  /// Action type, please read the documentation of ActionType for more information about the actions.
-  @ActionTypeOrNullConverter()
-  set kind(ActionType? value);
-
-  /// Name of the trigger.
-  @override
-  String? get name;
-
-  /// Name of the trigger.
-  set name(String? value);
-
-  /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-  @override
-  List<String>? get operationsIds;
-
-  /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-  set operationsIds(List<String>? value);
-
-  /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  @override
-  List<String>? get outboundServicesIds;
-
-  /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  set outboundServicesIds(List<String>? value);
-
-  /// Subkind
-  @override
-  @ActionSubtypeOrNullConverter()
-  ActionSubtype? get subkind;
-
-  /// Subkind
-  @ActionSubtypeOrNullConverter()
-  set subkind(ActionSubtype? value);
-
-  /// List of triggers IDs enabled for handle this action.
-  @override
-  List<String>? get triggersIds;
-
-  /// List of triggers IDs enabled for handle this action.
-  set triggersIds(List<String>? value);
-
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-  @override
-  bool? get watchImage;
-
-  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-  set watchImage(bool? value);
-
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ActionInputImplCopyWith<_$ActionInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -10442,6 +9107,11 @@ mixin _$Device {
   /// used to configure the device.
   Map<String, dynamic>? get configParams => throw _privateConstructorUsedError;
 
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @DurationConverter()
+  Duration? get visionCaptureThreshold => throw _privateConstructorUsedError;
+
   /// Serializes this Device to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -10479,7 +9149,8 @@ abstract class $DeviceCopyWith<$Res> {
       HwModel? hwModel,
       String? hwModelId,
       String? macAddress,
-      Map<String, dynamic>? configParams});
+      Map<String, dynamic>? configParams,
+      @DurationConverter() Duration? visionCaptureThreshold});
 
   $ModelCopyWith<$Res>? get model;
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -10528,6 +9199,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? hwModelId = freezed,
     Object? macAddress = freezed,
     Object? configParams = freezed,
+    Object? visionCaptureThreshold = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -10622,6 +9294,10 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.configParams
           : configParams // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      visionCaptureThreshold: freezed == visionCaptureThreshold
+          ? _value.visionCaptureThreshold
+          : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ) as $Val);
   }
 
@@ -10754,7 +9430,8 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       HwModel? hwModel,
       String? hwModelId,
       String? macAddress,
-      Map<String, dynamic>? configParams});
+      Map<String, dynamic>? configParams,
+      @DurationConverter() Duration? visionCaptureThreshold});
 
   @override
   $ModelCopyWith<$Res>? get model;
@@ -10808,6 +9485,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? hwModelId = freezed,
     Object? macAddress = freezed,
     Object? configParams = freezed,
+    Object? visionCaptureThreshold = freezed,
   }) {
     return _then(_$DeviceImpl(
       id: null == id
@@ -10902,6 +9580,10 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value._configParams
           : configParams // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
+      visionCaptureThreshold: freezed == visionCaptureThreshold
+          ? _value.visionCaptureThreshold
+          : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ));
   }
 }
@@ -10932,7 +9614,8 @@ class _$DeviceImpl implements _Device {
       this.hwModel,
       this.hwModelId,
       this.macAddress,
-      final Map<String, dynamic>? configParams})
+      final Map<String, dynamic>? configParams,
+      @DurationConverter() this.visionCaptureThreshold})
       : _additionalFields = additionalFields,
         _commands = commands,
         _access = access,
@@ -11071,9 +9754,15 @@ class _$DeviceImpl implements _Device {
     return EqualUnmodifiableMapView(value);
   }
 
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @override
+  @DurationConverter()
+  final Duration? visionCaptureThreshold;
+
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams)';
+    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold)';
   }
 
   @override
@@ -11114,7 +9803,9 @@ class _$DeviceImpl implements _Device {
             (identical(other.macAddress, macAddress) ||
                 other.macAddress == macAddress) &&
             const DeepCollectionEquality()
-                .equals(other._configParams, _configParams));
+                .equals(other._configParams, _configParams) &&
+            (identical(other.visionCaptureThreshold, visionCaptureThreshold) ||
+                other.visionCaptureThreshold == visionCaptureThreshold));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -11143,7 +9834,8 @@ class _$DeviceImpl implements _Device {
         hwModel,
         hwModelId,
         macAddress,
-        const DeepCollectionEquality().hash(_configParams)
+        const DeepCollectionEquality().hash(_configParams),
+        visionCaptureThreshold
       ]);
 
   /// Create a copy of Device
@@ -11164,29 +9856,31 @@ class _$DeviceImpl implements _Device {
 
 abstract class _Device implements Device {
   const factory _Device(
-      {required final String id,
-      required final String name,
-      required final String ident,
-      final String? flespiToken,
-      final String? modelId,
-      final Model? model,
-      final String? protocolId,
-      final InboundProtocol? protocol,
-      final Map<String, dynamic>? additionalFields,
-      final String? qrCode,
-      final String? linkQr,
-      final List<DeviceCommand>? commands,
-      final List<Access>? access,
-      final DeviceTelemetry? telemetry,
-      final String? visionProfileId,
-      final VisionProfile? visionProfile,
-      final PhoneNumber? phone,
-      final ModbusConfig? modbus,
-      final bool? isSuspended,
-      final HwModel? hwModel,
-      final String? hwModelId,
-      final String? macAddress,
-      final Map<String, dynamic>? configParams}) = _$DeviceImpl;
+          {required final String id,
+          required final String name,
+          required final String ident,
+          final String? flespiToken,
+          final String? modelId,
+          final Model? model,
+          final String? protocolId,
+          final InboundProtocol? protocol,
+          final Map<String, dynamic>? additionalFields,
+          final String? qrCode,
+          final String? linkQr,
+          final List<DeviceCommand>? commands,
+          final List<Access>? access,
+          final DeviceTelemetry? telemetry,
+          final String? visionProfileId,
+          final VisionProfile? visionProfile,
+          final PhoneNumber? phone,
+          final ModbusConfig? modbus,
+          final bool? isSuspended,
+          final HwModel? hwModel,
+          final String? hwModelId,
+          final String? macAddress,
+          final Map<String, dynamic>? configParams,
+          @DurationConverter() final Duration? visionCaptureThreshold}) =
+      _$DeviceImpl;
 
   factory _Device.fromJson(Map<String, dynamic> json) = _$DeviceImpl.fromJson;
 
@@ -11283,6 +9977,12 @@ abstract class _Device implements Device {
   @override
   Map<String, dynamic>? get configParams;
 
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @override
+  @DurationConverter()
+  Duration? get visionCaptureThreshold;
+
   /// Create a copy of Device
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -11359,6 +10059,17 @@ mixin _$DeviceInput {
   /// [hwModelId] is the hardware model ID of the device.
   set hwModelId(String? value) => throw _privateConstructorUsedError;
 
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @DurationConverter()
+  Duration? get visionCaptureThreshold => throw _privateConstructorUsedError;
+
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @DurationConverter()
+  set visionCaptureThreshold(Duration? value) =>
+      throw _privateConstructorUsedError;
+
   /// Serializes this DeviceInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -11385,7 +10096,8 @@ abstract class $DeviceInputCopyWith<$Res> {
       PhoneNumberInput? phone,
       ModbusConfigInput? modbus,
       String? macAddress,
-      String? hwModelId});
+      String? hwModelId,
+      @DurationConverter() Duration? visionCaptureThreshold});
 
   $PhoneNumberInputCopyWith<$Res>? get phone;
   $ModbusConfigInputCopyWith<$Res>? get modbus;
@@ -11416,6 +10128,7 @@ class _$DeviceInputCopyWithImpl<$Res, $Val extends DeviceInput>
     Object? modbus = freezed,
     Object? macAddress = freezed,
     Object? hwModelId = freezed,
+    Object? visionCaptureThreshold = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -11458,6 +10171,10 @@ class _$DeviceInputCopyWithImpl<$Res, $Val extends DeviceInput>
           ? _value.hwModelId
           : hwModelId // ignore: cast_nullable_to_non_nullable
               as String?,
+      visionCaptureThreshold: freezed == visionCaptureThreshold
+          ? _value.visionCaptureThreshold
+          : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ) as $Val);
   }
 
@@ -11508,7 +10225,8 @@ abstract class _$$DeviceInputImplCopyWith<$Res>
       PhoneNumberInput? phone,
       ModbusConfigInput? modbus,
       String? macAddress,
-      String? hwModelId});
+      String? hwModelId,
+      @DurationConverter() Duration? visionCaptureThreshold});
 
   @override
   $PhoneNumberInputCopyWith<$Res>? get phone;
@@ -11539,6 +10257,7 @@ class __$$DeviceInputImplCopyWithImpl<$Res>
     Object? modbus = freezed,
     Object? macAddress = freezed,
     Object? hwModelId = freezed,
+    Object? visionCaptureThreshold = freezed,
   }) {
     return _then(_$DeviceInputImpl(
       id: freezed == id
@@ -11581,6 +10300,10 @@ class __$$DeviceInputImplCopyWithImpl<$Res>
           ? _value.hwModelId
           : hwModelId // ignore: cast_nullable_to_non_nullable
               as String?,
+      visionCaptureThreshold: freezed == visionCaptureThreshold
+          ? _value.visionCaptureThreshold
+          : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
+              as Duration?,
     ));
   }
 }
@@ -11598,7 +10321,8 @@ class _$DeviceInputImpl implements _DeviceInput {
       this.phone,
       this.modbus,
       this.macAddress,
-      this.hwModelId});
+      this.hwModelId,
+      @DurationConverter() this.visionCaptureThreshold});
 
   factory _$DeviceInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$DeviceInputImplFromJson(json);
@@ -11646,9 +10370,15 @@ class _$DeviceInputImpl implements _DeviceInput {
   @override
   String? hwModelId;
 
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @override
+  @DurationConverter()
+  Duration? visionCaptureThreshold;
+
   @override
   String toString() {
-    return 'DeviceInput(id: $id, name: $name, ident: $ident, protocolId: $protocolId, modelId: $modelId, visionProfileId: $visionProfileId, phone: $phone, modbus: $modbus, macAddress: $macAddress, hwModelId: $hwModelId)';
+    return 'DeviceInput(id: $id, name: $name, ident: $ident, protocolId: $protocolId, modelId: $modelId, visionProfileId: $visionProfileId, phone: $phone, modbus: $modbus, macAddress: $macAddress, hwModelId: $hwModelId, visionCaptureThreshold: $visionCaptureThreshold)';
   }
 
   /// Create a copy of DeviceInput
@@ -11669,16 +10399,18 @@ class _$DeviceInputImpl implements _DeviceInput {
 
 abstract class _DeviceInput implements DeviceInput {
   factory _DeviceInput(
-      {String? id,
-      String name,
-      String ident,
-      String? protocolId,
-      String? modelId,
-      String? visionProfileId,
-      PhoneNumberInput? phone,
-      ModbusConfigInput? modbus,
-      String? macAddress,
-      String? hwModelId}) = _$DeviceInputImpl;
+          {String? id,
+          String name,
+          String ident,
+          String? protocolId,
+          String? modelId,
+          String? visionProfileId,
+          PhoneNumberInput? phone,
+          ModbusConfigInput? modbus,
+          String? macAddress,
+          String? hwModelId,
+          @DurationConverter() Duration? visionCaptureThreshold}) =
+      _$DeviceInputImpl;
 
   factory _DeviceInput.fromJson(Map<String, dynamic> json) =
       _$DeviceInputImpl.fromJson;
@@ -11754,6 +10486,17 @@ abstract class _DeviceInput implements DeviceInput {
 
   /// [hwModelId] is the hardware model ID of the device.
   set hwModelId(String? value);
+
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @override
+  @DurationConverter()
+  Duration? get visionCaptureThreshold;
+
+  /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+  /// threshold of the indicator displayed on Layrz Vision app.
+  @DurationConverter()
+  set visionCaptureThreshold(Duration? value);
 
   /// Create a copy of DeviceInput
   /// with the given fields replaced by the non-null parameter values.
@@ -15705,1784 +14448,6 @@ abstract class _MonitorActiveCheckpoint implements MonitorActiveCheckpoint {
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MonitorActiveCheckpointImplCopyWith<_$MonitorActiveCheckpointImpl>
       get copyWith => throw _privateConstructorUsedError;
-}
-
-Operation _$OperationFromJson(Map<String, dynamic> json) {
-  return _Operation.fromJson(json);
-}
-
-/// @nodoc
-mixin _$Operation {
-  /// Is the ID of the operation.
-  String get id => throw _privateConstructorUsedError;
-
-  /// Is the name of the operation.
-  String get name => throw _privateConstructorUsedError;
-
-  /// Is the type of operation.
-  @OperationTypeConverter()
-  OperationType get operationType => throw _privateConstructorUsedError;
-
-  /// Is the HTTP Request type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @HttpRequestTypeOrNullConverter()
-  HttpRequestType? get requestType => throw _privateConstructorUsedError;
-
-  /// Is the URL to perform the request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  String? get url => throw _privateConstructorUsedError;
-
-  /// Is the headers to send in the HTTP request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  List<HttpHeader>? get headers => throw _privateConstructorUsedError;
-
-  /// Is the payload to send in the submission.
-  String? get payload => throw _privateConstructorUsedError;
-
-  /// Is the language ID of the message. Used to define the default language of the message.
-  String? get languageId => throw _privateConstructorUsedError;
-
-  /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-  Timezone? get timezone => throw _privateConstructorUsedError;
-
-  /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-  String? get timezoneId => throw _privateConstructorUsedError;
-
-  /// Is the reception email to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  List<String>? get receptionEmails => throw _privateConstructorUsedError;
-
-  /// Is the subject of the email
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  String? get emailSubject => throw _privateConstructorUsedError;
-
-  /// Is the color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @ColorOrNullConverter()
-  Color? get color => throw _privateConstructorUsedError;
-
-  /// Is the text color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @ColorOrNullConverter()
-  Color? get textColor => throw _privateConstructorUsedError;
-
-  /// Is the receiver numbers to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio].
-  List<PhoneNumber>? get destinationPhones =>
-      throw _privateConstructorUsedError;
-
-  /// Is the Notification type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio]
-  @NotificationTypeOrNullConverter()
-  NotificationType? get notificationType => throw _privateConstructorUsedError;
-
-  /// The [externalAccountId] of the operation. Only the ID
-  String? get externalAccountId => throw _privateConstructorUsedError;
-
-  /// Is the list of granted access of the operation.
-  List<Access>? get access => throw _privateConstructorUsedError;
-
-  /// Is the list of associated triggers (directly or indirectly) of the operation.
-  List<Trigger>? get triggers => throw _privateConstructorUsedError;
-
-  /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  bool? get useAssetContactsInstead => throw _privateConstructorUsedError;
-
-  /// [attachImage] is a flag to attach the image of the submission to the email.
-  bool? get attachImage => throw _privateConstructorUsedError;
-
-  /// The [emailTemplateId] of the operation. Only the ID
-  String? get emailTemplateId => throw _privateConstructorUsedError;
-
-  /// [pushPlatforms] is the list of platforms where the operation should be received.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  @AppPlatformConverter()
-  List<AppPlatform>? get pushPlatforms => throw _privateConstructorUsedError;
-
-  /// [pushTitle] is the title of the push notification.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  String? get pushTitle => throw _privateConstructorUsedError;
-
-  /// Serializes this Operation to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $OperationCopyWith<Operation> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $OperationCopyWith<$Res> {
-  factory $OperationCopyWith(Operation value, $Res Function(Operation) then) =
-      _$OperationCopyWithImpl<$Res, Operation>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @OperationTypeConverter() OperationType operationType,
-      @HttpRequestTypeOrNullConverter() HttpRequestType? requestType,
-      String? url,
-      List<HttpHeader>? headers,
-      String? payload,
-      String? languageId,
-      Timezone? timezone,
-      String? timezoneId,
-      List<String>? receptionEmails,
-      String? emailSubject,
-      @ColorOrNullConverter() Color? color,
-      @ColorOrNullConverter() Color? textColor,
-      List<PhoneNumber>? destinationPhones,
-      @NotificationTypeOrNullConverter() NotificationType? notificationType,
-      String? externalAccountId,
-      List<Access>? access,
-      List<Trigger>? triggers,
-      bool? useAssetContactsInstead,
-      bool? attachImage,
-      String? emailTemplateId,
-      @AppPlatformConverter() List<AppPlatform>? pushPlatforms,
-      String? pushTitle});
-
-  $TimezoneCopyWith<$Res>? get timezone;
-}
-
-/// @nodoc
-class _$OperationCopyWithImpl<$Res, $Val extends Operation>
-    implements $OperationCopyWith<$Res> {
-  _$OperationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? operationType = null,
-    Object? requestType = freezed,
-    Object? url = freezed,
-    Object? headers = freezed,
-    Object? payload = freezed,
-    Object? languageId = freezed,
-    Object? timezone = freezed,
-    Object? timezoneId = freezed,
-    Object? receptionEmails = freezed,
-    Object? emailSubject = freezed,
-    Object? color = freezed,
-    Object? textColor = freezed,
-    Object? destinationPhones = freezed,
-    Object? notificationType = freezed,
-    Object? externalAccountId = freezed,
-    Object? access = freezed,
-    Object? triggers = freezed,
-    Object? useAssetContactsInstead = freezed,
-    Object? attachImage = freezed,
-    Object? emailTemplateId = freezed,
-    Object? pushPlatforms = freezed,
-    Object? pushTitle = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      operationType: null == operationType
-          ? _value.operationType
-          : operationType // ignore: cast_nullable_to_non_nullable
-              as OperationType,
-      requestType: freezed == requestType
-          ? _value.requestType
-          : requestType // ignore: cast_nullable_to_non_nullable
-              as HttpRequestType?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _value.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as List<HttpHeader>?,
-      payload: freezed == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageId: freezed == languageId
-          ? _value.languageId
-          : languageId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as Timezone?,
-      timezoneId: freezed == timezoneId
-          ? _value.timezoneId
-          : timezoneId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receptionEmails: freezed == receptionEmails
-          ? _value.receptionEmails
-          : receptionEmails // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      emailSubject: freezed == emailSubject
-          ? _value.emailSubject
-          : emailSubject // ignore: cast_nullable_to_non_nullable
-              as String?,
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      textColor: freezed == textColor
-          ? _value.textColor
-          : textColor // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      destinationPhones: freezed == destinationPhones
-          ? _value.destinationPhones
-          : destinationPhones // ignore: cast_nullable_to_non_nullable
-              as List<PhoneNumber>?,
-      notificationType: freezed == notificationType
-          ? _value.notificationType
-          : notificationType // ignore: cast_nullable_to_non_nullable
-              as NotificationType?,
-      externalAccountId: freezed == externalAccountId
-          ? _value.externalAccountId
-          : externalAccountId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      access: freezed == access
-          ? _value.access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      triggers: freezed == triggers
-          ? _value.triggers
-          : triggers // ignore: cast_nullable_to_non_nullable
-              as List<Trigger>?,
-      useAssetContactsInstead: freezed == useAssetContactsInstead
-          ? _value.useAssetContactsInstead
-          : useAssetContactsInstead // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      attachImage: freezed == attachImage
-          ? _value.attachImage
-          : attachImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      emailTemplateId: freezed == emailTemplateId
-          ? _value.emailTemplateId
-          : emailTemplateId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pushPlatforms: freezed == pushPlatforms
-          ? _value.pushPlatforms
-          : pushPlatforms // ignore: cast_nullable_to_non_nullable
-              as List<AppPlatform>?,
-      pushTitle: freezed == pushTitle
-          ? _value.pushTitle
-          : pushTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $TimezoneCopyWith<$Res>? get timezone {
-    if (_value.timezone == null) {
-      return null;
-    }
-
-    return $TimezoneCopyWith<$Res>(_value.timezone!, (value) {
-      return _then(_value.copyWith(timezone: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$OperationImplCopyWith<$Res>
-    implements $OperationCopyWith<$Res> {
-  factory _$$OperationImplCopyWith(
-          _$OperationImpl value, $Res Function(_$OperationImpl) then) =
-      __$$OperationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @OperationTypeConverter() OperationType operationType,
-      @HttpRequestTypeOrNullConverter() HttpRequestType? requestType,
-      String? url,
-      List<HttpHeader>? headers,
-      String? payload,
-      String? languageId,
-      Timezone? timezone,
-      String? timezoneId,
-      List<String>? receptionEmails,
-      String? emailSubject,
-      @ColorOrNullConverter() Color? color,
-      @ColorOrNullConverter() Color? textColor,
-      List<PhoneNumber>? destinationPhones,
-      @NotificationTypeOrNullConverter() NotificationType? notificationType,
-      String? externalAccountId,
-      List<Access>? access,
-      List<Trigger>? triggers,
-      bool? useAssetContactsInstead,
-      bool? attachImage,
-      String? emailTemplateId,
-      @AppPlatformConverter() List<AppPlatform>? pushPlatforms,
-      String? pushTitle});
-
-  @override
-  $TimezoneCopyWith<$Res>? get timezone;
-}
-
-/// @nodoc
-class __$$OperationImplCopyWithImpl<$Res>
-    extends _$OperationCopyWithImpl<$Res, _$OperationImpl>
-    implements _$$OperationImplCopyWith<$Res> {
-  __$$OperationImplCopyWithImpl(
-      _$OperationImpl _value, $Res Function(_$OperationImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? operationType = null,
-    Object? requestType = freezed,
-    Object? url = freezed,
-    Object? headers = freezed,
-    Object? payload = freezed,
-    Object? languageId = freezed,
-    Object? timezone = freezed,
-    Object? timezoneId = freezed,
-    Object? receptionEmails = freezed,
-    Object? emailSubject = freezed,
-    Object? color = freezed,
-    Object? textColor = freezed,
-    Object? destinationPhones = freezed,
-    Object? notificationType = freezed,
-    Object? externalAccountId = freezed,
-    Object? access = freezed,
-    Object? triggers = freezed,
-    Object? useAssetContactsInstead = freezed,
-    Object? attachImage = freezed,
-    Object? emailTemplateId = freezed,
-    Object? pushPlatforms = freezed,
-    Object? pushTitle = freezed,
-  }) {
-    return _then(_$OperationImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      operationType: null == operationType
-          ? _value.operationType
-          : operationType // ignore: cast_nullable_to_non_nullable
-              as OperationType,
-      requestType: freezed == requestType
-          ? _value.requestType
-          : requestType // ignore: cast_nullable_to_non_nullable
-              as HttpRequestType?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _value._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as List<HttpHeader>?,
-      payload: freezed == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageId: freezed == languageId
-          ? _value.languageId
-          : languageId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as Timezone?,
-      timezoneId: freezed == timezoneId
-          ? _value.timezoneId
-          : timezoneId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receptionEmails: freezed == receptionEmails
-          ? _value._receptionEmails
-          : receptionEmails // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      emailSubject: freezed == emailSubject
-          ? _value.emailSubject
-          : emailSubject // ignore: cast_nullable_to_non_nullable
-              as String?,
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      textColor: freezed == textColor
-          ? _value.textColor
-          : textColor // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      destinationPhones: freezed == destinationPhones
-          ? _value._destinationPhones
-          : destinationPhones // ignore: cast_nullable_to_non_nullable
-              as List<PhoneNumber>?,
-      notificationType: freezed == notificationType
-          ? _value.notificationType
-          : notificationType // ignore: cast_nullable_to_non_nullable
-              as NotificationType?,
-      externalAccountId: freezed == externalAccountId
-          ? _value.externalAccountId
-          : externalAccountId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      access: freezed == access
-          ? _value._access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      triggers: freezed == triggers
-          ? _value._triggers
-          : triggers // ignore: cast_nullable_to_non_nullable
-              as List<Trigger>?,
-      useAssetContactsInstead: freezed == useAssetContactsInstead
-          ? _value.useAssetContactsInstead
-          : useAssetContactsInstead // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      attachImage: freezed == attachImage
-          ? _value.attachImage
-          : attachImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      emailTemplateId: freezed == emailTemplateId
-          ? _value.emailTemplateId
-          : emailTemplateId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pushPlatforms: freezed == pushPlatforms
-          ? _value._pushPlatforms
-          : pushPlatforms // ignore: cast_nullable_to_non_nullable
-              as List<AppPlatform>?,
-      pushTitle: freezed == pushTitle
-          ? _value.pushTitle
-          : pushTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$OperationImpl implements _Operation {
-  const _$OperationImpl(
-      {required this.id,
-      required this.name,
-      @OperationTypeConverter() required this.operationType,
-      @HttpRequestTypeOrNullConverter() this.requestType,
-      this.url,
-      final List<HttpHeader>? headers = const [],
-      this.payload,
-      this.languageId,
-      this.timezone,
-      this.timezoneId,
-      final List<String>? receptionEmails = const [],
-      this.emailSubject,
-      @ColorOrNullConverter() this.color,
-      @ColorOrNullConverter() this.textColor,
-      final List<PhoneNumber>? destinationPhones,
-      @NotificationTypeOrNullConverter() this.notificationType,
-      this.externalAccountId,
-      final List<Access>? access,
-      final List<Trigger>? triggers,
-      this.useAssetContactsInstead,
-      this.attachImage,
-      this.emailTemplateId,
-      @AppPlatformConverter() final List<AppPlatform>? pushPlatforms,
-      this.pushTitle})
-      : _headers = headers,
-        _receptionEmails = receptionEmails,
-        _destinationPhones = destinationPhones,
-        _access = access,
-        _triggers = triggers,
-        _pushPlatforms = pushPlatforms;
-
-  factory _$OperationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OperationImplFromJson(json);
-
-  /// Is the ID of the operation.
-  @override
-  final String id;
-
-  /// Is the name of the operation.
-  @override
-  final String name;
-
-  /// Is the type of operation.
-  @override
-  @OperationTypeConverter()
-  final OperationType operationType;
-
-  /// Is the HTTP Request type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  @HttpRequestTypeOrNullConverter()
-  final HttpRequestType? requestType;
-
-  /// Is the URL to perform the request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  final String? url;
-
-  /// Is the headers to send in the HTTP request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  final List<HttpHeader>? _headers;
-
-  /// Is the headers to send in the HTTP request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  @JsonKey()
-  List<HttpHeader>? get headers {
-    final value = _headers;
-    if (value == null) return null;
-    if (_headers is EqualUnmodifiableListView) return _headers;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// Is the payload to send in the submission.
-  @override
-  final String? payload;
-
-  /// Is the language ID of the message. Used to define the default language of the message.
-  @override
-  final String? languageId;
-
-  /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-  @override
-  final Timezone? timezone;
-
-  /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-  @override
-  final String? timezoneId;
-
-  /// Is the reception email to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  final List<String>? _receptionEmails;
-
-  /// Is the reception email to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  @override
-  @JsonKey()
-  List<String>? get receptionEmails {
-    final value = _receptionEmails;
-    if (value == null) return null;
-    if (_receptionEmails is EqualUnmodifiableListView) return _receptionEmails;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// Is the subject of the email
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  @override
-  final String? emailSubject;
-
-  /// Is the color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @override
-  @ColorOrNullConverter()
-  final Color? color;
-
-  /// Is the text color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @override
-  @ColorOrNullConverter()
-  final Color? textColor;
-
-  /// Is the receiver numbers to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio].
-  final List<PhoneNumber>? _destinationPhones;
-
-  /// Is the receiver numbers to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio].
-  @override
-  List<PhoneNumber>? get destinationPhones {
-    final value = _destinationPhones;
-    if (value == null) return null;
-    if (_destinationPhones is EqualUnmodifiableListView)
-      return _destinationPhones;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// Is the Notification type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio]
-  @override
-  @NotificationTypeOrNullConverter()
-  final NotificationType? notificationType;
-
-  /// The [externalAccountId] of the operation. Only the ID
-  @override
-  final String? externalAccountId;
-
-  /// Is the list of granted access of the operation.
-  final List<Access>? _access;
-
-  /// Is the list of granted access of the operation.
-  @override
-  List<Access>? get access {
-    final value = _access;
-    if (value == null) return null;
-    if (_access is EqualUnmodifiableListView) return _access;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// Is the list of associated triggers (directly or indirectly) of the operation.
-  final List<Trigger>? _triggers;
-
-  /// Is the list of associated triggers (directly or indirectly) of the operation.
-  @override
-  List<Trigger>? get triggers {
-    final value = _triggers;
-    if (value == null) return null;
-    if (_triggers is EqualUnmodifiableListView) return _triggers;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  @override
-  final bool? useAssetContactsInstead;
-
-  /// [attachImage] is a flag to attach the image of the submission to the email.
-  @override
-  final bool? attachImage;
-
-  /// The [emailTemplateId] of the operation. Only the ID
-  @override
-  final String? emailTemplateId;
-
-  /// [pushPlatforms] is the list of platforms where the operation should be received.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  final List<AppPlatform>? _pushPlatforms;
-
-  /// [pushPlatforms] is the list of platforms where the operation should be received.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  @override
-  @AppPlatformConverter()
-  List<AppPlatform>? get pushPlatforms {
-    final value = _pushPlatforms;
-    if (value == null) return null;
-    if (_pushPlatforms is EqualUnmodifiableListView) return _pushPlatforms;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  /// [pushTitle] is the title of the push notification.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  @override
-  final String? pushTitle;
-
-  @override
-  String toString() {
-    return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$OperationImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.operationType, operationType) ||
-                other.operationType == operationType) &&
-            (identical(other.requestType, requestType) ||
-                other.requestType == requestType) &&
-            (identical(other.url, url) || other.url == url) &&
-            const DeepCollectionEquality().equals(other._headers, _headers) &&
-            (identical(other.payload, payload) || other.payload == payload) &&
-            (identical(other.languageId, languageId) ||
-                other.languageId == languageId) &&
-            (identical(other.timezone, timezone) ||
-                other.timezone == timezone) &&
-            (identical(other.timezoneId, timezoneId) ||
-                other.timezoneId == timezoneId) &&
-            const DeepCollectionEquality()
-                .equals(other._receptionEmails, _receptionEmails) &&
-            (identical(other.emailSubject, emailSubject) ||
-                other.emailSubject == emailSubject) &&
-            (identical(other.color, color) || other.color == color) &&
-            (identical(other.textColor, textColor) ||
-                other.textColor == textColor) &&
-            const DeepCollectionEquality()
-                .equals(other._destinationPhones, _destinationPhones) &&
-            (identical(other.notificationType, notificationType) ||
-                other.notificationType == notificationType) &&
-            (identical(other.externalAccountId, externalAccountId) ||
-                other.externalAccountId == externalAccountId) &&
-            const DeepCollectionEquality().equals(other._access, _access) &&
-            const DeepCollectionEquality().equals(other._triggers, _triggers) &&
-            (identical(
-                    other.useAssetContactsInstead, useAssetContactsInstead) ||
-                other.useAssetContactsInstead == useAssetContactsInstead) &&
-            (identical(other.attachImage, attachImage) ||
-                other.attachImage == attachImage) &&
-            (identical(other.emailTemplateId, emailTemplateId) ||
-                other.emailTemplateId == emailTemplateId) &&
-            const DeepCollectionEquality()
-                .equals(other._pushPlatforms, _pushPlatforms) &&
-            (identical(other.pushTitle, pushTitle) ||
-                other.pushTitle == pushTitle));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        name,
-        operationType,
-        requestType,
-        url,
-        const DeepCollectionEquality().hash(_headers),
-        payload,
-        languageId,
-        timezone,
-        timezoneId,
-        const DeepCollectionEquality().hash(_receptionEmails),
-        emailSubject,
-        color,
-        textColor,
-        const DeepCollectionEquality().hash(_destinationPhones),
-        notificationType,
-        externalAccountId,
-        const DeepCollectionEquality().hash(_access),
-        const DeepCollectionEquality().hash(_triggers),
-        useAssetContactsInstead,
-        attachImage,
-        emailTemplateId,
-        const DeepCollectionEquality().hash(_pushPlatforms),
-        pushTitle
-      ]);
-
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OperationImplCopyWith<_$OperationImpl> get copyWith =>
-      __$$OperationImplCopyWithImpl<_$OperationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$OperationImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _Operation implements Operation {
-  const factory _Operation(
-      {required final String id,
-      required final String name,
-      @OperationTypeConverter() required final OperationType operationType,
-      @HttpRequestTypeOrNullConverter() final HttpRequestType? requestType,
-      final String? url,
-      final List<HttpHeader>? headers,
-      final String? payload,
-      final String? languageId,
-      final Timezone? timezone,
-      final String? timezoneId,
-      final List<String>? receptionEmails,
-      final String? emailSubject,
-      @ColorOrNullConverter() final Color? color,
-      @ColorOrNullConverter() final Color? textColor,
-      final List<PhoneNumber>? destinationPhones,
-      @NotificationTypeOrNullConverter()
-      final NotificationType? notificationType,
-      final String? externalAccountId,
-      final List<Access>? access,
-      final List<Trigger>? triggers,
-      final bool? useAssetContactsInstead,
-      final bool? attachImage,
-      final String? emailTemplateId,
-      @AppPlatformConverter() final List<AppPlatform>? pushPlatforms,
-      final String? pushTitle}) = _$OperationImpl;
-
-  factory _Operation.fromJson(Map<String, dynamic> json) =
-      _$OperationImpl.fromJson;
-
-  /// Is the ID of the operation.
-  @override
-  String get id;
-
-  /// Is the name of the operation.
-  @override
-  String get name;
-
-  /// Is the type of operation.
-  @override
-  @OperationTypeConverter()
-  OperationType get operationType;
-
-  /// Is the HTTP Request type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  @HttpRequestTypeOrNullConverter()
-  HttpRequestType? get requestType;
-
-  /// Is the URL to perform the request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  String? get url;
-
-  /// Is the headers to send in the HTTP request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  List<HttpHeader>? get headers;
-
-  /// Is the payload to send in the submission.
-  @override
-  String? get payload;
-
-  /// Is the language ID of the message. Used to define the default language of the message.
-  @override
-  String? get languageId;
-
-  /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-  @override
-  Timezone? get timezone;
-
-  /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-  @override
-  String? get timezoneId;
-
-  /// Is the reception email to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  @override
-  List<String>? get receptionEmails;
-
-  /// Is the subject of the email
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  @override
-  String? get emailSubject;
-
-  /// Is the color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @override
-  @ColorOrNullConverter()
-  Color? get color;
-
-  /// Is the text color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @override
-  @ColorOrNullConverter()
-  Color? get textColor;
-
-  /// Is the receiver numbers to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio].
-  @override
-  List<PhoneNumber>? get destinationPhones;
-
-  /// Is the Notification type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio]
-  @override
-  @NotificationTypeOrNullConverter()
-  NotificationType? get notificationType;
-
-  /// The [externalAccountId] of the operation. Only the ID
-  @override
-  String? get externalAccountId;
-
-  /// Is the list of granted access of the operation.
-  @override
-  List<Access>? get access;
-
-  /// Is the list of associated triggers (directly or indirectly) of the operation.
-  @override
-  List<Trigger>? get triggers;
-
-  /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  @override
-  bool? get useAssetContactsInstead;
-
-  /// [attachImage] is a flag to attach the image of the submission to the email.
-  @override
-  bool? get attachImage;
-
-  /// The [emailTemplateId] of the operation. Only the ID
-  @override
-  String? get emailTemplateId;
-
-  /// [pushPlatforms] is the list of platforms where the operation should be received.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  @override
-  @AppPlatformConverter()
-  List<AppPlatform>? get pushPlatforms;
-
-  /// [pushTitle] is the title of the push notification.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  @override
-  String? get pushTitle;
-
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OperationImplCopyWith<_$OperationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-HttpHeader _$HttpHeaderFromJson(Map<String, dynamic> json) {
-  return _HttpHeader.fromJson(json);
-}
-
-/// @nodoc
-mixin _$HttpHeader {
-  String get name => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
-
-  /// Serializes this HttpHeader to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $HttpHeaderCopyWith<HttpHeader> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $HttpHeaderCopyWith<$Res> {
-  factory $HttpHeaderCopyWith(
-          HttpHeader value, $Res Function(HttpHeader) then) =
-      _$HttpHeaderCopyWithImpl<$Res, HttpHeader>;
-  @useResult
-  $Res call({String name, String value});
-}
-
-/// @nodoc
-class _$HttpHeaderCopyWithImpl<$Res, $Val extends HttpHeader>
-    implements $HttpHeaderCopyWith<$Res> {
-  _$HttpHeaderCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$HttpHeaderImplCopyWith<$Res>
-    implements $HttpHeaderCopyWith<$Res> {
-  factory _$$HttpHeaderImplCopyWith(
-          _$HttpHeaderImpl value, $Res Function(_$HttpHeaderImpl) then) =
-      __$$HttpHeaderImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String name, String value});
-}
-
-/// @nodoc
-class __$$HttpHeaderImplCopyWithImpl<$Res>
-    extends _$HttpHeaderCopyWithImpl<$Res, _$HttpHeaderImpl>
-    implements _$$HttpHeaderImplCopyWith<$Res> {
-  __$$HttpHeaderImplCopyWithImpl(
-      _$HttpHeaderImpl _value, $Res Function(_$HttpHeaderImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_$HttpHeaderImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$HttpHeaderImpl implements _HttpHeader {
-  const _$HttpHeaderImpl({required this.name, required this.value});
-
-  factory _$HttpHeaderImpl.fromJson(Map<String, dynamic> json) =>
-      _$$HttpHeaderImplFromJson(json);
-
-  @override
-  final String name;
-  @override
-  final String value;
-
-  @override
-  String toString() {
-    return 'HttpHeader(name: $name, value: $value)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$HttpHeaderImpl &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.value, value) || other.value == value));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, value);
-
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$HttpHeaderImplCopyWith<_$HttpHeaderImpl> get copyWith =>
-      __$$HttpHeaderImplCopyWithImpl<_$HttpHeaderImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$HttpHeaderImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _HttpHeader implements HttpHeader {
-  const factory _HttpHeader(
-      {required final String name,
-      required final String value}) = _$HttpHeaderImpl;
-
-  factory _HttpHeader.fromJson(Map<String, dynamic> json) =
-      _$HttpHeaderImpl.fromJson;
-
-  @override
-  String get name;
-  @override
-  String get value;
-
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HttpHeaderImplCopyWith<_$HttpHeaderImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-OperationInput _$OperationInputFromJson(Map<String, dynamic> json) {
-  return _OperationInput.fromJson(json);
-}
-
-/// @nodoc
-mixin _$OperationInput {
-  /// Notification color. Only used for "INAPPNOTIFICATION" operation.
-  String? get color => throw _privateConstructorUsedError;
-
-  /// Notification color. Only used for "INAPPNOTIFICATION" operation.
-  set color(String? value) => throw _privateConstructorUsedError;
-
-  /// Subject of the email sended.
-  String? get emailSubject => throw _privateConstructorUsedError;
-
-  /// Subject of the email sended.
-  set emailSubject(String? value) => throw _privateConstructorUsedError;
-
-  /// Headers linked to the request, read the documentation of HeaderInput for more details.
-  List<HttpHeader>? get headers => throw _privateConstructorUsedError;
-
-  /// Headers linked to the request, read the documentation of HeaderInput for more details.
-  set headers(List<HttpHeader>? value) => throw _privateConstructorUsedError;
-
-  /// ID of the operation entity. This ID is unique. Only required for "editOperation" mutation.
-  String? get id => throw _privateConstructorUsedError;
-
-  /// ID of the operation entity. This ID is unique. Only required for "editOperation" mutation.
-  set id(String? value) => throw _privateConstructorUsedError;
-
-  /// ID of the language for the operation entity. This support multiples languages.
-  String? get languageId => throw _privateConstructorUsedError;
-
-  /// ID of the language for the operation entity. This support multiples languages.
-  set languageId(String? value) => throw _privateConstructorUsedError;
-
-  /// Identifier of the operation. Should be greater than 3 characteres and less than 255 characters.
-  String? get name => throw _privateConstructorUsedError;
-
-  /// Identifier of the operation. Should be greater than 3 characteres and less than 255 characters.
-  set name(String? value) => throw _privateConstructorUsedError;
-
-  /// Type of the operation, please read the documentation of OperationType for more information about the operations types.
-  @OperationTypeOrNullConverter()
-  OperationType? get operationType => throw _privateConstructorUsedError;
-
-  /// Type of the operation, please read the documentation of OperationType for more information about the operations types.
-  @OperationTypeOrNullConverter()
-  set operationType(OperationType? value) => throw _privateConstructorUsedError;
-
-  /// Body of the request. Here will detail the params for the message event.
-  String? get payload => throw _privateConstructorUsedError;
-
-  /// Body of the request. Here will detail the params for the message event.
-  set payload(String? value) => throw _privateConstructorUsedError;
-
-  /// List of the reception emails for send the event created.
-  List<String>? get receptionEmails => throw _privateConstructorUsedError;
-
-  /// List of the reception emails for send the event created.
-  set receptionEmails(List<String>? value) =>
-      throw _privateConstructorUsedError;
-
-  /// Type of request method, please read the documentation of RequestType for more information about the requests types.
-  @HttpRequestTypeOrNullConverter()
-  HttpRequestType? get requestType => throw _privateConstructorUsedError;
-
-  /// Type of request method, please read the documentation of RequestType for more information about the requests types.
-  @HttpRequestTypeOrNullConverter()
-  set requestType(HttpRequestType? value) => throw _privateConstructorUsedError;
-
-  /// Notification text color. Only used for "INAPPNOTIFICATION" operation.
-  String? get textColor => throw _privateConstructorUsedError;
-
-  /// Notification text color. Only used for "INAPPNOTIFICATION" operation.
-  set textColor(String? value) => throw _privateConstructorUsedError;
-
-  /// ID of the timezone used by the operation.
-  String? get timezoneId => throw _privateConstructorUsedError;
-
-  /// ID of the timezone used by the operation.
-  set timezoneId(String? value) => throw _privateConstructorUsedError;
-
-  /// URL of the endpoint for the event.
-  String? get url => throw _privateConstructorUsedError;
-
-  /// URL of the endpoint for the event.
-  set url(String? value) => throw _privateConstructorUsedError;
-
-  /// List of the receiver numbers for send the event created.
-  List<PhoneNumber>? get destinationPhones =>
-      throw _privateConstructorUsedError;
-
-  /// List of the receiver numbers for send the event created.
-  set destinationPhones(List<PhoneNumber>? value) =>
-      throw _privateConstructorUsedError;
-
-  /// Type of notification method, please read the documentation of NotificationType for more information about the notification types.
-  @NotificationTypeOrNullConverter()
-  NotificationType get notificationType => throw _privateConstructorUsedError;
-
-  /// Type of notification method, please read the documentation of NotificationType for more information about the notification types.
-  @NotificationTypeOrNullConverter()
-  set notificationType(NotificationType value) =>
-      throw _privateConstructorUsedError;
-
-  /// ID of the external account (optional).
-  String? get externalAccountId => throw _privateConstructorUsedError;
-
-  /// ID of the external account (optional).
-  set externalAccountId(String? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this OperationInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $OperationInputCopyWith<OperationInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $OperationInputCopyWith<$Res> {
-  factory $OperationInputCopyWith(
-          OperationInput value, $Res Function(OperationInput) then) =
-      _$OperationInputCopyWithImpl<$Res, OperationInput>;
-  @useResult
-  $Res call(
-      {String? color,
-      String? emailSubject,
-      List<HttpHeader>? headers,
-      String? id,
-      String? languageId,
-      String? name,
-      @OperationTypeOrNullConverter() OperationType? operationType,
-      String? payload,
-      List<String>? receptionEmails,
-      @HttpRequestTypeOrNullConverter() HttpRequestType? requestType,
-      String? textColor,
-      String? timezoneId,
-      String? url,
-      List<PhoneNumber>? destinationPhones,
-      @NotificationTypeOrNullConverter() NotificationType notificationType,
-      String? externalAccountId});
-}
-
-/// @nodoc
-class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput>
-    implements $OperationInputCopyWith<$Res> {
-  _$OperationInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? color = freezed,
-    Object? emailSubject = freezed,
-    Object? headers = freezed,
-    Object? id = freezed,
-    Object? languageId = freezed,
-    Object? name = freezed,
-    Object? operationType = freezed,
-    Object? payload = freezed,
-    Object? receptionEmails = freezed,
-    Object? requestType = freezed,
-    Object? textColor = freezed,
-    Object? timezoneId = freezed,
-    Object? url = freezed,
-    Object? destinationPhones = freezed,
-    Object? notificationType = null,
-    Object? externalAccountId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String?,
-      emailSubject: freezed == emailSubject
-          ? _value.emailSubject
-          : emailSubject // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _value.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as List<HttpHeader>?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageId: freezed == languageId
-          ? _value.languageId
-          : languageId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      operationType: freezed == operationType
-          ? _value.operationType
-          : operationType // ignore: cast_nullable_to_non_nullable
-              as OperationType?,
-      payload: freezed == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receptionEmails: freezed == receptionEmails
-          ? _value.receptionEmails
-          : receptionEmails // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      requestType: freezed == requestType
-          ? _value.requestType
-          : requestType // ignore: cast_nullable_to_non_nullable
-              as HttpRequestType?,
-      textColor: freezed == textColor
-          ? _value.textColor
-          : textColor // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timezoneId: freezed == timezoneId
-          ? _value.timezoneId
-          : timezoneId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      destinationPhones: freezed == destinationPhones
-          ? _value.destinationPhones
-          : destinationPhones // ignore: cast_nullable_to_non_nullable
-              as List<PhoneNumber>?,
-      notificationType: null == notificationType
-          ? _value.notificationType
-          : notificationType // ignore: cast_nullable_to_non_nullable
-              as NotificationType,
-      externalAccountId: freezed == externalAccountId
-          ? _value.externalAccountId
-          : externalAccountId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$OperationInputImplCopyWith<$Res>
-    implements $OperationInputCopyWith<$Res> {
-  factory _$$OperationInputImplCopyWith(_$OperationInputImpl value,
-          $Res Function(_$OperationInputImpl) then) =
-      __$$OperationInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? color,
-      String? emailSubject,
-      List<HttpHeader>? headers,
-      String? id,
-      String? languageId,
-      String? name,
-      @OperationTypeOrNullConverter() OperationType? operationType,
-      String? payload,
-      List<String>? receptionEmails,
-      @HttpRequestTypeOrNullConverter() HttpRequestType? requestType,
-      String? textColor,
-      String? timezoneId,
-      String? url,
-      List<PhoneNumber>? destinationPhones,
-      @NotificationTypeOrNullConverter() NotificationType notificationType,
-      String? externalAccountId});
-}
-
-/// @nodoc
-class __$$OperationInputImplCopyWithImpl<$Res>
-    extends _$OperationInputCopyWithImpl<$Res, _$OperationInputImpl>
-    implements _$$OperationInputImplCopyWith<$Res> {
-  __$$OperationInputImplCopyWithImpl(
-      _$OperationInputImpl _value, $Res Function(_$OperationInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? color = freezed,
-    Object? emailSubject = freezed,
-    Object? headers = freezed,
-    Object? id = freezed,
-    Object? languageId = freezed,
-    Object? name = freezed,
-    Object? operationType = freezed,
-    Object? payload = freezed,
-    Object? receptionEmails = freezed,
-    Object? requestType = freezed,
-    Object? textColor = freezed,
-    Object? timezoneId = freezed,
-    Object? url = freezed,
-    Object? destinationPhones = freezed,
-    Object? notificationType = null,
-    Object? externalAccountId = freezed,
-  }) {
-    return _then(_$OperationInputImpl(
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as String?,
-      emailSubject: freezed == emailSubject
-          ? _value.emailSubject
-          : emailSubject // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _value.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as List<HttpHeader>?,
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageId: freezed == languageId
-          ? _value.languageId
-          : languageId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      operationType: freezed == operationType
-          ? _value.operationType
-          : operationType // ignore: cast_nullable_to_non_nullable
-              as OperationType?,
-      payload: freezed == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receptionEmails: freezed == receptionEmails
-          ? _value.receptionEmails
-          : receptionEmails // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      requestType: freezed == requestType
-          ? _value.requestType
-          : requestType // ignore: cast_nullable_to_non_nullable
-              as HttpRequestType?,
-      textColor: freezed == textColor
-          ? _value.textColor
-          : textColor // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timezoneId: freezed == timezoneId
-          ? _value.timezoneId
-          : timezoneId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      destinationPhones: freezed == destinationPhones
-          ? _value.destinationPhones
-          : destinationPhones // ignore: cast_nullable_to_non_nullable
-              as List<PhoneNumber>?,
-      notificationType: null == notificationType
-          ? _value.notificationType
-          : notificationType // ignore: cast_nullable_to_non_nullable
-              as NotificationType,
-      externalAccountId: freezed == externalAccountId
-          ? _value.externalAccountId
-          : externalAccountId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$OperationInputImpl implements _OperationInput {
-  _$OperationInputImpl(
-      {this.color,
-      this.emailSubject,
-      this.headers = const [],
-      this.id,
-      this.languageId,
-      this.name,
-      @OperationTypeOrNullConverter() this.operationType,
-      this.payload,
-      this.receptionEmails,
-      @HttpRequestTypeOrNullConverter() this.requestType,
-      this.textColor,
-      this.timezoneId,
-      this.url,
-      this.destinationPhones = const [],
-      @NotificationTypeOrNullConverter()
-      this.notificationType = NotificationType.sms,
-      this.externalAccountId});
-
-  factory _$OperationInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OperationInputImplFromJson(json);
-
-  /// Notification color. Only used for "INAPPNOTIFICATION" operation.
-  @override
-  String? color;
-
-  /// Subject of the email sended.
-  @override
-  String? emailSubject;
-
-  /// Headers linked to the request, read the documentation of HeaderInput for more details.
-  @override
-  @JsonKey()
-  List<HttpHeader>? headers;
-
-  /// ID of the operation entity. This ID is unique. Only required for "editOperation" mutation.
-  @override
-  String? id;
-
-  /// ID of the language for the operation entity. This support multiples languages.
-  @override
-  String? languageId;
-
-  /// Identifier of the operation. Should be greater than 3 characteres and less than 255 characters.
-  @override
-  String? name;
-
-  /// Type of the operation, please read the documentation of OperationType for more information about the operations types.
-  @override
-  @OperationTypeOrNullConverter()
-  OperationType? operationType;
-
-  /// Body of the request. Here will detail the params for the message event.
-  @override
-  String? payload;
-
-  /// List of the reception emails for send the event created.
-  @override
-  List<String>? receptionEmails;
-
-  /// Type of request method, please read the documentation of RequestType for more information about the requests types.
-  @override
-  @HttpRequestTypeOrNullConverter()
-  HttpRequestType? requestType;
-
-  /// Notification text color. Only used for "INAPPNOTIFICATION" operation.
-  @override
-  String? textColor;
-
-  /// ID of the timezone used by the operation.
-  @override
-  String? timezoneId;
-
-  /// URL of the endpoint for the event.
-  @override
-  String? url;
-
-  /// List of the receiver numbers for send the event created.
-  @override
-  @JsonKey()
-  List<PhoneNumber>? destinationPhones;
-
-  /// Type of notification method, please read the documentation of NotificationType for more information about the notification types.
-  @override
-  @JsonKey()
-  @NotificationTypeOrNullConverter()
-  NotificationType notificationType;
-
-  /// ID of the external account (optional).
-  @override
-  String? externalAccountId;
-
-  @override
-  String toString() {
-    return 'OperationInput(color: $color, emailSubject: $emailSubject, headers: $headers, id: $id, languageId: $languageId, name: $name, operationType: $operationType, payload: $payload, receptionEmails: $receptionEmails, requestType: $requestType, textColor: $textColor, timezoneId: $timezoneId, url: $url, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId)';
-  }
-
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OperationInputImplCopyWith<_$OperationInputImpl> get copyWith =>
-      __$$OperationInputImplCopyWithImpl<_$OperationInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$OperationInputImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _OperationInput implements OperationInput {
-  factory _OperationInput(
-      {String? color,
-      String? emailSubject,
-      List<HttpHeader>? headers,
-      String? id,
-      String? languageId,
-      String? name,
-      @OperationTypeOrNullConverter() OperationType? operationType,
-      String? payload,
-      List<String>? receptionEmails,
-      @HttpRequestTypeOrNullConverter() HttpRequestType? requestType,
-      String? textColor,
-      String? timezoneId,
-      String? url,
-      List<PhoneNumber>? destinationPhones,
-      @NotificationTypeOrNullConverter() NotificationType notificationType,
-      String? externalAccountId}) = _$OperationInputImpl;
-
-  factory _OperationInput.fromJson(Map<String, dynamic> json) =
-      _$OperationInputImpl.fromJson;
-
-  /// Notification color. Only used for "INAPPNOTIFICATION" operation.
-  @override
-  String? get color;
-
-  /// Notification color. Only used for "INAPPNOTIFICATION" operation.
-  set color(String? value);
-
-  /// Subject of the email sended.
-  @override
-  String? get emailSubject;
-
-  /// Subject of the email sended.
-  set emailSubject(String? value);
-
-  /// Headers linked to the request, read the documentation of HeaderInput for more details.
-  @override
-  List<HttpHeader>? get headers;
-
-  /// Headers linked to the request, read the documentation of HeaderInput for more details.
-  set headers(List<HttpHeader>? value);
-
-  /// ID of the operation entity. This ID is unique. Only required for "editOperation" mutation.
-  @override
-  String? get id;
-
-  /// ID of the operation entity. This ID is unique. Only required for "editOperation" mutation.
-  set id(String? value);
-
-  /// ID of the language for the operation entity. This support multiples languages.
-  @override
-  String? get languageId;
-
-  /// ID of the language for the operation entity. This support multiples languages.
-  set languageId(String? value);
-
-  /// Identifier of the operation. Should be greater than 3 characteres and less than 255 characters.
-  @override
-  String? get name;
-
-  /// Identifier of the operation. Should be greater than 3 characteres and less than 255 characters.
-  set name(String? value);
-
-  /// Type of the operation, please read the documentation of OperationType for more information about the operations types.
-  @override
-  @OperationTypeOrNullConverter()
-  OperationType? get operationType;
-
-  /// Type of the operation, please read the documentation of OperationType for more information about the operations types.
-  @OperationTypeOrNullConverter()
-  set operationType(OperationType? value);
-
-  /// Body of the request. Here will detail the params for the message event.
-  @override
-  String? get payload;
-
-  /// Body of the request. Here will detail the params for the message event.
-  set payload(String? value);
-
-  /// List of the reception emails for send the event created.
-  @override
-  List<String>? get receptionEmails;
-
-  /// List of the reception emails for send the event created.
-  set receptionEmails(List<String>? value);
-
-  /// Type of request method, please read the documentation of RequestType for more information about the requests types.
-  @override
-  @HttpRequestTypeOrNullConverter()
-  HttpRequestType? get requestType;
-
-  /// Type of request method, please read the documentation of RequestType for more information about the requests types.
-  @HttpRequestTypeOrNullConverter()
-  set requestType(HttpRequestType? value);
-
-  /// Notification text color. Only used for "INAPPNOTIFICATION" operation.
-  @override
-  String? get textColor;
-
-  /// Notification text color. Only used for "INAPPNOTIFICATION" operation.
-  set textColor(String? value);
-
-  /// ID of the timezone used by the operation.
-  @override
-  String? get timezoneId;
-
-  /// ID of the timezone used by the operation.
-  set timezoneId(String? value);
-
-  /// URL of the endpoint for the event.
-  @override
-  String? get url;
-
-  /// URL of the endpoint for the event.
-  set url(String? value);
-
-  /// List of the receiver numbers for send the event created.
-  @override
-  List<PhoneNumber>? get destinationPhones;
-
-  /// List of the receiver numbers for send the event created.
-  set destinationPhones(List<PhoneNumber>? value);
-
-  /// Type of notification method, please read the documentation of NotificationType for more information about the notification types.
-  @override
-  @NotificationTypeOrNullConverter()
-  NotificationType get notificationType;
-
-  /// Type of notification method, please read the documentation of NotificationType for more information about the notification types.
-  @NotificationTypeOrNullConverter()
-  set notificationType(NotificationType value);
-
-  /// ID of the external account (optional).
-  @override
-  String? get externalAccountId;
-
-  /// ID of the external account (optional).
-  set externalAccountId(String? value);
-
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OperationInputImplCopyWith<_$OperationInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
 
 Preset _$PresetFromJson(Map<String, dynamic> json) {

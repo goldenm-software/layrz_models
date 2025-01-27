@@ -41,7 +41,6 @@ enum AssetMode {
       case AssetMode.zone:
         return 'ZONE';
       case AssetMode.single:
-      default:
         return 'SINGLE';
     }
   }

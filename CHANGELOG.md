@@ -1,5 +1,46 @@
 # Changelog
 
+## 3.3.31
+
+- Added Parsing technology on `ble` submodule
+
+## 3.3.30
+
+- Updates over Ble things
+
+## 3.3.29
+
+- Hotfix
+
+## 3.3.28
+
+- Updates on `Action` and `LayrzChart` models to support direct enum conversion
+- Added their equivalences of the models mentioned above in the `Input` models
+
+## 3.3.27
+
+- Changes added to `Operation` and `OperationInput` models
+
+## 3.3.26
+
+- Added `LayrzNotification` model
+- Added `SoundEffect` enum
+- Updated `Operation` and `OPerationInput` models to support sound effects on notifications.
+
+## 3.3.25
+
+- Updated `MapLayer` model to use direct enum conversion
+- Added `MapLayerInput` model
+
+## 3.3.24
+
+- Updated some models of sub module `apps` to support direct enum conversion
+
+## 3.3.23
+
+- Added peripheral indicator and identifier for `InboundProtocol` and `Model` models
+- Added new `visionCaptureThreshold` in `Device` model
+
 ## 3.3.22
 - Document `AtsPurchaseOrderCategoriesEntity`
 - `height` and `initialHeight` was added in `AtsEntry`

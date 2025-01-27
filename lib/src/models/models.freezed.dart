@@ -51,11 +51,14 @@ mixin _$Model {
   bool get confiotCapable => throw _privateConstructorUsedError;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
-  @ConfIoTLayoutConverter()
+  @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
   ConfIoTLayout get confiotLayout => throw _privateConstructorUsedError;
 
   /// [confiotName] is the name of the model in the ConfIoT.
   String? get confiotName => throw _privateConstructorUsedError;
+
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  String? get peripheralIdentifier => throw _privateConstructorUsedError;
 
   /// Serializes this Model to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -81,8 +84,10 @@ abstract class $ModelCopyWith<$Res> {
       List<CommandDefinition> commandsStructure,
       List<ConfigGrouping> configStructure,
       bool confiotCapable,
-      @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
-      String? confiotName});
+      @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
+      ConfIoTLayout confiotLayout,
+      String? confiotName,
+      String? peripheralIdentifier});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
 }
@@ -113,6 +118,7 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
     Object? confiotCapable = null,
     Object? confiotLayout = null,
     Object? confiotName = freezed,
+    Object? peripheralIdentifier = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -159,6 +165,10 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
           ? _value.confiotName
           : confiotName // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralIdentifier: freezed == peripheralIdentifier
+          ? _value.peripheralIdentifier
+          : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -194,8 +204,10 @@ abstract class _$$ModelImplCopyWith<$Res> implements $ModelCopyWith<$Res> {
       List<CommandDefinition> commandsStructure,
       List<ConfigGrouping> configStructure,
       bool confiotCapable,
-      @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
-      String? confiotName});
+      @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
+      ConfIoTLayout confiotLayout,
+      String? confiotName,
+      String? peripheralIdentifier});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -225,6 +237,7 @@ class __$$ModelImplCopyWithImpl<$Res>
     Object? confiotCapable = null,
     Object? confiotLayout = null,
     Object? confiotName = freezed,
+    Object? peripheralIdentifier = freezed,
   }) {
     return _then(_$ModelImpl(
       id: null == id
@@ -271,6 +284,10 @@ class __$$ModelImplCopyWithImpl<$Res>
           ? _value.confiotName
           : confiotName // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralIdentifier: freezed == peripheralIdentifier
+          ? _value.peripheralIdentifier
+          : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -288,8 +305,10 @@ class _$ModelImpl implements _Model {
       final List<CommandDefinition> commandsStructure = const [],
       final List<ConfigGrouping> configStructure = const [],
       this.confiotCapable = false,
-      @ConfIoTLayoutConverter() this.confiotLayout = ConfIoTLayout.standard,
-      this.confiotName})
+      @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
+      this.confiotLayout = ConfIoTLayout.standard,
+      this.confiotName,
+      this.peripheralIdentifier})
       : _commandsStructure = commandsStructure,
         _configStructure = configStructure;
 
@@ -353,17 +372,20 @@ class _$ModelImpl implements _Model {
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
   @override
-  @JsonKey()
-  @ConfIoTLayoutConverter()
+  @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
   final ConfIoTLayout confiotLayout;
 
   /// [confiotName] is the name of the model in the ConfIoT.
   @override
   final String? confiotName;
 
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  @override
+  final String? peripheralIdentifier;
+
   @override
   String toString() {
-    return 'Model(id: $id, name: $name, flespiId: $flespiId, protocol: $protocol, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName)';
+    return 'Model(id: $id, name: $name, flespiId: $flespiId, protocol: $protocol, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName, peripheralIdentifier: $peripheralIdentifier)';
   }
 
   @override
@@ -390,7 +412,9 @@ class _$ModelImpl implements _Model {
             (identical(other.confiotLayout, confiotLayout) ||
                 other.confiotLayout == confiotLayout) &&
             (identical(other.confiotName, confiotName) ||
-                other.confiotName == confiotName));
+                other.confiotName == confiotName) &&
+            (identical(other.peripheralIdentifier, peripheralIdentifier) ||
+                other.peripheralIdentifier == peripheralIdentifier));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -407,7 +431,8 @@ class _$ModelImpl implements _Model {
       const DeepCollectionEquality().hash(_configStructure),
       confiotCapable,
       confiotLayout,
-      confiotName);
+      confiotName,
+      peripheralIdentifier);
 
   /// Create a copy of Model
   /// with the given fields replaced by the non-null parameter values.
@@ -436,8 +461,10 @@ abstract class _Model implements Model {
       final List<CommandDefinition> commandsStructure,
       final List<ConfigGrouping> configStructure,
       final bool confiotCapable,
-      @ConfIoTLayoutConverter() final ConfIoTLayout confiotLayout,
-      final String? confiotName}) = _$ModelImpl;
+      @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
+      final ConfIoTLayout confiotLayout,
+      final String? confiotName,
+      final String? peripheralIdentifier}) = _$ModelImpl;
 
   factory _Model.fromJson(Map<String, dynamic> json) = _$ModelImpl.fromJson;
 
@@ -480,12 +507,16 @@ abstract class _Model implements Model {
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
   @override
-  @ConfIoTLayoutConverter()
+  @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
   ConfIoTLayout get confiotLayout;
 
   /// [confiotName] is the name of the model in the ConfIoT.
   @override
   String? get confiotName;
+
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  @override
+  String? get peripheralIdentifier;
 
   /// Create a copy of Model
   /// with the given fields replaced by the non-null parameter values.
@@ -556,11 +587,11 @@ mixin _$ModelInput {
   set confiotCapable(bool value) => throw _privateConstructorUsedError;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
-  @ConfIoTLayoutConverter()
+  @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
   ConfIoTLayout get confiotLayout => throw _privateConstructorUsedError;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
-  @ConfIoTLayoutConverter()
+  @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
   set confiotLayout(ConfIoTLayout value) => throw _privateConstructorUsedError;
 
   /// [confiotName] is the name of the model in the ConfIoT.
@@ -568,6 +599,12 @@ mixin _$ModelInput {
 
   /// [confiotName] is the name of the model in the ConfIoT.
   set confiotName(String? value) => throw _privateConstructorUsedError;
+
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  String? get peripheralIdentifier => throw _privateConstructorUsedError;
+
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  set peripheralIdentifier(String? value) => throw _privateConstructorUsedError;
 
   /// Serializes this ModelInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -594,8 +631,10 @@ abstract class $ModelInputCopyWith<$Res> {
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
-      @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
-      String? confiotName});
+      @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
+      ConfIoTLayout confiotLayout,
+      String? confiotName,
+      String? peripheralIdentifier});
 }
 
 /// @nodoc
@@ -623,6 +662,7 @@ class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
     Object? confiotCapable = null,
     Object? confiotLayout = null,
     Object? confiotName = freezed,
+    Object? peripheralIdentifier = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -665,6 +705,10 @@ class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
           ? _value.confiotName
           : confiotName // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralIdentifier: freezed == peripheralIdentifier
+          ? _value.peripheralIdentifier
+          : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -686,8 +730,10 @@ abstract class _$$ModelInputImplCopyWith<$Res>
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
-      @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
-      String? confiotName});
+      @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
+      ConfIoTLayout confiotLayout,
+      String? confiotName,
+      String? peripheralIdentifier});
 }
 
 /// @nodoc
@@ -713,6 +759,7 @@ class __$$ModelInputImplCopyWithImpl<$Res>
     Object? confiotCapable = null,
     Object? confiotLayout = null,
     Object? confiotName = freezed,
+    Object? peripheralIdentifier = freezed,
   }) {
     return _then(_$ModelInputImpl(
       id: freezed == id
@@ -755,6 +802,10 @@ class __$$ModelInputImplCopyWithImpl<$Res>
           ? _value.confiotName
           : confiotName // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralIdentifier: freezed == peripheralIdentifier
+          ? _value.peripheralIdentifier
+          : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -771,8 +822,10 @@ class _$ModelInputImpl implements _ModelInput {
       this.commandsStructure = const [],
       this.configStructure = const [],
       this.confiotCapable = false,
-      @ConfIoTLayoutConverter() this.confiotLayout = ConfIoTLayout.standard,
-      this.confiotName});
+      @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
+      this.confiotLayout = ConfIoTLayout.standard,
+      this.confiotName,
+      this.peripheralIdentifier});
 
   factory _$ModelInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$ModelInputImplFromJson(json);
@@ -817,17 +870,20 @@ class _$ModelInputImpl implements _ModelInput {
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
   @override
-  @JsonKey()
-  @ConfIoTLayoutConverter()
+  @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
   ConfIoTLayout confiotLayout;
 
   /// [confiotName] is the name of the model in the ConfIoT.
   @override
   String? confiotName;
 
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  @override
+  String? peripheralIdentifier;
+
   @override
   String toString() {
-    return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName)';
+    return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName, peripheralIdentifier: $peripheralIdentifier)';
   }
 
   /// Create a copy of ModelInput
@@ -856,8 +912,10 @@ abstract class _ModelInput implements ModelInput {
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
-      @ConfIoTLayoutConverter() ConfIoTLayout confiotLayout,
-      String? confiotName}) = _$ModelInputImpl;
+      @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
+      ConfIoTLayout confiotLayout,
+      String? confiotName,
+      String? peripheralIdentifier}) = _$ModelInputImpl;
 
   factory _ModelInput.fromJson(Map<String, dynamic> json) =
       _$ModelInputImpl.fromJson;
@@ -922,11 +980,11 @@ abstract class _ModelInput implements ModelInput {
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
   @override
-  @ConfIoTLayoutConverter()
+  @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
   ConfIoTLayout get confiotLayout;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
-  @ConfIoTLayoutConverter()
+  @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
   set confiotLayout(ConfIoTLayout value);
 
   /// [confiotName] is the name of the model in the ConfIoT.
@@ -935,6 +993,13 @@ abstract class _ModelInput implements ModelInput {
 
   /// [confiotName] is the name of the model in the ConfIoT.
   set confiotName(String? value);
+
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  @override
+  String? get peripheralIdentifier;
+
+  /// [peripheralIdentifier] is the identifier of the peripheral device.
+  set peripheralIdentifier(String? value);
 
   /// Create a copy of ModelInput
   /// with the given fields replaced by the non-null parameter values.

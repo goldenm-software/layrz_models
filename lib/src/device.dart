@@ -72,6 +72,10 @@ class Device with _$Device {
     /// [configParams] is the configuration parameters received from the device, this information is
     /// used to configure the device.
     Map<String, dynamic>? configParams,
+
+    /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+    /// threshold of the indicator displayed on Layrz Vision app.
+    @DurationConverter() Duration? visionCaptureThreshold,
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);
@@ -110,6 +114,10 @@ class DeviceInput with _$DeviceInput {
 
     /// [hwModelId] is the hardware model ID of the device.
     String? hwModelId,
+
+    /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
+    /// threshold of the indicator displayed on Layrz Vision app.
+    @DurationConverter() Duration? visionCaptureThreshold,
   }) = _DeviceInput;
 
   factory DeviceInput.fromJson(Map<String, dynamic> json) => _$DeviceInputFromJson(json);
