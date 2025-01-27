@@ -1,5 +1,6 @@
 library ble;
 
+import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'ble.freezed.dart';

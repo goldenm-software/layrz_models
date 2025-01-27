@@ -9,12 +9,14 @@ enum BleProperty {
   /// Means the value can be broadcasted.
   ///
   /// BLE specification identifier: `0x01`
+  @JsonValue('BROADCAST')
   broadcast,
 
   /// [read] is the read property of a characteristic.
   /// Means the value can be read.
   ///
   /// BLE specification identifier: `0x02`
+  @JsonValue('READ')
   read,
 
   /// [writeWithoutResponse] is the write without response property of a characteristic.
@@ -22,12 +24,14 @@ enum BleProperty {
   /// uses this characteristic properly to receive UART data from the central device.
   ///
   /// BLE specification identifier: `0x04`
+  @JsonValue('WRITE_WO_RSP')
   writeWithoutResponse,
 
   /// [write] is the write property of a characteristic.
   /// Means the value can be written to the peripheral from the central device.
   ///
   /// BLE specification identifier: `0x08`
+  @JsonValue('WRITE')
   write,
 
   /// [notify] is the notify property of a characteristic.
@@ -35,97 +39,45 @@ enum BleProperty {
   /// This is the standard way peripherals periodically publish data.
   ///
   /// BLE specification identifier: `0x10`
+  @JsonValue('NOTIFY')
   notify,
 
   /// [indicate] is the indicate property of a characteristic.
   /// Means the value can be indicated, basically publish with acknowledgement.
   ///
   /// BLE specification identifier: `0x20`
+  @JsonValue('INDICATE')
   indicate,
 
   /// [authenticatedSignedWrites] is the authenticated signed writes property of a characteristic.
   /// Means the value supports signed writes. This is operation not supported.
   ///
   /// BLE specification identifier: `0x40`
+  @JsonValue('AUTH_SIGN_WRITES')
   authenticatedSignedWrites,
 
   /// [extendedProperties] is the extended properties property of a characteristic.
   /// Means the value supports extended properties. This operation is not supported.
   ///
   /// BLE specification identifier: `0x80`
+  @JsonValue('EXTENDED_PROP')
   extendedProperties,
 
   /// [unknown] is the unknown property of a characteristic.
   /// This used when the property is not recognized or not registered as a BLE property in the BLE specification.
+  @JsonValue('UNKNOWN')
   unknown,
   ;
 
   @override
   String toString() => toJson();
 
-  String toJson() {
-    switch (this) {
-      case BleProperty.broadcast:
-        return 'BROADCAST';
-      case BleProperty.read:
-        return 'READ';
-      case BleProperty.writeWithoutResponse:
-        return 'WRITE_WO_RSP';
-      case BleProperty.write:
-        return 'WRITE';
-      case BleProperty.notify:
-        return 'NOTIFY';
-      case BleProperty.indicate:
-        return 'INDICATE';
-      case BleProperty.authenticatedSignedWrites:
-        return 'AUTH_SIGN_WRITES';
-      case BleProperty.extendedProperties:
-        return 'EXTENDED_PROP';
-      default:
-        return 'UNKNOWN';
-    }
-  }
+  /// [toJson] returns the string representation of the enum value.
+  String toJson() => _$BlePropertyEnumMap[this] ?? 'UNKNOWN';
 
+  /// [fromJson] returns the enum value from a string representation.
   static BleProperty fromJson(String json) {
-    switch (json) {
-      case 'BROADCAST':
-        return BleProperty.broadcast;
-      case 'READ':
-        return BleProperty.read;
-      case 'WRITE_WO_RSP':
-        return BleProperty.writeWithoutResponse;
-      case 'WRITE':
-        return BleProperty.write;
-      case 'NOTIFY':
-        return BleProperty.notify;
-      case 'INDICATE':
-        return BleProperty.indicate;
-      case 'AUTH_SIGN_WRITES':
-        return BleProperty.authenticatedSignedWrites;
-      case 'EXTENDED_PROP':
-        return BleProperty.extendedProperties;
-      default:
-        return BleProperty.unknown;
-    }
+    final found = _$BlePropertyEnumMap.entries.firstWhereOrNull((e) => e.value == json);
+    return found?.key ?? BleProperty.unknown;
   }
-}
-
-class BlePropertyConverter implements JsonConverter<BleProperty, String> {
-  const BlePropertyConverter();
-
-  @override
-  BleProperty fromJson(String json) => BleProperty.fromJson(json);
-
-  @override
-  String toJson(BleProperty object) => object.toJson();
-}
-
-class BlePropertyOrNullConverter implements JsonConverter<BleProperty?, String?> {
-  const BlePropertyOrNullConverter();
-
-  @override
-  BleProperty? fromJson(String? json) => json == null ? null : BleProperty.fromJson(json);
-
-  @override
-  String? toJson(BleProperty? object) => object?.toJson();
 }
