@@ -386,6 +386,20 @@ Map<String, dynamic> _$$AtsCommandResultImplToJson(
           const TimestampOrNullConverter().toJson(instance.executedAt),
     };
 
+_$AtsExecuteLoadInputImpl _$$AtsExecuteLoadInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsExecuteLoadInputImpl(
+      fromAssetId: json['fromAssetId'] as String?,
+      toAssetId: json['toAssetId'] as String?,
+    );
+
+Map<String, dynamic> _$$AtsExecuteLoadInputImplToJson(
+        _$AtsExecuteLoadInputImpl instance) =>
+    <String, dynamic>{
+      'fromAssetId': instance.fromAssetId,
+      'toAssetId': instance.toAssetId,
+    };
+
 _$AtsCompanyInformationImpl _$$AtsCompanyInformationImplFromJson(
         Map<String, dynamic> json) =>
     _$AtsCompanyInformationImpl(

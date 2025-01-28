@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.3.32
+- Added `AtsExecuteLoadInput` to execute load
+
 ## 3.3.31
 
 - Added Parsing technology on `ble` submodule

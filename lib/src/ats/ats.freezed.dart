@@ -4732,6 +4732,174 @@ abstract class _AtsCommandResult implements AtsCommandResult {
       throw _privateConstructorUsedError;
 }
 
+AtsExecuteLoadInput _$AtsExecuteLoadInputFromJson(Map<String, dynamic> json) {
+  return _AtsExecuteLoadInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AtsExecuteLoadInput {
+  /// `fromAssetId` of the tank
+  String? get fromAssetId => throw _privateConstructorUsedError;
+
+  /// `fromAssetId` of the tank
+  set fromAssetId(String? value) =>
+      throw _privateConstructorUsedError; //// `toAssetId` of the convoy
+  String? get toAssetId =>
+      throw _privateConstructorUsedError; //// `toAssetId` of the convoy
+  set toAssetId(String? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AtsExecuteLoadInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AtsExecuteLoadInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AtsExecuteLoadInputCopyWith<AtsExecuteLoadInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AtsExecuteLoadInputCopyWith<$Res> {
+  factory $AtsExecuteLoadInputCopyWith(
+          AtsExecuteLoadInput value, $Res Function(AtsExecuteLoadInput) then) =
+      _$AtsExecuteLoadInputCopyWithImpl<$Res, AtsExecuteLoadInput>;
+  @useResult
+  $Res call({String? fromAssetId, String? toAssetId});
+}
+
+/// @nodoc
+class _$AtsExecuteLoadInputCopyWithImpl<$Res, $Val extends AtsExecuteLoadInput>
+    implements $AtsExecuteLoadInputCopyWith<$Res> {
+  _$AtsExecuteLoadInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AtsExecuteLoadInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? fromAssetId = freezed,
+    Object? toAssetId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      fromAssetId: freezed == fromAssetId
+          ? _value.fromAssetId
+          : fromAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toAssetId: freezed == toAssetId
+          ? _value.toAssetId
+          : toAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AtsExecuteLoadInputImplCopyWith<$Res>
+    implements $AtsExecuteLoadInputCopyWith<$Res> {
+  factory _$$AtsExecuteLoadInputImplCopyWith(_$AtsExecuteLoadInputImpl value,
+          $Res Function(_$AtsExecuteLoadInputImpl) then) =
+      __$$AtsExecuteLoadInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? fromAssetId, String? toAssetId});
+}
+
+/// @nodoc
+class __$$AtsExecuteLoadInputImplCopyWithImpl<$Res>
+    extends _$AtsExecuteLoadInputCopyWithImpl<$Res, _$AtsExecuteLoadInputImpl>
+    implements _$$AtsExecuteLoadInputImplCopyWith<$Res> {
+  __$$AtsExecuteLoadInputImplCopyWithImpl(_$AtsExecuteLoadInputImpl _value,
+      $Res Function(_$AtsExecuteLoadInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AtsExecuteLoadInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? fromAssetId = freezed,
+    Object? toAssetId = freezed,
+  }) {
+    return _then(_$AtsExecuteLoadInputImpl(
+      fromAssetId: freezed == fromAssetId
+          ? _value.fromAssetId
+          : fromAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      toAssetId: freezed == toAssetId
+          ? _value.toAssetId
+          : toAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AtsExecuteLoadInputImpl implements _AtsExecuteLoadInput {
+  _$AtsExecuteLoadInputImpl({this.fromAssetId, this.toAssetId});
+
+  factory _$AtsExecuteLoadInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AtsExecuteLoadInputImplFromJson(json);
+
+  /// `fromAssetId` of the tank
+  @override
+  String? fromAssetId;
+//// `toAssetId` of the convoy
+  @override
+  String? toAssetId;
+
+  @override
+  String toString() {
+    return 'AtsExecuteLoadInput(fromAssetId: $fromAssetId, toAssetId: $toAssetId)';
+  }
+
+  /// Create a copy of AtsExecuteLoadInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AtsExecuteLoadInputImplCopyWith<_$AtsExecuteLoadInputImpl> get copyWith =>
+      __$$AtsExecuteLoadInputImplCopyWithImpl<_$AtsExecuteLoadInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AtsExecuteLoadInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AtsExecuteLoadInput implements AtsExecuteLoadInput {
+  factory _AtsExecuteLoadInput({String? fromAssetId, String? toAssetId}) =
+      _$AtsExecuteLoadInputImpl;
+
+  factory _AtsExecuteLoadInput.fromJson(Map<String, dynamic> json) =
+      _$AtsExecuteLoadInputImpl.fromJson;
+
+  /// `fromAssetId` of the tank
+  @override
+  String? get fromAssetId;
+
+  /// `fromAssetId` of the tank
+  set fromAssetId(String? value); //// `toAssetId` of the convoy
+  @override
+  String? get toAssetId; //// `toAssetId` of the convoy
+  set toAssetId(String? value);
+
+  /// Create a copy of AtsExecuteLoadInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AtsExecuteLoadInputImplCopyWith<_$AtsExecuteLoadInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 AtsCompanyInformation _$AtsCompanyInformationFromJson(
     Map<String, dynamic> json) {
   return _AtsCompanyInformation.fromJson(json);

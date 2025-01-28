@@ -2196,6 +2196,808 @@ abstract class _BHSDriverSafetyDrivenScore
       get copyWith => throw _privateConstructorUsedError;
 }
 
+BHSDriverSafetySpeedingEvent _$BHSDriverSafetySpeedingEventFromJson(
+    Map<String, dynamic> json) {
+  return _BHSDriverSafetySpeedingEvent.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BHSDriverSafetySpeedingEvent {
+  double get maxSpeed => throw _privateConstructorUsedError;
+  @TimestampConverter()
+  DateTime get startAt => throw _privateConstructorUsedError;
+  @TimestampConverter()
+  DateTime get endAt => throw _privateConstructorUsedError;
+
+  /// Serializes this BHSDriverSafetySpeedingEvent to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BHSDriverSafetySpeedingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BHSDriverSafetySpeedingEventCopyWith<BHSDriverSafetySpeedingEvent>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BHSDriverSafetySpeedingEventCopyWith<$Res> {
+  factory $BHSDriverSafetySpeedingEventCopyWith(
+          BHSDriverSafetySpeedingEvent value,
+          $Res Function(BHSDriverSafetySpeedingEvent) then) =
+      _$BHSDriverSafetySpeedingEventCopyWithImpl<$Res,
+          BHSDriverSafetySpeedingEvent>;
+  @useResult
+  $Res call(
+      {double maxSpeed,
+      @TimestampConverter() DateTime startAt,
+      @TimestampConverter() DateTime endAt});
+}
+
+/// @nodoc
+class _$BHSDriverSafetySpeedingEventCopyWithImpl<$Res,
+        $Val extends BHSDriverSafetySpeedingEvent>
+    implements $BHSDriverSafetySpeedingEventCopyWith<$Res> {
+  _$BHSDriverSafetySpeedingEventCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BHSDriverSafetySpeedingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? maxSpeed = null,
+    Object? startAt = null,
+    Object? endAt = null,
+  }) {
+    return _then(_value.copyWith(
+      maxSpeed: null == maxSpeed
+          ? _value.maxSpeed
+          : maxSpeed // ignore: cast_nullable_to_non_nullable
+              as double,
+      startAt: null == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      endAt: null == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BHSDriverSafetySpeedingEventImplCopyWith<$Res>
+    implements $BHSDriverSafetySpeedingEventCopyWith<$Res> {
+  factory _$$BHSDriverSafetySpeedingEventImplCopyWith(
+          _$BHSDriverSafetySpeedingEventImpl value,
+          $Res Function(_$BHSDriverSafetySpeedingEventImpl) then) =
+      __$$BHSDriverSafetySpeedingEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {double maxSpeed,
+      @TimestampConverter() DateTime startAt,
+      @TimestampConverter() DateTime endAt});
+}
+
+/// @nodoc
+class __$$BHSDriverSafetySpeedingEventImplCopyWithImpl<$Res>
+    extends _$BHSDriverSafetySpeedingEventCopyWithImpl<$Res,
+        _$BHSDriverSafetySpeedingEventImpl>
+    implements _$$BHSDriverSafetySpeedingEventImplCopyWith<$Res> {
+  __$$BHSDriverSafetySpeedingEventImplCopyWithImpl(
+      _$BHSDriverSafetySpeedingEventImpl _value,
+      $Res Function(_$BHSDriverSafetySpeedingEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BHSDriverSafetySpeedingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? maxSpeed = null,
+    Object? startAt = null,
+    Object? endAt = null,
+  }) {
+    return _then(_$BHSDriverSafetySpeedingEventImpl(
+      maxSpeed: null == maxSpeed
+          ? _value.maxSpeed
+          : maxSpeed // ignore: cast_nullable_to_non_nullable
+              as double,
+      startAt: null == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      endAt: null == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BHSDriverSafetySpeedingEventImpl
+    implements _BHSDriverSafetySpeedingEvent {
+  const _$BHSDriverSafetySpeedingEventImpl(
+      {required this.maxSpeed,
+      @TimestampConverter() required this.startAt,
+      @TimestampConverter() required this.endAt});
+
+  factory _$BHSDriverSafetySpeedingEventImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$BHSDriverSafetySpeedingEventImplFromJson(json);
+
+  @override
+  final double maxSpeed;
+  @override
+  @TimestampConverter()
+  final DateTime startAt;
+  @override
+  @TimestampConverter()
+  final DateTime endAt;
+
+  @override
+  String toString() {
+    return 'BHSDriverSafetySpeedingEvent(maxSpeed: $maxSpeed, startAt: $startAt, endAt: $endAt)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BHSDriverSafetySpeedingEventImpl &&
+            (identical(other.maxSpeed, maxSpeed) ||
+                other.maxSpeed == maxSpeed) &&
+            (identical(other.startAt, startAt) || other.startAt == startAt) &&
+            (identical(other.endAt, endAt) || other.endAt == endAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, maxSpeed, startAt, endAt);
+
+  /// Create a copy of BHSDriverSafetySpeedingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BHSDriverSafetySpeedingEventImplCopyWith<
+          _$BHSDriverSafetySpeedingEventImpl>
+      get copyWith => __$$BHSDriverSafetySpeedingEventImplCopyWithImpl<
+          _$BHSDriverSafetySpeedingEventImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BHSDriverSafetySpeedingEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BHSDriverSafetySpeedingEvent
+    implements BHSDriverSafetySpeedingEvent {
+  const factory _BHSDriverSafetySpeedingEvent(
+          {required final double maxSpeed,
+          @TimestampConverter() required final DateTime startAt,
+          @TimestampConverter() required final DateTime endAt}) =
+      _$BHSDriverSafetySpeedingEventImpl;
+
+  factory _BHSDriverSafetySpeedingEvent.fromJson(Map<String, dynamic> json) =
+      _$BHSDriverSafetySpeedingEventImpl.fromJson;
+
+  @override
+  double get maxSpeed;
+  @override
+  @TimestampConverter()
+  DateTime get startAt;
+  @override
+  @TimestampConverter()
+  DateTime get endAt;
+
+  /// Create a copy of BHSDriverSafetySpeedingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BHSDriverSafetySpeedingEventImplCopyWith<
+          _$BHSDriverSafetySpeedingEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+BHSDriverSafetySpeedingEvents _$BHSDriverSafetySpeedingEventsFromJson(
+    Map<String, dynamic> json) {
+  return _BHSDriverSafetySpeedingEvents.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BHSDriverSafetySpeedingEvents {
+  String? get status => throw _privateConstructorUsedError;
+  List<BHSDriverSafetySpeedingEvent>? get messages =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this BHSDriverSafetySpeedingEvents to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BHSDriverSafetySpeedingEvents
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BHSDriverSafetySpeedingEventsCopyWith<BHSDriverSafetySpeedingEvents>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BHSDriverSafetySpeedingEventsCopyWith<$Res> {
+  factory $BHSDriverSafetySpeedingEventsCopyWith(
+          BHSDriverSafetySpeedingEvents value,
+          $Res Function(BHSDriverSafetySpeedingEvents) then) =
+      _$BHSDriverSafetySpeedingEventsCopyWithImpl<$Res,
+          BHSDriverSafetySpeedingEvents>;
+  @useResult
+  $Res call({String? status, List<BHSDriverSafetySpeedingEvent>? messages});
+}
+
+/// @nodoc
+class _$BHSDriverSafetySpeedingEventsCopyWithImpl<$Res,
+        $Val extends BHSDriverSafetySpeedingEvents>
+    implements $BHSDriverSafetySpeedingEventsCopyWith<$Res> {
+  _$BHSDriverSafetySpeedingEventsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BHSDriverSafetySpeedingEvents
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? messages = freezed,
+  }) {
+    return _then(_value.copyWith(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      messages: freezed == messages
+          ? _value.messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<BHSDriverSafetySpeedingEvent>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BHSDriverSafetySpeedingEventsImplCopyWith<$Res>
+    implements $BHSDriverSafetySpeedingEventsCopyWith<$Res> {
+  factory _$$BHSDriverSafetySpeedingEventsImplCopyWith(
+          _$BHSDriverSafetySpeedingEventsImpl value,
+          $Res Function(_$BHSDriverSafetySpeedingEventsImpl) then) =
+      __$$BHSDriverSafetySpeedingEventsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? status, List<BHSDriverSafetySpeedingEvent>? messages});
+}
+
+/// @nodoc
+class __$$BHSDriverSafetySpeedingEventsImplCopyWithImpl<$Res>
+    extends _$BHSDriverSafetySpeedingEventsCopyWithImpl<$Res,
+        _$BHSDriverSafetySpeedingEventsImpl>
+    implements _$$BHSDriverSafetySpeedingEventsImplCopyWith<$Res> {
+  __$$BHSDriverSafetySpeedingEventsImplCopyWithImpl(
+      _$BHSDriverSafetySpeedingEventsImpl _value,
+      $Res Function(_$BHSDriverSafetySpeedingEventsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BHSDriverSafetySpeedingEvents
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? messages = freezed,
+  }) {
+    return _then(_$BHSDriverSafetySpeedingEventsImpl(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      messages: freezed == messages
+          ? _value._messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<BHSDriverSafetySpeedingEvent>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BHSDriverSafetySpeedingEventsImpl
+    implements _BHSDriverSafetySpeedingEvents {
+  const _$BHSDriverSafetySpeedingEventsImpl(
+      {this.status, final List<BHSDriverSafetySpeedingEvent>? messages})
+      : _messages = messages;
+
+  factory _$BHSDriverSafetySpeedingEventsImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$BHSDriverSafetySpeedingEventsImplFromJson(json);
+
+  @override
+  final String? status;
+  final List<BHSDriverSafetySpeedingEvent>? _messages;
+  @override
+  List<BHSDriverSafetySpeedingEvent>? get messages {
+    final value = _messages;
+    if (value == null) return null;
+    if (_messages is EqualUnmodifiableListView) return _messages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'BHSDriverSafetySpeedingEvents(status: $status, messages: $messages)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BHSDriverSafetySpeedingEventsImpl &&
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other._messages, _messages));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, status, const DeepCollectionEquality().hash(_messages));
+
+  /// Create a copy of BHSDriverSafetySpeedingEvents
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BHSDriverSafetySpeedingEventsImplCopyWith<
+          _$BHSDriverSafetySpeedingEventsImpl>
+      get copyWith => __$$BHSDriverSafetySpeedingEventsImplCopyWithImpl<
+          _$BHSDriverSafetySpeedingEventsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BHSDriverSafetySpeedingEventsImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BHSDriverSafetySpeedingEvents
+    implements BHSDriverSafetySpeedingEvents {
+  const factory _BHSDriverSafetySpeedingEvents(
+          {final String? status,
+          final List<BHSDriverSafetySpeedingEvent>? messages}) =
+      _$BHSDriverSafetySpeedingEventsImpl;
+
+  factory _BHSDriverSafetySpeedingEvents.fromJson(Map<String, dynamic> json) =
+      _$BHSDriverSafetySpeedingEventsImpl.fromJson;
+
+  @override
+  String? get status;
+  @override
+  List<BHSDriverSafetySpeedingEvent>? get messages;
+
+  /// Create a copy of BHSDriverSafetySpeedingEvents
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BHSDriverSafetySpeedingEventsImplCopyWith<
+          _$BHSDriverSafetySpeedingEventsImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+BHSDriverSafetyDrivingEvent _$BHSDriverSafetyDrivingEventFromJson(
+    Map<String, dynamic> json) {
+  return _BHSDriverSafetyDrivingEvent.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BHSDriverSafetyDrivingEvent {
+  @TimestampConverter()
+  DateTime get startAt => throw _privateConstructorUsedError;
+  @TimestampConverter()
+  DateTime get endAt => throw _privateConstructorUsedError;
+  double get drivenSeconds => throw _privateConstructorUsedError;
+
+  /// Serializes this BHSDriverSafetyDrivingEvent to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BHSDriverSafetyDrivingEventCopyWith<BHSDriverSafetyDrivingEvent>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BHSDriverSafetyDrivingEventCopyWith<$Res> {
+  factory $BHSDriverSafetyDrivingEventCopyWith(
+          BHSDriverSafetyDrivingEvent value,
+          $Res Function(BHSDriverSafetyDrivingEvent) then) =
+      _$BHSDriverSafetyDrivingEventCopyWithImpl<$Res,
+          BHSDriverSafetyDrivingEvent>;
+  @useResult
+  $Res call(
+      {@TimestampConverter() DateTime startAt,
+      @TimestampConverter() DateTime endAt,
+      double drivenSeconds});
+}
+
+/// @nodoc
+class _$BHSDriverSafetyDrivingEventCopyWithImpl<$Res,
+        $Val extends BHSDriverSafetyDrivingEvent>
+    implements $BHSDriverSafetyDrivingEventCopyWith<$Res> {
+  _$BHSDriverSafetyDrivingEventCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? startAt = null,
+    Object? endAt = null,
+    Object? drivenSeconds = null,
+  }) {
+    return _then(_value.copyWith(
+      startAt: null == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      endAt: null == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      drivenSeconds: null == drivenSeconds
+          ? _value.drivenSeconds
+          : drivenSeconds // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BHSDriverSafetyDrivingEventImplCopyWith<$Res>
+    implements $BHSDriverSafetyDrivingEventCopyWith<$Res> {
+  factory _$$BHSDriverSafetyDrivingEventImplCopyWith(
+          _$BHSDriverSafetyDrivingEventImpl value,
+          $Res Function(_$BHSDriverSafetyDrivingEventImpl) then) =
+      __$$BHSDriverSafetyDrivingEventImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@TimestampConverter() DateTime startAt,
+      @TimestampConverter() DateTime endAt,
+      double drivenSeconds});
+}
+
+/// @nodoc
+class __$$BHSDriverSafetyDrivingEventImplCopyWithImpl<$Res>
+    extends _$BHSDriverSafetyDrivingEventCopyWithImpl<$Res,
+        _$BHSDriverSafetyDrivingEventImpl>
+    implements _$$BHSDriverSafetyDrivingEventImplCopyWith<$Res> {
+  __$$BHSDriverSafetyDrivingEventImplCopyWithImpl(
+      _$BHSDriverSafetyDrivingEventImpl _value,
+      $Res Function(_$BHSDriverSafetyDrivingEventImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? startAt = null,
+    Object? endAt = null,
+    Object? drivenSeconds = null,
+  }) {
+    return _then(_$BHSDriverSafetyDrivingEventImpl(
+      startAt: null == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      endAt: null == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      drivenSeconds: null == drivenSeconds
+          ? _value.drivenSeconds
+          : drivenSeconds // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BHSDriverSafetyDrivingEventImpl
+    implements _BHSDriverSafetyDrivingEvent {
+  const _$BHSDriverSafetyDrivingEventImpl(
+      {@TimestampConverter() required this.startAt,
+      @TimestampConverter() required this.endAt,
+      required this.drivenSeconds});
+
+  factory _$BHSDriverSafetyDrivingEventImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$BHSDriverSafetyDrivingEventImplFromJson(json);
+
+  @override
+  @TimestampConverter()
+  final DateTime startAt;
+  @override
+  @TimestampConverter()
+  final DateTime endAt;
+  @override
+  final double drivenSeconds;
+
+  @override
+  String toString() {
+    return 'BHSDriverSafetyDrivingEvent(startAt: $startAt, endAt: $endAt, drivenSeconds: $drivenSeconds)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BHSDriverSafetyDrivingEventImpl &&
+            (identical(other.startAt, startAt) || other.startAt == startAt) &&
+            (identical(other.endAt, endAt) || other.endAt == endAt) &&
+            (identical(other.drivenSeconds, drivenSeconds) ||
+                other.drivenSeconds == drivenSeconds));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, startAt, endAt, drivenSeconds);
+
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BHSDriverSafetyDrivingEventImplCopyWith<_$BHSDriverSafetyDrivingEventImpl>
+      get copyWith => __$$BHSDriverSafetyDrivingEventImplCopyWithImpl<
+          _$BHSDriverSafetyDrivingEventImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BHSDriverSafetyDrivingEventImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BHSDriverSafetyDrivingEvent
+    implements BHSDriverSafetyDrivingEvent {
+  const factory _BHSDriverSafetyDrivingEvent(
+      {@TimestampConverter() required final DateTime startAt,
+      @TimestampConverter() required final DateTime endAt,
+      required final double drivenSeconds}) = _$BHSDriverSafetyDrivingEventImpl;
+
+  factory _BHSDriverSafetyDrivingEvent.fromJson(Map<String, dynamic> json) =
+      _$BHSDriverSafetyDrivingEventImpl.fromJson;
+
+  @override
+  @TimestampConverter()
+  DateTime get startAt;
+  @override
+  @TimestampConverter()
+  DateTime get endAt;
+  @override
+  double get drivenSeconds;
+
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BHSDriverSafetyDrivingEventImplCopyWith<_$BHSDriverSafetyDrivingEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+BHSDriverSafetyDriving _$BHSDriverSafetyDrivingFromJson(
+    Map<String, dynamic> json) {
+  return _BHSDriverSafetyDriving.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BHSDriverSafetyDriving {
+  String? get status => throw _privateConstructorUsedError;
+  List<BHSDriverSafetyDrivingEvent>? get messages =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this BHSDriverSafetyDriving to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BHSDriverSafetyDriving
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BHSDriverSafetyDrivingCopyWith<BHSDriverSafetyDriving> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BHSDriverSafetyDrivingCopyWith<$Res> {
+  factory $BHSDriverSafetyDrivingCopyWith(BHSDriverSafetyDriving value,
+          $Res Function(BHSDriverSafetyDriving) then) =
+      _$BHSDriverSafetyDrivingCopyWithImpl<$Res, BHSDriverSafetyDriving>;
+  @useResult
+  $Res call({String? status, List<BHSDriverSafetyDrivingEvent>? messages});
+}
+
+/// @nodoc
+class _$BHSDriverSafetyDrivingCopyWithImpl<$Res,
+        $Val extends BHSDriverSafetyDriving>
+    implements $BHSDriverSafetyDrivingCopyWith<$Res> {
+  _$BHSDriverSafetyDrivingCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BHSDriverSafetyDriving
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? messages = freezed,
+  }) {
+    return _then(_value.copyWith(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      messages: freezed == messages
+          ? _value.messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<BHSDriverSafetyDrivingEvent>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BHSDriverSafetyDrivingImplCopyWith<$Res>
+    implements $BHSDriverSafetyDrivingCopyWith<$Res> {
+  factory _$$BHSDriverSafetyDrivingImplCopyWith(
+          _$BHSDriverSafetyDrivingImpl value,
+          $Res Function(_$BHSDriverSafetyDrivingImpl) then) =
+      __$$BHSDriverSafetyDrivingImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String? status, List<BHSDriverSafetyDrivingEvent>? messages});
+}
+
+/// @nodoc
+class __$$BHSDriverSafetyDrivingImplCopyWithImpl<$Res>
+    extends _$BHSDriverSafetyDrivingCopyWithImpl<$Res,
+        _$BHSDriverSafetyDrivingImpl>
+    implements _$$BHSDriverSafetyDrivingImplCopyWith<$Res> {
+  __$$BHSDriverSafetyDrivingImplCopyWithImpl(
+      _$BHSDriverSafetyDrivingImpl _value,
+      $Res Function(_$BHSDriverSafetyDrivingImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BHSDriverSafetyDriving
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? status = freezed,
+    Object? messages = freezed,
+  }) {
+    return _then(_$BHSDriverSafetyDrivingImpl(
+      status: freezed == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String?,
+      messages: freezed == messages
+          ? _value._messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<BHSDriverSafetyDrivingEvent>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BHSDriverSafetyDrivingImpl implements _BHSDriverSafetyDriving {
+  const _$BHSDriverSafetyDrivingImpl(
+      {this.status, final List<BHSDriverSafetyDrivingEvent>? messages})
+      : _messages = messages;
+
+  factory _$BHSDriverSafetyDrivingImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BHSDriverSafetyDrivingImplFromJson(json);
+
+  @override
+  final String? status;
+  final List<BHSDriverSafetyDrivingEvent>? _messages;
+  @override
+  List<BHSDriverSafetyDrivingEvent>? get messages {
+    final value = _messages;
+    if (value == null) return null;
+    if (_messages is EqualUnmodifiableListView) return _messages;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'BHSDriverSafetyDriving(status: $status, messages: $messages)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BHSDriverSafetyDrivingImpl &&
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other._messages, _messages));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, status, const DeepCollectionEquality().hash(_messages));
+
+  /// Create a copy of BHSDriverSafetyDriving
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BHSDriverSafetyDrivingImplCopyWith<_$BHSDriverSafetyDrivingImpl>
+      get copyWith => __$$BHSDriverSafetyDrivingImplCopyWithImpl<
+          _$BHSDriverSafetyDrivingImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BHSDriverSafetyDrivingImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BHSDriverSafetyDriving implements BHSDriverSafetyDriving {
+  const factory _BHSDriverSafetyDriving(
+          {final String? status,
+          final List<BHSDriverSafetyDrivingEvent>? messages}) =
+      _$BHSDriverSafetyDrivingImpl;
+
+  factory _BHSDriverSafetyDriving.fromJson(Map<String, dynamic> json) =
+      _$BHSDriverSafetyDrivingImpl.fromJson;
+
+  @override
+  String? get status;
+  @override
+  List<BHSDriverSafetyDrivingEvent>? get messages;
+
+  /// Create a copy of BHSDriverSafetyDriving
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BHSDriverSafetyDrivingImplCopyWith<_$BHSDriverSafetyDrivingImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
 BrickhouseDriverSafety _$BrickhouseDriverSafetyFromJson(
     Map<String, dynamic> json) {
   return _BrickhouseDriverSafety.fromJson(json);
@@ -2211,6 +3013,10 @@ mixin _$BrickhouseDriverSafety {
   BHSDriverSafetyEventScore? get harshBraking =>
       throw _privateConstructorUsedError;
   BHSDriverSafetyEventScore? get harshCornering =>
+      throw _privateConstructorUsedError;
+  BHSDriverSafetySpeedingEvents? get speedingEvents =>
+      throw _privateConstructorUsedError;
+  BHSDriverSafetyDriving? get drivingEvents =>
       throw _privateConstructorUsedError;
 
   /// Serializes this BrickhouseDriverSafety to a JSON map.
@@ -2234,12 +3040,16 @@ abstract class $BrickhouseDriverSafetyCopyWith<$Res> {
       BHSDriverSafetyDrivenScore? drivingHours,
       BHSDriverSafetyEventScore? harshAcceleration,
       BHSDriverSafetyEventScore? harshBraking,
-      BHSDriverSafetyEventScore? harshCornering});
+      BHSDriverSafetyEventScore? harshCornering,
+      BHSDriverSafetySpeedingEvents? speedingEvents,
+      BHSDriverSafetyDriving? drivingEvents});
 
   $BHSDriverSafetyDrivenScoreCopyWith<$Res>? get drivingHours;
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshAcceleration;
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshBraking;
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshCornering;
+  $BHSDriverSafetySpeedingEventsCopyWith<$Res>? get speedingEvents;
+  $BHSDriverSafetyDrivingCopyWith<$Res>? get drivingEvents;
 }
 
 /// @nodoc
@@ -2263,6 +3073,8 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
     Object? harshAcceleration = freezed,
     Object? harshBraking = freezed,
     Object? harshCornering = freezed,
+    Object? speedingEvents = freezed,
+    Object? drivingEvents = freezed,
   }) {
     return _then(_value.copyWith(
       totalScore: null == totalScore
@@ -2285,6 +3097,14 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
           ? _value.harshCornering
           : harshCornering // ignore: cast_nullable_to_non_nullable
               as BHSDriverSafetyEventScore?,
+      speedingEvents: freezed == speedingEvents
+          ? _value.speedingEvents
+          : speedingEvents // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetySpeedingEvents?,
+      drivingEvents: freezed == drivingEvents
+          ? _value.drivingEvents
+          : drivingEvents // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetyDriving?,
     ) as $Val);
   }
 
@@ -2347,6 +3167,36 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
       return _then(_value.copyWith(harshCornering: value) as $Val);
     });
   }
+
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BHSDriverSafetySpeedingEventsCopyWith<$Res>? get speedingEvents {
+    if (_value.speedingEvents == null) {
+      return null;
+    }
+
+    return $BHSDriverSafetySpeedingEventsCopyWith<$Res>(_value.speedingEvents!,
+        (value) {
+      return _then(_value.copyWith(speedingEvents: value) as $Val);
+    });
+  }
+
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BHSDriverSafetyDrivingCopyWith<$Res>? get drivingEvents {
+    if (_value.drivingEvents == null) {
+      return null;
+    }
+
+    return $BHSDriverSafetyDrivingCopyWith<$Res>(_value.drivingEvents!,
+        (value) {
+      return _then(_value.copyWith(drivingEvents: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -2363,7 +3213,9 @@ abstract class _$$BrickhouseDriverSafetyImplCopyWith<$Res>
       BHSDriverSafetyDrivenScore? drivingHours,
       BHSDriverSafetyEventScore? harshAcceleration,
       BHSDriverSafetyEventScore? harshBraking,
-      BHSDriverSafetyEventScore? harshCornering});
+      BHSDriverSafetyEventScore? harshCornering,
+      BHSDriverSafetySpeedingEvents? speedingEvents,
+      BHSDriverSafetyDriving? drivingEvents});
 
   @override
   $BHSDriverSafetyDrivenScoreCopyWith<$Res>? get drivingHours;
@@ -2373,6 +3225,10 @@ abstract class _$$BrickhouseDriverSafetyImplCopyWith<$Res>
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshBraking;
   @override
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshCornering;
+  @override
+  $BHSDriverSafetySpeedingEventsCopyWith<$Res>? get speedingEvents;
+  @override
+  $BHSDriverSafetyDrivingCopyWith<$Res>? get drivingEvents;
 }
 
 /// @nodoc
@@ -2395,6 +3251,8 @@ class __$$BrickhouseDriverSafetyImplCopyWithImpl<$Res>
     Object? harshAcceleration = freezed,
     Object? harshBraking = freezed,
     Object? harshCornering = freezed,
+    Object? speedingEvents = freezed,
+    Object? drivingEvents = freezed,
   }) {
     return _then(_$BrickhouseDriverSafetyImpl(
       totalScore: null == totalScore
@@ -2417,6 +3275,14 @@ class __$$BrickhouseDriverSafetyImplCopyWithImpl<$Res>
           ? _value.harshCornering
           : harshCornering // ignore: cast_nullable_to_non_nullable
               as BHSDriverSafetyEventScore?,
+      speedingEvents: freezed == speedingEvents
+          ? _value.speedingEvents
+          : speedingEvents // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetySpeedingEvents?,
+      drivingEvents: freezed == drivingEvents
+          ? _value.drivingEvents
+          : drivingEvents // ignore: cast_nullable_to_non_nullable
+              as BHSDriverSafetyDriving?,
     ));
   }
 }
@@ -2429,7 +3295,9 @@ class _$BrickhouseDriverSafetyImpl implements _BrickhouseDriverSafety {
       this.drivingHours,
       this.harshAcceleration,
       this.harshBraking,
-      this.harshCornering});
+      this.harshCornering,
+      this.speedingEvents,
+      this.drivingEvents});
 
   factory _$BrickhouseDriverSafetyImpl.fromJson(Map<String, dynamic> json) =>
       _$$BrickhouseDriverSafetyImplFromJson(json);
@@ -2444,10 +3312,14 @@ class _$BrickhouseDriverSafetyImpl implements _BrickhouseDriverSafety {
   final BHSDriverSafetyEventScore? harshBraking;
   @override
   final BHSDriverSafetyEventScore? harshCornering;
+  @override
+  final BHSDriverSafetySpeedingEvents? speedingEvents;
+  @override
+  final BHSDriverSafetyDriving? drivingEvents;
 
   @override
   String toString() {
-    return 'BrickhouseDriverSafety(totalScore: $totalScore, drivingHours: $drivingHours, harshAcceleration: $harshAcceleration, harshBraking: $harshBraking, harshCornering: $harshCornering)';
+    return 'BrickhouseDriverSafety(totalScore: $totalScore, drivingHours: $drivingHours, harshAcceleration: $harshAcceleration, harshBraking: $harshBraking, harshCornering: $harshCornering, speedingEvents: $speedingEvents, drivingEvents: $drivingEvents)';
   }
 
   @override
@@ -2464,13 +3336,24 @@ class _$BrickhouseDriverSafetyImpl implements _BrickhouseDriverSafety {
             (identical(other.harshBraking, harshBraking) ||
                 other.harshBraking == harshBraking) &&
             (identical(other.harshCornering, harshCornering) ||
-                other.harshCornering == harshCornering));
+                other.harshCornering == harshCornering) &&
+            (identical(other.speedingEvents, speedingEvents) ||
+                other.speedingEvents == speedingEvents) &&
+            (identical(other.drivingEvents, drivingEvents) ||
+                other.drivingEvents == drivingEvents));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, totalScore, drivingHours,
-      harshAcceleration, harshBraking, harshCornering);
+  int get hashCode => Object.hash(
+      runtimeType,
+      totalScore,
+      drivingHours,
+      harshAcceleration,
+      harshBraking,
+      harshCornering,
+      speedingEvents,
+      drivingEvents);
 
   /// Create a copy of BrickhouseDriverSafety
   /// with the given fields replaced by the non-null parameter values.
@@ -2495,7 +3378,9 @@ abstract class _BrickhouseDriverSafety implements BrickhouseDriverSafety {
           final BHSDriverSafetyDrivenScore? drivingHours,
           final BHSDriverSafetyEventScore? harshAcceleration,
           final BHSDriverSafetyEventScore? harshBraking,
-          final BHSDriverSafetyEventScore? harshCornering}) =
+          final BHSDriverSafetyEventScore? harshCornering,
+          final BHSDriverSafetySpeedingEvents? speedingEvents,
+          final BHSDriverSafetyDriving? drivingEvents}) =
       _$BrickhouseDriverSafetyImpl;
 
   factory _BrickhouseDriverSafety.fromJson(Map<String, dynamic> json) =
@@ -2511,6 +3396,10 @@ abstract class _BrickhouseDriverSafety implements BrickhouseDriverSafety {
   BHSDriverSafetyEventScore? get harshBraking;
   @override
   BHSDriverSafetyEventScore? get harshCornering;
+  @override
+  BHSDriverSafetySpeedingEvents? get speedingEvents;
+  @override
+  BHSDriverSafetyDriving? get drivingEvents;
 
   /// Create a copy of BrickhouseDriverSafety
   /// with the given fields replaced by the non-null parameter values.

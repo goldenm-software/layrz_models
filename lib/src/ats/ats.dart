@@ -19,6 +19,7 @@ part 'src/event.dart';
 part 'src/ns_license.dart';
 part 'src/transport_information.dart';
 part 'src/command_result.dart';
+part 'src/execute_load.dart';
 
 // ATS Reception Models
 part 'src/reception/company_information.dart';

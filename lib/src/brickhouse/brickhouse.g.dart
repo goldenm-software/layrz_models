@@ -233,6 +233,72 @@ Map<String, dynamic> _$$BHSDriverSafetyDrivenScoreImplToJson(
       'drivenSeconds': instance.drivenSeconds,
     };
 
+_$BHSDriverSafetySpeedingEventImpl _$$BHSDriverSafetySpeedingEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BHSDriverSafetySpeedingEventImpl(
+      maxSpeed: (json['maxSpeed'] as num).toDouble(),
+      startAt: const TimestampConverter().fromJson(json['startAt'] as num),
+      endAt: const TimestampConverter().fromJson(json['endAt'] as num),
+    );
+
+Map<String, dynamic> _$$BHSDriverSafetySpeedingEventImplToJson(
+        _$BHSDriverSafetySpeedingEventImpl instance) =>
+    <String, dynamic>{
+      'maxSpeed': instance.maxSpeed,
+      'startAt': const TimestampConverter().toJson(instance.startAt),
+      'endAt': const TimestampConverter().toJson(instance.endAt),
+    };
+
+_$BHSDriverSafetySpeedingEventsImpl
+    _$$BHSDriverSafetySpeedingEventsImplFromJson(Map<String, dynamic> json) =>
+        _$BHSDriverSafetySpeedingEventsImpl(
+          status: json['status'] as String?,
+          messages: (json['messages'] as List<dynamic>?)
+              ?.map((e) => BHSDriverSafetySpeedingEvent.fromJson(
+                  e as Map<String, dynamic>))
+              .toList(),
+        );
+
+Map<String, dynamic> _$$BHSDriverSafetySpeedingEventsImplToJson(
+        _$BHSDriverSafetySpeedingEventsImpl instance) =>
+    <String, dynamic>{
+      'status': instance.status,
+      'messages': instance.messages?.map((e) => e.toJson()).toList(),
+    };
+
+_$BHSDriverSafetyDrivingEventImpl _$$BHSDriverSafetyDrivingEventImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BHSDriverSafetyDrivingEventImpl(
+      startAt: const TimestampConverter().fromJson(json['startAt'] as num),
+      endAt: const TimestampConverter().fromJson(json['endAt'] as num),
+      drivenSeconds: (json['drivenSeconds'] as num).toDouble(),
+    );
+
+Map<String, dynamic> _$$BHSDriverSafetyDrivingEventImplToJson(
+        _$BHSDriverSafetyDrivingEventImpl instance) =>
+    <String, dynamic>{
+      'startAt': const TimestampConverter().toJson(instance.startAt),
+      'endAt': const TimestampConverter().toJson(instance.endAt),
+      'drivenSeconds': instance.drivenSeconds,
+    };
+
+_$BHSDriverSafetyDrivingImpl _$$BHSDriverSafetyDrivingImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BHSDriverSafetyDrivingImpl(
+      status: json['status'] as String?,
+      messages: (json['messages'] as List<dynamic>?)
+          ?.map((e) =>
+              BHSDriverSafetyDrivingEvent.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$BHSDriverSafetyDrivingImplToJson(
+        _$BHSDriverSafetyDrivingImpl instance) =>
+    <String, dynamic>{
+      'status': instance.status,
+      'messages': instance.messages?.map((e) => e.toJson()).toList(),
+    };
+
 _$BrickhouseDriverSafetyImpl _$$BrickhouseDriverSafetyImplFromJson(
         Map<String, dynamic> json) =>
     _$BrickhouseDriverSafetyImpl(
@@ -253,6 +319,14 @@ _$BrickhouseDriverSafetyImpl _$$BrickhouseDriverSafetyImplFromJson(
           ? null
           : BHSDriverSafetyEventScore.fromJson(
               json['harshCornering'] as Map<String, dynamic>),
+      speedingEvents: json['speedingEvents'] == null
+          ? null
+          : BHSDriverSafetySpeedingEvents.fromJson(
+              json['speedingEvents'] as Map<String, dynamic>),
+      drivingEvents: json['drivingEvents'] == null
+          ? null
+          : BHSDriverSafetyDriving.fromJson(
+              json['drivingEvents'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$BrickhouseDriverSafetyImplToJson(
@@ -263,6 +337,8 @@ Map<String, dynamic> _$$BrickhouseDriverSafetyImplToJson(
       'harshAcceleration': instance.harshAcceleration?.toJson(),
       'harshBraking': instance.harshBraking?.toJson(),
       'harshCornering': instance.harshCornering?.toJson(),
+      'speedingEvents': instance.speedingEvents?.toJson(),
+      'drivingEvents': instance.drivingEvents?.toJson(),
     };
 
 _$BHSPermissionTierImpl _$$BHSPermissionTierImplFromJson(
