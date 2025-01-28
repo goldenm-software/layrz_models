@@ -26,12 +26,17 @@ class BleDevice with _$BleDevice {
     /// [serviceData] is the service data of the BLE device.
     /// Can be null if the device does not have service data or is not broadcasted.
     /// Also, this list will be ordered by the service UUID.
-    List<int>? serviceData,
-
-    /// [servicesIdentifiers] is the list of services identifiers of the BLE device.
-    /// Can be null if the device does not have services identifiers or is not broadcasted.
-    List<List<int>>? servicesIdentifiers,
+    List<BleServiceData>? serviceData,
   }) = _BleDevice;
 
   factory BleDevice.fromJson(Map<String, dynamic> json) => _$BleDeviceFromJson(json);
+
+  Map<String, List<int>> get serviceDataMap {
+    final map = <String, List<int>>{};
+    for (final serviceData in serviceData ?? <BleServiceData>[]) {
+      map[serviceData.uuid] = serviceData.data ?? <int>[];
+    }
+
+    return map;
+  }
 }
