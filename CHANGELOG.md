@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.33
+- Added `BHSDriverSafetySpeedingEvents` for Brickhouse driver safety
+- Added `BHSDriverSafetyDrivingEvent` For Brickhouse driver safety
+
 ## 3.3.32
 - Added `AtsExecuteLoadInput` to execute load
 
