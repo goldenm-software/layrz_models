@@ -33,6 +33,85 @@ class BHSDriverSafetyDrivenScore with _$BHSDriverSafetyDrivenScore {
   factory BHSDriverSafetyDrivenScore.fromJson(Map<String, dynamic> json) => _$BHSDriverSafetyDrivenScoreFromJson(json);
 }
 
+///startAt DateTime
+/// Start time of the event.
+///
+///endAt DateTime
+/// End time of the event.
+///
+///
+///maxSpeed FLoat
+/// Max speed during the event.
+@freezed
+class BHSDriverSafetySpeedingEvent with _$BHSDriverSafetySpeedingEvent {
+  const factory BHSDriverSafetySpeedingEvent({
+    required double maxSpeed,
+    @TimestampConverter() required DateTime startAt,
+    @TimestampConverter() required DateTime endAt,
+  }) = _BHSDriverSafetySpeedingEvent;
+
+  /// from json
+  factory BHSDriverSafetySpeedingEvent.fromJson(Map<String, dynamic> json) =>
+      _$BHSDriverSafetySpeedingEventFromJson(json);
+}
+
+/// status Statuses
+/// Response status, please check the documentation for more details about each status code
+///
+/// messages [BHSDriverSafetySpeedingEvent]
+/// List of events.
+///
+@freezed
+class BHSDriverSafetySpeedingEvents with _$BHSDriverSafetySpeedingEvents {
+  const factory BHSDriverSafetySpeedingEvents({
+    String? status,
+    List<BHSDriverSafetySpeedingEvent>? messages,
+  }) = _BHSDriverSafetySpeedingEvents;
+
+  /// from json
+  factory BHSDriverSafetySpeedingEvents.fromJson(Map<String, dynamic> json) =>
+      _$BHSDriverSafetySpeedingEventsFromJson(json);
+}
+
+///startAt DateTime
+/// Start time of the event.
+///
+///endAt DateTime
+/// End time of the event.
+///
+///
+///maxSpeed FLoat
+/// Max speed during the event.
+@freezed
+class BHSDriverSafetyDrivingEvent with _$BHSDriverSafetyDrivingEvent {
+  const factory BHSDriverSafetyDrivingEvent({
+    @TimestampConverter() required DateTime startAt,
+    @TimestampConverter() required DateTime endAt,
+    required double drivenSeconds,
+  }) = _BHSDriverSafetyDrivingEvent;
+
+  /// from json
+  factory BHSDriverSafetyDrivingEvent.fromJson(Map<String, dynamic> json) =>
+      _$BHSDriverSafetyDrivingEventFromJson(json);
+}
+
+/// status Statuses
+/// Response status, please check the documentation for more details about each status code
+///
+/// messages [BHSDriverSafetyDrivingEvent]
+/// List of events.
+///
+@freezed
+class BHSDriverSafetyDriving with _$BHSDriverSafetyDriving {
+  const factory BHSDriverSafetyDriving({
+    String? status,
+    List<BHSDriverSafetyDrivingEvent>? messages,
+  }) = _BHSDriverSafetyDriving;
+
+  /// from json
+  factory BHSDriverSafetyDriving.fromJson(Map<String, dynamic> json) => _$BHSDriverSafetyDrivingFromJson(json);
+}
+
 /// totalScore Float
 /// Total score of the driver.
 ///
@@ -47,6 +126,11 @@ class BHSDriverSafetyDrivenScore with _$BHSDriverSafetyDrivenScore {
 ///
 /// harshCornering DriverSafetyEventScore
 /// Harsh cornering score.
+/// speedingEvents DriverSafetySpeedingEvents
+/// Speeding events.
+/// nightDriving DriverSafetyDrivingNight
+/// Night driving events.
+///
 @freezed
 class BrickhouseDriverSafety with _$BrickhouseDriverSafety {
   const factory BrickhouseDriverSafety({
@@ -55,6 +139,8 @@ class BrickhouseDriverSafety with _$BrickhouseDriverSafety {
     BHSDriverSafetyEventScore? harshAcceleration,
     BHSDriverSafetyEventScore? harshBraking,
     BHSDriverSafetyEventScore? harshCornering,
+    BHSDriverSafetySpeedingEvents? speedingEvents,
+    BHSDriverSafetyDriving? drivingEvents,
   }) = _BrickhouseDriverSafety;
 
   /// from json
