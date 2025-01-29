@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.34
+
+- Removed BLE parser things.
+
 ## 3.3.33
 - Added `BHSDriverSafetySpeedingEvents` for Brickhouse driver safety
 - Added `BHSDriverSafetyDrivingEvent` For Brickhouse driver safety
