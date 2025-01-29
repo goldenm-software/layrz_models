@@ -12,11 +12,14 @@ _$BleDeviceImpl _$$BleDeviceImplFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String?,
       rssi: (json['rssi'] as num?)?.toInt(),
       manufacturerData: (json['manufacturerData'] as List<dynamic>?)
-          ?.map((e) => (e as num).toInt())
-          .toList(),
+              ?.map((e) =>
+                  BleManufacturerData.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       serviceData: (json['serviceData'] as List<dynamic>?)
-          ?.map((e) => BleServiceData.fromJson(e as Map<String, dynamic>))
-          .toList(),
+              ?.map((e) => BleServiceData.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$BleDeviceImplToJson(_$BleDeviceImpl instance) =>
@@ -24,8 +27,9 @@ Map<String, dynamic> _$$BleDeviceImplToJson(_$BleDeviceImpl instance) =>
       'macAddress': instance.macAddress,
       'name': instance.name,
       'rssi': instance.rssi,
-      'manufacturerData': instance.manufacturerData,
-      'serviceData': instance.serviceData?.map((e) => e.toJson()).toList(),
+      'manufacturerData':
+          instance.manufacturerData.map((e) => e.toJson()).toList(),
+      'serviceData': instance.serviceData.map((e) => e.toJson()).toList(),
     };
 
 _$BleServiceImpl _$$BleServiceImplFromJson(Map<String, dynamic> json) =>
@@ -45,7 +49,7 @@ Map<String, dynamic> _$$BleServiceImplToJson(_$BleServiceImpl instance) =>
 
 _$BleServiceDataImpl _$$BleServiceDataImplFromJson(Map<String, dynamic> json) =>
     _$BleServiceDataImpl(
-      uuid: json['uuid'] as String,
+      uuid: (json['uuid'] as num).toInt(),
       data: (json['data'] as List<dynamic>?)
           ?.map((e) => (e as num).toInt())
           .toList(),
@@ -87,3 +91,19 @@ const _$BlePropertyEnumMap = {
   BleProperty.extendedProperties: 'EXTENDED_PROP',
   BleProperty.unknown: 'UNKNOWN',
 };
+
+_$BleManufacturerDataImpl _$$BleManufacturerDataImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BleManufacturerDataImpl(
+      companyId: (json['companyId'] as num?)?.toInt() ?? 0x0000,
+      data: (json['data'] as List<dynamic>?)
+          ?.map((e) => (e as num).toInt())
+          .toList(),
+    );
+
+Map<String, dynamic> _$$BleManufacturerDataImplToJson(
+        _$BleManufacturerDataImpl instance) =>
+    <String, dynamic>{
+      'companyId': instance.companyId,
+      'data': instance.data,
+    };

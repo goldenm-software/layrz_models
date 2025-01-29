@@ -34,13 +34,11 @@ mixin _$BleDevice {
   int? get rssi => throw _privateConstructorUsedError;
 
   /// [manufacturerData] is the manufacturer data of the BLE device.
-  /// Can be null if the device does not have manufacturer data or is not broadcasted.
-  List<int>? get manufacturerData => throw _privateConstructorUsedError;
+  List<BleManufacturerData> get manufacturerData =>
+      throw _privateConstructorUsedError;
 
   /// [serviceData] is the service data of the BLE device.
-  /// Can be null if the device does not have service data or is not broadcasted.
-  /// Also, this list will be ordered by the service UUID.
-  List<BleServiceData>? get serviceData => throw _privateConstructorUsedError;
+  List<BleServiceData> get serviceData => throw _privateConstructorUsedError;
 
   /// Serializes this BleDevice to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -61,8 +59,8 @@ abstract class $BleDeviceCopyWith<$Res> {
       {String macAddress,
       String? name,
       int? rssi,
-      List<int>? manufacturerData,
-      List<BleServiceData>? serviceData});
+      List<BleManufacturerData> manufacturerData,
+      List<BleServiceData> serviceData});
 }
 
 /// @nodoc
@@ -83,8 +81,8 @@ class _$BleDeviceCopyWithImpl<$Res, $Val extends BleDevice>
     Object? macAddress = null,
     Object? name = freezed,
     Object? rssi = freezed,
-    Object? manufacturerData = freezed,
-    Object? serviceData = freezed,
+    Object? manufacturerData = null,
+    Object? serviceData = null,
   }) {
     return _then(_value.copyWith(
       macAddress: null == macAddress
@@ -99,14 +97,14 @@ class _$BleDeviceCopyWithImpl<$Res, $Val extends BleDevice>
           ? _value.rssi
           : rssi // ignore: cast_nullable_to_non_nullable
               as int?,
-      manufacturerData: freezed == manufacturerData
+      manufacturerData: null == manufacturerData
           ? _value.manufacturerData
           : manufacturerData // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      serviceData: freezed == serviceData
+              as List<BleManufacturerData>,
+      serviceData: null == serviceData
           ? _value.serviceData
           : serviceData // ignore: cast_nullable_to_non_nullable
-              as List<BleServiceData>?,
+              as List<BleServiceData>,
     ) as $Val);
   }
 }
@@ -123,8 +121,8 @@ abstract class _$$BleDeviceImplCopyWith<$Res>
       {String macAddress,
       String? name,
       int? rssi,
-      List<int>? manufacturerData,
-      List<BleServiceData>? serviceData});
+      List<BleManufacturerData> manufacturerData,
+      List<BleServiceData> serviceData});
 }
 
 /// @nodoc
@@ -143,8 +141,8 @@ class __$$BleDeviceImplCopyWithImpl<$Res>
     Object? macAddress = null,
     Object? name = freezed,
     Object? rssi = freezed,
-    Object? manufacturerData = freezed,
-    Object? serviceData = freezed,
+    Object? manufacturerData = null,
+    Object? serviceData = null,
   }) {
     return _then(_$BleDeviceImpl(
       macAddress: null == macAddress
@@ -159,14 +157,14 @@ class __$$BleDeviceImplCopyWithImpl<$Res>
           ? _value.rssi
           : rssi // ignore: cast_nullable_to_non_nullable
               as int?,
-      manufacturerData: freezed == manufacturerData
+      manufacturerData: null == manufacturerData
           ? _value._manufacturerData
           : manufacturerData // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      serviceData: freezed == serviceData
+              as List<BleManufacturerData>,
+      serviceData: null == serviceData
           ? _value._serviceData
           : serviceData // ignore: cast_nullable_to_non_nullable
-              as List<BleServiceData>?,
+              as List<BleServiceData>,
     ));
   }
 }
@@ -178,8 +176,8 @@ class _$BleDeviceImpl extends _BleDevice {
       {required this.macAddress,
       this.name,
       this.rssi,
-      final List<int>? manufacturerData,
-      final List<BleServiceData>? serviceData})
+      final List<BleManufacturerData> manufacturerData = const [],
+      final List<BleServiceData> serviceData = const []})
       : _manufacturerData = manufacturerData,
         _serviceData = serviceData,
         super._();
@@ -204,36 +202,28 @@ class _$BleDeviceImpl extends _BleDevice {
   final int? rssi;
 
   /// [manufacturerData] is the manufacturer data of the BLE device.
-  /// Can be null if the device does not have manufacturer data or is not broadcasted.
-  final List<int>? _manufacturerData;
+  final List<BleManufacturerData> _manufacturerData;
 
   /// [manufacturerData] is the manufacturer data of the BLE device.
-  /// Can be null if the device does not have manufacturer data or is not broadcasted.
   @override
-  List<int>? get manufacturerData {
-    final value = _manufacturerData;
-    if (value == null) return null;
+  @JsonKey()
+  List<BleManufacturerData> get manufacturerData {
     if (_manufacturerData is EqualUnmodifiableListView)
       return _manufacturerData;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_manufacturerData);
   }
 
   /// [serviceData] is the service data of the BLE device.
-  /// Can be null if the device does not have service data or is not broadcasted.
-  /// Also, this list will be ordered by the service UUID.
-  final List<BleServiceData>? _serviceData;
+  final List<BleServiceData> _serviceData;
 
   /// [serviceData] is the service data of the BLE device.
-  /// Can be null if the device does not have service data or is not broadcasted.
-  /// Also, this list will be ordered by the service UUID.
   @override
-  List<BleServiceData>? get serviceData {
-    final value = _serviceData;
-    if (value == null) return null;
+  @JsonKey()
+  List<BleServiceData> get serviceData {
     if (_serviceData is EqualUnmodifiableListView) return _serviceData;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_serviceData);
   }
 
   @override
@@ -287,8 +277,8 @@ abstract class _BleDevice extends BleDevice {
       {required final String macAddress,
       final String? name,
       final int? rssi,
-      final List<int>? manufacturerData,
-      final List<BleServiceData>? serviceData}) = _$BleDeviceImpl;
+      final List<BleManufacturerData> manufacturerData,
+      final List<BleServiceData> serviceData}) = _$BleDeviceImpl;
   const _BleDevice._() : super._();
 
   factory _BleDevice.fromJson(Map<String, dynamic> json) =
@@ -311,15 +301,12 @@ abstract class _BleDevice extends BleDevice {
   int? get rssi;
 
   /// [manufacturerData] is the manufacturer data of the BLE device.
-  /// Can be null if the device does not have manufacturer data or is not broadcasted.
   @override
-  List<int>? get manufacturerData;
+  List<BleManufacturerData> get manufacturerData;
 
   /// [serviceData] is the service data of the BLE device.
-  /// Can be null if the device does not have service data or is not broadcasted.
-  /// Also, this list will be ordered by the service UUID.
   @override
-  List<BleServiceData>? get serviceData;
+  List<BleServiceData> get serviceData;
 
   /// Create a copy of BleDevice
   /// with the given fields replaced by the non-null parameter values.
@@ -528,7 +515,7 @@ BleServiceData _$BleServiceDataFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BleServiceData {
   /// [uuid] is the UUID of the BLE service.
-  String get uuid => throw _privateConstructorUsedError;
+  int get uuid => throw _privateConstructorUsedError;
 
   /// [characteristics] is the list of characteristics of the BLE service.
   List<int>? get data => throw _privateConstructorUsedError;
@@ -549,7 +536,7 @@ abstract class $BleServiceDataCopyWith<$Res> {
           BleServiceData value, $Res Function(BleServiceData) then) =
       _$BleServiceDataCopyWithImpl<$Res, BleServiceData>;
   @useResult
-  $Res call({String uuid, List<int>? data});
+  $Res call({int uuid, List<int>? data});
 }
 
 /// @nodoc
@@ -574,7 +561,7 @@ class _$BleServiceDataCopyWithImpl<$Res, $Val extends BleServiceData>
       uuid: null == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -591,7 +578,7 @@ abstract class _$$BleServiceDataImplCopyWith<$Res>
       __$$BleServiceDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String uuid, List<int>? data});
+  $Res call({int uuid, List<int>? data});
 }
 
 /// @nodoc
@@ -614,7 +601,7 @@ class __$$BleServiceDataImplCopyWithImpl<$Res>
       uuid: null == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       data: freezed == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -635,7 +622,7 @@ class _$BleServiceDataImpl extends _BleServiceData {
 
   /// [uuid] is the UUID of the BLE service.
   @override
-  final String uuid;
+  final int uuid;
 
   /// [characteristics] is the list of characteristics of the BLE service.
   final List<int>? _data;
@@ -688,8 +675,7 @@ class _$BleServiceDataImpl extends _BleServiceData {
 
 abstract class _BleServiceData extends BleServiceData {
   const factory _BleServiceData(
-      {required final String uuid,
-      final List<int>? data}) = _$BleServiceDataImpl;
+      {required final int uuid, final List<int>? data}) = _$BleServiceDataImpl;
   const _BleServiceData._() : super._();
 
   factory _BleServiceData.fromJson(Map<String, dynamic> json) =
@@ -697,7 +683,7 @@ abstract class _BleServiceData extends BleServiceData {
 
   /// [uuid] is the UUID of the BLE service.
   @override
-  String get uuid;
+  int get uuid;
 
   /// [characteristics] is the list of characteristics of the BLE service.
   @override
@@ -910,5 +896,197 @@ abstract class _BleCharacteristic extends BleCharacteristic {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BleCharacteristicImplCopyWith<_$BleCharacteristicImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+BleManufacturerData _$BleManufacturerDataFromJson(Map<String, dynamic> json) {
+  return _BleManufacturerData.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BleManufacturerData {
+  /// [companyId] is the company identifier of the manufacturer.
+  int get companyId => throw _privateConstructorUsedError;
+
+  /// [data] is the raw data of the manufacturer.
+  List<int>? get data => throw _privateConstructorUsedError;
+
+  /// Serializes this BleManufacturerData to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BleManufacturerData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BleManufacturerDataCopyWith<BleManufacturerData> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BleManufacturerDataCopyWith<$Res> {
+  factory $BleManufacturerDataCopyWith(
+          BleManufacturerData value, $Res Function(BleManufacturerData) then) =
+      _$BleManufacturerDataCopyWithImpl<$Res, BleManufacturerData>;
+  @useResult
+  $Res call({int companyId, List<int>? data});
+}
+
+/// @nodoc
+class _$BleManufacturerDataCopyWithImpl<$Res, $Val extends BleManufacturerData>
+    implements $BleManufacturerDataCopyWith<$Res> {
+  _$BleManufacturerDataCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BleManufacturerData
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? companyId = null,
+    Object? data = freezed,
+  }) {
+    return _then(_value.copyWith(
+      companyId: null == companyId
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as int,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BleManufacturerDataImplCopyWith<$Res>
+    implements $BleManufacturerDataCopyWith<$Res> {
+  factory _$$BleManufacturerDataImplCopyWith(_$BleManufacturerDataImpl value,
+          $Res Function(_$BleManufacturerDataImpl) then) =
+      __$$BleManufacturerDataImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int companyId, List<int>? data});
+}
+
+/// @nodoc
+class __$$BleManufacturerDataImplCopyWithImpl<$Res>
+    extends _$BleManufacturerDataCopyWithImpl<$Res, _$BleManufacturerDataImpl>
+    implements _$$BleManufacturerDataImplCopyWith<$Res> {
+  __$$BleManufacturerDataImplCopyWithImpl(_$BleManufacturerDataImpl _value,
+      $Res Function(_$BleManufacturerDataImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BleManufacturerData
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? companyId = null,
+    Object? data = freezed,
+  }) {
+    return _then(_$BleManufacturerDataImpl(
+      companyId: null == companyId
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as int,
+      data: freezed == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BleManufacturerDataImpl extends _BleManufacturerData {
+  const _$BleManufacturerDataImpl(
+      {this.companyId = 0x0000, final List<int>? data})
+      : _data = data,
+        super._();
+
+  factory _$BleManufacturerDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BleManufacturerDataImplFromJson(json);
+
+  /// [companyId] is the company identifier of the manufacturer.
+  @override
+  @JsonKey()
+  final int companyId;
+
+  /// [data] is the raw data of the manufacturer.
+  final List<int>? _data;
+
+  /// [data] is the raw data of the manufacturer.
+  @override
+  List<int>? get data {
+    final value = _data;
+    if (value == null) return null;
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'BleManufacturerData(companyId: $companyId, data: $data)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BleManufacturerDataImpl &&
+            (identical(other.companyId, companyId) ||
+                other.companyId == companyId) &&
+            const DeepCollectionEquality().equals(other._data, _data));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, companyId, const DeepCollectionEquality().hash(_data));
+
+  /// Create a copy of BleManufacturerData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BleManufacturerDataImplCopyWith<_$BleManufacturerDataImpl> get copyWith =>
+      __$$BleManufacturerDataImplCopyWithImpl<_$BleManufacturerDataImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BleManufacturerDataImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BleManufacturerData extends BleManufacturerData {
+  const factory _BleManufacturerData(
+      {final int companyId, final List<int>? data}) = _$BleManufacturerDataImpl;
+  const _BleManufacturerData._() : super._();
+
+  factory _BleManufacturerData.fromJson(Map<String, dynamic> json) =
+      _$BleManufacturerDataImpl.fromJson;
+
+  /// [companyId] is the company identifier of the manufacturer.
+  @override
+  int get companyId;
+
+  /// [data] is the raw data of the manufacturer.
+  @override
+  List<int>? get data;
+
+  /// Create a copy of BleManufacturerData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BleManufacturerDataImplCopyWith<_$BleManufacturerDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

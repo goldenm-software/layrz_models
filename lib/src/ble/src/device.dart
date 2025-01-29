@@ -20,21 +20,27 @@ class BleDevice with _$BleDevice {
     int? rssi,
 
     /// [manufacturerData] is the manufacturer data of the BLE device.
-    /// Can be null if the device does not have manufacturer data or is not broadcasted.
-    List<int>? manufacturerData,
+    @Default([]) List<BleManufacturerData> manufacturerData,
 
     /// [serviceData] is the service data of the BLE device.
-    /// Can be null if the device does not have service data or is not broadcasted.
-    /// Also, this list will be ordered by the service UUID.
-    List<BleServiceData>? serviceData,
+    @Default([]) List<BleServiceData> serviceData,
   }) = _BleDevice;
 
   factory BleDevice.fromJson(Map<String, dynamic> json) => _$BleDeviceFromJson(json);
 
-  Map<String, List<int>> get serviceDataMap {
-    final map = <String, List<int>>{};
-    for (final serviceData in serviceData ?? <BleServiceData>[]) {
+  Map<int, List<int>> get serviceDataMap {
+    final map = Map<int, List<int>>.from({});
+    for (final serviceData in serviceData) {
       map[serviceData.uuid] = serviceData.data ?? <int>[];
+    }
+
+    return map;
+  }
+
+  Map<int, List<int>> get manufacturerDataMap {
+    final map = Map<int, List<int>>.from({});
+    for (final manufacturerData in manufacturerData) {
+      map[manufacturerData.companyId] = manufacturerData.data ?? <int>[];
     }
 
     return map;

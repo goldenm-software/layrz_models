@@ -1,5 +1,7 @@
 library converters;
 
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_icons/layrz_icons.dart';
@@ -11,3 +13,4 @@ part 'src/icon.dart';
 part 'src/timestamp.dart';
 part 'src/time_of_day.dart';
 part 'src/regex.dart';
+part 'src/byte_list.dart';
