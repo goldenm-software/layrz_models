@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.37
+
+- Added `peripheralParserSpec` to `InboundProtocolInput` and `ModelInput` models
+
 ## 3.3.36
 
 - Added `peripheralParserSpec` to `InboundProtocol` and `Model` models

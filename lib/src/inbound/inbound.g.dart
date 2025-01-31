@@ -199,6 +199,8 @@ _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
           const [],
       confiotCapable: json['confiotCapable'] as bool? ?? false,
       peripheralIdentifier: json['peripheralIdentifier'] as String?,
+      peripheralParserSpec:
+          json['peripheralParserSpec'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$InboundProtocolInputImplToJson(
@@ -239,6 +241,7 @@ Map<String, dynamic> _$$InboundProtocolInputImplToJson(
           instance.configStructure.map((e) => e.toJson()).toList(),
       'confiotCapable': instance.confiotCapable,
       'peripheralIdentifier': instance.peripheralIdentifier,
+      'peripheralParserSpec': instance.peripheralParserSpec,
     };
 
 _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>

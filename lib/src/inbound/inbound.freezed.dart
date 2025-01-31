@@ -1579,6 +1579,14 @@ mixin _$InboundProtocolInput {
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   set peripheralIdentifier(String? value) => throw _privateConstructorUsedError;
 
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  Map<String, dynamic>? get peripheralParserSpec =>
+      throw _privateConstructorUsedError;
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  set peripheralParserSpec(Map<String, dynamic>? value) =>
+      throw _privateConstructorUsedError;
+
   /// Serializes this InboundProtocolInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -1629,7 +1637,8 @@ abstract class $InboundProtocolInputCopyWith<$Res> {
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
-      String? peripheralIdentifier});
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec});
 
   $AvatarInputCopyWith<$Res> get dynamicIcon;
   $WebhookStructureInputCopyWith<$Res>? get webhookStructure;
@@ -1684,6 +1693,7 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
     Object? configStructure = null,
     Object? confiotCapable = null,
     Object? peripheralIdentifier = freezed,
+    Object? peripheralParserSpec = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -1818,6 +1828,10 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
           ? _value.peripheralIdentifier
           : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralParserSpec: freezed == peripheralParserSpec
+          ? _value.peripheralParserSpec
+          : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -1889,7 +1903,8 @@ abstract class _$$InboundProtocolInputImplCopyWith<$Res>
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
-      String? peripheralIdentifier});
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec});
 
   @override
   $AvatarInputCopyWith<$Res> get dynamicIcon;
@@ -1943,6 +1958,7 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
     Object? configStructure = null,
     Object? confiotCapable = null,
     Object? peripheralIdentifier = freezed,
+    Object? peripheralParserSpec = freezed,
   }) {
     return _then(_$InboundProtocolInputImpl(
       id: freezed == id
@@ -2077,6 +2093,10 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
           ? _value.peripheralIdentifier
           : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralParserSpec: freezed == peripheralParserSpec
+          ? _value.peripheralParserSpec
+          : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -2118,7 +2138,8 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
       this.commandsStructure = const [],
       this.configStructure = const [],
       this.confiotCapable = false,
-      this.peripheralIdentifier});
+      this.peripheralIdentifier,
+      this.peripheralParserSpec});
 
   factory _$InboundProtocolInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$InboundProtocolInputImplFromJson(json);
@@ -2282,9 +2303,13 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
   @override
   String? peripheralIdentifier;
 
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  @override
+  Map<String, dynamic>? peripheralParserSpec;
+
   @override
   String toString() {
-    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier)';
+    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec)';
   }
 
   /// Create a copy of InboundProtocolInput
@@ -2340,7 +2365,8 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
-      String? peripheralIdentifier}) = _$InboundProtocolInputImpl;
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec}) = _$InboundProtocolInputImpl;
 
   factory _InboundProtocolInput.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolInputImpl.fromJson;
@@ -2585,6 +2611,13 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
 
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   set peripheralIdentifier(String? value);
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  @override
+  Map<String, dynamic>? get peripheralParserSpec;
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  set peripheralParserSpec(Map<String, dynamic>? value);
 
   /// Create a copy of InboundProtocolInput
   /// with the given fields replaced by the non-null parameter values.
