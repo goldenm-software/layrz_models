@@ -42,6 +42,9 @@ class Model with _$Model {
 
     /// [peripheralIdentifier] is the identifier of the peripheral device.
     String? peripheralIdentifier,
+
+    /// [peripheralParserSpec] is the parser specification for the peripheral device.
+    Map<String, dynamic>? peripheralParserSpec,
   }) = _Model;
 
   factory Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);

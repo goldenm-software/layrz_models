@@ -31,6 +31,8 @@ _$ModelImpl _$$ModelImplFromJson(Map<String, dynamic> json) => _$ModelImpl(
           ConfIoTLayout.standard,
       confiotName: json['confiotName'] as String?,
       peripheralIdentifier: json['peripheralIdentifier'] as String?,
+      peripheralParserSpec:
+          json['peripheralParserSpec'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
@@ -49,6 +51,7 @@ Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
       'confiotLayout': instance.confiotLayout.toJson(),
       'confiotName': instance.confiotName,
       'peripheralIdentifier': instance.peripheralIdentifier,
+      'peripheralParserSpec': instance.peripheralParserSpec,
     };
 
 const _$ConfIoTLayoutEnumMap = {

@@ -121,6 +121,9 @@ class InboundProtocol with _$InboundProtocol {
 
     /// [peripheralIdentifier] is the identifier of the peripheral device.
     String? peripheralIdentifier,
+
+    /// [peripheralParserSpec] is the parser specification for the peripheral device.
+    Map<String, dynamic>? peripheralParserSpec,
   }) = _InboundProtocol;
 
   factory InboundProtocol.fromJson(Map<String, dynamic> json) => _$InboundProtocolFromJson(json);

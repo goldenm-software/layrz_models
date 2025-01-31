@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.36
+
+- Added `peripheralParserSpec` to `InboundProtocol` and `Model` models
+
 ## 3.3.35
 
 - Changed BLE models to support multiple Manufacturer Data
