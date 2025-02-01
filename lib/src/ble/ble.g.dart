@@ -11,6 +11,7 @@ _$BleDeviceImpl _$$BleDeviceImplFromJson(Map<String, dynamic> json) =>
       macAddress: json['macAddress'] as String,
       name: json['name'] as String?,
       rssi: (json['rssi'] as num?)?.toInt(),
+      txPower: (json['txPower'] as num?)?.toInt(),
       manufacturerData: (json['manufacturerData'] as List<dynamic>?)
               ?.map((e) =>
                   BleManufacturerData.fromJson(e as Map<String, dynamic>))
@@ -27,6 +28,7 @@ Map<String, dynamic> _$$BleDeviceImplToJson(_$BleDeviceImpl instance) =>
       'macAddress': instance.macAddress,
       'name': instance.name,
       'rssi': instance.rssi,
+      'txPower': instance.txPower,
       'manufacturerData':
           instance.manufacturerData.map((e) => e.toJson()).toList(),
       'serviceData': instance.serviceData.map((e) => e.toJson()).toList(),

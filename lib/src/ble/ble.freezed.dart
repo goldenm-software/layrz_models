@@ -33,6 +33,10 @@ mixin _$BleDevice {
   /// Can be null if the device does not have a signal strength due to a platform limitation.
   int? get rssi => throw _privateConstructorUsedError;
 
+  /// [txPower] is the transmission power of the BLE device.
+  /// Can be null if the device does not have a transmission power due to a platform limitation.
+  int? get txPower => throw _privateConstructorUsedError;
+
   /// [manufacturerData] is the manufacturer data of the BLE device.
   List<BleManufacturerData> get manufacturerData =>
       throw _privateConstructorUsedError;
@@ -59,6 +63,7 @@ abstract class $BleDeviceCopyWith<$Res> {
       {String macAddress,
       String? name,
       int? rssi,
+      int? txPower,
       List<BleManufacturerData> manufacturerData,
       List<BleServiceData> serviceData});
 }
@@ -81,6 +86,7 @@ class _$BleDeviceCopyWithImpl<$Res, $Val extends BleDevice>
     Object? macAddress = null,
     Object? name = freezed,
     Object? rssi = freezed,
+    Object? txPower = freezed,
     Object? manufacturerData = null,
     Object? serviceData = null,
   }) {
@@ -96,6 +102,10 @@ class _$BleDeviceCopyWithImpl<$Res, $Val extends BleDevice>
       rssi: freezed == rssi
           ? _value.rssi
           : rssi // ignore: cast_nullable_to_non_nullable
+              as int?,
+      txPower: freezed == txPower
+          ? _value.txPower
+          : txPower // ignore: cast_nullable_to_non_nullable
               as int?,
       manufacturerData: null == manufacturerData
           ? _value.manufacturerData
@@ -121,6 +131,7 @@ abstract class _$$BleDeviceImplCopyWith<$Res>
       {String macAddress,
       String? name,
       int? rssi,
+      int? txPower,
       List<BleManufacturerData> manufacturerData,
       List<BleServiceData> serviceData});
 }
@@ -141,6 +152,7 @@ class __$$BleDeviceImplCopyWithImpl<$Res>
     Object? macAddress = null,
     Object? name = freezed,
     Object? rssi = freezed,
+    Object? txPower = freezed,
     Object? manufacturerData = null,
     Object? serviceData = null,
   }) {
@@ -156,6 +168,10 @@ class __$$BleDeviceImplCopyWithImpl<$Res>
       rssi: freezed == rssi
           ? _value.rssi
           : rssi // ignore: cast_nullable_to_non_nullable
+              as int?,
+      txPower: freezed == txPower
+          ? _value.txPower
+          : txPower // ignore: cast_nullable_to_non_nullable
               as int?,
       manufacturerData: null == manufacturerData
           ? _value._manufacturerData
@@ -176,6 +192,7 @@ class _$BleDeviceImpl extends _BleDevice {
       {required this.macAddress,
       this.name,
       this.rssi,
+      this.txPower,
       final List<BleManufacturerData> manufacturerData = const [],
       final List<BleServiceData> serviceData = const []})
       : _manufacturerData = manufacturerData,
@@ -200,6 +217,11 @@ class _$BleDeviceImpl extends _BleDevice {
   /// Can be null if the device does not have a signal strength due to a platform limitation.
   @override
   final int? rssi;
+
+  /// [txPower] is the transmission power of the BLE device.
+  /// Can be null if the device does not have a transmission power due to a platform limitation.
+  @override
+  final int? txPower;
 
   /// [manufacturerData] is the manufacturer data of the BLE device.
   final List<BleManufacturerData> _manufacturerData;
@@ -228,7 +250,7 @@ class _$BleDeviceImpl extends _BleDevice {
 
   @override
   String toString() {
-    return 'BleDevice(macAddress: $macAddress, name: $name, rssi: $rssi, manufacturerData: $manufacturerData, serviceData: $serviceData)';
+    return 'BleDevice(macAddress: $macAddress, name: $name, rssi: $rssi, txPower: $txPower, manufacturerData: $manufacturerData, serviceData: $serviceData)';
   }
 
   @override
@@ -240,6 +262,7 @@ class _$BleDeviceImpl extends _BleDevice {
                 other.macAddress == macAddress) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.rssi, rssi) || other.rssi == rssi) &&
+            (identical(other.txPower, txPower) || other.txPower == txPower) &&
             const DeepCollectionEquality()
                 .equals(other._manufacturerData, _manufacturerData) &&
             const DeepCollectionEquality()
@@ -253,6 +276,7 @@ class _$BleDeviceImpl extends _BleDevice {
       macAddress,
       name,
       rssi,
+      txPower,
       const DeepCollectionEquality().hash(_manufacturerData),
       const DeepCollectionEquality().hash(_serviceData));
 
@@ -277,6 +301,7 @@ abstract class _BleDevice extends BleDevice {
       {required final String macAddress,
       final String? name,
       final int? rssi,
+      final int? txPower,
       final List<BleManufacturerData> manufacturerData,
       final List<BleServiceData> serviceData}) = _$BleDeviceImpl;
   const _BleDevice._() : super._();
@@ -299,6 +324,11 @@ abstract class _BleDevice extends BleDevice {
   /// Can be null if the device does not have a signal strength due to a platform limitation.
   @override
   int? get rssi;
+
+  /// [txPower] is the transmission power of the BLE device.
+  /// Can be null if the device does not have a transmission power due to a platform limitation.
+  @override
+  int? get txPower;
 
   /// [manufacturerData] is the manufacturer data of the BLE device.
   @override

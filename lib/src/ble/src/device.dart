@@ -19,6 +19,10 @@ class BleDevice with _$BleDevice {
     /// Can be null if the device does not have a signal strength due to a platform limitation.
     int? rssi,
 
+    /// [txPower] is the transmission power of the BLE device.
+    /// Can be null if the device does not have a transmission power due to a platform limitation.
+    int? txPower,
+
     /// [manufacturerData] is the manufacturer data of the BLE device.
     @Default([]) List<BleManufacturerData> manufacturerData,
 

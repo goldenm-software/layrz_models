@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.38
+
+- Added `txPower` to `BleDevice` model
+
 ## 3.3.37
 
 - Added `peripheralParserSpec` to `InboundProtocolInput` and `ModelInput` models
