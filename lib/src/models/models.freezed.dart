@@ -60,6 +60,10 @@ mixin _$Model {
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   String? get peripheralIdentifier => throw _privateConstructorUsedError;
 
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  Map<String, dynamic>? get peripheralParserSpec =>
+      throw _privateConstructorUsedError;
+
   /// Serializes this Model to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -87,7 +91,8 @@ abstract class $ModelCopyWith<$Res> {
       @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
       ConfIoTLayout confiotLayout,
       String? confiotName,
-      String? peripheralIdentifier});
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec});
 
   $InboundProtocolCopyWith<$Res>? get protocol;
 }
@@ -119,6 +124,7 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
     Object? confiotLayout = null,
     Object? confiotName = freezed,
     Object? peripheralIdentifier = freezed,
+    Object? peripheralParserSpec = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -169,6 +175,10 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
           ? _value.peripheralIdentifier
           : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralParserSpec: freezed == peripheralParserSpec
+          ? _value.peripheralParserSpec
+          : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -207,7 +217,8 @@ abstract class _$$ModelImplCopyWith<$Res> implements $ModelCopyWith<$Res> {
       @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
       ConfIoTLayout confiotLayout,
       String? confiotName,
-      String? peripheralIdentifier});
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec});
 
   @override
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -238,6 +249,7 @@ class __$$ModelImplCopyWithImpl<$Res>
     Object? confiotLayout = null,
     Object? confiotName = freezed,
     Object? peripheralIdentifier = freezed,
+    Object? peripheralParserSpec = freezed,
   }) {
     return _then(_$ModelImpl(
       id: null == id
@@ -288,6 +300,10 @@ class __$$ModelImplCopyWithImpl<$Res>
           ? _value.peripheralIdentifier
           : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralParserSpec: freezed == peripheralParserSpec
+          ? _value._peripheralParserSpec
+          : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -308,9 +324,11 @@ class _$ModelImpl implements _Model {
       @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
       this.confiotLayout = ConfIoTLayout.standard,
       this.confiotName,
-      this.peripheralIdentifier})
+      this.peripheralIdentifier,
+      final Map<String, dynamic>? peripheralParserSpec})
       : _commandsStructure = commandsStructure,
-        _configStructure = configStructure;
+        _configStructure = configStructure,
+        _peripheralParserSpec = peripheralParserSpec;
 
   factory _$ModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$ModelImplFromJson(json);
@@ -383,9 +401,23 @@ class _$ModelImpl implements _Model {
   @override
   final String? peripheralIdentifier;
 
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  final Map<String, dynamic>? _peripheralParserSpec;
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  @override
+  Map<String, dynamic>? get peripheralParserSpec {
+    final value = _peripheralParserSpec;
+    if (value == null) return null;
+    if (_peripheralParserSpec is EqualUnmodifiableMapView)
+      return _peripheralParserSpec;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   String toString() {
-    return 'Model(id: $id, name: $name, flespiId: $flespiId, protocol: $protocol, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName, peripheralIdentifier: $peripheralIdentifier)';
+    return 'Model(id: $id, name: $name, flespiId: $flespiId, protocol: $protocol, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec)';
   }
 
   @override
@@ -414,7 +446,9 @@ class _$ModelImpl implements _Model {
             (identical(other.confiotName, confiotName) ||
                 other.confiotName == confiotName) &&
             (identical(other.peripheralIdentifier, peripheralIdentifier) ||
-                other.peripheralIdentifier == peripheralIdentifier));
+                other.peripheralIdentifier == peripheralIdentifier) &&
+            const DeepCollectionEquality()
+                .equals(other._peripheralParserSpec, _peripheralParserSpec));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -432,7 +466,8 @@ class _$ModelImpl implements _Model {
       confiotCapable,
       confiotLayout,
       confiotName,
-      peripheralIdentifier);
+      peripheralIdentifier,
+      const DeepCollectionEquality().hash(_peripheralParserSpec));
 
   /// Create a copy of Model
   /// with the given fields replaced by the non-null parameter values.
@@ -464,7 +499,8 @@ abstract class _Model implements Model {
       @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
       final ConfIoTLayout confiotLayout,
       final String? confiotName,
-      final String? peripheralIdentifier}) = _$ModelImpl;
+      final String? peripheralIdentifier,
+      final Map<String, dynamic>? peripheralParserSpec}) = _$ModelImpl;
 
   factory _Model.fromJson(Map<String, dynamic> json) = _$ModelImpl.fromJson;
 
@@ -517,6 +553,10 @@ abstract class _Model implements Model {
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   @override
   String? get peripheralIdentifier;
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  @override
+  Map<String, dynamic>? get peripheralParserSpec;
 
   /// Create a copy of Model
   /// with the given fields replaced by the non-null parameter values.
@@ -606,6 +646,14 @@ mixin _$ModelInput {
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   set peripheralIdentifier(String? value) => throw _privateConstructorUsedError;
 
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  Map<String, dynamic>? get peripheralParserSpec =>
+      throw _privateConstructorUsedError;
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  set peripheralParserSpec(Map<String, dynamic>? value) =>
+      throw _privateConstructorUsedError;
+
   /// Serializes this ModelInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -634,7 +682,8 @@ abstract class $ModelInputCopyWith<$Res> {
       @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
       ConfIoTLayout confiotLayout,
       String? confiotName,
-      String? peripheralIdentifier});
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec});
 }
 
 /// @nodoc
@@ -663,6 +712,7 @@ class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
     Object? confiotLayout = null,
     Object? confiotName = freezed,
     Object? peripheralIdentifier = freezed,
+    Object? peripheralParserSpec = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -709,6 +759,10 @@ class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
           ? _value.peripheralIdentifier
           : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralParserSpec: freezed == peripheralParserSpec
+          ? _value.peripheralParserSpec
+          : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 }
@@ -733,7 +787,8 @@ abstract class _$$ModelInputImplCopyWith<$Res>
       @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
       ConfIoTLayout confiotLayout,
       String? confiotName,
-      String? peripheralIdentifier});
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec});
 }
 
 /// @nodoc
@@ -760,6 +815,7 @@ class __$$ModelInputImplCopyWithImpl<$Res>
     Object? confiotLayout = null,
     Object? confiotName = freezed,
     Object? peripheralIdentifier = freezed,
+    Object? peripheralParserSpec = freezed,
   }) {
     return _then(_$ModelInputImpl(
       id: freezed == id
@@ -806,6 +862,10 @@ class __$$ModelInputImplCopyWithImpl<$Res>
           ? _value.peripheralIdentifier
           : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralParserSpec: freezed == peripheralParserSpec
+          ? _value.peripheralParserSpec
+          : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -825,7 +885,8 @@ class _$ModelInputImpl implements _ModelInput {
       @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
       this.confiotLayout = ConfIoTLayout.standard,
       this.confiotName,
-      this.peripheralIdentifier});
+      this.peripheralIdentifier,
+      this.peripheralParserSpec});
 
   factory _$ModelInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$ModelInputImplFromJson(json);
@@ -881,9 +942,13 @@ class _$ModelInputImpl implements _ModelInput {
   @override
   String? peripheralIdentifier;
 
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  @override
+  Map<String, dynamic>? peripheralParserSpec;
+
   @override
   String toString() {
-    return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName, peripheralIdentifier: $peripheralIdentifier)';
+    return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec)';
   }
 
   /// Create a copy of ModelInput
@@ -915,7 +980,8 @@ abstract class _ModelInput implements ModelInput {
       @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
       ConfIoTLayout confiotLayout,
       String? confiotName,
-      String? peripheralIdentifier}) = _$ModelInputImpl;
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec}) = _$ModelInputImpl;
 
   factory _ModelInput.fromJson(Map<String, dynamic> json) =
       _$ModelInputImpl.fromJson;
@@ -1000,6 +1066,13 @@ abstract class _ModelInput implements ModelInput {
 
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   set peripheralIdentifier(String? value);
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  @override
+  Map<String, dynamic>? get peripheralParserSpec;
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  set peripheralParserSpec(Map<String, dynamic>? value);
 
   /// Create a copy of ModelInput
   /// with the given fields replaced by the non-null parameter values.

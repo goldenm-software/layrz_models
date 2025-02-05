@@ -33,14 +33,16 @@ mixin _$BleDevice {
   /// Can be null if the device does not have a signal strength due to a platform limitation.
   int? get rssi => throw _privateConstructorUsedError;
 
+  /// [txPower] is the transmission power of the BLE device.
+  /// Can be null if the device does not have a transmission power due to a platform limitation.
+  int? get txPower => throw _privateConstructorUsedError;
+
   /// [manufacturerData] is the manufacturer data of the BLE device.
-  /// Can be null if the device does not have manufacturer data or is not broadcasted.
-  List<int>? get manufacturerData => throw _privateConstructorUsedError;
+  List<BleManufacturerData> get manufacturerData =>
+      throw _privateConstructorUsedError;
 
   /// [serviceData] is the service data of the BLE device.
-  /// Can be null if the device does not have service data or is not broadcasted.
-  /// Also, this list will be ordered by the service UUID.
-  List<BleServiceData>? get serviceData => throw _privateConstructorUsedError;
+  List<BleServiceData> get serviceData => throw _privateConstructorUsedError;
 
   /// Serializes this BleDevice to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -61,8 +63,9 @@ abstract class $BleDeviceCopyWith<$Res> {
       {String macAddress,
       String? name,
       int? rssi,
-      List<int>? manufacturerData,
-      List<BleServiceData>? serviceData});
+      int? txPower,
+      List<BleManufacturerData> manufacturerData,
+      List<BleServiceData> serviceData});
 }
 
 /// @nodoc
@@ -83,8 +86,9 @@ class _$BleDeviceCopyWithImpl<$Res, $Val extends BleDevice>
     Object? macAddress = null,
     Object? name = freezed,
     Object? rssi = freezed,
-    Object? manufacturerData = freezed,
-    Object? serviceData = freezed,
+    Object? txPower = freezed,
+    Object? manufacturerData = null,
+    Object? serviceData = null,
   }) {
     return _then(_value.copyWith(
       macAddress: null == macAddress
@@ -99,14 +103,18 @@ class _$BleDeviceCopyWithImpl<$Res, $Val extends BleDevice>
           ? _value.rssi
           : rssi // ignore: cast_nullable_to_non_nullable
               as int?,
-      manufacturerData: freezed == manufacturerData
+      txPower: freezed == txPower
+          ? _value.txPower
+          : txPower // ignore: cast_nullable_to_non_nullable
+              as int?,
+      manufacturerData: null == manufacturerData
           ? _value.manufacturerData
           : manufacturerData // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      serviceData: freezed == serviceData
+              as List<BleManufacturerData>,
+      serviceData: null == serviceData
           ? _value.serviceData
           : serviceData // ignore: cast_nullable_to_non_nullable
-              as List<BleServiceData>?,
+              as List<BleServiceData>,
     ) as $Val);
   }
 }
@@ -123,8 +131,9 @@ abstract class _$$BleDeviceImplCopyWith<$Res>
       {String macAddress,
       String? name,
       int? rssi,
-      List<int>? manufacturerData,
-      List<BleServiceData>? serviceData});
+      int? txPower,
+      List<BleManufacturerData> manufacturerData,
+      List<BleServiceData> serviceData});
 }
 
 /// @nodoc
@@ -143,8 +152,9 @@ class __$$BleDeviceImplCopyWithImpl<$Res>
     Object? macAddress = null,
     Object? name = freezed,
     Object? rssi = freezed,
-    Object? manufacturerData = freezed,
-    Object? serviceData = freezed,
+    Object? txPower = freezed,
+    Object? manufacturerData = null,
+    Object? serviceData = null,
   }) {
     return _then(_$BleDeviceImpl(
       macAddress: null == macAddress
@@ -159,14 +169,18 @@ class __$$BleDeviceImplCopyWithImpl<$Res>
           ? _value.rssi
           : rssi // ignore: cast_nullable_to_non_nullable
               as int?,
-      manufacturerData: freezed == manufacturerData
+      txPower: freezed == txPower
+          ? _value.txPower
+          : txPower // ignore: cast_nullable_to_non_nullable
+              as int?,
+      manufacturerData: null == manufacturerData
           ? _value._manufacturerData
           : manufacturerData // ignore: cast_nullable_to_non_nullable
-              as List<int>?,
-      serviceData: freezed == serviceData
+              as List<BleManufacturerData>,
+      serviceData: null == serviceData
           ? _value._serviceData
           : serviceData // ignore: cast_nullable_to_non_nullable
-              as List<BleServiceData>?,
+              as List<BleServiceData>,
     ));
   }
 }
@@ -178,8 +192,9 @@ class _$BleDeviceImpl extends _BleDevice {
       {required this.macAddress,
       this.name,
       this.rssi,
-      final List<int>? manufacturerData,
-      final List<BleServiceData>? serviceData})
+      this.txPower,
+      final List<BleManufacturerData> manufacturerData = const [],
+      final List<BleServiceData> serviceData = const []})
       : _manufacturerData = manufacturerData,
         _serviceData = serviceData,
         super._();
@@ -203,42 +218,39 @@ class _$BleDeviceImpl extends _BleDevice {
   @override
   final int? rssi;
 
-  /// [manufacturerData] is the manufacturer data of the BLE device.
-  /// Can be null if the device does not have manufacturer data or is not broadcasted.
-  final List<int>? _manufacturerData;
+  /// [txPower] is the transmission power of the BLE device.
+  /// Can be null if the device does not have a transmission power due to a platform limitation.
+  @override
+  final int? txPower;
 
   /// [manufacturerData] is the manufacturer data of the BLE device.
-  /// Can be null if the device does not have manufacturer data or is not broadcasted.
+  final List<BleManufacturerData> _manufacturerData;
+
+  /// [manufacturerData] is the manufacturer data of the BLE device.
   @override
-  List<int>? get manufacturerData {
-    final value = _manufacturerData;
-    if (value == null) return null;
+  @JsonKey()
+  List<BleManufacturerData> get manufacturerData {
     if (_manufacturerData is EqualUnmodifiableListView)
       return _manufacturerData;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_manufacturerData);
   }
 
   /// [serviceData] is the service data of the BLE device.
-  /// Can be null if the device does not have service data or is not broadcasted.
-  /// Also, this list will be ordered by the service UUID.
-  final List<BleServiceData>? _serviceData;
+  final List<BleServiceData> _serviceData;
 
   /// [serviceData] is the service data of the BLE device.
-  /// Can be null if the device does not have service data or is not broadcasted.
-  /// Also, this list will be ordered by the service UUID.
   @override
-  List<BleServiceData>? get serviceData {
-    final value = _serviceData;
-    if (value == null) return null;
+  @JsonKey()
+  List<BleServiceData> get serviceData {
     if (_serviceData is EqualUnmodifiableListView) return _serviceData;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_serviceData);
   }
 
   @override
   String toString() {
-    return 'BleDevice(macAddress: $macAddress, name: $name, rssi: $rssi, manufacturerData: $manufacturerData, serviceData: $serviceData)';
+    return 'BleDevice(macAddress: $macAddress, name: $name, rssi: $rssi, txPower: $txPower, manufacturerData: $manufacturerData, serviceData: $serviceData)';
   }
 
   @override
@@ -250,6 +262,7 @@ class _$BleDeviceImpl extends _BleDevice {
                 other.macAddress == macAddress) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.rssi, rssi) || other.rssi == rssi) &&
+            (identical(other.txPower, txPower) || other.txPower == txPower) &&
             const DeepCollectionEquality()
                 .equals(other._manufacturerData, _manufacturerData) &&
             const DeepCollectionEquality()
@@ -263,6 +276,7 @@ class _$BleDeviceImpl extends _BleDevice {
       macAddress,
       name,
       rssi,
+      txPower,
       const DeepCollectionEquality().hash(_manufacturerData),
       const DeepCollectionEquality().hash(_serviceData));
 
@@ -287,8 +301,9 @@ abstract class _BleDevice extends BleDevice {
       {required final String macAddress,
       final String? name,
       final int? rssi,
-      final List<int>? manufacturerData,
-      final List<BleServiceData>? serviceData}) = _$BleDeviceImpl;
+      final int? txPower,
+      final List<BleManufacturerData> manufacturerData,
+      final List<BleServiceData> serviceData}) = _$BleDeviceImpl;
   const _BleDevice._() : super._();
 
   factory _BleDevice.fromJson(Map<String, dynamic> json) =
@@ -310,16 +325,18 @@ abstract class _BleDevice extends BleDevice {
   @override
   int? get rssi;
 
-  /// [manufacturerData] is the manufacturer data of the BLE device.
-  /// Can be null if the device does not have manufacturer data or is not broadcasted.
+  /// [txPower] is the transmission power of the BLE device.
+  /// Can be null if the device does not have a transmission power due to a platform limitation.
   @override
-  List<int>? get manufacturerData;
+  int? get txPower;
+
+  /// [manufacturerData] is the manufacturer data of the BLE device.
+  @override
+  List<BleManufacturerData> get manufacturerData;
 
   /// [serviceData] is the service data of the BLE device.
-  /// Can be null if the device does not have service data or is not broadcasted.
-  /// Also, this list will be ordered by the service UUID.
   @override
-  List<BleServiceData>? get serviceData;
+  List<BleServiceData> get serviceData;
 
   /// Create a copy of BleDevice
   /// with the given fields replaced by the non-null parameter values.
@@ -528,7 +545,7 @@ BleServiceData _$BleServiceDataFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BleServiceData {
   /// [uuid] is the UUID of the BLE service.
-  String get uuid => throw _privateConstructorUsedError;
+  int get uuid => throw _privateConstructorUsedError;
 
   /// [characteristics] is the list of characteristics of the BLE service.
   List<int>? get data => throw _privateConstructorUsedError;
@@ -549,7 +566,7 @@ abstract class $BleServiceDataCopyWith<$Res> {
           BleServiceData value, $Res Function(BleServiceData) then) =
       _$BleServiceDataCopyWithImpl<$Res, BleServiceData>;
   @useResult
-  $Res call({String uuid, List<int>? data});
+  $Res call({int uuid, List<int>? data});
 }
 
 /// @nodoc
@@ -574,7 +591,7 @@ class _$BleServiceDataCopyWithImpl<$Res, $Val extends BleServiceData>
       uuid: null == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -591,7 +608,7 @@ abstract class _$$BleServiceDataImplCopyWith<$Res>
       __$$BleServiceDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String uuid, List<int>? data});
+  $Res call({int uuid, List<int>? data});
 }
 
 /// @nodoc
@@ -614,7 +631,7 @@ class __$$BleServiceDataImplCopyWithImpl<$Res>
       uuid: null == uuid
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       data: freezed == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
@@ -635,7 +652,7 @@ class _$BleServiceDataImpl extends _BleServiceData {
 
   /// [uuid] is the UUID of the BLE service.
   @override
-  final String uuid;
+  final int uuid;
 
   /// [characteristics] is the list of characteristics of the BLE service.
   final List<int>? _data;
@@ -688,8 +705,7 @@ class _$BleServiceDataImpl extends _BleServiceData {
 
 abstract class _BleServiceData extends BleServiceData {
   const factory _BleServiceData(
-      {required final String uuid,
-      final List<int>? data}) = _$BleServiceDataImpl;
+      {required final int uuid, final List<int>? data}) = _$BleServiceDataImpl;
   const _BleServiceData._() : super._();
 
   factory _BleServiceData.fromJson(Map<String, dynamic> json) =
@@ -697,7 +713,7 @@ abstract class _BleServiceData extends BleServiceData {
 
   /// [uuid] is the UUID of the BLE service.
   @override
-  String get uuid;
+  int get uuid;
 
   /// [characteristics] is the list of characteristics of the BLE service.
   @override
@@ -913,1141 +929,194 @@ abstract class _BleCharacteristic extends BleCharacteristic {
       throw _privateConstructorUsedError;
 }
 
-BleParser _$BleParserFromJson(Map<String, dynamic> json) {
-  return _BleParser.fromJson(json);
+BleManufacturerData _$BleManufacturerDataFromJson(Map<String, dynamic> json) {
+  return _BleManufacturerData.fromJson(json);
 }
 
 /// @nodoc
-mixin _$BleParser {
-  /// [identifier] is the unique identifier of the parser.
-  String get identifier => throw _privateConstructorUsedError;
+mixin _$BleManufacturerData {
+  /// [companyId] is the company identifier of the manufacturer.
+  int get companyId => throw _privateConstructorUsedError;
 
-  /// [config] is the configuration structure of the parser
-  BleParserConfig get config => throw _privateConstructorUsedError;
+  /// [data] is the raw data of the manufacturer.
+  List<int>? get data => throw _privateConstructorUsedError;
 
-  /// Serializes this BleParser to a JSON map.
+  /// Serializes this BleManufacturerData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-  /// Create a copy of BleParser
+  /// Create a copy of BleManufacturerData
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $BleParserCopyWith<BleParser> get copyWith =>
+  $BleManufacturerDataCopyWith<BleManufacturerData> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BleParserCopyWith<$Res> {
-  factory $BleParserCopyWith(BleParser value, $Res Function(BleParser) then) =
-      _$BleParserCopyWithImpl<$Res, BleParser>;
+abstract class $BleManufacturerDataCopyWith<$Res> {
+  factory $BleManufacturerDataCopyWith(
+          BleManufacturerData value, $Res Function(BleManufacturerData) then) =
+      _$BleManufacturerDataCopyWithImpl<$Res, BleManufacturerData>;
   @useResult
-  $Res call({String identifier, BleParserConfig config});
-
-  $BleParserConfigCopyWith<$Res> get config;
+  $Res call({int companyId, List<int>? data});
 }
 
 /// @nodoc
-class _$BleParserCopyWithImpl<$Res, $Val extends BleParser>
-    implements $BleParserCopyWith<$Res> {
-  _$BleParserCopyWithImpl(this._value, this._then);
+class _$BleManufacturerDataCopyWithImpl<$Res, $Val extends BleManufacturerData>
+    implements $BleManufacturerDataCopyWith<$Res> {
+  _$BleManufacturerDataCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of BleParser
+  /// Create a copy of BleManufacturerData
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? identifier = null,
-    Object? config = null,
+    Object? companyId = null,
+    Object? data = freezed,
   }) {
     return _then(_value.copyWith(
-      identifier: null == identifier
-          ? _value.identifier
-          : identifier // ignore: cast_nullable_to_non_nullable
-              as String,
-      config: null == config
-          ? _value.config
-          : config // ignore: cast_nullable_to_non_nullable
-              as BleParserConfig,
+      companyId: null == companyId
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as int,
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
     ) as $Val);
   }
-
-  /// Create a copy of BleParser
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $BleParserConfigCopyWith<$Res> get config {
-    return $BleParserConfigCopyWith<$Res>(_value.config, (value) {
-      return _then(_value.copyWith(config: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$BleParserImplCopyWith<$Res>
-    implements $BleParserCopyWith<$Res> {
-  factory _$$BleParserImplCopyWith(
-          _$BleParserImpl value, $Res Function(_$BleParserImpl) then) =
-      __$$BleParserImplCopyWithImpl<$Res>;
+abstract class _$$BleManufacturerDataImplCopyWith<$Res>
+    implements $BleManufacturerDataCopyWith<$Res> {
+  factory _$$BleManufacturerDataImplCopyWith(_$BleManufacturerDataImpl value,
+          $Res Function(_$BleManufacturerDataImpl) then) =
+      __$$BleManufacturerDataImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String identifier, BleParserConfig config});
-
-  @override
-  $BleParserConfigCopyWith<$Res> get config;
+  $Res call({int companyId, List<int>? data});
 }
 
 /// @nodoc
-class __$$BleParserImplCopyWithImpl<$Res>
-    extends _$BleParserCopyWithImpl<$Res, _$BleParserImpl>
-    implements _$$BleParserImplCopyWith<$Res> {
-  __$$BleParserImplCopyWithImpl(
-      _$BleParserImpl _value, $Res Function(_$BleParserImpl) _then)
+class __$$BleManufacturerDataImplCopyWithImpl<$Res>
+    extends _$BleManufacturerDataCopyWithImpl<$Res, _$BleManufacturerDataImpl>
+    implements _$$BleManufacturerDataImplCopyWith<$Res> {
+  __$$BleManufacturerDataImplCopyWithImpl(_$BleManufacturerDataImpl _value,
+      $Res Function(_$BleManufacturerDataImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of BleParser
+  /// Create a copy of BleManufacturerData
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? identifier = null,
-    Object? config = null,
+    Object? companyId = null,
+    Object? data = freezed,
   }) {
-    return _then(_$BleParserImpl(
-      identifier: null == identifier
-          ? _value.identifier
-          : identifier // ignore: cast_nullable_to_non_nullable
-              as String,
-      config: null == config
-          ? _value.config
-          : config // ignore: cast_nullable_to_non_nullable
-              as BleParserConfig,
+    return _then(_$BleManufacturerDataImpl(
+      companyId: null == companyId
+          ? _value.companyId
+          : companyId // ignore: cast_nullable_to_non_nullable
+              as int,
+      data: freezed == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<int>?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$BleParserImpl extends _BleParser {
-  const _$BleParserImpl({required this.identifier, required this.config})
-      : super._();
-
-  factory _$BleParserImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BleParserImplFromJson(json);
-
-  /// [identifier] is the unique identifier of the parser.
-  @override
-  final String identifier;
-
-  /// [config] is the configuration structure of the parser
-  @override
-  final BleParserConfig config;
-
-  @override
-  String toString() {
-    return 'BleParser(identifier: $identifier, config: $config)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BleParserImpl &&
-            (identical(other.identifier, identifier) ||
-                other.identifier == identifier) &&
-            (identical(other.config, config) || other.config == config));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, identifier, config);
-
-  /// Create a copy of BleParser
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BleParserImplCopyWith<_$BleParserImpl> get copyWith =>
-      __$$BleParserImplCopyWithImpl<_$BleParserImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BleParserImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _BleParser extends BleParser {
-  const factory _BleParser(
-      {required final String identifier,
-      required final BleParserConfig config}) = _$BleParserImpl;
-  const _BleParser._() : super._();
-
-  factory _BleParser.fromJson(Map<String, dynamic> json) =
-      _$BleParserImpl.fromJson;
-
-  /// [identifier] is the unique identifier of the parser.
-  @override
-  String get identifier;
-
-  /// [config] is the configuration structure of the parser
-  @override
-  BleParserConfig get config;
-
-  /// Create a copy of BleParser
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BleParserImplCopyWith<_$BleParserImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-BleParserConfig _$BleParserConfigFromJson(Map<String, dynamic> json) {
-  return _BleParserConfig.fromJson(json);
-}
-
-/// @nodoc
-mixin _$BleParserConfig {
-  /// [conditions] is the condition that the device must meet to be parsed by this parser.
-  /// If the condition is null, the parser will always parse the device.
-  List<BleCondition> get conditions => throw _privateConstructorUsedError;
-
-  /// [properties] is the map of properties that the parser will extract from the advertisement data.
-  /// The key is the name of the property and the value is the configuration of the property.
-  List<BleParserProperty> get properties => throw _privateConstructorUsedError;
-
-  /// Serializes this BleParserConfig to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BleParserConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $BleParserConfigCopyWith<BleParserConfig> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BleParserConfigCopyWith<$Res> {
-  factory $BleParserConfigCopyWith(
-          BleParserConfig value, $Res Function(BleParserConfig) then) =
-      _$BleParserConfigCopyWithImpl<$Res, BleParserConfig>;
-  @useResult
-  $Res call(
-      {List<BleCondition> conditions, List<BleParserProperty> properties});
-}
-
-/// @nodoc
-class _$BleParserConfigCopyWithImpl<$Res, $Val extends BleParserConfig>
-    implements $BleParserConfigCopyWith<$Res> {
-  _$BleParserConfigCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BleParserConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? conditions = null,
-    Object? properties = null,
-  }) {
-    return _then(_value.copyWith(
-      conditions: null == conditions
-          ? _value.conditions
-          : conditions // ignore: cast_nullable_to_non_nullable
-              as List<BleCondition>,
-      properties: null == properties
-          ? _value.properties
-          : properties // ignore: cast_nullable_to_non_nullable
-              as List<BleParserProperty>,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$BleParserConfigImplCopyWith<$Res>
-    implements $BleParserConfigCopyWith<$Res> {
-  factory _$$BleParserConfigImplCopyWith(_$BleParserConfigImpl value,
-          $Res Function(_$BleParserConfigImpl) then) =
-      __$$BleParserConfigImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {List<BleCondition> conditions, List<BleParserProperty> properties});
-}
-
-/// @nodoc
-class __$$BleParserConfigImplCopyWithImpl<$Res>
-    extends _$BleParserConfigCopyWithImpl<$Res, _$BleParserConfigImpl>
-    implements _$$BleParserConfigImplCopyWith<$Res> {
-  __$$BleParserConfigImplCopyWithImpl(
-      _$BleParserConfigImpl _value, $Res Function(_$BleParserConfigImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of BleParserConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? conditions = null,
-    Object? properties = null,
-  }) {
-    return _then(_$BleParserConfigImpl(
-      conditions: null == conditions
-          ? _value._conditions
-          : conditions // ignore: cast_nullable_to_non_nullable
-              as List<BleCondition>,
-      properties: null == properties
-          ? _value._properties
-          : properties // ignore: cast_nullable_to_non_nullable
-              as List<BleParserProperty>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$BleParserConfigImpl extends _BleParserConfig {
-  const _$BleParserConfigImpl(
-      {final List<BleCondition> conditions = const [],
-      final List<BleParserProperty> properties = const []})
-      : _conditions = conditions,
-        _properties = properties,
+class _$BleManufacturerDataImpl extends _BleManufacturerData {
+  const _$BleManufacturerDataImpl(
+      {this.companyId = 0x0000, final List<int>? data})
+      : _data = data,
         super._();
 
-  factory _$BleParserConfigImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BleParserConfigImplFromJson(json);
+  factory _$BleManufacturerDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BleManufacturerDataImplFromJson(json);
 
-  /// [conditions] is the condition that the device must meet to be parsed by this parser.
-  /// If the condition is null, the parser will always parse the device.
-  final List<BleCondition> _conditions;
-
-  /// [conditions] is the condition that the device must meet to be parsed by this parser.
-  /// If the condition is null, the parser will always parse the device.
+  /// [companyId] is the company identifier of the manufacturer.
   @override
   @JsonKey()
-  List<BleCondition> get conditions {
-    if (_conditions is EqualUnmodifiableListView) return _conditions;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_conditions);
-  }
+  final int companyId;
 
-  /// [properties] is the map of properties that the parser will extract from the advertisement data.
-  /// The key is the name of the property and the value is the configuration of the property.
-  final List<BleParserProperty> _properties;
+  /// [data] is the raw data of the manufacturer.
+  final List<int>? _data;
 
-  /// [properties] is the map of properties that the parser will extract from the advertisement data.
-  /// The key is the name of the property and the value is the configuration of the property.
+  /// [data] is the raw data of the manufacturer.
   @override
-  @JsonKey()
-  List<BleParserProperty> get properties {
-    if (_properties is EqualUnmodifiableListView) return _properties;
+  List<int>? get data {
+    final value = _data;
+    if (value == null) return null;
+    if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_properties);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
   String toString() {
-    return 'BleParserConfig(conditions: $conditions, properties: $properties)';
+    return 'BleManufacturerData(companyId: $companyId, data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$BleParserConfigImpl &&
-            const DeepCollectionEquality()
-                .equals(other._conditions, _conditions) &&
-            const DeepCollectionEquality()
-                .equals(other._properties, _properties));
+            other is _$BleManufacturerDataImpl &&
+            (identical(other.companyId, companyId) ||
+                other.companyId == companyId) &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_conditions),
-      const DeepCollectionEquality().hash(_properties));
+      runtimeType, companyId, const DeepCollectionEquality().hash(_data));
 
-  /// Create a copy of BleParserConfig
+  /// Create a copy of BleManufacturerData
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$BleParserConfigImplCopyWith<_$BleParserConfigImpl> get copyWith =>
-      __$$BleParserConfigImplCopyWithImpl<_$BleParserConfigImpl>(
+  _$$BleManufacturerDataImplCopyWith<_$BleManufacturerDataImpl> get copyWith =>
+      __$$BleManufacturerDataImplCopyWithImpl<_$BleManufacturerDataImpl>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$BleParserConfigImplToJson(
+    return _$$BleManufacturerDataImplToJson(
       this,
     );
   }
 }
 
-abstract class _BleParserConfig extends BleParserConfig {
-  const factory _BleParserConfig(
-      {final List<BleCondition> conditions,
-      final List<BleParserProperty> properties}) = _$BleParserConfigImpl;
-  const _BleParserConfig._() : super._();
+abstract class _BleManufacturerData extends BleManufacturerData {
+  const factory _BleManufacturerData(
+      {final int companyId, final List<int>? data}) = _$BleManufacturerDataImpl;
+  const _BleManufacturerData._() : super._();
 
-  factory _BleParserConfig.fromJson(Map<String, dynamic> json) =
-      _$BleParserConfigImpl.fromJson;
+  factory _BleManufacturerData.fromJson(Map<String, dynamic> json) =
+      _$BleManufacturerDataImpl.fromJson;
 
-  /// [conditions] is the condition that the device must meet to be parsed by this parser.
-  /// If the condition is null, the parser will always parse the device.
+  /// [companyId] is the company identifier of the manufacturer.
   @override
-  List<BleCondition> get conditions;
+  int get companyId;
 
-  /// [properties] is the map of properties that the parser will extract from the advertisement data.
-  /// The key is the name of the property and the value is the configuration of the property.
+  /// [data] is the raw data of the manufacturer.
   @override
-  List<BleParserProperty> get properties;
+  List<int>? get data;
 
-  /// Create a copy of BleParserConfig
+  /// Create a copy of BleManufacturerData
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BleParserConfigImplCopyWith<_$BleParserConfigImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-BleParserProperty _$BleParserPropertyFromJson(Map<String, dynamic> json) {
-  return _BleParserProperty.fromJson(json);
-}
-
-/// @nodoc
-mixin _$BleParserProperty {
-  /// [parameter] is the parameter that the parser will extract.
-  String get parameter => throw _privateConstructorUsedError;
-
-  /// [source] is the source of the data that the parser will extract.
-  @JsonKey(unknownEnumValue: BleParserSource.unknown)
-  BleParserSource get source => throw _privateConstructorUsedError;
-
-  /// [service] is the service UUID that the parser will extract.
-  int? get service => throw _privateConstructorUsedError;
-
-  /// [conditions] is the condition that the device must meet to be parsed by this parser.
-  List<BleCondition> get conditions => throw _privateConstructorUsedError;
-
-  /// [run] is the list of operations to extract the data from the advertisement data.
-  List<BleConversion> get run => throw _privateConstructorUsedError;
-
-  /// Serializes this BleParserProperty to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BleParserProperty
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $BleParserPropertyCopyWith<BleParserProperty> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BleParserPropertyCopyWith<$Res> {
-  factory $BleParserPropertyCopyWith(
-          BleParserProperty value, $Res Function(BleParserProperty) then) =
-      _$BleParserPropertyCopyWithImpl<$Res, BleParserProperty>;
-  @useResult
-  $Res call(
-      {String parameter,
-      @JsonKey(unknownEnumValue: BleParserSource.unknown)
-      BleParserSource source,
-      int? service,
-      List<BleCondition> conditions,
-      List<BleConversion> run});
-}
-
-/// @nodoc
-class _$BleParserPropertyCopyWithImpl<$Res, $Val extends BleParserProperty>
-    implements $BleParserPropertyCopyWith<$Res> {
-  _$BleParserPropertyCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BleParserProperty
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? parameter = null,
-    Object? source = null,
-    Object? service = freezed,
-    Object? conditions = null,
-    Object? run = null,
-  }) {
-    return _then(_value.copyWith(
-      parameter: null == parameter
-          ? _value.parameter
-          : parameter // ignore: cast_nullable_to_non_nullable
-              as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as BleParserSource,
-      service: freezed == service
-          ? _value.service
-          : service // ignore: cast_nullable_to_non_nullable
-              as int?,
-      conditions: null == conditions
-          ? _value.conditions
-          : conditions // ignore: cast_nullable_to_non_nullable
-              as List<BleCondition>,
-      run: null == run
-          ? _value.run
-          : run // ignore: cast_nullable_to_non_nullable
-              as List<BleConversion>,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$BleParserPropertyImplCopyWith<$Res>
-    implements $BleParserPropertyCopyWith<$Res> {
-  factory _$$BleParserPropertyImplCopyWith(_$BleParserPropertyImpl value,
-          $Res Function(_$BleParserPropertyImpl) then) =
-      __$$BleParserPropertyImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String parameter,
-      @JsonKey(unknownEnumValue: BleParserSource.unknown)
-      BleParserSource source,
-      int? service,
-      List<BleCondition> conditions,
-      List<BleConversion> run});
-}
-
-/// @nodoc
-class __$$BleParserPropertyImplCopyWithImpl<$Res>
-    extends _$BleParserPropertyCopyWithImpl<$Res, _$BleParserPropertyImpl>
-    implements _$$BleParserPropertyImplCopyWith<$Res> {
-  __$$BleParserPropertyImplCopyWithImpl(_$BleParserPropertyImpl _value,
-      $Res Function(_$BleParserPropertyImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of BleParserProperty
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? parameter = null,
-    Object? source = null,
-    Object? service = freezed,
-    Object? conditions = null,
-    Object? run = null,
-  }) {
-    return _then(_$BleParserPropertyImpl(
-      parameter: null == parameter
-          ? _value.parameter
-          : parameter // ignore: cast_nullable_to_non_nullable
-              as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as BleParserSource,
-      service: freezed == service
-          ? _value.service
-          : service // ignore: cast_nullable_to_non_nullable
-              as int?,
-      conditions: null == conditions
-          ? _value._conditions
-          : conditions // ignore: cast_nullable_to_non_nullable
-              as List<BleCondition>,
-      run: null == run
-          ? _value._run
-          : run // ignore: cast_nullable_to_non_nullable
-              as List<BleConversion>,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$BleParserPropertyImpl extends _BleParserProperty {
-  const _$BleParserPropertyImpl(
-      {required this.parameter,
-      @JsonKey(unknownEnumValue: BleParserSource.unknown) required this.source,
-      this.service,
-      final List<BleCondition> conditions = const [],
-      final List<BleConversion> run = const []})
-      : _conditions = conditions,
-        _run = run,
-        super._();
-
-  factory _$BleParserPropertyImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BleParserPropertyImplFromJson(json);
-
-  /// [parameter] is the parameter that the parser will extract.
-  @override
-  final String parameter;
-
-  /// [source] is the source of the data that the parser will extract.
-  @override
-  @JsonKey(unknownEnumValue: BleParserSource.unknown)
-  final BleParserSource source;
-
-  /// [service] is the service UUID that the parser will extract.
-  @override
-  final int? service;
-
-  /// [conditions] is the condition that the device must meet to be parsed by this parser.
-  final List<BleCondition> _conditions;
-
-  /// [conditions] is the condition that the device must meet to be parsed by this parser.
-  @override
-  @JsonKey()
-  List<BleCondition> get conditions {
-    if (_conditions is EqualUnmodifiableListView) return _conditions;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_conditions);
-  }
-
-  /// [run] is the list of operations to extract the data from the advertisement data.
-  final List<BleConversion> _run;
-
-  /// [run] is the list of operations to extract the data from the advertisement data.
-  @override
-  @JsonKey()
-  List<BleConversion> get run {
-    if (_run is EqualUnmodifiableListView) return _run;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_run);
-  }
-
-  @override
-  String toString() {
-    return 'BleParserProperty(parameter: $parameter, source: $source, service: $service, conditions: $conditions, run: $run)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BleParserPropertyImpl &&
-            (identical(other.parameter, parameter) ||
-                other.parameter == parameter) &&
-            (identical(other.source, source) || other.source == source) &&
-            (identical(other.service, service) || other.service == service) &&
-            const DeepCollectionEquality()
-                .equals(other._conditions, _conditions) &&
-            const DeepCollectionEquality().equals(other._run, _run));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      parameter,
-      source,
-      service,
-      const DeepCollectionEquality().hash(_conditions),
-      const DeepCollectionEquality().hash(_run));
-
-  /// Create a copy of BleParserProperty
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BleParserPropertyImplCopyWith<_$BleParserPropertyImpl> get copyWith =>
-      __$$BleParserPropertyImplCopyWithImpl<_$BleParserPropertyImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BleParserPropertyImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _BleParserProperty extends BleParserProperty {
-  const factory _BleParserProperty(
-      {required final String parameter,
-      @JsonKey(unknownEnumValue: BleParserSource.unknown)
-      required final BleParserSource source,
-      final int? service,
-      final List<BleCondition> conditions,
-      final List<BleConversion> run}) = _$BleParserPropertyImpl;
-  const _BleParserProperty._() : super._();
-
-  factory _BleParserProperty.fromJson(Map<String, dynamic> json) =
-      _$BleParserPropertyImpl.fromJson;
-
-  /// [parameter] is the parameter that the parser will extract.
-  @override
-  String get parameter;
-
-  /// [source] is the source of the data that the parser will extract.
-  @override
-  @JsonKey(unknownEnumValue: BleParserSource.unknown)
-  BleParserSource get source;
-
-  /// [service] is the service UUID that the parser will extract.
-  @override
-  int? get service;
-
-  /// [conditions] is the condition that the device must meet to be parsed by this parser.
-  @override
-  List<BleCondition> get conditions;
-
-  /// [run] is the list of operations to extract the data from the advertisement data.
-  @override
-  List<BleConversion> get run;
-
-  /// Create a copy of BleParserProperty
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BleParserPropertyImplCopyWith<_$BleParserPropertyImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-BleConversion _$BleConversionFromJson(Map<String, dynamic> json) {
-  return _BleConversion.fromJson(json);
-}
-
-/// @nodoc
-mixin _$BleConversion {
-  /// [operation] is the operation that the parser will execute.
-  @JsonKey(unknownEnumValue: BleOperation.unknown)
-  BleOperation get operation => throw _privateConstructorUsedError;
-
-  /// [zFill] is the number of 0 to be added to the left of the value.
-  int get zFill => throw _privateConstructorUsedError;
-
-  /// [operand] is the operand of the operation.
-  dynamic get operand => throw _privateConstructorUsedError;
-
-  /// Serializes this BleConversion to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BleConversion
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $BleConversionCopyWith<BleConversion> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BleConversionCopyWith<$Res> {
-  factory $BleConversionCopyWith(
-          BleConversion value, $Res Function(BleConversion) then) =
-      _$BleConversionCopyWithImpl<$Res, BleConversion>;
-  @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: BleOperation.unknown) BleOperation operation,
-      int zFill,
-      dynamic operand});
-}
-
-/// @nodoc
-class _$BleConversionCopyWithImpl<$Res, $Val extends BleConversion>
-    implements $BleConversionCopyWith<$Res> {
-  _$BleConversionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BleConversion
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? operation = null,
-    Object? zFill = null,
-    Object? operand = freezed,
-  }) {
-    return _then(_value.copyWith(
-      operation: null == operation
-          ? _value.operation
-          : operation // ignore: cast_nullable_to_non_nullable
-              as BleOperation,
-      zFill: null == zFill
-          ? _value.zFill
-          : zFill // ignore: cast_nullable_to_non_nullable
-              as int,
-      operand: freezed == operand
-          ? _value.operand
-          : operand // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$BleConversionImplCopyWith<$Res>
-    implements $BleConversionCopyWith<$Res> {
-  factory _$$BleConversionImplCopyWith(
-          _$BleConversionImpl value, $Res Function(_$BleConversionImpl) then) =
-      __$$BleConversionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: BleOperation.unknown) BleOperation operation,
-      int zFill,
-      dynamic operand});
-}
-
-/// @nodoc
-class __$$BleConversionImplCopyWithImpl<$Res>
-    extends _$BleConversionCopyWithImpl<$Res, _$BleConversionImpl>
-    implements _$$BleConversionImplCopyWith<$Res> {
-  __$$BleConversionImplCopyWithImpl(
-      _$BleConversionImpl _value, $Res Function(_$BleConversionImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of BleConversion
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? operation = null,
-    Object? zFill = null,
-    Object? operand = freezed,
-  }) {
-    return _then(_$BleConversionImpl(
-      operation: null == operation
-          ? _value.operation
-          : operation // ignore: cast_nullable_to_non_nullable
-              as BleOperation,
-      zFill: null == zFill
-          ? _value.zFill
-          : zFill // ignore: cast_nullable_to_non_nullable
-              as int,
-      operand: freezed == operand
-          ? _value.operand
-          : operand // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$BleConversionImpl extends _BleConversion {
-  const _$BleConversionImpl(
-      {@JsonKey(unknownEnumValue: BleOperation.unknown) required this.operation,
-      this.zFill = 0,
-      this.operand})
-      : super._();
-
-  factory _$BleConversionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BleConversionImplFromJson(json);
-
-  /// [operation] is the operation that the parser will execute.
-  @override
-  @JsonKey(unknownEnumValue: BleOperation.unknown)
-  final BleOperation operation;
-
-  /// [zFill] is the number of 0 to be added to the left of the value.
-  @override
-  @JsonKey()
-  final int zFill;
-
-  /// [operand] is the operand of the operation.
-  @override
-  final dynamic operand;
-
-  @override
-  String toString() {
-    return 'BleConversion(operation: $operation, zFill: $zFill, operand: $operand)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BleConversionImpl &&
-            (identical(other.operation, operation) ||
-                other.operation == operation) &&
-            (identical(other.zFill, zFill) || other.zFill == zFill) &&
-            const DeepCollectionEquality().equals(other.operand, operand));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, operation, zFill,
-      const DeepCollectionEquality().hash(operand));
-
-  /// Create a copy of BleConversion
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BleConversionImplCopyWith<_$BleConversionImpl> get copyWith =>
-      __$$BleConversionImplCopyWithImpl<_$BleConversionImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BleConversionImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _BleConversion extends BleConversion {
-  const factory _BleConversion(
-      {@JsonKey(unknownEnumValue: BleOperation.unknown)
-      required final BleOperation operation,
-      final int zFill,
-      final dynamic operand}) = _$BleConversionImpl;
-  const _BleConversion._() : super._();
-
-  factory _BleConversion.fromJson(Map<String, dynamic> json) =
-      _$BleConversionImpl.fromJson;
-
-  /// [operation] is the operation that the parser will execute.
-  @override
-  @JsonKey(unknownEnumValue: BleOperation.unknown)
-  BleOperation get operation;
-
-  /// [zFill] is the number of 0 to be added to the left of the value.
-  @override
-  int get zFill;
-
-  /// [operand] is the operand of the operation.
-  @override
-  dynamic get operand;
-
-  /// Create a copy of BleConversion
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BleConversionImplCopyWith<_$BleConversionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-BleCondition _$BleConditionFromJson(Map<String, dynamic> json) {
-  return _BleCondition.fromJson(json);
-}
-
-/// @nodoc
-mixin _$BleCondition {
-  /// [watch] is the property that the parser will watch.
-  @JsonKey(unknownEnumValue: BleWatch.unknown)
-  BleWatch get watch => throw _privateConstructorUsedError;
-
-  /// [operation] is the operation that the parser will execute.
-  @JsonKey(unknownEnumValue: BleOperation.unknown)
-  BleOperation get operation => throw _privateConstructorUsedError;
-
-  /// [expected] is the expected value of the operation.
-  dynamic get expected => throw _privateConstructorUsedError;
-
-  /// Serializes this BleCondition to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BleCondition
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $BleConditionCopyWith<BleCondition> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BleConditionCopyWith<$Res> {
-  factory $BleConditionCopyWith(
-          BleCondition value, $Res Function(BleCondition) then) =
-      _$BleConditionCopyWithImpl<$Res, BleCondition>;
-  @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: BleWatch.unknown) BleWatch watch,
-      @JsonKey(unknownEnumValue: BleOperation.unknown) BleOperation operation,
-      dynamic expected});
-}
-
-/// @nodoc
-class _$BleConditionCopyWithImpl<$Res, $Val extends BleCondition>
-    implements $BleConditionCopyWith<$Res> {
-  _$BleConditionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BleCondition
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? watch = null,
-    Object? operation = null,
-    Object? expected = freezed,
-  }) {
-    return _then(_value.copyWith(
-      watch: null == watch
-          ? _value.watch
-          : watch // ignore: cast_nullable_to_non_nullable
-              as BleWatch,
-      operation: null == operation
-          ? _value.operation
-          : operation // ignore: cast_nullable_to_non_nullable
-              as BleOperation,
-      expected: freezed == expected
-          ? _value.expected
-          : expected // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$BleConditionImplCopyWith<$Res>
-    implements $BleConditionCopyWith<$Res> {
-  factory _$$BleConditionImplCopyWith(
-          _$BleConditionImpl value, $Res Function(_$BleConditionImpl) then) =
-      __$$BleConditionImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: BleWatch.unknown) BleWatch watch,
-      @JsonKey(unknownEnumValue: BleOperation.unknown) BleOperation operation,
-      dynamic expected});
-}
-
-/// @nodoc
-class __$$BleConditionImplCopyWithImpl<$Res>
-    extends _$BleConditionCopyWithImpl<$Res, _$BleConditionImpl>
-    implements _$$BleConditionImplCopyWith<$Res> {
-  __$$BleConditionImplCopyWithImpl(
-      _$BleConditionImpl _value, $Res Function(_$BleConditionImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of BleCondition
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? watch = null,
-    Object? operation = null,
-    Object? expected = freezed,
-  }) {
-    return _then(_$BleConditionImpl(
-      watch: null == watch
-          ? _value.watch
-          : watch // ignore: cast_nullable_to_non_nullable
-              as BleWatch,
-      operation: null == operation
-          ? _value.operation
-          : operation // ignore: cast_nullable_to_non_nullable
-              as BleOperation,
-      expected: freezed == expected
-          ? _value.expected
-          : expected // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$BleConditionImpl extends _BleCondition {
-  const _$BleConditionImpl(
-      {@JsonKey(unknownEnumValue: BleWatch.unknown) required this.watch,
-      @JsonKey(unknownEnumValue: BleOperation.unknown) required this.operation,
-      required this.expected})
-      : super._();
-
-  factory _$BleConditionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BleConditionImplFromJson(json);
-
-  /// [watch] is the property that the parser will watch.
-  @override
-  @JsonKey(unknownEnumValue: BleWatch.unknown)
-  final BleWatch watch;
-
-  /// [operation] is the operation that the parser will execute.
-  @override
-  @JsonKey(unknownEnumValue: BleOperation.unknown)
-  final BleOperation operation;
-
-  /// [expected] is the expected value of the operation.
-  @override
-  final dynamic expected;
-
-  @override
-  String toString() {
-    return 'BleCondition(watch: $watch, operation: $operation, expected: $expected)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BleConditionImpl &&
-            (identical(other.watch, watch) || other.watch == watch) &&
-            (identical(other.operation, operation) ||
-                other.operation == operation) &&
-            const DeepCollectionEquality().equals(other.expected, expected));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, watch, operation,
-      const DeepCollectionEquality().hash(expected));
-
-  /// Create a copy of BleCondition
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BleConditionImplCopyWith<_$BleConditionImpl> get copyWith =>
-      __$$BleConditionImplCopyWithImpl<_$BleConditionImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BleConditionImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _BleCondition extends BleCondition {
-  const factory _BleCondition(
-      {@JsonKey(unknownEnumValue: BleWatch.unknown)
-      required final BleWatch watch,
-      @JsonKey(unknownEnumValue: BleOperation.unknown)
-      required final BleOperation operation,
-      required final dynamic expected}) = _$BleConditionImpl;
-  const _BleCondition._() : super._();
-
-  factory _BleCondition.fromJson(Map<String, dynamic> json) =
-      _$BleConditionImpl.fromJson;
-
-  /// [watch] is the property that the parser will watch.
-  @override
-  @JsonKey(unknownEnumValue: BleWatch.unknown)
-  BleWatch get watch;
-
-  /// [operation] is the operation that the parser will execute.
-  @override
-  @JsonKey(unknownEnumValue: BleOperation.unknown)
-  BleOperation get operation;
-
-  /// [expected] is the expected value of the operation.
-  @override
-  dynamic get expected;
-
-  /// Create a copy of BleCondition
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BleConditionImplCopyWith<_$BleConditionImpl> get copyWith =>
+  _$$BleManufacturerDataImplCopyWith<_$BleManufacturerDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -144,6 +144,10 @@ mixin _$InboundProtocol {
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   String? get peripheralIdentifier => throw _privateConstructorUsedError;
 
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  Map<String, dynamic>? get peripheralParserSpec =>
+      throw _privateConstructorUsedError;
+
   /// Serializes this InboundProtocol to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -197,7 +201,8 @@ abstract class $InboundProtocolCopyWith<$Res> {
       List<CommandDefinition> commandsStructure,
       List<ConfigGrouping> configStructure,
       bool confiotCapable,
-      String? peripheralIdentifier});
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec});
 
   $AvatarCopyWith<$Res>? get dynamicIcon;
   $SimulationCycleCopyWith<$Res>? get cycle;
@@ -255,6 +260,7 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     Object? configStructure = null,
     Object? confiotCapable = null,
     Object? peripheralIdentifier = freezed,
+    Object? peripheralParserSpec = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -401,6 +407,10 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
           ? _value.peripheralIdentifier
           : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralParserSpec: freezed == peripheralParserSpec
+          ? _value.peripheralParserSpec
+          : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -492,7 +502,8 @@ abstract class _$$InboundProtocolImplCopyWith<$Res>
       List<CommandDefinition> commandsStructure,
       List<ConfigGrouping> configStructure,
       bool confiotCapable,
-      String? peripheralIdentifier});
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec});
 
   @override
   $AvatarCopyWith<$Res>? get dynamicIcon;
@@ -551,6 +562,7 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
     Object? configStructure = null,
     Object? confiotCapable = null,
     Object? peripheralIdentifier = freezed,
+    Object? peripheralParserSpec = freezed,
   }) {
     return _then(_$InboundProtocolImpl(
       id: null == id
@@ -697,6 +709,10 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
           ? _value.peripheralIdentifier
           : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralParserSpec: freezed == peripheralParserSpec
+          ? _value._peripheralParserSpec
+          : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -741,14 +757,16 @@ class _$InboundProtocolImpl implements _InboundProtocol {
       final List<CommandDefinition> commandsStructure = const [],
       final List<ConfigGrouping> configStructure = const [],
       this.confiotCapable = false,
-      this.peripheralIdentifier})
+      this.peripheralIdentifier,
+      final Map<String, dynamic>? peripheralParserSpec})
       : _requiredFields = requiredFields,
         _categoriesIds = categoriesIds,
         _models = models,
         _modbusPorts = modbusPorts,
         _flespiAcl = flespiAcl,
         _commandsStructure = commandsStructure,
-        _configStructure = configStructure;
+        _configStructure = configStructure,
+        _peripheralParserSpec = peripheralParserSpec;
 
   factory _$InboundProtocolImpl.fromJson(Map<String, dynamic> json) =>
       _$$InboundProtocolImplFromJson(json);
@@ -974,9 +992,23 @@ class _$InboundProtocolImpl implements _InboundProtocol {
   @override
   final String? peripheralIdentifier;
 
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  final Map<String, dynamic>? _peripheralParserSpec;
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  @override
+  Map<String, dynamic>? get peripheralParserSpec {
+    final value = _peripheralParserSpec;
+    if (value == null) return null;
+    if (_peripheralParserSpec is EqualUnmodifiableMapView)
+      return _peripheralParserSpec;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   String toString() {
-    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier)';
+    return 'InboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, operationMode: $operationMode, host: $host, port: $port, mqttTopic: $mqttTopic, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, isFlespi: $isFlespi, channelId: $channelId, flespiId: $flespiId, requiredFields: $requiredFields, isImported: $isImported, categoriesIds: $categoriesIds, canFota: $canFota, models: $models, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, dynamicIcon: $dynamicIcon, cycleId: $cycleId, cycle: $cycle, hasModbus: $hasModbus, modbusPorts: $modbusPorts, usage: $usage, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec)';
   }
 
   @override
@@ -1045,7 +1077,9 @@ class _$InboundProtocolImpl implements _InboundProtocol {
             (identical(other.confiotCapable, confiotCapable) ||
                 other.confiotCapable == confiotCapable) &&
             (identical(other.peripheralIdentifier, peripheralIdentifier) ||
-                other.peripheralIdentifier == peripheralIdentifier));
+                other.peripheralIdentifier == peripheralIdentifier) &&
+            const DeepCollectionEquality()
+                .equals(other._peripheralParserSpec, _peripheralParserSpec));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1087,7 +1121,8 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         const DeepCollectionEquality().hash(_commandsStructure),
         const DeepCollectionEquality().hash(_configStructure),
         confiotCapable,
-        peripheralIdentifier
+        peripheralIdentifier,
+        const DeepCollectionEquality().hash(_peripheralParserSpec)
       ]);
 
   /// Create a copy of InboundProtocol
@@ -1109,43 +1144,45 @@ class _$InboundProtocolImpl implements _InboundProtocol {
 
 abstract class _InboundProtocol implements InboundProtocol {
   const factory _InboundProtocol(
-      {required final String id,
-      required final String name,
-      @ColorConverter() required final Color color,
-      required final bool isEnabled,
-      @JsonKey(unknownEnumValue: OperationMode.unknown)
-      required final OperationMode operationMode,
-      final String? host,
-      final int? port,
-      final String? mqttTopic,
-      final bool? hasNativeCommands,
-      final bool? hasSmsCommands,
-      final bool? hasCommandsResult,
-      final bool? isFlespi,
-      final int? channelId,
-      final String? flespiId,
-      final List<CredentialField>? requiredFields,
-      final bool? isImported,
-      final List<String>? categoriesIds,
-      final bool? canFota,
-      final List<Model>? models,
-      final bool? hasAck,
-      final String? ackTopicFormat,
-      final Avatar? dynamicIcon,
-      final String? cycleId,
-      final SimulationCycle? cycle,
-      final bool? hasModbus,
-      final List<String> modbusPorts,
-      final int? usage,
-      final bool? requiresFlespiToken,
-      final List<FlespiAcl>? flespiAcl,
-      final WebhookStructure? webhookStructure,
-      final bool requiresExternalAccount,
-      final bool requiresStructure,
-      final List<CommandDefinition> commandsStructure,
-      final List<ConfigGrouping> configStructure,
-      final bool confiotCapable,
-      final String? peripheralIdentifier}) = _$InboundProtocolImpl;
+          {required final String id,
+          required final String name,
+          @ColorConverter() required final Color color,
+          required final bool isEnabled,
+          @JsonKey(unknownEnumValue: OperationMode.unknown)
+          required final OperationMode operationMode,
+          final String? host,
+          final int? port,
+          final String? mqttTopic,
+          final bool? hasNativeCommands,
+          final bool? hasSmsCommands,
+          final bool? hasCommandsResult,
+          final bool? isFlespi,
+          final int? channelId,
+          final String? flespiId,
+          final List<CredentialField>? requiredFields,
+          final bool? isImported,
+          final List<String>? categoriesIds,
+          final bool? canFota,
+          final List<Model>? models,
+          final bool? hasAck,
+          final String? ackTopicFormat,
+          final Avatar? dynamicIcon,
+          final String? cycleId,
+          final SimulationCycle? cycle,
+          final bool? hasModbus,
+          final List<String> modbusPorts,
+          final int? usage,
+          final bool? requiresFlespiToken,
+          final List<FlespiAcl>? flespiAcl,
+          final WebhookStructure? webhookStructure,
+          final bool requiresExternalAccount,
+          final bool requiresStructure,
+          final List<CommandDefinition> commandsStructure,
+          final List<ConfigGrouping> configStructure,
+          final bool confiotCapable,
+          final String? peripheralIdentifier,
+          final Map<String, dynamic>? peripheralParserSpec}) =
+      _$InboundProtocolImpl;
 
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
@@ -1306,6 +1343,10 @@ abstract class _InboundProtocol implements InboundProtocol {
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   @override
   String? get peripheralIdentifier;
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  @override
+  Map<String, dynamic>? get peripheralParserSpec;
 
   /// Create a copy of InboundProtocol
   /// with the given fields replaced by the non-null parameter values.
@@ -1538,6 +1579,14 @@ mixin _$InboundProtocolInput {
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   set peripheralIdentifier(String? value) => throw _privateConstructorUsedError;
 
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  Map<String, dynamic>? get peripheralParserSpec =>
+      throw _privateConstructorUsedError;
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  set peripheralParserSpec(Map<String, dynamic>? value) =>
+      throw _privateConstructorUsedError;
+
   /// Serializes this InboundProtocolInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -1588,7 +1637,8 @@ abstract class $InboundProtocolInputCopyWith<$Res> {
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
-      String? peripheralIdentifier});
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec});
 
   $AvatarInputCopyWith<$Res> get dynamicIcon;
   $WebhookStructureInputCopyWith<$Res>? get webhookStructure;
@@ -1643,6 +1693,7 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
     Object? configStructure = null,
     Object? confiotCapable = null,
     Object? peripheralIdentifier = freezed,
+    Object? peripheralParserSpec = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -1777,6 +1828,10 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
           ? _value.peripheralIdentifier
           : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralParserSpec: freezed == peripheralParserSpec
+          ? _value.peripheralParserSpec
+          : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ) as $Val);
   }
 
@@ -1848,7 +1903,8 @@ abstract class _$$InboundProtocolInputImplCopyWith<$Res>
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
-      String? peripheralIdentifier});
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec});
 
   @override
   $AvatarInputCopyWith<$Res> get dynamicIcon;
@@ -1902,6 +1958,7 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
     Object? configStructure = null,
     Object? confiotCapable = null,
     Object? peripheralIdentifier = freezed,
+    Object? peripheralParserSpec = freezed,
   }) {
     return _then(_$InboundProtocolInputImpl(
       id: freezed == id
@@ -2036,6 +2093,10 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
           ? _value.peripheralIdentifier
           : peripheralIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
+      peripheralParserSpec: freezed == peripheralParserSpec
+          ? _value.peripheralParserSpec
+          : peripheralParserSpec // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
     ));
   }
 }
@@ -2077,7 +2138,8 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
       this.commandsStructure = const [],
       this.configStructure = const [],
       this.confiotCapable = false,
-      this.peripheralIdentifier});
+      this.peripheralIdentifier,
+      this.peripheralParserSpec});
 
   factory _$InboundProtocolInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$InboundProtocolInputImplFromJson(json);
@@ -2241,9 +2303,13 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
   @override
   String? peripheralIdentifier;
 
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  @override
+  Map<String, dynamic>? peripheralParserSpec;
+
   @override
   String toString() {
-    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier)';
+    return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec)';
   }
 
   /// Create a copy of InboundProtocolInput
@@ -2299,7 +2365,8 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
       List<CommandDefinitionInput> commandsStructure,
       List<ConfigGroupingInput> configStructure,
       bool confiotCapable,
-      String? peripheralIdentifier}) = _$InboundProtocolInputImpl;
+      String? peripheralIdentifier,
+      Map<String, dynamic>? peripheralParserSpec}) = _$InboundProtocolInputImpl;
 
   factory _InboundProtocolInput.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolInputImpl.fromJson;
@@ -2544,6 +2611,13 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
 
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   set peripheralIdentifier(String? value);
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  @override
+  Map<String, dynamic>? get peripheralParserSpec;
+
+  /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  set peripheralParserSpec(Map<String, dynamic>? value);
 
   /// Create a copy of InboundProtocolInput
   /// with the given fields replaced by the non-null parameter values.

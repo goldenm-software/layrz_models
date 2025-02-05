@@ -1,5 +1,36 @@
 # Changelog
 
+## 3.3.40
+- Add `TenvioBulkInput` model
+## 3.3.39
+
+- Added `startPosition` to `BHSDriverSafetyDrivingEvent` model
+- Added `endPosition` to `BHSDriverSafetyDrivingEvent` model
+
+## 3.3.38
+
+- Added `txPower` to `BleDevice` model
+
+## 3.3.37
+
+- Added `peripheralParserSpec` to `InboundProtocolInput` and `ModelInput` models
+
+## 3.3.36
+
+- Added `peripheralParserSpec` to `InboundProtocol` and `Model` models
+
+## 3.3.35
+
+- Changed BLE models to support multiple Manufacturer Data
+
+## 3.3.34
+
+- Removed BLE parser things.
+
+## 3.3.33
+- Added `BHSDriverSafetySpeedingEvents` for Brickhouse driver safety
+- Added `BHSDriverSafetyDrivingEvent` For Brickhouse driver safety
+
 ## 3.3.32
 - Added `AtsExecuteLoadInput` to execute load
 

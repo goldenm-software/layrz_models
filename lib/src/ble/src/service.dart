@@ -23,7 +23,7 @@ class BleServiceData with _$BleServiceData {
   /// [BleServiceData] is the representation of a BLE service.
   const factory BleServiceData({
     /// [uuid] is the UUID of the BLE service.
-    required String uuid,
+    required int uuid,
 
     /// [characteristics] is the list of characteristics of the BLE service.
     List<int>? data,

@@ -823,3 +823,22 @@ Map<String, dynamic> _$$TenvioDriverInputImplToJson(
       'email': instance.email,
       'username': instance.username,
     };
+
+_$TenvioBulkInputImpl _$$TenvioBulkInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioBulkInputImpl(
+      customProperties:
+          json['customProperties'] as Map<String, dynamic>? ?? const {},
+      matrixId: json['matrixId'] as String?,
+      quantity: (json['quantity'] as num?)?.toInt(),
+      warehouseId: json['warehouseId'] as String?,
+    );
+
+Map<String, dynamic> _$$TenvioBulkInputImplToJson(
+        _$TenvioBulkInputImpl instance) =>
+    <String, dynamic>{
+      'customProperties': instance.customProperties,
+      'matrixId': instance.matrixId,
+      'quantity': instance.quantity,
+      'warehouseId': instance.warehouseId,
+    };

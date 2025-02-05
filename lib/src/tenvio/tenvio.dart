@@ -27,6 +27,7 @@ part 'src/order.dart';
 part 'src/photos.dart';
 part 'src/dispatch_guide.dart';
 part 'src/driver.dart';
+part 'src/bulk_tenvio_item.dart';
 
 // Statuses
 part 'src/statuses/dispatch_guide.dart';
