@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.3.38
+## 3.3.39
 
 - Added `startPosition` to `BHSDriverSafetyDrivingEvent` model
 - Added `endPosition` to `BHSDriverSafetyDrivingEvent` model
