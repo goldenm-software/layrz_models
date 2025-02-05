@@ -2,6 +2,11 @@
 
 ## 3.3.38
 
+- Added `startPosition` to `BHSDriverSafetyDrivingEvent` model
+- Added `endPosition` to `BHSDriverSafetyDrivingEvent` model
+
+## 3.3.38
+
 - Added `txPower` to `BleDevice` model
 
 ## 3.3.37

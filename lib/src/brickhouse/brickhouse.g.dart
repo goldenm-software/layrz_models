@@ -271,6 +271,14 @@ _$BHSDriverSafetyDrivingEventImpl _$$BHSDriverSafetyDrivingEventImplFromJson(
     _$BHSDriverSafetyDrivingEventImpl(
       startAt: const TimestampConverter().fromJson(json['startAt'] as num),
       endAt: const TimestampConverter().fromJson(json['endAt'] as num),
+      startPosition: json['startPosition'] == null
+          ? null
+          : TelemetryPosition.fromJson(
+              json['startPosition'] as Map<String, dynamic>),
+      endPosition: json['endPosition'] == null
+          ? null
+          : TelemetryPosition.fromJson(
+              json['endPosition'] as Map<String, dynamic>),
       drivenSeconds: (json['drivenSeconds'] as num).toDouble(),
     );
 
@@ -279,6 +287,8 @@ Map<String, dynamic> _$$BHSDriverSafetyDrivingEventImplToJson(
     <String, dynamic>{
       'startAt': const TimestampConverter().toJson(instance.startAt),
       'endAt': const TimestampConverter().toJson(instance.endAt),
+      'startPosition': instance.startPosition?.toJson(),
+      'endPosition': instance.endPosition?.toJson(),
       'drivenSeconds': instance.drivenSeconds,
     };
 

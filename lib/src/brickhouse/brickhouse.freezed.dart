@@ -2613,6 +2613,8 @@ mixin _$BHSDriverSafetyDrivingEvent {
   DateTime get startAt => throw _privateConstructorUsedError;
   @TimestampConverter()
   DateTime get endAt => throw _privateConstructorUsedError;
+  TelemetryPosition? get startPosition => throw _privateConstructorUsedError;
+  TelemetryPosition? get endPosition => throw _privateConstructorUsedError;
   double get drivenSeconds => throw _privateConstructorUsedError;
 
   /// Serializes this BHSDriverSafetyDrivingEvent to a JSON map.
@@ -2636,7 +2638,12 @@ abstract class $BHSDriverSafetyDrivingEventCopyWith<$Res> {
   $Res call(
       {@TimestampConverter() DateTime startAt,
       @TimestampConverter() DateTime endAt,
+      TelemetryPosition? startPosition,
+      TelemetryPosition? endPosition,
       double drivenSeconds});
+
+  $TelemetryPositionCopyWith<$Res>? get startPosition;
+  $TelemetryPositionCopyWith<$Res>? get endPosition;
 }
 
 /// @nodoc
@@ -2657,6 +2664,8 @@ class _$BHSDriverSafetyDrivingEventCopyWithImpl<$Res,
   $Res call({
     Object? startAt = null,
     Object? endAt = null,
+    Object? startPosition = freezed,
+    Object? endPosition = freezed,
     Object? drivenSeconds = null,
   }) {
     return _then(_value.copyWith(
@@ -2668,11 +2677,47 @@ class _$BHSDriverSafetyDrivingEventCopyWithImpl<$Res,
           ? _value.endAt
           : endAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      startPosition: freezed == startPosition
+          ? _value.startPosition
+          : startPosition // ignore: cast_nullable_to_non_nullable
+              as TelemetryPosition?,
+      endPosition: freezed == endPosition
+          ? _value.endPosition
+          : endPosition // ignore: cast_nullable_to_non_nullable
+              as TelemetryPosition?,
       drivenSeconds: null == drivenSeconds
           ? _value.drivenSeconds
           : drivenSeconds // ignore: cast_nullable_to_non_nullable
               as double,
     ) as $Val);
+  }
+
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TelemetryPositionCopyWith<$Res>? get startPosition {
+    if (_value.startPosition == null) {
+      return null;
+    }
+
+    return $TelemetryPositionCopyWith<$Res>(_value.startPosition!, (value) {
+      return _then(_value.copyWith(startPosition: value) as $Val);
+    });
+  }
+
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TelemetryPositionCopyWith<$Res>? get endPosition {
+    if (_value.endPosition == null) {
+      return null;
+    }
+
+    return $TelemetryPositionCopyWith<$Res>(_value.endPosition!, (value) {
+      return _then(_value.copyWith(endPosition: value) as $Val);
+    });
   }
 }
 
@@ -2688,7 +2733,14 @@ abstract class _$$BHSDriverSafetyDrivingEventImplCopyWith<$Res>
   $Res call(
       {@TimestampConverter() DateTime startAt,
       @TimestampConverter() DateTime endAt,
+      TelemetryPosition? startPosition,
+      TelemetryPosition? endPosition,
       double drivenSeconds});
+
+  @override
+  $TelemetryPositionCopyWith<$Res>? get startPosition;
+  @override
+  $TelemetryPositionCopyWith<$Res>? get endPosition;
 }
 
 /// @nodoc
@@ -2708,6 +2760,8 @@ class __$$BHSDriverSafetyDrivingEventImplCopyWithImpl<$Res>
   $Res call({
     Object? startAt = null,
     Object? endAt = null,
+    Object? startPosition = freezed,
+    Object? endPosition = freezed,
     Object? drivenSeconds = null,
   }) {
     return _then(_$BHSDriverSafetyDrivingEventImpl(
@@ -2719,6 +2773,14 @@ class __$$BHSDriverSafetyDrivingEventImplCopyWithImpl<$Res>
           ? _value.endAt
           : endAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      startPosition: freezed == startPosition
+          ? _value.startPosition
+          : startPosition // ignore: cast_nullable_to_non_nullable
+              as TelemetryPosition?,
+      endPosition: freezed == endPosition
+          ? _value.endPosition
+          : endPosition // ignore: cast_nullable_to_non_nullable
+              as TelemetryPosition?,
       drivenSeconds: null == drivenSeconds
           ? _value.drivenSeconds
           : drivenSeconds // ignore: cast_nullable_to_non_nullable
@@ -2734,6 +2796,8 @@ class _$BHSDriverSafetyDrivingEventImpl
   const _$BHSDriverSafetyDrivingEventImpl(
       {@TimestampConverter() required this.startAt,
       @TimestampConverter() required this.endAt,
+      this.startPosition,
+      this.endPosition,
       required this.drivenSeconds});
 
   factory _$BHSDriverSafetyDrivingEventImpl.fromJson(
@@ -2747,11 +2811,15 @@ class _$BHSDriverSafetyDrivingEventImpl
   @TimestampConverter()
   final DateTime endAt;
   @override
+  final TelemetryPosition? startPosition;
+  @override
+  final TelemetryPosition? endPosition;
+  @override
   final double drivenSeconds;
 
   @override
   String toString() {
-    return 'BHSDriverSafetyDrivingEvent(startAt: $startAt, endAt: $endAt, drivenSeconds: $drivenSeconds)';
+    return 'BHSDriverSafetyDrivingEvent(startAt: $startAt, endAt: $endAt, startPosition: $startPosition, endPosition: $endPosition, drivenSeconds: $drivenSeconds)';
   }
 
   @override
@@ -2761,13 +2829,18 @@ class _$BHSDriverSafetyDrivingEventImpl
             other is _$BHSDriverSafetyDrivingEventImpl &&
             (identical(other.startAt, startAt) || other.startAt == startAt) &&
             (identical(other.endAt, endAt) || other.endAt == endAt) &&
+            (identical(other.startPosition, startPosition) ||
+                other.startPosition == startPosition) &&
+            (identical(other.endPosition, endPosition) ||
+                other.endPosition == endPosition) &&
             (identical(other.drivenSeconds, drivenSeconds) ||
                 other.drivenSeconds == drivenSeconds));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, startAt, endAt, drivenSeconds);
+  int get hashCode => Object.hash(
+      runtimeType, startAt, endAt, startPosition, endPosition, drivenSeconds);
 
   /// Create a copy of BHSDriverSafetyDrivingEvent
   /// with the given fields replaced by the non-null parameter values.
@@ -2791,6 +2864,8 @@ abstract class _BHSDriverSafetyDrivingEvent
   const factory _BHSDriverSafetyDrivingEvent(
       {@TimestampConverter() required final DateTime startAt,
       @TimestampConverter() required final DateTime endAt,
+      final TelemetryPosition? startPosition,
+      final TelemetryPosition? endPosition,
       required final double drivenSeconds}) = _$BHSDriverSafetyDrivingEventImpl;
 
   factory _BHSDriverSafetyDrivingEvent.fromJson(Map<String, dynamic> json) =
@@ -2802,6 +2877,10 @@ abstract class _BHSDriverSafetyDrivingEvent
   @override
   @TimestampConverter()
   DateTime get endAt;
+  @override
+  TelemetryPosition? get startPosition;
+  @override
+  TelemetryPosition? get endPosition;
   @override
   double get drivenSeconds;
 

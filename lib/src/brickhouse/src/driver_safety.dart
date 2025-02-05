@@ -80,13 +80,17 @@ class BHSDriverSafetySpeedingEvents with _$BHSDriverSafetySpeedingEvents {
 /// End time of the event.
 ///
 ///
-///maxSpeed FLoat
-/// Max speed during the event.
+///startPosition [TelemetryPosition]
+/// start position of the event.
+/// endPosition [TelemetryPosition]
+/// end position of the event.
 @freezed
 class BHSDriverSafetyDrivingEvent with _$BHSDriverSafetyDrivingEvent {
   const factory BHSDriverSafetyDrivingEvent({
     @TimestampConverter() required DateTime startAt,
     @TimestampConverter() required DateTime endAt,
+    TelemetryPosition? startPosition,
+    TelemetryPosition? endPosition,
     required double drivenSeconds,
   }) = _BHSDriverSafetyDrivingEvent;
 
