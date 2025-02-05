@@ -1,5 +1,7 @@
 # Changelog
 
+## 3.3.40
+- Add `TenvioBulkInput` model
 ## 3.3.39
 
 - Added `startPosition` to `BHSDriverSafetyDrivingEvent` model

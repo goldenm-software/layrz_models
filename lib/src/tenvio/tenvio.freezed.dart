@@ -10173,3 +10173,229 @@ abstract class _TenvioDriverInput implements TenvioDriverInput {
   _$$TenvioDriverInputImplCopyWith<_$TenvioDriverInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+TenvioBulkInput _$TenvioBulkInputFromJson(Map<String, dynamic> json) {
+  return _TenvioBulkInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$TenvioBulkInput {
+// `customProperties` of the item.
+  Map<String, dynamic> get customProperties =>
+      throw _privateConstructorUsedError; // `customProperties` of the item.
+  set customProperties(Map<String, dynamic> value) =>
+      throw _privateConstructorUsedError; // `matrixId` ID of the matrix item related to the item.
+  String? get matrixId =>
+      throw _privateConstructorUsedError; // `matrixId` ID of the matrix item related to the item.
+  set matrixId(String? value) =>
+      throw _privateConstructorUsedError; // `quantity` of the items to be registered.
+  int? get quantity =>
+      throw _privateConstructorUsedError; // `quantity` of the items to be registered.
+  set quantity(int? value) =>
+      throw _privateConstructorUsedError; // warehouseId` ID of the warehouse where the items are located.
+  String? get warehouseId =>
+      throw _privateConstructorUsedError; // warehouseId` ID of the warehouse where the items are located.
+  set warehouseId(String? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this TenvioBulkInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of TenvioBulkInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $TenvioBulkInputCopyWith<TenvioBulkInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TenvioBulkInputCopyWith<$Res> {
+  factory $TenvioBulkInputCopyWith(
+          TenvioBulkInput value, $Res Function(TenvioBulkInput) then) =
+      _$TenvioBulkInputCopyWithImpl<$Res, TenvioBulkInput>;
+  @useResult
+  $Res call(
+      {Map<String, dynamic> customProperties,
+      String? matrixId,
+      int? quantity,
+      String? warehouseId});
+}
+
+/// @nodoc
+class _$TenvioBulkInputCopyWithImpl<$Res, $Val extends TenvioBulkInput>
+    implements $TenvioBulkInputCopyWith<$Res> {
+  _$TenvioBulkInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of TenvioBulkInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? customProperties = null,
+    Object? matrixId = freezed,
+    Object? quantity = freezed,
+    Object? warehouseId = freezed,
+  }) {
+    return _then(_value.copyWith(
+      customProperties: null == customProperties
+          ? _value.customProperties
+          : customProperties // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      matrixId: freezed == matrixId
+          ? _value.matrixId
+          : matrixId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      warehouseId: freezed == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$TenvioBulkInputImplCopyWith<$Res>
+    implements $TenvioBulkInputCopyWith<$Res> {
+  factory _$$TenvioBulkInputImplCopyWith(_$TenvioBulkInputImpl value,
+          $Res Function(_$TenvioBulkInputImpl) then) =
+      __$$TenvioBulkInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {Map<String, dynamic> customProperties,
+      String? matrixId,
+      int? quantity,
+      String? warehouseId});
+}
+
+/// @nodoc
+class __$$TenvioBulkInputImplCopyWithImpl<$Res>
+    extends _$TenvioBulkInputCopyWithImpl<$Res, _$TenvioBulkInputImpl>
+    implements _$$TenvioBulkInputImplCopyWith<$Res> {
+  __$$TenvioBulkInputImplCopyWithImpl(
+      _$TenvioBulkInputImpl _value, $Res Function(_$TenvioBulkInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of TenvioBulkInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? customProperties = null,
+    Object? matrixId = freezed,
+    Object? quantity = freezed,
+    Object? warehouseId = freezed,
+  }) {
+    return _then(_$TenvioBulkInputImpl(
+      customProperties: null == customProperties
+          ? _value.customProperties
+          : customProperties // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      matrixId: freezed == matrixId
+          ? _value.matrixId
+          : matrixId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      quantity: freezed == quantity
+          ? _value.quantity
+          : quantity // ignore: cast_nullable_to_non_nullable
+              as int?,
+      warehouseId: freezed == warehouseId
+          ? _value.warehouseId
+          : warehouseId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$TenvioBulkInputImpl implements _TenvioBulkInput {
+  _$TenvioBulkInputImpl(
+      {this.customProperties = const {},
+      this.matrixId,
+      this.quantity,
+      this.warehouseId});
+
+  factory _$TenvioBulkInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TenvioBulkInputImplFromJson(json);
+
+// `customProperties` of the item.
+  @override
+  @JsonKey()
+  Map<String, dynamic> customProperties;
+// `matrixId` ID of the matrix item related to the item.
+  @override
+  String? matrixId;
+// `quantity` of the items to be registered.
+  @override
+  int? quantity;
+// warehouseId` ID of the warehouse where the items are located.
+  @override
+  String? warehouseId;
+
+  @override
+  String toString() {
+    return 'TenvioBulkInput(customProperties: $customProperties, matrixId: $matrixId, quantity: $quantity, warehouseId: $warehouseId)';
+  }
+
+  /// Create a copy of TenvioBulkInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$TenvioBulkInputImplCopyWith<_$TenvioBulkInputImpl> get copyWith =>
+      __$$TenvioBulkInputImplCopyWithImpl<_$TenvioBulkInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$TenvioBulkInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _TenvioBulkInput implements TenvioBulkInput {
+  factory _TenvioBulkInput(
+      {Map<String, dynamic> customProperties,
+      String? matrixId,
+      int? quantity,
+      String? warehouseId}) = _$TenvioBulkInputImpl;
+
+  factory _TenvioBulkInput.fromJson(Map<String, dynamic> json) =
+      _$TenvioBulkInputImpl.fromJson;
+
+// `customProperties` of the item.
+  @override
+  Map<String, dynamic> get customProperties; // `customProperties` of the item.
+  set customProperties(
+      Map<String, dynamic>
+          value); // `matrixId` ID of the matrix item related to the item.
+  @override
+  String? get matrixId; // `matrixId` ID of the matrix item related to the item.
+  set matrixId(String? value); // `quantity` of the items to be registered.
+  @override
+  int? get quantity; // `quantity` of the items to be registered.
+  set quantity(
+      int?
+          value); // warehouseId` ID of the warehouse where the items are located.
+  @override
+  String?
+      get warehouseId; // warehouseId` ID of the warehouse where the items are located.
+  set warehouseId(String? value);
+
+  /// Create a copy of TenvioBulkInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$TenvioBulkInputImplCopyWith<_$TenvioBulkInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
