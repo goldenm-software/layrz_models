@@ -26,7 +26,9 @@ void main() {
 
       final action = ActionInput.fromJson(data);
 
-      // action.geofenceSettings.category = GeofenceCategory.none;
+      expect(action.id, "175");
+      // kind
+      expect(action.kind, ActionType.sendToMonitorCenter);
 
       expect(action.geofenceSettings.category, GeofenceCategory.none);
       expect(action, isA<ActionInput>());
