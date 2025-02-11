@@ -293,10 +293,9 @@ Map<String, dynamic> _$$PolygonDetailsImplToJson(
 _$ContainedRouteCategoryImpl _$$ContainedRouteCategoryImplFromJson(
         Map<String, dynamic> json) =>
     _$ContainedRouteCategoryImpl(
-      category: json['category'] == null
-          ? GeofenceCategory.none
-          : const GeofenceCategoryConverter()
-              .fromJson(json['category'] as String),
+      category: $enumDecodeNullable(_$GeofenceCategoryEnumMap, json['category'],
+              unknownValue: GeofenceCategory.none) ??
+          GeofenceCategory.none,
       routes: (json['routes'] as List<dynamic>?)
               ?.map((e) => MappitRoute.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -307,10 +306,21 @@ _$ContainedRouteCategoryImpl _$$ContainedRouteCategoryImplFromJson(
 Map<String, dynamic> _$$ContainedRouteCategoryImplToJson(
         _$ContainedRouteCategoryImpl instance) =>
     <String, dynamic>{
-      'category': const GeofenceCategoryConverter().toJson(instance.category),
+      'category': instance.category.toJson(),
       'routes': instance.routes.map((e) => e.toJson()).toList(),
       'geofenceCount': instance.geofenceCount,
     };
+
+const _$GeofenceCategoryEnumMap = {
+  GeofenceCategory.none: 'NONE',
+  GeofenceCategory.custom: 'CUSTOM',
+  GeofenceCategory.administrative: 'ADMINISTRATIVE',
+  GeofenceCategory.customer: 'CUSTOMER',
+  GeofenceCategory.other: 'OTHER',
+  GeofenceCategory.prospect: 'PROSPECT',
+  GeofenceCategory.polygon: 'POLYGON',
+  GeofenceCategory.lead: 'LEAD',
+};
 
 _$MappitReportInputMultiImpl _$$MappitReportInputMultiImplFromJson(
         Map<String, dynamic> json) =>

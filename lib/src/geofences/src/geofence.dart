@@ -32,7 +32,7 @@ class Geofence with _$Geofence {
 
     /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
     /// from the API.
-    @GeofenceCategoryConverter() @Default(GeofenceCategory.none) GeofenceCategory category,
+    @JsonKey(unknownEnumValue: GeofenceCategory.none) @Default(GeofenceCategory.none) GeofenceCategory category,
 
     /// [childrenIds] refers to the list of children geofences.
     List<String>? childrenIds,
@@ -73,7 +73,7 @@ class GeofenceInput with _$GeofenceInput {
     @GeofenceModeConverter() @Default(GeofenceMode.radial) GeofenceMode mode,
     @Default(100) double radius,
     @Default([]) List<GeofencePointInput> path,
-    @GeofenceCategoryConverter() @Default(GeofenceCategory.none) GeofenceCategory category,
+    @JsonKey(unknownEnumValue: GeofenceCategory.none) @Default(GeofenceCategory.none) GeofenceCategory category,
     @Default([]) List<String> childrenIds,
   }) = _GeofenceInput;
 

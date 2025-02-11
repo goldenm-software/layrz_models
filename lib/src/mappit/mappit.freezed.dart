@@ -3292,7 +3292,7 @@ ContainedRouteCategory _$ContainedRouteCategoryFromJson(
 mixin _$ContainedRouteCategory {
   /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
   /// from the API.
-  @GeofenceCategoryConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category => throw _privateConstructorUsedError;
 
   /// List of routes that contain the geofences in the category.
@@ -3318,7 +3318,8 @@ abstract class $ContainedRouteCategoryCopyWith<$Res> {
       _$ContainedRouteCategoryCopyWithImpl<$Res, ContainedRouteCategory>;
   @useResult
   $Res call(
-      {@GeofenceCategoryConverter() GeofenceCategory category,
+      {@JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory category,
       List<MappitRoute> routes,
       int? geofenceCount});
 }
@@ -3370,7 +3371,8 @@ abstract class _$$ContainedRouteCategoryImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@GeofenceCategoryConverter() GeofenceCategory category,
+      {@JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory category,
       List<MappitRoute> routes,
       int? geofenceCount});
 }
@@ -3415,7 +3417,8 @@ class __$$ContainedRouteCategoryImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ContainedRouteCategoryImpl implements _ContainedRouteCategory {
   const _$ContainedRouteCategoryImpl(
-      {@GeofenceCategoryConverter() this.category = GeofenceCategory.none,
+      {@JsonKey(unknownEnumValue: GeofenceCategory.none)
+      this.category = GeofenceCategory.none,
       final List<MappitRoute> routes = const [],
       this.geofenceCount})
       : _routes = routes;
@@ -3426,8 +3429,7 @@ class _$ContainedRouteCategoryImpl implements _ContainedRouteCategory {
   /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
   /// from the API.
   @override
-  @JsonKey()
-  @GeofenceCategoryConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   final GeofenceCategory category;
 
   /// List of routes that contain the geofences in the category.
@@ -3487,7 +3489,8 @@ class _$ContainedRouteCategoryImpl implements _ContainedRouteCategory {
 
 abstract class _ContainedRouteCategory implements ContainedRouteCategory {
   const factory _ContainedRouteCategory(
-      {@GeofenceCategoryConverter() final GeofenceCategory category,
+      {@JsonKey(unknownEnumValue: GeofenceCategory.none)
+      final GeofenceCategory category,
       final List<MappitRoute> routes,
       final int? geofenceCount}) = _$ContainedRouteCategoryImpl;
 
@@ -3497,7 +3500,7 @@ abstract class _ContainedRouteCategory implements ContainedRouteCategory {
   /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
   /// from the API.
   @override
-  @GeofenceCategoryConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category;
 
   /// List of routes that contain the geofences in the category.

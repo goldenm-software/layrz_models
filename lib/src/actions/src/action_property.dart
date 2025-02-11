@@ -1,5 +1,6 @@
 part of '../actions.dart';
 
+@JsonEnum()
 enum ActionProperty {
   /// Layrz API Reference: NONE
   /// Description: No owner or let the system decide
