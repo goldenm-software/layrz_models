@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.3.42
+- Added `BrickhouseAlertType.unplugged` to `BrickhouseAlertType` enum
+
+## 3.3.41
+- Fixed enum resolver for `GeofenceCategory` enum
+
 ## 3.3.40
 - Add `TenvioBulkInput` model
 ## 3.3.39

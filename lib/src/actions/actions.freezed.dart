@@ -1099,7 +1099,7 @@ mixin _$ActionGeofenceSettings {
   String? get name => throw _privateConstructorUsedError;
 
   /// [category] defines the category of the geofence to create.
-  @GeofenceCategoryOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory? get category => throw _privateConstructorUsedError;
 
   /// [radius] defines the radius of the geofence to create.
@@ -1130,7 +1130,8 @@ abstract class $ActionGeofenceSettingsCopyWith<$Res> {
   $Res call(
       {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
       String? name,
-      @GeofenceCategoryOrNullConverter() GeofenceCategory? category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory? category,
       double? radius,
       String? mappitRouteId,
       MappitRoute? mappitRoute});
@@ -1216,7 +1217,8 @@ abstract class _$$ActionGeofenceSettingsImplCopyWith<$Res>
   $Res call(
       {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
       String? name,
-      @GeofenceCategoryOrNullConverter() GeofenceCategory? category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory? category,
       double? radius,
       String? mappitRouteId,
       MappitRoute? mappitRoute});
@@ -1283,7 +1285,7 @@ class _$ActionGeofenceSettingsImpl extends _ActionGeofenceSettings {
       {@JsonKey(unknownEnumValue: ActionProperty.none)
       this.whoOwner = ActionProperty.none,
       this.name,
-      @GeofenceCategoryOrNullConverter() this.category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none) this.category,
       this.radius,
       this.mappitRouteId,
       this.mappitRoute})
@@ -1304,7 +1306,7 @@ class _$ActionGeofenceSettingsImpl extends _ActionGeofenceSettings {
 
   /// [category] defines the category of the geofence to create.
   @override
-  @GeofenceCategoryOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   final GeofenceCategory? category;
 
   /// [radius] defines the radius of the geofence to create.
@@ -1368,7 +1370,8 @@ abstract class _ActionGeofenceSettings extends ActionGeofenceSettings {
       {@JsonKey(unknownEnumValue: ActionProperty.none)
       final ActionProperty whoOwner,
       final String? name,
-      @GeofenceCategoryOrNullConverter() final GeofenceCategory? category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      final GeofenceCategory? category,
       final double? radius,
       final String? mappitRouteId,
       final MappitRoute? mappitRoute}) = _$ActionGeofenceSettingsImpl;
@@ -1389,7 +1392,7 @@ abstract class _ActionGeofenceSettings extends ActionGeofenceSettings {
 
   /// [category] defines the category of the geofence to create.
   @override
-  @GeofenceCategoryOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory? get category;
 
   /// [radius] defines the radius of the geofence to create.
@@ -1436,11 +1439,11 @@ mixin _$ActionGeofenceSettingsInput {
   set name(String? value) => throw _privateConstructorUsedError;
 
   /// [category] defines the category of the geofence to create.
-  @GeofenceCategoryOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category => throw _privateConstructorUsedError;
 
   /// [category] defines the category of the geofence to create.
-  @GeofenceCategoryOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   set category(GeofenceCategory value) => throw _privateConstructorUsedError;
 
   /// [radius] defines the radius of the geofence to create.
@@ -1476,7 +1479,8 @@ abstract class $ActionGeofenceSettingsInputCopyWith<$Res> {
   $Res call(
       {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
       String? name,
-      @GeofenceCategoryOrNullConverter() GeofenceCategory category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory category,
       double radius,
       String? mappitRouteId});
 }
@@ -1540,7 +1544,8 @@ abstract class _$$ActionGeofenceSettingsInputImplCopyWith<$Res>
   $Res call(
       {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
       String? name,
-      @GeofenceCategoryOrNullConverter() GeofenceCategory category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory category,
       double radius,
       String? mappitRouteId});
 }
@@ -1598,7 +1603,8 @@ class _$ActionGeofenceSettingsInputImpl extends _ActionGeofenceSettingsInput {
       {@JsonKey(unknownEnumValue: ActionProperty.none)
       this.whoOwner = ActionProperty.none,
       this.name,
-      @GeofenceCategoryOrNullConverter() this.category = GeofenceCategory.none,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      this.category = GeofenceCategory.none,
       this.radius = 10.0,
       this.mappitRouteId})
       : super._();
@@ -1619,8 +1625,7 @@ class _$ActionGeofenceSettingsInputImpl extends _ActionGeofenceSettingsInput {
 
   /// [category] defines the category of the geofence to create.
   @override
-  @JsonKey()
-  @GeofenceCategoryOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory category;
 
   /// [radius] defines the radius of the geofence to create.
@@ -1659,7 +1664,8 @@ abstract class _ActionGeofenceSettingsInput
   factory _ActionGeofenceSettingsInput(
       {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
       String? name,
-      @GeofenceCategoryOrNullConverter() GeofenceCategory category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory category,
       double radius,
       String? mappitRouteId}) = _$ActionGeofenceSettingsInputImpl;
   _ActionGeofenceSettingsInput._() : super._();
@@ -1687,11 +1693,11 @@ abstract class _ActionGeofenceSettingsInput
 
   /// [category] defines the category of the geofence to create.
   @override
-  @GeofenceCategoryOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category;
 
   /// [category] defines the category of the geofence to create.
-  @GeofenceCategoryOrNullConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   set category(GeofenceCategory value);
 
   /// [radius] defines the radius of the geofence to create.

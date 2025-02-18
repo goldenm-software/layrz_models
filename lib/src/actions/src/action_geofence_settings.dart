@@ -12,7 +12,7 @@ class ActionGeofenceSettings with _$ActionGeofenceSettings {
     String? name,
 
     /// [category] defines the category of the geofence to create.
-    @GeofenceCategoryOrNullConverter() GeofenceCategory? category,
+    @JsonKey(unknownEnumValue: GeofenceCategory.none) GeofenceCategory? category,
 
     /// [radius] defines the radius of the geofence to create.
     double? radius,
@@ -39,7 +39,7 @@ class ActionGeofenceSettingsInput with _$ActionGeofenceSettingsInput {
     String? name,
 
     /// [category] defines the category of the geofence to create.
-    @GeofenceCategoryOrNullConverter() @Default(GeofenceCategory.none) GeofenceCategory category,
+    @JsonKey(unknownEnumValue: GeofenceCategory.none) @Default(GeofenceCategory.none) GeofenceCategory category,
 
     /// [radius] defines the radius of the geofence to create.
     @Default(10.0) double radius,

@@ -5,7 +5,7 @@ class ContainedRouteCategory with _$ContainedRouteCategory {
   const factory ContainedRouteCategory({
     /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
     /// from the API.
-    @GeofenceCategoryConverter() @Default(GeofenceCategory.none) GeofenceCategory category,
+    @JsonKey(unknownEnumValue: GeofenceCategory.none) @Default(GeofenceCategory.none) GeofenceCategory category,
 
     /// List of routes that contain the geofences in the category.
     @Default([]) List<MappitRoute> routes,

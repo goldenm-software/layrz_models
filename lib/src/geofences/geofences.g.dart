@@ -21,10 +21,9 @@ _$GeofenceImpl _$$GeofenceImplFromJson(Map<String, dynamic> json) =>
       assetsInside: (json['assetsInside'] as List<dynamic>?)
           ?.map((e) => Asset.fromJson(e as Map<String, dynamic>))
           .toList(),
-      category: json['category'] == null
-          ? GeofenceCategory.none
-          : const GeofenceCategoryConverter()
-              .fromJson(json['category'] as String),
+      category: $enumDecodeNullable(_$GeofenceCategoryEnumMap, json['category'],
+              unknownValue: GeofenceCategory.none) ??
+          GeofenceCategory.none,
       childrenIds: (json['childrenIds'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -60,7 +59,7 @@ Map<String, dynamic> _$$GeofenceImplToJson(_$GeofenceImpl instance) =>
       'radius': instance.radius,
       'resourceId': instance.resourceId,
       'assetsInside': instance.assetsInside?.map((e) => e.toJson()).toList(),
-      'category': const GeofenceCategoryConverter().toJson(instance.category),
+      'category': instance.category.toJson(),
       'childrenIds': instance.childrenIds,
       'children': instance.children?.map((e) => e.toJson()).toList(),
       'access': instance.access?.map((e) => e.toJson()).toList(),
@@ -70,6 +69,17 @@ Map<String, dynamic> _$$GeofenceImplToJson(_$GeofenceImpl instance) =>
       'mappitRoutes': instance.mappitRoutes?.map((e) => e.toJson()).toList(),
       'mappitRouteIds': instance.mappitRouteIds,
     };
+
+const _$GeofenceCategoryEnumMap = {
+  GeofenceCategory.none: 'NONE',
+  GeofenceCategory.custom: 'CUSTOM',
+  GeofenceCategory.administrative: 'ADMINISTRATIVE',
+  GeofenceCategory.customer: 'CUSTOMER',
+  GeofenceCategory.other: 'OTHER',
+  GeofenceCategory.prospect: 'PROSPECT',
+  GeofenceCategory.polygon: 'POLYGON',
+  GeofenceCategory.lead: 'LEAD',
+};
 
 _$GeofenceInputImpl _$$GeofenceInputImplFromJson(Map<String, dynamic> json) =>
     _$GeofenceInputImpl(
@@ -88,10 +98,9 @@ _$GeofenceInputImpl _$$GeofenceInputImplFromJson(Map<String, dynamic> json) =>
                   (e) => GeofencePointInput.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
-      category: json['category'] == null
-          ? GeofenceCategory.none
-          : const GeofenceCategoryConverter()
-              .fromJson(json['category'] as String),
+      category: $enumDecodeNullable(_$GeofenceCategoryEnumMap, json['category'],
+              unknownValue: GeofenceCategory.none) ??
+          GeofenceCategory.none,
       childrenIds: (json['childrenIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -107,7 +116,7 @@ Map<String, dynamic> _$$GeofenceInputImplToJson(_$GeofenceInputImpl instance) =>
       'mode': const GeofenceModeConverter().toJson(instance.mode),
       'radius': instance.radius,
       'path': instance.path.map((e) => e.toJson()).toList(),
-      'category': const GeofenceCategoryConverter().toJson(instance.category),
+      'category': instance.category.toJson(),
       'childrenIds': instance.childrenIds,
     };
 

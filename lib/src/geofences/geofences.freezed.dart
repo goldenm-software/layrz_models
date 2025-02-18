@@ -51,7 +51,7 @@ mixin _$Geofence {
 
   /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
   /// from the API.
-  @GeofenceCategoryConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category => throw _privateConstructorUsedError;
 
   /// [childrenIds] refers to the list of children geofences.
@@ -104,7 +104,8 @@ abstract class $GeofenceCopyWith<$Res> {
       double? radius,
       String? resourceId,
       List<Asset>? assetsInside,
-      @GeofenceCategoryConverter() GeofenceCategory category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory category,
       List<String>? childrenIds,
       List<Geofence>? children,
       List<Access>? access,
@@ -260,7 +261,8 @@ abstract class _$$GeofenceImplCopyWith<$Res>
       double? radius,
       String? resourceId,
       List<Asset>? assetsInside,
-      @GeofenceCategoryConverter() GeofenceCategory category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory category,
       List<String>? childrenIds,
       List<Geofence>? children,
       List<Access>? access,
@@ -396,7 +398,8 @@ class _$GeofenceImpl implements _Geofence {
       this.radius,
       this.resourceId,
       final List<Asset>? assetsInside,
-      @GeofenceCategoryConverter() this.category = GeofenceCategory.none,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      this.category = GeofenceCategory.none,
       final List<String>? childrenIds,
       final List<Geofence>? children,
       final List<Access>? access,
@@ -476,8 +479,7 @@ class _$GeofenceImpl implements _Geofence {
   /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
   /// from the API.
   @override
-  @JsonKey()
-  @GeofenceCategoryConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   final GeofenceCategory category;
 
   /// [childrenIds] refers to the list of children geofences.
@@ -656,7 +658,8 @@ abstract class _Geofence implements Geofence {
       final double? radius,
       final String? resourceId,
       final List<Asset>? assetsInside,
-      @GeofenceCategoryConverter() final GeofenceCategory category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      final GeofenceCategory category,
       final List<String>? childrenIds,
       final List<Geofence>? children,
       final List<Access>? access,
@@ -710,7 +713,7 @@ abstract class _Geofence implements Geofence {
   /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
   /// from the API.
   @override
-  @GeofenceCategoryConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category;
 
   /// [childrenIds] refers to the list of children geofences.
@@ -779,9 +782,9 @@ mixin _$GeofenceInput {
   List<GeofencePointInput> get path => throw _privateConstructorUsedError;
   set path(List<GeofencePointInput> value) =>
       throw _privateConstructorUsedError;
-  @GeofenceCategoryConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category => throw _privateConstructorUsedError;
-  @GeofenceCategoryConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   set category(GeofenceCategory value) => throw _privateConstructorUsedError;
   List<String> get childrenIds => throw _privateConstructorUsedError;
   set childrenIds(List<String> value) => throw _privateConstructorUsedError;
@@ -810,7 +813,8 @@ abstract class $GeofenceInputCopyWith<$Res> {
       @GeofenceModeConverter() GeofenceMode mode,
       double radius,
       List<GeofencePointInput> path,
-      @GeofenceCategoryConverter() GeofenceCategory category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory category,
       List<String> childrenIds});
 }
 
@@ -896,7 +900,8 @@ abstract class _$$GeofenceInputImplCopyWith<$Res>
       @GeofenceModeConverter() GeofenceMode mode,
       double radius,
       List<GeofencePointInput> path,
-      @GeofenceCategoryConverter() GeofenceCategory category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory category,
       List<String> childrenIds});
 }
 
@@ -975,7 +980,8 @@ class _$GeofenceInputImpl implements _GeofenceInput {
       @GeofenceModeConverter() this.mode = GeofenceMode.radial,
       this.radius = 100,
       this.path = const [],
-      @GeofenceCategoryConverter() this.category = GeofenceCategory.none,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      this.category = GeofenceCategory.none,
       this.childrenIds = const []});
 
   factory _$GeofenceInputImpl.fromJson(Map<String, dynamic> json) =>
@@ -1004,8 +1010,7 @@ class _$GeofenceInputImpl implements _GeofenceInput {
   @JsonKey()
   List<GeofencePointInput> path;
   @override
-  @JsonKey()
-  @GeofenceCategoryConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory category;
   @override
   @JsonKey()
@@ -1041,7 +1046,8 @@ abstract class _GeofenceInput implements GeofenceInput {
       @GeofenceModeConverter() GeofenceMode mode,
       double radius,
       List<GeofencePointInput> path,
-      @GeofenceCategoryConverter() GeofenceCategory category,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory category,
       List<String> childrenIds}) = _$GeofenceInputImpl;
 
   factory _GeofenceInput.fromJson(Map<String, dynamic> json) =
@@ -1073,9 +1079,9 @@ abstract class _GeofenceInput implements GeofenceInput {
   List<GeofencePointInput> get path;
   set path(List<GeofencePointInput> value);
   @override
-  @GeofenceCategoryConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category;
-  @GeofenceCategoryConverter()
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
   set category(GeofenceCategory value);
   @override
   List<String> get childrenIds;

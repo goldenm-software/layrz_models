@@ -128,8 +128,8 @@ _$ActionGeofenceSettingsImpl _$$ActionGeofenceSettingsImplFromJson(
               unknownValue: ActionProperty.none) ??
           ActionProperty.none,
       name: json['name'] as String?,
-      category: const GeofenceCategoryOrNullConverter()
-          .fromJson(json['category'] as String?),
+      category: $enumDecodeNullable(_$GeofenceCategoryEnumMap, json['category'],
+          unknownValue: GeofenceCategory.none),
       radius: (json['radius'] as num?)?.toDouble(),
       mappitRouteId: json['mappitRouteId'] as String?,
       mappitRoute: json['mappitRoute'] == null
@@ -142,8 +142,7 @@ Map<String, dynamic> _$$ActionGeofenceSettingsImplToJson(
     <String, dynamic>{
       'whoOwner': instance.whoOwner.toJson(),
       'name': instance.name,
-      'category':
-          const GeofenceCategoryOrNullConverter().toJson(instance.category),
+      'category': instance.category?.toJson(),
       'radius': instance.radius,
       'mappitRouteId': instance.mappitRouteId,
       'mappitRoute': instance.mappitRoute?.toJson(),
@@ -155,6 +154,17 @@ const _$ActionPropertyEnumMap = {
   ActionProperty.action: 'ACTION',
 };
 
+const _$GeofenceCategoryEnumMap = {
+  GeofenceCategory.none: 'NONE',
+  GeofenceCategory.custom: 'CUSTOM',
+  GeofenceCategory.administrative: 'ADMINISTRATIVE',
+  GeofenceCategory.customer: 'CUSTOMER',
+  GeofenceCategory.other: 'OTHER',
+  GeofenceCategory.prospect: 'PROSPECT',
+  GeofenceCategory.polygon: 'POLYGON',
+  GeofenceCategory.lead: 'LEAD',
+};
+
 _$ActionGeofenceSettingsInputImpl _$$ActionGeofenceSettingsInputImplFromJson(
         Map<String, dynamic> json) =>
     _$ActionGeofenceSettingsInputImpl(
@@ -162,9 +172,9 @@ _$ActionGeofenceSettingsInputImpl _$$ActionGeofenceSettingsInputImplFromJson(
               unknownValue: ActionProperty.none) ??
           ActionProperty.none,
       name: json['name'] as String?,
-      category:
-          $enumDecodeNullable(_$GeofenceCategoryEnumMap, json['category']) ??
-              GeofenceCategory.none,
+      category: $enumDecodeNullable(_$GeofenceCategoryEnumMap, json['category'],
+              unknownValue: GeofenceCategory.none) ??
+          GeofenceCategory.none,
       radius: (json['radius'] as num?)?.toDouble() ?? 10.0,
       mappitRouteId: json['mappitRouteId'] as String?,
     );
@@ -178,14 +188,3 @@ Map<String, dynamic> _$$ActionGeofenceSettingsInputImplToJson(
       'radius': instance.radius,
       'mappitRouteId': instance.mappitRouteId,
     };
-
-const _$GeofenceCategoryEnumMap = {
-  GeofenceCategory.none: 'none',
-  GeofenceCategory.custom: 'custom',
-  GeofenceCategory.administrative: 'administrative',
-  GeofenceCategory.customer: 'customer',
-  GeofenceCategory.other: 'other',
-  GeofenceCategory.prospect: 'prospect',
-  GeofenceCategory.polygon: 'polygon',
-  GeofenceCategory.lead: 'lead',
-};
