@@ -19,6 +19,12 @@ part of '../brickhouse.dart';
 ///
 /// SPEEDING
 /// Speeding alert
+///
+/// UNPLUGGED
+/// Unplugged alert
+///
+/// UNKNOWN
+/// for invalid values
 @JsonEnum()
 enum BrickhouseAlertType {
   @JsonValue('PRESENCE_GEOFENCE')
@@ -33,6 +39,8 @@ enum BrickhouseAlertType {
   curfew,
   @JsonValue('SPEEDING')
   speeding,
+  @JsonValue('UNPLUGGED')
+  unplugged,
   @JsonValue('UNKNOWN')
   unknown;
 

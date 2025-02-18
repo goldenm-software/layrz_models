@@ -97,6 +97,7 @@ const _$BrickhouseAlertTypeEnumMap = {
   BrickhouseAlertType.battery: 'BATTERY',
   BrickhouseAlertType.curfew: 'CURFEW',
   BrickhouseAlertType.speeding: 'SPEEDING',
+  BrickhouseAlertType.unplugged: 'UNPLUGGED',
   BrickhouseAlertType.unknown: 'UNKNOWN',
 };
 

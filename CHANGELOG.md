@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.3.42
+- Added `BrickhouseAlertType.unplugged` to `BrickhouseAlertType` enum
+
 ## 3.3.41
 - Fixed enum resolver for `GeofenceCategory` enum
 
