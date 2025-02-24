@@ -185,6 +185,12 @@ class UserInput with _$UserInput {
 
     /// [password] default password if allowed by the form
     String? password,
+
+    /// [colorblindMode] represents the user colorblind mode.
+    @JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode? colorblindMode,
+
+    /// [colorblindStrength] represents the user colorblind strength.
+    double? colorblindStrength,
   }) = _UserInput;
 
   factory UserInput.fromJson(Map<String, dynamic> json) => _$UserInputFromJson(json);

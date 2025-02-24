@@ -295,6 +295,10 @@ _$UserInputImpl _$$UserInputImplFromJson(Map<String, dynamic> json) =>
           unknownValue: BrickhouseUserRole.unknown),
       sdmCode: json['sdmCode'] as String?,
       password: json['password'] as String?,
+      colorblindMode: $enumDecodeNullable(
+          _$ColorblindModeEnumMap, json['colorblindMode'],
+          unknownValue: ColorblindMode.normal),
+      colorblindStrength: (json['colorblindStrength'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$UserInputImplToJson(_$UserInputImpl instance) =>
@@ -314,4 +318,16 @@ Map<String, dynamic> _$$UserInputImplToJson(_$UserInputImpl instance) =>
       'brickhouseRole': instance.brickhouseRole?.toJson(),
       'sdmCode': instance.sdmCode,
       'password': instance.password,
+      'colorblindMode': instance.colorblindMode?.toJson(),
+      'colorblindStrength': instance.colorblindStrength,
     };
+
+const _$ColorblindModeEnumMap = {
+  ColorblindMode.propanopia: 'PROTANOPIA',
+  ColorblindMode.propanomaly: 'PROTANOMALY',
+  ColorblindMode.deuteranopia: 'DEUTERANOPIA',
+  ColorblindMode.deuteranomaly: 'DEUTERANOMALY',
+  ColorblindMode.tritanopia: 'TRITANOPIA',
+  ColorblindMode.tritanomaly: 'TRITANOMALY',
+  ColorblindMode.normal: 'NORMAL',
+};
