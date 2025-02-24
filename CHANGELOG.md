@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.45
+
+- Fixes
+
 ## 3.3.44
 
 - Name correction of `protanopia` and `protanomaly` in `ColorblindMode` enum
