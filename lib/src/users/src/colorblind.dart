@@ -2,13 +2,13 @@ part of '../users.dart';
 
 @JsonEnum()
 enum ColorblindMode {
-  /// [propanopia] is the red-blind colorblindness.
+  /// [protanopia] is the red-blind colorblindness.
   @JsonValue('PROTANOPIA')
-  propanopia,
+  protanopia,
 
-  /// [propanomaly] is the red-weak colorblindness.
+  /// [protanomaly] is the red-weak colorblindness.
   @JsonValue('PROTANOMALY')
-  propanomaly,
+  protanomaly,
 
   /// [deuteranopia] is the green-blind colorblindness.
   @JsonValue('DEUTERANOPIA')
