@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.43
+
+- Added `ColorblindMode` enum
+- Added `colorblindMode` and `colorblindStrength` to `User` and `Employee` model
+
 ## 3.3.42
 - Added `BrickhouseAlertType.unplugged` to `BrickhouseAlertType` enum
 

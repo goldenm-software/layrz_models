@@ -957,6 +957,10 @@ _$EmployeeImpl _$$EmployeeImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => const MfaMethodConverter().fromJson(e as String))
               .toList() ??
           const [],
+      colorblindMode: $enumDecodeNullable(
+          _$ColorblindModeEnumMap, json['colorblindMode'],
+          unknownValue: ColorblindMode.normal),
+      colorblindStrength: (json['colorblindStrength'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$EmployeeImplToJson(_$EmployeeImpl instance) =>
@@ -974,7 +978,19 @@ Map<String, dynamic> _$$EmployeeImplToJson(_$EmployeeImpl instance) =>
       'mfaEnabled': instance.mfaEnabled,
       'mfaMethods':
           instance.mfaMethods.map(const MfaMethodConverter().toJson).toList(),
+      'colorblindMode': instance.colorblindMode?.toJson(),
+      'colorblindStrength': instance.colorblindStrength,
     };
+
+const _$ColorblindModeEnumMap = {
+  ColorblindMode.propanopia: 'PROTANOPIA',
+  ColorblindMode.propanomaly: 'PROTANOMALY',
+  ColorblindMode.deuteranopia: 'DEUTERANOPIA',
+  ColorblindMode.deuteranomaly: 'DEUTERANOMALY',
+  ColorblindMode.tritanopia: 'TRITANOPIA',
+  ColorblindMode.tritanomaly: 'TRITANOMALY',
+  ColorblindMode.normal: 'NORMAL',
+};
 
 _$FtpAccountImpl _$$FtpAccountImplFromJson(Map<String, dynamic> json) =>
     _$FtpAccountImpl(
