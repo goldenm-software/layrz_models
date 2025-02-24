@@ -1,7 +1,6 @@
 # Layrz Models
 
 [![Pub version](https://img.shields.io/pub/v/layrz_models?logo=dart)](https://pub.dev/packages/layrz_models)
-[![popularity](https://img.shields.io/pub/popularity/layrz_models?logo=dart)](https://pub.dev/packages/layrz_models/score)
 [![likes](https://img.shields.io/pub/likes/layrz_models?logo=dart)](https://pub.dev/packages/layrz_models/score)
 [![GitHub license](https://img.shields.io/github/license/goldenm-software/layrz_models?logo=github)](https://github.com/goldenm-software/layrz_models)
 
