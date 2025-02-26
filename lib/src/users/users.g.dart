@@ -323,8 +323,8 @@ Map<String, dynamic> _$$UserInputImplToJson(_$UserInputImpl instance) =>
     };
 
 const _$ColorblindModeEnumMap = {
-  ColorblindMode.propanopia: 'PROTANOPIA',
-  ColorblindMode.propanomaly: 'PROTANOMALY',
+  ColorblindMode.protanopia: 'PROTANOPIA',
+  ColorblindMode.protanomaly: 'PROTANOMALY',
   ColorblindMode.deuteranopia: 'DEUTERANOPIA',
   ColorblindMode.deuteranomaly: 'DEUTERANOMALY',
   ColorblindMode.tritanopia: 'TRITANOPIA',

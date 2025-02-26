@@ -1,5 +1,16 @@
 # Changelog
 
+## 3.3.46
+- Added `isDisabled` to `BrickhouseAlert` model
+
+## 3.3.45
+
+- Fixes
+
+## 3.3.44
+
+- Name correction of `protanopia` and `protanomaly` in `ColorblindMode` enum
+
 ## 3.3.43
 
 - Added `ColorblindMode` enum
