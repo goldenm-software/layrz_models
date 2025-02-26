@@ -53,6 +53,7 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
       maxSpeedMaxValue: (json['maxSpeedMaxValue'] as num?)?.toDouble(),
       isMuted: json['isMuted'] as bool? ?? false,
       speedingThreshold: (json['speedingThreshold'] as num?)?.toDouble(),
+      isDisabled: json['isDisabled'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$BrickhouseAlertImplToJson(
@@ -88,6 +89,7 @@ Map<String, dynamic> _$$BrickhouseAlertImplToJson(
       'maxSpeedMaxValue': instance.maxSpeedMaxValue,
       'isMuted': instance.isMuted,
       'speedingThreshold': instance.speedingThreshold,
+      'isDisabled': instance.isDisabled,
     };
 
 const _$BrickhouseAlertTypeEnumMap = {

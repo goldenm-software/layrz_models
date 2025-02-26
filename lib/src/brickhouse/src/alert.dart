@@ -233,6 +233,9 @@ class BrickhouseAlert with _$BrickhouseAlert {
     /// [speedingThreshold] represents the threshold of the speeding alert.
     /// This is the maximum speed that the asset can reach before the alert is triggered.
     double? speedingThreshold,
+
+    /// isDisabled
+    @Default(false) bool? isDisabled,
   }) = _BrickhouseAlert;
 
   /// from json
