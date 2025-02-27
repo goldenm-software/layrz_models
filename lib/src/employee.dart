@@ -39,12 +39,6 @@ class Employee with _$Employee {
 
     /// [mfaMethods] represents the list of MFA methods.
     @MfaMethodConverter() @Default([]) List<MfaMethod> mfaMethods,
-
-    /// [colorblindMode] represents the user colorblind mode.
-    @JsonKey(unknownEnumValue: ColorblindMode.normal) ColorblindMode? colorblindMode,
-
-    /// [colorblindStrength] represents the user colorblind strength.
-    double? colorblindStrength,
   }) = _Employee;
 
   factory Employee.fromJson(Map<String, dynamic> json) => _$EmployeeFromJson(json);

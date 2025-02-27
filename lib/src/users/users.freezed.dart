@@ -3033,21 +3033,6 @@ mixin _$UserInput {
   /// [password] default password if allowed by the form
   set password(String? value) => throw _privateConstructorUsedError;
 
-  /// [colorblindMode] represents the user colorblind mode.
-  @JsonKey(unknownEnumValue: ColorblindMode.normal)
-  ColorblindMode? get colorblindMode => throw _privateConstructorUsedError;
-
-  /// [colorblindMode] represents the user colorblind mode.
-  @JsonKey(unknownEnumValue: ColorblindMode.normal)
-  set colorblindMode(ColorblindMode? value) =>
-      throw _privateConstructorUsedError;
-
-  /// [colorblindStrength] represents the user colorblind strength.
-  double? get colorblindStrength => throw _privateConstructorUsedError;
-
-  /// [colorblindStrength] represents the user colorblind strength.
-  set colorblindStrength(double? value) => throw _privateConstructorUsedError;
-
   /// Serializes this UserInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -3079,10 +3064,7 @@ abstract class $UserInputCopyWith<$Res> {
       @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
       BrickhouseUserRole? brickhouseRole,
       String? sdmCode,
-      String? password,
-      @JsonKey(unknownEnumValue: ColorblindMode.normal)
-      ColorblindMode? colorblindMode,
-      double? colorblindStrength});
+      String? password});
 
   $AvatarInputCopyWith<$Res>? get dynamicAvatar;
 }
@@ -3117,8 +3099,6 @@ class _$UserInputCopyWithImpl<$Res, $Val extends UserInput>
     Object? brickhouseRole = freezed,
     Object? sdmCode = freezed,
     Object? password = freezed,
-    Object? colorblindMode = freezed,
-    Object? colorblindStrength = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -3181,14 +3161,6 @@ class _$UserInputCopyWithImpl<$Res, $Val extends UserInput>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      colorblindMode: freezed == colorblindMode
-          ? _value.colorblindMode
-          : colorblindMode // ignore: cast_nullable_to_non_nullable
-              as ColorblindMode?,
-      colorblindStrength: freezed == colorblindStrength
-          ? _value.colorblindStrength
-          : colorblindStrength // ignore: cast_nullable_to_non_nullable
-              as double?,
     ) as $Val);
   }
 
@@ -3231,10 +3203,7 @@ abstract class _$$UserInputImplCopyWith<$Res>
       @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
       BrickhouseUserRole? brickhouseRole,
       String? sdmCode,
-      String? password,
-      @JsonKey(unknownEnumValue: ColorblindMode.normal)
-      ColorblindMode? colorblindMode,
-      double? colorblindStrength});
+      String? password});
 
   @override
   $AvatarInputCopyWith<$Res>? get dynamicAvatar;
@@ -3268,8 +3237,6 @@ class __$$UserInputImplCopyWithImpl<$Res>
     Object? brickhouseRole = freezed,
     Object? sdmCode = freezed,
     Object? password = freezed,
-    Object? colorblindMode = freezed,
-    Object? colorblindStrength = freezed,
   }) {
     return _then(_$UserInputImpl(
       id: freezed == id
@@ -3332,14 +3299,6 @@ class __$$UserInputImplCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-      colorblindMode: freezed == colorblindMode
-          ? _value.colorblindMode
-          : colorblindMode // ignore: cast_nullable_to_non_nullable
-              as ColorblindMode?,
-      colorblindStrength: freezed == colorblindStrength
-          ? _value.colorblindStrength
-          : colorblindStrength // ignore: cast_nullable_to_non_nullable
-              as double?,
     ));
   }
 }
@@ -3363,9 +3322,7 @@ class _$UserInputImpl extends _UserInput {
       @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
       this.brickhouseRole,
       this.sdmCode,
-      this.password,
-      @JsonKey(unknownEnumValue: ColorblindMode.normal) this.colorblindMode,
-      this.colorblindStrength})
+      this.password})
       : super._();
 
   factory _$UserInputImpl.fromJson(Map<String, dynamic> json) =>
@@ -3442,18 +3399,9 @@ class _$UserInputImpl extends _UserInput {
   @override
   String? password;
 
-  /// [colorblindMode] represents the user colorblind mode.
-  @override
-  @JsonKey(unknownEnumValue: ColorblindMode.normal)
-  ColorblindMode? colorblindMode;
-
-  /// [colorblindStrength] represents the user colorblind strength.
-  @override
-  double? colorblindStrength;
-
   @override
   String toString() {
-    return 'UserInput(id: $id, name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, categoryId: $categoryId, customFields: $customFields, tagsIds: $tagsIds, mappitAssetsIds: $mappitAssetsIds, historicalDaysAllowed: $historicalDaysAllowed, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, password: $password, colorblindMode: $colorblindMode, colorblindStrength: $colorblindStrength)';
+    return 'UserInput(id: $id, name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, categoryId: $categoryId, customFields: $customFields, tagsIds: $tagsIds, mappitAssetsIds: $mappitAssetsIds, historicalDaysAllowed: $historicalDaysAllowed, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, password: $password)';
   }
 
   /// Create a copy of UserInput
@@ -3489,10 +3437,7 @@ abstract class _UserInput extends UserInput {
       @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
       BrickhouseUserRole? brickhouseRole,
       String? sdmCode,
-      String? password,
-      @JsonKey(unknownEnumValue: ColorblindMode.normal)
-      ColorblindMode? colorblindMode,
-      double? colorblindStrength}) = _$UserInputImpl;
+      String? password}) = _$UserInputImpl;
   _UserInput._() : super._();
 
   factory _UserInput.fromJson(Map<String, dynamic> json) =
@@ -3609,6 +3554,255 @@ abstract class _UserInput extends UserInput {
   /// [password] default password if allowed by the form
   set password(String? value);
 
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$UserInputImplCopyWith<_$UserInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+AccessibilityInput _$AccessibilityInputFromJson(Map<String, dynamic> json) {
+  return _AccessibilityInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AccessibilityInput {
+  /// [userId] represents the user ID.
+  /// [userId] and [employeeId] can not be null or together at the same time.
+  String? get userId => throw _privateConstructorUsedError;
+
+  /// [userId] represents the user ID.
+  /// [userId] and [employeeId] can not be null or together at the same time.
+  set userId(String? value) => throw _privateConstructorUsedError;
+
+  /// [employeeId] represents the employee ID.
+  /// [userId] and [employeeId] can not be null or together at the same time.
+  String? get employeeId => throw _privateConstructorUsedError;
+
+  /// [employeeId] represents the employee ID.
+  /// [userId] and [employeeId] can not be null or together at the same time.
+  set employeeId(String? value) => throw _privateConstructorUsedError;
+
+  /// [colorblindMode] represents the user colorblind mode.
+  @JsonKey(unknownEnumValue: ColorblindMode.normal)
+  ColorblindMode? get colorblindMode => throw _privateConstructorUsedError;
+
+  /// [colorblindMode] represents the user colorblind mode.
+  @JsonKey(unknownEnumValue: ColorblindMode.normal)
+  set colorblindMode(ColorblindMode? value) =>
+      throw _privateConstructorUsedError;
+
+  /// [colorblindStrength] represents the user colorblind strength.
+  double? get colorblindStrength => throw _privateConstructorUsedError;
+
+  /// [colorblindStrength] represents the user colorblind strength.
+  set colorblindStrength(double? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AccessibilityInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AccessibilityInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AccessibilityInputCopyWith<AccessibilityInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AccessibilityInputCopyWith<$Res> {
+  factory $AccessibilityInputCopyWith(
+          AccessibilityInput value, $Res Function(AccessibilityInput) then) =
+      _$AccessibilityInputCopyWithImpl<$Res, AccessibilityInput>;
+  @useResult
+  $Res call(
+      {String? userId,
+      String? employeeId,
+      @JsonKey(unknownEnumValue: ColorblindMode.normal)
+      ColorblindMode? colorblindMode,
+      double? colorblindStrength});
+}
+
+/// @nodoc
+class _$AccessibilityInputCopyWithImpl<$Res, $Val extends AccessibilityInput>
+    implements $AccessibilityInputCopyWith<$Res> {
+  _$AccessibilityInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AccessibilityInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = freezed,
+    Object? employeeId = freezed,
+    Object? colorblindMode = freezed,
+    Object? colorblindStrength = freezed,
+  }) {
+    return _then(_value.copyWith(
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      employeeId: freezed == employeeId
+          ? _value.employeeId
+          : employeeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      colorblindMode: freezed == colorblindMode
+          ? _value.colorblindMode
+          : colorblindMode // ignore: cast_nullable_to_non_nullable
+              as ColorblindMode?,
+      colorblindStrength: freezed == colorblindStrength
+          ? _value.colorblindStrength
+          : colorblindStrength // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AccessibilityInputImplCopyWith<$Res>
+    implements $AccessibilityInputCopyWith<$Res> {
+  factory _$$AccessibilityInputImplCopyWith(_$AccessibilityInputImpl value,
+          $Res Function(_$AccessibilityInputImpl) then) =
+      __$$AccessibilityInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? userId,
+      String? employeeId,
+      @JsonKey(unknownEnumValue: ColorblindMode.normal)
+      ColorblindMode? colorblindMode,
+      double? colorblindStrength});
+}
+
+/// @nodoc
+class __$$AccessibilityInputImplCopyWithImpl<$Res>
+    extends _$AccessibilityInputCopyWithImpl<$Res, _$AccessibilityInputImpl>
+    implements _$$AccessibilityInputImplCopyWith<$Res> {
+  __$$AccessibilityInputImplCopyWithImpl(_$AccessibilityInputImpl _value,
+      $Res Function(_$AccessibilityInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AccessibilityInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? userId = freezed,
+    Object? employeeId = freezed,
+    Object? colorblindMode = freezed,
+    Object? colorblindStrength = freezed,
+  }) {
+    return _then(_$AccessibilityInputImpl(
+      userId: freezed == userId
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      employeeId: freezed == employeeId
+          ? _value.employeeId
+          : employeeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      colorblindMode: freezed == colorblindMode
+          ? _value.colorblindMode
+          : colorblindMode // ignore: cast_nullable_to_non_nullable
+              as ColorblindMode?,
+      colorblindStrength: freezed == colorblindStrength
+          ? _value.colorblindStrength
+          : colorblindStrength // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AccessibilityInputImpl extends _AccessibilityInput {
+  _$AccessibilityInputImpl(
+      {this.userId,
+      this.employeeId,
+      @JsonKey(unknownEnumValue: ColorblindMode.normal) this.colorblindMode,
+      this.colorblindStrength})
+      : super._();
+
+  factory _$AccessibilityInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AccessibilityInputImplFromJson(json);
+
+  /// [userId] represents the user ID.
+  /// [userId] and [employeeId] can not be null or together at the same time.
+  @override
+  String? userId;
+
+  /// [employeeId] represents the employee ID.
+  /// [userId] and [employeeId] can not be null or together at the same time.
+  @override
+  String? employeeId;
+
+  /// [colorblindMode] represents the user colorblind mode.
+  @override
+  @JsonKey(unknownEnumValue: ColorblindMode.normal)
+  ColorblindMode? colorblindMode;
+
+  /// [colorblindStrength] represents the user colorblind strength.
+  @override
+  double? colorblindStrength;
+
+  @override
+  String toString() {
+    return 'AccessibilityInput(userId: $userId, employeeId: $employeeId, colorblindMode: $colorblindMode, colorblindStrength: $colorblindStrength)';
+  }
+
+  /// Create a copy of AccessibilityInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AccessibilityInputImplCopyWith<_$AccessibilityInputImpl> get copyWith =>
+      __$$AccessibilityInputImplCopyWithImpl<_$AccessibilityInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AccessibilityInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AccessibilityInput extends AccessibilityInput {
+  factory _AccessibilityInput(
+      {String? userId,
+      String? employeeId,
+      @JsonKey(unknownEnumValue: ColorblindMode.normal)
+      ColorblindMode? colorblindMode,
+      double? colorblindStrength}) = _$AccessibilityInputImpl;
+  _AccessibilityInput._() : super._();
+
+  factory _AccessibilityInput.fromJson(Map<String, dynamic> json) =
+      _$AccessibilityInputImpl.fromJson;
+
+  /// [userId] represents the user ID.
+  /// [userId] and [employeeId] can not be null or together at the same time.
+  @override
+  String? get userId;
+
+  /// [userId] represents the user ID.
+  /// [userId] and [employeeId] can not be null or together at the same time.
+  set userId(String? value);
+
+  /// [employeeId] represents the employee ID.
+  /// [userId] and [employeeId] can not be null or together at the same time.
+  @override
+  String? get employeeId;
+
+  /// [employeeId] represents the employee ID.
+  /// [userId] and [employeeId] can not be null or together at the same time.
+  set employeeId(String? value);
+
   /// [colorblindMode] represents the user colorblind mode.
   @override
   @JsonKey(unknownEnumValue: ColorblindMode.normal)
@@ -3625,10 +3819,10 @@ abstract class _UserInput extends UserInput {
   /// [colorblindStrength] represents the user colorblind strength.
   set colorblindStrength(double? value);
 
-  /// Create a copy of UserInput
+  /// Create a copy of AccessibilityInput
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserInputImplCopyWith<_$UserInputImpl> get copyWith =>
+  _$$AccessibilityInputImplCopyWith<_$AccessibilityInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
