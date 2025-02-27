@@ -10823,13 +10823,6 @@ mixin _$Employee {
   @MfaMethodConverter()
   List<MfaMethod> get mfaMethods => throw _privateConstructorUsedError;
 
-  /// [colorblindMode] represents the user colorblind mode.
-  @JsonKey(unknownEnumValue: ColorblindMode.normal)
-  ColorblindMode? get colorblindMode => throw _privateConstructorUsedError;
-
-  /// [colorblindStrength] represents the user colorblind strength.
-  double? get colorblindStrength => throw _privateConstructorUsedError;
-
   /// Serializes this Employee to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -10857,10 +10850,7 @@ abstract class $EmployeeCopyWith<$Res> {
       GenericPermission? permissions,
       GenericPermission? customPermissions,
       bool mfaEnabled,
-      @MfaMethodConverter() List<MfaMethod> mfaMethods,
-      @JsonKey(unknownEnumValue: ColorblindMode.normal)
-      ColorblindMode? colorblindMode,
-      double? colorblindStrength});
+      @MfaMethodConverter() List<MfaMethod> mfaMethods});
 
   $DepartmentCopyWith<$Res>? get department;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
@@ -10896,8 +10886,6 @@ class _$EmployeeCopyWithImpl<$Res, $Val extends Employee>
     Object? customPermissions = freezed,
     Object? mfaEnabled = null,
     Object? mfaMethods = null,
-    Object? colorblindMode = freezed,
-    Object? colorblindStrength = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -10948,14 +10936,6 @@ class _$EmployeeCopyWithImpl<$Res, $Val extends Employee>
           ? _value.mfaMethods
           : mfaMethods // ignore: cast_nullable_to_non_nullable
               as List<MfaMethod>,
-      colorblindMode: freezed == colorblindMode
-          ? _value.colorblindMode
-          : colorblindMode // ignore: cast_nullable_to_non_nullable
-              as ColorblindMode?,
-      colorblindStrength: freezed == colorblindStrength
-          ? _value.colorblindStrength
-          : colorblindStrength // ignore: cast_nullable_to_non_nullable
-              as double?,
     ) as $Val);
   }
 
@@ -11050,10 +11030,7 @@ abstract class _$$EmployeeImplCopyWith<$Res>
       GenericPermission? permissions,
       GenericPermission? customPermissions,
       bool mfaEnabled,
-      @MfaMethodConverter() List<MfaMethod> mfaMethods,
-      @JsonKey(unknownEnumValue: ColorblindMode.normal)
-      ColorblindMode? colorblindMode,
-      double? colorblindStrength});
+      @MfaMethodConverter() List<MfaMethod> mfaMethods});
 
   @override
   $DepartmentCopyWith<$Res>? get department;
@@ -11092,8 +11069,6 @@ class __$$EmployeeImplCopyWithImpl<$Res>
     Object? customPermissions = freezed,
     Object? mfaEnabled = null,
     Object? mfaMethods = null,
-    Object? colorblindMode = freezed,
-    Object? colorblindStrength = freezed,
   }) {
     return _then(_$EmployeeImpl(
       id: null == id
@@ -11144,14 +11119,6 @@ class __$$EmployeeImplCopyWithImpl<$Res>
           ? _value._mfaMethods
           : mfaMethods // ignore: cast_nullable_to_non_nullable
               as List<MfaMethod>,
-      colorblindMode: freezed == colorblindMode
-          ? _value.colorblindMode
-          : colorblindMode // ignore: cast_nullable_to_non_nullable
-              as ColorblindMode?,
-      colorblindStrength: freezed == colorblindStrength
-          ? _value.colorblindStrength
-          : colorblindStrength // ignore: cast_nullable_to_non_nullable
-              as double?,
     ));
   }
 }
@@ -11171,9 +11138,7 @@ class _$EmployeeImpl implements _Employee {
       this.permissions,
       this.customPermissions,
       this.mfaEnabled = false,
-      @MfaMethodConverter() final List<MfaMethod> mfaMethods = const [],
-      @JsonKey(unknownEnumValue: ColorblindMode.normal) this.colorblindMode,
-      this.colorblindStrength})
+      @MfaMethodConverter() final List<MfaMethod> mfaMethods = const []})
       : _mfaMethods = mfaMethods;
 
   factory _$EmployeeImpl.fromJson(Map<String, dynamic> json) =>
@@ -11237,18 +11202,9 @@ class _$EmployeeImpl implements _Employee {
     return EqualUnmodifiableListView(_mfaMethods);
   }
 
-  /// [colorblindMode] represents the user colorblind mode.
-  @override
-  @JsonKey(unknownEnumValue: ColorblindMode.normal)
-  final ColorblindMode? colorblindMode;
-
-  /// [colorblindStrength] represents the user colorblind strength.
-  @override
-  final double? colorblindStrength;
-
   @override
   String toString() {
-    return 'Employee(id: $id, name: $name, email: $email, username: $username, department: $department, departmentId: $departmentId, dynamicAvatar: $dynamicAvatar, token: $token, permissions: $permissions, customPermissions: $customPermissions, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, colorblindMode: $colorblindMode, colorblindStrength: $colorblindStrength)';
+    return 'Employee(id: $id, name: $name, email: $email, username: $username, department: $department, departmentId: $departmentId, dynamicAvatar: $dynamicAvatar, token: $token, permissions: $permissions, customPermissions: $customPermissions, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods)';
   }
 
   @override
@@ -11275,11 +11231,7 @@ class _$EmployeeImpl implements _Employee {
             (identical(other.mfaEnabled, mfaEnabled) ||
                 other.mfaEnabled == mfaEnabled) &&
             const DeepCollectionEquality()
-                .equals(other._mfaMethods, _mfaMethods) &&
-            (identical(other.colorblindMode, colorblindMode) ||
-                other.colorblindMode == colorblindMode) &&
-            (identical(other.colorblindStrength, colorblindStrength) ||
-                other.colorblindStrength == colorblindStrength));
+                .equals(other._mfaMethods, _mfaMethods));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -11297,9 +11249,7 @@ class _$EmployeeImpl implements _Employee {
       permissions,
       customPermissions,
       mfaEnabled,
-      const DeepCollectionEquality().hash(_mfaMethods),
-      colorblindMode,
-      colorblindStrength);
+      const DeepCollectionEquality().hash(_mfaMethods));
 
   /// Create a copy of Employee
   /// with the given fields replaced by the non-null parameter values.
@@ -11330,10 +11280,7 @@ abstract class _Employee implements Employee {
       final GenericPermission? permissions,
       final GenericPermission? customPermissions,
       final bool mfaEnabled,
-      @MfaMethodConverter() final List<MfaMethod> mfaMethods,
-      @JsonKey(unknownEnumValue: ColorblindMode.normal)
-      final ColorblindMode? colorblindMode,
-      final double? colorblindStrength}) = _$EmployeeImpl;
+      @MfaMethodConverter() final List<MfaMethod> mfaMethods}) = _$EmployeeImpl;
 
   factory _Employee.fromJson(Map<String, dynamic> json) =
       _$EmployeeImpl.fromJson;
@@ -11386,15 +11333,6 @@ abstract class _Employee implements Employee {
   @override
   @MfaMethodConverter()
   List<MfaMethod> get mfaMethods;
-
-  /// [colorblindMode] represents the user colorblind mode.
-  @override
-  @JsonKey(unknownEnumValue: ColorblindMode.normal)
-  ColorblindMode? get colorblindMode;
-
-  /// [colorblindStrength] represents the user colorblind strength.
-  @override
-  double? get colorblindStrength;
 
   /// Create a copy of Employee
   /// with the given fields replaced by the non-null parameter values.

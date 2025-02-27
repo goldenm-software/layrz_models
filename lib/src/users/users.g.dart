@@ -295,10 +295,6 @@ _$UserInputImpl _$$UserInputImplFromJson(Map<String, dynamic> json) =>
           unknownValue: BrickhouseUserRole.unknown),
       sdmCode: json['sdmCode'] as String?,
       password: json['password'] as String?,
-      colorblindMode: $enumDecodeNullable(
-          _$ColorblindModeEnumMap, json['colorblindMode'],
-          unknownValue: ColorblindMode.normal),
-      colorblindStrength: (json['colorblindStrength'] as num?)?.toDouble(),
     );
 
 Map<String, dynamic> _$$UserInputImplToJson(_$UserInputImpl instance) =>
@@ -318,6 +314,24 @@ Map<String, dynamic> _$$UserInputImplToJson(_$UserInputImpl instance) =>
       'brickhouseRole': instance.brickhouseRole?.toJson(),
       'sdmCode': instance.sdmCode,
       'password': instance.password,
+    };
+
+_$AccessibilityInputImpl _$$AccessibilityInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AccessibilityInputImpl(
+      userId: json['userId'] as String?,
+      employeeId: json['employeeId'] as String?,
+      colorblindMode: $enumDecodeNullable(
+          _$ColorblindModeEnumMap, json['colorblindMode'],
+          unknownValue: ColorblindMode.normal),
+      colorblindStrength: (json['colorblindStrength'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$$AccessibilityInputImplToJson(
+        _$AccessibilityInputImpl instance) =>
+    <String, dynamic>{
+      'userId': instance.userId,
+      'employeeId': instance.employeeId,
       'colorblindMode': instance.colorblindMode?.toJson(),
       'colorblindStrength': instance.colorblindStrength,
     };

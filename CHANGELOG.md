@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.47
+
+- Created `AccessibilityInput`.
+- Removed `colorblindStrength` and `ColorblindMode` to `Employee` and `UserInput`
+
 ## 3.3.46
 - Added `isDisabled` to `BrickhouseAlert` model
 
