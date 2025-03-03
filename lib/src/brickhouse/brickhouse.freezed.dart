@@ -2225,220 +2225,6 @@ abstract class _BHSDriverSafetyDrivenScore
       get copyWith => throw _privateConstructorUsedError;
 }
 
-BHSDriverSafetySpeedingEvent _$BHSDriverSafetySpeedingEventFromJson(
-    Map<String, dynamic> json) {
-  return _BHSDriverSafetySpeedingEvent.fromJson(json);
-}
-
-/// @nodoc
-mixin _$BHSDriverSafetySpeedingEvent {
-  double get maxSpeed => throw _privateConstructorUsedError;
-  @TimestampConverter()
-  DateTime get startAt => throw _privateConstructorUsedError;
-  @TimestampConverter()
-  DateTime get endAt => throw _privateConstructorUsedError;
-
-  /// Serializes this BHSDriverSafetySpeedingEvent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of BHSDriverSafetySpeedingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $BHSDriverSafetySpeedingEventCopyWith<BHSDriverSafetySpeedingEvent>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BHSDriverSafetySpeedingEventCopyWith<$Res> {
-  factory $BHSDriverSafetySpeedingEventCopyWith(
-          BHSDriverSafetySpeedingEvent value,
-          $Res Function(BHSDriverSafetySpeedingEvent) then) =
-      _$BHSDriverSafetySpeedingEventCopyWithImpl<$Res,
-          BHSDriverSafetySpeedingEvent>;
-  @useResult
-  $Res call(
-      {double maxSpeed,
-      @TimestampConverter() DateTime startAt,
-      @TimestampConverter() DateTime endAt});
-}
-
-/// @nodoc
-class _$BHSDriverSafetySpeedingEventCopyWithImpl<$Res,
-        $Val extends BHSDriverSafetySpeedingEvent>
-    implements $BHSDriverSafetySpeedingEventCopyWith<$Res> {
-  _$BHSDriverSafetySpeedingEventCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BHSDriverSafetySpeedingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? maxSpeed = null,
-    Object? startAt = null,
-    Object? endAt = null,
-  }) {
-    return _then(_value.copyWith(
-      maxSpeed: null == maxSpeed
-          ? _value.maxSpeed
-          : maxSpeed // ignore: cast_nullable_to_non_nullable
-              as double,
-      startAt: null == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      endAt: null == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$BHSDriverSafetySpeedingEventImplCopyWith<$Res>
-    implements $BHSDriverSafetySpeedingEventCopyWith<$Res> {
-  factory _$$BHSDriverSafetySpeedingEventImplCopyWith(
-          _$BHSDriverSafetySpeedingEventImpl value,
-          $Res Function(_$BHSDriverSafetySpeedingEventImpl) then) =
-      __$$BHSDriverSafetySpeedingEventImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {double maxSpeed,
-      @TimestampConverter() DateTime startAt,
-      @TimestampConverter() DateTime endAt});
-}
-
-/// @nodoc
-class __$$BHSDriverSafetySpeedingEventImplCopyWithImpl<$Res>
-    extends _$BHSDriverSafetySpeedingEventCopyWithImpl<$Res,
-        _$BHSDriverSafetySpeedingEventImpl>
-    implements _$$BHSDriverSafetySpeedingEventImplCopyWith<$Res> {
-  __$$BHSDriverSafetySpeedingEventImplCopyWithImpl(
-      _$BHSDriverSafetySpeedingEventImpl _value,
-      $Res Function(_$BHSDriverSafetySpeedingEventImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of BHSDriverSafetySpeedingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? maxSpeed = null,
-    Object? startAt = null,
-    Object? endAt = null,
-  }) {
-    return _then(_$BHSDriverSafetySpeedingEventImpl(
-      maxSpeed: null == maxSpeed
-          ? _value.maxSpeed
-          : maxSpeed // ignore: cast_nullable_to_non_nullable
-              as double,
-      startAt: null == startAt
-          ? _value.startAt
-          : startAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      endAt: null == endAt
-          ? _value.endAt
-          : endAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$BHSDriverSafetySpeedingEventImpl
-    implements _BHSDriverSafetySpeedingEvent {
-  const _$BHSDriverSafetySpeedingEventImpl(
-      {required this.maxSpeed,
-      @TimestampConverter() required this.startAt,
-      @TimestampConverter() required this.endAt});
-
-  factory _$BHSDriverSafetySpeedingEventImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$BHSDriverSafetySpeedingEventImplFromJson(json);
-
-  @override
-  final double maxSpeed;
-  @override
-  @TimestampConverter()
-  final DateTime startAt;
-  @override
-  @TimestampConverter()
-  final DateTime endAt;
-
-  @override
-  String toString() {
-    return 'BHSDriverSafetySpeedingEvent(maxSpeed: $maxSpeed, startAt: $startAt, endAt: $endAt)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$BHSDriverSafetySpeedingEventImpl &&
-            (identical(other.maxSpeed, maxSpeed) ||
-                other.maxSpeed == maxSpeed) &&
-            (identical(other.startAt, startAt) || other.startAt == startAt) &&
-            (identical(other.endAt, endAt) || other.endAt == endAt));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, maxSpeed, startAt, endAt);
-
-  /// Create a copy of BHSDriverSafetySpeedingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BHSDriverSafetySpeedingEventImplCopyWith<
-          _$BHSDriverSafetySpeedingEventImpl>
-      get copyWith => __$$BHSDriverSafetySpeedingEventImplCopyWithImpl<
-          _$BHSDriverSafetySpeedingEventImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BHSDriverSafetySpeedingEventImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _BHSDriverSafetySpeedingEvent
-    implements BHSDriverSafetySpeedingEvent {
-  const factory _BHSDriverSafetySpeedingEvent(
-          {required final double maxSpeed,
-          @TimestampConverter() required final DateTime startAt,
-          @TimestampConverter() required final DateTime endAt}) =
-      _$BHSDriverSafetySpeedingEventImpl;
-
-  factory _BHSDriverSafetySpeedingEvent.fromJson(Map<String, dynamic> json) =
-      _$BHSDriverSafetySpeedingEventImpl.fromJson;
-
-  @override
-  double get maxSpeed;
-  @override
-  @TimestampConverter()
-  DateTime get startAt;
-  @override
-  @TimestampConverter()
-  DateTime get endAt;
-
-  /// Create a copy of BHSDriverSafetySpeedingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BHSDriverSafetySpeedingEventImplCopyWith<
-          _$BHSDriverSafetySpeedingEventImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
 BHSDriverSafetySpeedingEvents _$BHSDriverSafetySpeedingEventsFromJson(
     Map<String, dynamic> json) {
   return _BHSDriverSafetySpeedingEvents.fromJson(json);
@@ -2447,8 +2233,7 @@ BHSDriverSafetySpeedingEvents _$BHSDriverSafetySpeedingEventsFromJson(
 /// @nodoc
 mixin _$BHSDriverSafetySpeedingEvents {
   String? get status => throw _privateConstructorUsedError;
-  List<BHSDriverSafetySpeedingEvent>? get messages =>
-      throw _privateConstructorUsedError;
+  List<TriggerActivation>? get messages => throw _privateConstructorUsedError;
 
   /// Serializes this BHSDriverSafetySpeedingEvents to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2468,7 +2253,7 @@ abstract class $BHSDriverSafetySpeedingEventsCopyWith<$Res> {
       _$BHSDriverSafetySpeedingEventsCopyWithImpl<$Res,
           BHSDriverSafetySpeedingEvents>;
   @useResult
-  $Res call({String? status, List<BHSDriverSafetySpeedingEvent>? messages});
+  $Res call({String? status, List<TriggerActivation>? messages});
 }
 
 /// @nodoc
@@ -2498,7 +2283,7 @@ class _$BHSDriverSafetySpeedingEventsCopyWithImpl<$Res,
       messages: freezed == messages
           ? _value.messages
           : messages // ignore: cast_nullable_to_non_nullable
-              as List<BHSDriverSafetySpeedingEvent>?,
+              as List<TriggerActivation>?,
     ) as $Val);
   }
 }
@@ -2512,7 +2297,7 @@ abstract class _$$BHSDriverSafetySpeedingEventsImplCopyWith<$Res>
       __$$BHSDriverSafetySpeedingEventsImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? status, List<BHSDriverSafetySpeedingEvent>? messages});
+  $Res call({String? status, List<TriggerActivation>? messages});
 }
 
 /// @nodoc
@@ -2541,7 +2326,7 @@ class __$$BHSDriverSafetySpeedingEventsImplCopyWithImpl<$Res>
       messages: freezed == messages
           ? _value._messages
           : messages // ignore: cast_nullable_to_non_nullable
-              as List<BHSDriverSafetySpeedingEvent>?,
+              as List<TriggerActivation>?,
     ));
   }
 }
@@ -2551,7 +2336,7 @@ class __$$BHSDriverSafetySpeedingEventsImplCopyWithImpl<$Res>
 class _$BHSDriverSafetySpeedingEventsImpl
     implements _BHSDriverSafetySpeedingEvents {
   const _$BHSDriverSafetySpeedingEventsImpl(
-      {this.status, final List<BHSDriverSafetySpeedingEvent>? messages})
+      {this.status, final List<TriggerActivation>? messages})
       : _messages = messages;
 
   factory _$BHSDriverSafetySpeedingEventsImpl.fromJson(
@@ -2560,9 +2345,9 @@ class _$BHSDriverSafetySpeedingEventsImpl
 
   @override
   final String? status;
-  final List<BHSDriverSafetySpeedingEvent>? _messages;
+  final List<TriggerActivation>? _messages;
   @override
-  List<BHSDriverSafetySpeedingEvent>? get messages {
+  List<TriggerActivation>? get messages {
     final value = _messages;
     if (value == null) return null;
     if (_messages is EqualUnmodifiableListView) return _messages;
@@ -2610,8 +2395,7 @@ class _$BHSDriverSafetySpeedingEventsImpl
 abstract class _BHSDriverSafetySpeedingEvents
     implements BHSDriverSafetySpeedingEvents {
   const factory _BHSDriverSafetySpeedingEvents(
-          {final String? status,
-          final List<BHSDriverSafetySpeedingEvent>? messages}) =
+          {final String? status, final List<TriggerActivation>? messages}) =
       _$BHSDriverSafetySpeedingEventsImpl;
 
   factory _BHSDriverSafetySpeedingEvents.fromJson(Map<String, dynamic> json) =
@@ -2620,7 +2404,7 @@ abstract class _BHSDriverSafetySpeedingEvents
   @override
   String? get status;
   @override
-  List<BHSDriverSafetySpeedingEvent>? get messages;
+  List<TriggerActivation>? get messages;
 
   /// Create a copy of BHSDriverSafetySpeedingEvents
   /// with the given fields replaced by the non-null parameter values.

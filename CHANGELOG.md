@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.48
+
+- Deleted the `BHSDriverSafetySpeedingEvent` of brickhouse driver safety
+- Modify the messages on `BHSDriverSafetySpeedingEvents` to work with `TriggerActivation`
 ## 3.3.47
 
 - Created `AccessibilityInput`.
