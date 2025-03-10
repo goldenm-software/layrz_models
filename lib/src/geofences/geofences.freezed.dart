@@ -79,12 +79,8 @@ mixin _$Geofence {
   /// [mappitRouteIds] refers to the list of routes that are linked to the geofence.
   List<String>? get mappitRouteIds => throw _privateConstructorUsedError;
 
-  /// Serializes this Geofence to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Geofence
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $GeofenceCopyWith<Geofence> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -128,8 +124,6 @@ class _$GeofenceCopyWithImpl<$Res, $Val extends Geofence>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Geofence
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -228,8 +222,6 @@ class _$GeofenceCopyWithImpl<$Res, $Val extends Geofence>
     ) as $Val);
   }
 
-  /// Create a copy of Geofence
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get owner {
@@ -284,8 +276,6 @@ class __$$GeofenceImplCopyWithImpl<$Res>
       _$GeofenceImpl _value, $Res Function(_$GeofenceImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Geofence
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -608,7 +598,7 @@ class _$GeofenceImpl implements _Geofence {
                 .equals(other._mappitRouteIds, _mappitRouteIds));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -631,9 +621,7 @@ class _$GeofenceImpl implements _Geofence {
       const DeepCollectionEquality().hash(_mappitRoutes),
       const DeepCollectionEquality().hash(_mappitRouteIds));
 
-  /// Create a copy of Geofence
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GeofenceImplCopyWith<_$GeofenceImpl> get copyWith =>
@@ -672,87 +660,85 @@ abstract class _Geofence implements Geofence {
   factory _Geofence.fromJson(Map<String, dynamic> json) =
       _$GeofenceImpl.fromJson;
 
-  /// ID of the geofence entity. This ID is unique.
   @override
+
+  /// ID of the geofence entity. This ID is unique.
   String get id;
+  @override
 
   /// Name of the geofence.
-  @override
   String get name;
+  @override
 
   /// Mode of geofence, check the documentation of GeofenceMode for more information.
-  @override
   @GeofenceModeConverter()
   GeofenceMode get mode;
+  @override
 
   /// Description of the geofence.
-  @override
   String? get description;
+  @override
 
   /// Color of the geofence in hexadecimal code.
-  @override
   @ColorOrNullConverter()
   Color? get color;
+  @override
 
   /// Depending of the Geofence mode, this field may return one or N points. Please check the GeofenceMode definition
-  @override
   List<GeofencePoint>? get path;
+  @override
 
   /// Radius of the geofence in meters. If mode is GeofenceMode.LINEAR, this field will be the weight of the geofence. For GeofenceMode.POLYGON, this field will be ignored.
-  @override
   double? get radius;
+  @override
 
   /// External resource ID, only for external geofences.
-  @override
   String? get resourceId;
+  @override
 
   /// List of assets inside the geofence.
-  @override
   List<Asset>? get assetsInside;
+  @override
 
   /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
   /// from the API.
-  @override
   @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category;
+  @override
 
   /// [childrenIds] refers to the list of children geofences.
-  @override
   List<String>? get childrenIds;
+  @override
 
   /// [children] refers to the list of children geofences.
-  @override
   List<Geofence>? get children;
+  @override
 
   /// List of custom access permissions.
-  @override
   List<Access>? get access;
+  @override
 
   /// List of [customFields] linked to the geofence. Please read the documentation for [CustomField]
   /// for more details about the fields.
-  @override
   List<CustomField>? get customFields;
+  @override
 
   /// [ownerId] refers to the owner of the geofence.
-  @override
   String? get ownerId;
+  @override
 
   /// [owner] refers to the owner of the geofence.
-  @override
   User? get owner;
+  @override
 
   /// [mappitRoutes] refers to the list of routes that are linked to the geofence.
-  @override
   List<MappitRoute>? get mappitRoutes;
+  @override
 
   /// [mappitRouteIds] refers to the list of routes that are linked to the geofence.
-  @override
   List<String>? get mappitRouteIds;
-
-  /// Create a copy of Geofence
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GeofenceImplCopyWith<_$GeofenceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -788,13 +774,12 @@ mixin _$GeofenceInput {
   set category(GeofenceCategory value) => throw _privateConstructorUsedError;
   List<String> get childrenIds => throw _privateConstructorUsedError;
   set childrenIds(List<String> value) => throw _privateConstructorUsedError;
+  List<CustomFieldInput> get customFields => throw _privateConstructorUsedError;
+  set customFields(List<CustomFieldInput> value) =>
+      throw _privateConstructorUsedError;
 
-  /// Serializes this GeofenceInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of GeofenceInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $GeofenceInputCopyWith<GeofenceInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -815,7 +800,8 @@ abstract class $GeofenceInputCopyWith<$Res> {
       List<GeofencePointInput> path,
       @JsonKey(unknownEnumValue: GeofenceCategory.none)
       GeofenceCategory category,
-      List<String> childrenIds});
+      List<String> childrenIds,
+      List<CustomFieldInput> customFields});
 }
 
 /// @nodoc
@@ -828,8 +814,6 @@ class _$GeofenceInputCopyWithImpl<$Res, $Val extends GeofenceInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of GeofenceInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -842,6 +826,7 @@ class _$GeofenceInputCopyWithImpl<$Res, $Val extends GeofenceInput>
     Object? path = null,
     Object? category = null,
     Object? childrenIds = null,
+    Object? customFields = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -880,6 +865,10 @@ class _$GeofenceInputCopyWithImpl<$Res, $Val extends GeofenceInput>
           ? _value.childrenIds
           : childrenIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      customFields: null == customFields
+          ? _value.customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as List<CustomFieldInput>,
     ) as $Val);
   }
 }
@@ -902,7 +891,8 @@ abstract class _$$GeofenceInputImplCopyWith<$Res>
       List<GeofencePointInput> path,
       @JsonKey(unknownEnumValue: GeofenceCategory.none)
       GeofenceCategory category,
-      List<String> childrenIds});
+      List<String> childrenIds,
+      List<CustomFieldInput> customFields});
 }
 
 /// @nodoc
@@ -913,8 +903,6 @@ class __$$GeofenceInputImplCopyWithImpl<$Res>
       _$GeofenceInputImpl _value, $Res Function(_$GeofenceInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GeofenceInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -927,6 +915,7 @@ class __$$GeofenceInputImplCopyWithImpl<$Res>
     Object? path = null,
     Object? category = null,
     Object? childrenIds = null,
+    Object? customFields = null,
   }) {
     return _then(_$GeofenceInputImpl(
       id: freezed == id
@@ -965,6 +954,10 @@ class __$$GeofenceInputImplCopyWithImpl<$Res>
           ? _value.childrenIds
           : childrenIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      customFields: null == customFields
+          ? _value.customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as List<CustomFieldInput>,
     ));
   }
 }
@@ -982,7 +975,8 @@ class _$GeofenceInputImpl implements _GeofenceInput {
       this.path = const [],
       @JsonKey(unknownEnumValue: GeofenceCategory.none)
       this.category = GeofenceCategory.none,
-      this.childrenIds = const []});
+      this.childrenIds = const [],
+      this.customFields = const []});
 
   factory _$GeofenceInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$GeofenceInputImplFromJson(json);
@@ -1015,15 +1009,16 @@ class _$GeofenceInputImpl implements _GeofenceInput {
   @override
   @JsonKey()
   List<String> childrenIds;
+  @override
+  @JsonKey()
+  List<CustomFieldInput> customFields;
 
   @override
   String toString() {
-    return 'GeofenceInput(id: $id, name: $name, description: $description, color: $color, mode: $mode, radius: $radius, path: $path, category: $category, childrenIds: $childrenIds)';
+    return 'GeofenceInput(id: $id, name: $name, description: $description, color: $color, mode: $mode, radius: $radius, path: $path, category: $category, childrenIds: $childrenIds, customFields: $customFields)';
   }
 
-  /// Create a copy of GeofenceInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GeofenceInputImplCopyWith<_$GeofenceInputImpl> get copyWith =>
@@ -1048,7 +1043,8 @@ abstract class _GeofenceInput implements GeofenceInput {
       List<GeofencePointInput> path,
       @JsonKey(unknownEnumValue: GeofenceCategory.none)
       GeofenceCategory category,
-      List<String> childrenIds}) = _$GeofenceInputImpl;
+      List<String> childrenIds,
+      List<CustomFieldInput> customFields}) = _$GeofenceInputImpl;
 
   factory _GeofenceInput.fromJson(Map<String, dynamic> json) =
       _$GeofenceInputImpl.fromJson;
@@ -1086,11 +1082,11 @@ abstract class _GeofenceInput implements GeofenceInput {
   @override
   List<String> get childrenIds;
   set childrenIds(List<String> value);
-
-  /// Create a copy of GeofenceInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  List<CustomFieldInput> get customFields;
+  set customFields(List<CustomFieldInput> value);
+  @override
+  @JsonKey(ignore: true)
   _$$GeofenceInputImplCopyWith<_$GeofenceInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1104,12 +1100,8 @@ mixin _$GeofencePoint {
   double get latitude => throw _privateConstructorUsedError;
   double get longitude => throw _privateConstructorUsedError;
 
-  /// Serializes this GeofencePoint to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of GeofencePoint
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $GeofencePointCopyWith<GeofencePoint> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1133,8 +1125,6 @@ class _$GeofencePointCopyWithImpl<$Res, $Val extends GeofencePoint>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of GeofencePoint
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1173,8 +1163,6 @@ class __$$GeofencePointImplCopyWithImpl<$Res>
       _$GeofencePointImpl _value, $Res Function(_$GeofencePointImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GeofencePoint
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1224,13 +1212,11 @@ class _$GeofencePointImpl extends _GeofencePoint {
                 other.longitude == longitude));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
-  /// Create a copy of GeofencePoint
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GeofencePointImplCopyWith<_$GeofencePointImpl> get copyWith =>
@@ -1257,11 +1243,8 @@ abstract class _GeofencePoint extends GeofencePoint {
   double get latitude;
   @override
   double get longitude;
-
-  /// Create a copy of GeofencePoint
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GeofencePointImplCopyWith<_$GeofencePointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1277,12 +1260,8 @@ mixin _$GeofencePointInput {
   double get longitude => throw _privateConstructorUsedError;
   set longitude(double value) => throw _privateConstructorUsedError;
 
-  /// Serializes this GeofencePointInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of GeofencePointInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $GeofencePointInputCopyWith<GeofencePointInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1306,8 +1285,6 @@ class _$GeofencePointInputCopyWithImpl<$Res, $Val extends GeofencePointInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of GeofencePointInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1346,8 +1323,6 @@ class __$$GeofencePointInputImplCopyWithImpl<$Res>
       $Res Function(_$GeofencePointInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GeofencePointInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1386,9 +1361,7 @@ class _$GeofencePointInputImpl extends _GeofencePointInput {
     return 'GeofencePointInput(latitude: $latitude, longitude: $longitude)';
   }
 
-  /// Create a copy of GeofencePointInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GeofencePointInputImplCopyWith<_$GeofencePointInputImpl> get copyWith =>
@@ -1418,11 +1391,8 @@ abstract class _GeofencePointInput extends GeofencePointInput {
   @override
   double get longitude;
   set longitude(double value);
-
-  /// Create a copy of GeofencePointInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GeofencePointInputImplCopyWith<_$GeofencePointInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1436,12 +1406,8 @@ mixin _$GeoPoint {
   double? get latitude => throw _privateConstructorUsedError;
   double? get longitude => throw _privateConstructorUsedError;
 
-  /// Serializes this GeoPoint to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of GeoPoint
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $GeoPointCopyWith<GeoPoint> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1464,8 +1430,6 @@ class _$GeoPointCopyWithImpl<$Res, $Val extends GeoPoint>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of GeoPoint
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1504,8 +1468,6 @@ class __$$GeoPointImplCopyWithImpl<$Res>
       _$GeoPointImpl _value, $Res Function(_$GeoPointImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GeoPoint
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1554,13 +1516,11 @@ class _$GeoPointImpl extends _GeoPoint {
                 other.longitude == longitude));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
-  /// Create a copy of GeoPoint
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GeoPointImplCopyWith<_$GeoPointImpl> get copyWith =>
@@ -1586,11 +1546,8 @@ abstract class _GeoPoint extends GeoPoint {
   double? get latitude;
   @override
   double? get longitude;
-
-  /// Create a copy of GeoPoint
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GeoPointImplCopyWith<_$GeoPointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

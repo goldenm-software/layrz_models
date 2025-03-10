@@ -71,12 +71,8 @@ mixin _$LayrzNotification {
   @DurationConverter()
   Duration get duration => throw _privateConstructorUsedError;
 
-  /// Serializes this LayrzNotification to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of LayrzNotification
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $LayrzNotificationCopyWith<LayrzNotification> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -111,8 +107,6 @@ class _$LayrzNotificationCopyWithImpl<$Res, $Val extends LayrzNotification>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LayrzNotification
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -207,8 +201,6 @@ class __$$LayrzNotificationImplCopyWithImpl<$Res>
       $Res Function(_$LayrzNotificationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LayrzNotification
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -410,7 +402,7 @@ class _$LayrzNotificationImpl extends _LayrzNotification {
                 other.duration == duration));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -426,9 +418,7 @@ class _$LayrzNotificationImpl extends _LayrzNotification {
       uri,
       duration);
 
-  /// Create a copy of LayrzNotification
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LayrzNotificationImplCopyWith<_$LayrzNotificationImpl> get copyWith =>
@@ -461,72 +451,70 @@ abstract class _LayrzNotification extends LayrzNotification {
   factory _LayrzNotification.fromJson(Map<String, dynamic> json) =
       _$LayrzNotificationImpl.fromJson;
 
+  @override
+
   /// [title] is the title of the notification.
   ///
   /// If you want to use the Layrz Translation system, please set the [titleTranslate] to enable it.
-  @override
   String get title;
+  @override
 
   /// [titleTranslate] is the key to use the Layrz Translation system for the title.
-  @override
   bool get titleTranslate;
+  @override
 
   /// [titleArgs] is the list of arguments to use with the Layrz Translation system for the title.
   ///
   /// If [titleTranslate] is `false`, this field will be ignored.
-  @override
   Map<String, dynamic> get titleArgs;
+  @override
 
   /// [message] is the body of the notification.
   ///
   /// If you want to use the Layrz Translation system, please set the [messageTranslate] to enable it.
-  @override
   String get message;
+  @override
 
   /// [messageTranslate] is the key to use the Layrz Translation system for the message.
-  @override
   bool get messageTranslate;
+  @override
 
   /// [messageArgs] is the list of arguments to use with the Layrz Translation system for the message.
   ///
   /// If [messageTranslate] is `false`, this field will be ignored.
-  @override
   Map<String, dynamic> get messageArgs;
+  @override
 
   /// [sound] is the sound effect to play when the notification arrives.
-  @override
   @JsonKey(unknownEnumValue: SoundEffect.none)
   SoundEffect get sound;
+  @override
 
   /// [icon] is the icon to display with the notification.
   /// Due to `@Default()` constants requirements, the default value is `null`, but in practice,
   /// it will be `LayrzIcons.solarOutlineBell`.
   ///
   /// You can find the available icons on `https://icons.layrz.com`.
-  @override
   @IconOrNullConverter()
   LayrzIcon? get icon;
+  @override
 
   /// [color] is the color of the notification.
-  @override
   @ColorConverter()
   Color get color;
+  @override
 
   /// [uri] is the URI of the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [sound] is set to `SoundEffect.custom`.
-  @override
   String? get uri;
+  @override
 
   /// [duration] is the duration of the notification.
-  @override
   @DurationConverter()
   Duration get duration;
-
-  /// Create a copy of LayrzNotification
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LayrzNotificationImplCopyWith<_$LayrzNotificationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

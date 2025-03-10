@@ -144,12 +144,8 @@ mixin _$Operation {
   @DurationOrNullConverter()
   Duration? get duration => throw _privateConstructorUsedError;
 
-  /// Serializes this Operation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $OperationCopyWith<Operation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -206,8 +202,6 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -356,8 +350,6 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
     ) as $Val);
   }
 
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TimezoneCopyWith<$Res>? get timezone {
@@ -425,8 +417,6 @@ class __$$OperationImplCopyWithImpl<$Res>
       _$OperationImpl _value, $Res Function(_$OperationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -899,7 +889,7 @@ class _$OperationImpl extends _Operation {
                 other.duration == duration));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -933,9 +923,7 @@ class _$OperationImpl extends _Operation {
         duration
       ]);
 
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$OperationImplCopyWith<_$OperationImpl> get copyWith =>
@@ -989,161 +977,159 @@ abstract class _Operation extends Operation {
   factory _Operation.fromJson(Map<String, dynamic> json) =
       _$OperationImpl.fromJson;
 
-  /// Is the ID of the operation.
   @override
+
+  /// Is the ID of the operation.
   String get id;
+  @override
 
   /// Is the name of the operation.
-  @override
   String get name;
+  @override
 
   /// Is the type of operation.
-  @override
   @JsonKey(unknownEnumValue: OperationType.unknown)
   OperationType get operationType;
+  @override
 
   /// Is the HTTP Request type to perform
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  @override
   @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
   HttpRequestType? get requestType;
+  @override
 
   /// Is the URL to perform the request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  @override
   String? get url;
+  @override
 
   /// Is the headers to send in the HTTP request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  @override
   List<HttpHeader>? get headers;
+  @override
 
   /// Is the payload to send in the submission.
-  @override
   String? get payload;
+  @override
 
   /// Is the language ID of the message. Used to define the default language of the message.
-  @override
   String? get languageId;
+  @override
 
   /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-  @override
   Timezone? get timezone;
+  @override
 
   /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-  @override
   String? get timezoneId;
+  @override
 
   /// Is the reception email to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  @override
   List<String>? get receptionEmails;
+  @override
 
   /// Is the subject of the email
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  @override
   String? get emailSubject;
+  @override
 
   /// Is the color of the inline notification
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.inAppNotification].
-  @override
   @ColorOrNullConverter()
   Color? get color;
+  @override
 
   /// Is the text color of the inline notification
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.inAppNotification].
-  @override
   @ColorOrNullConverter()
   Color? get textColor;
+  @override
 
   /// Is the receiver numbers to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
-  @override
   List<PhoneNumber>? get destinationPhones;
+  @override
 
   /// Is the Notification type to perform
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio]
-  @override
   @JsonKey(unknownEnumValue: NotificationType.unknown)
   NotificationType? get notificationType;
+  @override
 
   /// The [externalAccountId] of the operation. Only the ID
-  @override
   String? get externalAccountId;
+  @override
 
   /// Is the list of granted access of the operation.
-  @override
   List<Access>? get access;
+  @override
 
   /// Is the list of associated triggers (directly or indirectly) of the operation.
-  @override
   List<Trigger>? get triggers;
+  @override
 
   /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  @override
   bool? get useAssetContactsInstead;
+  @override
 
   /// [attachImage] is a flag to attach the image of the submission to the email.
-  @override
   bool? get attachImage;
+  @override
 
   /// The [emailTemplateId] of the operation. Only the ID
-  @override
   String? get emailTemplateId;
+  @override
 
   /// [pushPlatforms] is the list of platforms where the operation should be received.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
-  @override
   @JsonKey(unknownEnumValue: AppPlatform.web)
   List<AppPlatform>? get pushPlatforms;
+  @override
 
   /// [pushTitle] is the title of the push notification.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
-  @override
   String? get pushTitle;
+  @override
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
   @JsonKey(unknownEnumValue: SoundEffect.none)
   SoundEffect get soundEffect;
+  @override
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
   String? get soundEffectUri;
+  @override
 
   /// [icon] is the icon of the notification
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
   @IconOrNullConverter()
   LayrzIcon? get icon;
+  @override
 
   /// [duration] is the duration of the notification
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
   @DurationOrNullConverter()
   Duration? get duration;
-
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$OperationImplCopyWith<_$OperationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1387,12 +1373,8 @@ mixin _$OperationInput {
   @DurationConverter()
   set duration(Duration value) => throw _privateConstructorUsedError;
 
-  /// Serializes this OperationInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $OperationInputCopyWith<OperationInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1445,8 +1427,6 @@ class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1629,8 +1609,6 @@ class __$$OperationInputImplCopyWithImpl<$Res>
       _$OperationInputImpl _value, $Res Function(_$OperationInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1953,9 +1931,7 @@ class _$OperationInputImpl implements _OperationInput {
     return 'OperationInput(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
   }
 
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$OperationInputImplCopyWith<_$OperationInputImpl> get copyWith =>
@@ -2005,33 +1981,34 @@ abstract class _OperationInput implements OperationInput {
   factory _OperationInput.fromJson(Map<String, dynamic> json) =
       _$OperationInputImpl.fromJson;
 
-  /// Is the ID of the operation.
   @override
+
+  /// Is the ID of the operation.
   String? get id;
 
   /// Is the ID of the operation.
   set id(String? value);
+  @override
 
   /// Is the name of the operation.
-  @override
   String get name;
 
   /// Is the name of the operation.
   set name(String value);
+  @override
 
   /// Is the type of operation.
-  @override
   @JsonKey(unknownEnumValue: OperationType.unknown)
   OperationType get operationType;
 
   /// Is the type of operation.
   @JsonKey(unknownEnumValue: OperationType.unknown)
   set operationType(OperationType value);
+  @override
 
   /// Is the HTTP Request type to perform
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  @override
   @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
   HttpRequestType? get requestType;
 
@@ -2040,76 +2017,76 @@ abstract class _OperationInput implements OperationInput {
   /// - [OperationType.webhook].
   @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
   set requestType(HttpRequestType? value);
+  @override
 
   /// Is the URL to perform the request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  @override
   String? get url;
 
   /// Is the URL to perform the request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
   set url(String? value);
+  @override
 
   /// Is the headers to send in the HTTP request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  @override
   List<HttpHeaderInput> get headers;
 
   /// Is the headers to send in the HTTP request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
   set headers(List<HttpHeaderInput> value);
+  @override
 
   /// Is the payload to send in the submission.
-  @override
   String? get payload;
 
   /// Is the payload to send in the submission.
   set payload(String? value);
+  @override
 
   /// Is the language ID of the message. Used to define the default language of the message.
-  @override
   String? get languageId;
 
   /// Is the language ID of the message. Used to define the default language of the message.
   set languageId(String? value);
+  @override
 
   /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-  @override
   String? get timezoneId;
 
   /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
   set timezoneId(String? value);
+  @override
 
   /// Is the reception email to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  @override
   List<String> get receptionEmails;
 
   /// Is the reception email to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
   set receptionEmails(List<String> value);
+  @override
 
   /// Is the subject of the email
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  @override
   String get emailSubject;
 
   /// Is the subject of the email
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
   set emailSubject(String value);
+  @override
 
   /// Is the color of the inline notification
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.inAppNotification].
-  @override
   @ColorOrNullConverter()
   Color? get color;
 
@@ -2118,11 +2095,11 @@ abstract class _OperationInput implements OperationInput {
   /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
   set color(Color? value);
+  @override
 
   /// Is the text color of the inline notification
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.inAppNotification].
-  @override
   @ColorOrNullConverter()
   Color? get textColor;
 
@@ -2131,22 +2108,22 @@ abstract class _OperationInput implements OperationInput {
   /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
   set textColor(Color? value);
+  @override
 
   /// Is the receiver numbers to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
-  @override
   List<PhoneNumberInput> get destinationPhones;
 
   /// Is the receiver numbers to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
   set destinationPhones(List<PhoneNumberInput> value);
+  @override
 
   /// Is the Notification type to perform
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio]
-  @override
   @JsonKey(unknownEnumValue: NotificationType.unknown)
   NotificationType? get notificationType;
 
@@ -2155,39 +2132,39 @@ abstract class _OperationInput implements OperationInput {
   /// - [OperationType.twilio]
   @JsonKey(unknownEnumValue: NotificationType.unknown)
   set notificationType(NotificationType? value);
+  @override
 
   /// The [externalAccountId] of the operation. Only the ID
-  @override
   String? get externalAccountId;
 
   /// The [externalAccountId] of the operation. Only the ID
   set externalAccountId(String? value);
+  @override
 
   /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  @override
   bool get useAssetContactsInstead;
 
   /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
   set useAssetContactsInstead(bool value);
+  @override
 
   /// [attachImage] is a flag to attach the image of the submission to the email.
-  @override
   bool get attachImage;
 
   /// [attachImage] is a flag to attach the image of the submission to the email.
   set attachImage(bool value);
+  @override
 
   /// The [emailTemplateId] of the operation. Only the ID
-  @override
   String? get emailTemplateId;
 
   /// The [emailTemplateId] of the operation. Only the ID
   set emailTemplateId(String? value);
+  @override
 
   /// [pushPlatforms] is the list of platforms where the operation should be received.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
-  @override
   @JsonKey(unknownEnumValue: AppPlatform.web)
   List<AppPlatform>? get pushPlatforms;
 
@@ -2196,22 +2173,22 @@ abstract class _OperationInput implements OperationInput {
   /// - [OperationType.bhsPush]
   @JsonKey(unknownEnumValue: AppPlatform.web)
   set pushPlatforms(List<AppPlatform>? value);
+  @override
 
   /// [pushTitle] is the title of the push notification.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
-  @override
   String? get pushTitle;
 
   /// [pushTitle] is the title of the push notification.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
   set pushTitle(String? value);
+  @override
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
   @JsonKey(unknownEnumValue: SoundEffect.none)
   SoundEffect get soundEffect;
 
@@ -2220,22 +2197,22 @@ abstract class _OperationInput implements OperationInput {
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @JsonKey(unknownEnumValue: SoundEffect.none)
   set soundEffect(SoundEffect value);
+  @override
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
   String? get soundEffectUri;
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   set soundEffectUri(String? value);
+  @override
 
   /// [icon] is the icon of the notification
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
   @IconOrNullConverter()
   LayrzIcon? get icon;
 
@@ -2244,11 +2221,11 @@ abstract class _OperationInput implements OperationInput {
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @IconOrNullConverter()
   set icon(LayrzIcon? value);
+  @override
 
   /// [duration] is the duration of the notification
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
   @DurationConverter()
   Duration get duration;
 
@@ -2257,11 +2234,8 @@ abstract class _OperationInput implements OperationInput {
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @DurationConverter()
   set duration(Duration value);
-
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$OperationInputImplCopyWith<_$OperationInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2275,12 +2249,8 @@ mixin _$HttpHeader {
   String get name => throw _privateConstructorUsedError;
   String get value => throw _privateConstructorUsedError;
 
-  /// Serializes this HttpHeader to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $HttpHeaderCopyWith<HttpHeader> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2304,8 +2274,6 @@ class _$HttpHeaderCopyWithImpl<$Res, $Val extends HttpHeader>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2344,8 +2312,6 @@ class __$$HttpHeaderImplCopyWithImpl<$Res>
       _$HttpHeaderImpl _value, $Res Function(_$HttpHeaderImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2392,13 +2358,11 @@ class _$HttpHeaderImpl extends _HttpHeader {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name, value);
 
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$HttpHeaderImplCopyWith<_$HttpHeaderImpl> get copyWith =>
@@ -2425,11 +2389,8 @@ abstract class _HttpHeader extends HttpHeader {
   String get name;
   @override
   String get value;
-
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$HttpHeaderImplCopyWith<_$HttpHeaderImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2445,12 +2406,8 @@ mixin _$HttpHeaderInput {
   String get value => throw _privateConstructorUsedError;
   set value(String value) => throw _privateConstructorUsedError;
 
-  /// Serializes this HttpHeaderInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of HttpHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $HttpHeaderInputCopyWith<HttpHeaderInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2474,8 +2431,6 @@ class _$HttpHeaderInputCopyWithImpl<$Res, $Val extends HttpHeaderInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of HttpHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2514,8 +2469,6 @@ class __$$HttpHeaderInputImplCopyWithImpl<$Res>
       _$HttpHeaderInputImpl _value, $Res Function(_$HttpHeaderInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of HttpHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2555,9 +2508,7 @@ class _$HttpHeaderInputImpl extends _HttpHeaderInput {
     return 'HttpHeaderInput(name: $name, value: $value)';
   }
 
-  /// Create a copy of HttpHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$HttpHeaderInputImplCopyWith<_$HttpHeaderInputImpl> get copyWith =>
@@ -2585,11 +2536,8 @@ abstract class _HttpHeaderInput extends HttpHeaderInput {
   @override
   String get value;
   set value(String value);
-
-  /// Create a copy of HttpHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$HttpHeaderInputImplCopyWith<_$HttpHeaderInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

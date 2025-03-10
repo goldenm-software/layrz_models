@@ -105,6 +105,10 @@ _$GeofenceInputImpl _$$GeofenceInputImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
+      customFields: (json['customFields'] as List<dynamic>?)
+              ?.map((e) => CustomFieldInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$GeofenceInputImplToJson(_$GeofenceInputImpl instance) =>
@@ -118,6 +122,7 @@ Map<String, dynamic> _$$GeofenceInputImplToJson(_$GeofenceInputImpl instance) =>
       'path': instance.path.map((e) => e.toJson()).toList(),
       'category': instance.category.toJson(),
       'childrenIds': instance.childrenIds,
+      'customFields': instance.customFields.map((e) => e.toJson()).toList(),
     };
 
 _$GeofencePointImpl _$$GeofencePointImplFromJson(Map<String, dynamic> json) =>
