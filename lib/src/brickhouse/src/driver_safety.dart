@@ -33,39 +33,17 @@ class BHSDriverSafetyDrivenScore with _$BHSDriverSafetyDrivenScore {
   factory BHSDriverSafetyDrivenScore.fromJson(Map<String, dynamic> json) => _$BHSDriverSafetyDrivenScoreFromJson(json);
 }
 
-///startAt DateTime
-/// Start time of the event.
-///
-///endAt DateTime
-/// End time of the event.
-///
-///
-///maxSpeed FLoat
-/// Max speed during the event.
-@freezed
-class BHSDriverSafetySpeedingEvent with _$BHSDriverSafetySpeedingEvent {
-  const factory BHSDriverSafetySpeedingEvent({
-    required double maxSpeed,
-    @TimestampConverter() required DateTime startAt,
-    @TimestampConverter() required DateTime endAt,
-  }) = _BHSDriverSafetySpeedingEvent;
-
-  /// from json
-  factory BHSDriverSafetySpeedingEvent.fromJson(Map<String, dynamic> json) =>
-      _$BHSDriverSafetySpeedingEventFromJson(json);
-}
-
 /// status Statuses
 /// Response status, please check the documentation for more details about each status code
 ///
-/// messages [BHSDriverSafetySpeedingEvent]
+/// messages [TriggerActivation]
 /// List of events.
 ///
 @freezed
 class BHSDriverSafetySpeedingEvents with _$BHSDriverSafetySpeedingEvents {
   const factory BHSDriverSafetySpeedingEvents({
     String? status,
-    List<BHSDriverSafetySpeedingEvent>? messages,
+    List<TriggerActivation>? messages,
   }) = _BHSDriverSafetySpeedingEvents;
 
   /// from json

@@ -236,29 +236,13 @@ Map<String, dynamic> _$$BHSDriverSafetyDrivenScoreImplToJson(
       'drivenSeconds': instance.drivenSeconds,
     };
 
-_$BHSDriverSafetySpeedingEventImpl _$$BHSDriverSafetySpeedingEventImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BHSDriverSafetySpeedingEventImpl(
-      maxSpeed: (json['maxSpeed'] as num).toDouble(),
-      startAt: const TimestampConverter().fromJson(json['startAt'] as num),
-      endAt: const TimestampConverter().fromJson(json['endAt'] as num),
-    );
-
-Map<String, dynamic> _$$BHSDriverSafetySpeedingEventImplToJson(
-        _$BHSDriverSafetySpeedingEventImpl instance) =>
-    <String, dynamic>{
-      'maxSpeed': instance.maxSpeed,
-      'startAt': const TimestampConverter().toJson(instance.startAt),
-      'endAt': const TimestampConverter().toJson(instance.endAt),
-    };
-
 _$BHSDriverSafetySpeedingEventsImpl
     _$$BHSDriverSafetySpeedingEventsImplFromJson(Map<String, dynamic> json) =>
         _$BHSDriverSafetySpeedingEventsImpl(
           status: json['status'] as String?,
           messages: (json['messages'] as List<dynamic>?)
-              ?.map((e) => BHSDriverSafetySpeedingEvent.fromJson(
-                  e as Map<String, dynamic>))
+              ?.map(
+                  (e) => TriggerActivation.fromJson(e as Map<String, dynamic>))
               .toList(),
         );
 

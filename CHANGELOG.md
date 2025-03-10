@@ -1,11 +1,21 @@
 # Changelog
 
+## 3.3.49
+
+- Added `customFields` in `GeofenceInput` model
+
+## 3.3.48
+
+- Deleted the `BHSDriverSafetySpeedingEvent` of brickhouse driver safety
+- Modify the messages on `BHSDriverSafetySpeedingEvents` to work with `TriggerActivation`
+
 ## 3.3.47
 
 - Created `AccessibilityInput`.
 - Removed `colorblindStrength` and `ColorblindMode` to `Employee` and `UserInput`
 
 ## 3.3.46
+
 - Added `isDisabled` to `BrickhouseAlert` model
 
 ## 3.3.45
@@ -22,13 +32,17 @@
 - Added `colorblindMode` and `colorblindStrength` to `User` and `Employee` model
 
 ## 3.3.42
+
 - Added `BrickhouseAlertType.unplugged` to `BrickhouseAlertType` enum
 
 ## 3.3.41
+
 - Fixed enum resolver for `GeofenceCategory` enum
 
 ## 3.3.40
+
 - Add `TenvioBulkInput` model
+
 ## 3.3.39
 
 - Added `startPosition` to `BHSDriverSafetyDrivingEvent` model
@@ -55,10 +69,12 @@
 - Removed BLE parser things.
 
 ## 3.3.33
+
 - Added `BHSDriverSafetySpeedingEvents` for Brickhouse driver safety
 - Added `BHSDriverSafetyDrivingEvent` For Brickhouse driver safety
 
 ## 3.3.32
+
 - Added `AtsExecuteLoadInput` to execute load
 
 ## 3.3.31
@@ -103,6 +119,7 @@
 - Added new `visionCaptureThreshold` in `Device` model
 
 ## 3.3.22
+
 - Document `AtsPurchaseOrderCategoriesEntity`
 - `height` and `initialHeight` was added in `AtsEntry`
 

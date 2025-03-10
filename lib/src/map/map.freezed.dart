@@ -88,12 +88,8 @@ mixin _$MapLayer {
   /// [appsIds] is the list of [App]s that are associated with the layer.
   List<String> get appsIds => throw _privateConstructorUsedError;
 
-  /// Serializes this MapLayer to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MapLayer
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MapLayerCopyWith<MapLayer> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -136,8 +132,6 @@ class _$MapLayerCopyWithImpl<$Res, $Val extends MapLayer>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MapLayer
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -276,8 +270,6 @@ class __$$MapLayerImplCopyWithImpl<$Res>
       _$MapLayerImpl _value, $Res Function(_$MapLayerImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MapLayer
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -582,7 +574,7 @@ class _$MapLayerImpl implements _MapLayer {
             const DeepCollectionEquality().equals(other._appsIds, _appsIds));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -605,9 +597,7 @@ class _$MapLayerImpl implements _MapLayer {
       attributionHeight,
       const DeepCollectionEquality().hash(_appsIds));
 
-  /// Create a copy of MapLayer
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MapLayerImplCopyWith<_$MapLayerImpl> get copyWith =>
@@ -649,96 +639,94 @@ abstract class _MapLayer implements MapLayer {
   factory _MapLayer.fromJson(Map<String, dynamic> json) =
       _$MapLayerImpl.fromJson;
 
-  /// [id] is the unique identifier for the layer.
   @override
+
+  /// [id] is the unique identifier for the layer.
   String get id;
+  @override
 
   /// [name] is the name of the layer.
-  @override
   String get name;
+  @override
 
   /// [source] is the source of the layer.
-  @override
   @JsonKey(unknownEnumValue: MapSource.custom)
   MapSource get source;
+  @override
 
   /// [rasterServerLight] is the raster server for light mode and default.
   /// Only used when the [source] is [MapSource.custom].
-  @override
   String? get rasterServerLight;
+  @override
 
   /// [rasterServerDark] is the raster server for dark mode.
   /// Only used when the [source] is [MapSource.custom].
-  @override
   String? get rasterServerDark;
+  @override
 
   /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.google].
-  @override
   String? get googleToken;
+  @override
 
   /// [googleLayers] is the list of enabled layers for the Google Maps.
   /// Only used when the [source] is [MapSource.google].
-  @override
   @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
   List<GoogleMapLayer>? get googleLayers;
+  @override
 
   /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
   /// Only used when the [source] is [MapSource.mapbox].
-  @override
   String? get mapboxToken;
+  @override
 
   /// [mapboxStyle] is the Mapbox style for the layer.
   /// Only used when the [source] is [MapSource.mapbox].
-  @override
   @JsonKey(unknownEnumValue: MapboxStyle.navigation)
   List<MapboxStyle>? get mapboxLayers;
+  @override
 
   /// [mapboxCustomUsername] is the Mapbox custom username.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  @override
   String? get mapboxCustomUsername;
+  @override
 
   /// [mapboxCustomStyleId] is the Mapbox custom style id.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  @override
   String? get mapboxCustomStyleId;
+  @override
 
   /// [hereToken] is the HERE token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.here].
-  @override
   String? get hereToken;
+  @override
 
   /// [hereLayers] is the list of enabled layers for the HERE Maps.
   /// Only used when the [source] is [MapSource.here].
-  @override
   @JsonKey(unknownEnumValue: HereStyle.lite)
   List<HereStyle>? get hereLayers;
+  @override
 
   /// [attributionUrl] is the URI for the attribution of the layer.
-  @override
   String get attributionUrl;
+  @override
 
   /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
-  @override
   String? get attributionUrlDark;
+  @override
 
   /// [attributionWidth] is the width of the attribution of the layer.
-  @override
   double get attributionWidth;
+  @override
 
   /// [attributionHeight] is the height of the attribution of the layer.
-  @override
   double get attributionHeight;
+  @override
 
   /// [appsIds] is the list of [App]s that are associated with the layer.
-  @override
   List<String> get appsIds;
-
-  /// Create a copy of MapLayer
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MapLayerImplCopyWith<_$MapLayerImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -887,12 +875,8 @@ mixin _$MapLayerInput {
   /// [appsIds] is the list of [App]s that are associated with the layer.
   set appsIds(List<String> value) => throw _privateConstructorUsedError;
 
-  /// Serializes this MapLayerInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MapLayerInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MapLayerInputCopyWith<MapLayerInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -936,8 +920,6 @@ class _$MapLayerInputCopyWithImpl<$Res, $Val extends MapLayerInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MapLayerInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1076,8 +1058,6 @@ class __$$MapLayerInputImplCopyWithImpl<$Res>
       _$MapLayerInputImpl _value, $Res Function(_$MapLayerInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MapLayerInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1301,9 +1281,7 @@ class _$MapLayerInputImpl implements _MapLayerInput {
     return 'MapLayerInput(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight, appsIds: $appsIds)';
   }
 
-  /// Create a copy of MapLayerInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MapLayerInputImplCopyWith<_$MapLayerInputImpl> get copyWith =>
@@ -1343,59 +1321,60 @@ abstract class _MapLayerInput implements MapLayerInput {
   factory _MapLayerInput.fromJson(Map<String, dynamic> json) =
       _$MapLayerInputImpl.fromJson;
 
-  /// [id] is the unique identifier for the layer.
   @override
+
+  /// [id] is the unique identifier for the layer.
   String? get id;
 
   /// [id] is the unique identifier for the layer.
   set id(String? value);
+  @override
 
   /// [name] is the name of the layer.
-  @override
   String get name;
 
   /// [name] is the name of the layer.
   set name(String value);
+  @override
 
   /// [source] is the source of the layer.
-  @override
   @JsonKey(unknownEnumValue: MapSource.custom)
   MapSource get source;
 
   /// [source] is the source of the layer.
   @JsonKey(unknownEnumValue: MapSource.custom)
   set source(MapSource value);
+  @override
 
   /// [rasterServerLight] is the raster server for light mode and default.
   /// Only used when the [source] is [MapSource.custom].
-  @override
   String? get rasterServerLight;
 
   /// [rasterServerLight] is the raster server for light mode and default.
   /// Only used when the [source] is [MapSource.custom].
   set rasterServerLight(String? value);
+  @override
 
   /// [rasterServerDark] is the raster server for dark mode.
   /// Only used when the [source] is [MapSource.custom].
-  @override
   String? get rasterServerDark;
 
   /// [rasterServerDark] is the raster server for dark mode.
   /// Only used when the [source] is [MapSource.custom].
   set rasterServerDark(String? value);
+  @override
 
   /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.google].
-  @override
   String? get googleToken;
 
   /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.google].
   set googleToken(String? value);
+  @override
 
   /// [googleLayers] is the list of enabled layers for the Google Maps.
   /// Only used when the [source] is [MapSource.google].
-  @override
   @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
   List<GoogleMapLayer>? get googleLayers;
 
@@ -1403,19 +1382,19 @@ abstract class _MapLayerInput implements MapLayerInput {
   /// Only used when the [source] is [MapSource.google].
   @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
   set googleLayers(List<GoogleMapLayer>? value);
+  @override
 
   /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
   /// Only used when the [source] is [MapSource.mapbox].
-  @override
   String? get mapboxToken;
 
   /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
   /// Only used when the [source] is [MapSource.mapbox].
   set mapboxToken(String? value);
+  @override
 
   /// [mapboxStyle] is the Mapbox style for the layer.
   /// Only used when the [source] is [MapSource.mapbox].
-  @override
   @JsonKey(unknownEnumValue: MapboxStyle.navigation)
   List<MapboxStyle>? get mapboxLayers;
 
@@ -1423,37 +1402,37 @@ abstract class _MapLayerInput implements MapLayerInput {
   /// Only used when the [source] is [MapSource.mapbox].
   @JsonKey(unknownEnumValue: MapboxStyle.navigation)
   set mapboxLayers(List<MapboxStyle>? value);
+  @override
 
   /// [mapboxCustomUsername] is the Mapbox custom username.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  @override
   String? get mapboxCustomUsername;
 
   /// [mapboxCustomUsername] is the Mapbox custom username.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
   set mapboxCustomUsername(String? value);
+  @override
 
   /// [mapboxCustomStyleId] is the Mapbox custom style id.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  @override
   String? get mapboxCustomStyleId;
 
   /// [mapboxCustomStyleId] is the Mapbox custom style id.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
   set mapboxCustomStyleId(String? value);
+  @override
 
   /// [hereToken] is the HERE token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.here].
-  @override
   String? get hereToken;
 
   /// [hereToken] is the HERE token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.here].
   set hereToken(String? value);
+  @override
 
   /// [hereLayers] is the list of enabled layers for the HERE Maps.
   /// Only used when the [source] is [MapSource.here].
-  @override
   @JsonKey(unknownEnumValue: HereStyle.lite)
   List<HereStyle>? get hereLayers;
 
@@ -1461,46 +1440,43 @@ abstract class _MapLayerInput implements MapLayerInput {
   /// Only used when the [source] is [MapSource.here].
   @JsonKey(unknownEnumValue: HereStyle.lite)
   set hereLayers(List<HereStyle>? value);
+  @override
 
   /// [attributionUrl] is the URI for the attribution of the layer.
-  @override
   String get attributionUrl;
 
   /// [attributionUrl] is the URI for the attribution of the layer.
   set attributionUrl(String value);
+  @override
 
   /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
-  @override
   String? get attributionUrlDark;
 
   /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
   set attributionUrlDark(String? value);
+  @override
 
   /// [attributionWidth] is the width of the attribution of the layer.
-  @override
   double get attributionWidth;
 
   /// [attributionWidth] is the width of the attribution of the layer.
   set attributionWidth(double value);
+  @override
 
   /// [attributionHeight] is the height of the attribution of the layer.
-  @override
   double get attributionHeight;
 
   /// [attributionHeight] is the height of the attribution of the layer.
   set attributionHeight(double value);
+  @override
 
   /// [appsIds] is the list of [App]s that are associated with the layer.
-  @override
   List<String> get appsIds;
 
   /// [appsIds] is the list of [App]s that are associated with the layer.
   set appsIds(List<String> value);
-
-  /// Create a copy of MapLayerInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MapLayerInputImplCopyWith<_$MapLayerInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

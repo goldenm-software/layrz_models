@@ -75,6 +75,7 @@ class GeofenceInput with _$GeofenceInput {
     @Default([]) List<GeofencePointInput> path,
     @JsonKey(unknownEnumValue: GeofenceCategory.none) @Default(GeofenceCategory.none) GeofenceCategory category,
     @Default([]) List<String> childrenIds,
+    @Default([]) List<CustomFieldInput> customFields,
   }) = _GeofenceInput;
 
   factory GeofenceInput.fromJson(Map<String, dynamic> json) => _$GeofenceInputFromJson(json);
