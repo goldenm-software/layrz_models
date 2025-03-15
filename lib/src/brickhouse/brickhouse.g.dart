@@ -405,8 +405,8 @@ _$BrickHouseWorkspaceInputImpl _$$BrickHouseWorkspaceInputImplFromJson(
       id: json['id'] as String?,
       appId: json['appId'] as String,
       name: json['name'] as String,
-      metricSystem: const MetricSystemConverter()
-          .fromJson(json['metricSystem'] as String),
+      metricSystem: $enumDecode(_$MetricSystemEnumMap, json['metricSystem'],
+          unknownValue: MetricSystem.imperial),
       typeApp: $enumDecodeNullable(
               _$AppInternalIdentifierEnumMap, json['typeApp'],
               unknownValue: AppInternalIdentifier.unknown) ??
@@ -424,12 +424,16 @@ Map<String, dynamic> _$$BrickHouseWorkspaceInputImplToJson(
       'id': instance.id,
       'appId': instance.appId,
       'name': instance.name,
-      'metricSystem':
-          const MetricSystemConverter().toJson(instance.metricSystem),
+      'metricSystem': instance.metricSystem.toJson(),
       'typeApp': instance.typeApp?.toJson(),
       'timezoneId': instance.timezoneId,
       'assetsIds': instance.assetsIds,
     };
+
+const _$MetricSystemEnumMap = {
+  MetricSystem.metric: 'METRIC',
+  MetricSystem.imperial: 'IMPERIAL',
+};
 
 const _$AppInternalIdentifierEnumMap = {
   AppInternalIdentifier.admin: 'ADMIN',

@@ -6,7 +6,7 @@ class BrickHouseWorkspaceInput with _$BrickHouseWorkspaceInput {
     String? id,
     required String appId,
     required String name,
-    @MetricSystemConverter() required MetricSystem metricSystem,
+    @JsonKey(unknownEnumValue: MetricSystem.imperial) required MetricSystem metricSystem,
 
     /// Is the type of the App
     @Default(AppInternalIdentifier.brickhouseTracking)

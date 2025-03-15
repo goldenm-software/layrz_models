@@ -39,8 +39,12 @@ mixin _$Reference {
   /// Is the list of granted access
   List<Access>? get access => throw _privateConstructorUsedError;
 
+  /// Serializes this Reference to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Reference
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ReferenceCopyWith<Reference> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -70,6 +74,8 @@ class _$ReferenceCopyWithImpl<$Res, $Val extends Reference>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Reference
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -135,6 +141,8 @@ class __$$ReferenceImplCopyWithImpl<$Res>
       _$ReferenceImpl _value, $Res Function(_$ReferenceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Reference
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -254,7 +262,7 @@ class _$ReferenceImpl implements _Reference {
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -265,7 +273,9 @@ class _$ReferenceImpl implements _Reference {
       qrCode,
       const DeepCollectionEquality().hash(_access));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Reference
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReferenceImplCopyWith<_$ReferenceImpl> get copyWith =>
@@ -292,33 +302,35 @@ abstract class _Reference implements Reference {
   factory _Reference.fromJson(Map<String, dynamic> json) =
       _$ReferenceImpl.fromJson;
 
-  @override
-
   /// Is the ID.
-  String get id;
   @override
+  String get id;
 
   /// Is the name.
-  String get name;
   @override
+  String get name;
 
   /// Is the category.
+  @override
   @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
   ReferenceCategory get category;
-  @override
 
   /// Is a list of custom fields.
-  List<CustomField>? get customFields;
   @override
+  List<CustomField>? get customFields;
 
   /// Is the QR code URI.
-  String? get qrCode;
   @override
+  String? get qrCode;
 
   /// Is the list of granted access
-  List<Access>? get access;
   @override
-  @JsonKey(ignore: true)
+  List<Access>? get access;
+
+  /// Create a copy of Reference
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReferenceImplCopyWith<_$ReferenceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -356,8 +368,12 @@ mixin _$ReferenceInput {
   set customFields(List<CustomFieldInput> value) =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this ReferenceInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ReferenceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ReferenceInputCopyWith<ReferenceInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -386,6 +402,8 @@ class _$ReferenceInputCopyWithImpl<$Res, $Val extends ReferenceInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ReferenceInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -439,6 +457,8 @@ class __$$ReferenceInputImplCopyWithImpl<$Res>
       _$ReferenceInputImpl _value, $Res Function(_$ReferenceInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ReferenceInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -506,7 +526,9 @@ class _$ReferenceInputImpl extends _ReferenceInput {
     return 'ReferenceInput(id: $id, name: $name, category: $category, customFields: $customFields)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ReferenceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ReferenceInputImplCopyWith<_$ReferenceInputImpl> get copyWith =>
@@ -533,38 +555,40 @@ abstract class _ReferenceInput extends ReferenceInput {
   factory _ReferenceInput.fromJson(Map<String, dynamic> json) =
       _$ReferenceInputImpl.fromJson;
 
-  @override
-
   /// Is the ID.
+  @override
   String? get id;
 
   /// Is the ID.
   set id(String? value);
-  @override
 
   /// Is the name.
+  @override
   String get name;
 
   /// Is the name.
   set name(String value);
-  @override
 
   /// Is the category.
+  @override
   @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
   ReferenceCategory get category;
 
   /// Is the category.
   @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
   set category(ReferenceCategory value);
-  @override
 
   /// Is a list of custom fields.
+  @override
   List<CustomFieldInput> get customFields;
 
   /// Is a list of custom fields.
   set customFields(List<CustomFieldInput> value);
+
+  /// Create a copy of ReferenceInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ReferenceInputImplCopyWith<_$ReferenceInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
