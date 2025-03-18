@@ -3301,3 +3301,409 @@ abstract class _CommandDefinitionInput implements CommandDefinitionInput {
   _$$CommandDefinitionInputImplCopyWith<_$CommandDefinitionInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+AssetCommand _$AssetCommandFromJson(Map<String, dynamic> json) {
+  return _AssetCommand.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AssetCommand {
+  /// [id] is the id of the command.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the command.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [possibleDevices] is the list of possible devices for the command.
+  List<AssetCommandPossibleDevice> get possibleDevices =>
+      throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AssetCommandCopyWith<AssetCommand> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AssetCommandCopyWith<$Res> {
+  factory $AssetCommandCopyWith(
+          AssetCommand value, $Res Function(AssetCommand) then) =
+      _$AssetCommandCopyWithImpl<$Res, AssetCommand>;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      List<AssetCommandPossibleDevice> possibleDevices});
+}
+
+/// @nodoc
+class _$AssetCommandCopyWithImpl<$Res, $Val extends AssetCommand>
+    implements $AssetCommandCopyWith<$Res> {
+  _$AssetCommandCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? possibleDevices = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      possibleDevices: null == possibleDevices
+          ? _value.possibleDevices
+          : possibleDevices // ignore: cast_nullable_to_non_nullable
+              as List<AssetCommandPossibleDevice>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AssetCommandImplCopyWith<$Res>
+    implements $AssetCommandCopyWith<$Res> {
+  factory _$$AssetCommandImplCopyWith(
+          _$AssetCommandImpl value, $Res Function(_$AssetCommandImpl) then) =
+      __$$AssetCommandImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      List<AssetCommandPossibleDevice> possibleDevices});
+}
+
+/// @nodoc
+class __$$AssetCommandImplCopyWithImpl<$Res>
+    extends _$AssetCommandCopyWithImpl<$Res, _$AssetCommandImpl>
+    implements _$$AssetCommandImplCopyWith<$Res> {
+  __$$AssetCommandImplCopyWithImpl(
+      _$AssetCommandImpl _value, $Res Function(_$AssetCommandImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? possibleDevices = null,
+  }) {
+    return _then(_$AssetCommandImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      possibleDevices: null == possibleDevices
+          ? _value._possibleDevices
+          : possibleDevices // ignore: cast_nullable_to_non_nullable
+              as List<AssetCommandPossibleDevice>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AssetCommandImpl implements _AssetCommand {
+  const _$AssetCommandImpl(
+      {required this.id,
+      required this.name,
+      final List<AssetCommandPossibleDevice> possibleDevices = const []})
+      : _possibleDevices = possibleDevices;
+
+  factory _$AssetCommandImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AssetCommandImplFromJson(json);
+
+  /// [id] is the id of the command.
+  @override
+  final String id;
+
+  /// [name] is the name of the command.
+  @override
+  final String name;
+
+  /// [possibleDevices] is the list of possible devices for the command.
+  final List<AssetCommandPossibleDevice> _possibleDevices;
+
+  /// [possibleDevices] is the list of possible devices for the command.
+  @override
+  @JsonKey()
+  List<AssetCommandPossibleDevice> get possibleDevices {
+    if (_possibleDevices is EqualUnmodifiableListView) return _possibleDevices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_possibleDevices);
+  }
+
+  @override
+  String toString() {
+    return 'AssetCommand(id: $id, name: $name, possibleDevices: $possibleDevices)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AssetCommandImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality()
+                .equals(other._possibleDevices, _possibleDevices));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name,
+      const DeepCollectionEquality().hash(_possibleDevices));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AssetCommandImplCopyWith<_$AssetCommandImpl> get copyWith =>
+      __$$AssetCommandImplCopyWithImpl<_$AssetCommandImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AssetCommandImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AssetCommand implements AssetCommand {
+  const factory _AssetCommand(
+          {required final String id,
+          required final String name,
+          final List<AssetCommandPossibleDevice> possibleDevices}) =
+      _$AssetCommandImpl;
+
+  factory _AssetCommand.fromJson(Map<String, dynamic> json) =
+      _$AssetCommandImpl.fromJson;
+
+  @override
+
+  /// [id] is the id of the command.
+  String get id;
+  @override
+
+  /// [name] is the name of the command.
+  String get name;
+  @override
+
+  /// [possibleDevices] is the list of possible devices for the command.
+  List<AssetCommandPossibleDevice> get possibleDevices;
+  @override
+  @JsonKey(ignore: true)
+  _$$AssetCommandImplCopyWith<_$AssetCommandImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+AssetCommandPossibleDevice _$AssetCommandPossibleDeviceFromJson(
+    Map<String, dynamic> json) {
+  return _AssetCommandPossibleDevice.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AssetCommandPossibleDevice {
+  /// [id] is the id of the device.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the device.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [ident] is the ident of the device.
+  String get ident => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AssetCommandPossibleDeviceCopyWith<AssetCommandPossibleDevice>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AssetCommandPossibleDeviceCopyWith<$Res> {
+  factory $AssetCommandPossibleDeviceCopyWith(AssetCommandPossibleDevice value,
+          $Res Function(AssetCommandPossibleDevice) then) =
+      _$AssetCommandPossibleDeviceCopyWithImpl<$Res,
+          AssetCommandPossibleDevice>;
+  @useResult
+  $Res call({String id, String name, String ident});
+}
+
+/// @nodoc
+class _$AssetCommandPossibleDeviceCopyWithImpl<$Res,
+        $Val extends AssetCommandPossibleDevice>
+    implements $AssetCommandPossibleDeviceCopyWith<$Res> {
+  _$AssetCommandPossibleDeviceCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? ident = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      ident: null == ident
+          ? _value.ident
+          : ident // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AssetCommandPossibleDeviceImplCopyWith<$Res>
+    implements $AssetCommandPossibleDeviceCopyWith<$Res> {
+  factory _$$AssetCommandPossibleDeviceImplCopyWith(
+          _$AssetCommandPossibleDeviceImpl value,
+          $Res Function(_$AssetCommandPossibleDeviceImpl) then) =
+      __$$AssetCommandPossibleDeviceImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String id, String name, String ident});
+}
+
+/// @nodoc
+class __$$AssetCommandPossibleDeviceImplCopyWithImpl<$Res>
+    extends _$AssetCommandPossibleDeviceCopyWithImpl<$Res,
+        _$AssetCommandPossibleDeviceImpl>
+    implements _$$AssetCommandPossibleDeviceImplCopyWith<$Res> {
+  __$$AssetCommandPossibleDeviceImplCopyWithImpl(
+      _$AssetCommandPossibleDeviceImpl _value,
+      $Res Function(_$AssetCommandPossibleDeviceImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? ident = null,
+  }) {
+    return _then(_$AssetCommandPossibleDeviceImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      ident: null == ident
+          ? _value.ident
+          : ident // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AssetCommandPossibleDeviceImpl implements _AssetCommandPossibleDevice {
+  const _$AssetCommandPossibleDeviceImpl(
+      {required this.id, required this.name, required this.ident});
+
+  factory _$AssetCommandPossibleDeviceImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$AssetCommandPossibleDeviceImplFromJson(json);
+
+  /// [id] is the id of the device.
+  @override
+  final String id;
+
+  /// [name] is the name of the device.
+  @override
+  final String name;
+
+  /// [ident] is the ident of the device.
+  @override
+  final String ident;
+
+  @override
+  String toString() {
+    return 'AssetCommandPossibleDevice(id: $id, name: $name, ident: $ident)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AssetCommandPossibleDeviceImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.ident, ident) || other.ident == ident));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, ident);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AssetCommandPossibleDeviceImplCopyWith<_$AssetCommandPossibleDeviceImpl>
+      get copyWith => __$$AssetCommandPossibleDeviceImplCopyWithImpl<
+          _$AssetCommandPossibleDeviceImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AssetCommandPossibleDeviceImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AssetCommandPossibleDevice
+    implements AssetCommandPossibleDevice {
+  const factory _AssetCommandPossibleDevice(
+      {required final String id,
+      required final String name,
+      required final String ident}) = _$AssetCommandPossibleDeviceImpl;
+
+  factory _AssetCommandPossibleDevice.fromJson(Map<String, dynamic> json) =
+      _$AssetCommandPossibleDeviceImpl.fromJson;
+
+  @override
+
+  /// [id] is the id of the device.
+  String get id;
+  @override
+
+  /// [name] is the name of the device.
+  String get name;
+  @override
+
+  /// [ident] is the ident of the device.
+  String get ident;
+  @override
+  @JsonKey(ignore: true)
+  _$$AssetCommandPossibleDeviceImplCopyWith<_$AssetCommandPossibleDeviceImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}

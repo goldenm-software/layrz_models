@@ -12187,6 +12187,12 @@ mixin _$AtsOperation {
   List<OperationProductInformation>? get productsInformation =>
       throw _privateConstructorUsedError;
 
+  /// `ctes` is the list of CTEs.
+  List<String>? get ctes => throw _privateConstructorUsedError;
+
+  /// `caclForms` is the list of CACL forms.
+  List<String>? get caclForms => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $AtsOperationCopyWith<AtsOperation> get copyWith =>
@@ -12221,7 +12227,9 @@ abstract class $AtsOperationCopyWith<$Res> {
       List<AtsPurchaseOrder>? purchaseOrders,
       List<AtsOperationStatuses>? statuses,
       double? totalQuantity,
-      List<OperationProductInformation>? productsInformation});
+      List<OperationProductInformation>? productsInformation,
+      List<String>? ctes,
+      List<String>? caclForms});
 
   $AssetCopyWith<$Res>? get sellerAsset;
   $AssetCopyWith<$Res>? get transportAsset;
@@ -12261,6 +12269,8 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
     Object? statuses = freezed,
     Object? totalQuantity = freezed,
     Object? productsInformation = freezed,
+    Object? ctes = freezed,
+    Object? caclForms = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -12339,6 +12349,14 @@ class _$AtsOperationCopyWithImpl<$Res, $Val extends AtsOperation>
           ? _value.productsInformation
           : productsInformation // ignore: cast_nullable_to_non_nullable
               as List<OperationProductInformation>?,
+      ctes: freezed == ctes
+          ? _value.ctes
+          : ctes // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      caclForms: freezed == caclForms
+          ? _value.caclForms
+          : caclForms // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ) as $Val);
   }
 
@@ -12423,7 +12441,9 @@ abstract class _$$AtsOperationImplCopyWith<$Res>
       List<AtsPurchaseOrder>? purchaseOrders,
       List<AtsOperationStatuses>? statuses,
       double? totalQuantity,
-      List<OperationProductInformation>? productsInformation});
+      List<OperationProductInformation>? productsInformation,
+      List<String>? ctes,
+      List<String>? caclForms});
 
   @override
   $AssetCopyWith<$Res>? get sellerAsset;
@@ -12465,6 +12485,8 @@ class __$$AtsOperationImplCopyWithImpl<$Res>
     Object? statuses = freezed,
     Object? totalQuantity = freezed,
     Object? productsInformation = freezed,
+    Object? ctes = freezed,
+    Object? caclForms = freezed,
   }) {
     return _then(_$AtsOperationImpl(
       id: freezed == id
@@ -12543,6 +12565,14 @@ class __$$AtsOperationImplCopyWithImpl<$Res>
           ? _value._productsInformation
           : productsInformation // ignore: cast_nullable_to_non_nullable
               as List<OperationProductInformation>?,
+      ctes: freezed == ctes
+          ? _value._ctes
+          : ctes // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      caclForms: freezed == caclForms
+          ? _value._caclForms
+          : caclForms // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
     ));
   }
 }
@@ -12569,11 +12599,15 @@ class _$AtsOperationImpl implements _AtsOperation {
       final List<AtsPurchaseOrder>? purchaseOrders,
       final List<AtsOperationStatuses>? statuses,
       this.totalQuantity,
-      final List<OperationProductInformation>? productsInformation})
+      final List<OperationProductInformation>? productsInformation,
+      final List<String>? ctes,
+      final List<String>? caclForms})
       : _ordersIds = ordersIds,
         _purchaseOrders = purchaseOrders,
         _statuses = statuses,
-        _productsInformation = productsInformation;
+        _productsInformation = productsInformation,
+        _ctes = ctes,
+        _caclForms = caclForms;
 
   factory _$AtsOperationImpl.fromJson(Map<String, dynamic> json) =>
       _$$AtsOperationImplFromJson(json);
@@ -12697,9 +12731,35 @@ class _$AtsOperationImpl implements _AtsOperation {
     return EqualUnmodifiableListView(value);
   }
 
+  /// `ctes` is the list of CTEs.
+  final List<String>? _ctes;
+
+  /// `ctes` is the list of CTEs.
+  @override
+  List<String>? get ctes {
+    final value = _ctes;
+    if (value == null) return null;
+    if (_ctes is EqualUnmodifiableListView) return _ctes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// `caclForms` is the list of CACL forms.
+  final List<String>? _caclForms;
+
+  /// `caclForms` is the list of CACL forms.
+  @override
+  List<String>? get caclForms {
+    final value = _caclForms;
+    if (value == null) return null;
+    if (_caclForms is EqualUnmodifiableListView) return _caclForms;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation)';
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclForms: $caclForms)';
   }
 
   @override
@@ -12742,7 +12802,10 @@ class _$AtsOperationImpl implements _AtsOperation {
             (identical(other.totalQuantity, totalQuantity) ||
                 other.totalQuantity == totalQuantity) &&
             const DeepCollectionEquality()
-                .equals(other._productsInformation, _productsInformation));
+                .equals(other._productsInformation, _productsInformation) &&
+            const DeepCollectionEquality().equals(other._ctes, _ctes) &&
+            const DeepCollectionEquality()
+                .equals(other._caclForms, _caclForms));
   }
 
   @JsonKey(ignore: true)
@@ -12767,7 +12830,9 @@ class _$AtsOperationImpl implements _AtsOperation {
         const DeepCollectionEquality().hash(_purchaseOrders),
         const DeepCollectionEquality().hash(_statuses),
         totalQuantity,
-        const DeepCollectionEquality().hash(_productsInformation)
+        const DeepCollectionEquality().hash(_productsInformation),
+        const DeepCollectionEquality().hash(_ctes),
+        const DeepCollectionEquality().hash(_caclForms)
       ]);
 
   @JsonKey(ignore: true)
@@ -12786,29 +12851,30 @@ class _$AtsOperationImpl implements _AtsOperation {
 
 abstract class _AtsOperation implements AtsOperation {
   const factory _AtsOperation(
-          {final String? id,
-          final String? sellerAssetId,
-          final String? transportAssetId,
-          @TimestampOrNullConverter() final DateTime? purchasedAt,
-          @TimestampOrNullConverter() final DateTime? createdAt,
-          @TimestampOrNullConverter() final DateTime? finishedAt,
-          final bool? pendingToReview,
-          final List<String>? ordersIds,
-          final Asset? sellerAsset,
-          final Asset? transportAsset,
-          final AtsCompanyInformation? sellerInformation,
-          final AtsTransportInformation? transportInformation,
-          @AtsPurchaseOrderStatusOrNullConverter()
-          final AtsPurchaseOrderStatus? orderStatus,
-          @AtsPurchaseOrderCategoriesEntityOrNullConverter()
-          final AtsPurchaseOrderCategoriesEntity? category,
-          @AtsPurchaseOrderSubCategoriesOrNullConverter()
-          final AtsPurchaseOrderSubCategories? deliverCategory,
-          final List<AtsPurchaseOrder>? purchaseOrders,
-          final List<AtsOperationStatuses>? statuses,
-          final double? totalQuantity,
-          final List<OperationProductInformation>? productsInformation}) =
-      _$AtsOperationImpl;
+      {final String? id,
+      final String? sellerAssetId,
+      final String? transportAssetId,
+      @TimestampOrNullConverter() final DateTime? purchasedAt,
+      @TimestampOrNullConverter() final DateTime? createdAt,
+      @TimestampOrNullConverter() final DateTime? finishedAt,
+      final bool? pendingToReview,
+      final List<String>? ordersIds,
+      final Asset? sellerAsset,
+      final Asset? transportAsset,
+      final AtsCompanyInformation? sellerInformation,
+      final AtsTransportInformation? transportInformation,
+      @AtsPurchaseOrderStatusOrNullConverter()
+      final AtsPurchaseOrderStatus? orderStatus,
+      @AtsPurchaseOrderCategoriesEntityOrNullConverter()
+      final AtsPurchaseOrderCategoriesEntity? category,
+      @AtsPurchaseOrderSubCategoriesOrNullConverter()
+      final AtsPurchaseOrderSubCategories? deliverCategory,
+      final List<AtsPurchaseOrder>? purchaseOrders,
+      final List<AtsOperationStatuses>? statuses,
+      final double? totalQuantity,
+      final List<OperationProductInformation>? productsInformation,
+      final List<String>? ctes,
+      final List<String>? caclForms}) = _$AtsOperationImpl;
 
   factory _AtsOperation.fromJson(Map<String, dynamic> json) =
       _$AtsOperationImpl.fromJson;
@@ -12895,6 +12961,14 @@ abstract class _AtsOperation implements AtsOperation {
 
   /// `productsInformation` is the list of products information.
   List<OperationProductInformation>? get productsInformation;
+  @override
+
+  /// `ctes` is the list of CTEs.
+  List<String>? get ctes;
+  @override
+
+  /// `caclForms` is the list of CACL forms.
+  List<String>? get caclForms;
   @override
   @JsonKey(ignore: true)
   _$$AtsOperationImplCopyWith<_$AtsOperationImpl> get copyWith =>

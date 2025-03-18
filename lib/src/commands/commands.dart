@@ -9,3 +9,4 @@ part 'commands.g.dart';
 part 'src/enums.dart';
 part 'src/command.dart';
 part 'src/definitions.dart';
+part 'src/asset_command.dart';

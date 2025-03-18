@@ -278,3 +278,38 @@ Map<String, dynamic> _$$CommandDefinitionInputImplToJson(
           .toList(),
       'payload': instance.payload.map((e) => e.toJson()).toList(),
     };
+
+_$AssetCommandImpl _$$AssetCommandImplFromJson(Map<String, dynamic> json) =>
+    _$AssetCommandImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      possibleDevices: (json['possibleDevices'] as List<dynamic>?)
+              ?.map((e) => AssetCommandPossibleDevice.fromJson(
+                  e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$$AssetCommandImplToJson(_$AssetCommandImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'possibleDevices':
+          instance.possibleDevices.map((e) => e.toJson()).toList(),
+    };
+
+_$AssetCommandPossibleDeviceImpl _$$AssetCommandPossibleDeviceImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AssetCommandPossibleDeviceImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      ident: json['ident'] as String,
+    );
+
+Map<String, dynamic> _$$AssetCommandPossibleDeviceImplToJson(
+        _$AssetCommandPossibleDeviceImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'ident': instance.ident,
+    };

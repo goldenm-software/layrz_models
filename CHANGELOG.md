@@ -1,5 +1,13 @@
 # Changelog
 
+## 3.3.51
+
+- Added `ctes` and `caclForms` properties in `AtsOperation` model
+
+## 3.3.50
+
+- Changes on Workspace submodule
+
 ## 3.3.49
 
 - Added `customFields` in `GeofenceInput` model
@@ -216,7 +224,7 @@
 
 - Changed icon library from `material_design_icons_flutter` to `layrz_icons`
 
-# 3.2.69
+## 3.2.69
 
 - removed `cooldownTime` from `BrickhouseAlert` and `BrickhouseAlertInput` models since it has been deprecated.
 
@@ -314,7 +322,7 @@
 ## 3.2.48
 
 - Added `AtsFuelSubType` `toCProdANP()` and new colors in `getColor()`
-- Added ` getColor()` in `AtsFuelType` and add `arla32`in this enum
+- Added `getColor()` in `AtsFuelType` and add `arla32`in this enum
 - Added `AtsCfFuelType` and this converter
 
 ## 3.2.47
@@ -570,7 +578,7 @@
 
 ## 3.0.2
 
-- rename `fee_day.dart `to `free_day.dart`;
+- rename `fee_day.dart` to `free_day.dart`;
 - Add `MappitReportInputMulti`
 
 ## 3.0.1

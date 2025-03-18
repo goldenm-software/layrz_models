@@ -3768,7 +3768,7 @@ mixin _$BrickHouseWorkspaceInput {
   String? get id => throw _privateConstructorUsedError;
   String get appId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  @MetricSystemConverter()
+  @JsonKey(unknownEnumValue: MetricSystem.imperial)
   MetricSystem get metricSystem => throw _privateConstructorUsedError;
 
   /// Is the type of the App
@@ -3793,7 +3793,8 @@ abstract class $BrickHouseWorkspaceInputCopyWith<$Res> {
       {String? id,
       String appId,
       String name,
-      @MetricSystemConverter() MetricSystem metricSystem,
+      @JsonKey(unknownEnumValue: MetricSystem.imperial)
+      MetricSystem metricSystem,
       @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
       AppInternalIdentifier? typeApp,
       String timezoneId,
@@ -3868,7 +3869,8 @@ abstract class _$$BrickHouseWorkspaceInputImplCopyWith<$Res>
       {String? id,
       String appId,
       String name,
-      @MetricSystemConverter() MetricSystem metricSystem,
+      @JsonKey(unknownEnumValue: MetricSystem.imperial)
+      MetricSystem metricSystem,
       @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
       AppInternalIdentifier? typeApp,
       String timezoneId,
@@ -3936,7 +3938,8 @@ class _$BrickHouseWorkspaceInputImpl implements _BrickHouseWorkspaceInput {
       {this.id,
       required this.appId,
       required this.name,
-      @MetricSystemConverter() required this.metricSystem,
+      @JsonKey(unknownEnumValue: MetricSystem.imperial)
+      required this.metricSystem,
       @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
       this.typeApp = AppInternalIdentifier.brickhouseTracking,
       required this.timezoneId,
@@ -3953,7 +3956,7 @@ class _$BrickHouseWorkspaceInputImpl implements _BrickHouseWorkspaceInput {
   @override
   final String name;
   @override
-  @MetricSystemConverter()
+  @JsonKey(unknownEnumValue: MetricSystem.imperial)
   final MetricSystem metricSystem;
 
   /// Is the type of the App
@@ -4020,7 +4023,8 @@ abstract class _BrickHouseWorkspaceInput implements BrickHouseWorkspaceInput {
       {final String? id,
       required final String appId,
       required final String name,
-      @MetricSystemConverter() required final MetricSystem metricSystem,
+      @JsonKey(unknownEnumValue: MetricSystem.imperial)
+      required final MetricSystem metricSystem,
       @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
       final AppInternalIdentifier? typeApp,
       required final String timezoneId,
@@ -4036,7 +4040,7 @@ abstract class _BrickHouseWorkspaceInput implements BrickHouseWorkspaceInput {
   @override
   String get name;
   @override
-  @MetricSystemConverter()
+  @JsonKey(unknownEnumValue: MetricSystem.imperial)
   MetricSystem get metricSystem;
   @override
 

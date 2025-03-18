@@ -25,7 +25,7 @@ class Workspace with _$Workspace {
     bool? isFavorite,
 
     /// Indicates the main view of the workspace
-    @WorkspaceMainViewOrNullConverter() WorkspaceMainView? mainView,
+    @JsonKey(unknownEnumValue: WorkspaceMainView.sensors) WorkspaceMainView? mainView,
 
     /// Is the list of [assets] associated with the workspace
     List<Asset>? assets,
@@ -73,7 +73,7 @@ class Workspace with _$Workspace {
     List<String>? geofencesIds,
     @Default([]) List<MapCardSensors> mapCardCustomization,
     GeoPoint? mapCenterCoordinates,
-    @MapCenterModeOrNullConverter() MapCenterMode? mapCenterMode,
+    @JsonKey(unknownEnumValue: MapCenterMode.bounds) MapCenterMode? mapCenterMode,
 
     /// Is the list of [charts] and their ids [chartsIds]. And [analyticsEnabled] indicates
     /// if the analytics monitor is enabled.
@@ -89,7 +89,7 @@ class Workspace with _$Workspace {
     @Default([]) List<SensorGridItem> sensorsGridStructure,
 
     /// Metric system of the workspace
-    @MetricSystemOrNullConverter() MetricSystem? metricSystem,
+    @JsonKey(unknownEnumValue: MetricSystem.metric) MetricSystem? metricSystem,
     Timezone? timezone,
 
     /// [access] indicates the access of the workspace
@@ -99,133 +99,38 @@ class Workspace with _$Workspace {
   factory Workspace.fromJson(Map<String, dynamic> json) => _$WorkspaceFromJson(json);
 }
 
-enum WorkspaceMainView {
-  sensors,
-  map,
-  cases,
-  checkpoints,
-  analytics;
+@unfreezed
+class WorkspaceInput with _$WorkspaceInput {
+  factory WorkspaceInput({
+    String? id,
+    @Default("") String name,
+    @Default(Colors.blue) @ColorOrNullConverter() Color? color,
+    @IconConverter() required LayrzIcon icon,
+    String? background,
+    @Default(false) bool isFavorite,
+    @Default(WorkspaceMainView.sensors)
+    @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
+    WorkspaceMainView mainView,
+    @Default([]) List<String> assetsIds,
+    @Default([]) List<String> inboundServicesIds,
+    @Default([]) List<String> outboundServicesIds,
+    @Default(false) bool casesEnabled,
+    @Default([]) List<String> triggersIds,
+    @Default([]) List<CaseMonitorCardInput?> casesMonitorConfig,
+    @Default(false) bool checkpointsEnabled,
+    @Default([]) List<String> checkpointsIds,
+    @Default(false) bool mapEnabled,
+    @Default([]) List<String> geofencesIds,
+    @Default([]) List<MapCardSensorsInput> mapCardCustomization,
+    GeoPoint? mapCenterCoordinates,
+    @JsonKey(unknownEnumValue: MapCenterMode.bounds) @Default(MapCenterMode.bounds) MapCenterMode mapCenterMode,
+    @Default(false) bool analyticsEnabled,
+    @Default([]) List<String> chartsIds,
+    @Default([]) List<AnalyticsGridItemInput> analyticsGridStructure,
+    @Default(false) bool sensorsEnabled,
+    @Default([]) List<SensorGridItemInput> sensorsGridStructure,
+    @JsonKey(unknownEnumValue: MetricSystem.metric) @Default(MetricSystem.metric) MetricSystem metricSystem,
+  }) = _WorkspaceInput;
 
-  @override
-  String toString() => toJson();
-
-  String toJson() {
-    switch (this) {
-      case WorkspaceMainView.sensors:
-        return '/Main/Grid';
-      case WorkspaceMainView.map:
-        return '/Main/Map';
-      case WorkspaceMainView.cases:
-        return '/Main/Cases';
-      case WorkspaceMainView.checkpoints:
-        return '/Main/Checkpoints';
-      case WorkspaceMainView.analytics:
-        return '/Main/Analytics';
-    }
-  }
-
-  static WorkspaceMainView fromJson(String json) {
-    switch (json) {
-      case '/Main/Grid':
-        return WorkspaceMainView.sensors;
-      case '/Main/Map':
-        return WorkspaceMainView.map;
-      case '/Main/Cases':
-        return WorkspaceMainView.cases;
-      case '/Main/Checkpoints':
-        return WorkspaceMainView.checkpoints;
-      case '/Main/Analytics':
-        return WorkspaceMainView.analytics;
-      default:
-        throw Exception('Invalid WorkspaceMainView: $json');
-    }
-  }
-}
-
-class WorkspaceMainViewOrNullConverter implements JsonConverter<WorkspaceMainView?, String?> {
-  const WorkspaceMainViewOrNullConverter();
-
-  @override
-  WorkspaceMainView? fromJson(String? json) {
-    if (json == null) return null;
-    return WorkspaceMainView.values.firstWhere((e) => e.toString() == json);
-  }
-
-  @override
-  String? toJson(WorkspaceMainView? object) {
-    if (object == null) return null;
-    return object.toString();
-  }
-}
-
-class WorkspaceMainViewConverter implements JsonConverter<WorkspaceMainView, String> {
-  const WorkspaceMainViewConverter();
-
-  @override
-  WorkspaceMainView fromJson(String json) {
-    return WorkspaceMainView.fromJson(json);
-  }
-
-  @override
-  String toJson(WorkspaceMainView object) {
-    return object.toJson();
-  }
-}
-
-enum MetricSystem {
-  metric,
-  imperial;
-
-  @override
-  String toString() => toJson();
-
-  String toJson() {
-    switch (this) {
-      case MetricSystem.metric:
-        return 'METRIC';
-      case MetricSystem.imperial:
-        return 'IMPERIAL';
-    }
-  }
-
-  static MetricSystem fromJson(String json) {
-    switch (json) {
-      case 'METRIC':
-        return MetricSystem.metric;
-      case 'IMPERIAL':
-        return MetricSystem.imperial;
-      default:
-        throw Exception('Invalid MetricSystem: $json');
-    }
-  }
-}
-
-class MetricSystemOrNullConverter implements JsonConverter<MetricSystem?, String?> {
-  const MetricSystemOrNullConverter();
-
-  @override
-  MetricSystem? fromJson(String? json) {
-    if (json == null) return null;
-    return MetricSystem.fromJson(json);
-  }
-
-  @override
-  String? toJson(MetricSystem? object) {
-    if (object == null) return null;
-    return object.toJson();
-  }
-}
-
-class MetricSystemConverter implements JsonConverter<MetricSystem, String> {
-  const MetricSystemConverter();
-
-  @override
-  MetricSystem fromJson(String json) {
-    return MetricSystem.fromJson(json);
-  }
-
-  @override
-  String toJson(MetricSystem object) {
-    return object.toJson();
-  }
+  factory WorkspaceInput.fromJson(Map<String, dynamic> json) => _$WorkspaceInputFromJson(json);
 }
