@@ -59,6 +59,12 @@ class AtsOperation with _$AtsOperation {
 
     /// `productsInformation` is the list of products information.
     List<OperationProductInformation>? productsInformation,
+
+    /// `ctes` is the list of CTEs.
+    List<String>? ctes,
+
+    /// `caclForms` is the list of CACL forms.
+    List<String>? caclForms,
   }) = _AtsOperation;
 
   factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);

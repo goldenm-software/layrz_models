@@ -44,12 +44,8 @@ mixin _$VisionProtocol {
   /// [dynamicIcon] is the icon of the protocol.
   Avatar? get dynamicIcon => throw _privateConstructorUsedError;
 
-  /// Serializes this VisionProtocol to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of VisionProtocol
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $VisionProtocolCopyWith<VisionProtocol> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -82,8 +78,6 @@ class _$VisionProtocolCopyWithImpl<$Res, $Val extends VisionProtocol>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of VisionProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -127,8 +121,6 @@ class _$VisionProtocolCopyWithImpl<$Res, $Val extends VisionProtocol>
     ) as $Val);
   }
 
-  /// Create a copy of VisionProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarCopyWith<$Res>? get dynamicIcon {
@@ -171,8 +163,6 @@ class __$$VisionProtocolImplCopyWithImpl<$Res>
       _$VisionProtocolImpl _value, $Res Function(_$VisionProtocolImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VisionProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -293,14 +283,12 @@ class _$VisionProtocolImpl implements _VisionProtocol {
                 other.dynamicIcon == dynamicIcon));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, color, isEnabled,
       const DeepCollectionEquality().hash(_requiredFields), usage, dynamicIcon);
 
-  /// Create a copy of VisionProtocol
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$VisionProtocolImplCopyWith<_$VisionProtocolImpl> get copyWith =>
@@ -328,40 +316,38 @@ abstract class _VisionProtocol implements VisionProtocol {
   factory _VisionProtocol.fromJson(Map<String, dynamic> json) =
       _$VisionProtocolImpl.fromJson;
 
-  /// [id] is the ID of the entity. This ID is unique.
   @override
+
+  /// [id] is the ID of the entity. This ID is unique.
   String get id;
+  @override
 
   /// [name] is the protocol name.
-  @override
   String get name;
+  @override
 
   /// [color] is the color of the protocol.
-  @override
   @ColorConverter()
   Color get color;
+  @override
 
   /// [isEnabled] is the current status of the protocol.
-  @override
   bool get isEnabled;
+  @override
 
   /// [requiredFields] is the list of required fields for the protocol.
-  @override
   List<CredentialField> get requiredFields;
+  @override
 
   /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
   /// For marketing purposes.
-  @override
   int? get usage;
+  @override
 
   /// [dynamicIcon] is the icon of the protocol.
-  @override
   Avatar? get dynamicIcon;
-
-  /// Create a copy of VisionProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$VisionProtocolImplCopyWith<_$VisionProtocolImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -394,12 +380,8 @@ mixin _$VisionProfile {
   /// It is null if there is no measurement.
   VisionGaugeResult? get lastMeasurement => throw _privateConstructorUsedError;
 
-  /// Serializes this VisionProfile to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of VisionProfile
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $VisionProfileCopyWith<VisionProfile> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -433,8 +415,6 @@ class _$VisionProfileCopyWithImpl<$Res, $Val extends VisionProfile>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of VisionProfile
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -478,8 +458,6 @@ class _$VisionProfileCopyWithImpl<$Res, $Val extends VisionProfile>
     ) as $Val);
   }
 
-  /// Create a copy of VisionProfile
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $VisionProtocolCopyWith<$Res>? get protocol {
@@ -492,8 +470,6 @@ class _$VisionProfileCopyWithImpl<$Res, $Val extends VisionProfile>
     });
   }
 
-  /// Create a copy of VisionProfile
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $VisionGaugeResultCopyWith<$Res>? get lastMeasurement {
@@ -538,8 +514,6 @@ class __$$VisionProfileImplCopyWithImpl<$Res>
       _$VisionProfileImpl _value, $Res Function(_$VisionProfileImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VisionProfile
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -670,7 +644,7 @@ class _$VisionProfileImpl implements _VisionProfile {
                 other.lastMeasurement == lastMeasurement));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -682,9 +656,7 @@ class _$VisionProfileImpl implements _VisionProfile {
       const DeepCollectionEquality().hash(_access),
       lastMeasurement);
 
-  /// Create a copy of VisionProfile
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$VisionProfileImplCopyWith<_$VisionProfileImpl> get copyWith =>
@@ -711,39 +683,37 @@ abstract class _VisionProfile implements VisionProfile {
   factory _VisionProfile.fromJson(Map<String, dynamic> json) =
       _$VisionProfileImpl.fromJson;
 
-  /// [id] is the unique identifier of the profile.
   @override
+
+  /// [id] is the unique identifier of the profile.
   String get id;
+  @override
 
   /// [name] is the name of the profile.
-  @override
   String get name;
+  @override
 
   /// [protocolId] is the ID of the protocol.
-  @override
   String? get protocolId;
+  @override
 
   /// [protocol] is the protocol of the profile.
-  @override
   VisionProtocol? get protocol;
+  @override
 
   /// [config] is the configuration of the profile.
-  @override
   Map<String, dynamic>? get config;
+  @override
 
   /// [access] is the list of grant access to the vision profile.
-  @override
   List<Access>? get access;
+  @override
 
   /// [lastMeasurement] is the last measurement of the profile.
   /// It is null if there is no measurement.
-  @override
   VisionGaugeResult? get lastMeasurement;
-
-  /// Create a copy of VisionProfile
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$VisionProfileImplCopyWith<_$VisionProfileImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -764,12 +734,8 @@ mixin _$VisionGaugeResult {
   @TimestampConverter()
   DateTime get performedAt => throw _privateConstructorUsedError;
 
-  /// Serializes this VisionGaugeResult to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of VisionGaugeResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $VisionGaugeResultCopyWith<VisionGaugeResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -794,8 +760,6 @@ class _$VisionGaugeResultCopyWithImpl<$Res, $Val extends VisionGaugeResult>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of VisionGaugeResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -840,8 +804,6 @@ class __$$VisionGaugeResultImplCopyWithImpl<$Res>
       $Res Function(_$VisionGaugeResultImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VisionGaugeResult
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -906,13 +868,11 @@ class _$VisionGaugeResultImpl implements _VisionGaugeResult {
                 other.performedAt == performedAt));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, result, performedAt);
 
-  /// Create a copy of VisionGaugeResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$VisionGaugeResultImplCopyWith<_$VisionGaugeResultImpl> get copyWith =>
@@ -937,23 +897,21 @@ abstract class _VisionGaugeResult implements VisionGaugeResult {
   factory _VisionGaugeResult.fromJson(Map<String, dynamic> json) =
       _$VisionGaugeResultImpl.fromJson;
 
-  /// [id] is the unique identifier of the measurement.
   @override
+
+  /// [id] is the unique identifier of the measurement.
   String get id;
+  @override
 
   /// [result] is the result of the measurement.
-  @override
   double get result;
+  @override
 
   /// [performedAt] is the date and time when the measurement was performed.
-  @override
   @TimestampConverter()
   DateTime get performedAt;
-
-  /// Create a copy of VisionGaugeResult
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$VisionGaugeResultImplCopyWith<_$VisionGaugeResultImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

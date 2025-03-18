@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.51
+
+- Added `ctes` and `caclForms` properties in `AtsOperation` model
+
 ## 3.3.50
 
 - Changes on Workspace submodule
