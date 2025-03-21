@@ -20,7 +20,7 @@ enum AtsFuelSubType {
   unknown,
   ;
 
-  static AtsFuelSubType fromJson(String json) {
+  static AtsFuelSubType fromJson(String? json) {
     switch (json) {
       case 'DIESELS10_A':
         return AtsFuelSubType.dieselS10A;
@@ -140,7 +140,7 @@ enum AtsFuelSubType {
   /// get all getLocalKet in comments
 
   ///
-  static AtsFuelSubType fromCProdANP(String cProdANP) {
+  static AtsFuelSubType fromCProdANP(String? cProdANP) {
     switch (cProdANP) {
       case '420105001':
         return AtsFuelSubType.dieselS10A;

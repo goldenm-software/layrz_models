@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.52
+
+- add nullsafety in `AtsFuelSubType`
+
 ## 3.3.51
 
 - Added `ctes` and `caclForms` properties in `AtsOperation` model
