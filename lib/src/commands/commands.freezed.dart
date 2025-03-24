@@ -30,8 +30,12 @@ mixin _$CommandData {
   /// [payload] is the list of parameters of the command.
   Map<String, dynamic>? get payload => throw _privateConstructorUsedError;
 
+  /// Serializes this CommandData to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CommandData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CommandDataCopyWith<CommandData> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,6 +62,8 @@ class _$CommandDataCopyWithImpl<$Res, $Val extends CommandData>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CommandData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -104,6 +110,8 @@ class __$$CommandDataImplCopyWithImpl<$Res>
       _$CommandDataImpl _value, $Res Function(_$CommandDataImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CommandData
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -178,12 +186,14 @@ class _$CommandDataImpl implements _CommandData {
             const DeepCollectionEquality().equals(other._payload, _payload));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, source, definition,
       const DeepCollectionEquality().hash(_payload));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CommandData
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CommandDataImplCopyWith<_$CommandDataImpl> get copyWith =>
@@ -207,21 +217,23 @@ abstract class _CommandData implements CommandData {
   factory _CommandData.fromJson(Map<String, dynamic> json) =
       _$CommandDataImpl.fromJson;
 
-  @override
-
   /// [source] is the source of the command.
+  @override
   @CommandDefinitionSourceConverter()
   CommandDefinitionSource get source;
-  @override
 
   /// [definition] is the definition of the command.
-  String get definition;
   @override
+  String get definition;
 
   /// [payload] is the list of parameters of the command.
-  Map<String, dynamic>? get payload;
   @override
-  @JsonKey(ignore: true)
+  Map<String, dynamic>? get payload;
+
+  /// Create a copy of CommandData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CommandDataImplCopyWith<_$CommandDataImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -297,8 +309,12 @@ mixin _$DeviceCommand {
   /// List of possible devices that can perform this command.
   List<Device>? get possibleDevices => throw _privateConstructorUsedError;
 
+  /// Serializes this DeviceCommand to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DeviceCommand
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DeviceCommandCopyWith<DeviceCommand> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -345,6 +361,8 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DeviceCommand
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -443,6 +461,8 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
     ) as $Val);
   }
 
+  /// Create a copy of DeviceCommand
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InboundProtocolCopyWith<$Res>? get protocol {
@@ -455,6 +475,8 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
     });
   }
 
+  /// Create a copy of DeviceCommand
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ModelCopyWith<$Res>? get model {
@@ -467,6 +489,8 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
     });
   }
 
+  /// Create a copy of DeviceCommand
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CommandDataCopyWith<$Res>? get data {
@@ -479,6 +503,8 @@ class _$DeviceCommandCopyWithImpl<$Res, $Val extends DeviceCommand>
     });
   }
 
+  /// Create a copy of DeviceCommand
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ModbusParameterCopyWith<$Res>? get modbusParameter {
@@ -538,6 +564,8 @@ class __$$DeviceCommandImplCopyWithImpl<$Res>
       _$DeviceCommandImpl _value, $Res Function(_$DeviceCommandImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DeviceCommand
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -806,7 +834,7 @@ class _$DeviceCommandImpl implements _DeviceCommand {
                 .equals(other._possibleDevices, _possibleDevices));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -829,7 +857,9 @@ class _$DeviceCommandImpl implements _DeviceCommand {
       const DeepCollectionEquality().hash(_access),
       const DeepCollectionEquality().hash(_possibleDevices));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DeviceCommand
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DeviceCommandImplCopyWith<_$DeviceCommandImpl> get copyWith =>
@@ -869,88 +899,91 @@ abstract class _DeviceCommand implements DeviceCommand {
 
   @override
   String get id;
-  @override
 
   /// Is name of the command. (Only reference, does not affect the command itself)
-  String get name;
   @override
+  String get name;
 
   /// Is the source of the command.
+  @override
   @CommandSourceConverter()
   CommandSource get source;
-  @override
 
   /// [isGlobal] is a flag that indicates if the command is global or not. A global command
   /// is any command created for Layrz LTD members, and available for all of our customers
   /// to use. A non-global command is a command created by a customer for their own use, this
   /// can be or not a universal command or local command.
-  bool get isGlobal;
   @override
+  bool get isGlobal;
 
   /// [payload] is the text payload to send into a SMS command.
-  String? get payload;
   @override
+  String? get payload;
 
   /// Is the tag id of the command for "multi" execution from any [Action].
-  String? get tagId;
   @override
+  String? get tagId;
 
   /// Is the [deviceId] that the command is for.
   /// Only will comes when the command comes from the asset or device query.
+  @override
   String? get deviceId;
-  @override
 
   /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
   /// Only will comes when the command is a "template"
+  @override
   String? get protocolId;
-  @override
 
   /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
   /// Only will comes when the command is a "template"
+  @override
   InboundProtocol? get protocol;
-  @override
 
   /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
   /// Only will comes when the command is a "template"
+  @override
   String? get modelId;
-  @override
 
   /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
   /// Only will comes when the command is a "template"
-  Model? get model;
   @override
+  Model? get model;
 
   /// [definition] refers to the definition of the command.
-  String? get definition;
   @override
+  String? get definition;
 
   /// [externalAccountId] refers to the external account id of the command.
-  String? get externalAccountId;
   @override
+  String? get externalAccountId;
 
   /// [data] refers to the data of the command.
-  CommandData? get data;
   @override
+  CommandData? get data;
 
   /// [modbusParameter] refers to the modbus parameter of the command.
   /// This parameter contains the composition of the modbus command, like the controller address, function code,
   /// register address, etc.
-  ModbusParameter? get modbusParameter;
   @override
+  ModbusParameter? get modbusParameter;
 
   /// [modbusPort] refers to the modbus port of the command.
   /// This parameter contains the port number of the modbus command.
-  String? get modbusPort;
   @override
+  String? get modbusPort;
 
   /// Is a list of granted access to this entity.
-  List<Access>? get access;
   @override
+  List<Access>? get access;
 
   /// List of possible devices that can perform this command.
-  List<Device>? get possibleDevices;
   @override
-  @JsonKey(ignore: true)
+  List<Device>? get possibleDevices;
+
+  /// Create a copy of DeviceCommand
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DeviceCommandImplCopyWith<_$DeviceCommandImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -982,8 +1015,12 @@ mixin _$CommandDataInput {
   /// [payload] is the list of parameters of the command.
   set payload(Map<String, dynamic> value) => throw _privateConstructorUsedError;
 
+  /// Serializes this CommandDataInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CommandDataInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CommandDataInputCopyWith<CommandDataInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1011,6 +1048,8 @@ class _$CommandDataInputCopyWithImpl<$Res, $Val extends CommandDataInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CommandDataInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1058,6 +1097,8 @@ class __$$CommandDataInputImplCopyWithImpl<$Res>
       $Res Function(_$CommandDataInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CommandDataInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1112,7 +1153,9 @@ class _$CommandDataInputImpl implements _CommandDataInput {
     return 'CommandDataInput(source: $source, definition: $definition, payload: $payload)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CommandDataInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CommandDataInputImplCopyWith<_$CommandDataInputImpl> get copyWith =>
@@ -1137,31 +1180,33 @@ abstract class _CommandDataInput implements CommandDataInput {
   factory _CommandDataInput.fromJson(Map<String, dynamic> json) =
       _$CommandDataInputImpl.fromJson;
 
-  @override
-
   /// [source] is the source of the command.
+  @override
   @CommandDefinitionSourceOrNullConverter()
   CommandDefinitionSource? get source;
 
   /// [source] is the source of the command.
   @CommandDefinitionSourceOrNullConverter()
   set source(CommandDefinitionSource? value);
-  @override
 
   /// [definition] is the definition of the command.
+  @override
   String? get definition;
 
   /// [definition] is the definition of the command.
   set definition(String? value);
-  @override
 
   /// [payload] is the list of parameters of the command.
+  @override
   Map<String, dynamic> get payload;
 
   /// [payload] is the list of parameters of the command.
   set payload(Map<String, dynamic> value);
+
+  /// Create a copy of CommandDataInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CommandDataInputImplCopyWith<_$CommandDataInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1257,8 +1302,12 @@ mixin _$CommandInput {
   /// This parameter contains the port number of the modbus command.
   set modbusPort(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this CommandInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CommandInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CommandInputCopyWith<CommandInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1297,6 +1346,8 @@ class _$CommandInputCopyWithImpl<$Res, $Val extends CommandInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CommandInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1365,6 +1416,8 @@ class _$CommandInputCopyWithImpl<$Res, $Val extends CommandInput>
     ) as $Val);
   }
 
+  /// Create a copy of CommandInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CommandDataInputCopyWith<$Res>? get data {
@@ -1377,6 +1430,8 @@ class _$CommandInputCopyWithImpl<$Res, $Val extends CommandInput>
     });
   }
 
+  /// Create a copy of CommandInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ModbusParameterInputCopyWith<$Res>? get modbusParameter {
@@ -1427,6 +1482,8 @@ class __$$CommandInputImplCopyWithImpl<$Res>
       _$CommandInputImpl _value, $Res Function(_$CommandInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CommandInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1576,7 +1633,9 @@ class _$CommandInputImpl implements _CommandInput {
     return 'CommandInput(id: $id, name: $name, source: $source, payload: $payload, tagId: $tagId, deviceId: $deviceId, protocolId: $protocolId, modelId: $modelId, externalAccountId: $externalAccountId, data: $data, modbusParameter: $modbusParameter, modbusPort: $modbusPort)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CommandInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CommandInputImplCopyWith<_$CommandInputImpl> get copyWith =>
@@ -1611,99 +1670,102 @@ abstract class _CommandInput implements CommandInput {
   @override
   String? get id;
   set id(String? value);
-  @override
 
   /// Is name of the command. (Only reference, does not affect the command itself)
+  @override
   String get name;
 
   /// Is name of the command. (Only reference, does not affect the command itself)
   set name(String value);
-  @override
 
   /// Is the source of the command.
+  @override
   @CommandSourceOrNullConverter()
   CommandSource? get source;
 
   /// Is the source of the command.
   @CommandSourceOrNullConverter()
   set source(CommandSource? value);
-  @override
 
   /// [payload] is the text payload to send into a SMS command.
+  @override
   String? get payload;
 
   /// [payload] is the text payload to send into a SMS command.
   set payload(String? value);
-  @override
 
   /// Is the tag id of the command for "multi" execution from any [Action].
+  @override
   String? get tagId;
 
   /// Is the tag id of the command for "multi" execution from any [Action].
   set tagId(String? value);
-  @override
 
   /// Is the [deviceId] that the command is for.
   /// Only will comes when the command comes from the asset or device query.
+  @override
   String? get deviceId;
 
   /// Is the [deviceId] that the command is for.
   /// Only will comes when the command comes from the asset or device query.
   set deviceId(String? value);
-  @override
 
   /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
   /// Only will comes when the command is a "template"
+  @override
   String? get protocolId;
 
   /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
   /// Only will comes when the command is a "template"
   set protocolId(String? value);
-  @override
 
   /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
   /// Only will comes when the command is a "template"
+  @override
   String? get modelId;
 
   /// Is the [protocol], [protocolId] and the [model], [modelId] of the command.
   /// Only will comes when the command is a "template"
   set modelId(String? value);
-  @override
 
   /// [externalAccountId] refers to the external account id of the command.
+  @override
   String? get externalAccountId;
 
   /// [externalAccountId] refers to the external account id of the command.
   set externalAccountId(String? value);
-  @override
 
   /// [data] refers to the definition of the command.
+  @override
   CommandDataInput? get data;
 
   /// [data] refers to the definition of the command.
   set data(CommandDataInput? value);
-  @override
 
   /// [modbusParameter] refers to the modbus parameter of the command.
   /// This parameter contains the composition of the modbus command, like the controller address, function code,
   /// register address, etc.
+  @override
   ModbusParameterInput? get modbusParameter;
 
   /// [modbusParameter] refers to the modbus parameter of the command.
   /// This parameter contains the composition of the modbus command, like the controller address, function code,
   /// register address, etc.
   set modbusParameter(ModbusParameterInput? value);
-  @override
 
   /// [modbusPort] refers to the modbus port of the command.
   /// This parameter contains the port number of the modbus command.
+  @override
   String? get modbusPort;
 
   /// [modbusPort] refers to the modbus port of the command.
   /// This parameter contains the port number of the modbus command.
   set modbusPort(String? value);
+
+  /// Create a copy of CommandInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CommandInputImplCopyWith<_$CommandInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1762,8 +1824,12 @@ mixin _$CommandPayloadDefinition {
   /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
   int? get maxQuantity => throw _privateConstructorUsedError;
 
+  /// Serializes this CommandPayloadDefinition to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CommandPayloadDefinition
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CommandPayloadDefinitionCopyWith<CommandPayloadDefinition> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1800,6 +1866,8 @@ class _$CommandPayloadDefinitionCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CommandPayloadDefinition
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1903,6 +1971,8 @@ class __$$CommandPayloadDefinitionImplCopyWithImpl<$Res>
       $Res Function(_$CommandPayloadDefinitionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CommandPayloadDefinition
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2106,7 +2176,7 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
                 other.maxQuantity == maxQuantity));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2123,7 +2193,9 @@ class _$CommandPayloadDefinitionImpl implements _CommandPayloadDefinition {
       const DeepCollectionEquality().hash(_nested),
       maxQuantity);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CommandPayloadDefinition
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CommandPayloadDefinitionImplCopyWith<_$CommandPayloadDefinitionImpl>
@@ -2157,66 +2229,68 @@ abstract class _CommandPayloadDefinition implements CommandPayloadDefinition {
   factory _CommandPayloadDefinition.fromJson(Map<String, dynamic> json) =
       _$CommandPayloadDefinitionImpl.fromJson;
 
-  @override
-
   /// [parameter] is the name of the parameter, this is also the translation key.
-  String get parameter;
   @override
+  String get parameter;
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
-  String? get description;
   @override
+  String? get description;
 
   /// [dataType] is the data type of the parameter.
+  @override
   @CommandPayloadDataTypeConverter()
   CommandPayloadDataType get dataType;
-  @override
 
   /// [isRequired] is the parameter is required.
-  bool? get isRequired;
   @override
+  bool? get isRequired;
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
-  num? get minValue;
   @override
+  num? get minValue;
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
-  num? get maxValue;
   @override
+  num? get maxValue;
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [CommandPayloadDataType.string]
-  int? get minLength;
   @override
+  int? get minLength;
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [CommandPayloadDataType.string]
-  int? get maxLength;
   @override
+  int? get maxLength;
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [CommandPayloadDataType.choice]
-  List<String>? get choices;
   @override
+  List<String>? get choices;
 
   /// [regexPattern] is the regex pattern of the parameter.
+  @override
   @RegExpOrNullConverter()
   RegExp? get regexPattern;
-  @override
 
   /// [nested] is the nested object of the parameter.
   /// Only for [CommandPayloadDataType.nested]
-  List<CommandPayloadDefinition>? get nested;
   @override
+  List<CommandPayloadDefinition>? get nested;
 
   /// [maxQuantity] is the maximum quantity of the nested parameters.
   ///
   /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
-  int? get maxQuantity;
   @override
-  @JsonKey(ignore: true)
+  int? get maxQuantity;
+
+  /// Create a copy of CommandPayloadDefinition
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CommandPayloadDefinitionImplCopyWith<_$CommandPayloadDefinitionImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2323,8 +2397,12 @@ mixin _$CommandPayloadDefinitionInput {
   /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
   set maxQuantity(int? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this CommandPayloadDefinitionInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CommandPayloadDefinitionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CommandPayloadDefinitionInputCopyWith<CommandPayloadDefinitionInput>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2363,6 +2441,8 @@ class _$CommandPayloadDefinitionInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CommandPayloadDefinitionInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2466,6 +2546,8 @@ class __$$CommandPayloadDefinitionInputImplCopyWithImpl<$Res>
       $Res Function(_$CommandPayloadDefinitionInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CommandPayloadDefinitionInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2625,7 +2707,9 @@ class _$CommandPayloadDefinitionInputImpl
     return 'CommandPayloadDefinitionInput(parameter: $parameter, description: $description, dataType: $dataType, isRequired: $isRequired, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, nested: $nested, maxQuantity: $maxQuantity)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CommandPayloadDefinitionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CommandPayloadDefinitionInputImplCopyWith<
@@ -2660,112 +2744,114 @@ abstract class _CommandPayloadDefinitionInput
   factory _CommandPayloadDefinitionInput.fromJson(Map<String, dynamic> json) =
       _$CommandPayloadDefinitionInputImpl.fromJson;
 
-  @override
-
   /// [parameter] is the name of the parameter, this is also the translation key.
+  @override
   String get parameter;
 
   /// [parameter] is the name of the parameter, this is also the translation key.
   set parameter(String value);
-  @override
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
+  @override
   String get description;
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
   set description(String value);
-  @override
 
   /// [dataType] is the data type of the parameter.
+  @override
   @CommandPayloadDataTypeConverter()
   CommandPayloadDataType get dataType;
 
   /// [dataType] is the data type of the parameter.
   @CommandPayloadDataTypeConverter()
   set dataType(CommandPayloadDataType value);
-  @override
 
   /// [isRequired] is the parameter is required.
+  @override
   bool get isRequired;
 
   /// [isRequired] is the parameter is required.
   set isRequired(bool value);
-  @override
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  @override
   num? get minValue;
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
   set minValue(num? value);
-  @override
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
+  @override
   num? get maxValue;
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [CommandPayloadDataType.integer] and [CommandPayloadDataType.float]
   set maxValue(num? value);
-  @override
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [CommandPayloadDataType.string]
+  @override
   int? get minLength;
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [CommandPayloadDataType.string]
   set minLength(int? value);
-  @override
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [CommandPayloadDataType.string]
+  @override
   int? get maxLength;
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [CommandPayloadDataType.string]
   set maxLength(int? value);
-  @override
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [CommandPayloadDataType.choice]
+  @override
   List<String>? get choices;
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [CommandPayloadDataType.choice]
   set choices(List<String>? value);
-  @override
 
   /// [regexPattern] is the regex pattern of the parameter.
+  @override
   @RegExpOrNullConverter()
   RegExp? get regexPattern;
 
   /// [regexPattern] is the regex pattern of the parameter.
   @RegExpOrNullConverter()
   set regexPattern(RegExp? value);
-  @override
 
   /// [nested] is the nested object of the parameter.
   /// Only for [CommandPayloadDataType.nested]
+  @override
   List<CommandPayloadDefinitionInput>? get nested;
 
   /// [nested] is the nested object of the parameter.
   /// Only for [CommandPayloadDataType.nested]
   set nested(List<CommandPayloadDefinitionInput>? value);
-  @override
 
   /// [maxQuantity] is the maximum quantity of the nested parameters.
   ///
   /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
+  @override
   int? get maxQuantity;
 
   /// [maxQuantity] is the maximum quantity of the nested parameters.
   ///
   /// Only for [CommandPayloadDataType.list] or [CommandPayloadDataType.bluetoothPair]
   set maxQuantity(int? value);
+
+  /// Create a copy of CommandPayloadDefinitionInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CommandPayloadDefinitionInputImplCopyWith<
           _$CommandPayloadDefinitionInputImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2795,8 +2881,12 @@ mixin _$CommandDefinition {
   /// [translationKey] is the translation key of the command.
   String? get translationKey => throw _privateConstructorUsedError;
 
+  /// Serializes this CommandDefinition to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CommandDefinition
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CommandDefinitionCopyWith<CommandDefinition> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2825,6 +2915,8 @@ class _$CommandDefinitionCopyWithImpl<$Res, $Val extends CommandDefinition>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CommandDefinition
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2883,6 +2975,8 @@ class __$$CommandDefinitionImplCopyWithImpl<$Res>
       $Res Function(_$CommandDefinitionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CommandDefinition
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2987,7 +3081,7 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
                 other.translationKey == translationKey));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2997,7 +3091,9 @@ class _$CommandDefinitionImpl implements _CommandDefinition {
       const DeepCollectionEquality().hash(_payload),
       translationKey);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CommandDefinition
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CommandDefinitionImplCopyWith<_$CommandDefinitionImpl> get copyWith =>
@@ -3024,29 +3120,31 @@ abstract class _CommandDefinition implements CommandDefinition {
   factory _CommandDefinition.fromJson(Map<String, dynamic> json) =
       _$CommandDefinitionImpl.fromJson;
 
-  @override
-
   /// [name] is the name of the command, this is also the translation key.
-  String get name;
   @override
+  String get name;
 
   /// [description] is the fallback name of the command, when the translation is not available.
-  String? get description;
   @override
+  String? get description;
 
   /// [source] is the source of the command.
+  @override
   @CommandDefinitionSourceConverter()
   List<CommandDefinitionSource> get sources;
-  @override
 
   /// [payload] is the list of parameters of the command.
-  List<CommandPayloadDefinition> get payload;
   @override
+  List<CommandPayloadDefinition> get payload;
 
   /// [translationKey] is the translation key of the command.
-  String? get translationKey;
   @override
-  @JsonKey(ignore: true)
+  String? get translationKey;
+
+  /// Create a copy of CommandDefinition
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CommandDefinitionImplCopyWith<_$CommandDefinitionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3088,8 +3186,12 @@ mixin _$CommandDefinitionInput {
   set payload(List<CommandPayloadDefinitionInput> value) =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this CommandDefinitionInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of CommandDefinitionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $CommandDefinitionInputCopyWith<CommandDefinitionInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3118,6 +3220,8 @@ class _$CommandDefinitionInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of CommandDefinitionInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3173,6 +3277,8 @@ class __$$CommandDefinitionInputImplCopyWithImpl<$Res>
       $Res Function(_$CommandDefinitionInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of CommandDefinitionInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3240,7 +3346,9 @@ class _$CommandDefinitionInputImpl implements _CommandDefinitionInput {
     return 'CommandDefinitionInput(name: $name, description: $description, sources: $sources, payload: $payload)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of CommandDefinitionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$CommandDefinitionInputImplCopyWith<_$CommandDefinitionInputImpl>
@@ -3266,38 +3374,40 @@ abstract class _CommandDefinitionInput implements CommandDefinitionInput {
   factory _CommandDefinitionInput.fromJson(Map<String, dynamic> json) =
       _$CommandDefinitionInputImpl.fromJson;
 
-  @override
-
   /// [name] is the name of the command, this is also the translation key.
+  @override
   String get name;
 
   /// [name] is the name of the command, this is also the translation key.
   set name(String value);
-  @override
 
   /// [description] is the fallback name of the command, when the translation is not available.
+  @override
   String get description;
 
   /// [description] is the fallback name of the command, when the translation is not available.
   set description(String value);
-  @override
 
   /// [source] is the source of the command.
+  @override
   @CommandDefinitionSourceConverter()
   List<CommandDefinitionSource> get sources;
 
   /// [source] is the source of the command.
   @CommandDefinitionSourceConverter()
   set sources(List<CommandDefinitionSource> value);
-  @override
 
   /// [payload] is the list of parameters of the command.
+  @override
   List<CommandPayloadDefinitionInput> get payload;
 
   /// [payload] is the list of parameters of the command.
   set payload(List<CommandPayloadDefinitionInput> value);
+
+  /// Create a copy of CommandDefinitionInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CommandDefinitionInputImplCopyWith<_$CommandDefinitionInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3318,8 +3428,12 @@ mixin _$AssetCommand {
   List<AssetCommandPossibleDevice> get possibleDevices =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this AssetCommand to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AssetCommand
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AssetCommandCopyWith<AssetCommand> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3346,6 +3460,8 @@ class _$AssetCommandCopyWithImpl<$Res, $Val extends AssetCommand>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AssetCommand
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3392,6 +3508,8 @@ class __$$AssetCommandImplCopyWithImpl<$Res>
       _$AssetCommandImpl _value, $Res Function(_$AssetCommandImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AssetCommand
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3464,12 +3582,14 @@ class _$AssetCommandImpl implements _AssetCommand {
                 .equals(other._possibleDevices, _possibleDevices));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name,
       const DeepCollectionEquality().hash(_possibleDevices));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AssetCommand
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AssetCommandImplCopyWith<_$AssetCommandImpl> get copyWith =>
@@ -3493,20 +3613,22 @@ abstract class _AssetCommand implements AssetCommand {
   factory _AssetCommand.fromJson(Map<String, dynamic> json) =
       _$AssetCommandImpl.fromJson;
 
-  @override
-
   /// [id] is the id of the command.
-  String get id;
   @override
+  String get id;
 
   /// [name] is the name of the command.
-  String get name;
   @override
+  String get name;
 
   /// [possibleDevices] is the list of possible devices for the command.
-  List<AssetCommandPossibleDevice> get possibleDevices;
   @override
-  @JsonKey(ignore: true)
+  List<AssetCommandPossibleDevice> get possibleDevices;
+
+  /// Create a copy of AssetCommand
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AssetCommandImplCopyWith<_$AssetCommandImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3527,8 +3649,12 @@ mixin _$AssetCommandPossibleDevice {
   /// [ident] is the ident of the device.
   String get ident => throw _privateConstructorUsedError;
 
+  /// Serializes this AssetCommandPossibleDevice to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AssetCommandPossibleDevice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AssetCommandPossibleDeviceCopyWith<AssetCommandPossibleDevice>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3554,6 +3680,8 @@ class _$AssetCommandPossibleDeviceCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AssetCommandPossibleDevice
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3600,6 +3728,8 @@ class __$$AssetCommandPossibleDeviceImplCopyWithImpl<$Res>
       $Res Function(_$AssetCommandPossibleDeviceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AssetCommandPossibleDevice
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3661,11 +3791,13 @@ class _$AssetCommandPossibleDeviceImpl implements _AssetCommandPossibleDevice {
             (identical(other.ident, ident) || other.ident == ident));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, ident);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AssetCommandPossibleDevice
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AssetCommandPossibleDeviceImplCopyWith<_$AssetCommandPossibleDeviceImpl>
@@ -3690,20 +3822,22 @@ abstract class _AssetCommandPossibleDevice
   factory _AssetCommandPossibleDevice.fromJson(Map<String, dynamic> json) =
       _$AssetCommandPossibleDeviceImpl.fromJson;
 
-  @override
-
   /// [id] is the id of the device.
-  String get id;
   @override
+  String get id;
 
   /// [name] is the name of the device.
-  String get name;
   @override
+  String get name;
 
   /// [ident] is the ident of the device.
-  String get ident;
   @override
-  @JsonKey(ignore: true)
+  String get ident;
+
+  /// Create a copy of AssetCommandPossibleDevice
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AssetCommandPossibleDeviceImplCopyWith<_$AssetCommandPossibleDeviceImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
