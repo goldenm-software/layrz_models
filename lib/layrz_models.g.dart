@@ -1252,6 +1252,29 @@ Map<String, dynamic> _$$MonitorActiveCheckpointImplToJson(
       'waypoints': instance.waypoints.map((e) => e.toJson()).toList(),
     };
 
+_$LayrzPackageImpl _$$LayrzPackageImplFromJson(Map<String, dynamic> json) =>
+    _$LayrzPackageImpl(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      version: json['version'] as String,
+      languageVersionConstraint: json['languageVersionConstraint'] as String?,
+      createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
+      language:
+          const PackageLanguageConverter().fromJson(json['language'] as String),
+      repository: json['repository'] as String?,
+    );
+
+Map<String, dynamic> _$$LayrzPackageImplToJson(_$LayrzPackageImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'version': instance.version,
+      'languageVersionConstraint': instance.languageVersionConstraint,
+      'createdAt': const TimestampConverter().toJson(instance.createdAt),
+      'language': const PackageLanguageConverter().toJson(instance.language),
+      'repository': instance.repository,
+    };
+
 _$PresetImpl _$$PresetImplFromJson(Map<String, dynamic> json) => _$PresetImpl(
       id: json['id'] as String,
       name: json['name'] as String,
@@ -1892,14 +1915,36 @@ _$TriggerInputImpl _$$TriggerInputImplFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String?,
       name: json['name'] as String?,
       code: json['code'] as String?,
-      geofencesIds: (json['geofencesIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
+      timezoneId: json['timezoneId'] as String?,
+      kind: json['kind'] == null
+          ? TriggerType.formula
+          : const TriggerTypeConverter().fromJson(json['kind'] as String),
+      geofenceKind: const TriggerGeofenceDetectionModeOrNullConverter()
+          .fromJson(json['geofenceKind'] as String?),
+      caseKind:
+          const CaseTypeOrNullConverter().fromJson(json['caseKind'] as String?),
+      caseCommentPattern: const CaseCommentPatternOrNullConverter()
+          .fromJson(json['caseCommentPattern'] as String?),
+      caseCommentPatternValue: json['caseCommentPatternValue'] as String?,
+      exactHour: const TimeOfDayOrNullConverter()
+          .fromJson(json['exactHour'] as String?),
+      crontabFormat: json['crontabFormat'] as String?,
+      isPlainCrontab: json['isPlainCrontab'] as bool? ?? false,
+      weekdays: (json['weekdays'] as List<dynamic>?)
+              ?.map((e) => const WeekdayConverter().fromJson(e as String))
               .toList() ??
-          const [],
-      tagsGeofencesIds: (json['tagsGeofencesIds'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
+          Weekday.values,
+      formula: json['formula'] as String?,
+      script: json['script'] as String?,
+      priority: (json['priority'] as num?)?.toInt() ?? 1,
+      color: json['color'] == null
+          ? kPrimaryColor
+          : const ColorConverter().fromJson(json['color'] as String),
+      visualEventEffect: json['visualEventEffect'] == null
+          ? CaseEventEffect.none
+          : const CaseEventEffectConverter()
+              .fromJson(json['visualEventEffect'] as String),
+      careProtocolId: json['careProtocolId'] as String?,
       assetsIds: (json['assetsIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
@@ -1908,7 +1953,11 @@ _$TriggerInputImpl _$$TriggerInputImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      parameters: (json['parameters'] as List<dynamic>?)
+      geofencesIds: (json['geofencesIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      tagsGeofencesIds: (json['tagsGeofencesIds'] as List<dynamic>?)
               ?.map((e) => e as String)
               .toList() ??
           const [],
@@ -1924,33 +1973,13 @@ _$TriggerInputImpl _$$TriggerInputImplFromJson(Map<String, dynamic> json) =>
               ?.map((e) => e as String)
               .toList() ??
           const [],
-      kind:
-          const TriggerTypeOrNullConverter().fromJson(json['kind'] as String?),
-      geofenceKind: const TriggerGeofenceDetectionModeOrNullConverter()
-          .fromJson(json['geofenceKind'] as String?),
-      formula: json['formula'] as String?,
-      script: json['script'] as String?,
-      exactHour: json['exactHour'] as String?,
-      crontabFormat: json['crontabFormat'] as String?,
-      weekdays: (json['weekdays'] as List<dynamic>?)
-              ?.map((e) => const WeekdayConverter().fromJson(e as String))
+      parameters: (json['parameters'] as List<dynamic>?)
+              ?.map((e) => e as String)
               .toList() ??
-          const [
-            Weekday.monday,
-            Weekday.tuesday,
-            Weekday.wednesday,
-            Weekday.thursday,
-            Weekday.friday,
-            Weekday.saturday,
-            Weekday.sunday
-          ],
-      isPlainCrontab: json['isPlainCrontab'] as bool? ?? false,
-      timezoneId: json['timezoneId'] as String?,
-      priority: (json['priority'] as num?)?.toInt(),
-      color: const ColorOrNullConverter().fromJson(json['color'] as String?),
-      visualEventEffect: const CaseEventEffectOrNullConverter()
-          .fromJson(json['visualEventEffect'] as String?),
-      careProtocolId: json['careProtocolId'] as String?,
+          const [],
+      cooldownTime: json['cooldownTime'] == null
+          ? const Duration(minutes: 1)
+          : const DurationConverter().fromJson(json['cooldownTime'] as num),
     );
 
 Map<String, dynamic> _$$TriggerInputImplToJson(_$TriggerInputImpl instance) =>
@@ -1958,30 +1987,35 @@ Map<String, dynamic> _$$TriggerInputImplToJson(_$TriggerInputImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       'code': instance.code,
-      'geofencesIds': instance.geofencesIds,
-      'tagsGeofencesIds': instance.tagsGeofencesIds,
+      'timezoneId': instance.timezoneId,
+      'kind': const TriggerTypeConverter().toJson(instance.kind),
+      'geofenceKind': const TriggerGeofenceDetectionModeOrNullConverter()
+          .toJson(instance.geofenceKind),
+      'caseKind': const CaseTypeOrNullConverter().toJson(instance.caseKind),
+      'caseCommentPattern': const CaseCommentPatternOrNullConverter()
+          .toJson(instance.caseCommentPattern),
+      'caseCommentPatternValue': instance.caseCommentPatternValue,
+      'exactHour': const TimeOfDayOrNullConverter().toJson(instance.exactHour),
+      'crontabFormat': instance.crontabFormat,
+      'isPlainCrontab': instance.isPlainCrontab,
+      'weekdays':
+          instance.weekdays.map(const WeekdayConverter().toJson).toList(),
+      'formula': instance.formula,
+      'script': instance.script,
+      'priority': instance.priority,
+      'color': const ColorConverter().toJson(instance.color),
+      'visualEventEffect':
+          const CaseEventEffectConverter().toJson(instance.visualEventEffect),
+      'careProtocolId': instance.careProtocolId,
       'assetsIds': instance.assetsIds,
       'tagsAssetsIds': instance.tagsAssetsIds,
-      'parameters': instance.parameters,
+      'geofencesIds': instance.geofencesIds,
+      'tagsGeofencesIds': instance.tagsGeofencesIds,
       'authAssetsIds': instance.authAssetsIds,
       'authUsersIds': instance.authUsersIds,
       'authTagsIds': instance.authTagsIds,
-      'kind': const TriggerTypeOrNullConverter().toJson(instance.kind),
-      'geofenceKind': const TriggerGeofenceDetectionModeOrNullConverter()
-          .toJson(instance.geofenceKind),
-      'formula': instance.formula,
-      'script': instance.script,
-      'exactHour': instance.exactHour,
-      'crontabFormat': instance.crontabFormat,
-      'weekdays':
-          instance.weekdays?.map(const WeekdayConverter().toJson).toList(),
-      'isPlainCrontab': instance.isPlainCrontab,
-      'timezoneId': instance.timezoneId,
-      'priority': instance.priority,
-      'color': const ColorOrNullConverter().toJson(instance.color),
-      'visualEventEffect': const CaseEventEffectOrNullConverter()
-          .toJson(instance.visualEventEffect),
-      'careProtocolId': instance.careProtocolId,
+      'parameters': instance.parameters,
+      'cooldownTime': const DurationConverter().toJson(instance.cooldownTime),
     };
 
 _$TripImpl _$$TripImplFromJson(Map<String, dynamic> json) => _$TripImpl(
@@ -2029,27 +2063,4 @@ Map<String, dynamic> _$$ConciergeFormImplToJson(_$ConciergeFormImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-    };
-
-_$LayrzPackageImpl _$$LayrzPackageImplFromJson(Map<String, dynamic> json) =>
-    _$LayrzPackageImpl(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      version: json['version'] as String,
-      languageVersionConstraint: json['languageVersionConstraint'] as String?,
-      createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
-      language:
-          const PackageLanguageConverter().fromJson(json['language'] as String),
-      repository: json['repository'] as String?,
-    );
-
-Map<String, dynamic> _$$LayrzPackageImplToJson(_$LayrzPackageImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'version': instance.version,
-      'languageVersionConstraint': instance.languageVersionConstraint,
-      'createdAt': const TimestampConverter().toJson(instance.createdAt),
-      'language': const PackageLanguageConverter().toJson(instance.language),
-      'repository': instance.repository,
     };

@@ -1,7 +1,10 @@
 # Changelog
 
+## 3.3.54
+- updated `TriggerInput` model to mathch the new `Trigger` model
+
 ## 3.3.53
--- add in `isBluetooth` in `AtsEntryUnloadInput`
+- added in `isBluetooth` in `AtsEntryUnloadInput`
 
 ## 3.3.52
 

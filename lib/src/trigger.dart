@@ -485,20 +485,65 @@ class TriggerInput with _$TriggerInput {
     /// Code/Identifier of the trigger.
     String? code,
 
-    /// List of ID's of the linked geofences
-    @Default([]) List<String>? geofencesIds,
+    /// Timezone associated to disparator [TriggerType.exactTime].
+    String? timezoneId,
 
-    /// List of ID's of the linked geofences through tags
-    @Default([]) List<String>? tagsGeofencesIds,
+    /// Mode of activation.
+    @TriggerTypeConverter() @Default(TriggerType.formula) TriggerType kind,
 
-    ///List of ID's of the linked assets
+    /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
+    @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? geofenceKind,
+
+    /// Case kind if trigger generates a case.
+    @CaseTypeOrNullConverter() CaseType? caseKind,
+
+    /// Case comment pattern if trigger generates a case.
+    @CaseCommentPatternOrNullConverter() CaseCommentPattern? caseCommentPattern,
+
+    /// Case comment pattern if trigger generates a case.
+    String? caseCommentPatternValue,
+
+    /// Mode of activation / disparator for [TriggerType.exactTime].
+    @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
+
+    /// Crontab structure
+    String? crontabFormat,
+
+    ///Indicates if the EXACTIME is in Crontab format or assisted format
+    @Default(false) bool isPlainCrontab,
+
+    /// Indicates the days of the week what will execute the trigger.
+    @WeekdayConverter() @Default(Weekday.values) List<Weekday> weekdays,
+
+    /// Layrz Language formula
+    String? formula,
+
+    /// Script to execute
+    String? script,
+
+    /// Priority level for the trigger generated cases
+    @Default(1) int priority,
+
+    /// Color of the trigger case
+    @ColorConverter() @Default(kPrimaryColor) Color color,
+
+    /// Visual event effects to use in Monitor Center events received.
+    @CaseEventEffectConverter() @Default(CaseEventEffect.none) CaseEventEffect visualEventEffect,
+
+    /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
+    String? careProtocolId,
+
+    /// List of ID's of the linked assets
     @Default([]) List<String>? assetsIds,
 
     /// List of ID's of the linked assets through tags
     @Default([]) List<String>? tagsAssetsIds,
 
-    /// List of parameters to consider in the authentication procedure
-    @Default([]) List<String>? parameters,
+    /// List of ID's of the linked geofences
+    @Default([]) List<String>? geofencesIds,
+
+    /// List of ID's of the linked geofences through tags
+    @Default([]) List<String>? tagsGeofencesIds,
 
     /// List of ID's of the assets for authentication
     @Default([]) List<String>? authAssetsIds,
@@ -509,54 +554,11 @@ class TriggerInput with _$TriggerInput {
     /// List of ID's of the users or assets through tags for authentication
     @Default([]) List<String>? authTagsIds,
 
-    /// Mode of activation.
-    @TriggerTypeOrNullConverter() TriggerType? kind,
+    /// List of parameters to consider in the authentication procedure
+    @Default([]) List<String>? parameters,
 
-    /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
-    @TriggerGeofenceDetectionModeOrNullConverter() TriggerGeofenceDetectionMode? geofenceKind,
-
-    /// Layrz Language formula
-    String? formula,
-
-    /// Script to execute
-    String? script,
-
-    /// Mode of activation / disparator for [TriggerType.exactTime].
-    String? exactHour,
-
-    /// Crontab structure
-    String? crontabFormat,
-
-    /// Indicates the days of the week what will execute the trigger.
-    @Default([
-      Weekday.monday,
-      Weekday.tuesday,
-      Weekday.wednesday,
-      Weekday.thursday,
-      Weekday.friday,
-      Weekday.saturday,
-      Weekday.sunday,
-    ])
-    @WeekdayConverter()
-    List<Weekday>? weekdays,
-
-    ///Indicates if the EXACTIME is in Crontab format or assisted format
-    @Default(false) bool? isPlainCrontab,
-
-    /// Timezone associated to disparator [TriggerType.exactTime].
-    String? timezoneId,
-
-    /// Priority level for the trigger generated cases
-    int? priority,
-
-    /// Color of the trigger case
-    @ColorOrNullConverter() Color? color,
-
-    /// Visual event effects to use in Monitor Center events received.
-    @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
-
-    /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
-    String? careProtocolId,
+    /// Cooldown time of the trigger.
+    @DurationConverter() @Default(Duration(minutes: 1)) Duration cooldownTime,
   }) = _TriggerInput;
 
   factory TriggerInput.fromJson(Map<String, dynamic> json) => _$TriggerInputFromJson(json);

@@ -14450,6 +14450,333 @@ abstract class _MonitorActiveCheckpoint implements MonitorActiveCheckpoint {
       get copyWith => throw _privateConstructorUsedError;
 }
 
+LayrzPackage _$LayrzPackageFromJson(Map<String, dynamic> json) {
+  return _LayrzPackage.fromJson(json);
+}
+
+/// @nodoc
+mixin _$LayrzPackage {
+  /// [id] is the unique identifier of the package. This ID is only for identification purposes.
+  /// The private registries does not use this ID.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the package.
+  String get name => throw _privateConstructorUsedError;
+
+  /// [version] is the version of the package.
+  String get version => throw _privateConstructorUsedError;
+
+  /// [languageVersionConstraint] is the language version constraint of the package.
+  String? get languageVersionConstraint => throw _privateConstructorUsedError;
+
+  /// [createdAt] is the date when the package was created.
+  @TimestampConverter()
+  DateTime get createdAt => throw _privateConstructorUsedError;
+
+  /// [language] is the language of the package.
+  @PackageLanguageConverter()
+  PackageLanguage get language => throw _privateConstructorUsedError;
+
+  /// [repository] is the repository of the package.
+  String? get repository => throw _privateConstructorUsedError;
+
+  /// Serializes this LayrzPackage to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of LayrzPackage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $LayrzPackageCopyWith<LayrzPackage> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LayrzPackageCopyWith<$Res> {
+  factory $LayrzPackageCopyWith(
+          LayrzPackage value, $Res Function(LayrzPackage) then) =
+      _$LayrzPackageCopyWithImpl<$Res, LayrzPackage>;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String version,
+      String? languageVersionConstraint,
+      @TimestampConverter() DateTime createdAt,
+      @PackageLanguageConverter() PackageLanguage language,
+      String? repository});
+}
+
+/// @nodoc
+class _$LayrzPackageCopyWithImpl<$Res, $Val extends LayrzPackage>
+    implements $LayrzPackageCopyWith<$Res> {
+  _$LayrzPackageCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of LayrzPackage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? version = null,
+    Object? languageVersionConstraint = freezed,
+    Object? createdAt = null,
+    Object? language = null,
+    Object? repository = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: null == version
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      languageVersionConstraint: freezed == languageVersionConstraint
+          ? _value.languageVersionConstraint
+          : languageVersionConstraint // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      language: null == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as PackageLanguage,
+      repository: freezed == repository
+          ? _value.repository
+          : repository // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$LayrzPackageImplCopyWith<$Res>
+    implements $LayrzPackageCopyWith<$Res> {
+  factory _$$LayrzPackageImplCopyWith(
+          _$LayrzPackageImpl value, $Res Function(_$LayrzPackageImpl) then) =
+      __$$LayrzPackageImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String version,
+      String? languageVersionConstraint,
+      @TimestampConverter() DateTime createdAt,
+      @PackageLanguageConverter() PackageLanguage language,
+      String? repository});
+}
+
+/// @nodoc
+class __$$LayrzPackageImplCopyWithImpl<$Res>
+    extends _$LayrzPackageCopyWithImpl<$Res, _$LayrzPackageImpl>
+    implements _$$LayrzPackageImplCopyWith<$Res> {
+  __$$LayrzPackageImplCopyWithImpl(
+      _$LayrzPackageImpl _value, $Res Function(_$LayrzPackageImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of LayrzPackage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? version = null,
+    Object? languageVersionConstraint = freezed,
+    Object? createdAt = null,
+    Object? language = null,
+    Object? repository = freezed,
+  }) {
+    return _then(_$LayrzPackageImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      version: null == version
+          ? _value.version
+          : version // ignore: cast_nullable_to_non_nullable
+              as String,
+      languageVersionConstraint: freezed == languageVersionConstraint
+          ? _value.languageVersionConstraint
+          : languageVersionConstraint // ignore: cast_nullable_to_non_nullable
+              as String?,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      language: null == language
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as PackageLanguage,
+      repository: freezed == repository
+          ? _value.repository
+          : repository // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$LayrzPackageImpl implements _LayrzPackage {
+  const _$LayrzPackageImpl(
+      {required this.id,
+      required this.name,
+      required this.version,
+      this.languageVersionConstraint,
+      @TimestampConverter() required this.createdAt,
+      @PackageLanguageConverter() required this.language,
+      this.repository});
+
+  factory _$LayrzPackageImpl.fromJson(Map<String, dynamic> json) =>
+      _$$LayrzPackageImplFromJson(json);
+
+  /// [id] is the unique identifier of the package. This ID is only for identification purposes.
+  /// The private registries does not use this ID.
+  @override
+  final String id;
+
+  /// [name] is the name of the package.
+  @override
+  final String name;
+
+  /// [version] is the version of the package.
+  @override
+  final String version;
+
+  /// [languageVersionConstraint] is the language version constraint of the package.
+  @override
+  final String? languageVersionConstraint;
+
+  /// [createdAt] is the date when the package was created.
+  @override
+  @TimestampConverter()
+  final DateTime createdAt;
+
+  /// [language] is the language of the package.
+  @override
+  @PackageLanguageConverter()
+  final PackageLanguage language;
+
+  /// [repository] is the repository of the package.
+  @override
+  final String? repository;
+
+  @override
+  String toString() {
+    return 'LayrzPackage(id: $id, name: $name, version: $version, languageVersionConstraint: $languageVersionConstraint, createdAt: $createdAt, language: $language, repository: $repository)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LayrzPackageImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.languageVersionConstraint,
+                    languageVersionConstraint) ||
+                other.languageVersionConstraint == languageVersionConstraint) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt) &&
+            (identical(other.language, language) ||
+                other.language == language) &&
+            (identical(other.repository, repository) ||
+                other.repository == repository));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, version,
+      languageVersionConstraint, createdAt, language, repository);
+
+  /// Create a copy of LayrzPackage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LayrzPackageImplCopyWith<_$LayrzPackageImpl> get copyWith =>
+      __$$LayrzPackageImplCopyWithImpl<_$LayrzPackageImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$LayrzPackageImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _LayrzPackage implements LayrzPackage {
+  const factory _LayrzPackage(
+      {required final String id,
+      required final String name,
+      required final String version,
+      final String? languageVersionConstraint,
+      @TimestampConverter() required final DateTime createdAt,
+      @PackageLanguageConverter() required final PackageLanguage language,
+      final String? repository}) = _$LayrzPackageImpl;
+
+  factory _LayrzPackage.fromJson(Map<String, dynamic> json) =
+      _$LayrzPackageImpl.fromJson;
+
+  /// [id] is the unique identifier of the package. This ID is only for identification purposes.
+  /// The private registries does not use this ID.
+  @override
+  String get id;
+
+  /// [name] is the name of the package.
+  @override
+  String get name;
+
+  /// [version] is the version of the package.
+  @override
+  String get version;
+
+  /// [languageVersionConstraint] is the language version constraint of the package.
+  @override
+  String? get languageVersionConstraint;
+
+  /// [createdAt] is the date when the package was created.
+  @override
+  @TimestampConverter()
+  DateTime get createdAt;
+
+  /// [language] is the language of the package.
+  @override
+  @PackageLanguageConverter()
+  PackageLanguage get language;
+
+  /// [repository] is the repository of the package.
+  @override
+  String? get repository;
+
+  /// Create a copy of LayrzPackage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$LayrzPackageImplCopyWith<_$LayrzPackageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 Preset _$PresetFromJson(Map<String, dynamic> json) {
   return _Preset.fromJson(json);
 }
@@ -21559,6 +21886,136 @@ mixin _$TriggerInput {
   /// Code/Identifier of the trigger.
   set code(String? value) => throw _privateConstructorUsedError;
 
+  /// Timezone associated to disparator [TriggerType.exactTime].
+  String? get timezoneId => throw _privateConstructorUsedError;
+
+  /// Timezone associated to disparator [TriggerType.exactTime].
+  set timezoneId(String? value) => throw _privateConstructorUsedError;
+
+  /// Mode of activation.
+  @TriggerTypeConverter()
+  TriggerType get kind => throw _privateConstructorUsedError;
+
+  /// Mode of activation.
+  @TriggerTypeConverter()
+  set kind(TriggerType value) => throw _privateConstructorUsedError;
+
+  /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
+  @TriggerGeofenceDetectionModeOrNullConverter()
+  TriggerGeofenceDetectionMode? get geofenceKind =>
+      throw _privateConstructorUsedError;
+
+  /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
+  @TriggerGeofenceDetectionModeOrNullConverter()
+  set geofenceKind(TriggerGeofenceDetectionMode? value) =>
+      throw _privateConstructorUsedError;
+
+  /// Case kind if trigger generates a case.
+  @CaseTypeOrNullConverter()
+  CaseType? get caseKind => throw _privateConstructorUsedError;
+
+  /// Case kind if trigger generates a case.
+  @CaseTypeOrNullConverter()
+  set caseKind(CaseType? value) => throw _privateConstructorUsedError;
+
+  /// Case comment pattern if trigger generates a case.
+  @CaseCommentPatternOrNullConverter()
+  CaseCommentPattern? get caseCommentPattern =>
+      throw _privateConstructorUsedError;
+
+  /// Case comment pattern if trigger generates a case.
+  @CaseCommentPatternOrNullConverter()
+  set caseCommentPattern(CaseCommentPattern? value) =>
+      throw _privateConstructorUsedError;
+
+  /// Case comment pattern if trigger generates a case.
+  String? get caseCommentPatternValue => throw _privateConstructorUsedError;
+
+  /// Case comment pattern if trigger generates a case.
+  set caseCommentPatternValue(String? value) =>
+      throw _privateConstructorUsedError;
+
+  /// Mode of activation / disparator for [TriggerType.exactTime].
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? get exactHour => throw _privateConstructorUsedError;
+
+  /// Mode of activation / disparator for [TriggerType.exactTime].
+  @TimeOfDayOrNullConverter()
+  set exactHour(TimeOfDay? value) => throw _privateConstructorUsedError;
+
+  /// Crontab structure
+  String? get crontabFormat => throw _privateConstructorUsedError;
+
+  /// Crontab structure
+  set crontabFormat(String? value) => throw _privateConstructorUsedError;
+
+  ///Indicates if the EXACTIME is in Crontab format or assisted format
+  bool get isPlainCrontab => throw _privateConstructorUsedError;
+
+  ///Indicates if the EXACTIME is in Crontab format or assisted format
+  set isPlainCrontab(bool value) => throw _privateConstructorUsedError;
+
+  /// Indicates the days of the week what will execute the trigger.
+  @WeekdayConverter()
+  List<Weekday> get weekdays => throw _privateConstructorUsedError;
+
+  /// Indicates the days of the week what will execute the trigger.
+  @WeekdayConverter()
+  set weekdays(List<Weekday> value) => throw _privateConstructorUsedError;
+
+  /// Layrz Language formula
+  String? get formula => throw _privateConstructorUsedError;
+
+  /// Layrz Language formula
+  set formula(String? value) => throw _privateConstructorUsedError;
+
+  /// Script to execute
+  String? get script => throw _privateConstructorUsedError;
+
+  /// Script to execute
+  set script(String? value) => throw _privateConstructorUsedError;
+
+  /// Priority level for the trigger generated cases
+  int get priority => throw _privateConstructorUsedError;
+
+  /// Priority level for the trigger generated cases
+  set priority(int value) => throw _privateConstructorUsedError;
+
+  /// Color of the trigger case
+  @ColorConverter()
+  Color get color => throw _privateConstructorUsedError;
+
+  /// Color of the trigger case
+  @ColorConverter()
+  set color(Color value) => throw _privateConstructorUsedError;
+
+  /// Visual event effects to use in Monitor Center events received.
+  @CaseEventEffectConverter()
+  CaseEventEffect get visualEventEffect => throw _privateConstructorUsedError;
+
+  /// Visual event effects to use in Monitor Center events received.
+  @CaseEventEffectConverter()
+  set visualEventEffect(CaseEventEffect value) =>
+      throw _privateConstructorUsedError;
+
+  /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
+  String? get careProtocolId => throw _privateConstructorUsedError;
+
+  /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
+  set careProtocolId(String? value) => throw _privateConstructorUsedError;
+
+  /// List of ID's of the linked assets
+  List<String>? get assetsIds => throw _privateConstructorUsedError;
+
+  /// List of ID's of the linked assets
+  set assetsIds(List<String>? value) => throw _privateConstructorUsedError;
+
+  /// List of ID's of the linked assets through tags
+  List<String>? get tagsAssetsIds => throw _privateConstructorUsedError;
+
+  /// List of ID's of the linked assets through tags
+  set tagsAssetsIds(List<String>? value) => throw _privateConstructorUsedError;
+
   /// List of ID's of the linked geofences
   List<String>? get geofencesIds => throw _privateConstructorUsedError;
 
@@ -21571,24 +22028,6 @@ mixin _$TriggerInput {
   /// List of ID's of the linked geofences through tags
   set tagsGeofencesIds(List<String>? value) =>
       throw _privateConstructorUsedError;
-
-  ///List of ID's of the linked assets
-  List<String>? get assetsIds => throw _privateConstructorUsedError;
-
-  ///List of ID's of the linked assets
-  set assetsIds(List<String>? value) => throw _privateConstructorUsedError;
-
-  /// List of ID's of the linked assets through tags
-  List<String>? get tagsAssetsIds => throw _privateConstructorUsedError;
-
-  /// List of ID's of the linked assets through tags
-  set tagsAssetsIds(List<String>? value) => throw _privateConstructorUsedError;
-
-  /// List of parameters to consider in the authentication procedure
-  List<String>? get parameters => throw _privateConstructorUsedError;
-
-  /// List of parameters to consider in the authentication procedure
-  set parameters(List<String>? value) => throw _privateConstructorUsedError;
 
   /// List of ID's of the assets for authentication
   List<String>? get authAssetsIds => throw _privateConstructorUsedError;
@@ -21608,96 +22047,19 @@ mixin _$TriggerInput {
   /// List of ID's of the users or assets through tags for authentication
   set authTagsIds(List<String>? value) => throw _privateConstructorUsedError;
 
-  /// Mode of activation.
-  @TriggerTypeOrNullConverter()
-  TriggerType? get kind => throw _privateConstructorUsedError;
+  /// List of parameters to consider in the authentication procedure
+  List<String>? get parameters => throw _privateConstructorUsedError;
 
-  /// Mode of activation.
-  @TriggerTypeOrNullConverter()
-  set kind(TriggerType? value) => throw _privateConstructorUsedError;
+  /// List of parameters to consider in the authentication procedure
+  set parameters(List<String>? value) => throw _privateConstructorUsedError;
 
-  /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
-  @TriggerGeofenceDetectionModeOrNullConverter()
-  TriggerGeofenceDetectionMode? get geofenceKind =>
-      throw _privateConstructorUsedError;
+  /// Cooldown time of the trigger.
+  @DurationConverter()
+  Duration get cooldownTime => throw _privateConstructorUsedError;
 
-  /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
-  @TriggerGeofenceDetectionModeOrNullConverter()
-  set geofenceKind(TriggerGeofenceDetectionMode? value) =>
-      throw _privateConstructorUsedError;
-
-  /// Layrz Language formula
-  String? get formula => throw _privateConstructorUsedError;
-
-  /// Layrz Language formula
-  set formula(String? value) => throw _privateConstructorUsedError;
-
-  /// Script to execute
-  String? get script => throw _privateConstructorUsedError;
-
-  /// Script to execute
-  set script(String? value) => throw _privateConstructorUsedError;
-
-  /// Mode of activation / disparator for [TriggerType.exactTime].
-  String? get exactHour => throw _privateConstructorUsedError;
-
-  /// Mode of activation / disparator for [TriggerType.exactTime].
-  set exactHour(String? value) => throw _privateConstructorUsedError;
-
-  /// Crontab structure
-  String? get crontabFormat => throw _privateConstructorUsedError;
-
-  /// Crontab structure
-  set crontabFormat(String? value) => throw _privateConstructorUsedError;
-
-  /// Indicates the days of the week what will execute the trigger.
-  @WeekdayConverter()
-  List<Weekday>? get weekdays => throw _privateConstructorUsedError;
-
-  /// Indicates the days of the week what will execute the trigger.
-  @WeekdayConverter()
-  set weekdays(List<Weekday>? value) => throw _privateConstructorUsedError;
-
-  ///Indicates if the EXACTIME is in Crontab format or assisted format
-  bool? get isPlainCrontab => throw _privateConstructorUsedError;
-
-  ///Indicates if the EXACTIME is in Crontab format or assisted format
-  set isPlainCrontab(bool? value) => throw _privateConstructorUsedError;
-
-  /// Timezone associated to disparator [TriggerType.exactTime].
-  String? get timezoneId => throw _privateConstructorUsedError;
-
-  /// Timezone associated to disparator [TriggerType.exactTime].
-  set timezoneId(String? value) => throw _privateConstructorUsedError;
-
-  /// Priority level for the trigger generated cases
-  int? get priority => throw _privateConstructorUsedError;
-
-  /// Priority level for the trigger generated cases
-  set priority(int? value) => throw _privateConstructorUsedError;
-
-  /// Color of the trigger case
-  @ColorOrNullConverter()
-  Color? get color => throw _privateConstructorUsedError;
-
-  /// Color of the trigger case
-  @ColorOrNullConverter()
-  set color(Color? value) => throw _privateConstructorUsedError;
-
-  /// Visual event effects to use in Monitor Center events received.
-  @CaseEventEffectOrNullConverter()
-  CaseEventEffect? get visualEventEffect => throw _privateConstructorUsedError;
-
-  /// Visual event effects to use in Monitor Center events received.
-  @CaseEventEffectOrNullConverter()
-  set visualEventEffect(CaseEventEffect? value) =>
-      throw _privateConstructorUsedError;
-
-  /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
-  String? get careProtocolId => throw _privateConstructorUsedError;
-
-  /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
-  set careProtocolId(String? value) => throw _privateConstructorUsedError;
+  /// Cooldown time of the trigger.
+  @DurationConverter()
+  set cooldownTime(Duration value) => throw _privateConstructorUsedError;
 
   /// Serializes this TriggerInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -21719,28 +22081,33 @@ abstract class $TriggerInputCopyWith<$Res> {
       {String? id,
       String? name,
       String? code,
-      List<String>? geofencesIds,
-      List<String>? tagsGeofencesIds,
+      String? timezoneId,
+      @TriggerTypeConverter() TriggerType kind,
+      @TriggerGeofenceDetectionModeOrNullConverter()
+      TriggerGeofenceDetectionMode? geofenceKind,
+      @CaseTypeOrNullConverter() CaseType? caseKind,
+      @CaseCommentPatternOrNullConverter()
+      CaseCommentPattern? caseCommentPattern,
+      String? caseCommentPatternValue,
+      @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
+      String? crontabFormat,
+      bool isPlainCrontab,
+      @WeekdayConverter() List<Weekday> weekdays,
+      String? formula,
+      String? script,
+      int priority,
+      @ColorConverter() Color color,
+      @CaseEventEffectConverter() CaseEventEffect visualEventEffect,
+      String? careProtocolId,
       List<String>? assetsIds,
       List<String>? tagsAssetsIds,
-      List<String>? parameters,
+      List<String>? geofencesIds,
+      List<String>? tagsGeofencesIds,
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeOrNullConverter() TriggerType? kind,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
-      String? formula,
-      String? script,
-      String? exactHour,
-      String? crontabFormat,
-      @WeekdayConverter() List<Weekday>? weekdays,
-      bool? isPlainCrontab,
-      String? timezoneId,
-      int? priority,
-      @ColorOrNullConverter() Color? color,
-      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
-      String? careProtocolId});
+      List<String>? parameters,
+      @DurationConverter() Duration cooldownTime});
 }
 
 /// @nodoc
@@ -21761,27 +22128,31 @@ class _$TriggerInputCopyWithImpl<$Res, $Val extends TriggerInput>
     Object? id = freezed,
     Object? name = freezed,
     Object? code = freezed,
-    Object? geofencesIds = freezed,
-    Object? tagsGeofencesIds = freezed,
+    Object? timezoneId = freezed,
+    Object? kind = null,
+    Object? geofenceKind = freezed,
+    Object? caseKind = freezed,
+    Object? caseCommentPattern = freezed,
+    Object? caseCommentPatternValue = freezed,
+    Object? exactHour = freezed,
+    Object? crontabFormat = freezed,
+    Object? isPlainCrontab = null,
+    Object? weekdays = null,
+    Object? formula = freezed,
+    Object? script = freezed,
+    Object? priority = null,
+    Object? color = null,
+    Object? visualEventEffect = null,
+    Object? careProtocolId = freezed,
     Object? assetsIds = freezed,
     Object? tagsAssetsIds = freezed,
-    Object? parameters = freezed,
+    Object? geofencesIds = freezed,
+    Object? tagsGeofencesIds = freezed,
     Object? authAssetsIds = freezed,
     Object? authUsersIds = freezed,
     Object? authTagsIds = freezed,
-    Object? kind = freezed,
-    Object? geofenceKind = freezed,
-    Object? formula = freezed,
-    Object? script = freezed,
-    Object? exactHour = freezed,
-    Object? crontabFormat = freezed,
-    Object? weekdays = freezed,
-    Object? isPlainCrontab = freezed,
-    Object? timezoneId = freezed,
-    Object? priority = freezed,
-    Object? color = freezed,
-    Object? visualEventEffect = freezed,
-    Object? careProtocolId = freezed,
+    Object? parameters = freezed,
+    Object? cooldownTime = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -21796,14 +22167,70 @@ class _$TriggerInputCopyWithImpl<$Res, $Val extends TriggerInput>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-      geofencesIds: freezed == geofencesIds
-          ? _value.geofencesIds
-          : geofencesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      tagsGeofencesIds: freezed == tagsGeofencesIds
-          ? _value.tagsGeofencesIds
-          : tagsGeofencesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+      timezoneId: freezed == timezoneId
+          ? _value.timezoneId
+          : timezoneId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as TriggerType,
+      geofenceKind: freezed == geofenceKind
+          ? _value.geofenceKind
+          : geofenceKind // ignore: cast_nullable_to_non_nullable
+              as TriggerGeofenceDetectionMode?,
+      caseKind: freezed == caseKind
+          ? _value.caseKind
+          : caseKind // ignore: cast_nullable_to_non_nullable
+              as CaseType?,
+      caseCommentPattern: freezed == caseCommentPattern
+          ? _value.caseCommentPattern
+          : caseCommentPattern // ignore: cast_nullable_to_non_nullable
+              as CaseCommentPattern?,
+      caseCommentPatternValue: freezed == caseCommentPatternValue
+          ? _value.caseCommentPatternValue
+          : caseCommentPatternValue // ignore: cast_nullable_to_non_nullable
+              as String?,
+      exactHour: freezed == exactHour
+          ? _value.exactHour
+          : exactHour // ignore: cast_nullable_to_non_nullable
+              as TimeOfDay?,
+      crontabFormat: freezed == crontabFormat
+          ? _value.crontabFormat
+          : crontabFormat // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isPlainCrontab: null == isPlainCrontab
+          ? _value.isPlainCrontab
+          : isPlainCrontab // ignore: cast_nullable_to_non_nullable
+              as bool,
+      weekdays: null == weekdays
+          ? _value.weekdays
+          : weekdays // ignore: cast_nullable_to_non_nullable
+              as List<Weekday>,
+      formula: freezed == formula
+          ? _value.formula
+          : formula // ignore: cast_nullable_to_non_nullable
+              as String?,
+      script: freezed == script
+          ? _value.script
+          : script // ignore: cast_nullable_to_non_nullable
+              as String?,
+      priority: null == priority
+          ? _value.priority
+          : priority // ignore: cast_nullable_to_non_nullable
+              as int,
+      color: null == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
+      visualEventEffect: null == visualEventEffect
+          ? _value.visualEventEffect
+          : visualEventEffect // ignore: cast_nullable_to_non_nullable
+              as CaseEventEffect,
+      careProtocolId: freezed == careProtocolId
+          ? _value.careProtocolId
+          : careProtocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
       assetsIds: freezed == assetsIds
           ? _value.assetsIds
           : assetsIds // ignore: cast_nullable_to_non_nullable
@@ -21812,9 +22239,13 @@ class _$TriggerInputCopyWithImpl<$Res, $Val extends TriggerInput>
           ? _value.tagsAssetsIds
           : tagsAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      parameters: freezed == parameters
-          ? _value.parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
+      geofencesIds: freezed == geofencesIds
+          ? _value.geofencesIds
+          : geofencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      tagsGeofencesIds: freezed == tagsGeofencesIds
+          ? _value.tagsGeofencesIds
+          : tagsGeofencesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       authAssetsIds: freezed == authAssetsIds
           ? _value.authAssetsIds
@@ -21828,58 +22259,14 @@ class _$TriggerInputCopyWithImpl<$Res, $Val extends TriggerInput>
           ? _value.authTagsIds
           : authTagsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      kind: freezed == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as TriggerType?,
-      geofenceKind: freezed == geofenceKind
-          ? _value.geofenceKind
-          : geofenceKind // ignore: cast_nullable_to_non_nullable
-              as TriggerGeofenceDetectionMode?,
-      formula: freezed == formula
-          ? _value.formula
-          : formula // ignore: cast_nullable_to_non_nullable
-              as String?,
-      script: freezed == script
-          ? _value.script
-          : script // ignore: cast_nullable_to_non_nullable
-              as String?,
-      exactHour: freezed == exactHour
-          ? _value.exactHour
-          : exactHour // ignore: cast_nullable_to_non_nullable
-              as String?,
-      crontabFormat: freezed == crontabFormat
-          ? _value.crontabFormat
-          : crontabFormat // ignore: cast_nullable_to_non_nullable
-              as String?,
-      weekdays: freezed == weekdays
-          ? _value.weekdays
-          : weekdays // ignore: cast_nullable_to_non_nullable
-              as List<Weekday>?,
-      isPlainCrontab: freezed == isPlainCrontab
-          ? _value.isPlainCrontab
-          : isPlainCrontab // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      timezoneId: freezed == timezoneId
-          ? _value.timezoneId
-          : timezoneId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      priority: freezed == priority
-          ? _value.priority
-          : priority // ignore: cast_nullable_to_non_nullable
-              as int?,
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      visualEventEffect: freezed == visualEventEffect
-          ? _value.visualEventEffect
-          : visualEventEffect // ignore: cast_nullable_to_non_nullable
-              as CaseEventEffect?,
-      careProtocolId: freezed == careProtocolId
-          ? _value.careProtocolId
-          : careProtocolId // ignore: cast_nullable_to_non_nullable
-              as String?,
+      parameters: freezed == parameters
+          ? _value.parameters
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      cooldownTime: null == cooldownTime
+          ? _value.cooldownTime
+          : cooldownTime // ignore: cast_nullable_to_non_nullable
+              as Duration,
     ) as $Val);
   }
 }
@@ -21896,28 +22283,33 @@ abstract class _$$TriggerInputImplCopyWith<$Res>
       {String? id,
       String? name,
       String? code,
-      List<String>? geofencesIds,
-      List<String>? tagsGeofencesIds,
+      String? timezoneId,
+      @TriggerTypeConverter() TriggerType kind,
+      @TriggerGeofenceDetectionModeOrNullConverter()
+      TriggerGeofenceDetectionMode? geofenceKind,
+      @CaseTypeOrNullConverter() CaseType? caseKind,
+      @CaseCommentPatternOrNullConverter()
+      CaseCommentPattern? caseCommentPattern,
+      String? caseCommentPatternValue,
+      @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
+      String? crontabFormat,
+      bool isPlainCrontab,
+      @WeekdayConverter() List<Weekday> weekdays,
+      String? formula,
+      String? script,
+      int priority,
+      @ColorConverter() Color color,
+      @CaseEventEffectConverter() CaseEventEffect visualEventEffect,
+      String? careProtocolId,
       List<String>? assetsIds,
       List<String>? tagsAssetsIds,
-      List<String>? parameters,
+      List<String>? geofencesIds,
+      List<String>? tagsGeofencesIds,
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeOrNullConverter() TriggerType? kind,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
-      String? formula,
-      String? script,
-      String? exactHour,
-      String? crontabFormat,
-      @WeekdayConverter() List<Weekday>? weekdays,
-      bool? isPlainCrontab,
-      String? timezoneId,
-      int? priority,
-      @ColorOrNullConverter() Color? color,
-      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
-      String? careProtocolId});
+      List<String>? parameters,
+      @DurationConverter() Duration cooldownTime});
 }
 
 /// @nodoc
@@ -21936,27 +22328,31 @@ class __$$TriggerInputImplCopyWithImpl<$Res>
     Object? id = freezed,
     Object? name = freezed,
     Object? code = freezed,
-    Object? geofencesIds = freezed,
-    Object? tagsGeofencesIds = freezed,
+    Object? timezoneId = freezed,
+    Object? kind = null,
+    Object? geofenceKind = freezed,
+    Object? caseKind = freezed,
+    Object? caseCommentPattern = freezed,
+    Object? caseCommentPatternValue = freezed,
+    Object? exactHour = freezed,
+    Object? crontabFormat = freezed,
+    Object? isPlainCrontab = null,
+    Object? weekdays = null,
+    Object? formula = freezed,
+    Object? script = freezed,
+    Object? priority = null,
+    Object? color = null,
+    Object? visualEventEffect = null,
+    Object? careProtocolId = freezed,
     Object? assetsIds = freezed,
     Object? tagsAssetsIds = freezed,
-    Object? parameters = freezed,
+    Object? geofencesIds = freezed,
+    Object? tagsGeofencesIds = freezed,
     Object? authAssetsIds = freezed,
     Object? authUsersIds = freezed,
     Object? authTagsIds = freezed,
-    Object? kind = freezed,
-    Object? geofenceKind = freezed,
-    Object? formula = freezed,
-    Object? script = freezed,
-    Object? exactHour = freezed,
-    Object? crontabFormat = freezed,
-    Object? weekdays = freezed,
-    Object? isPlainCrontab = freezed,
-    Object? timezoneId = freezed,
-    Object? priority = freezed,
-    Object? color = freezed,
-    Object? visualEventEffect = freezed,
-    Object? careProtocolId = freezed,
+    Object? parameters = freezed,
+    Object? cooldownTime = null,
   }) {
     return _then(_$TriggerInputImpl(
       id: freezed == id
@@ -21971,14 +22367,70 @@ class __$$TriggerInputImplCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String?,
-      geofencesIds: freezed == geofencesIds
-          ? _value.geofencesIds
-          : geofencesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      tagsGeofencesIds: freezed == tagsGeofencesIds
-          ? _value.tagsGeofencesIds
-          : tagsGeofencesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
+      timezoneId: freezed == timezoneId
+          ? _value.timezoneId
+          : timezoneId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as TriggerType,
+      geofenceKind: freezed == geofenceKind
+          ? _value.geofenceKind
+          : geofenceKind // ignore: cast_nullable_to_non_nullable
+              as TriggerGeofenceDetectionMode?,
+      caseKind: freezed == caseKind
+          ? _value.caseKind
+          : caseKind // ignore: cast_nullable_to_non_nullable
+              as CaseType?,
+      caseCommentPattern: freezed == caseCommentPattern
+          ? _value.caseCommentPattern
+          : caseCommentPattern // ignore: cast_nullable_to_non_nullable
+              as CaseCommentPattern?,
+      caseCommentPatternValue: freezed == caseCommentPatternValue
+          ? _value.caseCommentPatternValue
+          : caseCommentPatternValue // ignore: cast_nullable_to_non_nullable
+              as String?,
+      exactHour: freezed == exactHour
+          ? _value.exactHour
+          : exactHour // ignore: cast_nullable_to_non_nullable
+              as TimeOfDay?,
+      crontabFormat: freezed == crontabFormat
+          ? _value.crontabFormat
+          : crontabFormat // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isPlainCrontab: null == isPlainCrontab
+          ? _value.isPlainCrontab
+          : isPlainCrontab // ignore: cast_nullable_to_non_nullable
+              as bool,
+      weekdays: null == weekdays
+          ? _value.weekdays
+          : weekdays // ignore: cast_nullable_to_non_nullable
+              as List<Weekday>,
+      formula: freezed == formula
+          ? _value.formula
+          : formula // ignore: cast_nullable_to_non_nullable
+              as String?,
+      script: freezed == script
+          ? _value.script
+          : script // ignore: cast_nullable_to_non_nullable
+              as String?,
+      priority: null == priority
+          ? _value.priority
+          : priority // ignore: cast_nullable_to_non_nullable
+              as int,
+      color: null == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
+      visualEventEffect: null == visualEventEffect
+          ? _value.visualEventEffect
+          : visualEventEffect // ignore: cast_nullable_to_non_nullable
+              as CaseEventEffect,
+      careProtocolId: freezed == careProtocolId
+          ? _value.careProtocolId
+          : careProtocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
       assetsIds: freezed == assetsIds
           ? _value.assetsIds
           : assetsIds // ignore: cast_nullable_to_non_nullable
@@ -21987,9 +22439,13 @@ class __$$TriggerInputImplCopyWithImpl<$Res>
           ? _value.tagsAssetsIds
           : tagsAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      parameters: freezed == parameters
-          ? _value.parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
+      geofencesIds: freezed == geofencesIds
+          ? _value.geofencesIds
+          : geofencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      tagsGeofencesIds: freezed == tagsGeofencesIds
+          ? _value.tagsGeofencesIds
+          : tagsGeofencesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       authAssetsIds: freezed == authAssetsIds
           ? _value.authAssetsIds
@@ -22003,58 +22459,14 @@ class __$$TriggerInputImplCopyWithImpl<$Res>
           ? _value.authTagsIds
           : authTagsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-      kind: freezed == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as TriggerType?,
-      geofenceKind: freezed == geofenceKind
-          ? _value.geofenceKind
-          : geofenceKind // ignore: cast_nullable_to_non_nullable
-              as TriggerGeofenceDetectionMode?,
-      formula: freezed == formula
-          ? _value.formula
-          : formula // ignore: cast_nullable_to_non_nullable
-              as String?,
-      script: freezed == script
-          ? _value.script
-          : script // ignore: cast_nullable_to_non_nullable
-              as String?,
-      exactHour: freezed == exactHour
-          ? _value.exactHour
-          : exactHour // ignore: cast_nullable_to_non_nullable
-              as String?,
-      crontabFormat: freezed == crontabFormat
-          ? _value.crontabFormat
-          : crontabFormat // ignore: cast_nullable_to_non_nullable
-              as String?,
-      weekdays: freezed == weekdays
-          ? _value.weekdays
-          : weekdays // ignore: cast_nullable_to_non_nullable
-              as List<Weekday>?,
-      isPlainCrontab: freezed == isPlainCrontab
-          ? _value.isPlainCrontab
-          : isPlainCrontab // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      timezoneId: freezed == timezoneId
-          ? _value.timezoneId
-          : timezoneId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      priority: freezed == priority
-          ? _value.priority
-          : priority // ignore: cast_nullable_to_non_nullable
-              as int?,
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      visualEventEffect: freezed == visualEventEffect
-          ? _value.visualEventEffect
-          : visualEventEffect // ignore: cast_nullable_to_non_nullable
-              as CaseEventEffect?,
-      careProtocolId: freezed == careProtocolId
-          ? _value.careProtocolId
-          : careProtocolId // ignore: cast_nullable_to_non_nullable
-              as String?,
+      parameters: freezed == parameters
+          ? _value.parameters
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      cooldownTime: null == cooldownTime
+          ? _value.cooldownTime
+          : cooldownTime // ignore: cast_nullable_to_non_nullable
+              as Duration,
     ));
   }
 }
@@ -22066,35 +22478,31 @@ class _$TriggerInputImpl implements _TriggerInput {
       {this.id,
       this.name,
       this.code,
-      this.geofencesIds = const [],
-      this.tagsGeofencesIds = const [],
+      this.timezoneId,
+      @TriggerTypeConverter() this.kind = TriggerType.formula,
+      @TriggerGeofenceDetectionModeOrNullConverter() this.geofenceKind,
+      @CaseTypeOrNullConverter() this.caseKind,
+      @CaseCommentPatternOrNullConverter() this.caseCommentPattern,
+      this.caseCommentPatternValue,
+      @TimeOfDayOrNullConverter() this.exactHour,
+      this.crontabFormat,
+      this.isPlainCrontab = false,
+      @WeekdayConverter() this.weekdays = Weekday.values,
+      this.formula,
+      this.script,
+      this.priority = 1,
+      @ColorConverter() this.color = kPrimaryColor,
+      @CaseEventEffectConverter() this.visualEventEffect = CaseEventEffect.none,
+      this.careProtocolId,
       this.assetsIds = const [],
       this.tagsAssetsIds = const [],
-      this.parameters = const [],
+      this.geofencesIds = const [],
+      this.tagsGeofencesIds = const [],
       this.authAssetsIds = const [],
       this.authUsersIds = const [],
       this.authTagsIds = const [],
-      @TriggerTypeOrNullConverter() this.kind,
-      @TriggerGeofenceDetectionModeOrNullConverter() this.geofenceKind,
-      this.formula,
-      this.script,
-      this.exactHour,
-      this.crontabFormat,
-      @WeekdayConverter() this.weekdays = const [
-        Weekday.monday,
-        Weekday.tuesday,
-        Weekday.wednesday,
-        Weekday.thursday,
-        Weekday.friday,
-        Weekday.saturday,
-        Weekday.sunday
-      ],
-      this.isPlainCrontab = false,
-      this.timezoneId,
-      this.priority,
-      @ColorOrNullConverter() this.color,
-      @CaseEventEffectOrNullConverter() this.visualEventEffect,
-      this.careProtocolId});
+      this.parameters = const [],
+      @DurationConverter() this.cooldownTime = const Duration(minutes: 1)});
 
   factory _$TriggerInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$TriggerInputImplFromJson(json);
@@ -22111,17 +22519,85 @@ class _$TriggerInputImpl implements _TriggerInput {
   @override
   String? code;
 
-  /// List of ID's of the linked geofences
+  /// Timezone associated to disparator [TriggerType.exactTime].
+  @override
+  String? timezoneId;
+
+  /// Mode of activation.
   @override
   @JsonKey()
-  List<String>? geofencesIds;
+  @TriggerTypeConverter()
+  TriggerType kind;
 
-  /// List of ID's of the linked geofences through tags
+  /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
+  @override
+  @TriggerGeofenceDetectionModeOrNullConverter()
+  TriggerGeofenceDetectionMode? geofenceKind;
+
+  /// Case kind if trigger generates a case.
+  @override
+  @CaseTypeOrNullConverter()
+  CaseType? caseKind;
+
+  /// Case comment pattern if trigger generates a case.
+  @override
+  @CaseCommentPatternOrNullConverter()
+  CaseCommentPattern? caseCommentPattern;
+
+  /// Case comment pattern if trigger generates a case.
+  @override
+  String? caseCommentPatternValue;
+
+  /// Mode of activation / disparator for [TriggerType.exactTime].
+  @override
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? exactHour;
+
+  /// Crontab structure
+  @override
+  String? crontabFormat;
+
+  ///Indicates if the EXACTIME is in Crontab format or assisted format
   @override
   @JsonKey()
-  List<String>? tagsGeofencesIds;
+  bool isPlainCrontab;
 
-  ///List of ID's of the linked assets
+  /// Indicates the days of the week what will execute the trigger.
+  @override
+  @JsonKey()
+  @WeekdayConverter()
+  List<Weekday> weekdays;
+
+  /// Layrz Language formula
+  @override
+  String? formula;
+
+  /// Script to execute
+  @override
+  String? script;
+
+  /// Priority level for the trigger generated cases
+  @override
+  @JsonKey()
+  int priority;
+
+  /// Color of the trigger case
+  @override
+  @JsonKey()
+  @ColorConverter()
+  Color color;
+
+  /// Visual event effects to use in Monitor Center events received.
+  @override
+  @JsonKey()
+  @CaseEventEffectConverter()
+  CaseEventEffect visualEventEffect;
+
+  /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
+  @override
+  String? careProtocolId;
+
+  /// List of ID's of the linked assets
   @override
   @JsonKey()
   List<String>? assetsIds;
@@ -22131,10 +22607,15 @@ class _$TriggerInputImpl implements _TriggerInput {
   @JsonKey()
   List<String>? tagsAssetsIds;
 
-  /// List of parameters to consider in the authentication procedure
+  /// List of ID's of the linked geofences
   @override
   @JsonKey()
-  List<String>? parameters;
+  List<String>? geofencesIds;
+
+  /// List of ID's of the linked geofences through tags
+  @override
+  @JsonKey()
+  List<String>? tagsGeofencesIds;
 
   /// List of ID's of the assets for authentication
   @override
@@ -22151,68 +22632,20 @@ class _$TriggerInputImpl implements _TriggerInput {
   @JsonKey()
   List<String>? authTagsIds;
 
-  /// Mode of activation.
-  @override
-  @TriggerTypeOrNullConverter()
-  TriggerType? kind;
-
-  /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
-  @override
-  @TriggerGeofenceDetectionModeOrNullConverter()
-  TriggerGeofenceDetectionMode? geofenceKind;
-
-  /// Layrz Language formula
-  @override
-  String? formula;
-
-  /// Script to execute
-  @override
-  String? script;
-
-  /// Mode of activation / disparator for [TriggerType.exactTime].
-  @override
-  String? exactHour;
-
-  /// Crontab structure
-  @override
-  String? crontabFormat;
-
-  /// Indicates the days of the week what will execute the trigger.
+  /// List of parameters to consider in the authentication procedure
   @override
   @JsonKey()
-  @WeekdayConverter()
-  List<Weekday>? weekdays;
+  List<String>? parameters;
 
-  ///Indicates if the EXACTIME is in Crontab format or assisted format
+  /// Cooldown time of the trigger.
   @override
   @JsonKey()
-  bool? isPlainCrontab;
-
-  /// Timezone associated to disparator [TriggerType.exactTime].
-  @override
-  String? timezoneId;
-
-  /// Priority level for the trigger generated cases
-  @override
-  int? priority;
-
-  /// Color of the trigger case
-  @override
-  @ColorOrNullConverter()
-  Color? color;
-
-  /// Visual event effects to use in Monitor Center events received.
-  @override
-  @CaseEventEffectOrNullConverter()
-  CaseEventEffect? visualEventEffect;
-
-  /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
-  @override
-  String? careProtocolId;
+  @DurationConverter()
+  Duration cooldownTime;
 
   @override
   String toString() {
-    return 'TriggerInput(id: $id, name: $name, code: $code, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, parameters: $parameters, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, kind: $kind, geofenceKind: $geofenceKind, formula: $formula, script: $script, exactHour: $exactHour, crontabFormat: $crontabFormat, weekdays: $weekdays, isPlainCrontab: $isPlainCrontab, timezoneId: $timezoneId, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId)';
+    return 'TriggerInput(id: $id, name: $name, code: $code, timezoneId: $timezoneId, kind: $kind, geofenceKind: $geofenceKind, caseKind: $caseKind, caseCommentPattern: $caseCommentPattern, caseCommentPatternValue: $caseCommentPatternValue, exactHour: $exactHour, crontabFormat: $crontabFormat, isPlainCrontab: $isPlainCrontab, weekdays: $weekdays, formula: $formula, script: $script, priority: $priority, color: $color, visualEventEffect: $visualEventEffect, careProtocolId: $careProtocolId, assetsIds: $assetsIds, tagsAssetsIds: $tagsAssetsIds, geofencesIds: $geofencesIds, tagsGeofencesIds: $tagsGeofencesIds, authAssetsIds: $authAssetsIds, authUsersIds: $authUsersIds, authTagsIds: $authTagsIds, parameters: $parameters, cooldownTime: $cooldownTime)';
   }
 
   /// Create a copy of TriggerInput
@@ -22236,28 +22669,33 @@ abstract class _TriggerInput implements TriggerInput {
       {String? id,
       String? name,
       String? code,
-      List<String>? geofencesIds,
-      List<String>? tagsGeofencesIds,
+      String? timezoneId,
+      @TriggerTypeConverter() TriggerType kind,
+      @TriggerGeofenceDetectionModeOrNullConverter()
+      TriggerGeofenceDetectionMode? geofenceKind,
+      @CaseTypeOrNullConverter() CaseType? caseKind,
+      @CaseCommentPatternOrNullConverter()
+      CaseCommentPattern? caseCommentPattern,
+      String? caseCommentPatternValue,
+      @TimeOfDayOrNullConverter() TimeOfDay? exactHour,
+      String? crontabFormat,
+      bool isPlainCrontab,
+      @WeekdayConverter() List<Weekday> weekdays,
+      String? formula,
+      String? script,
+      int priority,
+      @ColorConverter() Color color,
+      @CaseEventEffectConverter() CaseEventEffect visualEventEffect,
+      String? careProtocolId,
       List<String>? assetsIds,
       List<String>? tagsAssetsIds,
-      List<String>? parameters,
+      List<String>? geofencesIds,
+      List<String>? tagsGeofencesIds,
       List<String>? authAssetsIds,
       List<String>? authUsersIds,
       List<String>? authTagsIds,
-      @TriggerTypeOrNullConverter() TriggerType? kind,
-      @TriggerGeofenceDetectionModeOrNullConverter()
-      TriggerGeofenceDetectionMode? geofenceKind,
-      String? formula,
-      String? script,
-      String? exactHour,
-      String? crontabFormat,
-      @WeekdayConverter() List<Weekday>? weekdays,
-      bool? isPlainCrontab,
-      String? timezoneId,
-      int? priority,
-      @ColorOrNullConverter() Color? color,
-      @CaseEventEffectOrNullConverter() CaseEventEffect? visualEventEffect,
-      String? careProtocolId}) = _$TriggerInputImpl;
+      List<String>? parameters,
+      @DurationConverter() Duration cooldownTime}) = _$TriggerInputImpl;
 
   factory _TriggerInput.fromJson(Map<String, dynamic> json) =
       _$TriggerInputImpl.fromJson;
@@ -22283,6 +22721,148 @@ abstract class _TriggerInput implements TriggerInput {
   /// Code/Identifier of the trigger.
   set code(String? value);
 
+  /// Timezone associated to disparator [TriggerType.exactTime].
+  @override
+  String? get timezoneId;
+
+  /// Timezone associated to disparator [TriggerType.exactTime].
+  set timezoneId(String? value);
+
+  /// Mode of activation.
+  @override
+  @TriggerTypeConverter()
+  TriggerType get kind;
+
+  /// Mode of activation.
+  @TriggerTypeConverter()
+  set kind(TriggerType value);
+
+  /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
+  @override
+  @TriggerGeofenceDetectionModeOrNullConverter()
+  TriggerGeofenceDetectionMode? get geofenceKind;
+
+  /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
+  @TriggerGeofenceDetectionModeOrNullConverter()
+  set geofenceKind(TriggerGeofenceDetectionMode? value);
+
+  /// Case kind if trigger generates a case.
+  @override
+  @CaseTypeOrNullConverter()
+  CaseType? get caseKind;
+
+  /// Case kind if trigger generates a case.
+  @CaseTypeOrNullConverter()
+  set caseKind(CaseType? value);
+
+  /// Case comment pattern if trigger generates a case.
+  @override
+  @CaseCommentPatternOrNullConverter()
+  CaseCommentPattern? get caseCommentPattern;
+
+  /// Case comment pattern if trigger generates a case.
+  @CaseCommentPatternOrNullConverter()
+  set caseCommentPattern(CaseCommentPattern? value);
+
+  /// Case comment pattern if trigger generates a case.
+  @override
+  String? get caseCommentPatternValue;
+
+  /// Case comment pattern if trigger generates a case.
+  set caseCommentPatternValue(String? value);
+
+  /// Mode of activation / disparator for [TriggerType.exactTime].
+  @override
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? get exactHour;
+
+  /// Mode of activation / disparator for [TriggerType.exactTime].
+  @TimeOfDayOrNullConverter()
+  set exactHour(TimeOfDay? value);
+
+  /// Crontab structure
+  @override
+  String? get crontabFormat;
+
+  /// Crontab structure
+  set crontabFormat(String? value);
+
+  ///Indicates if the EXACTIME is in Crontab format or assisted format
+  @override
+  bool get isPlainCrontab;
+
+  ///Indicates if the EXACTIME is in Crontab format or assisted format
+  set isPlainCrontab(bool value);
+
+  /// Indicates the days of the week what will execute the trigger.
+  @override
+  @WeekdayConverter()
+  List<Weekday> get weekdays;
+
+  /// Indicates the days of the week what will execute the trigger.
+  @WeekdayConverter()
+  set weekdays(List<Weekday> value);
+
+  /// Layrz Language formula
+  @override
+  String? get formula;
+
+  /// Layrz Language formula
+  set formula(String? value);
+
+  /// Script to execute
+  @override
+  String? get script;
+
+  /// Script to execute
+  set script(String? value);
+
+  /// Priority level for the trigger generated cases
+  @override
+  int get priority;
+
+  /// Priority level for the trigger generated cases
+  set priority(int value);
+
+  /// Color of the trigger case
+  @override
+  @ColorConverter()
+  Color get color;
+
+  /// Color of the trigger case
+  @ColorConverter()
+  set color(Color value);
+
+  /// Visual event effects to use in Monitor Center events received.
+  @override
+  @CaseEventEffectConverter()
+  CaseEventEffect get visualEventEffect;
+
+  /// Visual event effects to use in Monitor Center events received.
+  @CaseEventEffectConverter()
+  set visualEventEffect(CaseEventEffect value);
+
+  /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
+  @override
+  String? get careProtocolId;
+
+  /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
+  set careProtocolId(String? value);
+
+  /// List of ID's of the linked assets
+  @override
+  List<String>? get assetsIds;
+
+  /// List of ID's of the linked assets
+  set assetsIds(List<String>? value);
+
+  /// List of ID's of the linked assets through tags
+  @override
+  List<String>? get tagsAssetsIds;
+
+  /// List of ID's of the linked assets through tags
+  set tagsAssetsIds(List<String>? value);
+
   /// List of ID's of the linked geofences
   @override
   List<String>? get geofencesIds;
@@ -22296,27 +22876,6 @@ abstract class _TriggerInput implements TriggerInput {
 
   /// List of ID's of the linked geofences through tags
   set tagsGeofencesIds(List<String>? value);
-
-  ///List of ID's of the linked assets
-  @override
-  List<String>? get assetsIds;
-
-  ///List of ID's of the linked assets
-  set assetsIds(List<String>? value);
-
-  /// List of ID's of the linked assets through tags
-  @override
-  List<String>? get tagsAssetsIds;
-
-  /// List of ID's of the linked assets through tags
-  set tagsAssetsIds(List<String>? value);
-
-  /// List of parameters to consider in the authentication procedure
-  @override
-  List<String>? get parameters;
-
-  /// List of parameters to consider in the authentication procedure
-  set parameters(List<String>? value);
 
   /// List of ID's of the assets for authentication
   @override
@@ -22339,106 +22898,21 @@ abstract class _TriggerInput implements TriggerInput {
   /// List of ID's of the users or assets through tags for authentication
   set authTagsIds(List<String>? value);
 
-  /// Mode of activation.
+  /// List of parameters to consider in the authentication procedure
   @override
-  @TriggerTypeOrNullConverter()
-  TriggerType? get kind;
+  List<String>? get parameters;
 
-  /// Mode of activation.
-  @TriggerTypeOrNullConverter()
-  set kind(TriggerType? value);
+  /// List of parameters to consider in the authentication procedure
+  set parameters(List<String>? value);
 
-  /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
+  /// Cooldown time of the trigger.
   @override
-  @TriggerGeofenceDetectionModeOrNullConverter()
-  TriggerGeofenceDetectionMode? get geofenceKind;
+  @DurationConverter()
+  Duration get cooldownTime;
 
-  /// Mode of activation / disparator for [TriggerType.presenceInGeofences].
-  @TriggerGeofenceDetectionModeOrNullConverter()
-  set geofenceKind(TriggerGeofenceDetectionMode? value);
-
-  /// Layrz Language formula
-  @override
-  String? get formula;
-
-  /// Layrz Language formula
-  set formula(String? value);
-
-  /// Script to execute
-  @override
-  String? get script;
-
-  /// Script to execute
-  set script(String? value);
-
-  /// Mode of activation / disparator for [TriggerType.exactTime].
-  @override
-  String? get exactHour;
-
-  /// Mode of activation / disparator for [TriggerType.exactTime].
-  set exactHour(String? value);
-
-  /// Crontab structure
-  @override
-  String? get crontabFormat;
-
-  /// Crontab structure
-  set crontabFormat(String? value);
-
-  /// Indicates the days of the week what will execute the trigger.
-  @override
-  @WeekdayConverter()
-  List<Weekday>? get weekdays;
-
-  /// Indicates the days of the week what will execute the trigger.
-  @WeekdayConverter()
-  set weekdays(List<Weekday>? value);
-
-  ///Indicates if the EXACTIME is in Crontab format or assisted format
-  @override
-  bool? get isPlainCrontab;
-
-  ///Indicates if the EXACTIME is in Crontab format or assisted format
-  set isPlainCrontab(bool? value);
-
-  /// Timezone associated to disparator [TriggerType.exactTime].
-  @override
-  String? get timezoneId;
-
-  /// Timezone associated to disparator [TriggerType.exactTime].
-  set timezoneId(String? value);
-
-  /// Priority level for the trigger generated cases
-  @override
-  int? get priority;
-
-  /// Priority level for the trigger generated cases
-  set priority(int? value);
-
-  /// Color of the trigger case
-  @override
-  @ColorOrNullConverter()
-  Color? get color;
-
-  /// Color of the trigger case
-  @ColorOrNullConverter()
-  set color(Color? value);
-
-  /// Visual event effects to use in Monitor Center events received.
-  @override
-  @CaseEventEffectOrNullConverter()
-  CaseEventEffect? get visualEventEffect;
-
-  /// Visual event effects to use in Monitor Center events received.
-  @CaseEventEffectOrNullConverter()
-  set visualEventEffect(CaseEventEffect? value);
-
-  /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
-  @override
-  String? get careProtocolId;
-
-  /// Care protocol linked to the trigger. This is the rules to follow in the case reception. It can be null.
-  set careProtocolId(String? value);
+  /// Cooldown time of the trigger.
+  @DurationConverter()
+  set cooldownTime(Duration value);
 
   /// Create a copy of TriggerInput
   /// with the given fields replaced by the non-null parameter values.
@@ -23115,332 +23589,5 @@ abstract class _ConciergeForm implements ConciergeForm {
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ConciergeFormImplCopyWith<_$ConciergeFormImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-LayrzPackage _$LayrzPackageFromJson(Map<String, dynamic> json) {
-  return _LayrzPackage.fromJson(json);
-}
-
-/// @nodoc
-mixin _$LayrzPackage {
-  /// [id] is the unique identifier of the package. This ID is only for identification purposes.
-  /// The private registries does not use this ID.
-  String get id => throw _privateConstructorUsedError;
-
-  /// [name] is the name of the package.
-  String get name => throw _privateConstructorUsedError;
-
-  /// [version] is the version of the package.
-  String get version => throw _privateConstructorUsedError;
-
-  /// [languageVersionConstraint] is the language version constraint of the package.
-  String? get languageVersionConstraint => throw _privateConstructorUsedError;
-
-  /// [createdAt] is the date when the package was created.
-  @TimestampConverter()
-  DateTime get createdAt => throw _privateConstructorUsedError;
-
-  /// [language] is the language of the package.
-  @PackageLanguageConverter()
-  PackageLanguage get language => throw _privateConstructorUsedError;
-
-  /// [repository] is the repository of the package.
-  String? get repository => throw _privateConstructorUsedError;
-
-  /// Serializes this LayrzPackage to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of LayrzPackage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $LayrzPackageCopyWith<LayrzPackage> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $LayrzPackageCopyWith<$Res> {
-  factory $LayrzPackageCopyWith(
-          LayrzPackage value, $Res Function(LayrzPackage) then) =
-      _$LayrzPackageCopyWithImpl<$Res, LayrzPackage>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String version,
-      String? languageVersionConstraint,
-      @TimestampConverter() DateTime createdAt,
-      @PackageLanguageConverter() PackageLanguage language,
-      String? repository});
-}
-
-/// @nodoc
-class _$LayrzPackageCopyWithImpl<$Res, $Val extends LayrzPackage>
-    implements $LayrzPackageCopyWith<$Res> {
-  _$LayrzPackageCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of LayrzPackage
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? version = null,
-    Object? languageVersionConstraint = freezed,
-    Object? createdAt = null,
-    Object? language = null,
-    Object? repository = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String,
-      languageVersionConstraint: freezed == languageVersionConstraint
-          ? _value.languageVersionConstraint
-          : languageVersionConstraint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      language: null == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as PackageLanguage,
-      repository: freezed == repository
-          ? _value.repository
-          : repository // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$LayrzPackageImplCopyWith<$Res>
-    implements $LayrzPackageCopyWith<$Res> {
-  factory _$$LayrzPackageImplCopyWith(
-          _$LayrzPackageImpl value, $Res Function(_$LayrzPackageImpl) then) =
-      __$$LayrzPackageImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String version,
-      String? languageVersionConstraint,
-      @TimestampConverter() DateTime createdAt,
-      @PackageLanguageConverter() PackageLanguage language,
-      String? repository});
-}
-
-/// @nodoc
-class __$$LayrzPackageImplCopyWithImpl<$Res>
-    extends _$LayrzPackageCopyWithImpl<$Res, _$LayrzPackageImpl>
-    implements _$$LayrzPackageImplCopyWith<$Res> {
-  __$$LayrzPackageImplCopyWithImpl(
-      _$LayrzPackageImpl _value, $Res Function(_$LayrzPackageImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of LayrzPackage
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? version = null,
-    Object? languageVersionConstraint = freezed,
-    Object? createdAt = null,
-    Object? language = null,
-    Object? repository = freezed,
-  }) {
-    return _then(_$LayrzPackageImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      version: null == version
-          ? _value.version
-          : version // ignore: cast_nullable_to_non_nullable
-              as String,
-      languageVersionConstraint: freezed == languageVersionConstraint
-          ? _value.languageVersionConstraint
-          : languageVersionConstraint // ignore: cast_nullable_to_non_nullable
-              as String?,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      language: null == language
-          ? _value.language
-          : language // ignore: cast_nullable_to_non_nullable
-              as PackageLanguage,
-      repository: freezed == repository
-          ? _value.repository
-          : repository // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$LayrzPackageImpl implements _LayrzPackage {
-  const _$LayrzPackageImpl(
-      {required this.id,
-      required this.name,
-      required this.version,
-      this.languageVersionConstraint,
-      @TimestampConverter() required this.createdAt,
-      @PackageLanguageConverter() required this.language,
-      this.repository});
-
-  factory _$LayrzPackageImpl.fromJson(Map<String, dynamic> json) =>
-      _$$LayrzPackageImplFromJson(json);
-
-  /// [id] is the unique identifier of the package. This ID is only for identification purposes.
-  /// The private registries does not use this ID.
-  @override
-  final String id;
-
-  /// [name] is the name of the package.
-  @override
-  final String name;
-
-  /// [version] is the version of the package.
-  @override
-  final String version;
-
-  /// [languageVersionConstraint] is the language version constraint of the package.
-  @override
-  final String? languageVersionConstraint;
-
-  /// [createdAt] is the date when the package was created.
-  @override
-  @TimestampConverter()
-  final DateTime createdAt;
-
-  /// [language] is the language of the package.
-  @override
-  @PackageLanguageConverter()
-  final PackageLanguage language;
-
-  /// [repository] is the repository of the package.
-  @override
-  final String? repository;
-
-  @override
-  String toString() {
-    return 'LayrzPackage(id: $id, name: $name, version: $version, languageVersionConstraint: $languageVersionConstraint, createdAt: $createdAt, language: $language, repository: $repository)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LayrzPackageImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.version, version) || other.version == version) &&
-            (identical(other.languageVersionConstraint,
-                    languageVersionConstraint) ||
-                other.languageVersionConstraint == languageVersionConstraint) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.language, language) ||
-                other.language == language) &&
-            (identical(other.repository, repository) ||
-                other.repository == repository));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name, version,
-      languageVersionConstraint, createdAt, language, repository);
-
-  /// Create a copy of LayrzPackage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LayrzPackageImplCopyWith<_$LayrzPackageImpl> get copyWith =>
-      __$$LayrzPackageImplCopyWithImpl<_$LayrzPackageImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$LayrzPackageImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _LayrzPackage implements LayrzPackage {
-  const factory _LayrzPackage(
-      {required final String id,
-      required final String name,
-      required final String version,
-      final String? languageVersionConstraint,
-      @TimestampConverter() required final DateTime createdAt,
-      @PackageLanguageConverter() required final PackageLanguage language,
-      final String? repository}) = _$LayrzPackageImpl;
-
-  factory _LayrzPackage.fromJson(Map<String, dynamic> json) =
-      _$LayrzPackageImpl.fromJson;
-
-  /// [id] is the unique identifier of the package. This ID is only for identification purposes.
-  /// The private registries does not use this ID.
-  @override
-  String get id;
-
-  /// [name] is the name of the package.
-  @override
-  String get name;
-
-  /// [version] is the version of the package.
-  @override
-  String get version;
-
-  /// [languageVersionConstraint] is the language version constraint of the package.
-  @override
-  String? get languageVersionConstraint;
-
-  /// [createdAt] is the date when the package was created.
-  @override
-  @TimestampConverter()
-  DateTime get createdAt;
-
-  /// [language] is the language of the package.
-  @override
-  @PackageLanguageConverter()
-  PackageLanguage get language;
-
-  /// [repository] is the repository of the package.
-  @override
-  String? get repository;
-
-  /// Create a copy of LayrzPackage
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$LayrzPackageImplCopyWith<_$LayrzPackageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
