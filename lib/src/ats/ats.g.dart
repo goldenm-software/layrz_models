@@ -671,6 +671,7 @@ _$AtsEntryUnloadInputImpl _$$AtsEntryUnloadInputImplFromJson(
       id: json['id'] as String?,
       fromAssetId: json['fromAssetId'] as String?,
       receptionId: json['receptionId'] as String?,
+      isBluetooth: json['isBluetooth'] as bool?,
     );
 
 Map<String, dynamic> _$$AtsEntryUnloadInputImplToJson(
@@ -679,6 +680,7 @@ Map<String, dynamic> _$$AtsEntryUnloadInputImplToJson(
       'id': instance.id,
       'fromAssetId': instance.fromAssetId,
       'receptionId': instance.receptionId,
+      'isBluetooth': instance.isBluetooth,
     };
 
 _$AtsIdeInformationImpl _$$AtsIdeInformationImplFromJson(

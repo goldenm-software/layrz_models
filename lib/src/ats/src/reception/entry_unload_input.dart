@@ -13,6 +13,9 @@ class AtsEntryUnloadInput with _$AtsEntryUnloadInput {
 
     /// `receptionId` of the [AtsReception] entity. This ID is unique.
     String? receptionId,
+
+    /// `isBluetooth` is a boolean value that indicates whether the entry is unloaded using Bluetooth.
+    bool? isBluetooth,
   }) = _AtsEntryUnloadInput;
 
   factory AtsEntryUnloadInput.fromJson(Map<String, dynamic> json) => _$AtsEntryUnloadInputFromJson(json);

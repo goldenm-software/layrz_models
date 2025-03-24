@@ -37,8 +37,12 @@ mixin _$ExternalSource {
   List<CredentialField> get requiredFields =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this ExternalSource to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ExternalSource
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ExternalSourceCopyWith<ExternalSource> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -67,6 +71,8 @@ class _$ExternalSourceCopyWithImpl<$Res, $Val extends ExternalSource>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ExternalSource
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -125,6 +131,8 @@ class __$$ExternalSourceImplCopyWithImpl<$Res>
       _$ExternalSourceImpl _value, $Res Function(_$ExternalSourceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ExternalSource
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -221,12 +229,14 @@ class _$ExternalSourceImpl implements _ExternalSource {
                 .equals(other._requiredFields, _requiredFields));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, color, isEnabled,
       const DeepCollectionEquality().hash(_requiredFields));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ExternalSource
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ExternalSourceImplCopyWith<_$ExternalSourceImpl> get copyWith =>
@@ -252,29 +262,31 @@ abstract class _ExternalSource implements ExternalSource {
   factory _ExternalSource.fromJson(Map<String, dynamic> json) =
       _$ExternalSourceImpl.fromJson;
 
-  @override
-
   /// [id] represents the DB ID.
-  String get id;
   @override
+  String get id;
 
   /// [name] represents the name of the external account.
-  String get name;
   @override
+  String get name;
 
   /// [color] represents the color of the external account.
+  @override
   @ColorConverter()
   Color get color;
-  @override
 
   /// [isEnabled] represents if the external account is enabled.
-  bool get isEnabled;
   @override
+  bool get isEnabled;
 
   /// [requiredFields] represents the required fields of the external account.
-  List<CredentialField> get requiredFields;
   @override
-  @JsonKey(ignore: true)
+  List<CredentialField> get requiredFields;
+
+  /// Create a copy of ExternalSource
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ExternalSourceImplCopyWith<_$ExternalSourceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -306,8 +318,12 @@ mixin _$ExternalAccount {
   /// [devices] represents the devices imported from the external account.
   List<Device>? get devices => throw _privateConstructorUsedError;
 
+  /// Serializes this ExternalAccount to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ExternalAccount
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ExternalAccountCopyWith<ExternalAccount> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -340,6 +356,8 @@ class _$ExternalAccountCopyWithImpl<$Res, $Val extends ExternalAccount>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ExternalAccount
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -383,6 +401,8 @@ class _$ExternalAccountCopyWithImpl<$Res, $Val extends ExternalAccount>
     ) as $Val);
   }
 
+  /// Create a copy of ExternalAccount
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExternalSourceCopyWith<$Res>? get source {
@@ -425,6 +445,8 @@ class __$$ExternalAccountImplCopyWithImpl<$Res>
       _$ExternalAccountImpl _value, $Res Function(_$ExternalAccountImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ExternalAccount
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -563,7 +585,7 @@ class _$ExternalAccountImpl implements _ExternalAccount {
             const DeepCollectionEquality().equals(other._devices, _devices));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -575,7 +597,9 @@ class _$ExternalAccountImpl implements _ExternalAccount {
       const DeepCollectionEquality().hash(_access),
       const DeepCollectionEquality().hash(_devices));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ExternalAccount
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ExternalAccountImplCopyWith<_$ExternalAccountImpl> get copyWith =>
@@ -603,36 +627,38 @@ abstract class _ExternalAccount implements ExternalAccount {
   factory _ExternalAccount.fromJson(Map<String, dynamic> json) =
       _$ExternalAccountImpl.fromJson;
 
-  @override
-
   /// [id] represents the DB ID.
-  String get id;
   @override
+  String get id;
 
   /// [name] represents the name of the external account.
-  String get name;
   @override
+  String get name;
 
   /// [credentials] represents the credentials of the external account.
-  Map<String, dynamic>? get credentials;
   @override
+  Map<String, dynamic>? get credentials;
 
   /// [source] represents the protocol
-  ExternalSource? get source;
   @override
+  ExternalSource? get source;
 
   /// [sourceId] represents the source ID.
-  String? get sourceId;
   @override
+  String? get sourceId;
 
   /// [access] represents the access of the external account.
-  List<Access>? get access;
   @override
+  List<Access>? get access;
 
   /// [devices] represents the devices imported from the external account.
-  List<Device>? get devices;
   @override
-  @JsonKey(ignore: true)
+  List<Device>? get devices;
+
+  /// Create a copy of ExternalAccount
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ExternalAccountImplCopyWith<_$ExternalAccountImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -649,8 +675,12 @@ mixin _$ExternalUnit {
   Map<String, dynamic> get additionalFields =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this ExternalUnit to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ExternalUnit
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ExternalUnitCopyWith<ExternalUnit> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -678,6 +708,8 @@ class _$ExternalUnitCopyWithImpl<$Res, $Val extends ExternalUnit>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ExternalUnit
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -730,6 +762,8 @@ class __$$ExternalUnitImplCopyWithImpl<$Res>
       _$ExternalUnitImpl _value, $Res Function(_$ExternalUnitImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ExternalUnit
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -804,12 +838,14 @@ class _$ExternalUnitImpl implements _ExternalUnit {
                 .equals(other._additionalFields, _additionalFields));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, externalId, name, ident,
       const DeepCollectionEquality().hash(_additionalFields));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ExternalUnit
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ExternalUnitImplCopyWith<_$ExternalUnitImpl> get copyWith =>
@@ -842,8 +878,11 @@ abstract class _ExternalUnit implements ExternalUnit {
   String get ident;
   @override
   Map<String, dynamic> get additionalFields;
+
+  /// Create a copy of ExternalUnit
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ExternalUnitImplCopyWith<_$ExternalUnitImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -860,8 +899,12 @@ mixin _$ExternalResource {
   /// [name] represents the name of the resource in Wialon.
   String get name => throw _privateConstructorUsedError;
 
+  /// Serializes this ExternalResource to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ExternalResource
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ExternalResourceCopyWith<ExternalResource> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -885,6 +928,8 @@ class _$ExternalResourceCopyWithImpl<$Res, $Val extends ExternalResource>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ExternalResource
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -923,6 +968,8 @@ class __$$ExternalResourceImplCopyWithImpl<$Res>
       $Res Function(_$ExternalResourceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ExternalResource
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -973,11 +1020,13 @@ class _$ExternalResourceImpl implements _ExternalResource {
             (identical(other.name, name) || other.name == name));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, wialonId, name);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ExternalResource
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ExternalResourceImplCopyWith<_$ExternalResourceImpl> get copyWith =>
@@ -1000,16 +1049,18 @@ abstract class _ExternalResource implements ExternalResource {
   factory _ExternalResource.fromJson(Map<String, dynamic> json) =
       _$ExternalResourceImpl.fromJson;
 
-  @override
-
   /// [wialonId] represents the ID from Wialon (Hosting or local).
-  String get wialonId;
   @override
+  String get wialonId;
 
   /// [name] represents the name of the resource in Wialon.
-  String get name;
   @override
-  @JsonKey(ignore: true)
+  String get name;
+
+  /// Create a copy of ExternalResource
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ExternalResourceImplCopyWith<_$ExternalResourceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1026,8 +1077,12 @@ mixin _$ExternalGeofence {
   /// [name] represents the name of the geofence in Wialon.
   String get name => throw _privateConstructorUsedError;
 
+  /// Serializes this ExternalGeofence to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ExternalGeofence
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ExternalGeofenceCopyWith<ExternalGeofence> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1051,6 +1106,8 @@ class _$ExternalGeofenceCopyWithImpl<$Res, $Val extends ExternalGeofence>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ExternalGeofence
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1089,6 +1146,8 @@ class __$$ExternalGeofenceImplCopyWithImpl<$Res>
       $Res Function(_$ExternalGeofenceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ExternalGeofence
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1139,11 +1198,13 @@ class _$ExternalGeofenceImpl implements _ExternalGeofence {
             (identical(other.name, name) || other.name == name));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, wialonId, name);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ExternalGeofence
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ExternalGeofenceImplCopyWith<_$ExternalGeofenceImpl> get copyWith =>
@@ -1166,16 +1227,18 @@ abstract class _ExternalGeofence implements ExternalGeofence {
   factory _ExternalGeofence.fromJson(Map<String, dynamic> json) =
       _$ExternalGeofenceImpl.fromJson;
 
-  @override
-
   /// [wialonId] represents the ID from Wialon (Hosting or local).
-  String get wialonId;
   @override
+  String get wialonId;
 
   /// [name] represents the name of the geofence in Wialon.
-  String get name;
   @override
-  @JsonKey(ignore: true)
+  String get name;
+
+  /// Create a copy of ExternalGeofence
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ExternalGeofenceImplCopyWith<_$ExternalGeofenceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
