@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.55
+
+- Added lock, suspension and paymentWarning fields to `User` model
+
 ## 3.3.54
 - updated `TriggerInput` model to mathch the new `Trigger` model
 

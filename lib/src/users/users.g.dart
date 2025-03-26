@@ -197,7 +197,6 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       tenvioLatitude: (json['tenvioLatitude'] as num?)?.toDouble(),
       tenvioLongitude: (json['tenvioLongitude'] as num?)?.toDouble(),
       tenvioAddressIsPlusCode: json['tenvioAddressIsPlusCode'] as bool?,
-      isSuspended: json['isSuspended'] as bool?,
       suspendedAt: const TimestampOrNullConverter()
           .fromJson(json['suspendedAt'] as num?),
       hwModelsAnimationsIds: (json['hwModelsAnimationsIds'] as List<dynamic>?)
@@ -213,6 +212,9 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
           _$BrickhouseUserRoleEnumMap, json['brickhouseRole'],
           unknownValue: BrickhouseUserRole.unknown),
       sdmCode: json['sdmCode'] as String?,
+      isLocked: json['isLocked'] as bool? ?? false,
+      isSuspended: json['isSuspended'] as bool? ?? false,
+      hasPaymentWarning: json['hasPaymentWarning'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
@@ -251,7 +253,6 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'tenvioLatitude': instance.tenvioLatitude,
       'tenvioLongitude': instance.tenvioLongitude,
       'tenvioAddressIsPlusCode': instance.tenvioAddressIsPlusCode,
-      'isSuspended': instance.isSuspended,
       'suspendedAt':
           const TimestampOrNullConverter().toJson(instance.suspendedAt),
       'hwModelsAnimationsIds': instance.hwModelsAnimationsIds,
@@ -259,6 +260,9 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'brickhousePermissionTierId': instance.brickhousePermissionTierId,
       'brickhouseRole': instance.brickhouseRole?.toJson(),
       'sdmCode': instance.sdmCode,
+      'isLocked': instance.isLocked,
+      'isSuspended': instance.isSuspended,
+      'hasPaymentWarning': instance.hasPaymentWarning,
     };
 
 _$UserInputImpl _$$UserInputImplFromJson(Map<String, dynamic> json) =>

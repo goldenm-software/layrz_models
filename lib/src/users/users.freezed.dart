@@ -1546,9 +1546,6 @@ mixin _$User {
   /// [tenvioAddressIsPlusCode] represents the Tenvio address is Plus Code.
   bool? get tenvioAddressIsPlusCode => throw _privateConstructorUsedError;
 
-  /// [isSuspended] represents if the users account is suspended.
-  bool? get isSuspended => throw _privateConstructorUsedError;
-
   /// [suspendedAt] represents the date when the account was suspended.
   @TimestampOrNullConverter()
   DateTime? get suspendedAt => throw _privateConstructorUsedError;
@@ -1569,6 +1566,15 @@ mixin _$User {
 
   /// [sdmCode] represents the SDM code.
   String? get sdmCode => throw _privateConstructorUsedError;
+
+  /// [isLocked] represents if the user is locked.
+  bool get isLocked => throw _privateConstructorUsedError;
+
+  /// [isSuspended] represents if the users account is suspended.
+  bool get isSuspended => throw _privateConstructorUsedError;
+
+  /// [hasPaymentWarning] represents if the user has a payment warning.
+  bool get hasPaymentWarning => throw _privateConstructorUsedError;
 
   /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1618,14 +1624,16 @@ abstract class $UserCopyWith<$Res> {
       double? tenvioLatitude,
       double? tenvioLongitude,
       bool? tenvioAddressIsPlusCode,
-      bool? isSuspended,
       @TimestampOrNullConverter() DateTime? suspendedAt,
       List<String> hwModelsAnimationsIds,
       BHSPermissionTier? brickhousePermissionTier,
       String? brickhousePermissionTierId,
       @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
       BrickhouseUserRole? brickhouseRole,
-      String? sdmCode});
+      String? sdmCode,
+      bool isLocked,
+      bool isSuspended,
+      bool hasPaymentWarning});
 
   $TokenCopyWith<$Res>? get token;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
@@ -1682,13 +1690,15 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? tenvioLatitude = freezed,
     Object? tenvioLongitude = freezed,
     Object? tenvioAddressIsPlusCode = freezed,
-    Object? isSuspended = freezed,
     Object? suspendedAt = freezed,
     Object? hwModelsAnimationsIds = null,
     Object? brickhousePermissionTier = freezed,
     Object? brickhousePermissionTierId = freezed,
     Object? brickhouseRole = freezed,
     Object? sdmCode = freezed,
+    Object? isLocked = null,
+    Object? isSuspended = null,
+    Object? hasPaymentWarning = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1823,10 +1833,6 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.tenvioAddressIsPlusCode
           : tenvioAddressIsPlusCode // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isSuspended: freezed == isSuspended
-          ? _value.isSuspended
-          : isSuspended // ignore: cast_nullable_to_non_nullable
-              as bool?,
       suspendedAt: freezed == suspendedAt
           ? _value.suspendedAt
           : suspendedAt // ignore: cast_nullable_to_non_nullable
@@ -1851,6 +1857,18 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.sdmCode
           : sdmCode // ignore: cast_nullable_to_non_nullable
               as String?,
+      isLocked: null == isLocked
+          ? _value.isLocked
+          : isLocked // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuspended: null == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasPaymentWarning: null == hasPaymentWarning
+          ? _value.hasPaymentWarning
+          : hasPaymentWarning // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 
@@ -1968,14 +1986,16 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       double? tenvioLatitude,
       double? tenvioLongitude,
       bool? tenvioAddressIsPlusCode,
-      bool? isSuspended,
       @TimestampOrNullConverter() DateTime? suspendedAt,
       List<String> hwModelsAnimationsIds,
       BHSPermissionTier? brickhousePermissionTier,
       String? brickhousePermissionTierId,
       @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
       BrickhouseUserRole? brickhouseRole,
-      String? sdmCode});
+      String? sdmCode,
+      bool isLocked,
+      bool isSuspended,
+      bool hasPaymentWarning});
 
   @override
   $TokenCopyWith<$Res>? get token;
@@ -2034,13 +2054,15 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? tenvioLatitude = freezed,
     Object? tenvioLongitude = freezed,
     Object? tenvioAddressIsPlusCode = freezed,
-    Object? isSuspended = freezed,
     Object? suspendedAt = freezed,
     Object? hwModelsAnimationsIds = null,
     Object? brickhousePermissionTier = freezed,
     Object? brickhousePermissionTierId = freezed,
     Object? brickhouseRole = freezed,
     Object? sdmCode = freezed,
+    Object? isLocked = null,
+    Object? isSuspended = null,
+    Object? hasPaymentWarning = null,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -2175,10 +2197,6 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.tenvioAddressIsPlusCode
           : tenvioAddressIsPlusCode // ignore: cast_nullable_to_non_nullable
               as bool?,
-      isSuspended: freezed == isSuspended
-          ? _value.isSuspended
-          : isSuspended // ignore: cast_nullable_to_non_nullable
-              as bool?,
       suspendedAt: freezed == suspendedAt
           ? _value.suspendedAt
           : suspendedAt // ignore: cast_nullable_to_non_nullable
@@ -2203,6 +2221,18 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.sdmCode
           : sdmCode // ignore: cast_nullable_to_non_nullable
               as String?,
+      isLocked: null == isLocked
+          ? _value.isLocked
+          : isLocked // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuspended: null == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasPaymentWarning: null == hasPaymentWarning
+          ? _value.hasPaymentWarning
+          : hasPaymentWarning // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -2244,14 +2274,16 @@ class _$UserImpl extends _User {
       this.tenvioLatitude,
       this.tenvioLongitude,
       this.tenvioAddressIsPlusCode,
-      this.isSuspended,
       @TimestampOrNullConverter() this.suspendedAt,
       final List<String> hwModelsAnimationsIds = const [],
       this.brickhousePermissionTier,
       this.brickhousePermissionTierId,
       @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
       this.brickhouseRole,
-      this.sdmCode})
+      this.sdmCode,
+      this.isLocked = false,
+      this.isSuspended = false,
+      this.hasPaymentWarning = false})
       : _referencesIds = referencesIds,
         _references = references,
         _access = access,
@@ -2519,10 +2551,6 @@ class _$UserImpl extends _User {
   @override
   final bool? tenvioAddressIsPlusCode;
 
-  /// [isSuspended] represents if the users account is suspended.
-  @override
-  final bool? isSuspended;
-
   /// [suspendedAt] represents the date when the account was suspended.
   @override
   @TimestampOrNullConverter()
@@ -2558,9 +2586,24 @@ class _$UserImpl extends _User {
   @override
   final String? sdmCode;
 
+  /// [isLocked] represents if the user is locked.
+  @override
+  @JsonKey()
+  final bool isLocked;
+
+  /// [isSuspended] represents if the users account is suspended.
+  @override
+  @JsonKey()
+  final bool isSuspended;
+
+  /// [hasPaymentWarning] represents if the user has a payment warning.
+  @override
+  @JsonKey()
+  final bool hasPaymentWarning;
+
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, isSuspended: $isSuspended, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning)';
   }
 
   @override
@@ -2625,14 +2668,11 @@ class _$UserImpl extends _User {
                 other.tenvioLongitude == tenvioLongitude) &&
             (identical(other.tenvioAddressIsPlusCode, tenvioAddressIsPlusCode) ||
                 other.tenvioAddressIsPlusCode == tenvioAddressIsPlusCode) &&
-            (identical(other.isSuspended, isSuspended) ||
-                other.isSuspended == isSuspended) &&
             (identical(other.suspendedAt, suspendedAt) ||
                 other.suspendedAt == suspendedAt) &&
             const DeepCollectionEquality()
                 .equals(other._hwModelsAnimationsIds, _hwModelsAnimationsIds) &&
-            (identical(
-                    other.brickhousePermissionTier, brickhousePermissionTier) ||
+            (identical(other.brickhousePermissionTier, brickhousePermissionTier) ||
                 other.brickhousePermissionTier == brickhousePermissionTier) &&
             (identical(other.brickhousePermissionTierId,
                     brickhousePermissionTierId) ||
@@ -2640,7 +2680,13 @@ class _$UserImpl extends _User {
                     brickhousePermissionTierId) &&
             (identical(other.brickhouseRole, brickhouseRole) ||
                 other.brickhouseRole == brickhouseRole) &&
-            (identical(other.sdmCode, sdmCode) || other.sdmCode == sdmCode));
+            (identical(other.sdmCode, sdmCode) || other.sdmCode == sdmCode) &&
+            (identical(other.isLocked, isLocked) ||
+                other.isLocked == isLocked) &&
+            (identical(other.isSuspended, isSuspended) ||
+                other.isSuspended == isSuspended) &&
+            (identical(other.hasPaymentWarning, hasPaymentWarning) ||
+                other.hasPaymentWarning == hasPaymentWarning));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2680,13 +2726,15 @@ class _$UserImpl extends _User {
         tenvioLatitude,
         tenvioLongitude,
         tenvioAddressIsPlusCode,
-        isSuspended,
         suspendedAt,
         const DeepCollectionEquality().hash(_hwModelsAnimationsIds),
         brickhousePermissionTier,
         brickhousePermissionTierId,
         brickhouseRole,
-        sdmCode
+        sdmCode,
+        isLocked,
+        isSuspended,
+        hasPaymentWarning
       ]);
 
   /// Create a copy of User
@@ -2740,14 +2788,16 @@ abstract class _User extends User {
       final double? tenvioLatitude,
       final double? tenvioLongitude,
       final bool? tenvioAddressIsPlusCode,
-      final bool? isSuspended,
       @TimestampOrNullConverter() final DateTime? suspendedAt,
       final List<String> hwModelsAnimationsIds,
       final BHSPermissionTier? brickhousePermissionTier,
       final String? brickhousePermissionTierId,
       @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
       final BrickhouseUserRole? brickhouseRole,
-      final String? sdmCode}) = _$UserImpl;
+      final String? sdmCode,
+      final bool isLocked,
+      final bool isSuspended,
+      final bool hasPaymentWarning}) = _$UserImpl;
   const _User._() : super._();
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
@@ -2890,10 +2940,6 @@ abstract class _User extends User {
   @override
   bool? get tenvioAddressIsPlusCode;
 
-  /// [isSuspended] represents if the users account is suspended.
-  @override
-  bool? get isSuspended;
-
   /// [suspendedAt] represents the date when the account was suspended.
   @override
   @TimestampOrNullConverter()
@@ -2919,6 +2965,18 @@ abstract class _User extends User {
   /// [sdmCode] represents the SDM code.
   @override
   String? get sdmCode;
+
+  /// [isLocked] represents if the user is locked.
+  @override
+  bool get isLocked;
+
+  /// [isSuspended] represents if the users account is suspended.
+  @override
+  bool get isSuspended;
+
+  /// [hasPaymentWarning] represents if the user has a payment warning.
+  @override
+  bool get hasPaymentWarning;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
