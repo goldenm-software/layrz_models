@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.3.56
+- Added `operationId` in `AtsEntry`
+
 ## 3.3.55
 
 - Added lock, suspension and paymentWarning fields to `User` model

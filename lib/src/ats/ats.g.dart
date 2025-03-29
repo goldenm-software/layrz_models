@@ -991,6 +991,7 @@ _$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>
       fuelAnp: json['fuelAnp'] as String?,
       height: (json['height'] as num?)?.toDouble(),
       initialHeight: (json['initialHeight'] as num?)?.toDouble(),
+      operationId: json['operationId'] as String?,
     );
 
 Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
@@ -1018,6 +1019,7 @@ Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
       'fuelAnp': instance.fuelAnp,
       'height': instance.height,
       'initialHeight': instance.initialHeight,
+      'operationId': instance.operationId,
     };
 
 _$AtsVolumeImpl _$$AtsVolumeImplFromJson(Map<String, dynamic> json) =>
