@@ -241,6 +241,72 @@ Map<String, dynamic> _$$BillingPlanImplToJson(_$BillingPlanImpl instance) =>
       'allowedExchangeProtocolsIds': instance.allowedExchangeProtocolsIds,
     };
 
+_$BillingPlanInputImpl _$$BillingPlanInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BillingPlanInputImpl(
+      id: json['id'] as String?,
+      reconnectionIncidents:
+          (json['reconnectionIncidents'] as num?)?.toInt() ?? 0,
+      reconnectionPercent:
+          (json['reconnectionPercent'] as num?)?.toDouble() ?? 0.0,
+      reconnectionMaximum: (json['reconnectionMaximum'] as num?)?.toInt() ?? 0,
+      maxAssets: (json['maxAssets'] as num?)?.toInt() ?? 0,
+      maxDevices: (json['maxDevices'] as num?)?.toInt() ?? 0,
+      maxUsers: (json['maxUsers'] as num?)?.toInt() ?? 0,
+      maxOutboundServices: (json['maxOutboundServices'] as num?)?.toInt() ?? 0,
+      maxFunctions: (json['maxFunctions'] as num?)?.toInt() ?? 0,
+      maxApps: (json['maxApps'] as num?)?.toInt() ?? 0,
+      allowedAppsIds: (json['allowedAppsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      allowedAlgorithmsIds: (json['allowedAlgorithmsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      allowedInboundProtocolsIds:
+          (json['allowedInboundProtocolsIds'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const [],
+      allowedOutboundProtocolsIds:
+          (json['allowedOutboundProtocolsIds'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const [],
+      allowedVisionProtocolsIds:
+          (json['allowedVisionProtocolsIds'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const [],
+      allowedExchangeProtocolsIds:
+          (json['allowedExchangeProtocolsIds'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const [],
+    );
+
+Map<String, dynamic> _$$BillingPlanInputImplToJson(
+        _$BillingPlanInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'reconnectionIncidents': instance.reconnectionIncidents,
+      'reconnectionPercent': instance.reconnectionPercent,
+      'reconnectionMaximum': instance.reconnectionMaximum,
+      'maxAssets': instance.maxAssets,
+      'maxDevices': instance.maxDevices,
+      'maxUsers': instance.maxUsers,
+      'maxOutboundServices': instance.maxOutboundServices,
+      'maxFunctions': instance.maxFunctions,
+      'maxApps': instance.maxApps,
+      'allowedAppsIds': instance.allowedAppsIds,
+      'allowedAlgorithmsIds': instance.allowedAlgorithmsIds,
+      'allowedInboundProtocolsIds': instance.allowedInboundProtocolsIds,
+      'allowedOutboundProtocolsIds': instance.allowedOutboundProtocolsIds,
+      'allowedVisionProtocolsIds': instance.allowedVisionProtocolsIds,
+      'allowedExchangeProtocolsIds': instance.allowedExchangeProtocolsIds,
+    };
+
 _$CareProtocolImpl _$$CareProtocolImplFromJson(Map<String, dynamic> json) =>
     _$CareProtocolImpl(
       id: json['id'] as String,

@@ -109,9 +109,6 @@ class User with _$User {
     /// [tenvioAddressIsPlusCode] represents the Tenvio address is Plus Code.
     bool? tenvioAddressIsPlusCode,
 
-    /// [isSuspended] represents if the users account is suspended.
-    bool? isSuspended,
-
     /// [suspendedAt] represents the date when the account was suspended.
     @TimestampOrNullConverter() DateTime? suspendedAt,
 
@@ -129,6 +126,15 @@ class User with _$User {
 
     /// [sdmCode] represents the SDM code.
     String? sdmCode,
+
+    /// [isLocked] represents if the user is locked.
+    @Default(false) bool isLocked,
+
+    /// [isSuspended] represents if the users account is suspended.
+    @Default(false) bool isSuspended,
+
+    /// [hasPaymentWarning] represents if the user has a payment warning.
+    @Default(false) bool hasPaymentWarning,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

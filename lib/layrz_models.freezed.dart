@@ -2430,6 +2430,489 @@ abstract class _BillingPlan implements BillingPlan {
       throw _privateConstructorUsedError;
 }
 
+BillingPlanInput _$BillingPlanInputFromJson(Map<String, dynamic> json) {
+  return _BillingPlanInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BillingPlanInput {
+  String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
+  int get reconnectionIncidents => throw _privateConstructorUsedError;
+  set reconnectionIncidents(int value) => throw _privateConstructorUsedError;
+  double get reconnectionPercent => throw _privateConstructorUsedError;
+  set reconnectionPercent(double value) => throw _privateConstructorUsedError;
+  int get reconnectionMaximum => throw _privateConstructorUsedError;
+  set reconnectionMaximum(int value) => throw _privateConstructorUsedError;
+  int get maxAssets => throw _privateConstructorUsedError;
+  set maxAssets(int value) => throw _privateConstructorUsedError;
+  int get maxDevices => throw _privateConstructorUsedError;
+  set maxDevices(int value) => throw _privateConstructorUsedError;
+  int get maxUsers => throw _privateConstructorUsedError;
+  set maxUsers(int value) => throw _privateConstructorUsedError;
+  int get maxOutboundServices => throw _privateConstructorUsedError;
+  set maxOutboundServices(int value) => throw _privateConstructorUsedError;
+  int get maxFunctions => throw _privateConstructorUsedError;
+  set maxFunctions(int value) => throw _privateConstructorUsedError;
+  int get maxApps => throw _privateConstructorUsedError;
+  set maxApps(int value) => throw _privateConstructorUsedError;
+  List<String> get allowedAppsIds => throw _privateConstructorUsedError;
+  set allowedAppsIds(List<String> value) => throw _privateConstructorUsedError;
+  List<String> get allowedAlgorithmsIds => throw _privateConstructorUsedError;
+  set allowedAlgorithmsIds(List<String> value) =>
+      throw _privateConstructorUsedError;
+  List<String> get allowedInboundProtocolsIds =>
+      throw _privateConstructorUsedError;
+  set allowedInboundProtocolsIds(List<String> value) =>
+      throw _privateConstructorUsedError;
+  List<String> get allowedOutboundProtocolsIds =>
+      throw _privateConstructorUsedError;
+  set allowedOutboundProtocolsIds(List<String> value) =>
+      throw _privateConstructorUsedError;
+  List<String> get allowedVisionProtocolsIds =>
+      throw _privateConstructorUsedError;
+  set allowedVisionProtocolsIds(List<String> value) =>
+      throw _privateConstructorUsedError;
+  List<String> get allowedExchangeProtocolsIds =>
+      throw _privateConstructorUsedError;
+  set allowedExchangeProtocolsIds(List<String> value) =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this BillingPlanInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BillingPlanInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BillingPlanInputCopyWith<BillingPlanInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BillingPlanInputCopyWith<$Res> {
+  factory $BillingPlanInputCopyWith(
+          BillingPlanInput value, $Res Function(BillingPlanInput) then) =
+      _$BillingPlanInputCopyWithImpl<$Res, BillingPlanInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      int reconnectionIncidents,
+      double reconnectionPercent,
+      int reconnectionMaximum,
+      int maxAssets,
+      int maxDevices,
+      int maxUsers,
+      int maxOutboundServices,
+      int maxFunctions,
+      int maxApps,
+      List<String> allowedAppsIds,
+      List<String> allowedAlgorithmsIds,
+      List<String> allowedInboundProtocolsIds,
+      List<String> allowedOutboundProtocolsIds,
+      List<String> allowedVisionProtocolsIds,
+      List<String> allowedExchangeProtocolsIds});
+}
+
+/// @nodoc
+class _$BillingPlanInputCopyWithImpl<$Res, $Val extends BillingPlanInput>
+    implements $BillingPlanInputCopyWith<$Res> {
+  _$BillingPlanInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BillingPlanInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? reconnectionIncidents = null,
+    Object? reconnectionPercent = null,
+    Object? reconnectionMaximum = null,
+    Object? maxAssets = null,
+    Object? maxDevices = null,
+    Object? maxUsers = null,
+    Object? maxOutboundServices = null,
+    Object? maxFunctions = null,
+    Object? maxApps = null,
+    Object? allowedAppsIds = null,
+    Object? allowedAlgorithmsIds = null,
+    Object? allowedInboundProtocolsIds = null,
+    Object? allowedOutboundProtocolsIds = null,
+    Object? allowedVisionProtocolsIds = null,
+    Object? allowedExchangeProtocolsIds = null,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reconnectionIncidents: null == reconnectionIncidents
+          ? _value.reconnectionIncidents
+          : reconnectionIncidents // ignore: cast_nullable_to_non_nullable
+              as int,
+      reconnectionPercent: null == reconnectionPercent
+          ? _value.reconnectionPercent
+          : reconnectionPercent // ignore: cast_nullable_to_non_nullable
+              as double,
+      reconnectionMaximum: null == reconnectionMaximum
+          ? _value.reconnectionMaximum
+          : reconnectionMaximum // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxAssets: null == maxAssets
+          ? _value.maxAssets
+          : maxAssets // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxDevices: null == maxDevices
+          ? _value.maxDevices
+          : maxDevices // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxUsers: null == maxUsers
+          ? _value.maxUsers
+          : maxUsers // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxOutboundServices: null == maxOutboundServices
+          ? _value.maxOutboundServices
+          : maxOutboundServices // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxFunctions: null == maxFunctions
+          ? _value.maxFunctions
+          : maxFunctions // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxApps: null == maxApps
+          ? _value.maxApps
+          : maxApps // ignore: cast_nullable_to_non_nullable
+              as int,
+      allowedAppsIds: null == allowedAppsIds
+          ? _value.allowedAppsIds
+          : allowedAppsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allowedAlgorithmsIds: null == allowedAlgorithmsIds
+          ? _value.allowedAlgorithmsIds
+          : allowedAlgorithmsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allowedInboundProtocolsIds: null == allowedInboundProtocolsIds
+          ? _value.allowedInboundProtocolsIds
+          : allowedInboundProtocolsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allowedOutboundProtocolsIds: null == allowedOutboundProtocolsIds
+          ? _value.allowedOutboundProtocolsIds
+          : allowedOutboundProtocolsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allowedVisionProtocolsIds: null == allowedVisionProtocolsIds
+          ? _value.allowedVisionProtocolsIds
+          : allowedVisionProtocolsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allowedExchangeProtocolsIds: null == allowedExchangeProtocolsIds
+          ? _value.allowedExchangeProtocolsIds
+          : allowedExchangeProtocolsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BillingPlanInputImplCopyWith<$Res>
+    implements $BillingPlanInputCopyWith<$Res> {
+  factory _$$BillingPlanInputImplCopyWith(_$BillingPlanInputImpl value,
+          $Res Function(_$BillingPlanInputImpl) then) =
+      __$$BillingPlanInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      int reconnectionIncidents,
+      double reconnectionPercent,
+      int reconnectionMaximum,
+      int maxAssets,
+      int maxDevices,
+      int maxUsers,
+      int maxOutboundServices,
+      int maxFunctions,
+      int maxApps,
+      List<String> allowedAppsIds,
+      List<String> allowedAlgorithmsIds,
+      List<String> allowedInboundProtocolsIds,
+      List<String> allowedOutboundProtocolsIds,
+      List<String> allowedVisionProtocolsIds,
+      List<String> allowedExchangeProtocolsIds});
+}
+
+/// @nodoc
+class __$$BillingPlanInputImplCopyWithImpl<$Res>
+    extends _$BillingPlanInputCopyWithImpl<$Res, _$BillingPlanInputImpl>
+    implements _$$BillingPlanInputImplCopyWith<$Res> {
+  __$$BillingPlanInputImplCopyWithImpl(_$BillingPlanInputImpl _value,
+      $Res Function(_$BillingPlanInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BillingPlanInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? reconnectionIncidents = null,
+    Object? reconnectionPercent = null,
+    Object? reconnectionMaximum = null,
+    Object? maxAssets = null,
+    Object? maxDevices = null,
+    Object? maxUsers = null,
+    Object? maxOutboundServices = null,
+    Object? maxFunctions = null,
+    Object? maxApps = null,
+    Object? allowedAppsIds = null,
+    Object? allowedAlgorithmsIds = null,
+    Object? allowedInboundProtocolsIds = null,
+    Object? allowedOutboundProtocolsIds = null,
+    Object? allowedVisionProtocolsIds = null,
+    Object? allowedExchangeProtocolsIds = null,
+  }) {
+    return _then(_$BillingPlanInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      reconnectionIncidents: null == reconnectionIncidents
+          ? _value.reconnectionIncidents
+          : reconnectionIncidents // ignore: cast_nullable_to_non_nullable
+              as int,
+      reconnectionPercent: null == reconnectionPercent
+          ? _value.reconnectionPercent
+          : reconnectionPercent // ignore: cast_nullable_to_non_nullable
+              as double,
+      reconnectionMaximum: null == reconnectionMaximum
+          ? _value.reconnectionMaximum
+          : reconnectionMaximum // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxAssets: null == maxAssets
+          ? _value.maxAssets
+          : maxAssets // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxDevices: null == maxDevices
+          ? _value.maxDevices
+          : maxDevices // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxUsers: null == maxUsers
+          ? _value.maxUsers
+          : maxUsers // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxOutboundServices: null == maxOutboundServices
+          ? _value.maxOutboundServices
+          : maxOutboundServices // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxFunctions: null == maxFunctions
+          ? _value.maxFunctions
+          : maxFunctions // ignore: cast_nullable_to_non_nullable
+              as int,
+      maxApps: null == maxApps
+          ? _value.maxApps
+          : maxApps // ignore: cast_nullable_to_non_nullable
+              as int,
+      allowedAppsIds: null == allowedAppsIds
+          ? _value.allowedAppsIds
+          : allowedAppsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allowedAlgorithmsIds: null == allowedAlgorithmsIds
+          ? _value.allowedAlgorithmsIds
+          : allowedAlgorithmsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allowedInboundProtocolsIds: null == allowedInboundProtocolsIds
+          ? _value.allowedInboundProtocolsIds
+          : allowedInboundProtocolsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allowedOutboundProtocolsIds: null == allowedOutboundProtocolsIds
+          ? _value.allowedOutboundProtocolsIds
+          : allowedOutboundProtocolsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allowedVisionProtocolsIds: null == allowedVisionProtocolsIds
+          ? _value.allowedVisionProtocolsIds
+          : allowedVisionProtocolsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      allowedExchangeProtocolsIds: null == allowedExchangeProtocolsIds
+          ? _value.allowedExchangeProtocolsIds
+          : allowedExchangeProtocolsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BillingPlanInputImpl implements _BillingPlanInput {
+  _$BillingPlanInputImpl(
+      {this.id,
+      this.reconnectionIncidents = 0,
+      this.reconnectionPercent = 0.0,
+      this.reconnectionMaximum = 0,
+      this.maxAssets = 0,
+      this.maxDevices = 0,
+      this.maxUsers = 0,
+      this.maxOutboundServices = 0,
+      this.maxFunctions = 0,
+      this.maxApps = 0,
+      this.allowedAppsIds = const [],
+      this.allowedAlgorithmsIds = const [],
+      this.allowedInboundProtocolsIds = const [],
+      this.allowedOutboundProtocolsIds = const [],
+      this.allowedVisionProtocolsIds = const [],
+      this.allowedExchangeProtocolsIds = const []});
+
+  factory _$BillingPlanInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BillingPlanInputImplFromJson(json);
+
+  @override
+  String? id;
+  @override
+  @JsonKey()
+  int reconnectionIncidents;
+  @override
+  @JsonKey()
+  double reconnectionPercent;
+  @override
+  @JsonKey()
+  int reconnectionMaximum;
+  @override
+  @JsonKey()
+  int maxAssets;
+  @override
+  @JsonKey()
+  int maxDevices;
+  @override
+  @JsonKey()
+  int maxUsers;
+  @override
+  @JsonKey()
+  int maxOutboundServices;
+  @override
+  @JsonKey()
+  int maxFunctions;
+  @override
+  @JsonKey()
+  int maxApps;
+  @override
+  @JsonKey()
+  List<String> allowedAppsIds;
+  @override
+  @JsonKey()
+  List<String> allowedAlgorithmsIds;
+  @override
+  @JsonKey()
+  List<String> allowedInboundProtocolsIds;
+  @override
+  @JsonKey()
+  List<String> allowedOutboundProtocolsIds;
+  @override
+  @JsonKey()
+  List<String> allowedVisionProtocolsIds;
+  @override
+  @JsonKey()
+  List<String> allowedExchangeProtocolsIds;
+
+  @override
+  String toString() {
+    return 'BillingPlanInput(id: $id, reconnectionIncidents: $reconnectionIncidents, reconnectionPercent: $reconnectionPercent, reconnectionMaximum: $reconnectionMaximum, maxAssets: $maxAssets, maxDevices: $maxDevices, maxUsers: $maxUsers, maxOutboundServices: $maxOutboundServices, maxFunctions: $maxFunctions, maxApps: $maxApps, allowedAppsIds: $allowedAppsIds, allowedAlgorithmsIds: $allowedAlgorithmsIds, allowedInboundProtocolsIds: $allowedInboundProtocolsIds, allowedOutboundProtocolsIds: $allowedOutboundProtocolsIds, allowedVisionProtocolsIds: $allowedVisionProtocolsIds, allowedExchangeProtocolsIds: $allowedExchangeProtocolsIds)';
+  }
+
+  /// Create a copy of BillingPlanInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BillingPlanInputImplCopyWith<_$BillingPlanInputImpl> get copyWith =>
+      __$$BillingPlanInputImplCopyWithImpl<_$BillingPlanInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BillingPlanInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BillingPlanInput implements BillingPlanInput {
+  factory _BillingPlanInput(
+      {String? id,
+      int reconnectionIncidents,
+      double reconnectionPercent,
+      int reconnectionMaximum,
+      int maxAssets,
+      int maxDevices,
+      int maxUsers,
+      int maxOutboundServices,
+      int maxFunctions,
+      int maxApps,
+      List<String> allowedAppsIds,
+      List<String> allowedAlgorithmsIds,
+      List<String> allowedInboundProtocolsIds,
+      List<String> allowedOutboundProtocolsIds,
+      List<String> allowedVisionProtocolsIds,
+      List<String> allowedExchangeProtocolsIds}) = _$BillingPlanInputImpl;
+
+  factory _BillingPlanInput.fromJson(Map<String, dynamic> json) =
+      _$BillingPlanInputImpl.fromJson;
+
+  @override
+  String? get id;
+  set id(String? value);
+  @override
+  int get reconnectionIncidents;
+  set reconnectionIncidents(int value);
+  @override
+  double get reconnectionPercent;
+  set reconnectionPercent(double value);
+  @override
+  int get reconnectionMaximum;
+  set reconnectionMaximum(int value);
+  @override
+  int get maxAssets;
+  set maxAssets(int value);
+  @override
+  int get maxDevices;
+  set maxDevices(int value);
+  @override
+  int get maxUsers;
+  set maxUsers(int value);
+  @override
+  int get maxOutboundServices;
+  set maxOutboundServices(int value);
+  @override
+  int get maxFunctions;
+  set maxFunctions(int value);
+  @override
+  int get maxApps;
+  set maxApps(int value);
+  @override
+  List<String> get allowedAppsIds;
+  set allowedAppsIds(List<String> value);
+  @override
+  List<String> get allowedAlgorithmsIds;
+  set allowedAlgorithmsIds(List<String> value);
+  @override
+  List<String> get allowedInboundProtocolsIds;
+  set allowedInboundProtocolsIds(List<String> value);
+  @override
+  List<String> get allowedOutboundProtocolsIds;
+  set allowedOutboundProtocolsIds(List<String> value);
+  @override
+  List<String> get allowedVisionProtocolsIds;
+  set allowedVisionProtocolsIds(List<String> value);
+  @override
+  List<String> get allowedExchangeProtocolsIds;
+  set allowedExchangeProtocolsIds(List<String> value);
+
+  /// Create a copy of BillingPlanInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BillingPlanInputImplCopyWith<_$BillingPlanInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 CareProtocol _$CareProtocolFromJson(Map<String, dynamic> json) {
   return _CareProtocol.fromJson(json);
 }

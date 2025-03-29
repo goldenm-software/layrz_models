@@ -23,3 +23,27 @@ class BillingPlan with _$BillingPlan {
 
   factory BillingPlan.fromJson(Map<String, dynamic> json) => _$BillingPlanFromJson(json);
 }
+
+@unfreezed
+class BillingPlanInput with _$BillingPlanInput {
+  factory BillingPlanInput({
+    String? id,
+    @Default(0) int reconnectionIncidents,
+    @Default(0.0) double reconnectionPercent,
+    @Default(0) int reconnectionMaximum,
+    @Default(0) int maxAssets,
+    @Default(0) int maxDevices,
+    @Default(0) int maxUsers,
+    @Default(0) int maxOutboundServices,
+    @Default(0) int maxFunctions,
+    @Default(0) int maxApps,
+    @Default([]) List<String> allowedAppsIds,
+    @Default([]) List<String> allowedAlgorithmsIds,
+    @Default([]) List<String> allowedInboundProtocolsIds,
+    @Default([]) List<String> allowedOutboundProtocolsIds,
+    @Default([]) List<String> allowedVisionProtocolsIds,
+    @Default([]) List<String> allowedExchangeProtocolsIds,
+  }) = _BillingPlanInput;
+
+  factory BillingPlanInput.fromJson(Map<String, dynamic> json) => _$BillingPlanInputFromJson(json);
+}

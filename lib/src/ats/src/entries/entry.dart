@@ -81,6 +81,9 @@ class AtsEntry with _$AtsEntry {
 
     /// `initialHeight` represent a sensor height of the tank.
     double? initialHeight,
+
+    /// `operationId` is the operation ID of the entry.
+    String? operationId,
   }) = _AtsEntry;
 
   /// fromJson creates a new `AtsEntry` from a JSON object.
