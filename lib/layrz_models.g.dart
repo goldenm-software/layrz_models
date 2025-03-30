@@ -1337,8 +1337,8 @@ _$LayrzPackageImpl _$$LayrzPackageImplFromJson(Map<String, dynamic> json) =>
       version: json['version'] as String,
       languageVersionConstraint: json['languageVersionConstraint'] as String?,
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
-      language:
-          const PackageLanguageConverter().fromJson(json['language'] as String),
+      language: $enumDecode(_$PackageLanguageEnumMap, json['language'],
+          unknownValue: PackageLanguage.unknown),
       repository: json['repository'] as String?,
     );
 
@@ -1349,9 +1349,17 @@ Map<String, dynamic> _$$LayrzPackageImplToJson(_$LayrzPackageImpl instance) =>
       'version': instance.version,
       'languageVersionConstraint': instance.languageVersionConstraint,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
-      'language': const PackageLanguageConverter().toJson(instance.language),
+      'language': instance.language.toJson(),
       'repository': instance.repository,
     };
+
+const _$PackageLanguageEnumMap = {
+  PackageLanguage.dart: 'DART',
+  PackageLanguage.flutter: 'FLUTTER',
+  PackageLanguage.python: 'PYTHON',
+  PackageLanguage.golang: 'GOLANG',
+  PackageLanguage.unknown: 'UNKNOWN',
+};
 
 _$PresetImpl _$$PresetImplFromJson(Map<String, dynamic> json) => _$PresetImpl(
       id: json['id'] as String,

@@ -15289,7 +15289,7 @@ mixin _$LayrzPackage {
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// [language] is the language of the package.
-  @PackageLanguageConverter()
+  @JsonKey(unknownEnumValue: PackageLanguage.unknown)
   PackageLanguage get language => throw _privateConstructorUsedError;
 
   /// [repository] is the repository of the package.
@@ -15317,7 +15317,8 @@ abstract class $LayrzPackageCopyWith<$Res> {
       String version,
       String? languageVersionConstraint,
       @TimestampConverter() DateTime createdAt,
-      @PackageLanguageConverter() PackageLanguage language,
+      @JsonKey(unknownEnumValue: PackageLanguage.unknown)
+      PackageLanguage language,
       String? repository});
 }
 
@@ -15391,7 +15392,8 @@ abstract class _$$LayrzPackageImplCopyWith<$Res>
       String version,
       String? languageVersionConstraint,
       @TimestampConverter() DateTime createdAt,
-      @PackageLanguageConverter() PackageLanguage language,
+      @JsonKey(unknownEnumValue: PackageLanguage.unknown)
+      PackageLanguage language,
       String? repository});
 }
 
@@ -15458,7 +15460,8 @@ class _$LayrzPackageImpl implements _LayrzPackage {
       required this.version,
       this.languageVersionConstraint,
       @TimestampConverter() required this.createdAt,
-      @PackageLanguageConverter() required this.language,
+      @JsonKey(unknownEnumValue: PackageLanguage.unknown)
+      required this.language,
       this.repository});
 
   factory _$LayrzPackageImpl.fromJson(Map<String, dynamic> json) =>
@@ -15488,7 +15491,7 @@ class _$LayrzPackageImpl implements _LayrzPackage {
 
   /// [language] is the language of the package.
   @override
-  @PackageLanguageConverter()
+  @JsonKey(unknownEnumValue: PackageLanguage.unknown)
   final PackageLanguage language;
 
   /// [repository] is the repository of the package.
@@ -15547,7 +15550,8 @@ abstract class _LayrzPackage implements LayrzPackage {
       required final String version,
       final String? languageVersionConstraint,
       @TimestampConverter() required final DateTime createdAt,
-      @PackageLanguageConverter() required final PackageLanguage language,
+      @JsonKey(unknownEnumValue: PackageLanguage.unknown)
+      required final PackageLanguage language,
       final String? repository}) = _$LayrzPackageImpl;
 
   factory _LayrzPackage.fromJson(Map<String, dynamic> json) =
@@ -15577,7 +15581,7 @@ abstract class _LayrzPackage implements LayrzPackage {
 
   /// [language] is the language of the package.
   @override
-  @PackageLanguageConverter()
+  @JsonKey(unknownEnumValue: PackageLanguage.unknown)
   PackageLanguage get language;
 
   /// [repository] is the repository of the package.

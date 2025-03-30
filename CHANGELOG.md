@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.58
+
+- Updated `PackageLanguage` enum to include `Golang` as a new language option.
+- Migrated to a JsonConverter to a native @JsonKey and @JsonValue for `PackageLanguage` enum.
+
 ## 3.3.57
 
 - Added `aiEnabled` to `BillingPlan` and their `BillingPlanInput` models
