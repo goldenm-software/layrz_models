@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.57
+
+- Added `aiEnabled` to `BillingPlan` and their `BillingPlanInput` models
+
 ## 3.3.56
 - Added `operationId` in `AtsEntry`
 
