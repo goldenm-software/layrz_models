@@ -122,7 +122,8 @@ class User with _$User {
     String? brickhousePermissionTierId,
 
     /// [brickhouseRole] represents the Brickhouse user role.
-    @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole,
+    @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+    BrickhouseUserRole? brickhouseRole,
 
     /// [sdmCode] represents the SDM code.
     String? sdmCode,
@@ -135,6 +136,9 @@ class User with _$User {
 
     /// [hasPaymentWarning] represents if the user has a payment warning.
     @Default(false) bool hasPaymentWarning,
+
+    /// [billingPlan] represents the billing plan.
+    BillingPlan? billingPlan,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -184,7 +188,8 @@ class UserInput with _$UserInput {
     String? brickhousePermissionTierId,
 
     /// [brickhouseRole] represents the Brickhouse user role.
-    @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown) BrickhouseUserRole? brickhouseRole,
+    @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
+    BrickhouseUserRole? brickhouseRole,
 
     /// [sdmCode] represents the SDM code.
     String? sdmCode,
@@ -193,5 +198,6 @@ class UserInput with _$UserInput {
     String? password,
   }) = _UserInput;
 
-  factory UserInput.fromJson(Map<String, dynamic> json) => _$UserInputFromJson(json);
+  factory UserInput.fromJson(Map<String, dynamic> json) =>
+      _$UserInputFromJson(json);
 }

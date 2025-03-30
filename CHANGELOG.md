@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.59
+
+- Added `billingPlan` to `User` model
+
 ## 3.3.58
 
 - Updated `PackageLanguage` enum to include `Golang` as a new language option.

@@ -1576,6 +1576,9 @@ mixin _$User {
   /// [hasPaymentWarning] represents if the user has a payment warning.
   bool get hasPaymentWarning => throw _privateConstructorUsedError;
 
+  /// [billingPlan] represents the billing plan.
+  BillingPlan? get billingPlan => throw _privateConstructorUsedError;
+
   /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -1633,13 +1636,15 @@ abstract class $UserCopyWith<$Res> {
       String? sdmCode,
       bool isLocked,
       bool isSuspended,
-      bool hasPaymentWarning});
+      bool hasPaymentWarning,
+      BillingPlan? billingPlan});
 
   $TokenCopyWith<$Res>? get token;
   $AvatarCopyWith<$Res>? get dynamicAvatar;
   $CategoryCopyWith<$Res>? get category;
   $ExternalAccountCopyWith<$Res>? get mappitExternalAccount;
   $BHSPermissionTierCopyWith<$Res>? get brickhousePermissionTier;
+  $BillingPlanCopyWith<$Res>? get billingPlan;
 }
 
 /// @nodoc
@@ -1699,6 +1704,7 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? isLocked = null,
     Object? isSuspended = null,
     Object? hasPaymentWarning = null,
+    Object? billingPlan = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -1869,6 +1875,10 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
           ? _value.hasPaymentWarning
           : hasPaymentWarning // ignore: cast_nullable_to_non_nullable
               as bool,
+      billingPlan: freezed == billingPlan
+          ? _value.billingPlan
+          : billingPlan // ignore: cast_nullable_to_non_nullable
+              as BillingPlan?,
     ) as $Val);
   }
 
@@ -1943,6 +1953,20 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
       return _then(_value.copyWith(brickhousePermissionTier: value) as $Val);
     });
   }
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BillingPlanCopyWith<$Res>? get billingPlan {
+    if (_value.billingPlan == null) {
+      return null;
+    }
+
+    return $BillingPlanCopyWith<$Res>(_value.billingPlan!, (value) {
+      return _then(_value.copyWith(billingPlan: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -1995,7 +2019,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
       String? sdmCode,
       bool isLocked,
       bool isSuspended,
-      bool hasPaymentWarning});
+      bool hasPaymentWarning,
+      BillingPlan? billingPlan});
 
   @override
   $TokenCopyWith<$Res>? get token;
@@ -2007,6 +2032,8 @@ abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
   $ExternalAccountCopyWith<$Res>? get mappitExternalAccount;
   @override
   $BHSPermissionTierCopyWith<$Res>? get brickhousePermissionTier;
+  @override
+  $BillingPlanCopyWith<$Res>? get billingPlan;
 }
 
 /// @nodoc
@@ -2063,6 +2090,7 @@ class __$$UserImplCopyWithImpl<$Res>
     Object? isLocked = null,
     Object? isSuspended = null,
     Object? hasPaymentWarning = null,
+    Object? billingPlan = freezed,
   }) {
     return _then(_$UserImpl(
       id: null == id
@@ -2233,6 +2261,10 @@ class __$$UserImplCopyWithImpl<$Res>
           ? _value.hasPaymentWarning
           : hasPaymentWarning // ignore: cast_nullable_to_non_nullable
               as bool,
+      billingPlan: freezed == billingPlan
+          ? _value.billingPlan
+          : billingPlan // ignore: cast_nullable_to_non_nullable
+              as BillingPlan?,
     ));
   }
 }
@@ -2283,7 +2315,8 @@ class _$UserImpl extends _User {
       this.sdmCode,
       this.isLocked = false,
       this.isSuspended = false,
-      this.hasPaymentWarning = false})
+      this.hasPaymentWarning = false,
+      this.billingPlan})
       : _referencesIds = referencesIds,
         _references = references,
         _access = access,
@@ -2601,9 +2634,13 @@ class _$UserImpl extends _User {
   @JsonKey()
   final bool hasPaymentWarning;
 
+  /// [billingPlan] represents the billing plan.
+  @override
+  final BillingPlan? billingPlan;
+
   @override
   String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning)';
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan)';
   }
 
   @override
@@ -2672,10 +2709,10 @@ class _$UserImpl extends _User {
                 other.suspendedAt == suspendedAt) &&
             const DeepCollectionEquality()
                 .equals(other._hwModelsAnimationsIds, _hwModelsAnimationsIds) &&
-            (identical(other.brickhousePermissionTier, brickhousePermissionTier) ||
+            (identical(
+                    other.brickhousePermissionTier, brickhousePermissionTier) ||
                 other.brickhousePermissionTier == brickhousePermissionTier) &&
-            (identical(other.brickhousePermissionTierId,
-                    brickhousePermissionTierId) ||
+            (identical(other.brickhousePermissionTierId, brickhousePermissionTierId) ||
                 other.brickhousePermissionTierId ==
                     brickhousePermissionTierId) &&
             (identical(other.brickhouseRole, brickhouseRole) ||
@@ -2686,7 +2723,9 @@ class _$UserImpl extends _User {
             (identical(other.isSuspended, isSuspended) ||
                 other.isSuspended == isSuspended) &&
             (identical(other.hasPaymentWarning, hasPaymentWarning) ||
-                other.hasPaymentWarning == hasPaymentWarning));
+                other.hasPaymentWarning == hasPaymentWarning) &&
+            (identical(other.billingPlan, billingPlan) ||
+                other.billingPlan == billingPlan));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2734,7 +2773,8 @@ class _$UserImpl extends _User {
         sdmCode,
         isLocked,
         isSuspended,
-        hasPaymentWarning
+        hasPaymentWarning,
+        billingPlan
       ]);
 
   /// Create a copy of User
@@ -2797,7 +2837,8 @@ abstract class _User extends User {
       final String? sdmCode,
       final bool isLocked,
       final bool isSuspended,
-      final bool hasPaymentWarning}) = _$UserImpl;
+      final bool hasPaymentWarning,
+      final BillingPlan? billingPlan}) = _$UserImpl;
   const _User._() : super._();
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
@@ -2977,6 +3018,10 @@ abstract class _User extends User {
   /// [hasPaymentWarning] represents if the user has a payment warning.
   @override
   bool get hasPaymentWarning;
+
+  /// [billingPlan] represents the billing plan.
+  @override
+  BillingPlan? get billingPlan;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
