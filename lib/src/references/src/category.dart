@@ -434,7 +434,8 @@ enum ReferenceCategory {
 
   /// [fromJson] returns the enum value from a string representation.
   static ReferenceCategory fromJson(String json) {
-    final found = _$ReferenceCategoryEnumMap.entries.firstWhereOrNull((e) => e.value == json);
+    final found = _$ReferenceCategoryEnumMap.entries
+        .firstWhereOrNull((e) => e.value == json);
     return found?.key ?? ReferenceCategory.unknown;
   }
 

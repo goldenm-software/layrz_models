@@ -1,4 +1,4 @@
-part of '../i18n.dart';
+part of '../../i18n.dart';
 
 ///
 /// Fields:
@@ -47,5 +47,6 @@ class AvailableLanguage with _$AvailableLanguage {
   }
 
   /// from json freezed
-  factory AvailableLanguage.fromJson(Map<String, dynamic> json) => _$AvailableLanguageFromJson(json);
+  factory AvailableLanguage.fromJson(Map<String, dynamic> json) =>
+      _$AvailableLanguageFromJson(json);
 }

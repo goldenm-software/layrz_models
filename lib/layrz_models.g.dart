@@ -1236,20 +1236,6 @@ Map<String, dynamic> _$$GuideImplToJson(_$GuideImpl instance) =>
       'publishedAt': const TimestampConverter().toJson(instance.publishedAt),
     };
 
-_$LanguageImpl _$$LanguageImplFromJson(Map<String, dynamic> json) =>
-    _$LanguageImpl(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      code: json['code'] as String,
-    );
-
-Map<String, dynamic> _$$LanguageImplToJson(_$LanguageImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'code': instance.code,
-    };
-
 _$LintErrorImpl _$$LintErrorImplFromJson(Map<String, dynamic> json) =>
     _$LintErrorImpl(
       code: json['code'] as String,

@@ -1,4 +1,4 @@
-part of '../i18n.dart';
+part of '../../i18n.dart';
 
 /// Language instance without the messages
 class SavedLanguage {

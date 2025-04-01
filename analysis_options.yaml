@@ -15,3 +15,6 @@ analyzer:
     deprecated_member_use: ignore
     deprecated_member_use_from_same_package: ignore
     unreachable_switch_default: ignore
+
+formatter:
+  line_length: 120
