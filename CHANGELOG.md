@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.62
+
+- I18n changes
+
 ## 3.3.61
 
 - Hotfix

@@ -66,8 +66,12 @@ mixin _$BHSUserInput {
   /// [password] default password if allowed by the form
   set password(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this BHSUserInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BHSUserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BHSUserInputCopyWith<BHSUserInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -99,6 +103,8 @@ class _$BHSUserInputCopyWithImpl<$Res, $Val extends BHSUserInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BHSUserInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -170,6 +176,8 @@ class __$$BHSUserInputImplCopyWithImpl<$Res>
       _$BHSUserInputImpl _value, $Res Function(_$BHSUserInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BHSUserInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -268,7 +276,9 @@ class _$BHSUserInputImpl extends _BHSUserInput {
     return 'BHSUserInput(id: $id, name: $name, email: $email, username: $username, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, password: $password)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BHSUserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSUserInputImplCopyWith<_$BHSUserInputImpl> get copyWith =>
@@ -297,59 +307,61 @@ abstract class _BHSUserInput extends BHSUserInput {
   factory _BHSUserInput.fromJson(Map<String, dynamic> json) =
       _$BHSUserInputImpl.fromJson;
 
-  @override
-
   /// [id] represents the user ID. When is new, this value should be null.
+  @override
   String? get id;
 
   /// [id] represents the user ID. When is new, this value should be null.
   set id(String? value);
-  @override
 
   /// [name] represents the user name.
+  @override
   String get name;
 
   /// [name] represents the user name.
   set name(String value);
-  @override
 
   /// [email] represents the user email.
+  @override
   String get email;
 
   /// [email] represents the user email.
   set email(String value);
-  @override
 
   /// [username] represents the username.
+  @override
   String get username;
 
   /// [username] represents the username.
   set username(String value);
-  @override
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  @override
   String? get brickhousePermissionTierId;
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
   set brickhousePermissionTierId(String? value);
-  @override
 
   /// [brickhouseRole] represents the Brickhouse user role.
+  @override
   @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
   BrickhouseUserRole? get brickhouseRole;
 
   /// [brickhouseRole] represents the Brickhouse user role.
   @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
   set brickhouseRole(BrickhouseUserRole? value);
-  @override
 
   /// [password] default password if allowed by the form
+  @override
   String? get password;
 
   /// [password] default password if allowed by the form
   set password(String? value);
+
+  /// Create a copy of BHSUserInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BHSUserInputImplCopyWith<_$BHSUserInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -370,8 +382,12 @@ mixin _$InviteLink {
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
 
+  /// Serializes this InviteLink to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $InviteLinkCopyWith<InviteLink> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -401,6 +417,8 @@ class _$InviteLinkCopyWithImpl<$Res, $Val extends InviteLink>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -465,6 +483,8 @@ class __$$InviteLinkImplCopyWithImpl<$Res>
       _$InviteLinkImpl _value, $Res Function(_$InviteLinkImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -555,12 +575,14 @@ class _$InviteLinkImpl extends _InviteLink {
                 other.createdAt == createdAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, code, sentTo, sentAt, expiresAt, createdAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
@@ -603,8 +625,11 @@ abstract class _InviteLink extends InviteLink {
   @override
   @TimestampConverter()
   DateTime get createdAt;
+
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -622,8 +647,12 @@ mixin _$MfaInput {
   bool get isRequesting => throw _privateConstructorUsedError;
   set isRequesting(bool value) => throw _privateConstructorUsedError;
 
+  /// Serializes this MfaInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MfaInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MfaInputCopyWith<MfaInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -646,6 +675,8 @@ class _$MfaInputCopyWithImpl<$Res, $Val extends MfaInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MfaInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -689,6 +720,8 @@ class __$$MfaInputImplCopyWithImpl<$Res>
       _$MfaInputImpl _value, $Res Function(_$MfaInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MfaInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -734,7 +767,9 @@ class _$MfaInputImpl implements _MfaInput {
     return 'MfaInput(method: $method, token: $token, isRequesting: $isRequesting)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MfaInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MfaInputImplCopyWith<_$MfaInputImpl> get copyWith =>
@@ -764,8 +799,11 @@ abstract class _MfaInput implements MfaInput {
   @override
   bool get isRequesting;
   set isRequesting(bool value);
+
+  /// Create a copy of MfaInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MfaInputImplCopyWith<_$MfaInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -784,8 +822,12 @@ mixin _$PasswordInput {
   set newPasswordConfirmation(String value) =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this PasswordInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PasswordInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PasswordInputCopyWith<PasswordInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -812,6 +854,8 @@ class _$PasswordInputCopyWithImpl<$Res, $Val extends PasswordInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PasswordInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -858,6 +902,8 @@ class __$$PasswordInputImplCopyWithImpl<$Res>
       _$PasswordInputImpl _value, $Res Function(_$PasswordInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PasswordInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -908,7 +954,9 @@ class _$PasswordInputImpl implements _PasswordInput {
     return 'PasswordInput(currentPassword: $currentPassword, newPassword: $newPassword, newPasswordConfirmation: $newPasswordConfirmation)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PasswordInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PasswordInputImplCopyWith<_$PasswordInputImpl> get copyWith =>
@@ -940,8 +988,11 @@ abstract class _PasswordInput implements PasswordInput {
   @override
   String get newPasswordConfirmation;
   set newPasswordConfirmation(String value);
+
+  /// Create a copy of PasswordInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PasswordInputImplCopyWith<_$PasswordInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -961,8 +1012,12 @@ mixin _$ProfileInput {
   AvatarInput? get dynamicAvatar => throw _privateConstructorUsedError;
   set dynamicAvatar(AvatarInput? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this ProfileInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ProfileInputCopyWith<ProfileInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -989,6 +1044,8 @@ class _$ProfileInputCopyWithImpl<$Res, $Val extends ProfileInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1017,6 +1074,8 @@ class _$ProfileInputCopyWithImpl<$Res, $Val extends ProfileInput>
     ) as $Val);
   }
 
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarInputCopyWith<$Res>? get dynamicAvatar {
@@ -1053,6 +1112,8 @@ class __$$ProfileInputImplCopyWithImpl<$Res>
       _$ProfileInputImpl _value, $Res Function(_$ProfileInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1111,7 +1172,9 @@ class _$ProfileInputImpl implements _ProfileInput {
     return 'ProfileInput(name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ProfileInputImplCopyWith<_$ProfileInputImpl> get copyWith =>
@@ -1147,8 +1210,11 @@ abstract class _ProfileInput implements ProfileInput {
   @override
   AvatarInput? get dynamicAvatar;
   set dynamicAvatar(AvatarInput? value);
+
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProfileInputImplCopyWith<_$ProfileInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1169,8 +1235,12 @@ mixin _$TenvioDestinationSetup {
   bool get addressIsPlusCode => throw _privateConstructorUsedError;
   set addressIsPlusCode(bool value) => throw _privateConstructorUsedError;
 
+  /// Serializes this TenvioDestinationSetup to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of TenvioDestinationSetup
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $TenvioDestinationSetupCopyWith<TenvioDestinationSetup> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1199,6 +1269,8 @@ class _$TenvioDestinationSetupCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of TenvioDestinationSetup
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1254,6 +1326,8 @@ class __$$TenvioDestinationSetupImplCopyWithImpl<$Res>
       $Res Function(_$TenvioDestinationSetupImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of TenvioDestinationSetup
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1311,7 +1385,9 @@ class _$TenvioDestinationSetupImpl implements _TenvioDestinationSetup {
     return 'TenvioDestinationSetup(address: $address, latitude: $latitude, longitude: $longitude, addressIsPlusCode: $addressIsPlusCode)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of TenvioDestinationSetup
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$TenvioDestinationSetupImplCopyWith<_$TenvioDestinationSetupImpl>
@@ -1348,8 +1424,11 @@ abstract class _TenvioDestinationSetup implements TenvioDestinationSetup {
   @override
   bool get addressIsPlusCode;
   set addressIsPlusCode(bool value);
+
+  /// Create a copy of TenvioDestinationSetup
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$TenvioDestinationSetupImplCopyWith<_$TenvioDestinationSetupImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1500,8 +1579,12 @@ mixin _$User {
   /// [billingPlan] represents the billing plan.
   BillingPlan? get billingPlan => throw _privateConstructorUsedError;
 
+  /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1574,6 +1657,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1797,6 +1882,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     ) as $Val);
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TokenCopyWith<$Res>? get token {
@@ -1809,6 +1896,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarCopyWith<$Res>? get dynamicAvatar {
@@ -1821,6 +1910,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $CategoryCopyWith<$Res>? get category {
@@ -1833,6 +1924,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ExternalAccountCopyWith<$Res>? get mappitExternalAccount {
@@ -1846,6 +1939,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSPermissionTierCopyWith<$Res>? get brickhousePermissionTier {
@@ -1859,6 +1954,8 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     });
   }
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BillingPlanCopyWith<$Res>? get billingPlan {
@@ -1946,6 +2043,8 @@ class __$$UserImplCopyWithImpl<$Res>
   __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2629,7 +2728,7 @@ class _$UserImpl extends _User {
                 other.billingPlan == billingPlan));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -2678,7 +2777,9 @@ class _$UserImpl extends _User {
         billingPlan
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
@@ -2742,188 +2843,190 @@ abstract class _User extends User {
 
   factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
 
-  @override
-
   /// [id] represents the user ID.
-  String get id;
   @override
+  String get id;
 
   /// [name] represents the user name.
-  String get name;
   @override
+  String get name;
 
   /// [token] represents the user token.
-  Token? get token;
   @override
+  Token? get token;
 
   /// [parentId] represents the parent ID.
-  String? get parentId;
   @override
+  String? get parentId;
 
   /// [email] represents the user email.
-  String? get email;
   @override
+  String? get email;
 
   /// [username] represents the username.
-  String? get username;
   @override
+  String? get username;
 
   /// [dynamicAvatar] represents the user avatar.
-  Avatar? get dynamicAvatar;
   @override
+  Avatar? get dynamicAvatar;
 
   /// [referencesIds] represents the list of references IDs.
-  List<String>? get referencesIds;
   @override
+  List<String>? get referencesIds;
 
   /// [references] represents the list of references.
-  List<Reference>? get references;
   @override
+  List<Reference>? get references;
 
   /// [category] represents the user category.
-  Category? get category;
   @override
+  Category? get category;
 
   /// [categoryId] represents the user category ID.
-  String? get categoryId;
   @override
+  String? get categoryId;
 
   /// [mqttToken] represents the MQTT token.
-  String? get mqttToken;
   @override
+  String? get mqttToken;
 
   /// [access] represents the list of granted access.
-  List<Access>? get access;
   @override
+  List<Access>? get access;
 
   /// [customFields] represents the list of custom fields.
-  List<CustomField>? get customFields;
   @override
+  List<CustomField>? get customFields;
 
   /// [platformAuth] represents the platform auth.
-  String get platformAuth;
   @override
+  String get platformAuth;
 
   /// [childs] represents the list of childs.
-  List<User> get childs;
   @override
+  List<User> get childs;
 
   /// [tagsIds] represents the list of tags IDs.
-  List<String>? get tagsIds;
   @override
+  List<String>? get tagsIds;
 
   /// [tags] represents the list of tags.
-  List<Tag>? get tags;
   @override
+  List<Tag>? get tags;
 
   /// [planId] represents the plan ID.
-  String? get planId;
   @override
+  String? get planId;
 
   /// [allowedApps] represents the list of allowed apps.
-  List<RegisteredApp>? get allowedApps;
   @override
+  List<RegisteredApp>? get allowedApps;
 
   /// [mappitAssetsIds] represents the list of assets IDs.
   /// This field is only for `Mappit` use.
-  List<String>? get mappitAssetsIds;
   @override
+  List<String>? get mappitAssetsIds;
 
   /// [mappitSecondaryRoutes]
-  List<String>? get mappitSecondaryRoutesIds;
   @override
+  List<String>? get mappitSecondaryRoutesIds;
 
   /// [mappitAssets] represents the list of assets.
   /// This field is only for `Mappit` use.
-  List<Asset>? get mappitAssets;
   @override
+  List<Asset>? get mappitAssets;
 
   /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
   /// This field is only for `Mappit` use.
-  int? get historicalDaysAllowed;
   @override
+  int? get historicalDaysAllowed;
 
   /// [mappitExternalAccountId] represents the Mappit external account ID.
   /// This field is only for `Mappit` use.
-  String? get mappitExternalAccountId;
   @override
+  String? get mappitExternalAccountId;
 
   /// [mappitExternalAccount] represents the Mappit external account.
   /// This field is only for `Mappit` use.
-  ExternalAccount? get mappitExternalAccount;
   @override
+  ExternalAccount? get mappitExternalAccount;
 
   /// [mfaEnabled] represents the MFA enabled flag.
-  bool get mfaEnabled;
   @override
+  bool get mfaEnabled;
 
   /// [mfaMethods] represents the list of MFA methods.
+  @override
   @MfaMethodConverter()
   List<MfaMethod> get mfaMethods;
-  @override
 
   /// [tenvioAddress] represents the Tenvio address.
-  String? get tenvioAddress;
   @override
+  String? get tenvioAddress;
 
   /// [tenvioPhone] represents the Tenvio phone.
-  String? get tenvioPhone;
   @override
+  String? get tenvioPhone;
 
   /// [tenvioLatitude] represents the Tenvio latitude.
-  double? get tenvioLatitude;
   @override
+  double? get tenvioLatitude;
 
   /// [tenvioLongitude] represents the Tenvio longitude.
-  double? get tenvioLongitude;
   @override
+  double? get tenvioLongitude;
 
   /// [tenvioAddressIsPlusCode] represents the Tenvio address is Plus Code.
-  bool? get tenvioAddressIsPlusCode;
   @override
+  bool? get tenvioAddressIsPlusCode;
 
   /// [suspendedAt] represents the date when the account was suspended.
+  @override
   @TimestampOrNullConverter()
   DateTime? get suspendedAt;
-  @override
 
   /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
-  List<String> get hwModelsAnimationsIds;
   @override
+  List<String> get hwModelsAnimationsIds;
 
   /// [brickhousePermissionTier] represents the Brickhouse permission tier for access level of an user.
-  BHSPermissionTier? get brickhousePermissionTier;
   @override
+  BHSPermissionTier? get brickhousePermissionTier;
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  String? get brickhousePermissionTierId;
   @override
+  String? get brickhousePermissionTierId;
 
   /// [brickhouseRole] represents the Brickhouse user role.
+  @override
   @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
   BrickhouseUserRole? get brickhouseRole;
-  @override
 
   /// [sdmCode] represents the SDM code.
-  String? get sdmCode;
   @override
+  String? get sdmCode;
 
   /// [isLocked] represents if the user is locked.
-  bool get isLocked;
   @override
+  bool get isLocked;
 
   /// [isSuspended] represents if the users account is suspended.
-  bool get isSuspended;
   @override
+  bool get isSuspended;
 
   /// [hasPaymentWarning] represents if the user has a payment warning.
-  bool get hasPaymentWarning;
   @override
+  bool get hasPaymentWarning;
 
   /// [billingPlan] represents the billing plan.
-  BillingPlan? get billingPlan;
   @override
-  @JsonKey(ignore: true)
+  BillingPlan? get billingPlan;
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserImplCopyWith<_$UserImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3033,8 +3136,12 @@ mixin _$UserInput {
   /// [password] default password if allowed by the form
   set password(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this UserInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $UserInputCopyWith<UserInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3075,6 +3182,8 @@ class _$UserInputCopyWithImpl<$Res, $Val extends UserInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3158,6 +3267,8 @@ class _$UserInputCopyWithImpl<$Res, $Val extends UserInput>
     ) as $Val);
   }
 
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarInputCopyWith<$Res>? get dynamicAvatar {
@@ -3209,6 +3320,8 @@ class __$$UserInputImplCopyWithImpl<$Res>
       _$UserInputImpl _value, $Res Function(_$UserInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3394,7 +3507,9 @@ class _$UserInputImpl extends _UserInput {
     return 'UserInput(id: $id, name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, categoryId: $categoryId, customFields: $customFields, tagsIds: $tagsIds, mappitAssetsIds: $mappitAssetsIds, historicalDaysAllowed: $historicalDaysAllowed, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, password: $password)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$UserInputImplCopyWith<_$UserInputImpl> get copyWith =>
@@ -3431,119 +3546,121 @@ abstract class _UserInput extends UserInput {
   factory _UserInput.fromJson(Map<String, dynamic> json) =
       _$UserInputImpl.fromJson;
 
-  @override
-
   /// [id] represents the user ID. When is new, this value should be null.
+  @override
   String? get id;
 
   /// [id] represents the user ID. When is new, this value should be null.
   set id(String? value);
-  @override
 
   /// [name] represents the user name.
+  @override
   String get name;
 
   /// [name] represents the user name.
   set name(String value);
-  @override
 
   /// [email] represents the user email.
+  @override
   String get email;
 
   /// [email] represents the user email.
   set email(String value);
-  @override
 
   /// [username] represents the username.
+  @override
   String get username;
 
   /// [username] represents the username.
   set username(String value);
-  @override
 
   /// [dynamicAvatar] represents the user avatar.
+  @override
   AvatarInput? get dynamicAvatar;
 
   /// [dynamicAvatar] represents the user avatar.
   set dynamicAvatar(AvatarInput? value);
-  @override
 
   /// [referencesIds] represents the list of references IDs.
+  @override
   List<String> get referencesIds;
 
   /// [referencesIds] represents the list of references IDs.
   set referencesIds(List<String> value);
-  @override
 
   /// [categoryId] represents the user category ID.
+  @override
   String? get categoryId;
 
   /// [categoryId] represents the user category ID.
   set categoryId(String? value);
-  @override
 
   /// [customFields] represents the list of custom fields.
+  @override
   List<CustomField> get customFields;
 
   /// [customFields] represents the list of custom fields.
   set customFields(List<CustomField> value);
-  @override
 
   /// [tagsIds] represents the list of tags IDs.
+  @override
   List<String> get tagsIds;
 
   /// [tagsIds] represents the list of tags IDs.
   set tagsIds(List<String> value);
-  @override
 
   /// [mappitAssetsIds] represents the list of assets IDs.
   /// This field is only for `Mappit` use.
+  @override
   List<String> get mappitAssetsIds;
 
   /// [mappitAssetsIds] represents the list of assets IDs.
   /// This field is only for `Mappit` use.
   set mappitAssetsIds(List<String> value);
-  @override
 
   /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
   /// This field is only for `Mappit` use.
+  @override
   int get historicalDaysAllowed;
 
   /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
   /// This field is only for `Mappit` use.
   set historicalDaysAllowed(int value);
-  @override
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
+  @override
   String? get brickhousePermissionTierId;
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
   set brickhousePermissionTierId(String? value);
-  @override
 
   /// [brickhouseRole] represents the Brickhouse user role.
+  @override
   @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
   BrickhouseUserRole? get brickhouseRole;
 
   /// [brickhouseRole] represents the Brickhouse user role.
   @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
   set brickhouseRole(BrickhouseUserRole? value);
-  @override
 
   /// [sdmCode] represents the SDM code.
+  @override
   String? get sdmCode;
 
   /// [sdmCode] represents the SDM code.
   set sdmCode(String? value);
-  @override
 
   /// [password] default password if allowed by the form
+  @override
   String? get password;
 
   /// [password] default password if allowed by the form
   set password(String? value);
+
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UserInputImplCopyWith<_$UserInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3585,8 +3702,12 @@ mixin _$AccessibilityInput {
   /// [colorblindStrength] represents the user colorblind strength.
   set colorblindStrength(double? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this AccessibilityInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AccessibilityInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AccessibilityInputCopyWith<AccessibilityInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3615,6 +3736,8 @@ class _$AccessibilityInputCopyWithImpl<$Res, $Val extends AccessibilityInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AccessibilityInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3668,6 +3791,8 @@ class __$$AccessibilityInputImplCopyWithImpl<$Res>
       $Res Function(_$AccessibilityInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AccessibilityInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3734,7 +3859,9 @@ class _$AccessibilityInputImpl extends _AccessibilityInput {
     return 'AccessibilityInput(userId: $userId, employeeId: $employeeId, colorblindMode: $colorblindMode, colorblindStrength: $colorblindStrength)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AccessibilityInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AccessibilityInputImplCopyWith<_$AccessibilityInputImpl> get copyWith =>
@@ -3761,42 +3888,44 @@ abstract class _AccessibilityInput extends AccessibilityInput {
   factory _AccessibilityInput.fromJson(Map<String, dynamic> json) =
       _$AccessibilityInputImpl.fromJson;
 
-  @override
-
   /// [userId] represents the user ID.
   /// [userId] and [employeeId] can not be null or together at the same time.
+  @override
   String? get userId;
 
   /// [userId] represents the user ID.
   /// [userId] and [employeeId] can not be null or together at the same time.
   set userId(String? value);
-  @override
 
   /// [employeeId] represents the employee ID.
   /// [userId] and [employeeId] can not be null or together at the same time.
+  @override
   String? get employeeId;
 
   /// [employeeId] represents the employee ID.
   /// [userId] and [employeeId] can not be null or together at the same time.
   set employeeId(String? value);
-  @override
 
   /// [colorblindMode] represents the user colorblind mode.
+  @override
   @JsonKey(unknownEnumValue: ColorblindMode.normal)
   ColorblindMode? get colorblindMode;
 
   /// [colorblindMode] represents the user colorblind mode.
   @JsonKey(unknownEnumValue: ColorblindMode.normal)
   set colorblindMode(ColorblindMode? value);
-  @override
 
   /// [colorblindStrength] represents the user colorblind strength.
+  @override
   double? get colorblindStrength;
 
   /// [colorblindStrength] represents the user colorblind strength.
   set colorblindStrength(double? value);
+
+  /// Create a copy of AccessibilityInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AccessibilityInputImplCopyWith<_$AccessibilityInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
