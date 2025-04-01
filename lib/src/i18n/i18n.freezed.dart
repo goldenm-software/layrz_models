@@ -1587,3 +1587,311 @@ abstract class _I18nTranslationInput extends I18nTranslationInput {
   _$$I18nTranslationInputImplCopyWith<_$I18nTranslationInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
+
+I18nKeyHistory _$I18nKeyHistoryFromJson(Map<String, dynamic> json) {
+  return _I18nKeyHistory.fromJson(json);
+}
+
+/// @nodoc
+mixin _$I18nKeyHistory {
+  /// [id] is the ID of the history entry.
+  String get id => throw _privateConstructorUsedError;
+
+  /// [language] is the language of the history entry.
+  String get languageId => throw _privateConstructorUsedError;
+
+  /// [before] is the previous value of the key.
+  String get before => throw _privateConstructorUsedError;
+
+  /// [after] is the new value of the key.
+  String get after => throw _privateConstructorUsedError;
+
+  /// [performedAt] is the date and time when the change was made.
+  DateTime get performedAt => throw _privateConstructorUsedError;
+
+  /// [performedBy] is the user who made the change.
+  Employee get performedBy => throw _privateConstructorUsedError;
+
+  /// Serializes this I18nKeyHistory to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of I18nKeyHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $I18nKeyHistoryCopyWith<I18nKeyHistory> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $I18nKeyHistoryCopyWith<$Res> {
+  factory $I18nKeyHistoryCopyWith(
+          I18nKeyHistory value, $Res Function(I18nKeyHistory) then) =
+      _$I18nKeyHistoryCopyWithImpl<$Res, I18nKeyHistory>;
+  @useResult
+  $Res call(
+      {String id,
+      String languageId,
+      String before,
+      String after,
+      DateTime performedAt,
+      Employee performedBy});
+
+  $EmployeeCopyWith<$Res> get performedBy;
+}
+
+/// @nodoc
+class _$I18nKeyHistoryCopyWithImpl<$Res, $Val extends I18nKeyHistory>
+    implements $I18nKeyHistoryCopyWith<$Res> {
+  _$I18nKeyHistoryCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of I18nKeyHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? languageId = null,
+    Object? before = null,
+    Object? after = null,
+    Object? performedAt = null,
+    Object? performedBy = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      languageId: null == languageId
+          ? _value.languageId
+          : languageId // ignore: cast_nullable_to_non_nullable
+              as String,
+      before: null == before
+          ? _value.before
+          : before // ignore: cast_nullable_to_non_nullable
+              as String,
+      after: null == after
+          ? _value.after
+          : after // ignore: cast_nullable_to_non_nullable
+              as String,
+      performedAt: null == performedAt
+          ? _value.performedAt
+          : performedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      performedBy: null == performedBy
+          ? _value.performedBy
+          : performedBy // ignore: cast_nullable_to_non_nullable
+              as Employee,
+    ) as $Val);
+  }
+
+  /// Create a copy of I18nKeyHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $EmployeeCopyWith<$Res> get performedBy {
+    return $EmployeeCopyWith<$Res>(_value.performedBy, (value) {
+      return _then(_value.copyWith(performedBy: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$I18nKeyHistoryImplCopyWith<$Res>
+    implements $I18nKeyHistoryCopyWith<$Res> {
+  factory _$$I18nKeyHistoryImplCopyWith(_$I18nKeyHistoryImpl value,
+          $Res Function(_$I18nKeyHistoryImpl) then) =
+      __$$I18nKeyHistoryImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String languageId,
+      String before,
+      String after,
+      DateTime performedAt,
+      Employee performedBy});
+
+  @override
+  $EmployeeCopyWith<$Res> get performedBy;
+}
+
+/// @nodoc
+class __$$I18nKeyHistoryImplCopyWithImpl<$Res>
+    extends _$I18nKeyHistoryCopyWithImpl<$Res, _$I18nKeyHistoryImpl>
+    implements _$$I18nKeyHistoryImplCopyWith<$Res> {
+  __$$I18nKeyHistoryImplCopyWithImpl(
+      _$I18nKeyHistoryImpl _value, $Res Function(_$I18nKeyHistoryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of I18nKeyHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? languageId = null,
+    Object? before = null,
+    Object? after = null,
+    Object? performedAt = null,
+    Object? performedBy = null,
+  }) {
+    return _then(_$I18nKeyHistoryImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      languageId: null == languageId
+          ? _value.languageId
+          : languageId // ignore: cast_nullable_to_non_nullable
+              as String,
+      before: null == before
+          ? _value.before
+          : before // ignore: cast_nullable_to_non_nullable
+              as String,
+      after: null == after
+          ? _value.after
+          : after // ignore: cast_nullable_to_non_nullable
+              as String,
+      performedAt: null == performedAt
+          ? _value.performedAt
+          : performedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      performedBy: null == performedBy
+          ? _value.performedBy
+          : performedBy // ignore: cast_nullable_to_non_nullable
+              as Employee,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$I18nKeyHistoryImpl extends _I18nKeyHistory {
+  const _$I18nKeyHistoryImpl(
+      {required this.id,
+      required this.languageId,
+      required this.before,
+      required this.after,
+      required this.performedAt,
+      required this.performedBy})
+      : super._();
+
+  factory _$I18nKeyHistoryImpl.fromJson(Map<String, dynamic> json) =>
+      _$$I18nKeyHistoryImplFromJson(json);
+
+  /// [id] is the ID of the history entry.
+  @override
+  final String id;
+
+  /// [language] is the language of the history entry.
+  @override
+  final String languageId;
+
+  /// [before] is the previous value of the key.
+  @override
+  final String before;
+
+  /// [after] is the new value of the key.
+  @override
+  final String after;
+
+  /// [performedAt] is the date and time when the change was made.
+  @override
+  final DateTime performedAt;
+
+  /// [performedBy] is the user who made the change.
+  @override
+  final Employee performedBy;
+
+  @override
+  String toString() {
+    return 'I18nKeyHistory(id: $id, languageId: $languageId, before: $before, after: $after, performedAt: $performedAt, performedBy: $performedBy)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$I18nKeyHistoryImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.languageId, languageId) ||
+                other.languageId == languageId) &&
+            (identical(other.before, before) || other.before == before) &&
+            (identical(other.after, after) || other.after == after) &&
+            (identical(other.performedAt, performedAt) ||
+                other.performedAt == performedAt) &&
+            (identical(other.performedBy, performedBy) ||
+                other.performedBy == performedBy));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, languageId, before, after, performedAt, performedBy);
+
+  /// Create a copy of I18nKeyHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$I18nKeyHistoryImplCopyWith<_$I18nKeyHistoryImpl> get copyWith =>
+      __$$I18nKeyHistoryImplCopyWithImpl<_$I18nKeyHistoryImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$I18nKeyHistoryImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _I18nKeyHistory extends I18nKeyHistory {
+  const factory _I18nKeyHistory(
+      {required final String id,
+      required final String languageId,
+      required final String before,
+      required final String after,
+      required final DateTime performedAt,
+      required final Employee performedBy}) = _$I18nKeyHistoryImpl;
+  const _I18nKeyHistory._() : super._();
+
+  factory _I18nKeyHistory.fromJson(Map<String, dynamic> json) =
+      _$I18nKeyHistoryImpl.fromJson;
+
+  /// [id] is the ID of the history entry.
+  @override
+  String get id;
+
+  /// [language] is the language of the history entry.
+  @override
+  String get languageId;
+
+  /// [before] is the previous value of the key.
+  @override
+  String get before;
+
+  /// [after] is the new value of the key.
+  @override
+  String get after;
+
+  /// [performedAt] is the date and time when the change was made.
+  @override
+  DateTime get performedAt;
+
+  /// [performedBy] is the user who made the change.
+  @override
+  Employee get performedBy;
+
+  /// Create a copy of I18nKeyHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$I18nKeyHistoryImplCopyWith<_$I18nKeyHistoryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

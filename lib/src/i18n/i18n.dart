@@ -22,3 +22,4 @@ part 'src/engine/delegate.dart';
 part 'src/models/language.dart';
 part 'src/models/key.dart';
 part 'src/models/translation.dart';
+part 'src/models/history.dart';

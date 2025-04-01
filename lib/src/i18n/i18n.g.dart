@@ -134,3 +134,25 @@ Map<String, dynamic> _$$I18nTranslationInputImplToJson(
       'languageId': instance.languageId,
       'message': instance.message,
     };
+
+_$I18nKeyHistoryImpl _$$I18nKeyHistoryImplFromJson(Map<String, dynamic> json) =>
+    _$I18nKeyHistoryImpl(
+      id: json['id'] as String,
+      languageId: json['languageId'] as String,
+      before: json['before'] as String,
+      after: json['after'] as String,
+      performedAt: DateTime.parse(json['performedAt'] as String),
+      performedBy:
+          Employee.fromJson(json['performedBy'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$$I18nKeyHistoryImplToJson(
+        _$I18nKeyHistoryImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'languageId': instance.languageId,
+      'before': instance.before,
+      'after': instance.after,
+      'performedAt': instance.performedAt.toIso8601String(),
+      'performedBy': instance.performedBy.toJson(),
+    };

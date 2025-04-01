@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.63
+
+- Added `I18nKeyHistory` model
+
 ## 3.3.62
 
 - I18n changes
