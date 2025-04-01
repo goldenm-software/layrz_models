@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.61
+
+- Hotfix
+
 ## 3.3.60
 
 - Added `readyToOperate` and `unloadingOperation` values in `AtsPurchaseOrderStatus` enum

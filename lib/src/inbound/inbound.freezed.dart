@@ -148,12 +148,8 @@ mixin _$InboundProtocol {
   Map<String, dynamic>? get peripheralParserSpec =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this InboundProtocol to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundProtocol
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $InboundProtocolCopyWith<InboundProtocol> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -219,8 +215,6 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of InboundProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -414,8 +408,6 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     ) as $Val);
   }
 
-  /// Create a copy of InboundProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarCopyWith<$Res>? get dynamicIcon {
@@ -428,8 +420,6 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     });
   }
 
-  /// Create a copy of InboundProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $SimulationCycleCopyWith<$Res>? get cycle {
@@ -442,8 +432,6 @@ class _$InboundProtocolCopyWithImpl<$Res, $Val extends InboundProtocol>
     });
   }
 
-  /// Create a copy of InboundProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $WebhookStructureCopyWith<$Res>? get webhookStructure {
@@ -521,8 +509,6 @@ class __$$InboundProtocolImplCopyWithImpl<$Res>
       _$InboundProtocolImpl _value, $Res Function(_$InboundProtocolImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of InboundProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1082,7 +1068,7 @@ class _$InboundProtocolImpl implements _InboundProtocol {
                 .equals(other._peripheralParserSpec, _peripheralParserSpec));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1125,9 +1111,7 @@ class _$InboundProtocolImpl implements _InboundProtocol {
         const DeepCollectionEquality().hash(_peripheralParserSpec)
       ]);
 
-  /// Create a copy of InboundProtocol
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InboundProtocolImplCopyWith<_$InboundProtocolImpl> get copyWith =>
@@ -1187,171 +1171,169 @@ abstract class _InboundProtocol implements InboundProtocol {
   factory _InboundProtocol.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolImpl.fromJson;
 
-  /// The protocol ID
   @override
+
+  /// The protocol ID
   String get id;
+  @override
 
   /// The name of the protocol
-  @override
   String get name;
+  @override
 
   /// Indicates the color assigned to the protocol
-  @override
   @ColorConverter()
   Color get color;
+  @override
 
   /// Indicates if the protocol is enabled and available for use, or disabled and not available for use.
-  @override
   bool get isEnabled;
+  @override
 
   /// Indicates the operation mode of the protocol.
-  @override
   @JsonKey(unknownEnumValue: OperationMode.unknown)
   OperationMode get operationMode;
+  @override
 
   /// [host] is the host or IP of the protocol. May or may not be provided depending of the protocol
-  @override
   String? get host;
+  @override
 
   /// [port] is the port of the protocol. May or may not be provided depending of the protocol
   ///
   /// Sometimes, this field marks 0 or null, when this happens, the port is not required to connect to the protocol.
-  @override
   int? get port;
+  @override
 
   /// [mqttTopic] is the host or IP of the MQTT protocol. May or may not be provided depending of
   /// the protocol
-  @override
   String? get mqttTopic;
+  @override
 
   /// Indicates if the protocol has support for commands sent via the protocol itself.
-  @override
   bool? get hasNativeCommands;
+  @override
 
   /// Indicates if the protocol has support for commands sent via SMS gateway.
-  @override
   bool? get hasSmsCommands;
+  @override
 
   /// Indicates if the protocol has support for command ACK, only valid for [hasNativeCommands] = true
-  @override
   bool? get hasCommandsResult;
+  @override
 
   /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates if the protocol is from Flespi or not
-  @override
   bool? get isFlespi;
+  @override
 
   /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates the Flespi Channel ID.
-  @override
   int? get channelId;
+  @override
 
   /// [isFlespi], [channelId] and [flespiId] are the fields for Flespi protocols.
   /// Indicates the ID of the protocol in Flespi.
-  @override
   String? get flespiId;
+  @override
 
   /// Indicates the structure or required fields for the protocol use.
-  @override
   List<CredentialField>? get requiredFields;
+  @override
 
   /// Indicates if the devices only can be created through import
-  @override
   bool? get isImported;
+  @override
 
   /// Indicates the list of categories assigned to the protocol
-  @override
   List<String>? get categoriesIds;
+  @override
 
   /// Indicates if the protocol has support for Firmware Over The Air (FOTA)
-  @override
   bool? get canFota;
+  @override
 
   /// Indicates the list of models linked to the protocol
-  @override
   List<Model>? get models;
+  @override
 
   /// Indicates if the protocol has support for ACK through the protocol itself.
   /// [hasAck] is the [bool] value that indicates if the protocol has support for ACK.
   /// and [ackTopicFormat] is the [String] value that indicates the format of the topic to send the ACK.
   /// Currently only works for Layrz Link protocol.
-  @override
   bool? get hasAck;
+  @override
 
   /// [ackTopicFormat] is the format of the topic to send the ACK.
-  @override
   String? get ackTopicFormat;
+  @override
 
   /// [dynamicIcon] is the icon of the inbound protocol.
   /// This is the new schema of the icon
-  @override
   Avatar? get dynamicIcon;
+  @override
 
   /// [cycleId] is the ID of the cycle that the protocol belongs to.
-  @override
   String? get cycleId;
+  @override
 
   /// [cycle] is the cycle that the protocol belongs to.
-  @override
   SimulationCycle? get cycle;
+  @override
 
   /// [hasModbus] is the [bool] value that indicates if the protocol has support for Modbus.
-  @override
   bool? get hasModbus;
+  @override
 
   /// [modbusPorts] is the list of Modbus ports that the protocol has.
-  @override
   List<String> get modbusPorts;
+  @override
 
   /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
   /// For marketing purposes.
-  @override
   int? get usage;
+  @override
 
   /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
-  @override
   bool? get requiresFlespiToken;
+  @override
 
   /// [flespiAcl] refers to the ACL for the token generation.
-  @override
   List<FlespiAcl>? get flespiAcl;
+  @override
 
   /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
-  @override
   WebhookStructure? get webhookStructure;
+  @override
 
   /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
-  @override
   bool get requiresExternalAccount;
+  @override
 
   /// [requiresStructure] indicates if the protocol requires a structure to work.
-  @override
   bool get requiresStructure;
+  @override
 
   /// [commandsStructure] is the structure of the commands for the protocol.
-  @override
   List<CommandDefinition> get commandsStructure;
+  @override
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  @override
   List<ConfigGrouping> get configStructure;
+  @override
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
-  @override
   bool get confiotCapable;
+  @override
 
   /// [peripheralIdentifier] is the identifier of the peripheral device.
-  @override
   String? get peripheralIdentifier;
+  @override
 
   /// [peripheralParserSpec] is the parser specification for the peripheral device.
-  @override
   Map<String, dynamic>? get peripheralParserSpec;
-
-  /// Create a copy of InboundProtocol
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InboundProtocolImplCopyWith<_$InboundProtocolImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1587,12 +1569,8 @@ mixin _$InboundProtocolInput {
   set peripheralParserSpec(Map<String, dynamic>? value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this InboundProtocolInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundProtocolInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $InboundProtocolInputCopyWith<InboundProtocolInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1655,8 +1633,6 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of InboundProtocolInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1835,8 +1811,6 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of InboundProtocolInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarInputCopyWith<$Res> get dynamicIcon {
@@ -1845,8 +1819,6 @@ class _$InboundProtocolInputCopyWithImpl<$Res,
     });
   }
 
-  /// Create a copy of InboundProtocolInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $WebhookStructureInputCopyWith<$Res>? get webhookStructure {
@@ -1920,8 +1892,6 @@ class __$$InboundProtocolInputImplCopyWithImpl<$Res>
       $Res Function(_$InboundProtocolInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of InboundProtocolInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2312,9 +2282,7 @@ class _$InboundProtocolInputImpl implements _InboundProtocolInput {
     return 'InboundProtocolInput(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, operationMode: $operationMode, hasNativeCommands: $hasNativeCommands, hasSmsCommands: $hasSmsCommands, hasCommandsResult: $hasCommandsResult, channelId: $channelId, isFlespi: $isFlespi, flespiId: $flespiId, hasAck: $hasAck, ackTopicFormat: $ackTopicFormat, isImported: $isImported, requiredFields: $requiredFields, canFota: $canFota, host: $host, port: $port, mqttTopic: $mqttTopic, dynamicIcon: $dynamicIcon, cycleId: $cycleId, hasModbus: $hasModbus, modbusPorts: $modbusPorts, requiresFlespiToken: $requiresFlespiToken, flespiAcl: $flespiAcl, webhookStructure: $webhookStructure, requiresExternalAccount: $requiresExternalAccount, requiresStructure: $requiresStructure, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec)';
   }
 
-  /// Create a copy of InboundProtocolInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InboundProtocolInputImplCopyWith<_$InboundProtocolInputImpl>
@@ -2371,258 +2339,256 @@ abstract class _InboundProtocolInput implements InboundProtocolInput {
   factory _InboundProtocolInput.fromJson(Map<String, dynamic> json) =
       _$InboundProtocolInputImpl.fromJson;
 
-  /// [id] ID of the protocol entity. This ID is unique.
   @override
+
+  /// [id] ID of the protocol entity. This ID is unique.
   String? get id;
 
   /// [id] ID of the protocol entity. This ID is unique.
   set id(String? value);
+  @override
 
   ///[name] Name of the protocol.
-  @override
   String get name;
 
   ///[name] Name of the protocol.
   set name(String value);
+  @override
 
   /// [color] Indicates the color assigned to the protocol
-  @override
   @ColorConverter()
   Color get color;
 
   /// [color] Indicates the color assigned to the protocol
   @ColorConverter()
   set color(Color value);
+  @override
 
   /// [isEnabled] Boolean that indicates if the protocol is enabled.
-  @override
   bool get isEnabled;
 
   /// [isEnabled] Boolean that indicates if the protocol is enabled.
   set isEnabled(bool value);
+  @override
 
   /// [categoriesIds] ID of all categories assigned
-  @override
   List<String> get categoriesIds;
 
   /// [categoriesIds] ID of all categories assigned
   set categoriesIds(List<String> value);
+  @override
 
   /// [operationMode] Indicates the operation mode of the protocol.
-  @override
   @JsonKey(unknownEnumValue: OperationMode.unknown)
   OperationMode get operationMode;
 
   /// [operationMode] Indicates the operation mode of the protocol.
   @JsonKey(unknownEnumValue: OperationMode.unknown)
   set operationMode(OperationMode value);
+  @override
 
   /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
-  @override
   bool get hasNativeCommands;
 
   /// [hasNativeCommands] Boolean that indicates if the protocol has commands though the native comm channel.
   set hasNativeCommands(bool value);
+  @override
 
   /// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
-  @override
   bool get hasSmsCommands;
 
   /// [hasSmsCommands] Boolean that indicates if the protocol has commands though SMS.
   set hasSmsCommands(bool value);
+  @override
 
   /// [hasCommandsResult] Boolean that indicates if the protocol has commands.
-  @override
   bool get hasCommandsResult;
 
   /// [hasCommandsResult] Boolean that indicates if the protocol has commands.
   set hasCommandsResult(bool value);
+  @override
 
   /// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
-  @override
   int? get channelId;
 
   /// [channelId] MQTT Channel ID. Only used for realtime protocols. [GOLDEN M INTERNAL ONLY]
   set channelId(int? value);
+  @override
 
   /// [isFlespi] Boolean that indicates if the protocol is from Flespi.
-  @override
   bool get isFlespi;
 
   /// [isFlespi] Boolean that indicates if the protocol is from Flespi.
   set isFlespi(bool value);
+  @override
 
   /// [flespiId] Flespi ID. Only used for Flespi protocols.
-  @override
   String? get flespiId;
 
   /// [flespiId] Flespi ID. Only used for Flespi protocols.
   set flespiId(String? value);
+  @override
 
   /// [hasAck] Boolean that indicates if the protocol has ACK support.
-  @override
   bool get hasAck;
 
   /// [hasAck] Boolean that indicates if the protocol has ACK support.
   set hasAck(bool value);
+  @override
 
   /// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
-  @override
   String get ackTopicFormat;
 
   /// [ackTopicFormat] Ack topic format. Only used for Flespi MQTT protocols.
   set ackTopicFormat(String value);
+  @override
 
   /// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
-  @override
   bool get isImported;
 
   /// [isImported] Boolean that indicates if the devices from this protocol are imported from external.
   set isImported(bool value);
+  @override
 
   /// [requiredFields] Required configuration fields.
-  @override
   List<CredentialFieldInput> get requiredFields;
 
   /// [requiredFields] Required configuration fields.
   set requiredFields(List<CredentialFieldInput> value);
+  @override
 
   /// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
-  @override
   bool get canFota;
 
   /// [canFota] Boolean that indicates if the protocol can be updated with FOTA (Firmware over the air).
   set canFota(bool value);
+  @override
 
   /// [host] is the host of the server, means the IP or domain (or subdomain)
   /// of the server to send or receive the information
-  @override
   String? get host;
 
   /// [host] is the host of the server, means the IP or domain (or subdomain)
   /// of the server to send or receive the information
   set host(String? value);
+  @override
 
   /// [port] is the port of the server, means the port
   /// of the server to send or receive the information
   /// 0 means in API and backend services "ignore this field"
-  @override
   int? get port;
 
   /// [port] is the port of the server, means the port
   /// of the server to send or receive the information
   /// 0 means in API and backend services "ignore this field"
   set port(int? value);
+  @override
 
   /// [mqttTopic] is the MQTT topic to send or receive the information
-  @override
   String? get mqttTopic;
 
   /// [mqttTopic] is the MQTT topic to send or receive the information
   set mqttTopic(String? value);
+  @override
 
   /// [dynamicIcon] is the icon of the protocol.
-  @override
   AvatarInput get dynamicIcon;
 
   /// [dynamicIcon] is the icon of the protocol.
   set dynamicIcon(AvatarInput value);
+  @override
 
   /// [cycleId] is the ID of the cycle to which the field belongs.
-  @override
   String? get cycleId;
 
   /// [cycleId] is the ID of the cycle to which the field belongs.
   set cycleId(String? value);
+  @override
 
   /// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
-  @override
   bool get hasModbus;
 
   /// [hasModbus] is the boolean that indicates if the protocol has support for Modbus.
   set hasModbus(bool value);
+  @override
 
   /// [modbusPorts] is the list of Modbus ports that the protocol has.
-  @override
   List<String> get modbusPorts;
 
   /// [modbusPorts] is the list of Modbus ports that the protocol has.
   set modbusPorts(List<String> value);
+  @override
 
   /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
-  @override
   bool get requiresFlespiToken;
 
   /// [requiresFlespiToken] indicates if the protocol requires a Flespi token to work.
   set requiresFlespiToken(bool value);
+  @override
 
   /// [flespiAcl] refers to the ACL for the token generation.
-  @override
   List<FlespiAclInput> get flespiAcl;
 
   /// [flespiAcl] refers to the ACL for the token generation.
   set flespiAcl(List<FlespiAclInput> value);
+  @override
 
   /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
-  @override
   WebhookStructureInput? get webhookStructure;
 
   /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
   set webhookStructure(WebhookStructureInput? value);
+  @override
 
   /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
-  @override
   bool get requiresExternalAccount;
 
   /// [requiresExternalAccount] indicates if the protocol requires an external account to work.
   set requiresExternalAccount(bool value);
+  @override
 
   /// [requiresStructure] indicates if the protocol requires a structure to work.
-  @override
   bool get requiresStructure;
 
   /// [requiresStructure] indicates if the protocol requires a structure to work.
   set requiresStructure(bool value);
+  @override
 
   /// [commandsStructure] is the structure of the commands for the protocol.
-  @override
   List<CommandDefinitionInput> get commandsStructure;
 
   /// [commandsStructure] is the structure of the commands for the protocol.
   set commandsStructure(List<CommandDefinitionInput> value);
+  @override
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  @override
   List<ConfigGroupingInput> get configStructure;
 
   /// [configStructure] is the structure of the configuration for the protocol.
   set configStructure(List<ConfigGroupingInput> value);
+  @override
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
-  @override
   bool get confiotCapable;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
   set confiotCapable(bool value);
+  @override
 
   /// [peripheralIdentifier] is the identifier of the peripheral device.
-  @override
   String? get peripheralIdentifier;
 
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   set peripheralIdentifier(String? value);
+  @override
 
   /// [peripheralParserSpec] is the parser specification for the peripheral device.
-  @override
   Map<String, dynamic>? get peripheralParserSpec;
 
   /// [peripheralParserSpec] is the parser specification for the peripheral device.
   set peripheralParserSpec(Map<String, dynamic>? value);
-
-  /// Create a copy of InboundProtocolInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InboundProtocolInputImplCopyWith<_$InboundProtocolInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2670,12 +2636,8 @@ mixin _$InboundService {
   /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
   WebhookStructure? get webhookStructure => throw _privateConstructorUsedError;
 
-  /// Serializes this InboundService to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundService
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $InboundServiceCopyWith<InboundService> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2715,8 +2677,6 @@ class _$InboundServiceCopyWithImpl<$Res, $Val extends InboundService>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of InboundService
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2785,8 +2745,6 @@ class _$InboundServiceCopyWithImpl<$Res, $Val extends InboundService>
     ) as $Val);
   }
 
-  /// Create a copy of InboundService
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InboundProtocolCopyWith<$Res>? get protocol {
@@ -2799,8 +2757,6 @@ class _$InboundServiceCopyWithImpl<$Res, $Val extends InboundService>
     });
   }
 
-  /// Create a copy of InboundService
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InboundStructureCopyWith<$Res>? get structure {
@@ -2813,8 +2769,6 @@ class _$InboundServiceCopyWithImpl<$Res, $Val extends InboundService>
     });
   }
 
-  /// Create a copy of InboundService
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $WebhookStructureCopyWith<$Res>? get webhookStructure {
@@ -2866,8 +2820,6 @@ class __$$InboundServiceImplCopyWithImpl<$Res>
       _$InboundServiceImpl _value, $Res Function(_$InboundServiceImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of InboundService
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3058,7 +3010,7 @@ class _$InboundServiceImpl implements _InboundService {
                 other.webhookStructure == webhookStructure));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3075,9 +3027,7 @@ class _$InboundServiceImpl implements _InboundService {
       const DeepCollectionEquality().hash(_access),
       webhookStructure);
 
-  /// Create a copy of InboundService
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InboundServiceImplCopyWith<_$InboundServiceImpl> get copyWith =>
@@ -3110,59 +3060,57 @@ abstract class _InboundService implements InboundService {
   factory _InboundService.fromJson(Map<String, dynamic> json) =
       _$InboundServiceImpl.fromJson;
 
-  /// IS the ID of the entity. This ID is unique.
   @override
+
+  /// IS the ID of the entity. This ID is unique.
   String get id;
+  @override
 
   /// Is the Assigned service name, cannot be translated for other languages.
-  @override
   String get name;
+  @override
 
   /// Is the Credential object, check the documentation for more information.
-  @override
   Map<String, dynamic>? get credentials;
+  @override
 
   /// Is the ID of the External Account.
-  @override
   String? get externalAccountId;
+  @override
 
   /// Is the update time of the service.
-  @override
   @DurationOrNullConverter()
   Duration? get updateTime;
+  @override
 
   /// Is the Protocol entity.
-  @override
   InboundProtocol? get protocol;
+  @override
 
   /// Is the Protocol ID.
-  @override
   String? get protocolId;
+  @override
 
   /// Is the Current transmission status.
-  @override
   bool? get isEnabled;
+  @override
 
   /// Is the Token to authenticate the request, only used for Alpha REST Inbound protocol
-  @override
   String? get token;
+  @override
 
   /// Is the Structure of the inbound protocol, only used for Omega REST Inbound protocol.
-  @override
   InboundStructure? get structure;
+  @override
 
   /// A list of custom access permissions.
-  @override
   List<Access>? get access;
+  @override
 
   /// [webhookStructure] defines the specific methods required to handle a complete webhook operation.
-  @override
   WebhookStructure? get webhookStructure;
-
-  /// Create a copy of InboundService
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InboundServiceImplCopyWith<_$InboundServiceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3211,12 +3159,8 @@ mixin _$InboundServiceInput {
   set structure(InboundStructureInput value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this InboundServiceInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundServiceInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $InboundServiceInputCopyWith<InboundServiceInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3248,8 +3192,6 @@ class _$InboundServiceInputCopyWithImpl<$Res, $Val extends InboundServiceInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of InboundServiceInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3288,8 +3230,6 @@ class _$InboundServiceInputCopyWithImpl<$Res, $Val extends InboundServiceInput>
     ) as $Val);
   }
 
-  /// Create a copy of InboundServiceInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InboundStructureInputCopyWith<$Res> get structure {
@@ -3327,8 +3267,6 @@ class __$$InboundServiceInputImplCopyWithImpl<$Res>
       $Res Function(_$InboundServiceInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of InboundServiceInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3413,9 +3351,7 @@ class _$InboundServiceInputImpl implements _InboundServiceInput {
     return 'InboundServiceInput(id: $id, name: $name, credentials: $credentials, externalAccountId: $externalAccountId, protocolId: $protocolId, structure: $structure)';
   }
 
-  /// Create a copy of InboundServiceInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InboundServiceInputImplCopyWith<_$InboundServiceInputImpl> get copyWith =>
@@ -3442,52 +3378,50 @@ abstract class _InboundServiceInput implements InboundServiceInput {
   factory _InboundServiceInput.fromJson(Map<String, dynamic> json) =
       _$InboundServiceInputImpl.fromJson;
 
-  /// [id] is the ID of the entity. This ID is unique. Should be null when creating a new entity.
   @override
+
+  /// [id] is the ID of the entity. This ID is unique. Should be null when creating a new entity.
   String? get id;
 
   /// [id] is the ID of the entity. This ID is unique. Should be null when creating a new entity.
   set id(String? value);
+  @override
 
   /// [name] is the Assigned service name, cannot be translated for other languages.
-  @override
   String get name;
 
   /// [name] is the Assigned service name, cannot be translated for other languages.
   set name(String value);
+  @override
 
   /// [credentials] is the Credential object, check the documentation for more information.
-  @override
   Map<String, dynamic> get credentials;
 
   /// [credentials] is the Credential object, check the documentation for more information.
   set credentials(Map<String, dynamic> value);
+  @override
 
   /// [externalAccountId] is the ID of the External Account.
-  @override
   String? get externalAccountId;
 
   /// [externalAccountId] is the ID of the External Account.
   set externalAccountId(String? value);
+  @override
 
   /// [protocolId] is the ID of the Protocol.
-  @override
   String? get protocolId;
 
   /// [protocolId] is the ID of the Protocol.
   set protocolId(String? value);
+  @override
 
   /// [structure] is the Structure of the inbound protocol, only used for Omega REST Inbound protocol.
-  @override
   InboundStructureInput get structure;
 
   /// [structure] is the Structure of the inbound protocol, only used for Omega REST Inbound protocol.
   set structure(InboundStructureInput value);
-
-  /// Create a copy of InboundServiceInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InboundServiceInputImplCopyWith<_$InboundServiceInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3516,12 +3450,8 @@ mixin _$ConfigGrouping {
   /// [items] is the list of items of the grouping.
   List<ConfigDefinition> get items => throw _privateConstructorUsedError;
 
-  /// Serializes this ConfigGrouping to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ConfigGrouping
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ConfigGroupingCopyWith<ConfigGrouping> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3550,8 +3480,6 @@ class _$ConfigGroupingCopyWithImpl<$Res, $Val extends ConfigGrouping>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ConfigGrouping
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3610,8 +3538,6 @@ class __$$ConfigGroupingImplCopyWithImpl<$Res>
       _$ConfigGroupingImpl _value, $Res Function(_$ConfigGroupingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ConfigGrouping
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3710,14 +3636,12 @@ class _$ConfigGroupingImpl implements _ConfigGrouping {
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, name, kind, description,
       setupCapable, const DeepCollectionEquality().hash(_items));
 
-  /// Create a copy of ConfigGrouping
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfigGroupingImplCopyWith<_$ConfigGroupingImpl> get copyWith =>
@@ -3744,33 +3668,31 @@ abstract class _ConfigGrouping implements ConfigGrouping {
   factory _ConfigGrouping.fromJson(Map<String, dynamic> json) =
       _$ConfigGroupingImpl.fromJson;
 
+  @override
+
   /// [name] is the name of the grouping.
   /// This is the translation key.
-  @override
   String get name;
+  @override
 
   /// [kind] is the kind of the grouping.
-  @override
   @JsonKey(unknownEnumValue: ConfigKind.unknown)
   ConfigKind get kind;
+  @override
 
   /// [description] is the fallback name of the grouping, when the translation is not available.
   /// This is the translation key.
-  @override
   String? get description;
+  @override
 
   /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
-  @override
   bool? get setupCapable;
+  @override
 
   /// [items] is the list of items of the grouping.
-  @override
   List<ConfigDefinition> get items;
-
-  /// Create a copy of ConfigGrouping
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ConfigGroupingImplCopyWith<_$ConfigGroupingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3822,12 +3744,8 @@ mixin _$ConfigDefinition {
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   bool? get setupCapable => throw _privateConstructorUsedError;
 
-  /// Serializes this ConfigDefinition to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ConfigDefinition
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ConfigDefinitionCopyWith<ConfigDefinition> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3864,8 +3782,6 @@ class _$ConfigDefinitionCopyWithImpl<$Res, $Val extends ConfigDefinition>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ConfigDefinition
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3962,8 +3878,6 @@ class __$$ConfigDefinitionImplCopyWithImpl<$Res>
       $Res Function(_$ConfigDefinitionImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ConfigDefinition
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4153,7 +4067,7 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
                 other.setupCapable == setupCapable));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -4169,9 +4083,7 @@ class _$ConfigDefinitionImpl implements _ConfigDefinition {
       regexPattern,
       setupCapable);
 
-  /// Create a copy of ConfigDefinition
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfigDefinitionImplCopyWith<_$ConfigDefinitionImpl> get copyWith =>
@@ -4205,62 +4117,60 @@ abstract class _ConfigDefinition implements ConfigDefinition {
   factory _ConfigDefinition.fromJson(Map<String, dynamic> json) =
       _$ConfigDefinitionImpl.fromJson;
 
-  /// [sources] is the list of sources that the command can be executed.
   @override
+
+  /// [sources] is the list of sources that the command can be executed.
   @JsonKey(unknownEnumValue: ConfigSource.unknown)
   List<ConfigSource>? get sources;
+  @override
 
   /// [parameter] is the name of the parameter, this is also the translation key.
-  @override
   String get parameter;
+  @override
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
-  @override
   String? get description;
+  @override
 
   /// [dataType] is the data type of the parameter.
-  @override
   @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
   ConfigPayloadDataType? get dataType;
+  @override
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  @override
   num? get minValue;
+  @override
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  @override
   num? get maxValue;
+  @override
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  @override
   int? get minLength;
+  @override
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  @override
   int? get maxLength;
+  @override
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
-  @override
   List<String>? get choices;
+  @override
 
   /// [regexPattern] is the regex pattern of the parameter.
-  @override
   @RegExpOrNullConverter()
   RegExp? get regexPattern;
+  @override
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
-  @override
   bool? get setupCapable;
-
-  /// Create a copy of ConfigDefinition
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ConfigDefinitionImplCopyWith<_$ConfigDefinitionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4308,12 +4218,8 @@ mixin _$ConfigGroupingInput {
   set items(List<ConfigDefinitionInput> value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this ConfigGroupingInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ConfigGroupingInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ConfigGroupingInputCopyWith<ConfigGroupingInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4342,8 +4248,6 @@ class _$ConfigGroupingInputCopyWithImpl<$Res, $Val extends ConfigGroupingInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ConfigGroupingInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4402,8 +4306,6 @@ class __$$ConfigGroupingInputImplCopyWithImpl<$Res>
       $Res Function(_$ConfigGroupingInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ConfigGroupingInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4484,9 +4386,7 @@ class _$ConfigGroupingInputImpl implements _ConfigGroupingInput {
     return 'ConfigGroupingInput(name: $name, kind: $kind, description: $description, setupCapable: $setupCapable, items: $items)';
   }
 
-  /// Create a copy of ConfigGroupingInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfigGroupingInputImplCopyWith<_$ConfigGroupingInputImpl> get copyWith =>
@@ -4512,51 +4412,49 @@ abstract class _ConfigGroupingInput implements ConfigGroupingInput {
   factory _ConfigGroupingInput.fromJson(Map<String, dynamic> json) =
       _$ConfigGroupingInputImpl.fromJson;
 
+  @override
+
   /// [name] is the name of the grouping.
   /// This is the translation key.
-  @override
   String get name;
 
   /// [name] is the name of the grouping.
   /// This is the translation key.
   set name(String value);
+  @override
 
   /// [kind] is the kind of the grouping.
-  @override
   @JsonKey(unknownEnumValue: ConfigKind.unknown)
   ConfigKind get kind;
 
   /// [kind] is the kind of the grouping.
   @JsonKey(unknownEnumValue: ConfigKind.unknown)
   set kind(ConfigKind value);
+  @override
 
   /// [description] is the fallback name of the grouping, when the translation is not available.
   /// This is the translation key.
-  @override
   String get description;
 
   /// [description] is the fallback name of the grouping, when the translation is not available.
   /// This is the translation key.
   set description(String value);
+  @override
 
   /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
-  @override
   bool get setupCapable;
 
   /// [setupCapable] is the flag that indicates if the grouping is capable of being set up.
   set setupCapable(bool value);
+  @override
 
   /// [items] is the list of items of the grouping.
-  @override
   List<ConfigDefinitionInput> get items;
 
   /// [items] is the list of items of the grouping.
   set items(List<ConfigDefinitionInput> value);
-
-  /// Create a copy of ConfigGroupingInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ConfigGroupingInputImplCopyWith<_$ConfigGroupingInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4651,12 +4549,8 @@ mixin _$ConfigDefinitionInput {
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   set setupCapable(bool value) => throw _privateConstructorUsedError;
 
-  /// Serializes this ConfigDefinitionInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ConfigDefinitionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ConfigDefinitionInputCopyWith<ConfigDefinitionInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4694,8 +4588,6 @@ class _$ConfigDefinitionInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ConfigDefinitionInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4794,8 +4686,6 @@ class __$$ConfigDefinitionInputImplCopyWithImpl<$Res>
       $Res Function(_$ConfigDefinitionInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ConfigDefinitionInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4945,9 +4835,7 @@ class _$ConfigDefinitionInputImpl implements _ConfigDefinitionInput {
     return 'ConfigDefinitionInput(sources: $sources, parameter: $parameter, description: $description, dataType: $dataType, minValue: $minValue, maxValue: $maxValue, minLength: $minLength, maxLength: $maxLength, choices: $choices, regexPattern: $regexPattern, setupCapable: $setupCapable)';
   }
 
-  /// Create a copy of ConfigDefinitionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfigDefinitionInputImplCopyWith<_$ConfigDefinitionInputImpl>
@@ -4981,103 +4869,101 @@ abstract class _ConfigDefinitionInput implements ConfigDefinitionInput {
   factory _ConfigDefinitionInput.fromJson(Map<String, dynamic> json) =
       _$ConfigDefinitionInputImpl.fromJson;
 
-  /// [sources] is the list of sources that the command can be executed.
   @override
+
+  /// [sources] is the list of sources that the command can be executed.
   @JsonKey(unknownEnumValue: ConfigSource.unknown)
   List<ConfigSource> get sources;
 
   /// [sources] is the list of sources that the command can be executed.
   @JsonKey(unknownEnumValue: ConfigSource.unknown)
   set sources(List<ConfigSource> value);
+  @override
 
   /// [parameter] is the name of the parameter, this is also the translation key.
-  @override
   String get parameter;
 
   /// [parameter] is the name of the parameter, this is also the translation key.
   set parameter(String value);
+  @override
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
-  @override
   String? get description;
 
   /// [description] is the fallback name of the parameter, when the translation is not available.
   set description(String? value);
+  @override
 
   /// [dataType] is the data type of the parameter.
-  @override
   @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
   ConfigPayloadDataType get dataType;
 
   /// [dataType] is the data type of the parameter.
   @JsonKey(unknownEnumValue: ConfigPayloadDataType.unknown)
   set dataType(ConfigPayloadDataType value);
+  @override
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  @override
   num get minValue;
 
   /// [minValue] is the minimum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   set minValue(num value);
+  @override
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
-  @override
   num get maxValue;
 
   /// [maxValue] is the maximum value of the parameter.
   /// Only for [ConfigPayloadDataType.integer] and [ConfigPayloadDataType.float]
   set maxValue(num value);
+  @override
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  @override
   int get minLength;
 
   /// [minLength] is the minimum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
   set minLength(int value);
+  @override
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
-  @override
   int get maxLength;
 
   /// [maxLength] is the maximum length of the parameter.
   /// Only for [ConfigPayloadDataType.string]
   set maxLength(int value);
+  @override
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
-  @override
   List<String> get choices;
 
   /// [choices] is the list of choices of the parameter.
   /// Only for [ConfigPayloadDataType.choice]
   set choices(List<String> value);
+  @override
 
   /// [regexPattern] is the regex pattern of the parameter.
-  @override
   @RegExpOrNullConverter()
   RegExp? get regexPattern;
 
   /// [regexPattern] is the regex pattern of the parameter.
   @RegExpOrNullConverter()
   set regexPattern(RegExp? value);
+  @override
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
-  @override
   bool get setupCapable;
 
   /// [setupCapable] is the flag that indicates if the parameter is capable of being set up.
   set setupCapable(bool value);
-
-  /// Create a copy of ConfigDefinitionInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ConfigDefinitionInputImplCopyWith<_$ConfigDefinitionInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
