@@ -30,12 +30,8 @@ mixin _$ModbusConfig {
   /// This value is refered from the [InboundProtocol] `modbusPorts` list.
   String? get portId => throw _privateConstructorUsedError;
 
-  /// Serializes this ModbusConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ModbusConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ModbusConfigCopyWith<ModbusConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -59,8 +55,6 @@ class _$ModbusConfigCopyWithImpl<$Res, $Val extends ModbusConfig>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ModbusConfig
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -104,8 +98,6 @@ class __$$ModbusConfigImplCopyWithImpl<$Res>
       _$ModbusConfigImpl _value, $Res Function(_$ModbusConfigImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ModbusConfig
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -180,14 +172,12 @@ class _$ModbusConfigImpl implements _ModbusConfig {
             (identical(other.portId, portId) || other.portId == portId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, isEnabled,
       const DeepCollectionEquality().hash(_parameters), portId);
 
-  /// Create a copy of ModbusConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ModbusConfigImplCopyWith<_$ModbusConfigImpl> get copyWith =>
@@ -210,23 +200,21 @@ abstract class _ModbusConfig implements ModbusConfig {
   factory _ModbusConfig.fromJson(Map<String, dynamic> json) =
       _$ModbusConfigImpl.fromJson;
 
-  /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
   @override
+
+  /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
   bool get isEnabled;
+  @override
 
   /// [parameters] is a list of modbus parameters.
-  @override
   List<ModbusParameter> get parameters;
+  @override
 
   /// [portId] is the port ID of the modbus device.
   /// This value is refered from the [InboundProtocol] `modbusPorts` list.
-  @override
   String? get portId;
-
-  /// Create a copy of ModbusConfig
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ModbusConfigImplCopyWith<_$ModbusConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -259,12 +247,8 @@ mixin _$ModbusConfigInput {
   /// This value is refered from the [InboundProtocol] `modbusPorts` list.
   set portId(String? value) => throw _privateConstructorUsedError;
 
-  /// Serializes this ModbusConfigInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ModbusConfigInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ModbusConfigInputCopyWith<ModbusConfigInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -289,8 +273,6 @@ class _$ModbusConfigInputCopyWithImpl<$Res, $Val extends ModbusConfigInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ModbusConfigInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -335,8 +317,6 @@ class __$$ModbusConfigInputImplCopyWithImpl<$Res>
       $Res Function(_$ModbusConfigInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ModbusConfigInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -390,9 +370,7 @@ class _$ModbusConfigInputImpl implements _ModbusConfigInput {
     return 'ModbusConfigInput(isEnabled: $isEnabled, parameters: $parameters, portId: $portId)';
   }
 
-  /// Create a copy of ModbusConfigInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ModbusConfigInputImplCopyWith<_$ModbusConfigInputImpl> get copyWith =>
@@ -416,33 +394,31 @@ abstract class _ModbusConfigInput implements ModbusConfigInput {
   factory _ModbusConfigInput.fromJson(Map<String, dynamic> json) =
       _$ModbusConfigInputImpl.fromJson;
 
-  /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
   @override
+
+  /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
   bool get isEnabled;
 
   /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
   set isEnabled(bool value);
+  @override
 
   /// [parameters] is a list of modbus parameters.
-  @override
   List<ModbusParameterInput> get parameters;
 
   /// [parameters] is a list of modbus parameters.
   set parameters(List<ModbusParameterInput> value);
+  @override
 
   /// [portId] is the port ID of the modbus device.
   /// This value is refered from the [InboundProtocol] `modbusPorts` list.
-  @override
   String? get portId;
 
   /// [portId] is the port ID of the modbus device.
   /// This value is refered from the [InboundProtocol] `modbusPorts` list.
   set portId(String? value);
-
-  /// Create a copy of ModbusConfigInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ModbusConfigInputImplCopyWith<_$ModbusConfigInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -479,12 +455,8 @@ mixin _$ModbusParameter {
   /// prefixed with 0x.
   String get dataLength => throw _privateConstructorUsedError;
 
-  /// Serializes this ModbusParameter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ModbusParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ModbusParameterCopyWith<ModbusParameter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -514,8 +486,6 @@ class _$ModbusParameterCopyWithImpl<$Res, $Val extends ModbusParameter>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ModbusParameter
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -580,8 +550,6 @@ class __$$ModbusParameterImplCopyWithImpl<$Res>
       _$ModbusParameterImpl _value, $Res Function(_$ModbusParameterImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ModbusParameter
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -692,14 +660,12 @@ class _$ModbusParameterImpl implements _ModbusParameter {
                 other.dataLength == dataLength));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, schema, splitEach,
       controllerAddress, functionCode, dataAddress, dataLength);
 
-  /// Create a copy of ModbusParameter
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ModbusParameterImplCopyWith<_$ModbusParameterImpl> get copyWith =>
@@ -726,42 +692,40 @@ abstract class _ModbusParameter implements ModbusParameter {
   factory _ModbusParameter.fromJson(Map<String, dynamic> json) =
       _$ModbusParameterImpl.fromJson;
 
-  /// [schema] represents the format of the command, it can be either single or multiple.
   @override
+
+  /// [schema] represents the format of the command, it can be either single or multiple.
   @ModbusParameterSchemaConverter()
   ModbusParameterSchema get schema;
+  @override
 
   /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
   /// This value is a hexadecimal value
-  @override
   String? get splitEach;
+  @override
 
   /// [controllerAddress] is the controller or slave ID of the modbus device.
   /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
-  @override
   String get controllerAddress;
+  @override
 
   /// [functionCode] is the function code of the modbus device.
   /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
-  @override
   String get functionCode;
+  @override
 
   /// [dataAddress] is the data address of the modbus device.
   /// This value is a Hexadecimal number from 0x0000 to 0xFFFF inclusive, the stored value shouldn't be
   /// prefixed with 0x.
-  @override
   String get dataAddress;
+  @override
 
   /// [dataLength] is the data length of the modbus device.
   /// This value is a Hexadecimal number from 0x0001 to 0xFFFF inclusive, the stored value shouldn't be
   /// prefixed with 0x.
-  @override
   String get dataLength;
-
-  /// Create a copy of ModbusParameter
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ModbusParameterImplCopyWith<_$ModbusParameterImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -824,12 +788,8 @@ mixin _$ModbusParameterInput {
   /// prefixed with 0x.
   set dataLength(String value) => throw _privateConstructorUsedError;
 
-  /// Serializes this ModbusParameterInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ModbusParameterInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ModbusParameterInputCopyWith<ModbusParameterInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -860,8 +820,6 @@ class _$ModbusParameterInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ModbusParameterInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -926,8 +884,6 @@ class __$$ModbusParameterInputImplCopyWithImpl<$Res>
       $Res Function(_$ModbusParameterInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ModbusParameterInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1024,9 +980,7 @@ class _$ModbusParameterInputImpl implements _ModbusParameterInput {
     return 'ModbusParameterInput(schema: $schema, splitEach: $splitEach, controllerAddress: $controllerAddress, functionCode: $functionCode, dataAddress: $dataAddress, dataLength: $dataLength)';
   }
 
-  /// Create a copy of ModbusParameterInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ModbusParameterInputImplCopyWith<_$ModbusParameterInputImpl>
@@ -1054,68 +1008,66 @@ abstract class _ModbusParameterInput implements ModbusParameterInput {
   factory _ModbusParameterInput.fromJson(Map<String, dynamic> json) =
       _$ModbusParameterInputImpl.fromJson;
 
-  /// [schema] represents the format of the command, it can be either single or multiple.
   @override
+
+  /// [schema] represents the format of the command, it can be either single or multiple.
   @ModbusParameterSchemaConverter()
   ModbusParameterSchema get schema;
 
   /// [schema] represents the format of the command, it can be either single or multiple.
   @ModbusParameterSchemaConverter()
   set schema(ModbusParameterSchema value);
+  @override
 
   /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
   /// This value is a hexadecimal value
-  @override
   String? get splitEach;
 
   /// [splitEach] represents when the data is split into multiple parts, how many parts should be split.
   /// This value is a hexadecimal value
   set splitEach(String? value);
+  @override
 
   /// [controllerAddress] is the controller or slave ID of the modbus device.
   /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
-  @override
   String get controllerAddress;
 
   /// [controllerAddress] is the controller or slave ID of the modbus device.
   /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
   set controllerAddress(String value);
+  @override
 
   /// [functionCode] is the function code of the modbus device.
   /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
-  @override
   String get functionCode;
 
   /// [functionCode] is the function code of the modbus device.
   /// This value is a Hexadecimal number from 0x01 to 0xFF inclusive, the stored value shouldn't be prefixed with 0x.
   set functionCode(String value);
+  @override
 
   /// [dataAddress] is the data address of the modbus device.
   /// This value is a Hexadecimal number from 0x0000 to 0xFFFF inclusive, the stored value shouldn't be
   /// prefixed with 0x.
-  @override
   String get dataAddress;
 
   /// [dataAddress] is the data address of the modbus device.
   /// This value is a Hexadecimal number from 0x0000 to 0xFFFF inclusive, the stored value shouldn't be
   /// prefixed with 0x.
   set dataAddress(String value);
+  @override
 
   /// [dataLength] is the data length of the modbus device.
   /// This value is a Hexadecimal number from 0x0001 to 0xFFFF inclusive, the stored value shouldn't be
   /// prefixed with 0x.
-  @override
   String get dataLength;
 
   /// [dataLength] is the data length of the modbus device.
   /// This value is a Hexadecimal number from 0x0001 to 0xFFFF inclusive, the stored value shouldn't be
   /// prefixed with 0x.
   set dataLength(String value);
-
-  /// Create a copy of ModbusParameterInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ModbusParameterInputImplCopyWith<_$ModbusParameterInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

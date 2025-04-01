@@ -61,12 +61,8 @@ mixin _$Action {
   ActionGeofenceSettings? get geofenceSettings =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this Action to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ActionCopyWith<Action> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -104,8 +100,6 @@ class _$ActionCopyWithImpl<$Res, $Val extends Action>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -184,8 +178,6 @@ class _$ActionCopyWithImpl<$Res, $Val extends Action>
     ) as $Val);
   }
 
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings {
@@ -235,8 +227,6 @@ class __$$ActionImplCopyWithImpl<$Res>
       _$ActionImpl _value, $Res Function(_$ActionImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -497,7 +487,7 @@ class _$ActionImpl extends _Action {
                 other.geofenceSettings == geofenceSettings));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -516,9 +506,7 @@ class _$ActionImpl extends _Action {
       watchImage,
       geofenceSettings);
 
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
@@ -554,63 +542,61 @@ abstract class _Action extends Action {
 
   factory _Action.fromJson(Map<String, dynamic> json) = _$ActionImpl.fromJson;
 
-  /// Is the ID of the action.
   @override
+
+  /// Is the ID of the action.
   String get id;
+  @override
 
   /// Is the name of the action.
-  @override
   String get name;
+  @override
 
   /// Is the type of the action.
-  @override
   @JsonKey(unknownEnumValue: ActionType.performOperation)
   ActionType get kind;
+  @override
 
   /// Is the subtype of the action.
-  @override
   @JsonKey(unknownEnumValue: ActionSubtype.unused)
   ActionSubtype get subkind;
+  @override
 
   /// Is the ID of tag to perform commands.
-  @override
   String? get commandId;
+  @override
 
   /// Is the list of Triggers or triggers' IDs.
-  @override
   List<Trigger>? get triggers;
   @override
   List<String>? get triggersIds;
+  @override
 
   /// Is the list of Outbound Servives or outbound services' IDs.
-  @override
   List<OutboundService>? get outboundServices;
   @override
   List<String>? get outboundServicesIds;
+  @override
 
   /// Is the list of Operations or operations' IDs.
-  @override
   List<Operation>? get operations;
   @override
   List<String>? get operationsIds;
+  @override
 
   /// Is a list of granted access to this entity.
-  @override
   List<Access>? get access;
+  @override
 
   /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
   /// data need image convertion.
-  @override
   bool? get watchImage;
+  @override
 
   /// Is the geofence settings. Only for `ActionType.createGeofence`
-  @override
   ActionGeofenceSettings? get geofenceSettings;
-
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -688,12 +674,8 @@ mixin _$ActionInput {
   set geofenceSettings(ActionGeofenceSettingsInput value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this ActionInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ActionInputCopyWith<ActionInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -729,8 +711,6 @@ class _$ActionInputCopyWithImpl<$Res, $Val extends ActionInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -789,8 +769,6 @@ class _$ActionInputCopyWithImpl<$Res, $Val extends ActionInput>
     ) as $Val);
   }
 
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings {
@@ -833,8 +811,6 @@ class __$$ActionInputImplCopyWithImpl<$Res>
       _$ActionInputImpl _value, $Res Function(_$ActionInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -967,9 +943,7 @@ class _$ActionInputImpl extends _ActionInput {
     return 'ActionInput(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggersIds: $triggersIds, operationsIds: $operationsIds, outboundServicesIds: $outboundServicesIds, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
   }
 
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ActionInputImplCopyWith<_$ActionInputImpl> get copyWith =>
@@ -1001,84 +975,82 @@ abstract class _ActionInput extends ActionInput {
   factory _ActionInput.fromJson(Map<String, dynamic> json) =
       _$ActionInputImpl.fromJson;
 
-  /// ID of the action entity. This ID is unique.
   @override
+
+  /// ID of the action entity. This ID is unique.
   String? get id;
 
   /// ID of the action entity. This ID is unique.
   set id(String? value);
+  @override
 
   /// Name of the action.
-  @override
   String get name;
 
   /// Name of the action.
   set name(String value);
+  @override
 
   /// Action type, please read the documentation of ActionType for more information about the actions.
-  @override
   @JsonKey(unknownEnumValue: ActionType.performOperation)
   ActionType get kind;
 
   /// Action type, please read the documentation of ActionType for more information about the actions.
   @JsonKey(unknownEnumValue: ActionType.performOperation)
   set kind(ActionType value);
+  @override
 
   /// Subkind
-  @override
   @JsonKey(unknownEnumValue: ActionSubtype.unused)
   ActionSubtype get subkind;
 
   /// Subkind
   @JsonKey(unknownEnumValue: ActionSubtype.unused)
   set subkind(ActionSubtype value);
+  @override
 
   /// ID of the linked Commands Tag.
-  @override
   String? get commandId;
 
   /// ID of the linked Commands Tag.
   set commandId(String? value);
+  @override
 
   /// List of triggers IDs enabled for handle this action.
-  @override
   List<String> get triggersIds;
 
   /// List of triggers IDs enabled for handle this action.
   set triggersIds(List<String> value);
+  @override
 
   /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-  @override
   List<String> get operationsIds;
 
   /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
   set operationsIds(List<String> value);
+  @override
 
   /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  @override
   List<String> get outboundServicesIds;
 
   /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
   set outboundServicesIds(List<String> value);
+  @override
 
   /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-  @override
   bool get watchImage;
 
   /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
   set watchImage(bool value);
+  @override
 
   /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
-  @override
   ActionGeofenceSettingsInput get geofenceSettings;
 
   /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
   set geofenceSettings(ActionGeofenceSettingsInput value);
-
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ActionInputImplCopyWith<_$ActionInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1111,12 +1083,8 @@ mixin _$ActionGeofenceSettings {
   /// [mappitRoute] defines the route of the geofence to create.
   MappitRoute? get mappitRoute => throw _privateConstructorUsedError;
 
-  /// Serializes this ActionGeofenceSettings to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ActionGeofenceSettingsCopyWith<ActionGeofenceSettings> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1150,8 +1118,6 @@ class _$ActionGeofenceSettingsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1190,8 +1156,6 @@ class _$ActionGeofenceSettingsCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MappitRouteCopyWith<$Res>? get mappitRoute {
@@ -1237,8 +1201,6 @@ class __$$ActionGeofenceSettingsImplCopyWithImpl<$Res>
       $Res Function(_$ActionGeofenceSettingsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1343,14 +1305,12 @@ class _$ActionGeofenceSettingsImpl extends _ActionGeofenceSettings {
                 other.mappitRoute == mappitRoute));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, whoOwner, name, category, radius,
       mappitRouteId, mappitRoute);
 
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ActionGeofenceSettingsImplCopyWith<_$ActionGeofenceSettingsImpl>
@@ -1380,37 +1340,35 @@ abstract class _ActionGeofenceSettings extends ActionGeofenceSettings {
   factory _ActionGeofenceSettings.fromJson(Map<String, dynamic> json) =
       _$ActionGeofenceSettingsImpl.fromJson;
 
-  /// [whoOwner] defines who is the owner of the geofence to create.
   @override
+
+  /// [whoOwner] defines who is the owner of the geofence to create.
   @JsonKey(unknownEnumValue: ActionProperty.none)
   ActionProperty get whoOwner;
+  @override
 
   /// [name] defines the name of the geofence to create.
   /// This property is a LCL formula
-  @override
   String? get name;
+  @override
 
   /// [category] defines the category of the geofence to create.
-  @override
   @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory? get category;
+  @override
 
   /// [radius] defines the radius of the geofence to create.
-  @override
   double? get radius;
+  @override
 
   /// [mappitRouteId] defines the route ID of the geofence to create.
-  @override
   String? get mappitRouteId;
+  @override
 
   /// [mappitRoute] defines the route of the geofence to create.
-  @override
   MappitRoute? get mappitRoute;
-
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ActionGeofenceSettingsImplCopyWith<_$ActionGeofenceSettingsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1458,12 +1416,8 @@ mixin _$ActionGeofenceSettingsInput {
   /// [mappitRouteId] defines the route ID of the geofence to create.
   set mappitRouteId(String? value) => throw _privateConstructorUsedError;
 
-  /// Serializes this ActionGeofenceSettingsInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ActionGeofenceSettingsInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ActionGeofenceSettingsInputCopyWith<ActionGeofenceSettingsInput>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1496,8 +1450,6 @@ class _$ActionGeofenceSettingsInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ActionGeofenceSettingsInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1560,8 +1512,6 @@ class __$$ActionGeofenceSettingsInputImplCopyWithImpl<$Res>
       $Res Function(_$ActionGeofenceSettingsInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ActionGeofenceSettingsInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1642,9 +1592,7 @@ class _$ActionGeofenceSettingsInputImpl extends _ActionGeofenceSettingsInput {
     return 'ActionGeofenceSettingsInput(whoOwner: $whoOwner, name: $name, category: $category, radius: $radius, mappitRouteId: $mappitRouteId)';
   }
 
-  /// Create a copy of ActionGeofenceSettingsInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ActionGeofenceSettingsInputImplCopyWith<_$ActionGeofenceSettingsInputImpl>
@@ -1673,51 +1621,49 @@ abstract class _ActionGeofenceSettingsInput
   factory _ActionGeofenceSettingsInput.fromJson(Map<String, dynamic> json) =
       _$ActionGeofenceSettingsInputImpl.fromJson;
 
-  /// [whoOwner] defines who is the owner of the geofence to create.
   @override
+
+  /// [whoOwner] defines who is the owner of the geofence to create.
   @JsonKey(unknownEnumValue: ActionProperty.none)
   ActionProperty get whoOwner;
 
   /// [whoOwner] defines who is the owner of the geofence to create.
   @JsonKey(unknownEnumValue: ActionProperty.none)
   set whoOwner(ActionProperty value);
+  @override
 
   /// [name] defines the name of the geofence to create.
   /// This property is a LCL formula
-  @override
   String? get name;
 
   /// [name] defines the name of the geofence to create.
   /// This property is a LCL formula
   set name(String? value);
+  @override
 
   /// [category] defines the category of the geofence to create.
-  @override
   @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category;
 
   /// [category] defines the category of the geofence to create.
   @JsonKey(unknownEnumValue: GeofenceCategory.none)
   set category(GeofenceCategory value);
+  @override
 
   /// [radius] defines the radius of the geofence to create.
-  @override
   double get radius;
 
   /// [radius] defines the radius of the geofence to create.
   set radius(double value);
+  @override
 
   /// [mappitRouteId] defines the route ID of the geofence to create.
-  @override
   String? get mappitRouteId;
 
   /// [mappitRouteId] defines the route ID of the geofence to create.
   set mappitRouteId(String? value);
-
-  /// Create a copy of ActionGeofenceSettingsInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ActionGeofenceSettingsInputImplCopyWith<_$ActionGeofenceSettingsInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
