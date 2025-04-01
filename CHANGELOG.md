@@ -1,6 +1,25 @@
 # Changelog
 
+## 3.3.60
+
+- Added `readyToOperate` and `unloadingOperation` values in `AtsPurchaseOrderStatus` enum
+- Added `unloadingOperationAt` and `readyToOperateAt` in `AtsOperationStatuses` model
+
+## 3.3.59
+
+- Added `billingPlan` to `User` model
+
+## 3.3.58
+
+- Updated `PackageLanguage` enum to include `Golang` as a new language option.
+- Migrated to a JsonConverter to a native @JsonKey and @JsonValue for `PackageLanguage` enum.
+
+## 3.3.57
+
+- Added `aiEnabled` to `BillingPlan` and their `BillingPlanInput` models
+
 ## 3.3.56
+
 - Added `operationId` in `AtsEntry`
 
 ## 3.3.55
@@ -8,9 +27,11 @@
 - Added lock, suspension and paymentWarning fields to `User` model
 
 ## 3.3.54
+
 - updated `TriggerInput` model to mathch the new `Trigger` model
 
 ## 3.3.53
+
 - added in `isBluetooth` in `AtsEntryUnloadInput`
 
 ## 3.3.52

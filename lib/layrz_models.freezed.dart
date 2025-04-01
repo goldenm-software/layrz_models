@@ -1898,26 +1898,60 @@ BillingPlan _$BillingPlanFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BillingPlan {
+  /// [id] is the unique identifier for the billing plan.
   String get id => throw _privateConstructorUsedError;
+
+  /// [reconnectionPercent] is the percentage of reconnections allowed for the billing plan.
   double get reconnectionPercent => throw _privateConstructorUsedError;
+
+  /// [reconnectionMaximum] is the maximum number of reconnections allowed for the billing plan.
   int get reconnectionMaximum => throw _privateConstructorUsedError;
+
+  /// [reconnectionIncidents] is the number of reconnection incidents allowed for the billing plan.
   int get reconnectionIncidents => throw _privateConstructorUsedError;
+
+  /// [maxAssets] is the maximum number of assets allowed for the billing plan.
   int get maxAssets => throw _privateConstructorUsedError;
+
+  /// [maxDevices] is the maximum number of devices allowed for the billing plan.
   int get maxDevices => throw _privateConstructorUsedError;
+
+  /// [maxUsers] is the maximum number of users allowed for the billing plan.
   int get maxUsers => throw _privateConstructorUsedError;
+
+  /// [maxOutboundServices] is the maximum number of outbound services allowed for the billing plan.
   int get maxOutboundServices => throw _privateConstructorUsedError;
+
+  /// [maxFunctions] is the maximum number of functions allowed for the billing plan.
   int get maxFunctions => throw _privateConstructorUsedError;
+
+  /// [maxApps] is the maximum number of apps allowed for the billing plan.
   int get maxApps => throw _privateConstructorUsedError;
+
+  /// [allowedAppsIds] is the list of allowed app IDs for the billing plan.
   List<String> get allowedAppsIds => throw _privateConstructorUsedError;
+
+  /// [allowedAlgorithmsIds] is the list of allowed algorithm IDs for the billing plan.
   List<String> get allowedAlgorithmsIds => throw _privateConstructorUsedError;
+
+  /// [allowedInboundProtocolsIds] is the list of allowed inbound protocol IDs for the billing plan.
   List<String> get allowedInboundProtocolsIds =>
       throw _privateConstructorUsedError;
+
+  /// [allowedOutboundProtocolsIds] is the list of allowed outbound protocol IDs for the billing plan.
   List<String> get allowedOutboundProtocolsIds =>
       throw _privateConstructorUsedError;
+
+  /// [allowedVisionProtocolsIds] is the list of allowed vision protocol IDs for the billing plan.
   List<String> get allowedVisionProtocolsIds =>
       throw _privateConstructorUsedError;
+
+  /// [allowedExchangeProtocolsIds] is the list of allowed exchange protocol IDs for the billing plan.
   List<String> get allowedExchangeProtocolsIds =>
       throw _privateConstructorUsedError;
+
+  /// [aiEnabled] is a boolean indicating if AI is enabled for the billing plan.
+  bool get aiEnabled => throw _privateConstructorUsedError;
 
   /// Serializes this BillingPlan to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1951,7 +1985,8 @@ abstract class $BillingPlanCopyWith<$Res> {
       List<String> allowedInboundProtocolsIds,
       List<String> allowedOutboundProtocolsIds,
       List<String> allowedVisionProtocolsIds,
-      List<String> allowedExchangeProtocolsIds});
+      List<String> allowedExchangeProtocolsIds,
+      bool aiEnabled});
 }
 
 /// @nodoc
@@ -1985,6 +2020,7 @@ class _$BillingPlanCopyWithImpl<$Res, $Val extends BillingPlan>
     Object? allowedOutboundProtocolsIds = null,
     Object? allowedVisionProtocolsIds = null,
     Object? allowedExchangeProtocolsIds = null,
+    Object? aiEnabled = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -2051,6 +2087,10 @@ class _$BillingPlanCopyWithImpl<$Res, $Val extends BillingPlan>
           ? _value.allowedExchangeProtocolsIds
           : allowedExchangeProtocolsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      aiEnabled: null == aiEnabled
+          ? _value.aiEnabled
+          : aiEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -2079,7 +2119,8 @@ abstract class _$$BillingPlanImplCopyWith<$Res>
       List<String> allowedInboundProtocolsIds,
       List<String> allowedOutboundProtocolsIds,
       List<String> allowedVisionProtocolsIds,
-      List<String> allowedExchangeProtocolsIds});
+      List<String> allowedExchangeProtocolsIds,
+      bool aiEnabled});
 }
 
 /// @nodoc
@@ -2111,6 +2152,7 @@ class __$$BillingPlanImplCopyWithImpl<$Res>
     Object? allowedOutboundProtocolsIds = null,
     Object? allowedVisionProtocolsIds = null,
     Object? allowedExchangeProtocolsIds = null,
+    Object? aiEnabled = null,
   }) {
     return _then(_$BillingPlanImpl(
       id: null == id
@@ -2177,6 +2219,10 @@ class __$$BillingPlanImplCopyWithImpl<$Res>
           ? _value._allowedExchangeProtocolsIds
           : allowedExchangeProtocolsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      aiEnabled: null == aiEnabled
+          ? _value.aiEnabled
+          : aiEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -2186,21 +2232,22 @@ class __$$BillingPlanImplCopyWithImpl<$Res>
 class _$BillingPlanImpl implements _BillingPlan {
   const _$BillingPlanImpl(
       {required this.id,
-      required this.reconnectionPercent,
-      required this.reconnectionMaximum,
-      required this.reconnectionIncidents,
-      required this.maxAssets,
-      required this.maxDevices,
-      required this.maxUsers,
-      required this.maxOutboundServices,
-      required this.maxFunctions,
-      required this.maxApps,
-      required final List<String> allowedAppsIds,
-      required final List<String> allowedAlgorithmsIds,
-      required final List<String> allowedInboundProtocolsIds,
-      required final List<String> allowedOutboundProtocolsIds,
-      required final List<String> allowedVisionProtocolsIds,
-      required final List<String> allowedExchangeProtocolsIds})
+      this.reconnectionPercent = 0.0,
+      this.reconnectionMaximum = 0,
+      this.reconnectionIncidents = 0,
+      this.maxAssets = 0,
+      this.maxDevices = 0,
+      this.maxUsers = 0,
+      this.maxOutboundServices = 0,
+      this.maxFunctions = 0,
+      this.maxApps = 0,
+      final List<String> allowedAppsIds = const [],
+      final List<String> allowedAlgorithmsIds = const [],
+      final List<String> allowedInboundProtocolsIds = const [],
+      final List<String> allowedOutboundProtocolsIds = const [],
+      final List<String> allowedVisionProtocolsIds = const [],
+      final List<String> allowedExchangeProtocolsIds = const [],
+      this.aiEnabled = false})
       : _allowedAppsIds = allowedAppsIds,
         _allowedAlgorithmsIds = allowedAlgorithmsIds,
         _allowedInboundProtocolsIds = allowedInboundProtocolsIds,
@@ -2211,36 +2258,73 @@ class _$BillingPlanImpl implements _BillingPlan {
   factory _$BillingPlanImpl.fromJson(Map<String, dynamic> json) =>
       _$$BillingPlanImplFromJson(json);
 
+  /// [id] is the unique identifier for the billing plan.
   @override
   final String id;
+
+  /// [reconnectionPercent] is the percentage of reconnections allowed for the billing plan.
   @override
+  @JsonKey()
   final double reconnectionPercent;
+
+  /// [reconnectionMaximum] is the maximum number of reconnections allowed for the billing plan.
   @override
+  @JsonKey()
   final int reconnectionMaximum;
+
+  /// [reconnectionIncidents] is the number of reconnection incidents allowed for the billing plan.
   @override
+  @JsonKey()
   final int reconnectionIncidents;
+
+  /// [maxAssets] is the maximum number of assets allowed for the billing plan.
   @override
+  @JsonKey()
   final int maxAssets;
+
+  /// [maxDevices] is the maximum number of devices allowed for the billing plan.
   @override
+  @JsonKey()
   final int maxDevices;
+
+  /// [maxUsers] is the maximum number of users allowed for the billing plan.
   @override
+  @JsonKey()
   final int maxUsers;
+
+  /// [maxOutboundServices] is the maximum number of outbound services allowed for the billing plan.
   @override
+  @JsonKey()
   final int maxOutboundServices;
+
+  /// [maxFunctions] is the maximum number of functions allowed for the billing plan.
   @override
+  @JsonKey()
   final int maxFunctions;
+
+  /// [maxApps] is the maximum number of apps allowed for the billing plan.
   @override
+  @JsonKey()
   final int maxApps;
+
+  /// [allowedAppsIds] is the list of allowed app IDs for the billing plan.
   final List<String> _allowedAppsIds;
+
+  /// [allowedAppsIds] is the list of allowed app IDs for the billing plan.
   @override
+  @JsonKey()
   List<String> get allowedAppsIds {
     if (_allowedAppsIds is EqualUnmodifiableListView) return _allowedAppsIds;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_allowedAppsIds);
   }
 
+  /// [allowedAlgorithmsIds] is the list of allowed algorithm IDs for the billing plan.
   final List<String> _allowedAlgorithmsIds;
+
+  /// [allowedAlgorithmsIds] is the list of allowed algorithm IDs for the billing plan.
   @override
+  @JsonKey()
   List<String> get allowedAlgorithmsIds {
     if (_allowedAlgorithmsIds is EqualUnmodifiableListView)
       return _allowedAlgorithmsIds;
@@ -2248,8 +2332,12 @@ class _$BillingPlanImpl implements _BillingPlan {
     return EqualUnmodifiableListView(_allowedAlgorithmsIds);
   }
 
+  /// [allowedInboundProtocolsIds] is the list of allowed inbound protocol IDs for the billing plan.
   final List<String> _allowedInboundProtocolsIds;
+
+  /// [allowedInboundProtocolsIds] is the list of allowed inbound protocol IDs for the billing plan.
   @override
+  @JsonKey()
   List<String> get allowedInboundProtocolsIds {
     if (_allowedInboundProtocolsIds is EqualUnmodifiableListView)
       return _allowedInboundProtocolsIds;
@@ -2257,8 +2345,12 @@ class _$BillingPlanImpl implements _BillingPlan {
     return EqualUnmodifiableListView(_allowedInboundProtocolsIds);
   }
 
+  /// [allowedOutboundProtocolsIds] is the list of allowed outbound protocol IDs for the billing plan.
   final List<String> _allowedOutboundProtocolsIds;
+
+  /// [allowedOutboundProtocolsIds] is the list of allowed outbound protocol IDs for the billing plan.
   @override
+  @JsonKey()
   List<String> get allowedOutboundProtocolsIds {
     if (_allowedOutboundProtocolsIds is EqualUnmodifiableListView)
       return _allowedOutboundProtocolsIds;
@@ -2266,8 +2358,12 @@ class _$BillingPlanImpl implements _BillingPlan {
     return EqualUnmodifiableListView(_allowedOutboundProtocolsIds);
   }
 
+  /// [allowedVisionProtocolsIds] is the list of allowed vision protocol IDs for the billing plan.
   final List<String> _allowedVisionProtocolsIds;
+
+  /// [allowedVisionProtocolsIds] is the list of allowed vision protocol IDs for the billing plan.
   @override
+  @JsonKey()
   List<String> get allowedVisionProtocolsIds {
     if (_allowedVisionProtocolsIds is EqualUnmodifiableListView)
       return _allowedVisionProtocolsIds;
@@ -2275,8 +2371,12 @@ class _$BillingPlanImpl implements _BillingPlan {
     return EqualUnmodifiableListView(_allowedVisionProtocolsIds);
   }
 
+  /// [allowedExchangeProtocolsIds] is the list of allowed exchange protocol IDs for the billing plan.
   final List<String> _allowedExchangeProtocolsIds;
+
+  /// [allowedExchangeProtocolsIds] is the list of allowed exchange protocol IDs for the billing plan.
   @override
+  @JsonKey()
   List<String> get allowedExchangeProtocolsIds {
     if (_allowedExchangeProtocolsIds is EqualUnmodifiableListView)
       return _allowedExchangeProtocolsIds;
@@ -2284,9 +2384,14 @@ class _$BillingPlanImpl implements _BillingPlan {
     return EqualUnmodifiableListView(_allowedExchangeProtocolsIds);
   }
 
+  /// [aiEnabled] is a boolean indicating if AI is enabled for the billing plan.
+  @override
+  @JsonKey()
+  final bool aiEnabled;
+
   @override
   String toString() {
-    return 'BillingPlan(id: $id, reconnectionPercent: $reconnectionPercent, reconnectionMaximum: $reconnectionMaximum, reconnectionIncidents: $reconnectionIncidents, maxAssets: $maxAssets, maxDevices: $maxDevices, maxUsers: $maxUsers, maxOutboundServices: $maxOutboundServices, maxFunctions: $maxFunctions, maxApps: $maxApps, allowedAppsIds: $allowedAppsIds, allowedAlgorithmsIds: $allowedAlgorithmsIds, allowedInboundProtocolsIds: $allowedInboundProtocolsIds, allowedOutboundProtocolsIds: $allowedOutboundProtocolsIds, allowedVisionProtocolsIds: $allowedVisionProtocolsIds, allowedExchangeProtocolsIds: $allowedExchangeProtocolsIds)';
+    return 'BillingPlan(id: $id, reconnectionPercent: $reconnectionPercent, reconnectionMaximum: $reconnectionMaximum, reconnectionIncidents: $reconnectionIncidents, maxAssets: $maxAssets, maxDevices: $maxDevices, maxUsers: $maxUsers, maxOutboundServices: $maxOutboundServices, maxFunctions: $maxFunctions, maxApps: $maxApps, allowedAppsIds: $allowedAppsIds, allowedAlgorithmsIds: $allowedAlgorithmsIds, allowedInboundProtocolsIds: $allowedInboundProtocolsIds, allowedOutboundProtocolsIds: $allowedOutboundProtocolsIds, allowedVisionProtocolsIds: $allowedVisionProtocolsIds, allowedExchangeProtocolsIds: $allowedExchangeProtocolsIds, aiEnabled: $aiEnabled)';
   }
 
   @override
@@ -2326,7 +2431,9 @@ class _$BillingPlanImpl implements _BillingPlan {
                 other._allowedVisionProtocolsIds, _allowedVisionProtocolsIds) &&
             const DeepCollectionEquality().equals(
                 other._allowedExchangeProtocolsIds,
-                _allowedExchangeProtocolsIds));
+                _allowedExchangeProtocolsIds) &&
+            (identical(other.aiEnabled, aiEnabled) ||
+                other.aiEnabled == aiEnabled));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2348,7 +2455,8 @@ class _$BillingPlanImpl implements _BillingPlan {
       const DeepCollectionEquality().hash(_allowedInboundProtocolsIds),
       const DeepCollectionEquality().hash(_allowedOutboundProtocolsIds),
       const DeepCollectionEquality().hash(_allowedVisionProtocolsIds),
-      const DeepCollectionEquality().hash(_allowedExchangeProtocolsIds));
+      const DeepCollectionEquality().hash(_allowedExchangeProtocolsIds),
+      aiEnabled);
 
   /// Create a copy of BillingPlan
   /// with the given fields replaced by the non-null parameter values.
@@ -2368,59 +2476,94 @@ class _$BillingPlanImpl implements _BillingPlan {
 
 abstract class _BillingPlan implements BillingPlan {
   const factory _BillingPlan(
-          {required final String id,
-          required final double reconnectionPercent,
-          required final int reconnectionMaximum,
-          required final int reconnectionIncidents,
-          required final int maxAssets,
-          required final int maxDevices,
-          required final int maxUsers,
-          required final int maxOutboundServices,
-          required final int maxFunctions,
-          required final int maxApps,
-          required final List<String> allowedAppsIds,
-          required final List<String> allowedAlgorithmsIds,
-          required final List<String> allowedInboundProtocolsIds,
-          required final List<String> allowedOutboundProtocolsIds,
-          required final List<String> allowedVisionProtocolsIds,
-          required final List<String> allowedExchangeProtocolsIds}) =
-      _$BillingPlanImpl;
+      {required final String id,
+      final double reconnectionPercent,
+      final int reconnectionMaximum,
+      final int reconnectionIncidents,
+      final int maxAssets,
+      final int maxDevices,
+      final int maxUsers,
+      final int maxOutboundServices,
+      final int maxFunctions,
+      final int maxApps,
+      final List<String> allowedAppsIds,
+      final List<String> allowedAlgorithmsIds,
+      final List<String> allowedInboundProtocolsIds,
+      final List<String> allowedOutboundProtocolsIds,
+      final List<String> allowedVisionProtocolsIds,
+      final List<String> allowedExchangeProtocolsIds,
+      final bool aiEnabled}) = _$BillingPlanImpl;
 
   factory _BillingPlan.fromJson(Map<String, dynamic> json) =
       _$BillingPlanImpl.fromJson;
 
+  /// [id] is the unique identifier for the billing plan.
   @override
   String get id;
+
+  /// [reconnectionPercent] is the percentage of reconnections allowed for the billing plan.
   @override
   double get reconnectionPercent;
+
+  /// [reconnectionMaximum] is the maximum number of reconnections allowed for the billing plan.
   @override
   int get reconnectionMaximum;
+
+  /// [reconnectionIncidents] is the number of reconnection incidents allowed for the billing plan.
   @override
   int get reconnectionIncidents;
+
+  /// [maxAssets] is the maximum number of assets allowed for the billing plan.
   @override
   int get maxAssets;
+
+  /// [maxDevices] is the maximum number of devices allowed for the billing plan.
   @override
   int get maxDevices;
+
+  /// [maxUsers] is the maximum number of users allowed for the billing plan.
   @override
   int get maxUsers;
+
+  /// [maxOutboundServices] is the maximum number of outbound services allowed for the billing plan.
   @override
   int get maxOutboundServices;
+
+  /// [maxFunctions] is the maximum number of functions allowed for the billing plan.
   @override
   int get maxFunctions;
+
+  /// [maxApps] is the maximum number of apps allowed for the billing plan.
   @override
   int get maxApps;
+
+  /// [allowedAppsIds] is the list of allowed app IDs for the billing plan.
   @override
   List<String> get allowedAppsIds;
+
+  /// [allowedAlgorithmsIds] is the list of allowed algorithm IDs for the billing plan.
   @override
   List<String> get allowedAlgorithmsIds;
+
+  /// [allowedInboundProtocolsIds] is the list of allowed inbound protocol IDs for the billing plan.
   @override
   List<String> get allowedInboundProtocolsIds;
+
+  /// [allowedOutboundProtocolsIds] is the list of allowed outbound protocol IDs for the billing plan.
   @override
   List<String> get allowedOutboundProtocolsIds;
+
+  /// [allowedVisionProtocolsIds] is the list of allowed vision protocol IDs for the billing plan.
   @override
   List<String> get allowedVisionProtocolsIds;
+
+  /// [allowedExchangeProtocolsIds] is the list of allowed exchange protocol IDs for the billing plan.
   @override
   List<String> get allowedExchangeProtocolsIds;
+
+  /// [aiEnabled] is a boolean indicating if AI is enabled for the billing plan.
+  @override
+  bool get aiEnabled;
 
   /// Create a copy of BillingPlan
   /// with the given fields replaced by the non-null parameter values.
@@ -2436,47 +2579,116 @@ BillingPlanInput _$BillingPlanInputFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BillingPlanInput {
+  /// [id] is the unique identifier for the billing plan.
   String? get id => throw _privateConstructorUsedError;
+
+  /// [id] is the unique identifier for the billing plan.
   set id(String? value) => throw _privateConstructorUsedError;
-  int get reconnectionIncidents => throw _privateConstructorUsedError;
-  set reconnectionIncidents(int value) => throw _privateConstructorUsedError;
+
+  /// [reconnectionPercent] is the percentage of reconnections allowed for the billing plan.
   double get reconnectionPercent => throw _privateConstructorUsedError;
+
+  /// [reconnectionPercent] is the percentage of reconnections allowed for the billing plan.
   set reconnectionPercent(double value) => throw _privateConstructorUsedError;
+
+  /// [reconnectionMaximum] is the maximum number of reconnections allowed for the billing plan.
   int get reconnectionMaximum => throw _privateConstructorUsedError;
+
+  /// [reconnectionMaximum] is the maximum number of reconnections allowed for the billing plan.
   set reconnectionMaximum(int value) => throw _privateConstructorUsedError;
+
+  /// [reconnectionIncidents] is the number of reconnection incidents allowed for the billing plan.
+  int get reconnectionIncidents => throw _privateConstructorUsedError;
+
+  /// [reconnectionIncidents] is the number of reconnection incidents allowed for the billing plan.
+  set reconnectionIncidents(int value) => throw _privateConstructorUsedError;
+
+  /// [maxAssets] is the maximum number of assets allowed for the billing plan.
   int get maxAssets => throw _privateConstructorUsedError;
+
+  /// [maxAssets] is the maximum number of assets allowed for the billing plan.
   set maxAssets(int value) => throw _privateConstructorUsedError;
+
+  /// [maxDevices] is the maximum number of devices allowed for the billing plan.
   int get maxDevices => throw _privateConstructorUsedError;
+
+  /// [maxDevices] is the maximum number of devices allowed for the billing plan.
   set maxDevices(int value) => throw _privateConstructorUsedError;
+
+  /// [maxUsers] is the maximum number of users allowed for the billing plan.
   int get maxUsers => throw _privateConstructorUsedError;
+
+  /// [maxUsers] is the maximum number of users allowed for the billing plan.
   set maxUsers(int value) => throw _privateConstructorUsedError;
+
+  /// [maxOutboundServices] is the maximum number of outbound services allowed for the billing plan.
   int get maxOutboundServices => throw _privateConstructorUsedError;
+
+  /// [maxOutboundServices] is the maximum number of outbound services allowed for the billing plan.
   set maxOutboundServices(int value) => throw _privateConstructorUsedError;
+
+  /// [maxFunctions] is the maximum number of functions allowed for the billing plan.
   int get maxFunctions => throw _privateConstructorUsedError;
+
+  /// [maxFunctions] is the maximum number of functions allowed for the billing plan.
   set maxFunctions(int value) => throw _privateConstructorUsedError;
+
+  /// [maxApps] is the maximum number of apps allowed for the billing plan.
   int get maxApps => throw _privateConstructorUsedError;
+
+  /// [maxApps] is the maximum number of apps allowed for the billing plan.
   set maxApps(int value) => throw _privateConstructorUsedError;
+
+  /// [allowedAppsIds] is the list of allowed app IDs for the billing plan.
   List<String> get allowedAppsIds => throw _privateConstructorUsedError;
+
+  /// [allowedAppsIds] is the list of allowed app IDs for the billing plan.
   set allowedAppsIds(List<String> value) => throw _privateConstructorUsedError;
+
+  /// [allowedAlgorithmsIds] is the list of allowed algorithm IDs for the billing plan.
   List<String> get allowedAlgorithmsIds => throw _privateConstructorUsedError;
+
+  /// [allowedAlgorithmsIds] is the list of allowed algorithm IDs for the billing plan.
   set allowedAlgorithmsIds(List<String> value) =>
       throw _privateConstructorUsedError;
+
+  /// [allowedInboundProtocolsIds] is the list of allowed inbound protocol IDs for the billing plan.
   List<String> get allowedInboundProtocolsIds =>
       throw _privateConstructorUsedError;
+
+  /// [allowedInboundProtocolsIds] is the list of allowed inbound protocol IDs for the billing plan.
   set allowedInboundProtocolsIds(List<String> value) =>
       throw _privateConstructorUsedError;
+
+  /// [allowedOutboundProtocolsIds] is the list of allowed outbound protocol IDs for the billing plan.
   List<String> get allowedOutboundProtocolsIds =>
       throw _privateConstructorUsedError;
+
+  /// [allowedOutboundProtocolsIds] is the list of allowed outbound protocol IDs for the billing plan.
   set allowedOutboundProtocolsIds(List<String> value) =>
       throw _privateConstructorUsedError;
+
+  /// [allowedVisionProtocolsIds] is the list of allowed vision protocol IDs for the billing plan.
   List<String> get allowedVisionProtocolsIds =>
       throw _privateConstructorUsedError;
+
+  /// [allowedVisionProtocolsIds] is the list of allowed vision protocol IDs for the billing plan.
   set allowedVisionProtocolsIds(List<String> value) =>
       throw _privateConstructorUsedError;
+
+  /// [allowedExchangeProtocolsIds] is the list of allowed exchange protocol IDs for the billing plan.
   List<String> get allowedExchangeProtocolsIds =>
       throw _privateConstructorUsedError;
+
+  /// [allowedExchangeProtocolsIds] is the list of allowed exchange protocol IDs for the billing plan.
   set allowedExchangeProtocolsIds(List<String> value) =>
       throw _privateConstructorUsedError;
+
+  /// [aiEnabled] is a boolean indicating if AI is enabled for the billing plan.
+  bool get aiEnabled => throw _privateConstructorUsedError;
+
+  /// [aiEnabled] is a boolean indicating if AI is enabled for the billing plan.
+  set aiEnabled(bool value) => throw _privateConstructorUsedError;
 
   /// Serializes this BillingPlanInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -2496,9 +2708,9 @@ abstract class $BillingPlanInputCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
-      int reconnectionIncidents,
       double reconnectionPercent,
       int reconnectionMaximum,
+      int reconnectionIncidents,
       int maxAssets,
       int maxDevices,
       int maxUsers,
@@ -2510,7 +2722,8 @@ abstract class $BillingPlanInputCopyWith<$Res> {
       List<String> allowedInboundProtocolsIds,
       List<String> allowedOutboundProtocolsIds,
       List<String> allowedVisionProtocolsIds,
-      List<String> allowedExchangeProtocolsIds});
+      List<String> allowedExchangeProtocolsIds,
+      bool aiEnabled});
 }
 
 /// @nodoc
@@ -2529,9 +2742,9 @@ class _$BillingPlanInputCopyWithImpl<$Res, $Val extends BillingPlanInput>
   @override
   $Res call({
     Object? id = freezed,
-    Object? reconnectionIncidents = null,
     Object? reconnectionPercent = null,
     Object? reconnectionMaximum = null,
+    Object? reconnectionIncidents = null,
     Object? maxAssets = null,
     Object? maxDevices = null,
     Object? maxUsers = null,
@@ -2544,16 +2757,13 @@ class _$BillingPlanInputCopyWithImpl<$Res, $Val extends BillingPlanInput>
     Object? allowedOutboundProtocolsIds = null,
     Object? allowedVisionProtocolsIds = null,
     Object? allowedExchangeProtocolsIds = null,
+    Object? aiEnabled = null,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      reconnectionIncidents: null == reconnectionIncidents
-          ? _value.reconnectionIncidents
-          : reconnectionIncidents // ignore: cast_nullable_to_non_nullable
-              as int,
       reconnectionPercent: null == reconnectionPercent
           ? _value.reconnectionPercent
           : reconnectionPercent // ignore: cast_nullable_to_non_nullable
@@ -2561,6 +2771,10 @@ class _$BillingPlanInputCopyWithImpl<$Res, $Val extends BillingPlanInput>
       reconnectionMaximum: null == reconnectionMaximum
           ? _value.reconnectionMaximum
           : reconnectionMaximum // ignore: cast_nullable_to_non_nullable
+              as int,
+      reconnectionIncidents: null == reconnectionIncidents
+          ? _value.reconnectionIncidents
+          : reconnectionIncidents // ignore: cast_nullable_to_non_nullable
               as int,
       maxAssets: null == maxAssets
           ? _value.maxAssets
@@ -2610,6 +2824,10 @@ class _$BillingPlanInputCopyWithImpl<$Res, $Val extends BillingPlanInput>
           ? _value.allowedExchangeProtocolsIds
           : allowedExchangeProtocolsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      aiEnabled: null == aiEnabled
+          ? _value.aiEnabled
+          : aiEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -2624,9 +2842,9 @@ abstract class _$$BillingPlanInputImplCopyWith<$Res>
   @useResult
   $Res call(
       {String? id,
-      int reconnectionIncidents,
       double reconnectionPercent,
       int reconnectionMaximum,
+      int reconnectionIncidents,
       int maxAssets,
       int maxDevices,
       int maxUsers,
@@ -2638,7 +2856,8 @@ abstract class _$$BillingPlanInputImplCopyWith<$Res>
       List<String> allowedInboundProtocolsIds,
       List<String> allowedOutboundProtocolsIds,
       List<String> allowedVisionProtocolsIds,
-      List<String> allowedExchangeProtocolsIds});
+      List<String> allowedExchangeProtocolsIds,
+      bool aiEnabled});
 }
 
 /// @nodoc
@@ -2655,9 +2874,9 @@ class __$$BillingPlanInputImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? reconnectionIncidents = null,
     Object? reconnectionPercent = null,
     Object? reconnectionMaximum = null,
+    Object? reconnectionIncidents = null,
     Object? maxAssets = null,
     Object? maxDevices = null,
     Object? maxUsers = null,
@@ -2670,16 +2889,13 @@ class __$$BillingPlanInputImplCopyWithImpl<$Res>
     Object? allowedOutboundProtocolsIds = null,
     Object? allowedVisionProtocolsIds = null,
     Object? allowedExchangeProtocolsIds = null,
+    Object? aiEnabled = null,
   }) {
     return _then(_$BillingPlanInputImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
-      reconnectionIncidents: null == reconnectionIncidents
-          ? _value.reconnectionIncidents
-          : reconnectionIncidents // ignore: cast_nullable_to_non_nullable
-              as int,
       reconnectionPercent: null == reconnectionPercent
           ? _value.reconnectionPercent
           : reconnectionPercent // ignore: cast_nullable_to_non_nullable
@@ -2687,6 +2903,10 @@ class __$$BillingPlanInputImplCopyWithImpl<$Res>
       reconnectionMaximum: null == reconnectionMaximum
           ? _value.reconnectionMaximum
           : reconnectionMaximum // ignore: cast_nullable_to_non_nullable
+              as int,
+      reconnectionIncidents: null == reconnectionIncidents
+          ? _value.reconnectionIncidents
+          : reconnectionIncidents // ignore: cast_nullable_to_non_nullable
               as int,
       maxAssets: null == maxAssets
           ? _value.maxAssets
@@ -2736,6 +2956,10 @@ class __$$BillingPlanInputImplCopyWithImpl<$Res>
           ? _value.allowedExchangeProtocolsIds
           : allowedExchangeProtocolsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      aiEnabled: null == aiEnabled
+          ? _value.aiEnabled
+          : aiEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -2745,9 +2969,9 @@ class __$$BillingPlanInputImplCopyWithImpl<$Res>
 class _$BillingPlanInputImpl implements _BillingPlanInput {
   _$BillingPlanInputImpl(
       {this.id,
-      this.reconnectionIncidents = 0,
       this.reconnectionPercent = 0.0,
       this.reconnectionMaximum = 0,
+      this.reconnectionIncidents = 0,
       this.maxAssets = 0,
       this.maxDevices = 0,
       this.maxUsers = 0,
@@ -2759,62 +2983,99 @@ class _$BillingPlanInputImpl implements _BillingPlanInput {
       this.allowedInboundProtocolsIds = const [],
       this.allowedOutboundProtocolsIds = const [],
       this.allowedVisionProtocolsIds = const [],
-      this.allowedExchangeProtocolsIds = const []});
+      this.allowedExchangeProtocolsIds = const [],
+      this.aiEnabled = false});
 
   factory _$BillingPlanInputImpl.fromJson(Map<String, dynamic> json) =>
       _$$BillingPlanInputImplFromJson(json);
 
+  /// [id] is the unique identifier for the billing plan.
   @override
   String? id;
-  @override
-  @JsonKey()
-  int reconnectionIncidents;
+
+  /// [reconnectionPercent] is the percentage of reconnections allowed for the billing plan.
   @override
   @JsonKey()
   double reconnectionPercent;
+
+  /// [reconnectionMaximum] is the maximum number of reconnections allowed for the billing plan.
   @override
   @JsonKey()
   int reconnectionMaximum;
+
+  /// [reconnectionIncidents] is the number of reconnection incidents allowed for the billing plan.
+  @override
+  @JsonKey()
+  int reconnectionIncidents;
+
+  /// [maxAssets] is the maximum number of assets allowed for the billing plan.
   @override
   @JsonKey()
   int maxAssets;
+
+  /// [maxDevices] is the maximum number of devices allowed for the billing plan.
   @override
   @JsonKey()
   int maxDevices;
+
+  /// [maxUsers] is the maximum number of users allowed for the billing plan.
   @override
   @JsonKey()
   int maxUsers;
+
+  /// [maxOutboundServices] is the maximum number of outbound services allowed for the billing plan.
   @override
   @JsonKey()
   int maxOutboundServices;
+
+  /// [maxFunctions] is the maximum number of functions allowed for the billing plan.
   @override
   @JsonKey()
   int maxFunctions;
+
+  /// [maxApps] is the maximum number of apps allowed for the billing plan.
   @override
   @JsonKey()
   int maxApps;
+
+  /// [allowedAppsIds] is the list of allowed app IDs for the billing plan.
   @override
   @JsonKey()
   List<String> allowedAppsIds;
+
+  /// [allowedAlgorithmsIds] is the list of allowed algorithm IDs for the billing plan.
   @override
   @JsonKey()
   List<String> allowedAlgorithmsIds;
+
+  /// [allowedInboundProtocolsIds] is the list of allowed inbound protocol IDs for the billing plan.
   @override
   @JsonKey()
   List<String> allowedInboundProtocolsIds;
+
+  /// [allowedOutboundProtocolsIds] is the list of allowed outbound protocol IDs for the billing plan.
   @override
   @JsonKey()
   List<String> allowedOutboundProtocolsIds;
+
+  /// [allowedVisionProtocolsIds] is the list of allowed vision protocol IDs for the billing plan.
   @override
   @JsonKey()
   List<String> allowedVisionProtocolsIds;
+
+  /// [allowedExchangeProtocolsIds] is the list of allowed exchange protocol IDs for the billing plan.
   @override
   @JsonKey()
   List<String> allowedExchangeProtocolsIds;
 
+  /// [aiEnabled] is a boolean indicating if AI is enabled for the billing plan.
+  @override
+  @JsonKey()
+  bool aiEnabled;
+
   @override
   String toString() {
-    return 'BillingPlanInput(id: $id, reconnectionIncidents: $reconnectionIncidents, reconnectionPercent: $reconnectionPercent, reconnectionMaximum: $reconnectionMaximum, maxAssets: $maxAssets, maxDevices: $maxDevices, maxUsers: $maxUsers, maxOutboundServices: $maxOutboundServices, maxFunctions: $maxFunctions, maxApps: $maxApps, allowedAppsIds: $allowedAppsIds, allowedAlgorithmsIds: $allowedAlgorithmsIds, allowedInboundProtocolsIds: $allowedInboundProtocolsIds, allowedOutboundProtocolsIds: $allowedOutboundProtocolsIds, allowedVisionProtocolsIds: $allowedVisionProtocolsIds, allowedExchangeProtocolsIds: $allowedExchangeProtocolsIds)';
+    return 'BillingPlanInput(id: $id, reconnectionPercent: $reconnectionPercent, reconnectionMaximum: $reconnectionMaximum, reconnectionIncidents: $reconnectionIncidents, maxAssets: $maxAssets, maxDevices: $maxDevices, maxUsers: $maxUsers, maxOutboundServices: $maxOutboundServices, maxFunctions: $maxFunctions, maxApps: $maxApps, allowedAppsIds: $allowedAppsIds, allowedAlgorithmsIds: $allowedAlgorithmsIds, allowedInboundProtocolsIds: $allowedInboundProtocolsIds, allowedOutboundProtocolsIds: $allowedOutboundProtocolsIds, allowedVisionProtocolsIds: $allowedVisionProtocolsIds, allowedExchangeProtocolsIds: $allowedExchangeProtocolsIds, aiEnabled: $aiEnabled)';
   }
 
   /// Create a copy of BillingPlanInput
@@ -2837,9 +3098,9 @@ class _$BillingPlanInputImpl implements _BillingPlanInput {
 abstract class _BillingPlanInput implements BillingPlanInput {
   factory _BillingPlanInput(
       {String? id,
-      int reconnectionIncidents,
       double reconnectionPercent,
       int reconnectionMaximum,
+      int reconnectionIncidents,
       int maxAssets,
       int maxDevices,
       int maxUsers,
@@ -2851,59 +3112,130 @@ abstract class _BillingPlanInput implements BillingPlanInput {
       List<String> allowedInboundProtocolsIds,
       List<String> allowedOutboundProtocolsIds,
       List<String> allowedVisionProtocolsIds,
-      List<String> allowedExchangeProtocolsIds}) = _$BillingPlanInputImpl;
+      List<String> allowedExchangeProtocolsIds,
+      bool aiEnabled}) = _$BillingPlanInputImpl;
 
   factory _BillingPlanInput.fromJson(Map<String, dynamic> json) =
       _$BillingPlanInputImpl.fromJson;
 
+  /// [id] is the unique identifier for the billing plan.
   @override
   String? get id;
+
+  /// [id] is the unique identifier for the billing plan.
   set id(String? value);
-  @override
-  int get reconnectionIncidents;
-  set reconnectionIncidents(int value);
+
+  /// [reconnectionPercent] is the percentage of reconnections allowed for the billing plan.
   @override
   double get reconnectionPercent;
+
+  /// [reconnectionPercent] is the percentage of reconnections allowed for the billing plan.
   set reconnectionPercent(double value);
+
+  /// [reconnectionMaximum] is the maximum number of reconnections allowed for the billing plan.
   @override
   int get reconnectionMaximum;
+
+  /// [reconnectionMaximum] is the maximum number of reconnections allowed for the billing plan.
   set reconnectionMaximum(int value);
+
+  /// [reconnectionIncidents] is the number of reconnection incidents allowed for the billing plan.
+  @override
+  int get reconnectionIncidents;
+
+  /// [reconnectionIncidents] is the number of reconnection incidents allowed for the billing plan.
+  set reconnectionIncidents(int value);
+
+  /// [maxAssets] is the maximum number of assets allowed for the billing plan.
   @override
   int get maxAssets;
+
+  /// [maxAssets] is the maximum number of assets allowed for the billing plan.
   set maxAssets(int value);
+
+  /// [maxDevices] is the maximum number of devices allowed for the billing plan.
   @override
   int get maxDevices;
+
+  /// [maxDevices] is the maximum number of devices allowed for the billing plan.
   set maxDevices(int value);
+
+  /// [maxUsers] is the maximum number of users allowed for the billing plan.
   @override
   int get maxUsers;
+
+  /// [maxUsers] is the maximum number of users allowed for the billing plan.
   set maxUsers(int value);
+
+  /// [maxOutboundServices] is the maximum number of outbound services allowed for the billing plan.
   @override
   int get maxOutboundServices;
+
+  /// [maxOutboundServices] is the maximum number of outbound services allowed for the billing plan.
   set maxOutboundServices(int value);
+
+  /// [maxFunctions] is the maximum number of functions allowed for the billing plan.
   @override
   int get maxFunctions;
+
+  /// [maxFunctions] is the maximum number of functions allowed for the billing plan.
   set maxFunctions(int value);
+
+  /// [maxApps] is the maximum number of apps allowed for the billing plan.
   @override
   int get maxApps;
+
+  /// [maxApps] is the maximum number of apps allowed for the billing plan.
   set maxApps(int value);
+
+  /// [allowedAppsIds] is the list of allowed app IDs for the billing plan.
   @override
   List<String> get allowedAppsIds;
+
+  /// [allowedAppsIds] is the list of allowed app IDs for the billing plan.
   set allowedAppsIds(List<String> value);
+
+  /// [allowedAlgorithmsIds] is the list of allowed algorithm IDs for the billing plan.
   @override
   List<String> get allowedAlgorithmsIds;
+
+  /// [allowedAlgorithmsIds] is the list of allowed algorithm IDs for the billing plan.
   set allowedAlgorithmsIds(List<String> value);
+
+  /// [allowedInboundProtocolsIds] is the list of allowed inbound protocol IDs for the billing plan.
   @override
   List<String> get allowedInboundProtocolsIds;
+
+  /// [allowedInboundProtocolsIds] is the list of allowed inbound protocol IDs for the billing plan.
   set allowedInboundProtocolsIds(List<String> value);
+
+  /// [allowedOutboundProtocolsIds] is the list of allowed outbound protocol IDs for the billing plan.
   @override
   List<String> get allowedOutboundProtocolsIds;
+
+  /// [allowedOutboundProtocolsIds] is the list of allowed outbound protocol IDs for the billing plan.
   set allowedOutboundProtocolsIds(List<String> value);
+
+  /// [allowedVisionProtocolsIds] is the list of allowed vision protocol IDs for the billing plan.
   @override
   List<String> get allowedVisionProtocolsIds;
+
+  /// [allowedVisionProtocolsIds] is the list of allowed vision protocol IDs for the billing plan.
   set allowedVisionProtocolsIds(List<String> value);
+
+  /// [allowedExchangeProtocolsIds] is the list of allowed exchange protocol IDs for the billing plan.
   @override
   List<String> get allowedExchangeProtocolsIds;
+
+  /// [allowedExchangeProtocolsIds] is the list of allowed exchange protocol IDs for the billing plan.
   set allowedExchangeProtocolsIds(List<String> value);
+
+  /// [aiEnabled] is a boolean indicating if AI is enabled for the billing plan.
+  @override
+  bool get aiEnabled;
+
+  /// [aiEnabled] is a boolean indicating if AI is enabled for the billing plan.
+  set aiEnabled(bool value);
 
   /// Create a copy of BillingPlanInput
   /// with the given fields replaced by the non-null parameter values.
@@ -14957,7 +15289,7 @@ mixin _$LayrzPackage {
   DateTime get createdAt => throw _privateConstructorUsedError;
 
   /// [language] is the language of the package.
-  @PackageLanguageConverter()
+  @JsonKey(unknownEnumValue: PackageLanguage.unknown)
   PackageLanguage get language => throw _privateConstructorUsedError;
 
   /// [repository] is the repository of the package.
@@ -14985,7 +15317,8 @@ abstract class $LayrzPackageCopyWith<$Res> {
       String version,
       String? languageVersionConstraint,
       @TimestampConverter() DateTime createdAt,
-      @PackageLanguageConverter() PackageLanguage language,
+      @JsonKey(unknownEnumValue: PackageLanguage.unknown)
+      PackageLanguage language,
       String? repository});
 }
 
@@ -15059,7 +15392,8 @@ abstract class _$$LayrzPackageImplCopyWith<$Res>
       String version,
       String? languageVersionConstraint,
       @TimestampConverter() DateTime createdAt,
-      @PackageLanguageConverter() PackageLanguage language,
+      @JsonKey(unknownEnumValue: PackageLanguage.unknown)
+      PackageLanguage language,
       String? repository});
 }
 
@@ -15126,7 +15460,8 @@ class _$LayrzPackageImpl implements _LayrzPackage {
       required this.version,
       this.languageVersionConstraint,
       @TimestampConverter() required this.createdAt,
-      @PackageLanguageConverter() required this.language,
+      @JsonKey(unknownEnumValue: PackageLanguage.unknown)
+      required this.language,
       this.repository});
 
   factory _$LayrzPackageImpl.fromJson(Map<String, dynamic> json) =>
@@ -15156,7 +15491,7 @@ class _$LayrzPackageImpl implements _LayrzPackage {
 
   /// [language] is the language of the package.
   @override
-  @PackageLanguageConverter()
+  @JsonKey(unknownEnumValue: PackageLanguage.unknown)
   final PackageLanguage language;
 
   /// [repository] is the repository of the package.
@@ -15215,7 +15550,8 @@ abstract class _LayrzPackage implements LayrzPackage {
       required final String version,
       final String? languageVersionConstraint,
       @TimestampConverter() required final DateTime createdAt,
-      @PackageLanguageConverter() required final PackageLanguage language,
+      @JsonKey(unknownEnumValue: PackageLanguage.unknown)
+      required final PackageLanguage language,
       final String? repository}) = _$LayrzPackageImpl;
 
   factory _LayrzPackage.fromJson(Map<String, dynamic> json) =
@@ -15245,7 +15581,7 @@ abstract class _LayrzPackage implements LayrzPackage {
 
   /// [language] is the language of the package.
   @override
-  @PackageLanguageConverter()
+  @JsonKey(unknownEnumValue: PackageLanguage.unknown)
   PackageLanguage get language;
 
   /// [repository] is the repository of the package.

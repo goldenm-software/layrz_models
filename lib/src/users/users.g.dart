@@ -215,6 +215,9 @@ _$UserImpl _$$UserImplFromJson(Map<String, dynamic> json) => _$UserImpl(
       isLocked: json['isLocked'] as bool? ?? false,
       isSuspended: json['isSuspended'] as bool? ?? false,
       hasPaymentWarning: json['hasPaymentWarning'] as bool? ?? false,
+      billingPlan: json['billingPlan'] == null
+          ? null
+          : BillingPlan.fromJson(json['billingPlan'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
@@ -263,6 +266,7 @@ Map<String, dynamic> _$$UserImplToJson(_$UserImpl instance) =>
       'isLocked': instance.isLocked,
       'isSuspended': instance.isSuspended,
       'hasPaymentWarning': instance.hasPaymentWarning,
+      'billingPlan': instance.billingPlan?.toJson(),
     };
 
 _$UserInputImpl _$$UserInputImplFromJson(Map<String, dynamic> json) =>

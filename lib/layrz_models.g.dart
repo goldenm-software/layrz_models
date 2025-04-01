@@ -188,68 +188,11 @@ Map<String, dynamic> _$$AvatarInputImplToJson(_$AvatarInputImpl instance) =>
 _$BillingPlanImpl _$$BillingPlanImplFromJson(Map<String, dynamic> json) =>
     _$BillingPlanImpl(
       id: json['id'] as String,
-      reconnectionPercent: (json['reconnectionPercent'] as num).toDouble(),
-      reconnectionMaximum: (json['reconnectionMaximum'] as num).toInt(),
-      reconnectionIncidents: (json['reconnectionIncidents'] as num).toInt(),
-      maxAssets: (json['maxAssets'] as num).toInt(),
-      maxDevices: (json['maxDevices'] as num).toInt(),
-      maxUsers: (json['maxUsers'] as num).toInt(),
-      maxOutboundServices: (json['maxOutboundServices'] as num).toInt(),
-      maxFunctions: (json['maxFunctions'] as num).toInt(),
-      maxApps: (json['maxApps'] as num).toInt(),
-      allowedAppsIds: (json['allowedAppsIds'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-      allowedAlgorithmsIds: (json['allowedAlgorithmsIds'] as List<dynamic>)
-          .map((e) => e as String)
-          .toList(),
-      allowedInboundProtocolsIds:
-          (json['allowedInboundProtocolsIds'] as List<dynamic>)
-              .map((e) => e as String)
-              .toList(),
-      allowedOutboundProtocolsIds:
-          (json['allowedOutboundProtocolsIds'] as List<dynamic>)
-              .map((e) => e as String)
-              .toList(),
-      allowedVisionProtocolsIds:
-          (json['allowedVisionProtocolsIds'] as List<dynamic>)
-              .map((e) => e as String)
-              .toList(),
-      allowedExchangeProtocolsIds:
-          (json['allowedExchangeProtocolsIds'] as List<dynamic>)
-              .map((e) => e as String)
-              .toList(),
-    );
-
-Map<String, dynamic> _$$BillingPlanImplToJson(_$BillingPlanImpl instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'reconnectionPercent': instance.reconnectionPercent,
-      'reconnectionMaximum': instance.reconnectionMaximum,
-      'reconnectionIncidents': instance.reconnectionIncidents,
-      'maxAssets': instance.maxAssets,
-      'maxDevices': instance.maxDevices,
-      'maxUsers': instance.maxUsers,
-      'maxOutboundServices': instance.maxOutboundServices,
-      'maxFunctions': instance.maxFunctions,
-      'maxApps': instance.maxApps,
-      'allowedAppsIds': instance.allowedAppsIds,
-      'allowedAlgorithmsIds': instance.allowedAlgorithmsIds,
-      'allowedInboundProtocolsIds': instance.allowedInboundProtocolsIds,
-      'allowedOutboundProtocolsIds': instance.allowedOutboundProtocolsIds,
-      'allowedVisionProtocolsIds': instance.allowedVisionProtocolsIds,
-      'allowedExchangeProtocolsIds': instance.allowedExchangeProtocolsIds,
-    };
-
-_$BillingPlanInputImpl _$$BillingPlanInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BillingPlanInputImpl(
-      id: json['id'] as String?,
-      reconnectionIncidents:
-          (json['reconnectionIncidents'] as num?)?.toInt() ?? 0,
       reconnectionPercent:
           (json['reconnectionPercent'] as num?)?.toDouble() ?? 0.0,
       reconnectionMaximum: (json['reconnectionMaximum'] as num?)?.toInt() ?? 0,
+      reconnectionIncidents:
+          (json['reconnectionIncidents'] as num?)?.toInt() ?? 0,
       maxAssets: (json['maxAssets'] as num?)?.toInt() ?? 0,
       maxDevices: (json['maxDevices'] as num?)?.toInt() ?? 0,
       maxUsers: (json['maxUsers'] as num?)?.toInt() ?? 0,
@@ -284,15 +227,15 @@ _$BillingPlanInputImpl _$$BillingPlanInputImplFromJson(
                   ?.map((e) => e as String)
                   .toList() ??
               const [],
+      aiEnabled: json['aiEnabled'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$BillingPlanInputImplToJson(
-        _$BillingPlanInputImpl instance) =>
+Map<String, dynamic> _$$BillingPlanImplToJson(_$BillingPlanImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'reconnectionIncidents': instance.reconnectionIncidents,
       'reconnectionPercent': instance.reconnectionPercent,
       'reconnectionMaximum': instance.reconnectionMaximum,
+      'reconnectionIncidents': instance.reconnectionIncidents,
       'maxAssets': instance.maxAssets,
       'maxDevices': instance.maxDevices,
       'maxUsers': instance.maxUsers,
@@ -305,6 +248,75 @@ Map<String, dynamic> _$$BillingPlanInputImplToJson(
       'allowedOutboundProtocolsIds': instance.allowedOutboundProtocolsIds,
       'allowedVisionProtocolsIds': instance.allowedVisionProtocolsIds,
       'allowedExchangeProtocolsIds': instance.allowedExchangeProtocolsIds,
+      'aiEnabled': instance.aiEnabled,
+    };
+
+_$BillingPlanInputImpl _$$BillingPlanInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BillingPlanInputImpl(
+      id: json['id'] as String?,
+      reconnectionPercent:
+          (json['reconnectionPercent'] as num?)?.toDouble() ?? 0.0,
+      reconnectionMaximum: (json['reconnectionMaximum'] as num?)?.toInt() ?? 0,
+      reconnectionIncidents:
+          (json['reconnectionIncidents'] as num?)?.toInt() ?? 0,
+      maxAssets: (json['maxAssets'] as num?)?.toInt() ?? 0,
+      maxDevices: (json['maxDevices'] as num?)?.toInt() ?? 0,
+      maxUsers: (json['maxUsers'] as num?)?.toInt() ?? 0,
+      maxOutboundServices: (json['maxOutboundServices'] as num?)?.toInt() ?? 0,
+      maxFunctions: (json['maxFunctions'] as num?)?.toInt() ?? 0,
+      maxApps: (json['maxApps'] as num?)?.toInt() ?? 0,
+      allowedAppsIds: (json['allowedAppsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      allowedAlgorithmsIds: (json['allowedAlgorithmsIds'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const [],
+      allowedInboundProtocolsIds:
+          (json['allowedInboundProtocolsIds'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const [],
+      allowedOutboundProtocolsIds:
+          (json['allowedOutboundProtocolsIds'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const [],
+      allowedVisionProtocolsIds:
+          (json['allowedVisionProtocolsIds'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const [],
+      allowedExchangeProtocolsIds:
+          (json['allowedExchangeProtocolsIds'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const [],
+      aiEnabled: json['aiEnabled'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$$BillingPlanInputImplToJson(
+        _$BillingPlanInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'reconnectionPercent': instance.reconnectionPercent,
+      'reconnectionMaximum': instance.reconnectionMaximum,
+      'reconnectionIncidents': instance.reconnectionIncidents,
+      'maxAssets': instance.maxAssets,
+      'maxDevices': instance.maxDevices,
+      'maxUsers': instance.maxUsers,
+      'maxOutboundServices': instance.maxOutboundServices,
+      'maxFunctions': instance.maxFunctions,
+      'maxApps': instance.maxApps,
+      'allowedAppsIds': instance.allowedAppsIds,
+      'allowedAlgorithmsIds': instance.allowedAlgorithmsIds,
+      'allowedInboundProtocolsIds': instance.allowedInboundProtocolsIds,
+      'allowedOutboundProtocolsIds': instance.allowedOutboundProtocolsIds,
+      'allowedVisionProtocolsIds': instance.allowedVisionProtocolsIds,
+      'allowedExchangeProtocolsIds': instance.allowedExchangeProtocolsIds,
+      'aiEnabled': instance.aiEnabled,
     };
 
 _$CareProtocolImpl _$$CareProtocolImplFromJson(Map<String, dynamic> json) =>
@@ -1325,8 +1337,8 @@ _$LayrzPackageImpl _$$LayrzPackageImplFromJson(Map<String, dynamic> json) =>
       version: json['version'] as String,
       languageVersionConstraint: json['languageVersionConstraint'] as String?,
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
-      language:
-          const PackageLanguageConverter().fromJson(json['language'] as String),
+      language: $enumDecode(_$PackageLanguageEnumMap, json['language'],
+          unknownValue: PackageLanguage.unknown),
       repository: json['repository'] as String?,
     );
 
@@ -1337,9 +1349,17 @@ Map<String, dynamic> _$$LayrzPackageImplToJson(_$LayrzPackageImpl instance) =>
       'version': instance.version,
       'languageVersionConstraint': instance.languageVersionConstraint,
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
-      'language': const PackageLanguageConverter().toJson(instance.language),
+      'language': instance.language.toJson(),
       'repository': instance.repository,
     };
+
+const _$PackageLanguageEnumMap = {
+  PackageLanguage.dart: 'DART',
+  PackageLanguage.flutter: 'FLUTTER',
+  PackageLanguage.python: 'PYTHON',
+  PackageLanguage.golang: 'GOLANG',
+  PackageLanguage.unknown: 'UNKNOWN',
+};
 
 _$PresetImpl _$$PresetImplFromJson(Map<String, dynamic> json) => _$PresetImpl(
       id: json['id'] as String,
