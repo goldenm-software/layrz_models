@@ -31,12 +31,8 @@ mixin _$ConfIoTFile {
   List<Map<String, dynamic>>? get configuration =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this ConfIoTFile to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of ConfIoTFile
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $ConfIoTFileCopyWith<ConfIoTFile> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -63,8 +59,6 @@ class _$ConfIoTFileCopyWithImpl<$Res, $Val extends ConfIoTFile>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ConfIoTFile
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -111,8 +105,6 @@ class __$$ConfIoTFileImplCopyWithImpl<$Res>
       _$ConfIoTFileImpl _value, $Res Function(_$ConfIoTFileImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ConfIoTFile
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -201,14 +193,12 @@ class _$ConfIoTFileImpl extends _ConfIoTFile with DiagnosticableTreeMixin {
                 .equals(other._configuration, _configuration));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, namespace, rev,
       const DeepCollectionEquality().hash(_configuration));
 
-  /// Create a copy of ConfIoTFile
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfIoTFileImplCopyWith<_$ConfIoTFileImpl> get copyWith =>
@@ -232,23 +222,21 @@ abstract class _ConfIoTFile extends ConfIoTFile {
   factory _ConfIoTFile.fromJson(Map<String, dynamic> json) =
       _$ConfIoTFileImpl.fromJson;
 
-  /// [namespace] is the namespace of the file.
   @override
+
+  /// [namespace] is the namespace of the file.
   @ConfIoTNamespaceConverter()
   ConfIoTNamespace get namespace;
+  @override
 
   /// [rev] is the revision of the file.
-  @override
   int get rev;
+  @override
 
   /// [configuration] is the configuration of the file.
-  @override
   List<Map<String, dynamic>>? get configuration;
-
-  /// Create a copy of ConfIoTFile
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ConfIoTFileImplCopyWith<_$ConfIoTFileImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -5,6 +5,8 @@ enum AtsPurchaseOrderStatus {
   waitingToDispatch,
   inTransit,
   delivered,
+  readyToOperate,
+  unloadingOperation,
   ;
 
   String toJson() {
@@ -17,6 +19,10 @@ enum AtsPurchaseOrderStatus {
         return 'IN_TRANSIT';
       case AtsPurchaseOrderStatus.delivered:
         return 'DELIVERED';
+      case AtsPurchaseOrderStatus.readyToOperate:
+        return 'READY_TO_OPERATE';
+      case AtsPurchaseOrderStatus.unloadingOperation:
+        return 'UNLOADING_OPERATION';
     }
   }
 
@@ -30,6 +36,10 @@ enum AtsPurchaseOrderStatus {
         return AtsPurchaseOrderStatus.inTransit;
       case 'DELIVERED':
         return AtsPurchaseOrderStatus.delivered;
+      case 'READY_TO_OPERATE':
+        return AtsPurchaseOrderStatus.readyToOperate;
+      case 'UNLOADING_OPERATION':
+        return AtsPurchaseOrderStatus.unloadingOperation;
       default:
         throw Exception('Unknown AtsPurchaseOrderStatus value: $value');
     }
