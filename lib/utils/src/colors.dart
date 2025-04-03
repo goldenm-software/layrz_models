@@ -260,4 +260,6 @@ final Map<String, Color> kVuetifyColors = {
   'white': Colors.white,
   'primary': const Color(0xff001e60),
   'accent': const Color(0xffFF8200),
+  'rebeccapurple': const Color(0xff663399),
+  'rebecca': const Color(0xff663399),
 };
