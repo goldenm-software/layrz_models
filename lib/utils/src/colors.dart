@@ -260,6 +260,7 @@ final Map<String, Color> kVuetifyColors = {
   'white': Colors.white,
   'primary': const Color(0xff001e60),
   'accent': const Color(0xffFF8200),
+  // rebecca purple reference https://medium.com/@valgaze/the-hidden-purple-memorial-in-your-web-browser-7d84813bb416
   'rebeccapurple': const Color(0xff663399),
   'rebecca': const Color(0xff663399),
 };
