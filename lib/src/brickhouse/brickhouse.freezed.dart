@@ -3301,6 +3301,473 @@ abstract class _BrickhouseDriverSafety implements BrickhouseDriverSafety {
       get copyWith => throw _privateConstructorUsedError;
 }
 
+BHSEncodedTrip _$BHSEncodedTripFromJson(Map<String, dynamic> json) {
+  return _BHSEncodedTrip.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BHSEncodedTrip {
+  String get id => throw _privateConstructorUsedError;
+  set id(String value) => throw _privateConstructorUsedError;
+  String get assetId => throw _privateConstructorUsedError;
+  set assetId(String value) => throw _privateConstructorUsedError;
+  String get encodedPolyline => throw _privateConstructorUsedError;
+  set encodedPolyline(String value) => throw _privateConstructorUsedError;
+  int get lineStartUnix => throw _privateConstructorUsedError;
+  set lineStartUnix(int value) => throw _privateConstructorUsedError;
+  int get lineEndUnix => throw _privateConstructorUsedError;
+  set lineEndUnix(int value) => throw _privateConstructorUsedError;
+  double get createdAt => throw _privateConstructorUsedError;
+  set createdAt(double value) => throw _privateConstructorUsedError;
+
+  /// Serializes this BHSEncodedTrip to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BHSEncodedTrip
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BHSEncodedTripCopyWith<BHSEncodedTrip> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BHSEncodedTripCopyWith<$Res> {
+  factory $BHSEncodedTripCopyWith(
+          BHSEncodedTrip value, $Res Function(BHSEncodedTrip) then) =
+      _$BHSEncodedTripCopyWithImpl<$Res, BHSEncodedTrip>;
+  @useResult
+  $Res call(
+      {String id,
+      String assetId,
+      String encodedPolyline,
+      int lineStartUnix,
+      int lineEndUnix,
+      double createdAt});
+}
+
+/// @nodoc
+class _$BHSEncodedTripCopyWithImpl<$Res, $Val extends BHSEncodedTrip>
+    implements $BHSEncodedTripCopyWith<$Res> {
+  _$BHSEncodedTripCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BHSEncodedTrip
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? assetId = null,
+    Object? encodedPolyline = null,
+    Object? lineStartUnix = null,
+    Object? lineEndUnix = null,
+    Object? createdAt = null,
+  }) {
+    return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetId: null == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      encodedPolyline: null == encodedPolyline
+          ? _value.encodedPolyline
+          : encodedPolyline // ignore: cast_nullable_to_non_nullable
+              as String,
+      lineStartUnix: null == lineStartUnix
+          ? _value.lineStartUnix
+          : lineStartUnix // ignore: cast_nullable_to_non_nullable
+              as int,
+      lineEndUnix: null == lineEndUnix
+          ? _value.lineEndUnix
+          : lineEndUnix // ignore: cast_nullable_to_non_nullable
+              as int,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BHSEncodedTripImplCopyWith<$Res>
+    implements $BHSEncodedTripCopyWith<$Res> {
+  factory _$$BHSEncodedTripImplCopyWith(_$BHSEncodedTripImpl value,
+          $Res Function(_$BHSEncodedTripImpl) then) =
+      __$$BHSEncodedTripImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String assetId,
+      String encodedPolyline,
+      int lineStartUnix,
+      int lineEndUnix,
+      double createdAt});
+}
+
+/// @nodoc
+class __$$BHSEncodedTripImplCopyWithImpl<$Res>
+    extends _$BHSEncodedTripCopyWithImpl<$Res, _$BHSEncodedTripImpl>
+    implements _$$BHSEncodedTripImplCopyWith<$Res> {
+  __$$BHSEncodedTripImplCopyWithImpl(
+      _$BHSEncodedTripImpl _value, $Res Function(_$BHSEncodedTripImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BHSEncodedTrip
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? assetId = null,
+    Object? encodedPolyline = null,
+    Object? lineStartUnix = null,
+    Object? lineEndUnix = null,
+    Object? createdAt = null,
+  }) {
+    return _then(_$BHSEncodedTripImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetId: null == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      encodedPolyline: null == encodedPolyline
+          ? _value.encodedPolyline
+          : encodedPolyline // ignore: cast_nullable_to_non_nullable
+              as String,
+      lineStartUnix: null == lineStartUnix
+          ? _value.lineStartUnix
+          : lineStartUnix // ignore: cast_nullable_to_non_nullable
+              as int,
+      lineEndUnix: null == lineEndUnix
+          ? _value.lineEndUnix
+          : lineEndUnix // ignore: cast_nullable_to_non_nullable
+              as int,
+      createdAt: null == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BHSEncodedTripImpl implements _BHSEncodedTrip {
+  const _$BHSEncodedTripImpl(
+      {required this.id,
+      required this.assetId,
+      required this.encodedPolyline,
+      required this.lineStartUnix,
+      required this.lineEndUnix,
+      required this.createdAt});
+
+  factory _$BHSEncodedTripImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BHSEncodedTripImplFromJson(json);
+
+  @override
+  String id;
+  @override
+  String assetId;
+  @override
+  String encodedPolyline;
+  @override
+  int lineStartUnix;
+  @override
+  int lineEndUnix;
+  @override
+  double createdAt;
+
+  @override
+  String toString() {
+    return 'BHSEncodedTrip(id: $id, assetId: $assetId, encodedPolyline: $encodedPolyline, lineStartUnix: $lineStartUnix, lineEndUnix: $lineEndUnix, createdAt: $createdAt)';
+  }
+
+  /// Create a copy of BHSEncodedTrip
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BHSEncodedTripImplCopyWith<_$BHSEncodedTripImpl> get copyWith =>
+      __$$BHSEncodedTripImplCopyWithImpl<_$BHSEncodedTripImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BHSEncodedTripImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BHSEncodedTrip implements BHSEncodedTrip {
+  const factory _BHSEncodedTrip(
+      {required String id,
+      required String assetId,
+      required String encodedPolyline,
+      required int lineStartUnix,
+      required int lineEndUnix,
+      required double createdAt}) = _$BHSEncodedTripImpl;
+
+  factory _BHSEncodedTrip.fromJson(Map<String, dynamic> json) =
+      _$BHSEncodedTripImpl.fromJson;
+
+  @override
+  String get id;
+  set id(String value);
+  @override
+  String get assetId;
+  set assetId(String value);
+  @override
+  String get encodedPolyline;
+  set encodedPolyline(String value);
+  @override
+  int get lineStartUnix;
+  set lineStartUnix(int value);
+  @override
+  int get lineEndUnix;
+  set lineEndUnix(int value);
+  @override
+  double get createdAt;
+  set createdAt(double value);
+
+  /// Create a copy of BHSEncodedTrip
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BHSEncodedTripImplCopyWith<_$BHSEncodedTripImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+BHSEncodedTripInput _$BHSEncodedTripInputFromJson(Map<String, dynamic> json) {
+  return _BHSEncodedTripInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$BHSEncodedTripInput {
+  String get assetId => throw _privateConstructorUsedError;
+  String get encodedPolyline => throw _privateConstructorUsedError;
+  int get lineStartUnix => throw _privateConstructorUsedError;
+  int get lineEndUnix => throw _privateConstructorUsedError;
+
+  /// Serializes this BHSEncodedTripInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of BHSEncodedTripInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $BHSEncodedTripInputCopyWith<BHSEncodedTripInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BHSEncodedTripInputCopyWith<$Res> {
+  factory $BHSEncodedTripInputCopyWith(
+          BHSEncodedTripInput value, $Res Function(BHSEncodedTripInput) then) =
+      _$BHSEncodedTripInputCopyWithImpl<$Res, BHSEncodedTripInput>;
+  @useResult
+  $Res call(
+      {String assetId,
+      String encodedPolyline,
+      int lineStartUnix,
+      int lineEndUnix});
+}
+
+/// @nodoc
+class _$BHSEncodedTripInputCopyWithImpl<$Res, $Val extends BHSEncodedTripInput>
+    implements $BHSEncodedTripInputCopyWith<$Res> {
+  _$BHSEncodedTripInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of BHSEncodedTripInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? assetId = null,
+    Object? encodedPolyline = null,
+    Object? lineStartUnix = null,
+    Object? lineEndUnix = null,
+  }) {
+    return _then(_value.copyWith(
+      assetId: null == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      encodedPolyline: null == encodedPolyline
+          ? _value.encodedPolyline
+          : encodedPolyline // ignore: cast_nullable_to_non_nullable
+              as String,
+      lineStartUnix: null == lineStartUnix
+          ? _value.lineStartUnix
+          : lineStartUnix // ignore: cast_nullable_to_non_nullable
+              as int,
+      lineEndUnix: null == lineEndUnix
+          ? _value.lineEndUnix
+          : lineEndUnix // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$BHSEncodedTripInputImplCopyWith<$Res>
+    implements $BHSEncodedTripInputCopyWith<$Res> {
+  factory _$$BHSEncodedTripInputImplCopyWith(_$BHSEncodedTripInputImpl value,
+          $Res Function(_$BHSEncodedTripInputImpl) then) =
+      __$$BHSEncodedTripInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String assetId,
+      String encodedPolyline,
+      int lineStartUnix,
+      int lineEndUnix});
+}
+
+/// @nodoc
+class __$$BHSEncodedTripInputImplCopyWithImpl<$Res>
+    extends _$BHSEncodedTripInputCopyWithImpl<$Res, _$BHSEncodedTripInputImpl>
+    implements _$$BHSEncodedTripInputImplCopyWith<$Res> {
+  __$$BHSEncodedTripInputImplCopyWithImpl(_$BHSEncodedTripInputImpl _value,
+      $Res Function(_$BHSEncodedTripInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of BHSEncodedTripInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? assetId = null,
+    Object? encodedPolyline = null,
+    Object? lineStartUnix = null,
+    Object? lineEndUnix = null,
+  }) {
+    return _then(_$BHSEncodedTripInputImpl(
+      assetId: null == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      encodedPolyline: null == encodedPolyline
+          ? _value.encodedPolyline
+          : encodedPolyline // ignore: cast_nullable_to_non_nullable
+              as String,
+      lineStartUnix: null == lineStartUnix
+          ? _value.lineStartUnix
+          : lineStartUnix // ignore: cast_nullable_to_non_nullable
+              as int,
+      lineEndUnix: null == lineEndUnix
+          ? _value.lineEndUnix
+          : lineEndUnix // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$BHSEncodedTripInputImpl implements _BHSEncodedTripInput {
+  const _$BHSEncodedTripInputImpl(
+      {required this.assetId,
+      required this.encodedPolyline,
+      required this.lineStartUnix,
+      required this.lineEndUnix});
+
+  factory _$BHSEncodedTripInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$BHSEncodedTripInputImplFromJson(json);
+
+  @override
+  final String assetId;
+  @override
+  final String encodedPolyline;
+  @override
+  final int lineStartUnix;
+  @override
+  final int lineEndUnix;
+
+  @override
+  String toString() {
+    return 'BHSEncodedTripInput(assetId: $assetId, encodedPolyline: $encodedPolyline, lineStartUnix: $lineStartUnix, lineEndUnix: $lineEndUnix)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$BHSEncodedTripInputImpl &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.encodedPolyline, encodedPolyline) ||
+                other.encodedPolyline == encodedPolyline) &&
+            (identical(other.lineStartUnix, lineStartUnix) ||
+                other.lineStartUnix == lineStartUnix) &&
+            (identical(other.lineEndUnix, lineEndUnix) ||
+                other.lineEndUnix == lineEndUnix));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, assetId, encodedPolyline, lineStartUnix, lineEndUnix);
+
+  /// Create a copy of BHSEncodedTripInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$BHSEncodedTripInputImplCopyWith<_$BHSEncodedTripInputImpl> get copyWith =>
+      __$$BHSEncodedTripInputImplCopyWithImpl<_$BHSEncodedTripInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$BHSEncodedTripInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _BHSEncodedTripInput implements BHSEncodedTripInput {
+  const factory _BHSEncodedTripInput(
+      {required final String assetId,
+      required final String encodedPolyline,
+      required final int lineStartUnix,
+      required final int lineEndUnix}) = _$BHSEncodedTripInputImpl;
+
+  factory _BHSEncodedTripInput.fromJson(Map<String, dynamic> json) =
+      _$BHSEncodedTripInputImpl.fromJson;
+
+  @override
+  String get assetId;
+  @override
+  String get encodedPolyline;
+  @override
+  int get lineStartUnix;
+  @override
+  int get lineEndUnix;
+
+  /// Create a copy of BHSEncodedTripInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$BHSEncodedTripInputImplCopyWith<_$BHSEncodedTripInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 BHSPermissionTier _$BHSPermissionTierFromJson(Map<String, dynamic> json) {
   return _BHSPermissionTier.fromJson(json);
 }
