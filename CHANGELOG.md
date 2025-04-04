@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.3.64
+- Added `BHSEncodedTrip` and `BHSEncodedTripInput` models
+
 ## 3.3.63
 
 - Added `I18nKeyHistory` model
