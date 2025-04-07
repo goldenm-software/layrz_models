@@ -3465,7 +3465,7 @@ class __$$BHSEncodedTripImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$BHSEncodedTripImpl implements _BHSEncodedTrip {
-  const _$BHSEncodedTripImpl(
+  _$BHSEncodedTripImpl(
       {required this.id,
       required this.assetId,
       required this.encodedPolyline,
@@ -3512,7 +3512,7 @@ class _$BHSEncodedTripImpl implements _BHSEncodedTrip {
 }
 
 abstract class _BHSEncodedTrip implements BHSEncodedTrip {
-  const factory _BHSEncodedTrip(
+  factory _BHSEncodedTrip(
       {required String id,
       required String assetId,
       required String encodedPolyline,
