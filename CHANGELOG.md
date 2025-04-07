@@ -3,6 +3,7 @@
 ## 3.3.65
 - Added `atsSendOdometerInExecuteExits` in `ReferenceCategory`.
 - Created `AtsEntryInput`
+- Removed `const` in `BHSEncodedTrip` unfreezed
 
 ## 3.3.64
 - Added `BHSEncodedTrip` and `BHSEncodedTripInput` models

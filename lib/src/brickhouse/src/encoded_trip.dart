@@ -20,7 +20,7 @@ part of '../brickhouse.dart';
 /// Unix of creation date.
 @unfreezed
 class BHSEncodedTrip with _$BHSEncodedTrip {
-  const factory BHSEncodedTrip({
+  factory BHSEncodedTrip({
     required String id,
     required String assetId,
     required String encodedPolyline,
