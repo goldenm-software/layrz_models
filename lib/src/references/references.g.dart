@@ -71,6 +71,8 @@ const _$ReferenceCategoryEnumMap = {
   ReferenceCategory.atsTerminalEditTransport: 'ATS_TERMINAL_EDIT_TRANSPORT',
   ReferenceCategory.atsAccessColeta: 'ATS_ACCESS_COLETA',
   ReferenceCategory.atsPaLoadComboio: 'ATS_PA_LOAD_COMBOIO',
+  ReferenceCategory.atsSendOdometerInExecuteExits:
+      'ATS_SEND_ODOMETER_IN_EXECUTE_EXITS',
   ReferenceCategory.mappitOperator: 'MAPPIT_OPERATOR',
   ReferenceCategory.mappitCustomer: 'MAPPIT_CUSTOMER',
   ReferenceCategory.mappitEmployee: 'MAPPIT_EMPLOYEE',

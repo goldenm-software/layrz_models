@@ -12603,6 +12603,599 @@ abstract class _AtsVolume implements AtsVolume {
       throw _privateConstructorUsedError;
 }
 
+AtsEntryInput _$AtsEntryInputFromJson(Map<String, dynamic> json) {
+  return _AtsEntryInput.fromJson(json);
+}
+
+/// @nodoc
+mixin _$AtsEntryInput {
+  /// ID of the entry. Ignore it if you are using the "addLicense" mutation.
+  String? get id => throw _privateConstructorUsedError;
+
+  /// ID of the entry. Ignore it if you are using the "addLicense" mutation.
+  set id(String? value) => throw _privateConstructorUsedError;
+
+  /// ID of the associated asset.
+  String? get assetId => throw _privateConstructorUsedError;
+
+  /// ID of the associated asset.
+  set assetId(String? value) => throw _privateConstructorUsedError;
+
+  /// Initial tank level in the entry.
+  double? get oldTankLevel => throw _privateConstructorUsedError;
+
+  /// Initial tank level in the entry.
+  set oldTankLevel(double? value) => throw _privateConstructorUsedError;
+
+  /// Last tank level in the entry.
+  double? get newTankLevel => throw _privateConstructorUsedError;
+
+  /// Last tank level in the entry.
+  set newTankLevel(double? value) => throw _privateConstructorUsedError;
+
+  /// Initial density of the fuel.
+  double? get initialDensity => throw _privateConstructorUsedError;
+
+  /// Initial density of the fuel.
+  set initialDensity(double? value) => throw _privateConstructorUsedError;
+
+  /// Entry density of the fuel.
+  double? get density => throw _privateConstructorUsedError;
+
+  /// Entry density of the fuel.
+  set density(double? value) => throw _privateConstructorUsedError;
+
+  /// Initial temperature of the fuel.
+  double? get initialTemperature => throw _privateConstructorUsedError;
+
+  /// Initial temperature of the fuel.
+  set initialTemperature(double? value) => throw _privateConstructorUsedError;
+
+  /// Entry temperature of the fuel.
+  double? get temperature => throw _privateConstructorUsedError;
+
+  /// Entry temperature of the fuel.
+  set temperature(double? value) => throw _privateConstructorUsedError;
+
+  /// Initial water level in the tank.
+  double? get initialWaterLevel => throw _privateConstructorUsedError;
+
+  /// Initial water level in the tank.
+  set initialWaterLevel(double? value) => throw _privateConstructorUsedError;
+
+  /// Entry water level in the tank.
+  double? get waterLevel => throw _privateConstructorUsedError;
+
+  /// Entry water level in the tank.
+  set waterLevel(double? value) => throw _privateConstructorUsedError;
+
+  /// Start date of the entry (Unix timestamp).
+  double? get startAt => throw _privateConstructorUsedError;
+
+  /// Start date of the entry (Unix timestamp).
+  set startAt(double? value) => throw _privateConstructorUsedError;
+
+  /// End date of the entry (Unix timestamp).
+  double? get endAt => throw _privateConstructorUsedError;
+
+  /// End date of the entry (Unix timestamp).
+  set endAt(double? value) => throw _privateConstructorUsedError;
+
+  /// Initial height of the fuel in the tank.
+  double? get initialHeight => throw _privateConstructorUsedError;
+
+  /// Initial height of the fuel in the tank.
+  set initialHeight(double? value) => throw _privateConstructorUsedError;
+
+  /// Entry height of the fuel in the tank.
+  double? get height => throw _privateConstructorUsedError;
+
+  /// Entry height of the fuel in the tank.
+  set height(double? value) => throw _privateConstructorUsedError;
+
+  /// **Deprecated**. Do not use it; the API determines the fuel type from `assetId`.
+  @Deprecated("Dont use it, Api search fuelType from assetId")
+  String? get fuelType => throw _privateConstructorUsedError;
+
+  /// **Deprecated**. Do not use it; the API determines the fuel type from `assetId`.
+  @Deprecated("Dont use it, Api search fuelType from assetId")
+  set fuelType(String? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AtsEntryInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of AtsEntryInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $AtsEntryInputCopyWith<AtsEntryInput> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AtsEntryInputCopyWith<$Res> {
+  factory $AtsEntryInputCopyWith(
+          AtsEntryInput value, $Res Function(AtsEntryInput) then) =
+      _$AtsEntryInputCopyWithImpl<$Res, AtsEntryInput>;
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      double? oldTankLevel,
+      double? newTankLevel,
+      double? initialDensity,
+      double? density,
+      double? initialTemperature,
+      double? temperature,
+      double? initialWaterLevel,
+      double? waterLevel,
+      double? startAt,
+      double? endAt,
+      double? initialHeight,
+      double? height,
+      @Deprecated("Dont use it, Api search fuelType from assetId")
+      String? fuelType});
+}
+
+/// @nodoc
+class _$AtsEntryInputCopyWithImpl<$Res, $Val extends AtsEntryInput>
+    implements $AtsEntryInputCopyWith<$Res> {
+  _$AtsEntryInputCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of AtsEntryInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? oldTankLevel = freezed,
+    Object? newTankLevel = freezed,
+    Object? initialDensity = freezed,
+    Object? density = freezed,
+    Object? initialTemperature = freezed,
+    Object? temperature = freezed,
+    Object? initialWaterLevel = freezed,
+    Object? waterLevel = freezed,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? initialHeight = freezed,
+    Object? height = freezed,
+    Object? fuelType = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      oldTankLevel: freezed == oldTankLevel
+          ? _value.oldTankLevel
+          : oldTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      newTankLevel: freezed == newTankLevel
+          ? _value.newTankLevel
+          : newTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialDensity: freezed == initialDensity
+          ? _value.initialDensity
+          : initialDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      density: freezed == density
+          ? _value.density
+          : density // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialTemperature: freezed == initialTemperature
+          ? _value.initialTemperature
+          : initialTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      temperature: freezed == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialWaterLevel: freezed == initialWaterLevel
+          ? _value.initialWaterLevel
+          : initialWaterLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      waterLevel: freezed == waterLevel
+          ? _value.waterLevel
+          : waterLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialHeight: freezed == initialHeight
+          ? _value.initialHeight
+          : initialHeight // ignore: cast_nullable_to_non_nullable
+              as double?,
+      height: freezed == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+      fuelType: freezed == fuelType
+          ? _value.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AtsEntryInputImplCopyWith<$Res>
+    implements $AtsEntryInputCopyWith<$Res> {
+  factory _$$AtsEntryInputImplCopyWith(
+          _$AtsEntryInputImpl value, $Res Function(_$AtsEntryInputImpl) then) =
+      __$$AtsEntryInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      double? oldTankLevel,
+      double? newTankLevel,
+      double? initialDensity,
+      double? density,
+      double? initialTemperature,
+      double? temperature,
+      double? initialWaterLevel,
+      double? waterLevel,
+      double? startAt,
+      double? endAt,
+      double? initialHeight,
+      double? height,
+      @Deprecated("Dont use it, Api search fuelType from assetId")
+      String? fuelType});
+}
+
+/// @nodoc
+class __$$AtsEntryInputImplCopyWithImpl<$Res>
+    extends _$AtsEntryInputCopyWithImpl<$Res, _$AtsEntryInputImpl>
+    implements _$$AtsEntryInputImplCopyWith<$Res> {
+  __$$AtsEntryInputImplCopyWithImpl(
+      _$AtsEntryInputImpl _value, $Res Function(_$AtsEntryInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AtsEntryInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? oldTankLevel = freezed,
+    Object? newTankLevel = freezed,
+    Object? initialDensity = freezed,
+    Object? density = freezed,
+    Object? initialTemperature = freezed,
+    Object? temperature = freezed,
+    Object? initialWaterLevel = freezed,
+    Object? waterLevel = freezed,
+    Object? startAt = freezed,
+    Object? endAt = freezed,
+    Object? initialHeight = freezed,
+    Object? height = freezed,
+    Object? fuelType = freezed,
+  }) {
+    return _then(_$AtsEntryInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      oldTankLevel: freezed == oldTankLevel
+          ? _value.oldTankLevel
+          : oldTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      newTankLevel: freezed == newTankLevel
+          ? _value.newTankLevel
+          : newTankLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialDensity: freezed == initialDensity
+          ? _value.initialDensity
+          : initialDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      density: freezed == density
+          ? _value.density
+          : density // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialTemperature: freezed == initialTemperature
+          ? _value.initialTemperature
+          : initialTemperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      temperature: freezed == temperature
+          ? _value.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialWaterLevel: freezed == initialWaterLevel
+          ? _value.initialWaterLevel
+          : initialWaterLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      waterLevel: freezed == waterLevel
+          ? _value.waterLevel
+          : waterLevel // ignore: cast_nullable_to_non_nullable
+              as double?,
+      startAt: freezed == startAt
+          ? _value.startAt
+          : startAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      endAt: freezed == endAt
+          ? _value.endAt
+          : endAt // ignore: cast_nullable_to_non_nullable
+              as double?,
+      initialHeight: freezed == initialHeight
+          ? _value.initialHeight
+          : initialHeight // ignore: cast_nullable_to_non_nullable
+              as double?,
+      height: freezed == height
+          ? _value.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+      fuelType: freezed == fuelType
+          ? _value.fuelType
+          : fuelType // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$AtsEntryInputImpl implements _AtsEntryInput {
+  _$AtsEntryInputImpl(
+      {this.id,
+      this.assetId,
+      this.oldTankLevel,
+      this.newTankLevel,
+      this.initialDensity,
+      this.density,
+      this.initialTemperature,
+      this.temperature,
+      this.initialWaterLevel,
+      this.waterLevel,
+      this.startAt,
+      this.endAt,
+      this.initialHeight,
+      this.height,
+      @Deprecated("Dont use it, Api search fuelType from assetId")
+      this.fuelType});
+
+  factory _$AtsEntryInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AtsEntryInputImplFromJson(json);
+
+  /// ID of the entry. Ignore it if you are using the "addLicense" mutation.
+  @override
+  String? id;
+
+  /// ID of the associated asset.
+  @override
+  String? assetId;
+
+  /// Initial tank level in the entry.
+  @override
+  double? oldTankLevel;
+
+  /// Last tank level in the entry.
+  @override
+  double? newTankLevel;
+
+  /// Initial density of the fuel.
+  @override
+  double? initialDensity;
+
+  /// Entry density of the fuel.
+  @override
+  double? density;
+
+  /// Initial temperature of the fuel.
+  @override
+  double? initialTemperature;
+
+  /// Entry temperature of the fuel.
+  @override
+  double? temperature;
+
+  /// Initial water level in the tank.
+  @override
+  double? initialWaterLevel;
+
+  /// Entry water level in the tank.
+  @override
+  double? waterLevel;
+
+  /// Start date of the entry (Unix timestamp).
+  @override
+  double? startAt;
+
+  /// End date of the entry (Unix timestamp).
+  @override
+  double? endAt;
+
+  /// Initial height of the fuel in the tank.
+  @override
+  double? initialHeight;
+
+  /// Entry height of the fuel in the tank.
+  @override
+  double? height;
+
+  /// **Deprecated**. Do not use it; the API determines the fuel type from `assetId`.
+  @override
+  @Deprecated("Dont use it, Api search fuelType from assetId")
+  String? fuelType;
+
+  @override
+  String toString() {
+    return 'AtsEntryInput(id: $id, assetId: $assetId, oldTankLevel: $oldTankLevel, newTankLevel: $newTankLevel, initialDensity: $initialDensity, density: $density, initialTemperature: $initialTemperature, temperature: $temperature, initialWaterLevel: $initialWaterLevel, waterLevel: $waterLevel, startAt: $startAt, endAt: $endAt, initialHeight: $initialHeight, height: $height, fuelType: $fuelType)';
+  }
+
+  /// Create a copy of AtsEntryInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AtsEntryInputImplCopyWith<_$AtsEntryInputImpl> get copyWith =>
+      __$$AtsEntryInputImplCopyWithImpl<_$AtsEntryInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AtsEntryInputImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _AtsEntryInput implements AtsEntryInput {
+  factory _AtsEntryInput(
+      {String? id,
+      String? assetId,
+      double? oldTankLevel,
+      double? newTankLevel,
+      double? initialDensity,
+      double? density,
+      double? initialTemperature,
+      double? temperature,
+      double? initialWaterLevel,
+      double? waterLevel,
+      double? startAt,
+      double? endAt,
+      double? initialHeight,
+      double? height,
+      @Deprecated("Dont use it, Api search fuelType from assetId")
+      String? fuelType}) = _$AtsEntryInputImpl;
+
+  factory _AtsEntryInput.fromJson(Map<String, dynamic> json) =
+      _$AtsEntryInputImpl.fromJson;
+
+  /// ID of the entry. Ignore it if you are using the "addLicense" mutation.
+  @override
+  String? get id;
+
+  /// ID of the entry. Ignore it if you are using the "addLicense" mutation.
+  set id(String? value);
+
+  /// ID of the associated asset.
+  @override
+  String? get assetId;
+
+  /// ID of the associated asset.
+  set assetId(String? value);
+
+  /// Initial tank level in the entry.
+  @override
+  double? get oldTankLevel;
+
+  /// Initial tank level in the entry.
+  set oldTankLevel(double? value);
+
+  /// Last tank level in the entry.
+  @override
+  double? get newTankLevel;
+
+  /// Last tank level in the entry.
+  set newTankLevel(double? value);
+
+  /// Initial density of the fuel.
+  @override
+  double? get initialDensity;
+
+  /// Initial density of the fuel.
+  set initialDensity(double? value);
+
+  /// Entry density of the fuel.
+  @override
+  double? get density;
+
+  /// Entry density of the fuel.
+  set density(double? value);
+
+  /// Initial temperature of the fuel.
+  @override
+  double? get initialTemperature;
+
+  /// Initial temperature of the fuel.
+  set initialTemperature(double? value);
+
+  /// Entry temperature of the fuel.
+  @override
+  double? get temperature;
+
+  /// Entry temperature of the fuel.
+  set temperature(double? value);
+
+  /// Initial water level in the tank.
+  @override
+  double? get initialWaterLevel;
+
+  /// Initial water level in the tank.
+  set initialWaterLevel(double? value);
+
+  /// Entry water level in the tank.
+  @override
+  double? get waterLevel;
+
+  /// Entry water level in the tank.
+  set waterLevel(double? value);
+
+  /// Start date of the entry (Unix timestamp).
+  @override
+  double? get startAt;
+
+  /// Start date of the entry (Unix timestamp).
+  set startAt(double? value);
+
+  /// End date of the entry (Unix timestamp).
+  @override
+  double? get endAt;
+
+  /// End date of the entry (Unix timestamp).
+  set endAt(double? value);
+
+  /// Initial height of the fuel in the tank.
+  @override
+  double? get initialHeight;
+
+  /// Initial height of the fuel in the tank.
+  set initialHeight(double? value);
+
+  /// Entry height of the fuel in the tank.
+  @override
+  double? get height;
+
+  /// Entry height of the fuel in the tank.
+  set height(double? value);
+
+  /// **Deprecated**. Do not use it; the API determines the fuel type from `assetId`.
+  @override
+  @Deprecated("Dont use it, Api search fuelType from assetId")
+  String? get fuelType;
+
+  /// **Deprecated**. Do not use it; the API determines the fuel type from `assetId`.
+  @Deprecated("Dont use it, Api search fuelType from assetId")
+  set fuelType(String? value);
+
+  /// Create a copy of AtsEntryInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AtsEntryInputImplCopyWith<_$AtsEntryInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
 AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) {
   return _AtsOperation.fromJson(json);
 }

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.65
+- Added `atsSendOdometerInExecuteExits` in `ReferenceCategory`.
+- Created `AtsEntryInput`
+
 ## 3.3.64
 - Added `BHSEncodedTrip` and `BHSEncodedTripInput` models
 

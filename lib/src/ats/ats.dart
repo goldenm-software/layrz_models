@@ -43,6 +43,7 @@ part 'src/exits/execute_exit_history.dart';
 // ATS Entries Models
 part 'src/entries/entry.dart';
 part 'src/entries/volume.dart';
+part 'src/entries/entry_input.dart';
 
 // ATS Operations Models
 part 'src/operations/operation.dart';
