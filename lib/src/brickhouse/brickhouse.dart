@@ -11,5 +11,6 @@ part 'brickhouse.g.dart';
 // Modules
 part 'src/alert.dart';
 part 'src/driver_safety.dart';
+part 'src/encoded_trip.dart';
 part 'src/permission_tier.dart';
 part 'src/workspace.dart';

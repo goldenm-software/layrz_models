@@ -338,6 +338,45 @@ Map<String, dynamic> _$$BrickhouseDriverSafetyImplToJson(
       'drivingEvents': instance.drivingEvents?.toJson(),
     };
 
+_$BHSEncodedTripImpl _$$BHSEncodedTripImplFromJson(Map<String, dynamic> json) =>
+    _$BHSEncodedTripImpl(
+      id: json['id'] as String,
+      assetId: json['assetId'] as String,
+      encodedPolyline: json['encodedPolyline'] as String,
+      lineStartUnix: (json['lineStartUnix'] as num).toInt(),
+      lineEndUnix: (json['lineEndUnix'] as num).toInt(),
+      createdAt: (json['createdAt'] as num).toDouble(),
+    );
+
+Map<String, dynamic> _$$BHSEncodedTripImplToJson(
+        _$BHSEncodedTripImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'assetId': instance.assetId,
+      'encodedPolyline': instance.encodedPolyline,
+      'lineStartUnix': instance.lineStartUnix,
+      'lineEndUnix': instance.lineEndUnix,
+      'createdAt': instance.createdAt,
+    };
+
+_$BHSEncodedTripInputImpl _$$BHSEncodedTripInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BHSEncodedTripInputImpl(
+      assetId: json['assetId'] as String,
+      encodedPolyline: json['encodedPolyline'] as String,
+      lineStartUnix: (json['lineStartUnix'] as num).toInt(),
+      lineEndUnix: (json['lineEndUnix'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$$BHSEncodedTripInputImplToJson(
+        _$BHSEncodedTripInputImpl instance) =>
+    <String, dynamic>{
+      'assetId': instance.assetId,
+      'encodedPolyline': instance.encodedPolyline,
+      'lineStartUnix': instance.lineStartUnix,
+      'lineEndUnix': instance.lineEndUnix,
+    };
+
 _$BHSPermissionTierImpl _$$BHSPermissionTierImplFromJson(
         Map<String, dynamic> json) =>
     _$BHSPermissionTierImpl(

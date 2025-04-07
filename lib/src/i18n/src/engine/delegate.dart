@@ -1,4 +1,4 @@
-part of '../i18n.dart';
+part of '../../i18n.dart';
 
 class LayrzAppLocalizations {
   /// [languages] is the list of languages
@@ -70,15 +70,18 @@ class LayrzAppLocalizations {
     }
 
     if (prevLocale != null) {
-      currentLocale = supportedLocales.firstWhereOrNull((locale) => locale == prevLocale);
+      currentLocale =
+          supportedLocales.firstWhereOrNull((locale) => locale == prevLocale);
       currentLocale ??= supportedLocales.firstWhereOrNull((locale) {
         return locale.languageCode == prevLocale!.languageCode;
       });
     }
 
     final detectedLocale = LayrzAppLocalizations.detectedLocale;
-    debugPrint("layrz_models/i18n/getClosestLocale(): detectedLocale: $detectedLocale");
-    currentLocale ??= supportedLocales.firstWhereOrNull((locale) => locale == detectedLocale);
+    debugPrint(
+        "layrz_models/i18n/getClosestLocale(): detectedLocale: $detectedLocale");
+    currentLocale ??=
+        supportedLocales.firstWhereOrNull((locale) => locale == detectedLocale);
     currentLocale ??= supportedLocales.firstWhereOrNull((locale) {
       return locale.languageCode == detectedLocale.languageCode;
     });
@@ -92,18 +95,21 @@ class LayrzAppLocalizations {
   /// [of] is used to get the current instance of the LayrzAppLocalizations
   static LayrzAppLocalizations of(BuildContext context) {
     assert(debugCheckHasLayrzAppLocalizations(context));
-    return Localizations.of<LayrzAppLocalizations>(context, LayrzAppLocalizations)!;
+    return Localizations.of<LayrzAppLocalizations>(
+        context, LayrzAppLocalizations)!;
   }
 
   /// [maybeOf] is used to get the current instance of the LayrzAppLocalizations
   /// If the instance is not found, it will return null
   static LayrzAppLocalizations? maybeOf(BuildContext context) {
-    return Localizations.of<LayrzAppLocalizations>(context, LayrzAppLocalizations);
+    return Localizations.of<LayrzAppLocalizations>(
+        context, LayrzAppLocalizations);
   }
 
   Map<String, dynamic> get _defaultTranslations => {
         'helpers.error.disaster': "We are sorry, but something went wrong",
-        'errors.not_found': "We are sorry, but the object you are looking for does not exist",
+        'errors.not_found':
+            "We are sorry, but the object you are looking for does not exist",
       };
 
   Map<String, String> _messages = {};
@@ -111,10 +117,12 @@ class LayrzAppLocalizations {
 
   /// [load] is used to load the translations for the current locale
   Future<bool> load() async {
-    final lang = languages.firstWhereOrNull((lang) => lang?.getLocale() == locale);
+    final lang =
+        languages.firstWhereOrNull((lang) => lang?.getLocale() == locale);
     _messages = lang?.messages ?? {};
 
-    final fallbackLang = languages.firstWhereOrNull((lang) => lang?.getLocale() == fallbackLocale);
+    final fallbackLang = languages
+        .firstWhereOrNull((lang) => lang?.getLocale() == fallbackLocale);
     _fallback = fallbackLang?.messages ?? {};
 
     return true;
@@ -142,8 +150,10 @@ class LayrzAppLocalizations {
   /// The translated string
   /// Note: If the translation is not found, it will return the "Translation missing $key" string
   /// Also, if the developer mode is on, it will return the key and the arguments as a json string
-  @Deprecated('`translate()` was deprecated in favor of `t()`. Please use `t()` instead.')
-  String translate(String key, [Map<String, dynamic> args = const {}]) => t(key, args);
+  @Deprecated(
+      '`translate()` was deprecated in favor of `t()`. Please use `t()` instead.')
+  String translate(String key, [Map<String, dynamic> args = const {}]) =>
+      t(key, args);
 
   /// [t] is used to translate a string
   ///
@@ -160,7 +170,10 @@ class LayrzAppLocalizations {
       return '$key : ${jsonEncode(args)}';
     }
 
-    String res = _messages[key] ?? _fallback[key] ?? _defaultTranslations[key] ?? "Translation missing $key";
+    String res = _messages[key] ??
+        _fallback[key] ??
+        _defaultTranslations[key] ??
+        "Translation missing $key";
 
     args.forEach((key, value) {
       res = res.replaceAll('{$key}', "$value");
@@ -271,14 +284,16 @@ class LayrzAppLocalizations {
   }) {
     if (developerMode) {
       return TextSpan(
-        text: '$key : args: ${jsonEncode(args)} | richArgs.keys: ${richArgs.keys}',
+        text:
+            '$key : args: ${jsonEncode(args)} | richArgs.keys: ${richArgs.keys}',
         style: style,
       );
     }
 
     String baseText = t(key, args);
 
-    final items = _deepReplace(items: [baseText], richArgs: richArgs, style: style);
+    final items =
+        _deepReplace(items: [baseText], richArgs: richArgs, style: style);
 
     return TextSpan(
       children: items
@@ -361,14 +376,16 @@ class LayrzAppLocalizations {
   }) {
     if (developerMode) {
       return TextSpan(
-        text: '$key | $val : args: ${jsonEncode(args)} | richArgs.keys: ${richArgs.keys}',
+        text:
+            '$key | $val : args: ${jsonEncode(args)} | richArgs.keys: ${richArgs.keys}',
         style: style,
       );
     }
 
     String baseText = tc(key, val, args);
 
-    final items = _deepReplace(items: [baseText], richArgs: richArgs, style: style);
+    final items =
+        _deepReplace(items: [baseText], richArgs: richArgs, style: style);
 
     return TextSpan(
       children: items
@@ -450,7 +467,8 @@ class LayrzAppLocalizations {
 
 // LocalizationsDelegate is a factory for a set of localized resources
 // In this case, the localized strings will be gotten in an AppLocalizations object
-class LayrzAppLocalizationsDelegate extends LocalizationsDelegate<LayrzAppLocalizations> {
+class LayrzAppLocalizationsDelegate
+    extends LocalizationsDelegate<LayrzAppLocalizations> {
   Locale? currentLocale;
   final List<AvailableLanguage?> languages;
   final List<Locale> supportedLocales;
@@ -487,8 +505,11 @@ class LayrzAppLocalizationsDelegate extends LocalizationsDelegate<LayrzAppLocali
 
 bool debugCheckHasLayrzAppLocalizations(BuildContext context) {
   assert(() {
-    if (Localizations.of<LayrzAppLocalizations>(context, LayrzAppLocalizations) == null) {
-      throw FlutterError('LayrzAppLocalizations was used before it was initialized');
+    if (Localizations.of<LayrzAppLocalizations>(
+            context, LayrzAppLocalizations) ==
+        null) {
+      throw FlutterError(
+          'LayrzAppLocalizations was used before it was initialized');
     }
     return true;
   }());

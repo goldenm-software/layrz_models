@@ -49,8 +49,12 @@ mixin _$SdmPen {
   /// [updatedBy] is the user id who updated the pen.
   User? get updatedBy => throw _privateConstructorUsedError;
 
+  /// Serializes this SdmPen to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SdmPen
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SdmPenCopyWith<SdmPen> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -85,6 +89,8 @@ class _$SdmPenCopyWithImpl<$Res, $Val extends SdmPen>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SdmPen
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -138,6 +144,8 @@ class _$SdmPenCopyWithImpl<$Res, $Val extends SdmPen>
     ) as $Val);
   }
 
+  /// Create a copy of SdmPen
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DeviceCopyWith<$Res>? get source {
@@ -150,6 +158,8 @@ class _$SdmPenCopyWithImpl<$Res, $Val extends SdmPen>
     });
   }
 
+  /// Create a copy of SdmPen
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get createdBy {
@@ -162,6 +172,8 @@ class _$SdmPenCopyWithImpl<$Res, $Val extends SdmPen>
     });
   }
 
+  /// Create a copy of SdmPen
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get updatedBy {
@@ -209,6 +221,8 @@ class __$$SdmPenImplCopyWithImpl<$Res>
       _$SdmPenImpl _value, $Res Function(_$SdmPenImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SdmPen
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -344,12 +358,14 @@ class _$SdmPenImpl implements _SdmPen {
                 other.updatedBy == updatedBy));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, code, sourceId, source,
       createdAt, createdBy, updatedAt, updatedBy);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SdmPen
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SdmPenImplCopyWith<_$SdmPenImpl> get copyWith =>
@@ -377,46 +393,48 @@ abstract class _SdmPen implements SdmPen {
 
   factory _SdmPen.fromJson(Map<String, dynamic> json) = _$SdmPenImpl.fromJson;
 
-  @override
-
   /// [id] of the pen entity. This ID is unique.
-  String get id;
   @override
+  String get id;
 
   /// [name] of the pen.
-  String get name;
   @override
+  String get name;
 
   /// [code] of the pen.
-  String get code;
   @override
+  String get code;
 
   /// [sourceId] is the device id of the pen.
-  String? get sourceId;
   @override
+  String? get sourceId;
 
   /// [source] is the device of the pen.
-  Device? get source;
   @override
+  Device? get source;
 
   /// [createdAt] is the creation date of the pen.
+  @override
   @TimestampOrNullConverter()
   DateTime? get createdAt;
-  @override
 
   /// [createdBy] is the user id who created the pen.
-  User? get createdBy;
   @override
+  User? get createdBy;
 
   /// [updatedAt] is the last update date of the pen.
+  @override
   @TimestampOrNullConverter()
   DateTime? get updatedAt;
-  @override
 
   /// [updatedBy] is the user id who updated the pen.
-  User? get updatedBy;
   @override
-  @JsonKey(ignore: true)
+  User? get updatedBy;
+
+  /// Create a copy of SdmPen
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SdmPenImplCopyWith<_$SdmPenImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -462,8 +480,12 @@ mixin _$SdmRecipe {
   /// [ingredientsIds] is the list of ingredients ids of the recipe.
   List<String>? get ingredientsIds => throw _privateConstructorUsedError;
 
+  /// Serializes this SdmRecipe to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SdmRecipe
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SdmRecipeCopyWith<SdmRecipe> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -501,6 +523,8 @@ class _$SdmRecipeCopyWithImpl<$Res, $Val extends SdmRecipe>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SdmRecipe
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -564,6 +588,8 @@ class _$SdmRecipeCopyWithImpl<$Res, $Val extends SdmRecipe>
     ) as $Val);
   }
 
+  /// Create a copy of SdmRecipe
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DeviceCopyWith<$Res>? get source {
@@ -576,6 +602,8 @@ class _$SdmRecipeCopyWithImpl<$Res, $Val extends SdmRecipe>
     });
   }
 
+  /// Create a copy of SdmRecipe
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get createdBy {
@@ -588,6 +616,8 @@ class _$SdmRecipeCopyWithImpl<$Res, $Val extends SdmRecipe>
     });
   }
 
+  /// Create a copy of SdmRecipe
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get updatedBy {
@@ -638,6 +668,8 @@ class __$$SdmRecipeImplCopyWithImpl<$Res>
       _$SdmRecipeImpl _value, $Res Function(_$SdmRecipeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SdmRecipe
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -817,7 +849,7 @@ class _$SdmRecipeImpl implements _SdmRecipe {
                 .equals(other._ingredientsIds, _ingredientsIds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -833,7 +865,9 @@ class _$SdmRecipeImpl implements _SdmRecipe {
       const DeepCollectionEquality().hash(_ingredients),
       const DeepCollectionEquality().hash(_ingredientsIds));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SdmRecipe
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SdmRecipeImplCopyWith<_$SdmRecipeImpl> get copyWith =>
@@ -864,54 +898,56 @@ abstract class _SdmRecipe implements SdmRecipe {
   factory _SdmRecipe.fromJson(Map<String, dynamic> json) =
       _$SdmRecipeImpl.fromJson;
 
-  @override
-
   /// [id] of the pen entity. This ID is unique.
-  String get id;
   @override
+  String get id;
 
   /// [name] of the pen.
-  String get name;
   @override
+  String get name;
 
   /// [code] of the pen.
-  String get code;
   @override
+  String get code;
 
   /// [sourceId] is the device id of the pen.
-  String? get sourceId;
   @override
+  String? get sourceId;
 
   /// [source] is the device of the pen.
-  Device? get source;
   @override
+  Device? get source;
 
   /// [createdAt] is the creation date of the pen.
+  @override
   @TimestampOrNullConverter()
   DateTime? get createdAt;
-  @override
 
   /// [createdBy] is the user id who created the pen.
-  User? get createdBy;
   @override
+  User? get createdBy;
 
   /// [updatedAt] is the last update date of the pen.
+  @override
   @TimestampOrNullConverter()
   DateTime? get updatedAt;
-  @override
 
   /// [updatedBy] is the user id who updated the pen.
-  User? get updatedBy;
   @override
+  User? get updatedBy;
 
   /// [ingredients] is the list of ingredients of the recipe.
-  List<SdmIngredient>? get ingredients;
   @override
+  List<SdmIngredient>? get ingredients;
 
   /// [ingredientsIds] is the list of ingredients ids of the recipe.
-  List<String>? get ingredientsIds;
   @override
-  @JsonKey(ignore: true)
+  List<String>? get ingredientsIds;
+
+  /// Create a copy of SdmRecipe
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SdmRecipeImplCopyWith<_$SdmRecipeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -963,8 +999,12 @@ mixin _$SdmIngredient {
   /// [updatedBy] is the user id who updated the pen.
   User? get updatedBy => throw _privateConstructorUsedError;
 
+  /// Serializes this SdmIngredient to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SdmIngredient
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SdmIngredientCopyWith<SdmIngredient> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1005,6 +1045,8 @@ class _$SdmIngredientCopyWithImpl<$Res, $Val extends SdmIngredient>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SdmIngredient
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1078,6 +1120,8 @@ class _$SdmIngredientCopyWithImpl<$Res, $Val extends SdmIngredient>
     ) as $Val);
   }
 
+  /// Create a copy of SdmIngredient
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DeviceCopyWith<$Res>? get source {
@@ -1090,6 +1134,8 @@ class _$SdmIngredientCopyWithImpl<$Res, $Val extends SdmIngredient>
     });
   }
 
+  /// Create a copy of SdmIngredient
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get createdBy {
@@ -1102,6 +1148,8 @@ class _$SdmIngredientCopyWithImpl<$Res, $Val extends SdmIngredient>
     });
   }
 
+  /// Create a copy of SdmIngredient
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get updatedBy {
@@ -1154,6 +1202,8 @@ class __$$SdmIngredientImplCopyWithImpl<$Res>
       _$SdmIngredientImpl _value, $Res Function(_$SdmIngredientImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SdmIngredient
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1337,7 +1387,7 @@ class _$SdmIngredientImpl implements _SdmIngredient {
                 other.updatedBy == updatedBy));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1355,7 +1405,9 @@ class _$SdmIngredientImpl implements _SdmIngredient {
       updatedAt,
       updatedBy);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SdmIngredient
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SdmIngredientImplCopyWith<_$SdmIngredientImpl> get copyWith =>
@@ -1388,62 +1440,64 @@ abstract class _SdmIngredient implements SdmIngredient {
   factory _SdmIngredient.fromJson(Map<String, dynamic> json) =
       _$SdmIngredientImpl.fromJson;
 
-  @override
-
   /// [id] of the pen entity. This ID is unique.
-  String get id;
   @override
+  String get id;
 
   /// [name] of the pen.
-  String get name;
   @override
+  String get name;
 
   /// [code] of the pen.
-  String get code;
   @override
+  String get code;
 
   /// [pricePerKg] is the price of the ingredient per kilogram.
-  double? get pricePerKg;
   @override
+  double? get pricePerKg;
 
   /// [dryFactor] is the dry factor of the ingredient.
-  double? get dryFactor;
   @override
+  double? get dryFactor;
 
   /// [priceByDry] indicates if the price should be calculated using dry or wet weight.
-  bool? get priceByDry;
   @override
+  bool? get priceByDry;
 
   /// [isArchived] is the status of the pen.
-  bool? get isArchived;
   @override
+  bool? get isArchived;
 
   /// [sourceId] is the device id of the pen.
-  String? get sourceId;
   @override
+  String? get sourceId;
 
   /// [source] is the device of the pen.
-  Device? get source;
   @override
+  Device? get source;
 
   /// [createdAt] is the creation date of the pen.
+  @override
   @TimestampOrNullConverter()
   DateTime? get createdAt;
-  @override
 
   /// [createdBy] is the user id who created the pen.
-  User? get createdBy;
   @override
+  User? get createdBy;
 
   /// [updatedAt] is the last update date of the pen.
+  @override
   @TimestampOrNullConverter()
   DateTime? get updatedAt;
-  @override
 
   /// [updatedBy] is the user id who updated the pen.
-  User? get updatedBy;
   @override
-  @JsonKey(ignore: true)
+  User? get updatedBy;
+
+  /// Create a copy of SdmIngredient
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SdmIngredientImplCopyWith<_$SdmIngredientImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1477,8 +1531,12 @@ mixin _$SdmOperator {
   /// [updatedBy] is the user id who updated the pen.
   User? get updatedBy => throw _privateConstructorUsedError;
 
+  /// Serializes this SdmOperator to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of SdmOperator
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SdmOperatorCopyWith<SdmOperator> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1512,6 +1570,8 @@ class _$SdmOperatorCopyWithImpl<$Res, $Val extends SdmOperator>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SdmOperator
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1555,6 +1615,8 @@ class _$SdmOperatorCopyWithImpl<$Res, $Val extends SdmOperator>
     ) as $Val);
   }
 
+  /// Create a copy of SdmOperator
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get createdBy {
@@ -1567,6 +1629,8 @@ class _$SdmOperatorCopyWithImpl<$Res, $Val extends SdmOperator>
     });
   }
 
+  /// Create a copy of SdmOperator
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get updatedBy {
@@ -1611,6 +1675,8 @@ class __$$SdmOperatorImplCopyWithImpl<$Res>
       _$SdmOperatorImpl _value, $Res Function(_$SdmOperatorImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SdmOperator
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1723,12 +1789,14 @@ class _$SdmOperatorImpl implements _SdmOperator {
                 other.updatedBy == updatedBy));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, name, code, createdAt, createdBy, updatedAt, updatedBy);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SdmOperator
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SdmOperatorImplCopyWith<_$SdmOperatorImpl> get copyWith =>
@@ -1755,38 +1823,40 @@ abstract class _SdmOperator implements SdmOperator {
   factory _SdmOperator.fromJson(Map<String, dynamic> json) =
       _$SdmOperatorImpl.fromJson;
 
-  @override
-
   /// [id] of the pen entity. This ID is unique.
-  String get id;
   @override
+  String get id;
 
   /// [name] of the pen.
-  String get name;
   @override
+  String get name;
 
   /// [code] of the pen.
-  String get code;
   @override
+  String get code;
 
   /// [createdAt] is the creation date of the pen.
+  @override
   @TimestampOrNullConverter()
   DateTime? get createdAt;
-  @override
 
   /// [createdBy] is the user id who created the pen.
-  User? get createdBy;
   @override
+  User? get createdBy;
 
   /// [updatedAt] is the last update date of the pen.
+  @override
   @TimestampOrNullConverter()
   DateTime? get updatedAt;
-  @override
 
   /// [updatedBy] is the user id who updated the pen.
-  User? get updatedBy;
   @override
-  @JsonKey(ignore: true)
+  User? get updatedBy;
+
+  /// Create a copy of SdmOperator
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SdmOperatorImplCopyWith<_$SdmOperatorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

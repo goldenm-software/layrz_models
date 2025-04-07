@@ -215,6 +215,12 @@ enum ReferenceCategory {
   @JsonValue('ATS_PA_LOAD_COMBOIO')
   atsPaLoadComboio,
 
+  /// !ATS Reference
+  /// [AllTank Systems] Access to send odometer in execute exits
+  /// ATS_SEND_ODOMETER_IN_EXECUTE_EXITS
+  @JsonValue('ATS_SEND_ODOMETER_IN_EXECUTE_EXITS')
+  atsSendOdometerInExecuteExits,
+
   /// !Mappit Reference
   /// Defines the access to the Mappit module as a operator or mappit employee
   /// Layrz API Reference: MAPPIT_OPERATOR

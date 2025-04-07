@@ -1036,6 +1036,44 @@ Map<String, dynamic> _$$AtsVolumeImplToJson(_$AtsVolumeImpl instance) =>
       'at': const TimestampOrNullConverter().toJson(instance.at),
     };
 
+_$AtsEntryInputImpl _$$AtsEntryInputImplFromJson(Map<String, dynamic> json) =>
+    _$AtsEntryInputImpl(
+      id: json['id'] as String?,
+      assetId: json['assetId'] as String?,
+      oldTankLevel: (json['oldTankLevel'] as num?)?.toDouble(),
+      newTankLevel: (json['newTankLevel'] as num?)?.toDouble(),
+      initialDensity: (json['initialDensity'] as num?)?.toDouble(),
+      density: (json['density'] as num?)?.toDouble(),
+      initialTemperature: (json['initialTemperature'] as num?)?.toDouble(),
+      temperature: (json['temperature'] as num?)?.toDouble(),
+      initialWaterLevel: (json['initialWaterLevel'] as num?)?.toDouble(),
+      waterLevel: (json['waterLevel'] as num?)?.toDouble(),
+      startAt: (json['startAt'] as num?)?.toDouble(),
+      endAt: (json['endAt'] as num?)?.toDouble(),
+      initialHeight: (json['initialHeight'] as num?)?.toDouble(),
+      height: (json['height'] as num?)?.toDouble(),
+      fuelType: json['fuelType'] as String?,
+    );
+
+Map<String, dynamic> _$$AtsEntryInputImplToJson(_$AtsEntryInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'assetId': instance.assetId,
+      'oldTankLevel': instance.oldTankLevel,
+      'newTankLevel': instance.newTankLevel,
+      'initialDensity': instance.initialDensity,
+      'density': instance.density,
+      'initialTemperature': instance.initialTemperature,
+      'temperature': instance.temperature,
+      'initialWaterLevel': instance.initialWaterLevel,
+      'waterLevel': instance.waterLevel,
+      'startAt': instance.startAt,
+      'endAt': instance.endAt,
+      'initialHeight': instance.initialHeight,
+      'height': instance.height,
+      'fuelType': instance.fuelType,
+    };
+
 _$AtsOperationImpl _$$AtsOperationImplFromJson(Map<String, dynamic> json) =>
     _$AtsOperationImpl(
       id: json['id'] as String?,
