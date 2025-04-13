@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.3.66
+
+- Added `peripherals` list to `Device` model
+
 ## 3.3.65
 - Added `atsSendOdometerInExecuteExits` in `ReferenceCategory`.
 - Created `AtsEntryInput`

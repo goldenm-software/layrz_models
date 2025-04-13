@@ -9927,6 +9927,10 @@ mixin _$Device {
   @DurationConverter()
   Duration? get visionCaptureThreshold => throw _privateConstructorUsedError;
 
+  /// [peripherals] is the list of peripherals of the device. Only used when
+  /// [protocol.operationMode] is [OperationMode.peripheral].
+  List<Device>? get peripherals => throw _privateConstructorUsedError;
+
   /// Serializes this Device to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
@@ -9965,7 +9969,8 @@ abstract class $DeviceCopyWith<$Res> {
       String? hwModelId,
       String? macAddress,
       Map<String, dynamic>? configParams,
-      @DurationConverter() Duration? visionCaptureThreshold});
+      @DurationConverter() Duration? visionCaptureThreshold,
+      List<Device>? peripherals});
 
   $ModelCopyWith<$Res>? get model;
   $InboundProtocolCopyWith<$Res>? get protocol;
@@ -10015,6 +10020,7 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
     Object? macAddress = freezed,
     Object? configParams = freezed,
     Object? visionCaptureThreshold = freezed,
+    Object? peripherals = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -10113,6 +10119,10 @@ class _$DeviceCopyWithImpl<$Res, $Val extends Device>
           ? _value.visionCaptureThreshold
           : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
               as Duration?,
+      peripherals: freezed == peripherals
+          ? _value.peripherals
+          : peripherals // ignore: cast_nullable_to_non_nullable
+              as List<Device>?,
     ) as $Val);
   }
 
@@ -10246,7 +10256,8 @@ abstract class _$$DeviceImplCopyWith<$Res> implements $DeviceCopyWith<$Res> {
       String? hwModelId,
       String? macAddress,
       Map<String, dynamic>? configParams,
-      @DurationConverter() Duration? visionCaptureThreshold});
+      @DurationConverter() Duration? visionCaptureThreshold,
+      List<Device>? peripherals});
 
   @override
   $ModelCopyWith<$Res>? get model;
@@ -10301,6 +10312,7 @@ class __$$DeviceImplCopyWithImpl<$Res>
     Object? macAddress = freezed,
     Object? configParams = freezed,
     Object? visionCaptureThreshold = freezed,
+    Object? peripherals = freezed,
   }) {
     return _then(_$DeviceImpl(
       id: null == id
@@ -10399,6 +10411,10 @@ class __$$DeviceImplCopyWithImpl<$Res>
           ? _value.visionCaptureThreshold
           : visionCaptureThreshold // ignore: cast_nullable_to_non_nullable
               as Duration?,
+      peripherals: freezed == peripherals
+          ? _value._peripherals
+          : peripherals // ignore: cast_nullable_to_non_nullable
+              as List<Device>?,
     ));
   }
 }
@@ -10430,11 +10446,13 @@ class _$DeviceImpl implements _Device {
       this.hwModelId,
       this.macAddress,
       final Map<String, dynamic>? configParams,
-      @DurationConverter() this.visionCaptureThreshold})
+      @DurationConverter() this.visionCaptureThreshold,
+      final List<Device>? peripherals})
       : _additionalFields = additionalFields,
         _commands = commands,
         _access = access,
-        _configParams = configParams;
+        _configParams = configParams,
+        _peripherals = peripherals;
 
   factory _$DeviceImpl.fromJson(Map<String, dynamic> json) =>
       _$$DeviceImplFromJson(json);
@@ -10575,9 +10593,24 @@ class _$DeviceImpl implements _Device {
   @DurationConverter()
   final Duration? visionCaptureThreshold;
 
+  /// [peripherals] is the list of peripherals of the device. Only used when
+  /// [protocol.operationMode] is [OperationMode.peripheral].
+  final List<Device>? _peripherals;
+
+  /// [peripherals] is the list of peripherals of the device. Only used when
+  /// [protocol.operationMode] is [OperationMode.peripheral].
+  @override
+  List<Device>? get peripherals {
+    final value = _peripherals;
+    if (value == null) return null;
+    if (_peripherals is EqualUnmodifiableListView) return _peripherals;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   String toString() {
-    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold)';
+    return 'Device(id: $id, name: $name, ident: $ident, flespiToken: $flespiToken, modelId: $modelId, model: $model, protocolId: $protocolId, protocol: $protocol, additionalFields: $additionalFields, qrCode: $qrCode, linkQr: $linkQr, commands: $commands, access: $access, telemetry: $telemetry, visionProfileId: $visionProfileId, visionProfile: $visionProfile, phone: $phone, modbus: $modbus, isSuspended: $isSuspended, hwModel: $hwModel, hwModelId: $hwModelId, macAddress: $macAddress, configParams: $configParams, visionCaptureThreshold: $visionCaptureThreshold, peripherals: $peripherals)';
   }
 
   @override
@@ -10620,7 +10653,9 @@ class _$DeviceImpl implements _Device {
             const DeepCollectionEquality()
                 .equals(other._configParams, _configParams) &&
             (identical(other.visionCaptureThreshold, visionCaptureThreshold) ||
-                other.visionCaptureThreshold == visionCaptureThreshold));
+                other.visionCaptureThreshold == visionCaptureThreshold) &&
+            const DeepCollectionEquality()
+                .equals(other._peripherals, _peripherals));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -10650,7 +10685,8 @@ class _$DeviceImpl implements _Device {
         hwModelId,
         macAddress,
         const DeepCollectionEquality().hash(_configParams),
-        visionCaptureThreshold
+        visionCaptureThreshold,
+        const DeepCollectionEquality().hash(_peripherals)
       ]);
 
   /// Create a copy of Device
@@ -10671,31 +10707,31 @@ class _$DeviceImpl implements _Device {
 
 abstract class _Device implements Device {
   const factory _Device(
-          {required final String id,
-          required final String name,
-          required final String ident,
-          final String? flespiToken,
-          final String? modelId,
-          final Model? model,
-          final String? protocolId,
-          final InboundProtocol? protocol,
-          final Map<String, dynamic>? additionalFields,
-          final String? qrCode,
-          final String? linkQr,
-          final List<DeviceCommand>? commands,
-          final List<Access>? access,
-          final DeviceTelemetry? telemetry,
-          final String? visionProfileId,
-          final VisionProfile? visionProfile,
-          final PhoneNumber? phone,
-          final ModbusConfig? modbus,
-          final bool? isSuspended,
-          final HwModel? hwModel,
-          final String? hwModelId,
-          final String? macAddress,
-          final Map<String, dynamic>? configParams,
-          @DurationConverter() final Duration? visionCaptureThreshold}) =
-      _$DeviceImpl;
+      {required final String id,
+      required final String name,
+      required final String ident,
+      final String? flespiToken,
+      final String? modelId,
+      final Model? model,
+      final String? protocolId,
+      final InboundProtocol? protocol,
+      final Map<String, dynamic>? additionalFields,
+      final String? qrCode,
+      final String? linkQr,
+      final List<DeviceCommand>? commands,
+      final List<Access>? access,
+      final DeviceTelemetry? telemetry,
+      final String? visionProfileId,
+      final VisionProfile? visionProfile,
+      final PhoneNumber? phone,
+      final ModbusConfig? modbus,
+      final bool? isSuspended,
+      final HwModel? hwModel,
+      final String? hwModelId,
+      final String? macAddress,
+      final Map<String, dynamic>? configParams,
+      @DurationConverter() final Duration? visionCaptureThreshold,
+      final List<Device>? peripherals}) = _$DeviceImpl;
 
   factory _Device.fromJson(Map<String, dynamic> json) = _$DeviceImpl.fromJson;
 
@@ -10797,6 +10833,11 @@ abstract class _Device implements Device {
   @override
   @DurationConverter()
   Duration? get visionCaptureThreshold;
+
+  /// [peripherals] is the list of peripherals of the device. Only used when
+  /// [protocol.operationMode] is [OperationMode.peripheral].
+  @override
+  List<Device>? get peripherals;
 
   /// Create a copy of Device
   /// with the given fields replaced by the non-null parameter values.
