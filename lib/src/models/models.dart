@@ -9,3 +9,5 @@ part 'models.g.dart';
 
 part 'src/model.dart';
 part 'src/hw_model.dart';
+part 'src/firmware_build.dart';
+part 'src/firmware_branch.dart';

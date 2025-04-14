@@ -33,6 +33,10 @@ _$ModelImpl _$$ModelImplFromJson(Map<String, dynamic> json) => _$ModelImpl(
       peripheralIdentifier: json['peripheralIdentifier'] as String?,
       peripheralParserSpec:
           json['peripheralParserSpec'] as Map<String, dynamic>?,
+      firmwares: (json['firmwares'] as List<dynamic>?)
+              ?.map((e) => FirmwareBuild.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
     );
 
 Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
@@ -52,6 +56,7 @@ Map<String, dynamic> _$$ModelImplToJson(_$ModelImpl instance) =>
       'confiotName': instance.confiotName,
       'peripheralIdentifier': instance.peripheralIdentifier,
       'peripheralParserSpec': instance.peripheralParserSpec,
+      'firmwares': instance.firmwares.map((e) => e.toJson()).toList(),
     };
 
 const _$ConfIoTLayoutEnumMap = {
@@ -143,3 +148,37 @@ Map<String, dynamic> _$$HwModelInputImplToJson(_$HwModelInputImpl instance) =>
       'name': instance.name,
       'modelsIds': instance.modelsIds,
     };
+
+_$FirmwareBuildImpl _$$FirmwareBuildImplFromJson(Map<String, dynamic> json) =>
+    _$FirmwareBuildImpl(
+      id: json['id'] as String,
+      buildName: json['buildName'] as String,
+      buildNumber: (json['buildNumber'] as num).toInt(),
+      branch: $enumDecode(_$FirmwareBranchEnumMap, json['branch'],
+          unknownValue: FirmwareBranch.stable),
+      firmwareUrl: json['firmwareUrl'] as String,
+      partitionsUrl: json['partitionsUrl'] as String,
+      bootloaderUrl: json['bootloaderUrl'] as String,
+      bootApp0Url: json['bootApp0Url'] as String,
+      spiffsUrl: json['spiffsUrl'] as String?,
+      createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
+    );
+
+Map<String, dynamic> _$$FirmwareBuildImplToJson(_$FirmwareBuildImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'buildName': instance.buildName,
+      'buildNumber': instance.buildNumber,
+      'branch': instance.branch.toJson(),
+      'firmwareUrl': instance.firmwareUrl,
+      'partitionsUrl': instance.partitionsUrl,
+      'bootloaderUrl': instance.bootloaderUrl,
+      'bootApp0Url': instance.bootApp0Url,
+      'spiffsUrl': instance.spiffsUrl,
+      'createdAt': const TimestampConverter().toJson(instance.createdAt),
+    };
+
+const _$FirmwareBranchEnumMap = {
+  FirmwareBranch.stable: 'STABLE',
+  FirmwareBranch.development: 'DEVELOPMENT',
+};
