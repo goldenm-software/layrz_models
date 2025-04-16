@@ -837,6 +837,7 @@ _$AtsExitImpl _$$AtsExitImplFromJson(Map<String, dynamic> json) =>
       finalTankVolume: (json['finalTankVolume'] as num?)?.toDouble(),
       price: (json['price'] as num?)?.toDouble(),
       attendantName: json['attendantName'] as String?,
+      attendantId: json['attendantId'] as String?,
     );
 
 Map<String, dynamic> _$$AtsExitImplToJson(_$AtsExitImpl instance) =>
@@ -861,6 +862,7 @@ Map<String, dynamic> _$$AtsExitImplToJson(_$AtsExitImpl instance) =>
       'finalTankVolume': instance.finalTankVolume,
       'price': instance.price,
       'attendantName': instance.attendantName,
+      'attendantId': instance.attendantId,
     };
 
 _$AtsPossibleExitImpl _$$AtsPossibleExitImplFromJson(
@@ -954,6 +956,26 @@ Map<String, dynamic> _$$AtsExecuteExitHistoryImplToJson(
       'errorResponse': instance.errorResponse,
       'status':
           const AtsExitExecuteStatusOrNullConverter().toJson(instance.status),
+    };
+
+_$AtsExitInputImpl _$$AtsExitInputImplFromJson(Map<String, dynamic> json) =>
+    _$AtsExitInputImpl(
+      id: json['id'] as String?,
+      assetId: json['assetId'] as String?,
+      liters: (json['liters'] as num?)?.toDouble(),
+      toAssetMileage: (json['toAssetMileage'] as num?)?.toDouble(),
+      identifier: (json['identifier'] as num?)?.toInt(),
+      attendantId: json['attendantId'] as String?,
+    );
+
+Map<String, dynamic> _$$AtsExitInputImplToJson(_$AtsExitInputImpl instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'assetId': instance.assetId,
+      'liters': instance.liters,
+      'toAssetMileage': instance.toAssetMileage,
+      'identifier': instance.identifier,
+      'attendantId': instance.attendantId,
     };
 
 _$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>

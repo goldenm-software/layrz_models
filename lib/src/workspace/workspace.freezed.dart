@@ -124,12 +124,8 @@ mixin _$Workspace {
   /// [access] indicates the access of the workspace
   List<Access>? get access => throw _privateConstructorUsedError;
 
-  /// Serializes this Workspace to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Workspace
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WorkspaceCopyWith<Workspace> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -195,8 +191,6 @@ class _$WorkspaceCopyWithImpl<$Res, $Val extends Workspace>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Workspace
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -385,8 +379,6 @@ class _$WorkspaceCopyWithImpl<$Res, $Val extends Workspace>
     ) as $Val);
   }
 
-  /// Create a copy of Workspace
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GeoPointCopyWith<$Res>? get mapCenterCoordinates {
@@ -399,8 +391,6 @@ class _$WorkspaceCopyWithImpl<$Res, $Val extends Workspace>
     });
   }
 
-  /// Create a copy of Workspace
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TimezoneCopyWith<$Res>? get timezone {
@@ -478,8 +468,6 @@ class __$$WorkspaceImplCopyWithImpl<$Res>
       _$WorkspaceImpl _value, $Res Function(_$WorkspaceImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Workspace
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1100,7 +1088,7 @@ class _$WorkspaceImpl implements _Workspace {
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -1142,9 +1130,7 @@ class _$WorkspaceImpl implements _Workspace {
         const DeepCollectionEquality().hash(_access)
       ]);
 
-  /// Create a copy of Workspace
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WorkspaceImplCopyWith<_$WorkspaceImpl> get copyWith =>
@@ -1204,65 +1190,67 @@ abstract class _Workspace implements Workspace {
   factory _Workspace.fromJson(Map<String, dynamic> json) =
       _$WorkspaceImpl.fromJson;
 
-  /// Is the ID
   @override
+
+  /// Is the ID
   String get id;
+  @override
 
   /// Is the name
-  @override
   String get name;
+  @override
 
   /// Is the type of the App
-  @override
   @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
   AppInternalIdentifier? get typeApp;
+  @override
 
   /// Indicates the color of the workspace
-  @override
   @ColorOrNullConverter()
   Color? get color;
+  @override
 
   /// Is the icon URI of the workspace
-  @override
   @IconOrNullConverter()
   LayrzIcon? get icon;
+  @override
 
   /// Background image URI of the workspace
-  @override
   String? get background;
+  @override
 
   /// Indicates if the workspace is tagged as favorite
-  @override
   bool? get isFavorite;
+  @override
 
   /// Indicates the main view of the workspace
-  @override
   @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
   WorkspaceMainView? get mainView;
+  @override
 
   /// Is the list of [assets] associated with the workspace
-  @override
   List<Asset>? get assets;
+  @override
 
   /// [assetsIds] is the list of ids of the [assets] associated with the workspace
-  @override
   List<String>? get assetsIds;
+  @override
 
   /// Is the list of [inboundServices] associated with the workspace
-  @override
   List<InboundService>? get inboundServices;
+  @override
 
   /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
-  @override
   List<String>? get inboundServicesIds;
+  @override
 
   /// Is the list of [outboundServices] associated with the workspace
-  @override
   List<OutboundService>? get outboundServices;
+  @override
 
   /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
-  @override
   List<String>? get outboundServicesIds;
+  @override
 
   /// The fields [casesEnabled], [triggers], [triggersIds], [checkpointsEnabled], [checkpoints], [checkpointsIds],
   /// [mapEnabled], [geofences], [geofencesIds], [mapCardCustomization], [mapCenterCoordinates], [mapCenterMode],
@@ -1271,7 +1259,6 @@ abstract class _Workspace implements Workspace {
   /// Is the list of [triggers] and their ids [triggersIds]. And [casesEnabled] indicates
   /// if the cases monitor is enabled
   /// Also, [casesMonitorConfig] indicates the configuration of the cases monitor
-  @override
   bool? get casesEnabled;
   @override
   List<Trigger>? get triggers;
@@ -1279,22 +1266,22 @@ abstract class _Workspace implements Workspace {
   List<String>? get triggersIds;
   @override
   List<CaseMonitorCard?>? get casesMonitorConfig;
+  @override
 
   /// Is the list of [checkpoints] and their ids [checkpointsIds]. And [checkpointsEnabled] indicates
   /// if the checkpoints monitor is enabled
-  @override
   bool? get checkpointsEnabled;
   @override
   List<Checkpoint>? get checkpoints;
   @override
   List<String>? get checkpointsIds;
+  @override
 
   /// Is the list of [geofences] and their ids [geofencesIds]. And [mapEnabled] indicates
   /// if the map monitor is enabled
   /// Also, [mapCardCustomization] indicates the customization of the map card
   /// [mapCenterCoordinates] indicates the center coordinates of the map
   /// [mapCenterMode] indicates the center mode of the map
-  @override
   bool? get mapEnabled;
   @override
   List<Geofence>? get geofences;
@@ -1307,11 +1294,11 @@ abstract class _Workspace implements Workspace {
   @override
   @JsonKey(unknownEnumValue: MapCenterMode.bounds)
   MapCenterMode? get mapCenterMode;
+  @override
 
   /// Is the list of [charts] and their ids [chartsIds]. And [analyticsEnabled] indicates
   /// if the analytics monitor is enabled.
   /// Also, [analyticsGridStructure] indicates the visual structure of the charts
-  @override
   bool? get analyticsEnabled;
   @override
   List<LayrzChart>? get charts;
@@ -1319,29 +1306,26 @@ abstract class _Workspace implements Workspace {
   List<String>? get chartsIds;
   @override
   List<AnalyticsGridItem> get analyticsGridStructure;
+  @override
 
   /// [sensorsEnabled] indicates if the sensors sensors monitor is enabled
   /// Also, [sensorsGridStructure] indicates the visual structure of the sensors
-  @override
   bool? get sensorsEnabled;
   @override
   List<SensorGridItem> get sensorsGridStructure;
+  @override
 
   /// Metric system of the workspace
-  @override
   @JsonKey(unknownEnumValue: MetricSystem.metric)
   MetricSystem? get metricSystem;
   @override
   Timezone? get timezone;
+  @override
 
   /// [access] indicates the access of the workspace
-  @override
   List<Access>? get access;
-
-  /// Create a copy of Workspace
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WorkspaceImplCopyWith<_$WorkspaceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1426,12 +1410,8 @@ mixin _$WorkspaceInput {
   @JsonKey(unknownEnumValue: MetricSystem.metric)
   set metricSystem(MetricSystem value) => throw _privateConstructorUsedError;
 
-  /// Serializes this WorkspaceInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WorkspaceInputCopyWith<WorkspaceInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1486,8 +1466,6 @@ class _$WorkspaceInputCopyWithImpl<$Res, $Val extends WorkspaceInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1626,8 +1604,6 @@ class _$WorkspaceInputCopyWithImpl<$Res, $Val extends WorkspaceInput>
     ) as $Val);
   }
 
-  /// Create a copy of WorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GeoPointCopyWith<$Res>? get mapCenterCoordinates {
@@ -1692,8 +1668,6 @@ class __$$WorkspaceInputImplCopyWithImpl<$Res>
       _$WorkspaceInputImpl _value, $Res Function(_$WorkspaceInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1952,9 +1926,7 @@ class _$WorkspaceInputImpl implements _WorkspaceInput {
     return 'WorkspaceInput(id: $id, name: $name, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assetsIds: $assetsIds, inboundServicesIds: $inboundServicesIds, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem)';
   }
 
-  /// Create a copy of WorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WorkspaceInputImplCopyWith<_$WorkspaceInputImpl> get copyWith =>
@@ -2092,11 +2064,8 @@ abstract class _WorkspaceInput implements WorkspaceInput {
   MetricSystem get metricSystem;
   @JsonKey(unknownEnumValue: MetricSystem.metric)
   set metricSystem(MetricSystem value);
-
-  /// Create a copy of WorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WorkspaceInputImplCopyWith<_$WorkspaceInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2113,12 +2082,8 @@ mixin _$WorkspaceAlert {
   TelemetryPosition get position => throw _privateConstructorUsedError;
   Trigger get trigger => throw _privateConstructorUsedError;
 
-  /// Serializes this WorkspaceAlert to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WorkspaceAlertCopyWith<WorkspaceAlert> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2149,8 +2114,6 @@ class _$WorkspaceAlertCopyWithImpl<$Res, $Val extends WorkspaceAlert>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2179,8 +2142,6 @@ class _$WorkspaceAlertCopyWithImpl<$Res, $Val extends WorkspaceAlert>
     ) as $Val);
   }
 
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TelemetryPositionCopyWith<$Res> get position {
@@ -2189,8 +2150,6 @@ class _$WorkspaceAlertCopyWithImpl<$Res, $Val extends WorkspaceAlert>
     });
   }
 
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TriggerCopyWith<$Res> get trigger {
@@ -2228,8 +2187,6 @@ class __$$WorkspaceAlertImplCopyWithImpl<$Res>
       _$WorkspaceAlertImpl _value, $Res Function(_$WorkspaceAlertImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2298,13 +2255,11 @@ class _$WorkspaceAlertImpl implements _WorkspaceAlert {
             (identical(other.trigger, trigger) || other.trigger == trigger));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, at, assetId, position, trigger);
 
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WorkspaceAlertImplCopyWith<_$WorkspaceAlertImpl> get copyWith =>
@@ -2338,11 +2293,8 @@ abstract class _WorkspaceAlert implements WorkspaceAlert {
   TelemetryPosition get position;
   @override
   Trigger get trigger;
-
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WorkspaceAlertImplCopyWith<_$WorkspaceAlertImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2361,12 +2313,8 @@ mixin _$WorkspaceTripPoint {
   @TimestampConverter()
   DateTime get receivedAt => throw _privateConstructorUsedError;
 
-  /// Serializes this WorkspaceTripPoint to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WorkspaceTripPoint
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WorkspaceTripPointCopyWith<WorkspaceTripPoint> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2396,8 +2344,6 @@ class _$WorkspaceTripPointCopyWithImpl<$Res, $Val extends WorkspaceTripPoint>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WorkspaceTripPoint
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2462,8 +2408,6 @@ class __$$WorkspaceTripPointImplCopyWithImpl<$Res>
       $Res Function(_$WorkspaceTripPointImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WorkspaceTripPoint
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2554,14 +2498,12 @@ class _$WorkspaceTripPointImpl implements _WorkspaceTripPoint {
                 other.receivedAt == receivedAt));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude, speed,
       triggerName, triggerId, receivedAt);
 
-  /// Create a copy of WorkspaceTripPoint
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WorkspaceTripPointImplCopyWith<_$WorkspaceTripPointImpl> get copyWith =>
@@ -2602,11 +2544,8 @@ abstract class _WorkspaceTripPoint implements WorkspaceTripPoint {
   @override
   @TimestampConverter()
   DateTime get receivedAt;
-
-  /// Create a copy of WorkspaceTripPoint
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WorkspaceTripPointImplCopyWith<_$WorkspaceTripPointImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2621,12 +2560,8 @@ mixin _$WorkspaceTrip {
   String get assetName => throw _privateConstructorUsedError;
   List<WorkspaceTripPoint> get points => throw _privateConstructorUsedError;
 
-  /// Serializes this WorkspaceTrip to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WorkspaceTrip
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $WorkspaceTripCopyWith<WorkspaceTrip> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2651,8 +2586,6 @@ class _$WorkspaceTripCopyWithImpl<$Res, $Val extends WorkspaceTrip>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of WorkspaceTrip
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2697,8 +2630,6 @@ class __$$WorkspaceTripImplCopyWithImpl<$Res>
       _$WorkspaceTripImpl _value, $Res Function(_$WorkspaceTripImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of WorkspaceTrip
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2764,14 +2695,12 @@ class _$WorkspaceTripImpl implements _WorkspaceTrip {
             const DeepCollectionEquality().equals(other._points, _points));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, assetId, assetName,
       const DeepCollectionEquality().hash(_points));
 
-  /// Create a copy of WorkspaceTrip
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$WorkspaceTripImplCopyWith<_$WorkspaceTripImpl> get copyWith =>
@@ -2800,11 +2729,8 @@ abstract class _WorkspaceTrip implements WorkspaceTrip {
   String get assetName;
   @override
   List<WorkspaceTripPoint> get points;
-
-  /// Create a copy of WorkspaceTrip
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$WorkspaceTripImplCopyWith<_$WorkspaceTripImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2821,12 +2747,8 @@ mixin _$GridDimension {
   /// [height] Represents the number of rows to be expanded
   int get height => throw _privateConstructorUsedError;
 
-  /// Serializes this GridDimension to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of GridDimension
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $GridDimensionCopyWith<GridDimension> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2850,8 +2772,6 @@ class _$GridDimensionCopyWithImpl<$Res, $Val extends GridDimension>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of GridDimension
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2890,8 +2810,6 @@ class __$$GridDimensionImplCopyWithImpl<$Res>
       _$GridDimensionImpl _value, $Res Function(_$GridDimensionImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GridDimension
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2941,13 +2859,11 @@ class _$GridDimensionImpl implements _GridDimension {
             (identical(other.height, height) || other.height == height));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, width, height);
 
-  /// Create a copy of GridDimension
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GridDimensionImplCopyWith<_$GridDimensionImpl> get copyWith =>
@@ -2969,18 +2885,16 @@ abstract class _GridDimension implements GridDimension {
   factory _GridDimension.fromJson(Map<String, dynamic> json) =
       _$GridDimensionImpl.fromJson;
 
-  /// [width] Represents the number of columns to be expanded
   @override
+
+  /// [width] Represents the number of columns to be expanded
   int get width;
+  @override
 
   /// [height] Represents the number of rows to be expanded
-  @override
   int get height;
-
-  /// Create a copy of GridDimension
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GridDimensionImplCopyWith<_$GridDimensionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3003,12 +2917,8 @@ mixin _$GridDimensionInput {
   /// [height] Represents the number of rows to be expanded
   set height(int value) => throw _privateConstructorUsedError;
 
-  /// Serializes this GridDimensionInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of GridDimensionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $GridDimensionInputCopyWith<GridDimensionInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3032,8 +2942,6 @@ class _$GridDimensionInputCopyWithImpl<$Res, $Val extends GridDimensionInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of GridDimensionInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3072,8 +2980,6 @@ class __$$GridDimensionInputImplCopyWithImpl<$Res>
       $Res Function(_$GridDimensionInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of GridDimensionInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3116,9 +3022,7 @@ class _$GridDimensionInputImpl implements _GridDimensionInput {
     return 'GridDimensionInput(width: $width, height: $height)';
   }
 
-  /// Create a copy of GridDimensionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GridDimensionInputImplCopyWith<_$GridDimensionInputImpl> get copyWith =>
@@ -3140,24 +3044,22 @@ abstract class _GridDimensionInput implements GridDimensionInput {
   factory _GridDimensionInput.fromJson(Map<String, dynamic> json) =
       _$GridDimensionInputImpl.fromJson;
 
-  /// [width] Represents the number of columns to be expanded
   @override
+
+  /// [width] Represents the number of columns to be expanded
   int get width;
 
   /// [width] Represents the number of columns to be expanded
   set width(int value);
+  @override
 
   /// [height] Represents the number of rows to be expanded
-  @override
   int get height;
 
   /// [height] Represents the number of rows to be expanded
   set height(int value);
-
-  /// Create a copy of GridDimensionInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GridDimensionInputImplCopyWith<_$GridDimensionInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3175,12 +3077,8 @@ mixin _$CaseMonitorCard {
   /// When [type] is [CaseMonitorCardType.specificAsset], will use [assetId] to apply the filter.
   String? get assetId => throw _privateConstructorUsedError;
 
-  /// Serializes this CaseMonitorCard to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of CaseMonitorCard
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $CaseMonitorCardCopyWith<CaseMonitorCard> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3207,8 +3105,6 @@ class _$CaseMonitorCardCopyWithImpl<$Res, $Val extends CaseMonitorCard>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of CaseMonitorCard
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3250,8 +3146,6 @@ class __$$CaseMonitorCardImplCopyWithImpl<$Res>
       _$CaseMonitorCardImpl _value, $Res Function(_$CaseMonitorCardImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CaseMonitorCard
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3305,13 +3199,11 @@ class _$CaseMonitorCardImpl implements _CaseMonitorCard {
             (identical(other.assetId, assetId) || other.assetId == assetId));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, type, assetId);
 
-  /// Create a copy of CaseMonitorCard
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$CaseMonitorCardImplCopyWith<_$CaseMonitorCardImpl> get copyWith =>
@@ -3335,19 +3227,17 @@ abstract class _CaseMonitorCard implements CaseMonitorCard {
   factory _CaseMonitorCard.fromJson(Map<String, dynamic> json) =
       _$CaseMonitorCardImpl.fromJson;
 
-  /// Represents the type of the block
   @override
+
+  /// Represents the type of the block
   @JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
   CaseMonitorCardType get type;
+  @override
 
   /// When [type] is [CaseMonitorCardType.specificAsset], will use [assetId] to apply the filter.
-  @override
   String? get assetId;
-
-  /// Create a copy of CaseMonitorCard
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$CaseMonitorCardImplCopyWith<_$CaseMonitorCardImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3372,12 +3262,8 @@ mixin _$CaseMonitorCardInput {
   /// When [type] is [CaseMonitorCardType.specificAsset], will use [assetId] to apply the filter.
   set assetId(String? value) => throw _privateConstructorUsedError;
 
-  /// Serializes this CaseMonitorCardInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of CaseMonitorCardInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $CaseMonitorCardInputCopyWith<CaseMonitorCardInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3405,8 +3291,6 @@ class _$CaseMonitorCardInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of CaseMonitorCardInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3448,8 +3332,6 @@ class __$$CaseMonitorCardInputImplCopyWithImpl<$Res>
       $Res Function(_$CaseMonitorCardInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CaseMonitorCardInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3494,9 +3376,7 @@ class _$CaseMonitorCardInputImpl implements _CaseMonitorCardInput {
     return 'CaseMonitorCardInput(type: $type, assetId: $assetId)';
   }
 
-  /// Create a copy of CaseMonitorCardInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$CaseMonitorCardInputImplCopyWith<_$CaseMonitorCardInputImpl>
@@ -3521,26 +3401,24 @@ abstract class _CaseMonitorCardInput implements CaseMonitorCardInput {
   factory _CaseMonitorCardInput.fromJson(Map<String, dynamic> json) =
       _$CaseMonitorCardInputImpl.fromJson;
 
-  /// Represents the type of the block
   @override
+
+  /// Represents the type of the block
   @JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
   CaseMonitorCardType get type;
 
   /// Represents the type of the block
   @JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
   set type(CaseMonitorCardType value);
+  @override
 
   /// When [type] is [CaseMonitorCardType.specificAsset], will use [assetId] to apply the filter.
-  @override
   String? get assetId;
 
   /// When [type] is [CaseMonitorCardType.specificAsset], will use [assetId] to apply the filter.
   set assetId(String? value);
-
-  /// Create a copy of CaseMonitorCardInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$CaseMonitorCardInputImplCopyWith<_$CaseMonitorCardInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3557,12 +3435,8 @@ mixin _$AnalyticsGridItem {
   /// [dimensions] Represents the dimension of the sensor
   GridDimension get dimensions => throw _privateConstructorUsedError;
 
-  /// Serializes this AnalyticsGridItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AnalyticsGridItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AnalyticsGridItemCopyWith<AnalyticsGridItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3588,8 +3462,6 @@ class _$AnalyticsGridItemCopyWithImpl<$Res, $Val extends AnalyticsGridItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AnalyticsGridItem
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3608,8 +3480,6 @@ class _$AnalyticsGridItemCopyWithImpl<$Res, $Val extends AnalyticsGridItem>
     ) as $Val);
   }
 
-  /// Create a copy of AnalyticsGridItem
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GridDimensionCopyWith<$Res> get dimensions {
@@ -3641,8 +3511,6 @@ class __$$AnalyticsGridItemImplCopyWithImpl<$Res>
       $Res Function(_$AnalyticsGridItemImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AnalyticsGridItem
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3693,13 +3561,11 @@ class _$AnalyticsGridItemImpl implements _AnalyticsGridItem {
                 other.dimensions == dimensions));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, chartId, dimensions);
 
-  /// Create a copy of AnalyticsGridItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AnalyticsGridItemImplCopyWith<_$AnalyticsGridItemImpl> get copyWith =>
@@ -3722,18 +3588,16 @@ abstract class _AnalyticsGridItem implements AnalyticsGridItem {
   factory _AnalyticsGridItem.fromJson(Map<String, dynamic> json) =
       _$AnalyticsGridItemImpl.fromJson;
 
-  /// Is the Chart ID
   @override
+
+  /// Is the Chart ID
   String? get chartId;
+  @override
 
   /// [dimensions] Represents the dimension of the sensor
-  @override
   GridDimension get dimensions;
-
-  /// Create a copy of AnalyticsGridItem
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AnalyticsGridItemImplCopyWith<_$AnalyticsGridItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3755,12 +3619,8 @@ mixin _$AnalyticsGridItemInput {
   set dimensions(GridDimensionInput value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this AnalyticsGridItemInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AnalyticsGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AnalyticsGridItemInputCopyWith<AnalyticsGridItemInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3787,8 +3647,6 @@ class _$AnalyticsGridItemInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AnalyticsGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3807,8 +3665,6 @@ class _$AnalyticsGridItemInputCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of AnalyticsGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GridDimensionInputCopyWith<$Res> get dimensions {
@@ -3843,8 +3699,6 @@ class __$$AnalyticsGridItemInputImplCopyWithImpl<$Res>
       $Res Function(_$AnalyticsGridItemInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AnalyticsGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3884,9 +3738,7 @@ class _$AnalyticsGridItemInputImpl implements _AnalyticsGridItemInput {
     return 'AnalyticsGridItemInput(chartId: $chartId, dimensions: $dimensions)';
   }
 
-  /// Create a copy of AnalyticsGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AnalyticsGridItemInputImplCopyWith<_$AnalyticsGridItemInputImpl>
@@ -3912,18 +3764,15 @@ abstract class _AnalyticsGridItemInput implements AnalyticsGridItemInput {
   @override
   String? get chartId;
   set chartId(String? value);
+  @override
 
   /// [dimensions] represents the dimensions of the sensor content
-  @override
   GridDimensionInput get dimensions;
 
   /// [dimensions] represents the dimensions of the sensor content
   set dimensions(GridDimensionInput value);
-
-  /// Create a copy of AnalyticsGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AnalyticsGridItemInputImplCopyWith<_$AnalyticsGridItemInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3951,12 +3800,8 @@ mixin _$SensorGridItem {
   /// Represents the sensors of the card
   List<SensorGridContent> get sensors => throw _privateConstructorUsedError;
 
-  /// Serializes this SensorGridItem to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of SensorGridItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $SensorGridItemCopyWith<SensorGridItem> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3988,8 +3833,6 @@ class _$SensorGridItemCopyWithImpl<$Res, $Val extends SensorGridItem>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SensorGridItem
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4023,8 +3866,6 @@ class _$SensorGridItemCopyWithImpl<$Res, $Val extends SensorGridItem>
     ) as $Val);
   }
 
-  /// Create a copy of SensorGridItem
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GridDimensionCopyWith<$Res>? get dimensions {
@@ -4066,8 +3907,6 @@ class __$$SensorGridItemImplCopyWithImpl<$Res>
       _$SensorGridItemImpl _value, $Res Function(_$SensorGridItemImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SensorGridItem
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4166,14 +4005,12 @@ class _$SensorGridItemImpl implements _SensorGridItem {
             const DeepCollectionEquality().equals(other._sensors, _sensors));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, objectId, kind, dimensions,
       color, const DeepCollectionEquality().hash(_sensors));
 
-  /// Create a copy of SensorGridItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SensorGridItemImplCopyWith<_$SensorGridItemImpl> get copyWith =>
@@ -4200,32 +4037,30 @@ abstract class _SensorGridItem implements SensorGridItem {
   factory _SensorGridItem.fromJson(Map<String, dynamic> json) =
       _$SensorGridItemImpl.fromJson;
 
-  /// Represents the Asset ID
   @override
+
+  /// Represents the Asset ID
   String? get objectId;
+  @override
 
   /// [kind] represents the kind of card should be displayed
-  @override
   @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
   WorkspaceCardType get kind;
+  @override
 
   /// [dimensions] Represents the dimension of the sensor
-  @override
   GridDimension? get dimensions;
+  @override
 
   /// Represents the color of the card
-  @override
   @ColorConverter()
   Color get color;
+  @override
 
   /// Represents the sensors of the card
-  @override
   List<SensorGridContent> get sensors;
-
-  /// Create a copy of SensorGridItem
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SensorGridItemImplCopyWith<_$SensorGridItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4273,12 +4108,8 @@ mixin _$SensorGridItemInput {
   set sensors(List<SensorGridContentInput> value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this SensorGridItemInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of SensorGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $SensorGridItemInputCopyWith<SensorGridItemInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4310,8 +4141,6 @@ class _$SensorGridItemInputCopyWithImpl<$Res, $Val extends SensorGridItemInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SensorGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4345,8 +4174,6 @@ class _$SensorGridItemInputCopyWithImpl<$Res, $Val extends SensorGridItemInput>
     ) as $Val);
   }
 
-  /// Create a copy of SensorGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GridDimensionInputCopyWith<$Res>? get dimensions {
@@ -4388,8 +4215,6 @@ class __$$SensorGridItemInputImplCopyWithImpl<$Res>
       $Res Function(_$SensorGridItemInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SensorGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4467,9 +4292,7 @@ class _$SensorGridItemInputImpl implements _SensorGridItemInput {
     return 'SensorGridItemInput(objectId: $objectId, kind: $kind, dimensions: $dimensions, color: $color, sensors: $sensors)';
   }
 
-  /// Create a copy of SensorGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SensorGridItemInputImplCopyWith<_$SensorGridItemInputImpl> get copyWith =>
@@ -4496,49 +4319,47 @@ abstract class _SensorGridItemInput implements SensorGridItemInput {
   factory _SensorGridItemInput.fromJson(Map<String, dynamic> json) =
       _$SensorGridItemInputImpl.fromJson;
 
-  /// Represents the assigned object ID
   @override
+
+  /// Represents the assigned object ID
   String? get objectId;
 
   /// Represents the assigned object ID
   set objectId(String? value);
+  @override
 
   /// [kind] represents the kind of card should be displayed
-  @override
   @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
   WorkspaceCardType get kind;
 
   /// [kind] represents the kind of card should be displayed
   @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
   set kind(WorkspaceCardType value);
+  @override
 
   /// [dimensions] represents the dimensions of the sensor content
-  @override
   GridDimensionInput? get dimensions;
 
   /// [dimensions] represents the dimensions of the sensor content
   set dimensions(GridDimensionInput? value);
+  @override
 
   /// Represents the color of the card
-  @override
   @ColorConverter()
   Color get color;
 
   /// Represents the color of the card
   @ColorConverter()
   set color(Color value);
+  @override
 
   /// Represents the sensors of the card
-  @override
   List<SensorGridContentInput> get sensors;
 
   /// Represents the sensors of the card
   set sensors(List<SensorGridContentInput> value);
-
-  /// Create a copy of SensorGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SensorGridItemInputImplCopyWith<_$SensorGridItemInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4568,12 +4389,8 @@ mixin _$SensorGridContent {
   /// [maximum] represents the maximum value of the sensor.
   double? get maximum => throw _privateConstructorUsedError;
 
-  /// Serializes this SensorGridContent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of SensorGridContent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $SensorGridContentCopyWith<SensorGridContent> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4606,8 +4423,6 @@ class _$SensorGridContentCopyWithImpl<$Res, $Val extends SensorGridContent>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SensorGridContent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4646,8 +4461,6 @@ class _$SensorGridContentCopyWithImpl<$Res, $Val extends SensorGridContent>
     ) as $Val);
   }
 
-  /// Create a copy of SensorGridContent
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GridDimensionCopyWith<$Res> get dimensions {
@@ -4686,8 +4499,6 @@ class __$$SensorGridContentImplCopyWithImpl<$Res>
       $Res Function(_$SensorGridContentImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SensorGridContent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4789,14 +4600,12 @@ class _$SensorGridContentImpl implements _SensorGridContent {
             (identical(other.maximum, maximum) || other.maximum == maximum));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, sensorId, dimensions, maskEnabled, type, minimum, maximum);
 
-  /// Create a copy of SensorGridContent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SensorGridContentImplCopyWith<_$SensorGridContentImpl> get copyWith =>
@@ -4824,35 +4633,33 @@ abstract class _SensorGridContent implements SensorGridContent {
   factory _SensorGridContent.fromJson(Map<String, dynamic> json) =
       _$SensorGridContentImpl.fromJson;
 
-  /// Represents the sensor ID
   @override
+
+  /// Represents the sensor ID
   String? get sensorId;
+  @override
 
   /// [dimensions] Represents the dimension of the sensor
-  @override
   GridDimension get dimensions;
+  @override
 
   /// Indicates if the sensor content has enabled the mask
-  @override
   bool get maskEnabled;
+  @override
 
   /// [type] represents the type of sensor content
-  @override
   @JsonKey(unknownEnumValue: SensorGridItemType.plain)
   SensorGridItemType get type;
+  @override
 
   /// [minimum] represents the minimum value of the sensor.
-  @override
   double? get minimum;
+  @override
 
   /// [maximum] represents the maximum value of the sensor.
-  @override
   double? get maximum;
-
-  /// Create a copy of SensorGridContent
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SensorGridContentImplCopyWith<_$SensorGridContentImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4903,12 +4710,8 @@ mixin _$SensorGridContentInput {
   /// [maximum] represents the maximum value of the sensor.
   set maximum(double? value) => throw _privateConstructorUsedError;
 
-  /// Serializes this SensorGridContentInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of SensorGridContentInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $SensorGridContentInputCopyWith<SensorGridContentInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4942,8 +4745,6 @@ class _$SensorGridContentInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of SensorGridContentInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4982,8 +4783,6 @@ class _$SensorGridContentInputCopyWithImpl<$Res,
     ) as $Val);
   }
 
-  /// Create a copy of SensorGridContentInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GridDimensionInputCopyWith<$Res> get dimensions {
@@ -5025,8 +4824,6 @@ class __$$SensorGridContentInputImplCopyWithImpl<$Res>
       $Res Function(_$SensorGridContentInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SensorGridContentInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5112,9 +4909,7 @@ class _$SensorGridContentInputImpl implements _SensorGridContentInput {
     return 'SensorGridContentInput(sensorId: $sensorId, maskEnabled: $maskEnabled, dimensions: $dimensions, type: $type, minimum: $minimum, maximum: $maximum)';
   }
 
-  /// Create a copy of SensorGridContentInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SensorGridContentInputImplCopyWith<_$SensorGridContentInputImpl>
@@ -5142,54 +4937,52 @@ abstract class _SensorGridContentInput implements SensorGridContentInput {
   factory _SensorGridContentInput.fromJson(Map<String, dynamic> json) =
       _$SensorGridContentInputImpl.fromJson;
 
-  /// Represents the sensor ID
   @override
+
+  /// Represents the sensor ID
   String? get sensorId;
 
   /// Represents the sensor ID
   set sensorId(String? value);
+  @override
 
   /// Indicates if the sensor content has enabled the mask
-  @override
   bool get maskEnabled;
 
   /// Indicates if the sensor content has enabled the mask
   set maskEnabled(bool value);
+  @override
 
   /// [dimensions] represents the dimensions of the sensor content
-  @override
   GridDimensionInput get dimensions;
 
   /// [dimensions] represents the dimensions of the sensor content
   set dimensions(GridDimensionInput value);
+  @override
 
   /// [type] represents the type of sensor content
-  @override
   @JsonKey(unknownEnumValue: SensorGridItemType.plain)
   SensorGridItemType get type;
 
   /// [type] represents the type of sensor content
   @JsonKey(unknownEnumValue: SensorGridItemType.plain)
   set type(SensorGridItemType value);
+  @override
 
   /// [minimum] represents the minimum value of the sensor.
-  @override
   double? get minimum;
 
   /// [minimum] represents the minimum value of the sensor.
   set minimum(double? value);
+  @override
 
   /// [maximum] represents the maximum value of the sensor.
-  @override
   double? get maximum;
 
   /// [maximum] represents the maximum value of the sensor.
   set maximum(double? value);
-
-  /// Create a copy of SensorGridContentInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SensorGridContentInputImplCopyWith<_$SensorGridContentInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -5211,12 +5004,8 @@ mixin _$MapCardAlertConfiguration {
   /// Indicates if the alert segment is enabled.
   bool get enabled => throw _privateConstructorUsedError;
 
-  /// Serializes this MapCardAlertConfiguration to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MapCardAlertConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MapCardAlertConfigurationCopyWith<MapCardAlertConfiguration> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5244,8 +5033,6 @@ class _$MapCardAlertConfigurationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MapCardAlertConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5295,8 +5082,6 @@ class __$$MapCardAlertConfigurationImplCopyWithImpl<$Res>
       $Res Function(_$MapCardAlertConfigurationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MapCardAlertConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5363,13 +5148,11 @@ class _$MapCardAlertConfigurationImpl implements _MapCardAlertConfiguration {
             (identical(other.enabled, enabled) || other.enabled == enabled));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, range, count, enabled);
 
-  /// Create a copy of MapCardAlertConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MapCardAlertConfigurationImplCopyWith<_$MapCardAlertConfigurationImpl>
@@ -5393,23 +5176,21 @@ abstract class _MapCardAlertConfiguration implements MapCardAlertConfiguration {
   factory _MapCardAlertConfiguration.fromJson(Map<String, dynamic> json) =
       _$MapCardAlertConfigurationImpl.fromJson;
 
-  /// Represents the range of search results to be displayed on the map.
   @override
+
+  /// Represents the range of search results to be displayed on the map.
   @JsonKey(unknownEnumValue: MapCardMode.lastDay)
   MapCardMode get range;
+  @override
 
   /// Display the count of alerts in the map card.
-  @override
   bool get count;
+  @override
 
   /// Indicates if the alert segment is enabled.
-  @override
   bool get enabled;
-
-  /// Create a copy of MapCardAlertConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MapCardAlertConfigurationImplCopyWith<_$MapCardAlertConfigurationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -5441,12 +5222,8 @@ mixin _$MapCardAlertConfigurationInput {
   /// Indicates if the alert segment is enabled.
   set enabled(bool value) => throw _privateConstructorUsedError;
 
-  /// Serializes this MapCardAlertConfigurationInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MapCardAlertConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MapCardAlertConfigurationInputCopyWith<MapCardAlertConfigurationInput>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -5476,8 +5253,6 @@ class _$MapCardAlertConfigurationInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MapCardAlertConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5527,8 +5302,6 @@ class __$$MapCardAlertConfigurationInputImplCopyWithImpl<$Res>
       $Res Function(_$MapCardAlertConfigurationInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MapCardAlertConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5587,9 +5360,7 @@ class _$MapCardAlertConfigurationInputImpl
     return 'MapCardAlertConfigurationInput(range: $range, count: $count, enabled: $enabled)';
   }
 
-  /// Create a copy of MapCardAlertConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MapCardAlertConfigurationInputImplCopyWith<
@@ -5615,33 +5386,31 @@ abstract class _MapCardAlertConfigurationInput
   factory _MapCardAlertConfigurationInput.fromJson(Map<String, dynamic> json) =
       _$MapCardAlertConfigurationInputImpl.fromJson;
 
-  /// Represents the range of search results to be displayed on the map.
   @override
+
+  /// Represents the range of search results to be displayed on the map.
   @JsonKey(unknownEnumValue: MapCardMode.lastDay)
   MapCardMode get range;
 
   /// Represents the range of search results to be displayed on the map.
   @JsonKey(unknownEnumValue: MapCardMode.lastDay)
   set range(MapCardMode value);
+  @override
 
   /// Display the count of alerts in the map card.
-  @override
   bool get count;
 
   /// Display the count of alerts in the map card.
   set count(bool value);
+  @override
 
   /// Indicates if the alert segment is enabled.
-  @override
   bool get enabled;
 
   /// Indicates if the alert segment is enabled.
   set enabled(bool value);
-
-  /// Create a copy of MapCardAlertConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MapCardAlertConfigurationInputImplCopyWith<
           _$MapCardAlertConfigurationInputImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -5663,12 +5432,8 @@ mixin _$MapCardConnectionConfiguration {
   /// Indicates if the time segment is enabled.
   bool get time => throw _privateConstructorUsedError;
 
-  /// Serializes this MapCardConnectionConfiguration to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MapCardConnectionConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MapCardConnectionConfigurationCopyWith<MapCardConnectionConfiguration>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -5695,8 +5460,6 @@ class _$MapCardConnectionConfigurationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MapCardConnectionConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5743,8 +5506,6 @@ class __$$MapCardConnectionConfigurationImplCopyWithImpl<$Res>
       $Res Function(_$MapCardConnectionConfigurationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MapCardConnectionConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5811,13 +5572,11 @@ class _$MapCardConnectionConfigurationImpl
             (identical(other.time, time) || other.time == time));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, indicator, address, time);
 
-  /// Create a copy of MapCardConnectionConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MapCardConnectionConfigurationImplCopyWith<
@@ -5843,22 +5602,20 @@ abstract class _MapCardConnectionConfiguration
   factory _MapCardConnectionConfiguration.fromJson(Map<String, dynamic> json) =
       _$MapCardConnectionConfigurationImpl.fromJson;
 
-  /// Indicates if the connection indicatpr segment is enabled.
   @override
+
+  /// Indicates if the connection indicatpr segment is enabled.
   bool get indicator;
+  @override
 
   /// Indicates if the address segment is enabled.
-  @override
   bool get address;
+  @override
 
   /// Indicates if the time segment is enabled.
-  @override
   bool get time;
-
-  /// Create a copy of MapCardConnectionConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MapCardConnectionConfigurationImplCopyWith<
           _$MapCardConnectionConfigurationImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -5889,12 +5646,8 @@ mixin _$MapCardConnectionConfigurationInput {
   /// Indicates if the time segment is enabled.
   set time(bool value) => throw _privateConstructorUsedError;
 
-  /// Serializes this MapCardConnectionConfigurationInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MapCardConnectionConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MapCardConnectionConfigurationInputCopyWith<
           MapCardConnectionConfigurationInput>
       get copyWith => throw _privateConstructorUsedError;
@@ -5922,8 +5675,6 @@ class _$MapCardConnectionConfigurationInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MapCardConnectionConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5970,8 +5721,6 @@ class __$$MapCardConnectionConfigurationInputImplCopyWithImpl<$Res>
       $Res Function(_$MapCardConnectionConfigurationInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MapCardConnectionConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6027,9 +5776,7 @@ class _$MapCardConnectionConfigurationInputImpl
     return 'MapCardConnectionConfigurationInput(indicator: $indicator, address: $address, time: $time)';
   }
 
-  /// Create a copy of MapCardConnectionConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MapCardConnectionConfigurationInputImplCopyWith<
@@ -6056,31 +5803,29 @@ abstract class _MapCardConnectionConfigurationInput
           Map<String, dynamic> json) =
       _$MapCardConnectionConfigurationInputImpl.fromJson;
 
-  /// Indicates if the connection indicatpr segment is enabled.
   @override
+
+  /// Indicates if the connection indicatpr segment is enabled.
   bool get indicator;
 
   /// Indicates if the connection indicatpr segment is enabled.
   set indicator(bool value);
+  @override
 
   /// Indicates if the address segment is enabled.
-  @override
   bool get address;
 
   /// Indicates if the address segment is enabled.
   set address(bool value);
+  @override
 
   /// Indicates if the time segment is enabled.
-  @override
   bool get time;
 
   /// Indicates if the time segment is enabled.
   set time(bool value);
-
-  /// Create a copy of MapCardConnectionConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MapCardConnectionConfigurationInputImplCopyWith<
           _$MapCardConnectionConfigurationInputImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -6105,12 +5850,8 @@ mixin _$MapCardSensors {
   /// Represetns the sensors configuration
   MapCardSensorsConfiguration get sensors => throw _privateConstructorUsedError;
 
-  /// Serializes this MapCardSensors to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MapCardSensors
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MapCardSensorsCopyWith<MapCardSensors> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6142,8 +5883,6 @@ class _$MapCardSensorsCopyWithImpl<$Res, $Val extends MapCardSensors>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MapCardSensors
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6172,8 +5911,6 @@ class _$MapCardSensorsCopyWithImpl<$Res, $Val extends MapCardSensors>
     ) as $Val);
   }
 
-  /// Create a copy of MapCardSensors
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MapCardAlertConfigurationCopyWith<$Res> get alerts {
@@ -6182,8 +5919,6 @@ class _$MapCardSensorsCopyWithImpl<$Res, $Val extends MapCardSensors>
     });
   }
 
-  /// Create a copy of MapCardSensors
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MapCardConnectionConfigurationCopyWith<$Res> get connection {
@@ -6193,8 +5928,6 @@ class _$MapCardSensorsCopyWithImpl<$Res, $Val extends MapCardSensors>
     });
   }
 
-  /// Create a copy of MapCardSensors
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MapCardSensorsConfigurationCopyWith<$Res> get sensors {
@@ -6234,8 +5967,6 @@ class __$$MapCardSensorsImplCopyWithImpl<$Res>
       _$MapCardSensorsImpl _value, $Res Function(_$MapCardSensorsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MapCardSensors
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6310,14 +6041,12 @@ class _$MapCardSensorsImpl implements _MapCardSensors {
             (identical(other.sensors, sensors) || other.sensors == sensors));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, assetId, alerts, connection, sensors);
 
-  /// Create a copy of MapCardSensors
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MapCardSensorsImplCopyWith<_$MapCardSensorsImpl> get copyWith =>
@@ -6343,26 +6072,24 @@ abstract class _MapCardSensors implements MapCardSensors {
   factory _MapCardSensors.fromJson(Map<String, dynamic> json) =
       _$MapCardSensorsImpl.fromJson;
 
-  /// Represents the ID of the asset
   @override
+
+  /// Represents the ID of the asset
   String get assetId;
+  @override
 
   /// Represents the alerts configuration
-  @override
   MapCardAlertConfiguration get alerts;
+  @override
 
   /// Represents the connection configuration
-  @override
   MapCardConnectionConfiguration get connection;
+  @override
 
   /// Represetns the sensors configuration
-  @override
   MapCardSensorsConfiguration get sensors;
-
-  /// Create a copy of MapCardSensors
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MapCardSensorsImplCopyWith<_$MapCardSensorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6403,12 +6130,8 @@ mixin _$MapCardSensorsInput {
   set sensors(MapCardSensorsConfigurationInput? value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this MapCardSensorsInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MapCardSensorsInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MapCardSensorsInputCopyWith<MapCardSensorsInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6440,8 +6163,6 @@ class _$MapCardSensorsInputCopyWithImpl<$Res, $Val extends MapCardSensorsInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MapCardSensorsInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6470,8 +6191,6 @@ class _$MapCardSensorsInputCopyWithImpl<$Res, $Val extends MapCardSensorsInput>
     ) as $Val);
   }
 
-  /// Create a copy of MapCardSensorsInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MapCardAlertConfigurationInputCopyWith<$Res>? get alerts {
@@ -6485,8 +6204,6 @@ class _$MapCardSensorsInputCopyWithImpl<$Res, $Val extends MapCardSensorsInput>
     });
   }
 
-  /// Create a copy of MapCardSensorsInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MapCardConnectionConfigurationInputCopyWith<$Res>? get connection {
@@ -6500,8 +6217,6 @@ class _$MapCardSensorsInputCopyWithImpl<$Res, $Val extends MapCardSensorsInput>
     });
   }
 
-  /// Create a copy of MapCardSensorsInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $MapCardSensorsConfigurationInputCopyWith<$Res>? get sensors {
@@ -6546,8 +6261,6 @@ class __$$MapCardSensorsInputImplCopyWithImpl<$Res>
       $Res Function(_$MapCardSensorsInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MapCardSensorsInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6607,9 +6320,7 @@ class _$MapCardSensorsInputImpl implements _MapCardSensorsInput {
     return 'MapCardSensorsInput(assetId: $assetId, alerts: $alerts, connection: $connection, sensors: $sensors)';
   }
 
-  /// Create a copy of MapCardSensorsInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MapCardSensorsInputImplCopyWith<_$MapCardSensorsInputImpl> get copyWith =>
@@ -6634,38 +6345,36 @@ abstract class _MapCardSensorsInput implements MapCardSensorsInput {
   factory _MapCardSensorsInput.fromJson(Map<String, dynamic> json) =
       _$MapCardSensorsInputImpl.fromJson;
 
-  /// Represents the ID of the asset
   @override
+
+  /// Represents the ID of the asset
   String? get assetId;
 
   /// Represents the ID of the asset
   set assetId(String? value);
+  @override
 
   /// Represents the alerts configuration
-  @override
   MapCardAlertConfigurationInput? get alerts;
 
   /// Represents the alerts configuration
   set alerts(MapCardAlertConfigurationInput? value);
+  @override
 
   /// Represents the connection configuration
-  @override
   MapCardConnectionConfigurationInput? get connection;
 
   /// Represents the connection configuration
   set connection(MapCardConnectionConfigurationInput? value);
+  @override
 
   /// Represetns the sensors configuration
-  @override
   MapCardSensorsConfigurationInput? get sensors;
 
   /// Represetns the sensors configuration
   set sensors(MapCardSensorsConfigurationInput? value);
-
-  /// Create a copy of MapCardSensorsInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MapCardSensorsInputImplCopyWith<_$MapCardSensorsInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6687,12 +6396,8 @@ mixin _$MapCardSensorsConfiguration {
   /// Indicates the sensors assigned
   List<String> get values => throw _privateConstructorUsedError;
 
-  /// Serializes this MapCardSensorsConfiguration to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MapCardSensorsConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MapCardSensorsConfigurationCopyWith<MapCardSensorsConfiguration>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -6722,8 +6427,6 @@ class _$MapCardSensorsConfigurationCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MapCardSensorsConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6773,8 +6476,6 @@ class __$$MapCardSensorsConfigurationImplCopyWithImpl<$Res>
       $Res Function(_$MapCardSensorsConfigurationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MapCardSensorsConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6851,14 +6552,12 @@ class _$MapCardSensorsConfigurationImpl
             const DeepCollectionEquality().equals(other._values, _values));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, enabled, mode, const DeepCollectionEquality().hash(_values));
 
-  /// Create a copy of MapCardSensorsConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MapCardSensorsConfigurationImplCopyWith<_$MapCardSensorsConfigurationImpl>
@@ -6883,23 +6582,21 @@ abstract class _MapCardSensorsConfiguration
   factory _MapCardSensorsConfiguration.fromJson(Map<String, dynamic> json) =
       _$MapCardSensorsConfigurationImpl.fromJson;
 
-  /// Indicates if the sensor segment is enabled.
   @override
+
+  /// Indicates if the sensor segment is enabled.
   bool get enabled;
+  @override
 
   /// Represents the format of the sensor list.
-  @override
   @JsonKey(unknownEnumValue: MapSensorMode.grid)
   MapSensorMode get mode;
+  @override
 
   /// Indicates the sensors assigned
-  @override
   List<String> get values;
-
-  /// Create a copy of MapCardSensorsConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MapCardSensorsConfigurationImplCopyWith<_$MapCardSensorsConfigurationImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -6931,12 +6628,8 @@ mixin _$MapCardSensorsConfigurationInput {
   /// Indicates the sensors assigned
   set values(List<String> value) => throw _privateConstructorUsedError;
 
-  /// Serializes this MapCardSensorsConfigurationInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of MapCardSensorsConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $MapCardSensorsConfigurationInputCopyWith<MapCardSensorsConfigurationInput>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -6966,8 +6659,6 @@ class _$MapCardSensorsConfigurationInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of MapCardSensorsConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7017,8 +6708,6 @@ class __$$MapCardSensorsConfigurationInputImplCopyWithImpl<$Res>
       $Res Function(_$MapCardSensorsConfigurationInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of MapCardSensorsConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7077,9 +6766,7 @@ class _$MapCardSensorsConfigurationInputImpl
     return 'MapCardSensorsConfigurationInput(enabled: $enabled, mode: $mode, values: $values)';
   }
 
-  /// Create a copy of MapCardSensorsConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MapCardSensorsConfigurationInputImplCopyWith<
@@ -7106,33 +6793,31 @@ abstract class _MapCardSensorsConfigurationInput
           Map<String, dynamic> json) =
       _$MapCardSensorsConfigurationInputImpl.fromJson;
 
-  /// Indicates if the sensor segment is enabled.
   @override
+
+  /// Indicates if the sensor segment is enabled.
   bool get enabled;
 
   /// Indicates if the sensor segment is enabled.
   set enabled(bool value);
+  @override
 
   /// Represents the format of the sensor list.
-  @override
   @JsonKey(unknownEnumValue: MapSensorMode.grid)
   MapSensorMode get mode;
 
   /// Represents the format of the sensor list.
   @JsonKey(unknownEnumValue: MapSensorMode.grid)
   set mode(MapSensorMode value);
+  @override
 
   /// Indicates the sensors assigned
-  @override
   List<String> get values;
 
   /// Indicates the sensors assigned
   set values(List<String> value);
-
-  /// Create a copy of MapCardSensorsConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MapCardSensorsConfigurationInputImplCopyWith<
           _$MapCardSensorsConfigurationInputImpl>
       get copyWith => throw _privateConstructorUsedError;

@@ -39,6 +39,7 @@ part 'src/exits/exit.dart';
 part 'src/exits/possible_exit.dart';
 part 'src/exits/execute_exit_input.dart';
 part 'src/exits/execute_exit_history.dart';
+part 'src/exits/exit_input.dart';
 
 // ATS Entries Models
 part 'src/entries/entry.dart';

@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.3.68
+
+- Added new `AtsExitInput` model
+- Added `attendantId` parameter in `AtsExit` model
+
 ## 3.3.67
 
 - Added `FirmwareBuild` model
@@ -9,11 +14,13 @@
 - Added `peripherals` list to `Device` model
 
 ## 3.3.65
+
 - Added `atsSendOdometerInExecuteExits` in `ReferenceCategory`.
 - Created `AtsEntryInput`
 - Removed `const` in `BHSEncodedTrip` unfreezed
 
 ## 3.3.64
+
 - Added `BHSEncodedTrip` and `BHSEncodedTripInput` models
 
 ## 3.3.63
