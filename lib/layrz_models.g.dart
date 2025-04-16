@@ -919,6 +919,9 @@ _$DeviceImpl _$$DeviceImplFromJson(Map<String, dynamic> json) => _$DeviceImpl(
       configParams: json['configParams'] as Map<String, dynamic>?,
       visionCaptureThreshold: _$JsonConverterFromJson<num, Duration>(
           json['visionCaptureThreshold'], const DurationConverter().fromJson),
+      peripherals: (json['peripherals'] as List<dynamic>?)
+          ?.map((e) => Device.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
@@ -948,6 +951,7 @@ Map<String, dynamic> _$$DeviceImplToJson(_$DeviceImpl instance) =>
       'configParams': instance.configParams,
       'visionCaptureThreshold': _$JsonConverterToJson<num, Duration>(
           instance.visionCaptureThreshold, const DurationConverter().toJson),
+      'peripherals': instance.peripherals?.map((e) => e.toJson()).toList(),
     };
 
 _$DeviceInputImpl _$$DeviceInputImplFromJson(Map<String, dynamic> json) =>

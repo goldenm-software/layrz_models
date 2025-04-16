@@ -76,6 +76,10 @@ class Device with _$Device {
     /// [visionCaptureThreshold] is the vision capture threshold of the device. This value is the
     /// threshold of the indicator displayed on Layrz Vision app.
     @DurationConverter() Duration? visionCaptureThreshold,
+
+    /// [peripherals] is the list of peripherals of the device. Only used when
+    /// [protocol.operationMode] is [OperationMode.peripheral].
+    List<Device>? peripherals,
   }) = _Device;
 
   factory Device.fromJson(Map<String, dynamic> json) => _$DeviceFromJson(json);

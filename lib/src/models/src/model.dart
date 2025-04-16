@@ -45,6 +45,9 @@ class Model with _$Model {
 
     /// [peripheralParserSpec] is the parser specification for the peripheral device.
     Map<String, dynamic>? peripheralParserSpec,
+
+    /// [firmwares] is the list of firmwares for the model.
+    @Default([]) List<FirmwareBuild> firmwares,
   }) = _Model;
 
   factory Model.fromJson(Map<String, dynamic> json) => _$ModelFromJson(json);

@@ -26,12 +26,8 @@ mixin _$AvailableLanguage {
   String? get fallback => throw _privateConstructorUsedError;
   Map<String, String>? get messages => throw _privateConstructorUsedError;
 
-  /// Serializes this AvailableLanguage to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AvailableLanguage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $AvailableLanguageCopyWith<AvailableLanguage> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -60,8 +56,6 @@ class _$AvailableLanguageCopyWithImpl<$Res, $Val extends AvailableLanguage>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of AvailableLanguage
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -120,8 +114,6 @@ class __$$AvailableLanguageImplCopyWithImpl<$Res>
       $Res Function(_$AvailableLanguageImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AvailableLanguage
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -207,14 +199,12 @@ class _$AvailableLanguageImpl extends _AvailableLanguage {
             const DeepCollectionEquality().equals(other._messages, _messages));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, code, fallback,
       const DeepCollectionEquality().hash(_messages));
 
-  /// Create a copy of AvailableLanguage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AvailableLanguageImplCopyWith<_$AvailableLanguageImpl> get copyWith =>
@@ -251,11 +241,8 @@ abstract class _AvailableLanguage extends AvailableLanguage {
   String? get fallback;
   @override
   Map<String, String>? get messages;
-
-  /// Create a copy of AvailableLanguage
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AvailableLanguageImplCopyWith<_$AvailableLanguageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -271,12 +258,8 @@ mixin _$Language {
   String get code => throw _privateConstructorUsedError;
   double? get progress => throw _privateConstructorUsedError;
 
-  /// Serializes this Language to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of Language
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $LanguageCopyWith<Language> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -299,8 +282,6 @@ class _$LanguageCopyWithImpl<$Res, $Val extends Language>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Language
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -349,8 +330,6 @@ class __$$LanguageImplCopyWithImpl<$Res>
       _$LanguageImpl _value, $Res Function(_$LanguageImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Language
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -416,13 +395,11 @@ class _$LanguageImpl extends _Language {
                 other.progress == progress));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, code, progress);
 
-  /// Create a copy of Language
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LanguageImplCopyWith<_$LanguageImpl> get copyWith =>
@@ -455,11 +432,8 @@ abstract class _Language extends Language {
   String get code;
   @override
   double? get progress;
-
-  /// Create a copy of Language
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LanguageImplCopyWith<_$LanguageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -477,12 +451,8 @@ mixin _$LanguageInput {
   String get code => throw _privateConstructorUsedError;
   set code(String value) => throw _privateConstructorUsedError;
 
-  /// Serializes this LanguageInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of LanguageInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $LanguageInputCopyWith<LanguageInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -506,8 +476,6 @@ class _$LanguageInputCopyWithImpl<$Res, $Val extends LanguageInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of LanguageInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -551,8 +519,6 @@ class __$$LanguageInputImplCopyWithImpl<$Res>
       _$LanguageInputImpl _value, $Res Function(_$LanguageInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LanguageInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -599,9 +565,7 @@ class _$LanguageInputImpl extends _LanguageInput {
     return 'LanguageInput(id: $id, name: $name, code: $code)';
   }
 
-  /// Create a copy of LanguageInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$LanguageInputImplCopyWith<_$LanguageInputImpl> get copyWith =>
@@ -632,11 +596,8 @@ abstract class _LanguageInput extends LanguageInput {
   @override
   String get code;
   set code(String value);
-
-  /// Create a copy of LanguageInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$LanguageInputImplCopyWith<_$LanguageInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -673,12 +634,8 @@ mixin _$I18nKey {
   /// [updatedBy] defines who updated the key.
   Employee get updatedBy => throw _privateConstructorUsedError;
 
-  /// Serializes this I18nKey to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of I18nKey
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $I18nKeyCopyWith<I18nKey> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -711,8 +668,6 @@ class _$I18nKeyCopyWithImpl<$Res, $Val extends I18nKey>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of I18nKey
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -761,8 +716,6 @@ class _$I18nKeyCopyWithImpl<$Res, $Val extends I18nKey>
     ) as $Val);
   }
 
-  /// Create a copy of I18nKey
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EmployeeCopyWith<$Res> get createdBy {
@@ -771,8 +724,6 @@ class _$I18nKeyCopyWithImpl<$Res, $Val extends I18nKey>
     });
   }
 
-  /// Create a copy of I18nKey
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EmployeeCopyWith<$Res> get updatedBy {
@@ -813,8 +764,6 @@ class __$$I18nKeyImplCopyWithImpl<$Res>
       _$I18nKeyImpl _value, $Res Function(_$I18nKeyImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of I18nKey
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -950,7 +899,7 @@ class _$I18nKeyImpl extends _I18nKey {
                 other.updatedBy == updatedBy));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -963,9 +912,7 @@ class _$I18nKeyImpl extends _I18nKey {
       updatedAt,
       updatedBy);
 
-  /// Create a copy of I18nKey
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$I18nKeyImplCopyWith<_$I18nKeyImpl> get copyWith =>
@@ -993,44 +940,42 @@ abstract class _I18nKey extends I18nKey {
 
   factory _I18nKey.fromJson(Map<String, dynamic> json) = _$I18nKeyImpl.fromJson;
 
-  /// [id] defines the key id. This ID is UUIDv4 format
   @override
+
+  /// [id] defines the key id. This ID is UUIDv4 format
   String get id;
+  @override
 
   /// [code] defines the key code. This code is used to identify the key in the application.
-  @override
   String get code;
+  @override
 
   /// [progress] defines the key progress. This is a number between 0 and 1.
-  @override
   double? get progress;
+  @override
 
   /// [translations] defines the translations for the key.
-  @override
   List<I18nTranslation> get translations;
+  @override
 
   /// [createdAt] defines when the key was created.
-  @override
   @TimestampConverter()
   DateTime get createdAt;
+  @override
 
   /// [createdBy] defines who created the key.
-  @override
   Employee get createdBy;
+  @override
 
   /// [updatedAt] defines when the key was updated.
-  @override
   @TimestampConverter()
   DateTime get updatedAt;
+  @override
 
   /// [updatedBy] defines who updated the key.
-  @override
   Employee get updatedBy;
-
-  /// Create a copy of I18nKey
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$I18nKeyImplCopyWith<_$I18nKeyImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1050,12 +995,8 @@ mixin _$I18nKeyInput {
   set translations(List<I18nTranslationInput> value) =>
       throw _privateConstructorUsedError;
 
-  /// Serializes this I18nKeyInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of I18nKeyInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $I18nKeyInputCopyWith<I18nKeyInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1079,8 +1020,6 @@ class _$I18nKeyInputCopyWithImpl<$Res, $Val extends I18nKeyInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of I18nKeyInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1124,8 +1063,6 @@ class __$$I18nKeyInputImplCopyWithImpl<$Res>
       _$I18nKeyInputImpl _value, $Res Function(_$I18nKeyInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of I18nKeyInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1173,9 +1110,7 @@ class _$I18nKeyInputImpl extends _I18nKeyInput {
     return 'I18nKeyInput(id: $id, code: $code, translations: $translations)';
   }
 
-  /// Create a copy of I18nKeyInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$I18nKeyInputImplCopyWith<_$I18nKeyInputImpl> get copyWith =>
@@ -1208,11 +1143,8 @@ abstract class _I18nKeyInput extends I18nKeyInput {
   @override
   List<I18nTranslationInput> get translations;
   set translations(List<I18nTranslationInput> value);
-
-  /// Create a copy of I18nKeyInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$I18nKeyInputImplCopyWith<_$I18nKeyInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1227,12 +1159,8 @@ mixin _$I18nTranslation {
   String get languageId => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
 
-  /// Serializes this I18nTranslation to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of I18nTranslation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $I18nTranslationCopyWith<I18nTranslation> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1256,8 +1184,6 @@ class _$I18nTranslationCopyWithImpl<$Res, $Val extends I18nTranslation>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of I18nTranslation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1301,8 +1227,6 @@ class __$$I18nTranslationImplCopyWithImpl<$Res>
       _$I18nTranslationImpl _value, $Res Function(_$I18nTranslationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of I18nTranslation
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1360,13 +1284,11 @@ class _$I18nTranslationImpl extends _I18nTranslation {
             (identical(other.message, message) || other.message == message));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, languageId, message);
 
-  /// Create a copy of I18nTranslation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$I18nTranslationImplCopyWith<_$I18nTranslationImpl> get copyWith =>
@@ -1397,11 +1319,8 @@ abstract class _I18nTranslation extends I18nTranslation {
   String get languageId;
   @override
   String get message;
-
-  /// Create a copy of I18nTranslation
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$I18nTranslationImplCopyWith<_$I18nTranslationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1419,12 +1338,8 @@ mixin _$I18nTranslationInput {
   String get message => throw _privateConstructorUsedError;
   set message(String value) => throw _privateConstructorUsedError;
 
-  /// Serializes this I18nTranslationInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of I18nTranslationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $I18nTranslationInputCopyWith<I18nTranslationInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1449,8 +1364,6 @@ class _$I18nTranslationInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of I18nTranslationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1494,8 +1407,6 @@ class __$$I18nTranslationInputImplCopyWithImpl<$Res>
       $Res Function(_$I18nTranslationInputImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of I18nTranslationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1542,9 +1453,7 @@ class _$I18nTranslationInputImpl extends _I18nTranslationInput {
     return 'I18nTranslationInput(id: $id, languageId: $languageId, message: $message)';
   }
 
-  /// Create a copy of I18nTranslationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$I18nTranslationInputImplCopyWith<_$I18nTranslationInputImpl>
@@ -1579,11 +1488,8 @@ abstract class _I18nTranslationInput extends I18nTranslationInput {
   @override
   String get message;
   set message(String value);
-
-  /// Create a copy of I18nTranslationInput
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$I18nTranslationInputImplCopyWith<_$I18nTranslationInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1612,12 +1518,8 @@ mixin _$I18nKeyHistory {
   /// [performedBy] is the user who made the change.
   Employee get performedBy => throw _privateConstructorUsedError;
 
-  /// Serializes this I18nKeyHistory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of I18nKeyHistory
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $I18nKeyHistoryCopyWith<I18nKeyHistory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1649,8 +1551,6 @@ class _$I18nKeyHistoryCopyWithImpl<$Res, $Val extends I18nKeyHistory>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of I18nKeyHistory
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1689,8 +1589,6 @@ class _$I18nKeyHistoryCopyWithImpl<$Res, $Val extends I18nKeyHistory>
     ) as $Val);
   }
 
-  /// Create a copy of I18nKeyHistory
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $EmployeeCopyWith<$Res> get performedBy {
@@ -1728,8 +1626,6 @@ class __$$I18nKeyHistoryImplCopyWithImpl<$Res>
       _$I18nKeyHistoryImpl _value, $Res Function(_$I18nKeyHistoryImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of I18nKeyHistory
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1829,14 +1725,12 @@ class _$I18nKeyHistoryImpl extends _I18nKeyHistory {
                 other.performedBy == performedBy));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, languageId, before, after, performedAt, performedBy);
 
-  /// Create a copy of I18nKeyHistory
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$I18nKeyHistoryImplCopyWith<_$I18nKeyHistoryImpl> get copyWith =>
@@ -1864,34 +1758,32 @@ abstract class _I18nKeyHistory extends I18nKeyHistory {
   factory _I18nKeyHistory.fromJson(Map<String, dynamic> json) =
       _$I18nKeyHistoryImpl.fromJson;
 
-  /// [id] is the ID of the history entry.
   @override
+
+  /// [id] is the ID of the history entry.
   String get id;
+  @override
 
   /// [language] is the language of the history entry.
-  @override
   String get languageId;
+  @override
 
   /// [before] is the previous value of the key.
-  @override
   String get before;
+  @override
 
   /// [after] is the new value of the key.
-  @override
   String get after;
+  @override
 
   /// [performedAt] is the date and time when the change was made.
-  @override
   DateTime get performedAt;
+  @override
 
   /// [performedBy] is the user who made the change.
-  @override
   Employee get performedBy;
-
-  /// Create a copy of I18nKeyHistory
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$I18nKeyHistoryImplCopyWith<_$I18nKeyHistoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

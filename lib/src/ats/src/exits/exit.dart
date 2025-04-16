@@ -59,6 +59,9 @@ class AtsExit with _$AtsExit {
 
     /// `attendantName` is the attendant name.
     String? attendantName,
+
+    /// `attendantId` is the attendant id.
+    String? attendantId,
   }) = _AtsExit;
   factory AtsExit.fromJson(Map<String, dynamic> json) => _$AtsExitFromJson(json);
 }
