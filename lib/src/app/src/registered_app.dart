@@ -2,13 +2,24 @@ part of '../app.dart';
 
 @freezed
 abstract class RegisteredApp with _$RegisteredApp {
+  const RegisteredApp._();
+
   const factory RegisteredApp({
+    /// [id] is the unique identifier of the app.
     required String id,
+
+    /// [name] is the name of the app. It's a fixed name, not a translation key
     required String name,
-    required String nickname,
+
+    /// [technology] is the technology of the app.
     @JsonKey(unknownEnumValue: AppTechnology.flutter) @Default(AppTechnology.flutter) AppTechnology technology,
+
+    /// [legalInformation] is the legal information of the app.
     AppLegal? legalInformation,
+
+    /// [designInformation] is the design information of the app.
     AppDesign? designInformation,
+    required String nickname,
     bool? isCustomized,
     List<AppInstance>? instances,
     List<Asset>? importedAssets,

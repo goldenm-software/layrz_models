@@ -2,18 +2,14 @@ part of '../app.dart';
 
 @freezed
 abstract class AvailableApp with _$AvailableApp {
+  const AvailableApp._();
+
   const factory AvailableApp({
     /// [id] is the unique identifier of the app.
     required String id,
 
     /// [name] is the name of the app. It's a fixed name, not a translation key
     required String name,
-
-    /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
-    required String appId,
-
-    /// [appType] is the type of the app.
-    @JsonKey(unknownEnumValue: AppType.public) @Default(AppType.public) AppType appType,
 
     /// [technology] is the technology of the app.
     @JsonKey(unknownEnumValue: AppTechnology.flutter) @Default(AppTechnology.flutter) AppTechnology technology,
@@ -23,6 +19,12 @@ abstract class AvailableApp with _$AvailableApp {
 
     /// [designInformation] is the design information of the app.
     AppDesign? designInformation,
+
+    /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
+    required String appId,
+
+    /// [appType] is the type of the app.
+    @JsonKey(unknownEnumValue: AppType.public) @Default(AppType.public) AppType appType,
 
     /// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
     @JsonKey(unknownEnumValue: AppPlatform.web) List<AppPlatform>? supportedPlatforms,

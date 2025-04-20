@@ -202,13 +202,6 @@ mixin _$AvailableApp {
   /// [name] is the name of the app. It's a fixed name, not a translation key
   String get name;
 
-  /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
-  String get appId;
-
-  /// [appType] is the type of the app.
-  @JsonKey(unknownEnumValue: AppType.public)
-  AppType get appType;
-
   /// [technology] is the technology of the app.
   @JsonKey(unknownEnumValue: AppTechnology.flutter)
   AppTechnology get technology;
@@ -218,6 +211,13 @@ mixin _$AvailableApp {
 
   /// [designInformation] is the design information of the app.
   AppDesign? get designInformation;
+
+  /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
+  String get appId;
+
+  /// [appType] is the type of the app.
+  @JsonKey(unknownEnumValue: AppType.public)
+  AppType get appType;
 
   /// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
   @JsonKey(unknownEnumValue: AppPlatform.web)
@@ -262,14 +262,14 @@ mixin _$AvailableApp {
             other is AvailableApp &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.appId, appId) || other.appId == appId) &&
-            (identical(other.appType, appType) || other.appType == appType) &&
             (identical(other.technology, technology) ||
                 other.technology == technology) &&
             (identical(other.legalInformation, legalInformation) ||
                 other.legalInformation == legalInformation) &&
             (identical(other.designInformation, designInformation) ||
                 other.designInformation == designInformation) &&
+            (identical(other.appId, appId) || other.appId == appId) &&
+            (identical(other.appType, appType) || other.appType == appType) &&
             const DeepCollectionEquality()
                 .equals(other.supportedPlatforms, supportedPlatforms) &&
             (identical(other.onlyCustomized, onlyCustomized) ||
@@ -293,11 +293,11 @@ mixin _$AvailableApp {
       runtimeType,
       id,
       name,
-      appId,
-      appType,
       technology,
       legalInformation,
       designInformation,
+      appId,
+      appType,
       const DeepCollectionEquality().hash(supportedPlatforms),
       onlyCustomized,
       hasImport,
@@ -309,7 +309,7 @@ mixin _$AvailableApp {
 
   @override
   String toString() {
-    return 'AvailableApp(id: $id, name: $name, appId: $appId, appType: $appType, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, supportedPlatforms: $supportedPlatforms, onlyCustomized: $onlyCustomized, hasImport: $hasImport, hasKeychain: $hasKeychain, serverFolder: $serverFolder, s3Folder: $s3Folder, versions: $versions, implementations: $implementations)';
+    return 'AvailableApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, appId: $appId, appType: $appType, supportedPlatforms: $supportedPlatforms, onlyCustomized: $onlyCustomized, hasImport: $hasImport, hasKeychain: $hasKeychain, serverFolder: $serverFolder, s3Folder: $s3Folder, versions: $versions, implementations: $implementations)';
   }
 }
 
@@ -322,12 +322,12 @@ abstract mixin class $AvailableAppCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      String appId,
-      @JsonKey(unknownEnumValue: AppType.public) AppType appType,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
+      String appId,
+      @JsonKey(unknownEnumValue: AppType.public) AppType appType,
       @JsonKey(unknownEnumValue: AppPlatform.web)
       List<AppPlatform>? supportedPlatforms,
       bool onlyCustomized,
@@ -356,11 +356,11 @@ class _$AvailableAppCopyWithImpl<$Res> implements $AvailableAppCopyWith<$Res> {
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? appId = null,
-    Object? appType = null,
     Object? technology = null,
     Object? legalInformation = freezed,
     Object? designInformation = freezed,
+    Object? appId = null,
+    Object? appType = null,
     Object? supportedPlatforms = freezed,
     Object? onlyCustomized = null,
     Object? hasImport = freezed,
@@ -379,14 +379,6 @@ class _$AvailableAppCopyWithImpl<$Res> implements $AvailableAppCopyWith<$Res> {
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      appId: null == appId
-          ? _self.appId
-          : appId // ignore: cast_nullable_to_non_nullable
-              as String,
-      appType: null == appType
-          ? _self.appType
-          : appType // ignore: cast_nullable_to_non_nullable
-              as AppType,
       technology: null == technology
           ? _self.technology
           : technology // ignore: cast_nullable_to_non_nullable
@@ -399,6 +391,14 @@ class _$AvailableAppCopyWithImpl<$Res> implements $AvailableAppCopyWith<$Res> {
           ? _self.designInformation
           : designInformation // ignore: cast_nullable_to_non_nullable
               as AppDesign?,
+      appId: null == appId
+          ? _self.appId
+          : appId // ignore: cast_nullable_to_non_nullable
+              as String,
+      appType: null == appType
+          ? _self.appType
+          : appType // ignore: cast_nullable_to_non_nullable
+              as AppType,
       supportedPlatforms: freezed == supportedPlatforms
           ? _self.supportedPlatforms
           : supportedPlatforms // ignore: cast_nullable_to_non_nullable
@@ -465,16 +465,16 @@ class _$AvailableAppCopyWithImpl<$Res> implements $AvailableAppCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _AvailableApp implements AvailableApp {
+class _AvailableApp extends AvailableApp {
   const _AvailableApp(
       {required this.id,
       required this.name,
-      required this.appId,
-      @JsonKey(unknownEnumValue: AppType.public) this.appType = AppType.public,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       this.technology = AppTechnology.flutter,
       this.legalInformation,
       this.designInformation,
+      required this.appId,
+      @JsonKey(unknownEnumValue: AppType.public) this.appType = AppType.public,
       @JsonKey(unknownEnumValue: AppPlatform.web)
       final List<AppPlatform>? supportedPlatforms,
       required this.onlyCustomized,
@@ -486,7 +486,8 @@ class _AvailableApp implements AvailableApp {
       final List<RegisteredApp>? implementations})
       : _supportedPlatforms = supportedPlatforms,
         _versions = versions,
-        _implementations = implementations;
+        _implementations = implementations,
+        super._();
   factory _AvailableApp.fromJson(Map<String, dynamic> json) =>
       _$AvailableAppFromJson(json);
 
@@ -497,15 +498,6 @@ class _AvailableApp implements AvailableApp {
   /// [name] is the name of the app. It's a fixed name, not a translation key
   @override
   final String name;
-
-  /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
-  @override
-  final String appId;
-
-  /// [appType] is the type of the app.
-  @override
-  @JsonKey(unknownEnumValue: AppType.public)
-  final AppType appType;
 
   /// [technology] is the technology of the app.
   @override
@@ -519,6 +511,15 @@ class _AvailableApp implements AvailableApp {
   /// [designInformation] is the design information of the app.
   @override
   final AppDesign? designInformation;
+
+  /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
+  @override
+  final String appId;
+
+  /// [appType] is the type of the app.
+  @override
+  @JsonKey(unknownEnumValue: AppType.public)
+  final AppType appType;
 
   /// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
   final List<AppPlatform>? _supportedPlatforms;
@@ -603,14 +604,14 @@ class _AvailableApp implements AvailableApp {
             other is _AvailableApp &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.appId, appId) || other.appId == appId) &&
-            (identical(other.appType, appType) || other.appType == appType) &&
             (identical(other.technology, technology) ||
                 other.technology == technology) &&
             (identical(other.legalInformation, legalInformation) ||
                 other.legalInformation == legalInformation) &&
             (identical(other.designInformation, designInformation) ||
                 other.designInformation == designInformation) &&
+            (identical(other.appId, appId) || other.appId == appId) &&
+            (identical(other.appType, appType) || other.appType == appType) &&
             const DeepCollectionEquality()
                 .equals(other._supportedPlatforms, _supportedPlatforms) &&
             (identical(other.onlyCustomized, onlyCustomized) ||
@@ -634,11 +635,11 @@ class _AvailableApp implements AvailableApp {
       runtimeType,
       id,
       name,
-      appId,
-      appType,
       technology,
       legalInformation,
       designInformation,
+      appId,
+      appType,
       const DeepCollectionEquality().hash(_supportedPlatforms),
       onlyCustomized,
       hasImport,
@@ -650,7 +651,7 @@ class _AvailableApp implements AvailableApp {
 
   @override
   String toString() {
-    return 'AvailableApp(id: $id, name: $name, appId: $appId, appType: $appType, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, supportedPlatforms: $supportedPlatforms, onlyCustomized: $onlyCustomized, hasImport: $hasImport, hasKeychain: $hasKeychain, serverFolder: $serverFolder, s3Folder: $s3Folder, versions: $versions, implementations: $implementations)';
+    return 'AvailableApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, appId: $appId, appType: $appType, supportedPlatforms: $supportedPlatforms, onlyCustomized: $onlyCustomized, hasImport: $hasImport, hasKeychain: $hasKeychain, serverFolder: $serverFolder, s3Folder: $s3Folder, versions: $versions, implementations: $implementations)';
   }
 }
 
@@ -665,12 +666,12 @@ abstract mixin class _$AvailableAppCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      String appId,
-      @JsonKey(unknownEnumValue: AppType.public) AppType appType,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
+      String appId,
+      @JsonKey(unknownEnumValue: AppType.public) AppType appType,
       @JsonKey(unknownEnumValue: AppPlatform.web)
       List<AppPlatform>? supportedPlatforms,
       bool onlyCustomized,
@@ -702,11 +703,11 @@ class __$AvailableAppCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? appId = null,
-    Object? appType = null,
     Object? technology = null,
     Object? legalInformation = freezed,
     Object? designInformation = freezed,
+    Object? appId = null,
+    Object? appType = null,
     Object? supportedPlatforms = freezed,
     Object? onlyCustomized = null,
     Object? hasImport = freezed,
@@ -725,14 +726,6 @@ class __$AvailableAppCopyWithImpl<$Res>
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      appId: null == appId
-          ? _self.appId
-          : appId // ignore: cast_nullable_to_non_nullable
-              as String,
-      appType: null == appType
-          ? _self.appType
-          : appType // ignore: cast_nullable_to_non_nullable
-              as AppType,
       technology: null == technology
           ? _self.technology
           : technology // ignore: cast_nullable_to_non_nullable
@@ -745,6 +738,14 @@ class __$AvailableAppCopyWithImpl<$Res>
           ? _self.designInformation
           : designInformation // ignore: cast_nullable_to_non_nullable
               as AppDesign?,
+      appId: null == appId
+          ? _self.appId
+          : appId // ignore: cast_nullable_to_non_nullable
+              as String,
+      appType: null == appType
+          ? _self.appType
+          : appType // ignore: cast_nullable_to_non_nullable
+              as AppType,
       supportedPlatforms: freezed == supportedPlatforms
           ? _self._supportedPlatforms
           : supportedPlatforms // ignore: cast_nullable_to_non_nullable
@@ -1153,13 +1154,22 @@ class __$AvailableAppInputCopyWithImpl<$Res>
 
 /// @nodoc
 mixin _$RegisteredApp {
+  /// [id] is the unique identifier of the app.
   String get id;
+
+  /// [name] is the name of the app. It's a fixed name, not a translation key
   String get name;
-  String get nickname;
+
+  /// [technology] is the technology of the app.
   @JsonKey(unknownEnumValue: AppTechnology.flutter)
   AppTechnology get technology;
+
+  /// [legalInformation] is the legal information of the app.
   AppLegal? get legalInformation;
+
+  /// [designInformation] is the design information of the app.
   AppDesign? get designInformation;
+  String get nickname;
   bool? get isCustomized;
   List<AppInstance>? get instances;
   List<Asset>? get importedAssets;
@@ -1202,14 +1212,14 @@ mixin _$RegisteredApp {
             other is RegisteredApp &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.nickname, nickname) ||
-                other.nickname == nickname) &&
             (identical(other.technology, technology) ||
                 other.technology == technology) &&
             (identical(other.legalInformation, legalInformation) ||
                 other.legalInformation == legalInformation) &&
             (identical(other.designInformation, designInformation) ||
                 other.designInformation == designInformation) &&
+            (identical(other.nickname, nickname) ||
+                other.nickname == nickname) &&
             (identical(other.isCustomized, isCustomized) ||
                 other.isCustomized == isCustomized) &&
             const DeepCollectionEquality().equals(other.instances, instances) &&
@@ -1239,10 +1249,10 @@ mixin _$RegisteredApp {
       runtimeType,
       id,
       name,
-      nickname,
       technology,
       legalInformation,
       designInformation,
+      nickname,
       isCustomized,
       const DeepCollectionEquality().hash(instances),
       const DeepCollectionEquality().hash(importedAssets),
@@ -1258,7 +1268,7 @@ mixin _$RegisteredApp {
 
   @override
   String toString() {
-    return 'RegisteredApp(id: $id, name: $name, nickname: $nickname, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers)';
+    return 'RegisteredApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, nickname: $nickname, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers)';
   }
 }
 
@@ -1271,11 +1281,11 @@ abstract mixin class $RegisteredAppCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      String nickname,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
+      String nickname,
       bool? isCustomized,
       List<AppInstance>? instances,
       List<Asset>? importedAssets,
@@ -1310,10 +1320,10 @@ class _$RegisteredAppCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? nickname = null,
     Object? technology = null,
     Object? legalInformation = freezed,
     Object? designInformation = freezed,
+    Object? nickname = null,
     Object? isCustomized = freezed,
     Object? instances = freezed,
     Object? importedAssets = freezed,
@@ -1336,10 +1346,6 @@ class _$RegisteredAppCopyWithImpl<$Res>
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      nickname: null == nickname
-          ? _self.nickname
-          : nickname // ignore: cast_nullable_to_non_nullable
-              as String,
       technology: null == technology
           ? _self.technology
           : technology // ignore: cast_nullable_to_non_nullable
@@ -1352,6 +1358,10 @@ class _$RegisteredAppCopyWithImpl<$Res>
           ? _self.designInformation
           : designInformation // ignore: cast_nullable_to_non_nullable
               as AppDesign?,
+      nickname: null == nickname
+          ? _self.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String,
       isCustomized: freezed == isCustomized
           ? _self.isCustomized
           : isCustomized // ignore: cast_nullable_to_non_nullable
@@ -1462,15 +1472,15 @@ class _$RegisteredAppCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _RegisteredApp implements RegisteredApp {
+class _RegisteredApp extends RegisteredApp {
   const _RegisteredApp(
       {required this.id,
       required this.name,
-      required this.nickname,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       this.technology = AppTechnology.flutter,
       this.legalInformation,
       this.designInformation,
+      required this.nickname,
       this.isCustomized,
       final List<AppInstance>? instances,
       final List<Asset>? importedAssets,
@@ -1489,23 +1499,33 @@ class _RegisteredApp implements RegisteredApp {
         _importedUsers = importedUsers,
         _keychain = keychain,
         _allowedReports = allowedReports,
-        _authorizedLayers = authorizedLayers;
+        _authorizedLayers = authorizedLayers,
+        super._();
   factory _RegisteredApp.fromJson(Map<String, dynamic> json) =>
       _$RegisteredAppFromJson(json);
 
+  /// [id] is the unique identifier of the app.
   @override
   final String id;
+
+  /// [name] is the name of the app. It's a fixed name, not a translation key
   @override
   final String name;
-  @override
-  final String nickname;
+
+  /// [technology] is the technology of the app.
   @override
   @JsonKey(unknownEnumValue: AppTechnology.flutter)
   final AppTechnology technology;
+
+  /// [legalInformation] is the legal information of the app.
   @override
   final AppLegal? legalInformation;
+
+  /// [designInformation] is the design information of the app.
   @override
   final AppDesign? designInformation;
+  @override
+  final String nickname;
   @override
   final bool? isCustomized;
   final List<AppInstance>? _instances;
@@ -1622,14 +1642,14 @@ class _RegisteredApp implements RegisteredApp {
             other is _RegisteredApp &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.nickname, nickname) ||
-                other.nickname == nickname) &&
             (identical(other.technology, technology) ||
                 other.technology == technology) &&
             (identical(other.legalInformation, legalInformation) ||
                 other.legalInformation == legalInformation) &&
             (identical(other.designInformation, designInformation) ||
                 other.designInformation == designInformation) &&
+            (identical(other.nickname, nickname) ||
+                other.nickname == nickname) &&
             (identical(other.isCustomized, isCustomized) ||
                 other.isCustomized == isCustomized) &&
             const DeepCollectionEquality()
@@ -1660,10 +1680,10 @@ class _RegisteredApp implements RegisteredApp {
       runtimeType,
       id,
       name,
-      nickname,
       technology,
       legalInformation,
       designInformation,
+      nickname,
       isCustomized,
       const DeepCollectionEquality().hash(_instances),
       const DeepCollectionEquality().hash(_importedAssets),
@@ -1679,7 +1699,7 @@ class _RegisteredApp implements RegisteredApp {
 
   @override
   String toString() {
-    return 'RegisteredApp(id: $id, name: $name, nickname: $nickname, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers)';
+    return 'RegisteredApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, nickname: $nickname, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers)';
   }
 }
 
@@ -1694,11 +1714,11 @@ abstract mixin class _$RegisteredAppCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      String nickname,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
+      String nickname,
       bool? isCustomized,
       List<AppInstance>? instances,
       List<Asset>? importedAssets,
@@ -1737,10 +1757,10 @@ class __$RegisteredAppCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? nickname = null,
     Object? technology = null,
     Object? legalInformation = freezed,
     Object? designInformation = freezed,
+    Object? nickname = null,
     Object? isCustomized = freezed,
     Object? instances = freezed,
     Object? importedAssets = freezed,
@@ -1763,10 +1783,6 @@ class __$RegisteredAppCopyWithImpl<$Res>
           ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      nickname: null == nickname
-          ? _self.nickname
-          : nickname // ignore: cast_nullable_to_non_nullable
-              as String,
       technology: null == technology
           ? _self.technology
           : technology // ignore: cast_nullable_to_non_nullable
@@ -1779,6 +1795,10 @@ class __$RegisteredAppCopyWithImpl<$Res>
           ? _self.designInformation
           : designInformation // ignore: cast_nullable_to_non_nullable
               as AppDesign?,
+      nickname: null == nickname
+          ? _self.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String,
       isCustomized: freezed == isCustomized
           ? _self.isCustomized
           : isCustomized // ignore: cast_nullable_to_non_nullable
