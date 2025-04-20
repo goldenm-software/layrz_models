@@ -1,7 +1,7 @@
 part of '../app.dart';
 
 @freezed
-class AppThemedAsset with _$AppThemedAsset {
+abstract class AppThemedAsset with _$AppThemedAsset {
   const factory AppThemedAsset({
     required String normal,
     required String white,
@@ -11,7 +11,7 @@ class AppThemedAsset with _$AppThemedAsset {
 }
 
 @unfreezed
-class AppThemedAssetInput with _$AppThemedAssetInput {
+abstract class AppThemedAssetInput with _$AppThemedAssetInput {
   factory AppThemedAssetInput({
     String? normal,
     String? white,

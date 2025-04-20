@@ -1,7 +1,7 @@
 part of '../commands.dart';
 
 @freezed
-class CommandData with _$CommandData {
+abstract class CommandData with _$CommandData {
   const factory CommandData({
     /// [source] is the source of the command.
     @CommandDefinitionSourceConverter() required CommandDefinitionSource source,
@@ -17,7 +17,7 @@ class CommandData with _$CommandData {
 }
 
 @freezed
-class DeviceCommand with _$DeviceCommand {
+abstract class DeviceCommand with _$DeviceCommand {
   const factory DeviceCommand({
     required String id,
 
@@ -88,7 +88,7 @@ class DeviceCommand with _$DeviceCommand {
 }
 
 @unfreezed
-class CommandDataInput with _$CommandDataInput {
+abstract class CommandDataInput with _$CommandDataInput {
   factory CommandDataInput({
     /// [source] is the source of the command.
     @CommandDefinitionSourceOrNullConverter() CommandDefinitionSource? source,
@@ -104,7 +104,7 @@ class CommandDataInput with _$CommandDataInput {
 }
 
 @unfreezed
-class CommandInput with _$CommandInput {
+abstract class CommandInput with _$CommandInput {
   factory CommandInput({
     String? id,
 

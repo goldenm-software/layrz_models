@@ -1,7 +1,7 @@
 part of '../sdm.dart';
 
 @freezed
-class SdmOperator with _$SdmOperator {
+abstract class SdmOperator with _$SdmOperator {
   const factory SdmOperator({
     /// [id] of the pen entity. This ID is unique.
     required String id,

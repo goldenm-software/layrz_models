@@ -1,7 +1,7 @@
 part of '../users.dart';
 
 @unfreezed
-class MfaInput with _$MfaInput {
+abstract class MfaInput with _$MfaInput {
   factory MfaInput({
     MfaMethod? method,
     String? token,

@@ -6,7 +6,7 @@ part of 'actions.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ActionImpl _$$ActionImplFromJson(Map<String, dynamic> json) => _$ActionImpl(
+_Action _$ActionFromJson(Map<String, dynamic> json) => _Action(
       id: json['id'] as String,
       name: json['name'] as String,
       kind: $enumDecode(_$ActionTypeEnumMap, json['kind'],
@@ -43,8 +43,7 @@ _$ActionImpl _$$ActionImplFromJson(Map<String, dynamic> json) => _$ActionImpl(
               json['geofenceSettings'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ActionImplToJson(_$ActionImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$ActionToJson(_Action instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'kind': instance.kind.toJson(),
@@ -79,8 +78,7 @@ const _$ActionSubtypeEnumMap = {
   ActionSubtype.unused: 'UNUSED',
 };
 
-_$ActionInputImpl _$$ActionInputImplFromJson(Map<String, dynamic> json) =>
-    _$ActionInputImpl(
+_ActionInput _$ActionInputFromJson(Map<String, dynamic> json) => _ActionInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       kind: $enumDecodeNullable(_$ActionTypeEnumMap, json['kind'],
@@ -107,7 +105,7 @@ _$ActionInputImpl _$$ActionInputImplFromJson(Map<String, dynamic> json) =>
           json['geofenceSettings'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ActionInputImplToJson(_$ActionInputImpl instance) =>
+Map<String, dynamic> _$ActionInputToJson(_ActionInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -121,9 +119,9 @@ Map<String, dynamic> _$$ActionInputImplToJson(_$ActionInputImpl instance) =>
       'geofenceSettings': instance.geofenceSettings.toJson(),
     };
 
-_$ActionGeofenceSettingsImpl _$$ActionGeofenceSettingsImplFromJson(
+_ActionGeofenceSettings _$ActionGeofenceSettingsFromJson(
         Map<String, dynamic> json) =>
-    _$ActionGeofenceSettingsImpl(
+    _ActionGeofenceSettings(
       whoOwner: $enumDecodeNullable(_$ActionPropertyEnumMap, json['whoOwner'],
               unknownValue: ActionProperty.none) ??
           ActionProperty.none,
@@ -137,8 +135,8 @@ _$ActionGeofenceSettingsImpl _$$ActionGeofenceSettingsImplFromJson(
           : MappitRoute.fromJson(json['mappitRoute'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ActionGeofenceSettingsImplToJson(
-        _$ActionGeofenceSettingsImpl instance) =>
+Map<String, dynamic> _$ActionGeofenceSettingsToJson(
+        _ActionGeofenceSettings instance) =>
     <String, dynamic>{
       'whoOwner': instance.whoOwner.toJson(),
       'name': instance.name,
@@ -165,9 +163,9 @@ const _$GeofenceCategoryEnumMap = {
   GeofenceCategory.lead: 'LEAD',
 };
 
-_$ActionGeofenceSettingsInputImpl _$$ActionGeofenceSettingsInputImplFromJson(
+_ActionGeofenceSettingsInput _$ActionGeofenceSettingsInputFromJson(
         Map<String, dynamic> json) =>
-    _$ActionGeofenceSettingsInputImpl(
+    _ActionGeofenceSettingsInput(
       whoOwner: $enumDecodeNullable(_$ActionPropertyEnumMap, json['whoOwner'],
               unknownValue: ActionProperty.none) ??
           ActionProperty.none,
@@ -179,8 +177,8 @@ _$ActionGeofenceSettingsInputImpl _$$ActionGeofenceSettingsInputImplFromJson(
       mappitRouteId: json['mappitRouteId'] as String?,
     );
 
-Map<String, dynamic> _$$ActionGeofenceSettingsInputImplToJson(
-        _$ActionGeofenceSettingsInputImpl instance) =>
+Map<String, dynamic> _$ActionGeofenceSettingsInputToJson(
+        _ActionGeofenceSettingsInput instance) =>
     <String, dynamic>{
       'whoOwner': instance.whoOwner.toJson(),
       'name': instance.name,

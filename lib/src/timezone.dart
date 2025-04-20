@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class Timezone with _$Timezone {
+abstract class Timezone with _$Timezone {
   const factory Timezone({
     /// Is the id of the timezone
     required String id,

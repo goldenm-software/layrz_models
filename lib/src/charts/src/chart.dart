@@ -1,7 +1,7 @@
 part of '../charts.dart';
 
 @freezed
-class LayrzChart with _$LayrzChart {
+abstract class LayrzChart with _$LayrzChart {
   const LayrzChart._();
   const factory LayrzChart({
     /// [id] is a unique identifier for this entity.
@@ -39,7 +39,7 @@ class LayrzChart with _$LayrzChart {
 }
 
 @unfreezed
-class LayrzChartInput with _$LayrzChartInput {
+abstract class LayrzChartInput with _$LayrzChartInput {
   const LayrzChartInput._();
   factory LayrzChartInput({
     /// [id] is a unique identifier for this entity. Keep it null to create a new entity.

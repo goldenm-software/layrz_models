@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class FtpAccount with _$FtpAccount {
+abstract class FtpAccount with _$FtpAccount {
   const factory FtpAccount({
     /// [host] is the host of the ftp account.
     String? host,
@@ -20,7 +20,7 @@ class FtpAccount with _$FtpAccount {
 }
 
 @freezed
-class LayrzFunction with _$LayrzFunction {
+abstract class LayrzFunction with _$LayrzFunction {
   const factory LayrzFunction({
     /// [id] is the unique identifier of the function.
     required String id,

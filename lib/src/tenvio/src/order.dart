@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class TenvioOrder with _$TenvioOrder {
+abstract class TenvioOrder with _$TenvioOrder {
   const TenvioOrder._();
   const factory TenvioOrder({
     /// [id] ID of the order entity. This ID is unique along the system.
@@ -81,7 +81,7 @@ class TenvioOrder with _$TenvioOrder {
 }
 
 @unfreezed
-class TenvioOrderInput with _$TenvioOrderInput {
+abstract class TenvioOrderInput with _$TenvioOrderInput {
   TenvioOrderInput._();
 
   factory TenvioOrderInput({

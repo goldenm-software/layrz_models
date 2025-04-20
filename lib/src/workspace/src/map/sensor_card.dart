@@ -1,7 +1,7 @@
 part of '../../workspace.dart';
 
 @freezed
-class MapCardSensors with _$MapCardSensors {
+abstract class MapCardSensors with _$MapCardSensors {
   const factory MapCardSensors({
     /// Represents the ID of the asset
     required String assetId,
@@ -20,7 +20,7 @@ class MapCardSensors with _$MapCardSensors {
 }
 
 @unfreezed
-class MapCardSensorsInput with _$MapCardSensorsInput {
+abstract class MapCardSensorsInput with _$MapCardSensorsInput {
   factory MapCardSensorsInput({
     /// Represents the ID of the asset
     String? assetId,

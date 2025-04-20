@@ -1,7 +1,7 @@
 part of '../ats.dart';
 
 @freezed
-class AtsCommandResult with _$AtsCommandResult {
+abstract class AtsCommandResult with _$AtsCommandResult {
   const factory AtsCommandResult({
     /// [String] Command sent to the device.
     String? request,

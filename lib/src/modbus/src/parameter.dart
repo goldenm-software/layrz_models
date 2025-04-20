@@ -1,7 +1,7 @@
 part of '../modbus.dart';
 
 @freezed
-class ModbusParameter with _$ModbusParameter {
+abstract class ModbusParameter with _$ModbusParameter {
   const factory ModbusParameter({
     /// [schema] represents the format of the command, it can be either single or multiple.
     @Default(ModbusParameterSchema.single) @ModbusParameterSchemaConverter() ModbusParameterSchema schema,
@@ -33,7 +33,7 @@ class ModbusParameter with _$ModbusParameter {
 }
 
 @unfreezed
-class ModbusParameterInput with _$ModbusParameterInput {
+abstract class ModbusParameterInput with _$ModbusParameterInput {
   factory ModbusParameterInput({
     /// [schema] represents the format of the command, it can be either single or multiple.
     @Default(ModbusParameterSchema.single) @ModbusParameterSchemaConverter() ModbusParameterSchema schema,

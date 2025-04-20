@@ -1,7 +1,7 @@
 part of '../reports.dart';
 
 @freezed
-class ReportRow with _$ReportRow {
+abstract class ReportRow with _$ReportRow {
   const factory ReportRow({
     /// [content] is the cells of the report row.
     @Default([]) List<ReportCell> content,

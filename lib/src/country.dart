@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class Country with _$Country {
+abstract class Country with _$Country {
   const factory Country({
     required String id,
     required String commonName,
@@ -14,7 +14,7 @@ class Country with _$Country {
 }
 
 @freezed
-class PhoneNumber with _$PhoneNumber {
+abstract class PhoneNumber with _$PhoneNumber {
   const PhoneNumber._();
   const factory PhoneNumber({
     /// Country code.
@@ -29,7 +29,7 @@ class PhoneNumber with _$PhoneNumber {
 }
 
 @unfreezed
-class PhoneNumberInput with _$PhoneNumberInput {
+abstract class PhoneNumberInput with _$PhoneNumberInput {
   factory PhoneNumberInput({
     /// Country code.
     @Default('') String countryCode,
@@ -42,7 +42,7 @@ class PhoneNumberInput with _$PhoneNumberInput {
 }
 
 @freezed
-class NullablePhoneNumber with _$NullablePhoneNumber {
+abstract class NullablePhoneNumber with _$NullablePhoneNumber {
   const NullablePhoneNumber._();
   const factory NullablePhoneNumber({
     /// Country code.
@@ -57,7 +57,7 @@ class NullablePhoneNumber with _$NullablePhoneNumber {
 }
 
 @freezed
-class City with _$City {
+abstract class City with _$City {
   const factory City({
     /// [id] represents the unique identifier of the city
     required String id,
@@ -76,7 +76,7 @@ class City with _$City {
 }
 
 @freezed
-class CountryState with _$CountryState {
+abstract class CountryState with _$CountryState {
   const factory CountryState({
     /// [id] represents the unique identifier of the CountryState
     required String id,

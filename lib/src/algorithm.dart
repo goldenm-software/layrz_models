@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class Algorithm with _$Algorithm {
+abstract class Algorithm with _$Algorithm {
   const factory Algorithm({
     required String id,
     required String name,

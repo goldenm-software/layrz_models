@@ -1,7 +1,7 @@
 part of '../../layrz_models.dart';
 
 @freezed
-class LinkShortcut with _$LinkShortcut {
+abstract class LinkShortcut with _$LinkShortcut {
   const factory LinkShortcut({
     /// [id] is the unique identifier for the shortcut.
     required String id,

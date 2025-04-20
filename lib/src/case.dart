@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class CommentOwner with _$CommentOwner {
+abstract class CommentOwner with _$CommentOwner {
   const factory CommentOwner({
     required String id,
     required String name,
@@ -13,7 +13,7 @@ class CommentOwner with _$CommentOwner {
 }
 
 @freezed
-class CaseComment with _$CaseComment {
+abstract class CaseComment with _$CaseComment {
   const factory CaseComment({
     required String id,
     @TimestampConverter() required DateTime at,
@@ -25,7 +25,7 @@ class CaseComment with _$CaseComment {
 }
 
 @freezed
-class Case with _$Case {
+abstract class Case with _$Case {
   const factory Case({
     required String id,
     @JsonKey(name: 'dateReceived') @TimestampConverter() required DateTime receivedAt,

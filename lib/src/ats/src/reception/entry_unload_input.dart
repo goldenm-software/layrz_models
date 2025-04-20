@@ -1,9 +1,9 @@
 part of '../../ats.dart';
 
-/// `AtsEntryUnloadInput` is a class that represents the input for unloading an entry in the ATS system.
+/// `AtsEntryUnloadInput` is a abstract class that represents the input for unloading an entry in the ATS system.
 
 @unfreezed
-class AtsEntryUnloadInput with _$AtsEntryUnloadInput {
+abstract class AtsEntryUnloadInput with _$AtsEntryUnloadInput {
   factory AtsEntryUnloadInput({
     /// `id` of the [AtsEntry] entity. This ID is unique.
     String? id,

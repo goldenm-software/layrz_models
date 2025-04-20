@@ -1,10 +1,9 @@
-
 part of '../mappit.dart';
 
 @unfreezed
-class MappitReportInput with _$MappitReportInput {
+abstract class MappitReportInput with _$MappitReportInput {
   factory MappitReportInput({
-        /// Start date for the report.
+    /// Start date for the report.
     double? startAt,
 
     /// End date for the report.

@@ -1,7 +1,7 @@
 part of '../sensors.dart';
 
 @freezed
-class MaskPoint with _$MaskPoint {
+abstract class MaskPoint with _$MaskPoint {
   const factory MaskPoint({
     /// [color] of the mask point, will convert the color ignoring the dark/light theme setting.
     @ColorOrNullConverter() Color? color,
@@ -21,7 +21,7 @@ class MaskPoint with _$MaskPoint {
 }
 
 @unfreezed
-class MaskPointInput with _$MaskPointInput {
+abstract class MaskPointInput with _$MaskPointInput {
   factory MaskPointInput({
     @ColorOrNullConverter() Color? color,
     String? text,

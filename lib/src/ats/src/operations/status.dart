@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsOperationStatuses with _$AtsOperationStatuses {
+abstract class AtsOperationStatuses with _$AtsOperationStatuses {
   const factory AtsOperationStatuses({
     /// `asset` is the Asset linked to the operation.
     Asset? asset,

@@ -1,7 +1,7 @@
 part of '../ats.dart';
 
 @unfreezed
-class AtsExecuteLoadInput with _$AtsExecuteLoadInput {
+abstract class AtsExecuteLoadInput with _$AtsExecuteLoadInput {
   factory AtsExecuteLoadInput({
     /// `fromAssetId` of the tank
     String? fromAssetId,

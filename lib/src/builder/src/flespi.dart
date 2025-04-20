@@ -1,7 +1,7 @@
 part of '../builder.dart';
 
 @freezed
-class FlespiModel with _$FlespiModel {
+abstract class FlespiModel with _$FlespiModel {
   const factory FlespiModel({
     required String flespiId,
     required String name,
@@ -11,7 +11,7 @@ class FlespiModel with _$FlespiModel {
 }
 
 @freezed
-class FlespiAcl with _$FlespiAcl {
+abstract class FlespiAcl with _$FlespiAcl {
   const factory FlespiAcl({
     /// [uri] is the URI of the ACL.
     @FlespiUriConverter() required FlespiUri uri,
@@ -40,7 +40,7 @@ class FlespiAcl with _$FlespiAcl {
 }
 
 @unfreezed
-class FlespiAclInput with _$FlespiAclInput {
+abstract class FlespiAclInput with _$FlespiAclInput {
   factory FlespiAclInput({
     /// [uri] is the URI of the ACL.
     @FlespiUriConverter() required FlespiUri uri,
@@ -69,7 +69,7 @@ class FlespiAclInput with _$FlespiAclInput {
 }
 
 @freezed
-class FlespiSubmoduleConfig with _$FlespiSubmoduleConfig {
+abstract class FlespiSubmoduleConfig with _$FlespiSubmoduleConfig {
   const factory FlespiSubmoduleConfig({
     /// [submodule] is the submodule of the configuration.
     @FlespiSubmoduleConverter() required FlespiSubmodule name,
@@ -82,7 +82,7 @@ class FlespiSubmoduleConfig with _$FlespiSubmoduleConfig {
 }
 
 @unfreezed
-class FlespiSubmoduleConfigInput with _$FlespiSubmoduleConfigInput {
+abstract class FlespiSubmoduleConfigInput with _$FlespiSubmoduleConfigInput {
   factory FlespiSubmoduleConfigInput({
     /// [submodule] is the submodule of the configuration.
     @FlespiSubmoduleConverter() required FlespiSubmodule name,

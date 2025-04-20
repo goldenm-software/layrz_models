@@ -1,7 +1,7 @@
 part of '../vision.dart';
 
 @freezed
-class VisionProfile with _$VisionProfile {
+abstract class VisionProfile with _$VisionProfile {
   const factory VisionProfile({
     /// [id] is the unique identifier of the profile.
     required String id,

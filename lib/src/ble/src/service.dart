@@ -1,7 +1,7 @@
 part of '../ble.dart';
 
 @freezed
-class BleService with _$BleService {
+abstract class BleService with _$BleService {
   const BleService._();
 
   /// [BleService] is the representation of a BLE service.
@@ -17,7 +17,7 @@ class BleService with _$BleService {
 }
 
 @freezed
-class BleServiceData with _$BleServiceData {
+abstract class BleServiceData with _$BleServiceData {
   const BleServiceData._();
 
   /// [BleServiceData] is the representation of a BLE service.

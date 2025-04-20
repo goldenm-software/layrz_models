@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsProductInformation with _$AtsProductInformation {
+abstract class AtsProductInformation with _$AtsProductInformation {
   factory AtsProductInformation({
     /// Product code.
     String? ncm,

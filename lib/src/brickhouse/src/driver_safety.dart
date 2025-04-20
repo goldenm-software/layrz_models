@@ -10,7 +10,7 @@ part of '../brickhouse.dart';
 /// List of asset messages.
 ///
 @freezed
-class BHSDriverSafetyEventScore with _$BHSDriverSafetyEventScore {
+abstract class BHSDriverSafetyEventScore with _$BHSDriverSafetyEventScore {
   const factory BHSDriverSafetyEventScore({
     required double score,
     String? status,
@@ -22,7 +22,7 @@ class BHSDriverSafetyEventScore with _$BHSDriverSafetyEventScore {
 }
 
 @freezed
-class BHSDriverSafetyDrivenScore with _$BHSDriverSafetyDrivenScore {
+abstract class BHSDriverSafetyDrivenScore with _$BHSDriverSafetyDrivenScore {
   const factory BHSDriverSafetyDrivenScore({
     required double score,
     String? status,
@@ -40,7 +40,7 @@ class BHSDriverSafetyDrivenScore with _$BHSDriverSafetyDrivenScore {
 /// List of events.
 ///
 @freezed
-class BHSDriverSafetySpeedingEvents with _$BHSDriverSafetySpeedingEvents {
+abstract class BHSDriverSafetySpeedingEvents with _$BHSDriverSafetySpeedingEvents {
   const factory BHSDriverSafetySpeedingEvents({
     String? status,
     List<TriggerActivation>? messages,
@@ -63,7 +63,7 @@ class BHSDriverSafetySpeedingEvents with _$BHSDriverSafetySpeedingEvents {
 /// endPosition [TelemetryPosition]
 /// end position of the event.
 @freezed
-class BHSDriverSafetyDrivingEvent with _$BHSDriverSafetyDrivingEvent {
+abstract class BHSDriverSafetyDrivingEvent with _$BHSDriverSafetyDrivingEvent {
   const factory BHSDriverSafetyDrivingEvent({
     @TimestampConverter() required DateTime startAt,
     @TimestampConverter() required DateTime endAt,
@@ -84,7 +84,7 @@ class BHSDriverSafetyDrivingEvent with _$BHSDriverSafetyDrivingEvent {
 /// List of events.
 ///
 @freezed
-class BHSDriverSafetyDriving with _$BHSDriverSafetyDriving {
+abstract class BHSDriverSafetyDriving with _$BHSDriverSafetyDriving {
   const factory BHSDriverSafetyDriving({
     String? status,
     List<BHSDriverSafetyDrivingEvent>? messages,
@@ -114,7 +114,7 @@ class BHSDriverSafetyDriving with _$BHSDriverSafetyDriving {
 /// Night driving events.
 ///
 @freezed
-class BrickhouseDriverSafety with _$BrickhouseDriverSafety {
+abstract class BrickhouseDriverSafety with _$BrickhouseDriverSafety {
   const factory BrickhouseDriverSafety({
     required double totalScore,
     BHSDriverSafetyDrivenScore? drivingHours,

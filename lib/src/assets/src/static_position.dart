@@ -1,7 +1,7 @@
 part of '../assets.dart';
 
 @freezed
-class StaticPosition with _$StaticPosition {
+abstract class StaticPosition with _$StaticPosition {
   const StaticPosition._();
   const factory StaticPosition({
     /// [latitude] is the latitude of the asset.
@@ -20,9 +20,9 @@ class StaticPosition with _$StaticPosition {
 }
 
 @unfreezed
-class StaticPositionInput with _$StaticPositionInput {
+abstract class StaticPositionInput with _$StaticPositionInput {
   StaticPositionInput._();
-  
+
   factory StaticPositionInput({
     double? latitude,
     double? longitude,

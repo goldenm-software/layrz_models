@@ -176,7 +176,7 @@ enum AccessModule {
 
 /// AccessPermission
 /// Access Permission class
-class Access with _$Access {
+abstract class Access with _$Access {
   const factory Access({
     required String id,
     String? label,
@@ -193,7 +193,7 @@ class Access with _$Access {
 }
 
 @unfreezed
-class AccessInput with _$AccessInput {
+abstract class AccessInput with _$AccessInput {
   factory AccessInput({
     /// Represents the id of the access.
     String? id,

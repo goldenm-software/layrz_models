@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class Employee with _$Employee {
+abstract class Employee with _$Employee {
   /// [Employee] represents the user model.
   const factory Employee({
     /// [id] represents the user id.

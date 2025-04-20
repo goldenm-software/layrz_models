@@ -1,7 +1,7 @@
 part of '../actions.dart';
 
 @freezed
-class ActionGeofenceSettings with _$ActionGeofenceSettings {
+abstract class ActionGeofenceSettings with _$ActionGeofenceSettings {
   const ActionGeofenceSettings._();
   const factory ActionGeofenceSettings({
     /// [whoOwner] defines who is the owner of the geofence to create.
@@ -28,7 +28,7 @@ class ActionGeofenceSettings with _$ActionGeofenceSettings {
 }
 
 @unfreezed
-class ActionGeofenceSettingsInput with _$ActionGeofenceSettingsInput {
+abstract class ActionGeofenceSettingsInput with _$ActionGeofenceSettingsInput {
   const ActionGeofenceSettingsInput._();
   factory ActionGeofenceSettingsInput({
     /// [whoOwner] defines who is the owner of the geofence to create.

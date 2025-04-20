@@ -1,7 +1,7 @@
 part of '../charts.dart';
 
 @freezed
-class LineChartRender with _$LineChartRender {
+abstract class LineChartRender with _$LineChartRender {
   const factory LineChartRender({
     required List<LineChartSerie> series,
     required AxisConfig xAxis,
@@ -12,7 +12,7 @@ class LineChartRender with _$LineChartRender {
 }
 
 @freezed
-class LineChartSerie with _$LineChartSerie {
+abstract class LineChartSerie with _$LineChartSerie {
   const factory LineChartSerie({
     @ColorConverter() required Color color,
     required String label,
@@ -24,7 +24,7 @@ class LineChartSerie with _$LineChartSerie {
 }
 
 @freezed
-class LineChartDataPoint with _$LineChartDataPoint {
+abstract class LineChartDataPoint with _$LineChartDataPoint {
   const factory LineChartDataPoint({
     required dynamic xAxis,
     required num yAxis,

@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class LayrzPackage with _$LayrzPackage {
+abstract class LayrzPackage with _$LayrzPackage {
   const factory LayrzPackage({
     /// [id] is the unique identifier of the package. This ID is only for identification purposes.
     /// The private registries does not use this ID.
@@ -20,15 +20,13 @@ class LayrzPackage with _$LayrzPackage {
     @TimestampConverter() required DateTime createdAt,
 
     /// [language] is the language of the package.
-    @JsonKey(unknownEnumValue: PackageLanguage.unknown)
-    required PackageLanguage language,
+    @JsonKey(unknownEnumValue: PackageLanguage.unknown) required PackageLanguage language,
 
     /// [repository] is the repository of the package.
     String? repository,
   }) = _LayrzPackage;
 
-  factory LayrzPackage.fromJson(Map<String, dynamic> json) =>
-      _$LayrzPackageFromJson(json);
+  factory LayrzPackage.fromJson(Map<String, dynamic> json) => _$LayrzPackageFromJson(json);
 }
 
 enum PackageLanguage {
@@ -66,8 +64,7 @@ enum PackageLanguage {
 
   /// [fromJson] returns the enum value from a string representation.
   static PackageLanguage fromJson(String json) {
-    final found = _$PackageLanguageEnumMap.entries
-        .firstWhereOrNull((e) => e.value == json);
+    final found = _$PackageLanguageEnumMap.entries.firstWhereOrNull((e) => e.value == json);
     return found?.key ?? PackageLanguage.unknown;
   }
 }

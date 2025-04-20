@@ -6,9 +6,9 @@ part of 'mappit.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MappitRouteLinkingHistoryImpl _$$MappitRouteLinkingHistoryImplFromJson(
+_MappitRouteLinkingHistory _$MappitRouteLinkingHistoryFromJson(
         Map<String, dynamic> json) =>
-    _$MappitRouteLinkingHistoryImpl(
+    _MappitRouteLinkingHistory(
       currentSeller: json['currentSeller'] == null
           ? null
           : Asset.fromJson(json['currentSeller'] as Map<String, dynamic>),
@@ -19,8 +19,8 @@ _$MappitRouteLinkingHistoryImpl _$$MappitRouteLinkingHistoryImplFromJson(
           const TimestampConverter().fromJson(json['performedAt'] as num),
     );
 
-Map<String, dynamic> _$$MappitRouteLinkingHistoryImplToJson(
-        _$MappitRouteLinkingHistoryImpl instance) =>
+Map<String, dynamic> _$MappitRouteLinkingHistoryToJson(
+        _MappitRouteLinkingHistory instance) =>
     <String, dynamic>{
       'currentSeller': instance.currentSeller?.toJson(),
       'currentSellerId': instance.currentSellerId,
@@ -29,8 +29,7 @@ Map<String, dynamic> _$$MappitRouteLinkingHistoryImplToJson(
       'performedAt': const TimestampConverter().toJson(instance.performedAt),
     };
 
-_$MappitRouteImpl _$$MappitRouteImplFromJson(Map<String, dynamic> json) =>
-    _$MappitRouteImpl(
+_MappitRoute _$MappitRouteFromJson(Map<String, dynamic> json) => _MappitRoute(
       id: json['id'] as String,
       name: json['name'] as String,
       currentSeller: json['currentSeller'] == null
@@ -59,7 +58,7 @@ _$MappitRouteImpl _$$MappitRouteImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$MappitRouteImplToJson(_$MappitRouteImpl instance) =>
+Map<String, dynamic> _$MappitRouteToJson(_MappitRoute instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -76,33 +75,43 @@ Map<String, dynamic> _$$MappitRouteImplToJson(_$MappitRouteImpl instance) =>
       'secondarySellersIds': instance.secondarySellersIds,
     };
 
-_$MappitLaborHourImpl _$$MappitLaborHourImplFromJson(
-        Map<String, dynamic> json) =>
-    _$MappitLaborHourImpl(
+_MappitLaborHour _$MappitLaborHourFromJson(Map<String, dynamic> json) =>
+    _MappitLaborHour(
       id: json['id'] as String,
-      weekday: const WeekdayConverter().fromJson(json['weekday'] as String),
+      weekday: $enumDecode(_$WeekdayEnumMap, json['weekday'],
+          unknownValue: Weekday.monday),
       administrative:
           const DurationConverter().fromJson(json['administrative'] as num),
       f2f: const DurationConverter().fromJson(json['f2f'] as num),
       other: const DurationConverter().fromJson(json['other'] as num),
     );
 
-Map<String, dynamic> _$$MappitLaborHourImplToJson(
-        _$MappitLaborHourImpl instance) =>
+Map<String, dynamic> _$MappitLaborHourToJson(_MappitLaborHour instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'weekday': const WeekdayConverter().toJson(instance.weekday),
+      'weekday': instance.weekday.toJson(),
       'administrative':
           const DurationConverter().toJson(instance.administrative),
       'f2f': const DurationConverter().toJson(instance.f2f),
       'other': const DurationConverter().toJson(instance.other),
     };
 
-_$MappitLaborHourInputImpl _$$MappitLaborHourInputImplFromJson(
+const _$WeekdayEnumMap = {
+  Weekday.monday: 'MON',
+  Weekday.tuesday: 'TUE',
+  Weekday.wednesday: 'WED',
+  Weekday.thursday: 'THU',
+  Weekday.friday: 'FRI',
+  Weekday.saturday: 'SAT',
+  Weekday.sunday: 'SUN',
+};
+
+_MappitLaborHourInput _$MappitLaborHourInputFromJson(
         Map<String, dynamic> json) =>
-    _$MappitLaborHourInputImpl(
+    _MappitLaborHourInput(
       id: json['id'] as String?,
-      weekday: const WeekdayConverter().fromJson(json['weekday'] as String),
+      weekday: $enumDecode(_$WeekdayEnumMap, json['weekday'],
+          unknownValue: Weekday.monday),
       administrative: json['administrative'] == null
           ? const Duration(minutes: 0)
           : const DurationConverter().fromJson(json['administrative'] as num),
@@ -114,20 +123,20 @@ _$MappitLaborHourInputImpl _$$MappitLaborHourInputImplFromJson(
           : const DurationConverter().fromJson(json['other'] as num),
     );
 
-Map<String, dynamic> _$$MappitLaborHourInputImplToJson(
-        _$MappitLaborHourInputImpl instance) =>
+Map<String, dynamic> _$MappitLaborHourInputToJson(
+        _MappitLaborHourInput instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'weekday': const WeekdayConverter().toJson(instance.weekday),
+      'weekday': instance.weekday.toJson(),
       'administrative':
           const DurationConverter().toJson(instance.administrative),
       'f2f': const DurationConverter().toJson(instance.f2f),
       'other': const DurationConverter().toJson(instance.other),
     };
 
-_$MappitProfileGeofenceImpl _$$MappitProfileGeofenceImplFromJson(
+_MappitProfileGeofence _$MappitProfileGeofenceFromJson(
         Map<String, dynamic> json) =>
-    _$MappitProfileGeofenceImpl(
+    _MappitProfileGeofence(
       geofenceId: json['geofenceId'] as String,
       geofence: json['geofence'] == null
           ? null
@@ -135,16 +144,16 @@ _$MappitProfileGeofenceImpl _$$MappitProfileGeofenceImplFromJson(
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
     );
 
-Map<String, dynamic> _$$MappitProfileGeofenceImplToJson(
-        _$MappitProfileGeofenceImpl instance) =>
+Map<String, dynamic> _$MappitProfileGeofenceToJson(
+        _MappitProfileGeofence instance) =>
     <String, dynamic>{
       'geofenceId': instance.geofenceId,
       'geofence': instance.geofence?.toJson(),
       'color': const ColorOrNullConverter().toJson(instance.color),
     };
 
-_$MappitProfileImpl _$$MappitProfileImplFromJson(Map<String, dynamic> json) =>
-    _$MappitProfileImpl(
+_MappitProfile _$MappitProfileFromJson(Map<String, dynamic> json) =>
+    _MappitProfile(
       id: json['id'] as String,
       name: json['name'] as String,
       geofences: (json['geofences'] as List<dynamic>)
@@ -152,16 +161,15 @@ _$MappitProfileImpl _$$MappitProfileImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$MappitProfileImplToJson(_$MappitProfileImpl instance) =>
+Map<String, dynamic> _$MappitProfileToJson(_MappitProfile instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'geofences': instance.geofences.map((e) => e.toJson()).toList(),
     };
 
-_$MappitDurationRangeImpl _$$MappitDurationRangeImplFromJson(
-        Map<String, dynamic> json) =>
-    _$MappitDurationRangeImpl(
+_MappitDurationRange _$MappitDurationRangeFromJson(Map<String, dynamic> json) =>
+    _MappitDurationRange(
       min: json['min'] == null
           ? Duration.zero
           : const DurationConverter().fromJson(json['min'] as num),
@@ -173,16 +181,16 @@ _$MappitDurationRangeImpl _$$MappitDurationRangeImplFromJson(
           : const ColorConverter().fromJson(json['color'] as String),
     );
 
-Map<String, dynamic> _$$MappitDurationRangeImplToJson(
-        _$MappitDurationRangeImpl instance) =>
+Map<String, dynamic> _$MappitDurationRangeToJson(
+        _MappitDurationRange instance) =>
     <String, dynamic>{
       'min': const DurationConverter().toJson(instance.min),
       'max': const DurationConverter().toJson(instance.max),
       'color': const ColorConverter().toJson(instance.color),
     };
 
-_$MappitIntRangeImpl _$$MappitIntRangeImplFromJson(Map<String, dynamic> json) =>
-    _$MappitIntRangeImpl(
+_MappitIntRange _$MappitIntRangeFromJson(Map<String, dynamic> json) =>
+    _MappitIntRange(
       min: (json['min'] as num?)?.toInt() ?? 0,
       max: (json['max'] as num?)?.toInt() ?? 0,
       color: json['color'] == null
@@ -190,17 +198,15 @@ _$MappitIntRangeImpl _$$MappitIntRangeImplFromJson(Map<String, dynamic> json) =>
           : const ColorConverter().fromJson(json['color'] as String),
     );
 
-Map<String, dynamic> _$$MappitIntRangeImplToJson(
-        _$MappitIntRangeImpl instance) =>
+Map<String, dynamic> _$MappitIntRangeToJson(_MappitIntRange instance) =>
     <String, dynamic>{
       'min': instance.min,
       'max': instance.max,
       'color': const ColorConverter().toJson(instance.color),
     };
 
-_$MappitDoubleRangeImpl _$$MappitDoubleRangeImplFromJson(
-        Map<String, dynamic> json) =>
-    _$MappitDoubleRangeImpl(
+_MappitDoubleRange _$MappitDoubleRangeFromJson(Map<String, dynamic> json) =>
+    _MappitDoubleRange(
       min: (json['min'] as num?)?.toDouble() ?? 0,
       max: (json['max'] as num?)?.toDouble() ?? 0,
       color: json['color'] == null
@@ -208,17 +214,15 @@ _$MappitDoubleRangeImpl _$$MappitDoubleRangeImplFromJson(
           : const ColorConverter().fromJson(json['color'] as String),
     );
 
-Map<String, dynamic> _$$MappitDoubleRangeImplToJson(
-        _$MappitDoubleRangeImpl instance) =>
+Map<String, dynamic> _$MappitDoubleRangeToJson(_MappitDoubleRange instance) =>
     <String, dynamic>{
       'min': instance.min,
       'max': instance.max,
       'color': const ColorConverter().toJson(instance.color),
     };
 
-_$MappitHomeConfigImpl _$$MappitHomeConfigImplFromJson(
-        Map<String, dynamic> json) =>
-    _$MappitHomeConfigImpl(
+_MappitHomeConfig _$MappitHomeConfigFromJson(Map<String, dynamic> json) =>
+    _MappitHomeConfig(
       firstVisit: (json['firstVisit'] as List<dynamic>?)
               ?.map((e) =>
                   MappitDurationRange.fromJson(e as Map<String, dynamic>))
@@ -240,8 +244,7 @@ _$MappitHomeConfigImpl _$$MappitHomeConfigImplFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$MappitHomeConfigImplToJson(
-        _$MappitHomeConfigImpl instance) =>
+Map<String, dynamic> _$MappitHomeConfigToJson(_MappitHomeConfig instance) =>
     <String, dynamic>{
       'firstVisit': instance.firstVisit.map((e) => e.toJson()).toList(),
       'avgTimePerVisit':
@@ -251,8 +254,8 @@ Map<String, dynamic> _$$MappitHomeConfigImplToJson(
       'dailyDistance': instance.dailyDistance.map((e) => e.toJson()).toList(),
     };
 
-_$MappitFreeDayImpl _$$MappitFreeDayImplFromJson(Map<String, dynamic> json) =>
-    _$MappitFreeDayImpl(
+_MappitFreeDay _$MappitFreeDayFromJson(Map<String, dynamic> json) =>
+    _MappitFreeDay(
       id: json['id'] as String,
       name: json['name'] as String,
       date: const DateConverter().fromJson(json['date'] as String),
@@ -264,7 +267,7 @@ _$MappitFreeDayImpl _$$MappitFreeDayImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$MappitFreeDayImplToJson(_$MappitFreeDayImpl instance) =>
+Map<String, dynamic> _$MappitFreeDayToJson(_MappitFreeDay instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -273,8 +276,8 @@ Map<String, dynamic> _$$MappitFreeDayImplToJson(_$MappitFreeDayImpl instance) =>
       'assetsIds': instance.assetsIds,
     };
 
-_$PolygonDetailsImpl _$$PolygonDetailsImplFromJson(Map<String, dynamic> json) =>
-    _$PolygonDetailsImpl(
+_PolygonDetails _$PolygonDetailsFromJson(Map<String, dynamic> json) =>
+    _PolygonDetails(
       polygon: Geofence.fromJson(json['polygon'] as Map<String, dynamic>),
       containedRoutes: (json['containedRoutes'] as List<dynamic>)
           .map(
@@ -282,17 +285,16 @@ _$PolygonDetailsImpl _$$PolygonDetailsImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$PolygonDetailsImplToJson(
-        _$PolygonDetailsImpl instance) =>
+Map<String, dynamic> _$PolygonDetailsToJson(_PolygonDetails instance) =>
     <String, dynamic>{
       'polygon': instance.polygon.toJson(),
       'containedRoutes':
           instance.containedRoutes.map((e) => e.toJson()).toList(),
     };
 
-_$ContainedRouteCategoryImpl _$$ContainedRouteCategoryImplFromJson(
+_ContainedRouteCategory _$ContainedRouteCategoryFromJson(
         Map<String, dynamic> json) =>
-    _$ContainedRouteCategoryImpl(
+    _ContainedRouteCategory(
       category: $enumDecodeNullable(_$GeofenceCategoryEnumMap, json['category'],
               unknownValue: GeofenceCategory.none) ??
           GeofenceCategory.none,
@@ -303,8 +305,8 @@ _$ContainedRouteCategoryImpl _$$ContainedRouteCategoryImplFromJson(
       geofenceCount: (json['geofenceCount'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$ContainedRouteCategoryImplToJson(
-        _$ContainedRouteCategoryImpl instance) =>
+Map<String, dynamic> _$ContainedRouteCategoryToJson(
+        _ContainedRouteCategory instance) =>
     <String, dynamic>{
       'category': instance.category.toJson(),
       'routes': instance.routes.map((e) => e.toJson()).toList(),
@@ -322,9 +324,9 @@ const _$GeofenceCategoryEnumMap = {
   GeofenceCategory.lead: 'LEAD',
 };
 
-_$MappitReportInputMultiImpl _$$MappitReportInputMultiImplFromJson(
+_MappitReportInputMulti _$MappitReportInputMultiFromJson(
         Map<String, dynamic> json) =>
-    _$MappitReportInputMultiImpl(
+    _MappitReportInputMulti(
       startAt: (json['startAt'] as num?)?.toDouble(),
       endAt: (json['endAt'] as num?)?.toDouble(),
       timeFilter:
@@ -334,8 +336,8 @@ _$MappitReportInputMultiImpl _$$MappitReportInputMultiImplFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$$MappitReportInputMultiImplToJson(
-        _$MappitReportInputMultiImpl instance) =>
+Map<String, dynamic> _$MappitReportInputMultiToJson(
+        _MappitReportInputMulti instance) =>
     <String, dynamic>{
       'startAt': instance.startAt,
       'endAt': instance.endAt,
@@ -343,9 +345,8 @@ Map<String, dynamic> _$$MappitReportInputMultiImplToJson(
       'sellerIds': instance.sellerIds,
     };
 
-_$MappitReportInputImpl _$$MappitReportInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$MappitReportInputImpl(
+_MappitReportInput _$MappitReportInputFromJson(Map<String, dynamic> json) =>
+    _MappitReportInput(
       startAt: (json['startAt'] as num?)?.toDouble(),
       endAt: (json['endAt'] as num?)?.toDouble(),
       timeFilter:
@@ -353,8 +354,7 @@ _$MappitReportInputImpl _$$MappitReportInputImplFromJson(
       sellerId: json['sellerId'] as String?,
     );
 
-Map<String, dynamic> _$$MappitReportInputImplToJson(
-        _$MappitReportInputImpl instance) =>
+Map<String, dynamic> _$MappitReportInputToJson(_MappitReportInput instance) =>
     <String, dynamic>{
       'startAt': instance.startAt,
       'endAt': instance.endAt,

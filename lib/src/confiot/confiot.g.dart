@@ -6,8 +6,7 @@ part of 'confiot.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ConfIoTFileImpl _$$ConfIoTFileImplFromJson(Map<String, dynamic> json) =>
-    _$ConfIoTFileImpl(
+_ConfIoTFile _$ConfIoTFileFromJson(Map<String, dynamic> json) => _ConfIoTFile(
       namespace: json['namespace'] == null
           ? ConfIoTNamespace.unknown
           : const ConfIoTNamespaceConverter()
@@ -18,7 +17,7 @@ _$ConfIoTFileImpl _$$ConfIoTFileImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$ConfIoTFileImplToJson(_$ConfIoTFileImpl instance) =>
+Map<String, dynamic> _$ConfIoTFileToJson(_ConfIoTFile instance) =>
     <String, dynamic>{
       'namespace': const ConfIoTNamespaceConverter().toJson(instance.namespace),
       'rev': instance.rev,

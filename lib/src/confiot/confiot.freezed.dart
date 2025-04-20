@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,87 +10,68 @@ part of 'confiot.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ConfIoTFile _$ConfIoTFileFromJson(Map<String, dynamic> json) {
-  return _ConfIoTFile.fromJson(json);
-}
-
 /// @nodoc
-mixin _$ConfIoTFile {
+mixin _$ConfIoTFile implements DiagnosticableTreeMixin {
   /// [namespace] is the namespace of the file.
   @ConfIoTNamespaceConverter()
-  ConfIoTNamespace get namespace => throw _privateConstructorUsedError;
+  ConfIoTNamespace get namespace;
 
   /// [rev] is the revision of the file.
-  int get rev => throw _privateConstructorUsedError;
+  int get rev;
 
   /// [configuration] is the configuration of the file.
-  List<Map<String, dynamic>>? get configuration =>
-      throw _privateConstructorUsedError;
+  List<Map<String, dynamic>>? get configuration;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ConfIoTFileCopyWith<ConfIoTFile> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ConfIoTFileCopyWith<$Res> {
-  factory $ConfIoTFileCopyWith(
-          ConfIoTFile value, $Res Function(ConfIoTFile) then) =
-      _$ConfIoTFileCopyWithImpl<$Res, ConfIoTFile>;
-  @useResult
-  $Res call(
-      {@ConfIoTNamespaceConverter() ConfIoTNamespace namespace,
-      int rev,
-      List<Map<String, dynamic>>? configuration});
-}
-
-/// @nodoc
-class _$ConfIoTFileCopyWithImpl<$Res, $Val extends ConfIoTFile>
-    implements $ConfIoTFileCopyWith<$Res> {
-  _$ConfIoTFileCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of ConfIoTFile
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $ConfIoTFileCopyWith<ConfIoTFile> get copyWith =>
+      _$ConfIoTFileCopyWithImpl<ConfIoTFile>(this as ConfIoTFile, _$identity);
+
+  /// Serializes this ConfIoTFile to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? namespace = null,
-    Object? rev = null,
-    Object? configuration = freezed,
-  }) {
-    return _then(_value.copyWith(
-      namespace: null == namespace
-          ? _value.namespace
-          : namespace // ignore: cast_nullable_to_non_nullable
-              as ConfIoTNamespace,
-      rev: null == rev
-          ? _value.rev
-          : rev // ignore: cast_nullable_to_non_nullable
-              as int,
-      configuration: freezed == configuration
-          ? _value.configuration
-          : configuration // ignore: cast_nullable_to_non_nullable
-              as List<Map<String, dynamic>>?,
-    ) as $Val);
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    properties
+      ..add(DiagnosticsProperty('type', 'ConfIoTFile'))
+      ..add(DiagnosticsProperty('namespace', namespace))
+      ..add(DiagnosticsProperty('rev', rev))
+      ..add(DiagnosticsProperty('configuration', configuration));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ConfIoTFile &&
+            (identical(other.namespace, namespace) ||
+                other.namespace == namespace) &&
+            (identical(other.rev, rev) || other.rev == rev) &&
+            const DeepCollectionEquality()
+                .equals(other.configuration, configuration));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, namespace, rev,
+      const DeepCollectionEquality().hash(configuration));
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ConfIoTFile(namespace: $namespace, rev: $rev, configuration: $configuration)';
   }
 }
 
 /// @nodoc
-abstract class _$$ConfIoTFileImplCopyWith<$Res>
-    implements $ConfIoTFileCopyWith<$Res> {
-  factory _$$ConfIoTFileImplCopyWith(
-          _$ConfIoTFileImpl value, $Res Function(_$ConfIoTFileImpl) then) =
-      __$$ConfIoTFileImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ConfIoTFileCopyWith<$Res> {
+  factory $ConfIoTFileCopyWith(
+          ConfIoTFile value, $Res Function(ConfIoTFile) _then) =
+      _$ConfIoTFileCopyWithImpl;
   @useResult
   $Res call(
       {@ConfIoTNamespaceConverter() ConfIoTNamespace namespace,
@@ -98,13 +80,14 @@ abstract class _$$ConfIoTFileImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ConfIoTFileImplCopyWithImpl<$Res>
-    extends _$ConfIoTFileCopyWithImpl<$Res, _$ConfIoTFileImpl>
-    implements _$$ConfIoTFileImplCopyWith<$Res> {
-  __$$ConfIoTFileImplCopyWithImpl(
-      _$ConfIoTFileImpl _value, $Res Function(_$ConfIoTFileImpl) _then)
-      : super(_value, _then);
+class _$ConfIoTFileCopyWithImpl<$Res> implements $ConfIoTFileCopyWith<$Res> {
+  _$ConfIoTFileCopyWithImpl(this._self, this._then);
 
+  final ConfIoTFile _self;
+  final $Res Function(ConfIoTFile) _then;
+
+  /// Create a copy of ConfIoTFile
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -112,17 +95,17 @@ class __$$ConfIoTFileImplCopyWithImpl<$Res>
     Object? rev = null,
     Object? configuration = freezed,
   }) {
-    return _then(_$ConfIoTFileImpl(
+    return _then(_self.copyWith(
       namespace: null == namespace
-          ? _value.namespace
+          ? _self.namespace
           : namespace // ignore: cast_nullable_to_non_nullable
               as ConfIoTNamespace,
       rev: null == rev
-          ? _value.rev
+          ? _self.rev
           : rev // ignore: cast_nullable_to_non_nullable
               as int,
       configuration: freezed == configuration
-          ? _value._configuration
+          ? _self.configuration
           : configuration // ignore: cast_nullable_to_non_nullable
               as List<Map<String, dynamic>>?,
     ));
@@ -131,16 +114,15 @@ class __$$ConfIoTFileImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConfIoTFileImpl extends _ConfIoTFile with DiagnosticableTreeMixin {
-  const _$ConfIoTFileImpl(
+class _ConfIoTFile extends ConfIoTFile with DiagnosticableTreeMixin {
+  const _ConfIoTFile(
       {@ConfIoTNamespaceConverter() this.namespace = ConfIoTNamespace.unknown,
       this.rev = 1,
       final List<Map<String, dynamic>>? configuration})
       : _configuration = configuration,
         super._();
-
-  factory _$ConfIoTFileImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ConfIoTFileImplFromJson(json);
+  factory _ConfIoTFile.fromJson(Map<String, dynamic> json) =>
+      _$ConfIoTFileFromJson(json);
 
   /// [namespace] is the namespace of the file.
   @override
@@ -166,14 +148,23 @@ class _$ConfIoTFileImpl extends _ConfIoTFile with DiagnosticableTreeMixin {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of ConfIoTFile
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ConfIoTFile(namespace: $namespace, rev: $rev, configuration: $configuration)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ConfIoTFileCopyWith<_ConfIoTFile> get copyWith =>
+      __$ConfIoTFileCopyWithImpl<_ConfIoTFile>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ConfIoTFileToJson(
+      this,
+    );
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ConfIoTFile'))
       ..add(DiagnosticsProperty('namespace', namespace))
@@ -185,7 +176,7 @@ class _$ConfIoTFileImpl extends _ConfIoTFile with DiagnosticableTreeMixin {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ConfIoTFileImpl &&
+            other is _ConfIoTFile &&
             (identical(other.namespace, namespace) ||
                 other.namespace == namespace) &&
             (identical(other.rev, rev) || other.rev == rev) &&
@@ -193,50 +184,62 @@ class _$ConfIoTFileImpl extends _ConfIoTFile with DiagnosticableTreeMixin {
                 .equals(other._configuration, _configuration));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, namespace, rev,
       const DeepCollectionEquality().hash(_configuration));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ConfIoTFileImplCopyWith<_$ConfIoTFileImpl> get copyWith =>
-      __$$ConfIoTFileImplCopyWithImpl<_$ConfIoTFileImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ConfIoTFileImplToJson(
-      this,
-    );
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ConfIoTFile(namespace: $namespace, rev: $rev, configuration: $configuration)';
   }
 }
 
-abstract class _ConfIoTFile extends ConfIoTFile {
-  const factory _ConfIoTFile(
-      {@ConfIoTNamespaceConverter() final ConfIoTNamespace namespace,
-      final int rev,
-      final List<Map<String, dynamic>>? configuration}) = _$ConfIoTFileImpl;
-  const _ConfIoTFile._() : super._();
-
-  factory _ConfIoTFile.fromJson(Map<String, dynamic> json) =
-      _$ConfIoTFileImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$ConfIoTFileCopyWith<$Res>
+    implements $ConfIoTFileCopyWith<$Res> {
+  factory _$ConfIoTFileCopyWith(
+          _ConfIoTFile value, $Res Function(_ConfIoTFile) _then) =
+      __$ConfIoTFileCopyWithImpl;
   @override
-
-  /// [namespace] is the namespace of the file.
-  @ConfIoTNamespaceConverter()
-  ConfIoTNamespace get namespace;
-  @override
-
-  /// [rev] is the revision of the file.
-  int get rev;
-  @override
-
-  /// [configuration] is the configuration of the file.
-  List<Map<String, dynamic>>? get configuration;
-  @override
-  @JsonKey(ignore: true)
-  _$$ConfIoTFileImplCopyWith<_$ConfIoTFileImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {@ConfIoTNamespaceConverter() ConfIoTNamespace namespace,
+      int rev,
+      List<Map<String, dynamic>>? configuration});
 }
+
+/// @nodoc
+class __$ConfIoTFileCopyWithImpl<$Res> implements _$ConfIoTFileCopyWith<$Res> {
+  __$ConfIoTFileCopyWithImpl(this._self, this._then);
+
+  final _ConfIoTFile _self;
+  final $Res Function(_ConfIoTFile) _then;
+
+  /// Create a copy of ConfIoTFile
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? namespace = null,
+    Object? rev = null,
+    Object? configuration = freezed,
+  }) {
+    return _then(_ConfIoTFile(
+      namespace: null == namespace
+          ? _self.namespace
+          : namespace // ignore: cast_nullable_to_non_nullable
+              as ConfIoTNamespace,
+      rev: null == rev
+          ? _self.rev
+          : rev // ignore: cast_nullable_to_non_nullable
+              as int,
+      configuration: freezed == configuration
+          ? _self._configuration
+          : configuration // ignore: cast_nullable_to_non_nullable
+              as List<Map<String, dynamic>>?,
+    ));
+  }
+}
+
+// dart format on

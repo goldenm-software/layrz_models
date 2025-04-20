@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class ConciergeForm with _$ConciergeForm {
+abstract class ConciergeForm with _$ConciergeForm {
   const factory ConciergeForm({
     required String id,
     required String name,

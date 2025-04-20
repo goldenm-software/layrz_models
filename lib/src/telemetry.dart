@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class DeviceTelemetry with _$DeviceTelemetry {
+abstract class DeviceTelemetry with _$DeviceTelemetry {
   const DeviceTelemetry._();
 
   const factory DeviceTelemetry({
@@ -26,7 +26,7 @@ class DeviceTelemetry with _$DeviceTelemetry {
 }
 
 @freezed
-class AssetTelemetry with _$AssetTelemetry {
+abstract class AssetTelemetry with _$AssetTelemetry {
   const AssetTelemetry._();
 
   const factory AssetTelemetry({
@@ -57,7 +57,7 @@ class AssetTelemetry with _$AssetTelemetry {
 }
 
 @freezed
-class TelemetryPosition with _$TelemetryPosition {
+abstract class TelemetryPosition with _$TelemetryPosition {
   const TelemetryPosition._();
   const factory TelemetryPosition({
     /// Latitude in decimal degrees format
@@ -90,7 +90,7 @@ class TelemetryPosition with _$TelemetryPosition {
 }
 
 @freezed
-class TelemetrySensor with _$TelemetrySensor {
+abstract class TelemetrySensor with _$TelemetrySensor {
   const TelemetrySensor._();
   const factory TelemetrySensor({
     /// Dynamic value registered.

@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsExitStatus with _$AtsExitStatus {
+abstract class AtsExitStatus with _$AtsExitStatus {
   const factory AtsExitStatus({
     /// Date of the [AtsExit]
     @TimestampOrNullConverter() DateTime? date,

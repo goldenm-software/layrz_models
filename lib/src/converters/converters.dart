@@ -1,4 +1,4 @@
-library converters;
+library;
 
 import 'dart:typed_data';
 

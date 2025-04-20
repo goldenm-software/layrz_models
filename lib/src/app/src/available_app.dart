@@ -1,7 +1,7 @@
 part of '../app.dart';
 
 @freezed
-class AvailableApp with _$AvailableApp {
+abstract class AvailableApp with _$AvailableApp {
   const factory AvailableApp({
     /// [id] is the unique identifier of the app.
     required String id,
@@ -53,7 +53,7 @@ class AvailableApp with _$AvailableApp {
 }
 
 @unfreezed
-class AvailableAppInput with _$AvailableAppInput {
+abstract class AvailableAppInput with _$AvailableAppInput {
   factory AvailableAppInput({
     String? id,
     @Default('') String name,

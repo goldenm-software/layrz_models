@@ -1,7 +1,7 @@
 part of '../app.dart';
 
 @freezed
-class RegisteredApp with _$RegisteredApp {
+abstract class RegisteredApp with _$RegisteredApp {
   const factory RegisteredApp({
     required String id,
     required String name,

@@ -1,7 +1,7 @@
 part of '../exchange.dart';
 
 @freezed
-class ExchangeProtocol with _$ExchangeProtocol {
+abstract class ExchangeProtocol with _$ExchangeProtocol {
   const factory ExchangeProtocol({
     /// [id] is the protocol ID, this ID is unique for each protocol.
     required String id,

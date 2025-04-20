@@ -1,79 +1,29 @@
 part of '../layrz_models.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum Weekday {
+  @JsonValue('MON')
   monday,
+  @JsonValue('TUE')
   tuesday,
+  @JsonValue('WED')
   wednesday,
+  @JsonValue('THU')
   thursday,
+  @JsonValue('FRI')
   friday,
+  @JsonValue('SAT')
   saturday,
-  sunday;
+  @JsonValue('SUN')
+  sunday,
+  ;
 
   @override
   String toString() => toJson();
 
-  String toJson() {
-    switch (this) {
-      case Weekday.monday:
-        return 'MON';
-      case Weekday.tuesday:
-        return 'TUE';
-      case Weekday.wednesday:
-        return 'WED';
-      case Weekday.thursday:
-        return 'THU';
-      case Weekday.friday:
-        return 'FRI';
-      case Weekday.saturday:
-        return 'SAT';
-      case Weekday.sunday:
-        return 'SUN';
-      default:
-        throw Exception('Unknown Weekday');
-    }
-  }
+  String toJson() => _$WeekdayEnumMap[this] ?? 'MON';
 
   static Weekday fromJson(String json) {
-    switch (json) {
-      case 'MON':
-        return Weekday.monday;
-      case 'TUE':
-        return Weekday.tuesday;
-      case 'WED':
-        return Weekday.wednesday;
-      case 'THU':
-        return Weekday.thursday;
-      case 'FRI':
-        return Weekday.friday;
-      case 'SAT':
-        return Weekday.saturday;
-      case 'SUN':
-        return Weekday.sunday;
-      default:
-        throw Exception('Unknown Weekday');
-    }
+    return _$WeekdayEnumMap.entries.firstWhereOrNull((element) => element.value == json)?.key ?? Weekday.monday;
   }
-}
-
-class WeekdayConverter implements JsonConverter<Weekday, String> {
-  const WeekdayConverter();
-
-  @override
-  Weekday fromJson(String json) => Weekday.fromJson(json);
-
-  @override
-  String toJson(Weekday object) => object.toJson();
-}
-
-class WeekdayOrNullConverter implements JsonConverter<Weekday?, String?> {
-  const WeekdayOrNullConverter();
-
-  @override
-  Weekday? fromJson(String? json) {
-    if (json == null) return null;
-    return Weekday.fromJson(json);
-  }
-
-  @override
-  String? toJson(Weekday? object) => object?.toJson();
 }

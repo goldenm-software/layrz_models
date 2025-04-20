@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class ReportTemplate with _$ReportTemplate {
+abstract class ReportTemplate with _$ReportTemplate {
   const factory ReportTemplate({
     /// Is the report template ID
     required String id,
@@ -28,7 +28,7 @@ class ReportTemplate with _$ReportTemplate {
 }
 
 @freezed
-class ReportTemplatePage with _$ReportTemplatePage {
+abstract class ReportTemplatePage with _$ReportTemplatePage {
   const factory ReportTemplatePage({
     /// Is the page title
     required String title,
@@ -50,7 +50,7 @@ class ReportTemplatePage with _$ReportTemplatePage {
 }
 
 @freezed
-class ReportTemplateCol with _$ReportTemplateCol {
+abstract class ReportTemplateCol with _$ReportTemplateCol {
   const factory ReportTemplateCol({
     /// Is the col name
     required String name,
@@ -69,7 +69,7 @@ class ReportTemplateCol with _$ReportTemplateCol {
 }
 
 @freezed
-class CustomReport with _$CustomReport {
+abstract class CustomReport with _$CustomReport {
   const factory CustomReport({
     /// [id] is the report ID
     required String id,

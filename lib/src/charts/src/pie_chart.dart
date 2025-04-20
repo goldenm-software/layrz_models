@@ -1,7 +1,7 @@
 part of '../charts.dart';
 
 @freezed
-class PieChartRender with _$PieChartRender {
+abstract class PieChartRender with _$PieChartRender {
   const factory PieChartRender({
     required List<PieChartSerie> series,
   }) = _PieChartRender;
@@ -10,7 +10,7 @@ class PieChartRender with _$PieChartRender {
 }
 
 @freezed
-class PieChartSerie with _$PieChartSerie {
+abstract class PieChartSerie with _$PieChartSerie {
   const factory PieChartSerie({
     @ColorConverter() required Color color,
     required String label,

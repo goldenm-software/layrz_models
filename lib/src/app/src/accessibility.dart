@@ -1,7 +1,7 @@
 part of '../app.dart';
 
 @freezed
-class AppAccessibility with _$AppAccessibility {
+abstract class AppAccessibility with _$AppAccessibility {
   const factory AppAccessibility({
     required String host,
     required bool isDeployed,

@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class CredentialField with _$CredentialField {
+abstract class CredentialField with _$CredentialField {
   const factory CredentialField({
     /// [field] is the name of the field, is a translation key.
     required String field,
@@ -46,7 +46,7 @@ class CredentialField with _$CredentialField {
 }
 
 @unfreezed
-class CredentialFieldInput with _$CredentialFieldInput {
+abstract class CredentialFieldInput with _$CredentialFieldInput {
   factory CredentialFieldInput({
     /// [field] is the name of the field, is a translation key.
     @Default('') String field,

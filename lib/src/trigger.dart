@@ -261,7 +261,7 @@ enum CaseEventEffect {
 ///
 ///
 @freezed
-class Trigger with _$Trigger {
+abstract class Trigger with _$Trigger {
   /// [Trigger] is the model of a trigger.
   /// To get more information about each field, refer to the API documentation using GraphiQL
   /// `https://api.layrz.com/graphql`.
@@ -325,7 +325,7 @@ class Trigger with _$Trigger {
 
     /// [weekdays] is the list of weekdays of the trigger. Only used when [kind] is [TriggerType.exactTime].
     /// The weekdays are represented by the [Weekday] enum.
-    @WeekdayConverter() List<Weekday>? weekdays,
+    @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? weekdays,
 
     /// [isPlainCrontab] is a boolean that indicates if the crontab format is plain or not.
     /// Only used when [kind] is [TriggerType.exactTime].
@@ -375,7 +375,7 @@ class Trigger with _$Trigger {
 }
 
 @freezed
-class TriggerActivation with _$TriggerActivation {
+abstract class TriggerActivation with _$TriggerActivation {
   const factory TriggerActivation({
     /// `id` of the trigger activation entity. This ID is unique.
     required String id,
@@ -474,7 +474,7 @@ class TriggerActivation with _$TriggerActivation {
 /// weekdays [Weekdays]
 /// Indicates the days of the week what will execute the trigger.
 @unfreezed
-class TriggerInput with _$TriggerInput {
+abstract class TriggerInput with _$TriggerInput {
   factory TriggerInput({
     /// ID of the trigger entity. This ID is unique.
     String? id,
@@ -513,7 +513,7 @@ class TriggerInput with _$TriggerInput {
     @Default(false) bool isPlainCrontab,
 
     /// Indicates the days of the week what will execute the trigger.
-    @WeekdayConverter() @Default(Weekday.values) List<Weekday> weekdays,
+    @JsonKey(unknownEnumValue: Weekday.monday) @Default(Weekday.values) List<Weekday> weekdays,
 
     /// Layrz Language formula
     String? formula,

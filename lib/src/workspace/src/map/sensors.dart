@@ -1,7 +1,7 @@
 part of '../../workspace.dart';
 
 @freezed
-class MapCardSensorsConfiguration with _$MapCardSensorsConfiguration {
+abstract class MapCardSensorsConfiguration with _$MapCardSensorsConfiguration {
   const factory MapCardSensorsConfiguration({
     /// Indicates if the sensor segment is enabled.
     @Default(true) bool enabled,
@@ -18,7 +18,7 @@ class MapCardSensorsConfiguration with _$MapCardSensorsConfiguration {
 }
 
 @unfreezed
-class MapCardSensorsConfigurationInput with _$MapCardSensorsConfigurationInput {
+abstract class MapCardSensorsConfigurationInput with _$MapCardSensorsConfigurationInput {
   factory MapCardSensorsConfigurationInput({
     /// Indicates if the sensor segment is enabled.
     @Default(true) bool enabled,

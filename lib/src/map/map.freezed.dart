@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,241 +10,161 @@ part of 'map.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-MapLayer _$MapLayerFromJson(Map<String, dynamic> json) {
-  return _MapLayer.fromJson(json);
-}
 
 /// @nodoc
 mixin _$MapLayer {
   /// [id] is the unique identifier for the layer.
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// [name] is the name of the layer.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// [source] is the source of the layer.
   @JsonKey(unknownEnumValue: MapSource.custom)
-  MapSource get source => throw _privateConstructorUsedError;
+  MapSource get source;
 
   /// [rasterServerLight] is the raster server for light mode and default.
   /// Only used when the [source] is [MapSource.custom].
-  String? get rasterServerLight => throw _privateConstructorUsedError;
+  String? get rasterServerLight;
 
   /// [rasterServerDark] is the raster server for dark mode.
   /// Only used when the [source] is [MapSource.custom].
-  String? get rasterServerDark => throw _privateConstructorUsedError;
+  String? get rasterServerDark;
 
   /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.google].
-  String? get googleToken => throw _privateConstructorUsedError;
+  String? get googleToken;
 
   /// [googleLayers] is the list of enabled layers for the Google Maps.
   /// Only used when the [source] is [MapSource.google].
   @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
-  List<GoogleMapLayer>? get googleLayers => throw _privateConstructorUsedError;
+  List<GoogleMapLayer>? get googleLayers;
 
   /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
   /// Only used when the [source] is [MapSource.mapbox].
-  String? get mapboxToken => throw _privateConstructorUsedError;
+  String? get mapboxToken;
 
   /// [mapboxStyle] is the Mapbox style for the layer.
   /// Only used when the [source] is [MapSource.mapbox].
   @JsonKey(unknownEnumValue: MapboxStyle.navigation)
-  List<MapboxStyle>? get mapboxLayers => throw _privateConstructorUsedError;
+  List<MapboxStyle>? get mapboxLayers;
 
   /// [mapboxCustomUsername] is the Mapbox custom username.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  String? get mapboxCustomUsername => throw _privateConstructorUsedError;
+  String? get mapboxCustomUsername;
 
   /// [mapboxCustomStyleId] is the Mapbox custom style id.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  String? get mapboxCustomStyleId => throw _privateConstructorUsedError;
+  String? get mapboxCustomStyleId;
 
   /// [hereToken] is the HERE token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.here].
-  String? get hereToken => throw _privateConstructorUsedError;
+  String? get hereToken;
 
   /// [hereLayers] is the list of enabled layers for the HERE Maps.
   /// Only used when the [source] is [MapSource.here].
   @JsonKey(unknownEnumValue: HereStyle.lite)
-  List<HereStyle>? get hereLayers => throw _privateConstructorUsedError;
+  List<HereStyle>? get hereLayers;
 
   /// [attributionUrl] is the URI for the attribution of the layer.
-  String get attributionUrl => throw _privateConstructorUsedError;
+  String get attributionUrl;
 
   /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
-  String? get attributionUrlDark => throw _privateConstructorUsedError;
+  String? get attributionUrlDark;
 
   /// [attributionWidth] is the width of the attribution of the layer.
-  double get attributionWidth => throw _privateConstructorUsedError;
+  double get attributionWidth;
 
   /// [attributionHeight] is the height of the attribution of the layer.
-  double get attributionHeight => throw _privateConstructorUsedError;
+  double get attributionHeight;
 
   /// [appsIds] is the list of [App]s that are associated with the layer.
-  List<String> get appsIds => throw _privateConstructorUsedError;
-
-  /// Serializes this MapLayer to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String> get appsIds;
 
   /// Create a copy of MapLayer
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MapLayerCopyWith<MapLayer> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MapLayerCopyWith<$Res> {
-  factory $MapLayerCopyWith(MapLayer value, $Res Function(MapLayer) then) =
-      _$MapLayerCopyWithImpl<$Res, MapLayer>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @JsonKey(unknownEnumValue: MapSource.custom) MapSource source,
-      String? rasterServerLight,
-      String? rasterServerDark,
-      String? googleToken,
-      @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
-      List<GoogleMapLayer>? googleLayers,
-      String? mapboxToken,
-      @JsonKey(unknownEnumValue: MapboxStyle.navigation)
-      List<MapboxStyle>? mapboxLayers,
-      String? mapboxCustomUsername,
-      String? mapboxCustomStyleId,
-      String? hereToken,
-      @JsonKey(unknownEnumValue: HereStyle.lite) List<HereStyle>? hereLayers,
-      String attributionUrl,
-      String? attributionUrlDark,
-      double attributionWidth,
-      double attributionHeight,
-      List<String> appsIds});
-}
-
-/// @nodoc
-class _$MapLayerCopyWithImpl<$Res, $Val extends MapLayer>
-    implements $MapLayerCopyWith<$Res> {
-  _$MapLayerCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of MapLayer
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $MapLayerCopyWith<MapLayer> get copyWith =>
+      _$MapLayerCopyWithImpl<MapLayer>(this as MapLayer, _$identity);
+
+  /// Serializes this MapLayer to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? source = null,
-    Object? rasterServerLight = freezed,
-    Object? rasterServerDark = freezed,
-    Object? googleToken = freezed,
-    Object? googleLayers = freezed,
-    Object? mapboxToken = freezed,
-    Object? mapboxLayers = freezed,
-    Object? mapboxCustomUsername = freezed,
-    Object? mapboxCustomStyleId = freezed,
-    Object? hereToken = freezed,
-    Object? hereLayers = freezed,
-    Object? attributionUrl = null,
-    Object? attributionUrlDark = freezed,
-    Object? attributionWidth = null,
-    Object? attributionHeight = null,
-    Object? appsIds = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as MapSource,
-      rasterServerLight: freezed == rasterServerLight
-          ? _value.rasterServerLight
-          : rasterServerLight // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rasterServerDark: freezed == rasterServerDark
-          ? _value.rasterServerDark
-          : rasterServerDark // ignore: cast_nullable_to_non_nullable
-              as String?,
-      googleToken: freezed == googleToken
-          ? _value.googleToken
-          : googleToken // ignore: cast_nullable_to_non_nullable
-              as String?,
-      googleLayers: freezed == googleLayers
-          ? _value.googleLayers
-          : googleLayers // ignore: cast_nullable_to_non_nullable
-              as List<GoogleMapLayer>?,
-      mapboxToken: freezed == mapboxToken
-          ? _value.mapboxToken
-          : mapboxToken // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mapboxLayers: freezed == mapboxLayers
-          ? _value.mapboxLayers
-          : mapboxLayers // ignore: cast_nullable_to_non_nullable
-              as List<MapboxStyle>?,
-      mapboxCustomUsername: freezed == mapboxCustomUsername
-          ? _value.mapboxCustomUsername
-          : mapboxCustomUsername // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mapboxCustomStyleId: freezed == mapboxCustomStyleId
-          ? _value.mapboxCustomStyleId
-          : mapboxCustomStyleId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hereToken: freezed == hereToken
-          ? _value.hereToken
-          : hereToken // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hereLayers: freezed == hereLayers
-          ? _value.hereLayers
-          : hereLayers // ignore: cast_nullable_to_non_nullable
-              as List<HereStyle>?,
-      attributionUrl: null == attributionUrl
-          ? _value.attributionUrl
-          : attributionUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      attributionUrlDark: freezed == attributionUrlDark
-          ? _value.attributionUrlDark
-          : attributionUrlDark // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attributionWidth: null == attributionWidth
-          ? _value.attributionWidth
-          : attributionWidth // ignore: cast_nullable_to_non_nullable
-              as double,
-      attributionHeight: null == attributionHeight
-          ? _value.attributionHeight
-          : attributionHeight // ignore: cast_nullable_to_non_nullable
-              as double,
-      appsIds: null == appsIds
-          ? _value.appsIds
-          : appsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MapLayer &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.rasterServerLight, rasterServerLight) ||
+                other.rasterServerLight == rasterServerLight) &&
+            (identical(other.rasterServerDark, rasterServerDark) ||
+                other.rasterServerDark == rasterServerDark) &&
+            (identical(other.googleToken, googleToken) ||
+                other.googleToken == googleToken) &&
+            const DeepCollectionEquality()
+                .equals(other.googleLayers, googleLayers) &&
+            (identical(other.mapboxToken, mapboxToken) ||
+                other.mapboxToken == mapboxToken) &&
+            const DeepCollectionEquality()
+                .equals(other.mapboxLayers, mapboxLayers) &&
+            (identical(other.mapboxCustomUsername, mapboxCustomUsername) ||
+                other.mapboxCustomUsername == mapboxCustomUsername) &&
+            (identical(other.mapboxCustomStyleId, mapboxCustomStyleId) ||
+                other.mapboxCustomStyleId == mapboxCustomStyleId) &&
+            (identical(other.hereToken, hereToken) ||
+                other.hereToken == hereToken) &&
+            const DeepCollectionEquality()
+                .equals(other.hereLayers, hereLayers) &&
+            (identical(other.attributionUrl, attributionUrl) ||
+                other.attributionUrl == attributionUrl) &&
+            (identical(other.attributionUrlDark, attributionUrlDark) ||
+                other.attributionUrlDark == attributionUrlDark) &&
+            (identical(other.attributionWidth, attributionWidth) ||
+                other.attributionWidth == attributionWidth) &&
+            (identical(other.attributionHeight, attributionHeight) ||
+                other.attributionHeight == attributionHeight) &&
+            const DeepCollectionEquality().equals(other.appsIds, appsIds));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      source,
+      rasterServerLight,
+      rasterServerDark,
+      googleToken,
+      const DeepCollectionEquality().hash(googleLayers),
+      mapboxToken,
+      const DeepCollectionEquality().hash(mapboxLayers),
+      mapboxCustomUsername,
+      mapboxCustomStyleId,
+      hereToken,
+      const DeepCollectionEquality().hash(hereLayers),
+      attributionUrl,
+      attributionUrlDark,
+      attributionWidth,
+      attributionHeight,
+      const DeepCollectionEquality().hash(appsIds));
+
+  @override
+  String toString() {
+    return 'MapLayer(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight, appsIds: $appsIds)';
   }
 }
 
 /// @nodoc
-abstract class _$$MapLayerImplCopyWith<$Res>
-    implements $MapLayerCopyWith<$Res> {
-  factory _$$MapLayerImplCopyWith(
-          _$MapLayerImpl value, $Res Function(_$MapLayerImpl) then) =
-      __$$MapLayerImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MapLayerCopyWith<$Res> {
+  factory $MapLayerCopyWith(MapLayer value, $Res Function(MapLayer) _then) =
+      _$MapLayerCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -269,12 +190,11 @@ abstract class _$$MapLayerImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MapLayerImplCopyWithImpl<$Res>
-    extends _$MapLayerCopyWithImpl<$Res, _$MapLayerImpl>
-    implements _$$MapLayerImplCopyWith<$Res> {
-  __$$MapLayerImplCopyWithImpl(
-      _$MapLayerImpl _value, $Res Function(_$MapLayerImpl) _then)
-      : super(_value, _then);
+class _$MapLayerCopyWithImpl<$Res> implements $MapLayerCopyWith<$Res> {
+  _$MapLayerCopyWithImpl(this._self, this._then);
+
+  final MapLayer _self;
+  final $Res Function(MapLayer) _then;
 
   /// Create a copy of MapLayer
   /// with the given fields replaced by the non-null parameter values.
@@ -300,77 +220,77 @@ class __$$MapLayerImplCopyWithImpl<$Res>
     Object? attributionHeight = null,
     Object? appsIds = null,
   }) {
-    return _then(_$MapLayerImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       source: null == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as MapSource,
       rasterServerLight: freezed == rasterServerLight
-          ? _value.rasterServerLight
+          ? _self.rasterServerLight
           : rasterServerLight // ignore: cast_nullable_to_non_nullable
               as String?,
       rasterServerDark: freezed == rasterServerDark
-          ? _value.rasterServerDark
+          ? _self.rasterServerDark
           : rasterServerDark // ignore: cast_nullable_to_non_nullable
               as String?,
       googleToken: freezed == googleToken
-          ? _value.googleToken
+          ? _self.googleToken
           : googleToken // ignore: cast_nullable_to_non_nullable
               as String?,
       googleLayers: freezed == googleLayers
-          ? _value._googleLayers
+          ? _self.googleLayers
           : googleLayers // ignore: cast_nullable_to_non_nullable
               as List<GoogleMapLayer>?,
       mapboxToken: freezed == mapboxToken
-          ? _value.mapboxToken
+          ? _self.mapboxToken
           : mapboxToken // ignore: cast_nullable_to_non_nullable
               as String?,
       mapboxLayers: freezed == mapboxLayers
-          ? _value._mapboxLayers
+          ? _self.mapboxLayers
           : mapboxLayers // ignore: cast_nullable_to_non_nullable
               as List<MapboxStyle>?,
       mapboxCustomUsername: freezed == mapboxCustomUsername
-          ? _value.mapboxCustomUsername
+          ? _self.mapboxCustomUsername
           : mapboxCustomUsername // ignore: cast_nullable_to_non_nullable
               as String?,
       mapboxCustomStyleId: freezed == mapboxCustomStyleId
-          ? _value.mapboxCustomStyleId
+          ? _self.mapboxCustomStyleId
           : mapboxCustomStyleId // ignore: cast_nullable_to_non_nullable
               as String?,
       hereToken: freezed == hereToken
-          ? _value.hereToken
+          ? _self.hereToken
           : hereToken // ignore: cast_nullable_to_non_nullable
               as String?,
       hereLayers: freezed == hereLayers
-          ? _value._hereLayers
+          ? _self.hereLayers
           : hereLayers // ignore: cast_nullable_to_non_nullable
               as List<HereStyle>?,
       attributionUrl: null == attributionUrl
-          ? _value.attributionUrl
+          ? _self.attributionUrl
           : attributionUrl // ignore: cast_nullable_to_non_nullable
               as String,
       attributionUrlDark: freezed == attributionUrlDark
-          ? _value.attributionUrlDark
+          ? _self.attributionUrlDark
           : attributionUrlDark // ignore: cast_nullable_to_non_nullable
               as String?,
       attributionWidth: null == attributionWidth
-          ? _value.attributionWidth
+          ? _self.attributionWidth
           : attributionWidth // ignore: cast_nullable_to_non_nullable
               as double,
       attributionHeight: null == attributionHeight
-          ? _value.attributionHeight
+          ? _self.attributionHeight
           : attributionHeight // ignore: cast_nullable_to_non_nullable
               as double,
       appsIds: null == appsIds
-          ? _value._appsIds
+          ? _self.appsIds
           : appsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -379,8 +299,8 @@ class __$$MapLayerImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MapLayerImpl implements _MapLayer {
-  const _$MapLayerImpl(
+class _MapLayer implements MapLayer {
+  const _MapLayer(
       {required this.id,
       required this.name,
       @JsonKey(unknownEnumValue: MapSource.custom) required this.source,
@@ -407,9 +327,8 @@ class _$MapLayerImpl implements _MapLayer {
         _mapboxLayers = mapboxLayers,
         _hereLayers = hereLayers,
         _appsIds = appsIds;
-
-  factory _$MapLayerImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MapLayerImplFromJson(json);
+  factory _MapLayer.fromJson(Map<String, dynamic> json) =>
+      _$MapLayerFromJson(json);
 
   /// [id] is the unique identifier for the layer.
   @override
@@ -538,16 +457,26 @@ class _$MapLayerImpl implements _MapLayer {
     return EqualUnmodifiableListView(_appsIds);
   }
 
+  /// Create a copy of MapLayer
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'MapLayer(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight, appsIds: $appsIds)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MapLayerCopyWith<_MapLayer> get copyWith =>
+      __$MapLayerCopyWithImpl<_MapLayer>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MapLayerToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MapLayerImpl &&
+            other is _MapLayer &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.source, source) || other.source == source) &&
@@ -605,445 +534,310 @@ class _$MapLayerImpl implements _MapLayer {
       attributionHeight,
       const DeepCollectionEquality().hash(_appsIds));
 
-  /// Create a copy of MapLayer
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MapLayerImplCopyWith<_$MapLayerImpl> get copyWith =>
-      __$$MapLayerImplCopyWithImpl<_$MapLayerImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MapLayerImplToJson(
-      this,
-    );
+  String toString() {
+    return 'MapLayer(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight, appsIds: $appsIds)';
   }
 }
 
-abstract class _MapLayer implements MapLayer {
-  const factory _MapLayer(
-      {required final String id,
-      required final String name,
-      @JsonKey(unknownEnumValue: MapSource.custom)
-      required final MapSource source,
-      final String? rasterServerLight,
-      final String? rasterServerDark,
-      final String? googleToken,
+/// @nodoc
+abstract mixin class _$MapLayerCopyWith<$Res>
+    implements $MapLayerCopyWith<$Res> {
+  factory _$MapLayerCopyWith(_MapLayer value, $Res Function(_MapLayer) _then) =
+      __$MapLayerCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      @JsonKey(unknownEnumValue: MapSource.custom) MapSource source,
+      String? rasterServerLight,
+      String? rasterServerDark,
+      String? googleToken,
       @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
-      final List<GoogleMapLayer>? googleLayers,
-      final String? mapboxToken,
+      List<GoogleMapLayer>? googleLayers,
+      String? mapboxToken,
       @JsonKey(unknownEnumValue: MapboxStyle.navigation)
-      final List<MapboxStyle>? mapboxLayers,
-      final String? mapboxCustomUsername,
-      final String? mapboxCustomStyleId,
-      final String? hereToken,
-      @JsonKey(unknownEnumValue: HereStyle.lite)
-      final List<HereStyle>? hereLayers,
-      final String attributionUrl,
-      final String? attributionUrlDark,
-      final double attributionWidth,
-      final double attributionHeight,
-      final List<String> appsIds}) = _$MapLayerImpl;
+      List<MapboxStyle>? mapboxLayers,
+      String? mapboxCustomUsername,
+      String? mapboxCustomStyleId,
+      String? hereToken,
+      @JsonKey(unknownEnumValue: HereStyle.lite) List<HereStyle>? hereLayers,
+      String attributionUrl,
+      String? attributionUrlDark,
+      double attributionWidth,
+      double attributionHeight,
+      List<String> appsIds});
+}
 
-  factory _MapLayer.fromJson(Map<String, dynamic> json) =
-      _$MapLayerImpl.fromJson;
+/// @nodoc
+class __$MapLayerCopyWithImpl<$Res> implements _$MapLayerCopyWith<$Res> {
+  __$MapLayerCopyWithImpl(this._self, this._then);
 
-  /// [id] is the unique identifier for the layer.
-  @override
-  String get id;
-
-  /// [name] is the name of the layer.
-  @override
-  String get name;
-
-  /// [source] is the source of the layer.
-  @override
-  @JsonKey(unknownEnumValue: MapSource.custom)
-  MapSource get source;
-
-  /// [rasterServerLight] is the raster server for light mode and default.
-  /// Only used when the [source] is [MapSource.custom].
-  @override
-  String? get rasterServerLight;
-
-  /// [rasterServerDark] is the raster server for dark mode.
-  /// Only used when the [source] is [MapSource.custom].
-  @override
-  String? get rasterServerDark;
-
-  /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
-  /// Only used when the [source] is [MapSource.google].
-  @override
-  String? get googleToken;
-
-  /// [googleLayers] is the list of enabled layers for the Google Maps.
-  /// Only used when the [source] is [MapSource.google].
-  @override
-  @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
-  List<GoogleMapLayer>? get googleLayers;
-
-  /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
-  /// Only used when the [source] is [MapSource.mapbox].
-  @override
-  String? get mapboxToken;
-
-  /// [mapboxStyle] is the Mapbox style for the layer.
-  /// Only used when the [source] is [MapSource.mapbox].
-  @override
-  @JsonKey(unknownEnumValue: MapboxStyle.navigation)
-  List<MapboxStyle>? get mapboxLayers;
-
-  /// [mapboxCustomUsername] is the Mapbox custom username.
-  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  @override
-  String? get mapboxCustomUsername;
-
-  /// [mapboxCustomStyleId] is the Mapbox custom style id.
-  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  @override
-  String? get mapboxCustomStyleId;
-
-  /// [hereToken] is the HERE token with Map Tiles API capabilities.
-  /// Only used when the [source] is [MapSource.here].
-  @override
-  String? get hereToken;
-
-  /// [hereLayers] is the list of enabled layers for the HERE Maps.
-  /// Only used when the [source] is [MapSource.here].
-  @override
-  @JsonKey(unknownEnumValue: HereStyle.lite)
-  List<HereStyle>? get hereLayers;
-
-  /// [attributionUrl] is the URI for the attribution of the layer.
-  @override
-  String get attributionUrl;
-
-  /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
-  @override
-  String? get attributionUrlDark;
-
-  /// [attributionWidth] is the width of the attribution of the layer.
-  @override
-  double get attributionWidth;
-
-  /// [attributionHeight] is the height of the attribution of the layer.
-  @override
-  double get attributionHeight;
-
-  /// [appsIds] is the list of [App]s that are associated with the layer.
-  @override
-  List<String> get appsIds;
+  final _MapLayer _self;
+  final $Res Function(_MapLayer) _then;
 
   /// Create a copy of MapLayer
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MapLayerImplCopyWith<_$MapLayerImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-MapLayerInput _$MapLayerInputFromJson(Map<String, dynamic> json) {
-  return _MapLayerInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? source = null,
+    Object? rasterServerLight = freezed,
+    Object? rasterServerDark = freezed,
+    Object? googleToken = freezed,
+    Object? googleLayers = freezed,
+    Object? mapboxToken = freezed,
+    Object? mapboxLayers = freezed,
+    Object? mapboxCustomUsername = freezed,
+    Object? mapboxCustomStyleId = freezed,
+    Object? hereToken = freezed,
+    Object? hereLayers = freezed,
+    Object? attributionUrl = null,
+    Object? attributionUrlDark = freezed,
+    Object? attributionWidth = null,
+    Object? attributionHeight = null,
+    Object? appsIds = null,
+  }) {
+    return _then(_MapLayer(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as MapSource,
+      rasterServerLight: freezed == rasterServerLight
+          ? _self.rasterServerLight
+          : rasterServerLight // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rasterServerDark: freezed == rasterServerDark
+          ? _self.rasterServerDark
+          : rasterServerDark // ignore: cast_nullable_to_non_nullable
+              as String?,
+      googleToken: freezed == googleToken
+          ? _self.googleToken
+          : googleToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      googleLayers: freezed == googleLayers
+          ? _self._googleLayers
+          : googleLayers // ignore: cast_nullable_to_non_nullable
+              as List<GoogleMapLayer>?,
+      mapboxToken: freezed == mapboxToken
+          ? _self.mapboxToken
+          : mapboxToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mapboxLayers: freezed == mapboxLayers
+          ? _self._mapboxLayers
+          : mapboxLayers // ignore: cast_nullable_to_non_nullable
+              as List<MapboxStyle>?,
+      mapboxCustomUsername: freezed == mapboxCustomUsername
+          ? _self.mapboxCustomUsername
+          : mapboxCustomUsername // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mapboxCustomStyleId: freezed == mapboxCustomStyleId
+          ? _self.mapboxCustomStyleId
+          : mapboxCustomStyleId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hereToken: freezed == hereToken
+          ? _self.hereToken
+          : hereToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hereLayers: freezed == hereLayers
+          ? _self._hereLayers
+          : hereLayers // ignore: cast_nullable_to_non_nullable
+              as List<HereStyle>?,
+      attributionUrl: null == attributionUrl
+          ? _self.attributionUrl
+          : attributionUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      attributionUrlDark: freezed == attributionUrlDark
+          ? _self.attributionUrlDark
+          : attributionUrlDark // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributionWidth: null == attributionWidth
+          ? _self.attributionWidth
+          : attributionWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      attributionHeight: null == attributionHeight
+          ? _self.attributionHeight
+          : attributionHeight // ignore: cast_nullable_to_non_nullable
+              as double,
+      appsIds: null == appsIds
+          ? _self._appsIds
+          : appsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$MapLayerInput {
   /// [id] is the unique identifier for the layer.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// [id] is the unique identifier for the layer.
-  set id(String? value) => throw _privateConstructorUsedError;
+  set id(String? value);
 
   /// [name] is the name of the layer.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// [name] is the name of the layer.
-  set name(String value) => throw _privateConstructorUsedError;
+  set name(String value);
 
   /// [source] is the source of the layer.
   @JsonKey(unknownEnumValue: MapSource.custom)
-  MapSource get source => throw _privateConstructorUsedError;
+  MapSource get source;
 
   /// [source] is the source of the layer.
   @JsonKey(unknownEnumValue: MapSource.custom)
-  set source(MapSource value) => throw _privateConstructorUsedError;
+  set source(MapSource value);
 
   /// [rasterServerLight] is the raster server for light mode and default.
   /// Only used when the [source] is [MapSource.custom].
-  String? get rasterServerLight => throw _privateConstructorUsedError;
+  String? get rasterServerLight;
 
   /// [rasterServerLight] is the raster server for light mode and default.
   /// Only used when the [source] is [MapSource.custom].
-  set rasterServerLight(String? value) => throw _privateConstructorUsedError;
+  set rasterServerLight(String? value);
 
   /// [rasterServerDark] is the raster server for dark mode.
   /// Only used when the [source] is [MapSource.custom].
-  String? get rasterServerDark => throw _privateConstructorUsedError;
+  String? get rasterServerDark;
 
   /// [rasterServerDark] is the raster server for dark mode.
   /// Only used when the [source] is [MapSource.custom].
-  set rasterServerDark(String? value) => throw _privateConstructorUsedError;
+  set rasterServerDark(String? value);
 
   /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.google].
-  String? get googleToken => throw _privateConstructorUsedError;
+  String? get googleToken;
 
   /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.google].
-  set googleToken(String? value) => throw _privateConstructorUsedError;
+  set googleToken(String? value);
 
   /// [googleLayers] is the list of enabled layers for the Google Maps.
   /// Only used when the [source] is [MapSource.google].
   @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
-  List<GoogleMapLayer>? get googleLayers => throw _privateConstructorUsedError;
+  List<GoogleMapLayer>? get googleLayers;
 
   /// [googleLayers] is the list of enabled layers for the Google Maps.
   /// Only used when the [source] is [MapSource.google].
   @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
-  set googleLayers(List<GoogleMapLayer>? value) =>
-      throw _privateConstructorUsedError;
+  set googleLayers(List<GoogleMapLayer>? value);
 
   /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
   /// Only used when the [source] is [MapSource.mapbox].
-  String? get mapboxToken => throw _privateConstructorUsedError;
+  String? get mapboxToken;
 
   /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
   /// Only used when the [source] is [MapSource.mapbox].
-  set mapboxToken(String? value) => throw _privateConstructorUsedError;
+  set mapboxToken(String? value);
 
   /// [mapboxStyle] is the Mapbox style for the layer.
   /// Only used when the [source] is [MapSource.mapbox].
   @JsonKey(unknownEnumValue: MapboxStyle.navigation)
-  List<MapboxStyle>? get mapboxLayers => throw _privateConstructorUsedError;
+  List<MapboxStyle>? get mapboxLayers;
 
   /// [mapboxStyle] is the Mapbox style for the layer.
   /// Only used when the [source] is [MapSource.mapbox].
   @JsonKey(unknownEnumValue: MapboxStyle.navigation)
-  set mapboxLayers(List<MapboxStyle>? value) =>
-      throw _privateConstructorUsedError;
+  set mapboxLayers(List<MapboxStyle>? value);
 
   /// [mapboxCustomUsername] is the Mapbox custom username.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  String? get mapboxCustomUsername => throw _privateConstructorUsedError;
+  String? get mapboxCustomUsername;
 
   /// [mapboxCustomUsername] is the Mapbox custom username.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  set mapboxCustomUsername(String? value) => throw _privateConstructorUsedError;
+  set mapboxCustomUsername(String? value);
 
   /// [mapboxCustomStyleId] is the Mapbox custom style id.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  String? get mapboxCustomStyleId => throw _privateConstructorUsedError;
+  String? get mapboxCustomStyleId;
 
   /// [mapboxCustomStyleId] is the Mapbox custom style id.
   /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  set mapboxCustomStyleId(String? value) => throw _privateConstructorUsedError;
+  set mapboxCustomStyleId(String? value);
 
   /// [hereToken] is the HERE token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.here].
-  String? get hereToken => throw _privateConstructorUsedError;
+  String? get hereToken;
 
   /// [hereToken] is the HERE token with Map Tiles API capabilities.
   /// Only used when the [source] is [MapSource.here].
-  set hereToken(String? value) => throw _privateConstructorUsedError;
+  set hereToken(String? value);
 
   /// [hereLayers] is the list of enabled layers for the HERE Maps.
   /// Only used when the [source] is [MapSource.here].
   @JsonKey(unknownEnumValue: HereStyle.lite)
-  List<HereStyle>? get hereLayers => throw _privateConstructorUsedError;
+  List<HereStyle>? get hereLayers;
 
   /// [hereLayers] is the list of enabled layers for the HERE Maps.
   /// Only used when the [source] is [MapSource.here].
   @JsonKey(unknownEnumValue: HereStyle.lite)
-  set hereLayers(List<HereStyle>? value) => throw _privateConstructorUsedError;
+  set hereLayers(List<HereStyle>? value);
 
   /// [attributionUrl] is the URI for the attribution of the layer.
-  String get attributionUrl => throw _privateConstructorUsedError;
+  String get attributionUrl;
 
   /// [attributionUrl] is the URI for the attribution of the layer.
-  set attributionUrl(String value) => throw _privateConstructorUsedError;
+  set attributionUrl(String value);
 
   /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
-  String? get attributionUrlDark => throw _privateConstructorUsedError;
+  String? get attributionUrlDark;
 
   /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
-  set attributionUrlDark(String? value) => throw _privateConstructorUsedError;
+  set attributionUrlDark(String? value);
 
   /// [attributionWidth] is the width of the attribution of the layer.
-  double get attributionWidth => throw _privateConstructorUsedError;
+  double get attributionWidth;
 
   /// [attributionWidth] is the width of the attribution of the layer.
-  set attributionWidth(double value) => throw _privateConstructorUsedError;
+  set attributionWidth(double value);
 
   /// [attributionHeight] is the height of the attribution of the layer.
-  double get attributionHeight => throw _privateConstructorUsedError;
+  double get attributionHeight;
 
   /// [attributionHeight] is the height of the attribution of the layer.
-  set attributionHeight(double value) => throw _privateConstructorUsedError;
+  set attributionHeight(double value);
 
   /// [appsIds] is the list of [App]s that are associated with the layer.
-  List<String> get appsIds => throw _privateConstructorUsedError;
+  List<String> get appsIds;
 
   /// [appsIds] is the list of [App]s that are associated with the layer.
-  set appsIds(List<String> value) => throw _privateConstructorUsedError;
-
-  /// Serializes this MapLayerInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set appsIds(List<String> value);
 
   /// Create a copy of MapLayerInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MapLayerInputCopyWith<MapLayerInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MapLayerInputCopyWith<$Res> {
-  factory $MapLayerInputCopyWith(
-          MapLayerInput value, $Res Function(MapLayerInput) then) =
-      _$MapLayerInputCopyWithImpl<$Res, MapLayerInput>;
-  @useResult
-  $Res call(
-      {String? id,
-      String name,
-      @JsonKey(unknownEnumValue: MapSource.custom) MapSource source,
-      String? rasterServerLight,
-      String? rasterServerDark,
-      String? googleToken,
-      @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
-      List<GoogleMapLayer>? googleLayers,
-      String? mapboxToken,
-      @JsonKey(unknownEnumValue: MapboxStyle.navigation)
-      List<MapboxStyle>? mapboxLayers,
-      String? mapboxCustomUsername,
-      String? mapboxCustomStyleId,
-      String? hereToken,
-      @JsonKey(unknownEnumValue: HereStyle.lite) List<HereStyle>? hereLayers,
-      String attributionUrl,
-      String? attributionUrlDark,
-      double attributionWidth,
-      double attributionHeight,
-      List<String> appsIds});
-}
-
-/// @nodoc
-class _$MapLayerInputCopyWithImpl<$Res, $Val extends MapLayerInput>
-    implements $MapLayerInputCopyWith<$Res> {
-  _$MapLayerInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of MapLayerInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $MapLayerInputCopyWith<MapLayerInput> get copyWith =>
+      _$MapLayerInputCopyWithImpl<MapLayerInput>(
+          this as MapLayerInput, _$identity);
+
+  /// Serializes this MapLayerInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = null,
-    Object? source = null,
-    Object? rasterServerLight = freezed,
-    Object? rasterServerDark = freezed,
-    Object? googleToken = freezed,
-    Object? googleLayers = freezed,
-    Object? mapboxToken = freezed,
-    Object? mapboxLayers = freezed,
-    Object? mapboxCustomUsername = freezed,
-    Object? mapboxCustomStyleId = freezed,
-    Object? hereToken = freezed,
-    Object? hereLayers = freezed,
-    Object? attributionUrl = null,
-    Object? attributionUrlDark = freezed,
-    Object? attributionWidth = null,
-    Object? attributionHeight = null,
-    Object? appsIds = null,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      source: null == source
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as MapSource,
-      rasterServerLight: freezed == rasterServerLight
-          ? _value.rasterServerLight
-          : rasterServerLight // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rasterServerDark: freezed == rasterServerDark
-          ? _value.rasterServerDark
-          : rasterServerDark // ignore: cast_nullable_to_non_nullable
-              as String?,
-      googleToken: freezed == googleToken
-          ? _value.googleToken
-          : googleToken // ignore: cast_nullable_to_non_nullable
-              as String?,
-      googleLayers: freezed == googleLayers
-          ? _value.googleLayers
-          : googleLayers // ignore: cast_nullable_to_non_nullable
-              as List<GoogleMapLayer>?,
-      mapboxToken: freezed == mapboxToken
-          ? _value.mapboxToken
-          : mapboxToken // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mapboxLayers: freezed == mapboxLayers
-          ? _value.mapboxLayers
-          : mapboxLayers // ignore: cast_nullable_to_non_nullable
-              as List<MapboxStyle>?,
-      mapboxCustomUsername: freezed == mapboxCustomUsername
-          ? _value.mapboxCustomUsername
-          : mapboxCustomUsername // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mapboxCustomStyleId: freezed == mapboxCustomStyleId
-          ? _value.mapboxCustomStyleId
-          : mapboxCustomStyleId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hereToken: freezed == hereToken
-          ? _value.hereToken
-          : hereToken // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hereLayers: freezed == hereLayers
-          ? _value.hereLayers
-          : hereLayers // ignore: cast_nullable_to_non_nullable
-              as List<HereStyle>?,
-      attributionUrl: null == attributionUrl
-          ? _value.attributionUrl
-          : attributionUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      attributionUrlDark: freezed == attributionUrlDark
-          ? _value.attributionUrlDark
-          : attributionUrlDark // ignore: cast_nullable_to_non_nullable
-              as String?,
-      attributionWidth: null == attributionWidth
-          ? _value.attributionWidth
-          : attributionWidth // ignore: cast_nullable_to_non_nullable
-              as double,
-      attributionHeight: null == attributionHeight
-          ? _value.attributionHeight
-          : attributionHeight // ignore: cast_nullable_to_non_nullable
-              as double,
-      appsIds: null == appsIds
-          ? _value.appsIds
-          : appsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  String toString() {
+    return 'MapLayerInput(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight, appsIds: $appsIds)';
   }
 }
 
 /// @nodoc
-abstract class _$$MapLayerInputImplCopyWith<$Res>
-    implements $MapLayerInputCopyWith<$Res> {
-  factory _$$MapLayerInputImplCopyWith(
-          _$MapLayerInputImpl value, $Res Function(_$MapLayerInputImpl) then) =
-      __$$MapLayerInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MapLayerInputCopyWith<$Res> {
+  factory $MapLayerInputCopyWith(
+          MapLayerInput value, $Res Function(MapLayerInput) _then) =
+      _$MapLayerInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -1069,12 +863,12 @@ abstract class _$$MapLayerInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MapLayerInputImplCopyWithImpl<$Res>
-    extends _$MapLayerInputCopyWithImpl<$Res, _$MapLayerInputImpl>
-    implements _$$MapLayerInputImplCopyWith<$Res> {
-  __$$MapLayerInputImplCopyWithImpl(
-      _$MapLayerInputImpl _value, $Res Function(_$MapLayerInputImpl) _then)
-      : super(_value, _then);
+class _$MapLayerInputCopyWithImpl<$Res>
+    implements $MapLayerInputCopyWith<$Res> {
+  _$MapLayerInputCopyWithImpl(this._self, this._then);
+
+  final MapLayerInput _self;
+  final $Res Function(MapLayerInput) _then;
 
   /// Create a copy of MapLayerInput
   /// with the given fields replaced by the non-null parameter values.
@@ -1100,77 +894,77 @@ class __$$MapLayerInputImplCopyWithImpl<$Res>
     Object? attributionHeight = null,
     Object? appsIds = null,
   }) {
-    return _then(_$MapLayerInputImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       source: null == source
-          ? _value.source
+          ? _self.source
           : source // ignore: cast_nullable_to_non_nullable
               as MapSource,
       rasterServerLight: freezed == rasterServerLight
-          ? _value.rasterServerLight
+          ? _self.rasterServerLight
           : rasterServerLight // ignore: cast_nullable_to_non_nullable
               as String?,
       rasterServerDark: freezed == rasterServerDark
-          ? _value.rasterServerDark
+          ? _self.rasterServerDark
           : rasterServerDark // ignore: cast_nullable_to_non_nullable
               as String?,
       googleToken: freezed == googleToken
-          ? _value.googleToken
+          ? _self.googleToken
           : googleToken // ignore: cast_nullable_to_non_nullable
               as String?,
       googleLayers: freezed == googleLayers
-          ? _value.googleLayers
+          ? _self.googleLayers
           : googleLayers // ignore: cast_nullable_to_non_nullable
               as List<GoogleMapLayer>?,
       mapboxToken: freezed == mapboxToken
-          ? _value.mapboxToken
+          ? _self.mapboxToken
           : mapboxToken // ignore: cast_nullable_to_non_nullable
               as String?,
       mapboxLayers: freezed == mapboxLayers
-          ? _value.mapboxLayers
+          ? _self.mapboxLayers
           : mapboxLayers // ignore: cast_nullable_to_non_nullable
               as List<MapboxStyle>?,
       mapboxCustomUsername: freezed == mapboxCustomUsername
-          ? _value.mapboxCustomUsername
+          ? _self.mapboxCustomUsername
           : mapboxCustomUsername // ignore: cast_nullable_to_non_nullable
               as String?,
       mapboxCustomStyleId: freezed == mapboxCustomStyleId
-          ? _value.mapboxCustomStyleId
+          ? _self.mapboxCustomStyleId
           : mapboxCustomStyleId // ignore: cast_nullable_to_non_nullable
               as String?,
       hereToken: freezed == hereToken
-          ? _value.hereToken
+          ? _self.hereToken
           : hereToken // ignore: cast_nullable_to_non_nullable
               as String?,
       hereLayers: freezed == hereLayers
-          ? _value.hereLayers
+          ? _self.hereLayers
           : hereLayers // ignore: cast_nullable_to_non_nullable
               as List<HereStyle>?,
       attributionUrl: null == attributionUrl
-          ? _value.attributionUrl
+          ? _self.attributionUrl
           : attributionUrl // ignore: cast_nullable_to_non_nullable
               as String,
       attributionUrlDark: freezed == attributionUrlDark
-          ? _value.attributionUrlDark
+          ? _self.attributionUrlDark
           : attributionUrlDark // ignore: cast_nullable_to_non_nullable
               as String?,
       attributionWidth: null == attributionWidth
-          ? _value.attributionWidth
+          ? _self.attributionWidth
           : attributionWidth // ignore: cast_nullable_to_non_nullable
               as double,
       attributionHeight: null == attributionHeight
-          ? _value.attributionHeight
+          ? _self.attributionHeight
           : attributionHeight // ignore: cast_nullable_to_non_nullable
               as double,
       appsIds: null == appsIds
-          ? _value.appsIds
+          ? _self.appsIds
           : appsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -1179,8 +973,8 @@ class __$$MapLayerInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MapLayerInputImpl implements _MapLayerInput {
-  _$MapLayerInputImpl(
+class _MapLayerInput implements MapLayerInput {
+  _MapLayerInput(
       {this.id,
       this.name = '',
       @JsonKey(unknownEnumValue: MapSource.custom)
@@ -1201,9 +995,8 @@ class _$MapLayerInputImpl implements _MapLayerInput {
       this.attributionWidth = 100,
       this.attributionHeight = 30,
       this.appsIds = const []});
-
-  factory _$MapLayerInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MapLayerInputImplFromJson(json);
+  factory _MapLayerInput.fromJson(Map<String, dynamic> json) =>
+      _$MapLayerInputFromJson(json);
 
   /// [id] is the unique identifier for the layer.
   @override
@@ -1296,29 +1089,36 @@ class _$MapLayerInputImpl implements _MapLayerInput {
   @JsonKey()
   List<String> appsIds;
 
+  /// Create a copy of MapLayerInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MapLayerInputCopyWith<_MapLayerInput> get copyWith =>
+      __$MapLayerInputCopyWithImpl<_MapLayerInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MapLayerInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'MapLayerInput(id: $id, name: $name, source: $source, rasterServerLight: $rasterServerLight, rasterServerDark: $rasterServerDark, googleToken: $googleToken, googleLayers: $googleLayers, mapboxToken: $mapboxToken, mapboxLayers: $mapboxLayers, mapboxCustomUsername: $mapboxCustomUsername, mapboxCustomStyleId: $mapboxCustomStyleId, hereToken: $hereToken, hereLayers: $hereLayers, attributionUrl: $attributionUrl, attributionUrlDark: $attributionUrlDark, attributionWidth: $attributionWidth, attributionHeight: $attributionHeight, appsIds: $appsIds)';
   }
-
-  /// Create a copy of MapLayerInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MapLayerInputImplCopyWith<_$MapLayerInputImpl> get copyWith =>
-      __$$MapLayerInputImplCopyWithImpl<_$MapLayerInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MapLayerInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _MapLayerInput implements MapLayerInput {
-  factory _MapLayerInput(
+/// @nodoc
+abstract mixin class _$MapLayerInputCopyWith<$Res>
+    implements $MapLayerInputCopyWith<$Res> {
+  factory _$MapLayerInputCopyWith(
+          _MapLayerInput value, $Res Function(_MapLayerInput) _then) =
+      __$MapLayerInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? id,
       String name,
       @JsonKey(unknownEnumValue: MapSource.custom) MapSource source,
@@ -1338,169 +1138,116 @@ abstract class _MapLayerInput implements MapLayerInput {
       String? attributionUrlDark,
       double attributionWidth,
       double attributionHeight,
-      List<String> appsIds}) = _$MapLayerInputImpl;
+      List<String> appsIds});
+}
 
-  factory _MapLayerInput.fromJson(Map<String, dynamic> json) =
-      _$MapLayerInputImpl.fromJson;
+/// @nodoc
+class __$MapLayerInputCopyWithImpl<$Res>
+    implements _$MapLayerInputCopyWith<$Res> {
+  __$MapLayerInputCopyWithImpl(this._self, this._then);
 
-  /// [id] is the unique identifier for the layer.
-  @override
-  String? get id;
-
-  /// [id] is the unique identifier for the layer.
-  set id(String? value);
-
-  /// [name] is the name of the layer.
-  @override
-  String get name;
-
-  /// [name] is the name of the layer.
-  set name(String value);
-
-  /// [source] is the source of the layer.
-  @override
-  @JsonKey(unknownEnumValue: MapSource.custom)
-  MapSource get source;
-
-  /// [source] is the source of the layer.
-  @JsonKey(unknownEnumValue: MapSource.custom)
-  set source(MapSource value);
-
-  /// [rasterServerLight] is the raster server for light mode and default.
-  /// Only used when the [source] is [MapSource.custom].
-  @override
-  String? get rasterServerLight;
-
-  /// [rasterServerLight] is the raster server for light mode and default.
-  /// Only used when the [source] is [MapSource.custom].
-  set rasterServerLight(String? value);
-
-  /// [rasterServerDark] is the raster server for dark mode.
-  /// Only used when the [source] is [MapSource.custom].
-  @override
-  String? get rasterServerDark;
-
-  /// [rasterServerDark] is the raster server for dark mode.
-  /// Only used when the [source] is [MapSource.custom].
-  set rasterServerDark(String? value);
-
-  /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
-  /// Only used when the [source] is [MapSource.google].
-  @override
-  String? get googleToken;
-
-  /// [googleToken] is the Google Maps token with Map Tiles API capabilities.
-  /// Only used when the [source] is [MapSource.google].
-  set googleToken(String? value);
-
-  /// [googleLayers] is the list of enabled layers for the Google Maps.
-  /// Only used when the [source] is [MapSource.google].
-  @override
-  @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
-  List<GoogleMapLayer>? get googleLayers;
-
-  /// [googleLayers] is the list of enabled layers for the Google Maps.
-  /// Only used when the [source] is [MapSource.google].
-  @JsonKey(unknownEnumValue: GoogleMapLayer.roadmap)
-  set googleLayers(List<GoogleMapLayer>? value);
-
-  /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
-  /// Only used when the [source] is [MapSource.mapbox].
-  @override
-  String? get mapboxToken;
-
-  /// [mapboxToken] is the Mapbox token with Static Tiles API capabilities.
-  /// Only used when the [source] is [MapSource.mapbox].
-  set mapboxToken(String? value);
-
-  /// [mapboxStyle] is the Mapbox style for the layer.
-  /// Only used when the [source] is [MapSource.mapbox].
-  @override
-  @JsonKey(unknownEnumValue: MapboxStyle.navigation)
-  List<MapboxStyle>? get mapboxLayers;
-
-  /// [mapboxStyle] is the Mapbox style for the layer.
-  /// Only used when the [source] is [MapSource.mapbox].
-  @JsonKey(unknownEnumValue: MapboxStyle.navigation)
-  set mapboxLayers(List<MapboxStyle>? value);
-
-  /// [mapboxCustomUsername] is the Mapbox custom username.
-  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  @override
-  String? get mapboxCustomUsername;
-
-  /// [mapboxCustomUsername] is the Mapbox custom username.
-  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  set mapboxCustomUsername(String? value);
-
-  /// [mapboxCustomStyleId] is the Mapbox custom style id.
-  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  @override
-  String? get mapboxCustomStyleId;
-
-  /// [mapboxCustomStyleId] is the Mapbox custom style id.
-  /// Only used when the [source] is [MapSource.mapbox] and the [mapboxStyle] is [MapboxStyle.custom].
-  set mapboxCustomStyleId(String? value);
-
-  /// [hereToken] is the HERE token with Map Tiles API capabilities.
-  /// Only used when the [source] is [MapSource.here].
-  @override
-  String? get hereToken;
-
-  /// [hereToken] is the HERE token with Map Tiles API capabilities.
-  /// Only used when the [source] is [MapSource.here].
-  set hereToken(String? value);
-
-  /// [hereLayers] is the list of enabled layers for the HERE Maps.
-  /// Only used when the [source] is [MapSource.here].
-  @override
-  @JsonKey(unknownEnumValue: HereStyle.lite)
-  List<HereStyle>? get hereLayers;
-
-  /// [hereLayers] is the list of enabled layers for the HERE Maps.
-  /// Only used when the [source] is [MapSource.here].
-  @JsonKey(unknownEnumValue: HereStyle.lite)
-  set hereLayers(List<HereStyle>? value);
-
-  /// [attributionUrl] is the URI for the attribution of the layer.
-  @override
-  String get attributionUrl;
-
-  /// [attributionUrl] is the URI for the attribution of the layer.
-  set attributionUrl(String value);
-
-  /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
-  @override
-  String? get attributionUrlDark;
-
-  /// [attributionUrlDark] is the URI for the attribution of the layer in dark mode.
-  set attributionUrlDark(String? value);
-
-  /// [attributionWidth] is the width of the attribution of the layer.
-  @override
-  double get attributionWidth;
-
-  /// [attributionWidth] is the width of the attribution of the layer.
-  set attributionWidth(double value);
-
-  /// [attributionHeight] is the height of the attribution of the layer.
-  @override
-  double get attributionHeight;
-
-  /// [attributionHeight] is the height of the attribution of the layer.
-  set attributionHeight(double value);
-
-  /// [appsIds] is the list of [App]s that are associated with the layer.
-  @override
-  List<String> get appsIds;
-
-  /// [appsIds] is the list of [App]s that are associated with the layer.
-  set appsIds(List<String> value);
+  final _MapLayerInput _self;
+  final $Res Function(_MapLayerInput) _then;
 
   /// Create a copy of MapLayerInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MapLayerInputImplCopyWith<_$MapLayerInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? source = null,
+    Object? rasterServerLight = freezed,
+    Object? rasterServerDark = freezed,
+    Object? googleToken = freezed,
+    Object? googleLayers = freezed,
+    Object? mapboxToken = freezed,
+    Object? mapboxLayers = freezed,
+    Object? mapboxCustomUsername = freezed,
+    Object? mapboxCustomStyleId = freezed,
+    Object? hereToken = freezed,
+    Object? hereLayers = freezed,
+    Object? attributionUrl = null,
+    Object? attributionUrlDark = freezed,
+    Object? attributionWidth = null,
+    Object? attributionHeight = null,
+    Object? appsIds = null,
+  }) {
+    return _then(_MapLayerInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as MapSource,
+      rasterServerLight: freezed == rasterServerLight
+          ? _self.rasterServerLight
+          : rasterServerLight // ignore: cast_nullable_to_non_nullable
+              as String?,
+      rasterServerDark: freezed == rasterServerDark
+          ? _self.rasterServerDark
+          : rasterServerDark // ignore: cast_nullable_to_non_nullable
+              as String?,
+      googleToken: freezed == googleToken
+          ? _self.googleToken
+          : googleToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      googleLayers: freezed == googleLayers
+          ? _self.googleLayers
+          : googleLayers // ignore: cast_nullable_to_non_nullable
+              as List<GoogleMapLayer>?,
+      mapboxToken: freezed == mapboxToken
+          ? _self.mapboxToken
+          : mapboxToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mapboxLayers: freezed == mapboxLayers
+          ? _self.mapboxLayers
+          : mapboxLayers // ignore: cast_nullable_to_non_nullable
+              as List<MapboxStyle>?,
+      mapboxCustomUsername: freezed == mapboxCustomUsername
+          ? _self.mapboxCustomUsername
+          : mapboxCustomUsername // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mapboxCustomStyleId: freezed == mapboxCustomStyleId
+          ? _self.mapboxCustomStyleId
+          : mapboxCustomStyleId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hereToken: freezed == hereToken
+          ? _self.hereToken
+          : hereToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hereLayers: freezed == hereLayers
+          ? _self.hereLayers
+          : hereLayers // ignore: cast_nullable_to_non_nullable
+              as List<HereStyle>?,
+      attributionUrl: null == attributionUrl
+          ? _self.attributionUrl
+          : attributionUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      attributionUrlDark: freezed == attributionUrlDark
+          ? _self.attributionUrlDark
+          : attributionUrlDark // ignore: cast_nullable_to_non_nullable
+              as String?,
+      attributionWidth: null == attributionWidth
+          ? _self.attributionWidth
+          : attributionWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      attributionHeight: null == attributionHeight
+          ? _self.attributionHeight
+          : attributionHeight // ignore: cast_nullable_to_non_nullable
+              as double,
+      appsIds: null == appsIds
+          ? _self.appsIds
+          : appsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
+
+// dart format on

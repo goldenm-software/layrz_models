@@ -1,7 +1,7 @@
 part of '../../workspace.dart';
 
 @freezed
-class MapCardAlertConfiguration with _$MapCardAlertConfiguration {
+abstract class MapCardAlertConfiguration with _$MapCardAlertConfiguration {
   const factory MapCardAlertConfiguration({
     /// Represents the range of search results to be displayed on the map.
     @Default(MapCardMode.lastDay) @JsonKey(unknownEnumValue: MapCardMode.lastDay) MapCardMode range,
@@ -17,7 +17,7 @@ class MapCardAlertConfiguration with _$MapCardAlertConfiguration {
 }
 
 @unfreezed
-class MapCardAlertConfigurationInput with _$MapCardAlertConfigurationInput {
+abstract class MapCardAlertConfigurationInput with _$MapCardAlertConfigurationInput {
   factory MapCardAlertConfigurationInput({
     /// Represents the range of search results to be displayed on the map.
     @Default(MapCardMode.lastDay) @JsonKey(unknownEnumValue: MapCardMode.lastDay) MapCardMode range,

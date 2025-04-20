@@ -1,7 +1,7 @@
 part of '../notifications.dart';
 
 @freezed
-class LayrzNotification with _$LayrzNotification {
+abstract class LayrzNotification with _$LayrzNotification {
   const LayrzNotification._();
 
   const factory LayrzNotification({

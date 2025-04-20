@@ -57,7 +57,7 @@ class PurchaseOrderOperationOrNullConverter implements JsonConverter<PurchaseOrd
 }
 
 @freezed
-class AtsPurchaseOrder with _$AtsPurchaseOrder {
+abstract class AtsPurchaseOrder with _$AtsPurchaseOrder {
   factory AtsPurchaseOrder({
     /// ID of the [Asset] entity. This ID is unique.
     String? id,

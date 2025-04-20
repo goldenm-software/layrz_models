@@ -6,9 +6,8 @@ part of 'brickhouse.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BrickhouseAlertImpl(
+_BrickhouseAlert _$BrickhouseAlertFromJson(Map<String, dynamic> json) =>
+    _BrickhouseAlert(
       id: json['id'] as String,
       name: json['name'] as String,
       type: $enumDecode(_$BrickhouseAlertTypeEnumMap, json['type']),
@@ -37,7 +36,8 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
           .fromJson((json['curfewEndHour'] as num?)?.toInt()),
       timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
-          ?.map((e) => const WeekdayConverter().fromJson(e as String))
+          ?.map((e) =>
+              $enumDecode(_$WeekdayEnumMap, e, unknownValue: Weekday.monday))
           .toList(),
       geofenceColor: const ColorOrNullConverter()
           .fromJson(json['geofenceColor'] as String?),
@@ -56,8 +56,7 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
       isDisabled: json['isDisabled'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$BrickhouseAlertImplToJson(
-        _$BrickhouseAlertImpl instance) =>
+Map<String, dynamic> _$BrickhouseAlertToJson(_BrickhouseAlert instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -76,9 +75,8 @@ Map<String, dynamic> _$$BrickhouseAlertImplToJson(
       'curfewEndHour': const BrickhouseTimeOfDayMinuteOrNullConverter()
           .toJson(instance.curfewEndHour),
       'timezone': instance.timezone,
-      'curfewWeekdays': instance.curfewWeekdays
-          ?.map(const WeekdayConverter().toJson)
-          .toList(),
+      'curfewWeekdays':
+          instance.curfewWeekdays?.map((e) => e.toJson()).toList(),
       'geofenceColor':
           const ColorOrNullConverter().toJson(instance.geofenceColor),
       'geofenceMode':
@@ -103,6 +101,16 @@ const _$BrickhouseAlertTypeEnumMap = {
   BrickhouseAlertType.unknown: 'UNKNOWN',
 };
 
+const _$WeekdayEnumMap = {
+  Weekday.monday: 'MON',
+  Weekday.tuesday: 'TUE',
+  Weekday.wednesday: 'WED',
+  Weekday.thursday: 'THU',
+  Weekday.friday: 'FRI',
+  Weekday.saturday: 'SAT',
+  Weekday.sunday: 'SUN',
+};
+
 const _$BrickhouseGeofenceTriggerEnumMap = {
   BrickhouseGeofenceTrigger.entrance: 'ENTRANCE',
   BrickhouseGeofenceTrigger.exit: 'EXIT',
@@ -110,9 +118,9 @@ const _$BrickhouseGeofenceTriggerEnumMap = {
   BrickhouseGeofenceTrigger.unknown: 'UNKNOWN',
 };
 
-_$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
+_BrickhouseAlertInput _$BrickhouseAlertInputFromJson(
         Map<String, dynamic> json) =>
-    _$BrickhouseAlertInputImpl(
+    _BrickhouseAlertInput(
       id: json['id'] as String?,
       name: json['name'] as String,
       type: $enumDecode(_$BrickhouseAlertTypeEnumMap, json['type']),
@@ -139,7 +147,8 @@ _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
           .fromJson((json['curfewEndHour'] as num?)?.toInt()),
       timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
-              ?.map((e) => const WeekdayConverter().fromJson(e as String))
+              ?.map((e) => $enumDecode(_$WeekdayEnumMap, e,
+                  unknownValue: Weekday.monday))
               .toList() ??
           const [
             Weekday.monday,
@@ -168,8 +177,8 @@ _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
       speedingThreshold: (json['speedingThreshold'] as num?)?.toDouble() ?? 0,
     );
 
-Map<String, dynamic> _$$BrickhouseAlertInputImplToJson(
-        _$BrickhouseAlertInputImpl instance) =>
+Map<String, dynamic> _$BrickhouseAlertInputToJson(
+        _BrickhouseAlertInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -187,9 +196,8 @@ Map<String, dynamic> _$$BrickhouseAlertInputImplToJson(
       'curfewEndHour': const BrickhouseTimeOfDayMinuteOrNullConverter()
           .toJson(instance.curfewEndHour),
       'timezone': instance.timezone,
-      'curfewWeekdays': instance.curfewWeekdays
-          ?.map(const WeekdayConverter().toJson)
-          .toList(),
+      'curfewWeekdays':
+          instance.curfewWeekdays?.map((e) => e.toJson()).toList(),
       'geofenceColor':
           const ColorOrNullConverter().toJson(instance.geofenceColor),
       'geofenceMode':
@@ -202,9 +210,9 @@ Map<String, dynamic> _$$BrickhouseAlertInputImplToJson(
       'speedingThreshold': instance.speedingThreshold,
     };
 
-_$BHSDriverSafetyEventScoreImpl _$$BHSDriverSafetyEventScoreImplFromJson(
+_BHSDriverSafetyEventScore _$BHSDriverSafetyEventScoreFromJson(
         Map<String, dynamic> json) =>
-    _$BHSDriverSafetyEventScoreImpl(
+    _BHSDriverSafetyEventScore(
       score: (json['score'] as num).toDouble(),
       status: json['status'] as String?,
       messages: (json['messages'] as List<dynamic>?)
@@ -212,50 +220,49 @@ _$BHSDriverSafetyEventScoreImpl _$$BHSDriverSafetyEventScoreImplFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$$BHSDriverSafetyEventScoreImplToJson(
-        _$BHSDriverSafetyEventScoreImpl instance) =>
+Map<String, dynamic> _$BHSDriverSafetyEventScoreToJson(
+        _BHSDriverSafetyEventScore instance) =>
     <String, dynamic>{
       'score': instance.score,
       'status': instance.status,
       'messages': instance.messages?.map((e) => e.toJson()).toList(),
     };
 
-_$BHSDriverSafetyDrivenScoreImpl _$$BHSDriverSafetyDrivenScoreImplFromJson(
+_BHSDriverSafetyDrivenScore _$BHSDriverSafetyDrivenScoreFromJson(
         Map<String, dynamic> json) =>
-    _$BHSDriverSafetyDrivenScoreImpl(
+    _BHSDriverSafetyDrivenScore(
       score: (json['score'] as num).toDouble(),
       status: json['status'] as String?,
       drivenSeconds: (json['drivenSeconds'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$BHSDriverSafetyDrivenScoreImplToJson(
-        _$BHSDriverSafetyDrivenScoreImpl instance) =>
+Map<String, dynamic> _$BHSDriverSafetyDrivenScoreToJson(
+        _BHSDriverSafetyDrivenScore instance) =>
     <String, dynamic>{
       'score': instance.score,
       'status': instance.status,
       'drivenSeconds': instance.drivenSeconds,
     };
 
-_$BHSDriverSafetySpeedingEventsImpl
-    _$$BHSDriverSafetySpeedingEventsImplFromJson(Map<String, dynamic> json) =>
-        _$BHSDriverSafetySpeedingEventsImpl(
-          status: json['status'] as String?,
-          messages: (json['messages'] as List<dynamic>?)
-              ?.map(
-                  (e) => TriggerActivation.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        );
+_BHSDriverSafetySpeedingEvents _$BHSDriverSafetySpeedingEventsFromJson(
+        Map<String, dynamic> json) =>
+    _BHSDriverSafetySpeedingEvents(
+      status: json['status'] as String?,
+      messages: (json['messages'] as List<dynamic>?)
+          ?.map((e) => TriggerActivation.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
-Map<String, dynamic> _$$BHSDriverSafetySpeedingEventsImplToJson(
-        _$BHSDriverSafetySpeedingEventsImpl instance) =>
+Map<String, dynamic> _$BHSDriverSafetySpeedingEventsToJson(
+        _BHSDriverSafetySpeedingEvents instance) =>
     <String, dynamic>{
       'status': instance.status,
       'messages': instance.messages?.map((e) => e.toJson()).toList(),
     };
 
-_$BHSDriverSafetyDrivingEventImpl _$$BHSDriverSafetyDrivingEventImplFromJson(
+_BHSDriverSafetyDrivingEvent _$BHSDriverSafetyDrivingEventFromJson(
         Map<String, dynamic> json) =>
-    _$BHSDriverSafetyDrivingEventImpl(
+    _BHSDriverSafetyDrivingEvent(
       startAt: const TimestampConverter().fromJson(json['startAt'] as num),
       endAt: const TimestampConverter().fromJson(json['endAt'] as num),
       startPosition: json['startPosition'] == null
@@ -269,8 +276,8 @@ _$BHSDriverSafetyDrivingEventImpl _$$BHSDriverSafetyDrivingEventImplFromJson(
       drivenSeconds: (json['drivenSeconds'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$BHSDriverSafetyDrivingEventImplToJson(
-        _$BHSDriverSafetyDrivingEventImpl instance) =>
+Map<String, dynamic> _$BHSDriverSafetyDrivingEventToJson(
+        _BHSDriverSafetyDrivingEvent instance) =>
     <String, dynamic>{
       'startAt': const TimestampConverter().toJson(instance.startAt),
       'endAt': const TimestampConverter().toJson(instance.endAt),
@@ -279,9 +286,9 @@ Map<String, dynamic> _$$BHSDriverSafetyDrivingEventImplToJson(
       'drivenSeconds': instance.drivenSeconds,
     };
 
-_$BHSDriverSafetyDrivingImpl _$$BHSDriverSafetyDrivingImplFromJson(
+_BHSDriverSafetyDriving _$BHSDriverSafetyDrivingFromJson(
         Map<String, dynamic> json) =>
-    _$BHSDriverSafetyDrivingImpl(
+    _BHSDriverSafetyDriving(
       status: json['status'] as String?,
       messages: (json['messages'] as List<dynamic>?)
           ?.map((e) =>
@@ -289,16 +296,16 @@ _$BHSDriverSafetyDrivingImpl _$$BHSDriverSafetyDrivingImplFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$$BHSDriverSafetyDrivingImplToJson(
-        _$BHSDriverSafetyDrivingImpl instance) =>
+Map<String, dynamic> _$BHSDriverSafetyDrivingToJson(
+        _BHSDriverSafetyDriving instance) =>
     <String, dynamic>{
       'status': instance.status,
       'messages': instance.messages?.map((e) => e.toJson()).toList(),
     };
 
-_$BrickhouseDriverSafetyImpl _$$BrickhouseDriverSafetyImplFromJson(
+_BrickhouseDriverSafety _$BrickhouseDriverSafetyFromJson(
         Map<String, dynamic> json) =>
-    _$BrickhouseDriverSafetyImpl(
+    _BrickhouseDriverSafety(
       totalScore: (json['totalScore'] as num).toDouble(),
       drivingHours: json['drivingHours'] == null
           ? null
@@ -326,8 +333,8 @@ _$BrickhouseDriverSafetyImpl _$$BrickhouseDriverSafetyImplFromJson(
               json['drivingEvents'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$BrickhouseDriverSafetyImplToJson(
-        _$BrickhouseDriverSafetyImpl instance) =>
+Map<String, dynamic> _$BrickhouseDriverSafetyToJson(
+        _BrickhouseDriverSafety instance) =>
     <String, dynamic>{
       'totalScore': instance.totalScore,
       'drivingHours': instance.drivingHours?.toJson(),
@@ -338,8 +345,8 @@ Map<String, dynamic> _$$BrickhouseDriverSafetyImplToJson(
       'drivingEvents': instance.drivingEvents?.toJson(),
     };
 
-_$BHSEncodedTripImpl _$$BHSEncodedTripImplFromJson(Map<String, dynamic> json) =>
-    _$BHSEncodedTripImpl(
+_BHSEncodedTrip _$BHSEncodedTripFromJson(Map<String, dynamic> json) =>
+    _BHSEncodedTrip(
       id: json['id'] as String,
       assetId: json['assetId'] as String,
       encodedPolyline: json['encodedPolyline'] as String,
@@ -348,8 +355,7 @@ _$BHSEncodedTripImpl _$$BHSEncodedTripImplFromJson(Map<String, dynamic> json) =>
       createdAt: (json['createdAt'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$$BHSEncodedTripImplToJson(
-        _$BHSEncodedTripImpl instance) =>
+Map<String, dynamic> _$BHSEncodedTripToJson(_BHSEncodedTrip instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -359,17 +365,16 @@ Map<String, dynamic> _$$BHSEncodedTripImplToJson(
       'createdAt': instance.createdAt,
     };
 
-_$BHSEncodedTripInputImpl _$$BHSEncodedTripInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BHSEncodedTripInputImpl(
+_BHSEncodedTripInput _$BHSEncodedTripInputFromJson(Map<String, dynamic> json) =>
+    _BHSEncodedTripInput(
       assetId: json['assetId'] as String,
       encodedPolyline: json['encodedPolyline'] as String,
       lineStartUnix: (json['lineStartUnix'] as num).toInt(),
       lineEndUnix: (json['lineEndUnix'] as num).toInt(),
     );
 
-Map<String, dynamic> _$$BHSEncodedTripInputImplToJson(
-        _$BHSEncodedTripInputImpl instance) =>
+Map<String, dynamic> _$BHSEncodedTripInputToJson(
+        _BHSEncodedTripInput instance) =>
     <String, dynamic>{
       'assetId': instance.assetId,
       'encodedPolyline': instance.encodedPolyline,
@@ -377,9 +382,8 @@ Map<String, dynamic> _$$BHSEncodedTripInputImplToJson(
       'lineEndUnix': instance.lineEndUnix,
     };
 
-_$BHSPermissionTierImpl _$$BHSPermissionTierImplFromJson(
-        Map<String, dynamic> json) =>
-    _$BHSPermissionTierImpl(
+_BHSPermissionTier _$BHSPermissionTierFromJson(Map<String, dynamic> json) =>
+    _BHSPermissionTier(
       id: json['id'] as String,
       name: json['name'] as String,
       tierLevel: (json['tierLevel'] as num).toInt(),
@@ -395,8 +399,7 @@ _$BHSPermissionTierImpl _$$BHSPermissionTierImplFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$$BHSPermissionTierImplToJson(
-        _$BHSPermissionTierImpl instance) =>
+Map<String, dynamic> _$BHSPermissionTierToJson(_BHSPermissionTier instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -415,9 +418,9 @@ const _$BrickhouseBillingPeriodEnumMap = {
   BrickhouseBillingPeriod.unknown: 'UNKNOWN',
 };
 
-_$BHSPermissionTierInputImpl _$$BHSPermissionTierInputImplFromJson(
+_BHSPermissionTierInput _$BHSPermissionTierInputFromJson(
         Map<String, dynamic> json) =>
-    _$BHSPermissionTierInputImpl(
+    _BHSPermissionTierInput(
       id: json['id'] as String?,
       name: json['name'] as String?,
       description: json['description'] as String?,
@@ -427,8 +430,8 @@ _$BHSPermissionTierInputImpl _$$BHSPermissionTierInputImplFromJson(
       customProperties: json['customProperties'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$BHSPermissionTierInputImplToJson(
-        _$BHSPermissionTierInputImpl instance) =>
+Map<String, dynamic> _$BHSPermissionTierInputToJson(
+        _BHSPermissionTierInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -438,9 +441,9 @@ Map<String, dynamic> _$$BHSPermissionTierInputImplToJson(
       'customProperties': instance.customProperties,
     };
 
-_$BrickHouseWorkspaceInputImpl _$$BrickHouseWorkspaceInputImplFromJson(
+_BrickHouseWorkspaceInput _$BrickHouseWorkspaceInputFromJson(
         Map<String, dynamic> json) =>
-    _$BrickHouseWorkspaceInputImpl(
+    _BrickHouseWorkspaceInput(
       id: json['id'] as String?,
       appId: json['appId'] as String,
       name: json['name'] as String,
@@ -457,8 +460,8 @@ _$BrickHouseWorkspaceInputImpl _$$BrickHouseWorkspaceInputImplFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$BrickHouseWorkspaceInputImplToJson(
-        _$BrickHouseWorkspaceInputImpl instance) =>
+Map<String, dynamic> _$BrickHouseWorkspaceInputToJson(
+        _BrickHouseWorkspaceInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'appId': instance.appId,

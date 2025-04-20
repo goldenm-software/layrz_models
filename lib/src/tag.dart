@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class Tag with _$Tag {
+abstract class Tag with _$Tag {
   const factory Tag({
     /// Is the ID of the tag.
     required String id,

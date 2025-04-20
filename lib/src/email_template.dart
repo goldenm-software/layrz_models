@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class EmailTemplate with _$EmailTemplate {
+abstract class EmailTemplate with _$EmailTemplate {
   const factory EmailTemplate({
     /// Is the id of the email template
     required String id,

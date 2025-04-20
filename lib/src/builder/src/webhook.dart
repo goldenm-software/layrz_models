@@ -1,7 +1,7 @@
 part of '../builder.dart';
 
 @freezed
-class WebhookHeader with _$WebhookHeader {
+abstract class WebhookHeader with _$WebhookHeader {
   const factory WebhookHeader({
     /// Is the key of the header.
     required String name,
@@ -15,7 +15,7 @@ class WebhookHeader with _$WebhookHeader {
 }
 
 @unfreezed
-class WebhookHeaderInput with _$WebhookHeaderInput {
+abstract class WebhookHeaderInput with _$WebhookHeaderInput {
   factory WebhookHeaderInput({
     /// Is the key of the header.
     @Default('') String name,
@@ -29,7 +29,7 @@ class WebhookHeaderInput with _$WebhookHeaderInput {
 }
 
 @freezed
-class WebhookPath with _$WebhookPath {
+abstract class WebhookPath with _$WebhookPath {
   const factory WebhookPath({
     /// Is the path of the webhook.
     required String path,
@@ -43,7 +43,7 @@ class WebhookPath with _$WebhookPath {
 }
 
 @unfreezed
-class WebhookPathInput with _$WebhookPathInput {
+abstract class WebhookPathInput with _$WebhookPathInput {
   factory WebhookPathInput({
     /// Is the path of the webhook.
     @Default('') String path,
@@ -57,7 +57,7 @@ class WebhookPathInput with _$WebhookPathInput {
 }
 
 @freezed
-class WebhookStructure with _$WebhookStructure {
+abstract class WebhookStructure with _$WebhookStructure {
   const factory WebhookStructure({
     /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
     /// the full URL.
@@ -87,7 +87,7 @@ class WebhookStructure with _$WebhookStructure {
 }
 
 @unfreezed
-class WebhookStructureInput with _$WebhookStructureInput {
+abstract class WebhookStructureInput with _$WebhookStructureInput {
   factory WebhookStructureInput({
     /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
     /// the full URL.

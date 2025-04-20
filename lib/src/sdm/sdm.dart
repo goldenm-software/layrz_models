@@ -1,4 +1,4 @@
-library sdm;
+library;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 

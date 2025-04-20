@@ -1,4 +1,4 @@
-library builder;
+library;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 

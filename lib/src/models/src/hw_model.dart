@@ -1,7 +1,7 @@
 part of '../models.dart';
 
 @freezed
-class HwModel with _$HwModel {
+abstract class HwModel with _$HwModel {
   const factory HwModel({
     /// [id] is the unique identifier of the model.
     required String id,
@@ -20,7 +20,7 @@ class HwModel with _$HwModel {
 }
 
 @unfreezed
-class HwModelInput with _$HwModelInput {
+abstract class HwModelInput with _$HwModelInput {
   factory HwModelInput({
     /// [id] is the unique identifier of the model.
     String? id,

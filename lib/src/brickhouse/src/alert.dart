@@ -158,7 +158,7 @@ class BrickhouseTimeOfDayMinuteOrNullConverter implements JsonConverter<TimeOfDa
 /// type BrickhouseAlertType
 /// Type of the alert.
 @freezed
-class BrickhouseAlert with _$BrickhouseAlert {
+abstract class BrickhouseAlert with _$BrickhouseAlert {
   const factory BrickhouseAlert({
     /// ID of the alert entity. This ID is unique.
     required String id,
@@ -206,7 +206,7 @@ class BrickhouseAlert with _$BrickhouseAlert {
     String? timezone,
 
     /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
-    @WeekdayConverter() List<Weekday>? curfewWeekdays,
+    @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? curfewWeekdays,
 
     /// Geofence color, in hex mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
     @ColorOrNullConverter() Color? geofenceColor,
@@ -310,7 +310,7 @@ class BrickhouseAlert with _$BrickhouseAlert {
 /// type BrickhouseAlertType
 /// Type of the alert.
 @unfreezed
-class BrickhouseAlertInput with _$BrickhouseAlertInput {
+abstract class BrickhouseAlertInput with _$BrickhouseAlertInput {
   factory BrickhouseAlertInput({
     /// ID of the alert entity. Send only when you want to edit it
     String? id,
@@ -355,7 +355,7 @@ class BrickhouseAlertInput with _$BrickhouseAlertInput {
     String? timezone,
 
     /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
-    @WeekdayConverter()
+    @JsonKey(unknownEnumValue: Weekday.monday)
     @Default([
       Weekday.monday,
       Weekday.tuesday,

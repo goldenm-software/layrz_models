@@ -6,9 +6,8 @@ part of 'outbound.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OutboundProtocolImpl _$$OutboundProtocolImplFromJson(
-        Map<String, dynamic> json) =>
-    _$OutboundProtocolImpl(
+_OutboundProtocol _$OutboundProtocolFromJson(Map<String, dynamic> json) =>
+    _OutboundProtocol(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
@@ -31,8 +30,7 @@ _$OutboundProtocolImpl _$$OutboundProtocolImplFromJson(
       usage: (json['usage'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$$OutboundProtocolImplToJson(
-        _$OutboundProtocolImpl instance) =>
+Map<String, dynamic> _$OutboundProtocolToJson(_OutboundProtocol instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -48,9 +46,8 @@ Map<String, dynamic> _$$OutboundProtocolImplToJson(
       'usage': instance.usage,
     };
 
-_$OutboundServiceImpl _$$OutboundServiceImplFromJson(
-        Map<String, dynamic> json) =>
-    _$OutboundServiceImpl(
+_OutboundService _$OutboundServiceFromJson(Map<String, dynamic> json) =>
+    _OutboundService(
       id: json['id'] as String,
       name: json['name'] as String,
       credentials: json['credentials'] as Map<String, dynamic>?,
@@ -83,8 +80,7 @@ _$OutboundServiceImpl _$$OutboundServiceImplFromJson(
           : OutboundMetrics.fromJson(json['metrics'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$OutboundServiceImplToJson(
-        _$OutboundServiceImpl instance) =>
+Map<String, dynamic> _$OutboundServiceToJson(_OutboundService instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -102,25 +98,22 @@ Map<String, dynamic> _$$OutboundServiceImplToJson(
       'metrics': instance.metrics?.toJson(),
     };
 
-_$OutboundStructureImpl _$$OutboundStructureImplFromJson(
-        Map<String, dynamic> json) =>
-    _$OutboundStructureImpl(
+_OutboundStructure _$OutboundStructureFromJson(Map<String, dynamic> json) =>
+    _OutboundStructure(
       field: json['field'] as String,
       type: json['type'] as String,
       value: json['value'] as String,
     );
 
-Map<String, dynamic> _$$OutboundStructureImplToJson(
-        _$OutboundStructureImpl instance) =>
+Map<String, dynamic> _$OutboundStructureToJson(_OutboundStructure instance) =>
     <String, dynamic>{
       'field': instance.field,
       'type': instance.type,
       'value': instance.value,
     };
 
-_$OutboundMetricsImpl _$$OutboundMetricsImplFromJson(
-        Map<String, dynamic> json) =>
-    _$OutboundMetricsImpl(
+_OutboundMetrics _$OutboundMetricsFromJson(Map<String, dynamic> json) =>
+    _OutboundMetrics(
       online: (json['online'] as num?)?.toInt() ?? 0,
       hibernation: (json['hibernation'] as num?)?.toInt() ?? 0,
       offline: (json['offline'] as num?)?.toInt() ?? 0,
@@ -128,8 +121,7 @@ _$OutboundMetricsImpl _$$OutboundMetricsImplFromJson(
       statsLoading: json['statsLoading'] as bool? ?? true,
     );
 
-Map<String, dynamic> _$$OutboundMetricsImplToJson(
-        _$OutboundMetricsImpl instance) =>
+Map<String, dynamic> _$OutboundMetricsToJson(_OutboundMetrics instance) =>
     <String, dynamic>{
       'online': instance.online,
       'hibernation': instance.hibernation,

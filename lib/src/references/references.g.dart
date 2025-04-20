@@ -6,8 +6,7 @@ part of 'references.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ReferenceImpl _$$ReferenceImplFromJson(Map<String, dynamic> json) =>
-    _$ReferenceImpl(
+_Reference _$ReferenceFromJson(Map<String, dynamic> json) => _Reference(
       id: json['id'] as String,
       name: json['name'] as String,
       category: $enumDecodeNullable(
@@ -23,7 +22,7 @@ _$ReferenceImpl _$$ReferenceImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$ReferenceImplToJson(_$ReferenceImpl instance) =>
+Map<String, dynamic> _$ReferenceToJson(_Reference instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -111,8 +110,8 @@ const _$ReferenceCategoryEnumMap = {
   ReferenceCategory.unknown: 'UNKNOWN',
 };
 
-_$ReferenceInputImpl _$$ReferenceInputImplFromJson(Map<String, dynamic> json) =>
-    _$ReferenceInputImpl(
+_ReferenceInput _$ReferenceInputFromJson(Map<String, dynamic> json) =>
+    _ReferenceInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       category: $enumDecodeNullable(
@@ -125,8 +124,7 @@ _$ReferenceInputImpl _$$ReferenceInputImplFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$ReferenceInputImplToJson(
-        _$ReferenceInputImpl instance) =>
+Map<String, dynamic> _$ReferenceInputToJson(_ReferenceInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

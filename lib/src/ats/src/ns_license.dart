@@ -159,7 +159,7 @@ enum AtsIcmsType {
 }
 
 @freezed
-class AtsNsAddress with _$AtsNsAddress {
+abstract class AtsNsAddress with _$AtsNsAddress {
   const factory AtsNsAddress({
     /// [address] represents the address of the address
     required String address,
@@ -184,7 +184,7 @@ class AtsNsAddress with _$AtsNsAddress {
 }
 
 @freezed
-class AtsNsLicense with _$AtsNsLicense {
+abstract class AtsNsLicense with _$AtsNsLicense {
   const factory AtsNsLicense({
     /// [id] represents the unique identifier of the license
     required String id,

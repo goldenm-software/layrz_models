@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,91 +10,64 @@ part of 'concierge.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-ConciergeFormPage _$ConciergeFormPageFromJson(Map<String, dynamic> json) {
-  return _ConciergeFormPage.fromJson(json);
-}
 
 /// @nodoc
 mixin _$ConciergeFormPage {
   /// Is the title of the page
-  String get title => throw _privateConstructorUsedError;
+  String get title;
 
   /// Is the blocks (May be fields, headers or paragraph) of the page
-  List<ConciergeFormBlock> get blocks => throw _privateConstructorUsedError;
-
-  /// Serializes this ConciergeFormPage to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<ConciergeFormBlock> get blocks;
 
   /// Create a copy of ConciergeFormPage
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ConciergeFormPageCopyWith<ConciergeFormPage> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ConciergeFormPageCopyWith<$Res> {
-  factory $ConciergeFormPageCopyWith(
-          ConciergeFormPage value, $Res Function(ConciergeFormPage) then) =
-      _$ConciergeFormPageCopyWithImpl<$Res, ConciergeFormPage>;
-  @useResult
-  $Res call({String title, List<ConciergeFormBlock> blocks});
-}
-
-/// @nodoc
-class _$ConciergeFormPageCopyWithImpl<$Res, $Val extends ConciergeFormPage>
-    implements $ConciergeFormPageCopyWith<$Res> {
-  _$ConciergeFormPageCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ConciergeFormPage
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ConciergeFormPageCopyWith<ConciergeFormPage> get copyWith =>
+      _$ConciergeFormPageCopyWithImpl<ConciergeFormPage>(
+          this as ConciergeFormPage, _$identity);
+
+  /// Serializes this ConciergeFormPage to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? title = null,
-    Object? blocks = null,
-  }) {
-    return _then(_value.copyWith(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-      blocks: null == blocks
-          ? _value.blocks
-          : blocks // ignore: cast_nullable_to_non_nullable
-              as List<ConciergeFormBlock>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ConciergeFormPage &&
+            (identical(other.title, title) || other.title == title) &&
+            const DeepCollectionEquality().equals(other.blocks, blocks));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, title, const DeepCollectionEquality().hash(blocks));
+
+  @override
+  String toString() {
+    return 'ConciergeFormPage(title: $title, blocks: $blocks)';
   }
 }
 
 /// @nodoc
-abstract class _$$ConciergeFormPageImplCopyWith<$Res>
-    implements $ConciergeFormPageCopyWith<$Res> {
-  factory _$$ConciergeFormPageImplCopyWith(_$ConciergeFormPageImpl value,
-          $Res Function(_$ConciergeFormPageImpl) then) =
-      __$$ConciergeFormPageImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ConciergeFormPageCopyWith<$Res> {
+  factory $ConciergeFormPageCopyWith(
+          ConciergeFormPage value, $Res Function(ConciergeFormPage) _then) =
+      _$ConciergeFormPageCopyWithImpl;
   @useResult
   $Res call({String title, List<ConciergeFormBlock> blocks});
 }
 
 /// @nodoc
-class __$$ConciergeFormPageImplCopyWithImpl<$Res>
-    extends _$ConciergeFormPageCopyWithImpl<$Res, _$ConciergeFormPageImpl>
-    implements _$$ConciergeFormPageImplCopyWith<$Res> {
-  __$$ConciergeFormPageImplCopyWithImpl(_$ConciergeFormPageImpl _value,
-      $Res Function(_$ConciergeFormPageImpl) _then)
-      : super(_value, _then);
+class _$ConciergeFormPageCopyWithImpl<$Res>
+    implements $ConciergeFormPageCopyWith<$Res> {
+  _$ConciergeFormPageCopyWithImpl(this._self, this._then);
+
+  final ConciergeFormPage _self;
+  final $Res Function(ConciergeFormPage) _then;
 
   /// Create a copy of ConciergeFormPage
   /// with the given fields replaced by the non-null parameter values.
@@ -103,13 +77,13 @@ class __$$ConciergeFormPageImplCopyWithImpl<$Res>
     Object? title = null,
     Object? blocks = null,
   }) {
-    return _then(_$ConciergeFormPageImpl(
+    return _then(_self.copyWith(
       title: null == title
-          ? _value.title
+          ? _self.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
       blocks: null == blocks
-          ? _value._blocks
+          ? _self.blocks
           : blocks // ignore: cast_nullable_to_non_nullable
               as List<ConciergeFormBlock>,
     ));
@@ -118,14 +92,13 @@ class __$$ConciergeFormPageImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConciergeFormPageImpl implements _ConciergeFormPage {
-  const _$ConciergeFormPageImpl(
+class _ConciergeFormPage implements ConciergeFormPage {
+  const _ConciergeFormPage(
       {required this.title,
       final List<ConciergeFormBlock> blocks = const <ConciergeFormBlock>[]})
       : _blocks = blocks;
-
-  factory _$ConciergeFormPageImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ConciergeFormPageImplFromJson(json);
+  factory _ConciergeFormPage.fromJson(Map<String, dynamic> json) =>
+      _$ConciergeFormPageFromJson(json);
 
   /// Is the title of the page
   @override
@@ -143,16 +116,26 @@ class _$ConciergeFormPageImpl implements _ConciergeFormPage {
     return EqualUnmodifiableListView(_blocks);
   }
 
+  /// Create a copy of ConciergeFormPage
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ConciergeFormPage(title: $title, blocks: $blocks)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ConciergeFormPageCopyWith<_ConciergeFormPage> get copyWith =>
+      __$ConciergeFormPageCopyWithImpl<_ConciergeFormPage>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ConciergeFormPageToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ConciergeFormPageImpl &&
+            other is _ConciergeFormPage &&
             (identical(other.title, title) || other.title == title) &&
             const DeepCollectionEquality().equals(other._blocks, _blocks));
   }
@@ -162,83 +145,108 @@ class _$ConciergeFormPageImpl implements _ConciergeFormPage {
   int get hashCode => Object.hash(
       runtimeType, title, const DeepCollectionEquality().hash(_blocks));
 
-  /// Create a copy of ConciergeFormPage
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ConciergeFormPageImplCopyWith<_$ConciergeFormPageImpl> get copyWith =>
-      __$$ConciergeFormPageImplCopyWithImpl<_$ConciergeFormPageImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ConciergeFormPageImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ConciergeFormPage(title: $title, blocks: $blocks)';
   }
 }
 
-abstract class _ConciergeFormPage implements ConciergeFormPage {
-  const factory _ConciergeFormPage(
-      {required final String title,
-      final List<ConciergeFormBlock> blocks}) = _$ConciergeFormPageImpl;
-
-  factory _ConciergeFormPage.fromJson(Map<String, dynamic> json) =
-      _$ConciergeFormPageImpl.fromJson;
-
-  /// Is the title of the page
+/// @nodoc
+abstract mixin class _$ConciergeFormPageCopyWith<$Res>
+    implements $ConciergeFormPageCopyWith<$Res> {
+  factory _$ConciergeFormPageCopyWith(
+          _ConciergeFormPage value, $Res Function(_ConciergeFormPage) _then) =
+      __$ConciergeFormPageCopyWithImpl;
   @override
-  String get title;
+  @useResult
+  $Res call({String title, List<ConciergeFormBlock> blocks});
+}
 
-  /// Is the blocks (May be fields, headers or paragraph) of the page
-  @override
-  List<ConciergeFormBlock> get blocks;
+/// @nodoc
+class __$ConciergeFormPageCopyWithImpl<$Res>
+    implements _$ConciergeFormPageCopyWith<$Res> {
+  __$ConciergeFormPageCopyWithImpl(this._self, this._then);
+
+  final _ConciergeFormPage _self;
+  final $Res Function(_ConciergeFormPage) _then;
 
   /// Create a copy of ConciergeFormPage
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ConciergeFormPageImplCopyWith<_$ConciergeFormPageImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ConciergeFormBlock _$ConciergeFormBlockFromJson(Map<String, dynamic> json) {
-  return _ConciergeFormBlock.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? title = null,
+    Object? blocks = null,
+  }) {
+    return _then(_ConciergeFormPage(
+      title: null == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      blocks: null == blocks
+          ? _self._blocks
+          : blocks // ignore: cast_nullable_to_non_nullable
+              as List<ConciergeFormBlock>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$ConciergeFormBlock {
   /// Is the type of the block
   @ConciergeFormBlockTypeConverter()
-  ConciergeFormBlockType get blockType => throw _privateConstructorUsedError;
+  ConciergeFormBlockType get blockType;
 
   /// Is the title of the block
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// Is the configuration of the block
-  ConciergeFormBlockConfiguration? get configuration =>
-      throw _privateConstructorUsedError;
+  ConciergeFormBlockConfiguration? get configuration;
 
   /// Is the validator of the block
-  ConciergeFormBlockValidator? get showWhen =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this ConciergeFormBlock to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  ConciergeFormBlockValidator? get showWhen;
 
   /// Create a copy of ConciergeFormBlock
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ConciergeFormBlockCopyWith<ConciergeFormBlock> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$ConciergeFormBlockCopyWithImpl<ConciergeFormBlock>(
+          this as ConciergeFormBlock, _$identity);
+
+  /// Serializes this ConciergeFormBlock to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ConciergeFormBlock &&
+            (identical(other.blockType, blockType) ||
+                other.blockType == blockType) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.configuration, configuration) ||
+                other.configuration == configuration) &&
+            (identical(other.showWhen, showWhen) ||
+                other.showWhen == showWhen));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, blockType, name, configuration, showWhen);
+
+  @override
+  String toString() {
+    return 'ConciergeFormBlock(blockType: $blockType, name: $name, configuration: $configuration, showWhen: $showWhen)';
+  }
 }
 
 /// @nodoc
-abstract class $ConciergeFormBlockCopyWith<$Res> {
+abstract mixin class $ConciergeFormBlockCopyWith<$Res> {
   factory $ConciergeFormBlockCopyWith(
-          ConciergeFormBlock value, $Res Function(ConciergeFormBlock) then) =
-      _$ConciergeFormBlockCopyWithImpl<$Res, ConciergeFormBlock>;
+          ConciergeFormBlock value, $Res Function(ConciergeFormBlock) _then) =
+      _$ConciergeFormBlockCopyWithImpl;
   @useResult
   $Res call(
       {@ConciergeFormBlockTypeConverter() ConciergeFormBlockType blockType,
@@ -251,14 +259,12 @@ abstract class $ConciergeFormBlockCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ConciergeFormBlockCopyWithImpl<$Res, $Val extends ConciergeFormBlock>
+class _$ConciergeFormBlockCopyWithImpl<$Res>
     implements $ConciergeFormBlockCopyWith<$Res> {
-  _$ConciergeFormBlockCopyWithImpl(this._value, this._then);
+  _$ConciergeFormBlockCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ConciergeFormBlock _self;
+  final $Res Function(ConciergeFormBlock) _then;
 
   /// Create a copy of ConciergeFormBlock
   /// with the given fields replaced by the non-null parameter values.
@@ -270,24 +276,24 @@ class _$ConciergeFormBlockCopyWithImpl<$Res, $Val extends ConciergeFormBlock>
     Object? configuration = freezed,
     Object? showWhen = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       blockType: null == blockType
-          ? _value.blockType
+          ? _self.blockType
           : blockType // ignore: cast_nullable_to_non_nullable
               as ConciergeFormBlockType,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       configuration: freezed == configuration
-          ? _value.configuration
+          ? _self.configuration
           : configuration // ignore: cast_nullable_to_non_nullable
               as ConciergeFormBlockConfiguration?,
       showWhen: freezed == showWhen
-          ? _value.showWhen
+          ? _self.showWhen
           : showWhen // ignore: cast_nullable_to_non_nullable
               as ConciergeFormBlockValidator?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of ConciergeFormBlock
@@ -295,13 +301,13 @@ class _$ConciergeFormBlockCopyWithImpl<$Res, $Val extends ConciergeFormBlock>
   @override
   @pragma('vm:prefer-inline')
   $ConciergeFormBlockConfigurationCopyWith<$Res>? get configuration {
-    if (_value.configuration == null) {
+    if (_self.configuration == null) {
       return null;
     }
 
-    return $ConciergeFormBlockConfigurationCopyWith<$Res>(_value.configuration!,
+    return $ConciergeFormBlockConfigurationCopyWith<$Res>(_self.configuration!,
         (value) {
-      return _then(_value.copyWith(configuration: value) as $Val);
+      return _then(_self.copyWith(configuration: value));
     });
   }
 
@@ -310,87 +316,26 @@ class _$ConciergeFormBlockCopyWithImpl<$Res, $Val extends ConciergeFormBlock>
   @override
   @pragma('vm:prefer-inline')
   $ConciergeFormBlockValidatorCopyWith<$Res>? get showWhen {
-    if (_value.showWhen == null) {
+    if (_self.showWhen == null) {
       return null;
     }
 
-    return $ConciergeFormBlockValidatorCopyWith<$Res>(_value.showWhen!,
-        (value) {
-      return _then(_value.copyWith(showWhen: value) as $Val);
+    return $ConciergeFormBlockValidatorCopyWith<$Res>(_self.showWhen!, (value) {
+      return _then(_self.copyWith(showWhen: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$ConciergeFormBlockImplCopyWith<$Res>
-    implements $ConciergeFormBlockCopyWith<$Res> {
-  factory _$$ConciergeFormBlockImplCopyWith(_$ConciergeFormBlockImpl value,
-          $Res Function(_$ConciergeFormBlockImpl) then) =
-      __$$ConciergeFormBlockImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@ConciergeFormBlockTypeConverter() ConciergeFormBlockType blockType,
-      String name,
-      ConciergeFormBlockConfiguration? configuration,
-      ConciergeFormBlockValidator? showWhen});
-
-  @override
-  $ConciergeFormBlockConfigurationCopyWith<$Res>? get configuration;
-  @override
-  $ConciergeFormBlockValidatorCopyWith<$Res>? get showWhen;
-}
-
-/// @nodoc
-class __$$ConciergeFormBlockImplCopyWithImpl<$Res>
-    extends _$ConciergeFormBlockCopyWithImpl<$Res, _$ConciergeFormBlockImpl>
-    implements _$$ConciergeFormBlockImplCopyWith<$Res> {
-  __$$ConciergeFormBlockImplCopyWithImpl(_$ConciergeFormBlockImpl _value,
-      $Res Function(_$ConciergeFormBlockImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ConciergeFormBlock
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? blockType = null,
-    Object? name = null,
-    Object? configuration = freezed,
-    Object? showWhen = freezed,
-  }) {
-    return _then(_$ConciergeFormBlockImpl(
-      blockType: null == blockType
-          ? _value.blockType
-          : blockType // ignore: cast_nullable_to_non_nullable
-              as ConciergeFormBlockType,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      configuration: freezed == configuration
-          ? _value.configuration
-          : configuration // ignore: cast_nullable_to_non_nullable
-              as ConciergeFormBlockConfiguration?,
-      showWhen: freezed == showWhen
-          ? _value.showWhen
-          : showWhen // ignore: cast_nullable_to_non_nullable
-              as ConciergeFormBlockValidator?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$ConciergeFormBlockImpl implements _ConciergeFormBlock {
-  const _$ConciergeFormBlockImpl(
+class _ConciergeFormBlock implements ConciergeFormBlock {
+  const _ConciergeFormBlock(
       {@ConciergeFormBlockTypeConverter() required this.blockType,
       required this.name,
       this.configuration,
       this.showWhen});
-
-  factory _$ConciergeFormBlockImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ConciergeFormBlockImplFromJson(json);
+  factory _ConciergeFormBlock.fromJson(Map<String, dynamic> json) =>
+      _$ConciergeFormBlockFromJson(json);
 
   /// Is the type of the block
   @override
@@ -409,16 +354,26 @@ class _$ConciergeFormBlockImpl implements _ConciergeFormBlock {
   @override
   final ConciergeFormBlockValidator? showWhen;
 
+  /// Create a copy of ConciergeFormBlock
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ConciergeFormBlock(blockType: $blockType, name: $name, configuration: $configuration, showWhen: $showWhen)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ConciergeFormBlockCopyWith<_ConciergeFormBlock> get copyWith =>
+      __$ConciergeFormBlockCopyWithImpl<_ConciergeFormBlock>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ConciergeFormBlockToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ConciergeFormBlockImpl &&
+            other is _ConciergeFormBlock &&
             (identical(other.blockType, blockType) ||
                 other.blockType == blockType) &&
             (identical(other.name, name) || other.name == name) &&
@@ -433,169 +388,162 @@ class _$ConciergeFormBlockImpl implements _ConciergeFormBlock {
   int get hashCode =>
       Object.hash(runtimeType, blockType, name, configuration, showWhen);
 
-  /// Create a copy of ConciergeFormBlock
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ConciergeFormBlockImplCopyWith<_$ConciergeFormBlockImpl> get copyWith =>
-      __$$ConciergeFormBlockImplCopyWithImpl<_$ConciergeFormBlockImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ConciergeFormBlockImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ConciergeFormBlock(blockType: $blockType, name: $name, configuration: $configuration, showWhen: $showWhen)';
   }
 }
 
-abstract class _ConciergeFormBlock implements ConciergeFormBlock {
-  const factory _ConciergeFormBlock(
-      {@ConciergeFormBlockTypeConverter()
-      required final ConciergeFormBlockType blockType,
-      required final String name,
-      final ConciergeFormBlockConfiguration? configuration,
-      final ConciergeFormBlockValidator? showWhen}) = _$ConciergeFormBlockImpl;
-
-  factory _ConciergeFormBlock.fromJson(Map<String, dynamic> json) =
-      _$ConciergeFormBlockImpl.fromJson;
-
-  /// Is the type of the block
+/// @nodoc
+abstract mixin class _$ConciergeFormBlockCopyWith<$Res>
+    implements $ConciergeFormBlockCopyWith<$Res> {
+  factory _$ConciergeFormBlockCopyWith(
+          _ConciergeFormBlock value, $Res Function(_ConciergeFormBlock) _then) =
+      __$ConciergeFormBlockCopyWithImpl;
   @override
-  @ConciergeFormBlockTypeConverter()
-  ConciergeFormBlockType get blockType;
+  @useResult
+  $Res call(
+      {@ConciergeFormBlockTypeConverter() ConciergeFormBlockType blockType,
+      String name,
+      ConciergeFormBlockConfiguration? configuration,
+      ConciergeFormBlockValidator? showWhen});
 
-  /// Is the title of the block
   @override
-  String get name;
+  $ConciergeFormBlockConfigurationCopyWith<$Res>? get configuration;
+  @override
+  $ConciergeFormBlockValidatorCopyWith<$Res>? get showWhen;
+}
 
-  /// Is the configuration of the block
-  @override
-  ConciergeFormBlockConfiguration? get configuration;
+/// @nodoc
+class __$ConciergeFormBlockCopyWithImpl<$Res>
+    implements _$ConciergeFormBlockCopyWith<$Res> {
+  __$ConciergeFormBlockCopyWithImpl(this._self, this._then);
 
-  /// Is the validator of the block
-  @override
-  ConciergeFormBlockValidator? get showWhen;
+  final _ConciergeFormBlock _self;
+  final $Res Function(_ConciergeFormBlock) _then;
 
   /// Create a copy of ConciergeFormBlock
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ConciergeFormBlockImplCopyWith<_$ConciergeFormBlockImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? blockType = null,
+    Object? name = null,
+    Object? configuration = freezed,
+    Object? showWhen = freezed,
+  }) {
+    return _then(_ConciergeFormBlock(
+      blockType: null == blockType
+          ? _self.blockType
+          : blockType // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormBlockType,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      configuration: freezed == configuration
+          ? _self.configuration
+          : configuration // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormBlockConfiguration?,
+      showWhen: freezed == showWhen
+          ? _self.showWhen
+          : showWhen // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormBlockValidator?,
+    ));
+  }
 
-ConciergeFormBlockConfiguration _$ConciergeFormBlockConfigurationFromJson(
-    Map<String, dynamic> json) {
-  return _ConciergeFormBlockConfiguration.fromJson(json);
+  /// Create a copy of ConciergeFormBlock
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConciergeFormBlockConfigurationCopyWith<$Res>? get configuration {
+    if (_self.configuration == null) {
+      return null;
+    }
+
+    return $ConciergeFormBlockConfigurationCopyWith<$Res>(_self.configuration!,
+        (value) {
+      return _then(_self.copyWith(configuration: value));
+    });
+  }
+
+  /// Create a copy of ConciergeFormBlock
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConciergeFormBlockValidatorCopyWith<$Res>? get showWhen {
+    if (_self.showWhen == null) {
+      return null;
+    }
+
+    return $ConciergeFormBlockValidatorCopyWith<$Res>(_self.showWhen!, (value) {
+      return _then(_self.copyWith(showWhen: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$ConciergeFormBlockConfiguration {
   /// Indicates if the field can be submitted without value
-  bool get allowEmpty => throw _privateConstructorUsedError;
+  bool get allowEmpty;
 
   /// Indicates if the field is an integer value or a float value
-  bool? get isInt => throw _privateConstructorUsedError;
+  bool? get isInt;
 
   /// Indicates if the field is a multiple choice
-  bool? get isMultiple => throw _privateConstructorUsedError;
+  bool? get isMultiple;
 
   /// [max] and [min] represents the range of the field when is a number
-  double? get max => throw _privateConstructorUsedError;
-  double? get min => throw _privateConstructorUsedError;
+  double? get max;
+  double? get min;
 
   /// Represents the list of choices when the field is a select
-  List<String> get choices => throw _privateConstructorUsedError;
-
-  /// Serializes this ConciergeFormBlockConfiguration to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String> get choices;
 
   /// Create a copy of ConciergeFormBlockConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ConciergeFormBlockConfigurationCopyWith<ConciergeFormBlockConfiguration>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ConciergeFormBlockConfigurationCopyWith<$Res> {
-  factory $ConciergeFormBlockConfigurationCopyWith(
-          ConciergeFormBlockConfiguration value,
-          $Res Function(ConciergeFormBlockConfiguration) then) =
-      _$ConciergeFormBlockConfigurationCopyWithImpl<$Res,
-          ConciergeFormBlockConfiguration>;
-  @useResult
-  $Res call(
-      {bool allowEmpty,
-      bool? isInt,
-      bool? isMultiple,
-      double? max,
-      double? min,
-      List<String> choices});
-}
-
-/// @nodoc
-class _$ConciergeFormBlockConfigurationCopyWithImpl<$Res,
-        $Val extends ConciergeFormBlockConfiguration>
-    implements $ConciergeFormBlockConfigurationCopyWith<$Res> {
-  _$ConciergeFormBlockConfigurationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ConciergeFormBlockConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ConciergeFormBlockConfigurationCopyWith<ConciergeFormBlockConfiguration>
+      get copyWith => _$ConciergeFormBlockConfigurationCopyWithImpl<
+              ConciergeFormBlockConfiguration>(
+          this as ConciergeFormBlockConfiguration, _$identity);
+
+  /// Serializes this ConciergeFormBlockConfiguration to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? allowEmpty = null,
-    Object? isInt = freezed,
-    Object? isMultiple = freezed,
-    Object? max = freezed,
-    Object? min = freezed,
-    Object? choices = null,
-  }) {
-    return _then(_value.copyWith(
-      allowEmpty: null == allowEmpty
-          ? _value.allowEmpty
-          : allowEmpty // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isInt: freezed == isInt
-          ? _value.isInt
-          : isInt // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isMultiple: freezed == isMultiple
-          ? _value.isMultiple
-          : isMultiple // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      max: freezed == max
-          ? _value.max
-          : max // ignore: cast_nullable_to_non_nullable
-              as double?,
-      min: freezed == min
-          ? _value.min
-          : min // ignore: cast_nullable_to_non_nullable
-              as double?,
-      choices: null == choices
-          ? _value.choices
-          : choices // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ConciergeFormBlockConfiguration &&
+            (identical(other.allowEmpty, allowEmpty) ||
+                other.allowEmpty == allowEmpty) &&
+            (identical(other.isInt, isInt) || other.isInt == isInt) &&
+            (identical(other.isMultiple, isMultiple) ||
+                other.isMultiple == isMultiple) &&
+            (identical(other.max, max) || other.max == max) &&
+            (identical(other.min, min) || other.min == min) &&
+            const DeepCollectionEquality().equals(other.choices, choices));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, allowEmpty, isInt, isMultiple,
+      max, min, const DeepCollectionEquality().hash(choices));
+
+  @override
+  String toString() {
+    return 'ConciergeFormBlockConfiguration(allowEmpty: $allowEmpty, isInt: $isInt, isMultiple: $isMultiple, max: $max, min: $min, choices: $choices)';
   }
 }
 
 /// @nodoc
-abstract class _$$ConciergeFormBlockConfigurationImplCopyWith<$Res>
-    implements $ConciergeFormBlockConfigurationCopyWith<$Res> {
-  factory _$$ConciergeFormBlockConfigurationImplCopyWith(
-          _$ConciergeFormBlockConfigurationImpl value,
-          $Res Function(_$ConciergeFormBlockConfigurationImpl) then) =
-      __$$ConciergeFormBlockConfigurationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ConciergeFormBlockConfigurationCopyWith<$Res> {
+  factory $ConciergeFormBlockConfigurationCopyWith(
+          ConciergeFormBlockConfiguration value,
+          $Res Function(ConciergeFormBlockConfiguration) _then) =
+      _$ConciergeFormBlockConfigurationCopyWithImpl;
   @useResult
   $Res call(
       {bool allowEmpty,
@@ -607,14 +555,12 @@ abstract class _$$ConciergeFormBlockConfigurationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ConciergeFormBlockConfigurationImplCopyWithImpl<$Res>
-    extends _$ConciergeFormBlockConfigurationCopyWithImpl<$Res,
-        _$ConciergeFormBlockConfigurationImpl>
-    implements _$$ConciergeFormBlockConfigurationImplCopyWith<$Res> {
-  __$$ConciergeFormBlockConfigurationImplCopyWithImpl(
-      _$ConciergeFormBlockConfigurationImpl _value,
-      $Res Function(_$ConciergeFormBlockConfigurationImpl) _then)
-      : super(_value, _then);
+class _$ConciergeFormBlockConfigurationCopyWithImpl<$Res>
+    implements $ConciergeFormBlockConfigurationCopyWith<$Res> {
+  _$ConciergeFormBlockConfigurationCopyWithImpl(this._self, this._then);
+
+  final ConciergeFormBlockConfiguration _self;
+  final $Res Function(ConciergeFormBlockConfiguration) _then;
 
   /// Create a copy of ConciergeFormBlockConfiguration
   /// with the given fields replaced by the non-null parameter values.
@@ -628,29 +574,29 @@ class __$$ConciergeFormBlockConfigurationImplCopyWithImpl<$Res>
     Object? min = freezed,
     Object? choices = null,
   }) {
-    return _then(_$ConciergeFormBlockConfigurationImpl(
+    return _then(_self.copyWith(
       allowEmpty: null == allowEmpty
-          ? _value.allowEmpty
+          ? _self.allowEmpty
           : allowEmpty // ignore: cast_nullable_to_non_nullable
               as bool,
       isInt: freezed == isInt
-          ? _value.isInt
+          ? _self.isInt
           : isInt // ignore: cast_nullable_to_non_nullable
               as bool?,
       isMultiple: freezed == isMultiple
-          ? _value.isMultiple
+          ? _self.isMultiple
           : isMultiple // ignore: cast_nullable_to_non_nullable
               as bool?,
       max: freezed == max
-          ? _value.max
+          ? _self.max
           : max // ignore: cast_nullable_to_non_nullable
               as double?,
       min: freezed == min
-          ? _value.min
+          ? _self.min
           : min // ignore: cast_nullable_to_non_nullable
               as double?,
       choices: null == choices
-          ? _value._choices
+          ? _self.choices
           : choices // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -659,9 +605,9 @@ class __$$ConciergeFormBlockConfigurationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConciergeFormBlockConfigurationImpl
-    implements _ConciergeFormBlockConfiguration {
-  const _$ConciergeFormBlockConfigurationImpl(
+class _ConciergeFormBlockConfiguration
+    implements ConciergeFormBlockConfiguration {
+  const _ConciergeFormBlockConfiguration(
       {required this.allowEmpty,
       this.isInt,
       this.isMultiple,
@@ -669,10 +615,9 @@ class _$ConciergeFormBlockConfigurationImpl
       this.min,
       final List<String> choices = const <String>[]})
       : _choices = choices;
-
-  factory _$ConciergeFormBlockConfigurationImpl.fromJson(
+  factory _ConciergeFormBlockConfiguration.fromJson(
           Map<String, dynamic> json) =>
-      _$$ConciergeFormBlockConfigurationImplFromJson(json);
+      _$ConciergeFormBlockConfigurationFromJson(json);
 
   /// Indicates if the field can be submitted without value
   @override
@@ -704,16 +649,27 @@ class _$ConciergeFormBlockConfigurationImpl
     return EqualUnmodifiableListView(_choices);
   }
 
+  /// Create a copy of ConciergeFormBlockConfiguration
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ConciergeFormBlockConfiguration(allowEmpty: $allowEmpty, isInt: $isInt, isMultiple: $isMultiple, max: $max, min: $min, choices: $choices)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ConciergeFormBlockConfigurationCopyWith<_ConciergeFormBlockConfiguration>
+      get copyWith => __$ConciergeFormBlockConfigurationCopyWithImpl<
+          _ConciergeFormBlockConfiguration>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ConciergeFormBlockConfigurationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ConciergeFormBlockConfigurationImpl &&
+            other is _ConciergeFormBlockConfiguration &&
             (identical(other.allowEmpty, allowEmpty) ||
                 other.allowEmpty == allowEmpty) &&
             (identical(other.isInt, isInt) || other.isInt == isInt) &&
@@ -729,184 +685,143 @@ class _$ConciergeFormBlockConfigurationImpl
   int get hashCode => Object.hash(runtimeType, allowEmpty, isInt, isMultiple,
       max, min, const DeepCollectionEquality().hash(_choices));
 
-  /// Create a copy of ConciergeFormBlockConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ConciergeFormBlockConfigurationImplCopyWith<
-          _$ConciergeFormBlockConfigurationImpl>
-      get copyWith => __$$ConciergeFormBlockConfigurationImplCopyWithImpl<
-          _$ConciergeFormBlockConfigurationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ConciergeFormBlockConfigurationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ConciergeFormBlockConfiguration(allowEmpty: $allowEmpty, isInt: $isInt, isMultiple: $isMultiple, max: $max, min: $min, choices: $choices)';
   }
 }
 
-abstract class _ConciergeFormBlockConfiguration
-    implements ConciergeFormBlockConfiguration {
-  const factory _ConciergeFormBlockConfiguration(
-      {required final bool allowEmpty,
-      final bool? isInt,
-      final bool? isMultiple,
-      final double? max,
-      final double? min,
-      final List<String> choices}) = _$ConciergeFormBlockConfigurationImpl;
-
-  factory _ConciergeFormBlockConfiguration.fromJson(Map<String, dynamic> json) =
-      _$ConciergeFormBlockConfigurationImpl.fromJson;
-
-  /// Indicates if the field can be submitted without value
+/// @nodoc
+abstract mixin class _$ConciergeFormBlockConfigurationCopyWith<$Res>
+    implements $ConciergeFormBlockConfigurationCopyWith<$Res> {
+  factory _$ConciergeFormBlockConfigurationCopyWith(
+          _ConciergeFormBlockConfiguration value,
+          $Res Function(_ConciergeFormBlockConfiguration) _then) =
+      __$ConciergeFormBlockConfigurationCopyWithImpl;
   @override
-  bool get allowEmpty;
+  @useResult
+  $Res call(
+      {bool allowEmpty,
+      bool? isInt,
+      bool? isMultiple,
+      double? max,
+      double? min,
+      List<String> choices});
+}
 
-  /// Indicates if the field is an integer value or a float value
-  @override
-  bool? get isInt;
+/// @nodoc
+class __$ConciergeFormBlockConfigurationCopyWithImpl<$Res>
+    implements _$ConciergeFormBlockConfigurationCopyWith<$Res> {
+  __$ConciergeFormBlockConfigurationCopyWithImpl(this._self, this._then);
 
-  /// Indicates if the field is a multiple choice
-  @override
-  bool? get isMultiple;
-
-  /// [max] and [min] represents the range of the field when is a number
-  @override
-  double? get max;
-  @override
-  double? get min;
-
-  /// Represents the list of choices when the field is a select
-  @override
-  List<String> get choices;
+  final _ConciergeFormBlockConfiguration _self;
+  final $Res Function(_ConciergeFormBlockConfiguration) _then;
 
   /// Create a copy of ConciergeFormBlockConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ConciergeFormBlockConfigurationImplCopyWith<
-          _$ConciergeFormBlockConfigurationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-ConciergeFormBlockValidator _$ConciergeFormBlockValidatorFromJson(
-    Map<String, dynamic> json) {
-  return _ConciergeFormBlockValidator.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? allowEmpty = null,
+    Object? isInt = freezed,
+    Object? isMultiple = freezed,
+    Object? max = freezed,
+    Object? min = freezed,
+    Object? choices = null,
+  }) {
+    return _then(_ConciergeFormBlockConfiguration(
+      allowEmpty: null == allowEmpty
+          ? _self.allowEmpty
+          : allowEmpty // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isInt: freezed == isInt
+          ? _self.isInt
+          : isInt // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isMultiple: freezed == isMultiple
+          ? _self.isMultiple
+          : isMultiple // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      max: freezed == max
+          ? _self.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as double?,
+      min: freezed == min
+          ? _self.min
+          : min // ignore: cast_nullable_to_non_nullable
+              as double?,
+      choices: null == choices
+          ? _self._choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$ConciergeFormBlockValidator {
   /// Is the reference number of the block inside the same page, in programming terms, is the position of the array
-  int? get blockId => throw _privateConstructorUsedError;
+  int? get blockId;
 
   /// [max] and [min] represents the range of the field when is a number, or the length range of the string value
-  double? get max => throw _privateConstructorUsedError;
-  double? get min => throw _privateConstructorUsedError;
+  double? get max;
+  double? get min;
 
   /// Represents the exact value of the field
-  String? get value => throw _privateConstructorUsedError;
+  String? get value;
 
   /// Represents the validator of the block
   @ConciergeFormDisplayConditionValidatorConverter()
-  ConciergeFormDisplayConditionValidator get validator =>
-      throw _privateConstructorUsedError;
+  ConciergeFormDisplayConditionValidator get validator;
 
   /// Represents the operator to validate the value
   @ConciergeFormDisplayConditionOperatorOrNullConverter()
-  ConciergeFormDisplayConditionOperator? get validatorOperator =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this ConciergeFormBlockValidator to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  ConciergeFormDisplayConditionOperator? get validatorOperator;
 
   /// Create a copy of ConciergeFormBlockValidator
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $ConciergeFormBlockValidatorCopyWith<ConciergeFormBlockValidator>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ConciergeFormBlockValidatorCopyWith<$Res> {
-  factory $ConciergeFormBlockValidatorCopyWith(
-          ConciergeFormBlockValidator value,
-          $Res Function(ConciergeFormBlockValidator) then) =
-      _$ConciergeFormBlockValidatorCopyWithImpl<$Res,
-          ConciergeFormBlockValidator>;
-  @useResult
-  $Res call(
-      {int? blockId,
-      double? max,
-      double? min,
-      String? value,
-      @ConciergeFormDisplayConditionValidatorConverter()
-      ConciergeFormDisplayConditionValidator validator,
-      @ConciergeFormDisplayConditionOperatorOrNullConverter()
-      ConciergeFormDisplayConditionOperator? validatorOperator});
-}
-
-/// @nodoc
-class _$ConciergeFormBlockValidatorCopyWithImpl<$Res,
-        $Val extends ConciergeFormBlockValidator>
-    implements $ConciergeFormBlockValidatorCopyWith<$Res> {
-  _$ConciergeFormBlockValidatorCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of ConciergeFormBlockValidator
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $ConciergeFormBlockValidatorCopyWith<ConciergeFormBlockValidator>
+      get copyWith => _$ConciergeFormBlockValidatorCopyWithImpl<
+              ConciergeFormBlockValidator>(
+          this as ConciergeFormBlockValidator, _$identity);
+
+  /// Serializes this ConciergeFormBlockValidator to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? blockId = freezed,
-    Object? max = freezed,
-    Object? min = freezed,
-    Object? value = freezed,
-    Object? validator = null,
-    Object? validatorOperator = freezed,
-  }) {
-    return _then(_value.copyWith(
-      blockId: freezed == blockId
-          ? _value.blockId
-          : blockId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      max: freezed == max
-          ? _value.max
-          : max // ignore: cast_nullable_to_non_nullable
-              as double?,
-      min: freezed == min
-          ? _value.min
-          : min // ignore: cast_nullable_to_non_nullable
-              as double?,
-      value: freezed == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String?,
-      validator: null == validator
-          ? _value.validator
-          : validator // ignore: cast_nullable_to_non_nullable
-              as ConciergeFormDisplayConditionValidator,
-      validatorOperator: freezed == validatorOperator
-          ? _value.validatorOperator
-          : validatorOperator // ignore: cast_nullable_to_non_nullable
-              as ConciergeFormDisplayConditionOperator?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ConciergeFormBlockValidator &&
+            (identical(other.blockId, blockId) || other.blockId == blockId) &&
+            (identical(other.max, max) || other.max == max) &&
+            (identical(other.min, min) || other.min == min) &&
+            (identical(other.value, value) || other.value == value) &&
+            (identical(other.validator, validator) ||
+                other.validator == validator) &&
+            (identical(other.validatorOperator, validatorOperator) ||
+                other.validatorOperator == validatorOperator));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, blockId, max, min, value, validator, validatorOperator);
+
+  @override
+  String toString() {
+    return 'ConciergeFormBlockValidator(blockId: $blockId, max: $max, min: $min, value: $value, validator: $validator, validatorOperator: $validatorOperator)';
   }
 }
 
 /// @nodoc
-abstract class _$$ConciergeFormBlockValidatorImplCopyWith<$Res>
-    implements $ConciergeFormBlockValidatorCopyWith<$Res> {
-  factory _$$ConciergeFormBlockValidatorImplCopyWith(
-          _$ConciergeFormBlockValidatorImpl value,
-          $Res Function(_$ConciergeFormBlockValidatorImpl) then) =
-      __$$ConciergeFormBlockValidatorImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ConciergeFormBlockValidatorCopyWith<$Res> {
+  factory $ConciergeFormBlockValidatorCopyWith(
+          ConciergeFormBlockValidator value,
+          $Res Function(ConciergeFormBlockValidator) _then) =
+      _$ConciergeFormBlockValidatorCopyWithImpl;
   @useResult
   $Res call(
       {int? blockId,
@@ -920,14 +835,12 @@ abstract class _$$ConciergeFormBlockValidatorImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ConciergeFormBlockValidatorImplCopyWithImpl<$Res>
-    extends _$ConciergeFormBlockValidatorCopyWithImpl<$Res,
-        _$ConciergeFormBlockValidatorImpl>
-    implements _$$ConciergeFormBlockValidatorImplCopyWith<$Res> {
-  __$$ConciergeFormBlockValidatorImplCopyWithImpl(
-      _$ConciergeFormBlockValidatorImpl _value,
-      $Res Function(_$ConciergeFormBlockValidatorImpl) _then)
-      : super(_value, _then);
+class _$ConciergeFormBlockValidatorCopyWithImpl<$Res>
+    implements $ConciergeFormBlockValidatorCopyWith<$Res> {
+  _$ConciergeFormBlockValidatorCopyWithImpl(this._self, this._then);
+
+  final ConciergeFormBlockValidator _self;
+  final $Res Function(ConciergeFormBlockValidator) _then;
 
   /// Create a copy of ConciergeFormBlockValidator
   /// with the given fields replaced by the non-null parameter values.
@@ -941,29 +854,29 @@ class __$$ConciergeFormBlockValidatorImplCopyWithImpl<$Res>
     Object? validator = null,
     Object? validatorOperator = freezed,
   }) {
-    return _then(_$ConciergeFormBlockValidatorImpl(
+    return _then(_self.copyWith(
       blockId: freezed == blockId
-          ? _value.blockId
+          ? _self.blockId
           : blockId // ignore: cast_nullable_to_non_nullable
               as int?,
       max: freezed == max
-          ? _value.max
+          ? _self.max
           : max // ignore: cast_nullable_to_non_nullable
               as double?,
       min: freezed == min
-          ? _value.min
+          ? _self.min
           : min // ignore: cast_nullable_to_non_nullable
               as double?,
       value: freezed == value
-          ? _value.value
+          ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as String?,
       validator: null == validator
-          ? _value.validator
+          ? _self.validator
           : validator // ignore: cast_nullable_to_non_nullable
               as ConciergeFormDisplayConditionValidator,
       validatorOperator: freezed == validatorOperator
-          ? _value.validatorOperator
+          ? _self.validatorOperator
           : validatorOperator // ignore: cast_nullable_to_non_nullable
               as ConciergeFormDisplayConditionOperator?,
     ));
@@ -972,9 +885,8 @@ class __$$ConciergeFormBlockValidatorImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ConciergeFormBlockValidatorImpl
-    implements _ConciergeFormBlockValidator {
-  const _$ConciergeFormBlockValidatorImpl(
+class _ConciergeFormBlockValidator implements ConciergeFormBlockValidator {
+  const _ConciergeFormBlockValidator(
       {this.blockId,
       this.max,
       this.min,
@@ -983,10 +895,8 @@ class _$ConciergeFormBlockValidatorImpl
       required this.validator,
       @ConciergeFormDisplayConditionOperatorOrNullConverter()
       this.validatorOperator});
-
-  factory _$ConciergeFormBlockValidatorImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$ConciergeFormBlockValidatorImplFromJson(json);
+  factory _ConciergeFormBlockValidator.fromJson(Map<String, dynamic> json) =>
+      _$ConciergeFormBlockValidatorFromJson(json);
 
   /// Is the reference number of the block inside the same page, in programming terms, is the position of the array
   @override
@@ -1012,16 +922,27 @@ class _$ConciergeFormBlockValidatorImpl
   @ConciergeFormDisplayConditionOperatorOrNullConverter()
   final ConciergeFormDisplayConditionOperator? validatorOperator;
 
+  /// Create a copy of ConciergeFormBlockValidator
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'ConciergeFormBlockValidator(blockId: $blockId, max: $max, min: $min, value: $value, validator: $validator, validatorOperator: $validatorOperator)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ConciergeFormBlockValidatorCopyWith<_ConciergeFormBlockValidator>
+      get copyWith => __$ConciergeFormBlockValidatorCopyWithImpl<
+          _ConciergeFormBlockValidator>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ConciergeFormBlockValidatorToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ConciergeFormBlockValidatorImpl &&
+            other is _ConciergeFormBlockValidator &&
             (identical(other.blockId, blockId) || other.blockId == blockId) &&
             (identical(other.max, max) || other.max == max) &&
             (identical(other.min, min) || other.min == min) &&
@@ -1037,67 +958,79 @@ class _$ConciergeFormBlockValidatorImpl
   int get hashCode => Object.hash(
       runtimeType, blockId, max, min, value, validator, validatorOperator);
 
-  /// Create a copy of ConciergeFormBlockValidator
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ConciergeFormBlockValidatorImplCopyWith<_$ConciergeFormBlockValidatorImpl>
-      get copyWith => __$$ConciergeFormBlockValidatorImplCopyWithImpl<
-          _$ConciergeFormBlockValidatorImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ConciergeFormBlockValidatorImplToJson(
-      this,
-    );
+  String toString() {
+    return 'ConciergeFormBlockValidator(blockId: $blockId, max: $max, min: $min, value: $value, validator: $validator, validatorOperator: $validatorOperator)';
   }
 }
 
-abstract class _ConciergeFormBlockValidator
-    implements ConciergeFormBlockValidator {
-  const factory _ConciergeFormBlockValidator(
-          {final int? blockId,
-          final double? max,
-          final double? min,
-          final String? value,
-          @ConciergeFormDisplayConditionValidatorConverter()
-          required final ConciergeFormDisplayConditionValidator validator,
-          @ConciergeFormDisplayConditionOperatorOrNullConverter()
-          final ConciergeFormDisplayConditionOperator? validatorOperator}) =
-      _$ConciergeFormBlockValidatorImpl;
-
-  factory _ConciergeFormBlockValidator.fromJson(Map<String, dynamic> json) =
-      _$ConciergeFormBlockValidatorImpl.fromJson;
-
-  /// Is the reference number of the block inside the same page, in programming terms, is the position of the array
+/// @nodoc
+abstract mixin class _$ConciergeFormBlockValidatorCopyWith<$Res>
+    implements $ConciergeFormBlockValidatorCopyWith<$Res> {
+  factory _$ConciergeFormBlockValidatorCopyWith(
+          _ConciergeFormBlockValidator value,
+          $Res Function(_ConciergeFormBlockValidator) _then) =
+      __$ConciergeFormBlockValidatorCopyWithImpl;
   @override
-  int? get blockId;
+  @useResult
+  $Res call(
+      {int? blockId,
+      double? max,
+      double? min,
+      String? value,
+      @ConciergeFormDisplayConditionValidatorConverter()
+      ConciergeFormDisplayConditionValidator validator,
+      @ConciergeFormDisplayConditionOperatorOrNullConverter()
+      ConciergeFormDisplayConditionOperator? validatorOperator});
+}
 
-  /// [max] and [min] represents the range of the field when is a number, or the length range of the string value
-  @override
-  double? get max;
-  @override
-  double? get min;
+/// @nodoc
+class __$ConciergeFormBlockValidatorCopyWithImpl<$Res>
+    implements _$ConciergeFormBlockValidatorCopyWith<$Res> {
+  __$ConciergeFormBlockValidatorCopyWithImpl(this._self, this._then);
 
-  /// Represents the exact value of the field
-  @override
-  String? get value;
-
-  /// Represents the validator of the block
-  @override
-  @ConciergeFormDisplayConditionValidatorConverter()
-  ConciergeFormDisplayConditionValidator get validator;
-
-  /// Represents the operator to validate the value
-  @override
-  @ConciergeFormDisplayConditionOperatorOrNullConverter()
-  ConciergeFormDisplayConditionOperator? get validatorOperator;
+  final _ConciergeFormBlockValidator _self;
+  final $Res Function(_ConciergeFormBlockValidator) _then;
 
   /// Create a copy of ConciergeFormBlockValidator
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ConciergeFormBlockValidatorImplCopyWith<_$ConciergeFormBlockValidatorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? blockId = freezed,
+    Object? max = freezed,
+    Object? min = freezed,
+    Object? value = freezed,
+    Object? validator = null,
+    Object? validatorOperator = freezed,
+  }) {
+    return _then(_ConciergeFormBlockValidator(
+      blockId: freezed == blockId
+          ? _self.blockId
+          : blockId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      max: freezed == max
+          ? _self.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as double?,
+      min: freezed == min
+          ? _self.min
+          : min // ignore: cast_nullable_to_non_nullable
+              as double?,
+      value: freezed == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+      validator: null == validator
+          ? _self.validator
+          : validator // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormDisplayConditionValidator,
+      validatorOperator: freezed == validatorOperator
+          ? _self.validatorOperator
+          : validatorOperator // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormDisplayConditionOperator?,
+    ));
+  }
 }
+
+// dart format on

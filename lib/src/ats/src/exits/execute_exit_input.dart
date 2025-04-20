@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @unfreezed
-class AtsExecuteExitInput with _$AtsExecuteExitInput {
+abstract class AtsExecuteExitInput with _$AtsExecuteExitInput {
   factory AtsExecuteExitInput({
     /// [fromAssetId] ID of the bomb [Asset].
     String? fromAssetId,

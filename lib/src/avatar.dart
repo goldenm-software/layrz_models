@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class Avatar with _$Avatar {
+abstract class Avatar with _$Avatar {
   const factory Avatar({
     /// Represents the type of avatar.
     @AvatarTypeConverter() required AvatarType type,
@@ -19,7 +19,7 @@ class Avatar with _$Avatar {
 }
 
 @unfreezed
-class AvatarInput with _$AvatarInput {
+abstract class AvatarInput with _$AvatarInput {
   factory AvatarInput({
     /// Represents the type of avatarInput.
     @AvatarTypeConverter() @Default(AvatarType.none) AvatarType type,

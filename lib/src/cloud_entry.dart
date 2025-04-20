@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class CloudEntry with _$CloudEntry {
+abstract class CloudEntry with _$CloudEntry {
   const factory CloudEntry({
     /// Defines the name of the entry. If the name starts with [translate:], means
     /// that the name is a translation key.

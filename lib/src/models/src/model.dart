@@ -1,7 +1,7 @@
 part of '../models.dart';
 
 @freezed
-class Model with _$Model {
+abstract class Model with _$Model {
   /// [Model] is the model of a device. It contains the information about the model of the device.
   /// Does not contain information of connectivity or related, only the model information like the name, the
   /// protocol and if is generic or not.
@@ -54,7 +54,7 @@ class Model with _$Model {
 }
 
 @unfreezed
-class ModelInput with _$ModelInput {
+abstract class ModelInput with _$ModelInput {
   /// [ModelInput] is the model of a device. It contains the information about the model of the device.
   /// Does not contain information of connectivity or related, only the model information like the name, the
   /// protocol and if is generic or not.

@@ -6,8 +6,7 @@ part of 'operations.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>
-    _$OperationImpl(
+_Operation _$OperationFromJson(Map<String, dynamic> json) => _Operation(
       id: json['id'] as String,
       name: json['name'] as String,
       operationType: $enumDecode(_$OperationTypeEnumMap, json['operationType'],
@@ -65,7 +64,7 @@ _$OperationImpl _$$OperationImplFromJson(Map<String, dynamic> json) =>
           const DurationOrNullConverter().fromJson(json['duration'] as num?),
     );
 
-Map<String, dynamic> _$$OperationImplToJson(_$OperationImpl instance) =>
+Map<String, dynamic> _$OperationToJson(_Operation instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -146,8 +145,8 @@ const _$SoundEffectEnumMap = {
   SoundEffect.custom: 'CUSTOM',
 };
 
-_$OperationInputImpl _$$OperationInputImplFromJson(Map<String, dynamic> json) =>
-    _$OperationInputImpl(
+_OperationInput _$OperationInputFromJson(Map<String, dynamic> json) =>
+    _OperationInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       operationType: $enumDecodeNullable(
@@ -201,8 +200,7 @@ _$OperationInputImpl _$$OperationInputImplFromJson(Map<String, dynamic> json) =>
           : const DurationConverter().fromJson(json['duration'] as num),
     );
 
-Map<String, dynamic> _$$OperationInputImplToJson(
-        _$OperationInputImpl instance) =>
+Map<String, dynamic> _$OperationInputToJson(_OperationInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -232,27 +230,24 @@ Map<String, dynamic> _$$OperationInputImplToJson(
       'duration': const DurationConverter().toJson(instance.duration),
     };
 
-_$HttpHeaderImpl _$$HttpHeaderImplFromJson(Map<String, dynamic> json) =>
-    _$HttpHeaderImpl(
+_HttpHeader _$HttpHeaderFromJson(Map<String, dynamic> json) => _HttpHeader(
       name: json['name'] as String,
       value: json['value'] as String,
     );
 
-Map<String, dynamic> _$$HttpHeaderImplToJson(_$HttpHeaderImpl instance) =>
+Map<String, dynamic> _$HttpHeaderToJson(_HttpHeader instance) =>
     <String, dynamic>{
       'name': instance.name,
       'value': instance.value,
     };
 
-_$HttpHeaderInputImpl _$$HttpHeaderInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$HttpHeaderInputImpl(
+_HttpHeaderInput _$HttpHeaderInputFromJson(Map<String, dynamic> json) =>
+    _HttpHeaderInput(
       name: json['name'] as String? ?? '',
       value: json['value'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$HttpHeaderInputImplToJson(
-        _$HttpHeaderInputImpl instance) =>
+Map<String, dynamic> _$HttpHeaderInputToJson(_HttpHeaderInput instance) =>
     <String, dynamic>{
       'name': instance.name,
       'value': instance.value,

@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class SuspendedService with _$SuspendedService {
+abstract class SuspendedService with _$SuspendedService {
   const factory SuspendedService({
     required String incidentId,
     required String serviceId,

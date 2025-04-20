@@ -1,7 +1,7 @@
 part of '../ble.dart';
 
 @freezed
-class BleCharacteristic with _$BleCharacteristic {
+abstract class BleCharacteristic with _$BleCharacteristic {
   const BleCharacteristic._();
 
   /// [BleCharacteristic] is the representation of a BLE characteristic.

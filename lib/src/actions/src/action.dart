@@ -1,7 +1,7 @@
 part of '../actions.dart';
 
 @freezed
-class Action with _$Action {
+abstract class Action with _$Action {
   const Action._();
   const factory Action({
     /// Is the ID of the action.
@@ -46,7 +46,7 @@ class Action with _$Action {
 }
 
 @unfreezed
-class ActionInput with _$ActionInput {
+abstract class ActionInput with _$ActionInput {
   const ActionInput._();
   factory ActionInput({
     /// ID of the action entity. This ID is unique.

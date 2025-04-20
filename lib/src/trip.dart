@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class Trip with _$Trip {
+abstract class Trip with _$Trip {
   const Trip._();
 
   const factory Trip({
@@ -20,7 +20,7 @@ class Trip with _$Trip {
 }
 
 @freezed
-class Point with _$Point {
+abstract class Point with _$Point {
   const Point._();
 
   const factory Point({

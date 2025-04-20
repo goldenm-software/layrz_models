@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class TenvioDriver with _$TenvioDriver {
+abstract class TenvioDriver with _$TenvioDriver {
   const TenvioDriver._();
 
   const factory TenvioDriver({
@@ -47,7 +47,7 @@ class TenvioDriver with _$TenvioDriver {
 }
 
 @unfreezed
-class TenvioDriverInput with _$TenvioDriverInput {
+abstract class TenvioDriverInput with _$TenvioDriverInput {
   factory TenvioDriverInput({
     /// [id] is the unique identifier of the driver
     String? id,
