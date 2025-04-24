@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class DbPartition with _$DbPartition {
+abstract class DbPartition with _$DbPartition {
   const factory DbPartition({
     required String id,
     required String parentTable,

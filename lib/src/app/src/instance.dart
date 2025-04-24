@@ -1,7 +1,7 @@
 part of '../app.dart';
 
 @freezed
-class AppInstance with _$AppInstance {
+abstract class AppInstance with _$AppInstance {
   /// [AppInstance] is the implementation of the app in specific platform
   /// Some of the fields are only used when the platform is `AppPlatform.web`, such as `cloudfront` and `certificate`
   /// so, we suggest to read the documentation of the API and the inline documentation of the model to
@@ -57,7 +57,7 @@ class AppInstance with _$AppInstance {
 }
 
 @freezed
-class DnsConfiguration with _$DnsConfiguration {
+abstract class DnsConfiguration with _$DnsConfiguration {
   const factory DnsConfiguration({
     /// [name] is the name of the DNS
     String? name,

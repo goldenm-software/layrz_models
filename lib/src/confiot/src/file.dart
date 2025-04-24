@@ -1,7 +1,7 @@
 part of '../confiot.dart';
 
 @freezed
-class ConfIoTFile with _$ConfIoTFile {
+abstract class ConfIoTFile with _$ConfIoTFile {
   const ConfIoTFile._();
 
   /// [ConfIoTFile] is the file that contains the configuration of some Layrz Modules

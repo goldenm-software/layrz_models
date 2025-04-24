@@ -24,8 +24,12 @@ mixin _$AppAccessibility {
   bool get isDeployed => throw _privateConstructorUsedError;
   bool get isSuspended => throw _privateConstructorUsedError;
 
+  /// Serializes this AppAccessibility to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppAccessibility
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppAccessibilityCopyWith<AppAccessibility> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -49,6 +53,8 @@ class _$AppAccessibilityCopyWithImpl<$Res, $Val extends AppAccessibility>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppAccessibility
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -92,6 +98,8 @@ class __$$AppAccessibilityImplCopyWithImpl<$Res>
       $Res Function(_$AppAccessibilityImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppAccessibility
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -151,11 +159,13 @@ class _$AppAccessibilityImpl implements _AppAccessibility {
                 other.isSuspended == isSuspended));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, host, isDeployed, isSuspended);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppAccessibility
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppAccessibilityImplCopyWith<_$AppAccessibilityImpl> get copyWith =>
@@ -185,8 +195,11 @@ abstract class _AppAccessibility implements AppAccessibility {
   bool get isDeployed;
   @override
   bool get isSuspended;
+
+  /// Create a copy of AppAccessibility
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppAccessibilityImplCopyWith<_$AppAccessibilityImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -203,13 +216,6 @@ mixin _$AvailableApp {
   /// [name] is the name of the app. It's a fixed name, not a translation key
   String get name => throw _privateConstructorUsedError;
 
-  /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
-  String get appId => throw _privateConstructorUsedError;
-
-  /// [appType] is the type of the app.
-  @JsonKey(unknownEnumValue: AppType.public)
-  AppType get appType => throw _privateConstructorUsedError;
-
   /// [technology] is the technology of the app.
   @JsonKey(unknownEnumValue: AppTechnology.flutter)
   AppTechnology get technology => throw _privateConstructorUsedError;
@@ -219,6 +225,13 @@ mixin _$AvailableApp {
 
   /// [designInformation] is the design information of the app.
   AppDesign? get designInformation => throw _privateConstructorUsedError;
+
+  /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
+  String get appId => throw _privateConstructorUsedError;
+
+  /// [appType] is the type of the app.
+  @JsonKey(unknownEnumValue: AppType.public)
+  AppType get appType => throw _privateConstructorUsedError;
 
   /// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
   @JsonKey(unknownEnumValue: AppPlatform.web)
@@ -247,8 +260,12 @@ mixin _$AvailableApp {
   List<RegisteredApp>? get implementations =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this AvailableApp to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AvailableApp
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AvailableAppCopyWith<AvailableApp> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -262,12 +279,12 @@ abstract class $AvailableAppCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      String appId,
-      @JsonKey(unknownEnumValue: AppType.public) AppType appType,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
+      String appId,
+      @JsonKey(unknownEnumValue: AppType.public) AppType appType,
       @JsonKey(unknownEnumValue: AppPlatform.web)
       List<AppPlatform>? supportedPlatforms,
       bool onlyCustomized,
@@ -292,16 +309,18 @@ class _$AvailableAppCopyWithImpl<$Res, $Val extends AvailableApp>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AvailableApp
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? appId = null,
-    Object? appType = null,
     Object? technology = null,
     Object? legalInformation = freezed,
     Object? designInformation = freezed,
+    Object? appId = null,
+    Object? appType = null,
     Object? supportedPlatforms = freezed,
     Object? onlyCustomized = null,
     Object? hasImport = freezed,
@@ -320,14 +339,6 @@ class _$AvailableAppCopyWithImpl<$Res, $Val extends AvailableApp>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      appId: null == appId
-          ? _value.appId
-          : appId // ignore: cast_nullable_to_non_nullable
-              as String,
-      appType: null == appType
-          ? _value.appType
-          : appType // ignore: cast_nullable_to_non_nullable
-              as AppType,
       technology: null == technology
           ? _value.technology
           : technology // ignore: cast_nullable_to_non_nullable
@@ -340,6 +351,14 @@ class _$AvailableAppCopyWithImpl<$Res, $Val extends AvailableApp>
           ? _value.designInformation
           : designInformation // ignore: cast_nullable_to_non_nullable
               as AppDesign?,
+      appId: null == appId
+          ? _value.appId
+          : appId // ignore: cast_nullable_to_non_nullable
+              as String,
+      appType: null == appType
+          ? _value.appType
+          : appType // ignore: cast_nullable_to_non_nullable
+              as AppType,
       supportedPlatforms: freezed == supportedPlatforms
           ? _value.supportedPlatforms
           : supportedPlatforms // ignore: cast_nullable_to_non_nullable
@@ -375,6 +394,8 @@ class _$AvailableAppCopyWithImpl<$Res, $Val extends AvailableApp>
     ) as $Val);
   }
 
+  /// Create a copy of AvailableApp
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppLegalCopyWith<$Res>? get legalInformation {
@@ -387,6 +408,8 @@ class _$AvailableAppCopyWithImpl<$Res, $Val extends AvailableApp>
     });
   }
 
+  /// Create a copy of AvailableApp
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppDesignCopyWith<$Res>? get designInformation {
@@ -411,12 +434,12 @@ abstract class _$$AvailableAppImplCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      String appId,
-      @JsonKey(unknownEnumValue: AppType.public) AppType appType,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
+      String appId,
+      @JsonKey(unknownEnumValue: AppType.public) AppType appType,
       @JsonKey(unknownEnumValue: AppPlatform.web)
       List<AppPlatform>? supportedPlatforms,
       bool onlyCustomized,
@@ -441,16 +464,18 @@ class __$$AvailableAppImplCopyWithImpl<$Res>
       _$AvailableAppImpl _value, $Res Function(_$AvailableAppImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AvailableApp
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? appId = null,
-    Object? appType = null,
     Object? technology = null,
     Object? legalInformation = freezed,
     Object? designInformation = freezed,
+    Object? appId = null,
+    Object? appType = null,
     Object? supportedPlatforms = freezed,
     Object? onlyCustomized = null,
     Object? hasImport = freezed,
@@ -469,14 +494,6 @@ class __$$AvailableAppImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      appId: null == appId
-          ? _value.appId
-          : appId // ignore: cast_nullable_to_non_nullable
-              as String,
-      appType: null == appType
-          ? _value.appType
-          : appType // ignore: cast_nullable_to_non_nullable
-              as AppType,
       technology: null == technology
           ? _value.technology
           : technology // ignore: cast_nullable_to_non_nullable
@@ -489,6 +506,14 @@ class __$$AvailableAppImplCopyWithImpl<$Res>
           ? _value.designInformation
           : designInformation // ignore: cast_nullable_to_non_nullable
               as AppDesign?,
+      appId: null == appId
+          ? _value.appId
+          : appId // ignore: cast_nullable_to_non_nullable
+              as String,
+      appType: null == appType
+          ? _value.appType
+          : appType // ignore: cast_nullable_to_non_nullable
+              as AppType,
       supportedPlatforms: freezed == supportedPlatforms
           ? _value._supportedPlatforms
           : supportedPlatforms // ignore: cast_nullable_to_non_nullable
@@ -527,16 +552,16 @@ class __$$AvailableAppImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AvailableAppImpl implements _AvailableApp {
+class _$AvailableAppImpl extends _AvailableApp {
   const _$AvailableAppImpl(
       {required this.id,
       required this.name,
-      required this.appId,
-      @JsonKey(unknownEnumValue: AppType.public) this.appType = AppType.public,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       this.technology = AppTechnology.flutter,
       this.legalInformation,
       this.designInformation,
+      required this.appId,
+      @JsonKey(unknownEnumValue: AppType.public) this.appType = AppType.public,
       @JsonKey(unknownEnumValue: AppPlatform.web)
       final List<AppPlatform>? supportedPlatforms,
       required this.onlyCustomized,
@@ -548,7 +573,8 @@ class _$AvailableAppImpl implements _AvailableApp {
       final List<RegisteredApp>? implementations})
       : _supportedPlatforms = supportedPlatforms,
         _versions = versions,
-        _implementations = implementations;
+        _implementations = implementations,
+        super._();
 
   factory _$AvailableAppImpl.fromJson(Map<String, dynamic> json) =>
       _$$AvailableAppImplFromJson(json);
@@ -560,15 +586,6 @@ class _$AvailableAppImpl implements _AvailableApp {
   /// [name] is the name of the app. It's a fixed name, not a translation key
   @override
   final String name;
-
-  /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
-  @override
-  final String appId;
-
-  /// [appType] is the type of the app.
-  @override
-  @JsonKey(unknownEnumValue: AppType.public)
-  final AppType appType;
 
   /// [technology] is the technology of the app.
   @override
@@ -582,6 +599,15 @@ class _$AvailableAppImpl implements _AvailableApp {
   /// [designInformation] is the design information of the app.
   @override
   final AppDesign? designInformation;
+
+  /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
+  @override
+  final String appId;
+
+  /// [appType] is the type of the app.
+  @override
+  @JsonKey(unknownEnumValue: AppType.public)
+  final AppType appType;
 
   /// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
   final List<AppPlatform>? _supportedPlatforms;
@@ -646,7 +672,7 @@ class _$AvailableAppImpl implements _AvailableApp {
 
   @override
   String toString() {
-    return 'AvailableApp(id: $id, name: $name, appId: $appId, appType: $appType, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, supportedPlatforms: $supportedPlatforms, onlyCustomized: $onlyCustomized, hasImport: $hasImport, hasKeychain: $hasKeychain, serverFolder: $serverFolder, s3Folder: $s3Folder, versions: $versions, implementations: $implementations)';
+    return 'AvailableApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, appId: $appId, appType: $appType, supportedPlatforms: $supportedPlatforms, onlyCustomized: $onlyCustomized, hasImport: $hasImport, hasKeychain: $hasKeychain, serverFolder: $serverFolder, s3Folder: $s3Folder, versions: $versions, implementations: $implementations)';
   }
 
   @override
@@ -656,14 +682,14 @@ class _$AvailableAppImpl implements _AvailableApp {
             other is _$AvailableAppImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.appId, appId) || other.appId == appId) &&
-            (identical(other.appType, appType) || other.appType == appType) &&
             (identical(other.technology, technology) ||
                 other.technology == technology) &&
             (identical(other.legalInformation, legalInformation) ||
                 other.legalInformation == legalInformation) &&
             (identical(other.designInformation, designInformation) ||
                 other.designInformation == designInformation) &&
+            (identical(other.appId, appId) || other.appId == appId) &&
+            (identical(other.appType, appType) || other.appType == appType) &&
             const DeepCollectionEquality()
                 .equals(other._supportedPlatforms, _supportedPlatforms) &&
             (identical(other.onlyCustomized, onlyCustomized) ||
@@ -681,17 +707,17 @@ class _$AvailableAppImpl implements _AvailableApp {
                 .equals(other._implementations, _implementations));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       id,
       name,
-      appId,
-      appType,
       technology,
       legalInformation,
       designInformation,
+      appId,
+      appType,
       const DeepCollectionEquality().hash(_supportedPlatforms),
       onlyCustomized,
       hasImport,
@@ -701,7 +727,9 @@ class _$AvailableAppImpl implements _AvailableApp {
       const DeepCollectionEquality().hash(_versions),
       const DeepCollectionEquality().hash(_implementations));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AvailableApp
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AvailableAppImplCopyWith<_$AvailableAppImpl> get copyWith =>
@@ -715,16 +743,16 @@ class _$AvailableAppImpl implements _AvailableApp {
   }
 }
 
-abstract class _AvailableApp implements AvailableApp {
+abstract class _AvailableApp extends AvailableApp {
   const factory _AvailableApp(
       {required final String id,
       required final String name,
-      required final String appId,
-      @JsonKey(unknownEnumValue: AppType.public) final AppType appType,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       final AppTechnology technology,
       final AppLegal? legalInformation,
       final AppDesign? designInformation,
+      required final String appId,
+      @JsonKey(unknownEnumValue: AppType.public) final AppType appType,
       @JsonKey(unknownEnumValue: AppPlatform.web)
       final List<AppPlatform>? supportedPlatforms,
       required final bool onlyCustomized,
@@ -734,75 +762,78 @@ abstract class _AvailableApp implements AvailableApp {
       final String? s3Folder,
       final List<AppVersion>? versions,
       final List<RegisteredApp>? implementations}) = _$AvailableAppImpl;
+  const _AvailableApp._() : super._();
 
   factory _AvailableApp.fromJson(Map<String, dynamic> json) =
       _$AvailableAppImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the app.
-  String get id;
   @override
+  String get id;
 
   /// [name] is the name of the app. It's a fixed name, not a translation key
+  @override
   String get name;
-  @override
-
-  /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
-  String get appId;
-  @override
-
-  /// [appType] is the type of the app.
-  @JsonKey(unknownEnumValue: AppType.public)
-  AppType get appType;
-  @override
 
   /// [technology] is the technology of the app.
+  @override
   @JsonKey(unknownEnumValue: AppTechnology.flutter)
   AppTechnology get technology;
-  @override
 
   /// [legalInformation] is the legal information of the app.
-  AppLegal? get legalInformation;
   @override
+  AppLegal? get legalInformation;
 
   /// [designInformation] is the design information of the app.
-  AppDesign? get designInformation;
   @override
+  AppDesign? get designInformation;
+
+  /// [appId] is the unique identifier of the app, like "com.layrz.launchpad".
+  @override
+  String get appId;
+
+  /// [appType] is the type of the app.
+  @override
+  @JsonKey(unknownEnumValue: AppType.public)
+  AppType get appType;
 
   /// [supportedPlatforms] is the list of supported platforms of the App, depends of the technology.
+  @override
   @JsonKey(unknownEnumValue: AppPlatform.web)
   List<AppPlatform>? get supportedPlatforms;
-  @override
 
   /// [onlyCustomized] is true if the app only can be register with customization.
-  bool get onlyCustomized;
   @override
+  bool get onlyCustomized;
 
   ///[hasImport] is true if the app has import feature.
-  bool? get hasImport;
   @override
+  bool? get hasImport;
 
   /// [hasKeychain] is true if the app has keychain feature.
-  bool? get hasKeychain;
   @override
+  bool? get hasKeychain;
 
   /// [serverFolder] is the server folder of the app.
-  String? get serverFolder;
   @override
+  String? get serverFolder;
 
   /// [s3Folder] is the s3 folder of the app.
-  String? get s3Folder;
   @override
+  String? get s3Folder;
 
   /// [versions] is the list of versions of the app.
-  List<AppVersion>? get versions;
   @override
+  List<AppVersion>? get versions;
 
   /// [implementations] is the list of implementations of the app.
-  List<RegisteredApp>? get implementations;
   @override
-  @JsonKey(ignore: true)
+  List<RegisteredApp>? get implementations;
+
+  /// Create a copy of AvailableApp
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AvailableAppImplCopyWith<_$AvailableAppImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -842,8 +873,12 @@ mixin _$AvailableAppInput {
   bool get hasKeychain => throw _privateConstructorUsedError;
   set hasKeychain(bool value) => throw _privateConstructorUsedError;
 
+  /// Serializes this AvailableAppInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AvailableAppInputCopyWith<AvailableAppInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -882,6 +917,8 @@ class _$AvailableAppInputCopyWithImpl<$Res, $Val extends AvailableAppInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -940,6 +977,8 @@ class _$AvailableAppInputCopyWithImpl<$Res, $Val extends AvailableAppInput>
     ) as $Val);
   }
 
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppLegalInputCopyWith<$Res> get legalInformation {
@@ -948,6 +987,8 @@ class _$AvailableAppInputCopyWithImpl<$Res, $Val extends AvailableAppInput>
     });
   }
 
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppDesignInputCopyWith<$Res> get designInformation {
@@ -993,6 +1034,8 @@ class __$$AvailableAppInputImplCopyWithImpl<$Res>
       $Res Function(_$AvailableAppInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1105,7 +1148,9 @@ class _$AvailableAppInputImpl implements _AvailableAppInput {
     return 'AvailableAppInput(id: $id, name: $name, appId: $appId, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, supportedPlatforms: $supportedPlatforms, onlyCustomized: $onlyCustomized, hasImport: $hasImport, hasKeychain: $hasKeychain)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AvailableAppInputImplCopyWith<_$AvailableAppInputImpl> get copyWith =>
@@ -1172,8 +1217,11 @@ abstract class _AvailableAppInput implements AvailableAppInput {
   @override
   bool get hasKeychain;
   set hasKeychain(bool value);
+
+  /// Create a copy of AvailableAppInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AvailableAppInputImplCopyWith<_$AvailableAppInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1184,13 +1232,22 @@ RegisteredApp _$RegisteredAppFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RegisteredApp {
+  /// [id] is the unique identifier of the app.
   String get id => throw _privateConstructorUsedError;
+
+  /// [name] is the name of the app. It's a fixed name, not a translation key
   String get name => throw _privateConstructorUsedError;
-  String get nickname => throw _privateConstructorUsedError;
+
+  /// [technology] is the technology of the app.
   @JsonKey(unknownEnumValue: AppTechnology.flutter)
   AppTechnology get technology => throw _privateConstructorUsedError;
+
+  /// [legalInformation] is the legal information of the app.
   AppLegal? get legalInformation => throw _privateConstructorUsedError;
+
+  /// [designInformation] is the design information of the app.
   AppDesign? get designInformation => throw _privateConstructorUsedError;
+  String get nickname => throw _privateConstructorUsedError;
   bool? get isCustomized => throw _privateConstructorUsedError;
   List<AppInstance>? get instances => throw _privateConstructorUsedError;
   List<Asset>? get importedAssets => throw _privateConstructorUsedError;
@@ -1215,8 +1272,12 @@ mixin _$RegisteredApp {
   /// [authorizedLayers] is the list of layers authorized to be used by the app.
   List<MapLayer> get authorizedLayers => throw _privateConstructorUsedError;
 
+  /// Serializes this RegisteredApp to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of RegisteredApp
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RegisteredAppCopyWith<RegisteredApp> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1230,11 +1291,11 @@ abstract class $RegisteredAppCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      String nickname,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
+      String nickname,
       bool? isCustomized,
       List<AppInstance>? instances,
       List<Asset>? importedAssets,
@@ -1264,15 +1325,17 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RegisteredApp
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? nickname = null,
     Object? technology = null,
     Object? legalInformation = freezed,
     Object? designInformation = freezed,
+    Object? nickname = null,
     Object? isCustomized = freezed,
     Object? instances = freezed,
     Object? importedAssets = freezed,
@@ -1295,10 +1358,6 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      nickname: null == nickname
-          ? _value.nickname
-          : nickname // ignore: cast_nullable_to_non_nullable
-              as String,
       technology: null == technology
           ? _value.technology
           : technology // ignore: cast_nullable_to_non_nullable
@@ -1311,6 +1370,10 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
           ? _value.designInformation
           : designInformation // ignore: cast_nullable_to_non_nullable
               as AppDesign?,
+      nickname: null == nickname
+          ? _value.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String,
       isCustomized: freezed == isCustomized
           ? _value.isCustomized
           : isCustomized // ignore: cast_nullable_to_non_nullable
@@ -1362,6 +1425,8 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
     ) as $Val);
   }
 
+  /// Create a copy of RegisteredApp
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppLegalCopyWith<$Res>? get legalInformation {
@@ -1374,6 +1439,8 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
     });
   }
 
+  /// Create a copy of RegisteredApp
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppDesignCopyWith<$Res>? get designInformation {
@@ -1386,6 +1453,8 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
     });
   }
 
+  /// Create a copy of RegisteredApp
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get owner {
@@ -1398,6 +1467,8 @@ class _$RegisteredAppCopyWithImpl<$Res, $Val extends RegisteredApp>
     });
   }
 
+  /// Create a copy of RegisteredApp
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $WorkspaceCopyWith<$Res>? get fixedWorkspace {
@@ -1422,11 +1493,11 @@ abstract class _$$RegisteredAppImplCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      String nickname,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       AppTechnology technology,
       AppLegal? legalInformation,
       AppDesign? designInformation,
+      String nickname,
       bool? isCustomized,
       List<AppInstance>? instances,
       List<Asset>? importedAssets,
@@ -1458,15 +1529,17 @@ class __$$RegisteredAppImplCopyWithImpl<$Res>
       _$RegisteredAppImpl _value, $Res Function(_$RegisteredAppImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RegisteredApp
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? nickname = null,
     Object? technology = null,
     Object? legalInformation = freezed,
     Object? designInformation = freezed,
+    Object? nickname = null,
     Object? isCustomized = freezed,
     Object? instances = freezed,
     Object? importedAssets = freezed,
@@ -1489,10 +1562,6 @@ class __$$RegisteredAppImplCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      nickname: null == nickname
-          ? _value.nickname
-          : nickname // ignore: cast_nullable_to_non_nullable
-              as String,
       technology: null == technology
           ? _value.technology
           : technology // ignore: cast_nullable_to_non_nullable
@@ -1505,6 +1574,10 @@ class __$$RegisteredAppImplCopyWithImpl<$Res>
           ? _value.designInformation
           : designInformation // ignore: cast_nullable_to_non_nullable
               as AppDesign?,
+      nickname: null == nickname
+          ? _value.nickname
+          : nickname // ignore: cast_nullable_to_non_nullable
+              as String,
       isCustomized: freezed == isCustomized
           ? _value.isCustomized
           : isCustomized // ignore: cast_nullable_to_non_nullable
@@ -1559,15 +1632,15 @@ class __$$RegisteredAppImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$RegisteredAppImpl implements _RegisteredApp {
+class _$RegisteredAppImpl extends _RegisteredApp {
   const _$RegisteredAppImpl(
       {required this.id,
       required this.name,
-      required this.nickname,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       this.technology = AppTechnology.flutter,
       this.legalInformation,
       this.designInformation,
+      required this.nickname,
       this.isCustomized,
       final List<AppInstance>? instances,
       final List<Asset>? importedAssets,
@@ -1586,24 +1659,34 @@ class _$RegisteredAppImpl implements _RegisteredApp {
         _importedUsers = importedUsers,
         _keychain = keychain,
         _allowedReports = allowedReports,
-        _authorizedLayers = authorizedLayers;
+        _authorizedLayers = authorizedLayers,
+        super._();
 
   factory _$RegisteredAppImpl.fromJson(Map<String, dynamic> json) =>
       _$$RegisteredAppImplFromJson(json);
 
+  /// [id] is the unique identifier of the app.
   @override
   final String id;
+
+  /// [name] is the name of the app. It's a fixed name, not a translation key
   @override
   final String name;
-  @override
-  final String nickname;
+
+  /// [technology] is the technology of the app.
   @override
   @JsonKey(unknownEnumValue: AppTechnology.flutter)
   final AppTechnology technology;
+
+  /// [legalInformation] is the legal information of the app.
   @override
   final AppLegal? legalInformation;
+
+  /// [designInformation] is the design information of the app.
   @override
   final AppDesign? designInformation;
+  @override
+  final String nickname;
   @override
   final bool? isCustomized;
   final List<AppInstance>? _instances;
@@ -1700,7 +1783,7 @@ class _$RegisteredAppImpl implements _RegisteredApp {
 
   @override
   String toString() {
-    return 'RegisteredApp(id: $id, name: $name, nickname: $nickname, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers)';
+    return 'RegisteredApp(id: $id, name: $name, technology: $technology, legalInformation: $legalInformation, designInformation: $designInformation, nickname: $nickname, isCustomized: $isCustomized, instances: $instances, importedAssets: $importedAssets, importedDevices: $importedDevices, importedUsers: $importedUsers, keychain: $keychain, sourceId: $sourceId, owner: $owner, allowedReports: $allowedReports, fixedWorkspaceId: $fixedWorkspaceId, fixedWorkspace: $fixedWorkspace, authorizedLayers: $authorizedLayers)';
   }
 
   @override
@@ -1710,14 +1793,14 @@ class _$RegisteredAppImpl implements _RegisteredApp {
             other is _$RegisteredAppImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.nickname, nickname) ||
-                other.nickname == nickname) &&
             (identical(other.technology, technology) ||
                 other.technology == technology) &&
             (identical(other.legalInformation, legalInformation) ||
                 other.legalInformation == legalInformation) &&
             (identical(other.designInformation, designInformation) ||
                 other.designInformation == designInformation) &&
+            (identical(other.nickname, nickname) ||
+                other.nickname == nickname) &&
             (identical(other.isCustomized, isCustomized) ||
                 other.isCustomized == isCustomized) &&
             const DeepCollectionEquality()
@@ -1742,16 +1825,16 @@ class _$RegisteredAppImpl implements _RegisteredApp {
                 .equals(other._authorizedLayers, _authorizedLayers));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
       id,
       name,
-      nickname,
       technology,
       legalInformation,
       designInformation,
+      nickname,
       isCustomized,
       const DeepCollectionEquality().hash(_instances),
       const DeepCollectionEquality().hash(_importedAssets),
@@ -1765,7 +1848,9 @@ class _$RegisteredAppImpl implements _RegisteredApp {
       fixedWorkspace,
       const DeepCollectionEquality().hash(_authorizedLayers));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RegisteredApp
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$RegisteredAppImplCopyWith<_$RegisteredAppImpl> get copyWith =>
@@ -1779,15 +1864,15 @@ class _$RegisteredAppImpl implements _RegisteredApp {
   }
 }
 
-abstract class _RegisteredApp implements RegisteredApp {
+abstract class _RegisteredApp extends RegisteredApp {
   const factory _RegisteredApp(
       {required final String id,
       required final String name,
-      required final String nickname,
       @JsonKey(unknownEnumValue: AppTechnology.flutter)
       final AppTechnology technology,
       final AppLegal? legalInformation,
       final AppDesign? designInformation,
+      required final String nickname,
       final bool? isCustomized,
       final List<AppInstance>? instances,
       final List<Asset>? importedAssets,
@@ -1800,23 +1885,33 @@ abstract class _RegisteredApp implements RegisteredApp {
       final String? fixedWorkspaceId,
       final Workspace? fixedWorkspace,
       final List<MapLayer> authorizedLayers}) = _$RegisteredAppImpl;
+  const _RegisteredApp._() : super._();
 
   factory _RegisteredApp.fromJson(Map<String, dynamic> json) =
       _$RegisteredAppImpl.fromJson;
 
+  /// [id] is the unique identifier of the app.
   @override
   String get id;
+
+  /// [name] is the name of the app. It's a fixed name, not a translation key
   @override
   String get name;
-  @override
-  String get nickname;
+
+  /// [technology] is the technology of the app.
   @override
   @JsonKey(unknownEnumValue: AppTechnology.flutter)
   AppTechnology get technology;
+
+  /// [legalInformation] is the legal information of the app.
   @override
   AppLegal? get legalInformation;
+
+  /// [designInformation] is the design information of the app.
   @override
   AppDesign? get designInformation;
+  @override
+  String get nickname;
   @override
   bool? get isCustomized;
   @override
@@ -1831,29 +1926,32 @@ abstract class _RegisteredApp implements RegisteredApp {
   List<User>? get keychain;
   @override
   String get sourceId;
-  @override
 
   /// [owner] is the owner of the app.
   /// !Important: This field is only available when the query is from `/goldenm/graphql`
-  User? get owner;
   @override
+  User? get owner;
 
   /// [allowedReports] is the list of reports allowed to be generated by the app.
-  List<CustomReport>? get allowedReports;
   @override
+  List<CustomReport>? get allowedReports;
 
   /// [fixedWorkspaceId] is the id of the fixed workspace of the app.
-  String? get fixedWorkspaceId;
   @override
+  String? get fixedWorkspaceId;
 
   /// [fixedWorkspace] is the fixed workspace of the app.
-  Workspace? get fixedWorkspace;
   @override
+  Workspace? get fixedWorkspace;
 
   /// [authorizedLayers] is the list of layers authorized to be used by the app.
-  List<MapLayer> get authorizedLayers;
   @override
-  @JsonKey(ignore: true)
+  List<MapLayer> get authorizedLayers;
+
+  /// Create a copy of RegisteredApp
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$RegisteredAppImplCopyWith<_$RegisteredAppImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1867,8 +1965,12 @@ mixin _$AppThemedAsset {
   String get normal => throw _privateConstructorUsedError;
   String get white => throw _privateConstructorUsedError;
 
+  /// Serializes this AppThemedAsset to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppThemedAsset
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppThemedAssetCopyWith<AppThemedAsset> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1892,6 +1994,8 @@ class _$AppThemedAssetCopyWithImpl<$Res, $Val extends AppThemedAsset>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppThemedAsset
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1930,6 +2034,8 @@ class __$$AppThemedAssetImplCopyWithImpl<$Res>
       _$AppThemedAssetImpl _value, $Res Function(_$AppThemedAssetImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppThemedAsset
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1976,11 +2082,13 @@ class _$AppThemedAssetImpl implements _AppThemedAsset {
             (identical(other.white, white) || other.white == white));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, normal, white);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppThemedAsset
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppThemedAssetImplCopyWith<_$AppThemedAssetImpl> get copyWith =>
@@ -2007,8 +2115,11 @@ abstract class _AppThemedAsset implements AppThemedAsset {
   String get normal;
   @override
   String get white;
+
+  /// Create a copy of AppThemedAsset
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppThemedAssetImplCopyWith<_$AppThemedAssetImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2024,8 +2135,12 @@ mixin _$AppThemedAssetInput {
   String? get white => throw _privateConstructorUsedError;
   set white(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this AppThemedAssetInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppThemedAssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppThemedAssetInputCopyWith<AppThemedAssetInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2049,6 +2164,8 @@ class _$AppThemedAssetInputCopyWithImpl<$Res, $Val extends AppThemedAssetInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppThemedAssetInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2087,6 +2204,8 @@ class __$$AppThemedAssetInputImplCopyWithImpl<$Res>
       $Res Function(_$AppThemedAssetInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppThemedAssetInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2124,7 +2243,9 @@ class _$AppThemedAssetInputImpl implements _AppThemedAssetInput {
     return 'AppThemedAssetInput(normal: $normal, white: $white)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppThemedAssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppThemedAssetInputImplCopyWith<_$AppThemedAssetInputImpl> get copyWith =>
@@ -2152,8 +2273,11 @@ abstract class _AppThemedAssetInput implements AppThemedAssetInput {
   @override
   String? get white;
   set white(String? value);
+
+  /// Create a copy of AppThemedAssetInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppThemedAssetInputImplCopyWith<_$AppThemedAssetInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2170,8 +2294,12 @@ mixin _$AppBackgroundDesign {
   @JsonKey(unknownEnumValue: BackgroundMode.solid)
   BackgroundMode get mode => throw _privateConstructorUsedError;
 
+  /// Serializes this AppBackgroundDesign to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppBackgroundDesign
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppBackgroundDesignCopyWith<AppBackgroundDesign> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2198,6 +2326,8 @@ class _$AppBackgroundDesignCopyWithImpl<$Res, $Val extends AppBackgroundDesign>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppBackgroundDesign
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2244,6 +2374,8 @@ class __$$AppBackgroundDesignImplCopyWithImpl<$Res>
       $Res Function(_$AppBackgroundDesignImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppBackgroundDesign
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2304,11 +2436,13 @@ class _$AppBackgroundDesignImpl implements _AppBackgroundDesign {
             (identical(other.mode, mode) || other.mode == mode));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, image, color, mode);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppBackgroundDesign
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppBackgroundDesignImplCopyWith<_$AppBackgroundDesignImpl> get copyWith =>
@@ -2341,8 +2475,11 @@ abstract class _AppBackgroundDesign implements AppBackgroundDesign {
   @override
   @JsonKey(unknownEnumValue: BackgroundMode.solid)
   BackgroundMode get mode;
+
+  /// Create a copy of AppBackgroundDesign
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppBackgroundDesignImplCopyWith<_$AppBackgroundDesignImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2365,8 +2502,12 @@ mixin _$AppBackgroundDesignInput {
   @JsonKey(unknownEnumValue: BackgroundMode.solid)
   set mode(BackgroundMode value) => throw _privateConstructorUsedError;
 
+  /// Serializes this AppBackgroundDesignInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppBackgroundDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppBackgroundDesignInputCopyWith<AppBackgroundDesignInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2394,6 +2535,8 @@ class _$AppBackgroundDesignInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppBackgroundDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2443,6 +2586,8 @@ class __$$AppBackgroundDesignInputImplCopyWithImpl<$Res>
       $Res Function(_$AppBackgroundDesignInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppBackgroundDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2493,7 +2638,9 @@ class _$AppBackgroundDesignInputImpl implements _AppBackgroundDesignInput {
     return 'AppBackgroundDesignInput(image: $image, color: $color, mode: $mode)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppBackgroundDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppBackgroundDesignInputImplCopyWith<_$AppBackgroundDesignInputImpl>
@@ -2531,8 +2678,11 @@ abstract class _AppBackgroundDesignInput implements AppBackgroundDesignInput {
   BackgroundMode get mode;
   @JsonKey(unknownEnumValue: BackgroundMode.solid)
   set mode(BackgroundMode value);
+
+  /// Create a copy of AppBackgroundDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppBackgroundDesignInputImplCopyWith<_$AppBackgroundDesignInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2558,8 +2708,12 @@ mixin _$AppBuild {
   /// [isNext] is the flag to indicate if the build is the indev environment
   bool? get isNext => throw _privateConstructorUsedError;
 
+  /// Serializes this AppBuild to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppBuild
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppBuildCopyWith<AppBuild> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2587,6 +2741,8 @@ class _$AppBuildCopyWithImpl<$Res, $Val extends AppBuild>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppBuild
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2645,6 +2801,8 @@ class __$$AppBuildImplCopyWithImpl<$Res>
       _$AppBuildImpl _value, $Res Function(_$AppBuildImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppBuild
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2731,12 +2889,14 @@ class _$AppBuildImpl implements _AppBuild {
             (identical(other.isNext, isNext) || other.isNext == isNext));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, buildName, buildNumber, fileUri, isNext);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppBuild
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppBuildImplCopyWith<_$AppBuildImpl> get copyWith =>
@@ -2761,28 +2921,30 @@ abstract class _AppBuild implements AppBuild {
   factory _AppBuild.fromJson(Map<String, dynamic> json) =
       _$AppBuildImpl.fromJson;
 
-  @override
-
   /// [id] is the ID of the build
-  String get id;
   @override
+  String get id;
 
   /// [buildName] is the semantic name of the build
-  String get buildName;
   @override
+  String get buildName;
 
   /// [buildNumber] is the semantic number of the build
-  int get buildNumber;
   @override
+  int get buildNumber;
 
   /// [fileUri] is the URI of the file, only used when the platform is distinct to `AppPlatform.web`
-  String? get fileUri;
   @override
+  String? get fileUri;
 
   /// [isNext] is the flag to indicate if the build is the indev environment
-  bool? get isNext;
   @override
-  @JsonKey(ignore: true)
+  bool? get isNext;
+
+  /// Create a copy of AppBuild
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppBuildImplCopyWith<_$AppBuildImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2848,8 +3010,12 @@ mixin _$AppDesign {
   /// - `TextTheme.labelSmall`
   AppFont? get bodyFont => throw _privateConstructorUsedError;
 
+  /// Serializes this AppDesign to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppDesign
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppDesignCopyWith<AppDesign> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2888,6 +3054,8 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppDesign
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2941,6 +3109,8 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
     ) as $Val);
   }
 
+  /// Create a copy of AppDesign
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppThemedAssetCopyWith<$Res> get favicons {
@@ -2949,6 +3119,8 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
     });
   }
 
+  /// Create a copy of AppDesign
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppThemedAssetCopyWith<$Res> get logos {
@@ -2957,6 +3129,8 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
     });
   }
 
+  /// Create a copy of AppDesign
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppLoginDesignCopyWith<$Res>? get login {
@@ -2969,6 +3143,8 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
     });
   }
 
+  /// Create a copy of AppDesign
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppFontCopyWith<$Res>? get titleFont {
@@ -2981,6 +3157,8 @@ class _$AppDesignCopyWithImpl<$Res, $Val extends AppDesign>
     });
   }
 
+  /// Create a copy of AppDesign
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppFontCopyWith<$Res>? get bodyFont {
@@ -3034,6 +3212,8 @@ class __$$AppDesignImplCopyWithImpl<$Res>
       _$AppDesignImpl _value, $Res Function(_$AppDesignImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppDesign
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3195,12 +3375,14 @@ class _$AppDesignImpl implements _AppDesign {
                 other.bodyFont == bodyFont));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, mainColor, theme, favicons,
       logos, appicon, login, footerFormat, titleFont, bodyFont);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppDesign
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppDesignImplCopyWith<_$AppDesignImpl> get copyWith =>
@@ -3230,46 +3412,44 @@ abstract class _AppDesign implements AppDesign {
   factory _AppDesign.fromJson(Map<String, dynamic> json) =
       _$AppDesignImpl.fromJson;
 
-  @override
-
   /// [mainColor] defines the main color of the app.
   ///
   /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
   ///
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [colors] field and use the [mainColor] field from it.
+  @override
   @ColorOrNullConverter()
   Color? get mainColor;
-  @override
 
   /// [theme] defines the theme of the app.
   ///
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [colors] field and use the [theme] field from it.
+  @override
   @JsonKey(unknownEnumValue: AppTheme.blue)
   AppTheme? get theme;
-  @override
 
   /// [favicons] defines the favicons of the app.
-  AppThemedAsset get favicons;
   @override
+  AppThemedAsset get favicons;
 
   /// [logos] defines the logos of the app.
-  AppThemedAsset get logos;
   @override
+  AppThemedAsset get logos;
 
   /// [appicon] defines the app icon of the app.
-  String get appicon;
   @override
+  String get appicon;
 
   /// [login] defines the login design of the app.
-  AppLoginDesign? get login;
   @override
+  AppLoginDesign? get login;
 
   /// [footerFormat] defines the footer format of the app.
+  @override
   @JsonKey(unknownEnumValue: FooterFormat.madeWith)
   FooterFormat? get footerFormat;
-  @override
 
   /// [titleFont] defines the title font of the app.
   /// This style is used for:
@@ -3279,8 +3459,8 @@ abstract class _AppDesign implements AppDesign {
   /// - `TextTheme.headlineLarge`
   /// - `TextTheme.headlineMedium`
   /// - `TextTheme.headlineSmall`
-  AppFont? get titleFont;
   @override
+  AppFont? get titleFont;
 
   /// [bodyFont] defines the body font of the app.
   /// This style is used for:
@@ -3293,9 +3473,13 @@ abstract class _AppDesign implements AppDesign {
   /// - `TextTheme.labelLarge`
   /// - `TextTheme.labelMedium`
   /// - `TextTheme.labelSmall`
-  AppFont? get bodyFont;
   @override
-  @JsonKey(ignore: true)
+  AppFont? get bodyFont;
+
+  /// Create a copy of AppDesign
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppDesignImplCopyWith<_$AppDesignImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3313,8 +3497,12 @@ mixin _$AppFooter {
   /// [custom] defines the custom footer of the app.
   String? get custom => throw _privateConstructorUsedError;
 
+  /// Serializes this AppFooter to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppFooter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppFooterCopyWith<AppFooter> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3339,6 +3527,8 @@ class _$AppFooterCopyWithImpl<$Res, $Val extends AppFooter>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppFooter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3379,6 +3569,8 @@ class __$$AppFooterImplCopyWithImpl<$Res>
       _$AppFooterImpl _value, $Res Function(_$AppFooterImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppFooter
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3432,11 +3624,13 @@ class _$AppFooterImpl implements _AppFooter {
             (identical(other.custom, custom) || other.custom == custom));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, mode, custom);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppFooter
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppFooterImplCopyWith<_$AppFooterImpl> get copyWith =>
@@ -3459,17 +3653,19 @@ abstract class _AppFooter implements AppFooter {
   factory _AppFooter.fromJson(Map<String, dynamic> json) =
       _$AppFooterImpl.fromJson;
 
-  @override
-
   /// [mode] defines the footer format of the app.
+  @override
   @JsonKey(unknownEnumValue: FooterFormat.madeWith)
   FooterFormat get mode;
-  @override
 
   /// [custom] defines the custom footer of the app.
-  String? get custom;
   @override
-  @JsonKey(ignore: true)
+  String? get custom;
+
+  /// Create a copy of AppFooter
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppFooterImplCopyWith<_$AppFooterImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3499,8 +3695,12 @@ mixin _$AppDesignInput {
   AppFontInput get bodyFont => throw _privateConstructorUsedError;
   set bodyFont(AppFontInput value) => throw _privateConstructorUsedError;
 
+  /// Serializes this AppDesignInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppDesignInputCopyWith<AppDesignInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3537,6 +3737,8 @@ class _$AppDesignInputCopyWithImpl<$Res, $Val extends AppDesignInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3580,6 +3782,8 @@ class _$AppDesignInputCopyWithImpl<$Res, $Val extends AppDesignInput>
     ) as $Val);
   }
 
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppThemedAssetInputCopyWith<$Res> get favicons {
@@ -3588,6 +3792,8 @@ class _$AppDesignInputCopyWithImpl<$Res, $Val extends AppDesignInput>
     });
   }
 
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppThemedAssetInputCopyWith<$Res> get logos {
@@ -3596,6 +3802,8 @@ class _$AppDesignInputCopyWithImpl<$Res, $Val extends AppDesignInput>
     });
   }
 
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppLoginDesignInputCopyWith<$Res> get login {
@@ -3604,6 +3812,8 @@ class _$AppDesignInputCopyWithImpl<$Res, $Val extends AppDesignInput>
     });
   }
 
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppFontInputCopyWith<$Res> get titleFont {
@@ -3612,6 +3822,8 @@ class _$AppDesignInputCopyWithImpl<$Res, $Val extends AppDesignInput>
     });
   }
 
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AppFontInputCopyWith<$Res> get bodyFont {
@@ -3658,6 +3870,8 @@ class __$$AppDesignInputImplCopyWithImpl<$Res>
       _$AppDesignInputImpl _value, $Res Function(_$AppDesignInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3739,7 +3953,9 @@ class _$AppDesignInputImpl implements _AppDesignInput {
     return 'AppDesignInput(theme: $theme, mainColor: $mainColor, favicons: $favicons, logos: $logos, login: $login, titleFont: $titleFont, bodyFont: $bodyFont)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppDesignInputImplCopyWith<_$AppDesignInputImpl> get copyWith =>
@@ -3792,8 +4008,11 @@ abstract class _AppDesignInput implements AppDesignInput {
   @override
   AppFontInput get bodyFont;
   set bodyFont(AppFontInput value);
+
+  /// Create a copy of AppDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppDesignInputImplCopyWith<_$AppDesignInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3851,8 +4070,12 @@ mixin _$AppInstance {
   InstanceMigrationStatus get migrationStatus =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this AppInstance to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppInstance
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppInstanceCopyWith<AppInstance> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3892,6 +4115,8 @@ class _$AppInstanceCopyWithImpl<$Res, $Val extends AppInstance>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppInstance
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3960,6 +4185,8 @@ class _$AppInstanceCopyWithImpl<$Res, $Val extends AppInstance>
     ) as $Val);
   }
 
+  /// Create a copy of AppInstance
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DnsConfigurationCopyWith<$Res>? get cloudfront {
@@ -3972,6 +4199,8 @@ class _$AppInstanceCopyWithImpl<$Res, $Val extends AppInstance>
     });
   }
 
+  /// Create a copy of AppInstance
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $DnsConfigurationCopyWith<$Res>? get certificate {
@@ -4022,6 +4251,8 @@ class __$$AppInstanceImplCopyWithImpl<$Res>
       _$AppInstanceImpl _value, $Res Function(_$AppInstanceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppInstance
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4211,7 +4442,7 @@ class _$AppInstanceImpl implements _AppInstance {
                 other.migrationStatus == migrationStatus));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -4228,7 +4459,9 @@ class _$AppInstanceImpl implements _AppInstance {
       certificate,
       migrationStatus);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppInstance
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppInstanceImplCopyWith<_$AppInstanceImpl> get copyWith =>
@@ -4263,66 +4496,68 @@ abstract class _AppInstance implements AppInstance {
   factory _AppInstance.fromJson(Map<String, dynamic> json) =
       _$AppInstanceImpl.fromJson;
 
-  @override
-
   /// [id] is the ID of the instance
-  String get id;
   @override
+  String get id;
 
   /// [appId] is the ID of the app
-  String get appId;
   @override
+  String get appId;
 
   /// [platform] is the platform of the instance
+  @override
   @JsonKey(unknownEnumValue: AppPlatform.web)
   AppPlatform get platform;
-  @override
 
   /// [host] is the host of the instance. It is only used when the platform is `AppPlatform.web`
-  String? get host;
   @override
+  String? get host;
 
   /// [appIdentifier] is the identifier of the app. It is only used when the platform is not `AppPlatform.web`
-  String? get appIdentifier;
   @override
+  String? get appIdentifier;
 
   /// [developerName] is the name of the developer. It is only used when the platform is not `AppPlatform.web`
-  String? get developerName;
   @override
+  String? get developerName;
 
   /// [developerIdentifier] is the identifier of the developer. It is only used when the platform is
   /// not `AppPlatform.web`
-  String? get developerIdentifier;
   @override
+  String? get developerIdentifier;
 
   /// [builds] is the list of builds
-  List<AppBuild> get builds;
   @override
+  List<AppBuild> get builds;
 
   /// [status] is the status of the instance. It is only used when the platform is `AppPlatform.web`
   /// For other platforms, this value is only `InstanceStatus.pending` and `InstanceStatus.ready`
+  @override
   @JsonKey(unknownEnumValue: InstanceStatus.pending)
   InstanceStatus get status;
-  @override
 
   /// [cloudfront] is the DNS of the instance for CloudFront
   /// It is only used when the platform is `AppPlatform.web`
-  DnsConfiguration? get cloudfront;
   @override
+  DnsConfiguration? get cloudfront;
 
   /// [certificate] is the DNS of the instance for SSL
   /// It is only used when the platform is `AppPlatform.web`
-  DnsConfiguration? get certificate;
   @override
+  DnsConfiguration? get certificate;
 
   /// [migrationStatus] is the status of the migration
   /// It is only used when the platform is `AppPlatform.web`
   /// Why this field? Simple, we're migrating to a new High Availability architecture, so,
   /// for web instances, we require some changes about the configuration of the DNS.
+  @override
   @JsonKey(unknownEnumValue: InstanceMigrationStatus.pending)
   InstanceMigrationStatus get migrationStatus;
+
+  /// Create a copy of AppInstance
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppInstanceImplCopyWith<_$AppInstanceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4339,8 +4574,12 @@ mixin _$DnsConfiguration {
   /// [value] is the value of the DNS
   String? get value => throw _privateConstructorUsedError;
 
+  /// Serializes this DnsConfiguration to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of DnsConfiguration
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $DnsConfigurationCopyWith<DnsConfiguration> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4364,6 +4603,8 @@ class _$DnsConfigurationCopyWithImpl<$Res, $Val extends DnsConfiguration>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of DnsConfiguration
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4402,6 +4643,8 @@ class __$$DnsConfigurationImplCopyWithImpl<$Res>
       $Res Function(_$DnsConfigurationImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of DnsConfiguration
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4451,11 +4694,13 @@ class _$DnsConfigurationImpl implements _DnsConfiguration {
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, name, value);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of DnsConfiguration
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$DnsConfigurationImplCopyWith<_$DnsConfigurationImpl> get copyWith =>
@@ -4477,16 +4722,18 @@ abstract class _DnsConfiguration implements DnsConfiguration {
   factory _DnsConfiguration.fromJson(Map<String, dynamic> json) =
       _$DnsConfigurationImpl.fromJson;
 
-  @override
-
   /// [name] is the name of the DNS
-  String? get name;
   @override
+  String? get name;
 
   /// [value] is the value of the DNS
-  String? get value;
   @override
-  @JsonKey(ignore: true)
+  String? get value;
+
+  /// Create a copy of DnsConfiguration
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$DnsConfigurationImplCopyWith<_$DnsConfigurationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4501,8 +4748,12 @@ mixin _$AppLegal {
   String get companyUrl => throw _privateConstructorUsedError;
   String get privacyPolicy => throw _privateConstructorUsedError;
 
+  /// Serializes this AppLegal to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppLegal
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppLegalCopyWith<AppLegal> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4525,6 +4776,8 @@ class _$AppLegalCopyWithImpl<$Res, $Val extends AppLegal>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppLegal
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4568,6 +4821,8 @@ class __$$AppLegalImplCopyWithImpl<$Res>
       _$AppLegalImpl _value, $Res Function(_$AppLegalImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppLegal
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4628,12 +4883,14 @@ class _$AppLegalImpl implements _AppLegal {
                 other.privacyPolicy == privacyPolicy));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, companyName, companyUrl, privacyPolicy);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppLegal
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppLegalImplCopyWith<_$AppLegalImpl> get copyWith =>
@@ -4662,8 +4919,11 @@ abstract class _AppLegal implements AppLegal {
   String get companyUrl;
   @override
   String get privacyPolicy;
+
+  /// Create a copy of AppLegal
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppLegalImplCopyWith<_$AppLegalImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4681,8 +4941,12 @@ mixin _$AppLegalInput {
   String get privacyPolicy => throw _privateConstructorUsedError;
   set privacyPolicy(String value) => throw _privateConstructorUsedError;
 
+  /// Serializes this AppLegalInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppLegalInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppLegalInputCopyWith<AppLegalInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4706,6 +4970,8 @@ class _$AppLegalInputCopyWithImpl<$Res, $Val extends AppLegalInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppLegalInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4749,6 +5015,8 @@ class __$$AppLegalInputImplCopyWithImpl<$Res>
       _$AppLegalInputImpl _value, $Res Function(_$AppLegalInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppLegalInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4797,7 +5065,9 @@ class _$AppLegalInputImpl implements _AppLegalInput {
     return 'AppLegalInput(companyName: $companyName, companyUrl: $companyUrl, privacyPolicy: $privacyPolicy)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppLegalInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppLegalInputImplCopyWith<_$AppLegalInputImpl> get copyWith =>
@@ -4829,8 +5099,11 @@ abstract class _AppLegalInput implements AppLegalInput {
   @override
   String get privacyPolicy;
   set privacyPolicy(String value);
+
+  /// Create a copy of AppLegalInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppLegalInputImplCopyWith<_$AppLegalInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4871,8 +5144,12 @@ mixin _$AppLoginDesign {
   @JsonKey(unknownEnumValue: LayoutDesign.right)
   LayoutDesign? get design => throw _privateConstructorUsedError;
 
+  /// Serializes this AppLoginDesign to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppLoginDesign
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppLoginDesignCopyWith<AppLoginDesign> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4901,6 +5178,8 @@ class _$AppLoginDesignCopyWithImpl<$Res, $Val extends AppLoginDesign>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppLoginDesign
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4959,6 +5238,8 @@ class __$$AppLoginDesignImplCopyWithImpl<$Res>
       _$AppLoginDesignImpl _value, $Res Function(_$AppLoginDesignImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppLoginDesign
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5061,12 +5342,14 @@ class _$AppLoginDesignImpl implements _AppLoginDesign {
             (identical(other.design, design) || other.design == design));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, backgroundColor, backgroundImage, mode, description, design);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppLoginDesign
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppLoginDesignImplCopyWith<_$AppLoginDesignImpl> get copyWith =>
@@ -5094,43 +5377,45 @@ abstract class _AppLoginDesign implements AppLoginDesign {
   factory _AppLoginDesign.fromJson(Map<String, dynamic> json) =
       _$AppLoginDesignImpl.fromJson;
 
-  @override
-
   /// [backgroundColor] defines the background color of the login.
   /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
   ///
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [background] field and use the [color] field from it.
+  @override
   @ColorOrNullConverter()
   Color? get backgroundColor;
-  @override
 
   /// [backgroundImage] defines the background image of the login.
   /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
   ///
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [background] field and use the [image] field from it.
-  String? get backgroundImage;
   @override
+  String? get backgroundImage;
 
   /// [logo] defines the logo of the login.
   ///
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [mode] field in the [background] field and use it
+  @override
   @JsonKey(unknownEnumValue: BackgroundMode.solid)
   BackgroundMode? get mode;
-  @override
 
   /// [description] defines any additional text that should be displayed below the logo in case that
   /// the [layout] is [LoginLayout.left] or [LoginLayout.right].
-  String? get description;
   @override
+  String? get description;
 
   /// [design] defines the design of the login.
+  @override
   @JsonKey(unknownEnumValue: LayoutDesign.right)
   LayoutDesign? get design;
+
+  /// Create a copy of AppLoginDesign
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppLoginDesignImplCopyWith<_$AppLoginDesignImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5201,8 +5486,12 @@ mixin _$AppLoginDesignInput {
   @JsonKey(unknownEnumValue: LayoutDesign.right)
   set design(LayoutDesign? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this AppLoginDesignInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppLoginDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppLoginDesignInputCopyWith<AppLoginDesignInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5231,6 +5520,8 @@ class _$AppLoginDesignInputCopyWithImpl<$Res, $Val extends AppLoginDesignInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppLoginDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5289,6 +5580,8 @@ class __$$AppLoginDesignInputImplCopyWithImpl<$Res>
       $Res Function(_$AppLoginDesignInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppLoginDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5376,7 +5669,9 @@ class _$AppLoginDesignInputImpl implements _AppLoginDesignInput {
     return 'AppLoginDesignInput(backgroundColor: $backgroundColor, backgroundImage: $backgroundImage, mode: $mode, description: $description, design: $design)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppLoginDesignInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppLoginDesignInputImplCopyWith<_$AppLoginDesignInputImpl> get copyWith =>
@@ -5403,13 +5698,12 @@ abstract class _AppLoginDesignInput implements AppLoginDesignInput {
   factory _AppLoginDesignInput.fromJson(Map<String, dynamic> json) =
       _$AppLoginDesignInputImpl.fromJson;
 
-  @override
-
   /// [backgroundColor] defines the background color of the login.
   /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
   ///
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [background] field and use the [color] field from it.
+  @override
   @ColorOrNullConverter()
   Color? get backgroundColor;
 
@@ -5420,13 +5714,13 @@ abstract class _AppLoginDesignInput implements AppLoginDesignInput {
   /// for the [background] field and use the [color] field from it.
   @ColorOrNullConverter()
   set backgroundColor(Color? value);
-  @override
 
   /// [backgroundImage] defines the background image of the login.
   /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
   ///
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [background] field and use the [image] field from it.
+  @override
   String? get backgroundImage;
 
   /// [backgroundImage] defines the background image of the login.
@@ -5435,12 +5729,12 @@ abstract class _AppLoginDesignInput implements AppLoginDesignInput {
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [background] field and use the [image] field from it.
   set backgroundImage(String? value);
-  @override
 
   /// [logo] defines the logo of the login.
   ///
   /// Because we're transitioning to a new design schema, in case that this field is null, we'll search
   /// for the [mode] field in the [background] field and use it
+  @override
   @JsonKey(unknownEnumValue: BackgroundMode.solid)
   BackgroundMode? get mode;
 
@@ -5450,26 +5744,29 @@ abstract class _AppLoginDesignInput implements AppLoginDesignInput {
   /// for the [mode] field in the [background] field and use it
   @JsonKey(unknownEnumValue: BackgroundMode.solid)
   set mode(BackgroundMode? value);
-  @override
 
   /// [description] defines any additional text that should be displayed below the logo in case that
   /// the [layout] is [LoginLayout.left] or [LoginLayout.right].
+  @override
   String? get description;
 
   /// [description] defines any additional text that should be displayed below the logo in case that
   /// the [layout] is [LoginLayout.left] or [LoginLayout.right].
   set description(String? value);
-  @override
 
   /// [design] defines the design of the login.
+  @override
   @JsonKey(unknownEnumValue: LayoutDesign.right)
   LayoutDesign? get design;
 
   /// [design] defines the design of the login.
   @JsonKey(unknownEnumValue: LayoutDesign.right)
   set design(LayoutDesign? value);
+
+  /// Create a copy of AppLoginDesignInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppLoginDesignInputImplCopyWith<_$AppLoginDesignInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5491,8 +5788,12 @@ mixin _$AppVersion {
   @TimestampConverter()
   DateTime get releasedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this AppVersion to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppVersion
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppVersionCopyWith<AppVersion> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5524,6 +5825,8 @@ class _$AppVersionCopyWithImpl<$Res, $Val extends AppVersion>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppVersion
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5595,6 +5898,8 @@ class __$$AppVersionImplCopyWithImpl<$Res>
       _$AppVersionImpl _value, $Res Function(_$AppVersionImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppVersion
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5695,12 +6000,14 @@ class _$AppVersionImpl implements _AppVersion {
                 other.releasedAt == releasedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, app, platform, fileUri,
       buildNumber, buildName, releasedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppVersion
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppVersionImplCopyWith<_$AppVersionImpl> get copyWith =>
@@ -5746,8 +6053,11 @@ abstract class _AppVersion implements AppVersion {
   @override
   @TimestampConverter()
   DateTime get releasedAt;
+
+  /// Create a copy of AppVersion
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppVersionImplCopyWith<_$AppVersionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5771,8 +6081,12 @@ mixin _$AppFont {
   /// For example: `https://example.com/font.ttf` or `assets/fonts/font.ttf`
   String? get uri => throw _privateConstructorUsedError;
 
+  /// Serializes this AppFont to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppFont
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppFontCopyWith<AppFont> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -5797,6 +6111,8 @@ class _$AppFontCopyWithImpl<$Res, $Val extends AppFont>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppFont
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5842,6 +6158,8 @@ class __$$AppFontImplCopyWithImpl<$Res>
       _$AppFontImpl _value, $Res Function(_$AppFontImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppFont
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5910,11 +6228,13 @@ class _$AppFontImpl implements _AppFont {
             (identical(other.uri, uri) || other.uri == uri));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, source, name, uri);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppFont
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppFontImplCopyWith<_$AppFontImpl> get copyWith =>
@@ -5936,24 +6256,26 @@ abstract class _AppFont implements AppFont {
 
   factory _AppFont.fromJson(Map<String, dynamic> json) = _$AppFontImpl.fromJson;
 
-  @override
-
   /// [source] defines where is stored the font
+  @override
   @JsonKey(unknownEnumValue: FontSource.google)
   FontSource get source;
-  @override
 
   /// [name] is the name of the font to load
   /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Ubuntu`
   /// Check out [`google_fonts` package](https://pub.dev/packages/google_fonts) for more information
-  String get name;
   @override
+  String get name;
 
   /// [uri] is the url of the font in the remote server or the path of the local file
   /// For example: `https://example.com/font.ttf` or `assets/fonts/font.ttf`
-  String? get uri;
   @override
-  @JsonKey(ignore: true)
+  String? get uri;
+
+  /// Create a copy of AppFont
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppFontImplCopyWith<_$AppFontImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5990,8 +6312,12 @@ mixin _$AppFontInput {
   /// For example: `https://example.com/font.ttf` or `assets/fonts/font.ttf`
   set uri(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this AppFontInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of AppFontInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppFontInputCopyWith<AppFontInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6018,6 +6344,8 @@ class _$AppFontInputCopyWithImpl<$Res, $Val extends AppFontInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppFontInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6064,6 +6392,8 @@ class __$$AppFontInputImplCopyWithImpl<$Res>
       _$AppFontInputImpl _value, $Res Function(_$AppFontInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppFontInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6122,7 +6452,9 @@ class _$AppFontInputImpl implements _AppFontInput {
     return 'AppFontInput(source: $source, name: $name, uri: $uri)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppFontInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppFontInputImplCopyWith<_$AppFontInputImpl> get copyWith =>
@@ -6145,37 +6477,39 @@ abstract class _AppFontInput implements AppFontInput {
   factory _AppFontInput.fromJson(Map<String, dynamic> json) =
       _$AppFontInputImpl.fromJson;
 
-  @override
-
   /// [source] defines where is stored the font
+  @override
   @JsonKey(unknownEnumValue: FontSource.google)
   FontSource get source;
 
   /// [source] defines where is stored the font
   @JsonKey(unknownEnumValue: FontSource.google)
   set source(FontSource value);
-  @override
 
   /// [name] is the name of the font to load
   /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Ubuntu`
   /// Check out [`google_fonts` package](https://pub.dev/packages/google_fonts) for more information
+  @override
   String get name;
 
   /// [name] is the name of the font to load
   /// For [source] [FontSource.google] it is the name of the font in google fonts, for example, `Ubuntu`
   /// Check out [`google_fonts` package](https://pub.dev/packages/google_fonts) for more information
   set name(String value);
-  @override
 
   /// [uri] is the url of the font in the remote server or the path of the local file
   /// For example: `https://example.com/font.ttf` or `assets/fonts/font.ttf`
+  @override
   String? get uri;
 
   /// [uri] is the url of the font in the remote server or the path of the local file
   /// For example: `https://example.com/font.ttf` or `assets/fonts/font.ttf`
   set uri(String? value);
+
+  /// Create a copy of AppFontInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppFontInputImplCopyWith<_$AppFontInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

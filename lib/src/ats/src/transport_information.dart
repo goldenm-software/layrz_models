@@ -1,7 +1,7 @@
 part of '../ats.dart';
 
 @freezed
-class AtsTransportInformation with _$AtsTransportInformation {
+abstract class AtsTransportInformation with _$AtsTransportInformation {
   factory AtsTransportInformation({
     /// Transport company CNPJ.
     String? cnpj,

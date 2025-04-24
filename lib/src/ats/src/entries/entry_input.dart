@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @unfreezed
-class AtsEntryInput with _$AtsEntryInput {
+abstract class AtsEntryInput with _$AtsEntryInput {
   /// Creates a new `AtsEntryInput`.
 
   factory AtsEntryInput({

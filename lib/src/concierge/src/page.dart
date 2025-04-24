@@ -1,7 +1,7 @@
 part of '../concierge.dart';
 
 @freezed
-class ConciergeFormPage with _$ConciergeFormPage {
+abstract class ConciergeFormPage with _$ConciergeFormPage {
   const factory ConciergeFormPage({
     /// Is the title of the page
     required String title,

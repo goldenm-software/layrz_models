@@ -1,7 +1,7 @@
 part of '../geofences.dart';
 
 @freezed
-class GeofencePoint with _$GeofencePoint {
+abstract class GeofencePoint with _$GeofencePoint {
   const GeofencePoint._();
 
   const factory GeofencePoint({
@@ -15,7 +15,7 @@ class GeofencePoint with _$GeofencePoint {
 }
 
 @unfreezed
-class GeofencePointInput with _$GeofencePointInput {
+abstract class GeofencePointInput with _$GeofencePointInput {
   GeofencePointInput._();
 
   factory GeofencePointInput({
@@ -29,7 +29,7 @@ class GeofencePointInput with _$GeofencePointInput {
 }
 
 @freezed
-class GeoPoint with _$GeoPoint {
+abstract class GeoPoint with _$GeoPoint {
   const GeoPoint._();
 
   const factory GeoPoint({

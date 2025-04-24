@@ -1,7 +1,7 @@
 part of '../outbound.dart';
 
 @freezed
-class OutboundMetrics with _$OutboundMetrics {
+abstract class OutboundMetrics with _$OutboundMetrics {
   const factory OutboundMetrics({
     /// [online] is the number of online devices.
     @Default(0) int online,

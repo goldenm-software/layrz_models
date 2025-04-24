@@ -1,7 +1,7 @@
 part of '../users.dart';
 
 @unfreezed
-class AccessibilityInput with _$AccessibilityInput {
+abstract class AccessibilityInput with _$AccessibilityInput {
   const AccessibilityInput._();
 
   factory AccessibilityInput({

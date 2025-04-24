@@ -1,7 +1,7 @@
 part of '../commands.dart';
 
 @freezed
-class AssetCommand with _$AssetCommand {
+abstract class AssetCommand with _$AssetCommand {
   const factory AssetCommand({
     /// [id] is the id of the command.
     required String id,
@@ -17,7 +17,7 @@ class AssetCommand with _$AssetCommand {
 }
 
 @freezed
-class AssetCommandPossibleDevice with _$AssetCommandPossibleDevice {
+abstract class AssetCommandPossibleDevice with _$AssetCommandPossibleDevice {
   const factory AssetCommandPossibleDevice({
     /// [id] is the id of the device.
     required String id,

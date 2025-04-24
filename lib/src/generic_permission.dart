@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class GenericPermissionItem with _$GenericPermissionItem {
+abstract class GenericPermissionItem with _$GenericPermissionItem {
   const factory GenericPermissionItem({
     @Default(false) bool read,
     @Default(false) bool write,
@@ -16,7 +16,7 @@ class GenericPermissionItem with _$GenericPermissionItem {
 }
 
 @freezed
-class GenericPermission with _$GenericPermission {
+abstract class GenericPermission with _$GenericPermission {
   const factory GenericPermission({
     GenericPermissionItem? apps,
     GenericPermissionItem? users,

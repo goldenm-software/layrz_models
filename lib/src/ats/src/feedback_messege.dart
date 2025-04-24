@@ -1,7 +1,7 @@
 part of '../ats.dart';
 
 @freezed
-class AtsFeedbackMessege with _$AtsFeedbackMessege {
+abstract class AtsFeedbackMessege with _$AtsFeedbackMessege {
   const factory AtsFeedbackMessege({
     /// [id] of the asset entity. This ID is unique.
     String? id,

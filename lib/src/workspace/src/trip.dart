@@ -1,7 +1,7 @@
 part of '../workspace.dart';
 
 @freezed
-class WorkspaceTripPoint with _$WorkspaceTripPoint {
+abstract class WorkspaceTripPoint with _$WorkspaceTripPoint {
   const factory WorkspaceTripPoint({
     double? latitude,
     double? longitude,
@@ -15,7 +15,7 @@ class WorkspaceTripPoint with _$WorkspaceTripPoint {
 }
 
 @freezed
-class WorkspaceTrip with _$WorkspaceTrip {
+abstract class WorkspaceTrip with _$WorkspaceTrip {
   const factory WorkspaceTrip({
     required String assetId,
     required String assetName,

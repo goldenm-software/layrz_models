@@ -80,7 +80,8 @@ _$MappitLaborHourImpl _$$MappitLaborHourImplFromJson(
         Map<String, dynamic> json) =>
     _$MappitLaborHourImpl(
       id: json['id'] as String,
-      weekday: const WeekdayConverter().fromJson(json['weekday'] as String),
+      weekday: $enumDecode(_$WeekdayEnumMap, json['weekday'],
+          unknownValue: Weekday.monday),
       administrative:
           const DurationConverter().fromJson(json['administrative'] as num),
       f2f: const DurationConverter().fromJson(json['f2f'] as num),
@@ -91,18 +92,29 @@ Map<String, dynamic> _$$MappitLaborHourImplToJson(
         _$MappitLaborHourImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'weekday': const WeekdayConverter().toJson(instance.weekday),
+      'weekday': instance.weekday.toJson(),
       'administrative':
           const DurationConverter().toJson(instance.administrative),
       'f2f': const DurationConverter().toJson(instance.f2f),
       'other': const DurationConverter().toJson(instance.other),
     };
 
+const _$WeekdayEnumMap = {
+  Weekday.monday: 'MON',
+  Weekday.tuesday: 'TUE',
+  Weekday.wednesday: 'WED',
+  Weekday.thursday: 'THU',
+  Weekday.friday: 'FRI',
+  Weekday.saturday: 'SAT',
+  Weekday.sunday: 'SUN',
+};
+
 _$MappitLaborHourInputImpl _$$MappitLaborHourInputImplFromJson(
         Map<String, dynamic> json) =>
     _$MappitLaborHourInputImpl(
       id: json['id'] as String?,
-      weekday: const WeekdayConverter().fromJson(json['weekday'] as String),
+      weekday: $enumDecode(_$WeekdayEnumMap, json['weekday'],
+          unknownValue: Weekday.monday),
       administrative: json['administrative'] == null
           ? const Duration(minutes: 0)
           : const DurationConverter().fromJson(json['administrative'] as num),
@@ -118,7 +130,7 @@ Map<String, dynamic> _$$MappitLaborHourInputImplToJson(
         _$MappitLaborHourInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'weekday': const WeekdayConverter().toJson(instance.weekday),
+      'weekday': instance.weekday.toJson(),
       'administrative':
           const DurationConverter().toJson(instance.administrative),
       'f2f': const DurationConverter().toJson(instance.f2f),

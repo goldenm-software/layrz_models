@@ -1,7 +1,7 @@
 part of '../../workspace.dart';
 
 @freezed
-class MapCardConnectionConfiguration with _$MapCardConnectionConfiguration {
+abstract class MapCardConnectionConfiguration with _$MapCardConnectionConfiguration {
   const factory MapCardConnectionConfiguration({
     /// Indicates if the connection indicatpr segment is enabled.
     @Default(true) bool indicator,
@@ -18,7 +18,7 @@ class MapCardConnectionConfiguration with _$MapCardConnectionConfiguration {
 }
 
 @unfreezed
-class MapCardConnectionConfigurationInput with _$MapCardConnectionConfigurationInput {
+abstract class MapCardConnectionConfigurationInput with _$MapCardConnectionConfigurationInput {
   factory MapCardConnectionConfigurationInput({
     /// Indicates if the connection indicatpr segment is enabled.
     @Default(true) bool indicator,

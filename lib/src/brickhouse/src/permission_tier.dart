@@ -20,7 +20,7 @@ enum BrickhouseBillingPeriod {
 }
 
 @freezed
-class BHSPermissionTier with _$BHSPermissionTier {
+abstract class BHSPermissionTier with _$BHSPermissionTier {
   const factory BHSPermissionTier({
     required String id,
     required String name,
@@ -39,7 +39,7 @@ class BHSPermissionTier with _$BHSPermissionTier {
 }
 
 @unfreezed
-class BHSPermissionTierInput with _$BHSPermissionTierInput {
+abstract class BHSPermissionTierInput with _$BHSPermissionTierInput {
   factory BHSPermissionTierInput({
     String? id,
     String? name,

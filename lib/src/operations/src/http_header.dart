@@ -1,7 +1,7 @@
 part of '../operations.dart';
 
 @freezed
-class HttpHeader with _$HttpHeader {
+abstract class HttpHeader with _$HttpHeader {
   const HttpHeader._();
 
   const factory HttpHeader({
@@ -13,7 +13,7 @@ class HttpHeader with _$HttpHeader {
 }
 
 @unfreezed
-class HttpHeaderInput with _$HttpHeaderInput {
+abstract class HttpHeaderInput with _$HttpHeaderInput {
   const HttpHeaderInput._();
 
   factory HttpHeaderInput({

@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsReception with _$AtsReception {
+abstract class AtsReception with _$AtsReception {
   factory AtsReception({
     ///  ID of the [AtsReception]. This ID is unique.
     required String id,

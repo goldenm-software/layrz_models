@@ -26,10 +26,6 @@ _$AvailableAppImpl _$$AvailableAppImplFromJson(Map<String, dynamic> json) =>
     _$AvailableAppImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      appId: json['appId'] as String,
-      appType: $enumDecodeNullable(_$AppTypeEnumMap, json['appType'],
-              unknownValue: AppType.public) ??
-          AppType.public,
       technology: $enumDecodeNullable(
               _$AppTechnologyEnumMap, json['technology'],
               unknownValue: AppTechnology.flutter) ??
@@ -41,6 +37,10 @@ _$AvailableAppImpl _$$AvailableAppImplFromJson(Map<String, dynamic> json) =>
           ? null
           : AppDesign.fromJson(
               json['designInformation'] as Map<String, dynamic>),
+      appId: json['appId'] as String,
+      appType: $enumDecodeNullable(_$AppTypeEnumMap, json['appType'],
+              unknownValue: AppType.public) ??
+          AppType.public,
       supportedPlatforms: (json['supportedPlatforms'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$AppPlatformEnumMap, e,
               unknownValue: AppPlatform.web))
@@ -62,11 +62,11 @@ Map<String, dynamic> _$$AvailableAppImplToJson(_$AvailableAppImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'appId': instance.appId,
-      'appType': instance.appType.toJson(),
       'technology': instance.technology.toJson(),
       'legalInformation': instance.legalInformation?.toJson(),
       'designInformation': instance.designInformation?.toJson(),
+      'appId': instance.appId,
+      'appType': instance.appType.toJson(),
       'supportedPlatforms':
           instance.supportedPlatforms?.map((e) => e.toJson()).toList(),
       'onlyCustomized': instance.onlyCustomized,
@@ -79,15 +79,15 @@ Map<String, dynamic> _$$AvailableAppImplToJson(_$AvailableAppImpl instance) =>
           instance.implementations?.map((e) => e.toJson()).toList(),
     };
 
+const _$AppTechnologyEnumMap = {
+  AppTechnology.vuejs: 'VUEJS',
+  AppTechnology.flutter: 'FLUTTER',
+};
+
 const _$AppTypeEnumMap = {
   AppType.public: 'PUBLIC',
   AppType.private: 'PRIVATE',
   AppType.marketplace: 'MARKETPLACE',
-};
-
-const _$AppTechnologyEnumMap = {
-  AppTechnology.vuejs: 'VUEJS',
-  AppTechnology.flutter: 'FLUTTER',
 };
 
 const _$AppPlatformEnumMap = {
@@ -144,7 +144,6 @@ _$RegisteredAppImpl _$$RegisteredAppImplFromJson(Map<String, dynamic> json) =>
     _$RegisteredAppImpl(
       id: json['id'] as String,
       name: json['name'] as String,
-      nickname: json['nickname'] as String,
       technology: $enumDecodeNullable(
               _$AppTechnologyEnumMap, json['technology'],
               unknownValue: AppTechnology.flutter) ??
@@ -156,6 +155,7 @@ _$RegisteredAppImpl _$$RegisteredAppImplFromJson(Map<String, dynamic> json) =>
           ? null
           : AppDesign.fromJson(
               json['designInformation'] as Map<String, dynamic>),
+      nickname: json['nickname'] as String,
       isCustomized: json['isCustomized'] as bool?,
       instances: (json['instances'] as List<dynamic>?)
           ?.map((e) => AppInstance.fromJson(e as Map<String, dynamic>))
@@ -193,10 +193,10 @@ Map<String, dynamic> _$$RegisteredAppImplToJson(_$RegisteredAppImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'nickname': instance.nickname,
       'technology': instance.technology.toJson(),
       'legalInformation': instance.legalInformation?.toJson(),
       'designInformation': instance.designInformation?.toJson(),
+      'nickname': instance.nickname,
       'isCustomized': instance.isCustomized,
       'instances': instance.instances?.map((e) => e.toJson()).toList(),
       'importedAssets':

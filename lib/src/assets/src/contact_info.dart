@@ -1,7 +1,7 @@
 part of '../assets.dart';
 
 @freezed
-class ContactInfo with _$ContactInfo {
+abstract class ContactInfo with _$ContactInfo {
   const factory ContactInfo({
     @Default('') String name,
     @Default('') String email,
@@ -12,7 +12,7 @@ class ContactInfo with _$ContactInfo {
 }
 
 @unfreezed
-class ContactInfoInput with _$ContactInfoInput {
+abstract class ContactInfoInput with _$ContactInfoInput {
   factory ContactInfoInput({
     @Default('') String name,
     @Default('') String email,

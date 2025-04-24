@@ -1,7 +1,7 @@
 part of '../reports.dart';
 
 @freezed
-class ReportPage with _$ReportPage {
+abstract class ReportPage with _$ReportPage {
   const factory ReportPage({
     /// [name] is the name of the report page.
     required String name,

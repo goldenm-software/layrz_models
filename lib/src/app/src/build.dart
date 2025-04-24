@@ -1,7 +1,7 @@
 part of '../app.dart';
 
 @freezed
-class AppBuild with _$AppBuild {
+abstract class AppBuild with _$AppBuild {
   /// [AppBuild] is the build of the app
   const factory AppBuild({
     /// [id] is the ID of the build

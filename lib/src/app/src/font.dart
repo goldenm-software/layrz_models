@@ -1,7 +1,7 @@
 part of '../app.dart';
 
 @freezed
-class AppFont with _$AppFont {
+abstract class AppFont with _$AppFont {
   /// [AppFont] is a model that defines the font of the application
   const factory AppFont({
     /// [source] defines where is stored the font
@@ -21,7 +21,7 @@ class AppFont with _$AppFont {
 }
 
 @unfreezed
-class AppFontInput with _$AppFontInput {
+abstract class AppFontInput with _$AppFontInput {
   /// [AppFontInput] is a model that defines the font of the application
   factory AppFontInput({
     /// [source] defines where is stored the font

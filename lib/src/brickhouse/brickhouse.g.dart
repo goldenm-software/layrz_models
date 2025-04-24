@@ -37,7 +37,8 @@ _$BrickhouseAlertImpl _$$BrickhouseAlertImplFromJson(
           .fromJson((json['curfewEndHour'] as num?)?.toInt()),
       timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
-          ?.map((e) => const WeekdayConverter().fromJson(e as String))
+          ?.map((e) =>
+              $enumDecode(_$WeekdayEnumMap, e, unknownValue: Weekday.monday))
           .toList(),
       geofenceColor: const ColorOrNullConverter()
           .fromJson(json['geofenceColor'] as String?),
@@ -76,9 +77,8 @@ Map<String, dynamic> _$$BrickhouseAlertImplToJson(
       'curfewEndHour': const BrickhouseTimeOfDayMinuteOrNullConverter()
           .toJson(instance.curfewEndHour),
       'timezone': instance.timezone,
-      'curfewWeekdays': instance.curfewWeekdays
-          ?.map(const WeekdayConverter().toJson)
-          .toList(),
+      'curfewWeekdays':
+          instance.curfewWeekdays?.map((e) => e.toJson()).toList(),
       'geofenceColor':
           const ColorOrNullConverter().toJson(instance.geofenceColor),
       'geofenceMode':
@@ -101,6 +101,16 @@ const _$BrickhouseAlertTypeEnumMap = {
   BrickhouseAlertType.speeding: 'SPEEDING',
   BrickhouseAlertType.unplugged: 'UNPLUGGED',
   BrickhouseAlertType.unknown: 'UNKNOWN',
+};
+
+const _$WeekdayEnumMap = {
+  Weekday.monday: 'MON',
+  Weekday.tuesday: 'TUE',
+  Weekday.wednesday: 'WED',
+  Weekday.thursday: 'THU',
+  Weekday.friday: 'FRI',
+  Weekday.saturday: 'SAT',
+  Weekday.sunday: 'SUN',
 };
 
 const _$BrickhouseGeofenceTriggerEnumMap = {
@@ -139,7 +149,8 @@ _$BrickhouseAlertInputImpl _$$BrickhouseAlertInputImplFromJson(
           .fromJson((json['curfewEndHour'] as num?)?.toInt()),
       timezone: json['timezone'] as String?,
       curfewWeekdays: (json['curfewWeekdays'] as List<dynamic>?)
-              ?.map((e) => const WeekdayConverter().fromJson(e as String))
+              ?.map((e) => $enumDecode(_$WeekdayEnumMap, e,
+                  unknownValue: Weekday.monday))
               .toList() ??
           const [
             Weekday.monday,
@@ -187,9 +198,8 @@ Map<String, dynamic> _$$BrickhouseAlertInputImplToJson(
       'curfewEndHour': const BrickhouseTimeOfDayMinuteOrNullConverter()
           .toJson(instance.curfewEndHour),
       'timezone': instance.timezone,
-      'curfewWeekdays': instance.curfewWeekdays
-          ?.map(const WeekdayConverter().toJson)
-          .toList(),
+      'curfewWeekdays':
+          instance.curfewWeekdays?.map((e) => e.toJson()).toList(),
       'geofenceColor':
           const ColorOrNullConverter().toJson(instance.geofenceColor),
       'geofenceMode':

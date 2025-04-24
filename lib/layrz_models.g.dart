@@ -1890,7 +1890,8 @@ _$TriggerImpl _$$TriggerImplFromJson(Map<String, dynamic> json) =>
           .fromJson(json['exactHour'] as String?),
       crontabFormat: json['crontabFormat'] as String?,
       weekdays: (json['weekdays'] as List<dynamic>?)
-          ?.map((e) => const WeekdayConverter().fromJson(e as String))
+          ?.map((e) =>
+              $enumDecode(_$WeekdayEnumMap, e, unknownValue: Weekday.monday))
           .toList(),
       isPlainCrontab: json['isPlainCrontab'] as bool?,
       timezoneId: json['timezoneId'] as String?,
@@ -1934,8 +1935,7 @@ Map<String, dynamic> _$$TriggerImplToJson(_$TriggerImpl instance) =>
       'script': instance.script,
       'exactHour': const TimeOfDayOrNullConverter().toJson(instance.exactHour),
       'crontabFormat': instance.crontabFormat,
-      'weekdays':
-          instance.weekdays?.map(const WeekdayConverter().toJson).toList(),
+      'weekdays': instance.weekdays?.map((e) => e.toJson()).toList(),
       'isPlainCrontab': instance.isPlainCrontab,
       'timezoneId': instance.timezoneId,
       'priority': instance.priority,
@@ -1952,6 +1952,16 @@ Map<String, dynamic> _$$TriggerImplToJson(_$TriggerImpl instance) =>
           const DurationOrNullConverter().toJson(instance.cooldownTime),
       'access': instance.access?.map((e) => e.toJson()).toList(),
     };
+
+const _$WeekdayEnumMap = {
+  Weekday.monday: 'MON',
+  Weekday.tuesday: 'TUE',
+  Weekday.wednesday: 'WED',
+  Weekday.thursday: 'THU',
+  Weekday.friday: 'FRI',
+  Weekday.saturday: 'SAT',
+  Weekday.sunday: 'SUN',
+};
 
 _$TriggerActivationImpl _$$TriggerActivationImplFromJson(
         Map<String, dynamic> json) =>
@@ -2007,7 +2017,8 @@ _$TriggerInputImpl _$$TriggerInputImplFromJson(Map<String, dynamic> json) =>
       crontabFormat: json['crontabFormat'] as String?,
       isPlainCrontab: json['isPlainCrontab'] as bool? ?? false,
       weekdays: (json['weekdays'] as List<dynamic>?)
-              ?.map((e) => const WeekdayConverter().fromJson(e as String))
+              ?.map((e) => $enumDecode(_$WeekdayEnumMap, e,
+                  unknownValue: Weekday.monday))
               .toList() ??
           Weekday.values,
       formula: json['formula'] as String?,
@@ -2074,8 +2085,7 @@ Map<String, dynamic> _$$TriggerInputImplToJson(_$TriggerInputImpl instance) =>
       'exactHour': const TimeOfDayOrNullConverter().toJson(instance.exactHour),
       'crontabFormat': instance.crontabFormat,
       'isPlainCrontab': instance.isPlainCrontab,
-      'weekdays':
-          instance.weekdays.map(const WeekdayConverter().toJson).toList(),
+      'weekdays': instance.weekdays.map((e) => e.toJson()).toList(),
       'formula': instance.formula,
       'script': instance.script,
       'priority': instance.priority,

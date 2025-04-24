@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class TenvioItemQuantity with _$TenvioItemQuantity {
+abstract class TenvioItemQuantity with _$TenvioItemQuantity {
   const factory TenvioItemQuantity({
     /// [quantity] Quantity of the matrix item related to the order item quantity.
     int? quantity,
@@ -20,7 +20,7 @@ class TenvioItemQuantity with _$TenvioItemQuantity {
 }
 
 @unfreezed
-class TenvioItemQuantityInput with _$TenvioItemQuantityInput {
+abstract class TenvioItemQuantityInput with _$TenvioItemQuantityInput {
   factory TenvioItemQuantityInput({
     /// [quantity] Quantity of the matrix item related to the order item quantity.
     @Default(0) int quantity,

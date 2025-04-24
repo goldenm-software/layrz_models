@@ -1,7 +1,7 @@
 part of '../users.dart';
 
 @unfreezed
-class BHSUserInput with _$BHSUserInput {
+abstract class BHSUserInput with _$BHSUserInput {
   const BHSUserInput._();
 
   factory BHSUserInput({

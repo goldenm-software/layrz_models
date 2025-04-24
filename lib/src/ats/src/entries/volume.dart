@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsVolume with _$AtsVolume {
+abstract class AtsVolume with _$AtsVolume {
   /// Creates a new `AtsVolumenHistory`.
 
   const factory AtsVolume({

@@ -68,7 +68,7 @@ mixin _$BrickhouseAlert {
   String? get timezone => throw _privateConstructorUsedError;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   List<Weekday>? get curfewWeekdays => throw _privateConstructorUsedError;
 
   /// Geofence color, in hex mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
@@ -104,8 +104,12 @@ mixin _$BrickhouseAlert {
   /// isDisabled
   bool? get isDisabled => throw _privateConstructorUsedError;
 
+  /// Serializes this BrickhouseAlert to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BrickhouseAlert
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BrickhouseAlertCopyWith<BrickhouseAlert> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -132,7 +136,7 @@ abstract class $BrickhouseAlertCopyWith<$Res> {
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
       String? timezone,
-      @WeekdayConverter() List<Weekday>? curfewWeekdays,
+      @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
@@ -155,6 +159,8 @@ class _$BrickhouseAlertCopyWithImpl<$Res, $Val extends BrickhouseAlert>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BrickhouseAlert
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -313,7 +319,7 @@ abstract class _$$BrickhouseAlertImplCopyWith<$Res>
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
       String? timezone,
-      @WeekdayConverter() List<Weekday>? curfewWeekdays,
+      @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
@@ -334,6 +340,8 @@ class __$$BrickhouseAlertImplCopyWithImpl<$Res>
       _$BrickhouseAlertImpl _value, $Res Function(_$BrickhouseAlertImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BrickhouseAlert
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -487,7 +495,8 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
       @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewEndHour,
       this.timezone,
-      @WeekdayConverter() final List<Weekday>? curfewWeekdays,
+      @JsonKey(unknownEnumValue: Weekday.monday)
+      final List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() this.geofenceColor,
       @GeofenceModeOrNullConverter() this.geofenceMode,
       this.geofenceRadius,
@@ -611,7 +620,7 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
   @override
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   List<Weekday>? get curfewWeekdays {
     final value = _curfewWeekdays;
     if (value == null) return null;
@@ -727,7 +736,7 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
                 other.isDisabled == isDisabled));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -758,7 +767,9 @@ class _$BrickhouseAlertImpl implements _BrickhouseAlert {
         isDisabled
       ]);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BrickhouseAlert
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BrickhouseAlertImplCopyWith<_$BrickhouseAlertImpl> get copyWith =>
@@ -792,7 +803,8 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
       @BrickhouseTimeOfDayMinuteOrNullConverter()
       final TimeOfDay? curfewEndHour,
       final String? timezone,
-      @WeekdayConverter() final List<Weekday>? curfewWeekdays,
+      @JsonKey(unknownEnumValue: Weekday.monday)
+      final List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() final Color? geofenceColor,
       @GeofenceModeOrNullConverter() final GeofenceMode? geofenceMode,
       final double? geofenceRadius,
@@ -807,116 +819,118 @@ abstract class _BrickhouseAlert implements BrickhouseAlert {
   factory _BrickhouseAlert.fromJson(Map<String, dynamic> json) =
       _$BrickhouseAlertImpl.fromJson;
 
-  @override
-
   /// ID of the alert entity. This ID is unique.
-  String get id;
   @override
+  String get id;
 
   /// Name of the alert.
-  String get name;
   @override
+  String get name;
 
   /// Type of the alert.
-  BrickhouseAlertType get type;
   @override
+  BrickhouseAlertType get type;
 
   /// List of assets
-  List<Asset>? get assets;
   @override
+  List<Asset>? get assets;
 
   /// List of assets IDs.
-  List<String>? get assetsIds;
   @override
+  List<String>? get assetsIds;
 
   /// Email to send the alert to.
-  List<String>? get email;
   @override
+  List<String>? get email;
 
   /// Phone number to send the alert to.
-  List<NullablePhoneNumber?>? get phone;
   @override
+  List<NullablePhoneNumber?>? get phone;
 
   /// If the alert should be shown in the mobile app.
-  bool? get hasMobilePopup;
   @override
+  bool? get hasMobilePopup;
 
   /// If the alert should be shown in the web app.
-  bool? get hasWebPopup;
   @override
+  bool? get hasWebPopup;
 
   /// Email to send the alert to.
-  bool? get hasEmail;
   @override
+  bool? get hasEmail;
 
   /// Phone number to send the alert to.
-  bool? get hasPhone;
   @override
+  bool? get hasPhone;
 
   /// Minimum battery level to trigger the alert, in percentage (%). Only for BrickhouseAlertType.BATTERY
-  int? get batteryMinLevel;
   @override
+  int? get batteryMinLevel;
 
   /// Start hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
+  @override
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   TimeOfDay? get curfewStartHour;
-  @override
 
   /// End hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
+  @override
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   TimeOfDay? get curfewEndHour;
-  @override
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
-  String? get timezone;
   @override
+  String? get timezone;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
-  @WeekdayConverter()
-  List<Weekday>? get curfewWeekdays;
   @override
+  @JsonKey(unknownEnumValue: Weekday.monday)
+  List<Weekday>? get curfewWeekdays;
 
   /// Geofence color, in hex mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
+  @override
   @ColorOrNullConverter()
   Color? get geofenceColor;
-  @override
 
   /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
+  @override
   @GeofenceModeOrNullConverter()
   GeofenceMode? get geofenceMode;
-  @override
 
   /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
-  double? get geofenceRadius;
   @override
+  double? get geofenceRadius;
 
   /// geofenceShape [GeofencePoint]
-  List<GeofencePoint>? get geofenceShape;
   @override
+  List<GeofencePoint>? get geofenceShape;
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   ///
+  @override
   @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
   BrickhouseGeofenceTrigger? get geofenceTrigger;
-  @override
 
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
-  double? get maxSpeedMaxValue;
   @override
+  double? get maxSpeedMaxValue;
 
   /// [isMuted] represents if the alert is muted or not.
-  bool? get isMuted;
   @override
+  bool? get isMuted;
 
   /// [speedingThreshold] represents the threshold of the speeding alert.
   /// This is the maximum speed that the asset can reach before the alert is triggered.
-  double? get speedingThreshold;
   @override
+  double? get speedingThreshold;
 
   /// isDisabled
-  bool? get isDisabled;
   @override
-  @JsonKey(ignore: true)
+  bool? get isDisabled;
+
+  /// Create a copy of BrickhouseAlert
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BrickhouseAlertImplCopyWith<_$BrickhouseAlertImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1017,11 +1031,11 @@ mixin _$BrickhouseAlertInput {
   set timezone(String? value) => throw _privateConstructorUsedError;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   List<Weekday>? get curfewWeekdays => throw _privateConstructorUsedError;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   set curfewWeekdays(List<Weekday>? value) =>
       throw _privateConstructorUsedError;
 
@@ -1084,8 +1098,12 @@ mixin _$BrickhouseAlertInput {
   /// This is the maximum speed that the asset can reach before the alert is triggered.
   set speedingThreshold(double? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this BrickhouseAlertInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BrickhouseAlertInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BrickhouseAlertInputCopyWith<BrickhouseAlertInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1111,7 +1129,7 @@ abstract class $BrickhouseAlertInputCopyWith<$Res> {
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
       String? timezone,
-      @WeekdayConverter() List<Weekday>? curfewWeekdays,
+      @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
@@ -1134,6 +1152,8 @@ class _$BrickhouseAlertInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BrickhouseAlertInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1281,7 +1301,7 @@ abstract class _$$BrickhouseAlertInputImplCopyWith<$Res>
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
       String? timezone,
-      @WeekdayConverter() List<Weekday>? curfewWeekdays,
+      @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
@@ -1301,6 +1321,8 @@ class __$$BrickhouseAlertInputImplCopyWithImpl<$Res>
       $Res Function(_$BrickhouseAlertInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BrickhouseAlertInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1443,7 +1465,7 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
       @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() this.curfewEndHour,
       this.timezone,
-      @WeekdayConverter() this.curfewWeekdays = const [
+      @JsonKey(unknownEnumValue: Weekday.monday) this.curfewWeekdays = const [
         Weekday.monday,
         Weekday.tuesday,
         Weekday.wednesday,
@@ -1531,8 +1553,7 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
   @override
-  @JsonKey()
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   List<Weekday>? curfewWeekdays;
 
   /// Geofence color, in hex mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
@@ -1579,7 +1600,9 @@ class _$BrickhouseAlertInputImpl implements _BrickhouseAlertInput {
     return 'BrickhouseAlertInput(id: $id, name: $name, type: $type, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, isMuted: $isMuted, speedingThreshold: $speedingThreshold)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BrickhouseAlertInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BrickhouseAlertInputImplCopyWith<_$BrickhouseAlertInputImpl>
@@ -1611,7 +1634,7 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewStartHour,
       @BrickhouseTimeOfDayMinuteOrNullConverter() TimeOfDay? curfewEndHour,
       String? timezone,
-      @WeekdayConverter() List<Weekday>? curfewWeekdays,
+      @JsonKey(unknownEnumValue: Weekday.monday) List<Weekday>? curfewWeekdays,
       @ColorOrNullConverter() Color? geofenceColor,
       @GeofenceModeOrNullConverter() GeofenceMode? geofenceMode,
       double? geofenceRadius,
@@ -1625,183 +1648,185 @@ abstract class _BrickhouseAlertInput implements BrickhouseAlertInput {
   factory _BrickhouseAlertInput.fromJson(Map<String, dynamic> json) =
       _$BrickhouseAlertInputImpl.fromJson;
 
-  @override
-
   /// ID of the alert entity. Send only when you want to edit it
+  @override
   String? get id;
 
   /// ID of the alert entity. Send only when you want to edit it
   set id(String? value);
-  @override
 
   /// Name of the alert.
+  @override
   String get name;
 
   /// Name of the alert.
   set name(String value);
-  @override
 
   /// Type of the alert.
+  @override
   BrickhouseAlertType get type;
 
   /// Type of the alert.
   set type(BrickhouseAlertType value);
-  @override
 
   /// List of assets IDs.
+  @override
   List<String> get assetsIds;
 
   /// List of assets IDs.
   set assetsIds(List<String> value);
-  @override
 
   /// Email to send the alert to.
+  @override
   List<String>? get email;
 
   /// Email to send the alert to.
   set email(List<String>? value);
-  @override
 
   /// Phone number to send the alert to.
+  @override
   List<NullablePhoneNumber?>? get phone;
 
   /// Phone number to send the alert to.
   set phone(List<NullablePhoneNumber?>? value);
-  @override
 
   /// If the alert should be shown in the mobile app.
+  @override
   bool? get hasMobilePopup;
 
   /// If the alert should be shown in the mobile app.
   set hasMobilePopup(bool? value);
-  @override
 
   /// If the alert should be shown in the web app.
+  @override
   bool? get hasWebPopup;
 
   /// If the alert should be shown in the web app.
   set hasWebPopup(bool? value);
-  @override
 
   /// Email to send the alert to.
+  @override
   bool? get hasEmail;
 
   /// Email to send the alert to.
   set hasEmail(bool? value);
-  @override
 
   /// Phone number to send the alert to.
+  @override
   bool? get hasPhone;
 
   /// Phone number to send the alert to.
   set hasPhone(bool? value);
-  @override
 
   /// Minimum battery level to trigger the alert, in percentage (%). Only for BrickhouseAlertType.BATTERY
+  @override
   int? get batteryMinLevel;
 
   /// Minimum battery level to trigger the alert, in percentage (%). Only for BrickhouseAlertType.BATTERY
   set batteryMinLevel(int? value);
-  @override
 
   /// Start hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
+  @override
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   TimeOfDay? get curfewStartHour;
 
   /// Start hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   set curfewStartHour(TimeOfDay? value);
-  @override
 
   /// End hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
+  @override
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   TimeOfDay? get curfewEndHour;
 
   /// End hour of the curfew, in minutes from midnight in the local timezone. Only for BrickhouseAlertType.CURFEW
   @BrickhouseTimeOfDayMinuteOrNullConverter()
   set curfewEndHour(TimeOfDay? value);
-  @override
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
+  @override
   String? get timezone;
 
   /// Timezone of the curfew. Only for BrickhouseAlertType.CURFEW
   set timezone(String? value);
-  @override
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
-  @WeekdayConverter()
+  @override
+  @JsonKey(unknownEnumValue: Weekday.monday)
   List<Weekday>? get curfewWeekdays;
 
   /// Weekdays to apply the curfew. Only for BrickhouseAlertType.CURFEW
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   set curfewWeekdays(List<Weekday>? value);
-  @override
 
   /// Geofence color, in hex mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
+  @override
   @ColorOrNullConverter()
   Color? get geofenceColor;
 
   /// Geofence color, in hex mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   @ColorOrNullConverter()
   set geofenceColor(Color? value);
-  @override
 
   /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
+  @override
   @GeofenceModeOrNullConverter()
   GeofenceMode? get geofenceMode;
 
   /// Geofence mode. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   @GeofenceModeOrNullConverter()
   set geofenceMode(GeofenceMode? value);
-  @override
 
   /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
+  @override
   double? get geofenceRadius;
 
   /// Geofence radius in meters. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   set geofenceRadius(double? value);
-  @override
 
   /// geofenceShape [GeofencePointInput]
+  @override
   List<GeofencePoint>? get geofenceShape;
 
   /// geofenceShape [GeofencePointInput]
   set geofenceShape(List<GeofencePoint>? value);
-  @override
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
+  @override
   @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
   BrickhouseGeofenceTrigger? get geofenceTrigger;
 
   /// Geofence trigger. Only for BrickhouseAlertType.PRESENCE_GEOFENCE
   @JsonKey(unknownEnumValue: BrickhouseGeofenceTrigger.unknown)
   set geofenceTrigger(BrickhouseGeofenceTrigger? value);
-  @override
 
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
+  @override
   double? get maxSpeedMaxValue;
 
   /// Maximum speed to trigger the alert, in kilometers per hour (km/h). Only for BrickhouseAlertType
   set maxSpeedMaxValue(double? value);
-  @override
 
   /// [isMuted] represents if the alert is muted or not.
+  @override
   bool? get isMuted;
 
   /// [isMuted] represents if the alert is muted or not.
   set isMuted(bool? value);
-  @override
 
   /// [speedingThreshold] represents the threshold of the speeding alert.
   /// This is the maximum speed that the asset can reach before the alert is triggered.
+  @override
   double? get speedingThreshold;
 
   /// [speedingThreshold] represents the threshold of the speeding alert.
   /// This is the maximum speed that the asset can reach before the alert is triggered.
   set speedingThreshold(double? value);
+
+  /// Create a copy of BrickhouseAlertInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BrickhouseAlertInputImplCopyWith<_$BrickhouseAlertInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1817,8 +1842,12 @@ mixin _$BHSDriverSafetyEventScore {
   String? get status => throw _privateConstructorUsedError;
   List<AssetTelemetry>? get messages => throw _privateConstructorUsedError;
 
+  /// Serializes this BHSDriverSafetyEventScore to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BHSDriverSafetyEventScore
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BHSDriverSafetyEventScoreCopyWith<BHSDriverSafetyEventScore> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1843,6 +1872,8 @@ class _$BHSDriverSafetyEventScoreCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BHSDriverSafetyEventScore
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1889,6 +1920,8 @@ class __$$BHSDriverSafetyEventScoreImplCopyWithImpl<$Res>
       $Res Function(_$BHSDriverSafetyEventScoreImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BHSDriverSafetyEventScore
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1952,12 +1985,14 @@ class _$BHSDriverSafetyEventScoreImpl implements _BHSDriverSafetyEventScore {
             const DeepCollectionEquality().equals(other._messages, _messages));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, score, status,
       const DeepCollectionEquality().hash(_messages));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BHSDriverSafetyEventScore
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSDriverSafetyEventScoreImplCopyWith<_$BHSDriverSafetyEventScoreImpl>
@@ -1987,8 +2022,11 @@ abstract class _BHSDriverSafetyEventScore implements BHSDriverSafetyEventScore {
   String? get status;
   @override
   List<AssetTelemetry>? get messages;
+
+  /// Create a copy of BHSDriverSafetyEventScore
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BHSDriverSafetyEventScoreImplCopyWith<_$BHSDriverSafetyEventScoreImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2004,8 +2042,12 @@ mixin _$BHSDriverSafetyDrivenScore {
   String? get status => throw _privateConstructorUsedError;
   double get drivenSeconds => throw _privateConstructorUsedError;
 
+  /// Serializes this BHSDriverSafetyDrivenScore to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BHSDriverSafetyDrivenScore
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BHSDriverSafetyDrivenScoreCopyWith<BHSDriverSafetyDrivenScore>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2031,6 +2073,8 @@ class _$BHSDriverSafetyDrivenScoreCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BHSDriverSafetyDrivenScore
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2077,6 +2121,8 @@ class __$$BHSDriverSafetyDrivenScoreImplCopyWithImpl<$Res>
       $Res Function(_$BHSDriverSafetyDrivenScoreImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BHSDriverSafetyDrivenScore
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2134,11 +2180,13 @@ class _$BHSDriverSafetyDrivenScoreImpl implements _BHSDriverSafetyDrivenScore {
                 other.drivenSeconds == drivenSeconds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, score, status, drivenSeconds);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BHSDriverSafetyDrivenScore
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSDriverSafetyDrivenScoreImplCopyWith<_$BHSDriverSafetyDrivenScoreImpl>
@@ -2169,8 +2217,11 @@ abstract class _BHSDriverSafetyDrivenScore
   String? get status;
   @override
   double get drivenSeconds;
+
+  /// Create a copy of BHSDriverSafetyDrivenScore
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BHSDriverSafetyDrivenScoreImplCopyWith<_$BHSDriverSafetyDrivenScoreImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2185,8 +2236,12 @@ mixin _$BHSDriverSafetySpeedingEvents {
   String? get status => throw _privateConstructorUsedError;
   List<TriggerActivation>? get messages => throw _privateConstructorUsedError;
 
+  /// Serializes this BHSDriverSafetySpeedingEvents to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BHSDriverSafetySpeedingEvents
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BHSDriverSafetySpeedingEventsCopyWith<BHSDriverSafetySpeedingEvents>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2213,6 +2268,8 @@ class _$BHSDriverSafetySpeedingEventsCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BHSDriverSafetySpeedingEvents
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2254,6 +2311,8 @@ class __$$BHSDriverSafetySpeedingEventsImplCopyWithImpl<$Res>
       $Res Function(_$BHSDriverSafetySpeedingEventsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BHSDriverSafetySpeedingEvents
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2311,12 +2370,14 @@ class _$BHSDriverSafetySpeedingEventsImpl
             const DeepCollectionEquality().equals(other._messages, _messages));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, status, const DeepCollectionEquality().hash(_messages));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BHSDriverSafetySpeedingEvents
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSDriverSafetySpeedingEventsImplCopyWith<
@@ -2345,8 +2406,11 @@ abstract class _BHSDriverSafetySpeedingEvents
   String? get status;
   @override
   List<TriggerActivation>? get messages;
+
+  /// Create a copy of BHSDriverSafetySpeedingEvents
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BHSDriverSafetySpeedingEventsImplCopyWith<
           _$BHSDriverSafetySpeedingEventsImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -2367,8 +2431,12 @@ mixin _$BHSDriverSafetyDrivingEvent {
   TelemetryPosition? get endPosition => throw _privateConstructorUsedError;
   double get drivenSeconds => throw _privateConstructorUsedError;
 
+  /// Serializes this BHSDriverSafetyDrivingEvent to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BHSDriverSafetyDrivingEventCopyWith<BHSDriverSafetyDrivingEvent>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2403,6 +2471,8 @@ class _$BHSDriverSafetyDrivingEventCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2436,6 +2506,8 @@ class _$BHSDriverSafetyDrivingEventCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TelemetryPositionCopyWith<$Res>? get startPosition {
@@ -2448,6 +2520,8 @@ class _$BHSDriverSafetyDrivingEventCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $TelemetryPositionCopyWith<$Res>? get endPosition {
@@ -2493,6 +2567,8 @@ class __$$BHSDriverSafetyDrivingEventImplCopyWithImpl<$Res>
       $Res Function(_$BHSDriverSafetyDrivingEventImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2575,12 +2651,14 @@ class _$BHSDriverSafetyDrivingEventImpl
                 other.drivenSeconds == drivenSeconds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, startAt, endAt, startPosition, endPosition, drivenSeconds);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSDriverSafetyDrivingEventImplCopyWith<_$BHSDriverSafetyDrivingEventImpl>
@@ -2619,8 +2697,11 @@ abstract class _BHSDriverSafetyDrivingEvent
   TelemetryPosition? get endPosition;
   @override
   double get drivenSeconds;
+
+  /// Create a copy of BHSDriverSafetyDrivingEvent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BHSDriverSafetyDrivingEventImplCopyWith<_$BHSDriverSafetyDrivingEventImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2636,8 +2717,12 @@ mixin _$BHSDriverSafetyDriving {
   List<BHSDriverSafetyDrivingEvent>? get messages =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this BHSDriverSafetyDriving to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BHSDriverSafetyDriving
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BHSDriverSafetyDrivingCopyWith<BHSDriverSafetyDriving> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2662,6 +2747,8 @@ class _$BHSDriverSafetyDrivingCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BHSDriverSafetyDriving
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2703,6 +2790,8 @@ class __$$BHSDriverSafetyDrivingImplCopyWithImpl<$Res>
       $Res Function(_$BHSDriverSafetyDrivingImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BHSDriverSafetyDriving
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2758,12 +2847,14 @@ class _$BHSDriverSafetyDrivingImpl implements _BHSDriverSafetyDriving {
             const DeepCollectionEquality().equals(other._messages, _messages));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, status, const DeepCollectionEquality().hash(_messages));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BHSDriverSafetyDriving
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSDriverSafetyDrivingImplCopyWith<_$BHSDriverSafetyDrivingImpl>
@@ -2791,8 +2882,11 @@ abstract class _BHSDriverSafetyDriving implements BHSDriverSafetyDriving {
   String? get status;
   @override
   List<BHSDriverSafetyDrivingEvent>? get messages;
+
+  /// Create a copy of BHSDriverSafetyDriving
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BHSDriverSafetyDrivingImplCopyWith<_$BHSDriverSafetyDrivingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -2818,8 +2912,12 @@ mixin _$BrickhouseDriverSafety {
   BHSDriverSafetyDriving? get drivingEvents =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this BrickhouseDriverSafety to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BrickhouseDriverSafetyCopyWith<BrickhouseDriverSafety> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2858,6 +2956,8 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2901,6 +3001,8 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSDriverSafetyDrivenScoreCopyWith<$Res>? get drivingHours {
@@ -2914,6 +3016,8 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshAcceleration {
@@ -2927,6 +3031,8 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshBraking {
@@ -2940,6 +3046,8 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSDriverSafetyEventScoreCopyWith<$Res>? get harshCornering {
@@ -2953,6 +3061,8 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSDriverSafetySpeedingEventsCopyWith<$Res>? get speedingEvents {
@@ -2966,6 +3076,8 @@ class _$BrickhouseDriverSafetyCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $BHSDriverSafetyDrivingCopyWith<$Res>? get drivingEvents {
@@ -3022,6 +3134,8 @@ class __$$BrickhouseDriverSafetyImplCopyWithImpl<$Res>
       $Res Function(_$BrickhouseDriverSafetyImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3122,7 +3236,7 @@ class _$BrickhouseDriverSafetyImpl implements _BrickhouseDriverSafety {
                 other.drivingEvents == drivingEvents));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3134,7 +3248,9 @@ class _$BrickhouseDriverSafetyImpl implements _BrickhouseDriverSafety {
       speedingEvents,
       drivingEvents);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BrickhouseDriverSafetyImplCopyWith<_$BrickhouseDriverSafetyImpl>
@@ -3177,8 +3293,11 @@ abstract class _BrickhouseDriverSafety implements BrickhouseDriverSafety {
   BHSDriverSafetySpeedingEvents? get speedingEvents;
   @override
   BHSDriverSafetyDriving? get drivingEvents;
+
+  /// Create a copy of BrickhouseDriverSafety
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BrickhouseDriverSafetyImplCopyWith<_$BrickhouseDriverSafetyImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3202,8 +3321,12 @@ mixin _$BHSEncodedTrip {
   double get createdAt => throw _privateConstructorUsedError;
   set createdAt(double value) => throw _privateConstructorUsedError;
 
+  /// Serializes this BHSEncodedTrip to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BHSEncodedTrip
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BHSEncodedTripCopyWith<BHSEncodedTrip> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3233,6 +3356,8 @@ class _$BHSEncodedTripCopyWithImpl<$Res, $Val extends BHSEncodedTrip>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BHSEncodedTrip
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3297,6 +3422,8 @@ class __$$BHSEncodedTripImplCopyWithImpl<$Res>
       _$BHSEncodedTripImpl _value, $Res Function(_$BHSEncodedTripImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BHSEncodedTrip
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3368,7 +3495,9 @@ class _$BHSEncodedTripImpl implements _BHSEncodedTrip {
     return 'BHSEncodedTrip(id: $id, assetId: $assetId, encodedPolyline: $encodedPolyline, lineStartUnix: $lineStartUnix, lineEndUnix: $lineEndUnix, createdAt: $createdAt)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BHSEncodedTrip
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSEncodedTripImplCopyWith<_$BHSEncodedTripImpl> get copyWith =>
@@ -3413,8 +3542,11 @@ abstract class _BHSEncodedTrip implements BHSEncodedTrip {
   @override
   double get createdAt;
   set createdAt(double value);
+
+  /// Create a copy of BHSEncodedTrip
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BHSEncodedTripImplCopyWith<_$BHSEncodedTripImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3430,8 +3562,12 @@ mixin _$BHSEncodedTripInput {
   int get lineStartUnix => throw _privateConstructorUsedError;
   int get lineEndUnix => throw _privateConstructorUsedError;
 
+  /// Serializes this BHSEncodedTripInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BHSEncodedTripInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BHSEncodedTripInputCopyWith<BHSEncodedTripInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3459,6 +3595,8 @@ class _$BHSEncodedTripInputCopyWithImpl<$Res, $Val extends BHSEncodedTripInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BHSEncodedTripInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3511,6 +3649,8 @@ class __$$BHSEncodedTripInputImplCopyWithImpl<$Res>
       $Res Function(_$BHSEncodedTripInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BHSEncodedTripInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3580,12 +3720,14 @@ class _$BHSEncodedTripInputImpl implements _BHSEncodedTripInput {
                 other.lineEndUnix == lineEndUnix));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, assetId, encodedPolyline, lineStartUnix, lineEndUnix);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BHSEncodedTripInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSEncodedTripInputImplCopyWith<_$BHSEncodedTripInputImpl> get copyWith =>
@@ -3618,8 +3760,11 @@ abstract class _BHSEncodedTripInput implements BHSEncodedTripInput {
   int get lineStartUnix;
   @override
   int get lineEndUnix;
+
+  /// Create a copy of BHSEncodedTripInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BHSEncodedTripInputImplCopyWith<_$BHSEncodedTripInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3643,8 +3788,12 @@ mixin _$BHSPermissionTier {
   /// Is the list of granted access
   List<Access>? get access => throw _privateConstructorUsedError;
 
+  /// Serializes this BHSPermissionTier to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BHSPermissionTier
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BHSPermissionTierCopyWith<BHSPermissionTier> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3676,6 +3825,8 @@ class _$BHSPermissionTierCopyWithImpl<$Res, $Val extends BHSPermissionTier>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BHSPermissionTier
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3752,6 +3903,8 @@ class __$$BHSPermissionTierImplCopyWithImpl<$Res>
       $Res Function(_$BHSPermissionTierImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BHSPermissionTier
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3887,7 +4040,7 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -3900,7 +4053,9 @@ class _$BHSPermissionTierImpl implements _BHSPermissionTier {
       const DeepCollectionEquality().hash(_users),
       const DeepCollectionEquality().hash(_access));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BHSPermissionTier
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSPermissionTierImplCopyWith<_$BHSPermissionTierImpl> get copyWith =>
@@ -3943,12 +4098,15 @@ abstract class _BHSPermissionTier implements BHSPermissionTier {
   Map<String, dynamic>? get customProperties;
   @override
   List<User>? get users;
-  @override
 
   /// Is the list of granted access
-  List<Access>? get access;
   @override
-  @JsonKey(ignore: true)
+  List<Access>? get access;
+
+  /// Create a copy of BHSPermissionTier
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BHSPermissionTierImplCopyWith<_$BHSPermissionTierImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3977,8 +4135,12 @@ mixin _$BHSPermissionTierInput {
   set customProperties(Map<String, dynamic>? value) =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this BHSPermissionTierInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BHSPermissionTierInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BHSPermissionTierInputCopyWith<BHSPermissionTierInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4009,6 +4171,8 @@ class _$BHSPermissionTierInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BHSPermissionTierInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4076,6 +4240,8 @@ class __$$BHSPermissionTierInputImplCopyWithImpl<$Res>
       $Res Function(_$BHSPermissionTierInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BHSPermissionTierInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4148,7 +4314,9 @@ class _$BHSPermissionTierInputImpl implements _BHSPermissionTierInput {
     return 'BHSPermissionTierInput(id: $id, name: $name, description: $description, billingPeriod: $billingPeriod, tierLevel: $tierLevel, customProperties: $customProperties)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BHSPermissionTierInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BHSPermissionTierInputImplCopyWith<_$BHSPermissionTierInputImpl>
@@ -4193,8 +4361,11 @@ abstract class _BHSPermissionTierInput implements BHSPermissionTierInput {
   @override
   Map<String, dynamic>? get customProperties;
   set customProperties(Map<String, dynamic>? value);
+
+  /// Create a copy of BHSPermissionTierInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BHSPermissionTierInputImplCopyWith<_$BHSPermissionTierInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -4218,8 +4389,12 @@ mixin _$BrickHouseWorkspaceInput {
   String get timezoneId => throw _privateConstructorUsedError;
   List<String>? get assetsIds => throw _privateConstructorUsedError;
 
+  /// Serializes this BrickHouseWorkspaceInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of BrickHouseWorkspaceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $BrickHouseWorkspaceInputCopyWith<BrickHouseWorkspaceInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4253,6 +4428,8 @@ class _$BrickHouseWorkspaceInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of BrickHouseWorkspaceInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4328,6 +4505,8 @@ class __$$BrickHouseWorkspaceInputImplCopyWithImpl<$Res>
       $Res Function(_$BrickHouseWorkspaceInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of BrickHouseWorkspaceInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4439,12 +4618,14 @@ class _$BrickHouseWorkspaceInputImpl implements _BrickHouseWorkspaceInput {
                 .equals(other._assetsIds, _assetsIds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, appId, name, metricSystem,
       typeApp, timezoneId, const DeepCollectionEquality().hash(_assetsIds));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of BrickHouseWorkspaceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$BrickHouseWorkspaceInputImplCopyWith<_$BrickHouseWorkspaceInputImpl>
@@ -4483,17 +4664,20 @@ abstract class _BrickHouseWorkspaceInput implements BrickHouseWorkspaceInput {
   @override
   @JsonKey(unknownEnumValue: MetricSystem.imperial)
   MetricSystem get metricSystem;
-  @override
 
   /// Is the type of the App
+  @override
   @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
   AppInternalIdentifier? get typeApp;
   @override
   String get timezoneId;
   @override
   List<String>? get assetsIds;
+
+  /// Create a copy of BrickHouseWorkspaceInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$BrickHouseWorkspaceInputImplCopyWith<_$BrickHouseWorkspaceInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

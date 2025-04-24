@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class TenvioUnregisteredUser with _$TenvioUnregisteredUser {
+abstract class TenvioUnregisteredUser with _$TenvioUnregisteredUser {
   const factory TenvioUnregisteredUser({
     /// [name] is the name of the customer.
     required String name,
@@ -26,7 +26,7 @@ class TenvioUnregisteredUser with _$TenvioUnregisteredUser {
 }
 
 @unfreezed
-class TenvioUnregisteredUserInput with _$TenvioUnregisteredUserInput {
+abstract class TenvioUnregisteredUserInput with _$TenvioUnregisteredUserInput {
   factory TenvioUnregisteredUserInput({
     /// [name] is the name of the customer.
     @Default('') String name,

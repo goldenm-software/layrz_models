@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class Department with _$Department {
+abstract class Department with _$Department {
   const factory Department({
     required String id,
     required String name,

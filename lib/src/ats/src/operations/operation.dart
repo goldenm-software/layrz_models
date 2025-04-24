@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsOperation with _$AtsOperation {
+abstract class AtsOperation with _$AtsOperation {
   const factory AtsOperation({
     /// `id` of the asset entity. This ID is unique.
     String? id,

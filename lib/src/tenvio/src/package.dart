@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class TenvioPackage with _$TenvioPackage {
+abstract class TenvioPackage with _$TenvioPackage {
   const factory TenvioPackage({
     /// [id] is the unique identifier of the package
     required String id,
@@ -67,7 +67,7 @@ class TenvioPackage with _$TenvioPackage {
 }
 
 @freezed
-class TenvioPackageQuantity with _$TenvioPackageQuantity {
+abstract class TenvioPackageQuantity with _$TenvioPackageQuantity {
   const factory TenvioPackageQuantity({
     /// [matrixId] is the unique identifier of the matrix that the package quantity is related.
     required String matrixId,
@@ -83,7 +83,7 @@ class TenvioPackageQuantity with _$TenvioPackageQuantity {
 }
 
 @freezed
-class TrackedTenvioPackage with _$TrackedTenvioPackage {
+abstract class TrackedTenvioPackage with _$TrackedTenvioPackage {
   const TrackedTenvioPackage._();
 
   const factory TrackedTenvioPackage({
@@ -123,7 +123,7 @@ class TrackedTenvioPackage with _$TrackedTenvioPackage {
 }
 
 @freezed
-class TenvioPackageHistory with _$TenvioPackageHistory {
+abstract class TenvioPackageHistory with _$TenvioPackageHistory {
   const TenvioPackageHistory._();
 
   const factory TenvioPackageHistory({

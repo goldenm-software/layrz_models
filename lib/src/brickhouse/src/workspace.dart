@@ -1,7 +1,7 @@
 part of '../brickhouse.dart';
 
 @freezed
-class BrickHouseWorkspaceInput with _$BrickHouseWorkspaceInput {
+abstract class BrickHouseWorkspaceInput with _$BrickHouseWorkspaceInput {
   const factory BrickHouseWorkspaceInput({
     String? id,
     required String appId,

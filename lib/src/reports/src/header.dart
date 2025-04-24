@@ -1,7 +1,7 @@
 part of '../reports.dart';
 
 @freezed
-class ReportHeader with _$ReportHeader {
+abstract class ReportHeader with _$ReportHeader {
   const factory ReportHeader({
     /// [content] is the content of the report header.
     required String content,

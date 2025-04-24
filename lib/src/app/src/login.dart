@@ -1,7 +1,7 @@
 part of '../app.dart';
 
 @freezed
-class AppLoginDesign with _$AppLoginDesign {
+abstract class AppLoginDesign with _$AppLoginDesign {
   const factory AppLoginDesign({
     /// [backgroundColor] defines the background color of the login.
     /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.
@@ -35,7 +35,7 @@ class AppLoginDesign with _$AppLoginDesign {
 }
 
 @unfreezed
-class AppLoginDesignInput with _$AppLoginDesignInput {
+abstract class AppLoginDesignInput with _$AppLoginDesignInput {
   factory AppLoginDesignInput({
     /// [backgroundColor] defines the background color of the login.
     /// In case that this field is null, we'll use `Theme.of(context).primaryColor` as default.

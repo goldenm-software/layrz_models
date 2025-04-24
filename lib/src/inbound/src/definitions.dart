@@ -1,7 +1,7 @@
 part of '../inbound.dart';
 
 @freezed
-class ConfigGrouping with _$ConfigGrouping {
+abstract class ConfigGrouping with _$ConfigGrouping {
   const factory ConfigGrouping({
     /// [name] is the name of the grouping.
     /// This is the translation key.
@@ -25,7 +25,7 @@ class ConfigGrouping with _$ConfigGrouping {
 }
 
 @freezed
-class ConfigDefinition with _$ConfigDefinition {
+abstract class ConfigDefinition with _$ConfigDefinition {
   /// [ConfigDefinition] is the definition of a parameter or a grouping of parameters.
   ///
   /// Please, read the documentation of the fields to understand the meaning of each one.
@@ -73,7 +73,7 @@ class ConfigDefinition with _$ConfigDefinition {
 }
 
 @unfreezed
-class ConfigGroupingInput with _$ConfigGroupingInput {
+abstract class ConfigGroupingInput with _$ConfigGroupingInput {
   factory ConfigGroupingInput({
     /// [name] is the name of the grouping.
     /// This is the translation key.
@@ -97,7 +97,7 @@ class ConfigGroupingInput with _$ConfigGroupingInput {
 }
 
 @unfreezed
-class ConfigDefinitionInput with _$ConfigDefinitionInput {
+abstract class ConfigDefinitionInput with _$ConfigDefinitionInput {
   factory ConfigDefinitionInput({
     /// [sources] is the list of sources that the command can be executed.
     @JsonKey(unknownEnumValue: ConfigSource.unknown)

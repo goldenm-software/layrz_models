@@ -17,4 +17,4 @@ analyzer:
     unreachable_switch_default: ignore
 
 formatter:
-  line_length: 120
+  page_width: 120

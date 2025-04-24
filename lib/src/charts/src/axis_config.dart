@@ -1,7 +1,7 @@
 part of '../charts.dart';
 
 @freezed
-class AxisConfig with _$AxisConfig {
+abstract class AxisConfig with _$AxisConfig {
   const factory AxisConfig({
     String? label,
     String? measureUnit,

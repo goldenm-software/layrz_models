@@ -1,7 +1,7 @@
 part of '../concierge.dart';
 
 @freezed
-class ConciergeFormBlockValidator with _$ConciergeFormBlockValidator {
+abstract class ConciergeFormBlockValidator with _$ConciergeFormBlockValidator {
   const factory ConciergeFormBlockValidator({
     /// Is the reference number of the block inside the same page, in programming terms, is the position of the array
     int? blockId,

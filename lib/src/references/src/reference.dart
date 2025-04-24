@@ -1,7 +1,7 @@
 part of '../references.dart';
 
 @freezed
-class Reference with _$Reference {
+abstract class Reference with _$Reference {
   const factory Reference({
     /// Is the ID.
     required String id,
@@ -28,7 +28,7 @@ class Reference with _$Reference {
 }
 
 @unfreezed
-class ReferenceInput with _$ReferenceInput {
+abstract class ReferenceInput with _$ReferenceInput {
   const ReferenceInput._();
 
   factory ReferenceInput({

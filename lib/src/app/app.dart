@@ -1,4 +1,4 @@
-library app;
+library;
 
 import 'package:collection/collection.dart';
 import 'package:flutter/widgets.dart';

@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class Guide with _$Guide {
+abstract class Guide with _$Guide {
   const factory Guide({
     required String thumbnail,
     required String title,

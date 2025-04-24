@@ -1,6 +1,6 @@
 part of '../../ats.dart';
 
-/// `AtsEntry` is a class that represents an entry in the system.
+/// `AtsEntry` is a abstract class that represents an entry in the system.
 ///
 /// Each entry is associated with a unique volume ID, an asset, and a reception.
 /// It also contains information about the tank level at the start and end of the entry,
@@ -8,7 +8,7 @@ part of '../../ats.dart';
 /// and whether the entry is linked to a purchase order.
 
 @freezed
-class AtsEntry with _$AtsEntry {
+abstract class AtsEntry with _$AtsEntry {
   /// Creates a new `AtsEntry`.
 
   const factory AtsEntry({

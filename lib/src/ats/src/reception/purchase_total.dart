@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsPurchaseTotal with _$AtsPurchaseTotal {
+abstract class AtsPurchaseTotal with _$AtsPurchaseTotal {
   factory AtsPurchaseTotal({
     /// Subtotal of the product.
     double? subtotal,

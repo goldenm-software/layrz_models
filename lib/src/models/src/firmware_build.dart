@@ -1,7 +1,7 @@
 part of '../models.dart';
 
 @freezed
-class FirmwareBuild with _$FirmwareBuild {
+abstract class FirmwareBuild with _$FirmwareBuild {
   const factory FirmwareBuild({
     /// [id] is the unique identifier of the firmware.
     required String id,

@@ -1,7 +1,7 @@
 part of '../workspace.dart';
 
 @freezed
-class WorkspaceAlert with _$WorkspaceAlert {
+abstract class WorkspaceAlert with _$WorkspaceAlert {
   const factory WorkspaceAlert({
     @TimestampConverter() required DateTime at,
     required String assetId,

@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class DropoffFailedReason with _$DropoffFailedReason {
+abstract class DropoffFailedReason with _$DropoffFailedReason {
   const factory DropoffFailedReason({
     /// [id] is the unique identifier for the reason.
     required String id,

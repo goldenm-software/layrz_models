@@ -1,7 +1,7 @@
 part of '../ble.dart';
 
 @freezed
-class BleManufacturerData with _$BleManufacturerData {
+abstract class BleManufacturerData with _$BleManufacturerData {
   const BleManufacturerData._();
 
   /// [BleManufacturerData] is the representation of the manufacturer data of a BLE device.

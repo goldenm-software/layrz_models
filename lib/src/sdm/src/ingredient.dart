@@ -1,7 +1,7 @@
 part of '../sdm.dart';
 
 @freezed
-class SdmIngredient with _$SdmIngredient {
+abstract class SdmIngredient with _$SdmIngredient {
   const factory SdmIngredient({
     /// [id] of the pen entity. This ID is unique.
     required String id,

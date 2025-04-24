@@ -1,7 +1,7 @@
 part of '../charts.dart';
 
 @freezed
-class ColumnChartRender with _$ColumnChartRender {
+abstract class ColumnChartRender with _$ColumnChartRender {
   const factory ColumnChartRender({
     required List<ColumnChartSerie> series,
     required AxisConfig xAxis,
@@ -12,7 +12,7 @@ class ColumnChartRender with _$ColumnChartRender {
 }
 
 @freezed
-class ColumnChartSerie with _$ColumnChartSerie {
+abstract class ColumnChartSerie with _$ColumnChartSerie {
   const factory ColumnChartSerie({
     @ColorConverter() required Color color,
     required String label,
@@ -23,7 +23,7 @@ class ColumnChartSerie with _$ColumnChartSerie {
 }
 
 @freezed
-class ColumnChartDataPoint with _$ColumnChartDataPoint {
+abstract class ColumnChartDataPoint with _$ColumnChartDataPoint {
   const factory ColumnChartDataPoint({
     required String xAxis,
     required num yAxis,

@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class TenvioMonitorAccess with _$TenvioMonitorAccess {
+abstract class TenvioMonitorAccess with _$TenvioMonitorAccess {
   const factory TenvioMonitorAccess({
     /// [reception] is the reception of the monitor access.
     required bool reception,
@@ -17,7 +17,7 @@ class TenvioMonitorAccess with _$TenvioMonitorAccess {
 }
 
 @unfreezed
-class TenvioMonitorAccessInput with _$TenvioMonitorAccessInput {
+abstract class TenvioMonitorAccessInput with _$TenvioMonitorAccessInput {
   factory TenvioMonitorAccessInput({
     /// [reception] is the reception of the monitor access.
     @Default(false) bool reception,

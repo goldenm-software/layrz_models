@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class CareProtocol with _$CareProtocol {
+abstract class CareProtocol with _$CareProtocol {
   const factory CareProtocol({
     /// Is the ID
     required String id,
@@ -40,7 +40,7 @@ class CareProtocol with _$CareProtocol {
 }
 
 @freezed
-class CareTask with _$CareTask {
+abstract class CareTask with _$CareTask {
   const factory CareTask({
     /// Is the question to prompt
     required String question,

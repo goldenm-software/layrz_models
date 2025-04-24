@@ -1,7 +1,7 @@
 part of '../concierge.dart';
 
 @freezed
-class ConciergeFormBlockConfiguration with _$ConciergeFormBlockConfiguration {
+abstract class ConciergeFormBlockConfiguration with _$ConciergeFormBlockConfiguration {
   const factory ConciergeFormBlockConfiguration({
     /// Indicates if the field can be submitted without value
     required bool allowEmpty,

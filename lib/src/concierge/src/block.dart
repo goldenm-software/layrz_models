@@ -1,7 +1,7 @@
 part of '../concierge.dart';
 
 @freezed
-class ConciergeFormBlock with _$ConciergeFormBlock {
+abstract class ConciergeFormBlock with _$ConciergeFormBlock {
   const factory ConciergeFormBlock({
     /// Is the type of the block
     @ConciergeFormBlockTypeConverter() required ConciergeFormBlockType blockType,

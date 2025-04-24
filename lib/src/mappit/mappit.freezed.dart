@@ -37,8 +37,12 @@ mixin _$MappitRouteLinkingHistory {
   @TimestampConverter()
   DateTime get performedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this MappitRouteLinkingHistory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitRouteLinkingHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitRouteLinkingHistoryCopyWith<MappitRouteLinkingHistory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -71,6 +75,8 @@ class _$MappitRouteLinkingHistoryCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitRouteLinkingHistory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -104,6 +110,8 @@ class _$MappitRouteLinkingHistoryCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of MappitRouteLinkingHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get currentSeller {
@@ -116,6 +124,8 @@ class _$MappitRouteLinkingHistoryCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of MappitRouteLinkingHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res> get performedBy {
@@ -157,6 +167,8 @@ class __$$MappitRouteLinkingHistoryImplCopyWithImpl<$Res>
       $Res Function(_$MappitRouteLinkingHistoryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitRouteLinkingHistory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -247,12 +259,14 @@ class _$MappitRouteLinkingHistoryImpl implements _MappitRouteLinkingHistory {
                 other.performedAt == performedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, currentSeller, currentSellerId,
       performedBy, performedById, performedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitRouteLinkingHistory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitRouteLinkingHistoryImplCopyWith<_$MappitRouteLinkingHistoryImpl>
@@ -279,29 +293,31 @@ abstract class _MappitRouteLinkingHistory implements MappitRouteLinkingHistory {
   factory _MappitRouteLinkingHistory.fromJson(Map<String, dynamic> json) =
       _$MappitRouteLinkingHistoryImpl.fromJson;
 
-  @override
-
   /// [currentSeller] represents the current seller of the route. If this field comes null, means is a unlink
-  Asset? get currentSeller;
   @override
+  Asset? get currentSeller;
 
   /// [currentSellerId] represents the current seller ID of the route. If this field comes null, means is a unlink
-  String? get currentSellerId;
   @override
+  String? get currentSellerId;
 
   /// [performedBy] represents the user that performed the operation of link or unlink
-  User get performedBy;
   @override
+  User get performedBy;
 
   /// [performedById] represents the user ID that performed the operation of link or unlink
-  String get performedById;
   @override
+  String get performedById;
 
   /// [performedAt] is the timestamp of the operation
+  @override
   @TimestampConverter()
   DateTime get performedAt;
+
+  /// Create a copy of MappitRouteLinkingHistory
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitRouteLinkingHistoryImplCopyWith<_$MappitRouteLinkingHistoryImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -346,8 +362,12 @@ mixin _$MappitRoute {
   /// [secondarySellersIds] represents the secondary sellers IDs of the route
   List<String>? get secondarySellersIds => throw _privateConstructorUsedError;
 
+  /// Serializes this MappitRoute to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitRouteCopyWith<MappitRoute> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -385,6 +405,8 @@ class _$MappitRouteCopyWithImpl<$Res, $Val extends MappitRoute>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitRoute
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -448,6 +470,8 @@ class _$MappitRouteCopyWithImpl<$Res, $Val extends MappitRoute>
     ) as $Val);
   }
 
+  /// Create a copy of MappitRoute
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AssetCopyWith<$Res>? get currentSeller {
@@ -460,6 +484,8 @@ class _$MappitRouteCopyWithImpl<$Res, $Val extends MappitRoute>
     });
   }
 
+  /// Create a copy of MappitRoute
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get owner {
@@ -508,6 +534,8 @@ class __$$MappitRouteImplCopyWithImpl<$Res>
       _$MappitRouteImpl _value, $Res Function(_$MappitRouteImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitRoute
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -718,7 +746,7 @@ class _$MappitRouteImpl implements _MappitRoute {
                 .equals(other._secondarySellersIds, _secondarySellersIds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -734,7 +762,9 @@ class _$MappitRouteImpl implements _MappitRoute {
       const DeepCollectionEquality().hash(_secondarySellers),
       const DeepCollectionEquality().hash(_secondarySellersIds));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitRouteImplCopyWith<_$MappitRouteImpl> get copyWith =>
@@ -765,52 +795,54 @@ abstract class _MappitRoute implements MappitRoute {
   factory _MappitRoute.fromJson(Map<String, dynamic> json) =
       _$MappitRouteImpl.fromJson;
 
-  @override
-
   /// [id] represents the route ID
-  String get id;
   @override
+  String get id;
 
   /// [name] represents the route name
-  String get name;
   @override
+  String get name;
 
   /// [currentSeller] represents the current seller of the route
-  Asset? get currentSeller;
   @override
+  Asset? get currentSeller;
 
   /// [currentSellerId] represents the current seller ID of the route
-  String? get currentSellerId;
   @override
+  String? get currentSellerId;
 
   /// [geofences] represents the geofences linked to the route
-  List<Geofence>? get geofences;
   @override
+  List<Geofence>? get geofences;
 
   /// [geofencesIds] represents the geofences IDs linked to the route
-  List<String>? get geofencesIds;
   @override
+  List<String>? get geofencesIds;
 
   /// [assignmentsHistory] is the history of the link and unlink operations of this route
-  List<MappitRouteLinkingHistory>? get assignmentsHistory;
   @override
+  List<MappitRouteLinkingHistory>? get assignmentsHistory;
 
   /// [ownerId] refers to the owner of the geofence.
-  String? get ownerId;
   @override
+  String? get ownerId;
 
   /// [owner] refers to the owner of the geofence.
-  User? get owner;
   @override
+  User? get owner;
 
   /// [secondarySellers] represents the secondary sellers of the route
-  List<Asset>? get secondarySellers;
   @override
+  List<Asset>? get secondarySellers;
 
   /// [secondarySellersIds] represents the secondary sellers IDs of the route
-  List<String>? get secondarySellersIds;
   @override
-  @JsonKey(ignore: true)
+  List<String>? get secondarySellersIds;
+
+  /// Create a copy of MappitRoute
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitRouteImplCopyWith<_$MappitRouteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -825,7 +857,7 @@ mixin _$MappitLaborHour {
   String get id => throw _privateConstructorUsedError;
 
   /// [weekday] represents the labor hour weekday.
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   Weekday get weekday => throw _privateConstructorUsedError;
 
   /// [administrative] represents the labor hour administrative time.
@@ -840,8 +872,12 @@ mixin _$MappitLaborHour {
   @DurationConverter()
   Duration get other => throw _privateConstructorUsedError;
 
+  /// Serializes this MappitLaborHour to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitLaborHour
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitLaborHourCopyWith<MappitLaborHour> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -854,7 +890,7 @@ abstract class $MappitLaborHourCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      @WeekdayConverter() Weekday weekday,
+      @JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,
       @DurationConverter() Duration administrative,
       @DurationConverter() Duration f2f,
       @DurationConverter() Duration other});
@@ -870,6 +906,8 @@ class _$MappitLaborHourCopyWithImpl<$Res, $Val extends MappitLaborHour>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitLaborHour
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -914,7 +952,7 @@ abstract class _$$MappitLaborHourImplCopyWith<$Res>
   @useResult
   $Res call(
       {String id,
-      @WeekdayConverter() Weekday weekday,
+      @JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,
       @DurationConverter() Duration administrative,
       @DurationConverter() Duration f2f,
       @DurationConverter() Duration other});
@@ -928,6 +966,8 @@ class __$$MappitLaborHourImplCopyWithImpl<$Res>
       _$MappitLaborHourImpl _value, $Res Function(_$MappitLaborHourImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitLaborHour
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -967,7 +1007,7 @@ class __$$MappitLaborHourImplCopyWithImpl<$Res>
 class _$MappitLaborHourImpl implements _MappitLaborHour {
   const _$MappitLaborHourImpl(
       {required this.id,
-      @WeekdayConverter() required this.weekday,
+      @JsonKey(unknownEnumValue: Weekday.monday) required this.weekday,
       @DurationConverter() required this.administrative,
       @DurationConverter() required this.f2f,
       @DurationConverter() required this.other});
@@ -981,7 +1021,7 @@ class _$MappitLaborHourImpl implements _MappitLaborHour {
 
   /// [weekday] represents the labor hour weekday.
   @override
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   final Weekday weekday;
 
   /// [administrative] represents the labor hour administrative time.
@@ -1017,12 +1057,14 @@ class _$MappitLaborHourImpl implements _MappitLaborHour {
             (identical(other.other, this.other) || other.other == this.other));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, weekday, administrative, f2f, other);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitLaborHour
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitLaborHourImplCopyWith<_$MappitLaborHourImpl> get copyWith =>
@@ -1039,42 +1081,44 @@ class _$MappitLaborHourImpl implements _MappitLaborHour {
 
 abstract class _MappitLaborHour implements MappitLaborHour {
   const factory _MappitLaborHour(
-          {required final String id,
-          @WeekdayConverter() required final Weekday weekday,
-          @DurationConverter() required final Duration administrative,
-          @DurationConverter() required final Duration f2f,
-          @DurationConverter() required final Duration other}) =
-      _$MappitLaborHourImpl;
+      {required final String id,
+      @JsonKey(unknownEnumValue: Weekday.monday) required final Weekday weekday,
+      @DurationConverter() required final Duration administrative,
+      @DurationConverter() required final Duration f2f,
+      @DurationConverter()
+      required final Duration other}) = _$MappitLaborHourImpl;
 
   factory _MappitLaborHour.fromJson(Map<String, dynamic> json) =
       _$MappitLaborHourImpl.fromJson;
 
-  @override
-
   /// [id] represents the labor hour ID.
-  String get id;
   @override
+  String get id;
 
   /// [weekday] represents the labor hour weekday.
-  @WeekdayConverter()
-  Weekday get weekday;
   @override
+  @JsonKey(unknownEnumValue: Weekday.monday)
+  Weekday get weekday;
 
   /// [administrative] represents the labor hour administrative time.
+  @override
   @DurationConverter()
   Duration get administrative;
-  @override
 
   /// [f2f] represents the labor hour face-to-face time.
+  @override
   @DurationConverter()
   Duration get f2f;
-  @override
 
   /// [other] represents the labor hour other time.
+  @override
   @DurationConverter()
   Duration get other;
+
+  /// Create a copy of MappitLaborHour
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitLaborHourImplCopyWith<_$MappitLaborHourImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1092,11 +1136,11 @@ mixin _$MappitLaborHourInput {
   set id(String? value) => throw _privateConstructorUsedError;
 
   /// [weekday] represents the labor hour weekday.
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   Weekday get weekday => throw _privateConstructorUsedError;
 
   /// [weekday] represents the labor hour weekday.
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   set weekday(Weekday value) => throw _privateConstructorUsedError;
 
   /// [administrative] represents the labor hour administrative time.
@@ -1123,8 +1167,12 @@ mixin _$MappitLaborHourInput {
   @DurationConverter()
   set other(Duration value) => throw _privateConstructorUsedError;
 
+  /// Serializes this MappitLaborHourInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitLaborHourInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitLaborHourInputCopyWith<MappitLaborHourInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1137,7 +1185,7 @@ abstract class $MappitLaborHourInputCopyWith<$Res> {
   @useResult
   $Res call(
       {String? id,
-      @WeekdayConverter() Weekday weekday,
+      @JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,
       @DurationConverter() Duration administrative,
       @DurationConverter() Duration f2f,
       @DurationConverter() Duration other});
@@ -1154,6 +1202,8 @@ class _$MappitLaborHourInputCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitLaborHourInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1198,7 +1248,7 @@ abstract class _$$MappitLaborHourInputImplCopyWith<$Res>
   @useResult
   $Res call(
       {String? id,
-      @WeekdayConverter() Weekday weekday,
+      @JsonKey(unknownEnumValue: Weekday.monday) Weekday weekday,
       @DurationConverter() Duration administrative,
       @DurationConverter() Duration f2f,
       @DurationConverter() Duration other});
@@ -1212,6 +1262,8 @@ class __$$MappitLaborHourInputImplCopyWithImpl<$Res>
       $Res Function(_$MappitLaborHourInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitLaborHourInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1251,7 +1303,7 @@ class __$$MappitLaborHourInputImplCopyWithImpl<$Res>
 class _$MappitLaborHourInputImpl implements _MappitLaborHourInput {
   _$MappitLaborHourInputImpl(
       {this.id,
-      @WeekdayConverter() required this.weekday,
+      @JsonKey(unknownEnumValue: Weekday.monday) required this.weekday,
       @DurationConverter() this.administrative = const Duration(minutes: 0),
       @DurationConverter() this.f2f = const Duration(minutes: 0),
       @DurationConverter() this.other = const Duration(minutes: 0)});
@@ -1265,7 +1317,7 @@ class _$MappitLaborHourInputImpl implements _MappitLaborHourInput {
 
   /// [weekday] represents the labor hour weekday.
   @override
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   Weekday weekday;
 
   /// [administrative] represents the labor hour administrative time.
@@ -1291,7 +1343,9 @@ class _$MappitLaborHourInputImpl implements _MappitLaborHourInput {
     return 'MappitLaborHourInput(id: $id, weekday: $weekday, administrative: $administrative, f2f: $f2f, other: $other)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitLaborHourInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitLaborHourInputImplCopyWith<_$MappitLaborHourInputImpl>
@@ -1310,7 +1364,7 @@ class _$MappitLaborHourInputImpl implements _MappitLaborHourInput {
 abstract class _MappitLaborHourInput implements MappitLaborHourInput {
   factory _MappitLaborHourInput(
       {String? id,
-      @WeekdayConverter() required Weekday weekday,
+      @JsonKey(unknownEnumValue: Weekday.monday) required Weekday weekday,
       @DurationConverter() Duration administrative,
       @DurationConverter() Duration f2f,
       @DurationConverter() Duration other}) = _$MappitLaborHourInputImpl;
@@ -1318,51 +1372,53 @@ abstract class _MappitLaborHourInput implements MappitLaborHourInput {
   factory _MappitLaborHourInput.fromJson(Map<String, dynamic> json) =
       _$MappitLaborHourInputImpl.fromJson;
 
-  @override
-
   /// [id] represents the labor hour ID.
+  @override
   String? get id;
 
   /// [id] represents the labor hour ID.
   set id(String? value);
-  @override
 
   /// [weekday] represents the labor hour weekday.
-  @WeekdayConverter()
+  @override
+  @JsonKey(unknownEnumValue: Weekday.monday)
   Weekday get weekday;
 
   /// [weekday] represents the labor hour weekday.
-  @WeekdayConverter()
+  @JsonKey(unknownEnumValue: Weekday.monday)
   set weekday(Weekday value);
-  @override
 
   /// [administrative] represents the labor hour administrative time.
+  @override
   @DurationConverter()
   Duration get administrative;
 
   /// [administrative] represents the labor hour administrative time.
   @DurationConverter()
   set administrative(Duration value);
-  @override
 
   /// [f2f] represents the labor hour face-to-face time.
+  @override
   @DurationConverter()
   Duration get f2f;
 
   /// [f2f] represents the labor hour face-to-face time.
   @DurationConverter()
   set f2f(Duration value);
-  @override
 
   /// [other] represents the labor hour other time.
+  @override
   @DurationConverter()
   Duration get other;
 
   /// [other] represents the labor hour other time.
   @DurationConverter()
   set other(Duration value);
+
+  /// Create a copy of MappitLaborHourInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitLaborHourInputImplCopyWith<_$MappitLaborHourInputImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1385,8 +1441,12 @@ mixin _$MappitProfileGeofence {
   @ColorOrNullConverter()
   Color? get color => throw _privateConstructorUsedError;
 
+  /// Serializes this MappitProfileGeofence to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitProfileGeofence
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitProfileGeofenceCopyWith<MappitProfileGeofence> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1416,6 +1476,8 @@ class _$MappitProfileGeofenceCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitProfileGeofence
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1439,6 +1501,8 @@ class _$MappitProfileGeofenceCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of MappitProfileGeofence
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GeofenceCopyWith<$Res>? get geofence {
@@ -1479,6 +1543,8 @@ class __$$MappitProfileGeofenceImplCopyWithImpl<$Res>
       $Res Function(_$MappitProfileGeofenceImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitProfileGeofence
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1545,11 +1611,13 @@ class _$MappitProfileGeofenceImpl implements _MappitProfileGeofence {
             (identical(other.color, color) || other.color == color));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, geofenceId, geofence, color);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitProfileGeofence
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitProfileGeofenceImplCopyWith<_$MappitProfileGeofenceImpl>
@@ -1574,22 +1642,24 @@ abstract class _MappitProfileGeofence implements MappitProfileGeofence {
   factory _MappitProfileGeofence.fromJson(Map<String, dynamic> json) =
       _$MappitProfileGeofenceImpl.fromJson;
 
-  @override
-
   /// [geofenceId] represents the ID of the geofence.
-  String get geofenceId;
   @override
+  String get geofenceId;
 
   /// [geofence] represents the geofence entity.
-  Geofence? get geofence;
   @override
+  Geofence? get geofence;
 
   /// [color] represents the color override of the geofence.
   /// If null, will be show the original color of the geofence
+  @override
   @ColorOrNullConverter()
   Color? get color;
+
+  /// Create a copy of MappitProfileGeofence
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitProfileGeofenceImplCopyWith<_$MappitProfileGeofenceImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -1610,8 +1680,12 @@ mixin _$MappitProfile {
   List<MappitProfileGeofence> get geofences =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this MappitProfile to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitProfile
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitProfileCopyWith<MappitProfile> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1635,6 +1709,8 @@ class _$MappitProfileCopyWithImpl<$Res, $Val extends MappitProfile>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitProfile
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1678,6 +1754,8 @@ class __$$MappitProfileImplCopyWithImpl<$Res>
       _$MappitProfileImpl _value, $Res Function(_$MappitProfileImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitProfile
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1749,12 +1827,14 @@ class _$MappitProfileImpl implements _MappitProfile {
                 .equals(other._geofences, _geofences));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, name, const DeepCollectionEquality().hash(_geofences));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitProfile
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitProfileImplCopyWith<_$MappitProfileImpl> get copyWith =>
@@ -1778,20 +1858,22 @@ abstract class _MappitProfile implements MappitProfile {
   factory _MappitProfile.fromJson(Map<String, dynamic> json) =
       _$MappitProfileImpl.fromJson;
 
-  @override
-
   /// [id] represents the ID of the profile.
-  String get id;
   @override
+  String get id;
 
   /// [name] represents the name of the profile.
-  String get name;
   @override
+  String get name;
 
   /// [geofences] represents the list of linked geofences with some customization
-  List<MappitProfileGeofence> get geofences;
   @override
-  @JsonKey(ignore: true)
+  List<MappitProfileGeofence> get geofences;
+
+  /// Create a copy of MappitProfile
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitProfileImplCopyWith<_$MappitProfileImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1814,8 +1896,12 @@ mixin _$MappitDurationRange {
   @ColorConverter()
   Color get color => throw _privateConstructorUsedError;
 
+  /// Serializes this MappitDurationRange to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitDurationRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitDurationRangeCopyWith<MappitDurationRange> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1842,6 +1928,8 @@ class _$MappitDurationRangeCopyWithImpl<$Res, $Val extends MappitDurationRange>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitDurationRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1888,6 +1976,8 @@ class __$$MappitDurationRangeImplCopyWithImpl<$Res>
       $Res Function(_$MappitDurationRangeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitDurationRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1956,11 +2046,13 @@ class _$MappitDurationRangeImpl implements _MappitDurationRange {
             (identical(other.color, color) || other.color == color));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, min, max, color);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitDurationRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitDurationRangeImplCopyWith<_$MappitDurationRangeImpl> get copyWith =>
@@ -1984,23 +2076,25 @@ abstract class _MappitDurationRange implements MappitDurationRange {
   factory _MappitDurationRange.fromJson(Map<String, dynamic> json) =
       _$MappitDurationRangeImpl.fromJson;
 
-  @override
-
   /// [min] is the minimum value of the range
+  @override
   @DurationConverter()
   Duration get min;
-  @override
 
   /// [max] is the maximum value of the range
+  @override
   @DurationConverter()
   Duration get max;
-  @override
 
   /// [color] is the color of the range
+  @override
   @ColorConverter()
   Color get color;
+
+  /// Create a copy of MappitDurationRange
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitDurationRangeImplCopyWith<_$MappitDurationRangeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2021,8 +2115,12 @@ mixin _$MappitIntRange {
   @ColorConverter()
   Color get color => throw _privateConstructorUsedError;
 
+  /// Serializes this MappitIntRange to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitIntRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitIntRangeCopyWith<MappitIntRange> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2046,6 +2144,8 @@ class _$MappitIntRangeCopyWithImpl<$Res, $Val extends MappitIntRange>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitIntRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2089,6 +2189,8 @@ class __$$MappitIntRangeImplCopyWithImpl<$Res>
       _$MappitIntRangeImpl _value, $Res Function(_$MappitIntRangeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitIntRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2153,11 +2255,13 @@ class _$MappitIntRangeImpl implements _MappitIntRange {
             (identical(other.color, color) || other.color == color));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, min, max, color);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitIntRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitIntRangeImplCopyWith<_$MappitIntRangeImpl> get copyWith =>
@@ -2181,21 +2285,23 @@ abstract class _MappitIntRange implements MappitIntRange {
   factory _MappitIntRange.fromJson(Map<String, dynamic> json) =
       _$MappitIntRangeImpl.fromJson;
 
-  @override
-
   /// [min] is the minimum value of the range
-  int get min;
   @override
+  int get min;
 
   /// [max] is the maximum value of the range
-  int get max;
   @override
+  int get max;
 
   /// [color] is the color of the range
+  @override
   @ColorConverter()
   Color get color;
+
+  /// Create a copy of MappitIntRange
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitIntRangeImplCopyWith<_$MappitIntRangeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2216,8 +2322,12 @@ mixin _$MappitDoubleRange {
   @ColorConverter()
   Color get color => throw _privateConstructorUsedError;
 
+  /// Serializes this MappitDoubleRange to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitDoubleRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitDoubleRangeCopyWith<MappitDoubleRange> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2241,6 +2351,8 @@ class _$MappitDoubleRangeCopyWithImpl<$Res, $Val extends MappitDoubleRange>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitDoubleRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2284,6 +2396,8 @@ class __$$MappitDoubleRangeImplCopyWithImpl<$Res>
       $Res Function(_$MappitDoubleRangeImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitDoubleRange
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2348,11 +2462,13 @@ class _$MappitDoubleRangeImpl implements _MappitDoubleRange {
             (identical(other.color, color) || other.color == color));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, min, max, color);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitDoubleRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitDoubleRangeImplCopyWith<_$MappitDoubleRangeImpl> get copyWith =>
@@ -2376,21 +2492,23 @@ abstract class _MappitDoubleRange implements MappitDoubleRange {
   factory _MappitDoubleRange.fromJson(Map<String, dynamic> json) =
       _$MappitDoubleRangeImpl.fromJson;
 
-  @override
-
   /// [min] is the minimum value of the range
-  double get min;
   @override
+  double get min;
 
   /// [max] is the maximum value of the range
-  double get max;
   @override
+  double get max;
 
   /// [color] is the color of the range
+  @override
   @ColorConverter()
   Color get color;
+
+  /// Create a copy of MappitDoubleRange
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitDoubleRangeImplCopyWith<_$MappitDoubleRangeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2417,8 +2535,12 @@ mixin _$MappitHomeConfig {
   List<MappitDoubleRange> get dailyDistance =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this MappitHomeConfig to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitHomeConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitHomeConfigCopyWith<MappitHomeConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2446,6 +2568,8 @@ class _$MappitHomeConfigCopyWithImpl<$Res, $Val extends MappitHomeConfig>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitHomeConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2498,6 +2622,8 @@ class __$$MappitHomeConfigImplCopyWithImpl<$Res>
       $Res Function(_$MappitHomeConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitHomeConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2612,7 +2738,7 @@ class _$MappitHomeConfigImpl implements _MappitHomeConfig {
                 .equals(other._dailyDistance, _dailyDistance));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2621,7 +2747,9 @@ class _$MappitHomeConfigImpl implements _MappitHomeConfig {
       const DeepCollectionEquality().hash(_customersVisited),
       const DeepCollectionEquality().hash(_dailyDistance));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitHomeConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitHomeConfigImplCopyWith<_$MappitHomeConfigImpl> get copyWith =>
@@ -2646,24 +2774,26 @@ abstract class _MappitHomeConfig implements MappitHomeConfig {
   factory _MappitHomeConfig.fromJson(Map<String, dynamic> json) =
       _$MappitHomeConfigImpl.fromJson;
 
-  @override
-
   /// [firstVisit] is the conditions of the first visit
-  List<MappitDurationRange> get firstVisit;
   @override
+  List<MappitDurationRange> get firstVisit;
 
   /// [avgTimePerVisit] is the conditions of the average time per visit
-  List<MappitDurationRange> get avgTimePerVisit;
   @override
+  List<MappitDurationRange> get avgTimePerVisit;
 
   /// [customersVisited] is the conditions of the customers visited
-  List<MappitIntRange> get customersVisited;
   @override
+  List<MappitIntRange> get customersVisited;
 
   /// [dailyDistance] is the conditions of the daily distance
-  List<MappitDoubleRange> get dailyDistance;
   @override
-  @JsonKey(ignore: true)
+  List<MappitDoubleRange> get dailyDistance;
+
+  /// Create a copy of MappitHomeConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitHomeConfigImplCopyWith<_$MappitHomeConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2690,8 +2820,12 @@ mixin _$MappitFreeDay {
   /// [assetsIds] represents the assets IDs assigned to this free day.
   List<String>? get assetsIds => throw _privateConstructorUsedError;
 
+  /// Serializes this MappitFreeDay to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitFreeDay
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitFreeDayCopyWith<MappitFreeDay> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2720,6 +2854,8 @@ class _$MappitFreeDayCopyWithImpl<$Res, $Val extends MappitFreeDay>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitFreeDay
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2778,6 +2914,8 @@ class __$$MappitFreeDayImplCopyWithImpl<$Res>
       _$MappitFreeDayImpl _value, $Res Function(_$MappitFreeDayImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitFreeDay
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2884,7 +3022,7 @@ class _$MappitFreeDayImpl implements _MappitFreeDay {
                 .equals(other._assetsIds, _assetsIds));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -2894,7 +3032,9 @@ class _$MappitFreeDayImpl implements _MappitFreeDay {
       const DeepCollectionEquality().hash(_assets),
       const DeepCollectionEquality().hash(_assetsIds));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitFreeDay
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitFreeDayImplCopyWith<_$MappitFreeDayImpl> get copyWith =>
@@ -2919,29 +3059,31 @@ abstract class _MappitFreeDay implements MappitFreeDay {
   factory _MappitFreeDay.fromJson(Map<String, dynamic> json) =
       _$MappitFreeDayImpl.fromJson;
 
-  @override
-
   /// [id] represents the free day ID.
-  String get id;
   @override
+  String get id;
 
   /// [name] represents the free day name.
-  String get name;
   @override
+  String get name;
 
   /// [date] represents the free day date.
+  @override
   @DateConverter()
   DateTime get date;
-  @override
 
   /// [assets] represents the assets assigned to this free day.
-  List<Asset>? get assets;
   @override
+  List<Asset>? get assets;
 
   /// [assetsIds] represents the assets IDs assigned to this free day.
-  List<String>? get assetsIds;
   @override
-  @JsonKey(ignore: true)
+  List<String>? get assetsIds;
+
+  /// Create a copy of MappitFreeDay
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitFreeDayImplCopyWith<_$MappitFreeDayImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2956,8 +3098,12 @@ mixin _$PolygonDetails {
   List<ContainedRouteCategory> get containedRoutes =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this PolygonDetails to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of PolygonDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PolygonDetailsCopyWith<PolygonDetails> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2983,6 +3129,8 @@ class _$PolygonDetailsCopyWithImpl<$Res, $Val extends PolygonDetails>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PolygonDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3001,6 +3149,8 @@ class _$PolygonDetailsCopyWithImpl<$Res, $Val extends PolygonDetails>
     ) as $Val);
   }
 
+  /// Create a copy of PolygonDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $GeofenceCopyWith<$Res> get polygon {
@@ -3032,6 +3182,8 @@ class __$$PolygonDetailsImplCopyWithImpl<$Res>
       _$PolygonDetailsImpl _value, $Res Function(_$PolygonDetailsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PolygonDetails
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3087,12 +3239,14 @@ class _$PolygonDetailsImpl implements _PolygonDetails {
                 .equals(other._containedRoutes, _containedRoutes));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, polygon,
       const DeepCollectionEquality().hash(_containedRoutes));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PolygonDetails
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PolygonDetailsImplCopyWith<_$PolygonDetailsImpl> get copyWith =>
@@ -3120,8 +3274,11 @@ abstract class _PolygonDetails implements PolygonDetails {
   Geofence get polygon;
   @override
   List<ContainedRouteCategory> get containedRoutes;
+
+  /// Create a copy of PolygonDetails
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PolygonDetailsImplCopyWith<_$PolygonDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3144,8 +3301,12 @@ mixin _$ContainedRouteCategory {
   /// Number of geofences per category.
   int? get geofenceCount => throw _privateConstructorUsedError;
 
+  /// Serializes this ContainedRouteCategory to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ContainedRouteCategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ContainedRouteCategoryCopyWith<ContainedRouteCategory> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3174,6 +3335,8 @@ class _$ContainedRouteCategoryCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ContainedRouteCategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3224,6 +3387,8 @@ class __$$ContainedRouteCategoryImplCopyWithImpl<$Res>
       $Res Function(_$ContainedRouteCategoryImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ContainedRouteCategory
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3300,12 +3465,14 @@ class _$ContainedRouteCategoryImpl implements _ContainedRouteCategory {
                 other.geofenceCount == geofenceCount));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, category,
       const DeepCollectionEquality().hash(_routes), geofenceCount);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ContainedRouteCategory
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ContainedRouteCategoryImplCopyWith<_$ContainedRouteCategoryImpl>
@@ -3330,22 +3497,24 @@ abstract class _ContainedRouteCategory implements ContainedRouteCategory {
   factory _ContainedRouteCategory.fromJson(Map<String, dynamic> json) =
       _$ContainedRouteCategoryImpl.fromJson;
 
-  @override
-
   /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
   /// from the API.
+  @override
   @JsonKey(unknownEnumValue: GeofenceCategory.none)
   GeofenceCategory get category;
-  @override
 
   /// List of routes that contain the geofences in the category.
-  List<MappitRoute> get routes;
   @override
+  List<MappitRoute> get routes;
 
   /// Number of geofences per category.
-  int? get geofenceCount;
   @override
-  @JsonKey(ignore: true)
+  int? get geofenceCount;
+
+  /// Create a copy of ContainedRouteCategory
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ContainedRouteCategoryImplCopyWith<_$ContainedRouteCategoryImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3383,8 +3552,12 @@ mixin _$MappitReportInputMulti {
   /// Seller IDs
   set sellerIds(List<String>? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this MappitReportInputMulti to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitReportInputMulti
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitReportInputMultiCopyWith<MappitReportInputMulti> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3413,6 +3586,8 @@ class _$MappitReportInputMultiCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitReportInputMulti
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3468,6 +3643,8 @@ class __$$MappitReportInputMultiImplCopyWithImpl<$Res>
       $Res Function(_$MappitReportInputMultiImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitReportInputMulti
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3531,7 +3708,9 @@ class _$MappitReportInputMultiImpl implements _MappitReportInputMulti {
     return 'MappitReportInputMulti(startAt: $startAt, endAt: $endAt, timeFilter: $timeFilter, sellerIds: $sellerIds)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitReportInputMulti
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitReportInputMultiImplCopyWith<_$MappitReportInputMultiImpl>
@@ -3556,38 +3735,40 @@ abstract class _MappitReportInputMulti implements MappitReportInputMulti {
   factory _MappitReportInputMulti.fromJson(Map<String, dynamic> json) =
       _$MappitReportInputMultiImpl.fromJson;
 
-  @override
-
   /// Start date for the report.
+  @override
   double? get startAt;
 
   /// Start date for the report.
   set startAt(double? value);
-  @override
 
   /// End date for the report.
+  @override
   double? get endAt;
 
   /// End date for the report.
   set endAt(double? value);
-  @override
 
   /// Time filter (Defined in seconds).
+  @override
   @DurationOrNullConverter()
   Duration? get timeFilter;
 
   /// Time filter (Defined in seconds).
   @DurationOrNullConverter()
   set timeFilter(Duration? value);
-  @override
 
   /// Seller IDs
+  @override
   List<String>? get sellerIds;
 
   /// Seller IDs
   set sellerIds(List<String>? value);
+
+  /// Create a copy of MappitReportInputMulti
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitReportInputMultiImplCopyWith<_$MappitReportInputMultiImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3624,8 +3805,12 @@ mixin _$MappitReportInput {
   /// Seller ID
   set sellerId(String? value) => throw _privateConstructorUsedError;
 
+  /// Serializes this MappitReportInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of MappitReportInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $MappitReportInputCopyWith<MappitReportInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3653,6 +3838,8 @@ class _$MappitReportInputCopyWithImpl<$Res, $Val extends MappitReportInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of MappitReportInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3705,6 +3892,8 @@ class __$$MappitReportInputImplCopyWithImpl<$Res>
       $Res Function(_$MappitReportInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of MappitReportInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3768,7 +3957,9 @@ class _$MappitReportInputImpl implements _MappitReportInput {
     return 'MappitReportInput(startAt: $startAt, endAt: $endAt, timeFilter: $timeFilter, sellerId: $sellerId)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of MappitReportInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$MappitReportInputImplCopyWith<_$MappitReportInputImpl> get copyWith =>
@@ -3793,38 +3984,40 @@ abstract class _MappitReportInput implements MappitReportInput {
   factory _MappitReportInput.fromJson(Map<String, dynamic> json) =
       _$MappitReportInputImpl.fromJson;
 
-  @override
-
   /// Start date for the report.
+  @override
   double? get startAt;
 
   /// Start date for the report.
   set startAt(double? value);
-  @override
 
   /// End date for the report.
+  @override
   double? get endAt;
 
   /// End date for the report.
   set endAt(double? value);
-  @override
 
   /// Time filter (Defined in seconds).
+  @override
   @DurationOrNullConverter()
   Duration? get timeFilter;
 
   /// Time filter (Defined in seconds).
   @DurationOrNullConverter()
   set timeFilter(Duration? value);
-  @override
 
   /// Seller ID
+  @override
   String? get sellerId;
 
   /// Seller ID
   set sellerId(String? value);
+
+  /// Create a copy of MappitReportInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$MappitReportInputImplCopyWith<_$MappitReportInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

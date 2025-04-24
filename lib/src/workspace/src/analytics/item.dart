@@ -1,7 +1,7 @@
 part of '../../workspace.dart';
 
 @freezed
-class AnalyticsGridItem with _$AnalyticsGridItem {
+abstract class AnalyticsGridItem with _$AnalyticsGridItem {
   const factory AnalyticsGridItem({
     /// Is the Chart ID
     String? chartId,
@@ -14,7 +14,7 @@ class AnalyticsGridItem with _$AnalyticsGridItem {
 }
 
 @unfreezed
-class AnalyticsGridItemInput with _$AnalyticsGridItemInput {
+abstract class AnalyticsGridItemInput with _$AnalyticsGridItemInput {
   factory AnalyticsGridItemInput({
     String? chartId,
 

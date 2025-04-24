@@ -1,7 +1,7 @@
 part of '../../layrz_models.dart';
 
 @freezed
-class MonitorRealWaypoint with _$MonitorRealWaypoint {
+abstract class MonitorRealWaypoint with _$MonitorRealWaypoint {
   const factory MonitorRealWaypoint({
     required String activationId,
     required String geofenceId,
@@ -15,7 +15,7 @@ class MonitorRealWaypoint with _$MonitorRealWaypoint {
 }
 
 @freezed
-class MonitorActiveCheckpoint with _$MonitorActiveCheckpoint {
+abstract class MonitorActiveCheckpoint with _$MonitorActiveCheckpoint {
   const factory MonitorActiveCheckpoint({
     required String id,
     @MonitorActiveCheckpointStateConverter() required MonitorActiveCheckpointState state,

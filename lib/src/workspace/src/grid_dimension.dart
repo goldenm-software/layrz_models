@@ -1,7 +1,7 @@
 part of '../workspace.dart';
 
 @freezed
-class GridDimension with _$GridDimension {
+abstract class GridDimension with _$GridDimension {
   const factory GridDimension({
     /// [width] Represents the number of columns to be expanded
     required int width,
@@ -14,7 +14,7 @@ class GridDimension with _$GridDimension {
 }
 
 @unfreezed
-class GridDimensionInput with _$GridDimensionInput {
+abstract class GridDimensionInput with _$GridDimensionInput {
   factory GridDimensionInput({
     /// [width] Represents the number of columns to be expanded
     @Default(1) int width,

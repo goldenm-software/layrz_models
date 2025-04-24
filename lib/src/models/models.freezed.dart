@@ -67,8 +67,12 @@ mixin _$Model {
   /// [firmwares] is the list of firmwares for the model.
   List<FirmwareBuild> get firmwares => throw _privateConstructorUsedError;
 
+  /// Serializes this Model to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ModelCopyWith<Model> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -107,6 +111,8 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -185,6 +191,8 @@ class _$ModelCopyWithImpl<$Res, $Val extends Model>
     ) as $Val);
   }
 
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $InboundProtocolCopyWith<$Res>? get protocol {
@@ -234,6 +242,8 @@ class __$$ModelImplCopyWithImpl<$Res>
       _$ModelImpl _value, $Res Function(_$ModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -472,7 +482,7 @@ class _$ModelImpl implements _Model {
                 .equals(other._firmwares, _firmwares));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -491,7 +501,9 @@ class _$ModelImpl implements _Model {
       const DeepCollectionEquality().hash(_peripheralParserSpec),
       const DeepCollectionEquality().hash(_firmwares));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ModelImplCopyWith<_$ModelImpl> get copyWith =>
@@ -525,66 +537,68 @@ abstract class _Model implements Model {
 
   factory _Model.fromJson(Map<String, dynamic> json) = _$ModelImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the model.
-  String get id;
   @override
+  String get id;
 
   /// [name] is the name of the model.
-  String get name;
   @override
+  String get name;
 
   /// [flespiId] is the ID of the device in the flespi platform.
   /// Can be null if the model is not connected to a device or is a in-house protocol.
-  String? get flespiId;
   @override
+  String? get flespiId;
 
   /// [protocol] is the protocol of the model.
-  InboundProtocol? get protocol;
   @override
+  InboundProtocol? get protocol;
 
   /// [protocolId] is the ID of the protocol
-  String? get protocolId;
   @override
+  String? get protocolId;
 
   /// [isGeneric] is true if the model is generic.
-  bool? get isGeneric;
   @override
+  bool? get isGeneric;
 
   /// [commandsStructure] is the structure of the commands for the protocol.
-  List<CommandDefinition> get commandsStructure;
   @override
+  List<CommandDefinition> get commandsStructure;
 
   /// [configStructure] is the structure of the configuration for the protocol.
-  List<ConfigGrouping> get configStructure;
   @override
+  List<ConfigGrouping> get configStructure;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
-  bool get confiotCapable;
   @override
+  bool get confiotCapable;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @override
   @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
   ConfIoTLayout get confiotLayout;
-  @override
 
   /// [confiotName] is the name of the model in the ConfIoT.
-  String? get confiotName;
   @override
+  String? get confiotName;
 
   /// [peripheralIdentifier] is the identifier of the peripheral device.
-  String? get peripheralIdentifier;
   @override
+  String? get peripheralIdentifier;
 
   /// [peripheralParserSpec] is the parser specification for the peripheral device.
-  Map<String, dynamic>? get peripheralParserSpec;
   @override
+  Map<String, dynamic>? get peripheralParserSpec;
 
   /// [firmwares] is the list of firmwares for the model.
-  List<FirmwareBuild> get firmwares;
   @override
-  @JsonKey(ignore: true)
+  List<FirmwareBuild> get firmwares;
+
+  /// Create a copy of Model
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ModelImplCopyWith<_$ModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -677,8 +691,12 @@ mixin _$ModelInput {
   set peripheralParserSpec(Map<String, dynamic>? value) =>
       throw _privateConstructorUsedError;
 
+  /// Serializes this ModelInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of ModelInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $ModelInputCopyWith<ModelInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -715,6 +733,8 @@ class _$ModelInputCopyWithImpl<$Res, $Val extends ModelInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of ModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -816,6 +836,8 @@ class __$$ModelInputImplCopyWithImpl<$Res>
       _$ModelInputImpl _value, $Res Function(_$ModelInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of ModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -966,7 +988,9 @@ class _$ModelInputImpl implements _ModelInput {
     return 'ModelInput(id: $id, name: $name, flespiId: $flespiId, protocolId: $protocolId, isGeneric: $isGeneric, commandsStructure: $commandsStructure, configStructure: $configStructure, confiotCapable: $confiotCapable, confiotLayout: $confiotLayout, confiotName: $confiotName, peripheralIdentifier: $peripheralIdentifier, peripheralParserSpec: $peripheralParserSpec)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of ModelInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ModelInputImplCopyWith<_$ModelInputImpl> get copyWith =>
@@ -999,96 +1023,98 @@ abstract class _ModelInput implements ModelInput {
   factory _ModelInput.fromJson(Map<String, dynamic> json) =
       _$ModelInputImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the model.
+  @override
   String? get id;
 
   /// [id] is the unique identifier of the model.
   set id(String? value);
-  @override
 
   /// [name] is the name of the model.
+  @override
   String get name;
 
   /// [name] is the name of the model.
   set name(String value);
-  @override
 
   /// [flespiId] is the ID of the device in the flespi platform.
   /// Can be null if the model is not connected to a device or is a in-house protocol.
+  @override
   String? get flespiId;
 
   /// [flespiId] is the ID of the device in the flespi platform.
   /// Can be null if the model is not connected to a device or is a in-house protocol.
   set flespiId(String? value);
-  @override
 
   /// [protocolId] is the ID of the protocol
+  @override
   String? get protocolId;
 
   /// [protocolId] is the ID of the protocol
   set protocolId(String? value);
-  @override
 
   /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
+  @override
   bool get isGeneric;
 
   /// [isGeneric] is true if the model is generic. Only can be 1 generic model per protocol.
   set isGeneric(bool value);
-  @override
 
   /// [commandsStructure] is the structure of the commands for the protocol.
+  @override
   List<CommandDefinitionInput> get commandsStructure;
 
   /// [commandsStructure] is the structure of the commands for the protocol.
   set commandsStructure(List<CommandDefinitionInput> value);
-  @override
 
   /// [configStructure] is the structure of the configuration for the protocol.
+  @override
   List<ConfigGroupingInput> get configStructure;
 
   /// [configStructure] is the structure of the configuration for the protocol.
   set configStructure(List<ConfigGroupingInput> value);
-  @override
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
+  @override
   bool get confiotCapable;
 
   /// [confiotCapable] is the boolean that indicates if the protocol is capable of using the Confiot platform.
   set confiotCapable(bool value);
-  @override
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
+  @override
   @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
   ConfIoTLayout get confiotLayout;
 
   /// [confiotLayout] defines what kind of layout should be displayed in ConfIoT.
   @JsonKey(unknownEnumValue: ConfIoTLayout.standard)
   set confiotLayout(ConfIoTLayout value);
-  @override
 
   /// [confiotName] is the name of the model in the ConfIoT.
+  @override
   String? get confiotName;
 
   /// [confiotName] is the name of the model in the ConfIoT.
   set confiotName(String? value);
-  @override
 
   /// [peripheralIdentifier] is the identifier of the peripheral device.
+  @override
   String? get peripheralIdentifier;
 
   /// [peripheralIdentifier] is the identifier of the peripheral device.
   set peripheralIdentifier(String? value);
-  @override
 
   /// [peripheralParserSpec] is the parser specification for the peripheral device.
+  @override
   Map<String, dynamic>? get peripheralParserSpec;
 
   /// [peripheralParserSpec] is the parser specification for the peripheral device.
   set peripheralParserSpec(Map<String, dynamic>? value);
+
+  /// Create a copy of ModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ModelInputImplCopyWith<_$ModelInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1111,8 +1137,12 @@ mixin _$HwModel {
   /// [models] is the list of the models that are part of this model.
   List<Model> get models => throw _privateConstructorUsedError;
 
+  /// Serializes this HwModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HwModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HwModelCopyWith<HwModel> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -1135,6 +1165,8 @@ class _$HwModelCopyWithImpl<$Res, $Val extends HwModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HwModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1183,6 +1215,8 @@ class __$$HwModelImplCopyWithImpl<$Res>
       _$HwModelImpl _value, $Res Function(_$HwModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HwModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1275,7 +1309,7 @@ class _$HwModelImpl implements _HwModel {
             const DeepCollectionEquality().equals(other._models, _models));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1284,7 +1318,9 @@ class _$HwModelImpl implements _HwModel {
       const DeepCollectionEquality().hash(_modelsIds),
       const DeepCollectionEquality().hash(_models));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HwModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HwModelImplCopyWith<_$HwModelImpl> get copyWith =>
@@ -1307,24 +1343,26 @@ abstract class _HwModel implements HwModel {
 
   factory _HwModel.fromJson(Map<String, dynamic> json) = _$HwModelImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the model.
-  String get id;
   @override
+  String get id;
 
   /// [name] is the name of the model.
-  String get name;
   @override
+  String get name;
 
   /// [modelsIds] is the list of the models IDs that are part of this model.
-  List<String> get modelsIds;
   @override
+  List<String> get modelsIds;
 
   /// [models] is the list of the models that are part of this model.
-  List<Model> get models;
   @override
-  @JsonKey(ignore: true)
+  List<Model> get models;
+
+  /// Create a copy of HwModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HwModelImplCopyWith<_$HwModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1353,8 +1391,12 @@ mixin _$HwModelInput {
   /// [modelsIds] is the list of the models IDs that are part of this model.
   set modelsIds(List<String> value) => throw _privateConstructorUsedError;
 
+  /// Serializes this HwModelInput to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of HwModelInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $HwModelInputCopyWith<HwModelInput> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1378,6 +1420,8 @@ class _$HwModelInputCopyWithImpl<$Res, $Val extends HwModelInput>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of HwModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1421,6 +1465,8 @@ class __$$HwModelInputImplCopyWithImpl<$Res>
       _$HwModelInputImpl _value, $Res Function(_$HwModelInputImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of HwModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1472,7 +1518,9 @@ class _$HwModelInputImpl implements _HwModelInput {
     return 'HwModelInput(id: $id, name: $name, modelsIds: $modelsIds)';
   }
 
-  @JsonKey(ignore: true)
+  /// Create a copy of HwModelInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$HwModelInputImplCopyWith<_$HwModelInputImpl> get copyWith =>
@@ -1493,29 +1541,31 @@ abstract class _HwModelInput implements HwModelInput {
   factory _HwModelInput.fromJson(Map<String, dynamic> json) =
       _$HwModelInputImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the model.
+  @override
   String? get id;
 
   /// [id] is the unique identifier of the model.
   set id(String? value);
-  @override
 
   /// [name] is the name of the model.
+  @override
   String get name;
 
   /// [name] is the name of the model.
   set name(String value);
-  @override
 
   /// [modelsIds] is the list of the models IDs that are part of this model.
+  @override
   List<String> get modelsIds;
 
   /// [modelsIds] is the list of the models IDs that are part of this model.
   set modelsIds(List<String> value);
+
+  /// Create a copy of HwModelInput
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$HwModelInputImplCopyWith<_$HwModelInputImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1558,8 +1608,12 @@ mixin _$FirmwareBuild {
   @TimestampConverter()
   DateTime get createdAt => throw _privateConstructorUsedError;
 
+  /// Serializes this FirmwareBuild to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FirmwareBuild
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FirmwareBuildCopyWith<FirmwareBuild> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1593,6 +1647,8 @@ class _$FirmwareBuildCopyWithImpl<$Res, $Val extends FirmwareBuild>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FirmwareBuild
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1681,6 +1737,8 @@ class __$$FirmwareBuildImplCopyWithImpl<$Res>
       _$FirmwareBuildImpl _value, $Res Function(_$FirmwareBuildImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FirmwareBuild
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1830,7 +1888,7 @@ class _$FirmwareBuildImpl implements _FirmwareBuild {
                 other.createdAt == createdAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1845,7 +1903,9 @@ class _$FirmwareBuildImpl implements _FirmwareBuild {
       spiffsUrl,
       createdAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FirmwareBuild
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FirmwareBuildImplCopyWith<_$FirmwareBuildImpl> get copyWith =>
@@ -1877,50 +1937,52 @@ abstract class _FirmwareBuild implements FirmwareBuild {
   factory _FirmwareBuild.fromJson(Map<String, dynamic> json) =
       _$FirmwareBuildImpl.fromJson;
 
-  @override
-
   /// [id] is the unique identifier of the firmware.
-  String get id;
   @override
+  String get id;
 
   /// [buildName] is the semantic version of the firmware.
-  String get buildName;
   @override
+  String get buildName;
 
   /// [buildNumber] is the build number of the firmware.
-  int get buildNumber;
   @override
+  int get buildNumber;
 
   /// [branch] is the branch of the firmware.
+  @override
   @JsonKey(unknownEnumValue: FirmwareBranch.stable)
   FirmwareBranch get branch;
-  @override
 
   /// [firmwareUrl] is the URL of the firmware.
-  String get firmwareUrl;
   @override
+  String get firmwareUrl;
 
   /// [partitionsUrl] is the URL of the partitions.
-  String get partitionsUrl;
   @override
+  String get partitionsUrl;
 
   /// [bootloaderUrl] is the URL of the bootloader.
-  String get bootloaderUrl;
   @override
+  String get bootloaderUrl;
 
   /// [bootApp0Url] is the URL of the boot app0.
-  String get bootApp0Url;
   @override
+  String get bootApp0Url;
 
   /// [spiffsUrl] is the URL of the spiffs.
-  String? get spiffsUrl;
   @override
+  String? get spiffsUrl;
 
   /// [createdAt] is the date when the firmware was created.
+  @override
   @TimestampConverter()
   DateTime get createdAt;
+
+  /// Create a copy of FirmwareBuild
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FirmwareBuildImplCopyWith<_$FirmwareBuildImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

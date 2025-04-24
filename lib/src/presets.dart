@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class Preset with _$Preset {
+abstract class Preset with _$Preset {
   const factory Preset({
     /// Is the ID
     required String id,

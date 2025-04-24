@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class TenvioCustomProperty with _$TenvioCustomProperty {
+abstract class TenvioCustomProperty with _$TenvioCustomProperty {
   /// [TenvioCustomProperty] represents a custom property of an item.
   /// This properties can be used to store additional information about the item and it's up to the
   /// user to define them.
@@ -50,9 +50,8 @@ class TenvioCustomProperty with _$TenvioCustomProperty {
   factory TenvioCustomProperty.fromJson(Map<String, dynamic> json) => _$TenvioCustomPropertyFromJson(json);
 }
 
-
 @unfreezed
-class TenvioCustomPropertyInput with _$TenvioCustomPropertyInput {
+abstract class TenvioCustomPropertyInput with _$TenvioCustomPropertyInput {
   /// [TenvioCustomPropertyInput] represents a custom property of an item.
   /// This properties can be used to store additional information about the item and it's up to the
   /// user to define them.

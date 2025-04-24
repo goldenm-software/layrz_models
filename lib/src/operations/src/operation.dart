@@ -1,7 +1,7 @@
 part of '../operations.dart';
 
 @freezed
-class Operation with _$Operation {
+abstract class Operation with _$Operation {
   const Operation._();
   const factory Operation({
     /// Is the ID of the operation.
@@ -123,7 +123,7 @@ class Operation with _$Operation {
 }
 
 @unfreezed
-class OperationInput with _$OperationInput {
+abstract class OperationInput with _$OperationInput {
   factory OperationInput({
     /// Is the ID of the operation.
     String? id,

@@ -1,7 +1,7 @@
 part of '../external.dart';
 
 @freezed
-class ExternalResource with _$ExternalResource {
+abstract class ExternalResource with _$ExternalResource {
   const factory ExternalResource({
     /// [wialonId] represents the ID from Wialon (Hosting or local).
     required String wialonId,

@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class TenvioPhotos with _$TenvioPhotos {
+abstract class TenvioPhotos with _$TenvioPhotos {
   const factory TenvioPhotos({
     /// [status] Status of the order when the photo was taken.
     String? status,

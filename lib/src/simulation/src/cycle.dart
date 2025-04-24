@@ -1,7 +1,7 @@
 part of '../simulation.dart';
 
 @freezed
-class SimulationCycle with _$SimulationCycle {
+abstract class SimulationCycle with _$SimulationCycle {
   const factory SimulationCycle({
     /// [id] is the unique identifier of the cycle
     required String id,

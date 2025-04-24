@@ -1,7 +1,7 @@
 part of '../../i18n.dart';
 
 @freezed
-class I18nKey with _$I18nKey {
+abstract class I18nKey with _$I18nKey {
   const I18nKey._();
 
   const factory I18nKey({
@@ -30,12 +30,11 @@ class I18nKey with _$I18nKey {
     required Employee updatedBy,
   }) = _I18nKey;
 
-  factory I18nKey.fromJson(Map<String, dynamic> json) =>
-      _$I18nKeyFromJson(json);
+  factory I18nKey.fromJson(Map<String, dynamic> json) => _$I18nKeyFromJson(json);
 }
 
 @unfreezed
-class I18nKeyInput with _$I18nKeyInput {
+abstract class I18nKeyInput with _$I18nKeyInput {
   I18nKeyInput._();
 
   factory I18nKeyInput({
@@ -44,6 +43,5 @@ class I18nKeyInput with _$I18nKeyInput {
     @Default([]) List<I18nTranslationInput> translations,
   }) = _I18nKeyInput;
 
-  factory I18nKeyInput.fromJson(Map<String, dynamic> json) =>
-      _$I18nKeyInputFromJson(json);
+  factory I18nKeyInput.fromJson(Map<String, dynamic> json) => _$I18nKeyInputFromJson(json);
 }

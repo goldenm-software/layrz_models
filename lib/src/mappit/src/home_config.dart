@@ -1,7 +1,7 @@
 part of '../mappit.dart';
 
 @freezed
-class MappitDurationRange with _$MappitDurationRange {
+abstract class MappitDurationRange with _$MappitDurationRange {
   const factory MappitDurationRange({
     /// [min] is the minimum value of the range
     @Default(Duration.zero) @DurationConverter() Duration min,
@@ -18,7 +18,7 @@ class MappitDurationRange with _$MappitDurationRange {
 }
 
 @freezed
-class MappitIntRange with _$MappitIntRange {
+abstract class MappitIntRange with _$MappitIntRange {
   const factory MappitIntRange({
     /// [min] is the minimum value of the range
     @Default(0) int min,
@@ -35,7 +35,7 @@ class MappitIntRange with _$MappitIntRange {
 }
 
 @freezed
-class MappitDoubleRange with _$MappitDoubleRange {
+abstract class MappitDoubleRange with _$MappitDoubleRange {
   const factory MappitDoubleRange({
     /// [min] is the minimum value of the range
     @Default(0) double min,
@@ -52,7 +52,7 @@ class MappitDoubleRange with _$MappitDoubleRange {
 }
 
 @freezed
-class MappitHomeConfig with _$MappitHomeConfig {
+abstract class MappitHomeConfig with _$MappitHomeConfig {
   const factory MappitHomeConfig({
     /// [firstVisit] is the conditions of the first visit
     @Default([]) List<MappitDurationRange> firstVisit,

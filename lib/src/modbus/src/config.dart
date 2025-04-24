@@ -1,7 +1,7 @@
 part of '../modbus.dart';
 
 @freezed
-class ModbusConfig with _$ModbusConfig {
+abstract class ModbusConfig with _$ModbusConfig {
   const factory ModbusConfig({
     /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
     required bool isEnabled,
@@ -18,7 +18,7 @@ class ModbusConfig with _$ModbusConfig {
 }
 
 @unfreezed
-class ModbusConfigInput with _$ModbusConfigInput {
+abstract class ModbusConfigInput with _$ModbusConfigInput {
   factory ModbusConfigInput({
     /// [isEnabled] is a boolean value that determines if the modbus device is enabled.
     @Default(false) bool isEnabled,

@@ -1,7 +1,7 @@
 part of '../outbound.dart';
 
 @freezed
-class OutboundProtocol with _$OutboundProtocol {
+abstract class OutboundProtocol with _$OutboundProtocol {
   const factory OutboundProtocol({
     /// [id] is the protocol ID, this ID is unique for each protocol.
     required String id,
