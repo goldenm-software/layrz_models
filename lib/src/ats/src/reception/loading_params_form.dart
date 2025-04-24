@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsLoadingParamsForm with _$AtsLoadingParamsForm {
+abstract class AtsLoadingParamsForm with _$AtsLoadingParamsForm {
   factory AtsLoadingParamsForm({
     /// `id` of the loading params form, ignore it if you are using "addLoadingParams" mutation
     String? id,

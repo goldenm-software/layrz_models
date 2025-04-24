@@ -1,7 +1,7 @@
 part of '../external.dart';
 
 @freezed
-class ExternalGeofence with _$ExternalGeofence {
+abstract class ExternalGeofence with _$ExternalGeofence {
   const factory ExternalGeofence({
     /// [wialonId] represents the ID from Wialon (Hosting or local).
     required String wialonId,

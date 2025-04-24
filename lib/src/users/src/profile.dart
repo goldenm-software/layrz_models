@@ -1,7 +1,7 @@
 part of '../users.dart';
 
 @unfreezed
-class ProfileInput with _$ProfileInput {
+abstract class ProfileInput with _$ProfileInput {
   factory ProfileInput({
     @Default('') String name,
     @Default('') String email,

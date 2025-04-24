@@ -1,7 +1,7 @@
 part of '../charts.dart';
 
 @freezed
-class ScatterChartRender with _$ScatterChartRender {
+abstract class ScatterChartRender with _$ScatterChartRender {
   const factory ScatterChartRender({
     required List<LineChartSerie> series,
     required AxisConfig xAxis,

@@ -1,7 +1,7 @@
 part of '../ble.dart';
 
 @freezed
-class BleDevice with _$BleDevice {
+abstract class BleDevice with _$BleDevice {
   const BleDevice._();
 
   /// [BleDevice] is the representation of a BLE device.

@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsExit with _$AtsExit {
+abstract class AtsExit with _$AtsExit {
   const factory AtsExit({
     /// `id` of the volume. This ID is unique.
     String? id,

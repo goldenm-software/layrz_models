@@ -1,7 +1,7 @@
 part of '../inbound.dart';
 
 @freezed
-class InboundService with _$InboundService {
+abstract class InboundService with _$InboundService {
   const factory InboundService({
     /// IS the ID of the entity. This ID is unique.
     required String id,
@@ -45,7 +45,7 @@ class InboundService with _$InboundService {
 }
 
 @unfreezed
-class InboundServiceInput with _$InboundServiceInput {
+abstract class InboundServiceInput with _$InboundServiceInput {
   factory InboundServiceInput({
     /// [id] is the ID of the entity. This ID is unique. Should be null when creating a new entity.
     String? id,

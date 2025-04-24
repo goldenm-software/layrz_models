@@ -1,7 +1,7 @@
 part of '../assets.dart';
 
 @freezed
-class Connection with _$Connection {
+abstract class Connection with _$Connection {
   const factory Connection({
     /// Time in seconds to consider online
     @DurationOrNullConverter() Duration? online,
@@ -15,7 +15,7 @@ class Connection with _$Connection {
 }
 
 @unfreezed
-class ConnectionInput with _$ConnectionInput {
+abstract class ConnectionInput with _$ConnectionInput {
   factory ConnectionInput({
     @DurationConverter() @Default(Duration(minutes: 5)) Duration online,
     @DurationConverter() @Default(Duration(hours: 1)) Duration hibernation,

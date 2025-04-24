@@ -1,7 +1,7 @@
 part of '../reports.dart';
 
 @freezed
-class ReportPreview with _$ReportPreview {
+abstract class ReportPreview with _$ReportPreview {
   const factory ReportPreview({
     /// [name] is the name of the report preview.
     required String name,

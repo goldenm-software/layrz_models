@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsReceptionProduct with _$AtsReceptionProduct {
+abstract class AtsReceptionProduct with _$AtsReceptionProduct {
   const factory AtsReceptionProduct({
     /// ID of the reception product. This ID is unique.
     String? id,
@@ -45,7 +45,7 @@ class AtsReceptionProduct with _$AtsReceptionProduct {
 }
 
 @unfreezed
-class AtsReceptionProductInput with _$AtsReceptionProductInput {
+abstract class AtsReceptionProductInput with _$AtsReceptionProductInput {
   factory AtsReceptionProductInput({
     /// Fuel ANP category code
     String? fuelAnp,
@@ -59,7 +59,7 @@ class AtsReceptionProductInput with _$AtsReceptionProductInput {
 }
 
 @unfreezed
-class AtsReceptionInput with _$AtsReceptionInput {
+abstract class AtsReceptionInput with _$AtsReceptionInput {
   factory AtsReceptionInput({
     ///ID of the [AtsReception]. This ID is unique.
     String? id,

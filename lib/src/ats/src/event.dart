@@ -1,7 +1,7 @@
 part of '../ats.dart';
 
 @freezed
-class AtsEvent with _$AtsEvent {
+abstract class AtsEvent with _$AtsEvent {
   const factory AtsEvent({
     /// [id] of the asset entity. This ID is unique.
     String? id,

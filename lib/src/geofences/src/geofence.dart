@@ -1,7 +1,7 @@
 part of '../geofences.dart';
 
 @freezed
-class Geofence with _$Geofence {
+abstract class Geofence with _$Geofence {
   const factory Geofence({
     /// ID of the geofence entity. This ID is unique.
     required String id,
@@ -64,7 +64,7 @@ class Geofence with _$Geofence {
 }
 
 @unfreezed
-class GeofenceInput with _$GeofenceInput {
+abstract class GeofenceInput with _$GeofenceInput {
   factory GeofenceInput({
     String? id,
     @Default("") String name,

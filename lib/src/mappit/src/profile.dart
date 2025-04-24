@@ -1,7 +1,7 @@
 part of '../mappit.dart';
 
 @freezed
-class MappitProfileGeofence with _$MappitProfileGeofence {
+abstract class MappitProfileGeofence with _$MappitProfileGeofence {
   const factory MappitProfileGeofence({
     /// [geofenceId] represents the ID of the geofence.
     required String geofenceId,
@@ -18,7 +18,7 @@ class MappitProfileGeofence with _$MappitProfileGeofence {
 }
 
 @freezed
-class MappitProfile with _$MappitProfile {
+abstract class MappitProfile with _$MappitProfile {
   const factory MappitProfile({
     /// [id] represents the ID of the profile.
     required String id,

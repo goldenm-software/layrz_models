@@ -1,7 +1,7 @@
 part of '../users.dart';
 
 @freezed
-class InviteLink with _$InviteLink {
+abstract class InviteLink with _$InviteLink {
   const InviteLink._();
   const factory InviteLink({
     required String id,

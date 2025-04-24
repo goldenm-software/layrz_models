@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class TenvioItemMovement with _$TenvioItemMovement {
+abstract class TenvioItemMovement with _$TenvioItemMovement {
   const factory TenvioItemMovement({
     /// [id] is the unique identifier of the movement
     required String id,

@@ -1,7 +1,7 @@
 part of '../../i18n.dart';
 
 @freezed
-class I18nKeyHistory with _$I18nKeyHistory {
+abstract class I18nKeyHistory with _$I18nKeyHistory {
   const I18nKeyHistory._();
 
   const factory I18nKeyHistory({
@@ -24,6 +24,5 @@ class I18nKeyHistory with _$I18nKeyHistory {
     required Employee performedBy,
   }) = _I18nKeyHistory;
 
-  factory I18nKeyHistory.fromJson(Map<String, dynamic> json) =>
-      _$I18nKeyHistoryFromJson(json);
+  factory I18nKeyHistory.fromJson(Map<String, dynamic> json) => _$I18nKeyHistoryFromJson(json);
 }

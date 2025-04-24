@@ -42,7 +42,7 @@ enum AtsSelectCard {
 }
 
 @freezed
-class AtsAuthenticationCard with _$AtsAuthenticationCard {
+abstract class AtsAuthenticationCard with _$AtsAuthenticationCard {
   const factory AtsAuthenticationCard({
     /// [id] represents the unique identifier of the card.
     required String id,

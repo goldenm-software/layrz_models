@@ -1,7 +1,7 @@
 part of '../sensors.dart';
 
 @freezed
-class Sensor with _$Sensor {
+abstract class Sensor with _$Sensor {
   const factory Sensor({
     /// [id] of the sensor. Must be unique along of all sensors of the asset.
     required String id,
@@ -117,7 +117,7 @@ class Sensor with _$Sensor {
 }
 
 @unfreezed
-class SensorInput with _$SensorInput {
+abstract class SensorInput with _$SensorInput {
   factory SensorInput({
     String? id,
     String? assetId,

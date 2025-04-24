@@ -1,7 +1,7 @@
 part of '../app.dart';
 
 @freezed
-class AppVersion with _$AppVersion {
+abstract class AppVersion with _$AppVersion {
   const factory AppVersion({
     required String id,
     @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) AppInternalIdentifier? app,

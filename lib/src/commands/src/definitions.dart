@@ -1,7 +1,7 @@
 part of '../commands.dart';
 
 @freezed
-class CommandPayloadDefinition with _$CommandPayloadDefinition {
+abstract class CommandPayloadDefinition with _$CommandPayloadDefinition {
   const factory CommandPayloadDefinition({
     /// [parameter] is the name of the parameter, this is also the translation key.
     required String parameter,
@@ -52,7 +52,7 @@ class CommandPayloadDefinition with _$CommandPayloadDefinition {
 }
 
 @unfreezed
-class CommandPayloadDefinitionInput with _$CommandPayloadDefinitionInput {
+abstract class CommandPayloadDefinitionInput with _$CommandPayloadDefinitionInput {
   factory CommandPayloadDefinitionInput({
     /// [parameter] is the name of the parameter, this is also the translation key.
     @Default('') String parameter,
@@ -104,7 +104,7 @@ class CommandPayloadDefinitionInput with _$CommandPayloadDefinitionInput {
 }
 
 @freezed
-class CommandDefinition with _$CommandDefinition {
+abstract class CommandDefinition with _$CommandDefinition {
   const factory CommandDefinition({
     /// [name] is the name of the command, this is also the translation key.
     required String name,
@@ -126,7 +126,7 @@ class CommandDefinition with _$CommandDefinition {
 }
 
 @unfreezed
-class CommandDefinitionInput with _$CommandDefinitionInput {
+abstract class CommandDefinitionInput with _$CommandDefinitionInput {
   factory CommandDefinitionInput({
     /// [name] is the name of the command, this is also the translation key.
     @Default('') String name,

@@ -1,7 +1,7 @@
 part of '../exchange.dart';
 
 @freezed
-class ExchangeService with _$ExchangeService {
+abstract class ExchangeService with _$ExchangeService {
   const factory ExchangeService({
     /// IS the ID of the entity. This ID is unique.
     required String id,

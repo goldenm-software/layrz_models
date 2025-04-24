@@ -1,7 +1,7 @@
 part of '../sensors.dart';
 
 @unfreezed
-class SensorRangeInput with _$SensorRangeInput {
+abstract class SensorRangeInput with _$SensorRangeInput {
   factory SensorRangeInput({
     @Default(0.0) double x,
     @Default(0.0) double y,
@@ -11,7 +11,7 @@ class SensorRangeInput with _$SensorRangeInput {
 }
 
 @freezed
-class SensorRange with _$SensorRange {
+abstract class SensorRange with _$SensorRange {
   const factory SensorRange({
     /// [x] means the input value of the sensor.
     required double x,

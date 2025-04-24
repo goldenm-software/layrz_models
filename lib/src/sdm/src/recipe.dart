@@ -1,7 +1,7 @@
 part of '../sdm.dart';
 
 @freezed
-class SdmRecipe with _$SdmRecipe {
+abstract class SdmRecipe with _$SdmRecipe {
   const factory SdmRecipe({
     /// [id] of the pen entity. This ID is unique.
     required String id,

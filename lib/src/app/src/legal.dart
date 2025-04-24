@@ -1,7 +1,7 @@
 part of '../app.dart';
 
 @freezed
-class AppLegal with _$AppLegal {
+abstract class AppLegal with _$AppLegal {
   const factory AppLegal({
     required String companyName,
     required String companyUrl,
@@ -12,7 +12,7 @@ class AppLegal with _$AppLegal {
 }
 
 @unfreezed
-class AppLegalInput with _$AppLegalInput {
+abstract class AppLegalInput with _$AppLegalInput {
   factory AppLegalInput({
     @Default('') String companyName,
     @Default('') String companyUrl,

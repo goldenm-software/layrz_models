@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsIdeInformation with _$AtsIdeInformation {
+abstract class AtsIdeInformation with _$AtsIdeInformation {
   factory AtsIdeInformation({
     /// Ide type
     String? ideType,

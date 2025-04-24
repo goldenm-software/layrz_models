@@ -1,7 +1,7 @@
 part of '../ats.dart';
 
 @freezed
-class AtsAuthenticationIdentifier with _$AtsAuthenticationIdentifier {
+abstract class AtsAuthenticationIdentifier with _$AtsAuthenticationIdentifier {
   const factory AtsAuthenticationIdentifier({
     /// ID of the [AtsAuthenticationIdentifier]. This ID is unique'
     String? id,

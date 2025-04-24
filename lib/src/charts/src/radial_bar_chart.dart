@@ -1,7 +1,7 @@
 part of '../charts.dart';
 
 @freezed
-class RadialBarChartRender with _$RadialBarChartRender {
+abstract class RadialBarChartRender with _$RadialBarChartRender {
   const factory RadialBarChartRender({
     required List<RadialBarChartSerie> series,
   }) = _RadialBarChartRender;
@@ -10,7 +10,7 @@ class RadialBarChartRender with _$RadialBarChartRender {
 }
 
 @freezed
-class RadialBarChartSerie with _$RadialBarChartSerie {
+abstract class RadialBarChartSerie with _$RadialBarChartSerie {
   const factory RadialBarChartSerie({
     @ColorConverter() required Color color,
     required String label,

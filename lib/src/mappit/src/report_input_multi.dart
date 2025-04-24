@@ -1,7 +1,7 @@
 part of '../mappit.dart';
 
 @unfreezed
-class MappitReportInputMulti with _$MappitReportInputMulti {
+abstract class MappitReportInputMulti with _$MappitReportInputMulti {
   factory MappitReportInputMulti({
     /// Start date for the report.
     double? startAt,

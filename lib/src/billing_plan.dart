@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class BillingPlan with _$BillingPlan {
+abstract class BillingPlan with _$BillingPlan {
   const factory BillingPlan({
     /// [id] is the unique identifier for the billing plan.
     required String id,
@@ -55,12 +55,11 @@ class BillingPlan with _$BillingPlan {
     @Default(false) bool aiEnabled,
   }) = _BillingPlan;
 
-  factory BillingPlan.fromJson(Map<String, dynamic> json) =>
-      _$BillingPlanFromJson(json);
+  factory BillingPlan.fromJson(Map<String, dynamic> json) => _$BillingPlanFromJson(json);
 }
 
 @unfreezed
-class BillingPlanInput with _$BillingPlanInput {
+abstract class BillingPlanInput with _$BillingPlanInput {
   factory BillingPlanInput({
     /// [id] is the unique identifier for the billing plan.
     String? id,
@@ -114,6 +113,5 @@ class BillingPlanInput with _$BillingPlanInput {
     @Default(false) bool aiEnabled,
   }) = _BillingPlanInput;
 
-  factory BillingPlanInput.fromJson(Map<String, dynamic> json) =>
-      _$BillingPlanInputFromJson(json);
+  factory BillingPlanInput.fromJson(Map<String, dynamic> json) => _$BillingPlanInputFromJson(json);
 }

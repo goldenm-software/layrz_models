@@ -1,7 +1,7 @@
 part of '../inbound.dart';
 
 @freezed
-class InboundProtocol with _$InboundProtocol {
+abstract class InboundProtocol with _$InboundProtocol {
   const factory InboundProtocol({
     /// The protocol ID
     required String id,
@@ -130,7 +130,7 @@ class InboundProtocol with _$InboundProtocol {
 }
 
 @unfreezed
-class InboundProtocolInput with _$InboundProtocolInput {
+abstract class InboundProtocolInput with _$InboundProtocolInput {
   factory InboundProtocolInput({
     /// [id] ID of the protocol entity. This ID is unique.
     String? id,

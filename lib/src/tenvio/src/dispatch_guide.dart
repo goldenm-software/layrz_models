@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class TenvioDispatchGuide with _$TenvioDispatchGuide {
+abstract class TenvioDispatchGuide with _$TenvioDispatchGuide {
   const TenvioDispatchGuide._();
 
   const factory TenvioDispatchGuide({
@@ -58,7 +58,7 @@ class TenvioDispatchGuide with _$TenvioDispatchGuide {
 }
 
 @unfreezed
-class TenvioDispatchGuideInput with _$TenvioDispatchGuideInput {
+abstract class TenvioDispatchGuideInput with _$TenvioDispatchGuideInput {
   TenvioDispatchGuideInput._();
 
   factory TenvioDispatchGuideInput({

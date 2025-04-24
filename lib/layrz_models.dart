@@ -1,4 +1,4 @@
-library layrz_models;
+library;
 
 import 'dart:convert';
 

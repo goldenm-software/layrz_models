@@ -32,7 +32,7 @@ part of '../layrz_models.dart';
 /// linkedAssetsIds [LinkedAssetToCheckpointId]
 /// IDs of the linked Assets.
 @freezed
-class Checkpoint with _$Checkpoint {
+abstract class Checkpoint with _$Checkpoint {
   const factory Checkpoint({
     /// ID of the checkpoint entity. This ID is unique.
     required String id,
@@ -79,7 +79,7 @@ class Checkpoint with _$Checkpoint {
 /// kind [WaypointKind]
 /// It can be POINT or PATHWAY. See the documentation for more information.
 @freezed
-class Waypoint with _$Waypoint {
+abstract class Waypoint with _$Waypoint {
   const factory Waypoint({
     /// ID of the waypoint entity. This ID is unique.
     required String id,
@@ -175,7 +175,7 @@ class WaypointKindOrNullConverter implements JsonConverter<WaypointKind?, String
 ///
 /// entity LinkedAssetEntity
 @freezed
-class LinkedAssetToCheckpointId with _$LinkedAssetToCheckpointId {
+abstract class LinkedAssetToCheckpointId with _$LinkedAssetToCheckpointId {
   const factory LinkedAssetToCheckpointId({
     required String itemId,
     @LinkedAssetEntityConverter() required LinkedAssetEntity entity,
@@ -260,7 +260,7 @@ class LinkedAssetEntityConverter implements JsonConverter<LinkedAssetEntity, Str
 /// linkedAssetsIds [LinkedAssetToCheckpointIdInput]
 /// Linked Asset entity ID, only required for
 @unfreezed
-class CheckpointInput with _$CheckpointInput {
+abstract class CheckpointInput with _$CheckpointInput {
   factory CheckpointInput({
     /// ID of the preset entity. This ID is unique.
     String? id,

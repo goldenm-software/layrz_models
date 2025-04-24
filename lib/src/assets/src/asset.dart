@@ -1,7 +1,7 @@
 part of '../assets.dart';
 
 @freezed
-class Asset with _$Asset {
+abstract class Asset with _$Asset {
   const Asset._();
 
   const factory Asset({
@@ -173,7 +173,7 @@ class Asset with _$Asset {
 }
 
 @unfreezed
-class AssetInput with _$AssetInput {
+abstract class AssetInput with _$AssetInput {
   AssetInput._();
 
   factory AssetInput({

@@ -1,7 +1,7 @@
 part of '../vision.dart';
 
 @freezed
-class VisionGaugeResult with _$VisionGaugeResult {
+abstract class VisionGaugeResult with _$VisionGaugeResult {
   const factory VisionGaugeResult({
     /// [id] is the unique identifier of the measurement.
     required String id,

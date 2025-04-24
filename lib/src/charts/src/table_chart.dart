@@ -1,7 +1,7 @@
 part of '../charts.dart';
 
 @freezed
-class TableHeader with _$TableHeader {
+abstract class TableHeader with _$TableHeader {
   const factory TableHeader({
     required String label,
     required String key,
@@ -11,7 +11,7 @@ class TableHeader with _$TableHeader {
 }
 
 @freezed
-class TableDataSerie with _$TableDataSerie {
+abstract class TableDataSerie with _$TableDataSerie {
   const factory TableDataSerie({
     @JsonKey(name: 'columns') required List<TableHeader> headers,
     @JsonKey(name: 'rows') required List<Map<String, dynamic>> values,

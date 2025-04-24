@@ -1,7 +1,7 @@
 part of '../map.dart';
 
 @freezed
-class MapLayer with _$MapLayer {
+abstract class MapLayer with _$MapLayer {
   /// [MapLayer] is the model for a map layer.
   /// It is used to define the layers that are available in the app.
   /// This model only can be getted from the [RegisteredApp] model.
@@ -75,7 +75,7 @@ class MapLayer with _$MapLayer {
 }
 
 @unfreezed
-class MapLayerInput with _$MapLayerInput {
+abstract class MapLayerInput with _$MapLayerInput {
   /// [MapLayerInput] is the model for a map layer.
   /// It is used to define the layers that are available in the app.
   /// This model only can be getted from the [RegisteredApp] model.

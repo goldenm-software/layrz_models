@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,70 +10,116 @@ part of 'outbound.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-OutboundProtocol _$OutboundProtocolFromJson(Map<String, dynamic> json) {
-  return _OutboundProtocol.fromJson(json);
-}
 
 /// @nodoc
 mixin _$OutboundProtocol {
   /// [id] is the protocol ID, this ID is unique for each protocol.
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// [name] is the name of the protocol.
   /// This name is a translation key, so, check the translation messages to get the name,
   /// the key is composed by `protocols.outbound.{name}`.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// [color] is the color assigned to the protocol.
   @ColorConverter()
-  Color get color => throw _privateConstructorUsedError;
+  Color get color;
 
   /// [isEnabled] indicates if the protocol is enabled and available for use, or disabled and not available for use.
-  bool get isEnabled => throw _privateConstructorUsedError;
+  bool get isEnabled;
 
   /// [categoriesIds] is the list of categories IDs that the protocol belongs to.
-  List<String> get categoriesIds => throw _privateConstructorUsedError;
+  List<String> get categoriesIds;
 
   /// [hasFtp] indicates if the protocol has support for FTP.
-  bool? get hasFtp => throw _privateConstructorUsedError;
+  bool? get hasFtp;
 
   /// [isConsumpted] indicates if the protocol is consumpted.
-  bool? get isConsumpted => throw _privateConstructorUsedError;
+  bool? get isConsumpted;
 
   /// [mqttTopic] is the MQTT topic of the protocol.
-  String? get mqttTopic => throw _privateConstructorUsedError;
+  String? get mqttTopic;
 
   /// [isAsync] indicates if the protocol is asynchronous.
-  bool? get isAsync => throw _privateConstructorUsedError;
+  bool? get isAsync;
 
   /// [requiredFields] is the list of required fields for the protocol.
-  List<CredentialField> get requiredFields =>
-      throw _privateConstructorUsedError;
+  List<CredentialField> get requiredFields;
 
   /// [dynamicIcon] is the icon of the inbound protocol.
   /// This is the new schema of the icon
-  Avatar? get dynamicIcon => throw _privateConstructorUsedError;
+  Avatar? get dynamicIcon;
 
   /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
   /// For marketing purposes.
-  int? get usage => throw _privateConstructorUsedError;
+  int? get usage;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $OutboundProtocolCopyWith<OutboundProtocol> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$OutboundProtocolCopyWithImpl<OutboundProtocol>(
+          this as OutboundProtocol, _$identity);
+
+  /// Serializes this OutboundProtocol to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is OutboundProtocol &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.isEnabled, isEnabled) ||
+                other.isEnabled == isEnabled) &&
+            const DeepCollectionEquality()
+                .equals(other.categoriesIds, categoriesIds) &&
+            (identical(other.hasFtp, hasFtp) || other.hasFtp == hasFtp) &&
+            (identical(other.isConsumpted, isConsumpted) ||
+                other.isConsumpted == isConsumpted) &&
+            (identical(other.mqttTopic, mqttTopic) ||
+                other.mqttTopic == mqttTopic) &&
+            (identical(other.isAsync, isAsync) || other.isAsync == isAsync) &&
+            const DeepCollectionEquality()
+                .equals(other.requiredFields, requiredFields) &&
+            (identical(other.dynamicIcon, dynamicIcon) ||
+                other.dynamicIcon == dynamicIcon) &&
+            (identical(other.usage, usage) || other.usage == usage));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      color,
+      isEnabled,
+      const DeepCollectionEquality().hash(categoriesIds),
+      hasFtp,
+      isConsumpted,
+      mqttTopic,
+      isAsync,
+      const DeepCollectionEquality().hash(requiredFields),
+      dynamicIcon,
+      usage);
+
+  @override
+  String toString() {
+    return 'OutboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, hasFtp: $hasFtp, isConsumpted: $isConsumpted, mqttTopic: $mqttTopic, isAsync: $isAsync, requiredFields: $requiredFields, dynamicIcon: $dynamicIcon, usage: $usage)';
+  }
 }
 
 /// @nodoc
-abstract class $OutboundProtocolCopyWith<$Res> {
+abstract mixin class $OutboundProtocolCopyWith<$Res> {
   factory $OutboundProtocolCopyWith(
-          OutboundProtocol value, $Res Function(OutboundProtocol) then) =
-      _$OutboundProtocolCopyWithImpl<$Res, OutboundProtocol>;
+          OutboundProtocol value, $Res Function(OutboundProtocol) _then) =
+      _$OutboundProtocolCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -92,15 +139,15 @@ abstract class $OutboundProtocolCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OutboundProtocolCopyWithImpl<$Res, $Val extends OutboundProtocol>
+class _$OutboundProtocolCopyWithImpl<$Res>
     implements $OutboundProtocolCopyWith<$Res> {
-  _$OutboundProtocolCopyWithImpl(this._value, this._then);
+  _$OutboundProtocolCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final OutboundProtocol _self;
+  final $Res Function(OutboundProtocol) _then;
 
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -117,178 +164,77 @@ class _$OutboundProtocolCopyWithImpl<$Res, $Val extends OutboundProtocol>
     Object? dynamicIcon = freezed,
     Object? usage = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       color: null == color
-          ? _value.color
+          ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
       isEnabled: null == isEnabled
-          ? _value.isEnabled
+          ? _self.isEnabled
           : isEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       categoriesIds: null == categoriesIds
-          ? _value.categoriesIds
+          ? _self.categoriesIds
           : categoriesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       hasFtp: freezed == hasFtp
-          ? _value.hasFtp
+          ? _self.hasFtp
           : hasFtp // ignore: cast_nullable_to_non_nullable
               as bool?,
       isConsumpted: freezed == isConsumpted
-          ? _value.isConsumpted
+          ? _self.isConsumpted
           : isConsumpted // ignore: cast_nullable_to_non_nullable
               as bool?,
       mqttTopic: freezed == mqttTopic
-          ? _value.mqttTopic
+          ? _self.mqttTopic
           : mqttTopic // ignore: cast_nullable_to_non_nullable
               as String?,
       isAsync: freezed == isAsync
-          ? _value.isAsync
+          ? _self.isAsync
           : isAsync // ignore: cast_nullable_to_non_nullable
               as bool?,
       requiredFields: null == requiredFields
-          ? _value.requiredFields
+          ? _self.requiredFields
           : requiredFields // ignore: cast_nullable_to_non_nullable
               as List<CredentialField>,
       dynamicIcon: freezed == dynamicIcon
-          ? _value.dynamicIcon
+          ? _self.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
               as Avatar?,
       usage: freezed == usage
-          ? _value.usage
+          ? _self.usage
           : usage // ignore: cast_nullable_to_non_nullable
               as int?,
-    ) as $Val);
+    ));
   }
 
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $AvatarCopyWith<$Res>? get dynamicIcon {
-    if (_value.dynamicIcon == null) {
+    if (_self.dynamicIcon == null) {
       return null;
     }
 
-    return $AvatarCopyWith<$Res>(_value.dynamicIcon!, (value) {
-      return _then(_value.copyWith(dynamicIcon: value) as $Val);
+    return $AvatarCopyWith<$Res>(_self.dynamicIcon!, (value) {
+      return _then(_self.copyWith(dynamicIcon: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$OutboundProtocolImplCopyWith<$Res>
-    implements $OutboundProtocolCopyWith<$Res> {
-  factory _$$OutboundProtocolImplCopyWith(_$OutboundProtocolImpl value,
-          $Res Function(_$OutboundProtocolImpl) then) =
-      __$$OutboundProtocolImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @ColorConverter() Color color,
-      bool isEnabled,
-      List<String> categoriesIds,
-      bool? hasFtp,
-      bool? isConsumpted,
-      String? mqttTopic,
-      bool? isAsync,
-      List<CredentialField> requiredFields,
-      Avatar? dynamicIcon,
-      int? usage});
-
-  @override
-  $AvatarCopyWith<$Res>? get dynamicIcon;
-}
-
-/// @nodoc
-class __$$OutboundProtocolImplCopyWithImpl<$Res>
-    extends _$OutboundProtocolCopyWithImpl<$Res, _$OutboundProtocolImpl>
-    implements _$$OutboundProtocolImplCopyWith<$Res> {
-  __$$OutboundProtocolImplCopyWithImpl(_$OutboundProtocolImpl _value,
-      $Res Function(_$OutboundProtocolImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? color = null,
-    Object? isEnabled = null,
-    Object? categoriesIds = null,
-    Object? hasFtp = freezed,
-    Object? isConsumpted = freezed,
-    Object? mqttTopic = freezed,
-    Object? isAsync = freezed,
-    Object? requiredFields = null,
-    Object? dynamicIcon = freezed,
-    Object? usage = freezed,
-  }) {
-    return _then(_$OutboundProtocolImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: null == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color,
-      isEnabled: null == isEnabled
-          ? _value.isEnabled
-          : isEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      categoriesIds: null == categoriesIds
-          ? _value._categoriesIds
-          : categoriesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      hasFtp: freezed == hasFtp
-          ? _value.hasFtp
-          : hasFtp // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isConsumpted: freezed == isConsumpted
-          ? _value.isConsumpted
-          : isConsumpted // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      mqttTopic: freezed == mqttTopic
-          ? _value.mqttTopic
-          : mqttTopic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isAsync: freezed == isAsync
-          ? _value.isAsync
-          : isAsync // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      requiredFields: null == requiredFields
-          ? _value._requiredFields
-          : requiredFields // ignore: cast_nullable_to_non_nullable
-              as List<CredentialField>,
-      dynamicIcon: freezed == dynamicIcon
-          ? _value.dynamicIcon
-          : dynamicIcon // ignore: cast_nullable_to_non_nullable
-              as Avatar?,
-      usage: freezed == usage
-          ? _value.usage
-          : usage // ignore: cast_nullable_to_non_nullable
-              as int?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$OutboundProtocolImpl implements _OutboundProtocol {
-  const _$OutboundProtocolImpl(
+class _OutboundProtocol implements OutboundProtocol {
+  const _OutboundProtocol(
       {required this.id,
       required this.name,
       @ColorConverter() required this.color,
@@ -303,9 +249,8 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
       this.usage})
       : _categoriesIds = categoriesIds,
         _requiredFields = requiredFields;
-
-  factory _$OutboundProtocolImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OutboundProtocolImplFromJson(json);
+  factory _OutboundProtocol.fromJson(Map<String, dynamic> json) =>
+      _$OutboundProtocolFromJson(json);
 
   /// [id] is the protocol ID, this ID is unique for each protocol.
   @override
@@ -376,16 +321,26 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
   @override
   final int? usage;
 
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'OutboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, hasFtp: $hasFtp, isConsumpted: $isConsumpted, mqttTopic: $mqttTopic, isAsync: $isAsync, requiredFields: $requiredFields, dynamicIcon: $dynamicIcon, usage: $usage)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$OutboundProtocolCopyWith<_OutboundProtocol> get copyWith =>
+      __$OutboundProtocolCopyWithImpl<_OutboundProtocol>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$OutboundProtocolToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OutboundProtocolImpl &&
+            other is _OutboundProtocol &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.color, color) || other.color == color) &&
@@ -406,7 +361,7 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
             (identical(other.usage, usage) || other.usage == usage));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -423,157 +378,241 @@ class _$OutboundProtocolImpl implements _OutboundProtocol {
       dynamicIcon,
       usage);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$OutboundProtocolImplCopyWith<_$OutboundProtocolImpl> get copyWith =>
-      __$$OutboundProtocolImplCopyWithImpl<_$OutboundProtocolImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$OutboundProtocolImplToJson(
-      this,
-    );
+  String toString() {
+    return 'OutboundProtocol(id: $id, name: $name, color: $color, isEnabled: $isEnabled, categoriesIds: $categoriesIds, hasFtp: $hasFtp, isConsumpted: $isConsumpted, mqttTopic: $mqttTopic, isAsync: $isAsync, requiredFields: $requiredFields, dynamicIcon: $dynamicIcon, usage: $usage)';
   }
 }
 
-abstract class _OutboundProtocol implements OutboundProtocol {
-  const factory _OutboundProtocol(
-      {required final String id,
-      required final String name,
-      @ColorConverter() required final Color color,
-      required final bool isEnabled,
-      final List<String> categoriesIds,
-      final bool? hasFtp,
-      final bool? isConsumpted,
-      final String? mqttTopic,
-      final bool? isAsync,
-      final List<CredentialField> requiredFields,
-      final Avatar? dynamicIcon,
-      final int? usage}) = _$OutboundProtocolImpl;
-
-  factory _OutboundProtocol.fromJson(Map<String, dynamic> json) =
-      _$OutboundProtocolImpl.fromJson;
+/// @nodoc
+abstract mixin class _$OutboundProtocolCopyWith<$Res>
+    implements $OutboundProtocolCopyWith<$Res> {
+  factory _$OutboundProtocolCopyWith(
+          _OutboundProtocol value, $Res Function(_OutboundProtocol) _then) =
+      __$OutboundProtocolCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      @ColorConverter() Color color,
+      bool isEnabled,
+      List<String> categoriesIds,
+      bool? hasFtp,
+      bool? isConsumpted,
+      String? mqttTopic,
+      bool? isAsync,
+      List<CredentialField> requiredFields,
+      Avatar? dynamicIcon,
+      int? usage});
 
   @override
-
-  /// [id] is the protocol ID, this ID is unique for each protocol.
-  String get id;
-  @override
-
-  /// [name] is the name of the protocol.
-  /// This name is a translation key, so, check the translation messages to get the name,
-  /// the key is composed by `protocols.outbound.{name}`.
-  String get name;
-  @override
-
-  /// [color] is the color assigned to the protocol.
-  @ColorConverter()
-  Color get color;
-  @override
-
-  /// [isEnabled] indicates if the protocol is enabled and available for use, or disabled and not available for use.
-  bool get isEnabled;
-  @override
-
-  /// [categoriesIds] is the list of categories IDs that the protocol belongs to.
-  List<String> get categoriesIds;
-  @override
-
-  /// [hasFtp] indicates if the protocol has support for FTP.
-  bool? get hasFtp;
-  @override
-
-  /// [isConsumpted] indicates if the protocol is consumpted.
-  bool? get isConsumpted;
-  @override
-
-  /// [mqttTopic] is the MQTT topic of the protocol.
-  String? get mqttTopic;
-  @override
-
-  /// [isAsync] indicates if the protocol is asynchronous.
-  bool? get isAsync;
-  @override
-
-  /// [requiredFields] is the list of required fields for the protocol.
-  List<CredentialField> get requiredFields;
-  @override
-
-  /// [dynamicIcon] is the icon of the inbound protocol.
-  /// This is the new schema of the icon
-  Avatar? get dynamicIcon;
-  @override
-
-  /// [usage] is the usage of the protocol. This field shuld be only used to show the popularity of the protocol.
-  /// For marketing purposes.
-  int? get usage;
-  @override
-  @JsonKey(ignore: true)
-  _$$OutboundProtocolImplCopyWith<_$OutboundProtocolImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AvatarCopyWith<$Res>? get dynamicIcon;
 }
 
-OutboundService _$OutboundServiceFromJson(Map<String, dynamic> json) {
-  return _OutboundService.fromJson(json);
+/// @nodoc
+class __$OutboundProtocolCopyWithImpl<$Res>
+    implements _$OutboundProtocolCopyWith<$Res> {
+  __$OutboundProtocolCopyWithImpl(this._self, this._then);
+
+  final _OutboundProtocol _self;
+  final $Res Function(_OutboundProtocol) _then;
+
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? color = null,
+    Object? isEnabled = null,
+    Object? categoriesIds = null,
+    Object? hasFtp = freezed,
+    Object? isConsumpted = freezed,
+    Object? mqttTopic = freezed,
+    Object? isAsync = freezed,
+    Object? requiredFields = null,
+    Object? dynamicIcon = freezed,
+    Object? usage = freezed,
+  }) {
+    return _then(_OutboundProtocol(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: null == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
+      isEnabled: null == isEnabled
+          ? _self.isEnabled
+          : isEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      categoriesIds: null == categoriesIds
+          ? _self._categoriesIds
+          : categoriesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      hasFtp: freezed == hasFtp
+          ? _self.hasFtp
+          : hasFtp // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isConsumpted: freezed == isConsumpted
+          ? _self.isConsumpted
+          : isConsumpted // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mqttTopic: freezed == mqttTopic
+          ? _self.mqttTopic
+          : mqttTopic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isAsync: freezed == isAsync
+          ? _self.isAsync
+          : isAsync // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      requiredFields: null == requiredFields
+          ? _self._requiredFields
+          : requiredFields // ignore: cast_nullable_to_non_nullable
+              as List<CredentialField>,
+      dynamicIcon: freezed == dynamicIcon
+          ? _self.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
+      usage: freezed == usage
+          ? _self.usage
+          : usage // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+
+  /// Create a copy of OutboundProtocol
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AvatarCopyWith<$Res>? get dynamicIcon {
+    if (_self.dynamicIcon == null) {
+      return null;
+    }
+
+    return $AvatarCopyWith<$Res>(_self.dynamicIcon!, (value) {
+      return _then(_self.copyWith(dynamicIcon: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$OutboundService {
   /// IS the ID of the entity. This ID is unique.
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// Is the Assigned service name, cannot be translated for other languages.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// Is the Credential object, check the documentation for more information.
-  Map<String, dynamic>? get credentials => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get credentials;
 
   /// Is the Protocol entity.
-  OutboundProtocol? get protocol => throw _privateConstructorUsedError;
+  OutboundProtocol? get protocol;
 
   /// Is the Protocol ID.
-  String? get protocolId => throw _privateConstructorUsedError;
+  String? get protocolId;
 
   /// Is the Current transmission status.
-  bool? get isEnabled => throw _privateConstructorUsedError;
+  bool? get isEnabled;
 
   /// Is the Structure of the outbound protocol, only used for Omega REST Outbound protocol.
-  List<OutboundStructure>? get structure => throw _privateConstructorUsedError;
+  List<OutboundStructure>? get structure;
 
   /// Is the Token to authenticate the request, only used for Alpha REST Inbound protocol
-  String? get token => throw _privateConstructorUsedError;
+  String? get token;
 
   /// Is the Assets IDs linked to the service.
-  List<String>? get assetsIds => throw _privateConstructorUsedError;
+  List<String>? get assetsIds;
 
   /// Is the Assets linked to the service.
-  List<Asset>? get assets => throw _privateConstructorUsedError;
+  List<Asset>? get assets;
 
   /// Is the Groups (Tags) IDs linked to the service.
-  List<String>? get groupsIds => throw _privateConstructorUsedError;
+  List<String>? get groupsIds;
 
   /// Is the Groups (Tags) linked to the service.
-  List<Tag>? get groups => throw _privateConstructorUsedError;
+  List<Tag>? get groups;
 
   /// A list of custom access permissions.
-  List<Access>? get access => throw _privateConstructorUsedError;
+  List<Access>? get access;
 
   /// Is the Metrics object.
-  OutboundMetrics? get metrics => throw _privateConstructorUsedError;
+  OutboundMetrics? get metrics;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $OutboundServiceCopyWith<OutboundService> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$OutboundServiceCopyWithImpl<OutboundService>(
+          this as OutboundService, _$identity);
+
+  /// Serializes this OutboundService to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is OutboundService &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality()
+                .equals(other.credentials, credentials) &&
+            (identical(other.protocol, protocol) ||
+                other.protocol == protocol) &&
+            (identical(other.protocolId, protocolId) ||
+                other.protocolId == protocolId) &&
+            (identical(other.isEnabled, isEnabled) ||
+                other.isEnabled == isEnabled) &&
+            const DeepCollectionEquality().equals(other.structure, structure) &&
+            (identical(other.token, token) || other.token == token) &&
+            const DeepCollectionEquality().equals(other.assetsIds, assetsIds) &&
+            const DeepCollectionEquality().equals(other.assets, assets) &&
+            const DeepCollectionEquality().equals(other.groupsIds, groupsIds) &&
+            const DeepCollectionEquality().equals(other.groups, groups) &&
+            const DeepCollectionEquality().equals(other.access, access) &&
+            (identical(other.metrics, metrics) || other.metrics == metrics));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      const DeepCollectionEquality().hash(credentials),
+      protocol,
+      protocolId,
+      isEnabled,
+      const DeepCollectionEquality().hash(structure),
+      token,
+      const DeepCollectionEquality().hash(assetsIds),
+      const DeepCollectionEquality().hash(assets),
+      const DeepCollectionEquality().hash(groupsIds),
+      const DeepCollectionEquality().hash(groups),
+      const DeepCollectionEquality().hash(access),
+      metrics);
+
+  @override
+  String toString() {
+    return 'OutboundService(id: $id, name: $name, credentials: $credentials, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, structure: $structure, token: $token, assetsIds: $assetsIds, assets: $assets, groupsIds: $groupsIds, groups: $groups, access: $access, metrics: $metrics)';
+  }
 }
 
 /// @nodoc
-abstract class $OutboundServiceCopyWith<$Res> {
+abstract mixin class $OutboundServiceCopyWith<$Res> {
   factory $OutboundServiceCopyWith(
-          OutboundService value, $Res Function(OutboundService) then) =
-      _$OutboundServiceCopyWithImpl<$Res, OutboundService>;
+          OutboundService value, $Res Function(OutboundService) _then) =
+      _$OutboundServiceCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -596,15 +635,15 @@ abstract class $OutboundServiceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OutboundServiceCopyWithImpl<$Res, $Val extends OutboundService>
+class _$OutboundServiceCopyWithImpl<$Res>
     implements $OutboundServiceCopyWith<$Res> {
-  _$OutboundServiceCopyWithImpl(this._value, this._then);
+  _$OutboundServiceCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final OutboundService _self;
+  final $Res Function(OutboundService) _then;
 
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -623,212 +662,99 @@ class _$OutboundServiceCopyWithImpl<$Res, $Val extends OutboundService>
     Object? access = freezed,
     Object? metrics = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       credentials: freezed == credentials
-          ? _value.credentials
+          ? _self.credentials
           : credentials // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       protocol: freezed == protocol
-          ? _value.protocol
+          ? _self.protocol
           : protocol // ignore: cast_nullable_to_non_nullable
               as OutboundProtocol?,
       protocolId: freezed == protocolId
-          ? _value.protocolId
+          ? _self.protocolId
           : protocolId // ignore: cast_nullable_to_non_nullable
               as String?,
       isEnabled: freezed == isEnabled
-          ? _value.isEnabled
+          ? _self.isEnabled
           : isEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
       structure: freezed == structure
-          ? _value.structure
+          ? _self.structure
           : structure // ignore: cast_nullable_to_non_nullable
               as List<OutboundStructure>?,
       token: freezed == token
-          ? _value.token
+          ? _self.token
           : token // ignore: cast_nullable_to_non_nullable
               as String?,
       assetsIds: freezed == assetsIds
-          ? _value.assetsIds
+          ? _self.assetsIds
           : assetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       assets: freezed == assets
-          ? _value.assets
+          ? _self.assets
           : assets // ignore: cast_nullable_to_non_nullable
               as List<Asset>?,
       groupsIds: freezed == groupsIds
-          ? _value.groupsIds
+          ? _self.groupsIds
           : groupsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       groups: freezed == groups
-          ? _value.groups
+          ? _self.groups
           : groups // ignore: cast_nullable_to_non_nullable
               as List<Tag>?,
       access: freezed == access
-          ? _value.access
+          ? _self.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
       metrics: freezed == metrics
-          ? _value.metrics
-          : metrics // ignore: cast_nullable_to_non_nullable
-              as OutboundMetrics?,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $OutboundProtocolCopyWith<$Res>? get protocol {
-    if (_value.protocol == null) {
-      return null;
-    }
-
-    return $OutboundProtocolCopyWith<$Res>(_value.protocol!, (value) {
-      return _then(_value.copyWith(protocol: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $OutboundMetricsCopyWith<$Res>? get metrics {
-    if (_value.metrics == null) {
-      return null;
-    }
-
-    return $OutboundMetricsCopyWith<$Res>(_value.metrics!, (value) {
-      return _then(_value.copyWith(metrics: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$OutboundServiceImplCopyWith<$Res>
-    implements $OutboundServiceCopyWith<$Res> {
-  factory _$$OutboundServiceImplCopyWith(_$OutboundServiceImpl value,
-          $Res Function(_$OutboundServiceImpl) then) =
-      __$$OutboundServiceImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      Map<String, dynamic>? credentials,
-      OutboundProtocol? protocol,
-      String? protocolId,
-      bool? isEnabled,
-      List<OutboundStructure>? structure,
-      String? token,
-      List<String>? assetsIds,
-      List<Asset>? assets,
-      List<String>? groupsIds,
-      List<Tag>? groups,
-      List<Access>? access,
-      OutboundMetrics? metrics});
-
-  @override
-  $OutboundProtocolCopyWith<$Res>? get protocol;
-  @override
-  $OutboundMetricsCopyWith<$Res>? get metrics;
-}
-
-/// @nodoc
-class __$$OutboundServiceImplCopyWithImpl<$Res>
-    extends _$OutboundServiceCopyWithImpl<$Res, _$OutboundServiceImpl>
-    implements _$$OutboundServiceImplCopyWith<$Res> {
-  __$$OutboundServiceImplCopyWithImpl(
-      _$OutboundServiceImpl _value, $Res Function(_$OutboundServiceImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? credentials = freezed,
-    Object? protocol = freezed,
-    Object? protocolId = freezed,
-    Object? isEnabled = freezed,
-    Object? structure = freezed,
-    Object? token = freezed,
-    Object? assetsIds = freezed,
-    Object? assets = freezed,
-    Object? groupsIds = freezed,
-    Object? groups = freezed,
-    Object? access = freezed,
-    Object? metrics = freezed,
-  }) {
-    return _then(_$OutboundServiceImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      credentials: freezed == credentials
-          ? _value._credentials
-          : credentials // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      protocol: freezed == protocol
-          ? _value.protocol
-          : protocol // ignore: cast_nullable_to_non_nullable
-              as OutboundProtocol?,
-      protocolId: freezed == protocolId
-          ? _value.protocolId
-          : protocolId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isEnabled: freezed == isEnabled
-          ? _value.isEnabled
-          : isEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      structure: freezed == structure
-          ? _value._structure
-          : structure // ignore: cast_nullable_to_non_nullable
-              as List<OutboundStructure>?,
-      token: freezed == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assetsIds: freezed == assetsIds
-          ? _value._assetsIds
-          : assetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      assets: freezed == assets
-          ? _value._assets
-          : assets // ignore: cast_nullable_to_non_nullable
-              as List<Asset>?,
-      groupsIds: freezed == groupsIds
-          ? _value._groupsIds
-          : groupsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      groups: freezed == groups
-          ? _value._groups
-          : groups // ignore: cast_nullable_to_non_nullable
-              as List<Tag>?,
-      access: freezed == access
-          ? _value._access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      metrics: freezed == metrics
-          ? _value.metrics
+          ? _self.metrics
           : metrics // ignore: cast_nullable_to_non_nullable
               as OutboundMetrics?,
     ));
+  }
+
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OutboundProtocolCopyWith<$Res>? get protocol {
+    if (_self.protocol == null) {
+      return null;
+    }
+
+    return $OutboundProtocolCopyWith<$Res>(_self.protocol!, (value) {
+      return _then(_self.copyWith(protocol: value));
+    });
+  }
+
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OutboundMetricsCopyWith<$Res>? get metrics {
+    if (_self.metrics == null) {
+      return null;
+    }
+
+    return $OutboundMetricsCopyWith<$Res>(_self.metrics!, (value) {
+      return _then(_self.copyWith(metrics: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$OutboundServiceImpl implements _OutboundService {
-  const _$OutboundServiceImpl(
+class _OutboundService implements OutboundService {
+  const _OutboundService(
       {required this.id,
       required this.name,
       final Map<String, dynamic>? credentials,
@@ -850,9 +776,8 @@ class _$OutboundServiceImpl implements _OutboundService {
         _groupsIds = groupsIds,
         _groups = groups,
         _access = access;
-
-  factory _$OutboundServiceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OutboundServiceImplFromJson(json);
+  factory _OutboundService.fromJson(Map<String, dynamic> json) =>
+      _$OutboundServiceFromJson(json);
 
   /// IS the ID of the entity. This ID is unique.
   @override
@@ -973,16 +898,26 @@ class _$OutboundServiceImpl implements _OutboundService {
   @override
   final OutboundMetrics? metrics;
 
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'OutboundService(id: $id, name: $name, credentials: $credentials, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, structure: $structure, token: $token, assetsIds: $assetsIds, assets: $assets, groupsIds: $groupsIds, groups: $groups, access: $access, metrics: $metrics)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$OutboundServiceCopyWith<_OutboundService> get copyWith =>
+      __$OutboundServiceCopyWithImpl<_OutboundService>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$OutboundServiceToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OutboundServiceImpl &&
+            other is _OutboundService &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality()
@@ -1006,7 +941,7 @@ class _$OutboundServiceImpl implements _OutboundService {
             (identical(other.metrics, metrics) || other.metrics == metrics));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -1025,181 +960,215 @@ class _$OutboundServiceImpl implements _OutboundService {
       const DeepCollectionEquality().hash(_access),
       metrics);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$OutboundServiceImplCopyWith<_$OutboundServiceImpl> get copyWith =>
-      __$$OutboundServiceImplCopyWithImpl<_$OutboundServiceImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$OutboundServiceImplToJson(
-      this,
-    );
+  String toString() {
+    return 'OutboundService(id: $id, name: $name, credentials: $credentials, protocol: $protocol, protocolId: $protocolId, isEnabled: $isEnabled, structure: $structure, token: $token, assetsIds: $assetsIds, assets: $assets, groupsIds: $groupsIds, groups: $groups, access: $access, metrics: $metrics)';
   }
 }
 
-abstract class _OutboundService implements OutboundService {
-  const factory _OutboundService(
-      {required final String id,
-      required final String name,
-      final Map<String, dynamic>? credentials,
-      final OutboundProtocol? protocol,
-      final String? protocolId,
-      final bool? isEnabled,
-      final List<OutboundStructure>? structure,
-      final String? token,
-      final List<String>? assetsIds,
-      final List<Asset>? assets,
-      final List<String>? groupsIds,
-      final List<Tag>? groups,
-      final List<Access>? access,
-      final OutboundMetrics? metrics}) = _$OutboundServiceImpl;
-
-  factory _OutboundService.fromJson(Map<String, dynamic> json) =
-      _$OutboundServiceImpl.fromJson;
+/// @nodoc
+abstract mixin class _$OutboundServiceCopyWith<$Res>
+    implements $OutboundServiceCopyWith<$Res> {
+  factory _$OutboundServiceCopyWith(
+          _OutboundService value, $Res Function(_OutboundService) _then) =
+      __$OutboundServiceCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      Map<String, dynamic>? credentials,
+      OutboundProtocol? protocol,
+      String? protocolId,
+      bool? isEnabled,
+      List<OutboundStructure>? structure,
+      String? token,
+      List<String>? assetsIds,
+      List<Asset>? assets,
+      List<String>? groupsIds,
+      List<Tag>? groups,
+      List<Access>? access,
+      OutboundMetrics? metrics});
 
   @override
-
-  /// IS the ID of the entity. This ID is unique.
-  String get id;
+  $OutboundProtocolCopyWith<$Res>? get protocol;
   @override
-
-  /// Is the Assigned service name, cannot be translated for other languages.
-  String get name;
-  @override
-
-  /// Is the Credential object, check the documentation for more information.
-  Map<String, dynamic>? get credentials;
-  @override
-
-  /// Is the Protocol entity.
-  OutboundProtocol? get protocol;
-  @override
-
-  /// Is the Protocol ID.
-  String? get protocolId;
-  @override
-
-  /// Is the Current transmission status.
-  bool? get isEnabled;
-  @override
-
-  /// Is the Structure of the outbound protocol, only used for Omega REST Outbound protocol.
-  List<OutboundStructure>? get structure;
-  @override
-
-  /// Is the Token to authenticate the request, only used for Alpha REST Inbound protocol
-  String? get token;
-  @override
-
-  /// Is the Assets IDs linked to the service.
-  List<String>? get assetsIds;
-  @override
-
-  /// Is the Assets linked to the service.
-  List<Asset>? get assets;
-  @override
-
-  /// Is the Groups (Tags) IDs linked to the service.
-  List<String>? get groupsIds;
-  @override
-
-  /// Is the Groups (Tags) linked to the service.
-  List<Tag>? get groups;
-  @override
-
-  /// A list of custom access permissions.
-  List<Access>? get access;
-  @override
-
-  /// Is the Metrics object.
-  OutboundMetrics? get metrics;
-  @override
-  @JsonKey(ignore: true)
-  _$$OutboundServiceImplCopyWith<_$OutboundServiceImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  $OutboundMetricsCopyWith<$Res>? get metrics;
 }
 
-OutboundStructure _$OutboundStructureFromJson(Map<String, dynamic> json) {
-  return _OutboundStructure.fromJson(json);
+/// @nodoc
+class __$OutboundServiceCopyWithImpl<$Res>
+    implements _$OutboundServiceCopyWith<$Res> {
+  __$OutboundServiceCopyWithImpl(this._self, this._then);
+
+  final _OutboundService _self;
+  final $Res Function(_OutboundService) _then;
+
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? credentials = freezed,
+    Object? protocol = freezed,
+    Object? protocolId = freezed,
+    Object? isEnabled = freezed,
+    Object? structure = freezed,
+    Object? token = freezed,
+    Object? assetsIds = freezed,
+    Object? assets = freezed,
+    Object? groupsIds = freezed,
+    Object? groups = freezed,
+    Object? access = freezed,
+    Object? metrics = freezed,
+  }) {
+    return _then(_OutboundService(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      credentials: freezed == credentials
+          ? _self._credentials
+          : credentials // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      protocol: freezed == protocol
+          ? _self.protocol
+          : protocol // ignore: cast_nullable_to_non_nullable
+              as OutboundProtocol?,
+      protocolId: freezed == protocolId
+          ? _self.protocolId
+          : protocolId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isEnabled: freezed == isEnabled
+          ? _self.isEnabled
+          : isEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      structure: freezed == structure
+          ? _self._structure
+          : structure // ignore: cast_nullable_to_non_nullable
+              as List<OutboundStructure>?,
+      token: freezed == token
+          ? _self.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetsIds: freezed == assetsIds
+          ? _self._assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      assets: freezed == assets
+          ? _self._assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      groupsIds: freezed == groupsIds
+          ? _self._groupsIds
+          : groupsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      groups: freezed == groups
+          ? _self._groups
+          : groups // ignore: cast_nullable_to_non_nullable
+              as List<Tag>?,
+      access: freezed == access
+          ? _self._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+      metrics: freezed == metrics
+          ? _self.metrics
+          : metrics // ignore: cast_nullable_to_non_nullable
+              as OutboundMetrics?,
+    ));
+  }
+
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OutboundProtocolCopyWith<$Res>? get protocol {
+    if (_self.protocol == null) {
+      return null;
+    }
+
+    return $OutboundProtocolCopyWith<$Res>(_self.protocol!, (value) {
+      return _then(_self.copyWith(protocol: value));
+    });
+  }
+
+  /// Create a copy of OutboundService
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $OutboundMetricsCopyWith<$Res>? get metrics {
+    if (_self.metrics == null) {
+      return null;
+    }
+
+    return $OutboundMetricsCopyWith<$Res>(_self.metrics!, (value) {
+      return _then(_self.copyWith(metrics: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$OutboundStructure {
-  String get field => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
+  String get field;
+  String get type;
+  String get value;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $OutboundStructureCopyWith<OutboundStructure> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $OutboundStructureCopyWith<$Res> {
-  factory $OutboundStructureCopyWith(
-          OutboundStructure value, $Res Function(OutboundStructure) then) =
-      _$OutboundStructureCopyWithImpl<$Res, OutboundStructure>;
-  @useResult
-  $Res call({String field, String type, String value});
-}
-
-/// @nodoc
-class _$OutboundStructureCopyWithImpl<$Res, $Val extends OutboundStructure>
-    implements $OutboundStructureCopyWith<$Res> {
-  _$OutboundStructureCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of OutboundStructure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $OutboundStructureCopyWith<OutboundStructure> get copyWith =>
+      _$OutboundStructureCopyWithImpl<OutboundStructure>(
+          this as OutboundStructure, _$identity);
+
+  /// Serializes this OutboundStructure to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? field = null,
-    Object? type = null,
-    Object? value = null,
-  }) {
-    return _then(_value.copyWith(
-      field: null == field
-          ? _value.field
-          : field // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is OutboundStructure &&
+            (identical(other.field, field) || other.field == field) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, field, type, value);
+
+  @override
+  String toString() {
+    return 'OutboundStructure(field: $field, type: $type, value: $value)';
   }
 }
 
 /// @nodoc
-abstract class _$$OutboundStructureImplCopyWith<$Res>
-    implements $OutboundStructureCopyWith<$Res> {
-  factory _$$OutboundStructureImplCopyWith(_$OutboundStructureImpl value,
-          $Res Function(_$OutboundStructureImpl) then) =
-      __$$OutboundStructureImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $OutboundStructureCopyWith<$Res> {
+  factory $OutboundStructureCopyWith(
+          OutboundStructure value, $Res Function(OutboundStructure) _then) =
+      _$OutboundStructureCopyWithImpl;
   @useResult
   $Res call({String field, String type, String value});
 }
 
 /// @nodoc
-class __$$OutboundStructureImplCopyWithImpl<$Res>
-    extends _$OutboundStructureCopyWithImpl<$Res, _$OutboundStructureImpl>
-    implements _$$OutboundStructureImplCopyWith<$Res> {
-  __$$OutboundStructureImplCopyWithImpl(_$OutboundStructureImpl _value,
-      $Res Function(_$OutboundStructureImpl) _then)
-      : super(_value, _then);
+class _$OutboundStructureCopyWithImpl<$Res>
+    implements $OutboundStructureCopyWith<$Res> {
+  _$OutboundStructureCopyWithImpl(this._self, this._then);
 
+  final OutboundStructure _self;
+  final $Res Function(OutboundStructure) _then;
+
+  /// Create a copy of OutboundStructure
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1207,17 +1176,17 @@ class __$$OutboundStructureImplCopyWithImpl<$Res>
     Object? type = null,
     Object? value = null,
   }) {
-    return _then(_$OutboundStructureImpl(
+    return _then(_self.copyWith(
       field: null == field
-          ? _value.field
+          ? _self.field
           : field // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
       value: null == value
-          ? _value.value
+          ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -1226,12 +1195,11 @@ class __$$OutboundStructureImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OutboundStructureImpl implements _OutboundStructure {
-  const _$OutboundStructureImpl(
+class _OutboundStructure implements OutboundStructure {
+  const _OutboundStructure(
       {required this.field, required this.type, required this.value});
-
-  factory _$OutboundStructureImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OutboundStructureImplFromJson(json);
+  factory _OutboundStructure.fromJson(Map<String, dynamic> json) =>
+      _$OutboundStructureFromJson(json);
 
   @override
   final String field;
@@ -1240,153 +1208,145 @@ class _$OutboundStructureImpl implements _OutboundStructure {
   @override
   final String value;
 
+  /// Create a copy of OutboundStructure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'OutboundStructure(field: $field, type: $type, value: $value)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$OutboundStructureCopyWith<_OutboundStructure> get copyWith =>
+      __$OutboundStructureCopyWithImpl<_OutboundStructure>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$OutboundStructureToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OutboundStructureImpl &&
+            other is _OutboundStructure &&
             (identical(other.field, field) || other.field == field) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.value, value) || other.value == value));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, field, type, value);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$OutboundStructureImplCopyWith<_$OutboundStructureImpl> get copyWith =>
-      __$$OutboundStructureImplCopyWithImpl<_$OutboundStructureImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$OutboundStructureImplToJson(
-      this,
-    );
+  String toString() {
+    return 'OutboundStructure(field: $field, type: $type, value: $value)';
   }
 }
 
-abstract class _OutboundStructure implements OutboundStructure {
-  const factory _OutboundStructure(
-      {required final String field,
-      required final String type,
-      required final String value}) = _$OutboundStructureImpl;
-
-  factory _OutboundStructure.fromJson(Map<String, dynamic> json) =
-      _$OutboundStructureImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$OutboundStructureCopyWith<$Res>
+    implements $OutboundStructureCopyWith<$Res> {
+  factory _$OutboundStructureCopyWith(
+          _OutboundStructure value, $Res Function(_OutboundStructure) _then) =
+      __$OutboundStructureCopyWithImpl;
   @override
-  String get field;
-  @override
-  String get type;
-  @override
-  String get value;
-  @override
-  @JsonKey(ignore: true)
-  _$$OutboundStructureImplCopyWith<_$OutboundStructureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call({String field, String type, String value});
 }
 
-OutboundMetrics _$OutboundMetricsFromJson(Map<String, dynamic> json) {
-  return _OutboundMetrics.fromJson(json);
+/// @nodoc
+class __$OutboundStructureCopyWithImpl<$Res>
+    implements _$OutboundStructureCopyWith<$Res> {
+  __$OutboundStructureCopyWithImpl(this._self, this._then);
+
+  final _OutboundStructure _self;
+  final $Res Function(_OutboundStructure) _then;
+
+  /// Create a copy of OutboundStructure
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? field = null,
+    Object? type = null,
+    Object? value = null,
+  }) {
+    return _then(_OutboundStructure(
+      field: null == field
+          ? _self.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$OutboundMetrics {
   /// [online] is the number of online devices.
-  int get online => throw _privateConstructorUsedError;
+  int get online;
 
   /// [hibernation] is the number of devices in hibernation.
-  int get hibernation => throw _privateConstructorUsedError;
+  int get hibernation;
 
   /// [offline] is the number of offline devices.
-  int get offline => throw _privateConstructorUsedError;
+  int get offline;
 
   /// [totalItems] is the total number of devices.
-  int get totalItems => throw _privateConstructorUsedError;
+  int get totalItems;
 
   /// [statsLoading] indicates if the stats are loading.
-  bool get statsLoading => throw _privateConstructorUsedError;
+  bool get statsLoading;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $OutboundMetricsCopyWith<OutboundMetrics> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $OutboundMetricsCopyWith<$Res> {
-  factory $OutboundMetricsCopyWith(
-          OutboundMetrics value, $Res Function(OutboundMetrics) then) =
-      _$OutboundMetricsCopyWithImpl<$Res, OutboundMetrics>;
-  @useResult
-  $Res call(
-      {int online,
-      int hibernation,
-      int offline,
-      int totalItems,
-      bool statsLoading});
-}
-
-/// @nodoc
-class _$OutboundMetricsCopyWithImpl<$Res, $Val extends OutboundMetrics>
-    implements $OutboundMetricsCopyWith<$Res> {
-  _$OutboundMetricsCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of OutboundMetrics
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $OutboundMetricsCopyWith<OutboundMetrics> get copyWith =>
+      _$OutboundMetricsCopyWithImpl<OutboundMetrics>(
+          this as OutboundMetrics, _$identity);
+
+  /// Serializes this OutboundMetrics to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? online = null,
-    Object? hibernation = null,
-    Object? offline = null,
-    Object? totalItems = null,
-    Object? statsLoading = null,
-  }) {
-    return _then(_value.copyWith(
-      online: null == online
-          ? _value.online
-          : online // ignore: cast_nullable_to_non_nullable
-              as int,
-      hibernation: null == hibernation
-          ? _value.hibernation
-          : hibernation // ignore: cast_nullable_to_non_nullable
-              as int,
-      offline: null == offline
-          ? _value.offline
-          : offline // ignore: cast_nullable_to_non_nullable
-              as int,
-      totalItems: null == totalItems
-          ? _value.totalItems
-          : totalItems // ignore: cast_nullable_to_non_nullable
-              as int,
-      statsLoading: null == statsLoading
-          ? _value.statsLoading
-          : statsLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is OutboundMetrics &&
+            (identical(other.online, online) || other.online == online) &&
+            (identical(other.hibernation, hibernation) ||
+                other.hibernation == hibernation) &&
+            (identical(other.offline, offline) || other.offline == offline) &&
+            (identical(other.totalItems, totalItems) ||
+                other.totalItems == totalItems) &&
+            (identical(other.statsLoading, statsLoading) ||
+                other.statsLoading == statsLoading));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, online, hibernation, offline, totalItems, statsLoading);
+
+  @override
+  String toString() {
+    return 'OutboundMetrics(online: $online, hibernation: $hibernation, offline: $offline, totalItems: $totalItems, statsLoading: $statsLoading)';
   }
 }
 
 /// @nodoc
-abstract class _$$OutboundMetricsImplCopyWith<$Res>
-    implements $OutboundMetricsCopyWith<$Res> {
-  factory _$$OutboundMetricsImplCopyWith(_$OutboundMetricsImpl value,
-          $Res Function(_$OutboundMetricsImpl) then) =
-      __$$OutboundMetricsImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $OutboundMetricsCopyWith<$Res> {
+  factory $OutboundMetricsCopyWith(
+          OutboundMetrics value, $Res Function(OutboundMetrics) _then) =
+      _$OutboundMetricsCopyWithImpl;
   @useResult
   $Res call(
       {int online,
@@ -1397,13 +1357,15 @@ abstract class _$$OutboundMetricsImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$OutboundMetricsImplCopyWithImpl<$Res>
-    extends _$OutboundMetricsCopyWithImpl<$Res, _$OutboundMetricsImpl>
-    implements _$$OutboundMetricsImplCopyWith<$Res> {
-  __$$OutboundMetricsImplCopyWithImpl(
-      _$OutboundMetricsImpl _value, $Res Function(_$OutboundMetricsImpl) _then)
-      : super(_value, _then);
+class _$OutboundMetricsCopyWithImpl<$Res>
+    implements $OutboundMetricsCopyWith<$Res> {
+  _$OutboundMetricsCopyWithImpl(this._self, this._then);
 
+  final OutboundMetrics _self;
+  final $Res Function(OutboundMetrics) _then;
+
+  /// Create a copy of OutboundMetrics
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1413,25 +1375,25 @@ class __$$OutboundMetricsImplCopyWithImpl<$Res>
     Object? totalItems = null,
     Object? statsLoading = null,
   }) {
-    return _then(_$OutboundMetricsImpl(
+    return _then(_self.copyWith(
       online: null == online
-          ? _value.online
+          ? _self.online
           : online // ignore: cast_nullable_to_non_nullable
               as int,
       hibernation: null == hibernation
-          ? _value.hibernation
+          ? _self.hibernation
           : hibernation // ignore: cast_nullable_to_non_nullable
               as int,
       offline: null == offline
-          ? _value.offline
+          ? _self.offline
           : offline // ignore: cast_nullable_to_non_nullable
               as int,
       totalItems: null == totalItems
-          ? _value.totalItems
+          ? _self.totalItems
           : totalItems // ignore: cast_nullable_to_non_nullable
               as int,
       statsLoading: null == statsLoading
-          ? _value.statsLoading
+          ? _self.statsLoading
           : statsLoading // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -1440,16 +1402,15 @@ class __$$OutboundMetricsImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OutboundMetricsImpl implements _OutboundMetrics {
-  const _$OutboundMetricsImpl(
+class _OutboundMetrics implements OutboundMetrics {
+  const _OutboundMetrics(
       {this.online = 0,
       this.hibernation = 0,
       this.offline = 0,
       this.totalItems = 0,
       this.statsLoading = true});
-
-  factory _$OutboundMetricsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OutboundMetricsImplFromJson(json);
+  factory _OutboundMetrics.fromJson(Map<String, dynamic> json) =>
+      _$OutboundMetricsFromJson(json);
 
   /// [online] is the number of online devices.
   @override
@@ -1476,16 +1437,26 @@ class _$OutboundMetricsImpl implements _OutboundMetrics {
   @JsonKey()
   final bool statsLoading;
 
+  /// Create a copy of OutboundMetrics
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'OutboundMetrics(online: $online, hibernation: $hibernation, offline: $offline, totalItems: $totalItems, statsLoading: $statsLoading)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$OutboundMetricsCopyWith<_OutboundMetrics> get copyWith =>
+      __$OutboundMetricsCopyWithImpl<_OutboundMetrics>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$OutboundMetricsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OutboundMetricsImpl &&
+            other is _OutboundMetrics &&
             (identical(other.online, online) || other.online == online) &&
             (identical(other.hibernation, hibernation) ||
                 other.hibernation == hibernation) &&
@@ -1496,59 +1467,75 @@ class _$OutboundMetricsImpl implements _OutboundMetrics {
                 other.statsLoading == statsLoading));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, online, hibernation, offline, totalItems, statsLoading);
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$OutboundMetricsImplCopyWith<_$OutboundMetricsImpl> get copyWith =>
-      __$$OutboundMetricsImplCopyWithImpl<_$OutboundMetricsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$OutboundMetricsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'OutboundMetrics(online: $online, hibernation: $hibernation, offline: $offline, totalItems: $totalItems, statsLoading: $statsLoading)';
   }
 }
 
-abstract class _OutboundMetrics implements OutboundMetrics {
-  const factory _OutboundMetrics(
-      {final int online,
-      final int hibernation,
-      final int offline,
-      final int totalItems,
-      final bool statsLoading}) = _$OutboundMetricsImpl;
-
-  factory _OutboundMetrics.fromJson(Map<String, dynamic> json) =
-      _$OutboundMetricsImpl.fromJson;
-
+/// @nodoc
+abstract mixin class _$OutboundMetricsCopyWith<$Res>
+    implements $OutboundMetricsCopyWith<$Res> {
+  factory _$OutboundMetricsCopyWith(
+          _OutboundMetrics value, $Res Function(_OutboundMetrics) _then) =
+      __$OutboundMetricsCopyWithImpl;
   @override
-
-  /// [online] is the number of online devices.
-  int get online;
-  @override
-
-  /// [hibernation] is the number of devices in hibernation.
-  int get hibernation;
-  @override
-
-  /// [offline] is the number of offline devices.
-  int get offline;
-  @override
-
-  /// [totalItems] is the total number of devices.
-  int get totalItems;
-  @override
-
-  /// [statsLoading] indicates if the stats are loading.
-  bool get statsLoading;
-  @override
-  @JsonKey(ignore: true)
-  _$$OutboundMetricsImplCopyWith<_$OutboundMetricsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @useResult
+  $Res call(
+      {int online,
+      int hibernation,
+      int offline,
+      int totalItems,
+      bool statsLoading});
 }
+
+/// @nodoc
+class __$OutboundMetricsCopyWithImpl<$Res>
+    implements _$OutboundMetricsCopyWith<$Res> {
+  __$OutboundMetricsCopyWithImpl(this._self, this._then);
+
+  final _OutboundMetrics _self;
+  final $Res Function(_OutboundMetrics) _then;
+
+  /// Create a copy of OutboundMetrics
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? online = null,
+    Object? hibernation = null,
+    Object? offline = null,
+    Object? totalItems = null,
+    Object? statsLoading = null,
+  }) {
+    return _then(_OutboundMetrics(
+      online: null == online
+          ? _self.online
+          : online // ignore: cast_nullable_to_non_nullable
+              as int,
+      hibernation: null == hibernation
+          ? _self.hibernation
+          : hibernation // ignore: cast_nullable_to_non_nullable
+              as int,
+      offline: null == offline
+          ? _self.offline
+          : offline // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalItems: null == totalItems
+          ? _self.totalItems
+          : totalItems // ignore: cast_nullable_to_non_nullable
+              as int,
+      statsLoading: null == statsLoading
+          ? _self.statsLoading
+          : statsLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+// dart format on

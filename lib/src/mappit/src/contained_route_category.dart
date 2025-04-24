@@ -1,7 +1,7 @@
 part of '../mappit.dart';
 
 @freezed
-class ContainedRouteCategory with _$ContainedRouteCategory {
+abstract class ContainedRouteCategory with _$ContainedRouteCategory {
   const factory ContainedRouteCategory({
     /// [category] refers to the type of geofence, by default is [GeofenceCategory.none] when is requested
     /// from the API.

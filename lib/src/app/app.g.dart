@@ -6,30 +6,24 @@ part of 'app.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$AppAccessibilityImpl _$$AppAccessibilityImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AppAccessibilityImpl(
+_AppAccessibility _$AppAccessibilityFromJson(Map<String, dynamic> json) =>
+    _AppAccessibility(
       host: json['host'] as String,
       isDeployed: json['isDeployed'] as bool,
       isSuspended: json['isSuspended'] as bool,
     );
 
-Map<String, dynamic> _$$AppAccessibilityImplToJson(
-        _$AppAccessibilityImpl instance) =>
+Map<String, dynamic> _$AppAccessibilityToJson(_AppAccessibility instance) =>
     <String, dynamic>{
       'host': instance.host,
       'isDeployed': instance.isDeployed,
       'isSuspended': instance.isSuspended,
     };
 
-_$AvailableAppImpl _$$AvailableAppImplFromJson(Map<String, dynamic> json) =>
-    _$AvailableAppImpl(
+_AvailableApp _$AvailableAppFromJson(Map<String, dynamic> json) =>
+    _AvailableApp(
       id: json['id'] as String,
       name: json['name'] as String,
-      appId: json['appId'] as String,
-      appType: $enumDecodeNullable(_$AppTypeEnumMap, json['appType'],
-              unknownValue: AppType.public) ??
-          AppType.public,
       technology: $enumDecodeNullable(
               _$AppTechnologyEnumMap, json['technology'],
               unknownValue: AppTechnology.flutter) ??
@@ -41,6 +35,10 @@ _$AvailableAppImpl _$$AvailableAppImplFromJson(Map<String, dynamic> json) =>
           ? null
           : AppDesign.fromJson(
               json['designInformation'] as Map<String, dynamic>),
+      appId: json['appId'] as String,
+      appType: $enumDecodeNullable(_$AppTypeEnumMap, json['appType'],
+              unknownValue: AppType.public) ??
+          AppType.public,
       supportedPlatforms: (json['supportedPlatforms'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$AppPlatformEnumMap, e,
               unknownValue: AppPlatform.web))
@@ -58,15 +56,15 @@ _$AvailableAppImpl _$$AvailableAppImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$AvailableAppImplToJson(_$AvailableAppImpl instance) =>
+Map<String, dynamic> _$AvailableAppToJson(_AvailableApp instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'appId': instance.appId,
-      'appType': instance.appType.toJson(),
       'technology': instance.technology.toJson(),
       'legalInformation': instance.legalInformation?.toJson(),
       'designInformation': instance.designInformation?.toJson(),
+      'appId': instance.appId,
+      'appType': instance.appType.toJson(),
       'supportedPlatforms':
           instance.supportedPlatforms?.map((e) => e.toJson()).toList(),
       'onlyCustomized': instance.onlyCustomized,
@@ -79,15 +77,15 @@ Map<String, dynamic> _$$AvailableAppImplToJson(_$AvailableAppImpl instance) =>
           instance.implementations?.map((e) => e.toJson()).toList(),
     };
 
+const _$AppTechnologyEnumMap = {
+  AppTechnology.vuejs: 'VUEJS',
+  AppTechnology.flutter: 'FLUTTER',
+};
+
 const _$AppTypeEnumMap = {
   AppType.public: 'PUBLIC',
   AppType.private: 'PRIVATE',
   AppType.marketplace: 'MARKETPLACE',
-};
-
-const _$AppTechnologyEnumMap = {
-  AppTechnology.vuejs: 'VUEJS',
-  AppTechnology.flutter: 'FLUTTER',
 };
 
 const _$AppPlatformEnumMap = {
@@ -100,9 +98,8 @@ const _$AppPlatformEnumMap = {
   AppPlatform.layrzOS: 'LAYRZ_OS',
 };
 
-_$AvailableAppInputImpl _$$AvailableAppInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AvailableAppInputImpl(
+_AvailableAppInput _$AvailableAppInputFromJson(Map<String, dynamic> json) =>
+    _AvailableAppInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       appId: json['appId'] as String? ?? '',
@@ -124,8 +121,7 @@ _$AvailableAppInputImpl _$$AvailableAppInputImplFromJson(
       hasKeychain: json['hasKeychain'] as bool? ?? true,
     );
 
-Map<String, dynamic> _$$AvailableAppInputImplToJson(
-        _$AvailableAppInputImpl instance) =>
+Map<String, dynamic> _$AvailableAppInputToJson(_AvailableAppInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -140,11 +136,10 @@ Map<String, dynamic> _$$AvailableAppInputImplToJson(
       'hasKeychain': instance.hasKeychain,
     };
 
-_$RegisteredAppImpl _$$RegisteredAppImplFromJson(Map<String, dynamic> json) =>
-    _$RegisteredAppImpl(
+_RegisteredApp _$RegisteredAppFromJson(Map<String, dynamic> json) =>
+    _RegisteredApp(
       id: json['id'] as String,
       name: json['name'] as String,
-      nickname: json['nickname'] as String,
       technology: $enumDecodeNullable(
               _$AppTechnologyEnumMap, json['technology'],
               unknownValue: AppTechnology.flutter) ??
@@ -156,6 +151,7 @@ _$RegisteredAppImpl _$$RegisteredAppImplFromJson(Map<String, dynamic> json) =>
           ? null
           : AppDesign.fromJson(
               json['designInformation'] as Map<String, dynamic>),
+      nickname: json['nickname'] as String,
       isCustomized: json['isCustomized'] as bool?,
       instances: (json['instances'] as List<dynamic>?)
           ?.map((e) => AppInstance.fromJson(e as Map<String, dynamic>))
@@ -189,14 +185,14 @@ _$RegisteredAppImpl _$$RegisteredAppImplFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$RegisteredAppImplToJson(_$RegisteredAppImpl instance) =>
+Map<String, dynamic> _$RegisteredAppToJson(_RegisteredApp instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'nickname': instance.nickname,
       'technology': instance.technology.toJson(),
       'legalInformation': instance.legalInformation?.toJson(),
       'designInformation': instance.designInformation?.toJson(),
+      'nickname': instance.nickname,
       'isCustomized': instance.isCustomized,
       'instances': instance.instances?.map((e) => e.toJson()).toList(),
       'importedAssets':
@@ -215,36 +211,33 @@ Map<String, dynamic> _$$RegisteredAppImplToJson(_$RegisteredAppImpl instance) =>
           instance.authorizedLayers.map((e) => e.toJson()).toList(),
     };
 
-_$AppThemedAssetImpl _$$AppThemedAssetImplFromJson(Map<String, dynamic> json) =>
-    _$AppThemedAssetImpl(
+_AppThemedAsset _$AppThemedAssetFromJson(Map<String, dynamic> json) =>
+    _AppThemedAsset(
       normal: json['normal'] as String,
       white: json['white'] as String,
     );
 
-Map<String, dynamic> _$$AppThemedAssetImplToJson(
-        _$AppThemedAssetImpl instance) =>
+Map<String, dynamic> _$AppThemedAssetToJson(_AppThemedAsset instance) =>
     <String, dynamic>{
       'normal': instance.normal,
       'white': instance.white,
     };
 
-_$AppThemedAssetInputImpl _$$AppThemedAssetInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AppThemedAssetInputImpl(
+_AppThemedAssetInput _$AppThemedAssetInputFromJson(Map<String, dynamic> json) =>
+    _AppThemedAssetInput(
       normal: json['normal'] as String?,
       white: json['white'] as String?,
     );
 
-Map<String, dynamic> _$$AppThemedAssetInputImplToJson(
-        _$AppThemedAssetInputImpl instance) =>
+Map<String, dynamic> _$AppThemedAssetInputToJson(
+        _AppThemedAssetInput instance) =>
     <String, dynamic>{
       'normal': instance.normal,
       'white': instance.white,
     };
 
-_$AppBackgroundDesignImpl _$$AppBackgroundDesignImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AppBackgroundDesignImpl(
+_AppBackgroundDesign _$AppBackgroundDesignFromJson(Map<String, dynamic> json) =>
+    _AppBackgroundDesign(
       image: json['image'] as String?,
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       mode: $enumDecodeNullable(_$BackgroundModeEnumMap, json['mode'],
@@ -252,8 +245,8 @@ _$AppBackgroundDesignImpl _$$AppBackgroundDesignImplFromJson(
           BackgroundMode.solid,
     );
 
-Map<String, dynamic> _$$AppBackgroundDesignImplToJson(
-        _$AppBackgroundDesignImpl instance) =>
+Map<String, dynamic> _$AppBackgroundDesignToJson(
+        _AppBackgroundDesign instance) =>
     <String, dynamic>{
       'image': instance.image,
       'color': const ColorOrNullConverter().toJson(instance.color),
@@ -265,9 +258,9 @@ const _$BackgroundModeEnumMap = {
   BackgroundMode.wallpaper: 'WALLPAPER',
 };
 
-_$AppBackgroundDesignInputImpl _$$AppBackgroundDesignInputImplFromJson(
+_AppBackgroundDesignInput _$AppBackgroundDesignInputFromJson(
         Map<String, dynamic> json) =>
-    _$AppBackgroundDesignInputImpl(
+    _AppBackgroundDesignInput(
       image: json['image'] as String?,
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       mode: $enumDecodeNullable(_$BackgroundModeEnumMap, json['mode'],
@@ -275,16 +268,15 @@ _$AppBackgroundDesignInputImpl _$$AppBackgroundDesignInputImplFromJson(
           BackgroundMode.solid,
     );
 
-Map<String, dynamic> _$$AppBackgroundDesignInputImplToJson(
-        _$AppBackgroundDesignInputImpl instance) =>
+Map<String, dynamic> _$AppBackgroundDesignInputToJson(
+        _AppBackgroundDesignInput instance) =>
     <String, dynamic>{
       'image': instance.image,
       'color': const ColorOrNullConverter().toJson(instance.color),
       'mode': instance.mode.toJson(),
     };
 
-_$AppBuildImpl _$$AppBuildImplFromJson(Map<String, dynamic> json) =>
-    _$AppBuildImpl(
+_AppBuild _$AppBuildFromJson(Map<String, dynamic> json) => _AppBuild(
       id: json['id'] as String,
       buildName: json['buildName'] as String,
       buildNumber: (json['buildNumber'] as num).toInt(),
@@ -292,8 +284,7 @@ _$AppBuildImpl _$$AppBuildImplFromJson(Map<String, dynamic> json) =>
       isNext: json['isNext'] as bool?,
     );
 
-Map<String, dynamic> _$$AppBuildImplToJson(_$AppBuildImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$AppBuildToJson(_AppBuild instance) => <String, dynamic>{
       'id': instance.id,
       'buildName': instance.buildName,
       'buildNumber': instance.buildNumber,
@@ -301,8 +292,7 @@ Map<String, dynamic> _$$AppBuildImplToJson(_$AppBuildImpl instance) =>
       'isNext': instance.isNext,
     };
 
-_$AppDesignImpl _$$AppDesignImplFromJson(Map<String, dynamic> json) =>
-    _$AppDesignImpl(
+_AppDesign _$AppDesignFromJson(Map<String, dynamic> json) => _AppDesign(
       mainColor:
           const ColorOrNullConverter().fromJson(json['mainColor'] as String?),
       theme: $enumDecodeNullable(_$AppThemeEnumMap, json['theme'],
@@ -325,7 +315,7 @@ _$AppDesignImpl _$$AppDesignImplFromJson(Map<String, dynamic> json) =>
           : AppFont.fromJson(json['bodyFont'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$AppDesignImplToJson(_$AppDesignImpl instance) =>
+Map<String, dynamic> _$AppDesignToJson(_AppDesign instance) =>
     <String, dynamic>{
       'mainColor': const ColorOrNullConverter().toJson(instance.mainColor),
       'theme': instance.theme?.toJson(),
@@ -366,22 +356,21 @@ const _$FooterFormatEnumMap = {
   FooterFormat.madeWith: 'MADEWITH',
 };
 
-_$AppFooterImpl _$$AppFooterImplFromJson(Map<String, dynamic> json) =>
-    _$AppFooterImpl(
+_AppFooter _$AppFooterFromJson(Map<String, dynamic> json) => _AppFooter(
       mode: $enumDecodeNullable(_$FooterFormatEnumMap, json['mode'],
               unknownValue: FooterFormat.madeWith) ??
           FooterFormat.madeWith,
       custom: json['custom'] as String?,
     );
 
-Map<String, dynamic> _$$AppFooterImplToJson(_$AppFooterImpl instance) =>
+Map<String, dynamic> _$AppFooterToJson(_AppFooter instance) =>
     <String, dynamic>{
       'mode': instance.mode.toJson(),
       'custom': instance.custom,
     };
 
-_$AppDesignInputImpl _$$AppDesignInputImplFromJson(Map<String, dynamic> json) =>
-    _$AppDesignInputImpl(
+_AppDesignInput _$AppDesignInputFromJson(Map<String, dynamic> json) =>
+    _AppDesignInput(
       theme: $enumDecodeNullable(_$AppThemeEnumMap, json['theme'],
               unknownValue: AppTheme.custom) ??
           AppTheme.custom,
@@ -397,8 +386,7 @@ _$AppDesignInputImpl _$$AppDesignInputImplFromJson(Map<String, dynamic> json) =>
       bodyFont: AppFontInput.fromJson(json['bodyFont'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$AppDesignInputImplToJson(
-        _$AppDesignInputImpl instance) =>
+Map<String, dynamic> _$AppDesignInputToJson(_AppDesignInput instance) =>
     <String, dynamic>{
       'theme': instance.theme.toJson(),
       'mainColor': const ColorConverter().toJson(instance.mainColor),
@@ -409,8 +397,7 @@ Map<String, dynamic> _$$AppDesignInputImplToJson(
       'bodyFont': instance.bodyFont.toJson(),
     };
 
-_$AppInstanceImpl _$$AppInstanceImplFromJson(Map<String, dynamic> json) =>
-    _$AppInstanceImpl(
+_AppInstance _$AppInstanceFromJson(Map<String, dynamic> json) => _AppInstance(
       id: json['id'] as String,
       appId: json['appId'] as String,
       platform: $enumDecode(_$AppPlatformEnumMap, json['platform'],
@@ -440,7 +427,7 @@ _$AppInstanceImpl _$$AppInstanceImplFromJson(Map<String, dynamic> json) =>
           InstanceMigrationStatus.pending,
     );
 
-Map<String, dynamic> _$$AppInstanceImplToJson(_$AppInstanceImpl instance) =>
+Map<String, dynamic> _$AppInstanceToJson(_AppInstance instance) =>
     <String, dynamic>{
       'id': instance.id,
       'appId': instance.appId,
@@ -473,50 +460,46 @@ const _$InstanceMigrationStatusEnumMap = {
   InstanceMigrationStatus.migrated: 'MIGRATED',
 };
 
-_$DnsConfigurationImpl _$$DnsConfigurationImplFromJson(
-        Map<String, dynamic> json) =>
-    _$DnsConfigurationImpl(
+_DnsConfiguration _$DnsConfigurationFromJson(Map<String, dynamic> json) =>
+    _DnsConfiguration(
       name: json['name'] as String?,
       value: json['value'] as String?,
     );
 
-Map<String, dynamic> _$$DnsConfigurationImplToJson(
-        _$DnsConfigurationImpl instance) =>
+Map<String, dynamic> _$DnsConfigurationToJson(_DnsConfiguration instance) =>
     <String, dynamic>{
       'name': instance.name,
       'value': instance.value,
     };
 
-_$AppLegalImpl _$$AppLegalImplFromJson(Map<String, dynamic> json) =>
-    _$AppLegalImpl(
+_AppLegal _$AppLegalFromJson(Map<String, dynamic> json) => _AppLegal(
       companyName: json['companyName'] as String,
       companyUrl: json['companyUrl'] as String,
       privacyPolicy: json['privacyPolicy'] as String,
     );
 
-Map<String, dynamic> _$$AppLegalImplToJson(_$AppLegalImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$AppLegalToJson(_AppLegal instance) => <String, dynamic>{
       'companyName': instance.companyName,
       'companyUrl': instance.companyUrl,
       'privacyPolicy': instance.privacyPolicy,
     };
 
-_$AppLegalInputImpl _$$AppLegalInputImplFromJson(Map<String, dynamic> json) =>
-    _$AppLegalInputImpl(
+_AppLegalInput _$AppLegalInputFromJson(Map<String, dynamic> json) =>
+    _AppLegalInput(
       companyName: json['companyName'] as String? ?? '',
       companyUrl: json['companyUrl'] as String? ?? '',
       privacyPolicy: json['privacyPolicy'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$AppLegalInputImplToJson(_$AppLegalInputImpl instance) =>
+Map<String, dynamic> _$AppLegalInputToJson(_AppLegalInput instance) =>
     <String, dynamic>{
       'companyName': instance.companyName,
       'companyUrl': instance.companyUrl,
       'privacyPolicy': instance.privacyPolicy,
     };
 
-_$AppLoginDesignImpl _$$AppLoginDesignImplFromJson(Map<String, dynamic> json) =>
-    _$AppLoginDesignImpl(
+_AppLoginDesign _$AppLoginDesignFromJson(Map<String, dynamic> json) =>
+    _AppLoginDesign(
       backgroundColor: const ColorOrNullConverter()
           .fromJson(json['backgroundColor'] as String?),
       backgroundImage: json['backgroundImage'] as String?,
@@ -527,8 +510,7 @@ _$AppLoginDesignImpl _$$AppLoginDesignImplFromJson(Map<String, dynamic> json) =>
           unknownValue: LayoutDesign.right),
     );
 
-Map<String, dynamic> _$$AppLoginDesignImplToJson(
-        _$AppLoginDesignImpl instance) =>
+Map<String, dynamic> _$AppLoginDesignToJson(_AppLoginDesign instance) =>
     <String, dynamic>{
       'backgroundColor':
           const ColorOrNullConverter().toJson(instance.backgroundColor),
@@ -546,9 +528,8 @@ const _$LayoutDesignEnumMap = {
   LayoutDesign.center: 'CENTER',
 };
 
-_$AppLoginDesignInputImpl _$$AppLoginDesignInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$AppLoginDesignInputImpl(
+_AppLoginDesignInput _$AppLoginDesignInputFromJson(Map<String, dynamic> json) =>
+    _AppLoginDesignInput(
       backgroundColor: const ColorOrNullConverter()
           .fromJson(json['backgroundColor'] as String?),
       backgroundImage: json['backgroundImage'] as String?,
@@ -559,8 +540,8 @@ _$AppLoginDesignInputImpl _$$AppLoginDesignInputImplFromJson(
           unknownValue: LayoutDesign.right),
     );
 
-Map<String, dynamic> _$$AppLoginDesignInputImplToJson(
-        _$AppLoginDesignInputImpl instance) =>
+Map<String, dynamic> _$AppLoginDesignInputToJson(
+        _AppLoginDesignInput instance) =>
     <String, dynamic>{
       'backgroundColor':
           const ColorOrNullConverter().toJson(instance.backgroundColor),
@@ -570,8 +551,7 @@ Map<String, dynamic> _$$AppLoginDesignInputImplToJson(
       'design': instance.design?.toJson(),
     };
 
-_$AppVersionImpl _$$AppVersionImplFromJson(Map<String, dynamic> json) =>
-    _$AppVersionImpl(
+_AppVersion _$AppVersionFromJson(Map<String, dynamic> json) => _AppVersion(
       id: json['id'] as String,
       app: $enumDecodeNullable(_$AppInternalIdentifierEnumMap, json['app'],
           unknownValue: AppInternalIdentifier.unknown),
@@ -584,7 +564,7 @@ _$AppVersionImpl _$$AppVersionImplFromJson(Map<String, dynamic> json) =>
           const TimestampConverter().fromJson(json['releasedAt'] as num),
     );
 
-Map<String, dynamic> _$$AppVersionImplToJson(_$AppVersionImpl instance) =>
+Map<String, dynamic> _$AppVersionToJson(_AppVersion instance) =>
     <String, dynamic>{
       'id': instance.id,
       'app': instance.app?.toJson(),
@@ -626,8 +606,7 @@ const _$AppInternalIdentifierEnumMap = {
   AppInternalIdentifier.unknown: 'UNKNOWN',
 };
 
-_$AppFontImpl _$$AppFontImplFromJson(Map<String, dynamic> json) =>
-    _$AppFontImpl(
+_AppFont _$AppFontFromJson(Map<String, dynamic> json) => _AppFont(
       source: $enumDecodeNullable(_$FontSourceEnumMap, json['source'],
               unknownValue: FontSource.google) ??
           FontSource.google,
@@ -635,8 +614,7 @@ _$AppFontImpl _$$AppFontImplFromJson(Map<String, dynamic> json) =>
       uri: json['uri'] as String?,
     );
 
-Map<String, dynamic> _$$AppFontImplToJson(_$AppFontImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$AppFontToJson(_AppFont instance) => <String, dynamic>{
       'source': instance.source.toJson(),
       'name': instance.name,
       'uri': instance.uri,
@@ -648,8 +626,8 @@ const _$FontSourceEnumMap = {
   FontSource.uri: 'URI',
 };
 
-_$AppFontInputImpl _$$AppFontInputImplFromJson(Map<String, dynamic> json) =>
-    _$AppFontInputImpl(
+_AppFontInput _$AppFontInputFromJson(Map<String, dynamic> json) =>
+    _AppFontInput(
       source: $enumDecodeNullable(_$FontSourceEnumMap, json['source'],
               unknownValue: FontSource.google) ??
           FontSource.google,
@@ -657,7 +635,7 @@ _$AppFontInputImpl _$$AppFontInputImplFromJson(Map<String, dynamic> json) =>
       uri: json['uri'] as String?,
     );
 
-Map<String, dynamic> _$$AppFontInputImplToJson(_$AppFontInputImpl instance) =>
+Map<String, dynamic> _$AppFontInputToJson(_AppFontInput instance) =>
     <String, dynamic>{
       'source': instance.source.toJson(),
       'name': instance.name,

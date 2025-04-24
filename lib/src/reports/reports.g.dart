@@ -6,8 +6,8 @@ part of 'reports.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ReportPreviewImpl _$$ReportPreviewImplFromJson(Map<String, dynamic> json) =>
-    _$ReportPreviewImpl(
+_ReportPreview _$ReportPreviewFromJson(Map<String, dynamic> json) =>
+    _ReportPreview(
       name: json['name'] as String,
       pages: (json['pages'] as List<dynamic>?)
               ?.map((e) => ReportPage.fromJson(e as Map<String, dynamic>))
@@ -15,14 +15,13 @@ _$ReportPreviewImpl _$$ReportPreviewImplFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$ReportPreviewImplToJson(_$ReportPreviewImpl instance) =>
+Map<String, dynamic> _$ReportPreviewToJson(_ReportPreview instance) =>
     <String, dynamic>{
       'name': instance.name,
       'pages': instance.pages.map((e) => e.toJson()).toList(),
     };
 
-_$ReportPageImpl _$$ReportPageImplFromJson(Map<String, dynamic> json) =>
-    _$ReportPageImpl(
+_ReportPage _$ReportPageFromJson(Map<String, dynamic> json) => _ReportPage(
       name: json['name'] as String,
       rows: (json['rows'] as List<dynamic>?)
               ?.map((e) => ReportRow.fromJson(e as Map<String, dynamic>))
@@ -34,15 +33,14 @@ _$ReportPageImpl _$$ReportPageImplFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$ReportPageImplToJson(_$ReportPageImpl instance) =>
+Map<String, dynamic> _$ReportPageToJson(_ReportPage instance) =>
     <String, dynamic>{
       'name': instance.name,
       'rows': instance.rows.map((e) => e.toJson()).toList(),
       'headers': instance.headers.map((e) => e.toJson()).toList(),
     };
 
-_$ReportRowImpl _$$ReportRowImplFromJson(Map<String, dynamic> json) =>
-    _$ReportRowImpl(
+_ReportRow _$ReportRowFromJson(Map<String, dynamic> json) => _ReportRow(
       content: (json['content'] as List<dynamic>?)
               ?.map((e) => ReportCell.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -50,29 +48,28 @@ _$ReportRowImpl _$$ReportRowImplFromJson(Map<String, dynamic> json) =>
       compact: json['compact'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$ReportRowImplToJson(_$ReportRowImpl instance) =>
+Map<String, dynamic> _$ReportRowToJson(_ReportRow instance) =>
     <String, dynamic>{
       'content': instance.content.map((e) => e.toJson()).toList(),
       'compact': instance.compact,
     };
 
-_$ReportHeaderImpl _$$ReportHeaderImplFromJson(Map<String, dynamic> json) =>
-    _$ReportHeaderImpl(
+_ReportHeader _$ReportHeaderFromJson(Map<String, dynamic> json) =>
+    _ReportHeader(
       content: json['content'] as String,
       textColor:
           const ColorOrNullConverter().fromJson(json['textColor'] as String?),
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
     );
 
-Map<String, dynamic> _$$ReportHeaderImplToJson(_$ReportHeaderImpl instance) =>
+Map<String, dynamic> _$ReportHeaderToJson(_ReportHeader instance) =>
     <String, dynamic>{
       'content': instance.content,
       'textColor': const ColorOrNullConverter().toJson(instance.textColor),
       'color': const ColorOrNullConverter().toJson(instance.color),
     };
 
-_$ReportCellImpl _$$ReportCellImplFromJson(Map<String, dynamic> json) =>
-    _$ReportCellImpl(
+_ReportCell _$ReportCellFromJson(Map<String, dynamic> json) => _ReportCell(
       content: json['content'],
       textColor:
           const ColorOrNullConverter().fromJson(json['textColor'] as String?),
@@ -82,7 +79,7 @@ _$ReportCellImpl _$$ReportCellImplFromJson(Map<String, dynamic> json) =>
       currencySymbol: json['currencySymbol'] as String?,
     );
 
-Map<String, dynamic> _$$ReportCellImplToJson(_$ReportCellImpl instance) =>
+Map<String, dynamic> _$ReportCellToJson(_ReportCell instance) =>
     <String, dynamic>{
       'content': instance.content,
       'textColor': const ColorOrNullConverter().toJson(instance.textColor),

@@ -1,4 +1,4 @@
-library ats;
+library;
 
 import 'dart:ui';
 

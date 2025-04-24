@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class LintError with _$LintError {
+abstract class LintError with _$LintError {
   const factory LintError({
     /// [code] defines the error code.
     required String code,

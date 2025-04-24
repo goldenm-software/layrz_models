@@ -1,7 +1,7 @@
 part of '../external.dart';
 
 @freezed
-class ExternalSource with _$ExternalSource {
+abstract class ExternalSource with _$ExternalSource {
   const factory ExternalSource({
     /// [id] represents the DB ID.
     required String id,

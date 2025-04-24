@@ -1,7 +1,7 @@
 part of '../mappit.dart';
 
 @freezed
-class MappitFreeDay with _$MappitFreeDay {
+abstract class MappitFreeDay with _$MappitFreeDay {
   const factory MappitFreeDay({
     /// [id] represents the free day ID.
     required String id,

@@ -19,7 +19,7 @@ part of '../brickhouse.dart';
 /// createdAt Unix
 /// Unix of creation date.
 @unfreezed
-class BHSEncodedTrip with _$BHSEncodedTrip {
+abstract class BHSEncodedTrip with _$BHSEncodedTrip {
   factory BHSEncodedTrip({
     required String id,
     required String assetId,
@@ -46,7 +46,7 @@ class BHSEncodedTrip with _$BHSEncodedTrip {
 /// End date of the trip.
 ///
 @freezed
-class BHSEncodedTripInput with _$BHSEncodedTripInput {
+abstract class BHSEncodedTripInput with _$BHSEncodedTripInput {
   const factory BHSEncodedTripInput({
     required String assetId,
     required String encodedPolyline,

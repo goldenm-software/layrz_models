@@ -1,7 +1,7 @@
 part of '../../i18n.dart';
 
 @freezed
-class Language with _$Language {
+abstract class Language with _$Language {
   const Language._();
 
   const factory Language({
@@ -11,12 +11,11 @@ class Language with _$Language {
     double? progress,
   }) = _Language;
 
-  factory Language.fromJson(Map<String, dynamic> json) =>
-      _$LanguageFromJson(json);
+  factory Language.fromJson(Map<String, dynamic> json) => _$LanguageFromJson(json);
 }
 
 @unfreezed
-class LanguageInput with _$LanguageInput {
+abstract class LanguageInput with _$LanguageInput {
   LanguageInput._();
 
   factory LanguageInput({
@@ -25,6 +24,5 @@ class LanguageInput with _$LanguageInput {
     @Default('') String code,
   }) = _LanguageInput;
 
-  factory LanguageInput.fromJson(Map<String, dynamic> json) =>
-      _$LanguageInputFromJson(json);
+  factory LanguageInput.fromJson(Map<String, dynamic> json) => _$LanguageInputFromJson(json);
 }

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,38 +10,57 @@ part of 'builder.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-InboundStructure _$InboundStructureFromJson(Map<String, dynamic> json) {
-  return _InboundStructure.fromJson(json);
-}
 
 /// @nodoc
 mixin _$InboundStructure {
-  bool get hasPosition => throw _privateConstructorUsedError;
-  InboundPositionStructure get position => throw _privateConstructorUsedError;
-  bool get hasPayload => throw _privateConstructorUsedError;
-  List<InboundPayloadStructure> get payload =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this InboundStructure to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get hasPosition;
+  InboundPositionStructure get position;
+  bool get hasPayload;
+  List<InboundPayloadStructure> get payload;
 
   /// Create a copy of InboundStructure
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $InboundStructureCopyWith<InboundStructure> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$InboundStructureCopyWithImpl<InboundStructure>(
+          this as InboundStructure, _$identity);
+
+  /// Serializes this InboundStructure to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is InboundStructure &&
+            (identical(other.hasPosition, hasPosition) ||
+                other.hasPosition == hasPosition) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
+            (identical(other.hasPayload, hasPayload) ||
+                other.hasPayload == hasPayload) &&
+            const DeepCollectionEquality().equals(other.payload, payload));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, hasPosition, position,
+      hasPayload, const DeepCollectionEquality().hash(payload));
+
+  @override
+  String toString() {
+    return 'InboundStructure(hasPosition: $hasPosition, position: $position, hasPayload: $hasPayload, payload: $payload)';
+  }
 }
 
 /// @nodoc
-abstract class $InboundStructureCopyWith<$Res> {
+abstract mixin class $InboundStructureCopyWith<$Res> {
   factory $InboundStructureCopyWith(
-          InboundStructure value, $Res Function(InboundStructure) then) =
-      _$InboundStructureCopyWithImpl<$Res, InboundStructure>;
+          InboundStructure value, $Res Function(InboundStructure) _then) =
+      _$InboundStructureCopyWithImpl;
   @useResult
   $Res call(
       {bool hasPosition,
@@ -52,14 +72,12 @@ abstract class $InboundStructureCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$InboundStructureCopyWithImpl<$Res, $Val extends InboundStructure>
+class _$InboundStructureCopyWithImpl<$Res>
     implements $InboundStructureCopyWith<$Res> {
-  _$InboundStructureCopyWithImpl(this._value, this._then);
+  _$InboundStructureCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final InboundStructure _self;
+  final $Res Function(InboundStructure) _then;
 
   /// Create a copy of InboundStructure
   /// with the given fields replaced by the non-null parameter values.
@@ -71,24 +89,24 @@ class _$InboundStructureCopyWithImpl<$Res, $Val extends InboundStructure>
     Object? hasPayload = null,
     Object? payload = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       hasPosition: null == hasPosition
-          ? _value.hasPosition
+          ? _self.hasPosition
           : hasPosition // ignore: cast_nullable_to_non_nullable
               as bool,
       position: null == position
-          ? _value.position
+          ? _self.position
           : position // ignore: cast_nullable_to_non_nullable
               as InboundPositionStructure,
       hasPayload: null == hasPayload
-          ? _value.hasPayload
+          ? _self.hasPayload
           : hasPayload // ignore: cast_nullable_to_non_nullable
               as bool,
       payload: null == payload
-          ? _value.payload
+          ? _self.payload
           : payload // ignore: cast_nullable_to_non_nullable
               as List<InboundPayloadStructure>,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of InboundStructure
@@ -96,81 +114,23 @@ class _$InboundStructureCopyWithImpl<$Res, $Val extends InboundStructure>
   @override
   @pragma('vm:prefer-inline')
   $InboundPositionStructureCopyWith<$Res> get position {
-    return $InboundPositionStructureCopyWith<$Res>(_value.position, (value) {
-      return _then(_value.copyWith(position: value) as $Val);
+    return $InboundPositionStructureCopyWith<$Res>(_self.position, (value) {
+      return _then(_self.copyWith(position: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$InboundStructureImplCopyWith<$Res>
-    implements $InboundStructureCopyWith<$Res> {
-  factory _$$InboundStructureImplCopyWith(_$InboundStructureImpl value,
-          $Res Function(_$InboundStructureImpl) then) =
-      __$$InboundStructureImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {bool hasPosition,
-      InboundPositionStructure position,
-      bool hasPayload,
-      List<InboundPayloadStructure> payload});
-
-  @override
-  $InboundPositionStructureCopyWith<$Res> get position;
-}
-
-/// @nodoc
-class __$$InboundStructureImplCopyWithImpl<$Res>
-    extends _$InboundStructureCopyWithImpl<$Res, _$InboundStructureImpl>
-    implements _$$InboundStructureImplCopyWith<$Res> {
-  __$$InboundStructureImplCopyWithImpl(_$InboundStructureImpl _value,
-      $Res Function(_$InboundStructureImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of InboundStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hasPosition = null,
-    Object? position = null,
-    Object? hasPayload = null,
-    Object? payload = null,
-  }) {
-    return _then(_$InboundStructureImpl(
-      hasPosition: null == hasPosition
-          ? _value.hasPosition
-          : hasPosition // ignore: cast_nullable_to_non_nullable
-              as bool,
-      position: null == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as InboundPositionStructure,
-      hasPayload: null == hasPayload
-          ? _value.hasPayload
-          : hasPayload // ignore: cast_nullable_to_non_nullable
-              as bool,
-      payload: null == payload
-          ? _value._payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as List<InboundPayloadStructure>,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$InboundStructureImpl implements _InboundStructure {
-  const _$InboundStructureImpl(
+class _InboundStructure implements InboundStructure {
+  const _InboundStructure(
       {required this.hasPosition,
       required this.position,
       required this.hasPayload,
       required final List<InboundPayloadStructure> payload})
       : _payload = payload;
-
-  factory _$InboundStructureImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InboundStructureImplFromJson(json);
+  factory _InboundStructure.fromJson(Map<String, dynamic> json) =>
+      _$InboundStructureFromJson(json);
 
   @override
   final bool hasPosition;
@@ -186,16 +146,26 @@ class _$InboundStructureImpl implements _InboundStructure {
     return EqualUnmodifiableListView(_payload);
   }
 
+  /// Create a copy of InboundStructure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'InboundStructure(hasPosition: $hasPosition, position: $position, hasPayload: $hasPayload, payload: $payload)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$InboundStructureCopyWith<_InboundStructure> get copyWith =>
+      __$InboundStructureCopyWithImpl<_InboundStructure>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$InboundStructureToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InboundStructureImpl &&
+            other is _InboundStructure &&
             (identical(other.hasPosition, hasPosition) ||
                 other.hasPosition == hasPosition) &&
             (identical(other.position, position) ||
@@ -210,101 +180,127 @@ class _$InboundStructureImpl implements _InboundStructure {
   int get hashCode => Object.hash(runtimeType, hasPosition, position,
       hasPayload, const DeepCollectionEquality().hash(_payload));
 
-  /// Create a copy of InboundStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$InboundStructureImplCopyWith<_$InboundStructureImpl> get copyWith =>
-      __$$InboundStructureImplCopyWithImpl<_$InboundStructureImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InboundStructureImplToJson(
-      this,
-    );
+  String toString() {
+    return 'InboundStructure(hasPosition: $hasPosition, position: $position, hasPayload: $hasPayload, payload: $payload)';
   }
 }
 
-abstract class _InboundStructure implements InboundStructure {
-  const factory _InboundStructure(
-          {required final bool hasPosition,
-          required final InboundPositionStructure position,
-          required final bool hasPayload,
-          required final List<InboundPayloadStructure> payload}) =
-      _$InboundStructureImpl;
+/// @nodoc
+abstract mixin class _$InboundStructureCopyWith<$Res>
+    implements $InboundStructureCopyWith<$Res> {
+  factory _$InboundStructureCopyWith(
+          _InboundStructure value, $Res Function(_InboundStructure) _then) =
+      __$InboundStructureCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {bool hasPosition,
+      InboundPositionStructure position,
+      bool hasPayload,
+      List<InboundPayloadStructure> payload});
 
-  factory _InboundStructure.fromJson(Map<String, dynamic> json) =
-      _$InboundStructureImpl.fromJson;
+  @override
+  $InboundPositionStructureCopyWith<$Res> get position;
+}
 
-  @override
-  bool get hasPosition;
-  @override
-  InboundPositionStructure get position;
-  @override
-  bool get hasPayload;
-  @override
-  List<InboundPayloadStructure> get payload;
+/// @nodoc
+class __$InboundStructureCopyWithImpl<$Res>
+    implements _$InboundStructureCopyWith<$Res> {
+  __$InboundStructureCopyWithImpl(this._self, this._then);
+
+  final _InboundStructure _self;
+  final $Res Function(_InboundStructure) _then;
 
   /// Create a copy of InboundStructure
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InboundStructureImplCopyWith<_$InboundStructureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? hasPosition = null,
+    Object? position = null,
+    Object? hasPayload = null,
+    Object? payload = null,
+  }) {
+    return _then(_InboundStructure(
+      hasPosition: null == hasPosition
+          ? _self.hasPosition
+          : hasPosition // ignore: cast_nullable_to_non_nullable
+              as bool,
+      position: null == position
+          ? _self.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as InboundPositionStructure,
+      hasPayload: null == hasPayload
+          ? _self.hasPayload
+          : hasPayload // ignore: cast_nullable_to_non_nullable
+              as bool,
+      payload: null == payload
+          ? _self._payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as List<InboundPayloadStructure>,
+    ));
+  }
 
-InboundStructureInput _$InboundStructureInputFromJson(
-    Map<String, dynamic> json) {
-  return _InboundStructureInput.fromJson(json);
+  /// Create a copy of InboundStructure
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $InboundPositionStructureCopyWith<$Res> get position {
+    return $InboundPositionStructureCopyWith<$Res>(_self.position, (value) {
+      return _then(_self.copyWith(position: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$InboundStructureInput {
   /// [hasPosition] defines if the structure has a position.
-  bool get hasPosition => throw _privateConstructorUsedError;
+  bool get hasPosition;
 
   /// [hasPosition] defines if the structure has a position.
-  set hasPosition(bool value) => throw _privateConstructorUsedError;
+  set hasPosition(bool value);
 
   /// [position] defines the structure of the position.
-  InboundPositionStructureInput get position =>
-      throw _privateConstructorUsedError;
+  InboundPositionStructureInput get position;
 
   /// [position] defines the structure of the position.
-  set position(InboundPositionStructureInput value) =>
-      throw _privateConstructorUsedError;
+  set position(InboundPositionStructureInput value);
 
   /// [hasPayload] defines if the structure has a payload.
-  bool get hasPayload => throw _privateConstructorUsedError;
+  bool get hasPayload;
 
   /// [hasPayload] defines if the structure has a payload.
-  set hasPayload(bool value) => throw _privateConstructorUsedError;
+  set hasPayload(bool value);
 
   /// [payload] defines the structure of the payload.
-  List<InboundPayloadStructureInput> get payload =>
-      throw _privateConstructorUsedError;
+  List<InboundPayloadStructureInput> get payload;
 
   /// [payload] defines the structure of the payload.
-  set payload(List<InboundPayloadStructureInput> value) =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this InboundStructureInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set payload(List<InboundPayloadStructureInput> value);
 
   /// Create a copy of InboundStructureInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $InboundStructureInputCopyWith<InboundStructureInput> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$InboundStructureInputCopyWithImpl<InboundStructureInput>(
+          this as InboundStructureInput, _$identity);
+
+  /// Serializes this InboundStructureInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'InboundStructureInput(hasPosition: $hasPosition, position: $position, hasPayload: $hasPayload, payload: $payload)';
+  }
 }
 
 /// @nodoc
-abstract class $InboundStructureInputCopyWith<$Res> {
+abstract mixin class $InboundStructureInputCopyWith<$Res> {
   factory $InboundStructureInputCopyWith(InboundStructureInput value,
-          $Res Function(InboundStructureInput) then) =
-      _$InboundStructureInputCopyWithImpl<$Res, InboundStructureInput>;
+          $Res Function(InboundStructureInput) _then) =
+      _$InboundStructureInputCopyWithImpl;
   @useResult
   $Res call(
       {bool hasPosition,
@@ -316,15 +312,12 @@ abstract class $InboundStructureInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$InboundStructureInputCopyWithImpl<$Res,
-        $Val extends InboundStructureInput>
+class _$InboundStructureInputCopyWithImpl<$Res>
     implements $InboundStructureInputCopyWith<$Res> {
-  _$InboundStructureInputCopyWithImpl(this._value, this._then);
+  _$InboundStructureInputCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final InboundStructureInput _self;
+  final $Res Function(InboundStructureInput) _then;
 
   /// Create a copy of InboundStructureInput
   /// with the given fields replaced by the non-null parameter values.
@@ -336,24 +329,24 @@ class _$InboundStructureInputCopyWithImpl<$Res,
     Object? hasPayload = null,
     Object? payload = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       hasPosition: null == hasPosition
-          ? _value.hasPosition
+          ? _self.hasPosition
           : hasPosition // ignore: cast_nullable_to_non_nullable
               as bool,
       position: null == position
-          ? _value.position
+          ? _self.position
           : position // ignore: cast_nullable_to_non_nullable
               as InboundPositionStructureInput,
       hasPayload: null == hasPayload
-          ? _value.hasPayload
+          ? _self.hasPayload
           : hasPayload // ignore: cast_nullable_to_non_nullable
               as bool,
       payload: null == payload
-          ? _value.payload
+          ? _self.payload
           : payload // ignore: cast_nullable_to_non_nullable
               as List<InboundPayloadStructureInput>,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of InboundStructureInput
@@ -361,83 +354,23 @@ class _$InboundStructureInputCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $InboundPositionStructureInputCopyWith<$Res> get position {
-    return $InboundPositionStructureInputCopyWith<$Res>(_value.position,
+    return $InboundPositionStructureInputCopyWith<$Res>(_self.position,
         (value) {
-      return _then(_value.copyWith(position: value) as $Val);
+      return _then(_self.copyWith(position: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$InboundStructureInputImplCopyWith<$Res>
-    implements $InboundStructureInputCopyWith<$Res> {
-  factory _$$InboundStructureInputImplCopyWith(
-          _$InboundStructureInputImpl value,
-          $Res Function(_$InboundStructureInputImpl) then) =
-      __$$InboundStructureInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {bool hasPosition,
-      InboundPositionStructureInput position,
-      bool hasPayload,
-      List<InboundPayloadStructureInput> payload});
-
-  @override
-  $InboundPositionStructureInputCopyWith<$Res> get position;
-}
-
-/// @nodoc
-class __$$InboundStructureInputImplCopyWithImpl<$Res>
-    extends _$InboundStructureInputCopyWithImpl<$Res,
-        _$InboundStructureInputImpl>
-    implements _$$InboundStructureInputImplCopyWith<$Res> {
-  __$$InboundStructureInputImplCopyWithImpl(_$InboundStructureInputImpl _value,
-      $Res Function(_$InboundStructureInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of InboundStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? hasPosition = null,
-    Object? position = null,
-    Object? hasPayload = null,
-    Object? payload = null,
-  }) {
-    return _then(_$InboundStructureInputImpl(
-      hasPosition: null == hasPosition
-          ? _value.hasPosition
-          : hasPosition // ignore: cast_nullable_to_non_nullable
-              as bool,
-      position: null == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as InboundPositionStructureInput,
-      hasPayload: null == hasPayload
-          ? _value.hasPayload
-          : hasPayload // ignore: cast_nullable_to_non_nullable
-              as bool,
-      payload: null == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as List<InboundPayloadStructureInput>,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$InboundStructureInputImpl implements _InboundStructureInput {
-  _$InboundStructureInputImpl(
+class _InboundStructureInput implements InboundStructureInput {
+  _InboundStructureInput(
       {this.hasPosition = true,
       required this.position,
       this.hasPayload = false,
       this.payload = const []});
-
-  factory _$InboundStructureInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InboundStructureInputImplFromJson(json);
+  factory _InboundStructureInput.fromJson(Map<String, dynamic> json) =>
+      _$InboundStructureInputFromJson(json);
 
   /// [hasPosition] defines if the structure has a position.
   @override
@@ -458,288 +391,122 @@ class _$InboundStructureInputImpl implements _InboundStructureInput {
   @JsonKey()
   List<InboundPayloadStructureInput> payload;
 
+  /// Create a copy of InboundStructureInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$InboundStructureInputCopyWith<_InboundStructureInput> get copyWith =>
+      __$InboundStructureInputCopyWithImpl<_InboundStructureInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$InboundStructureInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'InboundStructureInput(hasPosition: $hasPosition, position: $position, hasPayload: $hasPayload, payload: $payload)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$InboundStructureInputCopyWith<$Res>
+    implements $InboundStructureInputCopyWith<$Res> {
+  factory _$InboundStructureInputCopyWith(_InboundStructureInput value,
+          $Res Function(_InboundStructureInput) _then) =
+      __$InboundStructureInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {bool hasPosition,
+      InboundPositionStructureInput position,
+      bool hasPayload,
+      List<InboundPayloadStructureInput> payload});
+
+  @override
+  $InboundPositionStructureInputCopyWith<$Res> get position;
+}
+
+/// @nodoc
+class __$InboundStructureInputCopyWithImpl<$Res>
+    implements _$InboundStructureInputCopyWith<$Res> {
+  __$InboundStructureInputCopyWithImpl(this._self, this._then);
+
+  final _InboundStructureInput _self;
+  final $Res Function(_InboundStructureInput) _then;
 
   /// Create a copy of InboundStructureInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$InboundStructureInputImplCopyWith<_$InboundStructureInputImpl>
-      get copyWith => __$$InboundStructureInputImplCopyWithImpl<
-          _$InboundStructureInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InboundStructureInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? hasPosition = null,
+    Object? position = null,
+    Object? hasPayload = null,
+    Object? payload = null,
+  }) {
+    return _then(_InboundStructureInput(
+      hasPosition: null == hasPosition
+          ? _self.hasPosition
+          : hasPosition // ignore: cast_nullable_to_non_nullable
+              as bool,
+      position: null == position
+          ? _self.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as InboundPositionStructureInput,
+      hasPayload: null == hasPayload
+          ? _self.hasPayload
+          : hasPayload // ignore: cast_nullable_to_non_nullable
+              as bool,
+      payload: null == payload
+          ? _self.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as List<InboundPayloadStructureInput>,
+    ));
   }
-}
-
-abstract class _InboundStructureInput implements InboundStructureInput {
-  factory _InboundStructureInput(
-          {bool hasPosition,
-          required InboundPositionStructureInput position,
-          bool hasPayload,
-          List<InboundPayloadStructureInput> payload}) =
-      _$InboundStructureInputImpl;
-
-  factory _InboundStructureInput.fromJson(Map<String, dynamic> json) =
-      _$InboundStructureInputImpl.fromJson;
-
-  /// [hasPosition] defines if the structure has a position.
-  @override
-  bool get hasPosition;
-
-  /// [hasPosition] defines if the structure has a position.
-  set hasPosition(bool value);
-
-  /// [position] defines the structure of the position.
-  @override
-  InboundPositionStructureInput get position;
-
-  /// [position] defines the structure of the position.
-  set position(InboundPositionStructureInput value);
-
-  /// [hasPayload] defines if the structure has a payload.
-  @override
-  bool get hasPayload;
-
-  /// [hasPayload] defines if the structure has a payload.
-  set hasPayload(bool value);
-
-  /// [payload] defines the structure of the payload.
-  @override
-  List<InboundPayloadStructureInput> get payload;
-
-  /// [payload] defines the structure of the payload.
-  set payload(List<InboundPayloadStructureInput> value);
 
   /// Create a copy of InboundStructureInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InboundStructureInputImplCopyWith<_$InboundStructureInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-InboundPositionStructure _$InboundPositionStructureFromJson(
-    Map<String, dynamic> json) {
-  return _InboundPositionStructure.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $InboundPositionStructureInputCopyWith<$Res> get position {
+    return $InboundPositionStructureInputCopyWith<$Res>(_self.position,
+        (value) {
+      return _then(_self.copyWith(position: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$InboundPositionStructure {
-  bool get latitude => throw _privateConstructorUsedError;
-  bool get longitude => throw _privateConstructorUsedError;
-  bool get altitude => throw _privateConstructorUsedError;
-  bool get speed => throw _privateConstructorUsedError;
-  bool get direction => throw _privateConstructorUsedError;
-  bool get hdop => throw _privateConstructorUsedError;
-  bool get satellites => throw _privateConstructorUsedError;
-
-  /// Serializes this InboundPositionStructure to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get latitude;
+  bool get longitude;
+  bool get altitude;
+  bool get speed;
+  bool get direction;
+  bool get hdop;
+  bool get satellites;
 
   /// Create a copy of InboundPositionStructure
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $InboundPositionStructureCopyWith<InboundPositionStructure> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$InboundPositionStructureCopyWithImpl<InboundPositionStructure>(
+          this as InboundPositionStructure, _$identity);
 
-/// @nodoc
-abstract class $InboundPositionStructureCopyWith<$Res> {
-  factory $InboundPositionStructureCopyWith(InboundPositionStructure value,
-          $Res Function(InboundPositionStructure) then) =
-      _$InboundPositionStructureCopyWithImpl<$Res, InboundPositionStructure>;
-  @useResult
-  $Res call(
-      {bool latitude,
-      bool longitude,
-      bool altitude,
-      bool speed,
-      bool direction,
-      bool hdop,
-      bool satellites});
-}
-
-/// @nodoc
-class _$InboundPositionStructureCopyWithImpl<$Res,
-        $Val extends InboundPositionStructure>
-    implements $InboundPositionStructureCopyWith<$Res> {
-  _$InboundPositionStructureCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of InboundPositionStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? altitude = null,
-    Object? speed = null,
-    Object? direction = null,
-    Object? hdop = null,
-    Object? satellites = null,
-  }) {
-    return _then(_value.copyWith(
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      altitude: null == altitude
-          ? _value.altitude
-          : altitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      speed: null == speed
-          ? _value.speed
-          : speed // ignore: cast_nullable_to_non_nullable
-              as bool,
-      direction: null == direction
-          ? _value.direction
-          : direction // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hdop: null == hdop
-          ? _value.hdop
-          : hdop // ignore: cast_nullable_to_non_nullable
-              as bool,
-      satellites: null == satellites
-          ? _value.satellites
-          : satellites // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$InboundPositionStructureImplCopyWith<$Res>
-    implements $InboundPositionStructureCopyWith<$Res> {
-  factory _$$InboundPositionStructureImplCopyWith(
-          _$InboundPositionStructureImpl value,
-          $Res Function(_$InboundPositionStructureImpl) then) =
-      __$$InboundPositionStructureImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {bool latitude,
-      bool longitude,
-      bool altitude,
-      bool speed,
-      bool direction,
-      bool hdop,
-      bool satellites});
-}
-
-/// @nodoc
-class __$$InboundPositionStructureImplCopyWithImpl<$Res>
-    extends _$InboundPositionStructureCopyWithImpl<$Res,
-        _$InboundPositionStructureImpl>
-    implements _$$InboundPositionStructureImplCopyWith<$Res> {
-  __$$InboundPositionStructureImplCopyWithImpl(
-      _$InboundPositionStructureImpl _value,
-      $Res Function(_$InboundPositionStructureImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of InboundPositionStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? altitude = null,
-    Object? speed = null,
-    Object? direction = null,
-    Object? hdop = null,
-    Object? satellites = null,
-  }) {
-    return _then(_$InboundPositionStructureImpl(
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      altitude: null == altitude
-          ? _value.altitude
-          : altitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      speed: null == speed
-          ? _value.speed
-          : speed // ignore: cast_nullable_to_non_nullable
-              as bool,
-      direction: null == direction
-          ? _value.direction
-          : direction // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hdop: null == hdop
-          ? _value.hdop
-          : hdop // ignore: cast_nullable_to_non_nullable
-              as bool,
-      satellites: null == satellites
-          ? _value.satellites
-          : satellites // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$InboundPositionStructureImpl implements _InboundPositionStructure {
-  const _$InboundPositionStructureImpl(
-      {required this.latitude,
-      required this.longitude,
-      required this.altitude,
-      required this.speed,
-      required this.direction,
-      required this.hdop,
-      required this.satellites});
-
-  factory _$InboundPositionStructureImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InboundPositionStructureImplFromJson(json);
-
-  @override
-  final bool latitude;
-  @override
-  final bool longitude;
-  @override
-  final bool altitude;
-  @override
-  final bool speed;
-  @override
-  final bool direction;
-  @override
-  final bool hdop;
-  @override
-  final bool satellites;
-
-  @override
-  String toString() {
-    return 'InboundPositionStructure(latitude: $latitude, longitude: $longitude, altitude: $altitude, speed: $speed, direction: $direction, hdop: $hdop, satellites: $satellites)';
-  }
+  /// Serializes this InboundPositionStructure to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InboundPositionStructureImpl &&
+            other is InboundPositionStructure &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
@@ -759,174 +526,270 @@ class _$InboundPositionStructureImpl implements _InboundPositionStructure {
   int get hashCode => Object.hash(runtimeType, latitude, longitude, altitude,
       speed, direction, hdop, satellites);
 
-  /// Create a copy of InboundPositionStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$InboundPositionStructureImplCopyWith<_$InboundPositionStructureImpl>
-      get copyWith => __$$InboundPositionStructureImplCopyWithImpl<
-          _$InboundPositionStructureImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InboundPositionStructureImplToJson(
-      this,
-    );
+  String toString() {
+    return 'InboundPositionStructure(latitude: $latitude, longitude: $longitude, altitude: $altitude, speed: $speed, direction: $direction, hdop: $hdop, satellites: $satellites)';
   }
 }
 
-abstract class _InboundPositionStructure implements InboundPositionStructure {
-  const factory _InboundPositionStructure(
-      {required final bool latitude,
-      required final bool longitude,
-      required final bool altitude,
-      required final bool speed,
-      required final bool direction,
-      required final bool hdop,
-      required final bool satellites}) = _$InboundPositionStructureImpl;
+/// @nodoc
+abstract mixin class $InboundPositionStructureCopyWith<$Res> {
+  factory $InboundPositionStructureCopyWith(InboundPositionStructure value,
+          $Res Function(InboundPositionStructure) _then) =
+      _$InboundPositionStructureCopyWithImpl;
+  @useResult
+  $Res call(
+      {bool latitude,
+      bool longitude,
+      bool altitude,
+      bool speed,
+      bool direction,
+      bool hdop,
+      bool satellites});
+}
 
-  factory _InboundPositionStructure.fromJson(Map<String, dynamic> json) =
-      _$InboundPositionStructureImpl.fromJson;
+/// @nodoc
+class _$InboundPositionStructureCopyWithImpl<$Res>
+    implements $InboundPositionStructureCopyWith<$Res> {
+  _$InboundPositionStructureCopyWithImpl(this._self, this._then);
+
+  final InboundPositionStructure _self;
+  final $Res Function(InboundPositionStructure) _then;
+
+  /// Create a copy of InboundPositionStructure
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? altitude = null,
+    Object? speed = null,
+    Object? direction = null,
+    Object? hdop = null,
+    Object? satellites = null,
+  }) {
+    return _then(_self.copyWith(
+      latitude: null == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      longitude: null == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      altitude: null == altitude
+          ? _self.altitude
+          : altitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      speed: null == speed
+          ? _self.speed
+          : speed // ignore: cast_nullable_to_non_nullable
+              as bool,
+      direction: null == direction
+          ? _self.direction
+          : direction // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hdop: null == hdop
+          ? _self.hdop
+          : hdop // ignore: cast_nullable_to_non_nullable
+              as bool,
+      satellites: null == satellites
+          ? _self.satellites
+          : satellites // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _InboundPositionStructure implements InboundPositionStructure {
+  const _InboundPositionStructure(
+      {required this.latitude,
+      required this.longitude,
+      required this.altitude,
+      required this.speed,
+      required this.direction,
+      required this.hdop,
+      required this.satellites});
+  factory _InboundPositionStructure.fromJson(Map<String, dynamic> json) =>
+      _$InboundPositionStructureFromJson(json);
 
   @override
-  bool get latitude;
+  final bool latitude;
   @override
-  bool get longitude;
+  final bool longitude;
   @override
-  bool get altitude;
+  final bool altitude;
   @override
-  bool get speed;
+  final bool speed;
   @override
-  bool get direction;
+  final bool direction;
   @override
-  bool get hdop;
+  final bool hdop;
   @override
-  bool get satellites;
+  final bool satellites;
 
   /// Create a copy of InboundPositionStructure
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InboundPositionStructureImplCopyWith<_$InboundPositionStructureImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$InboundPositionStructureCopyWith<_InboundPositionStructure> get copyWith =>
+      __$InboundPositionStructureCopyWithImpl<_InboundPositionStructure>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$InboundPositionStructureToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _InboundPositionStructure &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
+            (identical(other.altitude, altitude) ||
+                other.altitude == altitude) &&
+            (identical(other.speed, speed) || other.speed == speed) &&
+            (identical(other.direction, direction) ||
+                other.direction == direction) &&
+            (identical(other.hdop, hdop) || other.hdop == hdop) &&
+            (identical(other.satellites, satellites) ||
+                other.satellites == satellites));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, latitude, longitude, altitude,
+      speed, direction, hdop, satellites);
+
+  @override
+  String toString() {
+    return 'InboundPositionStructure(latitude: $latitude, longitude: $longitude, altitude: $altitude, speed: $speed, direction: $direction, hdop: $hdop, satellites: $satellites)';
+  }
 }
 
-InboundPositionStructureInput _$InboundPositionStructureInputFromJson(
-    Map<String, dynamic> json) {
-  return _InboundPositionStructureInput.fromJson(json);
+/// @nodoc
+abstract mixin class _$InboundPositionStructureCopyWith<$Res>
+    implements $InboundPositionStructureCopyWith<$Res> {
+  factory _$InboundPositionStructureCopyWith(_InboundPositionStructure value,
+          $Res Function(_InboundPositionStructure) _then) =
+      __$InboundPositionStructureCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {bool latitude,
+      bool longitude,
+      bool altitude,
+      bool speed,
+      bool direction,
+      bool hdop,
+      bool satellites});
+}
+
+/// @nodoc
+class __$InboundPositionStructureCopyWithImpl<$Res>
+    implements _$InboundPositionStructureCopyWith<$Res> {
+  __$InboundPositionStructureCopyWithImpl(this._self, this._then);
+
+  final _InboundPositionStructure _self;
+  final $Res Function(_InboundPositionStructure) _then;
+
+  /// Create a copy of InboundPositionStructure
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? altitude = null,
+    Object? speed = null,
+    Object? direction = null,
+    Object? hdop = null,
+    Object? satellites = null,
+  }) {
+    return _then(_InboundPositionStructure(
+      latitude: null == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      longitude: null == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      altitude: null == altitude
+          ? _self.altitude
+          : altitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      speed: null == speed
+          ? _self.speed
+          : speed // ignore: cast_nullable_to_non_nullable
+              as bool,
+      direction: null == direction
+          ? _self.direction
+          : direction // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hdop: null == hdop
+          ? _self.hdop
+          : hdop // ignore: cast_nullable_to_non_nullable
+              as bool,
+      satellites: null == satellites
+          ? _self.satellites
+          : satellites // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$InboundPositionStructureInput {
-  bool get latitude => throw _privateConstructorUsedError;
-  set latitude(bool value) => throw _privateConstructorUsedError;
-  bool get longitude => throw _privateConstructorUsedError;
-  set longitude(bool value) => throw _privateConstructorUsedError;
-  bool get speed => throw _privateConstructorUsedError;
-  set speed(bool value) => throw _privateConstructorUsedError;
-  bool get direction => throw _privateConstructorUsedError;
-  set direction(bool value) => throw _privateConstructorUsedError;
-  bool get altitude => throw _privateConstructorUsedError;
-  set altitude(bool value) => throw _privateConstructorUsedError;
-  bool get satellites => throw _privateConstructorUsedError;
-  set satellites(bool value) => throw _privateConstructorUsedError;
-  bool get hdop => throw _privateConstructorUsedError;
-  set hdop(bool value) => throw _privateConstructorUsedError;
-
-  /// Serializes this InboundPositionStructureInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get latitude;
+  set latitude(bool value);
+  bool get longitude;
+  set longitude(bool value);
+  bool get speed;
+  set speed(bool value);
+  bool get direction;
+  set direction(bool value);
+  bool get altitude;
+  set altitude(bool value);
+  bool get satellites;
+  set satellites(bool value);
+  bool get hdop;
+  set hdop(bool value);
 
   /// Create a copy of InboundPositionStructureInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $InboundPositionStructureInputCopyWith<InboundPositionStructureInput>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $InboundPositionStructureInputCopyWith<$Res> {
-  factory $InboundPositionStructureInputCopyWith(
-          InboundPositionStructureInput value,
-          $Res Function(InboundPositionStructureInput) then) =
-      _$InboundPositionStructureInputCopyWithImpl<$Res,
-          InboundPositionStructureInput>;
-  @useResult
-  $Res call(
-      {bool latitude,
-      bool longitude,
-      bool speed,
-      bool direction,
-      bool altitude,
-      bool satellites,
-      bool hdop});
-}
-
-/// @nodoc
-class _$InboundPositionStructureInputCopyWithImpl<$Res,
-        $Val extends InboundPositionStructureInput>
-    implements $InboundPositionStructureInputCopyWith<$Res> {
-  _$InboundPositionStructureInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of InboundPositionStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $InboundPositionStructureInputCopyWith<InboundPositionStructureInput>
+      get copyWith => _$InboundPositionStructureInputCopyWithImpl<
+              InboundPositionStructureInput>(
+          this as InboundPositionStructureInput, _$identity);
+
+  /// Serializes this InboundPositionStructureInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
-    Object? speed = null,
-    Object? direction = null,
-    Object? altitude = null,
-    Object? satellites = null,
-    Object? hdop = null,
-  }) {
-    return _then(_value.copyWith(
-      latitude: null == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      longitude: null == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      speed: null == speed
-          ? _value.speed
-          : speed // ignore: cast_nullable_to_non_nullable
-              as bool,
-      direction: null == direction
-          ? _value.direction
-          : direction // ignore: cast_nullable_to_non_nullable
-              as bool,
-      altitude: null == altitude
-          ? _value.altitude
-          : altitude // ignore: cast_nullable_to_non_nullable
-              as bool,
-      satellites: null == satellites
-          ? _value.satellites
-          : satellites // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hdop: null == hdop
-          ? _value.hdop
-          : hdop // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  String toString() {
+    return 'InboundPositionStructureInput(latitude: $latitude, longitude: $longitude, speed: $speed, direction: $direction, altitude: $altitude, satellites: $satellites, hdop: $hdop)';
   }
 }
 
 /// @nodoc
-abstract class _$$InboundPositionStructureInputImplCopyWith<$Res>
-    implements $InboundPositionStructureInputCopyWith<$Res> {
-  factory _$$InboundPositionStructureInputImplCopyWith(
-          _$InboundPositionStructureInputImpl value,
-          $Res Function(_$InboundPositionStructureInputImpl) then) =
-      __$$InboundPositionStructureInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $InboundPositionStructureInputCopyWith<$Res> {
+  factory $InboundPositionStructureInputCopyWith(
+          InboundPositionStructureInput value,
+          $Res Function(InboundPositionStructureInput) _then) =
+      _$InboundPositionStructureInputCopyWithImpl;
   @useResult
   $Res call(
       {bool latitude,
@@ -939,14 +802,12 @@ abstract class _$$InboundPositionStructureInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InboundPositionStructureInputImplCopyWithImpl<$Res>
-    extends _$InboundPositionStructureInputCopyWithImpl<$Res,
-        _$InboundPositionStructureInputImpl>
-    implements _$$InboundPositionStructureInputImplCopyWith<$Res> {
-  __$$InboundPositionStructureInputImplCopyWithImpl(
-      _$InboundPositionStructureInputImpl _value,
-      $Res Function(_$InboundPositionStructureInputImpl) _then)
-      : super(_value, _then);
+class _$InboundPositionStructureInputCopyWithImpl<$Res>
+    implements $InboundPositionStructureInputCopyWith<$Res> {
+  _$InboundPositionStructureInputCopyWithImpl(this._self, this._then);
+
+  final InboundPositionStructureInput _self;
+  final $Res Function(InboundPositionStructureInput) _then;
 
   /// Create a copy of InboundPositionStructureInput
   /// with the given fields replaced by the non-null parameter values.
@@ -961,33 +822,33 @@ class __$$InboundPositionStructureInputImplCopyWithImpl<$Res>
     Object? satellites = null,
     Object? hdop = null,
   }) {
-    return _then(_$InboundPositionStructureInputImpl(
+    return _then(_self.copyWith(
       latitude: null == latitude
-          ? _value.latitude
+          ? _self.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as bool,
       longitude: null == longitude
-          ? _value.longitude
+          ? _self.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as bool,
       speed: null == speed
-          ? _value.speed
+          ? _self.speed
           : speed // ignore: cast_nullable_to_non_nullable
               as bool,
       direction: null == direction
-          ? _value.direction
+          ? _self.direction
           : direction // ignore: cast_nullable_to_non_nullable
               as bool,
       altitude: null == altitude
-          ? _value.altitude
+          ? _self.altitude
           : altitude // ignore: cast_nullable_to_non_nullable
               as bool,
       satellites: null == satellites
-          ? _value.satellites
+          ? _self.satellites
           : satellites // ignore: cast_nullable_to_non_nullable
               as bool,
       hdop: null == hdop
-          ? _value.hdop
+          ? _self.hdop
           : hdop // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -996,9 +857,8 @@ class __$$InboundPositionStructureInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$InboundPositionStructureInputImpl
-    implements _InboundPositionStructureInput {
-  _$InboundPositionStructureInputImpl(
+class _InboundPositionStructureInput implements InboundPositionStructureInput {
+  _InboundPositionStructureInput(
       {this.latitude = true,
       this.longitude = true,
       this.speed = true,
@@ -1006,10 +866,8 @@ class _$InboundPositionStructureInputImpl
       this.altitude = true,
       this.satellites = true,
       this.hdop = true});
-
-  factory _$InboundPositionStructureInputImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$InboundPositionStructureInputImplFromJson(json);
+  factory _InboundPositionStructureInput.fromJson(Map<String, dynamic> json) =>
+      _$InboundPositionStructureInputFromJson(json);
 
   @override
   @JsonKey()
@@ -1033,211 +891,123 @@ class _$InboundPositionStructureInputImpl
   @JsonKey()
   bool hdop;
 
+  /// Create a copy of InboundPositionStructureInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$InboundPositionStructureInputCopyWith<_InboundPositionStructureInput>
+      get copyWith => __$InboundPositionStructureInputCopyWithImpl<
+          _InboundPositionStructureInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$InboundPositionStructureInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'InboundPositionStructureInput(latitude: $latitude, longitude: $longitude, speed: $speed, direction: $direction, altitude: $altitude, satellites: $satellites, hdop: $hdop)';
   }
-
-  /// Create a copy of InboundPositionStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InboundPositionStructureInputImplCopyWith<
-          _$InboundPositionStructureInputImpl>
-      get copyWith => __$$InboundPositionStructureInputImplCopyWithImpl<
-          _$InboundPositionStructureInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InboundPositionStructureInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _InboundPositionStructureInput
-    implements InboundPositionStructureInput {
-  factory _InboundPositionStructureInput(
+/// @nodoc
+abstract mixin class _$InboundPositionStructureInputCopyWith<$Res>
+    implements $InboundPositionStructureInputCopyWith<$Res> {
+  factory _$InboundPositionStructureInputCopyWith(
+          _InboundPositionStructureInput value,
+          $Res Function(_InboundPositionStructureInput) _then) =
+      __$InboundPositionStructureInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {bool latitude,
       bool longitude,
       bool speed,
       bool direction,
       bool altitude,
       bool satellites,
-      bool hdop}) = _$InboundPositionStructureInputImpl;
+      bool hdop});
+}
 
-  factory _InboundPositionStructureInput.fromJson(Map<String, dynamic> json) =
-      _$InboundPositionStructureInputImpl.fromJson;
+/// @nodoc
+class __$InboundPositionStructureInputCopyWithImpl<$Res>
+    implements _$InboundPositionStructureInputCopyWith<$Res> {
+  __$InboundPositionStructureInputCopyWithImpl(this._self, this._then);
 
-  @override
-  bool get latitude;
-  set latitude(bool value);
-  @override
-  bool get longitude;
-  set longitude(bool value);
-  @override
-  bool get speed;
-  set speed(bool value);
-  @override
-  bool get direction;
-  set direction(bool value);
-  @override
-  bool get altitude;
-  set altitude(bool value);
-  @override
-  bool get satellites;
-  set satellites(bool value);
-  @override
-  bool get hdop;
-  set hdop(bool value);
+  final _InboundPositionStructureInput _self;
+  final $Res Function(_InboundPositionStructureInput) _then;
 
   /// Create a copy of InboundPositionStructureInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InboundPositionStructureInputImplCopyWith<
-          _$InboundPositionStructureInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-InboundPayloadStructure _$InboundPayloadStructureFromJson(
-    Map<String, dynamic> json) {
-  return _InboundPayloadStructure.fromJson(json);
-}
-
-/// @nodoc
-mixin _$InboundPayloadStructure {
-  String get field => throw _privateConstructorUsedError;
-  @InboundPayloadStructureTypeConverter()
-  InboundPayloadStructureType get type => throw _privateConstructorUsedError;
-
-  /// Serializes this InboundPayloadStructure to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundPayloadStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $InboundPayloadStructureCopyWith<InboundPayloadStructure> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $InboundPayloadStructureCopyWith<$Res> {
-  factory $InboundPayloadStructureCopyWith(InboundPayloadStructure value,
-          $Res Function(InboundPayloadStructure) then) =
-      _$InboundPayloadStructureCopyWithImpl<$Res, InboundPayloadStructure>;
-  @useResult
-  $Res call(
-      {String field,
-      @InboundPayloadStructureTypeConverter()
-      InboundPayloadStructureType type});
-}
-
-/// @nodoc
-class _$InboundPayloadStructureCopyWithImpl<$Res,
-        $Val extends InboundPayloadStructure>
-    implements $InboundPayloadStructureCopyWith<$Res> {
-  _$InboundPayloadStructureCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of InboundPayloadStructure
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? field = null,
-    Object? type = null,
+    Object? latitude = null,
+    Object? longitude = null,
+    Object? speed = null,
+    Object? direction = null,
+    Object? altitude = null,
+    Object? satellites = null,
+    Object? hdop = null,
   }) {
-    return _then(_value.copyWith(
-      field: null == field
-          ? _value.field
-          : field // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as InboundPayloadStructureType,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$InboundPayloadStructureImplCopyWith<$Res>
-    implements $InboundPayloadStructureCopyWith<$Res> {
-  factory _$$InboundPayloadStructureImplCopyWith(
-          _$InboundPayloadStructureImpl value,
-          $Res Function(_$InboundPayloadStructureImpl) then) =
-      __$$InboundPayloadStructureImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String field,
-      @InboundPayloadStructureTypeConverter()
-      InboundPayloadStructureType type});
-}
-
-/// @nodoc
-class __$$InboundPayloadStructureImplCopyWithImpl<$Res>
-    extends _$InboundPayloadStructureCopyWithImpl<$Res,
-        _$InboundPayloadStructureImpl>
-    implements _$$InboundPayloadStructureImplCopyWith<$Res> {
-  __$$InboundPayloadStructureImplCopyWithImpl(
-      _$InboundPayloadStructureImpl _value,
-      $Res Function(_$InboundPayloadStructureImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of InboundPayloadStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? field = null,
-    Object? type = null,
-  }) {
-    return _then(_$InboundPayloadStructureImpl(
-      field: null == field
-          ? _value.field
-          : field // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as InboundPayloadStructureType,
+    return _then(_InboundPositionStructureInput(
+      latitude: null == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      longitude: null == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      speed: null == speed
+          ? _self.speed
+          : speed // ignore: cast_nullable_to_non_nullable
+              as bool,
+      direction: null == direction
+          ? _self.direction
+          : direction // ignore: cast_nullable_to_non_nullable
+              as bool,
+      altitude: null == altitude
+          ? _self.altitude
+          : altitude // ignore: cast_nullable_to_non_nullable
+              as bool,
+      satellites: null == satellites
+          ? _self.satellites
+          : satellites // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hdop: null == hdop
+          ? _self.hdop
+          : hdop // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$InboundPayloadStructureImpl implements _InboundPayloadStructure {
-  const _$InboundPayloadStructureImpl(
-      {required this.field,
-      @InboundPayloadStructureTypeConverter() required this.type});
-
-  factory _$InboundPayloadStructureImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InboundPayloadStructureImplFromJson(json);
-
-  @override
-  final String field;
-  @override
+mixin _$InboundPayloadStructure {
+  String get field;
   @InboundPayloadStructureTypeConverter()
-  final InboundPayloadStructureType type;
+  InboundPayloadStructureType get type;
 
-  @override
-  String toString() {
-    return 'InboundPayloadStructure(field: $field, type: $type)';
-  }
+  /// Create a copy of InboundPayloadStructure
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $InboundPayloadStructureCopyWith<InboundPayloadStructure> get copyWith =>
+      _$InboundPayloadStructureCopyWithImpl<InboundPayloadStructure>(
+          this as InboundPayloadStructure, _$identity);
+
+  /// Serializes this InboundPayloadStructure to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InboundPayloadStructureImpl &&
+            other is InboundPayloadStructure &&
             (identical(other.field, field) || other.field == field) &&
             (identical(other.type, type) || other.type == type));
   }
@@ -1246,79 +1016,17 @@ class _$InboundPayloadStructureImpl implements _InboundPayloadStructure {
   @override
   int get hashCode => Object.hash(runtimeType, field, type);
 
-  /// Create a copy of InboundPayloadStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$InboundPayloadStructureImplCopyWith<_$InboundPayloadStructureImpl>
-      get copyWith => __$$InboundPayloadStructureImplCopyWithImpl<
-          _$InboundPayloadStructureImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InboundPayloadStructureImplToJson(
-      this,
-    );
+  String toString() {
+    return 'InboundPayloadStructure(field: $field, type: $type)';
   }
 }
 
-abstract class _InboundPayloadStructure implements InboundPayloadStructure {
-  const factory _InboundPayloadStructure(
-          {required final String field,
-          @InboundPayloadStructureTypeConverter()
-          required final InboundPayloadStructureType type}) =
-      _$InboundPayloadStructureImpl;
-
-  factory _InboundPayloadStructure.fromJson(Map<String, dynamic> json) =
-      _$InboundPayloadStructureImpl.fromJson;
-
-  @override
-  String get field;
-  @override
-  @InboundPayloadStructureTypeConverter()
-  InboundPayloadStructureType get type;
-
-  /// Create a copy of InboundPayloadStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InboundPayloadStructureImplCopyWith<_$InboundPayloadStructureImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-InboundPayloadStructureInput _$InboundPayloadStructureInputFromJson(
-    Map<String, dynamic> json) {
-  return _InboundPayloadStructureInput.fromJson(json);
-}
-
 /// @nodoc
-mixin _$InboundPayloadStructureInput {
-  String get field => throw _privateConstructorUsedError;
-  set field(String value) => throw _privateConstructorUsedError;
-  @InboundPayloadStructureTypeConverter()
-  InboundPayloadStructureType get type => throw _privateConstructorUsedError;
-  @InboundPayloadStructureTypeConverter()
-  set type(InboundPayloadStructureType value) =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this InboundPayloadStructureInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InboundPayloadStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $InboundPayloadStructureInputCopyWith<InboundPayloadStructureInput>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $InboundPayloadStructureInputCopyWith<$Res> {
-  factory $InboundPayloadStructureInputCopyWith(
-          InboundPayloadStructureInput value,
-          $Res Function(InboundPayloadStructureInput) then) =
-      _$InboundPayloadStructureInputCopyWithImpl<$Res,
-          InboundPayloadStructureInput>;
+abstract mixin class $InboundPayloadStructureCopyWith<$Res> {
+  factory $InboundPayloadStructureCopyWith(InboundPayloadStructure value,
+          $Res Function(InboundPayloadStructure) _then) =
+      _$InboundPayloadStructureCopyWithImpl;
   @useResult
   $Res call(
       {String field,
@@ -1327,17 +1035,14 @@ abstract class $InboundPayloadStructureInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$InboundPayloadStructureInputCopyWithImpl<$Res,
-        $Val extends InboundPayloadStructureInput>
-    implements $InboundPayloadStructureInputCopyWith<$Res> {
-  _$InboundPayloadStructureInputCopyWithImpl(this._value, this._then);
+class _$InboundPayloadStructureCopyWithImpl<$Res>
+    implements $InboundPayloadStructureCopyWith<$Res> {
+  _$InboundPayloadStructureCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final InboundPayloadStructure _self;
+  final $Res Function(InboundPayloadStructure) _then;
 
-  /// Create a copy of InboundPayloadStructureInput
+  /// Create a copy of InboundPayloadStructure
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -1345,59 +1050,13 @@ class _$InboundPayloadStructureInputCopyWithImpl<$Res,
     Object? field = null,
     Object? type = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       field: null == field
-          ? _value.field
+          ? _self.field
           : field // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as InboundPayloadStructureType,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$InboundPayloadStructureInputImplCopyWith<$Res>
-    implements $InboundPayloadStructureInputCopyWith<$Res> {
-  factory _$$InboundPayloadStructureInputImplCopyWith(
-          _$InboundPayloadStructureInputImpl value,
-          $Res Function(_$InboundPayloadStructureInputImpl) then) =
-      __$$InboundPayloadStructureInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String field,
-      @InboundPayloadStructureTypeConverter()
-      InboundPayloadStructureType type});
-}
-
-/// @nodoc
-class __$$InboundPayloadStructureInputImplCopyWithImpl<$Res>
-    extends _$InboundPayloadStructureInputCopyWithImpl<$Res,
-        _$InboundPayloadStructureInputImpl>
-    implements _$$InboundPayloadStructureInputImplCopyWith<$Res> {
-  __$$InboundPayloadStructureInputImplCopyWithImpl(
-      _$InboundPayloadStructureInputImpl _value,
-      $Res Function(_$InboundPayloadStructureInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of InboundPayloadStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? field = null,
-    Object? type = null,
-  }) {
-    return _then(_$InboundPayloadStructureInputImpl(
-      field: null == field
-          ? _value.field
-          : field // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as InboundPayloadStructureType,
     ));
@@ -1406,16 +1065,175 @@ class __$$InboundPayloadStructureInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$InboundPayloadStructureInputImpl
-    implements _InboundPayloadStructureInput {
-  _$InboundPayloadStructureInputImpl(
+class _InboundPayloadStructure implements InboundPayloadStructure {
+  const _InboundPayloadStructure(
+      {required this.field,
+      @InboundPayloadStructureTypeConverter() required this.type});
+  factory _InboundPayloadStructure.fromJson(Map<String, dynamic> json) =>
+      _$InboundPayloadStructureFromJson(json);
+
+  @override
+  final String field;
+  @override
+  @InboundPayloadStructureTypeConverter()
+  final InboundPayloadStructureType type;
+
+  /// Create a copy of InboundPayloadStructure
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$InboundPayloadStructureCopyWith<_InboundPayloadStructure> get copyWith =>
+      __$InboundPayloadStructureCopyWithImpl<_InboundPayloadStructure>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$InboundPayloadStructureToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _InboundPayloadStructure &&
+            (identical(other.field, field) || other.field == field) &&
+            (identical(other.type, type) || other.type == type));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, field, type);
+
+  @override
+  String toString() {
+    return 'InboundPayloadStructure(field: $field, type: $type)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$InboundPayloadStructureCopyWith<$Res>
+    implements $InboundPayloadStructureCopyWith<$Res> {
+  factory _$InboundPayloadStructureCopyWith(_InboundPayloadStructure value,
+          $Res Function(_InboundPayloadStructure) _then) =
+      __$InboundPayloadStructureCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String field,
+      @InboundPayloadStructureTypeConverter()
+      InboundPayloadStructureType type});
+}
+
+/// @nodoc
+class __$InboundPayloadStructureCopyWithImpl<$Res>
+    implements _$InboundPayloadStructureCopyWith<$Res> {
+  __$InboundPayloadStructureCopyWithImpl(this._self, this._then);
+
+  final _InboundPayloadStructure _self;
+  final $Res Function(_InboundPayloadStructure) _then;
+
+  /// Create a copy of InboundPayloadStructure
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? field = null,
+    Object? type = null,
+  }) {
+    return _then(_InboundPayloadStructure(
+      field: null == field
+          ? _self.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as InboundPayloadStructureType,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$InboundPayloadStructureInput {
+  String get field;
+  set field(String value);
+  @InboundPayloadStructureTypeConverter()
+  InboundPayloadStructureType get type;
+  @InboundPayloadStructureTypeConverter()
+  set type(InboundPayloadStructureType value);
+
+  /// Create a copy of InboundPayloadStructureInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $InboundPayloadStructureInputCopyWith<InboundPayloadStructureInput>
+      get copyWith => _$InboundPayloadStructureInputCopyWithImpl<
+              InboundPayloadStructureInput>(
+          this as InboundPayloadStructureInput, _$identity);
+
+  /// Serializes this InboundPayloadStructureInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'InboundPayloadStructureInput(field: $field, type: $type)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $InboundPayloadStructureInputCopyWith<$Res> {
+  factory $InboundPayloadStructureInputCopyWith(
+          InboundPayloadStructureInput value,
+          $Res Function(InboundPayloadStructureInput) _then) =
+      _$InboundPayloadStructureInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String field,
+      @InboundPayloadStructureTypeConverter()
+      InboundPayloadStructureType type});
+}
+
+/// @nodoc
+class _$InboundPayloadStructureInputCopyWithImpl<$Res>
+    implements $InboundPayloadStructureInputCopyWith<$Res> {
+  _$InboundPayloadStructureInputCopyWithImpl(this._self, this._then);
+
+  final InboundPayloadStructureInput _self;
+  final $Res Function(InboundPayloadStructureInput) _then;
+
+  /// Create a copy of InboundPayloadStructureInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? field = null,
+    Object? type = null,
+  }) {
+    return _then(_self.copyWith(
+      field: null == field
+          ? _self.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as InboundPayloadStructureType,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _InboundPayloadStructureInput implements InboundPayloadStructureInput {
+  _InboundPayloadStructureInput(
       {this.field = '',
       @InboundPayloadStructureTypeConverter()
       this.type = InboundPayloadStructureType.string});
-
-  factory _$InboundPayloadStructureInputImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$InboundPayloadStructureInputImplFromJson(json);
+  factory _InboundPayloadStructureInput.fromJson(Map<String, dynamic> json) =>
+      _$InboundPayloadStructureInputFromJson(json);
 
   @override
   @JsonKey()
@@ -1425,137 +1243,126 @@ class _$InboundPayloadStructureInputImpl
   @InboundPayloadStructureTypeConverter()
   InboundPayloadStructureType type;
 
+  /// Create a copy of InboundPayloadStructureInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$InboundPayloadStructureInputCopyWith<_InboundPayloadStructureInput>
+      get copyWith => __$InboundPayloadStructureInputCopyWithImpl<
+          _InboundPayloadStructureInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$InboundPayloadStructureInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'InboundPayloadStructureInput(field: $field, type: $type)';
   }
-
-  /// Create a copy of InboundPayloadStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InboundPayloadStructureInputImplCopyWith<
-          _$InboundPayloadStructureInputImpl>
-      get copyWith => __$$InboundPayloadStructureInputImplCopyWithImpl<
-          _$InboundPayloadStructureInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InboundPayloadStructureInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _InboundPayloadStructureInput
-    implements InboundPayloadStructureInput {
-  factory _InboundPayloadStructureInput(
+/// @nodoc
+abstract mixin class _$InboundPayloadStructureInputCopyWith<$Res>
+    implements $InboundPayloadStructureInputCopyWith<$Res> {
+  factory _$InboundPayloadStructureInputCopyWith(
+          _InboundPayloadStructureInput value,
+          $Res Function(_InboundPayloadStructureInput) _then) =
+      __$InboundPayloadStructureInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String field,
       @InboundPayloadStructureTypeConverter()
-      InboundPayloadStructureType type}) = _$InboundPayloadStructureInputImpl;
+      InboundPayloadStructureType type});
+}
 
-  factory _InboundPayloadStructureInput.fromJson(Map<String, dynamic> json) =
-      _$InboundPayloadStructureInputImpl.fromJson;
+/// @nodoc
+class __$InboundPayloadStructureInputCopyWithImpl<$Res>
+    implements _$InboundPayloadStructureInputCopyWith<$Res> {
+  __$InboundPayloadStructureInputCopyWithImpl(this._self, this._then);
 
-  @override
-  String get field;
-  set field(String value);
-  @override
-  @InboundPayloadStructureTypeConverter()
-  InboundPayloadStructureType get type;
-  @InboundPayloadStructureTypeConverter()
-  set type(InboundPayloadStructureType value);
+  final _InboundPayloadStructureInput _self;
+  final $Res Function(_InboundPayloadStructureInput) _then;
 
   /// Create a copy of InboundPayloadStructureInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InboundPayloadStructureInputImplCopyWith<
-          _$InboundPayloadStructureInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-WebhookHeader _$WebhookHeaderFromJson(Map<String, dynamic> json) {
-  return _WebhookHeader.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? field = null,
+    Object? type = null,
+  }) {
+    return _then(_InboundPayloadStructureInput(
+      field: null == field
+          ? _self.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as InboundPayloadStructureType,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$WebhookHeader {
   /// Is the key of the header.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// Is the value of the header.
-  String get value => throw _privateConstructorUsedError;
-
-  /// Serializes this WebhookHeader to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get value;
 
   /// Create a copy of WebhookHeader
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $WebhookHeaderCopyWith<WebhookHeader> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $WebhookHeaderCopyWith<$Res> {
-  factory $WebhookHeaderCopyWith(
-          WebhookHeader value, $Res Function(WebhookHeader) then) =
-      _$WebhookHeaderCopyWithImpl<$Res, WebhookHeader>;
-  @useResult
-  $Res call({String name, String value});
-}
-
-/// @nodoc
-class _$WebhookHeaderCopyWithImpl<$Res, $Val extends WebhookHeader>
-    implements $WebhookHeaderCopyWith<$Res> {
-  _$WebhookHeaderCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of WebhookHeader
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $WebhookHeaderCopyWith<WebhookHeader> get copyWith =>
+      _$WebhookHeaderCopyWithImpl<WebhookHeader>(
+          this as WebhookHeader, _$identity);
+
+  /// Serializes this WebhookHeader to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is WebhookHeader &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, value);
+
+  @override
+  String toString() {
+    return 'WebhookHeader(name: $name, value: $value)';
   }
 }
 
 /// @nodoc
-abstract class _$$WebhookHeaderImplCopyWith<$Res>
-    implements $WebhookHeaderCopyWith<$Res> {
-  factory _$$WebhookHeaderImplCopyWith(
-          _$WebhookHeaderImpl value, $Res Function(_$WebhookHeaderImpl) then) =
-      __$$WebhookHeaderImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $WebhookHeaderCopyWith<$Res> {
+  factory $WebhookHeaderCopyWith(
+          WebhookHeader value, $Res Function(WebhookHeader) _then) =
+      _$WebhookHeaderCopyWithImpl;
   @useResult
   $Res call({String name, String value});
 }
 
 /// @nodoc
-class __$$WebhookHeaderImplCopyWithImpl<$Res>
-    extends _$WebhookHeaderCopyWithImpl<$Res, _$WebhookHeaderImpl>
-    implements _$$WebhookHeaderImplCopyWith<$Res> {
-  __$$WebhookHeaderImplCopyWithImpl(
-      _$WebhookHeaderImpl _value, $Res Function(_$WebhookHeaderImpl) _then)
-      : super(_value, _then);
+class _$WebhookHeaderCopyWithImpl<$Res>
+    implements $WebhookHeaderCopyWith<$Res> {
+  _$WebhookHeaderCopyWithImpl(this._self, this._then);
+
+  final WebhookHeader _self;
+  final $Res Function(WebhookHeader) _then;
 
   /// Create a copy of WebhookHeader
   /// with the given fields replaced by the non-null parameter values.
@@ -1565,13 +1372,13 @@ class __$$WebhookHeaderImplCopyWithImpl<$Res>
     Object? name = null,
     Object? value = null,
   }) {
-    return _then(_$WebhookHeaderImpl(
+    return _then(_self.copyWith(
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       value: null == value
-          ? _value.value
+          ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -1580,11 +1387,10 @@ class __$$WebhookHeaderImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$WebhookHeaderImpl implements _WebhookHeader {
-  const _$WebhookHeaderImpl({required this.name, required this.value});
-
-  factory _$WebhookHeaderImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WebhookHeaderImplFromJson(json);
+class _WebhookHeader implements WebhookHeader {
+  const _WebhookHeader({required this.name, required this.value});
+  factory _WebhookHeader.fromJson(Map<String, dynamic> json) =>
+      _$WebhookHeaderFromJson(json);
 
   /// Is the key of the header.
   @override
@@ -1594,16 +1400,26 @@ class _$WebhookHeaderImpl implements _WebhookHeader {
   @override
   final String value;
 
+  /// Create a copy of WebhookHeader
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'WebhookHeader(name: $name, value: $value)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$WebhookHeaderCopyWith<_WebhookHeader> get copyWith =>
+      __$WebhookHeaderCopyWithImpl<_WebhookHeader>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$WebhookHeaderToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WebhookHeaderImpl &&
+            other is _WebhookHeader &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.value, value) || other.value == value));
   }
@@ -1612,132 +1428,99 @@ class _$WebhookHeaderImpl implements _WebhookHeader {
   @override
   int get hashCode => Object.hash(runtimeType, name, value);
 
-  /// Create a copy of WebhookHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$WebhookHeaderImplCopyWith<_$WebhookHeaderImpl> get copyWith =>
-      __$$WebhookHeaderImplCopyWithImpl<_$WebhookHeaderImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WebhookHeaderImplToJson(
-      this,
-    );
+  String toString() {
+    return 'WebhookHeader(name: $name, value: $value)';
   }
 }
 
-abstract class _WebhookHeader implements WebhookHeader {
-  const factory _WebhookHeader(
-      {required final String name,
-      required final String value}) = _$WebhookHeaderImpl;
-
-  factory _WebhookHeader.fromJson(Map<String, dynamic> json) =
-      _$WebhookHeaderImpl.fromJson;
-
-  /// Is the key of the header.
+/// @nodoc
+abstract mixin class _$WebhookHeaderCopyWith<$Res>
+    implements $WebhookHeaderCopyWith<$Res> {
+  factory _$WebhookHeaderCopyWith(
+          _WebhookHeader value, $Res Function(_WebhookHeader) _then) =
+      __$WebhookHeaderCopyWithImpl;
   @override
-  String get name;
+  @useResult
+  $Res call({String name, String value});
+}
 
-  /// Is the value of the header.
-  @override
-  String get value;
+/// @nodoc
+class __$WebhookHeaderCopyWithImpl<$Res>
+    implements _$WebhookHeaderCopyWith<$Res> {
+  __$WebhookHeaderCopyWithImpl(this._self, this._then);
+
+  final _WebhookHeader _self;
+  final $Res Function(_WebhookHeader) _then;
 
   /// Create a copy of WebhookHeader
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WebhookHeaderImplCopyWith<_$WebhookHeaderImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-WebhookHeaderInput _$WebhookHeaderInputFromJson(Map<String, dynamic> json) {
-  return _WebhookHeaderInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? value = null,
+  }) {
+    return _then(_WebhookHeader(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$WebhookHeaderInput {
   /// Is the key of the header.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// Is the key of the header.
-  set name(String value) => throw _privateConstructorUsedError;
+  set name(String value);
 
   /// Is the value of the header.
-  String get value => throw _privateConstructorUsedError;
+  String get value;
 
   /// Is the value of the header.
-  set value(String value) => throw _privateConstructorUsedError;
-
-  /// Serializes this WebhookHeaderInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set value(String value);
 
   /// Create a copy of WebhookHeaderInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $WebhookHeaderInputCopyWith<WebhookHeaderInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $WebhookHeaderInputCopyWith<$Res> {
-  factory $WebhookHeaderInputCopyWith(
-          WebhookHeaderInput value, $Res Function(WebhookHeaderInput) then) =
-      _$WebhookHeaderInputCopyWithImpl<$Res, WebhookHeaderInput>;
-  @useResult
-  $Res call({String name, String value});
-}
-
-/// @nodoc
-class _$WebhookHeaderInputCopyWithImpl<$Res, $Val extends WebhookHeaderInput>
-    implements $WebhookHeaderInputCopyWith<$Res> {
-  _$WebhookHeaderInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of WebhookHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $WebhookHeaderInputCopyWith<WebhookHeaderInput> get copyWith =>
+      _$WebhookHeaderInputCopyWithImpl<WebhookHeaderInput>(
+          this as WebhookHeaderInput, _$identity);
+
+  /// Serializes this WebhookHeaderInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  String toString() {
+    return 'WebhookHeaderInput(name: $name, value: $value)';
   }
 }
 
 /// @nodoc
-abstract class _$$WebhookHeaderInputImplCopyWith<$Res>
-    implements $WebhookHeaderInputCopyWith<$Res> {
-  factory _$$WebhookHeaderInputImplCopyWith(_$WebhookHeaderInputImpl value,
-          $Res Function(_$WebhookHeaderInputImpl) then) =
-      __$$WebhookHeaderInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $WebhookHeaderInputCopyWith<$Res> {
+  factory $WebhookHeaderInputCopyWith(
+          WebhookHeaderInput value, $Res Function(WebhookHeaderInput) _then) =
+      _$WebhookHeaderInputCopyWithImpl;
   @useResult
   $Res call({String name, String value});
 }
 
 /// @nodoc
-class __$$WebhookHeaderInputImplCopyWithImpl<$Res>
-    extends _$WebhookHeaderInputCopyWithImpl<$Res, _$WebhookHeaderInputImpl>
-    implements _$$WebhookHeaderInputImplCopyWith<$Res> {
-  __$$WebhookHeaderInputImplCopyWithImpl(_$WebhookHeaderInputImpl _value,
-      $Res Function(_$WebhookHeaderInputImpl) _then)
-      : super(_value, _then);
+class _$WebhookHeaderInputCopyWithImpl<$Res>
+    implements $WebhookHeaderInputCopyWith<$Res> {
+  _$WebhookHeaderInputCopyWithImpl(this._self, this._then);
+
+  final WebhookHeaderInput _self;
+  final $Res Function(WebhookHeaderInput) _then;
 
   /// Create a copy of WebhookHeaderInput
   /// with the given fields replaced by the non-null parameter values.
@@ -1747,13 +1530,13 @@ class __$$WebhookHeaderInputImplCopyWithImpl<$Res>
     Object? name = null,
     Object? value = null,
   }) {
-    return _then(_$WebhookHeaderInputImpl(
+    return _then(_self.copyWith(
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       value: null == value
-          ? _value.value
+          ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -1762,11 +1545,10 @@ class __$$WebhookHeaderInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$WebhookHeaderInputImpl implements _WebhookHeaderInput {
-  _$WebhookHeaderInputImpl({this.name = '', this.value = ''});
-
-  factory _$WebhookHeaderInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WebhookHeaderInputImplFromJson(json);
+class _WebhookHeaderInput implements WebhookHeaderInput {
+  _WebhookHeaderInput({this.name = '', this.value = ''});
+  factory _WebhookHeaderInput.fromJson(Map<String, dynamic> json) =>
+      _$WebhookHeaderInputFromJson(json);
 
   /// Is the key of the header.
   @override
@@ -1778,137 +1560,119 @@ class _$WebhookHeaderInputImpl implements _WebhookHeaderInput {
   @JsonKey()
   String value;
 
+  /// Create a copy of WebhookHeaderInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$WebhookHeaderInputCopyWith<_WebhookHeaderInput> get copyWith =>
+      __$WebhookHeaderInputCopyWithImpl<_WebhookHeaderInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$WebhookHeaderInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'WebhookHeaderInput(name: $name, value: $value)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$WebhookHeaderInputCopyWith<$Res>
+    implements $WebhookHeaderInputCopyWith<$Res> {
+  factory _$WebhookHeaderInputCopyWith(
+          _WebhookHeaderInput value, $Res Function(_WebhookHeaderInput) _then) =
+      __$WebhookHeaderInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String name, String value});
+}
+
+/// @nodoc
+class __$WebhookHeaderInputCopyWithImpl<$Res>
+    implements _$WebhookHeaderInputCopyWith<$Res> {
+  __$WebhookHeaderInputCopyWithImpl(this._self, this._then);
+
+  final _WebhookHeaderInput _self;
+  final $Res Function(_WebhookHeaderInput) _then;
 
   /// Create a copy of WebhookHeaderInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WebhookHeaderInputImplCopyWith<_$WebhookHeaderInputImpl> get copyWith =>
-      __$$WebhookHeaderInputImplCopyWithImpl<_$WebhookHeaderInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WebhookHeaderInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? name = null,
+    Object? value = null,
+  }) {
+    return _then(_WebhookHeaderInput(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
-}
-
-abstract class _WebhookHeaderInput implements WebhookHeaderInput {
-  factory _WebhookHeaderInput({String name, String value}) =
-      _$WebhookHeaderInputImpl;
-
-  factory _WebhookHeaderInput.fromJson(Map<String, dynamic> json) =
-      _$WebhookHeaderInputImpl.fromJson;
-
-  /// Is the key of the header.
-  @override
-  String get name;
-
-  /// Is the key of the header.
-  set name(String value);
-
-  /// Is the value of the header.
-  @override
-  String get value;
-
-  /// Is the value of the header.
-  set value(String value);
-
-  /// Create a copy of WebhookHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WebhookHeaderInputImplCopyWith<_$WebhookHeaderInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-WebhookPath _$WebhookPathFromJson(Map<String, dynamic> json) {
-  return _WebhookPath.fromJson(json);
 }
 
 /// @nodoc
 mixin _$WebhookPath {
   /// Is the path of the webhook.
-  String get path => throw _privateConstructorUsedError;
+  String get path;
 
   /// Is the name of the path. If the key is present in our translation system, it will be translated.
-  String get name => throw _privateConstructorUsedError;
-
-  /// Serializes this WebhookPath to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get name;
 
   /// Create a copy of WebhookPath
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $WebhookPathCopyWith<WebhookPath> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $WebhookPathCopyWith<$Res> {
-  factory $WebhookPathCopyWith(
-          WebhookPath value, $Res Function(WebhookPath) then) =
-      _$WebhookPathCopyWithImpl<$Res, WebhookPath>;
-  @useResult
-  $Res call({String path, String name});
-}
-
-/// @nodoc
-class _$WebhookPathCopyWithImpl<$Res, $Val extends WebhookPath>
-    implements $WebhookPathCopyWith<$Res> {
-  _$WebhookPathCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of WebhookPath
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $WebhookPathCopyWith<WebhookPath> get copyWith =>
+      _$WebhookPathCopyWithImpl<WebhookPath>(this as WebhookPath, _$identity);
+
+  /// Serializes this WebhookPath to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? path = null,
-    Object? name = null,
-  }) {
-    return _then(_value.copyWith(
-      path: null == path
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is WebhookPath &&
+            (identical(other.path, path) || other.path == path) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, path, name);
+
+  @override
+  String toString() {
+    return 'WebhookPath(path: $path, name: $name)';
   }
 }
 
 /// @nodoc
-abstract class _$$WebhookPathImplCopyWith<$Res>
-    implements $WebhookPathCopyWith<$Res> {
-  factory _$$WebhookPathImplCopyWith(
-          _$WebhookPathImpl value, $Res Function(_$WebhookPathImpl) then) =
-      __$$WebhookPathImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $WebhookPathCopyWith<$Res> {
+  factory $WebhookPathCopyWith(
+          WebhookPath value, $Res Function(WebhookPath) _then) =
+      _$WebhookPathCopyWithImpl;
   @useResult
   $Res call({String path, String name});
 }
 
 /// @nodoc
-class __$$WebhookPathImplCopyWithImpl<$Res>
-    extends _$WebhookPathCopyWithImpl<$Res, _$WebhookPathImpl>
-    implements _$$WebhookPathImplCopyWith<$Res> {
-  __$$WebhookPathImplCopyWithImpl(
-      _$WebhookPathImpl _value, $Res Function(_$WebhookPathImpl) _then)
-      : super(_value, _then);
+class _$WebhookPathCopyWithImpl<$Res> implements $WebhookPathCopyWith<$Res> {
+  _$WebhookPathCopyWithImpl(this._self, this._then);
+
+  final WebhookPath _self;
+  final $Res Function(WebhookPath) _then;
 
   /// Create a copy of WebhookPath
   /// with the given fields replaced by the non-null parameter values.
@@ -1918,13 +1682,13 @@ class __$$WebhookPathImplCopyWithImpl<$Res>
     Object? path = null,
     Object? name = null,
   }) {
-    return _then(_$WebhookPathImpl(
+    return _then(_self.copyWith(
       path: null == path
-          ? _value.path
+          ? _self.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -1933,11 +1697,10 @@ class __$$WebhookPathImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$WebhookPathImpl implements _WebhookPath {
-  const _$WebhookPathImpl({required this.path, required this.name});
-
-  factory _$WebhookPathImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WebhookPathImplFromJson(json);
+class _WebhookPath implements WebhookPath {
+  const _WebhookPath({required this.path, required this.name});
+  factory _WebhookPath.fromJson(Map<String, dynamic> json) =>
+      _$WebhookPathFromJson(json);
 
   /// Is the path of the webhook.
   @override
@@ -1947,16 +1710,26 @@ class _$WebhookPathImpl implements _WebhookPath {
   @override
   final String name;
 
+  /// Create a copy of WebhookPath
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'WebhookPath(path: $path, name: $name)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$WebhookPathCopyWith<_WebhookPath> get copyWith =>
+      __$WebhookPathCopyWithImpl<_WebhookPath>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$WebhookPathToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WebhookPathImpl &&
+            other is _WebhookPath &&
             (identical(other.path, path) || other.path == path) &&
             (identical(other.name, name) || other.name == name));
   }
@@ -1965,132 +1738,98 @@ class _$WebhookPathImpl implements _WebhookPath {
   @override
   int get hashCode => Object.hash(runtimeType, path, name);
 
-  /// Create a copy of WebhookPath
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$WebhookPathImplCopyWith<_$WebhookPathImpl> get copyWith =>
-      __$$WebhookPathImplCopyWithImpl<_$WebhookPathImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WebhookPathImplToJson(
-      this,
-    );
+  String toString() {
+    return 'WebhookPath(path: $path, name: $name)';
   }
 }
 
-abstract class _WebhookPath implements WebhookPath {
-  const factory _WebhookPath(
-      {required final String path,
-      required final String name}) = _$WebhookPathImpl;
-
-  factory _WebhookPath.fromJson(Map<String, dynamic> json) =
-      _$WebhookPathImpl.fromJson;
-
-  /// Is the path of the webhook.
+/// @nodoc
+abstract mixin class _$WebhookPathCopyWith<$Res>
+    implements $WebhookPathCopyWith<$Res> {
+  factory _$WebhookPathCopyWith(
+          _WebhookPath value, $Res Function(_WebhookPath) _then) =
+      __$WebhookPathCopyWithImpl;
   @override
-  String get path;
+  @useResult
+  $Res call({String path, String name});
+}
 
-  /// Is the name of the path. If the key is present in our translation system, it will be translated.
-  @override
-  String get name;
+/// @nodoc
+class __$WebhookPathCopyWithImpl<$Res> implements _$WebhookPathCopyWith<$Res> {
+  __$WebhookPathCopyWithImpl(this._self, this._then);
+
+  final _WebhookPath _self;
+  final $Res Function(_WebhookPath) _then;
 
   /// Create a copy of WebhookPath
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WebhookPathImplCopyWith<_$WebhookPathImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-WebhookPathInput _$WebhookPathInputFromJson(Map<String, dynamic> json) {
-  return _WebhookPathInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? path = null,
+    Object? name = null,
+  }) {
+    return _then(_WebhookPath(
+      path: null == path
+          ? _self.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$WebhookPathInput {
   /// Is the path of the webhook.
-  String get path => throw _privateConstructorUsedError;
+  String get path;
 
   /// Is the path of the webhook.
-  set path(String value) => throw _privateConstructorUsedError;
+  set path(String value);
 
   /// Is the name of the path. If the key is present in our translation system, it will be translated.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// Is the name of the path. If the key is present in our translation system, it will be translated.
-  set name(String value) => throw _privateConstructorUsedError;
-
-  /// Serializes this WebhookPathInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set name(String value);
 
   /// Create a copy of WebhookPathInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $WebhookPathInputCopyWith<WebhookPathInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $WebhookPathInputCopyWith<$Res> {
-  factory $WebhookPathInputCopyWith(
-          WebhookPathInput value, $Res Function(WebhookPathInput) then) =
-      _$WebhookPathInputCopyWithImpl<$Res, WebhookPathInput>;
-  @useResult
-  $Res call({String path, String name});
-}
-
-/// @nodoc
-class _$WebhookPathInputCopyWithImpl<$Res, $Val extends WebhookPathInput>
-    implements $WebhookPathInputCopyWith<$Res> {
-  _$WebhookPathInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of WebhookPathInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $WebhookPathInputCopyWith<WebhookPathInput> get copyWith =>
+      _$WebhookPathInputCopyWithImpl<WebhookPathInput>(
+          this as WebhookPathInput, _$identity);
+
+  /// Serializes this WebhookPathInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? path = null,
-    Object? name = null,
-  }) {
-    return _then(_value.copyWith(
-      path: null == path
-          ? _value.path
-          : path // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  String toString() {
+    return 'WebhookPathInput(path: $path, name: $name)';
   }
 }
 
 /// @nodoc
-abstract class _$$WebhookPathInputImplCopyWith<$Res>
-    implements $WebhookPathInputCopyWith<$Res> {
-  factory _$$WebhookPathInputImplCopyWith(_$WebhookPathInputImpl value,
-          $Res Function(_$WebhookPathInputImpl) then) =
-      __$$WebhookPathInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $WebhookPathInputCopyWith<$Res> {
+  factory $WebhookPathInputCopyWith(
+          WebhookPathInput value, $Res Function(WebhookPathInput) _then) =
+      _$WebhookPathInputCopyWithImpl;
   @useResult
   $Res call({String path, String name});
 }
 
 /// @nodoc
-class __$$WebhookPathInputImplCopyWithImpl<$Res>
-    extends _$WebhookPathInputCopyWithImpl<$Res, _$WebhookPathInputImpl>
-    implements _$$WebhookPathInputImplCopyWith<$Res> {
-  __$$WebhookPathInputImplCopyWithImpl(_$WebhookPathInputImpl _value,
-      $Res Function(_$WebhookPathInputImpl) _then)
-      : super(_value, _then);
+class _$WebhookPathInputCopyWithImpl<$Res>
+    implements $WebhookPathInputCopyWith<$Res> {
+  _$WebhookPathInputCopyWithImpl(this._self, this._then);
+
+  final WebhookPathInput _self;
+  final $Res Function(WebhookPathInput) _then;
 
   /// Create a copy of WebhookPathInput
   /// with the given fields replaced by the non-null parameter values.
@@ -2100,13 +1839,13 @@ class __$$WebhookPathInputImplCopyWithImpl<$Res>
     Object? path = null,
     Object? name = null,
   }) {
-    return _then(_$WebhookPathInputImpl(
+    return _then(_self.copyWith(
       path: null == path
-          ? _value.path
+          ? _self.path
           : path // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -2115,11 +1854,10 @@ class __$$WebhookPathInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$WebhookPathInputImpl implements _WebhookPathInput {
-  _$WebhookPathInputImpl({this.path = '', this.name = ''});
-
-  factory _$WebhookPathInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WebhookPathInputImplFromJson(json);
+class _WebhookPathInput implements WebhookPathInput {
+  _WebhookPathInput({this.path = '', this.name = ''});
+  factory _WebhookPathInput.fromJson(Map<String, dynamic> json) =>
+      _$WebhookPathInputFromJson(json);
 
   /// Is the path of the webhook.
   @override
@@ -2131,59 +1869,65 @@ class _$WebhookPathInputImpl implements _WebhookPathInput {
   @JsonKey()
   String name;
 
+  /// Create a copy of WebhookPathInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$WebhookPathInputCopyWith<_WebhookPathInput> get copyWith =>
+      __$WebhookPathInputCopyWithImpl<_WebhookPathInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$WebhookPathInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'WebhookPathInput(path: $path, name: $name)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$WebhookPathInputCopyWith<$Res>
+    implements $WebhookPathInputCopyWith<$Res> {
+  factory _$WebhookPathInputCopyWith(
+          _WebhookPathInput value, $Res Function(_WebhookPathInput) _then) =
+      __$WebhookPathInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String path, String name});
+}
+
+/// @nodoc
+class __$WebhookPathInputCopyWithImpl<$Res>
+    implements _$WebhookPathInputCopyWith<$Res> {
+  __$WebhookPathInputCopyWithImpl(this._self, this._then);
+
+  final _WebhookPathInput _self;
+  final $Res Function(_WebhookPathInput) _then;
 
   /// Create a copy of WebhookPathInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$WebhookPathInputImplCopyWith<_$WebhookPathInputImpl> get copyWith =>
-      __$$WebhookPathInputImplCopyWithImpl<_$WebhookPathInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WebhookPathInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? path = null,
+    Object? name = null,
+  }) {
+    return _then(_WebhookPathInput(
+      path: null == path
+          ? _self.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
-}
-
-abstract class _WebhookPathInput implements WebhookPathInput {
-  factory _WebhookPathInput({String path, String name}) =
-      _$WebhookPathInputImpl;
-
-  factory _WebhookPathInput.fromJson(Map<String, dynamic> json) =
-      _$WebhookPathInputImpl.fromJson;
-
-  /// Is the path of the webhook.
-  @override
-  String get path;
-
-  /// Is the path of the webhook.
-  set path(String value);
-
-  /// Is the name of the path. If the key is present in our translation system, it will be translated.
-  @override
-  String get name;
-
-  /// Is the name of the path. If the key is present in our translation system, it will be translated.
-  set name(String value);
-
-  /// Create a copy of WebhookPathInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WebhookPathInputImplCopyWith<_$WebhookPathInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-WebhookStructure _$WebhookStructureFromJson(Map<String, dynamic> json) {
-  return _WebhookStructure.fromJson(json);
 }
 
 /// @nodoc
@@ -2193,102 +1937,70 @@ mixin _$WebhookStructure {
   ///
   /// For example, if the [baseUrl] is `https://api.example.com` and one of the [paths] is `/v1/users`, the
   /// full URL will be `https://api.example.com/v1/users`.
-  String get baseUrl => throw _privateConstructorUsedError;
+  String get baseUrl;
 
   /// [paths] is the list of paths that the webhook should use.
-  List<WebhookPath> get paths => throw _privateConstructorUsedError;
+  List<WebhookPath> get paths;
 
   /// [method] is the HTTP method of the webhook. Be careful, not all of the HTTP methods are listed or available
   /// for webhook usage.
   @WebhookMethodConverter()
-  WebhookMethod get method => throw _privateConstructorUsedError;
+  WebhookMethod get method;
 
   /// [contentType] is the format of the webhook.
   @WebhookFormatConverter()
-  WebhookFormat get contentType => throw _privateConstructorUsedError;
+  WebhookFormat get contentType;
 
   /// [headers] is the list of headers that the webhook should use.
   /// If you detect any issue with the headers, please contact the
   /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
-  List<WebhookHeader> get headers => throw _privateConstructorUsedError;
-
-  /// Serializes this WebhookStructure to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<WebhookHeader> get headers;
 
   /// Create a copy of WebhookStructure
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $WebhookStructureCopyWith<WebhookStructure> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $WebhookStructureCopyWith<$Res> {
-  factory $WebhookStructureCopyWith(
-          WebhookStructure value, $Res Function(WebhookStructure) then) =
-      _$WebhookStructureCopyWithImpl<$Res, WebhookStructure>;
-  @useResult
-  $Res call(
-      {String baseUrl,
-      List<WebhookPath> paths,
-      @WebhookMethodConverter() WebhookMethod method,
-      @WebhookFormatConverter() WebhookFormat contentType,
-      List<WebhookHeader> headers});
-}
-
-/// @nodoc
-class _$WebhookStructureCopyWithImpl<$Res, $Val extends WebhookStructure>
-    implements $WebhookStructureCopyWith<$Res> {
-  _$WebhookStructureCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of WebhookStructure
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $WebhookStructureCopyWith<WebhookStructure> get copyWith =>
+      _$WebhookStructureCopyWithImpl<WebhookStructure>(
+          this as WebhookStructure, _$identity);
+
+  /// Serializes this WebhookStructure to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? baseUrl = null,
-    Object? paths = null,
-    Object? method = null,
-    Object? contentType = null,
-    Object? headers = null,
-  }) {
-    return _then(_value.copyWith(
-      baseUrl: null == baseUrl
-          ? _value.baseUrl
-          : baseUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      paths: null == paths
-          ? _value.paths
-          : paths // ignore: cast_nullable_to_non_nullable
-              as List<WebhookPath>,
-      method: null == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as WebhookMethod,
-      contentType: null == contentType
-          ? _value.contentType
-          : contentType // ignore: cast_nullable_to_non_nullable
-              as WebhookFormat,
-      headers: null == headers
-          ? _value.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as List<WebhookHeader>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is WebhookStructure &&
+            (identical(other.baseUrl, baseUrl) || other.baseUrl == baseUrl) &&
+            const DeepCollectionEquality().equals(other.paths, paths) &&
+            (identical(other.method, method) || other.method == method) &&
+            (identical(other.contentType, contentType) ||
+                other.contentType == contentType) &&
+            const DeepCollectionEquality().equals(other.headers, headers));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      baseUrl,
+      const DeepCollectionEquality().hash(paths),
+      method,
+      contentType,
+      const DeepCollectionEquality().hash(headers));
+
+  @override
+  String toString() {
+    return 'WebhookStructure(baseUrl: $baseUrl, paths: $paths, method: $method, contentType: $contentType, headers: $headers)';
   }
 }
 
 /// @nodoc
-abstract class _$$WebhookStructureImplCopyWith<$Res>
-    implements $WebhookStructureCopyWith<$Res> {
-  factory _$$WebhookStructureImplCopyWith(_$WebhookStructureImpl value,
-          $Res Function(_$WebhookStructureImpl) then) =
-      __$$WebhookStructureImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $WebhookStructureCopyWith<$Res> {
+  factory $WebhookStructureCopyWith(
+          WebhookStructure value, $Res Function(WebhookStructure) _then) =
+      _$WebhookStructureCopyWithImpl;
   @useResult
   $Res call(
       {String baseUrl,
@@ -2299,12 +2011,12 @@ abstract class _$$WebhookStructureImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$WebhookStructureImplCopyWithImpl<$Res>
-    extends _$WebhookStructureCopyWithImpl<$Res, _$WebhookStructureImpl>
-    implements _$$WebhookStructureImplCopyWith<$Res> {
-  __$$WebhookStructureImplCopyWithImpl(_$WebhookStructureImpl _value,
-      $Res Function(_$WebhookStructureImpl) _then)
-      : super(_value, _then);
+class _$WebhookStructureCopyWithImpl<$Res>
+    implements $WebhookStructureCopyWith<$Res> {
+  _$WebhookStructureCopyWithImpl(this._self, this._then);
+
+  final WebhookStructure _self;
+  final $Res Function(WebhookStructure) _then;
 
   /// Create a copy of WebhookStructure
   /// with the given fields replaced by the non-null parameter values.
@@ -2317,25 +2029,25 @@ class __$$WebhookStructureImplCopyWithImpl<$Res>
     Object? contentType = null,
     Object? headers = null,
   }) {
-    return _then(_$WebhookStructureImpl(
+    return _then(_self.copyWith(
       baseUrl: null == baseUrl
-          ? _value.baseUrl
+          ? _self.baseUrl
           : baseUrl // ignore: cast_nullable_to_non_nullable
               as String,
       paths: null == paths
-          ? _value._paths
+          ? _self.paths
           : paths // ignore: cast_nullable_to_non_nullable
               as List<WebhookPath>,
       method: null == method
-          ? _value.method
+          ? _self.method
           : method // ignore: cast_nullable_to_non_nullable
               as WebhookMethod,
       contentType: null == contentType
-          ? _value.contentType
+          ? _self.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
               as WebhookFormat,
       headers: null == headers
-          ? _value._headers
+          ? _self.headers
           : headers // ignore: cast_nullable_to_non_nullable
               as List<WebhookHeader>,
     ));
@@ -2344,8 +2056,8 @@ class __$$WebhookStructureImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$WebhookStructureImpl implements _WebhookStructure {
-  const _$WebhookStructureImpl(
+class _WebhookStructure implements WebhookStructure {
+  const _WebhookStructure(
       {required this.baseUrl,
       final List<WebhookPath> paths = const [],
       @WebhookMethodConverter() this.method = WebhookMethod.post,
@@ -2353,9 +2065,8 @@ class _$WebhookStructureImpl implements _WebhookStructure {
       final List<WebhookHeader> headers = const []})
       : _paths = paths,
         _headers = headers;
-
-  factory _$WebhookStructureImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WebhookStructureImplFromJson(json);
+  factory _WebhookStructure.fromJson(Map<String, dynamic> json) =>
+      _$WebhookStructureFromJson(json);
 
   /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
   /// the full URL.
@@ -2406,16 +2117,26 @@ class _$WebhookStructureImpl implements _WebhookStructure {
     return EqualUnmodifiableListView(_headers);
   }
 
+  /// Create a copy of WebhookStructure
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'WebhookStructure(baseUrl: $baseUrl, paths: $paths, method: $method, contentType: $contentType, headers: $headers)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$WebhookStructureCopyWith<_WebhookStructure> get copyWith =>
+      __$WebhookStructureCopyWithImpl<_WebhookStructure>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$WebhookStructureToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WebhookStructureImpl &&
+            other is _WebhookStructure &&
             (identical(other.baseUrl, baseUrl) || other.baseUrl == baseUrl) &&
             const DeepCollectionEquality().equals(other._paths, _paths) &&
             (identical(other.method, method) || other.method == method) &&
@@ -2434,74 +2155,70 @@ class _$WebhookStructureImpl implements _WebhookStructure {
       contentType,
       const DeepCollectionEquality().hash(_headers));
 
-  /// Create a copy of WebhookStructure
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$WebhookStructureImplCopyWith<_$WebhookStructureImpl> get copyWith =>
-      __$$WebhookStructureImplCopyWithImpl<_$WebhookStructureImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WebhookStructureImplToJson(
-      this,
-    );
+  String toString() {
+    return 'WebhookStructure(baseUrl: $baseUrl, paths: $paths, method: $method, contentType: $contentType, headers: $headers)';
   }
 }
 
-abstract class _WebhookStructure implements WebhookStructure {
-  const factory _WebhookStructure(
-      {required final String baseUrl,
-      final List<WebhookPath> paths,
-      @WebhookMethodConverter() final WebhookMethod method,
-      @WebhookFormatConverter() final WebhookFormat contentType,
-      final List<WebhookHeader> headers}) = _$WebhookStructureImpl;
-
-  factory _WebhookStructure.fromJson(Map<String, dynamic> json) =
-      _$WebhookStructureImpl.fromJson;
-
-  /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
-  /// the full URL.
-  ///
-  /// For example, if the [baseUrl] is `https://api.example.com` and one of the [paths] is `/v1/users`, the
-  /// full URL will be `https://api.example.com/v1/users`.
+/// @nodoc
+abstract mixin class _$WebhookStructureCopyWith<$Res>
+    implements $WebhookStructureCopyWith<$Res> {
+  factory _$WebhookStructureCopyWith(
+          _WebhookStructure value, $Res Function(_WebhookStructure) _then) =
+      __$WebhookStructureCopyWithImpl;
   @override
-  String get baseUrl;
+  @useResult
+  $Res call(
+      {String baseUrl,
+      List<WebhookPath> paths,
+      @WebhookMethodConverter() WebhookMethod method,
+      @WebhookFormatConverter() WebhookFormat contentType,
+      List<WebhookHeader> headers});
+}
 
-  /// [paths] is the list of paths that the webhook should use.
-  @override
-  List<WebhookPath> get paths;
+/// @nodoc
+class __$WebhookStructureCopyWithImpl<$Res>
+    implements _$WebhookStructureCopyWith<$Res> {
+  __$WebhookStructureCopyWithImpl(this._self, this._then);
 
-  /// [method] is the HTTP method of the webhook. Be careful, not all of the HTTP methods are listed or available
-  /// for webhook usage.
-  @override
-  @WebhookMethodConverter()
-  WebhookMethod get method;
-
-  /// [contentType] is the format of the webhook.
-  @override
-  @WebhookFormatConverter()
-  WebhookFormat get contentType;
-
-  /// [headers] is the list of headers that the webhook should use.
-  /// If you detect any issue with the headers, please contact the
-  /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
-  @override
-  List<WebhookHeader> get headers;
+  final _WebhookStructure _self;
+  final $Res Function(_WebhookStructure) _then;
 
   /// Create a copy of WebhookStructure
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WebhookStructureImplCopyWith<_$WebhookStructureImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-WebhookStructureInput _$WebhookStructureInputFromJson(
-    Map<String, dynamic> json) {
-  return _WebhookStructureInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? baseUrl = null,
+    Object? paths = null,
+    Object? method = null,
+    Object? contentType = null,
+    Object? headers = null,
+  }) {
+    return _then(_WebhookStructure(
+      baseUrl: null == baseUrl
+          ? _self.baseUrl
+          : baseUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      paths: null == paths
+          ? _self._paths
+          : paths // ignore: cast_nullable_to_non_nullable
+              as List<WebhookPath>,
+      method: null == method
+          ? _self.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as WebhookMethod,
+      contentType: null == contentType
+          ? _self.contentType
+          : contentType // ignore: cast_nullable_to_non_nullable
+              as WebhookFormat,
+      headers: null == headers
+          ? _self._headers
+          : headers // ignore: cast_nullable_to_non_nullable
+              as List<WebhookHeader>,
+    ));
+  }
 }
 
 /// @nodoc
@@ -2511,129 +2228,71 @@ mixin _$WebhookStructureInput {
   ///
   /// For example, if the [baseUrl] is `https://api.example.com` and one of the [paths] is `/v1/users`, the
   /// full URL will be `https://api.example.com/v1/users`.
-  String get baseUrl => throw _privateConstructorUsedError;
+  String get baseUrl;
 
   /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
   /// the full URL.
   ///
   /// For example, if the [baseUrl] is `https://api.example.com` and one of the [paths] is `/v1/users`, the
   /// full URL will be `https://api.example.com/v1/users`.
-  set baseUrl(String value) => throw _privateConstructorUsedError;
+  set baseUrl(String value);
 
   /// [paths] is the list of paths that the webhook should use.
-  List<WebhookPathInput> get paths => throw _privateConstructorUsedError;
+  List<WebhookPathInput> get paths;
 
   /// [paths] is the list of paths that the webhook should use.
-  set paths(List<WebhookPathInput> value) => throw _privateConstructorUsedError;
+  set paths(List<WebhookPathInput> value);
 
   /// [method] is the HTTP method of the webhook. Be careful, not all of the HTTP methods are listed or available
   /// for webhook usage.
   @WebhookMethodConverter()
-  WebhookMethod get method => throw _privateConstructorUsedError;
+  WebhookMethod get method;
 
   /// [method] is the HTTP method of the webhook. Be careful, not all of the HTTP methods are listed or available
   /// for webhook usage.
   @WebhookMethodConverter()
-  set method(WebhookMethod value) => throw _privateConstructorUsedError;
+  set method(WebhookMethod value);
 
   /// [contentType] is the format of the webhook.
   @WebhookFormatConverter()
-  WebhookFormat get contentType => throw _privateConstructorUsedError;
+  WebhookFormat get contentType;
 
   /// [contentType] is the format of the webhook.
   @WebhookFormatConverter()
-  set contentType(WebhookFormat value) => throw _privateConstructorUsedError;
+  set contentType(WebhookFormat value);
 
   /// [headers] is the list of headers that the webhook should use.
   /// If you detect any issue with the headers, please contact the
   /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
-  List<WebhookHeaderInput> get headers => throw _privateConstructorUsedError;
+  List<WebhookHeaderInput> get headers;
 
   /// [headers] is the list of headers that the webhook should use.
   /// If you detect any issue with the headers, please contact the
   /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
-  set headers(List<WebhookHeaderInput> value) =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this WebhookStructureInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set headers(List<WebhookHeaderInput> value);
 
   /// Create a copy of WebhookStructureInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $WebhookStructureInputCopyWith<WebhookStructureInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $WebhookStructureInputCopyWith<$Res> {
-  factory $WebhookStructureInputCopyWith(WebhookStructureInput value,
-          $Res Function(WebhookStructureInput) then) =
-      _$WebhookStructureInputCopyWithImpl<$Res, WebhookStructureInput>;
-  @useResult
-  $Res call(
-      {String baseUrl,
-      List<WebhookPathInput> paths,
-      @WebhookMethodConverter() WebhookMethod method,
-      @WebhookFormatConverter() WebhookFormat contentType,
-      List<WebhookHeaderInput> headers});
-}
-
-/// @nodoc
-class _$WebhookStructureInputCopyWithImpl<$Res,
-        $Val extends WebhookStructureInput>
-    implements $WebhookStructureInputCopyWith<$Res> {
-  _$WebhookStructureInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of WebhookStructureInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $WebhookStructureInputCopyWith<WebhookStructureInput> get copyWith =>
+      _$WebhookStructureInputCopyWithImpl<WebhookStructureInput>(
+          this as WebhookStructureInput, _$identity);
+
+  /// Serializes this WebhookStructureInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? baseUrl = null,
-    Object? paths = null,
-    Object? method = null,
-    Object? contentType = null,
-    Object? headers = null,
-  }) {
-    return _then(_value.copyWith(
-      baseUrl: null == baseUrl
-          ? _value.baseUrl
-          : baseUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      paths: null == paths
-          ? _value.paths
-          : paths // ignore: cast_nullable_to_non_nullable
-              as List<WebhookPathInput>,
-      method: null == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as WebhookMethod,
-      contentType: null == contentType
-          ? _value.contentType
-          : contentType // ignore: cast_nullable_to_non_nullable
-              as WebhookFormat,
-      headers: null == headers
-          ? _value.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as List<WebhookHeaderInput>,
-    ) as $Val);
+  String toString() {
+    return 'WebhookStructureInput(baseUrl: $baseUrl, paths: $paths, method: $method, contentType: $contentType, headers: $headers)';
   }
 }
 
 /// @nodoc
-abstract class _$$WebhookStructureInputImplCopyWith<$Res>
-    implements $WebhookStructureInputCopyWith<$Res> {
-  factory _$$WebhookStructureInputImplCopyWith(
-          _$WebhookStructureInputImpl value,
-          $Res Function(_$WebhookStructureInputImpl) then) =
-      __$$WebhookStructureInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $WebhookStructureInputCopyWith<$Res> {
+  factory $WebhookStructureInputCopyWith(WebhookStructureInput value,
+          $Res Function(WebhookStructureInput) _then) =
+      _$WebhookStructureInputCopyWithImpl;
   @useResult
   $Res call(
       {String baseUrl,
@@ -2644,13 +2303,12 @@ abstract class _$$WebhookStructureInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$WebhookStructureInputImplCopyWithImpl<$Res>
-    extends _$WebhookStructureInputCopyWithImpl<$Res,
-        _$WebhookStructureInputImpl>
-    implements _$$WebhookStructureInputImplCopyWith<$Res> {
-  __$$WebhookStructureInputImplCopyWithImpl(_$WebhookStructureInputImpl _value,
-      $Res Function(_$WebhookStructureInputImpl) _then)
-      : super(_value, _then);
+class _$WebhookStructureInputCopyWithImpl<$Res>
+    implements $WebhookStructureInputCopyWith<$Res> {
+  _$WebhookStructureInputCopyWithImpl(this._self, this._then);
+
+  final WebhookStructureInput _self;
+  final $Res Function(WebhookStructureInput) _then;
 
   /// Create a copy of WebhookStructureInput
   /// with the given fields replaced by the non-null parameter values.
@@ -2663,25 +2321,25 @@ class __$$WebhookStructureInputImplCopyWithImpl<$Res>
     Object? contentType = null,
     Object? headers = null,
   }) {
-    return _then(_$WebhookStructureInputImpl(
+    return _then(_self.copyWith(
       baseUrl: null == baseUrl
-          ? _value.baseUrl
+          ? _self.baseUrl
           : baseUrl // ignore: cast_nullable_to_non_nullable
               as String,
       paths: null == paths
-          ? _value.paths
+          ? _self.paths
           : paths // ignore: cast_nullable_to_non_nullable
               as List<WebhookPathInput>,
       method: null == method
-          ? _value.method
+          ? _self.method
           : method // ignore: cast_nullable_to_non_nullable
               as WebhookMethod,
       contentType: null == contentType
-          ? _value.contentType
+          ? _self.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
               as WebhookFormat,
       headers: null == headers
-          ? _value.headers
+          ? _self.headers
           : headers // ignore: cast_nullable_to_non_nullable
               as List<WebhookHeaderInput>,
     ));
@@ -2690,16 +2348,15 @@ class __$$WebhookStructureInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$WebhookStructureInputImpl implements _WebhookStructureInput {
-  _$WebhookStructureInputImpl(
+class _WebhookStructureInput implements WebhookStructureInput {
+  _WebhookStructureInput(
       {this.baseUrl = '',
       this.paths = const [],
       @WebhookMethodConverter() this.method = WebhookMethod.post,
       @WebhookFormatConverter() this.contentType = WebhookFormat.json,
       this.headers = const []});
-
-  factory _$WebhookStructureInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WebhookStructureInputImplFromJson(json);
+  factory _WebhookStructureInput.fromJson(Map<String, dynamic> json) =>
+      _$WebhookStructureInputFromJson(json);
 
   /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
   /// the full URL.
@@ -2735,222 +2392,108 @@ class _$WebhookStructureInputImpl implements _WebhookStructureInput {
   @JsonKey()
   List<WebhookHeaderInput> headers;
 
+  /// Create a copy of WebhookStructureInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$WebhookStructureInputCopyWith<_WebhookStructureInput> get copyWith =>
+      __$WebhookStructureInputCopyWithImpl<_WebhookStructureInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$WebhookStructureInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'WebhookStructureInput(baseUrl: $baseUrl, paths: $paths, method: $method, contentType: $contentType, headers: $headers)';
   }
-
-  /// Create a copy of WebhookStructureInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$WebhookStructureInputImplCopyWith<_$WebhookStructureInputImpl>
-      get copyWith => __$$WebhookStructureInputImplCopyWithImpl<
-          _$WebhookStructureInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WebhookStructureInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _WebhookStructureInput implements WebhookStructureInput {
-  factory _WebhookStructureInput(
+/// @nodoc
+abstract mixin class _$WebhookStructureInputCopyWith<$Res>
+    implements $WebhookStructureInputCopyWith<$Res> {
+  factory _$WebhookStructureInputCopyWith(_WebhookStructureInput value,
+          $Res Function(_WebhookStructureInput) _then) =
+      __$WebhookStructureInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String baseUrl,
       List<WebhookPathInput> paths,
       @WebhookMethodConverter() WebhookMethod method,
       @WebhookFormatConverter() WebhookFormat contentType,
-      List<WebhookHeaderInput> headers}) = _$WebhookStructureInputImpl;
+      List<WebhookHeaderInput> headers});
+}
 
-  factory _WebhookStructureInput.fromJson(Map<String, dynamic> json) =
-      _$WebhookStructureInputImpl.fromJson;
+/// @nodoc
+class __$WebhookStructureInputCopyWithImpl<$Res>
+    implements _$WebhookStructureInputCopyWith<$Res> {
+  __$WebhookStructureInputCopyWithImpl(this._self, this._then);
 
-  /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
-  /// the full URL.
-  ///
-  /// For example, if the [baseUrl] is `https://api.example.com` and one of the [paths] is `/v1/users`, the
-  /// full URL will be `https://api.example.com/v1/users`.
-  @override
-  String get baseUrl;
-
-  /// [baseUrl] Is the base URL of the webhook, this [baseUrl] should be appened with the [paths] to create
-  /// the full URL.
-  ///
-  /// For example, if the [baseUrl] is `https://api.example.com` and one of the [paths] is `/v1/users`, the
-  /// full URL will be `https://api.example.com/v1/users`.
-  set baseUrl(String value);
-
-  /// [paths] is the list of paths that the webhook should use.
-  @override
-  List<WebhookPathInput> get paths;
-
-  /// [paths] is the list of paths that the webhook should use.
-  set paths(List<WebhookPathInput> value);
-
-  /// [method] is the HTTP method of the webhook. Be careful, not all of the HTTP methods are listed or available
-  /// for webhook usage.
-  @override
-  @WebhookMethodConverter()
-  WebhookMethod get method;
-
-  /// [method] is the HTTP method of the webhook. Be careful, not all of the HTTP methods are listed or available
-  /// for webhook usage.
-  @WebhookMethodConverter()
-  set method(WebhookMethod value);
-
-  /// [contentType] is the format of the webhook.
-  @override
-  @WebhookFormatConverter()
-  WebhookFormat get contentType;
-
-  /// [contentType] is the format of the webhook.
-  @WebhookFormatConverter()
-  set contentType(WebhookFormat value);
-
-  /// [headers] is the list of headers that the webhook should use.
-  /// If you detect any issue with the headers, please contact the
-  /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
-  @override
-  List<WebhookHeaderInput> get headers;
-
-  /// [headers] is the list of headers that the webhook should use.
-  /// If you detect any issue with the headers, please contact the
-  /// Layrz Integration Team at (support@layrz.com)[mailto:support@layrz.com]
-  set headers(List<WebhookHeaderInput> value);
+  final _WebhookStructureInput _self;
+  final $Res Function(_WebhookStructureInput) _then;
 
   /// Create a copy of WebhookStructureInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WebhookStructureInputImplCopyWith<_$WebhookStructureInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-FlespiModel _$FlespiModelFromJson(Map<String, dynamic> json) {
-  return _FlespiModel.fromJson(json);
-}
-
-/// @nodoc
-mixin _$FlespiModel {
-  String get flespiId => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-
-  /// Serializes this FlespiModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of FlespiModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $FlespiModelCopyWith<FlespiModel> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FlespiModelCopyWith<$Res> {
-  factory $FlespiModelCopyWith(
-          FlespiModel value, $Res Function(FlespiModel) then) =
-      _$FlespiModelCopyWithImpl<$Res, FlespiModel>;
-  @useResult
-  $Res call({String flespiId, String name});
-}
-
-/// @nodoc
-class _$FlespiModelCopyWithImpl<$Res, $Val extends FlespiModel>
-    implements $FlespiModelCopyWith<$Res> {
-  _$FlespiModelCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of FlespiModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? flespiId = null,
-    Object? name = null,
+    Object? baseUrl = null,
+    Object? paths = null,
+    Object? method = null,
+    Object? contentType = null,
+    Object? headers = null,
   }) {
-    return _then(_value.copyWith(
-      flespiId: null == flespiId
-          ? _value.flespiId
-          : flespiId // ignore: cast_nullable_to_non_nullable
+    return _then(_WebhookStructureInput(
+      baseUrl: null == baseUrl
+          ? _self.baseUrl
+          : baseUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$FlespiModelImplCopyWith<$Res>
-    implements $FlespiModelCopyWith<$Res> {
-  factory _$$FlespiModelImplCopyWith(
-          _$FlespiModelImpl value, $Res Function(_$FlespiModelImpl) then) =
-      __$$FlespiModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String flespiId, String name});
-}
-
-/// @nodoc
-class __$$FlespiModelImplCopyWithImpl<$Res>
-    extends _$FlespiModelCopyWithImpl<$Res, _$FlespiModelImpl>
-    implements _$$FlespiModelImplCopyWith<$Res> {
-  __$$FlespiModelImplCopyWithImpl(
-      _$FlespiModelImpl _value, $Res Function(_$FlespiModelImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of FlespiModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? flespiId = null,
-    Object? name = null,
-  }) {
-    return _then(_$FlespiModelImpl(
-      flespiId: null == flespiId
-          ? _value.flespiId
-          : flespiId // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
+      paths: null == paths
+          ? _self.paths
+          : paths // ignore: cast_nullable_to_non_nullable
+              as List<WebhookPathInput>,
+      method: null == method
+          ? _self.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as WebhookMethod,
+      contentType: null == contentType
+          ? _self.contentType
+          : contentType // ignore: cast_nullable_to_non_nullable
+              as WebhookFormat,
+      headers: null == headers
+          ? _self.headers
+          : headers // ignore: cast_nullable_to_non_nullable
+              as List<WebhookHeaderInput>,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$FlespiModelImpl implements _FlespiModel {
-  const _$FlespiModelImpl({required this.flespiId, required this.name});
+mixin _$FlespiModel {
+  String get flespiId;
+  String get name;
 
-  factory _$FlespiModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlespiModelImplFromJson(json);
+  /// Create a copy of FlespiModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $FlespiModelCopyWith<FlespiModel> get copyWith =>
+      _$FlespiModelCopyWithImpl<FlespiModel>(this as FlespiModel, _$identity);
 
-  @override
-  final String flespiId;
-  @override
-  final String name;
-
-  @override
-  String toString() {
-    return 'FlespiModel(flespiId: $flespiId, name: $name)';
-  }
+  /// Serializes this FlespiModel to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FlespiModelImpl &&
+            other is FlespiModel &&
             (identical(other.flespiId, flespiId) ||
                 other.flespiId == flespiId) &&
             (identical(other.name, name) || other.name == name));
@@ -2960,157 +2503,207 @@ class _$FlespiModelImpl implements _FlespiModel {
   @override
   int get hashCode => Object.hash(runtimeType, flespiId, name);
 
-  /// Create a copy of FlespiModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$FlespiModelImplCopyWith<_$FlespiModelImpl> get copyWith =>
-      __$$FlespiModelImplCopyWithImpl<_$FlespiModelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FlespiModelImplToJson(
-      this,
-    );
+  String toString() {
+    return 'FlespiModel(flespiId: $flespiId, name: $name)';
   }
 }
 
-abstract class _FlespiModel implements FlespiModel {
-  const factory _FlespiModel(
-      {required final String flespiId,
-      required final String name}) = _$FlespiModelImpl;
+/// @nodoc
+abstract mixin class $FlespiModelCopyWith<$Res> {
+  factory $FlespiModelCopyWith(
+          FlespiModel value, $Res Function(FlespiModel) _then) =
+      _$FlespiModelCopyWithImpl;
+  @useResult
+  $Res call({String flespiId, String name});
+}
 
-  factory _FlespiModel.fromJson(Map<String, dynamic> json) =
-      _$FlespiModelImpl.fromJson;
+/// @nodoc
+class _$FlespiModelCopyWithImpl<$Res> implements $FlespiModelCopyWith<$Res> {
+  _$FlespiModelCopyWithImpl(this._self, this._then);
+
+  final FlespiModel _self;
+  final $Res Function(FlespiModel) _then;
+
+  /// Create a copy of FlespiModel
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? flespiId = null,
+    Object? name = null,
+  }) {
+    return _then(_self.copyWith(
+      flespiId: null == flespiId
+          ? _self.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _FlespiModel implements FlespiModel {
+  const _FlespiModel({required this.flespiId, required this.name});
+  factory _FlespiModel.fromJson(Map<String, dynamic> json) =>
+      _$FlespiModelFromJson(json);
 
   @override
-  String get flespiId;
+  final String flespiId;
   @override
-  String get name;
+  final String name;
 
   /// Create a copy of FlespiModel
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FlespiModelImplCopyWith<_$FlespiModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$FlespiModelCopyWith<_FlespiModel> get copyWith =>
+      __$FlespiModelCopyWithImpl<_FlespiModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FlespiModelToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _FlespiModel &&
+            (identical(other.flespiId, flespiId) ||
+                other.flespiId == flespiId) &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, flespiId, name);
+
+  @override
+  String toString() {
+    return 'FlespiModel(flespiId: $flespiId, name: $name)';
+  }
 }
 
-FlespiAcl _$FlespiAclFromJson(Map<String, dynamic> json) {
-  return _FlespiAcl.fromJson(json);
+/// @nodoc
+abstract mixin class _$FlespiModelCopyWith<$Res>
+    implements $FlespiModelCopyWith<$Res> {
+  factory _$FlespiModelCopyWith(
+          _FlespiModel value, $Res Function(_FlespiModel) _then) =
+      __$FlespiModelCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String flespiId, String name});
+}
+
+/// @nodoc
+class __$FlespiModelCopyWithImpl<$Res> implements _$FlespiModelCopyWith<$Res> {
+  __$FlespiModelCopyWithImpl(this._self, this._then);
+
+  final _FlespiModel _self;
+  final $Res Function(_FlespiModel) _then;
+
+  /// Create a copy of FlespiModel
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? flespiId = null,
+    Object? name = null,
+  }) {
+    return _then(_FlespiModel(
+      flespiId: null == flespiId
+          ? _self.flespiId
+          : flespiId // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$FlespiAcl {
   /// [uri] is the URI of the ACL.
   @FlespiUriConverter()
-  FlespiUri get uri => throw _privateConstructorUsedError;
+  FlespiUri get uri;
 
   /// [topic] is the topic of the ACL.
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  String? get topic => throw _privateConstructorUsedError;
+  String? get topic;
 
   /// [actions] is the list of actions allowed for the ACL.
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
   @FlespiActionConverter()
-  List<FlespiAction>? get actions => throw _privateConstructorUsedError;
+  List<FlespiAction>? get actions;
 
   /// [methods] is the list of methods allowed for the ACL.
   @FlespiMethodConverter()
-  List<FlespiMethod>? get methods => throw _privateConstructorUsedError;
+  List<FlespiMethod>? get methods;
 
   /// [ids] is the list of IDs allowed for the ACL.
   /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  List<String>? get ids => throw _privateConstructorUsedError;
+  List<String>? get ids;
 
   /// [submodules] is the list of submodules allowed for the ACL.
   /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  List<FlespiSubmoduleConfig>? get submodules =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this FlespiAcl to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<FlespiSubmoduleConfig>? get submodules;
 
   /// Create a copy of FlespiAcl
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $FlespiAclCopyWith<FlespiAcl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FlespiAclCopyWith<$Res> {
-  factory $FlespiAclCopyWith(FlespiAcl value, $Res Function(FlespiAcl) then) =
-      _$FlespiAclCopyWithImpl<$Res, FlespiAcl>;
-  @useResult
-  $Res call(
-      {@FlespiUriConverter() FlespiUri uri,
-      String? topic,
-      @FlespiActionConverter() List<FlespiAction>? actions,
-      @FlespiMethodConverter() List<FlespiMethod>? methods,
-      List<String>? ids,
-      List<FlespiSubmoduleConfig>? submodules});
-}
-
-/// @nodoc
-class _$FlespiAclCopyWithImpl<$Res, $Val extends FlespiAcl>
-    implements $FlespiAclCopyWith<$Res> {
-  _$FlespiAclCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of FlespiAcl
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $FlespiAclCopyWith<FlespiAcl> get copyWith =>
+      _$FlespiAclCopyWithImpl<FlespiAcl>(this as FlespiAcl, _$identity);
+
+  /// Serializes this FlespiAcl to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? uri = null,
-    Object? topic = freezed,
-    Object? actions = freezed,
-    Object? methods = freezed,
-    Object? ids = freezed,
-    Object? submodules = freezed,
-  }) {
-    return _then(_value.copyWith(
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as FlespiUri,
-      topic: freezed == topic
-          ? _value.topic
-          : topic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actions: freezed == actions
-          ? _value.actions
-          : actions // ignore: cast_nullable_to_non_nullable
-              as List<FlespiAction>?,
-      methods: freezed == methods
-          ? _value.methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>?,
-      ids: freezed == ids
-          ? _value.ids
-          : ids // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      submodules: freezed == submodules
-          ? _value.submodules
-          : submodules // ignore: cast_nullable_to_non_nullable
-              as List<FlespiSubmoduleConfig>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is FlespiAcl &&
+            (identical(other.uri, uri) || other.uri == uri) &&
+            (identical(other.topic, topic) || other.topic == topic) &&
+            const DeepCollectionEquality().equals(other.actions, actions) &&
+            const DeepCollectionEquality().equals(other.methods, methods) &&
+            const DeepCollectionEquality().equals(other.ids, ids) &&
+            const DeepCollectionEquality()
+                .equals(other.submodules, submodules));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      uri,
+      topic,
+      const DeepCollectionEquality().hash(actions),
+      const DeepCollectionEquality().hash(methods),
+      const DeepCollectionEquality().hash(ids),
+      const DeepCollectionEquality().hash(submodules));
+
+  @override
+  String toString() {
+    return 'FlespiAcl(uri: $uri, topic: $topic, actions: $actions, methods: $methods, ids: $ids, submodules: $submodules)';
   }
 }
 
 /// @nodoc
-abstract class _$$FlespiAclImplCopyWith<$Res>
-    implements $FlespiAclCopyWith<$Res> {
-  factory _$$FlespiAclImplCopyWith(
-          _$FlespiAclImpl value, $Res Function(_$FlespiAclImpl) then) =
-      __$$FlespiAclImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $FlespiAclCopyWith<$Res> {
+  factory $FlespiAclCopyWith(FlespiAcl value, $Res Function(FlespiAcl) _then) =
+      _$FlespiAclCopyWithImpl;
   @useResult
   $Res call(
       {@FlespiUriConverter() FlespiUri uri,
@@ -3122,12 +2715,11 @@ abstract class _$$FlespiAclImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FlespiAclImplCopyWithImpl<$Res>
-    extends _$FlespiAclCopyWithImpl<$Res, _$FlespiAclImpl>
-    implements _$$FlespiAclImplCopyWith<$Res> {
-  __$$FlespiAclImplCopyWithImpl(
-      _$FlespiAclImpl _value, $Res Function(_$FlespiAclImpl) _then)
-      : super(_value, _then);
+class _$FlespiAclCopyWithImpl<$Res> implements $FlespiAclCopyWith<$Res> {
+  _$FlespiAclCopyWithImpl(this._self, this._then);
+
+  final FlespiAcl _self;
+  final $Res Function(FlespiAcl) _then;
 
   /// Create a copy of FlespiAcl
   /// with the given fields replaced by the non-null parameter values.
@@ -3141,29 +2733,29 @@ class __$$FlespiAclImplCopyWithImpl<$Res>
     Object? ids = freezed,
     Object? submodules = freezed,
   }) {
-    return _then(_$FlespiAclImpl(
+    return _then(_self.copyWith(
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as FlespiUri,
       topic: freezed == topic
-          ? _value.topic
+          ? _self.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
       actions: freezed == actions
-          ? _value._actions
+          ? _self.actions
           : actions // ignore: cast_nullable_to_non_nullable
               as List<FlespiAction>?,
       methods: freezed == methods
-          ? _value._methods
+          ? _self.methods
           : methods // ignore: cast_nullable_to_non_nullable
               as List<FlespiMethod>?,
       ids: freezed == ids
-          ? _value._ids
+          ? _self.ids
           : ids // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       submodules: freezed == submodules
-          ? _value._submodules
+          ? _self.submodules
           : submodules // ignore: cast_nullable_to_non_nullable
               as List<FlespiSubmoduleConfig>?,
     ));
@@ -3172,8 +2764,8 @@ class __$$FlespiAclImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FlespiAclImpl implements _FlespiAcl {
-  const _$FlespiAclImpl(
+class _FlespiAcl implements FlespiAcl {
+  const _FlespiAcl(
       {@FlespiUriConverter() required this.uri,
       this.topic,
       @FlespiActionConverter() final List<FlespiAction>? actions,
@@ -3184,9 +2776,8 @@ class _$FlespiAclImpl implements _FlespiAcl {
         _methods = methods,
         _ids = ids,
         _submodules = submodules;
-
-  factory _$FlespiAclImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlespiAclImplFromJson(json);
+  factory _FlespiAcl.fromJson(Map<String, dynamic> json) =>
+      _$FlespiAclFromJson(json);
 
   /// [uri] is the URI of the ACL.
   @override
@@ -3258,16 +2849,26 @@ class _$FlespiAclImpl implements _FlespiAcl {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of FlespiAcl
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'FlespiAcl(uri: $uri, topic: $topic, actions: $actions, methods: $methods, ids: $ids, submodules: $submodules)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$FlespiAclCopyWith<_FlespiAcl> get copyWith =>
+      __$FlespiAclCopyWithImpl<_FlespiAcl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FlespiAclToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FlespiAclImpl &&
+            other is _FlespiAcl &&
             (identical(other.uri, uri) || other.uri == uri) &&
             (identical(other.topic, topic) || other.topic == topic) &&
             const DeepCollectionEquality().equals(other._actions, _actions) &&
@@ -3288,214 +2889,151 @@ class _$FlespiAclImpl implements _FlespiAcl {
       const DeepCollectionEquality().hash(_ids),
       const DeepCollectionEquality().hash(_submodules));
 
-  /// Create a copy of FlespiAcl
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$FlespiAclImplCopyWith<_$FlespiAclImpl> get copyWith =>
-      __$$FlespiAclImplCopyWithImpl<_$FlespiAclImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FlespiAclImplToJson(
-      this,
-    );
+  String toString() {
+    return 'FlespiAcl(uri: $uri, topic: $topic, actions: $actions, methods: $methods, ids: $ids, submodules: $submodules)';
   }
 }
 
-abstract class _FlespiAcl implements FlespiAcl {
-  const factory _FlespiAcl(
-      {@FlespiUriConverter() required final FlespiUri uri,
-      final String? topic,
-      @FlespiActionConverter() final List<FlespiAction>? actions,
-      @FlespiMethodConverter() final List<FlespiMethod>? methods,
-      final List<String>? ids,
-      final List<FlespiSubmoduleConfig>? submodules}) = _$FlespiAclImpl;
-
-  factory _FlespiAcl.fromJson(Map<String, dynamic> json) =
-      _$FlespiAclImpl.fromJson;
-
-  /// [uri] is the URI of the ACL.
+/// @nodoc
+abstract mixin class _$FlespiAclCopyWith<$Res>
+    implements $FlespiAclCopyWith<$Res> {
+  factory _$FlespiAclCopyWith(
+          _FlespiAcl value, $Res Function(_FlespiAcl) _then) =
+      __$FlespiAclCopyWithImpl;
   @override
-  @FlespiUriConverter()
-  FlespiUri get uri;
+  @useResult
+  $Res call(
+      {@FlespiUriConverter() FlespiUri uri,
+      String? topic,
+      @FlespiActionConverter() List<FlespiAction>? actions,
+      @FlespiMethodConverter() List<FlespiMethod>? methods,
+      List<String>? ids,
+      List<FlespiSubmoduleConfig>? submodules});
+}
 
-  /// [topic] is the topic of the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
-  String? get topic;
+/// @nodoc
+class __$FlespiAclCopyWithImpl<$Res> implements _$FlespiAclCopyWith<$Res> {
+  __$FlespiAclCopyWithImpl(this._self, this._then);
 
-  /// [actions] is the list of actions allowed for the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
-  @FlespiActionConverter()
-  List<FlespiAction>? get actions;
-
-  /// [methods] is the list of methods allowed for the ACL.
-  @override
-  @FlespiMethodConverter()
-  List<FlespiMethod>? get methods;
-
-  /// [ids] is the list of IDs allowed for the ACL.
-  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  @override
-  List<String>? get ids;
-
-  /// [submodules] is the list of submodules allowed for the ACL.
-  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  @override
-  List<FlespiSubmoduleConfig>? get submodules;
+  final _FlespiAcl _self;
+  final $Res Function(_FlespiAcl) _then;
 
   /// Create a copy of FlespiAcl
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FlespiAclImplCopyWith<_$FlespiAclImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-FlespiAclInput _$FlespiAclInputFromJson(Map<String, dynamic> json) {
-  return _FlespiAclInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? uri = null,
+    Object? topic = freezed,
+    Object? actions = freezed,
+    Object? methods = freezed,
+    Object? ids = freezed,
+    Object? submodules = freezed,
+  }) {
+    return _then(_FlespiAcl(
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as FlespiUri,
+      topic: freezed == topic
+          ? _self.topic
+          : topic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      actions: freezed == actions
+          ? _self._actions
+          : actions // ignore: cast_nullable_to_non_nullable
+              as List<FlespiAction>?,
+      methods: freezed == methods
+          ? _self._methods
+          : methods // ignore: cast_nullable_to_non_nullable
+              as List<FlespiMethod>?,
+      ids: freezed == ids
+          ? _self._ids
+          : ids // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      submodules: freezed == submodules
+          ? _self._submodules
+          : submodules // ignore: cast_nullable_to_non_nullable
+              as List<FlespiSubmoduleConfig>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$FlespiAclInput {
   /// [uri] is the URI of the ACL.
   @FlespiUriConverter()
-  FlespiUri get uri => throw _privateConstructorUsedError;
+  FlespiUri get uri;
 
   /// [uri] is the URI of the ACL.
   @FlespiUriConverter()
-  set uri(FlespiUri value) => throw _privateConstructorUsedError;
+  set uri(FlespiUri value);
 
   /// [topic] is the topic of the ACL.
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  String? get topic => throw _privateConstructorUsedError;
+  String? get topic;
 
   /// [topic] is the topic of the ACL.
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  set topic(String? value) => throw _privateConstructorUsedError;
+  set topic(String? value);
 
   /// [actions] is the list of actions allowed for the ACL.
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
   @FlespiActionConverter()
-  List<FlespiAction>? get actions => throw _privateConstructorUsedError;
+  List<FlespiAction>? get actions;
 
   /// [actions] is the list of actions allowed for the ACL.
   /// This field is only used when the [uri] is [FlespiUri.mqtt].
   @FlespiActionConverter()
-  set actions(List<FlespiAction>? value) => throw _privateConstructorUsedError;
+  set actions(List<FlespiAction>? value);
 
   /// [methods] is the list of methods allowed for the ACL.
   @FlespiMethodConverter()
-  List<FlespiMethod>? get methods => throw _privateConstructorUsedError;
+  List<FlespiMethod>? get methods;
 
   /// [methods] is the list of methods allowed for the ACL.
   @FlespiMethodConverter()
-  set methods(List<FlespiMethod>? value) => throw _privateConstructorUsedError;
+  set methods(List<FlespiMethod>? value);
 
   /// [ids] is the list of IDs allowed for the ACL.
   /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  List<String>? get ids => throw _privateConstructorUsedError;
+  List<String>? get ids;
 
   /// [ids] is the list of IDs allowed for the ACL.
   /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  set ids(List<String>? value) => throw _privateConstructorUsedError;
+  set ids(List<String>? value);
 
   /// [submodules] is the list of submodules allowed for the ACL.
   /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  List<FlespiSubmoduleConfigInput>? get submodules =>
-      throw _privateConstructorUsedError;
+  List<FlespiSubmoduleConfigInput>? get submodules;
 
   /// [submodules] is the list of submodules allowed for the ACL.
   /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  set submodules(List<FlespiSubmoduleConfigInput>? value) =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this FlespiAclInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set submodules(List<FlespiSubmoduleConfigInput>? value);
 
   /// Create a copy of FlespiAclInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $FlespiAclInputCopyWith<FlespiAclInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FlespiAclInputCopyWith<$Res> {
-  factory $FlespiAclInputCopyWith(
-          FlespiAclInput value, $Res Function(FlespiAclInput) then) =
-      _$FlespiAclInputCopyWithImpl<$Res, FlespiAclInput>;
-  @useResult
-  $Res call(
-      {@FlespiUriConverter() FlespiUri uri,
-      String? topic,
-      @FlespiActionConverter() List<FlespiAction>? actions,
-      @FlespiMethodConverter() List<FlespiMethod>? methods,
-      List<String>? ids,
-      List<FlespiSubmoduleConfigInput>? submodules});
-}
-
-/// @nodoc
-class _$FlespiAclInputCopyWithImpl<$Res, $Val extends FlespiAclInput>
-    implements $FlespiAclInputCopyWith<$Res> {
-  _$FlespiAclInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of FlespiAclInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $FlespiAclInputCopyWith<FlespiAclInput> get copyWith =>
+      _$FlespiAclInputCopyWithImpl<FlespiAclInput>(
+          this as FlespiAclInput, _$identity);
+
+  /// Serializes this FlespiAclInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? uri = null,
-    Object? topic = freezed,
-    Object? actions = freezed,
-    Object? methods = freezed,
-    Object? ids = freezed,
-    Object? submodules = freezed,
-  }) {
-    return _then(_value.copyWith(
-      uri: null == uri
-          ? _value.uri
-          : uri // ignore: cast_nullable_to_non_nullable
-              as FlespiUri,
-      topic: freezed == topic
-          ? _value.topic
-          : topic // ignore: cast_nullable_to_non_nullable
-              as String?,
-      actions: freezed == actions
-          ? _value.actions
-          : actions // ignore: cast_nullable_to_non_nullable
-              as List<FlespiAction>?,
-      methods: freezed == methods
-          ? _value.methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>?,
-      ids: freezed == ids
-          ? _value.ids
-          : ids // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      submodules: freezed == submodules
-          ? _value.submodules
-          : submodules // ignore: cast_nullable_to_non_nullable
-              as List<FlespiSubmoduleConfigInput>?,
-    ) as $Val);
+  String toString() {
+    return 'FlespiAclInput(uri: $uri, topic: $topic, actions: $actions, methods: $methods, ids: $ids, submodules: $submodules)';
   }
 }
 
 /// @nodoc
-abstract class _$$FlespiAclInputImplCopyWith<$Res>
-    implements $FlespiAclInputCopyWith<$Res> {
-  factory _$$FlespiAclInputImplCopyWith(_$FlespiAclInputImpl value,
-          $Res Function(_$FlespiAclInputImpl) then) =
-      __$$FlespiAclInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $FlespiAclInputCopyWith<$Res> {
+  factory $FlespiAclInputCopyWith(
+          FlespiAclInput value, $Res Function(FlespiAclInput) _then) =
+      _$FlespiAclInputCopyWithImpl;
   @useResult
   $Res call(
       {@FlespiUriConverter() FlespiUri uri,
@@ -3507,12 +3045,12 @@ abstract class _$$FlespiAclInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FlespiAclInputImplCopyWithImpl<$Res>
-    extends _$FlespiAclInputCopyWithImpl<$Res, _$FlespiAclInputImpl>
-    implements _$$FlespiAclInputImplCopyWith<$Res> {
-  __$$FlespiAclInputImplCopyWithImpl(
-      _$FlespiAclInputImpl _value, $Res Function(_$FlespiAclInputImpl) _then)
-      : super(_value, _then);
+class _$FlespiAclInputCopyWithImpl<$Res>
+    implements $FlespiAclInputCopyWith<$Res> {
+  _$FlespiAclInputCopyWithImpl(this._self, this._then);
+
+  final FlespiAclInput _self;
+  final $Res Function(FlespiAclInput) _then;
 
   /// Create a copy of FlespiAclInput
   /// with the given fields replaced by the non-null parameter values.
@@ -3526,29 +3064,29 @@ class __$$FlespiAclInputImplCopyWithImpl<$Res>
     Object? ids = freezed,
     Object? submodules = freezed,
   }) {
-    return _then(_$FlespiAclInputImpl(
+    return _then(_self.copyWith(
       uri: null == uri
-          ? _value.uri
+          ? _self.uri
           : uri // ignore: cast_nullable_to_non_nullable
               as FlespiUri,
       topic: freezed == topic
-          ? _value.topic
+          ? _self.topic
           : topic // ignore: cast_nullable_to_non_nullable
               as String?,
       actions: freezed == actions
-          ? _value.actions
+          ? _self.actions
           : actions // ignore: cast_nullable_to_non_nullable
               as List<FlespiAction>?,
       methods: freezed == methods
-          ? _value.methods
+          ? _self.methods
           : methods // ignore: cast_nullable_to_non_nullable
               as List<FlespiMethod>?,
       ids: freezed == ids
-          ? _value.ids
+          ? _self.ids
           : ids // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       submodules: freezed == submodules
-          ? _value.submodules
+          ? _self.submodules
           : submodules // ignore: cast_nullable_to_non_nullable
               as List<FlespiSubmoduleConfigInput>?,
     ));
@@ -3557,17 +3095,16 @@ class __$$FlespiAclInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FlespiAclInputImpl implements _FlespiAclInput {
-  _$FlespiAclInputImpl(
+class _FlespiAclInput implements FlespiAclInput {
+  _FlespiAclInput(
       {@FlespiUriConverter() required this.uri,
       this.topic,
       @FlespiActionConverter() this.actions,
       @FlespiMethodConverter() this.methods,
       this.ids,
       this.submodules});
-
-  factory _$FlespiAclInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlespiAclInputImplFromJson(json);
+  factory _FlespiAclInput.fromJson(Map<String, dynamic> json) =>
+      _$FlespiAclInputFromJson(json);
 
   /// [uri] is the URI of the ACL.
   @override
@@ -3600,180 +3137,139 @@ class _$FlespiAclInputImpl implements _FlespiAclInput {
   @override
   List<FlespiSubmoduleConfigInput>? submodules;
 
+  /// Create a copy of FlespiAclInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$FlespiAclInputCopyWith<_FlespiAclInput> get copyWith =>
+      __$FlespiAclInputCopyWithImpl<_FlespiAclInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FlespiAclInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'FlespiAclInput(uri: $uri, topic: $topic, actions: $actions, methods: $methods, ids: $ids, submodules: $submodules)';
   }
-
-  /// Create a copy of FlespiAclInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FlespiAclInputImplCopyWith<_$FlespiAclInputImpl> get copyWith =>
-      __$$FlespiAclInputImplCopyWithImpl<_$FlespiAclInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FlespiAclInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _FlespiAclInput implements FlespiAclInput {
-  factory _FlespiAclInput(
-      {@FlespiUriConverter() required FlespiUri uri,
+/// @nodoc
+abstract mixin class _$FlespiAclInputCopyWith<$Res>
+    implements $FlespiAclInputCopyWith<$Res> {
+  factory _$FlespiAclInputCopyWith(
+          _FlespiAclInput value, $Res Function(_FlespiAclInput) _then) =
+      __$FlespiAclInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@FlespiUriConverter() FlespiUri uri,
       String? topic,
       @FlespiActionConverter() List<FlespiAction>? actions,
       @FlespiMethodConverter() List<FlespiMethod>? methods,
       List<String>? ids,
-      List<FlespiSubmoduleConfigInput>? submodules}) = _$FlespiAclInputImpl;
+      List<FlespiSubmoduleConfigInput>? submodules});
+}
 
-  factory _FlespiAclInput.fromJson(Map<String, dynamic> json) =
-      _$FlespiAclInputImpl.fromJson;
+/// @nodoc
+class __$FlespiAclInputCopyWithImpl<$Res>
+    implements _$FlespiAclInputCopyWith<$Res> {
+  __$FlespiAclInputCopyWithImpl(this._self, this._then);
 
-  /// [uri] is the URI of the ACL.
-  @override
-  @FlespiUriConverter()
-  FlespiUri get uri;
-
-  /// [uri] is the URI of the ACL.
-  @FlespiUriConverter()
-  set uri(FlespiUri value);
-
-  /// [topic] is the topic of the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
-  String? get topic;
-
-  /// [topic] is the topic of the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  set topic(String? value);
-
-  /// [actions] is the list of actions allowed for the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @override
-  @FlespiActionConverter()
-  List<FlespiAction>? get actions;
-
-  /// [actions] is the list of actions allowed for the ACL.
-  /// This field is only used when the [uri] is [FlespiUri.mqtt].
-  @FlespiActionConverter()
-  set actions(List<FlespiAction>? value);
-
-  /// [methods] is the list of methods allowed for the ACL.
-  @override
-  @FlespiMethodConverter()
-  List<FlespiMethod>? get methods;
-
-  /// [methods] is the list of methods allowed for the ACL.
-  @FlespiMethodConverter()
-  set methods(List<FlespiMethod>? value);
-
-  /// [ids] is the list of IDs allowed for the ACL.
-  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  @override
-  List<String>? get ids;
-
-  /// [ids] is the list of IDs allowed for the ACL.
-  /// Due to a freezed restrictions, we cannot support `all` as a value for this field.
-  set ids(List<String>? value);
-
-  /// [submodules] is the list of submodules allowed for the ACL.
-  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  @override
-  List<FlespiSubmoduleConfigInput>? get submodules;
-
-  /// [submodules] is the list of submodules allowed for the ACL.
-  /// This field is only used when the [uri] is not [FlespiUri.mqtt].
-  set submodules(List<FlespiSubmoduleConfigInput>? value);
+  final _FlespiAclInput _self;
+  final $Res Function(_FlespiAclInput) _then;
 
   /// Create a copy of FlespiAclInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FlespiAclInputImplCopyWith<_$FlespiAclInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-FlespiSubmoduleConfig _$FlespiSubmoduleConfigFromJson(
-    Map<String, dynamic> json) {
-  return _FlespiSubmoduleConfig.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? uri = null,
+    Object? topic = freezed,
+    Object? actions = freezed,
+    Object? methods = freezed,
+    Object? ids = freezed,
+    Object? submodules = freezed,
+  }) {
+    return _then(_FlespiAclInput(
+      uri: null == uri
+          ? _self.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as FlespiUri,
+      topic: freezed == topic
+          ? _self.topic
+          : topic // ignore: cast_nullable_to_non_nullable
+              as String?,
+      actions: freezed == actions
+          ? _self.actions
+          : actions // ignore: cast_nullable_to_non_nullable
+              as List<FlespiAction>?,
+      methods: freezed == methods
+          ? _self.methods
+          : methods // ignore: cast_nullable_to_non_nullable
+              as List<FlespiMethod>?,
+      ids: freezed == ids
+          ? _self.ids
+          : ids // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      submodules: freezed == submodules
+          ? _self.submodules
+          : submodules // ignore: cast_nullable_to_non_nullable
+              as List<FlespiSubmoduleConfigInput>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$FlespiSubmoduleConfig {
   /// [submodule] is the submodule of the configuration.
   @FlespiSubmoduleConverter()
-  FlespiSubmodule get name => throw _privateConstructorUsedError;
+  FlespiSubmodule get name;
 
   /// [methods] is the list of methods allowed for the submodule.
   @FlespiMethodConverter()
-  List<FlespiMethod> get methods => throw _privateConstructorUsedError;
-
-  /// Serializes this FlespiSubmoduleConfig to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<FlespiMethod> get methods;
 
   /// Create a copy of FlespiSubmoduleConfig
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $FlespiSubmoduleConfigCopyWith<FlespiSubmoduleConfig> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FlespiSubmoduleConfigCopyWith<$Res> {
-  factory $FlespiSubmoduleConfigCopyWith(FlespiSubmoduleConfig value,
-          $Res Function(FlespiSubmoduleConfig) then) =
-      _$FlespiSubmoduleConfigCopyWithImpl<$Res, FlespiSubmoduleConfig>;
-  @useResult
-  $Res call(
-      {@FlespiSubmoduleConverter() FlespiSubmodule name,
-      @FlespiMethodConverter() List<FlespiMethod> methods});
-}
-
-/// @nodoc
-class _$FlespiSubmoduleConfigCopyWithImpl<$Res,
-        $Val extends FlespiSubmoduleConfig>
-    implements $FlespiSubmoduleConfigCopyWith<$Res> {
-  _$FlespiSubmoduleConfigCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of FlespiSubmoduleConfig
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $FlespiSubmoduleConfigCopyWith<FlespiSubmoduleConfig> get copyWith =>
+      _$FlespiSubmoduleConfigCopyWithImpl<FlespiSubmoduleConfig>(
+          this as FlespiSubmoduleConfig, _$identity);
+
+  /// Serializes this FlespiSubmoduleConfig to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? name = null,
-    Object? methods = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as FlespiSubmodule,
-      methods: null == methods
-          ? _value.methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is FlespiSubmoduleConfig &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other.methods, methods));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, name, const DeepCollectionEquality().hash(methods));
+
+  @override
+  String toString() {
+    return 'FlespiSubmoduleConfig(name: $name, methods: $methods)';
   }
 }
 
 /// @nodoc
-abstract class _$$FlespiSubmoduleConfigImplCopyWith<$Res>
-    implements $FlespiSubmoduleConfigCopyWith<$Res> {
-  factory _$$FlespiSubmoduleConfigImplCopyWith(
-          _$FlespiSubmoduleConfigImpl value,
-          $Res Function(_$FlespiSubmoduleConfigImpl) then) =
-      __$$FlespiSubmoduleConfigImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $FlespiSubmoduleConfigCopyWith<$Res> {
+  factory $FlespiSubmoduleConfigCopyWith(FlespiSubmoduleConfig value,
+          $Res Function(FlespiSubmoduleConfig) _then) =
+      _$FlespiSubmoduleConfigCopyWithImpl;
   @useResult
   $Res call(
       {@FlespiSubmoduleConverter() FlespiSubmodule name,
@@ -3781,13 +3277,12 @@ abstract class _$$FlespiSubmoduleConfigImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FlespiSubmoduleConfigImplCopyWithImpl<$Res>
-    extends _$FlespiSubmoduleConfigCopyWithImpl<$Res,
-        _$FlespiSubmoduleConfigImpl>
-    implements _$$FlespiSubmoduleConfigImplCopyWith<$Res> {
-  __$$FlespiSubmoduleConfigImplCopyWithImpl(_$FlespiSubmoduleConfigImpl _value,
-      $Res Function(_$FlespiSubmoduleConfigImpl) _then)
-      : super(_value, _then);
+class _$FlespiSubmoduleConfigCopyWithImpl<$Res>
+    implements $FlespiSubmoduleConfigCopyWith<$Res> {
+  _$FlespiSubmoduleConfigCopyWithImpl(this._self, this._then);
+
+  final FlespiSubmoduleConfig _self;
+  final $Res Function(FlespiSubmoduleConfig) _then;
 
   /// Create a copy of FlespiSubmoduleConfig
   /// with the given fields replaced by the non-null parameter values.
@@ -3797,13 +3292,13 @@ class __$$FlespiSubmoduleConfigImplCopyWithImpl<$Res>
     Object? name = null,
     Object? methods = null,
   }) {
-    return _then(_$FlespiSubmoduleConfigImpl(
+    return _then(_self.copyWith(
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as FlespiSubmodule,
       methods: null == methods
-          ? _value._methods
+          ? _self.methods
           : methods // ignore: cast_nullable_to_non_nullable
               as List<FlespiMethod>,
     ));
@@ -3812,14 +3307,13 @@ class __$$FlespiSubmoduleConfigImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FlespiSubmoduleConfigImpl implements _FlespiSubmoduleConfig {
-  const _$FlespiSubmoduleConfigImpl(
+class _FlespiSubmoduleConfig implements FlespiSubmoduleConfig {
+  const _FlespiSubmoduleConfig(
       {@FlespiSubmoduleConverter() required this.name,
       @FlespiMethodConverter() final List<FlespiMethod> methods = const []})
       : _methods = methods;
-
-  factory _$FlespiSubmoduleConfigImpl.fromJson(Map<String, dynamic> json) =>
-      _$$FlespiSubmoduleConfigImplFromJson(json);
+  factory _FlespiSubmoduleConfig.fromJson(Map<String, dynamic> json) =>
+      _$FlespiSubmoduleConfigFromJson(json);
 
   /// [submodule] is the submodule of the configuration.
   @override
@@ -3839,16 +3333,27 @@ class _$FlespiSubmoduleConfigImpl implements _FlespiSubmoduleConfig {
     return EqualUnmodifiableListView(_methods);
   }
 
+  /// Create a copy of FlespiSubmoduleConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'FlespiSubmoduleConfig(name: $name, methods: $methods)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$FlespiSubmoduleConfigCopyWith<_FlespiSubmoduleConfig> get copyWith =>
+      __$FlespiSubmoduleConfigCopyWithImpl<_FlespiSubmoduleConfig>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FlespiSubmoduleConfigToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FlespiSubmoduleConfigImpl &&
+            other is _FlespiSubmoduleConfig &&
             (identical(other.name, name) || other.name == name) &&
             const DeepCollectionEquality().equals(other._methods, _methods));
   }
@@ -3858,135 +3363,95 @@ class _$FlespiSubmoduleConfigImpl implements _FlespiSubmoduleConfig {
   int get hashCode => Object.hash(
       runtimeType, name, const DeepCollectionEquality().hash(_methods));
 
-  /// Create a copy of FlespiSubmoduleConfig
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$FlespiSubmoduleConfigImplCopyWith<_$FlespiSubmoduleConfigImpl>
-      get copyWith => __$$FlespiSubmoduleConfigImplCopyWithImpl<
-          _$FlespiSubmoduleConfigImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FlespiSubmoduleConfigImplToJson(
-      this,
-    );
+  String toString() {
+    return 'FlespiSubmoduleConfig(name: $name, methods: $methods)';
   }
 }
 
-abstract class _FlespiSubmoduleConfig implements FlespiSubmoduleConfig {
-  const factory _FlespiSubmoduleConfig(
-          {@FlespiSubmoduleConverter() required final FlespiSubmodule name,
-          @FlespiMethodConverter() final List<FlespiMethod> methods}) =
-      _$FlespiSubmoduleConfigImpl;
-
-  factory _FlespiSubmoduleConfig.fromJson(Map<String, dynamic> json) =
-      _$FlespiSubmoduleConfigImpl.fromJson;
-
-  /// [submodule] is the submodule of the configuration.
+/// @nodoc
+abstract mixin class _$FlespiSubmoduleConfigCopyWith<$Res>
+    implements $FlespiSubmoduleConfigCopyWith<$Res> {
+  factory _$FlespiSubmoduleConfigCopyWith(_FlespiSubmoduleConfig value,
+          $Res Function(_FlespiSubmoduleConfig) _then) =
+      __$FlespiSubmoduleConfigCopyWithImpl;
   @override
-  @FlespiSubmoduleConverter()
-  FlespiSubmodule get name;
+  @useResult
+  $Res call(
+      {@FlespiSubmoduleConverter() FlespiSubmodule name,
+      @FlespiMethodConverter() List<FlespiMethod> methods});
+}
 
-  /// [methods] is the list of methods allowed for the submodule.
-  @override
-  @FlespiMethodConverter()
-  List<FlespiMethod> get methods;
+/// @nodoc
+class __$FlespiSubmoduleConfigCopyWithImpl<$Res>
+    implements _$FlespiSubmoduleConfigCopyWith<$Res> {
+  __$FlespiSubmoduleConfigCopyWithImpl(this._self, this._then);
+
+  final _FlespiSubmoduleConfig _self;
+  final $Res Function(_FlespiSubmoduleConfig) _then;
 
   /// Create a copy of FlespiSubmoduleConfig
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FlespiSubmoduleConfigImplCopyWith<_$FlespiSubmoduleConfigImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-FlespiSubmoduleConfigInput _$FlespiSubmoduleConfigInputFromJson(
-    Map<String, dynamic> json) {
-  return _FlespiSubmoduleConfigInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? methods = null,
+  }) {
+    return _then(_FlespiSubmoduleConfig(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as FlespiSubmodule,
+      methods: null == methods
+          ? _self._methods
+          : methods // ignore: cast_nullable_to_non_nullable
+              as List<FlespiMethod>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$FlespiSubmoduleConfigInput {
   /// [submodule] is the submodule of the configuration.
   @FlespiSubmoduleConverter()
-  FlespiSubmodule get name => throw _privateConstructorUsedError;
+  FlespiSubmodule get name;
 
   /// [submodule] is the submodule of the configuration.
   @FlespiSubmoduleConverter()
-  set name(FlespiSubmodule value) => throw _privateConstructorUsedError;
+  set name(FlespiSubmodule value);
 
   /// [methods] is the list of methods allowed for the submodule.
   @FlespiMethodConverter()
-  List<FlespiMethod> get methods => throw _privateConstructorUsedError;
+  List<FlespiMethod> get methods;
 
   /// [methods] is the list of methods allowed for the submodule.
   @FlespiMethodConverter()
-  set methods(List<FlespiMethod> value) => throw _privateConstructorUsedError;
-
-  /// Serializes this FlespiSubmoduleConfigInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set methods(List<FlespiMethod> value);
 
   /// Create a copy of FlespiSubmoduleConfigInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $FlespiSubmoduleConfigInputCopyWith<FlespiSubmoduleConfigInput>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $FlespiSubmoduleConfigInputCopyWith<$Res> {
-  factory $FlespiSubmoduleConfigInputCopyWith(FlespiSubmoduleConfigInput value,
-          $Res Function(FlespiSubmoduleConfigInput) then) =
-      _$FlespiSubmoduleConfigInputCopyWithImpl<$Res,
-          FlespiSubmoduleConfigInput>;
-  @useResult
-  $Res call(
-      {@FlespiSubmoduleConverter() FlespiSubmodule name,
-      @FlespiMethodConverter() List<FlespiMethod> methods});
-}
-
-/// @nodoc
-class _$FlespiSubmoduleConfigInputCopyWithImpl<$Res,
-        $Val extends FlespiSubmoduleConfigInput>
-    implements $FlespiSubmoduleConfigInputCopyWith<$Res> {
-  _$FlespiSubmoduleConfigInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of FlespiSubmoduleConfigInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $FlespiSubmoduleConfigInputCopyWith<FlespiSubmoduleConfigInput>
+      get copyWith =>
+          _$FlespiSubmoduleConfigInputCopyWithImpl<FlespiSubmoduleConfigInput>(
+              this as FlespiSubmoduleConfigInput, _$identity);
+
+  /// Serializes this FlespiSubmoduleConfigInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? name = null,
-    Object? methods = null,
-  }) {
-    return _then(_value.copyWith(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as FlespiSubmodule,
-      methods: null == methods
-          ? _value.methods
-          : methods // ignore: cast_nullable_to_non_nullable
-              as List<FlespiMethod>,
-    ) as $Val);
+  String toString() {
+    return 'FlespiSubmoduleConfigInput(name: $name, methods: $methods)';
   }
 }
 
 /// @nodoc
-abstract class _$$FlespiSubmoduleConfigInputImplCopyWith<$Res>
-    implements $FlespiSubmoduleConfigInputCopyWith<$Res> {
-  factory _$$FlespiSubmoduleConfigInputImplCopyWith(
-          _$FlespiSubmoduleConfigInputImpl value,
-          $Res Function(_$FlespiSubmoduleConfigInputImpl) then) =
-      __$$FlespiSubmoduleConfigInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $FlespiSubmoduleConfigInputCopyWith<$Res> {
+  factory $FlespiSubmoduleConfigInputCopyWith(FlespiSubmoduleConfigInput value,
+          $Res Function(FlespiSubmoduleConfigInput) _then) =
+      _$FlespiSubmoduleConfigInputCopyWithImpl;
   @useResult
   $Res call(
       {@FlespiSubmoduleConverter() FlespiSubmodule name,
@@ -3994,14 +3459,12 @@ abstract class _$$FlespiSubmoduleConfigInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$FlespiSubmoduleConfigInputImplCopyWithImpl<$Res>
-    extends _$FlespiSubmoduleConfigInputCopyWithImpl<$Res,
-        _$FlespiSubmoduleConfigInputImpl>
-    implements _$$FlespiSubmoduleConfigInputImplCopyWith<$Res> {
-  __$$FlespiSubmoduleConfigInputImplCopyWithImpl(
-      _$FlespiSubmoduleConfigInputImpl _value,
-      $Res Function(_$FlespiSubmoduleConfigInputImpl) _then)
-      : super(_value, _then);
+class _$FlespiSubmoduleConfigInputCopyWithImpl<$Res>
+    implements $FlespiSubmoduleConfigInputCopyWith<$Res> {
+  _$FlespiSubmoduleConfigInputCopyWithImpl(this._self, this._then);
+
+  final FlespiSubmoduleConfigInput _self;
+  final $Res Function(FlespiSubmoduleConfigInput) _then;
 
   /// Create a copy of FlespiSubmoduleConfigInput
   /// with the given fields replaced by the non-null parameter values.
@@ -4011,13 +3474,13 @@ class __$$FlespiSubmoduleConfigInputImplCopyWithImpl<$Res>
     Object? name = null,
     Object? methods = null,
   }) {
-    return _then(_$FlespiSubmoduleConfigInputImpl(
+    return _then(_self.copyWith(
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as FlespiSubmodule,
       methods: null == methods
-          ? _value.methods
+          ? _self.methods
           : methods // ignore: cast_nullable_to_non_nullable
               as List<FlespiMethod>,
     ));
@@ -4026,14 +3489,12 @@ class __$$FlespiSubmoduleConfigInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$FlespiSubmoduleConfigInputImpl implements _FlespiSubmoduleConfigInput {
-  _$FlespiSubmoduleConfigInputImpl(
+class _FlespiSubmoduleConfigInput implements FlespiSubmoduleConfigInput {
+  _FlespiSubmoduleConfigInput(
       {@FlespiSubmoduleConverter() required this.name,
       @FlespiMethodConverter() this.methods = const []});
-
-  factory _$FlespiSubmoduleConfigInputImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$FlespiSubmoduleConfigInputImplFromJson(json);
+  factory _FlespiSubmoduleConfigInput.fromJson(Map<String, dynamic> json) =>
+      _$FlespiSubmoduleConfigInputFromJson(json);
 
   /// [submodule] is the submodule of the configuration.
   @override
@@ -4046,60 +3507,69 @@ class _$FlespiSubmoduleConfigInputImpl implements _FlespiSubmoduleConfigInput {
   @FlespiMethodConverter()
   List<FlespiMethod> methods;
 
+  /// Create a copy of FlespiSubmoduleConfigInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$FlespiSubmoduleConfigInputCopyWith<_FlespiSubmoduleConfigInput>
+      get copyWith => __$FlespiSubmoduleConfigInputCopyWithImpl<
+          _FlespiSubmoduleConfigInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$FlespiSubmoduleConfigInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'FlespiSubmoduleConfigInput(name: $name, methods: $methods)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$FlespiSubmoduleConfigInputCopyWith<$Res>
+    implements $FlespiSubmoduleConfigInputCopyWith<$Res> {
+  factory _$FlespiSubmoduleConfigInputCopyWith(
+          _FlespiSubmoduleConfigInput value,
+          $Res Function(_FlespiSubmoduleConfigInput) _then) =
+      __$FlespiSubmoduleConfigInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@FlespiSubmoduleConverter() FlespiSubmodule name,
+      @FlespiMethodConverter() List<FlespiMethod> methods});
+}
+
+/// @nodoc
+class __$FlespiSubmoduleConfigInputCopyWithImpl<$Res>
+    implements _$FlespiSubmoduleConfigInputCopyWith<$Res> {
+  __$FlespiSubmoduleConfigInputCopyWithImpl(this._self, this._then);
+
+  final _FlespiSubmoduleConfigInput _self;
+  final $Res Function(_FlespiSubmoduleConfigInput) _then;
 
   /// Create a copy of FlespiSubmoduleConfigInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$FlespiSubmoduleConfigInputImplCopyWith<_$FlespiSubmoduleConfigInputImpl>
-      get copyWith => __$$FlespiSubmoduleConfigInputImplCopyWithImpl<
-          _$FlespiSubmoduleConfigInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$FlespiSubmoduleConfigInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? name = null,
+    Object? methods = null,
+  }) {
+    return _then(_FlespiSubmoduleConfigInput(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as FlespiSubmodule,
+      methods: null == methods
+          ? _self.methods
+          : methods // ignore: cast_nullable_to_non_nullable
+              as List<FlespiMethod>,
+    ));
   }
 }
 
-abstract class _FlespiSubmoduleConfigInput
-    implements FlespiSubmoduleConfigInput {
-  factory _FlespiSubmoduleConfigInput(
-          {@FlespiSubmoduleConverter() required FlespiSubmodule name,
-          @FlespiMethodConverter() List<FlespiMethod> methods}) =
-      _$FlespiSubmoduleConfigInputImpl;
-
-  factory _FlespiSubmoduleConfigInput.fromJson(Map<String, dynamic> json) =
-      _$FlespiSubmoduleConfigInputImpl.fromJson;
-
-  /// [submodule] is the submodule of the configuration.
-  @override
-  @FlespiSubmoduleConverter()
-  FlespiSubmodule get name;
-
-  /// [submodule] is the submodule of the configuration.
-  @FlespiSubmoduleConverter()
-  set name(FlespiSubmodule value);
-
-  /// [methods] is the list of methods allowed for the submodule.
-  @override
-  @FlespiMethodConverter()
-  List<FlespiMethod> get methods;
-
-  /// [methods] is the list of methods allowed for the submodule.
-  @FlespiMethodConverter()
-  set methods(List<FlespiMethod> value);
-
-  /// Create a copy of FlespiSubmoduleConfigInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$FlespiSubmoduleConfigInputImplCopyWith<_$FlespiSubmoduleConfigInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

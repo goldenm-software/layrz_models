@@ -1,7 +1,7 @@
 part of '../../workspace.dart';
 
 @freezed
-class SensorGridContent with _$SensorGridContent {
+abstract class SensorGridContent with _$SensorGridContent {
   const factory SensorGridContent({
     /// Represents the sensor ID
     String? sensorId,
@@ -26,7 +26,7 @@ class SensorGridContent with _$SensorGridContent {
 }
 
 @unfreezed
-class SensorGridContentInput with _$SensorGridContentInput {
+abstract class SensorGridContentInput with _$SensorGridContentInput {
   factory SensorGridContentInput({
     /// Represents the sensor ID
     String? sensorId,

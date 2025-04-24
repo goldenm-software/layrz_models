@@ -10,7 +10,7 @@ part of '../../i18n.dart';
 /// isVerified
 /// messages
 @freezed
-class AvailableLanguage with _$AvailableLanguage {
+abstract class AvailableLanguage with _$AvailableLanguage {
   AvailableLanguage._();
 
   factory AvailableLanguage({
@@ -47,6 +47,5 @@ class AvailableLanguage with _$AvailableLanguage {
   }
 
   /// from json freezed
-  factory AvailableLanguage.fromJson(Map<String, dynamic> json) =>
-      _$AvailableLanguageFromJson(json);
+  factory AvailableLanguage.fromJson(Map<String, dynamic> json) => _$AvailableLanguageFromJson(json);
 }

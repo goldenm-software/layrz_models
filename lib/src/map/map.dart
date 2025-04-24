@@ -1,4 +1,4 @@
-library map;
+library;
 
 import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

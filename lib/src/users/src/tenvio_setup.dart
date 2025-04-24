@@ -1,7 +1,7 @@
 part of '../users.dart';
 
 @unfreezed
-class TenvioDestinationSetup with _$TenvioDestinationSetup {
+abstract class TenvioDestinationSetup with _$TenvioDestinationSetup {
   factory TenvioDestinationSetup({
     @Default('') String address,
     double? latitude,

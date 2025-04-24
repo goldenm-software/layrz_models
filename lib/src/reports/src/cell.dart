@@ -1,7 +1,7 @@
 part of '../reports.dart';
 
 @freezed
-class ReportCell with _$ReportCell {
+abstract class ReportCell with _$ReportCell {
   const factory ReportCell({
     /// [content] is the content of the report header.
     required dynamic content,

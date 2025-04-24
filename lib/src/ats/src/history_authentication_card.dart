@@ -1,7 +1,7 @@
 part of '../ats.dart';
 
 @freezed
-class AtsHistoryAuthenticationCard with _$AtsHistoryAuthenticationCard {
+abstract class AtsHistoryAuthenticationCard with _$AtsHistoryAuthenticationCard {
   const factory AtsHistoryAuthenticationCard({
     /// [id] represents the unique identifier of the history operation of the card.
     required String id,

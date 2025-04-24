@@ -1,7 +1,7 @@
 part of '../../workspace.dart';
 
 @freezed
-class SensorGridItem with _$SensorGridItem {
+abstract class SensorGridItem with _$SensorGridItem {
   const factory SensorGridItem({
     /// Represents the Asset ID
     String? objectId,
@@ -23,7 +23,7 @@ class SensorGridItem with _$SensorGridItem {
 }
 
 @unfreezed
-class SensorGridItemInput with _$SensorGridItemInput {
+abstract class SensorGridItemInput with _$SensorGridItemInput {
   factory SensorGridItemInput({
     /// Represents the assigned object ID
     String? objectId,

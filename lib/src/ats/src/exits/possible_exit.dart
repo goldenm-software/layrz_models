@@ -37,7 +37,7 @@ part of '../../ats.dart';
 /// isValidated [Boolean]
 /// This flag defines if the possible exit is authenticated.
 @freezed
-class AtsPossibleExit with _$AtsPossibleExit {
+abstract class AtsPossibleExit with _$AtsPossibleExit {
   factory AtsPossibleExit({
     /// ID of the possible exit. This ID is unique.
     String? id,

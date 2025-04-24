@@ -1,7 +1,7 @@
 part of '../../ats.dart';
 
 @freezed
-class AtsExecuteExitHistory with _$AtsExecuteExitHistory {
+abstract class AtsExecuteExitHistory with _$AtsExecuteExitHistory {
   factory AtsExecuteExitHistory({
     /// ID of the recalculation entity. This ID is unique.
     String? id,

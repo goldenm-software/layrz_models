@@ -3,7 +3,7 @@ part of '../external.dart';
 @freezed
 
 /// LEGACY, is all accounts that will extract information from other service into Layrz.
-class ExternalAccount with _$ExternalAccount {
+abstract class ExternalAccount with _$ExternalAccount {
   const factory ExternalAccount({
     /// [id] represents the DB ID.
     required String id,

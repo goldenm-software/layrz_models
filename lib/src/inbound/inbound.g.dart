@@ -6,9 +6,8 @@ part of 'inbound.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InboundProtocolImpl _$$InboundProtocolImplFromJson(
-        Map<String, dynamic> json) =>
-    _$InboundProtocolImpl(
+_InboundProtocol _$InboundProtocolFromJson(Map<String, dynamic> json) =>
+    _InboundProtocol(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
@@ -76,8 +75,7 @@ _$InboundProtocolImpl _$$InboundProtocolImplFromJson(
           json['peripheralParserSpec'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$InboundProtocolImplToJson(
-        _$InboundProtocolImpl instance) =>
+Map<String, dynamic> _$InboundProtocolToJson(_InboundProtocol instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -132,9 +130,9 @@ const _$OperationModeEnumMap = {
   OperationMode.unknown: 'UNKNOWN',
 };
 
-_$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
+_InboundProtocolInput _$InboundProtocolInputFromJson(
         Map<String, dynamic> json) =>
-    _$InboundProtocolInputImpl(
+    _InboundProtocolInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       color: json['color'] == null
@@ -203,8 +201,8 @@ _$InboundProtocolInputImpl _$$InboundProtocolInputImplFromJson(
           json['peripheralParserSpec'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$$InboundProtocolInputImplToJson(
-        _$InboundProtocolInputImpl instance) =>
+Map<String, dynamic> _$InboundProtocolInputToJson(
+        _InboundProtocolInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -244,8 +242,8 @@ Map<String, dynamic> _$$InboundProtocolInputImplToJson(
       'peripheralParserSpec': instance.peripheralParserSpec,
     };
 
-_$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
-    _$InboundServiceImpl(
+_InboundService _$InboundServiceFromJson(Map<String, dynamic> json) =>
+    _InboundService(
       id: json['id'] as String,
       name: json['name'] as String,
       credentials: json['credentials'] as Map<String, dynamic>?,
@@ -271,8 +269,7 @@ _$InboundServiceImpl _$$InboundServiceImplFromJson(Map<String, dynamic> json) =>
               json['webhookStructure'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$InboundServiceImplToJson(
-        _$InboundServiceImpl instance) =>
+Map<String, dynamic> _$InboundServiceToJson(_InboundService instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -288,9 +285,8 @@ Map<String, dynamic> _$$InboundServiceImplToJson(
       'webhookStructure': instance.webhookStructure?.toJson(),
     };
 
-_$InboundServiceInputImpl _$$InboundServiceInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$InboundServiceInputImpl(
+_InboundServiceInput _$InboundServiceInputFromJson(Map<String, dynamic> json) =>
+    _InboundServiceInput(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       credentials: json['credentials'] as Map<String, dynamic>? ?? const {},
@@ -300,8 +296,8 @@ _$InboundServiceInputImpl _$$InboundServiceInputImplFromJson(
           json['structure'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$InboundServiceInputImplToJson(
-        _$InboundServiceInputImpl instance) =>
+Map<String, dynamic> _$InboundServiceInputToJson(
+        _InboundServiceInput instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -311,8 +307,8 @@ Map<String, dynamic> _$$InboundServiceInputImplToJson(
       'structure': instance.structure.toJson(),
     };
 
-_$ConfigGroupingImpl _$$ConfigGroupingImplFromJson(Map<String, dynamic> json) =>
-    _$ConfigGroupingImpl(
+_ConfigGrouping _$ConfigGroupingFromJson(Map<String, dynamic> json) =>
+    _ConfigGrouping(
       name: json['name'] as String,
       kind: $enumDecode(_$ConfigKindEnumMap, json['kind'],
           unknownValue: ConfigKind.unknown),
@@ -324,8 +320,7 @@ _$ConfigGroupingImpl _$$ConfigGroupingImplFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$$ConfigGroupingImplToJson(
-        _$ConfigGroupingImpl instance) =>
+Map<String, dynamic> _$ConfigGroupingToJson(_ConfigGrouping instance) =>
     <String, dynamic>{
       'name': instance.name,
       'kind': instance.kind.toJson(),
@@ -340,9 +335,8 @@ const _$ConfigKindEnumMap = {
   ConfigKind.unknown: 'UNKNOWN',
 };
 
-_$ConfigDefinitionImpl _$$ConfigDefinitionImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ConfigDefinitionImpl(
+_ConfigDefinition _$ConfigDefinitionFromJson(Map<String, dynamic> json) =>
+    _ConfigDefinition(
       sources: (json['sources'] as List<dynamic>?)
           ?.map((e) => $enumDecode(_$ConfigSourceEnumMap, e,
               unknownValue: ConfigSource.unknown))
@@ -363,8 +357,7 @@ _$ConfigDefinitionImpl _$$ConfigDefinitionImplFromJson(
       setupCapable: json['setupCapable'] as bool?,
     );
 
-Map<String, dynamic> _$$ConfigDefinitionImplToJson(
-        _$ConfigDefinitionImpl instance) =>
+Map<String, dynamic> _$ConfigDefinitionToJson(_ConfigDefinition instance) =>
     <String, dynamic>{
       'sources': instance.sources?.map((e) => e.toJson()).toList(),
       'parameter': instance.parameter,
@@ -399,9 +392,8 @@ const _$ConfigPayloadDataTypeEnumMap = {
   ConfigPayloadDataType.unknown: 'UNKNOWN',
 };
 
-_$ConfigGroupingInputImpl _$$ConfigGroupingInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ConfigGroupingInputImpl(
+_ConfigGroupingInput _$ConfigGroupingInputFromJson(Map<String, dynamic> json) =>
+    _ConfigGroupingInput(
       name: json['name'] as String? ?? '',
       kind: $enumDecodeNullable(_$ConfigKindEnumMap, json['kind'],
               unknownValue: ConfigKind.unknown) ??
@@ -415,8 +407,8 @@ _$ConfigGroupingInputImpl _$$ConfigGroupingInputImplFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$ConfigGroupingInputImplToJson(
-        _$ConfigGroupingInputImpl instance) =>
+Map<String, dynamic> _$ConfigGroupingInputToJson(
+        _ConfigGroupingInput instance) =>
     <String, dynamic>{
       'name': instance.name,
       'kind': instance.kind.toJson(),
@@ -425,9 +417,9 @@ Map<String, dynamic> _$$ConfigGroupingInputImplToJson(
       'items': instance.items.map((e) => e.toJson()).toList(),
     };
 
-_$ConfigDefinitionInputImpl _$$ConfigDefinitionInputImplFromJson(
+_ConfigDefinitionInput _$ConfigDefinitionInputFromJson(
         Map<String, dynamic> json) =>
-    _$ConfigDefinitionInputImpl(
+    _ConfigDefinitionInput(
       sources: (json['sources'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$ConfigSourceEnumMap, e,
                   unknownValue: ConfigSource.unknown))
@@ -452,8 +444,8 @@ _$ConfigDefinitionInputImpl _$$ConfigDefinitionInputImplFromJson(
       setupCapable: json['setupCapable'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$ConfigDefinitionInputImplToJson(
-        _$ConfigDefinitionInputImpl instance) =>
+Map<String, dynamic> _$ConfigDefinitionInputToJson(
+        _ConfigDefinitionInput instance) =>
     <String, dynamic>{
       'sources': instance.sources.map((e) => e.toJson()).toList(),
       'parameter': instance.parameter,

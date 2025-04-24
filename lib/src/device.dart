@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class Device with _$Device {
+abstract class Device with _$Device {
   const factory Device({
     required String id,
 
@@ -86,7 +86,7 @@ class Device with _$Device {
 }
 
 @unfreezed
-class DeviceInput with _$DeviceInput {
+abstract class DeviceInput with _$DeviceInput {
   factory DeviceInput({
     /// [id] is the unique identifier of the device.
     String? id,

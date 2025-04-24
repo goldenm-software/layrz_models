@@ -1,7 +1,7 @@
 part of '../workspace.dart';
 
 @freezed
-class Workspace with _$Workspace {
+abstract class Workspace with _$Workspace {
   const factory Workspace({
     /// Is the ID
     required String id,
@@ -100,7 +100,7 @@ class Workspace with _$Workspace {
 }
 
 @unfreezed
-class WorkspaceInput with _$WorkspaceInput {
+abstract class WorkspaceInput with _$WorkspaceInput {
   factory WorkspaceInput({
     String? id,
     @Default("") String name,

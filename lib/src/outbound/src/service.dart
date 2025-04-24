@@ -1,7 +1,7 @@
 part of '../outbound.dart';
 
 @freezed
-class OutboundService with _$OutboundService {
+abstract class OutboundService with _$OutboundService {
   const factory OutboundService({
     /// IS the ID of the entity. This ID is unique.
     required String id,
@@ -51,7 +51,7 @@ class OutboundService with _$OutboundService {
 }
 
 @freezed
-class OutboundStructure with _$OutboundStructure {
+abstract class OutboundStructure with _$OutboundStructure {
   const factory OutboundStructure({
     required String field,
     required String type,

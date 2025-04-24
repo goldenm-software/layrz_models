@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @freezed
-class TenvioItem with _$TenvioItem {
+abstract class TenvioItem with _$TenvioItem {
   const factory TenvioItem({
     /// [id] is the unique identifier for the item.
     required String id,
@@ -46,7 +46,7 @@ class TenvioItem with _$TenvioItem {
 }
 
 @unfreezed
-class TenvioItemInput with _$TenvioItemInput {
+abstract class TenvioItemInput with _$TenvioItemInput {
   factory TenvioItemInput({
     /// [id] is the unique identifier for the item.
     String? id,

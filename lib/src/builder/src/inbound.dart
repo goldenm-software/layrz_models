@@ -1,7 +1,7 @@
 part of '../builder.dart';
 
 @freezed
-class InboundStructure with _$InboundStructure {
+abstract class InboundStructure with _$InboundStructure {
   const factory InboundStructure({
     required bool hasPosition,
     required InboundPositionStructure position,
@@ -13,7 +13,7 @@ class InboundStructure with _$InboundStructure {
 }
 
 @unfreezed
-class InboundStructureInput with _$InboundStructureInput {
+abstract class InboundStructureInput with _$InboundStructureInput {
   factory InboundStructureInput({
     /// [hasPosition] defines if the structure has a position.
     @Default(true) bool hasPosition,
@@ -32,7 +32,7 @@ class InboundStructureInput with _$InboundStructureInput {
 }
 
 @freezed
-class InboundPositionStructure with _$InboundPositionStructure {
+abstract class InboundPositionStructure with _$InboundPositionStructure {
   const factory InboundPositionStructure({
     required bool latitude,
     required bool longitude,
@@ -47,7 +47,7 @@ class InboundPositionStructure with _$InboundPositionStructure {
 }
 
 @unfreezed
-class InboundPositionStructureInput with _$InboundPositionStructureInput {
+abstract class InboundPositionStructureInput with _$InboundPositionStructureInput {
   factory InboundPositionStructureInput({
     @Default(true) bool latitude,
     @Default(true) bool longitude,
@@ -63,7 +63,7 @@ class InboundPositionStructureInput with _$InboundPositionStructureInput {
 }
 
 @freezed
-class InboundPayloadStructure with _$InboundPayloadStructure {
+abstract class InboundPayloadStructure with _$InboundPayloadStructure {
   const factory InboundPayloadStructure({
     required String field,
     @InboundPayloadStructureTypeConverter() required InboundPayloadStructureType type,
@@ -74,7 +74,7 @@ class InboundPayloadStructure with _$InboundPayloadStructure {
 }
 
 @unfreezed
-class InboundPayloadStructureInput with _$InboundPayloadStructureInput {
+abstract class InboundPayloadStructureInput with _$InboundPayloadStructureInput {
   factory InboundPayloadStructureInput({
     @Default('') String field,
     @InboundPayloadStructureTypeConverter()

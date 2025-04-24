@@ -1,7 +1,7 @@
 part of '../assets.dart';
 
 @freezed
-class AssetLoginInfo with _$AssetLoginInfo {
+abstract class AssetLoginInfo with _$AssetLoginInfo {
   const factory AssetLoginInfo({
     /// [enabled] is the login status of the asset.
     required bool enabled,
@@ -17,7 +17,7 @@ class AssetLoginInfo with _$AssetLoginInfo {
 }
 
 @unfreezed
-class AssetLoginInfoInput with _$AssetLoginInfoInput {
+abstract class AssetLoginInfoInput with _$AssetLoginInfoInput {
   factory AssetLoginInfoInput({
     /// [enabled] is the login status of the asset.
     @Default(false) bool enabled,

@@ -1,7 +1,7 @@
 part of '../app.dart';
 
 @freezed
-class AppDesign with _$AppDesign {
+abstract class AppDesign with _$AppDesign {
   /// [AppDesign] is the design of the app.
   const factory AppDesign({
     /// [mainColor] defines the main color of the app.
@@ -61,7 +61,7 @@ class AppDesign with _$AppDesign {
 }
 
 @freezed
-class AppFooter with _$AppFooter {
+abstract class AppFooter with _$AppFooter {
   const factory AppFooter({
     /// [mode] defines the footer format of the app.
     @JsonKey(unknownEnumValue: FooterFormat.madeWith) @Default(FooterFormat.madeWith) FooterFormat mode,
@@ -74,7 +74,7 @@ class AppFooter with _$AppFooter {
 }
 
 @unfreezed
-class AppDesignInput with _$AppDesignInput {
+abstract class AppDesignInput with _$AppDesignInput {
   factory AppDesignInput({
     @JsonKey(unknownEnumValue: AppTheme.custom) @Default(AppTheme.custom) AppTheme theme,
     @ColorConverter() required Color mainColor,

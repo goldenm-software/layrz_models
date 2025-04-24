@@ -1,7 +1,7 @@
 part of '../tenvio.dart';
 
 @unfreezed
-class TenvioBulkInput with _$TenvioBulkInput {
+abstract class TenvioBulkInput with _$TenvioBulkInput {
   factory TenvioBulkInput({
     // `customProperties` of the item.
     @Default({}) Map<String, dynamic> customProperties,

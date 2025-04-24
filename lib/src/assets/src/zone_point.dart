@@ -1,7 +1,7 @@
 part of '../assets.dart';
 
 @freezed
-class ZonePoint with _$ZonePoint {
+abstract class ZonePoint with _$ZonePoint {
   const ZonePoint._();
   const factory ZonePoint({
     /// [latitude] is the latitude of the point
@@ -17,9 +17,9 @@ class ZonePoint with _$ZonePoint {
 }
 
 @unfreezed
-class ZonePointInput with _$ZonePointInput {
+abstract class ZonePointInput with _$ZonePointInput {
   ZonePointInput._();
-  
+
   factory ZonePointInput({
     /// [latitude] is the latitude of the point
     required double latitude,

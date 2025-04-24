@@ -1,7 +1,7 @@
 part of '../mappit.dart';
 
 @freezed
-class PolygonDetails with _$PolygonDetails {
+abstract class PolygonDetails with _$PolygonDetails {
   const factory PolygonDetails({
     required Geofence polygon,
     required List<ContainedRouteCategory> containedRoutes,

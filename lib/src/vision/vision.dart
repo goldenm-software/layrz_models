@@ -1,4 +1,4 @@
-library vision;
+library;
 
 import 'package:flutter/rendering.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

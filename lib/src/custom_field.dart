@@ -1,7 +1,7 @@
 part of '../layrz_models.dart';
 
 @freezed
-class CustomField with _$CustomField {
+abstract class CustomField with _$CustomField {
   const factory CustomField({
     required String id,
     required String name,
@@ -14,7 +14,7 @@ class CustomField with _$CustomField {
 }
 
 @unfreezed
-class CustomFieldInput with _$CustomFieldInput {
+abstract class CustomFieldInput with _$CustomFieldInput {
   factory CustomFieldInput({
     String? id,
     @Default('') String name,
@@ -24,5 +24,3 @@ class CustomFieldInput with _$CustomFieldInput {
 
   factory CustomFieldInput.fromJson(Map<String, dynamic> json) => _$CustomFieldInputFromJson(json);
 }
-
-

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,113 +10,76 @@ part of 'references.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Reference _$ReferenceFromJson(Map<String, dynamic> json) {
-  return _Reference.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Reference {
   /// Is the ID.
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// Is the name.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// Is the category.
   @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
-  ReferenceCategory get category => throw _privateConstructorUsedError;
+  ReferenceCategory get category;
 
   /// Is a list of custom fields.
-  List<CustomField>? get customFields => throw _privateConstructorUsedError;
+  List<CustomField>? get customFields;
 
   /// Is the QR code URI.
-  String? get qrCode => throw _privateConstructorUsedError;
+  String? get qrCode;
 
   /// Is the list of granted access
-  List<Access>? get access => throw _privateConstructorUsedError;
+  List<Access>? get access;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ReferenceCopyWith<Reference> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ReferenceCopyWith<$Res> {
-  factory $ReferenceCopyWith(Reference value, $Res Function(Reference) then) =
-      _$ReferenceCopyWithImpl<$Res, Reference>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
-      ReferenceCategory category,
-      List<CustomField>? customFields,
-      String? qrCode,
-      List<Access>? access});
-}
-
-/// @nodoc
-class _$ReferenceCopyWithImpl<$Res, $Val extends Reference>
-    implements $ReferenceCopyWith<$Res> {
-  _$ReferenceCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of Reference
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $ReferenceCopyWith<Reference> get copyWith =>
+      _$ReferenceCopyWithImpl<Reference>(this as Reference, _$identity);
+
+  /// Serializes this Reference to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? category = null,
-    Object? customFields = freezed,
-    Object? qrCode = freezed,
-    Object? access = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as ReferenceCategory,
-      customFields: freezed == customFields
-          ? _value.customFields
-          : customFields // ignore: cast_nullable_to_non_nullable
-              as List<CustomField>?,
-      qrCode: freezed == qrCode
-          ? _value.qrCode
-          : qrCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      access: freezed == access
-          ? _value.access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Reference &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            const DeepCollectionEquality()
+                .equals(other.customFields, customFields) &&
+            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
+            const DeepCollectionEquality().equals(other.access, access));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      category,
+      const DeepCollectionEquality().hash(customFields),
+      qrCode,
+      const DeepCollectionEquality().hash(access));
+
+  @override
+  String toString() {
+    return 'Reference(id: $id, name: $name, category: $category, customFields: $customFields, qrCode: $qrCode, access: $access)';
   }
 }
 
 /// @nodoc
-abstract class _$$ReferenceImplCopyWith<$Res>
-    implements $ReferenceCopyWith<$Res> {
-  factory _$$ReferenceImplCopyWith(
-          _$ReferenceImpl value, $Res Function(_$ReferenceImpl) then) =
-      __$$ReferenceImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ReferenceCopyWith<$Res> {
+  factory $ReferenceCopyWith(Reference value, $Res Function(Reference) _then) =
+      _$ReferenceCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -128,13 +92,14 @@ abstract class _$$ReferenceImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ReferenceImplCopyWithImpl<$Res>
-    extends _$ReferenceCopyWithImpl<$Res, _$ReferenceImpl>
-    implements _$$ReferenceImplCopyWith<$Res> {
-  __$$ReferenceImplCopyWithImpl(
-      _$ReferenceImpl _value, $Res Function(_$ReferenceImpl) _then)
-      : super(_value, _then);
+class _$ReferenceCopyWithImpl<$Res> implements $ReferenceCopyWith<$Res> {
+  _$ReferenceCopyWithImpl(this._self, this._then);
 
+  final Reference _self;
+  final $Res Function(Reference) _then;
+
+  /// Create a copy of Reference
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -145,29 +110,29 @@ class __$$ReferenceImplCopyWithImpl<$Res>
     Object? qrCode = freezed,
     Object? access = freezed,
   }) {
-    return _then(_$ReferenceImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       category: null == category
-          ? _value.category
+          ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as ReferenceCategory,
       customFields: freezed == customFields
-          ? _value._customFields
+          ? _self.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as List<CustomField>?,
       qrCode: freezed == qrCode
-          ? _value.qrCode
+          ? _self.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
       access: freezed == access
-          ? _value._access
+          ? _self.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
     ));
@@ -176,8 +141,8 @@ class __$$ReferenceImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ReferenceImpl implements _Reference {
-  const _$ReferenceImpl(
+class _Reference implements Reference {
+  const _Reference(
       {required this.id,
       required this.name,
       @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
@@ -187,9 +152,8 @@ class _$ReferenceImpl implements _Reference {
       final List<Access>? access})
       : _customFields = customFields,
         _access = access;
-
-  factory _$ReferenceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ReferenceImplFromJson(json);
+  factory _Reference.fromJson(Map<String, dynamic> json) =>
+      _$ReferenceFromJson(json);
 
   /// Is the ID.
   @override
@@ -234,16 +198,26 @@ class _$ReferenceImpl implements _Reference {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of Reference
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Reference(id: $id, name: $name, category: $category, customFields: $customFields, qrCode: $qrCode, access: $access)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ReferenceCopyWith<_Reference> get copyWith =>
+      __$ReferenceCopyWithImpl<_Reference>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ReferenceToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$ReferenceImpl &&
+            other is _Reference &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.category, category) ||
@@ -254,7 +228,7 @@ class _$ReferenceImpl implements _Reference {
             const DeepCollectionEquality().equals(other._access, _access));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -265,163 +239,128 @@ class _$ReferenceImpl implements _Reference {
       qrCode,
       const DeepCollectionEquality().hash(_access));
 
-  @JsonKey(ignore: true)
   @override
-  @pragma('vm:prefer-inline')
-  _$$ReferenceImplCopyWith<_$ReferenceImpl> get copyWith =>
-      __$$ReferenceImplCopyWithImpl<_$ReferenceImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ReferenceImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Reference(id: $id, name: $name, category: $category, customFields: $customFields, qrCode: $qrCode, access: $access)';
   }
 }
 
-abstract class _Reference implements Reference {
-  const factory _Reference(
-      {required final String id,
-      required final String name,
+/// @nodoc
+abstract mixin class _$ReferenceCopyWith<$Res>
+    implements $ReferenceCopyWith<$Res> {
+  factory _$ReferenceCopyWith(
+          _Reference value, $Res Function(_Reference) _then) =
+      __$ReferenceCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
       @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
-      final ReferenceCategory category,
-      final List<CustomField>? customFields,
-      final String? qrCode,
-      final List<Access>? access}) = _$ReferenceImpl;
-
-  factory _Reference.fromJson(Map<String, dynamic> json) =
-      _$ReferenceImpl.fromJson;
-
-  @override
-
-  /// Is the ID.
-  String get id;
-  @override
-
-  /// Is the name.
-  String get name;
-  @override
-
-  /// Is the category.
-  @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
-  ReferenceCategory get category;
-  @override
-
-  /// Is a list of custom fields.
-  List<CustomField>? get customFields;
-  @override
-
-  /// Is the QR code URI.
-  String? get qrCode;
-  @override
-
-  /// Is the list of granted access
-  List<Access>? get access;
-  @override
-  @JsonKey(ignore: true)
-  _$$ReferenceImplCopyWith<_$ReferenceImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+      ReferenceCategory category,
+      List<CustomField>? customFields,
+      String? qrCode,
+      List<Access>? access});
 }
 
-ReferenceInput _$ReferenceInputFromJson(Map<String, dynamic> json) {
-  return _ReferenceInput.fromJson(json);
+/// @nodoc
+class __$ReferenceCopyWithImpl<$Res> implements _$ReferenceCopyWith<$Res> {
+  __$ReferenceCopyWithImpl(this._self, this._then);
+
+  final _Reference _self;
+  final $Res Function(_Reference) _then;
+
+  /// Create a copy of Reference
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? category = null,
+    Object? customFields = freezed,
+    Object? qrCode = freezed,
+    Object? access = freezed,
+  }) {
+    return _then(_Reference(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      category: null == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as ReferenceCategory,
+      customFields: freezed == customFields
+          ? _self._customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as List<CustomField>?,
+      qrCode: freezed == qrCode
+          ? _self.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      access: freezed == access
+          ? _self._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$ReferenceInput {
   /// Is the ID.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// Is the ID.
-  set id(String? value) => throw _privateConstructorUsedError;
+  set id(String? value);
 
   /// Is the name.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// Is the name.
-  set name(String value) => throw _privateConstructorUsedError;
+  set name(String value);
 
   /// Is the category.
   @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
-  ReferenceCategory get category => throw _privateConstructorUsedError;
+  ReferenceCategory get category;
 
   /// Is the category.
   @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
-  set category(ReferenceCategory value) => throw _privateConstructorUsedError;
+  set category(ReferenceCategory value);
 
   /// Is a list of custom fields.
-  List<CustomFieldInput> get customFields => throw _privateConstructorUsedError;
+  List<CustomFieldInput> get customFields;
 
   /// Is a list of custom fields.
-  set customFields(List<CustomFieldInput> value) =>
-      throw _privateConstructorUsedError;
+  set customFields(List<CustomFieldInput> value);
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  $ReferenceInputCopyWith<ReferenceInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $ReferenceInputCopyWith<$Res> {
-  factory $ReferenceInputCopyWith(
-          ReferenceInput value, $Res Function(ReferenceInput) then) =
-      _$ReferenceInputCopyWithImpl<$Res, ReferenceInput>;
-  @useResult
-  $Res call(
-      {String? id,
-      String name,
-      @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
-      ReferenceCategory category,
-      List<CustomFieldInput> customFields});
-}
-
-/// @nodoc
-class _$ReferenceInputCopyWithImpl<$Res, $Val extends ReferenceInput>
-    implements $ReferenceInputCopyWith<$Res> {
-  _$ReferenceInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
+  /// Create a copy of ReferenceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
+  $ReferenceInputCopyWith<ReferenceInput> get copyWith =>
+      _$ReferenceInputCopyWithImpl<ReferenceInput>(
+          this as ReferenceInput, _$identity);
+
+  /// Serializes this ReferenceInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = null,
-    Object? category = null,
-    Object? customFields = null,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as ReferenceCategory,
-      customFields: null == customFields
-          ? _value.customFields
-          : customFields // ignore: cast_nullable_to_non_nullable
-              as List<CustomFieldInput>,
-    ) as $Val);
+  String toString() {
+    return 'ReferenceInput(id: $id, name: $name, category: $category, customFields: $customFields)';
   }
 }
 
 /// @nodoc
-abstract class _$$ReferenceInputImplCopyWith<$Res>
-    implements $ReferenceInputCopyWith<$Res> {
-  factory _$$ReferenceInputImplCopyWith(_$ReferenceInputImpl value,
-          $Res Function(_$ReferenceInputImpl) then) =
-      __$$ReferenceInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $ReferenceInputCopyWith<$Res> {
+  factory $ReferenceInputCopyWith(
+          ReferenceInput value, $Res Function(ReferenceInput) _then) =
+      _$ReferenceInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -432,13 +371,15 @@ abstract class _$$ReferenceInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$ReferenceInputImplCopyWithImpl<$Res>
-    extends _$ReferenceInputCopyWithImpl<$Res, _$ReferenceInputImpl>
-    implements _$$ReferenceInputImplCopyWith<$Res> {
-  __$$ReferenceInputImplCopyWithImpl(
-      _$ReferenceInputImpl _value, $Res Function(_$ReferenceInputImpl) _then)
-      : super(_value, _then);
+class _$ReferenceInputCopyWithImpl<$Res>
+    implements $ReferenceInputCopyWith<$Res> {
+  _$ReferenceInputCopyWithImpl(this._self, this._then);
 
+  final ReferenceInput _self;
+  final $Res Function(ReferenceInput) _then;
+
+  /// Create a copy of ReferenceInput
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -447,21 +388,21 @@ class __$$ReferenceInputImplCopyWithImpl<$Res>
     Object? category = null,
     Object? customFields = null,
   }) {
-    return _then(_$ReferenceInputImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       category: null == category
-          ? _value.category
+          ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as ReferenceCategory,
       customFields: null == customFields
-          ? _value.customFields
+          ? _self.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as List<CustomFieldInput>,
     ));
@@ -470,17 +411,16 @@ class __$$ReferenceInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$ReferenceInputImpl extends _ReferenceInput {
-  _$ReferenceInputImpl(
+class _ReferenceInput extends ReferenceInput {
+  _ReferenceInput(
       {this.id,
       this.name = '',
       @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
       this.category = ReferenceCategory.universal,
       this.customFields = const []})
       : super._();
-
-  factory _$ReferenceInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ReferenceInputImplFromJson(json);
+  factory _ReferenceInput.fromJson(Map<String, dynamic> json) =>
+      _$ReferenceInputFromJson(json);
 
   /// Is the ID.
   @override
@@ -501,70 +441,80 @@ class _$ReferenceInputImpl extends _ReferenceInput {
   @JsonKey()
   List<CustomFieldInput> customFields;
 
+  /// Create a copy of ReferenceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ReferenceInputCopyWith<_ReferenceInput> get copyWith =>
+      __$ReferenceInputCopyWithImpl<_ReferenceInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ReferenceInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'ReferenceInput(id: $id, name: $name, category: $category, customFields: $customFields)';
   }
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$ReferenceInputImplCopyWith<_$ReferenceInputImpl> get copyWith =>
-      __$$ReferenceInputImplCopyWithImpl<_$ReferenceInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ReferenceInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _ReferenceInput extends ReferenceInput {
-  factory _ReferenceInput(
+/// @nodoc
+abstract mixin class _$ReferenceInputCopyWith<$Res>
+    implements $ReferenceInputCopyWith<$Res> {
+  factory _$ReferenceInputCopyWith(
+          _ReferenceInput value, $Res Function(_ReferenceInput) _then) =
+      __$ReferenceInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? id,
       String name,
       @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
       ReferenceCategory category,
-      List<CustomFieldInput> customFields}) = _$ReferenceInputImpl;
-  _ReferenceInput._() : super._();
-
-  factory _ReferenceInput.fromJson(Map<String, dynamic> json) =
-      _$ReferenceInputImpl.fromJson;
-
-  @override
-
-  /// Is the ID.
-  String? get id;
-
-  /// Is the ID.
-  set id(String? value);
-  @override
-
-  /// Is the name.
-  String get name;
-
-  /// Is the name.
-  set name(String value);
-  @override
-
-  /// Is the category.
-  @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
-  ReferenceCategory get category;
-
-  /// Is the category.
-  @JsonKey(unknownEnumValue: ReferenceCategory.unknown)
-  set category(ReferenceCategory value);
-  @override
-
-  /// Is a list of custom fields.
-  List<CustomFieldInput> get customFields;
-
-  /// Is a list of custom fields.
-  set customFields(List<CustomFieldInput> value);
-  @override
-  @JsonKey(ignore: true)
-  _$$ReferenceInputImplCopyWith<_$ReferenceInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+      List<CustomFieldInput> customFields});
 }
+
+/// @nodoc
+class __$ReferenceInputCopyWithImpl<$Res>
+    implements _$ReferenceInputCopyWith<$Res> {
+  __$ReferenceInputCopyWithImpl(this._self, this._then);
+
+  final _ReferenceInput _self;
+  final $Res Function(_ReferenceInput) _then;
+
+  /// Create a copy of ReferenceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? category = null,
+    Object? customFields = null,
+  }) {
+    return _then(_ReferenceInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      category: null == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as ReferenceCategory,
+      customFields: null == customFields
+          ? _self.customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as List<CustomFieldInput>,
+    ));
+  }
+}
+
+// dart format on

@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,107 +10,71 @@ part of 'simulation.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-SimulationCycle _$SimulationCycleFromJson(Map<String, dynamic> json) {
-  return _SimulationCycle.fromJson(json);
-}
 
 /// @nodoc
 mixin _$SimulationCycle {
   /// [id] is the unique identifier of the cycle
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// [name] is the name of the cycle
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// [steps] is the number of steps of the cycle
-  int get steps => throw _privateConstructorUsedError;
+  int get steps;
 
   /// [fileUri] is the URI of the file that contains the cycle
-  String? get fileUri => throw _privateConstructorUsedError;
-
-  /// Serializes this SimulationCycle to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get fileUri;
 
   /// Create a copy of SimulationCycle
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $SimulationCycleCopyWith<SimulationCycle> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SimulationCycleCopyWith<$Res> {
-  factory $SimulationCycleCopyWith(
-          SimulationCycle value, $Res Function(SimulationCycle) then) =
-      _$SimulationCycleCopyWithImpl<$Res, SimulationCycle>;
-  @useResult
-  $Res call({String id, String name, int steps, String? fileUri});
-}
-
-/// @nodoc
-class _$SimulationCycleCopyWithImpl<$Res, $Val extends SimulationCycle>
-    implements $SimulationCycleCopyWith<$Res> {
-  _$SimulationCycleCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of SimulationCycle
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $SimulationCycleCopyWith<SimulationCycle> get copyWith =>
+      _$SimulationCycleCopyWithImpl<SimulationCycle>(
+          this as SimulationCycle, _$identity);
+
+  /// Serializes this SimulationCycle to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? steps = null,
-    Object? fileUri = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      steps: null == steps
-          ? _value.steps
-          : steps // ignore: cast_nullable_to_non_nullable
-              as int,
-      fileUri: freezed == fileUri
-          ? _value.fileUri
-          : fileUri // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SimulationCycle &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.steps, steps) || other.steps == steps) &&
+            (identical(other.fileUri, fileUri) || other.fileUri == fileUri));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, steps, fileUri);
+
+  @override
+  String toString() {
+    return 'SimulationCycle(id: $id, name: $name, steps: $steps, fileUri: $fileUri)';
   }
 }
 
 /// @nodoc
-abstract class _$$SimulationCycleImplCopyWith<$Res>
-    implements $SimulationCycleCopyWith<$Res> {
-  factory _$$SimulationCycleImplCopyWith(_$SimulationCycleImpl value,
-          $Res Function(_$SimulationCycleImpl) then) =
-      __$$SimulationCycleImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $SimulationCycleCopyWith<$Res> {
+  factory $SimulationCycleCopyWith(
+          SimulationCycle value, $Res Function(SimulationCycle) _then) =
+      _$SimulationCycleCopyWithImpl;
   @useResult
   $Res call({String id, String name, int steps, String? fileUri});
 }
 
 /// @nodoc
-class __$$SimulationCycleImplCopyWithImpl<$Res>
-    extends _$SimulationCycleCopyWithImpl<$Res, _$SimulationCycleImpl>
-    implements _$$SimulationCycleImplCopyWith<$Res> {
-  __$$SimulationCycleImplCopyWithImpl(
-      _$SimulationCycleImpl _value, $Res Function(_$SimulationCycleImpl) _then)
-      : super(_value, _then);
+class _$SimulationCycleCopyWithImpl<$Res>
+    implements $SimulationCycleCopyWith<$Res> {
+  _$SimulationCycleCopyWithImpl(this._self, this._then);
+
+  final SimulationCycle _self;
+  final $Res Function(SimulationCycle) _then;
 
   /// Create a copy of SimulationCycle
   /// with the given fields replaced by the non-null parameter values.
@@ -121,21 +86,21 @@ class __$$SimulationCycleImplCopyWithImpl<$Res>
     Object? steps = null,
     Object? fileUri = freezed,
   }) {
-    return _then(_$SimulationCycleImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       steps: null == steps
-          ? _value.steps
+          ? _self.steps
           : steps // ignore: cast_nullable_to_non_nullable
               as int,
       fileUri: freezed == fileUri
-          ? _value.fileUri
+          ? _self.fileUri
           : fileUri // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -144,15 +109,14 @@ class __$$SimulationCycleImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$SimulationCycleImpl implements _SimulationCycle {
-  const _$SimulationCycleImpl(
+class _SimulationCycle implements SimulationCycle {
+  const _SimulationCycle(
       {required this.id,
       required this.name,
       required this.steps,
       this.fileUri});
-
-  factory _$SimulationCycleImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SimulationCycleImplFromJson(json);
+  factory _SimulationCycle.fromJson(Map<String, dynamic> json) =>
+      _$SimulationCycleFromJson(json);
 
   /// [id] is the unique identifier of the cycle
   @override
@@ -170,16 +134,26 @@ class _$SimulationCycleImpl implements _SimulationCycle {
   @override
   final String? fileUri;
 
+  /// Create a copy of SimulationCycle
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SimulationCycle(id: $id, name: $name, steps: $steps, fileUri: $fileUri)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SimulationCycleCopyWith<_SimulationCycle> get copyWith =>
+      __$SimulationCycleCopyWithImpl<_SimulationCycle>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SimulationCycleToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SimulationCycleImpl &&
+            other is _SimulationCycle &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.steps, steps) || other.steps == steps) &&
@@ -190,53 +164,60 @@ class _$SimulationCycleImpl implements _SimulationCycle {
   @override
   int get hashCode => Object.hash(runtimeType, id, name, steps, fileUri);
 
-  /// Create a copy of SimulationCycle
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SimulationCycleImplCopyWith<_$SimulationCycleImpl> get copyWith =>
-      __$$SimulationCycleImplCopyWithImpl<_$SimulationCycleImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SimulationCycleImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SimulationCycle(id: $id, name: $name, steps: $steps, fileUri: $fileUri)';
   }
 }
 
-abstract class _SimulationCycle implements SimulationCycle {
-  const factory _SimulationCycle(
-      {required final String id,
-      required final String name,
-      required final int steps,
-      final String? fileUri}) = _$SimulationCycleImpl;
-
-  factory _SimulationCycle.fromJson(Map<String, dynamic> json) =
-      _$SimulationCycleImpl.fromJson;
-
-  /// [id] is the unique identifier of the cycle
+/// @nodoc
+abstract mixin class _$SimulationCycleCopyWith<$Res>
+    implements $SimulationCycleCopyWith<$Res> {
+  factory _$SimulationCycleCopyWith(
+          _SimulationCycle value, $Res Function(_SimulationCycle) _then) =
+      __$SimulationCycleCopyWithImpl;
   @override
-  String get id;
+  @useResult
+  $Res call({String id, String name, int steps, String? fileUri});
+}
 
-  /// [name] is the name of the cycle
-  @override
-  String get name;
+/// @nodoc
+class __$SimulationCycleCopyWithImpl<$Res>
+    implements _$SimulationCycleCopyWith<$Res> {
+  __$SimulationCycleCopyWithImpl(this._self, this._then);
 
-  /// [steps] is the number of steps of the cycle
-  @override
-  int get steps;
-
-  /// [fileUri] is the URI of the file that contains the cycle
-  @override
-  String? get fileUri;
+  final _SimulationCycle _self;
+  final $Res Function(_SimulationCycle) _then;
 
   /// Create a copy of SimulationCycle
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SimulationCycleImplCopyWith<_$SimulationCycleImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? steps = null,
+    Object? fileUri = freezed,
+  }) {
+    return _then(_SimulationCycle(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      steps: null == steps
+          ? _self.steps
+          : steps // ignore: cast_nullable_to_non_nullable
+              as int,
+      fileUri: freezed == fileUri
+          ? _self.fileUri
+          : fileUri // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
+
+// dart format on

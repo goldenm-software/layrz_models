@@ -1,7 +1,7 @@
 part of '../vision.dart';
 
 @freezed
-class VisionProtocol with _$VisionProtocol {
+abstract class VisionProtocol with _$VisionProtocol {
   /// [VisionProtocol] is the entity that defines the structure of the configuration of the vision profile service.
   const factory VisionProtocol({
     /// [id] is the ID of the entity. This ID is unique.
