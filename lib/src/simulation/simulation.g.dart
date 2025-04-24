@@ -6,15 +6,17 @@ part of 'simulation.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SimulationCycle _$SimulationCycleFromJson(Map<String, dynamic> json) =>
-    _SimulationCycle(
+_$SimulationCycleImpl _$$SimulationCycleImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SimulationCycleImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       steps: (json['steps'] as num).toInt(),
       fileUri: json['fileUri'] as String?,
     );
 
-Map<String, dynamic> _$SimulationCycleToJson(_SimulationCycle instance) =>
+Map<String, dynamic> _$$SimulationCycleImplToJson(
+        _$SimulationCycleImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

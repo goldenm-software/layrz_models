@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,86 +9,59 @@ part of 'sdm.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+SdmPen _$SdmPenFromJson(Map<String, dynamic> json) {
+  return _SdmPen.fromJson(json);
+}
 
 /// @nodoc
 mixin _$SdmPen {
   /// [id] of the pen entity. This ID is unique.
-  String get id;
+  String get id => throw _privateConstructorUsedError;
 
   /// [name] of the pen.
-  String get name;
+  String get name => throw _privateConstructorUsedError;
 
   /// [code] of the pen.
-  String get code;
+  String get code => throw _privateConstructorUsedError;
 
   /// [sourceId] is the device id of the pen.
-  String? get sourceId;
+  String? get sourceId => throw _privateConstructorUsedError;
 
   /// [source] is the device of the pen.
-  Device? get source;
+  Device? get source => throw _privateConstructorUsedError;
 
   /// [createdAt] is the creation date of the pen.
   @TimestampOrNullConverter()
-  DateTime? get createdAt;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
 
   /// [createdBy] is the user id who created the pen.
-  User? get createdBy;
+  User? get createdBy => throw _privateConstructorUsedError;
 
   /// [updatedAt] is the last update date of the pen.
   @TimestampOrNullConverter()
-  DateTime? get updatedAt;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   /// [updatedBy] is the user id who updated the pen.
-  User? get updatedBy;
+  User? get updatedBy => throw _privateConstructorUsedError;
+
+  /// Serializes this SdmPen to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of SdmPen
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $SdmPenCopyWith<SdmPen> get copyWith =>
-      _$SdmPenCopyWithImpl<SdmPen>(this as SdmPen, _$identity);
-
-  /// Serializes this SdmPen to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SdmPen &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.sourceId, sourceId) ||
-                other.sourceId == sourceId) &&
-            (identical(other.source, source) || other.source == source) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.createdBy, createdBy) ||
-                other.createdBy == createdBy) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.updatedBy, updatedBy) ||
-                other.updatedBy == updatedBy));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name, code, sourceId, source,
-      createdAt, createdBy, updatedAt, updatedBy);
-
-  @override
-  String toString() {
-    return 'SdmPen(id: $id, name: $name, code: $code, sourceId: $sourceId, source: $source, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
-  }
+  $SdmPenCopyWith<SdmPen> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SdmPenCopyWith<$Res> {
-  factory $SdmPenCopyWith(SdmPen value, $Res Function(SdmPen) _then) =
-      _$SdmPenCopyWithImpl;
+abstract class $SdmPenCopyWith<$Res> {
+  factory $SdmPenCopyWith(SdmPen value, $Res Function(SdmPen) then) =
+      _$SdmPenCopyWithImpl<$Res, SdmPen>;
   @useResult
   $Res call(
       {String id,
@@ -108,11 +80,14 @@ abstract mixin class $SdmPenCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SdmPenCopyWithImpl<$Res> implements $SdmPenCopyWith<$Res> {
-  _$SdmPenCopyWithImpl(this._self, this._then);
+class _$SdmPenCopyWithImpl<$Res, $Val extends SdmPen>
+    implements $SdmPenCopyWith<$Res> {
+  _$SdmPenCopyWithImpl(this._value, this._then);
 
-  final SdmPen _self;
-  final $Res Function(SdmPen) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of SdmPen
   /// with the given fields replaced by the non-null parameter values.
@@ -129,44 +104,44 @@ class _$SdmPenCopyWithImpl<$Res> implements $SdmPenCopyWith<$Res> {
     Object? updatedAt = freezed,
     Object? updatedBy = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       code: null == code
-          ? _self.code
+          ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
       sourceId: freezed == sourceId
-          ? _self.sourceId
+          ? _value.sourceId
           : sourceId // ignore: cast_nullable_to_non_nullable
               as String?,
       source: freezed == source
-          ? _self.source
+          ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as Device?,
       createdAt: freezed == createdAt
-          ? _self.createdAt
+          ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdBy: freezed == createdBy
-          ? _self.createdBy
+          ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as User?,
       updatedAt: freezed == updatedAt
-          ? _self.updatedAt
+          ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       updatedBy: freezed == updatedBy
-          ? _self.updatedBy
+          ? _value.updatedBy
           : updatedBy // ignore: cast_nullable_to_non_nullable
               as User?,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of SdmPen
@@ -174,12 +149,12 @@ class _$SdmPenCopyWithImpl<$Res> implements $SdmPenCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $DeviceCopyWith<$Res>? get source {
-    if (_self.source == null) {
+    if (_value.source == null) {
       return null;
     }
 
-    return $DeviceCopyWith<$Res>(_self.source!, (value) {
-      return _then(_self.copyWith(source: value));
+    return $DeviceCopyWith<$Res>(_value.source!, (value) {
+      return _then(_value.copyWith(source: value) as $Val);
     });
   }
 
@@ -188,12 +163,12 @@ class _$SdmPenCopyWithImpl<$Res> implements $SdmPenCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get createdBy {
-    if (_self.createdBy == null) {
+    if (_value.createdBy == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_self.createdBy!, (value) {
-      return _then(_self.copyWith(createdBy: value));
+    return $UserCopyWith<$Res>(_value.createdBy!, (value) {
+      return _then(_value.copyWith(createdBy: value) as $Val);
     });
   }
 
@@ -202,20 +177,110 @@ class _$SdmPenCopyWithImpl<$Res> implements $SdmPenCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get updatedBy {
-    if (_self.updatedBy == null) {
+    if (_value.updatedBy == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_self.updatedBy!, (value) {
-      return _then(_self.copyWith(updatedBy: value));
+    return $UserCopyWith<$Res>(_value.updatedBy!, (value) {
+      return _then(_value.copyWith(updatedBy: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$SdmPenImplCopyWith<$Res> implements $SdmPenCopyWith<$Res> {
+  factory _$$SdmPenImplCopyWith(
+          _$SdmPenImpl value, $Res Function(_$SdmPenImpl) then) =
+      __$$SdmPenImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String code,
+      String? sourceId,
+      Device? source,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      User? createdBy,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      User? updatedBy});
+
+  @override
+  $DeviceCopyWith<$Res>? get source;
+  @override
+  $UserCopyWith<$Res>? get createdBy;
+  @override
+  $UserCopyWith<$Res>? get updatedBy;
+}
+
+/// @nodoc
+class __$$SdmPenImplCopyWithImpl<$Res>
+    extends _$SdmPenCopyWithImpl<$Res, _$SdmPenImpl>
+    implements _$$SdmPenImplCopyWith<$Res> {
+  __$$SdmPenImplCopyWithImpl(
+      _$SdmPenImpl _value, $Res Function(_$SdmPenImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SdmPen
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? code = null,
+    Object? sourceId = freezed,
+    Object? source = freezed,
+    Object? createdAt = freezed,
+    Object? createdBy = freezed,
+    Object? updatedAt = freezed,
+    Object? updatedBy = freezed,
+  }) {
+    return _then(_$SdmPenImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      sourceId: freezed == sourceId
+          ? _value.sourceId
+          : sourceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      source: freezed == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as Device?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBy: freezed == createdBy
+          ? _value.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedBy: freezed == updatedBy
+          ? _value.updatedBy
+          : updatedBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _SdmPen implements SdmPen {
-  const _SdmPen(
+class _$SdmPenImpl implements _SdmPen {
+  const _$SdmPenImpl(
       {required this.id,
       required this.name,
       required this.code,
@@ -225,7 +290,9 @@ class _SdmPen implements SdmPen {
       this.createdBy,
       @TimestampOrNullConverter() this.updatedAt,
       this.updatedBy});
-  factory _SdmPen.fromJson(Map<String, dynamic> json) => _$SdmPenFromJson(json);
+
+  factory _$SdmPenImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SdmPenImplFromJson(json);
 
   /// [id] of the pen entity. This ID is unique.
   @override
@@ -265,26 +332,16 @@ class _SdmPen implements SdmPen {
   @override
   final User? updatedBy;
 
-  /// Create a copy of SdmPen
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SdmPenCopyWith<_SdmPen> get copyWith =>
-      __$SdmPenCopyWithImpl<_SdmPen>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SdmPenToJson(
-      this,
-    );
+  String toString() {
+    return 'SdmPen(id: $id, name: $name, code: $code, sourceId: $sourceId, source: $source, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SdmPen &&
+            other is _$SdmPenImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
@@ -306,240 +363,137 @@ class _SdmPen implements SdmPen {
   int get hashCode => Object.hash(runtimeType, id, name, code, sourceId, source,
       createdAt, createdBy, updatedAt, updatedBy);
 
+  /// Create a copy of SdmPen
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'SdmPen(id: $id, name: $name, code: $code, sourceId: $sourceId, source: $source, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
+  @pragma('vm:prefer-inline')
+  _$$SdmPenImplCopyWith<_$SdmPenImpl> get copyWith =>
+      __$$SdmPenImplCopyWithImpl<_$SdmPenImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SdmPenImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$SdmPenCopyWith<$Res> implements $SdmPenCopyWith<$Res> {
-  factory _$SdmPenCopyWith(_SdmPen value, $Res Function(_SdmPen) _then) =
-      __$SdmPenCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String code,
-      String? sourceId,
-      Device? source,
-      @TimestampOrNullConverter() DateTime? createdAt,
-      User? createdBy,
-      @TimestampOrNullConverter() DateTime? updatedAt,
-      User? updatedBy});
+abstract class _SdmPen implements SdmPen {
+  const factory _SdmPen(
+      {required final String id,
+      required final String name,
+      required final String code,
+      final String? sourceId,
+      final Device? source,
+      @TimestampOrNullConverter() final DateTime? createdAt,
+      final User? createdBy,
+      @TimestampOrNullConverter() final DateTime? updatedAt,
+      final User? updatedBy}) = _$SdmPenImpl;
 
+  factory _SdmPen.fromJson(Map<String, dynamic> json) = _$SdmPenImpl.fromJson;
+
+  /// [id] of the pen entity. This ID is unique.
   @override
-  $DeviceCopyWith<$Res>? get source;
+  String get id;
+
+  /// [name] of the pen.
   @override
-  $UserCopyWith<$Res>? get createdBy;
+  String get name;
+
+  /// [code] of the pen.
   @override
-  $UserCopyWith<$Res>? get updatedBy;
+  String get code;
+
+  /// [sourceId] is the device id of the pen.
+  @override
+  String? get sourceId;
+
+  /// [source] is the device of the pen.
+  @override
+  Device? get source;
+
+  /// [createdAt] is the creation date of the pen.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+
+  /// [createdBy] is the user id who created the pen.
+  @override
+  User? get createdBy;
+
+  /// [updatedAt] is the last update date of the pen.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt;
+
+  /// [updatedBy] is the user id who updated the pen.
+  @override
+  User? get updatedBy;
+
+  /// Create a copy of SdmPen
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SdmPenImplCopyWith<_$SdmPenImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-/// @nodoc
-class __$SdmPenCopyWithImpl<$Res> implements _$SdmPenCopyWith<$Res> {
-  __$SdmPenCopyWithImpl(this._self, this._then);
-
-  final _SdmPen _self;
-  final $Res Function(_SdmPen) _then;
-
-  /// Create a copy of SdmPen
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? code = null,
-    Object? sourceId = freezed,
-    Object? source = freezed,
-    Object? createdAt = freezed,
-    Object? createdBy = freezed,
-    Object? updatedAt = freezed,
-    Object? updatedBy = freezed,
-  }) {
-    return _then(_SdmPen(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _self.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      sourceId: freezed == sourceId
-          ? _self.sourceId
-          : sourceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      source: freezed == source
-          ? _self.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as Device?,
-      createdAt: freezed == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBy: freezed == createdBy
-          ? _self.createdBy
-          : createdBy // ignore: cast_nullable_to_non_nullable
-              as User?,
-      updatedAt: freezed == updatedAt
-          ? _self.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      updatedBy: freezed == updatedBy
-          ? _self.updatedBy
-          : updatedBy // ignore: cast_nullable_to_non_nullable
-              as User?,
-    ));
-  }
-
-  /// Create a copy of SdmPen
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DeviceCopyWith<$Res>? get source {
-    if (_self.source == null) {
-      return null;
-    }
-
-    return $DeviceCopyWith<$Res>(_self.source!, (value) {
-      return _then(_self.copyWith(source: value));
-    });
-  }
-
-  /// Create a copy of SdmPen
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get createdBy {
-    if (_self.createdBy == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_self.createdBy!, (value) {
-      return _then(_self.copyWith(createdBy: value));
-    });
-  }
-
-  /// Create a copy of SdmPen
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get updatedBy {
-    if (_self.updatedBy == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_self.updatedBy!, (value) {
-      return _then(_self.copyWith(updatedBy: value));
-    });
-  }
+SdmRecipe _$SdmRecipeFromJson(Map<String, dynamic> json) {
+  return _SdmRecipe.fromJson(json);
 }
 
 /// @nodoc
 mixin _$SdmRecipe {
   /// [id] of the pen entity. This ID is unique.
-  String get id;
+  String get id => throw _privateConstructorUsedError;
 
   /// [name] of the pen.
-  String get name;
+  String get name => throw _privateConstructorUsedError;
 
   /// [code] of the pen.
-  String get code;
+  String get code => throw _privateConstructorUsedError;
 
   /// [sourceId] is the device id of the pen.
-  String? get sourceId;
+  String? get sourceId => throw _privateConstructorUsedError;
 
   /// [source] is the device of the pen.
-  Device? get source;
+  Device? get source => throw _privateConstructorUsedError;
 
   /// [createdAt] is the creation date of the pen.
   @TimestampOrNullConverter()
-  DateTime? get createdAt;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
 
   /// [createdBy] is the user id who created the pen.
-  User? get createdBy;
+  User? get createdBy => throw _privateConstructorUsedError;
 
   /// [updatedAt] is the last update date of the pen.
   @TimestampOrNullConverter()
-  DateTime? get updatedAt;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   /// [updatedBy] is the user id who updated the pen.
-  User? get updatedBy;
+  User? get updatedBy => throw _privateConstructorUsedError;
 
   /// [ingredients] is the list of ingredients of the recipe.
-  List<SdmIngredient>? get ingredients;
+  List<SdmIngredient>? get ingredients => throw _privateConstructorUsedError;
 
   /// [ingredientsIds] is the list of ingredients ids of the recipe.
-  List<String>? get ingredientsIds;
+  List<String>? get ingredientsIds => throw _privateConstructorUsedError;
+
+  /// Serializes this SdmRecipe to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of SdmRecipe
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $SdmRecipeCopyWith<SdmRecipe> get copyWith =>
-      _$SdmRecipeCopyWithImpl<SdmRecipe>(this as SdmRecipe, _$identity);
-
-  /// Serializes this SdmRecipe to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SdmRecipe &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.sourceId, sourceId) ||
-                other.sourceId == sourceId) &&
-            (identical(other.source, source) || other.source == source) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.createdBy, createdBy) ||
-                other.createdBy == createdBy) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.updatedBy, updatedBy) ||
-                other.updatedBy == updatedBy) &&
-            const DeepCollectionEquality()
-                .equals(other.ingredients, ingredients) &&
-            const DeepCollectionEquality()
-                .equals(other.ingredientsIds, ingredientsIds));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      code,
-      sourceId,
-      source,
-      createdAt,
-      createdBy,
-      updatedAt,
-      updatedBy,
-      const DeepCollectionEquality().hash(ingredients),
-      const DeepCollectionEquality().hash(ingredientsIds));
-
-  @override
-  String toString() {
-    return 'SdmRecipe(id: $id, name: $name, code: $code, sourceId: $sourceId, source: $source, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, ingredients: $ingredients, ingredientsIds: $ingredientsIds)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SdmRecipeCopyWith<$Res> {
-  factory $SdmRecipeCopyWith(SdmRecipe value, $Res Function(SdmRecipe) _then) =
-      _$SdmRecipeCopyWithImpl;
+abstract class $SdmRecipeCopyWith<$Res> {
+  factory $SdmRecipeCopyWith(SdmRecipe value, $Res Function(SdmRecipe) then) =
+      _$SdmRecipeCopyWithImpl<$Res, SdmRecipe>;
   @useResult
   $Res call(
       {String id,
@@ -560,11 +514,14 @@ abstract mixin class $SdmRecipeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SdmRecipeCopyWithImpl<$Res> implements $SdmRecipeCopyWith<$Res> {
-  _$SdmRecipeCopyWithImpl(this._self, this._then);
+class _$SdmRecipeCopyWithImpl<$Res, $Val extends SdmRecipe>
+    implements $SdmRecipeCopyWith<$Res> {
+  _$SdmRecipeCopyWithImpl(this._value, this._then);
 
-  final SdmRecipe _self;
-  final $Res Function(SdmRecipe) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of SdmRecipe
   /// with the given fields replaced by the non-null parameter values.
@@ -583,52 +540,52 @@ class _$SdmRecipeCopyWithImpl<$Res> implements $SdmRecipeCopyWith<$Res> {
     Object? ingredients = freezed,
     Object? ingredientsIds = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       code: null == code
-          ? _self.code
+          ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
       sourceId: freezed == sourceId
-          ? _self.sourceId
+          ? _value.sourceId
           : sourceId // ignore: cast_nullable_to_non_nullable
               as String?,
       source: freezed == source
-          ? _self.source
+          ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as Device?,
       createdAt: freezed == createdAt
-          ? _self.createdAt
+          ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdBy: freezed == createdBy
-          ? _self.createdBy
+          ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as User?,
       updatedAt: freezed == updatedAt
-          ? _self.updatedAt
+          ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       updatedBy: freezed == updatedBy
-          ? _self.updatedBy
+          ? _value.updatedBy
           : updatedBy // ignore: cast_nullable_to_non_nullable
               as User?,
       ingredients: freezed == ingredients
-          ? _self.ingredients
+          ? _value.ingredients
           : ingredients // ignore: cast_nullable_to_non_nullable
               as List<SdmIngredient>?,
       ingredientsIds: freezed == ingredientsIds
-          ? _self.ingredientsIds
+          ? _value.ingredientsIds
           : ingredientsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of SdmRecipe
@@ -636,12 +593,12 @@ class _$SdmRecipeCopyWithImpl<$Res> implements $SdmRecipeCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $DeviceCopyWith<$Res>? get source {
-    if (_self.source == null) {
+    if (_value.source == null) {
       return null;
     }
 
-    return $DeviceCopyWith<$Res>(_self.source!, (value) {
-      return _then(_self.copyWith(source: value));
+    return $DeviceCopyWith<$Res>(_value.source!, (value) {
+      return _then(_value.copyWith(source: value) as $Val);
     });
   }
 
@@ -650,12 +607,12 @@ class _$SdmRecipeCopyWithImpl<$Res> implements $SdmRecipeCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get createdBy {
-    if (_self.createdBy == null) {
+    if (_value.createdBy == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_self.createdBy!, (value) {
-      return _then(_self.copyWith(createdBy: value));
+    return $UserCopyWith<$Res>(_value.createdBy!, (value) {
+      return _then(_value.copyWith(createdBy: value) as $Val);
     });
   }
 
@@ -664,20 +621,123 @@ class _$SdmRecipeCopyWithImpl<$Res> implements $SdmRecipeCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get updatedBy {
-    if (_self.updatedBy == null) {
+    if (_value.updatedBy == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_self.updatedBy!, (value) {
-      return _then(_self.copyWith(updatedBy: value));
+    return $UserCopyWith<$Res>(_value.updatedBy!, (value) {
+      return _then(_value.copyWith(updatedBy: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$SdmRecipeImplCopyWith<$Res>
+    implements $SdmRecipeCopyWith<$Res> {
+  factory _$$SdmRecipeImplCopyWith(
+          _$SdmRecipeImpl value, $Res Function(_$SdmRecipeImpl) then) =
+      __$$SdmRecipeImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String code,
+      String? sourceId,
+      Device? source,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      User? createdBy,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      User? updatedBy,
+      List<SdmIngredient>? ingredients,
+      List<String>? ingredientsIds});
+
+  @override
+  $DeviceCopyWith<$Res>? get source;
+  @override
+  $UserCopyWith<$Res>? get createdBy;
+  @override
+  $UserCopyWith<$Res>? get updatedBy;
+}
+
+/// @nodoc
+class __$$SdmRecipeImplCopyWithImpl<$Res>
+    extends _$SdmRecipeCopyWithImpl<$Res, _$SdmRecipeImpl>
+    implements _$$SdmRecipeImplCopyWith<$Res> {
+  __$$SdmRecipeImplCopyWithImpl(
+      _$SdmRecipeImpl _value, $Res Function(_$SdmRecipeImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SdmRecipe
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? code = null,
+    Object? sourceId = freezed,
+    Object? source = freezed,
+    Object? createdAt = freezed,
+    Object? createdBy = freezed,
+    Object? updatedAt = freezed,
+    Object? updatedBy = freezed,
+    Object? ingredients = freezed,
+    Object? ingredientsIds = freezed,
+  }) {
+    return _then(_$SdmRecipeImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      sourceId: freezed == sourceId
+          ? _value.sourceId
+          : sourceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      source: freezed == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as Device?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBy: freezed == createdBy
+          ? _value.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedBy: freezed == updatedBy
+          ? _value.updatedBy
+          : updatedBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+      ingredients: freezed == ingredients
+          ? _value._ingredients
+          : ingredients // ignore: cast_nullable_to_non_nullable
+              as List<SdmIngredient>?,
+      ingredientsIds: freezed == ingredientsIds
+          ? _value._ingredientsIds
+          : ingredientsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _SdmRecipe implements SdmRecipe {
-  const _SdmRecipe(
+class _$SdmRecipeImpl implements _SdmRecipe {
+  const _$SdmRecipeImpl(
       {required this.id,
       required this.name,
       required this.code,
@@ -691,8 +751,9 @@ class _SdmRecipe implements SdmRecipe {
       final List<String>? ingredientsIds})
       : _ingredients = ingredients,
         _ingredientsIds = ingredientsIds;
-  factory _SdmRecipe.fromJson(Map<String, dynamic> json) =>
-      _$SdmRecipeFromJson(json);
+
+  factory _$SdmRecipeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SdmRecipeImplFromJson(json);
 
   /// [id] of the pen entity. This ID is unique.
   @override
@@ -758,26 +819,16 @@ class _SdmRecipe implements SdmRecipe {
     return EqualUnmodifiableListView(value);
   }
 
-  /// Create a copy of SdmRecipe
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SdmRecipeCopyWith<_SdmRecipe> get copyWith =>
-      __$SdmRecipeCopyWithImpl<_SdmRecipe>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SdmRecipeToJson(
-      this,
-    );
+  String toString() {
+    return 'SdmRecipe(id: $id, name: $name, code: $code, sourceId: $sourceId, source: $source, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, ingredients: $ingredients, ingredientsIds: $ingredientsIds)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SdmRecipe &&
+            other is _$SdmRecipeImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
@@ -814,268 +865,155 @@ class _SdmRecipe implements SdmRecipe {
       const DeepCollectionEquality().hash(_ingredients),
       const DeepCollectionEquality().hash(_ingredientsIds));
 
+  /// Create a copy of SdmRecipe
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'SdmRecipe(id: $id, name: $name, code: $code, sourceId: $sourceId, source: $source, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy, ingredients: $ingredients, ingredientsIds: $ingredientsIds)';
+  @pragma('vm:prefer-inline')
+  _$$SdmRecipeImplCopyWith<_$SdmRecipeImpl> get copyWith =>
+      __$$SdmRecipeImplCopyWithImpl<_$SdmRecipeImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SdmRecipeImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$SdmRecipeCopyWith<$Res>
-    implements $SdmRecipeCopyWith<$Res> {
-  factory _$SdmRecipeCopyWith(
-          _SdmRecipe value, $Res Function(_SdmRecipe) _then) =
-      __$SdmRecipeCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String code,
-      String? sourceId,
-      Device? source,
-      @TimestampOrNullConverter() DateTime? createdAt,
-      User? createdBy,
-      @TimestampOrNullConverter() DateTime? updatedAt,
-      User? updatedBy,
-      List<SdmIngredient>? ingredients,
-      List<String>? ingredientsIds});
+abstract class _SdmRecipe implements SdmRecipe {
+  const factory _SdmRecipe(
+      {required final String id,
+      required final String name,
+      required final String code,
+      final String? sourceId,
+      final Device? source,
+      @TimestampOrNullConverter() final DateTime? createdAt,
+      final User? createdBy,
+      @TimestampOrNullConverter() final DateTime? updatedAt,
+      final User? updatedBy,
+      final List<SdmIngredient>? ingredients,
+      final List<String>? ingredientsIds}) = _$SdmRecipeImpl;
 
+  factory _SdmRecipe.fromJson(Map<String, dynamic> json) =
+      _$SdmRecipeImpl.fromJson;
+
+  /// [id] of the pen entity. This ID is unique.
   @override
-  $DeviceCopyWith<$Res>? get source;
+  String get id;
+
+  /// [name] of the pen.
   @override
-  $UserCopyWith<$Res>? get createdBy;
+  String get name;
+
+  /// [code] of the pen.
   @override
-  $UserCopyWith<$Res>? get updatedBy;
+  String get code;
+
+  /// [sourceId] is the device id of the pen.
+  @override
+  String? get sourceId;
+
+  /// [source] is the device of the pen.
+  @override
+  Device? get source;
+
+  /// [createdAt] is the creation date of the pen.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+
+  /// [createdBy] is the user id who created the pen.
+  @override
+  User? get createdBy;
+
+  /// [updatedAt] is the last update date of the pen.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt;
+
+  /// [updatedBy] is the user id who updated the pen.
+  @override
+  User? get updatedBy;
+
+  /// [ingredients] is the list of ingredients of the recipe.
+  @override
+  List<SdmIngredient>? get ingredients;
+
+  /// [ingredientsIds] is the list of ingredients ids of the recipe.
+  @override
+  List<String>? get ingredientsIds;
+
+  /// Create a copy of SdmRecipe
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SdmRecipeImplCopyWith<_$SdmRecipeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-/// @nodoc
-class __$SdmRecipeCopyWithImpl<$Res> implements _$SdmRecipeCopyWith<$Res> {
-  __$SdmRecipeCopyWithImpl(this._self, this._then);
-
-  final _SdmRecipe _self;
-  final $Res Function(_SdmRecipe) _then;
-
-  /// Create a copy of SdmRecipe
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? code = null,
-    Object? sourceId = freezed,
-    Object? source = freezed,
-    Object? createdAt = freezed,
-    Object? createdBy = freezed,
-    Object? updatedAt = freezed,
-    Object? updatedBy = freezed,
-    Object? ingredients = freezed,
-    Object? ingredientsIds = freezed,
-  }) {
-    return _then(_SdmRecipe(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _self.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      sourceId: freezed == sourceId
-          ? _self.sourceId
-          : sourceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      source: freezed == source
-          ? _self.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as Device?,
-      createdAt: freezed == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBy: freezed == createdBy
-          ? _self.createdBy
-          : createdBy // ignore: cast_nullable_to_non_nullable
-              as User?,
-      updatedAt: freezed == updatedAt
-          ? _self.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      updatedBy: freezed == updatedBy
-          ? _self.updatedBy
-          : updatedBy // ignore: cast_nullable_to_non_nullable
-              as User?,
-      ingredients: freezed == ingredients
-          ? _self._ingredients
-          : ingredients // ignore: cast_nullable_to_non_nullable
-              as List<SdmIngredient>?,
-      ingredientsIds: freezed == ingredientsIds
-          ? _self._ingredientsIds
-          : ingredientsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-    ));
-  }
-
-  /// Create a copy of SdmRecipe
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DeviceCopyWith<$Res>? get source {
-    if (_self.source == null) {
-      return null;
-    }
-
-    return $DeviceCopyWith<$Res>(_self.source!, (value) {
-      return _then(_self.copyWith(source: value));
-    });
-  }
-
-  /// Create a copy of SdmRecipe
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get createdBy {
-    if (_self.createdBy == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_self.createdBy!, (value) {
-      return _then(_self.copyWith(createdBy: value));
-    });
-  }
-
-  /// Create a copy of SdmRecipe
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get updatedBy {
-    if (_self.updatedBy == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_self.updatedBy!, (value) {
-      return _then(_self.copyWith(updatedBy: value));
-    });
-  }
+SdmIngredient _$SdmIngredientFromJson(Map<String, dynamic> json) {
+  return _SdmIngredient.fromJson(json);
 }
 
 /// @nodoc
 mixin _$SdmIngredient {
   /// [id] of the pen entity. This ID is unique.
-  String get id;
+  String get id => throw _privateConstructorUsedError;
 
   /// [name] of the pen.
-  String get name;
+  String get name => throw _privateConstructorUsedError;
 
   /// [code] of the pen.
-  String get code;
+  String get code => throw _privateConstructorUsedError;
 
   /// [pricePerKg] is the price of the ingredient per kilogram.
-  double? get pricePerKg;
+  double? get pricePerKg => throw _privateConstructorUsedError;
 
   /// [dryFactor] is the dry factor of the ingredient.
-  double? get dryFactor;
+  double? get dryFactor => throw _privateConstructorUsedError;
 
   /// [priceByDry] indicates if the price should be calculated using dry or wet weight.
-  bool? get priceByDry;
+  bool? get priceByDry => throw _privateConstructorUsedError;
 
   /// [isArchived] is the status of the pen.
-  bool? get isArchived;
+  bool? get isArchived => throw _privateConstructorUsedError;
 
   /// [sourceId] is the device id of the pen.
-  String? get sourceId;
+  String? get sourceId => throw _privateConstructorUsedError;
 
   /// [source] is the device of the pen.
-  Device? get source;
+  Device? get source => throw _privateConstructorUsedError;
 
   /// [createdAt] is the creation date of the pen.
   @TimestampOrNullConverter()
-  DateTime? get createdAt;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
 
   /// [createdBy] is the user id who created the pen.
-  User? get createdBy;
+  User? get createdBy => throw _privateConstructorUsedError;
 
   /// [updatedAt] is the last update date of the pen.
   @TimestampOrNullConverter()
-  DateTime? get updatedAt;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   /// [updatedBy] is the user id who updated the pen.
-  User? get updatedBy;
+  User? get updatedBy => throw _privateConstructorUsedError;
+
+  /// Serializes this SdmIngredient to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of SdmIngredient
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $SdmIngredientCopyWith<SdmIngredient> get copyWith =>
-      _$SdmIngredientCopyWithImpl<SdmIngredient>(
-          this as SdmIngredient, _$identity);
-
-  /// Serializes this SdmIngredient to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SdmIngredient &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.pricePerKg, pricePerKg) ||
-                other.pricePerKg == pricePerKg) &&
-            (identical(other.dryFactor, dryFactor) ||
-                other.dryFactor == dryFactor) &&
-            (identical(other.priceByDry, priceByDry) ||
-                other.priceByDry == priceByDry) &&
-            (identical(other.isArchived, isArchived) ||
-                other.isArchived == isArchived) &&
-            (identical(other.sourceId, sourceId) ||
-                other.sourceId == sourceId) &&
-            (identical(other.source, source) || other.source == source) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.createdBy, createdBy) ||
-                other.createdBy == createdBy) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.updatedBy, updatedBy) ||
-                other.updatedBy == updatedBy));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      code,
-      pricePerKg,
-      dryFactor,
-      priceByDry,
-      isArchived,
-      sourceId,
-      source,
-      createdAt,
-      createdBy,
-      updatedAt,
-      updatedBy);
-
-  @override
-  String toString() {
-    return 'SdmIngredient(id: $id, name: $name, code: $code, pricePerKg: $pricePerKg, dryFactor: $dryFactor, priceByDry: $priceByDry, isArchived: $isArchived, sourceId: $sourceId, source: $source, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SdmIngredientCopyWith<$Res> {
+abstract class $SdmIngredientCopyWith<$Res> {
   factory $SdmIngredientCopyWith(
-          SdmIngredient value, $Res Function(SdmIngredient) _then) =
-      _$SdmIngredientCopyWithImpl;
+          SdmIngredient value, $Res Function(SdmIngredient) then) =
+      _$SdmIngredientCopyWithImpl<$Res, SdmIngredient>;
   @useResult
   $Res call(
       {String id,
@@ -1098,12 +1036,14 @@ abstract mixin class $SdmIngredientCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SdmIngredientCopyWithImpl<$Res>
+class _$SdmIngredientCopyWithImpl<$Res, $Val extends SdmIngredient>
     implements $SdmIngredientCopyWith<$Res> {
-  _$SdmIngredientCopyWithImpl(this._self, this._then);
+  _$SdmIngredientCopyWithImpl(this._value, this._then);
 
-  final SdmIngredient _self;
-  final $Res Function(SdmIngredient) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of SdmIngredient
   /// with the given fields replaced by the non-null parameter values.
@@ -1124,60 +1064,60 @@ class _$SdmIngredientCopyWithImpl<$Res>
     Object? updatedAt = freezed,
     Object? updatedBy = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       code: null == code
-          ? _self.code
+          ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
       pricePerKg: freezed == pricePerKg
-          ? _self.pricePerKg
+          ? _value.pricePerKg
           : pricePerKg // ignore: cast_nullable_to_non_nullable
               as double?,
       dryFactor: freezed == dryFactor
-          ? _self.dryFactor
+          ? _value.dryFactor
           : dryFactor // ignore: cast_nullable_to_non_nullable
               as double?,
       priceByDry: freezed == priceByDry
-          ? _self.priceByDry
+          ? _value.priceByDry
           : priceByDry // ignore: cast_nullable_to_non_nullable
               as bool?,
       isArchived: freezed == isArchived
-          ? _self.isArchived
+          ? _value.isArchived
           : isArchived // ignore: cast_nullable_to_non_nullable
               as bool?,
       sourceId: freezed == sourceId
-          ? _self.sourceId
+          ? _value.sourceId
           : sourceId // ignore: cast_nullable_to_non_nullable
               as String?,
       source: freezed == source
-          ? _self.source
+          ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as Device?,
       createdAt: freezed == createdAt
-          ? _self.createdAt
+          ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdBy: freezed == createdBy
-          ? _self.createdBy
+          ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as User?,
       updatedAt: freezed == updatedAt
-          ? _self.updatedAt
+          ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       updatedBy: freezed == updatedBy
-          ? _self.updatedBy
+          ? _value.updatedBy
           : updatedBy // ignore: cast_nullable_to_non_nullable
               as User?,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of SdmIngredient
@@ -1185,12 +1125,12 @@ class _$SdmIngredientCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $DeviceCopyWith<$Res>? get source {
-    if (_self.source == null) {
+    if (_value.source == null) {
       return null;
     }
 
-    return $DeviceCopyWith<$Res>(_self.source!, (value) {
-      return _then(_self.copyWith(source: value));
+    return $DeviceCopyWith<$Res>(_value.source!, (value) {
+      return _then(_value.copyWith(source: value) as $Val);
     });
   }
 
@@ -1199,12 +1139,12 @@ class _$SdmIngredientCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get createdBy {
-    if (_self.createdBy == null) {
+    if (_value.createdBy == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_self.createdBy!, (value) {
-      return _then(_self.copyWith(createdBy: value));
+    return $UserCopyWith<$Res>(_value.createdBy!, (value) {
+      return _then(_value.copyWith(createdBy: value) as $Val);
     });
   }
 
@@ -1213,20 +1153,135 @@ class _$SdmIngredientCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get updatedBy {
-    if (_self.updatedBy == null) {
+    if (_value.updatedBy == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_self.updatedBy!, (value) {
-      return _then(_self.copyWith(updatedBy: value));
+    return $UserCopyWith<$Res>(_value.updatedBy!, (value) {
+      return _then(_value.copyWith(updatedBy: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$SdmIngredientImplCopyWith<$Res>
+    implements $SdmIngredientCopyWith<$Res> {
+  factory _$$SdmIngredientImplCopyWith(
+          _$SdmIngredientImpl value, $Res Function(_$SdmIngredientImpl) then) =
+      __$$SdmIngredientImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String code,
+      double? pricePerKg,
+      double? dryFactor,
+      bool? priceByDry,
+      bool? isArchived,
+      String? sourceId,
+      Device? source,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      User? createdBy,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      User? updatedBy});
+
+  @override
+  $DeviceCopyWith<$Res>? get source;
+  @override
+  $UserCopyWith<$Res>? get createdBy;
+  @override
+  $UserCopyWith<$Res>? get updatedBy;
+}
+
+/// @nodoc
+class __$$SdmIngredientImplCopyWithImpl<$Res>
+    extends _$SdmIngredientCopyWithImpl<$Res, _$SdmIngredientImpl>
+    implements _$$SdmIngredientImplCopyWith<$Res> {
+  __$$SdmIngredientImplCopyWithImpl(
+      _$SdmIngredientImpl _value, $Res Function(_$SdmIngredientImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SdmIngredient
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? code = null,
+    Object? pricePerKg = freezed,
+    Object? dryFactor = freezed,
+    Object? priceByDry = freezed,
+    Object? isArchived = freezed,
+    Object? sourceId = freezed,
+    Object? source = freezed,
+    Object? createdAt = freezed,
+    Object? createdBy = freezed,
+    Object? updatedAt = freezed,
+    Object? updatedBy = freezed,
+  }) {
+    return _then(_$SdmIngredientImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      pricePerKg: freezed == pricePerKg
+          ? _value.pricePerKg
+          : pricePerKg // ignore: cast_nullable_to_non_nullable
+              as double?,
+      dryFactor: freezed == dryFactor
+          ? _value.dryFactor
+          : dryFactor // ignore: cast_nullable_to_non_nullable
+              as double?,
+      priceByDry: freezed == priceByDry
+          ? _value.priceByDry
+          : priceByDry // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isArchived: freezed == isArchived
+          ? _value.isArchived
+          : isArchived // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      sourceId: freezed == sourceId
+          ? _value.sourceId
+          : sourceId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      source: freezed == source
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as Device?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBy: freezed == createdBy
+          ? _value.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedBy: freezed == updatedBy
+          ? _value.updatedBy
+          : updatedBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _SdmIngredient implements SdmIngredient {
-  const _SdmIngredient(
+class _$SdmIngredientImpl implements _SdmIngredient {
+  const _$SdmIngredientImpl(
       {required this.id,
       required this.name,
       required this.code,
@@ -1240,8 +1295,9 @@ class _SdmIngredient implements SdmIngredient {
       this.createdBy,
       @TimestampOrNullConverter() this.updatedAt,
       this.updatedBy});
-  factory _SdmIngredient.fromJson(Map<String, dynamic> json) =>
-      _$SdmIngredientFromJson(json);
+
+  factory _$SdmIngredientImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SdmIngredientImplFromJson(json);
 
   /// [id] of the pen entity. This ID is unique.
   @override
@@ -1297,26 +1353,16 @@ class _SdmIngredient implements SdmIngredient {
   @override
   final User? updatedBy;
 
-  /// Create a copy of SdmIngredient
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SdmIngredientCopyWith<_SdmIngredient> get copyWith =>
-      __$SdmIngredientCopyWithImpl<_SdmIngredient>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SdmIngredientToJson(
-      this,
-    );
+  String toString() {
+    return 'SdmIngredient(id: $id, name: $name, code: $code, pricePerKg: $pricePerKg, dryFactor: $dryFactor, priceByDry: $priceByDry, isArchived: $isArchived, sourceId: $sourceId, source: $source, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SdmIngredient &&
+            other is _$SdmIngredientImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
@@ -1359,238 +1405,147 @@ class _SdmIngredient implements SdmIngredient {
       updatedAt,
       updatedBy);
 
+  /// Create a copy of SdmIngredient
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'SdmIngredient(id: $id, name: $name, code: $code, pricePerKg: $pricePerKg, dryFactor: $dryFactor, priceByDry: $priceByDry, isArchived: $isArchived, sourceId: $sourceId, source: $source, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
+  @pragma('vm:prefer-inline')
+  _$$SdmIngredientImplCopyWith<_$SdmIngredientImpl> get copyWith =>
+      __$$SdmIngredientImplCopyWithImpl<_$SdmIngredientImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SdmIngredientImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$SdmIngredientCopyWith<$Res>
-    implements $SdmIngredientCopyWith<$Res> {
-  factory _$SdmIngredientCopyWith(
-          _SdmIngredient value, $Res Function(_SdmIngredient) _then) =
-      __$SdmIngredientCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String code,
-      double? pricePerKg,
-      double? dryFactor,
-      bool? priceByDry,
-      bool? isArchived,
-      String? sourceId,
-      Device? source,
-      @TimestampOrNullConverter() DateTime? createdAt,
-      User? createdBy,
-      @TimestampOrNullConverter() DateTime? updatedAt,
-      User? updatedBy});
+abstract class _SdmIngredient implements SdmIngredient {
+  const factory _SdmIngredient(
+      {required final String id,
+      required final String name,
+      required final String code,
+      final double? pricePerKg,
+      final double? dryFactor,
+      final bool? priceByDry,
+      final bool? isArchived,
+      final String? sourceId,
+      final Device? source,
+      @TimestampOrNullConverter() final DateTime? createdAt,
+      final User? createdBy,
+      @TimestampOrNullConverter() final DateTime? updatedAt,
+      final User? updatedBy}) = _$SdmIngredientImpl;
 
+  factory _SdmIngredient.fromJson(Map<String, dynamic> json) =
+      _$SdmIngredientImpl.fromJson;
+
+  /// [id] of the pen entity. This ID is unique.
   @override
-  $DeviceCopyWith<$Res>? get source;
+  String get id;
+
+  /// [name] of the pen.
   @override
-  $UserCopyWith<$Res>? get createdBy;
+  String get name;
+
+  /// [code] of the pen.
   @override
-  $UserCopyWith<$Res>? get updatedBy;
+  String get code;
+
+  /// [pricePerKg] is the price of the ingredient per kilogram.
+  @override
+  double? get pricePerKg;
+
+  /// [dryFactor] is the dry factor of the ingredient.
+  @override
+  double? get dryFactor;
+
+  /// [priceByDry] indicates if the price should be calculated using dry or wet weight.
+  @override
+  bool? get priceByDry;
+
+  /// [isArchived] is the status of the pen.
+  @override
+  bool? get isArchived;
+
+  /// [sourceId] is the device id of the pen.
+  @override
+  String? get sourceId;
+
+  /// [source] is the device of the pen.
+  @override
+  Device? get source;
+
+  /// [createdAt] is the creation date of the pen.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+
+  /// [createdBy] is the user id who created the pen.
+  @override
+  User? get createdBy;
+
+  /// [updatedAt] is the last update date of the pen.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt;
+
+  /// [updatedBy] is the user id who updated the pen.
+  @override
+  User? get updatedBy;
+
+  /// Create a copy of SdmIngredient
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SdmIngredientImplCopyWith<_$SdmIngredientImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-/// @nodoc
-class __$SdmIngredientCopyWithImpl<$Res>
-    implements _$SdmIngredientCopyWith<$Res> {
-  __$SdmIngredientCopyWithImpl(this._self, this._then);
-
-  final _SdmIngredient _self;
-  final $Res Function(_SdmIngredient) _then;
-
-  /// Create a copy of SdmIngredient
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? code = null,
-    Object? pricePerKg = freezed,
-    Object? dryFactor = freezed,
-    Object? priceByDry = freezed,
-    Object? isArchived = freezed,
-    Object? sourceId = freezed,
-    Object? source = freezed,
-    Object? createdAt = freezed,
-    Object? createdBy = freezed,
-    Object? updatedAt = freezed,
-    Object? updatedBy = freezed,
-  }) {
-    return _then(_SdmIngredient(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _self.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      pricePerKg: freezed == pricePerKg
-          ? _self.pricePerKg
-          : pricePerKg // ignore: cast_nullable_to_non_nullable
-              as double?,
-      dryFactor: freezed == dryFactor
-          ? _self.dryFactor
-          : dryFactor // ignore: cast_nullable_to_non_nullable
-              as double?,
-      priceByDry: freezed == priceByDry
-          ? _self.priceByDry
-          : priceByDry // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isArchived: freezed == isArchived
-          ? _self.isArchived
-          : isArchived // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      sourceId: freezed == sourceId
-          ? _self.sourceId
-          : sourceId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      source: freezed == source
-          ? _self.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as Device?,
-      createdAt: freezed == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBy: freezed == createdBy
-          ? _self.createdBy
-          : createdBy // ignore: cast_nullable_to_non_nullable
-              as User?,
-      updatedAt: freezed == updatedAt
-          ? _self.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      updatedBy: freezed == updatedBy
-          ? _self.updatedBy
-          : updatedBy // ignore: cast_nullable_to_non_nullable
-              as User?,
-    ));
-  }
-
-  /// Create a copy of SdmIngredient
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DeviceCopyWith<$Res>? get source {
-    if (_self.source == null) {
-      return null;
-    }
-
-    return $DeviceCopyWith<$Res>(_self.source!, (value) {
-      return _then(_self.copyWith(source: value));
-    });
-  }
-
-  /// Create a copy of SdmIngredient
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get createdBy {
-    if (_self.createdBy == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_self.createdBy!, (value) {
-      return _then(_self.copyWith(createdBy: value));
-    });
-  }
-
-  /// Create a copy of SdmIngredient
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get updatedBy {
-    if (_self.updatedBy == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_self.updatedBy!, (value) {
-      return _then(_self.copyWith(updatedBy: value));
-    });
-  }
+SdmOperator _$SdmOperatorFromJson(Map<String, dynamic> json) {
+  return _SdmOperator.fromJson(json);
 }
 
 /// @nodoc
 mixin _$SdmOperator {
   /// [id] of the pen entity. This ID is unique.
-  String get id;
+  String get id => throw _privateConstructorUsedError;
 
   /// [name] of the pen.
-  String get name;
+  String get name => throw _privateConstructorUsedError;
 
   /// [code] of the pen.
-  String get code;
+  String get code => throw _privateConstructorUsedError;
 
   /// [createdAt] is the creation date of the pen.
   @TimestampOrNullConverter()
-  DateTime? get createdAt;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
 
   /// [createdBy] is the user id who created the pen.
-  User? get createdBy;
+  User? get createdBy => throw _privateConstructorUsedError;
 
   /// [updatedAt] is the last update date of the pen.
   @TimestampOrNullConverter()
-  DateTime? get updatedAt;
+  DateTime? get updatedAt => throw _privateConstructorUsedError;
 
   /// [updatedBy] is the user id who updated the pen.
-  User? get updatedBy;
+  User? get updatedBy => throw _privateConstructorUsedError;
+
+  /// Serializes this SdmOperator to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of SdmOperator
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $SdmOperatorCopyWith<SdmOperator> get copyWith =>
-      _$SdmOperatorCopyWithImpl<SdmOperator>(this as SdmOperator, _$identity);
-
-  /// Serializes this SdmOperator to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SdmOperator &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.code, code) || other.code == code) &&
-            (identical(other.createdAt, createdAt) ||
-                other.createdAt == createdAt) &&
-            (identical(other.createdBy, createdBy) ||
-                other.createdBy == createdBy) &&
-            (identical(other.updatedAt, updatedAt) ||
-                other.updatedAt == updatedAt) &&
-            (identical(other.updatedBy, updatedBy) ||
-                other.updatedBy == updatedBy));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, id, name, code, createdAt, createdBy, updatedAt, updatedBy);
-
-  @override
-  String toString() {
-    return 'SdmOperator(id: $id, name: $name, code: $code, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SdmOperatorCopyWith<$Res> {
+abstract class $SdmOperatorCopyWith<$Res> {
   factory $SdmOperatorCopyWith(
-          SdmOperator value, $Res Function(SdmOperator) _then) =
-      _$SdmOperatorCopyWithImpl;
+          SdmOperator value, $Res Function(SdmOperator) then) =
+      _$SdmOperatorCopyWithImpl<$Res, SdmOperator>;
   @useResult
   $Res call(
       {String id,
@@ -1606,11 +1561,14 @@ abstract mixin class $SdmOperatorCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SdmOperatorCopyWithImpl<$Res> implements $SdmOperatorCopyWith<$Res> {
-  _$SdmOperatorCopyWithImpl(this._self, this._then);
+class _$SdmOperatorCopyWithImpl<$Res, $Val extends SdmOperator>
+    implements $SdmOperatorCopyWith<$Res> {
+  _$SdmOperatorCopyWithImpl(this._value, this._then);
 
-  final SdmOperator _self;
-  final $Res Function(SdmOperator) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of SdmOperator
   /// with the given fields replaced by the non-null parameter values.
@@ -1625,36 +1583,36 @@ class _$SdmOperatorCopyWithImpl<$Res> implements $SdmOperatorCopyWith<$Res> {
     Object? updatedAt = freezed,
     Object? updatedBy = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       code: null == code
-          ? _self.code
+          ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
       createdAt: freezed == createdAt
-          ? _self.createdAt
+          ? _value.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       createdBy: freezed == createdBy
-          ? _self.createdBy
+          ? _value.createdBy
           : createdBy // ignore: cast_nullable_to_non_nullable
               as User?,
       updatedAt: freezed == updatedAt
-          ? _self.updatedAt
+          ? _value.updatedAt
           : updatedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       updatedBy: freezed == updatedBy
-          ? _self.updatedBy
+          ? _value.updatedBy
           : updatedBy // ignore: cast_nullable_to_non_nullable
               as User?,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of SdmOperator
@@ -1662,12 +1620,12 @@ class _$SdmOperatorCopyWithImpl<$Res> implements $SdmOperatorCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get createdBy {
-    if (_self.createdBy == null) {
+    if (_value.createdBy == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_self.createdBy!, (value) {
-      return _then(_self.copyWith(createdBy: value));
+    return $UserCopyWith<$Res>(_value.createdBy!, (value) {
+      return _then(_value.copyWith(createdBy: value) as $Val);
     });
   }
 
@@ -1676,20 +1634,97 @@ class _$SdmOperatorCopyWithImpl<$Res> implements $SdmOperatorCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $UserCopyWith<$Res>? get updatedBy {
-    if (_self.updatedBy == null) {
+    if (_value.updatedBy == null) {
       return null;
     }
 
-    return $UserCopyWith<$Res>(_self.updatedBy!, (value) {
-      return _then(_self.copyWith(updatedBy: value));
+    return $UserCopyWith<$Res>(_value.updatedBy!, (value) {
+      return _then(_value.copyWith(updatedBy: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$SdmOperatorImplCopyWith<$Res>
+    implements $SdmOperatorCopyWith<$Res> {
+  factory _$$SdmOperatorImplCopyWith(
+          _$SdmOperatorImpl value, $Res Function(_$SdmOperatorImpl) then) =
+      __$$SdmOperatorImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String code,
+      @TimestampOrNullConverter() DateTime? createdAt,
+      User? createdBy,
+      @TimestampOrNullConverter() DateTime? updatedAt,
+      User? updatedBy});
+
+  @override
+  $UserCopyWith<$Res>? get createdBy;
+  @override
+  $UserCopyWith<$Res>? get updatedBy;
+}
+
+/// @nodoc
+class __$$SdmOperatorImplCopyWithImpl<$Res>
+    extends _$SdmOperatorCopyWithImpl<$Res, _$SdmOperatorImpl>
+    implements _$$SdmOperatorImplCopyWith<$Res> {
+  __$$SdmOperatorImplCopyWithImpl(
+      _$SdmOperatorImpl _value, $Res Function(_$SdmOperatorImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SdmOperator
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? code = null,
+    Object? createdAt = freezed,
+    Object? createdBy = freezed,
+    Object? updatedAt = freezed,
+    Object? updatedBy = freezed,
+  }) {
+    return _then(_$SdmOperatorImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      createdBy: freezed == createdBy
+          ? _value.createdBy
+          : createdBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+      updatedAt: freezed == updatedAt
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      updatedBy: freezed == updatedBy
+          ? _value.updatedBy
+          : updatedBy // ignore: cast_nullable_to_non_nullable
+              as User?,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _SdmOperator implements SdmOperator {
-  const _SdmOperator(
+class _$SdmOperatorImpl implements _SdmOperator {
+  const _$SdmOperatorImpl(
       {required this.id,
       required this.name,
       required this.code,
@@ -1697,8 +1732,9 @@ class _SdmOperator implements SdmOperator {
       this.createdBy,
       @TimestampOrNullConverter() this.updatedAt,
       this.updatedBy});
-  factory _SdmOperator.fromJson(Map<String, dynamic> json) =>
-      _$SdmOperatorFromJson(json);
+
+  factory _$SdmOperatorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SdmOperatorImplFromJson(json);
 
   /// [id] of the pen entity. This ID is unique.
   @override
@@ -1730,26 +1766,16 @@ class _SdmOperator implements SdmOperator {
   @override
   final User? updatedBy;
 
-  /// Create a copy of SdmOperator
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SdmOperatorCopyWith<_SdmOperator> get copyWith =>
-      __$SdmOperatorCopyWithImpl<_SdmOperator>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SdmOperatorToJson(
-      this,
-    );
+  String toString() {
+    return 'SdmOperator(id: $id, name: $name, code: $code, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SdmOperator &&
+            other is _$SdmOperatorImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.code, code) || other.code == code) &&
@@ -1768,114 +1794,69 @@ class _SdmOperator implements SdmOperator {
   int get hashCode => Object.hash(
       runtimeType, id, name, code, createdAt, createdBy, updatedAt, updatedBy);
 
+  /// Create a copy of SdmOperator
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'SdmOperator(id: $id, name: $name, code: $code, createdAt: $createdAt, createdBy: $createdBy, updatedAt: $updatedAt, updatedBy: $updatedBy)';
+  @pragma('vm:prefer-inline')
+  _$$SdmOperatorImplCopyWith<_$SdmOperatorImpl> get copyWith =>
+      __$$SdmOperatorImplCopyWithImpl<_$SdmOperatorImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SdmOperatorImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$SdmOperatorCopyWith<$Res>
-    implements $SdmOperatorCopyWith<$Res> {
-  factory _$SdmOperatorCopyWith(
-          _SdmOperator value, $Res Function(_SdmOperator) _then) =
-      __$SdmOperatorCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String code,
-      @TimestampOrNullConverter() DateTime? createdAt,
-      User? createdBy,
-      @TimestampOrNullConverter() DateTime? updatedAt,
-      User? updatedBy});
+abstract class _SdmOperator implements SdmOperator {
+  const factory _SdmOperator(
+      {required final String id,
+      required final String name,
+      required final String code,
+      @TimestampOrNullConverter() final DateTime? createdAt,
+      final User? createdBy,
+      @TimestampOrNullConverter() final DateTime? updatedAt,
+      final User? updatedBy}) = _$SdmOperatorImpl;
 
-  @override
-  $UserCopyWith<$Res>? get createdBy;
-  @override
-  $UserCopyWith<$Res>? get updatedBy;
-}
+  factory _SdmOperator.fromJson(Map<String, dynamic> json) =
+      _$SdmOperatorImpl.fromJson;
 
-/// @nodoc
-class __$SdmOperatorCopyWithImpl<$Res> implements _$SdmOperatorCopyWith<$Res> {
-  __$SdmOperatorCopyWithImpl(this._self, this._then);
+  /// [id] of the pen entity. This ID is unique.
+  @override
+  String get id;
 
-  final _SdmOperator _self;
-  final $Res Function(_SdmOperator) _then;
+  /// [name] of the pen.
+  @override
+  String get name;
+
+  /// [code] of the pen.
+  @override
+  String get code;
+
+  /// [createdAt] is the creation date of the pen.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get createdAt;
+
+  /// [createdBy] is the user id who created the pen.
+  @override
+  User? get createdBy;
+
+  /// [updatedAt] is the last update date of the pen.
+  @override
+  @TimestampOrNullConverter()
+  DateTime? get updatedAt;
+
+  /// [updatedBy] is the user id who updated the pen.
+  @override
+  User? get updatedBy;
 
   /// Create a copy of SdmOperator
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? code = null,
-    Object? createdAt = freezed,
-    Object? createdBy = freezed,
-    Object? updatedAt = freezed,
-    Object? updatedBy = freezed,
-  }) {
-    return _then(_SdmOperator(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _self.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      createdAt: freezed == createdAt
-          ? _self.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      createdBy: freezed == createdBy
-          ? _self.createdBy
-          : createdBy // ignore: cast_nullable_to_non_nullable
-              as User?,
-      updatedAt: freezed == updatedAt
-          ? _self.updatedAt
-          : updatedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      updatedBy: freezed == updatedBy
-          ? _self.updatedBy
-          : updatedBy // ignore: cast_nullable_to_non_nullable
-              as User?,
-    ));
-  }
-
-  /// Create a copy of SdmOperator
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get createdBy {
-    if (_self.createdBy == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_self.createdBy!, (value) {
-      return _then(_self.copyWith(createdBy: value));
-    });
-  }
-
-  /// Create a copy of SdmOperator
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $UserCopyWith<$Res>? get updatedBy {
-    if (_self.updatedBy == null) {
-      return null;
-    }
-
-    return $UserCopyWith<$Res>(_self.updatedBy!, (value) {
-      return _then(_self.copyWith(updatedBy: value));
-    });
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SdmOperatorImplCopyWith<_$SdmOperatorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

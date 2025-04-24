@@ -6,7 +6,8 @@ part of 'geofences.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Geofence _$GeofenceFromJson(Map<String, dynamic> json) => _Geofence(
+_$GeofenceImpl _$$GeofenceImplFromJson(Map<String, dynamic> json) =>
+    _$GeofenceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       mode: const GeofenceModeConverter().fromJson(json['mode'] as String),
@@ -47,7 +48,8 @@ _Geofence _$GeofenceFromJson(Map<String, dynamic> json) => _Geofence(
           .toList(),
     );
 
-Map<String, dynamic> _$GeofenceToJson(_Geofence instance) => <String, dynamic>{
+Map<String, dynamic> _$$GeofenceImplToJson(_$GeofenceImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'mode': const GeofenceModeConverter().toJson(instance.mode),
@@ -79,8 +81,8 @@ const _$GeofenceCategoryEnumMap = {
   GeofenceCategory.lead: 'LEAD',
 };
 
-_GeofenceInput _$GeofenceInputFromJson(Map<String, dynamic> json) =>
-    _GeofenceInput(
+_$GeofenceInputImpl _$$GeofenceInputImplFromJson(Map<String, dynamic> json) =>
+    _$GeofenceInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String? ?? "",
       description: json['description'] as String? ?? "",
@@ -109,7 +111,7 @@ _GeofenceInput _$GeofenceInputFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$GeofenceInputToJson(_GeofenceInput instance) =>
+Map<String, dynamic> _$$GeofenceInputImplToJson(_$GeofenceInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -123,36 +125,40 @@ Map<String, dynamic> _$GeofenceInputToJson(_GeofenceInput instance) =>
       'customFields': instance.customFields.map((e) => e.toJson()).toList(),
     };
 
-_GeofencePoint _$GeofencePointFromJson(Map<String, dynamic> json) =>
-    _GeofencePoint(
+_$GeofencePointImpl _$$GeofencePointImplFromJson(Map<String, dynamic> json) =>
+    _$GeofencePointImpl(
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$GeofencePointToJson(_GeofencePoint instance) =>
+Map<String, dynamic> _$$GeofencePointImplToJson(_$GeofencePointImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
     };
 
-_GeofencePointInput _$GeofencePointInputFromJson(Map<String, dynamic> json) =>
-    _GeofencePointInput(
+_$GeofencePointInputImpl _$$GeofencePointInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GeofencePointInputImpl(
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$GeofencePointInputToJson(_GeofencePointInput instance) =>
+Map<String, dynamic> _$$GeofencePointInputImplToJson(
+        _$GeofencePointInputImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
     };
 
-_GeoPoint _$GeoPointFromJson(Map<String, dynamic> json) => _GeoPoint(
+_$GeoPointImpl _$$GeoPointImplFromJson(Map<String, dynamic> json) =>
+    _$GeoPointImpl(
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$GeoPointToJson(_GeoPoint instance) => <String, dynamic>{
+Map<String, dynamic> _$$GeoPointImplToJson(_$GeoPointImpl instance) =>
+    <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
     };

@@ -6,7 +6,8 @@ part of 'charts.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LayrzChart _$LayrzChartFromJson(Map<String, dynamic> json) => _LayrzChart(
+_$LayrzChartImpl _$$LayrzChartImplFromJson(Map<String, dynamic> json) =>
+    _$LayrzChartImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String?,
@@ -26,7 +27,7 @@ _LayrzChart _$LayrzChartFromJson(Map<String, dynamic> json) => _LayrzChart(
           .toList(),
     );
 
-Map<String, dynamic> _$LayrzChartToJson(_LayrzChart instance) =>
+Map<String, dynamic> _$$LayrzChartImplToJson(_$LayrzChartImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -69,8 +70,9 @@ const _$ChartDataSourceEnumMap = {
   ChartDataSource.checkpoints: 'CHECKPOINTS',
 };
 
-_LayrzChartInput _$LayrzChartInputFromJson(Map<String, dynamic> json) =>
-    _LayrzChartInput(
+_$LayrzChartInputImpl _$$LayrzChartInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LayrzChartInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
@@ -92,7 +94,8 @@ _LayrzChartInput _$LayrzChartInputFromJson(Map<String, dynamic> json) =>
           ChartDataSource.messages,
     );
 
-Map<String, dynamic> _$LayrzChartInputToJson(_LayrzChartInput instance) =>
+Map<String, dynamic> _$$LayrzChartInputImplToJson(
+        _$LayrzChartInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -105,7 +108,8 @@ Map<String, dynamic> _$LayrzChartInputToJson(_LayrzChartInput instance) =>
       'dataSource': instance.dataSource.toJson(),
     };
 
-_AxisConfig _$AxisConfigFromJson(Map<String, dynamic> json) => _AxisConfig(
+_$AxisConfigImpl _$$AxisConfigImplFromJson(Map<String, dynamic> json) =>
+    _$AxisConfigImpl(
       label: json['label'] as String?,
       measureUnit: json['measureUnit'] as String?,
       minValue: json['minValue'] as num?,
@@ -114,7 +118,7 @@ _AxisConfig _$AxisConfigFromJson(Map<String, dynamic> json) => _AxisConfig(
           unknownValue: ChartDataType.unknown),
     );
 
-Map<String, dynamic> _$AxisConfigToJson(_AxisConfig instance) =>
+Map<String, dynamic> _$$AxisConfigImplToJson(_$AxisConfigImpl instance) =>
     <String, dynamic>{
       'label': instance.label,
       'measureUnit': instance.measureUnit,
@@ -130,8 +134,9 @@ const _$ChartDataTypeEnumMap = {
   ChartDataType.unknown: 'UNKNOWN',
 };
 
-_LineChartRender _$LineChartRenderFromJson(Map<String, dynamic> json) =>
-    _LineChartRender(
+_$LineChartRenderImpl _$$LineChartRenderImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LineChartRenderImpl(
       series: (json['series'] as List<dynamic>)
           .map((e) => LineChartSerie.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -139,15 +144,16 @@ _LineChartRender _$LineChartRenderFromJson(Map<String, dynamic> json) =>
       yAxis: AxisConfig.fromJson(json['yAxis'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$LineChartRenderToJson(_LineChartRender instance) =>
+Map<String, dynamic> _$$LineChartRenderImplToJson(
+        _$LineChartRenderImpl instance) =>
     <String, dynamic>{
       'series': instance.series.map((e) => e.toJson()).toList(),
       'xAxis': instance.xAxis.toJson(),
       'yAxis': instance.yAxis.toJson(),
     };
 
-_LineChartSerie _$LineChartSerieFromJson(Map<String, dynamic> json) =>
-    _LineChartSerie(
+_$LineChartSerieImpl _$$LineChartSerieImplFromJson(Map<String, dynamic> json) =>
+    _$LineChartSerieImpl(
       color: const ColorConverter().fromJson(json['color'] as String),
       label: json['label'] as String,
       type: $enumDecode(_$ChartDataSerieTypeEnumMap, json['type'],
@@ -157,7 +163,8 @@ _LineChartSerie _$LineChartSerieFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$LineChartSerieToJson(_LineChartSerie instance) =>
+Map<String, dynamic> _$$LineChartSerieImplToJson(
+        _$LineChartSerieImpl instance) =>
     <String, dynamic>{
       'color': const ColorConverter().toJson(instance.color),
       'label': instance.label,
@@ -171,31 +178,34 @@ const _$ChartDataSerieTypeEnumMap = {
   ChartDataSerieType.scatter: 'SCATTER',
 };
 
-_LineChartDataPoint _$LineChartDataPointFromJson(Map<String, dynamic> json) =>
-    _LineChartDataPoint(
+_$LineChartDataPointImpl _$$LineChartDataPointImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LineChartDataPointImpl(
       xAxis: json['xAxis'],
       yAxis: json['yAxis'] as num,
     );
 
-Map<String, dynamic> _$LineChartDataPointToJson(_LineChartDataPoint instance) =>
+Map<String, dynamic> _$$LineChartDataPointImplToJson(
+        _$LineChartDataPointImpl instance) =>
     <String, dynamic>{
       'xAxis': instance.xAxis,
       'yAxis': instance.yAxis,
     };
 
-_TableHeader _$TableHeaderFromJson(Map<String, dynamic> json) => _TableHeader(
+_$TableHeaderImpl _$$TableHeaderImplFromJson(Map<String, dynamic> json) =>
+    _$TableHeaderImpl(
       label: json['label'] as String,
       key: json['key'] as String,
     );
 
-Map<String, dynamic> _$TableHeaderToJson(_TableHeader instance) =>
+Map<String, dynamic> _$$TableHeaderImplToJson(_$TableHeaderImpl instance) =>
     <String, dynamic>{
       'label': instance.label,
       'key': instance.key,
     };
 
-_TableDataSerie _$TableDataSerieFromJson(Map<String, dynamic> json) =>
-    _TableDataSerie(
+_$TableDataSerieImpl _$$TableDataSerieImplFromJson(Map<String, dynamic> json) =>
+    _$TableDataSerieImpl(
       headers: (json['columns'] as List<dynamic>)
           .map((e) => TableHeader.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -204,14 +214,16 @@ _TableDataSerie _$TableDataSerieFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$TableDataSerieToJson(_TableDataSerie instance) =>
+Map<String, dynamic> _$$TableDataSerieImplToJson(
+        _$TableDataSerieImpl instance) =>
     <String, dynamic>{
       'columns': instance.headers.map((e) => e.toJson()).toList(),
       'rows': instance.values,
     };
 
-_ColumnChartRender _$ColumnChartRenderFromJson(Map<String, dynamic> json) =>
-    _ColumnChartRender(
+_$ColumnChartRenderImpl _$$ColumnChartRenderImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ColumnChartRenderImpl(
       series: (json['series'] as List<dynamic>)
           .map((e) => ColumnChartSerie.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -219,15 +231,17 @@ _ColumnChartRender _$ColumnChartRenderFromJson(Map<String, dynamic> json) =>
       yAxis: AxisConfig.fromJson(json['yAxis'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$ColumnChartRenderToJson(_ColumnChartRender instance) =>
+Map<String, dynamic> _$$ColumnChartRenderImplToJson(
+        _$ColumnChartRenderImpl instance) =>
     <String, dynamic>{
       'series': instance.series.map((e) => e.toJson()).toList(),
       'xAxis': instance.xAxis.toJson(),
       'yAxis': instance.yAxis.toJson(),
     };
 
-_ColumnChartSerie _$ColumnChartSerieFromJson(Map<String, dynamic> json) =>
-    _ColumnChartSerie(
+_$ColumnChartSerieImpl _$$ColumnChartSerieImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ColumnChartSerieImpl(
       color: const ColorConverter().fromJson(json['color'] as String),
       label: json['label'] as String,
       values: (json['values'] as List<dynamic>)
@@ -235,29 +249,30 @@ _ColumnChartSerie _$ColumnChartSerieFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$ColumnChartSerieToJson(_ColumnChartSerie instance) =>
+Map<String, dynamic> _$$ColumnChartSerieImplToJson(
+        _$ColumnChartSerieImpl instance) =>
     <String, dynamic>{
       'color': const ColorConverter().toJson(instance.color),
       'label': instance.label,
       'values': instance.values.map((e) => e.toJson()).toList(),
     };
 
-_ColumnChartDataPoint _$ColumnChartDataPointFromJson(
+_$ColumnChartDataPointImpl _$$ColumnChartDataPointImplFromJson(
         Map<String, dynamic> json) =>
-    _ColumnChartDataPoint(
+    _$ColumnChartDataPointImpl(
       xAxis: json['xAxis'] as String,
       yAxis: json['yAxis'] as num,
     );
 
-Map<String, dynamic> _$ColumnChartDataPointToJson(
-        _ColumnChartDataPoint instance) =>
+Map<String, dynamic> _$$ColumnChartDataPointImplToJson(
+        _$ColumnChartDataPointImpl instance) =>
     <String, dynamic>{
       'xAxis': instance.xAxis,
       'yAxis': instance.yAxis,
     };
 
-_BarChartRender _$BarChartRenderFromJson(Map<String, dynamic> json) =>
-    _BarChartRender(
+_$BarChartRenderImpl _$$BarChartRenderImplFromJson(Map<String, dynamic> json) =>
+    _$BarChartRenderImpl(
       series: (json['series'] as List<dynamic>)
           .map((e) => BarChartSerie.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -265,15 +280,16 @@ _BarChartRender _$BarChartRenderFromJson(Map<String, dynamic> json) =>
       yAxis: AxisConfig.fromJson(json['yAxis'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$BarChartRenderToJson(_BarChartRender instance) =>
+Map<String, dynamic> _$$BarChartRenderImplToJson(
+        _$BarChartRenderImpl instance) =>
     <String, dynamic>{
       'series': instance.series.map((e) => e.toJson()).toList(),
       'xAxis': instance.xAxis.toJson(),
       'yAxis': instance.yAxis.toJson(),
     };
 
-_BarChartSerie _$BarChartSerieFromJson(Map<String, dynamic> json) =>
-    _BarChartSerie(
+_$BarChartSerieImpl _$$BarChartSerieImplFromJson(Map<String, dynamic> json) =>
+    _$BarChartSerieImpl(
       color: const ColorConverter().fromJson(json['color'] as String),
       label: json['label'] as String,
       values: (json['values'] as List<dynamic>)
@@ -281,27 +297,30 @@ _BarChartSerie _$BarChartSerieFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$BarChartSerieToJson(_BarChartSerie instance) =>
+Map<String, dynamic> _$$BarChartSerieImplToJson(_$BarChartSerieImpl instance) =>
     <String, dynamic>{
       'color': const ColorConverter().toJson(instance.color),
       'label': instance.label,
       'values': instance.values.map((e) => e.toJson()).toList(),
     };
 
-_BarChartDataPoint _$BarChartDataPointFromJson(Map<String, dynamic> json) =>
-    _BarChartDataPoint(
+_$BarChartDataPointImpl _$$BarChartDataPointImplFromJson(
+        Map<String, dynamic> json) =>
+    _$BarChartDataPointImpl(
       xAxis: json['xAxis'] as String,
       yAxis: json['yAxis'] as num,
     );
 
-Map<String, dynamic> _$BarChartDataPointToJson(_BarChartDataPoint instance) =>
+Map<String, dynamic> _$$BarChartDataPointImplToJson(
+        _$BarChartDataPointImpl instance) =>
     <String, dynamic>{
       'xAxis': instance.xAxis,
       'yAxis': instance.yAxis,
     };
 
-_ScatterChartRender _$ScatterChartRenderFromJson(Map<String, dynamic> json) =>
-    _ScatterChartRender(
+_$ScatterChartRenderImpl _$$ScatterChartRenderImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ScatterChartRenderImpl(
       series: (json['series'] as List<dynamic>)
           .map((e) => LineChartSerie.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -309,76 +328,81 @@ _ScatterChartRender _$ScatterChartRenderFromJson(Map<String, dynamic> json) =>
       yAxis: AxisConfig.fromJson(json['yAxis'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$ScatterChartRenderToJson(_ScatterChartRender instance) =>
+Map<String, dynamic> _$$ScatterChartRenderImplToJson(
+        _$ScatterChartRenderImpl instance) =>
     <String, dynamic>{
       'series': instance.series.map((e) => e.toJson()).toList(),
       'xAxis': instance.xAxis.toJson(),
       'yAxis': instance.yAxis.toJson(),
     };
 
-_NumberDataSerie _$NumberDataSerieFromJson(Map<String, dynamic> json) =>
-    _NumberDataSerie(
+_$NumberDataSerieImpl _$$NumberDataSerieImplFromJson(
+        Map<String, dynamic> json) =>
+    _$NumberDataSerieImpl(
       label: json['label'] as String,
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       value: json['value'] as num,
     );
 
-Map<String, dynamic> _$NumberDataSerieToJson(_NumberDataSerie instance) =>
+Map<String, dynamic> _$$NumberDataSerieImplToJson(
+        _$NumberDataSerieImpl instance) =>
     <String, dynamic>{
       'label': instance.label,
       'color': const ColorOrNullConverter().toJson(instance.color),
       'value': instance.value,
     };
 
-_PieChartRender _$PieChartRenderFromJson(Map<String, dynamic> json) =>
-    _PieChartRender(
+_$PieChartRenderImpl _$$PieChartRenderImplFromJson(Map<String, dynamic> json) =>
+    _$PieChartRenderImpl(
       series: (json['series'] as List<dynamic>)
           .map((e) => PieChartSerie.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$PieChartRenderToJson(_PieChartRender instance) =>
+Map<String, dynamic> _$$PieChartRenderImplToJson(
+        _$PieChartRenderImpl instance) =>
     <String, dynamic>{
       'series': instance.series.map((e) => e.toJson()).toList(),
     };
 
-_PieChartSerie _$PieChartSerieFromJson(Map<String, dynamic> json) =>
-    _PieChartSerie(
+_$PieChartSerieImpl _$$PieChartSerieImplFromJson(Map<String, dynamic> json) =>
+    _$PieChartSerieImpl(
       color: const ColorConverter().fromJson(json['color'] as String),
       label: json['label'] as String,
       value: json['value'] as num,
     );
 
-Map<String, dynamic> _$PieChartSerieToJson(_PieChartSerie instance) =>
+Map<String, dynamic> _$$PieChartSerieImplToJson(_$PieChartSerieImpl instance) =>
     <String, dynamic>{
       'color': const ColorConverter().toJson(instance.color),
       'label': instance.label,
       'value': instance.value,
     };
 
-_RadialBarChartRender _$RadialBarChartRenderFromJson(
+_$RadialBarChartRenderImpl _$$RadialBarChartRenderImplFromJson(
         Map<String, dynamic> json) =>
-    _RadialBarChartRender(
+    _$RadialBarChartRenderImpl(
       series: (json['series'] as List<dynamic>)
           .map((e) => RadialBarChartSerie.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$RadialBarChartRenderToJson(
-        _RadialBarChartRender instance) =>
+Map<String, dynamic> _$$RadialBarChartRenderImplToJson(
+        _$RadialBarChartRenderImpl instance) =>
     <String, dynamic>{
       'series': instance.series.map((e) => e.toJson()).toList(),
     };
 
-_RadialBarChartSerie _$RadialBarChartSerieFromJson(Map<String, dynamic> json) =>
-    _RadialBarChartSerie(
+_$RadialBarChartSerieImpl _$$RadialBarChartSerieImplFromJson(
+        Map<String, dynamic> json) =>
+    _$RadialBarChartSerieImpl(
       color: const ColorConverter().fromJson(json['color'] as String),
       label: json['label'] as String,
       value: json['value'] as num,
     );
 
-Map<String, dynamic> _$RadialBarChartSerieToJson(
-        _RadialBarChartSerie instance) =>
+Map<String, dynamic> _$$RadialBarChartSerieImplToJson(
+        _$RadialBarChartSerieImpl instance) =>
     <String, dynamic>{
       'color': const ColorConverter().toJson(instance.color),
       'label': instance.label,

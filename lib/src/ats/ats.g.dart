@@ -6,8 +6,9 @@ part of 'ats.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AtsReceptionProduct _$AtsReceptionProductFromJson(Map<String, dynamic> json) =>
-    _AtsReceptionProduct(
+_$AtsReceptionProductImpl _$$AtsReceptionProductImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsReceptionProductImpl(
       id: json['id'] as String?,
       assetId: json['assetId'] as String?,
       fuelType: const AtsFuelTypeOrNullConverter()
@@ -28,8 +29,8 @@ _AtsReceptionProduct _$AtsReceptionProductFromJson(Map<String, dynamic> json) =>
       price: (json['price'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$AtsReceptionProductToJson(
-        _AtsReceptionProduct instance) =>
+Map<String, dynamic> _$$AtsReceptionProductImplToJson(
+        _$AtsReceptionProductImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -47,24 +48,25 @@ Map<String, dynamic> _$AtsReceptionProductToJson(
       'price': instance.price,
     };
 
-_AtsReceptionProductInput _$AtsReceptionProductInputFromJson(
+_$AtsReceptionProductInputImpl _$$AtsReceptionProductInputImplFromJson(
         Map<String, dynamic> json) =>
-    _AtsReceptionProductInput(
+    _$AtsReceptionProductInputImpl(
       fuelAnp: json['fuelAnp'] as String?,
       tanksImages: (json['tanksImages'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
     );
 
-Map<String, dynamic> _$AtsReceptionProductInputToJson(
-        _AtsReceptionProductInput instance) =>
+Map<String, dynamic> _$$AtsReceptionProductInputImplToJson(
+        _$AtsReceptionProductInputImpl instance) =>
     <String, dynamic>{
       'fuelAnp': instance.fuelAnp,
       'tanksImages': instance.tanksImages,
     };
 
-_AtsReceptionInput _$AtsReceptionInputFromJson(Map<String, dynamic> json) =>
-    _AtsReceptionInput(
+_$AtsReceptionInputImpl _$$AtsReceptionInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsReceptionInputImpl(
       id: json['id'] as String?,
       ordersIds: (json['ordersIds'] as List<dynamic>?)
           ?.map((e) => e as String)
@@ -79,7 +81,8 @@ _AtsReceptionInput _$AtsReceptionInputFromJson(Map<String, dynamic> json) =>
       app: const AtsFromAppOrNullConverter().fromJson(json['app'] as String?),
     );
 
-Map<String, dynamic> _$AtsReceptionInputToJson(_AtsReceptionInput instance) =>
+Map<String, dynamic> _$$AtsReceptionInputImplToJson(
+        _$AtsReceptionInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'ordersIds': instance.ordersIds,
@@ -90,9 +93,9 @@ Map<String, dynamic> _$AtsReceptionInputToJson(_AtsReceptionInput instance) =>
       'app': const AtsFromAppOrNullConverter().toJson(instance.app),
     };
 
-_AtsAuthenticationIdentifier _$AtsAuthenticationIdentifierFromJson(
+_$AtsAuthenticationIdentifierImpl _$$AtsAuthenticationIdentifierImplFromJson(
         Map<String, dynamic> json) =>
-    _AtsAuthenticationIdentifier(
+    _$AtsAuthenticationIdentifierImpl(
       id: json['id'] as String?,
       category: const AtsAuthenticationCategoryOrNullConverter()
           .fromJson(json['category'] as String?),
@@ -104,8 +107,8 @@ _AtsAuthenticationIdentifier _$AtsAuthenticationIdentifierFromJson(
       nfcIdentifier: json['nfcIdentifier'] as String?,
     );
 
-Map<String, dynamic> _$AtsAuthenticationIdentifierToJson(
-        _AtsAuthenticationIdentifier instance) =>
+Map<String, dynamic> _$$AtsAuthenticationIdentifierImplToJson(
+        _$AtsAuthenticationIdentifierImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'category': const AtsAuthenticationCategoryOrNullConverter()
@@ -115,9 +118,9 @@ Map<String, dynamic> _$AtsAuthenticationIdentifierToJson(
       'nfcIdentifier': instance.nfcIdentifier,
     };
 
-_AtsAuthenticationCard _$AtsAuthenticationCardFromJson(
+_$AtsAuthenticationCardImpl _$$AtsAuthenticationCardImplFromJson(
         Map<String, dynamic> json) =>
-    _AtsAuthenticationCard(
+    _$AtsAuthenticationCardImpl(
       id: json['id'] as String,
       number: (json['number'] as num).toInt(),
       externalIdentifier: (json['externalIdentifier'] as num).toInt(),
@@ -138,8 +141,8 @@ _AtsAuthenticationCard _$AtsAuthenticationCardFromJson(
           const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
     );
 
-Map<String, dynamic> _$AtsAuthenticationCardToJson(
-        _AtsAuthenticationCard instance) =>
+Map<String, dynamic> _$$AtsAuthenticationCardImplToJson(
+        _$AtsAuthenticationCardImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'number': instance.number,
@@ -153,9 +156,9 @@ Map<String, dynamic> _$AtsAuthenticationCardToJson(
       'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
     };
 
-_AtsHistoryAuthenticationCard _$AtsHistoryAuthenticationCardFromJson(
+_$AtsHistoryAuthenticationCardImpl _$$AtsHistoryAuthenticationCardImplFromJson(
         Map<String, dynamic> json) =>
-    _AtsHistoryAuthenticationCard(
+    _$AtsHistoryAuthenticationCardImpl(
       id: json['id'] as String,
       operation: const AtsHistoryAuthenticationCardOperationConverter()
           .fromJson(json['operation'] as String),
@@ -169,8 +172,8 @@ _AtsHistoryAuthenticationCard _$AtsHistoryAuthenticationCardFromJson(
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
     );
 
-Map<String, dynamic> _$AtsHistoryAuthenticationCardToJson(
-        _AtsHistoryAuthenticationCard instance) =>
+Map<String, dynamic> _$$AtsHistoryAuthenticationCardImplToJson(
+        _$AtsHistoryAuthenticationCardImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'operation': const AtsHistoryAuthenticationCardOperationConverter()
@@ -181,8 +184,9 @@ Map<String, dynamic> _$AtsHistoryAuthenticationCardToJson(
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
     };
 
-_AtsFeedbackMessege _$AtsFeedbackMessegeFromJson(Map<String, dynamic> json) =>
-    _AtsFeedbackMessege(
+_$AtsFeedbackMessegeImpl _$$AtsFeedbackMessegeImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsFeedbackMessegeImpl(
       id: json['id'] as String?,
       content: json['content'] as String?,
       creator: json['creator'] == null
@@ -197,7 +201,8 @@ _AtsFeedbackMessege _$AtsFeedbackMessegeFromJson(Map<String, dynamic> json) =>
       isRead: json['isRead'] as bool?,
     );
 
-Map<String, dynamic> _$AtsFeedbackMessegeToJson(_AtsFeedbackMessege instance) =>
+Map<String, dynamic> _$$AtsFeedbackMessegeImplToJson(
+        _$AtsFeedbackMessegeImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'content': instance.content,
@@ -208,7 +213,8 @@ Map<String, dynamic> _$AtsFeedbackMessegeToJson(_AtsFeedbackMessege instance) =>
       'isRead': instance.isRead,
     };
 
-_AtsEvent _$AtsEventFromJson(Map<String, dynamic> json) => _AtsEvent(
+_$AtsEventImpl _$$AtsEventImplFromJson(Map<String, dynamic> json) =>
+    _$AtsEventImpl(
       id: json['id'] as String?,
       operation: json['operation'] == null
           ? null
@@ -238,7 +244,8 @@ _AtsEvent _$AtsEventFromJson(Map<String, dynamic> json) => _AtsEvent(
       comment: json['comment'] as String?,
     );
 
-Map<String, dynamic> _$AtsEventToJson(_AtsEvent instance) => <String, dynamic>{
+Map<String, dynamic> _$$AtsEventImplToJson(_$AtsEventImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'operation': instance.operation?.toJson(),
       'operationId': instance.operationId,
@@ -255,8 +262,8 @@ Map<String, dynamic> _$AtsEventToJson(_AtsEvent instance) => <String, dynamic>{
       'comment': instance.comment,
     };
 
-_AtsNsAddress _$AtsNsAddressFromJson(Map<String, dynamic> json) =>
-    _AtsNsAddress(
+_$AtsNsAddressImpl _$$AtsNsAddressImplFromJson(Map<String, dynamic> json) =>
+    _$AtsNsAddressImpl(
       address: json['address'] as String,
       number: json['number'] as String,
       district: json['district'] as String,
@@ -265,7 +272,7 @@ _AtsNsAddress _$AtsNsAddressFromJson(Map<String, dynamic> json) =>
       cityName: json['cityName'] as String,
     );
 
-Map<String, dynamic> _$AtsNsAddressToJson(_AtsNsAddress instance) =>
+Map<String, dynamic> _$$AtsNsAddressImplToJson(_$AtsNsAddressImpl instance) =>
     <String, dynamic>{
       'address': instance.address,
       'number': instance.number,
@@ -275,8 +282,8 @@ Map<String, dynamic> _$AtsNsAddressToJson(_AtsNsAddress instance) =>
       'cityName': instance.cityName,
     };
 
-_AtsNsLicense _$AtsNsLicenseFromJson(Map<String, dynamic> json) =>
-    _AtsNsLicense(
+_$AtsNsLicenseImpl _$$AtsNsLicenseImplFromJson(Map<String, dynamic> json) =>
+    _$AtsNsLicenseImpl(
       id: json['id'] as String,
       status: const AtsNsStatusConverter().fromJson(json['status'] as String),
       receive90Days: json['receive90Days'] as bool?,
@@ -302,7 +309,7 @@ _AtsNsLicense _$AtsNsLicenseFromJson(Map<String, dynamic> json) =>
           .fromJson(json['expirationDateUnix'] as num?),
     );
 
-Map<String, dynamic> _$AtsNsLicenseToJson(_AtsNsLicense instance) =>
+Map<String, dynamic> _$$AtsNsLicenseImplToJson(_$AtsNsLicenseImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'status': const AtsNsStatusConverter().toJson(instance.status),
@@ -323,9 +330,9 @@ Map<String, dynamic> _$AtsNsLicenseToJson(_AtsNsLicense instance) =>
           const TimestampOrNullConverter().toJson(instance.expirationDate),
     };
 
-_AtsTransportInformation _$AtsTransportInformationFromJson(
+_$AtsTransportInformationImpl _$$AtsTransportInformationImplFromJson(
         Map<String, dynamic> json) =>
-    _AtsTransportInformation(
+    _$AtsTransportInformationImpl(
       cnpj: json['cnpj'] as String?,
       name: json['name'] as String?,
       address: json['address'] as String?,
@@ -342,8 +349,8 @@ _AtsTransportInformation _$AtsTransportInformationFromJson(
       stateRegistration: json['stateRegistration'] as String?,
     );
 
-Map<String, dynamic> _$AtsTransportInformationToJson(
-        _AtsTransportInformation instance) =>
+Map<String, dynamic> _$$AtsTransportInformationImplToJson(
+        _$AtsTransportInformationImpl instance) =>
     <String, dynamic>{
       'cnpj': instance.cnpj,
       'name': instance.name,
@@ -361,15 +368,17 @@ Map<String, dynamic> _$AtsTransportInformationToJson(
       'stateRegistration': instance.stateRegistration,
     };
 
-_AtsCommandResult _$AtsCommandResultFromJson(Map<String, dynamic> json) =>
-    _AtsCommandResult(
+_$AtsCommandResultImpl _$$AtsCommandResultImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsCommandResultImpl(
       request: json['request'] as String?,
       response: json['response'] as String?,
       executedAt:
           const TimestampOrNullConverter().fromJson(json['executedAt'] as num?),
     );
 
-Map<String, dynamic> _$AtsCommandResultToJson(_AtsCommandResult instance) =>
+Map<String, dynamic> _$$AtsCommandResultImplToJson(
+        _$AtsCommandResultImpl instance) =>
     <String, dynamic>{
       'request': instance.request,
       'response': instance.response,
@@ -377,22 +386,23 @@ Map<String, dynamic> _$AtsCommandResultToJson(_AtsCommandResult instance) =>
           const TimestampOrNullConverter().toJson(instance.executedAt),
     };
 
-_AtsExecuteLoadInput _$AtsExecuteLoadInputFromJson(Map<String, dynamic> json) =>
-    _AtsExecuteLoadInput(
+_$AtsExecuteLoadInputImpl _$$AtsExecuteLoadInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsExecuteLoadInputImpl(
       fromAssetId: json['fromAssetId'] as String?,
       toAssetId: json['toAssetId'] as String?,
     );
 
-Map<String, dynamic> _$AtsExecuteLoadInputToJson(
-        _AtsExecuteLoadInput instance) =>
+Map<String, dynamic> _$$AtsExecuteLoadInputImplToJson(
+        _$AtsExecuteLoadInputImpl instance) =>
     <String, dynamic>{
       'fromAssetId': instance.fromAssetId,
       'toAssetId': instance.toAssetId,
     };
 
-_AtsCompanyInformation _$AtsCompanyInformationFromJson(
+_$AtsCompanyInformationImpl _$$AtsCompanyInformationImplFromJson(
         Map<String, dynamic> json) =>
-    _AtsCompanyInformation(
+    _$AtsCompanyInformationImpl(
       name: json['name'] as String?,
       cnpj: json['cnpj'] as String?,
       address: json['address'] as String?,
@@ -400,8 +410,8 @@ _AtsCompanyInformation _$AtsCompanyInformationFromJson(
       stateRegistration: json['stateRegistration'] as String?,
     );
 
-Map<String, dynamic> _$AtsCompanyInformationToJson(
-        _AtsCompanyInformation instance) =>
+Map<String, dynamic> _$$AtsCompanyInformationImplToJson(
+        _$AtsCompanyInformationImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'cnpj': instance.cnpj,
@@ -410,9 +420,9 @@ Map<String, dynamic> _$AtsCompanyInformationToJson(
       'stateRegistration': instance.stateRegistration,
     };
 
-_AtsProductInformation _$AtsProductInformationFromJson(
+_$AtsProductInformationImpl _$$AtsProductInformationImplFromJson(
         Map<String, dynamic> json) =>
-    _AtsProductInformation(
+    _$AtsProductInformationImpl(
       ncm: json['ncm'] as String?,
       name: json['name'] as String?,
       measureUnit: json['measureUnit'] as String?,
@@ -423,8 +433,8 @@ _AtsProductInformation _$AtsProductInformationFromJson(
       subcategory: json['subcategory'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$AtsProductInformationToJson(
-        _AtsProductInformation instance) =>
+Map<String, dynamic> _$$AtsProductInformationImplToJson(
+        _$AtsProductInformationImpl instance) =>
     <String, dynamic>{
       'ncm': instance.ncm,
       'name': instance.name,
@@ -436,8 +446,9 @@ Map<String, dynamic> _$AtsProductInformationToJson(
       'subcategory': instance.subcategory,
     };
 
-_AtsPurchaseOrder _$AtsPurchaseOrderFromJson(Map<String, dynamic> json) =>
-    _AtsPurchaseOrder(
+_$AtsPurchaseOrderImpl _$$AtsPurchaseOrderImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsPurchaseOrderImpl(
       id: json['id'] as String?,
       ownerId: json['ownerId'] as String?,
       orderId: json['orderId'] as String?,
@@ -512,7 +523,8 @@ _AtsPurchaseOrder _$AtsPurchaseOrderFromJson(Map<String, dynamic> json) =>
           .fromJson(json['etaUpdatedAt'] as num?),
     );
 
-Map<String, dynamic> _$AtsPurchaseOrderToJson(_AtsPurchaseOrder instance) =>
+Map<String, dynamic> _$$AtsPurchaseOrderImplToJson(
+        _$AtsPurchaseOrderImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'ownerId': instance.ownerId,
@@ -561,8 +573,9 @@ Map<String, dynamic> _$AtsPurchaseOrderToJson(_AtsPurchaseOrder instance) =>
           const TimestampOrNullConverter().toJson(instance.etaUpdatedAt),
     };
 
-_AtsPurchaseTotal _$AtsPurchaseTotalFromJson(Map<String, dynamic> json) =>
-    _AtsPurchaseTotal(
+_$AtsPurchaseTotalImpl _$$AtsPurchaseTotalImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsPurchaseTotalImpl(
       subtotal: (json['subtotal'] as num?)?.toDouble(),
       discountValue: (json['discountValue'] as num?)?.toDouble(),
       total: (json['total'] as num?)?.toDouble(),
@@ -575,7 +588,8 @@ _AtsPurchaseTotal _$AtsPurchaseTotalFromJson(Map<String, dynamic> json) =>
       freightWeight: (json['freightWeight'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$AtsPurchaseTotalToJson(_AtsPurchaseTotal instance) =>
+Map<String, dynamic> _$$AtsPurchaseTotalImplToJson(
+        _$AtsPurchaseTotalImpl instance) =>
     <String, dynamic>{
       'subtotal': instance.subtotal,
       'discountValue': instance.discountValue,
@@ -589,8 +603,8 @@ Map<String, dynamic> _$AtsPurchaseTotalToJson(_AtsPurchaseTotal instance) =>
       'freightWeight': instance.freightWeight,
     };
 
-_AtsReception _$AtsReceptionFromJson(Map<String, dynamic> json) =>
-    _AtsReception(
+_$AtsReceptionImpl _$$AtsReceptionImplFromJson(Map<String, dynamic> json) =>
+    _$AtsReceptionImpl(
       id: json['id'] as String,
       orderId: (json['orderId'] as num?)?.toInt(),
       errorRate: (json['errorRate'] as num?)?.toDouble(),
@@ -623,7 +637,7 @@ _AtsReception _$AtsReceptionFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$AtsReceptionToJson(_AtsReception instance) =>
+Map<String, dynamic> _$$AtsReceptionImplToJson(_$AtsReceptionImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'orderId': instance.orderId,
@@ -651,16 +665,17 @@ Json? _$JsonConverterToJson<Json, Value>(
 ) =>
     value == null ? null : toJson(value);
 
-_AtsEntryUnloadInput _$AtsEntryUnloadInputFromJson(Map<String, dynamic> json) =>
-    _AtsEntryUnloadInput(
+_$AtsEntryUnloadInputImpl _$$AtsEntryUnloadInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsEntryUnloadInputImpl(
       id: json['id'] as String?,
       fromAssetId: json['fromAssetId'] as String?,
       receptionId: json['receptionId'] as String?,
       isBluetooth: json['isBluetooth'] as bool?,
     );
 
-Map<String, dynamic> _$AtsEntryUnloadInputToJson(
-        _AtsEntryUnloadInput instance) =>
+Map<String, dynamic> _$$AtsEntryUnloadInputImplToJson(
+        _$AtsEntryUnloadInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'fromAssetId': instance.fromAssetId,
@@ -668,8 +683,9 @@ Map<String, dynamic> _$AtsEntryUnloadInputToJson(
       'isBluetooth': instance.isBluetooth,
     };
 
-_AtsIdeInformation _$AtsIdeInformationFromJson(Map<String, dynamic> json) =>
-    _AtsIdeInformation(
+_$AtsIdeInformationImpl _$$AtsIdeInformationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsIdeInformationImpl(
       ideType: json['ideType'] as String?,
       serie: json['serie'] as String?,
       model: json['model'] as String?,
@@ -677,7 +693,8 @@ _AtsIdeInformation _$AtsIdeInformationFromJson(Map<String, dynamic> json) =>
       operationType: json['operationType'] as String?,
     );
 
-Map<String, dynamic> _$AtsIdeInformationToJson(_AtsIdeInformation instance) =>
+Map<String, dynamic> _$$AtsIdeInformationImplToJson(
+        _$AtsIdeInformationImpl instance) =>
     <String, dynamic>{
       'ideType': instance.ideType,
       'serie': instance.serie,
@@ -686,17 +703,17 @@ Map<String, dynamic> _$AtsIdeInformationToJson(_AtsIdeInformation instance) =>
       'operationType': instance.operationType,
     };
 
-_OperationProductInformation _$OperationProductInformationFromJson(
+_$OperationProductInformationImpl _$$OperationProductInformationImplFromJson(
         Map<String, dynamic> json) =>
-    _OperationProductInformation(
+    _$OperationProductInformationImpl(
       category: json['category'] as String?,
       quantity: (json['quantity'] as num?)?.toDouble(),
       subcategory: json['subcategory'] as String?,
       fuelType: json['fuelType'] as String?,
     );
 
-Map<String, dynamic> _$OperationProductInformationToJson(
-        _OperationProductInformation instance) =>
+Map<String, dynamic> _$$OperationProductInformationImplToJson(
+        _$OperationProductInformationImpl instance) =>
     <String, dynamic>{
       'category': instance.category,
       'quantity': instance.quantity,
@@ -704,9 +721,9 @@ Map<String, dynamic> _$OperationProductInformationToJson(
       'fuelType': instance.fuelType,
     };
 
-_AtsLoadingParamsFormInput _$AtsLoadingParamsFormInputFromJson(
+_$AtsLoadingParamsFormInputImpl _$$AtsLoadingParamsFormInputImplFromJson(
         Map<String, dynamic> json) =>
-    _AtsLoadingParamsFormInput(
+    _$AtsLoadingParamsFormInputImpl(
       id: json['id'] as String?,
       assetId: json['assetId'] as String?,
       receptionId: json['receptionId'] as String?,
@@ -720,8 +737,8 @@ _AtsLoadingParamsFormInput _$AtsLoadingParamsFormInputFromJson(
       formNumber: json['formNumber'] as String?,
     );
 
-Map<String, dynamic> _$AtsLoadingParamsFormInputToJson(
-        _AtsLoadingParamsFormInput instance) =>
+Map<String, dynamic> _$$AtsLoadingParamsFormInputImplToJson(
+        _$AtsLoadingParamsFormInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -736,9 +753,9 @@ Map<String, dynamic> _$AtsLoadingParamsFormInputToJson(
       'formNumber': instance.formNumber,
     };
 
-_AtsLoadingParamsForm _$AtsLoadingParamsFormFromJson(
+_$AtsLoadingParamsFormImpl _$$AtsLoadingParamsFormImplFromJson(
         Map<String, dynamic> json) =>
-    _AtsLoadingParamsForm(
+    _$AtsLoadingParamsFormImpl(
       id: json['id'] as String?,
       assetId: json['assetId'] as String?,
       asset: json['asset'] == null
@@ -761,8 +778,8 @@ _AtsLoadingParamsForm _$AtsLoadingParamsFormFromJson(
       formNumber: json['formNumber'] as String?,
     );
 
-Map<String, dynamic> _$AtsLoadingParamsFormToJson(
-        _AtsLoadingParamsForm instance) =>
+Map<String, dynamic> _$$AtsLoadingParamsFormImplToJson(
+        _$AtsLoadingParamsFormImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -781,19 +798,20 @@ Map<String, dynamic> _$AtsLoadingParamsFormToJson(
       'formNumber': instance.formNumber,
     };
 
-_AtsExitStatus _$AtsExitStatusFromJson(Map<String, dynamic> json) =>
-    _AtsExitStatus(
+_$AtsExitStatusImpl _$$AtsExitStatusImplFromJson(Map<String, dynamic> json) =>
+    _$AtsExitStatusImpl(
       date: const TimestampOrNullConverter().fromJson(json['date'] as num?),
       status: json['status'] as bool?,
     );
 
-Map<String, dynamic> _$AtsExitStatusToJson(_AtsExitStatus instance) =>
+Map<String, dynamic> _$$AtsExitStatusImplToJson(_$AtsExitStatusImpl instance) =>
     <String, dynamic>{
       'date': const TimestampOrNullConverter().toJson(instance.date),
       'status': instance.status,
     };
 
-_AtsExit _$AtsExitFromJson(Map<String, dynamic> json) => _AtsExit(
+_$AtsExitImpl _$$AtsExitImplFromJson(Map<String, dynamic> json) =>
+    _$AtsExitImpl(
       id: json['id'] as String?,
       identifier: (json['identifier'] as num?)?.toInt(),
       fromAssetId: json['fromAssetId'] as String?,
@@ -822,7 +840,8 @@ _AtsExit _$AtsExitFromJson(Map<String, dynamic> json) => _AtsExit(
       attendantId: json['attendantId'] as String?,
     );
 
-Map<String, dynamic> _$AtsExitToJson(_AtsExit instance) => <String, dynamic>{
+Map<String, dynamic> _$$AtsExitImplToJson(_$AtsExitImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'identifier': instance.identifier,
       'fromAssetId': instance.fromAssetId,
@@ -846,8 +865,9 @@ Map<String, dynamic> _$AtsExitToJson(_AtsExit instance) => <String, dynamic>{
       'attendantId': instance.attendantId,
     };
 
-_AtsPossibleExit _$AtsPossibleExitFromJson(Map<String, dynamic> json) =>
-    _AtsPossibleExit(
+_$AtsPossibleExitImpl _$$AtsPossibleExitImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsPossibleExitImpl(
       id: json['id'] as String?,
       fromAssetId: json['fromAssetId'] as String?,
       fromAsset: json['fromAsset'] == null
@@ -870,7 +890,8 @@ _AtsPossibleExit _$AtsPossibleExitFromJson(Map<String, dynamic> json) =>
       isValidated: json['isValidated'] as bool?,
     );
 
-Map<String, dynamic> _$AtsPossibleExitToJson(_AtsPossibleExit instance) =>
+Map<String, dynamic> _$$AtsPossibleExitImplToJson(
+        _$AtsPossibleExitImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'fromAssetId': instance.fromAssetId,
@@ -887,8 +908,9 @@ Map<String, dynamic> _$AtsPossibleExitToJson(_AtsPossibleExit instance) =>
       'isValidated': instance.isValidated,
     };
 
-_AtsExecuteExitInput _$AtsExecuteExitInputFromJson(Map<String, dynamic> json) =>
-    _AtsExecuteExitInput(
+_$AtsExecuteExitInputImpl _$$AtsExecuteExitInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AtsExecuteExitInputImpl(
       fromAssetId: json['fromAssetId'] as String?,
       sensorId: json['sensorId'] as String?,
       presetValue: (json['presetValue'] as num?)?.toInt(),
@@ -898,8 +920,8 @@ _AtsExecuteExitInput _$AtsExecuteExitInputFromJson(Map<String, dynamic> json) =>
           .fromJson(json['fromApp'] as String?),
     );
 
-Map<String, dynamic> _$AtsExecuteExitInputToJson(
-        _AtsExecuteExitInput instance) =>
+Map<String, dynamic> _$$AtsExecuteExitInputImplToJson(
+        _$AtsExecuteExitInputImpl instance) =>
     <String, dynamic>{
       'fromAssetId': instance.fromAssetId,
       'sensorId': instance.sensorId,
@@ -909,9 +931,9 @@ Map<String, dynamic> _$AtsExecuteExitInputToJson(
       'fromApp': const AtsFromAppOrNullConverter().toJson(instance.fromApp),
     };
 
-_AtsExecuteExitHistory _$AtsExecuteExitHistoryFromJson(
+_$AtsExecuteExitHistoryImpl _$$AtsExecuteExitHistoryImplFromJson(
         Map<String, dynamic> json) =>
-    _AtsExecuteExitHistory(
+    _$AtsExecuteExitHistoryImpl(
       id: json['id'] as String?,
       generatedBy: json['generatedBy'] as String?,
       fromAsset: json['fromAsset'] as String?,
@@ -923,8 +945,8 @@ _AtsExecuteExitHistory _$AtsExecuteExitHistoryFromJson(
           .fromJson(json['status'] as String?),
     );
 
-Map<String, dynamic> _$AtsExecuteExitHistoryToJson(
-        _AtsExecuteExitHistory instance) =>
+Map<String, dynamic> _$$AtsExecuteExitHistoryImplToJson(
+        _$AtsExecuteExitHistoryImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'generatedBy': instance.generatedBy,
@@ -936,8 +958,8 @@ Map<String, dynamic> _$AtsExecuteExitHistoryToJson(
           const AtsExitExecuteStatusOrNullConverter().toJson(instance.status),
     };
 
-_AtsExitInput _$AtsExitInputFromJson(Map<String, dynamic> json) =>
-    _AtsExitInput(
+_$AtsExitInputImpl _$$AtsExitInputImplFromJson(Map<String, dynamic> json) =>
+    _$AtsExitInputImpl(
       id: json['id'] as String?,
       assetId: json['assetId'] as String?,
       liters: (json['liters'] as num?)?.toDouble(),
@@ -946,7 +968,7 @@ _AtsExitInput _$AtsExitInputFromJson(Map<String, dynamic> json) =>
       attendantId: json['attendantId'] as String?,
     );
 
-Map<String, dynamic> _$AtsExitInputToJson(_AtsExitInput instance) =>
+Map<String, dynamic> _$$AtsExitInputImplToJson(_$AtsExitInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -956,7 +978,8 @@ Map<String, dynamic> _$AtsExitInputToJson(_AtsExitInput instance) =>
       'attendantId': instance.attendantId,
     };
 
-_AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) => _AtsEntry(
+_$AtsEntryImpl _$$AtsEntryImplFromJson(Map<String, dynamic> json) =>
+    _$AtsEntryImpl(
       id: json['id'] as String,
       assetId: json['assetId'] as String?,
       asset: json['asset'] == null
@@ -993,7 +1016,8 @@ _AtsEntry _$AtsEntryFromJson(Map<String, dynamic> json) => _AtsEntry(
       operationId: json['operationId'] as String?,
     );
 
-Map<String, dynamic> _$AtsEntryToJson(_AtsEntry instance) => <String, dynamic>{
+Map<String, dynamic> _$$AtsEntryImplToJson(_$AtsEntryImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
       'asset': instance.asset?.toJson(),
@@ -1020,21 +1044,22 @@ Map<String, dynamic> _$AtsEntryToJson(_AtsEntry instance) => <String, dynamic>{
       'operationId': instance.operationId,
     };
 
-_AtsVolume _$AtsVolumeFromJson(Map<String, dynamic> json) => _AtsVolume(
+_$AtsVolumeImpl _$$AtsVolumeImplFromJson(Map<String, dynamic> json) =>
+    _$AtsVolumeImpl(
       assetId: json['assetId'] as String?,
       procedureResult: (json['procedureResult'] as num?)?.toDouble(),
       at: const TimestampOrNullConverter().fromJson(json['at'] as num?),
     );
 
-Map<String, dynamic> _$AtsVolumeToJson(_AtsVolume instance) =>
+Map<String, dynamic> _$$AtsVolumeImplToJson(_$AtsVolumeImpl instance) =>
     <String, dynamic>{
       'assetId': instance.assetId,
       'procedureResult': instance.procedureResult,
       'at': const TimestampOrNullConverter().toJson(instance.at),
     };
 
-_AtsEntryInput _$AtsEntryInputFromJson(Map<String, dynamic> json) =>
-    _AtsEntryInput(
+_$AtsEntryInputImpl _$$AtsEntryInputImplFromJson(Map<String, dynamic> json) =>
+    _$AtsEntryInputImpl(
       id: json['id'] as String?,
       assetId: json['assetId'] as String?,
       oldTankLevel: (json['oldTankLevel'] as num?)?.toDouble(),
@@ -1052,7 +1077,7 @@ _AtsEntryInput _$AtsEntryInputFromJson(Map<String, dynamic> json) =>
       fuelType: json['fuelType'] as String?,
     );
 
-Map<String, dynamic> _$AtsEntryInputToJson(_AtsEntryInput instance) =>
+Map<String, dynamic> _$$AtsEntryInputImplToJson(_$AtsEntryInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -1071,8 +1096,8 @@ Map<String, dynamic> _$AtsEntryInputToJson(_AtsEntryInput instance) =>
       'fuelType': instance.fuelType,
     };
 
-_AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
-    _AtsOperation(
+_$AtsOperationImpl _$$AtsOperationImplFromJson(Map<String, dynamic> json) =>
+    _$AtsOperationImpl(
       id: json['id'] as String?,
       sellerAssetId: json['sellerAssetId'] as String?,
       transportAssetId: json['transportAssetId'] as String?,
@@ -1123,7 +1148,7 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$AtsOperationToJson(_AtsOperation instance) =>
+Map<String, dynamic> _$$AtsOperationImplToJson(_$AtsOperationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'sellerAssetId': instance.sellerAssetId,
@@ -1155,9 +1180,9 @@ Map<String, dynamic> _$AtsOperationToJson(_AtsOperation instance) =>
       'caclForms': instance.caclForms,
     };
 
-_AtsOperationStatuses _$AtsOperationStatusesFromJson(
+_$AtsOperationStatusesImpl _$$AtsOperationStatusesImplFromJson(
         Map<String, dynamic> json) =>
-    _AtsOperationStatuses(
+    _$AtsOperationStatusesImpl(
       asset: json['asset'] == null
           ? null
           : Asset.fromJson(json['asset'] as Map<String, dynamic>),
@@ -1174,8 +1199,8 @@ _AtsOperationStatuses _$AtsOperationStatusesFromJson(
       eta: const TimestampOrNullConverter().fromJson(json['eta'] as num?),
     );
 
-Map<String, dynamic> _$AtsOperationStatusesToJson(
-        _AtsOperationStatuses instance) =>
+Map<String, dynamic> _$$AtsOperationStatusesImplToJson(
+        _$AtsOperationStatusesImpl instance) =>
     <String, dynamic>{
       'asset': instance.asset?.toJson(),
       'inTransitAt':

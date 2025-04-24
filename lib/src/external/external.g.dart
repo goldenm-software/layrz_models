@@ -6,8 +6,8 @@ part of 'external.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ExternalSource _$ExternalSourceFromJson(Map<String, dynamic> json) =>
-    _ExternalSource(
+_$ExternalSourceImpl _$$ExternalSourceImplFromJson(Map<String, dynamic> json) =>
+    _$ExternalSourceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
@@ -18,7 +18,8 @@ _ExternalSource _$ExternalSourceFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$ExternalSourceToJson(_ExternalSource instance) =>
+Map<String, dynamic> _$$ExternalSourceImplToJson(
+        _$ExternalSourceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -27,8 +28,9 @@ Map<String, dynamic> _$ExternalSourceToJson(_ExternalSource instance) =>
       'requiredFields': instance.requiredFields.map((e) => e.toJson()).toList(),
     };
 
-_ExternalAccount _$ExternalAccountFromJson(Map<String, dynamic> json) =>
-    _ExternalAccount(
+_$ExternalAccountImpl _$$ExternalAccountImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ExternalAccountImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       credentials: json['credentials'] as Map<String, dynamic>?,
@@ -44,7 +46,8 @@ _ExternalAccount _$ExternalAccountFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$ExternalAccountToJson(_ExternalAccount instance) =>
+Map<String, dynamic> _$$ExternalAccountImplToJson(
+        _$ExternalAccountImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -55,15 +58,15 @@ Map<String, dynamic> _$ExternalAccountToJson(_ExternalAccount instance) =>
       'devices': instance.devices?.map((e) => e.toJson()).toList(),
     };
 
-_ExternalUnit _$ExternalUnitFromJson(Map<String, dynamic> json) =>
-    _ExternalUnit(
+_$ExternalUnitImpl _$$ExternalUnitImplFromJson(Map<String, dynamic> json) =>
+    _$ExternalUnitImpl(
       externalId: json['externalId'] as String?,
       name: json['name'] as String,
       ident: json['ident'] as String,
       additionalFields: json['additionalFields'] as Map<String, dynamic>,
     );
 
-Map<String, dynamic> _$ExternalUnitToJson(_ExternalUnit instance) =>
+Map<String, dynamic> _$$ExternalUnitImplToJson(_$ExternalUnitImpl instance) =>
     <String, dynamic>{
       'externalId': instance.externalId,
       'name': instance.name,
@@ -71,25 +74,29 @@ Map<String, dynamic> _$ExternalUnitToJson(_ExternalUnit instance) =>
       'additionalFields': instance.additionalFields,
     };
 
-_ExternalResource _$ExternalResourceFromJson(Map<String, dynamic> json) =>
-    _ExternalResource(
+_$ExternalResourceImpl _$$ExternalResourceImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ExternalResourceImpl(
       wialonId: json['wialonId'] as String,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$ExternalResourceToJson(_ExternalResource instance) =>
+Map<String, dynamic> _$$ExternalResourceImplToJson(
+        _$ExternalResourceImpl instance) =>
     <String, dynamic>{
       'wialonId': instance.wialonId,
       'name': instance.name,
     };
 
-_ExternalGeofence _$ExternalGeofenceFromJson(Map<String, dynamic> json) =>
-    _ExternalGeofence(
+_$ExternalGeofenceImpl _$$ExternalGeofenceImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ExternalGeofenceImpl(
       wialonId: json['wialonId'] as String,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$ExternalGeofenceToJson(_ExternalGeofence instance) =>
+Map<String, dynamic> _$$ExternalGeofenceImplToJson(
+        _$ExternalGeofenceImpl instance) =>
     <String, dynamic>{
       'wialonId': instance.wialonId,
       'name': instance.name,

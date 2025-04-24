@@ -6,14 +6,15 @@ part of 'commands.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_CommandData _$CommandDataFromJson(Map<String, dynamic> json) => _CommandData(
+_$CommandDataImpl _$$CommandDataImplFromJson(Map<String, dynamic> json) =>
+    _$CommandDataImpl(
       source: const CommandDefinitionSourceConverter()
           .fromJson(json['source'] as String),
       definition: json['definition'] as String,
       payload: json['payload'] as Map<String, dynamic>?,
     );
 
-Map<String, dynamic> _$CommandDataToJson(_CommandData instance) =>
+Map<String, dynamic> _$$CommandDataImplToJson(_$CommandDataImpl instance) =>
     <String, dynamic>{
       'source':
           const CommandDefinitionSourceConverter().toJson(instance.source),
@@ -21,8 +22,8 @@ Map<String, dynamic> _$CommandDataToJson(_CommandData instance) =>
       'payload': instance.payload,
     };
 
-_DeviceCommand _$DeviceCommandFromJson(Map<String, dynamic> json) =>
-    _DeviceCommand(
+_$DeviceCommandImpl _$$DeviceCommandImplFromJson(Map<String, dynamic> json) =>
+    _$DeviceCommandImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       source: const CommandSourceConverter().fromJson(json['source'] as String),
@@ -56,7 +57,7 @@ _DeviceCommand _$DeviceCommandFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$DeviceCommandToJson(_DeviceCommand instance) =>
+Map<String, dynamic> _$$DeviceCommandImplToJson(_$DeviceCommandImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -79,15 +80,17 @@ Map<String, dynamic> _$DeviceCommandToJson(_DeviceCommand instance) =>
           instance.possibleDevices?.map((e) => e.toJson()).toList(),
     };
 
-_CommandDataInput _$CommandDataInputFromJson(Map<String, dynamic> json) =>
-    _CommandDataInput(
+_$CommandDataInputImpl _$$CommandDataInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CommandDataInputImpl(
       source: const CommandDefinitionSourceOrNullConverter()
           .fromJson(json['source'] as String?),
       definition: json['definition'] as String?,
       payload: json['payload'] as Map<String, dynamic>? ?? const {},
     );
 
-Map<String, dynamic> _$CommandDataInputToJson(_CommandDataInput instance) =>
+Map<String, dynamic> _$$CommandDataInputImplToJson(
+        _$CommandDataInputImpl instance) =>
     <String, dynamic>{
       'source': const CommandDefinitionSourceOrNullConverter()
           .toJson(instance.source),
@@ -95,8 +98,8 @@ Map<String, dynamic> _$CommandDataInputToJson(_CommandDataInput instance) =>
       'payload': instance.payload,
     };
 
-_CommandInput _$CommandInputFromJson(Map<String, dynamic> json) =>
-    _CommandInput(
+_$CommandInputImpl _$$CommandInputImplFromJson(Map<String, dynamic> json) =>
+    _$CommandInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       source: const CommandSourceOrNullConverter()
@@ -117,7 +120,7 @@ _CommandInput _$CommandInputFromJson(Map<String, dynamic> json) =>
       modbusPort: json['modbusPort'] as String?,
     );
 
-Map<String, dynamic> _$CommandInputToJson(_CommandInput instance) =>
+Map<String, dynamic> _$$CommandInputImplToJson(_$CommandInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -133,9 +136,9 @@ Map<String, dynamic> _$CommandInputToJson(_CommandInput instance) =>
       'modbusPort': instance.modbusPort,
     };
 
-_CommandPayloadDefinition _$CommandPayloadDefinitionFromJson(
+_$CommandPayloadDefinitionImpl _$$CommandPayloadDefinitionImplFromJson(
         Map<String, dynamic> json) =>
-    _CommandPayloadDefinition(
+    _$CommandPayloadDefinitionImpl(
       parameter: json['parameter'] as String,
       description: json['description'] as String?,
       dataType: const CommandPayloadDataTypeConverter()
@@ -156,8 +159,8 @@ _CommandPayloadDefinition _$CommandPayloadDefinitionFromJson(
       maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
     );
 
-Map<String, dynamic> _$CommandPayloadDefinitionToJson(
-        _CommandPayloadDefinition instance) =>
+Map<String, dynamic> _$$CommandPayloadDefinitionImplToJson(
+        _$CommandPayloadDefinitionImpl instance) =>
     <String, dynamic>{
       'parameter': instance.parameter,
       'description': instance.description,
@@ -175,52 +178,54 @@ Map<String, dynamic> _$CommandPayloadDefinitionToJson(
       'maxQuantity': instance.maxQuantity,
     };
 
-_CommandPayloadDefinitionInput _$CommandPayloadDefinitionInputFromJson(
+_$CommandPayloadDefinitionInputImpl
+    _$$CommandPayloadDefinitionInputImplFromJson(Map<String, dynamic> json) =>
+        _$CommandPayloadDefinitionInputImpl(
+          parameter: json['parameter'] as String? ?? '',
+          description: json['description'] as String? ?? '',
+          dataType: json['dataType'] == null
+              ? CommandPayloadDataType.string
+              : const CommandPayloadDataTypeConverter()
+                  .fromJson(json['dataType'] as String),
+          isRequired: json['isRequired'] as bool? ?? false,
+          minValue: json['minValue'] as num?,
+          maxValue: json['maxValue'] as num?,
+          minLength: (json['minLength'] as num?)?.toInt(),
+          maxLength: (json['maxLength'] as num?)?.toInt(),
+          choices: (json['choices'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList(),
+          regexPattern: const RegExpOrNullConverter()
+              .fromJson(json['regexPattern'] as String?),
+          nested: (json['nested'] as List<dynamic>?)
+              ?.map((e) => CommandPayloadDefinitionInput.fromJson(
+                  e as Map<String, dynamic>))
+              .toList(),
+          maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
+        );
+
+Map<String, dynamic> _$$CommandPayloadDefinitionInputImplToJson(
+        _$CommandPayloadDefinitionInputImpl instance) =>
+    <String, dynamic>{
+      'parameter': instance.parameter,
+      'description': instance.description,
+      'dataType':
+          const CommandPayloadDataTypeConverter().toJson(instance.dataType),
+      'isRequired': instance.isRequired,
+      'minValue': instance.minValue,
+      'maxValue': instance.maxValue,
+      'minLength': instance.minLength,
+      'maxLength': instance.maxLength,
+      'choices': instance.choices,
+      'regexPattern':
+          const RegExpOrNullConverter().toJson(instance.regexPattern),
+      'nested': instance.nested?.map((e) => e.toJson()).toList(),
+      'maxQuantity': instance.maxQuantity,
+    };
+
+_$CommandDefinitionImpl _$$CommandDefinitionImplFromJson(
         Map<String, dynamic> json) =>
-    _CommandPayloadDefinitionInput(
-      parameter: json['parameter'] as String? ?? '',
-      description: json['description'] as String? ?? '',
-      dataType: json['dataType'] == null
-          ? CommandPayloadDataType.string
-          : const CommandPayloadDataTypeConverter()
-              .fromJson(json['dataType'] as String),
-      isRequired: json['isRequired'] as bool? ?? false,
-      minValue: json['minValue'] as num?,
-      maxValue: json['maxValue'] as num?,
-      minLength: (json['minLength'] as num?)?.toInt(),
-      maxLength: (json['maxLength'] as num?)?.toInt(),
-      choices:
-          (json['choices'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      regexPattern: const RegExpOrNullConverter()
-          .fromJson(json['regexPattern'] as String?),
-      nested: (json['nested'] as List<dynamic>?)
-          ?.map((e) =>
-              CommandPayloadDefinitionInput.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      maxQuantity: (json['maxQuantity'] as num?)?.toInt(),
-    );
-
-Map<String, dynamic> _$CommandPayloadDefinitionInputToJson(
-        _CommandPayloadDefinitionInput instance) =>
-    <String, dynamic>{
-      'parameter': instance.parameter,
-      'description': instance.description,
-      'dataType':
-          const CommandPayloadDataTypeConverter().toJson(instance.dataType),
-      'isRequired': instance.isRequired,
-      'minValue': instance.minValue,
-      'maxValue': instance.maxValue,
-      'minLength': instance.minLength,
-      'maxLength': instance.maxLength,
-      'choices': instance.choices,
-      'regexPattern':
-          const RegExpOrNullConverter().toJson(instance.regexPattern),
-      'nested': instance.nested?.map((e) => e.toJson()).toList(),
-      'maxQuantity': instance.maxQuantity,
-    };
-
-_CommandDefinition _$CommandDefinitionFromJson(Map<String, dynamic> json) =>
-    _CommandDefinition(
+    _$CommandDefinitionImpl(
       name: json['name'] as String,
       description: json['description'] as String?,
       sources: (json['sources'] as List<dynamic>)
@@ -234,7 +239,8 @@ _CommandDefinition _$CommandDefinitionFromJson(Map<String, dynamic> json) =>
       translationKey: json['translationKey'] as String?,
     );
 
-Map<String, dynamic> _$CommandDefinitionToJson(_CommandDefinition instance) =>
+Map<String, dynamic> _$$CommandDefinitionImplToJson(
+        _$CommandDefinitionImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
@@ -245,9 +251,9 @@ Map<String, dynamic> _$CommandDefinitionToJson(_CommandDefinition instance) =>
       'translationKey': instance.translationKey,
     };
 
-_CommandDefinitionInput _$CommandDefinitionInputFromJson(
+_$CommandDefinitionInputImpl _$$CommandDefinitionInputImplFromJson(
         Map<String, dynamic> json) =>
-    _CommandDefinitionInput(
+    _$CommandDefinitionInputImpl(
       name: json['name'] as String? ?? '',
       description: json['description'] as String? ?? '',
       sources: (json['sources'] as List<dynamic>?)
@@ -262,8 +268,8 @@ _CommandDefinitionInput _$CommandDefinitionInputFromJson(
           const [],
     );
 
-Map<String, dynamic> _$CommandDefinitionInputToJson(
-        _CommandDefinitionInput instance) =>
+Map<String, dynamic> _$$CommandDefinitionInputImplToJson(
+        _$CommandDefinitionInputImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'description': instance.description,
@@ -273,8 +279,8 @@ Map<String, dynamic> _$CommandDefinitionInputToJson(
       'payload': instance.payload.map((e) => e.toJson()).toList(),
     };
 
-_AssetCommand _$AssetCommandFromJson(Map<String, dynamic> json) =>
-    _AssetCommand(
+_$AssetCommandImpl _$$AssetCommandImplFromJson(Map<String, dynamic> json) =>
+    _$AssetCommandImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       possibleDevices: (json['possibleDevices'] as List<dynamic>?)
@@ -284,7 +290,7 @@ _AssetCommand _$AssetCommandFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$AssetCommandToJson(_AssetCommand instance) =>
+Map<String, dynamic> _$$AssetCommandImplToJson(_$AssetCommandImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -292,16 +298,16 @@ Map<String, dynamic> _$AssetCommandToJson(_AssetCommand instance) =>
           instance.possibleDevices.map((e) => e.toJson()).toList(),
     };
 
-_AssetCommandPossibleDevice _$AssetCommandPossibleDeviceFromJson(
+_$AssetCommandPossibleDeviceImpl _$$AssetCommandPossibleDeviceImplFromJson(
         Map<String, dynamic> json) =>
-    _AssetCommandPossibleDevice(
+    _$AssetCommandPossibleDeviceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       ident: json['ident'] as String,
     );
 
-Map<String, dynamic> _$AssetCommandPossibleDeviceToJson(
-        _AssetCommandPossibleDevice instance) =>
+Map<String, dynamic> _$$AssetCommandPossibleDeviceImplToJson(
+        _$AssetCommandPossibleDeviceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

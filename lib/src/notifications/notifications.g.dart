@@ -6,8 +6,9 @@ part of 'notifications.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_LayrzNotification _$LayrzNotificationFromJson(Map<String, dynamic> json) =>
-    _LayrzNotification(
+_$LayrzNotificationImpl _$$LayrzNotificationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$LayrzNotificationImpl(
       title: json['title'] as String,
       titleTranslate: json['titleTranslate'] as bool? ?? false,
       titleArgs: json['titleArgs'] as Map<String, dynamic>? ?? const {},
@@ -27,7 +28,8 @@ _LayrzNotification _$LayrzNotificationFromJson(Map<String, dynamic> json) =>
           : const DurationConverter().fromJson(json['duration'] as num),
     );
 
-Map<String, dynamic> _$LayrzNotificationToJson(_LayrzNotification instance) =>
+Map<String, dynamic> _$$LayrzNotificationImplToJson(
+        _$LayrzNotificationImpl instance) =>
     <String, dynamic>{
       'title': instance.title,
       'titleTranslate': instance.titleTranslate,

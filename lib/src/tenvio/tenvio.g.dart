@@ -6,8 +6,9 @@ part of 'tenvio.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_TenvioItemMovement _$TenvioItemMovementFromJson(Map<String, dynamic> json) =>
-    _TenvioItemMovement(
+_$TenvioItemMovementImpl _$$TenvioItemMovementImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioItemMovementImpl(
       id: json['id'] as String,
       previousOwnerId: json['previousOwnerId'] as String?,
       previousOwner: json['previousOwner'] == null
@@ -25,7 +26,8 @@ _TenvioItemMovement _$TenvioItemMovementFromJson(Map<String, dynamic> json) =>
           const TimestampConverter().fromJson(json['triggeredAt'] as num),
     );
 
-Map<String, dynamic> _$TenvioItemMovementToJson(_TenvioItemMovement instance) =>
+Map<String, dynamic> _$$TenvioItemMovementImplToJson(
+        _$TenvioItemMovementImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'previousOwnerId': instance.previousOwnerId,
@@ -37,8 +39,9 @@ Map<String, dynamic> _$TenvioItemMovementToJson(_TenvioItemMovement instance) =>
       'triggeredAt': const TimestampConverter().toJson(instance.triggeredAt),
     };
 
-_DropoffFailedReason _$DropoffFailedReasonFromJson(Map<String, dynamic> json) =>
-    _DropoffFailedReason(
+_$DropoffFailedReasonImpl _$$DropoffFailedReasonImplFromJson(
+        Map<String, dynamic> json) =>
+    _$DropoffFailedReasonImpl(
       id: json['id'] as String,
       driverId: json['driverId'] as String,
       driver: json['driver'] == null
@@ -48,8 +51,8 @@ _DropoffFailedReason _$DropoffFailedReasonFromJson(Map<String, dynamic> json) =>
       createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
     );
 
-Map<String, dynamic> _$DropoffFailedReasonToJson(
-        _DropoffFailedReason instance) =>
+Map<String, dynamic> _$$DropoffFailedReasonImplToJson(
+        _$DropoffFailedReasonImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'driverId': instance.driverId,
@@ -58,9 +61,9 @@ Map<String, dynamic> _$DropoffFailedReasonToJson(
       'createdAt': const TimestampConverter().toJson(instance.createdAt),
     };
 
-_TenvioCustomProperty _$TenvioCustomPropertyFromJson(
+_$TenvioCustomPropertyImpl _$$TenvioCustomPropertyImplFromJson(
         Map<String, dynamic> json) =>
-    _TenvioCustomProperty(
+    _$TenvioCustomPropertyImpl(
       name: json['name'] as String,
       dataType: const TenvioPropertyDataTypeConverter()
           .fromJson(json['dataType'] as String),
@@ -77,8 +80,8 @@ _TenvioCustomProperty _$TenvioCustomPropertyFromJson(
       defaultValue: json['defaultValue'],
     );
 
-Map<String, dynamic> _$TenvioCustomPropertyToJson(
-        _TenvioCustomProperty instance) =>
+Map<String, dynamic> _$$TenvioCustomPropertyImplToJson(
+        _$TenvioCustomPropertyImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'dataType':
@@ -93,9 +96,9 @@ Map<String, dynamic> _$TenvioCustomPropertyToJson(
       'defaultValue': instance.defaultValue,
     };
 
-_TenvioCustomPropertyInput _$TenvioCustomPropertyInputFromJson(
+_$TenvioCustomPropertyInputImpl _$$TenvioCustomPropertyInputImplFromJson(
         Map<String, dynamic> json) =>
-    _TenvioCustomPropertyInput(
+    _$TenvioCustomPropertyInputImpl(
       name: json['name'] as String? ?? '',
       dataType: json['dataType'] == null
           ? TenvioPropertyDataType.string
@@ -114,8 +117,8 @@ _TenvioCustomPropertyInput _$TenvioCustomPropertyInputFromJson(
       defaultValue: json['defaultValue'],
     );
 
-Map<String, dynamic> _$TenvioCustomPropertyInputToJson(
-        _TenvioCustomPropertyInput instance) =>
+Map<String, dynamic> _$$TenvioCustomPropertyInputImplToJson(
+        _$TenvioCustomPropertyInputImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'dataType':
@@ -130,8 +133,8 @@ Map<String, dynamic> _$TenvioCustomPropertyInputToJson(
       'defaultValue': instance.defaultValue,
     };
 
-_TenvioPackage _$TenvioPackageFromJson(Map<String, dynamic> json) =>
-    _TenvioPackage(
+_$TenvioPackageImpl _$$TenvioPackageImplFromJson(Map<String, dynamic> json) =>
+    _$TenvioPackageImpl(
       id: json['id'] as String,
       trackingId: json['trackingId'] as String,
       warehouseId: json['warehouseId'] as String?,
@@ -170,7 +173,7 @@ _TenvioPackage _$TenvioPackageFromJson(Map<String, dynamic> json) =>
       signature: json['signature'] as String?,
     );
 
-Map<String, dynamic> _$TenvioPackageToJson(_TenvioPackage instance) =>
+Map<String, dynamic> _$$TenvioPackageImplToJson(_$TenvioPackageImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'trackingId': instance.trackingId,
@@ -194,9 +197,9 @@ Map<String, dynamic> _$TenvioPackageToJson(_TenvioPackage instance) =>
       'signature': instance.signature,
     };
 
-_TenvioPackageQuantity _$TenvioPackageQuantityFromJson(
+_$TenvioPackageQuantityImpl _$$TenvioPackageQuantityImplFromJson(
         Map<String, dynamic> json) =>
-    _TenvioPackageQuantity(
+    _$TenvioPackageQuantityImpl(
       matrixId: json['matrixId'] as String,
       matrix: json['matrix'] == null
           ? null
@@ -204,17 +207,17 @@ _TenvioPackageQuantity _$TenvioPackageQuantityFromJson(
       quantity: (json['quantity'] as num).toInt(),
     );
 
-Map<String, dynamic> _$TenvioPackageQuantityToJson(
-        _TenvioPackageQuantity instance) =>
+Map<String, dynamic> _$$TenvioPackageQuantityImplToJson(
+        _$TenvioPackageQuantityImpl instance) =>
     <String, dynamic>{
       'matrixId': instance.matrixId,
       'matrix': instance.matrix?.toJson(),
       'quantity': instance.quantity,
     };
 
-_TrackedTenvioPackage _$TrackedTenvioPackageFromJson(
+_$TrackedTenvioPackageImpl _$$TrackedTenvioPackageImplFromJson(
         Map<String, dynamic> json) =>
-    _TrackedTenvioPackage(
+    _$TrackedTenvioPackageImpl(
       trackingId: json['trackingId'] as String,
       status: const TenvioPackageStatusConverter()
           .fromJson(json['status'] as String),
@@ -229,8 +232,8 @@ _TrackedTenvioPackage _$TrackedTenvioPackageFromJson(
       updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
     );
 
-Map<String, dynamic> _$TrackedTenvioPackageToJson(
-        _TrackedTenvioPackage instance) =>
+Map<String, dynamic> _$$TrackedTenvioPackageImplToJson(
+        _$TrackedTenvioPackageImpl instance) =>
     <String, dynamic>{
       'trackingId': instance.trackingId,
       'status': const TenvioPackageStatusConverter().toJson(instance.status),
@@ -243,9 +246,9 @@ Map<String, dynamic> _$TrackedTenvioPackageToJson(
       'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
     };
 
-_TenvioPackageHistory _$TenvioPackageHistoryFromJson(
+_$TenvioPackageHistoryImpl _$$TenvioPackageHistoryImplFromJson(
         Map<String, dynamic> json) =>
-    _TenvioPackageHistory(
+    _$TenvioPackageHistoryImpl(
       status: const TenvioPackageStatusConverter()
           .fromJson(json['status'] as String),
       latitude: (json['latitude'] as num?)?.toDouble(),
@@ -258,8 +261,8 @@ _TenvioPackageHistory _$TenvioPackageHistoryFromJson(
           (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$TenvioPackageHistoryToJson(
-        _TenvioPackageHistory instance) =>
+Map<String, dynamic> _$$TenvioPackageHistoryImplToJson(
+        _$TenvioPackageHistoryImpl instance) =>
     <String, dynamic>{
       'status': const TenvioPackageStatusConverter().toJson(instance.status),
       'latitude': instance.latitude,
@@ -269,8 +272,9 @@ Map<String, dynamic> _$TenvioPackageHistoryToJson(
       'images': instance.images,
     };
 
-_TenvioItemQuantity _$TenvioItemQuantityFromJson(Map<String, dynamic> json) =>
-    _TenvioItemQuantity(
+_$TenvioItemQuantityImpl _$$TenvioItemQuantityImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioItemQuantityImpl(
       quantity: (json['quantity'] as num?)?.toInt(),
       loadedQuantity: (json['loadedQuantity'] as num?)?.toInt(),
       matrixId: json['matrixId'] as String?,
@@ -279,7 +283,8 @@ _TenvioItemQuantity _$TenvioItemQuantityFromJson(Map<String, dynamic> json) =>
           : TenvioMatrixItem.fromJson(json['matrix'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$TenvioItemQuantityToJson(_TenvioItemQuantity instance) =>
+Map<String, dynamic> _$$TenvioItemQuantityImplToJson(
+        _$TenvioItemQuantityImpl instance) =>
     <String, dynamic>{
       'quantity': instance.quantity,
       'loadedQuantity': instance.loadedQuantity,
@@ -287,52 +292,54 @@ Map<String, dynamic> _$TenvioItemQuantityToJson(_TenvioItemQuantity instance) =>
       'matrix': instance.matrix?.toJson(),
     };
 
-_TenvioItemQuantityInput _$TenvioItemQuantityInputFromJson(
+_$TenvioItemQuantityInputImpl _$$TenvioItemQuantityInputImplFromJson(
         Map<String, dynamic> json) =>
-    _TenvioItemQuantityInput(
+    _$TenvioItemQuantityInputImpl(
       quantity: (json['quantity'] as num?)?.toInt() ?? 0,
       matrixId: json['matrixId'] as String?,
     );
 
-Map<String, dynamic> _$TenvioItemQuantityInputToJson(
-        _TenvioItemQuantityInput instance) =>
+Map<String, dynamic> _$$TenvioItemQuantityInputImplToJson(
+        _$TenvioItemQuantityInputImpl instance) =>
     <String, dynamic>{
       'quantity': instance.quantity,
       'matrixId': instance.matrixId,
     };
 
-_TenvioMonitorAccess _$TenvioMonitorAccessFromJson(Map<String, dynamic> json) =>
-    _TenvioMonitorAccess(
+_$TenvioMonitorAccessImpl _$$TenvioMonitorAccessImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioMonitorAccessImpl(
       reception: json['reception'] as bool,
       warehouse: json['warehouse'] as bool,
       dispatch: json['dispatch'] as bool,
     );
 
-Map<String, dynamic> _$TenvioMonitorAccessToJson(
-        _TenvioMonitorAccess instance) =>
+Map<String, dynamic> _$$TenvioMonitorAccessImplToJson(
+        _$TenvioMonitorAccessImpl instance) =>
     <String, dynamic>{
       'reception': instance.reception,
       'warehouse': instance.warehouse,
       'dispatch': instance.dispatch,
     };
 
-_TenvioMonitorAccessInput _$TenvioMonitorAccessInputFromJson(
+_$TenvioMonitorAccessInputImpl _$$TenvioMonitorAccessInputImplFromJson(
         Map<String, dynamic> json) =>
-    _TenvioMonitorAccessInput(
+    _$TenvioMonitorAccessInputImpl(
       reception: json['reception'] as bool? ?? false,
       warehouse: json['warehouse'] as bool? ?? false,
       dispatch: json['dispatch'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$TenvioMonitorAccessInputToJson(
-        _TenvioMonitorAccessInput instance) =>
+Map<String, dynamic> _$$TenvioMonitorAccessInputImplToJson(
+        _$TenvioMonitorAccessInputImpl instance) =>
     <String, dynamic>{
       'reception': instance.reception,
       'warehouse': instance.warehouse,
       'dispatch': instance.dispatch,
     };
 
-_TenvioItem _$TenvioItemFromJson(Map<String, dynamic> json) => _TenvioItem(
+_$TenvioItemImpl _$$TenvioItemImplFromJson(Map<String, dynamic> json) =>
+    _$TenvioItemImpl(
       id: json['id'] as String,
       matrixId: json['matrixId'] as String?,
       matrix: json['matrix'] == null
@@ -357,7 +364,7 @@ _TenvioItem _$TenvioItemFromJson(Map<String, dynamic> json) => _TenvioItem(
           const TimestampOrNullConverter().fromJson(json['updatedAt'] as num?),
     );
 
-Map<String, dynamic> _$TenvioItemToJson(_TenvioItem instance) =>
+Map<String, dynamic> _$$TenvioItemImplToJson(_$TenvioItemImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'matrixId': instance.matrixId,
@@ -375,8 +382,9 @@ Map<String, dynamic> _$TenvioItemToJson(_TenvioItem instance) =>
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
     };
 
-_TenvioItemInput _$TenvioItemInputFromJson(Map<String, dynamic> json) =>
-    _TenvioItemInput(
+_$TenvioItemInputImpl _$$TenvioItemInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioItemInputImpl(
       id: json['id'] as String?,
       matrixId: json['matrixId'] as String?,
       location: json['location'] == null
@@ -391,7 +399,8 @@ _TenvioItemInput _$TenvioItemInputFromJson(Map<String, dynamic> json) =>
       warehouseId: json['warehouseId'] as String?,
     );
 
-Map<String, dynamic> _$TenvioItemInputToJson(_TenvioItemInput instance) =>
+Map<String, dynamic> _$$TenvioItemInputImplToJson(
+        _$TenvioItemInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'matrixId': instance.matrixId,
@@ -403,8 +412,9 @@ Map<String, dynamic> _$TenvioItemInputToJson(_TenvioItemInput instance) =>
       'warehouseId': instance.warehouseId,
     };
 
-_TenvioMatrixItem _$TenvioMatrixItemFromJson(Map<String, dynamic> json) =>
-    _TenvioMatrixItem(
+_$TenvioMatrixItemImpl _$$TenvioMatrixItemImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioMatrixItemImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       image: json['image'] as String?,
@@ -425,7 +435,8 @@ _TenvioMatrixItem _$TenvioMatrixItemFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$TenvioMatrixItemToJson(_TenvioMatrixItem instance) =>
+Map<String, dynamic> _$$TenvioMatrixItemImplToJson(
+        _$TenvioMatrixItemImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -442,9 +453,9 @@ Map<String, dynamic> _$TenvioMatrixItemToJson(_TenvioMatrixItem instance) =>
       'items': instance.items?.map((e) => e.toJson()).toList(),
     };
 
-_TenvioMatrixItemInput _$TenvioMatrixItemInputFromJson(
+_$TenvioMatrixItemInputImpl _$$TenvioMatrixItemInputImplFromJson(
         Map<String, dynamic> json) =>
-    _TenvioMatrixItemInput(
+    _$TenvioMatrixItemInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       image: json['image'] as String?,
@@ -459,8 +470,8 @@ _TenvioMatrixItemInput _$TenvioMatrixItemInputFromJson(
           const [],
     );
 
-Map<String, dynamic> _$TenvioMatrixItemInputToJson(
-        _TenvioMatrixItemInput instance) =>
+Map<String, dynamic> _$$TenvioMatrixItemInputImplToJson(
+        _$TenvioMatrixItemInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -473,9 +484,9 @@ Map<String, dynamic> _$TenvioMatrixItemInputToJson(
           instance.customProperties.map((e) => e.toJson()).toList(),
     };
 
-_TenvioUnregisteredUser _$TenvioUnregisteredUserFromJson(
+_$TenvioUnregisteredUserImpl _$$TenvioUnregisteredUserImplFromJson(
         Map<String, dynamic> json) =>
-    _TenvioUnregisteredUser(
+    _$TenvioUnregisteredUserImpl(
       name: json['name'] as String,
       phone: json['phone'] as String?,
       address: json['address'] as String?,
@@ -484,8 +495,8 @@ _TenvioUnregisteredUser _$TenvioUnregisteredUserFromJson(
       email: json['email'] as String,
     );
 
-Map<String, dynamic> _$TenvioUnregisteredUserToJson(
-        _TenvioUnregisteredUser instance) =>
+Map<String, dynamic> _$$TenvioUnregisteredUserImplToJson(
+        _$TenvioUnregisteredUserImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'phone': instance.phone,
@@ -495,9 +506,9 @@ Map<String, dynamic> _$TenvioUnregisteredUserToJson(
       'email': instance.email,
     };
 
-_TenvioUnregisteredUserInput _$TenvioUnregisteredUserInputFromJson(
+_$TenvioUnregisteredUserInputImpl _$$TenvioUnregisteredUserInputImplFromJson(
         Map<String, dynamic> json) =>
-    _TenvioUnregisteredUserInput(
+    _$TenvioUnregisteredUserInputImpl(
       name: json['name'] as String? ?? '',
       phone: json['phone'] as String?,
       address: json['address'] as String?,
@@ -506,8 +517,8 @@ _TenvioUnregisteredUserInput _$TenvioUnregisteredUserInputFromJson(
       email: json['email'] as String? ?? '',
     );
 
-Map<String, dynamic> _$TenvioUnregisteredUserInputToJson(
-        _TenvioUnregisteredUserInput instance) =>
+Map<String, dynamic> _$$TenvioUnregisteredUserInputImplToJson(
+        _$TenvioUnregisteredUserInputImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'phone': instance.phone,
@@ -517,7 +528,8 @@ Map<String, dynamic> _$TenvioUnregisteredUserInputToJson(
       'email': instance.email,
     };
 
-_TenvioOrder _$TenvioOrderFromJson(Map<String, dynamic> json) => _TenvioOrder(
+_$TenvioOrderImpl _$$TenvioOrderImplFromJson(Map<String, dynamic> json) =>
+    _$TenvioOrderImpl(
       id: json['id'] as String,
       ownerId: json['ownerId'] as String,
       warehouse: Asset.fromJson(json['warehouse'] as Map<String, dynamic>),
@@ -567,7 +579,7 @@ _TenvioOrder _$TenvioOrderFromJson(Map<String, dynamic> json) => _TenvioOrder(
           const TimestampOrNullConverter().fromJson(json['updatedAt'] as num?),
     );
 
-Map<String, dynamic> _$TenvioOrderToJson(_TenvioOrder instance) =>
+Map<String, dynamic> _$$TenvioOrderImplToJson(_$TenvioOrderImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'ownerId': instance.ownerId,
@@ -596,8 +608,9 @@ Map<String, dynamic> _$TenvioOrderToJson(_TenvioOrder instance) =>
       'updatedAt': const TimestampOrNullConverter().toJson(instance.updatedAt),
     };
 
-_TenvioOrderInput _$TenvioOrderInputFromJson(Map<String, dynamic> json) =>
-    _TenvioOrderInput(
+_$TenvioOrderInputImpl _$$TenvioOrderInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioOrderInputImpl(
       id: json['id'] as String?,
       warehouseId: json['warehouseId'] as String?,
       status:
@@ -626,7 +639,8 @@ _TenvioOrderInput _$TenvioOrderInputFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$TenvioOrderInputToJson(_TenvioOrderInput instance) =>
+Map<String, dynamic> _$$TenvioOrderInputImplToJson(
+        _$TenvioOrderInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'warehouseId': instance.warehouseId,
@@ -643,8 +657,8 @@ Map<String, dynamic> _$TenvioOrderInputToJson(_TenvioOrderInput instance) =>
       'itemQuantities': instance.itemQuantities.map((e) => e.toJson()).toList(),
     };
 
-_TenvioPhotos _$TenvioPhotosFromJson(Map<String, dynamic> json) =>
-    _TenvioPhotos(
+_$TenvioPhotosImpl _$$TenvioPhotosImplFromJson(Map<String, dynamic> json) =>
+    _$TenvioPhotosImpl(
       status: json['status'] as String?,
       urls: json['urls'] as String?,
       packagedId: json['packagedId'] as String?,
@@ -653,7 +667,7 @@ _TenvioPhotos _$TenvioPhotosFromJson(Map<String, dynamic> json) =>
           : TenvioPackage.fromJson(json['package'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$TenvioPhotosToJson(_TenvioPhotos instance) =>
+Map<String, dynamic> _$$TenvioPhotosImplToJson(_$TenvioPhotosImpl instance) =>
     <String, dynamic>{
       'status': instance.status,
       'urls': instance.urls,
@@ -661,8 +675,9 @@ Map<String, dynamic> _$TenvioPhotosToJson(_TenvioPhotos instance) =>
       'package': instance.package?.toJson(),
     };
 
-_TenvioDispatchGuide _$TenvioDispatchGuideFromJson(Map<String, dynamic> json) =>
-    _TenvioDispatchGuide(
+_$TenvioDispatchGuideImpl _$$TenvioDispatchGuideImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioDispatchGuideImpl(
       id: json['id'] as String,
       status: const TenvioDispatchGuideStatusConverter()
           .fromJson(json['status'] as String),
@@ -695,8 +710,8 @@ _TenvioDispatchGuide _$TenvioDispatchGuideFromJson(Map<String, dynamic> json) =>
       updatedAt: const TimestampConverter().fromJson(json['updatedAt'] as num),
     );
 
-Map<String, dynamic> _$TenvioDispatchGuideToJson(
-        _TenvioDispatchGuide instance) =>
+Map<String, dynamic> _$$TenvioDispatchGuideImplToJson(
+        _$TenvioDispatchGuideImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'status':
@@ -716,9 +731,9 @@ Map<String, dynamic> _$TenvioDispatchGuideToJson(
       'updatedAt': const TimestampConverter().toJson(instance.updatedAt),
     };
 
-_TenvioDispatchGuideInput _$TenvioDispatchGuideInputFromJson(
+_$TenvioDispatchGuideInputImpl _$$TenvioDispatchGuideInputImplFromJson(
         Map<String, dynamic> json) =>
-    _TenvioDispatchGuideInput(
+    _$TenvioDispatchGuideInputImpl(
       id: json['id'] as String?,
       warehouseId: json['warehouseId'] as String,
       status: json['status'] == null
@@ -737,8 +752,8 @@ _TenvioDispatchGuideInput _$TenvioDispatchGuideInputFromJson(
           const [],
     );
 
-Map<String, dynamic> _$TenvioDispatchGuideInputToJson(
-        _TenvioDispatchGuideInput instance) =>
+Map<String, dynamic> _$$TenvioDispatchGuideInputImplToJson(
+        _$TenvioDispatchGuideInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'warehouseId': instance.warehouseId,
@@ -751,8 +766,8 @@ Map<String, dynamic> _$TenvioDispatchGuideInputToJson(
       'packagesIds': instance.packagesIds,
     };
 
-_TenvioDriver _$TenvioDriverFromJson(Map<String, dynamic> json) =>
-    _TenvioDriver(
+_$TenvioDriverImpl _$$TenvioDriverImplFromJson(Map<String, dynamic> json) =>
+    _$TenvioDriverImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       email: json['email'] as String?,
@@ -775,7 +790,7 @@ _TenvioDriver _$TenvioDriverFromJson(Map<String, dynamic> json) =>
       originalId: json['originalId'] as String?,
     );
 
-Map<String, dynamic> _$TenvioDriverToJson(_TenvioDriver instance) =>
+Map<String, dynamic> _$$TenvioDriverImplToJson(_$TenvioDriverImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -791,15 +806,17 @@ Map<String, dynamic> _$TenvioDriverToJson(_TenvioDriver instance) =>
       'originalId': instance.originalId,
     };
 
-_TenvioDriverInput _$TenvioDriverInputFromJson(Map<String, dynamic> json) =>
-    _TenvioDriverInput(
+_$TenvioDriverInputImpl _$$TenvioDriverInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioDriverInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       email: json['email'] as String? ?? '',
       username: json['username'] as String? ?? '',
     );
 
-Map<String, dynamic> _$TenvioDriverInputToJson(_TenvioDriverInput instance) =>
+Map<String, dynamic> _$$TenvioDriverInputImplToJson(
+        _$TenvioDriverInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -807,8 +824,9 @@ Map<String, dynamic> _$TenvioDriverInputToJson(_TenvioDriverInput instance) =>
       'username': instance.username,
     };
 
-_TenvioBulkInput _$TenvioBulkInputFromJson(Map<String, dynamic> json) =>
-    _TenvioBulkInput(
+_$TenvioBulkInputImpl _$$TenvioBulkInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$TenvioBulkInputImpl(
       customProperties:
           json['customProperties'] as Map<String, dynamic>? ?? const {},
       matrixId: json['matrixId'] as String?,
@@ -816,7 +834,8 @@ _TenvioBulkInput _$TenvioBulkInputFromJson(Map<String, dynamic> json) =>
       warehouseId: json['warehouseId'] as String?,
     );
 
-Map<String, dynamic> _$TenvioBulkInputToJson(_TenvioBulkInput instance) =>
+Map<String, dynamic> _$$TenvioBulkInputImplToJson(
+        _$TenvioBulkInputImpl instance) =>
     <String, dynamic>{
       'customProperties': instance.customProperties,
       'matrixId': instance.matrixId,

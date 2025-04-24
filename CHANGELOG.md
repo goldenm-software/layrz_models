@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.4.0-beta.1
+## 3.4.0
 
 - Upgraded `freezed` to `3.0.0` version and their dependencies.
 - Moved all `@freezed` classes to new spec `abstract class`.

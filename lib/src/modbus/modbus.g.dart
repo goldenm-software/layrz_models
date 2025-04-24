@@ -6,8 +6,8 @@ part of 'modbus.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ModbusConfig _$ModbusConfigFromJson(Map<String, dynamic> json) =>
-    _ModbusConfig(
+_$ModbusConfigImpl _$$ModbusConfigImplFromJson(Map<String, dynamic> json) =>
+    _$ModbusConfigImpl(
       isEnabled: json['isEnabled'] as bool,
       parameters: (json['parameters'] as List<dynamic>?)
               ?.map((e) => ModbusParameter.fromJson(e as Map<String, dynamic>))
@@ -16,15 +16,16 @@ _ModbusConfig _$ModbusConfigFromJson(Map<String, dynamic> json) =>
       portId: json['portId'] as String?,
     );
 
-Map<String, dynamic> _$ModbusConfigToJson(_ModbusConfig instance) =>
+Map<String, dynamic> _$$ModbusConfigImplToJson(_$ModbusConfigImpl instance) =>
     <String, dynamic>{
       'isEnabled': instance.isEnabled,
       'parameters': instance.parameters.map((e) => e.toJson()).toList(),
       'portId': instance.portId,
     };
 
-_ModbusConfigInput _$ModbusConfigInputFromJson(Map<String, dynamic> json) =>
-    _ModbusConfigInput(
+_$ModbusConfigInputImpl _$$ModbusConfigInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ModbusConfigInputImpl(
       isEnabled: json['isEnabled'] as bool? ?? false,
       parameters: (json['parameters'] as List<dynamic>?)
               ?.map((e) =>
@@ -34,15 +35,17 @@ _ModbusConfigInput _$ModbusConfigInputFromJson(Map<String, dynamic> json) =>
       portId: json['portId'] as String?,
     );
 
-Map<String, dynamic> _$ModbusConfigInputToJson(_ModbusConfigInput instance) =>
+Map<String, dynamic> _$$ModbusConfigInputImplToJson(
+        _$ModbusConfigInputImpl instance) =>
     <String, dynamic>{
       'isEnabled': instance.isEnabled,
       'parameters': instance.parameters.map((e) => e.toJson()).toList(),
       'portId': instance.portId,
     };
 
-_ModbusParameter _$ModbusParameterFromJson(Map<String, dynamic> json) =>
-    _ModbusParameter(
+_$ModbusParameterImpl _$$ModbusParameterImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ModbusParameterImpl(
       schema: json['schema'] == null
           ? ModbusParameterSchema.single
           : const ModbusParameterSchemaConverter()
@@ -54,7 +57,8 @@ _ModbusParameter _$ModbusParameterFromJson(Map<String, dynamic> json) =>
       dataLength: json['dataLength'] as String,
     );
 
-Map<String, dynamic> _$ModbusParameterToJson(_ModbusParameter instance) =>
+Map<String, dynamic> _$$ModbusParameterImplToJson(
+        _$ModbusParameterImpl instance) =>
     <String, dynamic>{
       'schema': const ModbusParameterSchemaConverter().toJson(instance.schema),
       'splitEach': instance.splitEach,
@@ -64,9 +68,9 @@ Map<String, dynamic> _$ModbusParameterToJson(_ModbusParameter instance) =>
       'dataLength': instance.dataLength,
     };
 
-_ModbusParameterInput _$ModbusParameterInputFromJson(
+_$ModbusParameterInputImpl _$$ModbusParameterInputImplFromJson(
         Map<String, dynamic> json) =>
-    _ModbusParameterInput(
+    _$ModbusParameterInputImpl(
       schema: json['schema'] == null
           ? ModbusParameterSchema.single
           : const ModbusParameterSchemaConverter()
@@ -78,8 +82,8 @@ _ModbusParameterInput _$ModbusParameterInputFromJson(
       dataLength: json['dataLength'] as String? ?? '',
     );
 
-Map<String, dynamic> _$ModbusParameterInputToJson(
-        _ModbusParameterInput instance) =>
+Map<String, dynamic> _$$ModbusParameterInputImplToJson(
+        _$ModbusParameterInputImpl instance) =>
     <String, dynamic>{
       'schema': const ModbusParameterSchemaConverter().toJson(instance.schema),
       'splitEach': instance.splitEach,

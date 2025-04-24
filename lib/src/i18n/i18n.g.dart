@@ -6,8 +6,9 @@ part of 'i18n.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AvailableLanguage _$AvailableLanguageFromJson(Map<String, dynamic> json) =>
-    _AvailableLanguage(
+_$AvailableLanguageImpl _$$AvailableLanguageImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AvailableLanguageImpl(
       id: json['id'] as String?,
       name: json['name'] as String?,
       code: json['code'] as String?,
@@ -17,7 +18,8 @@ _AvailableLanguage _$AvailableLanguageFromJson(Map<String, dynamic> json) =>
       ),
     );
 
-Map<String, dynamic> _$AvailableLanguageToJson(_AvailableLanguage instance) =>
+Map<String, dynamic> _$$AvailableLanguageImplToJson(
+        _$AvailableLanguageImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -26,35 +28,38 @@ Map<String, dynamic> _$AvailableLanguageToJson(_AvailableLanguage instance) =>
       'messages': instance.messages,
     };
 
-_Language _$LanguageFromJson(Map<String, dynamic> json) => _Language(
+_$LanguageImpl _$$LanguageImplFromJson(Map<String, dynamic> json) =>
+    _$LanguageImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       code: json['code'] as String,
       progress: (json['progress'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$LanguageToJson(_Language instance) => <String, dynamic>{
+Map<String, dynamic> _$$LanguageImplToJson(_$LanguageImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'code': instance.code,
       'progress': instance.progress,
     };
 
-_LanguageInput _$LanguageInputFromJson(Map<String, dynamic> json) =>
-    _LanguageInput(
+_$LanguageInputImpl _$$LanguageInputImplFromJson(Map<String, dynamic> json) =>
+    _$LanguageInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       code: json['code'] as String? ?? '',
     );
 
-Map<String, dynamic> _$LanguageInputToJson(_LanguageInput instance) =>
+Map<String, dynamic> _$$LanguageInputImplToJson(_$LanguageInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'code': instance.code,
     };
 
-_I18nKey _$I18nKeyFromJson(Map<String, dynamic> json) => _I18nKey(
+_$I18nKeyImpl _$$I18nKeyImplFromJson(Map<String, dynamic> json) =>
+    _$I18nKeyImpl(
       id: json['id'] as String,
       code: json['code'] as String,
       progress: (json['progress'] as num?)?.toDouble(),
@@ -68,7 +73,8 @@ _I18nKey _$I18nKeyFromJson(Map<String, dynamic> json) => _I18nKey(
       updatedBy: Employee.fromJson(json['updatedBy'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$I18nKeyToJson(_I18nKey instance) => <String, dynamic>{
+Map<String, dynamic> _$$I18nKeyImplToJson(_$I18nKeyImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'progress': instance.progress,
@@ -79,8 +85,8 @@ Map<String, dynamic> _$I18nKeyToJson(_I18nKey instance) => <String, dynamic>{
       'updatedBy': instance.updatedBy.toJson(),
     };
 
-_I18nKeyInput _$I18nKeyInputFromJson(Map<String, dynamic> json) =>
-    _I18nKeyInput(
+_$I18nKeyInputImpl _$$I18nKeyInputImplFromJson(Map<String, dynamic> json) =>
+    _$I18nKeyInputImpl(
       id: json['id'] as String?,
       code: json['code'] as String? ?? '',
       translations: (json['translations'] as List<dynamic>?)
@@ -90,45 +96,47 @@ _I18nKeyInput _$I18nKeyInputFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$I18nKeyInputToJson(_I18nKeyInput instance) =>
+Map<String, dynamic> _$$I18nKeyInputImplToJson(_$I18nKeyInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'code': instance.code,
       'translations': instance.translations.map((e) => e.toJson()).toList(),
     };
 
-_I18nTranslation _$I18nTranslationFromJson(Map<String, dynamic> json) =>
-    _I18nTranslation(
+_$I18nTranslationImpl _$$I18nTranslationImplFromJson(
+        Map<String, dynamic> json) =>
+    _$I18nTranslationImpl(
       id: json['id'] as String,
       languageId: json['languageId'] as String,
       message: json['message'] as String,
     );
 
-Map<String, dynamic> _$I18nTranslationToJson(_I18nTranslation instance) =>
+Map<String, dynamic> _$$I18nTranslationImplToJson(
+        _$I18nTranslationImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'languageId': instance.languageId,
       'message': instance.message,
     };
 
-_I18nTranslationInput _$I18nTranslationInputFromJson(
+_$I18nTranslationInputImpl _$$I18nTranslationInputImplFromJson(
         Map<String, dynamic> json) =>
-    _I18nTranslationInput(
+    _$I18nTranslationInputImpl(
       id: json['id'] as String?,
       languageId: json['languageId'] as String?,
       message: json['message'] as String? ?? '',
     );
 
-Map<String, dynamic> _$I18nTranslationInputToJson(
-        _I18nTranslationInput instance) =>
+Map<String, dynamic> _$$I18nTranslationInputImplToJson(
+        _$I18nTranslationInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'languageId': instance.languageId,
       'message': instance.message,
     };
 
-_I18nKeyHistory _$I18nKeyHistoryFromJson(Map<String, dynamic> json) =>
-    _I18nKeyHistory(
+_$I18nKeyHistoryImpl _$$I18nKeyHistoryImplFromJson(Map<String, dynamic> json) =>
+    _$I18nKeyHistoryImpl(
       id: json['id'] as String,
       languageId: json['languageId'] as String,
       before: json['before'] as String,
@@ -138,7 +146,8 @@ _I18nKeyHistory _$I18nKeyHistoryFromJson(Map<String, dynamic> json) =>
           Employee.fromJson(json['performedBy'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$I18nKeyHistoryToJson(_I18nKeyHistory instance) =>
+Map<String, dynamic> _$$I18nKeyHistoryImplToJson(
+        _$I18nKeyHistoryImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'languageId': instance.languageId,

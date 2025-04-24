@@ -6,48 +6,53 @@ part of 'assets.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ContactInfo _$ContactInfoFromJson(Map<String, dynamic> json) => _ContactInfo(
+_$ContactInfoImpl _$$ContactInfoImplFromJson(Map<String, dynamic> json) =>
+    _$ContactInfoImpl(
       name: json['name'] as String? ?? '',
       email: json['email'] as String? ?? '',
       phone: json['phone'] as String? ?? '',
     );
 
-Map<String, dynamic> _$ContactInfoToJson(_ContactInfo instance) =>
+Map<String, dynamic> _$$ContactInfoImplToJson(_$ContactInfoImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'email': instance.email,
       'phone': instance.phone,
     };
 
-_ContactInfoInput _$ContactInfoInputFromJson(Map<String, dynamic> json) =>
-    _ContactInfoInput(
+_$ContactInfoInputImpl _$$ContactInfoInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ContactInfoInputImpl(
       name: json['name'] as String? ?? '',
       email: json['email'] as String? ?? '',
       phone: json['phone'] as String? ?? '',
     );
 
-Map<String, dynamic> _$ContactInfoInputToJson(_ContactInfoInput instance) =>
+Map<String, dynamic> _$$ContactInfoInputImplToJson(
+        _$ContactInfoInputImpl instance) =>
     <String, dynamic>{
       'name': instance.name,
       'email': instance.email,
       'phone': instance.phone,
     };
 
-_Connection _$ConnectionFromJson(Map<String, dynamic> json) => _Connection(
+_$ConnectionImpl _$$ConnectionImplFromJson(Map<String, dynamic> json) =>
+    _$ConnectionImpl(
       online: const DurationOrNullConverter().fromJson(json['online'] as num?),
       hibernation:
           const DurationOrNullConverter().fromJson(json['hibernation'] as num?),
     );
 
-Map<String, dynamic> _$ConnectionToJson(_Connection instance) =>
+Map<String, dynamic> _$$ConnectionImplToJson(_$ConnectionImpl instance) =>
     <String, dynamic>{
       'online': const DurationOrNullConverter().toJson(instance.online),
       'hibernation':
           const DurationOrNullConverter().toJson(instance.hibernation),
     };
 
-_ConnectionInput _$ConnectionInputFromJson(Map<String, dynamic> json) =>
-    _ConnectionInput(
+_$ConnectionInputImpl _$$ConnectionInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ConnectionInputImpl(
       online: json['online'] == null
           ? const Duration(minutes: 5)
           : const DurationConverter().fromJson(json['online'] as num),
@@ -56,13 +61,14 @@ _ConnectionInput _$ConnectionInputFromJson(Map<String, dynamic> json) =>
           : const DurationConverter().fromJson(json['hibernation'] as num),
     );
 
-Map<String, dynamic> _$ConnectionInputToJson(_ConnectionInput instance) =>
+Map<String, dynamic> _$$ConnectionInputImplToJson(
+        _$ConnectionInputImpl instance) =>
     <String, dynamic>{
       'online': const DurationConverter().toJson(instance.online),
       'hibernation': const DurationConverter().toJson(instance.hibernation),
     };
 
-_Asset _$AssetFromJson(Map<String, dynamic> json) => _Asset(
+_$AssetImpl _$$AssetImplFromJson(Map<String, dynamic> json) => _$AssetImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       plate: json['plate'] as String?,
@@ -190,7 +196,8 @@ _Asset _$AssetFromJson(Map<String, dynamic> json) => _Asset(
       isSuspended: json['isSuspended'] as bool?,
     );
 
-Map<String, dynamic> _$AssetToJson(_Asset instance) => <String, dynamic>{
+Map<String, dynamic> _$$AssetImplToJson(_$AssetImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'plate': instance.plate,
@@ -248,7 +255,8 @@ Map<String, dynamic> _$AssetToJson(_Asset instance) => <String, dynamic>{
       'isSuspended': instance.isSuspended,
     };
 
-_AssetInput _$AssetInputFromJson(Map<String, dynamic> json) => _AssetInput(
+_$AssetInputImpl _$$AssetInputImplFromJson(Map<String, dynamic> json) =>
+    _$AssetInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String? ?? '',
       kindId: json['kindId'] as String?,
@@ -341,7 +349,7 @@ _AssetInput _$AssetInputFromJson(Map<String, dynamic> json) => _AssetInput(
               const [],
     );
 
-Map<String, dynamic> _$AssetInputToJson(_AssetInput instance) =>
+Map<String, dynamic> _$$AssetInputImplToJson(_$AssetInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -377,82 +385,88 @@ Map<String, dynamic> _$AssetInputToJson(_AssetInput instance) =>
       'mappitSecondaryRoutesIds': instance.mappitSecondaryRoutesIds,
     };
 
-_AssetLoginInfo _$AssetLoginInfoFromJson(Map<String, dynamic> json) =>
-    _AssetLoginInfo(
+_$AssetLoginInfoImpl _$$AssetLoginInfoImplFromJson(Map<String, dynamic> json) =>
+    _$AssetLoginInfoImpl(
       enabled: json['enabled'] as bool,
       email: json['email'] as String?,
       username: json['username'] as String?,
     );
 
-Map<String, dynamic> _$AssetLoginInfoToJson(_AssetLoginInfo instance) =>
+Map<String, dynamic> _$$AssetLoginInfoImplToJson(
+        _$AssetLoginInfoImpl instance) =>
     <String, dynamic>{
       'enabled': instance.enabled,
       'email': instance.email,
       'username': instance.username,
     };
 
-_AssetLoginInfoInput _$AssetLoginInfoInputFromJson(Map<String, dynamic> json) =>
-    _AssetLoginInfoInput(
+_$AssetLoginInfoInputImpl _$$AssetLoginInfoInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AssetLoginInfoInputImpl(
       enabled: json['enabled'] as bool? ?? false,
       email: json['email'] as String?,
       username: json['username'] as String?,
     );
 
-Map<String, dynamic> _$AssetLoginInfoInputToJson(
-        _AssetLoginInfoInput instance) =>
+Map<String, dynamic> _$$AssetLoginInfoInputImplToJson(
+        _$AssetLoginInfoInputImpl instance) =>
     <String, dynamic>{
       'enabled': instance.enabled,
       'email': instance.email,
       'username': instance.username,
     };
 
-_StaticPosition _$StaticPositionFromJson(Map<String, dynamic> json) =>
-    _StaticPosition(
+_$StaticPositionImpl _$$StaticPositionImplFromJson(Map<String, dynamic> json) =>
+    _$StaticPositionImpl(
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       altitude: (json['altitude'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$StaticPositionToJson(_StaticPosition instance) =>
+Map<String, dynamic> _$$StaticPositionImplToJson(
+        _$StaticPositionImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
       'altitude': instance.altitude,
     };
 
-_StaticPositionInput _$StaticPositionInputFromJson(Map<String, dynamic> json) =>
-    _StaticPositionInput(
+_$StaticPositionInputImpl _$$StaticPositionInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$StaticPositionInputImpl(
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       altitude: (json['altitude'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$StaticPositionInputToJson(
-        _StaticPositionInput instance) =>
+Map<String, dynamic> _$$StaticPositionInputImplToJson(
+        _$StaticPositionInputImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
       'altitude': instance.altitude,
     };
 
-_ZonePoint _$ZonePointFromJson(Map<String, dynamic> json) => _ZonePoint(
+_$ZonePointImpl _$$ZonePointImplFromJson(Map<String, dynamic> json) =>
+    _$ZonePointImpl(
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$ZonePointToJson(_ZonePoint instance) =>
+Map<String, dynamic> _$$ZonePointImplToJson(_$ZonePointImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
     };
 
-_ZonePointInput _$ZonePointInputFromJson(Map<String, dynamic> json) =>
-    _ZonePointInput(
+_$ZonePointInputImpl _$$ZonePointInputImplFromJson(Map<String, dynamic> json) =>
+    _$ZonePointInputImpl(
       latitude: (json['latitude'] as num).toDouble(),
       longitude: (json['longitude'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$ZonePointInputToJson(_ZonePointInput instance) =>
+Map<String, dynamic> _$$ZonePointInputImplToJson(
+        _$ZonePointInputImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,

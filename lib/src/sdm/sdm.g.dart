@@ -6,7 +6,7 @@ part of 'sdm.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SdmPen _$SdmPenFromJson(Map<String, dynamic> json) => _SdmPen(
+_$SdmPenImpl _$$SdmPenImplFromJson(Map<String, dynamic> json) => _$SdmPenImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       code: json['code'] as String,
@@ -26,7 +26,8 @@ _SdmPen _$SdmPenFromJson(Map<String, dynamic> json) => _SdmPen(
           : User.fromJson(json['updatedBy'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$SdmPenToJson(_SdmPen instance) => <String, dynamic>{
+Map<String, dynamic> _$$SdmPenImplToJson(_$SdmPenImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'code': instance.code,
@@ -38,7 +39,8 @@ Map<String, dynamic> _$SdmPenToJson(_SdmPen instance) => <String, dynamic>{
       'updatedBy': instance.updatedBy?.toJson(),
     };
 
-_SdmRecipe _$SdmRecipeFromJson(Map<String, dynamic> json) => _SdmRecipe(
+_$SdmRecipeImpl _$$SdmRecipeImplFromJson(Map<String, dynamic> json) =>
+    _$SdmRecipeImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       code: json['code'] as String,
@@ -64,7 +66,7 @@ _SdmRecipe _$SdmRecipeFromJson(Map<String, dynamic> json) => _SdmRecipe(
           .toList(),
     );
 
-Map<String, dynamic> _$SdmRecipeToJson(_SdmRecipe instance) =>
+Map<String, dynamic> _$$SdmRecipeImplToJson(_$SdmRecipeImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -79,8 +81,8 @@ Map<String, dynamic> _$SdmRecipeToJson(_SdmRecipe instance) =>
       'ingredientsIds': instance.ingredientsIds,
     };
 
-_SdmIngredient _$SdmIngredientFromJson(Map<String, dynamic> json) =>
-    _SdmIngredient(
+_$SdmIngredientImpl _$$SdmIngredientImplFromJson(Map<String, dynamic> json) =>
+    _$SdmIngredientImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       code: json['code'] as String,
@@ -104,7 +106,7 @@ _SdmIngredient _$SdmIngredientFromJson(Map<String, dynamic> json) =>
           : User.fromJson(json['updatedBy'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$SdmIngredientToJson(_SdmIngredient instance) =>
+Map<String, dynamic> _$$SdmIngredientImplToJson(_$SdmIngredientImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -121,7 +123,8 @@ Map<String, dynamic> _$SdmIngredientToJson(_SdmIngredient instance) =>
       'updatedBy': instance.updatedBy?.toJson(),
     };
 
-_SdmOperator _$SdmOperatorFromJson(Map<String, dynamic> json) => _SdmOperator(
+_$SdmOperatorImpl _$$SdmOperatorImplFromJson(Map<String, dynamic> json) =>
+    _$SdmOperatorImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       code: json['code'] as String,
@@ -137,7 +140,7 @@ _SdmOperator _$SdmOperatorFromJson(Map<String, dynamic> json) => _SdmOperator(
           : User.fromJson(json['updatedBy'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$SdmOperatorToJson(_SdmOperator instance) =>
+Map<String, dynamic> _$$SdmOperatorImplToJson(_$SdmOperatorImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

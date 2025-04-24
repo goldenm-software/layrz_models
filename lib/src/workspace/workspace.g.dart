@@ -6,7 +6,8 @@ part of 'workspace.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Workspace _$WorkspaceFromJson(Map<String, dynamic> json) => _Workspace(
+_$WorkspaceImpl _$$WorkspaceImplFromJson(Map<String, dynamic> json) =>
+    _$WorkspaceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       typeApp: $enumDecodeNullable(
@@ -102,7 +103,7 @@ _Workspace _$WorkspaceFromJson(Map<String, dynamic> json) => _Workspace(
           .toList(),
     );
 
-Map<String, dynamic> _$WorkspaceToJson(_Workspace instance) =>
+Map<String, dynamic> _$$WorkspaceImplToJson(_$WorkspaceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -197,8 +198,8 @@ const _$MetricSystemEnumMap = {
   MetricSystem.imperial: 'IMPERIAL',
 };
 
-_WorkspaceInput _$WorkspaceInputFromJson(Map<String, dynamic> json) =>
-    _WorkspaceInput(
+_$WorkspaceInputImpl _$$WorkspaceInputImplFromJson(Map<String, dynamic> json) =>
+    _$WorkspaceInputImpl(
       id: json['id'] as String?,
       name: json['name'] as String? ?? "",
       color: json['color'] == null
@@ -279,7 +280,8 @@ _WorkspaceInput _$WorkspaceInputFromJson(Map<String, dynamic> json) =>
           MetricSystem.metric,
     );
 
-Map<String, dynamic> _$WorkspaceInputToJson(_WorkspaceInput instance) =>
+Map<String, dynamic> _$$WorkspaceInputImplToJson(
+        _$WorkspaceInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -313,8 +315,8 @@ Map<String, dynamic> _$WorkspaceInputToJson(_WorkspaceInput instance) =>
       'metricSystem': instance.metricSystem.toJson(),
     };
 
-_WorkspaceAlert _$WorkspaceAlertFromJson(Map<String, dynamic> json) =>
-    _WorkspaceAlert(
+_$WorkspaceAlertImpl _$$WorkspaceAlertImplFromJson(Map<String, dynamic> json) =>
+    _$WorkspaceAlertImpl(
       at: const TimestampConverter().fromJson(json['at'] as num),
       assetId: json['assetId'] as String,
       position:
@@ -322,7 +324,8 @@ _WorkspaceAlert _$WorkspaceAlertFromJson(Map<String, dynamic> json) =>
       trigger: Trigger.fromJson(json['trigger'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$WorkspaceAlertToJson(_WorkspaceAlert instance) =>
+Map<String, dynamic> _$$WorkspaceAlertImplToJson(
+        _$WorkspaceAlertImpl instance) =>
     <String, dynamic>{
       'at': const TimestampConverter().toJson(instance.at),
       'assetId': instance.assetId,
@@ -330,8 +333,9 @@ Map<String, dynamic> _$WorkspaceAlertToJson(_WorkspaceAlert instance) =>
       'trigger': instance.trigger.toJson(),
     };
 
-_WorkspaceTripPoint _$WorkspaceTripPointFromJson(Map<String, dynamic> json) =>
-    _WorkspaceTripPoint(
+_$WorkspaceTripPointImpl _$$WorkspaceTripPointImplFromJson(
+        Map<String, dynamic> json) =>
+    _$WorkspaceTripPointImpl(
       latitude: (json['latitude'] as num?)?.toDouble(),
       longitude: (json['longitude'] as num?)?.toDouble(),
       speed: (json['speed'] as num?)?.toDouble(),
@@ -341,7 +345,8 @@ _WorkspaceTripPoint _$WorkspaceTripPointFromJson(Map<String, dynamic> json) =>
           const TimestampConverter().fromJson(json['receivedAt'] as num),
     );
 
-Map<String, dynamic> _$WorkspaceTripPointToJson(_WorkspaceTripPoint instance) =>
+Map<String, dynamic> _$$WorkspaceTripPointImplToJson(
+        _$WorkspaceTripPointImpl instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
@@ -351,8 +356,8 @@ Map<String, dynamic> _$WorkspaceTripPointToJson(_WorkspaceTripPoint instance) =>
       'receivedAt': const TimestampConverter().toJson(instance.receivedAt),
     };
 
-_WorkspaceTrip _$WorkspaceTripFromJson(Map<String, dynamic> json) =>
-    _WorkspaceTrip(
+_$WorkspaceTripImpl _$$WorkspaceTripImplFromJson(Map<String, dynamic> json) =>
+    _$WorkspaceTripImpl(
       assetId: json['assetId'] as String,
       assetName: json['assetName'] as String,
       points: (json['points'] as List<dynamic>?)
@@ -362,45 +367,49 @@ _WorkspaceTrip _$WorkspaceTripFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$WorkspaceTripToJson(_WorkspaceTrip instance) =>
+Map<String, dynamic> _$$WorkspaceTripImplToJson(_$WorkspaceTripImpl instance) =>
     <String, dynamic>{
       'assetId': instance.assetId,
       'assetName': instance.assetName,
       'points': instance.points.map((e) => e.toJson()).toList(),
     };
 
-_GridDimension _$GridDimensionFromJson(Map<String, dynamic> json) =>
-    _GridDimension(
+_$GridDimensionImpl _$$GridDimensionImplFromJson(Map<String, dynamic> json) =>
+    _$GridDimensionImpl(
       width: (json['width'] as num).toInt(),
       height: (json['height'] as num).toInt(),
     );
 
-Map<String, dynamic> _$GridDimensionToJson(_GridDimension instance) =>
+Map<String, dynamic> _$$GridDimensionImplToJson(_$GridDimensionImpl instance) =>
     <String, dynamic>{
       'width': instance.width,
       'height': instance.height,
     };
 
-_GridDimensionInput _$GridDimensionInputFromJson(Map<String, dynamic> json) =>
-    _GridDimensionInput(
+_$GridDimensionInputImpl _$$GridDimensionInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$GridDimensionInputImpl(
       width: (json['width'] as num?)?.toInt() ?? 1,
       height: (json['height'] as num?)?.toInt() ?? 1,
     );
 
-Map<String, dynamic> _$GridDimensionInputToJson(_GridDimensionInput instance) =>
+Map<String, dynamic> _$$GridDimensionInputImplToJson(
+        _$GridDimensionInputImpl instance) =>
     <String, dynamic>{
       'width': instance.width,
       'height': instance.height,
     };
 
-_CaseMonitorCard _$CaseMonitorCardFromJson(Map<String, dynamic> json) =>
-    _CaseMonitorCard(
+_$CaseMonitorCardImpl _$$CaseMonitorCardImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CaseMonitorCardImpl(
       type: $enumDecode(_$CaseMonitorCardTypeEnumMap, json['type'],
           unknownValue: CaseMonitorCardType.last24Hours),
       assetId: json['assetId'] as String?,
     );
 
-Map<String, dynamic> _$CaseMonitorCardToJson(_CaseMonitorCard instance) =>
+Map<String, dynamic> _$$CaseMonitorCardImplToJson(
+        _$CaseMonitorCardImpl instance) =>
     <String, dynamic>{
       'type': instance.type.toJson(),
       'assetId': instance.assetId,
@@ -414,51 +423,53 @@ const _$CaseMonitorCardTypeEnumMap = {
   CaseMonitorCardType.heatMap: 'HEAT_MAP',
 };
 
-_CaseMonitorCardInput _$CaseMonitorCardInputFromJson(
+_$CaseMonitorCardInputImpl _$$CaseMonitorCardInputImplFromJson(
         Map<String, dynamic> json) =>
-    _CaseMonitorCardInput(
+    _$CaseMonitorCardInputImpl(
       type: $enumDecode(_$CaseMonitorCardTypeEnumMap, json['type'],
           unknownValue: CaseMonitorCardType.last24Hours),
       assetId: json['assetId'] as String?,
     );
 
-Map<String, dynamic> _$CaseMonitorCardInputToJson(
-        _CaseMonitorCardInput instance) =>
+Map<String, dynamic> _$$CaseMonitorCardInputImplToJson(
+        _$CaseMonitorCardInputImpl instance) =>
     <String, dynamic>{
       'type': instance.type.toJson(),
       'assetId': instance.assetId,
     };
 
-_AnalyticsGridItem _$AnalyticsGridItemFromJson(Map<String, dynamic> json) =>
-    _AnalyticsGridItem(
+_$AnalyticsGridItemImpl _$$AnalyticsGridItemImplFromJson(
+        Map<String, dynamic> json) =>
+    _$AnalyticsGridItemImpl(
       chartId: json['chartId'] as String?,
       dimensions:
           GridDimension.fromJson(json['dimensions'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$AnalyticsGridItemToJson(_AnalyticsGridItem instance) =>
+Map<String, dynamic> _$$AnalyticsGridItemImplToJson(
+        _$AnalyticsGridItemImpl instance) =>
     <String, dynamic>{
       'chartId': instance.chartId,
       'dimensions': instance.dimensions.toJson(),
     };
 
-_AnalyticsGridItemInput _$AnalyticsGridItemInputFromJson(
+_$AnalyticsGridItemInputImpl _$$AnalyticsGridItemInputImplFromJson(
         Map<String, dynamic> json) =>
-    _AnalyticsGridItemInput(
+    _$AnalyticsGridItemInputImpl(
       chartId: json['chartId'] as String?,
       dimensions: GridDimensionInput.fromJson(
           json['dimensions'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$AnalyticsGridItemInputToJson(
-        _AnalyticsGridItemInput instance) =>
+Map<String, dynamic> _$$AnalyticsGridItemInputImplToJson(
+        _$AnalyticsGridItemInputImpl instance) =>
     <String, dynamic>{
       'chartId': instance.chartId,
       'dimensions': instance.dimensions.toJson(),
     };
 
-_SensorGridItem _$SensorGridItemFromJson(Map<String, dynamic> json) =>
-    _SensorGridItem(
+_$SensorGridItemImpl _$$SensorGridItemImplFromJson(Map<String, dynamic> json) =>
+    _$SensorGridItemImpl(
       objectId: json['objectId'] as String?,
       kind: $enumDecode(_$WorkspaceCardTypeEnumMap, json['kind'],
           unknownValue: WorkspaceCardType.asset),
@@ -475,7 +486,8 @@ _SensorGridItem _$SensorGridItemFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$SensorGridItemToJson(_SensorGridItem instance) =>
+Map<String, dynamic> _$$SensorGridItemImplToJson(
+        _$SensorGridItemImpl instance) =>
     <String, dynamic>{
       'objectId': instance.objectId,
       'kind': instance.kind.toJson(),
@@ -490,8 +502,9 @@ const _$WorkspaceCardTypeEnumMap = {
   WorkspaceCardType.outboundService: 'OUTBOUND_SERVICE',
 };
 
-_SensorGridItemInput _$SensorGridItemInputFromJson(Map<String, dynamic> json) =>
-    _SensorGridItemInput(
+_$SensorGridItemInputImpl _$$SensorGridItemInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SensorGridItemInputImpl(
       objectId: json['objectId'] as String?,
       kind: $enumDecodeNullable(_$WorkspaceCardTypeEnumMap, json['kind'],
               unknownValue: WorkspaceCardType.asset) ??
@@ -510,8 +523,8 @@ _SensorGridItemInput _$SensorGridItemInputFromJson(Map<String, dynamic> json) =>
           const [],
     );
 
-Map<String, dynamic> _$SensorGridItemInputToJson(
-        _SensorGridItemInput instance) =>
+Map<String, dynamic> _$$SensorGridItemInputImplToJson(
+        _$SensorGridItemInputImpl instance) =>
     <String, dynamic>{
       'objectId': instance.objectId,
       'kind': instance.kind.toJson(),
@@ -520,8 +533,9 @@ Map<String, dynamic> _$SensorGridItemInputToJson(
       'sensors': instance.sensors.map((e) => e.toJson()).toList(),
     };
 
-_SensorGridContent _$SensorGridContentFromJson(Map<String, dynamic> json) =>
-    _SensorGridContent(
+_$SensorGridContentImpl _$$SensorGridContentImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SensorGridContentImpl(
       sensorId: json['sensorId'] as String?,
       dimensions:
           GridDimension.fromJson(json['dimensions'] as Map<String, dynamic>),
@@ -533,7 +547,8 @@ _SensorGridContent _$SensorGridContentFromJson(Map<String, dynamic> json) =>
       maximum: (json['maximum'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$SensorGridContentToJson(_SensorGridContent instance) =>
+Map<String, dynamic> _$$SensorGridContentImplToJson(
+        _$SensorGridContentImpl instance) =>
     <String, dynamic>{
       'sensorId': instance.sensorId,
       'dimensions': instance.dimensions.toJson(),
@@ -551,9 +566,9 @@ const _$SensorGridItemTypeEnumMap = {
   SensorGridItemType.thermometer: 'THERMOMETER',
 };
 
-_SensorGridContentInput _$SensorGridContentInputFromJson(
+_$SensorGridContentInputImpl _$$SensorGridContentInputImplFromJson(
         Map<String, dynamic> json) =>
-    _SensorGridContentInput(
+    _$SensorGridContentInputImpl(
       sensorId: json['sensorId'] as String?,
       maskEnabled: json['maskEnabled'] as bool? ?? true,
       dimensions: GridDimensionInput.fromJson(
@@ -565,8 +580,8 @@ _SensorGridContentInput _$SensorGridContentInputFromJson(
       maximum: (json['maximum'] as num?)?.toDouble(),
     );
 
-Map<String, dynamic> _$SensorGridContentInputToJson(
-        _SensorGridContentInput instance) =>
+Map<String, dynamic> _$$SensorGridContentInputImplToJson(
+        _$SensorGridContentInputImpl instance) =>
     <String, dynamic>{
       'sensorId': instance.sensorId,
       'maskEnabled': instance.maskEnabled,
@@ -576,9 +591,9 @@ Map<String, dynamic> _$SensorGridContentInputToJson(
       'maximum': instance.maximum,
     };
 
-_MapCardAlertConfiguration _$MapCardAlertConfigurationFromJson(
+_$MapCardAlertConfigurationImpl _$$MapCardAlertConfigurationImplFromJson(
         Map<String, dynamic> json) =>
-    _MapCardAlertConfiguration(
+    _$MapCardAlertConfigurationImpl(
       range: $enumDecodeNullable(_$MapCardModeEnumMap, json['range'],
               unknownValue: MapCardMode.lastDay) ??
           MapCardMode.lastDay,
@@ -586,8 +601,8 @@ _MapCardAlertConfiguration _$MapCardAlertConfigurationFromJson(
       enabled: json['enabled'] as bool? ?? true,
     );
 
-Map<String, dynamic> _$MapCardAlertConfigurationToJson(
-        _MapCardAlertConfiguration instance) =>
+Map<String, dynamic> _$$MapCardAlertConfigurationImplToJson(
+        _$MapCardAlertConfigurationImpl instance) =>
     <String, dynamic>{
       'range': instance.range.toJson(),
       'count': instance.count,
@@ -599,58 +614,59 @@ const _$MapCardModeEnumMap = {
   MapCardMode.last2Days: 'H48',
 };
 
-_MapCardAlertConfigurationInput _$MapCardAlertConfigurationInputFromJson(
-        Map<String, dynamic> json) =>
-    _MapCardAlertConfigurationInput(
-      range: $enumDecodeNullable(_$MapCardModeEnumMap, json['range'],
-              unknownValue: MapCardMode.lastDay) ??
-          MapCardMode.lastDay,
-      count: json['count'] as bool? ?? false,
-      enabled: json['enabled'] as bool? ?? true,
-    );
+_$MapCardAlertConfigurationInputImpl
+    _$$MapCardAlertConfigurationInputImplFromJson(Map<String, dynamic> json) =>
+        _$MapCardAlertConfigurationInputImpl(
+          range: $enumDecodeNullable(_$MapCardModeEnumMap, json['range'],
+                  unknownValue: MapCardMode.lastDay) ??
+              MapCardMode.lastDay,
+          count: json['count'] as bool? ?? false,
+          enabled: json['enabled'] as bool? ?? true,
+        );
 
-Map<String, dynamic> _$MapCardAlertConfigurationInputToJson(
-        _MapCardAlertConfigurationInput instance) =>
+Map<String, dynamic> _$$MapCardAlertConfigurationInputImplToJson(
+        _$MapCardAlertConfigurationInputImpl instance) =>
     <String, dynamic>{
       'range': instance.range.toJson(),
       'count': instance.count,
       'enabled': instance.enabled,
     };
 
-_MapCardConnectionConfiguration _$MapCardConnectionConfigurationFromJson(
-        Map<String, dynamic> json) =>
-    _MapCardConnectionConfiguration(
-      indicator: json['indicator'] as bool? ?? true,
-      address: json['address'] as bool? ?? false,
-      time: json['time'] as bool? ?? false,
-    );
-
-Map<String, dynamic> _$MapCardConnectionConfigurationToJson(
-        _MapCardConnectionConfiguration instance) =>
-    <String, dynamic>{
-      'indicator': instance.indicator,
-      'address': instance.address,
-      'time': instance.time,
-    };
-
-_MapCardConnectionConfigurationInput
-    _$MapCardConnectionConfigurationInputFromJson(Map<String, dynamic> json) =>
-        _MapCardConnectionConfigurationInput(
+_$MapCardConnectionConfigurationImpl
+    _$$MapCardConnectionConfigurationImplFromJson(Map<String, dynamic> json) =>
+        _$MapCardConnectionConfigurationImpl(
           indicator: json['indicator'] as bool? ?? true,
           address: json['address'] as bool? ?? false,
           time: json['time'] as bool? ?? false,
         );
 
-Map<String, dynamic> _$MapCardConnectionConfigurationInputToJson(
-        _MapCardConnectionConfigurationInput instance) =>
+Map<String, dynamic> _$$MapCardConnectionConfigurationImplToJson(
+        _$MapCardConnectionConfigurationImpl instance) =>
     <String, dynamic>{
       'indicator': instance.indicator,
       'address': instance.address,
       'time': instance.time,
     };
 
-_MapCardSensors _$MapCardSensorsFromJson(Map<String, dynamic> json) =>
-    _MapCardSensors(
+_$MapCardConnectionConfigurationInputImpl
+    _$$MapCardConnectionConfigurationInputImplFromJson(
+            Map<String, dynamic> json) =>
+        _$MapCardConnectionConfigurationInputImpl(
+          indicator: json['indicator'] as bool? ?? true,
+          address: json['address'] as bool? ?? false,
+          time: json['time'] as bool? ?? false,
+        );
+
+Map<String, dynamic> _$$MapCardConnectionConfigurationInputImplToJson(
+        _$MapCardConnectionConfigurationInputImpl instance) =>
+    <String, dynamic>{
+      'indicator': instance.indicator,
+      'address': instance.address,
+      'time': instance.time,
+    };
+
+_$MapCardSensorsImpl _$$MapCardSensorsImplFromJson(Map<String, dynamic> json) =>
+    _$MapCardSensorsImpl(
       assetId: json['assetId'] as String,
       alerts: MapCardAlertConfiguration.fromJson(
           json['alerts'] as Map<String, dynamic>),
@@ -660,7 +676,8 @@ _MapCardSensors _$MapCardSensorsFromJson(Map<String, dynamic> json) =>
           json['sensors'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$MapCardSensorsToJson(_MapCardSensors instance) =>
+Map<String, dynamic> _$$MapCardSensorsImplToJson(
+        _$MapCardSensorsImpl instance) =>
     <String, dynamic>{
       'assetId': instance.assetId,
       'alerts': instance.alerts.toJson(),
@@ -668,8 +685,9 @@ Map<String, dynamic> _$MapCardSensorsToJson(_MapCardSensors instance) =>
       'sensors': instance.sensors.toJson(),
     };
 
-_MapCardSensorsInput _$MapCardSensorsInputFromJson(Map<String, dynamic> json) =>
-    _MapCardSensorsInput(
+_$MapCardSensorsInputImpl _$$MapCardSensorsInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$MapCardSensorsInputImpl(
       assetId: json['assetId'] as String?,
       alerts: json['alerts'] == null
           ? null
@@ -685,8 +703,8 @@ _MapCardSensorsInput _$MapCardSensorsInputFromJson(Map<String, dynamic> json) =>
               json['sensors'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$MapCardSensorsInputToJson(
-        _MapCardSensorsInput instance) =>
+Map<String, dynamic> _$$MapCardSensorsInputImplToJson(
+        _$MapCardSensorsInputImpl instance) =>
     <String, dynamic>{
       'assetId': instance.assetId,
       'alerts': instance.alerts?.toJson(),
@@ -694,9 +712,9 @@ Map<String, dynamic> _$MapCardSensorsInputToJson(
       'sensors': instance.sensors?.toJson(),
     };
 
-_MapCardSensorsConfiguration _$MapCardSensorsConfigurationFromJson(
+_$MapCardSensorsConfigurationImpl _$$MapCardSensorsConfigurationImplFromJson(
         Map<String, dynamic> json) =>
-    _MapCardSensorsConfiguration(
+    _$MapCardSensorsConfigurationImpl(
       enabled: json['enabled'] as bool? ?? true,
       mode: $enumDecodeNullable(_$MapSensorModeEnumMap, json['mode'],
               unknownValue: MapSensorMode.grid) ??
@@ -707,8 +725,8 @@ _MapCardSensorsConfiguration _$MapCardSensorsConfigurationFromJson(
           const [],
     );
 
-Map<String, dynamic> _$MapCardSensorsConfigurationToJson(
-        _MapCardSensorsConfiguration instance) =>
+Map<String, dynamic> _$$MapCardSensorsConfigurationImplToJson(
+        _$MapCardSensorsConfigurationImpl instance) =>
     <String, dynamic>{
       'enabled': instance.enabled,
       'mode': instance.mode.toJson(),
@@ -720,21 +738,22 @@ const _$MapSensorModeEnumMap = {
   MapSensorMode.list: 'LIST',
 };
 
-_MapCardSensorsConfigurationInput _$MapCardSensorsConfigurationInputFromJson(
-        Map<String, dynamic> json) =>
-    _MapCardSensorsConfigurationInput(
-      enabled: json['enabled'] as bool? ?? true,
-      mode: $enumDecodeNullable(_$MapSensorModeEnumMap, json['mode'],
-              unknownValue: MapSensorMode.grid) ??
-          MapSensorMode.grid,
-      values: (json['values'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-    );
+_$MapCardSensorsConfigurationInputImpl
+    _$$MapCardSensorsConfigurationInputImplFromJson(
+            Map<String, dynamic> json) =>
+        _$MapCardSensorsConfigurationInputImpl(
+          enabled: json['enabled'] as bool? ?? true,
+          mode: $enumDecodeNullable(_$MapSensorModeEnumMap, json['mode'],
+                  unknownValue: MapSensorMode.grid) ??
+              MapSensorMode.grid,
+          values: (json['values'] as List<dynamic>?)
+                  ?.map((e) => e as String)
+                  .toList() ??
+              const [],
+        );
 
-Map<String, dynamic> _$MapCardSensorsConfigurationInputToJson(
-        _MapCardSensorsConfigurationInput instance) =>
+Map<String, dynamic> _$$MapCardSensorsConfigurationInputImplToJson(
+        _$MapCardSensorsConfigurationInputImpl instance) =>
     <String, dynamic>{
       'enabled': instance.enabled,
       'mode': instance.mode.toJson(),

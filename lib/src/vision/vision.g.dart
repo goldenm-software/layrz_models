@@ -6,8 +6,8 @@ part of 'vision.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_VisionProtocol _$VisionProtocolFromJson(Map<String, dynamic> json) =>
-    _VisionProtocol(
+_$VisionProtocolImpl _$$VisionProtocolImplFromJson(Map<String, dynamic> json) =>
+    _$VisionProtocolImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
@@ -22,7 +22,8 @@ _VisionProtocol _$VisionProtocolFromJson(Map<String, dynamic> json) =>
           : Avatar.fromJson(json['dynamicIcon'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$VisionProtocolToJson(_VisionProtocol instance) =>
+Map<String, dynamic> _$$VisionProtocolImplToJson(
+        _$VisionProtocolImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -33,8 +34,8 @@ Map<String, dynamic> _$VisionProtocolToJson(_VisionProtocol instance) =>
       'dynamicIcon': instance.dynamicIcon?.toJson(),
     };
 
-_VisionProfile _$VisionProfileFromJson(Map<String, dynamic> json) =>
-    _VisionProfile(
+_$VisionProfileImpl _$$VisionProfileImplFromJson(Map<String, dynamic> json) =>
+    _$VisionProfileImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       protocolId: json['protocolId'] as String?,
@@ -51,7 +52,7 @@ _VisionProfile _$VisionProfileFromJson(Map<String, dynamic> json) =>
               json['lastMeasurement'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$VisionProfileToJson(_VisionProfile instance) =>
+Map<String, dynamic> _$$VisionProfileImplToJson(_$VisionProfileImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -62,15 +63,17 @@ Map<String, dynamic> _$VisionProfileToJson(_VisionProfile instance) =>
       'lastMeasurement': instance.lastMeasurement?.toJson(),
     };
 
-_VisionGaugeResult _$VisionGaugeResultFromJson(Map<String, dynamic> json) =>
-    _VisionGaugeResult(
+_$VisionGaugeResultImpl _$$VisionGaugeResultImplFromJson(
+        Map<String, dynamic> json) =>
+    _$VisionGaugeResultImpl(
       id: json['id'] as String,
       result: (json['result'] as num).toDouble(),
       performedAt:
           const TimestampConverter().fromJson(json['performedAt'] as num),
     );
 
-Map<String, dynamic> _$VisionGaugeResultToJson(_VisionGaugeResult instance) =>
+Map<String, dynamic> _$$VisionGaugeResultImplToJson(
+        _$VisionGaugeResultImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'result': instance.result,

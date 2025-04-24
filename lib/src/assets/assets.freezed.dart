@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,60 +9,49 @@ part of 'assets.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+ContactInfo _$ContactInfoFromJson(Map<String, dynamic> json) {
+  return _ContactInfo.fromJson(json);
+}
 
 /// @nodoc
 mixin _$ContactInfo {
-  String get name;
-  String get email;
-  String get phone;
+  String get name => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
+
+  /// Serializes this ContactInfo to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of ContactInfo
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $ContactInfoCopyWith<ContactInfo> get copyWith =>
-      _$ContactInfoCopyWithImpl<ContactInfo>(this as ContactInfo, _$identity);
-
-  /// Serializes this ContactInfo to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ContactInfo &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.phone, phone) || other.phone == phone));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, name, email, phone);
-
-  @override
-  String toString() {
-    return 'ContactInfo(name: $name, email: $email, phone: $phone)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ContactInfoCopyWith<$Res> {
+abstract class $ContactInfoCopyWith<$Res> {
   factory $ContactInfoCopyWith(
-          ContactInfo value, $Res Function(ContactInfo) _then) =
-      _$ContactInfoCopyWithImpl;
+          ContactInfo value, $Res Function(ContactInfo) then) =
+      _$ContactInfoCopyWithImpl<$Res, ContactInfo>;
   @useResult
   $Res call({String name, String email, String phone});
 }
 
 /// @nodoc
-class _$ContactInfoCopyWithImpl<$Res> implements $ContactInfoCopyWith<$Res> {
-  _$ContactInfoCopyWithImpl(this._self, this._then);
+class _$ContactInfoCopyWithImpl<$Res, $Val extends ContactInfo>
+    implements $ContactInfoCopyWith<$Res> {
+  _$ContactInfoCopyWithImpl(this._value, this._then);
 
-  final ContactInfo _self;
-  final $Res Function(ContactInfo) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of ContactInfo
   /// with the given fields replaced by the non-null parameter values.
@@ -74,17 +62,62 @@ class _$ContactInfoCopyWithImpl<$Res> implements $ContactInfoCopyWith<$Res> {
     Object? email = null,
     Object? phone = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
-          ? _self.email
+          ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       phone: null == phone
-          ? _self.phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ContactInfoImplCopyWith<$Res>
+    implements $ContactInfoCopyWith<$Res> {
+  factory _$$ContactInfoImplCopyWith(
+          _$ContactInfoImpl value, $Res Function(_$ContactInfoImpl) then) =
+      __$$ContactInfoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, String email, String phone});
+}
+
+/// @nodoc
+class __$$ContactInfoImplCopyWithImpl<$Res>
+    extends _$ContactInfoCopyWithImpl<$Res, _$ContactInfoImpl>
+    implements _$$ContactInfoImplCopyWith<$Res> {
+  __$$ContactInfoImplCopyWithImpl(
+      _$ContactInfoImpl _value, $Res Function(_$ContactInfoImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ContactInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? email = null,
+    Object? phone = null,
+  }) {
+    return _then(_$ContactInfoImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -93,10 +126,11 @@ class _$ContactInfoCopyWithImpl<$Res> implements $ContactInfoCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _ContactInfo implements ContactInfo {
-  const _ContactInfo({this.name = '', this.email = '', this.phone = ''});
-  factory _ContactInfo.fromJson(Map<String, dynamic> json) =>
-      _$ContactInfoFromJson(json);
+class _$ContactInfoImpl implements _ContactInfo {
+  const _$ContactInfoImpl({this.name = '', this.email = '', this.phone = ''});
+
+  factory _$ContactInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ContactInfoImplFromJson(json);
 
   @override
   @JsonKey()
@@ -108,26 +142,16 @@ class _ContactInfo implements ContactInfo {
   @JsonKey()
   final String phone;
 
-  /// Create a copy of ContactInfo
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ContactInfoCopyWith<_ContactInfo> get copyWith =>
-      __$ContactInfoCopyWithImpl<_ContactInfo>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ContactInfoToJson(
-      this,
-    );
+  String toString() {
+    return 'ContactInfo(name: $name, email: $email, phone: $phone)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ContactInfo &&
+            other is _$ContactInfoImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.phone, phone) || other.phone == phone));
@@ -137,98 +161,87 @@ class _ContactInfo implements ContactInfo {
   @override
   int get hashCode => Object.hash(runtimeType, name, email, phone);
 
+  /// Create a copy of ContactInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'ContactInfo(name: $name, email: $email, phone: $phone)';
+  @pragma('vm:prefer-inline')
+  _$$ContactInfoImplCopyWith<_$ContactInfoImpl> get copyWith =>
+      __$$ContactInfoImplCopyWithImpl<_$ContactInfoImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ContactInfoImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$ContactInfoCopyWith<$Res>
-    implements $ContactInfoCopyWith<$Res> {
-  factory _$ContactInfoCopyWith(
-          _ContactInfo value, $Res Function(_ContactInfo) _then) =
-      __$ContactInfoCopyWithImpl;
+abstract class _ContactInfo implements ContactInfo {
+  const factory _ContactInfo(
+      {final String name,
+      final String email,
+      final String phone}) = _$ContactInfoImpl;
+
+  factory _ContactInfo.fromJson(Map<String, dynamic> json) =
+      _$ContactInfoImpl.fromJson;
+
   @override
-  @useResult
-  $Res call({String name, String email, String phone});
-}
-
-/// @nodoc
-class __$ContactInfoCopyWithImpl<$Res> implements _$ContactInfoCopyWith<$Res> {
-  __$ContactInfoCopyWithImpl(this._self, this._then);
-
-  final _ContactInfo _self;
-  final $Res Function(_ContactInfo) _then;
+  String get name;
+  @override
+  String get email;
+  @override
+  String get phone;
 
   /// Create a copy of ContactInfo
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? name = null,
-    Object? email = null,
-    Object? phone = null,
-  }) {
-    return _then(_ContactInfo(
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      phone: null == phone
-          ? _self.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ContactInfoImplCopyWith<_$ContactInfoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ContactInfoInput _$ContactInfoInputFromJson(Map<String, dynamic> json) {
+  return _ContactInfoInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$ContactInfoInput {
-  String get name;
-  set name(String value);
-  String get email;
-  set email(String value);
-  String get phone;
-  set phone(String value);
+  String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  set email(String value) => throw _privateConstructorUsedError;
+  String get phone => throw _privateConstructorUsedError;
+  set phone(String value) => throw _privateConstructorUsedError;
+
+  /// Serializes this ContactInfoInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of ContactInfoInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $ContactInfoInputCopyWith<ContactInfoInput> get copyWith =>
-      _$ContactInfoInputCopyWithImpl<ContactInfoInput>(
-          this as ContactInfoInput, _$identity);
-
-  /// Serializes this ContactInfoInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  String toString() {
-    return 'ContactInfoInput(name: $name, email: $email, phone: $phone)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ContactInfoInputCopyWith<$Res> {
+abstract class $ContactInfoInputCopyWith<$Res> {
   factory $ContactInfoInputCopyWith(
-          ContactInfoInput value, $Res Function(ContactInfoInput) _then) =
-      _$ContactInfoInputCopyWithImpl;
+          ContactInfoInput value, $Res Function(ContactInfoInput) then) =
+      _$ContactInfoInputCopyWithImpl<$Res, ContactInfoInput>;
   @useResult
   $Res call({String name, String email, String phone});
 }
 
 /// @nodoc
-class _$ContactInfoInputCopyWithImpl<$Res>
+class _$ContactInfoInputCopyWithImpl<$Res, $Val extends ContactInfoInput>
     implements $ContactInfoInputCopyWith<$Res> {
-  _$ContactInfoInputCopyWithImpl(this._self, this._then);
+  _$ContactInfoInputCopyWithImpl(this._value, this._then);
 
-  final ContactInfoInput _self;
-  final $Res Function(ContactInfoInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of ContactInfoInput
   /// with the given fields replaced by the non-null parameter values.
@@ -239,17 +252,62 @@ class _$ContactInfoInputCopyWithImpl<$Res>
     Object? email = null,
     Object? phone = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
-          ? _self.email
+          ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       phone: null == phone
-          ? _self.phone
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ContactInfoInputImplCopyWith<$Res>
+    implements $ContactInfoInputCopyWith<$Res> {
+  factory _$$ContactInfoInputImplCopyWith(_$ContactInfoInputImpl value,
+          $Res Function(_$ContactInfoInputImpl) then) =
+      __$$ContactInfoInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String name, String email, String phone});
+}
+
+/// @nodoc
+class __$$ContactInfoInputImplCopyWithImpl<$Res>
+    extends _$ContactInfoInputCopyWithImpl<$Res, _$ContactInfoInputImpl>
+    implements _$$ContactInfoInputImplCopyWith<$Res> {
+  __$$ContactInfoInputImplCopyWithImpl(_$ContactInfoInputImpl _value,
+      $Res Function(_$ContactInfoInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ContactInfoInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? email = null,
+    Object? phone = null,
+  }) {
+    return _then(_$ContactInfoInputImpl(
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      phone: null == phone
+          ? _value.phone
           : phone // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -258,10 +316,11 @@ class _$ContactInfoInputCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ContactInfoInput implements ContactInfoInput {
-  _ContactInfoInput({this.name = '', this.email = '', this.phone = ''});
-  factory _ContactInfoInput.fromJson(Map<String, dynamic> json) =>
-      _$ContactInfoInputFromJson(json);
+class _$ContactInfoInputImpl implements _ContactInfoInput {
+  _$ContactInfoInputImpl({this.name = '', this.email = '', this.phone = ''});
+
+  factory _$ContactInfoInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ContactInfoInputImplFromJson(json);
 
   @override
   @JsonKey()
@@ -273,117 +332,82 @@ class _ContactInfoInput implements ContactInfoInput {
   @JsonKey()
   String phone;
 
-  /// Create a copy of ContactInfoInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ContactInfoInputCopyWith<_ContactInfoInput> get copyWith =>
-      __$ContactInfoInputCopyWithImpl<_ContactInfoInput>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ContactInfoInputToJson(
-      this,
-    );
-  }
-
   @override
   String toString() {
     return 'ContactInfoInput(name: $name, email: $email, phone: $phone)';
   }
-}
 
-/// @nodoc
-abstract mixin class _$ContactInfoInputCopyWith<$Res>
-    implements $ContactInfoInputCopyWith<$Res> {
-  factory _$ContactInfoInputCopyWith(
-          _ContactInfoInput value, $Res Function(_ContactInfoInput) _then) =
-      __$ContactInfoInputCopyWithImpl;
+  /// Create a copy of ContactInfoInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @useResult
-  $Res call({String name, String email, String phone});
+  @pragma('vm:prefer-inline')
+  _$$ContactInfoInputImplCopyWith<_$ContactInfoInputImpl> get copyWith =>
+      __$$ContactInfoInputImplCopyWithImpl<_$ContactInfoInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ContactInfoInputImplToJson(
+      this,
+    );
+  }
 }
 
-/// @nodoc
-class __$ContactInfoInputCopyWithImpl<$Res>
-    implements _$ContactInfoInputCopyWith<$Res> {
-  __$ContactInfoInputCopyWithImpl(this._self, this._then);
+abstract class _ContactInfoInput implements ContactInfoInput {
+  factory _ContactInfoInput({String name, String email, String phone}) =
+      _$ContactInfoInputImpl;
 
-  final _ContactInfoInput _self;
-  final $Res Function(_ContactInfoInput) _then;
+  factory _ContactInfoInput.fromJson(Map<String, dynamic> json) =
+      _$ContactInfoInputImpl.fromJson;
+
+  @override
+  String get name;
+  set name(String value);
+  @override
+  String get email;
+  set email(String value);
+  @override
+  String get phone;
+  set phone(String value);
 
   /// Create a copy of ContactInfoInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? name = null,
-    Object? email = null,
-    Object? phone = null,
-  }) {
-    return _then(_ContactInfoInput(
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      phone: null == phone
-          ? _self.phone
-          : phone // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ContactInfoInputImplCopyWith<_$ContactInfoInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Connection _$ConnectionFromJson(Map<String, dynamic> json) {
+  return _Connection.fromJson(json);
 }
 
 /// @nodoc
 mixin _$Connection {
   /// Time in seconds to consider online
   @DurationOrNullConverter()
-  Duration? get online;
+  Duration? get online => throw _privateConstructorUsedError;
 
   /// Time in seconds to consider in hibernation
   @DurationOrNullConverter()
-  Duration? get hibernation;
+  Duration? get hibernation => throw _privateConstructorUsedError;
+
+  /// Serializes this Connection to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Connection
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $ConnectionCopyWith<Connection> get copyWith =>
-      _$ConnectionCopyWithImpl<Connection>(this as Connection, _$identity);
-
-  /// Serializes this Connection to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Connection &&
-            (identical(other.online, online) || other.online == online) &&
-            (identical(other.hibernation, hibernation) ||
-                other.hibernation == hibernation));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, online, hibernation);
-
-  @override
-  String toString() {
-    return 'Connection(online: $online, hibernation: $hibernation)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ConnectionCopyWith<$Res> {
+abstract class $ConnectionCopyWith<$Res> {
   factory $ConnectionCopyWith(
-          Connection value, $Res Function(Connection) _then) =
-      _$ConnectionCopyWithImpl;
+          Connection value, $Res Function(Connection) then) =
+      _$ConnectionCopyWithImpl<$Res, Connection>;
   @useResult
   $Res call(
       {@DurationOrNullConverter() Duration? online,
@@ -391,11 +415,14 @@ abstract mixin class $ConnectionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ConnectionCopyWithImpl<$Res> implements $ConnectionCopyWith<$Res> {
-  _$ConnectionCopyWithImpl(this._self, this._then);
+class _$ConnectionCopyWithImpl<$Res, $Val extends Connection>
+    implements $ConnectionCopyWith<$Res> {
+  _$ConnectionCopyWithImpl(this._value, this._then);
 
-  final Connection _self;
-  final $Res Function(Connection) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of Connection
   /// with the given fields replaced by the non-null parameter values.
@@ -405,13 +432,55 @@ class _$ConnectionCopyWithImpl<$Res> implements $ConnectionCopyWith<$Res> {
     Object? online = freezed,
     Object? hibernation = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       online: freezed == online
-          ? _self.online
+          ? _value.online
           : online // ignore: cast_nullable_to_non_nullable
               as Duration?,
       hibernation: freezed == hibernation
-          ? _self.hibernation
+          ? _value.hibernation
+          : hibernation // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ConnectionImplCopyWith<$Res>
+    implements $ConnectionCopyWith<$Res> {
+  factory _$$ConnectionImplCopyWith(
+          _$ConnectionImpl value, $Res Function(_$ConnectionImpl) then) =
+      __$$ConnectionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@DurationOrNullConverter() Duration? online,
+      @DurationOrNullConverter() Duration? hibernation});
+}
+
+/// @nodoc
+class __$$ConnectionImplCopyWithImpl<$Res>
+    extends _$ConnectionCopyWithImpl<$Res, _$ConnectionImpl>
+    implements _$$ConnectionImplCopyWith<$Res> {
+  __$$ConnectionImplCopyWithImpl(
+      _$ConnectionImpl _value, $Res Function(_$ConnectionImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Connection
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? online = freezed,
+    Object? hibernation = freezed,
+  }) {
+    return _then(_$ConnectionImpl(
+      online: freezed == online
+          ? _value.online
+          : online // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+      hibernation: freezed == hibernation
+          ? _value.hibernation
           : hibernation // ignore: cast_nullable_to_non_nullable
               as Duration?,
     ));
@@ -420,12 +489,13 @@ class _$ConnectionCopyWithImpl<$Res> implements $ConnectionCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _Connection implements Connection {
-  const _Connection(
+class _$ConnectionImpl implements _Connection {
+  const _$ConnectionImpl(
       {@DurationOrNullConverter() this.online,
       @DurationOrNullConverter() this.hibernation});
-  factory _Connection.fromJson(Map<String, dynamic> json) =>
-      _$ConnectionFromJson(json);
+
+  factory _$ConnectionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConnectionImplFromJson(json);
 
   /// Time in seconds to consider online
   @override
@@ -437,26 +507,16 @@ class _Connection implements Connection {
   @DurationOrNullConverter()
   final Duration? hibernation;
 
-  /// Create a copy of Connection
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ConnectionCopyWith<_Connection> get copyWith =>
-      __$ConnectionCopyWithImpl<_Connection>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ConnectionToJson(
-      this,
-    );
+  String toString() {
+    return 'Connection(online: $online, hibernation: $hibernation)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Connection &&
+            other is _$ConnectionImpl &&
             (identical(other.online, online) || other.online == online) &&
             (identical(other.hibernation, hibernation) ||
                 other.hibernation == hibernation));
@@ -466,86 +526,79 @@ class _Connection implements Connection {
   @override
   int get hashCode => Object.hash(runtimeType, online, hibernation);
 
+  /// Create a copy of Connection
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'Connection(online: $online, hibernation: $hibernation)';
+  @pragma('vm:prefer-inline')
+  _$$ConnectionImplCopyWith<_$ConnectionImpl> get copyWith =>
+      __$$ConnectionImplCopyWithImpl<_$ConnectionImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ConnectionImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$ConnectionCopyWith<$Res>
-    implements $ConnectionCopyWith<$Res> {
-  factory _$ConnectionCopyWith(
-          _Connection value, $Res Function(_Connection) _then) =
-      __$ConnectionCopyWithImpl;
+abstract class _Connection implements Connection {
+  const factory _Connection(
+          {@DurationOrNullConverter() final Duration? online,
+          @DurationOrNullConverter() final Duration? hibernation}) =
+      _$ConnectionImpl;
+
+  factory _Connection.fromJson(Map<String, dynamic> json) =
+      _$ConnectionImpl.fromJson;
+
+  /// Time in seconds to consider online
   @override
-  @useResult
-  $Res call(
-      {@DurationOrNullConverter() Duration? online,
-      @DurationOrNullConverter() Duration? hibernation});
-}
+  @DurationOrNullConverter()
+  Duration? get online;
 
-/// @nodoc
-class __$ConnectionCopyWithImpl<$Res> implements _$ConnectionCopyWith<$Res> {
-  __$ConnectionCopyWithImpl(this._self, this._then);
-
-  final _Connection _self;
-  final $Res Function(_Connection) _then;
+  /// Time in seconds to consider in hibernation
+  @override
+  @DurationOrNullConverter()
+  Duration? get hibernation;
 
   /// Create a copy of Connection
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? online = freezed,
-    Object? hibernation = freezed,
-  }) {
-    return _then(_Connection(
-      online: freezed == online
-          ? _self.online
-          : online // ignore: cast_nullable_to_non_nullable
-              as Duration?,
-      hibernation: freezed == hibernation
-          ? _self.hibernation
-          : hibernation // ignore: cast_nullable_to_non_nullable
-              as Duration?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ConnectionImplCopyWith<_$ConnectionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ConnectionInput _$ConnectionInputFromJson(Map<String, dynamic> json) {
+  return _ConnectionInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$ConnectionInput {
   @DurationConverter()
-  Duration get online;
+  Duration get online => throw _privateConstructorUsedError;
   @DurationConverter()
-  set online(Duration value);
+  set online(Duration value) => throw _privateConstructorUsedError;
   @DurationConverter()
-  Duration get hibernation;
+  Duration get hibernation => throw _privateConstructorUsedError;
   @DurationConverter()
-  set hibernation(Duration value);
+  set hibernation(Duration value) => throw _privateConstructorUsedError;
+
+  /// Serializes this ConnectionInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of ConnectionInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $ConnectionInputCopyWith<ConnectionInput> get copyWith =>
-      _$ConnectionInputCopyWithImpl<ConnectionInput>(
-          this as ConnectionInput, _$identity);
-
-  /// Serializes this ConnectionInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  String toString() {
-    return 'ConnectionInput(online: $online, hibernation: $hibernation)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ConnectionInputCopyWith<$Res> {
+abstract class $ConnectionInputCopyWith<$Res> {
   factory $ConnectionInputCopyWith(
-          ConnectionInput value, $Res Function(ConnectionInput) _then) =
-      _$ConnectionInputCopyWithImpl;
+          ConnectionInput value, $Res Function(ConnectionInput) then) =
+      _$ConnectionInputCopyWithImpl<$Res, ConnectionInput>;
   @useResult
   $Res call(
       {@DurationConverter() Duration online,
@@ -553,12 +606,14 @@ abstract mixin class $ConnectionInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ConnectionInputCopyWithImpl<$Res>
+class _$ConnectionInputCopyWithImpl<$Res, $Val extends ConnectionInput>
     implements $ConnectionInputCopyWith<$Res> {
-  _$ConnectionInputCopyWithImpl(this._self, this._then);
+  _$ConnectionInputCopyWithImpl(this._value, this._then);
 
-  final ConnectionInput _self;
-  final $Res Function(ConnectionInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of ConnectionInput
   /// with the given fields replaced by the non-null parameter values.
@@ -568,13 +623,55 @@ class _$ConnectionInputCopyWithImpl<$Res>
     Object? online = null,
     Object? hibernation = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       online: null == online
-          ? _self.online
+          ? _value.online
           : online // ignore: cast_nullable_to_non_nullable
               as Duration,
       hibernation: null == hibernation
-          ? _self.hibernation
+          ? _value.hibernation
+          : hibernation // ignore: cast_nullable_to_non_nullable
+              as Duration,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ConnectionInputImplCopyWith<$Res>
+    implements $ConnectionInputCopyWith<$Res> {
+  factory _$$ConnectionInputImplCopyWith(_$ConnectionInputImpl value,
+          $Res Function(_$ConnectionInputImpl) then) =
+      __$$ConnectionInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@DurationConverter() Duration online,
+      @DurationConverter() Duration hibernation});
+}
+
+/// @nodoc
+class __$$ConnectionInputImplCopyWithImpl<$Res>
+    extends _$ConnectionInputCopyWithImpl<$Res, _$ConnectionInputImpl>
+    implements _$$ConnectionInputImplCopyWith<$Res> {
+  __$$ConnectionInputImplCopyWithImpl(
+      _$ConnectionInputImpl _value, $Res Function(_$ConnectionInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ConnectionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? online = null,
+    Object? hibernation = null,
+  }) {
+    return _then(_$ConnectionInputImpl(
+      online: null == online
+          ? _value.online
+          : online // ignore: cast_nullable_to_non_nullable
+              as Duration,
+      hibernation: null == hibernation
+          ? _value.hibernation
           : hibernation // ignore: cast_nullable_to_non_nullable
               as Duration,
     ));
@@ -583,12 +680,13 @@ class _$ConnectionInputCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ConnectionInput implements ConnectionInput {
-  _ConnectionInput(
+class _$ConnectionInputImpl implements _ConnectionInput {
+  _$ConnectionInputImpl(
       {@DurationConverter() this.online = const Duration(minutes: 5),
       @DurationConverter() this.hibernation = const Duration(hours: 1)});
-  factory _ConnectionInput.fromJson(Map<String, dynamic> json) =>
-      _$ConnectionInputFromJson(json);
+
+  factory _$ConnectionInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ConnectionInputImplFromJson(json);
 
   @override
   @JsonKey()
@@ -599,395 +697,244 @@ class _ConnectionInput implements ConnectionInput {
   @DurationConverter()
   Duration hibernation;
 
-  /// Create a copy of ConnectionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ConnectionInputCopyWith<_ConnectionInput> get copyWith =>
-      __$ConnectionInputCopyWithImpl<_ConnectionInput>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ConnectionInputToJson(
-      this,
-    );
-  }
-
   @override
   String toString() {
     return 'ConnectionInput(online: $online, hibernation: $hibernation)';
   }
-}
 
-/// @nodoc
-abstract mixin class _$ConnectionInputCopyWith<$Res>
-    implements $ConnectionInputCopyWith<$Res> {
-  factory _$ConnectionInputCopyWith(
-          _ConnectionInput value, $Res Function(_ConnectionInput) _then) =
-      __$ConnectionInputCopyWithImpl;
+  /// Create a copy of ConnectionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @useResult
-  $Res call(
-      {@DurationConverter() Duration online,
-      @DurationConverter() Duration hibernation});
+  @pragma('vm:prefer-inline')
+  _$$ConnectionInputImplCopyWith<_$ConnectionInputImpl> get copyWith =>
+      __$$ConnectionInputImplCopyWithImpl<_$ConnectionInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ConnectionInputImplToJson(
+      this,
+    );
+  }
 }
 
-/// @nodoc
-class __$ConnectionInputCopyWithImpl<$Res>
-    implements _$ConnectionInputCopyWith<$Res> {
-  __$ConnectionInputCopyWithImpl(this._self, this._then);
+abstract class _ConnectionInput implements ConnectionInput {
+  factory _ConnectionInput(
+      {@DurationConverter() Duration online,
+      @DurationConverter() Duration hibernation}) = _$ConnectionInputImpl;
 
-  final _ConnectionInput _self;
-  final $Res Function(_ConnectionInput) _then;
+  factory _ConnectionInput.fromJson(Map<String, dynamic> json) =
+      _$ConnectionInputImpl.fromJson;
+
+  @override
+  @DurationConverter()
+  Duration get online;
+  @DurationConverter()
+  set online(Duration value);
+  @override
+  @DurationConverter()
+  Duration get hibernation;
+  @DurationConverter()
+  set hibernation(Duration value);
 
   /// Create a copy of ConnectionInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? online = null,
-    Object? hibernation = null,
-  }) {
-    return _then(_ConnectionInput(
-      online: null == online
-          ? _self.online
-          : online // ignore: cast_nullable_to_non_nullable
-              as Duration,
-      hibernation: null == hibernation
-          ? _self.hibernation
-          : hibernation // ignore: cast_nullable_to_non_nullable
-              as Duration,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ConnectionInputImplCopyWith<_$ConnectionInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Asset _$AssetFromJson(Map<String, dynamic> json) {
+  return _Asset.fromJson(json);
 }
 
 /// @nodoc
 mixin _$Asset {
   /// [id] of the asset entity. This ID is unique.
-  String get id;
+  String get id => throw _privateConstructorUsedError;
 
   /// [name] of the asset.
-  String get name;
+  String get name => throw _privateConstructorUsedError;
 
   /// [plate] of the asset (If apply).
-  String? get plate;
+  String? get plate => throw _privateConstructorUsedError;
 
   /// [vin] or Vehicle serial number of the asset (If apply).
-  String? get vin;
+  String? get vin => throw _privateConstructorUsedError;
 
   /// [dynamicIcon] is the icon of the asset.
   /// This is the new schema of the icon
-  Avatar? get dynamicIcon;
+  Avatar? get dynamicIcon => throw _privateConstructorUsedError;
 
   /// Operation [mode] of the asset
   @AssetModeOrNullConverter()
-  AssetMode? get mode;
+  AssetMode? get mode => throw _privateConstructorUsedError;
 
   /// Children [assets] ids, only for clusters, limited to 1 level.
-  List<String>? get childrenIds;
+  List<String>? get childrenIds => throw _privateConstructorUsedError;
 
   /// Children [assets], only for clusters, limited to 1 level.
-  List<Asset>? get children;
+  List<Asset>? get children => throw _privateConstructorUsedError;
 
   /// Is the list of device [commands] available for this asset.
-  List<DeviceCommand>? get commands;
+  List<DeviceCommand>? get commands => throw _privateConstructorUsedError;
 
   /// Is the list of [references] ids associated to the asset
-  List<String>? get referencesIds;
+  List<String>? get referencesIds => throw _privateConstructorUsedError;
 
   /// Is the list of [references] associated to the asset
-  List<Reference>? get references;
+  List<Reference>? get references => throw _privateConstructorUsedError;
 
   /// Is the list of [authenticatedAssetsIds] to the asset
-  List<String>? get authenticatedAssetsIds;
+  List<String>? get authenticatedAssetsIds =>
+      throw _privateConstructorUsedError;
 
   /// Is the list of [authenticatedAssets] to the asset
-  List<Asset>? get authenticatedAssets;
+  List<Asset>? get authenticatedAssets => throw _privateConstructorUsedError;
 
   /// Is the list of [authenticatedUsersIds] to the asset
-  List<String>? get authenticatedUsersIds;
+  List<String>? get authenticatedUsersIds => throw _privateConstructorUsedError;
 
   /// Is the list of [authenticatedUsers] to the asset
-  List<User>? get authenticatedUsers;
+  List<User>? get authenticatedUsers => throw _privateConstructorUsedError;
 
   /// [kindId] is the id of the asset kind.
-  String? get kindId;
+  String? get kindId => throw _privateConstructorUsedError;
 
   /// [kind] is the asset kind.
-  Category? get kind;
+  Category? get kind => throw _privateConstructorUsedError;
 
   /// List of [customFields] linked to the asset. Please read the documentation for [CustomField]
   /// for more details about the fields.
-  List<CustomField>? get customFields;
+  List<CustomField>? get customFields => throw _privateConstructorUsedError;
 
   /// List of [sensors] linked to the asset. Please read the documentation for Sensor for more
   /// details about the fields.
-  List<Sensor>? get sensors;
+  List<Sensor>? get sensors => throw _privateConstructorUsedError;
 
   /// [primaryId] is the primary device id.
-  String? get primaryId;
+  String? get primaryId => throw _privateConstructorUsedError;
 
   /// [primary] is the primary device.
-  Device? get primary;
+  Device? get primary => throw _privateConstructorUsedError;
 
   /// [devicesIds] is the list of devices ids associated to the asset.
-  List<String>? get devicesIds;
+  List<String>? get devicesIds => throw _privateConstructorUsedError;
 
   /// [devices] is the list of devices associated to the asset.
-  List<Device>? get devices;
+  List<Device>? get devices => throw _privateConstructorUsedError;
 
   /// [qrCode] is the QR code of the asset.
-  String? get qrCode;
+  String? get qrCode => throw _privateConstructorUsedError;
 
   /// [externalIdentifiers] is the list of external identifiers of the asset.
-  List<String>? get externalIdentifiers;
+  List<String>? get externalIdentifiers => throw _privateConstructorUsedError;
 
   /// [connection] is the connection status of the asset.
-  Connection? get connection;
+  Connection? get connection => throw _privateConstructorUsedError;
 
   /// [telemetry] is the telemetry of the asset.
-  AssetTelemetry? get telemetry;
+  AssetTelemetry? get telemetry => throw _privateConstructorUsedError;
 
   /// List of [tags] assigned to the asset
-  List<Tag>? get tags;
+  List<Tag>? get tags => throw _privateConstructorUsedError;
 
   /// List of custom [access] permissions.
-  List<Access>? get access;
+  List<Access>? get access => throw _privateConstructorUsedError;
 
   /// List of [lastExits] of the asset.
   /// Only used for AllTank Systems project.
-  List<AtsExit>? get lastExits;
+  List<AtsExit>? get lastExits => throw _privateConstructorUsedError;
 
   /// [activeTime] is the active time of the asset.
   /// Only used for AllTank Systems project.
-  String? get activeTime;
+  String? get activeTime => throw _privateConstructorUsedError;
 
   /// [contacts] is the list of contacts associated to the asset.
-  List<ContactInfo>? get contacts;
+  List<ContactInfo>? get contacts => throw _privateConstructorUsedError;
 
   /// [laborHours] represents the list of labor hours configured to this asset.
   /// This field is only for `Mappit` use.
-  List<MappitLaborHour>? get mappitLaborHours;
+  List<MappitLaborHour>? get mappitLaborHours =>
+      throw _privateConstructorUsedError;
 
   /// [ownerId] is the ID of the user owner of this asset
-  String? get ownerId;
+  String? get ownerId => throw _privateConstructorUsedError;
 
   /// [loginInfo] refers to the login inInputation of the asset.
-  AssetLoginInfo? get loginInfo;
+  AssetLoginInfo? get loginInfo => throw _privateConstructorUsedError;
 
   /// [authenticationCard] refers to the authentication card of the asset.
   /// Only used in ATS apps.
-  AtsAuthenticationCard? get authenticationCard;
+  AtsAuthenticationCard? get authenticationCard =>
+      throw _privateConstructorUsedError;
 
   /// [authenticationCardId] refers to the authentication card ID of the asset.
   /// Only used in ATS apps.
-  String? get authenticationCardId;
+  String? get authenticationCardId => throw _privateConstructorUsedError;
 
   /// [nfcIdentifier] refers to the NFC identifier of the asset.
   /// Only used in ATS apps.
-  String? get nfcIdentifier;
+  String? get nfcIdentifier => throw _privateConstructorUsedError;
 
   /// [linkedSupplyPointAssets] refers to the list of supply points assets linked to this asset.
   /// Only used in ATS apps.
-  List<Asset>? get linkedSupplyPointAssets;
+  List<Asset>? get linkedSupplyPointAssets =>
+      throw _privateConstructorUsedError;
 
   /// [linkedSupplyPointAssetsIds] refers to the list of supply points assets IDs linked to this asset.
   /// Only used in ATS apps.
-  List<String>? get linkedSupplyPointAssetsIds;
+  List<String>? get linkedSupplyPointAssetsIds =>
+      throw _privateConstructorUsedError;
 
   /// [staticPosition] refers to the static position of the asset.
   /// Only used when mode is [AssetMode.fixed].
-  StaticPosition? get staticPosition;
+  StaticPosition? get staticPosition => throw _privateConstructorUsedError;
 
   /// [points] refers to the list of points of the zone.
   /// Only used when mode is [AssetMode.zone].
-  List<ZonePoint>? get points;
+  List<ZonePoint>? get points => throw _privateConstructorUsedError;
 
   /// [parameters] refers to the list of parameters of the asset.
   /// Is only a list of strings.
-  List<String> get parameters;
+  List<String> get parameters => throw _privateConstructorUsedError;
 
   /// [globalSensors] is the list of global sensors of the asset.
-  List<Sensor>? get globalSensors;
+  List<Sensor>? get globalSensors => throw _privateConstructorUsedError;
 
   /// [mappitLaborStartTime] is the time of the labor start time.
   @TimeOfDayOrNullConverter()
-  TimeOfDay? get mappitLaborStartTime;
+  TimeOfDay? get mappitLaborStartTime => throw _privateConstructorUsedError;
 
   /// [mappitLaborEndTime] is the time of the labor end time.
   @TimeOfDayOrNullConverter()
-  TimeOfDay? get mappitLaborEndTime;
+  TimeOfDay? get mappitLaborEndTime => throw _privateConstructorUsedError;
 
   /// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
-  List<Geofence>? get geofences;
+  List<Geofence>? get geofences => throw _privateConstructorUsedError;
 
   /// `mappitSecondaryRoutesIds` represents the list of secondary routes ids linked to the asset.
-  List<String>? get mappitSecondaryRoutesIds;
+  List<String>? get mappitSecondaryRoutesIds =>
+      throw _privateConstructorUsedError;
 
   /// [isSuspended] if the asset is suspended.
-  bool? get isSuspended;
+  bool? get isSuspended => throw _privateConstructorUsedError;
+
+  /// Serializes this Asset to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Asset
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $AssetCopyWith<Asset> get copyWith =>
-      _$AssetCopyWithImpl<Asset>(this as Asset, _$identity);
-
-  /// Serializes this Asset to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Asset &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.plate, plate) || other.plate == plate) &&
-            (identical(other.vin, vin) || other.vin == vin) &&
-            (identical(other.dynamicIcon, dynamicIcon) ||
-                other.dynamicIcon == dynamicIcon) &&
-            (identical(other.mode, mode) || other.mode == mode) &&
-            const DeepCollectionEquality()
-                .equals(other.childrenIds, childrenIds) &&
-            const DeepCollectionEquality().equals(other.children, children) &&
-            const DeepCollectionEquality().equals(other.commands, commands) &&
-            const DeepCollectionEquality()
-                .equals(other.referencesIds, referencesIds) &&
-            const DeepCollectionEquality()
-                .equals(other.references, references) &&
-            const DeepCollectionEquality()
-                .equals(other.authenticatedAssetsIds, authenticatedAssetsIds) &&
-            const DeepCollectionEquality()
-                .equals(other.authenticatedAssets, authenticatedAssets) &&
-            const DeepCollectionEquality()
-                .equals(other.authenticatedUsersIds, authenticatedUsersIds) &&
-            const DeepCollectionEquality()
-                .equals(other.authenticatedUsers, authenticatedUsers) &&
-            (identical(other.kindId, kindId) || other.kindId == kindId) &&
-            (identical(other.kind, kind) || other.kind == kind) &&
-            const DeepCollectionEquality()
-                .equals(other.customFields, customFields) &&
-            const DeepCollectionEquality().equals(other.sensors, sensors) &&
-            (identical(other.primaryId, primaryId) ||
-                other.primaryId == primaryId) &&
-            (identical(other.primary, primary) || other.primary == primary) &&
-            const DeepCollectionEquality()
-                .equals(other.devicesIds, devicesIds) &&
-            const DeepCollectionEquality().equals(other.devices, devices) &&
-            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
-            const DeepCollectionEquality()
-                .equals(other.externalIdentifiers, externalIdentifiers) &&
-            (identical(other.connection, connection) ||
-                other.connection == connection) &&
-            (identical(other.telemetry, telemetry) ||
-                other.telemetry == telemetry) &&
-            const DeepCollectionEquality().equals(other.tags, tags) &&
-            const DeepCollectionEquality().equals(other.access, access) &&
-            const DeepCollectionEquality().equals(other.lastExits, lastExits) &&
-            (identical(other.activeTime, activeTime) ||
-                other.activeTime == activeTime) &&
-            const DeepCollectionEquality().equals(other.contacts, contacts) &&
-            const DeepCollectionEquality()
-                .equals(other.mappitLaborHours, mappitLaborHours) &&
-            (identical(other.ownerId, ownerId) || other.ownerId == ownerId) &&
-            (identical(other.loginInfo, loginInfo) ||
-                other.loginInfo == loginInfo) &&
-            (identical(other.authenticationCard, authenticationCard) ||
-                other.authenticationCard == authenticationCard) &&
-            (identical(other.authenticationCardId, authenticationCardId) ||
-                other.authenticationCardId == authenticationCardId) &&
-            (identical(other.nfcIdentifier, nfcIdentifier) ||
-                other.nfcIdentifier == nfcIdentifier) &&
-            const DeepCollectionEquality().equals(
-                other.linkedSupplyPointAssets, linkedSupplyPointAssets) &&
-            const DeepCollectionEquality().equals(
-                other.linkedSupplyPointAssetsIds, linkedSupplyPointAssetsIds) &&
-            (identical(other.staticPosition, staticPosition) ||
-                other.staticPosition == staticPosition) &&
-            const DeepCollectionEquality().equals(other.points, points) &&
-            const DeepCollectionEquality()
-                .equals(other.parameters, parameters) &&
-            const DeepCollectionEquality()
-                .equals(other.globalSensors, globalSensors) &&
-            (identical(other.mappitLaborStartTime, mappitLaborStartTime) ||
-                other.mappitLaborStartTime == mappitLaborStartTime) &&
-            (identical(other.mappitLaborEndTime, mappitLaborEndTime) ||
-                other.mappitLaborEndTime == mappitLaborEndTime) &&
-            const DeepCollectionEquality().equals(other.geofences, geofences) &&
-            const DeepCollectionEquality().equals(
-                other.mappitSecondaryRoutesIds, mappitSecondaryRoutesIds) &&
-            (identical(other.isSuspended, isSuspended) ||
-                other.isSuspended == isSuspended));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        name,
-        plate,
-        vin,
-        dynamicIcon,
-        mode,
-        const DeepCollectionEquality().hash(childrenIds),
-        const DeepCollectionEquality().hash(children),
-        const DeepCollectionEquality().hash(commands),
-        const DeepCollectionEquality().hash(referencesIds),
-        const DeepCollectionEquality().hash(references),
-        const DeepCollectionEquality().hash(authenticatedAssetsIds),
-        const DeepCollectionEquality().hash(authenticatedAssets),
-        const DeepCollectionEquality().hash(authenticatedUsersIds),
-        const DeepCollectionEquality().hash(authenticatedUsers),
-        kindId,
-        kind,
-        const DeepCollectionEquality().hash(customFields),
-        const DeepCollectionEquality().hash(sensors),
-        primaryId,
-        primary,
-        const DeepCollectionEquality().hash(devicesIds),
-        const DeepCollectionEquality().hash(devices),
-        qrCode,
-        const DeepCollectionEquality().hash(externalIdentifiers),
-        connection,
-        telemetry,
-        const DeepCollectionEquality().hash(tags),
-        const DeepCollectionEquality().hash(access),
-        const DeepCollectionEquality().hash(lastExits),
-        activeTime,
-        const DeepCollectionEquality().hash(contacts),
-        const DeepCollectionEquality().hash(mappitLaborHours),
-        ownerId,
-        loginInfo,
-        authenticationCard,
-        authenticationCardId,
-        nfcIdentifier,
-        const DeepCollectionEquality().hash(linkedSupplyPointAssets),
-        const DeepCollectionEquality().hash(linkedSupplyPointAssetsIds),
-        staticPosition,
-        const DeepCollectionEquality().hash(points),
-        const DeepCollectionEquality().hash(parameters),
-        const DeepCollectionEquality().hash(globalSensors),
-        mappitLaborStartTime,
-        mappitLaborEndTime,
-        const DeepCollectionEquality().hash(geofences),
-        const DeepCollectionEquality().hash(mappitSecondaryRoutesIds),
-        isSuspended
-      ]);
-
-  @override
-  String toString() {
-    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended)';
-  }
+  $AssetCopyWith<Asset> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $AssetCopyWith<$Res> {
-  factory $AssetCopyWith(Asset value, $Res Function(Asset) _then) =
-      _$AssetCopyWithImpl;
+abstract class $AssetCopyWith<$Res> {
+  factory $AssetCopyWith(Asset value, $Res Function(Asset) then) =
+      _$AssetCopyWithImpl<$Res, Asset>;
   @useResult
   $Res call(
       {String id,
@@ -1051,11 +998,14 @@ abstract mixin class $AssetCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
-  _$AssetCopyWithImpl(this._self, this._then);
+class _$AssetCopyWithImpl<$Res, $Val extends Asset>
+    implements $AssetCopyWith<$Res> {
+  _$AssetCopyWithImpl(this._value, this._then);
 
-  final Asset _self;
-  final $Res Function(Asset) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of Asset
   /// with the given fields replaced by the non-null parameter values.
@@ -1112,204 +1062,204 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
     Object? mappitSecondaryRoutesIds = freezed,
     Object? isSuspended = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       plate: freezed == plate
-          ? _self.plate
+          ? _value.plate
           : plate // ignore: cast_nullable_to_non_nullable
               as String?,
       vin: freezed == vin
-          ? _self.vin
+          ? _value.vin
           : vin // ignore: cast_nullable_to_non_nullable
               as String?,
       dynamicIcon: freezed == dynamicIcon
-          ? _self.dynamicIcon
+          ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
               as Avatar?,
       mode: freezed == mode
-          ? _self.mode
+          ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as AssetMode?,
       childrenIds: freezed == childrenIds
-          ? _self.childrenIds
+          ? _value.childrenIds
           : childrenIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       children: freezed == children
-          ? _self.children
+          ? _value.children
           : children // ignore: cast_nullable_to_non_nullable
               as List<Asset>?,
       commands: freezed == commands
-          ? _self.commands
+          ? _value.commands
           : commands // ignore: cast_nullable_to_non_nullable
               as List<DeviceCommand>?,
       referencesIds: freezed == referencesIds
-          ? _self.referencesIds
+          ? _value.referencesIds
           : referencesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       references: freezed == references
-          ? _self.references
+          ? _value.references
           : references // ignore: cast_nullable_to_non_nullable
               as List<Reference>?,
       authenticatedAssetsIds: freezed == authenticatedAssetsIds
-          ? _self.authenticatedAssetsIds
+          ? _value.authenticatedAssetsIds
           : authenticatedAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       authenticatedAssets: freezed == authenticatedAssets
-          ? _self.authenticatedAssets
+          ? _value.authenticatedAssets
           : authenticatedAssets // ignore: cast_nullable_to_non_nullable
               as List<Asset>?,
       authenticatedUsersIds: freezed == authenticatedUsersIds
-          ? _self.authenticatedUsersIds
+          ? _value.authenticatedUsersIds
           : authenticatedUsersIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       authenticatedUsers: freezed == authenticatedUsers
-          ? _self.authenticatedUsers
+          ? _value.authenticatedUsers
           : authenticatedUsers // ignore: cast_nullable_to_non_nullable
               as List<User>?,
       kindId: freezed == kindId
-          ? _self.kindId
+          ? _value.kindId
           : kindId // ignore: cast_nullable_to_non_nullable
               as String?,
       kind: freezed == kind
-          ? _self.kind
+          ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
               as Category?,
       customFields: freezed == customFields
-          ? _self.customFields
+          ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as List<CustomField>?,
       sensors: freezed == sensors
-          ? _self.sensors
+          ? _value.sensors
           : sensors // ignore: cast_nullable_to_non_nullable
               as List<Sensor>?,
       primaryId: freezed == primaryId
-          ? _self.primaryId
+          ? _value.primaryId
           : primaryId // ignore: cast_nullable_to_non_nullable
               as String?,
       primary: freezed == primary
-          ? _self.primary
+          ? _value.primary
           : primary // ignore: cast_nullable_to_non_nullable
               as Device?,
       devicesIds: freezed == devicesIds
-          ? _self.devicesIds
+          ? _value.devicesIds
           : devicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       devices: freezed == devices
-          ? _self.devices
+          ? _value.devices
           : devices // ignore: cast_nullable_to_non_nullable
               as List<Device>?,
       qrCode: freezed == qrCode
-          ? _self.qrCode
+          ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
       externalIdentifiers: freezed == externalIdentifiers
-          ? _self.externalIdentifiers
+          ? _value.externalIdentifiers
           : externalIdentifiers // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       connection: freezed == connection
-          ? _self.connection
+          ? _value.connection
           : connection // ignore: cast_nullable_to_non_nullable
               as Connection?,
       telemetry: freezed == telemetry
-          ? _self.telemetry
+          ? _value.telemetry
           : telemetry // ignore: cast_nullable_to_non_nullable
               as AssetTelemetry?,
       tags: freezed == tags
-          ? _self.tags
+          ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<Tag>?,
       access: freezed == access
-          ? _self.access
+          ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
       lastExits: freezed == lastExits
-          ? _self.lastExits
+          ? _value.lastExits
           : lastExits // ignore: cast_nullable_to_non_nullable
               as List<AtsExit>?,
       activeTime: freezed == activeTime
-          ? _self.activeTime
+          ? _value.activeTime
           : activeTime // ignore: cast_nullable_to_non_nullable
               as String?,
       contacts: freezed == contacts
-          ? _self.contacts
+          ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
               as List<ContactInfo>?,
       mappitLaborHours: freezed == mappitLaborHours
-          ? _self.mappitLaborHours
+          ? _value.mappitLaborHours
           : mappitLaborHours // ignore: cast_nullable_to_non_nullable
               as List<MappitLaborHour>?,
       ownerId: freezed == ownerId
-          ? _self.ownerId
+          ? _value.ownerId
           : ownerId // ignore: cast_nullable_to_non_nullable
               as String?,
       loginInfo: freezed == loginInfo
-          ? _self.loginInfo
+          ? _value.loginInfo
           : loginInfo // ignore: cast_nullable_to_non_nullable
               as AssetLoginInfo?,
       authenticationCard: freezed == authenticationCard
-          ? _self.authenticationCard
+          ? _value.authenticationCard
           : authenticationCard // ignore: cast_nullable_to_non_nullable
               as AtsAuthenticationCard?,
       authenticationCardId: freezed == authenticationCardId
-          ? _self.authenticationCardId
+          ? _value.authenticationCardId
           : authenticationCardId // ignore: cast_nullable_to_non_nullable
               as String?,
       nfcIdentifier: freezed == nfcIdentifier
-          ? _self.nfcIdentifier
+          ? _value.nfcIdentifier
           : nfcIdentifier // ignore: cast_nullable_to_non_nullable
               as String?,
       linkedSupplyPointAssets: freezed == linkedSupplyPointAssets
-          ? _self.linkedSupplyPointAssets
+          ? _value.linkedSupplyPointAssets
           : linkedSupplyPointAssets // ignore: cast_nullable_to_non_nullable
               as List<Asset>?,
       linkedSupplyPointAssetsIds: freezed == linkedSupplyPointAssetsIds
-          ? _self.linkedSupplyPointAssetsIds
+          ? _value.linkedSupplyPointAssetsIds
           : linkedSupplyPointAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       staticPosition: freezed == staticPosition
-          ? _self.staticPosition
+          ? _value.staticPosition
           : staticPosition // ignore: cast_nullable_to_non_nullable
               as StaticPosition?,
       points: freezed == points
-          ? _self.points
+          ? _value.points
           : points // ignore: cast_nullable_to_non_nullable
               as List<ZonePoint>?,
       parameters: null == parameters
-          ? _self.parameters
+          ? _value.parameters
           : parameters // ignore: cast_nullable_to_non_nullable
               as List<String>,
       globalSensors: freezed == globalSensors
-          ? _self.globalSensors
+          ? _value.globalSensors
           : globalSensors // ignore: cast_nullable_to_non_nullable
               as List<Sensor>?,
       mappitLaborStartTime: freezed == mappitLaborStartTime
-          ? _self.mappitLaborStartTime
+          ? _value.mappitLaborStartTime
           : mappitLaborStartTime // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
       mappitLaborEndTime: freezed == mappitLaborEndTime
-          ? _self.mappitLaborEndTime
+          ? _value.mappitLaborEndTime
           : mappitLaborEndTime // ignore: cast_nullable_to_non_nullable
               as TimeOfDay?,
       geofences: freezed == geofences
-          ? _self.geofences
+          ? _value.geofences
           : geofences // ignore: cast_nullable_to_non_nullable
               as List<Geofence>?,
       mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds
-          ? _self.mappitSecondaryRoutesIds
+          ? _value.mappitSecondaryRoutesIds
           : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       isSuspended: freezed == isSuspended
-          ? _self.isSuspended
+          ? _value.isSuspended
           : isSuspended // ignore: cast_nullable_to_non_nullable
               as bool?,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of Asset
@@ -1317,12 +1267,12 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $AvatarCopyWith<$Res>? get dynamicIcon {
-    if (_self.dynamicIcon == null) {
+    if (_value.dynamicIcon == null) {
       return null;
     }
 
-    return $AvatarCopyWith<$Res>(_self.dynamicIcon!, (value) {
-      return _then(_self.copyWith(dynamicIcon: value));
+    return $AvatarCopyWith<$Res>(_value.dynamicIcon!, (value) {
+      return _then(_value.copyWith(dynamicIcon: value) as $Val);
     });
   }
 
@@ -1331,12 +1281,12 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $CategoryCopyWith<$Res>? get kind {
-    if (_self.kind == null) {
+    if (_value.kind == null) {
       return null;
     }
 
-    return $CategoryCopyWith<$Res>(_self.kind!, (value) {
-      return _then(_self.copyWith(kind: value));
+    return $CategoryCopyWith<$Res>(_value.kind!, (value) {
+      return _then(_value.copyWith(kind: value) as $Val);
     });
   }
 
@@ -1345,12 +1295,12 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $DeviceCopyWith<$Res>? get primary {
-    if (_self.primary == null) {
+    if (_value.primary == null) {
       return null;
     }
 
-    return $DeviceCopyWith<$Res>(_self.primary!, (value) {
-      return _then(_self.copyWith(primary: value));
+    return $DeviceCopyWith<$Res>(_value.primary!, (value) {
+      return _then(_value.copyWith(primary: value) as $Val);
     });
   }
 
@@ -1359,12 +1309,12 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $ConnectionCopyWith<$Res>? get connection {
-    if (_self.connection == null) {
+    if (_value.connection == null) {
       return null;
     }
 
-    return $ConnectionCopyWith<$Res>(_self.connection!, (value) {
-      return _then(_self.copyWith(connection: value));
+    return $ConnectionCopyWith<$Res>(_value.connection!, (value) {
+      return _then(_value.copyWith(connection: value) as $Val);
     });
   }
 
@@ -1373,12 +1323,12 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $AssetTelemetryCopyWith<$Res>? get telemetry {
-    if (_self.telemetry == null) {
+    if (_value.telemetry == null) {
       return null;
     }
 
-    return $AssetTelemetryCopyWith<$Res>(_self.telemetry!, (value) {
-      return _then(_self.copyWith(telemetry: value));
+    return $AssetTelemetryCopyWith<$Res>(_value.telemetry!, (value) {
+      return _then(_value.copyWith(telemetry: value) as $Val);
     });
   }
 
@@ -1387,12 +1337,12 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $AssetLoginInfoCopyWith<$Res>? get loginInfo {
-    if (_self.loginInfo == null) {
+    if (_value.loginInfo == null) {
       return null;
     }
 
-    return $AssetLoginInfoCopyWith<$Res>(_self.loginInfo!, (value) {
-      return _then(_self.copyWith(loginInfo: value));
+    return $AssetLoginInfoCopyWith<$Res>(_value.loginInfo!, (value) {
+      return _then(_value.copyWith(loginInfo: value) as $Val);
     });
   }
 
@@ -1401,13 +1351,13 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $AtsAuthenticationCardCopyWith<$Res>? get authenticationCard {
-    if (_self.authenticationCard == null) {
+    if (_value.authenticationCard == null) {
       return null;
     }
 
-    return $AtsAuthenticationCardCopyWith<$Res>(_self.authenticationCard!,
+    return $AtsAuthenticationCardCopyWith<$Res>(_value.authenticationCard!,
         (value) {
-      return _then(_self.copyWith(authenticationCard: value));
+      return _then(_value.copyWith(authenticationCard: value) as $Val);
     });
   }
 
@@ -1416,20 +1366,360 @@ class _$AssetCopyWithImpl<$Res> implements $AssetCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $StaticPositionCopyWith<$Res>? get staticPosition {
-    if (_self.staticPosition == null) {
+    if (_value.staticPosition == null) {
       return null;
     }
 
-    return $StaticPositionCopyWith<$Res>(_self.staticPosition!, (value) {
-      return _then(_self.copyWith(staticPosition: value));
+    return $StaticPositionCopyWith<$Res>(_value.staticPosition!, (value) {
+      return _then(_value.copyWith(staticPosition: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$AssetImplCopyWith<$Res> implements $AssetCopyWith<$Res> {
+  factory _$$AssetImplCopyWith(
+          _$AssetImpl value, $Res Function(_$AssetImpl) then) =
+      __$$AssetImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String? plate,
+      String? vin,
+      Avatar? dynamicIcon,
+      @AssetModeOrNullConverter() AssetMode? mode,
+      List<String>? childrenIds,
+      List<Asset>? children,
+      List<DeviceCommand>? commands,
+      List<String>? referencesIds,
+      List<Reference>? references,
+      List<String>? authenticatedAssetsIds,
+      List<Asset>? authenticatedAssets,
+      List<String>? authenticatedUsersIds,
+      List<User>? authenticatedUsers,
+      String? kindId,
+      Category? kind,
+      List<CustomField>? customFields,
+      List<Sensor>? sensors,
+      String? primaryId,
+      Device? primary,
+      List<String>? devicesIds,
+      List<Device>? devices,
+      String? qrCode,
+      List<String>? externalIdentifiers,
+      Connection? connection,
+      AssetTelemetry? telemetry,
+      List<Tag>? tags,
+      List<Access>? access,
+      List<AtsExit>? lastExits,
+      String? activeTime,
+      List<ContactInfo>? contacts,
+      List<MappitLaborHour>? mappitLaborHours,
+      String? ownerId,
+      AssetLoginInfo? loginInfo,
+      AtsAuthenticationCard? authenticationCard,
+      String? authenticationCardId,
+      String? nfcIdentifier,
+      List<Asset>? linkedSupplyPointAssets,
+      List<String>? linkedSupplyPointAssetsIds,
+      StaticPosition? staticPosition,
+      List<ZonePoint>? points,
+      List<String> parameters,
+      List<Sensor>? globalSensors,
+      @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,
+      @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
+      List<Geofence>? geofences,
+      List<String>? mappitSecondaryRoutesIds,
+      bool? isSuspended});
+
+  @override
+  $AvatarCopyWith<$Res>? get dynamicIcon;
+  @override
+  $CategoryCopyWith<$Res>? get kind;
+  @override
+  $DeviceCopyWith<$Res>? get primary;
+  @override
+  $ConnectionCopyWith<$Res>? get connection;
+  @override
+  $AssetTelemetryCopyWith<$Res>? get telemetry;
+  @override
+  $AssetLoginInfoCopyWith<$Res>? get loginInfo;
+  @override
+  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCard;
+  @override
+  $StaticPositionCopyWith<$Res>? get staticPosition;
+}
+
+/// @nodoc
+class __$$AssetImplCopyWithImpl<$Res>
+    extends _$AssetCopyWithImpl<$Res, _$AssetImpl>
+    implements _$$AssetImplCopyWith<$Res> {
+  __$$AssetImplCopyWithImpl(
+      _$AssetImpl _value, $Res Function(_$AssetImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? plate = freezed,
+    Object? vin = freezed,
+    Object? dynamicIcon = freezed,
+    Object? mode = freezed,
+    Object? childrenIds = freezed,
+    Object? children = freezed,
+    Object? commands = freezed,
+    Object? referencesIds = freezed,
+    Object? references = freezed,
+    Object? authenticatedAssetsIds = freezed,
+    Object? authenticatedAssets = freezed,
+    Object? authenticatedUsersIds = freezed,
+    Object? authenticatedUsers = freezed,
+    Object? kindId = freezed,
+    Object? kind = freezed,
+    Object? customFields = freezed,
+    Object? sensors = freezed,
+    Object? primaryId = freezed,
+    Object? primary = freezed,
+    Object? devicesIds = freezed,
+    Object? devices = freezed,
+    Object? qrCode = freezed,
+    Object? externalIdentifiers = freezed,
+    Object? connection = freezed,
+    Object? telemetry = freezed,
+    Object? tags = freezed,
+    Object? access = freezed,
+    Object? lastExits = freezed,
+    Object? activeTime = freezed,
+    Object? contacts = freezed,
+    Object? mappitLaborHours = freezed,
+    Object? ownerId = freezed,
+    Object? loginInfo = freezed,
+    Object? authenticationCard = freezed,
+    Object? authenticationCardId = freezed,
+    Object? nfcIdentifier = freezed,
+    Object? linkedSupplyPointAssets = freezed,
+    Object? linkedSupplyPointAssetsIds = freezed,
+    Object? staticPosition = freezed,
+    Object? points = freezed,
+    Object? parameters = null,
+    Object? globalSensors = freezed,
+    Object? mappitLaborStartTime = freezed,
+    Object? mappitLaborEndTime = freezed,
+    Object? geofences = freezed,
+    Object? mappitSecondaryRoutesIds = freezed,
+    Object? isSuspended = freezed,
+  }) {
+    return _then(_$AssetImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      plate: freezed == plate
+          ? _value.plate
+          : plate // ignore: cast_nullable_to_non_nullable
+              as String?,
+      vin: freezed == vin
+          ? _value.vin
+          : vin // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dynamicIcon: freezed == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
+      mode: freezed == mode
+          ? _value.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as AssetMode?,
+      childrenIds: freezed == childrenIds
+          ? _value._childrenIds
+          : childrenIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      children: freezed == children
+          ? _value._children
+          : children // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      commands: freezed == commands
+          ? _value._commands
+          : commands // ignore: cast_nullable_to_non_nullable
+              as List<DeviceCommand>?,
+      referencesIds: freezed == referencesIds
+          ? _value._referencesIds
+          : referencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      references: freezed == references
+          ? _value._references
+          : references // ignore: cast_nullable_to_non_nullable
+              as List<Reference>?,
+      authenticatedAssetsIds: freezed == authenticatedAssetsIds
+          ? _value._authenticatedAssetsIds
+          : authenticatedAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      authenticatedAssets: freezed == authenticatedAssets
+          ? _value._authenticatedAssets
+          : authenticatedAssets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      authenticatedUsersIds: freezed == authenticatedUsersIds
+          ? _value._authenticatedUsersIds
+          : authenticatedUsersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      authenticatedUsers: freezed == authenticatedUsers
+          ? _value._authenticatedUsers
+          : authenticatedUsers // ignore: cast_nullable_to_non_nullable
+              as List<User>?,
+      kindId: freezed == kindId
+          ? _value.kindId
+          : kindId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      kind: freezed == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as Category?,
+      customFields: freezed == customFields
+          ? _value._customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as List<CustomField>?,
+      sensors: freezed == sensors
+          ? _value._sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<Sensor>?,
+      primaryId: freezed == primaryId
+          ? _value.primaryId
+          : primaryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      primary: freezed == primary
+          ? _value.primary
+          : primary // ignore: cast_nullable_to_non_nullable
+              as Device?,
+      devicesIds: freezed == devicesIds
+          ? _value._devicesIds
+          : devicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      devices: freezed == devices
+          ? _value._devices
+          : devices // ignore: cast_nullable_to_non_nullable
+              as List<Device>?,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      externalIdentifiers: freezed == externalIdentifiers
+          ? _value._externalIdentifiers
+          : externalIdentifiers // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      connection: freezed == connection
+          ? _value.connection
+          : connection // ignore: cast_nullable_to_non_nullable
+              as Connection?,
+      telemetry: freezed == telemetry
+          ? _value.telemetry
+          : telemetry // ignore: cast_nullable_to_non_nullable
+              as AssetTelemetry?,
+      tags: freezed == tags
+          ? _value._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<Tag>?,
+      access: freezed == access
+          ? _value._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+      lastExits: freezed == lastExits
+          ? _value._lastExits
+          : lastExits // ignore: cast_nullable_to_non_nullable
+              as List<AtsExit>?,
+      activeTime: freezed == activeTime
+          ? _value.activeTime
+          : activeTime // ignore: cast_nullable_to_non_nullable
+              as String?,
+      contacts: freezed == contacts
+          ? _value._contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<ContactInfo>?,
+      mappitLaborHours: freezed == mappitLaborHours
+          ? _value._mappitLaborHours
+          : mappitLaborHours // ignore: cast_nullable_to_non_nullable
+              as List<MappitLaborHour>?,
+      ownerId: freezed == ownerId
+          ? _value.ownerId
+          : ownerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      loginInfo: freezed == loginInfo
+          ? _value.loginInfo
+          : loginInfo // ignore: cast_nullable_to_non_nullable
+              as AssetLoginInfo?,
+      authenticationCard: freezed == authenticationCard
+          ? _value.authenticationCard
+          : authenticationCard // ignore: cast_nullable_to_non_nullable
+              as AtsAuthenticationCard?,
+      authenticationCardId: freezed == authenticationCardId
+          ? _value.authenticationCardId
+          : authenticationCardId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nfcIdentifier: freezed == nfcIdentifier
+          ? _value.nfcIdentifier
+          : nfcIdentifier // ignore: cast_nullable_to_non_nullable
+              as String?,
+      linkedSupplyPointAssets: freezed == linkedSupplyPointAssets
+          ? _value._linkedSupplyPointAssets
+          : linkedSupplyPointAssets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      linkedSupplyPointAssetsIds: freezed == linkedSupplyPointAssetsIds
+          ? _value._linkedSupplyPointAssetsIds
+          : linkedSupplyPointAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      staticPosition: freezed == staticPosition
+          ? _value.staticPosition
+          : staticPosition // ignore: cast_nullable_to_non_nullable
+              as StaticPosition?,
+      points: freezed == points
+          ? _value._points
+          : points // ignore: cast_nullable_to_non_nullable
+              as List<ZonePoint>?,
+      parameters: null == parameters
+          ? _value._parameters
+          : parameters // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      globalSensors: freezed == globalSensors
+          ? _value._globalSensors
+          : globalSensors // ignore: cast_nullable_to_non_nullable
+              as List<Sensor>?,
+      mappitLaborStartTime: freezed == mappitLaborStartTime
+          ? _value.mappitLaborStartTime
+          : mappitLaborStartTime // ignore: cast_nullable_to_non_nullable
+              as TimeOfDay?,
+      mappitLaborEndTime: freezed == mappitLaborEndTime
+          ? _value.mappitLaborEndTime
+          : mappitLaborEndTime // ignore: cast_nullable_to_non_nullable
+              as TimeOfDay?,
+      geofences: freezed == geofences
+          ? _value._geofences
+          : geofences // ignore: cast_nullable_to_non_nullable
+              as List<Geofence>?,
+      mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds
+          ? _value._mappitSecondaryRoutesIds
+          : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      isSuspended: freezed == isSuspended
+          ? _value.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool?,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _Asset extends Asset {
-  const _Asset(
+class _$AssetImpl extends _Asset {
+  const _$AssetImpl(
       {required this.id,
       required this.name,
       this.plate,
@@ -1506,7 +1796,9 @@ class _Asset extends Asset {
         _geofences = geofences,
         _mappitSecondaryRoutesIds = mappitSecondaryRoutesIds,
         super._();
-  factory _Asset.fromJson(Map<String, dynamic> json) => _$AssetFromJson(json);
+
+  factory _$AssetImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AssetImplFromJson(json);
 
   /// [id] of the asset entity. This ID is unique.
   @override
@@ -1971,26 +2263,16 @@ class _Asset extends Asset {
   @override
   final bool? isSuspended;
 
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AssetCopyWith<_Asset> get copyWith =>
-      __$AssetCopyWithImpl<_Asset>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AssetToJson(
-      this,
-    );
+  String toString() {
+    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Asset &&
+            other is _$AssetImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.plate, plate) || other.plate == plate) &&
@@ -2129,551 +2411,401 @@ class _Asset extends Asset {
         isSuspended
       ]);
 
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'Asset(id: $id, name: $name, plate: $plate, vin: $vin, dynamicIcon: $dynamicIcon, mode: $mode, childrenIds: $childrenIds, children: $children, commands: $commands, referencesIds: $referencesIds, references: $references, authenticatedAssetsIds: $authenticatedAssetsIds, authenticatedAssets: $authenticatedAssets, authenticatedUsersIds: $authenticatedUsersIds, authenticatedUsers: $authenticatedUsers, kindId: $kindId, kind: $kind, customFields: $customFields, sensors: $sensors, primaryId: $primaryId, primary: $primary, devicesIds: $devicesIds, devices: $devices, qrCode: $qrCode, externalIdentifiers: $externalIdentifiers, connection: $connection, telemetry: $telemetry, tags: $tags, access: $access, lastExits: $lastExits, activeTime: $activeTime, contacts: $contacts, mappitLaborHours: $mappitLaborHours, ownerId: $ownerId, loginInfo: $loginInfo, authenticationCard: $authenticationCard, authenticationCardId: $authenticationCardId, nfcIdentifier: $nfcIdentifier, linkedSupplyPointAssets: $linkedSupplyPointAssets, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, staticPosition: $staticPosition, points: $points, parameters: $parameters, globalSensors: $globalSensors, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, geofences: $geofences, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, isSuspended: $isSuspended)';
+  @pragma('vm:prefer-inline')
+  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
+      __$$AssetImplCopyWithImpl<_$AssetImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AssetImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$AssetCopyWith<$Res> implements $AssetCopyWith<$Res> {
-  factory _$AssetCopyWith(_Asset value, $Res Function(_Asset) _then) =
-      __$AssetCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String? plate,
-      String? vin,
-      Avatar? dynamicIcon,
-      @AssetModeOrNullConverter() AssetMode? mode,
-      List<String>? childrenIds,
-      List<Asset>? children,
-      List<DeviceCommand>? commands,
-      List<String>? referencesIds,
-      List<Reference>? references,
-      List<String>? authenticatedAssetsIds,
-      List<Asset>? authenticatedAssets,
-      List<String>? authenticatedUsersIds,
-      List<User>? authenticatedUsers,
-      String? kindId,
-      Category? kind,
-      List<CustomField>? customFields,
-      List<Sensor>? sensors,
-      String? primaryId,
-      Device? primary,
-      List<String>? devicesIds,
-      List<Device>? devices,
-      String? qrCode,
-      List<String>? externalIdentifiers,
-      Connection? connection,
-      AssetTelemetry? telemetry,
-      List<Tag>? tags,
-      List<Access>? access,
-      List<AtsExit>? lastExits,
-      String? activeTime,
-      List<ContactInfo>? contacts,
-      List<MappitLaborHour>? mappitLaborHours,
-      String? ownerId,
-      AssetLoginInfo? loginInfo,
-      AtsAuthenticationCard? authenticationCard,
-      String? authenticationCardId,
-      String? nfcIdentifier,
-      List<Asset>? linkedSupplyPointAssets,
-      List<String>? linkedSupplyPointAssetsIds,
-      StaticPosition? staticPosition,
-      List<ZonePoint>? points,
-      List<String> parameters,
-      List<Sensor>? globalSensors,
-      @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborStartTime,
-      @TimeOfDayOrNullConverter() TimeOfDay? mappitLaborEndTime,
-      List<Geofence>? geofences,
-      List<String>? mappitSecondaryRoutesIds,
-      bool? isSuspended});
+abstract class _Asset extends Asset {
+  const factory _Asset(
+      {required final String id,
+      required final String name,
+      final String? plate,
+      final String? vin,
+      final Avatar? dynamicIcon,
+      @AssetModeOrNullConverter() final AssetMode? mode,
+      final List<String>? childrenIds,
+      final List<Asset>? children,
+      final List<DeviceCommand>? commands,
+      final List<String>? referencesIds,
+      final List<Reference>? references,
+      final List<String>? authenticatedAssetsIds,
+      final List<Asset>? authenticatedAssets,
+      final List<String>? authenticatedUsersIds,
+      final List<User>? authenticatedUsers,
+      final String? kindId,
+      final Category? kind,
+      final List<CustomField>? customFields,
+      final List<Sensor>? sensors,
+      final String? primaryId,
+      final Device? primary,
+      final List<String>? devicesIds,
+      final List<Device>? devices,
+      final String? qrCode,
+      final List<String>? externalIdentifiers,
+      final Connection? connection,
+      final AssetTelemetry? telemetry,
+      final List<Tag>? tags,
+      final List<Access>? access,
+      final List<AtsExit>? lastExits,
+      final String? activeTime,
+      final List<ContactInfo>? contacts,
+      final List<MappitLaborHour>? mappitLaborHours,
+      final String? ownerId,
+      final AssetLoginInfo? loginInfo,
+      final AtsAuthenticationCard? authenticationCard,
+      final String? authenticationCardId,
+      final String? nfcIdentifier,
+      final List<Asset>? linkedSupplyPointAssets,
+      final List<String>? linkedSupplyPointAssetsIds,
+      final StaticPosition? staticPosition,
+      final List<ZonePoint>? points,
+      final List<String> parameters,
+      final List<Sensor>? globalSensors,
+      @TimeOfDayOrNullConverter() final TimeOfDay? mappitLaborStartTime,
+      @TimeOfDayOrNullConverter() final TimeOfDay? mappitLaborEndTime,
+      final List<Geofence>? geofences,
+      final List<String>? mappitSecondaryRoutesIds,
+      final bool? isSuspended}) = _$AssetImpl;
+  const _Asset._() : super._();
 
+  factory _Asset.fromJson(Map<String, dynamic> json) = _$AssetImpl.fromJson;
+
+  /// [id] of the asset entity. This ID is unique.
   @override
-  $AvatarCopyWith<$Res>? get dynamicIcon;
+  String get id;
+
+  /// [name] of the asset.
   @override
-  $CategoryCopyWith<$Res>? get kind;
+  String get name;
+
+  /// [plate] of the asset (If apply).
   @override
-  $DeviceCopyWith<$Res>? get primary;
+  String? get plate;
+
+  /// [vin] or Vehicle serial number of the asset (If apply).
   @override
-  $ConnectionCopyWith<$Res>? get connection;
+  String? get vin;
+
+  /// [dynamicIcon] is the icon of the asset.
+  /// This is the new schema of the icon
   @override
-  $AssetTelemetryCopyWith<$Res>? get telemetry;
+  Avatar? get dynamicIcon;
+
+  /// Operation [mode] of the asset
   @override
-  $AssetLoginInfoCopyWith<$Res>? get loginInfo;
+  @AssetModeOrNullConverter()
+  AssetMode? get mode;
+
+  /// Children [assets] ids, only for clusters, limited to 1 level.
   @override
-  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCard;
+  List<String>? get childrenIds;
+
+  /// Children [assets], only for clusters, limited to 1 level.
   @override
-  $StaticPositionCopyWith<$Res>? get staticPosition;
+  List<Asset>? get children;
+
+  /// Is the list of device [commands] available for this asset.
+  @override
+  List<DeviceCommand>? get commands;
+
+  /// Is the list of [references] ids associated to the asset
+  @override
+  List<String>? get referencesIds;
+
+  /// Is the list of [references] associated to the asset
+  @override
+  List<Reference>? get references;
+
+  /// Is the list of [authenticatedAssetsIds] to the asset
+  @override
+  List<String>? get authenticatedAssetsIds;
+
+  /// Is the list of [authenticatedAssets] to the asset
+  @override
+  List<Asset>? get authenticatedAssets;
+
+  /// Is the list of [authenticatedUsersIds] to the asset
+  @override
+  List<String>? get authenticatedUsersIds;
+
+  /// Is the list of [authenticatedUsers] to the asset
+  @override
+  List<User>? get authenticatedUsers;
+
+  /// [kindId] is the id of the asset kind.
+  @override
+  String? get kindId;
+
+  /// [kind] is the asset kind.
+  @override
+  Category? get kind;
+
+  /// List of [customFields] linked to the asset. Please read the documentation for [CustomField]
+  /// for more details about the fields.
+  @override
+  List<CustomField>? get customFields;
+
+  /// List of [sensors] linked to the asset. Please read the documentation for Sensor for more
+  /// details about the fields.
+  @override
+  List<Sensor>? get sensors;
+
+  /// [primaryId] is the primary device id.
+  @override
+  String? get primaryId;
+
+  /// [primary] is the primary device.
+  @override
+  Device? get primary;
+
+  /// [devicesIds] is the list of devices ids associated to the asset.
+  @override
+  List<String>? get devicesIds;
+
+  /// [devices] is the list of devices associated to the asset.
+  @override
+  List<Device>? get devices;
+
+  /// [qrCode] is the QR code of the asset.
+  @override
+  String? get qrCode;
+
+  /// [externalIdentifiers] is the list of external identifiers of the asset.
+  @override
+  List<String>? get externalIdentifiers;
+
+  /// [connection] is the connection status of the asset.
+  @override
+  Connection? get connection;
+
+  /// [telemetry] is the telemetry of the asset.
+  @override
+  AssetTelemetry? get telemetry;
+
+  /// List of [tags] assigned to the asset
+  @override
+  List<Tag>? get tags;
+
+  /// List of custom [access] permissions.
+  @override
+  List<Access>? get access;
+
+  /// List of [lastExits] of the asset.
+  /// Only used for AllTank Systems project.
+  @override
+  List<AtsExit>? get lastExits;
+
+  /// [activeTime] is the active time of the asset.
+  /// Only used for AllTank Systems project.
+  @override
+  String? get activeTime;
+
+  /// [contacts] is the list of contacts associated to the asset.
+  @override
+  List<ContactInfo>? get contacts;
+
+  /// [laborHours] represents the list of labor hours configured to this asset.
+  /// This field is only for `Mappit` use.
+  @override
+  List<MappitLaborHour>? get mappitLaborHours;
+
+  /// [ownerId] is the ID of the user owner of this asset
+  @override
+  String? get ownerId;
+
+  /// [loginInfo] refers to the login inInputation of the asset.
+  @override
+  AssetLoginInfo? get loginInfo;
+
+  /// [authenticationCard] refers to the authentication card of the asset.
+  /// Only used in ATS apps.
+  @override
+  AtsAuthenticationCard? get authenticationCard;
+
+  /// [authenticationCardId] refers to the authentication card ID of the asset.
+  /// Only used in ATS apps.
+  @override
+  String? get authenticationCardId;
+
+  /// [nfcIdentifier] refers to the NFC identifier of the asset.
+  /// Only used in ATS apps.
+  @override
+  String? get nfcIdentifier;
+
+  /// [linkedSupplyPointAssets] refers to the list of supply points assets linked to this asset.
+  /// Only used in ATS apps.
+  @override
+  List<Asset>? get linkedSupplyPointAssets;
+
+  /// [linkedSupplyPointAssetsIds] refers to the list of supply points assets IDs linked to this asset.
+  /// Only used in ATS apps.
+  @override
+  List<String>? get linkedSupplyPointAssetsIds;
+
+  /// [staticPosition] refers to the static position of the asset.
+  /// Only used when mode is [AssetMode.fixed].
+  @override
+  StaticPosition? get staticPosition;
+
+  /// [points] refers to the list of points of the zone.
+  /// Only used when mode is [AssetMode.zone].
+  @override
+  List<ZonePoint>? get points;
+
+  /// [parameters] refers to the list of parameters of the asset.
+  /// Is only a list of strings.
+  @override
+  List<String> get parameters;
+
+  /// [globalSensors] is the list of global sensors of the asset.
+  @override
+  List<Sensor>? get globalSensors;
+
+  /// [mappitLaborStartTime] is the time of the labor start time.
+  @override
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? get mappitLaborStartTime;
+
+  /// [mappitLaborEndTime] is the time of the labor end time.
+  @override
+  @TimeOfDayOrNullConverter()
+  TimeOfDay? get mappitLaborEndTime;
+
+  /// `geofences` is the list of geofences associated to the asset, Its implement just in [ATS].
+  @override
+  List<Geofence>? get geofences;
+
+  /// `mappitSecondaryRoutesIds` represents the list of secondary routes ids linked to the asset.
+  @override
+  List<String>? get mappitSecondaryRoutesIds;
+
+  /// [isSuspended] if the asset is suspended.
+  @override
+  bool? get isSuspended;
+
+  /// Create a copy of Asset
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AssetImplCopyWith<_$AssetImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-/// @nodoc
-class __$AssetCopyWithImpl<$Res> implements _$AssetCopyWith<$Res> {
-  __$AssetCopyWithImpl(this._self, this._then);
-
-  final _Asset _self;
-  final $Res Function(_Asset) _then;
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? plate = freezed,
-    Object? vin = freezed,
-    Object? dynamicIcon = freezed,
-    Object? mode = freezed,
-    Object? childrenIds = freezed,
-    Object? children = freezed,
-    Object? commands = freezed,
-    Object? referencesIds = freezed,
-    Object? references = freezed,
-    Object? authenticatedAssetsIds = freezed,
-    Object? authenticatedAssets = freezed,
-    Object? authenticatedUsersIds = freezed,
-    Object? authenticatedUsers = freezed,
-    Object? kindId = freezed,
-    Object? kind = freezed,
-    Object? customFields = freezed,
-    Object? sensors = freezed,
-    Object? primaryId = freezed,
-    Object? primary = freezed,
-    Object? devicesIds = freezed,
-    Object? devices = freezed,
-    Object? qrCode = freezed,
-    Object? externalIdentifiers = freezed,
-    Object? connection = freezed,
-    Object? telemetry = freezed,
-    Object? tags = freezed,
-    Object? access = freezed,
-    Object? lastExits = freezed,
-    Object? activeTime = freezed,
-    Object? contacts = freezed,
-    Object? mappitLaborHours = freezed,
-    Object? ownerId = freezed,
-    Object? loginInfo = freezed,
-    Object? authenticationCard = freezed,
-    Object? authenticationCardId = freezed,
-    Object? nfcIdentifier = freezed,
-    Object? linkedSupplyPointAssets = freezed,
-    Object? linkedSupplyPointAssetsIds = freezed,
-    Object? staticPosition = freezed,
-    Object? points = freezed,
-    Object? parameters = null,
-    Object? globalSensors = freezed,
-    Object? mappitLaborStartTime = freezed,
-    Object? mappitLaborEndTime = freezed,
-    Object? geofences = freezed,
-    Object? mappitSecondaryRoutesIds = freezed,
-    Object? isSuspended = freezed,
-  }) {
-    return _then(_Asset(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      plate: freezed == plate
-          ? _self.plate
-          : plate // ignore: cast_nullable_to_non_nullable
-              as String?,
-      vin: freezed == vin
-          ? _self.vin
-          : vin // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dynamicIcon: freezed == dynamicIcon
-          ? _self.dynamicIcon
-          : dynamicIcon // ignore: cast_nullable_to_non_nullable
-              as Avatar?,
-      mode: freezed == mode
-          ? _self.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as AssetMode?,
-      childrenIds: freezed == childrenIds
-          ? _self._childrenIds
-          : childrenIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      children: freezed == children
-          ? _self._children
-          : children // ignore: cast_nullable_to_non_nullable
-              as List<Asset>?,
-      commands: freezed == commands
-          ? _self._commands
-          : commands // ignore: cast_nullable_to_non_nullable
-              as List<DeviceCommand>?,
-      referencesIds: freezed == referencesIds
-          ? _self._referencesIds
-          : referencesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      references: freezed == references
-          ? _self._references
-          : references // ignore: cast_nullable_to_non_nullable
-              as List<Reference>?,
-      authenticatedAssetsIds: freezed == authenticatedAssetsIds
-          ? _self._authenticatedAssetsIds
-          : authenticatedAssetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      authenticatedAssets: freezed == authenticatedAssets
-          ? _self._authenticatedAssets
-          : authenticatedAssets // ignore: cast_nullable_to_non_nullable
-              as List<Asset>?,
-      authenticatedUsersIds: freezed == authenticatedUsersIds
-          ? _self._authenticatedUsersIds
-          : authenticatedUsersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      authenticatedUsers: freezed == authenticatedUsers
-          ? _self._authenticatedUsers
-          : authenticatedUsers // ignore: cast_nullable_to_non_nullable
-              as List<User>?,
-      kindId: freezed == kindId
-          ? _self.kindId
-          : kindId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      kind: freezed == kind
-          ? _self.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as Category?,
-      customFields: freezed == customFields
-          ? _self._customFields
-          : customFields // ignore: cast_nullable_to_non_nullable
-              as List<CustomField>?,
-      sensors: freezed == sensors
-          ? _self._sensors
-          : sensors // ignore: cast_nullable_to_non_nullable
-              as List<Sensor>?,
-      primaryId: freezed == primaryId
-          ? _self.primaryId
-          : primaryId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      primary: freezed == primary
-          ? _self.primary
-          : primary // ignore: cast_nullable_to_non_nullable
-              as Device?,
-      devicesIds: freezed == devicesIds
-          ? _self._devicesIds
-          : devicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      devices: freezed == devices
-          ? _self._devices
-          : devices // ignore: cast_nullable_to_non_nullable
-              as List<Device>?,
-      qrCode: freezed == qrCode
-          ? _self.qrCode
-          : qrCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      externalIdentifiers: freezed == externalIdentifiers
-          ? _self._externalIdentifiers
-          : externalIdentifiers // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      connection: freezed == connection
-          ? _self.connection
-          : connection // ignore: cast_nullable_to_non_nullable
-              as Connection?,
-      telemetry: freezed == telemetry
-          ? _self.telemetry
-          : telemetry // ignore: cast_nullable_to_non_nullable
-              as AssetTelemetry?,
-      tags: freezed == tags
-          ? _self._tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<Tag>?,
-      access: freezed == access
-          ? _self._access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      lastExits: freezed == lastExits
-          ? _self._lastExits
-          : lastExits // ignore: cast_nullable_to_non_nullable
-              as List<AtsExit>?,
-      activeTime: freezed == activeTime
-          ? _self.activeTime
-          : activeTime // ignore: cast_nullable_to_non_nullable
-              as String?,
-      contacts: freezed == contacts
-          ? _self._contacts
-          : contacts // ignore: cast_nullable_to_non_nullable
-              as List<ContactInfo>?,
-      mappitLaborHours: freezed == mappitLaborHours
-          ? _self._mappitLaborHours
-          : mappitLaborHours // ignore: cast_nullable_to_non_nullable
-              as List<MappitLaborHour>?,
-      ownerId: freezed == ownerId
-          ? _self.ownerId
-          : ownerId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      loginInfo: freezed == loginInfo
-          ? _self.loginInfo
-          : loginInfo // ignore: cast_nullable_to_non_nullable
-              as AssetLoginInfo?,
-      authenticationCard: freezed == authenticationCard
-          ? _self.authenticationCard
-          : authenticationCard // ignore: cast_nullable_to_non_nullable
-              as AtsAuthenticationCard?,
-      authenticationCardId: freezed == authenticationCardId
-          ? _self.authenticationCardId
-          : authenticationCardId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      nfcIdentifier: freezed == nfcIdentifier
-          ? _self.nfcIdentifier
-          : nfcIdentifier // ignore: cast_nullable_to_non_nullable
-              as String?,
-      linkedSupplyPointAssets: freezed == linkedSupplyPointAssets
-          ? _self._linkedSupplyPointAssets
-          : linkedSupplyPointAssets // ignore: cast_nullable_to_non_nullable
-              as List<Asset>?,
-      linkedSupplyPointAssetsIds: freezed == linkedSupplyPointAssetsIds
-          ? _self._linkedSupplyPointAssetsIds
-          : linkedSupplyPointAssetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      staticPosition: freezed == staticPosition
-          ? _self.staticPosition
-          : staticPosition // ignore: cast_nullable_to_non_nullable
-              as StaticPosition?,
-      points: freezed == points
-          ? _self._points
-          : points // ignore: cast_nullable_to_non_nullable
-              as List<ZonePoint>?,
-      parameters: null == parameters
-          ? _self._parameters
-          : parameters // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      globalSensors: freezed == globalSensors
-          ? _self._globalSensors
-          : globalSensors // ignore: cast_nullable_to_non_nullable
-              as List<Sensor>?,
-      mappitLaborStartTime: freezed == mappitLaborStartTime
-          ? _self.mappitLaborStartTime
-          : mappitLaborStartTime // ignore: cast_nullable_to_non_nullable
-              as TimeOfDay?,
-      mappitLaborEndTime: freezed == mappitLaborEndTime
-          ? _self.mappitLaborEndTime
-          : mappitLaborEndTime // ignore: cast_nullable_to_non_nullable
-              as TimeOfDay?,
-      geofences: freezed == geofences
-          ? _self._geofences
-          : geofences // ignore: cast_nullable_to_non_nullable
-              as List<Geofence>?,
-      mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds
-          ? _self._mappitSecondaryRoutesIds
-          : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      isSuspended: freezed == isSuspended
-          ? _self.isSuspended
-          : isSuspended // ignore: cast_nullable_to_non_nullable
-              as bool?,
-    ));
-  }
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AvatarCopyWith<$Res>? get dynamicIcon {
-    if (_self.dynamicIcon == null) {
-      return null;
-    }
-
-    return $AvatarCopyWith<$Res>(_self.dynamicIcon!, (value) {
-      return _then(_self.copyWith(dynamicIcon: value));
-    });
-  }
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $CategoryCopyWith<$Res>? get kind {
-    if (_self.kind == null) {
-      return null;
-    }
-
-    return $CategoryCopyWith<$Res>(_self.kind!, (value) {
-      return _then(_self.copyWith(kind: value));
-    });
-  }
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $DeviceCopyWith<$Res>? get primary {
-    if (_self.primary == null) {
-      return null;
-    }
-
-    return $DeviceCopyWith<$Res>(_self.primary!, (value) {
-      return _then(_self.copyWith(primary: value));
-    });
-  }
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ConnectionCopyWith<$Res>? get connection {
-    if (_self.connection == null) {
-      return null;
-    }
-
-    return $ConnectionCopyWith<$Res>(_self.connection!, (value) {
-      return _then(_self.copyWith(connection: value));
-    });
-  }
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AssetTelemetryCopyWith<$Res>? get telemetry {
-    if (_self.telemetry == null) {
-      return null;
-    }
-
-    return $AssetTelemetryCopyWith<$Res>(_self.telemetry!, (value) {
-      return _then(_self.copyWith(telemetry: value));
-    });
-  }
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AssetLoginInfoCopyWith<$Res>? get loginInfo {
-    if (_self.loginInfo == null) {
-      return null;
-    }
-
-    return $AssetLoginInfoCopyWith<$Res>(_self.loginInfo!, (value) {
-      return _then(_self.copyWith(loginInfo: value));
-    });
-  }
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AtsAuthenticationCardCopyWith<$Res>? get authenticationCard {
-    if (_self.authenticationCard == null) {
-      return null;
-    }
-
-    return $AtsAuthenticationCardCopyWith<$Res>(_self.authenticationCard!,
-        (value) {
-      return _then(_self.copyWith(authenticationCard: value));
-    });
-  }
-
-  /// Create a copy of Asset
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StaticPositionCopyWith<$Res>? get staticPosition {
-    if (_self.staticPosition == null) {
-      return null;
-    }
-
-    return $StaticPositionCopyWith<$Res>(_self.staticPosition!, (value) {
-      return _then(_self.copyWith(staticPosition: value));
-    });
-  }
+AssetInput _$AssetInputFromJson(Map<String, dynamic> json) {
+  return _AssetInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$AssetInput {
-  String? get id;
-  set id(String? value);
-  String get name;
-  set name(String value);
-  String? get kindId;
-  set kindId(String? value);
-  String get plate;
-  set plate(String value);
-  String get vin;
-  set vin(String value);
-  List<ContactInfoInput> get contacts;
-  set contacts(List<ContactInfoInput> value);
-  ConnectionInput get connection;
-  set connection(ConnectionInput value);
+  String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
+  String? get kindId => throw _privateConstructorUsedError;
+  set kindId(String? value) => throw _privateConstructorUsedError;
+  String get plate => throw _privateConstructorUsedError;
+  set plate(String value) => throw _privateConstructorUsedError;
+  String get vin => throw _privateConstructorUsedError;
+  set vin(String value) => throw _privateConstructorUsedError;
+  List<ContactInfoInput> get contacts => throw _privateConstructorUsedError;
+  set contacts(List<ContactInfoInput> value) =>
+      throw _privateConstructorUsedError;
+  ConnectionInput get connection => throw _privateConstructorUsedError;
+  set connection(ConnectionInput value) => throw _privateConstructorUsedError;
   @AssetModeConverter()
-  AssetMode get mode;
+  AssetMode get mode => throw _privateConstructorUsedError;
   @AssetModeConverter()
-  set mode(AssetMode value);
-  String? get primaryId;
-  set primaryId(String? value);
-  List<String> get authenticatedUsersIds;
-  set authenticatedUsersIds(List<String> value);
-  List<String> get authenticatedAssetsIds;
-  set authenticatedAssetsIds(List<String> value);
-  List<String> get externalIdentifiers;
-  set externalIdentifiers(List<String> value);
-  List<String> get devicesIds;
-  set devicesIds(List<String> value);
-  List<String> get childrenIds;
-  set childrenIds(List<String> value);
-  List<String> get referencesIds;
-  set referencesIds(List<String> value);
-  List<CustomFieldInput> get customFields;
-  set customFields(List<CustomFieldInput> value);
-  List<SensorInput> get sensors;
-  set sensors(List<SensorInput> value);
-  AvatarInput? get dynamicIcon;
-  set dynamicIcon(AvatarInput? value);
-  StaticPositionInput? get staticPosition;
-  set staticPosition(StaticPositionInput? value);
-  AssetLoginInfoInput? get loginInfo;
-  set loginInfo(AssetLoginInfoInput? value);
-  List<ZonePointInput>? get points;
-  set points(List<ZonePointInput>? value); // ATS Specific fields
-  String get nfcIdentifier; // ATS Specific fields
-  set nfcIdentifier(String value);
-  String? get authenticationCardId;
-  set authenticationCardId(String? value);
-  List<String> get linkedSupplyPointAssetsIds;
-  set linkedSupplyPointAssetsIds(List<String> value);
-  List<String> get geofencesIds;
-  set geofencesIds(List<String> value); // Mapppit specific fields
-  List<MappitLaborHourInput> get mappitLaborHours; // Mapppit specific fields
-  set mappitLaborHours(List<MappitLaborHourInput> value);
+  set mode(AssetMode value) => throw _privateConstructorUsedError;
+  String? get primaryId => throw _privateConstructorUsedError;
+  set primaryId(String? value) => throw _privateConstructorUsedError;
+  List<String> get authenticatedUsersIds => throw _privateConstructorUsedError;
+  set authenticatedUsersIds(List<String> value) =>
+      throw _privateConstructorUsedError;
+  List<String> get authenticatedAssetsIds => throw _privateConstructorUsedError;
+  set authenticatedAssetsIds(List<String> value) =>
+      throw _privateConstructorUsedError;
+  List<String> get externalIdentifiers => throw _privateConstructorUsedError;
+  set externalIdentifiers(List<String> value) =>
+      throw _privateConstructorUsedError;
+  List<String> get devicesIds => throw _privateConstructorUsedError;
+  set devicesIds(List<String> value) => throw _privateConstructorUsedError;
+  List<String> get childrenIds => throw _privateConstructorUsedError;
+  set childrenIds(List<String> value) => throw _privateConstructorUsedError;
+  List<String> get referencesIds => throw _privateConstructorUsedError;
+  set referencesIds(List<String> value) => throw _privateConstructorUsedError;
+  List<CustomFieldInput> get customFields => throw _privateConstructorUsedError;
+  set customFields(List<CustomFieldInput> value) =>
+      throw _privateConstructorUsedError;
+  List<SensorInput> get sensors => throw _privateConstructorUsedError;
+  set sensors(List<SensorInput> value) => throw _privateConstructorUsedError;
+  AvatarInput? get dynamicIcon => throw _privateConstructorUsedError;
+  set dynamicIcon(AvatarInput? value) => throw _privateConstructorUsedError;
+  StaticPositionInput? get staticPosition => throw _privateConstructorUsedError;
+  set staticPosition(StaticPositionInput? value) =>
+      throw _privateConstructorUsedError;
+  AssetLoginInfoInput? get loginInfo => throw _privateConstructorUsedError;
+  set loginInfo(AssetLoginInfoInput? value) =>
+      throw _privateConstructorUsedError;
+  List<ZonePointInput>? get points => throw _privateConstructorUsedError;
+  set points(List<ZonePointInput>? value) =>
+      throw _privateConstructorUsedError; // ATS Specific fields
+  String get nfcIdentifier =>
+      throw _privateConstructorUsedError; // ATS Specific fields
+  set nfcIdentifier(String value) => throw _privateConstructorUsedError;
+  String? get authenticationCardId => throw _privateConstructorUsedError;
+  set authenticationCardId(String? value) => throw _privateConstructorUsedError;
+  List<String> get linkedSupplyPointAssetsIds =>
+      throw _privateConstructorUsedError;
+  set linkedSupplyPointAssetsIds(List<String> value) =>
+      throw _privateConstructorUsedError;
+  List<String> get geofencesIds => throw _privateConstructorUsedError;
+  set geofencesIds(List<String> value) =>
+      throw _privateConstructorUsedError; // Mapppit specific fields
+  List<MappitLaborHourInput> get mappitLaborHours =>
+      throw _privateConstructorUsedError; // Mapppit specific fields
+  set mappitLaborHours(List<MappitLaborHourInput> value) =>
+      throw _privateConstructorUsedError;
   @TimeOfDayConverter()
-  TimeOfDay get mappitLaborStartTime;
+  TimeOfDay get mappitLaborStartTime => throw _privateConstructorUsedError;
   @TimeOfDayConverter()
-  set mappitLaborStartTime(TimeOfDay value);
+  set mappitLaborStartTime(TimeOfDay value) =>
+      throw _privateConstructorUsedError;
   @TimeOfDayConverter()
-  TimeOfDay get mappitLaborEndTime;
+  TimeOfDay get mappitLaborEndTime => throw _privateConstructorUsedError;
   @TimeOfDayConverter()
-  set mappitLaborEndTime(TimeOfDay value);
-  List<String> get mappitSecondaryRoutesIds;
-  set mappitSecondaryRoutesIds(List<String> value);
+  set mappitLaborEndTime(TimeOfDay value) => throw _privateConstructorUsedError;
+  List<String> get mappitSecondaryRoutesIds =>
+      throw _privateConstructorUsedError;
+  set mappitSecondaryRoutesIds(List<String> value) =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this AssetInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of AssetInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $AssetInputCopyWith<AssetInput> get copyWith =>
-      _$AssetInputCopyWithImpl<AssetInput>(this as AssetInput, _$identity);
-
-  /// Serializes this AssetInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  String toString() {
-    return 'AssetInput(id: $id, name: $name, kindId: $kindId, plate: $plate, vin: $vin, contacts: $contacts, connection: $connection, mode: $mode, primaryId: $primaryId, authenticatedUsersIds: $authenticatedUsersIds, authenticatedAssetsIds: $authenticatedAssetsIds, externalIdentifiers: $externalIdentifiers, devicesIds: $devicesIds, childrenIds: $childrenIds, referencesIds: $referencesIds, customFields: $customFields, sensors: $sensors, dynamicIcon: $dynamicIcon, staticPosition: $staticPosition, loginInfo: $loginInfo, points: $points, nfcIdentifier: $nfcIdentifier, authenticationCardId: $authenticationCardId, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, geofencesIds: $geofencesIds, mappitLaborHours: $mappitLaborHours, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $AssetInputCopyWith<$Res> {
+abstract class $AssetInputCopyWith<$Res> {
   factory $AssetInputCopyWith(
-          AssetInput value, $Res Function(AssetInput) _then) =
-      _$AssetInputCopyWithImpl;
+          AssetInput value, $Res Function(AssetInput) then) =
+      _$AssetInputCopyWithImpl<$Res, AssetInput>;
   @useResult
   $Res call(
       {String? id,
@@ -2713,11 +2845,14 @@ abstract mixin class $AssetInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AssetInputCopyWithImpl<$Res> implements $AssetInputCopyWith<$Res> {
-  _$AssetInputCopyWithImpl(this._self, this._then);
+class _$AssetInputCopyWithImpl<$Res, $Val extends AssetInput>
+    implements $AssetInputCopyWith<$Res> {
+  _$AssetInputCopyWithImpl(this._value, this._then);
 
-  final AssetInput _self;
-  final $Res Function(AssetInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of AssetInput
   /// with the given fields replaced by the non-null parameter values.
@@ -2754,124 +2889,124 @@ class _$AssetInputCopyWithImpl<$Res> implements $AssetInputCopyWith<$Res> {
     Object? mappitLaborEndTime = null,
     Object? mappitSecondaryRoutesIds = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: freezed == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       kindId: freezed == kindId
-          ? _self.kindId
+          ? _value.kindId
           : kindId // ignore: cast_nullable_to_non_nullable
               as String?,
       plate: null == plate
-          ? _self.plate
+          ? _value.plate
           : plate // ignore: cast_nullable_to_non_nullable
               as String,
       vin: null == vin
-          ? _self.vin
+          ? _value.vin
           : vin // ignore: cast_nullable_to_non_nullable
               as String,
       contacts: null == contacts
-          ? _self.contacts
+          ? _value.contacts
           : contacts // ignore: cast_nullable_to_non_nullable
               as List<ContactInfoInput>,
       connection: null == connection
-          ? _self.connection
+          ? _value.connection
           : connection // ignore: cast_nullable_to_non_nullable
               as ConnectionInput,
       mode: null == mode
-          ? _self.mode
+          ? _value.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as AssetMode,
       primaryId: freezed == primaryId
-          ? _self.primaryId
+          ? _value.primaryId
           : primaryId // ignore: cast_nullable_to_non_nullable
               as String?,
       authenticatedUsersIds: null == authenticatedUsersIds
-          ? _self.authenticatedUsersIds
+          ? _value.authenticatedUsersIds
           : authenticatedUsersIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       authenticatedAssetsIds: null == authenticatedAssetsIds
-          ? _self.authenticatedAssetsIds
+          ? _value.authenticatedAssetsIds
           : authenticatedAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       externalIdentifiers: null == externalIdentifiers
-          ? _self.externalIdentifiers
+          ? _value.externalIdentifiers
           : externalIdentifiers // ignore: cast_nullable_to_non_nullable
               as List<String>,
       devicesIds: null == devicesIds
-          ? _self.devicesIds
+          ? _value.devicesIds
           : devicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       childrenIds: null == childrenIds
-          ? _self.childrenIds
+          ? _value.childrenIds
           : childrenIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       referencesIds: null == referencesIds
-          ? _self.referencesIds
+          ? _value.referencesIds
           : referencesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       customFields: null == customFields
-          ? _self.customFields
+          ? _value.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as List<CustomFieldInput>,
       sensors: null == sensors
-          ? _self.sensors
+          ? _value.sensors
           : sensors // ignore: cast_nullable_to_non_nullable
               as List<SensorInput>,
       dynamicIcon: freezed == dynamicIcon
-          ? _self.dynamicIcon
+          ? _value.dynamicIcon
           : dynamicIcon // ignore: cast_nullable_to_non_nullable
               as AvatarInput?,
       staticPosition: freezed == staticPosition
-          ? _self.staticPosition
+          ? _value.staticPosition
           : staticPosition // ignore: cast_nullable_to_non_nullable
               as StaticPositionInput?,
       loginInfo: freezed == loginInfo
-          ? _self.loginInfo
+          ? _value.loginInfo
           : loginInfo // ignore: cast_nullable_to_non_nullable
               as AssetLoginInfoInput?,
       points: freezed == points
-          ? _self.points
+          ? _value.points
           : points // ignore: cast_nullable_to_non_nullable
               as List<ZonePointInput>?,
       nfcIdentifier: null == nfcIdentifier
-          ? _self.nfcIdentifier
+          ? _value.nfcIdentifier
           : nfcIdentifier // ignore: cast_nullable_to_non_nullable
               as String,
       authenticationCardId: freezed == authenticationCardId
-          ? _self.authenticationCardId
+          ? _value.authenticationCardId
           : authenticationCardId // ignore: cast_nullable_to_non_nullable
               as String?,
       linkedSupplyPointAssetsIds: null == linkedSupplyPointAssetsIds
-          ? _self.linkedSupplyPointAssetsIds
+          ? _value.linkedSupplyPointAssetsIds
           : linkedSupplyPointAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       geofencesIds: null == geofencesIds
-          ? _self.geofencesIds
+          ? _value.geofencesIds
           : geofencesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       mappitLaborHours: null == mappitLaborHours
-          ? _self.mappitLaborHours
+          ? _value.mappitLaborHours
           : mappitLaborHours // ignore: cast_nullable_to_non_nullable
               as List<MappitLaborHourInput>,
       mappitLaborStartTime: null == mappitLaborStartTime
-          ? _self.mappitLaborStartTime
+          ? _value.mappitLaborStartTime
           : mappitLaborStartTime // ignore: cast_nullable_to_non_nullable
               as TimeOfDay,
       mappitLaborEndTime: null == mappitLaborEndTime
-          ? _self.mappitLaborEndTime
+          ? _value.mappitLaborEndTime
           : mappitLaborEndTime // ignore: cast_nullable_to_non_nullable
               as TimeOfDay,
       mappitSecondaryRoutesIds: null == mappitSecondaryRoutesIds
-          ? _self.mappitSecondaryRoutesIds
+          ? _value.mappitSecondaryRoutesIds
           : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of AssetInput
@@ -2879,8 +3014,8 @@ class _$AssetInputCopyWithImpl<$Res> implements $AssetInputCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $ConnectionInputCopyWith<$Res> get connection {
-    return $ConnectionInputCopyWith<$Res>(_self.connection, (value) {
-      return _then(_self.copyWith(connection: value));
+    return $ConnectionInputCopyWith<$Res>(_value.connection, (value) {
+      return _then(_value.copyWith(connection: value) as $Val);
     });
   }
 
@@ -2889,12 +3024,12 @@ class _$AssetInputCopyWithImpl<$Res> implements $AssetInputCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $AvatarInputCopyWith<$Res>? get dynamicIcon {
-    if (_self.dynamicIcon == null) {
+    if (_value.dynamicIcon == null) {
       return null;
     }
 
-    return $AvatarInputCopyWith<$Res>(_self.dynamicIcon!, (value) {
-      return _then(_self.copyWith(dynamicIcon: value));
+    return $AvatarInputCopyWith<$Res>(_value.dynamicIcon!, (value) {
+      return _then(_value.copyWith(dynamicIcon: value) as $Val);
     });
   }
 
@@ -2903,12 +3038,12 @@ class _$AssetInputCopyWithImpl<$Res> implements $AssetInputCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $StaticPositionInputCopyWith<$Res>? get staticPosition {
-    if (_self.staticPosition == null) {
+    if (_value.staticPosition == null) {
       return null;
     }
 
-    return $StaticPositionInputCopyWith<$Res>(_self.staticPosition!, (value) {
-      return _then(_self.copyWith(staticPosition: value));
+    return $StaticPositionInputCopyWith<$Res>(_value.staticPosition!, (value) {
+      return _then(_value.copyWith(staticPosition: value) as $Val);
     });
   }
 
@@ -2917,20 +3052,233 @@ class _$AssetInputCopyWithImpl<$Res> implements $AssetInputCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $AssetLoginInfoInputCopyWith<$Res>? get loginInfo {
-    if (_self.loginInfo == null) {
+    if (_value.loginInfo == null) {
       return null;
     }
 
-    return $AssetLoginInfoInputCopyWith<$Res>(_self.loginInfo!, (value) {
-      return _then(_self.copyWith(loginInfo: value));
+    return $AssetLoginInfoInputCopyWith<$Res>(_value.loginInfo!, (value) {
+      return _then(_value.copyWith(loginInfo: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$AssetInputImplCopyWith<$Res>
+    implements $AssetInputCopyWith<$Res> {
+  factory _$$AssetInputImplCopyWith(
+          _$AssetInputImpl value, $Res Function(_$AssetInputImpl) then) =
+      __$$AssetInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      String? kindId,
+      String plate,
+      String vin,
+      List<ContactInfoInput> contacts,
+      ConnectionInput connection,
+      @AssetModeConverter() AssetMode mode,
+      String? primaryId,
+      List<String> authenticatedUsersIds,
+      List<String> authenticatedAssetsIds,
+      List<String> externalIdentifiers,
+      List<String> devicesIds,
+      List<String> childrenIds,
+      List<String> referencesIds,
+      List<CustomFieldInput> customFields,
+      List<SensorInput> sensors,
+      AvatarInput? dynamicIcon,
+      StaticPositionInput? staticPosition,
+      AssetLoginInfoInput? loginInfo,
+      List<ZonePointInput>? points,
+      String nfcIdentifier,
+      String? authenticationCardId,
+      List<String> linkedSupplyPointAssetsIds,
+      List<String> geofencesIds,
+      List<MappitLaborHourInput> mappitLaborHours,
+      @TimeOfDayConverter() TimeOfDay mappitLaborStartTime,
+      @TimeOfDayConverter() TimeOfDay mappitLaborEndTime,
+      List<String> mappitSecondaryRoutesIds});
+
+  @override
+  $ConnectionInputCopyWith<$Res> get connection;
+  @override
+  $AvatarInputCopyWith<$Res>? get dynamicIcon;
+  @override
+  $StaticPositionInputCopyWith<$Res>? get staticPosition;
+  @override
+  $AssetLoginInfoInputCopyWith<$Res>? get loginInfo;
+}
+
+/// @nodoc
+class __$$AssetInputImplCopyWithImpl<$Res>
+    extends _$AssetInputCopyWithImpl<$Res, _$AssetInputImpl>
+    implements _$$AssetInputImplCopyWith<$Res> {
+  __$$AssetInputImplCopyWithImpl(
+      _$AssetInputImpl _value, $Res Function(_$AssetInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? kindId = freezed,
+    Object? plate = null,
+    Object? vin = null,
+    Object? contacts = null,
+    Object? connection = null,
+    Object? mode = null,
+    Object? primaryId = freezed,
+    Object? authenticatedUsersIds = null,
+    Object? authenticatedAssetsIds = null,
+    Object? externalIdentifiers = null,
+    Object? devicesIds = null,
+    Object? childrenIds = null,
+    Object? referencesIds = null,
+    Object? customFields = null,
+    Object? sensors = null,
+    Object? dynamicIcon = freezed,
+    Object? staticPosition = freezed,
+    Object? loginInfo = freezed,
+    Object? points = freezed,
+    Object? nfcIdentifier = null,
+    Object? authenticationCardId = freezed,
+    Object? linkedSupplyPointAssetsIds = null,
+    Object? geofencesIds = null,
+    Object? mappitLaborHours = null,
+    Object? mappitLaborStartTime = null,
+    Object? mappitLaborEndTime = null,
+    Object? mappitSecondaryRoutesIds = null,
+  }) {
+    return _then(_$AssetInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      kindId: freezed == kindId
+          ? _value.kindId
+          : kindId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      plate: null == plate
+          ? _value.plate
+          : plate // ignore: cast_nullable_to_non_nullable
+              as String,
+      vin: null == vin
+          ? _value.vin
+          : vin // ignore: cast_nullable_to_non_nullable
+              as String,
+      contacts: null == contacts
+          ? _value.contacts
+          : contacts // ignore: cast_nullable_to_non_nullable
+              as List<ContactInfoInput>,
+      connection: null == connection
+          ? _value.connection
+          : connection // ignore: cast_nullable_to_non_nullable
+              as ConnectionInput,
+      mode: null == mode
+          ? _value.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as AssetMode,
+      primaryId: freezed == primaryId
+          ? _value.primaryId
+          : primaryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      authenticatedUsersIds: null == authenticatedUsersIds
+          ? _value.authenticatedUsersIds
+          : authenticatedUsersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      authenticatedAssetsIds: null == authenticatedAssetsIds
+          ? _value.authenticatedAssetsIds
+          : authenticatedAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      externalIdentifiers: null == externalIdentifiers
+          ? _value.externalIdentifiers
+          : externalIdentifiers // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      devicesIds: null == devicesIds
+          ? _value.devicesIds
+          : devicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      childrenIds: null == childrenIds
+          ? _value.childrenIds
+          : childrenIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      referencesIds: null == referencesIds
+          ? _value.referencesIds
+          : referencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      customFields: null == customFields
+          ? _value.customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as List<CustomFieldInput>,
+      sensors: null == sensors
+          ? _value.sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<SensorInput>,
+      dynamicIcon: freezed == dynamicIcon
+          ? _value.dynamicIcon
+          : dynamicIcon // ignore: cast_nullable_to_non_nullable
+              as AvatarInput?,
+      staticPosition: freezed == staticPosition
+          ? _value.staticPosition
+          : staticPosition // ignore: cast_nullable_to_non_nullable
+              as StaticPositionInput?,
+      loginInfo: freezed == loginInfo
+          ? _value.loginInfo
+          : loginInfo // ignore: cast_nullable_to_non_nullable
+              as AssetLoginInfoInput?,
+      points: freezed == points
+          ? _value.points
+          : points // ignore: cast_nullable_to_non_nullable
+              as List<ZonePointInput>?,
+      nfcIdentifier: null == nfcIdentifier
+          ? _value.nfcIdentifier
+          : nfcIdentifier // ignore: cast_nullable_to_non_nullable
+              as String,
+      authenticationCardId: freezed == authenticationCardId
+          ? _value.authenticationCardId
+          : authenticationCardId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      linkedSupplyPointAssetsIds: null == linkedSupplyPointAssetsIds
+          ? _value.linkedSupplyPointAssetsIds
+          : linkedSupplyPointAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      geofencesIds: null == geofencesIds
+          ? _value.geofencesIds
+          : geofencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      mappitLaborHours: null == mappitLaborHours
+          ? _value.mappitLaborHours
+          : mappitLaborHours // ignore: cast_nullable_to_non_nullable
+              as List<MappitLaborHourInput>,
+      mappitLaborStartTime: null == mappitLaborStartTime
+          ? _value.mappitLaborStartTime
+          : mappitLaborStartTime // ignore: cast_nullable_to_non_nullable
+              as TimeOfDay,
+      mappitLaborEndTime: null == mappitLaborEndTime
+          ? _value.mappitLaborEndTime
+          : mappitLaborEndTime // ignore: cast_nullable_to_non_nullable
+              as TimeOfDay,
+      mappitSecondaryRoutesIds: null == mappitSecondaryRoutesIds
+          ? _value.mappitSecondaryRoutesIds
+          : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _AssetInput extends AssetInput {
-  _AssetInput(
+class _$AssetInputImpl extends _AssetInput {
+  _$AssetInputImpl(
       {this.id,
       this.name = '',
       this.kindId,
@@ -2963,8 +3311,9 @@ class _AssetInput extends AssetInput {
       this.mappitLaborEndTime = const TimeOfDay(hour: 18, minute: 0),
       this.mappitSecondaryRoutesIds = const []})
       : super._();
-  factory _AssetInput.fromJson(Map<String, dynamic> json) =>
-      _$AssetInputFromJson(json);
+
+  factory _$AssetInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AssetInputImplFromJson(json);
 
   @override
   String? id;
@@ -3050,43 +3399,36 @@ class _AssetInput extends AssetInput {
   @JsonKey()
   List<String> mappitSecondaryRoutesIds;
 
-  /// Create a copy of AssetInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AssetInputCopyWith<_AssetInput> get copyWith =>
-      __$AssetInputCopyWithImpl<_AssetInput>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AssetInputToJson(
-      this,
-    );
-  }
-
   @override
   String toString() {
     return 'AssetInput(id: $id, name: $name, kindId: $kindId, plate: $plate, vin: $vin, contacts: $contacts, connection: $connection, mode: $mode, primaryId: $primaryId, authenticatedUsersIds: $authenticatedUsersIds, authenticatedAssetsIds: $authenticatedAssetsIds, externalIdentifiers: $externalIdentifiers, devicesIds: $devicesIds, childrenIds: $childrenIds, referencesIds: $referencesIds, customFields: $customFields, sensors: $sensors, dynamicIcon: $dynamicIcon, staticPosition: $staticPosition, loginInfo: $loginInfo, points: $points, nfcIdentifier: $nfcIdentifier, authenticationCardId: $authenticationCardId, linkedSupplyPointAssetsIds: $linkedSupplyPointAssetsIds, geofencesIds: $geofencesIds, mappitLaborHours: $mappitLaborHours, mappitLaborStartTime: $mappitLaborStartTime, mappitLaborEndTime: $mappitLaborEndTime, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds)';
   }
+
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AssetInputImplCopyWith<_$AssetInputImpl> get copyWith =>
+      __$$AssetInputImplCopyWithImpl<_$AssetInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AssetInputImplToJson(
+      this,
+    );
+  }
 }
 
-/// @nodoc
-abstract mixin class _$AssetInputCopyWith<$Res>
-    implements $AssetInputCopyWith<$Res> {
-  factory _$AssetInputCopyWith(
-          _AssetInput value, $Res Function(_AssetInput) _then) =
-      __$AssetInputCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
+abstract class _AssetInput extends AssetInput {
+  factory _AssetInput(
       {String? id,
       String name,
       String? kindId,
       String plate,
       String vin,
       List<ContactInfoInput> contacts,
-      ConnectionInput connection,
+      required ConnectionInput connection,
       @AssetModeConverter() AssetMode mode,
       String? primaryId,
       List<String> authenticatedUsersIds,
@@ -3108,292 +3450,157 @@ abstract mixin class _$AssetInputCopyWith<$Res>
       List<MappitLaborHourInput> mappitLaborHours,
       @TimeOfDayConverter() TimeOfDay mappitLaborStartTime,
       @TimeOfDayConverter() TimeOfDay mappitLaborEndTime,
-      List<String> mappitSecondaryRoutesIds});
+      List<String> mappitSecondaryRoutesIds}) = _$AssetInputImpl;
+  _AssetInput._() : super._();
+
+  factory _AssetInput.fromJson(Map<String, dynamic> json) =
+      _$AssetInputImpl.fromJson;
 
   @override
-  $ConnectionInputCopyWith<$Res> get connection;
+  String? get id;
+  set id(String? value);
   @override
-  $AvatarInputCopyWith<$Res>? get dynamicIcon;
+  String get name;
+  set name(String value);
   @override
-  $StaticPositionInputCopyWith<$Res>? get staticPosition;
+  String? get kindId;
+  set kindId(String? value);
   @override
-  $AssetLoginInfoInputCopyWith<$Res>? get loginInfo;
+  String get plate;
+  set plate(String value);
+  @override
+  String get vin;
+  set vin(String value);
+  @override
+  List<ContactInfoInput> get contacts;
+  set contacts(List<ContactInfoInput> value);
+  @override
+  ConnectionInput get connection;
+  set connection(ConnectionInput value);
+  @override
+  @AssetModeConverter()
+  AssetMode get mode;
+  @AssetModeConverter()
+  set mode(AssetMode value);
+  @override
+  String? get primaryId;
+  set primaryId(String? value);
+  @override
+  List<String> get authenticatedUsersIds;
+  set authenticatedUsersIds(List<String> value);
+  @override
+  List<String> get authenticatedAssetsIds;
+  set authenticatedAssetsIds(List<String> value);
+  @override
+  List<String> get externalIdentifiers;
+  set externalIdentifiers(List<String> value);
+  @override
+  List<String> get devicesIds;
+  set devicesIds(List<String> value);
+  @override
+  List<String> get childrenIds;
+  set childrenIds(List<String> value);
+  @override
+  List<String> get referencesIds;
+  set referencesIds(List<String> value);
+  @override
+  List<CustomFieldInput> get customFields;
+  set customFields(List<CustomFieldInput> value);
+  @override
+  List<SensorInput> get sensors;
+  set sensors(List<SensorInput> value);
+  @override
+  AvatarInput? get dynamicIcon;
+  set dynamicIcon(AvatarInput? value);
+  @override
+  StaticPositionInput? get staticPosition;
+  set staticPosition(StaticPositionInput? value);
+  @override
+  AssetLoginInfoInput? get loginInfo;
+  set loginInfo(AssetLoginInfoInput? value);
+  @override
+  List<ZonePointInput>? get points;
+  set points(List<ZonePointInput>? value); // ATS Specific fields
+  @override
+  String get nfcIdentifier; // ATS Specific fields
+  set nfcIdentifier(String value);
+  @override
+  String? get authenticationCardId;
+  set authenticationCardId(String? value);
+  @override
+  List<String> get linkedSupplyPointAssetsIds;
+  set linkedSupplyPointAssetsIds(List<String> value);
+  @override
+  List<String> get geofencesIds;
+  set geofencesIds(List<String> value); // Mapppit specific fields
+  @override
+  List<MappitLaborHourInput> get mappitLaborHours; // Mapppit specific fields
+  set mappitLaborHours(List<MappitLaborHourInput> value);
+  @override
+  @TimeOfDayConverter()
+  TimeOfDay get mappitLaborStartTime;
+  @TimeOfDayConverter()
+  set mappitLaborStartTime(TimeOfDay value);
+  @override
+  @TimeOfDayConverter()
+  TimeOfDay get mappitLaborEndTime;
+  @TimeOfDayConverter()
+  set mappitLaborEndTime(TimeOfDay value);
+  @override
+  List<String> get mappitSecondaryRoutesIds;
+  set mappitSecondaryRoutesIds(List<String> value);
+
+  /// Create a copy of AssetInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AssetInputImplCopyWith<_$AssetInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-/// @nodoc
-class __$AssetInputCopyWithImpl<$Res> implements _$AssetInputCopyWith<$Res> {
-  __$AssetInputCopyWithImpl(this._self, this._then);
-
-  final _AssetInput _self;
-  final $Res Function(_AssetInput) _then;
-
-  /// Create a copy of AssetInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = freezed,
-    Object? name = null,
-    Object? kindId = freezed,
-    Object? plate = null,
-    Object? vin = null,
-    Object? contacts = null,
-    Object? connection = null,
-    Object? mode = null,
-    Object? primaryId = freezed,
-    Object? authenticatedUsersIds = null,
-    Object? authenticatedAssetsIds = null,
-    Object? externalIdentifiers = null,
-    Object? devicesIds = null,
-    Object? childrenIds = null,
-    Object? referencesIds = null,
-    Object? customFields = null,
-    Object? sensors = null,
-    Object? dynamicIcon = freezed,
-    Object? staticPosition = freezed,
-    Object? loginInfo = freezed,
-    Object? points = freezed,
-    Object? nfcIdentifier = null,
-    Object? authenticationCardId = freezed,
-    Object? linkedSupplyPointAssetsIds = null,
-    Object? geofencesIds = null,
-    Object? mappitLaborHours = null,
-    Object? mappitLaborStartTime = null,
-    Object? mappitLaborEndTime = null,
-    Object? mappitSecondaryRoutesIds = null,
-  }) {
-    return _then(_AssetInput(
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      kindId: freezed == kindId
-          ? _self.kindId
-          : kindId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      plate: null == plate
-          ? _self.plate
-          : plate // ignore: cast_nullable_to_non_nullable
-              as String,
-      vin: null == vin
-          ? _self.vin
-          : vin // ignore: cast_nullable_to_non_nullable
-              as String,
-      contacts: null == contacts
-          ? _self.contacts
-          : contacts // ignore: cast_nullable_to_non_nullable
-              as List<ContactInfoInput>,
-      connection: null == connection
-          ? _self.connection
-          : connection // ignore: cast_nullable_to_non_nullable
-              as ConnectionInput,
-      mode: null == mode
-          ? _self.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as AssetMode,
-      primaryId: freezed == primaryId
-          ? _self.primaryId
-          : primaryId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      authenticatedUsersIds: null == authenticatedUsersIds
-          ? _self.authenticatedUsersIds
-          : authenticatedUsersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      authenticatedAssetsIds: null == authenticatedAssetsIds
-          ? _self.authenticatedAssetsIds
-          : authenticatedAssetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      externalIdentifiers: null == externalIdentifiers
-          ? _self.externalIdentifiers
-          : externalIdentifiers // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      devicesIds: null == devicesIds
-          ? _self.devicesIds
-          : devicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      childrenIds: null == childrenIds
-          ? _self.childrenIds
-          : childrenIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      referencesIds: null == referencesIds
-          ? _self.referencesIds
-          : referencesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      customFields: null == customFields
-          ? _self.customFields
-          : customFields // ignore: cast_nullable_to_non_nullable
-              as List<CustomFieldInput>,
-      sensors: null == sensors
-          ? _self.sensors
-          : sensors // ignore: cast_nullable_to_non_nullable
-              as List<SensorInput>,
-      dynamicIcon: freezed == dynamicIcon
-          ? _self.dynamicIcon
-          : dynamicIcon // ignore: cast_nullable_to_non_nullable
-              as AvatarInput?,
-      staticPosition: freezed == staticPosition
-          ? _self.staticPosition
-          : staticPosition // ignore: cast_nullable_to_non_nullable
-              as StaticPositionInput?,
-      loginInfo: freezed == loginInfo
-          ? _self.loginInfo
-          : loginInfo // ignore: cast_nullable_to_non_nullable
-              as AssetLoginInfoInput?,
-      points: freezed == points
-          ? _self.points
-          : points // ignore: cast_nullable_to_non_nullable
-              as List<ZonePointInput>?,
-      nfcIdentifier: null == nfcIdentifier
-          ? _self.nfcIdentifier
-          : nfcIdentifier // ignore: cast_nullable_to_non_nullable
-              as String,
-      authenticationCardId: freezed == authenticationCardId
-          ? _self.authenticationCardId
-          : authenticationCardId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      linkedSupplyPointAssetsIds: null == linkedSupplyPointAssetsIds
-          ? _self.linkedSupplyPointAssetsIds
-          : linkedSupplyPointAssetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      geofencesIds: null == geofencesIds
-          ? _self.geofencesIds
-          : geofencesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      mappitLaborHours: null == mappitLaborHours
-          ? _self.mappitLaborHours
-          : mappitLaborHours // ignore: cast_nullable_to_non_nullable
-              as List<MappitLaborHourInput>,
-      mappitLaborStartTime: null == mappitLaborStartTime
-          ? _self.mappitLaborStartTime
-          : mappitLaborStartTime // ignore: cast_nullable_to_non_nullable
-              as TimeOfDay,
-      mappitLaborEndTime: null == mappitLaborEndTime
-          ? _self.mappitLaborEndTime
-          : mappitLaborEndTime // ignore: cast_nullable_to_non_nullable
-              as TimeOfDay,
-      mappitSecondaryRoutesIds: null == mappitSecondaryRoutesIds
-          ? _self.mappitSecondaryRoutesIds
-          : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ));
-  }
-
-  /// Create a copy of AssetInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ConnectionInputCopyWith<$Res> get connection {
-    return $ConnectionInputCopyWith<$Res>(_self.connection, (value) {
-      return _then(_self.copyWith(connection: value));
-    });
-  }
-
-  /// Create a copy of AssetInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AvatarInputCopyWith<$Res>? get dynamicIcon {
-    if (_self.dynamicIcon == null) {
-      return null;
-    }
-
-    return $AvatarInputCopyWith<$Res>(_self.dynamicIcon!, (value) {
-      return _then(_self.copyWith(dynamicIcon: value));
-    });
-  }
-
-  /// Create a copy of AssetInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $StaticPositionInputCopyWith<$Res>? get staticPosition {
-    if (_self.staticPosition == null) {
-      return null;
-    }
-
-    return $StaticPositionInputCopyWith<$Res>(_self.staticPosition!, (value) {
-      return _then(_self.copyWith(staticPosition: value));
-    });
-  }
-
-  /// Create a copy of AssetInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AssetLoginInfoInputCopyWith<$Res>? get loginInfo {
-    if (_self.loginInfo == null) {
-      return null;
-    }
-
-    return $AssetLoginInfoInputCopyWith<$Res>(_self.loginInfo!, (value) {
-      return _then(_self.copyWith(loginInfo: value));
-    });
-  }
+AssetLoginInfo _$AssetLoginInfoFromJson(Map<String, dynamic> json) {
+  return _AssetLoginInfo.fromJson(json);
 }
 
 /// @nodoc
 mixin _$AssetLoginInfo {
   /// [enabled] is the login status of the asset.
-  bool get enabled;
+  bool get enabled => throw _privateConstructorUsedError;
 
   /// [email] is the login email of the asset.
-  String? get email;
+  String? get email => throw _privateConstructorUsedError;
 
   /// [username] is the login username of the asset.
-  String? get username;
+  String? get username => throw _privateConstructorUsedError;
+
+  /// Serializes this AssetLoginInfo to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of AssetLoginInfo
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $AssetLoginInfoCopyWith<AssetLoginInfo> get copyWith =>
-      _$AssetLoginInfoCopyWithImpl<AssetLoginInfo>(
-          this as AssetLoginInfo, _$identity);
-
-  /// Serializes this AssetLoginInfo to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is AssetLoginInfo &&
-            (identical(other.enabled, enabled) || other.enabled == enabled) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.username, username) ||
-                other.username == username));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, enabled, email, username);
-
-  @override
-  String toString() {
-    return 'AssetLoginInfo(enabled: $enabled, email: $email, username: $username)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $AssetLoginInfoCopyWith<$Res> {
+abstract class $AssetLoginInfoCopyWith<$Res> {
   factory $AssetLoginInfoCopyWith(
-          AssetLoginInfo value, $Res Function(AssetLoginInfo) _then) =
-      _$AssetLoginInfoCopyWithImpl;
+          AssetLoginInfo value, $Res Function(AssetLoginInfo) then) =
+      _$AssetLoginInfoCopyWithImpl<$Res, AssetLoginInfo>;
   @useResult
   $Res call({bool enabled, String? email, String? username});
 }
 
 /// @nodoc
-class _$AssetLoginInfoCopyWithImpl<$Res>
+class _$AssetLoginInfoCopyWithImpl<$Res, $Val extends AssetLoginInfo>
     implements $AssetLoginInfoCopyWith<$Res> {
-  _$AssetLoginInfoCopyWithImpl(this._self, this._then);
+  _$AssetLoginInfoCopyWithImpl(this._value, this._then);
 
-  final AssetLoginInfo _self;
-  final $Res Function(AssetLoginInfo) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of AssetLoginInfo
   /// with the given fields replaced by the non-null parameter values.
@@ -3404,17 +3611,62 @@ class _$AssetLoginInfoCopyWithImpl<$Res>
     Object? email = freezed,
     Object? username = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       enabled: null == enabled
-          ? _self.enabled
+          ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
       email: freezed == email
-          ? _self.email
+          ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       username: freezed == username
-          ? _self.username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AssetLoginInfoImplCopyWith<$Res>
+    implements $AssetLoginInfoCopyWith<$Res> {
+  factory _$$AssetLoginInfoImplCopyWith(_$AssetLoginInfoImpl value,
+          $Res Function(_$AssetLoginInfoImpl) then) =
+      __$$AssetLoginInfoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool enabled, String? email, String? username});
+}
+
+/// @nodoc
+class __$$AssetLoginInfoImplCopyWithImpl<$Res>
+    extends _$AssetLoginInfoCopyWithImpl<$Res, _$AssetLoginInfoImpl>
+    implements _$$AssetLoginInfoImplCopyWith<$Res> {
+  __$$AssetLoginInfoImplCopyWithImpl(
+      _$AssetLoginInfoImpl _value, $Res Function(_$AssetLoginInfoImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AssetLoginInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? enabled = null,
+    Object? email = freezed,
+    Object? username = freezed,
+  }) {
+    return _then(_$AssetLoginInfoImpl(
+      enabled: null == enabled
+          ? _value.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: freezed == username
+          ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -3423,10 +3675,12 @@ class _$AssetLoginInfoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _AssetLoginInfo implements AssetLoginInfo {
-  const _AssetLoginInfo({required this.enabled, this.email, this.username});
-  factory _AssetLoginInfo.fromJson(Map<String, dynamic> json) =>
-      _$AssetLoginInfoFromJson(json);
+class _$AssetLoginInfoImpl implements _AssetLoginInfo {
+  const _$AssetLoginInfoImpl(
+      {required this.enabled, this.email, this.username});
+
+  factory _$AssetLoginInfoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AssetLoginInfoImplFromJson(json);
 
   /// [enabled] is the login status of the asset.
   @override
@@ -3440,26 +3694,16 @@ class _AssetLoginInfo implements AssetLoginInfo {
   @override
   final String? username;
 
-  /// Create a copy of AssetLoginInfo
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AssetLoginInfoCopyWith<_AssetLoginInfo> get copyWith =>
-      __$AssetLoginInfoCopyWithImpl<_AssetLoginInfo>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AssetLoginInfoToJson(
-      this,
-    );
+  String toString() {
+    return 'AssetLoginInfo(enabled: $enabled, email: $email, username: $username)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AssetLoginInfo &&
+            other is _$AssetLoginInfoImpl &&
             (identical(other.enabled, enabled) || other.enabled == enabled) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.username, username) ||
@@ -3470,110 +3714,104 @@ class _AssetLoginInfo implements AssetLoginInfo {
   @override
   int get hashCode => Object.hash(runtimeType, enabled, email, username);
 
+  /// Create a copy of AssetLoginInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'AssetLoginInfo(enabled: $enabled, email: $email, username: $username)';
+  @pragma('vm:prefer-inline')
+  _$$AssetLoginInfoImplCopyWith<_$AssetLoginInfoImpl> get copyWith =>
+      __$$AssetLoginInfoImplCopyWithImpl<_$AssetLoginInfoImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AssetLoginInfoImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$AssetLoginInfoCopyWith<$Res>
-    implements $AssetLoginInfoCopyWith<$Res> {
-  factory _$AssetLoginInfoCopyWith(
-          _AssetLoginInfo value, $Res Function(_AssetLoginInfo) _then) =
-      __$AssetLoginInfoCopyWithImpl;
+abstract class _AssetLoginInfo implements AssetLoginInfo {
+  const factory _AssetLoginInfo(
+      {required final bool enabled,
+      final String? email,
+      final String? username}) = _$AssetLoginInfoImpl;
+
+  factory _AssetLoginInfo.fromJson(Map<String, dynamic> json) =
+      _$AssetLoginInfoImpl.fromJson;
+
+  /// [enabled] is the login status of the asset.
   @override
-  @useResult
-  $Res call({bool enabled, String? email, String? username});
-}
+  bool get enabled;
 
-/// @nodoc
-class __$AssetLoginInfoCopyWithImpl<$Res>
-    implements _$AssetLoginInfoCopyWith<$Res> {
-  __$AssetLoginInfoCopyWithImpl(this._self, this._then);
+  /// [email] is the login email of the asset.
+  @override
+  String? get email;
 
-  final _AssetLoginInfo _self;
-  final $Res Function(_AssetLoginInfo) _then;
+  /// [username] is the login username of the asset.
+  @override
+  String? get username;
 
   /// Create a copy of AssetLoginInfo
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? enabled = null,
-    Object? email = freezed,
-    Object? username = freezed,
-  }) {
-    return _then(_AssetLoginInfo(
-      enabled: null == enabled
-          ? _self.enabled
-          : enabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AssetLoginInfoImplCopyWith<_$AssetLoginInfoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+AssetLoginInfoInput _$AssetLoginInfoInputFromJson(Map<String, dynamic> json) {
+  return _AssetLoginInfoInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$AssetLoginInfoInput {
   /// [enabled] is the login status of the asset.
-  bool get enabled;
+  bool get enabled => throw _privateConstructorUsedError;
 
   /// [enabled] is the login status of the asset.
-  set enabled(bool value);
+  set enabled(bool value) => throw _privateConstructorUsedError;
 
   /// [email] is the login email of the asset.
-  String? get email;
+  String? get email => throw _privateConstructorUsedError;
 
   /// [email] is the login email of the asset.
-  set email(String? value);
+  set email(String? value) => throw _privateConstructorUsedError;
 
   /// [username] is the login username of the asset.
-  String? get username;
+  String? get username => throw _privateConstructorUsedError;
 
   /// [username] is the login username of the asset.
-  set username(String? value);
+  set username(String? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this AssetLoginInfoInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of AssetLoginInfoInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $AssetLoginInfoInputCopyWith<AssetLoginInfoInput> get copyWith =>
-      _$AssetLoginInfoInputCopyWithImpl<AssetLoginInfoInput>(
-          this as AssetLoginInfoInput, _$identity);
-
-  /// Serializes this AssetLoginInfoInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  String toString() {
-    return 'AssetLoginInfoInput(enabled: $enabled, email: $email, username: $username)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $AssetLoginInfoInputCopyWith<$Res> {
+abstract class $AssetLoginInfoInputCopyWith<$Res> {
   factory $AssetLoginInfoInputCopyWith(
-          AssetLoginInfoInput value, $Res Function(AssetLoginInfoInput) _then) =
-      _$AssetLoginInfoInputCopyWithImpl;
+          AssetLoginInfoInput value, $Res Function(AssetLoginInfoInput) then) =
+      _$AssetLoginInfoInputCopyWithImpl<$Res, AssetLoginInfoInput>;
   @useResult
   $Res call({bool enabled, String? email, String? username});
 }
 
 /// @nodoc
-class _$AssetLoginInfoInputCopyWithImpl<$Res>
+class _$AssetLoginInfoInputCopyWithImpl<$Res, $Val extends AssetLoginInfoInput>
     implements $AssetLoginInfoInputCopyWith<$Res> {
-  _$AssetLoginInfoInputCopyWithImpl(this._self, this._then);
+  _$AssetLoginInfoInputCopyWithImpl(this._value, this._then);
 
-  final AssetLoginInfoInput _self;
-  final $Res Function(AssetLoginInfoInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of AssetLoginInfoInput
   /// with the given fields replaced by the non-null parameter values.
@@ -3584,17 +3822,62 @@ class _$AssetLoginInfoInputCopyWithImpl<$Res>
     Object? email = freezed,
     Object? username = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       enabled: null == enabled
-          ? _self.enabled
+          ? _value.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
       email: freezed == email
-          ? _self.email
+          ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       username: freezed == username
-          ? _self.username
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$AssetLoginInfoInputImplCopyWith<$Res>
+    implements $AssetLoginInfoInputCopyWith<$Res> {
+  factory _$$AssetLoginInfoInputImplCopyWith(_$AssetLoginInfoInputImpl value,
+          $Res Function(_$AssetLoginInfoInputImpl) then) =
+      __$$AssetLoginInfoInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({bool enabled, String? email, String? username});
+}
+
+/// @nodoc
+class __$$AssetLoginInfoInputImplCopyWithImpl<$Res>
+    extends _$AssetLoginInfoInputCopyWithImpl<$Res, _$AssetLoginInfoInputImpl>
+    implements _$$AssetLoginInfoInputImplCopyWith<$Res> {
+  __$$AssetLoginInfoInputImplCopyWithImpl(_$AssetLoginInfoInputImpl _value,
+      $Res Function(_$AssetLoginInfoInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AssetLoginInfoInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? enabled = null,
+    Object? email = freezed,
+    Object? username = freezed,
+  }) {
+    return _then(_$AssetLoginInfoInputImpl(
+      enabled: null == enabled
+          ? _value.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      email: freezed == email
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: freezed == username
+          ? _value.username
           : username // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -3603,10 +3886,11 @@ class _$AssetLoginInfoInputCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _AssetLoginInfoInput implements AssetLoginInfoInput {
-  _AssetLoginInfoInput({this.enabled = false, this.email, this.username});
-  factory _AssetLoginInfoInput.fromJson(Map<String, dynamic> json) =>
-      _$AssetLoginInfoInputFromJson(json);
+class _$AssetLoginInfoInputImpl implements _AssetLoginInfoInput {
+  _$AssetLoginInfoInputImpl({this.enabled = false, this.email, this.username});
+
+  factory _$AssetLoginInfoInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$AssetLoginInfoInputImplFromJson(json);
 
   /// [enabled] is the login status of the asset.
   @override
@@ -3621,134 +3905,109 @@ class _AssetLoginInfoInput implements AssetLoginInfoInput {
   @override
   String? username;
 
-  /// Create a copy of AssetLoginInfoInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$AssetLoginInfoInputCopyWith<_AssetLoginInfoInput> get copyWith =>
-      __$AssetLoginInfoInputCopyWithImpl<_AssetLoginInfoInput>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$AssetLoginInfoInputToJson(
-      this,
-    );
-  }
-
   @override
   String toString() {
     return 'AssetLoginInfoInput(enabled: $enabled, email: $email, username: $username)';
   }
-}
 
-/// @nodoc
-abstract mixin class _$AssetLoginInfoInputCopyWith<$Res>
-    implements $AssetLoginInfoInputCopyWith<$Res> {
-  factory _$AssetLoginInfoInputCopyWith(_AssetLoginInfoInput value,
-          $Res Function(_AssetLoginInfoInput) _then) =
-      __$AssetLoginInfoInputCopyWithImpl;
+  /// Create a copy of AssetLoginInfoInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @useResult
-  $Res call({bool enabled, String? email, String? username});
+  @pragma('vm:prefer-inline')
+  _$$AssetLoginInfoInputImplCopyWith<_$AssetLoginInfoInputImpl> get copyWith =>
+      __$$AssetLoginInfoInputImplCopyWithImpl<_$AssetLoginInfoInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$AssetLoginInfoInputImplToJson(
+      this,
+    );
+  }
 }
 
-/// @nodoc
-class __$AssetLoginInfoInputCopyWithImpl<$Res>
-    implements _$AssetLoginInfoInputCopyWith<$Res> {
-  __$AssetLoginInfoInputCopyWithImpl(this._self, this._then);
+abstract class _AssetLoginInfoInput implements AssetLoginInfoInput {
+  factory _AssetLoginInfoInput(
+      {bool enabled,
+      String? email,
+      String? username}) = _$AssetLoginInfoInputImpl;
 
-  final _AssetLoginInfoInput _self;
-  final $Res Function(_AssetLoginInfoInput) _then;
+  factory _AssetLoginInfoInput.fromJson(Map<String, dynamic> json) =
+      _$AssetLoginInfoInputImpl.fromJson;
+
+  /// [enabled] is the login status of the asset.
+  @override
+  bool get enabled;
+
+  /// [enabled] is the login status of the asset.
+  set enabled(bool value);
+
+  /// [email] is the login email of the asset.
+  @override
+  String? get email;
+
+  /// [email] is the login email of the asset.
+  set email(String? value);
+
+  /// [username] is the login username of the asset.
+  @override
+  String? get username;
+
+  /// [username] is the login username of the asset.
+  set username(String? value);
 
   /// Create a copy of AssetLoginInfoInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? enabled = null,
-    Object? email = freezed,
-    Object? username = freezed,
-  }) {
-    return _then(_AssetLoginInfoInput(
-      enabled: null == enabled
-          ? _self.enabled
-          : enabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      email: freezed == email
-          ? _self.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: freezed == username
-          ? _self.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AssetLoginInfoInputImplCopyWith<_$AssetLoginInfoInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+StaticPosition _$StaticPositionFromJson(Map<String, dynamic> json) {
+  return _StaticPosition.fromJson(json);
 }
 
 /// @nodoc
 mixin _$StaticPosition {
   /// [latitude] is the latitude of the asset.
-  double? get latitude;
+  double? get latitude => throw _privateConstructorUsedError;
 
   /// [longitude] is the longitude of the asset.
-  double? get longitude;
+  double? get longitude => throw _privateConstructorUsedError;
 
   /// [altitude] is the altitude of the asset.
-  double? get altitude;
+  double? get altitude => throw _privateConstructorUsedError;
+
+  /// Serializes this StaticPosition to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of StaticPosition
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $StaticPositionCopyWith<StaticPosition> get copyWith =>
-      _$StaticPositionCopyWithImpl<StaticPosition>(
-          this as StaticPosition, _$identity);
-
-  /// Serializes this StaticPosition to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is StaticPosition &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude) &&
-            (identical(other.altitude, altitude) ||
-                other.altitude == altitude));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, latitude, longitude, altitude);
-
-  @override
-  String toString() {
-    return 'StaticPosition(latitude: $latitude, longitude: $longitude, altitude: $altitude)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $StaticPositionCopyWith<$Res> {
+abstract class $StaticPositionCopyWith<$Res> {
   factory $StaticPositionCopyWith(
-          StaticPosition value, $Res Function(StaticPosition) _then) =
-      _$StaticPositionCopyWithImpl;
+          StaticPosition value, $Res Function(StaticPosition) then) =
+      _$StaticPositionCopyWithImpl<$Res, StaticPosition>;
   @useResult
   $Res call({double? latitude, double? longitude, double? altitude});
 }
 
 /// @nodoc
-class _$StaticPositionCopyWithImpl<$Res>
+class _$StaticPositionCopyWithImpl<$Res, $Val extends StaticPosition>
     implements $StaticPositionCopyWith<$Res> {
-  _$StaticPositionCopyWithImpl(this._self, this._then);
+  _$StaticPositionCopyWithImpl(this._value, this._then);
 
-  final StaticPosition _self;
-  final $Res Function(StaticPosition) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of StaticPosition
   /// with the given fields replaced by the non-null parameter values.
@@ -3759,17 +4018,62 @@ class _$StaticPositionCopyWithImpl<$Res>
     Object? longitude = freezed,
     Object? altitude = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       latitude: freezed == latitude
-          ? _self.latitude
+          ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double?,
       longitude: freezed == longitude
-          ? _self.longitude
+          ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
       altitude: freezed == altitude
-          ? _self.altitude
+          ? _value.altitude
+          : altitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$StaticPositionImplCopyWith<$Res>
+    implements $StaticPositionCopyWith<$Res> {
+  factory _$$StaticPositionImplCopyWith(_$StaticPositionImpl value,
+          $Res Function(_$StaticPositionImpl) then) =
+      __$$StaticPositionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double? latitude, double? longitude, double? altitude});
+}
+
+/// @nodoc
+class __$$StaticPositionImplCopyWithImpl<$Res>
+    extends _$StaticPositionCopyWithImpl<$Res, _$StaticPositionImpl>
+    implements _$$StaticPositionImplCopyWith<$Res> {
+  __$$StaticPositionImplCopyWithImpl(
+      _$StaticPositionImpl _value, $Res Function(_$StaticPositionImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StaticPosition
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? altitude = freezed,
+  }) {
+    return _then(_$StaticPositionImpl(
+      latitude: freezed == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      altitude: freezed == altitude
+          ? _value.altitude
           : altitude // ignore: cast_nullable_to_non_nullable
               as double?,
     ));
@@ -3778,11 +4082,12 @@ class _$StaticPositionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _StaticPosition extends StaticPosition {
-  const _StaticPosition({this.latitude, this.longitude, this.altitude})
+class _$StaticPositionImpl extends _StaticPosition {
+  const _$StaticPositionImpl({this.latitude, this.longitude, this.altitude})
       : super._();
-  factory _StaticPosition.fromJson(Map<String, dynamic> json) =>
-      _$StaticPositionFromJson(json);
+
+  factory _$StaticPositionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StaticPositionImplFromJson(json);
 
   /// [latitude] is the latitude of the asset.
   @override
@@ -3796,26 +4101,16 @@ class _StaticPosition extends StaticPosition {
   @override
   final double? altitude;
 
-  /// Create a copy of StaticPosition
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$StaticPositionCopyWith<_StaticPosition> get copyWith =>
-      __$StaticPositionCopyWithImpl<_StaticPosition>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$StaticPositionToJson(
-      this,
-    );
+  String toString() {
+    return 'StaticPosition(latitude: $latitude, longitude: $longitude, altitude: $altitude)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _StaticPosition &&
+            other is _$StaticPositionImpl &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
@@ -3828,99 +4123,94 @@ class _StaticPosition extends StaticPosition {
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude, altitude);
 
+  /// Create a copy of StaticPosition
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'StaticPosition(latitude: $latitude, longitude: $longitude, altitude: $altitude)';
+  @pragma('vm:prefer-inline')
+  _$$StaticPositionImplCopyWith<_$StaticPositionImpl> get copyWith =>
+      __$$StaticPositionImplCopyWithImpl<_$StaticPositionImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$StaticPositionImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$StaticPositionCopyWith<$Res>
-    implements $StaticPositionCopyWith<$Res> {
-  factory _$StaticPositionCopyWith(
-          _StaticPosition value, $Res Function(_StaticPosition) _then) =
-      __$StaticPositionCopyWithImpl;
+abstract class _StaticPosition extends StaticPosition {
+  const factory _StaticPosition(
+      {final double? latitude,
+      final double? longitude,
+      final double? altitude}) = _$StaticPositionImpl;
+  const _StaticPosition._() : super._();
+
+  factory _StaticPosition.fromJson(Map<String, dynamic> json) =
+      _$StaticPositionImpl.fromJson;
+
+  /// [latitude] is the latitude of the asset.
   @override
-  @useResult
-  $Res call({double? latitude, double? longitude, double? altitude});
-}
+  double? get latitude;
 
-/// @nodoc
-class __$StaticPositionCopyWithImpl<$Res>
-    implements _$StaticPositionCopyWith<$Res> {
-  __$StaticPositionCopyWithImpl(this._self, this._then);
+  /// [longitude] is the longitude of the asset.
+  @override
+  double? get longitude;
 
-  final _StaticPosition _self;
-  final $Res Function(_StaticPosition) _then;
+  /// [altitude] is the altitude of the asset.
+  @override
+  double? get altitude;
 
   /// Create a copy of StaticPosition
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? altitude = freezed,
-  }) {
-    return _then(_StaticPosition(
-      latitude: freezed == latitude
-          ? _self.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _self.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      altitude: freezed == altitude
-          ? _self.altitude
-          : altitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StaticPositionImplCopyWith<_$StaticPositionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+StaticPositionInput _$StaticPositionInputFromJson(Map<String, dynamic> json) {
+  return _StaticPositionInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$StaticPositionInput {
-  double? get latitude;
-  set latitude(double? value);
-  double? get longitude;
-  set longitude(double? value);
-  double? get altitude;
-  set altitude(double? value);
+  double? get latitude => throw _privateConstructorUsedError;
+  set latitude(double? value) => throw _privateConstructorUsedError;
+  double? get longitude => throw _privateConstructorUsedError;
+  set longitude(double? value) => throw _privateConstructorUsedError;
+  double? get altitude => throw _privateConstructorUsedError;
+  set altitude(double? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this StaticPositionInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of StaticPositionInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $StaticPositionInputCopyWith<StaticPositionInput> get copyWith =>
-      _$StaticPositionInputCopyWithImpl<StaticPositionInput>(
-          this as StaticPositionInput, _$identity);
-
-  /// Serializes this StaticPositionInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  String toString() {
-    return 'StaticPositionInput(latitude: $latitude, longitude: $longitude, altitude: $altitude)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $StaticPositionInputCopyWith<$Res> {
+abstract class $StaticPositionInputCopyWith<$Res> {
   factory $StaticPositionInputCopyWith(
-          StaticPositionInput value, $Res Function(StaticPositionInput) _then) =
-      _$StaticPositionInputCopyWithImpl;
+          StaticPositionInput value, $Res Function(StaticPositionInput) then) =
+      _$StaticPositionInputCopyWithImpl<$Res, StaticPositionInput>;
   @useResult
   $Res call({double? latitude, double? longitude, double? altitude});
 }
 
 /// @nodoc
-class _$StaticPositionInputCopyWithImpl<$Res>
+class _$StaticPositionInputCopyWithImpl<$Res, $Val extends StaticPositionInput>
     implements $StaticPositionInputCopyWith<$Res> {
-  _$StaticPositionInputCopyWithImpl(this._self, this._then);
+  _$StaticPositionInputCopyWithImpl(this._value, this._then);
 
-  final StaticPositionInput _self;
-  final $Res Function(StaticPositionInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of StaticPositionInput
   /// with the given fields replaced by the non-null parameter values.
@@ -3931,17 +4221,62 @@ class _$StaticPositionInputCopyWithImpl<$Res>
     Object? longitude = freezed,
     Object? altitude = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       latitude: freezed == latitude
-          ? _self.latitude
+          ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double?,
       longitude: freezed == longitude
-          ? _self.longitude
+          ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
       altitude: freezed == altitude
-          ? _self.altitude
+          ? _value.altitude
+          : altitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$StaticPositionInputImplCopyWith<$Res>
+    implements $StaticPositionInputCopyWith<$Res> {
+  factory _$$StaticPositionInputImplCopyWith(_$StaticPositionInputImpl value,
+          $Res Function(_$StaticPositionInputImpl) then) =
+      __$$StaticPositionInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double? latitude, double? longitude, double? altitude});
+}
+
+/// @nodoc
+class __$$StaticPositionInputImplCopyWithImpl<$Res>
+    extends _$StaticPositionInputCopyWithImpl<$Res, _$StaticPositionInputImpl>
+    implements _$$StaticPositionInputImplCopyWith<$Res> {
+  __$$StaticPositionInputImplCopyWithImpl(_$StaticPositionInputImpl _value,
+      $Res Function(_$StaticPositionInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StaticPositionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? altitude = freezed,
+  }) {
+    return _then(_$StaticPositionInputImpl(
+      latitude: freezed == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      altitude: freezed == altitude
+          ? _value.altitude
           : altitude // ignore: cast_nullable_to_non_nullable
               as double?,
     ));
@@ -3950,11 +4285,12 @@ class _$StaticPositionInputCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _StaticPositionInput extends StaticPositionInput {
-  _StaticPositionInput({this.latitude, this.longitude, this.altitude})
+class _$StaticPositionInputImpl extends _StaticPositionInput {
+  _$StaticPositionInputImpl({this.latitude, this.longitude, this.altitude})
       : super._();
-  factory _StaticPositionInput.fromJson(Map<String, dynamic> json) =>
-      _$StaticPositionInputFromJson(json);
+
+  factory _$StaticPositionInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StaticPositionInputImplFromJson(json);
 
   @override
   double? latitude;
@@ -3963,126 +4299,95 @@ class _StaticPositionInput extends StaticPositionInput {
   @override
   double? altitude;
 
-  /// Create a copy of StaticPositionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$StaticPositionInputCopyWith<_StaticPositionInput> get copyWith =>
-      __$StaticPositionInputCopyWithImpl<_StaticPositionInput>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$StaticPositionInputToJson(
-      this,
-    );
-  }
-
   @override
   String toString() {
     return 'StaticPositionInput(latitude: $latitude, longitude: $longitude, altitude: $altitude)';
   }
-}
 
-/// @nodoc
-abstract mixin class _$StaticPositionInputCopyWith<$Res>
-    implements $StaticPositionInputCopyWith<$Res> {
-  factory _$StaticPositionInputCopyWith(_StaticPositionInput value,
-          $Res Function(_StaticPositionInput) _then) =
-      __$StaticPositionInputCopyWithImpl;
+  /// Create a copy of StaticPositionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @useResult
-  $Res call({double? latitude, double? longitude, double? altitude});
+  @pragma('vm:prefer-inline')
+  _$$StaticPositionInputImplCopyWith<_$StaticPositionInputImpl> get copyWith =>
+      __$$StaticPositionInputImplCopyWithImpl<_$StaticPositionInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$StaticPositionInputImplToJson(
+      this,
+    );
+  }
 }
 
-/// @nodoc
-class __$StaticPositionInputCopyWithImpl<$Res>
-    implements _$StaticPositionInputCopyWith<$Res> {
-  __$StaticPositionInputCopyWithImpl(this._self, this._then);
+abstract class _StaticPositionInput extends StaticPositionInput {
+  factory _StaticPositionInput(
+      {double? latitude,
+      double? longitude,
+      double? altitude}) = _$StaticPositionInputImpl;
+  _StaticPositionInput._() : super._();
 
-  final _StaticPositionInput _self;
-  final $Res Function(_StaticPositionInput) _then;
+  factory _StaticPositionInput.fromJson(Map<String, dynamic> json) =
+      _$StaticPositionInputImpl.fromJson;
+
+  @override
+  double? get latitude;
+  set latitude(double? value);
+  @override
+  double? get longitude;
+  set longitude(double? value);
+  @override
+  double? get altitude;
+  set altitude(double? value);
 
   /// Create a copy of StaticPositionInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? altitude = freezed,
-  }) {
-    return _then(_StaticPositionInput(
-      latitude: freezed == latitude
-          ? _self.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _self.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      altitude: freezed == altitude
-          ? _self.altitude
-          : altitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StaticPositionInputImplCopyWith<_$StaticPositionInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ZonePoint _$ZonePointFromJson(Map<String, dynamic> json) {
+  return _ZonePoint.fromJson(json);
 }
 
 /// @nodoc
 mixin _$ZonePoint {
   /// [latitude] is the latitude of the point
-  double get latitude;
+  double get latitude => throw _privateConstructorUsedError;
 
   /// [longitude] is the longitude of the point
-  double get longitude;
+  double get longitude => throw _privateConstructorUsedError;
+
+  /// Serializes this ZonePoint to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of ZonePoint
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $ZonePointCopyWith<ZonePoint> get copyWith =>
-      _$ZonePointCopyWithImpl<ZonePoint>(this as ZonePoint, _$identity);
-
-  /// Serializes this ZonePoint to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ZonePoint &&
-            (identical(other.latitude, latitude) ||
-                other.latitude == latitude) &&
-            (identical(other.longitude, longitude) ||
-                other.longitude == longitude));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, latitude, longitude);
-
-  @override
-  String toString() {
-    return 'ZonePoint(latitude: $latitude, longitude: $longitude)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ZonePointCopyWith<$Res> {
-  factory $ZonePointCopyWith(ZonePoint value, $Res Function(ZonePoint) _then) =
-      _$ZonePointCopyWithImpl;
+abstract class $ZonePointCopyWith<$Res> {
+  factory $ZonePointCopyWith(ZonePoint value, $Res Function(ZonePoint) then) =
+      _$ZonePointCopyWithImpl<$Res, ZonePoint>;
   @useResult
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class _$ZonePointCopyWithImpl<$Res> implements $ZonePointCopyWith<$Res> {
-  _$ZonePointCopyWithImpl(this._self, this._then);
+class _$ZonePointCopyWithImpl<$Res, $Val extends ZonePoint>
+    implements $ZonePointCopyWith<$Res> {
+  _$ZonePointCopyWithImpl(this._value, this._then);
 
-  final ZonePoint _self;
-  final $Res Function(ZonePoint) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of ZonePoint
   /// with the given fields replaced by the non-null parameter values.
@@ -4092,13 +4397,53 @@ class _$ZonePointCopyWithImpl<$Res> implements $ZonePointCopyWith<$Res> {
     Object? latitude = null,
     Object? longitude = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       latitude: null == latitude
-          ? _self.latitude
+          ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
       longitude: null == longitude
-          ? _self.longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ZonePointImplCopyWith<$Res>
+    implements $ZonePointCopyWith<$Res> {
+  factory _$$ZonePointImplCopyWith(
+          _$ZonePointImpl value, $Res Function(_$ZonePointImpl) then) =
+      __$$ZonePointImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double latitude, double longitude});
+}
+
+/// @nodoc
+class __$$ZonePointImplCopyWithImpl<$Res>
+    extends _$ZonePointCopyWithImpl<$Res, _$ZonePointImpl>
+    implements _$$ZonePointImplCopyWith<$Res> {
+  __$$ZonePointImplCopyWithImpl(
+      _$ZonePointImpl _value, $Res Function(_$ZonePointImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ZonePoint
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = null,
+    Object? longitude = null,
+  }) {
+    return _then(_$ZonePointImpl(
+      latitude: null == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude: null == longitude
+          ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
     ));
@@ -4107,11 +4452,12 @@ class _$ZonePointCopyWithImpl<$Res> implements $ZonePointCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _ZonePoint extends ZonePoint {
-  const _ZonePoint({required this.latitude, required this.longitude})
+class _$ZonePointImpl extends _ZonePoint {
+  const _$ZonePointImpl({required this.latitude, required this.longitude})
       : super._();
-  factory _ZonePoint.fromJson(Map<String, dynamic> json) =>
-      _$ZonePointFromJson(json);
+
+  factory _$ZonePointImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ZonePointImplFromJson(json);
 
   /// [latitude] is the latitude of the point
   @override
@@ -4121,26 +4467,16 @@ class _ZonePoint extends ZonePoint {
   @override
   final double longitude;
 
-  /// Create a copy of ZonePoint
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ZonePointCopyWith<_ZonePoint> get copyWith =>
-      __$ZonePointCopyWithImpl<_ZonePoint>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ZonePointToJson(
-      this,
-    );
+  String toString() {
+    return 'ZonePoint(latitude: $latitude, longitude: $longitude)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ZonePoint &&
+            other is _$ZonePointImpl &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
@@ -4151,98 +4487,93 @@ class _ZonePoint extends ZonePoint {
   @override
   int get hashCode => Object.hash(runtimeType, latitude, longitude);
 
+  /// Create a copy of ZonePoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'ZonePoint(latitude: $latitude, longitude: $longitude)';
+  @pragma('vm:prefer-inline')
+  _$$ZonePointImplCopyWith<_$ZonePointImpl> get copyWith =>
+      __$$ZonePointImplCopyWithImpl<_$ZonePointImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ZonePointImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$ZonePointCopyWith<$Res>
-    implements $ZonePointCopyWith<$Res> {
-  factory _$ZonePointCopyWith(
-          _ZonePoint value, $Res Function(_ZonePoint) _then) =
-      __$ZonePointCopyWithImpl;
+abstract class _ZonePoint extends ZonePoint {
+  const factory _ZonePoint(
+      {required final double latitude,
+      required final double longitude}) = _$ZonePointImpl;
+  const _ZonePoint._() : super._();
+
+  factory _ZonePoint.fromJson(Map<String, dynamic> json) =
+      _$ZonePointImpl.fromJson;
+
+  /// [latitude] is the latitude of the point
   @override
-  @useResult
-  $Res call({double latitude, double longitude});
-}
+  double get latitude;
 
-/// @nodoc
-class __$ZonePointCopyWithImpl<$Res> implements _$ZonePointCopyWith<$Res> {
-  __$ZonePointCopyWithImpl(this._self, this._then);
-
-  final _ZonePoint _self;
-  final $Res Function(_ZonePoint) _then;
+  /// [longitude] is the longitude of the point
+  @override
+  double get longitude;
 
   /// Create a copy of ZonePoint
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
-  }) {
-    return _then(_ZonePoint(
-      latitude: null == latitude
-          ? _self.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      longitude: null == longitude
-          ? _self.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ZonePointImplCopyWith<_$ZonePointImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+ZonePointInput _$ZonePointInputFromJson(Map<String, dynamic> json) {
+  return _ZonePointInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$ZonePointInput {
   /// [latitude] is the latitude of the point
-  double get latitude;
+  double get latitude => throw _privateConstructorUsedError;
 
   /// [latitude] is the latitude of the point
-  set latitude(double value);
+  set latitude(double value) => throw _privateConstructorUsedError;
 
   /// [longitude] is the longitude of the point
-  double get longitude;
+  double get longitude => throw _privateConstructorUsedError;
 
   /// [longitude] is the longitude of the point
-  set longitude(double value);
+  set longitude(double value) => throw _privateConstructorUsedError;
+
+  /// Serializes this ZonePointInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of ZonePointInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $ZonePointInputCopyWith<ZonePointInput> get copyWith =>
-      _$ZonePointInputCopyWithImpl<ZonePointInput>(
-          this as ZonePointInput, _$identity);
-
-  /// Serializes this ZonePointInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  String toString() {
-    return 'ZonePointInput(latitude: $latitude, longitude: $longitude)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ZonePointInputCopyWith<$Res> {
+abstract class $ZonePointInputCopyWith<$Res> {
   factory $ZonePointInputCopyWith(
-          ZonePointInput value, $Res Function(ZonePointInput) _then) =
-      _$ZonePointInputCopyWithImpl;
+          ZonePointInput value, $Res Function(ZonePointInput) then) =
+      _$ZonePointInputCopyWithImpl<$Res, ZonePointInput>;
   @useResult
   $Res call({double latitude, double longitude});
 }
 
 /// @nodoc
-class _$ZonePointInputCopyWithImpl<$Res>
+class _$ZonePointInputCopyWithImpl<$Res, $Val extends ZonePointInput>
     implements $ZonePointInputCopyWith<$Res> {
-  _$ZonePointInputCopyWithImpl(this._self, this._then);
+  _$ZonePointInputCopyWithImpl(this._value, this._then);
 
-  final ZonePointInput _self;
-  final $Res Function(ZonePointInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of ZonePointInput
   /// with the given fields replaced by the non-null parameter values.
@@ -4252,13 +4583,53 @@ class _$ZonePointInputCopyWithImpl<$Res>
     Object? latitude = null,
     Object? longitude = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       latitude: null == latitude
-          ? _self.latitude
+          ? _value.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double,
       longitude: null == longitude
-          ? _self.longitude
+          ? _value.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ZonePointInputImplCopyWith<$Res>
+    implements $ZonePointInputCopyWith<$Res> {
+  factory _$$ZonePointInputImplCopyWith(_$ZonePointInputImpl value,
+          $Res Function(_$ZonePointInputImpl) then) =
+      __$$ZonePointInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double latitude, double longitude});
+}
+
+/// @nodoc
+class __$$ZonePointInputImplCopyWithImpl<$Res>
+    extends _$ZonePointInputCopyWithImpl<$Res, _$ZonePointInputImpl>
+    implements _$$ZonePointInputImplCopyWith<$Res> {
+  __$$ZonePointInputImplCopyWithImpl(
+      _$ZonePointInputImpl _value, $Res Function(_$ZonePointInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ZonePointInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = null,
+    Object? longitude = null,
+  }) {
+    return _then(_$ZonePointInputImpl(
+      latitude: null == latitude
+          ? _value.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double,
+      longitude: null == longitude
+          ? _value.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double,
     ));
@@ -4267,11 +4638,12 @@ class _$ZonePointInputCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ZonePointInput extends ZonePointInput {
-  _ZonePointInput({required this.latitude, required this.longitude})
+class _$ZonePointInputImpl extends _ZonePointInput {
+  _$ZonePointInputImpl({required this.latitude, required this.longitude})
       : super._();
-  factory _ZonePointInput.fromJson(Map<String, dynamic> json) =>
-      _$ZonePointInputFromJson(json);
+
+  factory _$ZonePointInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ZonePointInputImplFromJson(json);
 
   /// [latitude] is the latitude of the point
   @override
@@ -4281,65 +4653,55 @@ class _ZonePointInput extends ZonePointInput {
   @override
   double longitude;
 
-  /// Create a copy of ZonePointInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ZonePointInputCopyWith<_ZonePointInput> get copyWith =>
-      __$ZonePointInputCopyWithImpl<_ZonePointInput>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ZonePointInputToJson(
-      this,
-    );
-  }
-
   @override
   String toString() {
     return 'ZonePointInput(latitude: $latitude, longitude: $longitude)';
   }
-}
 
-/// @nodoc
-abstract mixin class _$ZonePointInputCopyWith<$Res>
-    implements $ZonePointInputCopyWith<$Res> {
-  factory _$ZonePointInputCopyWith(
-          _ZonePointInput value, $Res Function(_ZonePointInput) _then) =
-      __$ZonePointInputCopyWithImpl;
+  /// Create a copy of ZonePointInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @useResult
-  $Res call({double latitude, double longitude});
+  @pragma('vm:prefer-inline')
+  _$$ZonePointInputImplCopyWith<_$ZonePointInputImpl> get copyWith =>
+      __$$ZonePointInputImplCopyWithImpl<_$ZonePointInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ZonePointInputImplToJson(
+      this,
+    );
+  }
 }
 
-/// @nodoc
-class __$ZonePointInputCopyWithImpl<$Res>
-    implements _$ZonePointInputCopyWith<$Res> {
-  __$ZonePointInputCopyWithImpl(this._self, this._then);
+abstract class _ZonePointInput extends ZonePointInput {
+  factory _ZonePointInput(
+      {required double latitude,
+      required double longitude}) = _$ZonePointInputImpl;
+  _ZonePointInput._() : super._();
 
-  final _ZonePointInput _self;
-  final $Res Function(_ZonePointInput) _then;
+  factory _ZonePointInput.fromJson(Map<String, dynamic> json) =
+      _$ZonePointInputImpl.fromJson;
+
+  /// [latitude] is the latitude of the point
+  @override
+  double get latitude;
+
+  /// [latitude] is the latitude of the point
+  set latitude(double value);
+
+  /// [longitude] is the longitude of the point
+  @override
+  double get longitude;
+
+  /// [longitude] is the longitude of the point
+  set longitude(double value);
 
   /// Create a copy of ZonePointInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? latitude = null,
-    Object? longitude = null,
-  }) {
-    return _then(_ZonePointInput(
-      latitude: null == latitude
-          ? _self.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double,
-      longitude: null == longitude
-          ? _self.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ZonePointInputImplCopyWith<_$ZonePointInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

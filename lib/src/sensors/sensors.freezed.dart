@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,243 +9,143 @@ part of 'sensors.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+Sensor _$SensorFromJson(Map<String, dynamic> json) {
+  return _Sensor.fromJson(json);
+}
 
 /// @nodoc
 mixin _$Sensor {
   /// [id] of the sensor. Must be unique along of all sensors of the asset.
-  String get id;
+  String get id => throw _privateConstructorUsedError;
 
   /// [name] of the sensor. Must be unique along of all sensors of the asset.
-  String get name;
+  String get name => throw _privateConstructorUsedError;
 
   /// [iterationCycle] of the sensor. Only will accept positive values
-  int? get iterationCycle;
+  int? get iterationCycle => throw _privateConstructorUsedError;
 
   /// [slug] of the sensor. Must be unique along of all sensors of the asset.
-  String get slug;
+  String get slug => throw _privateConstructorUsedError;
 
   /// [isInstant] is a boolean to indicate if the sensor is an instant sensor. Means what the sensor execution
   /// returns [null], if it's [true], the sensor is will "disappear" from the calculated sensors, otherwise it will be
   /// take the previous value of the sensor.
-  bool? get isInstant;
+  bool? get isInstant => throw _privateConstructorUsedError;
 
   /// [icon] of the sensor. To send it to API, will convert to javascript codename, but from Flutter execution
   /// will convert to LayrzIcon entity.
   @IconOrNullConverter()
-  LayrzIcon? get icon;
+  LayrzIcon? get icon => throw _privateConstructorUsedError;
 
   /// [measuringUnit] of the sensor. Can be an estandard unit or a custom one.
-  String? get measuringUnit;
+  String? get measuringUnit => throw _privateConstructorUsedError;
 
   /// [type] of the sensor.
   @SensorTypeOrNullConverter()
-  SensorType? get type;
+  SensorType? get type => throw _privateConstructorUsedError;
 
   /// [subType] of the sensor.
   @SensorSubTypeOrNullConverter()
-  SensorSubType? get subtype;
+  SensorSubType? get subtype => throw _privateConstructorUsedError;
 
   /// [parameter] of the sensor.
-  String? get parameter;
-  List<String>? get externalIdentifiers;
+  String? get parameter => throw _privateConstructorUsedError;
+  List<String>? get externalIdentifiers => throw _privateConstructorUsedError;
 
   /// [formula] is the LCL formula to execute.
-  String? get formula;
+  String? get formula => throw _privateConstructorUsedError;
 
   /// [script] is the script to execute.
-  String? get script;
+  String? get script => throw _privateConstructorUsedError;
 
   /// Only for [SensorType.unpack] and [SensorSubType.csv], [hasHeaders], [csvHeaders] and [csvSeparator] means the configuration
   /// to unpack a CSV data comming from message.
   /// [hasHeaders] is a boolean to indicate if the CSV has headers inside of the message.
-  bool? get hasHeaders;
+  bool? get hasHeaders => throw _privateConstructorUsedError;
 
   /// [csvHeaders] is a list of strings to indicate the names of the columns of the CSV. Only when [hasHeaders] is true.
-  List<String>? get csvHeaders;
+  List<String>? get csvHeaders => throw _privateConstructorUsedError;
 
   /// [csvSeparator] is a string to indicate the separator of the CSV.
-  String? get csvSeparator;
+  String? get csvSeparator => throw _privateConstructorUsedError;
 
   /// [ranges] of the sensor, only for [SensorType.interval] linear conversion.
   /// It's a list of [SensorPair] objects.
-  List<SensorRange>? get ranges;
+  List<SensorRange>? get ranges => throw _privateConstructorUsedError;
 
   /// [mask] of the sensor. Is basically a list of [MaskPoint] objects.
-  List<MaskPoint>? get mask;
+  List<MaskPoint>? get mask => throw _privateConstructorUsedError;
 
   /// [hasValidator] is a boolean to indicate if the sensor has a [double] validator. When true, [minValur] and [maxValue]
   /// will define the range, both values can be [null] if the minimum or maximum range is [double.infinity].
-  bool? get hasValidator;
+  bool? get hasValidator => throw _privateConstructorUsedError;
 
   /// [minValue] is a [double] to indicate the minimum value of the sensor. Only when [hasValidator] is true.
   /// Can return [null] if the minimum range is [double.infinity].
-  double? get minValue;
+  double? get minValue => throw _privateConstructorUsedError;
 
   /// [maxValue] is a [double] to indicate the maximum value of the sensor. Only when [hasValidator] is true.
   /// [maxValue] must be greater than [minValue].
   /// If [maxValue] is [null], the minimum range is [double.infinity].
-  double? get maxValue;
+  double? get maxValue => throw _privateConstructorUsedError;
 
   /// [contentType] is a string to indicate the content type of the sensor, only used for [SensorType.image],
   /// [SensorType.video] and [SensorType.audio], but only when the [SensorSubType] is [SensorSubType.base64].
-  String? get contentType;
+  String? get contentType => throw _privateConstructorUsedError;
 
   /// [parentId] is a string to indicate the id of the parent sensor.
-  String? get parentId;
+  String? get parentId => throw _privateConstructorUsedError;
 
   /// [parent] is a [Sensor] to indicate the parent sensor.
-  Sensor? get parent;
+  Sensor? get parent => throw _privateConstructorUsedError;
 
   /// [functionId] is a string to indicate the id of the [Function] of the sensor.
-  String? get functionId;
+  String? get functionId => throw _privateConstructorUsedError;
 
   /// [lastExit] is the last [AtsExit] registered by this sensor.
-  AtsExit? get lastExit;
+  AtsExit? get lastExit => throw _privateConstructorUsedError;
 
   /// [qrCode] is a string to indicate the QR code URI of the sensor.
-  String? get qrCode;
+  String? get qrCode => throw _privateConstructorUsedError;
 
   /// [assignedAssetsIds] is the list of assets ids assigned to this sensor.
-  List<String>? get assignedAssetsIds;
+  List<String>? get assignedAssetsIds => throw _privateConstructorUsedError;
 
   /// [assignedAssets] is the list of assets assigned to this sensor.
-  List<Asset>? get assignedAssets;
+  List<Asset>? get assignedAssets => throw _privateConstructorUsedError;
 
   /// [isTemplate] is a boolean to indicate if the sensor is a template.
   /// So, this sensor was created from the Golden M, and their authorized you to use it.
-  bool? get isTemplate;
+  bool? get isTemplate => throw _privateConstructorUsedError;
 
   /// [isGlobal] defines if the sensor is global or not.
-  bool get isGlobal;
+  bool get isGlobal => throw _privateConstructorUsedError;
 
   /// Is the list of granted access
-  List<Access>? get access;
+  List<Access>? get access => throw _privateConstructorUsedError;
 
   /// [maxHistorySearch] defines the maximum search interval for the history of the sensor.
   @DurationOrNullConverter()
-  Duration? get maxHistorySearch;
+  Duration? get maxHistorySearch => throw _privateConstructorUsedError;
+
+  /// Serializes this Sensor to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Sensor
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $SensorCopyWith<Sensor> get copyWith =>
-      _$SensorCopyWithImpl<Sensor>(this as Sensor, _$identity);
-
-  /// Serializes this Sensor to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Sensor &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.iterationCycle, iterationCycle) ||
-                other.iterationCycle == iterationCycle) &&
-            (identical(other.slug, slug) || other.slug == slug) &&
-            (identical(other.isInstant, isInstant) ||
-                other.isInstant == isInstant) &&
-            (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.measuringUnit, measuringUnit) ||
-                other.measuringUnit == measuringUnit) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.subtype, subtype) || other.subtype == subtype) &&
-            (identical(other.parameter, parameter) ||
-                other.parameter == parameter) &&
-            const DeepCollectionEquality()
-                .equals(other.externalIdentifiers, externalIdentifiers) &&
-            (identical(other.formula, formula) || other.formula == formula) &&
-            (identical(other.script, script) || other.script == script) &&
-            (identical(other.hasHeaders, hasHeaders) ||
-                other.hasHeaders == hasHeaders) &&
-            const DeepCollectionEquality()
-                .equals(other.csvHeaders, csvHeaders) &&
-            (identical(other.csvSeparator, csvSeparator) ||
-                other.csvSeparator == csvSeparator) &&
-            const DeepCollectionEquality().equals(other.ranges, ranges) &&
-            const DeepCollectionEquality().equals(other.mask, mask) &&
-            (identical(other.hasValidator, hasValidator) ||
-                other.hasValidator == hasValidator) &&
-            (identical(other.minValue, minValue) ||
-                other.minValue == minValue) &&
-            (identical(other.maxValue, maxValue) ||
-                other.maxValue == maxValue) &&
-            (identical(other.contentType, contentType) ||
-                other.contentType == contentType) &&
-            (identical(other.parentId, parentId) ||
-                other.parentId == parentId) &&
-            (identical(other.parent, parent) || other.parent == parent) &&
-            (identical(other.functionId, functionId) ||
-                other.functionId == functionId) &&
-            (identical(other.lastExit, lastExit) ||
-                other.lastExit == lastExit) &&
-            (identical(other.qrCode, qrCode) || other.qrCode == qrCode) &&
-            const DeepCollectionEquality()
-                .equals(other.assignedAssetsIds, assignedAssetsIds) &&
-            const DeepCollectionEquality()
-                .equals(other.assignedAssets, assignedAssets) &&
-            (identical(other.isTemplate, isTemplate) ||
-                other.isTemplate == isTemplate) &&
-            (identical(other.isGlobal, isGlobal) ||
-                other.isGlobal == isGlobal) &&
-            const DeepCollectionEquality().equals(other.access, access) &&
-            (identical(other.maxHistorySearch, maxHistorySearch) ||
-                other.maxHistorySearch == maxHistorySearch));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hashAll([
-        runtimeType,
-        id,
-        name,
-        iterationCycle,
-        slug,
-        isInstant,
-        icon,
-        measuringUnit,
-        type,
-        subtype,
-        parameter,
-        const DeepCollectionEquality().hash(externalIdentifiers),
-        formula,
-        script,
-        hasHeaders,
-        const DeepCollectionEquality().hash(csvHeaders),
-        csvSeparator,
-        const DeepCollectionEquality().hash(ranges),
-        const DeepCollectionEquality().hash(mask),
-        hasValidator,
-        minValue,
-        maxValue,
-        contentType,
-        parentId,
-        parent,
-        functionId,
-        lastExit,
-        qrCode,
-        const DeepCollectionEquality().hash(assignedAssetsIds),
-        const DeepCollectionEquality().hash(assignedAssets),
-        isTemplate,
-        isGlobal,
-        const DeepCollectionEquality().hash(access),
-        maxHistorySearch
-      ]);
-
-  @override
-  String toString() {
-    return 'Sensor(id: $id, name: $name, iterationCycle: $iterationCycle, slug: $slug, isInstant: $isInstant, icon: $icon, measuringUnit: $measuringUnit, type: $type, subtype: $subtype, parameter: $parameter, externalIdentifiers: $externalIdentifiers, formula: $formula, script: $script, hasHeaders: $hasHeaders, csvHeaders: $csvHeaders, csvSeparator: $csvSeparator, ranges: $ranges, mask: $mask, hasValidator: $hasValidator, minValue: $minValue, maxValue: $maxValue, contentType: $contentType, parentId: $parentId, parent: $parent, functionId: $functionId, lastExit: $lastExit, qrCode: $qrCode, assignedAssetsIds: $assignedAssetsIds, assignedAssets: $assignedAssets, isTemplate: $isTemplate, isGlobal: $isGlobal, access: $access, maxHistorySearch: $maxHistorySearch)';
-  }
+  $SensorCopyWith<Sensor> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SensorCopyWith<$Res> {
-  factory $SensorCopyWith(Sensor value, $Res Function(Sensor) _then) =
-      _$SensorCopyWithImpl;
+abstract class $SensorCopyWith<$Res> {
+  factory $SensorCopyWith(Sensor value, $Res Function(Sensor) then) =
+      _$SensorCopyWithImpl<$Res, Sensor>;
   @useResult
   $Res call(
       {String id,
@@ -288,11 +187,14 @@ abstract mixin class $SensorCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SensorCopyWithImpl<$Res> implements $SensorCopyWith<$Res> {
-  _$SensorCopyWithImpl(this._self, this._then);
+class _$SensorCopyWithImpl<$Res, $Val extends Sensor>
+    implements $SensorCopyWith<$Res> {
+  _$SensorCopyWithImpl(this._value, this._then);
 
-  final Sensor _self;
-  final $Res Function(Sensor) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of Sensor
   /// with the given fields replaced by the non-null parameter values.
@@ -333,140 +235,140 @@ class _$SensorCopyWithImpl<$Res> implements $SensorCopyWith<$Res> {
     Object? access = freezed,
     Object? maxHistorySearch = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       iterationCycle: freezed == iterationCycle
-          ? _self.iterationCycle
+          ? _value.iterationCycle
           : iterationCycle // ignore: cast_nullable_to_non_nullable
               as int?,
       slug: null == slug
-          ? _self.slug
+          ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String,
       isInstant: freezed == isInstant
-          ? _self.isInstant
+          ? _value.isInstant
           : isInstant // ignore: cast_nullable_to_non_nullable
               as bool?,
       icon: freezed == icon
-          ? _self.icon
+          ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as LayrzIcon?,
       measuringUnit: freezed == measuringUnit
-          ? _self.measuringUnit
+          ? _value.measuringUnit
           : measuringUnit // ignore: cast_nullable_to_non_nullable
               as String?,
       type: freezed == type
-          ? _self.type
+          ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as SensorType?,
       subtype: freezed == subtype
-          ? _self.subtype
+          ? _value.subtype
           : subtype // ignore: cast_nullable_to_non_nullable
               as SensorSubType?,
       parameter: freezed == parameter
-          ? _self.parameter
+          ? _value.parameter
           : parameter // ignore: cast_nullable_to_non_nullable
               as String?,
       externalIdentifiers: freezed == externalIdentifiers
-          ? _self.externalIdentifiers
+          ? _value.externalIdentifiers
           : externalIdentifiers // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       formula: freezed == formula
-          ? _self.formula
+          ? _value.formula
           : formula // ignore: cast_nullable_to_non_nullable
               as String?,
       script: freezed == script
-          ? _self.script
+          ? _value.script
           : script // ignore: cast_nullable_to_non_nullable
               as String?,
       hasHeaders: freezed == hasHeaders
-          ? _self.hasHeaders
+          ? _value.hasHeaders
           : hasHeaders // ignore: cast_nullable_to_non_nullable
               as bool?,
       csvHeaders: freezed == csvHeaders
-          ? _self.csvHeaders
+          ? _value.csvHeaders
           : csvHeaders // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       csvSeparator: freezed == csvSeparator
-          ? _self.csvSeparator
+          ? _value.csvSeparator
           : csvSeparator // ignore: cast_nullable_to_non_nullable
               as String?,
       ranges: freezed == ranges
-          ? _self.ranges
+          ? _value.ranges
           : ranges // ignore: cast_nullable_to_non_nullable
               as List<SensorRange>?,
       mask: freezed == mask
-          ? _self.mask
+          ? _value.mask
           : mask // ignore: cast_nullable_to_non_nullable
               as List<MaskPoint>?,
       hasValidator: freezed == hasValidator
-          ? _self.hasValidator
+          ? _value.hasValidator
           : hasValidator // ignore: cast_nullable_to_non_nullable
               as bool?,
       minValue: freezed == minValue
-          ? _self.minValue
+          ? _value.minValue
           : minValue // ignore: cast_nullable_to_non_nullable
               as double?,
       maxValue: freezed == maxValue
-          ? _self.maxValue
+          ? _value.maxValue
           : maxValue // ignore: cast_nullable_to_non_nullable
               as double?,
       contentType: freezed == contentType
-          ? _self.contentType
+          ? _value.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
               as String?,
       parentId: freezed == parentId
-          ? _self.parentId
+          ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
       parent: freezed == parent
-          ? _self.parent
+          ? _value.parent
           : parent // ignore: cast_nullable_to_non_nullable
               as Sensor?,
       functionId: freezed == functionId
-          ? _self.functionId
+          ? _value.functionId
           : functionId // ignore: cast_nullable_to_non_nullable
               as String?,
       lastExit: freezed == lastExit
-          ? _self.lastExit
+          ? _value.lastExit
           : lastExit // ignore: cast_nullable_to_non_nullable
               as AtsExit?,
       qrCode: freezed == qrCode
-          ? _self.qrCode
+          ? _value.qrCode
           : qrCode // ignore: cast_nullable_to_non_nullable
               as String?,
       assignedAssetsIds: freezed == assignedAssetsIds
-          ? _self.assignedAssetsIds
+          ? _value.assignedAssetsIds
           : assignedAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       assignedAssets: freezed == assignedAssets
-          ? _self.assignedAssets
+          ? _value.assignedAssets
           : assignedAssets // ignore: cast_nullable_to_non_nullable
               as List<Asset>?,
       isTemplate: freezed == isTemplate
-          ? _self.isTemplate
+          ? _value.isTemplate
           : isTemplate // ignore: cast_nullable_to_non_nullable
               as bool?,
       isGlobal: null == isGlobal
-          ? _self.isGlobal
+          ? _value.isGlobal
           : isGlobal // ignore: cast_nullable_to_non_nullable
               as bool,
       access: freezed == access
-          ? _self.access
+          ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
       maxHistorySearch: freezed == maxHistorySearch
-          ? _self.maxHistorySearch
+          ? _value.maxHistorySearch
           : maxHistorySearch // ignore: cast_nullable_to_non_nullable
               as Duration?,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of Sensor
@@ -474,12 +376,12 @@ class _$SensorCopyWithImpl<$Res> implements $SensorCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $SensorCopyWith<$Res>? get parent {
-    if (_self.parent == null) {
+    if (_value.parent == null) {
       return null;
     }
 
-    return $SensorCopyWith<$Res>(_self.parent!, (value) {
-      return _then(_self.copyWith(parent: value));
+    return $SensorCopyWith<$Res>(_value.parent!, (value) {
+      return _then(_value.copyWith(parent: value) as $Val);
     });
   }
 
@@ -488,20 +390,252 @@ class _$SensorCopyWithImpl<$Res> implements $SensorCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $AtsExitCopyWith<$Res>? get lastExit {
-    if (_self.lastExit == null) {
+    if (_value.lastExit == null) {
       return null;
     }
 
-    return $AtsExitCopyWith<$Res>(_self.lastExit!, (value) {
-      return _then(_self.copyWith(lastExit: value));
+    return $AtsExitCopyWith<$Res>(_value.lastExit!, (value) {
+      return _then(_value.copyWith(lastExit: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$SensorImplCopyWith<$Res> implements $SensorCopyWith<$Res> {
+  factory _$$SensorImplCopyWith(
+          _$SensorImpl value, $Res Function(_$SensorImpl) then) =
+      __$$SensorImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      int? iterationCycle,
+      String slug,
+      bool? isInstant,
+      @IconOrNullConverter() LayrzIcon? icon,
+      String? measuringUnit,
+      @SensorTypeOrNullConverter() SensorType? type,
+      @SensorSubTypeOrNullConverter() SensorSubType? subtype,
+      String? parameter,
+      List<String>? externalIdentifiers,
+      String? formula,
+      String? script,
+      bool? hasHeaders,
+      List<String>? csvHeaders,
+      String? csvSeparator,
+      List<SensorRange>? ranges,
+      List<MaskPoint>? mask,
+      bool? hasValidator,
+      double? minValue,
+      double? maxValue,
+      String? contentType,
+      String? parentId,
+      Sensor? parent,
+      String? functionId,
+      AtsExit? lastExit,
+      String? qrCode,
+      List<String>? assignedAssetsIds,
+      List<Asset>? assignedAssets,
+      bool? isTemplate,
+      bool isGlobal,
+      List<Access>? access,
+      @DurationOrNullConverter() Duration? maxHistorySearch});
+
+  @override
+  $SensorCopyWith<$Res>? get parent;
+  @override
+  $AtsExitCopyWith<$Res>? get lastExit;
+}
+
+/// @nodoc
+class __$$SensorImplCopyWithImpl<$Res>
+    extends _$SensorCopyWithImpl<$Res, _$SensorImpl>
+    implements _$$SensorImplCopyWith<$Res> {
+  __$$SensorImplCopyWithImpl(
+      _$SensorImpl _value, $Res Function(_$SensorImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Sensor
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? iterationCycle = freezed,
+    Object? slug = null,
+    Object? isInstant = freezed,
+    Object? icon = freezed,
+    Object? measuringUnit = freezed,
+    Object? type = freezed,
+    Object? subtype = freezed,
+    Object? parameter = freezed,
+    Object? externalIdentifiers = freezed,
+    Object? formula = freezed,
+    Object? script = freezed,
+    Object? hasHeaders = freezed,
+    Object? csvHeaders = freezed,
+    Object? csvSeparator = freezed,
+    Object? ranges = freezed,
+    Object? mask = freezed,
+    Object? hasValidator = freezed,
+    Object? minValue = freezed,
+    Object? maxValue = freezed,
+    Object? contentType = freezed,
+    Object? parentId = freezed,
+    Object? parent = freezed,
+    Object? functionId = freezed,
+    Object? lastExit = freezed,
+    Object? qrCode = freezed,
+    Object? assignedAssetsIds = freezed,
+    Object? assignedAssets = freezed,
+    Object? isTemplate = freezed,
+    Object? isGlobal = null,
+    Object? access = freezed,
+    Object? maxHistorySearch = freezed,
+  }) {
+    return _then(_$SensorImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      iterationCycle: freezed == iterationCycle
+          ? _value.iterationCycle
+          : iterationCycle // ignore: cast_nullable_to_non_nullable
+              as int?,
+      slug: null == slug
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String,
+      isInstant: freezed == isInstant
+          ? _value.isInstant
+          : isInstant // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      measuringUnit: freezed == measuringUnit
+          ? _value.measuringUnit
+          : measuringUnit // ignore: cast_nullable_to_non_nullable
+              as String?,
+      type: freezed == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as SensorType?,
+      subtype: freezed == subtype
+          ? _value.subtype
+          : subtype // ignore: cast_nullable_to_non_nullable
+              as SensorSubType?,
+      parameter: freezed == parameter
+          ? _value.parameter
+          : parameter // ignore: cast_nullable_to_non_nullable
+              as String?,
+      externalIdentifiers: freezed == externalIdentifiers
+          ? _value._externalIdentifiers
+          : externalIdentifiers // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      formula: freezed == formula
+          ? _value.formula
+          : formula // ignore: cast_nullable_to_non_nullable
+              as String?,
+      script: freezed == script
+          ? _value.script
+          : script // ignore: cast_nullable_to_non_nullable
+              as String?,
+      hasHeaders: freezed == hasHeaders
+          ? _value.hasHeaders
+          : hasHeaders // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      csvHeaders: freezed == csvHeaders
+          ? _value._csvHeaders
+          : csvHeaders // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      csvSeparator: freezed == csvSeparator
+          ? _value.csvSeparator
+          : csvSeparator // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ranges: freezed == ranges
+          ? _value._ranges
+          : ranges // ignore: cast_nullable_to_non_nullable
+              as List<SensorRange>?,
+      mask: freezed == mask
+          ? _value._mask
+          : mask // ignore: cast_nullable_to_non_nullable
+              as List<MaskPoint>?,
+      hasValidator: freezed == hasValidator
+          ? _value.hasValidator
+          : hasValidator // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      minValue: freezed == minValue
+          ? _value.minValue
+          : minValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      maxValue: freezed == maxValue
+          ? _value.maxValue
+          : maxValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      contentType: freezed == contentType
+          ? _value.contentType
+          : contentType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parentId: freezed == parentId
+          ? _value.parentId
+          : parentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parent: freezed == parent
+          ? _value.parent
+          : parent // ignore: cast_nullable_to_non_nullable
+              as Sensor?,
+      functionId: freezed == functionId
+          ? _value.functionId
+          : functionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      lastExit: freezed == lastExit
+          ? _value.lastExit
+          : lastExit // ignore: cast_nullable_to_non_nullable
+              as AtsExit?,
+      qrCode: freezed == qrCode
+          ? _value.qrCode
+          : qrCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assignedAssetsIds: freezed == assignedAssetsIds
+          ? _value._assignedAssetsIds
+          : assignedAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      assignedAssets: freezed == assignedAssets
+          ? _value._assignedAssets
+          : assignedAssets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      isTemplate: freezed == isTemplate
+          ? _value.isTemplate
+          : isTemplate // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isGlobal: null == isGlobal
+          ? _value.isGlobal
+          : isGlobal // ignore: cast_nullable_to_non_nullable
+              as bool,
+      access: freezed == access
+          ? _value._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+      maxHistorySearch: freezed == maxHistorySearch
+          ? _value.maxHistorySearch
+          : maxHistorySearch // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _Sensor implements Sensor {
-  const _Sensor(
+class _$SensorImpl implements _Sensor {
+  const _$SensorImpl(
       {required this.id,
       required this.name,
       this.iterationCycle,
@@ -542,7 +676,9 @@ class _Sensor implements Sensor {
         _assignedAssetsIds = assignedAssetsIds,
         _assignedAssets = assignedAssets,
         _access = access;
-  factory _Sensor.fromJson(Map<String, dynamic> json) => _$SensorFromJson(json);
+
+  factory _$SensorImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SensorImplFromJson(json);
 
   /// [id] of the sensor. Must be unique along of all sensors of the asset.
   @override
@@ -755,26 +891,16 @@ class _Sensor implements Sensor {
   @DurationOrNullConverter()
   final Duration? maxHistorySearch;
 
-  /// Create a copy of Sensor
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SensorCopyWith<_Sensor> get copyWith =>
-      __$SensorCopyWithImpl<_Sensor>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SensorToJson(
-      this,
-    );
+  String toString() {
+    return 'Sensor(id: $id, name: $name, iterationCycle: $iterationCycle, slug: $slug, isInstant: $isInstant, icon: $icon, measuringUnit: $measuringUnit, type: $type, subtype: $subtype, parameter: $parameter, externalIdentifiers: $externalIdentifiers, formula: $formula, script: $script, hasHeaders: $hasHeaders, csvHeaders: $csvHeaders, csvSeparator: $csvSeparator, ranges: $ranges, mask: $mask, hasValidator: $hasValidator, minValue: $minValue, maxValue: $maxValue, contentType: $contentType, parentId: $parentId, parent: $parent, functionId: $functionId, lastExit: $lastExit, qrCode: $qrCode, assignedAssetsIds: $assignedAssetsIds, assignedAssets: $assignedAssets, isTemplate: $isTemplate, isGlobal: $isGlobal, access: $access, maxHistorySearch: $maxHistorySearch)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Sensor &&
+            other is _$SensorImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.iterationCycle, iterationCycle) ||
@@ -869,354 +995,299 @@ class _Sensor implements Sensor {
         maxHistorySearch
       ]);
 
+  /// Create a copy of Sensor
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'Sensor(id: $id, name: $name, iterationCycle: $iterationCycle, slug: $slug, isInstant: $isInstant, icon: $icon, measuringUnit: $measuringUnit, type: $type, subtype: $subtype, parameter: $parameter, externalIdentifiers: $externalIdentifiers, formula: $formula, script: $script, hasHeaders: $hasHeaders, csvHeaders: $csvHeaders, csvSeparator: $csvSeparator, ranges: $ranges, mask: $mask, hasValidator: $hasValidator, minValue: $minValue, maxValue: $maxValue, contentType: $contentType, parentId: $parentId, parent: $parent, functionId: $functionId, lastExit: $lastExit, qrCode: $qrCode, assignedAssetsIds: $assignedAssetsIds, assignedAssets: $assignedAssets, isTemplate: $isTemplate, isGlobal: $isGlobal, access: $access, maxHistorySearch: $maxHistorySearch)';
+  @pragma('vm:prefer-inline')
+  _$$SensorImplCopyWith<_$SensorImpl> get copyWith =>
+      __$$SensorImplCopyWithImpl<_$SensorImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SensorImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$SensorCopyWith<$Res> implements $SensorCopyWith<$Res> {
-  factory _$SensorCopyWith(_Sensor value, $Res Function(_Sensor) _then) =
-      __$SensorCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      int? iterationCycle,
-      String slug,
-      bool? isInstant,
-      @IconOrNullConverter() LayrzIcon? icon,
-      String? measuringUnit,
-      @SensorTypeOrNullConverter() SensorType? type,
-      @SensorSubTypeOrNullConverter() SensorSubType? subtype,
-      String? parameter,
-      List<String>? externalIdentifiers,
-      String? formula,
-      String? script,
-      bool? hasHeaders,
-      List<String>? csvHeaders,
-      String? csvSeparator,
-      List<SensorRange>? ranges,
-      List<MaskPoint>? mask,
-      bool? hasValidator,
-      double? minValue,
-      double? maxValue,
-      String? contentType,
-      String? parentId,
-      Sensor? parent,
-      String? functionId,
-      AtsExit? lastExit,
-      String? qrCode,
-      List<String>? assignedAssetsIds,
-      List<Asset>? assignedAssets,
-      bool? isTemplate,
-      bool isGlobal,
-      List<Access>? access,
-      @DurationOrNullConverter() Duration? maxHistorySearch});
+abstract class _Sensor implements Sensor {
+  const factory _Sensor(
+          {required final String id,
+          required final String name,
+          final int? iterationCycle,
+          required final String slug,
+          final bool? isInstant,
+          @IconOrNullConverter() final LayrzIcon? icon,
+          final String? measuringUnit,
+          @SensorTypeOrNullConverter() final SensorType? type,
+          @SensorSubTypeOrNullConverter() final SensorSubType? subtype,
+          final String? parameter,
+          final List<String>? externalIdentifiers,
+          final String? formula,
+          final String? script,
+          final bool? hasHeaders,
+          final List<String>? csvHeaders,
+          final String? csvSeparator,
+          final List<SensorRange>? ranges,
+          final List<MaskPoint>? mask,
+          final bool? hasValidator,
+          final double? minValue,
+          final double? maxValue,
+          final String? contentType,
+          final String? parentId,
+          final Sensor? parent,
+          final String? functionId,
+          final AtsExit? lastExit,
+          final String? qrCode,
+          final List<String>? assignedAssetsIds,
+          final List<Asset>? assignedAssets,
+          final bool? isTemplate,
+          final bool isGlobal,
+          final List<Access>? access,
+          @DurationOrNullConverter() final Duration? maxHistorySearch}) =
+      _$SensorImpl;
 
+  factory _Sensor.fromJson(Map<String, dynamic> json) = _$SensorImpl.fromJson;
+
+  /// [id] of the sensor. Must be unique along of all sensors of the asset.
   @override
-  $SensorCopyWith<$Res>? get parent;
+  String get id;
+
+  /// [name] of the sensor. Must be unique along of all sensors of the asset.
   @override
-  $AtsExitCopyWith<$Res>? get lastExit;
+  String get name;
+
+  /// [iterationCycle] of the sensor. Only will accept positive values
+  @override
+  int? get iterationCycle;
+
+  /// [slug] of the sensor. Must be unique along of all sensors of the asset.
+  @override
+  String get slug;
+
+  /// [isInstant] is a boolean to indicate if the sensor is an instant sensor. Means what the sensor execution
+  /// returns [null], if it's [true], the sensor is will "disappear" from the calculated sensors, otherwise it will be
+  /// take the previous value of the sensor.
+  @override
+  bool? get isInstant;
+
+  /// [icon] of the sensor. To send it to API, will convert to javascript codename, but from Flutter execution
+  /// will convert to LayrzIcon entity.
+  @override
+  @IconOrNullConverter()
+  LayrzIcon? get icon;
+
+  /// [measuringUnit] of the sensor. Can be an estandard unit or a custom one.
+  @override
+  String? get measuringUnit;
+
+  /// [type] of the sensor.
+  @override
+  @SensorTypeOrNullConverter()
+  SensorType? get type;
+
+  /// [subType] of the sensor.
+  @override
+  @SensorSubTypeOrNullConverter()
+  SensorSubType? get subtype;
+
+  /// [parameter] of the sensor.
+  @override
+  String? get parameter;
+  @override
+  List<String>? get externalIdentifiers;
+
+  /// [formula] is the LCL formula to execute.
+  @override
+  String? get formula;
+
+  /// [script] is the script to execute.
+  @override
+  String? get script;
+
+  /// Only for [SensorType.unpack] and [SensorSubType.csv], [hasHeaders], [csvHeaders] and [csvSeparator] means the configuration
+  /// to unpack a CSV data comming from message.
+  /// [hasHeaders] is a boolean to indicate if the CSV has headers inside of the message.
+  @override
+  bool? get hasHeaders;
+
+  /// [csvHeaders] is a list of strings to indicate the names of the columns of the CSV. Only when [hasHeaders] is true.
+  @override
+  List<String>? get csvHeaders;
+
+  /// [csvSeparator] is a string to indicate the separator of the CSV.
+  @override
+  String? get csvSeparator;
+
+  /// [ranges] of the sensor, only for [SensorType.interval] linear conversion.
+  /// It's a list of [SensorPair] objects.
+  @override
+  List<SensorRange>? get ranges;
+
+  /// [mask] of the sensor. Is basically a list of [MaskPoint] objects.
+  @override
+  List<MaskPoint>? get mask;
+
+  /// [hasValidator] is a boolean to indicate if the sensor has a [double] validator. When true, [minValur] and [maxValue]
+  /// will define the range, both values can be [null] if the minimum or maximum range is [double.infinity].
+  @override
+  bool? get hasValidator;
+
+  /// [minValue] is a [double] to indicate the minimum value of the sensor. Only when [hasValidator] is true.
+  /// Can return [null] if the minimum range is [double.infinity].
+  @override
+  double? get minValue;
+
+  /// [maxValue] is a [double] to indicate the maximum value of the sensor. Only when [hasValidator] is true.
+  /// [maxValue] must be greater than [minValue].
+  /// If [maxValue] is [null], the minimum range is [double.infinity].
+  @override
+  double? get maxValue;
+
+  /// [contentType] is a string to indicate the content type of the sensor, only used for [SensorType.image],
+  /// [SensorType.video] and [SensorType.audio], but only when the [SensorSubType] is [SensorSubType.base64].
+  @override
+  String? get contentType;
+
+  /// [parentId] is a string to indicate the id of the parent sensor.
+  @override
+  String? get parentId;
+
+  /// [parent] is a [Sensor] to indicate the parent sensor.
+  @override
+  Sensor? get parent;
+
+  /// [functionId] is a string to indicate the id of the [Function] of the sensor.
+  @override
+  String? get functionId;
+
+  /// [lastExit] is the last [AtsExit] registered by this sensor.
+  @override
+  AtsExit? get lastExit;
+
+  /// [qrCode] is a string to indicate the QR code URI of the sensor.
+  @override
+  String? get qrCode;
+
+  /// [assignedAssetsIds] is the list of assets ids assigned to this sensor.
+  @override
+  List<String>? get assignedAssetsIds;
+
+  /// [assignedAssets] is the list of assets assigned to this sensor.
+  @override
+  List<Asset>? get assignedAssets;
+
+  /// [isTemplate] is a boolean to indicate if the sensor is a template.
+  /// So, this sensor was created from the Golden M, and their authorized you to use it.
+  @override
+  bool? get isTemplate;
+
+  /// [isGlobal] defines if the sensor is global or not.
+  @override
+  bool get isGlobal;
+
+  /// Is the list of granted access
+  @override
+  List<Access>? get access;
+
+  /// [maxHistorySearch] defines the maximum search interval for the history of the sensor.
+  @override
+  @DurationOrNullConverter()
+  Duration? get maxHistorySearch;
+
+  /// Create a copy of Sensor
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SensorImplCopyWith<_$SensorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-/// @nodoc
-class __$SensorCopyWithImpl<$Res> implements _$SensorCopyWith<$Res> {
-  __$SensorCopyWithImpl(this._self, this._then);
-
-  final _Sensor _self;
-  final $Res Function(_Sensor) _then;
-
-  /// Create a copy of Sensor
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? iterationCycle = freezed,
-    Object? slug = null,
-    Object? isInstant = freezed,
-    Object? icon = freezed,
-    Object? measuringUnit = freezed,
-    Object? type = freezed,
-    Object? subtype = freezed,
-    Object? parameter = freezed,
-    Object? externalIdentifiers = freezed,
-    Object? formula = freezed,
-    Object? script = freezed,
-    Object? hasHeaders = freezed,
-    Object? csvHeaders = freezed,
-    Object? csvSeparator = freezed,
-    Object? ranges = freezed,
-    Object? mask = freezed,
-    Object? hasValidator = freezed,
-    Object? minValue = freezed,
-    Object? maxValue = freezed,
-    Object? contentType = freezed,
-    Object? parentId = freezed,
-    Object? parent = freezed,
-    Object? functionId = freezed,
-    Object? lastExit = freezed,
-    Object? qrCode = freezed,
-    Object? assignedAssetsIds = freezed,
-    Object? assignedAssets = freezed,
-    Object? isTemplate = freezed,
-    Object? isGlobal = null,
-    Object? access = freezed,
-    Object? maxHistorySearch = freezed,
-  }) {
-    return _then(_Sensor(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      iterationCycle: freezed == iterationCycle
-          ? _self.iterationCycle
-          : iterationCycle // ignore: cast_nullable_to_non_nullable
-              as int?,
-      slug: null == slug
-          ? _self.slug
-          : slug // ignore: cast_nullable_to_non_nullable
-              as String,
-      isInstant: freezed == isInstant
-          ? _self.isInstant
-          : isInstant // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      icon: freezed == icon
-          ? _self.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as LayrzIcon?,
-      measuringUnit: freezed == measuringUnit
-          ? _self.measuringUnit
-          : measuringUnit // ignore: cast_nullable_to_non_nullable
-              as String?,
-      type: freezed == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as SensorType?,
-      subtype: freezed == subtype
-          ? _self.subtype
-          : subtype // ignore: cast_nullable_to_non_nullable
-              as SensorSubType?,
-      parameter: freezed == parameter
-          ? _self.parameter
-          : parameter // ignore: cast_nullable_to_non_nullable
-              as String?,
-      externalIdentifiers: freezed == externalIdentifiers
-          ? _self._externalIdentifiers
-          : externalIdentifiers // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      formula: freezed == formula
-          ? _self.formula
-          : formula // ignore: cast_nullable_to_non_nullable
-              as String?,
-      script: freezed == script
-          ? _self.script
-          : script // ignore: cast_nullable_to_non_nullable
-              as String?,
-      hasHeaders: freezed == hasHeaders
-          ? _self.hasHeaders
-          : hasHeaders // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      csvHeaders: freezed == csvHeaders
-          ? _self._csvHeaders
-          : csvHeaders // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      csvSeparator: freezed == csvSeparator
-          ? _self.csvSeparator
-          : csvSeparator // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ranges: freezed == ranges
-          ? _self._ranges
-          : ranges // ignore: cast_nullable_to_non_nullable
-              as List<SensorRange>?,
-      mask: freezed == mask
-          ? _self._mask
-          : mask // ignore: cast_nullable_to_non_nullable
-              as List<MaskPoint>?,
-      hasValidator: freezed == hasValidator
-          ? _self.hasValidator
-          : hasValidator // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      minValue: freezed == minValue
-          ? _self.minValue
-          : minValue // ignore: cast_nullable_to_non_nullable
-              as double?,
-      maxValue: freezed == maxValue
-          ? _self.maxValue
-          : maxValue // ignore: cast_nullable_to_non_nullable
-              as double?,
-      contentType: freezed == contentType
-          ? _self.contentType
-          : contentType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      parentId: freezed == parentId
-          ? _self.parentId
-          : parentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      parent: freezed == parent
-          ? _self.parent
-          : parent // ignore: cast_nullable_to_non_nullable
-              as Sensor?,
-      functionId: freezed == functionId
-          ? _self.functionId
-          : functionId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lastExit: freezed == lastExit
-          ? _self.lastExit
-          : lastExit // ignore: cast_nullable_to_non_nullable
-              as AtsExit?,
-      qrCode: freezed == qrCode
-          ? _self.qrCode
-          : qrCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assignedAssetsIds: freezed == assignedAssetsIds
-          ? _self._assignedAssetsIds
-          : assignedAssetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      assignedAssets: freezed == assignedAssets
-          ? _self._assignedAssets
-          : assignedAssets // ignore: cast_nullable_to_non_nullable
-              as List<Asset>?,
-      isTemplate: freezed == isTemplate
-          ? _self.isTemplate
-          : isTemplate // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      isGlobal: null == isGlobal
-          ? _self.isGlobal
-          : isGlobal // ignore: cast_nullable_to_non_nullable
-              as bool,
-      access: freezed == access
-          ? _self._access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      maxHistorySearch: freezed == maxHistorySearch
-          ? _self.maxHistorySearch
-          : maxHistorySearch // ignore: cast_nullable_to_non_nullable
-              as Duration?,
-    ));
-  }
-
-  /// Create a copy of Sensor
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $SensorCopyWith<$Res>? get parent {
-    if (_self.parent == null) {
-      return null;
-    }
-
-    return $SensorCopyWith<$Res>(_self.parent!, (value) {
-      return _then(_self.copyWith(parent: value));
-    });
-  }
-
-  /// Create a copy of Sensor
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AtsExitCopyWith<$Res>? get lastExit {
-    if (_self.lastExit == null) {
-      return null;
-    }
-
-    return $AtsExitCopyWith<$Res>(_self.lastExit!, (value) {
-      return _then(_self.copyWith(lastExit: value));
-    });
-  }
+SensorInput _$SensorInputFromJson(Map<String, dynamic> json) {
+  return _SensorInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$SensorInput {
-  String? get id;
-  set id(String? value);
-  String? get assetId;
-  set assetId(String? value);
-  String get name;
-  set name(String value);
-  String get slug;
-  set slug(String value);
-  String get measuringUnit;
-  set measuringUnit(String value);
+  String? get id => throw _privateConstructorUsedError;
+  set id(String? value) => throw _privateConstructorUsedError;
+  String? get assetId => throw _privateConstructorUsedError;
+  set assetId(String? value) => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  set name(String value) => throw _privateConstructorUsedError;
+  String get slug => throw _privateConstructorUsedError;
+  set slug(String value) => throw _privateConstructorUsedError;
+  String get measuringUnit => throw _privateConstructorUsedError;
+  set measuringUnit(String value) => throw _privateConstructorUsedError;
   @SensorTypeConverter()
-  SensorType get type;
+  SensorType get type => throw _privateConstructorUsedError;
   @SensorTypeConverter()
-  set type(SensorType value);
+  set type(SensorType value) => throw _privateConstructorUsedError;
   @SensorSubTypeConverter()
-  SensorSubType get subtype;
+  SensorSubType get subtype => throw _privateConstructorUsedError;
   @SensorSubTypeConverter()
-  set subtype(SensorSubType value);
-  String get parameter;
-  set parameter(String value);
-  int get iterationCycle;
-  set iterationCycle(int value);
-  String get formula;
-  set formula(String value);
-  String get script;
-  set script(String value);
+  set subtype(SensorSubType value) => throw _privateConstructorUsedError;
+  String get parameter => throw _privateConstructorUsedError;
+  set parameter(String value) => throw _privateConstructorUsedError;
+  int get iterationCycle => throw _privateConstructorUsedError;
+  set iterationCycle(int value) => throw _privateConstructorUsedError;
+  String get formula => throw _privateConstructorUsedError;
+  set formula(String value) => throw _privateConstructorUsedError;
+  String get script => throw _privateConstructorUsedError;
+  set script(String value) => throw _privateConstructorUsedError;
   @IconOrNullConverter()
-  LayrzIcon? get icon;
+  LayrzIcon? get icon => throw _privateConstructorUsedError;
   @IconOrNullConverter()
-  set icon(LayrzIcon? value);
-  String? get contentType;
-  set contentType(String? value);
-  List<SensorRangeInput> get ranges;
-  set ranges(List<SensorRangeInput> value);
-  List<MaskPointInput> get mask;
-  set mask(List<MaskPointInput> value);
-  String? get parentId;
-  set parentId(String? value);
-  bool get isInstant;
-  set isInstant(bool value);
-  bool get hasValidator;
-  set hasValidator(bool value);
-  double? get minValue;
-  set minValue(double? value);
-  double? get maxValue;
-  set maxValue(double? value);
-  bool get hasHeaders;
-  set hasHeaders(bool value);
-  String get csvSeparator;
-  set csvSeparator(String value);
-  List<String> get csvHeaders;
-  set csvHeaders(List<String> value);
-  String? get functionId;
-  set functionId(String? value);
-  List<String> get assignedAssetsIds;
-  set assignedAssetsIds(List<String> value);
+  set icon(LayrzIcon? value) => throw _privateConstructorUsedError;
+  String? get contentType => throw _privateConstructorUsedError;
+  set contentType(String? value) => throw _privateConstructorUsedError;
+  List<SensorRangeInput> get ranges => throw _privateConstructorUsedError;
+  set ranges(List<SensorRangeInput> value) =>
+      throw _privateConstructorUsedError;
+  List<MaskPointInput> get mask => throw _privateConstructorUsedError;
+  set mask(List<MaskPointInput> value) => throw _privateConstructorUsedError;
+  String? get parentId => throw _privateConstructorUsedError;
+  set parentId(String? value) => throw _privateConstructorUsedError;
+  bool get isInstant => throw _privateConstructorUsedError;
+  set isInstant(bool value) => throw _privateConstructorUsedError;
+  bool get hasValidator => throw _privateConstructorUsedError;
+  set hasValidator(bool value) => throw _privateConstructorUsedError;
+  double? get minValue => throw _privateConstructorUsedError;
+  set minValue(double? value) => throw _privateConstructorUsedError;
+  double? get maxValue => throw _privateConstructorUsedError;
+  set maxValue(double? value) => throw _privateConstructorUsedError;
+  bool get hasHeaders => throw _privateConstructorUsedError;
+  set hasHeaders(bool value) => throw _privateConstructorUsedError;
+  String get csvSeparator => throw _privateConstructorUsedError;
+  set csvSeparator(String value) => throw _privateConstructorUsedError;
+  List<String> get csvHeaders => throw _privateConstructorUsedError;
+  set csvHeaders(List<String> value) => throw _privateConstructorUsedError;
+  String? get functionId => throw _privateConstructorUsedError;
+  set functionId(String? value) => throw _privateConstructorUsedError;
+  List<String> get assignedAssetsIds => throw _privateConstructorUsedError;
+  set assignedAssetsIds(List<String> value) =>
+      throw _privateConstructorUsedError;
   @DurationOrNullConverter()
-  Duration? get maxHistorySearch;
+  Duration? get maxHistorySearch => throw _privateConstructorUsedError;
   @DurationOrNullConverter()
-  set maxHistorySearch(Duration? value);
+  set maxHistorySearch(Duration? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this SensorInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of SensorInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $SensorInputCopyWith<SensorInput> get copyWith =>
-      _$SensorInputCopyWithImpl<SensorInput>(this as SensorInput, _$identity);
-
-  /// Serializes this SensorInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  String toString() {
-    return 'SensorInput(id: $id, assetId: $assetId, name: $name, slug: $slug, measuringUnit: $measuringUnit, type: $type, subtype: $subtype, parameter: $parameter, iterationCycle: $iterationCycle, formula: $formula, script: $script, icon: $icon, contentType: $contentType, ranges: $ranges, mask: $mask, parentId: $parentId, isInstant: $isInstant, hasValidator: $hasValidator, minValue: $minValue, maxValue: $maxValue, hasHeaders: $hasHeaders, csvSeparator: $csvSeparator, csvHeaders: $csvHeaders, functionId: $functionId, assignedAssetsIds: $assignedAssetsIds, maxHistorySearch: $maxHistorySearch)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SensorInputCopyWith<$Res> {
+abstract class $SensorInputCopyWith<$Res> {
   factory $SensorInputCopyWith(
-          SensorInput value, $Res Function(SensorInput) _then) =
-      _$SensorInputCopyWithImpl;
+          SensorInput value, $Res Function(SensorInput) then) =
+      _$SensorInputCopyWithImpl<$Res, SensorInput>;
   @useResult
   $Res call(
       {String? id,
@@ -1248,11 +1319,14 @@ abstract mixin class $SensorInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SensorInputCopyWithImpl<$Res> implements $SensorInputCopyWith<$Res> {
-  _$SensorInputCopyWithImpl(this._self, this._then);
+class _$SensorInputCopyWithImpl<$Res, $Val extends SensorInput>
+    implements $SensorInputCopyWith<$Res> {
+  _$SensorInputCopyWithImpl(this._value, this._then);
 
-  final SensorInput _self;
-  final $Res Function(SensorInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of SensorInput
   /// with the given fields replaced by the non-null parameter values.
@@ -1286,109 +1360,295 @@ class _$SensorInputCopyWithImpl<$Res> implements $SensorInputCopyWith<$Res> {
     Object? assignedAssetsIds = null,
     Object? maxHistorySearch = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: freezed == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       assetId: freezed == assetId
-          ? _self.assetId
+          ? _value.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       slug: null == slug
-          ? _self.slug
+          ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String,
       measuringUnit: null == measuringUnit
-          ? _self.measuringUnit
+          ? _value.measuringUnit
           : measuringUnit // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _self.type
+          ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as SensorType,
       subtype: null == subtype
-          ? _self.subtype
+          ? _value.subtype
           : subtype // ignore: cast_nullable_to_non_nullable
               as SensorSubType,
       parameter: null == parameter
-          ? _self.parameter
+          ? _value.parameter
           : parameter // ignore: cast_nullable_to_non_nullable
               as String,
       iterationCycle: null == iterationCycle
-          ? _self.iterationCycle
+          ? _value.iterationCycle
           : iterationCycle // ignore: cast_nullable_to_non_nullable
               as int,
       formula: null == formula
-          ? _self.formula
+          ? _value.formula
           : formula // ignore: cast_nullable_to_non_nullable
               as String,
       script: null == script
-          ? _self.script
+          ? _value.script
           : script // ignore: cast_nullable_to_non_nullable
               as String,
       icon: freezed == icon
-          ? _self.icon
+          ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as LayrzIcon?,
       contentType: freezed == contentType
-          ? _self.contentType
+          ? _value.contentType
           : contentType // ignore: cast_nullable_to_non_nullable
               as String?,
       ranges: null == ranges
-          ? _self.ranges
+          ? _value.ranges
           : ranges // ignore: cast_nullable_to_non_nullable
               as List<SensorRangeInput>,
       mask: null == mask
-          ? _self.mask
+          ? _value.mask
           : mask // ignore: cast_nullable_to_non_nullable
               as List<MaskPointInput>,
       parentId: freezed == parentId
-          ? _self.parentId
+          ? _value.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
       isInstant: null == isInstant
-          ? _self.isInstant
+          ? _value.isInstant
           : isInstant // ignore: cast_nullable_to_non_nullable
               as bool,
       hasValidator: null == hasValidator
-          ? _self.hasValidator
+          ? _value.hasValidator
           : hasValidator // ignore: cast_nullable_to_non_nullable
               as bool,
       minValue: freezed == minValue
-          ? _self.minValue
+          ? _value.minValue
           : minValue // ignore: cast_nullable_to_non_nullable
               as double?,
       maxValue: freezed == maxValue
-          ? _self.maxValue
+          ? _value.maxValue
           : maxValue // ignore: cast_nullable_to_non_nullable
               as double?,
       hasHeaders: null == hasHeaders
-          ? _self.hasHeaders
+          ? _value.hasHeaders
           : hasHeaders // ignore: cast_nullable_to_non_nullable
               as bool,
       csvSeparator: null == csvSeparator
-          ? _self.csvSeparator
+          ? _value.csvSeparator
           : csvSeparator // ignore: cast_nullable_to_non_nullable
               as String,
       csvHeaders: null == csvHeaders
-          ? _self.csvHeaders
+          ? _value.csvHeaders
           : csvHeaders // ignore: cast_nullable_to_non_nullable
               as List<String>,
       functionId: freezed == functionId
-          ? _self.functionId
+          ? _value.functionId
           : functionId // ignore: cast_nullable_to_non_nullable
               as String?,
       assignedAssetsIds: null == assignedAssetsIds
-          ? _self.assignedAssetsIds
+          ? _value.assignedAssetsIds
           : assignedAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       maxHistorySearch: freezed == maxHistorySearch
-          ? _self.maxHistorySearch
+          ? _value.maxHistorySearch
+          : maxHistorySearch // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SensorInputImplCopyWith<$Res>
+    implements $SensorInputCopyWith<$Res> {
+  factory _$$SensorInputImplCopyWith(
+          _$SensorInputImpl value, $Res Function(_$SensorInputImpl) then) =
+      __$$SensorInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? assetId,
+      String name,
+      String slug,
+      String measuringUnit,
+      @SensorTypeConverter() SensorType type,
+      @SensorSubTypeConverter() SensorSubType subtype,
+      String parameter,
+      int iterationCycle,
+      String formula,
+      String script,
+      @IconOrNullConverter() LayrzIcon? icon,
+      String? contentType,
+      List<SensorRangeInput> ranges,
+      List<MaskPointInput> mask,
+      String? parentId,
+      bool isInstant,
+      bool hasValidator,
+      double? minValue,
+      double? maxValue,
+      bool hasHeaders,
+      String csvSeparator,
+      List<String> csvHeaders,
+      String? functionId,
+      List<String> assignedAssetsIds,
+      @DurationOrNullConverter() Duration? maxHistorySearch});
+}
+
+/// @nodoc
+class __$$SensorInputImplCopyWithImpl<$Res>
+    extends _$SensorInputCopyWithImpl<$Res, _$SensorInputImpl>
+    implements _$$SensorInputImplCopyWith<$Res> {
+  __$$SensorInputImplCopyWithImpl(
+      _$SensorInputImpl _value, $Res Function(_$SensorInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SensorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? assetId = freezed,
+    Object? name = null,
+    Object? slug = null,
+    Object? measuringUnit = null,
+    Object? type = null,
+    Object? subtype = null,
+    Object? parameter = null,
+    Object? iterationCycle = null,
+    Object? formula = null,
+    Object? script = null,
+    Object? icon = freezed,
+    Object? contentType = freezed,
+    Object? ranges = null,
+    Object? mask = null,
+    Object? parentId = freezed,
+    Object? isInstant = null,
+    Object? hasValidator = null,
+    Object? minValue = freezed,
+    Object? maxValue = freezed,
+    Object? hasHeaders = null,
+    Object? csvSeparator = null,
+    Object? csvHeaders = null,
+    Object? functionId = freezed,
+    Object? assignedAssetsIds = null,
+    Object? maxHistorySearch = freezed,
+  }) {
+    return _then(_$SensorInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assetId: freezed == assetId
+          ? _value.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      slug: null == slug
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String,
+      measuringUnit: null == measuringUnit
+          ? _value.measuringUnit
+          : measuringUnit // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as SensorType,
+      subtype: null == subtype
+          ? _value.subtype
+          : subtype // ignore: cast_nullable_to_non_nullable
+              as SensorSubType,
+      parameter: null == parameter
+          ? _value.parameter
+          : parameter // ignore: cast_nullable_to_non_nullable
+              as String,
+      iterationCycle: null == iterationCycle
+          ? _value.iterationCycle
+          : iterationCycle // ignore: cast_nullable_to_non_nullable
+              as int,
+      formula: null == formula
+          ? _value.formula
+          : formula // ignore: cast_nullable_to_non_nullable
+              as String,
+      script: null == script
+          ? _value.script
+          : script // ignore: cast_nullable_to_non_nullable
+              as String,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      contentType: freezed == contentType
+          ? _value.contentType
+          : contentType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      ranges: null == ranges
+          ? _value.ranges
+          : ranges // ignore: cast_nullable_to_non_nullable
+              as List<SensorRangeInput>,
+      mask: null == mask
+          ? _value.mask
+          : mask // ignore: cast_nullable_to_non_nullable
+              as List<MaskPointInput>,
+      parentId: freezed == parentId
+          ? _value.parentId
+          : parentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isInstant: null == isInstant
+          ? _value.isInstant
+          : isInstant // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasValidator: null == hasValidator
+          ? _value.hasValidator
+          : hasValidator // ignore: cast_nullable_to_non_nullable
+              as bool,
+      minValue: freezed == minValue
+          ? _value.minValue
+          : minValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      maxValue: freezed == maxValue
+          ? _value.maxValue
+          : maxValue // ignore: cast_nullable_to_non_nullable
+              as double?,
+      hasHeaders: null == hasHeaders
+          ? _value.hasHeaders
+          : hasHeaders // ignore: cast_nullable_to_non_nullable
+              as bool,
+      csvSeparator: null == csvSeparator
+          ? _value.csvSeparator
+          : csvSeparator // ignore: cast_nullable_to_non_nullable
+              as String,
+      csvHeaders: null == csvHeaders
+          ? _value.csvHeaders
+          : csvHeaders // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      functionId: freezed == functionId
+          ? _value.functionId
+          : functionId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      assignedAssetsIds: null == assignedAssetsIds
+          ? _value.assignedAssetsIds
+          : assignedAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      maxHistorySearch: freezed == maxHistorySearch
+          ? _value.maxHistorySearch
           : maxHistorySearch // ignore: cast_nullable_to_non_nullable
               as Duration?,
     ));
@@ -1397,8 +1657,8 @@ class _$SensorInputCopyWithImpl<$Res> implements $SensorInputCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _SensorInput implements SensorInput {
-  _SensorInput(
+class _$SensorInputImpl implements _SensorInput {
+  _$SensorInputImpl(
       {this.id,
       this.assetId,
       this.name = '',
@@ -1425,8 +1685,9 @@ class _SensorInput implements SensorInput {
       this.functionId,
       this.assignedAssetsIds = const [],
       @DurationOrNullConverter() this.maxHistorySearch});
-  factory _SensorInput.fromJson(Map<String, dynamic> json) =>
-      _$SensorInputFromJson(json);
+
+  factory _$SensorInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SensorInputImplFromJson(json);
 
   @override
   String? id;
@@ -1502,252 +1763,194 @@ class _SensorInput implements SensorInput {
   @DurationOrNullConverter()
   Duration? maxHistorySearch;
 
-  /// Create a copy of SensorInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SensorInputCopyWith<_SensorInput> get copyWith =>
-      __$SensorInputCopyWithImpl<_SensorInput>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SensorInputToJson(
-      this,
-    );
-  }
-
   @override
   String toString() {
     return 'SensorInput(id: $id, assetId: $assetId, name: $name, slug: $slug, measuringUnit: $measuringUnit, type: $type, subtype: $subtype, parameter: $parameter, iterationCycle: $iterationCycle, formula: $formula, script: $script, icon: $icon, contentType: $contentType, ranges: $ranges, mask: $mask, parentId: $parentId, isInstant: $isInstant, hasValidator: $hasValidator, minValue: $minValue, maxValue: $maxValue, hasHeaders: $hasHeaders, csvSeparator: $csvSeparator, csvHeaders: $csvHeaders, functionId: $functionId, assignedAssetsIds: $assignedAssetsIds, maxHistorySearch: $maxHistorySearch)';
   }
-}
 
-/// @nodoc
-abstract mixin class _$SensorInputCopyWith<$Res>
-    implements $SensorInputCopyWith<$Res> {
-  factory _$SensorInputCopyWith(
-          _SensorInput value, $Res Function(_SensorInput) _then) =
-      __$SensorInputCopyWithImpl;
+  /// Create a copy of SensorInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @useResult
-  $Res call(
-      {String? id,
-      String? assetId,
-      String name,
-      String slug,
-      String measuringUnit,
-      @SensorTypeConverter() SensorType type,
-      @SensorSubTypeConverter() SensorSubType subtype,
-      String parameter,
-      int iterationCycle,
-      String formula,
-      String script,
-      @IconOrNullConverter() LayrzIcon? icon,
-      String? contentType,
-      List<SensorRangeInput> ranges,
-      List<MaskPointInput> mask,
-      String? parentId,
-      bool isInstant,
-      bool hasValidator,
-      double? minValue,
-      double? maxValue,
-      bool hasHeaders,
-      String csvSeparator,
-      List<String> csvHeaders,
-      String? functionId,
-      List<String> assignedAssetsIds,
-      @DurationOrNullConverter() Duration? maxHistorySearch});
+  @pragma('vm:prefer-inline')
+  _$$SensorInputImplCopyWith<_$SensorInputImpl> get copyWith =>
+      __$$SensorInputImplCopyWithImpl<_$SensorInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SensorInputImplToJson(
+      this,
+    );
+  }
 }
 
-/// @nodoc
-class __$SensorInputCopyWithImpl<$Res> implements _$SensorInputCopyWith<$Res> {
-  __$SensorInputCopyWithImpl(this._self, this._then);
+abstract class _SensorInput implements SensorInput {
+  factory _SensorInput(
+          {String? id,
+          String? assetId,
+          String name,
+          String slug,
+          String measuringUnit,
+          @SensorTypeConverter() SensorType type,
+          @SensorSubTypeConverter() SensorSubType subtype,
+          String parameter,
+          int iterationCycle,
+          String formula,
+          String script,
+          @IconOrNullConverter() LayrzIcon? icon,
+          String? contentType,
+          List<SensorRangeInput> ranges,
+          List<MaskPointInput> mask,
+          String? parentId,
+          bool isInstant,
+          bool hasValidator,
+          double? minValue,
+          double? maxValue,
+          bool hasHeaders,
+          String csvSeparator,
+          List<String> csvHeaders,
+          String? functionId,
+          List<String> assignedAssetsIds,
+          @DurationOrNullConverter() Duration? maxHistorySearch}) =
+      _$SensorInputImpl;
 
-  final _SensorInput _self;
-  final $Res Function(_SensorInput) _then;
+  factory _SensorInput.fromJson(Map<String, dynamic> json) =
+      _$SensorInputImpl.fromJson;
+
+  @override
+  String? get id;
+  set id(String? value);
+  @override
+  String? get assetId;
+  set assetId(String? value);
+  @override
+  String get name;
+  set name(String value);
+  @override
+  String get slug;
+  set slug(String value);
+  @override
+  String get measuringUnit;
+  set measuringUnit(String value);
+  @override
+  @SensorTypeConverter()
+  SensorType get type;
+  @SensorTypeConverter()
+  set type(SensorType value);
+  @override
+  @SensorSubTypeConverter()
+  SensorSubType get subtype;
+  @SensorSubTypeConverter()
+  set subtype(SensorSubType value);
+  @override
+  String get parameter;
+  set parameter(String value);
+  @override
+  int get iterationCycle;
+  set iterationCycle(int value);
+  @override
+  String get formula;
+  set formula(String value);
+  @override
+  String get script;
+  set script(String value);
+  @override
+  @IconOrNullConverter()
+  LayrzIcon? get icon;
+  @IconOrNullConverter()
+  set icon(LayrzIcon? value);
+  @override
+  String? get contentType;
+  set contentType(String? value);
+  @override
+  List<SensorRangeInput> get ranges;
+  set ranges(List<SensorRangeInput> value);
+  @override
+  List<MaskPointInput> get mask;
+  set mask(List<MaskPointInput> value);
+  @override
+  String? get parentId;
+  set parentId(String? value);
+  @override
+  bool get isInstant;
+  set isInstant(bool value);
+  @override
+  bool get hasValidator;
+  set hasValidator(bool value);
+  @override
+  double? get minValue;
+  set minValue(double? value);
+  @override
+  double? get maxValue;
+  set maxValue(double? value);
+  @override
+  bool get hasHeaders;
+  set hasHeaders(bool value);
+  @override
+  String get csvSeparator;
+  set csvSeparator(String value);
+  @override
+  List<String> get csvHeaders;
+  set csvHeaders(List<String> value);
+  @override
+  String? get functionId;
+  set functionId(String? value);
+  @override
+  List<String> get assignedAssetsIds;
+  set assignedAssetsIds(List<String> value);
+  @override
+  @DurationOrNullConverter()
+  Duration? get maxHistorySearch;
+  @DurationOrNullConverter()
+  set maxHistorySearch(Duration? value);
 
   /// Create a copy of SensorInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = freezed,
-    Object? assetId = freezed,
-    Object? name = null,
-    Object? slug = null,
-    Object? measuringUnit = null,
-    Object? type = null,
-    Object? subtype = null,
-    Object? parameter = null,
-    Object? iterationCycle = null,
-    Object? formula = null,
-    Object? script = null,
-    Object? icon = freezed,
-    Object? contentType = freezed,
-    Object? ranges = null,
-    Object? mask = null,
-    Object? parentId = freezed,
-    Object? isInstant = null,
-    Object? hasValidator = null,
-    Object? minValue = freezed,
-    Object? maxValue = freezed,
-    Object? hasHeaders = null,
-    Object? csvSeparator = null,
-    Object? csvHeaders = null,
-    Object? functionId = freezed,
-    Object? assignedAssetsIds = null,
-    Object? maxHistorySearch = freezed,
-  }) {
-    return _then(_SensorInput(
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assetId: freezed == assetId
-          ? _self.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      slug: null == slug
-          ? _self.slug
-          : slug // ignore: cast_nullable_to_non_nullable
-              as String,
-      measuringUnit: null == measuringUnit
-          ? _self.measuringUnit
-          : measuringUnit // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as SensorType,
-      subtype: null == subtype
-          ? _self.subtype
-          : subtype // ignore: cast_nullable_to_non_nullable
-              as SensorSubType,
-      parameter: null == parameter
-          ? _self.parameter
-          : parameter // ignore: cast_nullable_to_non_nullable
-              as String,
-      iterationCycle: null == iterationCycle
-          ? _self.iterationCycle
-          : iterationCycle // ignore: cast_nullable_to_non_nullable
-              as int,
-      formula: null == formula
-          ? _self.formula
-          : formula // ignore: cast_nullable_to_non_nullable
-              as String,
-      script: null == script
-          ? _self.script
-          : script // ignore: cast_nullable_to_non_nullable
-              as String,
-      icon: freezed == icon
-          ? _self.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as LayrzIcon?,
-      contentType: freezed == contentType
-          ? _self.contentType
-          : contentType // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ranges: null == ranges
-          ? _self.ranges
-          : ranges // ignore: cast_nullable_to_non_nullable
-              as List<SensorRangeInput>,
-      mask: null == mask
-          ? _self.mask
-          : mask // ignore: cast_nullable_to_non_nullable
-              as List<MaskPointInput>,
-      parentId: freezed == parentId
-          ? _self.parentId
-          : parentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isInstant: null == isInstant
-          ? _self.isInstant
-          : isInstant // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasValidator: null == hasValidator
-          ? _self.hasValidator
-          : hasValidator // ignore: cast_nullable_to_non_nullable
-              as bool,
-      minValue: freezed == minValue
-          ? _self.minValue
-          : minValue // ignore: cast_nullable_to_non_nullable
-              as double?,
-      maxValue: freezed == maxValue
-          ? _self.maxValue
-          : maxValue // ignore: cast_nullable_to_non_nullable
-              as double?,
-      hasHeaders: null == hasHeaders
-          ? _self.hasHeaders
-          : hasHeaders // ignore: cast_nullable_to_non_nullable
-              as bool,
-      csvSeparator: null == csvSeparator
-          ? _self.csvSeparator
-          : csvSeparator // ignore: cast_nullable_to_non_nullable
-              as String,
-      csvHeaders: null == csvHeaders
-          ? _self.csvHeaders
-          : csvHeaders // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      functionId: freezed == functionId
-          ? _self.functionId
-          : functionId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      assignedAssetsIds: null == assignedAssetsIds
-          ? _self.assignedAssetsIds
-          : assignedAssetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      maxHistorySearch: freezed == maxHistorySearch
-          ? _self.maxHistorySearch
-          : maxHistorySearch // ignore: cast_nullable_to_non_nullable
-              as Duration?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SensorInputImplCopyWith<_$SensorInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SensorRangeInput _$SensorRangeInputFromJson(Map<String, dynamic> json) {
+  return _SensorRangeInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$SensorRangeInput {
-  double get x;
-  set x(double value);
-  double get y;
-  set y(double value);
+  double get x => throw _privateConstructorUsedError;
+  set x(double value) => throw _privateConstructorUsedError;
+  double get y => throw _privateConstructorUsedError;
+  set y(double value) => throw _privateConstructorUsedError;
+
+  /// Serializes this SensorRangeInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of SensorRangeInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $SensorRangeInputCopyWith<SensorRangeInput> get copyWith =>
-      _$SensorRangeInputCopyWithImpl<SensorRangeInput>(
-          this as SensorRangeInput, _$identity);
-
-  /// Serializes this SensorRangeInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  String toString() {
-    return 'SensorRangeInput(x: $x, y: $y)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SensorRangeInputCopyWith<$Res> {
+abstract class $SensorRangeInputCopyWith<$Res> {
   factory $SensorRangeInputCopyWith(
-          SensorRangeInput value, $Res Function(SensorRangeInput) _then) =
-      _$SensorRangeInputCopyWithImpl;
+          SensorRangeInput value, $Res Function(SensorRangeInput) then) =
+      _$SensorRangeInputCopyWithImpl<$Res, SensorRangeInput>;
   @useResult
   $Res call({double x, double y});
 }
 
 /// @nodoc
-class _$SensorRangeInputCopyWithImpl<$Res>
+class _$SensorRangeInputCopyWithImpl<$Res, $Val extends SensorRangeInput>
     implements $SensorRangeInputCopyWith<$Res> {
-  _$SensorRangeInputCopyWithImpl(this._self, this._then);
+  _$SensorRangeInputCopyWithImpl(this._value, this._then);
 
-  final SensorRangeInput _self;
-  final $Res Function(SensorRangeInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of SensorRangeInput
   /// with the given fields replaced by the non-null parameter values.
@@ -1757,13 +1960,53 @@ class _$SensorRangeInputCopyWithImpl<$Res>
     Object? x = null,
     Object? y = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       x: null == x
-          ? _self.x
+          ? _value.x
           : x // ignore: cast_nullable_to_non_nullable
               as double,
       y: null == y
-          ? _self.y
+          ? _value.y
+          : y // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SensorRangeInputImplCopyWith<$Res>
+    implements $SensorRangeInputCopyWith<$Res> {
+  factory _$$SensorRangeInputImplCopyWith(_$SensorRangeInputImpl value,
+          $Res Function(_$SensorRangeInputImpl) then) =
+      __$$SensorRangeInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double x, double y});
+}
+
+/// @nodoc
+class __$$SensorRangeInputImplCopyWithImpl<$Res>
+    extends _$SensorRangeInputCopyWithImpl<$Res, _$SensorRangeInputImpl>
+    implements _$$SensorRangeInputImplCopyWith<$Res> {
+  __$$SensorRangeInputImplCopyWithImpl(_$SensorRangeInputImpl _value,
+      $Res Function(_$SensorRangeInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SensorRangeInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? x = null,
+    Object? y = null,
+  }) {
+    return _then(_$SensorRangeInputImpl(
+      x: null == x
+          ? _value.x
+          : x // ignore: cast_nullable_to_non_nullable
+              as double,
+      y: null == y
+          ? _value.y
           : y // ignore: cast_nullable_to_non_nullable
               as double,
     ));
@@ -1772,10 +2015,11 @@ class _$SensorRangeInputCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _SensorRangeInput implements SensorRangeInput {
-  _SensorRangeInput({this.x = 0.0, this.y = 0.0});
-  factory _SensorRangeInput.fromJson(Map<String, dynamic> json) =>
-      _$SensorRangeInputFromJson(json);
+class _$SensorRangeInputImpl implements _SensorRangeInput {
+  _$SensorRangeInputImpl({this.x = 0.0, this.y = 0.0});
+
+  factory _$SensorRangeInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SensorRangeInputImplFromJson(json);
 
   @override
   @JsonKey()
@@ -1784,119 +2028,89 @@ class _SensorRangeInput implements SensorRangeInput {
   @JsonKey()
   double y;
 
-  /// Create a copy of SensorRangeInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SensorRangeInputCopyWith<_SensorRangeInput> get copyWith =>
-      __$SensorRangeInputCopyWithImpl<_SensorRangeInput>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SensorRangeInputToJson(
-      this,
-    );
-  }
-
   @override
   String toString() {
     return 'SensorRangeInput(x: $x, y: $y)';
   }
-}
 
-/// @nodoc
-abstract mixin class _$SensorRangeInputCopyWith<$Res>
-    implements $SensorRangeInputCopyWith<$Res> {
-  factory _$SensorRangeInputCopyWith(
-          _SensorRangeInput value, $Res Function(_SensorRangeInput) _then) =
-      __$SensorRangeInputCopyWithImpl;
+  /// Create a copy of SensorRangeInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @useResult
-  $Res call({double x, double y});
+  @pragma('vm:prefer-inline')
+  _$$SensorRangeInputImplCopyWith<_$SensorRangeInputImpl> get copyWith =>
+      __$$SensorRangeInputImplCopyWithImpl<_$SensorRangeInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SensorRangeInputImplToJson(
+      this,
+    );
+  }
 }
 
-/// @nodoc
-class __$SensorRangeInputCopyWithImpl<$Res>
-    implements _$SensorRangeInputCopyWith<$Res> {
-  __$SensorRangeInputCopyWithImpl(this._self, this._then);
+abstract class _SensorRangeInput implements SensorRangeInput {
+  factory _SensorRangeInput({double x, double y}) = _$SensorRangeInputImpl;
 
-  final _SensorRangeInput _self;
-  final $Res Function(_SensorRangeInput) _then;
+  factory _SensorRangeInput.fromJson(Map<String, dynamic> json) =
+      _$SensorRangeInputImpl.fromJson;
+
+  @override
+  double get x;
+  set x(double value);
+  @override
+  double get y;
+  set y(double value);
 
   /// Create a copy of SensorRangeInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? x = null,
-    Object? y = null,
-  }) {
-    return _then(_SensorRangeInput(
-      x: null == x
-          ? _self.x
-          : x // ignore: cast_nullable_to_non_nullable
-              as double,
-      y: null == y
-          ? _self.y
-          : y // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SensorRangeInputImplCopyWith<_$SensorRangeInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+SensorRange _$SensorRangeFromJson(Map<String, dynamic> json) {
+  return _SensorRange.fromJson(json);
 }
 
 /// @nodoc
 mixin _$SensorRange {
   /// [x] means the input value of the sensor.
-  double get x;
+  double get x => throw _privateConstructorUsedError;
 
   /// [y] means the output value of the sensor.
-  double get y;
+  double get y => throw _privateConstructorUsedError;
+
+  /// Serializes this SensorRange to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of SensorRange
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $SensorRangeCopyWith<SensorRange> get copyWith =>
-      _$SensorRangeCopyWithImpl<SensorRange>(this as SensorRange, _$identity);
-
-  /// Serializes this SensorRange to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is SensorRange &&
-            (identical(other.x, x) || other.x == x) &&
-            (identical(other.y, y) || other.y == y));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, x, y);
-
-  @override
-  String toString() {
-    return 'SensorRange(x: $x, y: $y)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $SensorRangeCopyWith<$Res> {
+abstract class $SensorRangeCopyWith<$Res> {
   factory $SensorRangeCopyWith(
-          SensorRange value, $Res Function(SensorRange) _then) =
-      _$SensorRangeCopyWithImpl;
+          SensorRange value, $Res Function(SensorRange) then) =
+      _$SensorRangeCopyWithImpl<$Res, SensorRange>;
   @useResult
   $Res call({double x, double y});
 }
 
 /// @nodoc
-class _$SensorRangeCopyWithImpl<$Res> implements $SensorRangeCopyWith<$Res> {
-  _$SensorRangeCopyWithImpl(this._self, this._then);
+class _$SensorRangeCopyWithImpl<$Res, $Val extends SensorRange>
+    implements $SensorRangeCopyWith<$Res> {
+  _$SensorRangeCopyWithImpl(this._value, this._then);
 
-  final SensorRange _self;
-  final $Res Function(SensorRange) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of SensorRange
   /// with the given fields replaced by the non-null parameter values.
@@ -1906,13 +2120,53 @@ class _$SensorRangeCopyWithImpl<$Res> implements $SensorRangeCopyWith<$Res> {
     Object? x = null,
     Object? y = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       x: null == x
-          ? _self.x
+          ? _value.x
           : x // ignore: cast_nullable_to_non_nullable
               as double,
       y: null == y
-          ? _self.y
+          ? _value.y
+          : y // ignore: cast_nullable_to_non_nullable
+              as double,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$SensorRangeImplCopyWith<$Res>
+    implements $SensorRangeCopyWith<$Res> {
+  factory _$$SensorRangeImplCopyWith(
+          _$SensorRangeImpl value, $Res Function(_$SensorRangeImpl) then) =
+      __$$SensorRangeImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({double x, double y});
+}
+
+/// @nodoc
+class __$$SensorRangeImplCopyWithImpl<$Res>
+    extends _$SensorRangeCopyWithImpl<$Res, _$SensorRangeImpl>
+    implements _$$SensorRangeImplCopyWith<$Res> {
+  __$$SensorRangeImplCopyWithImpl(
+      _$SensorRangeImpl _value, $Res Function(_$SensorRangeImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of SensorRange
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? x = null,
+    Object? y = null,
+  }) {
+    return _then(_$SensorRangeImpl(
+      x: null == x
+          ? _value.x
+          : x // ignore: cast_nullable_to_non_nullable
+              as double,
+      y: null == y
+          ? _value.y
           : y // ignore: cast_nullable_to_non_nullable
               as double,
     ));
@@ -1921,10 +2175,11 @@ class _$SensorRangeCopyWithImpl<$Res> implements $SensorRangeCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _SensorRange implements SensorRange {
-  const _SensorRange({required this.x, required this.y});
-  factory _SensorRange.fromJson(Map<String, dynamic> json) =>
-      _$SensorRangeFromJson(json);
+class _$SensorRangeImpl implements _SensorRange {
+  const _$SensorRangeImpl({required this.x, required this.y});
+
+  factory _$SensorRangeImpl.fromJson(Map<String, dynamic> json) =>
+      _$$SensorRangeImplFromJson(json);
 
   /// [x] means the input value of the sensor.
   @override
@@ -1934,26 +2189,16 @@ class _SensorRange implements SensorRange {
   @override
   final double y;
 
-  /// Create a copy of SensorRange
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$SensorRangeCopyWith<_SensorRange> get copyWith =>
-      __$SensorRangeCopyWithImpl<_SensorRange>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$SensorRangeToJson(
-      this,
-    );
+  String toString() {
+    return 'SensorRange(x: $x, y: $y)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SensorRange &&
+            other is _$SensorRangeImpl &&
             (identical(other.x, x) || other.x == x) &&
             (identical(other.y, y) || other.y == y));
   }
@@ -1962,103 +2207,80 @@ class _SensorRange implements SensorRange {
   @override
   int get hashCode => Object.hash(runtimeType, x, y);
 
+  /// Create a copy of SensorRange
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'SensorRange(x: $x, y: $y)';
+  @pragma('vm:prefer-inline')
+  _$$SensorRangeImplCopyWith<_$SensorRangeImpl> get copyWith =>
+      __$$SensorRangeImplCopyWithImpl<_$SensorRangeImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$SensorRangeImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$SensorRangeCopyWith<$Res>
-    implements $SensorRangeCopyWith<$Res> {
-  factory _$SensorRangeCopyWith(
-          _SensorRange value, $Res Function(_SensorRange) _then) =
-      __$SensorRangeCopyWithImpl;
+abstract class _SensorRange implements SensorRange {
+  const factory _SensorRange(
+      {required final double x, required final double y}) = _$SensorRangeImpl;
+
+  factory _SensorRange.fromJson(Map<String, dynamic> json) =
+      _$SensorRangeImpl.fromJson;
+
+  /// [x] means the input value of the sensor.
   @override
-  @useResult
-  $Res call({double x, double y});
-}
+  double get x;
 
-/// @nodoc
-class __$SensorRangeCopyWithImpl<$Res> implements _$SensorRangeCopyWith<$Res> {
-  __$SensorRangeCopyWithImpl(this._self, this._then);
-
-  final _SensorRange _self;
-  final $Res Function(_SensorRange) _then;
+  /// [y] means the output value of the sensor.
+  @override
+  double get y;
 
   /// Create a copy of SensorRange
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? x = null,
-    Object? y = null,
-  }) {
-    return _then(_SensorRange(
-      x: null == x
-          ? _self.x
-          : x // ignore: cast_nullable_to_non_nullable
-              as double,
-      y: null == y
-          ? _self.y
-          : y // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SensorRangeImplCopyWith<_$SensorRangeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+MaskPoint _$MaskPointFromJson(Map<String, dynamic> json) {
+  return _MaskPoint.fromJson(json);
 }
 
 /// @nodoc
 mixin _$MaskPoint {
   /// [color] of the mask point, will convert the color ignoring the dark/light theme setting.
   @ColorOrNullConverter()
-  Color? get color;
+  Color? get color => throw _privateConstructorUsedError;
 
   /// [text] of the mask point, will replace the value of the mask point when is not null
-  String? get text;
+  String? get text => throw _privateConstructorUsedError;
 
   /// [value] of the mask point.
-  String get value;
+  String get value => throw _privateConstructorUsedError;
 
   /// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
   /// will convert to LayrzIcon entity.
   @IconOrNullConverter()
-  LayrzIcon? get icon;
+  LayrzIcon? get icon => throw _privateConstructorUsedError;
+
+  /// Serializes this MaskPoint to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of MaskPoint
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $MaskPointCopyWith<MaskPoint> get copyWith =>
-      _$MaskPointCopyWithImpl<MaskPoint>(this as MaskPoint, _$identity);
-
-  /// Serializes this MaskPoint to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is MaskPoint &&
-            (identical(other.color, color) || other.color == color) &&
-            (identical(other.text, text) || other.text == text) &&
-            (identical(other.value, value) || other.value == value) &&
-            (identical(other.icon, icon) || other.icon == icon));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, color, text, value, icon);
-
-  @override
-  String toString() {
-    return 'MaskPoint(color: $color, text: $text, value: $value, icon: $icon)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $MaskPointCopyWith<$Res> {
-  factory $MaskPointCopyWith(MaskPoint value, $Res Function(MaskPoint) _then) =
-      _$MaskPointCopyWithImpl;
+abstract class $MaskPointCopyWith<$Res> {
+  factory $MaskPointCopyWith(MaskPoint value, $Res Function(MaskPoint) then) =
+      _$MaskPointCopyWithImpl<$Res, MaskPoint>;
   @useResult
   $Res call(
       {@ColorOrNullConverter() Color? color,
@@ -2068,11 +2290,14 @@ abstract mixin class $MaskPointCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MaskPointCopyWithImpl<$Res> implements $MaskPointCopyWith<$Res> {
-  _$MaskPointCopyWithImpl(this._self, this._then);
+class _$MaskPointCopyWithImpl<$Res, $Val extends MaskPoint>
+    implements $MaskPointCopyWith<$Res> {
+  _$MaskPointCopyWithImpl(this._value, this._then);
 
-  final MaskPoint _self;
-  final $Res Function(MaskPoint) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of MaskPoint
   /// with the given fields replaced by the non-null parameter values.
@@ -2084,21 +2309,75 @@ class _$MaskPointCopyWithImpl<$Res> implements $MaskPointCopyWith<$Res> {
     Object? value = null,
     Object? icon = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       color: freezed == color
-          ? _self.color
+          ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color?,
       text: freezed == text
-          ? _self.text
+          ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
       value: null == value
-          ? _self.value
+          ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
       icon: freezed == icon
-          ? _self.icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MaskPointImplCopyWith<$Res>
+    implements $MaskPointCopyWith<$Res> {
+  factory _$$MaskPointImplCopyWith(
+          _$MaskPointImpl value, $Res Function(_$MaskPointImpl) then) =
+      __$$MaskPointImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@ColorOrNullConverter() Color? color,
+      String? text,
+      String value,
+      @IconOrNullConverter() LayrzIcon? icon});
+}
+
+/// @nodoc
+class __$$MaskPointImplCopyWithImpl<$Res>
+    extends _$MaskPointCopyWithImpl<$Res, _$MaskPointImpl>
+    implements _$$MaskPointImplCopyWith<$Res> {
+  __$$MaskPointImplCopyWithImpl(
+      _$MaskPointImpl _value, $Res Function(_$MaskPointImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MaskPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? color = freezed,
+    Object? text = freezed,
+    Object? value = null,
+    Object? icon = freezed,
+  }) {
+    return _then(_$MaskPointImpl(
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      text: freezed == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      value: null == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+      icon: freezed == icon
+          ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as LayrzIcon?,
     ));
@@ -2107,14 +2386,15 @@ class _$MaskPointCopyWithImpl<$Res> implements $MaskPointCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _MaskPoint implements MaskPoint {
-  const _MaskPoint(
+class _$MaskPointImpl implements _MaskPoint {
+  const _$MaskPointImpl(
       {@ColorOrNullConverter() this.color,
       this.text,
       required this.value,
       @IconOrNullConverter() this.icon});
-  factory _MaskPoint.fromJson(Map<String, dynamic> json) =>
-      _$MaskPointFromJson(json);
+
+  factory _$MaskPointImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MaskPointImplFromJson(json);
 
   /// [color] of the mask point, will convert the color ignoring the dark/light theme setting.
   @override
@@ -2135,26 +2415,16 @@ class _MaskPoint implements MaskPoint {
   @IconOrNullConverter()
   final LayrzIcon? icon;
 
-  /// Create a copy of MaskPoint
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$MaskPointCopyWith<_MaskPoint> get copyWith =>
-      __$MaskPointCopyWithImpl<_MaskPoint>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$MaskPointToJson(
-      this,
-    );
+  String toString() {
+    return 'MaskPoint(color: $color, text: $text, value: $value, icon: $icon)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _MaskPoint &&
+            other is _$MaskPointImpl &&
             (identical(other.color, color) || other.color == color) &&
             (identical(other.text, text) || other.text == text) &&
             (identical(other.value, value) || other.value == value) &&
@@ -2165,102 +2435,93 @@ class _MaskPoint implements MaskPoint {
   @override
   int get hashCode => Object.hash(runtimeType, color, text, value, icon);
 
+  /// Create a copy of MaskPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'MaskPoint(color: $color, text: $text, value: $value, icon: $icon)';
+  @pragma('vm:prefer-inline')
+  _$$MaskPointImplCopyWith<_$MaskPointImpl> get copyWith =>
+      __$$MaskPointImplCopyWithImpl<_$MaskPointImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MaskPointImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$MaskPointCopyWith<$Res>
-    implements $MaskPointCopyWith<$Res> {
-  factory _$MaskPointCopyWith(
-          _MaskPoint value, $Res Function(_MaskPoint) _then) =
-      __$MaskPointCopyWithImpl;
+abstract class _MaskPoint implements MaskPoint {
+  const factory _MaskPoint(
+      {@ColorOrNullConverter() final Color? color,
+      final String? text,
+      required final String value,
+      @IconOrNullConverter() final LayrzIcon? icon}) = _$MaskPointImpl;
+
+  factory _MaskPoint.fromJson(Map<String, dynamic> json) =
+      _$MaskPointImpl.fromJson;
+
+  /// [color] of the mask point, will convert the color ignoring the dark/light theme setting.
   @override
-  @useResult
-  $Res call(
-      {@ColorOrNullConverter() Color? color,
-      String? text,
-      String value,
-      @IconOrNullConverter() LayrzIcon? icon});
-}
+  @ColorOrNullConverter()
+  Color? get color;
 
-/// @nodoc
-class __$MaskPointCopyWithImpl<$Res> implements _$MaskPointCopyWith<$Res> {
-  __$MaskPointCopyWithImpl(this._self, this._then);
+  /// [text] of the mask point, will replace the value of the mask point when is not null
+  @override
+  String? get text;
 
-  final _MaskPoint _self;
-  final $Res Function(_MaskPoint) _then;
+  /// [value] of the mask point.
+  @override
+  String get value;
+
+  /// [icon] of the mask point. To send it to API, will convert to javascript codename, but from Flutter execution
+  /// will convert to LayrzIcon entity.
+  @override
+  @IconOrNullConverter()
+  LayrzIcon? get icon;
 
   /// Create a copy of MaskPoint
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? color = freezed,
-    Object? text = freezed,
-    Object? value = null,
-    Object? icon = freezed,
-  }) {
-    return _then(_MaskPoint(
-      color: freezed == color
-          ? _self.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      text: freezed == text
-          ? _self.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: null == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-      icon: freezed == icon
-          ? _self.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as LayrzIcon?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MaskPointImplCopyWith<_$MaskPointImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+MaskPointInput _$MaskPointInputFromJson(Map<String, dynamic> json) {
+  return _MaskPointInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$MaskPointInput {
   @ColorOrNullConverter()
-  Color? get color;
+  Color? get color => throw _privateConstructorUsedError;
   @ColorOrNullConverter()
-  set color(Color? value);
-  String? get text;
-  set text(String? value);
-  String? get value;
-  set value(String? value);
+  set color(Color? value) => throw _privateConstructorUsedError;
+  String? get text => throw _privateConstructorUsedError;
+  set text(String? value) => throw _privateConstructorUsedError;
+  String? get value => throw _privateConstructorUsedError;
+  set value(String? value) => throw _privateConstructorUsedError;
   @IconOrNullConverter()
-  LayrzIcon? get icon;
+  LayrzIcon? get icon => throw _privateConstructorUsedError;
   @IconOrNullConverter()
-  set icon(LayrzIcon? value);
+  set icon(LayrzIcon? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this MaskPointInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of MaskPointInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $MaskPointInputCopyWith<MaskPointInput> get copyWith =>
-      _$MaskPointInputCopyWithImpl<MaskPointInput>(
-          this as MaskPointInput, _$identity);
-
-  /// Serializes this MaskPointInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  String toString() {
-    return 'MaskPointInput(color: $color, text: $text, value: $value, icon: $icon)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $MaskPointInputCopyWith<$Res> {
+abstract class $MaskPointInputCopyWith<$Res> {
   factory $MaskPointInputCopyWith(
-          MaskPointInput value, $Res Function(MaskPointInput) _then) =
-      _$MaskPointInputCopyWithImpl;
+          MaskPointInput value, $Res Function(MaskPointInput) then) =
+      _$MaskPointInputCopyWithImpl<$Res, MaskPointInput>;
   @useResult
   $Res call(
       {@ColorOrNullConverter() Color? color,
@@ -2270,12 +2531,14 @@ abstract mixin class $MaskPointInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MaskPointInputCopyWithImpl<$Res>
+class _$MaskPointInputCopyWithImpl<$Res, $Val extends MaskPointInput>
     implements $MaskPointInputCopyWith<$Res> {
-  _$MaskPointInputCopyWithImpl(this._self, this._then);
+  _$MaskPointInputCopyWithImpl(this._value, this._then);
 
-  final MaskPointInput _self;
-  final $Res Function(MaskPointInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of MaskPointInput
   /// with the given fields replaced by the non-null parameter values.
@@ -2287,21 +2550,75 @@ class _$MaskPointInputCopyWithImpl<$Res>
     Object? value = freezed,
     Object? icon = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       color: freezed == color
-          ? _self.color
+          ? _value.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color?,
       text: freezed == text
-          ? _self.text
+          ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String?,
       value: freezed == value
-          ? _self.value
+          ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String?,
       icon: freezed == icon
-          ? _self.icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MaskPointInputImplCopyWith<$Res>
+    implements $MaskPointInputCopyWith<$Res> {
+  factory _$$MaskPointInputImplCopyWith(_$MaskPointInputImpl value,
+          $Res Function(_$MaskPointInputImpl) then) =
+      __$$MaskPointInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@ColorOrNullConverter() Color? color,
+      String? text,
+      String? value,
+      @IconOrNullConverter() LayrzIcon? icon});
+}
+
+/// @nodoc
+class __$$MaskPointInputImplCopyWithImpl<$Res>
+    extends _$MaskPointInputCopyWithImpl<$Res, _$MaskPointInputImpl>
+    implements _$$MaskPointInputImplCopyWith<$Res> {
+  __$$MaskPointInputImplCopyWithImpl(
+      _$MaskPointInputImpl _value, $Res Function(_$MaskPointInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MaskPointInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? color = freezed,
+    Object? text = freezed,
+    Object? value = freezed,
+    Object? icon = freezed,
+  }) {
+    return _then(_$MaskPointInputImpl(
+      color: freezed == color
+          ? _value.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      text: freezed == text
+          ? _value.text
+          : text // ignore: cast_nullable_to_non_nullable
+              as String?,
+      value: freezed == value
+          ? _value.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+      icon: freezed == icon
+          ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as LayrzIcon?,
     ));
@@ -2310,14 +2627,15 @@ class _$MaskPointInputCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _MaskPointInput implements MaskPointInput {
-  _MaskPointInput(
+class _$MaskPointInputImpl implements _MaskPointInput {
+  _$MaskPointInputImpl(
       {@ColorOrNullConverter() this.color,
       this.text,
       this.value,
       @IconOrNullConverter() this.icon});
-  factory _MaskPointInput.fromJson(Map<String, dynamic> json) =>
-      _$MaskPointInputFromJson(json);
+
+  factory _$MaskPointInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MaskPointInputImplFromJson(json);
 
   @override
   @ColorOrNullConverter()
@@ -2330,79 +2648,59 @@ class _MaskPointInput implements MaskPointInput {
   @IconOrNullConverter()
   LayrzIcon? icon;
 
-  /// Create a copy of MaskPointInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$MaskPointInputCopyWith<_MaskPointInput> get copyWith =>
-      __$MaskPointInputCopyWithImpl<_MaskPointInput>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$MaskPointInputToJson(
-      this,
-    );
-  }
-
   @override
   String toString() {
     return 'MaskPointInput(color: $color, text: $text, value: $value, icon: $icon)';
   }
+
+  /// Create a copy of MaskPointInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MaskPointInputImplCopyWith<_$MaskPointInputImpl> get copyWith =>
+      __$$MaskPointInputImplCopyWithImpl<_$MaskPointInputImpl>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MaskPointInputImplToJson(
+      this,
+    );
+  }
 }
 
-/// @nodoc
-abstract mixin class _$MaskPointInputCopyWith<$Res>
-    implements $MaskPointInputCopyWith<$Res> {
-  factory _$MaskPointInputCopyWith(
-          _MaskPointInput value, $Res Function(_MaskPointInput) _then) =
-      __$MaskPointInputCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
+abstract class _MaskPointInput implements MaskPointInput {
+  factory _MaskPointInput(
       {@ColorOrNullConverter() Color? color,
       String? text,
       String? value,
-      @IconOrNullConverter() LayrzIcon? icon});
-}
+      @IconOrNullConverter() LayrzIcon? icon}) = _$MaskPointInputImpl;
 
-/// @nodoc
-class __$MaskPointInputCopyWithImpl<$Res>
-    implements _$MaskPointInputCopyWith<$Res> {
-  __$MaskPointInputCopyWithImpl(this._self, this._then);
+  factory _MaskPointInput.fromJson(Map<String, dynamic> json) =
+      _$MaskPointInputImpl.fromJson;
 
-  final _MaskPointInput _self;
-  final $Res Function(_MaskPointInput) _then;
+  @override
+  @ColorOrNullConverter()
+  Color? get color;
+  @ColorOrNullConverter()
+  set color(Color? value);
+  @override
+  String? get text;
+  set text(String? value);
+  @override
+  String? get value;
+  set value(String? value);
+  @override
+  @IconOrNullConverter()
+  LayrzIcon? get icon;
+  @IconOrNullConverter()
+  set icon(LayrzIcon? value);
 
   /// Create a copy of MaskPointInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? color = freezed,
-    Object? text = freezed,
-    Object? value = freezed,
-    Object? icon = freezed,
-  }) {
-    return _then(_MaskPointInput(
-      color: freezed == color
-          ? _self.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      text: freezed == text
-          ? _self.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String?,
-      value: freezed == value
-          ? _self.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String?,
-      icon: freezed == icon
-          ? _self.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as LayrzIcon?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MaskPointInputImplCopyWith<_$MaskPointInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-// dart format on

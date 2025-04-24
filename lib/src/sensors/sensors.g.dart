@@ -6,7 +6,7 @@ part of 'sensors.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_Sensor _$SensorFromJson(Map<String, dynamic> json) => _Sensor(
+_$SensorImpl _$$SensorImplFromJson(Map<String, dynamic> json) => _$SensorImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       iterationCycle: (json['iterationCycle'] as num?)?.toInt(),
@@ -62,7 +62,8 @@ _Sensor _$SensorFromJson(Map<String, dynamic> json) => _Sensor(
           .fromJson(json['maxHistorySearch'] as num?),
     );
 
-Map<String, dynamic> _$SensorToJson(_Sensor instance) => <String, dynamic>{
+Map<String, dynamic> _$$SensorImplToJson(_$SensorImpl instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'iterationCycle': instance.iterationCycle,
@@ -100,7 +101,8 @@ Map<String, dynamic> _$SensorToJson(_Sensor instance) => <String, dynamic>{
           const DurationOrNullConverter().toJson(instance.maxHistorySearch),
     };
 
-_SensorInput _$SensorInputFromJson(Map<String, dynamic> json) => _SensorInput(
+_$SensorInputImpl _$$SensorInputImplFromJson(Map<String, dynamic> json) =>
+    _$SensorInputImpl(
       id: json['id'] as String?,
       assetId: json['assetId'] as String?,
       name: json['name'] as String? ?? '',
@@ -146,7 +148,7 @@ _SensorInput _$SensorInputFromJson(Map<String, dynamic> json) => _SensorInput(
           .fromJson(json['maxHistorySearch'] as num?),
     );
 
-Map<String, dynamic> _$SensorInputToJson(_SensorInput instance) =>
+Map<String, dynamic> _$$SensorInputImplToJson(_$SensorInputImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
@@ -177,37 +179,41 @@ Map<String, dynamic> _$SensorInputToJson(_SensorInput instance) =>
           const DurationOrNullConverter().toJson(instance.maxHistorySearch),
     };
 
-_SensorRangeInput _$SensorRangeInputFromJson(Map<String, dynamic> json) =>
-    _SensorRangeInput(
+_$SensorRangeInputImpl _$$SensorRangeInputImplFromJson(
+        Map<String, dynamic> json) =>
+    _$SensorRangeInputImpl(
       x: (json['x'] as num?)?.toDouble() ?? 0.0,
       y: (json['y'] as num?)?.toDouble() ?? 0.0,
     );
 
-Map<String, dynamic> _$SensorRangeInputToJson(_SensorRangeInput instance) =>
+Map<String, dynamic> _$$SensorRangeInputImplToJson(
+        _$SensorRangeInputImpl instance) =>
     <String, dynamic>{
       'x': instance.x,
       'y': instance.y,
     };
 
-_SensorRange _$SensorRangeFromJson(Map<String, dynamic> json) => _SensorRange(
+_$SensorRangeImpl _$$SensorRangeImplFromJson(Map<String, dynamic> json) =>
+    _$SensorRangeImpl(
       x: (json['x'] as num).toDouble(),
       y: (json['y'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$SensorRangeToJson(_SensorRange instance) =>
+Map<String, dynamic> _$$SensorRangeImplToJson(_$SensorRangeImpl instance) =>
     <String, dynamic>{
       'x': instance.x,
       'y': instance.y,
     };
 
-_MaskPoint _$MaskPointFromJson(Map<String, dynamic> json) => _MaskPoint(
+_$MaskPointImpl _$$MaskPointImplFromJson(Map<String, dynamic> json) =>
+    _$MaskPointImpl(
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       text: json['text'] as String?,
       value: json['value'] as String,
       icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
     );
 
-Map<String, dynamic> _$MaskPointToJson(_MaskPoint instance) =>
+Map<String, dynamic> _$$MaskPointImplToJson(_$MaskPointImpl instance) =>
     <String, dynamic>{
       'color': const ColorOrNullConverter().toJson(instance.color),
       'text': instance.text,
@@ -215,15 +221,16 @@ Map<String, dynamic> _$MaskPointToJson(_MaskPoint instance) =>
       'icon': const IconOrNullConverter().toJson(instance.icon),
     };
 
-_MaskPointInput _$MaskPointInputFromJson(Map<String, dynamic> json) =>
-    _MaskPointInput(
+_$MaskPointInputImpl _$$MaskPointInputImplFromJson(Map<String, dynamic> json) =>
+    _$MaskPointInputImpl(
       color: const ColorOrNullConverter().fromJson(json['color'] as String?),
       text: json['text'] as String?,
       value: json['value'] as String?,
       icon: const IconOrNullConverter().fromJson(json['icon'] as String?),
     );
 
-Map<String, dynamic> _$MaskPointInputToJson(_MaskPointInput instance) =>
+Map<String, dynamic> _$$MaskPointInputImplToJson(
+        _$MaskPointInputImpl instance) =>
     <String, dynamic>{
       'color': const ColorOrNullConverter().toJson(instance.color),
       'text': instance.text,

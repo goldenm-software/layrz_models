@@ -6,8 +6,9 @@ part of 'exchange.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ExchangeProtocol _$ExchangeProtocolFromJson(Map<String, dynamic> json) =>
-    _ExchangeProtocol(
+_$ExchangeProtocolImpl _$$ExchangeProtocolImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ExchangeProtocolImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       color: const ColorConverter().fromJson(json['color'] as String),
@@ -28,7 +29,8 @@ _ExchangeProtocol _$ExchangeProtocolFromJson(Map<String, dynamic> json) =>
       requiresGeofences: json['requiresGeofences'] as bool?,
     );
 
-Map<String, dynamic> _$ExchangeProtocolToJson(_ExchangeProtocol instance) =>
+Map<String, dynamic> _$$ExchangeProtocolImplToJson(
+        _$ExchangeProtocolImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
@@ -43,8 +45,9 @@ Map<String, dynamic> _$ExchangeProtocolToJson(_ExchangeProtocol instance) =>
       'requiresGeofences': instance.requiresGeofences,
     };
 
-_ExchangeService _$ExchangeServiceFromJson(Map<String, dynamic> json) =>
-    _ExchangeService(
+_$ExchangeServiceImpl _$$ExchangeServiceImplFromJson(
+        Map<String, dynamic> json) =>
+    _$ExchangeServiceImpl(
       id: json['id'] as String,
       name: json['name'] as String,
       credentials: json['credentials'] as Map<String, dynamic>?,
@@ -81,7 +84,8 @@ _ExchangeService _$ExchangeServiceFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$ExchangeServiceToJson(_ExchangeService instance) =>
+Map<String, dynamic> _$$ExchangeServiceImplToJson(
+        _$ExchangeServiceImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

@@ -1,4 +1,3 @@
-// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -10,118 +9,71 @@ part of 'actions.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+
+Action _$ActionFromJson(Map<String, dynamic> json) {
+  return _Action.fromJson(json);
+}
 
 /// @nodoc
 mixin _$Action {
   /// Is the ID of the action.
-  String get id;
+  String get id => throw _privateConstructorUsedError;
 
   /// Is the name of the action.
-  String get name;
+  String get name => throw _privateConstructorUsedError;
 
   /// Is the type of the action.
   @JsonKey(unknownEnumValue: ActionType.performOperation)
-  ActionType get kind;
+  ActionType get kind => throw _privateConstructorUsedError;
 
   /// Is the subtype of the action.
   @JsonKey(unknownEnumValue: ActionSubtype.unused)
-  ActionSubtype get subkind;
+  ActionSubtype get subkind => throw _privateConstructorUsedError;
 
   /// Is the ID of tag to perform commands.
-  String? get commandId;
+  String? get commandId => throw _privateConstructorUsedError;
 
   /// Is the list of Triggers or triggers' IDs.
-  List<Trigger>? get triggers;
-  List<String>? get triggersIds;
+  List<Trigger>? get triggers => throw _privateConstructorUsedError;
+  List<String>? get triggersIds => throw _privateConstructorUsedError;
 
   /// Is the list of Outbound Servives or outbound services' IDs.
-  List<OutboundService>? get outboundServices;
-  List<String>? get outboundServicesIds;
+  List<OutboundService>? get outboundServices =>
+      throw _privateConstructorUsedError;
+  List<String>? get outboundServicesIds => throw _privateConstructorUsedError;
 
   /// Is the list of Operations or operations' IDs.
-  List<Operation>? get operations;
-  List<String>? get operationsIds;
+  List<Operation>? get operations => throw _privateConstructorUsedError;
+  List<String>? get operationsIds => throw _privateConstructorUsedError;
 
   /// Is a list of granted access to this entity.
-  List<Access>? get access;
+  List<Access>? get access => throw _privateConstructorUsedError;
 
   /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
   /// data need image convertion.
-  bool? get watchImage;
+  bool? get watchImage => throw _privateConstructorUsedError;
 
   /// Is the geofence settings. Only for `ActionType.createGeofence`
-  ActionGeofenceSettings? get geofenceSettings;
+  ActionGeofenceSettings? get geofenceSettings =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this Action to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of Action
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $ActionCopyWith<Action> get copyWith =>
-      _$ActionCopyWithImpl<Action>(this as Action, _$identity);
-
-  /// Serializes this Action to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is Action &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.kind, kind) || other.kind == kind) &&
-            (identical(other.subkind, subkind) || other.subkind == subkind) &&
-            (identical(other.commandId, commandId) ||
-                other.commandId == commandId) &&
-            const DeepCollectionEquality().equals(other.triggers, triggers) &&
-            const DeepCollectionEquality()
-                .equals(other.triggersIds, triggersIds) &&
-            const DeepCollectionEquality()
-                .equals(other.outboundServices, outboundServices) &&
-            const DeepCollectionEquality()
-                .equals(other.outboundServicesIds, outboundServicesIds) &&
-            const DeepCollectionEquality()
-                .equals(other.operations, operations) &&
-            const DeepCollectionEquality()
-                .equals(other.operationsIds, operationsIds) &&
-            const DeepCollectionEquality().equals(other.access, access) &&
-            (identical(other.watchImage, watchImage) ||
-                other.watchImage == watchImage) &&
-            (identical(other.geofenceSettings, geofenceSettings) ||
-                other.geofenceSettings == geofenceSettings));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      kind,
-      subkind,
-      commandId,
-      const DeepCollectionEquality().hash(triggers),
-      const DeepCollectionEquality().hash(triggersIds),
-      const DeepCollectionEquality().hash(outboundServices),
-      const DeepCollectionEquality().hash(outboundServicesIds),
-      const DeepCollectionEquality().hash(operations),
-      const DeepCollectionEquality().hash(operationsIds),
-      const DeepCollectionEquality().hash(access),
-      watchImage,
-      geofenceSettings);
-
-  @override
-  String toString() {
-    return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
-  }
+  $ActionCopyWith<Action> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ActionCopyWith<$Res> {
-  factory $ActionCopyWith(Action value, $Res Function(Action) _then) =
-      _$ActionCopyWithImpl;
+abstract class $ActionCopyWith<$Res> {
+  factory $ActionCopyWith(Action value, $Res Function(Action) then) =
+      _$ActionCopyWithImpl<$Res, Action>;
   @useResult
   $Res call(
       {String id,
@@ -143,11 +95,14 @@ abstract mixin class $ActionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ActionCopyWithImpl<$Res> implements $ActionCopyWith<$Res> {
-  _$ActionCopyWithImpl(this._self, this._then);
+class _$ActionCopyWithImpl<$Res, $Val extends Action>
+    implements $ActionCopyWith<$Res> {
+  _$ActionCopyWithImpl(this._value, this._then);
 
-  final Action _self;
-  final $Res Function(Action) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of Action
   /// with the given fields replaced by the non-null parameter values.
@@ -169,64 +124,64 @@ class _$ActionCopyWithImpl<$Res> implements $ActionCopyWith<$Res> {
     Object? watchImage = freezed,
     Object? geofenceSettings = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: null == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       kind: null == kind
-          ? _self.kind
+          ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
               as ActionType,
       subkind: null == subkind
-          ? _self.subkind
+          ? _value.subkind
           : subkind // ignore: cast_nullable_to_non_nullable
               as ActionSubtype,
       commandId: freezed == commandId
-          ? _self.commandId
+          ? _value.commandId
           : commandId // ignore: cast_nullable_to_non_nullable
               as String?,
       triggers: freezed == triggers
-          ? _self.triggers
+          ? _value.triggers
           : triggers // ignore: cast_nullable_to_non_nullable
               as List<Trigger>?,
       triggersIds: freezed == triggersIds
-          ? _self.triggersIds
+          ? _value.triggersIds
           : triggersIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       outboundServices: freezed == outboundServices
-          ? _self.outboundServices
+          ? _value.outboundServices
           : outboundServices // ignore: cast_nullable_to_non_nullable
               as List<OutboundService>?,
       outboundServicesIds: freezed == outboundServicesIds
-          ? _self.outboundServicesIds
+          ? _value.outboundServicesIds
           : outboundServicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       operations: freezed == operations
-          ? _self.operations
+          ? _value.operations
           : operations // ignore: cast_nullable_to_non_nullable
               as List<Operation>?,
       operationsIds: freezed == operationsIds
-          ? _self.operationsIds
+          ? _value.operationsIds
           : operationsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       access: freezed == access
-          ? _self.access
+          ? _value.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
       watchImage: freezed == watchImage
-          ? _self.watchImage
+          ? _value.watchImage
           : watchImage // ignore: cast_nullable_to_non_nullable
               as bool?,
       geofenceSettings: freezed == geofenceSettings
-          ? _self.geofenceSettings
+          ? _value.geofenceSettings
           : geofenceSettings // ignore: cast_nullable_to_non_nullable
               as ActionGeofenceSettings?,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of Action
@@ -234,21 +189,137 @@ class _$ActionCopyWithImpl<$Res> implements $ActionCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings {
-    if (_self.geofenceSettings == null) {
+    if (_value.geofenceSettings == null) {
       return null;
     }
 
-    return $ActionGeofenceSettingsCopyWith<$Res>(_self.geofenceSettings!,
+    return $ActionGeofenceSettingsCopyWith<$Res>(_value.geofenceSettings!,
         (value) {
-      return _then(_self.copyWith(geofenceSettings: value));
+      return _then(_value.copyWith(geofenceSettings: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$ActionImplCopyWith<$Res> implements $ActionCopyWith<$Res> {
+  factory _$$ActionImplCopyWith(
+          _$ActionImpl value, $Res Function(_$ActionImpl) then) =
+      __$$ActionImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,
+      @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind,
+      String? commandId,
+      List<Trigger>? triggers,
+      List<String>? triggersIds,
+      List<OutboundService>? outboundServices,
+      List<String>? outboundServicesIds,
+      List<Operation>? operations,
+      List<String>? operationsIds,
+      List<Access>? access,
+      bool? watchImage,
+      ActionGeofenceSettings? geofenceSettings});
+
+  @override
+  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;
+}
+
+/// @nodoc
+class __$$ActionImplCopyWithImpl<$Res>
+    extends _$ActionCopyWithImpl<$Res, _$ActionImpl>
+    implements _$$ActionImplCopyWith<$Res> {
+  __$$ActionImplCopyWithImpl(
+      _$ActionImpl _value, $Res Function(_$ActionImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Action
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? kind = null,
+    Object? subkind = null,
+    Object? commandId = freezed,
+    Object? triggers = freezed,
+    Object? triggersIds = freezed,
+    Object? outboundServices = freezed,
+    Object? outboundServicesIds = freezed,
+    Object? operations = freezed,
+    Object? operationsIds = freezed,
+    Object? access = freezed,
+    Object? watchImage = freezed,
+    Object? geofenceSettings = freezed,
+  }) {
+    return _then(_$ActionImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ActionType,
+      subkind: null == subkind
+          ? _value.subkind
+          : subkind // ignore: cast_nullable_to_non_nullable
+              as ActionSubtype,
+      commandId: freezed == commandId
+          ? _value.commandId
+          : commandId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      triggers: freezed == triggers
+          ? _value._triggers
+          : triggers // ignore: cast_nullable_to_non_nullable
+              as List<Trigger>?,
+      triggersIds: freezed == triggersIds
+          ? _value._triggersIds
+          : triggersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      outboundServices: freezed == outboundServices
+          ? _value._outboundServices
+          : outboundServices // ignore: cast_nullable_to_non_nullable
+              as List<OutboundService>?,
+      outboundServicesIds: freezed == outboundServicesIds
+          ? _value._outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      operations: freezed == operations
+          ? _value._operations
+          : operations // ignore: cast_nullable_to_non_nullable
+              as List<Operation>?,
+      operationsIds: freezed == operationsIds
+          ? _value._operationsIds
+          : operationsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      access: freezed == access
+          ? _value._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+      watchImage: freezed == watchImage
+          ? _value.watchImage
+          : watchImage // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      geofenceSettings: freezed == geofenceSettings
+          ? _value.geofenceSettings
+          : geofenceSettings // ignore: cast_nullable_to_non_nullable
+              as ActionGeofenceSettings?,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _Action extends Action {
-  const _Action(
+class _$ActionImpl extends _Action {
+  const _$ActionImpl(
       {required this.id,
       required this.name,
       @JsonKey(unknownEnumValue: ActionType.performOperation)
@@ -273,7 +344,9 @@ class _Action extends Action {
         _operationsIds = operationsIds,
         _access = access,
         super._();
-  factory _Action.fromJson(Map<String, dynamic> json) => _$ActionFromJson(json);
+
+  factory _$ActionImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ActionImplFromJson(json);
 
   /// Is the ID of the action.
   @override
@@ -390,26 +463,16 @@ class _Action extends Action {
   @override
   final ActionGeofenceSettings? geofenceSettings;
 
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ActionCopyWith<_Action> get copyWith =>
-      __$ActionCopyWithImpl<_Action>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ActionToJson(
-      this,
-    );
+  String toString() {
+    return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Action &&
+            other is _$ActionImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.kind, kind) || other.kind == kind) &&
@@ -453,228 +516,193 @@ class _Action extends Action {
       watchImage,
       geofenceSettings);
 
+  /// Create a copy of Action
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'Action(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggers: $triggers, triggersIds: $triggersIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, operations: $operations, operationsIds: $operationsIds, access: $access, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
+  @pragma('vm:prefer-inline')
+  _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
+      __$$ActionImplCopyWithImpl<_$ActionImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ActionImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$ActionCopyWith<$Res> implements $ActionCopyWith<$Res> {
-  factory _$ActionCopyWith(_Action value, $Res Function(_Action) _then) =
-      __$ActionCopyWithImpl;
+abstract class _Action extends Action {
+  const factory _Action(
+      {required final String id,
+      required final String name,
+      @JsonKey(unknownEnumValue: ActionType.performOperation)
+      required final ActionType kind,
+      @JsonKey(unknownEnumValue: ActionSubtype.unused)
+      final ActionSubtype subkind,
+      final String? commandId,
+      final List<Trigger>? triggers,
+      final List<String>? triggersIds,
+      final List<OutboundService>? outboundServices,
+      final List<String>? outboundServicesIds,
+      final List<Operation>? operations,
+      final List<String>? operationsIds,
+      final List<Access>? access,
+      final bool? watchImage,
+      final ActionGeofenceSettings? geofenceSettings}) = _$ActionImpl;
+  const _Action._() : super._();
+
+  factory _Action.fromJson(Map<String, dynamic> json) = _$ActionImpl.fromJson;
+
+  /// Is the ID of the action.
   @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,
-      @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind,
-      String? commandId,
-      List<Trigger>? triggers,
-      List<String>? triggersIds,
-      List<OutboundService>? outboundServices,
-      List<String>? outboundServicesIds,
-      List<Operation>? operations,
-      List<String>? operationsIds,
-      List<Access>? access,
-      bool? watchImage,
-      ActionGeofenceSettings? geofenceSettings});
+  String get id;
 
+  /// Is the name of the action.
   @override
-  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings;
-}
+  String get name;
 
-/// @nodoc
-class __$ActionCopyWithImpl<$Res> implements _$ActionCopyWith<$Res> {
-  __$ActionCopyWithImpl(this._self, this._then);
+  /// Is the type of the action.
+  @override
+  @JsonKey(unknownEnumValue: ActionType.performOperation)
+  ActionType get kind;
 
-  final _Action _self;
-  final $Res Function(_Action) _then;
+  /// Is the subtype of the action.
+  @override
+  @JsonKey(unknownEnumValue: ActionSubtype.unused)
+  ActionSubtype get subkind;
+
+  /// Is the ID of tag to perform commands.
+  @override
+  String? get commandId;
+
+  /// Is the list of Triggers or triggers' IDs.
+  @override
+  List<Trigger>? get triggers;
+  @override
+  List<String>? get triggersIds;
+
+  /// Is the list of Outbound Servives or outbound services' IDs.
+  @override
+  List<OutboundService>? get outboundServices;
+  @override
+  List<String>? get outboundServicesIds;
+
+  /// Is the list of Operations or operations' IDs.
+  @override
+  List<Operation>? get operations;
+  @override
+  List<String>? get operationsIds;
+
+  /// Is a list of granted access to this entity.
+  @override
+  List<Access>? get access;
+
+  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving
+  /// data need image convertion.
+  @override
+  bool? get watchImage;
+
+  /// Is the geofence settings. Only for `ActionType.createGeofence`
+  @override
+  ActionGeofenceSettings? get geofenceSettings;
 
   /// Create a copy of Action
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? kind = null,
-    Object? subkind = null,
-    Object? commandId = freezed,
-    Object? triggers = freezed,
-    Object? triggersIds = freezed,
-    Object? outboundServices = freezed,
-    Object? outboundServicesIds = freezed,
-    Object? operations = freezed,
-    Object? operationsIds = freezed,
-    Object? access = freezed,
-    Object? watchImage = freezed,
-    Object? geofenceSettings = freezed,
-  }) {
-    return _then(_Action(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      kind: null == kind
-          ? _self.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ActionType,
-      subkind: null == subkind
-          ? _self.subkind
-          : subkind // ignore: cast_nullable_to_non_nullable
-              as ActionSubtype,
-      commandId: freezed == commandId
-          ? _self.commandId
-          : commandId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      triggers: freezed == triggers
-          ? _self._triggers
-          : triggers // ignore: cast_nullable_to_non_nullable
-              as List<Trigger>?,
-      triggersIds: freezed == triggersIds
-          ? _self._triggersIds
-          : triggersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      outboundServices: freezed == outboundServices
-          ? _self._outboundServices
-          : outboundServices // ignore: cast_nullable_to_non_nullable
-              as List<OutboundService>?,
-      outboundServicesIds: freezed == outboundServicesIds
-          ? _self._outboundServicesIds
-          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      operations: freezed == operations
-          ? _self._operations
-          : operations // ignore: cast_nullable_to_non_nullable
-              as List<Operation>?,
-      operationsIds: freezed == operationsIds
-          ? _self._operationsIds
-          : operationsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      access: freezed == access
-          ? _self._access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      watchImage: freezed == watchImage
-          ? _self.watchImage
-          : watchImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      geofenceSettings: freezed == geofenceSettings
-          ? _self.geofenceSettings
-          : geofenceSettings // ignore: cast_nullable_to_non_nullable
-              as ActionGeofenceSettings?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ActionImplCopyWith<_$ActionImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
 
-  /// Create a copy of Action
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ActionGeofenceSettingsCopyWith<$Res>? get geofenceSettings {
-    if (_self.geofenceSettings == null) {
-      return null;
-    }
-
-    return $ActionGeofenceSettingsCopyWith<$Res>(_self.geofenceSettings!,
-        (value) {
-      return _then(_self.copyWith(geofenceSettings: value));
-    });
-  }
+ActionInput _$ActionInputFromJson(Map<String, dynamic> json) {
+  return _ActionInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$ActionInput {
   /// ID of the action entity. This ID is unique.
-  String? get id;
+  String? get id => throw _privateConstructorUsedError;
 
   /// ID of the action entity. This ID is unique.
-  set id(String? value);
+  set id(String? value) => throw _privateConstructorUsedError;
 
   /// Name of the action.
-  String get name;
+  String get name => throw _privateConstructorUsedError;
 
   /// Name of the action.
-  set name(String value);
+  set name(String value) => throw _privateConstructorUsedError;
 
   /// Action type, please read the documentation of ActionType for more information about the actions.
   @JsonKey(unknownEnumValue: ActionType.performOperation)
-  ActionType get kind;
+  ActionType get kind => throw _privateConstructorUsedError;
 
   /// Action type, please read the documentation of ActionType for more information about the actions.
   @JsonKey(unknownEnumValue: ActionType.performOperation)
-  set kind(ActionType value);
+  set kind(ActionType value) => throw _privateConstructorUsedError;
 
   /// Subkind
   @JsonKey(unknownEnumValue: ActionSubtype.unused)
-  ActionSubtype get subkind;
+  ActionSubtype get subkind => throw _privateConstructorUsedError;
 
   /// Subkind
   @JsonKey(unknownEnumValue: ActionSubtype.unused)
-  set subkind(ActionSubtype value);
+  set subkind(ActionSubtype value) => throw _privateConstructorUsedError;
 
   /// ID of the linked Commands Tag.
-  String? get commandId;
+  String? get commandId => throw _privateConstructorUsedError;
 
   /// ID of the linked Commands Tag.
-  set commandId(String? value);
+  set commandId(String? value) => throw _privateConstructorUsedError;
 
   /// List of triggers IDs enabled for handle this action.
-  List<String> get triggersIds;
+  List<String> get triggersIds => throw _privateConstructorUsedError;
 
   /// List of triggers IDs enabled for handle this action.
-  set triggersIds(List<String> value);
+  set triggersIds(List<String> value) => throw _privateConstructorUsedError;
 
   /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-  List<String> get operationsIds;
+  List<String> get operationsIds => throw _privateConstructorUsedError;
 
   /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
-  set operationsIds(List<String> value);
+  set operationsIds(List<String> value) => throw _privateConstructorUsedError;
 
   /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  List<String> get outboundServicesIds;
+  List<String> get outboundServicesIds => throw _privateConstructorUsedError;
 
   /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
-  set outboundServicesIds(List<String> value);
+  set outboundServicesIds(List<String> value) =>
+      throw _privateConstructorUsedError;
 
   /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-  bool get watchImage;
+  bool get watchImage => throw _privateConstructorUsedError;
 
   /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
-  set watchImage(bool value);
+  set watchImage(bool value) => throw _privateConstructorUsedError;
 
   /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
-  ActionGeofenceSettingsInput get geofenceSettings;
+  ActionGeofenceSettingsInput get geofenceSettings =>
+      throw _privateConstructorUsedError;
 
   /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
-  set geofenceSettings(ActionGeofenceSettingsInput value);
+  set geofenceSettings(ActionGeofenceSettingsInput value) =>
+      throw _privateConstructorUsedError;
+
+  /// Serializes this ActionInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of ActionInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $ActionInputCopyWith<ActionInput> get copyWith =>
-      _$ActionInputCopyWithImpl<ActionInput>(this as ActionInput, _$identity);
-
-  /// Serializes this ActionInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  String toString() {
-    return 'ActionInput(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggersIds: $triggersIds, operationsIds: $operationsIds, outboundServicesIds: $outboundServicesIds, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ActionInputCopyWith<$Res> {
+abstract class $ActionInputCopyWith<$Res> {
   factory $ActionInputCopyWith(
-          ActionInput value, $Res Function(ActionInput) _then) =
-      _$ActionInputCopyWithImpl;
+          ActionInput value, $Res Function(ActionInput) then) =
+      _$ActionInputCopyWithImpl<$Res, ActionInput>;
   @useResult
   $Res call(
       {String? id,
@@ -692,11 +720,14 @@ abstract mixin class $ActionInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ActionInputCopyWithImpl<$Res> implements $ActionInputCopyWith<$Res> {
-  _$ActionInputCopyWithImpl(this._self, this._then);
+class _$ActionInputCopyWithImpl<$Res, $Val extends ActionInput>
+    implements $ActionInputCopyWith<$Res> {
+  _$ActionInputCopyWithImpl(this._value, this._then);
 
-  final ActionInput _self;
-  final $Res Function(ActionInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of ActionInput
   /// with the given fields replaced by the non-null parameter values.
@@ -714,48 +745,48 @@ class _$ActionInputCopyWithImpl<$Res> implements $ActionInputCopyWith<$Res> {
     Object? watchImage = null,
     Object? geofenceSettings = null,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       id: freezed == id
-          ? _self.id
+          ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       name: null == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       kind: null == kind
-          ? _self.kind
+          ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
               as ActionType,
       subkind: null == subkind
-          ? _self.subkind
+          ? _value.subkind
           : subkind // ignore: cast_nullable_to_non_nullable
               as ActionSubtype,
       commandId: freezed == commandId
-          ? _self.commandId
+          ? _value.commandId
           : commandId // ignore: cast_nullable_to_non_nullable
               as String?,
       triggersIds: null == triggersIds
-          ? _self.triggersIds
+          ? _value.triggersIds
           : triggersIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       operationsIds: null == operationsIds
-          ? _self.operationsIds
+          ? _value.operationsIds
           : operationsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       outboundServicesIds: null == outboundServicesIds
-          ? _self.outboundServicesIds
+          ? _value.outboundServicesIds
           : outboundServicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       watchImage: null == watchImage
-          ? _self.watchImage
+          ? _value.watchImage
           : watchImage // ignore: cast_nullable_to_non_nullable
               as bool,
       geofenceSettings: null == geofenceSettings
-          ? _self.geofenceSettings
+          ? _value.geofenceSettings
           : geofenceSettings // ignore: cast_nullable_to_non_nullable
               as ActionGeofenceSettingsInput,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of ActionInput
@@ -763,17 +794,110 @@ class _$ActionInputCopyWithImpl<$Res> implements $ActionInputCopyWith<$Res> {
   @override
   @pragma('vm:prefer-inline')
   $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings {
-    return $ActionGeofenceSettingsInputCopyWith<$Res>(_self.geofenceSettings,
+    return $ActionGeofenceSettingsInputCopyWith<$Res>(_value.geofenceSettings,
         (value) {
-      return _then(_self.copyWith(geofenceSettings: value));
+      return _then(_value.copyWith(geofenceSettings: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$ActionInputImplCopyWith<$Res>
+    implements $ActionInputCopyWith<$Res> {
+  factory _$$ActionInputImplCopyWith(
+          _$ActionInputImpl value, $Res Function(_$ActionInputImpl) then) =
+      __$$ActionInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,
+      @JsonKey(unknownEnumValue: ActionSubtype.unused) ActionSubtype subkind,
+      String? commandId,
+      List<String> triggersIds,
+      List<String> operationsIds,
+      List<String> outboundServicesIds,
+      bool watchImage,
+      ActionGeofenceSettingsInput geofenceSettings});
+
+  @override
+  $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings;
+}
+
+/// @nodoc
+class __$$ActionInputImplCopyWithImpl<$Res>
+    extends _$ActionInputCopyWithImpl<$Res, _$ActionInputImpl>
+    implements _$$ActionInputImplCopyWith<$Res> {
+  __$$ActionInputImplCopyWithImpl(
+      _$ActionInputImpl _value, $Res Function(_$ActionInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ActionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? kind = null,
+    Object? subkind = null,
+    Object? commandId = freezed,
+    Object? triggersIds = null,
+    Object? operationsIds = null,
+    Object? outboundServicesIds = null,
+    Object? watchImage = null,
+    Object? geofenceSettings = null,
+  }) {
+    return _then(_$ActionInputImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      kind: null == kind
+          ? _value.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ActionType,
+      subkind: null == subkind
+          ? _value.subkind
+          : subkind // ignore: cast_nullable_to_non_nullable
+              as ActionSubtype,
+      commandId: freezed == commandId
+          ? _value.commandId
+          : commandId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      triggersIds: null == triggersIds
+          ? _value.triggersIds
+          : triggersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      operationsIds: null == operationsIds
+          ? _value.operationsIds
+          : operationsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      outboundServicesIds: null == outboundServicesIds
+          ? _value.outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      watchImage: null == watchImage
+          ? _value.watchImage
+          : watchImage // ignore: cast_nullable_to_non_nullable
+              as bool,
+      geofenceSettings: null == geofenceSettings
+          ? _value.geofenceSettings
+          : geofenceSettings // ignore: cast_nullable_to_non_nullable
+              as ActionGeofenceSettingsInput,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _ActionInput extends ActionInput {
-  _ActionInput(
+class _$ActionInputImpl extends _ActionInput {
+  _$ActionInputImpl(
       {this.id,
       this.name = '',
       @JsonKey(unknownEnumValue: ActionType.performOperation)
@@ -787,8 +911,9 @@ class _ActionInput extends ActionInput {
       this.watchImage = false,
       required this.geofenceSettings})
       : super._();
-  factory _ActionInput.fromJson(Map<String, dynamic> json) =>
-      _$ActionInputFromJson(json);
+
+  factory _$ActionInputImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ActionInputImplFromJson(json);
 
   /// ID of the action entity. This ID is unique.
   @override
@@ -837,36 +962,29 @@ class _ActionInput extends ActionInput {
   @override
   ActionGeofenceSettingsInput geofenceSettings;
 
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ActionInputCopyWith<_ActionInput> get copyWith =>
-      __$ActionInputCopyWithImpl<_ActionInput>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ActionInputToJson(
-      this,
-    );
-  }
-
   @override
   String toString() {
     return 'ActionInput(id: $id, name: $name, kind: $kind, subkind: $subkind, commandId: $commandId, triggersIds: $triggersIds, operationsIds: $operationsIds, outboundServicesIds: $outboundServicesIds, watchImage: $watchImage, geofenceSettings: $geofenceSettings)';
   }
+
+  /// Create a copy of ActionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ActionInputImplCopyWith<_$ActionInputImpl> get copyWith =>
+      __$$ActionInputImplCopyWithImpl<_$ActionInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ActionInputImplToJson(
+      this,
+    );
+  }
 }
 
-/// @nodoc
-abstract mixin class _$ActionInputCopyWith<$Res>
-    implements $ActionInputCopyWith<$Res> {
-  factory _$ActionInputCopyWith(
-          _ActionInput value, $Res Function(_ActionInput) _then) =
-      __$ActionInputCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
+abstract class _ActionInput extends ActionInput {
+  factory _ActionInput(
       {String? id,
       String name,
       @JsonKey(unknownEnumValue: ActionType.performOperation) ActionType kind,
@@ -876,158 +994,138 @@ abstract mixin class _$ActionInputCopyWith<$Res>
       List<String> operationsIds,
       List<String> outboundServicesIds,
       bool watchImage,
-      ActionGeofenceSettingsInput geofenceSettings});
+      required ActionGeofenceSettingsInput
+          geofenceSettings}) = _$ActionInputImpl;
+  _ActionInput._() : super._();
 
+  factory _ActionInput.fromJson(Map<String, dynamic> json) =
+      _$ActionInputImpl.fromJson;
+
+  /// ID of the action entity. This ID is unique.
   @override
-  $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings;
+  String? get id;
+
+  /// ID of the action entity. This ID is unique.
+  set id(String? value);
+
+  /// Name of the action.
+  @override
+  String get name;
+
+  /// Name of the action.
+  set name(String value);
+
+  /// Action type, please read the documentation of ActionType for more information about the actions.
+  @override
+  @JsonKey(unknownEnumValue: ActionType.performOperation)
+  ActionType get kind;
+
+  /// Action type, please read the documentation of ActionType for more information about the actions.
+  @JsonKey(unknownEnumValue: ActionType.performOperation)
+  set kind(ActionType value);
+
+  /// Subkind
+  @override
+  @JsonKey(unknownEnumValue: ActionSubtype.unused)
+  ActionSubtype get subkind;
+
+  /// Subkind
+  @JsonKey(unknownEnumValue: ActionSubtype.unused)
+  set subkind(ActionSubtype value);
+
+  /// ID of the linked Commands Tag.
+  @override
+  String? get commandId;
+
+  /// ID of the linked Commands Tag.
+  set commandId(String? value);
+
+  /// List of triggers IDs enabled for handle this action.
+  @override
+  List<String> get triggersIds;
+
+  /// List of triggers IDs enabled for handle this action.
+  set triggersIds(List<String> value);
+
+  /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
+  @override
+  List<String> get operationsIds;
+
+  /// List of opearations IDs enabled for handle this action. Only for ActionType.PERFORMOPERATION
+  set operationsIds(List<String> value);
+
+  /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
+  @override
+  List<String> get outboundServicesIds;
+
+  /// List of Outbound services IDs to broadcast. Only for ActionType.SENDTOOMEGA
+  set outboundServicesIds(List<String> value);
+
+  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
+  @override
+  bool get watchImage;
+
+  /// If kind == ActionType.sendToMonitorCenter is true, this field will be used if the arriving data need image convertion.
+  set watchImage(bool value);
+
+  /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
+  @override
+  ActionGeofenceSettingsInput get geofenceSettings;
+
+  /// Geofence settings. Only for ActionType.CREATE_GEOFENCE
+  set geofenceSettings(ActionGeofenceSettingsInput value);
+
+  /// Create a copy of ActionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ActionInputImplCopyWith<_$ActionInputImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
-/// @nodoc
-class __$ActionInputCopyWithImpl<$Res> implements _$ActionInputCopyWith<$Res> {
-  __$ActionInputCopyWithImpl(this._self, this._then);
-
-  final _ActionInput _self;
-  final $Res Function(_ActionInput) _then;
-
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = freezed,
-    Object? name = null,
-    Object? kind = null,
-    Object? subkind = null,
-    Object? commandId = freezed,
-    Object? triggersIds = null,
-    Object? operationsIds = null,
-    Object? outboundServicesIds = null,
-    Object? watchImage = null,
-    Object? geofenceSettings = null,
-  }) {
-    return _then(_ActionInput(
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      kind: null == kind
-          ? _self.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as ActionType,
-      subkind: null == subkind
-          ? _self.subkind
-          : subkind // ignore: cast_nullable_to_non_nullable
-              as ActionSubtype,
-      commandId: freezed == commandId
-          ? _self.commandId
-          : commandId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      triggersIds: null == triggersIds
-          ? _self.triggersIds
-          : triggersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      operationsIds: null == operationsIds
-          ? _self.operationsIds
-          : operationsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      outboundServicesIds: null == outboundServicesIds
-          ? _self.outboundServicesIds
-          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      watchImage: null == watchImage
-          ? _self.watchImage
-          : watchImage // ignore: cast_nullable_to_non_nullable
-              as bool,
-      geofenceSettings: null == geofenceSettings
-          ? _self.geofenceSettings
-          : geofenceSettings // ignore: cast_nullable_to_non_nullable
-              as ActionGeofenceSettingsInput,
-    ));
-  }
-
-  /// Create a copy of ActionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ActionGeofenceSettingsInputCopyWith<$Res> get geofenceSettings {
-    return $ActionGeofenceSettingsInputCopyWith<$Res>(_self.geofenceSettings,
-        (value) {
-      return _then(_self.copyWith(geofenceSettings: value));
-    });
-  }
+ActionGeofenceSettings _$ActionGeofenceSettingsFromJson(
+    Map<String, dynamic> json) {
+  return _ActionGeofenceSettings.fromJson(json);
 }
 
 /// @nodoc
 mixin _$ActionGeofenceSettings {
   /// [whoOwner] defines who is the owner of the geofence to create.
   @JsonKey(unknownEnumValue: ActionProperty.none)
-  ActionProperty get whoOwner;
+  ActionProperty get whoOwner => throw _privateConstructorUsedError;
 
   /// [name] defines the name of the geofence to create.
   /// This property is a LCL formula
-  String? get name;
+  String? get name => throw _privateConstructorUsedError;
 
   /// [category] defines the category of the geofence to create.
   @JsonKey(unknownEnumValue: GeofenceCategory.none)
-  GeofenceCategory? get category;
+  GeofenceCategory? get category => throw _privateConstructorUsedError;
 
   /// [radius] defines the radius of the geofence to create.
-  double? get radius;
+  double? get radius => throw _privateConstructorUsedError;
 
   /// [mappitRouteId] defines the route ID of the geofence to create.
-  String? get mappitRouteId;
+  String? get mappitRouteId => throw _privateConstructorUsedError;
 
   /// [mappitRoute] defines the route of the geofence to create.
-  MappitRoute? get mappitRoute;
+  MappitRoute? get mappitRoute => throw _privateConstructorUsedError;
+
+  /// Serializes this ActionGeofenceSettings to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of ActionGeofenceSettings
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $ActionGeofenceSettingsCopyWith<ActionGeofenceSettings> get copyWith =>
-      _$ActionGeofenceSettingsCopyWithImpl<ActionGeofenceSettings>(
-          this as ActionGeofenceSettings, _$identity);
-
-  /// Serializes this ActionGeofenceSettings to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is ActionGeofenceSettings &&
-            (identical(other.whoOwner, whoOwner) ||
-                other.whoOwner == whoOwner) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            (identical(other.radius, radius) || other.radius == radius) &&
-            (identical(other.mappitRouteId, mappitRouteId) ||
-                other.mappitRouteId == mappitRouteId) &&
-            (identical(other.mappitRoute, mappitRoute) ||
-                other.mappitRoute == mappitRoute));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, whoOwner, name, category, radius,
-      mappitRouteId, mappitRoute);
-
-  @override
-  String toString() {
-    return 'ActionGeofenceSettings(whoOwner: $whoOwner, name: $name, category: $category, radius: $radius, mappitRouteId: $mappitRouteId, mappitRoute: $mappitRoute)';
-  }
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ActionGeofenceSettingsCopyWith<$Res> {
+abstract class $ActionGeofenceSettingsCopyWith<$Res> {
   factory $ActionGeofenceSettingsCopyWith(ActionGeofenceSettings value,
-          $Res Function(ActionGeofenceSettings) _then) =
-      _$ActionGeofenceSettingsCopyWithImpl;
+          $Res Function(ActionGeofenceSettings) then) =
+      _$ActionGeofenceSettingsCopyWithImpl<$Res, ActionGeofenceSettings>;
   @useResult
   $Res call(
       {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
@@ -1042,12 +1140,15 @@ abstract mixin class $ActionGeofenceSettingsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ActionGeofenceSettingsCopyWithImpl<$Res>
+class _$ActionGeofenceSettingsCopyWithImpl<$Res,
+        $Val extends ActionGeofenceSettings>
     implements $ActionGeofenceSettingsCopyWith<$Res> {
-  _$ActionGeofenceSettingsCopyWithImpl(this._self, this._then);
+  _$ActionGeofenceSettingsCopyWithImpl(this._value, this._then);
 
-  final ActionGeofenceSettings _self;
-  final $Res Function(ActionGeofenceSettings) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of ActionGeofenceSettings
   /// with the given fields replaced by the non-null parameter values.
@@ -1061,32 +1162,32 @@ class _$ActionGeofenceSettingsCopyWithImpl<$Res>
     Object? mappitRouteId = freezed,
     Object? mappitRoute = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       whoOwner: null == whoOwner
-          ? _self.whoOwner
+          ? _value.whoOwner
           : whoOwner // ignore: cast_nullable_to_non_nullable
               as ActionProperty,
       name: freezed == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       category: freezed == category
-          ? _self.category
+          ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as GeofenceCategory?,
       radius: freezed == radius
-          ? _self.radius
+          ? _value.radius
           : radius // ignore: cast_nullable_to_non_nullable
               as double?,
       mappitRouteId: freezed == mappitRouteId
-          ? _self.mappitRouteId
+          ? _value.mappitRouteId
           : mappitRouteId // ignore: cast_nullable_to_non_nullable
               as String?,
       mappitRoute: freezed == mappitRoute
-          ? _self.mappitRoute
+          ? _value.mappitRoute
           : mappitRoute // ignore: cast_nullable_to_non_nullable
               as MappitRoute?,
-    ));
+    ) as $Val);
   }
 
   /// Create a copy of ActionGeofenceSettings
@@ -1094,20 +1195,93 @@ class _$ActionGeofenceSettingsCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $MappitRouteCopyWith<$Res>? get mappitRoute {
-    if (_self.mappitRoute == null) {
+    if (_value.mappitRoute == null) {
       return null;
     }
 
-    return $MappitRouteCopyWith<$Res>(_self.mappitRoute!, (value) {
-      return _then(_self.copyWith(mappitRoute: value));
+    return $MappitRouteCopyWith<$Res>(_value.mappitRoute!, (value) {
+      return _then(_value.copyWith(mappitRoute: value) as $Val);
     });
   }
 }
 
 /// @nodoc
+abstract class _$$ActionGeofenceSettingsImplCopyWith<$Res>
+    implements $ActionGeofenceSettingsCopyWith<$Res> {
+  factory _$$ActionGeofenceSettingsImplCopyWith(
+          _$ActionGeofenceSettingsImpl value,
+          $Res Function(_$ActionGeofenceSettingsImpl) then) =
+      __$$ActionGeofenceSettingsImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
+      String? name,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory? category,
+      double? radius,
+      String? mappitRouteId,
+      MappitRoute? mappitRoute});
+
+  @override
+  $MappitRouteCopyWith<$Res>? get mappitRoute;
+}
+
+/// @nodoc
+class __$$ActionGeofenceSettingsImplCopyWithImpl<$Res>
+    extends _$ActionGeofenceSettingsCopyWithImpl<$Res,
+        _$ActionGeofenceSettingsImpl>
+    implements _$$ActionGeofenceSettingsImplCopyWith<$Res> {
+  __$$ActionGeofenceSettingsImplCopyWithImpl(
+      _$ActionGeofenceSettingsImpl _value,
+      $Res Function(_$ActionGeofenceSettingsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ActionGeofenceSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? whoOwner = null,
+    Object? name = freezed,
+    Object? category = freezed,
+    Object? radius = freezed,
+    Object? mappitRouteId = freezed,
+    Object? mappitRoute = freezed,
+  }) {
+    return _then(_$ActionGeofenceSettingsImpl(
+      whoOwner: null == whoOwner
+          ? _value.whoOwner
+          : whoOwner // ignore: cast_nullable_to_non_nullable
+              as ActionProperty,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: freezed == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as GeofenceCategory?,
+      radius: freezed == radius
+          ? _value.radius
+          : radius // ignore: cast_nullable_to_non_nullable
+              as double?,
+      mappitRouteId: freezed == mappitRouteId
+          ? _value.mappitRouteId
+          : mappitRouteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mappitRoute: freezed == mappitRoute
+          ? _value.mappitRoute
+          : mappitRoute // ignore: cast_nullable_to_non_nullable
+              as MappitRoute?,
+    ));
+  }
+}
+
+/// @nodoc
 @JsonSerializable()
-class _ActionGeofenceSettings extends ActionGeofenceSettings {
-  const _ActionGeofenceSettings(
+class _$ActionGeofenceSettingsImpl extends _ActionGeofenceSettings {
+  const _$ActionGeofenceSettingsImpl(
       {@JsonKey(unknownEnumValue: ActionProperty.none)
       this.whoOwner = ActionProperty.none,
       this.name,
@@ -1116,8 +1290,9 @@ class _ActionGeofenceSettings extends ActionGeofenceSettings {
       this.mappitRouteId,
       this.mappitRoute})
       : super._();
-  factory _ActionGeofenceSettings.fromJson(Map<String, dynamic> json) =>
-      _$ActionGeofenceSettingsFromJson(json);
+
+  factory _$ActionGeofenceSettingsImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ActionGeofenceSettingsImplFromJson(json);
 
   /// [whoOwner] defines who is the owner of the geofence to create.
   @override
@@ -1146,27 +1321,16 @@ class _ActionGeofenceSettings extends ActionGeofenceSettings {
   @override
   final MappitRoute? mappitRoute;
 
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ActionGeofenceSettingsCopyWith<_ActionGeofenceSettings> get copyWith =>
-      __$ActionGeofenceSettingsCopyWithImpl<_ActionGeofenceSettings>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ActionGeofenceSettingsToJson(
-      this,
-    );
+  String toString() {
+    return 'ActionGeofenceSettings(whoOwner: $whoOwner, name: $name, category: $category, radius: $radius, mappitRouteId: $mappitRouteId, mappitRoute: $mappitRoute)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ActionGeofenceSettings &&
+            other is _$ActionGeofenceSettingsImpl &&
             (identical(other.whoOwner, whoOwner) ||
                 other.whoOwner == whoOwner) &&
             (identical(other.name, name) || other.name == name) &&
@@ -1184,158 +1348,133 @@ class _ActionGeofenceSettings extends ActionGeofenceSettings {
   int get hashCode => Object.hash(runtimeType, whoOwner, name, category, radius,
       mappitRouteId, mappitRoute);
 
+  /// Create a copy of ActionGeofenceSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  String toString() {
-    return 'ActionGeofenceSettings(whoOwner: $whoOwner, name: $name, category: $category, radius: $radius, mappitRouteId: $mappitRouteId, mappitRoute: $mappitRoute)';
+  @pragma('vm:prefer-inline')
+  _$$ActionGeofenceSettingsImplCopyWith<_$ActionGeofenceSettingsImpl>
+      get copyWith => __$$ActionGeofenceSettingsImplCopyWithImpl<
+          _$ActionGeofenceSettingsImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ActionGeofenceSettingsImplToJson(
+      this,
+    );
   }
 }
 
-/// @nodoc
-abstract mixin class _$ActionGeofenceSettingsCopyWith<$Res>
-    implements $ActionGeofenceSettingsCopyWith<$Res> {
-  factory _$ActionGeofenceSettingsCopyWith(_ActionGeofenceSettings value,
-          $Res Function(_ActionGeofenceSettings) _then) =
-      __$ActionGeofenceSettingsCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
-      String? name,
+abstract class _ActionGeofenceSettings extends ActionGeofenceSettings {
+  const factory _ActionGeofenceSettings(
+      {@JsonKey(unknownEnumValue: ActionProperty.none)
+      final ActionProperty whoOwner,
+      final String? name,
       @JsonKey(unknownEnumValue: GeofenceCategory.none)
-      GeofenceCategory? category,
-      double? radius,
-      String? mappitRouteId,
-      MappitRoute? mappitRoute});
+      final GeofenceCategory? category,
+      final double? radius,
+      final String? mappitRouteId,
+      final MappitRoute? mappitRoute}) = _$ActionGeofenceSettingsImpl;
+  const _ActionGeofenceSettings._() : super._();
 
+  factory _ActionGeofenceSettings.fromJson(Map<String, dynamic> json) =
+      _$ActionGeofenceSettingsImpl.fromJson;
+
+  /// [whoOwner] defines who is the owner of the geofence to create.
   @override
-  $MappitRouteCopyWith<$Res>? get mappitRoute;
+  @JsonKey(unknownEnumValue: ActionProperty.none)
+  ActionProperty get whoOwner;
+
+  /// [name] defines the name of the geofence to create.
+  /// This property is a LCL formula
+  @override
+  String? get name;
+
+  /// [category] defines the category of the geofence to create.
+  @override
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
+  GeofenceCategory? get category;
+
+  /// [radius] defines the radius of the geofence to create.
+  @override
+  double? get radius;
+
+  /// [mappitRouteId] defines the route ID of the geofence to create.
+  @override
+  String? get mappitRouteId;
+
+  /// [mappitRoute] defines the route of the geofence to create.
+  @override
+  MappitRoute? get mappitRoute;
+
+  /// Create a copy of ActionGeofenceSettings
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ActionGeofenceSettingsImplCopyWith<_$ActionGeofenceSettingsImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
-/// @nodoc
-class __$ActionGeofenceSettingsCopyWithImpl<$Res>
-    implements _$ActionGeofenceSettingsCopyWith<$Res> {
-  __$ActionGeofenceSettingsCopyWithImpl(this._self, this._then);
-
-  final _ActionGeofenceSettings _self;
-  final $Res Function(_ActionGeofenceSettings) _then;
-
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? whoOwner = null,
-    Object? name = freezed,
-    Object? category = freezed,
-    Object? radius = freezed,
-    Object? mappitRouteId = freezed,
-    Object? mappitRoute = freezed,
-  }) {
-    return _then(_ActionGeofenceSettings(
-      whoOwner: null == whoOwner
-          ? _self.whoOwner
-          : whoOwner // ignore: cast_nullable_to_non_nullable
-              as ActionProperty,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      category: freezed == category
-          ? _self.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as GeofenceCategory?,
-      radius: freezed == radius
-          ? _self.radius
-          : radius // ignore: cast_nullable_to_non_nullable
-              as double?,
-      mappitRouteId: freezed == mappitRouteId
-          ? _self.mappitRouteId
-          : mappitRouteId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mappitRoute: freezed == mappitRoute
-          ? _self.mappitRoute
-          : mappitRoute // ignore: cast_nullable_to_non_nullable
-              as MappitRoute?,
-    ));
-  }
-
-  /// Create a copy of ActionGeofenceSettings
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $MappitRouteCopyWith<$Res>? get mappitRoute {
-    if (_self.mappitRoute == null) {
-      return null;
-    }
-
-    return $MappitRouteCopyWith<$Res>(_self.mappitRoute!, (value) {
-      return _then(_self.copyWith(mappitRoute: value));
-    });
-  }
+ActionGeofenceSettingsInput _$ActionGeofenceSettingsInputFromJson(
+    Map<String, dynamic> json) {
+  return _ActionGeofenceSettingsInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$ActionGeofenceSettingsInput {
   /// [whoOwner] defines who is the owner of the geofence to create.
   @JsonKey(unknownEnumValue: ActionProperty.none)
-  ActionProperty get whoOwner;
+  ActionProperty get whoOwner => throw _privateConstructorUsedError;
 
   /// [whoOwner] defines who is the owner of the geofence to create.
   @JsonKey(unknownEnumValue: ActionProperty.none)
-  set whoOwner(ActionProperty value);
+  set whoOwner(ActionProperty value) => throw _privateConstructorUsedError;
 
   /// [name] defines the name of the geofence to create.
   /// This property is a LCL formula
-  String? get name;
+  String? get name => throw _privateConstructorUsedError;
 
   /// [name] defines the name of the geofence to create.
   /// This property is a LCL formula
-  set name(String? value);
+  set name(String? value) => throw _privateConstructorUsedError;
 
   /// [category] defines the category of the geofence to create.
   @JsonKey(unknownEnumValue: GeofenceCategory.none)
-  GeofenceCategory get category;
+  GeofenceCategory get category => throw _privateConstructorUsedError;
 
   /// [category] defines the category of the geofence to create.
   @JsonKey(unknownEnumValue: GeofenceCategory.none)
-  set category(GeofenceCategory value);
+  set category(GeofenceCategory value) => throw _privateConstructorUsedError;
 
   /// [radius] defines the radius of the geofence to create.
-  double get radius;
+  double get radius => throw _privateConstructorUsedError;
 
   /// [radius] defines the radius of the geofence to create.
-  set radius(double value);
+  set radius(double value) => throw _privateConstructorUsedError;
 
   /// [mappitRouteId] defines the route ID of the geofence to create.
-  String? get mappitRouteId;
+  String? get mappitRouteId => throw _privateConstructorUsedError;
 
   /// [mappitRouteId] defines the route ID of the geofence to create.
-  set mappitRouteId(String? value);
+  set mappitRouteId(String? value) => throw _privateConstructorUsedError;
+
+  /// Serializes this ActionGeofenceSettingsInput to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
   /// Create a copy of ActionGeofenceSettingsInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
   $ActionGeofenceSettingsInputCopyWith<ActionGeofenceSettingsInput>
-      get copyWith => _$ActionGeofenceSettingsInputCopyWithImpl<
-              ActionGeofenceSettingsInput>(
-          this as ActionGeofenceSettingsInput, _$identity);
-
-  /// Serializes this ActionGeofenceSettingsInput to a JSON map.
-  Map<String, dynamic> toJson();
-
-  @override
-  String toString() {
-    return 'ActionGeofenceSettingsInput(whoOwner: $whoOwner, name: $name, category: $category, radius: $radius, mappitRouteId: $mappitRouteId)';
-  }
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ActionGeofenceSettingsInputCopyWith<$Res> {
+abstract class $ActionGeofenceSettingsInputCopyWith<$Res> {
   factory $ActionGeofenceSettingsInputCopyWith(
           ActionGeofenceSettingsInput value,
-          $Res Function(ActionGeofenceSettingsInput) _then) =
-      _$ActionGeofenceSettingsInputCopyWithImpl;
+          $Res Function(ActionGeofenceSettingsInput) then) =
+      _$ActionGeofenceSettingsInputCopyWithImpl<$Res,
+          ActionGeofenceSettingsInput>;
   @useResult
   $Res call(
       {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
@@ -1347,12 +1486,15 @@ abstract mixin class $ActionGeofenceSettingsInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ActionGeofenceSettingsInputCopyWithImpl<$Res>
+class _$ActionGeofenceSettingsInputCopyWithImpl<$Res,
+        $Val extends ActionGeofenceSettingsInput>
     implements $ActionGeofenceSettingsInputCopyWith<$Res> {
-  _$ActionGeofenceSettingsInputCopyWithImpl(this._self, this._then);
+  _$ActionGeofenceSettingsInputCopyWithImpl(this._value, this._then);
 
-  final ActionGeofenceSettingsInput _self;
-  final $Res Function(ActionGeofenceSettingsInput) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
   /// Create a copy of ActionGeofenceSettingsInput
   /// with the given fields replaced by the non-null parameter values.
@@ -1365,25 +1507,89 @@ class _$ActionGeofenceSettingsInputCopyWithImpl<$Res>
     Object? radius = null,
     Object? mappitRouteId = freezed,
   }) {
-    return _then(_self.copyWith(
+    return _then(_value.copyWith(
       whoOwner: null == whoOwner
-          ? _self.whoOwner
+          ? _value.whoOwner
           : whoOwner // ignore: cast_nullable_to_non_nullable
               as ActionProperty,
       name: freezed == name
-          ? _self.name
+          ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
       category: null == category
-          ? _self.category
+          ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
               as GeofenceCategory,
       radius: null == radius
-          ? _self.radius
+          ? _value.radius
           : radius // ignore: cast_nullable_to_non_nullable
               as double,
       mappitRouteId: freezed == mappitRouteId
-          ? _self.mappitRouteId
+          ? _value.mappitRouteId
+          : mappitRouteId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$ActionGeofenceSettingsInputImplCopyWith<$Res>
+    implements $ActionGeofenceSettingsInputCopyWith<$Res> {
+  factory _$$ActionGeofenceSettingsInputImplCopyWith(
+          _$ActionGeofenceSettingsInputImpl value,
+          $Res Function(_$ActionGeofenceSettingsInputImpl) then) =
+      __$$ActionGeofenceSettingsInputImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
+      String? name,
+      @JsonKey(unknownEnumValue: GeofenceCategory.none)
+      GeofenceCategory category,
+      double radius,
+      String? mappitRouteId});
+}
+
+/// @nodoc
+class __$$ActionGeofenceSettingsInputImplCopyWithImpl<$Res>
+    extends _$ActionGeofenceSettingsInputCopyWithImpl<$Res,
+        _$ActionGeofenceSettingsInputImpl>
+    implements _$$ActionGeofenceSettingsInputImplCopyWith<$Res> {
+  __$$ActionGeofenceSettingsInputImplCopyWithImpl(
+      _$ActionGeofenceSettingsInputImpl _value,
+      $Res Function(_$ActionGeofenceSettingsInputImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ActionGeofenceSettingsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? whoOwner = null,
+    Object? name = freezed,
+    Object? category = null,
+    Object? radius = null,
+    Object? mappitRouteId = freezed,
+  }) {
+    return _then(_$ActionGeofenceSettingsInputImpl(
+      whoOwner: null == whoOwner
+          ? _value.whoOwner
+          : whoOwner // ignore: cast_nullable_to_non_nullable
+              as ActionProperty,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      category: null == category
+          ? _value.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as GeofenceCategory,
+      radius: null == radius
+          ? _value.radius
+          : radius // ignore: cast_nullable_to_non_nullable
+              as double,
+      mappitRouteId: freezed == mappitRouteId
+          ? _value.mappitRouteId
           : mappitRouteId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -1392,8 +1598,8 @@ class _$ActionGeofenceSettingsInputCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ActionGeofenceSettingsInput extends ActionGeofenceSettingsInput {
-  _ActionGeofenceSettingsInput(
+class _$ActionGeofenceSettingsInputImpl extends _ActionGeofenceSettingsInput {
+  _$ActionGeofenceSettingsInputImpl(
       {@JsonKey(unknownEnumValue: ActionProperty.none)
       this.whoOwner = ActionProperty.none,
       this.name,
@@ -1402,8 +1608,10 @@ class _ActionGeofenceSettingsInput extends ActionGeofenceSettingsInput {
       this.radius = 10.0,
       this.mappitRouteId})
       : super._();
-  factory _ActionGeofenceSettingsInput.fromJson(Map<String, dynamic> json) =>
-      _$ActionGeofenceSettingsInputFromJson(json);
+
+  factory _$ActionGeofenceSettingsInputImpl.fromJson(
+          Map<String, dynamic> json) =>
+      _$$ActionGeofenceSettingsInputImplFromJson(json);
 
   /// [whoOwner] defines who is the owner of the geofence to create.
   @override
@@ -1429,88 +1637,87 @@ class _ActionGeofenceSettingsInput extends ActionGeofenceSettingsInput {
   @override
   String? mappitRouteId;
 
-  /// Create a copy of ActionGeofenceSettingsInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$ActionGeofenceSettingsInputCopyWith<_ActionGeofenceSettingsInput>
-      get copyWith => __$ActionGeofenceSettingsInputCopyWithImpl<
-          _ActionGeofenceSettingsInput>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$ActionGeofenceSettingsInputToJson(
-      this,
-    );
-  }
-
   @override
   String toString() {
     return 'ActionGeofenceSettingsInput(whoOwner: $whoOwner, name: $name, category: $category, radius: $radius, mappitRouteId: $mappitRouteId)';
   }
+
+  /// Create a copy of ActionGeofenceSettingsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ActionGeofenceSettingsInputImplCopyWith<_$ActionGeofenceSettingsInputImpl>
+      get copyWith => __$$ActionGeofenceSettingsInputImplCopyWithImpl<
+          _$ActionGeofenceSettingsInputImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ActionGeofenceSettingsInputImplToJson(
+      this,
+    );
+  }
 }
 
-/// @nodoc
-abstract mixin class _$ActionGeofenceSettingsInputCopyWith<$Res>
-    implements $ActionGeofenceSettingsInputCopyWith<$Res> {
-  factory _$ActionGeofenceSettingsInputCopyWith(
-          _ActionGeofenceSettingsInput value,
-          $Res Function(_ActionGeofenceSettingsInput) _then) =
-      __$ActionGeofenceSettingsInputCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
+abstract class _ActionGeofenceSettingsInput
+    extends ActionGeofenceSettingsInput {
+  factory _ActionGeofenceSettingsInput(
       {@JsonKey(unknownEnumValue: ActionProperty.none) ActionProperty whoOwner,
       String? name,
       @JsonKey(unknownEnumValue: GeofenceCategory.none)
       GeofenceCategory category,
       double radius,
-      String? mappitRouteId});
-}
+      String? mappitRouteId}) = _$ActionGeofenceSettingsInputImpl;
+  _ActionGeofenceSettingsInput._() : super._();
 
-/// @nodoc
-class __$ActionGeofenceSettingsInputCopyWithImpl<$Res>
-    implements _$ActionGeofenceSettingsInputCopyWith<$Res> {
-  __$ActionGeofenceSettingsInputCopyWithImpl(this._self, this._then);
+  factory _ActionGeofenceSettingsInput.fromJson(Map<String, dynamic> json) =
+      _$ActionGeofenceSettingsInputImpl.fromJson;
 
-  final _ActionGeofenceSettingsInput _self;
-  final $Res Function(_ActionGeofenceSettingsInput) _then;
+  /// [whoOwner] defines who is the owner of the geofence to create.
+  @override
+  @JsonKey(unknownEnumValue: ActionProperty.none)
+  ActionProperty get whoOwner;
+
+  /// [whoOwner] defines who is the owner of the geofence to create.
+  @JsonKey(unknownEnumValue: ActionProperty.none)
+  set whoOwner(ActionProperty value);
+
+  /// [name] defines the name of the geofence to create.
+  /// This property is a LCL formula
+  @override
+  String? get name;
+
+  /// [name] defines the name of the geofence to create.
+  /// This property is a LCL formula
+  set name(String? value);
+
+  /// [category] defines the category of the geofence to create.
+  @override
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
+  GeofenceCategory get category;
+
+  /// [category] defines the category of the geofence to create.
+  @JsonKey(unknownEnumValue: GeofenceCategory.none)
+  set category(GeofenceCategory value);
+
+  /// [radius] defines the radius of the geofence to create.
+  @override
+  double get radius;
+
+  /// [radius] defines the radius of the geofence to create.
+  set radius(double value);
+
+  /// [mappitRouteId] defines the route ID of the geofence to create.
+  @override
+  String? get mappitRouteId;
+
+  /// [mappitRouteId] defines the route ID of the geofence to create.
+  set mappitRouteId(String? value);
 
   /// Create a copy of ActionGeofenceSettingsInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? whoOwner = null,
-    Object? name = freezed,
-    Object? category = null,
-    Object? radius = null,
-    Object? mappitRouteId = freezed,
-  }) {
-    return _then(_ActionGeofenceSettingsInput(
-      whoOwner: null == whoOwner
-          ? _self.whoOwner
-          : whoOwner // ignore: cast_nullable_to_non_nullable
-              as ActionProperty,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      category: null == category
-          ? _self.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as GeofenceCategory,
-      radius: null == radius
-          ? _self.radius
-          : radius // ignore: cast_nullable_to_non_nullable
-              as double,
-      mappitRouteId: freezed == mappitRouteId
-          ? _self.mappitRouteId
-          : mappitRouteId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ActionGeofenceSettingsInputImplCopyWith<_$ActionGeofenceSettingsInputImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-// dart format on
