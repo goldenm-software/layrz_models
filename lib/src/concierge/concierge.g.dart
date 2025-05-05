@@ -6,9 +6,8 @@ part of 'concierge.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$ConciergeFormPageImpl _$$ConciergeFormPageImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ConciergeFormPageImpl(
+_ConciergeFormPage _$ConciergeFormPageFromJson(Map<String, dynamic> json) =>
+    _ConciergeFormPage(
       title: json['title'] as String,
       blocks: (json['blocks'] as List<dynamic>?)
               ?.map(
@@ -17,16 +16,14 @@ _$ConciergeFormPageImpl _$$ConciergeFormPageImplFromJson(
           const <ConciergeFormBlock>[],
     );
 
-Map<String, dynamic> _$$ConciergeFormPageImplToJson(
-        _$ConciergeFormPageImpl instance) =>
+Map<String, dynamic> _$ConciergeFormPageToJson(_ConciergeFormPage instance) =>
     <String, dynamic>{
       'title': instance.title,
       'blocks': instance.blocks.map((e) => e.toJson()).toList(),
     };
 
-_$ConciergeFormBlockImpl _$$ConciergeFormBlockImplFromJson(
-        Map<String, dynamic> json) =>
-    _$ConciergeFormBlockImpl(
+_ConciergeFormBlock _$ConciergeFormBlockFromJson(Map<String, dynamic> json) =>
+    _ConciergeFormBlock(
       blockType: const ConciergeFormBlockTypeConverter()
           .fromJson(json['blockType'] as String),
       name: json['name'] as String,
@@ -40,8 +37,7 @@ _$ConciergeFormBlockImpl _$$ConciergeFormBlockImplFromJson(
               json['showWhen'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$ConciergeFormBlockImplToJson(
-        _$ConciergeFormBlockImpl instance) =>
+Map<String, dynamic> _$ConciergeFormBlockToJson(_ConciergeFormBlock instance) =>
     <String, dynamic>{
       'blockType':
           const ConciergeFormBlockTypeConverter().toJson(instance.blockType),
@@ -50,22 +46,22 @@ Map<String, dynamic> _$$ConciergeFormBlockImplToJson(
       'showWhen': instance.showWhen?.toJson(),
     };
 
-_$ConciergeFormBlockConfigurationImpl
-    _$$ConciergeFormBlockConfigurationImplFromJson(Map<String, dynamic> json) =>
-        _$ConciergeFormBlockConfigurationImpl(
-          allowEmpty: json['allowEmpty'] as bool,
-          isInt: json['isInt'] as bool?,
-          isMultiple: json['isMultiple'] as bool?,
-          max: (json['max'] as num?)?.toDouble(),
-          min: (json['min'] as num?)?.toDouble(),
-          choices: (json['choices'] as List<dynamic>?)
-                  ?.map((e) => e as String)
-                  .toList() ??
-              const <String>[],
-        );
+_ConciergeFormBlockConfiguration _$ConciergeFormBlockConfigurationFromJson(
+        Map<String, dynamic> json) =>
+    _ConciergeFormBlockConfiguration(
+      allowEmpty: json['allowEmpty'] as bool,
+      isInt: json['isInt'] as bool?,
+      isMultiple: json['isMultiple'] as bool?,
+      max: (json['max'] as num?)?.toDouble(),
+      min: (json['min'] as num?)?.toDouble(),
+      choices: (json['choices'] as List<dynamic>?)
+              ?.map((e) => e as String)
+              .toList() ??
+          const <String>[],
+    );
 
-Map<String, dynamic> _$$ConciergeFormBlockConfigurationImplToJson(
-        _$ConciergeFormBlockConfigurationImpl instance) =>
+Map<String, dynamic> _$ConciergeFormBlockConfigurationToJson(
+        _ConciergeFormBlockConfiguration instance) =>
     <String, dynamic>{
       'allowEmpty': instance.allowEmpty,
       'isInt': instance.isInt,
@@ -75,9 +71,9 @@ Map<String, dynamic> _$$ConciergeFormBlockConfigurationImplToJson(
       'choices': instance.choices,
     };
 
-_$ConciergeFormBlockValidatorImpl _$$ConciergeFormBlockValidatorImplFromJson(
+_ConciergeFormBlockValidator _$ConciergeFormBlockValidatorFromJson(
         Map<String, dynamic> json) =>
-    _$ConciergeFormBlockValidatorImpl(
+    _ConciergeFormBlockValidator(
       blockId: (json['blockId'] as num?)?.toInt(),
       max: (json['max'] as num?)?.toDouble(),
       min: (json['min'] as num?)?.toDouble(),
@@ -89,8 +85,8 @@ _$ConciergeFormBlockValidatorImpl _$$ConciergeFormBlockValidatorImplFromJson(
               .fromJson(json['validatorOperator'] as String?),
     );
 
-Map<String, dynamic> _$$ConciergeFormBlockValidatorImplToJson(
-        _$ConciergeFormBlockValidatorImpl instance) =>
+Map<String, dynamic> _$ConciergeFormBlockValidatorToJson(
+        _ConciergeFormBlockValidator instance) =>
     <String, dynamic>{
       'blockId': instance.blockId,
       'max': instance.max,

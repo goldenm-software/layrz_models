@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,153 +10,77 @@ part of 'users.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-BHSUserInput _$BHSUserInputFromJson(Map<String, dynamic> json) {
-  return _BHSUserInput.fromJson(json);
-}
 
 /// @nodoc
 mixin _$BHSUserInput {
   /// [id] represents the user ID. When is new, this value should be null.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// [id] represents the user ID. When is new, this value should be null.
-  set id(String? value) => throw _privateConstructorUsedError;
+  set id(String? value);
 
   /// [name] represents the user name.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// [name] represents the user name.
-  set name(String value) => throw _privateConstructorUsedError;
+  set name(String value);
 
   /// [email] represents the user email.
-  String get email => throw _privateConstructorUsedError;
+  String get email;
 
   /// [email] represents the user email.
-  set email(String value) => throw _privateConstructorUsedError;
+  set email(String value);
 
   /// [username] represents the username.
-  String get username => throw _privateConstructorUsedError;
+  String get username;
 
   /// [username] represents the username.
-  set username(String value) => throw _privateConstructorUsedError;
+  set username(String value);
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  String? get brickhousePermissionTierId => throw _privateConstructorUsedError;
+  String? get brickhousePermissionTierId;
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  set brickhousePermissionTierId(String? value) =>
-      throw _privateConstructorUsedError;
+  set brickhousePermissionTierId(String? value);
 
   /// [brickhouseRole] represents the Brickhouse user role.
   @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-  BrickhouseUserRole? get brickhouseRole => throw _privateConstructorUsedError;
+  BrickhouseUserRole? get brickhouseRole;
 
   /// [brickhouseRole] represents the Brickhouse user role.
   @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-  set brickhouseRole(BrickhouseUserRole? value) =>
-      throw _privateConstructorUsedError;
+  set brickhouseRole(BrickhouseUserRole? value);
 
   /// [password] default password if allowed by the form
-  String? get password => throw _privateConstructorUsedError;
+  String? get password;
 
   /// [password] default password if allowed by the form
-  set password(String? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this BHSUserInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set password(String? value);
 
   /// Create a copy of BHSUserInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $BHSUserInputCopyWith<BHSUserInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $BHSUserInputCopyWith<$Res> {
-  factory $BHSUserInputCopyWith(
-          BHSUserInput value, $Res Function(BHSUserInput) then) =
-      _$BHSUserInputCopyWithImpl<$Res, BHSUserInput>;
-  @useResult
-  $Res call(
-      {String? id,
-      String name,
-      String email,
-      String username,
-      String? brickhousePermissionTierId,
-      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-      BrickhouseUserRole? brickhouseRole,
-      String? password});
-}
-
-/// @nodoc
-class _$BHSUserInputCopyWithImpl<$Res, $Val extends BHSUserInput>
-    implements $BHSUserInputCopyWith<$Res> {
-  _$BHSUserInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of BHSUserInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $BHSUserInputCopyWith<BHSUserInput> get copyWith =>
+      _$BHSUserInputCopyWithImpl<BHSUserInput>(
+          this as BHSUserInput, _$identity);
+
+  /// Serializes this BHSUserInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = null,
-    Object? email = null,
-    Object? username = null,
-    Object? brickhousePermissionTierId = freezed,
-    Object? brickhouseRole = freezed,
-    Object? password = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      brickhousePermissionTierId: freezed == brickhousePermissionTierId
-          ? _value.brickhousePermissionTierId
-          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      brickhouseRole: freezed == brickhouseRole
-          ? _value.brickhouseRole
-          : brickhouseRole // ignore: cast_nullable_to_non_nullable
-              as BrickhouseUserRole?,
-      password: freezed == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'BHSUserInput(id: $id, name: $name, email: $email, username: $username, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, password: $password)';
   }
 }
 
 /// @nodoc
-abstract class _$$BHSUserInputImplCopyWith<$Res>
-    implements $BHSUserInputCopyWith<$Res> {
-  factory _$$BHSUserInputImplCopyWith(
-          _$BHSUserInputImpl value, $Res Function(_$BHSUserInputImpl) then) =
-      __$$BHSUserInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $BHSUserInputCopyWith<$Res> {
+  factory $BHSUserInputCopyWith(
+          BHSUserInput value, $Res Function(BHSUserInput) _then) =
+      _$BHSUserInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -169,12 +94,11 @@ abstract class _$$BHSUserInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$BHSUserInputImplCopyWithImpl<$Res>
-    extends _$BHSUserInputCopyWithImpl<$Res, _$BHSUserInputImpl>
-    implements _$$BHSUserInputImplCopyWith<$Res> {
-  __$$BHSUserInputImplCopyWithImpl(
-      _$BHSUserInputImpl _value, $Res Function(_$BHSUserInputImpl) _then)
-      : super(_value, _then);
+class _$BHSUserInputCopyWithImpl<$Res> implements $BHSUserInputCopyWith<$Res> {
+  _$BHSUserInputCopyWithImpl(this._self, this._then);
+
+  final BHSUserInput _self;
+  final $Res Function(BHSUserInput) _then;
 
   /// Create a copy of BHSUserInput
   /// with the given fields replaced by the non-null parameter values.
@@ -189,33 +113,33 @@ class __$$BHSUserInputImplCopyWithImpl<$Res>
     Object? brickhouseRole = freezed,
     Object? password = freezed,
   }) {
-    return _then(_$BHSUserInputImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       username: null == username
-          ? _value.username
+          ? _self.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
       brickhousePermissionTierId: freezed == brickhousePermissionTierId
-          ? _value.brickhousePermissionTierId
+          ? _self.brickhousePermissionTierId
           : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
               as String?,
       brickhouseRole: freezed == brickhouseRole
-          ? _value.brickhouseRole
+          ? _self.brickhouseRole
           : brickhouseRole // ignore: cast_nullable_to_non_nullable
               as BrickhouseUserRole?,
       password: freezed == password
-          ? _value.password
+          ? _self.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -224,8 +148,8 @@ class __$$BHSUserInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$BHSUserInputImpl extends _BHSUserInput {
-  _$BHSUserInputImpl(
+class _BHSUserInput extends BHSUserInput {
+  _BHSUserInput(
       {this.id,
       this.name = '',
       this.email = '',
@@ -235,9 +159,8 @@ class _$BHSUserInputImpl extends _BHSUserInput {
       this.brickhouseRole,
       this.password})
       : super._();
-
-  factory _$BHSUserInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$BHSUserInputImplFromJson(json);
+  factory _BHSUserInput.fromJson(Map<String, dynamic> json) =>
+      _$BHSUserInputFromJson(json);
 
   /// [id] represents the user ID. When is new, this value should be null.
   @override
@@ -271,29 +194,36 @@ class _$BHSUserInputImpl extends _BHSUserInput {
   @override
   String? password;
 
+  /// Create a copy of BHSUserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$BHSUserInputCopyWith<_BHSUserInput> get copyWith =>
+      __$BHSUserInputCopyWithImpl<_BHSUserInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$BHSUserInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'BHSUserInput(id: $id, name: $name, email: $email, username: $username, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, password: $password)';
   }
-
-  /// Create a copy of BHSUserInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$BHSUserInputImplCopyWith<_$BHSUserInputImpl> get copyWith =>
-      __$$BHSUserInputImplCopyWithImpl<_$BHSUserInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$BHSUserInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _BHSUserInput extends BHSUserInput {
-  factory _BHSUserInput(
+/// @nodoc
+abstract mixin class _$BHSUserInputCopyWith<$Res>
+    implements $BHSUserInputCopyWith<$Res> {
+  factory _$BHSUserInputCopyWith(
+          _BHSUserInput value, $Res Function(_BHSUserInput) _then) =
+      __$BHSUserInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? id,
       String name,
       String email,
@@ -301,170 +231,116 @@ abstract class _BHSUserInput extends BHSUserInput {
       String? brickhousePermissionTierId,
       @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
       BrickhouseUserRole? brickhouseRole,
-      String? password}) = _$BHSUserInputImpl;
-  _BHSUserInput._() : super._();
+      String? password});
+}
 
-  factory _BHSUserInput.fromJson(Map<String, dynamic> json) =
-      _$BHSUserInputImpl.fromJson;
+/// @nodoc
+class __$BHSUserInputCopyWithImpl<$Res>
+    implements _$BHSUserInputCopyWith<$Res> {
+  __$BHSUserInputCopyWithImpl(this._self, this._then);
 
-  /// [id] represents the user ID. When is new, this value should be null.
-  @override
-  String? get id;
-
-  /// [id] represents the user ID. When is new, this value should be null.
-  set id(String? value);
-
-  /// [name] represents the user name.
-  @override
-  String get name;
-
-  /// [name] represents the user name.
-  set name(String value);
-
-  /// [email] represents the user email.
-  @override
-  String get email;
-
-  /// [email] represents the user email.
-  set email(String value);
-
-  /// [username] represents the username.
-  @override
-  String get username;
-
-  /// [username] represents the username.
-  set username(String value);
-
-  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  @override
-  String? get brickhousePermissionTierId;
-
-  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  set brickhousePermissionTierId(String? value);
-
-  /// [brickhouseRole] represents the Brickhouse user role.
-  @override
-  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-  BrickhouseUserRole? get brickhouseRole;
-
-  /// [brickhouseRole] represents the Brickhouse user role.
-  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-  set brickhouseRole(BrickhouseUserRole? value);
-
-  /// [password] default password if allowed by the form
-  @override
-  String? get password;
-
-  /// [password] default password if allowed by the form
-  set password(String? value);
+  final _BHSUserInput _self;
+  final $Res Function(_BHSUserInput) _then;
 
   /// Create a copy of BHSUserInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$BHSUserInputImplCopyWith<_$BHSUserInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-InviteLink _$InviteLinkFromJson(Map<String, dynamic> json) {
-  return _InviteLink.fromJson(json);
-}
-
-/// @nodoc
-mixin _$InviteLink {
-  String get id => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
-  String? get sentTo => throw _privateConstructorUsedError;
-  @TimestampOrNullConverter()
-  DateTime? get sentAt => throw _privateConstructorUsedError;
-  @TimestampConverter()
-  DateTime get expiresAt => throw _privateConstructorUsedError;
-  @TimestampConverter()
-  DateTime get createdAt => throw _privateConstructorUsedError;
-
-  /// Serializes this InviteLink to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of InviteLink
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $InviteLinkCopyWith<InviteLink> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $InviteLinkCopyWith<$Res> {
-  factory $InviteLinkCopyWith(
-          InviteLink value, $Res Function(InviteLink) then) =
-      _$InviteLinkCopyWithImpl<$Res, InviteLink>;
-  @useResult
-  $Res call(
-      {String id,
-      String code,
-      String? sentTo,
-      @TimestampOrNullConverter() DateTime? sentAt,
-      @TimestampConverter() DateTime expiresAt,
-      @TimestampConverter() DateTime createdAt});
-}
-
-/// @nodoc
-class _$InviteLinkCopyWithImpl<$Res, $Val extends InviteLink>
-    implements $InviteLinkCopyWith<$Res> {
-  _$InviteLinkCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of InviteLink
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? id = null,
-    Object? code = null,
-    Object? sentTo = freezed,
-    Object? sentAt = freezed,
-    Object? expiresAt = null,
-    Object? createdAt = null,
+    Object? id = freezed,
+    Object? name = null,
+    Object? email = null,
+    Object? username = null,
+    Object? brickhousePermissionTierId = freezed,
+    Object? brickhouseRole = freezed,
+    Object? password = freezed,
   }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
+    return _then(_BHSUserInput(
+      id: freezed == id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      code: null == code
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
-      sentTo: freezed == sentTo
-          ? _value.sentTo
-          : sentTo // ignore: cast_nullable_to_non_nullable
               as String?,
-      sentAt: freezed == sentAt
-          ? _value.sentAt
-          : sentAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      expiresAt: null == expiresAt
-          ? _value.expiresAt
-          : expiresAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      createdAt: null == createdAt
-          ? _value.createdAt
-          : createdAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      brickhousePermissionTierId: freezed == brickhousePermissionTierId
+          ? _self.brickhousePermissionTierId
+          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      brickhouseRole: freezed == brickhouseRole
+          ? _self.brickhouseRole
+          : brickhouseRole // ignore: cast_nullable_to_non_nullable
+              as BrickhouseUserRole?,
+      password: freezed == password
+          ? _self.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
   }
 }
 
 /// @nodoc
-abstract class _$$InviteLinkImplCopyWith<$Res>
-    implements $InviteLinkCopyWith<$Res> {
-  factory _$$InviteLinkImplCopyWith(
-          _$InviteLinkImpl value, $Res Function(_$InviteLinkImpl) then) =
-      __$$InviteLinkImplCopyWithImpl<$Res>;
+mixin _$InviteLink {
+  String get id;
+  String get code;
+  String? get sentTo;
+  @TimestampOrNullConverter()
+  DateTime? get sentAt;
+  @TimestampConverter()
+  DateTime get expiresAt;
+  @TimestampConverter()
+  DateTime get createdAt;
+
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $InviteLinkCopyWith<InviteLink> get copyWith =>
+      _$InviteLinkCopyWithImpl<InviteLink>(this as InviteLink, _$identity);
+
+  /// Serializes this InviteLink to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is InviteLink &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
+            (identical(other.sentTo, sentTo) || other.sentTo == sentTo) &&
+            (identical(other.sentAt, sentAt) || other.sentAt == sentAt) &&
+            (identical(other.expiresAt, expiresAt) ||
+                other.expiresAt == expiresAt) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, code, sentTo, sentAt, expiresAt, createdAt);
+
+  @override
+  String toString() {
+    return 'InviteLink(id: $id, code: $code, sentTo: $sentTo, sentAt: $sentAt, expiresAt: $expiresAt, createdAt: $createdAt)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $InviteLinkCopyWith<$Res> {
+  factory $InviteLinkCopyWith(
+          InviteLink value, $Res Function(InviteLink) _then) =
+      _$InviteLinkCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -476,12 +352,11 @@ abstract class _$$InviteLinkImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$InviteLinkImplCopyWithImpl<$Res>
-    extends _$InviteLinkCopyWithImpl<$Res, _$InviteLinkImpl>
-    implements _$$InviteLinkImplCopyWith<$Res> {
-  __$$InviteLinkImplCopyWithImpl(
-      _$InviteLinkImpl _value, $Res Function(_$InviteLinkImpl) _then)
-      : super(_value, _then);
+class _$InviteLinkCopyWithImpl<$Res> implements $InviteLinkCopyWith<$Res> {
+  _$InviteLinkCopyWithImpl(this._self, this._then);
+
+  final InviteLink _self;
+  final $Res Function(InviteLink) _then;
 
   /// Create a copy of InviteLink
   /// with the given fields replaced by the non-null parameter values.
@@ -495,29 +370,29 @@ class __$$InviteLinkImplCopyWithImpl<$Res>
     Object? expiresAt = null,
     Object? createdAt = null,
   }) {
-    return _then(_$InviteLinkImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       code: null == code
-          ? _value.code
+          ? _self.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
       sentTo: freezed == sentTo
-          ? _value.sentTo
+          ? _self.sentTo
           : sentTo // ignore: cast_nullable_to_non_nullable
               as String?,
       sentAt: freezed == sentAt
-          ? _value.sentAt
+          ? _self.sentAt
           : sentAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       expiresAt: null == expiresAt
-          ? _value.expiresAt
+          ? _self.expiresAt
           : expiresAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
       createdAt: null == createdAt
-          ? _value.createdAt
+          ? _self.createdAt
           : createdAt // ignore: cast_nullable_to_non_nullable
               as DateTime,
     ));
@@ -526,8 +401,8 @@ class __$$InviteLinkImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$InviteLinkImpl extends _InviteLink {
-  const _$InviteLinkImpl(
+class _InviteLink extends InviteLink {
+  const _InviteLink(
       {required this.id,
       required this.code,
       this.sentTo,
@@ -535,9 +410,8 @@ class _$InviteLinkImpl extends _InviteLink {
       @TimestampConverter() required this.expiresAt,
       @TimestampConverter() required this.createdAt})
       : super._();
-
-  factory _$InviteLinkImpl.fromJson(Map<String, dynamic> json) =>
-      _$$InviteLinkImplFromJson(json);
+  factory _InviteLink.fromJson(Map<String, dynamic> json) =>
+      _$InviteLinkFromJson(json);
 
   @override
   final String id;
@@ -555,16 +429,26 @@ class _$InviteLinkImpl extends _InviteLink {
   @TimestampConverter()
   final DateTime createdAt;
 
+  /// Create a copy of InviteLink
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'InviteLink(id: $id, code: $code, sentTo: $sentTo, sentAt: $sentAt, expiresAt: $expiresAt, createdAt: $createdAt)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$InviteLinkCopyWith<_InviteLink> get copyWith =>
+      __$InviteLinkCopyWithImpl<_InviteLink>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$InviteLinkToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$InviteLinkImpl &&
+            other is _InviteLink &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.code, code) || other.code == code) &&
             (identical(other.sentTo, sentTo) || other.sentTo == sentTo) &&
@@ -580,145 +464,116 @@ class _$InviteLinkImpl extends _InviteLink {
   int get hashCode =>
       Object.hash(runtimeType, id, code, sentTo, sentAt, expiresAt, createdAt);
 
-  /// Create a copy of InviteLink
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
-      __$$InviteLinkImplCopyWithImpl<_$InviteLinkImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$InviteLinkImplToJson(
-      this,
-    );
+  String toString() {
+    return 'InviteLink(id: $id, code: $code, sentTo: $sentTo, sentAt: $sentAt, expiresAt: $expiresAt, createdAt: $createdAt)';
   }
 }
 
-abstract class _InviteLink extends InviteLink {
-  const factory _InviteLink(
-          {required final String id,
-          required final String code,
-          final String? sentTo,
-          @TimestampOrNullConverter() final DateTime? sentAt,
-          @TimestampConverter() required final DateTime expiresAt,
-          @TimestampConverter() required final DateTime createdAt}) =
-      _$InviteLinkImpl;
-  const _InviteLink._() : super._();
+/// @nodoc
+abstract mixin class _$InviteLinkCopyWith<$Res>
+    implements $InviteLinkCopyWith<$Res> {
+  factory _$InviteLinkCopyWith(
+          _InviteLink value, $Res Function(_InviteLink) _then) =
+      __$InviteLinkCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String code,
+      String? sentTo,
+      @TimestampOrNullConverter() DateTime? sentAt,
+      @TimestampConverter() DateTime expiresAt,
+      @TimestampConverter() DateTime createdAt});
+}
 
-  factory _InviteLink.fromJson(Map<String, dynamic> json) =
-      _$InviteLinkImpl.fromJson;
+/// @nodoc
+class __$InviteLinkCopyWithImpl<$Res> implements _$InviteLinkCopyWith<$Res> {
+  __$InviteLinkCopyWithImpl(this._self, this._then);
 
-  @override
-  String get id;
-  @override
-  String get code;
-  @override
-  String? get sentTo;
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get sentAt;
-  @override
-  @TimestampConverter()
-  DateTime get expiresAt;
-  @override
-  @TimestampConverter()
-  DateTime get createdAt;
+  final _InviteLink _self;
+  final $Res Function(_InviteLink) _then;
 
   /// Create a copy of InviteLink
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InviteLinkImplCopyWith<_$InviteLinkImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-MfaInput _$MfaInputFromJson(Map<String, dynamic> json) {
-  return _MfaInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? sentTo = freezed,
+    Object? sentAt = freezed,
+    Object? expiresAt = null,
+    Object? createdAt = null,
+  }) {
+    return _then(_InviteLink(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      sentTo: freezed == sentTo
+          ? _self.sentTo
+          : sentTo // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sentAt: freezed == sentAt
+          ? _self.sentAt
+          : sentAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      expiresAt: null == expiresAt
+          ? _self.expiresAt
+          : expiresAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      createdAt: null == createdAt
+          ? _self.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$MfaInput {
-  MfaMethod? get method => throw _privateConstructorUsedError;
-  set method(MfaMethod? value) => throw _privateConstructorUsedError;
-  String? get token => throw _privateConstructorUsedError;
-  set token(String? value) => throw _privateConstructorUsedError;
-  bool get isRequesting => throw _privateConstructorUsedError;
-  set isRequesting(bool value) => throw _privateConstructorUsedError;
-
-  /// Serializes this MfaInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  MfaMethod? get method;
+  set method(MfaMethod? value);
+  String? get token;
+  set token(String? value);
+  bool get isRequesting;
+  set isRequesting(bool value);
 
   /// Create a copy of MfaInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MfaInputCopyWith<MfaInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MfaInputCopyWith<$Res> {
-  factory $MfaInputCopyWith(MfaInput value, $Res Function(MfaInput) then) =
-      _$MfaInputCopyWithImpl<$Res, MfaInput>;
-  @useResult
-  $Res call({MfaMethod? method, String? token, bool isRequesting});
-}
-
-/// @nodoc
-class _$MfaInputCopyWithImpl<$Res, $Val extends MfaInput>
-    implements $MfaInputCopyWith<$Res> {
-  _$MfaInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of MfaInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $MfaInputCopyWith<MfaInput> get copyWith =>
+      _$MfaInputCopyWithImpl<MfaInput>(this as MfaInput, _$identity);
+
+  /// Serializes this MfaInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? method = freezed,
-    Object? token = freezed,
-    Object? isRequesting = null,
-  }) {
-    return _then(_value.copyWith(
-      method: freezed == method
-          ? _value.method
-          : method // ignore: cast_nullable_to_non_nullable
-              as MfaMethod?,
-      token: freezed == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isRequesting: null == isRequesting
-          ? _value.isRequesting
-          : isRequesting // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  String toString() {
+    return 'MfaInput(method: $method, token: $token, isRequesting: $isRequesting)';
   }
 }
 
 /// @nodoc
-abstract class _$$MfaInputImplCopyWith<$Res>
-    implements $MfaInputCopyWith<$Res> {
-  factory _$$MfaInputImplCopyWith(
-          _$MfaInputImpl value, $Res Function(_$MfaInputImpl) then) =
-      __$$MfaInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MfaInputCopyWith<$Res> {
+  factory $MfaInputCopyWith(MfaInput value, $Res Function(MfaInput) _then) =
+      _$MfaInputCopyWithImpl;
   @useResult
   $Res call({MfaMethod? method, String? token, bool isRequesting});
 }
 
 /// @nodoc
-class __$$MfaInputImplCopyWithImpl<$Res>
-    extends _$MfaInputCopyWithImpl<$Res, _$MfaInputImpl>
-    implements _$$MfaInputImplCopyWith<$Res> {
-  __$$MfaInputImplCopyWithImpl(
-      _$MfaInputImpl _value, $Res Function(_$MfaInputImpl) _then)
-      : super(_value, _then);
+class _$MfaInputCopyWithImpl<$Res> implements $MfaInputCopyWith<$Res> {
+  _$MfaInputCopyWithImpl(this._self, this._then);
+
+  final MfaInput _self;
+  final $Res Function(MfaInput) _then;
 
   /// Create a copy of MfaInput
   /// with the given fields replaced by the non-null parameter values.
@@ -729,17 +584,17 @@ class __$$MfaInputImplCopyWithImpl<$Res>
     Object? token = freezed,
     Object? isRequesting = null,
   }) {
-    return _then(_$MfaInputImpl(
+    return _then(_self.copyWith(
       method: freezed == method
-          ? _value.method
+          ? _self.method
           : method // ignore: cast_nullable_to_non_nullable
               as MfaMethod?,
       token: freezed == token
-          ? _value.token
+          ? _self.token
           : token // ignore: cast_nullable_to_non_nullable
               as String?,
       isRequesting: null == isRequesting
-          ? _value.isRequesting
+          ? _self.isRequesting
           : isRequesting // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -748,11 +603,10 @@ class __$$MfaInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MfaInputImpl implements _MfaInput {
-  _$MfaInputImpl({this.method, this.token, this.isRequesting = false});
-
-  factory _$MfaInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MfaInputImplFromJson(json);
+class _MfaInput implements MfaInput {
+  _MfaInput({this.method, this.token, this.isRequesting = false});
+  factory _MfaInput.fromJson(Map<String, dynamic> json) =>
+      _$MfaInputFromJson(json);
 
   @override
   MfaMethod? method;
@@ -762,131 +616,101 @@ class _$MfaInputImpl implements _MfaInput {
   @JsonKey()
   bool isRequesting;
 
+  /// Create a copy of MfaInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MfaInputCopyWith<_MfaInput> get copyWith =>
+      __$MfaInputCopyWithImpl<_MfaInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MfaInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'MfaInput(method: $method, token: $token, isRequesting: $isRequesting)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$MfaInputCopyWith<$Res>
+    implements $MfaInputCopyWith<$Res> {
+  factory _$MfaInputCopyWith(_MfaInput value, $Res Function(_MfaInput) _then) =
+      __$MfaInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({MfaMethod? method, String? token, bool isRequesting});
+}
+
+/// @nodoc
+class __$MfaInputCopyWithImpl<$Res> implements _$MfaInputCopyWith<$Res> {
+  __$MfaInputCopyWithImpl(this._self, this._then);
+
+  final _MfaInput _self;
+  final $Res Function(_MfaInput) _then;
 
   /// Create a copy of MfaInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$MfaInputImplCopyWith<_$MfaInputImpl> get copyWith =>
-      __$$MfaInputImplCopyWithImpl<_$MfaInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MfaInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? method = freezed,
+    Object? token = freezed,
+    Object? isRequesting = null,
+  }) {
+    return _then(_MfaInput(
+      method: freezed == method
+          ? _self.method
+          : method // ignore: cast_nullable_to_non_nullable
+              as MfaMethod?,
+      token: freezed == token
+          ? _self.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isRequesting: null == isRequesting
+          ? _self.isRequesting
+          : isRequesting // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
-}
-
-abstract class _MfaInput implements MfaInput {
-  factory _MfaInput({MfaMethod? method, String? token, bool isRequesting}) =
-      _$MfaInputImpl;
-
-  factory _MfaInput.fromJson(Map<String, dynamic> json) =
-      _$MfaInputImpl.fromJson;
-
-  @override
-  MfaMethod? get method;
-  set method(MfaMethod? value);
-  @override
-  String? get token;
-  set token(String? value);
-  @override
-  bool get isRequesting;
-  set isRequesting(bool value);
-
-  /// Create a copy of MfaInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MfaInputImplCopyWith<_$MfaInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-PasswordInput _$PasswordInputFromJson(Map<String, dynamic> json) {
-  return _PasswordInput.fromJson(json);
 }
 
 /// @nodoc
 mixin _$PasswordInput {
-  String get currentPassword => throw _privateConstructorUsedError;
-  set currentPassword(String value) => throw _privateConstructorUsedError;
-  String get newPassword => throw _privateConstructorUsedError;
-  set newPassword(String value) => throw _privateConstructorUsedError;
-  String get newPasswordConfirmation => throw _privateConstructorUsedError;
-  set newPasswordConfirmation(String value) =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this PasswordInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get currentPassword;
+  set currentPassword(String value);
+  String get newPassword;
+  set newPassword(String value);
+  String get newPasswordConfirmation;
+  set newPasswordConfirmation(String value);
 
   /// Create a copy of PasswordInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $PasswordInputCopyWith<PasswordInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PasswordInputCopyWith<$Res> {
-  factory $PasswordInputCopyWith(
-          PasswordInput value, $Res Function(PasswordInput) then) =
-      _$PasswordInputCopyWithImpl<$Res, PasswordInput>;
-  @useResult
-  $Res call(
-      {String currentPassword,
-      String newPassword,
-      String newPasswordConfirmation});
-}
-
-/// @nodoc
-class _$PasswordInputCopyWithImpl<$Res, $Val extends PasswordInput>
-    implements $PasswordInputCopyWith<$Res> {
-  _$PasswordInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of PasswordInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $PasswordInputCopyWith<PasswordInput> get copyWith =>
+      _$PasswordInputCopyWithImpl<PasswordInput>(
+          this as PasswordInput, _$identity);
+
+  /// Serializes this PasswordInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? currentPassword = null,
-    Object? newPassword = null,
-    Object? newPasswordConfirmation = null,
-  }) {
-    return _then(_value.copyWith(
-      currentPassword: null == currentPassword
-          ? _value.currentPassword
-          : currentPassword // ignore: cast_nullable_to_non_nullable
-              as String,
-      newPassword: null == newPassword
-          ? _value.newPassword
-          : newPassword // ignore: cast_nullable_to_non_nullable
-              as String,
-      newPasswordConfirmation: null == newPasswordConfirmation
-          ? _value.newPasswordConfirmation
-          : newPasswordConfirmation // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  String toString() {
+    return 'PasswordInput(currentPassword: $currentPassword, newPassword: $newPassword, newPasswordConfirmation: $newPasswordConfirmation)';
   }
 }
 
 /// @nodoc
-abstract class _$$PasswordInputImplCopyWith<$Res>
-    implements $PasswordInputCopyWith<$Res> {
-  factory _$$PasswordInputImplCopyWith(
-          _$PasswordInputImpl value, $Res Function(_$PasswordInputImpl) then) =
-      __$$PasswordInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $PasswordInputCopyWith<$Res> {
+  factory $PasswordInputCopyWith(
+          PasswordInput value, $Res Function(PasswordInput) _then) =
+      _$PasswordInputCopyWithImpl;
   @useResult
   $Res call(
       {String currentPassword,
@@ -895,12 +719,12 @@ abstract class _$$PasswordInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$PasswordInputImplCopyWithImpl<$Res>
-    extends _$PasswordInputCopyWithImpl<$Res, _$PasswordInputImpl>
-    implements _$$PasswordInputImplCopyWith<$Res> {
-  __$$PasswordInputImplCopyWithImpl(
-      _$PasswordInputImpl _value, $Res Function(_$PasswordInputImpl) _then)
-      : super(_value, _then);
+class _$PasswordInputCopyWithImpl<$Res>
+    implements $PasswordInputCopyWith<$Res> {
+  _$PasswordInputCopyWithImpl(this._self, this._then);
+
+  final PasswordInput _self;
+  final $Res Function(PasswordInput) _then;
 
   /// Create a copy of PasswordInput
   /// with the given fields replaced by the non-null parameter values.
@@ -911,17 +735,17 @@ class __$$PasswordInputImplCopyWithImpl<$Res>
     Object? newPassword = null,
     Object? newPasswordConfirmation = null,
   }) {
-    return _then(_$PasswordInputImpl(
+    return _then(_self.copyWith(
       currentPassword: null == currentPassword
-          ? _value.currentPassword
+          ? _self.currentPassword
           : currentPassword // ignore: cast_nullable_to_non_nullable
               as String,
       newPassword: null == newPassword
-          ? _value.newPassword
+          ? _self.newPassword
           : newPassword // ignore: cast_nullable_to_non_nullable
               as String,
       newPasswordConfirmation: null == newPasswordConfirmation
-          ? _value.newPasswordConfirmation
+          ? _self.newPasswordConfirmation
           : newPasswordConfirmation // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -930,14 +754,13 @@ class __$$PasswordInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$PasswordInputImpl implements _PasswordInput {
-  _$PasswordInputImpl(
+class _PasswordInput implements PasswordInput {
+  _PasswordInput(
       {this.currentPassword = '',
       this.newPassword = '',
       this.newPasswordConfirmation = ''});
-
-  factory _$PasswordInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$PasswordInputImplFromJson(json);
+  factory _PasswordInput.fromJson(Map<String, dynamic> json) =>
+      _$PasswordInputFromJson(json);
 
   @override
   @JsonKey()
@@ -949,84 +772,108 @@ class _$PasswordInputImpl implements _PasswordInput {
   @JsonKey()
   String newPasswordConfirmation;
 
+  /// Create a copy of PasswordInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PasswordInputCopyWith<_PasswordInput> get copyWith =>
+      __$PasswordInputCopyWithImpl<_PasswordInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$PasswordInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'PasswordInput(currentPassword: $currentPassword, newPassword: $newPassword, newPasswordConfirmation: $newPasswordConfirmation)';
   }
-
-  /// Create a copy of PasswordInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$PasswordInputImplCopyWith<_$PasswordInputImpl> get copyWith =>
-      __$$PasswordInputImplCopyWithImpl<_$PasswordInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$PasswordInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _PasswordInput implements PasswordInput {
-  factory _PasswordInput(
+/// @nodoc
+abstract mixin class _$PasswordInputCopyWith<$Res>
+    implements $PasswordInputCopyWith<$Res> {
+  factory _$PasswordInputCopyWith(
+          _PasswordInput value, $Res Function(_PasswordInput) _then) =
+      __$PasswordInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String currentPassword,
       String newPassword,
-      String newPasswordConfirmation}) = _$PasswordInputImpl;
+      String newPasswordConfirmation});
+}
 
-  factory _PasswordInput.fromJson(Map<String, dynamic> json) =
-      _$PasswordInputImpl.fromJson;
+/// @nodoc
+class __$PasswordInputCopyWithImpl<$Res>
+    implements _$PasswordInputCopyWith<$Res> {
+  __$PasswordInputCopyWithImpl(this._self, this._then);
 
-  @override
-  String get currentPassword;
-  set currentPassword(String value);
-  @override
-  String get newPassword;
-  set newPassword(String value);
-  @override
-  String get newPasswordConfirmation;
-  set newPasswordConfirmation(String value);
+  final _PasswordInput _self;
+  final $Res Function(_PasswordInput) _then;
 
   /// Create a copy of PasswordInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$PasswordInputImplCopyWith<_$PasswordInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-ProfileInput _$ProfileInputFromJson(Map<String, dynamic> json) {
-  return _ProfileInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? currentPassword = null,
+    Object? newPassword = null,
+    Object? newPasswordConfirmation = null,
+  }) {
+    return _then(_PasswordInput(
+      currentPassword: null == currentPassword
+          ? _self.currentPassword
+          : currentPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      newPassword: null == newPassword
+          ? _self.newPassword
+          : newPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      newPasswordConfirmation: null == newPasswordConfirmation
+          ? _self.newPasswordConfirmation
+          : newPasswordConfirmation // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$ProfileInput {
-  String get name => throw _privateConstructorUsedError;
-  set name(String value) => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  set email(String value) => throw _privateConstructorUsedError;
-  String get username => throw _privateConstructorUsedError;
-  set username(String value) => throw _privateConstructorUsedError;
-  AvatarInput? get dynamicAvatar => throw _privateConstructorUsedError;
-  set dynamicAvatar(AvatarInput? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this ProfileInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get name;
+  set name(String value);
+  String get email;
+  set email(String value);
+  String get username;
+  set username(String value);
+  AvatarInput? get dynamicAvatar;
+  set dynamicAvatar(AvatarInput? value);
 
   /// Create a copy of ProfileInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $ProfileInputCopyWith<ProfileInput> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$ProfileInputCopyWithImpl<ProfileInput>(
+          this as ProfileInput, _$identity);
+
+  /// Serializes this ProfileInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ProfileInput(name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar)';
+  }
 }
 
 /// @nodoc
-abstract class $ProfileInputCopyWith<$Res> {
+abstract mixin class $ProfileInputCopyWith<$Res> {
   factory $ProfileInputCopyWith(
-          ProfileInput value, $Res Function(ProfileInput) then) =
-      _$ProfileInputCopyWithImpl<$Res, ProfileInput>;
+          ProfileInput value, $Res Function(ProfileInput) _then) =
+      _$ProfileInputCopyWithImpl;
   @useResult
   $Res call(
       {String name, String email, String username, AvatarInput? dynamicAvatar});
@@ -1035,14 +882,11 @@ abstract class $ProfileInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ProfileInputCopyWithImpl<$Res, $Val extends ProfileInput>
-    implements $ProfileInputCopyWith<$Res> {
-  _$ProfileInputCopyWithImpl(this._value, this._then);
+class _$ProfileInputCopyWithImpl<$Res> implements $ProfileInputCopyWith<$Res> {
+  _$ProfileInputCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final ProfileInput _self;
+  final $Res Function(ProfileInput) _then;
 
   /// Create a copy of ProfileInput
   /// with the given fields replaced by the non-null parameter values.
@@ -1054,24 +898,24 @@ class _$ProfileInputCopyWithImpl<$Res, $Val extends ProfileInput>
     Object? username = null,
     Object? dynamicAvatar = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       username: null == username
-          ? _value.username
+          ? _self.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
       dynamicAvatar: freezed == dynamicAvatar
-          ? _value.dynamicAvatar
+          ? _self.dynamicAvatar
           : dynamicAvatar // ignore: cast_nullable_to_non_nullable
               as AvatarInput?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of ProfileInput
@@ -1079,81 +923,26 @@ class _$ProfileInputCopyWithImpl<$Res, $Val extends ProfileInput>
   @override
   @pragma('vm:prefer-inline')
   $AvatarInputCopyWith<$Res>? get dynamicAvatar {
-    if (_value.dynamicAvatar == null) {
+    if (_self.dynamicAvatar == null) {
       return null;
     }
 
-    return $AvatarInputCopyWith<$Res>(_value.dynamicAvatar!, (value) {
-      return _then(_value.copyWith(dynamicAvatar: value) as $Val);
+    return $AvatarInputCopyWith<$Res>(_self.dynamicAvatar!, (value) {
+      return _then(_self.copyWith(dynamicAvatar: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$ProfileInputImplCopyWith<$Res>
-    implements $ProfileInputCopyWith<$Res> {
-  factory _$$ProfileInputImplCopyWith(
-          _$ProfileInputImpl value, $Res Function(_$ProfileInputImpl) then) =
-      __$$ProfileInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String name, String email, String username, AvatarInput? dynamicAvatar});
-
-  @override
-  $AvatarInputCopyWith<$Res>? get dynamicAvatar;
-}
-
-/// @nodoc
-class __$$ProfileInputImplCopyWithImpl<$Res>
-    extends _$ProfileInputCopyWithImpl<$Res, _$ProfileInputImpl>
-    implements _$$ProfileInputImplCopyWith<$Res> {
-  __$$ProfileInputImplCopyWithImpl(
-      _$ProfileInputImpl _value, $Res Function(_$ProfileInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of ProfileInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? email = null,
-    Object? username = null,
-    Object? dynamicAvatar = freezed,
-  }) {
-    return _then(_$ProfileInputImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      dynamicAvatar: freezed == dynamicAvatar
-          ? _value.dynamicAvatar
-          : dynamicAvatar // ignore: cast_nullable_to_non_nullable
-              as AvatarInput?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$ProfileInputImpl implements _ProfileInput {
-  _$ProfileInputImpl(
+class _ProfileInput implements ProfileInput {
+  _ProfileInput(
       {this.name = '',
       this.email = '',
       this.username = '',
       this.dynamicAvatar});
-
-  factory _$ProfileInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$ProfileInputImplFromJson(json);
+  factory _ProfileInput.fromJson(Map<String, dynamic> json) =>
+      _$ProfileInputFromJson(json);
 
   @override
   @JsonKey()
@@ -1167,147 +956,128 @@ class _$ProfileInputImpl implements _ProfileInput {
   @override
   AvatarInput? dynamicAvatar;
 
+  /// Create a copy of ProfileInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ProfileInputCopyWith<_ProfileInput> get copyWith =>
+      __$ProfileInputCopyWithImpl<_ProfileInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ProfileInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'ProfileInput(name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$ProfileInputCopyWith<$Res>
+    implements $ProfileInputCopyWith<$Res> {
+  factory _$ProfileInputCopyWith(
+          _ProfileInput value, $Res Function(_ProfileInput) _then) =
+      __$ProfileInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String name, String email, String username, AvatarInput? dynamicAvatar});
+
+  @override
+  $AvatarInputCopyWith<$Res>? get dynamicAvatar;
+}
+
+/// @nodoc
+class __$ProfileInputCopyWithImpl<$Res>
+    implements _$ProfileInputCopyWith<$Res> {
+  __$ProfileInputCopyWithImpl(this._self, this._then);
+
+  final _ProfileInput _self;
+  final $Res Function(_ProfileInput) _then;
 
   /// Create a copy of ProfileInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$ProfileInputImplCopyWith<_$ProfileInputImpl> get copyWith =>
-      __$$ProfileInputImplCopyWithImpl<_$ProfileInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$ProfileInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? name = null,
+    Object? email = null,
+    Object? username = null,
+    Object? dynamicAvatar = freezed,
+  }) {
+    return _then(_ProfileInput(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      dynamicAvatar: freezed == dynamicAvatar
+          ? _self.dynamicAvatar
+          : dynamicAvatar // ignore: cast_nullable_to_non_nullable
+              as AvatarInput?,
+    ));
   }
-}
-
-abstract class _ProfileInput implements ProfileInput {
-  factory _ProfileInput(
-      {String name,
-      String email,
-      String username,
-      AvatarInput? dynamicAvatar}) = _$ProfileInputImpl;
-
-  factory _ProfileInput.fromJson(Map<String, dynamic> json) =
-      _$ProfileInputImpl.fromJson;
-
-  @override
-  String get name;
-  set name(String value);
-  @override
-  String get email;
-  set email(String value);
-  @override
-  String get username;
-  set username(String value);
-  @override
-  AvatarInput? get dynamicAvatar;
-  set dynamicAvatar(AvatarInput? value);
 
   /// Create a copy of ProfileInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$ProfileInputImplCopyWith<_$ProfileInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $AvatarInputCopyWith<$Res>? get dynamicAvatar {
+    if (_self.dynamicAvatar == null) {
+      return null;
+    }
 
-TenvioDestinationSetup _$TenvioDestinationSetupFromJson(
-    Map<String, dynamic> json) {
-  return _TenvioDestinationSetup.fromJson(json);
+    return $AvatarInputCopyWith<$Res>(_self.dynamicAvatar!, (value) {
+      return _then(_self.copyWith(dynamicAvatar: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$TenvioDestinationSetup {
-  String get address => throw _privateConstructorUsedError;
-  set address(String value) => throw _privateConstructorUsedError;
-  double? get latitude => throw _privateConstructorUsedError;
-  set latitude(double? value) => throw _privateConstructorUsedError;
-  double? get longitude => throw _privateConstructorUsedError;
-  set longitude(double? value) => throw _privateConstructorUsedError;
-  bool get addressIsPlusCode => throw _privateConstructorUsedError;
-  set addressIsPlusCode(bool value) => throw _privateConstructorUsedError;
-
-  /// Serializes this TenvioDestinationSetup to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get address;
+  set address(String value);
+  double? get latitude;
+  set latitude(double? value);
+  double? get longitude;
+  set longitude(double? value);
+  bool get addressIsPlusCode;
+  set addressIsPlusCode(bool value);
 
   /// Create a copy of TenvioDestinationSetup
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $TenvioDestinationSetupCopyWith<TenvioDestinationSetup> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $TenvioDestinationSetupCopyWith<$Res> {
-  factory $TenvioDestinationSetupCopyWith(TenvioDestinationSetup value,
-          $Res Function(TenvioDestinationSetup) then) =
-      _$TenvioDestinationSetupCopyWithImpl<$Res, TenvioDestinationSetup>;
-  @useResult
-  $Res call(
-      {String address,
-      double? latitude,
-      double? longitude,
-      bool addressIsPlusCode});
-}
-
-/// @nodoc
-class _$TenvioDestinationSetupCopyWithImpl<$Res,
-        $Val extends TenvioDestinationSetup>
-    implements $TenvioDestinationSetupCopyWith<$Res> {
-  _$TenvioDestinationSetupCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of TenvioDestinationSetup
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $TenvioDestinationSetupCopyWith<TenvioDestinationSetup> get copyWith =>
+      _$TenvioDestinationSetupCopyWithImpl<TenvioDestinationSetup>(
+          this as TenvioDestinationSetup, _$identity);
+
+  /// Serializes this TenvioDestinationSetup to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? address = null,
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? addressIsPlusCode = null,
-  }) {
-    return _then(_value.copyWith(
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as String,
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      addressIsPlusCode: null == addressIsPlusCode
-          ? _value.addressIsPlusCode
-          : addressIsPlusCode // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  String toString() {
+    return 'TenvioDestinationSetup(address: $address, latitude: $latitude, longitude: $longitude, addressIsPlusCode: $addressIsPlusCode)';
   }
 }
 
 /// @nodoc
-abstract class _$$TenvioDestinationSetupImplCopyWith<$Res>
-    implements $TenvioDestinationSetupCopyWith<$Res> {
-  factory _$$TenvioDestinationSetupImplCopyWith(
-          _$TenvioDestinationSetupImpl value,
-          $Res Function(_$TenvioDestinationSetupImpl) then) =
-      __$$TenvioDestinationSetupImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $TenvioDestinationSetupCopyWith<$Res> {
+  factory $TenvioDestinationSetupCopyWith(TenvioDestinationSetup value,
+          $Res Function(TenvioDestinationSetup) _then) =
+      _$TenvioDestinationSetupCopyWithImpl;
   @useResult
   $Res call(
       {String address,
@@ -1317,14 +1087,12 @@ abstract class _$$TenvioDestinationSetupImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$TenvioDestinationSetupImplCopyWithImpl<$Res>
-    extends _$TenvioDestinationSetupCopyWithImpl<$Res,
-        _$TenvioDestinationSetupImpl>
-    implements _$$TenvioDestinationSetupImplCopyWith<$Res> {
-  __$$TenvioDestinationSetupImplCopyWithImpl(
-      _$TenvioDestinationSetupImpl _value,
-      $Res Function(_$TenvioDestinationSetupImpl) _then)
-      : super(_value, _then);
+class _$TenvioDestinationSetupCopyWithImpl<$Res>
+    implements $TenvioDestinationSetupCopyWith<$Res> {
+  _$TenvioDestinationSetupCopyWithImpl(this._self, this._then);
+
+  final TenvioDestinationSetup _self;
+  final $Res Function(TenvioDestinationSetup) _then;
 
   /// Create a copy of TenvioDestinationSetup
   /// with the given fields replaced by the non-null parameter values.
@@ -1336,21 +1104,21 @@ class __$$TenvioDestinationSetupImplCopyWithImpl<$Res>
     Object? longitude = freezed,
     Object? addressIsPlusCode = null,
   }) {
-    return _then(_$TenvioDestinationSetupImpl(
+    return _then(_self.copyWith(
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
       latitude: freezed == latitude
-          ? _value.latitude
+          ? _self.latitude
           : latitude // ignore: cast_nullable_to_non_nullable
               as double?,
       longitude: freezed == longitude
-          ? _value.longitude
+          ? _self.longitude
           : longitude // ignore: cast_nullable_to_non_nullable
               as double?,
       addressIsPlusCode: null == addressIsPlusCode
-          ? _value.addressIsPlusCode
+          ? _self.addressIsPlusCode
           : addressIsPlusCode // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -1359,15 +1127,14 @@ class __$$TenvioDestinationSetupImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$TenvioDestinationSetupImpl implements _TenvioDestinationSetup {
-  _$TenvioDestinationSetupImpl(
+class _TenvioDestinationSetup implements TenvioDestinationSetup {
+  _TenvioDestinationSetup(
       {this.address = '',
       this.latitude,
       this.longitude,
       this.addressIsPlusCode = false});
-
-  factory _$TenvioDestinationSetupImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TenvioDestinationSetupImplFromJson(json);
+  factory _TenvioDestinationSetup.fromJson(Map<String, dynamic> json) =>
+      _$TenvioDestinationSetupFromJson(json);
 
   @override
   @JsonKey()
@@ -1380,218 +1147,375 @@ class _$TenvioDestinationSetupImpl implements _TenvioDestinationSetup {
   @JsonKey()
   bool addressIsPlusCode;
 
+  /// Create a copy of TenvioDestinationSetup
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TenvioDestinationSetupCopyWith<_TenvioDestinationSetup> get copyWith =>
+      __$TenvioDestinationSetupCopyWithImpl<_TenvioDestinationSetup>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TenvioDestinationSetupToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'TenvioDestinationSetup(address: $address, latitude: $latitude, longitude: $longitude, addressIsPlusCode: $addressIsPlusCode)';
   }
-
-  /// Create a copy of TenvioDestinationSetup
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TenvioDestinationSetupImplCopyWith<_$TenvioDestinationSetupImpl>
-      get copyWith => __$$TenvioDestinationSetupImplCopyWithImpl<
-          _$TenvioDestinationSetupImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TenvioDestinationSetupImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _TenvioDestinationSetup implements TenvioDestinationSetup {
-  factory _TenvioDestinationSetup(
+/// @nodoc
+abstract mixin class _$TenvioDestinationSetupCopyWith<$Res>
+    implements $TenvioDestinationSetupCopyWith<$Res> {
+  factory _$TenvioDestinationSetupCopyWith(_TenvioDestinationSetup value,
+          $Res Function(_TenvioDestinationSetup) _then) =
+      __$TenvioDestinationSetupCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String address,
       double? latitude,
       double? longitude,
-      bool addressIsPlusCode}) = _$TenvioDestinationSetupImpl;
+      bool addressIsPlusCode});
+}
 
-  factory _TenvioDestinationSetup.fromJson(Map<String, dynamic> json) =
-      _$TenvioDestinationSetupImpl.fromJson;
+/// @nodoc
+class __$TenvioDestinationSetupCopyWithImpl<$Res>
+    implements _$TenvioDestinationSetupCopyWith<$Res> {
+  __$TenvioDestinationSetupCopyWithImpl(this._self, this._then);
 
-  @override
-  String get address;
-  set address(String value);
-  @override
-  double? get latitude;
-  set latitude(double? value);
-  @override
-  double? get longitude;
-  set longitude(double? value);
-  @override
-  bool get addressIsPlusCode;
-  set addressIsPlusCode(bool value);
+  final _TenvioDestinationSetup _self;
+  final $Res Function(_TenvioDestinationSetup) _then;
 
   /// Create a copy of TenvioDestinationSetup
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TenvioDestinationSetupImplCopyWith<_$TenvioDestinationSetupImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-User _$UserFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? address = null,
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? addressIsPlusCode = null,
+  }) {
+    return _then(_TenvioDestinationSetup(
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as String,
+      latitude: freezed == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      addressIsPlusCode: null == addressIsPlusCode
+          ? _self.addressIsPlusCode
+          : addressIsPlusCode // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$User {
   /// [id] represents the user ID.
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// [name] represents the user name.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// [token] represents the user token.
-  Token? get token => throw _privateConstructorUsedError;
+  Token? get token;
 
   /// [parentId] represents the parent ID.
-  String? get parentId => throw _privateConstructorUsedError;
+  String? get parentId;
 
   /// [email] represents the user email.
-  String? get email => throw _privateConstructorUsedError;
+  String? get email;
 
   /// [username] represents the username.
-  String? get username => throw _privateConstructorUsedError;
+  String? get username;
 
   /// [dynamicAvatar] represents the user avatar.
-  Avatar? get dynamicAvatar => throw _privateConstructorUsedError;
+  Avatar? get dynamicAvatar;
 
   /// [referencesIds] represents the list of references IDs.
-  List<String>? get referencesIds => throw _privateConstructorUsedError;
+  List<String>? get referencesIds;
 
   /// [references] represents the list of references.
-  List<Reference>? get references => throw _privateConstructorUsedError;
+  List<Reference>? get references;
 
   /// [category] represents the user category.
-  Category? get category => throw _privateConstructorUsedError;
+  Category? get category;
 
   /// [categoryId] represents the user category ID.
-  String? get categoryId => throw _privateConstructorUsedError;
+  String? get categoryId;
 
   /// [mqttToken] represents the MQTT token.
-  String? get mqttToken => throw _privateConstructorUsedError;
+  String? get mqttToken;
 
   /// [access] represents the list of granted access.
-  List<Access>? get access => throw _privateConstructorUsedError;
+  List<Access>? get access;
 
   /// [customFields] represents the list of custom fields.
-  List<CustomField>? get customFields => throw _privateConstructorUsedError;
+  List<CustomField>? get customFields;
 
   /// [platformAuth] represents the platform auth.
-  String get platformAuth => throw _privateConstructorUsedError;
+  String get platformAuth;
 
   /// [childs] represents the list of childs.
-  List<User> get childs => throw _privateConstructorUsedError;
+  List<User> get childs;
 
   /// [tagsIds] represents the list of tags IDs.
-  List<String>? get tagsIds => throw _privateConstructorUsedError;
+  List<String>? get tagsIds;
 
   /// [tags] represents the list of tags.
-  List<Tag>? get tags => throw _privateConstructorUsedError;
+  List<Tag>? get tags;
 
   /// [planId] represents the plan ID.
-  String? get planId => throw _privateConstructorUsedError;
+  String? get planId;
 
   /// [allowedApps] represents the list of allowed apps.
-  List<RegisteredApp>? get allowedApps => throw _privateConstructorUsedError;
+  List<RegisteredApp>? get allowedApps;
 
   /// [mappitAssetsIds] represents the list of assets IDs.
   /// This field is only for `Mappit` use.
-  List<String>? get mappitAssetsIds => throw _privateConstructorUsedError;
+  List<String>? get mappitAssetsIds;
 
   /// [mappitSecondaryRoutes]
-  List<String>? get mappitSecondaryRoutesIds =>
-      throw _privateConstructorUsedError;
+  List<String>? get mappitSecondaryRoutesIds;
 
   /// [mappitAssets] represents the list of assets.
   /// This field is only for `Mappit` use.
-  List<Asset>? get mappitAssets => throw _privateConstructorUsedError;
+  List<Asset>? get mappitAssets;
 
   /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
   /// This field is only for `Mappit` use.
-  int? get historicalDaysAllowed => throw _privateConstructorUsedError;
+  int? get historicalDaysAllowed;
 
   /// [mappitExternalAccountId] represents the Mappit external account ID.
   /// This field is only for `Mappit` use.
-  String? get mappitExternalAccountId => throw _privateConstructorUsedError;
+  String? get mappitExternalAccountId;
 
   /// [mappitExternalAccount] represents the Mappit external account.
   /// This field is only for `Mappit` use.
-  ExternalAccount? get mappitExternalAccount =>
-      throw _privateConstructorUsedError;
+  ExternalAccount? get mappitExternalAccount;
 
   /// [mfaEnabled] represents the MFA enabled flag.
-  bool get mfaEnabled => throw _privateConstructorUsedError;
+  bool get mfaEnabled;
 
   /// [mfaMethods] represents the list of MFA methods.
   @MfaMethodConverter()
-  List<MfaMethod> get mfaMethods => throw _privateConstructorUsedError;
+  List<MfaMethod> get mfaMethods;
 
   /// [tenvioAddress] represents the Tenvio address.
-  String? get tenvioAddress => throw _privateConstructorUsedError;
+  String? get tenvioAddress;
 
   /// [tenvioPhone] represents the Tenvio phone.
-  String? get tenvioPhone => throw _privateConstructorUsedError;
+  String? get tenvioPhone;
 
   /// [tenvioLatitude] represents the Tenvio latitude.
-  double? get tenvioLatitude => throw _privateConstructorUsedError;
+  double? get tenvioLatitude;
 
   /// [tenvioLongitude] represents the Tenvio longitude.
-  double? get tenvioLongitude => throw _privateConstructorUsedError;
+  double? get tenvioLongitude;
 
   /// [tenvioAddressIsPlusCode] represents the Tenvio address is Plus Code.
-  bool? get tenvioAddressIsPlusCode => throw _privateConstructorUsedError;
+  bool? get tenvioAddressIsPlusCode;
 
   /// [suspendedAt] represents the date when the account was suspended.
   @TimestampOrNullConverter()
-  DateTime? get suspendedAt => throw _privateConstructorUsedError;
+  DateTime? get suspendedAt;
 
   /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
-  List<String> get hwModelsAnimationsIds => throw _privateConstructorUsedError;
+  List<String> get hwModelsAnimationsIds;
 
   /// [brickhousePermissionTier] represents the Brickhouse permission tier for access level of an user.
-  BHSPermissionTier? get brickhousePermissionTier =>
-      throw _privateConstructorUsedError;
+  BHSPermissionTier? get brickhousePermissionTier;
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  String? get brickhousePermissionTierId => throw _privateConstructorUsedError;
+  String? get brickhousePermissionTierId;
 
   /// [brickhouseRole] represents the Brickhouse user role.
   @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-  BrickhouseUserRole? get brickhouseRole => throw _privateConstructorUsedError;
+  BrickhouseUserRole? get brickhouseRole;
 
   /// [sdmCode] represents the SDM code.
-  String? get sdmCode => throw _privateConstructorUsedError;
+  String? get sdmCode;
 
   /// [isLocked] represents if the user is locked.
-  bool get isLocked => throw _privateConstructorUsedError;
+  bool get isLocked;
 
   /// [isSuspended] represents if the users account is suspended.
-  bool get isSuspended => throw _privateConstructorUsedError;
+  bool get isSuspended;
 
   /// [hasPaymentWarning] represents if the user has a payment warning.
-  bool get hasPaymentWarning => throw _privateConstructorUsedError;
+  bool get hasPaymentWarning;
 
   /// [billingPlan] represents the billing plan.
-  BillingPlan? get billingPlan => throw _privateConstructorUsedError;
-
-  /// Serializes this User to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  BillingPlan? get billingPlan;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $UserCopyWith<User> get copyWith =>
+      _$UserCopyWithImpl<User>(this as User, _$identity);
+
+  /// Serializes this User to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is User &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.parentId, parentId) ||
+                other.parentId == parentId) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.username, username) ||
+                other.username == username) &&
+            (identical(other.dynamicAvatar, dynamicAvatar) ||
+                other.dynamicAvatar == dynamicAvatar) &&
+            const DeepCollectionEquality()
+                .equals(other.referencesIds, referencesIds) &&
+            const DeepCollectionEquality()
+                .equals(other.references, references) &&
+            (identical(other.category, category) ||
+                other.category == category) &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId) &&
+            (identical(other.mqttToken, mqttToken) ||
+                other.mqttToken == mqttToken) &&
+            const DeepCollectionEquality().equals(other.access, access) &&
+            const DeepCollectionEquality()
+                .equals(other.customFields, customFields) &&
+            (identical(other.platformAuth, platformAuth) ||
+                other.platformAuth == platformAuth) &&
+            const DeepCollectionEquality().equals(other.childs, childs) &&
+            const DeepCollectionEquality().equals(other.tagsIds, tagsIds) &&
+            const DeepCollectionEquality().equals(other.tags, tags) &&
+            (identical(other.planId, planId) || other.planId == planId) &&
+            const DeepCollectionEquality()
+                .equals(other.allowedApps, allowedApps) &&
+            const DeepCollectionEquality()
+                .equals(other.mappitAssetsIds, mappitAssetsIds) &&
+            const DeepCollectionEquality().equals(
+                other.mappitSecondaryRoutesIds, mappitSecondaryRoutesIds) &&
+            const DeepCollectionEquality()
+                .equals(other.mappitAssets, mappitAssets) &&
+            (identical(other.historicalDaysAllowed, historicalDaysAllowed) ||
+                other.historicalDaysAllowed == historicalDaysAllowed) &&
+            (identical(other.mappitExternalAccountId, mappitExternalAccountId) ||
+                other.mappitExternalAccountId == mappitExternalAccountId) &&
+            (identical(other.mappitExternalAccount, mappitExternalAccount) ||
+                other.mappitExternalAccount == mappitExternalAccount) &&
+            (identical(other.mfaEnabled, mfaEnabled) ||
+                other.mfaEnabled == mfaEnabled) &&
+            const DeepCollectionEquality()
+                .equals(other.mfaMethods, mfaMethods) &&
+            (identical(other.tenvioAddress, tenvioAddress) ||
+                other.tenvioAddress == tenvioAddress) &&
+            (identical(other.tenvioPhone, tenvioPhone) ||
+                other.tenvioPhone == tenvioPhone) &&
+            (identical(other.tenvioLatitude, tenvioLatitude) ||
+                other.tenvioLatitude == tenvioLatitude) &&
+            (identical(other.tenvioLongitude, tenvioLongitude) ||
+                other.tenvioLongitude == tenvioLongitude) &&
+            (identical(other.tenvioAddressIsPlusCode, tenvioAddressIsPlusCode) ||
+                other.tenvioAddressIsPlusCode == tenvioAddressIsPlusCode) &&
+            (identical(other.suspendedAt, suspendedAt) ||
+                other.suspendedAt == suspendedAt) &&
+            const DeepCollectionEquality()
+                .equals(other.hwModelsAnimationsIds, hwModelsAnimationsIds) &&
+            (identical(
+                    other.brickhousePermissionTier, brickhousePermissionTier) ||
+                other.brickhousePermissionTier == brickhousePermissionTier) &&
+            (identical(other.brickhousePermissionTierId, brickhousePermissionTierId) ||
+                other.brickhousePermissionTierId ==
+                    brickhousePermissionTierId) &&
+            (identical(other.brickhouseRole, brickhouseRole) ||
+                other.brickhouseRole == brickhouseRole) &&
+            (identical(other.sdmCode, sdmCode) || other.sdmCode == sdmCode) &&
+            (identical(other.isLocked, isLocked) ||
+                other.isLocked == isLocked) &&
+            (identical(other.isSuspended, isSuspended) ||
+                other.isSuspended == isSuspended) &&
+            (identical(other.hasPaymentWarning, hasPaymentWarning) ||
+                other.hasPaymentWarning == hasPaymentWarning) &&
+            (identical(other.billingPlan, billingPlan) ||
+                other.billingPlan == billingPlan));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        token,
+        parentId,
+        email,
+        username,
+        dynamicAvatar,
+        const DeepCollectionEquality().hash(referencesIds),
+        const DeepCollectionEquality().hash(references),
+        category,
+        categoryId,
+        mqttToken,
+        const DeepCollectionEquality().hash(access),
+        const DeepCollectionEquality().hash(customFields),
+        platformAuth,
+        const DeepCollectionEquality().hash(childs),
+        const DeepCollectionEquality().hash(tagsIds),
+        const DeepCollectionEquality().hash(tags),
+        planId,
+        const DeepCollectionEquality().hash(allowedApps),
+        const DeepCollectionEquality().hash(mappitAssetsIds),
+        const DeepCollectionEquality().hash(mappitSecondaryRoutesIds),
+        const DeepCollectionEquality().hash(mappitAssets),
+        historicalDaysAllowed,
+        mappitExternalAccountId,
+        mappitExternalAccount,
+        mfaEnabled,
+        const DeepCollectionEquality().hash(mfaMethods),
+        tenvioAddress,
+        tenvioPhone,
+        tenvioLatitude,
+        tenvioLongitude,
+        tenvioAddressIsPlusCode,
+        suspendedAt,
+        const DeepCollectionEquality().hash(hwModelsAnimationsIds),
+        brickhousePermissionTier,
+        brickhousePermissionTierId,
+        brickhouseRole,
+        sdmCode,
+        isLocked,
+        isSuspended,
+        hasPaymentWarning,
+        billingPlan
+      ]);
+
+  @override
+  String toString() {
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan)';
+  }
 }
 
 /// @nodoc
-abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res, User>;
+abstract mixin class $UserCopyWith<$Res> {
+  factory $UserCopyWith(User value, $Res Function(User) _then) =
+      _$UserCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -1648,14 +1572,11 @@ abstract class $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res, $Val extends User>
-    implements $UserCopyWith<$Res> {
-  _$UserCopyWithImpl(this._value, this._then);
+class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
+  _$UserCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final User _self;
+  final $Res Function(User) _then;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
@@ -1706,180 +1627,180 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
     Object? hasPaymentWarning = null,
     Object? billingPlan = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       token: freezed == token
-          ? _value.token
+          ? _self.token
           : token // ignore: cast_nullable_to_non_nullable
               as Token?,
       parentId: freezed == parentId
-          ? _value.parentId
+          ? _self.parentId
           : parentId // ignore: cast_nullable_to_non_nullable
               as String?,
       email: freezed == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String?,
       username: freezed == username
-          ? _value.username
+          ? _self.username
           : username // ignore: cast_nullable_to_non_nullable
               as String?,
       dynamicAvatar: freezed == dynamicAvatar
-          ? _value.dynamicAvatar
+          ? _self.dynamicAvatar
           : dynamicAvatar // ignore: cast_nullable_to_non_nullable
               as Avatar?,
       referencesIds: freezed == referencesIds
-          ? _value.referencesIds
+          ? _self.referencesIds
           : referencesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       references: freezed == references
-          ? _value.references
+          ? _self.references
           : references // ignore: cast_nullable_to_non_nullable
               as List<Reference>?,
       category: freezed == category
-          ? _value.category
+          ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
               as Category?,
       categoryId: freezed == categoryId
-          ? _value.categoryId
+          ? _self.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
               as String?,
       mqttToken: freezed == mqttToken
-          ? _value.mqttToken
+          ? _self.mqttToken
           : mqttToken // ignore: cast_nullable_to_non_nullable
               as String?,
       access: freezed == access
-          ? _value.access
+          ? _self.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
       customFields: freezed == customFields
-          ? _value.customFields
+          ? _self.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as List<CustomField>?,
       platformAuth: null == platformAuth
-          ? _value.platformAuth
+          ? _self.platformAuth
           : platformAuth // ignore: cast_nullable_to_non_nullable
               as String,
       childs: null == childs
-          ? _value.childs
+          ? _self.childs
           : childs // ignore: cast_nullable_to_non_nullable
               as List<User>,
       tagsIds: freezed == tagsIds
-          ? _value.tagsIds
+          ? _self.tagsIds
           : tagsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       tags: freezed == tags
-          ? _value.tags
+          ? _self.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as List<Tag>?,
       planId: freezed == planId
-          ? _value.planId
+          ? _self.planId
           : planId // ignore: cast_nullable_to_non_nullable
               as String?,
       allowedApps: freezed == allowedApps
-          ? _value.allowedApps
+          ? _self.allowedApps
           : allowedApps // ignore: cast_nullable_to_non_nullable
               as List<RegisteredApp>?,
       mappitAssetsIds: freezed == mappitAssetsIds
-          ? _value.mappitAssetsIds
+          ? _self.mappitAssetsIds
           : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds
-          ? _value.mappitSecondaryRoutesIds
+          ? _self.mappitSecondaryRoutesIds
           : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       mappitAssets: freezed == mappitAssets
-          ? _value.mappitAssets
+          ? _self.mappitAssets
           : mappitAssets // ignore: cast_nullable_to_non_nullable
               as List<Asset>?,
       historicalDaysAllowed: freezed == historicalDaysAllowed
-          ? _value.historicalDaysAllowed
+          ? _self.historicalDaysAllowed
           : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
               as int?,
       mappitExternalAccountId: freezed == mappitExternalAccountId
-          ? _value.mappitExternalAccountId
+          ? _self.mappitExternalAccountId
           : mappitExternalAccountId // ignore: cast_nullable_to_non_nullable
               as String?,
       mappitExternalAccount: freezed == mappitExternalAccount
-          ? _value.mappitExternalAccount
+          ? _self.mappitExternalAccount
           : mappitExternalAccount // ignore: cast_nullable_to_non_nullable
               as ExternalAccount?,
       mfaEnabled: null == mfaEnabled
-          ? _value.mfaEnabled
+          ? _self.mfaEnabled
           : mfaEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       mfaMethods: null == mfaMethods
-          ? _value.mfaMethods
+          ? _self.mfaMethods
           : mfaMethods // ignore: cast_nullable_to_non_nullable
               as List<MfaMethod>,
       tenvioAddress: freezed == tenvioAddress
-          ? _value.tenvioAddress
+          ? _self.tenvioAddress
           : tenvioAddress // ignore: cast_nullable_to_non_nullable
               as String?,
       tenvioPhone: freezed == tenvioPhone
-          ? _value.tenvioPhone
+          ? _self.tenvioPhone
           : tenvioPhone // ignore: cast_nullable_to_non_nullable
               as String?,
       tenvioLatitude: freezed == tenvioLatitude
-          ? _value.tenvioLatitude
+          ? _self.tenvioLatitude
           : tenvioLatitude // ignore: cast_nullable_to_non_nullable
               as double?,
       tenvioLongitude: freezed == tenvioLongitude
-          ? _value.tenvioLongitude
+          ? _self.tenvioLongitude
           : tenvioLongitude // ignore: cast_nullable_to_non_nullable
               as double?,
       tenvioAddressIsPlusCode: freezed == tenvioAddressIsPlusCode
-          ? _value.tenvioAddressIsPlusCode
+          ? _self.tenvioAddressIsPlusCode
           : tenvioAddressIsPlusCode // ignore: cast_nullable_to_non_nullable
               as bool?,
       suspendedAt: freezed == suspendedAt
-          ? _value.suspendedAt
+          ? _self.suspendedAt
           : suspendedAt // ignore: cast_nullable_to_non_nullable
               as DateTime?,
       hwModelsAnimationsIds: null == hwModelsAnimationsIds
-          ? _value.hwModelsAnimationsIds
+          ? _self.hwModelsAnimationsIds
           : hwModelsAnimationsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       brickhousePermissionTier: freezed == brickhousePermissionTier
-          ? _value.brickhousePermissionTier
+          ? _self.brickhousePermissionTier
           : brickhousePermissionTier // ignore: cast_nullable_to_non_nullable
               as BHSPermissionTier?,
       brickhousePermissionTierId: freezed == brickhousePermissionTierId
-          ? _value.brickhousePermissionTierId
+          ? _self.brickhousePermissionTierId
           : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
               as String?,
       brickhouseRole: freezed == brickhouseRole
-          ? _value.brickhouseRole
+          ? _self.brickhouseRole
           : brickhouseRole // ignore: cast_nullable_to_non_nullable
               as BrickhouseUserRole?,
       sdmCode: freezed == sdmCode
-          ? _value.sdmCode
+          ? _self.sdmCode
           : sdmCode // ignore: cast_nullable_to_non_nullable
               as String?,
       isLocked: null == isLocked
-          ? _value.isLocked
+          ? _self.isLocked
           : isLocked // ignore: cast_nullable_to_non_nullable
               as bool,
       isSuspended: null == isSuspended
-          ? _value.isSuspended
+          ? _self.isSuspended
           : isSuspended // ignore: cast_nullable_to_non_nullable
               as bool,
       hasPaymentWarning: null == hasPaymentWarning
-          ? _value.hasPaymentWarning
+          ? _self.hasPaymentWarning
           : hasPaymentWarning // ignore: cast_nullable_to_non_nullable
               as bool,
       billingPlan: freezed == billingPlan
-          ? _value.billingPlan
+          ? _self.billingPlan
           : billingPlan // ignore: cast_nullable_to_non_nullable
               as BillingPlan?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of User
@@ -1887,12 +1808,12 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @override
   @pragma('vm:prefer-inline')
   $TokenCopyWith<$Res>? get token {
-    if (_value.token == null) {
+    if (_self.token == null) {
       return null;
     }
 
-    return $TokenCopyWith<$Res>(_value.token!, (value) {
-      return _then(_value.copyWith(token: value) as $Val);
+    return $TokenCopyWith<$Res>(_self.token!, (value) {
+      return _then(_self.copyWith(token: value));
     });
   }
 
@@ -1901,12 +1822,12 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @override
   @pragma('vm:prefer-inline')
   $AvatarCopyWith<$Res>? get dynamicAvatar {
-    if (_value.dynamicAvatar == null) {
+    if (_self.dynamicAvatar == null) {
       return null;
     }
 
-    return $AvatarCopyWith<$Res>(_value.dynamicAvatar!, (value) {
-      return _then(_value.copyWith(dynamicAvatar: value) as $Val);
+    return $AvatarCopyWith<$Res>(_self.dynamicAvatar!, (value) {
+      return _then(_self.copyWith(dynamicAvatar: value));
     });
   }
 
@@ -1915,12 +1836,12 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @override
   @pragma('vm:prefer-inline')
   $CategoryCopyWith<$Res>? get category {
-    if (_value.category == null) {
+    if (_self.category == null) {
       return null;
     }
 
-    return $CategoryCopyWith<$Res>(_value.category!, (value) {
-      return _then(_value.copyWith(category: value) as $Val);
+    return $CategoryCopyWith<$Res>(_self.category!, (value) {
+      return _then(_self.copyWith(category: value));
     });
   }
 
@@ -1929,13 +1850,13 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @override
   @pragma('vm:prefer-inline')
   $ExternalAccountCopyWith<$Res>? get mappitExternalAccount {
-    if (_value.mappitExternalAccount == null) {
+    if (_self.mappitExternalAccount == null) {
       return null;
     }
 
-    return $ExternalAccountCopyWith<$Res>(_value.mappitExternalAccount!,
+    return $ExternalAccountCopyWith<$Res>(_self.mappitExternalAccount!,
         (value) {
-      return _then(_value.copyWith(mappitExternalAccount: value) as $Val);
+      return _then(_self.copyWith(mappitExternalAccount: value));
     });
   }
 
@@ -1944,13 +1865,13 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @override
   @pragma('vm:prefer-inline')
   $BHSPermissionTierCopyWith<$Res>? get brickhousePermissionTier {
-    if (_value.brickhousePermissionTier == null) {
+    if (_self.brickhousePermissionTier == null) {
       return null;
     }
 
-    return $BHSPermissionTierCopyWith<$Res>(_value.brickhousePermissionTier!,
+    return $BHSPermissionTierCopyWith<$Res>(_self.brickhousePermissionTier!,
         (value) {
-      return _then(_value.copyWith(brickhousePermissionTier: value) as $Val);
+      return _then(_self.copyWith(brickhousePermissionTier: value));
     });
   }
 
@@ -1959,320 +1880,20 @@ class _$UserCopyWithImpl<$Res, $Val extends User>
   @override
   @pragma('vm:prefer-inline')
   $BillingPlanCopyWith<$Res>? get billingPlan {
-    if (_value.billingPlan == null) {
+    if (_self.billingPlan == null) {
       return null;
     }
 
-    return $BillingPlanCopyWith<$Res>(_value.billingPlan!, (value) {
-      return _then(_value.copyWith(billingPlan: value) as $Val);
+    return $BillingPlanCopyWith<$Res>(_self.billingPlan!, (value) {
+      return _then(_self.copyWith(billingPlan: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$UserImplCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$UserImplCopyWith(
-          _$UserImpl value, $Res Function(_$UserImpl) then) =
-      __$$UserImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      Token? token,
-      String? parentId,
-      String? email,
-      String? username,
-      Avatar? dynamicAvatar,
-      List<String>? referencesIds,
-      List<Reference>? references,
-      Category? category,
-      String? categoryId,
-      String? mqttToken,
-      List<Access>? access,
-      List<CustomField>? customFields,
-      String platformAuth,
-      List<User> childs,
-      List<String>? tagsIds,
-      List<Tag>? tags,
-      String? planId,
-      List<RegisteredApp>? allowedApps,
-      List<String>? mappitAssetsIds,
-      List<String>? mappitSecondaryRoutesIds,
-      List<Asset>? mappitAssets,
-      int? historicalDaysAllowed,
-      String? mappitExternalAccountId,
-      ExternalAccount? mappitExternalAccount,
-      bool mfaEnabled,
-      @MfaMethodConverter() List<MfaMethod> mfaMethods,
-      String? tenvioAddress,
-      String? tenvioPhone,
-      double? tenvioLatitude,
-      double? tenvioLongitude,
-      bool? tenvioAddressIsPlusCode,
-      @TimestampOrNullConverter() DateTime? suspendedAt,
-      List<String> hwModelsAnimationsIds,
-      BHSPermissionTier? brickhousePermissionTier,
-      String? brickhousePermissionTierId,
-      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-      BrickhouseUserRole? brickhouseRole,
-      String? sdmCode,
-      bool isLocked,
-      bool isSuspended,
-      bool hasPaymentWarning,
-      BillingPlan? billingPlan});
-
-  @override
-  $TokenCopyWith<$Res>? get token;
-  @override
-  $AvatarCopyWith<$Res>? get dynamicAvatar;
-  @override
-  $CategoryCopyWith<$Res>? get category;
-  @override
-  $ExternalAccountCopyWith<$Res>? get mappitExternalAccount;
-  @override
-  $BHSPermissionTierCopyWith<$Res>? get brickhousePermissionTier;
-  @override
-  $BillingPlanCopyWith<$Res>? get billingPlan;
-}
-
-/// @nodoc
-class __$$UserImplCopyWithImpl<$Res>
-    extends _$UserCopyWithImpl<$Res, _$UserImpl>
-    implements _$$UserImplCopyWith<$Res> {
-  __$$UserImplCopyWithImpl(_$UserImpl _value, $Res Function(_$UserImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of User
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? token = freezed,
-    Object? parentId = freezed,
-    Object? email = freezed,
-    Object? username = freezed,
-    Object? dynamicAvatar = freezed,
-    Object? referencesIds = freezed,
-    Object? references = freezed,
-    Object? category = freezed,
-    Object? categoryId = freezed,
-    Object? mqttToken = freezed,
-    Object? access = freezed,
-    Object? customFields = freezed,
-    Object? platformAuth = null,
-    Object? childs = null,
-    Object? tagsIds = freezed,
-    Object? tags = freezed,
-    Object? planId = freezed,
-    Object? allowedApps = freezed,
-    Object? mappitAssetsIds = freezed,
-    Object? mappitSecondaryRoutesIds = freezed,
-    Object? mappitAssets = freezed,
-    Object? historicalDaysAllowed = freezed,
-    Object? mappitExternalAccountId = freezed,
-    Object? mappitExternalAccount = freezed,
-    Object? mfaEnabled = null,
-    Object? mfaMethods = null,
-    Object? tenvioAddress = freezed,
-    Object? tenvioPhone = freezed,
-    Object? tenvioLatitude = freezed,
-    Object? tenvioLongitude = freezed,
-    Object? tenvioAddressIsPlusCode = freezed,
-    Object? suspendedAt = freezed,
-    Object? hwModelsAnimationsIds = null,
-    Object? brickhousePermissionTier = freezed,
-    Object? brickhousePermissionTierId = freezed,
-    Object? brickhouseRole = freezed,
-    Object? sdmCode = freezed,
-    Object? isLocked = null,
-    Object? isSuspended = null,
-    Object? hasPaymentWarning = null,
-    Object? billingPlan = freezed,
-  }) {
-    return _then(_$UserImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      token: freezed == token
-          ? _value.token
-          : token // ignore: cast_nullable_to_non_nullable
-              as Token?,
-      parentId: freezed == parentId
-          ? _value.parentId
-          : parentId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      email: freezed == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String?,
-      username: freezed == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dynamicAvatar: freezed == dynamicAvatar
-          ? _value.dynamicAvatar
-          : dynamicAvatar // ignore: cast_nullable_to_non_nullable
-              as Avatar?,
-      referencesIds: freezed == referencesIds
-          ? _value._referencesIds
-          : referencesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      references: freezed == references
-          ? _value._references
-          : references // ignore: cast_nullable_to_non_nullable
-              as List<Reference>?,
-      category: freezed == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as Category?,
-      categoryId: freezed == categoryId
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mqttToken: freezed == mqttToken
-          ? _value.mqttToken
-          : mqttToken // ignore: cast_nullable_to_non_nullable
-              as String?,
-      access: freezed == access
-          ? _value._access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      customFields: freezed == customFields
-          ? _value._customFields
-          : customFields // ignore: cast_nullable_to_non_nullable
-              as List<CustomField>?,
-      platformAuth: null == platformAuth
-          ? _value.platformAuth
-          : platformAuth // ignore: cast_nullable_to_non_nullable
-              as String,
-      childs: null == childs
-          ? _value._childs
-          : childs // ignore: cast_nullable_to_non_nullable
-              as List<User>,
-      tagsIds: freezed == tagsIds
-          ? _value._tagsIds
-          : tagsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      tags: freezed == tags
-          ? _value._tags
-          : tags // ignore: cast_nullable_to_non_nullable
-              as List<Tag>?,
-      planId: freezed == planId
-          ? _value.planId
-          : planId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      allowedApps: freezed == allowedApps
-          ? _value._allowedApps
-          : allowedApps // ignore: cast_nullable_to_non_nullable
-              as List<RegisteredApp>?,
-      mappitAssetsIds: freezed == mappitAssetsIds
-          ? _value._mappitAssetsIds
-          : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds
-          ? _value._mappitSecondaryRoutesIds
-          : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      mappitAssets: freezed == mappitAssets
-          ? _value._mappitAssets
-          : mappitAssets // ignore: cast_nullable_to_non_nullable
-              as List<Asset>?,
-      historicalDaysAllowed: freezed == historicalDaysAllowed
-          ? _value.historicalDaysAllowed
-          : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
-              as int?,
-      mappitExternalAccountId: freezed == mappitExternalAccountId
-          ? _value.mappitExternalAccountId
-          : mappitExternalAccountId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      mappitExternalAccount: freezed == mappitExternalAccount
-          ? _value.mappitExternalAccount
-          : mappitExternalAccount // ignore: cast_nullable_to_non_nullable
-              as ExternalAccount?,
-      mfaEnabled: null == mfaEnabled
-          ? _value.mfaEnabled
-          : mfaEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      mfaMethods: null == mfaMethods
-          ? _value._mfaMethods
-          : mfaMethods // ignore: cast_nullable_to_non_nullable
-              as List<MfaMethod>,
-      tenvioAddress: freezed == tenvioAddress
-          ? _value.tenvioAddress
-          : tenvioAddress // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tenvioPhone: freezed == tenvioPhone
-          ? _value.tenvioPhone
-          : tenvioPhone // ignore: cast_nullable_to_non_nullable
-              as String?,
-      tenvioLatitude: freezed == tenvioLatitude
-          ? _value.tenvioLatitude
-          : tenvioLatitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      tenvioLongitude: freezed == tenvioLongitude
-          ? _value.tenvioLongitude
-          : tenvioLongitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      tenvioAddressIsPlusCode: freezed == tenvioAddressIsPlusCode
-          ? _value.tenvioAddressIsPlusCode
-          : tenvioAddressIsPlusCode // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      suspendedAt: freezed == suspendedAt
-          ? _value.suspendedAt
-          : suspendedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime?,
-      hwModelsAnimationsIds: null == hwModelsAnimationsIds
-          ? _value._hwModelsAnimationsIds
-          : hwModelsAnimationsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      brickhousePermissionTier: freezed == brickhousePermissionTier
-          ? _value.brickhousePermissionTier
-          : brickhousePermissionTier // ignore: cast_nullable_to_non_nullable
-              as BHSPermissionTier?,
-      brickhousePermissionTierId: freezed == brickhousePermissionTierId
-          ? _value.brickhousePermissionTierId
-          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      brickhouseRole: freezed == brickhouseRole
-          ? _value.brickhouseRole
-          : brickhouseRole // ignore: cast_nullable_to_non_nullable
-              as BrickhouseUserRole?,
-      sdmCode: freezed == sdmCode
-          ? _value.sdmCode
-          : sdmCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isLocked: null == isLocked
-          ? _value.isLocked
-          : isLocked // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isSuspended: null == isSuspended
-          ? _value.isSuspended
-          : isSuspended // ignore: cast_nullable_to_non_nullable
-              as bool,
-      hasPaymentWarning: null == hasPaymentWarning
-          ? _value.hasPaymentWarning
-          : hasPaymentWarning // ignore: cast_nullable_to_non_nullable
-              as bool,
-      billingPlan: freezed == billingPlan
-          ? _value.billingPlan
-          : billingPlan // ignore: cast_nullable_to_non_nullable
-              as BillingPlan?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$UserImpl extends _User {
-  const _$UserImpl(
+class _User extends User {
+  const _User(
       {required this.id,
       required this.name,
       this.token,
@@ -2331,9 +1952,7 @@ class _$UserImpl extends _User {
         _mfaMethods = mfaMethods,
         _hwModelsAnimationsIds = hwModelsAnimationsIds,
         super._();
-
-  factory _$UserImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserImplFromJson(json);
+  factory _User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   /// [id] represents the user ID.
   @override
@@ -2638,16 +2257,26 @@ class _$UserImpl extends _User {
   @override
   final BillingPlan? billingPlan;
 
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UserCopyWith<_User> get copyWith =>
+      __$UserCopyWithImpl<_User>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UserToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$UserImpl &&
+            other is _User &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.token, token) || other.token == token) &&
@@ -2777,379 +2406,515 @@ class _$UserImpl extends _User {
         billingPlan
       ]);
 
-  /// Create a copy of User
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
-      __$$UserImplCopyWithImpl<_$UserImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UserImplToJson(
-      this,
-    );
+  String toString() {
+    return 'User(id: $id, name: $name, token: $token, parentId: $parentId, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, references: $references, category: $category, categoryId: $categoryId, mqttToken: $mqttToken, access: $access, customFields: $customFields, platformAuth: $platformAuth, childs: $childs, tagsIds: $tagsIds, tags: $tags, planId: $planId, allowedApps: $allowedApps, mappitAssetsIds: $mappitAssetsIds, mappitSecondaryRoutesIds: $mappitSecondaryRoutesIds, mappitAssets: $mappitAssets, historicalDaysAllowed: $historicalDaysAllowed, mappitExternalAccountId: $mappitExternalAccountId, mappitExternalAccount: $mappitExternalAccount, mfaEnabled: $mfaEnabled, mfaMethods: $mfaMethods, tenvioAddress: $tenvioAddress, tenvioPhone: $tenvioPhone, tenvioLatitude: $tenvioLatitude, tenvioLongitude: $tenvioLongitude, tenvioAddressIsPlusCode: $tenvioAddressIsPlusCode, suspendedAt: $suspendedAt, hwModelsAnimationsIds: $hwModelsAnimationsIds, brickhousePermissionTier: $brickhousePermissionTier, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, isLocked: $isLocked, isSuspended: $isSuspended, hasPaymentWarning: $hasPaymentWarning, billingPlan: $billingPlan)';
   }
 }
 
-abstract class _User extends User {
-  const factory _User(
-      {required final String id,
-      required final String name,
-      final Token? token,
-      final String? parentId,
-      final String? email,
-      final String? username,
-      final Avatar? dynamicAvatar,
-      final List<String>? referencesIds,
-      final List<Reference>? references,
-      final Category? category,
-      final String? categoryId,
-      final String? mqttToken,
-      final List<Access>? access,
-      final List<CustomField>? customFields,
-      final String platformAuth,
-      final List<User> childs,
-      final List<String>? tagsIds,
-      final List<Tag>? tags,
-      final String? planId,
-      final List<RegisteredApp>? allowedApps,
-      final List<String>? mappitAssetsIds,
-      final List<String>? mappitSecondaryRoutesIds,
-      final List<Asset>? mappitAssets,
-      final int? historicalDaysAllowed,
-      final String? mappitExternalAccountId,
-      final ExternalAccount? mappitExternalAccount,
-      final bool mfaEnabled,
-      @MfaMethodConverter() final List<MfaMethod> mfaMethods,
-      final String? tenvioAddress,
-      final String? tenvioPhone,
-      final double? tenvioLatitude,
-      final double? tenvioLongitude,
-      final bool? tenvioAddressIsPlusCode,
-      @TimestampOrNullConverter() final DateTime? suspendedAt,
-      final List<String> hwModelsAnimationsIds,
-      final BHSPermissionTier? brickhousePermissionTier,
-      final String? brickhousePermissionTierId,
+/// @nodoc
+abstract mixin class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$UserCopyWith(_User value, $Res Function(_User) _then) =
+      __$UserCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      Token? token,
+      String? parentId,
+      String? email,
+      String? username,
+      Avatar? dynamicAvatar,
+      List<String>? referencesIds,
+      List<Reference>? references,
+      Category? category,
+      String? categoryId,
+      String? mqttToken,
+      List<Access>? access,
+      List<CustomField>? customFields,
+      String platformAuth,
+      List<User> childs,
+      List<String>? tagsIds,
+      List<Tag>? tags,
+      String? planId,
+      List<RegisteredApp>? allowedApps,
+      List<String>? mappitAssetsIds,
+      List<String>? mappitSecondaryRoutesIds,
+      List<Asset>? mappitAssets,
+      int? historicalDaysAllowed,
+      String? mappitExternalAccountId,
+      ExternalAccount? mappitExternalAccount,
+      bool mfaEnabled,
+      @MfaMethodConverter() List<MfaMethod> mfaMethods,
+      String? tenvioAddress,
+      String? tenvioPhone,
+      double? tenvioLatitude,
+      double? tenvioLongitude,
+      bool? tenvioAddressIsPlusCode,
+      @TimestampOrNullConverter() DateTime? suspendedAt,
+      List<String> hwModelsAnimationsIds,
+      BHSPermissionTier? brickhousePermissionTier,
+      String? brickhousePermissionTierId,
       @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-      final BrickhouseUserRole? brickhouseRole,
-      final String? sdmCode,
-      final bool isLocked,
-      final bool isSuspended,
-      final bool hasPaymentWarning,
-      final BillingPlan? billingPlan}) = _$UserImpl;
-  const _User._() : super._();
+      BrickhouseUserRole? brickhouseRole,
+      String? sdmCode,
+      bool isLocked,
+      bool isSuspended,
+      bool hasPaymentWarning,
+      BillingPlan? billingPlan});
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$UserImpl.fromJson;
-
-  /// [id] represents the user ID.
   @override
-  String get id;
-
-  /// [name] represents the user name.
+  $TokenCopyWith<$Res>? get token;
   @override
-  String get name;
-
-  /// [token] represents the user token.
+  $AvatarCopyWith<$Res>? get dynamicAvatar;
   @override
-  Token? get token;
-
-  /// [parentId] represents the parent ID.
+  $CategoryCopyWith<$Res>? get category;
   @override
-  String? get parentId;
-
-  /// [email] represents the user email.
+  $ExternalAccountCopyWith<$Res>? get mappitExternalAccount;
   @override
-  String? get email;
-
-  /// [username] represents the username.
+  $BHSPermissionTierCopyWith<$Res>? get brickhousePermissionTier;
   @override
-  String? get username;
+  $BillingPlanCopyWith<$Res>? get billingPlan;
+}
 
-  /// [dynamicAvatar] represents the user avatar.
-  @override
-  Avatar? get dynamicAvatar;
+/// @nodoc
+class __$UserCopyWithImpl<$Res> implements _$UserCopyWith<$Res> {
+  __$UserCopyWithImpl(this._self, this._then);
 
-  /// [referencesIds] represents the list of references IDs.
-  @override
-  List<String>? get referencesIds;
-
-  /// [references] represents the list of references.
-  @override
-  List<Reference>? get references;
-
-  /// [category] represents the user category.
-  @override
-  Category? get category;
-
-  /// [categoryId] represents the user category ID.
-  @override
-  String? get categoryId;
-
-  /// [mqttToken] represents the MQTT token.
-  @override
-  String? get mqttToken;
-
-  /// [access] represents the list of granted access.
-  @override
-  List<Access>? get access;
-
-  /// [customFields] represents the list of custom fields.
-  @override
-  List<CustomField>? get customFields;
-
-  /// [platformAuth] represents the platform auth.
-  @override
-  String get platformAuth;
-
-  /// [childs] represents the list of childs.
-  @override
-  List<User> get childs;
-
-  /// [tagsIds] represents the list of tags IDs.
-  @override
-  List<String>? get tagsIds;
-
-  /// [tags] represents the list of tags.
-  @override
-  List<Tag>? get tags;
-
-  /// [planId] represents the plan ID.
-  @override
-  String? get planId;
-
-  /// [allowedApps] represents the list of allowed apps.
-  @override
-  List<RegisteredApp>? get allowedApps;
-
-  /// [mappitAssetsIds] represents the list of assets IDs.
-  /// This field is only for `Mappit` use.
-  @override
-  List<String>? get mappitAssetsIds;
-
-  /// [mappitSecondaryRoutes]
-  @override
-  List<String>? get mappitSecondaryRoutesIds;
-
-  /// [mappitAssets] represents the list of assets.
-  /// This field is only for `Mappit` use.
-  @override
-  List<Asset>? get mappitAssets;
-
-  /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
-  /// This field is only for `Mappit` use.
-  @override
-  int? get historicalDaysAllowed;
-
-  /// [mappitExternalAccountId] represents the Mappit external account ID.
-  /// This field is only for `Mappit` use.
-  @override
-  String? get mappitExternalAccountId;
-
-  /// [mappitExternalAccount] represents the Mappit external account.
-  /// This field is only for `Mappit` use.
-  @override
-  ExternalAccount? get mappitExternalAccount;
-
-  /// [mfaEnabled] represents the MFA enabled flag.
-  @override
-  bool get mfaEnabled;
-
-  /// [mfaMethods] represents the list of MFA methods.
-  @override
-  @MfaMethodConverter()
-  List<MfaMethod> get mfaMethods;
-
-  /// [tenvioAddress] represents the Tenvio address.
-  @override
-  String? get tenvioAddress;
-
-  /// [tenvioPhone] represents the Tenvio phone.
-  @override
-  String? get tenvioPhone;
-
-  /// [tenvioLatitude] represents the Tenvio latitude.
-  @override
-  double? get tenvioLatitude;
-
-  /// [tenvioLongitude] represents the Tenvio longitude.
-  @override
-  double? get tenvioLongitude;
-
-  /// [tenvioAddressIsPlusCode] represents the Tenvio address is Plus Code.
-  @override
-  bool? get tenvioAddressIsPlusCode;
-
-  /// [suspendedAt] represents the date when the account was suspended.
-  @override
-  @TimestampOrNullConverter()
-  DateTime? get suspendedAt;
-
-  /// [hwModelsAnimationsIds] is the list of the IDs of the hwModels that already shown the animations.
-  @override
-  List<String> get hwModelsAnimationsIds;
-
-  /// [brickhousePermissionTier] represents the Brickhouse permission tier for access level of an user.
-  @override
-  BHSPermissionTier? get brickhousePermissionTier;
-
-  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  @override
-  String? get brickhousePermissionTierId;
-
-  /// [brickhouseRole] represents the Brickhouse user role.
-  @override
-  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-  BrickhouseUserRole? get brickhouseRole;
-
-  /// [sdmCode] represents the SDM code.
-  @override
-  String? get sdmCode;
-
-  /// [isLocked] represents if the user is locked.
-  @override
-  bool get isLocked;
-
-  /// [isSuspended] represents if the users account is suspended.
-  @override
-  bool get isSuspended;
-
-  /// [hasPaymentWarning] represents if the user has a payment warning.
-  @override
-  bool get hasPaymentWarning;
-
-  /// [billingPlan] represents the billing plan.
-  @override
-  BillingPlan? get billingPlan;
+  final _User _self;
+  final $Res Function(_User) _then;
 
   /// Create a copy of User
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserImplCopyWith<_$UserImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? token = freezed,
+    Object? parentId = freezed,
+    Object? email = freezed,
+    Object? username = freezed,
+    Object? dynamicAvatar = freezed,
+    Object? referencesIds = freezed,
+    Object? references = freezed,
+    Object? category = freezed,
+    Object? categoryId = freezed,
+    Object? mqttToken = freezed,
+    Object? access = freezed,
+    Object? customFields = freezed,
+    Object? platformAuth = null,
+    Object? childs = null,
+    Object? tagsIds = freezed,
+    Object? tags = freezed,
+    Object? planId = freezed,
+    Object? allowedApps = freezed,
+    Object? mappitAssetsIds = freezed,
+    Object? mappitSecondaryRoutesIds = freezed,
+    Object? mappitAssets = freezed,
+    Object? historicalDaysAllowed = freezed,
+    Object? mappitExternalAccountId = freezed,
+    Object? mappitExternalAccount = freezed,
+    Object? mfaEnabled = null,
+    Object? mfaMethods = null,
+    Object? tenvioAddress = freezed,
+    Object? tenvioPhone = freezed,
+    Object? tenvioLatitude = freezed,
+    Object? tenvioLongitude = freezed,
+    Object? tenvioAddressIsPlusCode = freezed,
+    Object? suspendedAt = freezed,
+    Object? hwModelsAnimationsIds = null,
+    Object? brickhousePermissionTier = freezed,
+    Object? brickhousePermissionTierId = freezed,
+    Object? brickhouseRole = freezed,
+    Object? sdmCode = freezed,
+    Object? isLocked = null,
+    Object? isSuspended = null,
+    Object? hasPaymentWarning = null,
+    Object? billingPlan = freezed,
+  }) {
+    return _then(_User(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      token: freezed == token
+          ? _self.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as Token?,
+      parentId: freezed == parentId
+          ? _self.parentId
+          : parentId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      email: freezed == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String?,
+      username: freezed == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dynamicAvatar: freezed == dynamicAvatar
+          ? _self.dynamicAvatar
+          : dynamicAvatar // ignore: cast_nullable_to_non_nullable
+              as Avatar?,
+      referencesIds: freezed == referencesIds
+          ? _self._referencesIds
+          : referencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      references: freezed == references
+          ? _self._references
+          : references // ignore: cast_nullable_to_non_nullable
+              as List<Reference>?,
+      category: freezed == category
+          ? _self.category
+          : category // ignore: cast_nullable_to_non_nullable
+              as Category?,
+      categoryId: freezed == categoryId
+          ? _self.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mqttToken: freezed == mqttToken
+          ? _self.mqttToken
+          : mqttToken // ignore: cast_nullable_to_non_nullable
+              as String?,
+      access: freezed == access
+          ? _self._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+      customFields: freezed == customFields
+          ? _self._customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as List<CustomField>?,
+      platformAuth: null == platformAuth
+          ? _self.platformAuth
+          : platformAuth // ignore: cast_nullable_to_non_nullable
+              as String,
+      childs: null == childs
+          ? _self._childs
+          : childs // ignore: cast_nullable_to_non_nullable
+              as List<User>,
+      tagsIds: freezed == tagsIds
+          ? _self._tagsIds
+          : tagsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      tags: freezed == tags
+          ? _self._tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as List<Tag>?,
+      planId: freezed == planId
+          ? _self.planId
+          : planId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      allowedApps: freezed == allowedApps
+          ? _self._allowedApps
+          : allowedApps // ignore: cast_nullable_to_non_nullable
+              as List<RegisteredApp>?,
+      mappitAssetsIds: freezed == mappitAssetsIds
+          ? _self._mappitAssetsIds
+          : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      mappitSecondaryRoutesIds: freezed == mappitSecondaryRoutesIds
+          ? _self._mappitSecondaryRoutesIds
+          : mappitSecondaryRoutesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      mappitAssets: freezed == mappitAssets
+          ? _self._mappitAssets
+          : mappitAssets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      historicalDaysAllowed: freezed == historicalDaysAllowed
+          ? _self.historicalDaysAllowed
+          : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
+              as int?,
+      mappitExternalAccountId: freezed == mappitExternalAccountId
+          ? _self.mappitExternalAccountId
+          : mappitExternalAccountId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      mappitExternalAccount: freezed == mappitExternalAccount
+          ? _self.mappitExternalAccount
+          : mappitExternalAccount // ignore: cast_nullable_to_non_nullable
+              as ExternalAccount?,
+      mfaEnabled: null == mfaEnabled
+          ? _self.mfaEnabled
+          : mfaEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      mfaMethods: null == mfaMethods
+          ? _self._mfaMethods
+          : mfaMethods // ignore: cast_nullable_to_non_nullable
+              as List<MfaMethod>,
+      tenvioAddress: freezed == tenvioAddress
+          ? _self.tenvioAddress
+          : tenvioAddress // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tenvioPhone: freezed == tenvioPhone
+          ? _self.tenvioPhone
+          : tenvioPhone // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tenvioLatitude: freezed == tenvioLatitude
+          ? _self.tenvioLatitude
+          : tenvioLatitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      tenvioLongitude: freezed == tenvioLongitude
+          ? _self.tenvioLongitude
+          : tenvioLongitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      tenvioAddressIsPlusCode: freezed == tenvioAddressIsPlusCode
+          ? _self.tenvioAddressIsPlusCode
+          : tenvioAddressIsPlusCode // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      suspendedAt: freezed == suspendedAt
+          ? _self.suspendedAt
+          : suspendedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      hwModelsAnimationsIds: null == hwModelsAnimationsIds
+          ? _self._hwModelsAnimationsIds
+          : hwModelsAnimationsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      brickhousePermissionTier: freezed == brickhousePermissionTier
+          ? _self.brickhousePermissionTier
+          : brickhousePermissionTier // ignore: cast_nullable_to_non_nullable
+              as BHSPermissionTier?,
+      brickhousePermissionTierId: freezed == brickhousePermissionTierId
+          ? _self.brickhousePermissionTierId
+          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      brickhouseRole: freezed == brickhouseRole
+          ? _self.brickhouseRole
+          : brickhouseRole // ignore: cast_nullable_to_non_nullable
+              as BrickhouseUserRole?,
+      sdmCode: freezed == sdmCode
+          ? _self.sdmCode
+          : sdmCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isLocked: null == isLocked
+          ? _self.isLocked
+          : isLocked // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuspended: null == isSuspended
+          ? _self.isSuspended
+          : isSuspended // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasPaymentWarning: null == hasPaymentWarning
+          ? _self.hasPaymentWarning
+          : hasPaymentWarning // ignore: cast_nullable_to_non_nullable
+              as bool,
+      billingPlan: freezed == billingPlan
+          ? _self.billingPlan
+          : billingPlan // ignore: cast_nullable_to_non_nullable
+              as BillingPlan?,
+    ));
+  }
 
-UserInput _$UserInputFromJson(Map<String, dynamic> json) {
-  return _UserInput.fromJson(json);
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TokenCopyWith<$Res>? get token {
+    if (_self.token == null) {
+      return null;
+    }
+
+    return $TokenCopyWith<$Res>(_self.token!, (value) {
+      return _then(_self.copyWith(token: value));
+    });
+  }
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AvatarCopyWith<$Res>? get dynamicAvatar {
+    if (_self.dynamicAvatar == null) {
+      return null;
+    }
+
+    return $AvatarCopyWith<$Res>(_self.dynamicAvatar!, (value) {
+      return _then(_self.copyWith(dynamicAvatar: value));
+    });
+  }
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $CategoryCopyWith<$Res>? get category {
+    if (_self.category == null) {
+      return null;
+    }
+
+    return $CategoryCopyWith<$Res>(_self.category!, (value) {
+      return _then(_self.copyWith(category: value));
+    });
+  }
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ExternalAccountCopyWith<$Res>? get mappitExternalAccount {
+    if (_self.mappitExternalAccount == null) {
+      return null;
+    }
+
+    return $ExternalAccountCopyWith<$Res>(_self.mappitExternalAccount!,
+        (value) {
+      return _then(_self.copyWith(mappitExternalAccount: value));
+    });
+  }
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BHSPermissionTierCopyWith<$Res>? get brickhousePermissionTier {
+    if (_self.brickhousePermissionTier == null) {
+      return null;
+    }
+
+    return $BHSPermissionTierCopyWith<$Res>(_self.brickhousePermissionTier!,
+        (value) {
+      return _then(_self.copyWith(brickhousePermissionTier: value));
+    });
+  }
+
+  /// Create a copy of User
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BillingPlanCopyWith<$Res>? get billingPlan {
+    if (_self.billingPlan == null) {
+      return null;
+    }
+
+    return $BillingPlanCopyWith<$Res>(_self.billingPlan!, (value) {
+      return _then(_self.copyWith(billingPlan: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$UserInput {
   /// [id] represents the user ID. When is new, this value should be null.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// [id] represents the user ID. When is new, this value should be null.
-  set id(String? value) => throw _privateConstructorUsedError;
+  set id(String? value);
 
   /// [name] represents the user name.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// [name] represents the user name.
-  set name(String value) => throw _privateConstructorUsedError;
+  set name(String value);
 
   /// [email] represents the user email.
-  String get email => throw _privateConstructorUsedError;
+  String get email;
 
   /// [email] represents the user email.
-  set email(String value) => throw _privateConstructorUsedError;
+  set email(String value);
 
   /// [username] represents the username.
-  String get username => throw _privateConstructorUsedError;
+  String get username;
 
   /// [username] represents the username.
-  set username(String value) => throw _privateConstructorUsedError;
+  set username(String value);
 
   /// [dynamicAvatar] represents the user avatar.
-  AvatarInput? get dynamicAvatar => throw _privateConstructorUsedError;
+  AvatarInput? get dynamicAvatar;
 
   /// [dynamicAvatar] represents the user avatar.
-  set dynamicAvatar(AvatarInput? value) => throw _privateConstructorUsedError;
+  set dynamicAvatar(AvatarInput? value);
 
   /// [referencesIds] represents the list of references IDs.
-  List<String> get referencesIds => throw _privateConstructorUsedError;
+  List<String> get referencesIds;
 
   /// [referencesIds] represents the list of references IDs.
-  set referencesIds(List<String> value) => throw _privateConstructorUsedError;
+  set referencesIds(List<String> value);
 
   /// [categoryId] represents the user category ID.
-  String? get categoryId => throw _privateConstructorUsedError;
+  String? get categoryId;
 
   /// [categoryId] represents the user category ID.
-  set categoryId(String? value) => throw _privateConstructorUsedError;
+  set categoryId(String? value);
 
   /// [customFields] represents the list of custom fields.
-  List<CustomField> get customFields => throw _privateConstructorUsedError;
+  List<CustomField> get customFields;
 
   /// [customFields] represents the list of custom fields.
-  set customFields(List<CustomField> value) =>
-      throw _privateConstructorUsedError;
+  set customFields(List<CustomField> value);
 
   /// [tagsIds] represents the list of tags IDs.
-  List<String> get tagsIds => throw _privateConstructorUsedError;
+  List<String> get tagsIds;
 
   /// [tagsIds] represents the list of tags IDs.
-  set tagsIds(List<String> value) => throw _privateConstructorUsedError;
+  set tagsIds(List<String> value);
 
   /// [mappitAssetsIds] represents the list of assets IDs.
   /// This field is only for `Mappit` use.
-  List<String> get mappitAssetsIds => throw _privateConstructorUsedError;
+  List<String> get mappitAssetsIds;
 
   /// [mappitAssetsIds] represents the list of assets IDs.
   /// This field is only for `Mappit` use.
-  set mappitAssetsIds(List<String> value) => throw _privateConstructorUsedError;
+  set mappitAssetsIds(List<String> value);
 
   /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
   /// This field is only for `Mappit` use.
-  int get historicalDaysAllowed => throw _privateConstructorUsedError;
+  int get historicalDaysAllowed;
 
   /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
   /// This field is only for `Mappit` use.
-  set historicalDaysAllowed(int value) => throw _privateConstructorUsedError;
+  set historicalDaysAllowed(int value);
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  String? get brickhousePermissionTierId => throw _privateConstructorUsedError;
+  String? get brickhousePermissionTierId;
 
   /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  set brickhousePermissionTierId(String? value) =>
-      throw _privateConstructorUsedError;
+  set brickhousePermissionTierId(String? value);
 
   /// [brickhouseRole] represents the Brickhouse user role.
   @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-  BrickhouseUserRole? get brickhouseRole => throw _privateConstructorUsedError;
+  BrickhouseUserRole? get brickhouseRole;
 
   /// [brickhouseRole] represents the Brickhouse user role.
   @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-  set brickhouseRole(BrickhouseUserRole? value) =>
-      throw _privateConstructorUsedError;
+  set brickhouseRole(BrickhouseUserRole? value);
 
   /// [sdmCode] represents the SDM code.
-  String? get sdmCode => throw _privateConstructorUsedError;
+  String? get sdmCode;
 
   /// [sdmCode] represents the SDM code.
-  set sdmCode(String? value) => throw _privateConstructorUsedError;
+  set sdmCode(String? value);
 
   /// [password] default password if allowed by the form
-  String? get password => throw _privateConstructorUsedError;
+  String? get password;
 
   /// [password] default password if allowed by the form
-  set password(String? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this UserInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set password(String? value);
 
   /// Create a copy of UserInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $UserInputCopyWith<UserInput> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$UserInputCopyWithImpl<UserInput>(this as UserInput, _$identity);
+
+  /// Serializes this UserInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'UserInput(id: $id, name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, categoryId: $categoryId, customFields: $customFields, tagsIds: $tagsIds, mappitAssetsIds: $mappitAssetsIds, historicalDaysAllowed: $historicalDaysAllowed, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, password: $password)';
+  }
 }
 
 /// @nodoc
-abstract class $UserInputCopyWith<$Res> {
-  factory $UserInputCopyWith(UserInput value, $Res Function(UserInput) then) =
-      _$UserInputCopyWithImpl<$Res, UserInput>;
+abstract mixin class $UserInputCopyWith<$Res> {
+  factory $UserInputCopyWith(UserInput value, $Res Function(UserInput) _then) =
+      _$UserInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -3173,14 +2938,11 @@ abstract class $UserInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserInputCopyWithImpl<$Res, $Val extends UserInput>
-    implements $UserInputCopyWith<$Res> {
-  _$UserInputCopyWithImpl(this._value, this._then);
+class _$UserInputCopyWithImpl<$Res> implements $UserInputCopyWith<$Res> {
+  _$UserInputCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final UserInput _self;
+  final $Res Function(UserInput) _then;
 
   /// Create a copy of UserInput
   /// with the given fields replaced by the non-null parameter values.
@@ -3203,68 +2965,68 @@ class _$UserInputCopyWithImpl<$Res, $Val extends UserInput>
     Object? sdmCode = freezed,
     Object? password = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       email: null == email
-          ? _value.email
+          ? _self.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
       username: null == username
-          ? _value.username
+          ? _self.username
           : username // ignore: cast_nullable_to_non_nullable
               as String,
       dynamicAvatar: freezed == dynamicAvatar
-          ? _value.dynamicAvatar
+          ? _self.dynamicAvatar
           : dynamicAvatar // ignore: cast_nullable_to_non_nullable
               as AvatarInput?,
       referencesIds: null == referencesIds
-          ? _value.referencesIds
+          ? _self.referencesIds
           : referencesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       categoryId: freezed == categoryId
-          ? _value.categoryId
+          ? _self.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
               as String?,
       customFields: null == customFields
-          ? _value.customFields
+          ? _self.customFields
           : customFields // ignore: cast_nullable_to_non_nullable
               as List<CustomField>,
       tagsIds: null == tagsIds
-          ? _value.tagsIds
+          ? _self.tagsIds
           : tagsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       mappitAssetsIds: null == mappitAssetsIds
-          ? _value.mappitAssetsIds
+          ? _self.mappitAssetsIds
           : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       historicalDaysAllowed: null == historicalDaysAllowed
-          ? _value.historicalDaysAllowed
+          ? _self.historicalDaysAllowed
           : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
               as int,
       brickhousePermissionTierId: freezed == brickhousePermissionTierId
-          ? _value.brickhousePermissionTierId
+          ? _self.brickhousePermissionTierId
           : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
               as String?,
       brickhouseRole: freezed == brickhouseRole
-          ? _value.brickhouseRole
+          ? _self.brickhouseRole
           : brickhouseRole // ignore: cast_nullable_to_non_nullable
               as BrickhouseUserRole?,
       sdmCode: freezed == sdmCode
-          ? _value.sdmCode
+          ? _self.sdmCode
           : sdmCode // ignore: cast_nullable_to_non_nullable
               as String?,
       password: freezed == password
-          ? _value.password
+          ? _self.password
           : password // ignore: cast_nullable_to_non_nullable
               as String?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of UserInput
@@ -3272,144 +3034,20 @@ class _$UserInputCopyWithImpl<$Res, $Val extends UserInput>
   @override
   @pragma('vm:prefer-inline')
   $AvatarInputCopyWith<$Res>? get dynamicAvatar {
-    if (_value.dynamicAvatar == null) {
+    if (_self.dynamicAvatar == null) {
       return null;
     }
 
-    return $AvatarInputCopyWith<$Res>(_value.dynamicAvatar!, (value) {
-      return _then(_value.copyWith(dynamicAvatar: value) as $Val);
+    return $AvatarInputCopyWith<$Res>(_self.dynamicAvatar!, (value) {
+      return _then(_self.copyWith(dynamicAvatar: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$UserInputImplCopyWith<$Res>
-    implements $UserInputCopyWith<$Res> {
-  factory _$$UserInputImplCopyWith(
-          _$UserInputImpl value, $Res Function(_$UserInputImpl) then) =
-      __$$UserInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      String name,
-      String email,
-      String username,
-      AvatarInput? dynamicAvatar,
-      List<String> referencesIds,
-      String? categoryId,
-      List<CustomField> customFields,
-      List<String> tagsIds,
-      List<String> mappitAssetsIds,
-      int historicalDaysAllowed,
-      String? brickhousePermissionTierId,
-      @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-      BrickhouseUserRole? brickhouseRole,
-      String? sdmCode,
-      String? password});
-
-  @override
-  $AvatarInputCopyWith<$Res>? get dynamicAvatar;
-}
-
-/// @nodoc
-class __$$UserInputImplCopyWithImpl<$Res>
-    extends _$UserInputCopyWithImpl<$Res, _$UserInputImpl>
-    implements _$$UserInputImplCopyWith<$Res> {
-  __$$UserInputImplCopyWithImpl(
-      _$UserInputImpl _value, $Res Function(_$UserInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of UserInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = null,
-    Object? email = null,
-    Object? username = null,
-    Object? dynamicAvatar = freezed,
-    Object? referencesIds = null,
-    Object? categoryId = freezed,
-    Object? customFields = null,
-    Object? tagsIds = null,
-    Object? mappitAssetsIds = null,
-    Object? historicalDaysAllowed = null,
-    Object? brickhousePermissionTierId = freezed,
-    Object? brickhouseRole = freezed,
-    Object? sdmCode = freezed,
-    Object? password = freezed,
-  }) {
-    return _then(_$UserInputImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      username: null == username
-          ? _value.username
-          : username // ignore: cast_nullable_to_non_nullable
-              as String,
-      dynamicAvatar: freezed == dynamicAvatar
-          ? _value.dynamicAvatar
-          : dynamicAvatar // ignore: cast_nullable_to_non_nullable
-              as AvatarInput?,
-      referencesIds: null == referencesIds
-          ? _value.referencesIds
-          : referencesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      categoryId: freezed == categoryId
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      customFields: null == customFields
-          ? _value.customFields
-          : customFields // ignore: cast_nullable_to_non_nullable
-              as List<CustomField>,
-      tagsIds: null == tagsIds
-          ? _value.tagsIds
-          : tagsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      mappitAssetsIds: null == mappitAssetsIds
-          ? _value.mappitAssetsIds
-          : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      historicalDaysAllowed: null == historicalDaysAllowed
-          ? _value.historicalDaysAllowed
-          : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
-              as int,
-      brickhousePermissionTierId: freezed == brickhousePermissionTierId
-          ? _value.brickhousePermissionTierId
-          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      brickhouseRole: freezed == brickhouseRole
-          ? _value.brickhouseRole
-          : brickhouseRole // ignore: cast_nullable_to_non_nullable
-              as BrickhouseUserRole?,
-      sdmCode: freezed == sdmCode
-          ? _value.sdmCode
-          : sdmCode // ignore: cast_nullable_to_non_nullable
-              as String?,
-      password: freezed == password
-          ? _value.password
-          : password // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$UserInputImpl extends _UserInput {
-  _$UserInputImpl(
+class _UserInput extends UserInput {
+  _UserInput(
       {this.id,
       this.name = '',
       this.email = '',
@@ -3427,9 +3065,8 @@ class _$UserInputImpl extends _UserInput {
       this.sdmCode,
       this.password})
       : super._();
-
-  factory _$UserInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$UserInputImplFromJson(json);
+  factory _UserInput.fromJson(Map<String, dynamic> json) =>
+      _$UserInputFromJson(json);
 
   /// [id] represents the user ID. When is new, this value should be null.
   @override
@@ -3502,29 +3139,36 @@ class _$UserInputImpl extends _UserInput {
   @override
   String? password;
 
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$UserInputCopyWith<_UserInput> get copyWith =>
+      __$UserInputCopyWithImpl<_UserInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$UserInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'UserInput(id: $id, name: $name, email: $email, username: $username, dynamicAvatar: $dynamicAvatar, referencesIds: $referencesIds, categoryId: $categoryId, customFields: $customFields, tagsIds: $tagsIds, mappitAssetsIds: $mappitAssetsIds, historicalDaysAllowed: $historicalDaysAllowed, brickhousePermissionTierId: $brickhousePermissionTierId, brickhouseRole: $brickhouseRole, sdmCode: $sdmCode, password: $password)';
   }
-
-  /// Create a copy of UserInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$UserInputImplCopyWith<_$UserInputImpl> get copyWith =>
-      __$$UserInputImplCopyWithImpl<_$UserInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$UserInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _UserInput extends UserInput {
-  factory _UserInput(
+/// @nodoc
+abstract mixin class _$UserInputCopyWith<$Res>
+    implements $UserInputCopyWith<$Res> {
+  factory _$UserInputCopyWith(
+          _UserInput value, $Res Function(_UserInput) _then) =
+      __$UserInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? id,
       String name,
       String email,
@@ -3540,240 +3184,173 @@ abstract class _UserInput extends UserInput {
       @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
       BrickhouseUserRole? brickhouseRole,
       String? sdmCode,
-      String? password}) = _$UserInputImpl;
-  _UserInput._() : super._();
+      String? password});
 
-  factory _UserInput.fromJson(Map<String, dynamic> json) =
-      _$UserInputImpl.fromJson;
-
-  /// [id] represents the user ID. When is new, this value should be null.
   @override
-  String? get id;
+  $AvatarInputCopyWith<$Res>? get dynamicAvatar;
+}
 
-  /// [id] represents the user ID. When is new, this value should be null.
-  set id(String? value);
+/// @nodoc
+class __$UserInputCopyWithImpl<$Res> implements _$UserInputCopyWith<$Res> {
+  __$UserInputCopyWithImpl(this._self, this._then);
 
-  /// [name] represents the user name.
-  @override
-  String get name;
-
-  /// [name] represents the user name.
-  set name(String value);
-
-  /// [email] represents the user email.
-  @override
-  String get email;
-
-  /// [email] represents the user email.
-  set email(String value);
-
-  /// [username] represents the username.
-  @override
-  String get username;
-
-  /// [username] represents the username.
-  set username(String value);
-
-  /// [dynamicAvatar] represents the user avatar.
-  @override
-  AvatarInput? get dynamicAvatar;
-
-  /// [dynamicAvatar] represents the user avatar.
-  set dynamicAvatar(AvatarInput? value);
-
-  /// [referencesIds] represents the list of references IDs.
-  @override
-  List<String> get referencesIds;
-
-  /// [referencesIds] represents the list of references IDs.
-  set referencesIds(List<String> value);
-
-  /// [categoryId] represents the user category ID.
-  @override
-  String? get categoryId;
-
-  /// [categoryId] represents the user category ID.
-  set categoryId(String? value);
-
-  /// [customFields] represents the list of custom fields.
-  @override
-  List<CustomField> get customFields;
-
-  /// [customFields] represents the list of custom fields.
-  set customFields(List<CustomField> value);
-
-  /// [tagsIds] represents the list of tags IDs.
-  @override
-  List<String> get tagsIds;
-
-  /// [tagsIds] represents the list of tags IDs.
-  set tagsIds(List<String> value);
-
-  /// [mappitAssetsIds] represents the list of assets IDs.
-  /// This field is only for `Mappit` use.
-  @override
-  List<String> get mappitAssetsIds;
-
-  /// [mappitAssetsIds] represents the list of assets IDs.
-  /// This field is only for `Mappit` use.
-  set mappitAssetsIds(List<String> value);
-
-  /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
-  /// This field is only for `Mappit` use.
-  @override
-  int get historicalDaysAllowed;
-
-  /// [historicalDaysAllowed] represents the number of days allowed to access historical data.
-  /// This field is only for `Mappit` use.
-  set historicalDaysAllowed(int value);
-
-  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  @override
-  String? get brickhousePermissionTierId;
-
-  /// [brickhousePermissionTierId] represents the Brickhouse permission tier ID for access level of an user.
-  set brickhousePermissionTierId(String? value);
-
-  /// [brickhouseRole] represents the Brickhouse user role.
-  @override
-  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-  BrickhouseUserRole? get brickhouseRole;
-
-  /// [brickhouseRole] represents the Brickhouse user role.
-  @JsonKey(unknownEnumValue: BrickhouseUserRole.unknown)
-  set brickhouseRole(BrickhouseUserRole? value);
-
-  /// [sdmCode] represents the SDM code.
-  @override
-  String? get sdmCode;
-
-  /// [sdmCode] represents the SDM code.
-  set sdmCode(String? value);
-
-  /// [password] default password if allowed by the form
-  @override
-  String? get password;
-
-  /// [password] default password if allowed by the form
-  set password(String? value);
+  final _UserInput _self;
+  final $Res Function(_UserInput) _then;
 
   /// Create a copy of UserInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$UserInputImplCopyWith<_$UserInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? email = null,
+    Object? username = null,
+    Object? dynamicAvatar = freezed,
+    Object? referencesIds = null,
+    Object? categoryId = freezed,
+    Object? customFields = null,
+    Object? tagsIds = null,
+    Object? mappitAssetsIds = null,
+    Object? historicalDaysAllowed = null,
+    Object? brickhousePermissionTierId = freezed,
+    Object? brickhouseRole = freezed,
+    Object? sdmCode = freezed,
+    Object? password = freezed,
+  }) {
+    return _then(_UserInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      email: null == email
+          ? _self.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      username: null == username
+          ? _self.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as String,
+      dynamicAvatar: freezed == dynamicAvatar
+          ? _self.dynamicAvatar
+          : dynamicAvatar // ignore: cast_nullable_to_non_nullable
+              as AvatarInput?,
+      referencesIds: null == referencesIds
+          ? _self.referencesIds
+          : referencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      categoryId: freezed == categoryId
+          ? _self.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      customFields: null == customFields
+          ? _self.customFields
+          : customFields // ignore: cast_nullable_to_non_nullable
+              as List<CustomField>,
+      tagsIds: null == tagsIds
+          ? _self.tagsIds
+          : tagsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      mappitAssetsIds: null == mappitAssetsIds
+          ? _self.mappitAssetsIds
+          : mappitAssetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      historicalDaysAllowed: null == historicalDaysAllowed
+          ? _self.historicalDaysAllowed
+          : historicalDaysAllowed // ignore: cast_nullable_to_non_nullable
+              as int,
+      brickhousePermissionTierId: freezed == brickhousePermissionTierId
+          ? _self.brickhousePermissionTierId
+          : brickhousePermissionTierId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      brickhouseRole: freezed == brickhouseRole
+          ? _self.brickhouseRole
+          : brickhouseRole // ignore: cast_nullable_to_non_nullable
+              as BrickhouseUserRole?,
+      sdmCode: freezed == sdmCode
+          ? _self.sdmCode
+          : sdmCode // ignore: cast_nullable_to_non_nullable
+              as String?,
+      password: freezed == password
+          ? _self.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 
-AccessibilityInput _$AccessibilityInputFromJson(Map<String, dynamic> json) {
-  return _AccessibilityInput.fromJson(json);
+  /// Create a copy of UserInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AvatarInputCopyWith<$Res>? get dynamicAvatar {
+    if (_self.dynamicAvatar == null) {
+      return null;
+    }
+
+    return $AvatarInputCopyWith<$Res>(_self.dynamicAvatar!, (value) {
+      return _then(_self.copyWith(dynamicAvatar: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AccessibilityInput {
   /// [userId] represents the user ID.
   /// [userId] and [employeeId] can not be null or together at the same time.
-  String? get userId => throw _privateConstructorUsedError;
+  String? get userId;
 
   /// [userId] represents the user ID.
   /// [userId] and [employeeId] can not be null or together at the same time.
-  set userId(String? value) => throw _privateConstructorUsedError;
+  set userId(String? value);
 
   /// [employeeId] represents the employee ID.
   /// [userId] and [employeeId] can not be null or together at the same time.
-  String? get employeeId => throw _privateConstructorUsedError;
+  String? get employeeId;
 
   /// [employeeId] represents the employee ID.
   /// [userId] and [employeeId] can not be null or together at the same time.
-  set employeeId(String? value) => throw _privateConstructorUsedError;
+  set employeeId(String? value);
 
   /// [colorblindMode] represents the user colorblind mode.
   @JsonKey(unknownEnumValue: ColorblindMode.normal)
-  ColorblindMode? get colorblindMode => throw _privateConstructorUsedError;
+  ColorblindMode? get colorblindMode;
 
   /// [colorblindMode] represents the user colorblind mode.
   @JsonKey(unknownEnumValue: ColorblindMode.normal)
-  set colorblindMode(ColorblindMode? value) =>
-      throw _privateConstructorUsedError;
+  set colorblindMode(ColorblindMode? value);
 
   /// [colorblindStrength] represents the user colorblind strength.
-  double? get colorblindStrength => throw _privateConstructorUsedError;
+  double? get colorblindStrength;
 
   /// [colorblindStrength] represents the user colorblind strength.
-  set colorblindStrength(double? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this AccessibilityInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set colorblindStrength(double? value);
 
   /// Create a copy of AccessibilityInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $AccessibilityInputCopyWith<AccessibilityInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AccessibilityInputCopyWith<$Res> {
-  factory $AccessibilityInputCopyWith(
-          AccessibilityInput value, $Res Function(AccessibilityInput) then) =
-      _$AccessibilityInputCopyWithImpl<$Res, AccessibilityInput>;
-  @useResult
-  $Res call(
-      {String? userId,
-      String? employeeId,
-      @JsonKey(unknownEnumValue: ColorblindMode.normal)
-      ColorblindMode? colorblindMode,
-      double? colorblindStrength});
-}
-
-/// @nodoc
-class _$AccessibilityInputCopyWithImpl<$Res, $Val extends AccessibilityInput>
-    implements $AccessibilityInputCopyWith<$Res> {
-  _$AccessibilityInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AccessibilityInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $AccessibilityInputCopyWith<AccessibilityInput> get copyWith =>
+      _$AccessibilityInputCopyWithImpl<AccessibilityInput>(
+          this as AccessibilityInput, _$identity);
+
+  /// Serializes this AccessibilityInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? userId = freezed,
-    Object? employeeId = freezed,
-    Object? colorblindMode = freezed,
-    Object? colorblindStrength = freezed,
-  }) {
-    return _then(_value.copyWith(
-      userId: freezed == userId
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      employeeId: freezed == employeeId
-          ? _value.employeeId
-          : employeeId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      colorblindMode: freezed == colorblindMode
-          ? _value.colorblindMode
-          : colorblindMode // ignore: cast_nullable_to_non_nullable
-              as ColorblindMode?,
-      colorblindStrength: freezed == colorblindStrength
-          ? _value.colorblindStrength
-          : colorblindStrength // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ) as $Val);
+  String toString() {
+    return 'AccessibilityInput(userId: $userId, employeeId: $employeeId, colorblindMode: $colorblindMode, colorblindStrength: $colorblindStrength)';
   }
 }
 
 /// @nodoc
-abstract class _$$AccessibilityInputImplCopyWith<$Res>
-    implements $AccessibilityInputCopyWith<$Res> {
-  factory _$$AccessibilityInputImplCopyWith(_$AccessibilityInputImpl value,
-          $Res Function(_$AccessibilityInputImpl) then) =
-      __$$AccessibilityInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $AccessibilityInputCopyWith<$Res> {
+  factory $AccessibilityInputCopyWith(
+          AccessibilityInput value, $Res Function(AccessibilityInput) _then) =
+      _$AccessibilityInputCopyWithImpl;
   @useResult
   $Res call(
       {String? userId,
@@ -3784,12 +3361,12 @@ abstract class _$$AccessibilityInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$AccessibilityInputImplCopyWithImpl<$Res>
-    extends _$AccessibilityInputCopyWithImpl<$Res, _$AccessibilityInputImpl>
-    implements _$$AccessibilityInputImplCopyWith<$Res> {
-  __$$AccessibilityInputImplCopyWithImpl(_$AccessibilityInputImpl _value,
-      $Res Function(_$AccessibilityInputImpl) _then)
-      : super(_value, _then);
+class _$AccessibilityInputCopyWithImpl<$Res>
+    implements $AccessibilityInputCopyWith<$Res> {
+  _$AccessibilityInputCopyWithImpl(this._self, this._then);
+
+  final AccessibilityInput _self;
+  final $Res Function(AccessibilityInput) _then;
 
   /// Create a copy of AccessibilityInput
   /// with the given fields replaced by the non-null parameter values.
@@ -3801,21 +3378,21 @@ class __$$AccessibilityInputImplCopyWithImpl<$Res>
     Object? colorblindMode = freezed,
     Object? colorblindStrength = freezed,
   }) {
-    return _then(_$AccessibilityInputImpl(
+    return _then(_self.copyWith(
       userId: freezed == userId
-          ? _value.userId
+          ? _self.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String?,
       employeeId: freezed == employeeId
-          ? _value.employeeId
+          ? _self.employeeId
           : employeeId // ignore: cast_nullable_to_non_nullable
               as String?,
       colorblindMode: freezed == colorblindMode
-          ? _value.colorblindMode
+          ? _self.colorblindMode
           : colorblindMode // ignore: cast_nullable_to_non_nullable
               as ColorblindMode?,
       colorblindStrength: freezed == colorblindStrength
-          ? _value.colorblindStrength
+          ? _self.colorblindStrength
           : colorblindStrength // ignore: cast_nullable_to_non_nullable
               as double?,
     ));
@@ -3824,16 +3401,15 @@ class __$$AccessibilityInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$AccessibilityInputImpl extends _AccessibilityInput {
-  _$AccessibilityInputImpl(
+class _AccessibilityInput extends AccessibilityInput {
+  _AccessibilityInput(
       {this.userId,
       this.employeeId,
       @JsonKey(unknownEnumValue: ColorblindMode.normal) this.colorblindMode,
       this.colorblindStrength})
       : super._();
-
-  factory _$AccessibilityInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AccessibilityInputImplFromJson(json);
+  factory _AccessibilityInput.fromJson(Map<String, dynamic> json) =>
+      _$AccessibilityInputFromJson(json);
 
   /// [userId] represents the user ID.
   /// [userId] and [employeeId] can not be null or together at the same time.
@@ -3854,78 +3430,80 @@ class _$AccessibilityInputImpl extends _AccessibilityInput {
   @override
   double? colorblindStrength;
 
+  /// Create a copy of AccessibilityInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AccessibilityInputCopyWith<_AccessibilityInput> get copyWith =>
+      __$AccessibilityInputCopyWithImpl<_AccessibilityInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AccessibilityInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'AccessibilityInput(userId: $userId, employeeId: $employeeId, colorblindMode: $colorblindMode, colorblindStrength: $colorblindStrength)';
   }
-
-  /// Create a copy of AccessibilityInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AccessibilityInputImplCopyWith<_$AccessibilityInputImpl> get copyWith =>
-      __$$AccessibilityInputImplCopyWithImpl<_$AccessibilityInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AccessibilityInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _AccessibilityInput extends AccessibilityInput {
-  factory _AccessibilityInput(
+/// @nodoc
+abstract mixin class _$AccessibilityInputCopyWith<$Res>
+    implements $AccessibilityInputCopyWith<$Res> {
+  factory _$AccessibilityInputCopyWith(
+          _AccessibilityInput value, $Res Function(_AccessibilityInput) _then) =
+      __$AccessibilityInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? userId,
       String? employeeId,
       @JsonKey(unknownEnumValue: ColorblindMode.normal)
       ColorblindMode? colorblindMode,
-      double? colorblindStrength}) = _$AccessibilityInputImpl;
-  _AccessibilityInput._() : super._();
+      double? colorblindStrength});
+}
 
-  factory _AccessibilityInput.fromJson(Map<String, dynamic> json) =
-      _$AccessibilityInputImpl.fromJson;
+/// @nodoc
+class __$AccessibilityInputCopyWithImpl<$Res>
+    implements _$AccessibilityInputCopyWith<$Res> {
+  __$AccessibilityInputCopyWithImpl(this._self, this._then);
 
-  /// [userId] represents the user ID.
-  /// [userId] and [employeeId] can not be null or together at the same time.
-  @override
-  String? get userId;
-
-  /// [userId] represents the user ID.
-  /// [userId] and [employeeId] can not be null or together at the same time.
-  set userId(String? value);
-
-  /// [employeeId] represents the employee ID.
-  /// [userId] and [employeeId] can not be null or together at the same time.
-  @override
-  String? get employeeId;
-
-  /// [employeeId] represents the employee ID.
-  /// [userId] and [employeeId] can not be null or together at the same time.
-  set employeeId(String? value);
-
-  /// [colorblindMode] represents the user colorblind mode.
-  @override
-  @JsonKey(unknownEnumValue: ColorblindMode.normal)
-  ColorblindMode? get colorblindMode;
-
-  /// [colorblindMode] represents the user colorblind mode.
-  @JsonKey(unknownEnumValue: ColorblindMode.normal)
-  set colorblindMode(ColorblindMode? value);
-
-  /// [colorblindStrength] represents the user colorblind strength.
-  @override
-  double? get colorblindStrength;
-
-  /// [colorblindStrength] represents the user colorblind strength.
-  set colorblindStrength(double? value);
+  final _AccessibilityInput _self;
+  final $Res Function(_AccessibilityInput) _then;
 
   /// Create a copy of AccessibilityInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AccessibilityInputImplCopyWith<_$AccessibilityInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? userId = freezed,
+    Object? employeeId = freezed,
+    Object? colorblindMode = freezed,
+    Object? colorblindStrength = freezed,
+  }) {
+    return _then(_AccessibilityInput(
+      userId: freezed == userId
+          ? _self.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      employeeId: freezed == employeeId
+          ? _self.employeeId
+          : employeeId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      colorblindMode: freezed == colorblindMode
+          ? _self.colorblindMode
+          : colorblindMode // ignore: cast_nullable_to_non_nullable
+              as ColorblindMode?,
+      colorblindStrength: freezed == colorblindStrength
+          ? _self.colorblindStrength
+          : colorblindStrength // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
 }
+
+// dart format on

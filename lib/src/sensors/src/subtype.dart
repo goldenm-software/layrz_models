@@ -1,128 +1,87 @@
 part of '../sensors.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum SensorSubType {
-  /// [SensorSubType.raw] for perform a Layrz Compute Language formula, only used for [SensorType.constant]
+  /// [SensorSubType.raw] for perform a Layrz Compute Language formula,
+  /// only used for [SensorType.constant]
+  @JsonValue('RAW')
   raw,
 
-  /// [SensorSubType.interval] for perform a Layrz Compute Language formula but applying a linear conversion, only used for [SensorType.constant]
+  /// [SensorSubType.interval] for perform a Layrz Compute Language formula but applying a
+  /// linear conversion, only used for [SensorType.constant]
+  @JsonValue('INTERVAL')
   interval,
 
-  /// [SensorSubType.condition] for perform a Layrz Compute Language formula, when the execution is true, will increment
-  /// by 1 the accumulator, only used for [SensorType.accumulator]
+  /// [SensorSubType.condition] for perform a Layrz Compute Language formula, when the execution is true,
+  /// will increment by 1 the accumulator, only used for [SensorType.accumulator]
+  @JsonValue('CONDITION')
   condition,
 
-  /// [SensorSubType.message] will increment by 1 the accumulator when a new message comes, only used for [SensorType.accumulator]
+  /// [SensorSubType.message] will increment by 1 the accumulator when a new message comes,
+  /// only used for [SensorType.accumulator]
+  @JsonValue('MESSAGE')
   message,
 
   /// [SensorSubType.driver] only used for [SensorType.authentication]
+  @JsonValue('DRIVER')
   driver,
 
   /// [SensorSubType.driver] only used for [SensorType.authentication]
+  @JsonValue('PASSENGER')
   passenger,
 
   /// [SensorSubType.op] is Operator, only used for [SensorType.authentication]
+  @JsonValue('OPERATOR')
   op,
 
   /// [SensorSubType.csv] is CSV raw format, only used for [SensorType.unpack]
+  @JsonValue('CSV')
   csv,
 
   /// [SensorSubType.json] is JSON raw format, only used for [SensorType.unpack]
+  @JsonValue('JSON')
   json,
 
   /// [SensorSubType.xml] is XML raw format, only used for [SensorType.unpack]
+  @JsonValue('XML')
   xml,
 
   /// [SensorSubType.base64] is image packed/encoded into base64, only used for [SensorType.image]
+  @JsonValue('BASE64')
   base64,
 
-  /// [SensorSubType.flespi] is Flespi protocol
+  /// [SensorSubType.flespi] is Flespi Media Server format for images
+  @JsonValue('FLESPI')
   flespi,
 
+  /// [SensorSubType.layrz] is the Layrz Media Server format for images
+  @JsonValue('LAYRZ')
+  layrz,
+
   /// [SensorSubType.unused] is a wildcard subtype.
+  @JsonValue('UNUSED')
   unused,
 
   /// [SensorSubType.python] deprecated
+  @JsonValue('PYTHON')
   python,
-
-  /// [SensorSubType.v8] Javascript ES6
-  //v8
   ;
 
   @override
   String toString() => toJson();
 
-  String toJson() {
-    switch (this) {
-      case SensorSubType.raw:
-        return 'RAW';
-      case SensorSubType.interval:
-        return 'INTERVAL';
-      case SensorSubType.condition:
-        return 'CONDITION';
-      case SensorSubType.message:
-        return 'MESSAGE';
-      case SensorSubType.driver:
-        return 'DRIVER';
-      case SensorSubType.passenger:
-        return 'PASSENGER';
-      case SensorSubType.op:
-        return 'OPERATOR';
-      case SensorSubType.csv:
-        return 'CSV';
-      case SensorSubType.json:
-        return 'JSON';
-      case SensorSubType.xml:
-        return 'XML';
-      case SensorSubType.base64:
-        return 'BASE64';
-      case SensorSubType.flespi:
-        return 'FLESPI';
-      case SensorSubType.python:
-        return 'PYTHON';
-      case SensorSubType.unused:
-        return 'UNUSED';
-      default:
-        throw Exception('Unknown SensorSubType:');
-    }
-  }
+  String toJson() => _$SensorSubTypeEnumMap[this] ?? 'RAW';
 
   static SensorSubType fromJson(json) {
-    switch (json) {
-      case 'RAW':
-        return SensorSubType.raw;
-      case 'INTERVAL':
-        return SensorSubType.interval;
-      case 'CONDITION':
-        return SensorSubType.condition;
-      case 'MESSAGE':
-        return SensorSubType.message;
-      case 'DRIVER':
-        return SensorSubType.driver;
-      case 'PASSENGER':
-        return SensorSubType.passenger;
-      case 'OPERATOR':
-        return SensorSubType.op;
-      case 'CSV':
-        return SensorSubType.csv;
-      case 'JSON':
-        return SensorSubType.json;
-      case 'XML':
-        return SensorSubType.xml;
-      case 'BASE64':
-        return SensorSubType.base64;
-      case 'FLESPI':
-        return SensorSubType.flespi;
-      case 'PYTHON':
-        return SensorSubType.python;
-      case 'UNUSED':
-        return SensorSubType.unused;
-      default:
-        throw Exception('Unknown SensorSubType');
-    }
+    final value = _$SensorSubTypeEnumMap.entries.firstWhereOrNull((element) => element.value == json);
+
+    return value?.key ?? SensorSubType.raw;
   }
 }
 
+@Deprecated('Now, uses the native converter from json_serializable and @JsonEnum decorator')
 class SensorSubTypeOrNullConverter implements JsonConverter<SensorSubType?, String?> {
+  @Deprecated('Now, uses the native converter from json_serializable and @JsonEnum decorator')
   const SensorSubTypeOrNullConverter();
 
   @override
@@ -139,7 +98,9 @@ class SensorSubTypeOrNullConverter implements JsonConverter<SensorSubType?, Stri
   }
 }
 
+@Deprecated('Now, uses the native converter from json_serializable and @JsonEnum decorator')
 class SensorSubTypeConverter implements JsonConverter<SensorSubType, String> {
+  @Deprecated('Now, uses the native converter from json_serializable and @JsonEnum decorator')
   const SensorSubTypeConverter();
 
   @override

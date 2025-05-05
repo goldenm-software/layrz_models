@@ -6,9 +6,8 @@ part of 'builder.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$InboundStructureImpl _$$InboundStructureImplFromJson(
-        Map<String, dynamic> json) =>
-    _$InboundStructureImpl(
+_InboundStructure _$InboundStructureFromJson(Map<String, dynamic> json) =>
+    _InboundStructure(
       hasPosition: json['hasPosition'] as bool,
       position: InboundPositionStructure.fromJson(
           json['position'] as Map<String, dynamic>),
@@ -19,8 +18,7 @@ _$InboundStructureImpl _$$InboundStructureImplFromJson(
           .toList(),
     );
 
-Map<String, dynamic> _$$InboundStructureImplToJson(
-        _$InboundStructureImpl instance) =>
+Map<String, dynamic> _$InboundStructureToJson(_InboundStructure instance) =>
     <String, dynamic>{
       'hasPosition': instance.hasPosition,
       'position': instance.position.toJson(),
@@ -28,9 +26,9 @@ Map<String, dynamic> _$$InboundStructureImplToJson(
       'payload': instance.payload.map((e) => e.toJson()).toList(),
     };
 
-_$InboundStructureInputImpl _$$InboundStructureInputImplFromJson(
+_InboundStructureInput _$InboundStructureInputFromJson(
         Map<String, dynamic> json) =>
-    _$InboundStructureInputImpl(
+    _InboundStructureInput(
       hasPosition: json['hasPosition'] as bool? ?? true,
       position: InboundPositionStructureInput.fromJson(
           json['position'] as Map<String, dynamic>),
@@ -42,8 +40,8 @@ _$InboundStructureInputImpl _$$InboundStructureInputImplFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$InboundStructureInputImplToJson(
-        _$InboundStructureInputImpl instance) =>
+Map<String, dynamic> _$InboundStructureInputToJson(
+        _InboundStructureInput instance) =>
     <String, dynamic>{
       'hasPosition': instance.hasPosition,
       'position': instance.position.toJson(),
@@ -51,9 +49,9 @@ Map<String, dynamic> _$$InboundStructureInputImplToJson(
       'payload': instance.payload.map((e) => e.toJson()).toList(),
     };
 
-_$InboundPositionStructureImpl _$$InboundPositionStructureImplFromJson(
+_InboundPositionStructure _$InboundPositionStructureFromJson(
         Map<String, dynamic> json) =>
-    _$InboundPositionStructureImpl(
+    _InboundPositionStructure(
       latitude: json['latitude'] as bool,
       longitude: json['longitude'] as bool,
       altitude: json['altitude'] as bool,
@@ -63,8 +61,8 @@ _$InboundPositionStructureImpl _$$InboundPositionStructureImplFromJson(
       satellites: json['satellites'] as bool,
     );
 
-Map<String, dynamic> _$$InboundPositionStructureImplToJson(
-        _$InboundPositionStructureImpl instance) =>
+Map<String, dynamic> _$InboundPositionStructureToJson(
+        _InboundPositionStructure instance) =>
     <String, dynamic>{
       'latitude': instance.latitude,
       'longitude': instance.longitude,
@@ -75,49 +73,49 @@ Map<String, dynamic> _$$InboundPositionStructureImplToJson(
       'satellites': instance.satellites,
     };
 
-_$InboundPositionStructureInputImpl
-    _$$InboundPositionStructureInputImplFromJson(Map<String, dynamic> json) =>
-        _$InboundPositionStructureInputImpl(
-          latitude: json['latitude'] as bool? ?? true,
-          longitude: json['longitude'] as bool? ?? true,
-          speed: json['speed'] as bool? ?? true,
-          direction: json['direction'] as bool? ?? true,
-          altitude: json['altitude'] as bool? ?? true,
-          satellites: json['satellites'] as bool? ?? true,
-          hdop: json['hdop'] as bool? ?? true,
-        );
-
-Map<String, dynamic> _$$InboundPositionStructureInputImplToJson(
-        _$InboundPositionStructureInputImpl instance) =>
-    <String, dynamic>{
-      'latitude': instance.latitude,
-      'longitude': instance.longitude,
-      'speed': instance.speed,
-      'direction': instance.direction,
-      'altitude': instance.altitude,
-      'satellites': instance.satellites,
-      'hdop': instance.hdop,
-    };
-
-_$InboundPayloadStructureImpl _$$InboundPayloadStructureImplFromJson(
+_InboundPositionStructureInput _$InboundPositionStructureInputFromJson(
         Map<String, dynamic> json) =>
-    _$InboundPayloadStructureImpl(
+    _InboundPositionStructureInput(
+      latitude: json['latitude'] as bool? ?? true,
+      longitude: json['longitude'] as bool? ?? true,
+      speed: json['speed'] as bool? ?? true,
+      direction: json['direction'] as bool? ?? true,
+      altitude: json['altitude'] as bool? ?? true,
+      satellites: json['satellites'] as bool? ?? true,
+      hdop: json['hdop'] as bool? ?? true,
+    );
+
+Map<String, dynamic> _$InboundPositionStructureInputToJson(
+        _InboundPositionStructureInput instance) =>
+    <String, dynamic>{
+      'latitude': instance.latitude,
+      'longitude': instance.longitude,
+      'speed': instance.speed,
+      'direction': instance.direction,
+      'altitude': instance.altitude,
+      'satellites': instance.satellites,
+      'hdop': instance.hdop,
+    };
+
+_InboundPayloadStructure _$InboundPayloadStructureFromJson(
+        Map<String, dynamic> json) =>
+    _InboundPayloadStructure(
       field: json['field'] as String,
       type: const InboundPayloadStructureTypeConverter()
           .fromJson(json['type'] as String),
     );
 
-Map<String, dynamic> _$$InboundPayloadStructureImplToJson(
-        _$InboundPayloadStructureImpl instance) =>
+Map<String, dynamic> _$InboundPayloadStructureToJson(
+        _InboundPayloadStructure instance) =>
     <String, dynamic>{
       'field': instance.field,
       'type':
           const InboundPayloadStructureTypeConverter().toJson(instance.type),
     };
 
-_$InboundPayloadStructureInputImpl _$$InboundPayloadStructureInputImplFromJson(
+_InboundPayloadStructureInput _$InboundPayloadStructureInputFromJson(
         Map<String, dynamic> json) =>
-    _$InboundPayloadStructureInputImpl(
+    _InboundPayloadStructureInput(
       field: json['field'] as String? ?? '',
       type: json['type'] == null
           ? InboundPayloadStructureType.string
@@ -125,69 +123,63 @@ _$InboundPayloadStructureInputImpl _$$InboundPayloadStructureInputImplFromJson(
               .fromJson(json['type'] as String),
     );
 
-Map<String, dynamic> _$$InboundPayloadStructureInputImplToJson(
-        _$InboundPayloadStructureInputImpl instance) =>
+Map<String, dynamic> _$InboundPayloadStructureInputToJson(
+        _InboundPayloadStructureInput instance) =>
     <String, dynamic>{
       'field': instance.field,
       'type':
           const InboundPayloadStructureTypeConverter().toJson(instance.type),
     };
 
-_$WebhookHeaderImpl _$$WebhookHeaderImplFromJson(Map<String, dynamic> json) =>
-    _$WebhookHeaderImpl(
+_WebhookHeader _$WebhookHeaderFromJson(Map<String, dynamic> json) =>
+    _WebhookHeader(
       name: json['name'] as String,
       value: json['value'] as String,
     );
 
-Map<String, dynamic> _$$WebhookHeaderImplToJson(_$WebhookHeaderImpl instance) =>
+Map<String, dynamic> _$WebhookHeaderToJson(_WebhookHeader instance) =>
     <String, dynamic>{
       'name': instance.name,
       'value': instance.value,
     };
 
-_$WebhookHeaderInputImpl _$$WebhookHeaderInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$WebhookHeaderInputImpl(
+_WebhookHeaderInput _$WebhookHeaderInputFromJson(Map<String, dynamic> json) =>
+    _WebhookHeaderInput(
       name: json['name'] as String? ?? '',
       value: json['value'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$WebhookHeaderInputImplToJson(
-        _$WebhookHeaderInputImpl instance) =>
+Map<String, dynamic> _$WebhookHeaderInputToJson(_WebhookHeaderInput instance) =>
     <String, dynamic>{
       'name': instance.name,
       'value': instance.value,
     };
 
-_$WebhookPathImpl _$$WebhookPathImplFromJson(Map<String, dynamic> json) =>
-    _$WebhookPathImpl(
+_WebhookPath _$WebhookPathFromJson(Map<String, dynamic> json) => _WebhookPath(
       path: json['path'] as String,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$WebhookPathImplToJson(_$WebhookPathImpl instance) =>
+Map<String, dynamic> _$WebhookPathToJson(_WebhookPath instance) =>
     <String, dynamic>{
       'path': instance.path,
       'name': instance.name,
     };
 
-_$WebhookPathInputImpl _$$WebhookPathInputImplFromJson(
-        Map<String, dynamic> json) =>
-    _$WebhookPathInputImpl(
+_WebhookPathInput _$WebhookPathInputFromJson(Map<String, dynamic> json) =>
+    _WebhookPathInput(
       path: json['path'] as String? ?? '',
       name: json['name'] as String? ?? '',
     );
 
-Map<String, dynamic> _$$WebhookPathInputImplToJson(
-        _$WebhookPathInputImpl instance) =>
+Map<String, dynamic> _$WebhookPathInputToJson(_WebhookPathInput instance) =>
     <String, dynamic>{
       'path': instance.path,
       'name': instance.name,
     };
 
-_$WebhookStructureImpl _$$WebhookStructureImplFromJson(
-        Map<String, dynamic> json) =>
-    _$WebhookStructureImpl(
+_WebhookStructure _$WebhookStructureFromJson(Map<String, dynamic> json) =>
+    _WebhookStructure(
       baseUrl: json['baseUrl'] as String,
       paths: (json['paths'] as List<dynamic>?)
               ?.map((e) => WebhookPath.fromJson(e as Map<String, dynamic>))
@@ -206,8 +198,7 @@ _$WebhookStructureImpl _$$WebhookStructureImplFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$WebhookStructureImplToJson(
-        _$WebhookStructureImpl instance) =>
+Map<String, dynamic> _$WebhookStructureToJson(_WebhookStructure instance) =>
     <String, dynamic>{
       'baseUrl': instance.baseUrl,
       'paths': instance.paths.map((e) => e.toJson()).toList(),
@@ -217,9 +208,9 @@ Map<String, dynamic> _$$WebhookStructureImplToJson(
       'headers': instance.headers.map((e) => e.toJson()).toList(),
     };
 
-_$WebhookStructureInputImpl _$$WebhookStructureInputImplFromJson(
+_WebhookStructureInput _$WebhookStructureInputFromJson(
         Map<String, dynamic> json) =>
-    _$WebhookStructureInputImpl(
+    _WebhookStructureInput(
       baseUrl: json['baseUrl'] as String? ?? '',
       paths: (json['paths'] as List<dynamic>?)
               ?.map((e) => WebhookPathInput.fromJson(e as Map<String, dynamic>))
@@ -239,8 +230,8 @@ _$WebhookStructureInputImpl _$$WebhookStructureInputImplFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$WebhookStructureInputImplToJson(
-        _$WebhookStructureInputImpl instance) =>
+Map<String, dynamic> _$WebhookStructureInputToJson(
+        _WebhookStructureInput instance) =>
     <String, dynamic>{
       'baseUrl': instance.baseUrl,
       'paths': instance.paths.map((e) => e.toJson()).toList(),
@@ -250,20 +241,18 @@ Map<String, dynamic> _$$WebhookStructureInputImplToJson(
       'headers': instance.headers.map((e) => e.toJson()).toList(),
     };
 
-_$FlespiModelImpl _$$FlespiModelImplFromJson(Map<String, dynamic> json) =>
-    _$FlespiModelImpl(
+_FlespiModel _$FlespiModelFromJson(Map<String, dynamic> json) => _FlespiModel(
       flespiId: json['flespiId'] as String,
       name: json['name'] as String,
     );
 
-Map<String, dynamic> _$$FlespiModelImplToJson(_$FlespiModelImpl instance) =>
+Map<String, dynamic> _$FlespiModelToJson(_FlespiModel instance) =>
     <String, dynamic>{
       'flespiId': instance.flespiId,
       'name': instance.name,
     };
 
-_$FlespiAclImpl _$$FlespiAclImplFromJson(Map<String, dynamic> json) =>
-    _$FlespiAclImpl(
+_FlespiAcl _$FlespiAclFromJson(Map<String, dynamic> json) => _FlespiAcl(
       uri: const FlespiUriConverter().fromJson(json['uri'] as String),
       topic: json['topic'] as String?,
       actions: (json['actions'] as List<dynamic>?)
@@ -279,7 +268,7 @@ _$FlespiAclImpl _$$FlespiAclImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$FlespiAclImplToJson(_$FlespiAclImpl instance) =>
+Map<String, dynamic> _$FlespiAclToJson(_FlespiAcl instance) =>
     <String, dynamic>{
       'uri': const FlespiUriConverter().toJson(instance.uri),
       'topic': instance.topic,
@@ -291,8 +280,8 @@ Map<String, dynamic> _$$FlespiAclImplToJson(_$FlespiAclImpl instance) =>
       'submodules': instance.submodules?.map((e) => e.toJson()).toList(),
     };
 
-_$FlespiAclInputImpl _$$FlespiAclInputImplFromJson(Map<String, dynamic> json) =>
-    _$FlespiAclInputImpl(
+_FlespiAclInput _$FlespiAclInputFromJson(Map<String, dynamic> json) =>
+    _FlespiAclInput(
       uri: const FlespiUriConverter().fromJson(json['uri'] as String),
       topic: json['topic'] as String?,
       actions: (json['actions'] as List<dynamic>?)
@@ -308,8 +297,7 @@ _$FlespiAclInputImpl _$$FlespiAclInputImplFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$FlespiAclInputImplToJson(
-        _$FlespiAclInputImpl instance) =>
+Map<String, dynamic> _$FlespiAclInputToJson(_FlespiAclInput instance) =>
     <String, dynamic>{
       'uri': const FlespiUriConverter().toJson(instance.uri),
       'topic': instance.topic,
@@ -321,9 +309,9 @@ Map<String, dynamic> _$$FlespiAclInputImplToJson(
       'submodules': instance.submodules?.map((e) => e.toJson()).toList(),
     };
 
-_$FlespiSubmoduleConfigImpl _$$FlespiSubmoduleConfigImplFromJson(
+_FlespiSubmoduleConfig _$FlespiSubmoduleConfigFromJson(
         Map<String, dynamic> json) =>
-    _$FlespiSubmoduleConfigImpl(
+    _FlespiSubmoduleConfig(
       name: const FlespiSubmoduleConverter().fromJson(json['name'] as String),
       methods: (json['methods'] as List<dynamic>?)
               ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
@@ -331,17 +319,17 @@ _$FlespiSubmoduleConfigImpl _$$FlespiSubmoduleConfigImplFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$FlespiSubmoduleConfigImplToJson(
-        _$FlespiSubmoduleConfigImpl instance) =>
+Map<String, dynamic> _$FlespiSubmoduleConfigToJson(
+        _FlespiSubmoduleConfig instance) =>
     <String, dynamic>{
       'name': const FlespiSubmoduleConverter().toJson(instance.name),
       'methods':
           instance.methods.map(const FlespiMethodConverter().toJson).toList(),
     };
 
-_$FlespiSubmoduleConfigInputImpl _$$FlespiSubmoduleConfigInputImplFromJson(
+_FlespiSubmoduleConfigInput _$FlespiSubmoduleConfigInputFromJson(
         Map<String, dynamic> json) =>
-    _$FlespiSubmoduleConfigInputImpl(
+    _FlespiSubmoduleConfigInput(
       name: const FlespiSubmoduleConverter().fromJson(json['name'] as String),
       methods: (json['methods'] as List<dynamic>?)
               ?.map((e) => const FlespiMethodConverter().fromJson(e as String))
@@ -349,8 +337,8 @@ _$FlespiSubmoduleConfigInputImpl _$$FlespiSubmoduleConfigInputImplFromJson(
           const [],
     );
 
-Map<String, dynamic> _$$FlespiSubmoduleConfigInputImplToJson(
-        _$FlespiSubmoduleConfigInputImpl instance) =>
+Map<String, dynamic> _$FlespiSubmoduleConfigInputToJson(
+        _FlespiSubmoduleConfigInput instance) =>
     <String, dynamic>{
       'name': const FlespiSubmoduleConverter().toJson(instance.name),
       'methods':

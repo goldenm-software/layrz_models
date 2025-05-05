@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,64 +10,56 @@ part of 'workspace.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Workspace _$WorkspaceFromJson(Map<String, dynamic> json) {
-  return _Workspace.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Workspace {
   /// Is the ID
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// Is the name
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// Is the type of the App
   @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
-  AppInternalIdentifier? get typeApp => throw _privateConstructorUsedError;
+  AppInternalIdentifier? get typeApp;
 
   /// Indicates the color of the workspace
   @ColorOrNullConverter()
-  Color? get color => throw _privateConstructorUsedError;
+  Color? get color;
 
   /// Is the icon URI of the workspace
   @IconOrNullConverter()
-  LayrzIcon? get icon => throw _privateConstructorUsedError;
+  LayrzIcon? get icon;
 
   /// Background image URI of the workspace
-  String? get background => throw _privateConstructorUsedError;
+  String? get background;
 
   /// Indicates if the workspace is tagged as favorite
-  bool? get isFavorite => throw _privateConstructorUsedError;
+  bool? get isFavorite;
 
   /// Indicates the main view of the workspace
   @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
-  WorkspaceMainView? get mainView => throw _privateConstructorUsedError;
+  WorkspaceMainView? get mainView;
 
   /// Is the list of [assets] associated with the workspace
-  List<Asset>? get assets => throw _privateConstructorUsedError;
+  List<Asset>? get assets;
 
   /// [assetsIds] is the list of ids of the [assets] associated with the workspace
-  List<String>? get assetsIds => throw _privateConstructorUsedError;
+  List<String>? get assetsIds;
 
   /// Is the list of [inboundServices] associated with the workspace
-  List<InboundService>? get inboundServices =>
-      throw _privateConstructorUsedError;
+  List<InboundService>? get inboundServices;
 
   /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
-  List<String>? get inboundServicesIds => throw _privateConstructorUsedError;
+  List<String>? get inboundServicesIds;
 
   /// Is the list of [outboundServices] associated with the workspace
-  List<OutboundService>? get outboundServices =>
-      throw _privateConstructorUsedError;
+  List<OutboundService>? get outboundServices;
 
   /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
-  List<String>? get outboundServicesIds => throw _privateConstructorUsedError;
+  List<String>? get outboundServicesIds;
 
   /// The fields [casesEnabled], [triggers], [triggersIds], [checkpointsEnabled], [checkpoints], [checkpointsIds],
   /// [mapEnabled], [geofences], [geofencesIds], [mapCardCustomization], [mapCenterCoordinates], [mapCenterMode],
@@ -75,69 +68,180 @@ mixin _$Workspace {
   /// Is the list of [triggers] and their ids [triggersIds]. And [casesEnabled] indicates
   /// if the cases monitor is enabled
   /// Also, [casesMonitorConfig] indicates the configuration of the cases monitor
-  bool? get casesEnabled => throw _privateConstructorUsedError;
-  List<Trigger>? get triggers => throw _privateConstructorUsedError;
-  List<String>? get triggersIds => throw _privateConstructorUsedError;
-  List<CaseMonitorCard?>? get casesMonitorConfig =>
-      throw _privateConstructorUsedError;
+  bool? get casesEnabled;
+  List<Trigger>? get triggers;
+  List<String>? get triggersIds;
+  List<CaseMonitorCard?>? get casesMonitorConfig;
 
   /// Is the list of [checkpoints] and their ids [checkpointsIds]. And [checkpointsEnabled] indicates
   /// if the checkpoints monitor is enabled
-  bool? get checkpointsEnabled => throw _privateConstructorUsedError;
-  List<Checkpoint>? get checkpoints => throw _privateConstructorUsedError;
-  List<String>? get checkpointsIds => throw _privateConstructorUsedError;
+  bool? get checkpointsEnabled;
+  List<Checkpoint>? get checkpoints;
+  List<String>? get checkpointsIds;
 
   /// Is the list of [geofences] and their ids [geofencesIds]. And [mapEnabled] indicates
   /// if the map monitor is enabled
   /// Also, [mapCardCustomization] indicates the customization of the map card
   /// [mapCenterCoordinates] indicates the center coordinates of the map
   /// [mapCenterMode] indicates the center mode of the map
-  bool? get mapEnabled => throw _privateConstructorUsedError;
-  List<Geofence>? get geofences => throw _privateConstructorUsedError;
-  List<String>? get geofencesIds => throw _privateConstructorUsedError;
-  List<MapCardSensors> get mapCardCustomization =>
-      throw _privateConstructorUsedError;
-  GeoPoint? get mapCenterCoordinates => throw _privateConstructorUsedError;
+  bool? get mapEnabled;
+  List<Geofence>? get geofences;
+  List<String>? get geofencesIds;
+  List<MapCardSensors> get mapCardCustomization;
+  GeoPoint? get mapCenterCoordinates;
   @JsonKey(unknownEnumValue: MapCenterMode.bounds)
-  MapCenterMode? get mapCenterMode => throw _privateConstructorUsedError;
+  MapCenterMode? get mapCenterMode;
 
   /// Is the list of [charts] and their ids [chartsIds]. And [analyticsEnabled] indicates
   /// if the analytics monitor is enabled.
   /// Also, [analyticsGridStructure] indicates the visual structure of the charts
-  bool? get analyticsEnabled => throw _privateConstructorUsedError;
-  List<LayrzChart>? get charts => throw _privateConstructorUsedError;
-  List<String>? get chartsIds => throw _privateConstructorUsedError;
-  List<AnalyticsGridItem> get analyticsGridStructure =>
-      throw _privateConstructorUsedError;
+  bool? get analyticsEnabled;
+  List<LayrzChart>? get charts;
+  List<String>? get chartsIds;
+  List<AnalyticsGridItem> get analyticsGridStructure;
 
   /// [sensorsEnabled] indicates if the sensors sensors monitor is enabled
   /// Also, [sensorsGridStructure] indicates the visual structure of the sensors
-  bool? get sensorsEnabled => throw _privateConstructorUsedError;
-  List<SensorGridItem> get sensorsGridStructure =>
-      throw _privateConstructorUsedError;
+  bool? get sensorsEnabled;
+  List<SensorGridItem> get sensorsGridStructure;
 
   /// Metric system of the workspace
   @JsonKey(unknownEnumValue: MetricSystem.metric)
-  MetricSystem? get metricSystem => throw _privateConstructorUsedError;
-  Timezone? get timezone => throw _privateConstructorUsedError;
+  MetricSystem? get metricSystem;
+  Timezone? get timezone;
 
   /// [access] indicates the access of the workspace
-  List<Access>? get access => throw _privateConstructorUsedError;
-
-  /// Serializes this Workspace to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<Access>? get access;
 
   /// Create a copy of Workspace
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $WorkspaceCopyWith<Workspace> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$WorkspaceCopyWithImpl<Workspace>(this as Workspace, _$identity);
+
+  /// Serializes this Workspace to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Workspace &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.typeApp, typeApp) || other.typeApp == typeApp) &&
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
+            (identical(other.background, background) ||
+                other.background == background) &&
+            (identical(other.isFavorite, isFavorite) ||
+                other.isFavorite == isFavorite) &&
+            (identical(other.mainView, mainView) ||
+                other.mainView == mainView) &&
+            const DeepCollectionEquality().equals(other.assets, assets) &&
+            const DeepCollectionEquality().equals(other.assetsIds, assetsIds) &&
+            const DeepCollectionEquality()
+                .equals(other.inboundServices, inboundServices) &&
+            const DeepCollectionEquality()
+                .equals(other.inboundServicesIds, inboundServicesIds) &&
+            const DeepCollectionEquality()
+                .equals(other.outboundServices, outboundServices) &&
+            const DeepCollectionEquality()
+                .equals(other.outboundServicesIds, outboundServicesIds) &&
+            (identical(other.casesEnabled, casesEnabled) ||
+                other.casesEnabled == casesEnabled) &&
+            const DeepCollectionEquality().equals(other.triggers, triggers) &&
+            const DeepCollectionEquality()
+                .equals(other.triggersIds, triggersIds) &&
+            const DeepCollectionEquality()
+                .equals(other.casesMonitorConfig, casesMonitorConfig) &&
+            (identical(other.checkpointsEnabled, checkpointsEnabled) ||
+                other.checkpointsEnabled == checkpointsEnabled) &&
+            const DeepCollectionEquality()
+                .equals(other.checkpoints, checkpoints) &&
+            const DeepCollectionEquality()
+                .equals(other.checkpointsIds, checkpointsIds) &&
+            (identical(other.mapEnabled, mapEnabled) ||
+                other.mapEnabled == mapEnabled) &&
+            const DeepCollectionEquality().equals(other.geofences, geofences) &&
+            const DeepCollectionEquality()
+                .equals(other.geofencesIds, geofencesIds) &&
+            const DeepCollectionEquality()
+                .equals(other.mapCardCustomization, mapCardCustomization) &&
+            (identical(other.mapCenterCoordinates, mapCenterCoordinates) ||
+                other.mapCenterCoordinates == mapCenterCoordinates) &&
+            (identical(other.mapCenterMode, mapCenterMode) ||
+                other.mapCenterMode == mapCenterMode) &&
+            (identical(other.analyticsEnabled, analyticsEnabled) ||
+                other.analyticsEnabled == analyticsEnabled) &&
+            const DeepCollectionEquality().equals(other.charts, charts) &&
+            const DeepCollectionEquality().equals(other.chartsIds, chartsIds) &&
+            const DeepCollectionEquality()
+                .equals(other.analyticsGridStructure, analyticsGridStructure) &&
+            (identical(other.sensorsEnabled, sensorsEnabled) ||
+                other.sensorsEnabled == sensorsEnabled) &&
+            const DeepCollectionEquality()
+                .equals(other.sensorsGridStructure, sensorsGridStructure) &&
+            (identical(other.metricSystem, metricSystem) ||
+                other.metricSystem == metricSystem) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone) &&
+            const DeepCollectionEquality().equals(other.access, access));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        typeApp,
+        color,
+        icon,
+        background,
+        isFavorite,
+        mainView,
+        const DeepCollectionEquality().hash(assets),
+        const DeepCollectionEquality().hash(assetsIds),
+        const DeepCollectionEquality().hash(inboundServices),
+        const DeepCollectionEquality().hash(inboundServicesIds),
+        const DeepCollectionEquality().hash(outboundServices),
+        const DeepCollectionEquality().hash(outboundServicesIds),
+        casesEnabled,
+        const DeepCollectionEquality().hash(triggers),
+        const DeepCollectionEquality().hash(triggersIds),
+        const DeepCollectionEquality().hash(casesMonitorConfig),
+        checkpointsEnabled,
+        const DeepCollectionEquality().hash(checkpoints),
+        const DeepCollectionEquality().hash(checkpointsIds),
+        mapEnabled,
+        const DeepCollectionEquality().hash(geofences),
+        const DeepCollectionEquality().hash(geofencesIds),
+        const DeepCollectionEquality().hash(mapCardCustomization),
+        mapCenterCoordinates,
+        mapCenterMode,
+        analyticsEnabled,
+        const DeepCollectionEquality().hash(charts),
+        const DeepCollectionEquality().hash(chartsIds),
+        const DeepCollectionEquality().hash(analyticsGridStructure),
+        sensorsEnabled,
+        const DeepCollectionEquality().hash(sensorsGridStructure),
+        metricSystem,
+        timezone,
+        const DeepCollectionEquality().hash(access)
+      ]);
+
+  @override
+  String toString() {
+    return 'Workspace(id: $id, name: $name, typeApp: $typeApp, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assets: $assets, assetsIds: $assetsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggers: $triggers, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofences: $geofences, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, charts: $charts, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem, timezone: $timezone, access: $access)';
+  }
 }
 
 /// @nodoc
-abstract class $WorkspaceCopyWith<$Res> {
-  factory $WorkspaceCopyWith(Workspace value, $Res Function(Workspace) then) =
-      _$WorkspaceCopyWithImpl<$Res, Workspace>;
+abstract mixin class $WorkspaceCopyWith<$Res> {
+  factory $WorkspaceCopyWith(Workspace value, $Res Function(Workspace) _then) =
+      _$WorkspaceCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -186,14 +290,11 @@ abstract class $WorkspaceCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WorkspaceCopyWithImpl<$Res, $Val extends Workspace>
-    implements $WorkspaceCopyWith<$Res> {
-  _$WorkspaceCopyWithImpl(this._value, this._then);
+class _$WorkspaceCopyWithImpl<$Res> implements $WorkspaceCopyWith<$Res> {
+  _$WorkspaceCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Workspace _self;
+  final $Res Function(Workspace) _then;
 
   /// Create a copy of Workspace
   /// with the given fields replaced by the non-null parameter values.
@@ -237,152 +338,152 @@ class _$WorkspaceCopyWithImpl<$Res, $Val extends Workspace>
     Object? timezone = freezed,
     Object? access = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       typeApp: freezed == typeApp
-          ? _value.typeApp
+          ? _self.typeApp
           : typeApp // ignore: cast_nullable_to_non_nullable
               as AppInternalIdentifier?,
       color: freezed == color
-          ? _value.color
+          ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color?,
       icon: freezed == icon
-          ? _value.icon
+          ? _self.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as LayrzIcon?,
       background: freezed == background
-          ? _value.background
+          ? _self.background
           : background // ignore: cast_nullable_to_non_nullable
               as String?,
       isFavorite: freezed == isFavorite
-          ? _value.isFavorite
+          ? _self.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool?,
       mainView: freezed == mainView
-          ? _value.mainView
+          ? _self.mainView
           : mainView // ignore: cast_nullable_to_non_nullable
               as WorkspaceMainView?,
       assets: freezed == assets
-          ? _value.assets
+          ? _self.assets
           : assets // ignore: cast_nullable_to_non_nullable
               as List<Asset>?,
       assetsIds: freezed == assetsIds
-          ? _value.assetsIds
+          ? _self.assetsIds
           : assetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       inboundServices: freezed == inboundServices
-          ? _value.inboundServices
+          ? _self.inboundServices
           : inboundServices // ignore: cast_nullable_to_non_nullable
               as List<InboundService>?,
       inboundServicesIds: freezed == inboundServicesIds
-          ? _value.inboundServicesIds
+          ? _self.inboundServicesIds
           : inboundServicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       outboundServices: freezed == outboundServices
-          ? _value.outboundServices
+          ? _self.outboundServices
           : outboundServices // ignore: cast_nullable_to_non_nullable
               as List<OutboundService>?,
       outboundServicesIds: freezed == outboundServicesIds
-          ? _value.outboundServicesIds
+          ? _self.outboundServicesIds
           : outboundServicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       casesEnabled: freezed == casesEnabled
-          ? _value.casesEnabled
+          ? _self.casesEnabled
           : casesEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
       triggers: freezed == triggers
-          ? _value.triggers
+          ? _self.triggers
           : triggers // ignore: cast_nullable_to_non_nullable
               as List<Trigger>?,
       triggersIds: freezed == triggersIds
-          ? _value.triggersIds
+          ? _self.triggersIds
           : triggersIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       casesMonitorConfig: freezed == casesMonitorConfig
-          ? _value.casesMonitorConfig
+          ? _self.casesMonitorConfig
           : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
               as List<CaseMonitorCard?>?,
       checkpointsEnabled: freezed == checkpointsEnabled
-          ? _value.checkpointsEnabled
+          ? _self.checkpointsEnabled
           : checkpointsEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
       checkpoints: freezed == checkpoints
-          ? _value.checkpoints
+          ? _self.checkpoints
           : checkpoints // ignore: cast_nullable_to_non_nullable
               as List<Checkpoint>?,
       checkpointsIds: freezed == checkpointsIds
-          ? _value.checkpointsIds
+          ? _self.checkpointsIds
           : checkpointsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       mapEnabled: freezed == mapEnabled
-          ? _value.mapEnabled
+          ? _self.mapEnabled
           : mapEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
       geofences: freezed == geofences
-          ? _value.geofences
+          ? _self.geofences
           : geofences // ignore: cast_nullable_to_non_nullable
               as List<Geofence>?,
       geofencesIds: freezed == geofencesIds
-          ? _value.geofencesIds
+          ? _self.geofencesIds
           : geofencesIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       mapCardCustomization: null == mapCardCustomization
-          ? _value.mapCardCustomization
+          ? _self.mapCardCustomization
           : mapCardCustomization // ignore: cast_nullable_to_non_nullable
               as List<MapCardSensors>,
       mapCenterCoordinates: freezed == mapCenterCoordinates
-          ? _value.mapCenterCoordinates
+          ? _self.mapCenterCoordinates
           : mapCenterCoordinates // ignore: cast_nullable_to_non_nullable
               as GeoPoint?,
       mapCenterMode: freezed == mapCenterMode
-          ? _value.mapCenterMode
+          ? _self.mapCenterMode
           : mapCenterMode // ignore: cast_nullable_to_non_nullable
               as MapCenterMode?,
       analyticsEnabled: freezed == analyticsEnabled
-          ? _value.analyticsEnabled
+          ? _self.analyticsEnabled
           : analyticsEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
       charts: freezed == charts
-          ? _value.charts
+          ? _self.charts
           : charts // ignore: cast_nullable_to_non_nullable
               as List<LayrzChart>?,
       chartsIds: freezed == chartsIds
-          ? _value.chartsIds
+          ? _self.chartsIds
           : chartsIds // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       analyticsGridStructure: null == analyticsGridStructure
-          ? _value.analyticsGridStructure
+          ? _self.analyticsGridStructure
           : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
               as List<AnalyticsGridItem>,
       sensorsEnabled: freezed == sensorsEnabled
-          ? _value.sensorsEnabled
+          ? _self.sensorsEnabled
           : sensorsEnabled // ignore: cast_nullable_to_non_nullable
               as bool?,
       sensorsGridStructure: null == sensorsGridStructure
-          ? _value.sensorsGridStructure
+          ? _self.sensorsGridStructure
           : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
               as List<SensorGridItem>,
       metricSystem: freezed == metricSystem
-          ? _value.metricSystem
+          ? _self.metricSystem
           : metricSystem // ignore: cast_nullable_to_non_nullable
               as MetricSystem?,
       timezone: freezed == timezone
-          ? _value.timezone
+          ? _self.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as Timezone?,
       access: freezed == access
-          ? _value.access
+          ? _self.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of Workspace
@@ -390,12 +491,12 @@ class _$WorkspaceCopyWithImpl<$Res, $Val extends Workspace>
   @override
   @pragma('vm:prefer-inline')
   $GeoPointCopyWith<$Res>? get mapCenterCoordinates {
-    if (_value.mapCenterCoordinates == null) {
+    if (_self.mapCenterCoordinates == null) {
       return null;
     }
 
-    return $GeoPointCopyWith<$Res>(_value.mapCenterCoordinates!, (value) {
-      return _then(_value.copyWith(mapCenterCoordinates: value) as $Val);
+    return $GeoPointCopyWith<$Res>(_self.mapCenterCoordinates!, (value) {
+      return _then(_self.copyWith(mapCenterCoordinates: value));
     });
   }
 
@@ -404,275 +505,20 @@ class _$WorkspaceCopyWithImpl<$Res, $Val extends Workspace>
   @override
   @pragma('vm:prefer-inline')
   $TimezoneCopyWith<$Res>? get timezone {
-    if (_value.timezone == null) {
+    if (_self.timezone == null) {
       return null;
     }
 
-    return $TimezoneCopyWith<$Res>(_value.timezone!, (value) {
-      return _then(_value.copyWith(timezone: value) as $Val);
+    return $TimezoneCopyWith<$Res>(_self.timezone!, (value) {
+      return _then(_self.copyWith(timezone: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$WorkspaceImplCopyWith<$Res>
-    implements $WorkspaceCopyWith<$Res> {
-  factory _$$WorkspaceImplCopyWith(
-          _$WorkspaceImpl value, $Res Function(_$WorkspaceImpl) then) =
-      __$$WorkspaceImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
-      AppInternalIdentifier? typeApp,
-      @ColorOrNullConverter() Color? color,
-      @IconOrNullConverter() LayrzIcon? icon,
-      String? background,
-      bool? isFavorite,
-      @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
-      WorkspaceMainView? mainView,
-      List<Asset>? assets,
-      List<String>? assetsIds,
-      List<InboundService>? inboundServices,
-      List<String>? inboundServicesIds,
-      List<OutboundService>? outboundServices,
-      List<String>? outboundServicesIds,
-      bool? casesEnabled,
-      List<Trigger>? triggers,
-      List<String>? triggersIds,
-      List<CaseMonitorCard?>? casesMonitorConfig,
-      bool? checkpointsEnabled,
-      List<Checkpoint>? checkpoints,
-      List<String>? checkpointsIds,
-      bool? mapEnabled,
-      List<Geofence>? geofences,
-      List<String>? geofencesIds,
-      List<MapCardSensors> mapCardCustomization,
-      GeoPoint? mapCenterCoordinates,
-      @JsonKey(unknownEnumValue: MapCenterMode.bounds)
-      MapCenterMode? mapCenterMode,
-      bool? analyticsEnabled,
-      List<LayrzChart>? charts,
-      List<String>? chartsIds,
-      List<AnalyticsGridItem> analyticsGridStructure,
-      bool? sensorsEnabled,
-      List<SensorGridItem> sensorsGridStructure,
-      @JsonKey(unknownEnumValue: MetricSystem.metric)
-      MetricSystem? metricSystem,
-      Timezone? timezone,
-      List<Access>? access});
-
-  @override
-  $GeoPointCopyWith<$Res>? get mapCenterCoordinates;
-  @override
-  $TimezoneCopyWith<$Res>? get timezone;
-}
-
-/// @nodoc
-class __$$WorkspaceImplCopyWithImpl<$Res>
-    extends _$WorkspaceCopyWithImpl<$Res, _$WorkspaceImpl>
-    implements _$$WorkspaceImplCopyWith<$Res> {
-  __$$WorkspaceImplCopyWithImpl(
-      _$WorkspaceImpl _value, $Res Function(_$WorkspaceImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Workspace
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? typeApp = freezed,
-    Object? color = freezed,
-    Object? icon = freezed,
-    Object? background = freezed,
-    Object? isFavorite = freezed,
-    Object? mainView = freezed,
-    Object? assets = freezed,
-    Object? assetsIds = freezed,
-    Object? inboundServices = freezed,
-    Object? inboundServicesIds = freezed,
-    Object? outboundServices = freezed,
-    Object? outboundServicesIds = freezed,
-    Object? casesEnabled = freezed,
-    Object? triggers = freezed,
-    Object? triggersIds = freezed,
-    Object? casesMonitorConfig = freezed,
-    Object? checkpointsEnabled = freezed,
-    Object? checkpoints = freezed,
-    Object? checkpointsIds = freezed,
-    Object? mapEnabled = freezed,
-    Object? geofences = freezed,
-    Object? geofencesIds = freezed,
-    Object? mapCardCustomization = null,
-    Object? mapCenterCoordinates = freezed,
-    Object? mapCenterMode = freezed,
-    Object? analyticsEnabled = freezed,
-    Object? charts = freezed,
-    Object? chartsIds = freezed,
-    Object? analyticsGridStructure = null,
-    Object? sensorsEnabled = freezed,
-    Object? sensorsGridStructure = null,
-    Object? metricSystem = freezed,
-    Object? timezone = freezed,
-    Object? access = freezed,
-  }) {
-    return _then(_$WorkspaceImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      typeApp: freezed == typeApp
-          ? _value.typeApp
-          : typeApp // ignore: cast_nullable_to_non_nullable
-              as AppInternalIdentifier?,
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as LayrzIcon?,
-      background: freezed == background
-          ? _value.background
-          : background // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isFavorite: freezed == isFavorite
-          ? _value.isFavorite
-          : isFavorite // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      mainView: freezed == mainView
-          ? _value.mainView
-          : mainView // ignore: cast_nullable_to_non_nullable
-              as WorkspaceMainView?,
-      assets: freezed == assets
-          ? _value._assets
-          : assets // ignore: cast_nullable_to_non_nullable
-              as List<Asset>?,
-      assetsIds: freezed == assetsIds
-          ? _value._assetsIds
-          : assetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      inboundServices: freezed == inboundServices
-          ? _value._inboundServices
-          : inboundServices // ignore: cast_nullable_to_non_nullable
-              as List<InboundService>?,
-      inboundServicesIds: freezed == inboundServicesIds
-          ? _value._inboundServicesIds
-          : inboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      outboundServices: freezed == outboundServices
-          ? _value._outboundServices
-          : outboundServices // ignore: cast_nullable_to_non_nullable
-              as List<OutboundService>?,
-      outboundServicesIds: freezed == outboundServicesIds
-          ? _value._outboundServicesIds
-          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      casesEnabled: freezed == casesEnabled
-          ? _value.casesEnabled
-          : casesEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      triggers: freezed == triggers
-          ? _value._triggers
-          : triggers // ignore: cast_nullable_to_non_nullable
-              as List<Trigger>?,
-      triggersIds: freezed == triggersIds
-          ? _value._triggersIds
-          : triggersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      casesMonitorConfig: freezed == casesMonitorConfig
-          ? _value._casesMonitorConfig
-          : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
-              as List<CaseMonitorCard?>?,
-      checkpointsEnabled: freezed == checkpointsEnabled
-          ? _value.checkpointsEnabled
-          : checkpointsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      checkpoints: freezed == checkpoints
-          ? _value._checkpoints
-          : checkpoints // ignore: cast_nullable_to_non_nullable
-              as List<Checkpoint>?,
-      checkpointsIds: freezed == checkpointsIds
-          ? _value._checkpointsIds
-          : checkpointsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      mapEnabled: freezed == mapEnabled
-          ? _value.mapEnabled
-          : mapEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      geofences: freezed == geofences
-          ? _value._geofences
-          : geofences // ignore: cast_nullable_to_non_nullable
-              as List<Geofence>?,
-      geofencesIds: freezed == geofencesIds
-          ? _value._geofencesIds
-          : geofencesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      mapCardCustomization: null == mapCardCustomization
-          ? _value._mapCardCustomization
-          : mapCardCustomization // ignore: cast_nullable_to_non_nullable
-              as List<MapCardSensors>,
-      mapCenterCoordinates: freezed == mapCenterCoordinates
-          ? _value.mapCenterCoordinates
-          : mapCenterCoordinates // ignore: cast_nullable_to_non_nullable
-              as GeoPoint?,
-      mapCenterMode: freezed == mapCenterMode
-          ? _value.mapCenterMode
-          : mapCenterMode // ignore: cast_nullable_to_non_nullable
-              as MapCenterMode?,
-      analyticsEnabled: freezed == analyticsEnabled
-          ? _value.analyticsEnabled
-          : analyticsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      charts: freezed == charts
-          ? _value._charts
-          : charts // ignore: cast_nullable_to_non_nullable
-              as List<LayrzChart>?,
-      chartsIds: freezed == chartsIds
-          ? _value._chartsIds
-          : chartsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      analyticsGridStructure: null == analyticsGridStructure
-          ? _value._analyticsGridStructure
-          : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
-              as List<AnalyticsGridItem>,
-      sensorsEnabled: freezed == sensorsEnabled
-          ? _value.sensorsEnabled
-          : sensorsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      sensorsGridStructure: null == sensorsGridStructure
-          ? _value._sensorsGridStructure
-          : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
-              as List<SensorGridItem>,
-      metricSystem: freezed == metricSystem
-          ? _value.metricSystem
-          : metricSystem // ignore: cast_nullable_to_non_nullable
-              as MetricSystem?,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as Timezone?,
-      access: freezed == access
-          ? _value._access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$WorkspaceImpl implements _Workspace {
-  const _$WorkspaceImpl(
+class _Workspace implements Workspace {
+  const _Workspace(
       {required this.id,
       required this.name,
       @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown) this.typeApp,
@@ -728,9 +574,8 @@ class _$WorkspaceImpl implements _Workspace {
         _analyticsGridStructure = analyticsGridStructure,
         _sensorsGridStructure = sensorsGridStructure,
         _access = access;
-
-  factory _$WorkspaceImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WorkspaceImplFromJson(json);
+  factory _Workspace.fromJson(Map<String, dynamic> json) =>
+      _$WorkspaceFromJson(json);
 
   /// Is the ID
   @override
@@ -1025,16 +870,26 @@ class _$WorkspaceImpl implements _Workspace {
     return EqualUnmodifiableListView(value);
   }
 
+  /// Create a copy of Workspace
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Workspace(id: $id, name: $name, typeApp: $typeApp, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assets: $assets, assetsIds: $assetsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggers: $triggers, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofences: $geofences, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, charts: $charts, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem, timezone: $timezone, access: $access)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$WorkspaceCopyWith<_Workspace> get copyWith =>
+      __$WorkspaceCopyWithImpl<_Workspace>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$WorkspaceToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WorkspaceImpl &&
+            other is _Workspace &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.typeApp, typeApp) || other.typeApp == typeApp) &&
@@ -1142,305 +997,381 @@ class _$WorkspaceImpl implements _Workspace {
         const DeepCollectionEquality().hash(_access)
       ]);
 
-  /// Create a copy of Workspace
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$WorkspaceImplCopyWith<_$WorkspaceImpl> get copyWith =>
-      __$$WorkspaceImplCopyWithImpl<_$WorkspaceImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WorkspaceImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Workspace(id: $id, name: $name, typeApp: $typeApp, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assets: $assets, assetsIds: $assetsIds, inboundServices: $inboundServices, inboundServicesIds: $inboundServicesIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggers: $triggers, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpoints: $checkpoints, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofences: $geofences, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, charts: $charts, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem, timezone: $timezone, access: $access)';
   }
 }
 
-abstract class _Workspace implements Workspace {
-  const factory _Workspace(
-      {required final String id,
-      required final String name,
+/// @nodoc
+abstract mixin class _$WorkspaceCopyWith<$Res>
+    implements $WorkspaceCopyWith<$Res> {
+  factory _$WorkspaceCopyWith(
+          _Workspace value, $Res Function(_Workspace) _then) =
+      __$WorkspaceCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
       @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
-      final AppInternalIdentifier? typeApp,
-      @ColorOrNullConverter() final Color? color,
-      @IconOrNullConverter() final LayrzIcon? icon,
-      final String? background,
-      final bool? isFavorite,
+      AppInternalIdentifier? typeApp,
+      @ColorOrNullConverter() Color? color,
+      @IconOrNullConverter() LayrzIcon? icon,
+      String? background,
+      bool? isFavorite,
       @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
-      final WorkspaceMainView? mainView,
-      final List<Asset>? assets,
-      final List<String>? assetsIds,
-      final List<InboundService>? inboundServices,
-      final List<String>? inboundServicesIds,
-      final List<OutboundService>? outboundServices,
-      final List<String>? outboundServicesIds,
-      final bool? casesEnabled,
-      final List<Trigger>? triggers,
-      final List<String>? triggersIds,
-      final List<CaseMonitorCard?>? casesMonitorConfig,
-      final bool? checkpointsEnabled,
-      final List<Checkpoint>? checkpoints,
-      final List<String>? checkpointsIds,
-      final bool? mapEnabled,
-      final List<Geofence>? geofences,
-      final List<String>? geofencesIds,
-      final List<MapCardSensors> mapCardCustomization,
-      final GeoPoint? mapCenterCoordinates,
+      WorkspaceMainView? mainView,
+      List<Asset>? assets,
+      List<String>? assetsIds,
+      List<InboundService>? inboundServices,
+      List<String>? inboundServicesIds,
+      List<OutboundService>? outboundServices,
+      List<String>? outboundServicesIds,
+      bool? casesEnabled,
+      List<Trigger>? triggers,
+      List<String>? triggersIds,
+      List<CaseMonitorCard?>? casesMonitorConfig,
+      bool? checkpointsEnabled,
+      List<Checkpoint>? checkpoints,
+      List<String>? checkpointsIds,
+      bool? mapEnabled,
+      List<Geofence>? geofences,
+      List<String>? geofencesIds,
+      List<MapCardSensors> mapCardCustomization,
+      GeoPoint? mapCenterCoordinates,
       @JsonKey(unknownEnumValue: MapCenterMode.bounds)
-      final MapCenterMode? mapCenterMode,
-      final bool? analyticsEnabled,
-      final List<LayrzChart>? charts,
-      final List<String>? chartsIds,
-      final List<AnalyticsGridItem> analyticsGridStructure,
-      final bool? sensorsEnabled,
-      final List<SensorGridItem> sensorsGridStructure,
+      MapCenterMode? mapCenterMode,
+      bool? analyticsEnabled,
+      List<LayrzChart>? charts,
+      List<String>? chartsIds,
+      List<AnalyticsGridItem> analyticsGridStructure,
+      bool? sensorsEnabled,
+      List<SensorGridItem> sensorsGridStructure,
       @JsonKey(unknownEnumValue: MetricSystem.metric)
-      final MetricSystem? metricSystem,
-      final Timezone? timezone,
-      final List<Access>? access}) = _$WorkspaceImpl;
+      MetricSystem? metricSystem,
+      Timezone? timezone,
+      List<Access>? access});
 
-  factory _Workspace.fromJson(Map<String, dynamic> json) =
-      _$WorkspaceImpl.fromJson;
+  @override
+  $GeoPointCopyWith<$Res>? get mapCenterCoordinates;
+  @override
+  $TimezoneCopyWith<$Res>? get timezone;
+}
 
-  /// Is the ID
-  @override
-  String get id;
+/// @nodoc
+class __$WorkspaceCopyWithImpl<$Res> implements _$WorkspaceCopyWith<$Res> {
+  __$WorkspaceCopyWithImpl(this._self, this._then);
 
-  /// Is the name
-  @override
-  String get name;
-
-  /// Is the type of the App
-  @override
-  @JsonKey(unknownEnumValue: AppInternalIdentifier.unknown)
-  AppInternalIdentifier? get typeApp;
-
-  /// Indicates the color of the workspace
-  @override
-  @ColorOrNullConverter()
-  Color? get color;
-
-  /// Is the icon URI of the workspace
-  @override
-  @IconOrNullConverter()
-  LayrzIcon? get icon;
-
-  /// Background image URI of the workspace
-  @override
-  String? get background;
-
-  /// Indicates if the workspace is tagged as favorite
-  @override
-  bool? get isFavorite;
-
-  /// Indicates the main view of the workspace
-  @override
-  @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
-  WorkspaceMainView? get mainView;
-
-  /// Is the list of [assets] associated with the workspace
-  @override
-  List<Asset>? get assets;
-
-  /// [assetsIds] is the list of ids of the [assets] associated with the workspace
-  @override
-  List<String>? get assetsIds;
-
-  /// Is the list of [inboundServices] associated with the workspace
-  @override
-  List<InboundService>? get inboundServices;
-
-  /// [inboundServicesIds] is the list of ids of the [inboundServices] associated with the workspace
-  @override
-  List<String>? get inboundServicesIds;
-
-  /// Is the list of [outboundServices] associated with the workspace
-  @override
-  List<OutboundService>? get outboundServices;
-
-  /// [outboundServicesIds] is the list of ids of the [outboundServices] associated with the workspace
-  @override
-  List<String>? get outboundServicesIds;
-
-  /// The fields [casesEnabled], [triggers], [triggersIds], [checkpointsEnabled], [checkpoints], [checkpointsIds],
-  /// [mapEnabled], [geofences], [geofencesIds], [mapCardCustomization], [mapCenterCoordinates], [mapCenterMode],
-  /// [analyticsEnabled], [charts], [chartsIds], [chartStructure], [gridEnabled], [gridStructure]
-  /// are used only when [typeApp] = [AppInternalIdentifier.one]
-  /// Is the list of [triggers] and their ids [triggersIds]. And [casesEnabled] indicates
-  /// if the cases monitor is enabled
-  /// Also, [casesMonitorConfig] indicates the configuration of the cases monitor
-  @override
-  bool? get casesEnabled;
-  @override
-  List<Trigger>? get triggers;
-  @override
-  List<String>? get triggersIds;
-  @override
-  List<CaseMonitorCard?>? get casesMonitorConfig;
-
-  /// Is the list of [checkpoints] and their ids [checkpointsIds]. And [checkpointsEnabled] indicates
-  /// if the checkpoints monitor is enabled
-  @override
-  bool? get checkpointsEnabled;
-  @override
-  List<Checkpoint>? get checkpoints;
-  @override
-  List<String>? get checkpointsIds;
-
-  /// Is the list of [geofences] and their ids [geofencesIds]. And [mapEnabled] indicates
-  /// if the map monitor is enabled
-  /// Also, [mapCardCustomization] indicates the customization of the map card
-  /// [mapCenterCoordinates] indicates the center coordinates of the map
-  /// [mapCenterMode] indicates the center mode of the map
-  @override
-  bool? get mapEnabled;
-  @override
-  List<Geofence>? get geofences;
-  @override
-  List<String>? get geofencesIds;
-  @override
-  List<MapCardSensors> get mapCardCustomization;
-  @override
-  GeoPoint? get mapCenterCoordinates;
-  @override
-  @JsonKey(unknownEnumValue: MapCenterMode.bounds)
-  MapCenterMode? get mapCenterMode;
-
-  /// Is the list of [charts] and their ids [chartsIds]. And [analyticsEnabled] indicates
-  /// if the analytics monitor is enabled.
-  /// Also, [analyticsGridStructure] indicates the visual structure of the charts
-  @override
-  bool? get analyticsEnabled;
-  @override
-  List<LayrzChart>? get charts;
-  @override
-  List<String>? get chartsIds;
-  @override
-  List<AnalyticsGridItem> get analyticsGridStructure;
-
-  /// [sensorsEnabled] indicates if the sensors sensors monitor is enabled
-  /// Also, [sensorsGridStructure] indicates the visual structure of the sensors
-  @override
-  bool? get sensorsEnabled;
-  @override
-  List<SensorGridItem> get sensorsGridStructure;
-
-  /// Metric system of the workspace
-  @override
-  @JsonKey(unknownEnumValue: MetricSystem.metric)
-  MetricSystem? get metricSystem;
-  @override
-  Timezone? get timezone;
-
-  /// [access] indicates the access of the workspace
-  @override
-  List<Access>? get access;
+  final _Workspace _self;
+  final $Res Function(_Workspace) _then;
 
   /// Create a copy of Workspace
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WorkspaceImplCopyWith<_$WorkspaceImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? typeApp = freezed,
+    Object? color = freezed,
+    Object? icon = freezed,
+    Object? background = freezed,
+    Object? isFavorite = freezed,
+    Object? mainView = freezed,
+    Object? assets = freezed,
+    Object? assetsIds = freezed,
+    Object? inboundServices = freezed,
+    Object? inboundServicesIds = freezed,
+    Object? outboundServices = freezed,
+    Object? outboundServicesIds = freezed,
+    Object? casesEnabled = freezed,
+    Object? triggers = freezed,
+    Object? triggersIds = freezed,
+    Object? casesMonitorConfig = freezed,
+    Object? checkpointsEnabled = freezed,
+    Object? checkpoints = freezed,
+    Object? checkpointsIds = freezed,
+    Object? mapEnabled = freezed,
+    Object? geofences = freezed,
+    Object? geofencesIds = freezed,
+    Object? mapCardCustomization = null,
+    Object? mapCenterCoordinates = freezed,
+    Object? mapCenterMode = freezed,
+    Object? analyticsEnabled = freezed,
+    Object? charts = freezed,
+    Object? chartsIds = freezed,
+    Object? analyticsGridStructure = null,
+    Object? sensorsEnabled = freezed,
+    Object? sensorsGridStructure = null,
+    Object? metricSystem = freezed,
+    Object? timezone = freezed,
+    Object? access = freezed,
+  }) {
+    return _then(_Workspace(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      typeApp: freezed == typeApp
+          ? _self.typeApp
+          : typeApp // ignore: cast_nullable_to_non_nullable
+              as AppInternalIdentifier?,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      icon: freezed == icon
+          ? _self.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      background: freezed == background
+          ? _self.background
+          : background // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isFavorite: freezed == isFavorite
+          ? _self.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      mainView: freezed == mainView
+          ? _self.mainView
+          : mainView // ignore: cast_nullable_to_non_nullable
+              as WorkspaceMainView?,
+      assets: freezed == assets
+          ? _self._assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      assetsIds: freezed == assetsIds
+          ? _self._assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      inboundServices: freezed == inboundServices
+          ? _self._inboundServices
+          : inboundServices // ignore: cast_nullable_to_non_nullable
+              as List<InboundService>?,
+      inboundServicesIds: freezed == inboundServicesIds
+          ? _self._inboundServicesIds
+          : inboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      outboundServices: freezed == outboundServices
+          ? _self._outboundServices
+          : outboundServices // ignore: cast_nullable_to_non_nullable
+              as List<OutboundService>?,
+      outboundServicesIds: freezed == outboundServicesIds
+          ? _self._outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      casesEnabled: freezed == casesEnabled
+          ? _self.casesEnabled
+          : casesEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      triggers: freezed == triggers
+          ? _self._triggers
+          : triggers // ignore: cast_nullable_to_non_nullable
+              as List<Trigger>?,
+      triggersIds: freezed == triggersIds
+          ? _self._triggersIds
+          : triggersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      casesMonitorConfig: freezed == casesMonitorConfig
+          ? _self._casesMonitorConfig
+          : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
+              as List<CaseMonitorCard?>?,
+      checkpointsEnabled: freezed == checkpointsEnabled
+          ? _self.checkpointsEnabled
+          : checkpointsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      checkpoints: freezed == checkpoints
+          ? _self._checkpoints
+          : checkpoints // ignore: cast_nullable_to_non_nullable
+              as List<Checkpoint>?,
+      checkpointsIds: freezed == checkpointsIds
+          ? _self._checkpointsIds
+          : checkpointsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      mapEnabled: freezed == mapEnabled
+          ? _self.mapEnabled
+          : mapEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      geofences: freezed == geofences
+          ? _self._geofences
+          : geofences // ignore: cast_nullable_to_non_nullable
+              as List<Geofence>?,
+      geofencesIds: freezed == geofencesIds
+          ? _self._geofencesIds
+          : geofencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      mapCardCustomization: null == mapCardCustomization
+          ? _self._mapCardCustomization
+          : mapCardCustomization // ignore: cast_nullable_to_non_nullable
+              as List<MapCardSensors>,
+      mapCenterCoordinates: freezed == mapCenterCoordinates
+          ? _self.mapCenterCoordinates
+          : mapCenterCoordinates // ignore: cast_nullable_to_non_nullable
+              as GeoPoint?,
+      mapCenterMode: freezed == mapCenterMode
+          ? _self.mapCenterMode
+          : mapCenterMode // ignore: cast_nullable_to_non_nullable
+              as MapCenterMode?,
+      analyticsEnabled: freezed == analyticsEnabled
+          ? _self.analyticsEnabled
+          : analyticsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      charts: freezed == charts
+          ? _self._charts
+          : charts // ignore: cast_nullable_to_non_nullable
+              as List<LayrzChart>?,
+      chartsIds: freezed == chartsIds
+          ? _self._chartsIds
+          : chartsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      analyticsGridStructure: null == analyticsGridStructure
+          ? _self._analyticsGridStructure
+          : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
+              as List<AnalyticsGridItem>,
+      sensorsEnabled: freezed == sensorsEnabled
+          ? _self.sensorsEnabled
+          : sensorsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      sensorsGridStructure: null == sensorsGridStructure
+          ? _self._sensorsGridStructure
+          : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
+              as List<SensorGridItem>,
+      metricSystem: freezed == metricSystem
+          ? _self.metricSystem
+          : metricSystem // ignore: cast_nullable_to_non_nullable
+              as MetricSystem?,
+      timezone: freezed == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as Timezone?,
+      access: freezed == access
+          ? _self._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+    ));
+  }
 
-WorkspaceInput _$WorkspaceInputFromJson(Map<String, dynamic> json) {
-  return _WorkspaceInput.fromJson(json);
+  /// Create a copy of Workspace
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GeoPointCopyWith<$Res>? get mapCenterCoordinates {
+    if (_self.mapCenterCoordinates == null) {
+      return null;
+    }
+
+    return $GeoPointCopyWith<$Res>(_self.mapCenterCoordinates!, (value) {
+      return _then(_self.copyWith(mapCenterCoordinates: value));
+    });
+  }
+
+  /// Create a copy of Workspace
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TimezoneCopyWith<$Res>? get timezone {
+    if (_self.timezone == null) {
+      return null;
+    }
+
+    return $TimezoneCopyWith<$Res>(_self.timezone!, (value) {
+      return _then(_self.copyWith(timezone: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$WorkspaceInput {
-  String? get id => throw _privateConstructorUsedError;
-  set id(String? value) => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  set name(String value) => throw _privateConstructorUsedError;
+  String? get id;
+  set id(String? value);
+  String get name;
+  set name(String value);
   @ColorOrNullConverter()
-  Color? get color => throw _privateConstructorUsedError;
+  Color? get color;
   @ColorOrNullConverter()
-  set color(Color? value) => throw _privateConstructorUsedError;
+  set color(Color? value);
   @IconConverter()
-  LayrzIcon get icon => throw _privateConstructorUsedError;
+  LayrzIcon get icon;
   @IconConverter()
-  set icon(LayrzIcon value) => throw _privateConstructorUsedError;
-  String? get background => throw _privateConstructorUsedError;
-  set background(String? value) => throw _privateConstructorUsedError;
-  bool get isFavorite => throw _privateConstructorUsedError;
-  set isFavorite(bool value) => throw _privateConstructorUsedError;
+  set icon(LayrzIcon value);
+  String? get background;
+  set background(String? value);
+  bool get isFavorite;
+  set isFavorite(bool value);
   @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
-  WorkspaceMainView get mainView => throw _privateConstructorUsedError;
+  WorkspaceMainView get mainView;
   @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
-  set mainView(WorkspaceMainView value) => throw _privateConstructorUsedError;
-  List<String> get assetsIds => throw _privateConstructorUsedError;
-  set assetsIds(List<String> value) => throw _privateConstructorUsedError;
-  List<String> get inboundServicesIds => throw _privateConstructorUsedError;
-  set inboundServicesIds(List<String> value) =>
-      throw _privateConstructorUsedError;
-  List<String> get outboundServicesIds => throw _privateConstructorUsedError;
-  set outboundServicesIds(List<String> value) =>
-      throw _privateConstructorUsedError;
-  bool get casesEnabled => throw _privateConstructorUsedError;
-  set casesEnabled(bool value) => throw _privateConstructorUsedError;
-  List<String> get triggersIds => throw _privateConstructorUsedError;
-  set triggersIds(List<String> value) => throw _privateConstructorUsedError;
-  List<CaseMonitorCardInput?> get casesMonitorConfig =>
-      throw _privateConstructorUsedError;
-  set casesMonitorConfig(List<CaseMonitorCardInput?> value) =>
-      throw _privateConstructorUsedError;
-  bool get checkpointsEnabled => throw _privateConstructorUsedError;
-  set checkpointsEnabled(bool value) => throw _privateConstructorUsedError;
-  List<String> get checkpointsIds => throw _privateConstructorUsedError;
-  set checkpointsIds(List<String> value) => throw _privateConstructorUsedError;
-  bool get mapEnabled => throw _privateConstructorUsedError;
-  set mapEnabled(bool value) => throw _privateConstructorUsedError;
-  List<String> get geofencesIds => throw _privateConstructorUsedError;
-  set geofencesIds(List<String> value) => throw _privateConstructorUsedError;
-  List<MapCardSensorsInput> get mapCardCustomization =>
-      throw _privateConstructorUsedError;
-  set mapCardCustomization(List<MapCardSensorsInput> value) =>
-      throw _privateConstructorUsedError;
-  GeoPoint? get mapCenterCoordinates => throw _privateConstructorUsedError;
-  set mapCenterCoordinates(GeoPoint? value) =>
-      throw _privateConstructorUsedError;
+  set mainView(WorkspaceMainView value);
+  List<String> get assetsIds;
+  set assetsIds(List<String> value);
+  List<String> get inboundServicesIds;
+  set inboundServicesIds(List<String> value);
+  List<String> get outboundServicesIds;
+  set outboundServicesIds(List<String> value);
+  bool get casesEnabled;
+  set casesEnabled(bool value);
+  List<String> get triggersIds;
+  set triggersIds(List<String> value);
+  List<CaseMonitorCardInput?> get casesMonitorConfig;
+  set casesMonitorConfig(List<CaseMonitorCardInput?> value);
+  bool get checkpointsEnabled;
+  set checkpointsEnabled(bool value);
+  List<String> get checkpointsIds;
+  set checkpointsIds(List<String> value);
+  bool get mapEnabled;
+  set mapEnabled(bool value);
+  List<String> get geofencesIds;
+  set geofencesIds(List<String> value);
+  List<MapCardSensorsInput> get mapCardCustomization;
+  set mapCardCustomization(List<MapCardSensorsInput> value);
+  GeoPoint? get mapCenterCoordinates;
+  set mapCenterCoordinates(GeoPoint? value);
   @JsonKey(unknownEnumValue: MapCenterMode.bounds)
-  MapCenterMode get mapCenterMode => throw _privateConstructorUsedError;
+  MapCenterMode get mapCenterMode;
   @JsonKey(unknownEnumValue: MapCenterMode.bounds)
-  set mapCenterMode(MapCenterMode value) => throw _privateConstructorUsedError;
-  bool get analyticsEnabled => throw _privateConstructorUsedError;
-  set analyticsEnabled(bool value) => throw _privateConstructorUsedError;
-  List<String> get chartsIds => throw _privateConstructorUsedError;
-  set chartsIds(List<String> value) => throw _privateConstructorUsedError;
-  List<AnalyticsGridItemInput> get analyticsGridStructure =>
-      throw _privateConstructorUsedError;
-  set analyticsGridStructure(List<AnalyticsGridItemInput> value) =>
-      throw _privateConstructorUsedError;
-  bool get sensorsEnabled => throw _privateConstructorUsedError;
-  set sensorsEnabled(bool value) => throw _privateConstructorUsedError;
-  List<SensorGridItemInput> get sensorsGridStructure =>
-      throw _privateConstructorUsedError;
-  set sensorsGridStructure(List<SensorGridItemInput> value) =>
-      throw _privateConstructorUsedError;
+  set mapCenterMode(MapCenterMode value);
+  bool get analyticsEnabled;
+  set analyticsEnabled(bool value);
+  List<String> get chartsIds;
+  set chartsIds(List<String> value);
+  List<AnalyticsGridItemInput> get analyticsGridStructure;
+  set analyticsGridStructure(List<AnalyticsGridItemInput> value);
+  bool get sensorsEnabled;
+  set sensorsEnabled(bool value);
+  List<SensorGridItemInput> get sensorsGridStructure;
+  set sensorsGridStructure(List<SensorGridItemInput> value);
   @JsonKey(unknownEnumValue: MetricSystem.metric)
-  MetricSystem get metricSystem => throw _privateConstructorUsedError;
+  MetricSystem get metricSystem;
   @JsonKey(unknownEnumValue: MetricSystem.metric)
-  set metricSystem(MetricSystem value) => throw _privateConstructorUsedError;
-
-  /// Serializes this WorkspaceInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set metricSystem(MetricSystem value);
 
   /// Create a copy of WorkspaceInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $WorkspaceInputCopyWith<WorkspaceInput> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$WorkspaceInputCopyWithImpl<WorkspaceInput>(
+          this as WorkspaceInput, _$identity);
+
+  /// Serializes this WorkspaceInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'WorkspaceInput(id: $id, name: $name, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assetsIds: $assetsIds, inboundServicesIds: $inboundServicesIds, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem)';
+  }
 }
 
 /// @nodoc
-abstract class $WorkspaceInputCopyWith<$Res> {
+abstract mixin class $WorkspaceInputCopyWith<$Res> {
   factory $WorkspaceInputCopyWith(
-          WorkspaceInput value, $Res Function(WorkspaceInput) then) =
-      _$WorkspaceInputCopyWithImpl<$Res, WorkspaceInput>;
+          WorkspaceInput value, $Res Function(WorkspaceInput) _then) =
+      _$WorkspaceInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -1477,14 +1408,12 @@ abstract class $WorkspaceInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$WorkspaceInputCopyWithImpl<$Res, $Val extends WorkspaceInput>
+class _$WorkspaceInputCopyWithImpl<$Res>
     implements $WorkspaceInputCopyWith<$Res> {
-  _$WorkspaceInputCopyWithImpl(this._value, this._then);
+  _$WorkspaceInputCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final WorkspaceInput _self;
+  final $Res Function(WorkspaceInput) _then;
 
   /// Create a copy of WorkspaceInput
   /// with the given fields replaced by the non-null parameter values.
@@ -1518,112 +1447,112 @@ class _$WorkspaceInputCopyWithImpl<$Res, $Val extends WorkspaceInput>
     Object? sensorsGridStructure = null,
     Object? metricSystem = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       color: freezed == color
-          ? _value.color
+          ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color?,
       icon: null == icon
-          ? _value.icon
+          ? _self.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as LayrzIcon,
       background: freezed == background
-          ? _value.background
+          ? _self.background
           : background // ignore: cast_nullable_to_non_nullable
               as String?,
       isFavorite: null == isFavorite
-          ? _value.isFavorite
+          ? _self.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
       mainView: null == mainView
-          ? _value.mainView
+          ? _self.mainView
           : mainView // ignore: cast_nullable_to_non_nullable
               as WorkspaceMainView,
       assetsIds: null == assetsIds
-          ? _value.assetsIds
+          ? _self.assetsIds
           : assetsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       inboundServicesIds: null == inboundServicesIds
-          ? _value.inboundServicesIds
+          ? _self.inboundServicesIds
           : inboundServicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       outboundServicesIds: null == outboundServicesIds
-          ? _value.outboundServicesIds
+          ? _self.outboundServicesIds
           : outboundServicesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       casesEnabled: null == casesEnabled
-          ? _value.casesEnabled
+          ? _self.casesEnabled
           : casesEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       triggersIds: null == triggersIds
-          ? _value.triggersIds
+          ? _self.triggersIds
           : triggersIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       casesMonitorConfig: null == casesMonitorConfig
-          ? _value.casesMonitorConfig
+          ? _self.casesMonitorConfig
           : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
               as List<CaseMonitorCardInput?>,
       checkpointsEnabled: null == checkpointsEnabled
-          ? _value.checkpointsEnabled
+          ? _self.checkpointsEnabled
           : checkpointsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       checkpointsIds: null == checkpointsIds
-          ? _value.checkpointsIds
+          ? _self.checkpointsIds
           : checkpointsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       mapEnabled: null == mapEnabled
-          ? _value.mapEnabled
+          ? _self.mapEnabled
           : mapEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       geofencesIds: null == geofencesIds
-          ? _value.geofencesIds
+          ? _self.geofencesIds
           : geofencesIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       mapCardCustomization: null == mapCardCustomization
-          ? _value.mapCardCustomization
+          ? _self.mapCardCustomization
           : mapCardCustomization // ignore: cast_nullable_to_non_nullable
               as List<MapCardSensorsInput>,
       mapCenterCoordinates: freezed == mapCenterCoordinates
-          ? _value.mapCenterCoordinates
+          ? _self.mapCenterCoordinates
           : mapCenterCoordinates // ignore: cast_nullable_to_non_nullable
               as GeoPoint?,
       mapCenterMode: null == mapCenterMode
-          ? _value.mapCenterMode
+          ? _self.mapCenterMode
           : mapCenterMode // ignore: cast_nullable_to_non_nullable
               as MapCenterMode,
       analyticsEnabled: null == analyticsEnabled
-          ? _value.analyticsEnabled
+          ? _self.analyticsEnabled
           : analyticsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       chartsIds: null == chartsIds
-          ? _value.chartsIds
+          ? _self.chartsIds
           : chartsIds // ignore: cast_nullable_to_non_nullable
               as List<String>,
       analyticsGridStructure: null == analyticsGridStructure
-          ? _value.analyticsGridStructure
+          ? _self.analyticsGridStructure
           : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
               as List<AnalyticsGridItemInput>,
       sensorsEnabled: null == sensorsEnabled
-          ? _value.sensorsEnabled
+          ? _self.sensorsEnabled
           : sensorsEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       sensorsGridStructure: null == sensorsGridStructure
-          ? _value.sensorsGridStructure
+          ? _self.sensorsGridStructure
           : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
               as List<SensorGridItemInput>,
       metricSystem: null == metricSystem
-          ? _value.metricSystem
+          ? _self.metricSystem
           : metricSystem // ignore: cast_nullable_to_non_nullable
               as MetricSystem,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of WorkspaceInput
@@ -1631,212 +1560,20 @@ class _$WorkspaceInputCopyWithImpl<$Res, $Val extends WorkspaceInput>
   @override
   @pragma('vm:prefer-inline')
   $GeoPointCopyWith<$Res>? get mapCenterCoordinates {
-    if (_value.mapCenterCoordinates == null) {
+    if (_self.mapCenterCoordinates == null) {
       return null;
     }
 
-    return $GeoPointCopyWith<$Res>(_value.mapCenterCoordinates!, (value) {
-      return _then(_value.copyWith(mapCenterCoordinates: value) as $Val);
+    return $GeoPointCopyWith<$Res>(_self.mapCenterCoordinates!, (value) {
+      return _then(_self.copyWith(mapCenterCoordinates: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$WorkspaceInputImplCopyWith<$Res>
-    implements $WorkspaceInputCopyWith<$Res> {
-  factory _$$WorkspaceInputImplCopyWith(_$WorkspaceInputImpl value,
-          $Res Function(_$WorkspaceInputImpl) then) =
-      __$$WorkspaceInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? id,
-      String name,
-      @ColorOrNullConverter() Color? color,
-      @IconConverter() LayrzIcon icon,
-      String? background,
-      bool isFavorite,
-      @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
-      WorkspaceMainView mainView,
-      List<String> assetsIds,
-      List<String> inboundServicesIds,
-      List<String> outboundServicesIds,
-      bool casesEnabled,
-      List<String> triggersIds,
-      List<CaseMonitorCardInput?> casesMonitorConfig,
-      bool checkpointsEnabled,
-      List<String> checkpointsIds,
-      bool mapEnabled,
-      List<String> geofencesIds,
-      List<MapCardSensorsInput> mapCardCustomization,
-      GeoPoint? mapCenterCoordinates,
-      @JsonKey(unknownEnumValue: MapCenterMode.bounds)
-      MapCenterMode mapCenterMode,
-      bool analyticsEnabled,
-      List<String> chartsIds,
-      List<AnalyticsGridItemInput> analyticsGridStructure,
-      bool sensorsEnabled,
-      List<SensorGridItemInput> sensorsGridStructure,
-      @JsonKey(unknownEnumValue: MetricSystem.metric)
-      MetricSystem metricSystem});
-
-  @override
-  $GeoPointCopyWith<$Res>? get mapCenterCoordinates;
-}
-
-/// @nodoc
-class __$$WorkspaceInputImplCopyWithImpl<$Res>
-    extends _$WorkspaceInputCopyWithImpl<$Res, _$WorkspaceInputImpl>
-    implements _$$WorkspaceInputImplCopyWith<$Res> {
-  __$$WorkspaceInputImplCopyWithImpl(
-      _$WorkspaceInputImpl _value, $Res Function(_$WorkspaceInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of WorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = null,
-    Object? color = freezed,
-    Object? icon = null,
-    Object? background = freezed,
-    Object? isFavorite = null,
-    Object? mainView = null,
-    Object? assetsIds = null,
-    Object? inboundServicesIds = null,
-    Object? outboundServicesIds = null,
-    Object? casesEnabled = null,
-    Object? triggersIds = null,
-    Object? casesMonitorConfig = null,
-    Object? checkpointsEnabled = null,
-    Object? checkpointsIds = null,
-    Object? mapEnabled = null,
-    Object? geofencesIds = null,
-    Object? mapCardCustomization = null,
-    Object? mapCenterCoordinates = freezed,
-    Object? mapCenterMode = null,
-    Object? analyticsEnabled = null,
-    Object? chartsIds = null,
-    Object? analyticsGridStructure = null,
-    Object? sensorsEnabled = null,
-    Object? sensorsGridStructure = null,
-    Object? metricSystem = null,
-  }) {
-    return _then(_$WorkspaceInputImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      icon: null == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as LayrzIcon,
-      background: freezed == background
-          ? _value.background
-          : background // ignore: cast_nullable_to_non_nullable
-              as String?,
-      isFavorite: null == isFavorite
-          ? _value.isFavorite
-          : isFavorite // ignore: cast_nullable_to_non_nullable
-              as bool,
-      mainView: null == mainView
-          ? _value.mainView
-          : mainView // ignore: cast_nullable_to_non_nullable
-              as WorkspaceMainView,
-      assetsIds: null == assetsIds
-          ? _value.assetsIds
-          : assetsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      inboundServicesIds: null == inboundServicesIds
-          ? _value.inboundServicesIds
-          : inboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      outboundServicesIds: null == outboundServicesIds
-          ? _value.outboundServicesIds
-          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      casesEnabled: null == casesEnabled
-          ? _value.casesEnabled
-          : casesEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      triggersIds: null == triggersIds
-          ? _value.triggersIds
-          : triggersIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      casesMonitorConfig: null == casesMonitorConfig
-          ? _value.casesMonitorConfig
-          : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
-              as List<CaseMonitorCardInput?>,
-      checkpointsEnabled: null == checkpointsEnabled
-          ? _value.checkpointsEnabled
-          : checkpointsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      checkpointsIds: null == checkpointsIds
-          ? _value.checkpointsIds
-          : checkpointsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      mapEnabled: null == mapEnabled
-          ? _value.mapEnabled
-          : mapEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      geofencesIds: null == geofencesIds
-          ? _value.geofencesIds
-          : geofencesIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      mapCardCustomization: null == mapCardCustomization
-          ? _value.mapCardCustomization
-          : mapCardCustomization // ignore: cast_nullable_to_non_nullable
-              as List<MapCardSensorsInput>,
-      mapCenterCoordinates: freezed == mapCenterCoordinates
-          ? _value.mapCenterCoordinates
-          : mapCenterCoordinates // ignore: cast_nullable_to_non_nullable
-              as GeoPoint?,
-      mapCenterMode: null == mapCenterMode
-          ? _value.mapCenterMode
-          : mapCenterMode // ignore: cast_nullable_to_non_nullable
-              as MapCenterMode,
-      analyticsEnabled: null == analyticsEnabled
-          ? _value.analyticsEnabled
-          : analyticsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      chartsIds: null == chartsIds
-          ? _value.chartsIds
-          : chartsIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      analyticsGridStructure: null == analyticsGridStructure
-          ? _value.analyticsGridStructure
-          : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
-              as List<AnalyticsGridItemInput>,
-      sensorsEnabled: null == sensorsEnabled
-          ? _value.sensorsEnabled
-          : sensorsEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      sensorsGridStructure: null == sensorsGridStructure
-          ? _value.sensorsGridStructure
-          : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
-              as List<SensorGridItemInput>,
-      metricSystem: null == metricSystem
-          ? _value.metricSystem
-          : metricSystem // ignore: cast_nullable_to_non_nullable
-              as MetricSystem,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$WorkspaceInputImpl implements _WorkspaceInput {
-  _$WorkspaceInputImpl(
+class _WorkspaceInput implements WorkspaceInput {
+  _WorkspaceInput(
       {this.id,
       this.name = "",
       @ColorOrNullConverter() this.color = Colors.blue,
@@ -1866,9 +1603,8 @@ class _$WorkspaceInputImpl implements _WorkspaceInput {
       this.sensorsGridStructure = const [],
       @JsonKey(unknownEnumValue: MetricSystem.metric)
       this.metricSystem = MetricSystem.metric});
-
-  factory _$WorkspaceInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WorkspaceInputImplFromJson(json);
+  factory _WorkspaceInput.fromJson(Map<String, dynamic> json) =>
+      _$WorkspaceInputFromJson(json);
 
   @override
   String? id;
@@ -1947,34 +1683,40 @@ class _$WorkspaceInputImpl implements _WorkspaceInput {
   @JsonKey(unknownEnumValue: MetricSystem.metric)
   MetricSystem metricSystem;
 
+  /// Create a copy of WorkspaceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$WorkspaceInputCopyWith<_WorkspaceInput> get copyWith =>
+      __$WorkspaceInputCopyWithImpl<_WorkspaceInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$WorkspaceInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'WorkspaceInput(id: $id, name: $name, color: $color, icon: $icon, background: $background, isFavorite: $isFavorite, mainView: $mainView, assetsIds: $assetsIds, inboundServicesIds: $inboundServicesIds, outboundServicesIds: $outboundServicesIds, casesEnabled: $casesEnabled, triggersIds: $triggersIds, casesMonitorConfig: $casesMonitorConfig, checkpointsEnabled: $checkpointsEnabled, checkpointsIds: $checkpointsIds, mapEnabled: $mapEnabled, geofencesIds: $geofencesIds, mapCardCustomization: $mapCardCustomization, mapCenterCoordinates: $mapCenterCoordinates, mapCenterMode: $mapCenterMode, analyticsEnabled: $analyticsEnabled, chartsIds: $chartsIds, analyticsGridStructure: $analyticsGridStructure, sensorsEnabled: $sensorsEnabled, sensorsGridStructure: $sensorsGridStructure, metricSystem: $metricSystem)';
   }
-
-  /// Create a copy of WorkspaceInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$WorkspaceInputImplCopyWith<_$WorkspaceInputImpl> get copyWith =>
-      __$$WorkspaceInputImplCopyWithImpl<_$WorkspaceInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WorkspaceInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _WorkspaceInput implements WorkspaceInput {
-  factory _WorkspaceInput(
+/// @nodoc
+abstract mixin class _$WorkspaceInputCopyWith<$Res>
+    implements $WorkspaceInputCopyWith<$Res> {
+  factory _$WorkspaceInputCopyWith(
+          _WorkspaceInput value, $Res Function(_WorkspaceInput) _then) =
+      __$WorkspaceInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? id,
       String name,
       @ColorOrNullConverter() Color? color,
-      @IconConverter() required LayrzIcon icon,
+      @IconConverter() LayrzIcon icon,
       String? background,
       bool isFavorite,
       @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
@@ -1999,298 +1741,199 @@ abstract class _WorkspaceInput implements WorkspaceInput {
       bool sensorsEnabled,
       List<SensorGridItemInput> sensorsGridStructure,
       @JsonKey(unknownEnumValue: MetricSystem.metric)
-      MetricSystem metricSystem}) = _$WorkspaceInputImpl;
-
-  factory _WorkspaceInput.fromJson(Map<String, dynamic> json) =
-      _$WorkspaceInputImpl.fromJson;
+      MetricSystem metricSystem});
 
   @override
-  String? get id;
-  set id(String? value);
-  @override
-  String get name;
-  set name(String value);
-  @override
-  @ColorOrNullConverter()
-  Color? get color;
-  @ColorOrNullConverter()
-  set color(Color? value);
-  @override
-  @IconConverter()
-  LayrzIcon get icon;
-  @IconConverter()
-  set icon(LayrzIcon value);
-  @override
-  String? get background;
-  set background(String? value);
-  @override
-  bool get isFavorite;
-  set isFavorite(bool value);
-  @override
-  @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
-  WorkspaceMainView get mainView;
-  @JsonKey(unknownEnumValue: WorkspaceMainView.sensors)
-  set mainView(WorkspaceMainView value);
-  @override
-  List<String> get assetsIds;
-  set assetsIds(List<String> value);
-  @override
-  List<String> get inboundServicesIds;
-  set inboundServicesIds(List<String> value);
-  @override
-  List<String> get outboundServicesIds;
-  set outboundServicesIds(List<String> value);
-  @override
-  bool get casesEnabled;
-  set casesEnabled(bool value);
-  @override
-  List<String> get triggersIds;
-  set triggersIds(List<String> value);
-  @override
-  List<CaseMonitorCardInput?> get casesMonitorConfig;
-  set casesMonitorConfig(List<CaseMonitorCardInput?> value);
-  @override
-  bool get checkpointsEnabled;
-  set checkpointsEnabled(bool value);
-  @override
-  List<String> get checkpointsIds;
-  set checkpointsIds(List<String> value);
-  @override
-  bool get mapEnabled;
-  set mapEnabled(bool value);
-  @override
-  List<String> get geofencesIds;
-  set geofencesIds(List<String> value);
-  @override
-  List<MapCardSensorsInput> get mapCardCustomization;
-  set mapCardCustomization(List<MapCardSensorsInput> value);
-  @override
-  GeoPoint? get mapCenterCoordinates;
-  set mapCenterCoordinates(GeoPoint? value);
-  @override
-  @JsonKey(unknownEnumValue: MapCenterMode.bounds)
-  MapCenterMode get mapCenterMode;
-  @JsonKey(unknownEnumValue: MapCenterMode.bounds)
-  set mapCenterMode(MapCenterMode value);
-  @override
-  bool get analyticsEnabled;
-  set analyticsEnabled(bool value);
-  @override
-  List<String> get chartsIds;
-  set chartsIds(List<String> value);
-  @override
-  List<AnalyticsGridItemInput> get analyticsGridStructure;
-  set analyticsGridStructure(List<AnalyticsGridItemInput> value);
-  @override
-  bool get sensorsEnabled;
-  set sensorsEnabled(bool value);
-  @override
-  List<SensorGridItemInput> get sensorsGridStructure;
-  set sensorsGridStructure(List<SensorGridItemInput> value);
-  @override
-  @JsonKey(unknownEnumValue: MetricSystem.metric)
-  MetricSystem get metricSystem;
-  @JsonKey(unknownEnumValue: MetricSystem.metric)
-  set metricSystem(MetricSystem value);
+  $GeoPointCopyWith<$Res>? get mapCenterCoordinates;
+}
+
+/// @nodoc
+class __$WorkspaceInputCopyWithImpl<$Res>
+    implements _$WorkspaceInputCopyWith<$Res> {
+  __$WorkspaceInputCopyWithImpl(this._self, this._then);
+
+  final _WorkspaceInput _self;
+  final $Res Function(_WorkspaceInput) _then;
 
   /// Create a copy of WorkspaceInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WorkspaceInputImplCopyWith<_$WorkspaceInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? color = freezed,
+    Object? icon = null,
+    Object? background = freezed,
+    Object? isFavorite = null,
+    Object? mainView = null,
+    Object? assetsIds = null,
+    Object? inboundServicesIds = null,
+    Object? outboundServicesIds = null,
+    Object? casesEnabled = null,
+    Object? triggersIds = null,
+    Object? casesMonitorConfig = null,
+    Object? checkpointsEnabled = null,
+    Object? checkpointsIds = null,
+    Object? mapEnabled = null,
+    Object? geofencesIds = null,
+    Object? mapCardCustomization = null,
+    Object? mapCenterCoordinates = freezed,
+    Object? mapCenterMode = null,
+    Object? analyticsEnabled = null,
+    Object? chartsIds = null,
+    Object? analyticsGridStructure = null,
+    Object? sensorsEnabled = null,
+    Object? sensorsGridStructure = null,
+    Object? metricSystem = null,
+  }) {
+    return _then(_WorkspaceInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      icon: null == icon
+          ? _self.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon,
+      background: freezed == background
+          ? _self.background
+          : background // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isFavorite: null == isFavorite
+          ? _self.isFavorite
+          : isFavorite // ignore: cast_nullable_to_non_nullable
+              as bool,
+      mainView: null == mainView
+          ? _self.mainView
+          : mainView // ignore: cast_nullable_to_non_nullable
+              as WorkspaceMainView,
+      assetsIds: null == assetsIds
+          ? _self.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      inboundServicesIds: null == inboundServicesIds
+          ? _self.inboundServicesIds
+          : inboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      outboundServicesIds: null == outboundServicesIds
+          ? _self.outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      casesEnabled: null == casesEnabled
+          ? _self.casesEnabled
+          : casesEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      triggersIds: null == triggersIds
+          ? _self.triggersIds
+          : triggersIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      casesMonitorConfig: null == casesMonitorConfig
+          ? _self.casesMonitorConfig
+          : casesMonitorConfig // ignore: cast_nullable_to_non_nullable
+              as List<CaseMonitorCardInput?>,
+      checkpointsEnabled: null == checkpointsEnabled
+          ? _self.checkpointsEnabled
+          : checkpointsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      checkpointsIds: null == checkpointsIds
+          ? _self.checkpointsIds
+          : checkpointsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      mapEnabled: null == mapEnabled
+          ? _self.mapEnabled
+          : mapEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      geofencesIds: null == geofencesIds
+          ? _self.geofencesIds
+          : geofencesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      mapCardCustomization: null == mapCardCustomization
+          ? _self.mapCardCustomization
+          : mapCardCustomization // ignore: cast_nullable_to_non_nullable
+              as List<MapCardSensorsInput>,
+      mapCenterCoordinates: freezed == mapCenterCoordinates
+          ? _self.mapCenterCoordinates
+          : mapCenterCoordinates // ignore: cast_nullable_to_non_nullable
+              as GeoPoint?,
+      mapCenterMode: null == mapCenterMode
+          ? _self.mapCenterMode
+          : mapCenterMode // ignore: cast_nullable_to_non_nullable
+              as MapCenterMode,
+      analyticsEnabled: null == analyticsEnabled
+          ? _self.analyticsEnabled
+          : analyticsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      chartsIds: null == chartsIds
+          ? _self.chartsIds
+          : chartsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      analyticsGridStructure: null == analyticsGridStructure
+          ? _self.analyticsGridStructure
+          : analyticsGridStructure // ignore: cast_nullable_to_non_nullable
+              as List<AnalyticsGridItemInput>,
+      sensorsEnabled: null == sensorsEnabled
+          ? _self.sensorsEnabled
+          : sensorsEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      sensorsGridStructure: null == sensorsGridStructure
+          ? _self.sensorsGridStructure
+          : sensorsGridStructure // ignore: cast_nullable_to_non_nullable
+              as List<SensorGridItemInput>,
+      metricSystem: null == metricSystem
+          ? _self.metricSystem
+          : metricSystem // ignore: cast_nullable_to_non_nullable
+              as MetricSystem,
+    ));
+  }
 
-WorkspaceAlert _$WorkspaceAlertFromJson(Map<String, dynamic> json) {
-  return _WorkspaceAlert.fromJson(json);
+  /// Create a copy of WorkspaceInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GeoPointCopyWith<$Res>? get mapCenterCoordinates {
+    if (_self.mapCenterCoordinates == null) {
+      return null;
+    }
+
+    return $GeoPointCopyWith<$Res>(_self.mapCenterCoordinates!, (value) {
+      return _then(_self.copyWith(mapCenterCoordinates: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$WorkspaceAlert {
   @TimestampConverter()
-  DateTime get at => throw _privateConstructorUsedError;
-  String get assetId => throw _privateConstructorUsedError;
-  TelemetryPosition get position => throw _privateConstructorUsedError;
-  Trigger get trigger => throw _privateConstructorUsedError;
-
-  /// Serializes this WorkspaceAlert to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  DateTime get at;
+  String get assetId;
+  TelemetryPosition get position;
+  Trigger get trigger;
 
   /// Create a copy of WorkspaceAlert
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $WorkspaceAlertCopyWith<WorkspaceAlert> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$WorkspaceAlertCopyWithImpl<WorkspaceAlert>(
+          this as WorkspaceAlert, _$identity);
 
-/// @nodoc
-abstract class $WorkspaceAlertCopyWith<$Res> {
-  factory $WorkspaceAlertCopyWith(
-          WorkspaceAlert value, $Res Function(WorkspaceAlert) then) =
-      _$WorkspaceAlertCopyWithImpl<$Res, WorkspaceAlert>;
-  @useResult
-  $Res call(
-      {@TimestampConverter() DateTime at,
-      String assetId,
-      TelemetryPosition position,
-      Trigger trigger});
-
-  $TelemetryPositionCopyWith<$Res> get position;
-  $TriggerCopyWith<$Res> get trigger;
-}
-
-/// @nodoc
-class _$WorkspaceAlertCopyWithImpl<$Res, $Val extends WorkspaceAlert>
-    implements $WorkspaceAlertCopyWith<$Res> {
-  _$WorkspaceAlertCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? at = null,
-    Object? assetId = null,
-    Object? position = null,
-    Object? trigger = null,
-  }) {
-    return _then(_value.copyWith(
-      at: null == at
-          ? _value.at
-          : at // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      assetId: null == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String,
-      position: null == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as TelemetryPosition,
-      trigger: null == trigger
-          ? _value.trigger
-          : trigger // ignore: cast_nullable_to_non_nullable
-              as Trigger,
-    ) as $Val);
-  }
-
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $TelemetryPositionCopyWith<$Res> get position {
-    return $TelemetryPositionCopyWith<$Res>(_value.position, (value) {
-      return _then(_value.copyWith(position: value) as $Val);
-    });
-  }
-
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $TriggerCopyWith<$Res> get trigger {
-    return $TriggerCopyWith<$Res>(_value.trigger, (value) {
-      return _then(_value.copyWith(trigger: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$WorkspaceAlertImplCopyWith<$Res>
-    implements $WorkspaceAlertCopyWith<$Res> {
-  factory _$$WorkspaceAlertImplCopyWith(_$WorkspaceAlertImpl value,
-          $Res Function(_$WorkspaceAlertImpl) then) =
-      __$$WorkspaceAlertImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {@TimestampConverter() DateTime at,
-      String assetId,
-      TelemetryPosition position,
-      Trigger trigger});
-
-  @override
-  $TelemetryPositionCopyWith<$Res> get position;
-  @override
-  $TriggerCopyWith<$Res> get trigger;
-}
-
-/// @nodoc
-class __$$WorkspaceAlertImplCopyWithImpl<$Res>
-    extends _$WorkspaceAlertCopyWithImpl<$Res, _$WorkspaceAlertImpl>
-    implements _$$WorkspaceAlertImplCopyWith<$Res> {
-  __$$WorkspaceAlertImplCopyWithImpl(
-      _$WorkspaceAlertImpl _value, $Res Function(_$WorkspaceAlertImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? at = null,
-    Object? assetId = null,
-    Object? position = null,
-    Object? trigger = null,
-  }) {
-    return _then(_$WorkspaceAlertImpl(
-      at: null == at
-          ? _value.at
-          : at // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      assetId: null == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String,
-      position: null == position
-          ? _value.position
-          : position // ignore: cast_nullable_to_non_nullable
-              as TelemetryPosition,
-      trigger: null == trigger
-          ? _value.trigger
-          : trigger // ignore: cast_nullable_to_non_nullable
-              as Trigger,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$WorkspaceAlertImpl implements _WorkspaceAlert {
-  const _$WorkspaceAlertImpl(
-      {@TimestampConverter() required this.at,
-      required this.assetId,
-      required this.position,
-      required this.trigger});
-
-  factory _$WorkspaceAlertImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WorkspaceAlertImplFromJson(json);
-
-  @override
-  @TimestampConverter()
-  final DateTime at;
-  @override
-  final String assetId;
-  @override
-  final TelemetryPosition position;
-  @override
-  final Trigger trigger;
-
-  @override
-  String toString() {
-    return 'WorkspaceAlert(at: $at, assetId: $assetId, position: $position, trigger: $trigger)';
-  }
+  /// Serializes this WorkspaceAlert to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WorkspaceAlertImpl &&
+            other is WorkspaceAlert &&
             (identical(other.at, at) || other.at == at) &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.position, position) ||
@@ -2302,245 +1945,250 @@ class _$WorkspaceAlertImpl implements _WorkspaceAlert {
   @override
   int get hashCode => Object.hash(runtimeType, at, assetId, position, trigger);
 
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$WorkspaceAlertImplCopyWith<_$WorkspaceAlertImpl> get copyWith =>
-      __$$WorkspaceAlertImplCopyWithImpl<_$WorkspaceAlertImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WorkspaceAlertImplToJson(
-      this,
-    );
-  }
-}
-
-abstract class _WorkspaceAlert implements WorkspaceAlert {
-  const factory _WorkspaceAlert(
-      {@TimestampConverter() required final DateTime at,
-      required final String assetId,
-      required final TelemetryPosition position,
-      required final Trigger trigger}) = _$WorkspaceAlertImpl;
-
-  factory _WorkspaceAlert.fromJson(Map<String, dynamic> json) =
-      _$WorkspaceAlertImpl.fromJson;
-
-  @override
-  @TimestampConverter()
-  DateTime get at;
-  @override
-  String get assetId;
-  @override
-  TelemetryPosition get position;
-  @override
-  Trigger get trigger;
-
-  /// Create a copy of WorkspaceAlert
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WorkspaceAlertImplCopyWith<_$WorkspaceAlertImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-WorkspaceTripPoint _$WorkspaceTripPointFromJson(Map<String, dynamic> json) {
-  return _WorkspaceTripPoint.fromJson(json);
-}
-
-/// @nodoc
-mixin _$WorkspaceTripPoint {
-  double? get latitude => throw _privateConstructorUsedError;
-  double? get longitude => throw _privateConstructorUsedError;
-  double? get speed => throw _privateConstructorUsedError;
-  String? get triggerName => throw _privateConstructorUsedError;
-  String? get triggerId => throw _privateConstructorUsedError;
-  @TimestampConverter()
-  DateTime get receivedAt => throw _privateConstructorUsedError;
-
-  /// Serializes this WorkspaceTripPoint to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of WorkspaceTripPoint
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $WorkspaceTripPointCopyWith<WorkspaceTripPoint> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $WorkspaceTripPointCopyWith<$Res> {
-  factory $WorkspaceTripPointCopyWith(
-          WorkspaceTripPoint value, $Res Function(WorkspaceTripPoint) then) =
-      _$WorkspaceTripPointCopyWithImpl<$Res, WorkspaceTripPoint>;
-  @useResult
-  $Res call(
-      {double? latitude,
-      double? longitude,
-      double? speed,
-      String? triggerName,
-      String? triggerId,
-      @TimestampConverter() DateTime receivedAt});
-}
-
-/// @nodoc
-class _$WorkspaceTripPointCopyWithImpl<$Res, $Val extends WorkspaceTripPoint>
-    implements $WorkspaceTripPointCopyWith<$Res> {
-  _$WorkspaceTripPointCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of WorkspaceTripPoint
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? speed = freezed,
-    Object? triggerName = freezed,
-    Object? triggerId = freezed,
-    Object? receivedAt = null,
-  }) {
-    return _then(_value.copyWith(
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      speed: freezed == speed
-          ? _value.speed
-          : speed // ignore: cast_nullable_to_non_nullable
-              as double?,
-      triggerName: freezed == triggerName
-          ? _value.triggerName
-          : triggerName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      triggerId: freezed == triggerId
-          ? _value.triggerId
-          : triggerId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receivedAt: null == receivedAt
-          ? _value.receivedAt
-          : receivedAt // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-    ) as $Val);
+  String toString() {
+    return 'WorkspaceAlert(at: $at, assetId: $assetId, position: $position, trigger: $trigger)';
   }
 }
 
 /// @nodoc
-abstract class _$$WorkspaceTripPointImplCopyWith<$Res>
-    implements $WorkspaceTripPointCopyWith<$Res> {
-  factory _$$WorkspaceTripPointImplCopyWith(_$WorkspaceTripPointImpl value,
-          $Res Function(_$WorkspaceTripPointImpl) then) =
-      __$$WorkspaceTripPointImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $WorkspaceAlertCopyWith<$Res> {
+  factory $WorkspaceAlertCopyWith(
+          WorkspaceAlert value, $Res Function(WorkspaceAlert) _then) =
+      _$WorkspaceAlertCopyWithImpl;
   @useResult
   $Res call(
-      {double? latitude,
-      double? longitude,
-      double? speed,
-      String? triggerName,
-      String? triggerId,
-      @TimestampConverter() DateTime receivedAt});
+      {@TimestampConverter() DateTime at,
+      String assetId,
+      TelemetryPosition position,
+      Trigger trigger});
+
+  $TelemetryPositionCopyWith<$Res> get position;
+  $TriggerCopyWith<$Res> get trigger;
 }
 
 /// @nodoc
-class __$$WorkspaceTripPointImplCopyWithImpl<$Res>
-    extends _$WorkspaceTripPointCopyWithImpl<$Res, _$WorkspaceTripPointImpl>
-    implements _$$WorkspaceTripPointImplCopyWith<$Res> {
-  __$$WorkspaceTripPointImplCopyWithImpl(_$WorkspaceTripPointImpl _value,
-      $Res Function(_$WorkspaceTripPointImpl) _then)
-      : super(_value, _then);
+class _$WorkspaceAlertCopyWithImpl<$Res>
+    implements $WorkspaceAlertCopyWith<$Res> {
+  _$WorkspaceAlertCopyWithImpl(this._self, this._then);
 
-  /// Create a copy of WorkspaceTripPoint
+  final WorkspaceAlert _self;
+  final $Res Function(WorkspaceAlert) _then;
+
+  /// Create a copy of WorkspaceAlert
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? latitude = freezed,
-    Object? longitude = freezed,
-    Object? speed = freezed,
-    Object? triggerName = freezed,
-    Object? triggerId = freezed,
-    Object? receivedAt = null,
+    Object? at = null,
+    Object? assetId = null,
+    Object? position = null,
+    Object? trigger = null,
   }) {
-    return _then(_$WorkspaceTripPointImpl(
-      latitude: freezed == latitude
-          ? _value.latitude
-          : latitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      longitude: freezed == longitude
-          ? _value.longitude
-          : longitude // ignore: cast_nullable_to_non_nullable
-              as double?,
-      speed: freezed == speed
-          ? _value.speed
-          : speed // ignore: cast_nullable_to_non_nullable
-              as double?,
-      triggerName: freezed == triggerName
-          ? _value.triggerName
-          : triggerName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      triggerId: freezed == triggerId
-          ? _value.triggerId
-          : triggerId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receivedAt: null == receivedAt
-          ? _value.receivedAt
-          : receivedAt // ignore: cast_nullable_to_non_nullable
+    return _then(_self.copyWith(
+      at: null == at
+          ? _self.at
+          : at // ignore: cast_nullable_to_non_nullable
               as DateTime,
+      assetId: null == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: null == position
+          ? _self.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as TelemetryPosition,
+      trigger: null == trigger
+          ? _self.trigger
+          : trigger // ignore: cast_nullable_to_non_nullable
+              as Trigger,
     ));
+  }
+
+  /// Create a copy of WorkspaceAlert
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TelemetryPositionCopyWith<$Res> get position {
+    return $TelemetryPositionCopyWith<$Res>(_self.position, (value) {
+      return _then(_self.copyWith(position: value));
+    });
+  }
+
+  /// Create a copy of WorkspaceAlert
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TriggerCopyWith<$Res> get trigger {
+    return $TriggerCopyWith<$Res>(_self.trigger, (value) {
+      return _then(_self.copyWith(trigger: value));
+    });
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$WorkspaceTripPointImpl implements _WorkspaceTripPoint {
-  const _$WorkspaceTripPointImpl(
-      {this.latitude,
-      this.longitude,
-      this.speed,
-      this.triggerName,
-      this.triggerId,
-      @TimestampConverter() required this.receivedAt});
+class _WorkspaceAlert implements WorkspaceAlert {
+  const _WorkspaceAlert(
+      {@TimestampConverter() required this.at,
+      required this.assetId,
+      required this.position,
+      required this.trigger});
+  factory _WorkspaceAlert.fromJson(Map<String, dynamic> json) =>
+      _$WorkspaceAlertFromJson(json);
 
-  factory _$WorkspaceTripPointImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WorkspaceTripPointImplFromJson(json);
-
-  @override
-  final double? latitude;
-  @override
-  final double? longitude;
-  @override
-  final double? speed;
-  @override
-  final String? triggerName;
-  @override
-  final String? triggerId;
   @override
   @TimestampConverter()
-  final DateTime receivedAt;
+  final DateTime at;
+  @override
+  final String assetId;
+  @override
+  final TelemetryPosition position;
+  @override
+  final Trigger trigger;
+
+  /// Create a copy of WorkspaceAlert
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$WorkspaceAlertCopyWith<_WorkspaceAlert> get copyWith =>
+      __$WorkspaceAlertCopyWithImpl<_WorkspaceAlert>(this, _$identity);
 
   @override
-  String toString() {
-    return 'WorkspaceTripPoint(latitude: $latitude, longitude: $longitude, speed: $speed, triggerName: $triggerName, triggerId: $triggerId, receivedAt: $receivedAt)';
+  Map<String, dynamic> toJson() {
+    return _$WorkspaceAlertToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WorkspaceTripPointImpl &&
+            other is _WorkspaceAlert &&
+            (identical(other.at, at) || other.at == at) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.position, position) ||
+                other.position == position) &&
+            (identical(other.trigger, trigger) || other.trigger == trigger));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, at, assetId, position, trigger);
+
+  @override
+  String toString() {
+    return 'WorkspaceAlert(at: $at, assetId: $assetId, position: $position, trigger: $trigger)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$WorkspaceAlertCopyWith<$Res>
+    implements $WorkspaceAlertCopyWith<$Res> {
+  factory _$WorkspaceAlertCopyWith(
+          _WorkspaceAlert value, $Res Function(_WorkspaceAlert) _then) =
+      __$WorkspaceAlertCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {@TimestampConverter() DateTime at,
+      String assetId,
+      TelemetryPosition position,
+      Trigger trigger});
+
+  @override
+  $TelemetryPositionCopyWith<$Res> get position;
+  @override
+  $TriggerCopyWith<$Res> get trigger;
+}
+
+/// @nodoc
+class __$WorkspaceAlertCopyWithImpl<$Res>
+    implements _$WorkspaceAlertCopyWith<$Res> {
+  __$WorkspaceAlertCopyWithImpl(this._self, this._then);
+
+  final _WorkspaceAlert _self;
+  final $Res Function(_WorkspaceAlert) _then;
+
+  /// Create a copy of WorkspaceAlert
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? at = null,
+    Object? assetId = null,
+    Object? position = null,
+    Object? trigger = null,
+  }) {
+    return _then(_WorkspaceAlert(
+      at: null == at
+          ? _self.at
+          : at // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      assetId: null == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      position: null == position
+          ? _self.position
+          : position // ignore: cast_nullable_to_non_nullable
+              as TelemetryPosition,
+      trigger: null == trigger
+          ? _self.trigger
+          : trigger // ignore: cast_nullable_to_non_nullable
+              as Trigger,
+    ));
+  }
+
+  /// Create a copy of WorkspaceAlert
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TelemetryPositionCopyWith<$Res> get position {
+    return $TelemetryPositionCopyWith<$Res>(_self.position, (value) {
+      return _then(_self.copyWith(position: value));
+    });
+  }
+
+  /// Create a copy of WorkspaceAlert
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TriggerCopyWith<$Res> get trigger {
+    return $TriggerCopyWith<$Res>(_self.trigger, (value) {
+      return _then(_self.copyWith(trigger: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$WorkspaceTripPoint {
+  double? get latitude;
+  double? get longitude;
+  double? get speed;
+  String? get triggerName;
+  String? get triggerId;
+  @TimestampConverter()
+  DateTime get receivedAt;
+
+  /// Create a copy of WorkspaceTripPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $WorkspaceTripPointCopyWith<WorkspaceTripPoint> get copyWith =>
+      _$WorkspaceTripPointCopyWithImpl<WorkspaceTripPoint>(
+          this as WorkspaceTripPoint, _$identity);
+
+  /// Serializes this WorkspaceTripPoint to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is WorkspaceTripPoint &&
             (identical(other.latitude, latitude) ||
                 other.latitude == latitude) &&
             (identical(other.longitude, longitude) ||
@@ -2559,143 +2207,269 @@ class _$WorkspaceTripPointImpl implements _WorkspaceTripPoint {
   int get hashCode => Object.hash(runtimeType, latitude, longitude, speed,
       triggerName, triggerId, receivedAt);
 
-  /// Create a copy of WorkspaceTripPoint
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$WorkspaceTripPointImplCopyWith<_$WorkspaceTripPointImpl> get copyWith =>
-      __$$WorkspaceTripPointImplCopyWithImpl<_$WorkspaceTripPointImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WorkspaceTripPointImplToJson(
-      this,
-    );
+  String toString() {
+    return 'WorkspaceTripPoint(latitude: $latitude, longitude: $longitude, speed: $speed, triggerName: $triggerName, triggerId: $triggerId, receivedAt: $receivedAt)';
   }
 }
 
-abstract class _WorkspaceTripPoint implements WorkspaceTripPoint {
-  const factory _WorkspaceTripPoint(
-          {final double? latitude,
-          final double? longitude,
-          final double? speed,
-          final String? triggerName,
-          final String? triggerId,
-          @TimestampConverter() required final DateTime receivedAt}) =
-      _$WorkspaceTripPointImpl;
+/// @nodoc
+abstract mixin class $WorkspaceTripPointCopyWith<$Res> {
+  factory $WorkspaceTripPointCopyWith(
+          WorkspaceTripPoint value, $Res Function(WorkspaceTripPoint) _then) =
+      _$WorkspaceTripPointCopyWithImpl;
+  @useResult
+  $Res call(
+      {double? latitude,
+      double? longitude,
+      double? speed,
+      String? triggerName,
+      String? triggerId,
+      @TimestampConverter() DateTime receivedAt});
+}
 
-  factory _WorkspaceTripPoint.fromJson(Map<String, dynamic> json) =
-      _$WorkspaceTripPointImpl.fromJson;
+/// @nodoc
+class _$WorkspaceTripPointCopyWithImpl<$Res>
+    implements $WorkspaceTripPointCopyWith<$Res> {
+  _$WorkspaceTripPointCopyWithImpl(this._self, this._then);
+
+  final WorkspaceTripPoint _self;
+  final $Res Function(WorkspaceTripPoint) _then;
+
+  /// Create a copy of WorkspaceTripPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? speed = freezed,
+    Object? triggerName = freezed,
+    Object? triggerId = freezed,
+    Object? receivedAt = null,
+  }) {
+    return _then(_self.copyWith(
+      latitude: freezed == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      speed: freezed == speed
+          ? _self.speed
+          : speed // ignore: cast_nullable_to_non_nullable
+              as double?,
+      triggerName: freezed == triggerName
+          ? _self.triggerName
+          : triggerName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      triggerId: freezed == triggerId
+          ? _self.triggerId
+          : triggerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receivedAt: null == receivedAt
+          ? _self.receivedAt
+          : receivedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _WorkspaceTripPoint implements WorkspaceTripPoint {
+  const _WorkspaceTripPoint(
+      {this.latitude,
+      this.longitude,
+      this.speed,
+      this.triggerName,
+      this.triggerId,
+      @TimestampConverter() required this.receivedAt});
+  factory _WorkspaceTripPoint.fromJson(Map<String, dynamic> json) =>
+      _$WorkspaceTripPointFromJson(json);
 
   @override
-  double? get latitude;
+  final double? latitude;
   @override
-  double? get longitude;
+  final double? longitude;
   @override
-  double? get speed;
+  final double? speed;
   @override
-  String? get triggerName;
+  final String? triggerName;
   @override
-  String? get triggerId;
+  final String? triggerId;
   @override
   @TimestampConverter()
-  DateTime get receivedAt;
+  final DateTime receivedAt;
 
   /// Create a copy of WorkspaceTripPoint
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WorkspaceTripPointImplCopyWith<_$WorkspaceTripPointImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$WorkspaceTripPointCopyWith<_WorkspaceTripPoint> get copyWith =>
+      __$WorkspaceTripPointCopyWithImpl<_WorkspaceTripPoint>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$WorkspaceTripPointToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _WorkspaceTripPoint &&
+            (identical(other.latitude, latitude) ||
+                other.latitude == latitude) &&
+            (identical(other.longitude, longitude) ||
+                other.longitude == longitude) &&
+            (identical(other.speed, speed) || other.speed == speed) &&
+            (identical(other.triggerName, triggerName) ||
+                other.triggerName == triggerName) &&
+            (identical(other.triggerId, triggerId) ||
+                other.triggerId == triggerId) &&
+            (identical(other.receivedAt, receivedAt) ||
+                other.receivedAt == receivedAt));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, latitude, longitude, speed,
+      triggerName, triggerId, receivedAt);
+
+  @override
+  String toString() {
+    return 'WorkspaceTripPoint(latitude: $latitude, longitude: $longitude, speed: $speed, triggerName: $triggerName, triggerId: $triggerId, receivedAt: $receivedAt)';
+  }
 }
 
-WorkspaceTrip _$WorkspaceTripFromJson(Map<String, dynamic> json) {
-  return _WorkspaceTrip.fromJson(json);
+/// @nodoc
+abstract mixin class _$WorkspaceTripPointCopyWith<$Res>
+    implements $WorkspaceTripPointCopyWith<$Res> {
+  factory _$WorkspaceTripPointCopyWith(
+          _WorkspaceTripPoint value, $Res Function(_WorkspaceTripPoint) _then) =
+      __$WorkspaceTripPointCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {double? latitude,
+      double? longitude,
+      double? speed,
+      String? triggerName,
+      String? triggerId,
+      @TimestampConverter() DateTime receivedAt});
+}
+
+/// @nodoc
+class __$WorkspaceTripPointCopyWithImpl<$Res>
+    implements _$WorkspaceTripPointCopyWith<$Res> {
+  __$WorkspaceTripPointCopyWithImpl(this._self, this._then);
+
+  final _WorkspaceTripPoint _self;
+  final $Res Function(_WorkspaceTripPoint) _then;
+
+  /// Create a copy of WorkspaceTripPoint
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? latitude = freezed,
+    Object? longitude = freezed,
+    Object? speed = freezed,
+    Object? triggerName = freezed,
+    Object? triggerId = freezed,
+    Object? receivedAt = null,
+  }) {
+    return _then(_WorkspaceTripPoint(
+      latitude: freezed == latitude
+          ? _self.latitude
+          : latitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      longitude: freezed == longitude
+          ? _self.longitude
+          : longitude // ignore: cast_nullable_to_non_nullable
+              as double?,
+      speed: freezed == speed
+          ? _self.speed
+          : speed // ignore: cast_nullable_to_non_nullable
+              as double?,
+      triggerName: freezed == triggerName
+          ? _self.triggerName
+          : triggerName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      triggerId: freezed == triggerId
+          ? _self.triggerId
+          : triggerId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receivedAt: null == receivedAt
+          ? _self.receivedAt
+          : receivedAt // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$WorkspaceTrip {
-  String get assetId => throw _privateConstructorUsedError;
-  String get assetName => throw _privateConstructorUsedError;
-  List<WorkspaceTripPoint> get points => throw _privateConstructorUsedError;
-
-  /// Serializes this WorkspaceTrip to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String get assetId;
+  String get assetName;
+  List<WorkspaceTripPoint> get points;
 
   /// Create a copy of WorkspaceTrip
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $WorkspaceTripCopyWith<WorkspaceTrip> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $WorkspaceTripCopyWith<$Res> {
-  factory $WorkspaceTripCopyWith(
-          WorkspaceTrip value, $Res Function(WorkspaceTrip) then) =
-      _$WorkspaceTripCopyWithImpl<$Res, WorkspaceTrip>;
-  @useResult
-  $Res call(
-      {String assetId, String assetName, List<WorkspaceTripPoint> points});
-}
-
-/// @nodoc
-class _$WorkspaceTripCopyWithImpl<$Res, $Val extends WorkspaceTrip>
-    implements $WorkspaceTripCopyWith<$Res> {
-  _$WorkspaceTripCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of WorkspaceTrip
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $WorkspaceTripCopyWith<WorkspaceTrip> get copyWith =>
+      _$WorkspaceTripCopyWithImpl<WorkspaceTrip>(
+          this as WorkspaceTrip, _$identity);
+
+  /// Serializes this WorkspaceTrip to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? assetId = null,
-    Object? assetName = null,
-    Object? points = null,
-  }) {
-    return _then(_value.copyWith(
-      assetId: null == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String,
-      assetName: null == assetName
-          ? _value.assetName
-          : assetName // ignore: cast_nullable_to_non_nullable
-              as String,
-      points: null == points
-          ? _value.points
-          : points // ignore: cast_nullable_to_non_nullable
-              as List<WorkspaceTripPoint>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is WorkspaceTrip &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.assetName, assetName) ||
+                other.assetName == assetName) &&
+            const DeepCollectionEquality().equals(other.points, points));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, assetId, assetName,
+      const DeepCollectionEquality().hash(points));
+
+  @override
+  String toString() {
+    return 'WorkspaceTrip(assetId: $assetId, assetName: $assetName, points: $points)';
   }
 }
 
 /// @nodoc
-abstract class _$$WorkspaceTripImplCopyWith<$Res>
-    implements $WorkspaceTripCopyWith<$Res> {
-  factory _$$WorkspaceTripImplCopyWith(
-          _$WorkspaceTripImpl value, $Res Function(_$WorkspaceTripImpl) then) =
-      __$$WorkspaceTripImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $WorkspaceTripCopyWith<$Res> {
+  factory $WorkspaceTripCopyWith(
+          WorkspaceTrip value, $Res Function(WorkspaceTrip) _then) =
+      _$WorkspaceTripCopyWithImpl;
   @useResult
   $Res call(
       {String assetId, String assetName, List<WorkspaceTripPoint> points});
 }
 
 /// @nodoc
-class __$$WorkspaceTripImplCopyWithImpl<$Res>
-    extends _$WorkspaceTripCopyWithImpl<$Res, _$WorkspaceTripImpl>
-    implements _$$WorkspaceTripImplCopyWith<$Res> {
-  __$$WorkspaceTripImplCopyWithImpl(
-      _$WorkspaceTripImpl _value, $Res Function(_$WorkspaceTripImpl) _then)
-      : super(_value, _then);
+class _$WorkspaceTripCopyWithImpl<$Res>
+    implements $WorkspaceTripCopyWith<$Res> {
+  _$WorkspaceTripCopyWithImpl(this._self, this._then);
+
+  final WorkspaceTrip _self;
+  final $Res Function(WorkspaceTrip) _then;
 
   /// Create a copy of WorkspaceTrip
   /// with the given fields replaced by the non-null parameter values.
@@ -2706,17 +2480,17 @@ class __$$WorkspaceTripImplCopyWithImpl<$Res>
     Object? assetName = null,
     Object? points = null,
   }) {
-    return _then(_$WorkspaceTripImpl(
+    return _then(_self.copyWith(
       assetId: null == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String,
       assetName: null == assetName
-          ? _value.assetName
+          ? _self.assetName
           : assetName // ignore: cast_nullable_to_non_nullable
               as String,
       points: null == points
-          ? _value._points
+          ? _self.points
           : points // ignore: cast_nullable_to_non_nullable
               as List<WorkspaceTripPoint>,
     ));
@@ -2725,15 +2499,14 @@ class __$$WorkspaceTripImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$WorkspaceTripImpl implements _WorkspaceTrip {
-  const _$WorkspaceTripImpl(
+class _WorkspaceTrip implements WorkspaceTrip {
+  const _WorkspaceTrip(
       {required this.assetId,
       required this.assetName,
       final List<WorkspaceTripPoint> points = const []})
       : _points = points;
-
-  factory _$WorkspaceTripImpl.fromJson(Map<String, dynamic> json) =>
-      _$$WorkspaceTripImplFromJson(json);
+  factory _WorkspaceTrip.fromJson(Map<String, dynamic> json) =>
+      _$WorkspaceTripFromJson(json);
 
   @override
   final String assetId;
@@ -2748,16 +2521,26 @@ class _$WorkspaceTripImpl implements _WorkspaceTrip {
     return EqualUnmodifiableListView(_points);
   }
 
+  /// Create a copy of WorkspaceTrip
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'WorkspaceTrip(assetId: $assetId, assetName: $assetName, points: $points)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$WorkspaceTripCopyWith<_WorkspaceTrip> get copyWith =>
+      __$WorkspaceTripCopyWithImpl<_WorkspaceTrip>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$WorkspaceTripToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$WorkspaceTripImpl &&
+            other is _WorkspaceTrip &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.assetName, assetName) ||
                 other.assetName == assetName) &&
@@ -2769,126 +2552,112 @@ class _$WorkspaceTripImpl implements _WorkspaceTrip {
   int get hashCode => Object.hash(runtimeType, assetId, assetName,
       const DeepCollectionEquality().hash(_points));
 
-  /// Create a copy of WorkspaceTrip
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$WorkspaceTripImplCopyWith<_$WorkspaceTripImpl> get copyWith =>
-      __$$WorkspaceTripImplCopyWithImpl<_$WorkspaceTripImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$WorkspaceTripImplToJson(
-      this,
-    );
+  String toString() {
+    return 'WorkspaceTrip(assetId: $assetId, assetName: $assetName, points: $points)';
   }
 }
 
-abstract class _WorkspaceTrip implements WorkspaceTrip {
-  const factory _WorkspaceTrip(
-      {required final String assetId,
-      required final String assetName,
-      final List<WorkspaceTripPoint> points}) = _$WorkspaceTripImpl;
+/// @nodoc
+abstract mixin class _$WorkspaceTripCopyWith<$Res>
+    implements $WorkspaceTripCopyWith<$Res> {
+  factory _$WorkspaceTripCopyWith(
+          _WorkspaceTrip value, $Res Function(_WorkspaceTrip) _then) =
+      __$WorkspaceTripCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String assetId, String assetName, List<WorkspaceTripPoint> points});
+}
 
-  factory _WorkspaceTrip.fromJson(Map<String, dynamic> json) =
-      _$WorkspaceTripImpl.fromJson;
+/// @nodoc
+class __$WorkspaceTripCopyWithImpl<$Res>
+    implements _$WorkspaceTripCopyWith<$Res> {
+  __$WorkspaceTripCopyWithImpl(this._self, this._then);
 
-  @override
-  String get assetId;
-  @override
-  String get assetName;
-  @override
-  List<WorkspaceTripPoint> get points;
+  final _WorkspaceTrip _self;
+  final $Res Function(_WorkspaceTrip) _then;
 
   /// Create a copy of WorkspaceTrip
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$WorkspaceTripImplCopyWith<_$WorkspaceTripImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-GridDimension _$GridDimensionFromJson(Map<String, dynamic> json) {
-  return _GridDimension.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? assetId = null,
+    Object? assetName = null,
+    Object? points = null,
+  }) {
+    return _then(_WorkspaceTrip(
+      assetId: null == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetName: null == assetName
+          ? _self.assetName
+          : assetName // ignore: cast_nullable_to_non_nullable
+              as String,
+      points: null == points
+          ? _self._points
+          : points // ignore: cast_nullable_to_non_nullable
+              as List<WorkspaceTripPoint>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$GridDimension {
   /// [width] Represents the number of columns to be expanded
-  int get width => throw _privateConstructorUsedError;
+  int get width;
 
   /// [height] Represents the number of rows to be expanded
-  int get height => throw _privateConstructorUsedError;
-
-  /// Serializes this GridDimension to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  int get height;
 
   /// Create a copy of GridDimension
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GridDimensionCopyWith<GridDimension> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GridDimensionCopyWith<$Res> {
-  factory $GridDimensionCopyWith(
-          GridDimension value, $Res Function(GridDimension) then) =
-      _$GridDimensionCopyWithImpl<$Res, GridDimension>;
-  @useResult
-  $Res call({int width, int height});
-}
-
-/// @nodoc
-class _$GridDimensionCopyWithImpl<$Res, $Val extends GridDimension>
-    implements $GridDimensionCopyWith<$Res> {
-  _$GridDimensionCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GridDimension
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GridDimensionCopyWith<GridDimension> get copyWith =>
+      _$GridDimensionCopyWithImpl<GridDimension>(
+          this as GridDimension, _$identity);
+
+  /// Serializes this GridDimension to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? width = null,
-    Object? height = null,
-  }) {
-    return _then(_value.copyWith(
-      width: null == width
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int,
-      height: null == height
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is GridDimension &&
+            (identical(other.width, width) || other.width == width) &&
+            (identical(other.height, height) || other.height == height));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, width, height);
+
+  @override
+  String toString() {
+    return 'GridDimension(width: $width, height: $height)';
   }
 }
 
 /// @nodoc
-abstract class _$$GridDimensionImplCopyWith<$Res>
-    implements $GridDimensionCopyWith<$Res> {
-  factory _$$GridDimensionImplCopyWith(
-          _$GridDimensionImpl value, $Res Function(_$GridDimensionImpl) then) =
-      __$$GridDimensionImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GridDimensionCopyWith<$Res> {
+  factory $GridDimensionCopyWith(
+          GridDimension value, $Res Function(GridDimension) _then) =
+      _$GridDimensionCopyWithImpl;
   @useResult
   $Res call({int width, int height});
 }
 
 /// @nodoc
-class __$$GridDimensionImplCopyWithImpl<$Res>
-    extends _$GridDimensionCopyWithImpl<$Res, _$GridDimensionImpl>
-    implements _$$GridDimensionImplCopyWith<$Res> {
-  __$$GridDimensionImplCopyWithImpl(
-      _$GridDimensionImpl _value, $Res Function(_$GridDimensionImpl) _then)
-      : super(_value, _then);
+class _$GridDimensionCopyWithImpl<$Res>
+    implements $GridDimensionCopyWith<$Res> {
+  _$GridDimensionCopyWithImpl(this._self, this._then);
+
+  final GridDimension _self;
+  final $Res Function(GridDimension) _then;
 
   /// Create a copy of GridDimension
   /// with the given fields replaced by the non-null parameter values.
@@ -2898,13 +2667,13 @@ class __$$GridDimensionImplCopyWithImpl<$Res>
     Object? width = null,
     Object? height = null,
   }) {
-    return _then(_$GridDimensionImpl(
+    return _then(_self.copyWith(
       width: null == width
-          ? _value.width
+          ? _self.width
           : width // ignore: cast_nullable_to_non_nullable
               as int,
       height: null == height
-          ? _value.height
+          ? _self.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -2913,11 +2682,10 @@ class __$$GridDimensionImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GridDimensionImpl implements _GridDimension {
-  const _$GridDimensionImpl({required this.width, required this.height});
-
-  factory _$GridDimensionImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GridDimensionImplFromJson(json);
+class _GridDimension implements GridDimension {
+  const _GridDimension({required this.width, required this.height});
+  factory _GridDimension.fromJson(Map<String, dynamic> json) =>
+      _$GridDimensionFromJson(json);
 
   /// [width] Represents the number of columns to be expanded
   @override
@@ -2927,16 +2695,26 @@ class _$GridDimensionImpl implements _GridDimension {
   @override
   final int height;
 
+  /// Create a copy of GridDimension
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'GridDimension(width: $width, height: $height)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GridDimensionCopyWith<_GridDimension> get copyWith =>
+      __$GridDimensionCopyWithImpl<_GridDimension>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GridDimensionToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GridDimensionImpl &&
+            other is _GridDimension &&
             (identical(other.width, width) || other.width == width) &&
             (identical(other.height, height) || other.height == height));
   }
@@ -2945,132 +2723,99 @@ class _$GridDimensionImpl implements _GridDimension {
   @override
   int get hashCode => Object.hash(runtimeType, width, height);
 
-  /// Create a copy of GridDimension
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$GridDimensionImplCopyWith<_$GridDimensionImpl> get copyWith =>
-      __$$GridDimensionImplCopyWithImpl<_$GridDimensionImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GridDimensionImplToJson(
-      this,
-    );
+  String toString() {
+    return 'GridDimension(width: $width, height: $height)';
   }
 }
 
-abstract class _GridDimension implements GridDimension {
-  const factory _GridDimension(
-      {required final int width,
-      required final int height}) = _$GridDimensionImpl;
-
-  factory _GridDimension.fromJson(Map<String, dynamic> json) =
-      _$GridDimensionImpl.fromJson;
-
-  /// [width] Represents the number of columns to be expanded
+/// @nodoc
+abstract mixin class _$GridDimensionCopyWith<$Res>
+    implements $GridDimensionCopyWith<$Res> {
+  factory _$GridDimensionCopyWith(
+          _GridDimension value, $Res Function(_GridDimension) _then) =
+      __$GridDimensionCopyWithImpl;
   @override
-  int get width;
+  @useResult
+  $Res call({int width, int height});
+}
 
-  /// [height] Represents the number of rows to be expanded
-  @override
-  int get height;
+/// @nodoc
+class __$GridDimensionCopyWithImpl<$Res>
+    implements _$GridDimensionCopyWith<$Res> {
+  __$GridDimensionCopyWithImpl(this._self, this._then);
+
+  final _GridDimension _self;
+  final $Res Function(_GridDimension) _then;
 
   /// Create a copy of GridDimension
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GridDimensionImplCopyWith<_$GridDimensionImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-GridDimensionInput _$GridDimensionInputFromJson(Map<String, dynamic> json) {
-  return _GridDimensionInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? width = null,
+    Object? height = null,
+  }) {
+    return _then(_GridDimension(
+      width: null == width
+          ? _self.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: null == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$GridDimensionInput {
   /// [width] Represents the number of columns to be expanded
-  int get width => throw _privateConstructorUsedError;
+  int get width;
 
   /// [width] Represents the number of columns to be expanded
-  set width(int value) => throw _privateConstructorUsedError;
+  set width(int value);
 
   /// [height] Represents the number of rows to be expanded
-  int get height => throw _privateConstructorUsedError;
+  int get height;
 
   /// [height] Represents the number of rows to be expanded
-  set height(int value) => throw _privateConstructorUsedError;
-
-  /// Serializes this GridDimensionInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set height(int value);
 
   /// Create a copy of GridDimensionInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $GridDimensionInputCopyWith<GridDimensionInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GridDimensionInputCopyWith<$Res> {
-  factory $GridDimensionInputCopyWith(
-          GridDimensionInput value, $Res Function(GridDimensionInput) then) =
-      _$GridDimensionInputCopyWithImpl<$Res, GridDimensionInput>;
-  @useResult
-  $Res call({int width, int height});
-}
-
-/// @nodoc
-class _$GridDimensionInputCopyWithImpl<$Res, $Val extends GridDimensionInput>
-    implements $GridDimensionInputCopyWith<$Res> {
-  _$GridDimensionInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GridDimensionInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $GridDimensionInputCopyWith<GridDimensionInput> get copyWith =>
+      _$GridDimensionInputCopyWithImpl<GridDimensionInput>(
+          this as GridDimensionInput, _$identity);
+
+  /// Serializes this GridDimensionInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? width = null,
-    Object? height = null,
-  }) {
-    return _then(_value.copyWith(
-      width: null == width
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int,
-      height: null == height
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
+  String toString() {
+    return 'GridDimensionInput(width: $width, height: $height)';
   }
 }
 
 /// @nodoc
-abstract class _$$GridDimensionInputImplCopyWith<$Res>
-    implements $GridDimensionInputCopyWith<$Res> {
-  factory _$$GridDimensionInputImplCopyWith(_$GridDimensionInputImpl value,
-          $Res Function(_$GridDimensionInputImpl) then) =
-      __$$GridDimensionInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $GridDimensionInputCopyWith<$Res> {
+  factory $GridDimensionInputCopyWith(
+          GridDimensionInput value, $Res Function(GridDimensionInput) _then) =
+      _$GridDimensionInputCopyWithImpl;
   @useResult
   $Res call({int width, int height});
 }
 
 /// @nodoc
-class __$$GridDimensionInputImplCopyWithImpl<$Res>
-    extends _$GridDimensionInputCopyWithImpl<$Res, _$GridDimensionInputImpl>
-    implements _$$GridDimensionInputImplCopyWith<$Res> {
-  __$$GridDimensionInputImplCopyWithImpl(_$GridDimensionInputImpl _value,
-      $Res Function(_$GridDimensionInputImpl) _then)
-      : super(_value, _then);
+class _$GridDimensionInputCopyWithImpl<$Res>
+    implements $GridDimensionInputCopyWith<$Res> {
+  _$GridDimensionInputCopyWithImpl(this._self, this._then);
+
+  final GridDimensionInput _self;
+  final $Res Function(GridDimensionInput) _then;
 
   /// Create a copy of GridDimensionInput
   /// with the given fields replaced by the non-null parameter values.
@@ -3080,13 +2825,13 @@ class __$$GridDimensionInputImplCopyWithImpl<$Res>
     Object? width = null,
     Object? height = null,
   }) {
-    return _then(_$GridDimensionInputImpl(
+    return _then(_self.copyWith(
       width: null == width
-          ? _value.width
+          ? _self.width
           : width // ignore: cast_nullable_to_non_nullable
               as int,
       height: null == height
-          ? _value.height
+          ? _self.height
           : height // ignore: cast_nullable_to_non_nullable
               as int,
     ));
@@ -3095,11 +2840,10 @@ class __$$GridDimensionInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$GridDimensionInputImpl implements _GridDimensionInput {
-  _$GridDimensionInputImpl({this.width = 1, this.height = 1});
-
-  factory _$GridDimensionInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GridDimensionInputImplFromJson(json);
+class _GridDimensionInput implements GridDimensionInput {
+  _GridDimensionInput({this.width = 1, this.height = 1});
+  factory _GridDimensionInput.fromJson(Map<String, dynamic> json) =>
+      _$GridDimensionInputFromJson(json);
 
   /// [width] Represents the number of columns to be expanded
   @override
@@ -3111,130 +2855,111 @@ class _$GridDimensionInputImpl implements _GridDimensionInput {
   @JsonKey()
   int height;
 
+  /// Create a copy of GridDimensionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$GridDimensionInputCopyWith<_GridDimensionInput> get copyWith =>
+      __$GridDimensionInputCopyWithImpl<_GridDimensionInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$GridDimensionInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'GridDimensionInput(width: $width, height: $height)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$GridDimensionInputCopyWith<$Res>
+    implements $GridDimensionInputCopyWith<$Res> {
+  factory _$GridDimensionInputCopyWith(
+          _GridDimensionInput value, $Res Function(_GridDimensionInput) _then) =
+      __$GridDimensionInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({int width, int height});
+}
+
+/// @nodoc
+class __$GridDimensionInputCopyWithImpl<$Res>
+    implements _$GridDimensionInputCopyWith<$Res> {
+  __$GridDimensionInputCopyWithImpl(this._self, this._then);
+
+  final _GridDimensionInput _self;
+  final $Res Function(_GridDimensionInput) _then;
 
   /// Create a copy of GridDimensionInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$GridDimensionInputImplCopyWith<_$GridDimensionInputImpl> get copyWith =>
-      __$$GridDimensionInputImplCopyWithImpl<_$GridDimensionInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GridDimensionInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? width = null,
+    Object? height = null,
+  }) {
+    return _then(_GridDimensionInput(
+      width: null == width
+          ? _self.width
+          : width // ignore: cast_nullable_to_non_nullable
+              as int,
+      height: null == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
-}
-
-abstract class _GridDimensionInput implements GridDimensionInput {
-  factory _GridDimensionInput({int width, int height}) =
-      _$GridDimensionInputImpl;
-
-  factory _GridDimensionInput.fromJson(Map<String, dynamic> json) =
-      _$GridDimensionInputImpl.fromJson;
-
-  /// [width] Represents the number of columns to be expanded
-  @override
-  int get width;
-
-  /// [width] Represents the number of columns to be expanded
-  set width(int value);
-
-  /// [height] Represents the number of rows to be expanded
-  @override
-  int get height;
-
-  /// [height] Represents the number of rows to be expanded
-  set height(int value);
-
-  /// Create a copy of GridDimensionInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GridDimensionInputImplCopyWith<_$GridDimensionInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-CaseMonitorCard _$CaseMonitorCardFromJson(Map<String, dynamic> json) {
-  return _CaseMonitorCard.fromJson(json);
 }
 
 /// @nodoc
 mixin _$CaseMonitorCard {
   /// Represents the type of the block
   @JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
-  CaseMonitorCardType get type => throw _privateConstructorUsedError;
+  CaseMonitorCardType get type;
 
   /// When [type] is [CaseMonitorCardType.specificAsset], will use [assetId] to apply the filter.
-  String? get assetId => throw _privateConstructorUsedError;
-
-  /// Serializes this CaseMonitorCard to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// Create a copy of CaseMonitorCard
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $CaseMonitorCardCopyWith<CaseMonitorCard> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CaseMonitorCardCopyWith<$Res> {
-  factory $CaseMonitorCardCopyWith(
-          CaseMonitorCard value, $Res Function(CaseMonitorCard) then) =
-      _$CaseMonitorCardCopyWithImpl<$Res, CaseMonitorCard>;
-  @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
-      CaseMonitorCardType type,
-      String? assetId});
-}
-
-/// @nodoc
-class _$CaseMonitorCardCopyWithImpl<$Res, $Val extends CaseMonitorCard>
-    implements $CaseMonitorCardCopyWith<$Res> {
-  _$CaseMonitorCardCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of CaseMonitorCard
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $CaseMonitorCardCopyWith<CaseMonitorCard> get copyWith =>
+      _$CaseMonitorCardCopyWithImpl<CaseMonitorCard>(
+          this as CaseMonitorCard, _$identity);
+
+  /// Serializes this CaseMonitorCard to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? type = null,
-    Object? assetId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as CaseMonitorCardType,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CaseMonitorCard &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.assetId, assetId) || other.assetId == assetId));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, type, assetId);
+
+  @override
+  String toString() {
+    return 'CaseMonitorCard(type: $type, assetId: $assetId)';
   }
 }
 
 /// @nodoc
-abstract class _$$CaseMonitorCardImplCopyWith<$Res>
-    implements $CaseMonitorCardCopyWith<$Res> {
-  factory _$$CaseMonitorCardImplCopyWith(_$CaseMonitorCardImpl value,
-          $Res Function(_$CaseMonitorCardImpl) then) =
-      __$$CaseMonitorCardImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $CaseMonitorCardCopyWith<$Res> {
+  factory $CaseMonitorCardCopyWith(
+          CaseMonitorCard value, $Res Function(CaseMonitorCard) _then) =
+      _$CaseMonitorCardCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
@@ -3243,12 +2968,12 @@ abstract class _$$CaseMonitorCardImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CaseMonitorCardImplCopyWithImpl<$Res>
-    extends _$CaseMonitorCardCopyWithImpl<$Res, _$CaseMonitorCardImpl>
-    implements _$$CaseMonitorCardImplCopyWith<$Res> {
-  __$$CaseMonitorCardImplCopyWithImpl(
-      _$CaseMonitorCardImpl _value, $Res Function(_$CaseMonitorCardImpl) _then)
-      : super(_value, _then);
+class _$CaseMonitorCardCopyWithImpl<$Res>
+    implements $CaseMonitorCardCopyWith<$Res> {
+  _$CaseMonitorCardCopyWithImpl(this._self, this._then);
+
+  final CaseMonitorCard _self;
+  final $Res Function(CaseMonitorCard) _then;
 
   /// Create a copy of CaseMonitorCard
   /// with the given fields replaced by the non-null parameter values.
@@ -3258,13 +2983,13 @@ class __$$CaseMonitorCardImplCopyWithImpl<$Res>
     Object? type = null,
     Object? assetId = freezed,
   }) {
-    return _then(_$CaseMonitorCardImpl(
+    return _then(_self.copyWith(
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as CaseMonitorCardType,
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -3273,14 +2998,13 @@ class __$$CaseMonitorCardImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CaseMonitorCardImpl implements _CaseMonitorCard {
-  const _$CaseMonitorCardImpl(
+class _CaseMonitorCard implements CaseMonitorCard {
+  const _CaseMonitorCard(
       {@JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
       required this.type,
       this.assetId});
-
-  factory _$CaseMonitorCardImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CaseMonitorCardImplFromJson(json);
+  factory _CaseMonitorCard.fromJson(Map<String, dynamic> json) =>
+      _$CaseMonitorCardFromJson(json);
 
   /// Represents the type of the block
   @override
@@ -3291,16 +3015,26 @@ class _$CaseMonitorCardImpl implements _CaseMonitorCard {
   @override
   final String? assetId;
 
+  /// Create a copy of CaseMonitorCard
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'CaseMonitorCard(type: $type, assetId: $assetId)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CaseMonitorCardCopyWith<_CaseMonitorCard> get copyWith =>
+      __$CaseMonitorCardCopyWithImpl<_CaseMonitorCard>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CaseMonitorCardToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CaseMonitorCardImpl &&
+            other is _CaseMonitorCard &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.assetId, assetId) || other.assetId == assetId));
   }
@@ -3309,130 +3043,93 @@ class _$CaseMonitorCardImpl implements _CaseMonitorCard {
   @override
   int get hashCode => Object.hash(runtimeType, type, assetId);
 
-  /// Create a copy of CaseMonitorCard
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$CaseMonitorCardImplCopyWith<_$CaseMonitorCardImpl> get copyWith =>
-      __$$CaseMonitorCardImplCopyWithImpl<_$CaseMonitorCardImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CaseMonitorCardImplToJson(
-      this,
-    );
+  String toString() {
+    return 'CaseMonitorCard(type: $type, assetId: $assetId)';
   }
 }
 
-abstract class _CaseMonitorCard implements CaseMonitorCard {
-  const factory _CaseMonitorCard(
+/// @nodoc
+abstract mixin class _$CaseMonitorCardCopyWith<$Res>
+    implements $CaseMonitorCardCopyWith<$Res> {
+  factory _$CaseMonitorCardCopyWith(
+          _CaseMonitorCard value, $Res Function(_CaseMonitorCard) _then) =
+      __$CaseMonitorCardCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {@JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
-      required final CaseMonitorCardType type,
-      final String? assetId}) = _$CaseMonitorCardImpl;
+      CaseMonitorCardType type,
+      String? assetId});
+}
 
-  factory _CaseMonitorCard.fromJson(Map<String, dynamic> json) =
-      _$CaseMonitorCardImpl.fromJson;
+/// @nodoc
+class __$CaseMonitorCardCopyWithImpl<$Res>
+    implements _$CaseMonitorCardCopyWith<$Res> {
+  __$CaseMonitorCardCopyWithImpl(this._self, this._then);
 
-  /// Represents the type of the block
-  @override
-  @JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
-  CaseMonitorCardType get type;
-
-  /// When [type] is [CaseMonitorCardType.specificAsset], will use [assetId] to apply the filter.
-  @override
-  String? get assetId;
+  final _CaseMonitorCard _self;
+  final $Res Function(_CaseMonitorCard) _then;
 
   /// Create a copy of CaseMonitorCard
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CaseMonitorCardImplCopyWith<_$CaseMonitorCardImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-CaseMonitorCardInput _$CaseMonitorCardInputFromJson(Map<String, dynamic> json) {
-  return _CaseMonitorCardInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? type = null,
+    Object? assetId = freezed,
+  }) {
+    return _then(_CaseMonitorCard(
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as CaseMonitorCardType,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$CaseMonitorCardInput {
   /// Represents the type of the block
   @JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
-  CaseMonitorCardType get type => throw _privateConstructorUsedError;
+  CaseMonitorCardType get type;
 
   /// Represents the type of the block
   @JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
-  set type(CaseMonitorCardType value) => throw _privateConstructorUsedError;
+  set type(CaseMonitorCardType value);
 
   /// When [type] is [CaseMonitorCardType.specificAsset], will use [assetId] to apply the filter.
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// When [type] is [CaseMonitorCardType.specificAsset], will use [assetId] to apply the filter.
-  set assetId(String? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this CaseMonitorCardInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set assetId(String? value);
 
   /// Create a copy of CaseMonitorCardInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $CaseMonitorCardInputCopyWith<CaseMonitorCardInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $CaseMonitorCardInputCopyWith<$Res> {
-  factory $CaseMonitorCardInputCopyWith(CaseMonitorCardInput value,
-          $Res Function(CaseMonitorCardInput) then) =
-      _$CaseMonitorCardInputCopyWithImpl<$Res, CaseMonitorCardInput>;
-  @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
-      CaseMonitorCardType type,
-      String? assetId});
-}
-
-/// @nodoc
-class _$CaseMonitorCardInputCopyWithImpl<$Res,
-        $Val extends CaseMonitorCardInput>
-    implements $CaseMonitorCardInputCopyWith<$Res> {
-  _$CaseMonitorCardInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of CaseMonitorCardInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $CaseMonitorCardInputCopyWith<CaseMonitorCardInput> get copyWith =>
+      _$CaseMonitorCardInputCopyWithImpl<CaseMonitorCardInput>(
+          this as CaseMonitorCardInput, _$identity);
+
+  /// Serializes this CaseMonitorCardInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? type = null,
-    Object? assetId = freezed,
-  }) {
-    return _then(_value.copyWith(
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as CaseMonitorCardType,
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
+  String toString() {
+    return 'CaseMonitorCardInput(type: $type, assetId: $assetId)';
   }
 }
 
 /// @nodoc
-abstract class _$$CaseMonitorCardInputImplCopyWith<$Res>
-    implements $CaseMonitorCardInputCopyWith<$Res> {
-  factory _$$CaseMonitorCardInputImplCopyWith(_$CaseMonitorCardInputImpl value,
-          $Res Function(_$CaseMonitorCardInputImpl) then) =
-      __$$CaseMonitorCardInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $CaseMonitorCardInputCopyWith<$Res> {
+  factory $CaseMonitorCardInputCopyWith(CaseMonitorCardInput value,
+          $Res Function(CaseMonitorCardInput) _then) =
+      _$CaseMonitorCardInputCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
@@ -3441,12 +3138,12 @@ abstract class _$$CaseMonitorCardInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$CaseMonitorCardInputImplCopyWithImpl<$Res>
-    extends _$CaseMonitorCardInputCopyWithImpl<$Res, _$CaseMonitorCardInputImpl>
-    implements _$$CaseMonitorCardInputImplCopyWith<$Res> {
-  __$$CaseMonitorCardInputImplCopyWithImpl(_$CaseMonitorCardInputImpl _value,
-      $Res Function(_$CaseMonitorCardInputImpl) _then)
-      : super(_value, _then);
+class _$CaseMonitorCardInputCopyWithImpl<$Res>
+    implements $CaseMonitorCardInputCopyWith<$Res> {
+  _$CaseMonitorCardInputCopyWithImpl(this._self, this._then);
+
+  final CaseMonitorCardInput _self;
+  final $Res Function(CaseMonitorCardInput) _then;
 
   /// Create a copy of CaseMonitorCardInput
   /// with the given fields replaced by the non-null parameter values.
@@ -3456,13 +3153,13 @@ class __$$CaseMonitorCardInputImplCopyWithImpl<$Res>
     Object? type = null,
     Object? assetId = freezed,
   }) {
-    return _then(_$CaseMonitorCardInputImpl(
+    return _then(_self.copyWith(
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as CaseMonitorCardType,
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
     ));
@@ -3471,14 +3168,13 @@ class __$$CaseMonitorCardInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$CaseMonitorCardInputImpl implements _CaseMonitorCardInput {
-  _$CaseMonitorCardInputImpl(
+class _CaseMonitorCardInput implements CaseMonitorCardInput {
+  _CaseMonitorCardInput(
       {@JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
       required this.type,
       this.assetId});
-
-  factory _$CaseMonitorCardInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$CaseMonitorCardInputImplFromJson(json);
+  factory _CaseMonitorCardInput.fromJson(Map<String, dynamic> json) =>
+      _$CaseMonitorCardInputFromJson(json);
 
   /// Represents the type of the block
   @override
@@ -3489,205 +3185,95 @@ class _$CaseMonitorCardInputImpl implements _CaseMonitorCardInput {
   @override
   String? assetId;
 
+  /// Create a copy of CaseMonitorCardInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CaseMonitorCardInputCopyWith<_CaseMonitorCardInput> get copyWith =>
+      __$CaseMonitorCardInputCopyWithImpl<_CaseMonitorCardInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CaseMonitorCardInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'CaseMonitorCardInput(type: $type, assetId: $assetId)';
   }
-
-  /// Create a copy of CaseMonitorCardInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$CaseMonitorCardInputImplCopyWith<_$CaseMonitorCardInputImpl>
-      get copyWith =>
-          __$$CaseMonitorCardInputImplCopyWithImpl<_$CaseMonitorCardInputImpl>(
-              this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$CaseMonitorCardInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _CaseMonitorCardInput implements CaseMonitorCardInput {
-  factory _CaseMonitorCardInput(
+/// @nodoc
+abstract mixin class _$CaseMonitorCardInputCopyWith<$Res>
+    implements $CaseMonitorCardInputCopyWith<$Res> {
+  factory _$CaseMonitorCardInputCopyWith(_CaseMonitorCardInput value,
+          $Res Function(_CaseMonitorCardInput) _then) =
+      __$CaseMonitorCardInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {@JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
-      required CaseMonitorCardType type,
-      String? assetId}) = _$CaseMonitorCardInputImpl;
+      CaseMonitorCardType type,
+      String? assetId});
+}
 
-  factory _CaseMonitorCardInput.fromJson(Map<String, dynamic> json) =
-      _$CaseMonitorCardInputImpl.fromJson;
+/// @nodoc
+class __$CaseMonitorCardInputCopyWithImpl<$Res>
+    implements _$CaseMonitorCardInputCopyWith<$Res> {
+  __$CaseMonitorCardInputCopyWithImpl(this._self, this._then);
 
-  /// Represents the type of the block
-  @override
-  @JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
-  CaseMonitorCardType get type;
-
-  /// Represents the type of the block
-  @JsonKey(unknownEnumValue: CaseMonitorCardType.last24Hours)
-  set type(CaseMonitorCardType value);
-
-  /// When [type] is [CaseMonitorCardType.specificAsset], will use [assetId] to apply the filter.
-  @override
-  String? get assetId;
-
-  /// When [type] is [CaseMonitorCardType.specificAsset], will use [assetId] to apply the filter.
-  set assetId(String? value);
+  final _CaseMonitorCardInput _self;
+  final $Res Function(_CaseMonitorCardInput) _then;
 
   /// Create a copy of CaseMonitorCardInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CaseMonitorCardInputImplCopyWith<_$CaseMonitorCardInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-AnalyticsGridItem _$AnalyticsGridItemFromJson(Map<String, dynamic> json) {
-  return _AnalyticsGridItem.fromJson(json);
-}
-
-/// @nodoc
-mixin _$AnalyticsGridItem {
-  /// Is the Chart ID
-  String? get chartId => throw _privateConstructorUsedError;
-
-  /// [dimensions] Represents the dimension of the sensor
-  GridDimension get dimensions => throw _privateConstructorUsedError;
-
-  /// Serializes this AnalyticsGridItem to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of AnalyticsGridItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $AnalyticsGridItemCopyWith<AnalyticsGridItem> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $AnalyticsGridItemCopyWith<$Res> {
-  factory $AnalyticsGridItemCopyWith(
-          AnalyticsGridItem value, $Res Function(AnalyticsGridItem) then) =
-      _$AnalyticsGridItemCopyWithImpl<$Res, AnalyticsGridItem>;
-  @useResult
-  $Res call({String? chartId, GridDimension dimensions});
-
-  $GridDimensionCopyWith<$Res> get dimensions;
-}
-
-/// @nodoc
-class _$AnalyticsGridItemCopyWithImpl<$Res, $Val extends AnalyticsGridItem>
-    implements $AnalyticsGridItemCopyWith<$Res> {
-  _$AnalyticsGridItemCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of AnalyticsGridItem
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
-    Object? chartId = freezed,
-    Object? dimensions = null,
+    Object? type = null,
+    Object? assetId = freezed,
   }) {
-    return _then(_value.copyWith(
-      chartId: freezed == chartId
-          ? _value.chartId
-          : chartId // ignore: cast_nullable_to_non_nullable
+    return _then(_CaseMonitorCardInput(
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as CaseMonitorCardType,
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
-      dimensions: null == dimensions
-          ? _value.dimensions
-          : dimensions // ignore: cast_nullable_to_non_nullable
-              as GridDimension,
-    ) as $Val);
-  }
-
-  /// Create a copy of AnalyticsGridItem
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $GridDimensionCopyWith<$Res> get dimensions {
-    return $GridDimensionCopyWith<$Res>(_value.dimensions, (value) {
-      return _then(_value.copyWith(dimensions: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$AnalyticsGridItemImplCopyWith<$Res>
-    implements $AnalyticsGridItemCopyWith<$Res> {
-  factory _$$AnalyticsGridItemImplCopyWith(_$AnalyticsGridItemImpl value,
-          $Res Function(_$AnalyticsGridItemImpl) then) =
-      __$$AnalyticsGridItemImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? chartId, GridDimension dimensions});
-
-  @override
-  $GridDimensionCopyWith<$Res> get dimensions;
-}
-
-/// @nodoc
-class __$$AnalyticsGridItemImplCopyWithImpl<$Res>
-    extends _$AnalyticsGridItemCopyWithImpl<$Res, _$AnalyticsGridItemImpl>
-    implements _$$AnalyticsGridItemImplCopyWith<$Res> {
-  __$$AnalyticsGridItemImplCopyWithImpl(_$AnalyticsGridItemImpl _value,
-      $Res Function(_$AnalyticsGridItemImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AnalyticsGridItem
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? chartId = freezed,
-    Object? dimensions = null,
-  }) {
-    return _then(_$AnalyticsGridItemImpl(
-      chartId: freezed == chartId
-          ? _value.chartId
-          : chartId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dimensions: null == dimensions
-          ? _value.dimensions
-          : dimensions // ignore: cast_nullable_to_non_nullable
-              as GridDimension,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$AnalyticsGridItemImpl implements _AnalyticsGridItem {
-  const _$AnalyticsGridItemImpl({this.chartId, required this.dimensions});
-
-  factory _$AnalyticsGridItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AnalyticsGridItemImplFromJson(json);
-
+mixin _$AnalyticsGridItem {
   /// Is the Chart ID
-  @override
-  final String? chartId;
+  String? get chartId;
 
   /// [dimensions] Represents the dimension of the sensor
-  @override
-  final GridDimension dimensions;
+  GridDimension get dimensions;
 
-  @override
-  String toString() {
-    return 'AnalyticsGridItem(chartId: $chartId, dimensions: $dimensions)';
-  }
+  /// Create a copy of AnalyticsGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $AnalyticsGridItemCopyWith<AnalyticsGridItem> get copyWith =>
+      _$AnalyticsGridItemCopyWithImpl<AnalyticsGridItem>(
+          this as AnalyticsGridItem, _$identity);
+
+  /// Serializes this AnalyticsGridItem to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AnalyticsGridItemImpl &&
+            other is AnalyticsGridItem &&
             (identical(other.chartId, chartId) || other.chartId == chartId) &&
             (identical(other.dimensions, dimensions) ||
                 other.dimensions == dimensions));
@@ -3697,79 +3283,198 @@ class _$AnalyticsGridItemImpl implements _AnalyticsGridItem {
   @override
   int get hashCode => Object.hash(runtimeType, chartId, dimensions);
 
-  /// Create a copy of AnalyticsGridItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$AnalyticsGridItemImplCopyWith<_$AnalyticsGridItemImpl> get copyWith =>
-      __$$AnalyticsGridItemImplCopyWithImpl<_$AnalyticsGridItemImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AnalyticsGridItemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'AnalyticsGridItem(chartId: $chartId, dimensions: $dimensions)';
   }
 }
 
-abstract class _AnalyticsGridItem implements AnalyticsGridItem {
-  const factory _AnalyticsGridItem(
-      {final String? chartId,
-      required final GridDimension dimensions}) = _$AnalyticsGridItemImpl;
+/// @nodoc
+abstract mixin class $AnalyticsGridItemCopyWith<$Res> {
+  factory $AnalyticsGridItemCopyWith(
+          AnalyticsGridItem value, $Res Function(AnalyticsGridItem) _then) =
+      _$AnalyticsGridItemCopyWithImpl;
+  @useResult
+  $Res call({String? chartId, GridDimension dimensions});
 
-  factory _AnalyticsGridItem.fromJson(Map<String, dynamic> json) =
-      _$AnalyticsGridItemImpl.fromJson;
+  $GridDimensionCopyWith<$Res> get dimensions;
+}
+
+/// @nodoc
+class _$AnalyticsGridItemCopyWithImpl<$Res>
+    implements $AnalyticsGridItemCopyWith<$Res> {
+  _$AnalyticsGridItemCopyWithImpl(this._self, this._then);
+
+  final AnalyticsGridItem _self;
+  final $Res Function(AnalyticsGridItem) _then;
+
+  /// Create a copy of AnalyticsGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? chartId = freezed,
+    Object? dimensions = null,
+  }) {
+    return _then(_self.copyWith(
+      chartId: freezed == chartId
+          ? _self.chartId
+          : chartId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dimensions: null == dimensions
+          ? _self.dimensions
+          : dimensions // ignore: cast_nullable_to_non_nullable
+              as GridDimension,
+    ));
+  }
+
+  /// Create a copy of AnalyticsGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GridDimensionCopyWith<$Res> get dimensions {
+    return $GridDimensionCopyWith<$Res>(_self.dimensions, (value) {
+      return _then(_self.copyWith(dimensions: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _AnalyticsGridItem implements AnalyticsGridItem {
+  const _AnalyticsGridItem({this.chartId, required this.dimensions});
+  factory _AnalyticsGridItem.fromJson(Map<String, dynamic> json) =>
+      _$AnalyticsGridItemFromJson(json);
 
   /// Is the Chart ID
   @override
-  String? get chartId;
+  final String? chartId;
 
   /// [dimensions] Represents the dimension of the sensor
   @override
-  GridDimension get dimensions;
+  final GridDimension dimensions;
 
   /// Create a copy of AnalyticsGridItem
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AnalyticsGridItemImplCopyWith<_$AnalyticsGridItemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$AnalyticsGridItemCopyWith<_AnalyticsGridItem> get copyWith =>
+      __$AnalyticsGridItemCopyWithImpl<_AnalyticsGridItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AnalyticsGridItemToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _AnalyticsGridItem &&
+            (identical(other.chartId, chartId) || other.chartId == chartId) &&
+            (identical(other.dimensions, dimensions) ||
+                other.dimensions == dimensions));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, chartId, dimensions);
+
+  @override
+  String toString() {
+    return 'AnalyticsGridItem(chartId: $chartId, dimensions: $dimensions)';
+  }
 }
 
-AnalyticsGridItemInput _$AnalyticsGridItemInputFromJson(
-    Map<String, dynamic> json) {
-  return _AnalyticsGridItemInput.fromJson(json);
+/// @nodoc
+abstract mixin class _$AnalyticsGridItemCopyWith<$Res>
+    implements $AnalyticsGridItemCopyWith<$Res> {
+  factory _$AnalyticsGridItemCopyWith(
+          _AnalyticsGridItem value, $Res Function(_AnalyticsGridItem) _then) =
+      __$AnalyticsGridItemCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? chartId, GridDimension dimensions});
+
+  @override
+  $GridDimensionCopyWith<$Res> get dimensions;
+}
+
+/// @nodoc
+class __$AnalyticsGridItemCopyWithImpl<$Res>
+    implements _$AnalyticsGridItemCopyWith<$Res> {
+  __$AnalyticsGridItemCopyWithImpl(this._self, this._then);
+
+  final _AnalyticsGridItem _self;
+  final $Res Function(_AnalyticsGridItem) _then;
+
+  /// Create a copy of AnalyticsGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? chartId = freezed,
+    Object? dimensions = null,
+  }) {
+    return _then(_AnalyticsGridItem(
+      chartId: freezed == chartId
+          ? _self.chartId
+          : chartId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dimensions: null == dimensions
+          ? _self.dimensions
+          : dimensions // ignore: cast_nullable_to_non_nullable
+              as GridDimension,
+    ));
+  }
+
+  /// Create a copy of AnalyticsGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GridDimensionCopyWith<$Res> get dimensions {
+    return $GridDimensionCopyWith<$Res>(_self.dimensions, (value) {
+      return _then(_self.copyWith(dimensions: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$AnalyticsGridItemInput {
-  String? get chartId => throw _privateConstructorUsedError;
-  set chartId(String? value) => throw _privateConstructorUsedError;
+  String? get chartId;
+  set chartId(String? value);
 
   /// [dimensions] represents the dimensions of the sensor content
-  GridDimensionInput get dimensions => throw _privateConstructorUsedError;
+  GridDimensionInput get dimensions;
 
   /// [dimensions] represents the dimensions of the sensor content
-  set dimensions(GridDimensionInput value) =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this AnalyticsGridItemInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set dimensions(GridDimensionInput value);
 
   /// Create a copy of AnalyticsGridItemInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $AnalyticsGridItemInputCopyWith<AnalyticsGridItemInput> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$AnalyticsGridItemInputCopyWithImpl<AnalyticsGridItemInput>(
+          this as AnalyticsGridItemInput, _$identity);
+
+  /// Serializes this AnalyticsGridItemInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'AnalyticsGridItemInput(chartId: $chartId, dimensions: $dimensions)';
+  }
 }
 
 /// @nodoc
-abstract class $AnalyticsGridItemInputCopyWith<$Res> {
+abstract mixin class $AnalyticsGridItemInputCopyWith<$Res> {
   factory $AnalyticsGridItemInputCopyWith(AnalyticsGridItemInput value,
-          $Res Function(AnalyticsGridItemInput) then) =
-      _$AnalyticsGridItemInputCopyWithImpl<$Res, AnalyticsGridItemInput>;
+          $Res Function(AnalyticsGridItemInput) _then) =
+      _$AnalyticsGridItemInputCopyWithImpl;
   @useResult
   $Res call({String? chartId, GridDimensionInput dimensions});
 
@@ -3777,15 +3482,12 @@ abstract class $AnalyticsGridItemInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AnalyticsGridItemInputCopyWithImpl<$Res,
-        $Val extends AnalyticsGridItemInput>
+class _$AnalyticsGridItemInputCopyWithImpl<$Res>
     implements $AnalyticsGridItemInputCopyWith<$Res> {
-  _$AnalyticsGridItemInputCopyWithImpl(this._value, this._then);
+  _$AnalyticsGridItemInputCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AnalyticsGridItemInput _self;
+  final $Res Function(AnalyticsGridItemInput) _then;
 
   /// Create a copy of AnalyticsGridItemInput
   /// with the given fields replaced by the non-null parameter values.
@@ -3795,16 +3497,16 @@ class _$AnalyticsGridItemInputCopyWithImpl<$Res,
     Object? chartId = freezed,
     Object? dimensions = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       chartId: freezed == chartId
-          ? _value.chartId
+          ? _self.chartId
           : chartId // ignore: cast_nullable_to_non_nullable
               as String?,
       dimensions: null == dimensions
-          ? _value.dimensions
+          ? _self.dimensions
           : dimensions // ignore: cast_nullable_to_non_nullable
               as GridDimensionInput,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of AnalyticsGridItemInput
@@ -3812,65 +3514,18 @@ class _$AnalyticsGridItemInputCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $GridDimensionInputCopyWith<$Res> get dimensions {
-    return $GridDimensionInputCopyWith<$Res>(_value.dimensions, (value) {
-      return _then(_value.copyWith(dimensions: value) as $Val);
+    return $GridDimensionInputCopyWith<$Res>(_self.dimensions, (value) {
+      return _then(_self.copyWith(dimensions: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$AnalyticsGridItemInputImplCopyWith<$Res>
-    implements $AnalyticsGridItemInputCopyWith<$Res> {
-  factory _$$AnalyticsGridItemInputImplCopyWith(
-          _$AnalyticsGridItemInputImpl value,
-          $Res Function(_$AnalyticsGridItemInputImpl) then) =
-      __$$AnalyticsGridItemInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? chartId, GridDimensionInput dimensions});
-
-  @override
-  $GridDimensionInputCopyWith<$Res> get dimensions;
-}
-
-/// @nodoc
-class __$$AnalyticsGridItemInputImplCopyWithImpl<$Res>
-    extends _$AnalyticsGridItemInputCopyWithImpl<$Res,
-        _$AnalyticsGridItemInputImpl>
-    implements _$$AnalyticsGridItemInputImplCopyWith<$Res> {
-  __$$AnalyticsGridItemInputImplCopyWithImpl(
-      _$AnalyticsGridItemInputImpl _value,
-      $Res Function(_$AnalyticsGridItemInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of AnalyticsGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? chartId = freezed,
-    Object? dimensions = null,
-  }) {
-    return _then(_$AnalyticsGridItemInputImpl(
-      chartId: freezed == chartId
-          ? _value.chartId
-          : chartId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dimensions: null == dimensions
-          ? _value.dimensions
-          : dimensions // ignore: cast_nullable_to_non_nullable
-              as GridDimensionInput,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$AnalyticsGridItemInputImpl implements _AnalyticsGridItemInput {
-  _$AnalyticsGridItemInputImpl({this.chartId, required this.dimensions});
-
-  factory _$AnalyticsGridItemInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$AnalyticsGridItemInputImplFromJson(json);
+class _AnalyticsGridItemInput implements AnalyticsGridItemInput {
+  _AnalyticsGridItemInput({this.chartId, required this.dimensions});
+  factory _AnalyticsGridItemInput.fromJson(Map<String, dynamic> json) =>
+      _$AnalyticsGridItemInputFromJson(json);
 
   @override
   String? chartId;
@@ -3879,93 +3534,141 @@ class _$AnalyticsGridItemInputImpl implements _AnalyticsGridItemInput {
   @override
   GridDimensionInput dimensions;
 
+  /// Create a copy of AnalyticsGridItemInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$AnalyticsGridItemInputCopyWith<_AnalyticsGridItemInput> get copyWith =>
+      __$AnalyticsGridItemInputCopyWithImpl<_AnalyticsGridItemInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$AnalyticsGridItemInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'AnalyticsGridItemInput(chartId: $chartId, dimensions: $dimensions)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$AnalyticsGridItemInputCopyWith<$Res>
+    implements $AnalyticsGridItemInputCopyWith<$Res> {
+  factory _$AnalyticsGridItemInputCopyWith(_AnalyticsGridItemInput value,
+          $Res Function(_AnalyticsGridItemInput) _then) =
+      __$AnalyticsGridItemInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? chartId, GridDimensionInput dimensions});
+
+  @override
+  $GridDimensionInputCopyWith<$Res> get dimensions;
+}
+
+/// @nodoc
+class __$AnalyticsGridItemInputCopyWithImpl<$Res>
+    implements _$AnalyticsGridItemInputCopyWith<$Res> {
+  __$AnalyticsGridItemInputCopyWithImpl(this._self, this._then);
+
+  final _AnalyticsGridItemInput _self;
+  final $Res Function(_AnalyticsGridItemInput) _then;
 
   /// Create a copy of AnalyticsGridItemInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$AnalyticsGridItemInputImplCopyWith<_$AnalyticsGridItemInputImpl>
-      get copyWith => __$$AnalyticsGridItemInputImplCopyWithImpl<
-          _$AnalyticsGridItemInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$AnalyticsGridItemInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? chartId = freezed,
+    Object? dimensions = null,
+  }) {
+    return _then(_AnalyticsGridItemInput(
+      chartId: freezed == chartId
+          ? _self.chartId
+          : chartId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dimensions: null == dimensions
+          ? _self.dimensions
+          : dimensions // ignore: cast_nullable_to_non_nullable
+              as GridDimensionInput,
+    ));
   }
-}
-
-abstract class _AnalyticsGridItemInput implements AnalyticsGridItemInput {
-  factory _AnalyticsGridItemInput(
-      {String? chartId,
-      required GridDimensionInput dimensions}) = _$AnalyticsGridItemInputImpl;
-
-  factory _AnalyticsGridItemInput.fromJson(Map<String, dynamic> json) =
-      _$AnalyticsGridItemInputImpl.fromJson;
-
-  @override
-  String? get chartId;
-  set chartId(String? value);
-
-  /// [dimensions] represents the dimensions of the sensor content
-  @override
-  GridDimensionInput get dimensions;
-
-  /// [dimensions] represents the dimensions of the sensor content
-  set dimensions(GridDimensionInput value);
 
   /// Create a copy of AnalyticsGridItemInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AnalyticsGridItemInputImplCopyWith<_$AnalyticsGridItemInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-SensorGridItem _$SensorGridItemFromJson(Map<String, dynamic> json) {
-  return _SensorGridItem.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $GridDimensionInputCopyWith<$Res> get dimensions {
+    return $GridDimensionInputCopyWith<$Res>(_self.dimensions, (value) {
+      return _then(_self.copyWith(dimensions: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$SensorGridItem {
   /// Represents the Asset ID
-  String? get objectId => throw _privateConstructorUsedError;
+  String? get objectId;
 
   /// [kind] represents the kind of card should be displayed
   @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
-  WorkspaceCardType get kind => throw _privateConstructorUsedError;
+  WorkspaceCardType get kind;
 
   /// [dimensions] Represents the dimension of the sensor
-  GridDimension? get dimensions => throw _privateConstructorUsedError;
+  GridDimension? get dimensions;
 
   /// Represents the color of the card
   @ColorConverter()
-  Color get color => throw _privateConstructorUsedError;
+  Color get color;
 
   /// Represents the sensors of the card
-  List<SensorGridContent> get sensors => throw _privateConstructorUsedError;
-
-  /// Serializes this SensorGridItem to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<SensorGridContent> get sensors;
 
   /// Create a copy of SensorGridItem
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $SensorGridItemCopyWith<SensorGridItem> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$SensorGridItemCopyWithImpl<SensorGridItem>(
+          this as SensorGridItem, _$identity);
+
+  /// Serializes this SensorGridItem to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SensorGridItem &&
+            (identical(other.objectId, objectId) ||
+                other.objectId == objectId) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            (identical(other.dimensions, dimensions) ||
+                other.dimensions == dimensions) &&
+            (identical(other.color, color) || other.color == color) &&
+            const DeepCollectionEquality().equals(other.sensors, sensors));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, objectId, kind, dimensions,
+      color, const DeepCollectionEquality().hash(sensors));
+
+  @override
+  String toString() {
+    return 'SensorGridItem(objectId: $objectId, kind: $kind, dimensions: $dimensions, color: $color, sensors: $sensors)';
+  }
 }
 
 /// @nodoc
-abstract class $SensorGridItemCopyWith<$Res> {
+abstract mixin class $SensorGridItemCopyWith<$Res> {
   factory $SensorGridItemCopyWith(
-          SensorGridItem value, $Res Function(SensorGridItem) then) =
-      _$SensorGridItemCopyWithImpl<$Res, SensorGridItem>;
+          SensorGridItem value, $Res Function(SensorGridItem) _then) =
+      _$SensorGridItemCopyWithImpl;
   @useResult
   $Res call(
       {String? objectId,
@@ -3979,14 +3682,12 @@ abstract class $SensorGridItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SensorGridItemCopyWithImpl<$Res, $Val extends SensorGridItem>
+class _$SensorGridItemCopyWithImpl<$Res>
     implements $SensorGridItemCopyWith<$Res> {
-  _$SensorGridItemCopyWithImpl(this._value, this._then);
+  _$SensorGridItemCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final SensorGridItem _self;
+  final $Res Function(SensorGridItem) _then;
 
   /// Create a copy of SensorGridItem
   /// with the given fields replaced by the non-null parameter values.
@@ -3999,28 +3700,28 @@ class _$SensorGridItemCopyWithImpl<$Res, $Val extends SensorGridItem>
     Object? color = null,
     Object? sensors = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       objectId: freezed == objectId
-          ? _value.objectId
+          ? _self.objectId
           : objectId // ignore: cast_nullable_to_non_nullable
               as String?,
       kind: null == kind
-          ? _value.kind
+          ? _self.kind
           : kind // ignore: cast_nullable_to_non_nullable
               as WorkspaceCardType,
       dimensions: freezed == dimensions
-          ? _value.dimensions
+          ? _self.dimensions
           : dimensions // ignore: cast_nullable_to_non_nullable
               as GridDimension?,
       color: null == color
-          ? _value.color
+          ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
       sensors: null == sensors
-          ? _value.sensors
+          ? _self.sensors
           : sensors // ignore: cast_nullable_to_non_nullable
               as List<SensorGridContent>,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of SensorGridItem
@@ -4028,93 +3729,28 @@ class _$SensorGridItemCopyWithImpl<$Res, $Val extends SensorGridItem>
   @override
   @pragma('vm:prefer-inline')
   $GridDimensionCopyWith<$Res>? get dimensions {
-    if (_value.dimensions == null) {
+    if (_self.dimensions == null) {
       return null;
     }
 
-    return $GridDimensionCopyWith<$Res>(_value.dimensions!, (value) {
-      return _then(_value.copyWith(dimensions: value) as $Val);
+    return $GridDimensionCopyWith<$Res>(_self.dimensions!, (value) {
+      return _then(_self.copyWith(dimensions: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$SensorGridItemImplCopyWith<$Res>
-    implements $SensorGridItemCopyWith<$Res> {
-  factory _$$SensorGridItemImplCopyWith(_$SensorGridItemImpl value,
-          $Res Function(_$SensorGridItemImpl) then) =
-      __$$SensorGridItemImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? objectId,
-      @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
-      WorkspaceCardType kind,
-      GridDimension? dimensions,
-      @ColorConverter() Color color,
-      List<SensorGridContent> sensors});
-
-  @override
-  $GridDimensionCopyWith<$Res>? get dimensions;
-}
-
-/// @nodoc
-class __$$SensorGridItemImplCopyWithImpl<$Res>
-    extends _$SensorGridItemCopyWithImpl<$Res, _$SensorGridItemImpl>
-    implements _$$SensorGridItemImplCopyWith<$Res> {
-  __$$SensorGridItemImplCopyWithImpl(
-      _$SensorGridItemImpl _value, $Res Function(_$SensorGridItemImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SensorGridItem
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? objectId = freezed,
-    Object? kind = null,
-    Object? dimensions = freezed,
-    Object? color = null,
-    Object? sensors = null,
-  }) {
-    return _then(_$SensorGridItemImpl(
-      objectId: freezed == objectId
-          ? _value.objectId
-          : objectId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      kind: null == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as WorkspaceCardType,
-      dimensions: freezed == dimensions
-          ? _value.dimensions
-          : dimensions // ignore: cast_nullable_to_non_nullable
-              as GridDimension?,
-      color: null == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color,
-      sensors: null == sensors
-          ? _value._sensors
-          : sensors // ignore: cast_nullable_to_non_nullable
-              as List<SensorGridContent>,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$SensorGridItemImpl implements _SensorGridItem {
-  const _$SensorGridItemImpl(
+class _SensorGridItem implements SensorGridItem {
+  const _SensorGridItem(
       {this.objectId,
       @JsonKey(unknownEnumValue: WorkspaceCardType.asset) required this.kind,
       this.dimensions,
       @ColorConverter() this.color = Colors.white,
       final List<SensorGridContent> sensors = const []})
       : _sensors = sensors;
-
-  factory _$SensorGridItemImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SensorGridItemImplFromJson(json);
+  factory _SensorGridItem.fromJson(Map<String, dynamic> json) =>
+      _$SensorGridItemFromJson(json);
 
   /// Represents the Asset ID
   @override
@@ -4147,16 +3783,26 @@ class _$SensorGridItemImpl implements _SensorGridItem {
     return EqualUnmodifiableListView(_sensors);
   }
 
+  /// Create a copy of SensorGridItem
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SensorGridItem(objectId: $objectId, kind: $kind, dimensions: $dimensions, color: $color, sensors: $sensors)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SensorGridItemCopyWith<_SensorGridItem> get copyWith =>
+      __$SensorGridItemCopyWithImpl<_SensorGridItem>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SensorGridItemToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SensorGridItemImpl &&
+            other is _SensorGridItem &&
             (identical(other.objectId, objectId) ||
                 other.objectId == objectId) &&
             (identical(other.kind, kind) || other.kind == kind) &&
@@ -4171,123 +3817,148 @@ class _$SensorGridItemImpl implements _SensorGridItem {
   int get hashCode => Object.hash(runtimeType, objectId, kind, dimensions,
       color, const DeepCollectionEquality().hash(_sensors));
 
-  /// Create a copy of SensorGridItem
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SensorGridItemImplCopyWith<_$SensorGridItemImpl> get copyWith =>
-      __$$SensorGridItemImplCopyWithImpl<_$SensorGridItemImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SensorGridItemImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SensorGridItem(objectId: $objectId, kind: $kind, dimensions: $dimensions, color: $color, sensors: $sensors)';
   }
 }
 
-abstract class _SensorGridItem implements SensorGridItem {
-  const factory _SensorGridItem(
-      {final String? objectId,
+/// @nodoc
+abstract mixin class _$SensorGridItemCopyWith<$Res>
+    implements $SensorGridItemCopyWith<$Res> {
+  factory _$SensorGridItemCopyWith(
+          _SensorGridItem value, $Res Function(_SensorGridItem) _then) =
+      __$SensorGridItemCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? objectId,
       @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
-      required final WorkspaceCardType kind,
-      final GridDimension? dimensions,
-      @ColorConverter() final Color color,
-      final List<SensorGridContent> sensors}) = _$SensorGridItemImpl;
+      WorkspaceCardType kind,
+      GridDimension? dimensions,
+      @ColorConverter() Color color,
+      List<SensorGridContent> sensors});
 
-  factory _SensorGridItem.fromJson(Map<String, dynamic> json) =
-      _$SensorGridItemImpl.fromJson;
-
-  /// Represents the Asset ID
   @override
-  String? get objectId;
+  $GridDimensionCopyWith<$Res>? get dimensions;
+}
 
-  /// [kind] represents the kind of card should be displayed
-  @override
-  @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
-  WorkspaceCardType get kind;
+/// @nodoc
+class __$SensorGridItemCopyWithImpl<$Res>
+    implements _$SensorGridItemCopyWith<$Res> {
+  __$SensorGridItemCopyWithImpl(this._self, this._then);
 
-  /// [dimensions] Represents the dimension of the sensor
-  @override
-  GridDimension? get dimensions;
-
-  /// Represents the color of the card
-  @override
-  @ColorConverter()
-  Color get color;
-
-  /// Represents the sensors of the card
-  @override
-  List<SensorGridContent> get sensors;
+  final _SensorGridItem _self;
+  final $Res Function(_SensorGridItem) _then;
 
   /// Create a copy of SensorGridItem
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SensorGridItemImplCopyWith<_$SensorGridItemImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? objectId = freezed,
+    Object? kind = null,
+    Object? dimensions = freezed,
+    Object? color = null,
+    Object? sensors = null,
+  }) {
+    return _then(_SensorGridItem(
+      objectId: freezed == objectId
+          ? _self.objectId
+          : objectId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      kind: null == kind
+          ? _self.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as WorkspaceCardType,
+      dimensions: freezed == dimensions
+          ? _self.dimensions
+          : dimensions // ignore: cast_nullable_to_non_nullable
+              as GridDimension?,
+      color: null == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
+      sensors: null == sensors
+          ? _self._sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<SensorGridContent>,
+    ));
+  }
 
-SensorGridItemInput _$SensorGridItemInputFromJson(Map<String, dynamic> json) {
-  return _SensorGridItemInput.fromJson(json);
+  /// Create a copy of SensorGridItem
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GridDimensionCopyWith<$Res>? get dimensions {
+    if (_self.dimensions == null) {
+      return null;
+    }
+
+    return $GridDimensionCopyWith<$Res>(_self.dimensions!, (value) {
+      return _then(_self.copyWith(dimensions: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$SensorGridItemInput {
   /// Represents the assigned object ID
-  String? get objectId => throw _privateConstructorUsedError;
+  String? get objectId;
 
   /// Represents the assigned object ID
-  set objectId(String? value) => throw _privateConstructorUsedError;
+  set objectId(String? value);
 
   /// [kind] represents the kind of card should be displayed
   @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
-  WorkspaceCardType get kind => throw _privateConstructorUsedError;
+  WorkspaceCardType get kind;
 
   /// [kind] represents the kind of card should be displayed
   @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
-  set kind(WorkspaceCardType value) => throw _privateConstructorUsedError;
+  set kind(WorkspaceCardType value);
 
   /// [dimensions] represents the dimensions of the sensor content
-  GridDimensionInput? get dimensions => throw _privateConstructorUsedError;
+  GridDimensionInput? get dimensions;
 
   /// [dimensions] represents the dimensions of the sensor content
-  set dimensions(GridDimensionInput? value) =>
-      throw _privateConstructorUsedError;
+  set dimensions(GridDimensionInput? value);
 
   /// Represents the color of the card
   @ColorConverter()
-  Color get color => throw _privateConstructorUsedError;
+  Color get color;
 
   /// Represents the color of the card
   @ColorConverter()
-  set color(Color value) => throw _privateConstructorUsedError;
+  set color(Color value);
 
   /// Represents the sensors of the card
-  List<SensorGridContentInput> get sensors =>
-      throw _privateConstructorUsedError;
+  List<SensorGridContentInput> get sensors;
 
   /// Represents the sensors of the card
-  set sensors(List<SensorGridContentInput> value) =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this SensorGridItemInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set sensors(List<SensorGridContentInput> value);
 
   /// Create a copy of SensorGridItemInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $SensorGridItemInputCopyWith<SensorGridItemInput> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$SensorGridItemInputCopyWithImpl<SensorGridItemInput>(
+          this as SensorGridItemInput, _$identity);
+
+  /// Serializes this SensorGridItemInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'SensorGridItemInput(objectId: $objectId, kind: $kind, dimensions: $dimensions, color: $color, sensors: $sensors)';
+  }
 }
 
 /// @nodoc
-abstract class $SensorGridItemInputCopyWith<$Res> {
+abstract mixin class $SensorGridItemInputCopyWith<$Res> {
   factory $SensorGridItemInputCopyWith(
-          SensorGridItemInput value, $Res Function(SensorGridItemInput) then) =
-      _$SensorGridItemInputCopyWithImpl<$Res, SensorGridItemInput>;
+          SensorGridItemInput value, $Res Function(SensorGridItemInput) _then) =
+      _$SensorGridItemInputCopyWithImpl;
   @useResult
   $Res call(
       {String? objectId,
@@ -4301,14 +3972,12 @@ abstract class $SensorGridItemInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SensorGridItemInputCopyWithImpl<$Res, $Val extends SensorGridItemInput>
+class _$SensorGridItemInputCopyWithImpl<$Res>
     implements $SensorGridItemInputCopyWith<$Res> {
-  _$SensorGridItemInputCopyWithImpl(this._value, this._then);
+  _$SensorGridItemInputCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final SensorGridItemInput _self;
+  final $Res Function(SensorGridItemInput) _then;
 
   /// Create a copy of SensorGridItemInput
   /// with the given fields replaced by the non-null parameter values.
@@ -4321,28 +3990,28 @@ class _$SensorGridItemInputCopyWithImpl<$Res, $Val extends SensorGridItemInput>
     Object? color = null,
     Object? sensors = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       objectId: freezed == objectId
-          ? _value.objectId
+          ? _self.objectId
           : objectId // ignore: cast_nullable_to_non_nullable
               as String?,
       kind: null == kind
-          ? _value.kind
+          ? _self.kind
           : kind // ignore: cast_nullable_to_non_nullable
               as WorkspaceCardType,
       dimensions: freezed == dimensions
-          ? _value.dimensions
+          ? _self.dimensions
           : dimensions // ignore: cast_nullable_to_non_nullable
               as GridDimensionInput?,
       color: null == color
-          ? _value.color
+          ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color,
       sensors: null == sensors
-          ? _value.sensors
+          ? _self.sensors
           : sensors // ignore: cast_nullable_to_non_nullable
               as List<SensorGridContentInput>,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of SensorGridItemInput
@@ -4350,93 +4019,28 @@ class _$SensorGridItemInputCopyWithImpl<$Res, $Val extends SensorGridItemInput>
   @override
   @pragma('vm:prefer-inline')
   $GridDimensionInputCopyWith<$Res>? get dimensions {
-    if (_value.dimensions == null) {
+    if (_self.dimensions == null) {
       return null;
     }
 
-    return $GridDimensionInputCopyWith<$Res>(_value.dimensions!, (value) {
-      return _then(_value.copyWith(dimensions: value) as $Val);
+    return $GridDimensionInputCopyWith<$Res>(_self.dimensions!, (value) {
+      return _then(_self.copyWith(dimensions: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$SensorGridItemInputImplCopyWith<$Res>
-    implements $SensorGridItemInputCopyWith<$Res> {
-  factory _$$SensorGridItemInputImplCopyWith(_$SensorGridItemInputImpl value,
-          $Res Function(_$SensorGridItemInputImpl) then) =
-      __$$SensorGridItemInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? objectId,
-      @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
-      WorkspaceCardType kind,
-      GridDimensionInput? dimensions,
-      @ColorConverter() Color color,
-      List<SensorGridContentInput> sensors});
-
-  @override
-  $GridDimensionInputCopyWith<$Res>? get dimensions;
-}
-
-/// @nodoc
-class __$$SensorGridItemInputImplCopyWithImpl<$Res>
-    extends _$SensorGridItemInputCopyWithImpl<$Res, _$SensorGridItemInputImpl>
-    implements _$$SensorGridItemInputImplCopyWith<$Res> {
-  __$$SensorGridItemInputImplCopyWithImpl(_$SensorGridItemInputImpl _value,
-      $Res Function(_$SensorGridItemInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SensorGridItemInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? objectId = freezed,
-    Object? kind = null,
-    Object? dimensions = freezed,
-    Object? color = null,
-    Object? sensors = null,
-  }) {
-    return _then(_$SensorGridItemInputImpl(
-      objectId: freezed == objectId
-          ? _value.objectId
-          : objectId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      kind: null == kind
-          ? _value.kind
-          : kind // ignore: cast_nullable_to_non_nullable
-              as WorkspaceCardType,
-      dimensions: freezed == dimensions
-          ? _value.dimensions
-          : dimensions // ignore: cast_nullable_to_non_nullable
-              as GridDimensionInput?,
-      color: null == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color,
-      sensors: null == sensors
-          ? _value.sensors
-          : sensors // ignore: cast_nullable_to_non_nullable
-              as List<SensorGridContentInput>,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$SensorGridItemInputImpl implements _SensorGridItemInput {
-  _$SensorGridItemInputImpl(
+class _SensorGridItemInput implements SensorGridItemInput {
+  _SensorGridItemInput(
       {this.objectId,
       @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
       this.kind = WorkspaceCardType.asset,
       this.dimensions,
       @ColorConverter() this.color = Colors.white,
       this.sensors = const []});
-
-  factory _$SensorGridItemInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SensorGridItemInputImplFromJson(json);
+  factory _SensorGridItemInput.fromJson(Map<String, dynamic> json) =>
+      _$SensorGridItemInputFromJson(json);
 
   /// Represents the assigned object ID
   @override
@@ -4462,127 +4066,170 @@ class _$SensorGridItemInputImpl implements _SensorGridItemInput {
   @JsonKey()
   List<SensorGridContentInput> sensors;
 
-  @override
-  String toString() {
-    return 'SensorGridItemInput(objectId: $objectId, kind: $kind, dimensions: $dimensions, color: $color, sensors: $sensors)';
-  }
-
   /// Create a copy of SensorGridItemInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$$SensorGridItemInputImplCopyWith<_$SensorGridItemInputImpl> get copyWith =>
-      __$$SensorGridItemInputImplCopyWithImpl<_$SensorGridItemInputImpl>(
+  _$SensorGridItemInputCopyWith<_SensorGridItemInput> get copyWith =>
+      __$SensorGridItemInputCopyWithImpl<_SensorGridItemInput>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$SensorGridItemInputImplToJson(
+    return _$SensorGridItemInputToJson(
       this,
     );
   }
+
+  @override
+  String toString() {
+    return 'SensorGridItemInput(objectId: $objectId, kind: $kind, dimensions: $dimensions, color: $color, sensors: $sensors)';
+  }
 }
 
-abstract class _SensorGridItemInput implements SensorGridItemInput {
-  factory _SensorGridItemInput(
+/// @nodoc
+abstract mixin class _$SensorGridItemInputCopyWith<$Res>
+    implements $SensorGridItemInputCopyWith<$Res> {
+  factory _$SensorGridItemInputCopyWith(_SensorGridItemInput value,
+          $Res Function(_SensorGridItemInput) _then) =
+      __$SensorGridItemInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? objectId,
       @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
       WorkspaceCardType kind,
       GridDimensionInput? dimensions,
       @ColorConverter() Color color,
-      List<SensorGridContentInput> sensors}) = _$SensorGridItemInputImpl;
+      List<SensorGridContentInput> sensors});
 
-  factory _SensorGridItemInput.fromJson(Map<String, dynamic> json) =
-      _$SensorGridItemInputImpl.fromJson;
-
-  /// Represents the assigned object ID
   @override
-  String? get objectId;
+  $GridDimensionInputCopyWith<$Res>? get dimensions;
+}
 
-  /// Represents the assigned object ID
-  set objectId(String? value);
+/// @nodoc
+class __$SensorGridItemInputCopyWithImpl<$Res>
+    implements _$SensorGridItemInputCopyWith<$Res> {
+  __$SensorGridItemInputCopyWithImpl(this._self, this._then);
 
-  /// [kind] represents the kind of card should be displayed
-  @override
-  @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
-  WorkspaceCardType get kind;
-
-  /// [kind] represents the kind of card should be displayed
-  @JsonKey(unknownEnumValue: WorkspaceCardType.asset)
-  set kind(WorkspaceCardType value);
-
-  /// [dimensions] represents the dimensions of the sensor content
-  @override
-  GridDimensionInput? get dimensions;
-
-  /// [dimensions] represents the dimensions of the sensor content
-  set dimensions(GridDimensionInput? value);
-
-  /// Represents the color of the card
-  @override
-  @ColorConverter()
-  Color get color;
-
-  /// Represents the color of the card
-  @ColorConverter()
-  set color(Color value);
-
-  /// Represents the sensors of the card
-  @override
-  List<SensorGridContentInput> get sensors;
-
-  /// Represents the sensors of the card
-  set sensors(List<SensorGridContentInput> value);
+  final _SensorGridItemInput _self;
+  final $Res Function(_SensorGridItemInput) _then;
 
   /// Create a copy of SensorGridItemInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SensorGridItemInputImplCopyWith<_$SensorGridItemInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? objectId = freezed,
+    Object? kind = null,
+    Object? dimensions = freezed,
+    Object? color = null,
+    Object? sensors = null,
+  }) {
+    return _then(_SensorGridItemInput(
+      objectId: freezed == objectId
+          ? _self.objectId
+          : objectId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      kind: null == kind
+          ? _self.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as WorkspaceCardType,
+      dimensions: freezed == dimensions
+          ? _self.dimensions
+          : dimensions // ignore: cast_nullable_to_non_nullable
+              as GridDimensionInput?,
+      color: null == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color,
+      sensors: null == sensors
+          ? _self.sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as List<SensorGridContentInput>,
+    ));
+  }
 
-SensorGridContent _$SensorGridContentFromJson(Map<String, dynamic> json) {
-  return _SensorGridContent.fromJson(json);
+  /// Create a copy of SensorGridItemInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GridDimensionInputCopyWith<$Res>? get dimensions {
+    if (_self.dimensions == null) {
+      return null;
+    }
+
+    return $GridDimensionInputCopyWith<$Res>(_self.dimensions!, (value) {
+      return _then(_self.copyWith(dimensions: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$SensorGridContent {
   /// Represents the sensor ID
-  String? get sensorId => throw _privateConstructorUsedError;
+  String? get sensorId;
 
   /// [dimensions] Represents the dimension of the sensor
-  GridDimension get dimensions => throw _privateConstructorUsedError;
+  GridDimension get dimensions;
 
   /// Indicates if the sensor content has enabled the mask
-  bool get maskEnabled => throw _privateConstructorUsedError;
+  bool get maskEnabled;
 
   /// [type] represents the type of sensor content
   @JsonKey(unknownEnumValue: SensorGridItemType.plain)
-  SensorGridItemType get type => throw _privateConstructorUsedError;
+  SensorGridItemType get type;
 
   /// [minimum] represents the minimum value of the sensor.
-  double? get minimum => throw _privateConstructorUsedError;
+  double? get minimum;
 
   /// [maximum] represents the maximum value of the sensor.
-  double? get maximum => throw _privateConstructorUsedError;
-
-  /// Serializes this SensorGridContent to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  double? get maximum;
 
   /// Create a copy of SensorGridContent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $SensorGridContentCopyWith<SensorGridContent> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$SensorGridContentCopyWithImpl<SensorGridContent>(
+          this as SensorGridContent, _$identity);
+
+  /// Serializes this SensorGridContent to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is SensorGridContent &&
+            (identical(other.sensorId, sensorId) ||
+                other.sensorId == sensorId) &&
+            (identical(other.dimensions, dimensions) ||
+                other.dimensions == dimensions) &&
+            (identical(other.maskEnabled, maskEnabled) ||
+                other.maskEnabled == maskEnabled) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.minimum, minimum) || other.minimum == minimum) &&
+            (identical(other.maximum, maximum) || other.maximum == maximum));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, sensorId, dimensions, maskEnabled, type, minimum, maximum);
+
+  @override
+  String toString() {
+    return 'SensorGridContent(sensorId: $sensorId, dimensions: $dimensions, maskEnabled: $maskEnabled, type: $type, minimum: $minimum, maximum: $maximum)';
+  }
 }
 
 /// @nodoc
-abstract class $SensorGridContentCopyWith<$Res> {
+abstract mixin class $SensorGridContentCopyWith<$Res> {
   factory $SensorGridContentCopyWith(
-          SensorGridContent value, $Res Function(SensorGridContent) then) =
-      _$SensorGridContentCopyWithImpl<$Res, SensorGridContent>;
+          SensorGridContent value, $Res Function(SensorGridContent) _then) =
+      _$SensorGridContentCopyWithImpl;
   @useResult
   $Res call(
       {String? sensorId,
@@ -4597,14 +4244,12 @@ abstract class $SensorGridContentCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SensorGridContentCopyWithImpl<$Res, $Val extends SensorGridContent>
+class _$SensorGridContentCopyWithImpl<$Res>
     implements $SensorGridContentCopyWith<$Res> {
-  _$SensorGridContentCopyWithImpl(this._value, this._then);
+  _$SensorGridContentCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final SensorGridContent _self;
+  final $Res Function(SensorGridContent) _then;
 
   /// Create a copy of SensorGridContent
   /// with the given fields replaced by the non-null parameter values.
@@ -4618,32 +4263,32 @@ class _$SensorGridContentCopyWithImpl<$Res, $Val extends SensorGridContent>
     Object? minimum = freezed,
     Object? maximum = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       sensorId: freezed == sensorId
-          ? _value.sensorId
+          ? _self.sensorId
           : sensorId // ignore: cast_nullable_to_non_nullable
               as String?,
       dimensions: null == dimensions
-          ? _value.dimensions
+          ? _self.dimensions
           : dimensions // ignore: cast_nullable_to_non_nullable
               as GridDimension,
       maskEnabled: null == maskEnabled
-          ? _value.maskEnabled
+          ? _self.maskEnabled
           : maskEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as SensorGridItemType,
       minimum: freezed == minimum
-          ? _value.minimum
+          ? _self.minimum
           : minimum // ignore: cast_nullable_to_non_nullable
               as double?,
       maximum: freezed == maximum
-          ? _value.maximum
+          ? _self.maximum
           : maximum // ignore: cast_nullable_to_non_nullable
               as double?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of SensorGridContent
@@ -4651,86 +4296,16 @@ class _$SensorGridContentCopyWithImpl<$Res, $Val extends SensorGridContent>
   @override
   @pragma('vm:prefer-inline')
   $GridDimensionCopyWith<$Res> get dimensions {
-    return $GridDimensionCopyWith<$Res>(_value.dimensions, (value) {
-      return _then(_value.copyWith(dimensions: value) as $Val);
+    return $GridDimensionCopyWith<$Res>(_self.dimensions, (value) {
+      return _then(_self.copyWith(dimensions: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$SensorGridContentImplCopyWith<$Res>
-    implements $SensorGridContentCopyWith<$Res> {
-  factory _$$SensorGridContentImplCopyWith(_$SensorGridContentImpl value,
-          $Res Function(_$SensorGridContentImpl) then) =
-      __$$SensorGridContentImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? sensorId,
-      GridDimension dimensions,
-      bool maskEnabled,
-      @JsonKey(unknownEnumValue: SensorGridItemType.plain)
-      SensorGridItemType type,
-      double? minimum,
-      double? maximum});
-
-  @override
-  $GridDimensionCopyWith<$Res> get dimensions;
-}
-
-/// @nodoc
-class __$$SensorGridContentImplCopyWithImpl<$Res>
-    extends _$SensorGridContentCopyWithImpl<$Res, _$SensorGridContentImpl>
-    implements _$$SensorGridContentImplCopyWith<$Res> {
-  __$$SensorGridContentImplCopyWithImpl(_$SensorGridContentImpl _value,
-      $Res Function(_$SensorGridContentImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SensorGridContent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? sensorId = freezed,
-    Object? dimensions = null,
-    Object? maskEnabled = null,
-    Object? type = null,
-    Object? minimum = freezed,
-    Object? maximum = freezed,
-  }) {
-    return _then(_$SensorGridContentImpl(
-      sensorId: freezed == sensorId
-          ? _value.sensorId
-          : sensorId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      dimensions: null == dimensions
-          ? _value.dimensions
-          : dimensions // ignore: cast_nullable_to_non_nullable
-              as GridDimension,
-      maskEnabled: null == maskEnabled
-          ? _value.maskEnabled
-          : maskEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as SensorGridItemType,
-      minimum: freezed == minimum
-          ? _value.minimum
-          : minimum // ignore: cast_nullable_to_non_nullable
-              as double?,
-      maximum: freezed == maximum
-          ? _value.maximum
-          : maximum // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$SensorGridContentImpl implements _SensorGridContent {
-  const _$SensorGridContentImpl(
+class _SensorGridContent implements SensorGridContent {
+  const _SensorGridContent(
       {this.sensorId,
       required this.dimensions,
       this.maskEnabled = true,
@@ -4738,9 +4313,8 @@ class _$SensorGridContentImpl implements _SensorGridContent {
       this.type = SensorGridItemType.plain,
       this.minimum,
       this.maximum});
-
-  factory _$SensorGridContentImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SensorGridContentImplFromJson(json);
+  factory _SensorGridContent.fromJson(Map<String, dynamic> json) =>
+      _$SensorGridContentFromJson(json);
 
   /// Represents the sensor ID
   @override
@@ -4768,16 +4342,26 @@ class _$SensorGridContentImpl implements _SensorGridContent {
   @override
   final double? maximum;
 
+  /// Create a copy of SensorGridContent
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'SensorGridContent(sensorId: $sensorId, dimensions: $dimensions, maskEnabled: $maskEnabled, type: $type, minimum: $minimum, maximum: $maximum)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SensorGridContentCopyWith<_SensorGridContent> get copyWith =>
+      __$SensorGridContentCopyWithImpl<_SensorGridContent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SensorGridContentToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SensorGridContentImpl &&
+            other is _SensorGridContent &&
             (identical(other.sensorId, sensorId) ||
                 other.sensorId == sensorId) &&
             (identical(other.dimensions, dimensions) ||
@@ -4794,130 +4378,154 @@ class _$SensorGridContentImpl implements _SensorGridContent {
   int get hashCode => Object.hash(
       runtimeType, sensorId, dimensions, maskEnabled, type, minimum, maximum);
 
-  /// Create a copy of SensorGridContent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$SensorGridContentImplCopyWith<_$SensorGridContentImpl> get copyWith =>
-      __$$SensorGridContentImplCopyWithImpl<_$SensorGridContentImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SensorGridContentImplToJson(
-      this,
-    );
+  String toString() {
+    return 'SensorGridContent(sensorId: $sensorId, dimensions: $dimensions, maskEnabled: $maskEnabled, type: $type, minimum: $minimum, maximum: $maximum)';
   }
 }
 
-abstract class _SensorGridContent implements SensorGridContent {
-  const factory _SensorGridContent(
-      {final String? sensorId,
-      required final GridDimension dimensions,
-      final bool maskEnabled,
+/// @nodoc
+abstract mixin class _$SensorGridContentCopyWith<$Res>
+    implements $SensorGridContentCopyWith<$Res> {
+  factory _$SensorGridContentCopyWith(
+          _SensorGridContent value, $Res Function(_SensorGridContent) _then) =
+      __$SensorGridContentCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? sensorId,
+      GridDimension dimensions,
+      bool maskEnabled,
       @JsonKey(unknownEnumValue: SensorGridItemType.plain)
-      final SensorGridItemType type,
-      final double? minimum,
-      final double? maximum}) = _$SensorGridContentImpl;
+      SensorGridItemType type,
+      double? minimum,
+      double? maximum});
 
-  factory _SensorGridContent.fromJson(Map<String, dynamic> json) =
-      _$SensorGridContentImpl.fromJson;
-
-  /// Represents the sensor ID
   @override
-  String? get sensorId;
+  $GridDimensionCopyWith<$Res> get dimensions;
+}
 
-  /// [dimensions] Represents the dimension of the sensor
-  @override
-  GridDimension get dimensions;
+/// @nodoc
+class __$SensorGridContentCopyWithImpl<$Res>
+    implements _$SensorGridContentCopyWith<$Res> {
+  __$SensorGridContentCopyWithImpl(this._self, this._then);
 
-  /// Indicates if the sensor content has enabled the mask
-  @override
-  bool get maskEnabled;
-
-  /// [type] represents the type of sensor content
-  @override
-  @JsonKey(unknownEnumValue: SensorGridItemType.plain)
-  SensorGridItemType get type;
-
-  /// [minimum] represents the minimum value of the sensor.
-  @override
-  double? get minimum;
-
-  /// [maximum] represents the maximum value of the sensor.
-  @override
-  double? get maximum;
+  final _SensorGridContent _self;
+  final $Res Function(_SensorGridContent) _then;
 
   /// Create a copy of SensorGridContent
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SensorGridContentImplCopyWith<_$SensorGridContentImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? sensorId = freezed,
+    Object? dimensions = null,
+    Object? maskEnabled = null,
+    Object? type = null,
+    Object? minimum = freezed,
+    Object? maximum = freezed,
+  }) {
+    return _then(_SensorGridContent(
+      sensorId: freezed == sensorId
+          ? _self.sensorId
+          : sensorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      dimensions: null == dimensions
+          ? _self.dimensions
+          : dimensions // ignore: cast_nullable_to_non_nullable
+              as GridDimension,
+      maskEnabled: null == maskEnabled
+          ? _self.maskEnabled
+          : maskEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as SensorGridItemType,
+      minimum: freezed == minimum
+          ? _self.minimum
+          : minimum // ignore: cast_nullable_to_non_nullable
+              as double?,
+      maximum: freezed == maximum
+          ? _self.maximum
+          : maximum // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
 
-SensorGridContentInput _$SensorGridContentInputFromJson(
-    Map<String, dynamic> json) {
-  return _SensorGridContentInput.fromJson(json);
+  /// Create a copy of SensorGridContent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GridDimensionCopyWith<$Res> get dimensions {
+    return $GridDimensionCopyWith<$Res>(_self.dimensions, (value) {
+      return _then(_self.copyWith(dimensions: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$SensorGridContentInput {
   /// Represents the sensor ID
-  String? get sensorId => throw _privateConstructorUsedError;
+  String? get sensorId;
 
   /// Represents the sensor ID
-  set sensorId(String? value) => throw _privateConstructorUsedError;
+  set sensorId(String? value);
 
   /// Indicates if the sensor content has enabled the mask
-  bool get maskEnabled => throw _privateConstructorUsedError;
+  bool get maskEnabled;
 
   /// Indicates if the sensor content has enabled the mask
-  set maskEnabled(bool value) => throw _privateConstructorUsedError;
+  set maskEnabled(bool value);
 
   /// [dimensions] represents the dimensions of the sensor content
-  GridDimensionInput get dimensions => throw _privateConstructorUsedError;
+  GridDimensionInput get dimensions;
 
   /// [dimensions] represents the dimensions of the sensor content
-  set dimensions(GridDimensionInput value) =>
-      throw _privateConstructorUsedError;
+  set dimensions(GridDimensionInput value);
 
   /// [type] represents the type of sensor content
   @JsonKey(unknownEnumValue: SensorGridItemType.plain)
-  SensorGridItemType get type => throw _privateConstructorUsedError;
+  SensorGridItemType get type;
 
   /// [type] represents the type of sensor content
   @JsonKey(unknownEnumValue: SensorGridItemType.plain)
-  set type(SensorGridItemType value) => throw _privateConstructorUsedError;
+  set type(SensorGridItemType value);
 
   /// [minimum] represents the minimum value of the sensor.
-  double? get minimum => throw _privateConstructorUsedError;
+  double? get minimum;
 
   /// [minimum] represents the minimum value of the sensor.
-  set minimum(double? value) => throw _privateConstructorUsedError;
+  set minimum(double? value);
 
   /// [maximum] represents the maximum value of the sensor.
-  double? get maximum => throw _privateConstructorUsedError;
+  double? get maximum;
 
   /// [maximum] represents the maximum value of the sensor.
-  set maximum(double? value) => throw _privateConstructorUsedError;
-
-  /// Serializes this SensorGridContentInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set maximum(double? value);
 
   /// Create a copy of SensorGridContentInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $SensorGridContentInputCopyWith<SensorGridContentInput> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$SensorGridContentInputCopyWithImpl<SensorGridContentInput>(
+          this as SensorGridContentInput, _$identity);
+
+  /// Serializes this SensorGridContentInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'SensorGridContentInput(sensorId: $sensorId, maskEnabled: $maskEnabled, dimensions: $dimensions, type: $type, minimum: $minimum, maximum: $maximum)';
+  }
 }
 
 /// @nodoc
-abstract class $SensorGridContentInputCopyWith<$Res> {
+abstract mixin class $SensorGridContentInputCopyWith<$Res> {
   factory $SensorGridContentInputCopyWith(SensorGridContentInput value,
-          $Res Function(SensorGridContentInput) then) =
-      _$SensorGridContentInputCopyWithImpl<$Res, SensorGridContentInput>;
+          $Res Function(SensorGridContentInput) _then) =
+      _$SensorGridContentInputCopyWithImpl;
   @useResult
   $Res call(
       {String? sensorId,
@@ -4932,15 +4540,12 @@ abstract class $SensorGridContentInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SensorGridContentInputCopyWithImpl<$Res,
-        $Val extends SensorGridContentInput>
+class _$SensorGridContentInputCopyWithImpl<$Res>
     implements $SensorGridContentInputCopyWith<$Res> {
-  _$SensorGridContentInputCopyWithImpl(this._value, this._then);
+  _$SensorGridContentInputCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final SensorGridContentInput _self;
+  final $Res Function(SensorGridContentInput) _then;
 
   /// Create a copy of SensorGridContentInput
   /// with the given fields replaced by the non-null parameter values.
@@ -4954,32 +4559,32 @@ class _$SensorGridContentInputCopyWithImpl<$Res,
     Object? minimum = freezed,
     Object? maximum = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       sensorId: freezed == sensorId
-          ? _value.sensorId
+          ? _self.sensorId
           : sensorId // ignore: cast_nullable_to_non_nullable
               as String?,
       maskEnabled: null == maskEnabled
-          ? _value.maskEnabled
+          ? _self.maskEnabled
           : maskEnabled // ignore: cast_nullable_to_non_nullable
               as bool,
       dimensions: null == dimensions
-          ? _value.dimensions
+          ? _self.dimensions
           : dimensions // ignore: cast_nullable_to_non_nullable
               as GridDimensionInput,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as SensorGridItemType,
       minimum: freezed == minimum
-          ? _value.minimum
+          ? _self.minimum
           : minimum // ignore: cast_nullable_to_non_nullable
               as double?,
       maximum: freezed == maximum
-          ? _value.maximum
+          ? _self.maximum
           : maximum // ignore: cast_nullable_to_non_nullable
               as double?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of SensorGridContentInput
@@ -4987,89 +4592,16 @@ class _$SensorGridContentInputCopyWithImpl<$Res,
   @override
   @pragma('vm:prefer-inline')
   $GridDimensionInputCopyWith<$Res> get dimensions {
-    return $GridDimensionInputCopyWith<$Res>(_value.dimensions, (value) {
-      return _then(_value.copyWith(dimensions: value) as $Val);
+    return $GridDimensionInputCopyWith<$Res>(_self.dimensions, (value) {
+      return _then(_self.copyWith(dimensions: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$SensorGridContentInputImplCopyWith<$Res>
-    implements $SensorGridContentInputCopyWith<$Res> {
-  factory _$$SensorGridContentInputImplCopyWith(
-          _$SensorGridContentInputImpl value,
-          $Res Function(_$SensorGridContentInputImpl) then) =
-      __$$SensorGridContentInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? sensorId,
-      bool maskEnabled,
-      GridDimensionInput dimensions,
-      @JsonKey(unknownEnumValue: SensorGridItemType.plain)
-      SensorGridItemType type,
-      double? minimum,
-      double? maximum});
-
-  @override
-  $GridDimensionInputCopyWith<$Res> get dimensions;
-}
-
-/// @nodoc
-class __$$SensorGridContentInputImplCopyWithImpl<$Res>
-    extends _$SensorGridContentInputCopyWithImpl<$Res,
-        _$SensorGridContentInputImpl>
-    implements _$$SensorGridContentInputImplCopyWith<$Res> {
-  __$$SensorGridContentInputImplCopyWithImpl(
-      _$SensorGridContentInputImpl _value,
-      $Res Function(_$SensorGridContentInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SensorGridContentInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? sensorId = freezed,
-    Object? maskEnabled = null,
-    Object? dimensions = null,
-    Object? type = null,
-    Object? minimum = freezed,
-    Object? maximum = freezed,
-  }) {
-    return _then(_$SensorGridContentInputImpl(
-      sensorId: freezed == sensorId
-          ? _value.sensorId
-          : sensorId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      maskEnabled: null == maskEnabled
-          ? _value.maskEnabled
-          : maskEnabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      dimensions: null == dimensions
-          ? _value.dimensions
-          : dimensions // ignore: cast_nullable_to_non_nullable
-              as GridDimensionInput,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as SensorGridItemType,
-      minimum: freezed == minimum
-          ? _value.minimum
-          : minimum // ignore: cast_nullable_to_non_nullable
-              as double?,
-      maximum: freezed == maximum
-          ? _value.maximum
-          : maximum // ignore: cast_nullable_to_non_nullable
-              as double?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$SensorGridContentInputImpl implements _SensorGridContentInput {
-  _$SensorGridContentInputImpl(
+class _SensorGridContentInput implements SensorGridContentInput {
+  _SensorGridContentInput(
       {this.sensorId,
       this.maskEnabled = true,
       required this.dimensions,
@@ -5077,9 +4609,8 @@ class _$SensorGridContentInputImpl implements _SensorGridContentInput {
       this.type = SensorGridItemType.plain,
       this.minimum,
       this.maximum});
-
-  factory _$SensorGridContentInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$SensorGridContentInputImplFromJson(json);
+  factory _SensorGridContentInput.fromJson(Map<String, dynamic> json) =>
+      _$SensorGridContentInputFromJson(json);
 
   /// Represents the sensor ID
   @override
@@ -5107,177 +4638,156 @@ class _$SensorGridContentInputImpl implements _SensorGridContentInput {
   @override
   double? maximum;
 
+  /// Create a copy of SensorGridContentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SensorGridContentInputCopyWith<_SensorGridContentInput> get copyWith =>
+      __$SensorGridContentInputCopyWithImpl<_SensorGridContentInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$SensorGridContentInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'SensorGridContentInput(sensorId: $sensorId, maskEnabled: $maskEnabled, dimensions: $dimensions, type: $type, minimum: $minimum, maximum: $maximum)';
   }
-
-  /// Create a copy of SensorGridContentInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SensorGridContentInputImplCopyWith<_$SensorGridContentInputImpl>
-      get copyWith => __$$SensorGridContentInputImplCopyWithImpl<
-          _$SensorGridContentInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$SensorGridContentInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _SensorGridContentInput implements SensorGridContentInput {
-  factory _SensorGridContentInput(
+/// @nodoc
+abstract mixin class _$SensorGridContentInputCopyWith<$Res>
+    implements $SensorGridContentInputCopyWith<$Res> {
+  factory _$SensorGridContentInputCopyWith(_SensorGridContentInput value,
+          $Res Function(_SensorGridContentInput) _then) =
+      __$SensorGridContentInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? sensorId,
       bool maskEnabled,
-      required GridDimensionInput dimensions,
+      GridDimensionInput dimensions,
       @JsonKey(unknownEnumValue: SensorGridItemType.plain)
       SensorGridItemType type,
       double? minimum,
-      double? maximum}) = _$SensorGridContentInputImpl;
+      double? maximum});
 
-  factory _SensorGridContentInput.fromJson(Map<String, dynamic> json) =
-      _$SensorGridContentInputImpl.fromJson;
-
-  /// Represents the sensor ID
   @override
-  String? get sensorId;
+  $GridDimensionInputCopyWith<$Res> get dimensions;
+}
 
-  /// Represents the sensor ID
-  set sensorId(String? value);
+/// @nodoc
+class __$SensorGridContentInputCopyWithImpl<$Res>
+    implements _$SensorGridContentInputCopyWith<$Res> {
+  __$SensorGridContentInputCopyWithImpl(this._self, this._then);
 
-  /// Indicates if the sensor content has enabled the mask
-  @override
-  bool get maskEnabled;
-
-  /// Indicates if the sensor content has enabled the mask
-  set maskEnabled(bool value);
-
-  /// [dimensions] represents the dimensions of the sensor content
-  @override
-  GridDimensionInput get dimensions;
-
-  /// [dimensions] represents the dimensions of the sensor content
-  set dimensions(GridDimensionInput value);
-
-  /// [type] represents the type of sensor content
-  @override
-  @JsonKey(unknownEnumValue: SensorGridItemType.plain)
-  SensorGridItemType get type;
-
-  /// [type] represents the type of sensor content
-  @JsonKey(unknownEnumValue: SensorGridItemType.plain)
-  set type(SensorGridItemType value);
-
-  /// [minimum] represents the minimum value of the sensor.
-  @override
-  double? get minimum;
-
-  /// [minimum] represents the minimum value of the sensor.
-  set minimum(double? value);
-
-  /// [maximum] represents the maximum value of the sensor.
-  @override
-  double? get maximum;
-
-  /// [maximum] represents the maximum value of the sensor.
-  set maximum(double? value);
+  final _SensorGridContentInput _self;
+  final $Res Function(_SensorGridContentInput) _then;
 
   /// Create a copy of SensorGridContentInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SensorGridContentInputImplCopyWith<_$SensorGridContentInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? sensorId = freezed,
+    Object? maskEnabled = null,
+    Object? dimensions = null,
+    Object? type = null,
+    Object? minimum = freezed,
+    Object? maximum = freezed,
+  }) {
+    return _then(_SensorGridContentInput(
+      sensorId: freezed == sensorId
+          ? _self.sensorId
+          : sensorId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      maskEnabled: null == maskEnabled
+          ? _self.maskEnabled
+          : maskEnabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      dimensions: null == dimensions
+          ? _self.dimensions
+          : dimensions // ignore: cast_nullable_to_non_nullable
+              as GridDimensionInput,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as SensorGridItemType,
+      minimum: freezed == minimum
+          ? _self.minimum
+          : minimum // ignore: cast_nullable_to_non_nullable
+              as double?,
+      maximum: freezed == maximum
+          ? _self.maximum
+          : maximum // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
 
-MapCardAlertConfiguration _$MapCardAlertConfigurationFromJson(
-    Map<String, dynamic> json) {
-  return _MapCardAlertConfiguration.fromJson(json);
+  /// Create a copy of SensorGridContentInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $GridDimensionInputCopyWith<$Res> get dimensions {
+    return $GridDimensionInputCopyWith<$Res>(_self.dimensions, (value) {
+      return _then(_self.copyWith(dimensions: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$MapCardAlertConfiguration {
   /// Represents the range of search results to be displayed on the map.
   @JsonKey(unknownEnumValue: MapCardMode.lastDay)
-  MapCardMode get range => throw _privateConstructorUsedError;
+  MapCardMode get range;
 
   /// Display the count of alerts in the map card.
-  bool get count => throw _privateConstructorUsedError;
+  bool get count;
 
   /// Indicates if the alert segment is enabled.
-  bool get enabled => throw _privateConstructorUsedError;
-
-  /// Serializes this MapCardAlertConfiguration to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get enabled;
 
   /// Create a copy of MapCardAlertConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MapCardAlertConfigurationCopyWith<MapCardAlertConfiguration> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MapCardAlertConfigurationCopyWith<$Res> {
-  factory $MapCardAlertConfigurationCopyWith(MapCardAlertConfiguration value,
-          $Res Function(MapCardAlertConfiguration) then) =
-      _$MapCardAlertConfigurationCopyWithImpl<$Res, MapCardAlertConfiguration>;
-  @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: MapCardMode.lastDay) MapCardMode range,
-      bool count,
-      bool enabled});
-}
-
-/// @nodoc
-class _$MapCardAlertConfigurationCopyWithImpl<$Res,
-        $Val extends MapCardAlertConfiguration>
-    implements $MapCardAlertConfigurationCopyWith<$Res> {
-  _$MapCardAlertConfigurationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of MapCardAlertConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $MapCardAlertConfigurationCopyWith<MapCardAlertConfiguration> get copyWith =>
+      _$MapCardAlertConfigurationCopyWithImpl<MapCardAlertConfiguration>(
+          this as MapCardAlertConfiguration, _$identity);
+
+  /// Serializes this MapCardAlertConfiguration to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? range = null,
-    Object? count = null,
-    Object? enabled = null,
-  }) {
-    return _then(_value.copyWith(
-      range: null == range
-          ? _value.range
-          : range // ignore: cast_nullable_to_non_nullable
-              as MapCardMode,
-      count: null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as bool,
-      enabled: null == enabled
-          ? _value.enabled
-          : enabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MapCardAlertConfiguration &&
+            (identical(other.range, range) || other.range == range) &&
+            (identical(other.count, count) || other.count == count) &&
+            (identical(other.enabled, enabled) || other.enabled == enabled));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, range, count, enabled);
+
+  @override
+  String toString() {
+    return 'MapCardAlertConfiguration(range: $range, count: $count, enabled: $enabled)';
   }
 }
 
 /// @nodoc
-abstract class _$$MapCardAlertConfigurationImplCopyWith<$Res>
-    implements $MapCardAlertConfigurationCopyWith<$Res> {
-  factory _$$MapCardAlertConfigurationImplCopyWith(
-          _$MapCardAlertConfigurationImpl value,
-          $Res Function(_$MapCardAlertConfigurationImpl) then) =
-      __$$MapCardAlertConfigurationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MapCardAlertConfigurationCopyWith<$Res> {
+  factory $MapCardAlertConfigurationCopyWith(MapCardAlertConfiguration value,
+          $Res Function(MapCardAlertConfiguration) _then) =
+      _$MapCardAlertConfigurationCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(unknownEnumValue: MapCardMode.lastDay) MapCardMode range,
@@ -5286,14 +4796,12 @@ abstract class _$$MapCardAlertConfigurationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MapCardAlertConfigurationImplCopyWithImpl<$Res>
-    extends _$MapCardAlertConfigurationCopyWithImpl<$Res,
-        _$MapCardAlertConfigurationImpl>
-    implements _$$MapCardAlertConfigurationImplCopyWith<$Res> {
-  __$$MapCardAlertConfigurationImplCopyWithImpl(
-      _$MapCardAlertConfigurationImpl _value,
-      $Res Function(_$MapCardAlertConfigurationImpl) _then)
-      : super(_value, _then);
+class _$MapCardAlertConfigurationCopyWithImpl<$Res>
+    implements $MapCardAlertConfigurationCopyWith<$Res> {
+  _$MapCardAlertConfigurationCopyWithImpl(this._self, this._then);
+
+  final MapCardAlertConfiguration _self;
+  final $Res Function(MapCardAlertConfiguration) _then;
 
   /// Create a copy of MapCardAlertConfiguration
   /// with the given fields replaced by the non-null parameter values.
@@ -5304,17 +4812,17 @@ class __$$MapCardAlertConfigurationImplCopyWithImpl<$Res>
     Object? count = null,
     Object? enabled = null,
   }) {
-    return _then(_$MapCardAlertConfigurationImpl(
+    return _then(_self.copyWith(
       range: null == range
-          ? _value.range
+          ? _self.range
           : range // ignore: cast_nullable_to_non_nullable
               as MapCardMode,
       count: null == count
-          ? _value.count
+          ? _self.count
           : count // ignore: cast_nullable_to_non_nullable
               as bool,
       enabled: null == enabled
-          ? _value.enabled
+          ? _self.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -5323,15 +4831,14 @@ class __$$MapCardAlertConfigurationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MapCardAlertConfigurationImpl implements _MapCardAlertConfiguration {
-  const _$MapCardAlertConfigurationImpl(
+class _MapCardAlertConfiguration implements MapCardAlertConfiguration {
+  const _MapCardAlertConfiguration(
       {@JsonKey(unknownEnumValue: MapCardMode.lastDay)
       this.range = MapCardMode.lastDay,
       this.count = false,
       this.enabled = true});
-
-  factory _$MapCardAlertConfigurationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MapCardAlertConfigurationImplFromJson(json);
+  factory _MapCardAlertConfiguration.fromJson(Map<String, dynamic> json) =>
+      _$MapCardAlertConfigurationFromJson(json);
 
   /// Represents the range of search results to be displayed on the map.
   @override
@@ -5348,16 +4855,28 @@ class _$MapCardAlertConfigurationImpl implements _MapCardAlertConfiguration {
   @JsonKey()
   final bool enabled;
 
+  /// Create a copy of MapCardAlertConfiguration
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'MapCardAlertConfiguration(range: $range, count: $count, enabled: $enabled)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MapCardAlertConfigurationCopyWith<_MapCardAlertConfiguration>
+      get copyWith =>
+          __$MapCardAlertConfigurationCopyWithImpl<_MapCardAlertConfiguration>(
+              this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MapCardAlertConfigurationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MapCardAlertConfigurationImpl &&
+            other is _MapCardAlertConfiguration &&
             (identical(other.range, range) || other.range == range) &&
             (identical(other.count, count) || other.count == count) &&
             (identical(other.enabled, enabled) || other.enabled == enabled));
@@ -5367,149 +4886,106 @@ class _$MapCardAlertConfigurationImpl implements _MapCardAlertConfiguration {
   @override
   int get hashCode => Object.hash(runtimeType, range, count, enabled);
 
-  /// Create a copy of MapCardAlertConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MapCardAlertConfigurationImplCopyWith<_$MapCardAlertConfigurationImpl>
-      get copyWith => __$$MapCardAlertConfigurationImplCopyWithImpl<
-          _$MapCardAlertConfigurationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MapCardAlertConfigurationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'MapCardAlertConfiguration(range: $range, count: $count, enabled: $enabled)';
   }
 }
 
-abstract class _MapCardAlertConfiguration implements MapCardAlertConfiguration {
-  const factory _MapCardAlertConfiguration(
-      {@JsonKey(unknownEnumValue: MapCardMode.lastDay) final MapCardMode range,
-      final bool count,
-      final bool enabled}) = _$MapCardAlertConfigurationImpl;
-
-  factory _MapCardAlertConfiguration.fromJson(Map<String, dynamic> json) =
-      _$MapCardAlertConfigurationImpl.fromJson;
-
-  /// Represents the range of search results to be displayed on the map.
+/// @nodoc
+abstract mixin class _$MapCardAlertConfigurationCopyWith<$Res>
+    implements $MapCardAlertConfigurationCopyWith<$Res> {
+  factory _$MapCardAlertConfigurationCopyWith(_MapCardAlertConfiguration value,
+          $Res Function(_MapCardAlertConfiguration) _then) =
+      __$MapCardAlertConfigurationCopyWithImpl;
   @override
-  @JsonKey(unknownEnumValue: MapCardMode.lastDay)
-  MapCardMode get range;
+  @useResult
+  $Res call(
+      {@JsonKey(unknownEnumValue: MapCardMode.lastDay) MapCardMode range,
+      bool count,
+      bool enabled});
+}
 
-  /// Display the count of alerts in the map card.
-  @override
-  bool get count;
+/// @nodoc
+class __$MapCardAlertConfigurationCopyWithImpl<$Res>
+    implements _$MapCardAlertConfigurationCopyWith<$Res> {
+  __$MapCardAlertConfigurationCopyWithImpl(this._self, this._then);
 
-  /// Indicates if the alert segment is enabled.
-  @override
-  bool get enabled;
+  final _MapCardAlertConfiguration _self;
+  final $Res Function(_MapCardAlertConfiguration) _then;
 
   /// Create a copy of MapCardAlertConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MapCardAlertConfigurationImplCopyWith<_$MapCardAlertConfigurationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-MapCardAlertConfigurationInput _$MapCardAlertConfigurationInputFromJson(
-    Map<String, dynamic> json) {
-  return _MapCardAlertConfigurationInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? range = null,
+    Object? count = null,
+    Object? enabled = null,
+  }) {
+    return _then(_MapCardAlertConfiguration(
+      range: null == range
+          ? _self.range
+          : range // ignore: cast_nullable_to_non_nullable
+              as MapCardMode,
+      count: null == count
+          ? _self.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enabled: null == enabled
+          ? _self.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$MapCardAlertConfigurationInput {
   /// Represents the range of search results to be displayed on the map.
   @JsonKey(unknownEnumValue: MapCardMode.lastDay)
-  MapCardMode get range => throw _privateConstructorUsedError;
+  MapCardMode get range;
 
   /// Represents the range of search results to be displayed on the map.
   @JsonKey(unknownEnumValue: MapCardMode.lastDay)
-  set range(MapCardMode value) => throw _privateConstructorUsedError;
+  set range(MapCardMode value);
 
   /// Display the count of alerts in the map card.
-  bool get count => throw _privateConstructorUsedError;
+  bool get count;
 
   /// Display the count of alerts in the map card.
-  set count(bool value) => throw _privateConstructorUsedError;
+  set count(bool value);
 
   /// Indicates if the alert segment is enabled.
-  bool get enabled => throw _privateConstructorUsedError;
+  bool get enabled;
 
   /// Indicates if the alert segment is enabled.
-  set enabled(bool value) => throw _privateConstructorUsedError;
-
-  /// Serializes this MapCardAlertConfigurationInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set enabled(bool value);
 
   /// Create a copy of MapCardAlertConfigurationInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MapCardAlertConfigurationInputCopyWith<MapCardAlertConfigurationInput>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MapCardAlertConfigurationInputCopyWith<$Res> {
-  factory $MapCardAlertConfigurationInputCopyWith(
-          MapCardAlertConfigurationInput value,
-          $Res Function(MapCardAlertConfigurationInput) then) =
-      _$MapCardAlertConfigurationInputCopyWithImpl<$Res,
-          MapCardAlertConfigurationInput>;
-  @useResult
-  $Res call(
-      {@JsonKey(unknownEnumValue: MapCardMode.lastDay) MapCardMode range,
-      bool count,
-      bool enabled});
-}
-
-/// @nodoc
-class _$MapCardAlertConfigurationInputCopyWithImpl<$Res,
-        $Val extends MapCardAlertConfigurationInput>
-    implements $MapCardAlertConfigurationInputCopyWith<$Res> {
-  _$MapCardAlertConfigurationInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of MapCardAlertConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $MapCardAlertConfigurationInputCopyWith<MapCardAlertConfigurationInput>
+      get copyWith => _$MapCardAlertConfigurationInputCopyWithImpl<
+              MapCardAlertConfigurationInput>(
+          this as MapCardAlertConfigurationInput, _$identity);
+
+  /// Serializes this MapCardAlertConfigurationInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? range = null,
-    Object? count = null,
-    Object? enabled = null,
-  }) {
-    return _then(_value.copyWith(
-      range: null == range
-          ? _value.range
-          : range // ignore: cast_nullable_to_non_nullable
-              as MapCardMode,
-      count: null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as bool,
-      enabled: null == enabled
-          ? _value.enabled
-          : enabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  String toString() {
+    return 'MapCardAlertConfigurationInput(range: $range, count: $count, enabled: $enabled)';
   }
 }
 
 /// @nodoc
-abstract class _$$MapCardAlertConfigurationInputImplCopyWith<$Res>
-    implements $MapCardAlertConfigurationInputCopyWith<$Res> {
-  factory _$$MapCardAlertConfigurationInputImplCopyWith(
-          _$MapCardAlertConfigurationInputImpl value,
-          $Res Function(_$MapCardAlertConfigurationInputImpl) then) =
-      __$$MapCardAlertConfigurationInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MapCardAlertConfigurationInputCopyWith<$Res> {
+  factory $MapCardAlertConfigurationInputCopyWith(
+          MapCardAlertConfigurationInput value,
+          $Res Function(MapCardAlertConfigurationInput) _then) =
+      _$MapCardAlertConfigurationInputCopyWithImpl;
   @useResult
   $Res call(
       {@JsonKey(unknownEnumValue: MapCardMode.lastDay) MapCardMode range,
@@ -5518,14 +4994,12 @@ abstract class _$$MapCardAlertConfigurationInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MapCardAlertConfigurationInputImplCopyWithImpl<$Res>
-    extends _$MapCardAlertConfigurationInputCopyWithImpl<$Res,
-        _$MapCardAlertConfigurationInputImpl>
-    implements _$$MapCardAlertConfigurationInputImplCopyWith<$Res> {
-  __$$MapCardAlertConfigurationInputImplCopyWithImpl(
-      _$MapCardAlertConfigurationInputImpl _value,
-      $Res Function(_$MapCardAlertConfigurationInputImpl) _then)
-      : super(_value, _then);
+class _$MapCardAlertConfigurationInputCopyWithImpl<$Res>
+    implements $MapCardAlertConfigurationInputCopyWith<$Res> {
+  _$MapCardAlertConfigurationInputCopyWithImpl(this._self, this._then);
+
+  final MapCardAlertConfigurationInput _self;
+  final $Res Function(MapCardAlertConfigurationInput) _then;
 
   /// Create a copy of MapCardAlertConfigurationInput
   /// with the given fields replaced by the non-null parameter values.
@@ -5536,17 +5010,17 @@ class __$$MapCardAlertConfigurationInputImplCopyWithImpl<$Res>
     Object? count = null,
     Object? enabled = null,
   }) {
-    return _then(_$MapCardAlertConfigurationInputImpl(
+    return _then(_self.copyWith(
       range: null == range
-          ? _value.range
+          ? _self.range
           : range // ignore: cast_nullable_to_non_nullable
               as MapCardMode,
       count: null == count
-          ? _value.count
+          ? _self.count
           : count // ignore: cast_nullable_to_non_nullable
               as bool,
       enabled: null == enabled
-          ? _value.enabled
+          ? _self.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -5555,17 +5029,15 @@ class __$$MapCardAlertConfigurationInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MapCardAlertConfigurationInputImpl
-    implements _MapCardAlertConfigurationInput {
-  _$MapCardAlertConfigurationInputImpl(
+class _MapCardAlertConfigurationInput
+    implements MapCardAlertConfigurationInput {
+  _MapCardAlertConfigurationInput(
       {@JsonKey(unknownEnumValue: MapCardMode.lastDay)
       this.range = MapCardMode.lastDay,
       this.count = false,
       this.enabled = true});
-
-  factory _$MapCardAlertConfigurationInputImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$MapCardAlertConfigurationInputImplFromJson(json);
+  factory _MapCardAlertConfigurationInput.fromJson(Map<String, dynamic> json) =>
+      _$MapCardAlertConfigurationInputFromJson(json);
 
   /// Represents the range of search results to be displayed on the map.
   @override
@@ -5582,166 +5054,138 @@ class _$MapCardAlertConfigurationInputImpl
   @JsonKey()
   bool enabled;
 
+  /// Create a copy of MapCardAlertConfigurationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MapCardAlertConfigurationInputCopyWith<_MapCardAlertConfigurationInput>
+      get copyWith => __$MapCardAlertConfigurationInputCopyWithImpl<
+          _MapCardAlertConfigurationInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MapCardAlertConfigurationInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'MapCardAlertConfigurationInput(range: $range, count: $count, enabled: $enabled)';
   }
-
-  /// Create a copy of MapCardAlertConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$MapCardAlertConfigurationInputImplCopyWith<
-          _$MapCardAlertConfigurationInputImpl>
-      get copyWith => __$$MapCardAlertConfigurationInputImplCopyWithImpl<
-          _$MapCardAlertConfigurationInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MapCardAlertConfigurationInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _MapCardAlertConfigurationInput
-    implements MapCardAlertConfigurationInput {
-  factory _MapCardAlertConfigurationInput(
+/// @nodoc
+abstract mixin class _$MapCardAlertConfigurationInputCopyWith<$Res>
+    implements $MapCardAlertConfigurationInputCopyWith<$Res> {
+  factory _$MapCardAlertConfigurationInputCopyWith(
+          _MapCardAlertConfigurationInput value,
+          $Res Function(_MapCardAlertConfigurationInput) _then) =
+      __$MapCardAlertConfigurationInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {@JsonKey(unknownEnumValue: MapCardMode.lastDay) MapCardMode range,
       bool count,
-      bool enabled}) = _$MapCardAlertConfigurationInputImpl;
+      bool enabled});
+}
 
-  factory _MapCardAlertConfigurationInput.fromJson(Map<String, dynamic> json) =
-      _$MapCardAlertConfigurationInputImpl.fromJson;
+/// @nodoc
+class __$MapCardAlertConfigurationInputCopyWithImpl<$Res>
+    implements _$MapCardAlertConfigurationInputCopyWith<$Res> {
+  __$MapCardAlertConfigurationInputCopyWithImpl(this._self, this._then);
 
-  /// Represents the range of search results to be displayed on the map.
-  @override
-  @JsonKey(unknownEnumValue: MapCardMode.lastDay)
-  MapCardMode get range;
-
-  /// Represents the range of search results to be displayed on the map.
-  @JsonKey(unknownEnumValue: MapCardMode.lastDay)
-  set range(MapCardMode value);
-
-  /// Display the count of alerts in the map card.
-  @override
-  bool get count;
-
-  /// Display the count of alerts in the map card.
-  set count(bool value);
-
-  /// Indicates if the alert segment is enabled.
-  @override
-  bool get enabled;
-
-  /// Indicates if the alert segment is enabled.
-  set enabled(bool value);
+  final _MapCardAlertConfigurationInput _self;
+  final $Res Function(_MapCardAlertConfigurationInput) _then;
 
   /// Create a copy of MapCardAlertConfigurationInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MapCardAlertConfigurationInputImplCopyWith<
-          _$MapCardAlertConfigurationInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-MapCardConnectionConfiguration _$MapCardConnectionConfigurationFromJson(
-    Map<String, dynamic> json) {
-  return _MapCardConnectionConfiguration.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? range = null,
+    Object? count = null,
+    Object? enabled = null,
+  }) {
+    return _then(_MapCardAlertConfigurationInput(
+      range: null == range
+          ? _self.range
+          : range // ignore: cast_nullable_to_non_nullable
+              as MapCardMode,
+      count: null == count
+          ? _self.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as bool,
+      enabled: null == enabled
+          ? _self.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$MapCardConnectionConfiguration {
   /// Indicates if the connection indicatpr segment is enabled.
-  bool get indicator => throw _privateConstructorUsedError;
+  bool get indicator;
 
   /// Indicates if the address segment is enabled.
-  bool get address => throw _privateConstructorUsedError;
+  bool get address;
 
   /// Indicates if the time segment is enabled.
-  bool get time => throw _privateConstructorUsedError;
-
-  /// Serializes this MapCardConnectionConfiguration to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  bool get time;
 
   /// Create a copy of MapCardConnectionConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MapCardConnectionConfigurationCopyWith<MapCardConnectionConfiguration>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MapCardConnectionConfigurationCopyWith<$Res> {
-  factory $MapCardConnectionConfigurationCopyWith(
-          MapCardConnectionConfiguration value,
-          $Res Function(MapCardConnectionConfiguration) then) =
-      _$MapCardConnectionConfigurationCopyWithImpl<$Res,
-          MapCardConnectionConfiguration>;
-  @useResult
-  $Res call({bool indicator, bool address, bool time});
-}
-
-/// @nodoc
-class _$MapCardConnectionConfigurationCopyWithImpl<$Res,
-        $Val extends MapCardConnectionConfiguration>
-    implements $MapCardConnectionConfigurationCopyWith<$Res> {
-  _$MapCardConnectionConfigurationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of MapCardConnectionConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $MapCardConnectionConfigurationCopyWith<MapCardConnectionConfiguration>
+      get copyWith => _$MapCardConnectionConfigurationCopyWithImpl<
+              MapCardConnectionConfiguration>(
+          this as MapCardConnectionConfiguration, _$identity);
+
+  /// Serializes this MapCardConnectionConfiguration to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? indicator = null,
-    Object? address = null,
-    Object? time = null,
-  }) {
-    return _then(_value.copyWith(
-      indicator: null == indicator
-          ? _value.indicator
-          : indicator // ignore: cast_nullable_to_non_nullable
-              as bool,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as bool,
-      time: null == time
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MapCardConnectionConfiguration &&
+            (identical(other.indicator, indicator) ||
+                other.indicator == indicator) &&
+            (identical(other.address, address) || other.address == address) &&
+            (identical(other.time, time) || other.time == time));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, indicator, address, time);
+
+  @override
+  String toString() {
+    return 'MapCardConnectionConfiguration(indicator: $indicator, address: $address, time: $time)';
   }
 }
 
 /// @nodoc
-abstract class _$$MapCardConnectionConfigurationImplCopyWith<$Res>
-    implements $MapCardConnectionConfigurationCopyWith<$Res> {
-  factory _$$MapCardConnectionConfigurationImplCopyWith(
-          _$MapCardConnectionConfigurationImpl value,
-          $Res Function(_$MapCardConnectionConfigurationImpl) then) =
-      __$$MapCardConnectionConfigurationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MapCardConnectionConfigurationCopyWith<$Res> {
+  factory $MapCardConnectionConfigurationCopyWith(
+          MapCardConnectionConfiguration value,
+          $Res Function(MapCardConnectionConfiguration) _then) =
+      _$MapCardConnectionConfigurationCopyWithImpl;
   @useResult
   $Res call({bool indicator, bool address, bool time});
 }
 
 /// @nodoc
-class __$$MapCardConnectionConfigurationImplCopyWithImpl<$Res>
-    extends _$MapCardConnectionConfigurationCopyWithImpl<$Res,
-        _$MapCardConnectionConfigurationImpl>
-    implements _$$MapCardConnectionConfigurationImplCopyWith<$Res> {
-  __$$MapCardConnectionConfigurationImplCopyWithImpl(
-      _$MapCardConnectionConfigurationImpl _value,
-      $Res Function(_$MapCardConnectionConfigurationImpl) _then)
-      : super(_value, _then);
+class _$MapCardConnectionConfigurationCopyWithImpl<$Res>
+    implements $MapCardConnectionConfigurationCopyWith<$Res> {
+  _$MapCardConnectionConfigurationCopyWithImpl(this._self, this._then);
+
+  final MapCardConnectionConfiguration _self;
+  final $Res Function(MapCardConnectionConfiguration) _then;
 
   /// Create a copy of MapCardConnectionConfiguration
   /// with the given fields replaced by the non-null parameter values.
@@ -5752,17 +5196,17 @@ class __$$MapCardConnectionConfigurationImplCopyWithImpl<$Res>
     Object? address = null,
     Object? time = null,
   }) {
-    return _then(_$MapCardConnectionConfigurationImpl(
+    return _then(_self.copyWith(
       indicator: null == indicator
-          ? _value.indicator
+          ? _self.indicator
           : indicator // ignore: cast_nullable_to_non_nullable
               as bool,
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as bool,
       time: null == time
-          ? _value.time
+          ? _self.time
           : time // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -5771,14 +5215,12 @@ class __$$MapCardConnectionConfigurationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MapCardConnectionConfigurationImpl
-    implements _MapCardConnectionConfiguration {
-  const _$MapCardConnectionConfigurationImpl(
+class _MapCardConnectionConfiguration
+    implements MapCardConnectionConfiguration {
+  const _MapCardConnectionConfiguration(
       {this.indicator = true, this.address = false, this.time = false});
-
-  factory _$MapCardConnectionConfigurationImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$MapCardConnectionConfigurationImplFromJson(json);
+  factory _MapCardConnectionConfiguration.fromJson(Map<String, dynamic> json) =>
+      _$MapCardConnectionConfigurationFromJson(json);
 
   /// Indicates if the connection indicatpr segment is enabled.
   @override
@@ -5795,16 +5237,27 @@ class _$MapCardConnectionConfigurationImpl
   @JsonKey()
   final bool time;
 
+  /// Create a copy of MapCardConnectionConfiguration
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'MapCardConnectionConfiguration(indicator: $indicator, address: $address, time: $time)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MapCardConnectionConfigurationCopyWith<_MapCardConnectionConfiguration>
+      get copyWith => __$MapCardConnectionConfigurationCopyWithImpl<
+          _MapCardConnectionConfiguration>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MapCardConnectionConfigurationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MapCardConnectionConfigurationImpl &&
+            other is _MapCardConnectionConfiguration &&
             (identical(other.indicator, indicator) ||
                 other.indicator == indicator) &&
             (identical(other.address, address) || other.address == address) &&
@@ -5815,160 +5268,114 @@ class _$MapCardConnectionConfigurationImpl
   @override
   int get hashCode => Object.hash(runtimeType, indicator, address, time);
 
-  /// Create a copy of MapCardConnectionConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MapCardConnectionConfigurationImplCopyWith<
-          _$MapCardConnectionConfigurationImpl>
-      get copyWith => __$$MapCardConnectionConfigurationImplCopyWithImpl<
-          _$MapCardConnectionConfigurationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MapCardConnectionConfigurationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'MapCardConnectionConfiguration(indicator: $indicator, address: $address, time: $time)';
   }
 }
 
-abstract class _MapCardConnectionConfiguration
-    implements MapCardConnectionConfiguration {
-  const factory _MapCardConnectionConfiguration(
-      {final bool indicator,
-      final bool address,
-      final bool time}) = _$MapCardConnectionConfigurationImpl;
-
-  factory _MapCardConnectionConfiguration.fromJson(Map<String, dynamic> json) =
-      _$MapCardConnectionConfigurationImpl.fromJson;
-
-  /// Indicates if the connection indicatpr segment is enabled.
+/// @nodoc
+abstract mixin class _$MapCardConnectionConfigurationCopyWith<$Res>
+    implements $MapCardConnectionConfigurationCopyWith<$Res> {
+  factory _$MapCardConnectionConfigurationCopyWith(
+          _MapCardConnectionConfiguration value,
+          $Res Function(_MapCardConnectionConfiguration) _then) =
+      __$MapCardConnectionConfigurationCopyWithImpl;
   @override
-  bool get indicator;
+  @useResult
+  $Res call({bool indicator, bool address, bool time});
+}
 
-  /// Indicates if the address segment is enabled.
-  @override
-  bool get address;
+/// @nodoc
+class __$MapCardConnectionConfigurationCopyWithImpl<$Res>
+    implements _$MapCardConnectionConfigurationCopyWith<$Res> {
+  __$MapCardConnectionConfigurationCopyWithImpl(this._self, this._then);
 
-  /// Indicates if the time segment is enabled.
-  @override
-  bool get time;
+  final _MapCardConnectionConfiguration _self;
+  final $Res Function(_MapCardConnectionConfiguration) _then;
 
   /// Create a copy of MapCardConnectionConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MapCardConnectionConfigurationImplCopyWith<
-          _$MapCardConnectionConfigurationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-MapCardConnectionConfigurationInput
-    _$MapCardConnectionConfigurationInputFromJson(Map<String, dynamic> json) {
-  return _MapCardConnectionConfigurationInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? indicator = null,
+    Object? address = null,
+    Object? time = null,
+  }) {
+    return _then(_MapCardConnectionConfiguration(
+      indicator: null == indicator
+          ? _self.indicator
+          : indicator // ignore: cast_nullable_to_non_nullable
+              as bool,
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as bool,
+      time: null == time
+          ? _self.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$MapCardConnectionConfigurationInput {
   /// Indicates if the connection indicatpr segment is enabled.
-  bool get indicator => throw _privateConstructorUsedError;
+  bool get indicator;
 
   /// Indicates if the connection indicatpr segment is enabled.
-  set indicator(bool value) => throw _privateConstructorUsedError;
+  set indicator(bool value);
 
   /// Indicates if the address segment is enabled.
-  bool get address => throw _privateConstructorUsedError;
+  bool get address;
 
   /// Indicates if the address segment is enabled.
-  set address(bool value) => throw _privateConstructorUsedError;
+  set address(bool value);
 
   /// Indicates if the time segment is enabled.
-  bool get time => throw _privateConstructorUsedError;
+  bool get time;
 
   /// Indicates if the time segment is enabled.
-  set time(bool value) => throw _privateConstructorUsedError;
-
-  /// Serializes this MapCardConnectionConfigurationInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set time(bool value);
 
   /// Create a copy of MapCardConnectionConfigurationInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $MapCardConnectionConfigurationInputCopyWith<
           MapCardConnectionConfigurationInput>
-      get copyWith => throw _privateConstructorUsedError;
-}
+      get copyWith => _$MapCardConnectionConfigurationInputCopyWithImpl<
+              MapCardConnectionConfigurationInput>(
+          this as MapCardConnectionConfigurationInput, _$identity);
 
-/// @nodoc
-abstract class $MapCardConnectionConfigurationInputCopyWith<$Res> {
-  factory $MapCardConnectionConfigurationInputCopyWith(
-          MapCardConnectionConfigurationInput value,
-          $Res Function(MapCardConnectionConfigurationInput) then) =
-      _$MapCardConnectionConfigurationInputCopyWithImpl<$Res,
-          MapCardConnectionConfigurationInput>;
-  @useResult
-  $Res call({bool indicator, bool address, bool time});
-}
+  /// Serializes this MapCardConnectionConfigurationInput to a JSON map.
+  Map<String, dynamic> toJson();
 
-/// @nodoc
-class _$MapCardConnectionConfigurationInputCopyWithImpl<$Res,
-        $Val extends MapCardConnectionConfigurationInput>
-    implements $MapCardConnectionConfigurationInputCopyWith<$Res> {
-  _$MapCardConnectionConfigurationInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of MapCardConnectionConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? indicator = null,
-    Object? address = null,
-    Object? time = null,
-  }) {
-    return _then(_value.copyWith(
-      indicator: null == indicator
-          ? _value.indicator
-          : indicator // ignore: cast_nullable_to_non_nullable
-              as bool,
-      address: null == address
-          ? _value.address
-          : address // ignore: cast_nullable_to_non_nullable
-              as bool,
-      time: null == time
-          ? _value.time
-          : time // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ) as $Val);
+  String toString() {
+    return 'MapCardConnectionConfigurationInput(indicator: $indicator, address: $address, time: $time)';
   }
 }
 
 /// @nodoc
-abstract class _$$MapCardConnectionConfigurationInputImplCopyWith<$Res>
-    implements $MapCardConnectionConfigurationInputCopyWith<$Res> {
-  factory _$$MapCardConnectionConfigurationInputImplCopyWith(
-          _$MapCardConnectionConfigurationInputImpl value,
-          $Res Function(_$MapCardConnectionConfigurationInputImpl) then) =
-      __$$MapCardConnectionConfigurationInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MapCardConnectionConfigurationInputCopyWith<$Res> {
+  factory $MapCardConnectionConfigurationInputCopyWith(
+          MapCardConnectionConfigurationInput value,
+          $Res Function(MapCardConnectionConfigurationInput) _then) =
+      _$MapCardConnectionConfigurationInputCopyWithImpl;
   @useResult
   $Res call({bool indicator, bool address, bool time});
 }
 
 /// @nodoc
-class __$$MapCardConnectionConfigurationInputImplCopyWithImpl<$Res>
-    extends _$MapCardConnectionConfigurationInputCopyWithImpl<$Res,
-        _$MapCardConnectionConfigurationInputImpl>
-    implements _$$MapCardConnectionConfigurationInputImplCopyWith<$Res> {
-  __$$MapCardConnectionConfigurationInputImplCopyWithImpl(
-      _$MapCardConnectionConfigurationInputImpl _value,
-      $Res Function(_$MapCardConnectionConfigurationInputImpl) _then)
-      : super(_value, _then);
+class _$MapCardConnectionConfigurationInputCopyWithImpl<$Res>
+    implements $MapCardConnectionConfigurationInputCopyWith<$Res> {
+  _$MapCardConnectionConfigurationInputCopyWithImpl(this._self, this._then);
+
+  final MapCardConnectionConfigurationInput _self;
+  final $Res Function(MapCardConnectionConfigurationInput) _then;
 
   /// Create a copy of MapCardConnectionConfigurationInput
   /// with the given fields replaced by the non-null parameter values.
@@ -5979,17 +5386,17 @@ class __$$MapCardConnectionConfigurationInputImplCopyWithImpl<$Res>
     Object? address = null,
     Object? time = null,
   }) {
-    return _then(_$MapCardConnectionConfigurationInputImpl(
+    return _then(_self.copyWith(
       indicator: null == indicator
-          ? _value.indicator
+          ? _self.indicator
           : indicator // ignore: cast_nullable_to_non_nullable
               as bool,
       address: null == address
-          ? _value.address
+          ? _self.address
           : address // ignore: cast_nullable_to_non_nullable
               as bool,
       time: null == time
-          ? _value.time
+          ? _self.time
           : time // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
@@ -5998,14 +5405,13 @@ class __$$MapCardConnectionConfigurationInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MapCardConnectionConfigurationInputImpl
-    implements _MapCardConnectionConfigurationInput {
-  _$MapCardConnectionConfigurationInputImpl(
+class _MapCardConnectionConfigurationInput
+    implements MapCardConnectionConfigurationInput {
+  _MapCardConnectionConfigurationInput(
       {this.indicator = true, this.address = false, this.time = false});
-
-  factory _$MapCardConnectionConfigurationInputImpl.fromJson(
+  factory _MapCardConnectionConfigurationInput.fromJson(
           Map<String, dynamic> json) =>
-      _$$MapCardConnectionConfigurationInputImplFromJson(json);
+      _$MapCardConnectionConfigurationInputFromJson(json);
 
   /// Indicates if the connection indicatpr segment is enabled.
   @override
@@ -6022,104 +5428,128 @@ class _$MapCardConnectionConfigurationInputImpl
   @JsonKey()
   bool time;
 
+  /// Create a copy of MapCardConnectionConfigurationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MapCardConnectionConfigurationInputCopyWith<
+          _MapCardConnectionConfigurationInput>
+      get copyWith => __$MapCardConnectionConfigurationInputCopyWithImpl<
+          _MapCardConnectionConfigurationInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MapCardConnectionConfigurationInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'MapCardConnectionConfigurationInput(indicator: $indicator, address: $address, time: $time)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$MapCardConnectionConfigurationInputCopyWith<$Res>
+    implements $MapCardConnectionConfigurationInputCopyWith<$Res> {
+  factory _$MapCardConnectionConfigurationInputCopyWith(
+          _MapCardConnectionConfigurationInput value,
+          $Res Function(_MapCardConnectionConfigurationInput) _then) =
+      __$MapCardConnectionConfigurationInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({bool indicator, bool address, bool time});
+}
+
+/// @nodoc
+class __$MapCardConnectionConfigurationInputCopyWithImpl<$Res>
+    implements _$MapCardConnectionConfigurationInputCopyWith<$Res> {
+  __$MapCardConnectionConfigurationInputCopyWithImpl(this._self, this._then);
+
+  final _MapCardConnectionConfigurationInput _self;
+  final $Res Function(_MapCardConnectionConfigurationInput) _then;
 
   /// Create a copy of MapCardConnectionConfigurationInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$MapCardConnectionConfigurationInputImplCopyWith<
-          _$MapCardConnectionConfigurationInputImpl>
-      get copyWith => __$$MapCardConnectionConfigurationInputImplCopyWithImpl<
-          _$MapCardConnectionConfigurationInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MapCardConnectionConfigurationInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? indicator = null,
+    Object? address = null,
+    Object? time = null,
+  }) {
+    return _then(_MapCardConnectionConfigurationInput(
+      indicator: null == indicator
+          ? _self.indicator
+          : indicator // ignore: cast_nullable_to_non_nullable
+              as bool,
+      address: null == address
+          ? _self.address
+          : address // ignore: cast_nullable_to_non_nullable
+              as bool,
+      time: null == time
+          ? _self.time
+          : time // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
-}
-
-abstract class _MapCardConnectionConfigurationInput
-    implements MapCardConnectionConfigurationInput {
-  factory _MapCardConnectionConfigurationInput(
-      {bool indicator,
-      bool address,
-      bool time}) = _$MapCardConnectionConfigurationInputImpl;
-
-  factory _MapCardConnectionConfigurationInput.fromJson(
-          Map<String, dynamic> json) =
-      _$MapCardConnectionConfigurationInputImpl.fromJson;
-
-  /// Indicates if the connection indicatpr segment is enabled.
-  @override
-  bool get indicator;
-
-  /// Indicates if the connection indicatpr segment is enabled.
-  set indicator(bool value);
-
-  /// Indicates if the address segment is enabled.
-  @override
-  bool get address;
-
-  /// Indicates if the address segment is enabled.
-  set address(bool value);
-
-  /// Indicates if the time segment is enabled.
-  @override
-  bool get time;
-
-  /// Indicates if the time segment is enabled.
-  set time(bool value);
-
-  /// Create a copy of MapCardConnectionConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MapCardConnectionConfigurationInputImplCopyWith<
-          _$MapCardConnectionConfigurationInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-MapCardSensors _$MapCardSensorsFromJson(Map<String, dynamic> json) {
-  return _MapCardSensors.fromJson(json);
 }
 
 /// @nodoc
 mixin _$MapCardSensors {
   /// Represents the ID of the asset
-  String get assetId => throw _privateConstructorUsedError;
+  String get assetId;
 
   /// Represents the alerts configuration
-  MapCardAlertConfiguration get alerts => throw _privateConstructorUsedError;
+  MapCardAlertConfiguration get alerts;
 
   /// Represents the connection configuration
-  MapCardConnectionConfiguration get connection =>
-      throw _privateConstructorUsedError;
+  MapCardConnectionConfiguration get connection;
 
   /// Represetns the sensors configuration
-  MapCardSensorsConfiguration get sensors => throw _privateConstructorUsedError;
-
-  /// Serializes this MapCardSensors to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  MapCardSensorsConfiguration get sensors;
 
   /// Create a copy of MapCardSensors
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $MapCardSensorsCopyWith<MapCardSensors> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$MapCardSensorsCopyWithImpl<MapCardSensors>(
+          this as MapCardSensors, _$identity);
+
+  /// Serializes this MapCardSensors to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MapCardSensors &&
+            (identical(other.assetId, assetId) || other.assetId == assetId) &&
+            (identical(other.alerts, alerts) || other.alerts == alerts) &&
+            (identical(other.connection, connection) ||
+                other.connection == connection) &&
+            (identical(other.sensors, sensors) || other.sensors == sensors));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, assetId, alerts, connection, sensors);
+
+  @override
+  String toString() {
+    return 'MapCardSensors(assetId: $assetId, alerts: $alerts, connection: $connection, sensors: $sensors)';
+  }
 }
 
 /// @nodoc
-abstract class $MapCardSensorsCopyWith<$Res> {
+abstract mixin class $MapCardSensorsCopyWith<$Res> {
   factory $MapCardSensorsCopyWith(
-          MapCardSensors value, $Res Function(MapCardSensors) then) =
-      _$MapCardSensorsCopyWithImpl<$Res, MapCardSensors>;
+          MapCardSensors value, $Res Function(MapCardSensors) _then) =
+      _$MapCardSensorsCopyWithImpl;
   @useResult
   $Res call(
       {String assetId,
@@ -6133,14 +5563,12 @@ abstract class $MapCardSensorsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MapCardSensorsCopyWithImpl<$Res, $Val extends MapCardSensors>
+class _$MapCardSensorsCopyWithImpl<$Res>
     implements $MapCardSensorsCopyWith<$Res> {
-  _$MapCardSensorsCopyWithImpl(this._value, this._then);
+  _$MapCardSensorsCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final MapCardSensors _self;
+  final $Res Function(MapCardSensors) _then;
 
   /// Create a copy of MapCardSensors
   /// with the given fields replaced by the non-null parameter values.
@@ -6152,24 +5580,24 @@ class _$MapCardSensorsCopyWithImpl<$Res, $Val extends MapCardSensors>
     Object? connection = null,
     Object? sensors = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       assetId: null == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String,
       alerts: null == alerts
-          ? _value.alerts
+          ? _self.alerts
           : alerts // ignore: cast_nullable_to_non_nullable
               as MapCardAlertConfiguration,
       connection: null == connection
-          ? _value.connection
+          ? _self.connection
           : connection // ignore: cast_nullable_to_non_nullable
               as MapCardConnectionConfiguration,
       sensors: null == sensors
-          ? _value.sensors
+          ? _self.sensors
           : sensors // ignore: cast_nullable_to_non_nullable
               as MapCardSensorsConfiguration,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of MapCardSensors
@@ -6177,8 +5605,8 @@ class _$MapCardSensorsCopyWithImpl<$Res, $Val extends MapCardSensors>
   @override
   @pragma('vm:prefer-inline')
   $MapCardAlertConfigurationCopyWith<$Res> get alerts {
-    return $MapCardAlertConfigurationCopyWith<$Res>(_value.alerts, (value) {
-      return _then(_value.copyWith(alerts: value) as $Val);
+    return $MapCardAlertConfigurationCopyWith<$Res>(_self.alerts, (value) {
+      return _then(_self.copyWith(alerts: value));
     });
   }
 
@@ -6187,9 +5615,9 @@ class _$MapCardSensorsCopyWithImpl<$Res, $Val extends MapCardSensors>
   @override
   @pragma('vm:prefer-inline')
   $MapCardConnectionConfigurationCopyWith<$Res> get connection {
-    return $MapCardConnectionConfigurationCopyWith<$Res>(_value.connection,
+    return $MapCardConnectionConfigurationCopyWith<$Res>(_self.connection,
         (value) {
-      return _then(_value.copyWith(connection: value) as $Val);
+      return _then(_self.copyWith(connection: value));
     });
   }
 
@@ -6198,84 +5626,22 @@ class _$MapCardSensorsCopyWithImpl<$Res, $Val extends MapCardSensors>
   @override
   @pragma('vm:prefer-inline')
   $MapCardSensorsConfigurationCopyWith<$Res> get sensors {
-    return $MapCardSensorsConfigurationCopyWith<$Res>(_value.sensors, (value) {
-      return _then(_value.copyWith(sensors: value) as $Val);
+    return $MapCardSensorsConfigurationCopyWith<$Res>(_self.sensors, (value) {
+      return _then(_self.copyWith(sensors: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$MapCardSensorsImplCopyWith<$Res>
-    implements $MapCardSensorsCopyWith<$Res> {
-  factory _$$MapCardSensorsImplCopyWith(_$MapCardSensorsImpl value,
-          $Res Function(_$MapCardSensorsImpl) then) =
-      __$$MapCardSensorsImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String assetId,
-      MapCardAlertConfiguration alerts,
-      MapCardConnectionConfiguration connection,
-      MapCardSensorsConfiguration sensors});
-
-  @override
-  $MapCardAlertConfigurationCopyWith<$Res> get alerts;
-  @override
-  $MapCardConnectionConfigurationCopyWith<$Res> get connection;
-  @override
-  $MapCardSensorsConfigurationCopyWith<$Res> get sensors;
-}
-
-/// @nodoc
-class __$$MapCardSensorsImplCopyWithImpl<$Res>
-    extends _$MapCardSensorsCopyWithImpl<$Res, _$MapCardSensorsImpl>
-    implements _$$MapCardSensorsImplCopyWith<$Res> {
-  __$$MapCardSensorsImplCopyWithImpl(
-      _$MapCardSensorsImpl _value, $Res Function(_$MapCardSensorsImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of MapCardSensors
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? assetId = null,
-    Object? alerts = null,
-    Object? connection = null,
-    Object? sensors = null,
-  }) {
-    return _then(_$MapCardSensorsImpl(
-      assetId: null == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String,
-      alerts: null == alerts
-          ? _value.alerts
-          : alerts // ignore: cast_nullable_to_non_nullable
-              as MapCardAlertConfiguration,
-      connection: null == connection
-          ? _value.connection
-          : connection // ignore: cast_nullable_to_non_nullable
-              as MapCardConnectionConfiguration,
-      sensors: null == sensors
-          ? _value.sensors
-          : sensors // ignore: cast_nullable_to_non_nullable
-              as MapCardSensorsConfiguration,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$MapCardSensorsImpl implements _MapCardSensors {
-  const _$MapCardSensorsImpl(
+class _MapCardSensors implements MapCardSensors {
+  const _MapCardSensors(
       {required this.assetId,
       required this.alerts,
       required this.connection,
       required this.sensors});
-
-  factory _$MapCardSensorsImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MapCardSensorsImplFromJson(json);
+  factory _MapCardSensors.fromJson(Map<String, dynamic> json) =>
+      _$MapCardSensorsFromJson(json);
 
   /// Represents the ID of the asset
   @override
@@ -6293,16 +5659,26 @@ class _$MapCardSensorsImpl implements _MapCardSensors {
   @override
   final MapCardSensorsConfiguration sensors;
 
+  /// Create a copy of MapCardSensors
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'MapCardSensors(assetId: $assetId, alerts: $alerts, connection: $connection, sensors: $sensors)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MapCardSensorsCopyWith<_MapCardSensors> get copyWith =>
+      __$MapCardSensorsCopyWithImpl<_MapCardSensors>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MapCardSensorsToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MapCardSensorsImpl &&
+            other is _MapCardSensors &&
             (identical(other.assetId, assetId) || other.assetId == assetId) &&
             (identical(other.alerts, alerts) || other.alerts == alerts) &&
             (identical(other.connection, connection) ||
@@ -6315,109 +5691,152 @@ class _$MapCardSensorsImpl implements _MapCardSensors {
   int get hashCode =>
       Object.hash(runtimeType, assetId, alerts, connection, sensors);
 
-  /// Create a copy of MapCardSensors
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MapCardSensorsImplCopyWith<_$MapCardSensorsImpl> get copyWith =>
-      __$$MapCardSensorsImplCopyWithImpl<_$MapCardSensorsImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MapCardSensorsImplToJson(
-      this,
-    );
+  String toString() {
+    return 'MapCardSensors(assetId: $assetId, alerts: $alerts, connection: $connection, sensors: $sensors)';
   }
 }
 
-abstract class _MapCardSensors implements MapCardSensors {
-  const factory _MapCardSensors(
-          {required final String assetId,
-          required final MapCardAlertConfiguration alerts,
-          required final MapCardConnectionConfiguration connection,
-          required final MapCardSensorsConfiguration sensors}) =
-      _$MapCardSensorsImpl;
-
-  factory _MapCardSensors.fromJson(Map<String, dynamic> json) =
-      _$MapCardSensorsImpl.fromJson;
-
-  /// Represents the ID of the asset
+/// @nodoc
+abstract mixin class _$MapCardSensorsCopyWith<$Res>
+    implements $MapCardSensorsCopyWith<$Res> {
+  factory _$MapCardSensorsCopyWith(
+          _MapCardSensors value, $Res Function(_MapCardSensors) _then) =
+      __$MapCardSensorsCopyWithImpl;
   @override
-  String get assetId;
+  @useResult
+  $Res call(
+      {String assetId,
+      MapCardAlertConfiguration alerts,
+      MapCardConnectionConfiguration connection,
+      MapCardSensorsConfiguration sensors});
 
-  /// Represents the alerts configuration
   @override
-  MapCardAlertConfiguration get alerts;
+  $MapCardAlertConfigurationCopyWith<$Res> get alerts;
+  @override
+  $MapCardConnectionConfigurationCopyWith<$Res> get connection;
+  @override
+  $MapCardSensorsConfigurationCopyWith<$Res> get sensors;
+}
 
-  /// Represents the connection configuration
-  @override
-  MapCardConnectionConfiguration get connection;
+/// @nodoc
+class __$MapCardSensorsCopyWithImpl<$Res>
+    implements _$MapCardSensorsCopyWith<$Res> {
+  __$MapCardSensorsCopyWithImpl(this._self, this._then);
 
-  /// Represetns the sensors configuration
-  @override
-  MapCardSensorsConfiguration get sensors;
+  final _MapCardSensors _self;
+  final $Res Function(_MapCardSensors) _then;
 
   /// Create a copy of MapCardSensors
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MapCardSensorsImplCopyWith<_$MapCardSensorsImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? assetId = null,
+    Object? alerts = null,
+    Object? connection = null,
+    Object? sensors = null,
+  }) {
+    return _then(_MapCardSensors(
+      assetId: null == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      alerts: null == alerts
+          ? _self.alerts
+          : alerts // ignore: cast_nullable_to_non_nullable
+              as MapCardAlertConfiguration,
+      connection: null == connection
+          ? _self.connection
+          : connection // ignore: cast_nullable_to_non_nullable
+              as MapCardConnectionConfiguration,
+      sensors: null == sensors
+          ? _self.sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as MapCardSensorsConfiguration,
+    ));
+  }
 
-MapCardSensorsInput _$MapCardSensorsInputFromJson(Map<String, dynamic> json) {
-  return _MapCardSensorsInput.fromJson(json);
+  /// Create a copy of MapCardSensors
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MapCardAlertConfigurationCopyWith<$Res> get alerts {
+    return $MapCardAlertConfigurationCopyWith<$Res>(_self.alerts, (value) {
+      return _then(_self.copyWith(alerts: value));
+    });
+  }
+
+  /// Create a copy of MapCardSensors
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MapCardConnectionConfigurationCopyWith<$Res> get connection {
+    return $MapCardConnectionConfigurationCopyWith<$Res>(_self.connection,
+        (value) {
+      return _then(_self.copyWith(connection: value));
+    });
+  }
+
+  /// Create a copy of MapCardSensors
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MapCardSensorsConfigurationCopyWith<$Res> get sensors {
+    return $MapCardSensorsConfigurationCopyWith<$Res>(_self.sensors, (value) {
+      return _then(_self.copyWith(sensors: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$MapCardSensorsInput {
   /// Represents the ID of the asset
-  String? get assetId => throw _privateConstructorUsedError;
+  String? get assetId;
 
   /// Represents the ID of the asset
-  set assetId(String? value) => throw _privateConstructorUsedError;
+  set assetId(String? value);
 
   /// Represents the alerts configuration
-  MapCardAlertConfigurationInput? get alerts =>
-      throw _privateConstructorUsedError;
+  MapCardAlertConfigurationInput? get alerts;
 
   /// Represents the alerts configuration
-  set alerts(MapCardAlertConfigurationInput? value) =>
-      throw _privateConstructorUsedError;
+  set alerts(MapCardAlertConfigurationInput? value);
 
   /// Represents the connection configuration
-  MapCardConnectionConfigurationInput? get connection =>
-      throw _privateConstructorUsedError;
+  MapCardConnectionConfigurationInput? get connection;
 
   /// Represents the connection configuration
-  set connection(MapCardConnectionConfigurationInput? value) =>
-      throw _privateConstructorUsedError;
+  set connection(MapCardConnectionConfigurationInput? value);
 
   /// Represetns the sensors configuration
-  MapCardSensorsConfigurationInput? get sensors =>
-      throw _privateConstructorUsedError;
+  MapCardSensorsConfigurationInput? get sensors;
 
   /// Represetns the sensors configuration
-  set sensors(MapCardSensorsConfigurationInput? value) =>
-      throw _privateConstructorUsedError;
-
-  /// Serializes this MapCardSensorsInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set sensors(MapCardSensorsConfigurationInput? value);
 
   /// Create a copy of MapCardSensorsInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $MapCardSensorsInputCopyWith<MapCardSensorsInput> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$MapCardSensorsInputCopyWithImpl<MapCardSensorsInput>(
+          this as MapCardSensorsInput, _$identity);
+
+  /// Serializes this MapCardSensorsInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'MapCardSensorsInput(assetId: $assetId, alerts: $alerts, connection: $connection, sensors: $sensors)';
+  }
 }
 
 /// @nodoc
-abstract class $MapCardSensorsInputCopyWith<$Res> {
+abstract mixin class $MapCardSensorsInputCopyWith<$Res> {
   factory $MapCardSensorsInputCopyWith(
-          MapCardSensorsInput value, $Res Function(MapCardSensorsInput) then) =
-      _$MapCardSensorsInputCopyWithImpl<$Res, MapCardSensorsInput>;
+          MapCardSensorsInput value, $Res Function(MapCardSensorsInput) _then) =
+      _$MapCardSensorsInputCopyWithImpl;
   @useResult
   $Res call(
       {String? assetId,
@@ -6431,14 +5850,12 @@ abstract class $MapCardSensorsInputCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$MapCardSensorsInputCopyWithImpl<$Res, $Val extends MapCardSensorsInput>
+class _$MapCardSensorsInputCopyWithImpl<$Res>
     implements $MapCardSensorsInputCopyWith<$Res> {
-  _$MapCardSensorsInputCopyWithImpl(this._value, this._then);
+  _$MapCardSensorsInputCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final MapCardSensorsInput _self;
+  final $Res Function(MapCardSensorsInput) _then;
 
   /// Create a copy of MapCardSensorsInput
   /// with the given fields replaced by the non-null parameter values.
@@ -6450,24 +5867,24 @@ class _$MapCardSensorsInputCopyWithImpl<$Res, $Val extends MapCardSensorsInput>
     Object? connection = freezed,
     Object? sensors = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       assetId: freezed == assetId
-          ? _value.assetId
+          ? _self.assetId
           : assetId // ignore: cast_nullable_to_non_nullable
               as String?,
       alerts: freezed == alerts
-          ? _value.alerts
+          ? _self.alerts
           : alerts // ignore: cast_nullable_to_non_nullable
               as MapCardAlertConfigurationInput?,
       connection: freezed == connection
-          ? _value.connection
+          ? _self.connection
           : connection // ignore: cast_nullable_to_non_nullable
               as MapCardConnectionConfigurationInput?,
       sensors: freezed == sensors
-          ? _value.sensors
+          ? _self.sensors
           : sensors // ignore: cast_nullable_to_non_nullable
               as MapCardSensorsConfigurationInput?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of MapCardSensorsInput
@@ -6475,13 +5892,13 @@ class _$MapCardSensorsInputCopyWithImpl<$Res, $Val extends MapCardSensorsInput>
   @override
   @pragma('vm:prefer-inline')
   $MapCardAlertConfigurationInputCopyWith<$Res>? get alerts {
-    if (_value.alerts == null) {
+    if (_self.alerts == null) {
       return null;
     }
 
-    return $MapCardAlertConfigurationInputCopyWith<$Res>(_value.alerts!,
+    return $MapCardAlertConfigurationInputCopyWith<$Res>(_self.alerts!,
         (value) {
-      return _then(_value.copyWith(alerts: value) as $Val);
+      return _then(_self.copyWith(alerts: value));
     });
   }
 
@@ -6490,13 +5907,13 @@ class _$MapCardSensorsInputCopyWithImpl<$Res, $Val extends MapCardSensorsInput>
   @override
   @pragma('vm:prefer-inline')
   $MapCardConnectionConfigurationInputCopyWith<$Res>? get connection {
-    if (_value.connection == null) {
+    if (_self.connection == null) {
       return null;
     }
 
-    return $MapCardConnectionConfigurationInputCopyWith<$Res>(
-        _value.connection!, (value) {
-      return _then(_value.copyWith(connection: value) as $Val);
+    return $MapCardConnectionConfigurationInputCopyWith<$Res>(_self.connection!,
+        (value) {
+      return _then(_self.copyWith(connection: value));
     });
   }
 
@@ -6505,86 +5922,24 @@ class _$MapCardSensorsInputCopyWithImpl<$Res, $Val extends MapCardSensorsInput>
   @override
   @pragma('vm:prefer-inline')
   $MapCardSensorsConfigurationInputCopyWith<$Res>? get sensors {
-    if (_value.sensors == null) {
+    if (_self.sensors == null) {
       return null;
     }
 
-    return $MapCardSensorsConfigurationInputCopyWith<$Res>(_value.sensors!,
+    return $MapCardSensorsConfigurationInputCopyWith<$Res>(_self.sensors!,
         (value) {
-      return _then(_value.copyWith(sensors: value) as $Val);
+      return _then(_self.copyWith(sensors: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$MapCardSensorsInputImplCopyWith<$Res>
-    implements $MapCardSensorsInputCopyWith<$Res> {
-  factory _$$MapCardSensorsInputImplCopyWith(_$MapCardSensorsInputImpl value,
-          $Res Function(_$MapCardSensorsInputImpl) then) =
-      __$$MapCardSensorsInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String? assetId,
-      MapCardAlertConfigurationInput? alerts,
-      MapCardConnectionConfigurationInput? connection,
-      MapCardSensorsConfigurationInput? sensors});
-
-  @override
-  $MapCardAlertConfigurationInputCopyWith<$Res>? get alerts;
-  @override
-  $MapCardConnectionConfigurationInputCopyWith<$Res>? get connection;
-  @override
-  $MapCardSensorsConfigurationInputCopyWith<$Res>? get sensors;
-}
-
-/// @nodoc
-class __$$MapCardSensorsInputImplCopyWithImpl<$Res>
-    extends _$MapCardSensorsInputCopyWithImpl<$Res, _$MapCardSensorsInputImpl>
-    implements _$$MapCardSensorsInputImplCopyWith<$Res> {
-  __$$MapCardSensorsInputImplCopyWithImpl(_$MapCardSensorsInputImpl _value,
-      $Res Function(_$MapCardSensorsInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of MapCardSensorsInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? assetId = freezed,
-    Object? alerts = freezed,
-    Object? connection = freezed,
-    Object? sensors = freezed,
-  }) {
-    return _then(_$MapCardSensorsInputImpl(
-      assetId: freezed == assetId
-          ? _value.assetId
-          : assetId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      alerts: freezed == alerts
-          ? _value.alerts
-          : alerts // ignore: cast_nullable_to_non_nullable
-              as MapCardAlertConfigurationInput?,
-      connection: freezed == connection
-          ? _value.connection
-          : connection // ignore: cast_nullable_to_non_nullable
-              as MapCardConnectionConfigurationInput?,
-      sensors: freezed == sensors
-          ? _value.sensors
-          : sensors // ignore: cast_nullable_to_non_nullable
-              as MapCardSensorsConfigurationInput?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$MapCardSensorsInputImpl implements _MapCardSensorsInput {
-  _$MapCardSensorsInputImpl(
+class _MapCardSensorsInput implements MapCardSensorsInput {
+  _MapCardSensorsInput(
       {this.assetId, this.alerts, this.connection, this.sensors});
-
-  factory _$MapCardSensorsInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$MapCardSensorsInputImplFromJson(json);
+  factory _MapCardSensorsInput.fromJson(Map<String, dynamic> json) =>
+      _$MapCardSensorsInputFromJson(json);
 
   /// Represents the ID of the asset
   @override
@@ -6602,160 +5957,185 @@ class _$MapCardSensorsInputImpl implements _MapCardSensorsInput {
   @override
   MapCardSensorsConfigurationInput? sensors;
 
-  @override
-  String toString() {
-    return 'MapCardSensorsInput(assetId: $assetId, alerts: $alerts, connection: $connection, sensors: $sensors)';
-  }
-
   /// Create a copy of MapCardSensorsInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @pragma('vm:prefer-inline')
-  _$$MapCardSensorsInputImplCopyWith<_$MapCardSensorsInputImpl> get copyWith =>
-      __$$MapCardSensorsInputImplCopyWithImpl<_$MapCardSensorsInputImpl>(
+  _$MapCardSensorsInputCopyWith<_MapCardSensorsInput> get copyWith =>
+      __$MapCardSensorsInputCopyWithImpl<_MapCardSensorsInput>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$MapCardSensorsInputImplToJson(
+    return _$MapCardSensorsInputToJson(
       this,
     );
   }
+
+  @override
+  String toString() {
+    return 'MapCardSensorsInput(assetId: $assetId, alerts: $alerts, connection: $connection, sensors: $sensors)';
+  }
 }
 
-abstract class _MapCardSensorsInput implements MapCardSensorsInput {
-  factory _MapCardSensorsInput(
+/// @nodoc
+abstract mixin class _$MapCardSensorsInputCopyWith<$Res>
+    implements $MapCardSensorsInputCopyWith<$Res> {
+  factory _$MapCardSensorsInputCopyWith(_MapCardSensorsInput value,
+          $Res Function(_MapCardSensorsInput) _then) =
+      __$MapCardSensorsInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? assetId,
       MapCardAlertConfigurationInput? alerts,
       MapCardConnectionConfigurationInput? connection,
-      MapCardSensorsConfigurationInput? sensors}) = _$MapCardSensorsInputImpl;
+      MapCardSensorsConfigurationInput? sensors});
 
-  factory _MapCardSensorsInput.fromJson(Map<String, dynamic> json) =
-      _$MapCardSensorsInputImpl.fromJson;
-
-  /// Represents the ID of the asset
   @override
-  String? get assetId;
-
-  /// Represents the ID of the asset
-  set assetId(String? value);
-
-  /// Represents the alerts configuration
+  $MapCardAlertConfigurationInputCopyWith<$Res>? get alerts;
   @override
-  MapCardAlertConfigurationInput? get alerts;
-
-  /// Represents the alerts configuration
-  set alerts(MapCardAlertConfigurationInput? value);
-
-  /// Represents the connection configuration
+  $MapCardConnectionConfigurationInputCopyWith<$Res>? get connection;
   @override
-  MapCardConnectionConfigurationInput? get connection;
+  $MapCardSensorsConfigurationInputCopyWith<$Res>? get sensors;
+}
 
-  /// Represents the connection configuration
-  set connection(MapCardConnectionConfigurationInput? value);
+/// @nodoc
+class __$MapCardSensorsInputCopyWithImpl<$Res>
+    implements _$MapCardSensorsInputCopyWith<$Res> {
+  __$MapCardSensorsInputCopyWithImpl(this._self, this._then);
 
-  /// Represetns the sensors configuration
-  @override
-  MapCardSensorsConfigurationInput? get sensors;
-
-  /// Represetns the sensors configuration
-  set sensors(MapCardSensorsConfigurationInput? value);
+  final _MapCardSensorsInput _self;
+  final $Res Function(_MapCardSensorsInput) _then;
 
   /// Create a copy of MapCardSensorsInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MapCardSensorsInputImplCopyWith<_$MapCardSensorsInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? assetId = freezed,
+    Object? alerts = freezed,
+    Object? connection = freezed,
+    Object? sensors = freezed,
+  }) {
+    return _then(_MapCardSensorsInput(
+      assetId: freezed == assetId
+          ? _self.assetId
+          : assetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      alerts: freezed == alerts
+          ? _self.alerts
+          : alerts // ignore: cast_nullable_to_non_nullable
+              as MapCardAlertConfigurationInput?,
+      connection: freezed == connection
+          ? _self.connection
+          : connection // ignore: cast_nullable_to_non_nullable
+              as MapCardConnectionConfigurationInput?,
+      sensors: freezed == sensors
+          ? _self.sensors
+          : sensors // ignore: cast_nullable_to_non_nullable
+              as MapCardSensorsConfigurationInput?,
+    ));
+  }
 
-MapCardSensorsConfiguration _$MapCardSensorsConfigurationFromJson(
-    Map<String, dynamic> json) {
-  return _MapCardSensorsConfiguration.fromJson(json);
+  /// Create a copy of MapCardSensorsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MapCardAlertConfigurationInputCopyWith<$Res>? get alerts {
+    if (_self.alerts == null) {
+      return null;
+    }
+
+    return $MapCardAlertConfigurationInputCopyWith<$Res>(_self.alerts!,
+        (value) {
+      return _then(_self.copyWith(alerts: value));
+    });
+  }
+
+  /// Create a copy of MapCardSensorsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MapCardConnectionConfigurationInputCopyWith<$Res>? get connection {
+    if (_self.connection == null) {
+      return null;
+    }
+
+    return $MapCardConnectionConfigurationInputCopyWith<$Res>(_self.connection!,
+        (value) {
+      return _then(_self.copyWith(connection: value));
+    });
+  }
+
+  /// Create a copy of MapCardSensorsInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MapCardSensorsConfigurationInputCopyWith<$Res>? get sensors {
+    if (_self.sensors == null) {
+      return null;
+    }
+
+    return $MapCardSensorsConfigurationInputCopyWith<$Res>(_self.sensors!,
+        (value) {
+      return _then(_self.copyWith(sensors: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$MapCardSensorsConfiguration {
   /// Indicates if the sensor segment is enabled.
-  bool get enabled => throw _privateConstructorUsedError;
+  bool get enabled;
 
   /// Represents the format of the sensor list.
   @JsonKey(unknownEnumValue: MapSensorMode.grid)
-  MapSensorMode get mode => throw _privateConstructorUsedError;
+  MapSensorMode get mode;
 
   /// Indicates the sensors assigned
-  List<String> get values => throw _privateConstructorUsedError;
-
-  /// Serializes this MapCardSensorsConfiguration to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  List<String> get values;
 
   /// Create a copy of MapCardSensorsConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MapCardSensorsConfigurationCopyWith<MapCardSensorsConfiguration>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MapCardSensorsConfigurationCopyWith<$Res> {
-  factory $MapCardSensorsConfigurationCopyWith(
-          MapCardSensorsConfiguration value,
-          $Res Function(MapCardSensorsConfiguration) then) =
-      _$MapCardSensorsConfigurationCopyWithImpl<$Res,
-          MapCardSensorsConfiguration>;
-  @useResult
-  $Res call(
-      {bool enabled,
-      @JsonKey(unknownEnumValue: MapSensorMode.grid) MapSensorMode mode,
-      List<String> values});
-}
-
-/// @nodoc
-class _$MapCardSensorsConfigurationCopyWithImpl<$Res,
-        $Val extends MapCardSensorsConfiguration>
-    implements $MapCardSensorsConfigurationCopyWith<$Res> {
-  _$MapCardSensorsConfigurationCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of MapCardSensorsConfiguration
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $MapCardSensorsConfigurationCopyWith<MapCardSensorsConfiguration>
+      get copyWith => _$MapCardSensorsConfigurationCopyWithImpl<
+              MapCardSensorsConfiguration>(
+          this as MapCardSensorsConfiguration, _$identity);
+
+  /// Serializes this MapCardSensorsConfiguration to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? enabled = null,
-    Object? mode = null,
-    Object? values = null,
-  }) {
-    return _then(_value.copyWith(
-      enabled: null == enabled
-          ? _value.enabled
-          : enabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      mode: null == mode
-          ? _value.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as MapSensorMode,
-      values: null == values
-          ? _value.values
-          : values // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is MapCardSensorsConfiguration &&
+            (identical(other.enabled, enabled) || other.enabled == enabled) &&
+            (identical(other.mode, mode) || other.mode == mode) &&
+            const DeepCollectionEquality().equals(other.values, values));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, enabled, mode, const DeepCollectionEquality().hash(values));
+
+  @override
+  String toString() {
+    return 'MapCardSensorsConfiguration(enabled: $enabled, mode: $mode, values: $values)';
   }
 }
 
 /// @nodoc
-abstract class _$$MapCardSensorsConfigurationImplCopyWith<$Res>
-    implements $MapCardSensorsConfigurationCopyWith<$Res> {
-  factory _$$MapCardSensorsConfigurationImplCopyWith(
-          _$MapCardSensorsConfigurationImpl value,
-          $Res Function(_$MapCardSensorsConfigurationImpl) then) =
-      __$$MapCardSensorsConfigurationImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MapCardSensorsConfigurationCopyWith<$Res> {
+  factory $MapCardSensorsConfigurationCopyWith(
+          MapCardSensorsConfiguration value,
+          $Res Function(MapCardSensorsConfiguration) _then) =
+      _$MapCardSensorsConfigurationCopyWithImpl;
   @useResult
   $Res call(
       {bool enabled,
@@ -6764,14 +6144,12 @@ abstract class _$$MapCardSensorsConfigurationImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MapCardSensorsConfigurationImplCopyWithImpl<$Res>
-    extends _$MapCardSensorsConfigurationCopyWithImpl<$Res,
-        _$MapCardSensorsConfigurationImpl>
-    implements _$$MapCardSensorsConfigurationImplCopyWith<$Res> {
-  __$$MapCardSensorsConfigurationImplCopyWithImpl(
-      _$MapCardSensorsConfigurationImpl _value,
-      $Res Function(_$MapCardSensorsConfigurationImpl) _then)
-      : super(_value, _then);
+class _$MapCardSensorsConfigurationCopyWithImpl<$Res>
+    implements $MapCardSensorsConfigurationCopyWith<$Res> {
+  _$MapCardSensorsConfigurationCopyWithImpl(this._self, this._then);
+
+  final MapCardSensorsConfiguration _self;
+  final $Res Function(MapCardSensorsConfiguration) _then;
 
   /// Create a copy of MapCardSensorsConfiguration
   /// with the given fields replaced by the non-null parameter values.
@@ -6782,17 +6160,17 @@ class __$$MapCardSensorsConfigurationImplCopyWithImpl<$Res>
     Object? mode = null,
     Object? values = null,
   }) {
-    return _then(_$MapCardSensorsConfigurationImpl(
+    return _then(_self.copyWith(
       enabled: null == enabled
-          ? _value.enabled
+          ? _self.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
       mode: null == mode
-          ? _value.mode
+          ? _self.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as MapSensorMode,
       values: null == values
-          ? _value._values
+          ? _self.values
           : values // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -6801,18 +6179,15 @@ class __$$MapCardSensorsConfigurationImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MapCardSensorsConfigurationImpl
-    implements _MapCardSensorsConfiguration {
-  const _$MapCardSensorsConfigurationImpl(
+class _MapCardSensorsConfiguration implements MapCardSensorsConfiguration {
+  const _MapCardSensorsConfiguration(
       {this.enabled = true,
       @JsonKey(unknownEnumValue: MapSensorMode.grid)
       this.mode = MapSensorMode.grid,
       final List<String> values = const []})
       : _values = values;
-
-  factory _$MapCardSensorsConfigurationImpl.fromJson(
-          Map<String, dynamic> json) =>
-      _$$MapCardSensorsConfigurationImplFromJson(json);
+  factory _MapCardSensorsConfiguration.fromJson(Map<String, dynamic> json) =>
+      _$MapCardSensorsConfigurationFromJson(json);
 
   /// Indicates if the sensor segment is enabled.
   @override
@@ -6836,16 +6211,27 @@ class _$MapCardSensorsConfigurationImpl
     return EqualUnmodifiableListView(_values);
   }
 
+  /// Create a copy of MapCardSensorsConfiguration
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'MapCardSensorsConfiguration(enabled: $enabled, mode: $mode, values: $values)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MapCardSensorsConfigurationCopyWith<_MapCardSensorsConfiguration>
+      get copyWith => __$MapCardSensorsConfigurationCopyWithImpl<
+          _MapCardSensorsConfiguration>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MapCardSensorsConfigurationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MapCardSensorsConfigurationImpl &&
+            other is _MapCardSensorsConfiguration &&
             (identical(other.enabled, enabled) || other.enabled == enabled) &&
             (identical(other.mode, mode) || other.mode == mode) &&
             const DeepCollectionEquality().equals(other._values, _values));
@@ -6856,150 +6242,107 @@ class _$MapCardSensorsConfigurationImpl
   int get hashCode => Object.hash(
       runtimeType, enabled, mode, const DeepCollectionEquality().hash(_values));
 
-  /// Create a copy of MapCardSensorsConfiguration
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$MapCardSensorsConfigurationImplCopyWith<_$MapCardSensorsConfigurationImpl>
-      get copyWith => __$$MapCardSensorsConfigurationImplCopyWithImpl<
-          _$MapCardSensorsConfigurationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MapCardSensorsConfigurationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'MapCardSensorsConfiguration(enabled: $enabled, mode: $mode, values: $values)';
   }
 }
 
-abstract class _MapCardSensorsConfiguration
-    implements MapCardSensorsConfiguration {
-  const factory _MapCardSensorsConfiguration(
-      {final bool enabled,
-      @JsonKey(unknownEnumValue: MapSensorMode.grid) final MapSensorMode mode,
-      final List<String> values}) = _$MapCardSensorsConfigurationImpl;
-
-  factory _MapCardSensorsConfiguration.fromJson(Map<String, dynamic> json) =
-      _$MapCardSensorsConfigurationImpl.fromJson;
-
-  /// Indicates if the sensor segment is enabled.
+/// @nodoc
+abstract mixin class _$MapCardSensorsConfigurationCopyWith<$Res>
+    implements $MapCardSensorsConfigurationCopyWith<$Res> {
+  factory _$MapCardSensorsConfigurationCopyWith(
+          _MapCardSensorsConfiguration value,
+          $Res Function(_MapCardSensorsConfiguration) _then) =
+      __$MapCardSensorsConfigurationCopyWithImpl;
   @override
-  bool get enabled;
+  @useResult
+  $Res call(
+      {bool enabled,
+      @JsonKey(unknownEnumValue: MapSensorMode.grid) MapSensorMode mode,
+      List<String> values});
+}
 
-  /// Represents the format of the sensor list.
-  @override
-  @JsonKey(unknownEnumValue: MapSensorMode.grid)
-  MapSensorMode get mode;
+/// @nodoc
+class __$MapCardSensorsConfigurationCopyWithImpl<$Res>
+    implements _$MapCardSensorsConfigurationCopyWith<$Res> {
+  __$MapCardSensorsConfigurationCopyWithImpl(this._self, this._then);
 
-  /// Indicates the sensors assigned
-  @override
-  List<String> get values;
+  final _MapCardSensorsConfiguration _self;
+  final $Res Function(_MapCardSensorsConfiguration) _then;
 
   /// Create a copy of MapCardSensorsConfiguration
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MapCardSensorsConfigurationImplCopyWith<_$MapCardSensorsConfigurationImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-MapCardSensorsConfigurationInput _$MapCardSensorsConfigurationInputFromJson(
-    Map<String, dynamic> json) {
-  return _MapCardSensorsConfigurationInput.fromJson(json);
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? enabled = null,
+    Object? mode = null,
+    Object? values = null,
+  }) {
+    return _then(_MapCardSensorsConfiguration(
+      enabled: null == enabled
+          ? _self.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      mode: null == mode
+          ? _self.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as MapSensorMode,
+      values: null == values
+          ? _self._values
+          : values // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
 }
 
 /// @nodoc
 mixin _$MapCardSensorsConfigurationInput {
   /// Indicates if the sensor segment is enabled.
-  bool get enabled => throw _privateConstructorUsedError;
+  bool get enabled;
 
   /// Indicates if the sensor segment is enabled.
-  set enabled(bool value) => throw _privateConstructorUsedError;
+  set enabled(bool value);
 
   /// Represents the format of the sensor list.
   @JsonKey(unknownEnumValue: MapSensorMode.grid)
-  MapSensorMode get mode => throw _privateConstructorUsedError;
+  MapSensorMode get mode;
 
   /// Represents the format of the sensor list.
   @JsonKey(unknownEnumValue: MapSensorMode.grid)
-  set mode(MapSensorMode value) => throw _privateConstructorUsedError;
+  set mode(MapSensorMode value);
 
   /// Indicates the sensors assigned
-  List<String> get values => throw _privateConstructorUsedError;
+  List<String> get values;
 
   /// Indicates the sensors assigned
-  set values(List<String> value) => throw _privateConstructorUsedError;
-
-  /// Serializes this MapCardSensorsConfigurationInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set values(List<String> value);
 
   /// Create a copy of MapCardSensorsConfigurationInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $MapCardSensorsConfigurationInputCopyWith<MapCardSensorsConfigurationInput>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $MapCardSensorsConfigurationInputCopyWith<$Res> {
-  factory $MapCardSensorsConfigurationInputCopyWith(
-          MapCardSensorsConfigurationInput value,
-          $Res Function(MapCardSensorsConfigurationInput) then) =
-      _$MapCardSensorsConfigurationInputCopyWithImpl<$Res,
-          MapCardSensorsConfigurationInput>;
-  @useResult
-  $Res call(
-      {bool enabled,
-      @JsonKey(unknownEnumValue: MapSensorMode.grid) MapSensorMode mode,
-      List<String> values});
-}
-
-/// @nodoc
-class _$MapCardSensorsConfigurationInputCopyWithImpl<$Res,
-        $Val extends MapCardSensorsConfigurationInput>
-    implements $MapCardSensorsConfigurationInputCopyWith<$Res> {
-  _$MapCardSensorsConfigurationInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of MapCardSensorsConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $MapCardSensorsConfigurationInputCopyWith<MapCardSensorsConfigurationInput>
+      get copyWith => _$MapCardSensorsConfigurationInputCopyWithImpl<
+              MapCardSensorsConfigurationInput>(
+          this as MapCardSensorsConfigurationInput, _$identity);
+
+  /// Serializes this MapCardSensorsConfigurationInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? enabled = null,
-    Object? mode = null,
-    Object? values = null,
-  }) {
-    return _then(_value.copyWith(
-      enabled: null == enabled
-          ? _value.enabled
-          : enabled // ignore: cast_nullable_to_non_nullable
-              as bool,
-      mode: null == mode
-          ? _value.mode
-          : mode // ignore: cast_nullable_to_non_nullable
-              as MapSensorMode,
-      values: null == values
-          ? _value.values
-          : values // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-    ) as $Val);
+  String toString() {
+    return 'MapCardSensorsConfigurationInput(enabled: $enabled, mode: $mode, values: $values)';
   }
 }
 
 /// @nodoc
-abstract class _$$MapCardSensorsConfigurationInputImplCopyWith<$Res>
-    implements $MapCardSensorsConfigurationInputCopyWith<$Res> {
-  factory _$$MapCardSensorsConfigurationInputImplCopyWith(
-          _$MapCardSensorsConfigurationInputImpl value,
-          $Res Function(_$MapCardSensorsConfigurationInputImpl) then) =
-      __$$MapCardSensorsConfigurationInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $MapCardSensorsConfigurationInputCopyWith<$Res> {
+  factory $MapCardSensorsConfigurationInputCopyWith(
+          MapCardSensorsConfigurationInput value,
+          $Res Function(MapCardSensorsConfigurationInput) _then) =
+      _$MapCardSensorsConfigurationInputCopyWithImpl;
   @useResult
   $Res call(
       {bool enabled,
@@ -7008,14 +6351,12 @@ abstract class _$$MapCardSensorsConfigurationInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$MapCardSensorsConfigurationInputImplCopyWithImpl<$Res>
-    extends _$MapCardSensorsConfigurationInputCopyWithImpl<$Res,
-        _$MapCardSensorsConfigurationInputImpl>
-    implements _$$MapCardSensorsConfigurationInputImplCopyWith<$Res> {
-  __$$MapCardSensorsConfigurationInputImplCopyWithImpl(
-      _$MapCardSensorsConfigurationInputImpl _value,
-      $Res Function(_$MapCardSensorsConfigurationInputImpl) _then)
-      : super(_value, _then);
+class _$MapCardSensorsConfigurationInputCopyWithImpl<$Res>
+    implements $MapCardSensorsConfigurationInputCopyWith<$Res> {
+  _$MapCardSensorsConfigurationInputCopyWithImpl(this._self, this._then);
+
+  final MapCardSensorsConfigurationInput _self;
+  final $Res Function(MapCardSensorsConfigurationInput) _then;
 
   /// Create a copy of MapCardSensorsConfigurationInput
   /// with the given fields replaced by the non-null parameter values.
@@ -7026,17 +6367,17 @@ class __$$MapCardSensorsConfigurationInputImplCopyWithImpl<$Res>
     Object? mode = null,
     Object? values = null,
   }) {
-    return _then(_$MapCardSensorsConfigurationInputImpl(
+    return _then(_self.copyWith(
       enabled: null == enabled
-          ? _value.enabled
+          ? _self.enabled
           : enabled // ignore: cast_nullable_to_non_nullable
               as bool,
       mode: null == mode
-          ? _value.mode
+          ? _self.mode
           : mode // ignore: cast_nullable_to_non_nullable
               as MapSensorMode,
       values: null == values
-          ? _value.values
+          ? _self.values
           : values // ignore: cast_nullable_to_non_nullable
               as List<String>,
     ));
@@ -7045,17 +6386,16 @@ class __$$MapCardSensorsConfigurationInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$MapCardSensorsConfigurationInputImpl
-    implements _MapCardSensorsConfigurationInput {
-  _$MapCardSensorsConfigurationInputImpl(
+class _MapCardSensorsConfigurationInput
+    implements MapCardSensorsConfigurationInput {
+  _MapCardSensorsConfigurationInput(
       {this.enabled = true,
       @JsonKey(unknownEnumValue: MapSensorMode.grid)
       this.mode = MapSensorMode.grid,
       this.values = const []});
-
-  factory _$MapCardSensorsConfigurationInputImpl.fromJson(
+  factory _MapCardSensorsConfigurationInput.fromJson(
           Map<String, dynamic> json) =>
-      _$$MapCardSensorsConfigurationInputImplFromJson(json);
+      _$MapCardSensorsConfigurationInputFromJson(json);
 
   /// Indicates if the sensor segment is enabled.
   @override
@@ -7072,68 +6412,75 @@ class _$MapCardSensorsConfigurationInputImpl
   @JsonKey()
   List<String> values;
 
+  /// Create a copy of MapCardSensorsConfigurationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MapCardSensorsConfigurationInputCopyWith<_MapCardSensorsConfigurationInput>
+      get copyWith => __$MapCardSensorsConfigurationInputCopyWithImpl<
+          _MapCardSensorsConfigurationInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$MapCardSensorsConfigurationInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'MapCardSensorsConfigurationInput(enabled: $enabled, mode: $mode, values: $values)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$MapCardSensorsConfigurationInputCopyWith<$Res>
+    implements $MapCardSensorsConfigurationInputCopyWith<$Res> {
+  factory _$MapCardSensorsConfigurationInputCopyWith(
+          _MapCardSensorsConfigurationInput value,
+          $Res Function(_MapCardSensorsConfigurationInput) _then) =
+      __$MapCardSensorsConfigurationInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {bool enabled,
+      @JsonKey(unknownEnumValue: MapSensorMode.grid) MapSensorMode mode,
+      List<String> values});
+}
+
+/// @nodoc
+class __$MapCardSensorsConfigurationInputCopyWithImpl<$Res>
+    implements _$MapCardSensorsConfigurationInputCopyWith<$Res> {
+  __$MapCardSensorsConfigurationInputCopyWithImpl(this._self, this._then);
+
+  final _MapCardSensorsConfigurationInput _self;
+  final $Res Function(_MapCardSensorsConfigurationInput) _then;
 
   /// Create a copy of MapCardSensorsConfigurationInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$MapCardSensorsConfigurationInputImplCopyWith<
-          _$MapCardSensorsConfigurationInputImpl>
-      get copyWith => __$$MapCardSensorsConfigurationInputImplCopyWithImpl<
-          _$MapCardSensorsConfigurationInputImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$MapCardSensorsConfigurationInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? enabled = null,
+    Object? mode = null,
+    Object? values = null,
+  }) {
+    return _then(_MapCardSensorsConfigurationInput(
+      enabled: null == enabled
+          ? _self.enabled
+          : enabled // ignore: cast_nullable_to_non_nullable
+              as bool,
+      mode: null == mode
+          ? _self.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as MapSensorMode,
+      values: null == values
+          ? _self.values
+          : values // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
   }
 }
 
-abstract class _MapCardSensorsConfigurationInput
-    implements MapCardSensorsConfigurationInput {
-  factory _MapCardSensorsConfigurationInput(
-      {bool enabled,
-      @JsonKey(unknownEnumValue: MapSensorMode.grid) MapSensorMode mode,
-      List<String> values}) = _$MapCardSensorsConfigurationInputImpl;
-
-  factory _MapCardSensorsConfigurationInput.fromJson(
-          Map<String, dynamic> json) =
-      _$MapCardSensorsConfigurationInputImpl.fromJson;
-
-  /// Indicates if the sensor segment is enabled.
-  @override
-  bool get enabled;
-
-  /// Indicates if the sensor segment is enabled.
-  set enabled(bool value);
-
-  /// Represents the format of the sensor list.
-  @override
-  @JsonKey(unknownEnumValue: MapSensorMode.grid)
-  MapSensorMode get mode;
-
-  /// Represents the format of the sensor list.
-  @JsonKey(unknownEnumValue: MapSensorMode.grid)
-  set mode(MapSensorMode value);
-
-  /// Indicates the sensors assigned
-  @override
-  List<String> get values;
-
-  /// Indicates the sensors assigned
-  set values(List<String> value);
-
-  /// Create a copy of MapCardSensorsConfigurationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$MapCardSensorsConfigurationInputImplCopyWith<
-          _$MapCardSensorsConfigurationInputImpl>
-      get copyWith => throw _privateConstructorUsedError;
-}
+// dart format on

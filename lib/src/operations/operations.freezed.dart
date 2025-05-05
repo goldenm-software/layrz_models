@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,155 +10,243 @@ part of 'operations.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-Operation _$OperationFromJson(Map<String, dynamic> json) {
-  return _Operation.fromJson(json);
-}
 
 /// @nodoc
 mixin _$Operation {
   /// Is the ID of the operation.
-  String get id => throw _privateConstructorUsedError;
+  String get id;
 
   /// Is the name of the operation.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// Is the type of operation.
   @JsonKey(unknownEnumValue: OperationType.unknown)
-  OperationType get operationType => throw _privateConstructorUsedError;
+  OperationType get operationType;
 
   /// Is the HTTP Request type to perform
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
   @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
-  HttpRequestType? get requestType => throw _privateConstructorUsedError;
+  HttpRequestType? get requestType;
 
   /// Is the URL to perform the request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  String? get url => throw _privateConstructorUsedError;
+  String? get url;
 
   /// Is the headers to send in the HTTP request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  List<HttpHeader>? get headers => throw _privateConstructorUsedError;
+  List<HttpHeader>? get headers;
 
   /// Is the payload to send in the submission.
-  String? get payload => throw _privateConstructorUsedError;
+  String? get payload;
 
   /// Is the language ID of the message. Used to define the default language of the message.
-  String? get languageId => throw _privateConstructorUsedError;
+  String? get languageId;
 
   /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-  Timezone? get timezone => throw _privateConstructorUsedError;
+  Timezone? get timezone;
 
   /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-  String? get timezoneId => throw _privateConstructorUsedError;
+  String? get timezoneId;
 
   /// Is the reception email to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  List<String>? get receptionEmails => throw _privateConstructorUsedError;
+  List<String>? get receptionEmails;
 
   /// Is the subject of the email
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  String? get emailSubject => throw _privateConstructorUsedError;
+  String? get emailSubject;
 
   /// Is the color of the inline notification
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
-  Color? get color => throw _privateConstructorUsedError;
+  Color? get color;
 
   /// Is the text color of the inline notification
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
-  Color? get textColor => throw _privateConstructorUsedError;
+  Color? get textColor;
 
   /// Is the receiver numbers to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
-  List<PhoneNumber>? get destinationPhones =>
-      throw _privateConstructorUsedError;
+  List<PhoneNumber>? get destinationPhones;
 
   /// Is the Notification type to perform
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio]
   @JsonKey(unknownEnumValue: NotificationType.unknown)
-  NotificationType? get notificationType => throw _privateConstructorUsedError;
+  NotificationType? get notificationType;
 
   /// The [externalAccountId] of the operation. Only the ID
-  String? get externalAccountId => throw _privateConstructorUsedError;
+  String? get externalAccountId;
 
   /// Is the list of granted access of the operation.
-  List<Access>? get access => throw _privateConstructorUsedError;
+  List<Access>? get access;
 
   /// Is the list of associated triggers (directly or indirectly) of the operation.
-  List<Trigger>? get triggers => throw _privateConstructorUsedError;
+  List<Trigger>? get triggers;
 
   /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  bool? get useAssetContactsInstead => throw _privateConstructorUsedError;
+  bool? get useAssetContactsInstead;
 
   /// [attachImage] is a flag to attach the image of the submission to the email.
-  bool? get attachImage => throw _privateConstructorUsedError;
+  bool? get attachImage;
 
   /// The [emailTemplateId] of the operation. Only the ID
-  String? get emailTemplateId => throw _privateConstructorUsedError;
+  String? get emailTemplateId;
 
   /// [pushPlatforms] is the list of platforms where the operation should be received.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
   @JsonKey(unknownEnumValue: AppPlatform.web)
-  List<AppPlatform>? get pushPlatforms => throw _privateConstructorUsedError;
+  List<AppPlatform>? get pushPlatforms;
 
   /// [pushTitle] is the title of the push notification.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
-  String? get pushTitle => throw _privateConstructorUsedError;
+  String? get pushTitle;
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @JsonKey(unknownEnumValue: SoundEffect.none)
-  SoundEffect get soundEffect => throw _privateConstructorUsedError;
+  SoundEffect get soundEffect;
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  String? get soundEffectUri => throw _privateConstructorUsedError;
+  String? get soundEffectUri;
 
   /// [icon] is the icon of the notification
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @IconOrNullConverter()
-  LayrzIcon? get icon => throw _privateConstructorUsedError;
+  LayrzIcon? get icon;
 
   /// [duration] is the duration of the notification
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @DurationOrNullConverter()
-  Duration? get duration => throw _privateConstructorUsedError;
-
-  /// Serializes this Operation to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Duration? get duration;
 
   /// Create a copy of Operation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $OperationCopyWith<Operation> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$OperationCopyWithImpl<Operation>(this as Operation, _$identity);
+
+  /// Serializes this Operation to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Operation &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.operationType, operationType) ||
+                other.operationType == operationType) &&
+            (identical(other.requestType, requestType) ||
+                other.requestType == requestType) &&
+            (identical(other.url, url) || other.url == url) &&
+            const DeepCollectionEquality().equals(other.headers, headers) &&
+            (identical(other.payload, payload) || other.payload == payload) &&
+            (identical(other.languageId, languageId) ||
+                other.languageId == languageId) &&
+            (identical(other.timezone, timezone) ||
+                other.timezone == timezone) &&
+            (identical(other.timezoneId, timezoneId) ||
+                other.timezoneId == timezoneId) &&
+            const DeepCollectionEquality()
+                .equals(other.receptionEmails, receptionEmails) &&
+            (identical(other.emailSubject, emailSubject) ||
+                other.emailSubject == emailSubject) &&
+            (identical(other.color, color) || other.color == color) &&
+            (identical(other.textColor, textColor) ||
+                other.textColor == textColor) &&
+            const DeepCollectionEquality()
+                .equals(other.destinationPhones, destinationPhones) &&
+            (identical(other.notificationType, notificationType) ||
+                other.notificationType == notificationType) &&
+            (identical(other.externalAccountId, externalAccountId) ||
+                other.externalAccountId == externalAccountId) &&
+            const DeepCollectionEquality().equals(other.access, access) &&
+            const DeepCollectionEquality().equals(other.triggers, triggers) &&
+            (identical(
+                    other.useAssetContactsInstead, useAssetContactsInstead) ||
+                other.useAssetContactsInstead == useAssetContactsInstead) &&
+            (identical(other.attachImage, attachImage) ||
+                other.attachImage == attachImage) &&
+            (identical(other.emailTemplateId, emailTemplateId) ||
+                other.emailTemplateId == emailTemplateId) &&
+            const DeepCollectionEquality()
+                .equals(other.pushPlatforms, pushPlatforms) &&
+            (identical(other.pushTitle, pushTitle) ||
+                other.pushTitle == pushTitle) &&
+            (identical(other.soundEffect, soundEffect) ||
+                other.soundEffect == soundEffect) &&
+            (identical(other.soundEffectUri, soundEffectUri) ||
+                other.soundEffectUri == soundEffectUri) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
+            (identical(other.duration, duration) ||
+                other.duration == duration));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        operationType,
+        requestType,
+        url,
+        const DeepCollectionEquality().hash(headers),
+        payload,
+        languageId,
+        timezone,
+        timezoneId,
+        const DeepCollectionEquality().hash(receptionEmails),
+        emailSubject,
+        color,
+        textColor,
+        const DeepCollectionEquality().hash(destinationPhones),
+        notificationType,
+        externalAccountId,
+        const DeepCollectionEquality().hash(access),
+        const DeepCollectionEquality().hash(triggers),
+        useAssetContactsInstead,
+        attachImage,
+        emailTemplateId,
+        const DeepCollectionEquality().hash(pushPlatforms),
+        pushTitle,
+        soundEffect,
+        soundEffectUri,
+        icon,
+        duration
+      ]);
+
+  @override
+  String toString() {
+    return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
+  }
 }
 
 /// @nodoc
-abstract class $OperationCopyWith<$Res> {
-  factory $OperationCopyWith(Operation value, $Res Function(Operation) then) =
-      _$OperationCopyWithImpl<$Res, Operation>;
+abstract mixin class $OperationCopyWith<$Res> {
+  factory $OperationCopyWith(Operation value, $Res Function(Operation) _then) =
+      _$OperationCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -197,14 +286,11 @@ abstract class $OperationCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$OperationCopyWithImpl<$Res, $Val extends Operation>
-    implements $OperationCopyWith<$Res> {
-  _$OperationCopyWithImpl(this._value, this._then);
+class _$OperationCopyWithImpl<$Res> implements $OperationCopyWith<$Res> {
+  _$OperationCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Operation _self;
+  final $Res Function(Operation) _then;
 
   /// Create a copy of Operation
   /// with the given fields replaced by the non-null parameter values.
@@ -240,120 +326,120 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
     Object? icon = freezed,
     Object? duration = freezed,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       operationType: null == operationType
-          ? _value.operationType
+          ? _self.operationType
           : operationType // ignore: cast_nullable_to_non_nullable
               as OperationType,
       requestType: freezed == requestType
-          ? _value.requestType
+          ? _self.requestType
           : requestType // ignore: cast_nullable_to_non_nullable
               as HttpRequestType?,
       url: freezed == url
-          ? _value.url
+          ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
       headers: freezed == headers
-          ? _value.headers
+          ? _self.headers
           : headers // ignore: cast_nullable_to_non_nullable
               as List<HttpHeader>?,
       payload: freezed == payload
-          ? _value.payload
+          ? _self.payload
           : payload // ignore: cast_nullable_to_non_nullable
               as String?,
       languageId: freezed == languageId
-          ? _value.languageId
+          ? _self.languageId
           : languageId // ignore: cast_nullable_to_non_nullable
               as String?,
       timezone: freezed == timezone
-          ? _value.timezone
+          ? _self.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
               as Timezone?,
       timezoneId: freezed == timezoneId
-          ? _value.timezoneId
+          ? _self.timezoneId
           : timezoneId // ignore: cast_nullable_to_non_nullable
               as String?,
       receptionEmails: freezed == receptionEmails
-          ? _value.receptionEmails
+          ? _self.receptionEmails
           : receptionEmails // ignore: cast_nullable_to_non_nullable
               as List<String>?,
       emailSubject: freezed == emailSubject
-          ? _value.emailSubject
+          ? _self.emailSubject
           : emailSubject // ignore: cast_nullable_to_non_nullable
               as String?,
       color: freezed == color
-          ? _value.color
+          ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color?,
       textColor: freezed == textColor
-          ? _value.textColor
+          ? _self.textColor
           : textColor // ignore: cast_nullable_to_non_nullable
               as Color?,
       destinationPhones: freezed == destinationPhones
-          ? _value.destinationPhones
+          ? _self.destinationPhones
           : destinationPhones // ignore: cast_nullable_to_non_nullable
               as List<PhoneNumber>?,
       notificationType: freezed == notificationType
-          ? _value.notificationType
+          ? _self.notificationType
           : notificationType // ignore: cast_nullable_to_non_nullable
               as NotificationType?,
       externalAccountId: freezed == externalAccountId
-          ? _value.externalAccountId
+          ? _self.externalAccountId
           : externalAccountId // ignore: cast_nullable_to_non_nullable
               as String?,
       access: freezed == access
-          ? _value.access
+          ? _self.access
           : access // ignore: cast_nullable_to_non_nullable
               as List<Access>?,
       triggers: freezed == triggers
-          ? _value.triggers
+          ? _self.triggers
           : triggers // ignore: cast_nullable_to_non_nullable
               as List<Trigger>?,
       useAssetContactsInstead: freezed == useAssetContactsInstead
-          ? _value.useAssetContactsInstead
+          ? _self.useAssetContactsInstead
           : useAssetContactsInstead // ignore: cast_nullable_to_non_nullable
               as bool?,
       attachImage: freezed == attachImage
-          ? _value.attachImage
+          ? _self.attachImage
           : attachImage // ignore: cast_nullable_to_non_nullable
               as bool?,
       emailTemplateId: freezed == emailTemplateId
-          ? _value.emailTemplateId
+          ? _self.emailTemplateId
           : emailTemplateId // ignore: cast_nullable_to_non_nullable
               as String?,
       pushPlatforms: freezed == pushPlatforms
-          ? _value.pushPlatforms
+          ? _self.pushPlatforms
           : pushPlatforms // ignore: cast_nullable_to_non_nullable
               as List<AppPlatform>?,
       pushTitle: freezed == pushTitle
-          ? _value.pushTitle
+          ? _self.pushTitle
           : pushTitle // ignore: cast_nullable_to_non_nullable
               as String?,
       soundEffect: null == soundEffect
-          ? _value.soundEffect
+          ? _self.soundEffect
           : soundEffect // ignore: cast_nullable_to_non_nullable
               as SoundEffect,
       soundEffectUri: freezed == soundEffectUri
-          ? _value.soundEffectUri
+          ? _self.soundEffectUri
           : soundEffectUri // ignore: cast_nullable_to_non_nullable
               as String?,
       icon: freezed == icon
-          ? _value.icon
+          ? _self.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as LayrzIcon?,
       duration: freezed == duration
-          ? _value.duration
+          ? _self.duration
           : duration // ignore: cast_nullable_to_non_nullable
               as Duration?,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of Operation
@@ -361,225 +447,20 @@ class _$OperationCopyWithImpl<$Res, $Val extends Operation>
   @override
   @pragma('vm:prefer-inline')
   $TimezoneCopyWith<$Res>? get timezone {
-    if (_value.timezone == null) {
+    if (_self.timezone == null) {
       return null;
     }
 
-    return $TimezoneCopyWith<$Res>(_value.timezone!, (value) {
-      return _then(_value.copyWith(timezone: value) as $Val);
+    return $TimezoneCopyWith<$Res>(_self.timezone!, (value) {
+      return _then(_self.copyWith(timezone: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$$OperationImplCopyWith<$Res>
-    implements $OperationCopyWith<$Res> {
-  factory _$$OperationImplCopyWith(
-          _$OperationImpl value, $Res Function(_$OperationImpl) then) =
-      __$$OperationImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      @JsonKey(unknownEnumValue: OperationType.unknown)
-      OperationType operationType,
-      @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
-      HttpRequestType? requestType,
-      String? url,
-      List<HttpHeader>? headers,
-      String? payload,
-      String? languageId,
-      Timezone? timezone,
-      String? timezoneId,
-      List<String>? receptionEmails,
-      String? emailSubject,
-      @ColorOrNullConverter() Color? color,
-      @ColorOrNullConverter() Color? textColor,
-      List<PhoneNumber>? destinationPhones,
-      @JsonKey(unknownEnumValue: NotificationType.unknown)
-      NotificationType? notificationType,
-      String? externalAccountId,
-      List<Access>? access,
-      List<Trigger>? triggers,
-      bool? useAssetContactsInstead,
-      bool? attachImage,
-      String? emailTemplateId,
-      @JsonKey(unknownEnumValue: AppPlatform.web)
-      List<AppPlatform>? pushPlatforms,
-      String? pushTitle,
-      @JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect,
-      String? soundEffectUri,
-      @IconOrNullConverter() LayrzIcon? icon,
-      @DurationOrNullConverter() Duration? duration});
-
-  @override
-  $TimezoneCopyWith<$Res>? get timezone;
-}
-
-/// @nodoc
-class __$$OperationImplCopyWithImpl<$Res>
-    extends _$OperationCopyWithImpl<$Res, _$OperationImpl>
-    implements _$$OperationImplCopyWith<$Res> {
-  __$$OperationImplCopyWithImpl(
-      _$OperationImpl _value, $Res Function(_$OperationImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? operationType = null,
-    Object? requestType = freezed,
-    Object? url = freezed,
-    Object? headers = freezed,
-    Object? payload = freezed,
-    Object? languageId = freezed,
-    Object? timezone = freezed,
-    Object? timezoneId = freezed,
-    Object? receptionEmails = freezed,
-    Object? emailSubject = freezed,
-    Object? color = freezed,
-    Object? textColor = freezed,
-    Object? destinationPhones = freezed,
-    Object? notificationType = freezed,
-    Object? externalAccountId = freezed,
-    Object? access = freezed,
-    Object? triggers = freezed,
-    Object? useAssetContactsInstead = freezed,
-    Object? attachImage = freezed,
-    Object? emailTemplateId = freezed,
-    Object? pushPlatforms = freezed,
-    Object? pushTitle = freezed,
-    Object? soundEffect = null,
-    Object? soundEffectUri = freezed,
-    Object? icon = freezed,
-    Object? duration = freezed,
-  }) {
-    return _then(_$OperationImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      operationType: null == operationType
-          ? _value.operationType
-          : operationType // ignore: cast_nullable_to_non_nullable
-              as OperationType,
-      requestType: freezed == requestType
-          ? _value.requestType
-          : requestType // ignore: cast_nullable_to_non_nullable
-              as HttpRequestType?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: freezed == headers
-          ? _value._headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as List<HttpHeader>?,
-      payload: freezed == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageId: freezed == languageId
-          ? _value.languageId
-          : languageId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timezone: freezed == timezone
-          ? _value.timezone
-          : timezone // ignore: cast_nullable_to_non_nullable
-              as Timezone?,
-      timezoneId: freezed == timezoneId
-          ? _value.timezoneId
-          : timezoneId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receptionEmails: freezed == receptionEmails
-          ? _value._receptionEmails
-          : receptionEmails // ignore: cast_nullable_to_non_nullable
-              as List<String>?,
-      emailSubject: freezed == emailSubject
-          ? _value.emailSubject
-          : emailSubject // ignore: cast_nullable_to_non_nullable
-              as String?,
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      textColor: freezed == textColor
-          ? _value.textColor
-          : textColor // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      destinationPhones: freezed == destinationPhones
-          ? _value._destinationPhones
-          : destinationPhones // ignore: cast_nullable_to_non_nullable
-              as List<PhoneNumber>?,
-      notificationType: freezed == notificationType
-          ? _value.notificationType
-          : notificationType // ignore: cast_nullable_to_non_nullable
-              as NotificationType?,
-      externalAccountId: freezed == externalAccountId
-          ? _value.externalAccountId
-          : externalAccountId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      access: freezed == access
-          ? _value._access
-          : access // ignore: cast_nullable_to_non_nullable
-              as List<Access>?,
-      triggers: freezed == triggers
-          ? _value._triggers
-          : triggers // ignore: cast_nullable_to_non_nullable
-              as List<Trigger>?,
-      useAssetContactsInstead: freezed == useAssetContactsInstead
-          ? _value.useAssetContactsInstead
-          : useAssetContactsInstead // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      attachImage: freezed == attachImage
-          ? _value.attachImage
-          : attachImage // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      emailTemplateId: freezed == emailTemplateId
-          ? _value.emailTemplateId
-          : emailTemplateId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pushPlatforms: freezed == pushPlatforms
-          ? _value._pushPlatforms
-          : pushPlatforms // ignore: cast_nullable_to_non_nullable
-              as List<AppPlatform>?,
-      pushTitle: freezed == pushTitle
-          ? _value.pushTitle
-          : pushTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      soundEffect: null == soundEffect
-          ? _value.soundEffect
-          : soundEffect // ignore: cast_nullable_to_non_nullable
-              as SoundEffect,
-      soundEffectUri: freezed == soundEffectUri
-          ? _value.soundEffectUri
-          : soundEffectUri // ignore: cast_nullable_to_non_nullable
-              as String?,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as LayrzIcon?,
-      duration: freezed == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as Duration?,
-    ));
-  }
-}
-
-/// @nodoc
 @JsonSerializable()
-class _$OperationImpl extends _Operation {
-  const _$OperationImpl(
+class _Operation extends Operation {
+  const _Operation(
       {required this.id,
       required this.name,
       @JsonKey(unknownEnumValue: OperationType.unknown)
@@ -619,9 +500,8 @@ class _$OperationImpl extends _Operation {
         _triggers = triggers,
         _pushPlatforms = pushPlatforms,
         super._();
-
-  factory _$OperationImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OperationImplFromJson(json);
+  factory _Operation.fromJson(Map<String, dynamic> json) =>
+      _$OperationFromJson(json);
 
   /// Is the ID of the operation.
   @override
@@ -839,16 +719,26 @@ class _$OperationImpl extends _Operation {
   @DurationOrNullConverter()
   final Duration? duration;
 
+  /// Create a copy of Operation
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$OperationCopyWith<_Operation> get copyWith =>
+      __$OperationCopyWithImpl<_Operation>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$OperationToJson(
+      this,
+    );
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OperationImpl &&
+            other is _Operation &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.operationType, operationType) ||
@@ -933,661 +823,482 @@ class _$OperationImpl extends _Operation {
         duration
       ]);
 
-  /// Create a copy of Operation
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$OperationImplCopyWith<_$OperationImpl> get copyWith =>
-      __$$OperationImplCopyWithImpl<_$OperationImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$OperationImplToJson(
-      this,
-    );
+  String toString() {
+    return 'Operation(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezone: $timezone, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, access: $access, triggers: $triggers, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
   }
 }
 
-abstract class _Operation extends Operation {
-  const factory _Operation(
-      {required final String id,
-      required final String name,
+/// @nodoc
+abstract mixin class _$OperationCopyWith<$Res>
+    implements $OperationCopyWith<$Res> {
+  factory _$OperationCopyWith(
+          _Operation value, $Res Function(_Operation) _then) =
+      __$OperationCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
       @JsonKey(unknownEnumValue: OperationType.unknown)
-      required final OperationType operationType,
+      OperationType operationType,
       @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
-      final HttpRequestType? requestType,
-      final String? url,
-      final List<HttpHeader>? headers,
-      final String? payload,
-      final String? languageId,
-      final Timezone? timezone,
-      final String? timezoneId,
-      final List<String>? receptionEmails,
-      final String? emailSubject,
-      @ColorOrNullConverter() final Color? color,
-      @ColorOrNullConverter() final Color? textColor,
-      final List<PhoneNumber>? destinationPhones,
+      HttpRequestType? requestType,
+      String? url,
+      List<HttpHeader>? headers,
+      String? payload,
+      String? languageId,
+      Timezone? timezone,
+      String? timezoneId,
+      List<String>? receptionEmails,
+      String? emailSubject,
+      @ColorOrNullConverter() Color? color,
+      @ColorOrNullConverter() Color? textColor,
+      List<PhoneNumber>? destinationPhones,
       @JsonKey(unknownEnumValue: NotificationType.unknown)
-      final NotificationType? notificationType,
-      final String? externalAccountId,
-      final List<Access>? access,
-      final List<Trigger>? triggers,
-      final bool? useAssetContactsInstead,
-      final bool? attachImage,
-      final String? emailTemplateId,
+      NotificationType? notificationType,
+      String? externalAccountId,
+      List<Access>? access,
+      List<Trigger>? triggers,
+      bool? useAssetContactsInstead,
+      bool? attachImage,
+      String? emailTemplateId,
       @JsonKey(unknownEnumValue: AppPlatform.web)
-      final List<AppPlatform>? pushPlatforms,
-      final String? pushTitle,
-      @JsonKey(unknownEnumValue: SoundEffect.none)
-      final SoundEffect soundEffect,
-      final String? soundEffectUri,
-      @IconOrNullConverter() final LayrzIcon? icon,
-      @DurationOrNullConverter() final Duration? duration}) = _$OperationImpl;
-  const _Operation._() : super._();
+      List<AppPlatform>? pushPlatforms,
+      String? pushTitle,
+      @JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect,
+      String? soundEffectUri,
+      @IconOrNullConverter() LayrzIcon? icon,
+      @DurationOrNullConverter() Duration? duration});
 
-  factory _Operation.fromJson(Map<String, dynamic> json) =
-      _$OperationImpl.fromJson;
-
-  /// Is the ID of the operation.
   @override
-  String get id;
+  $TimezoneCopyWith<$Res>? get timezone;
+}
 
-  /// Is the name of the operation.
-  @override
-  String get name;
+/// @nodoc
+class __$OperationCopyWithImpl<$Res> implements _$OperationCopyWith<$Res> {
+  __$OperationCopyWithImpl(this._self, this._then);
 
-  /// Is the type of operation.
-  @override
-  @JsonKey(unknownEnumValue: OperationType.unknown)
-  OperationType get operationType;
-
-  /// Is the HTTP Request type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
-  HttpRequestType? get requestType;
-
-  /// Is the URL to perform the request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  String? get url;
-
-  /// Is the headers to send in the HTTP request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  List<HttpHeader>? get headers;
-
-  /// Is the payload to send in the submission.
-  @override
-  String? get payload;
-
-  /// Is the language ID of the message. Used to define the default language of the message.
-  @override
-  String? get languageId;
-
-  /// [timezone] Is the timezone of the message. Used to define the default timezone of the message.
-  @override
-  Timezone? get timezone;
-
-  /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-  @override
-  String? get timezoneId;
-
-  /// Is the reception email to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  @override
-  List<String>? get receptionEmails;
-
-  /// Is the subject of the email
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  @override
-  String? get emailSubject;
-
-  /// Is the color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @override
-  @ColorOrNullConverter()
-  Color? get color;
-
-  /// Is the text color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @override
-  @ColorOrNullConverter()
-  Color? get textColor;
-
-  /// Is the receiver numbers to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio].
-  @override
-  List<PhoneNumber>? get destinationPhones;
-
-  /// Is the Notification type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio]
-  @override
-  @JsonKey(unknownEnumValue: NotificationType.unknown)
-  NotificationType? get notificationType;
-
-  /// The [externalAccountId] of the operation. Only the ID
-  @override
-  String? get externalAccountId;
-
-  /// Is the list of granted access of the operation.
-  @override
-  List<Access>? get access;
-
-  /// Is the list of associated triggers (directly or indirectly) of the operation.
-  @override
-  List<Trigger>? get triggers;
-
-  /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  @override
-  bool? get useAssetContactsInstead;
-
-  /// [attachImage] is a flag to attach the image of the submission to the email.
-  @override
-  bool? get attachImage;
-
-  /// The [emailTemplateId] of the operation. Only the ID
-  @override
-  String? get emailTemplateId;
-
-  /// [pushPlatforms] is the list of platforms where the operation should be received.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  @override
-  @JsonKey(unknownEnumValue: AppPlatform.web)
-  List<AppPlatform>? get pushPlatforms;
-
-  /// [pushTitle] is the title of the push notification.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  @override
-  String? get pushTitle;
-
-  /// [soundEffect] is the sound effect to play when the notification arrives.
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
-  @JsonKey(unknownEnumValue: SoundEffect.none)
-  SoundEffect get soundEffect;
-
-  /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
-  String? get soundEffectUri;
-
-  /// [icon] is the icon of the notification
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
-  @IconOrNullConverter()
-  LayrzIcon? get icon;
-
-  /// [duration] is the duration of the notification
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
-  @DurationOrNullConverter()
-  Duration? get duration;
+  final _Operation _self;
+  final $Res Function(_Operation) _then;
 
   /// Create a copy of Operation
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OperationImplCopyWith<_$OperationImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? operationType = null,
+    Object? requestType = freezed,
+    Object? url = freezed,
+    Object? headers = freezed,
+    Object? payload = freezed,
+    Object? languageId = freezed,
+    Object? timezone = freezed,
+    Object? timezoneId = freezed,
+    Object? receptionEmails = freezed,
+    Object? emailSubject = freezed,
+    Object? color = freezed,
+    Object? textColor = freezed,
+    Object? destinationPhones = freezed,
+    Object? notificationType = freezed,
+    Object? externalAccountId = freezed,
+    Object? access = freezed,
+    Object? triggers = freezed,
+    Object? useAssetContactsInstead = freezed,
+    Object? attachImage = freezed,
+    Object? emailTemplateId = freezed,
+    Object? pushPlatforms = freezed,
+    Object? pushTitle = freezed,
+    Object? soundEffect = null,
+    Object? soundEffectUri = freezed,
+    Object? icon = freezed,
+    Object? duration = freezed,
+  }) {
+    return _then(_Operation(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      operationType: null == operationType
+          ? _self.operationType
+          : operationType // ignore: cast_nullable_to_non_nullable
+              as OperationType,
+      requestType: freezed == requestType
+          ? _self.requestType
+          : requestType // ignore: cast_nullable_to_non_nullable
+              as HttpRequestType?,
+      url: freezed == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      headers: freezed == headers
+          ? _self._headers
+          : headers // ignore: cast_nullable_to_non_nullable
+              as List<HttpHeader>?,
+      payload: freezed == payload
+          ? _self.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as String?,
+      languageId: freezed == languageId
+          ? _self.languageId
+          : languageId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timezone: freezed == timezone
+          ? _self.timezone
+          : timezone // ignore: cast_nullable_to_non_nullable
+              as Timezone?,
+      timezoneId: freezed == timezoneId
+          ? _self.timezoneId
+          : timezoneId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receptionEmails: freezed == receptionEmails
+          ? _self._receptionEmails
+          : receptionEmails // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      emailSubject: freezed == emailSubject
+          ? _self.emailSubject
+          : emailSubject // ignore: cast_nullable_to_non_nullable
+              as String?,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      textColor: freezed == textColor
+          ? _self.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      destinationPhones: freezed == destinationPhones
+          ? _self._destinationPhones
+          : destinationPhones // ignore: cast_nullable_to_non_nullable
+              as List<PhoneNumber>?,
+      notificationType: freezed == notificationType
+          ? _self.notificationType
+          : notificationType // ignore: cast_nullable_to_non_nullable
+              as NotificationType?,
+      externalAccountId: freezed == externalAccountId
+          ? _self.externalAccountId
+          : externalAccountId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      access: freezed == access
+          ? _self._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+      triggers: freezed == triggers
+          ? _self._triggers
+          : triggers // ignore: cast_nullable_to_non_nullable
+              as List<Trigger>?,
+      useAssetContactsInstead: freezed == useAssetContactsInstead
+          ? _self.useAssetContactsInstead
+          : useAssetContactsInstead // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      attachImage: freezed == attachImage
+          ? _self.attachImage
+          : attachImage // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      emailTemplateId: freezed == emailTemplateId
+          ? _self.emailTemplateId
+          : emailTemplateId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pushPlatforms: freezed == pushPlatforms
+          ? _self._pushPlatforms
+          : pushPlatforms // ignore: cast_nullable_to_non_nullable
+              as List<AppPlatform>?,
+      pushTitle: freezed == pushTitle
+          ? _self.pushTitle
+          : pushTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      soundEffect: null == soundEffect
+          ? _self.soundEffect
+          : soundEffect // ignore: cast_nullable_to_non_nullable
+              as SoundEffect,
+      soundEffectUri: freezed == soundEffectUri
+          ? _self.soundEffectUri
+          : soundEffectUri // ignore: cast_nullable_to_non_nullable
+              as String?,
+      icon: freezed == icon
+          ? _self.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      duration: freezed == duration
+          ? _self.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as Duration?,
+    ));
+  }
 
-OperationInput _$OperationInputFromJson(Map<String, dynamic> json) {
-  return _OperationInput.fromJson(json);
+  /// Create a copy of Operation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $TimezoneCopyWith<$Res>? get timezone {
+    if (_self.timezone == null) {
+      return null;
+    }
+
+    return $TimezoneCopyWith<$Res>(_self.timezone!, (value) {
+      return _then(_self.copyWith(timezone: value));
+    });
+  }
 }
 
 /// @nodoc
 mixin _$OperationInput {
   /// Is the ID of the operation.
-  String? get id => throw _privateConstructorUsedError;
+  String? get id;
 
   /// Is the ID of the operation.
-  set id(String? value) => throw _privateConstructorUsedError;
+  set id(String? value);
 
   /// Is the name of the operation.
-  String get name => throw _privateConstructorUsedError;
+  String get name;
 
   /// Is the name of the operation.
-  set name(String value) => throw _privateConstructorUsedError;
+  set name(String value);
 
   /// Is the type of operation.
   @JsonKey(unknownEnumValue: OperationType.unknown)
-  OperationType get operationType => throw _privateConstructorUsedError;
+  OperationType get operationType;
 
   /// Is the type of operation.
   @JsonKey(unknownEnumValue: OperationType.unknown)
-  set operationType(OperationType value) => throw _privateConstructorUsedError;
+  set operationType(OperationType value);
 
   /// Is the HTTP Request type to perform
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
   @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
-  HttpRequestType? get requestType => throw _privateConstructorUsedError;
+  HttpRequestType? get requestType;
 
   /// Is the HTTP Request type to perform
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
   @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
-  set requestType(HttpRequestType? value) => throw _privateConstructorUsedError;
+  set requestType(HttpRequestType? value);
 
   /// Is the URL to perform the request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  String? get url => throw _privateConstructorUsedError;
+  String? get url;
 
   /// Is the URL to perform the request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  set url(String? value) => throw _privateConstructorUsedError;
+  set url(String? value);
 
   /// Is the headers to send in the HTTP request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  List<HttpHeaderInput> get headers => throw _privateConstructorUsedError;
+  List<HttpHeaderInput> get headers;
 
   /// Is the headers to send in the HTTP request
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.webhook].
-  set headers(List<HttpHeaderInput> value) =>
-      throw _privateConstructorUsedError;
+  set headers(List<HttpHeaderInput> value);
 
   /// Is the payload to send in the submission.
-  String? get payload => throw _privateConstructorUsedError;
+  String? get payload;
 
   /// Is the payload to send in the submission.
-  set payload(String? value) => throw _privateConstructorUsedError;
+  set payload(String? value);
 
   /// Is the language ID of the message. Used to define the default language of the message.
-  String? get languageId => throw _privateConstructorUsedError;
+  String? get languageId;
 
   /// Is the language ID of the message. Used to define the default language of the message.
-  set languageId(String? value) => throw _privateConstructorUsedError;
+  set languageId(String? value);
 
   /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-  String? get timezoneId => throw _privateConstructorUsedError;
+  String? get timezoneId;
 
   /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-  set timezoneId(String? value) => throw _privateConstructorUsedError;
+  set timezoneId(String? value);
 
   /// Is the reception email to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  List<String> get receptionEmails => throw _privateConstructorUsedError;
+  List<String> get receptionEmails;
 
   /// Is the reception email to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  set receptionEmails(List<String> value) => throw _privateConstructorUsedError;
+  set receptionEmails(List<String> value);
 
   /// Is the subject of the email
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  String get emailSubject => throw _privateConstructorUsedError;
+  String get emailSubject;
 
   /// Is the subject of the email
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.email].
-  set emailSubject(String value) => throw _privateConstructorUsedError;
+  set emailSubject(String value);
 
   /// Is the color of the inline notification
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
-  Color? get color => throw _privateConstructorUsedError;
+  Color? get color;
 
   /// Is the color of the inline notification
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
-  set color(Color? value) => throw _privateConstructorUsedError;
+  set color(Color? value);
 
   /// Is the text color of the inline notification
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
-  Color? get textColor => throw _privateConstructorUsedError;
+  Color? get textColor;
 
   /// Is the text color of the inline notification
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.inAppNotification].
   @ColorOrNullConverter()
-  set textColor(Color? value) => throw _privateConstructorUsedError;
+  set textColor(Color? value);
 
   /// Is the receiver numbers to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
-  List<PhoneNumberInput> get destinationPhones =>
-      throw _privateConstructorUsedError;
+  List<PhoneNumberInput> get destinationPhones;
 
   /// Is the receiver numbers to send the message
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio].
-  set destinationPhones(List<PhoneNumberInput> value) =>
-      throw _privateConstructorUsedError;
+  set destinationPhones(List<PhoneNumberInput> value);
 
   /// Is the Notification type to perform
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio]
   @JsonKey(unknownEnumValue: NotificationType.unknown)
-  NotificationType? get notificationType => throw _privateConstructorUsedError;
+  NotificationType? get notificationType;
 
   /// Is the Notification type to perform
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.twilio]
   @JsonKey(unknownEnumValue: NotificationType.unknown)
-  set notificationType(NotificationType? value) =>
-      throw _privateConstructorUsedError;
+  set notificationType(NotificationType? value);
 
   /// The [externalAccountId] of the operation. Only the ID
-  String? get externalAccountId => throw _privateConstructorUsedError;
+  String? get externalAccountId;
 
   /// The [externalAccountId] of the operation. Only the ID
-  set externalAccountId(String? value) => throw _privateConstructorUsedError;
+  set externalAccountId(String? value);
 
   /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  bool get useAssetContactsInstead => throw _privateConstructorUsedError;
+  bool get useAssetContactsInstead;
 
   /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  set useAssetContactsInstead(bool value) => throw _privateConstructorUsedError;
+  set useAssetContactsInstead(bool value);
 
   /// [attachImage] is a flag to attach the image of the submission to the email.
-  bool get attachImage => throw _privateConstructorUsedError;
+  bool get attachImage;
 
   /// [attachImage] is a flag to attach the image of the submission to the email.
-  set attachImage(bool value) => throw _privateConstructorUsedError;
+  set attachImage(bool value);
 
   /// The [emailTemplateId] of the operation. Only the ID
-  String? get emailTemplateId => throw _privateConstructorUsedError;
+  String? get emailTemplateId;
 
   /// The [emailTemplateId] of the operation. Only the ID
-  set emailTemplateId(String? value) => throw _privateConstructorUsedError;
+  set emailTemplateId(String? value);
 
   /// [pushPlatforms] is the list of platforms where the operation should be received.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
   @JsonKey(unknownEnumValue: AppPlatform.web)
-  List<AppPlatform>? get pushPlatforms => throw _privateConstructorUsedError;
+  List<AppPlatform>? get pushPlatforms;
 
   /// [pushPlatforms] is the list of platforms where the operation should be received.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
   @JsonKey(unknownEnumValue: AppPlatform.web)
-  set pushPlatforms(List<AppPlatform>? value) =>
-      throw _privateConstructorUsedError;
+  set pushPlatforms(List<AppPlatform>? value);
 
   /// [pushTitle] is the title of the push notification.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
-  String? get pushTitle => throw _privateConstructorUsedError;
+  String? get pushTitle;
 
   /// [pushTitle] is the title of the push notification.
   /// This field will only be considered in the following [operationType]:
   /// - [OperationType.bhsPush]
-  set pushTitle(String? value) => throw _privateConstructorUsedError;
+  set pushTitle(String? value);
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @JsonKey(unknownEnumValue: SoundEffect.none)
-  SoundEffect get soundEffect => throw _privateConstructorUsedError;
+  SoundEffect get soundEffect;
 
   /// [soundEffect] is the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @JsonKey(unknownEnumValue: SoundEffect.none)
-  set soundEffect(SoundEffect value) => throw _privateConstructorUsedError;
+  set soundEffect(SoundEffect value);
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  String? get soundEffectUri => throw _privateConstructorUsedError;
+  String? get soundEffectUri;
 
   /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  set soundEffectUri(String? value) => throw _privateConstructorUsedError;
+  set soundEffectUri(String? value);
 
   /// [icon] is the icon of the notification
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @IconOrNullConverter()
-  LayrzIcon? get icon => throw _privateConstructorUsedError;
+  LayrzIcon? get icon;
 
   /// [icon] is the icon of the notification
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @IconOrNullConverter()
-  set icon(LayrzIcon? value) => throw _privateConstructorUsedError;
+  set icon(LayrzIcon? value);
 
   /// [duration] is the duration of the notification
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @DurationConverter()
-  Duration get duration => throw _privateConstructorUsedError;
+  Duration get duration;
 
   /// [duration] is the duration of the notification
   ///
   /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
   @DurationConverter()
-  set duration(Duration value) => throw _privateConstructorUsedError;
-
-  /// Serializes this OperationInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  set duration(Duration value);
 
   /// Create a copy of OperationInput
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $OperationInputCopyWith<OperationInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $OperationInputCopyWith<$Res> {
-  factory $OperationInputCopyWith(
-          OperationInput value, $Res Function(OperationInput) then) =
-      _$OperationInputCopyWithImpl<$Res, OperationInput>;
-  @useResult
-  $Res call(
-      {String? id,
-      String name,
-      @JsonKey(unknownEnumValue: OperationType.unknown)
-      OperationType operationType,
-      @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
-      HttpRequestType? requestType,
-      String? url,
-      List<HttpHeaderInput> headers,
-      String? payload,
-      String? languageId,
-      String? timezoneId,
-      List<String> receptionEmails,
-      String emailSubject,
-      @ColorOrNullConverter() Color? color,
-      @ColorOrNullConverter() Color? textColor,
-      List<PhoneNumberInput> destinationPhones,
-      @JsonKey(unknownEnumValue: NotificationType.unknown)
-      NotificationType? notificationType,
-      String? externalAccountId,
-      bool useAssetContactsInstead,
-      bool attachImage,
-      String? emailTemplateId,
-      @JsonKey(unknownEnumValue: AppPlatform.web)
-      List<AppPlatform>? pushPlatforms,
-      String? pushTitle,
-      @JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect,
-      String? soundEffectUri,
-      @IconOrNullConverter() LayrzIcon? icon,
-      @DurationConverter() Duration duration});
-}
-
-/// @nodoc
-class _$OperationInputCopyWithImpl<$Res, $Val extends OperationInput>
-    implements $OperationInputCopyWith<$Res> {
-  _$OperationInputCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $OperationInputCopyWith<OperationInput> get copyWith =>
+      _$OperationInputCopyWithImpl<OperationInput>(
+          this as OperationInput, _$identity);
+
+  /// Serializes this OperationInput to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = null,
-    Object? operationType = null,
-    Object? requestType = freezed,
-    Object? url = freezed,
-    Object? headers = null,
-    Object? payload = freezed,
-    Object? languageId = freezed,
-    Object? timezoneId = freezed,
-    Object? receptionEmails = null,
-    Object? emailSubject = null,
-    Object? color = freezed,
-    Object? textColor = freezed,
-    Object? destinationPhones = null,
-    Object? notificationType = freezed,
-    Object? externalAccountId = freezed,
-    Object? useAssetContactsInstead = null,
-    Object? attachImage = null,
-    Object? emailTemplateId = freezed,
-    Object? pushPlatforms = freezed,
-    Object? pushTitle = freezed,
-    Object? soundEffect = null,
-    Object? soundEffectUri = freezed,
-    Object? icon = freezed,
-    Object? duration = null,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      operationType: null == operationType
-          ? _value.operationType
-          : operationType // ignore: cast_nullable_to_non_nullable
-              as OperationType,
-      requestType: freezed == requestType
-          ? _value.requestType
-          : requestType // ignore: cast_nullable_to_non_nullable
-              as HttpRequestType?,
-      url: freezed == url
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      headers: null == headers
-          ? _value.headers
-          : headers // ignore: cast_nullable_to_non_nullable
-              as List<HttpHeaderInput>,
-      payload: freezed == payload
-          ? _value.payload
-          : payload // ignore: cast_nullable_to_non_nullable
-              as String?,
-      languageId: freezed == languageId
-          ? _value.languageId
-          : languageId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timezoneId: freezed == timezoneId
-          ? _value.timezoneId
-          : timezoneId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      receptionEmails: null == receptionEmails
-          ? _value.receptionEmails
-          : receptionEmails // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      emailSubject: null == emailSubject
-          ? _value.emailSubject
-          : emailSubject // ignore: cast_nullable_to_non_nullable
-              as String,
-      color: freezed == color
-          ? _value.color
-          : color // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      textColor: freezed == textColor
-          ? _value.textColor
-          : textColor // ignore: cast_nullable_to_non_nullable
-              as Color?,
-      destinationPhones: null == destinationPhones
-          ? _value.destinationPhones
-          : destinationPhones // ignore: cast_nullable_to_non_nullable
-              as List<PhoneNumberInput>,
-      notificationType: freezed == notificationType
-          ? _value.notificationType
-          : notificationType // ignore: cast_nullable_to_non_nullable
-              as NotificationType?,
-      externalAccountId: freezed == externalAccountId
-          ? _value.externalAccountId
-          : externalAccountId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      useAssetContactsInstead: null == useAssetContactsInstead
-          ? _value.useAssetContactsInstead
-          : useAssetContactsInstead // ignore: cast_nullable_to_non_nullable
-              as bool,
-      attachImage: null == attachImage
-          ? _value.attachImage
-          : attachImage // ignore: cast_nullable_to_non_nullable
-              as bool,
-      emailTemplateId: freezed == emailTemplateId
-          ? _value.emailTemplateId
-          : emailTemplateId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      pushPlatforms: freezed == pushPlatforms
-          ? _value.pushPlatforms
-          : pushPlatforms // ignore: cast_nullable_to_non_nullable
-              as List<AppPlatform>?,
-      pushTitle: freezed == pushTitle
-          ? _value.pushTitle
-          : pushTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      soundEffect: null == soundEffect
-          ? _value.soundEffect
-          : soundEffect // ignore: cast_nullable_to_non_nullable
-              as SoundEffect,
-      soundEffectUri: freezed == soundEffectUri
-          ? _value.soundEffectUri
-          : soundEffectUri // ignore: cast_nullable_to_non_nullable
-              as String?,
-      icon: freezed == icon
-          ? _value.icon
-          : icon // ignore: cast_nullable_to_non_nullable
-              as LayrzIcon?,
-      duration: null == duration
-          ? _value.duration
-          : duration // ignore: cast_nullable_to_non_nullable
-              as Duration,
-    ) as $Val);
+  String toString() {
+    return 'OperationInput(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
   }
 }
 
 /// @nodoc
-abstract class _$$OperationInputImplCopyWith<$Res>
-    implements $OperationInputCopyWith<$Res> {
-  factory _$$OperationInputImplCopyWith(_$OperationInputImpl value,
-          $Res Function(_$OperationInputImpl) then) =
-      __$$OperationInputImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $OperationInputCopyWith<$Res> {
+  factory $OperationInputCopyWith(
+          OperationInput value, $Res Function(OperationInput) _then) =
+      _$OperationInputCopyWithImpl;
   @useResult
   $Res call(
       {String? id,
@@ -1622,12 +1333,12 @@ abstract class _$$OperationInputImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$OperationInputImplCopyWithImpl<$Res>
-    extends _$OperationInputCopyWithImpl<$Res, _$OperationInputImpl>
-    implements _$$OperationInputImplCopyWith<$Res> {
-  __$$OperationInputImplCopyWithImpl(
-      _$OperationInputImpl _value, $Res Function(_$OperationInputImpl) _then)
-      : super(_value, _then);
+class _$OperationInputCopyWithImpl<$Res>
+    implements $OperationInputCopyWith<$Res> {
+  _$OperationInputCopyWithImpl(this._self, this._then);
+
+  final OperationInput _self;
+  final $Res Function(OperationInput) _then;
 
   /// Create a copy of OperationInput
   /// with the given fields replaced by the non-null parameter values.
@@ -1660,105 +1371,105 @@ class __$$OperationInputImplCopyWithImpl<$Res>
     Object? icon = freezed,
     Object? duration = null,
   }) {
-    return _then(_$OperationInputImpl(
+    return _then(_self.copyWith(
       id: freezed == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String?,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       operationType: null == operationType
-          ? _value.operationType
+          ? _self.operationType
           : operationType // ignore: cast_nullable_to_non_nullable
               as OperationType,
       requestType: freezed == requestType
-          ? _value.requestType
+          ? _self.requestType
           : requestType // ignore: cast_nullable_to_non_nullable
               as HttpRequestType?,
       url: freezed == url
-          ? _value.url
+          ? _self.url
           : url // ignore: cast_nullable_to_non_nullable
               as String?,
       headers: null == headers
-          ? _value.headers
+          ? _self.headers
           : headers // ignore: cast_nullable_to_non_nullable
               as List<HttpHeaderInput>,
       payload: freezed == payload
-          ? _value.payload
+          ? _self.payload
           : payload // ignore: cast_nullable_to_non_nullable
               as String?,
       languageId: freezed == languageId
-          ? _value.languageId
+          ? _self.languageId
           : languageId // ignore: cast_nullable_to_non_nullable
               as String?,
       timezoneId: freezed == timezoneId
-          ? _value.timezoneId
+          ? _self.timezoneId
           : timezoneId // ignore: cast_nullable_to_non_nullable
               as String?,
       receptionEmails: null == receptionEmails
-          ? _value.receptionEmails
+          ? _self.receptionEmails
           : receptionEmails // ignore: cast_nullable_to_non_nullable
               as List<String>,
       emailSubject: null == emailSubject
-          ? _value.emailSubject
+          ? _self.emailSubject
           : emailSubject // ignore: cast_nullable_to_non_nullable
               as String,
       color: freezed == color
-          ? _value.color
+          ? _self.color
           : color // ignore: cast_nullable_to_non_nullable
               as Color?,
       textColor: freezed == textColor
-          ? _value.textColor
+          ? _self.textColor
           : textColor // ignore: cast_nullable_to_non_nullable
               as Color?,
       destinationPhones: null == destinationPhones
-          ? _value.destinationPhones
+          ? _self.destinationPhones
           : destinationPhones // ignore: cast_nullable_to_non_nullable
               as List<PhoneNumberInput>,
       notificationType: freezed == notificationType
-          ? _value.notificationType
+          ? _self.notificationType
           : notificationType // ignore: cast_nullable_to_non_nullable
               as NotificationType?,
       externalAccountId: freezed == externalAccountId
-          ? _value.externalAccountId
+          ? _self.externalAccountId
           : externalAccountId // ignore: cast_nullable_to_non_nullable
               as String?,
       useAssetContactsInstead: null == useAssetContactsInstead
-          ? _value.useAssetContactsInstead
+          ? _self.useAssetContactsInstead
           : useAssetContactsInstead // ignore: cast_nullable_to_non_nullable
               as bool,
       attachImage: null == attachImage
-          ? _value.attachImage
+          ? _self.attachImage
           : attachImage // ignore: cast_nullable_to_non_nullable
               as bool,
       emailTemplateId: freezed == emailTemplateId
-          ? _value.emailTemplateId
+          ? _self.emailTemplateId
           : emailTemplateId // ignore: cast_nullable_to_non_nullable
               as String?,
       pushPlatforms: freezed == pushPlatforms
-          ? _value.pushPlatforms
+          ? _self.pushPlatforms
           : pushPlatforms // ignore: cast_nullable_to_non_nullable
               as List<AppPlatform>?,
       pushTitle: freezed == pushTitle
-          ? _value.pushTitle
+          ? _self.pushTitle
           : pushTitle // ignore: cast_nullable_to_non_nullable
               as String?,
       soundEffect: null == soundEffect
-          ? _value.soundEffect
+          ? _self.soundEffect
           : soundEffect // ignore: cast_nullable_to_non_nullable
               as SoundEffect,
       soundEffectUri: freezed == soundEffectUri
-          ? _value.soundEffectUri
+          ? _self.soundEffectUri
           : soundEffectUri // ignore: cast_nullable_to_non_nullable
               as String?,
       icon: freezed == icon
-          ? _value.icon
+          ? _self.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as LayrzIcon?,
       duration: null == duration
-          ? _value.duration
+          ? _self.duration
           : duration // ignore: cast_nullable_to_non_nullable
               as Duration,
     ));
@@ -1767,8 +1478,8 @@ class __$$OperationInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$OperationInputImpl implements _OperationInput {
-  _$OperationInputImpl(
+class _OperationInput implements OperationInput {
+  _OperationInput(
       {this.id,
       this.name = '',
       @JsonKey(unknownEnumValue: OperationType.unknown)
@@ -1797,9 +1508,8 @@ class _$OperationInputImpl implements _OperationInput {
       this.soundEffectUri,
       @IconOrNullConverter() this.icon,
       @DurationConverter() this.duration = const Duration(seconds: 5)});
-
-  factory _$OperationInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$OperationInputImplFromJson(json);
+  factory _OperationInput.fromJson(Map<String, dynamic> json) =>
+      _$OperationInputFromJson(json);
 
   /// Is the ID of the operation.
   @override
@@ -1948,30 +1658,36 @@ class _$OperationInputImpl implements _OperationInput {
   @DurationConverter()
   Duration duration;
 
+  /// Create a copy of OperationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$OperationInputCopyWith<_OperationInput> get copyWith =>
+      __$OperationInputCopyWithImpl<_OperationInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$OperationInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'OperationInput(id: $id, name: $name, operationType: $operationType, requestType: $requestType, url: $url, headers: $headers, payload: $payload, languageId: $languageId, timezoneId: $timezoneId, receptionEmails: $receptionEmails, emailSubject: $emailSubject, color: $color, textColor: $textColor, destinationPhones: $destinationPhones, notificationType: $notificationType, externalAccountId: $externalAccountId, useAssetContactsInstead: $useAssetContactsInstead, attachImage: $attachImage, emailTemplateId: $emailTemplateId, pushPlatforms: $pushPlatforms, pushTitle: $pushTitle, soundEffect: $soundEffect, soundEffectUri: $soundEffectUri, icon: $icon, duration: $duration)';
   }
-
-  /// Create a copy of OperationInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$OperationInputImplCopyWith<_$OperationInputImpl> get copyWith =>
-      __$$OperationInputImplCopyWithImpl<_$OperationInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$OperationInputImplToJson(
-      this,
-    );
-  }
 }
 
-abstract class _OperationInput implements OperationInput {
-  factory _OperationInput(
+/// @nodoc
+abstract mixin class _$OperationInputCopyWith<$Res>
+    implements $OperationInputCopyWith<$Res> {
+  factory _$OperationInputCopyWith(
+          _OperationInput value, $Res Function(_OperationInput) _then) =
+      __$OperationInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
       {String? id,
       String name,
       @JsonKey(unknownEnumValue: OperationType.unknown)
@@ -2000,394 +1716,173 @@ abstract class _OperationInput implements OperationInput {
       @JsonKey(unknownEnumValue: SoundEffect.none) SoundEffect soundEffect,
       String? soundEffectUri,
       @IconOrNullConverter() LayrzIcon? icon,
-      @DurationConverter() Duration duration}) = _$OperationInputImpl;
+      @DurationConverter() Duration duration});
+}
 
-  factory _OperationInput.fromJson(Map<String, dynamic> json) =
-      _$OperationInputImpl.fromJson;
+/// @nodoc
+class __$OperationInputCopyWithImpl<$Res>
+    implements _$OperationInputCopyWith<$Res> {
+  __$OperationInputCopyWithImpl(this._self, this._then);
 
-  /// Is the ID of the operation.
-  @override
-  String? get id;
-
-  /// Is the ID of the operation.
-  set id(String? value);
-
-  /// Is the name of the operation.
-  @override
-  String get name;
-
-  /// Is the name of the operation.
-  set name(String value);
-
-  /// Is the type of operation.
-  @override
-  @JsonKey(unknownEnumValue: OperationType.unknown)
-  OperationType get operationType;
-
-  /// Is the type of operation.
-  @JsonKey(unknownEnumValue: OperationType.unknown)
-  set operationType(OperationType value);
-
-  /// Is the HTTP Request type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
-  HttpRequestType? get requestType;
-
-  /// Is the HTTP Request type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @JsonKey(unknownEnumValue: HttpRequestType.httpGet)
-  set requestType(HttpRequestType? value);
-
-  /// Is the URL to perform the request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  String? get url;
-
-  /// Is the URL to perform the request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  set url(String? value);
-
-  /// Is the headers to send in the HTTP request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  @override
-  List<HttpHeaderInput> get headers;
-
-  /// Is the headers to send in the HTTP request
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.webhook].
-  set headers(List<HttpHeaderInput> value);
-
-  /// Is the payload to send in the submission.
-  @override
-  String? get payload;
-
-  /// Is the payload to send in the submission.
-  set payload(String? value);
-
-  /// Is the language ID of the message. Used to define the default language of the message.
-  @override
-  String? get languageId;
-
-  /// Is the language ID of the message. Used to define the default language of the message.
-  set languageId(String? value);
-
-  /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-  @override
-  String? get timezoneId;
-
-  /// [timezoneId] is the timezone ID of the message. Used to define the default timezone of the message.
-  set timezoneId(String? value);
-
-  /// Is the reception email to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  @override
-  List<String> get receptionEmails;
-
-  /// Is the reception email to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  set receptionEmails(List<String> value);
-
-  /// Is the subject of the email
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  @override
-  String get emailSubject;
-
-  /// Is the subject of the email
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.email].
-  set emailSubject(String value);
-
-  /// Is the color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @override
-  @ColorOrNullConverter()
-  Color? get color;
-
-  /// Is the color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @ColorOrNullConverter()
-  set color(Color? value);
-
-  /// Is the text color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @override
-  @ColorOrNullConverter()
-  Color? get textColor;
-
-  /// Is the text color of the inline notification
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.inAppNotification].
-  @ColorOrNullConverter()
-  set textColor(Color? value);
-
-  /// Is the receiver numbers to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio].
-  @override
-  List<PhoneNumberInput> get destinationPhones;
-
-  /// Is the receiver numbers to send the message
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio].
-  set destinationPhones(List<PhoneNumberInput> value);
-
-  /// Is the Notification type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio]
-  @override
-  @JsonKey(unknownEnumValue: NotificationType.unknown)
-  NotificationType? get notificationType;
-
-  /// Is the Notification type to perform
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.twilio]
-  @JsonKey(unknownEnumValue: NotificationType.unknown)
-  set notificationType(NotificationType? value);
-
-  /// The [externalAccountId] of the operation. Only the ID
-  @override
-  String? get externalAccountId;
-
-  /// The [externalAccountId] of the operation. Only the ID
-  set externalAccountId(String? value);
-
-  /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  @override
-  bool get useAssetContactsInstead;
-
-  /// [useAssetContactsInstead] is a flag to use the asset contacts instead of the submission contacts.
-  set useAssetContactsInstead(bool value);
-
-  /// [attachImage] is a flag to attach the image of the submission to the email.
-  @override
-  bool get attachImage;
-
-  /// [attachImage] is a flag to attach the image of the submission to the email.
-  set attachImage(bool value);
-
-  /// The [emailTemplateId] of the operation. Only the ID
-  @override
-  String? get emailTemplateId;
-
-  /// The [emailTemplateId] of the operation. Only the ID
-  set emailTemplateId(String? value);
-
-  /// [pushPlatforms] is the list of platforms where the operation should be received.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  @override
-  @JsonKey(unknownEnumValue: AppPlatform.web)
-  List<AppPlatform>? get pushPlatforms;
-
-  /// [pushPlatforms] is the list of platforms where the operation should be received.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  @JsonKey(unknownEnumValue: AppPlatform.web)
-  set pushPlatforms(List<AppPlatform>? value);
-
-  /// [pushTitle] is the title of the push notification.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  @override
-  String? get pushTitle;
-
-  /// [pushTitle] is the title of the push notification.
-  /// This field will only be considered in the following [operationType]:
-  /// - [OperationType.bhsPush]
-  set pushTitle(String? value);
-
-  /// [soundEffect] is the sound effect to play when the notification arrives.
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
-  @JsonKey(unknownEnumValue: SoundEffect.none)
-  SoundEffect get soundEffect;
-
-  /// [soundEffect] is the sound effect to play when the notification arrives.
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @JsonKey(unknownEnumValue: SoundEffect.none)
-  set soundEffect(SoundEffect value);
-
-  /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
-  String? get soundEffectUri;
-
-  /// [soundEffectUri] is the URI of the sound effect to play when the notification arrives.
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  set soundEffectUri(String? value);
-
-  /// [icon] is the icon of the notification
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
-  @IconOrNullConverter()
-  LayrzIcon? get icon;
-
-  /// [icon] is the icon of the notification
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @IconOrNullConverter()
-  set icon(LayrzIcon? value);
-
-  /// [duration] is the duration of the notification
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @override
-  @DurationConverter()
-  Duration get duration;
-
-  /// [duration] is the duration of the notification
-  ///
-  /// This will only be considered if the [operationType] is set to `OperationType.inAppNotification`.
-  @DurationConverter()
-  set duration(Duration value);
+  final _OperationInput _self;
+  final $Res Function(_OperationInput) _then;
 
   /// Create a copy of OperationInput
   /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OperationInputImplCopyWith<_$OperationInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-HttpHeader _$HttpHeaderFromJson(Map<String, dynamic> json) {
-  return _HttpHeader.fromJson(json);
-}
-
-/// @nodoc
-mixin _$HttpHeader {
-  String get name => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
-
-  /// Serializes this HttpHeader to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $HttpHeaderCopyWith<HttpHeader> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $HttpHeaderCopyWith<$Res> {
-  factory $HttpHeaderCopyWith(
-          HttpHeader value, $Res Function(HttpHeader) then) =
-      _$HttpHeaderCopyWithImpl<$Res, HttpHeader>;
-  @useResult
-  $Res call({String name, String value});
-}
-
-/// @nodoc
-class _$HttpHeaderCopyWithImpl<$Res, $Val extends HttpHeader>
-    implements $HttpHeaderCopyWith<$Res> {
-  _$HttpHeaderCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
+    Object? id = freezed,
     Object? name = null,
-    Object? value = null,
+    Object? operationType = null,
+    Object? requestType = freezed,
+    Object? url = freezed,
+    Object? headers = null,
+    Object? payload = freezed,
+    Object? languageId = freezed,
+    Object? timezoneId = freezed,
+    Object? receptionEmails = null,
+    Object? emailSubject = null,
+    Object? color = freezed,
+    Object? textColor = freezed,
+    Object? destinationPhones = null,
+    Object? notificationType = freezed,
+    Object? externalAccountId = freezed,
+    Object? useAssetContactsInstead = null,
+    Object? attachImage = null,
+    Object? emailTemplateId = freezed,
+    Object? pushPlatforms = freezed,
+    Object? pushTitle = freezed,
+    Object? soundEffect = null,
+    Object? soundEffectUri = freezed,
+    Object? icon = freezed,
+    Object? duration = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_OperationInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
+      operationType: null == operationType
+          ? _self.operationType
+          : operationType // ignore: cast_nullable_to_non_nullable
+              as OperationType,
+      requestType: freezed == requestType
+          ? _self.requestType
+          : requestType // ignore: cast_nullable_to_non_nullable
+              as HttpRequestType?,
+      url: freezed == url
+          ? _self.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+      headers: null == headers
+          ? _self.headers
+          : headers // ignore: cast_nullable_to_non_nullable
+              as List<HttpHeaderInput>,
+      payload: freezed == payload
+          ? _self.payload
+          : payload // ignore: cast_nullable_to_non_nullable
+              as String?,
+      languageId: freezed == languageId
+          ? _self.languageId
+          : languageId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      timezoneId: freezed == timezoneId
+          ? _self.timezoneId
+          : timezoneId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      receptionEmails: null == receptionEmails
+          ? _self.receptionEmails
+          : receptionEmails // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      emailSubject: null == emailSubject
+          ? _self.emailSubject
+          : emailSubject // ignore: cast_nullable_to_non_nullable
               as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$HttpHeaderImplCopyWith<$Res>
-    implements $HttpHeaderCopyWith<$Res> {
-  factory _$$HttpHeaderImplCopyWith(
-          _$HttpHeaderImpl value, $Res Function(_$HttpHeaderImpl) then) =
-      __$$HttpHeaderImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String name, String value});
-}
-
-/// @nodoc
-class __$$HttpHeaderImplCopyWithImpl<$Res>
-    extends _$HttpHeaderCopyWithImpl<$Res, _$HttpHeaderImpl>
-    implements _$$HttpHeaderImplCopyWith<$Res> {
-  __$$HttpHeaderImplCopyWithImpl(
-      _$HttpHeaderImpl _value, $Res Function(_$HttpHeaderImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_$HttpHeaderImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
+      color: freezed == color
+          ? _self.color
+          : color // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      textColor: freezed == textColor
+          ? _self.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      destinationPhones: null == destinationPhones
+          ? _self.destinationPhones
+          : destinationPhones // ignore: cast_nullable_to_non_nullable
+              as List<PhoneNumberInput>,
+      notificationType: freezed == notificationType
+          ? _self.notificationType
+          : notificationType // ignore: cast_nullable_to_non_nullable
+              as NotificationType?,
+      externalAccountId: freezed == externalAccountId
+          ? _self.externalAccountId
+          : externalAccountId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      useAssetContactsInstead: null == useAssetContactsInstead
+          ? _self.useAssetContactsInstead
+          : useAssetContactsInstead // ignore: cast_nullable_to_non_nullable
+              as bool,
+      attachImage: null == attachImage
+          ? _self.attachImage
+          : attachImage // ignore: cast_nullable_to_non_nullable
+              as bool,
+      emailTemplateId: freezed == emailTemplateId
+          ? _self.emailTemplateId
+          : emailTemplateId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pushPlatforms: freezed == pushPlatforms
+          ? _self.pushPlatforms
+          : pushPlatforms // ignore: cast_nullable_to_non_nullable
+              as List<AppPlatform>?,
+      pushTitle: freezed == pushTitle
+          ? _self.pushTitle
+          : pushTitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      soundEffect: null == soundEffect
+          ? _self.soundEffect
+          : soundEffect // ignore: cast_nullable_to_non_nullable
+              as SoundEffect,
+      soundEffectUri: freezed == soundEffectUri
+          ? _self.soundEffectUri
+          : soundEffectUri // ignore: cast_nullable_to_non_nullable
+              as String?,
+      icon: freezed == icon
+          ? _self.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as LayrzIcon?,
+      duration: null == duration
+          ? _self.duration
+          : duration // ignore: cast_nullable_to_non_nullable
+              as Duration,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$HttpHeaderImpl extends _HttpHeader {
-  const _$HttpHeaderImpl({required this.name, required this.value}) : super._();
+mixin _$HttpHeader {
+  String get name;
+  String get value;
 
-  factory _$HttpHeaderImpl.fromJson(Map<String, dynamic> json) =>
-      _$$HttpHeaderImplFromJson(json);
+  /// Create a copy of HttpHeader
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $HttpHeaderCopyWith<HttpHeader> get copyWith =>
+      _$HttpHeaderCopyWithImpl<HttpHeader>(this as HttpHeader, _$identity);
 
-  @override
-  final String name;
-  @override
-  final String value;
-
-  @override
-  String toString() {
-    return 'HttpHeader(name: $name, value: $value)';
-  }
+  /// Serializes this HttpHeader to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$HttpHeaderImpl &&
+            other is HttpHeader &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.value, value) || other.value == value));
   }
@@ -2396,85 +1891,29 @@ class _$HttpHeaderImpl extends _HttpHeader {
   @override
   int get hashCode => Object.hash(runtimeType, name, value);
 
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$HttpHeaderImplCopyWith<_$HttpHeaderImpl> get copyWith =>
-      __$$HttpHeaderImplCopyWithImpl<_$HttpHeaderImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$HttpHeaderImplToJson(
-      this,
-    );
+  String toString() {
+    return 'HttpHeader(name: $name, value: $value)';
   }
 }
 
-abstract class _HttpHeader extends HttpHeader {
-  const factory _HttpHeader(
-      {required final String name,
-      required final String value}) = _$HttpHeaderImpl;
-  const _HttpHeader._() : super._();
-
-  factory _HttpHeader.fromJson(Map<String, dynamic> json) =
-      _$HttpHeaderImpl.fromJson;
-
-  @override
-  String get name;
-  @override
-  String get value;
-
-  /// Create a copy of HttpHeader
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HttpHeaderImplCopyWith<_$HttpHeaderImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-HttpHeaderInput _$HttpHeaderInputFromJson(Map<String, dynamic> json) {
-  return _HttpHeaderInput.fromJson(json);
-}
-
 /// @nodoc
-mixin _$HttpHeaderInput {
-  String get name => throw _privateConstructorUsedError;
-  set name(String value) => throw _privateConstructorUsedError;
-  String get value => throw _privateConstructorUsedError;
-  set value(String value) => throw _privateConstructorUsedError;
-
-  /// Serializes this HttpHeaderInput to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of HttpHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $HttpHeaderInputCopyWith<HttpHeaderInput> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $HttpHeaderInputCopyWith<$Res> {
-  factory $HttpHeaderInputCopyWith(
-          HttpHeaderInput value, $Res Function(HttpHeaderInput) then) =
-      _$HttpHeaderInputCopyWithImpl<$Res, HttpHeaderInput>;
+abstract mixin class $HttpHeaderCopyWith<$Res> {
+  factory $HttpHeaderCopyWith(
+          HttpHeader value, $Res Function(HttpHeader) _then) =
+      _$HttpHeaderCopyWithImpl;
   @useResult
   $Res call({String name, String value});
 }
 
 /// @nodoc
-class _$HttpHeaderInputCopyWithImpl<$Res, $Val extends HttpHeaderInput>
-    implements $HttpHeaderInputCopyWith<$Res> {
-  _$HttpHeaderInputCopyWithImpl(this._value, this._then);
+class _$HttpHeaderCopyWithImpl<$Res> implements $HttpHeaderCopyWith<$Res> {
+  _$HttpHeaderCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final HttpHeader _self;
+  final $Res Function(HttpHeader) _then;
 
-  /// Create a copy of HttpHeaderInput
+  /// Create a copy of HttpHeader
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -2482,53 +1921,13 @@ class _$HttpHeaderInputCopyWithImpl<$Res, $Val extends HttpHeaderInput>
     Object? name = null,
     Object? value = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       value: null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$HttpHeaderInputImplCopyWith<$Res>
-    implements $HttpHeaderInputCopyWith<$Res> {
-  factory _$$HttpHeaderInputImplCopyWith(_$HttpHeaderInputImpl value,
-          $Res Function(_$HttpHeaderInputImpl) then) =
-      __$$HttpHeaderInputImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String name, String value});
-}
-
-/// @nodoc
-class __$$HttpHeaderInputImplCopyWithImpl<$Res>
-    extends _$HttpHeaderInputCopyWithImpl<$Res, _$HttpHeaderInputImpl>
-    implements _$$HttpHeaderInputImplCopyWith<$Res> {
-  __$$HttpHeaderInputImplCopyWithImpl(
-      _$HttpHeaderInputImpl _value, $Res Function(_$HttpHeaderInputImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of HttpHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? name = null,
-    Object? value = null,
-  }) {
-    return _then(_$HttpHeaderInputImpl(
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      value: null == value
-          ? _value.value
+          ? _self.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
     ));
@@ -2537,11 +1936,157 @@ class __$$HttpHeaderInputImplCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$HttpHeaderInputImpl extends _HttpHeaderInput {
-  _$HttpHeaderInputImpl({this.name = '', this.value = ''}) : super._();
+class _HttpHeader extends HttpHeader {
+  const _HttpHeader({required this.name, required this.value}) : super._();
+  factory _HttpHeader.fromJson(Map<String, dynamic> json) =>
+      _$HttpHeaderFromJson(json);
 
-  factory _$HttpHeaderInputImpl.fromJson(Map<String, dynamic> json) =>
-      _$$HttpHeaderInputImplFromJson(json);
+  @override
+  final String name;
+  @override
+  final String value;
+
+  /// Create a copy of HttpHeader
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$HttpHeaderCopyWith<_HttpHeader> get copyWith =>
+      __$HttpHeaderCopyWithImpl<_HttpHeader>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$HttpHeaderToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _HttpHeader &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.value, value) || other.value == value));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, value);
+
+  @override
+  String toString() {
+    return 'HttpHeader(name: $name, value: $value)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$HttpHeaderCopyWith<$Res>
+    implements $HttpHeaderCopyWith<$Res> {
+  factory _$HttpHeaderCopyWith(
+          _HttpHeader value, $Res Function(_HttpHeader) _then) =
+      __$HttpHeaderCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String name, String value});
+}
+
+/// @nodoc
+class __$HttpHeaderCopyWithImpl<$Res> implements _$HttpHeaderCopyWith<$Res> {
+  __$HttpHeaderCopyWithImpl(this._self, this._then);
+
+  final _HttpHeader _self;
+  final $Res Function(_HttpHeader) _then;
+
+  /// Create a copy of HttpHeader
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? value = null,
+  }) {
+    return _then(_HttpHeader(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$HttpHeaderInput {
+  String get name;
+  set name(String value);
+  String get value;
+  set value(String value);
+
+  /// Create a copy of HttpHeaderInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $HttpHeaderInputCopyWith<HttpHeaderInput> get copyWith =>
+      _$HttpHeaderInputCopyWithImpl<HttpHeaderInput>(
+          this as HttpHeaderInput, _$identity);
+
+  /// Serializes this HttpHeaderInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'HttpHeaderInput(name: $name, value: $value)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $HttpHeaderInputCopyWith<$Res> {
+  factory $HttpHeaderInputCopyWith(
+          HttpHeaderInput value, $Res Function(HttpHeaderInput) _then) =
+      _$HttpHeaderInputCopyWithImpl;
+  @useResult
+  $Res call({String name, String value});
+}
+
+/// @nodoc
+class _$HttpHeaderInputCopyWithImpl<$Res>
+    implements $HttpHeaderInputCopyWith<$Res> {
+  _$HttpHeaderInputCopyWithImpl(this._self, this._then);
+
+  final HttpHeaderInput _self;
+  final $Res Function(HttpHeaderInput) _then;
+
+  /// Create a copy of HttpHeaderInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? value = null,
+  }) {
+    return _then(_self.copyWith(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _HttpHeaderInput extends HttpHeaderInput {
+  _HttpHeaderInput({this.name = '', this.value = ''}) : super._();
+  factory _HttpHeaderInput.fromJson(Map<String, dynamic> json) =>
+      _$HttpHeaderInputFromJson(json);
 
   @override
   @JsonKey()
@@ -2550,46 +2095,65 @@ class _$HttpHeaderInputImpl extends _HttpHeaderInput {
   @JsonKey()
   String value;
 
+  /// Create a copy of HttpHeaderInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$HttpHeaderInputCopyWith<_HttpHeaderInput> get copyWith =>
+      __$HttpHeaderInputCopyWithImpl<_HttpHeaderInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$HttpHeaderInputToJson(
+      this,
+    );
+  }
+
   @override
   String toString() {
     return 'HttpHeaderInput(name: $name, value: $value)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$HttpHeaderInputCopyWith<$Res>
+    implements $HttpHeaderInputCopyWith<$Res> {
+  factory _$HttpHeaderInputCopyWith(
+          _HttpHeaderInput value, $Res Function(_HttpHeaderInput) _then) =
+      __$HttpHeaderInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String name, String value});
+}
+
+/// @nodoc
+class __$HttpHeaderInputCopyWithImpl<$Res>
+    implements _$HttpHeaderInputCopyWith<$Res> {
+  __$HttpHeaderInputCopyWithImpl(this._self, this._then);
+
+  final _HttpHeaderInput _self;
+  final $Res Function(_HttpHeaderInput) _then;
 
   /// Create a copy of HttpHeaderInput
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$HttpHeaderInputImplCopyWith<_$HttpHeaderInputImpl> get copyWith =>
-      __$$HttpHeaderInputImplCopyWithImpl<_$HttpHeaderInputImpl>(
-          this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$HttpHeaderInputImplToJson(
-      this,
-    );
+  $Res call({
+    Object? name = null,
+    Object? value = null,
+  }) {
+    return _then(_HttpHeaderInput(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      value: null == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
   }
 }
 
-abstract class _HttpHeaderInput extends HttpHeaderInput {
-  factory _HttpHeaderInput({String name, String value}) = _$HttpHeaderInputImpl;
-  _HttpHeaderInput._() : super._();
-
-  factory _HttpHeaderInput.fromJson(Map<String, dynamic> json) =
-      _$HttpHeaderInputImpl.fromJson;
-
-  @override
-  String get name;
-  set name(String value);
-  @override
-  String get value;
-  set value(String value);
-
-  /// Create a copy of HttpHeaderInput
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$HttpHeaderInputImplCopyWith<_$HttpHeaderInputImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

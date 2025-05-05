@@ -28,10 +28,10 @@ abstract class Sensor with _$Sensor {
     String? measuringUnit,
 
     /// [type] of the sensor.
-    @SensorTypeOrNullConverter() SensorType? type,
+    @JsonKey(unknownEnumValue: SensorType.constant) SensorType? type,
 
     /// [subType] of the sensor.
-    @SensorSubTypeOrNullConverter() SensorSubType? subtype,
+    @JsonKey(unknownEnumValue: SensorSubType.raw) SensorSubType? subtype,
 
     /// [parameter] of the sensor.
     String? parameter,
@@ -124,8 +124,8 @@ abstract class SensorInput with _$SensorInput {
     @Default('') String name,
     @Default('') String slug,
     @Default('') String measuringUnit,
-    @SensorTypeConverter() @Default(SensorType.constant) SensorType type,
-    @SensorSubTypeConverter() @Default(SensorSubType.raw) SensorSubType subtype,
+    @JsonKey(unknownEnumValue: SensorType.constant) @Default(SensorType.constant) SensorType type,
+    @JsonKey(unknownEnumValue: SensorSubType.raw) @Default(SensorSubType.raw) SensorSubType subtype,
     @Default('') String parameter,
     @Default(1) int iterationCycle,
     @Default('') String formula,
