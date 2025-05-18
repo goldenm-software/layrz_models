@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.4.1
+## 3.4.2
 
 - Re-defined the `Trigger` model as a submodule to code separation.
 - Added new `manualAction` to `TriggerType` enum.
