@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.4.1
+
+- Re-defined the `Trigger` model as a submodule to code separation.
+- Added new `manualAction` to `TriggerType` enum.
+- Added `manualActionFields` to `Trigger` and `TriggerInput` models.
+- Re-defined the `CareProtocol` model as a submodule to code separation.
+
 ## 3.4.0
 
 - Upgraded `freezed` to `3.0.0` version and their dependencies.
