@@ -2,6 +2,7 @@ library;
 
 import 'dart:ui';
 
+import 'package:collection/collection.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layrz_models/layrz_models.dart';
 
@@ -69,3 +70,10 @@ part 'src/enums/purchase_order_status.dart';
 part 'src/enums/purchase_order_sub_categories.dart';
 part 'src/enums/cf_fuel_type.dart';
 part 'src/enums/reception_status.dart';
+
+// Manifests
+part 'src/manifest/kind.dart';
+part 'src/manifest/entity/manifest.dart';
+part 'src/manifest/input/manifest.dart';
+part 'src/manifest/entity/tank_measurement.dart';
+part 'src/manifest/input/tank_measurement.dart';

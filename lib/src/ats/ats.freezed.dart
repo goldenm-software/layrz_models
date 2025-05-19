@@ -12664,6 +12664,9 @@ mixin _$AtsOperation {
   /// `caclForms` is the list of CACL forms.
   List<String>? get caclForms;
 
+  /// [manifests] is the list of manifests linked to the operation.
+  List<Manifest>? get manifests;
+
   /// Create a copy of AtsOperation
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -12716,7 +12719,8 @@ mixin _$AtsOperation {
             const DeepCollectionEquality()
                 .equals(other.productsInformation, productsInformation) &&
             const DeepCollectionEquality().equals(other.ctes, ctes) &&
-            const DeepCollectionEquality().equals(other.caclForms, caclForms));
+            const DeepCollectionEquality().equals(other.caclForms, caclForms) &&
+            const DeepCollectionEquality().equals(other.manifests, manifests));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -12743,12 +12747,13 @@ mixin _$AtsOperation {
         totalQuantity,
         const DeepCollectionEquality().hash(productsInformation),
         const DeepCollectionEquality().hash(ctes),
-        const DeepCollectionEquality().hash(caclForms)
+        const DeepCollectionEquality().hash(caclForms),
+        const DeepCollectionEquality().hash(manifests)
       ]);
 
   @override
   String toString() {
-    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclForms: $caclForms)';
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclForms: $caclForms, manifests: $manifests)';
   }
 }
 
@@ -12782,7 +12787,8 @@ abstract mixin class $AtsOperationCopyWith<$Res> {
       double? totalQuantity,
       List<OperationProductInformation>? productsInformation,
       List<String>? ctes,
-      List<String>? caclForms});
+      List<String>? caclForms,
+      List<Manifest>? manifests});
 
   $AssetCopyWith<$Res>? get sellerAsset;
   $AssetCopyWith<$Res>? get transportAsset;
@@ -12823,6 +12829,7 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
     Object? productsInformation = freezed,
     Object? ctes = freezed,
     Object? caclForms = freezed,
+    Object? manifests = freezed,
   }) {
     return _then(_self.copyWith(
       id: freezed == id
@@ -12909,6 +12916,10 @@ class _$AtsOperationCopyWithImpl<$Res> implements $AtsOperationCopyWith<$Res> {
           ? _self.caclForms
           : caclForms // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      manifests: freezed == manifests
+          ? _self.manifests
+          : manifests // ignore: cast_nullable_to_non_nullable
+              as List<Manifest>?,
     ));
   }
 
@@ -12995,13 +13006,15 @@ class _AtsOperation implements AtsOperation {
       this.totalQuantity,
       final List<OperationProductInformation>? productsInformation,
       final List<String>? ctes,
-      final List<String>? caclForms})
+      final List<String>? caclForms,
+      final List<Manifest>? manifests})
       : _ordersIds = ordersIds,
         _purchaseOrders = purchaseOrders,
         _statuses = statuses,
         _productsInformation = productsInformation,
         _ctes = ctes,
-        _caclForms = caclForms;
+        _caclForms = caclForms,
+        _manifests = manifests;
   factory _AtsOperation.fromJson(Map<String, dynamic> json) =>
       _$AtsOperationFromJson(json);
 
@@ -13150,6 +13163,19 @@ class _AtsOperation implements AtsOperation {
     return EqualUnmodifiableListView(value);
   }
 
+  /// [manifests] is the list of manifests linked to the operation.
+  final List<Manifest>? _manifests;
+
+  /// [manifests] is the list of manifests linked to the operation.
+  @override
+  List<Manifest>? get manifests {
+    final value = _manifests;
+    if (value == null) return null;
+    if (_manifests is EqualUnmodifiableListView) return _manifests;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   /// Create a copy of AtsOperation
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -13208,7 +13234,9 @@ class _AtsOperation implements AtsOperation {
                 .equals(other._productsInformation, _productsInformation) &&
             const DeepCollectionEquality().equals(other._ctes, _ctes) &&
             const DeepCollectionEquality()
-                .equals(other._caclForms, _caclForms));
+                .equals(other._caclForms, _caclForms) &&
+            const DeepCollectionEquality()
+                .equals(other._manifests, _manifests));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -13235,12 +13263,13 @@ class _AtsOperation implements AtsOperation {
         totalQuantity,
         const DeepCollectionEquality().hash(_productsInformation),
         const DeepCollectionEquality().hash(_ctes),
-        const DeepCollectionEquality().hash(_caclForms)
+        const DeepCollectionEquality().hash(_caclForms),
+        const DeepCollectionEquality().hash(_manifests)
       ]);
 
   @override
   String toString() {
-    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclForms: $caclForms)';
+    return 'AtsOperation(id: $id, sellerAssetId: $sellerAssetId, transportAssetId: $transportAssetId, purchasedAt: $purchasedAt, createdAt: $createdAt, finishedAt: $finishedAt, pendingToReview: $pendingToReview, ordersIds: $ordersIds, sellerAsset: $sellerAsset, transportAsset: $transportAsset, sellerInformation: $sellerInformation, transportInformation: $transportInformation, orderStatus: $orderStatus, category: $category, deliverCategory: $deliverCategory, purchaseOrders: $purchaseOrders, statuses: $statuses, totalQuantity: $totalQuantity, productsInformation: $productsInformation, ctes: $ctes, caclForms: $caclForms, manifests: $manifests)';
   }
 }
 
@@ -13276,7 +13305,8 @@ abstract mixin class _$AtsOperationCopyWith<$Res>
       double? totalQuantity,
       List<OperationProductInformation>? productsInformation,
       List<String>? ctes,
-      List<String>? caclForms});
+      List<String>? caclForms,
+      List<Manifest>? manifests});
 
   @override
   $AssetCopyWith<$Res>? get sellerAsset;
@@ -13322,6 +13352,7 @@ class __$AtsOperationCopyWithImpl<$Res>
     Object? productsInformation = freezed,
     Object? ctes = freezed,
     Object? caclForms = freezed,
+    Object? manifests = freezed,
   }) {
     return _then(_AtsOperation(
       id: freezed == id
@@ -13408,6 +13439,10 @@ class __$AtsOperationCopyWithImpl<$Res>
           ? _self._caclForms
           : caclForms // ignore: cast_nullable_to_non_nullable
               as List<String>?,
+      manifests: freezed == manifests
+          ? _self._manifests
+          : manifests // ignore: cast_nullable_to_non_nullable
+              as List<Manifest>?,
     ));
   }
 
@@ -13820,6 +13855,1607 @@ class __$AtsOperationStatusesCopyWithImpl<$Res>
     return $AssetCopyWith<$Res>(_self.asset!, (value) {
       return _then(_self.copyWith(asset: value));
     });
+  }
+}
+
+/// @nodoc
+mixin _$Manifest {
+  /// The [id] parameter is the id of the manifest entity.
+  String? get id;
+
+  /// The [operationId] parameter is the operationId of the manifest entity.
+  String? get operationId;
+
+  /// The [transportAssetId] parameter is the transportAssetId of the manifest entity.
+  String? get transportAssetId;
+
+  /// The [terminalAssetId] parameter is the terminalAssetId of the manifest entity.
+  String? get terminalAssetId;
+
+  /// The [totalVolume] parameter is the totalVolume of the manifest entity.
+  double? get totalVolume;
+
+  /// The [totalConvertedVolume] parameter is the totalConvertedVolume of the manifest entity.
+  double? get totalConvertedVolume;
+
+  /// The [operation] parameter is the operation of the manifest entity.
+  AtsOperation? get operation;
+
+  /// The [transportAsset] parameter is the transportAsset of the manifest entity.
+  Asset? get transportAsset;
+
+  /// The [terminalAsset] parameter is the terminalAsset of the manifest entity.
+  Asset? get terminalAsset;
+
+  /// The [date] parameter is the date of the manifest entity.
+  @TimestampOrNullConverter()
+  DateTime? get date;
+
+  /// The [trim] parameter is the trim of the manifest entity.
+  double? get trim;
+
+  /// The [listCalc] parameter is the listCalc of the manifest entity.
+  double? get listCalc;
+
+  /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
+  List<TankMeasurement>? get tankMeasurements;
+
+  /// The [kind] parameter is the kind of the manifest entity.
+  @JsonKey(unknownEnumValue: ManifestKind.manual)
+  ManifestKind? get kind;
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ManifestCopyWith<Manifest> get copyWith =>
+      _$ManifestCopyWithImpl<Manifest>(this as Manifest, _$identity);
+
+  /// Serializes this Manifest to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Manifest &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.terminalAssetId, terminalAssetId) ||
+                other.terminalAssetId == terminalAssetId) &&
+            (identical(other.totalVolume, totalVolume) ||
+                other.totalVolume == totalVolume) &&
+            (identical(other.totalConvertedVolume, totalConvertedVolume) ||
+                other.totalConvertedVolume == totalConvertedVolume) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.terminalAsset, terminalAsset) ||
+                other.terminalAsset == terminalAsset) &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.trim, trim) || other.trim == trim) &&
+            (identical(other.listCalc, listCalc) ||
+                other.listCalc == listCalc) &&
+            const DeepCollectionEquality()
+                .equals(other.tankMeasurements, tankMeasurements) &&
+            (identical(other.kind, kind) || other.kind == kind));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      operationId,
+      transportAssetId,
+      terminalAssetId,
+      totalVolume,
+      totalConvertedVolume,
+      operation,
+      transportAsset,
+      terminalAsset,
+      date,
+      trim,
+      listCalc,
+      const DeepCollectionEquality().hash(tankMeasurements),
+      kind);
+
+  @override
+  String toString() {
+    return 'Manifest(id: $id, operationId: $operationId, transportAssetId: $transportAssetId, terminalAssetId: $terminalAssetId, totalVolume: $totalVolume, totalConvertedVolume: $totalConvertedVolume, operation: $operation, transportAsset: $transportAsset, terminalAsset: $terminalAsset, date: $date, trim: $trim, listCalc: $listCalc, tankMeasurements: $tankMeasurements, kind: $kind)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ManifestCopyWith<$Res> {
+  factory $ManifestCopyWith(Manifest value, $Res Function(Manifest) _then) =
+      _$ManifestCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String? operationId,
+      String? transportAssetId,
+      String? terminalAssetId,
+      double? totalVolume,
+      double? totalConvertedVolume,
+      AtsOperation? operation,
+      Asset? transportAsset,
+      Asset? terminalAsset,
+      @TimestampOrNullConverter() DateTime? date,
+      double? trim,
+      double? listCalc,
+      List<TankMeasurement>? tankMeasurements,
+      @JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind});
+
+  $AtsOperationCopyWith<$Res>? get operation;
+  $AssetCopyWith<$Res>? get transportAsset;
+  $AssetCopyWith<$Res>? get terminalAsset;
+}
+
+/// @nodoc
+class _$ManifestCopyWithImpl<$Res> implements $ManifestCopyWith<$Res> {
+  _$ManifestCopyWithImpl(this._self, this._then);
+
+  final Manifest _self;
+  final $Res Function(Manifest) _then;
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? operationId = freezed,
+    Object? transportAssetId = freezed,
+    Object? terminalAssetId = freezed,
+    Object? totalVolume = freezed,
+    Object? totalConvertedVolume = freezed,
+    Object? operation = freezed,
+    Object? transportAsset = freezed,
+    Object? terminalAsset = freezed,
+    Object? date = freezed,
+    Object? trim = freezed,
+    Object? listCalc = freezed,
+    Object? tankMeasurements = freezed,
+    Object? kind = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportAssetId: freezed == transportAssetId
+          ? _self.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      terminalAssetId: freezed == terminalAssetId
+          ? _self.terminalAssetId
+          : terminalAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      totalVolume: freezed == totalVolume
+          ? _self.totalVolume
+          : totalVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      totalConvertedVolume: freezed == totalConvertedVolume
+          ? _self.totalConvertedVolume
+          : totalConvertedVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      operation: freezed == operation
+          ? _self.operation
+          : operation // ignore: cast_nullable_to_non_nullable
+              as AtsOperation?,
+      transportAsset: freezed == transportAsset
+          ? _self.transportAsset
+          : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      terminalAsset: freezed == terminalAsset
+          ? _self.terminalAsset
+          : terminalAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      date: freezed == date
+          ? _self.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      trim: freezed == trim
+          ? _self.trim
+          : trim // ignore: cast_nullable_to_non_nullable
+              as double?,
+      listCalc: freezed == listCalc
+          ? _self.listCalc
+          : listCalc // ignore: cast_nullable_to_non_nullable
+              as double?,
+      tankMeasurements: freezed == tankMeasurements
+          ? _self.tankMeasurements
+          : tankMeasurements // ignore: cast_nullable_to_non_nullable
+              as List<TankMeasurement>?,
+      kind: freezed == kind
+          ? _self.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ManifestKind?,
+    ));
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+      return null;
+    }
+
+    return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+      return _then(_self.copyWith(operation: value));
+    });
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get transportAsset {
+    if (_self.transportAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
+      return _then(_self.copyWith(transportAsset: value));
+    });
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get terminalAsset {
+    if (_self.terminalAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.terminalAsset!, (value) {
+      return _then(_self.copyWith(terminalAsset: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _Manifest extends Manifest {
+  _Manifest(
+      {this.id,
+      this.operationId,
+      this.transportAssetId,
+      this.terminalAssetId,
+      this.totalVolume,
+      this.totalConvertedVolume,
+      this.operation,
+      this.transportAsset,
+      this.terminalAsset,
+      @TimestampOrNullConverter() this.date,
+      this.trim,
+      this.listCalc,
+      final List<TankMeasurement>? tankMeasurements,
+      @JsonKey(unknownEnumValue: ManifestKind.manual) this.kind})
+      : _tankMeasurements = tankMeasurements,
+        super._();
+  factory _Manifest.fromJson(Map<String, dynamic> json) =>
+      _$ManifestFromJson(json);
+
+  /// The [id] parameter is the id of the manifest entity.
+  @override
+  final String? id;
+
+  /// The [operationId] parameter is the operationId of the manifest entity.
+  @override
+  final String? operationId;
+
+  /// The [transportAssetId] parameter is the transportAssetId of the manifest entity.
+  @override
+  final String? transportAssetId;
+
+  /// The [terminalAssetId] parameter is the terminalAssetId of the manifest entity.
+  @override
+  final String? terminalAssetId;
+
+  /// The [totalVolume] parameter is the totalVolume of the manifest entity.
+  @override
+  final double? totalVolume;
+
+  /// The [totalConvertedVolume] parameter is the totalConvertedVolume of the manifest entity.
+  @override
+  final double? totalConvertedVolume;
+
+  /// The [operation] parameter is the operation of the manifest entity.
+  @override
+  final AtsOperation? operation;
+
+  /// The [transportAsset] parameter is the transportAsset of the manifest entity.
+  @override
+  final Asset? transportAsset;
+
+  /// The [terminalAsset] parameter is the terminalAsset of the manifest entity.
+  @override
+  final Asset? terminalAsset;
+
+  /// The [date] parameter is the date of the manifest entity.
+  @override
+  @TimestampOrNullConverter()
+  final DateTime? date;
+
+  /// The [trim] parameter is the trim of the manifest entity.
+  @override
+  final double? trim;
+
+  /// The [listCalc] parameter is the listCalc of the manifest entity.
+  @override
+  final double? listCalc;
+
+  /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
+  final List<TankMeasurement>? _tankMeasurements;
+
+  /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
+  @override
+  List<TankMeasurement>? get tankMeasurements {
+    final value = _tankMeasurements;
+    if (value == null) return null;
+    if (_tankMeasurements is EqualUnmodifiableListView)
+      return _tankMeasurements;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// The [kind] parameter is the kind of the manifest entity.
+  @override
+  @JsonKey(unknownEnumValue: ManifestKind.manual)
+  final ManifestKind? kind;
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ManifestCopyWith<_Manifest> get copyWith =>
+      __$ManifestCopyWithImpl<_Manifest>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ManifestToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Manifest &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.operationId, operationId) ||
+                other.operationId == operationId) &&
+            (identical(other.transportAssetId, transportAssetId) ||
+                other.transportAssetId == transportAssetId) &&
+            (identical(other.terminalAssetId, terminalAssetId) ||
+                other.terminalAssetId == terminalAssetId) &&
+            (identical(other.totalVolume, totalVolume) ||
+                other.totalVolume == totalVolume) &&
+            (identical(other.totalConvertedVolume, totalConvertedVolume) ||
+                other.totalConvertedVolume == totalConvertedVolume) &&
+            (identical(other.operation, operation) ||
+                other.operation == operation) &&
+            (identical(other.transportAsset, transportAsset) ||
+                other.transportAsset == transportAsset) &&
+            (identical(other.terminalAsset, terminalAsset) ||
+                other.terminalAsset == terminalAsset) &&
+            (identical(other.date, date) || other.date == date) &&
+            (identical(other.trim, trim) || other.trim == trim) &&
+            (identical(other.listCalc, listCalc) ||
+                other.listCalc == listCalc) &&
+            const DeepCollectionEquality()
+                .equals(other._tankMeasurements, _tankMeasurements) &&
+            (identical(other.kind, kind) || other.kind == kind));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      operationId,
+      transportAssetId,
+      terminalAssetId,
+      totalVolume,
+      totalConvertedVolume,
+      operation,
+      transportAsset,
+      terminalAsset,
+      date,
+      trim,
+      listCalc,
+      const DeepCollectionEquality().hash(_tankMeasurements),
+      kind);
+
+  @override
+  String toString() {
+    return 'Manifest(id: $id, operationId: $operationId, transportAssetId: $transportAssetId, terminalAssetId: $terminalAssetId, totalVolume: $totalVolume, totalConvertedVolume: $totalConvertedVolume, operation: $operation, transportAsset: $transportAsset, terminalAsset: $terminalAsset, date: $date, trim: $trim, listCalc: $listCalc, tankMeasurements: $tankMeasurements, kind: $kind)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ManifestCopyWith<$Res>
+    implements $ManifestCopyWith<$Res> {
+  factory _$ManifestCopyWith(_Manifest value, $Res Function(_Manifest) _then) =
+      __$ManifestCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? operationId,
+      String? transportAssetId,
+      String? terminalAssetId,
+      double? totalVolume,
+      double? totalConvertedVolume,
+      AtsOperation? operation,
+      Asset? transportAsset,
+      Asset? terminalAsset,
+      @TimestampOrNullConverter() DateTime? date,
+      double? trim,
+      double? listCalc,
+      List<TankMeasurement>? tankMeasurements,
+      @JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind});
+
+  @override
+  $AtsOperationCopyWith<$Res>? get operation;
+  @override
+  $AssetCopyWith<$Res>? get transportAsset;
+  @override
+  $AssetCopyWith<$Res>? get terminalAsset;
+}
+
+/// @nodoc
+class __$ManifestCopyWithImpl<$Res> implements _$ManifestCopyWith<$Res> {
+  __$ManifestCopyWithImpl(this._self, this._then);
+
+  final _Manifest _self;
+  final $Res Function(_Manifest) _then;
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? operationId = freezed,
+    Object? transportAssetId = freezed,
+    Object? terminalAssetId = freezed,
+    Object? totalVolume = freezed,
+    Object? totalConvertedVolume = freezed,
+    Object? operation = freezed,
+    Object? transportAsset = freezed,
+    Object? terminalAsset = freezed,
+    Object? date = freezed,
+    Object? trim = freezed,
+    Object? listCalc = freezed,
+    Object? tankMeasurements = freezed,
+    Object? kind = freezed,
+  }) {
+    return _then(_Manifest(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operationId: freezed == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      transportAssetId: freezed == transportAssetId
+          ? _self.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      terminalAssetId: freezed == terminalAssetId
+          ? _self.terminalAssetId
+          : terminalAssetId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      totalVolume: freezed == totalVolume
+          ? _self.totalVolume
+          : totalVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      totalConvertedVolume: freezed == totalConvertedVolume
+          ? _self.totalConvertedVolume
+          : totalConvertedVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      operation: freezed == operation
+          ? _self.operation
+          : operation // ignore: cast_nullable_to_non_nullable
+              as AtsOperation?,
+      transportAsset: freezed == transportAsset
+          ? _self.transportAsset
+          : transportAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      terminalAsset: freezed == terminalAsset
+          ? _self.terminalAsset
+          : terminalAsset // ignore: cast_nullable_to_non_nullable
+              as Asset?,
+      date: freezed == date
+          ? _self.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
+      trim: freezed == trim
+          ? _self.trim
+          : trim // ignore: cast_nullable_to_non_nullable
+              as double?,
+      listCalc: freezed == listCalc
+          ? _self.listCalc
+          : listCalc // ignore: cast_nullable_to_non_nullable
+              as double?,
+      tankMeasurements: freezed == tankMeasurements
+          ? _self._tankMeasurements
+          : tankMeasurements // ignore: cast_nullable_to_non_nullable
+              as List<TankMeasurement>?,
+      kind: freezed == kind
+          ? _self.kind
+          : kind // ignore: cast_nullable_to_non_nullable
+              as ManifestKind?,
+    ));
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AtsOperationCopyWith<$Res>? get operation {
+    if (_self.operation == null) {
+      return null;
+    }
+
+    return $AtsOperationCopyWith<$Res>(_self.operation!, (value) {
+      return _then(_self.copyWith(operation: value));
+    });
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get transportAsset {
+    if (_self.transportAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.transportAsset!, (value) {
+      return _then(_self.copyWith(transportAsset: value));
+    });
+  }
+
+  /// Create a copy of Manifest
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AssetCopyWith<$Res>? get terminalAsset {
+    if (_self.terminalAsset == null) {
+      return null;
+    }
+
+    return $AssetCopyWith<$Res>(_self.terminalAsset!, (value) {
+      return _then(_self.copyWith(terminalAsset: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$ManifestInput {
+  /// The [id] parameter is the ID of the on board form.
+  /// Ignore it if you are using the "addOnBordo" mutation.
+  String? get id;
+
+  /// The [id] parameter is the ID of the on board form.
+  /// Ignore it if you are using the "addOnBordo" mutation.
+  set id(String? value);
+
+  /// The [operationId] parameter is the operation ID.
+  String get operationId;
+
+  /// The [operationId] parameter is the operation ID.
+  set operationId(String value);
+
+  /// The [transportAssetId] parameter is the transport asset ID.
+  String get transportAssetId;
+
+  /// The [transportAssetId] parameter is the transport asset ID.
+  set transportAssetId(String value);
+
+  /// The [terminalAssetId] parameter is the terminal asset ID.
+  String get terminalAssetId;
+
+  /// The [terminalAssetId] parameter is the terminal asset ID.
+  set terminalAssetId(String value);
+
+  /// The [trim] parameter is the trim value.
+  double get trim;
+
+  /// The [trim] parameter is the trim value.
+  set trim(double value);
+
+  /// The [listCalc] parameter is the list calculation (Banda).
+  double get listCalc;
+
+  /// The [listCalc] parameter is the list calculation (Banda).
+  set listCalc(double value);
+
+  /// The [date] parameter is the date in Unix timestamp format.
+  @TimestampConverter()
+  DateTime get date;
+
+  /// The [date] parameter is the date in Unix timestamp format.
+  @TimestampConverter()
+  set date(DateTime value);
+
+  /// The [tankMeasurements] parameter is the list of tank measurements.
+  List<TankMeasurementInput> get tankMeasurements;
+
+  /// The [tankMeasurements] parameter is the list of tank measurements.
+  set tankMeasurements(List<TankMeasurementInput> value);
+
+  /// Create a copy of ManifestInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ManifestInputCopyWith<ManifestInput> get copyWith =>
+      _$ManifestInputCopyWithImpl<ManifestInput>(
+          this as ManifestInput, _$identity);
+
+  /// Serializes this ManifestInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ManifestInput(id: $id, operationId: $operationId, transportAssetId: $transportAssetId, terminalAssetId: $terminalAssetId, trim: $trim, listCalc: $listCalc, date: $date, tankMeasurements: $tankMeasurements)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ManifestInputCopyWith<$Res> {
+  factory $ManifestInputCopyWith(
+          ManifestInput value, $Res Function(ManifestInput) _then) =
+      _$ManifestInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String operationId,
+      String transportAssetId,
+      String terminalAssetId,
+      double trim,
+      double listCalc,
+      @TimestampConverter() DateTime date,
+      List<TankMeasurementInput> tankMeasurements});
+}
+
+/// @nodoc
+class _$ManifestInputCopyWithImpl<$Res>
+    implements $ManifestInputCopyWith<$Res> {
+  _$ManifestInputCopyWithImpl(this._self, this._then);
+
+  final ManifestInput _self;
+  final $Res Function(ManifestInput) _then;
+
+  /// Create a copy of ManifestInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? operationId = null,
+    Object? transportAssetId = null,
+    Object? terminalAssetId = null,
+    Object? trim = null,
+    Object? listCalc = null,
+    Object? date = null,
+    Object? tankMeasurements = null,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operationId: null == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      transportAssetId: null == transportAssetId
+          ? _self.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      terminalAssetId: null == terminalAssetId
+          ? _self.terminalAssetId
+          : terminalAssetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      trim: null == trim
+          ? _self.trim
+          : trim // ignore: cast_nullable_to_non_nullable
+              as double,
+      listCalc: null == listCalc
+          ? _self.listCalc
+          : listCalc // ignore: cast_nullable_to_non_nullable
+              as double,
+      date: null == date
+          ? _self.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      tankMeasurements: null == tankMeasurements
+          ? _self.tankMeasurements
+          : tankMeasurements // ignore: cast_nullable_to_non_nullable
+              as List<TankMeasurementInput>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ManifestInput extends ManifestInput {
+  _ManifestInput(
+      {this.id,
+      this.operationId = '',
+      this.transportAssetId = '',
+      this.terminalAssetId = '',
+      this.trim = 0.0,
+      this.listCalc = 0.0,
+      @TimestampConverter() required this.date,
+      this.tankMeasurements = const []})
+      : super._();
+  factory _ManifestInput.fromJson(Map<String, dynamic> json) =>
+      _$ManifestInputFromJson(json);
+
+  /// The [id] parameter is the ID of the on board form.
+  /// Ignore it if you are using the "addOnBordo" mutation.
+  @override
+  String? id;
+
+  /// The [operationId] parameter is the operation ID.
+  @override
+  @JsonKey()
+  String operationId;
+
+  /// The [transportAssetId] parameter is the transport asset ID.
+  @override
+  @JsonKey()
+  String transportAssetId;
+
+  /// The [terminalAssetId] parameter is the terminal asset ID.
+  @override
+  @JsonKey()
+  String terminalAssetId;
+
+  /// The [trim] parameter is the trim value.
+  @override
+  @JsonKey()
+  double trim;
+
+  /// The [listCalc] parameter is the list calculation (Banda).
+  @override
+  @JsonKey()
+  double listCalc;
+
+  /// The [date] parameter is the date in Unix timestamp format.
+  @override
+  @TimestampConverter()
+  DateTime date;
+
+  /// The [tankMeasurements] parameter is the list of tank measurements.
+  @override
+  @JsonKey()
+  List<TankMeasurementInput> tankMeasurements;
+
+  /// Create a copy of ManifestInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ManifestInputCopyWith<_ManifestInput> get copyWith =>
+      __$ManifestInputCopyWithImpl<_ManifestInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ManifestInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'ManifestInput(id: $id, operationId: $operationId, transportAssetId: $transportAssetId, terminalAssetId: $terminalAssetId, trim: $trim, listCalc: $listCalc, date: $date, tankMeasurements: $tankMeasurements)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ManifestInputCopyWith<$Res>
+    implements $ManifestInputCopyWith<$Res> {
+  factory _$ManifestInputCopyWith(
+          _ManifestInput value, $Res Function(_ManifestInput) _then) =
+      __$ManifestInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String operationId,
+      String transportAssetId,
+      String terminalAssetId,
+      double trim,
+      double listCalc,
+      @TimestampConverter() DateTime date,
+      List<TankMeasurementInput> tankMeasurements});
+}
+
+/// @nodoc
+class __$ManifestInputCopyWithImpl<$Res>
+    implements _$ManifestInputCopyWith<$Res> {
+  __$ManifestInputCopyWithImpl(this._self, this._then);
+
+  final _ManifestInput _self;
+  final $Res Function(_ManifestInput) _then;
+
+  /// Create a copy of ManifestInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? operationId = null,
+    Object? transportAssetId = null,
+    Object? terminalAssetId = null,
+    Object? trim = null,
+    Object? listCalc = null,
+    Object? date = null,
+    Object? tankMeasurements = null,
+  }) {
+    return _then(_ManifestInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      operationId: null == operationId
+          ? _self.operationId
+          : operationId // ignore: cast_nullable_to_non_nullable
+              as String,
+      transportAssetId: null == transportAssetId
+          ? _self.transportAssetId
+          : transportAssetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      terminalAssetId: null == terminalAssetId
+          ? _self.terminalAssetId
+          : terminalAssetId // ignore: cast_nullable_to_non_nullable
+              as String,
+      trim: null == trim
+          ? _self.trim
+          : trim // ignore: cast_nullable_to_non_nullable
+              as double,
+      listCalc: null == listCalc
+          ? _self.listCalc
+          : listCalc // ignore: cast_nullable_to_non_nullable
+              as double,
+      date: null == date
+          ? _self.date
+          : date // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      tankMeasurements: null == tankMeasurements
+          ? _self.tankMeasurements
+          : tankMeasurements // ignore: cast_nullable_to_non_nullable
+              as List<TankMeasurementInput>,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$TankMeasurement {
+  /// The [id] parameter is the tank measurement ID.
+  String? get id;
+
+  /// The [tankId] parameter is the tank ID.
+  String? get tankId;
+
+  /// The [tankSlug] parameter is the tank slug.
+  String? get tankSlug;
+
+  /// The [fuelSubtype] parameter is the fuel subtype.
+  String? get fuelSubtype;
+
+  /// The [height] parameter is the height of the tank measurement.
+  double? get height;
+
+  /// The [temperature] parameter is the temperature of the tank measurement.
+  double? get temperature;
+
+  /// The [volume] parameter is the volume of the tank measurement.
+  double? get volume;
+
+  /// The [fuelDensity] parameter is the fuel density of the tank measurement.
+  double? get fuelDensity;
+
+  /// The [conversionFactor] parameter is the conversion factor of the tank measurement.
+  double? get conversionFactor;
+
+  /// The [convertedDensity] parameter is the converted density of the tank measurement.
+  double? get convertedDensity;
+
+  /// The [convertedVolume] parameter is the converted volume of the tank measurement.
+  double? get convertedVolume;
+
+  /// Create a copy of TankMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $TankMeasurementCopyWith<TankMeasurement> get copyWith =>
+      _$TankMeasurementCopyWithImpl<TankMeasurement>(
+          this as TankMeasurement, _$identity);
+
+  /// Serializes this TankMeasurement to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TankMeasurement &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.tankId, tankId) || other.tankId == tankId) &&
+            (identical(other.tankSlug, tankSlug) ||
+                other.tankSlug == tankSlug) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.volume, volume) || other.volume == volume) &&
+            (identical(other.fuelDensity, fuelDensity) ||
+                other.fuelDensity == fuelDensity) &&
+            (identical(other.conversionFactor, conversionFactor) ||
+                other.conversionFactor == conversionFactor) &&
+            (identical(other.convertedDensity, convertedDensity) ||
+                other.convertedDensity == convertedDensity) &&
+            (identical(other.convertedVolume, convertedVolume) ||
+                other.convertedVolume == convertedVolume));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      tankId,
+      tankSlug,
+      fuelSubtype,
+      height,
+      temperature,
+      volume,
+      fuelDensity,
+      conversionFactor,
+      convertedDensity,
+      convertedVolume);
+
+  @override
+  String toString() {
+    return 'TankMeasurement(id: $id, tankId: $tankId, tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity, conversionFactor: $conversionFactor, convertedDensity: $convertedDensity, convertedVolume: $convertedVolume)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $TankMeasurementCopyWith<$Res> {
+  factory $TankMeasurementCopyWith(
+          TankMeasurement value, $Res Function(TankMeasurement) _then) =
+      _$TankMeasurementCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String? tankId,
+      String? tankSlug,
+      String? fuelSubtype,
+      double? height,
+      double? temperature,
+      double? volume,
+      double? fuelDensity,
+      double? conversionFactor,
+      double? convertedDensity,
+      double? convertedVolume});
+}
+
+/// @nodoc
+class _$TankMeasurementCopyWithImpl<$Res>
+    implements $TankMeasurementCopyWith<$Res> {
+  _$TankMeasurementCopyWithImpl(this._self, this._then);
+
+  final TankMeasurement _self;
+  final $Res Function(TankMeasurement) _then;
+
+  /// Create a copy of TankMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? tankId = freezed,
+    Object? tankSlug = freezed,
+    Object? fuelSubtype = freezed,
+    Object? height = freezed,
+    Object? temperature = freezed,
+    Object? volume = freezed,
+    Object? fuelDensity = freezed,
+    Object? conversionFactor = freezed,
+    Object? convertedDensity = freezed,
+    Object? convertedVolume = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankId: freezed == tankId
+          ? _self.tankId
+          : tankId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankSlug: freezed == tankSlug
+          ? _self.tankSlug
+          : tankSlug // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fuelSubtype: freezed == fuelSubtype
+          ? _self.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
+              as String?,
+      height: freezed == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+      temperature: freezed == temperature
+          ? _self.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volume: freezed == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      fuelDensity: freezed == fuelDensity
+          ? _self.fuelDensity
+          : fuelDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      conversionFactor: freezed == conversionFactor
+          ? _self.conversionFactor
+          : conversionFactor // ignore: cast_nullable_to_non_nullable
+              as double?,
+      convertedDensity: freezed == convertedDensity
+          ? _self.convertedDensity
+          : convertedDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      convertedVolume: freezed == convertedVolume
+          ? _self.convertedVolume
+          : convertedVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _TankMeasurement extends TankMeasurement {
+  const _TankMeasurement(
+      {this.id,
+      this.tankId,
+      this.tankSlug,
+      this.fuelSubtype,
+      this.height,
+      this.temperature,
+      this.volume,
+      this.fuelDensity,
+      this.conversionFactor,
+      this.convertedDensity,
+      this.convertedVolume})
+      : super._();
+  factory _TankMeasurement.fromJson(Map<String, dynamic> json) =>
+      _$TankMeasurementFromJson(json);
+
+  /// The [id] parameter is the tank measurement ID.
+  @override
+  final String? id;
+
+  /// The [tankId] parameter is the tank ID.
+  @override
+  final String? tankId;
+
+  /// The [tankSlug] parameter is the tank slug.
+  @override
+  final String? tankSlug;
+
+  /// The [fuelSubtype] parameter is the fuel subtype.
+  @override
+  final String? fuelSubtype;
+
+  /// The [height] parameter is the height of the tank measurement.
+  @override
+  final double? height;
+
+  /// The [temperature] parameter is the temperature of the tank measurement.
+  @override
+  final double? temperature;
+
+  /// The [volume] parameter is the volume of the tank measurement.
+  @override
+  final double? volume;
+
+  /// The [fuelDensity] parameter is the fuel density of the tank measurement.
+  @override
+  final double? fuelDensity;
+
+  /// The [conversionFactor] parameter is the conversion factor of the tank measurement.
+  @override
+  final double? conversionFactor;
+
+  /// The [convertedDensity] parameter is the converted density of the tank measurement.
+  @override
+  final double? convertedDensity;
+
+  /// The [convertedVolume] parameter is the converted volume of the tank measurement.
+  @override
+  final double? convertedVolume;
+
+  /// Create a copy of TankMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TankMeasurementCopyWith<_TankMeasurement> get copyWith =>
+      __$TankMeasurementCopyWithImpl<_TankMeasurement>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TankMeasurementToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _TankMeasurement &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.tankId, tankId) || other.tankId == tankId) &&
+            (identical(other.tankSlug, tankSlug) ||
+                other.tankSlug == tankSlug) &&
+            (identical(other.fuelSubtype, fuelSubtype) ||
+                other.fuelSubtype == fuelSubtype) &&
+            (identical(other.height, height) || other.height == height) &&
+            (identical(other.temperature, temperature) ||
+                other.temperature == temperature) &&
+            (identical(other.volume, volume) || other.volume == volume) &&
+            (identical(other.fuelDensity, fuelDensity) ||
+                other.fuelDensity == fuelDensity) &&
+            (identical(other.conversionFactor, conversionFactor) ||
+                other.conversionFactor == conversionFactor) &&
+            (identical(other.convertedDensity, convertedDensity) ||
+                other.convertedDensity == convertedDensity) &&
+            (identical(other.convertedVolume, convertedVolume) ||
+                other.convertedVolume == convertedVolume));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      tankId,
+      tankSlug,
+      fuelSubtype,
+      height,
+      temperature,
+      volume,
+      fuelDensity,
+      conversionFactor,
+      convertedDensity,
+      convertedVolume);
+
+  @override
+  String toString() {
+    return 'TankMeasurement(id: $id, tankId: $tankId, tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity, conversionFactor: $conversionFactor, convertedDensity: $convertedDensity, convertedVolume: $convertedVolume)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$TankMeasurementCopyWith<$Res>
+    implements $TankMeasurementCopyWith<$Res> {
+  factory _$TankMeasurementCopyWith(
+          _TankMeasurement value, $Res Function(_TankMeasurement) _then) =
+      __$TankMeasurementCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? tankId,
+      String? tankSlug,
+      String? fuelSubtype,
+      double? height,
+      double? temperature,
+      double? volume,
+      double? fuelDensity,
+      double? conversionFactor,
+      double? convertedDensity,
+      double? convertedVolume});
+}
+
+/// @nodoc
+class __$TankMeasurementCopyWithImpl<$Res>
+    implements _$TankMeasurementCopyWith<$Res> {
+  __$TankMeasurementCopyWithImpl(this._self, this._then);
+
+  final _TankMeasurement _self;
+  final $Res Function(_TankMeasurement) _then;
+
+  /// Create a copy of TankMeasurement
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? tankId = freezed,
+    Object? tankSlug = freezed,
+    Object? fuelSubtype = freezed,
+    Object? height = freezed,
+    Object? temperature = freezed,
+    Object? volume = freezed,
+    Object? fuelDensity = freezed,
+    Object? conversionFactor = freezed,
+    Object? convertedDensity = freezed,
+    Object? convertedVolume = freezed,
+  }) {
+    return _then(_TankMeasurement(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankId: freezed == tankId
+          ? _self.tankId
+          : tankId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankSlug: freezed == tankSlug
+          ? _self.tankSlug
+          : tankSlug // ignore: cast_nullable_to_non_nullable
+              as String?,
+      fuelSubtype: freezed == fuelSubtype
+          ? _self.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
+              as String?,
+      height: freezed == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double?,
+      temperature: freezed == temperature
+          ? _self.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double?,
+      volume: freezed == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double?,
+      fuelDensity: freezed == fuelDensity
+          ? _self.fuelDensity
+          : fuelDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      conversionFactor: freezed == conversionFactor
+          ? _self.conversionFactor
+          : conversionFactor // ignore: cast_nullable_to_non_nullable
+              as double?,
+      convertedDensity: freezed == convertedDensity
+          ? _self.convertedDensity
+          : convertedDensity // ignore: cast_nullable_to_non_nullable
+              as double?,
+      convertedVolume: freezed == convertedVolume
+          ? _self.convertedVolume
+          : convertedVolume // ignore: cast_nullable_to_non_nullable
+              as double?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$TankMeasurementInput {
+  /// The [id] parameter is the ID of the tank measurement.
+  /// Ignore it if you are using the "addOnBordo" mutation.
+  String? get id;
+
+  /// The [id] parameter is the ID of the tank measurement.
+  /// Ignore it if you are using the "addOnBordo" mutation.
+  set id(String? value);
+
+  /// The [tankId] parameter is the tank ID.
+  String? get tankId;
+
+  /// The [tankId] parameter is the tank ID.
+  set tankId(String? value);
+
+  /// The [tankSlug] parameter is the tank slug.
+  String get tankSlug;
+
+  /// The [tankSlug] parameter is the tank slug.
+  set tankSlug(String value);
+
+  /// The [fuelSubtype] parameter is the fuel subtype (ANP code).
+  String get fuelSubtype;
+
+  /// The [fuelSubtype] parameter is the fuel subtype (ANP code).
+  set fuelSubtype(String value);
+
+  /// The [height] parameter is the height of the tank measurement.
+  double get height;
+
+  /// The [height] parameter is the height of the tank measurement.
+  set height(double value);
+
+  /// The [temperature] parameter is the temperature of the tank measurement.
+  double get temperature;
+
+  /// The [temperature] parameter is the temperature of the tank measurement.
+  set temperature(double value);
+
+  /// The [volume] parameter is the volume of the tank measurement.
+  double get volume;
+
+  /// The [volume] parameter is the volume of the tank measurement.
+  set volume(double value);
+
+  /// The [fuelDensity] parameter is the fuel density of the tank measurement.
+  double get fuelDensity;
+
+  /// The [fuelDensity] parameter is the fuel density of the tank measurement.
+  set fuelDensity(double value);
+
+  /// Create a copy of TankMeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $TankMeasurementInputCopyWith<TankMeasurementInput> get copyWith =>
+      _$TankMeasurementInputCopyWithImpl<TankMeasurementInput>(
+          this as TankMeasurementInput, _$identity);
+
+  /// Serializes this TankMeasurementInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'TankMeasurementInput(id: $id, tankId: $tankId, tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $TankMeasurementInputCopyWith<$Res> {
+  factory $TankMeasurementInputCopyWith(TankMeasurementInput value,
+          $Res Function(TankMeasurementInput) _then) =
+      _$TankMeasurementInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String? tankId,
+      String tankSlug,
+      String fuelSubtype,
+      double height,
+      double temperature,
+      double volume,
+      double fuelDensity});
+}
+
+/// @nodoc
+class _$TankMeasurementInputCopyWithImpl<$Res>
+    implements $TankMeasurementInputCopyWith<$Res> {
+  _$TankMeasurementInputCopyWithImpl(this._self, this._then);
+
+  final TankMeasurementInput _self;
+  final $Res Function(TankMeasurementInput) _then;
+
+  /// Create a copy of TankMeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? tankId = freezed,
+    Object? tankSlug = null,
+    Object? fuelSubtype = null,
+    Object? height = null,
+    Object? temperature = null,
+    Object? volume = null,
+    Object? fuelDensity = null,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankId: freezed == tankId
+          ? _self.tankId
+          : tankId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankSlug: null == tankSlug
+          ? _self.tankSlug
+          : tankSlug // ignore: cast_nullable_to_non_nullable
+              as String,
+      fuelSubtype: null == fuelSubtype
+          ? _self.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: null == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      temperature: null == temperature
+          ? _self.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double,
+      volume: null == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double,
+      fuelDensity: null == fuelDensity
+          ? _self.fuelDensity
+          : fuelDensity // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _TankMeasurementInput extends TankMeasurementInput {
+  _TankMeasurementInput(
+      {this.id,
+      this.tankId,
+      this.tankSlug = '',
+      this.fuelSubtype = '',
+      this.height = 0.0,
+      this.temperature = 0.0,
+      this.volume = 0.0,
+      this.fuelDensity = 0.0})
+      : super._();
+  factory _TankMeasurementInput.fromJson(Map<String, dynamic> json) =>
+      _$TankMeasurementInputFromJson(json);
+
+  /// The [id] parameter is the ID of the tank measurement.
+  /// Ignore it if you are using the "addOnBordo" mutation.
+  @override
+  String? id;
+
+  /// The [tankId] parameter is the tank ID.
+  @override
+  String? tankId;
+
+  /// The [tankSlug] parameter is the tank slug.
+  @override
+  @JsonKey()
+  String tankSlug;
+
+  /// The [fuelSubtype] parameter is the fuel subtype (ANP code).
+  @override
+  @JsonKey()
+  String fuelSubtype;
+
+  /// The [height] parameter is the height of the tank measurement.
+  @override
+  @JsonKey()
+  double height;
+
+  /// The [temperature] parameter is the temperature of the tank measurement.
+  @override
+  @JsonKey()
+  double temperature;
+
+  /// The [volume] parameter is the volume of the tank measurement.
+  @override
+  @JsonKey()
+  double volume;
+
+  /// The [fuelDensity] parameter is the fuel density of the tank measurement.
+  @override
+  @JsonKey()
+  double fuelDensity;
+
+  /// Create a copy of TankMeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$TankMeasurementInputCopyWith<_TankMeasurementInput> get copyWith =>
+      __$TankMeasurementInputCopyWithImpl<_TankMeasurementInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TankMeasurementInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'TankMeasurementInput(id: $id, tankId: $tankId, tankSlug: $tankSlug, fuelSubtype: $fuelSubtype, height: $height, temperature: $temperature, volume: $volume, fuelDensity: $fuelDensity)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$TankMeasurementInputCopyWith<$Res>
+    implements $TankMeasurementInputCopyWith<$Res> {
+  factory _$TankMeasurementInputCopyWith(_TankMeasurementInput value,
+          $Res Function(_TankMeasurementInput) _then) =
+      __$TankMeasurementInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String? tankId,
+      String tankSlug,
+      String fuelSubtype,
+      double height,
+      double temperature,
+      double volume,
+      double fuelDensity});
+}
+
+/// @nodoc
+class __$TankMeasurementInputCopyWithImpl<$Res>
+    implements _$TankMeasurementInputCopyWith<$Res> {
+  __$TankMeasurementInputCopyWithImpl(this._self, this._then);
+
+  final _TankMeasurementInput _self;
+  final $Res Function(_TankMeasurementInput) _then;
+
+  /// Create a copy of TankMeasurementInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? tankId = freezed,
+    Object? tankSlug = null,
+    Object? fuelSubtype = null,
+    Object? height = null,
+    Object? temperature = null,
+    Object? volume = null,
+    Object? fuelDensity = null,
+  }) {
+    return _then(_TankMeasurementInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankId: freezed == tankId
+          ? _self.tankId
+          : tankId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      tankSlug: null == tankSlug
+          ? _self.tankSlug
+          : tankSlug // ignore: cast_nullable_to_non_nullable
+              as String,
+      fuelSubtype: null == fuelSubtype
+          ? _self.fuelSubtype
+          : fuelSubtype // ignore: cast_nullable_to_non_nullable
+              as String,
+      height: null == height
+          ? _self.height
+          : height // ignore: cast_nullable_to_non_nullable
+              as double,
+      temperature: null == temperature
+          ? _self.temperature
+          : temperature // ignore: cast_nullable_to_non_nullable
+              as double,
+      volume: null == volume
+          ? _self.volume
+          : volume // ignore: cast_nullable_to_non_nullable
+              as double,
+      fuelDensity: null == fuelDensity
+          ? _self.fuelDensity
+          : fuelDensity // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
   }
 }
 

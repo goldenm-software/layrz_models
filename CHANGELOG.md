@@ -1,5 +1,11 @@
 # Changelog
 
+## 3.4.3
+
+- Added `Manifest` and `ManifestInput` models to handle manifest data.
+- Added `TankMeasurement` and `TankMeasurementInput` models to handle tank measurements.
+- Added `ManifestKind` enum to define the kind of manifest.
+
 ## 3.4.2
 
 - Re-defined the `Trigger` model as a submodule to code separation.

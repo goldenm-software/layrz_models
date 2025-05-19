@@ -65,6 +65,9 @@ abstract class AtsOperation with _$AtsOperation {
 
     /// `caclForms` is the list of CACL forms.
     List<String>? caclForms,
+
+    /// [manifests] is the list of manifests linked to the operation.
+    List<Manifest>? manifests,
   }) = _AtsOperation;
 
   factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);
