@@ -5,13 +5,6 @@ part of '../../../ats.dart';
 abstract class TankMeasurementInput with _$TankMeasurementInput {
   const TankMeasurementInput._();
   factory TankMeasurementInput({
-    /// The [id] parameter is the ID of the tank measurement.
-    /// Ignore it if you are using the "addOnBordo" mutation.
-    String? id,
-
-    /// The [tankId] parameter is the tank ID.
-    String? tankId,
-
     /// The [tankSlug] parameter is the tank slug.
     @Default('') String tankSlug,
 

@@ -1197,51 +1197,55 @@ Map<String, dynamic> _$AtsOperationStatusesToJson(
 
 _Manifest _$ManifestFromJson(Map<String, dynamic> json) => _Manifest(
       id: json['id'] as String?,
-      operationId: json['operationId'] as String?,
-      transportAssetId: json['transportAssetId'] as String?,
-      terminalAssetId: json['terminalAssetId'] as String?,
+      assetId: json['assetId'] as String?,
+      asset: json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
       totalVolume: (json['totalVolume'] as num?)?.toDouble(),
       totalConvertedVolume: (json['totalConvertedVolume'] as num?)?.toDouble(),
+      operationId: json['operationId'] as String?,
       operation: json['operation'] == null
           ? null
           : AtsOperation.fromJson(json['operation'] as Map<String, dynamic>),
-      transportAsset: json['transportAsset'] == null
-          ? null
-          : Asset.fromJson(json['transportAsset'] as Map<String, dynamic>),
-      terminalAsset: json['terminalAsset'] == null
-          ? null
-          : Asset.fromJson(json['terminalAsset'] as Map<String, dynamic>),
-      date: const TimestampOrNullConverter().fromJson(json['date'] as num?),
+      createdAt:
+          const TimestampOrNullConverter().fromJson(json['createdAt'] as num?),
       trim: (json['trim'] as num?)?.toDouble(),
-      listCalc: (json['listCalc'] as num?)?.toDouble(),
+      banda: (json['banda'] as num?)?.toDouble(),
       tankMeasurements: (json['tankMeasurements'] as List<dynamic>?)
           ?.map((e) => TankMeasurement.fromJson(e as Map<String, dynamic>))
           .toList(),
       kind: $enumDecodeNullable(_$ManifestKindEnumMap, json['kind'],
           unknownValue: ManifestKind.manual),
+      position: json['position'] == null
+          ? null
+          : TelemetryPosition.fromJson(
+              json['position'] as Map<String, dynamic>),
+      sensors: (json['sensors'] as List<dynamic>?)
+          ?.map((e) => TelemetrySensor.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$ManifestToJson(_Manifest instance) => <String, dynamic>{
       'id': instance.id,
-      'operationId': instance.operationId,
-      'transportAssetId': instance.transportAssetId,
-      'terminalAssetId': instance.terminalAssetId,
+      'assetId': instance.assetId,
+      'asset': instance.asset?.toJson(),
       'totalVolume': instance.totalVolume,
       'totalConvertedVolume': instance.totalConvertedVolume,
+      'operationId': instance.operationId,
       'operation': instance.operation?.toJson(),
-      'transportAsset': instance.transportAsset?.toJson(),
-      'terminalAsset': instance.terminalAsset?.toJson(),
-      'date': const TimestampOrNullConverter().toJson(instance.date),
+      'createdAt': const TimestampOrNullConverter().toJson(instance.createdAt),
       'trim': instance.trim,
-      'listCalc': instance.listCalc,
+      'banda': instance.banda,
       'tankMeasurements':
           instance.tankMeasurements?.map((e) => e.toJson()).toList(),
       'kind': instance.kind?.toJson(),
+      'position': instance.position?.toJson(),
+      'sensors': instance.sensors?.map((e) => e.toJson()).toList(),
     };
 
 const _$ManifestKindEnumMap = {
   ManifestKind.manual: 'MANUAL',
-  ManifestKind.unload: 'ULOAD',
+  ManifestKind.unload: 'UNLOAD',
   ManifestKind.movementBeforeStop: 'MOVEMENT_BEFORE_STOP',
   ManifestKind.movementAfterStop: 'MOVEMENT_AFTER_STOP',
 };
@@ -1249,12 +1253,10 @@ const _$ManifestKindEnumMap = {
 _ManifestInput _$ManifestInputFromJson(Map<String, dynamic> json) =>
     _ManifestInput(
       id: json['id'] as String?,
-      operationId: json['operationId'] as String? ?? '',
-      transportAssetId: json['transportAssetId'] as String? ?? '',
-      terminalAssetId: json['terminalAssetId'] as String? ?? '',
-      trim: (json['trim'] as num?)?.toDouble() ?? 0.0,
-      listCalc: (json['listCalc'] as num?)?.toDouble() ?? 0.0,
-      date: const TimestampConverter().fromJson(json['date'] as num),
+      assetId: json['assetId'] as String?,
+      operationId: json['operationId'] as String?,
+      trim: (json['trim'] as num?)?.toDouble(),
+      banda: (json['banda'] as num?)?.toDouble(),
       tankMeasurements: (json['tankMeasurements'] as List<dynamic>?)
               ?.map((e) =>
                   TankMeasurementInput.fromJson(e as Map<String, dynamic>))
@@ -1265,12 +1267,10 @@ _ManifestInput _$ManifestInputFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$ManifestInputToJson(_ManifestInput instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'assetId': instance.assetId,
       'operationId': instance.operationId,
-      'transportAssetId': instance.transportAssetId,
-      'terminalAssetId': instance.terminalAssetId,
       'trim': instance.trim,
-      'listCalc': instance.listCalc,
-      'date': const TimestampConverter().toJson(instance.date),
+      'banda': instance.banda,
       'tankMeasurements':
           instance.tankMeasurements.map((e) => e.toJson()).toList(),
     };
@@ -1308,8 +1308,6 @@ Map<String, dynamic> _$TankMeasurementToJson(_TankMeasurement instance) =>
 _TankMeasurementInput _$TankMeasurementInputFromJson(
         Map<String, dynamic> json) =>
     _TankMeasurementInput(
-      id: json['id'] as String?,
-      tankId: json['tankId'] as String?,
       tankSlug: json['tankSlug'] as String? ?? '',
       fuelSubtype: json['fuelSubtype'] as String? ?? '',
       height: (json['height'] as num?)?.toDouble() ?? 0.0,
@@ -1321,8 +1319,6 @@ _TankMeasurementInput _$TankMeasurementInputFromJson(
 Map<String, dynamic> _$TankMeasurementInputToJson(
         _TankMeasurementInput instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'tankId': instance.tankId,
       'tankSlug': instance.tankSlug,
       'fuelSubtype': instance.fuelSubtype,
       'height': instance.height,

@@ -6,12 +6,6 @@ abstract class TankMeasurement with _$TankMeasurement {
   const TankMeasurement._();
 
   const factory TankMeasurement({
-    /// The [id] parameter is the tank measurement ID.
-    String? id,
-
-    /// The [tankId] parameter is the tank ID.
-    String? tankId,
-
     /// The [tankSlug] parameter is the tank slug.
     String? tankSlug,
 

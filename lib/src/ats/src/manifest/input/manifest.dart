@@ -6,29 +6,22 @@ abstract class ManifestInput with _$ManifestInput {
   const ManifestInput._();
 
   factory ManifestInput({
-    /// The [id] parameter is the ID of the on board form.
-    /// Ignore it if you are using the "addOnBordo" mutation.
+    /// The [id] parameter is the id of the manifest entity.
     String? id,
 
-    /// The [operationId] parameter is the operation ID.
-    @Default('') String operationId,
+    /// The [assetId] parameter is the assetId of the manifest entity.
+    String? assetId,
 
-    /// The [transportAssetId] parameter is the transport asset ID.
-    @Default('') String transportAssetId,
+    /// The [operationId] parameter is the operationId of the manifest entity.
+    String? operationId,
 
-    /// The [terminalAssetId] parameter is the terminal asset ID.
-    @Default('') String terminalAssetId,
+    /// The [trim] parameter is the trim of the manifest entity.
+    double? trim,
 
-    /// The [trim] parameter is the trim value.
-    @Default(0.0) double trim,
+    /// The [banda] parameter is the banda of the manifest entity.
+    double? banda,
 
-    /// The [listCalc] parameter is the list calculation (Banda).
-    @Default(0.0) double listCalc,
-
-    /// The [date] parameter is the date in Unix timestamp format.
-    @TimestampConverter() required DateTime date,
-
-    /// The [tankMeasurements] parameter is the list of tank measurements.
+    /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
     @Default([]) List<TankMeasurementInput> tankMeasurements,
   }) = _ManifestInput;
 

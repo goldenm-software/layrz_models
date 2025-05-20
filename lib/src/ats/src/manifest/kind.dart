@@ -5,7 +5,7 @@ enum ManifestKind {
   @JsonValue('MANUAL')
   manual,
 
-  @JsonValue('ULOAD')
+  @JsonValue('UNLOAD')
   unload,
 
   @JsonValue('MOVEMENT_BEFORE_STOP')

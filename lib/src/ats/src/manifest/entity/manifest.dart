@@ -9,14 +9,11 @@ abstract class Manifest with _$Manifest {
     /// The [id] parameter is the id of the manifest entity.
     String? id,
 
-    /// The [operationId] parameter is the operationId of the manifest entity.
-    String? operationId,
+    /// The [assetId] parameter is the assetId of the manifest entity.
+    String? assetId,
 
-    /// The [transportAssetId] parameter is the transportAssetId of the manifest entity.
-    String? transportAssetId,
-
-    /// The [terminalAssetId] parameter is the terminalAssetId of the manifest entity.
-    String? terminalAssetId,
+    /// The [asset] parameter is the asset of the manifest entity.
+    Asset? asset,
 
     /// The [totalVolume] parameter is the totalVolume of the manifest entity.
     double? totalVolume,
@@ -24,29 +21,32 @@ abstract class Manifest with _$Manifest {
     /// The [totalConvertedVolume] parameter is the totalConvertedVolume of the manifest entity.
     double? totalConvertedVolume,
 
+    /// The [operationId] parameter is the operationId of the manifest entity.
+    String? operationId,
+
     /// The [operation] parameter is the operation of the manifest entity.
     AtsOperation? operation,
 
-    /// The [transportAsset] parameter is the transportAsset of the manifest entity.
-    Asset? transportAsset,
-
-    /// The [terminalAsset] parameter is the terminalAsset of the manifest entity.
-    Asset? terminalAsset,
-
-    /// The [date] parameter is the date of the manifest entity.
-    @TimestampOrNullConverter() DateTime? date,
+    /// The [createdAt] parameter is the date of the manifest entity.
+    @TimestampOrNullConverter() DateTime? createdAt,
 
     /// The [trim] parameter is the trim of the manifest entity.
     double? trim,
 
-    /// The [listCalc] parameter is the listCalc of the manifest entity.
-    double? listCalc,
+    /// The [banda] parameter is the banda of the manifest entity.
+    double? banda,
 
     /// The [tankMeasurements] parameter is the tankMeasurements of the manifest entity.
     List<TankMeasurement>? tankMeasurements,
 
     /// The [kind] parameter is the kind of the manifest entity.
     @JsonKey(unknownEnumValue: ManifestKind.manual) ManifestKind? kind,
+
+    /// [position] is the position of the manifest entity.
+    TelemetryPosition? position,
+
+    /// [sensors] is the list of sensors associated with the manifest entity.
+    List<TelemetrySensor>? sensors,
   }) = _Manifest;
 
   /// Creates a new [Manifest] instance from a JSON map.
