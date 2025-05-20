@@ -1,69 +1,46 @@
 part of '../../ats.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum AtsPurchaseOrderCategoriesEntity {
   // Fuel puchase from Terminal to Reseller (5652 / 6652)
+  @JsonValue('PICKUP')
   pickup,
   // Fuel puchase from Terminal to Supplier (5653 / 6653)
+  @JsonValue('PICKUP_TO_SUPPLIER')
   pickupToSupplier,
   // Fuel transfer between terminals in the same company (5659 / 6659)
+  @JsonValue('TRANSFER')
   transfer,
   // Fuel delivery to supplier (5656 / 6656)
+  @JsonValue('DELIVERY_TO_SUPPLIER')
   deliveryToSupplier,
   // Fuel delivery to reseller (5655 / 6655)
+  @JsonValue('DELIVERY_TO_RESELLER')
   deliveryToReseller,
   // For sale outside (5904)
+  @JsonValue('FOR_SALE_OUTSIDE')
   forSaleOutside,
   // Fuel delivery to storage (5663 / 6663)
+  @JsonValue('DELIVERY_TO_STORAGE')
   deliveryToStorage,
   // Return of fuel from storage (5664 / 6664)
+  @JsonValue('RETURN_FROM_STORAGE')
   returnFromStorage,
   // Not defined
-  notDefined;
+  @JsonValue('NOT_DEFINED')
+  notDefined,
+  ;
 
-  String toJson() {
-    switch (this) {
-      case AtsPurchaseOrderCategoriesEntity.pickup:
-        return 'PICKUP';
-      case AtsPurchaseOrderCategoriesEntity.transfer:
-        return 'TRANSFER';
-      case AtsPurchaseOrderCategoriesEntity.deliveryToSupplier:
-        return 'DELIVERY_TO_SUPPLIER';
-      case AtsPurchaseOrderCategoriesEntity.deliveryToReseller:
-        return 'DELIVERY_TO_RESELLER';
-      case AtsPurchaseOrderCategoriesEntity.forSaleOutside:
-        return 'FOR_SALE_OUTSIDE';
-      case AtsPurchaseOrderCategoriesEntity.deliveryToStorage:
-        return 'DELIVERY_TO_STORAGE';
-      case AtsPurchaseOrderCategoriesEntity.returnFromStorage:
-        return 'RETURN_FROM_STORAGE';
-      case AtsPurchaseOrderCategoriesEntity.pickupToSupplier:
-        return 'PICKUP_TO_SUPPLIER';
-      default:
-        return 'NOT_DEFINED';
-    }
-  }
+  @override
+  String toString() => toJson();
+
+  String toJson() => _$AtsPurchaseOrderCategoriesEntityEnumMap[this] ?? 'NOT_DEFINED';
 
   static AtsPurchaseOrderCategoriesEntity fromJson(String value) {
-    switch (value) {
-      case 'PICKUP':
-        return AtsPurchaseOrderCategoriesEntity.pickup;
-      case 'TRANSFER':
-        return AtsPurchaseOrderCategoriesEntity.transfer;
-      case 'DELIVERY_TO_SUPPLIER':
-        return AtsPurchaseOrderCategoriesEntity.deliveryToSupplier;
-      case 'DELIVERY_TO_RESELLER':
-        return AtsPurchaseOrderCategoriesEntity.deliveryToReseller;
-      case 'FOR_SALE_OUTSIDE':
-        return AtsPurchaseOrderCategoriesEntity.forSaleOutside;
-      case 'DELIVERY_TO_STORAGE':
-        return AtsPurchaseOrderCategoriesEntity.deliveryToStorage;
-      case 'RETURN_FROM_STORAGE':
-        return AtsPurchaseOrderCategoriesEntity.returnFromStorage;
-      case 'PICKUP_TO_SUPPLIER':
-        return AtsPurchaseOrderCategoriesEntity.pickupToSupplier;
-      default:
-        return AtsPurchaseOrderCategoriesEntity.notDefined;
-    }
+    return _$AtsPurchaseOrderCategoriesEntityEnumMap.entries
+            .firstWhereOrNull((element) => element.value == value)
+            ?.key ??
+        AtsPurchaseOrderCategoriesEntity.notDefined;
   }
 
   static AtsPurchaseOrderCategoriesEntity cfop(String cfop) {

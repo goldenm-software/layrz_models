@@ -1071,6 +1071,36 @@ Map<String, dynamic> _$AtsEntryInputToJson(_AtsEntryInput instance) =>
       'fuelType': instance.fuelType,
     };
 
+_AtsOperationHistory _$AtsOperationHistoryFromJson(Map<String, dynamic> json) =>
+    _AtsOperationHistory(
+      status: $enumDecode(_$AtsPurchaseOrderStatusEnumMap, json['status'],
+          unknownValue: AtsPurchaseOrderStatus.generated),
+      createdAt: const TimestampConverter().fromJson(json['createdAt'] as num),
+      asset: json['asset'] == null
+          ? null
+          : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+      assetId: json['assetId'] as String?,
+    );
+
+Map<String, dynamic> _$AtsOperationHistoryToJson(
+        _AtsOperationHistory instance) =>
+    <String, dynamic>{
+      'status': instance.status.toJson(),
+      'createdAt': const TimestampConverter().toJson(instance.createdAt),
+      'asset': instance.asset?.toJson(),
+      'assetId': instance.assetId,
+    };
+
+const _$AtsPurchaseOrderStatusEnumMap = {
+  AtsPurchaseOrderStatus.generated: 'GENERATED',
+  AtsPurchaseOrderStatus.waitingToDispatch: 'WAITING_TO_DISPATCH',
+  AtsPurchaseOrderStatus.inTransit: 'IN_TRANSIT',
+  AtsPurchaseOrderStatus.delivered: 'DELIVERED',
+  AtsPurchaseOrderStatus.readyToOperate: 'READY_TO_OPERATE',
+  AtsPurchaseOrderStatus.unloadingOperation: 'UNLOADING_OPERATION',
+  AtsPurchaseOrderStatus.unloadingFuel: 'UNLOADING_FUEL',
+};
+
 _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
     _AtsOperation(
       id: json['id'] as String?,
@@ -1100,12 +1130,15 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
           ? null
           : AtsTransportInformation.fromJson(
               json['transportInformation'] as Map<String, dynamic>),
-      orderStatus: const AtsPurchaseOrderStatusOrNullConverter()
-          .fromJson(json['orderStatus'] as String?),
-      category: const AtsPurchaseOrderCategoriesEntityOrNullConverter()
-          .fromJson(json['category'] as String?),
-      deliverCategory: const AtsPurchaseOrderSubCategoriesOrNullConverter()
-          .fromJson(json['deliverCategory'] as String?),
+      orderStatus: $enumDecodeNullable(
+          _$AtsPurchaseOrderStatusEnumMap, json['orderStatus'],
+          unknownValue: AtsPurchaseOrderStatus.generated),
+      category: $enumDecodeNullable(
+          _$AtsPurchaseOrderCategoriesEntityEnumMap, json['category'],
+          unknownValue: AtsPurchaseOrderCategoriesEntity.notDefined),
+      deliverCategory: $enumDecodeNullable(
+          _$AtsPurchaseOrderSubCategoriesEnumMap, json['deliverCategory'],
+          unknownValue: AtsPurchaseOrderSubCategories.notDefined),
       purchaseOrders: (json['purchaseOrders'] as List<dynamic>?)
           ?.map((e) => AtsPurchaseOrder.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -1123,6 +1156,9 @@ _AtsOperation _$AtsOperationFromJson(Map<String, dynamic> json) =>
           .toList(),
       manifests: (json['manifests'] as List<dynamic>?)
           ?.map((e) => Manifest.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      history: (json['history'] as List<dynamic>?)
+          ?.map((e) => AtsOperationHistory.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -1142,12 +1178,9 @@ Map<String, dynamic> _$AtsOperationToJson(_AtsOperation instance) =>
       'transportAsset': instance.transportAsset?.toJson(),
       'sellerInformation': instance.sellerInformation?.toJson(),
       'transportInformation': instance.transportInformation?.toJson(),
-      'orderStatus': const AtsPurchaseOrderStatusOrNullConverter()
-          .toJson(instance.orderStatus),
-      'category': const AtsPurchaseOrderCategoriesEntityOrNullConverter()
-          .toJson(instance.category),
-      'deliverCategory': const AtsPurchaseOrderSubCategoriesOrNullConverter()
-          .toJson(instance.deliverCategory),
+      'orderStatus': instance.orderStatus?.toJson(),
+      'category': instance.category?.toJson(),
+      'deliverCategory': instance.deliverCategory?.toJson(),
       'purchaseOrders':
           instance.purchaseOrders?.map((e) => e.toJson()).toList(),
       'statuses': instance.statuses?.map((e) => e.toJson()).toList(),
@@ -1157,7 +1190,26 @@ Map<String, dynamic> _$AtsOperationToJson(_AtsOperation instance) =>
       'ctes': instance.ctes,
       'caclForms': instance.caclForms,
       'manifests': instance.manifests?.map((e) => e.toJson()).toList(),
+      'history': instance.history?.map((e) => e.toJson()).toList(),
     };
+
+const _$AtsPurchaseOrderCategoriesEntityEnumMap = {
+  AtsPurchaseOrderCategoriesEntity.pickup: 'PICKUP',
+  AtsPurchaseOrderCategoriesEntity.pickupToSupplier: 'PICKUP_TO_SUPPLIER',
+  AtsPurchaseOrderCategoriesEntity.transfer: 'TRANSFER',
+  AtsPurchaseOrderCategoriesEntity.deliveryToSupplier: 'DELIVERY_TO_SUPPLIER',
+  AtsPurchaseOrderCategoriesEntity.deliveryToReseller: 'DELIVERY_TO_RESELLER',
+  AtsPurchaseOrderCategoriesEntity.forSaleOutside: 'FOR_SALE_OUTSIDE',
+  AtsPurchaseOrderCategoriesEntity.deliveryToStorage: 'DELIVERY_TO_STORAGE',
+  AtsPurchaseOrderCategoriesEntity.returnFromStorage: 'RETURN_FROM_STORAGE',
+  AtsPurchaseOrderCategoriesEntity.notDefined: 'NOT_DEFINED',
+};
+
+const _$AtsPurchaseOrderSubCategoriesEnumMap = {
+  AtsPurchaseOrderSubCategories.sameState: 'SAME_STATE',
+  AtsPurchaseOrderSubCategories.otherState: 'OTHER_STATE',
+  AtsPurchaseOrderSubCategories.notDefined: 'NOT_DEFINED',
+};
 
 _AtsOperationStatuses _$AtsOperationStatusesFromJson(
         Map<String, dynamic> json) =>
@@ -1201,6 +1253,10 @@ _Manifest _$ManifestFromJson(Map<String, dynamic> json) => _Manifest(
       asset: json['asset'] == null
           ? null
           : Asset.fromJson(json['asset'] as Map<String, dynamic>),
+      terminalId: json['terminalId'] as String?,
+      terminal: json['terminal'] == null
+          ? null
+          : Asset.fromJson(json['terminal'] as Map<String, dynamic>),
       totalVolume: (json['totalVolume'] as num?)?.toDouble(),
       totalConvertedVolume: (json['totalConvertedVolume'] as num?)?.toDouble(),
       operationId: json['operationId'] as String?,
@@ -1229,6 +1285,8 @@ Map<String, dynamic> _$ManifestToJson(_Manifest instance) => <String, dynamic>{
       'id': instance.id,
       'assetId': instance.assetId,
       'asset': instance.asset?.toJson(),
+      'terminalId': instance.terminalId,
+      'terminal': instance.terminal?.toJson(),
       'totalVolume': instance.totalVolume,
       'totalConvertedVolume': instance.totalConvertedVolume,
       'operationId': instance.operationId,
@@ -1277,8 +1335,6 @@ Map<String, dynamic> _$ManifestInputToJson(_ManifestInput instance) =>
 
 _TankMeasurement _$TankMeasurementFromJson(Map<String, dynamic> json) =>
     _TankMeasurement(
-      id: json['id'] as String?,
-      tankId: json['tankId'] as String?,
       tankSlug: json['tankSlug'] as String?,
       fuelSubtype: json['fuelSubtype'] as String?,
       height: (json['height'] as num?)?.toDouble(),
@@ -1292,8 +1348,6 @@ _TankMeasurement _$TankMeasurementFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$TankMeasurementToJson(_TankMeasurement instance) =>
     <String, dynamic>{
-      'id': instance.id,
-      'tankId': instance.tankId,
       'tankSlug': instance.tankSlug,
       'fuelSubtype': instance.fuelSubtype,
       'height': instance.height,

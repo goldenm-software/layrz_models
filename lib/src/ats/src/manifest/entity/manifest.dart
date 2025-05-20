@@ -15,6 +15,12 @@ abstract class Manifest with _$Manifest {
     /// The [asset] parameter is the asset of the manifest entity.
     Asset? asset,
 
+    /// [terminalId] is the terminalId of the manifest entity.
+    String? terminalId,
+
+    /// [terminal] is the terminal of the manifest entity.
+    Asset? terminal,
+
     /// The [totalVolume] parameter is the totalVolume of the manifest entity.
     double? totalVolume,
 

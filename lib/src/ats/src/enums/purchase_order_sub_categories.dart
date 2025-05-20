@@ -1,31 +1,22 @@
 part of '../../ats.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum AtsPurchaseOrderSubCategories {
+  @JsonValue('SAME_STATE')
   sameState,
+  @JsonValue('OTHER_STATE')
   otherState,
-  notDefined;
+  @JsonValue('NOT_DEFINED')
+  notDefined,
+  ;
 
-  String toJson() {
-    switch (this) {
-      case AtsPurchaseOrderSubCategories.sameState:
-        return 'SAME_STATE';
-      case AtsPurchaseOrderSubCategories.otherState:
-        return 'OTHER_STATE';
-      case AtsPurchaseOrderSubCategories.notDefined:
-        return 'NOT_DEFINED';
-    }
-  }
+  @override
+  String toString() => toJson();
+
+  String toJson() => _$AtsPurchaseOrderSubCategoriesEnumMap[this] ?? 'NOT_DEFINED';
 
   static AtsPurchaseOrderSubCategories fromJson(String value) {
-    switch (value) {
-      case 'SAME_STATE':
-        return AtsPurchaseOrderSubCategories.sameState;
-      case 'OTHER_STATE':
-        return AtsPurchaseOrderSubCategories.otherState;
-      case 'NOT_DEFINED':
-        return AtsPurchaseOrderSubCategories.notDefined;
-      default:
-        throw Exception('Unknown AtsPurchaseOrderSubCategories value: $value');
-    }
+    return _$AtsPurchaseOrderSubCategoriesEnumMap.entries.firstWhereOrNull((element) => element.value == value)?.key ??
+        AtsPurchaseOrderSubCategories.notDefined;
   }
 }

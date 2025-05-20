@@ -1,6 +1,25 @@
 part of '../../ats.dart';
 
 @freezed
+abstract class AtsOperationHistory with _$AtsOperationHistory {
+  const factory AtsOperationHistory({
+    /// [status] is the status of of the operation.
+    @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) required AtsPurchaseOrderStatus status,
+
+    /// [createdAt] is the date of the status change.
+    @TimestampConverter() required DateTime createdAt,
+
+    /// [asset] is the asset of the operation. Can be null.
+    Asset? asset,
+
+    /// [assetId] is the asset ID of the operation. Can be null.
+    String? assetId,
+  }) = _AtsOperationHistory;
+
+  factory AtsOperationHistory.fromJson(Map<String, dynamic> json) => _$AtsOperationHistoryFromJson(json);
+}
+
+@freezed
 abstract class AtsOperation with _$AtsOperation {
   const factory AtsOperation({
     /// `id` of the asset entity. This ID is unique.
@@ -40,13 +59,13 @@ abstract class AtsOperation with _$AtsOperation {
     AtsTransportInformation? transportInformation,
 
     /// `orderStatus` is the status of the order.
-    @AtsPurchaseOrderStatusOrNullConverter() AtsPurchaseOrderStatus? orderStatus,
+    @JsonKey(unknownEnumValue: AtsPurchaseOrderStatus.generated) AtsPurchaseOrderStatus? orderStatus,
 
     /// `category` is the category of the purchase order.
-    @AtsPurchaseOrderCategoriesEntityOrNullConverter() AtsPurchaseOrderCategoriesEntity? category,
+    @JsonKey(unknownEnumValue: AtsPurchaseOrderCategoriesEntity.notDefined) AtsPurchaseOrderCategoriesEntity? category,
 
     /// `deliverCategory` is the deliver category of the purchase order.
-    @AtsPurchaseOrderSubCategoriesOrNullConverter() AtsPurchaseOrderSubCategories? deliverCategory,
+    @JsonKey(unknownEnumValue: AtsPurchaseOrderSubCategories.notDefined) AtsPurchaseOrderSubCategories? deliverCategory,
 
     /// `purchaseOrders` are the purchase orders linked to the operation.
     List<AtsPurchaseOrder>? purchaseOrders,
@@ -68,6 +87,9 @@ abstract class AtsOperation with _$AtsOperation {
 
     /// [manifests] is the list of manifests linked to the operation.
     List<Manifest>? manifests,
+
+    /// [history] is the list of history linked to the operation.
+    List<AtsOperationHistory>? history,
   }) = _AtsOperation;
 
   factory AtsOperation.fromJson(Map<String, dynamic> json) => _$AtsOperationFromJson(json);
