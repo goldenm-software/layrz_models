@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.5
+
+- Migrated Report input submodels to models.
+
 ## 3.4.4
 
 - Migrated CareProtocol input submodels to models.

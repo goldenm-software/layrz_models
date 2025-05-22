@@ -92,10 +92,11 @@ class _$ReportPreviewCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ReportPreview implements ReportPreview {
+class _ReportPreview extends ReportPreview {
   const _ReportPreview(
       {required this.name, final List<ReportPage> pages = const []})
-      : _pages = pages;
+      : _pages = pages,
+        super._();
   factory _ReportPreview.fromJson(Map<String, dynamic> json) =>
       _$ReportPreviewFromJson(json);
 
@@ -279,13 +280,14 @@ class _$ReportPageCopyWithImpl<$Res> implements $ReportPageCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _ReportPage implements ReportPage {
+class _ReportPage extends ReportPage {
   const _ReportPage(
       {required this.name,
       final List<ReportRow> rows = const [],
       final List<ReportHeader> headers = const []})
       : _rows = rows,
-        _headers = headers;
+        _headers = headers,
+        super._();
   factory _ReportPage.fromJson(Map<String, dynamic> json) =>
       _$ReportPageFromJson(json);
 
@@ -476,10 +478,11 @@ class _$ReportRowCopyWithImpl<$Res> implements $ReportRowCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _ReportRow implements ReportRow {
+class _ReportRow extends ReportRow {
   const _ReportRow(
       {final List<ReportCell> content = const [], this.compact = false})
-      : _content = content;
+      : _content = content,
+        super._();
   factory _ReportRow.fromJson(Map<String, dynamic> json) =>
       _$ReportRowFromJson(json);
 
@@ -666,11 +669,12 @@ class _$ReportHeaderCopyWithImpl<$Res> implements $ReportHeaderCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _ReportHeader implements ReportHeader {
+class _ReportHeader extends ReportHeader {
   const _ReportHeader(
       {required this.content,
       @ColorOrNullConverter() this.textColor,
-      @ColorOrNullConverter() this.color});
+      @ColorOrNullConverter() this.color})
+      : super._();
   factory _ReportHeader.fromJson(Map<String, dynamic> json) =>
       _$ReportHeaderFromJson(json);
 
@@ -786,7 +790,7 @@ mixin _$ReportCell {
   Color? get color;
 
   /// [dataType] is the data type of the report cell.
-  @ReportDataTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ReportDataType.string)
   ReportDataType? get dataType;
 
   /// [currencySymbol] is the currency symbol of the report cell.
@@ -843,7 +847,8 @@ abstract mixin class $ReportCellCopyWith<$Res> {
       {dynamic content,
       @ColorOrNullConverter() Color? textColor,
       @ColorOrNullConverter() Color? color,
-      @ReportDataTypeOrNullConverter() ReportDataType? dataType,
+      @JsonKey(unknownEnumValue: ReportDataType.string)
+      ReportDataType? dataType,
       String? currencySymbol});
 }
 
@@ -892,13 +897,14 @@ class _$ReportCellCopyWithImpl<$Res> implements $ReportCellCopyWith<$Res> {
 
 /// @nodoc
 @JsonSerializable()
-class _ReportCell implements ReportCell {
+class _ReportCell extends ReportCell {
   const _ReportCell(
       {required this.content,
       @ColorOrNullConverter() this.textColor,
       @ColorOrNullConverter() this.color,
-      @ReportDataTypeOrNullConverter() this.dataType,
-      this.currencySymbol});
+      @JsonKey(unknownEnumValue: ReportDataType.string) this.dataType,
+      this.currencySymbol})
+      : super._();
   factory _ReportCell.fromJson(Map<String, dynamic> json) =>
       _$ReportCellFromJson(json);
 
@@ -918,7 +924,7 @@ class _ReportCell implements ReportCell {
 
   /// [dataType] is the data type of the report cell.
   @override
-  @ReportDataTypeOrNullConverter()
+  @JsonKey(unknownEnumValue: ReportDataType.string)
   final ReportDataType? dataType;
 
   /// [currencySymbol] is the currency symbol of the report cell.
@@ -983,7 +989,8 @@ abstract mixin class _$ReportCellCopyWith<$Res>
       {dynamic content,
       @ColorOrNullConverter() Color? textColor,
       @ColorOrNullConverter() Color? color,
-      @ReportDataTypeOrNullConverter() ReportDataType? dataType,
+      @JsonKey(unknownEnumValue: ReportDataType.string)
+      ReportDataType? dataType,
       String? currencySymbol});
 }
 
@@ -1026,6 +1033,1639 @@ class __$ReportCellCopyWithImpl<$Res> implements _$ReportCellCopyWith<$Res> {
           ? _self.currencySymbol
           : currencySymbol // ignore: cast_nullable_to_non_nullable
               as String?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ReportTemplate {
+  /// Is the report template ID
+  String get id;
+
+  /// Is the report template name
+  String get name;
+
+  /// Structure
+  List<ReportTemplatePage>? get structure;
+
+  /// Is the report template linked assets or assets' IDs
+  List<Asset>? get assets;
+  List<String>? get assetsIds;
+
+  /// Is the report template linked outbound services or outbound services' IDs
+  List<OutboundService>? get outboundServices;
+  List<String>? get outboundServicesIds;
+
+  /// Controls the access of this entity.
+  List<Access>? get access;
+
+  /// Create a copy of ReportTemplate
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ReportTemplateCopyWith<ReportTemplate> get copyWith =>
+      _$ReportTemplateCopyWithImpl<ReportTemplate>(
+          this as ReportTemplate, _$identity);
+
+  /// Serializes this ReportTemplate to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ReportTemplate &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other.structure, structure) &&
+            const DeepCollectionEquality().equals(other.assets, assets) &&
+            const DeepCollectionEquality().equals(other.assetsIds, assetsIds) &&
+            const DeepCollectionEquality()
+                .equals(other.outboundServices, outboundServices) &&
+            const DeepCollectionEquality()
+                .equals(other.outboundServicesIds, outboundServicesIds) &&
+            const DeepCollectionEquality().equals(other.access, access));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      const DeepCollectionEquality().hash(structure),
+      const DeepCollectionEquality().hash(assets),
+      const DeepCollectionEquality().hash(assetsIds),
+      const DeepCollectionEquality().hash(outboundServices),
+      const DeepCollectionEquality().hash(outboundServicesIds),
+      const DeepCollectionEquality().hash(access));
+
+  @override
+  String toString() {
+    return 'ReportTemplate(id: $id, name: $name, structure: $structure, assets: $assets, assetsIds: $assetsIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, access: $access)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ReportTemplateCopyWith<$Res> {
+  factory $ReportTemplateCopyWith(
+          ReportTemplate value, $Res Function(ReportTemplate) _then) =
+      _$ReportTemplateCopyWithImpl;
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      List<ReportTemplatePage>? structure,
+      List<Asset>? assets,
+      List<String>? assetsIds,
+      List<OutboundService>? outboundServices,
+      List<String>? outboundServicesIds,
+      List<Access>? access});
+}
+
+/// @nodoc
+class _$ReportTemplateCopyWithImpl<$Res>
+    implements $ReportTemplateCopyWith<$Res> {
+  _$ReportTemplateCopyWithImpl(this._self, this._then);
+
+  final ReportTemplate _self;
+  final $Res Function(ReportTemplate) _then;
+
+  /// Create a copy of ReportTemplate
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? structure = freezed,
+    Object? assets = freezed,
+    Object? assetsIds = freezed,
+    Object? outboundServices = freezed,
+    Object? outboundServicesIds = freezed,
+    Object? access = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      structure: freezed == structure
+          ? _self.structure
+          : structure // ignore: cast_nullable_to_non_nullable
+              as List<ReportTemplatePage>?,
+      assets: freezed == assets
+          ? _self.assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      assetsIds: freezed == assetsIds
+          ? _self.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      outboundServices: freezed == outboundServices
+          ? _self.outboundServices
+          : outboundServices // ignore: cast_nullable_to_non_nullable
+              as List<OutboundService>?,
+      outboundServicesIds: freezed == outboundServicesIds
+          ? _self.outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      access: freezed == access
+          ? _self.access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ReportTemplate extends ReportTemplate {
+  const _ReportTemplate(
+      {required this.id,
+      required this.name,
+      final List<ReportTemplatePage>? structure,
+      final List<Asset>? assets,
+      final List<String>? assetsIds,
+      final List<OutboundService>? outboundServices,
+      final List<String>? outboundServicesIds,
+      final List<Access>? access})
+      : _structure = structure,
+        _assets = assets,
+        _assetsIds = assetsIds,
+        _outboundServices = outboundServices,
+        _outboundServicesIds = outboundServicesIds,
+        _access = access,
+        super._();
+  factory _ReportTemplate.fromJson(Map<String, dynamic> json) =>
+      _$ReportTemplateFromJson(json);
+
+  /// Is the report template ID
+  @override
+  final String id;
+
+  /// Is the report template name
+  @override
+  final String name;
+
+  /// Structure
+  final List<ReportTemplatePage>? _structure;
+
+  /// Structure
+  @override
+  List<ReportTemplatePage>? get structure {
+    final value = _structure;
+    if (value == null) return null;
+    if (_structure is EqualUnmodifiableListView) return _structure;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Is the report template linked assets or assets' IDs
+  final List<Asset>? _assets;
+
+  /// Is the report template linked assets or assets' IDs
+  @override
+  List<Asset>? get assets {
+    final value = _assets;
+    if (value == null) return null;
+    if (_assets is EqualUnmodifiableListView) return _assets;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _assetsIds;
+  @override
+  List<String>? get assetsIds {
+    final value = _assetsIds;
+    if (value == null) return null;
+    if (_assetsIds is EqualUnmodifiableListView) return _assetsIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Is the report template linked outbound services or outbound services' IDs
+  final List<OutboundService>? _outboundServices;
+
+  /// Is the report template linked outbound services or outbound services' IDs
+  @override
+  List<OutboundService>? get outboundServices {
+    final value = _outboundServices;
+    if (value == null) return null;
+    if (_outboundServices is EqualUnmodifiableListView)
+      return _outboundServices;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  final List<String>? _outboundServicesIds;
+  @override
+  List<String>? get outboundServicesIds {
+    final value = _outboundServicesIds;
+    if (value == null) return null;
+    if (_outboundServicesIds is EqualUnmodifiableListView)
+      return _outboundServicesIds;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Controls the access of this entity.
+  final List<Access>? _access;
+
+  /// Controls the access of this entity.
+  @override
+  List<Access>? get access {
+    final value = _access;
+    if (value == null) return null;
+    if (_access is EqualUnmodifiableListView) return _access;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Create a copy of ReportTemplate
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ReportTemplateCopyWith<_ReportTemplate> get copyWith =>
+      __$ReportTemplateCopyWithImpl<_ReportTemplate>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ReportTemplateToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ReportTemplate &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality()
+                .equals(other._structure, _structure) &&
+            const DeepCollectionEquality().equals(other._assets, _assets) &&
+            const DeepCollectionEquality()
+                .equals(other._assetsIds, _assetsIds) &&
+            const DeepCollectionEquality()
+                .equals(other._outboundServices, _outboundServices) &&
+            const DeepCollectionEquality()
+                .equals(other._outboundServicesIds, _outboundServicesIds) &&
+            const DeepCollectionEquality().equals(other._access, _access));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      const DeepCollectionEquality().hash(_structure),
+      const DeepCollectionEquality().hash(_assets),
+      const DeepCollectionEquality().hash(_assetsIds),
+      const DeepCollectionEquality().hash(_outboundServices),
+      const DeepCollectionEquality().hash(_outboundServicesIds),
+      const DeepCollectionEquality().hash(_access));
+
+  @override
+  String toString() {
+    return 'ReportTemplate(id: $id, name: $name, structure: $structure, assets: $assets, assetsIds: $assetsIds, outboundServices: $outboundServices, outboundServicesIds: $outboundServicesIds, access: $access)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ReportTemplateCopyWith<$Res>
+    implements $ReportTemplateCopyWith<$Res> {
+  factory _$ReportTemplateCopyWith(
+          _ReportTemplate value, $Res Function(_ReportTemplate) _then) =
+      __$ReportTemplateCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      List<ReportTemplatePage>? structure,
+      List<Asset>? assets,
+      List<String>? assetsIds,
+      List<OutboundService>? outboundServices,
+      List<String>? outboundServicesIds,
+      List<Access>? access});
+}
+
+/// @nodoc
+class __$ReportTemplateCopyWithImpl<$Res>
+    implements _$ReportTemplateCopyWith<$Res> {
+  __$ReportTemplateCopyWithImpl(this._self, this._then);
+
+  final _ReportTemplate _self;
+  final $Res Function(_ReportTemplate) _then;
+
+  /// Create a copy of ReportTemplate
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? structure = freezed,
+    Object? assets = freezed,
+    Object? assetsIds = freezed,
+    Object? outboundServices = freezed,
+    Object? outboundServicesIds = freezed,
+    Object? access = freezed,
+  }) {
+    return _then(_ReportTemplate(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      structure: freezed == structure
+          ? _self._structure
+          : structure // ignore: cast_nullable_to_non_nullable
+              as List<ReportTemplatePage>?,
+      assets: freezed == assets
+          ? _self._assets
+          : assets // ignore: cast_nullable_to_non_nullable
+              as List<Asset>?,
+      assetsIds: freezed == assetsIds
+          ? _self._assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      outboundServices: freezed == outboundServices
+          ? _self._outboundServices
+          : outboundServices // ignore: cast_nullable_to_non_nullable
+              as List<OutboundService>?,
+      outboundServicesIds: freezed == outboundServicesIds
+          ? _self._outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+      access: freezed == access
+          ? _self._access
+          : access // ignore: cast_nullable_to_non_nullable
+              as List<Access>?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ReportTemplateInput {
+  String? get id;
+  set id(String? value);
+  String get name;
+  set name(String value);
+  List<String> get assetsIds;
+  set assetsIds(List<String> value);
+  List<String> get outboundServicesIds;
+  set outboundServicesIds(List<String> value);
+  List<ReportTemplatePageInput> get structure;
+  set structure(List<ReportTemplatePageInput> value);
+
+  /// Create a copy of ReportTemplateInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ReportTemplateInputCopyWith<ReportTemplateInput> get copyWith =>
+      _$ReportTemplateInputCopyWithImpl<ReportTemplateInput>(
+          this as ReportTemplateInput, _$identity);
+
+  /// Serializes this ReportTemplateInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ReportTemplateInput(id: $id, name: $name, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, structure: $structure)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ReportTemplateInputCopyWith<$Res> {
+  factory $ReportTemplateInputCopyWith(
+          ReportTemplateInput value, $Res Function(ReportTemplateInput) _then) =
+      _$ReportTemplateInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      List<String> assetsIds,
+      List<String> outboundServicesIds,
+      List<ReportTemplatePageInput> structure});
+}
+
+/// @nodoc
+class _$ReportTemplateInputCopyWithImpl<$Res>
+    implements $ReportTemplateInputCopyWith<$Res> {
+  _$ReportTemplateInputCopyWithImpl(this._self, this._then);
+
+  final ReportTemplateInput _self;
+  final $Res Function(ReportTemplateInput) _then;
+
+  /// Create a copy of ReportTemplateInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? assetsIds = null,
+    Object? outboundServicesIds = null,
+    Object? structure = null,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetsIds: null == assetsIds
+          ? _self.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      outboundServicesIds: null == outboundServicesIds
+          ? _self.outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      structure: null == structure
+          ? _self.structure
+          : structure // ignore: cast_nullable_to_non_nullable
+              as List<ReportTemplatePageInput>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ReportTemplateInput extends ReportTemplateInput {
+  _ReportTemplateInput(
+      {this.id,
+      this.name = '',
+      this.assetsIds = const [],
+      this.outboundServicesIds = const [],
+      this.structure = const []})
+      : super._();
+  factory _ReportTemplateInput.fromJson(Map<String, dynamic> json) =>
+      _$ReportTemplateInputFromJson(json);
+
+  @override
+  String? id;
+  @override
+  @JsonKey()
+  String name;
+  @override
+  @JsonKey()
+  List<String> assetsIds;
+  @override
+  @JsonKey()
+  List<String> outboundServicesIds;
+  @override
+  @JsonKey()
+  List<ReportTemplatePageInput> structure;
+
+  /// Create a copy of ReportTemplateInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ReportTemplateInputCopyWith<_ReportTemplateInput> get copyWith =>
+      __$ReportTemplateInputCopyWithImpl<_ReportTemplateInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ReportTemplateInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'ReportTemplateInput(id: $id, name: $name, assetsIds: $assetsIds, outboundServicesIds: $outboundServicesIds, structure: $structure)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ReportTemplateInputCopyWith<$Res>
+    implements $ReportTemplateInputCopyWith<$Res> {
+  factory _$ReportTemplateInputCopyWith(_ReportTemplateInput value,
+          $Res Function(_ReportTemplateInput) _then) =
+      __$ReportTemplateInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      List<String> assetsIds,
+      List<String> outboundServicesIds,
+      List<ReportTemplatePageInput> structure});
+}
+
+/// @nodoc
+class __$ReportTemplateInputCopyWithImpl<$Res>
+    implements _$ReportTemplateInputCopyWith<$Res> {
+  __$ReportTemplateInputCopyWithImpl(this._self, this._then);
+
+  final _ReportTemplateInput _self;
+  final $Res Function(_ReportTemplateInput) _then;
+
+  /// Create a copy of ReportTemplateInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? assetsIds = null,
+    Object? outboundServicesIds = null,
+    Object? structure = null,
+  }) {
+    return _then(_ReportTemplateInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      assetsIds: null == assetsIds
+          ? _self.assetsIds
+          : assetsIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      outboundServicesIds: null == outboundServicesIds
+          ? _self.outboundServicesIds
+          : outboundServicesIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      structure: null == structure
+          ? _self.structure
+          : structure // ignore: cast_nullable_to_non_nullable
+              as List<ReportTemplatePageInput>,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ReportTemplateCol {
+  /// Is the col name
+  String get name;
+
+  /// Is the col field name
+  String get field;
+
+  /// Is the visibility of the field
+  bool get visible;
+
+  /// Is the col custom identifier
+  bool get isCustom;
+
+  /// Create a copy of ReportTemplateCol
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ReportTemplateColCopyWith<ReportTemplateCol> get copyWith =>
+      _$ReportTemplateColCopyWithImpl<ReportTemplateCol>(
+          this as ReportTemplateCol, _$identity);
+
+  /// Serializes this ReportTemplateCol to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ReportTemplateCol &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.field, field) || other.field == field) &&
+            (identical(other.visible, visible) || other.visible == visible) &&
+            (identical(other.isCustom, isCustom) ||
+                other.isCustom == isCustom));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, field, visible, isCustom);
+
+  @override
+  String toString() {
+    return 'ReportTemplateCol(name: $name, field: $field, visible: $visible, isCustom: $isCustom)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ReportTemplateColCopyWith<$Res> {
+  factory $ReportTemplateColCopyWith(
+          ReportTemplateCol value, $Res Function(ReportTemplateCol) _then) =
+      _$ReportTemplateColCopyWithImpl;
+  @useResult
+  $Res call({String name, String field, bool visible, bool isCustom});
+}
+
+/// @nodoc
+class _$ReportTemplateColCopyWithImpl<$Res>
+    implements $ReportTemplateColCopyWith<$Res> {
+  _$ReportTemplateColCopyWithImpl(this._self, this._then);
+
+  final ReportTemplateCol _self;
+  final $Res Function(ReportTemplateCol) _then;
+
+  /// Create a copy of ReportTemplateCol
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? field = null,
+    Object? visible = null,
+    Object? isCustom = null,
+  }) {
+    return _then(_self.copyWith(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      field: null == field
+          ? _self.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      visible: null == visible
+          ? _self.visible
+          : visible // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isCustom: null == isCustom
+          ? _self.isCustom
+          : isCustom // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ReportTemplateCol extends ReportTemplateCol {
+  const _ReportTemplateCol(
+      {required this.name,
+      required this.field,
+      required this.visible,
+      required this.isCustom})
+      : super._();
+  factory _ReportTemplateCol.fromJson(Map<String, dynamic> json) =>
+      _$ReportTemplateColFromJson(json);
+
+  /// Is the col name
+  @override
+  final String name;
+
+  /// Is the col field name
+  @override
+  final String field;
+
+  /// Is the visibility of the field
+  @override
+  final bool visible;
+
+  /// Is the col custom identifier
+  @override
+  final bool isCustom;
+
+  /// Create a copy of ReportTemplateCol
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ReportTemplateColCopyWith<_ReportTemplateCol> get copyWith =>
+      __$ReportTemplateColCopyWithImpl<_ReportTemplateCol>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ReportTemplateColToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ReportTemplateCol &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.field, field) || other.field == field) &&
+            (identical(other.visible, visible) || other.visible == visible) &&
+            (identical(other.isCustom, isCustom) ||
+                other.isCustom == isCustom));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, name, field, visible, isCustom);
+
+  @override
+  String toString() {
+    return 'ReportTemplateCol(name: $name, field: $field, visible: $visible, isCustom: $isCustom)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ReportTemplateColCopyWith<$Res>
+    implements $ReportTemplateColCopyWith<$Res> {
+  factory _$ReportTemplateColCopyWith(
+          _ReportTemplateCol value, $Res Function(_ReportTemplateCol) _then) =
+      __$ReportTemplateColCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String name, String field, bool visible, bool isCustom});
+}
+
+/// @nodoc
+class __$ReportTemplateColCopyWithImpl<$Res>
+    implements _$ReportTemplateColCopyWith<$Res> {
+  __$ReportTemplateColCopyWithImpl(this._self, this._then);
+
+  final _ReportTemplateCol _self;
+  final $Res Function(_ReportTemplateCol) _then;
+
+  /// Create a copy of ReportTemplateCol
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? field = null,
+    Object? visible = null,
+    Object? isCustom = null,
+  }) {
+    return _then(_ReportTemplateCol(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      field: null == field
+          ? _self.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      visible: null == visible
+          ? _self.visible
+          : visible // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isCustom: null == isCustom
+          ? _self.isCustom
+          : isCustom // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ReportTemplateColInput {
+  String get name;
+  set name(String value);
+  String get field;
+  set field(String value);
+  bool get visible;
+  set visible(bool value);
+  bool get isCustom;
+  set isCustom(bool value);
+
+  /// Create a copy of ReportTemplateColInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ReportTemplateColInputCopyWith<ReportTemplateColInput> get copyWith =>
+      _$ReportTemplateColInputCopyWithImpl<ReportTemplateColInput>(
+          this as ReportTemplateColInput, _$identity);
+
+  /// Serializes this ReportTemplateColInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ReportTemplateColInput(name: $name, field: $field, visible: $visible, isCustom: $isCustom)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ReportTemplateColInputCopyWith<$Res> {
+  factory $ReportTemplateColInputCopyWith(ReportTemplateColInput value,
+          $Res Function(ReportTemplateColInput) _then) =
+      _$ReportTemplateColInputCopyWithImpl;
+  @useResult
+  $Res call({String name, String field, bool visible, bool isCustom});
+}
+
+/// @nodoc
+class _$ReportTemplateColInputCopyWithImpl<$Res>
+    implements $ReportTemplateColInputCopyWith<$Res> {
+  _$ReportTemplateColInputCopyWithImpl(this._self, this._then);
+
+  final ReportTemplateColInput _self;
+  final $Res Function(ReportTemplateColInput) _then;
+
+  /// Create a copy of ReportTemplateColInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? field = null,
+    Object? visible = null,
+    Object? isCustom = null,
+  }) {
+    return _then(_self.copyWith(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      field: null == field
+          ? _self.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      visible: null == visible
+          ? _self.visible
+          : visible // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isCustom: null == isCustom
+          ? _self.isCustom
+          : isCustom // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ReportTemplateColInput extends ReportTemplateColInput {
+  _ReportTemplateColInput(
+      {this.name = '',
+      this.field = '',
+      this.visible = true,
+      this.isCustom = false})
+      : super._();
+  factory _ReportTemplateColInput.fromJson(Map<String, dynamic> json) =>
+      _$ReportTemplateColInputFromJson(json);
+
+  @override
+  @JsonKey()
+  String name;
+  @override
+  @JsonKey()
+  String field;
+  @override
+  @JsonKey()
+  bool visible;
+  @override
+  @JsonKey()
+  bool isCustom;
+
+  /// Create a copy of ReportTemplateColInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ReportTemplateColInputCopyWith<_ReportTemplateColInput> get copyWith =>
+      __$ReportTemplateColInputCopyWithImpl<_ReportTemplateColInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ReportTemplateColInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'ReportTemplateColInput(name: $name, field: $field, visible: $visible, isCustom: $isCustom)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ReportTemplateColInputCopyWith<$Res>
+    implements $ReportTemplateColInputCopyWith<$Res> {
+  factory _$ReportTemplateColInputCopyWith(_ReportTemplateColInput value,
+          $Res Function(_ReportTemplateColInput) _then) =
+      __$ReportTemplateColInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String name, String field, bool visible, bool isCustom});
+}
+
+/// @nodoc
+class __$ReportTemplateColInputCopyWithImpl<$Res>
+    implements _$ReportTemplateColInputCopyWith<$Res> {
+  __$ReportTemplateColInputCopyWithImpl(this._self, this._then);
+
+  final _ReportTemplateColInput _self;
+  final $Res Function(_ReportTemplateColInput) _then;
+
+  /// Create a copy of ReportTemplateColInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? field = null,
+    Object? visible = null,
+    Object? isCustom = null,
+  }) {
+    return _then(_ReportTemplateColInput(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      field: null == field
+          ? _self.field
+          : field // ignore: cast_nullable_to_non_nullable
+              as String,
+      visible: null == visible
+          ? _self.visible
+          : visible // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isCustom: null == isCustom
+          ? _self.isCustom
+          : isCustom // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$CustomReport {
+  /// [id] is the report ID
+  String get id;
+
+  /// [code] is the report code
+  String get code;
+
+  /// [allowedApps] is the list of allowed apps
+  List<RegisteredApp>? get allowedApps;
+
+  /// Create a copy of CustomReport
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CustomReportCopyWith<CustomReport> get copyWith =>
+      _$CustomReportCopyWithImpl<CustomReport>(
+          this as CustomReport, _$identity);
+
+  /// Serializes this CustomReport to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is CustomReport &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
+            const DeepCollectionEquality()
+                .equals(other.allowedApps, allowedApps));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, code, const DeepCollectionEquality().hash(allowedApps));
+
+  @override
+  String toString() {
+    return 'CustomReport(id: $id, code: $code, allowedApps: $allowedApps)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CustomReportCopyWith<$Res> {
+  factory $CustomReportCopyWith(
+          CustomReport value, $Res Function(CustomReport) _then) =
+      _$CustomReportCopyWithImpl;
+  @useResult
+  $Res call({String id, String code, List<RegisteredApp>? allowedApps});
+}
+
+/// @nodoc
+class _$CustomReportCopyWithImpl<$Res> implements $CustomReportCopyWith<$Res> {
+  _$CustomReportCopyWithImpl(this._self, this._then);
+
+  final CustomReport _self;
+  final $Res Function(CustomReport) _then;
+
+  /// Create a copy of CustomReport
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? allowedApps = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      allowedApps: freezed == allowedApps
+          ? _self.allowedApps
+          : allowedApps // ignore: cast_nullable_to_non_nullable
+              as List<RegisteredApp>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _CustomReport extends CustomReport {
+  const _CustomReport(
+      {required this.id,
+      required this.code,
+      final List<RegisteredApp>? allowedApps})
+      : _allowedApps = allowedApps,
+        super._();
+  factory _CustomReport.fromJson(Map<String, dynamic> json) =>
+      _$CustomReportFromJson(json);
+
+  /// [id] is the report ID
+  @override
+  final String id;
+
+  /// [code] is the report code
+  @override
+  final String code;
+
+  /// [allowedApps] is the list of allowed apps
+  final List<RegisteredApp>? _allowedApps;
+
+  /// [allowedApps] is the list of allowed apps
+  @override
+  List<RegisteredApp>? get allowedApps {
+    final value = _allowedApps;
+    if (value == null) return null;
+    if (_allowedApps is EqualUnmodifiableListView) return _allowedApps;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Create a copy of CustomReport
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CustomReportCopyWith<_CustomReport> get copyWith =>
+      __$CustomReportCopyWithImpl<_CustomReport>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CustomReportToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _CustomReport &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.code, code) || other.code == code) &&
+            const DeepCollectionEquality()
+                .equals(other._allowedApps, _allowedApps));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, id, code, const DeepCollectionEquality().hash(_allowedApps));
+
+  @override
+  String toString() {
+    return 'CustomReport(id: $id, code: $code, allowedApps: $allowedApps)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$CustomReportCopyWith<$Res>
+    implements $CustomReportCopyWith<$Res> {
+  factory _$CustomReportCopyWith(
+          _CustomReport value, $Res Function(_CustomReport) _then) =
+      __$CustomReportCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String id, String code, List<RegisteredApp>? allowedApps});
+}
+
+/// @nodoc
+class __$CustomReportCopyWithImpl<$Res>
+    implements _$CustomReportCopyWith<$Res> {
+  __$CustomReportCopyWithImpl(this._self, this._then);
+
+  final _CustomReport _self;
+  final $Res Function(_CustomReport) _then;
+
+  /// Create a copy of CustomReport
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? code = null,
+    Object? allowedApps = freezed,
+  }) {
+    return _then(_CustomReport(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: null == code
+          ? _self.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      allowedApps: freezed == allowedApps
+          ? _self._allowedApps
+          : allowedApps // ignore: cast_nullable_to_non_nullable
+              as List<RegisteredApp>?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ReportTemplatePage {
+  /// Is the page title
+  String get title;
+
+  /// Is the page source
+  @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+  ReportTemplateSource get source;
+
+  /// Is the algorithm used to generate the page data.
+  @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+  ReportTemplateAlgorithm get algorithm;
+
+  /// Is the page data, aka, the cols. Only used when [algorithm] is [ReportTemplateAlgorithm.auto]
+  List<ReportTemplateCol>? get cols;
+
+  /// Is the script in Python to generate the page data. Only used when [algorithm] is [ReportTemplateAlgorithm.python]
+  String? get script;
+
+  /// Create a copy of ReportTemplatePage
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ReportTemplatePageCopyWith<ReportTemplatePage> get copyWith =>
+      _$ReportTemplatePageCopyWithImpl<ReportTemplatePage>(
+          this as ReportTemplatePage, _$identity);
+
+  /// Serializes this ReportTemplatePage to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ReportTemplatePage &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.algorithm, algorithm) ||
+                other.algorithm == algorithm) &&
+            const DeepCollectionEquality().equals(other.cols, cols) &&
+            (identical(other.script, script) || other.script == script));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, title, source, algorithm,
+      const DeepCollectionEquality().hash(cols), script);
+
+  @override
+  String toString() {
+    return 'ReportTemplatePage(title: $title, source: $source, algorithm: $algorithm, cols: $cols, script: $script)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ReportTemplatePageCopyWith<$Res> {
+  factory $ReportTemplatePageCopyWith(
+          ReportTemplatePage value, $Res Function(ReportTemplatePage) _then) =
+      _$ReportTemplatePageCopyWithImpl;
+  @useResult
+  $Res call(
+      {String title,
+      @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+      ReportTemplateSource source,
+      @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+      ReportTemplateAlgorithm algorithm,
+      List<ReportTemplateCol>? cols,
+      String? script});
+}
+
+/// @nodoc
+class _$ReportTemplatePageCopyWithImpl<$Res>
+    implements $ReportTemplatePageCopyWith<$Res> {
+  _$ReportTemplatePageCopyWithImpl(this._self, this._then);
+
+  final ReportTemplatePage _self;
+  final $Res Function(ReportTemplatePage) _then;
+
+  /// Create a copy of ReportTemplatePage
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? title = null,
+    Object? source = null,
+    Object? algorithm = null,
+    Object? cols = freezed,
+    Object? script = freezed,
+  }) {
+    return _then(_self.copyWith(
+      title: null == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as ReportTemplateSource,
+      algorithm: null == algorithm
+          ? _self.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as ReportTemplateAlgorithm,
+      cols: freezed == cols
+          ? _self.cols
+          : cols // ignore: cast_nullable_to_non_nullable
+              as List<ReportTemplateCol>?,
+      script: freezed == script
+          ? _self.script
+          : script // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ReportTemplatePage extends ReportTemplatePage {
+  const _ReportTemplatePage(
+      {required this.title,
+      @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+      required this.source,
+      @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+      this.algorithm = ReportTemplateAlgorithm.auto,
+      final List<ReportTemplateCol>? cols,
+      this.script})
+      : _cols = cols,
+        super._();
+  factory _ReportTemplatePage.fromJson(Map<String, dynamic> json) =>
+      _$ReportTemplatePageFromJson(json);
+
+  /// Is the page title
+  @override
+  final String title;
+
+  /// Is the page source
+  @override
+  @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+  final ReportTemplateSource source;
+
+  /// Is the algorithm used to generate the page data.
+  @override
+  @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+  final ReportTemplateAlgorithm algorithm;
+
+  /// Is the page data, aka, the cols. Only used when [algorithm] is [ReportTemplateAlgorithm.auto]
+  final List<ReportTemplateCol>? _cols;
+
+  /// Is the page data, aka, the cols. Only used when [algorithm] is [ReportTemplateAlgorithm.auto]
+  @override
+  List<ReportTemplateCol>? get cols {
+    final value = _cols;
+    if (value == null) return null;
+    if (_cols is EqualUnmodifiableListView) return _cols;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  /// Is the script in Python to generate the page data. Only used when [algorithm] is [ReportTemplateAlgorithm.python]
+  @override
+  final String? script;
+
+  /// Create a copy of ReportTemplatePage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ReportTemplatePageCopyWith<_ReportTemplatePage> get copyWith =>
+      __$ReportTemplatePageCopyWithImpl<_ReportTemplatePage>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ReportTemplatePageToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ReportTemplatePage &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.algorithm, algorithm) ||
+                other.algorithm == algorithm) &&
+            const DeepCollectionEquality().equals(other._cols, _cols) &&
+            (identical(other.script, script) || other.script == script));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, title, source, algorithm,
+      const DeepCollectionEquality().hash(_cols), script);
+
+  @override
+  String toString() {
+    return 'ReportTemplatePage(title: $title, source: $source, algorithm: $algorithm, cols: $cols, script: $script)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ReportTemplatePageCopyWith<$Res>
+    implements $ReportTemplatePageCopyWith<$Res> {
+  factory _$ReportTemplatePageCopyWith(
+          _ReportTemplatePage value, $Res Function(_ReportTemplatePage) _then) =
+      __$ReportTemplatePageCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String title,
+      @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+      ReportTemplateSource source,
+      @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+      ReportTemplateAlgorithm algorithm,
+      List<ReportTemplateCol>? cols,
+      String? script});
+}
+
+/// @nodoc
+class __$ReportTemplatePageCopyWithImpl<$Res>
+    implements _$ReportTemplatePageCopyWith<$Res> {
+  __$ReportTemplatePageCopyWithImpl(this._self, this._then);
+
+  final _ReportTemplatePage _self;
+  final $Res Function(_ReportTemplatePage) _then;
+
+  /// Create a copy of ReportTemplatePage
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? title = null,
+    Object? source = null,
+    Object? algorithm = null,
+    Object? cols = freezed,
+    Object? script = freezed,
+  }) {
+    return _then(_ReportTemplatePage(
+      title: null == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as ReportTemplateSource,
+      algorithm: null == algorithm
+          ? _self.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as ReportTemplateAlgorithm,
+      cols: freezed == cols
+          ? _self._cols
+          : cols // ignore: cast_nullable_to_non_nullable
+              as List<ReportTemplateCol>?,
+      script: freezed == script
+          ? _self.script
+          : script // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ReportTemplatePageInput {
+  String get title;
+  set title(String value);
+  @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+  ReportTemplateSource get source;
+  @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+  set source(ReportTemplateSource value);
+  @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+  ReportTemplateAlgorithm get algorithm;
+  @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+  set algorithm(ReportTemplateAlgorithm value);
+  List<ReportTemplateColInput> get cols;
+  set cols(List<ReportTemplateColInput> value);
+  String get script;
+  set script(String value);
+
+  /// Create a copy of ReportTemplatePageInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ReportTemplatePageInputCopyWith<ReportTemplatePageInput> get copyWith =>
+      _$ReportTemplatePageInputCopyWithImpl<ReportTemplatePageInput>(
+          this as ReportTemplatePageInput, _$identity);
+
+  /// Serializes this ReportTemplatePageInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ReportTemplatePageInput(title: $title, source: $source, algorithm: $algorithm, cols: $cols, script: $script)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ReportTemplatePageInputCopyWith<$Res> {
+  factory $ReportTemplatePageInputCopyWith(ReportTemplatePageInput value,
+          $Res Function(ReportTemplatePageInput) _then) =
+      _$ReportTemplatePageInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String title,
+      @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+      ReportTemplateSource source,
+      @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+      ReportTemplateAlgorithm algorithm,
+      List<ReportTemplateColInput> cols,
+      String script});
+}
+
+/// @nodoc
+class _$ReportTemplatePageInputCopyWithImpl<$Res>
+    implements $ReportTemplatePageInputCopyWith<$Res> {
+  _$ReportTemplatePageInputCopyWithImpl(this._self, this._then);
+
+  final ReportTemplatePageInput _self;
+  final $Res Function(ReportTemplatePageInput) _then;
+
+  /// Create a copy of ReportTemplatePageInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? title = null,
+    Object? source = null,
+    Object? algorithm = null,
+    Object? cols = null,
+    Object? script = null,
+  }) {
+    return _then(_self.copyWith(
+      title: null == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as ReportTemplateSource,
+      algorithm: null == algorithm
+          ? _self.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as ReportTemplateAlgorithm,
+      cols: null == cols
+          ? _self.cols
+          : cols // ignore: cast_nullable_to_non_nullable
+              as List<ReportTemplateColInput>,
+      script: null == script
+          ? _self.script
+          : script // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ReportTemplatePageInput extends ReportTemplatePageInput {
+  _ReportTemplatePageInput(
+      {this.title = 'Page',
+      @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+      this.source = ReportTemplateSource.messages,
+      @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+      this.algorithm = ReportTemplateAlgorithm.auto,
+      this.cols = const [],
+      this.script = ''})
+      : super._();
+  factory _ReportTemplatePageInput.fromJson(Map<String, dynamic> json) =>
+      _$ReportTemplatePageInputFromJson(json);
+
+  @override
+  @JsonKey()
+  String title;
+  @override
+  @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+  ReportTemplateSource source;
+  @override
+  @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+  ReportTemplateAlgorithm algorithm;
+  @override
+  @JsonKey()
+  List<ReportTemplateColInput> cols;
+  @override
+  @JsonKey()
+  String script;
+
+  /// Create a copy of ReportTemplatePageInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ReportTemplatePageInputCopyWith<_ReportTemplatePageInput> get copyWith =>
+      __$ReportTemplatePageInputCopyWithImpl<_ReportTemplatePageInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ReportTemplatePageInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'ReportTemplatePageInput(title: $title, source: $source, algorithm: $algorithm, cols: $cols, script: $script)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ReportTemplatePageInputCopyWith<$Res>
+    implements $ReportTemplatePageInputCopyWith<$Res> {
+  factory _$ReportTemplatePageInputCopyWith(_ReportTemplatePageInput value,
+          $Res Function(_ReportTemplatePageInput) _then) =
+      __$ReportTemplatePageInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String title,
+      @JsonKey(unknownEnumValue: ReportTemplateSource.messages)
+      ReportTemplateSource source,
+      @JsonKey(unknownEnumValue: ReportTemplateAlgorithm.auto)
+      ReportTemplateAlgorithm algorithm,
+      List<ReportTemplateColInput> cols,
+      String script});
+}
+
+/// @nodoc
+class __$ReportTemplatePageInputCopyWithImpl<$Res>
+    implements _$ReportTemplatePageInputCopyWith<$Res> {
+  __$ReportTemplatePageInputCopyWithImpl(this._self, this._then);
+
+  final _ReportTemplatePageInput _self;
+  final $Res Function(_ReportTemplatePageInput) _then;
+
+  /// Create a copy of ReportTemplatePageInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? title = null,
+    Object? source = null,
+    Object? algorithm = null,
+    Object? cols = null,
+    Object? script = null,
+  }) {
+    return _then(_ReportTemplatePageInput(
+      title: null == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: null == source
+          ? _self.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as ReportTemplateSource,
+      algorithm: null == algorithm
+          ? _self.algorithm
+          : algorithm // ignore: cast_nullable_to_non_nullable
+              as ReportTemplateAlgorithm,
+      cols: null == cols
+          ? _self.cols
+          : cols // ignore: cast_nullable_to_non_nullable
+              as List<ReportTemplateColInput>,
+      script: null == script
+          ? _self.script
+          : script // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }

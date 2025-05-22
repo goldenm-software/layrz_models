@@ -1,5 +1,6 @@
 part of '../charts.dart';
 
+@JsonEnum(alwaysCreate: true)
 enum ChartAlgorithm {
   /// Python as a chart algorithm engine
   @JsonValue('PYTHON')
