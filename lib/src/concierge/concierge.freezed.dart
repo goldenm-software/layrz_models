@@ -92,11 +92,12 @@ class _$ConciergeFormPageCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ConciergeFormPage implements ConciergeFormPage {
+class _ConciergeFormPage extends ConciergeFormPage {
   const _ConciergeFormPage(
       {required this.title,
       final List<ConciergeFormBlock> blocks = const <ConciergeFormBlock>[]})
-      : _blocks = blocks;
+      : _blocks = blocks,
+        super._();
   factory _ConciergeFormPage.fromJson(Map<String, dynamic> json) =>
       _$ConciergeFormPageFromJson(json);
 
@@ -192,9 +193,148 @@ class __$ConciergeFormPageCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$ConciergeFormPageInput {
+  String get title;
+  set title(String value);
+  List<ConciergeBlockInput> get blocks;
+  set blocks(List<ConciergeBlockInput> value);
+
+  /// Create a copy of ConciergeFormPageInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ConciergeFormPageInputCopyWith<ConciergeFormPageInput> get copyWith =>
+      _$ConciergeFormPageInputCopyWithImpl<ConciergeFormPageInput>(
+          this as ConciergeFormPageInput, _$identity);
+
+  /// Serializes this ConciergeFormPageInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ConciergeFormPageInput(title: $title, blocks: $blocks)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ConciergeFormPageInputCopyWith<$Res> {
+  factory $ConciergeFormPageInputCopyWith(ConciergeFormPageInput value,
+          $Res Function(ConciergeFormPageInput) _then) =
+      _$ConciergeFormPageInputCopyWithImpl;
+  @useResult
+  $Res call({String title, List<ConciergeBlockInput> blocks});
+}
+
+/// @nodoc
+class _$ConciergeFormPageInputCopyWithImpl<$Res>
+    implements $ConciergeFormPageInputCopyWith<$Res> {
+  _$ConciergeFormPageInputCopyWithImpl(this._self, this._then);
+
+  final ConciergeFormPageInput _self;
+  final $Res Function(ConciergeFormPageInput) _then;
+
+  /// Create a copy of ConciergeFormPageInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? title = null,
+    Object? blocks = null,
+  }) {
+    return _then(_self.copyWith(
+      title: null == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      blocks: null == blocks
+          ? _self.blocks
+          : blocks // ignore: cast_nullable_to_non_nullable
+              as List<ConciergeBlockInput>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ConciergeFormPageInput extends ConciergeFormPageInput {
+  _ConciergeFormPageInput({this.title = "", this.blocks = const []})
+      : super._();
+  factory _ConciergeFormPageInput.fromJson(Map<String, dynamic> json) =>
+      _$ConciergeFormPageInputFromJson(json);
+
+  @override
+  @JsonKey()
+  String title;
+  @override
+  @JsonKey()
+  List<ConciergeBlockInput> blocks;
+
+  /// Create a copy of ConciergeFormPageInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ConciergeFormPageInputCopyWith<_ConciergeFormPageInput> get copyWith =>
+      __$ConciergeFormPageInputCopyWithImpl<_ConciergeFormPageInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ConciergeFormPageInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'ConciergeFormPageInput(title: $title, blocks: $blocks)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ConciergeFormPageInputCopyWith<$Res>
+    implements $ConciergeFormPageInputCopyWith<$Res> {
+  factory _$ConciergeFormPageInputCopyWith(_ConciergeFormPageInput value,
+          $Res Function(_ConciergeFormPageInput) _then) =
+      __$ConciergeFormPageInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String title, List<ConciergeBlockInput> blocks});
+}
+
+/// @nodoc
+class __$ConciergeFormPageInputCopyWithImpl<$Res>
+    implements _$ConciergeFormPageInputCopyWith<$Res> {
+  __$ConciergeFormPageInputCopyWithImpl(this._self, this._then);
+
+  final _ConciergeFormPageInput _self;
+  final $Res Function(_ConciergeFormPageInput) _then;
+
+  /// Create a copy of ConciergeFormPageInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? title = null,
+    Object? blocks = null,
+  }) {
+    return _then(_ConciergeFormPageInput(
+      title: null == title
+          ? _self.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      blocks: null == blocks
+          ? _self.blocks
+          : blocks // ignore: cast_nullable_to_non_nullable
+              as List<ConciergeBlockInput>,
+    ));
+  }
+}
+
+/// @nodoc
 mixin _$ConciergeFormBlock {
   /// Is the type of the block
-  @ConciergeFormBlockTypeConverter()
+  @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
   ConciergeFormBlockType get blockType;
 
   /// Is the title of the block
@@ -249,7 +389,8 @@ abstract mixin class $ConciergeFormBlockCopyWith<$Res> {
       _$ConciergeFormBlockCopyWithImpl;
   @useResult
   $Res call(
-      {@ConciergeFormBlockTypeConverter() ConciergeFormBlockType blockType,
+      {@JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+      ConciergeFormBlockType blockType,
       String name,
       ConciergeFormBlockConfiguration? configuration,
       ConciergeFormBlockValidator? showWhen});
@@ -328,18 +469,20 @@ class _$ConciergeFormBlockCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ConciergeFormBlock implements ConciergeFormBlock {
+class _ConciergeFormBlock extends ConciergeFormBlock {
   const _ConciergeFormBlock(
-      {@ConciergeFormBlockTypeConverter() required this.blockType,
+      {@JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+      required this.blockType,
       required this.name,
       this.configuration,
-      this.showWhen});
+      this.showWhen})
+      : super._();
   factory _ConciergeFormBlock.fromJson(Map<String, dynamic> json) =>
       _$ConciergeFormBlockFromJson(json);
 
   /// Is the type of the block
   @override
-  @ConciergeFormBlockTypeConverter()
+  @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
   final ConciergeFormBlockType blockType;
 
   /// Is the title of the block
@@ -403,7 +546,8 @@ abstract mixin class _$ConciergeFormBlockCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@ConciergeFormBlockTypeConverter() ConciergeFormBlockType blockType,
+      {@JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+      ConciergeFormBlockType blockType,
       String name,
       ConciergeFormBlockConfiguration? configuration,
       ConciergeFormBlockValidator? showWhen});
@@ -478,6 +622,258 @@ class __$ConciergeFormBlockCopyWithImpl<$Res>
 
     return $ConciergeFormBlockValidatorCopyWith<$Res>(_self.showWhen!, (value) {
       return _then(_self.copyWith(showWhen: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$ConciergeBlockInput {
+  String get name;
+  set name(String value);
+  @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+  ConciergeFormBlockType get blockType;
+  @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+  set blockType(ConciergeFormBlockType value);
+  ConciergeFormBlockDisplayConditionInput? get showWhen;
+  set showWhen(ConciergeFormBlockDisplayConditionInput? value);
+  ConciergeFormBlockConfigurationInput? get configuration;
+  set configuration(ConciergeFormBlockConfigurationInput? value);
+
+  /// Create a copy of ConciergeBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ConciergeBlockInputCopyWith<ConciergeBlockInput> get copyWith =>
+      _$ConciergeBlockInputCopyWithImpl<ConciergeBlockInput>(
+          this as ConciergeBlockInput, _$identity);
+
+  /// Serializes this ConciergeBlockInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ConciergeBlockInput(name: $name, blockType: $blockType, showWhen: $showWhen, configuration: $configuration)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ConciergeBlockInputCopyWith<$Res> {
+  factory $ConciergeBlockInputCopyWith(
+          ConciergeBlockInput value, $Res Function(ConciergeBlockInput) _then) =
+      _$ConciergeBlockInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String name,
+      @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+      ConciergeFormBlockType blockType,
+      ConciergeFormBlockDisplayConditionInput? showWhen,
+      ConciergeFormBlockConfigurationInput? configuration});
+
+  $ConciergeFormBlockDisplayConditionInputCopyWith<$Res>? get showWhen;
+  $ConciergeFormBlockConfigurationInputCopyWith<$Res>? get configuration;
+}
+
+/// @nodoc
+class _$ConciergeBlockInputCopyWithImpl<$Res>
+    implements $ConciergeBlockInputCopyWith<$Res> {
+  _$ConciergeBlockInputCopyWithImpl(this._self, this._then);
+
+  final ConciergeBlockInput _self;
+  final $Res Function(ConciergeBlockInput) _then;
+
+  /// Create a copy of ConciergeBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+    Object? blockType = null,
+    Object? showWhen = freezed,
+    Object? configuration = freezed,
+  }) {
+    return _then(_self.copyWith(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      blockType: null == blockType
+          ? _self.blockType
+          : blockType // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormBlockType,
+      showWhen: freezed == showWhen
+          ? _self.showWhen
+          : showWhen // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormBlockDisplayConditionInput?,
+      configuration: freezed == configuration
+          ? _self.configuration
+          : configuration // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormBlockConfigurationInput?,
+    ));
+  }
+
+  /// Create a copy of ConciergeBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConciergeFormBlockDisplayConditionInputCopyWith<$Res>? get showWhen {
+    if (_self.showWhen == null) {
+      return null;
+    }
+
+    return $ConciergeFormBlockDisplayConditionInputCopyWith<$Res>(
+        _self.showWhen!, (value) {
+      return _then(_self.copyWith(showWhen: value));
+    });
+  }
+
+  /// Create a copy of ConciergeBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConciergeFormBlockConfigurationInputCopyWith<$Res>? get configuration {
+    if (_self.configuration == null) {
+      return null;
+    }
+
+    return $ConciergeFormBlockConfigurationInputCopyWith<$Res>(
+        _self.configuration!, (value) {
+      return _then(_self.copyWith(configuration: value));
+    });
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ConciergeBlockInput extends ConciergeBlockInput {
+  _ConciergeBlockInput(
+      {this.name = "",
+      @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+      this.blockType = ConciergeFormBlockType.text,
+      this.showWhen,
+      this.configuration})
+      : super._();
+  factory _ConciergeBlockInput.fromJson(Map<String, dynamic> json) =>
+      _$ConciergeBlockInputFromJson(json);
+
+  @override
+  @JsonKey()
+  String name;
+  @override
+  @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+  ConciergeFormBlockType blockType;
+  @override
+  ConciergeFormBlockDisplayConditionInput? showWhen;
+  @override
+  ConciergeFormBlockConfigurationInput? configuration;
+
+  /// Create a copy of ConciergeBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ConciergeBlockInputCopyWith<_ConciergeBlockInput> get copyWith =>
+      __$ConciergeBlockInputCopyWithImpl<_ConciergeBlockInput>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ConciergeBlockInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'ConciergeBlockInput(name: $name, blockType: $blockType, showWhen: $showWhen, configuration: $configuration)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ConciergeBlockInputCopyWith<$Res>
+    implements $ConciergeBlockInputCopyWith<$Res> {
+  factory _$ConciergeBlockInputCopyWith(_ConciergeBlockInput value,
+          $Res Function(_ConciergeBlockInput) _then) =
+      __$ConciergeBlockInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String name,
+      @JsonKey(unknownEnumValue: ConciergeFormBlockType.text)
+      ConciergeFormBlockType blockType,
+      ConciergeFormBlockDisplayConditionInput? showWhen,
+      ConciergeFormBlockConfigurationInput? configuration});
+
+  @override
+  $ConciergeFormBlockDisplayConditionInputCopyWith<$Res>? get showWhen;
+  @override
+  $ConciergeFormBlockConfigurationInputCopyWith<$Res>? get configuration;
+}
+
+/// @nodoc
+class __$ConciergeBlockInputCopyWithImpl<$Res>
+    implements _$ConciergeBlockInputCopyWith<$Res> {
+  __$ConciergeBlockInputCopyWithImpl(this._self, this._then);
+
+  final _ConciergeBlockInput _self;
+  final $Res Function(_ConciergeBlockInput) _then;
+
+  /// Create a copy of ConciergeBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? name = null,
+    Object? blockType = null,
+    Object? showWhen = freezed,
+    Object? configuration = freezed,
+  }) {
+    return _then(_ConciergeBlockInput(
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      blockType: null == blockType
+          ? _self.blockType
+          : blockType // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormBlockType,
+      showWhen: freezed == showWhen
+          ? _self.showWhen
+          : showWhen // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormBlockDisplayConditionInput?,
+      configuration: freezed == configuration
+          ? _self.configuration
+          : configuration // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormBlockConfigurationInput?,
+    ));
+  }
+
+  /// Create a copy of ConciergeBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConciergeFormBlockDisplayConditionInputCopyWith<$Res>? get showWhen {
+    if (_self.showWhen == null) {
+      return null;
+    }
+
+    return $ConciergeFormBlockDisplayConditionInputCopyWith<$Res>(
+        _self.showWhen!, (value) {
+      return _then(_self.copyWith(showWhen: value));
+    });
+  }
+
+  /// Create a copy of ConciergeBlockInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $ConciergeFormBlockConfigurationInputCopyWith<$Res>? get configuration {
+    if (_self.configuration == null) {
+      return null;
+    }
+
+    return $ConciergeFormBlockConfigurationInputCopyWith<$Res>(
+        _self.configuration!, (value) {
+      return _then(_self.copyWith(configuration: value));
     });
   }
 }
@@ -605,8 +1001,7 @@ class _$ConciergeFormBlockConfigurationCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ConciergeFormBlockConfiguration
-    implements ConciergeFormBlockConfiguration {
+class _ConciergeFormBlockConfiguration extends ConciergeFormBlockConfiguration {
   const _ConciergeFormBlockConfiguration(
       {required this.allowEmpty,
       this.isInt,
@@ -614,7 +1009,8 @@ class _ConciergeFormBlockConfiguration
       this.max,
       this.min,
       final List<String> choices = const <String>[]})
-      : _choices = choices;
+      : _choices = choices,
+        super._();
   factory _ConciergeFormBlockConfiguration.fromJson(
           Map<String, dynamic> json) =>
       _$ConciergeFormBlockConfigurationFromJson(json);
@@ -759,6 +1155,224 @@ class __$ConciergeFormBlockConfigurationCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$ConciergeFormBlockConfigurationInput {
+  bool? get allowEmpty;
+  set allowEmpty(bool? value);
+  bool? get isMultiple;
+  set isMultiple(bool? value);
+  double? get min;
+  set min(double? value);
+  double? get max;
+  set max(double? value);
+  bool? get asInt;
+  set asInt(bool? value);
+  List<String>? get choices;
+  set choices(List<String>? value);
+
+  /// Create a copy of ConciergeFormBlockConfigurationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ConciergeFormBlockConfigurationInputCopyWith<
+          ConciergeFormBlockConfigurationInput>
+      get copyWith => _$ConciergeFormBlockConfigurationInputCopyWithImpl<
+              ConciergeFormBlockConfigurationInput>(
+          this as ConciergeFormBlockConfigurationInput, _$identity);
+
+  /// Serializes this ConciergeFormBlockConfigurationInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ConciergeFormBlockConfigurationInput(allowEmpty: $allowEmpty, isMultiple: $isMultiple, min: $min, max: $max, asInt: $asInt, choices: $choices)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ConciergeFormBlockConfigurationInputCopyWith<$Res> {
+  factory $ConciergeFormBlockConfigurationInputCopyWith(
+          ConciergeFormBlockConfigurationInput value,
+          $Res Function(ConciergeFormBlockConfigurationInput) _then) =
+      _$ConciergeFormBlockConfigurationInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {bool? allowEmpty,
+      bool? isMultiple,
+      double? min,
+      double? max,
+      bool? asInt,
+      List<String>? choices});
+}
+
+/// @nodoc
+class _$ConciergeFormBlockConfigurationInputCopyWithImpl<$Res>
+    implements $ConciergeFormBlockConfigurationInputCopyWith<$Res> {
+  _$ConciergeFormBlockConfigurationInputCopyWithImpl(this._self, this._then);
+
+  final ConciergeFormBlockConfigurationInput _self;
+  final $Res Function(ConciergeFormBlockConfigurationInput) _then;
+
+  /// Create a copy of ConciergeFormBlockConfigurationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? allowEmpty = freezed,
+    Object? isMultiple = freezed,
+    Object? min = freezed,
+    Object? max = freezed,
+    Object? asInt = freezed,
+    Object? choices = freezed,
+  }) {
+    return _then(_self.copyWith(
+      allowEmpty: freezed == allowEmpty
+          ? _self.allowEmpty
+          : allowEmpty // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isMultiple: freezed == isMultiple
+          ? _self.isMultiple
+          : isMultiple // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      min: freezed == min
+          ? _self.min
+          : min // ignore: cast_nullable_to_non_nullable
+              as double?,
+      max: freezed == max
+          ? _self.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as double?,
+      asInt: freezed == asInt
+          ? _self.asInt
+          : asInt // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      choices: freezed == choices
+          ? _self.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ConciergeFormBlockConfigurationInput
+    extends ConciergeFormBlockConfigurationInput {
+  _ConciergeFormBlockConfigurationInput(
+      {this.allowEmpty,
+      this.isMultiple,
+      this.min,
+      this.max,
+      this.asInt,
+      this.choices})
+      : super._();
+  factory _ConciergeFormBlockConfigurationInput.fromJson(
+          Map<String, dynamic> json) =>
+      _$ConciergeFormBlockConfigurationInputFromJson(json);
+
+  @override
+  bool? allowEmpty;
+  @override
+  bool? isMultiple;
+  @override
+  double? min;
+  @override
+  double? max;
+  @override
+  bool? asInt;
+  @override
+  List<String>? choices;
+
+  /// Create a copy of ConciergeFormBlockConfigurationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ConciergeFormBlockConfigurationInputCopyWith<
+          _ConciergeFormBlockConfigurationInput>
+      get copyWith => __$ConciergeFormBlockConfigurationInputCopyWithImpl<
+          _ConciergeFormBlockConfigurationInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ConciergeFormBlockConfigurationInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'ConciergeFormBlockConfigurationInput(allowEmpty: $allowEmpty, isMultiple: $isMultiple, min: $min, max: $max, asInt: $asInt, choices: $choices)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ConciergeFormBlockConfigurationInputCopyWith<$Res>
+    implements $ConciergeFormBlockConfigurationInputCopyWith<$Res> {
+  factory _$ConciergeFormBlockConfigurationInputCopyWith(
+          _ConciergeFormBlockConfigurationInput value,
+          $Res Function(_ConciergeFormBlockConfigurationInput) _then) =
+      __$ConciergeFormBlockConfigurationInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {bool? allowEmpty,
+      bool? isMultiple,
+      double? min,
+      double? max,
+      bool? asInt,
+      List<String>? choices});
+}
+
+/// @nodoc
+class __$ConciergeFormBlockConfigurationInputCopyWithImpl<$Res>
+    implements _$ConciergeFormBlockConfigurationInputCopyWith<$Res> {
+  __$ConciergeFormBlockConfigurationInputCopyWithImpl(this._self, this._then);
+
+  final _ConciergeFormBlockConfigurationInput _self;
+  final $Res Function(_ConciergeFormBlockConfigurationInput) _then;
+
+  /// Create a copy of ConciergeFormBlockConfigurationInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? allowEmpty = freezed,
+    Object? isMultiple = freezed,
+    Object? min = freezed,
+    Object? max = freezed,
+    Object? asInt = freezed,
+    Object? choices = freezed,
+  }) {
+    return _then(_ConciergeFormBlockConfigurationInput(
+      allowEmpty: freezed == allowEmpty
+          ? _self.allowEmpty
+          : allowEmpty // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      isMultiple: freezed == isMultiple
+          ? _self.isMultiple
+          : isMultiple // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      min: freezed == min
+          ? _self.min
+          : min // ignore: cast_nullable_to_non_nullable
+              as double?,
+      max: freezed == max
+          ? _self.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as double?,
+      asInt: freezed == asInt
+          ? _self.asInt
+          : asInt // ignore: cast_nullable_to_non_nullable
+              as bool?,
+      choices: freezed == choices
+          ? _self.choices
+          : choices // ignore: cast_nullable_to_non_nullable
+              as List<String>?,
+    ));
+  }
+}
+
+/// @nodoc
 mixin _$ConciergeFormBlockValidator {
   /// Is the reference number of the block inside the same page, in programming terms, is the position of the array
   int? get blockId;
@@ -771,11 +1385,11 @@ mixin _$ConciergeFormBlockValidator {
   String? get value;
 
   /// Represents the validator of the block
-  @ConciergeFormDisplayConditionValidatorConverter()
+  @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
   ConciergeFormDisplayConditionValidator get validator;
 
   /// Represents the operator to validate the value
-  @ConciergeFormDisplayConditionOperatorOrNullConverter()
+  @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
   ConciergeFormDisplayConditionOperator? get validatorOperator;
 
   /// Create a copy of ConciergeFormBlockValidator
@@ -828,9 +1442,9 @@ abstract mixin class $ConciergeFormBlockValidatorCopyWith<$Res> {
       double? max,
       double? min,
       String? value,
-      @ConciergeFormDisplayConditionValidatorConverter()
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
       ConciergeFormDisplayConditionValidator validator,
-      @ConciergeFormDisplayConditionOperatorOrNullConverter()
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
       ConciergeFormDisplayConditionOperator? validatorOperator});
 }
 
@@ -885,16 +1499,17 @@ class _$ConciergeFormBlockValidatorCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _ConciergeFormBlockValidator implements ConciergeFormBlockValidator {
+class _ConciergeFormBlockValidator extends ConciergeFormBlockValidator {
   const _ConciergeFormBlockValidator(
       {this.blockId,
       this.max,
       this.min,
       this.value,
-      @ConciergeFormDisplayConditionValidatorConverter()
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
       required this.validator,
-      @ConciergeFormDisplayConditionOperatorOrNullConverter()
-      this.validatorOperator});
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+      this.validatorOperator})
+      : super._();
   factory _ConciergeFormBlockValidator.fromJson(Map<String, dynamic> json) =>
       _$ConciergeFormBlockValidatorFromJson(json);
 
@@ -914,12 +1529,12 @@ class _ConciergeFormBlockValidator implements ConciergeFormBlockValidator {
 
   /// Represents the validator of the block
   @override
-  @ConciergeFormDisplayConditionValidatorConverter()
+  @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
   final ConciergeFormDisplayConditionValidator validator;
 
   /// Represents the operator to validate the value
   @override
-  @ConciergeFormDisplayConditionOperatorOrNullConverter()
+  @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
   final ConciergeFormDisplayConditionOperator? validatorOperator;
 
   /// Create a copy of ConciergeFormBlockValidator
@@ -978,9 +1593,9 @@ abstract mixin class _$ConciergeFormBlockValidatorCopyWith<$Res>
       double? max,
       double? min,
       String? value,
-      @ConciergeFormDisplayConditionValidatorConverter()
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
       ConciergeFormDisplayConditionValidator validator,
-      @ConciergeFormDisplayConditionOperatorOrNullConverter()
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
       ConciergeFormDisplayConditionOperator? validatorOperator});
 }
 
@@ -1016,6 +1631,237 @@ class __$ConciergeFormBlockValidatorCopyWithImpl<$Res>
       min: freezed == min
           ? _self.min
           : min // ignore: cast_nullable_to_non_nullable
+              as double?,
+      value: freezed == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+      validator: null == validator
+          ? _self.validator
+          : validator // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormDisplayConditionValidator,
+      validatorOperator: freezed == validatorOperator
+          ? _self.validatorOperator
+          : validatorOperator // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormDisplayConditionOperator?,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$ConciergeFormBlockDisplayConditionInput {
+  int? get blockId;
+  set blockId(int? value);
+  double? get min;
+  set min(double? value);
+  double? get max;
+  set max(double? value);
+  String? get value;
+  set value(String? value);
+  @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+  ConciergeFormDisplayConditionValidator get validator;
+  @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+  set validator(ConciergeFormDisplayConditionValidator value);
+  @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+  ConciergeFormDisplayConditionOperator? get validatorOperator;
+  @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+  set validatorOperator(ConciergeFormDisplayConditionOperator? value);
+
+  /// Create a copy of ConciergeFormBlockDisplayConditionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $ConciergeFormBlockDisplayConditionInputCopyWith<
+          ConciergeFormBlockDisplayConditionInput>
+      get copyWith => _$ConciergeFormBlockDisplayConditionInputCopyWithImpl<
+              ConciergeFormBlockDisplayConditionInput>(
+          this as ConciergeFormBlockDisplayConditionInput, _$identity);
+
+  /// Serializes this ConciergeFormBlockDisplayConditionInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'ConciergeFormBlockDisplayConditionInput(blockId: $blockId, min: $min, max: $max, value: $value, validator: $validator, validatorOperator: $validatorOperator)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $ConciergeFormBlockDisplayConditionInputCopyWith<$Res> {
+  factory $ConciergeFormBlockDisplayConditionInputCopyWith(
+          ConciergeFormBlockDisplayConditionInput value,
+          $Res Function(ConciergeFormBlockDisplayConditionInput) _then) =
+      _$ConciergeFormBlockDisplayConditionInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {int? blockId,
+      double? min,
+      double? max,
+      String? value,
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+      ConciergeFormDisplayConditionValidator validator,
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+      ConciergeFormDisplayConditionOperator? validatorOperator});
+}
+
+/// @nodoc
+class _$ConciergeFormBlockDisplayConditionInputCopyWithImpl<$Res>
+    implements $ConciergeFormBlockDisplayConditionInputCopyWith<$Res> {
+  _$ConciergeFormBlockDisplayConditionInputCopyWithImpl(this._self, this._then);
+
+  final ConciergeFormBlockDisplayConditionInput _self;
+  final $Res Function(ConciergeFormBlockDisplayConditionInput) _then;
+
+  /// Create a copy of ConciergeFormBlockDisplayConditionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? blockId = freezed,
+    Object? min = freezed,
+    Object? max = freezed,
+    Object? value = freezed,
+    Object? validator = null,
+    Object? validatorOperator = freezed,
+  }) {
+    return _then(_self.copyWith(
+      blockId: freezed == blockId
+          ? _self.blockId
+          : blockId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      min: freezed == min
+          ? _self.min
+          : min // ignore: cast_nullable_to_non_nullable
+              as double?,
+      max: freezed == max
+          ? _self.max
+          : max // ignore: cast_nullable_to_non_nullable
+              as double?,
+      value: freezed == value
+          ? _self.value
+          : value // ignore: cast_nullable_to_non_nullable
+              as String?,
+      validator: null == validator
+          ? _self.validator
+          : validator // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormDisplayConditionValidator,
+      validatorOperator: freezed == validatorOperator
+          ? _self.validatorOperator
+          : validatorOperator // ignore: cast_nullable_to_non_nullable
+              as ConciergeFormDisplayConditionOperator?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _ConciergeFormBlockDisplayConditionInput
+    extends ConciergeFormBlockDisplayConditionInput {
+  _ConciergeFormBlockDisplayConditionInput(
+      {this.blockId,
+      this.min,
+      this.max,
+      this.value,
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+      this.validator = ConciergeFormDisplayConditionValidator.always,
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+      this.validatorOperator})
+      : super._();
+  factory _ConciergeFormBlockDisplayConditionInput.fromJson(
+          Map<String, dynamic> json) =>
+      _$ConciergeFormBlockDisplayConditionInputFromJson(json);
+
+  @override
+  int? blockId;
+  @override
+  double? min;
+  @override
+  double? max;
+  @override
+  String? value;
+  @override
+  @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+  ConciergeFormDisplayConditionValidator validator;
+  @override
+  @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+  ConciergeFormDisplayConditionOperator? validatorOperator;
+
+  /// Create a copy of ConciergeFormBlockDisplayConditionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$ConciergeFormBlockDisplayConditionInputCopyWith<
+          _ConciergeFormBlockDisplayConditionInput>
+      get copyWith => __$ConciergeFormBlockDisplayConditionInputCopyWithImpl<
+          _ConciergeFormBlockDisplayConditionInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$ConciergeFormBlockDisplayConditionInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'ConciergeFormBlockDisplayConditionInput(blockId: $blockId, min: $min, max: $max, value: $value, validator: $validator, validatorOperator: $validatorOperator)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$ConciergeFormBlockDisplayConditionInputCopyWith<$Res>
+    implements $ConciergeFormBlockDisplayConditionInputCopyWith<$Res> {
+  factory _$ConciergeFormBlockDisplayConditionInputCopyWith(
+          _ConciergeFormBlockDisplayConditionInput value,
+          $Res Function(_ConciergeFormBlockDisplayConditionInput) _then) =
+      __$ConciergeFormBlockDisplayConditionInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {int? blockId,
+      double? min,
+      double? max,
+      String? value,
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionValidator.always)
+      ConciergeFormDisplayConditionValidator validator,
+      @JsonKey(unknownEnumValue: ConciergeFormDisplayConditionOperator.equals)
+      ConciergeFormDisplayConditionOperator? validatorOperator});
+}
+
+/// @nodoc
+class __$ConciergeFormBlockDisplayConditionInputCopyWithImpl<$Res>
+    implements _$ConciergeFormBlockDisplayConditionInputCopyWith<$Res> {
+  __$ConciergeFormBlockDisplayConditionInputCopyWithImpl(
+      this._self, this._then);
+
+  final _ConciergeFormBlockDisplayConditionInput _self;
+  final $Res Function(_ConciergeFormBlockDisplayConditionInput) _then;
+
+  /// Create a copy of ConciergeFormBlockDisplayConditionInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? blockId = freezed,
+    Object? min = freezed,
+    Object? max = freezed,
+    Object? value = freezed,
+    Object? validator = null,
+    Object? validatorOperator = freezed,
+  }) {
+    return _then(_ConciergeFormBlockDisplayConditionInput(
+      blockId: freezed == blockId
+          ? _self.blockId
+          : blockId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      min: freezed == min
+          ? _self.min
+          : min // ignore: cast_nullable_to_non_nullable
+              as double?,
+      max: freezed == max
+          ? _self.max
+          : max // ignore: cast_nullable_to_non_nullable
               as double?,
       value: freezed == value
           ? _self.value

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.4
+
+- Migrated CareProtocol input submodels to models.
+
 ## 3.4.3
 
 - Added `Manifest` and `ManifestInput` models to handle manifest data.

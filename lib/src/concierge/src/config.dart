@@ -2,6 +2,7 @@ part of '../concierge.dart';
 
 @freezed
 abstract class ConciergeFormBlockConfiguration with _$ConciergeFormBlockConfiguration {
+  const ConciergeFormBlockConfiguration._();
   const factory ConciergeFormBlockConfiguration({
     /// Indicates if the field can be submitted without value
     required bool allowEmpty,
@@ -22,4 +23,21 @@ abstract class ConciergeFormBlockConfiguration with _$ConciergeFormBlockConfigur
 
   factory ConciergeFormBlockConfiguration.fromJson(Map<String, dynamic> json) =>
       _$ConciergeFormBlockConfigurationFromJson(json);
+}
+
+@unfreezed
+abstract class ConciergeFormBlockConfigurationInput with _$ConciergeFormBlockConfigurationInput {
+  const ConciergeFormBlockConfigurationInput._();
+
+  factory ConciergeFormBlockConfigurationInput({
+    bool? allowEmpty,
+    bool? isMultiple,
+    double? min,
+    double? max,
+    bool? asInt,
+    List<String>? choices,
+  }) = _ConciergeFormBlockConfigurationInput;
+
+  factory ConciergeFormBlockConfigurationInput.fromJson(Map<String, dynamic> json) =>
+      _$ConciergeFormBlockConfigurationInputFromJson(json);
 }

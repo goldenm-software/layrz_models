@@ -440,6 +440,205 @@ class __$CareProtocolCopyWithImpl<$Res>
 }
 
 /// @nodoc
+mixin _$CareProtocolInput {
+  String? get id;
+  set id(String? value);
+  String get name;
+  set name(String value);
+  @JsonKey(unknownEnumValue: CareProtocolMode.simple)
+  CareProtocolMode get mode;
+  @JsonKey(unknownEnumValue: CareProtocolMode.simple)
+  set mode(CareProtocolMode value);
+  List<CareTaskInput> get tasks;
+  set tasks(List<CareTaskInput> value);
+  List<ConciergeFormPageInput> get pages;
+  set pages(List<ConciergeFormPageInput> value);
+
+  /// Create a copy of CareProtocolInput
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $CareProtocolInputCopyWith<CareProtocolInput> get copyWith =>
+      _$CareProtocolInputCopyWithImpl<CareProtocolInput>(
+          this as CareProtocolInput, _$identity);
+
+  /// Serializes this CareProtocolInput to a JSON map.
+  Map<String, dynamic> toJson();
+
+  @override
+  String toString() {
+    return 'CareProtocolInput(id: $id, name: $name, mode: $mode, tasks: $tasks, pages: $pages)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $CareProtocolInputCopyWith<$Res> {
+  factory $CareProtocolInputCopyWith(
+          CareProtocolInput value, $Res Function(CareProtocolInput) _then) =
+      _$CareProtocolInputCopyWithImpl;
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      @JsonKey(unknownEnumValue: CareProtocolMode.simple) CareProtocolMode mode,
+      List<CareTaskInput> tasks,
+      List<ConciergeFormPageInput> pages});
+}
+
+/// @nodoc
+class _$CareProtocolInputCopyWithImpl<$Res>
+    implements $CareProtocolInputCopyWith<$Res> {
+  _$CareProtocolInputCopyWithImpl(this._self, this._then);
+
+  final CareProtocolInput _self;
+  final $Res Function(CareProtocolInput) _then;
+
+  /// Create a copy of CareProtocolInput
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? mode = null,
+    Object? tasks = null,
+    Object? pages = null,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      mode: null == mode
+          ? _self.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as CareProtocolMode,
+      tasks: null == tasks
+          ? _self.tasks
+          : tasks // ignore: cast_nullable_to_non_nullable
+              as List<CareTaskInput>,
+      pages: null == pages
+          ? _self.pages
+          : pages // ignore: cast_nullable_to_non_nullable
+              as List<ConciergeFormPageInput>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _CareProtocolInput implements CareProtocolInput {
+  _CareProtocolInput(
+      {this.id,
+      this.name = "",
+      @JsonKey(unknownEnumValue: CareProtocolMode.simple)
+      this.mode = CareProtocolMode.simple,
+      this.tasks = const [],
+      this.pages = const []});
+  factory _CareProtocolInput.fromJson(Map<String, dynamic> json) =>
+      _$CareProtocolInputFromJson(json);
+
+  @override
+  String? id;
+  @override
+  @JsonKey()
+  String name;
+  @override
+  @JsonKey(unknownEnumValue: CareProtocolMode.simple)
+  CareProtocolMode mode;
+  @override
+  @JsonKey()
+  List<CareTaskInput> tasks;
+  @override
+  @JsonKey()
+  List<ConciergeFormPageInput> pages;
+
+  /// Create a copy of CareProtocolInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$CareProtocolInputCopyWith<_CareProtocolInput> get copyWith =>
+      __$CareProtocolInputCopyWithImpl<_CareProtocolInput>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$CareProtocolInputToJson(
+      this,
+    );
+  }
+
+  @override
+  String toString() {
+    return 'CareProtocolInput(id: $id, name: $name, mode: $mode, tasks: $tasks, pages: $pages)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$CareProtocolInputCopyWith<$Res>
+    implements $CareProtocolInputCopyWith<$Res> {
+  factory _$CareProtocolInputCopyWith(
+          _CareProtocolInput value, $Res Function(_CareProtocolInput) _then) =
+      __$CareProtocolInputCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String? id,
+      String name,
+      @JsonKey(unknownEnumValue: CareProtocolMode.simple) CareProtocolMode mode,
+      List<CareTaskInput> tasks,
+      List<ConciergeFormPageInput> pages});
+}
+
+/// @nodoc
+class __$CareProtocolInputCopyWithImpl<$Res>
+    implements _$CareProtocolInputCopyWith<$Res> {
+  __$CareProtocolInputCopyWithImpl(this._self, this._then);
+
+  final _CareProtocolInput _self;
+  final $Res Function(_CareProtocolInput) _then;
+
+  /// Create a copy of CareProtocolInput
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? name = null,
+    Object? mode = null,
+    Object? tasks = null,
+    Object? pages = null,
+  }) {
+    return _then(_CareProtocolInput(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      mode: null == mode
+          ? _self.mode
+          : mode // ignore: cast_nullable_to_non_nullable
+              as CareProtocolMode,
+      tasks: null == tasks
+          ? _self.tasks
+          : tasks // ignore: cast_nullable_to_non_nullable
+              as List<CareTaskInput>,
+      pages: null == pages
+          ? _self.pages
+          : pages // ignore: cast_nullable_to_non_nullable
+              as List<ConciergeFormPageInput>,
+    ));
+  }
+}
+
+/// @nodoc
 mixin _$CareTask {
   /// Is the question to prompt
   String get question;

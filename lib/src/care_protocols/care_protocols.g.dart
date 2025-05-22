@@ -52,6 +52,33 @@ const _$CareProtocolModeEnumMap = {
   CareProtocolMode.concierge: 'CONCIERGE',
 };
 
+_CareProtocolInput _$CareProtocolInputFromJson(Map<String, dynamic> json) =>
+    _CareProtocolInput(
+      id: json['id'] as String?,
+      name: json['name'] as String? ?? "",
+      mode: $enumDecodeNullable(_$CareProtocolModeEnumMap, json['mode'],
+              unknownValue: CareProtocolMode.simple) ??
+          CareProtocolMode.simple,
+      tasks: (json['tasks'] as List<dynamic>?)
+              ?.map((e) => CareTaskInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+      pages: (json['pages'] as List<dynamic>?)
+              ?.map((e) =>
+                  ConciergeFormPageInput.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
+    );
+
+Map<String, dynamic> _$CareProtocolInputToJson(_CareProtocolInput instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'mode': instance.mode.toJson(),
+      'tasks': instance.tasks.map((e) => e.toJson()).toList(),
+      'pages': instance.pages.map((e) => e.toJson()).toList(),
+    };
+
 _CareTask _$CareTaskFromJson(Map<String, dynamic> json) => _CareTask(
       question: json['question'] as String,
       answer: $enumDecode(_$AnswerKindEnumMap, json['answer'],

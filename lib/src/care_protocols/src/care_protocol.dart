@@ -40,3 +40,16 @@ abstract class CareProtocol with _$CareProtocol {
 
   factory CareProtocol.fromJson(Map<String, dynamic> json) => _$CareProtocolFromJson(json);
 }
+
+@unfreezed
+abstract class CareProtocolInput with _$CareProtocolInput {
+  factory CareProtocolInput({
+    String? id,
+    @Default("") String name,
+    @JsonKey(unknownEnumValue: CareProtocolMode.simple) @Default(CareProtocolMode.simple) CareProtocolMode mode,
+    @Default([]) List<CareTaskInput> tasks,
+    @Default([]) List<ConciergeFormPageInput> pages,
+  }) = _CareProtocolInput;
+
+  factory CareProtocolInput.fromJson(Map<String, dynamic> json) => _$CareProtocolInputFromJson(json);
+}
