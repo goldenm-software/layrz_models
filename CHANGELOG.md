@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.4.6
+- Added `triggerId` to `BrickhouseAlert` model
+
 ## 3.4.5
 
 - Migrated Report input submodels to models.

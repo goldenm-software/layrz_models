@@ -98,6 +98,10 @@ mixin _$BrickhouseAlert {
   /// isDisabled
   bool? get isDisabled;
 
+  /// triggerId
+  /// triggerId of the alert
+  String? get triggerId;
+
   /// Create a copy of BrickhouseAlert
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -155,7 +159,9 @@ mixin _$BrickhouseAlert {
             (identical(other.speedingThreshold, speedingThreshold) ||
                 other.speedingThreshold == speedingThreshold) &&
             (identical(other.isDisabled, isDisabled) ||
-                other.isDisabled == isDisabled));
+                other.isDisabled == isDisabled) &&
+            (identical(other.triggerId, triggerId) ||
+                other.triggerId == triggerId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -186,12 +192,13 @@ mixin _$BrickhouseAlert {
         maxSpeedMaxValue,
         isMuted,
         speedingThreshold,
-        isDisabled
+        isDisabled,
+        triggerId
       ]);
 
   @override
   String toString() {
-    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, isMuted: $isMuted, speedingThreshold: $speedingThreshold, isDisabled: $isDisabled)';
+    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, isMuted: $isMuted, speedingThreshold: $speedingThreshold, isDisabled: $isDisabled, triggerId: $triggerId)';
   }
 }
 
@@ -227,7 +234,8 @@ abstract mixin class $BrickhouseAlertCopyWith<$Res> {
       double? maxSpeedMaxValue,
       bool? isMuted,
       double? speedingThreshold,
-      bool? isDisabled});
+      bool? isDisabled,
+      String? triggerId});
 }
 
 /// @nodoc
@@ -268,6 +276,7 @@ class _$BrickhouseAlertCopyWithImpl<$Res>
     Object? isMuted = freezed,
     Object? speedingThreshold = freezed,
     Object? isDisabled = freezed,
+    Object? triggerId = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -370,6 +379,10 @@ class _$BrickhouseAlertCopyWithImpl<$Res>
           ? _self.isDisabled
           : isDisabled // ignore: cast_nullable_to_non_nullable
               as bool?,
+      triggerId: freezed == triggerId
+          ? _self.triggerId
+          : triggerId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -404,7 +417,8 @@ class _BrickhouseAlert implements BrickhouseAlert {
       this.maxSpeedMaxValue,
       this.isMuted = false,
       this.speedingThreshold,
-      this.isDisabled = false})
+      this.isDisabled = false,
+      this.triggerId})
       : _assets = assets,
         _assetsIds = assetsIds,
         _email = email,
@@ -578,6 +592,11 @@ class _BrickhouseAlert implements BrickhouseAlert {
   @JsonKey()
   final bool? isDisabled;
 
+  /// triggerId
+  /// triggerId of the alert
+  @override
+  final String? triggerId;
+
   /// Create a copy of BrickhouseAlert
   /// with the given fields replaced by the non-null parameter values.
   @override
@@ -640,7 +659,9 @@ class _BrickhouseAlert implements BrickhouseAlert {
             (identical(other.speedingThreshold, speedingThreshold) ||
                 other.speedingThreshold == speedingThreshold) &&
             (identical(other.isDisabled, isDisabled) ||
-                other.isDisabled == isDisabled));
+                other.isDisabled == isDisabled) &&
+            (identical(other.triggerId, triggerId) ||
+                other.triggerId == triggerId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -671,12 +692,13 @@ class _BrickhouseAlert implements BrickhouseAlert {
         maxSpeedMaxValue,
         isMuted,
         speedingThreshold,
-        isDisabled
+        isDisabled,
+        triggerId
       ]);
 
   @override
   String toString() {
-    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, isMuted: $isMuted, speedingThreshold: $speedingThreshold, isDisabled: $isDisabled)';
+    return 'BrickhouseAlert(id: $id, name: $name, type: $type, assets: $assets, assetsIds: $assetsIds, email: $email, phone: $phone, hasMobilePopup: $hasMobilePopup, hasWebPopup: $hasWebPopup, hasEmail: $hasEmail, hasPhone: $hasPhone, batteryMinLevel: $batteryMinLevel, curfewStartHour: $curfewStartHour, curfewEndHour: $curfewEndHour, timezone: $timezone, curfewWeekdays: $curfewWeekdays, geofenceColor: $geofenceColor, geofenceMode: $geofenceMode, geofenceRadius: $geofenceRadius, geofenceShape: $geofenceShape, geofenceTrigger: $geofenceTrigger, maxSpeedMaxValue: $maxSpeedMaxValue, isMuted: $isMuted, speedingThreshold: $speedingThreshold, isDisabled: $isDisabled, triggerId: $triggerId)';
   }
 }
 
@@ -714,7 +736,8 @@ abstract mixin class _$BrickhouseAlertCopyWith<$Res>
       double? maxSpeedMaxValue,
       bool? isMuted,
       double? speedingThreshold,
-      bool? isDisabled});
+      bool? isDisabled,
+      String? triggerId});
 }
 
 /// @nodoc
@@ -755,6 +778,7 @@ class __$BrickhouseAlertCopyWithImpl<$Res>
     Object? isMuted = freezed,
     Object? speedingThreshold = freezed,
     Object? isDisabled = freezed,
+    Object? triggerId = freezed,
   }) {
     return _then(_BrickhouseAlert(
       id: null == id
@@ -857,6 +881,10 @@ class __$BrickhouseAlertCopyWithImpl<$Res>
           ? _self.isDisabled
           : isDisabled // ignore: cast_nullable_to_non_nullable
               as bool?,
+      triggerId: freezed == triggerId
+          ? _self.triggerId
+          : triggerId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }

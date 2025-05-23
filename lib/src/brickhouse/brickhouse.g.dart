@@ -54,6 +54,7 @@ _BrickhouseAlert _$BrickhouseAlertFromJson(Map<String, dynamic> json) =>
       isMuted: json['isMuted'] as bool? ?? false,
       speedingThreshold: (json['speedingThreshold'] as num?)?.toDouble(),
       isDisabled: json['isDisabled'] as bool? ?? false,
+      triggerId: json['triggerId'] as String?,
     );
 
 Map<String, dynamic> _$BrickhouseAlertToJson(_BrickhouseAlert instance) =>
@@ -88,6 +89,7 @@ Map<String, dynamic> _$BrickhouseAlertToJson(_BrickhouseAlert instance) =>
       'isMuted': instance.isMuted,
       'speedingThreshold': instance.speedingThreshold,
       'isDisabled': instance.isDisabled,
+      'triggerId': instance.triggerId,
     };
 
 const _$BrickhouseAlertTypeEnumMap = {
